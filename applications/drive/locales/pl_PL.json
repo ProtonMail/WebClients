@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Wystąpił nieznany błąd"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
       ],
@@ -21,14 +18,17 @@
       "Authentication error.": [
         "Błąd uwierzytelniania."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
+      "Unknown error": [
+        "Wystąpił nieznany błąd"
       ],
       "Email address invalid": [
         "Adres e-mail jest nieprawidłowy"
       ],
       "This field is required": [
         "Pole jest wymagane"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
@@ -44,6 +44,9 @@
       ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
+      ],
+      "File has no contents to preview": [
+        "Plik nie posiada zawartości do podglądu"
       ],
       "Preferences could not be saved": [
         "Ustawienia nie mogły zostać zapisane"
@@ -92,15 +95,6 @@
       ],
       "Invalid name": [
         "Nazwa jest nieprawidłowa"
-      ],
-      "File has no contents to preview": [
-        "Plik nie posiada zawartości do podglądu"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
       ],
       "Process aborted": [
         "Proces został przerwany"
@@ -162,6 +156,12 @@
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         "Hasło skrzynki pocztowej jest nieprawidłowe. Spróbuj ponownie"
       ],
@@ -205,1000 +205,18 @@
         "Nie znaleziono prawidłowego adresu"
       ]
     },
-    "Action": {
-      "Close": [
-        "Zamknij"
-      ],
-      "Confirm": [
-        "Potwierdź"
-      ],
-      "Cancel": [
-        "Anuluj"
-      ],
-      "Close modal": [
-        "Zamknij okno"
-      ],
-      "Submit": [
-        "Wyślij"
-      ],
-      "More info: ${ safeTitle }": [
-        "Więcej informacji: ${ safeTitle }"
-      ],
-      "Use “${ label }” setting": [
-        "Użyj ustawień “${ label }”"
-      ],
-      "Close navigation": [
-        "Zamknij nawigację"
-      ],
-      "Open navigation": [
-        "Otwórz nawigację"
-      ],
-      "Go to panel ${ index }": [
-        "Przejdź do panelu ${ index }"
-      ],
-      "Load image": [
-        "Załaduj obraz"
-      ],
-      "Export": [
-        "Eksportuj"
-      ],
-      "Delete": [
-        "Usuń"
-      ],
-      "Edit": [
-        "Edytuj"
-      ],
-      "Remove": [
-        "Usuń"
-      ],
-      "Download": [
-        "Pobierz"
-      ],
-      "Use for sending": [
-        "Używaj do wysyłania"
-      ],
-      "Trust": [
-        "Zaufaj"
-      ],
-      "Untrust": [
-        "Przestań ufać"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Email settings": [
-        "Ustawienia poczty e-mail"
-      ],
-      "Contact group": [
-        "Grupa kontaktów"
-      ],
-      "Upload picture": [
-        "Prześlij zdjęcie"
-      ],
-      "Next month": [
-        "Następny miesiąc"
-      ],
-      "Previous month": [
-        "Poprzedni miesiąc"
-      ],
-      "refresh the page": [
-        "Odśwież stronę"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Potwierdź otwieranie linku ${ link }"
-      ],
-      "View invoice": [
-        "Pokaż fakturę"
-      ],
-      "Get verification code": [
-        "Otrzymaj kod weryfikacyjny"
-      ],
-      "Try another method": [
-        "Użyj innej metody"
-      ],
-      "Request new code": [
-        "Poproś o nowy kod"
-      ],
-      "Verify": [
-        "Zweryfikuj"
-      ],
-      "Did not receive the code?": [
-        "Nie otrzymałeś kodu?"
-      ],
-      "Edit email address": [
-        "Edytuj adres e-mail"
-      ],
-      "Edit phone number": [
-        "Edytuj numer telefonu"
-      ],
-      "Save": [
-        "Zapisz"
-      ],
-      "Add": [
-        "Dodaj"
-      ],
-      "Apply": [
-        "Zastosuj"
-      ],
-      "Hide advanced PGP settings": [
-        "Ukryj zaawansowane ustawienia PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Pokaż zaawansowane ustawienia PGP"
-      ],
-      "Done": [
-        "Gotowe"
-      ],
-      "Clear data": [
-        "Usuń dane"
-      ],
-      "Recover data": [
-        "Odzyskaj dane"
-      ],
-      "Click here.": [
-        "Kliknij tutaj."
-      ],
-      "Re-sign": [
-        "Podpisz ponownie"
-      ],
-      "Add to group": [
-        "Dodaj do grupy"
-      ],
-      "Merge": [
-        "Scal"
-      ],
-      "View": [
-        "Podgląd"
-      ],
-      "Unmark for deletion": [
-        "Odznacz do usunięcia"
-      ],
-      "Mark for deletion": [
-        "Oznacz do usunięcia"
-      ],
-      "Preview contact": [
-        "Podgląd kontaktu"
-      ],
-      "Continue": [
-        "Kontynuuj"
-      ],
-      "Delete contact": [
-        "Usuń kontakt"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Usuń kontakt",
-        "Usuń ${ selectedCount } kontakty",
-        "Usuń ${ selectedCount } kontaktów",
-        "Usuń ${ selectedCount } kontaktów"
-      ],
-      "Deselect all": [
-        "Odznacz wszystkie"
-      ],
-      "Select all": [
-        "Zaznacz wszystkie"
-      ],
-      "Compose": [
-        "Napisz"
-      ],
-      "Forward as attachment": [
-        "Przekaż jako załącznik"
-      ],
-      "Merge contacts": [
-        "Scal kontakty"
-      ],
-      "Add new contact": [
-        "Dodaj nowy kontakt"
-      ],
-      "Add group": [
-        "Dodaj grupę"
-      ],
-      "Clear query": [
-        "Wyczyść zapytanie"
-      ],
-      "Add contact": [
-        "Dodaj kontakt"
-      ],
-      "import": [
-        "importuj"
-      ],
-      "Delete contact group": [
-        "Usuń grupę kontaktów"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Usuń grupę kontaktów",
-        "Usuń ${ selectedCount } grupy kontaktów",
-        "Usuń ${ selectedCount } grup kontaktów",
-        "Usuń ${ selectedCount } grupy kontaktów"
-      ],
-      "Add new group": [
-        "Dodaj nową grupę"
-      ],
-      "Export contacts": [
-        "Eksportuj kontakty"
-      ],
-      "Continue with Google": [
-        "Kontynuuj z Google"
-      ],
-      "Import contacts": [
-        "Importuj kontakty"
-      ],
-      "Choose a file or drag it here": [
-        "Wybierz plik lub przeciągnij go tutaj"
-      ],
-      "Import": [
-        "Importuj"
-      ],
-      "Next": [
-        "Dalej"
-      ],
-      "Signing out": [
-        "Wylogowywanie"
-      ],
-      "Clear": [
-        "Wyczyść"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj zrzuty ekranu"
-      ],
-      "Hide info": [
-        "Ukryj informacje"
-      ],
-      "Show info": [
-        "Pokaż informacje"
-      ],
-      "Details": [
-        "Szczegóły"
-      ],
-      "Share via link": [
-        "Udostępnij przez link"
-      ],
-      "Sharing options": [
-        "Opcje udostępniania"
-      ],
-      "Zoom out": [
-        "Pomniejsz"
-      ],
-      "Reset zoom": [
-        "Dopasuj do strony"
-      ],
-      "Zoom in": [
-        "Powiększ"
-      ],
-      "Previous": [
-        "Wstecz"
-      ],
-      "Close this banner": [
-        "Zamknij powiadomienie"
-      ],
-      "Refresh the page": [
-        "Odśwież stronę"
-      ],
-      "enable desktop notifications": [
-        "włączyć powiadomienia na pulpicie"
-      ],
-      "here": [
-        "tutaj"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Copy email to clipboard": [
-        "Kopiuj adres e-mail do schowka"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Samouczek ${ BRAND_NAME }"
-      ],
-      "I have a question": [
-        "Mam pytanie"
-      ],
-      "Request a feature": [
-        "Poproś o dodatkową funkcję"
-      ],
-      "Report a problem": [
-        "Zgłoś problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Sklep ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Przełącz konto"
-      ],
-      "Sign out": [
-        "Wyloguj"
-      ],
-      "Go to settings": [
-        "Przejdź do ustawień"
-      ],
-      "Beta Access": [
-        "Dostęp beta"
-      ],
-      "Theme": [
-        "Motyw"
-      ],
-      "Keyboard shortcuts": [
-        "Skróty klawiszowe"
-      ],
-      "Mailbox layout": [
-        "Widok skrzynki pocztowej"
-      ],
-      "Mailbox density": [
-        "Układ skrzynki pocztowej"
-      ],
-      "Composer mode": [
-        "Tryb edytora"
-      ],
-      "Get started": [
-        "Rozpocznij"
-      ],
-      "Start setup": [
-        "Rozpocznij konfigurację"
-      ],
-      "Skip": [
-        "Pomiń"
-      ],
-      "Back": [
-        "Wstecz"
-      ],
-      "Use ${ label } theme": [
-        "Użyj motywu ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Remove bonuses": [
-        "Zrezygnuj z bonusów"
-      ],
-      "Try again": [
-        "Spróbuj ponownie"
-      ],
-      "Use a different card": [
-        "Użyj innej karty"
-      ],
-      "Use a different payment method": [
-        "Użyj innej metody płatności"
-      ],
-      "Retry": [
-        "Spróbuj ponownie"
-      ],
-      "Loading verification": [
-        "Ładowanie weryfikacji"
-      ],
-      "Select plan": [
-        "Wybierz plan"
-      ],
-      "Compare all features": [
-        "Porównaj wszystkie funkcje"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } zmieniając na plan roczny"
-      ],
-      "Pay": [
-        "Zapłać"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Usuń kod podarunkowy"
-      ],
-      "annual billing": [
-        "plan roczny"
-      ],
-      "Compare plans": [
-        "Porównaj plany"
-      ],
-      "Decrease": [
-        "Zmniejsz"
-      ],
-      "Increase": [
-        "Zwiększ"
-      ],
-      "Log in": [
-        "Zaloguj się"
-      ],
-      "Cancel all uploads": [
-        "Anuluj przesyłanie"
-      ],
-      "New upload": [
-        "Prześlij"
-      ],
-      "Maximize transfers": [
-        "Maksymalizuj kolejkę przesyłania"
-      ],
-      "Minimize transfers": [
-        "Minimalizuj kolejkę przesyłania"
-      ],
-      "Close transfers": [
-        "Zamknij kolejkę przesyłania"
-      ],
-      "Pause download": [
-        "Wstrzymaj pobieranie"
-      ],
-      "Pause upload": [
-        "Wstrzymaj przesyłanie"
-      ],
-      "Resume download": [
-        "Wznów pobieranie"
-      ],
-      "Resume upload": [
-        "Wznów przesyłanie"
-      ],
-      "Cancel download": [
-        "Anuluj pobieranie"
-      ],
-      "Cancel upload": [
-        "Anuluj przesyłanie"
-      ],
-      "Restart download": [
-        "Pobierz ponownie"
-      ],
-      "Restart upload": [
-        "Prześlij ponownie"
-      ],
-      "Remove from this list": [
-        "Usuń z listy"
-      ],
-      "List layout": [
-        "Widok listy"
-      ],
-      "Grid layout": [
-        "Widok siatki"
-      ],
-      "Rename": [
-        "Zmień nazwę"
-      ],
-      "Move to folder": [
-        "Przenieś do folderu"
-      ],
-      "Move to trash": [
-        "Przenieś do Kosza"
-      ],
-      "Create new folder": [
-        "Utwórz nowy folder"
-      ],
-      "Name: A to Z": [
-        "Nazwa: od A do Z"
-      ],
-      "Name: Z to A": [
-        "Nazwa: od Z do A"
-      ],
-      "Modified date: new to old": [
-        "Data modyfikacji: od nowych do starych"
-      ],
-      "Modified date: old to new": [
-        "Data modyfikacji: od starych do nowych"
-      ],
-      "Type: A to Z": [
-        "Typ: od A do Z"
-      ],
-      "Type: Z to A": [
-        "Typ: od Z do A"
-      ],
-      "Size: small to large": [
-        "Rozmiar: od małych do dużych"
-      ],
-      "Size: large to small": [
-        "Rozmiar: od dużych do małych"
-      ],
-      "Upload file": [
-        "Prześlij plik"
-      ],
-      "Upload folder": [
-        "Prześlij folder"
-      ],
-      "Delete permanently": [
-        "Usuń trwale"
-      ],
-      "Restore from trash": [
-        "Przywróć z Kosza"
-      ],
-      "Empty trash": [
-        "Opróżnij Kosz"
-      ],
-      "Share": [
-        "Udostępnij"
-      ],
-      "Create": [
-        "Utwórz"
-      ],
-      "Preview": [
-        "Podgląd"
-      ],
-      "Stop sharing": [
-        "Zatrzymaj udostępnianie"
-      ],
-      "Show shared link details": [
-        "Pokaż szczegóły udostępnionego linku"
-      ],
-      "Share file": [
-        "Udostępnij plik"
-      ],
-      "Start recovering": [
-        "Rozpocznij odzyskiwanie"
-      ],
-      "View more": [
-        "Pokaż więcej"
-      ],
-      "Move": [
-        "Przenieś"
-      ],
-      "Copy link": [
-        "Kopiuj link"
-      ],
-      "Create link": [
-        "Utwórz link"
-      ],
-      "Undo": [
-        "Cofnij"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Otwórz listę akcji"
-      ],
-      "Upgrade required": [
-        "Ulepszenie jest wymagane"
-      ],
-      "Email settings": [
-        "Ustawienia poczty e-mail"
-      ],
-      "Contact group": [
-        "Grupa kontaktów"
-      ],
-      "Link confirmation": [
-        "Potwierdź otwieranie linków"
-      ],
-      "Keyboard Shortcuts": [
-        "Skróty klawiszowe"
-      ],
-      "What's new": [
-        "Co nowego"
-      ],
-      "Invalid verification code": [
-        "Kod weryfikacyjny jest nieprawidłowy"
-      ],
-      "Request new verification code": [
-        "Poproś o nowy kod weryfikacyjny"
-      ],
-      "Human verification": [
-        "Weryfikacja antyspamowa"
-      ],
-      "Edit contact group": [
-        "Edytuj grupę kontaktów"
-      ],
-      "Create new group": [
-        "Utwórz nową grupę"
-      ],
-      "Add to ${ groupName }": [
-        "Dodaj do grupy ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Dodaj do grupy",
-        "Dodaj do ${ groupCount } grup",
-        "Dodaj do ${ groupCount } grup",
-        "Dodaj do ${ groupCount } grup"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ustawienia poczty e-mail (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Usuń ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Usuń grupę kontaktów",
-        "Usuń ${ count } grupy kontaktów",
-        "Usuń ${ count } grup kontaktów",
-        "Usuń ${ count } grupy kontaktów"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } członek",
-        "${ emailsCount } członków",
-        "${ emailsCount } członków",
-        "${ emailsCount } członków"
-      ],
-      "Edit image": [
-        "Edytuj zdjęcie"
-      ],
-      "Edit contact": [
-        "Edytuj kontakt"
-      ],
-      "Create contact": [
-        "Utwórz kontakt"
-      ],
-      "Delete ${ count } contact": [
-        "Usuń kontakt",
-        "Usuń ${ count } kontakty",
-        "Usuń ${ count } kontaktów",
-        "Usuń ${ count } kontaktów"
-      ],
-      "Clearing data": [
-        "Usuwanie danych"
-      ],
-      "Warning": [
-        "Ostrzeżenie"
-      ],
-      "Recover data": [
-        "Odzyskaj dane"
-      ],
-      "Re-signing contacts": [
-        "Podpisywanie ponowne kontaktów"
-      ],
-      "Re-sign all contacts": [
-        "Podpisz ponownie wszystkie kontakty"
-      ],
-      "Exporting contacts": [
-        "Eksportowanie kontaktów"
-      ],
-      "Other names": [
-        "Inne nazwy"
-      ],
-      "Email addresses": [
-        "Adresy e-mail"
-      ],
-      "Phone numbers": [
-        "Numery telefonów"
-      ],
-      "Addresses": [
-        "Adresy"
-      ],
-      "Other information": [
-        "Inne informacje"
-      ],
-      "Contact Details": [
-        "Szczegóły kontaktu"
-      ],
-      "Merging contacts": [
-        "Scalanie kontaktów"
-      ],
-      "Merge contacts": [
-        "Scal kontakty"
-      ],
-      "Deleting contacts": [
-        "Usuwanie kontaktów"
-      ],
-      "View contacts": [
-        "Pokaż kontakty"
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Groups": [
-        "Grupy"
-      ],
-      "Settings": [
-        "Ustawienia"
-      ],
-      "Select action to take on contact group": [
-        "Wybierz akcję dla grupy kontaktów"
-      ],
-      "Add contact group name": [
-        "Dodaj nazwę grupy kontaktów"
-      ],
-      "Select contact group": [
-        "Wybierz grupę kontaktów"
-      ],
-      "Import groups": [
-        "Importuj grupy"
-      ],
-      "Import contacts": [
-        "Importuj kontakty"
-      ],
-      "Report a problem": [
-        "Zgłoś problem"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Open help menu": [
-        "Otwórz pomoc"
-      ],
-      "Back": [
-        "Wstecz"
-      ],
-      "Open settings menu": [
-        "Otwórz ustawienia"
-      ],
-      "Select a theme": [
-        "Wybierz motyw"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Potwierdź utratę Proton bonusów"
-      ],
-      "Unsupported browser": [
-        "Przeglądarka jest nieobsługiwana"
-      ],
-      "Card verification": [
-        "Weryfikacja karty płatniczej"
-      ],
-      "Payment verification": [
-        "Weryfikacja płatności"
-      ],
-      "Processing...": [
-        "Przetwarzanie..."
-      ],
-      "Card verification in progress": [
-        "Weryfikacja karty płatniczej jest w toku"
-      ],
-      "Payment verification in progress": [
-        "Weryfikacja płatności jest w toku"
-      ],
-      "PayPal verification failed": [
-        "Weryfikacja płatności PayPal nie powiodła się"
-      ],
-      "3-D Secure verification failed": [
-        "Weryfikacja płatności 3-D Secure nie powiodła się"
-      ],
-      "Error": [
-        "Błąd"
-      ],
-      "ZIP / postal code": [
-        "Kod pocztowy"
-      ],
-      "Payment details": [
-        "Szczegóły płatności"
-      ],
-      "Currency": [
-        "Waluta"
-      ],
-      "Billing cycle": [
-        "Cykl rozliczeniowy"
-      ],
-      "Current plan": [
-        "Obecny plan"
-      ],
-      "Processing": [
-        "Przetwarzanie"
-      ],
-      "Apply gift code": [
-        "Zastosuj kod podarunkowy"
-      ],
-      "Subtotal": [
-        "Suma częściowa"
-      ],
-      "Coupon discount": [
-        "Kupon zniżkowy"
-      ],
-      "Total (monthly)": [
-        "Łącznie (miesięcznie)"
-      ],
-      "Credits": [
-        "Środki"
-      ],
-      "Gift code": [
-        "Kod podarunkowy"
-      ],
-      "Amount due": [
-        "Do zapłaty"
-      ],
-      "Cancel subscription": [
-        "Anuluj subskrypcję"
-      ],
-      "Network error": [
-        "Błąd sieci"
-      ],
-      "Select a plan": [
-        "Wybierz plan"
-      ],
-      "Customize your plan": [
-        "Dostosuj plan"
-      ],
-      "Checkout": [
-        "Zapłać"
-      ],
-      "Plan summary": [
-        "Podsumowanie planu"
-      ],
-      "${ appName } customization": [
-        "Personalizacja planu ${ appName }"
-      ],
-      "Sign in again to continue": [
-        "Zaloguj się ponownie, aby kontynuować"
-      ],
-      "Account suspended": [
-        "Konto zostało zawieszone"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Wpisz nazwę użytkownika lub adres ProtonMail"
-      ],
-      "Enter your password": [
-        "Wpisz hasło"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Skróty klawiszowe ${ appName }"
-      ],
-      "Mailbox density": [
-        "Układ skrzynki pocztowej"
-      ],
-      "Mailbox layout": [
-        "Widok skrzynki pocztowej"
-      ],
-      "Composer mode": [
-        "Tryb edytora"
-      ],
-      "Beta Access": [
-        "Dostęp beta"
-      ],
-      "Duplicate folder found": [
-        "Zduplikowany folder został znaleziony"
-      ],
-      "Duplicate file found": [
-        "Zduplikowany plik został znaleziony"
-      ],
-      "Drop to upload": [
-        "Upuść, aby przesłać"
-      ],
-      "Cancel all active transfers": [
-        "Anuluj wszystkie aktywne transfery"
-      ],
-      "Change layout": [
-        "Zmień widok"
-      ],
-      "Show actions": [
-        "Pokaż akcje"
-      ],
-      "Sort files/folders": [
-        "Sortuj pliki/foldery"
-      ],
-      "Trash": [
-        "Kosz"
-      ],
-      "Empty trash": [
-        "Opróżnij Kosz"
-      ],
-      "My files": [
-        "Moje pliki"
-      ],
-      "You have no folders yet": [
-        "Nie posiadasz jeszcze żadnych folderów"
-      ],
-      "You have no files to share": [
-        "Nie posiadasz plików do udostępnienia"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        "Plik jest gotowy do pobrania"
-      ],
-      "Download completed": [
-        "Pobieranie zostało zakończone"
-      ],
-      "Download failed": [
-        "Pobieranie nie powiodło się"
-      ],
-      "Download canceled": [
-        "Pobieranie zostało anulowane"
-      ],
-      "Downloading": [
-        "Pobieranie"
-      ],
-      "Enter file password to download": [
-        "Wpisz hasło pliku, aby go pobrać"
-      ],
-      "The link either does not exist or has expired": [
-        "Link wygasł lub nie istnieje"
-      ],
-      "Restore your files": [
-        "Przywróć pliki"
-      ],
-      "File recovery process": [
-        "Proces odzyskiwania pliku"
-      ],
-      "You have inaccessible files": [
-        "Posiadasz niedostępne pliki"
-      ],
-      "Rename a folder": [
-        "Zmień nazwę folderu"
-      ],
-      "Rename a file": [
-        "Zmień nazwę pliku"
-      ],
-      "File details": [
-        "Szczegóły pliku"
-      ],
-      "Folder details": [
-        "Szczegóły folderu"
-      ],
-      "Name": [
-        "Nazwa"
-      ],
-      "Uploaded by": [
-        "Przesłany przez"
-      ],
-      "Location": [
-        "Lokalizacja"
-      ],
-      "Modified": [
-        "Zmodyfikowano"
-      ],
-      "Type": [
-        "Typ"
-      ],
-      "MIME type": [
-        "Typ MIME"
-      ],
-      "Size": [
-        "Rozmiar"
-      ],
-      "Shared": [
-        "Udostępniony"
-      ],
-      "# of accesses": [
-        "Liczba dostępów"
-      ],
-      "Create a new folder": [
-        "Utwórz nowy folder"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Select link expiration date": [
-        "Wybierz datę wygaśnięcia linku"
-      ],
-      "Select link expiration time": [
-        "Wybierz czas wygaśnięcia linku"
-      ],
-      "Share via link": [
-        "Udostępnij przez link"
-      ],
-      "Additional settings": [
-        "Dodatkowe ustawienia"
-      ],
-      "Manage secure link": [
-        "Zarządzaj bezpiecznym linkiem"
-      ],
-      "Stop sharing with everyone?": [
-        "Zatrzymać udostępnianie?"
-      ],
-      "Discard changes?": [
-        "Czy chcesz odrzucić zmiany?"
-      ],
-      "Discard": [
-        "Odrzuć"
-      ],
-      "Files details": [
-        "Szczegóły plików"
-      ],
-      "Number of files": [
-        "Liczba plików"
-      ],
-      "Total size": [
-        "Łączny rozmiar"
-      ],
-      "Delete permanently": [
-        "Usuń trwale"
-      ],
-      "Stop sharing": [
-        "Zatrzymaj udostępnianie"
-      ]
-    },
     "Info": {
-      "No results found": [
-        "Nie znaleziono żadnych wyników"
-      ],
       "Loading": [
         "Ładowanie"
+      ],
+      "No results found": [
+        "Nie znaleziono żadnych wyników"
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
       "Week": [
         "Tydzień"
-      ],
-      "support team": [
-        "pomocą techniczną"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Internet Explorer lub Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
@@ -1214,6 +232,12 @@
       ],
       "Drop the file here to upload": [
         "Upuść plik tutaj, aby przesłać"
+      ],
+      "support team": [
+        "pomocą techniczną"
+      ],
+      "Loading ${ appName }": [
+        "Ładowanie ${ appName }"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
@@ -1244,6 +268,24 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
+      ],
+      "Unsupported file": [
+        "Plik jest nieobsługiwany"
+      ],
+      "No preview available": [
+        "Podgląd jest niedostępny"
+      ],
+      "Preview": [
+        "Podgląd"
+      ],
+      "Loading preview": [
+        "Ładowanie podglądu"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
+      ],
+      "of": [
+        "z"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } członek",
@@ -1303,7 +345,7 @@
         "Poczekaj na sprawdzenie kontaktów, które mogą zostać ponownie podpisane za pomocą głównego klucza szyfrowania."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
+        "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
@@ -1368,33 +410,6 @@
         "${ addressCount } adresów e-mail",
         "${ addressCount } adresów e-mail"
       ],
-      "Loading ${ appName }": [
-        "Ładowanie ${ appName }"
-      ],
-      "Screenshot(s) attached": [
-        "Zrzuty ekranu zostały dołączone"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
-      ],
-      "Unsupported file": [
-        "Plik jest nieobsługiwany"
-      ],
-      "No preview available": [
-        "Podgląd jest niedostępny"
-      ],
-      "Preview": [
-        "Podgląd"
-      ],
-      "Loading preview": [
-        "Ładowanie podglądu"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
-      ],
-      "of": [
-        "z"
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta został ograniczony. ${ payInvoiceLink }"
       ],
@@ -1434,29 +449,11 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Dostęp beta został wyłączony. Kliknij ${ refreshButton }, aby użyć stabilnej wersji ${ appName }. Aplikacja zostanie odświeżona."
       ],
-      "Import contacts": [
-        ""
+      "Screenshot(s) attached": [
+        "Zrzuty ekranu zostały dołączone"
       ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
@@ -1701,6 +698,30 @@
       "Expired": [
         "Wygasła"
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "here": [
         "tutaj"
       ],
@@ -1751,6 +772,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Twoje pliki przed zapisaniem zostaną zaszyfrowane."
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Czy na pewno chcesz opróżnić Kosz i trwale usunąć wszystkie elementy?"
       ],
       "${ doneCount } Finished": [
         "Transfer ${ doneCount } pliku został zakończony",
@@ -1845,9 +869,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych transferów. Czy jesteś pewien?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Czy na pewno chcesz opróżnić Kosz i trwale usunąć wszystkie elementy?"
-      ],
       "Create your first folder and start moving your files.": [
         "Utwórz swój pierwszy folder i zarządzaj plikami."
       ],
@@ -1920,6 +941,9 @@
       "Failed to generate a secure link. Try again later.": [
         "Nie udało się wygenerować bezpiecznego linku. Spróbuj ponownie później."
       ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Nie udało się otworzyć bezpiecznego linku. Powodem jest: ${ error }"
+      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, będziesz musiał utworzyć nowy link."
       ],
@@ -1958,6 +982,985 @@
       ],
       "My Links": [
         "Moje linki"
+      ]
+    },
+    "Action": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Confirm": [
+        "Potwierdź"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Close modal": [
+        "Zamknij okno"
+      ],
+      "Submit": [
+        "Wyślij"
+      ],
+      "Use “${ label }” setting": [
+        "Użyj ustawień “${ label }”"
+      ],
+      "More info: ${ safeTitle }": [
+        "Więcej informacji: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Zamknij nawigację"
+      ],
+      "Open navigation": [
+        "Otwórz nawigację"
+      ],
+      "Go to panel ${ index }": [
+        "Przejdź do panelu ${ index }"
+      ],
+      "Load image": [
+        "Załaduj obraz"
+      ],
+      "Export": [
+        "Eksportuj"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Edit": [
+        "Edytuj"
+      ],
+      "Remove": [
+        "Usuń"
+      ],
+      "Download": [
+        "Pobierz"
+      ],
+      "Use for sending": [
+        "Używaj do wysyłania"
+      ],
+      "Trust": [
+        "Zaufaj"
+      ],
+      "Untrust": [
+        "Przestań ufać"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Email settings": [
+        "Ustawienia poczty e-mail"
+      ],
+      "Contact group": [
+        "Grupa kontaktów"
+      ],
+      "Upload picture": [
+        "Prześlij zdjęcie"
+      ],
+      "Next month": [
+        "Następny miesiąc"
+      ],
+      "Previous month": [
+        "Poprzedni miesiąc"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Potwierdź otwieranie linku ${ link }"
+      ],
+      "refresh the page": [
+        "Odśwież stronę"
+      ],
+      "Signing out": [
+        "Wylogowywanie"
+      ],
+      "View invoice": [
+        "Pokaż fakturę"
+      ],
+      "Get verification code": [
+        "Otrzymaj kod weryfikacyjny"
+      ],
+      "Try another method": [
+        "Użyj innej metody"
+      ],
+      "Request new code": [
+        "Poproś o nowy kod"
+      ],
+      "Verify": [
+        "Zweryfikuj"
+      ],
+      "Did not receive the code?": [
+        "Nie otrzymałeś kodu?"
+      ],
+      "Edit email address": [
+        "Edytuj adres e-mail"
+      ],
+      "Edit phone number": [
+        "Edytuj numer telefonu"
+      ],
+      "Details": [
+        "Szczegóły"
+      ],
+      "Share via link": [
+        "Udostępnij przez link"
+      ],
+      "Sharing options": [
+        "Opcje udostępniania"
+      ],
+      "Zoom out": [
+        "Pomniejsz"
+      ],
+      "Reset zoom": [
+        "Dopasuj do strony"
+      ],
+      "Zoom in": [
+        "Powiększ"
+      ],
+      "Previous": [
+        "Wstecz"
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "Save": [
+        "Zapisz"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Apply": [
+        "Zastosuj"
+      ],
+      "Hide advanced PGP settings": [
+        "Ukryj zaawansowane ustawienia PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Pokaż zaawansowane ustawienia PGP"
+      ],
+      "Done": [
+        "Gotowe"
+      ],
+      "Clear data": [
+        "Usuń dane"
+      ],
+      "Recover data": [
+        "Odzyskaj dane"
+      ],
+      "Click here.": [
+        "Kliknij tutaj."
+      ],
+      "Re-sign": [
+        "Podpisz ponownie"
+      ],
+      "Add to group": [
+        "Dodaj do grupy"
+      ],
+      "Merge": [
+        "Scal"
+      ],
+      "View": [
+        "Podgląd"
+      ],
+      "Unmark for deletion": [
+        "Odznacz do usunięcia"
+      ],
+      "Mark for deletion": [
+        "Oznacz do usunięcia"
+      ],
+      "Preview contact": [
+        "Podgląd kontaktu"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Delete contact": [
+        "Usuń kontakt"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Usuń kontakt",
+        "Usuń ${ selectedCount } kontakty",
+        "Usuń ${ selectedCount } kontaktów",
+        "Usuń ${ selectedCount } kontaktów"
+      ],
+      "Deselect all": [
+        "Odznacz wszystkie"
+      ],
+      "Select all": [
+        "Zaznacz wszystkie"
+      ],
+      "Compose": [
+        "Napisz"
+      ],
+      "Forward as attachment": [
+        "Przekaż jako załącznik"
+      ],
+      "Merge contacts": [
+        "Scal kontakty"
+      ],
+      "Add new contact": [
+        "Dodaj nowy kontakt"
+      ],
+      "Add group": [
+        "Dodaj grupę"
+      ],
+      "Clear query": [
+        "Wyczyść zapytanie"
+      ],
+      "Add contact": [
+        "Dodaj kontakt"
+      ],
+      "import": [
+        "importuj"
+      ],
+      "Delete contact group": [
+        "Usuń grupę kontaktów"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Usuń grupę kontaktów",
+        "Usuń ${ selectedCount } grupy kontaktów",
+        "Usuń ${ selectedCount } grup kontaktów",
+        "Usuń ${ selectedCount } grupy kontaktów"
+      ],
+      "Add new group": [
+        "Dodaj nową grupę"
+      ],
+      "Export contacts": [
+        "Eksportuj kontakty"
+      ],
+      "Continue with Google": [
+        "Kontynuuj z Google"
+      ],
+      "Import contacts": [
+        "Importuj kontakty"
+      ],
+      "Choose a file or drag it here": [
+        "Wybierz plik lub przeciągnij go tutaj"
+      ],
+      "Import": [
+        "Importuj"
+      ],
+      "Close this banner": [
+        "Zamknij powiadomienie"
+      ],
+      "Refresh the page": [
+        "Odśwież stronę"
+      ],
+      "enable desktop notifications": [
+        "włączyć powiadomienia na pulpicie"
+      ],
+      "here": [
+        "tutaj"
+      ],
+      "Clear": [
+        "Wyczyść"
+      ],
+      "Add screenshot(s)": [
+        "Dodaj zrzuty ekranu"
+      ],
+      "Hide info": [
+        "Ukryj informacje"
+      ],
+      "Show info": [
+        "Pokaż informacje"
+      ],
+      "Copy email to clipboard": [
+        "Kopiuj adres e-mail do schowka"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Samouczek ${ BRAND_NAME }"
+      ],
+      "I have a question": [
+        "Mam pytanie"
+      ],
+      "Request a feature": [
+        "Poproś o dodatkową funkcję"
+      ],
+      "Report a problem": [
+        "Zgłoś problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Sklep ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Przełącz konto"
+      ],
+      "Sign out": [
+        "Wyloguj"
+      ],
+      "Go to settings": [
+        "Przejdź do ustawień"
+      ],
+      "Beta Access": [
+        "Dostęp beta"
+      ],
+      "Theme": [
+        "Motyw"
+      ],
+      "Keyboard shortcuts": [
+        "Skróty klawiszowe"
+      ],
+      "Mailbox layout": [
+        "Widok skrzynki pocztowej"
+      ],
+      "Mailbox density": [
+        "Układ skrzynki pocztowej"
+      ],
+      "Composer mode": [
+        "Tryb edytora"
+      ],
+      "Get started": [
+        "Rozpocznij"
+      ],
+      "Start setup": [
+        "Rozpocznij konfigurację"
+      ],
+      "Skip": [
+        "Pomiń"
+      ],
+      "Back": [
+        "Wstecz"
+      ],
+      "Use ${ label } theme": [
+        "Użyj motywu ${ label }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Remove bonuses": [
+        "Zrezygnuj z bonusów"
+      ],
+      "Try again": [
+        "Spróbuj ponownie"
+      ],
+      "Use a different card": [
+        "Użyj innej karty"
+      ],
+      "Use a different payment method": [
+        "Użyj innej metody płatności"
+      ],
+      "Retry": [
+        "Spróbuj ponownie"
+      ],
+      "Loading verification": [
+        "Ładowanie weryfikacji"
+      ],
+      "Select plan": [
+        "Wybierz plan"
+      ],
+      "Compare all features": [
+        "Porównaj wszystkie funkcje"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } zmieniając na plan roczny"
+      ],
+      "Pay": [
+        "Zapłać"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Usuń kod podarunkowy"
+      ],
+      "annual billing": [
+        "plan roczny"
+      ],
+      "Compare plans": [
+        "Porównaj plany"
+      ],
+      "Decrease": [
+        "Zmniejsz"
+      ],
+      "Increase": [
+        "Zwiększ"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Log in": [
+        "Zaloguj się"
+      ],
+      "Cancel all uploads": [
+        "Anuluj przesyłanie"
+      ],
+      "New upload": [
+        "Prześlij"
+      ],
+      "List layout": [
+        "Widok listy"
+      ],
+      "Grid layout": [
+        "Widok siatki"
+      ],
+      "Rename": [
+        "Zmień nazwę"
+      ],
+      "Move to folder": [
+        "Przenieś do folderu"
+      ],
+      "Move to trash": [
+        "Przenieś do Kosza"
+      ],
+      "Create new folder": [
+        "Utwórz nowy folder"
+      ],
+      "Name: A to Z": [
+        "Nazwa: od A do Z"
+      ],
+      "Name: Z to A": [
+        "Nazwa: od Z do A"
+      ],
+      "Modified date: new to old": [
+        "Data modyfikacji: od nowych do starych"
+      ],
+      "Modified date: old to new": [
+        "Data modyfikacji: od starych do nowych"
+      ],
+      "Type: A to Z": [
+        "Typ: od A do Z"
+      ],
+      "Type: Z to A": [
+        "Typ: od Z do A"
+      ],
+      "Size: small to large": [
+        "Rozmiar: od małych do dużych"
+      ],
+      "Size: large to small": [
+        "Rozmiar: od dużych do małych"
+      ],
+      "Upload file": [
+        "Prześlij plik"
+      ],
+      "Upload folder": [
+        "Prześlij folder"
+      ],
+      "Delete permanently": [
+        "Usuń trwale"
+      ],
+      "Restore from trash": [
+        "Przywróć z Kosza"
+      ],
+      "Empty trash": [
+        "Opróżnij Kosz"
+      ],
+      "Maximize transfers": [
+        "Maksymalizuj kolejkę przesyłania"
+      ],
+      "Minimize transfers": [
+        "Minimalizuj kolejkę przesyłania"
+      ],
+      "Close transfers": [
+        "Zamknij kolejkę przesyłania"
+      ],
+      "Pause download": [
+        "Wstrzymaj pobieranie"
+      ],
+      "Pause upload": [
+        "Wstrzymaj przesyłanie"
+      ],
+      "Resume download": [
+        "Wznów pobieranie"
+      ],
+      "Resume upload": [
+        "Wznów przesyłanie"
+      ],
+      "Cancel download": [
+        "Anuluj pobieranie"
+      ],
+      "Cancel upload": [
+        "Anuluj przesyłanie"
+      ],
+      "Restart download": [
+        "Pobierz ponownie"
+      ],
+      "Restart upload": [
+        "Prześlij ponownie"
+      ],
+      "Remove from this list": [
+        "Usuń z listy"
+      ],
+      "Share": [
+        "Udostępnij"
+      ],
+      "Create": [
+        "Utwórz"
+      ],
+      "Preview": [
+        "Podgląd"
+      ],
+      "Stop sharing": [
+        "Zatrzymaj udostępnianie"
+      ],
+      "Show shared link details": [
+        "Pokaż szczegóły udostępnionego linku"
+      ],
+      "Share file": [
+        "Udostępnij plik"
+      ],
+      "Start recovering": [
+        "Rozpocznij odzyskiwanie"
+      ],
+      "View more": [
+        "Pokaż więcej"
+      ],
+      "Move": [
+        "Przenieś"
+      ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Create link": [
+        "Utwórz link"
+      ],
+      "Undo": [
+        "Cofnij"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "Otwórz listę akcji"
+      ],
+      "Upgrade required": [
+        "Ulepszenie jest wymagane"
+      ],
+      "Email settings": [
+        "Ustawienia poczty e-mail"
+      ],
+      "Contact group": [
+        "Grupa kontaktów"
+      ],
+      "Link confirmation": [
+        "Potwierdź otwieranie linków"
+      ],
+      "Keyboard Shortcuts": [
+        "Skróty klawiszowe"
+      ],
+      "What's new": [
+        "Co nowego"
+      ],
+      "Invalid verification code": [
+        "Kod weryfikacyjny jest nieprawidłowy"
+      ],
+      "Request new verification code": [
+        "Poproś o nowy kod weryfikacyjny"
+      ],
+      "Human verification": [
+        "Weryfikacja antyspamowa"
+      ],
+      "Edit contact group": [
+        "Edytuj grupę kontaktów"
+      ],
+      "Create new group": [
+        "Utwórz nową grupę"
+      ],
+      "Add to ${ groupName }": [
+        "Dodaj do grupy ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "Dodaj do grupy",
+        "Dodaj do ${ groupCount } grup",
+        "Dodaj do ${ groupCount } grup",
+        "Dodaj do ${ groupCount } grup"
+      ],
+      "Email settings (${ emailAddress })": [
+        "Ustawienia poczty e-mail (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "Usuń ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "Usuń grupę kontaktów",
+        "Usuń ${ count } grupy kontaktów",
+        "Usuń ${ count } grup kontaktów",
+        "Usuń ${ count } grupy kontaktów"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } członek",
+        "${ emailsCount } członków",
+        "${ emailsCount } członków",
+        "${ emailsCount } członków"
+      ],
+      "Edit image": [
+        "Edytuj zdjęcie"
+      ],
+      "Edit contact": [
+        "Edytuj kontakt"
+      ],
+      "Create contact": [
+        "Utwórz kontakt"
+      ],
+      "Delete ${ count } contact": [
+        "Usuń kontakt",
+        "Usuń ${ count } kontakty",
+        "Usuń ${ count } kontaktów",
+        "Usuń ${ count } kontaktów"
+      ],
+      "Clearing data": [
+        "Usuwanie danych"
+      ],
+      "Warning": [
+        "Ostrzeżenie"
+      ],
+      "Recover data": [
+        "Odzyskaj dane"
+      ],
+      "Re-signing contacts": [
+        "Podpisywanie ponowne kontaktów"
+      ],
+      "Re-sign all contacts": [
+        "Podpisz ponownie wszystkie kontakty"
+      ],
+      "Exporting contacts": [
+        "Eksportowanie kontaktów"
+      ],
+      "Other names": [
+        "Inne nazwy"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Phone numbers": [
+        "Numery telefonów"
+      ],
+      "Addresses": [
+        "Adresy"
+      ],
+      "Other information": [
+        "Inne informacje"
+      ],
+      "Contact Details": [
+        "Szczegóły kontaktu"
+      ],
+      "Merging contacts": [
+        "Scalanie kontaktów"
+      ],
+      "Merge contacts": [
+        "Scal kontakty"
+      ],
+      "Deleting contacts": [
+        "Usuwanie kontaktów"
+      ],
+      "View contacts": [
+        "Pokaż kontakty"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Groups": [
+        "Grupy"
+      ],
+      "Settings": [
+        "Ustawienia"
+      ],
+      "Select action to take on contact group": [
+        "Wybierz akcję dla grupy kontaktów"
+      ],
+      "Add contact group name": [
+        "Dodaj nazwę grupy kontaktów"
+      ],
+      "Select contact group": [
+        "Wybierz grupę kontaktów"
+      ],
+      "Import groups": [
+        "Importuj grupy"
+      ],
+      "Import contacts": [
+        "Importuj kontakty"
+      ],
+      "Report a problem": [
+        "Zgłoś problem"
+      ],
+      "Open help menu": [
+        "Otwórz pomoc"
+      ],
+      "Back": [
+        "Wstecz"
+      ],
+      "Open settings menu": [
+        "Otwórz ustawienia"
+      ],
+      "Select a theme": [
+        "Wybierz motyw"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Potwierdź utratę Proton bonusów"
+      ],
+      "Unsupported browser": [
+        "Przeglądarka jest nieobsługiwana"
+      ],
+      "Card verification": [
+        "Weryfikacja karty płatniczej"
+      ],
+      "Payment verification": [
+        "Weryfikacja płatności"
+      ],
+      "Processing...": [
+        "Przetwarzanie..."
+      ],
+      "Card verification in progress": [
+        "Weryfikacja karty płatniczej jest w toku"
+      ],
+      "Payment verification in progress": [
+        "Weryfikacja płatności jest w toku"
+      ],
+      "PayPal verification failed": [
+        "Weryfikacja płatności PayPal nie powiodła się"
+      ],
+      "3-D Secure verification failed": [
+        "Weryfikacja płatności 3-D Secure nie powiodła się"
+      ],
+      "Error": [
+        "Błąd"
+      ],
+      "ZIP / postal code": [
+        "Kod pocztowy"
+      ],
+      "Payment details": [
+        "Szczegóły płatności"
+      ],
+      "Currency": [
+        "Waluta"
+      ],
+      "Billing cycle": [
+        "Cykl rozliczeniowy"
+      ],
+      "Current plan": [
+        "Obecny plan"
+      ],
+      "Processing": [
+        "Przetwarzanie"
+      ],
+      "Apply gift code": [
+        "Zastosuj kod podarunkowy"
+      ],
+      "Subtotal": [
+        "Suma częściowa"
+      ],
+      "Coupon discount": [
+        "Kupon zniżkowy"
+      ],
+      "Total (monthly)": [
+        "Łącznie (miesięcznie)"
+      ],
+      "Credits": [
+        "Środki"
+      ],
+      "Gift code": [
+        "Kod podarunkowy"
+      ],
+      "Amount due": [
+        "Do zapłaty"
+      ],
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Network error": [
+        "Błąd sieci"
+      ],
+      "Select a plan": [
+        "Wybierz plan"
+      ],
+      "Customize your plan": [
+        "Dostosuj plan"
+      ],
+      "Checkout": [
+        "Zapłać"
+      ],
+      "Plan summary": [
+        "Podsumowanie planu"
+      ],
+      "${ appName } customization": [
+        "Personalizacja planu ${ appName }"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "Zaloguj się ponownie, aby kontynuować"
+      ],
+      "Account suspended": [
+        "Konto zostało zawieszone"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Wpisz nazwę użytkownika lub adres ProtonMail"
+      ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "Skróty klawiszowe ${ appName }"
+      ],
+      "Mailbox density": [
+        "Układ skrzynki pocztowej"
+      ],
+      "Mailbox layout": [
+        "Widok skrzynki pocztowej"
+      ],
+      "Composer mode": [
+        "Tryb edytora"
+      ],
+      "Beta Access": [
+        "Dostęp beta"
+      ],
+      "Duplicate folder found": [
+        "Zduplikowany folder został znaleziony"
+      ],
+      "Duplicate file found": [
+        "Zduplikowany plik został znaleziony"
+      ],
+      "Drop to upload": [
+        "Upuść, aby przesłać"
+      ],
+      "Change layout": [
+        "Zmień widok"
+      ],
+      "Show actions": [
+        "Pokaż akcje"
+      ],
+      "Sort files/folders": [
+        "Sortuj pliki/foldery"
+      ],
+      "Trash": [
+        "Kosz"
+      ],
+      "Empty trash": [
+        "Opróżnij Kosz"
+      ],
+      "Cancel all active transfers": [
+        "Anuluj wszystkie aktywne transfery"
+      ],
+      "My files": [
+        "Moje pliki"
+      ],
+      "You have no folders yet": [
+        "Nie posiadasz jeszcze żadnych folderów"
+      ],
+      "You have no files to share": [
+        "Nie posiadasz plików do udostępnienia"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "Plik jest gotowy do pobrania"
+      ],
+      "Download completed": [
+        "Pobieranie zostało zakończone"
+      ],
+      "Download failed": [
+        "Pobieranie nie powiodło się"
+      ],
+      "Download canceled": [
+        "Pobieranie zostało anulowane"
+      ],
+      "Downloading": [
+        "Pobieranie"
+      ],
+      "Enter file password to download": [
+        "Wpisz hasło pliku, aby go pobrać"
+      ],
+      "The link either does not exist or has expired": [
+        "Link wygasł lub nie istnieje"
+      ],
+      "Restore your files": [
+        "Przywróć pliki"
+      ],
+      "File recovery process": [
+        "Proces odzyskiwania pliku"
+      ],
+      "You have inaccessible files": [
+        "Posiadasz niedostępne pliki"
+      ],
+      "Rename a folder": [
+        "Zmień nazwę folderu"
+      ],
+      "Rename a file": [
+        "Zmień nazwę pliku"
+      ],
+      "File details": [
+        "Szczegóły pliku"
+      ],
+      "Folder details": [
+        "Szczegóły folderu"
+      ],
+      "Name": [
+        "Nazwa"
+      ],
+      "Uploaded by": [
+        "Przesłany przez"
+      ],
+      "Location": [
+        "Lokalizacja"
+      ],
+      "Modified": [
+        "Zmodyfikowano"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "MIME type": [
+        "Typ MIME"
+      ],
+      "Size": [
+        "Rozmiar"
+      ],
+      "Shared": [
+        "Udostępniony"
+      ],
+      "# of accesses": [
+        "Liczba dostępów"
+      ],
+      "Create a new folder": [
+        "Utwórz nowy folder"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Select link expiration date": [
+        "Wybierz datę wygaśnięcia linku"
+      ],
+      "Select link expiration time": [
+        "Wybierz czas wygaśnięcia linku"
+      ],
+      "Share via link": [
+        "Udostępnij przez link"
+      ],
+      "Additional settings": [
+        "Dodatkowe ustawienia"
+      ],
+      "Manage secure link": [
+        "Zarządzaj bezpiecznym linkiem"
+      ],
+      "Stop sharing with everyone?": [
+        "Zatrzymać udostępnianie?"
+      ],
+      "Discard changes?": [
+        "Czy chcesz odrzucić zmiany?"
+      ],
+      "Discard": [
+        "Odrzuć"
+      ],
+      "Files details": [
+        "Szczegóły plików"
+      ],
+      "Number of files": [
+        "Liczba plików"
+      ],
+      "Total size": [
+        "Łączny rozmiar"
+      ],
+      "Delete permanently": [
+        "Usuń trwale"
+      ],
+      "Stop sharing": [
+        "Zatrzymaj udostępnianie"
       ]
     },
     "Label": {
@@ -2066,12 +2069,6 @@
       "Browser version": [
         "Wersja przeglądarki"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
       "Display name": [
         "Nazwa wyświetlana"
       ],
@@ -2122,6 +2119,12 @@
       ],
       "Payer": [
         "Płatnik"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
       ],
       "Cancel": [
         "Anuluj"
@@ -2231,44 +2234,6 @@
         "Klucz nie może zostać użyty do szyfrowania"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Dowiedz się więcej"
-      ],
-      "Request an invite": [
-        "Poproś o zaproszenie"
-      ],
-      "clearing your browser cache": [
-        "wyczyszczenie pamięci podręcznej przeglądarki"
-      ],
-      "Pay invoice": [
-        "Zapłać fakturę"
-      ],
-      "Upgrade account": [
-        "Ulepsz konto"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Go to subscription plans": [
-        "Przejdź do subskrypcji planów"
-      ],
-      "click here": [
-        "kliknij tutaj"
-      ],
-      "Add a gift code": [
-        "Dodaj kod podarunkowy"
-      ],
-      "My files": [
-        "Moje pliki"
-      ],
-      "Shared": [
-        "Udostępnione"
-      ],
-      "Trash": [
-        "Kosz"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Np. "
@@ -2346,6 +2311,44 @@
         "${ minutes } minuty",
         "${ minutes } minut",
         "${ minutes } minuty"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "Request an invite": [
+        "Poproś o zaproszenie"
+      ],
+      "Pay invoice": [
+        "Zapłać fakturę"
+      ],
+      "Upgrade account": [
+        "Ulepsz konto"
+      ],
+      "clearing your browser cache": [
+        "wyczyszczenie pamięci podręcznej przeglądarki"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Go to subscription plans": [
+        "Przejdź do subskrypcji planów"
+      ],
+      "click here": [
+        "kliknij tutaj"
+      ],
+      "Add a gift code": [
+        "Dodaj kod podarunkowy"
+      ],
+      "My files": [
+        "Moje pliki"
+      ],
+      "Shared": [
+        "Udostępnione"
+      ],
+      "Trash": [
+        "Kosz"
       ]
     },
     "Storage": {
@@ -2544,17 +2547,17 @@
       "Contacts could not be merged": [
         "Kontakty nie mogły zostać scalone"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "Twoje ustawienia daty i czasu nie są zsynchronizowane."
       ],
-      "Are you sure you want to discard your import?": [
-        ""
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ]
     },
     "Success": {
@@ -2634,6 +2637,49 @@
         "Zostały znalezione ${ items.length } sugestie. Użyj klawiszy do nawigacji.",
         "Zostało znalezionych ${ items.length } sugestii. Użyj klawiszy do nawigacji.",
         "Zostało znalezionych ${ items.length } sugestii. Użyj klawiszy do nawigacji."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplikacje Proton"
+      ],
+      "Go to ${ title }": [
+        "Przejdź do ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Przejdź do ${ vpnName }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ups, coś poszło nie tak"
+      ],
+      "There was a problem connecting to Proton.": [
+        "Wystąpił problem z połączeniem z usługą Proton."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } lub sprawdź swoje połączenie."
+      ],
+      "Error: ${ errorMessage }": [
+        "Błąd: ${ errorMessage }"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Poczekaj chwilę, naprawiamy ten błąd."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "${ refresh } lub spróbuj ponownie później."
+      ],
+      "Internal server error": [
+        "Wewnętrzny błąd serwera"
+      ],
+      "You may also refresh the page or try again later.": [
+        "Możesz także odświeżyć stronę lub spróbować ponownie później."
+      ],
+      "Not found": [
+        "Nie znaleziono"
+      ],
+      "Access denied": [
+        "Odmowa dostępu"
       ]
     },
     "Delinquent modal title": {
@@ -3088,47 +3134,9 @@
         "Zaszyfrowanych i dodanych kontaktów: ${ totalImported }/${ totalToImport }"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplikacje Proton"
-      ],
-      "Go to ${ title }": [
-        "Przejdź do ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Przejdź do ${ vpnName }"
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ups, coś poszło nie tak"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Wystąpił problem z połączeniem z usługą Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } lub sprawdź swoje połączenie."
-      ],
-      "Error: ${ errorMessage }": [
-        "Błąd: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Poczekaj chwilę, naprawiamy ten błąd."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } lub spróbuj ponownie później."
-      ],
-      "Internal server error": [
-        "Wewnętrzny błąd serwera"
-      ],
-      "You may also refresh the page or try again later.": [
-        "Możesz także odświeżyć stronę lub spróbować ponownie później."
-      ],
-      "Not found": [
-        "Nie znaleziono"
-      ],
-      "Access denied": [
-        "Odmowa dostępu"
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3153,7 +3161,7 @@
         "Problem z aplikacją Bridge"
       ],
       "Import / export problem": [
-        "Import / eksport"
+        "Problem z importem / eksportem"
       ],
       "Connection problem": [
         "Problem z połączeniem"
@@ -3232,32 +3240,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
       ]
     },
     "Text": {
@@ -3798,6 +3780,27 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
       ]
     },
     "Select files": {

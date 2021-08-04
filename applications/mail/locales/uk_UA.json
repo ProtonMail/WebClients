@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Невідома помилка"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити в цьому браузері"
+      ],
+      "Unknown error": [
+        "Невідома помилка"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Це поле є обов'язковим"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
@@ -105,14 +105,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
       ],
+      "File has no contents to preview": [
+        "Файл не має вмісту для перегляду"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Неправильний пароль поштової скриньки. Спробуйте знову"
       ],
       "Incorrect login credentials. Please try again": [
         "Неправильні дані для входу. Будь ласка спробуйте ще раз"
-      ],
-      "File has no contents to preview": [
-        "Файл не має вмісту для перегляду"
       ],
       "Process aborted": [
         "Процес перервано"
@@ -154,10 +154,10 @@
         "Помилка підключення до Bitcoin API."
       ],
       "Amount below minimum.": [
-        "Сума менше мінімуму."
+        "Сума менше допустимого обмеження."
       ],
       "Amount above the maximum.": [
-        "Сума більше максимуму."
+        "Сума перевищує обмеження."
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Найменша сума, яку можна внести, становить ${ price }"
@@ -169,7 +169,7 @@
         "Найменший платіж, який ми приймаємо, становить ${ _price2 }"
       ],
       "Checkout expired, please try again.": [
-        "Час на розрахунок вартості замовлення минув, будь ласка, повторіть спробу."
+        "Час оформлення замовлення минув, повторіть спробу."
       ],
       "Invalid code": [
         "Недійсний код"
@@ -207,12 +207,6 @@
       "Request timed out.": [
         "Час очікування запиту завершився."
       ],
-      "Signature verification failed": [
-        "Неможливо перевірити підпис"
-      ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
-      ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
       ],
@@ -236,6 +230,12 @@
       ],
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
+      ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
+      ],
+      "Could not find address ${ email }.": [
+        "Неможливо знайти адресу ${ email }."
       ],
       "Missing signature": [
         "Відсутній підпис"
@@ -324,6 +324,15 @@
       "The maximum expiration is 4 weeks.": [
         "Максимальний термін дії 4 тижні."
       ],
+      "Choose a date in the future.": [
+        "Виберіть дату в майбутньому."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Виберіть дату в межах наступного ${ SCHEDULED_MAX_DATE_DAYS } дня.",
+        "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів."
+      ],
       "Public key could not be trusted": [
         "Відкритий ключ не може бути довіреним"
       ],
@@ -353,26 +362,23 @@
       "Close": [
         "Закрити"
       ],
-      "Close modal": [
-        "Закрити вікно"
+      "Confirm": [
+        "Підтвердити"
       ],
       "Cancel": [
         "Скасувати"
       ],
+      "Close modal": [
+        "Закрити вікно"
+      ],
       "Submit": [
         "Відправити"
-      ],
-      "Confirm": [
-        "Підтвердити"
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Використовувати налаштування“${ label }”"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -487,6 +493,9 @@
       ],
       "Underline": [
         "Підкреслення"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
@@ -662,6 +671,9 @@
       "Next": [
         "Далі"
       ],
+      "Signing out": [
+        "Вихід"
+      ],
       "Clear": [
         "Очистити"
       ],
@@ -692,12 +704,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Вихід"
-      ],
-      "Log in": [
-        "Увійти"
-      ],
       "Details": [
         "Подробиці"
       ],
@@ -718,6 +724,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Log in": [
+        "Увійти"
       ],
       "Get started": [
         "Розпочнімо"
@@ -887,17 +896,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Додати до ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Дізнатися більше"
-      ],
-      "Open shop": [
-        "Відкрити магазин"
-      ],
-      "Open calendar": [
-        "Відкрити календар"
-      ],
       "Send anyway": [
         "Все одно надіслати"
+      ],
+      "Got it": [
+        "Зрозуміло"
       ],
       "Maximize composer": [
         "Розгорнути редактор"
@@ -965,6 +968,9 @@
       "Not saved": [
         "Не збережено"
       ],
+      "Schedule send": [
+        "Запланувати надсилання"
+      ],
       "Expiration time": [
         "Час завершення"
       ],
@@ -976,6 +982,9 @@
       ],
       "Set": [
         "Встановити"
+      ],
+      "Schedule message": [
+        "Запланувати повідомлення"
       ],
       "Print": [
         "Друк"
@@ -1061,6 +1070,9 @@
       "View keys": [
         "Переглянути ключі"
       ],
+      "Edit draft": [
+        "Редагувати чернетку"
+      ],
       "Download ${ attachmentName }": [
         "Завантажити ${ attachmentName }"
       ],
@@ -1084,6 +1096,9 @@
       ],
       "Undo": [
         "Скасувати"
+      ],
+      "View message": [
+        "Переглянути повідомлення"
       ],
       "Enable": [
         "Увімкнути"
@@ -1190,6 +1205,9 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
+      "Create new message": [
+        "Створити повідомлення"
+      ],
       "Import messages": [
         "Імпортувати повідомлення"
       ],
@@ -1198,6 +1216,15 @@
       ],
       "Start using ${ appName }": [
         "Розпочніть використання ${ appName }"
+      ],
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Open shop": [
+        "Відкрити магазин"
+      ],
+      "Open calendar": [
+        "Відкрити календар"
       ]
     },
     "Title": {
@@ -1402,15 +1429,6 @@
       "Open settings menu": [
         "Відкрити меню налаштувань"
       ],
-      "Send feedback": [
-        "Надіслати відгук"
-      ],
-      "Feedback": [
-        "Відгук"
-      ],
-      "Give feedback": [
-        "Залишити відгук"
-      ],
       "Confirm loss of Proton bonuses": [
         "Підтвердити втрату бонусів Proton"
       ],
@@ -1442,7 +1460,7 @@
         "Помилка"
       ],
       "ZIP / postal code": [
-        "ZIP-код / поштовий індекс"
+        "Поштовий індекс"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -1472,13 +1490,13 @@
         "Всього (щомісячно)"
       ],
       "Credits": [
-        "Кошти"
+        "Кредити"
       ],
       "Gift code": [
         "Подарунковий код"
       ],
       "Amount due": [
-        "Сума до сплати"
+        "До сплати"
       ],
       "Cancel subscription": [
         "Скасувати передплату"
@@ -1493,10 +1511,10 @@
         "Налаштуйте свій тарифний план"
       ],
       "Checkout": [
-        "Розрахунок вартості замовлення"
+        "Розрахунок"
       ],
       "Plan summary": [
-        "Підсумок тарифного плану"
+        "Підсумок плану"
       ],
       "${ appName } customization": [
         "Налаштування ${ appName }"
@@ -1624,6 +1642,9 @@
       "Send email": [
         "Надіслати лист"
       ],
+      "Schedule send": [
+        "Запланувати надсилання"
+      ],
       "New message": [
         "Нове повідомлення"
       ],
@@ -1740,9 +1761,6 @@
       "Loading": [
         "Завантаження"
       ],
-      "support team": [
-        "командою підтримки"
-      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
@@ -1841,6 +1859,9 @@
       ],
       "Plain text": [
         "Звичайний текст"
+      ],
+      "support team": [
+        "командою підтримки"
       ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
@@ -1998,6 +2019,9 @@
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
       ],
+      "Loading ${ appName }": [
+        "Завантажується ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Знімки додано"
       ],
@@ -2028,18 +2052,6 @@
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
       ],
-      "Loading ${ appName }": [
-        "Завантажується ${ appName }"
-      ],
-      "here": [
-        "тут"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Цей обліковий запис було призупинено через потенційне порушення правил."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
-      ],
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
@@ -2057,6 +2069,15 @@
       ],
       "of": [
         "з"
+      ],
+      "here": [
+        "тут"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Цей обліковий запис було призупинено через потенційне порушення правил."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
@@ -2111,12 +2132,12 @@
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } з'єднання для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднання для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)"
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "З міркувань безпеки ваш банк потребує перевірки за допомогою 3-D Secure."
+        "З міркувань безпеки, ваш банк вимагає перевірку 3-D Secure."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться назад."
@@ -2143,34 +2164,34 @@
         "Перевірка платежу може тривати кілька хвилин."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Будь ласка, спробуйте ще раз, скористайтесь іншим способом оплати, або зв'яжіться з PayPal для отримання допомоги."
+        "Будь ласка, спробуйте ще раз, використайте інший спосіб оплати, або зв'яжіться з PayPal для отримання допомоги."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Будь ласка, спробуйте ще раз, скористайтесь іншим способом оплати, або зв'яжіться зі своїм банком для отримання допомоги."
+        "Будь ласка, спробуйте ще раз, використайте інший спосіб оплати, або зв'яжіться зі своїм банком для допомоги."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa та MasterCard — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
       "Amount below minimum (${ amount }).": [
-        "Сума нижче за мінімальну (${ amount })."
+        "Сума нижче найменшої (${ amount })."
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Після здійснення платежу в Bitcoin, будь ласка, дотримуйтесь наведених нижче настанов для оновлення."
+        "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
       ],
       "Please verify the payment in the new tab.": [
-        "Будь ласка, підтвердьте платіж у новій вкладці."
+        "Підтвердьте платіж у новій вкладці."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ми перенаправимо вас на PayPal у новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками спливаючих вікон, вимкніть їх перед тим, як продовжити."
+        "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Ваш обліковий запис PayPal повинен мати прив'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
+        "Ваш обліковий запис PayPal повинен мати пов'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Це дозволить використовувати PayPal для оплати вашої підписки Proton. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви використовуєте якісь блокувальники спливаючих вікон, вимкніть їх перед тим, як продовжити."
+        "Це дозволить використовувати PayPal для вашої передплати Proton. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "У вас повинна бути кредитна картка чи банківський рахунок, пов'язаний з вашим обліковим записом PayPal, щоб ви могли його використати як спосіб оплати."
@@ -2188,16 +2209,16 @@
         "Включено"
       ],
       "* Customizable features": [
-        "* Функції, які налаштовуються"
+        "* Налаштовувані функції"
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
         "Отримуйте доступ до потокових служб, наприклад, ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, незалежно від того, де ви знаходитесь."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Отримайте доступ до заблокованого вмісту, наприклад, суспільних мереж, новин, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
+        "Отримайте доступ до заблокованого вмісту, наприклад, соціальних мереж, новин, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
       ],
       "For getting started with private and secure emailing.": [
-        "Щоб розпочати приватну та захищену роботу з електронною поштою."
+        "Щоб розпочати роботу з приватною та захищеною електронною поштою."
       ],
       "A free and uncensored Internet should be available to all.": [
         "Вільний Інтернет без цензури має бути доступним для всіх."
@@ -2209,7 +2230,7 @@
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Для користувачів, яким необхідна повнофункціональна поштова скринька з вдосконаленим захистом."
+        "Для користувачів, яким необхідна повнофункціональна поштова скринька з розширеним захистом."
       ],
       "For professionals that need secure business communications.": [
         "Для професіоналів, яким потрібні безпечні бізнес-комунікації."
@@ -2236,16 +2257,16 @@
         "Обліковий запис успішно оновлено"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Завантажте свою улюблену програму сьогодні та отримайте приватність всюди з собою."
+        "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
       ],
       "(Mail + VPN)": [
         "(Пошта + VPN)"
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } Безкоштовно"
+        "${ mailAppName } Безплатно"
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } Безкоштовно"
+        "${ vpnAppName } Безплатно"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Сплачується в кінці вашого поточного платіжного циклу (оновлюється ${ renewalDate })"
@@ -2254,10 +2275,10 @@
         "Для можливості скасування передплати ви повинні вилучити будь-які додаткові календарі та будь-які посилання на спільні календарі. ${ linkButton }"
       ],
       "No payment is required at this time.": [
-        "Наразі нічого сплачувати не потрібно."
+        "Наразі платіж не вимагається."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Будь ласка, зверніть увагу, що після натиснення кнопки Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
+        "Зверніть увагу, що після натиснення кнопки Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "До вашої передплати застосовано знижку 20% з купоном ${ code }"
@@ -2275,10 +2296,10 @@
         "До вашої передплати застосовано знижку за кодом купона ${ code }"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Платежі захищені TLS-шифруванням та швейцарським законодавством щодо приватності."
+        "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
       ],
       "30 days money-back guarantee.": [
-        "Гарантоване повернення коштів впродовж 30 днів."
+        "Гарантія повернення коштів протягом 30 днів."
       ],
       "Save extra 20%": [
         "Заощадьте додаткові 20%"
@@ -2302,16 +2323,16 @@
         "Домени"
       ],
       "Addresses": [
-        "Адрес"
+        "Адреси"
       ],
       "Connections": [
-        "З'єднань"
+        "З'єднання"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Дозволяє вам розмістити електронну пошту для власному(их) домені(ах) на ${ mailAppName }, наприклад, john.smith@example.com"
+        "Дозволяє вам розмістити електронну пошту для власних доменів на ${ mailAppName }, наприклад, john.smith@example.com"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "Додати додаткові адреси до свого облікового запису, наприклад, user2@protonmail.com"
+        "Додати інші адреси до свого облікового запису, наприклад user2@protonmail.com"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Кількість VPN-з'єднань, які можна призначити користувачам. Кожен під'єднаний пристрій використовує одне VPN-з'єднання."
@@ -2324,12 +2345,12 @@
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
         "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднання.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднання.",
         "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднань.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднань.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднаня(ь)."
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднань."
       ],
       "Each additional connection can be assigned to users in your organization.": [
-        "Кожне додаткове з'єднання може бути призначене користувачам у вашій організації."
+        "Кожне додаткове з'єднання може бути призначене користувачам вашої організації."
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
         "Перейдіть на ${ professionalPlan }, щоб додати більше з'єднань."
@@ -2341,7 +2362,7 @@
         "Не налаштовується"
       ],
       "Expired": [
-        "Термін дії закінчився"
+        "Протерміновано"
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -2440,7 +2461,10 @@
         "Ви не вказали тему для свого листа. Хочете надіслати лист без теми?"
       ],
       "Do you want to send your message anyway?": [
-        "Ви хочете надіслати повідомлення у будь-якому випадку?"
+        "Ви все одно хочете надіслати повідомлення?"
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Не вдалося перевірити ${ contactName }: контакт має некоректний підпис.\nЦе може бути результатом скидання пароля.\nВи повинні повторно підписати контакт для можливості надсилання повідомлення до ${ contactAddress }, або редагувати контакт."
@@ -2491,16 +2515,16 @@
         "Ви дійсно хочете остаточно видалити ${ count } повідомлень?"
       ],
       "All messages stored with this label will be permanently deleted.": [
-        "Всі повідомлення з цією міткою буде остаточно видалено."
+        "Усі повідомлення з цією міткою будуть остаточно видалені."
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        "Усі повідомлення у цій теці буде остаточно видалено."
+        "Усі повідомлення в цій теці будуть остаточно видалені."
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "Ви впевнені, що хочете видалити всі повідомлення з цією міткою?"
+        "Ви дійсно хочете видалити всі повідомлення з цією міткою?"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Ви дійсно хочете видалити всі повідомлення з цієї папки?"
+        "Ви дійсно хочете видалити всі повідомлення з цієї теки?"
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
@@ -2586,6 +2610,9 @@
         "Годин",
         "Годин"
       ],
+      "When do you want your message to be sent?": [
+        "Коли ви хочете надіслати ваше повідомлення?"
+      ],
       "Draft discarded": [
         "Чернетку відхилено"
       ],
@@ -2615,6 +2642,9 @@
       ],
       "Sending": [
         "Надсилання"
+      ],
+      "Scheduled": [
+        "Заплановано"
       ],
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
@@ -2709,6 +2739,15 @@
       "Subject:": [
         "Тема:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Це повідомлення переміститься до чернеток, щоб ви змогли його редагувати. Після його надсилання вам необхідно повторно запланувати."
+      ],
+      "This message will be sent shortly": [
+        "Це повідомлення невдовзі буде надіслано"
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        "Це повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
+      ],
       "file attached": [
         "вкладений файл",
         "вкладені файли",
@@ -2721,8 +2760,14 @@
         "вбудованих зображень",
         "вбудованих зображень"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        "Повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
+      ],
       "Message sent": [
         "Повідомлення надіслано"
+      ],
+      "Scheduling message...": [
+        "Планування повідомлення..."
       ],
       "Sending message...": [
         "Надсилання повідомлення..."
@@ -2766,9 +2811,6 @@
         "Приблизний час до завершення: ${ estimatedMinutes } хвилин",
         "Приблизний час до завершення: ${ estimatedMinutes } хвилин"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton оновив вигляд. Ми хотіли б почути вашу думку про це оновлення!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } непрочитана розмова",
         "${ unreadCount } непрочитані розмови",
@@ -2780,6 +2822,12 @@
         "${ unreadCount } непрочитані повідомлення",
         "${ unreadCount } непрочитаних повідомлень",
         "${ unreadCount } непрочитаних повідомлень"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "${ totalMessagesCount } заплановане повідомлення",
+        "${ totalMessagesCount } заплановані повідомлення",
+        "${ totalMessagesCount } запланованих повідомлень",
+        "${ totalMessagesCount } запланованих повідомлень"
       ],
       "Manage your folders": [
         "Керуйте своїми теками"
@@ -2804,6 +2852,12 @@
       ],
       "(No Recipient)": [
         "(Немає отримувача)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "Знайдено ${ occurrencesInBody } повторення",
+        "Знайдено ${ occurrencesInBody } повторення",
+        "Знайдено ${ occurrencesInBody } повторень",
+        "Знайдено ${ occurrencesInBody } повторень"
       ],
       "No more results found": [
         "Більше нічого не знайдено"
@@ -2830,31 +2884,31 @@
         "У вас немає листів"
       ],
       "Get more storage and premium features.": [
-        "Отримайте більше місця у сховищі та преміальних функцій."
+        "Отримайте більший обсяг сховища та преміумфункцій."
       ],
       "Support privacy by upgrading for": [
-        "Підтримайте приватність покращивши обліковий запис до"
+        "Підтримайте приватність передплативши"
       ],
       "/month.": [
-        "на місяць."
+        "/місяць."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Покращте щоб надсилати електронну пошти з адреси @pm.me."
+        "Передплатіть тарифний план, щоб надсилати листи з адреси @pm.me."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Покращте щоб створювати більше папок, фільтрів та адрес."
+        "Передплатіть тарифний план, щоб створити більше тек, фільтрів та адрес."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "Покращте щоб налаштувати автовідповідач на час відпустки."
+        "Передплатіть тарифний план, щоб налаштувати автоматичну відповідь."
       ],
       "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Покращте щоб користуватися ProtonMail за допомогою сторонніх програм для ПК."
+        "Передплатіть тарифний план, щоб використовувати ProtonMail зі сторонніми комп'ютерними клієнтами."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не заробляє грошей на порушенні приватності."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Покращити щоб підтримати приватність та отримати більше функцій."
+        "Передплатіть тарифний план, щоб підтримати приватність та отримати більше функцій."
       ],
       "Visit our shop to get Proton merchandise.": [
         "Відвідайте наш магазин щоб отримати товари від Proton."
@@ -2863,40 +2917,40 @@
         "Збільште обсяг сховища, починаючи з"
       ],
       "For increased security, activate 2FA.": [
-        "Для більшої безпеки активуйте двофакторну аутентифікацію."
+        "Для підвищення безпеки активуйте двоетапну перевірку."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "Використовуйте гарячі клавиши шоб швидше управляти вашою електронною поштою."
+        "Використовуйте комбінації клавіш для ефективнішої роботи з поштою."
       ],
       "Themes can give your inbox a new look.": [
-        "Теми нададуть новий вигляд вашій почтовій скриньці."
+        "Теми можуть змінювати вигляд вашої поштової скриньки."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Покращте щоб мати доступ до електронних листів з власного доменного імені."
+        "Передплатіть тарифний план, щоб розмістити електронну пошту з вашого власного домену."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail також може захистити ваш бізнес."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Покращте доб додавати більше адрес до вашого облікового запису."
+        "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Покращте щоб легко надсилати електронні листи групам контактів."
+        "Передплатіть тарифний план, щоб легко надсилати електронні листи групам контактів."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Покращте щоб підтримати Інтернет, у якому приватність стоїть на першому місці."
+        "Передплатіть тарифний план, щоб підтримати Інтернет, у якому приватність є найважливішою."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Покращте щоб підтримати нашу місію приватності для всіх."
+        "Передплатіть тарифний план, щоб підтримати нашу місію приватності для всіх."
       ],
       "Store and share files securely with Proton Drive.": [
-        "Безпечно зберігайте та ділитеся файлами за допомогою Proton Drive."
+        "Безпечно зберігайте та обмінюйтесь файлами за допомогою Proton Drive."
       ],
       "You can use ProtonVPN for free today.": [
-        "Сьогодні ви можете користуватися ProtonVPN безкоштовно."
+        "Сьогодні ви можете користуватися ProtonVPN безплатно."
       ],
       "Use Proton Calendar to keep your agenda private.": [
-        "Використовуйте Proton Calendar щоб зберегти приватність вашого порядку денного."
+        "Використовуйте Proton Calendar, щоб зберігати свої події приватними."
       ],
       "${ unread } unread conversation": [
         "${ unread } непрочитана розмова",
@@ -3113,9 +3167,6 @@
       "Select how your composer opens by default.": [
         "Оберіть типовий вигляд редактора."
       ],
-      "What is the primary reason for this rating?": [
-        "Яка основна причина такої оцінки?"
-      ],
       "Name on card": [
         "Ім'я на картці"
       ],
@@ -3132,10 +3183,10 @@
         "Виберіть свою країну"
       ],
       "ZIP": [
-        "ZIP-код"
+        "Поштовий індекс"
       ],
       "BTC amount:": [
-        "Сума у BTC:"
+        "Сума в BTC:"
       ],
       "BTC address:": [
         "Адреса BTC:"
@@ -3144,10 +3195,10 @@
         "Виберіть спосіб"
       ],
       "Total (${ countdown })": [
-        "Загалом (${ countdown })"
+        "Всього (${ countdown })"
       ],
       "Total": [
-        "Загалом"
+        "Всього"
       ],
       "Proration": [
         "Розподілення"
@@ -3278,6 +3329,12 @@
       "Blind Carbon Copy": [
         "Прихована копія"
       ],
+      "Date": [
+        "Дата"
+      ],
+      "Time": [
+        "Час"
+      ],
       "From:": [
         "Від:"
       ],
@@ -3356,15 +3413,6 @@
       "Filter": [
         "Фільтр"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Як би ви оцінили свої враження від нового ProtonMail?"
-      ],
-      "0 - Not a fan": [
-        "0 - Не подобається"
-      ],
-      "10 - Love it!": [
-        "10 - У захваті!"
-      ],
       "Also archive": [
         "Також архівувати"
       ]
@@ -3401,33 +3449,6 @@
       ],
       "Add a gift code": [
         "Додати подарунковий код"
-      ],
-      "Inbox": [
-        "Вхідні"
-      ],
-      "Drafts": [
-        "Чернетки"
-      ],
-      "Sent": [
-        "Надіслані"
-      ],
-      "Trash": [
-        "Смітник"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Уся пошта"
-      ],
-      "Archive": [
-        "Архів"
-      ],
-      "Starred": [
-        "Із зірочкою"
-      ],
-      "Outbox": [
-        "Вихідні"
       ],
       "You need to activate your calendar keys to add this event": [
         "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
@@ -3504,6 +3525,33 @@
       "Add label": [
         "Додати мітку"
       ],
+      "Inbox": [
+        "Вхідні"
+      ],
+      "Drafts": [
+        "Чернетки"
+      ],
+      "Scheduled": [
+        "Заплановано"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
+      "Starred": [
+        "Із зірочкою"
+      ],
+      "Archive": [
+        "Архів"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Trash": [
+        "Смітник"
+      ],
+      "All mail": [
+        "Уся пошта"
+      ],
       "Folders": [
         "Теки"
       ],
@@ -3515,6 +3563,9 @@
       ],
       "Manage your labels": [
         "Керуйте своїми мітками"
+      ],
+      "Outbox": [
+        "Вихідні"
       ]
     },
     "Placeholder": {
@@ -3590,11 +3641,8 @@
       "e.g. Julia Smith": [
         "наприклад, Джулія Сміт"
       ],
-      "Feedback": [
-        "Відгук"
-      ],
       "ZIP": [
-        "ZIP-код"
+        "Поштовий індекс"
       ],
       "Postal code": [
         "Поштовий індекс"
@@ -3637,6 +3685,44 @@
       ],
       "Filter labels": [
         "Фільтр міток"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } день",
+        "${ daysCountLeft } дні",
+        "${ daysCountLeft } днів",
+        "${ daysCountLeft } днів"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } година",
+        "${ hoursCountLeft } години",
+        "${ hoursCountLeft } годин",
+        "${ hoursCountLeft } годин"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } хвилина",
+        "${ minutesCountLeft } хвилини",
+        "${ minutesCountLeft } хвилин",
+        "${ minutesCountLeft } хвилин"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } секунда",
+        "${ secondsCountLeft } секунди",
+        "${ secondsCountLeft } секунд",
+        "${ secondsCountLeft } секунд"
       ]
     },
     "Warning": {
@@ -3692,7 +3778,7 @@
         "Здається, ваші локальні налаштування дати та часу не синхронізовані."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Зверніть увагу, що вибравши цей метод оплати, ваш обліковий запис не може бути оновлено негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
+        "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не може бути оновлено негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не вдалося перевірити підпис вкладення.\nВи все одно можете завантажити це вкладення, але воно може бути підробленим.",
@@ -3753,25 +3839,25 @@
         "У вас немає контактів для експорту"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Користуйтесь кількома адресами / псевдонімами, пов'язаними з вашим обліковим записом, наприклад, username2@protonmail.com"
+        "Використовуйте декілька адрес / псевдонімів, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Розмістіть електронну пошту на власному(их) домені(ах) на ProtonMail, наприклад, john.smith@example.com"
+        "Розмістіть електронну пошту для власних доменів на ProtonMail, наприклад, john.smith@example.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "Користуйтесь особистою адресою username@pm.me для надсилання листів"
+        "Використовуйте особисту адресу username@pm.me для надсилання листів"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "Підтримка кількох користувачів доступна лише для тарифних планів з 2 або більше користувачами"
+        "Підтримка декількох користувачів доступна лише для тарифів з 2 чи більше користувачами"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield захищає ваш пристрій та пришвидшує перегляд в Інтернеті, блокуючи рекламу, стеження та шкідливі програми."
+        "NetShield захищає ваш пристрій та пришвидшує перегляд в Інтернеті, блокуючи рекламу, стеження та зловмисні програми."
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "Підтримка протоколів обміну файлами таких як BitTorrent."
+        "Підтримка протоколів обміну файлами, наприклад, BitTorrent."
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Доступ до вмісту, який блокується відповідно до місцезнаходження (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
+        "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Спрямовуйте свій Інтернет-трафік через мережу Tor одним натисканням."
@@ -3780,16 +3866,16 @@
         "Захищає від загроз приватності VPN, спрямовуючи ваш Інтернет-трафік через різні сервери."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Отримайте доступ до всіх платних функцій як ProtonVPN, так і ProtonMail (зашифрованої служби електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
+        "Отримайте доступ до всіх платних функцій для ProtonVPN та ProtonMail (зашифрований сервіс електронної пошти, яким користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Отримайте доступ до всіх платних функцій як для ${ vpnAppName }, так і для ${ mailAppName } (зашифрована служба електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
+        "Отримайте доступ до всіх платних можливостей для ${ vpnAppName } та ${ mailAppName } (зашифрована служба електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Розмістіть електронну пошту на власному(их) домені(ах) на ${ mailAppName }, наприклад, john.smith@example.com"
+        "Розмістіть електронну пошту для власних доменів на ${ mailAppName }, наприклад, john.smith@example.com"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Створіть кілька адрес електронної пошти, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
+        "Створіть декілька адрес електронної пошти, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
       ],
       "Discount applied for annual billing cycle": [
         "Знижка застосовується до річного циклу платежів"
@@ -3919,7 +4005,7 @@
         "Налаштування збережено"
       ],
       "You have successfully unsubscribed": [
-        "Ви успішно відписались"
+        "Ви успішно скасували передплату"
       ],
       "Message content search activated": [
         "Пошук вмісту повідомлень активовано"
@@ -4387,6 +4473,17 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Додатки Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти до ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти до ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Жодного зображення не вибрано"
@@ -4518,41 +4615,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Вийти з імпорту?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Додатки Proton"
       ],
-      "Go to ${ title }": [
-        "Перейти до ${ title }"
+      "Message saved to Drafts": [
+        "Повідомлення збережено до чернеток"
       ],
-      "Go to ${ vpnName }": [
-        "Перейти до ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
-      ],
-      "Maximized": [
-        "Розгорнутий"
+      "Edit and reschedule": [
+        "Редагувати й запланувати повторно"
       ]
     },
     "Select files": {
@@ -4603,6 +4671,30 @@
         "Щоб вимкнути бета-версію, відкрийте меню налаштувань і натисніть на параметр \"Бета-доступ\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна нова версія ${ appName }. ${ reloadButton }."
@@ -4647,16 +4739,6 @@
         "Звичайний"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Оцінка обов'язкова"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Відгук надіслано"
-      ]
-    },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Будь ласка, зв'яжіться з нами через ${ email } для отримання інструкцій про те, як сплатити готівкою."
@@ -4664,24 +4746,24 @@
     },
     "Billing cycle option": {
       "Monthly": [
-        "Щомісячно"
+        "Щомісяця"
       ],
       "Annually": [
-        "Щорічно"
+        "Щороку"
       ],
       "Two-year": [
         "Два роки"
       ],
       "Annually SAVE 20%": [
-        "Щороку ЗАОЩАДЬТЕ 20%"
+        "Щороку — ЗАОЩАДЬТЕ 20%"
       ],
       "Two years SAVE 33%": [
-        "За два роки ЗАОЩАДЬТЕ 33%"
+        "Два роки — ЗАОЩАДЬТЕ 33%"
       ]
     },
     "Suffix for price": {
       "/ month": [
-        "на місяць"
+        "/ місяць"
       ]
     },
     "info": {
@@ -4712,16 +4794,16 @@
         "Повідомлень на добу"
       ],
       "Folders / labels": [
-        "Папки / мітки"
+        "Теки / мітки"
       ],
       "Support": [
         "Підтримка"
       ],
       "Limited": [
-        "Обмежено"
+        "Обмежена"
       ],
       "Priority": [
-        "Важливість"
+        "Пріоритетна"
       ],
       "Encrypted contacts": [
         "Зашифровані контакти"
@@ -4742,10 +4824,10 @@
         "Автовідповідач"
       ],
       "Use @pm.me address": [
-        "Використовуйте адреси @pm.me"
+        "Використовуйте адресу @pm.me"
       ],
       "Catch-All email": [
-        "Електронна пошта «Catch-All»"
+        "Catch-All пошта"
       ],
       "Multi-user support": [
         "Підтримка декількох користувачів"
@@ -4786,7 +4868,7 @@
         "VPN-сервери"
       ],
       "Locations/Countries": [
-        "Місця знаходження/Країни"
+        "Розташування/Країни"
       ],
       "Adblocker (NetShield)": [
         "Блокувальник реклами (NetShield)"
@@ -4816,7 +4898,7 @@
         "Доступ до заблокованого вмісту"
       ],
       "Strict no-logs policy": [
-        "Дотримання жорсткої політики не вести журналів"
+        "Дотримання політики без журналювання"
       ],
       "Volume/bandwidth cap": [
         "Обсяг/пропускна здатність"
@@ -4834,10 +4916,10 @@
         "Захист від витоку DNS"
       ],
       "Kill Switch / Always-on VPN": [
-        "Заборона незахищеного з'єднання / VPN завжди включено"
+        "Kill Switch / Always-on VPN"
       ],
       "Perfect Forward Secrecy (PFS)": [
-        "Цілковита пряма секретність (PFS)"
+        "Захист від зворотного читання (Perfect Forward Secrecy)"
       ],
       "Full Disk Encryption on Servers": [
         "Повне шифрування диска на серверах"
@@ -4852,7 +4934,7 @@
         "Підтримка маршрутизатора"
       ],
       "30-days money-back guarantee": [
-        "Гарантія повернення коштів впродовж 30 днів"
+        "Гарантія повернення коштів протягом 30 днів"
       ]
     },
     "VPN feature option": {
@@ -4869,7 +4951,7 @@
         "Швейцарія"
       ],
       "None": [
-        "Відсутньо"
+        "Немає"
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
@@ -4883,10 +4965,10 @@
         "Декілька календарів"
       ],
       "Calendar import": [
-        "Імпорт календаря"
+        "Імпорт календарів"
       ],
       "Recurring events": [
-        "Періодичні події"
+        "Повторювані події"
       ],
       "Invitations": [
         "Запрошення"
@@ -4897,15 +4979,15 @@
     },
     "Calendar feature option": {
       "20 / user *": [
-        "20 на користувача *"
+        "20 / користувач *"
       ],
       "20 / user": [
-        "20 на користувача"
+        "20 / користувач"
       ]
     },
     "Drive feature": {
       "Access via Web": [
-        "Доступ через Web-інтерфейс"
+        "Доступ через Інтернет"
       ],
       "Upload / download files": [
         "Вивантажуйте та завантажуйте файли"
@@ -4919,21 +5001,21 @@
         "Налаштовувані функції"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail не можна користуватись для масових розсилок або спаму. Для звичайних листів обмежень немає."
+        "ProtonMail не можна використовувати для масових розсилок або спаму. Для звичайних листів обмежень немає."
       ]
     },
     "Plan Feature": {
       "${ n } VPN connection": [
         "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднання",
         "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднаня(ь)"
+        "${ n } VPN-з'єднань"
       ],
       "${ n } server": [
         "${ n } сервер",
+        "${ n } сервери",
         "${ n } серверів",
-        "${ n } серверів",
-        "${ n } сервери(ів)"
+        "${ n } серверів"
       ]
     },
     "Netflix": {
@@ -4973,7 +5055,7 @@
         "${ freeServers } у ${ freeCountries } країні",
         "${ freeServers } у ${ freeCountries } країнах",
         "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країні(ах)"
+        "${ freeServers } у ${ freeCountries } країнах"
       ],
       "Medium speed": [
         "Середня швидкість"
@@ -4988,19 +5070,19 @@
         "Висока швидкість"
       ],
       "1200+ servers in ${ plusCountries } country": [
-        "Більше 1200 серверів у ${ plusCountries } країні",
-        "Більше 1200 серверів у ${ plusCountries } країнах",
-        "Більше 1200 серверів у ${ plusCountries } країнах",
-        "Більше 1200 серверів у ${ plusCountries } країнах"
+        "1200+ серверів у ${ plusCountries } країні",
+        "1200+ серверів у ${ plusCountries } країнах",
+        "1200+ серверів у ${ plusCountries } країнах",
+        "1200+ серверів у ${ plusCountries } країнах"
       ],
       "Highest speed (up to 10 Gbps)": [
         "Найвища швидкість (до 10 Гбіт/с)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Усі можливості тарифного плану ${ PLAN_NAMES[PLANS.VPNPLUS] }"
+        "Усі функції тарифного плану ${ PLAN_NAMES[PLANS.VPNPLUS] }"
       ],
       "Includes 6 user accounts": [
-        "Включає 6 облікових записів користувача"
+        "Включає 6 облікових записів користувачів"
       ],
       "Includes Proton Visionary": [
         "Включає Proton Visionary"
@@ -5024,7 +5106,7 @@
         "1 адреса"
       ],
       "3 folders / labels": [
-        "3 папки / мітки"
+        "3 теки / мітки"
       ],
       "5 GB storage *": [
         "5 ГБ сховища *"
@@ -5033,7 +5115,7 @@
         "5 адрес"
       ],
       "200 folders / labels": [
-        "200 папок / міток"
+        "200 тек / міток"
       ],
       "1 - 5000 users *": [
         "1 - 5000 користувачів *"
@@ -5045,7 +5127,7 @@
         "5 адрес на користувача"
       ],
       "Unlimited folders / labels": [
-        "Необмежена кількість папок / міток"
+        "Необмежена кількість тек / міток"
       ],
       "6 users": [
         "6 користувачів"
@@ -5059,65 +5141,65 @@
     },
     "Price": {
       "Free": [
-        "Безкоштовно"
+        "Безплатно"
       ]
     },
     "Countdown unit": {
       "${ monthsWithYears } month": [
         "${ monthsWithYears } місяць",
+        "${ monthsWithYears } місяці",
         "${ monthsWithYears } місяців",
-        "${ monthsWithYears } місяців",
-        "${ monthsWithYears } місяця(ів)"
+        "${ monthsWithYears } місяців"
       ],
       "${ days } day": [
         "${ days } день",
+        "${ days } дні",
         "${ days } днів",
-        "${ days } днів",
-        "${ days } дня(ів)"
+        "${ days } днів"
       ]
     },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адреса електронної пошти",
+        "+ ${ addresses } адреси електронної пошти",
         "+ ${ addresses } адрес електронної пошти",
-        "+ ${ addresses } адрес електронної пошти",
-        "+ ${ addresses } адреси електронної пошти"
+        "+ ${ addresses } адрес електронної пошти"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } сховища"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } власний домен",
-        "+ ${ domains } власних доменів",
+        "+ ${ domains } власні домени",
         "+ ${ domains } власних доменів",
         "+ ${ domains } власних доменів"
       ],
       "+ ${ members } user": [
         "+ ${ members } користувач",
+        "+ ${ members } користувачі",
         "+ ${ members } користувачів",
-        "+ ${ members } користувачів",
-        "+ ${ members } користувача(ів)"
+        "+ ${ members } користувачів"
       ],
       "+ ${ vpn } connection": [
         "+ ${ vpn } з'єднання",
+        "+ ${ vpn } з'єднання",
         "+ ${ vpn } з'єднань",
-        "+ ${ vpn } з'єднань",
-        "+ ${ vpn } з'єднаня(ь)"
+        "+ ${ vpn } з'єднань"
       ]
     },
     "Plan info": {
       "(current plan)": [
-        "(поточний тарифний план)"
+        "(чинний тарифний план)"
       ]
     },
     "Free price": {
       "Free": [
-        "Безкоштовно"
+        "Безплатний"
       ]
     },
     "Payment method option": {
       "New credit/debit card": [
-        "Нова кредитна/дебетова картка"
+        "Нова кредитна/платіжна картка"
       ],
       "PayPal": [
         "PayPal"
@@ -5296,14 +5378,6 @@
         "позначені зірочкою"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Ім'я"
@@ -5432,9 +5506,12 @@
         "ГБ"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу е-пошти не знайдено серед ідентифікаторів користувача, визначених в надісланому ключі (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
       ]
     },
     "Message": {
@@ -5446,6 +5523,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } пише:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувача, визначених в надісланому ключі (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5831,6 +5913,68 @@
     "Event title": {
       "(no title)": [
         "(без назви)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } починається зараз"
+      ],
+      "${ title } starts today": [
+        "${ title } починається сьогодні"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } почалось о ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } почалося вчора"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } почалося вчора о ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } почалося ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } почалося ${ formattedDate } о ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } почалося ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } почалося ${ _formattedDate } о ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } почалося ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } почалося ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } почнеться о ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } почнеться завтра"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } почнеться завтра о ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } почнеться ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } почнеться ${ _formattedDate2 } о ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } почнеться ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } почнеться ${ _formattedDate3 }, о ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } почнеться ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } почнеться ${ formattedDateWithTime }"
       ]
     },
     "Participant name": {
@@ -6397,6 +6541,9 @@
       "Drafts": [
         "Чернетки"
       ],
+      "Scheduled": [
+        "Заплановано"
+      ],
       "All": [
         "Усі"
       ],
@@ -6548,6 +6695,20 @@
     "Time": {
       "Yesterday": [
         "Вчора"
+      ]
+    },
+    "Date label": {
+      "today": [
+        "сьогодні"
+      ],
+      "tomorrow": [
+        "завтра"
+      ],
+      "Today": [
+        "Сьогодні"
+      ],
+      "Tomorrow": [
+        "Завтра"
       ]
     },
     "Invitation details (all-day event)": {
@@ -6743,35 +6904,12 @@
         "Ця подія зараз відбувається."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } день",
-        "${ daysCountLeft } дні",
-        "${ daysCountLeft } днів",
-        "${ daysCountLeft } днів"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } година",
-        "${ hoursCountLeft } години",
-        "${ hoursCountLeft } годин",
-        "${ hoursCountLeft } годин"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } хвилина",
-        "${ minutesCountLeft } хвилини",
-        "${ minutesCountLeft } хвилин",
-        "${ minutesCountLeft } хвилин"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } секунда",
-        "${ secondsCountLeft } секунди",
-        "${ secondsCountLeft } секунд",
-        "${ secondsCountLeft } секунд"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Надсилання скасовано"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        "Планування скасовано. Повідомлення переміщено до чернеток."
       ]
     },
     "Send email with warnings": {
@@ -7020,6 +7158,9 @@
       ],
       "No messages found": [
         "Повідомлень не знайдено"
+      ],
+      "No messages scheduled": [
+        "Немає запланованих повідомлень"
       ]
     },
     "Alternative text for welcome image": {

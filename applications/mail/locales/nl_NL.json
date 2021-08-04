@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Onbekende fout"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
+      ],
+      "Unknown error": [
+        "Onbekende fout"
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Dit veld is vereist"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "Kon het opstelvenster niet laden."
       ],
       "Please refresh the page.": [
         "Vernieuw de pagina."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "Kan e-mail niet valideren, probeer het later opnieuw"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
       ],
+      "File has no contents to preview": [
+        "Bestand heeft geen inhoud om een voorbeeld te tonen"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
       ],
       "Incorrect login credentials. Please try again": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te tonen"
       ],
       "Process aborted": [
         ""
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "Het verzoek timed out."
       ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Could not find address ${ email }.": [
+        "Kon adres ${ email } niet vinden."
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "De maximale verlooptijd is 4 weken."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "",
+        ""
+      ],
       "Public key could not be trusted": [
         "De openbare sleutel is niet vertrouwd"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Sluiten"
       ],
-      "Close modal": [
-        "Sluit het venster"
+      "Confirm": [
+        "Bevestigen"
       ],
       "Cancel": [
         "Annuleren"
       ],
+      "Close modal": [
+        "Sluit het venster"
+      ],
       "Submit": [
         "Versturen"
-      ],
-      "Confirm": [
-        "Bevestigen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Gebruik “${ label }”-instelling"
-      ],
-      "refresh the page": [
-        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Onderstreept"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
@@ -646,6 +653,9 @@
       "Next": [
         "Volgende"
       ],
+      "Signing out": [
+        "Uitloggen"
+      ],
       "Clear": [
         "Wissen"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Uitloggen"
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
       "Details": [
         "Details"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Log in": [
+        "Aanmelden"
       ],
       "Get started": [
         "Aan de slag"
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Toch verzenden"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Opstelvenster maximaliseren"
@@ -947,6 +948,9 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Verlooptijd"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Instellen"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Printen"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Bekijk toetsen"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "Download ${ attachmentName }"
       ],
@@ -1066,6 +1076,9 @@
       ],
       "Undo": [
         "Ongedaan maken"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "Inschakelen"
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "Verberg berichten"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Berichten importeren"
       ],
@@ -1180,6 +1196,15 @@
       ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1375,15 +1400,6 @@
       ],
       "Open settings menu": [
         "Open instellingenmenu"
-      ],
-      "Send feedback": [
-        "Feedback versturen"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "Give feedback": [
-        "Feedback geven"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -1590,6 +1606,9 @@
       "Send email": [
         "E-mail verzenden"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Nieuw bericht"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "Laden"
       ],
-      "support team": [
-        ""
-      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Platte tekst"
+      ],
+      "support team": [
+        ""
       ],
       "Drop the file here to upload": [
         "Sleep het bestand hierheen om te uploaden"
@@ -1952,6 +1971,9 @@
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
       ],
+      "Loading ${ appName }": [
+        "${ appName } laden"
+      ],
       "Screenshot(s) attached": [
         "Schermafdruk(ken) bijgevoegd"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
       ],
-      "Loading ${ appName }": [
-        "${ appName } laden"
-      ],
-      "here": [
-        "hier"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
-      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "van"
+      ],
+      "here": [
+        "hier"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Het controleren van ${ contactName } is mislukt: de gegevens van deze contactpersoon zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersoon opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddress }."
       ],
@@ -2518,6 +2540,9 @@
         "Uur",
         "Uren"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Concept weggegooid"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "Wordt verzonden"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Onderwerp:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
@@ -2645,8 +2682,14 @@
         "ingesloten afbeelding",
         "ingesloten afbeeldingen"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Bericht verzonden"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "Bericht verzenden..."
@@ -2688,9 +2731,6 @@
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
         "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton heeft een facelift gekregen. We horen graag wat u ervan vindt!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } ongelezen gesprek",
         "${ unreadCount } ongelezen gesprekken"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } ongelezen bericht",
         "${ unreadCount } ongelezen berichten"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        ""
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(Geen ontvanger)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "",
+        ""
       ],
       "No more results found": [
         "Geen resultaten meer gevonden"
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         "Selecteer hoe uw opstelvenster standaard opent."
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "BCC"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Van:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Filter"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Hoe zou u uw ervaring met de nieuwe ProtonMail tot nu toe beoordelen?"
-      ],
-      "0 - Not a fan": [
-        "0 - Bevalt niet"
-      ],
-      "10 - Love it!": [
-        "10 - Geweldig!"
-      ],
       "Also archive": [
         "Ook archiveren"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "Inbox"
-      ],
-      "Drafts": [
-        "Concepten"
-      ],
-      "Sent": [
-        "Verzonden"
-      ],
-      "Trash": [
-        "Prullenbak"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Alle e-mails"
-      ],
-      "Archive": [
-        "Archief"
-      ],
-      "Starred": [
-        "Met ster"
-      ],
-      "Outbox": [
-        "Postvak uit"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Label toevoegen"
       ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Drafts": [
+        "Concepten"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Verzonden"
+      ],
+      "Starred": [
+        "Met ster"
+      ],
+      "Archive": [
+        "Archief"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
+      "All mail": [
+        "Alle e-mails"
+      ],
       "Folders": [
         "Mappen"
       ],
@@ -3417,6 +3459,9 @@
       ],
       "Manage your labels": [
         "Labels beheren"
+      ],
+      "Outbox": [
+        "Postvak uit"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "bijv. Julia Smith"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "ZIP": [
         ""
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Labels filteren"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } dag",
+        "${ daysCountLeft } dagen"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } uur",
+        "${ hoursCountLeft } uren"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } minuut",
+        "${ minutesCountLeft } minuten"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } seconde",
+        "${ secondsCountLeft } seconden"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applicaties"
+      ],
+      "Go to ${ title }": [
+        "Ga naar ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ga naar ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
@@ -4360,41 +4439,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Importeren beëindigen?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applicaties"
       ],
-      "Go to ${ title }": [
-        "Ga naar ${ title }"
+      "Message saved to Drafts": [
+        ""
       ],
-      "Go to ${ vpnName }": [
-        "Ga naar ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normaal"
-      ],
-      "Maximized": [
-        "Gemaximaliseerd"
+      "Edit and reschedule": [
+        ""
       ]
     },
     "Select files": {
@@ -4445,6 +4495,30 @@
         "Om de bèta uit te schakelen, open het dropdown menu en klik op de \"Bèta Access\" optie."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normaal"
+      ],
+      "Maximized": [
+        "Gemaximaliseerd"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
@@ -4487,16 +4561,6 @@
       ],
       "Normal": [
         "Normaal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Score is vereist"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Feedback verzonden"
       ]
     },
     "Info for cash payment method": {
@@ -5116,12 +5180,6 @@
         "Met ster"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Naam"
@@ -5250,9 +5308,10 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Op ${ date } schreef ${ name } ${ address }:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(geen titel)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Concepten"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Alles"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Gisteren"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         "Deze afspraak is momenteel bezig."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dag",
-        "${ daysCountLeft } dagen"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } uur",
-        "${ hoursCountLeft } uren"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuut",
-        "${ minutesCountLeft } minuten"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } seconde",
-        "${ secondsCountLeft } seconden"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Verzenden ongedaan gemaakt"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "Geen berichten gevonden"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

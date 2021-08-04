@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Ukendt fejl"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
       ],
@@ -21,14 +18,17 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        ""
+      "Unknown error": [
+        "Ukendt fejl"
       ],
       "Email address invalid": [
         "E-mailadresse ugyldig"
       ],
       "This field is required": [
         "Dette felt skal udfyldes"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -44,6 +44,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "File has no contents to preview": [
+        "Fil har intet indhold at forhåndsvise"
       ],
       "Preferences could not be saved": [
         "Præferencer kunne ikke gemmes"
@@ -89,73 +92,70 @@
       "Invalid name": [
         "Ugyldigt navn"
       ],
-      "File has no contents to preview": [
-        "Fil har intet indhold at forhåndsvise"
+      "Process aborted": [
+        "Proces afbrudt"
+      ],
+      "Payment process cancelled": [
+        "Betalingproces annulleret"
+      ],
+      "Payment process failed": [
+        "Betalingproces mislykkedes"
+      ],
+      "Payment process consumed": [
+        "Betalingssession udløbet"
+      ],
+      "Payment process not supported": [
+        "Betalingsproces understøttes ikke"
+      ],
+      "Unknown payment token status": [
+        "Ukendt betalings-token status"
+      ],
+      "Tab closed": [
+        "Fane lukket"
+      ],
+      "Name on card required": [
+        "Navn på kort er obligatorisk"
+      ],
+      "Invalid expiration date": [
+        "Ugyldig udløbsdato"
+      ],
+      "Invalid card number": [
+        "Ugyldigt kortnummer"
+      ],
+      "Invalid ${ name } code": [
+        "Ugyldig ${ name }-kode"
+      ],
+      "Invalid postal code": [
+        "Ugyldigt postnummer"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fejl under oprettelse af forbindelse til Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Beløb under minimum."
+      ],
+      "Amount above the maximum.": [
+        "Beløb overstiger maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Det mindste beløb, der kan doneres, er ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Den mindste betaling vi accepterer er ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Checkout udløbet, prøv venligst igen."
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
       ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "Process aborted": [
-        ""
-      ],
-      "Payment process cancelled": [
-        ""
-      ],
-      "Payment process failed": [
-        ""
-      ],
-      "Payment process consumed": [
-        ""
-      ],
-      "Payment process not supported": [
-        ""
-      ],
-      "Unknown payment token status": [
-        ""
-      ],
-      "Tab closed": [
-        ""
-      ],
-      "Name on card required": [
-        ""
-      ],
-      "Invalid expiration date": [
-        ""
-      ],
-      "Invalid card number": [
-        ""
-      ],
-      "Invalid ${ name } code": [
-        ""
-      ],
-      "Invalid postal code": [
-        ""
-      ],
-      "Error connecting to the Bitcoin API.": [
-        ""
-      ],
-      "Amount below minimum.": [
-        ""
-      ],
-      "Amount above the maximum.": [
-        ""
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        ""
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        ""
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        ""
-      ],
-      "Checkout expired, please try again.": [
-        ""
-      ],
-      "Invalid code": [
         ""
       ],
       "Incorrect mailbox password. Please try again": [
@@ -201,6 +201,755 @@
         "Ingen gyldig adresse fundet"
       ]
     },
+    "Info": {
+      "Loading": [
+        "Indlæser"
+      ],
+      "No results found": [
+        "Ingen resultater fundet"
+      ],
+      "No contacts added yet": [
+        "Ingen kontakter tilføjet endnu"
+      ],
+      "Week": [
+        "Uge"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Er du sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Tjek at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Du er ved at åbne en ny browserfane og besøge:"
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Drop the file here to upload": [
+        "Slip filen her for at uploade"
+      ],
+      "support team": [
+        "supportteam"
+      ],
+      "Loading ${ appName }": [
+        "Indlæser ${ appName }"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Hvis du ikke kan se e-mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "Unsupported file": [
+        "Ikke-understøttet fil"
+      ],
+      "No preview available": [
+        "Ingen forhåndsvisning tilgængelig"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
+      "Loading preview": [
+        "Indlæser forhåndsvisning"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "of": [
+        "af"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } medlem",
+        "${ contactEmailsLength } medlemmer"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } og ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ProtonMail altid signerer krypterede beskeder."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ProtonMail altid signerer krypterede beskeder"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Tjekker kontakt ${ progress } af ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt blev opdateret.",
+        "${ updated } kontakter blev opdateret."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "For at gendanne dine data skal du genaktivere den kontakt-krypteringsnøgle, der anvendtes på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
+      ],
+      "Key fingerprint": [
+        "Nøglefingeraftryk"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og samtidig afmelde advarslen."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
+      ],
+      "Group assignment applied": [
+        "Gruppetildeling anvendt"
+      ],
+      "Create a new contact group": [
+        "Opret ny kontaktgruppe"
+      ],
+      "No group found": [
+        "Ingen gruppe fundet"
+      ],
+      "Duplicate key updated": [
+        "Duplikeret nøgle opdateret"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Denne adresse er deaktiveret. Vil du kunne sende til denne adresse, skal ejeren først aktivere den."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "No email address": [
+        "Ingen e-mailaddresse"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt fundet",
+        "${ contactsCount } kontakter fundet"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } gruppe fundet",
+        "${ groupCounts } grupper fundet"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mailadresse",
+        "${ addressCount } e-mailadresser"
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
+      ],
+      "Free up some space or add more storage space.": [
+        "Frigør noget plads eller tilføj mere lagerplads."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Frigør noget plads eller kontakt din administrator."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Du nåede ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Internetforbindelse genoprettet."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        "Du har aktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den nyeste version af ${ appName }. Applikationen vil blive genindlæst."
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
+      ],
+      "Screenshot(s) attached": [
+        "Screenshot(s) vedhæftet"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Ved at nedgradere til et Free-abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } bonuslagerplads"
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } forbindelse til ProtonVPN (tillader dig at forbinde flere enheder til VPN)",
+        "+${ organization.BonusVPN } forbindelser til ProtonVPN (tillader dig at forbinde flere enheder til VPN)"
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        "Din bank kræver 3-D Secure-bekræftelse af sikkerhedshensyn."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke få en opkrævning. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor eventuelle pop-up blockere."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du omdirigeres snart til PayPal for at bekræfte din betaling."
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        "Du bliver snart omdirigeret til din bank for at bekræfte din betaling."
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        "Bekræft kortet i den nye fane, der blev åbnet."
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        "Bekræft betalingen i den nye fane, der blev åbnet."
+      ],
+      "Verification can take a few minutes.": [
+        "Bekræftelse kan tage et par minutter."
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        "Betalingen kan tage et par minutter at bekræfte helt."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        "Forsøg igen. Benyt en anden betalingsmetode, eller kontakt din bank for hjælp."
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "For Visa, MasterCard og Discover er det de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Beløb under minimum (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Bitcoin-transaktioner kan tage noget tid at bekræfte (op til 24 timer). Efter bekræftelsen føjer vi kredit til din konto. Efter transaktionsbekræftelsen kan du betale din faktura med kreditten."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "Når du har foretaget din Bitcoin-betaling, skal du følge anvisningerne nedenfor for at opgradere."
+      ],
+      "Please verify the payment in the new tab.": [
+        "Bekræft venligst betalingen i den nye fane."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Dette gør det muligt at benytte PayPal til betaling af dit Proton-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "Vi bruger 3-D Secure til at beskytte dine betalinger."
+      ],
+      "Billed as ${ billedPrice } per year": [
+        "Faktureret som ${ billedPrice } pr. år"
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        "Faktureret som ${ billedPrice } hvert andet år"
+      ],
+      "Included": [
+        "Inkluderet"
+      ],
+      "* Customizable features": [
+        "* Features som kan tilpasses"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Få adgang til dine streamingtjenester som f.eks. ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, uanset hvor du er."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Få adgang til blokeret indhold såsom sociale medier, nyheder, Wikipedia, YouTube og mange andre, uanset hvor du er."
+      ],
+      "For getting started with private and secure emailing.": [
+        "Til at komme i gang med privat og sikker e-mail."
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        "Et frit og ucensureret internet bør være tilgængeligt for alle."
+      ],
+      "Starter VPN service with P2P support.": [
+        "Grundlæggende VPN-tjeneste med P2P-understøttelse."
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        "Fuldt udstyret VPN med hastighed på op til 10 Gbps."
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        "For personer der har brug for en fuldt udstyret postkasse med avanceret beskyttelse."
+      ],
+      "For professionals that need secure business communications.": [
+        "Til erhvervsfolk der har brug for sikker forretningskommunikation."
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        "VPN + ${ mailAppName } pakke for familier og små virksomheder."
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        "For familier og små teams; inkluderer både Mail og VPN."
+      ],
+      "Save 20%": [
+        "Spar 20%"
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        "Din konto opgraderes. Dette kan tage op til 30 sekunder."
+      ],
+      "Thank you for supporting our mission.": [
+        "Tak for din støtte til vores mission."
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "Din konto vil blive opdateret, når betalingen er godkendt."
+      ],
+      "Account successfully updated": [
+        "Opdatering af konto lykkedes"
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Download din favoritapp i dag og tag dit privatliv med dig overalt."
+      ],
+      "(Mail + VPN)": [
+        "(Mail + VPN)"
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        "Faktureres ved udløbet af din aktuelle faktureringscyklus (fornys den ${ renewalDate })"
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Du skal fjerne eventuelle ekstra kalendere og delte kalenderlinks, før du kan annullere dit abonnement. ${ linkButton }"
+      ],
+      "No payment is required at this time.": [
+        "Der kræves ingen betaling på nuværende tidspunkt."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "Bemærk at når du klikker på Bekræft-knappen, vil din konto have ${ creditsRemaining } kreditter tilbage."
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        "20% rabat anvendes på dit abonnement med kupon ${ code }"
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        "Black Friday 2018 anvendes til dit abonnement"
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        "Black Friday 2019 anvendes til dit abonnement"
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        "Black Friday 2020-nybruger-rabat er tilføjet"
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        "Rabat anvendt på dit abonnement med rabatkupon ${ code }"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Betalinger er beskyttet af TLS-kryptering og schweizisk fortrolighedslovgivning."
+      ],
+      "30 days money-back guarantee.": [
+        "30 dages pengene-tilbage-garanti."
+      ],
+      "Save extra 20%": [
+        "Spar 20% ekstra"
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        "${ save20 } på dit abonnement ved at skifte til ${ annualBilling }"
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        "${ saveExtra20 } på både Mail og VPN ved at tilføje et Mail-abonnement."
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        "${ saveExtra20 } på både VPN og Mail ved at tilføje et VPN-abonnement."
+      ],
+      "Storage GB": [
+        "Lager GB"
+      ],
+      "Users": [
+        "Brugere"
+      ],
+      "Domains": [
+        "Domæner"
+      ],
+      "Addresses": [
+        "Adresser"
+      ],
+      "Connections": [
+        "Forbindelser"
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Lader dig hoste e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        "Tilføj yderligere adresser til din konto såsom bruger2@protonmail.com"
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        "Antal VPN-forbindelser, som kan tildeles brugere. Hver tilsluttet enhed bruger én VPN-forbindelse."
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        "ProtonMail Plus er begrænset til én bruger og starter med 5 GB lagerplads."
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        "Skift til ${ professionalPlan } for at tilføje flere brugere."
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inkluderer ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-forbindelse.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inkluderer ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-forbindelser."
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        "Hver ekstra forbindelse kan tildeles brugere i din organisation."
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        "Skift til ${ professionalPlan } for at tilføje flere forbindelser."
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailAppName } Professional starter med én bruger, og hver bruger føjer 5 GB og 5 e-mailadresser til organisationens pulje."
+      ],
+      "Not customizable": [
+        "Kan ikke tilpasses"
+      ],
+      "Expired": [
+        "Udløbet"
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "here": [
+        "her"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
+      ],
+      "Session timed out.": [
+        "Session er udløbet."
+      ],
+      "Internet connection lost.": [
+        "Internetforbindelse afbrudt."
+      ],
+      "Servers are unreachable.": [
+        "Serverne er utilgængelige."
+      ],
+      "${ uploadName } already exists in this location.": [
+        "${ uploadName } findes allerede på denne placering."
+      ],
+      "What do you want to do?": [
+        "Hvad vil du gøre?"
+      ],
+      "Folder contents will merge into a single folder": [
+        "Mappeindhold vil blive flettet sammen til én enkelt mappe"
+      ],
+      "A number will be added to the folder name": [
+        "Et nummer vil blive tilføjet mappens navn"
+      ],
+      "A number will be added to the filename": [
+        "Et nummer vil blive tilføjet filnavnet"
+      ],
+      "This will overwrite the existing folder": [
+        "Dette vil overskrive den eksisterende mappe"
+      ],
+      "This will overwrite the existing file": [
+        "Dette vil overskrive den eksisterende fil"
+      ],
+      "Folder will not be uploaded": [
+        "Mappen vil ikke blive uploadet"
+      ],
+      "File will not be uploaded": [
+        "Fil vil ikke blive uploadet"
+      ],
+      "Your files will be encrypted and then saved.": [
+        "Dine filer vil blive krypteret og derefter gemt."
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
+      ],
+      "${ doneCount } Finished": [
+        "${ doneCount } Færdig",
+        "${ doneCount } Færdige"
+      ],
+      "${ doneUploadsCount } Uploaded": [
+        "${ doneUploadsCount } uploadet",
+        "${ doneUploadsCount } uploadet"
+      ],
+      "${ doneDownloadsCount } Downloaded": [
+        "${ doneDownloadsCount } downloadet",
+        "${ doneDownloadsCount } downloadet"
+      ],
+      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } uploader (${ uploadProgress }%)",
+        "${ activeUploadsCount } uploader (${ uploadProgress }%)"
+      ],
+      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } downloader (${ downloadProgress }%)",
+        "${ activeDownloadsCount } downloader (${ downloadProgress }%)"
+      ],
+      "${ pausedCount } Paused": [
+        "${ pausedCount } sat på pause",
+        "${ pausedCount } sat på pause"
+      ],
+      "${ canceledCount } Canceled": [
+        "${ canceledCount } annulleret",
+        "${ canceledCount } annulleret"
+      ],
+      "${ errorCount } Failed": [
+        "${ errorCount } mislykkedes",
+        "${ errorCount } mislykkedes"
+      ],
+      "Something went wrong, please try again later.": [
+        "Noget gik galt. Prøv igen senere."
+      ],
+      "Initializing": [
+        "Initialiserer"
+      ],
+      "Conflict": [
+        "Konflikt"
+      ],
+      "Queued": [
+        "I kø"
+      ],
+      "${ speed }/s": [
+        "${ speed }/s"
+      ],
+      "Paused": [
+        "Sat på pause"
+      ],
+      "Downloaded": [
+        "Downloadet"
+      ],
+      "Uploaded": [
+        "Uploadet"
+      ],
+      "Failed": [
+        "Mislykkedes"
+      ],
+      "Network issue": [
+        "Netværksproblem"
+      ],
+      "Canceled": [
+        "Annulleret"
+      ],
+      "Finalizing": [
+        "Færdiggører"
+      ],
+      "Downloading": [
+        "Downloader"
+      ],
+      "Uploading": [
+        "Uploader"
+      ],
+      "Closing transfer manager will cancel all active transfers, are you sure?": [
+        "Lukning af overførselsmanager vil annullere alle aktive overførsler, er du sikker?"
+      ],
+      "Create your first folder and start moving your files.": [
+        "Opret din første mappe og begynd at flytte dine filer."
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Gå til \"Mine filer\" og upload nogle filer først."
+      ],
+      "No files or folders in trash": [
+        "Ingen filer eller mapper i papirkurven"
+      ],
+      "There are no files yet": [
+        "Der er ingen filer endnu"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Træk og slip en fil her eller vælg at uploade."
+      ],
+      "Share files with links": [
+        "Del filer med links"
+      ],
+      "Create links and share your files with others.": [
+        "Opret links og del dine filer med andre."
+      ],
+      "Link expires: ": [
+        "Link udløber: "
+      ],
+      "Your file has finished downloading.": [
+        "Din fil er færdig med at downloade."
+      ],
+      "Your file failed to download.": [
+        "Din fil kunne ikke downloades."
+      ],
+      "Your download has been canceled.": [
+        "Dit download er blevet annulleret."
+      ],
+      "Your file is being downloaded.": [
+        "Din fil bliver downloadet."
+      ],
+      "Would you like to restore your files?": [
+        "Ønsker du at gendanne dine filer?"
+      ],
+      "Recovery process might take some time.": [
+        "Gendannelsesprocessen kan tage noget tid."
+      ],
+      "More": [
+        "Mere"
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+        "Dine filer er ikke længere tilgængelige på grund af nulstilling af adgangskode. Upload den gamle krypteringsnøgle igen for at få adgang. ${ mailSettingsLink }"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
+        "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ startRecoveryButton }"
+      ],
+      "Yes": [
+        "Ja"
+      ],
+      "No": [
+        "Nej"
+      ],
+      "Anyone with this link can access your file.": [
+        "Alle med dette link kan få adgang til din fil."
+      ],
+      "Only the people with the link and the password can access this file.": [
+        "Kun personer med linket og adgangskoden kan få adgang til denne fil."
+      ],
+      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Dette link blev oprettet i en tidligere version og kan ikke ændres. Slet dette link og opret et nyt for at ændre indstillingerne."
+      ],
+      "Your secure, shareable link for ${ boldNameText }:": [
+        "Dit sikre, delbare link for ${ boldNameText }:"
+      ],
+      "Failed to generate a secure link. Try again later.": [
+        "Kunne ikke skabe et sikkert link. Prøv igen senere."
+      ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Kunne ikke åbne et sikkert link. Årsagen er: ${ error }"
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
+      ],
+      "You will lose all unsaved changes.": [
+        "Du vil miste alle ikke-gemte ændringer."
+      ],
+      "Preparing link to file": [
+        "Forbereder link til fil"
+      ],
+      "Creating link to file": [
+        "Opretter link til fil"
+      ],
+      "Select an uploaded file and create a link to it.": [
+        "Vælg en uploadet fil og opret et link til den."
+      ],
+      "Loading folder contents": [
+        "Indlæser mappens indhold"
+      ],
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
+      ],
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Er du sikker på, at du vil slette valgte emne(r) fra papirkurven permanent?"
+      ],
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Dette vil slette linket/linkene og fjerne adgang til din(e) fil(er) for alle med link(-erne)."
+      ],
+      "Moving files": [
+        "Flytter filer"
+      ],
+      "You cannot undo this action.": [
+        "Du kan ikke fortryde denne handling."
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "My Links": [
+        "Mine Links"
+      ]
+    },
     "Action": {
       "Close": [
         "Luk"
@@ -217,11 +966,11 @@
       "Submit": [
         "Indsend"
       ],
-      "More info: ${ safeTitle }": [
-        "Mere information: ${ safeTitle }"
-      ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mere information: ${ safeTitle }"
       ],
       "Close navigation": [
         "Luk navigation"
@@ -277,11 +1026,14 @@
       "Previous month": [
         "Forrige måned"
       ],
+      "Confirm opening of link ${ link }": [
+        "Bekræft åbning af link ${ link }"
+      ],
       "refresh the page": [
         "opdater siden"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
+      "Signing out": [
+        "Logger ud"
       ],
       "View invoice": [
         "Vis faktura"
@@ -306,6 +1058,30 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Share via link": [
+        "Del via link"
+      ],
+      "Sharing options": [
+        "Indstillinger for deling"
+      ],
+      "Zoom out": [
+        "Zoom ud"
+      ],
+      "Reset zoom": [
+        "Nulstil zoom"
+      ],
+      "Zoom in": [
+        "Zoom ind"
+      ],
+      "Previous": [
+        "Foregående"
+      ],
+      "Next": [
+        "Næste"
       ],
       "Save": [
         "Gem"
@@ -420,45 +1196,6 @@
       "Import": [
         "Import"
       ],
-      "Next": [
-        "Næste"
-      ],
-      "Signing out": [
-        "Logger ud"
-      ],
-      "Clear": [
-        "Ryd"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
-      "Hide info": [
-        "Skjul info"
-      ],
-      "Show info": [
-        "Vis info"
-      ],
-      "Details": [
-        "Detaljer"
-      ],
-      "Share via link": [
-        "Del via link"
-      ],
-      "Sharing options": [
-        "Indstillinger for deling"
-      ],
-      "Zoom out": [
-        "Zoom ud"
-      ],
-      "Reset zoom": [
-        "Nulstil zoom"
-      ],
-      "Zoom in": [
-        "Zoom ind"
-      ],
-      "Previous": [
-        "Foregående"
-      ],
       "Close this banner": [
         "Luk denne banner"
       ],
@@ -471,17 +1208,17 @@
       "here": [
         "her"
       ],
-      "Continue import": [
-        ""
+      "Clear": [
+        "Ryd"
       ],
-      "Discard": [
-        ""
+      "Add screenshot(s)": [
+        "Tilføj screenshot(s)"
       ],
-      "Reconnect": [
-        ""
+      "Hide info": [
+        "Skjul info"
       ],
-      "Start import": [
-        ""
+      "Show info": [
+        "Vis info"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -547,51 +1284,63 @@
         "Ok"
       ],
       "Remove bonuses": [
-        ""
+        "Fjern bonusser"
       ],
       "Try again": [
-        ""
+        "Forsøg igen"
       ],
       "Use a different card": [
-        ""
+        "Benyt et andet kort"
       ],
       "Use a different payment method": [
-        ""
+        "Benyt en anden betalingsmetode"
       ],
       "Retry": [
-        ""
+        "Prøv igen"
       ],
       "Loading verification": [
-        ""
+        "Indlæser verifikation"
       ],
       "Select plan": [
-        ""
+        "Vælg abonnement"
       ],
       "Compare all features": [
-        ""
+        "Sammenlign alle features"
       ],
       "${ boldSave } by switching to annual billing": [
-        ""
+        "${ boldSave } ved at skifte til årlig fakturering"
       ],
       "Pay": [
-        ""
+        "Betal"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
+        "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
       "Remove gift code": [
-        ""
+        "Fjern gavekode"
       ],
       "annual billing": [
-        ""
+        "årlig fakturering"
       ],
       "Compare plans": [
-        ""
+        "Sammenlign abonnementer"
       ],
       "Decrease": [
-        ""
+        "Formindsk"
       ],
       "Increase": [
+        "Forøg"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
         ""
       ],
       "Log in": [
@@ -602,42 +1351,6 @@
       ],
       "New upload": [
         "Nyt upload"
-      ],
-      "Maximize transfers": [
-        "Maksimér overførsler"
-      ],
-      "Minimize transfers": [
-        "Minimer overførsler"
-      ],
-      "Close transfers": [
-        "Luk overførsel"
-      ],
-      "Pause download": [
-        "Sæt download på pause"
-      ],
-      "Pause upload": [
-        "Sæt upload på pause"
-      ],
-      "Resume download": [
-        "Genoptag download"
-      ],
-      "Resume upload": [
-        "Genoptag overførsel"
-      ],
-      "Cancel download": [
-        "Annullér download"
-      ],
-      "Cancel upload": [
-        "Annullér overførsel"
-      ],
-      "Restart download": [
-        "Genstart download"
-      ],
-      "Restart upload": [
-        "Genstart overførsel"
-      ],
-      "Remove from this list": [
-        "Fjern fra denne liste"
       ],
       "List layout": [
         "Liste-layout"
@@ -696,6 +1409,42 @@
       "Empty trash": [
         "Tøm Papirkurv"
       ],
+      "Maximize transfers": [
+        "Maksimér overførsler"
+      ],
+      "Minimize transfers": [
+        "Minimer overførsler"
+      ],
+      "Close transfers": [
+        "Luk overførsel"
+      ],
+      "Pause download": [
+        "Sæt download på pause"
+      ],
+      "Pause upload": [
+        "Sæt upload på pause"
+      ],
+      "Resume download": [
+        "Genoptag download"
+      ],
+      "Resume upload": [
+        "Genoptag overførsel"
+      ],
+      "Cancel download": [
+        "Annullér download"
+      ],
+      "Cancel upload": [
+        "Annullér overførsel"
+      ],
+      "Restart download": [
+        "Genstart download"
+      ],
+      "Restart upload": [
+        "Genstart overførsel"
+      ],
+      "Remove from this list": [
+        "Fjern fra denne liste"
+      ],
       "Share": [
         "Del"
       ],
@@ -709,7 +1458,7 @@
         "Stop deling"
       ],
       "Show shared link details": [
-        ""
+        "Vis detaljer om delt link"
       ],
       "Share file": [
         "Del fil"
@@ -879,12 +1628,6 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
       "Open help menu": [
         "Åbn hjælpemenu"
       ],
@@ -898,93 +1641,99 @@
         "Vælg et tema"
       ],
       "Confirm loss of Proton bonuses": [
-        ""
+        "Bekræft tab af Proton-bonusser"
       ],
       "Unsupported browser": [
-        ""
+        "Browser understøttes ikke"
       ],
       "Card verification": [
-        ""
+        "Kortbekræftelse"
       ],
       "Payment verification": [
-        ""
+        "Betalingsbekræftelse"
       ],
       "Processing...": [
-        ""
+        "Behandler..."
       ],
       "Card verification in progress": [
-        ""
+        "Kortbekræftelse i gang"
       ],
       "Payment verification in progress": [
-        ""
+        "Betalingsbekræftelse i gang"
       ],
       "PayPal verification failed": [
-        ""
+        "PayPal-bekræftelse fejlede"
       ],
       "3-D Secure verification failed": [
-        ""
+        "3-D Secure-bekræftelse mislykkedes"
       ],
       "Error": [
-        ""
+        "Fejl"
       ],
       "ZIP / postal code": [
-        ""
+        "Postnummer"
       ],
       "Payment details": [
-        ""
+        "Betalingsdetaljer"
       ],
       "Currency": [
-        ""
+        "Valuta"
       ],
       "Billing cycle": [
-        ""
+        "Faktureringsperiode"
       ],
       "Current plan": [
-        ""
+        "Nuværende abonnement"
       ],
       "Processing": [
-        ""
+        "Behandler"
       ],
       "Apply gift code": [
-        ""
+        "Tilføj gavekode"
       ],
       "Subtotal": [
-        ""
+        "Subtotal"
       ],
       "Coupon discount": [
-        ""
+        "Rabatkupon"
       ],
       "Total (monthly)": [
-        ""
+        "Total (månedlig)"
       ],
       "Credits": [
-        ""
+        "Kreditter"
       ],
       "Gift code": [
-        ""
+        "Gavekode"
       ],
       "Amount due": [
-        ""
+        "Forfaldent beløb"
       ],
       "Cancel subscription": [
-        ""
+        "Afmeld abonnement"
       ],
       "Network error": [
-        ""
+        "Netværksfejl"
       ],
       "Select a plan": [
-        ""
+        "Vælg et abonnement"
       ],
       "Customize your plan": [
-        ""
+        "Tilpas dit abonnement"
       ],
       "Checkout": [
-        ""
+        "Til kassen"
       ],
       "Plan summary": [
-        ""
+        "Abonnementoversigt"
       ],
       "${ appName } customization": [
+        "${ appName } tilpasning"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
         ""
       ],
       "Sign in again to continue": [
@@ -1023,9 +1772,6 @@
       "Drop to upload": [
         "Slip for at uploade"
       ],
-      "Cancel all active transfers": [
-        "Annuller alle aktive overførsler"
-      ],
       "Change layout": [
         "Skift layout"
       ],
@@ -1040,6 +1786,9 @@
       ],
       "Empty trash": [
         "Tøm Papirkurv"
+      ],
+      "Cancel all active transfers": [
+        "Annuller alle aktive overførsler"
       ],
       "My files": [
         "Mine filer"
@@ -1168,752 +1917,6 @@
         "Stop deling"
       ]
     },
-    "Info": {
-      "No results found": [
-        "Ingen resultater fundet"
-      ],
-      "Loading": [
-        "Indlæser"
-      ],
-      "No contacts added yet": [
-        "Ingen kontakter tilføjet endnu"
-      ],
-      "Week": [
-        "Uge"
-      ],
-      "support team": [
-        "supportteam"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Er du sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Tjek at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Du er ved at åbne en ny browserfane og besøge:"
-      ],
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Drop the file here to upload": [
-        "Slip filen her for at uploade"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Hvis du ikke kan se e-mailen i din indbakke, bedes du tjekke din spammappe."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } medlem",
-        "${ contactEmailsLength } medlemmer"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } og ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ProtonMail altid signerer krypterede beskeder."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ProtonMail altid signerer krypterede beskeder"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Tjekker kontakt ${ progress } af ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt blev opdateret.",
-        "${ updated } kontakter blev opdateret."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "For at gendanne dine data skal du genaktivere den kontakt-krypteringsnøgle, der anvendtes på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
-      ],
-      "Key fingerprint": [
-        "Nøglefingeraftryk"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og samtidig afmelde advarslen."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
-      ],
-      "Group assignment applied": [
-        "Gruppetildeling anvendt"
-      ],
-      "Create a new contact group": [
-        "Opret ny kontaktgruppe"
-      ],
-      "No group found": [
-        "Ingen gruppe fundet"
-      ],
-      "Duplicate key updated": [
-        "Duplikeret nøgle opdateret"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Denne adresse er deaktiveret. Vil du kunne sende til denne adresse, skal ejeren først aktivere den."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
-      ],
-      "Primary": [
-        "Primær"
-      ],
-      "No email address": [
-        "Ingen e-mailaddresse"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt fundet",
-        "${ contactsCount } kontakter fundet"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } gruppe fundet",
-        "${ groupCounts } grupper fundet"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-mailadresse",
-        "${ addressCount } e-mailadresser"
-      ],
-      "Loading ${ appName }": [
-        "Indlæser ${ appName }"
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot(s) vedhæftet"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
-      ],
-      "Unsupported file": [
-        "Ikke-understøttet fil"
-      ],
-      "No preview available": [
-        "Ingen forhåndsvisning tilgængelig"
-      ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
-      "Loading preview": [
-        "Indlæser forhåndsvisning"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
-      ],
-      "of": [
-        "af"
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
-      ],
-      "Free up some space or add more storage space.": [
-        "Frigør noget plads eller tilføj mere lagerplads."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigør noget plads eller kontakt din administrator."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du nåede ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Internetforbindelse genoprettet."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Du har aktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den nyeste version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "here": [
-        "her"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
-      ],
-      "Session timed out.": [
-        "Session er udløbet."
-      ],
-      "Internet connection lost.": [
-        "Internetforbindelse afbrudt."
-      ],
-      "Servers are unreachable.": [
-        "Serverne er utilgængelige."
-      ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } findes allerede på denne placering."
-      ],
-      "What do you want to do?": [
-        "Hvad vil du gøre?"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Mappeindhold vil blive flettet sammen til én enkelt mappe"
-      ],
-      "A number will be added to the folder name": [
-        "Et nummer vil blive tilføjet mappens navn"
-      ],
-      "A number will be added to the filename": [
-        "Et nummer vil blive tilføjet filnavnet"
-      ],
-      "This will overwrite the existing folder": [
-        "Dette vil overskrive den eksisterende mappe"
-      ],
-      "This will overwrite the existing file": [
-        "Dette vil overskrive den eksisterende fil"
-      ],
-      "Folder will not be uploaded": [
-        "Mappen vil ikke blive uploadet"
-      ],
-      "File will not be uploaded": [
-        "Fil vil ikke blive uploadet"
-      ],
-      "Your files will be encrypted and then saved.": [
-        "Dine filer vil blive krypteret og derefter gemt."
-      ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Færdig",
-        "${ doneCount } Færdige"
-      ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } uploadet",
-        "${ doneUploadsCount } uploadet"
-      ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } downloadet",
-        "${ doneDownloadsCount } downloadet"
-      ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } uploader (${ uploadProgress }%)",
-        "${ activeUploadsCount } uploader (${ uploadProgress }%)"
-      ],
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } downloader (${ downloadProgress }%)",
-        "${ activeDownloadsCount } downloader (${ downloadProgress }%)"
-      ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } sat på pause",
-        "${ pausedCount } sat på pause"
-      ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } annulleret",
-        "${ canceledCount } annulleret"
-      ],
-      "${ errorCount } Failed": [
-        "${ errorCount } mislykkedes",
-        "${ errorCount } mislykkedes"
-      ],
-      "Something went wrong, please try again later.": [
-        "Noget gik galt. Prøv igen senere."
-      ],
-      "Initializing": [
-        "Initialiserer"
-      ],
-      "Conflict": [
-        "Konflikt"
-      ],
-      "Queued": [
-        "I kø"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
-      ],
-      "Paused": [
-        "Sat på pause"
-      ],
-      "Downloaded": [
-        "Downloadet"
-      ],
-      "Uploaded": [
-        "Uploadet"
-      ],
-      "Failed": [
-        "Mislykkedes"
-      ],
-      "Network issue": [
-        "Netværksproblem"
-      ],
-      "Canceled": [
-        "Annulleret"
-      ],
-      "Finalizing": [
-        "Færdiggører"
-      ],
-      "Downloading": [
-        "Downloader"
-      ],
-      "Uploading": [
-        "Uploader"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Lukning af overførselsmanager vil annullere alle aktive overførsler, er du sikker?"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
-      ],
-      "Create your first folder and start moving your files.": [
-        "Opret din første mappe og begynd at flytte dine filer."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Gå til \"Mine filer\" og upload nogle filer først."
-      ],
-      "No files or folders in trash": [
-        "Ingen filer eller mapper i papirkurven"
-      ],
-      "There are no files yet": [
-        "Der er ingen filer endnu"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Træk og slip en fil her eller vælg at uploade."
-      ],
-      "Share files with links": [
-        "Del filer med links"
-      ],
-      "Create links and share your files with others.": [
-        "Opret links og del dine filer med andre."
-      ],
-      "Link expires: ": [
-        "Link udløber: "
-      ],
-      "Your file has finished downloading.": [
-        "Din fil er færdig med at downloade."
-      ],
-      "Your file failed to download.": [
-        "Din fil kunne ikke downloades."
-      ],
-      "Your download has been canceled.": [
-        "Dit download er blevet annulleret."
-      ],
-      "Your file is being downloaded.": [
-        "Din fil bliver downloadet."
-      ],
-      "Would you like to restore your files?": [
-        "Ønsker du at gendanne dine filer?"
-      ],
-      "Recovery process might take some time.": [
-        "Gendannelsesprocessen kan tage noget tid."
-      ],
-      "More": [
-        "Mere"
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Dine filer er ikke længere tilgængelige på grund af nulstilling af adgangskode. Upload den gamle krypteringsnøgle igen for at få adgang. ${ mailSettingsLink }"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ startRecoveryButton }"
-      ],
-      "Yes": [
-        "Ja"
-      ],
-      "No": [
-        "Nej"
-      ],
-      "Anyone with this link can access your file.": [
-        "Alle med dette link kan få adgang til din fil."
-      ],
-      "Only the people with the link and the password can access this file.": [
-        "Kun personer med linket og adgangskoden kan få adgang til denne fil."
-      ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Dette link blev oprettet i en tidligere version og kan ikke ændres. Slet dette link og opret et nyt for at ændre indstillingerne."
-      ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Dit sikre, delbare link for ${ boldNameText }:"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Kunne ikke skabe et sikkert link. Prøv igen senere."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
-      ],
-      "You will lose all unsaved changes.": [
-        "Du vil miste alle ikke-gemte ændringer."
-      ],
-      "Preparing link to file": [
-        "Forbereder link til fil"
-      ],
-      "Creating link to file": [
-        "Opretter link til fil"
-      ],
-      "Select an uploaded file and create a link to it.": [
-        "Vælg en uploadet fil og opret et link til den."
-      ],
-      "Loading folder contents": [
-        "Indlæser mappens indhold"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
-      ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Er du sikker på, at du vil slette valgte emne(r) fra papirkurven permanent?"
-      ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Dette vil slette linket/linkene og fjerne adgang til din(e) fil(er) for alle med link(-erne)."
-      ],
-      "Moving files": [
-        "Flytter filer"
-      ],
-      "You cannot undo this action.": [
-        "Du kan ikke fortryde denne handling."
-      ],
-      "Trash": [
-        "Papirkurv"
-      ],
-      "My Links": [
-        "Mine Links"
-      ]
-    },
     "Label": {
       "Copy": [
         "Kopiér"
@@ -2020,61 +2023,61 @@
       "Browser version": [
         "Browser-version"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
       "Display name": [
         "Vist navn"
       ],
       "Name on card": [
-        ""
+        "Navn på kort"
       ],
       "Card number": [
-        ""
+        "Kortnummer"
       ],
       "Expiry date": [
-        ""
+        "Udløbsdato"
       ],
       "CVV code": [
-        ""
+        "CVV-kode"
       ],
       "Select your country": [
-        ""
+        "Vælg dit land"
       ],
       "ZIP": [
-        ""
+        "Postnummer"
       ],
       "BTC amount:": [
-        ""
+        "BTC-beløb:"
       ],
       "BTC address:": [
-        ""
+        "BTC-adresse:"
       ],
       "Select a method": [
-        ""
+        "Vælg en metode"
       ],
       "Total (${ countdown })": [
-        ""
+        "I alt (${ countdown })"
       ],
       "Total": [
-        ""
+        "I alt"
       ],
       "Proration": [
-        ""
+        "Proration"
       ],
       "Cash": [
-        ""
+        "Kontant"
       ],
       "Card holder": [
-        ""
+        "Kortindehaver"
       ],
       "Expires": [
-        ""
+        "Udløber"
       ],
       "Payer": [
+        "Betaler"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
         ""
       ],
       "Cancel": [
@@ -2185,44 +2188,6 @@
         "Nøgle kan ikke benyttes til kryptering"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Request an invite": [
-        "Anmod om en invitation"
-      ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
-      ],
-      "Pay invoice": [
-        "Betal faktura"
-      ],
-      "Upgrade account": [
-        "Opgradér konto"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Go to subscription plans": [
-        "Gå til abonnementer"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "My files": [
-        "Mine filer"
-      ],
-      "Shared": [
-        "Delt"
-      ],
-      "Trash": [
-        "Papirkurv"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "F.eks., "
@@ -2270,13 +2235,13 @@
         "f.eks. Anne Jensen"
       ],
       "ZIP": [
-        ""
+        "Postnummer"
       ],
       "Postal code": [
-        ""
+        "Postnummer"
       ],
       "Gift code": [
-        ""
+        "Gavekode"
       ],
       "Mailbox password": [
         "Postkasseadgangskode"
@@ -2296,6 +2261,44 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minutter"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Request an invite": [
+        "Anmod om en invitation"
+      ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
+      "Upgrade account": [
+        "Opgradér konto"
+      ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Go to subscription plans": [
+        "Gå til abonnementer"
+      ],
+      "click here": [
+        "klik hér"
+      ],
+      "Add a gift code": [
+        "Tilføj en gavekode"
+      ],
+      "My files": [
+        "Mine filer"
+      ],
+      "Shared": [
+        "Delt"
+      ],
+      "Trash": [
+        "Papirkurv"
       ]
     },
     "Storage": {
@@ -2332,58 +2335,58 @@
         "Du har ingen kontakter at eksportere"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        ""
+        "Brug flere adresser / aliasser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        ""
+        "Host e-mails til dine egne domæner på ProtonMail, f.eks. jens.hansen@eksempel.dk"
       ],
       "Use the personal address username@pm.me to send emails": [
-        ""
+        "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        ""
+        "Flerbruger-support gælder kun for abonnementer med 2 eller flere brugere"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        ""
+        "NetShield beskytter din enhed og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        ""
+        "Understøttelse af fildelingsprotokoller såsom BitTorrent."
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        ""
+        "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        ""
+        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk."
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        ""
+        "Afværger trusler mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Få adgang til alle de betalte funktioner i både ProtonVPN og ProtonMail (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Få adgang til alle de betalte funktioner i ${ vpnAppName } og ${ mailAppName } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
+        "Host e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        ""
+        "Opret flere adresser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
       ],
       "Discount applied for annual billing cycle": [
-        ""
+        "Rabat er fratrukket årlig faktureringsperiode"
       ],
       "Discount applied for two-year billing cycle": [
-        ""
+        "Rabat er fratrukket den toårige faktureringsperiode"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        ""
+        "Har du købt en gavekode eller modtaget en fra vores supportteam, kan du angive den hér."
       ],
       "Expired sharing link": [
         "Udløbet delingslink"
       ],
       "Inactive sharing link": [
-        ""
+        "Inaktivt delingslink"
       ],
       "Active sharing link": [
         "Aktivt delingslink"
@@ -2490,16 +2493,16 @@
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
       ],
-      "Are you sure you want to discard your import?": [
-        ""
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
+      ],
+      "Are you sure you want to discard your import?": [
         ""
       ]
     },
@@ -2543,7 +2546,7 @@
         "Fejl anmeldt"
       ],
       "You have successfully unsubscribed": [
-        ""
+        "Du har nu afmeldt dig"
       ],
       "Preference saved": [
         "Præferencer gemt"
@@ -2574,6 +2577,49 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Fandt ${ items.length } forslag, brug tastatur til navigation.",
         "Fandt ${ items.length } forslag, brug tastatur til navigation."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applikationer"
+      ],
+      "Go to ${ title }": [
+        "Gå til ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Gå til ${ vpnName }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ups, noget gik galt"
+      ],
+      "There was a problem connecting to Proton.": [
+        "Der opstod et problem med at oprette forbindelse til Proton."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } eller tjek din forbindelse."
+      ],
+      "Error: ${ errorMessage }": [
+        "Fejl: ${ errorMessage }"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Fejlen rettes hurtigst muligt, Tak for din tålmodighed."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Du kan også ${ refresh }, eller forsøge igen senere."
+      ],
+      "Internal server error": [
+        "Intern serverfejl"
+      ],
+      "You may also refresh the page or try again later.": [
+        "Du kan også opfriske siden, eller forsøge igen senere."
+      ],
+      "Not found": [
+        "Ikke fundet"
+      ],
+      "Access denied": [
+        "Adgang nægtet"
       ]
     },
     "Delinquent modal title": {
@@ -2875,7 +2921,7 @@
         "Kontakter, grupper og indstillinger"
       ],
       "Get help": [
-        ""
+        "Få hjælp"
       ]
     },
     "Error notification": {
@@ -2968,47 +3014,9 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
-      ],
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ups, noget gik galt"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Der opstod et problem med at oprette forbindelse til Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } eller tjek din forbindelse."
-      ],
-      "Error: ${ errorMessage }": [
-        "Fejl: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Fejlen rettes hurtigst muligt, Tak for din tålmodighed."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Du kan også ${ refresh }, eller forsøge igen senere."
-      ],
-      "Internal server error": [
-        "Intern serverfejl"
-      ],
-      "You may also refresh the page or try again later.": [
-        "Du kan også opfriske siden, eller forsøge igen senere."
-      ],
-      "Not found": [
-        "Ikke fundet"
-      ],
-      "Access denied": [
-        "Adgang nægtet"
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3114,32 +3122,6 @@
         "Vedhæft screenshot(s)"
       ]
     },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
     "Text": {
       "Settings": [
         "Indstillinger"
@@ -3213,448 +3195,469 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        ""
+        "Kontakt os venligst på ${ email } for anvisninger på, hvordan du betaler os med kontanter."
       ]
     },
     "Billing cycle option": {
       "Monthly": [
-        ""
+        "Månedlig"
       ],
       "Annually": [
-        ""
+        "Årlig"
       ],
       "Two-year": [
-        ""
+        "To-årig"
       ],
       "Annually SAVE 20%": [
-        ""
+        "Årligt SPAR 20%"
       ],
       "Two years SAVE 33%": [
-        ""
+        "To år SPAR 33%"
       ]
     },
     "Suffix for price": {
       "/ month": [
-        ""
+        "/ måned"
       ]
     },
     "info": {
       "(beta)": [
-        ""
+        "(beta)"
       ]
     },
     "Mail feature": {
       "Users": [
-        ""
+        "Brugere"
       ],
       "Storage": [
-        ""
+        "Lagerplads"
       ],
       "0.5 GB": [
-        ""
+        "0,5 GB"
       ],
       "20 GB": [
-        ""
+        "20 GB"
       ],
       "Addresses": [
-        ""
+        "Adresser"
       ],
       "Custom email addresses": [
-        ""
+        "Brugerdefinerede e-mailadresser"
       ],
       "Messages per day": [
-        ""
+        "Beskeder pr. dag"
       ],
       "Folders / labels": [
-        ""
+        "Mapper / etiketter"
       ],
       "Support": [
-        ""
+        "Support"
       ],
       "Limited": [
-        ""
+        "Begrænset"
       ],
       "Priority": [
-        ""
+        "Prioritet"
       ],
       "Encrypted contacts": [
-        ""
+        "Krypterede kontakter"
       ],
       "Contact groups": [
-        ""
+        "Kontaktgrupper"
       ],
       "Address verification": [
-        ""
+        "Adressebekræftelse"
       ],
       "Custom filters": [
-        ""
+        "Tilpassede filtre"
       ],
       "IMAP / SMTP": [
-        ""
+        "IMAP / SMTP"
       ],
       "Autoresponder": [
-        ""
+        "Autobesvarelse"
       ],
       "Use @pm.me address": [
-        ""
+        "Brug @pm.me-adresse"
       ],
       "Catch-All email": [
-        ""
+        "Fang-alle e-mail"
       ],
       "Multi-user support": [
-        ""
+        "Flerbrugerunderstøttelse"
       ]
     },
     "Mail feature option": {
       "5 GB *": [
-        ""
+        "5 GB *"
       ],
       "5 GB / user *": [
-        ""
+        "5 GB / bruger *"
       ],
       "Unlimited **": [
-        ""
+        "Ubegrænset **"
       ],
       "Unlimited": [
-        ""
+        "Ubegrænset"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
       "5 / user *": [
-        ""
+        "5 / bruger *"
       ]
     },
     "information": {
       "Included": [
-        ""
+        "Inkluderet"
       ]
     },
     "VPN feature": {
       "VPN Connections": [
-        ""
+        "VPN-forbindelser"
       ],
       "Speed": [
-        ""
+        "Hastighed"
       ],
       "VPN servers": [
-        ""
+        "VPN-servere"
       ],
       "Locations/Countries": [
-        ""
+        "Steder/Lande"
       ],
       "Adblocker (NetShield)": [
-        ""
+        "Adblocker (Netshield)"
       ],
       "P2P/BitTorrent": [
-        ""
+        "P2P/Bittorrent"
       ],
       "Streaming service support": [
-        ""
+        "Understøttelse af streamingtjeneste"
       ],
       "Tor over VPN": [
-        ""
+        "Tor over VPN"
       ],
       "Secure Core servers": [
-        ""
+        "Secure Core servere"
       ],
       "${ mailAppName } Visionary": [
-        ""
+        "${ mailAppName } Visionary"
       ],
       "Jurisdiction": [
-        ""
+        "Jurisdiktion"
       ],
       "Open Source & audited apps": [
-        ""
+        "Open Source & reviderede apps"
       ],
       "Access blocked content": [
-        ""
+        "Få adgang til blokeret indhold"
       ],
       "Strict no-logs policy": [
-        ""
+        "Streng politik om ingen logger"
       ],
       "Volume/bandwidth cap": [
-        ""
+        "Volume/båndbredde begrænsning"
       ],
       "User data monetization": [
-        ""
+        "Brugerdata monetarisering"
       ],
       "Platforms supported": [
-        ""
+        "Understøttede platforme"
       ],
       "Languages supported": [
-        ""
+        "Understøttede sprog"
       ],
       "DNS leak prevention": [
-        ""
+        "Forebyggelse af DNS-lækage"
       ],
       "Kill Switch / Always-on VPN": [
-        ""
+        "Kill Switch / Always-on VPN"
       ],
       "Perfect Forward Secrecy (PFS)": [
-        ""
+        "Perfect Forward Secrecy (PFS)"
       ],
       "Full Disk Encryption on Servers": [
-        ""
+        "Fuld diskkryptering på servere"
       ],
       "Split tunneling": [
-        ""
+        "Split tunneling"
       ],
       "Custom connection profiles": [
-        ""
+        "Brugerdefinerede forbindelsesprofiler"
       ],
       "Router support": [
-        ""
+        "Router support"
       ],
       "30-days money-back guarantee": [
-        ""
+        "30 dages penge-tilbage-garanti"
       ]
     },
     "VPN feature option": {
       "Medium": [
-        ""
+        "Mellem"
       ],
       "High": [
-        ""
+        "Høj"
       ],
       "Highest (up to 10 Gbps)": [
-        ""
+        "Højeste (op til 10 Gbps)"
       ],
       "Switzerland": [
-        ""
+        "Schweiz"
       ],
       "None": [
-        ""
+        "Ingen"
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        ""
+        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ],
       "(Android & Windows only)": [
-        ""
+        "(kun Android & Windows)"
       ]
     },
     "Calendar feature": {
       "Multiple calendars": [
-        ""
+        "Flere kalendere"
       ],
       "Calendar import": [
-        ""
+        "Kalenderimport"
       ],
       "Recurring events": [
-        ""
+        "Tilbagevendende begivenheder"
       ],
       "Invitations": [
-        ""
+        "Invitationer"
       ],
       "Share Calendar via link": [
-        ""
+        "Del kalender via link"
       ]
     },
     "Calendar feature option": {
       "20 / user *": [
-        ""
+        "20 / bruger *"
       ],
       "20 / user": [
-        ""
+        "20 / bruger"
       ]
     },
     "Drive feature": {
       "Access via Web": [
-        ""
+        "Adgang via Web"
       ],
       "Upload / download files": [
-        ""
+        "Upload / download filer"
       ],
       "Share files via link": [
-        ""
+        "Del filer via link"
       ]
     },
     "Info concerning plan features": {
       "Customizable features": [
-        ""
+        "Justérbare features"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "ProtonMail kan ikke benyttes til masseudsendelse af e-mail eller spam. Legitime e-mails er ubegrænsede."
       ]
     },
     "Plan Feature": {
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN-forbindelse",
+        "${ n } VPN-forbindelser"
       ],
       "${ n } server": [
-        "",
-        ""
+        "${ n } server",
+        "${ n } servere"
       ]
     },
     "Netflix": {
       "Netflix": [
-        ""
+        "Netflix"
       ]
     },
     "Disney": {
       "Disney+": [
-        ""
+        "Disney+"
       ]
     },
     "Prime Video": {
       "Prime Video": [
-        ""
+        "Prime Video"
       ]
     },
     "Many Others": {
       "and many others": [
-        ""
+        "og mange andre"
       ]
     },
     "Plan feature": {
       "Built-in Adblocker (NetShield)": [
-        ""
+        "Indbygget Adblocker (Netshield)"
       ],
       "Secure Core servers": [
-        ""
+        "Secure Core servere"
       ],
       "Streaming service support": [
-        ""
+        "Understøttelse af streamingtjeneste"
       ],
       "Access blocked content": [
-        ""
+        "Få adgang til blokeret indhold"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
+        "${ freeServers } i ${ freeCountries } land",
+        "${ freeServers } i ${ freeCountries } lande"
       ],
       "Medium speed": [
-        ""
+        "Mellem hastighed"
       ],
       "350+ servers in ${ basicCountries } country": [
-        "",
-        ""
+        "350+ servere i ${ basicCountries } land",
+        "350+ servere i ${ basicCountries } lande"
       ],
       "High speed": [
-        ""
+        "Høj hastighed"
       ],
       "1200+ servers in ${ plusCountries } country": [
-        "",
-        ""
+        "1200+ servere i ${ plusCountries } land",
+        "1200+ servere i ${ plusCountries } lande"
       ],
       "Highest speed (up to 10 Gbps)": [
-        ""
+        "Højeste hastighed (op til 10 Gbps)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        ""
+        "Alle ${ PLAN_NAMES[PLANS.VPNPLUS] } abonnementsfunktioner"
       ],
       "Includes 6 user accounts": [
-        ""
+        "Inkluderer 6 brugerkonti"
       ],
       "Includes Proton Visionary": [
-        ""
+        "Inkluderer Proton Visionary"
       ],
       "Early access to new products": [
-        ""
+        "Tidlig adgang til nye produkter"
       ],
       "Custom email addresses": [
-        ""
+        "Brugerdefinerede e-mailadresser"
       ],
       "Access to ${ driveAppName } (beta)": [
-        ""
+        "Adgang til ${ driveAppName } (beta)"
       ],
       "1 user": [
-        ""
+        "1 bruger"
       ],
       "0.5 GB storage": [
-        ""
+        "0,5 GB lagerplads"
       ],
       "1 address": [
-        ""
+        "1 adresse"
       ],
       "3 folders / labels": [
-        ""
+        "3 mapper / etiketter"
       ],
       "5 GB storage *": [
-        ""
+        "5 GB lagerplads *"
       ],
       "5 addresses": [
-        ""
+        "5 adresser"
       ],
       "200 folders / labels": [
-        ""
+        "200 mapper / etiketter"
       ],
       "1 - 5000 users *": [
-        ""
+        "1 – 5000 brugere *"
       ],
       "5 GB storage / user": [
-        ""
+        "5 GB lagerplads / bruger"
       ],
       "5 addresses / user": [
-        ""
+        "5 adresser / bruger"
       ],
       "Unlimited folders / labels": [
-        ""
+        "Ubegrænsede mapper / etiketter"
       ],
       "6 users": [
-        ""
+        "6 brugere"
       ],
       "20 GB storage": [
-        ""
+        "20 GB lagerplads"
       ],
       "50 addresses": [
-        ""
+        "50 adresser"
       ]
     },
     "Price": {
       "Free": [
-        ""
+        "Gratis"
       ]
     },
     "Countdown unit": {
       "${ monthsWithYears } month": [
-        "",
-        ""
+        "${ monthsWithYears } måned",
+        "${ monthsWithYears } måneder"
       ],
       "${ days } day": [
-        "",
-        ""
+        "${ days } dag",
+        "${ days } dage"
       ]
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "",
-        ""
+        "+ ${ addresses } e-mailadresse",
+        "+ ${ addresses } e-mailadresser"
       ],
       "+ ${ storage } storage": [
-        ""
+        "+ ${ storage } lagerplads"
       ],
       "+ ${ domains } custom domain": [
-        "",
-        ""
+        "+ ${ domains } brugerdomæne",
+        "+ ${ domains } brugerdomæner"
       ],
       "+ ${ members } user": [
-        "",
-        ""
+        "+ ${ members } bruger",
+        "+ ${ members } brugere"
       ],
       "+ ${ vpn } connection": [
-        "",
-        ""
+        "+ ${ vpn } forbindelse",
+        "+ ${ vpn } forbindelser"
       ]
     },
     "Plan info": {
       "(current plan)": [
-        ""
+        "(nuværende abonnement)"
       ]
     },
     "Free price": {
       "Free": [
-        ""
+        "Gratis"
       ]
     },
     "Payment method option": {
       "New credit/debit card": [
-        ""
+        "Nyt kredit / betalingskort"
       ],
       "PayPal": [
-        ""
+        "PayPal"
       ],
       "Bitcoin": [
+        "Bitcoin"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
         ""
       ]
     },

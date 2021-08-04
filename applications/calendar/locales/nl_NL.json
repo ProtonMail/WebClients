@@ -331,12 +331,6 @@
       "Name": [
         "Naam"
       ],
-      "Compact name": [
-        "Compacte naam"
-      ],
-      "Nickname": [
-        "Bijnaam"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -387,18 +381,6 @@
       ],
       "Member": [
         "Lid"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Gerelateerde"
-      ],
-      "Categories": [
-        "Categorieën"
-      ],
-      "Sound": [
-        "Geluid"
       ]
     },
     "Contact type label": {
@@ -428,12 +410,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Naam"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -463,63 +439,6 @@
       ],
       "Address": [
         "Adres"
-      ],
-      "Contact": [
-        "Contact"
-      ],
-      "Acquaintance": [
-        "Kennis"
-      ],
-      "Friend": [
-        "Vriend"
-      ],
-      "Met": [
-        "Ontmoet"
-      ],
-      "Co-worker": [
-        "Medewerkers"
-      ],
-      "Colleague": [
-        "Collega"
-      ],
-      "Co-resident": [
-        "Medebewoner"
-      ],
-      "Neighbor": [
-        "Buurman"
-      ],
-      "Child": [
-        "Kind"
-      ],
-      "Parent": [
-        "Ouder"
-      ],
-      "Sibling": [
-        "Broer of zus"
-      ],
-      "Kin": [
-        "Kin"
-      ],
-      "Muse": [
-        "Muse"
-      ],
-      "Crush": [
-        "Crush"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Sweetheart": [
-        "Lieve schat"
-      ],
-      "Me": [
-        "Ik"
-      ],
-      "Agent": [
-        "Agent"
-      ],
-      "Emergency": [
-        "Noodgeval"
       ]
     },
     "Info": {
@@ -2003,285 +1922,10 @@
         "Fw:"
       ]
     },
-    "Label": {
-      "Copy": [
-        "Kopiëren"
-      ],
-      "Reveal password": [
-        "Wachtwoord tonen"
-      ],
-      "Hide password": [
-        "Wachtwoord verbergen"
-      ],
-      "Street address": [
-        "Straatnaam"
-      ],
-      "City": [
-        "Plaats"
-      ],
-      "Region": [
-        "Regio"
-      ],
-      "Postal code": [
-        "Postcode"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Post office box": [
-        "Postbus"
-      ],
-      "Extended address": [
-        "Uitgebreid adres"
-      ],
-      "Do not ask again": [
-        "Vraag niet opnieuw"
-      ],
-      "Email address": [
-        "E-mailadres"
-      ],
-      "Phone number": [
-        "Telefoonnummer"
-      ],
-      "Verification code": [
-        "Verificatiecode"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
-      ],
-      "Add email address": [
-        "E-mailadres toevoegen"
-      ],
-      "Email format": [
-        "E-mailindeling"
-      ],
-      "Add image URL": [
-        "Voeg URL van afbeelding toe"
-      ],
-      "Upload picture": [
-        "Afbeelding uploaden"
-      ],
-      "Add to group": [
-        "Toevoegen aan groep"
-      ],
-      "Encrypt emails": [
-        "E-mails versleutelen"
-      ],
-      "Sign emails": [
-        "E-mails ondertekenen"
-      ],
-      "Cryptographic scheme": [
-        "Cryptografisch schema"
-      ],
-      "Public keys": [
-        "Publieke sleutels"
-      ],
-      "Automatically save contacts": [
-        "Contacten automatisch opslaan"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Export contacts": [
-        "Contactpersonen exporteren"
-      ],
-      "Operating system": [
-        "Besturingssysteem"
-      ],
-      "Operating system version": [
-        "Versie van besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton gebruikersnaam"
-      ],
-      "Category": [
-        "Categorie"
-      ],
-      "What happened?": [
-        "Wat is er gebeurd?"
-      ],
-      "System information": [
-        "Systeeminformatie"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Annuleer"
-      ],
-      "Submit": [
-        "Versturen"
-      ],
-      "Password": [
-        "Wachtwoord"
-      ],
-      "Mailbox password": [
-        "Mailbox-wachtwoord"
-      ],
-      "Two-factor authentication code": [
-        "Tweestapsverificatiecode"
-      ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
-      ],
-      "What is the primary reason for this rating?": [
-        "Wat is de voornaamste reden voor deze rating?"
-      ],
-      "Display name": [
-        "Weergavenaam"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selecteer hoe uw lijst met berichten er standaard uitziet."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecteer hoe uw mailbox er standaard uitziet."
-      ],
-      "Select how your composer opens by default.": [
-        "Selecteer hoe uw opstelvenster standaard opent."
-      ],
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "Choose a color": [
-        "Kies een kleur"
-      ],
-      "Default email": [
-        "Standaard e-mailadres"
-      ],
-      "Display": [
-        "Tonen"
-      ],
-      "Description": [
-        "Beschrijving"
-      ],
-      "Default event duration": [
-        "Standaard afspraakduur"
-      ],
-      "URL": [
-        "Website"
-      ],
-      "Default notifications": [
-        "Standaardinstellingen van meldingen"
-      ],
-      "Default full day notifications": [
-        "Standaardwaarde meldingen voor afspraken die de hele dag duren"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Hoe waarschijnlijk is het dat u ${ calendarAppName } aan een vriend of collega zult aanbevelen?"
-      ],
-      "0 - Not likely": [
-        "0 - Niet waarschijnlijk"
-      ],
-      "10 - Extremely likely": [
-        "10 - Zeer waarschijnlijk"
-      ],
-      "All day": [
-        "De hele dag"
-      ],
-      "Repeat on": [
-        "Herhalen op"
-      ],
-      "Repeat every": [
-        "Herhaal elke"
-      ],
-      "Ends": [
-        "Eindigt"
-      ],
-      "Organizer": [
-        "Organisator"
-      ],
-      "Optional": [
-        "Optioneel"
-      ],
-      "Time of the event": [
-        "Tijd van de gebeurtenis"
-      ],
-      "Event time": [
-        "Tijdstip gebeurtenis"
-      ],
-      "Event title": [
-        "Gebeurtenis titel"
-      ],
-      "Event frequency": [
-        "Gebeurtenis frequentie"
-      ],
-      "Event location": [
-        "Afspraaklocatie"
-      ],
-      "Event notifications": [
-        "Gebeurtenismeldingen"
-      ],
-      "Participants": [
-        "Deelnemers"
-      ],
-      "Your calendars": [
-        "Uw kalenders"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Sluiten"
+      ],
       "Close modal": [
         "Venster sluiten"
       ],
@@ -2300,12 +1944,6 @@
       "Use “${ label }” setting": [
         "Gebruik “${ label }”-instelling"
       ],
-      "Close": [
-        "Sluiten"
-      ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Close navigation": [
         "Sluit navigatie"
       ],
@@ -2314,6 +1952,9 @@
       ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Load image": [
         "Afbeelding laden"
@@ -2750,139 +2391,6 @@
         "Popover sluiten"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Sleutel kan niet worden gebruikt voor versleuteling"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "Request an invite": [
-        "Uitnodiging aanvragen"
-      ],
-      "clearing your browser cache": [
-        "uw browser cache wissen"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Go to subscription plans": [
-        "Ga naar abonnementen"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Factuur betalen"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
-      ],
-      "Calendars": [
-        "Kalenders"
-      ],
-      "My calendars": [
-        "Mijn agenda"
-      ],
-      "Other calendars": [
-        "Andere agenda's"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Bijv., "
-      ],
-      "Start typing an email address": [
-        "Voer een e-mailadres in"
-      ],
-      "Image URL": [
-        "Afbeeldings-URL"
-      ],
-      "Filter groups": [
-        "Groepen filteren"
-      ],
-      "Search for name or email": [
-        "Naam of e-mail zoeken"
-      ],
-      "Search for group name": [
-        "Zoeken naar groepsnaam"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "OS name": [
-        "Besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton-gebruikersnaam"
-      ],
-      "A way to contact you": [
-        "Een manier om contact met u op te nemen"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Beschrijf het probleem en voeg alle foutmeldingen toe"
-      ],
-      "Browser name": [
-        "Browsernaam"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        "Voeg een agendanaam toe"
-      ],
-      "Add a calendar description": [
-        "Voeg een beschrijving toe aan de kalender"
-      ],
-      "Add title": [
-        "Titel toevoegen"
-      ],
-      "Add location": [
-        "Add location"
-      ],
-      "Add description": [
-        "Voeg een beschrijving toe"
-      ],
-      "Add participants": [
-        "Personen toevoegen"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
-      ]
-    },
     "Title": {
       "Open actions dropdown": [
         "Open acties dropdownmenu"
@@ -3316,6 +2824,417 @@
       ],
       "CANCELLED": [
         "GEANNULEERD"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Kopiëren"
+      ],
+      "Reveal password": [
+        "Wachtwoord tonen"
+      ],
+      "Hide password": [
+        "Wachtwoord verbergen"
+      ],
+      "Street address": [
+        "Straatnaam"
+      ],
+      "City": [
+        "Plaats"
+      ],
+      "Region": [
+        "Regio"
+      ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "Country": [
+        "Land"
+      ],
+      "Post office box": [
+        "Postbus"
+      ],
+      "Extended address": [
+        "Uitgebreid adres"
+      ],
+      "Do not ask again": [
+        "Vraag niet opnieuw"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Verification code": [
+        "Verificatiecode"
+      ],
+      "Enter the 6-digit code": [
+        "Voer de 6-cijferige code in"
+      ],
+      "Add email address": [
+        "E-mailadres toevoegen"
+      ],
+      "Email format": [
+        "E-mailindeling"
+      ],
+      "Add image URL": [
+        "Voeg URL van afbeelding toe"
+      ],
+      "Upload picture": [
+        "Afbeelding uploaden"
+      ],
+      "Add to group": [
+        "Toevoegen aan groep"
+      ],
+      "Encrypt emails": [
+        "E-mails versleutelen"
+      ],
+      "Sign emails": [
+        "E-mails ondertekenen"
+      ],
+      "Cryptographic scheme": [
+        "Cryptografisch schema"
+      ],
+      "Public keys": [
+        "Publieke sleutels"
+      ],
+      "Automatically save contacts": [
+        "Contacten automatisch opslaan"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Export contacts": [
+        "Contactpersonen exporteren"
+      ],
+      "Operating system": [
+        "Besturingssysteem"
+      ],
+      "Operating system version": [
+        "Versie van besturingssysteem"
+      ],
+      "Proton username": [
+        "Proton gebruikersnaam"
+      ],
+      "Category": [
+        "Categorie"
+      ],
+      "What happened?": [
+        "Wat is er gebeurd?"
+      ],
+      "System information": [
+        "Systeeminformatie"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "Cancel": [
+        "Annuleer"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Mailbox password": [
+        "Mailbox-wachtwoord"
+      ],
+      "Two-factor authentication code": [
+        "Tweestapsverificatiecode"
+      ],
+      "Username or ProtonMail address": [
+        "Gebruikersnaam of ProtonMail e-mailadres"
+      ],
+      "What is the primary reason for this rating?": [
+        "Wat is de voornaamste reden voor deze rating?"
+      ],
+      "Display name": [
+        "Weergavenaam"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Sneltoetsen"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Selecteer hoe uw lijst met berichten er standaard uitziet."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Selecteer hoe uw mailbox er standaard uitziet."
+      ],
+      "Select how your composer opens by default.": [
+        "Selecteer hoe uw opstelvenster standaard opent."
+      ],
+      "Enable Beta Access": [
+        "Bèta-toegang inschakelen"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Choose a color": [
+        "Kies een kleur"
+      ],
+      "Default email": [
+        "Standaard e-mailadres"
+      ],
+      "Display": [
+        "Tonen"
+      ],
+      "Description": [
+        "Beschrijving"
+      ],
+      "Default event duration": [
+        "Standaard afspraakduur"
+      ],
+      "URL": [
+        "Website"
+      ],
+      "Default notifications": [
+        "Standaardinstellingen van meldingen"
+      ],
+      "Default full day notifications": [
+        "Standaardwaarde meldingen voor afspraken die de hele dag duren"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Hoe waarschijnlijk is het dat u ${ calendarAppName } aan een vriend of collega zult aanbevelen?"
+      ],
+      "0 - Not likely": [
+        "0 - Niet waarschijnlijk"
+      ],
+      "10 - Extremely likely": [
+        "10 - Zeer waarschijnlijk"
+      ],
+      "All day": [
+        "De hele dag"
+      ],
+      "Repeat on": [
+        "Herhalen op"
+      ],
+      "Repeat every": [
+        "Herhaal elke"
+      ],
+      "Ends": [
+        "Eindigt"
+      ],
+      "Organizer": [
+        "Organisator"
+      ],
+      "Optional": [
+        "Optioneel"
+      ],
+      "Time of the event": [
+        "Tijd van de gebeurtenis"
+      ],
+      "Event time": [
+        "Tijdstip gebeurtenis"
+      ],
+      "Event title": [
+        "Gebeurtenis titel"
+      ],
+      "Event frequency": [
+        "Gebeurtenis frequentie"
+      ],
+      "Event location": [
+        "Afspraaklocatie"
+      ],
+      "Event notifications": [
+        "Gebeurtenismeldingen"
+      ],
+      "Participants": [
+        "Deelnemers"
+      ],
+      "Your calendars": [
+        "Uw kalenders"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Sleutel kan niet worden gebruikt voor versleuteling"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Request an invite": [
+        "Uitnodiging aanvragen"
+      ],
+      "clearing your browser cache": [
+        "uw browser cache wissen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Go to subscription plans": [
+        "Ga naar abonnementen"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Factuur betalen"
+      ],
+      "Upgrade account": [
+        "Account upgraden"
+      ],
+      "Calendars": [
+        "Kalenders"
+      ],
+      "My calendars": [
+        "Mijn agenda"
+      ],
+      "Other calendars": [
+        "Andere agenda's"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Bijv., "
+      ],
+      "Start typing an email address": [
+        "Voer een e-mailadres in"
+      ],
+      "Image URL": [
+        "Afbeeldings-URL"
+      ],
+      "Filter groups": [
+        "Groepen filteren"
+      ],
+      "Search for name or email": [
+        "Naam of e-mail zoeken"
+      ],
+      "Search for group name": [
+        "Zoeken naar groepsnaam"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "OS name": [
+        "Besturingssysteem"
+      ],
+      "OS version": [
+        "Versie besturingssysteem"
+      ],
+      "Proton username": [
+        "Proton-gebruikersnaam"
+      ],
+      "A way to contact you": [
+        "Een manier om contact met u op te nemen"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beschrijf het probleem en voeg alle foutmeldingen toe"
+      ],
+      "Browser name": [
+        "Browsernaam"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "e.g. Julia Smith": [
+        "bijv. Julia Smith"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        "Voeg een agendanaam toe"
+      ],
+      "Add a calendar description": [
+        "Voeg een beschrijving toe aan de kalender"
+      ],
+      "Add title": [
+        "Titel toevoegen"
+      ],
+      "Add location": [
+        "Add location"
+      ],
+      "Add description": [
+        "Voeg een beschrijving toe"
+      ],
+      "Add participants": [
+        "Personen toevoegen"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ]
     },
     "Storage": {
@@ -4113,30 +4032,6 @@
         ""
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normaal"
-      ],
-      "Maximized": [
-        "Gemaximaliseerd"
-      ]
-    },
     "Text": {
       "Settings": [
         "Instellingen"
@@ -4652,6 +4547,30 @@
     "Free price": {
       "Free": [
         ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normaal"
+      ],
+      "Maximized": [
+        "Gemaximaliseerd"
       ]
     },
     "Payment method option": {

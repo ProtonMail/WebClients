@@ -345,12 +345,6 @@
       "Name": [
         "Ім'я"
       ],
-      "Compact name": [
-        "Коротке ім'я"
-      ],
-      "Nickname": [
-        "Псевдонім"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -401,18 +395,6 @@
       ],
       "Member": [
         "Учасник"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Пов'язані"
-      ],
-      "Categories": [
-        "Категорії"
-      ],
-      "Sound": [
-        "Звук"
       ]
     },
     "Contact type label": {
@@ -442,12 +424,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Ім'я"
-      ],
-      "Yomi": [
-        "Йомі"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -477,63 +453,6 @@
       ],
       "Address": [
         "Адреса"
-      ],
-      "Contact": [
-        "Контакт"
-      ],
-      "Acquaintance": [
-        "Знайомі"
-      ],
-      "Friend": [
-        "Друзі"
-      ],
-      "Met": [
-        "Зустрічалися"
-      ],
-      "Co-worker": [
-        "Співробітник"
-      ],
-      "Colleague": [
-        "Колега"
-      ],
-      "Co-resident": [
-        "Співмешканці"
-      ],
-      "Neighbor": [
-        "Сусід"
-      ],
-      "Child": [
-        "Дитина"
-      ],
-      "Parent": [
-        "Батьки"
-      ],
-      "Sibling": [
-        "Брати/Сестри"
-      ],
-      "Kin": [
-        "Родичі"
-      ],
-      "Muse": [
-        "Надихає"
-      ],
-      "Crush": [
-        "Захоплення"
-      ],
-      "Date": [
-        "Побачення"
-      ],
-      "Sweetheart": [
-        "Серденько"
-      ],
-      "Me": [
-        "Я"
-      ],
-      "Agent": [
-        "Агент"
-      ],
-      "Emergency": [
-        "Екстрені"
       ]
     },
     "Info": {
@@ -2107,285 +2026,10 @@
         "Переслати:"
       ]
     },
-    "Label": {
-      "Copy": [
-        "Копіювати"
-      ],
-      "Reveal password": [
-        "Показати пароль"
-      ],
-      "Hide password": [
-        "Сховати пароль"
-      ],
-      "Street address": [
-        "Вулиця"
-      ],
-      "City": [
-        "Місто"
-      ],
-      "Region": [
-        "Область"
-      ],
-      "Postal code": [
-        "Поштовий код"
-      ],
-      "Country": [
-        "Країна"
-      ],
-      "Post office box": [
-        "Поштова скринька"
-      ],
-      "Extended address": [
-        "Додаткова адреса"
-      ],
-      "Do not ask again": [
-        "Не питати знову"
-      ],
-      "Email address": [
-        "Адреса е-пошти"
-      ],
-      "Phone number": [
-        "Номер телефону"
-      ],
-      "Verification code": [
-        "Код підтвердження"
-      ],
-      "Enter the 6-digit code": [
-        "Введіть 6-значний код"
-      ],
-      "Add email address": [
-        "Додати адресу електронної пошти"
-      ],
-      "Email format": [
-        "Формат повідомлень"
-      ],
-      "Add image URL": [
-        "Додати URL-адресу зображення"
-      ],
-      "Upload picture": [
-        "Вивантажити зображення"
-      ],
-      "Add to group": [
-        "Додати до групи"
-      ],
-      "Encrypt emails": [
-        "Шифрувати листи"
-      ],
-      "Sign emails": [
-        "Підписувати листи"
-      ],
-      "Cryptographic scheme": [
-        "Криптографічна схема"
-      ],
-      "Public keys": [
-        "Відкриті ключі"
-      ],
-      "Automatically save contacts": [
-        "Автоматично зберігати контакти"
-      ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Export contacts": [
-        "Експортувати контакти"
-      ],
-      "Operating system": [
-        "Операційна система"
-      ],
-      "Operating system version": [
-        "Версія операційної системи"
-      ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
-      "Category": [
-        "Категорія"
-      ],
-      "What happened?": [
-        "Що трапилось?"
-      ],
-      "System information": [
-        "Відомості про систему"
-      ],
-      "Browser": [
-        "Браузер"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Скасувати"
-      ],
-      "Submit": [
-        "Надіслати"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
-      ],
-      "Username or ProtonMail address": [
-        "Ім'я користувача або адреса ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        "Яка основна причина такої оцінки?"
-      ],
-      "Display name": [
-        "Показуване ім'я"
-      ],
-      "Name on card": [
-        "Ім'я на картці"
-      ],
-      "Card number": [
-        "Номер картки"
-      ],
-      "Expiry date": [
-        "Чинна до"
-      ],
-      "CVV code": [
-        "Код CVV"
-      ],
-      "Select your country": [
-        "Виберіть свою країну"
-      ],
-      "ZIP": [
-        "Поштовий індекс"
-      ],
-      "BTC amount:": [
-        "Сума в BTC:"
-      ],
-      "BTC address:": [
-        "Адреса BTC:"
-      ],
-      "Select a method": [
-        "Виберіть метод"
-      ],
-      "Total (${ countdown })": [
-        "Загалом (${ countdown })"
-      ],
-      "Total": [
-        "Загалом"
-      ],
-      "Proration": [
-        "Розподілення"
-      ],
-      "Cash": [
-        "Готівка"
-      ],
-      "Card holder": [
-        "Власник картки"
-      ],
-      "Expires": [
-        "Термін дії"
-      ],
-      "Payer": [
-        "Платник"
-      ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Оберіть типовий вигляд списку повідомлень."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Оберіть типовий вигляд поштової скриньки."
-      ],
-      "Select how your composer opens by default.": [
-        "Оберіть типовий вигляд редактора."
-      ],
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "Choose a color": [
-        "Вибрати колір"
-      ],
-      "Default email": [
-        "Типова електронна пошта"
-      ],
-      "Display": [
-        "Вигляд"
-      ],
-      "Description": [
-        "Опис"
-      ],
-      "Default event duration": [
-        "Типова тривалість події"
-      ],
-      "URL": [
-        "URL-адреса"
-      ],
-      "Default notifications": [
-        "Типові сповіщення"
-      ],
-      "Default full day notifications": [
-        "Типові сповіщення на весь день"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Яка ймовірність, що ви порадите ${ calendarAppName } другові або колезі?"
-      ],
-      "0 - Not likely": [
-        "0 - малоймовірно"
-      ],
-      "10 - Extremely likely": [
-        "10 - Неодмінно"
-      ],
-      "All day": [
-        "Весь день"
-      ],
-      "Repeat on": [
-        "Повторити"
-      ],
-      "Repeat every": [
-        "Повторювати кожні"
-      ],
-      "Ends": [
-        "Завершується"
-      ],
-      "Organizer": [
-        "Організатор"
-      ],
-      "Optional": [
-        "Необов'язково"
-      ],
-      "Time of the event": [
-        "Час події"
-      ],
-      "Event time": [
-        "Час події"
-      ],
-      "Event title": [
-        "Назва події"
-      ],
-      "Event frequency": [
-        "Повторюваність події"
-      ],
-      "Event location": [
-        "Місце події"
-      ],
-      "Event notifications": [
-        "Сповіщення про події"
-      ],
-      "Participants": [
-        "Учасники"
-      ],
-      "Your calendars": [
-        "Ваші календарі"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Закрити"
+      ],
       "Close modal": [
         "Закрити вікно"
       ],
@@ -2404,12 +2048,6 @@
       "Use “${ label }” setting": [
         "Використовувати налаштування“${ label }”"
       ],
-      "Close": [
-        "Закрити"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Close navigation": [
         "Закрити панель навігації"
       ],
@@ -2418,6 +2056,9 @@
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Load image": [
         "Завантажити зображення"
@@ -2856,143 +2497,6 @@
       ],
       "Close popover": [
         "Закрити спливне вікно"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не можна застосовувати для шифрування"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Request an invite": [
-        "Запитати запрошення"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Go to subscription plans": [
-        "Перейти до тарифних планів"
-      ],
-      "click here": [
-        "натисніть тут"
-      ],
-      "Add a gift code": [
-        "Додати подарунковий код"
-      ],
-      "Pay invoice": [
-        "Сплатити рахунок-фактуру"
-      ],
-      "Upgrade account": [
-        "Покращити обліковий запис"
-      ],
-      "Calendars": [
-        "Календарі"
-      ],
-      "My calendars": [
-        "Мої календарі"
-      ],
-      "Other calendars": [
-        "Інші календарі"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Наприклад, "
-      ],
-      "Start typing an email address": [
-        "Почніть вводити адресу електронної пошти"
-      ],
-      "Image URL": [
-        "URL-адреса зображення"
-      ],
-      "Filter groups": [
-        "Фільтр груп"
-      ],
-      "Search for name or email": [
-        "Пошук за іменем чи е-поштою"
-      ],
-      "Search for group name": [
-        "Шукати назву групи"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
-      "A way to contact you": [
-        "Спосіб зв'язку з вами"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Будь ласка опишіть проблему та вкажіть будь-які повідомлення про помилки"
-      ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Feedback": [
-        "Відгук"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Оксана Пазиненко"
-      ],
-      "ZIP": [
-        "Поштовий індекс"
-      ],
-      "Postal code": [
-        "Поштовий індекс"
-      ],
-      "Gift code": [
-        "Подарунковий код"
-      ],
-      "Add a calendar name": [
-        "Додати назву календаря"
-      ],
-      "Add a calendar description": [
-        "Додати опис календаря"
-      ],
-      "Add title": [
-        "Додати заголовок"
-      ],
-      "Add location": [
-        "Додати розташування"
-      ],
-      "Add description": [
-        "Додати опис"
-      ],
-      "Add participants": [
-        "Додати учасників"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годинн",
-        "${ hours } годинн"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
       ]
     },
     "Title": {
@@ -3436,6 +2940,421 @@
       ],
       "CANCELLED": [
         "СКАСОВАНО"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Копіювати"
+      ],
+      "Reveal password": [
+        "Показати пароль"
+      ],
+      "Hide password": [
+        "Сховати пароль"
+      ],
+      "Street address": [
+        "Вулиця"
+      ],
+      "City": [
+        "Місто"
+      ],
+      "Region": [
+        "Область"
+      ],
+      "Postal code": [
+        "Поштовий код"
+      ],
+      "Country": [
+        "Країна"
+      ],
+      "Post office box": [
+        "Поштова скринька"
+      ],
+      "Extended address": [
+        "Додаткова адреса"
+      ],
+      "Do not ask again": [
+        "Не питати знову"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
+      ],
+      "Phone number": [
+        "Номер телефону"
+      ],
+      "Verification code": [
+        "Код підтвердження"
+      ],
+      "Enter the 6-digit code": [
+        "Введіть 6-значний код"
+      ],
+      "Add email address": [
+        "Додати адресу електронної пошти"
+      ],
+      "Email format": [
+        "Формат повідомлень"
+      ],
+      "Add image URL": [
+        "Додати URL-адресу зображення"
+      ],
+      "Upload picture": [
+        "Вивантажити зображення"
+      ],
+      "Add to group": [
+        "Додати до групи"
+      ],
+      "Encrypt emails": [
+        "Шифрувати листи"
+      ],
+      "Sign emails": [
+        "Підписувати листи"
+      ],
+      "Cryptographic scheme": [
+        "Криптографічна схема"
+      ],
+      "Public keys": [
+        "Відкриті ключі"
+      ],
+      "Automatically save contacts": [
+        "Автоматично зберігати контакти"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Export contacts": [
+        "Експортувати контакти"
+      ],
+      "Operating system": [
+        "Операційна система"
+      ],
+      "Operating system version": [
+        "Версія операційної системи"
+      ],
+      "Proton username": [
+        "Ім'я користувача Proton"
+      ],
+      "Category": [
+        "Категорія"
+      ],
+      "What happened?": [
+        "Що трапилось?"
+      ],
+      "System information": [
+        "Відомості про систему"
+      ],
+      "Browser": [
+        "Браузер"
+      ],
+      "Browser version": [
+        "Версія браузера"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Submit": [
+        "Надіслати"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Two-factor authentication code": [
+        "Код двоетапної перевірки"
+      ],
+      "Username or ProtonMail address": [
+        "Ім'я користувача або адреса ProtonMail"
+      ],
+      "What is the primary reason for this rating?": [
+        "Яка основна причина такої оцінки?"
+      ],
+      "Display name": [
+        "Показуване ім'я"
+      ],
+      "Name on card": [
+        "Ім'я на картці"
+      ],
+      "Card number": [
+        "Номер картки"
+      ],
+      "Expiry date": [
+        "Чинна до"
+      ],
+      "CVV code": [
+        "Код CVV"
+      ],
+      "Select your country": [
+        "Виберіть свою країну"
+      ],
+      "ZIP": [
+        "Поштовий індекс"
+      ],
+      "BTC amount:": [
+        "Сума в BTC:"
+      ],
+      "BTC address:": [
+        "Адреса BTC:"
+      ],
+      "Select a method": [
+        "Виберіть метод"
+      ],
+      "Total (${ countdown })": [
+        "Загалом (${ countdown })"
+      ],
+      "Total": [
+        "Загалом"
+      ],
+      "Proration": [
+        "Розподілення"
+      ],
+      "Cash": [
+        "Готівка"
+      ],
+      "Card holder": [
+        "Власник картки"
+      ],
+      "Expires": [
+        "Термін дії"
+      ],
+      "Payer": [
+        "Платник"
+      ],
+      "Keyboard shortcuts": [
+        "Комбінації клавіш"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Оберіть типовий вигляд списку повідомлень."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Оберіть типовий вигляд поштової скриньки."
+      ],
+      "Select how your composer opens by default.": [
+        "Оберіть типовий вигляд редактора."
+      ],
+      "Enable Beta Access": [
+        "Увімкнути бета-доступ"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Choose a color": [
+        "Вибрати колір"
+      ],
+      "Default email": [
+        "Типова електронна пошта"
+      ],
+      "Display": [
+        "Вигляд"
+      ],
+      "Description": [
+        "Опис"
+      ],
+      "Default event duration": [
+        "Типова тривалість події"
+      ],
+      "URL": [
+        "URL-адреса"
+      ],
+      "Default notifications": [
+        "Типові сповіщення"
+      ],
+      "Default full day notifications": [
+        "Типові сповіщення на весь день"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Яка ймовірність, що ви порадите ${ calendarAppName } другові або колезі?"
+      ],
+      "0 - Not likely": [
+        "0 - малоймовірно"
+      ],
+      "10 - Extremely likely": [
+        "10 - Неодмінно"
+      ],
+      "All day": [
+        "Весь день"
+      ],
+      "Repeat on": [
+        "Повторити"
+      ],
+      "Repeat every": [
+        "Повторювати кожні"
+      ],
+      "Ends": [
+        "Завершується"
+      ],
+      "Organizer": [
+        "Організатор"
+      ],
+      "Optional": [
+        "Необов'язково"
+      ],
+      "Time of the event": [
+        "Час події"
+      ],
+      "Event time": [
+        "Час події"
+      ],
+      "Event title": [
+        "Назва події"
+      ],
+      "Event frequency": [
+        "Повторюваність події"
+      ],
+      "Event location": [
+        "Місце події"
+      ],
+      "Event notifications": [
+        "Сповіщення про події"
+      ],
+      "Participants": [
+        "Учасники"
+      ],
+      "Your calendars": [
+        "Ваші календарі"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не можна застосовувати для шифрування"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Request an invite": [
+        "Запитати запрошення"
+      ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Go to subscription plans": [
+        "Перейти до тарифних планів"
+      ],
+      "click here": [
+        "натисніть тут"
+      ],
+      "Add a gift code": [
+        "Додати подарунковий код"
+      ],
+      "Pay invoice": [
+        "Сплатити рахунок-фактуру"
+      ],
+      "Upgrade account": [
+        "Покращити обліковий запис"
+      ],
+      "Calendars": [
+        "Календарі"
+      ],
+      "My calendars": [
+        "Мої календарі"
+      ],
+      "Other calendars": [
+        "Інші календарі"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Наприклад, "
+      ],
+      "Start typing an email address": [
+        "Почніть вводити адресу електронної пошти"
+      ],
+      "Image URL": [
+        "URL-адреса зображення"
+      ],
+      "Filter groups": [
+        "Фільтр груп"
+      ],
+      "Search for name or email": [
+        "Пошук за іменем чи е-поштою"
+      ],
+      "Search for group name": [
+        "Шукати назву групи"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "OS name": [
+        "Назва ОС"
+      ],
+      "OS version": [
+        "Версія ОС"
+      ],
+      "Proton username": [
+        "Ім'я користувача Proton"
+      ],
+      "A way to contact you": [
+        "Спосіб зв'язку з вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Будь ласка опишіть проблему та вкажіть будь-які повідомлення про помилки"
+      ],
+      "Browser name": [
+        "Назва браузера"
+      ],
+      "Browser version": [
+        "Версія браузера"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Feedback": [
+        "Відгук"
+      ],
+      "e.g. Julia Smith": [
+        "наприклад, Оксана Пазиненко"
+      ],
+      "ZIP": [
+        "Поштовий індекс"
+      ],
+      "Postal code": [
+        "Поштовий індекс"
+      ],
+      "Gift code": [
+        "Подарунковий код"
+      ],
+      "Add a calendar name": [
+        "Додати назву календаря"
+      ],
+      "Add a calendar description": [
+        "Додати опис календаря"
+      ],
+      "Add title": [
+        "Додати заголовок"
+      ],
+      "Add location": [
+        "Додати розташування"
+      ],
+      "Add description": [
+        "Додати опис"
+      ],
+      "Add participants": [
+        "Додати учасників"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годинн",
+        "${ hours } годинн"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
       ]
     },
     "Storage": {
@@ -4265,30 +4184,6 @@
         ""
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
-      ],
-      "Maximized": [
-        "Розгорнутий"
-      ]
-    },
     "Text": {
       "Settings": [
         "Налаштування"
@@ -4826,6 +4721,30 @@
     "Free price": {
       "Free": [
         "Безплатний"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
       ]
     },
     "Payment method option": {

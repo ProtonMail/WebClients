@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Tuccḍa tarussint"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Izen-a izmer ad igber kra n tansiwin URL ahat ur netteldi ara akken iwata deg iminig-innek•inem amiran"
       ],
@@ -21,14 +18,17 @@
       "Authentication error.": [
         "Tuccḍa deg usesteb."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
+      "Unknown error": [
+        "Tuccḍa tarussint"
       ],
       "Email address invalid": [
         "Tansa imayl mačči d tameɣtut"
       ],
       "This field is required": [
         "Urti-agi ilaq"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
@@ -44,6 +44,9 @@
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "File has no contents to preview": [
+        "Afaylu ur isεi ara agbur i teskant"
       ],
       "Preferences could not be saved": [
         "Ismenyifen gguman ad ttuskelsen"
@@ -88,15 +91,6 @@
       ],
       "Invalid name": [
         "Yir isem"
-      ],
-      "File has no contents to preview": [
-        "Afaylu ur isεi ara agbur i teskant"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
       ],
       "Process aborted": [
         "Yettwanef ukala"
@@ -158,6 +152,12 @@
       "Invalid code": [
         "Yir tangalt"
       ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         "Awal uffir n tirawt d arameɣtu. Ttxil ɛreḍ tikkelt-nniḍen"
       ],
@@ -201,988 +201,18 @@
         "Ur d-nufi ara tansa yeɣtan"
       ]
     },
-    "Action": {
-      "Close": [
-        "Mdel"
-      ],
-      "Confirm": [
-        "Sentem"
-      ],
-      "Cancel": [
-        "Sefsex"
-      ],
-      "Close modal": [
-        "Mdel"
-      ],
-      "Submit": [
-        "Azen"
-      ],
-      "More info: ${ safeTitle }": [
-        "Ugar n talɣut: ${ safeTitle }"
-      ],
-      "Use “${ label }” setting": [
-        "Seqdec iɣewwaṛen n “${ label }”"
-      ],
-      "Close navigation": [
-        "Mdel tunigin"
-      ],
-      "Open navigation": [
-        "Ldi tunigin"
-      ],
-      "Go to panel ${ index }": [
-        "Ddu ɣer ufeggag ${ index }"
-      ],
-      "Load image": [
-        "Sali-d tugna"
-      ],
-      "Export": [
-        "Sifeḍ"
-      ],
-      "Delete": [
-        "Kkes"
-      ],
-      "Edit": [
-        "Ẓreg"
-      ],
-      "Remove": [
-        "Kkes"
-      ],
-      "Download": [
-        "Asader"
-      ],
-      "Use for sending": [
-        "Seqdec i tuzna"
-      ],
-      "Trust": [
-        "Ttkel"
-      ],
-      "Untrust": [
-        "Ur tettamen ara"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Email settings": [
-        "Iɣewwaren n yimayl"
-      ],
-      "Contact group": [
-        "Agraw n unermes"
-      ],
-      "Upload picture": [
-        "Sali-d tugna"
-      ],
-      "Next month": [
-        "Ayyur d-itteddun"
-      ],
-      "Previous month": [
-        "Ayyur yezrin"
-      ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Sentem alday n useɣwen ${ link }"
-      ],
-      "View invoice": [
-        "Wali tafaturt"
-      ],
-      "Get verification code": [
-        "Awi tangalt n usentem"
-      ],
-      "Try another method": [
-        "Ɛreḍ tarrayt-nniḍen"
-      ],
-      "Request new code": [
-        "Suter tangalt tamaynut"
-      ],
-      "Verify": [
-        "Senqed"
-      ],
-      "Did not receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
-      ],
-      "Edit email address": [
-        "Ẓreg tansa n yimayl"
-      ],
-      "Edit phone number": [
-        "Ẓreg uṭṭun n tiliɣri"
-      ],
-      "Save": [
-        "Sekles"
-      ],
-      "Add": [
-        "Rnu"
-      ],
-      "Apply": [
-        "Snes"
-      ],
-      "Hide advanced PGP settings": [
-        "Ffer iɣewwaren n PGP leqqayen"
-      ],
-      "Show advanced PGP settings": [
-        "Sken iɣewwaren n PGP leqqayen"
-      ],
-      "Done": [
-        "Immed"
-      ],
-      "Clear data": [
-        "Sfeḍ isefka"
-      ],
-      "Recover data": [
-        "Err-d isefka"
-      ],
-      "Click here.": [
-        "Ssit dagi."
-      ],
-      "Re-sign": [
-        "Ales azmul"
-      ],
-      "Add to group": [
-        "Rnu ɣer ugraw"
-      ],
-      "Merge": [
-        "Smezdi"
-      ],
-      "View": [
-        "Sken"
-      ],
-      "Unmark for deletion": [
-        "Kkes acraḍ i tukksa"
-      ],
-      "Mark for deletion": [
-        "Creḍ i tukksa"
-      ],
-      "Preview contact": [
-        "Anerms yezrin"
-      ],
-      "Continue": [
-        "Kemmel"
-      ],
-      "Delete contact": [
-        "Kkes anermis"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Kkes ${ selectedCount } n unermis",
-        "Kkes ${ selectedCount } n yinermisen"
-      ],
-      "Deselect all": [
-        "Kkes afran i meṛṛa"
-      ],
-      "Select all": [
-        "Fren akk"
-      ],
-      "Compose": [
-        "Aru"
-      ],
-      "Forward as attachment": [
-        "Welleh am umedday"
-      ],
-      "Merge contacts": [
-        "Smezdi inermisen"
-      ],
-      "Add new contact": [
-        "Rnu anermis amaynut"
-      ],
-      "Add group": [
-        "Rnu agraw"
-      ],
-      "Clear query": [
-        "Sfeḍ tuttra"
-      ],
-      "Add contact": [
-        "Rnu anermis"
-      ],
-      "import": [
-        "kter"
-      ],
-      "Delete contact group": [
-        "Kkes agraw n unermes"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Kkes ${ selectedCount } n ugraw n yinermisen",
-        "Kkes ${ selectedCount } n yigrawen n yinermisen"
-      ],
-      "Add new group": [
-        "Rnu agraw amaynut"
-      ],
-      "Export contacts": [
-        "Kter inermisen"
-      ],
-      "Continue with Google": [
-        "Kemmel s Google"
-      ],
-      "Import contacts": [
-        "Kter inermisen"
-      ],
-      "Choose a file or drag it here": [
-        "Fren afaylu neɣ zuɣer-it dagi"
-      ],
-      "Import": [
-        "Kter"
-      ],
-      "Next": [
-        "Ɣer zdat"
-      ],
-      "Signing out": [
-        "Tuffɣa"
-      ],
-      "Clear": [
-        "Teṣfa"
-      ],
-      "Add screenshot(s)": [
-        "Rnu tuṭṭfa(win) n ugdil"
-      ],
-      "Hide info": [
-        "Ffer isallen"
-      ],
-      "Show info": [
-        "Sken isallen"
-      ],
-      "Details": [
-        "Ifatusen"
-      ],
-      "Share via link": [
-        "Bḍu s useɣwen"
-      ],
-      "Sharing options": [
-        "Tinefrunin n beḍḍu"
-      ],
-      "Zoom out": [
-        "Semẓi"
-      ],
-      "Reset zoom": [
-        "Ales awennez n usemɣer"
-      ],
-      "Zoom in": [
-        "Semɣer"
-      ],
-      "Previous": [
-        "Ar deffir"
-      ],
-      "Close this banner": [
-        "Mdel aɣarrac-a"
-      ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
-      "enable desktop notifications": [
-        "rmed talɣutin n tnarit"
-      ],
-      "here": [
-        "dagi"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Copy email to clipboard": [
-        "Nɣel imayl ɣer tecfawit"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Tazwart n ${ BRAND_NAME }"
-      ],
-      "I have a question": [
-        "Sɛiɣ asteqsi"
-      ],
-      "Request a feature": [
-        "Suter tawuri"
-      ],
-      "Report a problem": [
-        "Azen ugur"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Taḥanut ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Beddel amiḍan"
-      ],
-      "Sign out": [
-        "Ffeɣ"
-      ],
-      "Go to settings": [
-        "Ddu s iɣewwaren"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
-      ],
-      "Theme": [
-        "Asentel"
-      ],
-      "Keyboard shortcuts": [
-        "Inegzumen n unasiw"
-      ],
-      "Mailbox layout": [
-        "Taneɣruft n tnaka n imayl"
-      ],
-      "Mailbox density": [
-        "Taččart n tnaka n urmas"
-      ],
-      "Composer mode": [
-        "Askar n umsuddes"
-      ],
-      "Get started": [
-        "Bdu"
-      ],
-      "Start setup": [
-        "Bdu tawila"
-      ],
-      "Skip": [
-        "Zgel"
-      ],
-      "Back": [
-        "Ɣer deffir"
-      ],
-      "Use ${ label } theme": [
-        "Seqdec asentel ${ label }"
-      ],
-      "OK": [
-        "IH"
-      ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Try again": [
-        ""
-      ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
-      "Retry": [
-        ""
-      ],
-      "Loading verification": [
-        ""
-      ],
-      "Select plan": [
-        ""
-      ],
-      "Compare all features": [
-        "Serwes akk timahilin"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } s ubeddel ɣer uxelleṣ s useggas"
-      ],
-      "Pay": [
-        "Xelleṣ"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Kkes tangalt n usefk"
-      ],
-      "annual billing": [
-        "tafaṭurt s useggas"
-      ],
-      "Compare plans": [
-        "Serwes iɣawasen"
-      ],
-      "Decrease": [
-        "Senqes"
-      ],
-      "Increase": [
-        "Snerni"
-      ],
-      "Log in": [
-        "Tuqqna"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "Asali amaynut"
-      ],
-      "Maximize transfers": [
-        "Semɣer asiweḍ"
-      ],
-      "Minimize transfers": [
-        "Semẓi asiweḍ"
-      ],
-      "Close transfers": [
-        "Mdel asiweḍ"
-      ],
-      "Pause download": [
-        "Ttarǧu asider"
-      ],
-      "Pause upload": [
-        "Ḥbes asali"
-      ],
-      "Resume download": [
-        "Kemmel asader"
-      ],
-      "Resume upload": [
-        "Kemmel asali"
-      ],
-      "Cancel download": [
-        "Sefsex asider"
-      ],
-      "Cancel upload": [
-        "Sefsex asali"
-      ],
-      "Restart download": [
-        "Ales asenker n usader"
-      ],
-      "Restart upload": [
-        "Ales asenker n usali"
-      ],
-      "Remove from this list": [
-        "Kkes seg tebdart-a"
-      ],
-      "List layout": [
-        "Tabdart n tissa"
-      ],
-      "Grid layout": [
-        "Tissi n uferrug"
-      ],
-      "Rename": [
-        "Beddel isem"
-      ],
-      "Move to folder": [
-        "Awi ɣer ukaram"
-      ],
-      "Move to trash": [
-        "Awi ar iḍumman"
-      ],
-      "Create new folder": [
-        "Rnu akaram amaynut"
-      ],
-      "Name: A to Z": [
-        "Isem: A ɣer Z"
-      ],
-      "Name: Z to A": [
-        "Isem: Z ɣer A"
-      ],
-      "Modified date: new to old": [
-        "Azemz yettwabeddel: Amaynut ɣer uqbur"
-      ],
-      "Modified date: old to new": [
-        "Azemz yettwabeddel: Aqbur ɣer umaynut"
-      ],
-      "Type: A to Z": [
-        "Anaw: A ɣer Z"
-      ],
-      "Type: Z to A": [
-        "Anaw: Z ɣer A"
-      ],
-      "Size: small to large": [
-        "Tiddi: Seg umezyan ar umeqran"
-      ],
-      "Size: large to small": [
-        "Tiddi: Seg umeqqran ar umeẓyan"
-      ],
-      "Upload file": [
-        "Sali afaylu"
-      ],
-      "Upload folder": [
-        "Sali akaram"
-      ],
-      "Delete permanently": [
-        "Kkes i lebda"
-      ],
-      "Restore from trash": [
-        "Err-d seg tqecwalt"
-      ],
-      "Empty trash": [
-        "Smir taqecwalt"
-      ],
-      "Share": [
-        "Bḍu"
-      ],
-      "Create": [
-        "Rnu"
-      ],
-      "Preview": [
-        "Taskant"
-      ],
-      "Stop sharing": [
-        "Ḥbes beḍḍu"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Share file": [
-        "Bḍu afaylu"
-      ],
-      "Start recovering": [
-        "Bdu tiririt"
-      ],
-      "View more": [
-        "Sken ugar"
-      ],
-      "Move": [
-        "Senkez"
-      ],
-      "Copy link": [
-        "Nɣel aseɣwen"
-      ],
-      "Create link": [
-        "Snulfu-d aseɣwen"
-      ],
-      "Undo": [
-        "Sefsex"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Ldi ummuɣ n tigawin"
-      ],
-      "Upgrade required": [
-        "Ilaq uleqqem"
-      ],
-      "Email settings": [
-        "Iɣewwaren n yimayl"
-      ],
-      "Contact group": [
-        "Agraw n unermes"
-      ],
-      "Link confirmation": [
-        "Asentem n useɣwen"
-      ],
-      "Keyboard Shortcuts": [
-        "Inegzumen n unasiw"
-      ],
-      "What's new": [
-        "D acu i d amaynut"
-      ],
-      "Invalid verification code": [
-        "Tangalt n usentem mačči d tameɣtut"
-      ],
-      "Request new verification code": [
-        "Suter tangalt n usenqed tamaynut"
-      ],
-      "Human verification": [
-        "Asenqed n umdan"
-      ],
-      "Edit contact group": [
-        "Ẓreg agraw n urmas"
-      ],
-      "Create new group": [
-        "Snulfu-d agraw amaynut"
-      ],
-      "Add to ${ groupName }": [
-        "Rnu ɣer ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Rnu ɣer ${ groupCount } n ugraw",
-        "Rnu ɣer ${ groupCount } n yigrawen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Iɣewwaren n imayl (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Kkes ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Kkes ${ count } n ugraw n unermes",
-        "Kkes ${ count } n yigrawen n yinermisen"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } n uεeggal",
-        "${ emailsCount } n yiεeggalen"
-      ],
-      "Edit image": [
-        "Ẓreg tugna"
-      ],
-      "Edit contact": [
-        "Ẓreg anermis"
-      ],
-      "Create contact": [
-        "Rnu anermis"
-      ],
-      "Delete ${ count } contact": [
-        "Kkes ${ count } n unermis",
-        "Kkes ${ count } n inermisen"
-      ],
-      "Clearing data": [
-        "Asfaḍ n yisefka"
-      ],
-      "Warning": [
-        "Ɣur-k"
-      ],
-      "Recover data": [
-        "Err-d isefka"
-      ],
-      "Re-signing contacts": [
-        "Allus n uzmel n yinermisen"
-      ],
-      "Re-sign all contacts": [
-        "Allus n uzmel n yinermisen meṛṛa"
-      ],
-      "Exporting contacts": [
-        "Kter inermisen"
-      ],
-      "Other names": [
-        "Ismawen-nniḍen"
-      ],
-      "Email addresses": [
-        "Tansiwin imayl"
-      ],
-      "Phone numbers": [
-        "Uṭṭunen n tiliɣṛi"
-      ],
-      "Addresses": [
-        "Tansiwin"
-      ],
-      "Other information": [
-        "Talɣut nniḍen"
-      ],
-      "Contact Details": [
-        "Talqayt unermis"
-      ],
-      "Merging contacts": [
-        "Azday inermisen"
-      ],
-      "Merge contacts": [
-        "Smezdi inermisen"
-      ],
-      "Deleting contacts": [
-        "Tukksa n yinermisen"
-      ],
-      "View contacts": [
-        "Wali inermisen"
-      ],
-      "Contacts": [
-        "Inermisen"
-      ],
-      "Groups": [
-        "Igrawen"
-      ],
-      "Settings": [
-        "Iγewwaren"
-      ],
-      "Select action to take on contact group": [
-        "Fren tigawt ara yettwagen ɣef ugraw n yinermisen"
-      ],
-      "Add contact group name": [
-        "Rnu isem n ugraw n unermes"
-      ],
-      "Select contact group": [
-        "Fren agraw n urmas"
-      ],
-      "Import groups": [
-        "Kter igrawen"
-      ],
-      "Import contacts": [
-        "Kter inermisen"
-      ],
-      "Report a problem": [
-        "Azen ugur"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Open help menu": [
-        "Ldi umuɣ n tallelt"
-      ],
-      "Back": [
-        "Ar deffir"
-      ],
-      "Open settings menu": [
-        "Ldi umuɣ n yiɣewwaren"
-      ],
-      "Select a theme": [
-        "Fren asentel"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Sentem lexṣara n yibunusen n Proton"
-      ],
-      "Unsupported browser": [
-        "Iminig ur nettusefrak ara"
-      ],
-      "Card verification": [
-        "Takerḍa n usenqed"
-      ],
-      "Payment verification": [
-        "Asenqed n uxelleṣ"
-      ],
-      "Processing...": [
-        "Asesfer..."
-      ],
-      "Card verification in progress": [
-        "Asenqed s tkerḍa iteddu"
-      ],
-      "Payment verification in progress": [
-        "Asenqed n usellek iteddu"
-      ],
-      "PayPal verification failed": [
-        "Asenqed n PayPal yecceḍ"
-      ],
-      "3-D Secure verification failed": [
-        "Asenqed 3-D Secure yecceḍ"
-      ],
-      "Error": [
-        "Tuccḍa"
-      ],
-      "ZIP / postal code": [
-        "ZIP / tangalt n lpusṭa"
-      ],
-      "Payment details": [
-        "Talqayt n lexlas"
-      ],
-      "Currency": [
-        "Azamul n tedrimt"
-      ],
-      "Billing cycle": [
-        "Tawala n ufter"
-      ],
-      "Current plan": [
-        "Aɣawas amiran"
-      ],
-      "Processing": [
-        "Asesfer"
-      ],
-      "Apply gift code": [
-        "Snes tangalt n usefk"
-      ],
-      "Subtotal": [
-        "Adasemday"
-      ],
-      "Coupon discount": [
-        "Akupun n usenɣes"
-      ],
-      "Total (monthly)": [
-        "Amatu(monthly)"
-      ],
-      "Credits": [
-        "Ismaden"
-      ],
-      "Gift code": [
-        "Tangalt n usefk"
-      ],
-      "Amount due": [
-        "Tallayt ara txelseḍ"
-      ],
-      "Cancel subscription": [
-        "Sefsex ajerred"
-      ],
-      "Network error": [
-        "Tuccḍa deg uzeṭṭa"
-      ],
-      "Select a plan": [
-        "Fren aɣawas"
-      ],
-      "Customize your plan": [
-        "Mudd udem i uɣawas-ik"
-      ],
-      "Checkout": [
-        "Axelleṣ"
-      ],
-      "Plan summary": [
-        "Agzul n uɣawas"
-      ],
-      "${ appName } customization": [
-        "${ appName } udmawan"
-      ],
-      "Sign in again to continue": [
-        "Qqen tikelt-nniḍen akken ad tkemmled"
-      ],
-      "Account suspended": [
-        "Amiḍan yettwaḥebsen"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Sekcem isem n useqdac neɣ tansa umayl n ProtonMail"
-      ],
-      "Enter your password": [
-        "Sekcem awal-ik.im uffir"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } n yinegzumen n unasiw"
-      ],
-      "Mailbox density": [
-        "Taččart n tnaka n urmas"
-      ],
-      "Mailbox layout": [
-        "Taneɣruft n tnaka n imayl"
-      ],
-      "Composer mode": [
-        "Askar n umsuddes"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
-      ],
-      "Duplicate folder found": [
-        "Dossier doublon trouvé"
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "Ẓuɣer asali"
-      ],
-      "Cancel all active transfers": [
-        "Sefsex meṛṛa ayen i tsiwḍeḍ"
-      ],
-      "Change layout": [
-        "Snifel tissi"
-      ],
-      "Show actions": [
-        "Sken tigawin"
-      ],
-      "Sort files/folders": [
-        "Smizzwer ifuyla/ikaramen"
-      ],
-      "Trash": [
-        "Taqecwalt"
-      ],
-      "Empty trash": [
-        "Smir taqecwalt"
-      ],
-      "My files": [
-        "Ifuyla-inu"
-      ],
-      "You have no folders yet": [
-        "Ur tesεiḍ ara εad ikaramen"
-      ],
-      "You have no files to share": [
-        "Ur tesεiḍ ara afaylu ara tebḍuḍ"
-      ],
-      "Drive": [
-        "Nheṛ"
-      ],
-      "Your file is ready to be downloaded": [
-        "Afaylu-inek•inem yewjed i usader"
-      ],
-      "Download completed": [
-        "Asider yemmed"
-      ],
-      "Download failed": [
-        "Asider yecceḍ"
-      ],
-      "Download canceled": [
-        "Asider yefsex"
-      ],
-      "Downloading": [
-        "Asider"
-      ],
-      "Enter file password to download": [
-        "Sekcem awal uffir i usider"
-      ],
-      "The link either does not exist or has expired": [
-        "Aseɣwen u ryelli ara neɣ ahat yemmut"
-      ],
-      "Restore your files": [
-        "Err-d ifuyla-inek·inem"
-      ],
-      "File recovery process": [
-        "Akala n ufaylu n tririt"
-      ],
-      "You have inaccessible files": [
-        "Γur-k·m ifuyla wuɣur anekcum d awezɣi"
-      ],
-      "Rename a folder": [
-        "Beddel isem n ukaram"
-      ],
-      "Rename a file": [
-        "Beddel isem n ufaylu"
-      ],
-      "File details": [
-        "Ifatusen n ufaylu"
-      ],
-      "Folder details": [
-        "Ifatusen n ukaram"
-      ],
-      "Name": [
-        "Isem"
-      ],
-      "Uploaded by": [
-        "Yuli sɣur"
-      ],
-      "Location": [
-        "Amḍiq"
-      ],
-      "Modified": [
-        "Yettwabeddel"
-      ],
-      "Type": [
-        "Anaw"
-      ],
-      "MIME type": [
-        "Anaw n MIME"
-      ],
-      "Size": [
-        "Tiddi"
-      ],
-      "Shared": [
-        "Yettwabḍa"
-      ],
-      "# of accesses": [
-        "# n yinekcumen"
-      ],
-      "Create a new folder": [
-        "Rnu akaram amaynut"
-      ],
-      "Date": [
-        "Azemz"
-      ],
-      "Select link expiration date": [
-        "Fren azemz n taggara n useɣwen"
-      ],
-      "Select link expiration time": [
-        "Fren akud n taggara n useɣwen"
-      ],
-      "Share via link": [
-        "Bḍu s useɣwen"
-      ],
-      "Additional settings": [
-        "Iɣewwaren imernan"
-      ],
-      "Manage secure link": [
-        "Sefrek aseɣwen aɣellsan"
-      ],
-      "Stop sharing with everyone?": [
-        "Dayen ur beṭṭu d yiwen?"
-      ],
-      "Discard changes?": [
-        "Sefsex ibeddilen?"
-      ],
-      "Discard": [
-        "Sefsex"
-      ],
-      "Files details": [
-        "Talqayt n ifuyla"
-      ],
-      "Number of files": [
-        "Amḍan n ifuyla"
-      ],
-      "Total size": [
-        "Tiddi tuɣridt"
-      ],
-      "Delete permanently": [
-        "Kkes i lebda"
-      ],
-      "Stop sharing": [
-        "Ḥbes beḍḍu"
-      ]
-    },
     "Info": {
-      "No results found": [
-        "Ulac igmaḍ yettwafen"
-      ],
       "Loading": [
         "Azdam"
+      ],
+      "No results found": [
+        "Ulac igmaḍ yettwafen"
       ],
       "No contacts added yet": [
         "Ur inermisen akka tura"
       ],
       "Week": [
         "Imalas"
-      ],
-      "support team": [
-        "tarbaɛt n tallalt"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen akken ad teldiḍ."
@@ -1198,6 +228,12 @@
       ],
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
+      ],
+      "support team": [
+        "tarbaɛt n tallalt"
+      ],
+      "Loading ${ appName }": [
+        "Asali ${ appName }"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
@@ -1228,6 +264,24 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
+      ],
+      "Unsupported file": [
+        "Afaylu ur yettwasefrak ara"
+      ],
+      "No preview available": [
+        "Ulac taskant i yellan"
+      ],
+      "Preview": [
+        "Taskant"
+      ],
+      "Loading preview": [
+        "Asali n teskant"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Iminig-a ur yessefrak ara tamuɣli n yisemliyen PDF. Ttxil sader afaylu."
+      ],
+      "of": [
+        "n"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } n uɛeggal",
@@ -1342,33 +396,6 @@
         "${ addressCount } n tansa n yimayl",
         "${ addressCount } n tansiwin n yimayl"
       ],
-      "Loading ${ appName }": [
-        "Asali ${ appName }"
-      ],
-      "Screenshot(s) attached": [
-        "Tuṭṭfa n ugdil tedda (ddant)"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Asmiren n usebter neɣ  ${ link } ad frun tugget n wuguren s wudem awurman."
-      ],
-      "Unsupported file": [
-        "Afaylu ur yettwasefrak ara"
-      ],
-      "No preview available": [
-        "Ulac taskant i yellan"
-      ],
-      "Preview": [
-        "Taskant"
-      ],
-      "Loading preview": [
-        "Asali n teskant"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Iminig-a ur yessefrak ara tamuɣli n yisemliyen PDF. Ttxil sader afaylu."
-      ],
-      "of": [
-        "n"
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik.im yesεa ma drus yiwet n tfaturt ur nettwaxelleṣ ara. Anekcum-ik.im yettwagdel. ${ payInvoiceLink }"
       ],
@@ -1408,29 +435,11 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Tsenseḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem urkid n ${ appName }. Asnas ad yales asali."
       ],
-      "Import contacts": [
-        ""
+      "Screenshot(s) attached": [
+        "Tuṭṭfa n ugdil tedda (ddant)"
       ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Asmiren n usebter neɣ  ${ link } ad frun tugget n wuguren s wudem awurman."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
@@ -1671,6 +680,30 @@
       "Expired": [
         "Yemmut"
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "here": [
         "da"
       ],
@@ -1721,6 +754,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } yekfa",
@@ -1799,9 +835,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Amdal n umsefrak n usiweḍ ad isefsex meṛṛa ayen i tsawaḍeḍ tura, s tidet tebɣiḍ aya?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
-      ],
       "Create your first folder and start moving your files.": [
         "Snulfu-d akaram-inek/m amezwaru sakin bdu asenkez n ifuyla."
       ],
@@ -1874,6 +907,9 @@
       "Failed to generate a secure link. Try again later.": [
         "Asirew n useɣwen aɣellsan ur yeddi ara. Ɛreḍ tikkelt-nniḍen ticki."
       ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        ""
+      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ufaylu-inek•inem s useɣwen-a. Akken ad tebḍuḍ afaylu tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
       ],
@@ -1912,6 +948,973 @@
       ],
       "My Links": [
         "Iseɣwan-iw"
+      ]
+    },
+    "Action": {
+      "Close": [
+        "Mdel"
+      ],
+      "Confirm": [
+        "Sentem"
+      ],
+      "Cancel": [
+        "Sefsex"
+      ],
+      "Close modal": [
+        "Mdel"
+      ],
+      "Submit": [
+        "Azen"
+      ],
+      "Use “${ label }” setting": [
+        "Seqdec iɣewwaṛen n “${ label }”"
+      ],
+      "More info: ${ safeTitle }": [
+        "Ugar n talɣut: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Mdel tunigin"
+      ],
+      "Open navigation": [
+        "Ldi tunigin"
+      ],
+      "Go to panel ${ index }": [
+        "Ddu ɣer ufeggag ${ index }"
+      ],
+      "Load image": [
+        "Sali-d tugna"
+      ],
+      "Export": [
+        "Sifeḍ"
+      ],
+      "Delete": [
+        "Kkes"
+      ],
+      "Edit": [
+        "Ẓreg"
+      ],
+      "Remove": [
+        "Kkes"
+      ],
+      "Download": [
+        "Asader"
+      ],
+      "Use for sending": [
+        "Seqdec i tuzna"
+      ],
+      "Trust": [
+        "Ttkel"
+      ],
+      "Untrust": [
+        "Ur tettamen ara"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Email settings": [
+        "Iɣewwaren n yimayl"
+      ],
+      "Contact group": [
+        "Agraw n unermes"
+      ],
+      "Upload picture": [
+        "Sali-d tugna"
+      ],
+      "Next month": [
+        "Ayyur d-itteddun"
+      ],
+      "Previous month": [
+        "Ayyur yezrin"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Sentem alday n useɣwen ${ link }"
+      ],
+      "refresh the page": [
+        "smiren asebter"
+      ],
+      "Signing out": [
+        "Tuffɣa"
+      ],
+      "View invoice": [
+        "Wali tafaturt"
+      ],
+      "Get verification code": [
+        "Awi tangalt n usentem"
+      ],
+      "Try another method": [
+        "Ɛreḍ tarrayt-nniḍen"
+      ],
+      "Request new code": [
+        "Suter tangalt tamaynut"
+      ],
+      "Verify": [
+        "Senqed"
+      ],
+      "Did not receive the code?": [
+        "Ur d-teṭṭifeḍ ara tangalt?"
+      ],
+      "Edit email address": [
+        "Ẓreg tansa n yimayl"
+      ],
+      "Edit phone number": [
+        "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Details": [
+        "Ifatusen"
+      ],
+      "Share via link": [
+        "Bḍu s useɣwen"
+      ],
+      "Sharing options": [
+        "Tinefrunin n beḍḍu"
+      ],
+      "Zoom out": [
+        "Semẓi"
+      ],
+      "Reset zoom": [
+        "Ales awennez n usemɣer"
+      ],
+      "Zoom in": [
+        "Semɣer"
+      ],
+      "Previous": [
+        "Ar deffir"
+      ],
+      "Next": [
+        "Ɣer zdat"
+      ],
+      "Save": [
+        "Sekles"
+      ],
+      "Add": [
+        "Rnu"
+      ],
+      "Apply": [
+        "Snes"
+      ],
+      "Hide advanced PGP settings": [
+        "Ffer iɣewwaren n PGP leqqayen"
+      ],
+      "Show advanced PGP settings": [
+        "Sken iɣewwaren n PGP leqqayen"
+      ],
+      "Done": [
+        "Immed"
+      ],
+      "Clear data": [
+        "Sfeḍ isefka"
+      ],
+      "Recover data": [
+        "Err-d isefka"
+      ],
+      "Click here.": [
+        "Ssit dagi."
+      ],
+      "Re-sign": [
+        "Ales azmul"
+      ],
+      "Add to group": [
+        "Rnu ɣer ugraw"
+      ],
+      "Merge": [
+        "Smezdi"
+      ],
+      "View": [
+        "Sken"
+      ],
+      "Unmark for deletion": [
+        "Kkes acraḍ i tukksa"
+      ],
+      "Mark for deletion": [
+        "Creḍ i tukksa"
+      ],
+      "Preview contact": [
+        "Anerms yezrin"
+      ],
+      "Continue": [
+        "Kemmel"
+      ],
+      "Delete contact": [
+        "Kkes anermis"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Kkes ${ selectedCount } n unermis",
+        "Kkes ${ selectedCount } n yinermisen"
+      ],
+      "Deselect all": [
+        "Kkes afran i meṛṛa"
+      ],
+      "Select all": [
+        "Fren akk"
+      ],
+      "Compose": [
+        "Aru"
+      ],
+      "Forward as attachment": [
+        "Welleh am umedday"
+      ],
+      "Merge contacts": [
+        "Smezdi inermisen"
+      ],
+      "Add new contact": [
+        "Rnu anermis amaynut"
+      ],
+      "Add group": [
+        "Rnu agraw"
+      ],
+      "Clear query": [
+        "Sfeḍ tuttra"
+      ],
+      "Add contact": [
+        "Rnu anermis"
+      ],
+      "import": [
+        "kter"
+      ],
+      "Delete contact group": [
+        "Kkes agraw n unermes"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Kkes ${ selectedCount } n ugraw n yinermisen",
+        "Kkes ${ selectedCount } n yigrawen n yinermisen"
+      ],
+      "Add new group": [
+        "Rnu agraw amaynut"
+      ],
+      "Export contacts": [
+        "Kter inermisen"
+      ],
+      "Continue with Google": [
+        "Kemmel s Google"
+      ],
+      "Import contacts": [
+        "Kter inermisen"
+      ],
+      "Choose a file or drag it here": [
+        "Fren afaylu neɣ zuɣer-it dagi"
+      ],
+      "Import": [
+        "Kter"
+      ],
+      "Close this banner": [
+        "Mdel aɣarrac-a"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
+      ],
+      "enable desktop notifications": [
+        "rmed talɣutin n tnarit"
+      ],
+      "here": [
+        "dagi"
+      ],
+      "Clear": [
+        "Teṣfa"
+      ],
+      "Add screenshot(s)": [
+        "Rnu tuṭṭfa(win) n ugdil"
+      ],
+      "Hide info": [
+        "Ffer isallen"
+      ],
+      "Show info": [
+        "Sken isallen"
+      ],
+      "Copy email to clipboard": [
+        "Nɣel imayl ɣer tecfawit"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Tazwart n ${ BRAND_NAME }"
+      ],
+      "I have a question": [
+        "Sɛiɣ asteqsi"
+      ],
+      "Request a feature": [
+        "Suter tawuri"
+      ],
+      "Report a problem": [
+        "Azen ugur"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Taḥanut ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Beddel amiḍan"
+      ],
+      "Sign out": [
+        "Ffeɣ"
+      ],
+      "Go to settings": [
+        "Ddu s iɣewwaren"
+      ],
+      "Beta Access": [
+        "Anekcum Biṭa"
+      ],
+      "Theme": [
+        "Asentel"
+      ],
+      "Keyboard shortcuts": [
+        "Inegzumen n unasiw"
+      ],
+      "Mailbox layout": [
+        "Taneɣruft n tnaka n imayl"
+      ],
+      "Mailbox density": [
+        "Taččart n tnaka n urmas"
+      ],
+      "Composer mode": [
+        "Askar n umsuddes"
+      ],
+      "Get started": [
+        "Bdu"
+      ],
+      "Start setup": [
+        "Bdu tawila"
+      ],
+      "Skip": [
+        "Zgel"
+      ],
+      "Back": [
+        "Ɣer deffir"
+      ],
+      "Use ${ label } theme": [
+        "Seqdec asentel ${ label }"
+      ],
+      "OK": [
+        "IH"
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        ""
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        "Serwes akk timahilin"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } s ubeddel ɣer uxelleṣ s useggas"
+      ],
+      "Pay": [
+        "Xelleṣ"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Kkes tangalt n usefk"
+      ],
+      "annual billing": [
+        "tafaṭurt s useggas"
+      ],
+      "Compare plans": [
+        "Serwes iɣawasen"
+      ],
+      "Decrease": [
+        "Senqes"
+      ],
+      "Increase": [
+        "Snerni"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Log in": [
+        "Tuqqna"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "New upload": [
+        "Asali amaynut"
+      ],
+      "List layout": [
+        "Tabdart n tissa"
+      ],
+      "Grid layout": [
+        "Tissi n uferrug"
+      ],
+      "Rename": [
+        "Beddel isem"
+      ],
+      "Move to folder": [
+        "Awi ɣer ukaram"
+      ],
+      "Move to trash": [
+        "Awi ar iḍumman"
+      ],
+      "Create new folder": [
+        "Rnu akaram amaynut"
+      ],
+      "Name: A to Z": [
+        "Isem: A ɣer Z"
+      ],
+      "Name: Z to A": [
+        "Isem: Z ɣer A"
+      ],
+      "Modified date: new to old": [
+        "Azemz yettwabeddel: Amaynut ɣer uqbur"
+      ],
+      "Modified date: old to new": [
+        "Azemz yettwabeddel: Aqbur ɣer umaynut"
+      ],
+      "Type: A to Z": [
+        "Anaw: A ɣer Z"
+      ],
+      "Type: Z to A": [
+        "Anaw: Z ɣer A"
+      ],
+      "Size: small to large": [
+        "Tiddi: Seg umezyan ar umeqran"
+      ],
+      "Size: large to small": [
+        "Tiddi: Seg umeqqran ar umeẓyan"
+      ],
+      "Upload file": [
+        "Sali afaylu"
+      ],
+      "Upload folder": [
+        "Sali akaram"
+      ],
+      "Delete permanently": [
+        "Kkes i lebda"
+      ],
+      "Restore from trash": [
+        "Err-d seg tqecwalt"
+      ],
+      "Empty trash": [
+        "Smir taqecwalt"
+      ],
+      "Maximize transfers": [
+        "Semɣer asiweḍ"
+      ],
+      "Minimize transfers": [
+        "Semẓi asiweḍ"
+      ],
+      "Close transfers": [
+        "Mdel asiweḍ"
+      ],
+      "Pause download": [
+        "Ttarǧu asider"
+      ],
+      "Pause upload": [
+        "Ḥbes asali"
+      ],
+      "Resume download": [
+        "Kemmel asader"
+      ],
+      "Resume upload": [
+        "Kemmel asali"
+      ],
+      "Cancel download": [
+        "Sefsex asider"
+      ],
+      "Cancel upload": [
+        "Sefsex asali"
+      ],
+      "Restart download": [
+        "Ales asenker n usader"
+      ],
+      "Restart upload": [
+        "Ales asenker n usali"
+      ],
+      "Remove from this list": [
+        "Kkes seg tebdart-a"
+      ],
+      "Share": [
+        "Bḍu"
+      ],
+      "Create": [
+        "Rnu"
+      ],
+      "Preview": [
+        "Taskant"
+      ],
+      "Stop sharing": [
+        "Ḥbes beḍḍu"
+      ],
+      "Show shared link details": [
+        ""
+      ],
+      "Share file": [
+        "Bḍu afaylu"
+      ],
+      "Start recovering": [
+        "Bdu tiririt"
+      ],
+      "View more": [
+        "Sken ugar"
+      ],
+      "Move": [
+        "Senkez"
+      ],
+      "Copy link": [
+        "Nɣel aseɣwen"
+      ],
+      "Create link": [
+        "Snulfu-d aseɣwen"
+      ],
+      "Undo": [
+        "Sefsex"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "Ldi ummuɣ n tigawin"
+      ],
+      "Upgrade required": [
+        "Ilaq uleqqem"
+      ],
+      "Email settings": [
+        "Iɣewwaren n yimayl"
+      ],
+      "Contact group": [
+        "Agraw n unermes"
+      ],
+      "Link confirmation": [
+        "Asentem n useɣwen"
+      ],
+      "Keyboard Shortcuts": [
+        "Inegzumen n unasiw"
+      ],
+      "What's new": [
+        "D acu i d amaynut"
+      ],
+      "Invalid verification code": [
+        "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Request new verification code": [
+        "Suter tangalt n usenqed tamaynut"
+      ],
+      "Human verification": [
+        "Asenqed n umdan"
+      ],
+      "Edit contact group": [
+        "Ẓreg agraw n urmas"
+      ],
+      "Create new group": [
+        "Snulfu-d agraw amaynut"
+      ],
+      "Add to ${ groupName }": [
+        "Rnu ɣer ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "Rnu ɣer ${ groupCount } n ugraw",
+        "Rnu ɣer ${ groupCount } n yigrawen"
+      ],
+      "Email settings (${ emailAddress })": [
+        "Iɣewwaren n imayl (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "Kkes ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "Kkes ${ count } n ugraw n unermes",
+        "Kkes ${ count } n yigrawen n yinermisen"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } n uεeggal",
+        "${ emailsCount } n yiεeggalen"
+      ],
+      "Edit image": [
+        "Ẓreg tugna"
+      ],
+      "Edit contact": [
+        "Ẓreg anermis"
+      ],
+      "Create contact": [
+        "Rnu anermis"
+      ],
+      "Delete ${ count } contact": [
+        "Kkes ${ count } n unermis",
+        "Kkes ${ count } n inermisen"
+      ],
+      "Clearing data": [
+        "Asfaḍ n yisefka"
+      ],
+      "Warning": [
+        "Ɣur-k"
+      ],
+      "Recover data": [
+        "Err-d isefka"
+      ],
+      "Re-signing contacts": [
+        "Allus n uzmel n yinermisen"
+      ],
+      "Re-sign all contacts": [
+        "Allus n uzmel n yinermisen meṛṛa"
+      ],
+      "Exporting contacts": [
+        "Kter inermisen"
+      ],
+      "Other names": [
+        "Ismawen-nniḍen"
+      ],
+      "Email addresses": [
+        "Tansiwin imayl"
+      ],
+      "Phone numbers": [
+        "Uṭṭunen n tiliɣṛi"
+      ],
+      "Addresses": [
+        "Tansiwin"
+      ],
+      "Other information": [
+        "Talɣut nniḍen"
+      ],
+      "Contact Details": [
+        "Talqayt unermis"
+      ],
+      "Merging contacts": [
+        "Azday inermisen"
+      ],
+      "Merge contacts": [
+        "Smezdi inermisen"
+      ],
+      "Deleting contacts": [
+        "Tukksa n yinermisen"
+      ],
+      "View contacts": [
+        "Wali inermisen"
+      ],
+      "Contacts": [
+        "Inermisen"
+      ],
+      "Groups": [
+        "Igrawen"
+      ],
+      "Settings": [
+        "Iγewwaren"
+      ],
+      "Select action to take on contact group": [
+        "Fren tigawt ara yettwagen ɣef ugraw n yinermisen"
+      ],
+      "Add contact group name": [
+        "Rnu isem n ugraw n unermes"
+      ],
+      "Select contact group": [
+        "Fren agraw n urmas"
+      ],
+      "Import groups": [
+        "Kter igrawen"
+      ],
+      "Import contacts": [
+        "Kter inermisen"
+      ],
+      "Report a problem": [
+        "Azen ugur"
+      ],
+      "Open help menu": [
+        "Ldi umuɣ n tallelt"
+      ],
+      "Back": [
+        "Ar deffir"
+      ],
+      "Open settings menu": [
+        "Ldi umuɣ n yiɣewwaren"
+      ],
+      "Select a theme": [
+        "Fren asentel"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Sentem lexṣara n yibunusen n Proton"
+      ],
+      "Unsupported browser": [
+        "Iminig ur nettusefrak ara"
+      ],
+      "Card verification": [
+        "Takerḍa n usenqed"
+      ],
+      "Payment verification": [
+        "Asenqed n uxelleṣ"
+      ],
+      "Processing...": [
+        "Asesfer..."
+      ],
+      "Card verification in progress": [
+        "Asenqed s tkerḍa iteddu"
+      ],
+      "Payment verification in progress": [
+        "Asenqed n usellek iteddu"
+      ],
+      "PayPal verification failed": [
+        "Asenqed n PayPal yecceḍ"
+      ],
+      "3-D Secure verification failed": [
+        "Asenqed 3-D Secure yecceḍ"
+      ],
+      "Error": [
+        "Tuccḍa"
+      ],
+      "ZIP / postal code": [
+        "ZIP / tangalt n lpusṭa"
+      ],
+      "Payment details": [
+        "Talqayt n lexlas"
+      ],
+      "Currency": [
+        "Azamul n tedrimt"
+      ],
+      "Billing cycle": [
+        "Tawala n ufter"
+      ],
+      "Current plan": [
+        "Aɣawas amiran"
+      ],
+      "Processing": [
+        "Asesfer"
+      ],
+      "Apply gift code": [
+        "Snes tangalt n usefk"
+      ],
+      "Subtotal": [
+        "Adasemday"
+      ],
+      "Coupon discount": [
+        "Akupun n usenɣes"
+      ],
+      "Total (monthly)": [
+        "Amatu(monthly)"
+      ],
+      "Credits": [
+        "Ismaden"
+      ],
+      "Gift code": [
+        "Tangalt n usefk"
+      ],
+      "Amount due": [
+        "Tallayt ara txelseḍ"
+      ],
+      "Cancel subscription": [
+        "Sefsex ajerred"
+      ],
+      "Network error": [
+        "Tuccḍa deg uzeṭṭa"
+      ],
+      "Select a plan": [
+        "Fren aɣawas"
+      ],
+      "Customize your plan": [
+        "Mudd udem i uɣawas-ik"
+      ],
+      "Checkout": [
+        "Axelleṣ"
+      ],
+      "Plan summary": [
+        "Agzul n uɣawas"
+      ],
+      "${ appName } customization": [
+        "${ appName } udmawan"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "Qqen tikelt-nniḍen akken ad tkemmled"
+      ],
+      "Account suspended": [
+        "Amiḍan yettwaḥebsen"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Sekcem isem n useqdac neɣ tansa umayl n ProtonMail"
+      ],
+      "Enter your password": [
+        "Sekcem awal-ik.im uffir"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } n yinegzumen n unasiw"
+      ],
+      "Mailbox density": [
+        "Taččart n tnaka n urmas"
+      ],
+      "Mailbox layout": [
+        "Taneɣruft n tnaka n imayl"
+      ],
+      "Composer mode": [
+        "Askar n umsuddes"
+      ],
+      "Beta Access": [
+        "Anekcum Biṭa"
+      ],
+      "Duplicate folder found": [
+        "Dossier doublon trouvé"
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "Ẓuɣer asali"
+      ],
+      "Change layout": [
+        "Snifel tissi"
+      ],
+      "Show actions": [
+        "Sken tigawin"
+      ],
+      "Sort files/folders": [
+        "Smizzwer ifuyla/ikaramen"
+      ],
+      "Trash": [
+        "Taqecwalt"
+      ],
+      "Empty trash": [
+        "Smir taqecwalt"
+      ],
+      "Cancel all active transfers": [
+        "Sefsex meṛṛa ayen i tsiwḍeḍ"
+      ],
+      "My files": [
+        "Ifuyla-inu"
+      ],
+      "You have no folders yet": [
+        "Ur tesεiḍ ara εad ikaramen"
+      ],
+      "You have no files to share": [
+        "Ur tesεiḍ ara afaylu ara tebḍuḍ"
+      ],
+      "Drive": [
+        "Nheṛ"
+      ],
+      "Your file is ready to be downloaded": [
+        "Afaylu-inek•inem yewjed i usader"
+      ],
+      "Download completed": [
+        "Asider yemmed"
+      ],
+      "Download failed": [
+        "Asider yecceḍ"
+      ],
+      "Download canceled": [
+        "Asider yefsex"
+      ],
+      "Downloading": [
+        "Asider"
+      ],
+      "Enter file password to download": [
+        "Sekcem awal uffir i usider"
+      ],
+      "The link either does not exist or has expired": [
+        "Aseɣwen u ryelli ara neɣ ahat yemmut"
+      ],
+      "Restore your files": [
+        "Err-d ifuyla-inek·inem"
+      ],
+      "File recovery process": [
+        "Akala n ufaylu n tririt"
+      ],
+      "You have inaccessible files": [
+        "Γur-k·m ifuyla wuɣur anekcum d awezɣi"
+      ],
+      "Rename a folder": [
+        "Beddel isem n ukaram"
+      ],
+      "Rename a file": [
+        "Beddel isem n ufaylu"
+      ],
+      "File details": [
+        "Ifatusen n ufaylu"
+      ],
+      "Folder details": [
+        "Ifatusen n ukaram"
+      ],
+      "Name": [
+        "Isem"
+      ],
+      "Uploaded by": [
+        "Yuli sɣur"
+      ],
+      "Location": [
+        "Amḍiq"
+      ],
+      "Modified": [
+        "Yettwabeddel"
+      ],
+      "Type": [
+        "Anaw"
+      ],
+      "MIME type": [
+        "Anaw n MIME"
+      ],
+      "Size": [
+        "Tiddi"
+      ],
+      "Shared": [
+        "Yettwabḍa"
+      ],
+      "# of accesses": [
+        "# n yinekcumen"
+      ],
+      "Create a new folder": [
+        "Rnu akaram amaynut"
+      ],
+      "Date": [
+        "Azemz"
+      ],
+      "Select link expiration date": [
+        "Fren azemz n taggara n useɣwen"
+      ],
+      "Select link expiration time": [
+        "Fren akud n taggara n useɣwen"
+      ],
+      "Share via link": [
+        "Bḍu s useɣwen"
+      ],
+      "Additional settings": [
+        "Iɣewwaren imernan"
+      ],
+      "Manage secure link": [
+        "Sefrek aseɣwen aɣellsan"
+      ],
+      "Stop sharing with everyone?": [
+        "Dayen ur beṭṭu d yiwen?"
+      ],
+      "Discard changes?": [
+        "Sefsex ibeddilen?"
+      ],
+      "Discard": [
+        "Sefsex"
+      ],
+      "Files details": [
+        "Talqayt n ifuyla"
+      ],
+      "Number of files": [
+        "Amḍan n ifuyla"
+      ],
+      "Total size": [
+        "Tiddi tuɣridt"
+      ],
+      "Delete permanently": [
+        "Kkes i lebda"
+      ],
+      "Stop sharing": [
+        "Ḥbes beḍḍu"
       ]
     },
     "Label": {
@@ -2020,12 +2023,6 @@
       "Browser version": [
         "Lqem n yiminig"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
       "Display name": [
         "Isem n uskan"
       ],
@@ -2076,6 +2073,12 @@
       ],
       "Payer": [
         "Amxellaṣ"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
       ],
       "Cancel": [
         "Sefsex"
@@ -2185,44 +2188,6 @@
         "Tasarut ulamek ara tettwaseqdec i uwgelhen"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Issin ugar"
-      ],
-      "Request an invite": [
-        "Suter tinubga"
-      ],
-      "clearing your browser cache": [
-        "asfaḍ n tuffirt n yiminig"
-      ],
-      "Pay invoice": [
-        "Xelleṣ tafaturt"
-      ],
-      "Upgrade account": [
-        "Sali aswir n umiḍan"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Go to subscription plans": [
-        "Rzu ɣer yiɣawasen n ujerred"
-      ],
-      "click here": [
-        "sit dagi"
-      ],
-      "Add a gift code": [
-        "Rnu tangalt n usefk"
-      ],
-      "My files": [
-        "Ifuyla-inu"
-      ],
-      "Shared": [
-        "Yettwabḍa"
-      ],
-      "Trash": [
-        "Taqecwalt"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Md., "
@@ -2296,6 +2261,44 @@
       "${ minutes } minute": [
         "${ minutes } n tesdat",
         "${ minutes } n tesdatin"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Issin ugar"
+      ],
+      "Request an invite": [
+        "Suter tinubga"
+      ],
+      "Pay invoice": [
+        "Xelleṣ tafaturt"
+      ],
+      "Upgrade account": [
+        "Sali aswir n umiḍan"
+      ],
+      "clearing your browser cache": [
+        "asfaḍ n tuffirt n yiminig"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Go to subscription plans": [
+        "Rzu ɣer yiɣawasen n ujerred"
+      ],
+      "click here": [
+        "sit dagi"
+      ],
+      "Add a gift code": [
+        "Rnu tangalt n usefk"
+      ],
+      "My files": [
+        "Ifuyla-inu"
+      ],
+      "Shared": [
+        "Yettwabḍa"
+      ],
+      "Trash": [
+        "Taqecwalt"
       ]
     },
     "Storage": {
@@ -2490,17 +2493,17 @@
       "Contacts could not be merged": [
         "Ur nezmir ara ad nezdi inermisen"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Tuzna n uneqqis ur tettuwgelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "Isefka-inek·inem n wadeg akked iɣewwaren n wakud ur mtawan ara."
       ],
-      "Are you sure you want to discard your import?": [
-        ""
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Tuzna n uneqqis ur tettuwgelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ttxil ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ]
     },
     "Success": {
@@ -2574,6 +2577,49 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Af asumer n { items.length }, seqdec anasiw i tunigin.",
         "Af isumar { items.length }, seqdec anasiw i tunigin."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Isnasen n Proton"
+      ],
+      "Go to ${ title }": [
+        "Ddu ɣer ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ddu ɣer ${ vpnName }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ihuh, yeḍran-d wugur"
+      ],
+      "There was a problem connecting to Proton.": [
+        "Tella-d tuccḍa deg tuqqna ɣer Proton."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Ma ulac aɣilif ${ refresh } neɣ senqed tuqqna."
+      ],
+      "Error: ${ errorMessage }": [
+        "Tuccḍa: ${ errorMessage }"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Ttxil rǧu ard yefru wugur."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Ahat ilaq daɣen ${ refresh } neɣ εreḍ ticki."
+      ],
+      "Internal server error": [
+        "Tuccḍa n uqeddac agensan"
+      ],
+      "You may also refresh the page or try again later.": [
+        "Ahat ilaq asmiren n usebter neɣ εreḍ ticki."
+      ],
+      "Not found": [
+        "Ulac-it"
+      ],
+      "Access denied": [
+        "Anekcum yegdel"
       ]
     },
     "Delinquent modal title": {
@@ -2968,47 +3014,9 @@
         "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Isnasen n Proton"
-      ],
-      "Go to ${ title }": [
-        "Ddu ɣer ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ddu ɣer ${ vpnName }"
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ihuh, yeḍran-d wugur"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Tella-d tuccḍa deg tuqqna ɣer Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Ma ulac aɣilif ${ refresh } neɣ senqed tuqqna."
-      ],
-      "Error: ${ errorMessage }": [
-        "Tuccḍa: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Ttxil rǧu ard yefru wugur."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Ahat ilaq daɣen ${ refresh } neɣ εreḍ ticki."
-      ],
-      "Internal server error": [
-        "Tuccḍa n uqeddac agensan"
-      ],
-      "You may also refresh the page or try again later.": [
-        "Ahat ilaq asmiren n usebter neɣ εreḍ ticki."
-      ],
-      "Not found": [
-        "Ulac-it"
-      ],
-      "Access denied": [
-        "Anekcum yegdel"
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Lqem amaynut ${ appName } yella. ${ reloadButton }."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3112,32 +3120,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Lqem amaynut ${ appName } yella. ${ reloadButton }."
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
       ]
     },
     "Text": {
@@ -3655,6 +3637,27 @@
         ""
       ],
       "Bitcoin": [
+        ""
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
         ""
       ]
     },

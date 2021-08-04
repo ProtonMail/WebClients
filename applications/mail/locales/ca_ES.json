@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Error desconegut"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot incloure enllaços d’URL que no es puguin obrir correctament al vostre navegador actual"
+      ],
+      "Unknown error": [
+        "Error desconegut"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Aquest camp és obligatori"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "El compositor no s'ha pogut carregar."
       ],
       "Please refresh the page.": [
         "Si us plau, refresqueu la pàgina."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "No es pot validar el correu electrònic, torneu-ho a provar més tard"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
       ],
+      "File has no contents to preview": [
+        "L'arxiu no té contingut per previsualitzar"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
       ],
       "Incorrect login credentials. Please try again": [
         "Credencials de connexió incorrectes. Si us plau, torni-ho a intentar"
-      ],
-      "File has no contents to preview": [
-        "L'arxiu no té contingut per previsualitzar"
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "S'ha esgotat el temps d'espera."
       ],
-      "Signature verification failed": [
-        "Verificació de la signatura fallida"
-      ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar el correu ${ email }."
-      ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
+      ],
+      "Signature verification failed": [
+        "Verificació de la signatura fallida"
+      ],
+      "Could not find address ${ email }.": [
+        "No s'ha pogut trobar el correu ${ email }."
       ],
       "Missing signature": [
         "Signatura no trobada"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "El venciment màxim és de 4 setmanes."
       ],
+      "Choose a date in the future.": [
+        "Escolliu una data futura."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Escolliu una data dintre del proper ${ SCHEDULED_MAX_DATE_DAYS } dia.",
+        "Escolliu una data dintre dels propers ${ SCHEDULED_MAX_DATE_DAYS } dies."
+      ],
       "Public key could not be trusted": [
         "La clau pública no pot ser verificada"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Tancar"
       ],
-      "Close modal": [
-        "Tancar el modal"
+      "Confirm": [
+        "Confirmar"
       ],
       "Cancel": [
         "Cancel·lar"
       ],
+      "Close modal": [
+        "Tancar el modal"
+      ],
       "Submit": [
         "Enviar"
-      ],
-      "Confirm": [
-        "Confirmar"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Utilitzar la configuració \"${ label }\""
-      ],
-      "refresh the page": [
-        "refresqueu la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Subratllat"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Go to panel ${ index }": [
         "Anar al panell ${ index }"
@@ -646,6 +653,9 @@
       "Next": [
         "Següent"
       ],
+      "Signing out": [
+        "Tancant la sessió"
+      ],
       "Clear": [
         "Netejar"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "Accepta"
       ],
-      "Signing out": [
-        "Tancant la sessió"
-      ],
-      "Log in": [
-        "Inicia sessió"
-      ],
       "Details": [
         "Detalls"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Log in": [
+        "Inicia sessió"
       ],
       "Get started": [
         "Començar"
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Afegir a ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Més informació"
-      ],
-      "Open shop": [
-        "Obrir la botiga"
-      ],
-      "Open calendar": [
-        "Obrir el calendari"
-      ],
       "Send anyway": [
         "Enviar de totes maneres"
+      ],
+      "Got it": [
+        "Entesos"
       ],
       "Maximize composer": [
         "Maximitzar el compositor"
@@ -947,6 +948,9 @@
       "Not saved": [
         "No s'ha desat"
       ],
+      "Schedule send": [
+        "Programar enviament"
+      ],
       "Expiration time": [
         "Temps d'expiració"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Estableix"
+      ],
+      "Schedule message": [
+        "Programar missatge"
       ],
       "Print": [
         "Imprimir"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Veure claus"
       ],
+      "Edit draft": [
+        "Editar l'esborrany"
+      ],
       "Download ${ attachmentName }": [
         "Descarregar ${ attachmentName }"
       ],
@@ -1066,6 +1076,9 @@
       ],
       "Undo": [
         "Desfer"
+      ],
+      "View message": [
+        "Veure el missatge"
       ],
       "Enable": [
         "Habilita"
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "Amaga missatges"
       ],
+      "Create new message": [
+        "Crear un missatge nou"
+      ],
       "Import messages": [
         "Importar missatges"
       ],
@@ -1180,6 +1196,15 @@
       ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
+      ],
+      "Learn more": [
+        "Més informació"
+      ],
+      "Open shop": [
+        "Obrir la botiga"
+      ],
+      "Open calendar": [
+        "Obrir el calendari"
       ]
     },
     "Title": {
@@ -1375,15 +1400,6 @@
       ],
       "Open settings menu": [
         "Obrir el menú de preferències"
-      ],
-      "Send feedback": [
-        "Enviar opinió"
-      ],
-      "Feedback": [
-        "Suggeriments"
-      ],
-      "Give feedback": [
-        "Doneu la vostra opinió"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmeu la pèrdua dels beneficis de Proton"
@@ -1590,6 +1606,9 @@
       "Send email": [
         "Enviar correu"
       ],
+      "Schedule send": [
+        "Programar l'enviament"
+      ],
       "New message": [
         "Nou missatge"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "Carregant"
       ],
-      "support team": [
-        "equip de suport"
-      ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Text plà"
+      ],
+      "support team": [
+        "equip de suport"
       ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
@@ -1952,6 +1971,9 @@
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
       ],
+      "Loading ${ appName }": [
+        "Carregant ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Captures de pantalla(s) adjuntes"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
       ],
-      "Loading ${ appName }": [
-        "Carregant ${ appName }"
-      ],
-      "here": [
-        "aquí"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
-      ],
       "Unsupported file": [
         "Fitxer no compatible"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "de"
+      ],
+      "here": [
+        "aquí"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         "Voleu enviar el missatge igualment?"
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Hi ha massa missatges esperant per enviar. Espereu que s'enviï un altre missatge per programar aquest."
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "La verificació de ${ contactName } ha fallat: el contacte no s'ha signat correctament.\nPot ser el resultat d’un restabliment de la contrasenya.\nHas de tornar a signar el contacte per enviar un missatge a ${ contactAddress } o edita el contacte."
       ],
@@ -2518,6 +2540,9 @@
         "Hora",
         "Hores"
       ],
+      "When do you want your message to be sent?": [
+        "Quan voleu que s'enviï el vostre missatge?"
+      ],
       "Draft discarded": [
         "Esborrany descartat"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "Enviant"
+      ],
+      "Scheduled": [
+        "Programat"
       ],
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Assumpte:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Aquest missatge es mourà als Esborranys perquè pugueu editar-lo. Necessitareu tornar a programar quan s'enviarà."
+      ],
+      "This message will be sent shortly": [
+        "Aquest missatge s'enviarà en breu"
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        "Aquest missatge s'enviarà ${ dateString } a les ${ formattedTime }"
+      ],
       "file attached": [
         "arxiu adjunt",
         "arxius adjunts"
@@ -2645,8 +2682,14 @@
         "imatge integrada",
         "imatges integrades"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        "El missatge s'enviarà ${ dateString } a les ${ formattedTime }"
+      ],
       "Message sent": [
         "Missatge enviat"
+      ],
+      "Scheduling message...": [
+        "Programant missatge..."
       ],
       "Sending message...": [
         "Enviant missatge..."
@@ -2688,9 +2731,6 @@
         "Temps restant estimat: ${ estimatedMinutes } minut",
         "Temps restant estimat: ${ estimatedMinutes } minuts"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton s'ha fet un rentat de cara. Ens encantaria saber què en penseu!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversa sense llegir",
         "${ unreadCount } converses sense llegir"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } missatge sense llegir",
         "${ unreadCount } missatges sense llegir"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "${ totalMessagesCount } missatge programat",
+        "${ totalMessagesCount } missatges programats"
       ],
       "Manage your folders": [
         "Gestió de les vostres carpetes"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(Cap Destinatari)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "${ occurrencesInBody } occurrència trobada",
+        "${ occurrencesInBody } ocurrències trobades"
       ],
       "No more results found": [
         "No s'han trobat més resultats"
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         "Seleccioneu com el vostre editor s'obre per defecte."
       ],
-      "What is the primary reason for this rating?": [
-        "Quina és la raó principal per aquesta valoració?"
-      ],
       "Name on card": [
         "Titular de la targeta"
       ],
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"
       ],
+      "Date": [
+        "Data"
+      ],
+      "Time": [
+        "Hora"
+      ],
       "From:": [
         "De:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Filtre"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Com valoraríeu l'experiència amb el nou ProtonMail?"
-      ],
-      "0 - Not a fan": [
-        "0 - No en sóc fan"
-      ],
-      "10 - Love it!": [
-        "10 - M'encanta!"
-      ],
       "Also archive": [
         "Arxivar també"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         "Afegiu un codi regal"
-      ],
-      "Inbox": [
-        "Safata d'entrada"
-      ],
-      "Drafts": [
-        "Esborranys"
-      ],
-      "Sent": [
-        "Enviat"
-      ],
-      "Trash": [
-        "Paperera"
-      ],
-      "Spam": [
-        "Correu brossa"
-      ],
-      "All mail": [
-        "Tot el correu"
-      ],
-      "Archive": [
-        "Arxiu"
-      ],
-      "Starred": [
-        "Destacat"
-      ],
-      "Outbox": [
-        "Bústia de sortida"
       ],
       "You need to activate your calendar keys to add this event": [
         "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Afegir etiqueta"
       ],
+      "Inbox": [
+        "Safata d'entrada"
+      ],
+      "Drafts": [
+        "Esborranys"
+      ],
+      "Scheduled": [
+        "Programat"
+      ],
+      "Sent": [
+        "Enviat"
+      ],
+      "Starred": [
+        "Destacat"
+      ],
+      "Archive": [
+        "Arxiu"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "All mail": [
+        "Tot el correu"
+      ],
       "Folders": [
         "Carpetes"
       ],
@@ -3417,6 +3459,9 @@
       ],
       "Manage your labels": [
         "Gestiona les teves etiquetes"
+      ],
+      "Outbox": [
+        "Bústia de sortida"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "ex. Julia Smith"
       ],
-      "Feedback": [
-        "Suggeriments"
-      ],
       "ZIP": [
         "Codi postal"
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Filtrar Etiquetes"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } dia",
+        "${ daysCountLeft } dies"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } hora",
+        "${ hoursCountLeft } hores"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } minut",
+        "${ minutesCountLeft } minuts"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } segon",
+        "${ secondsCountLeft } segons"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicacions de Proton"
+      ],
+      "Go to ${ title }": [
+        "Ves a ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Anar a ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
@@ -4360,41 +4439,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Sortir de la importació?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicacions de Proton"
       ],
-      "Go to ${ title }": [
-        "Ves a ${ title }"
+      "Message saved to Drafts": [
+        "Missatge desat a Esborranys"
       ],
-      "Go to ${ vpnName }": [
-        "Anar a ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximitzat"
+      "Edit and reschedule": [
+        "Editar i tornar a programar"
       ]
     },
     "Select files": {
@@ -4445,6 +4495,30 @@
         "Per desactivar la versió beta, obriu el menú desplegable de les preferències i cliqueu a l'opció \"Accés Beta\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Còmode"
+      ],
+      "Compact": [
+        "Compacte"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximitzat"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
@@ -4487,16 +4561,6 @@
       ],
       "Normal": [
         "Normal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Es requereix la valoració"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Opinió enviada"
       ]
     },
     "Info for cash payment method": {
@@ -5116,12 +5180,6 @@
         "destacat"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nom"
@@ -5250,9 +5308,10 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "El ${ date }, ${ name } ${ address } va escriure:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(No title)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } comença ara"
+      ],
+      "${ title } starts today": [
+        "${ title } comença avui"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } ha començat a les ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } va començar ahir"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } va començar ahir a les ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } va començar el ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } va començar el ${ formattedDate } a les ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } va començar el ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } va començar el ${ _formattedDate } a les ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } va començar el ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } va començar el ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } començarà a les ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } començarà demà"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } començarà demà a les ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } començarà el ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } començarà el ${ _formattedDate2 } a les ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } començarà el ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } començarà el ${ _formattedDate3 } a les ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } començarà el ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } començarà el ${ formattedDateWithTime }"
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Esborranys"
       ],
+      "Scheduled": [
+        "Programat"
+      ],
       "All": [
         "Tot"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Ahir"
+      ]
+    },
+    "Date label": {
+      "today": [
+        "avui"
+      ],
+      "tomorrow": [
+        "demà"
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "Tomorrow": [
+        "Demà"
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         "Aquest esdeveniment està succeint actualment."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dia",
-        "${ daysCountLeft } dies"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } hora",
-        "${ hoursCountLeft } hores"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minut",
-        "${ minutesCountLeft } minuts"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } segon",
-        "${ secondsCountLeft } segons"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Enviament desfet"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        "Programació cancel·lada. El missatge s'ha mogut a Esborranys."
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "No s'ha trobat cap missatge"
+      ],
+      "No messages scheduled": [
+        "No hi ha missatges programats"
       ]
     },
     "Alternative text for welcome image": {

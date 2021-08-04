@@ -9,14 +9,14 @@
       "Unknown error": [
         "خطای ناشناخته"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
-      ],
       "Email address invalid": [
         "نشانی ایمیل نامعتبر است"
       ],
       "This field is required": [
         "این بخش الزامی است"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "مرورگری که شما استفاده میکنید اجازه پرداخت کامل معامله را نمیدهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
@@ -81,6 +81,9 @@
       "Tab closed": [
         "بستن زبانه"
       ],
+      "Please generate keys before you try to change your password.": [
+        "لطفا قبل از تلاش برای تغییر رمز عبور خود کلیدها را ایجاد کنید."
+      ],
       "Incorrect mailbox password. Please try again": [
         "گذرواژه نادرست صندوق ایمیل. لطفاً دوباره امتحان کنید"
       ],
@@ -99,17 +102,14 @@
       "Invalid verification code": [
         "کد تایید نامعتبر"
       ],
-      "Please enter '${ dangerWord }'": [
-        "لطفاً ‘${ dangerWord }’ را وارد کنید"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "لطفا قبل از تلاش برای تغییر رمز عبور خود کلیدها را ایجاد کنید."
-      ],
       "Please set a recovery/notification email first": [
         "لطفا ابتدا یک ایمیل بازیابی/اعلان تنظیم کنید"
       ],
       "Please set a recovery phone number first": [
         "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "لطفاً ‘${ dangerWord }’ را وارد کنید"
       ],
       "Payments are currently not available, please try again later": [
         "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
@@ -144,14 +144,14 @@
       "Invalid invitation link": [
         "پیوند دعوت نامعتبر است"
       ],
-      "Can't check username, try again later": [
-        "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
-      ],
       "Code wrong or not valid anymore": [
         "کد غلط یا دیگر غیر معتبر است"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
+      ],
+      "Can't check username, try again later": [
+        "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
       ]
     },
     "Info": {
@@ -270,41 +270,11 @@
       "No subscription yet": [
         "هنوز اشتراکی وجود ندارد"
       ],
-      "Not activated": [
-        "فعال نشده"
-      ],
       "You already have a free account": [
         "در حال حاضر یک حساب کاربری رایگان دارید"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "مقدار کمتر از حداقل (${ amount })."
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "تأیید تراکنش‌های Bitcoin می‌تواند مدتی زمان ببرد (تا ۲۴ ساعت). زمانی که تأیید صورت گرفت، اعتبارها را به حساب‌تان اضافه خواهیم کرد. پس از تأیید تراکنش، می‌توانید صورت‌حساب‌تان را با اعتبارها پرداخت کنید."
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "بعد از پرداخت Bitcoin، لطفا دستورالعمل زیر را دنبال کنید تا ارتقا پیدا کنید."
-      ],
-      "Please verify the payment in the new tab.": [
-        "لطفا پرداخت را در زبانه جدید تایید کنید."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "برای تکمیل این تراکنش از طریق یک تب جدید در مرورگر به پی‌پال منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمهٔ زیر کلیک کنید."
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "این گزینه امکان استفاده از پی‌پل را برای پرداخت اشتراک پروتون‌وی‌پی‌ان را فراهم می‌کند. ما از طریق یک تب جدید در مرورگر شما را به پی‌پال منتقل می‌کنیم. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "شما باید یک کارت اعتباری یا حساب بانکی به حساب پی‌پل خود متصل کنید تا امکان استفاده از این روش پرداخت را داشته باشید."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "۲۰٪ تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
@@ -385,6 +355,33 @@
       "Not customizable": [
         "قابل سفارشی‌سازی نیست"
       ],
+      "Amount below minimum (${ amount }).": [
+        "مقدار کمتر از حداقل (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "تأیید تراکنش‌های Bitcoin می‌تواند مدتی زمان ببرد (تا ۲۴ ساعت). زمانی که تأیید صورت گرفت، اعتبارها را به حساب‌تان اضافه خواهیم کرد. پس از تأیید تراکنش، می‌توانید صورت‌حساب‌تان را با اعتبارها پرداخت کنید."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "بعد از پرداخت Bitcoin، لطفا دستورالعمل زیر را دنبال کنید تا ارتقا پیدا کنید."
+      ],
+      "Please verify the payment in the new tab.": [
+        "لطفا پرداخت را در زبانه جدید تایید کنید."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "برای تکمیل این تراکنش از طریق یک تب جدید در مرورگر به پی‌پال منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمهٔ زیر کلیک کنید."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "این گزینه امکان استفاده از پی‌پل را برای پرداخت اشتراک پروتون‌وی‌پی‌ان را فراهم می‌کند. ما از طریق یک تب جدید در مرورگر شما را به پی‌پال منتقل می‌کنیم. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "شما باید یک کارت اعتباری یا حساب بانکی به حساب پی‌پل خود متصل کنید تا امکان استفاده از این روش پرداخت را داشته باشید."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
+      ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "به محض فشردن \"تنزیل درجه\"، ممکن است چندین دقیقه طول بکشد تا حساب شما به یک طرح Free تنزیل یابد. "
       ],
@@ -459,81 +456,6 @@
       ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
-      ],
-      "here": [
-        "اینجا"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "این حساب به دلیل یک تخطی احتمالی از سیاست‌ها به تعلیق درآمده است."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "اگر فکر می‌کنید این یک خطاست، لطفاً با ما در ${ contactLink } تماس بگیرید."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "کد تاییدی که برای ${ destinationText } ارسال شد را وارد نمایید."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "اگر ایمیلی در صندوق دریافت نمی بینید، لطفا پوشه اسپم را بررسی کنید."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این نشانی ایمیل نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره‌تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "ایمیل شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "شماره‌تلفن شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "اگر شما در ساختن حسابتان مشکل دارید، لطفاً درخواست یک دعوتنامه داده و ما در طی یک روز کاری به شما پاسخ خواهیم داد."
-      ],
-      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "آدرس ایمیل بازیابی خود را وارد کنید ، و ما نام کاربری (های) شما را برای شما ارسال خواهیم کرد. (این معمولاً آدرس ایمیلی است که در هنگام ثبت نام ارائه داده اید.)"
-      ],
-      "Done! We sent a code to ${ destination }": [
-        "انجام شد! ما یک کد به ${ destination } فرستادیم"
-      ],
-      "This can take a few seconds or a few minutes depending on your device.": [
-        "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد."
-      ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "بازنشانی گذرواژه به معنی رمز عبور قدیمی شما است و مکانهایی که ذخیره می شوند دیگر کار نمی کنند. آیا مطمئن هستید که می خواهید رمزعبور خود را دوباره تنظیم کنید?"
-      ],
-      "We will send a reset code to your recovery email to reset your password.": [
-        "برای بازنشانی رمز عبور، ما یک کد تنظیم مجدد به ایمیل بازیابی شما ارسال خواهیم کرد."
-      ],
-      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "ما یک کد تنظیم مجدد را به ایمیل بازیابی شما ارسال کرده ایم ، که به مدت یک ساعت معتبر می باشد یا تا زمانی که درخواست یک کد جدید نکنید. برای ادامه آن را وارد کنید."
-      ],
-      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "مهم: این صفحه را نبندید یا از آن به جای دیگر نروید. شما بایستی که کد بازیابی (ریست) را هنگامیکه دریافت نمودید در فضای زیر وارد نمایید."
-      ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "بازنشانی رمز عبورتان، کلیدهای رمزنگاری‌تان برای تمام سرویس‌های مربوط به پروتن (ایمیل و VPN) را بازنشانی خواهد کرد. شما قادر نخواهید بود که پیام‌های فعلی خود را بخوانید. اگر رمز عبور ProtonMail خود را میدانید، رمز عبورتان را باز نشانی نکنید. شما می‌توانید با آن‌ها وارد شوید ${ hereLink }."
-      ],
-      "ALL YOUR DATA WILL BE LOST!": [
-        "تمام اطلاعات شما از بین خواهد رفت!"
-      ],
-      "If you remember your old password later, you can recover your existing messages.": [
-        "اگر بعدا رمز عبور قدیمی خود را به خاطر بیاورید، می‌توانید پیام‌های موجود خود را بازیابی کنید."
-      ],
-      "Keep this password safe, it cannot be recovered.": [
-        "این رمز عبور را ایمن نگه دارید، قابل بازیابی نیست."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "این رمز را فراموش نکنید. اگر آن را فراموش کنید، نمی‌توانید وارد شوید یا پیغام‌های خود را رمزگشایی کنید."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورتحساب تاریخ گذشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
@@ -667,6 +589,45 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "این گزینه به طور دائم حساب کاربری شما و تمام داده‌های آن را حذف می‌کند. شما قادر به فعال‌سازی دوبارهٔ این حساب کاربری نخواهید بود."
       ],
+      "here": [
+        "اینجا"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "این حساب به دلیل یک تخطی احتمالی از سیاست‌ها به تعلیق درآمده است."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "اگر فکر می‌کنید این یک خطاست، لطفاً با ما در ${ contactLink } تماس بگیرید."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "کد تاییدی که برای ${ destinationText } ارسال شد را وارد نمایید."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "اگر ایمیلی در صندوق دریافت نمی بینید، لطفا پوشه اسپم را بررسی کنید."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این نشانی ایمیل نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره‌تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "ایمیل شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "شماره‌تلفن شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "اگر شما در ساختن حسابتان مشکل دارید، لطفاً درخواست یک دعوتنامه داده و ما در طی یک روز کاری به شما پاسخ خواهیم داد."
+      ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "شما می‌توانید از اعتبارنامه‌های زیر برای اتصال به یک سرور ProtonVPN با استفاده از یک برنامهٔ شخص-ثالث، متن‌باز مثل Tunnelblick برای macOS یا OpenVPN برای GNU/Linux استفاده کنید."
       ],
@@ -756,6 +717,42 @@
       "Disabling this will prevent this phone number from being used for account recovery": [
         "غیرفعال کردن این گزینه از استفادهٔ این شماره‌تلفن برای بازیابی حساب کاربری جلوگیری می‌کند"
       ],
+      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
+        "آدرس ایمیل بازیابی خود را وارد کنید ، و ما نام کاربری (های) شما را برای شما ارسال خواهیم کرد. (این معمولاً آدرس ایمیلی است که در هنگام ثبت نام ارائه داده اید.)"
+      ],
+      "We will send a reset code to your recovery email to reset your password.": [
+        "برای بازنشانی رمز عبور، ما یک کد تنظیم مجدد به ایمیل بازیابی شما ارسال خواهیم کرد."
+      ],
+      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
+        "ما یک کد تنظیم مجدد را به ایمیل بازیابی شما ارسال کرده ایم ، که به مدت یک ساعت معتبر می باشد یا تا زمانی که درخواست یک کد جدید نکنید. برای ادامه آن را وارد کنید."
+      ],
+      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
+        "مهم: این صفحه را نبندید یا از آن به جای دیگر نروید. شما بایستی که کد بازیابی (ریست) را هنگامیکه دریافت نمودید در فضای زیر وارد نمایید."
+      ],
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "بازنشانی رمز عبورتان، کلیدهای رمزنگاری‌تان برای تمام سرویس‌های مربوط به پروتن (ایمیل و VPN) را بازنشانی خواهد کرد. شما قادر نخواهید بود که پیام‌های فعلی خود را بخوانید. اگر رمز عبور ProtonMail خود را میدانید، رمز عبورتان را باز نشانی نکنید. شما می‌توانید با آن‌ها وارد شوید ${ hereLink }."
+      ],
+      "ALL YOUR DATA WILL BE LOST!": [
+        "تمام اطلاعات شما از بین خواهد رفت!"
+      ],
+      "If you remember your old password later, you can recover your existing messages.": [
+        "اگر بعدا رمز عبور قدیمی خود را به خاطر بیاورید، می‌توانید پیام‌های موجود خود را بازیابی کنید."
+      ],
+      "Keep this password safe, it cannot be recovered.": [
+        "این رمز عبور را ایمن نگه دارید، قابل بازیابی نیست."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
+        "این رمز را فراموش نکنید. اگر آن را فراموش کنید، نمی‌توانید وارد شوید یا پیغام‌های خود را رمزگشایی کنید."
+      ],
+      "Done! We sent a code to ${ destination }": [
+        "انجام شد! ما یک کد به ${ destination } فرستادیم"
+      ],
+      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
+        "بازنشانی گذرواژه به معنی رمز عبور قدیمی شما است و مکانهایی که ذخیره می شوند دیگر کار نمی کنند. آیا مطمئن هستید که می خواهید رمزعبور خود را دوباره تنظیم کنید?"
+      ],
+      "This can take a few seconds or a few minutes depending on your device.": [
+        "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد."
+      ],
       "You can customize and download your invoices for accounting purposes.": [
         "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
       ],
@@ -786,6 +783,9 @@
       "Servers are unreachable.": [
         "سرورها قابل دسترس نیستند."
       ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "به یک طرح پرداختی ارتقا دهید تا به امکانات برتر دست یافته و فضای حافظه خود را افزایش دهید."
+      ],
       "billed as ${ billedPrice }": [
         "حساب شده به میزان ${ billedPrice }"
       ],
@@ -794,9 +794,6 @@
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor مسیر گذاری کنید."
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "به یک طرح پرداختی ارتقا دهید تا به امکانات برتر دست یافته و فضای حافظه خود را افزایش دهید."
       ],
       "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
         "با کلیک حساب ایجاد کن شما میپذیرید که پایبند ${ termsOfServiceLink } و ${ privacyPolicyLink } ما باشید."
@@ -896,21 +893,24 @@
       "Proration": [
         "آموزش"
       ],
-      "${ n } VPN Connection available": [
-        "${ n } اتصال VPN موجود است",
-        "${ n } اتصال VPN موجود است"
+      "${ n } VPN connection available": [
+        "",
+        ""
       ],
-      "Users": [
-        "کاربران"
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "",
+        ""
       ],
-      "Email addresses": [
-        "آدرس‌های ایمیل"
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "",
+        ""
       ],
-      "Custom domains": [
-        "دامنه‌های سفارشی"
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "",
+        ""
       ],
-      "Using": [
-        "در حال استفاده از"
+      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
+        ""
       ],
       "What is the main reason you are cancelling?": [
         "دلیل اصلی انصراف دادن شما چیست؟"
@@ -993,51 +993,6 @@
       "Payer": [
         "پرداخت کننده"
       ],
-      "Cancel": [
-        "لغو"
-      ],
-      "Submit": [
-        "ثبت"
-      ],
-      "Password": [
-        "رمزعبور"
-      ],
-      "Mailbox password": [
-        "رمزعبور صندوق پست"
-      ],
-      "Two-factor authentication code": [
-        "کد تایید هویت دو مرحله‌ای"
-      ],
-      "Username or ProtonMail address": [
-        "نام کاربری یا نشانی ProtonMail"
-      ],
-      "Phone number": [
-        "شماره تلفن"
-      ],
-      "Verification code": [
-        "کد تأیید"
-      ],
-      "Enter the 6-digit code": [
-        "کد ۶-رقمی را وارد کنید"
-      ],
-      "Username": [
-        "نام کاربری"
-      ],
-      "Email": [
-        "ایمیل"
-      ],
-      "Token": [
-        "توکن"
-      ],
-      "Danger": [
-        "خطر"
-      ],
-      "New password": [
-        "رمز عبور جدید"
-      ],
-      "Confirm password": [
-        "تکرار رمز عبور"
-      ],
       "Name": [
         "نام"
       ],
@@ -1056,6 +1011,12 @@
       "Old password": [
         "رمز عبور قبلی"
       ],
+      "New password": [
+        "رمز عبور جدید"
+      ],
+      "Confirm password": [
+        "تکرار رمز عبور"
+      ],
       "Old login password": [
         "رمز عبور قبلی"
       ],
@@ -1070,6 +1031,9 @@
       ],
       "Confirm mailbox password": [
         "تایید گذرواژه صندوق پستی"
+      ],
+      "Two-factor authentication code": [
+        "کد تایید هویت دو مرحله‌ای"
       ],
       "Key": [
         "کلید"
@@ -1086,6 +1050,9 @@
       "Two-password mode": [
         "حالت دو-گذرواژه‌ای"
       ],
+      "Mailbox password": [
+        "رمزعبور صندوق پست"
+      ],
       "What is the main reason you are deleting your account?": [
         "دلیل اصلی که حساب کاربری‌تان را حذف می‌کنید چیست؟"
       ],
@@ -1097,6 +1064,27 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "بله، من می‌خواهم برای همیشه این حساب کاربری و همه داده‌هایش را حذف کنم."
+      ],
+      "Cancel": [
+        "لغو"
+      ],
+      "Submit": [
+        "ثبت"
+      ],
+      "Password": [
+        "رمزعبور"
+      ],
+      "Username or ProtonMail address": [
+        "نام کاربری یا نشانی ProtonMail"
+      ],
+      "Phone number": [
+        "شماره تلفن"
+      ],
+      "Verification code": [
+        "کد تأیید"
+      ],
+      "Enter the 6-digit code": [
+        "کد ۶-رقمی را وارد کنید"
       ],
       "Default language": [
         "زبان پیش‌فرض"
@@ -1116,6 +1104,18 @@
       "Allow recovery by phone": [
         "اجازهٔ بازیابی از طریق تلفن"
       ],
+      "Username": [
+        "نام کاربری"
+      ],
+      "Email": [
+        "ایمیل"
+      ],
+      "Token": [
+        "توکن"
+      ],
+      "Danger": [
+        "خطر"
+      ],
       "Credits used": [
         "اعتبار استفاده شده"
       ],
@@ -1127,6 +1127,9 @@
       ],
       "Back to:": [
         "بازگشت به:"
+      ],
+      "Enter the code displayed on your TV": [
+        "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
       ],
       "Verification method": [
         "روش تأیید"
@@ -1157,9 +1160,6 @@
       ],
       "Total price (two-year)": [
         "قیمت کل (دو ساله)"
-      ],
-      "Enter the code displayed on your TV": [
-        "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
       ]
     },
     "Action": {
@@ -1187,11 +1187,11 @@
       "Submit": [
         "ثبت"
       ],
-      "refresh the page": [
-        "نوسازی صفحه"
-      ],
       "Close": [
         "بستن"
+      ],
+      "refresh the page": [
+        "نوسازی صفحه"
       ],
       "Copy email to clipboard": [
         "کپی ایمیل به کلیپ‌بورد"
@@ -1286,14 +1286,14 @@
       "Upgrade to Professional": [
         "ارتقا به Professional"
       ],
+      "Activate": [
+        ""
+      ],
       "Customize subscription": [
         "سفارشی‌سازی اشتراک"
       ],
       "Cancel subscription": [
         "لغو اشتراک"
-      ],
-      "Try again": [
-        "تلاش دوباره"
       ],
       "Remove gift code": [
         "حذف کد هدیه"
@@ -1309,6 +1309,9 @@
       ],
       "Increase": [
         "افزودن"
+      ],
+      "Try again": [
+        "تلاش دوباره"
       ],
       "Downgrade": [
         "پایین آوردن"
@@ -1355,42 +1358,6 @@
       "Add PayPal": [
         "افزودن PayPal"
       ],
-      "Log in": [
-        "ورود"
-      ],
-      "View invoice": [
-        "مشاهده صورتحساب"
-      ],
-      "Get verification code": [
-        "دریافت کد تأیید"
-      ],
-      "Try another method": [
-        "روش دیگری را امتحان کنید"
-      ],
-      "Request new code": [
-        "درخواست کد جدید"
-      ],
-      "Did not receive the code?": [
-        "کد را دریافت نکردید؟"
-      ],
-      "Edit email address": [
-        "ویرایش نشانی ایمیل"
-      ],
-      "Edit phone number": [
-        "ویرایش شماره‌تلفن"
-      ],
-      "Email me my username(s)": [
-        "نام کاربری(های) من را برای من ایمیل کنید"
-      ],
-      "Get a new password": [
-        "دریافت رمزعبور جدید"
-      ],
-      "Reset password": [
-        "بازنشانی رمز عبور"
-      ],
-      "Reset my password": [
-        "رمز عبورم را بازنشانی کن"
-      ],
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
@@ -1421,6 +1388,30 @@
       "Delete your account": [
         "حذف حساب کاربری"
       ],
+      "Log in": [
+        "ورود"
+      ],
+      "View invoice": [
+        "مشاهده صورتحساب"
+      ],
+      "Get verification code": [
+        "دریافت کد تأیید"
+      ],
+      "Try another method": [
+        "روش دیگری را امتحان کنید"
+      ],
+      "Request new code": [
+        "درخواست کد جدید"
+      ],
+      "Did not receive the code?": [
+        "کد را دریافت نکردید؟"
+      ],
+      "Edit email address": [
+        "ویرایش نشانی ایمیل"
+      ],
+      "Edit phone number": [
+        "ویرایش شماره‌تلفن"
+      ],
       "Hide": [
         "پنهان کردن"
       ],
@@ -1444,6 +1435,18 @@
       ],
       "Update": [
         "بروزرسانی"
+      ],
+      "Email me my username(s)": [
+        "نام کاربری(های) من را برای من ایمیل کنید"
+      ],
+      "Get a new password": [
+        "دریافت رمزعبور جدید"
+      ],
+      "Reset password": [
+        "بازنشانی رمز عبور"
+      ],
+      "Reset my password": [
+        "رمز عبورم را بازنشانی کن"
       ],
       "View": [
         "نمایش"
@@ -1490,6 +1493,12 @@
       "Select": [
         "انتخاب"
       ],
+      "Verify code again": [
+        "تایید دوباره کد"
+      ],
+      "Verify code": [
+        "تایید کد"
+      ],
       "Create account": [
         "ایجاد حساب‌کاربری"
       ],
@@ -1519,12 +1528,6 @@
       ],
       "Homepage": [
         "صفحه اصلی"
-      ],
-      "Verify code again": [
-        "تایید دوباره کد"
-      ],
-      "Verify code": [
-        "تایید کد"
       ]
     },
     "Storage": {
@@ -1551,20 +1554,11 @@
       "clearing your browser cache": [
         "در حال پاک کردن حافظهٔ نهان مرورگرتان"
       ],
-      "click here": [
-        "اینجا کلیک کنید"
-      ],
       "Add a gift code": [
         "افزودن کد هدیه"
       ],
-      "Request an invite": [
-        "درخواست دعوت‌نامه بدهید"
-      ],
-      "Back to login": [
-        "بازگشت به صفحه ورود"
-      ],
-      "here": [
-        "اینجا"
+      "click here": [
+        "اینجا کلیک کنید"
       ],
       "Pay invoice": [
         "پرداخت صورتحساب"
@@ -1575,20 +1569,29 @@
       "Not activated": [
         "فعال نشده"
       ],
+      "Request an invite": [
+        "درخواست دعوت‌نامه بدهید"
+      ],
       "View guide": [
         "مشاهده راهنما"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "تفاوت بین پروتکلهای UDP و TCP چیست؟"
       ],
+      "Back to login": [
+        "بازگشت به صفحه ورود"
+      ],
+      "here": [
+        "اینجا"
+      ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ],
       "Sign up for free": [
         "ثبت نام رایگان"
       ],
       "protonvpn.com": [
         "protonvpn.com"
-      ],
-      "Upgrade now": [
-        "اکنون ارتقا دهید"
       ],
       "Don't have an account yet? Sign up for free!": [
         "حساب کاربری ندارید؟ رایگان ثبت نام کنید!"
@@ -1688,23 +1691,20 @@
       "Checkout": [
         "پرداخت"
       ],
-      "Payment details": [
-        "جزئیات پرداخت"
-      ],
       "Plan summary": [
         "خلاصه طرح‌ها"
       ],
       "${ appName } customization": [
         "سفارشی‌سازی ${ appName }"
       ],
+      "Payment details": [
+        "جزئیات پرداخت"
+      ],
       "Confirm downgrade": [
         "تأیید تنزیل درجه"
       ],
       "Add credits": [
         "افزودن اعتبار"
-      ],
-      "Billing cycle": [
-        "دوره صورتحساب"
       ],
       "Edit credit/debit card": [
         "ویرایش کارت اعتباری/دبیت"
@@ -1714,6 +1714,9 @@
       ],
       "Add PayPal payment method": [
         "روش پرداخت PayPal را اضافه کنید"
+      ],
+      "Billing cycle": [
+        "دوره صورتحساب"
       ],
       "Currency": [
         "ارز"
@@ -1748,30 +1751,6 @@
       "ZIP / postal code": [
         "کد پستی"
       ],
-      "Sign in again to continue": [
-        "براى ادامه، وارد شويد"
-      ],
-      "Account suspended": [
-        "حساب تعلیق شده است"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "نام کاربری یا نشانی ایمیل ProtonMail خود را وارد کنید"
-      ],
-      "Enter your password": [
-        "رمزعبورت را وارد کن"
-      ],
-      "Invalid verification code": [
-        "کد تایید نامعتبر"
-      ],
-      "Request new verification code": [
-        "درخواست کد تایید جدید"
-      ],
-      "Human verification": [
-        "تأیید ربات نبودن"
-      ],
-      "Confirm reset password": [
-        "تایید بازنشانی رمز عبور"
-      ],
       "Change password for ${ Name } (${ Email })": [
         "تغییر رمزعبور برای ${ Name } (${ Email })"
       ],
@@ -1805,6 +1784,27 @@
       "Delete account": [
         "حذف حساب کاربری"
       ],
+      "Sign in again to continue": [
+        "براى ادامه، وارد شويد"
+      ],
+      "Account suspended": [
+        "حساب تعلیق شده است"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "نام کاربری یا نشانی ایمیل ProtonMail خود را وارد کنید"
+      ],
+      "Enter your password": [
+        "رمزعبورت را وارد کن"
+      ],
+      "Invalid verification code": [
+        "کد تایید نامعتبر"
+      ],
+      "Request new verification code": [
+        "درخواست کد تایید جدید"
+      ],
+      "Human verification": [
+        "تأیید ربات نبودن"
+      ],
       "1. Select platform": [
         "1. انتخاب پلتفرم"
       ],
@@ -1822,6 +1822,9 @@
       ],
       "Confirm phone number": [
         "تأیید شماره تلفن"
+      ],
+      "Confirm reset password": [
+        "تایید بازنشانی رمز عبور"
       ],
       "Pay invoice": [
         "پرداخت صورتحساب"
@@ -1844,92 +1847,11 @@
       "Action": [
         "اقدام"
       ],
-      "My subscription": [
-        "اشتراک من"
-      ],
       "Upgrade": [
         "ارتقاء"
       ],
-      "Forgot username": [
-        "فراموشی نام کاربری"
-      ],
-      "Reset password": [
-        "باز نشانی رمز عبور"
-      ],
-      "Log in": [
-        "ورود"
-      ],
-      "User log in": [
-        "ورود کاربر"
-      ],
-      "Redeem coupon": [
-        "بازخرید کوپن"
-      ],
-      "Redeem your coupon and start protecting your online privacy": [
-        "کوپن خود را فعال کنید و از حریم خصوصی آنلاین خود محافظت کنید"
-      ],
-      "Swiss Based": [
-        "مستقر در سوئیس"
-      ],
-      "Secure Core Servers": [
-        "سرورهای Secure Core"
-      ],
-      "No Logs": [
-        "بدون لاگ"
-      ],
-      "Kill Switch": [
-        "Kill Switch"
-      ],
-      "DNS leak prevention": [
-        "جلوگیری از نشت DNS"
-      ],
-      "Strong encryption": [
-        "رمزنگاری قوی"
-      ],
-      "Checking invitation parameters": [
-        "بررسی کردن مولفه های دعوت نامه"
-      ],
-      "You already have a Proton account": [
-        "شما در حال حاضر یک حساب Proton دارید"
-      ],
-      "Create an account": [
-        "ایجاد حساب کاربری"
-      ],
-      "Already have a Proton account?": [
-        "در حال حاضر حساب پروتون دارید؟"
-      ],
-      "ProtonVPN plan comparison": [
-        "مقایسه طرح‌های ProtonVPN"
-      ],
-      "Select an account verification method": [
-        "یک روش تأیید حساب را انتخاب کنید"
-      ],
-      "Resend code": [
-        "ارسال مجدد کد"
-      ],
-      "Enter verification code": [
-        "کد دریافتی را وارد کنید"
-      ],
-      "Are you human?": [
-        "شما ربات نیستید؟"
-      ],
-      "Provide payment details": [
-        "جزئیات پرداخت را ارائه دهید"
-      ],
-      "${ title } plan details": [
-        "جزئیات طرح ${ title }"
-      ],
-      "Upgrade and get more": [
-        "ارتقاء و دریافت امکانات بیشتر"
-      ],
-      "Summary": [
-        "خلاصه"
-      ],
-      "Account created": [
-        "حساب کاربری ایجاد شد"
-      ],
-      "Sign up": [
-        "ثبت نام"
+      "My subscription": [
+        "اشتراک من"
       ],
       "Dashboard": [
         "داشبورد"
@@ -1988,6 +1910,18 @@
       "OpenVPN configuration files": [
         "فایل‌های پیکربندی OpenVPN"
       ],
+      "Forgot username": [
+        "فراموشی نام کاربری"
+      ],
+      "Reset password": [
+        "باز نشانی رمز عبور"
+      ],
+      "Log in": [
+        "ورود"
+      ],
+      "User log in": [
+        "ورود کاربر"
+      ],
       "Payments": [
         "پرداخت‌ها"
       ],
@@ -1997,11 +1931,80 @@
       "Invoices": [
         "صورت‌حساب‌ها"
       ],
+      "Redeem coupon": [
+        "بازخرید کوپن"
+      ],
+      "Redeem your coupon and start protecting your online privacy": [
+        "کوپن خود را فعال کنید و از حریم خصوصی آنلاین خود محافظت کنید"
+      ],
+      "Swiss Based": [
+        "مستقر در سوئیس"
+      ],
+      "Secure Core Servers": [
+        "سرورهای Secure Core"
+      ],
+      "No Logs": [
+        "بدون لاگ"
+      ],
+      "Kill Switch": [
+        "Kill Switch"
+      ],
+      "DNS leak prevention": [
+        "جلوگیری از نشت DNS"
+      ],
+      "Strong encryption": [
+        "رمزنگاری قوی"
+      ],
+      "Checking invitation parameters": [
+        "بررسی کردن مولفه های دعوت نامه"
+      ],
       "Device connected!": [
         "دستگاه متصل شد!"
       ],
       "TV log in": [
         "ورود تلویزیون"
+      ],
+      "You already have a Proton account": [
+        "شما در حال حاضر یک حساب Proton دارید"
+      ],
+      "Create an account": [
+        "ایجاد حساب کاربری"
+      ],
+      "Already have a Proton account?": [
+        "در حال حاضر حساب پروتون دارید؟"
+      ],
+      "ProtonVPN plan comparison": [
+        "مقایسه طرح‌های ProtonVPN"
+      ],
+      "Select an account verification method": [
+        "یک روش تأیید حساب را انتخاب کنید"
+      ],
+      "Resend code": [
+        "ارسال مجدد کد"
+      ],
+      "Enter verification code": [
+        "کد دریافتی را وارد کنید"
+      ],
+      "Are you human?": [
+        "شما ربات نیستید؟"
+      ],
+      "Provide payment details": [
+        "جزئیات پرداخت را ارائه دهید"
+      ],
+      "${ title } plan details": [
+        "جزئیات طرح ${ title }"
+      ],
+      "Upgrade and get more": [
+        "ارتقاء و دریافت امکانات بیشتر"
+      ],
+      "Summary": [
+        "خلاصه"
+      ],
+      "Account created": [
+        "حساب کاربری ایجاد شد"
+      ],
+      "Sign up": [
+        "ثبت نام"
       ],
       "Settings": [
         "تنظیمات"
@@ -2032,20 +2035,17 @@
       "Payment method deleted": [
         "نحوه پرداخت حذف شد"
       ],
-      "Code sent to ${ methodTo }": [
-        "کد ارسال شد به ${ methodTo }"
-      ],
-      "Verification successful": [
-        "تایید با موفقیت بود"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "اگر یک ایمیل اعلان معتبر وارد کردید تا دقایقی دیگر ایمیلی با نام کاربری خود برای شما ارسال می کنیم."
-      ],
       "Password updated": [
         "گذرواژه به‌روز شد"
       ],
       "Account deleted. Logging out...": [
         "حساب کاربری حذف شد. در حال خروج..."
+      ],
+      "Code sent to ${ methodTo }": [
+        "کد ارسال شد به ${ methodTo }"
+      ],
+      "Verification successful": [
+        "تایید با موفقیت بود"
       ],
       "Locale updated": [
         "زبان به‌روزرسانی شد"
@@ -2058,6 +2058,9 @@
       ],
       "Phone number updated": [
         "شماره تماس به روز شد"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "اگر یک ایمیل اعلان معتبر وارد کردید تا دقایقی دیگر ایمیلی با نام کاربری خود برای شما ارسال می کنیم."
       ],
       "Invoice paid": [
         "صورتحساب پرداخت شد"
@@ -2191,6 +2194,18 @@
       "Postal code": [
         "کد پستی"
       ],
+      "Password": [
+        "رمزعبور"
+      ],
+      "Two-factor authentication code": [
+        "کد تایید هویت دو مرحله‌ای"
+      ],
+      "Confirm": [
+        "تایید"
+      ],
+      "Email address": [
+        "آدرس ایمیل"
+      ],
       "Mailbox password": [
         "رمزعبور صندوق پست"
       ],
@@ -2211,18 +2226,6 @@
       ],
       "Choose a new password": [
         "یک رمز عبور جدید انتخاب کنید"
-      ],
-      "Password": [
-        "رمزعبور"
-      ],
-      "Two-factor authentication code": [
-        "کد تایید هویت دو مرحله‌ای"
-      ],
-      "Confirm": [
-        "تایید"
-      ],
-      "Email address": [
-        "آدرس ایمیل"
       ],
       "Enter coupon code": [
         "کد تخفیف را وارد کنید"
@@ -2976,11 +2979,6 @@
         "بازگشایی امکانات پیشرفتهٔ VPN"
       ]
     },
-    "x of y": {
-      "of": [
-        "از"
-      ]
-    },
     "Plan": {
       "Free": [
         "رایگان"
@@ -3094,11 +3092,6 @@
         "در حال تنزیل حساب کاربری شما، لطفاً صبر کنید"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "لطفا برای دریافت دستورالعمل نحوه پرداخت ما به صورت نقدی، با ما از طریق ${ email } تماس بگیرید."
-      ]
-    },
     "Plan info": {
       "(current plan)": [
         "(طرح جاری)"
@@ -3110,6 +3103,11 @@
     "Free price": {
       "Free": [
         "رایگان"
+      ]
+    },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "لطفا برای دریافت دستورالعمل نحوه پرداخت ما به صورت نقدی، با ما از طریق ${ email } تماس بگیرید."
       ]
     },
     "Billing cycle": {
@@ -3214,38 +3212,6 @@
         "شما می‌توانید یک روش پرداخت اضافه کنید تا اشتراک‌تان به طور خودکار تمدید شود. سایر روش‌های پرداخت نیز موجود هستند."
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "مستقر در سوئیس، قابل دسترس به صورت جهانی."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "صورتحساب‌ عقب افتاده"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "ایمیل"
-      ],
-      "SMS": [
-        "پیامک"
-      ],
-      "Manual": [
-        "دستی"
-      ],
-      "No verification method available": [
-        "هیچ شیوه تاییدی در دسترس نیست"
-      ]
-    },
-    "Password": {
-      "Confirm new password": [
-        "تأیید رمز عبور جديد"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "یک نسخه جدید از ${ appName } در دسترس است، ${ reloadButton }."
@@ -3282,6 +3248,33 @@
       ],
       "(1 email per month)": [
         "(1 رایانامه در هر ماه)"
+      ]
+    },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "مستقر در سوئیس، قابل دسترس به صورت جهانی."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "صورتحساب‌ عقب افتاده"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "ایمیل"
+      ],
+      "SMS": [
+        "پیامک"
+      ],
+      "Manual": [
+        "دستی"
+      ],
+      "No verification method available": [
+        "هیچ شیوه تاییدی در دسترس نیست"
       ]
     },
     "Notification": {
@@ -3372,6 +3365,11 @@
     "label": {
       "Phone number": [
         "شماره تلفن"
+      ]
+    },
+    "Password": {
+      "Confirm new password": [
+        "تأیید رمز عبور جديد"
       ]
     },
     "Invoice type display as badge": {
