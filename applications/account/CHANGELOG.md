@@ -1,5 +1,10 @@
 ## Release: 4.0.2 — July 21, 2021
 
+### Improvements
+
+-   Added ability to sign out from the account selection page
+-   General minor UI improvements
+
 ### Fixes
 
 -   Minor visual bug fixes
