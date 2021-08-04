@@ -209,22 +209,22 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     }, [mailSettings, labels, folders, conversationCounts, messageCounts]);
 
     const totalMessagesMap = useDeepMemo(() => {
-        if (!messageCounts) {
+        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
             return {};
         }
 
-        return messageCounts.reduce(
-            (acc: { [labelID: string]: number }, label: { LabelID: string; Total: number; Unread: number }) => {
-                acc[label.LabelID] = label.Total;
-                return acc;
-            },
-            {}
-        );
-    }, [messageCounts]);
+        const all = [...labels, ...folders];
+        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
+        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
+            acc[id] = labelCount?.Total;
+            return acc;
+        }, {});
+        return unreadCounterMap;
+    }, [messageCounts, conversationCounts, labels, folders, mailSettings]);
 
     // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
-    const showScheduled =
-        scheduledFeature?.Value && (user.hasPaidMail || totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] > 0);
+    const showScheduled = // scheduledFeature?.Value
+        scheduledFeature?.Value && (user.hasPaidMail || (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0);
 
     if (loadingMailSettings || loadingLabels || loadingFolders || loadingScheduledFeature) {
         return <Loader />;
