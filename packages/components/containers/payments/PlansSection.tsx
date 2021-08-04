@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { checkSubscription, deleteSubscription } from '@proton/shared/lib/api/payments';

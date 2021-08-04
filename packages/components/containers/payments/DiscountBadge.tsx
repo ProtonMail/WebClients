@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { COUPON_CODES, BLACK_FRIDAY } from '@proton/shared/lib/constants';
 

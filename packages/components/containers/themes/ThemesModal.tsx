@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { updateThemeType } from '@proton/shared/lib/api/settings';

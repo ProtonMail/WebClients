@@ -1,6 +1,5 @@
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
-import React from 'react';
 import {
     Icon,
     Href,

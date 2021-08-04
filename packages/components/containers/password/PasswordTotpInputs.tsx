@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Row, Label, Field, PasswordInput, TwoFactorInput } from '../../components';
 

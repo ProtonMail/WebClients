@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';

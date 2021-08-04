@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { addIncomingDefault, updateIncomingDefault } from '@proton/shared/lib/api/incomingDefaults';
 import { noop } from '@proton/shared/lib/helpers/function';

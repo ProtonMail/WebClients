@@ -1,5 +1,5 @@
 import { APPS } from '@proton/shared/lib/constants';
-import React from 'react';
+import * as React from 'react';
 import {
     PrivateHeader,
     useActiveBreakpoint,

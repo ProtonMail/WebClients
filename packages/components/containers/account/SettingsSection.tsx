@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { classnames } from '../../helpers';
 
 const SettingsSection = ({ className, ...rest }: React.ComponentPropsWithoutRef<'div'>) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';

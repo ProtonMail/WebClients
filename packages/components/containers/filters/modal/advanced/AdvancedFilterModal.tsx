@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useMemo } from 'react';
+import { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import { getPaymentMethodStatus } from '@proton/shared/lib/api/payments';

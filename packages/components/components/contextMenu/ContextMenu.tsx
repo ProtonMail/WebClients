@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import * as React from 'react';
 
 import { generateUID } from '../../helpers';
 import { Dropdown } from '../dropdown';

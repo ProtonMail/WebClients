@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import isBetween from '@proton/shared/lib/helpers/isBetween';
 
 import { classnames } from '../../helpers';

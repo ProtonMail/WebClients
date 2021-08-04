@@ -1,4 +1,3 @@
-import React from 'react';
 import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
 
 import { PaymentMethodData } from './interface';

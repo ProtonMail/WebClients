@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { msgid, c } from 'ttag';
 import { Address } from '@proton/shared/lib/interfaces';
 

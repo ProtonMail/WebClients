@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Row, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from '@proton/components';

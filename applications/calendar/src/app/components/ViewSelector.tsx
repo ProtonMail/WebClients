@@ -1,4 +1,3 @@
-import React from 'react';
 import { classnames } from '@proton/components';
 import { c } from 'ttag';
 

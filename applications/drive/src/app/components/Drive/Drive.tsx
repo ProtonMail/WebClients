@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import useNavigate from '../../hooks/drive/useNavigate';

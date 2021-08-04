@@ -1,4 +1,3 @@
-import React from 'react';
 import { InputButton, InputButtonProps } from '@proton/components';
 
 interface Props extends Omit<InputButtonProps, 'title'> {

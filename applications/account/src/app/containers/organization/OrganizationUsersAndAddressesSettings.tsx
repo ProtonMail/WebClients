@@ -1,4 +1,3 @@
-import React from 'react';
 import { SettingsPropsShared, UsersAndAddressesSection } from '@proton/components';
 import { c } from 'ttag';
 import { PERMISSIONS } from '@proton/shared/lib/constants';

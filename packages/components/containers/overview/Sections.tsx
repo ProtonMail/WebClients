@@ -1,4 +1,3 @@
-import React from 'react';
 import { hasPermission } from '@proton/shared/lib/helpers/permissions';
 import { PERMISSIONS } from '@proton/shared/lib/constants';
 

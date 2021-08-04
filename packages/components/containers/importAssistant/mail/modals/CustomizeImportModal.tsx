@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useMemo } from 'react';
+import { useState, ChangeEvent, useMemo } from 'react';
 import { subYears, subMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 

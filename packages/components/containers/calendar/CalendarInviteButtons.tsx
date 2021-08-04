@@ -3,7 +3,6 @@ import { move } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import { c } from 'ttag';
-import React from 'react';
 import { useLoadingMap } from '../../hooks';
 import { ButtonGroup, Button, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../components';
 

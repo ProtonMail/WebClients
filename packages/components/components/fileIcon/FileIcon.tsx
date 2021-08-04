@@ -1,4 +1,3 @@
-import React from 'react';
 import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo } from '../../containers/filePreview/helpers';
 import { Props as IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';

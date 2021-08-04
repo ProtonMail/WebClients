@@ -1,4 +1,4 @@
-import React, { Ref } from 'react';
+import { Ref } from 'react';
 import { endOfDay } from '@proton/shared/lib/date-fns-utc';
 import { getEvent } from './helper';
 import { TYPE } from '../interactions/constants';

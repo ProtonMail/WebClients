@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';

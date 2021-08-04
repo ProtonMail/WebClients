@@ -1,6 +1,5 @@
 import { Alert, ConfirmModal, Button } from '@proton/components';
 import { c } from 'ttag';
-import React from 'react';
 
 const CloseConfirmationModal = (props: any) => {
     return (

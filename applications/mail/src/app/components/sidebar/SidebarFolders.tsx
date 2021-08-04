@@ -1,4 +1,5 @@
-import React, { ReactNode, memo } from 'react';
+import { ReactNode, memo } from 'react';
+import * as React from 'react';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { getUnreadCount } from '../../helpers/sidebar';

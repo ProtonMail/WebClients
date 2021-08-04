@@ -1,6 +1,6 @@
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
+import { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
 import {
     LocalizedMiniCalendar,
     useToggle,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
@@ -15,7 +15,7 @@ import TopNavbarListItemButton, {
 import ImportModal from '../import/ImportModal';
 import { CONTACT_WIDGET_TABS, CustomAction } from './types';
 
-const TopNavbarListItemContactsButton = React.forwardRef(
+const TopNavbarListItemContactsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
         return (
             <TopNavbarListItemButton

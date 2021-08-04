@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { APP_NAMES, APPS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { Subscription } from '@proton/shared/lib/interfaces';

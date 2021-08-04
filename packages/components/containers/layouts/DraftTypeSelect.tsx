@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';

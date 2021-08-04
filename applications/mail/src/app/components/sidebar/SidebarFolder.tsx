@@ -1,4 +1,3 @@
-import React from 'react';
 import { classnames, Icon, HotkeyTuple, FolderIcon } from '@proton/components';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';

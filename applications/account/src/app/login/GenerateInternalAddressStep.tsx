@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Address, Api } from '@proton/shared/lib/interfaces';

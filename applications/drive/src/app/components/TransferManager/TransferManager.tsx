@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useMemo } from 'react';
+import { useCallback, useEffect, useRef, useMemo } from 'react';
 import { useToggle, classnames, useElementRect, useActiveBreakpoint } from '@proton/components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from '@proton/shared/lib/helpers/function';

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

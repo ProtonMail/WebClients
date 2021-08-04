@@ -1,4 +1,3 @@
-import React from 'react';
 import { getKeys, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

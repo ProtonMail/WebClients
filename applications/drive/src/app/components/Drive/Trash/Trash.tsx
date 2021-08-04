@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { c } from 'ttag';
 import EmptyTrash from '../../FileBrowser/EmptyTrash';
 import useOnScrollEnd from '../../../hooks/util/useOnScrollEnd';

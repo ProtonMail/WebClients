@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { move } from '@proton/shared/lib/helpers/array';
 import { orderAddress } from '@proton/shared/lib/api/addresses';

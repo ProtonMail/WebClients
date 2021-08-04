@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 import { getOtherInformationFields, getAllTypes } from '@proton/shared/lib/helpers/contacts';
 import { ContactPropertyChange } from '@proton/shared/lib/interfaces/contacts/Contact';

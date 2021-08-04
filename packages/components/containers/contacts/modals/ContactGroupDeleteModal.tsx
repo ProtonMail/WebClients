@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 
 import { noop } from '@proton/shared/lib/helpers/function';

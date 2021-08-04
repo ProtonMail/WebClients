@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Currency } from '@proton/shared/lib/interfaces';

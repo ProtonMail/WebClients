@@ -1,4 +1,5 @@
-import React, { useEffect, memo, useRef } from 'react';
+import { useEffect, memo, useRef } from 'react';
+import * as React from 'react';
 import { useLabels, useToggle, classnames } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';

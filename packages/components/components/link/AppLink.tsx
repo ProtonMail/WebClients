@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { APP_NAMES, APPS, isSSOMode, isStandaloneMode, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';

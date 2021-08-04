@@ -1,4 +1,3 @@
-import React from 'react';
 import { SessionsSection, LogsSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
 

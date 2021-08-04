@@ -1,4 +1,5 @@
-import React, { useRef, CSSProperties } from 'react';
+import { useRef, CSSProperties } from 'react';
+import * as React from 'react';
 import { List, AutoSizer } from 'react-virtualized';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';

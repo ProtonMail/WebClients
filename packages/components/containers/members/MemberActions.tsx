@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { authMember, removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';

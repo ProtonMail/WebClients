@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from '@proton/components';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';

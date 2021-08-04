@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';

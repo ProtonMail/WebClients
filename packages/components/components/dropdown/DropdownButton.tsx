@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { classnames } from '../../helpers';
 import Button from '../button/Button';
 import DropdownCaret from './DropdownCaret';

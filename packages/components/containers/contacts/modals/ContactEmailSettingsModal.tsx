@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';

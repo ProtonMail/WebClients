@@ -1,4 +1,5 @@
-import React, { ReactNode, useState, useEffect } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
+import * as React from 'react';
 import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from '@proton/components';
 
 interface LockableDropdownProps {

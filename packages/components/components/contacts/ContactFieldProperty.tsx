@@ -1,4 +1,4 @@
-import React, { ChangeEvent, forwardRef, Ref } from 'react';
+import { ChangeEvent, forwardRef, Ref } from 'react';
 import { parseISO, formatISO, isValid } from 'date-fns';
 
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';

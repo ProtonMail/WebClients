@@ -1,4 +1,4 @@
-import React, { CSSProperties, ChangeEvent } from 'react';
+import { CSSProperties, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';

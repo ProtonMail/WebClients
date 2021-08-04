@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';

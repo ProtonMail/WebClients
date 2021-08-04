@@ -1,4 +1,5 @@
-import React, { ReactElement, ReactNode, useRef } from 'react';
+import { ReactElement, ReactNode, useRef } from 'react';
+import * as React from 'react';
 import {
     CacheProvider,
     NotificationsProvider,

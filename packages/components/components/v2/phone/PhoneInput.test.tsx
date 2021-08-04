@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import PhoneInput from './PhoneInput';
 import { getCountryFromNumber, getCursorPosition, getSpecificCountry } from './helper';

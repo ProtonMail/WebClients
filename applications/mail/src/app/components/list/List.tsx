@@ -1,4 +1,4 @@
-import React, { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject } from 'react';
+import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject } from 'react';
 import { c, msgid } from 'ttag';
 import { useLabels, classnames, PaginationRow, useItemsDraggable, EllipsisLoader } from '@proton/components';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';

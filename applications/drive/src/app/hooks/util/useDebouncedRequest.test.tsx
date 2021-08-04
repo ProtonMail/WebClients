@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React from 'react';
+import * as React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { useApi, CacheProvider } from '@proton/components';
 import createCache from '@proton/shared/lib/helpers/cache';

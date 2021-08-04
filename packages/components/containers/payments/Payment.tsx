@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import {
     PAYMENT_METHOD_TYPE,

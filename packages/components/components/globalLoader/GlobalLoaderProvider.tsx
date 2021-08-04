@@ -1,4 +1,5 @@
-import React, { createContext, useReducer, useCallback, useMemo } from 'react';
+import { createContext, useReducer, useCallback, useMemo } from 'react';
+import * as React from 'react';
 
 export interface TaskOptions {
     text?: string;

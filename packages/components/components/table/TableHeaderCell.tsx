@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { Icon } from '../icon';
 

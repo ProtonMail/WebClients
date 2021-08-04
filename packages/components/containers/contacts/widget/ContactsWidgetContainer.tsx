@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';

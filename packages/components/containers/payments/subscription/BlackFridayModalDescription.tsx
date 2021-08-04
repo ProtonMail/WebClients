@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { isBefore } from 'date-fns';
 import { BLACK_FRIDAY, SECOND } from '@proton/shared/lib/constants';

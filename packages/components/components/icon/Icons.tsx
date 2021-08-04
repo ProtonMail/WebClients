@@ -1,4 +1,3 @@
-import React from 'react';
 import svg from '@proton/styles/_includes/sprite-icons.svg';
 import svgFiles from '@proton/styles/assets/img/sprite-icons/file-icons.svg';
 

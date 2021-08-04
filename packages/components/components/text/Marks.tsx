@@ -1,4 +1,3 @@
-import React from 'react';
 import { MatchChunk } from '@proton/shared/lib/helpers/regex';
 
 interface Chunk {

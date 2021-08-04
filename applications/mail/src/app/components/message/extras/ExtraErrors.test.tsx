@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, minimalElementsCache } from '../../../helpers/test/helper';
 import { MessageErrors, MessageExtended } from '../../../models/message';
 import ExtraErrors from './ExtraErrors';

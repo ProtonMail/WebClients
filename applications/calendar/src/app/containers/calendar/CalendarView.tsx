@@ -1,4 +1,4 @@
-import React, { Ref, RefObject } from 'react';
+import { Ref, RefObject } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 

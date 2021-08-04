@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useLocation } from 'react-router';
 import { useConversationCounts, useMailSettings, useMessageCounts } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';

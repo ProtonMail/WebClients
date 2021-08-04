@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 

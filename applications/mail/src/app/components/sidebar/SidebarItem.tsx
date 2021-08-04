@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, memo } from 'react';
+import { ReactNode, useRef, memo } from 'react';
 import {
     classnames,
     SidebarListItem,

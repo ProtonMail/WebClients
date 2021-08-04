@@ -1,4 +1,5 @@
-import React, { ChangeEvent, forwardRef, useRef } from 'react';
+import { ChangeEvent, forwardRef, useRef } from 'react';
+import * as React from 'react';
 import { ButtonLike } from '../button';
 import { useCombinedRefs } from '../../hooks';
 

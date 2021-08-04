@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { parseISO, isValid, format } from 'date-fns';
 import { c } from 'ttag';
 

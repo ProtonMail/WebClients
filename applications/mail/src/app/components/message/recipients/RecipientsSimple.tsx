@@ -1,6 +1,5 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import React from 'react';
 import { c } from 'ttag';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';

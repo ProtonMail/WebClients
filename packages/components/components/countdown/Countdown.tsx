@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { isBefore, isAfter, differenceInMilliseconds } from 'date-fns';

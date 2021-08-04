@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 
 import { classnames, generateUID } from '../../../helpers';
 import { usePopperAnchor } from '../../popper';

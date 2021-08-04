@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';

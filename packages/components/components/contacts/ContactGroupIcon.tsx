@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Tooltip from '../tooltip/Tooltip';
 import Icon from '../icon/Icon';
 

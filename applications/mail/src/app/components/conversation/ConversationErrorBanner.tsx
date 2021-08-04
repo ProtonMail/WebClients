@@ -1,4 +1,5 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { Button, Icon } from '@proton/components';
 import { ConversationErrors } from '../../models/conversation';

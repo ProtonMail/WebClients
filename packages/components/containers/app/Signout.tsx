@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { c } from 'ttag';

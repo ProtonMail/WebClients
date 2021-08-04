@@ -1,4 +1,5 @@
-import React, { KeyboardEventHandler, Ref, useState } from 'react';
+import { KeyboardEventHandler, Ref, useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { generateUID, classnames } from '../../helpers';

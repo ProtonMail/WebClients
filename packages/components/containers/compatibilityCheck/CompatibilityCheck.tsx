@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
+import * as React from 'react';
 import { useConfig } from '../../hooks';
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { getCompatibilityList } from './compatibilityCheckHelper';

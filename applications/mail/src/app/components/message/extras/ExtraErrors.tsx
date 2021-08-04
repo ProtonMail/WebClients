@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Icon, SettingsLink } from '@proton/components';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';

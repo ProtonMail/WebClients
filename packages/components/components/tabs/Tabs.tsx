@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIndicator } from './useIndicator';
 import { Tab } from './index.d';
 import { classnames } from '../../helpers';

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { WeekStartsOn } from './index.d';
 
 import Tooltip from '../tooltip/Tooltip';

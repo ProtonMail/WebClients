@@ -1,4 +1,3 @@
-import React from 'react';
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
 import { Currency } from '@proton/shared/lib/interfaces';
 

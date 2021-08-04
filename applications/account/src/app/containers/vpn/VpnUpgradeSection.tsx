@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES, APPS_CONFIGURATION, APPS } from '@proton/shared/lib/constants';
 import { ButtonLike, Card, SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';

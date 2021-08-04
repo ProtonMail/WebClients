@@ -1,4 +1,5 @@
-import React, { Fragment, ReactElement } from 'react';
+import { Fragment, ReactElement } from 'react';
+import * as React from 'react';
 import { classnames } from '../../helpers';
 import { Vr } from '../vr';
 

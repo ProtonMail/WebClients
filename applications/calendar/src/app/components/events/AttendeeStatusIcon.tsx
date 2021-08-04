@@ -1,4 +1,3 @@
-import React from 'react';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { Icon } from '@proton/components';
 

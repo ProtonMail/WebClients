@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
+import { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
 import { PrivateAppContainer } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Location, History } from 'history';

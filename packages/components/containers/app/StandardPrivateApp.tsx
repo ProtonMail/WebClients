@@ -1,5 +1,6 @@
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
-import React, { useState, useRef, useEffect, FunctionComponent } from 'react';
+import { useState, useRef, useEffect, FunctionComponent } from 'react';
+import * as React from 'react';
 import { AddressesModel, UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';

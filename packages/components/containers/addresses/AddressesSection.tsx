@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Loader } from '../../components';
 import { useOrganization } from '../../hooks';
 import { SettingsSectionWide } from '../account';

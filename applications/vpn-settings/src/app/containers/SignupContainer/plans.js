@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_TYPES, CYCLE } from '@proton/shared/lib/constants';
 import { Info } from '@proton/components';

@@ -1,5 +1,5 @@
 import { UserModel } from '@proton/shared/lib/interfaces';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Switch, Route, Redirect, useRouteMatch, useLocation } from 'react-router-dom';
 import {
     useAddresses,

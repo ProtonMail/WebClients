@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@proton/components';
 import { c } from 'ttag';
 import EmailUnsubscribeCategories from './EmailUnsubscribeCategories';

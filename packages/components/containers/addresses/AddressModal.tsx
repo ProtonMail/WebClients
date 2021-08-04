@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from '@proton/shared/lib/constants';

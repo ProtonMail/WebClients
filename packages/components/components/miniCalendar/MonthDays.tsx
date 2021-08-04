@@ -1,5 +1,6 @@
 import { isBefore, isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
-import React, { useState, useRef, Ref } from 'react';
+import { useState, useRef, Ref } from 'react';
+import * as React from 'react';
 
 import { classnames } from '../../helpers';
 import { DateTuple } from './index.d';

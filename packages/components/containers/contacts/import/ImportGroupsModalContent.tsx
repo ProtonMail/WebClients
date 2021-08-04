@@ -3,7 +3,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactGroup, IMPORT_GROUPS_ACTION, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';
-import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Alert, SelectTwo, Option, Input } from '../../../components';

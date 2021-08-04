@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi, useConfig, PrimaryButton, Input, useLoading } from '@proton/components';

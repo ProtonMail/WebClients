@@ -1,6 +1,5 @@
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { DateInput, IntegerInput, SelectTwo, Option } from '@proton/components';
 import { isValid } from 'date-fns';

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { c } from 'ttag';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';

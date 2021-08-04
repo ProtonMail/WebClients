@@ -1,4 +1,3 @@
-import React from 'react';
 import squire from 'squire-rte';
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';

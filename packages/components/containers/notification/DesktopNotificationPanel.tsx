@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { create, getStatus, request, Status } from '@proton/shared/lib/helpers/desktopNotification';
 import { PushNotification } from 'push.js';

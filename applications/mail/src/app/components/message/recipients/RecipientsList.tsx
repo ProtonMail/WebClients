@@ -1,4 +1,3 @@
-import React from 'react';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import { MapStatusIcons } from '../../../models/crypto';

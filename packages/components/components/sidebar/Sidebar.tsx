@@ -1,4 +1,5 @@
-import React, { ReactNode, useRef, useMemo } from 'react';
+import { ReactNode, useRef, useMemo } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';

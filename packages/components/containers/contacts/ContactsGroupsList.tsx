@@ -1,4 +1,4 @@
-import React, { useRef, ChangeEvent } from 'react';
+import { useRef, ChangeEvent } from 'react';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { List, AutoSizer } from 'react-virtualized';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';

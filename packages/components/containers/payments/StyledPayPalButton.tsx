@@ -1,4 +1,3 @@
-import React from 'react';
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal-color.svg';
 import { classnames } from '../../helpers';
 import PayPalButton, { PayPalButtonProps } from './PayPalButton';

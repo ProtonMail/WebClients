@@ -1,4 +1,4 @@
-import React, { CSSProperties, ChangeEvent } from 'react';
+import { CSSProperties, ChangeEvent } from 'react';
 
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 

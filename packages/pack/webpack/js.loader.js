@@ -14,19 +14,21 @@ const UNSUPPORTED_JS_LOADER = [
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.12' }
-                    }
-                ]
+                        corejs: { version: '3.12' },
+                    },
+                ],
             ],
-            plugins: []
-        }
-    }
+            plugins: [],
+        },
+    },
 ];
 
 const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag = false } = {}) => {
     const babelReactRefresh = hasReactRefresh ? [require.resolve('react-refresh/babel')] : [];
     const babelPluginsDev = [...babelReactRefresh];
-    const babelPluginsProd = [[require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }]];
+    const babelPluginsProd = [
+        [require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }],
+    ];
 
     return {
         loader: require.resolve('babel-loader'),
@@ -42,21 +44,22 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                         targets: {
                             browsers: isProduction
                                 ? ['> 0.5%, not IE 11, Firefox ESR, Safari 11']
-                                : ['last 1 chrome version', 'last 1 firefox version', 'last 1 safari version']
+                                : ['last 1 chrome version', 'last 1 firefox version', 'last 1 safari version'],
                         },
                         useBuiltIns: 'entry',
                         corejs: { version: '3.12' },
-                        exclude: ['transform-typeof-symbol'] // Exclude transforms that make all code slower
-                    }
+                        exclude: ['transform-typeof-symbol'], // Exclude transforms that make all code slower
+                    },
                 ],
                 [
                     require.resolve('@babel/preset-react'),
                     {
                         // Adds component stack to warning messages
                         // Adds __self attribute to JSX which React will use for some warnings
-                        development: !isProduction
-                    }
-                ]
+                        development: !isProduction,
+                        runtime: 'automatic',
+                    },
+                ],
             ],
             plugins: [
                 require.resolve('@babel/plugin-syntax-dynamic-import'),
@@ -68,9 +71,9 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                 require.resolve('babel-plugin-lodash'),
                 require.resolve('@babel/plugin-transform-runtime'),
                 ...(isTtag ? [[require.resolve('ttag'), { extract: { output: 'i18n/template.pot' } }]] : []),
-                ...(isProduction ? babelPluginsProd : babelPluginsDev)
-            ]
-        }
+                ...(isProduction ? babelPluginsProd : babelPluginsDev),
+            ],
+        },
     };
 };
 
@@ -81,7 +84,7 @@ const getJsLoader = (options) => {
             excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
             excludeFiles([...BABEL_EXCLUDE_FILES, 'unsupported.js'])
         ),
-        use: getBabelLoader(options)
+        use: getBabelLoader(options),
     };
 };
 
@@ -91,13 +94,13 @@ const getJsLoaders = (options) => {
             test: /\.(ts|tsx|js|jsx)?$/,
             use: [require.resolve('source-map-loader')],
             exclude: /web-streams-polyfill/,
-            enforce: 'pre'
+            enforce: 'pre',
         },
         {
             test: /unsupported\.(js|tsx?)$/,
-            use: UNSUPPORTED_JS_LOADER
+            use: UNSUPPORTED_JS_LOADER,
         },
-        getJsLoader(options)
+        getJsLoader(options),
     ];
 };
 

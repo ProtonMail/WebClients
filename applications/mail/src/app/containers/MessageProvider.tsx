@@ -1,5 +1,5 @@
 import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
-import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
+import { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';

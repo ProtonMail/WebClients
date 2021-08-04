@@ -1,4 +1,3 @@
-import React from 'react';
 import { Checkbox } from '@proton/components';
 import { Props as CheckboxProps } from '@proton/components/components/input/Checkbox';
 import { c } from 'ttag';

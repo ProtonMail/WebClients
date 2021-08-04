@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';

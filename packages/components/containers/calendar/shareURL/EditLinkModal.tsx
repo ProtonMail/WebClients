@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { c } from 'ttag';
 

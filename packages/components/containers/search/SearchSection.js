@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { updateAutoWildcardSearch } from '@proton/shared/lib/api/mailSettings';
 import { Row, Label, Info, Toggle, Field } from '../../components';

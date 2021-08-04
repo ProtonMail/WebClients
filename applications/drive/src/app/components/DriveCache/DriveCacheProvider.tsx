@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
+import * as React from 'react';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { act } from '@testing-library/react';
 import { History, Location } from 'history';
 import loudRejection from 'loud-rejection';

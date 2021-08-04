@@ -1,4 +1,3 @@
-import React from 'react';
 import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Button, Icon } from '@proton/components';
 import { c } from 'ttag';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from '@proton/shared/lib/interfaces';
 import { CYCLE, PLANS, PLAN_SERVICES, APPS } from '@proton/shared/lib/constants';

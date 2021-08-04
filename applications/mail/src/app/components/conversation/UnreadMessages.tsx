@@ -1,5 +1,5 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { Button, Icon } from '@proton/components';
 import { isUnread } from '../../helpers/elements';

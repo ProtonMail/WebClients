@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { fromUnixTime, getUnixTime, getYear, getMonth, getDate, getHours, getMinutes } from 'date-fns';
 import { DateInput, TimeInput } from '@proton/components';
 import { c } from 'ttag';

@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { EmailInput, Label, Row, Field } from '../../../components';

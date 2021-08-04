@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { FloatingButton, Icon, SidebarPrimaryButton, useModals } from '@proton/components';
 import SelectedFileToShareModal from '../SelectedFileToShareModal';

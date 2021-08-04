@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Checkbox } from '../../../components';
 import { classnames } from '../../../helpers';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Copy } from '@proton/components';
 
 import mdx from './Copy.mdx';

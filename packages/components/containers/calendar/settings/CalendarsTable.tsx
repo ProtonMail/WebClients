@@ -3,7 +3,6 @@ import {
     getCalendarIsSynced,
     getIsSubscribedCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
-import React from 'react';
 import { c } from 'ttag';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';

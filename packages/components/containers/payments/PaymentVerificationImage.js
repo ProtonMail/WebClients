@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import creditCardType from 'credit-card-type';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';

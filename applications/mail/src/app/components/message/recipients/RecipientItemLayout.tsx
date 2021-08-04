@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '@proton/components';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { highlightNode } from '../../../helpers/encryptedSearch/esHighlight';

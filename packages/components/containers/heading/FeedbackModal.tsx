@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 

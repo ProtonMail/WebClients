@@ -17,7 +17,7 @@ import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { Alert, classnames, Input, Notifications, TextArea } from '@proton/components';
 import { c } from 'ttag';
 

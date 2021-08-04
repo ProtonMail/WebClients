@@ -1,4 +1,4 @@
-import React, { useState, RefObject, DragEvent, MouseEvent } from 'react';
+import { useState, RefObject, DragEvent, MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
     Icon,

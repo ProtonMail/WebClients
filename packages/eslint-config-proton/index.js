@@ -85,6 +85,12 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'react/prop-types': 'warn',
         'react/require-default-props': 'off',
+        /*
+         * next two rules "off" because of the new JSX transform that
+         * came with React 17
+         */
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
         'jsx-a11y/alt-text': ['warn'],
         'jsx-a11y/no-autofocus': ['off'],
         'es/no-regexp-lookbehind-assertions': 'error',

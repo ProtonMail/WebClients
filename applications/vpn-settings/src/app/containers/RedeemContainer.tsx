@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { ProminentContainer, Title, useAppTitle } from '@proton/components';
 import './RedeemContainer.scss';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
 import { useConfig } from '../../../hooks';
 

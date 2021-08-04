@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
+import * as React from 'react';
 import { useGlobalLoader } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { c } from 'ttag';

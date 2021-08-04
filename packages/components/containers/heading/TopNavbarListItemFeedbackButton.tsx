@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import Icon from '../../components/icon/Icon';

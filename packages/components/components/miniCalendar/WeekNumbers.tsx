@@ -1,4 +1,5 @@
-import React, { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { getISOWeek } from 'date-fns';
 import { classnames } from '../../helpers';

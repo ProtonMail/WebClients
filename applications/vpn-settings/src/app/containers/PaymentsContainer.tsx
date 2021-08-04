@@ -1,4 +1,3 @@
-import React from 'react';
 import { InvoicesSection, PaymentMethodsSection, SettingsPropsShared } from '@proton/components';
 import { PERMISSIONS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';

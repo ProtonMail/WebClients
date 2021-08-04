@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { MinimalForgotUsernameContainer } from '@proton/components';
 import SignInLayout from '../components/layout/SignInLayout';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { classnames, Loader, FileIcon, FileNameDisplay } from '@proton/components';
 import ProgressBar from './ProgressBar';

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { c } from 'ttag';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import Icon from '../icon/Icon';
 import Button, { ButtonProps } from '../button/Button';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, useFolderColor } from '@proton/components';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 

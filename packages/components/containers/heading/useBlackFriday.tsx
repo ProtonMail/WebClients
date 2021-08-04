@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 import { PlanIDs, Cycle, Currency } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';

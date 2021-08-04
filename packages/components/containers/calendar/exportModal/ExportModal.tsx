@@ -9,7 +9,7 @@ import {
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalHelper';

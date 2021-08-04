@@ -1,5 +1,3 @@
-import React from 'react';
-
 import SubTitle, { SubTitleProps } from '../../components/title/SubTitle';
 import { classnames } from '../../helpers';
 

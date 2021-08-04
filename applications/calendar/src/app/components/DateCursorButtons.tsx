@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { c } from 'ttag';
 import { Icon } from '@proton/components';
 import { format } from 'date-fns';

@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, MutableRefObject } from 'react';
+import { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Label, Input, generateUID, classnames } from '@proton/components';
 import ComposerAddresses from './addresses/Addresses';

@@ -1,6 +1,6 @@
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
-import React, { CSSProperties, Ref, useRef } from 'react';
+import { CSSProperties, Ref, useRef } from 'react';
 import { Button, classnames, PrimaryButton } from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
