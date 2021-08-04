@@ -76,7 +76,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
     };
 
     const minDate = startOfToday();
-    const maxDate = addDays(minDate, SCHEDULED_MAX_DATE_DAYS);
+    const maxDate = endOfDay(addDays(minDate, SCHEDULED_MAX_DATE_DAYS));
 
     const getMinTime = () => {
         if (!isToday(date)) {
