@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Άγνωστο σφάλμα"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
+      ],
+      "Unknown error": [
+        "Άγνωστο σφάλμα"
       ],
       "Authentication canceled.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "Ο συνθέτης απέτυχε να φορτώσει."
       ],
       "Please refresh the page.": [
         "Παρακαλούμε ανανεώστε τη σελίδα."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "File has no contents to preview": [
+        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Εσφαλμένος κωδικός θυρίδας. Παρακαλούμε ξαναπροσπαθήστε"
       ],
       "Incorrect login credentials. Please try again": [
         "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
-      ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
       ],
       "Process aborted": [
         ""
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "Λήξη χρονικού ορίου αιτήματος."
       ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
-      ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "Η μέγιστη διάρκεια λήξης είναι 4 εβδομάδες."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "",
+        ""
+      ],
       "Public key could not be trusted": [
         "Το δημόσιο κλειδί δεν μπορεί να γίνει έμπιστο"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Κλείσιμο"
       ],
-      "Close modal": [
-        "Κλείσιμο παραθύρου"
+      "Confirm": [
+        "Επιβεβαίωση"
       ],
       "Cancel": [
         "Ακύρωση"
       ],
+      "Close modal": [
+        "Κλείσιμο παραθύρου"
+      ],
       "Submit": [
         "Υποβολή"
-      ],
-      "Confirm": [
-        "Επιβεβαίωση"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Υπογράμμιση"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
@@ -646,6 +653,9 @@
       "Next": [
         "Επόμενο"
       ],
+      "Signing out": [
+        "Αποσύνδεση"
+      ],
       "Clear": [
         "Καθαρισμός"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "ΟΚ"
       ],
-      "Signing out": [
-        "Αποσύνδεση"
-      ],
-      "Log in": [
-        "Είσοδος"
-      ],
       "Details": [
         "Λεπτομέρειες"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Προηγούμενο"
+      ],
+      "Log in": [
+        "Είσοδος"
       ],
       "Get started": [
         ""
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Αποστολή ούτως ή άλλως"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Μεγιστοποίηση συνθέτη"
@@ -947,6 +948,9 @@
       "Not saved": [
         "Δεν αποθηκεύτηκε"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Χρόνος λήξης"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Ορισμός"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Εκτύπωση"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Προβολή πλήκτρων"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "Κατεβάστε ${ attachmentName }"
       ],
@@ -1066,6 +1076,9 @@
       ],
       "Undo": [
         "Αναίρεση"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         ""
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "Απόκρυψη μηνυμάτων"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Εισαγωγή μηνυμάτων"
       ],
@@ -1179,6 +1195,15 @@
         "Αποεπιλογή"
       ],
       "Start using ${ appName }": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
         ""
       ]
     },
@@ -1374,15 +1399,6 @@
         "Πίσω"
       ],
       "Open settings menu": [
-        ""
-      ],
-      "Send feedback": [
-        ""
-      ],
-      "Feedback": [
-        ""
-      ],
-      "Give feedback": [
         ""
       ],
       "Confirm loss of Proton bonuses": [
@@ -1590,6 +1606,9 @@
       "Send email": [
         "Να στείλετε e-mail"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Νέο μήνυμα"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "Φόρτωση"
       ],
-      "support team": [
-        ""
-      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Απλό κείμενο"
+      ],
+      "support team": [
+        ""
       ],
       "Drop the file here to upload": [
         ""
@@ -1952,6 +1971,9 @@
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "Loading ${ appName }": [
+        "Φόρτωση ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Loading ${ appName }": [
-        "Φόρτωση ${ appName }"
-      ],
-      "here": [
-        "εδώ"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "από"
+      ],
+      "here": [
+        "εδώ"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Η επαλήθευση του ${ contactName } απέτυχε: η επαφή δεν έχει υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά την επαφή για να στείλετε ένα μήνυμα ${ contactAddress } ή επεξεργαστείτε την επαφή."
       ],
@@ -2518,6 +2540,9 @@
         "",
         ""
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Το πρόχειρο απορρίφθηκε"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "Αποστολή σε εξέλιξη"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Επιβεβαίωση αναφοράς ηλεκτρονικού \"ψαρέματος\" (Phishing)"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Θέμα:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
@@ -2645,8 +2682,14 @@
         "ενσωματωμένη εικόνα",
         "ενσωματωμένες εικόνες"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Το μήνυμα στάλθηκε"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "Αποστολή μηνύματος..."
@@ -2688,9 +2731,6 @@
         "",
         ""
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        ""
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } μη αναγνωσμένη συνομιλία",
         "${ unreadCount } μη αναγνωσμένες συνομιλίες"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } μη αναγνωσμένο μήνυμα",
         "${ unreadCount } μη αναγνωσμένα μηνύματα"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        ""
       ],
       "Manage your folders": [
         "Διαχείριση των φακέλων σας"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(Κανένας παραλήπτης)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "",
+        ""
       ],
       "No more results found": [
         ""
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "Κρυφή κοινοποίηση"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Από:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Φίλτρο"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        ""
-      ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
       "Also archive": [
         "Επίσης αρχειοθετείστε"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "Εισερχόμενα"
-      ],
-      "Drafts": [
-        "Πρόχειρα"
-      ],
-      "Sent": [
-        "Απεσταλμένα"
-      ],
-      "Trash": [
-        "Κάδος απορριμμάτων"
-      ],
-      "Spam": [
-        "Ανεπιθύμητα"
-      ],
-      "All mail": [
-        "Όλα τα Μηνύματα"
-      ],
-      "Archive": [
-        "Αρχειοθετημένα"
-      ],
-      "Starred": [
-        "Με αστέρι"
-      ],
-      "Outbox": [
-        "Εξερχόμενα"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Προσθήκη ετικέτας"
       ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Drafts": [
+        "Πρόχειρα"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Απεσταλμένα"
+      ],
+      "Starred": [
+        "Με αστέρι"
+      ],
+      "Archive": [
+        "Αρχειοθετημένα"
+      ],
+      "Spam": [
+        "Ανεπιθύμητα"
+      ],
+      "Trash": [
+        "Κάδος απορριμμάτων"
+      ],
+      "All mail": [
+        "Όλα τα Μηνύματα"
+      ],
       "Folders": [
         "Φάκελοι"
       ],
@@ -3417,6 +3459,9 @@
       ],
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
+      ],
+      "Outbox": [
+        "Εξερχόμενα"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "π.χ. Julia Smith"
       ],
-      "Feedback": [
-        ""
-      ],
       "ZIP": [
         ""
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Φιλτράρισμα ετικετών"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } ημέρα",
+        "${ daysCountLeft } ημέρες"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } ώρα",
+        "${ hoursCountLeft } ώρες"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } λεπτό",
+        "${ minutesCountLeft } λεπτά"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } δευτερόλεπτο",
+        "${ secondsCountLeft } δευτερόλεπτα"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Εφαρμογές Proton"
+      ],
+      "Go to ${ title }": [
+        "Πάντε στο ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
@@ -4360,40 +4439,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
       ],
-      "Go to ${ title }": [
-        "Πάντε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
+      "Message saved to Drafts": [
         ""
       ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
+      "Edit and reschedule": [
         ""
       ]
     },
@@ -4445,6 +4495,30 @@
         ""
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
@@ -4486,16 +4560,6 @@
         ""
       ],
       "Normal": [
-        ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        ""
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
         ""
       ]
     },
@@ -5116,12 +5180,6 @@
         "με αστέρι"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Όνομα"
@@ -5250,9 +5308,10 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Στις ${ date }, ${ name } ${ address } έγραψε:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(χωρίς τίτλο)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Πρόχειρα"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Όλα"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Χθες"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         "Αυτό το γεγονός συμβαίνει αυτή τη στιγμή."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } ημέρα",
-        "${ daysCountLeft } ημέρες"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } ώρα",
-        "${ hoursCountLeft } ώρες"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } λεπτό",
-        "${ minutesCountLeft } λεπτά"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } δευτερόλεπτο",
-        "${ secondsCountLeft } δευτερόλεπτα"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Αποστολή αναίρεσης"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "Δεν έχετε μηνύματα"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

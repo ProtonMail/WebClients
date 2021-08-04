@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Nepoznata pogreška"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
+      ],
+      "Unknown error": [
+        "Nepoznata pogreška"
       ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Ovo polje je obavezno"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "Neuspješno učitavanje prozora za novu poruku."
       ],
       "Please refresh the page.": [
         "Osvježite stranicu."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
@@ -103,14 +103,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
       ],
+      "File has no contents to preview": [
+        "Datoteka nema sadržaja za pregled"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
       ],
       "Incorrect login credentials. Please try again": [
         "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
-      ],
-      "File has no contents to preview": [
-        "Datoteka nema sadržaja za pregled"
       ],
       "Process aborted": [
         ""
@@ -205,12 +205,6 @@
       "Request timed out.": [
         "Zahtjev je istekao."
       ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
       ],
@@ -234,6 +228,12 @@
       ],
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Could not find address ${ email }.": [
+        "Ne mogu pronaći adresu ${ email }."
       ],
       "Missing signature": [
         "Nedostaje potpis"
@@ -319,6 +319,14 @@
       "The maximum expiration is 4 weeks.": [
         "Maksimalno razdoblje isteka je 4 tjedna."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "",
+        "",
+        ""
+      ],
       "Public key could not be trusted": [
         "Javnom ključu se ne može vjerovati"
       ],
@@ -348,26 +356,23 @@
       "Close": [
         "Zatvori"
       ],
-      "Close modal": [
-        "Zatvori skočni prozor"
+      "Confirm": [
+        "Potvrdi"
       ],
       "Cancel": [
         "Poništi"
       ],
+      "Close modal": [
+        "Zatvori skočni prozor"
+      ],
       "Submit": [
         "Pošalji"
-      ],
-      "Confirm": [
-        "Potvrdi"
       ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Koristi “${ label }” postavku"
-      ],
-      "refresh the page": [
-        "osvježi stranicu"
       ],
       "Remove": [
         "Ukloni"
@@ -482,6 +487,9 @@
       ],
       "Underline": [
         "Podvučeno"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
@@ -654,6 +662,9 @@
       "Next": [
         "Sljedeće"
       ],
+      "Signing out": [
+        "Odjavljivanje"
+      ],
       "Clear": [
         "Očisti"
       ],
@@ -684,12 +695,6 @@
       "OK": [
         "U redu"
       ],
-      "Signing out": [
-        "Odjavljivanje"
-      ],
-      "Log in": [
-        "Prijavite se"
-      ],
       "Details": [
         "Pojedinosti"
       ],
@@ -710,6 +715,9 @@
       ],
       "Previous": [
         "Prethodno"
+      ],
+      "Log in": [
+        "Prijavite se"
       ],
       "Get started": [
         "Započnite"
@@ -879,17 +887,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Svejedno pošalji"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Povećaj prozor za novu poruku"
@@ -956,6 +958,9 @@
       "Not saved": [
         "Nije spremljeno"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Vrijeme isteka"
       ],
@@ -967,6 +972,9 @@
       ],
       "Set": [
         "Postavi"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Ispis"
@@ -1052,6 +1060,9 @@
       "View keys": [
         "Prikaži ključeve"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "Preuzmi ${ attachmentName }"
       ],
@@ -1075,6 +1086,9 @@
       ],
       "Undo": [
         "Poništi"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "Omogući"
@@ -1181,6 +1195,9 @@
       "Hide messages": [
         "Sakrij poruke"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Uvoz e-pošte"
       ],
@@ -1189,6 +1206,15 @@
       ],
       "Start using ${ appName }": [
         "Započnite koristiti ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1388,15 +1414,6 @@
       ],
       "Open settings menu": [
         "Otvori izbornik postavki"
-      ],
-      "Send feedback": [
-        "Pošalji povratne informacije"
-      ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
-      "Give feedback": [
-        "Ostavi povratnu informaciju"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -1607,6 +1624,9 @@
       "Send email": [
         "Pošalji e-poruku"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Nova poruka"
       ],
@@ -1723,9 +1743,6 @@
       "Loading": [
         "Učitavanje"
       ],
-      "support team": [
-        ""
-      ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
       ],
@@ -1823,6 +1840,9 @@
       ],
       "Plain text": [
         "Običan tekst"
+      ],
+      "support team": [
+        ""
       ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
@@ -1975,6 +1995,9 @@
         "${ addressCount } adrese e-pošte",
         "${ addressCount } adresa e-pošte"
       ],
+      "Loading ${ appName }": [
+        "Učitavanje ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Snimka(e) zaslona su pridodane"
       ],
@@ -2005,18 +2028,6 @@
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ],
-      "Loading ${ appName }": [
-        "Učitavanje ${ appName }"
-      ],
-      "here": [
-        "ovdje"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
-      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -2034,6 +2045,15 @@
       ],
       "of": [
         "od"
+      ],
+      "here": [
+        "ovdje"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
@@ -2417,6 +2437,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Potvrda ${ contactName } nije uspjela: kontakt nije pravilno potpisan.\nTo može biti rezultat poništavanja lozinke.\nMorate ponovo potpisati kontakt da biste mogli poslati poruku na ${ contactAddress } ili urediti kontakt."
       ],
@@ -2552,6 +2575,9 @@
         "Sata",
         "Sati"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Skica je odbačena"
       ],
@@ -2581,6 +2607,9 @@
       ],
       "Sending": [
         "Slanje"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Potvrdi izvještaj o krađi identiteta"
@@ -2673,6 +2702,15 @@
       "Subject:": [
         "Predmet:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "privitak dodan",
         "privitka dodana",
@@ -2683,8 +2721,14 @@
         "ugrađene slike",
         "ugrađenih slika"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Poruka je poslana"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "Slanje poruke..."
@@ -2727,9 +2771,6 @@
         "Procijenjeno preostalo vrijeme: { estimatedMinutes } minute",
         "Procijenjeno preostalo vrijeme: { estimatedMinutes } minuta"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton je unaprijedio izgled. Voljeli bismo čuti što mislite o tome!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } nepročitan razgovor",
         "${ unreadCount } nepročitana razgovora",
@@ -2739,6 +2780,11 @@
         "${ unreadCount } nepročitana poruka",
         "${ unreadCount } nepročitane poruke",
         "${ unreadCount } nepročitanih poruka"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        "",
+        ""
       ],
       "Manage your folders": [
         "Upravljanje vašim mapama"
@@ -2762,6 +2808,11 @@
       ],
       "(No Recipient)": [
         "(Nema primatelja)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "",
+        "",
+        ""
       ],
       "No more results found": [
         "Nema više rezultata"
@@ -3064,9 +3115,6 @@
       "Select how your composer opens by default.": [
         "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3229,6 +3277,12 @@
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Od:"
       ],
@@ -3307,15 +3361,6 @@
       "Filter": [
         "Filtar"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Kako biste ocijenili svoje iskustvo s novim ProtonMailom?"
-      ],
-      "0 - Not a fan": [
-        "0 - Ne sviđa mi se"
-      ],
-      "10 - Love it!": [
-        "10 - Sviđa mi se!"
-      ],
       "Also archive": [
         "Također i arhivu"
       ]
@@ -3352,33 +3397,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "Pristigla pošta"
-      ],
-      "Drafts": [
-        "Skice"
-      ],
-      "Sent": [
-        "Poslano"
-      ],
-      "Trash": [
-        "Otpad"
-      ],
-      "Spam": [
-        "Neželjena pošta"
-      ],
-      "All mail": [
-        "Sva pošta"
-      ],
-      "Archive": [
-        "Arhiva"
-      ],
-      "Starred": [
-        "Sa zvjezdicom"
-      ],
-      "Outbox": [
-        "Odlazni spremnik"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3455,6 +3473,33 @@
       "Add label": [
         "Dodaj oznaku"
       ],
+      "Inbox": [
+        "Pristigla pošta"
+      ],
+      "Drafts": [
+        "Skice"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Poslano"
+      ],
+      "Starred": [
+        "Sa zvjezdicom"
+      ],
+      "Archive": [
+        "Arhiva"
+      ],
+      "Spam": [
+        "Neželjena pošta"
+      ],
+      "Trash": [
+        "Otpad"
+      ],
+      "All mail": [
+        "Sva pošta"
+      ],
       "Folders": [
         "Mape"
       ],
@@ -3466,6 +3511,9 @@
       ],
       "Manage your labels": [
         "Upravljanje oznakama"
+      ],
+      "Outbox": [
+        "Odlazni spremnik"
       ]
     },
     "Placeholder": {
@@ -3541,9 +3589,6 @@
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
       ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
       "ZIP": [
         ""
       ],
@@ -3588,6 +3633,38 @@
       ],
       "Filter labels": [
         "Filtriraj oznake"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } dan",
+        "${ daysCountLeft } dana",
+        "${ daysCountLeft } dana"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } sat",
+        "${ hoursCountLeft } sata",
+        "${ hoursCountLeft } sati"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } minuta",
+        "${ minutesCountLeft } minute",
+        "${ minutesCountLeft } minuta"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } sekunda",
+        "${ secondsCountLeft } sekunde",
+        "${ secondsCountLeft } sekundi"
       ]
     },
     "Warning": {
@@ -4308,6 +4385,17 @@
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikacije"
+      ],
+      "Go to ${ title }": [
+        "Idi na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Idi na ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
@@ -4439,41 +4527,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Zaustavi uvoz?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
       ],
-      "Go to ${ title }": [
-        "Idi na ${ title }"
+      "Message saved to Drafts": [
+        ""
       ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normalno"
-      ],
-      "Maximized": [
-        "Maksimizirano"
+      "Edit and reschedule": [
+        ""
       ]
     },
     "Select files": {
@@ -4524,6 +4583,30 @@
         "Da biste onemogućili beta verziju, otvorite padajući izbornik s postavkama i kliknite na opciju \"Beta pristup\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Udobno"
+      ],
+      "Compact": [
+        "Kompaktno"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Stupac"
+      ],
+      "Row": [
+        "Redak"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normalno"
+      ],
+      "Maximized": [
+        "Maksimizirano"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
@@ -4566,16 +4649,6 @@
       ],
       "Normal": [
         "Normalno"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Ocjena je zabilježena"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Povratna informacija je poslana"
       ]
     },
     "Info for cash payment method": {
@@ -5206,13 +5279,6 @@
         "označeno zvijezdicom"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lozinka mora sadržavati najmanje ${ length } znak",
-        "Lozinka mora sadržavati najmanje ${ length } znaka",
-        "Lozinka mora sadržavati najmanje ${ length } znakova"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Naziv"
@@ -5341,9 +5407,11 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
       ]
     },
     "Message": {
@@ -5355,6 +5423,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Dana ${ date }, ${ name } ${ address } je napisao/la:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5740,6 +5813,68 @@
     "Event title": {
       "(no title)": [
         "(bez naslova)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6269,6 +6404,9 @@
       "Drafts": [
         "Skice"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Sve"
       ],
@@ -6418,6 +6556,20 @@
     "Time": {
       "Yesterday": [
         "Jučer"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6613,31 +6765,12 @@
         "Ovaj događaj je u tijeku."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dan",
-        "${ daysCountLeft } dana",
-        "${ daysCountLeft } dana"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } sat",
-        "${ hoursCountLeft } sata",
-        "${ hoursCountLeft } sati"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuta",
-        "${ minutesCountLeft } minute",
-        "${ minutesCountLeft } minuta"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } sekunda",
-        "${ secondsCountLeft } sekunde",
-        "${ secondsCountLeft } sekundi"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Slanje je poništeno"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6879,6 +7012,9 @@
       ],
       "No messages found": [
         "Nema poruka"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

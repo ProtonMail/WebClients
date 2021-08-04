@@ -331,12 +331,6 @@
       "Name": [
         "Nome"
       ],
-      "Compact name": [
-        "Nome curto"
-      ],
-      "Nickname": [
-        "Alcunha"
-      ],
       "Email": [
         "Correio electrónico"
       ],
@@ -387,18 +381,6 @@
       ],
       "Member": [
         "Membro"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Relacionado"
-      ],
-      "Categories": [
-        "Categorias"
-      ],
-      "Sound": [
-        "Áudio"
       ]
     },
     "Contact type label": {
@@ -428,12 +410,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Nome"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
       "Email": [
         "Correio electrónico"
       ],
@@ -463,63 +439,6 @@
       ],
       "Address": [
         "Endereço"
-      ],
-      "Contact": [
-        "Contacto"
-      ],
-      "Acquaintance": [
-        "Conhecido"
-      ],
-      "Friend": [
-        "Amigo"
-      ],
-      "Met": [
-        "Encontrado"
-      ],
-      "Co-worker": [
-        "Co-trabalhador"
-      ],
-      "Colleague": [
-        "Colega"
-      ],
-      "Co-resident": [
-        "Co-residente"
-      ],
-      "Neighbor": [
-        "Vizinho"
-      ],
-      "Child": [
-        "Filho"
-      ],
-      "Parent": [
-        "Pai"
-      ],
-      "Sibling": [
-        "Irmão"
-      ],
-      "Kin": [
-        "Parente"
-      ],
-      "Muse": [
-        "Musa"
-      ],
-      "Crush": [
-        "Paixão"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Sweetheart": [
-        "Namorada"
-      ],
-      "Me": [
-        "Eu"
-      ],
-      "Agent": [
-        "Agente"
-      ],
-      "Emergency": [
-        "Emergência"
       ]
     },
     "Info": {
@@ -2003,285 +1922,10 @@
         "En:"
       ]
     },
-    "Label": {
-      "Copy": [
-        "Copiar"
-      ],
-      "Reveal password": [
-        "Mostrar senha"
-      ],
-      "Hide password": [
-        "Ocultar senha"
-      ],
-      "Street address": [
-        "Endereço postal"
-      ],
-      "City": [
-        "Cidade"
-      ],
-      "Region": [
-        "Região"
-      ],
-      "Postal code": [
-        "Código postal"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Post office box": [
-        "Apartado"
-      ],
-      "Extended address": [
-        "Endereço estendido"
-      ],
-      "Do not ask again": [
-        "Não perguntar novamente"
-      ],
-      "Email address": [
-        "Endereço electrónico"
-      ],
-      "Phone number": [
-        "Número de telefone"
-      ],
-      "Verification code": [
-        "Código de verificação"
-      ],
-      "Enter the 6-digit code": [
-        "Insira o código de 6 algarismos"
-      ],
-      "Add email address": [
-        "Adicionar endereço electrónico"
-      ],
-      "Email format": [
-        "Formato da mensagem"
-      ],
-      "Add image URL": [
-        "Adicionar URL da imagem"
-      ],
-      "Upload picture": [
-        "Enviar imagem"
-      ],
-      "Add to group": [
-        "Adicionar ao grupo"
-      ],
-      "Encrypt emails": [
-        "Encriptar mensagens"
-      ],
-      "Sign emails": [
-        "Assinar mensagens"
-      ],
-      "Cryptographic scheme": [
-        "Esquema de encriptação"
-      ],
-      "Public keys": [
-        "Chaves públicas"
-      ],
-      "Automatically save contacts": [
-        "Gravar contactos automaticamente"
-      ],
-      "Import contacts": [
-        "Importar contactos"
-      ],
-      "Export contacts": [
-        "Exportar contactos"
-      ],
-      "Operating system": [
-        "Sistema operativo"
-      ],
-      "Operating system version": [
-        "Versão do sistema operativo"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "O que é que aconteceu?"
-      ],
-      "System information": [
-        "Informação do sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
-      "From: ${ fromEmailAddress }": [
-        "De: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Para: ${ toEmailAddress }"
-      ],
-      "Cancel": [
-        "Cancelar"
-      ],
-      "Submit": [
-        "Submeter"
-      ],
-      "Password": [
-        "Senha"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
-      ],
-      "Two-factor authentication code": [
-        "Código de autenticação em dois passos"
-      ],
-      "Username or ProtonMail address": [
-        "Utilizador ou endereço ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        "Qual é a principal razão para esta avaliação?"
-      ],
-      "Display name": [
-        "Nome a mostrar"
-      ],
-      "Name on card": [
-        "Nome no cartão"
-      ],
-      "Card number": [
-        "Número do cartão"
-      ],
-      "Expiry date": [
-        "Data de expiração"
-      ],
-      "CVV code": [
-        "Código CVV"
-      ],
-      "Select your country": [
-        "Escolha o seu país"
-      ],
-      "ZIP": [
-        "CP"
-      ],
-      "BTC amount:": [
-        "Quantia BTC:"
-      ],
-      "BTC address:": [
-        "Endereço BTC:"
-      ],
-      "Select a method": [
-        "Escolha um método"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Proration": [
-        "Repartição"
-      ],
-      "Cash": [
-        "Numerário"
-      ],
-      "Card holder": [
-        "Titular do cartão"
-      ],
-      "Expires": [
-        "Expira"
-      ],
-      "Payer": [
-        "Pagante"
-      ],
-      "Keyboard shortcuts": [
-        "Atalhos de teclado"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Escolha a aparência predefinida da lista de mensagens."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Escolha a aparência predefinida da caixa de correio."
-      ],
-      "Select how your composer opens by default.": [
-        "Escolha a aparência predefinida do compositor."
-      ],
-      "Enable Beta Access": [
-        "Activar acesso Beta"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "Choose a color": [
-        "Escolher uma cor"
-      ],
-      "Default email": [
-        "Endereço electrónico predefinido"
-      ],
-      "Display": [
-        "Mostrar"
-      ],
-      "Description": [
-        "Descrição"
-      ],
-      "Default event duration": [
-        "Duração predefinida do evento"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Default notifications": [
-        "Notificações predefinidas"
-      ],
-      "Default full day notifications": [
-        "Notificações de dia inteiro predefinidas"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Qual a probabilidade de recomendar o ${ calendarAppName } a um amigo ou colega?"
-      ],
-      "0 - Not likely": [
-        "0 - Provavelmente não"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extremamente provável"
-      ],
-      "All day": [
-        "Dia inteiro"
-      ],
-      "Repeat on": [
-        "Repetir a"
-      ],
-      "Repeat every": [
-        "Repetir a cada"
-      ],
-      "Ends": [
-        "Termina"
-      ],
-      "Organizer": [
-        "Organizador"
-      ],
-      "Optional": [
-        "Opcional"
-      ],
-      "Time of the event": [
-        "Hora do evento"
-      ],
-      "Event time": [
-        "Hora do evento"
-      ],
-      "Event title": [
-        "Título do evento"
-      ],
-      "Event frequency": [
-        "Frequência do evento"
-      ],
-      "Event location": [
-        "Localização do evento"
-      ],
-      "Event notifications": [
-        "Notificações do evento"
-      ],
-      "Participants": [
-        "Participantes"
-      ],
-      "Your calendars": [
-        "As suas agendas"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Fechar"
+      ],
       "Close modal": [
         "Fechar janela"
       ],
@@ -2300,12 +1944,6 @@
       "Use “${ label }” setting": [
         "Usar a definição \"${ label }\""
       ],
-      "Close": [
-        "Fechar"
-      ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Close navigation": [
         "Fechar navegação"
       ],
@@ -2314,6 +1952,9 @@
       ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Load image": [
         "Carregar imagem"
@@ -2750,139 +2391,6 @@
         "Fechar balão"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "A chave não pode ser usada para encriptar"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Saiba mais"
-      ],
-      "Request an invite": [
-        "Pedir um convite"
-      ],
-      "clearing your browser cache": [
-        "limpar a memória do navegador"
-      ],
-      "Upgrade": [
-        "Actualizar"
-      ],
-      "Go to subscription plans": [
-        "Ir para os planos de subscrição"
-      ],
-      "click here": [
-        "clique aqui"
-      ],
-      "Add a gift code": [
-        "Adicionar código de oferta"
-      ],
-      "Pay invoice": [
-        "Pagar factura"
-      ],
-      "Upgrade account": [
-        "Actualizar conta"
-      ],
-      "Calendars": [
-        "Agendas"
-      ],
-      "My calendars": [
-        "Minhas agendas"
-      ],
-      "Other calendars": [
-        "Outras agendas"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "E.g., "
-      ],
-      "Start typing an email address": [
-        "Comece a escrever um endereço electrónico"
-      ],
-      "Image URL": [
-        "URL da imagem"
-      ],
-      "Filter groups": [
-        "Filtrar grupos"
-      ],
-      "Search for name or email": [
-        "Procurar por nome ou endereço"
-      ],
-      "Search for group name": [
-        "Procurar nome de grupo"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "OS name": [
-        "Nome do SO"
-      ],
-      "OS version": [
-        "Versão do SO"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
-      ],
-      "A way to contact you": [
-        "Como contactar consigo"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
-      ],
-      "Browser name": [
-        "Nome do navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
-      ],
-      "Feedback": [
-        "Comentários"
-      ],
-      "e.g. Julia Smith": [
-        "e.g. Júlia Silva"
-      ],
-      "ZIP": [
-        "CP"
-      ],
-      "Postal code": [
-        "Código postal"
-      ],
-      "Gift code": [
-        "Código de oferta"
-      ],
-      "Add a calendar name": [
-        "Adicionar nome à agenda"
-      ],
-      "Add a calendar description": [
-        "Adicionar descrição à agenda"
-      ],
-      "Add title": [
-        "Adicionar título"
-      ],
-      "Add location": [
-        "Adicionar localização"
-      ],
-      "Add description": [
-        "Adicionar descrição"
-      ],
-      "Add participants": [
-        "Adicionar participantes"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ]
-    },
     "Title": {
       "Open actions dropdown": [
         "Abrir lista de acções"
@@ -3316,6 +2824,417 @@
       ],
       "CANCELLED": [
         "CANCELADO"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Copiar"
+      ],
+      "Reveal password": [
+        "Mostrar senha"
+      ],
+      "Hide password": [
+        "Ocultar senha"
+      ],
+      "Street address": [
+        "Endereço postal"
+      ],
+      "City": [
+        "Cidade"
+      ],
+      "Region": [
+        "Região"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "Country": [
+        "País"
+      ],
+      "Post office box": [
+        "Apartado"
+      ],
+      "Extended address": [
+        "Endereço estendido"
+      ],
+      "Do not ask again": [
+        "Não perguntar novamente"
+      ],
+      "Email address": [
+        "Endereço electrónico"
+      ],
+      "Phone number": [
+        "Número de telefone"
+      ],
+      "Verification code": [
+        "Código de verificação"
+      ],
+      "Enter the 6-digit code": [
+        "Insira o código de 6 algarismos"
+      ],
+      "Add email address": [
+        "Adicionar endereço electrónico"
+      ],
+      "Email format": [
+        "Formato da mensagem"
+      ],
+      "Add image URL": [
+        "Adicionar URL da imagem"
+      ],
+      "Upload picture": [
+        "Enviar imagem"
+      ],
+      "Add to group": [
+        "Adicionar ao grupo"
+      ],
+      "Encrypt emails": [
+        "Encriptar mensagens"
+      ],
+      "Sign emails": [
+        "Assinar mensagens"
+      ],
+      "Cryptographic scheme": [
+        "Esquema de encriptação"
+      ],
+      "Public keys": [
+        "Chaves públicas"
+      ],
+      "Automatically save contacts": [
+        "Gravar contactos automaticamente"
+      ],
+      "Import contacts": [
+        "Importar contactos"
+      ],
+      "Export contacts": [
+        "Exportar contactos"
+      ],
+      "Operating system": [
+        "Sistema operativo"
+      ],
+      "Operating system version": [
+        "Versão do sistema operativo"
+      ],
+      "Proton username": [
+        "Utilizador Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "O que é que aconteceu?"
+      ],
+      "System information": [
+        "Informação do sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
+      "From: ${ fromEmailAddress }": [
+        "De: ${ fromEmailAddress }"
+      ],
+      "To: ${ toEmailAddress }": [
+        "Para: ${ toEmailAddress }"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Submit": [
+        "Submeter"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "Two-factor authentication code": [
+        "Código de autenticação em dois passos"
+      ],
+      "Username or ProtonMail address": [
+        "Utilizador ou endereço ProtonMail"
+      ],
+      "What is the primary reason for this rating?": [
+        "Qual é a principal razão para esta avaliação?"
+      ],
+      "Display name": [
+        "Nome a mostrar"
+      ],
+      "Name on card": [
+        "Nome no cartão"
+      ],
+      "Card number": [
+        "Número do cartão"
+      ],
+      "Expiry date": [
+        "Data de expiração"
+      ],
+      "CVV code": [
+        "Código CVV"
+      ],
+      "Select your country": [
+        "Escolha o seu país"
+      ],
+      "ZIP": [
+        "CP"
+      ],
+      "BTC amount:": [
+        "Quantia BTC:"
+      ],
+      "BTC address:": [
+        "Endereço BTC:"
+      ],
+      "Select a method": [
+        "Escolha um método"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Proration": [
+        "Repartição"
+      ],
+      "Cash": [
+        "Numerário"
+      ],
+      "Card holder": [
+        "Titular do cartão"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Payer": [
+        "Pagante"
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos de teclado"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Escolha a aparência predefinida da lista de mensagens."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Escolha a aparência predefinida da caixa de correio."
+      ],
+      "Select how your composer opens by default.": [
+        "Escolha a aparência predefinida do compositor."
+      ],
+      "Enable Beta Access": [
+        "Activar acesso Beta"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Choose a color": [
+        "Escolher uma cor"
+      ],
+      "Default email": [
+        "Endereço electrónico predefinido"
+      ],
+      "Display": [
+        "Mostrar"
+      ],
+      "Description": [
+        "Descrição"
+      ],
+      "Default event duration": [
+        "Duração predefinida do evento"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Default notifications": [
+        "Notificações predefinidas"
+      ],
+      "Default full day notifications": [
+        "Notificações de dia inteiro predefinidas"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Qual a probabilidade de recomendar o ${ calendarAppName } a um amigo ou colega?"
+      ],
+      "0 - Not likely": [
+        "0 - Provavelmente não"
+      ],
+      "10 - Extremely likely": [
+        "10 - Extremamente provável"
+      ],
+      "All day": [
+        "Dia inteiro"
+      ],
+      "Repeat on": [
+        "Repetir a"
+      ],
+      "Repeat every": [
+        "Repetir a cada"
+      ],
+      "Ends": [
+        "Termina"
+      ],
+      "Organizer": [
+        "Organizador"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Time of the event": [
+        "Hora do evento"
+      ],
+      "Event time": [
+        "Hora do evento"
+      ],
+      "Event title": [
+        "Título do evento"
+      ],
+      "Event frequency": [
+        "Frequência do evento"
+      ],
+      "Event location": [
+        "Localização do evento"
+      ],
+      "Event notifications": [
+        "Notificações do evento"
+      ],
+      "Participants": [
+        "Participantes"
+      ],
+      "Your calendars": [
+        "As suas agendas"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "A chave não pode ser usada para encriptar"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Request an invite": [
+        "Pedir um convite"
+      ],
+      "clearing your browser cache": [
+        "limpar a memória do navegador"
+      ],
+      "Upgrade": [
+        "Actualizar"
+      ],
+      "Go to subscription plans": [
+        "Ir para os planos de subscrição"
+      ],
+      "click here": [
+        "clique aqui"
+      ],
+      "Add a gift code": [
+        "Adicionar código de oferta"
+      ],
+      "Pay invoice": [
+        "Pagar factura"
+      ],
+      "Upgrade account": [
+        "Actualizar conta"
+      ],
+      "Calendars": [
+        "Agendas"
+      ],
+      "My calendars": [
+        "Minhas agendas"
+      ],
+      "Other calendars": [
+        "Outras agendas"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "E.g., "
+      ],
+      "Start typing an email address": [
+        "Comece a escrever um endereço electrónico"
+      ],
+      "Image URL": [
+        "URL da imagem"
+      ],
+      "Filter groups": [
+        "Filtrar grupos"
+      ],
+      "Search for name or email": [
+        "Procurar por nome ou endereço"
+      ],
+      "Search for group name": [
+        "Procurar nome de grupo"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "OS name": [
+        "Nome do SO"
+      ],
+      "OS version": [
+        "Versão do SO"
+      ],
+      "Proton username": [
+        "Utilizador Proton"
+      ],
+      "A way to contact you": [
+        "Como contactar consigo"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+      ],
+      "Browser name": [
+        "Nome do navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "Feedback": [
+        "Comentários"
+      ],
+      "e.g. Julia Smith": [
+        "e.g. Júlia Silva"
+      ],
+      "ZIP": [
+        "CP"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "Gift code": [
+        "Código de oferta"
+      ],
+      "Add a calendar name": [
+        "Adicionar nome à agenda"
+      ],
+      "Add a calendar description": [
+        "Adicionar descrição à agenda"
+      ],
+      "Add title": [
+        "Adicionar título"
+      ],
+      "Add location": [
+        "Adicionar localização"
+      ],
+      "Add description": [
+        "Adicionar descrição"
+      ],
+      "Add participants": [
+        "Adicionar participantes"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Storage": {
@@ -4113,30 +4032,6 @@
         "Sair da importação?"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortável"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coluna"
-      ],
-      "Row": [
-        "Linha"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizado"
-      ]
-    },
     "Text": {
       "Settings": [
         "Definições"
@@ -4652,6 +4547,30 @@
     "Free price": {
       "Free": [
         "Grátis"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortável"
+      ],
+      "Compact": [
+        "Compacta"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coluna"
+      ],
+      "Row": [
+        "Linha"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizado"
       ]
     },
     "Payment method option": {

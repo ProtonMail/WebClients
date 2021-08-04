@@ -345,12 +345,6 @@
       "Name": [
         "Имя"
       ],
-      "Compact name": [
-        "Имя коротко"
-      ],
-      "Nickname": [
-        "Прозвище"
-      ],
       "Email": [
         "Эл. почта"
       ],
@@ -401,18 +395,6 @@
       ],
       "Member": [
         "Участник"
-      ],
-      "IMPP": [
-        ""
-      ],
-      "Related": [
-        "Относится к"
-      ],
-      "Categories": [
-        "Категории"
-      ],
-      "Sound": [
-        "Звук"
       ]
     },
     "Contact type label": {
@@ -442,12 +424,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Имя"
-      ],
-      "Yomi": [
-        "Произношение имени"
-      ],
       "Email": [
         "Адрес эл. почты"
       ],
@@ -477,63 +453,6 @@
       ],
       "Address": [
         "Адрес"
-      ],
-      "Contact": [
-        "Контакт"
-      ],
-      "Acquaintance": [
-        "Знакомый"
-      ],
-      "Friend": [
-        "Друг"
-      ],
-      "Met": [
-        "Пересекались"
-      ],
-      "Co-worker": [
-        "Соработник"
-      ],
-      "Colleague": [
-        "Коллега"
-      ],
-      "Co-resident": [
-        "Сожитель"
-      ],
-      "Neighbor": [
-        "Сосед"
-      ],
-      "Child": [
-        "Ребенок"
-      ],
-      "Parent": [
-        "Родитель"
-      ],
-      "Sibling": [
-        "Брат/сестра"
-      ],
-      "Kin": [
-        "Родственник"
-      ],
-      "Muse": [
-        "Вдохновитель"
-      ],
-      "Crush": [
-        "Увлечение"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Sweetheart": [
-        "Любовь"
-      ],
-      "Me": [
-        "Я"
-      ],
-      "Agent": [
-        "Агент"
-      ],
-      "Emergency": [
-        "Экстренный"
       ]
     },
     "Info": {
@@ -2107,285 +2026,10 @@
         "Переслано:"
       ]
     },
-    "Label": {
-      "Copy": [
-        "Копировать"
-      ],
-      "Reveal password": [
-        "Показать пароль"
-      ],
-      "Hide password": [
-        "Скрыть пароль"
-      ],
-      "Street address": [
-        "Адрес улицы"
-      ],
-      "City": [
-        "Город"
-      ],
-      "Region": [
-        "Регион/область"
-      ],
-      "Postal code": [
-        "Почтовый индекс"
-      ],
-      "Country": [
-        "Страна"
-      ],
-      "Post office box": [
-        "Почтовый ящик"
-      ],
-      "Extended address": [
-        "Расширенный адрес"
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "Адрес электронной почты"
-      ],
-      "Phone number": [
-        "Номер телефона"
-      ],
-      "Verification code": [
-        "Проверочный код"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из шести цифр"
-      ],
-      "Add email address": [
-        "Добавить адрес эл. почты"
-      ],
-      "Email format": [
-        "Формат письма"
-      ],
-      "Add image URL": [
-        "Добавить ссылку на изображение"
-      ],
-      "Upload picture": [
-        "Загрузить изображение"
-      ],
-      "Add to group": [
-        "Добавить в группу"
-      ],
-      "Encrypt emails": [
-        "Шифрование писем"
-      ],
-      "Sign emails": [
-        "Подписать письма"
-      ],
-      "Cryptographic scheme": [
-        "Криптографическая схема"
-      ],
-      "Public keys": [
-        "Публичные ключи"
-      ],
-      "Automatically save contacts": [
-        "Автоматически сохранять контакты"
-      ],
-      "Import contacts": [
-        "Импортировать контакты"
-      ],
-      "Export contacts": [
-        "Экспортировать контакты"
-      ],
-      "Operating system": [
-        "Операционная система"
-      ],
-      "Operating system version": [
-        "Версия операционной системы"
-      ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
-      "Category": [
-        "Категория"
-      ],
-      "What happened?": [
-        "Что случилось?"
-      ],
-      "System information": [
-        "Сведения о системе"
-      ],
-      "Browser": [
-        "Браузер"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Отменить"
-      ],
-      "Submit": [
-        "Отправить"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
-      ],
-      "Username or ProtonMail address": [
-        "Имя пользователя или адрес ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Отображаемое имя"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Сочетания клавиш"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        "Включить доступ к Beta"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        "Выберите цвет"
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        "Отображение"
-      ],
-      "Description": [
-        "Описание"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        "Уведомления по умолчанию"
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        "0 - Маловероятно"
-      ],
-      "10 - Extremely likely": [
-        "10 - Крайне вероятно"
-      ],
-      "All day": [
-        "Весь день"
-      ],
-      "Repeat on": [
-        "Повтор по"
-      ],
-      "Repeat every": [
-        "Периодичность повтора"
-      ],
-      "Ends": [
-        "Заканчивается"
-      ],
-      "Organizer": [
-        "Организатор"
-      ],
-      "Optional": [
-        "Необязательно"
-      ],
-      "Time of the event": [
-        "Время события"
-      ],
-      "Event time": [
-        "Время события"
-      ],
-      "Event title": [
-        "Название события"
-      ],
-      "Event frequency": [
-        "Частота события"
-      ],
-      "Event location": [
-        "Место события"
-      ],
-      "Event notifications": [
-        "Уведомления о событии"
-      ],
-      "Participants": [
-        "Участники"
-      ],
-      "Your calendars": [
-        "Ваши календари"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Закрыть"
+      ],
       "Close modal": [
         "Закрыть окно"
       ],
@@ -2404,12 +2048,6 @@
       "Use “${ label }” setting": [
         ""
       ],
-      "Close": [
-        "Закрыть"
-      ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Close navigation": [
         "Cкрыть панель навигации"
       ],
@@ -2418,6 +2056,9 @@
       ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Load image": [
         "Загрузить изображение"
@@ -2856,143 +2497,6 @@
       ],
       "Close popover": [
         "Закрыть окно"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не может быть использован для шифрования"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Request an invite": [
-        "Запросить приглашение"
-      ],
-      "clearing your browser cache": [
-        "очистка кэша браузера"
-      ],
-      "Upgrade": [
-        "Повысить"
-      ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Оплатить счёт"
-      ],
-      "Upgrade account": [
-        "Повысить учётную запись"
-      ],
-      "Calendars": [
-        "Календари"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Other calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Например, "
-      ],
-      "Start typing an email address": [
-        "Начните вводить адрес эл. почты"
-      ],
-      "Image URL": [
-        "URL изображения"
-      ],
-      "Filter groups": [
-        "Фильтровать группы"
-      ],
-      "Search for name or email": [
-        "Поиск имени или эл. почты"
-      ],
-      "Search for group name": [
-        "Поиск названия группы"
-      ],
-      "Name": [
-        "Имя"
-      ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
-      "A way to contact you": [
-        "Способ связаться с вами"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
-      ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "Feedback": [
-        "Обратная связь"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        "Добавьте название календаря"
-      ],
-      "Add a calendar description": [
-        "Добавьте описание календаря"
-      ],
-      "Add title": [
-        "Добавить название"
-      ],
-      "Add location": [
-        "Добавить место"
-      ],
-      "Add description": [
-        "Добавить описание"
-      ],
-      "Add participants": [
-        "Добавить участников"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часов"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минут"
       ]
     },
     "Title": {
@@ -3436,6 +2940,421 @@
       ],
       "CANCELLED": [
         "ОТМЕНЕНО"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Копировать"
+      ],
+      "Reveal password": [
+        "Показать пароль"
+      ],
+      "Hide password": [
+        "Скрыть пароль"
+      ],
+      "Street address": [
+        "Адрес улицы"
+      ],
+      "City": [
+        "Город"
+      ],
+      "Region": [
+        "Регион/область"
+      ],
+      "Postal code": [
+        "Почтовый индекс"
+      ],
+      "Country": [
+        "Страна"
+      ],
+      "Post office box": [
+        "Почтовый ящик"
+      ],
+      "Extended address": [
+        "Расширенный адрес"
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
+      "Phone number": [
+        "Номер телефона"
+      ],
+      "Verification code": [
+        "Проверочный код"
+      ],
+      "Enter the 6-digit code": [
+        "Введите код из шести цифр"
+      ],
+      "Add email address": [
+        "Добавить адрес эл. почты"
+      ],
+      "Email format": [
+        "Формат письма"
+      ],
+      "Add image URL": [
+        "Добавить ссылку на изображение"
+      ],
+      "Upload picture": [
+        "Загрузить изображение"
+      ],
+      "Add to group": [
+        "Добавить в группу"
+      ],
+      "Encrypt emails": [
+        "Шифрование писем"
+      ],
+      "Sign emails": [
+        "Подписать письма"
+      ],
+      "Cryptographic scheme": [
+        "Криптографическая схема"
+      ],
+      "Public keys": [
+        "Публичные ключи"
+      ],
+      "Automatically save contacts": [
+        "Автоматически сохранять контакты"
+      ],
+      "Import contacts": [
+        "Импортировать контакты"
+      ],
+      "Export contacts": [
+        "Экспортировать контакты"
+      ],
+      "Operating system": [
+        "Операционная система"
+      ],
+      "Operating system version": [
+        "Версия операционной системы"
+      ],
+      "Proton username": [
+        "Имя пользователя в Proton"
+      ],
+      "Category": [
+        "Категория"
+      ],
+      "What happened?": [
+        "Что случилось?"
+      ],
+      "System information": [
+        "Сведения о системе"
+      ],
+      "Browser": [
+        "Браузер"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "Two-factor authentication code": [
+        "Код двухфакторной аутентификации"
+      ],
+      "Username or ProtonMail address": [
+        "Имя пользователя или адрес ProtonMail"
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Отображаемое имя"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Сочетания клавиш"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "Включить доступ к Beta"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        "Выберите цвет"
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        "Отображение"
+      ],
+      "Description": [
+        "Описание"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        "Уведомления по умолчанию"
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        "0 - Маловероятно"
+      ],
+      "10 - Extremely likely": [
+        "10 - Крайне вероятно"
+      ],
+      "All day": [
+        "Весь день"
+      ],
+      "Repeat on": [
+        "Повтор по"
+      ],
+      "Repeat every": [
+        "Периодичность повтора"
+      ],
+      "Ends": [
+        "Заканчивается"
+      ],
+      "Organizer": [
+        "Организатор"
+      ],
+      "Optional": [
+        "Необязательно"
+      ],
+      "Time of the event": [
+        "Время события"
+      ],
+      "Event time": [
+        "Время события"
+      ],
+      "Event title": [
+        "Название события"
+      ],
+      "Event frequency": [
+        "Частота события"
+      ],
+      "Event location": [
+        "Место события"
+      ],
+      "Event notifications": [
+        "Уведомления о событии"
+      ],
+      "Participants": [
+        "Участники"
+      ],
+      "Your calendars": [
+        "Ваши календари"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не может быть использован для шифрования"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "clearing your browser cache": [
+        "очистка кэша браузера"
+      ],
+      "Upgrade": [
+        "Повысить"
+      ],
+      "Go to subscription plans": [
+        "Перейти на страницу подписки"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Оплатить счёт"
+      ],
+      "Upgrade account": [
+        "Повысить учётную запись"
+      ],
+      "Calendars": [
+        "Календари"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Other calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Например, "
+      ],
+      "Start typing an email address": [
+        "Начните вводить адрес эл. почты"
+      ],
+      "Image URL": [
+        "URL изображения"
+      ],
+      "Filter groups": [
+        "Фильтровать группы"
+      ],
+      "Search for name or email": [
+        "Поиск имени или эл. почты"
+      ],
+      "Search for group name": [
+        "Поиск названия группы"
+      ],
+      "Name": [
+        "Имя"
+      ],
+      "OS name": [
+        "Название ОС"
+      ],
+      "OS version": [
+        "Версия ОС"
+      ],
+      "Proton username": [
+        "Имя пользователя в Proton"
+      ],
+      "A way to contact you": [
+        "Способ связаться с вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Browser name": [
+        "Название браузера"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "Feedback": [
+        "Обратная связь"
+      ],
+      "e.g. Julia Smith": [
+        "например, Джулия Смит"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        "Добавьте название календаря"
+      ],
+      "Add a calendar description": [
+        "Добавьте описание календаря"
+      ],
+      "Add title": [
+        "Добавить название"
+      ],
+      "Add location": [
+        "Добавить место"
+      ],
+      "Add description": [
+        "Добавить описание"
+      ],
+      "Add participants": [
+        "Добавить участников"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
       ]
     },
     "Storage": {
@@ -4265,30 +4184,6 @@
         ""
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
-        ""
-      ]
-    },
     "Text": {
       "Settings": [
         "Настройки"
@@ -4825,6 +4720,30 @@
     },
     "Free price": {
       "Free": [
+        ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
         ""
       ]
     },
