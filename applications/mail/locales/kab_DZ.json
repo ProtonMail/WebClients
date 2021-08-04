@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Tuccḍa tarussint"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Izen-a igber kra n tansiwin URL ahat ur neldi ara akken iwata deg iminig-innek amiran"
+      ],
+      "Unknown error": [
+        "Tuccḍa tarussint"
       ],
       "Authentication canceled.": [
         "Yefsex usesteb."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Urti-agi ilaq"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
-      ],
       "The composer failed to load.": [
         "Asali n umsuddes ur yeddi ara."
       ],
       "Please refresh the page.": [
         "Ttxil smiren asebter."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
       ],
       "Can't validate email, try again later": [
         "Ulamek aseɣbel n imayl, eɛreḍ areḍqal"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Ttxil-k·m εreḍ ad talseḍ asesteb yerna tḥeqqeq belli tisirag ttusbadunt akken iwata."
       ],
+      "File has no contents to preview": [
+        "Afaylu ur isεi ara agbur i teskant"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Awal uffir n tirawt d arameɣtu. Ttxil ɛreḍ tikkelt-nniḍen"
       ],
       "Incorrect login credentials. Please try again": [
         "Talɣut n usesteb mačči d tameɣtut. Ɛreḍ tikelt-nniḍen"
-      ],
-      "File has no contents to preview": [
-        "Afaylu ur isεi ara agbur i teskant"
       ],
       "Process aborted": [
         "Yettwanef ukala"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "Akud n usuter yemmut."
       ],
-      "Signature verification failed": [
-        "Asenqed n uzmul yecceḍ"
-      ],
-      "Could not find address ${ email }.": [
-        "Ur nezmir ara ad d-naff tansa ${ email }."
-      ],
       "Email address disabled": [
         "Tansa imayl tensa"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "Tasarut n tuzna ur d tameɣtut"
+      ],
+      "Signature verification failed": [
+        "Asenqed n uzmul yecceḍ"
+      ],
+      "Could not find address ${ email }.": [
+        "Ur nezmir ara ad d-naff tansa ${ email }."
       ],
       "Missing signature": [
         "Ixuṣ uzmul"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "Azemz n taggara di 4 n imalasen."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "",
+        ""
+      ],
       "Public key could not be trusted": [
         "Tasarut tazayezt izmer ur tettwaman ara"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Mdel"
       ],
-      "Close modal": [
-        "Mdel"
+      "Confirm": [
+        "Sentem"
       ],
       "Cancel": [
         "Sefsex"
       ],
+      "Close modal": [
+        "Mdel"
+      ],
       "Submit": [
         "Azen"
-      ],
-      "Confirm": [
-        "Sentem"
       ],
       "More info: ${ safeTitle }": [
         "Ugar n telɣut: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Seqdec iɣewwaṛen n “${ label }”"
-      ],
-      "refresh the page": [
-        "smiren asebter"
       ],
       "Remove": [
         "Kkes"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Derrer"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
@@ -646,6 +653,9 @@
       "Next": [
         "Ɣer sdat"
       ],
+      "Signing out": [
+        "Tuffɣa"
+      ],
       "Clear": [
         "Sfeḍ"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "Ih"
       ],
-      "Signing out": [
-        "Tuffɣa"
-      ],
-      "Log in": [
-        "Tuqqna"
-      ],
       "Details": [
         "Ifatusen"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Ar deffir"
+      ],
+      "Log in": [
+        "Tuqqna"
       ],
       "Get started": [
         "Bdu"
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Rnu ɣer ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Issin ugar"
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Azen akken ibɣu yilli"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Semɣer amsuddes"
@@ -947,6 +948,9 @@
       "Not saved": [
         "Ur yettwasekles ara"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Tanzagt n taggara"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Beddel"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Siggez"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Sken tisura"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "Sader ${ attachmentName }"
       ],
@@ -1066,6 +1076,9 @@
       ],
       "Undo": [
         "Sefsex"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "Rmed"
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "Ffer iznan"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Kter iznan"
       ],
@@ -1180,6 +1196,15 @@
       ],
       "Start using ${ appName }": [
         "Bdu aseqdec n ${ appName }"
+      ],
+      "Learn more": [
+        "Issin ugar"
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1375,15 +1400,6 @@
       ],
       "Open settings menu": [
         "Ldi umuɣ n yiɣewwaren"
-      ],
-      "Send feedback": [
-        "Azen-d iwinniten inek•inem"
-      ],
-      "Feedback": [
-        "Awennit"
-      ],
-      "Give feedback": [
-        "Mudd-d tikti"
       ],
       "Confirm loss of Proton bonuses": [
         "Sentem lexṣara n yibunusen n Proton"
@@ -1590,6 +1606,9 @@
       "Send email": [
         "Azen imayl"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Izen amaynut"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "Azdam"
       ],
-      "support team": [
-        "tarbaɛt n tallalt"
-      ],
       "No contacts added yet": [
         "Ur ɛad ttwarnan inermisen"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Aḍris aččuran"
+      ],
+      "support team": [
+        "tarbaɛt n tallalt"
       ],
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
@@ -1952,6 +1971,9 @@
         "${ addressCount } n tansa n yimayl",
         "${ addressCount } n tansiwin n yimayl"
       ],
+      "Loading ${ appName }": [
+        "Asali ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Tuṭṭfa n ugdil tedda (ddant)"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         "Taktert-inek•m ur tettwasekkar ara."
       ],
-      "Loading ${ appName }": [
-        "Asali ${ appName }"
-      ],
-      "here": [
-        "da"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Amiḍan yettwaseḥbes ssebba n wugur n truẓi n tsertit."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ma yella tumneḍ tagi d tuccḍa, ttxil-k·m nermes-aɣ-a ${ contactLink }."
-      ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "si"
+      ],
+      "here": [
+        "da"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Amiḍan yettwaseḥbes ssebba n wugur n truẓi n tsertit."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ma yella tumneḍ tagi d tuccḍa, ttxil-k·m nermes-aɣ-a ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Asenqed n ${ contactName } yecceḍ: anermis ur yettuzmel ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n unermis i wakken ad tazneḍ izen ɣer ${ contactAddress } neɣ ẓreg anermis."
       ],
@@ -2518,6 +2540,9 @@
         "Asrag",
         "Isragen"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Arewway yettwagi"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "Tuzzna"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Sentem aneqqis n ukellex"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Ameggay:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "afaylu yeddan",
         "afaylu yeddan"
@@ -2645,8 +2682,14 @@
         "tugna tusliɣt",
         "tugniwin tusliɣin"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Izen yettwazen"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "Tuzzna n yizen..."
@@ -2688,9 +2731,6 @@
         "",
         ""
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton yettwacebbeḥ. Nebɣa ad nẓer acu tettxemmimeḍ!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } adiwenni ur nettwaɣra ara",
         "${ unreadCount } idiwenniyen ur nettwaɣra ara"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } n yizen ur nettwaɣer ara",
         "${ unreadCount } n yizenan ur nettwaɣer ara"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        ""
       ],
       "Manage your folders": [
         "Sefrek ikaramen-ik.im"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(Ulac iɣerwaḍen)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "",
+        ""
       ],
       "No more results found": [
         "Ulac igmaḍ-nniḍen yettwafen"
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         "Fren amek ara yettban umsuddes-inek•inem s lexṣas."
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "Anɣal n Blind Carbon"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Seg:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Imsizdeg"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Amek ara teskazleḍ tarmit-inek•inem akked ProtonMail amaynut?"
-      ],
-      "0 - Not a fan": [
-        "0 - Ulac imdanen ineḍfaren"
-      ],
-      "10 - Love it!": [
-        "10 -Ḥemmeleɣ-t!"
-      ],
       "Also archive": [
         "Γber daɣen"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         "Rnu tangalt n usefk"
-      ],
-      "Inbox": [
-        "Tanaka n urmas"
-      ],
-      "Drafts": [
-        "Irewwayen"
-      ],
-      "Sent": [
-        "Yettwazen"
-      ],
-      "Trash": [
-        "Taqecwalt"
-      ],
-      "Spam": [
-        "Aspam"
-      ],
-      "All mail": [
-        "Akk imaylen"
-      ],
-      "Archive": [
-        "Tarcivt"
-      ],
-      "Starred": [
-        "S yitran"
-      ],
-      "Outbox": [
-        "Tanaka n tuzna"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Rnu tabzimt"
       ],
+      "Inbox": [
+        "Tanaka n urmas"
+      ],
+      "Drafts": [
+        "Irewwayen"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Yettwazen"
+      ],
+      "Starred": [
+        "S yitran"
+      ],
+      "Archive": [
+        "Tarcivt"
+      ],
+      "Spam": [
+        "Aspam"
+      ],
+      "Trash": [
+        "Taqecwalt"
+      ],
+      "All mail": [
+        "Akk imaylen"
+      ],
       "Folders": [
         "Ikaramen"
       ],
@@ -3417,6 +3459,9 @@
       ],
       "Manage your labels": [
         "Sefrek tibzimin-ik.im"
+      ],
+      "Outbox": [
+        "Tanaka n tuzna"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "md. Julia Smith"
       ],
-      "Feedback": [
-        "Awennit"
-      ],
       "ZIP": [
         "Tangalt n lpusṭa"
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Sizdeg tibzimin"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } n wass",
+        "${ daysCountLeft } n wussan"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } n usrag",
+        "${ hoursCountLeft } n yisragen"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } n tesdat",
+        "${ minutesCountLeft } n tesdatin"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } n tasint",
+        "${ secondsCountLeft } n tsinin"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Isnasen n Proton"
+      ],
+      "Go to ${ title }": [
+        "Ddu ɣer ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ddu ɣer ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ulac tugna yettwafernen"
@@ -4360,41 +4439,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Ffeɣ seg uktar?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Isnasen n Proton"
       ],
-      "Go to ${ title }": [
-        "Ddu ɣer ${ title }"
+      "Message saved to Drafts": [
+        ""
       ],
-      "Go to ${ vpnName }": [
-        "Ddu ɣer ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Yerked"
-      ],
-      "Compact": [
-        "Ussid"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Tigejdit"
-      ],
-      "Row": [
-        "Izirig"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Amagnu"
-      ],
-      "Maximized": [
-        "Adday"
+      "Edit and reschedule": [
+        ""
       ]
     },
     "Select files": {
@@ -4445,6 +4495,30 @@
         "Akken ad tsenseḍ biṭa, ldi umuɣ ifessin n yiɣewwaren sakin ssit ɣef twuri \"anekcum uzwir\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Yerked"
+      ],
+      "Compact": [
+        "Ussid"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Tigejdit"
+      ],
+      "Row": [
+        "Izirig"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Amagnu"
+      ],
+      "Maximized": [
+        "Adday"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Lqem amaynut ${ appName } yella. ${ reloadButton }."
@@ -4487,16 +4561,6 @@
       ],
       "Normal": [
         "Amagnu"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Agmuḍ yettwasra"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Awennit yettwazen"
       ]
     },
     "Info for cash payment method": {
@@ -5116,12 +5180,6 @@
         "s yitran"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Awal uffir ilaq ad isɛu ma drus ${ length } n usekkil",
-        "Awal uffir ilaq ad isɛu ma drus ${ length } n yisekkilen"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Isem"
@@ -5250,9 +5308,10 @@
         "GAṬ"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ length } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ length } n yisekkilen"
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Deg ${ date }, ${ name } ${ address } t/yura :"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Irewwayen"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Akk"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Iḍelli"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         "Tadyant-a ha-tt-an akken la tḍerru."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } n wass",
-        "${ daysCountLeft } n wussan"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } n usrag",
-        "${ hoursCountLeft } n yisragen"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } n tesdat",
-        "${ minutesCountLeft } n tesdatin"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } n tasint",
-        "${ secondsCountLeft } n tsinin"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Tuzzna tettwasefsex"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "Ulac iznan yettwafen"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

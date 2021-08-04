@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Galat tak diketahui"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar lewat peramban Anda"
+      ],
+      "Unknown error": [
+        "Galat tak diketahui"
       ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Bagian ini wajib isi"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
-      ],
       "The composer failed to load.": [
         "Komposer gagal memuat."
       ],
       "Please refresh the page.": [
         "Silahkan segarkan halaman ini."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
       ],
       "Can't validate email, try again later": [
         "Tidak dapat memvalidasi email, coba lagi nanti"
@@ -99,14 +99,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Silahkan coba otentikasi ulang dan pastikan izin diatur dengan benar."
       ],
+      "File has no contents to preview": [
+        "Berkas ini kosong"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Sandi kotak masuk salah. Silakan coba lagi"
       ],
       "Incorrect login credentials. Please try again": [
         "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
       ],
       "Process aborted": [
         ""
@@ -201,12 +201,6 @@
       "Request timed out.": [
         "Terlalu lama memuat."
       ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
       "Email address disabled": [
         "Alamat surel nonaktif"
       ],
@@ -230,6 +224,12 @@
       ],
       "The sending key is not valid": [
         "Kunci untuk mengirim tidak valid"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Missing signature": [
         "Tanda tangan hilang"
@@ -309,6 +309,12 @@
       "The maximum expiration is 4 weeks.": [
         "Jangka waktu kedaluwarsa maksimum adalah 4 minggu."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        ""
+      ],
       "Public key could not be trusted": [
         "Kunci publik tidak dapat dipercaya"
       ],
@@ -338,26 +344,23 @@
       "Close": [
         "Tutup"
       ],
-      "Close modal": [
-        "Tutup jendela"
+      "Confirm": [
+        "Konfirmasi"
       ],
       "Cancel": [
         "Batal"
       ],
+      "Close modal": [
+        "Tutup jendela"
+      ],
       "Submit": [
         "Kirim"
-      ],
-      "Confirm": [
-        "Konfirmasi"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
-      ],
-      "refresh the page": [
-        "segarkan halaman"
       ],
       "Remove": [
         "Hapus"
@@ -472,6 +475,9 @@
       ],
       "Underline": [
         "Garis Bawah"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
@@ -638,6 +644,9 @@
       "Next": [
         "Selanjutnya"
       ],
+      "Signing out": [
+        "Keluar"
+      ],
       "Clear": [
         "Bersihkan"
       ],
@@ -668,12 +677,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Keluar"
-      ],
-      "Log in": [
-        "Masuk"
-      ],
       "Details": [
         "Rincian"
       ],
@@ -694,6 +697,9 @@
       ],
       "Previous": [
         "Sebelumnya"
+      ],
+      "Log in": [
+        "Masuk"
       ],
       "Get started": [
         "Mulai"
@@ -863,17 +869,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Tambah ke ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Tetap kirim"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Maksimalkan komposer"
@@ -938,6 +938,9 @@
       "Not saved": [
         "Belum disimpan"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Waktu kedaluwarsa"
       ],
@@ -949,6 +952,9 @@
       ],
       "Set": [
         "Atur"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Cetak"
@@ -1034,6 +1040,9 @@
       "View keys": [
         "Lihat kunci"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "Unduh ${ attachmentName }"
       ],
@@ -1057,6 +1066,9 @@
       ],
       "Undo": [
         "Urungkan"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "Aktifkan"
@@ -1163,6 +1175,9 @@
       "Hide messages": [
         "Sembunyikan pesan"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Impor pesan"
       ],
@@ -1171,6 +1186,15 @@
       ],
       "Start using ${ appName }": [
         "Mulai gunakan ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1362,15 +1386,6 @@
       ],
       "Open settings menu": [
         "Buka menu pengaturan"
-      ],
-      "Send feedback": [
-        "Kirim umpan balik"
-      ],
-      "Feedback": [
-        "Umpan balik"
-      ],
-      "Give feedback": [
-        "Berikan umpan balik"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -1573,6 +1588,9 @@
       "Send email": [
         "Kirim surel"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Pesan baru"
       ],
@@ -1689,9 +1707,6 @@
       "Loading": [
         "Memuat"
       ],
-      "support team": [
-        "tim dukungan"
-      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -1787,6 +1802,9 @@
       ],
       "Plain text": [
         "Teks biasa"
+      ],
+      "support team": [
+        "tim dukungan"
       ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
@@ -1929,6 +1947,9 @@
       "${ addressCount } email address": [
         "${ addressCount } alamat email"
       ],
+      "Loading ${ appName }": [
+        "Memuat ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
       ],
@@ -1959,18 +1980,6 @@
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ],
-      "Loading ${ appName }": [
-        "Memuat ${ appName }"
-      ],
-      "here": [
-        "di sini"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
-      ],
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
@@ -1988,6 +1997,15 @@
       ],
       "of": [
         "dari"
+      ],
+      "here": [
+        "di sini"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
@@ -2367,6 +2385,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Verifikasi ${ contactName } gagal: kontak tidak ditandatangani dengan benar.\nMungkin ini disebabkan oleh atur ulang kata sandi.\nAnda harus menandatangani ulang kontak agar dapat mengirim pesan ke ${ contactAddress } atau mengedit kontak tersebut."
       ],
@@ -2484,6 +2505,9 @@
       "Hour": [
         "Jam"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Draf dibuang"
       ],
@@ -2513,6 +2537,9 @@
       ],
       "Sending": [
         "Mengirim"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
@@ -2601,14 +2628,29 @@
       "Subject:": [
         "Subjek:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "berkas terlampir"
       ],
       "embedded image": [
         "gambar tertanam"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Pesan terkirim"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "Mengirim pesan..."
@@ -2649,14 +2691,14 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Waktu yang diperkirakan tersisa: ${ estimatedMinutes } menit"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton telah mengalami pembaruan tampilan. Kami akan senang mendengar pendapat Anda!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } percakapan belum dibaca"
       ],
       "${ unreadCount } unread message": [
         "${ unreadCount } pesan belum dibaca"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        ""
       ],
       "Manage your folders": [
         "Kelola folder Anda"
@@ -2678,6 +2720,9 @@
       ],
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        ""
       ],
       "No more results found": [
         "Hasil tidak ditemukan lagi"
@@ -2966,9 +3011,6 @@
       "Select how your composer opens by default.": [
         "Pilih bagaimana komposer Anda tebuka secara bawaan."
       ],
-      "What is the primary reason for this rating?": [
-        "Apa alasan utama penilaian ini?"
-      ],
       "Name on card": [
         ""
       ],
@@ -3131,6 +3173,12 @@
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Dari:"
       ],
@@ -3209,15 +3257,6 @@
       "Filter": [
         "Filter"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Bagaimana Anda menilai pengalaman Anda dengan ProtonMail yang baru?"
-      ],
-      "0 - Not a fan": [
-        "0 - Tidak suka"
-      ],
-      "10 - Love it!": [
-        "10 - Suka!"
-      ],
       "Also archive": [
         "Arsipkan juga"
       ]
@@ -3254,33 +3293,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "Kotak masuk"
-      ],
-      "Drafts": [
-        "Draf"
-      ],
-      "Sent": [
-        "Terkirim"
-      ],
-      "Trash": [
-        "Sampah"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Semua surat"
-      ],
-      "Archive": [
-        "Arsip"
-      ],
-      "Starred": [
-        "Dibintangi"
-      ],
-      "Outbox": [
-        "Kotak Keluar"
       ],
       "You need to activate your calendar keys to add this event": [
         "Anda perlu mengaktifkan kunci kalender Anda untuk menambahkan acara ini"
@@ -3357,6 +3369,33 @@
       "Add label": [
         "Tambah label"
       ],
+      "Inbox": [
+        "Kotak masuk"
+      ],
+      "Drafts": [
+        "Draf"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Terkirim"
+      ],
+      "Starred": [
+        "Dibintangi"
+      ],
+      "Archive": [
+        "Arsip"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Sampah"
+      ],
+      "All mail": [
+        "Semua surat"
+      ],
       "Folders": [
         "Folder"
       ],
@@ -3368,6 +3407,9 @@
       ],
       "Manage your labels": [
         "Kelola label Anda"
+      ],
+      "Outbox": [
+        "Kotak Keluar"
       ]
     },
     "Placeholder": {
@@ -3443,9 +3485,6 @@
       "e.g. Julia Smith": [
         "cth. Julia Smith"
       ],
-      "Feedback": [
-        "Umpan balik"
-      ],
       "ZIP": [
         ""
       ],
@@ -3490,6 +3529,26 @@
       ],
       "Filter labels": [
         "Filter label"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        ""
+      ],
+      "${ minutes } minute": [
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } hari"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } jam"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } menit"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } detik"
       ]
     },
     "Warning": {
@@ -4150,6 +4209,17 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplikasi Proton"
+      ],
+      "Go to ${ title }": [
+        "Kunjungi ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ke ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Gambar belum dipilih"
@@ -4281,41 +4351,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Keluar dari impor?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplikasi Proton"
       ],
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
+      "Message saved to Drafts": [
+        ""
       ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Dimaksimalkan"
+      "Edit and reschedule": [
+        ""
       ]
     },
     "Select files": {
@@ -4366,6 +4407,30 @@
         "Untuk menonaktifkan beta, buka menu dropdown pengaturan dan klik opsi \"Akses Beta\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Dimaksimalkan"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
@@ -4408,16 +4473,6 @@
       ],
       "Normal": [
         "Normal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Nilai diperlukan"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Umpan balik terkirim"
       ]
     },
     "Info for cash payment method": {
@@ -5026,11 +5081,6 @@
         "dibintangi"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nama"
@@ -5159,9 +5209,9 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
       ]
     },
     "Message": {
@@ -5173,6 +5223,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Pada ${ date }, ${ name } ${ address } menulis:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5558,6 +5613,68 @@
     "Event title": {
       "(no title)": [
         "(tanpa judul)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6013,6 +6130,9 @@
       "Drafts": [
         "Draf"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Semua"
       ],
@@ -6158,6 +6278,20 @@
     "Time": {
       "Yesterday": [
         "Kemarin"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6353,23 +6487,12 @@
         "Acara ini sedang berlangsung."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } hari"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } jam"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } menit"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } detik"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Pengiriman tidak selesai"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6597,6 +6720,9 @@
       ],
       "No messages found": [
         "Pesan tidak ditemukan"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

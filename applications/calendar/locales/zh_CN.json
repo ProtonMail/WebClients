@@ -324,12 +324,6 @@
       "Name": [
         "姓名"
       ],
-      "Compact name": [
-        "简洁名称"
-      ],
-      "Nickname": [
-        "昵称"
-      ],
       "Email": [
         "电子邮件"
       ],
@@ -380,18 +374,6 @@
       ],
       "Member": [
         "成员"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "关系"
-      ],
-      "Categories": [
-        "类别"
-      ],
-      "Sound": [
-        "声音"
       ]
     },
     "Contact type label": {
@@ -421,12 +403,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "姓名"
-      ],
-      "Yomi": [
-        "读音"
-      ],
       "Email": [
         "电子邮件"
       ],
@@ -456,63 +432,6 @@
       ],
       "Address": [
         "地址"
-      ],
-      "Contact": [
-        "联系人"
-      ],
-      "Acquaintance": [
-        "熟人"
-      ],
-      "Friend": [
-        "好友"
-      ],
-      "Met": [
-        "见过"
-      ],
-      "Co-worker": [
-        "同事"
-      ],
-      "Colleague": [
-        "同行"
-      ],
-      "Co-resident": [
-        "室友"
-      ],
-      "Neighbor": [
-        "邻居"
-      ],
-      "Child": [
-        "子女"
-      ],
-      "Parent": [
-        "父母"
-      ],
-      "Sibling": [
-        "兄弟姐妹"
-      ],
-      "Kin": [
-        "亲属"
-      ],
-      "Muse": [
-        "灵感源泉"
-      ],
-      "Crush": [
-        "热恋"
-      ],
-      "Date": [
-        "约会对象"
-      ],
-      "Sweetheart": [
-        "爱人"
-      ],
-      "Me": [
-        "我"
-      ],
-      "Agent": [
-        "代理人"
-      ],
-      "Emergency": [
-        "紧急联系人"
       ]
     },
     "Info": {
@@ -1951,285 +1870,10 @@
         "转发："
       ]
     },
-    "Label": {
-      "Copy": [
-        "复制"
-      ],
-      "Reveal password": [
-        "显示密码"
-      ],
-      "Hide password": [
-        "隐藏密码"
-      ],
-      "Street address": [
-        "街道地址"
-      ],
-      "City": [
-        "城市"
-      ],
-      "Region": [
-        "地区"
-      ],
-      "Postal code": [
-        "邮编"
-      ],
-      "Country": [
-        "国家"
-      ],
-      "Post office box": [
-        "邮局信箱"
-      ],
-      "Extended address": [
-        "详细地址"
-      ],
-      "Do not ask again": [
-        "不再询问"
-      ],
-      "Email address": [
-        "电子邮件地址"
-      ],
-      "Phone number": [
-        "电话号码"
-      ],
-      "Verification code": [
-        "验证码"
-      ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
-      ],
-      "Add email address": [
-        "添加邮箱地址"
-      ],
-      "Email format": [
-        "邮件格式"
-      ],
-      "Add image URL": [
-        "添加图片链接"
-      ],
-      "Upload picture": [
-        "上传图片"
-      ],
-      "Add to group": [
-        "添加至群组"
-      ],
-      "Encrypt emails": [
-        "发送加密邮件"
-      ],
-      "Sign emails": [
-        "附签名发送"
-      ],
-      "Cryptographic scheme": [
-        "加密方案"
-      ],
-      "Public keys": [
-        "公钥"
-      ],
-      "Automatically save contacts": [
-        "自动保存联系人"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Export contacts": [
-        "导出联系人"
-      ],
-      "Operating system": [
-        "操作系统"
-      ],
-      "Operating system version": [
-        "操作系统版本"
-      ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
-      "Category": [
-        "类别"
-      ],
-      "What happened?": [
-        "发生了什么？"
-      ],
-      "System information": [
-        "系统信息"
-      ],
-      "Browser": [
-        "浏览器"
-      ],
-      "Browser version": [
-        "浏览器版本"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "确定"
-      ],
-      "Password": [
-        "密码"
-      ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "Two-factor authentication code": [
-        "双重认证验证码"
-      ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
-      ],
-      "What is the primary reason for this rating?": [
-        "该评分的主要原因是什么"
-      ],
-      "Display name": [
-        "显示名称"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
-      ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Enable Beta Access": [
-        "启用测试版功能"
-      ],
-      "Name": [
-        "姓名"
-      ],
-      "Choose a color": [
-        "选择颜色"
-      ],
-      "Default email": [
-        "首选邮箱"
-      ],
-      "Display": [
-        "显示"
-      ],
-      "Description": [
-        "说明："
-      ],
-      "Default event duration": [
-        "默认日程时长"
-      ],
-      "URL": [
-        "网址"
-      ],
-      "Default notifications": [
-        "预设提醒时间"
-      ],
-      "Default full day notifications": [
-        "预设全天提醒"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "您有多大可能向朋友或同事推荐 ${ calendarAppName }？"
-      ],
-      "0 - Not likely": [
-        "0 - 不可能"
-      ],
-      "10 - Extremely likely": [
-        "10 - 极有可能"
-      ],
-      "All day": [
-        "全天"
-      ],
-      "Repeat on": [
-        "重复于"
-      ],
-      "Repeat every": [
-        "重复间隔"
-      ],
-      "Ends": [
-        "结束"
-      ],
-      "Organizer": [
-        "组织者"
-      ],
-      "Optional": [
-        "非必要"
-      ],
-      "Time of the event": [
-        "日程时间"
-      ],
-      "Event time": [
-        "日程时间"
-      ],
-      "Event title": [
-        "日程名称"
-      ],
-      "Event frequency": [
-        "日程频率"
-      ],
-      "Event location": [
-        "日程地点"
-      ],
-      "Event notifications": [
-        "日程通知"
-      ],
-      "Participants": [
-        "参与者"
-      ],
-      "Your calendars": [
-        "您的日历"
-      ]
-    },
     "Action": {
+      "Close": [
+        "关闭"
+      ],
       "Close modal": [
         "关闭"
       ],
@@ -2248,12 +1892,6 @@
       "Use “${ label }” setting": [
         "使用 \"${ label }\" 设置"
       ],
-      "Close": [
-        "关闭"
-      ],
-      "refresh the page": [
-        "刷新页面"
-      ],
       "Close navigation": [
         "关闭导航栏"
       ],
@@ -2262,6 +1900,9 @@
       ],
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Load image": [
         "加载图片"
@@ -2696,137 +2337,6 @@
         "关闭对话框"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "了解更多"
-      ],
-      "Request an invite": [
-        "请求邀请"
-      ],
-      "clearing your browser cache": [
-        "清除浏览器缓存"
-      ],
-      "Upgrade": [
-        "升级"
-      ],
-      "Go to subscription plans": [
-        "转至订阅计划"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "支付"
-      ],
-      "Upgrade account": [
-        "升级账户"
-      ],
-      "Calendars": [
-        "日历"
-      ],
-      "My calendars": [
-        "我的日历"
-      ],
-      "Other calendars": [
-        "其他日历"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "例如： "
-      ],
-      "Start typing an email address": [
-        "开始输入电子邮件地址"
-      ],
-      "Image URL": [
-        "图片链接"
-      ],
-      "Filter groups": [
-        "筛选群组"
-      ],
-      "Search for name or email": [
-        "搜索名称或邮箱地址"
-      ],
-      "Search for group name": [
-        "搜索群组名称"
-      ],
-      "Name": [
-        "名称"
-      ],
-      "OS name": [
-        "操作系统名称"
-      ],
-      "OS version": [
-        "操作系统版本"
-      ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
-      "A way to contact you": [
-        "您的联系方式"
-      ],
-      "Please describe the problem and include any error messages": [
-        "请描述问题并包含任何错误信息"
-      ],
-      "Browser name": [
-        "浏览器名称"
-      ],
-      "Browser version": [
-        "浏览器版本"
-      ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "Feedback": [
-        "用户反馈"
-      ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        "填写分类名称"
-      ],
-      "Add a calendar description": [
-        "填写分类描述"
-      ],
-      "Add title": [
-        "添加标题"
-      ],
-      "Add location": [
-        "添加地点"
-      ],
-      "Add description": [
-        "添加描述"
-      ],
-      "Add participants": [
-        "添加成员"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } 小时"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分钟"
-      ]
-    },
     "Title": {
       "Open actions dropdown": [
         "展开操作菜单"
@@ -3256,6 +2766,415 @@
       ],
       "CANCELLED": [
         "已取消"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "复制"
+      ],
+      "Reveal password": [
+        "显示密码"
+      ],
+      "Hide password": [
+        "隐藏密码"
+      ],
+      "Street address": [
+        "街道地址"
+      ],
+      "City": [
+        "城市"
+      ],
+      "Region": [
+        "地区"
+      ],
+      "Postal code": [
+        "邮编"
+      ],
+      "Country": [
+        "国家"
+      ],
+      "Post office box": [
+        "邮局信箱"
+      ],
+      "Extended address": [
+        "详细地址"
+      ],
+      "Do not ask again": [
+        "不再询问"
+      ],
+      "Email address": [
+        "电子邮件地址"
+      ],
+      "Phone number": [
+        "电话号码"
+      ],
+      "Verification code": [
+        "验证码"
+      ],
+      "Enter the 6-digit code": [
+        "请输入 6 位验证码"
+      ],
+      "Add email address": [
+        "添加邮箱地址"
+      ],
+      "Email format": [
+        "邮件格式"
+      ],
+      "Add image URL": [
+        "添加图片链接"
+      ],
+      "Upload picture": [
+        "上传图片"
+      ],
+      "Add to group": [
+        "添加至群组"
+      ],
+      "Encrypt emails": [
+        "发送加密邮件"
+      ],
+      "Sign emails": [
+        "附签名发送"
+      ],
+      "Cryptographic scheme": [
+        "加密方案"
+      ],
+      "Public keys": [
+        "公钥"
+      ],
+      "Automatically save contacts": [
+        "自动保存联系人"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Export contacts": [
+        "导出联系人"
+      ],
+      "Operating system": [
+        "操作系统"
+      ],
+      "Operating system version": [
+        "操作系统版本"
+      ],
+      "Proton username": [
+        "Proton 用户名"
+      ],
+      "Category": [
+        "类别"
+      ],
+      "What happened?": [
+        "发生了什么？"
+      ],
+      "System information": [
+        "系统信息"
+      ],
+      "Browser": [
+        "浏览器"
+      ],
+      "Browser version": [
+        "浏览器版本"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "确定"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Two-factor authentication code": [
+        "双重认证验证码"
+      ],
+      "Username or ProtonMail address": [
+        "用户名或 ProtonMail 地址"
+      ],
+      "What is the primary reason for this rating?": [
+        "该评分的主要原因是什么"
+      ],
+      "Display name": [
+        "显示名称"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "键盘快捷键"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "请选择收件箱列表的默认外观"
+      ],
+      "Select how your mailbox looks like by default.": [
+        "请选择邮箱的默认外观"
+      ],
+      "Select how your composer opens by default.": [
+        "请选择编辑窗的默认外观"
+      ],
+      "Enable Beta Access": [
+        "启用测试版功能"
+      ],
+      "Name": [
+        "姓名"
+      ],
+      "Choose a color": [
+        "选择颜色"
+      ],
+      "Default email": [
+        "首选邮箱"
+      ],
+      "Display": [
+        "显示"
+      ],
+      "Description": [
+        "说明："
+      ],
+      "Default event duration": [
+        "默认日程时长"
+      ],
+      "URL": [
+        "网址"
+      ],
+      "Default notifications": [
+        "预设提醒时间"
+      ],
+      "Default full day notifications": [
+        "预设全天提醒"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "您有多大可能向朋友或同事推荐 ${ calendarAppName }？"
+      ],
+      "0 - Not likely": [
+        "0 - 不可能"
+      ],
+      "10 - Extremely likely": [
+        "10 - 极有可能"
+      ],
+      "All day": [
+        "全天"
+      ],
+      "Repeat on": [
+        "重复于"
+      ],
+      "Repeat every": [
+        "重复间隔"
+      ],
+      "Ends": [
+        "结束"
+      ],
+      "Organizer": [
+        "组织者"
+      ],
+      "Optional": [
+        "非必要"
+      ],
+      "Time of the event": [
+        "日程时间"
+      ],
+      "Event time": [
+        "日程时间"
+      ],
+      "Event title": [
+        "日程名称"
+      ],
+      "Event frequency": [
+        "日程频率"
+      ],
+      "Event location": [
+        "日程地点"
+      ],
+      "Event notifications": [
+        "日程通知"
+      ],
+      "Participants": [
+        "参与者"
+      ],
+      "Your calendars": [
+        "您的日历"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "Request an invite": [
+        "请求邀请"
+      ],
+      "clearing your browser cache": [
+        "清除浏览器缓存"
+      ],
+      "Upgrade": [
+        "升级"
+      ],
+      "Go to subscription plans": [
+        "转至订阅计划"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "支付"
+      ],
+      "Upgrade account": [
+        "升级账户"
+      ],
+      "Calendars": [
+        "日历"
+      ],
+      "My calendars": [
+        "我的日历"
+      ],
+      "Other calendars": [
+        "其他日历"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "例如： "
+      ],
+      "Start typing an email address": [
+        "开始输入电子邮件地址"
+      ],
+      "Image URL": [
+        "图片链接"
+      ],
+      "Filter groups": [
+        "筛选群组"
+      ],
+      "Search for name or email": [
+        "搜索名称或邮箱地址"
+      ],
+      "Search for group name": [
+        "搜索群组名称"
+      ],
+      "Name": [
+        "名称"
+      ],
+      "OS name": [
+        "操作系统名称"
+      ],
+      "OS version": [
+        "操作系统版本"
+      ],
+      "Proton username": [
+        "Proton 用户名"
+      ],
+      "A way to contact you": [
+        "您的联系方式"
+      ],
+      "Please describe the problem and include any error messages": [
+        "请描述问题并包含任何错误信息"
+      ],
+      "Browser name": [
+        "浏览器名称"
+      ],
+      "Browser version": [
+        "浏览器版本"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Feedback": [
+        "用户反馈"
+      ],
+      "e.g. Julia Smith": [
+        "例如：Julia Smith"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        "填写分类名称"
+      ],
+      "Add a calendar description": [
+        "填写分类描述"
+      ],
+      "Add title": [
+        "添加标题"
+      ],
+      "Add location": [
+        "添加地点"
+      ],
+      "Add description": [
+        "添加描述"
+      ],
+      "Add participants": [
+        "添加成员"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } 小时"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分钟"
       ]
     },
     "Storage": {
@@ -4037,30 +3956,6 @@
         ""
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "标准"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "分栏"
-      ],
-      "Row": [
-        "整行"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "常规"
-      ],
-      "Maximized": [
-        "最大化"
-      ]
-    },
     "Text": {
       "Settings": [
         "设置"
@@ -4565,6 +4460,30 @@
     "Free price": {
       "Free": [
         ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "标准"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "分栏"
+      ],
+      "Row": [
+        "整行"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "常规"
+      ],
+      "Maximized": [
+        "最大化"
       ]
     },
     "Payment method option": {

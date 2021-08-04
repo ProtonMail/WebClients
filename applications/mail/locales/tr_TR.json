@@ -6,14 +6,14 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Bilinmeyen hata"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
+      "Unknown error": [
+        "Bilinmeyen hata"
+      ],
       "Authentication canceled.": [
-        "Kimlik doğrulama iptal edildi."
+        ""
       ],
       "Your import will not be processed.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "Bu alan gereklidir"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "Oluşturucu yüklenemedi."
       ],
       "Please refresh the page.": [
         "Lütfen sayfayı yenileyin."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "File has no contents to preview": [
+        "Dosyanın önizlenecek içeriği yok"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
       ],
       "Incorrect login credentials. Please try again": [
         "Oturum açma bilgileri yanlış. Lütfen tekrar deneyin"
-      ],
-      "File has no contents to preview": [
-        "Dosyanın önizlenecek içeriği yok"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "İstek zaman aşımına uğradı."
       ],
-      "Signature verification failed": [
-        "İmza doğrulaması başarısız oldu"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
-      ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "Gönderilen anahtar geçersiz"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulaması başarısız oldu"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
       ],
       "Missing signature": [
         "İmza eksik"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "En uzun sonlanma süresi 4 haftadır."
       ],
+      "Choose a date in the future.": [
+        "Gelecekten bir zaman seçiniz."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Önümüzdeki ${ SCHEDULED_MAX_DATE_DAYS } gün içinde bir tarih seçiniz.",
+        "Önümüzdeki ${ SCHEDULED_MAX_DATE_DAYS } gün içinde bir tarih seçiniz."
+      ],
       "Public key could not be trusted": [
         "Genel anahtar güvenilir bulunmadı"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Kapat"
       ],
-      "Close modal": [
-        "Pencereyi kapat"
+      "Confirm": [
+        "Onayla"
       ],
       "Cancel": [
         "İptal"
       ],
+      "Close modal": [
+        "Pencereyi kapat"
+      ],
       "Submit": [
         "Gönder"
-      ],
-      "Confirm": [
-        "Onayla"
       ],
       "More info: ${ safeTitle }": [
         "Daha fazla bilgi: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "“${ label }” ayarını kullan"
-      ],
-      "refresh the page": [
-        "sayfayı yenile"
       ],
       "Remove": [
         "Sil"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Alt çizgili"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Go to panel ${ index }": [
         "${ index } paneline git"
@@ -646,6 +653,9 @@
       "Next": [
         "İleri"
       ],
+      "Signing out": [
+        "Oturumu kapatılıyor"
+      ],
       "Clear": [
         "Temizle"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "Tamam"
       ],
-      "Signing out": [
-        "Oturumu kapatılıyor"
-      ],
-      "Log in": [
-        "Oturum aç"
-      ],
       "Details": [
         "Ayrıntılar"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Önceki"
+      ],
+      "Log in": [
+        "Oturum aç"
       ],
       "Get started": [
         "Başlayalım"
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        "Daha fazlasını öğrenin"
-      ],
-      "Open shop": [
-        "Dükkanı aç"
-      ],
-      "Open calendar": [
-        "Takvimi aç"
-      ],
       "Send anyway": [
         "Yine de gönder"
+      ],
+      "Got it": [
+        "Anladım"
       ],
       "Maximize composer": [
         "Oluşturucuyu büyüt"
@@ -947,6 +948,9 @@
       "Not saved": [
         "Kaydedilemedi"
       ],
+      "Schedule send": [
+        "Gönderilmeye planla"
+      ],
       "Expiration time": [
         "Sonlanma süresi"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Ayarla"
+      ],
+      "Schedule message": [
+        "Mesajlamaya programla"
       ],
       "Print": [
         "Yazdır"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Anahtarları göster"
       ],
+      "Edit draft": [
+        "Taslağı düzenle"
+      ],
       "Download ${ attachmentName }": [
         "${ attachmentName } indir"
       ],
@@ -1067,11 +1077,14 @@
       "Undo": [
         "Geri Al"
       ],
+      "View message": [
+        "Mesajı görüntüle"
+      ],
       "Enable": [
         "Etkinleştir"
       ],
       "Search message content": [
-        "Mesaj içeriğini ara"
+        "İleti içeriğini ara"
       ],
       "Activate": [
         "Etkinleştir"
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "İletileri gizle"
       ],
+      "Create new message": [
+        "Yeni mesaj oluştur"
+      ],
       "Import messages": [
         "İletileri içe aktar"
       ],
@@ -1180,6 +1196,15 @@
       ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
+      ],
+      "Learn more": [
+        "Daha fazlasını öğrenin"
+      ],
+      "Open shop": [
+        "Mağazayı aç"
+      ],
+      "Open calendar": [
+        "Takvimi aç"
       ]
     },
     "Title": {
@@ -1375,15 +1400,6 @@
       ],
       "Open settings menu": [
         "Ayarlar menüsünü aç"
-      ],
-      "Send feedback": [
-        "Geri bildirim gönder"
-      ],
-      "Feedback": [
-        "Geri bildirim"
-      ],
-      "Give feedback": [
-        "Geri bildirim bırak"
       ],
       "Confirm loss of Proton bonuses": [
         "Proton bonuslarının kaybını onaylayın"
@@ -1590,6 +1606,9 @@
       "Send email": [
         "E-posta gönder"
       ],
+      "Schedule send": [
+        "Gönderilmeye planla"
+      ],
       "New message": [
         "Yeni ileti"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "Yükleniyor"
       ],
-      "support team": [
-        "destek ekibi"
-      ],
       "No contacts added yet": [
         "Henüz kişi eklenmedi"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Düz metin"
+      ],
+      "support team": [
+        "destek ekibi"
       ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
@@ -1952,6 +1971,9 @@
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
       ],
+      "Loading ${ appName }": [
+        "${ appName } yükleniyor"
+      ],
       "Screenshot(s) attached": [
         "Ekran görüntüsü eklendi"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Loading ${ appName }": [
-        "${ appName } yükleniyor"
-      ],
-      "here": [
-        "burada"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
-      ],
       "Unsupported file": [
         "Desteklenmeyen dosya"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "/"
+      ],
+      "here": [
+        "burada"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         "Mesajınızı yine de göndermek istiyor musunuz?"
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Gönderilecek çok fazla mesaj var. Lütfen, bunu planlamak için başka bir mesaj gönderilene kadar bekleyiniz."
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "${ contactName } doğrulaması başarısız oldu: ilgili kişi doğru şekilde imzalanmadı.\nBu durum, parola sıfırlama işleminden kaynaklanabilir.\n${ contactAddress } adresine mesaj göndermek veya ilgili kişiyi düzenlemek için ilgili kişiyi yeniden imzalamanız gerekir."
       ],
@@ -2518,6 +2540,9 @@
         "Saat",
         "Saat"
       ],
+      "When do you want your message to be sent?": [
+        "Mesajınızın ne zaman gönderilmesini istersiniz?"
+      ],
       "Draft discarded": [
         "Taslak silindi"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "Gönderiliyor"
+      ],
+      "Scheduled": [
+        "Planlanmış"
       ],
       "Confirm phishing report": [
         "Kimlik avı bildirimini onayla"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Konu:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "dosya eklendi",
         "dosya eklendi"
@@ -2645,8 +2682,14 @@
         "gömülü resim",
         "gömülü resimler"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "İleti gönderildi"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "İleti gönderiliyor..."
@@ -2688,9 +2731,6 @@
         "",
         ""
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton'un görünümü yenilendi. Bu konuda ne düşündüğünüzü duymak isteriz!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } okunmamış sohbet",
         "${ unreadCount } okunmamış sohbet"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } okunmamış ileti",
         "${ unreadCount } okunmamış ileti"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        ""
       ],
       "Manage your folders": [
         "Klasörlerini yönet"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(Alıcı Yok)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "${ occurrencesInBody } olay bulundu",
+        "${ occurrencesInBody } olay bulundu"
       ],
       "No more results found": [
         "Başka sonuç bulunamadı"
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         "Karttaki isim"
       ],
@@ -3034,7 +3079,7 @@
         "Ülkenizi seçin"
       ],
       "ZIP": [
-        "ZIP"
+        "Posta Kodu"
       ],
       "BTC amount:": [
         "BTC miktarı:"
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "Gizli Karbon Kopya"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Kimden:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Filtre"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Yeni ProtonMail ile deneyiminizi nasıl değerlendirirsiniz?"
-      ],
-      "0 - Not a fan": [
-        "0 - Hoşuma gitmedi"
-      ],
-      "10 - Love it!": [
-        "10 - Bayıldım!"
-      ],
       "Also archive": [
         "Ayrıca arşivle"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         "Hediye kodu ekle"
-      ],
-      "Inbox": [
-        "Gelen kutusu"
-      ],
-      "Drafts": [
-        "Taslaklar"
-      ],
-      "Sent": [
-        "Gönderilen"
-      ],
-      "Trash": [
-        "Çöp kutusu"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Tüm postalar"
-      ],
-      "Archive": [
-        "Arşiv"
-      ],
-      "Starred": [
-        "Yıldızlı"
-      ],
-      "Outbox": [
-        "Giden kutusu"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Etiket ekle"
       ],
+      "Inbox": [
+        "Gelen kutusu"
+      ],
+      "Drafts": [
+        "Taslaklar"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Gönderilen"
+      ],
+      "Starred": [
+        "Yıldızlı"
+      ],
+      "Archive": [
+        "Arşiv"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Çöp kutusu"
+      ],
+      "All mail": [
+        "Tüm postalar"
+      ],
       "Folders": [
         "Klasörler"
       ],
@@ -3416,7 +3458,10 @@
         "Etiketler"
       ],
       "Manage your labels": [
-        "Etiketlerini düzenle"
+        "Etiketlerinizi yönetin"
+      ],
+      "Outbox": [
+        "Giden kutusu"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "örn. Ayşe Yılmaz"
       ],
-      "Feedback": [
-        "Geri bildirim"
-      ],
       "ZIP": [
         "ZIP"
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Etiketleri filtrele"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } gün",
+        "${ daysCountLeft } gün"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } saat",
+        "${ hoursCountLeft } saat"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } dakika",
+        "${ minutesCountLeft } dakika"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } saniye",
+        "${ secondsCountLeft } saniye"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton uygulamaları"
+      ],
+      "Go to ${ title }": [
+        "${ title } gidin"
+      ],
+      "Go to ${ vpnName }": [
+        "${ vpnName } uygulamasına git"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Resim seçilmedi"
@@ -4360,40 +4439,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
       ],
-      "Go to ${ title }": [
-        "${ title } gidin"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } uygulamasına git"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
+      "Message saved to Drafts": [
         ""
       ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
+      "Edit and reschedule": [
         ""
       ]
     },
@@ -4445,6 +4495,30 @@
         "Betayı devre dışı bırakmak için ayarlar açılır menüsünü açın ve \"Beta Erişimi\" seçeneğine tıklayın."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Liste"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } uygulamasının yeni sürümü mevcut. ${ reloadButton }."
@@ -4487,16 +4561,6 @@
       ],
       "Normal": [
         ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Puan gerekli"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Geri bildirim gönderildi"
       ]
     },
     "Info for cash payment method": {
@@ -5116,12 +5180,6 @@
         "yıldızlı"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Ad"
@@ -5250,9 +5308,10 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Şifre en az ${ length } karakter içermelidir",
+        "Şifre en az ${ length } karakter içermelidir"
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ name } ${ address } ${ date } tarihinde yazdı:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(başlıksız)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } şimdi başlıyor"
+      ],
+      "${ title } starts today": [
+        "${ title } bugün başlıyor"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title }, ${ formattedHour } saatinde başladı"
+      ],
+      "${ title } started yesterday": [
+        "${ title } dün başladı"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title }, dün ${ formattedHour } saatinde başladı"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title }, ${ formattedDate } tarihinde başladı"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title }, ${ formattedDate } tarihinde ${ formattedHour } zamanında başladı"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title }, ${ _formattedDate } tarihinde başladı"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title }, ${ _formattedDate } tarihinde ${ formattedHour } zamanında başladı"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title }, ${ formattedDateWithoutTime } tarihinde başladı"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title }, ${ _formattedDateWithTime } tarihinde başladı"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title }, ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } yarın başlayacak"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title }, yarın ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title }, ${ _formattedDate2 } tarihinde başlayacak"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title },${ _formattedDate2 } tarihinde ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title }, ${ _formattedDate3 } tarihinde başlayacak"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title }, ${ _formattedDate3 } tarihinde ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title }, ${ _formattedDateWithoutTime } tarihinde başlayacak"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title }, ${ formattedDateWithTime } vaktinde başlayacak"
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Taslaklar"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Tümü"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Dün"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         ""
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } gün",
-        "${ daysCountLeft } gün"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } saat",
-        "${ hoursCountLeft } saat"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } dakika",
-        "${ minutesCountLeft } dakika"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } saniye",
-        "${ secondsCountLeft } saniye"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Gönderme geri alındı"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "İleti bulunamadı"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

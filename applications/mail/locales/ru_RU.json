@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Неизвестная ошибка"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Это обязательное поле"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Не удается проверить адрес электронной почты. Повторите попытку позже."
@@ -105,14 +105,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Пожалуйста, попробуйте повторить аутентификацию и убедитесь, что права доступа правильные."
       ],
+      "File has no contents to preview": [
+        "В файле нет содержимого для предпросмотра"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Неверный пароль. Пожалуйста, попробуйте еще раз"
       ],
       "Incorrect login credentials. Please try again": [
         "Неверные учетные данные. Повторите попытку"
-      ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -163,13 +163,13 @@
         "Минимальная сумма, которую можно внести, составляет ${ price }"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        ""
+        "Минимальная сумма, которую можно добавить, составляет ${ _price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
       ],
       "Checkout expired, please try again.": [
-        ""
+        "Срок оформления заказа истек, пожалуйста, попробуйте еще раз."
       ],
       "Invalid code": [
         "Неверный код"
@@ -207,12 +207,6 @@
       "Request timed out.": [
         "Истекло время ожидания запроса."
       ],
-      "Signature verification failed": [
-        "Проверка подписи не удалась"
-      ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
       "Email address disabled": [
         "Адрес электронной почты неактивен"
       ],
@@ -236,6 +230,12 @@
       ],
       "The sending key is not valid": [
         "Недействительный ключ отправки"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "Could not find address ${ email }.": [
+        "Не могу найти адрес ${ email }."
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -324,6 +324,15 @@
       "The maximum expiration is 4 weeks.": [
         "Максимальный срок действия составляет 4 недели."
       ],
+      "Choose a date in the future.": [
+        "Выберите дату в будущем."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дня.",
+        "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
+        "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
+        "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дня(ей)"
+      ],
       "Public key could not be trusted": [
         "Нельзя сделать публичный ключ доверенным"
       ],
@@ -353,26 +362,23 @@
       "Close": [
         "Закрыть"
       ],
-      "Close modal": [
-        "Закрыть окно"
+      "Confirm": [
+        "Подтвердить"
       ],
       "Cancel": [
         "Отменить"
       ],
+      "Close modal": [
+        "Закрыть окно"
+      ],
       "Submit": [
         "Отправить"
-      ],
-      "Confirm": [
-        "Подтвердить"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
-      ],
-      "refresh the page": [
-        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -487,6 +493,9 @@
       ],
       "Underline": [
         "Подчёркнутый"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
@@ -662,6 +671,9 @@
       "Next": [
         "Далее"
       ],
+      "Signing out": [
+        "Выход"
+      ],
       "Clear": [
         "Очистить"
       ],
@@ -692,12 +704,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Выход"
-      ],
-      "Log in": [
-        "Войти"
-      ],
       "Details": [
         "Подробности"
       ],
@@ -718,6 +724,9 @@
       ],
       "Previous": [
         "Предыдущий"
+      ],
+      "Log in": [
+        "Войти"
       ],
       "Get started": [
         "Приступить к работе"
@@ -792,7 +801,7 @@
         "Режим редактора"
       ],
       "Remove bonuses": [
-        ""
+        "Удалить бонусы"
       ],
       "Try again": [
         "Попробовать снова"
@@ -825,7 +834,7 @@
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
       "Remove gift code": [
-        ""
+        "Удалить подарочный код"
       ],
       "annual billing": [
         "ежегодная оплата"
@@ -887,17 +896,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Добавить в ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Open shop": [
-        "Открыть магазин"
-      ],
-      "Open calendar": [
-        "Открыть календарь"
-      ],
       "Send anyway": [
         "Всё равно отправить"
+      ],
+      "Got it": [
+        "Ясно"
       ],
       "Maximize composer": [
         "Развернуть окно редактора до наибольшего"
@@ -965,6 +968,9 @@
       "Not saved": [
         "Не сохранено"
       ],
+      "Schedule send": [
+        "Запланированное сообщение отправлено"
+      ],
       "Expiration time": [
         "Срок действия"
       ],
@@ -976,6 +982,9 @@
       ],
       "Set": [
         "Задать"
+      ],
+      "Schedule message": [
+        "Запланировать сообщение"
       ],
       "Print": [
         "Печать"
@@ -1061,6 +1070,9 @@
       "View keys": [
         "Просмотреть ключи"
       ],
+      "Edit draft": [
+        "Редактировать черновик"
+      ],
       "Download ${ attachmentName }": [
         "Скачать ${ attachmentName }"
       ],
@@ -1084,6 +1096,9 @@
       ],
       "Undo": [
         "Отменить"
+      ],
+      "View message": [
+        "Посмотреть сообщение"
       ],
       "Enable": [
         "Включить"
@@ -1179,7 +1194,7 @@
         "Предыдущее сообщение"
       ],
       "Next conversation": [
-        "Следующая беседа"
+        "Следующая цепочка писем"
       ],
       "Next message": [
         "Cледующее сообщение"
@@ -1190,6 +1205,9 @@
       "Hide messages": [
         "Скрыть сообщения"
       ],
+      "Create new message": [
+        "Создать новое сообщение"
+      ],
       "Import messages": [
         "Импортировать сообщения"
       ],
@@ -1198,6 +1216,15 @@
       ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Open shop": [
+        "Открыть магазин"
+      ],
+      "Open calendar": [
+        "Открыть календарь"
       ]
     },
     "Title": {
@@ -1402,15 +1429,6 @@
       "Open settings menu": [
         "Открыть меню настроек"
       ],
-      "Send feedback": [
-        "Отправить отзыв"
-      ],
-      "Feedback": [
-        "Обратная связь"
-      ],
-      "Give feedback": [
-        "Оставить отзыв"
-      ],
       "Confirm loss of Proton bonuses": [
         "Подтвердите потерю бонусов Proton"
       ],
@@ -1442,7 +1460,7 @@
         "Ошибка"
       ],
       "ZIP / postal code": [
-        ""
+        "ZIP-код / почтовый индекс"
       ],
       "Payment details": [
         "Подробности платежа"
@@ -1451,7 +1469,7 @@
         "Валюта"
       ],
       "Billing cycle": [
-        ""
+        "Платежный цикл"
       ],
       "Current plan": [
         "Текущий тарифный план"
@@ -1472,13 +1490,13 @@
         "Всего (ежемесячно)"
       ],
       "Credits": [
-        ""
+        "Кредиты"
       ],
       "Gift code": [
         "Подарочный код"
       ],
       "Amount due": [
-        ""
+        "К оплате"
       ],
       "Cancel subscription": [
         "Отменить подписку"
@@ -1493,10 +1511,10 @@
         "Настроить свой тарифный план"
       ],
       "Checkout": [
-        ""
+        "Оформление заказа"
       ],
       "Plan summary": [
-        ""
+        "Сводка по тарифу"
       ],
       "${ appName } customization": [
         "${ appName } настройка"
@@ -1624,6 +1642,9 @@
       "Send email": [
         "Отправить электронное письмо"
       ],
+      "Schedule send": [
+        "Запланированное сообщение отправлено"
+      ],
       "New message": [
         "Новое сообщение"
       ],
@@ -1740,9 +1761,6 @@
       "Loading": [
         "Загрузка"
       ],
-      "support team": [
-        "служба поддержки"
-      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -1841,6 +1859,9 @@
       ],
       "Plain text": [
         "Простой текст"
+      ],
+      "support team": [
+        "служба поддержки"
       ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
@@ -1998,6 +2019,9 @@
         "${ addressCount } адресов электронной почты",
         "${ addressCount } адреса электронной почты"
       ],
+      "Loading ${ appName }": [
+        "Загрузка ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
       ],
@@ -2028,18 +2052,6 @@
       "Your import will not be processed.": [
         "Импорт ваших данных не будет подвергнут обработке."
       ],
-      "Loading ${ appName }": [
-        "Загрузка ${ appName }"
-      ],
-      "here": [
-        "здесь"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Этот аккаунт был приостановлен из-за потенциального нарушения политики."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
-      ],
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
@@ -2057,6 +2069,15 @@
       ],
       "of": [
         "из"
+      ],
+      "here": [
+        "здесь"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Этот аккаунт был приостановлен из-за потенциального нарушения политики."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
@@ -2110,10 +2131,10 @@
         "+${ bonusSpace } бонусного хранилища"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
-        "",
-        "",
-        ""
+        "+${ organization.BonusVPN } соединение для ProtonVPN (позволяет подключить больше устройств к VPN)",
+        "+${ organization.BonusVPN } соединений для ProtonVPN (позволяет подключить больше устройств к VPN)",
+        "+${ organization.BonusVPN } соединений для ProtonVPN (позволяет подключить больше устройств к VPN)",
+        "+${ organization.BonusVPN } соединения(ий) для ProtonVPN (позволяет подключить больше устройств к VPN)"
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "В целях безопасности ваш банк требует проверки 3-D Secure."
@@ -2155,7 +2176,7 @@
         "Сумма ниже минимума (${ amount })."
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
+        "Подтверждение переводов Bitcoin может занять некоторое время (до 24 часов). Сразу после подтверждения мы добавим средства на ваш счет. После подтверждения перевода вы сможете оплатить свой счет, используя кредиты."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После платежа с использованием Bitcoin, пожалуйста, следуйте приведенным ниже инструкциям для обновления."
@@ -2164,43 +2185,43 @@
         "Пожалуйста, подтвердите платеж в новой вкладке."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
+        "Для завершения этой транзакции мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-то блокировщиками всплывающих окон, пожалуйста, отключите их перед тем, как продолжить."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
+        "Вам необходимо привязать банковскую карту или банковский счет к вашей учетной записи PayPal. Если вы этого еще не сделали, пожалуйста, нажмите на кнопку ниже."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
+        "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-то блокировщиками всплывающих окон, пожалуйста, отключите их перед тем, как продолжить."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
+        "Вы должны иметь кредитную карту или банковский счет, привязанный к вашей учетной записи PayPal, чтобы добавить ее как способ оплаты."
       ],
       "We use 3-D Secure to protect your payments.": [
-        ""
+        "Мы используем 3-D Secure для защиты платежей."
       ],
       "Billed as ${ billedPrice } per year": [
-        ""
+        "Оплачивается ${ billedPrice } за год"
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        ""
+        "Оплачивается ${ billedPrice } каждые 2 года"
       ],
       "Included": [
-        ""
+        "Включено"
       ],
       "* Customizable features": [
-        ""
+        "* Настраиваемые функции"
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
+        "Доступ к вашим услугам стриминга, таким как ${ netflix }, ${ disney }, ${ primeVideo } ${ many } независимо от того, где вы находитесь."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
+        "Доступ к заблокированному содержимому, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
       ],
       "For getting started with private and secure emailing.": [
-        ""
+        "Для начала работы с приватной и безопасной электронной почтой."
       ],
       "A free and uncensored Internet should be available to all.": [
-        ""
+        "Свободный интернет без цензуры должен быть доступен всем."
       ],
       "Starter VPN service with P2P support.": [
         "Сервис VPN начального уровня с поддержкой P2P."
@@ -2236,97 +2257,97 @@
         "Учетная запись успешно обновлена"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
+        "Скачайте ваше любимое приложение сегодня и берите конфиденциальность с собой, куда бы вы ни пошли."
       ],
       "(Mail + VPN)": [
-        ""
+        "(Почта + VPN)"
       ],
       "${ mailAppName } Free": [
-        ""
+        "${ mailAppName } Бесплатно"
       ],
       "${ vpnAppName } Free": [
-        ""
+        "${ vpnAppName } Бесплатно"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
+        "Счет выставляется в конце текущего расчетного цикла (продлевается ${ renewalDate })"
       ],
       "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Вы должны удалить все дополнительные календари и все ссылки календарь, которыми вы поделились, прежде чем вы сможете отменить подписку. ${ linkButton }"
       ],
       "No payment is required at this time.": [
-        ""
+        "В данный момент оплата не требуется."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
+        "Пожалуйста, учтите, что после нажатия на кнопку Подтвердить в вашей учетной записи останется ${ creditsRemaining } кредитов."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
-        ""
+        "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
       "Black Friday 2018 applied to your subscription": [
-        ""
+        "Черная Пятница 2018 применена к вашей подписке"
       ],
       "Black Friday 2019 applied to your subscription": [
-        ""
+        "Черная Пятница 2019 применена к вашей подписке"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
-        ""
+        "Применена скидка для новых пользователей на Черную Пятницу 2020"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        ""
+        "Скидка применена к вашей подписке с купоном ${ code }"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
+        "Платежи защищены шифрованием TLS и швейцарскими законами о конфиденциальности."
       ],
       "30 days money-back guarantee.": [
-        ""
+        "Гарантия возврата денег в течение 30 дней."
       ],
       "Save extra 20%": [
-        ""
+        "Сэкономьте дополнительно 20%"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
+        "${ save20 } на вашей подписке, переключившись на ${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
+        "${ saveExtra20 } на Почте и VPN, добавив подписку на Почту."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
+        "${ saveExtra20 } на VPN и Почте, добавив подписку на VPN."
       ],
       "Storage GB": [
-        ""
+        "ГБ хранилища"
       ],
       "Users": [
-        ""
+        "Пользователей"
       ],
       "Domains": [
-        ""
+        "Доменов"
       ],
       "Addresses": [
-        ""
+        "Адресов"
       ],
       "Connections": [
-        ""
+        "Соединений"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Позволяет использовать электронную почту с вашим собственным доменным именем (именами) в ${ mailAppName }, например john.smith@example.com"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        ""
+        "Добавьте дополнительные адреса в свою учетную запись, например user2@protonmail.com"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Количество VPN-соединений, которое может быть установлено для пользователей. Каждое подключенное устройство использует одно VPN-соединение."
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
+        "Тариф ProtonMail Plus распространяется только на одного пользователя и включает хранилище размером 5 ГБ."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Переключиться на ${ professionalPlan } , чтобы добавить больше пользователей."
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        "",
-        "",
-        ""
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включает ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-соединение.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включает ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-соединений.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включает ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-соединений.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включает ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN подключения(ий, е)."
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Каждое дополнительное соединение может быть установлено для пользователей из вашей организации."
@@ -2442,6 +2463,9 @@
       "Do you want to send your message anyway?": [
         "Вы хотите отправить письмо в любом случае?"
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Слишком много сообщений ожидают отправки. Пожалуйста, дождитесь пока не будет отправлено другое сообщение, чтобы запланировать это."
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Проверка ${ contactName } не удалась: контакт подписан неправильно.\nЭто может быть результатом сброса пароля.\nВы должны повторно подписать контакт, чтобы отправить сообщение на ${ contactAddress } или изменить его."
       ],
@@ -2497,10 +2521,10 @@
         "Все письма, сохраненные с этим ярлыком, будут удалены навсегда."
       ],
       "Are you sure you want to delete all messages with this label?": [
-        ""
+        "Вы уверены, что хотите удалить все письма с этим ярлыком?"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        ""
+        "Вы уверены, что хотите удалить все письма из этой папки?"
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
@@ -2586,6 +2610,9 @@
         "часов",
         "часа"
       ],
+      "When do you want your message to be sent?": [
+        "Когда вы хотите, чтобы ваше сообщение было отправлено?"
+      ],
       "Draft discarded": [
         "Черновик удален"
       ],
@@ -2615,6 +2642,9 @@
       ],
       "Sending": [
         "Отправка"
+      ],
+      "Scheduled": [
+        "Запланировано"
       ],
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
@@ -2709,6 +2739,15 @@
       "Subject:": [
         "Тема:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Это сообщение будет перемещено в Черновики, поэтому вы можете его редактировать. Его нужно будет снова запланировать перед отправкой."
+      ],
+      "This message will be sent shortly": [
+        "Это сообщение вскоре будет отправлено"
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        "Это сообщение будет отправлено ${ dateString } в ${ formattedTime }"
+      ],
       "file attached": [
         "файл прикреплён",
         "файла прикреплено",
@@ -2721,8 +2760,14 @@
         "встроенных изображений",
         "встроенных изображений"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        "Сообщение будет отправлено ${ dateString } в ${ formattedTime }"
+      ],
       "Message sent": [
         "Сообщение отправлено"
+      ],
+      "Scheduling message...": [
+        "Сообщение ставится в очередь..."
       ],
       "Sending message...": [
         "Отправка сообщения..."
@@ -2766,9 +2811,6 @@
         "Оставшееся время: ${ estimatedMinutes } минут",
         "Оставшееся время:{ estimatedMinutes } минут"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Поделитесь своим мнением об обновленном дизайне Proton!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } непрочитанная цепочка писем",
         "${ unreadCount } непрочитанные цепочки писем",
@@ -2780,6 +2822,12 @@
         "${ unreadCount } непрочитанных сообщения",
         "${ unreadCount } непрочитанных сообщений",
         "${ unreadCount } непрочитанного сообщения"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "${ totalMessagesCount } запланированное сообщение",
+        "${ totalMessagesCount } запланированных сообщений",
+        "${ totalMessagesCount } запланированных сообщений",
+        "${ totalMessagesCount } запланированное(ых) сообщение(й)"
       ],
       "Manage your folders": [
         "Управление папками"
@@ -2804,6 +2852,12 @@
       ],
       "(No Recipient)": [
         "(Нет получателей)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "Найден ${ occurrencesInBody } повтор",
+        "Найдено ${ occurrencesInBody } повторов",
+        "Найдено ${ occurrencesInBody } повторов",
+        "Найдено ${ occurrencesInBody } повтора (повторов)"
       ],
       "No more results found": [
         "Больше результатов не найдено"
@@ -2830,73 +2884,73 @@
         "Похоже, делать тут пока нечего"
       ],
       "Get more storage and premium features.": [
-        ""
+        "Получите больше места в хранилище и премиальных функций."
       ],
       "Support privacy by upgrading for": [
-        ""
+        "Поддержите приватность, обновившись до"
       ],
       "/month.": [
-        ""
+        "в месяц."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        ""
+        "Обновите учетную запись, чтобы посылать письма с адресов @pm.me."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        ""
+        "Обновите учетную запись чтобы создавать больше папок, фильтров и адресов."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        ""
+        "Обновите учетную запись чтобы настроить автоответчик на время отпуска."
       ],
       "Upgrade to use ProtonMail with third-party desktop clients.": [
-        ""
+        "Обновите учетную запись чтобы пользоваться ProtonMail с помощью сторонних почтовых программ для компьютера."
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
+        "Протон не делает деньги на нарушении приватности."
       ],
       "Upgrade to support privacy and get more features.": [
-        ""
+        "Обновите учетную запись чтобы поддержать приватность и получить доступ к большему количеству функций."
       ],
       "Visit our shop to get Proton merchandise.": [
-        ""
+        "Посетите наш магазин, чтобы приобрести товары Proton."
       ],
       "Increase storage space starting at": [
-        ""
+        "Увеличьте объем хранилища, начиная с"
       ],
       "For increased security, activate 2FA.": [
-        ""
+        "Для повышения безопасности активируйте 2FA."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        ""
+        "Use keyboard shortcuts to manage your email faster."
       ],
       "Themes can give your inbox a new look.": [
-        ""
+        "Темы могут придать вашему почтовому ящику новый вид."
       ],
       "Upgrade to host emails from your own domain name.": [
-        ""
+        "Обновите учетную запись чтобы хранитель электронные письма с использованием собственного доменного имени."
       ],
       "ProtonMail can protect your business as well.": [
-        ""
+        "ProtonMail может защитить и ваш бизнес."
       ],
       "Upgrade to add more addresses to your account.": [
-        ""
+        "Обновите учетную запись чтобы добавить больше адресов."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        ""
+        "Обновите учетную запись для легко посылать электронные письма группам контактов."
       ],
       "Upgrade to support a privacy-first internet.": [
-        ""
+        "Обновите учетную запись чтобы поддержать интернет, в котором приватность стоит на первом месте."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        ""
+        "Обновите учетную запись чтобы поддержать нашу миссию приватности для всех."
       ],
       "Store and share files securely with Proton Drive.": [
-        ""
+        "Безопасное хранение и обмен файлами с помощью Proton Drive."
       ],
       "You can use ProtonVPN for free today.": [
-        ""
+        "Вы можете использовать ProtonVPN бесплатно уже сегодня."
       ],
       "Use Proton Calendar to keep your agenda private.": [
-        ""
+        "Используйте календарь Proton Calendar, чтобы сохранить приватность своей повестки дня."
       ],
       "${ unread } unread conversation": [
         "${ unread } непрочитанная цепочка писем",
@@ -2950,7 +3004,7 @@
         "В этой папке сохранено ${ countOfConversationOrMessage }"
       ],
       "You selected ${ countOfConversationOrMessage } with this label": [
-        ""
+        "Вы выбрали ${ countOfConversationOrMessage } с этой меткой"
       ],
       "You have ${ countOfConversationOrMessage } tagged with this label": [
         "У вас есть ${ countOfConversationOrMessage } с этим ярлыком"
@@ -3113,56 +3167,53 @@
       "Select how your composer opens by default.": [
         "Выберите как будет открываться окно составления сообщения по умолчанию."
       ],
-      "What is the primary reason for this rating?": [
-        "Какова основная причина этой оценки?"
-      ],
       "Name on card": [
-        ""
+        "Имя на карте"
       ],
       "Card number": [
-        ""
+        "Номер карты"
       ],
       "Expiry date": [
-        ""
+        "Срок действия"
       ],
       "CVV code": [
-        ""
+        "Код CVV"
       ],
       "Select your country": [
-        ""
+        "Выберите свою страну"
       ],
       "ZIP": [
-        ""
+        "ZIP-код"
       ],
       "BTC amount:": [
-        ""
+        "Сумма в биткоинах:"
       ],
       "BTC address:": [
-        ""
+        "Биткоин адрес:"
       ],
       "Select a method": [
-        ""
+        "Выберите способ"
       ],
       "Total (${ countdown })": [
-        ""
+        "Итого (${ countdown })"
       ],
       "Total": [
-        ""
+        "Итого"
       ],
       "Proration": [
-        ""
+        "Распределение"
       ],
       "Cash": [
-        ""
+        "Наличные"
       ],
       "Card holder": [
-        ""
+        "Владелец карты"
       ],
       "Expires": [
-        ""
+        "Срок действия"
       ],
       "Payer": [
-        ""
+        "Плательщик"
       ],
       "Enable Beta Access": [
         "Включить доступ к бета-версии"
@@ -3278,6 +3329,12 @@
       "Blind Carbon Copy": [
         "Скрытая копия"
       ],
+      "Date": [
+        "Дата"
+      ],
+      "Time": [
+        "Время"
+      ],
       "From:": [
         "От:"
       ],
@@ -3356,15 +3413,6 @@
       "Filter": [
         "Фильтр"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Как бы вы оценили свои впечатления от новой версии ProtonMail?"
-      ],
-      "0 - Not a fan": [
-        "0 — не понравилось."
-      ],
-      "10 - Love it!": [
-        "10 — очень понравилось!"
-      ],
       "Also archive": [
         "Перенести в архив"
       ]
@@ -3397,37 +3445,10 @@
         "Перейти на страницу подписки"
       ],
       "click here": [
-        ""
+        "нажмите здесь"
       ],
       "Add a gift code": [
-        ""
-      ],
-      "Inbox": [
-        "Входящие"
-      ],
-      "Drafts": [
-        "Черновики"
-      ],
-      "Sent": [
-        "Отправленные"
-      ],
-      "Trash": [
-        "Корзина"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Все письма"
-      ],
-      "Archive": [
-        "Архив"
-      ],
-      "Starred": [
-        "Избранное"
-      ],
-      "Outbox": [
-        "Исходящие"
+        "Добавить подарочный код"
       ],
       "You need to activate your calendar keys to add this event": [
         "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
@@ -3504,6 +3525,33 @@
       "Add label": [
         "Добавить ярлык"
       ],
+      "Inbox": [
+        "Входящие"
+      ],
+      "Drafts": [
+        "Черновики"
+      ],
+      "Scheduled": [
+        "Запланировано"
+      ],
+      "Sent": [
+        "Отправленные"
+      ],
+      "Starred": [
+        "Избранное"
+      ],
+      "Archive": [
+        "Архив"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Trash": [
+        "Корзина"
+      ],
+      "All mail": [
+        "Все письма"
+      ],
       "Folders": [
         "Папки"
       ],
@@ -3515,6 +3563,9 @@
       ],
       "Manage your labels": [
         "Управление ярлыками"
+      ],
+      "Outbox": [
+        "Исходящие"
       ]
     },
     "Placeholder": {
@@ -3590,17 +3641,14 @@
       "e.g. Julia Smith": [
         "например, Джулия Смит"
       ],
-      "Feedback": [
-        "Отзыв"
-      ],
       "ZIP": [
-        ""
+        "ZIP-код"
       ],
       "Postal code": [
-        ""
+        "Почтовый индекс"
       ],
       "Gift code": [
-        ""
+        "Подарочный код"
       ],
       "Type text or keyword": [
         "Введите текст или ключевое слово"
@@ -3637,6 +3685,44 @@
       ],
       "Filter labels": [
         "Фильтр по ярлыкам"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часов",
+        "${ hours } часов",
+        "${ hours } час(а, ов)"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минут",
+        "${ minutes } минут",
+        "${ minutes } минут(а, ы)"
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } день",
+        "${ daysCountLeft } дня",
+        "${ daysCountLeft } дней",
+        "${ daysCountLeft } дней"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } час",
+        "${ hoursCountLeft } часа",
+        "${ hoursCountLeft } часов",
+        "${ hoursCountLeft } часов"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } минута",
+        "${ minutesCountLeft } минуты",
+        "${ minutesCountLeft } минут",
+        "${ minutesCountLeft } минут"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } секунда",
+        "${ secondsCountLeft } секунды",
+        "${ secondsCountLeft } секунд",
+        "${ secondsCountLeft } секунд"
       ]
     },
     "Warning": {
@@ -3692,7 +3778,7 @@
         "Ваши локальные параметры даты и времени не синхронизированы."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        ""
+        "Пожалуйста, обратите внимание, что при выборе этого способа оплаты ваша учетная запись не может быть обновлена сразу. Мы обновим вашу учетную запись после подтверждения оплаты."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не удалось проверить подпись вложения.\nВы можете загрузить это вложение, но оно могло быть изменено.",
@@ -3753,31 +3839,31 @@
         "У вас нет контактов для экспорта"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        ""
+        "Используйте несколько адресов / псевдонимов, связанных с вашей учетной записью, например username2@protonmail.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        ""
+        "Разместите почту на своем(их) домене(ах) в ProtonMail, например john.smith@example.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        ""
+        "Используйте личный адрес username@pm.me для отправки электронных писем"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        ""
+        "Многопользовательская поддержка распространяется только на тарифные планы с двумя и более пользователями"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        ""
+        "NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        ""
+        "Поддержка протоколов обмена файлами, таких как BitTorrent."
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        ""
+        "Доступ к содержимому, заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.), независимо от того, где вы находитесь."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Направляйте свой трафик через сеть Tor одним щелчком мыши."
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        ""
+        "Защищая от угроз, VPN обеспечивает приватность, передавая ваш интернет-трафик через несколько серверов."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Получите доступ ко всем платным функциям как ProtonVPN, так и ProtonMail (служба зашифрованной электронной почты, которую миллионы людей используют для защиты своих данных) по одному тарифному плану."
@@ -3786,16 +3872,16 @@
         "Получите доступ ко всем платным функциям как ${ vpnAppName }, так и ${ mailAppName } (служба зашифрованной электронной почты, которую миллионы людей используют для защиты своих данных) по одному тарифному плану."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
+        "Разместите почту на своем(их) домене(ах) в ${ mailAppName }, например john.smith@example.com"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
         "Создайте несколько адресов электронной почты, привязанных к вашей учетной записи, например username2@protonmail.com"
       ],
       "Discount applied for annual billing cycle": [
-        ""
+        "Скидка для годового платежного цикла применена"
       ],
       "Discount applied for two-year billing cycle": [
-        ""
+        "Скидка для двухлетнего платежного цикла"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, то вы можете ввести его здесь."
@@ -4387,6 +4473,17 @@
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Приложения Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти к ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти к ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
@@ -4518,41 +4615,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Выйти из импорта?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Приложения Proton"
       ],
-      "Go to ${ title }": [
-        "Перейти к ${ title }"
+      "Message saved to Drafts": [
+        "Сообщение сохранено в Черновики"
       ],
-      "Go to ${ vpnName }": [
-        "Перейти к ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Ряд"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Обычный"
-      ],
-      "Maximized": [
-        "Максимизированный"
+      "Edit and reschedule": [
+        "Редактировать и снова запланировать"
       ]
     },
     "Select files": {
@@ -4603,6 +4671,30 @@
         "Чтобы отключить бета-версию, откройте выпадающее меню настроек и нажмите на опцию «Доступ к Beta»."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Обычный"
+      ],
+      "Maximized": [
+        "Максимизированный"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна новая версия ${ appName } . ${ reloadButton }."
@@ -4647,19 +4739,9 @@
         "Обычный"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Поставьте оценку"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Отзыв отправлен"
-      ]
-    },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        ""
+        "Пожалуйста, свяжитесь с нами через ${ email } для получения инструкций по оплате наличными."
       ]
     },
     "Billing cycle option": {
@@ -4745,7 +4827,7 @@
         "Используйте адреса @pm.me"
       ],
       "Catch-All email": [
-        ""
+        "Получение писем всех адресов домена"
       ],
       "Multi-user support": [
         "Многопользовательская поддержка"
@@ -4777,7 +4859,7 @@
     },
     "VPN feature": {
       "VPN Connections": [
-        "VPN-подключения"
+        "VPN-соединения"
       ],
       "Speed": [
         "Скорость"
@@ -4801,7 +4883,7 @@
         "Tor через VPN"
       ],
       "Secure Core servers": [
-        ""
+        "Серверы Secure Core"
       ],
       "${ mailAppName } Visionary": [
         "${ mailAppName } Visionary"
@@ -4819,10 +4901,10 @@
         "Строгая политика отсутствия журналов активности"
       ],
       "Volume/bandwidth cap": [
-        ""
+        "Объем/пропускная способность"
       ],
       "User data monetization": [
-        ""
+        "Монетизация пользовательских данных"
       ],
       "Platforms supported": [
         "Поддерживаемые платформы"
@@ -4834,16 +4916,16 @@
         "Предотвращение утечки DNS"
       ],
       "Kill Switch / Always-on VPN": [
-        ""
+        "Запрет незащищенного соединения / VPN включен всегда"
       ],
       "Perfect Forward Secrecy (PFS)": [
-        ""
+        "Совершенная прямая секретность (PFS)"
       ],
       "Full Disk Encryption on Servers": [
         "Полное шифрование диска на серверах"
       ],
       "Split tunneling": [
-        ""
+        "Раздельное туннелирование"
       ],
       "Custom connection profiles": [
         "Пользовательские профили подключения"
@@ -4869,7 +4951,7 @@
         "Швейцария"
       ],
       "None": [
-        ""
+        "Нет"
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
@@ -4886,7 +4968,7 @@
         "Импорт календаря"
       ],
       "Recurring events": [
-        ""
+        "Повторяющиеся события"
       ],
       "Invitations": [
         "Приглашения"
@@ -4916,24 +4998,24 @@
     },
     "Info concerning plan features": {
       "Customizable features": [
-        ""
+        "Настраиваемые функции"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "ProtonMail не может быть использован для массовых рассылок или рассылки спама. Для законных обычных писем ограничений нет."
       ]
     },
     "Plan Feature": {
       "${ n } VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN-соединение",
+        "${ n } VPN-соединений",
+        "${ n } VPN-соединений",
+        "${ n } VPN-соединения (соединений)"
       ],
       "${ n } server": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } сервер",
+        "${ n } серверов",
+        "${ n } серверов",
+        "${ n } серверов(а)"
       ]
     },
     "Netflix": {
@@ -4953,7 +5035,7 @@
     },
     "Many Others": {
       "and many others": [
-        ""
+        "и много других"
       ]
     },
     "Plan feature": {
@@ -4961,7 +5043,7 @@
         "Встроенная блокировка рекламы (NetShield)"
       ],
       "Secure Core servers": [
-        ""
+        "Серверы Secure Core"
       ],
       "Streaming service support": [
         "Поддержка потоковых сервисов"
@@ -4970,28 +5052,28 @@
         "Доступ к заблокированному контенту"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "",
-        "",
-        "",
-        ""
+        "${ freeServers } в ${ freeCountries } стране",
+        "${ freeServers } в ${ freeCountries } странах",
+        "${ freeServers } в ${ freeCountries } странах",
+        "${ freeServers } в ${ freeCountries } странах(е)"
       ],
       "Medium speed": [
         "Средняя скорость"
       ],
       "350+ servers in ${ basicCountries } country": [
-        "",
-        "",
-        "",
-        ""
+        "Более 350 серверов в ${ basicCountries } стране",
+        "Более 350 серверов в ${ basicCountries } странах",
+        "Более 350 серверов в ${ basicCountries } странах",
+        "Более 350 серверов в ${ basicCountries } странах(е)"
       ],
       "High speed": [
         "Высокая скорость"
       ],
       "1200+ servers in ${ plusCountries } country": [
-        "",
-        "",
-        "",
-        ""
+        "Более 1200 серверов в ${ plusCountries } стране",
+        "Более 1200 серверов в ${ plusCountries } странах",
+        "Более 1200 серверов в ${ plusCountries } странах",
+        "Более 1200 серверов в ${ plusCountries } странах(е)"
       ],
       "Highest speed (up to 10 Gbps)": [
         "Наивысшая скорость (до 10 Гбит/с)"
@@ -5064,45 +5146,45 @@
     },
     "Countdown unit": {
       "${ monthsWithYears } month": [
-        "",
-        "",
-        "",
-        ""
+        "${ monthsWithYears } месяц",
+        "${ monthsWithYears } месяцев",
+        "${ monthsWithYears } месяцев",
+        "${ monthsWithYears } месяцев(а)"
       ],
       "${ days } day": [
-        "",
-        "",
-        "",
-        ""
+        "${ days } день",
+        "${ days } дней",
+        "${ days } дней",
+        "${ days } дней (дня)"
       ]
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ addresses } адрес электронной почты",
+        "+ ${ addresses } адресов электронной почты",
+        "+ ${ addresses } адресов электронной почты",
+        "+ ${ addresses } адреса(ов) электронной почты"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } хранилища"
       ],
       "+ ${ domains } custom domain": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ domains } пользовательский домен",
+        "+ ${ domains } пользовательских доменов",
+        "+ ${ domains } пользовательских доменов",
+        "+ ${ domains } пользовательский(х) домен(ов)"
       ],
       "+ ${ members } user": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ members } пользователь",
+        "+ ${ members } пользователей",
+        "+ ${ members } пользователей",
+        "+ ${ members } пользователя (пользователей)"
       ],
       "+ ${ vpn } connection": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ vpn } соединение",
+        "+ ${ vpn } соединений",
+        "+ ${ vpn } соединений",
+        "+ ${ vpn } подключения(й, е)"
       ]
     },
     "Plan info": {
@@ -5296,14 +5378,6 @@
         "со звёздами"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен включать по меньшей мере ${ length } символ",
-        "Пароль должен включать по меньшей мере ${ length } символа",
-        "Пароль должен включать по меньшей мере ${ length } символов",
-        "Пароль должен включать по меньшей мере ${ length } символа"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Имя"
@@ -5432,9 +5506,12 @@
         "ГБ"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символа"
       ]
     },
     "Message": {
@@ -5446,6 +5523,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } написал(а):"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5831,6 +5913,68 @@
     "Event title": {
       "(no title)": [
         "(без названия)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "Событие ${ title } начинается сейчас"
+      ],
+      "${ title } starts today": [
+        "Событие ${ title } начинается сегодня"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "Событие ${ title } началось в ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "Событие ${ title } началось вчера"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "Событие ${ title } началось вчера в ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "Событие ${ title } началось ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "Событие ${ title } началось ${ formattedDate } в ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "Событие ${ title } началось ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "Событие ${ title } началось ${ _formattedDate } в ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "Событие ${ title } началось ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "Событие ${ title } началось ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "Событие ${ title } начнется в ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "Событие ${ title } начнется завтра"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "Событие ${ title } начинается завтра в ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "Событие ${ title } начинается ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "Событие ${ title } начинается ${ _formattedDate2 } в ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "Событие ${ title } начинается ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "Событие ${ title } начнется ${ _formattedDate3 } в ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "Событие ${ title } начинается ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "Событие ${ title } начнется ${ formattedDateWithTime }"
       ]
     },
     "Participant name": {
@@ -6397,6 +6541,9 @@
       "Drafts": [
         "Черновики"
       ],
+      "Scheduled": [
+        "Запланировано"
+      ],
       "All": [
         "Весь"
       ],
@@ -6548,6 +6695,20 @@
     "Time": {
       "Yesterday": [
         "Вчера"
+      ]
+    },
+    "Date label": {
+      "today": [
+        "сегодня"
+      ],
+      "tomorrow": [
+        "завтра"
+      ],
+      "Today": [
+        "Сегодня"
+      ],
+      "Tomorrow": [
+        "Завтра"
       ]
     },
     "Invitation details (all-day event)": {
@@ -6743,35 +6904,12 @@
         "Это событие происходит сейчас."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } день",
-        "${ daysCountLeft } дня",
-        "${ daysCountLeft } дней",
-        "${ daysCountLeft } дней"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } час",
-        "${ hoursCountLeft } часа",
-        "${ hoursCountLeft } часов",
-        "${ hoursCountLeft } часов"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } минута",
-        "${ minutesCountLeft } минуты",
-        "${ minutesCountLeft } минут",
-        "${ minutesCountLeft } минут"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } секунда",
-        "${ secondsCountLeft } секунды",
-        "${ secondsCountLeft } секунд",
-        "${ secondsCountLeft } секунд"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Отправка отменена"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        "Планирование отменено. Сообщение перемещено в Черновики."
       ]
     },
     "Send email with warnings": {
@@ -7020,6 +7158,9 @@
       ],
       "No messages found": [
         "Сообщения не найдены"
+      ],
+      "No messages scheduled": [
+        "Нет запланированных сообщений"
       ]
     },
     "Alternative text for welcome image": {

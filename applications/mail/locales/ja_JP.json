@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "不明なエラー"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
+      ],
+      "Unknown error": [
+        "不明なエラー"
       ],
       "Authentication canceled.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "この項目の入力は必須です"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "Composerが読み込みに失敗しました。"
       ],
       "Please refresh the page.": [
         "ページを更新してください。"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "メールを検証できません。後でもう一度お試しください。"
@@ -99,14 +99,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "File has no contents to preview": [
+        "ファイルにプレビューするコンテンツがありません"
+      ],
       "Incorrect mailbox password. Please try again": [
         "メールボックスのパスワードが正しくありません。再度入力してください。"
       ],
       "Incorrect login credentials. Please try again": [
         "間違ったログイン情報です。もう一度やり直してください。"
-      ],
-      "File has no contents to preview": [
-        "ファイルにプレビューするコンテンツがありません"
       ],
       "Process aborted": [
         ""
@@ -201,12 +201,6 @@
       "Request timed out.": [
         "リクエストはタイムアウトしました。"
       ],
-      "Signature verification failed": [
-        "署名の検証に失敗しました"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
-      ],
       "Email address disabled": [
         "メールアドレスが無効です"
       ],
@@ -230,6 +224,12 @@
       ],
       "The sending key is not valid": [
         "送信鍵が有効ではありません"
+      ],
+      "Signature verification failed": [
+        "署名の検証に失敗しました"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Missing signature": [
         "署名がありません"
@@ -309,6 +309,12 @@
       "The maximum expiration is 4 weeks.": [
         ""
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        ""
+      ],
       "Public key could not be trusted": [
         ""
       ],
@@ -338,26 +344,23 @@
       "Close": [
         "閉じる"
       ],
-      "Close modal": [
-        "画面を閉じる"
+      "Confirm": [
+        "確認"
       ],
       "Cancel": [
         "キャンセル"
       ],
+      "Close modal": [
+        "画面を閉じる"
+      ],
       "Submit": [
         "送信"
-      ],
-      "Confirm": [
-        "確認"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "refresh the page": [
-        "ページを更新"
       ],
       "Remove": [
         "削除"
@@ -472,6 +475,9 @@
       ],
       "Underline": [
         "下線"
+      ],
+      "refresh the page": [
+        "ページを更新"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
@@ -638,6 +644,9 @@
       "Next": [
         "次へ"
       ],
+      "Signing out": [
+        "サインアウトしています"
+      ],
       "Clear": [
         "消去"
       ],
@@ -668,12 +677,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "サインアウトしています"
-      ],
-      "Log in": [
-        "ログイン"
-      ],
       "Details": [
         "詳細"
       ],
@@ -694,6 +697,9 @@
       ],
       "Previous": [
         "前へ"
+      ],
+      "Log in": [
+        "ログイン"
       ],
       "Get started": [
         "はじめましょう"
@@ -717,7 +723,7 @@
         "デスクトップ通知を有効化する"
       ],
       "here": [
-        ""
+        "こちら"
       ],
       "Search": [
         "検索"
@@ -863,17 +869,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "このまま送信"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "最大化"
@@ -938,6 +938,9 @@
       "Not saved": [
         "未保存"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "有効期限"
       ],
@@ -949,6 +952,9 @@
       ],
       "Set": [
         "セット"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "印刷"
@@ -1034,6 +1040,9 @@
       "View keys": [
         "キーを表示"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "{ attachmentName } をダウンロード"
       ],
@@ -1057,6 +1066,9 @@
       ],
       "Undo": [
         "取り消し"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "有効化"
@@ -1163,6 +1175,9 @@
       "Hide messages": [
         "メッセージを非表示"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "メッセージをインポート"
       ],
@@ -1170,6 +1185,15 @@
         "選択解除"
       ],
       "Start using ${ appName }": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
         ""
       ]
     },
@@ -1362,15 +1386,6 @@
       ],
       "Open settings menu": [
         ""
-      ],
-      "Send feedback": [
-        "意見を送る"
-      ],
-      "Feedback": [
-        "ご意見"
-      ],
-      "Give feedback": [
-        "ご意見"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -1573,6 +1588,9 @@
       "Send email": [
         ""
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "新規メッセージ"
       ],
@@ -1580,7 +1598,7 @@
         "公開鍵を信頼しますか?"
       ],
       "All recipients were added to the BCC field and cannot be disclosed": [
-        "全ての宛先が BCC に入力された上で送信されたため、表示できる宛先がありません"
+        "全ての宛先が BCC に入力された状態で送信されたため、表示できる宛先がありません"
       ],
       "Move to inbox (not spam)": [
         ""
@@ -1667,7 +1685,7 @@
         "フォルダーを作成"
       ],
       "Create label": [
-        ""
+        "ラベルを作成"
       ],
       "Conversation list": [
         "スレッドリスト"
@@ -1688,9 +1706,6 @@
       ],
       "Loading": [
         "読み込み中"
-      ],
-      "support team": [
-        ""
       ],
       "No contacts added yet": [
         ""
@@ -1787,6 +1802,9 @@
       ],
       "Plain text": [
         "プレーンテキスト"
+      ],
+      "support team": [
+        ""
       ],
       "Drop the file here to upload": [
         ""
@@ -1912,7 +1930,7 @@
         ""
       ],
       "No email address": [
-        "メールアドレス無し"
+        "メールアドレスなし"
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } の連絡先が見つかりました"
@@ -1921,13 +1939,16 @@
         ""
       ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        ""
+        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora などのアプリからの、CSV ファイルのインポートに対応しています。また、vCard 4.0 (UTF-8 エンコード) のインポートにも対応しています。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         ""
       ],
       "${ addressCount } email address": [
         ""
+      ],
+      "Loading ${ appName }": [
+        "${ appName } を読み込み中"
       ],
       "Screenshot(s) attached": [
         "スクリーンショットが添付されました"
@@ -1959,18 +1980,6 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Loading ${ appName }": [
-        "${ appName } を読み込み中"
-      ],
-      "here": [
-        "こちら"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
-      ],
       "Unsupported file": [
         ""
       ],
@@ -1988,6 +1997,15 @@
       ],
       "of": [
         " / "
+      ],
+      "here": [
+        "こちら"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
@@ -2026,10 +2044,10 @@
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications } 必要があります。"
       ],
       "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
+        "ベータ版アクセスは有効です。最新版の ${ appName } を使用するには、${ refreshButton } をクリックしてください。クリックするとアプリケーションは再起動されます。"
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        ""
+        "ベータ版アクセスは無効です。安定版の ${ appName } を使用するには、${ refreshButton } をクリックしてください。クリックするとアプリケーションは再起動されます。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
@@ -2269,13 +2287,13 @@
         ""
       ],
       "Inherited from parent folder": [
-        ""
+        "親フォルダーから継承"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
         ""
@@ -2365,6 +2383,9 @@
         "この電子メールには件名がありません。このままメッセージを送信しますか？"
       ],
       "Do you want to send your message anyway?": [
+        ""
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         ""
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
@@ -2484,6 +2505,9 @@
       "Hour": [
         "時間"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         ""
       ],
@@ -2513,6 +2537,9 @@
       ],
       "Sending": [
         "送信中"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         ""
@@ -2548,7 +2575,7 @@
         ""
       ],
       "This message is from a mailing list.": [
-        ""
+        "これはメーリングリストからのメッセージです。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "メールのドメイン認証に失敗しました。このメールは不適切に転送されたものか、なりすましの恐れがあります。"
@@ -2601,13 +2628,28 @@
       "Subject:": [
         "件名："
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "ファイル添付されました"
       ],
       "embedded image": [
         ""
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
+        ""
+      ],
+      "Scheduling message...": [
         ""
       ],
       "Sending message...": [
@@ -2649,14 +2691,14 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         ""
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton は一新されました。よろしければ、あなたの評価や意見をお教えください。"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } 件の会話が未読"
       ],
       "${ unreadCount } unread message": [
         "${ unreadCount } 件のメッセージが未読"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        ""
       ],
       "Manage your folders": [
         "フォルダーを管理"
@@ -2668,7 +2710,7 @@
         "フォルダーが見つかりません"
       ],
       "No label found": [
-        ""
+        "ラベルが見つかりません"
       ],
       "Has ${ numAttachments } attachment": [
         ""
@@ -2677,6 +2719,9 @@
         ""
       ],
       "(No Recipient)": [
+        ""
+      ],
+      "${ occurrencesInBody } occurrence found": [
         ""
       ],
       "No more results found": [
@@ -2895,7 +2940,7 @@
         "公開鍵"
       ],
       "Automatically save contacts": [
-        ""
+        "宛先を連絡先に自動追加"
       ],
       "Import contacts": [
         "連絡先のインポート"
@@ -2966,9 +3011,6 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3021,7 +3063,7 @@
         "ベータ版アクセスを有効にする"
       ],
       "Folder location": [
-        "フォルダの場所"
+        "フォルダーの場所"
       ],
       "Notification": [
         "通知"
@@ -3131,6 +3173,12 @@
       "Blind Carbon Copy": [
         ""
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "差出人："
       ],
@@ -3141,7 +3189,7 @@
         ""
       ],
       "Undisclosed Recipients": [
-        ""
+        "非公開の宛先 (Undisclosed Recipients)"
       ],
       "To:": [
         "宛先："
@@ -3209,15 +3257,6 @@
       "Filter": [
         "フィルタ"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "新しい ProtonMail の使用感を評価していただけますか？"
-      ],
-      "0 - Not a fan": [
-        "0 - 全く良くない"
-      ],
-      "10 - Love it!": [
-        "10 - 非常に素晴らしい"
-      ],
       "Also archive": [
         ""
       ]
@@ -3254,33 +3293,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "受信箱"
-      ],
-      "Drafts": [
-        "下書き"
-      ],
-      "Sent": [
-        "送信済み"
-      ],
-      "Trash": [
-        "ごみ箱"
-      ],
-      "Spam": [
-        "迷惑メール"
-      ],
-      "All mail": [
-        "全てのメール"
-      ],
-      "Archive": [
-        "アーカイブ"
-      ],
-      "Starred": [
-        "星印付き"
-      ],
-      "Outbox": [
-        "送信箱"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3357,6 +3369,33 @@
       "Add label": [
         "ラベルを追加"
       ],
+      "Inbox": [
+        "受信箱"
+      ],
+      "Drafts": [
+        "下書き"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "送信済み"
+      ],
+      "Starred": [
+        "星印付き"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
+      "Spam": [
+        "迷惑メール"
+      ],
+      "Trash": [
+        "ごみ箱"
+      ],
+      "All mail": [
+        "全てのメール"
+      ],
       "Folders": [
         "フォルダー"
       ],
@@ -3368,6 +3407,9 @@
       ],
       "Manage your labels": [
         "ラベルを管理"
+      ],
+      "Outbox": [
+        "送信箱"
       ]
     },
     "Placeholder": {
@@ -3443,9 +3485,6 @@
       "e.g. Julia Smith": [
         "例: Julia Smith"
       ],
-      "Feedback": [
-        "ご意見"
-      ],
       "ZIP": [
         ""
       ],
@@ -3483,13 +3522,33 @@
         "終了日"
       ],
       "Search messages": [
-        ""
+        "メッセージを検索"
       ],
       "Filter folders": [
-        ""
+        "フォルダーを検索"
       ],
       "Filter labels": [
-        "ラベルをフィルター"
+        "ラベルを検索"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        ""
+      ],
+      "${ minutes } minute": [
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } 日"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } 時間"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } 分"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } 秒"
       ]
     },
     "Warning": {
@@ -4082,7 +4141,7 @@
         ""
       ],
       "No parent folder": [
-        "親フォルダがありません"
+        "親フォルダーなし"
       ],
       "All": [
         "全て"
@@ -4147,6 +4206,17 @@
         ""
       ],
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        ""
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton アプリケーション"
+      ],
+      "Go to ${ title }": [
+        "${ title } へ移動"
+      ],
+      "Go to ${ vpnName }": [
         ""
       ]
     },
@@ -4281,40 +4351,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton アプリケーション"
       ],
-      "Go to ${ title }": [
-        "${ title } へ移動"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
+      "Message saved to Drafts": [
         ""
       ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "標準"
-      ],
-      "Maximized": [
+      "Edit and reschedule": [
         ""
       ]
     },
@@ -4366,6 +4407,30 @@
         "ベータ版を無効にしたい場合は、設定のドロップダウンメニューを開き、「ベータ版アクセス」オプションをクリックしてください。"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "標準"
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
@@ -4408,16 +4473,6 @@
       ],
       "Normal": [
         ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "評価が必須です"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "意見が送信されました"
       ]
     },
     "Info for cash payment method": {
@@ -4493,7 +4548,7 @@
         ""
       ],
       "Address verification": [
-        ""
+        "アドレスの検証"
       ],
       "Custom filters": [
         ""
@@ -5026,11 +5081,6 @@
         "星印を付ける"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        ""
-      ]
-    },
     "Contact field label": {
       "Name": [
         "名前"
@@ -5159,8 +5209,8 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+    "Validation": {
+      "Password must contain at least ${ length } character": [
         ""
       ]
     },
@@ -5172,6 +5222,11 @@
         "Fw:"
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
+        ""
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         ""
       ]
     },
@@ -5558,6 +5613,68 @@
     "Event title": {
       "(no title)": [
         "(タイトルなし)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6013,6 +6130,9 @@
       "Drafts": [
         "下書き"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "全て"
       ],
@@ -6157,6 +6277,20 @@
     },
     "Time": {
       "Yesterday": [
+        ""
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
         ""
       ]
     },
@@ -6353,23 +6487,12 @@
         ""
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } 日"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } 時間"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } 分"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } 秒"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "送信が取り消されました"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6597,6 +6720,9 @@
       ],
       "No messages found": [
         "メッセージが見つかりません"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {
