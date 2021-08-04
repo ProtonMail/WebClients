@@ -22,7 +22,7 @@ import {
 import { LabelIDsChanges } from '../models/event';
 import { Conversation } from '../models/conversation';
 
-const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 export interface TypeParams {
     labelID?: string;
@@ -182,6 +182,7 @@ export const getCurrentFolderID = (element: Element | undefined, customFoldersLi
         [TRASH]: true,
         [SPAM]: true,
         [ARCHIVE]: true,
+        [SCHEDULED]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
     return Object.keys(labelIDs).find((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
