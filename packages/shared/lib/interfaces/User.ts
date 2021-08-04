@@ -6,6 +6,7 @@ export enum MNEMONIC_STATUS {
     ENABLED = 1,
     OUTDATED = 2,
     SET = 3,
+    PROMPT = 4,
 }
 
 export interface User {
