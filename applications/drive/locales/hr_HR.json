@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Nepoznata pogreška"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
       ],
@@ -21,14 +18,17 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        ""
+      "Unknown error": [
+        "Nepoznata pogreška"
       ],
       "Email address invalid": [
         "Adresa e-pošte nije valjana"
       ],
       "This field is required": [
         "Ovo polje je obavezno"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -44,6 +44,9 @@
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
+      ],
+      "File has no contents to preview": [
+        "Datoteka nema sadržaja za pregled"
       ],
       "Preferences could not be saved": [
         "Postavke nije moguće spremiti"
@@ -90,15 +93,6 @@
       ],
       "Invalid name": [
         "Nevažeći naziv"
-      ],
-      "File has no contents to preview": [
-        "Datoteka nema sadržaja za pregled"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Neuspješno povezivanje s vašim davateljem usluga."
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
       ],
       "Process aborted": [
         ""
@@ -160,6 +154,12 @@
       "Invalid code": [
         ""
       ],
+      "We were unable to connect to your service provider.": [
+        "Neuspješno povezivanje s vašim davateljem usluga."
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
+      ],
       "Incorrect mailbox password. Please try again": [
         "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
       ],
@@ -203,994 +203,18 @@
         "Nije pronađena važeća adresa"
       ]
     },
-    "Action": {
-      "Close": [
-        "Zatvori"
-      ],
-      "Confirm": [
-        "Potvrdi"
-      ],
-      "Cancel": [
-        "Poništi"
-      ],
-      "Close modal": [
-        "Zatvori skočni prozor"
-      ],
-      "Submit": [
-        "Pošalji"
-      ],
-      "More info: ${ safeTitle }": [
-        "Više informacija: ${ safeTitle }"
-      ],
-      "Use “${ label }” setting": [
-        "Koristi “${ label }” postavku"
-      ],
-      "Close navigation": [
-        "Zatvori navigaciju"
-      ],
-      "Open navigation": [
-        "Otvori navigaciju"
-      ],
-      "Go to panel ${ index }": [
-        "Idi na ${ index } panel"
-      ],
-      "Load image": [
-        "Učitaj sliku"
-      ],
-      "Export": [
-        "Izvoz"
-      ],
-      "Delete": [
-        "Izbriši"
-      ],
-      "Edit": [
-        "Uredi"
-      ],
-      "Remove": [
-        "Ukloni"
-      ],
-      "Download": [
-        "Preuzmi"
-      ],
-      "Use for sending": [
-        "Koristi za slanje"
-      ],
-      "Trust": [
-        "Vjeruj"
-      ],
-      "Untrust": [
-        "Označi kao nepouzdano"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Email settings": [
-        "Postavke e-pošte"
-      ],
-      "Contact group": [
-        "Grupa kontakta"
-      ],
-      "Upload picture": [
-        "Učitaj sliku"
-      ],
-      "Next month": [
-        "Sljedeći mjesec"
-      ],
-      "Previous month": [
-        "Prethodni mjesec"
-      ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
-      ],
-      "View invoice": [
-        "Prikaži fakturu"
-      ],
-      "Get verification code": [
-        "Nabavi kôd za provjeru"
-      ],
-      "Try another method": [
-        "Isprobajte drugu metodu"
-      ],
-      "Request new code": [
-        "Zatraži novi kôd"
-      ],
-      "Verify": [
-        "Potvrdi"
-      ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
-      ],
-      "Edit email address": [
-        "Uredi adresu e-pošte"
-      ],
-      "Edit phone number": [
-        "Uredi broj telefona"
-      ],
-      "Save": [
-        "Spremi"
-      ],
-      "Add": [
-        "Dodaj"
-      ],
-      "Apply": [
-        "Primijeni"
-      ],
-      "Hide advanced PGP settings": [
-        "Sakrij napredne PGP postavke"
-      ],
-      "Show advanced PGP settings": [
-        "Pokaži napredne PGP postavke"
-      ],
-      "Done": [
-        "Gotovo"
-      ],
-      "Clear data": [
-        "Izbriši podatke"
-      ],
-      "Recover data": [
-        "Oporavi podatke"
-      ],
-      "Click here.": [
-        "Kliknite ovdje."
-      ],
-      "Re-sign": [
-        "Ponovna prijava"
-      ],
-      "Add to group": [
-        "Dodaj u grupu"
-      ],
-      "Merge": [
-        "Spoji"
-      ],
-      "View": [
-        "Pregled"
-      ],
-      "Unmark for deletion": [
-        "Odznači za brisanje"
-      ],
-      "Mark for deletion": [
-        "Označi za brisanje"
-      ],
-      "Preview contact": [
-        "Pregled kontakta"
-      ],
-      "Continue": [
-        "Nastavi"
-      ],
-      "Delete contact": [
-        "Izbriši kontakt"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Izbriši ${ selectedCount } kontakt",
-        "Izbriši ${ selectedCount } kontakta",
-        "Izbriši ${ selectedCount } kontakata"
-      ],
-      "Deselect all": [
-        "Odznači sve"
-      ],
-      "Select all": [
-        "Odaberi sve"
-      ],
-      "Compose": [
-        "Nova poruka"
-      ],
-      "Forward as attachment": [
-        "Proslijedi kao privitak"
-      ],
-      "Merge contacts": [
-        "Spoji kontakte"
-      ],
-      "Add new contact": [
-        "Dodaj novi kontakt"
-      ],
-      "Add group": [
-        "Dodaj grupu"
-      ],
-      "Clear query": [
-        "Izbriši upit"
-      ],
-      "Add contact": [
-        "Dodaj kontakt"
-      ],
-      "import": [
-        "uvoz"
-      ],
-      "Delete contact group": [
-        "Izbriši grupu kontakta"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Izbriši ${ selectedCount } grupu kontakata",
-        "Izbriši ${ selectedCount } grupe kontakata",
-        "Izbriši ${ selectedCount } grupa kontakata"
-      ],
-      "Add new group": [
-        "Dodaj novu grupu"
-      ],
-      "Export contacts": [
-        "Uvezi kontakte"
-      ],
-      "Continue with Google": [
-        "Nastavi s Googleom"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Choose a file or drag it here": [
-        "Odaberite datoteku ili je dovucite ovdje"
-      ],
-      "Import": [
-        "Uvoz"
-      ],
-      "Next": [
-        "Sljedeće"
-      ],
-      "Signing out": [
-        "Odjavljivanje"
-      ],
-      "Clear": [
-        "Očisti"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
-      "Show info": [
-        "Prikaži informacije"
-      ],
-      "Details": [
-        "Pojedinosti"
-      ],
-      "Share via link": [
-        "Podijeli putem poveznice"
-      ],
-      "Sharing options": [
-        "Opcije dijeljenja"
-      ],
-      "Zoom out": [
-        "Smanji"
-      ],
-      "Reset zoom": [
-        "Poništi zumiranje"
-      ],
-      "Zoom in": [
-        "Povećaj"
-      ],
-      "Previous": [
-        "Prethodno"
-      ],
-      "Close this banner": [
-        "Zatvori natpis"
-      ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
-      "enable desktop notifications": [
-        "omogući obavijesti radne površine"
-      ],
-      "here": [
-        "ovdje"
-      ],
-      "Continue import": [
-        "Nastavi uvoz"
-      ],
-      "Discard": [
-        "Odbaci"
-      ],
-      "Reconnect": [
-        "Ponovno povezivanje"
-      ],
-      "Start import": [
-        "Započni uvoz"
-      ],
-      "Copy email to clipboard": [
-        "Kopiraj adresu e-pošte u međuspremnik"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
-      "I have a question": [
-        "Imam pitanje"
-      ],
-      "Request a feature": [
-        "Zatraži značajku"
-      ],
-      "Report a problem": [
-        "Prijavi problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } dućan"
-      ],
-      "Switch account": [
-        "Promijeni račun"
-      ],
-      "Sign out": [
-        "Odjava"
-      ],
-      "Go to settings": [
-        "Idi na postavke"
-      ],
-      "Beta Access": [
-        "Beta pristup"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
-      ],
-      "Mailbox layout": [
-        "Izgled poštanskog sandučića"
-      ],
-      "Mailbox density": [
-        "Gustoća poštanskog sandučića"
-      ],
-      "Composer mode": [
-        "Način rada prozora za novu poruku"
-      ],
-      "Get started": [
-        "Započnite"
-      ],
-      "Start setup": [
-        "Započni postavljanje"
-      ],
-      "Skip": [
-        "Preskoči"
-      ],
-      "Back": [
-        "Natrag"
-      ],
-      "Use ${ label } theme": [
-        "Koristi ${ label } temu"
-      ],
-      "OK": [
-        "U redu"
-      ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Try again": [
-        ""
-      ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
-      "Retry": [
-        ""
-      ],
-      "Loading verification": [
-        ""
-      ],
-      "Select plan": [
-        ""
-      ],
-      "Compare all features": [
-        ""
-      ],
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
-      "Pay": [
-        ""
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
-      ],
-      "Remove gift code": [
-        ""
-      ],
-      "annual billing": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
-      "Decrease": [
-        ""
-      ],
-      "Increase": [
-        ""
-      ],
-      "Log in": [
-        "Prijavite se"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "Novo učitavanje"
-      ],
-      "Maximize transfers": [
-        "Proširi prijenose"
-      ],
-      "Minimize transfers": [
-        "Smanji prijenose"
-      ],
-      "Close transfers": [
-        "Zatvori prijenose"
-      ],
-      "Pause download": [
-        "Pauziraj preuzimanje"
-      ],
-      "Pause upload": [
-        "Pauziraj učitavanje"
-      ],
-      "Resume download": [
-        "Nastavi s preuzimanjem"
-      ],
-      "Resume upload": [
-        "Nastavi učitavanje"
-      ],
-      "Cancel download": [
-        "Zaustavi preuzimanje"
-      ],
-      "Cancel upload": [
-        "Odustani od učitavanja"
-      ],
-      "Restart download": [
-        "Ponovno pokreni preuzimanje"
-      ],
-      "Restart upload": [
-        "Ponovno pokreni učitavanje"
-      ],
-      "Remove from this list": [
-        "Ukloni s popisa"
-      ],
-      "List layout": [
-        "Izgled popisa"
-      ],
-      "Grid layout": [
-        "Izgled mreže"
-      ],
-      "Rename": [
-        "Preimenuj"
-      ],
-      "Move to folder": [
-        "Premjesti u mapu"
-      ],
-      "Move to trash": [
-        "Premjesti u otpad"
-      ],
-      "Create new folder": [
-        "Stvori novu mapu"
-      ],
-      "Name: A to Z": [
-        "Naziv: A do Ž"
-      ],
-      "Name: Z to A": [
-        "Naziv: Ž do A"
-      ],
-      "Modified date: new to old": [
-        "Datum promjene: Od novog do starog"
-      ],
-      "Modified date: old to new": [
-        "Datum promjene: Od starog do novog"
-      ],
-      "Type: A to Z": [
-        "Vrsta: A do Ž"
-      ],
-      "Type: Z to A": [
-        "Vrsta: Ž do A"
-      ],
-      "Size: small to large": [
-        "Veličina: Od malo prema velikom"
-      ],
-      "Size: large to small": [
-        "Veličina: Od veliko prema malom"
-      ],
-      "Upload file": [
-        "Učitaj datoteku"
-      ],
-      "Upload folder": [
-        "Učitaj mapu"
-      ],
-      "Delete permanently": [
-        "Trajno izbriši"
-      ],
-      "Restore from trash": [
-        "Vrati iz otpada"
-      ],
-      "Empty trash": [
-        "Isprazni otpad"
-      ],
-      "Share": [
-        "Podijeli"
-      ],
-      "Create": [
-        "Stvori"
-      ],
-      "Preview": [
-        "Pregled"
-      ],
-      "Stop sharing": [
-        "Zaustavi dijeljenje"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Share file": [
-        "Dijeli datoteku"
-      ],
-      "Start recovering": [
-        "Započni oporavak"
-      ],
-      "View more": [
-        "Pogledaj više"
-      ],
-      "Move": [
-        "Premjesti"
-      ],
-      "Copy link": [
-        "Kopiraj poveznicu"
-      ],
-      "Create link": [
-        "Stvori poveznicu"
-      ],
-      "Undo": [
-        "Poništi"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Otvorite padajući izbornik radnji"
-      ],
-      "Upgrade required": [
-        "Potrebno je ažuriranje"
-      ],
-      "Email settings": [
-        "Postavke e-pošte"
-      ],
-      "Contact group": [
-        "Grupa kontakta"
-      ],
-      "Link confirmation": [
-        "Potvrda poveznice"
-      ],
-      "Keyboard Shortcuts": [
-        "Tipkovni prečaci"
-      ],
-      "What's new": [
-        "Što je novo"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
-      "Request new verification code": [
-        "Zatražite novi kôd za potvrdu"
-      ],
-      "Human verification": [
-        "Ljudska provjera"
-      ],
-      "Edit contact group": [
-        "Uredi grupu kontakata"
-      ],
-      "Create new group": [
-        "Stvori novu grupu"
-      ],
-      "Add to ${ groupName }": [
-        "Dodaj u ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Dodaj u ${ groupCount } grupu",
-        "Dodaj u ${ groupCount } grupe",
-        "Dodaj u ${ groupCount } grupa"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Postavke e-pošte (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Izbriši ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Izbriši ${ count } grupu kontakata",
-        "Izbriši ${ count } grupe kontakata",
-        "Izbriši ${ count } grupa kontakata"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } član",
-        "${ emailsCount } člana",
-        "${ emailsCount } članova"
-      ],
-      "Edit image": [
-        "Uredi sliku"
-      ],
-      "Edit contact": [
-        "Uredi kontakt"
-      ],
-      "Create contact": [
-        "Stvori kontakt"
-      ],
-      "Delete ${ count } contact": [
-        "Izbriši ${ count } kontakt",
-        "Izbriši ${ count } kontakta",
-        "Izbriši ${ count } kontakata"
-      ],
-      "Clearing data": [
-        "Brisanje podataka"
-      ],
-      "Warning": [
-        "Upozorenje"
-      ],
-      "Recover data": [
-        "Oporavi podatke"
-      ],
-      "Re-signing contacts": [
-        "Ponovno potpisivanje kontakata"
-      ],
-      "Re-sign all contacts": [
-        "Ponovno potpiši sve kontakte"
-      ],
-      "Exporting contacts": [
-        "Izvoz kontakata"
-      ],
-      "Other names": [
-        "Ostali nazivi"
-      ],
-      "Email addresses": [
-        "Adrese e-pošte"
-      ],
-      "Phone numbers": [
-        "Telefonski brojevi"
-      ],
-      "Addresses": [
-        "Adrese"
-      ],
-      "Other information": [
-        "Ostale informacije"
-      ],
-      "Contact Details": [
-        "Detalji o kontaktu"
-      ],
-      "Merging contacts": [
-        "Spajanje kontakta"
-      ],
-      "Merge contacts": [
-        "Spoji kontakte"
-      ],
-      "Deleting contacts": [
-        ""
-      ],
-      "View contacts": [
-        "Pregled kontakta"
-      ],
-      "Contacts": [
-        "Kontakti"
-      ],
-      "Groups": [
-        "Grupe"
-      ],
-      "Settings": [
-        "Postavke"
-      ],
-      "Select action to take on contact group": [
-        "Odaberite radnju koju želite izvršiti nad grupom kontakata"
-      ],
-      "Add contact group name": [
-        "Dodaj naziv grupi kontakata"
-      ],
-      "Select contact group": [
-        "Odaberi grupu kontakta"
-      ],
-      "Import groups": [
-        "Uvezi grupe"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Report a problem": [
-        "Prijavi problem"
-      ],
-      "Start import process": [
-        "Započni uvoz"
-      ],
-      "Import in progress": [
-        "Uvoz u tijeku"
-      ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
-      "Back": [
-        "Natrag"
-      ],
-      "Open settings menu": [
-        "Otvori izbornik postavki"
-      ],
-      "Select a theme": [
-        "Odaberi temu"
-      ],
-      "Confirm loss of Proton bonuses": [
-        ""
-      ],
-      "Unsupported browser": [
-        ""
-      ],
-      "Card verification": [
-        ""
-      ],
-      "Payment verification": [
-        ""
-      ],
-      "Processing...": [
-        ""
-      ],
-      "Card verification in progress": [
-        ""
-      ],
-      "Payment verification in progress": [
-        ""
-      ],
-      "PayPal verification failed": [
-        ""
-      ],
-      "3-D Secure verification failed": [
-        ""
-      ],
-      "Error": [
-        ""
-      ],
-      "ZIP / postal code": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Currency": [
-        ""
-      ],
-      "Billing cycle": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
-      "Processing": [
-        ""
-      ],
-      "Apply gift code": [
-        ""
-      ],
-      "Subtotal": [
-        ""
-      ],
-      "Coupon discount": [
-        ""
-      ],
-      "Total (monthly)": [
-        ""
-      ],
-      "Credits": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Amount due": [
-        ""
-      ],
-      "Cancel subscription": [
-        ""
-      ],
-      "Network error": [
-        ""
-      ],
-      "Select a plan": [
-        ""
-      ],
-      "Customize your plan": [
-        ""
-      ],
-      "Checkout": [
-        ""
-      ],
-      "Plan summary": [
-        ""
-      ],
-      "${ appName } customization": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "Ponovno se prijavite da biste nastavili"
-      ],
-      "Account suspended": [
-        "Račun je suspendiran"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
-      ],
-      "Enter your password": [
-        "Unesite vašu lozinku"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } tipkovni prečaci"
-      ],
-      "Mailbox density": [
-        "Gustoća poštanskog sandučića"
-      ],
-      "Mailbox layout": [
-        "Izgled poštanskog sandučića"
-      ],
-      "Composer mode": [
-        "Način rada prozora za novu poruku"
-      ],
-      "Beta Access": [
-        "Beta pristup"
-      ],
-      "Duplicate folder found": [
-        ""
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "Ispustite za učitati"
-      ],
-      "Cancel all active transfers": [
-        "Otkaži sve aktivne prijenose"
-      ],
-      "Change layout": [
-        "Promijeni izgled"
-      ],
-      "Show actions": [
-        "Prikaži radnje"
-      ],
-      "Sort files/folders": [
-        "Sortiraj datoteke/mape"
-      ],
-      "Trash": [
-        "Otpad"
-      ],
-      "Empty trash": [
-        "Isprazni otpad"
-      ],
-      "My files": [
-        "Moje datoteke"
-      ],
-      "You have no folders yet": [
-        "Nema mapa"
-      ],
-      "You have no files to share": [
-        "Nemate datoteka za dijeljenje"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        "Vaša datoteka je spremna za preuzimanje"
-      ],
-      "Download completed": [
-        "Preuzimanje je završeno"
-      ],
-      "Download failed": [
-        "Neuspješno preuzimanje"
-      ],
-      "Download canceled": [
-        "Preuzimanje je otkazano"
-      ],
-      "Downloading": [
-        "Preuzimanje"
-      ],
-      "Enter file password to download": [
-        "Unesite lozinku datoteke za preuzimanje"
-      ],
-      "The link either does not exist or has expired": [
-        "Poveznica ne postoji ili je istekla"
-      ],
-      "Restore your files": [
-        "Vratite vaše datoteke"
-      ],
-      "File recovery process": [
-        "Proces oporavka datoteka"
-      ],
-      "You have inaccessible files": [
-        "Imate nepristupačne datoteke"
-      ],
-      "Rename a folder": [
-        "Preimenuj mapu"
-      ],
-      "Rename a file": [
-        "Preimenuj datoteku"
-      ],
-      "File details": [
-        "Pojedinosti datoteke"
-      ],
-      "Folder details": [
-        "Detalji mape"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "Uploaded by": [
-        "Prenio"
-      ],
-      "Location": [
-        "Lokacija"
-      ],
-      "Modified": [
-        "Promijenjeno"
-      ],
-      "Type": [
-        "Vrsta"
-      ],
-      "MIME type": [
-        "MIME vrsta"
-      ],
-      "Size": [
-        "Veličina"
-      ],
-      "Shared": [
-        "Dijeljeno"
-      ],
-      "# of accesses": [
-        "Broj pristupanja"
-      ],
-      "Create a new folder": [
-        "Stvori novu mapu"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Select link expiration date": [
-        "Odaberite datum isteka poveznice"
-      ],
-      "Select link expiration time": [
-        "Odaberite vrijeme isteka poveznice"
-      ],
-      "Share via link": [
-        "Podijeli putem poveznice"
-      ],
-      "Additional settings": [
-        "Dodatne postavke"
-      ],
-      "Manage secure link": [
-        "Upravljanje sigurnom poveznicom"
-      ],
-      "Stop sharing with everyone?": [
-        "Zaustavi dijeljenje s svima?"
-      ],
-      "Discard changes?": [
-        "Odbaci promjene?"
-      ],
-      "Discard": [
-        "Odbaci"
-      ],
-      "Files details": [
-        "Pojedinosti datoteka"
-      ],
-      "Number of files": [
-        "Broj datoteka"
-      ],
-      "Total size": [
-        "Ukupna veličina"
-      ],
-      "Delete permanently": [
-        "Trajno izbriši"
-      ],
-      "Stop sharing": [
-        "Zaustavi dijeljenje"
-      ]
-    },
     "Info": {
-      "No results found": [
-        "Nema rezultata"
-      ],
       "Loading": [
         "Učitavanje"
+      ],
+      "No results found": [
+        "Nema rezultata"
       ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
       ],
       "Week": [
         "Tjedan"
-      ],
-      "support team": [
-        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
@@ -1206,6 +230,12 @@
       ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
+      ],
+      "support team": [
+        ""
+      ],
+      "Loading ${ appName }": [
+        "Učitavanje ${ appName }"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
@@ -1236,6 +266,24 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
+      ],
+      "Unsupported file": [
+        "Nepodržana datoteka"
+      ],
+      "No preview available": [
+        "Pregled nije dostupan"
+      ],
+      "Preview": [
+        "Pregled"
+      ],
+      "Loading preview": [
+        "Učitavanje pregleda"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
+      ],
+      "of": [
+        "od"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } član",
@@ -1355,33 +403,6 @@
         "${ addressCount } adrese e-pošte",
         "${ addressCount } adresa e-pošte"
       ],
-      "Loading ${ appName }": [
-        "Učitavanje ${ appName }"
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
-      ],
-      "Unsupported file": [
-        "Nepodržana datoteka"
-      ],
-      "No preview available": [
-        "Pregled nije dostupan"
-      ],
-      "Preview": [
-        "Pregled"
-      ],
-      "Loading preview": [
-        "Učitavanje pregleda"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
-      ],
-      "of": [
-        "od"
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
       ],
@@ -1421,29 +442,11 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
-      "Import contacts": [
-        "Uvezi kontakte"
+      "Screenshot(s) attached": [
+        "Snimka(e) zaslona su pridodane"
       ],
-      "Your contacts are being imported from": [
-        "Vaši kontakti se uvoze iz"
-      ],
-      "to": [
-        "za"
-      ],
-      "Your import has started!": [
-        "Vaš uvoz je započeo!"
-      ],
-      "We will notify you once your import is finished.": [
-        "Obavijestiti ćemo vas nakon završetka uvoza."
-      ],
-      "Large imports can take several days to complete.": [
-        "Veći uvozi mogu potrajati i do nekoliko dana."
-      ],
-      "You can continue using Proton services as usual.": [
-        "Možete nastaviti koristiti Proton usluge kao i obično."
-      ],
-      "Your import will not be processed.": [
-        "Vaš uvoz nije moguće obraditi."
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
@@ -1686,6 +689,30 @@
       "Expired": [
         ""
       ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
+      "Your contacts are being imported from": [
+        "Vaši kontakti se uvoze iz"
+      ],
+      "to": [
+        "za"
+      ],
+      "Your import has started!": [
+        "Vaš uvoz je započeo!"
+      ],
+      "We will notify you once your import is finished.": [
+        "Obavijestiti ćemo vas nakon završetka uvoza."
+      ],
+      "Large imports can take several days to complete.": [
+        "Veći uvozi mogu potrajati i do nekoliko dana."
+      ],
+      "You can continue using Proton services as usual.": [
+        "Možete nastaviti koristiti Proton usluge kao i obično."
+      ],
+      "Your import will not be processed.": [
+        "Vaš uvoz nije moguće obraditi."
+      ],
       "here": [
         "ovdje"
       ],
@@ -1736,6 +763,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše datoteke će biti šifrirane i spremljene."
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Dovršeno",
@@ -1822,9 +852,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Zatvaranjem upravitelja prijenosa otkazat će se svi aktivni prijenosi, jeste li sigurni?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
-      ],
       "Create your first folder and start moving your files.": [
         "Stvorite svoju prvu mapu i počnite premještati datoteke."
       ],
@@ -1897,6 +924,9 @@
       "Failed to generate a secure link. Try again later.": [
         "Generiranje sigurne poveznice nije uspjelo. Pokušajte ponovno kasnije."
       ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        ""
+      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Ova poveznica će biti trajno onemogućena. Nitko s ovom poveznicom neće moći pristupiti vašoj datoteci. Da biste datoteku ponovno podijelili, trebat će vam nova poveznica."
       ],
@@ -1935,6 +965,979 @@
       ],
       "My Links": [
         "Moje poveznice"
+      ]
+    },
+    "Action": {
+      "Close": [
+        "Zatvori"
+      ],
+      "Confirm": [
+        "Potvrdi"
+      ],
+      "Cancel": [
+        "Poništi"
+      ],
+      "Close modal": [
+        "Zatvori skočni prozor"
+      ],
+      "Submit": [
+        "Pošalji"
+      ],
+      "Use “${ label }” setting": [
+        "Koristi “${ label }” postavku"
+      ],
+      "More info: ${ safeTitle }": [
+        "Više informacija: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Zatvori navigaciju"
+      ],
+      "Open navigation": [
+        "Otvori navigaciju"
+      ],
+      "Go to panel ${ index }": [
+        "Idi na ${ index } panel"
+      ],
+      "Load image": [
+        "Učitaj sliku"
+      ],
+      "Export": [
+        "Izvoz"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Edit": [
+        "Uredi"
+      ],
+      "Remove": [
+        "Ukloni"
+      ],
+      "Download": [
+        "Preuzmi"
+      ],
+      "Use for sending": [
+        "Koristi za slanje"
+      ],
+      "Trust": [
+        "Vjeruj"
+      ],
+      "Untrust": [
+        "Označi kao nepouzdano"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Email settings": [
+        "Postavke e-pošte"
+      ],
+      "Contact group": [
+        "Grupa kontakta"
+      ],
+      "Upload picture": [
+        "Učitaj sliku"
+      ],
+      "Next month": [
+        "Sljedeći mjesec"
+      ],
+      "Previous month": [
+        "Prethodni mjesec"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Potvrdite otvaranje poveznice ${ link }"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
+      ],
+      "Signing out": [
+        "Odjavljivanje"
+      ],
+      "View invoice": [
+        "Prikaži fakturu"
+      ],
+      "Get verification code": [
+        "Nabavi kôd za provjeru"
+      ],
+      "Try another method": [
+        "Isprobajte drugu metodu"
+      ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
+      "Verify": [
+        "Potvrdi"
+      ],
+      "Did not receive the code?": [
+        "Niste primili kôd?"
+      ],
+      "Edit email address": [
+        "Uredi adresu e-pošte"
+      ],
+      "Edit phone number": [
+        "Uredi broj telefona"
+      ],
+      "Details": [
+        "Pojedinosti"
+      ],
+      "Share via link": [
+        "Podijeli putem poveznice"
+      ],
+      "Sharing options": [
+        "Opcije dijeljenja"
+      ],
+      "Zoom out": [
+        "Smanji"
+      ],
+      "Reset zoom": [
+        "Poništi zumiranje"
+      ],
+      "Zoom in": [
+        "Povećaj"
+      ],
+      "Previous": [
+        "Prethodno"
+      ],
+      "Next": [
+        "Sljedeće"
+      ],
+      "Save": [
+        "Spremi"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Apply": [
+        "Primijeni"
+      ],
+      "Hide advanced PGP settings": [
+        "Sakrij napredne PGP postavke"
+      ],
+      "Show advanced PGP settings": [
+        "Pokaži napredne PGP postavke"
+      ],
+      "Done": [
+        "Gotovo"
+      ],
+      "Clear data": [
+        "Izbriši podatke"
+      ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
+      "Click here.": [
+        "Kliknite ovdje."
+      ],
+      "Re-sign": [
+        "Ponovna prijava"
+      ],
+      "Add to group": [
+        "Dodaj u grupu"
+      ],
+      "Merge": [
+        "Spoji"
+      ],
+      "View": [
+        "Pregled"
+      ],
+      "Unmark for deletion": [
+        "Odznači za brisanje"
+      ],
+      "Mark for deletion": [
+        "Označi za brisanje"
+      ],
+      "Preview contact": [
+        "Pregled kontakta"
+      ],
+      "Continue": [
+        "Nastavi"
+      ],
+      "Delete contact": [
+        "Izbriši kontakt"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Izbriši ${ selectedCount } kontakt",
+        "Izbriši ${ selectedCount } kontakta",
+        "Izbriši ${ selectedCount } kontakata"
+      ],
+      "Deselect all": [
+        "Odznači sve"
+      ],
+      "Select all": [
+        "Odaberi sve"
+      ],
+      "Compose": [
+        "Nova poruka"
+      ],
+      "Forward as attachment": [
+        "Proslijedi kao privitak"
+      ],
+      "Merge contacts": [
+        "Spoji kontakte"
+      ],
+      "Add new contact": [
+        "Dodaj novi kontakt"
+      ],
+      "Add group": [
+        "Dodaj grupu"
+      ],
+      "Clear query": [
+        "Izbriši upit"
+      ],
+      "Add contact": [
+        "Dodaj kontakt"
+      ],
+      "import": [
+        "uvoz"
+      ],
+      "Delete contact group": [
+        "Izbriši grupu kontakta"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Izbriši ${ selectedCount } grupu kontakata",
+        "Izbriši ${ selectedCount } grupe kontakata",
+        "Izbriši ${ selectedCount } grupa kontakata"
+      ],
+      "Add new group": [
+        "Dodaj novu grupu"
+      ],
+      "Export contacts": [
+        "Uvezi kontakte"
+      ],
+      "Continue with Google": [
+        "Nastavi s Googleom"
+      ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
+      "Choose a file or drag it here": [
+        "Odaberite datoteku ili je dovucite ovdje"
+      ],
+      "Import": [
+        "Uvoz"
+      ],
+      "Close this banner": [
+        "Zatvori natpis"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
+      ],
+      "enable desktop notifications": [
+        "omogući obavijesti radne površine"
+      ],
+      "here": [
+        "ovdje"
+      ],
+      "Clear": [
+        "Očisti"
+      ],
+      "Add screenshot(s)": [
+        "Dodaj snimku(e) zaslona"
+      ],
+      "Hide info": [
+        "Sakrij informacije"
+      ],
+      "Show info": [
+        "Prikaži informacije"
+      ],
+      "Copy email to clipboard": [
+        "Kopiraj adresu e-pošte u međuspremnik"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } predstavljanje"
+      ],
+      "I have a question": [
+        "Imam pitanje"
+      ],
+      "Request a feature": [
+        "Zatraži značajku"
+      ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } dućan"
+      ],
+      "Switch account": [
+        "Promijeni račun"
+      ],
+      "Sign out": [
+        "Odjava"
+      ],
+      "Go to settings": [
+        "Idi na postavke"
+      ],
+      "Beta Access": [
+        "Beta pristup"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "Mailbox layout": [
+        "Izgled poštanskog sandučića"
+      ],
+      "Mailbox density": [
+        "Gustoća poštanskog sandučića"
+      ],
+      "Composer mode": [
+        "Način rada prozora za novu poruku"
+      ],
+      "Get started": [
+        "Započnite"
+      ],
+      "Start setup": [
+        "Započni postavljanje"
+      ],
+      "Skip": [
+        "Preskoči"
+      ],
+      "Back": [
+        "Natrag"
+      ],
+      "Use ${ label } theme": [
+        "Koristi ${ label } temu"
+      ],
+      "OK": [
+        "U redu"
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        ""
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
+        ""
+      ],
+      "Continue import": [
+        "Nastavi uvoz"
+      ],
+      "Discard": [
+        "Odbaci"
+      ],
+      "Reconnect": [
+        "Ponovno povezivanje"
+      ],
+      "Start import": [
+        "Započni uvoz"
+      ],
+      "Log in": [
+        "Prijavite se"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "New upload": [
+        "Novo učitavanje"
+      ],
+      "List layout": [
+        "Izgled popisa"
+      ],
+      "Grid layout": [
+        "Izgled mreže"
+      ],
+      "Rename": [
+        "Preimenuj"
+      ],
+      "Move to folder": [
+        "Premjesti u mapu"
+      ],
+      "Move to trash": [
+        "Premjesti u otpad"
+      ],
+      "Create new folder": [
+        "Stvori novu mapu"
+      ],
+      "Name: A to Z": [
+        "Naziv: A do Ž"
+      ],
+      "Name: Z to A": [
+        "Naziv: Ž do A"
+      ],
+      "Modified date: new to old": [
+        "Datum promjene: Od novog do starog"
+      ],
+      "Modified date: old to new": [
+        "Datum promjene: Od starog do novog"
+      ],
+      "Type: A to Z": [
+        "Vrsta: A do Ž"
+      ],
+      "Type: Z to A": [
+        "Vrsta: Ž do A"
+      ],
+      "Size: small to large": [
+        "Veličina: Od malo prema velikom"
+      ],
+      "Size: large to small": [
+        "Veličina: Od veliko prema malom"
+      ],
+      "Upload file": [
+        "Učitaj datoteku"
+      ],
+      "Upload folder": [
+        "Učitaj mapu"
+      ],
+      "Delete permanently": [
+        "Trajno izbriši"
+      ],
+      "Restore from trash": [
+        "Vrati iz otpada"
+      ],
+      "Empty trash": [
+        "Isprazni otpad"
+      ],
+      "Maximize transfers": [
+        "Proširi prijenose"
+      ],
+      "Minimize transfers": [
+        "Smanji prijenose"
+      ],
+      "Close transfers": [
+        "Zatvori prijenose"
+      ],
+      "Pause download": [
+        "Pauziraj preuzimanje"
+      ],
+      "Pause upload": [
+        "Pauziraj učitavanje"
+      ],
+      "Resume download": [
+        "Nastavi s preuzimanjem"
+      ],
+      "Resume upload": [
+        "Nastavi učitavanje"
+      ],
+      "Cancel download": [
+        "Zaustavi preuzimanje"
+      ],
+      "Cancel upload": [
+        "Odustani od učitavanja"
+      ],
+      "Restart download": [
+        "Ponovno pokreni preuzimanje"
+      ],
+      "Restart upload": [
+        "Ponovno pokreni učitavanje"
+      ],
+      "Remove from this list": [
+        "Ukloni s popisa"
+      ],
+      "Share": [
+        "Podijeli"
+      ],
+      "Create": [
+        "Stvori"
+      ],
+      "Preview": [
+        "Pregled"
+      ],
+      "Stop sharing": [
+        "Zaustavi dijeljenje"
+      ],
+      "Show shared link details": [
+        ""
+      ],
+      "Share file": [
+        "Dijeli datoteku"
+      ],
+      "Start recovering": [
+        "Započni oporavak"
+      ],
+      "View more": [
+        "Pogledaj više"
+      ],
+      "Move": [
+        "Premjesti"
+      ],
+      "Copy link": [
+        "Kopiraj poveznicu"
+      ],
+      "Create link": [
+        "Stvori poveznicu"
+      ],
+      "Undo": [
+        "Poništi"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "Otvorite padajući izbornik radnji"
+      ],
+      "Upgrade required": [
+        "Potrebno je ažuriranje"
+      ],
+      "Email settings": [
+        "Postavke e-pošte"
+      ],
+      "Contact group": [
+        "Grupa kontakta"
+      ],
+      "Link confirmation": [
+        "Potvrda poveznice"
+      ],
+      "Keyboard Shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "What's new": [
+        "Što je novo"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
+      ],
+      "Request new verification code": [
+        "Zatražite novi kôd za potvrdu"
+      ],
+      "Human verification": [
+        "Ljudska provjera"
+      ],
+      "Edit contact group": [
+        "Uredi grupu kontakata"
+      ],
+      "Create new group": [
+        "Stvori novu grupu"
+      ],
+      "Add to ${ groupName }": [
+        "Dodaj u ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "Dodaj u ${ groupCount } grupu",
+        "Dodaj u ${ groupCount } grupe",
+        "Dodaj u ${ groupCount } grupa"
+      ],
+      "Email settings (${ emailAddress })": [
+        "Postavke e-pošte (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "Izbriši ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "Izbriši ${ count } grupu kontakata",
+        "Izbriši ${ count } grupe kontakata",
+        "Izbriši ${ count } grupa kontakata"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } član",
+        "${ emailsCount } člana",
+        "${ emailsCount } članova"
+      ],
+      "Edit image": [
+        "Uredi sliku"
+      ],
+      "Edit contact": [
+        "Uredi kontakt"
+      ],
+      "Create contact": [
+        "Stvori kontakt"
+      ],
+      "Delete ${ count } contact": [
+        "Izbriši ${ count } kontakt",
+        "Izbriši ${ count } kontakta",
+        "Izbriši ${ count } kontakata"
+      ],
+      "Clearing data": [
+        "Brisanje podataka"
+      ],
+      "Warning": [
+        "Upozorenje"
+      ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
+      "Re-signing contacts": [
+        "Ponovno potpisivanje kontakata"
+      ],
+      "Re-sign all contacts": [
+        "Ponovno potpiši sve kontakte"
+      ],
+      "Exporting contacts": [
+        "Izvoz kontakata"
+      ],
+      "Other names": [
+        "Ostali nazivi"
+      ],
+      "Email addresses": [
+        "Adrese e-pošte"
+      ],
+      "Phone numbers": [
+        "Telefonski brojevi"
+      ],
+      "Addresses": [
+        "Adrese"
+      ],
+      "Other information": [
+        "Ostale informacije"
+      ],
+      "Contact Details": [
+        "Detalji o kontaktu"
+      ],
+      "Merging contacts": [
+        "Spajanje kontakta"
+      ],
+      "Merge contacts": [
+        "Spoji kontakte"
+      ],
+      "Deleting contacts": [
+        ""
+      ],
+      "View contacts": [
+        "Pregled kontakta"
+      ],
+      "Contacts": [
+        "Kontakti"
+      ],
+      "Groups": [
+        "Grupe"
+      ],
+      "Settings": [
+        "Postavke"
+      ],
+      "Select action to take on contact group": [
+        "Odaberite radnju koju želite izvršiti nad grupom kontakata"
+      ],
+      "Add contact group name": [
+        "Dodaj naziv grupi kontakata"
+      ],
+      "Select contact group": [
+        "Odaberi grupu kontakta"
+      ],
+      "Import groups": [
+        "Uvezi grupe"
+      ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
+      "Open help menu": [
+        "Otvori izbornik pomoći"
+      ],
+      "Back": [
+        "Natrag"
+      ],
+      "Open settings menu": [
+        "Otvori izbornik postavki"
+      ],
+      "Select a theme": [
+        "Odaberi temu"
+      ],
+      "Confirm loss of Proton bonuses": [
+        ""
+      ],
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Start import process": [
+        "Započni uvoz"
+      ],
+      "Import in progress": [
+        "Uvoz u tijeku"
+      ],
+      "Sign in again to continue": [
+        "Ponovno se prijavite da biste nastavili"
+      ],
+      "Account suspended": [
+        "Račun je suspendiran"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
+      ],
+      "Enter your password": [
+        "Unesite vašu lozinku"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } tipkovni prečaci"
+      ],
+      "Mailbox density": [
+        "Gustoća poštanskog sandučića"
+      ],
+      "Mailbox layout": [
+        "Izgled poštanskog sandučića"
+      ],
+      "Composer mode": [
+        "Način rada prozora za novu poruku"
+      ],
+      "Beta Access": [
+        "Beta pristup"
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "Ispustite za učitati"
+      ],
+      "Change layout": [
+        "Promijeni izgled"
+      ],
+      "Show actions": [
+        "Prikaži radnje"
+      ],
+      "Sort files/folders": [
+        "Sortiraj datoteke/mape"
+      ],
+      "Trash": [
+        "Otpad"
+      ],
+      "Empty trash": [
+        "Isprazni otpad"
+      ],
+      "Cancel all active transfers": [
+        "Otkaži sve aktivne prijenose"
+      ],
+      "My files": [
+        "Moje datoteke"
+      ],
+      "You have no folders yet": [
+        "Nema mapa"
+      ],
+      "You have no files to share": [
+        "Nemate datoteka za dijeljenje"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "Vaša datoteka je spremna za preuzimanje"
+      ],
+      "Download completed": [
+        "Preuzimanje je završeno"
+      ],
+      "Download failed": [
+        "Neuspješno preuzimanje"
+      ],
+      "Download canceled": [
+        "Preuzimanje je otkazano"
+      ],
+      "Downloading": [
+        "Preuzimanje"
+      ],
+      "Enter file password to download": [
+        "Unesite lozinku datoteke za preuzimanje"
+      ],
+      "The link either does not exist or has expired": [
+        "Poveznica ne postoji ili je istekla"
+      ],
+      "Restore your files": [
+        "Vratite vaše datoteke"
+      ],
+      "File recovery process": [
+        "Proces oporavka datoteka"
+      ],
+      "You have inaccessible files": [
+        "Imate nepristupačne datoteke"
+      ],
+      "Rename a folder": [
+        "Preimenuj mapu"
+      ],
+      "Rename a file": [
+        "Preimenuj datoteku"
+      ],
+      "File details": [
+        "Pojedinosti datoteke"
+      ],
+      "Folder details": [
+        "Detalji mape"
+      ],
+      "Name": [
+        "Naziv"
+      ],
+      "Uploaded by": [
+        "Prenio"
+      ],
+      "Location": [
+        "Lokacija"
+      ],
+      "Modified": [
+        "Promijenjeno"
+      ],
+      "Type": [
+        "Vrsta"
+      ],
+      "MIME type": [
+        "MIME vrsta"
+      ],
+      "Size": [
+        "Veličina"
+      ],
+      "Shared": [
+        "Dijeljeno"
+      ],
+      "# of accesses": [
+        "Broj pristupanja"
+      ],
+      "Create a new folder": [
+        "Stvori novu mapu"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Select link expiration date": [
+        "Odaberite datum isteka poveznice"
+      ],
+      "Select link expiration time": [
+        "Odaberite vrijeme isteka poveznice"
+      ],
+      "Share via link": [
+        "Podijeli putem poveznice"
+      ],
+      "Additional settings": [
+        "Dodatne postavke"
+      ],
+      "Manage secure link": [
+        "Upravljanje sigurnom poveznicom"
+      ],
+      "Stop sharing with everyone?": [
+        "Zaustavi dijeljenje s svima?"
+      ],
+      "Discard changes?": [
+        "Odbaci promjene?"
+      ],
+      "Discard": [
+        "Odbaci"
+      ],
+      "Files details": [
+        "Pojedinosti datoteka"
+      ],
+      "Number of files": [
+        "Broj datoteka"
+      ],
+      "Total size": [
+        "Ukupna veličina"
+      ],
+      "Delete permanently": [
+        "Trajno izbriši"
+      ],
+      "Stop sharing": [
+        "Zaustavi dijeljenje"
       ]
     },
     "Label": {
@@ -2043,12 +2046,6 @@
       "Browser version": [
         "Verzija preglednika"
       ],
-      "From: ${ fromEmailAddress }": [
-        "Od: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Za: ${ toEmailAddress }"
-      ],
       "Display name": [
         "Zaslonski naziv"
       ],
@@ -2099,6 +2096,12 @@
       ],
       "Payer": [
         ""
+      ],
+      "From: ${ fromEmailAddress }": [
+        "Od: ${ fromEmailAddress }"
+      ],
+      "To: ${ toEmailAddress }": [
+        "Za: ${ toEmailAddress }"
       ],
       "Cancel": [
         "Poništi"
@@ -2208,44 +2211,6 @@
         ""
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Request an invite": [
-        "Zatraži pozivnicu"
-      ],
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
-      ],
-      "Pay invoice": [
-        "Plati račun"
-      ],
-      "Upgrade account": [
-        "Nadogradi račun"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Go to subscription plans": [
-        "Idi na planove pretplate"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "My files": [
-        "Moje datoteke"
-      ],
-      "Shared": [
-        "Dijeljeno"
-      ],
-      "Trash": [
-        "Otpad"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Npr. "
@@ -2321,6 +2286,44 @@
         "${ minutes } minuta",
         "${ minutes } minute",
         "${ minutes } minuta"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saznajte više"
+      ],
+      "Request an invite": [
+        "Zatraži pozivnicu"
+      ],
+      "Pay invoice": [
+        "Plati račun"
+      ],
+      "Upgrade account": [
+        "Nadogradi račun"
+      ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Go to subscription plans": [
+        "Idi na planove pretplate"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "My files": [
+        "Moje datoteke"
+      ],
+      "Shared": [
+        "Dijeljeno"
+      ],
+      "Trash": [
+        "Otpad"
       ]
     },
     "Storage": {
@@ -2517,17 +2520,17 @@
       "Contacts could not be merged": [
         "Nije bilo moguće spajanje kontakata"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
       ],
-      "Are you sure you want to discard your import?": [
-        "Jeste li sigurni da želite odbaciti vaš uvoz?"
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
+      ],
+      "Are you sure you want to discard your import?": [
+        "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ]
     },
     "Success": {
@@ -2604,6 +2607,49 @@
         "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
         "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
         "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikacije"
+      ],
+      "Go to ${ title }": [
+        "Idi na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Idi na ${ vpnName }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ups, nešto je pošlo po zlu"
+      ],
+      "There was a problem connecting to Proton.": [
+        "Došlo je do problema pri povezivanju s Protonom."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Molimo ${ refresh } ili provjerite vezu."
+      ],
+      "Error: ${ errorMessage }": [
+        "Pogreška: ${ errorMessage }"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Molimo pričekajte dok ne popravimo pogrešku."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Možete ${ refresh } ili pokušati ponovo kasnije."
+      ],
+      "Internal server error": [
+        "Interna pogreška poslužitelja"
+      ],
+      "You may also refresh the page or try again later.": [
+        "Možete osvježiti stranicu ili pokušati ponovo kasnije."
+      ],
+      "Not found": [
+        "Nije pronađeno"
+      ],
+      "Access denied": [
+        "Pristup odbijen"
       ]
     },
     "Delinquent modal title": {
@@ -3028,47 +3074,9 @@
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
-      ],
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ups, nešto je pošlo po zlu"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Došlo je do problema pri povezivanju s Protonom."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Molimo ${ refresh } ili provjerite vezu."
-      ],
-      "Error: ${ errorMessage }": [
-        "Pogreška: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Molimo pričekajte dok ne popravimo pogrešku."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Možete ${ refresh } ili pokušati ponovo kasnije."
-      ],
-      "Internal server error": [
-        "Interna pogreška poslužitelja"
-      ],
-      "You may also refresh the page or try again later.": [
-        "Možete osvježiti stranicu ili pokušati ponovo kasnije."
-      ],
-      "Not found": [
-        "Nije pronađeno"
-      ],
-      "Access denied": [
-        "Pristup odbijen"
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3172,32 +3180,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dodajte snimku(e) zaslona"
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        "Spajanje s vašim pružateljem kontakata"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Autenticiraj"
-      ],
-      "Configure Import": [
-        "Prilagodite uvoz"
-      ],
-      "Import": [
-        "Uvoz"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "Zaustavi uvoz?"
       ]
     },
     "Text": {
@@ -3727,6 +3709,27 @@
       ],
       "Bitcoin": [
         ""
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        "Spajanje s vašim pružateljem kontakata"
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "Autenticiraj"
+      ],
+      "Configure Import": [
+        "Prilagodite uvoz"
+      ],
+      "Import": [
+        "Uvoz"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Zaustavi uvoz?"
       ]
     },
     "Select files": {

@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Wystąpił nieznany błąd"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
+      ],
+      "Unknown error": [
+        "Wystąpił nieznany błąd"
       ],
       "Authentication canceled.": [
         "Uwierzytelnianie zostało anulowane."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Pole jest wymagane"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Nie udało się załadować edytora."
       ],
       "Please refresh the page.": [
         "Odśwież stronę."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
@@ -105,14 +105,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Wykonaj ponowne uwierzytelnianie i upewnij się, że uprawnienia są poprawnie ustawione."
       ],
+      "File has no contents to preview": [
+        "Plik nie posiada zawartości do podglądu"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Hasło skrzynki pocztowej jest nieprawidłowe. Spróbuj ponownie"
       ],
       "Incorrect login credentials. Please try again": [
         "Dane logowania są nieprawidłowe. Spróbuj ponownie"
-      ],
-      "File has no contents to preview": [
-        "Plik nie posiada zawartości do podglądu"
       ],
       "Process aborted": [
         "Proces został przerwany"
@@ -207,12 +207,6 @@
       "Request timed out.": [
         "Upłynął limit czasu żądania."
       ],
-      "Signature verification failed": [
-        "Weryfikacja podpisu nie powiodła się"
-      ],
-      "Could not find address ${ email }.": [
-        "Adres e-mail ${ email } nie został znaleziony."
-      ],
       "Email address disabled": [
         "Adres e-mail został wyłączony"
       ],
@@ -236,6 +230,12 @@
       ],
       "The sending key is not valid": [
         "Klucz przeznaczony do wysyłania wiadomości nie jest prawidłowy"
+      ],
+      "Signature verification failed": [
+        "Weryfikacja podpisu nie powiodła się"
+      ],
+      "Could not find address ${ email }.": [
+        "Adres e-mail ${ email } nie został znaleziony."
       ],
       "Missing signature": [
         "Brak podpisu"
@@ -324,6 +324,15 @@
       "The maximum expiration is 4 weeks.": [
         "Maksymalny czas wygaśnięcia wynosi 4 tygodnie."
       ],
+      "Choose a date in the future.": [
+        "Wybierz przeszłą datę."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Wybierz datę w ciągu najbliższego dnia.",
+        "Wybierz datę w ciągu najbliższych ${ SCHEDULED_MAX_DATE_DAYS } dni.",
+        "Wybierz datę w ciągu najbliższych ${ SCHEDULED_MAX_DATE_DAYS } dni.",
+        "Wybierz datę w ciągu najbliższych ${ SCHEDULED_MAX_DATE_DAYS } dni."
+      ],
       "Public key could not be trusted": [
         "Klucz publiczny nie może zostać dodany do zaufanych"
       ],
@@ -353,26 +362,23 @@
       "Close": [
         "Zamknij"
       ],
-      "Close modal": [
-        "Zamknij okno"
+      "Confirm": [
+        "Potwierdź"
       ],
       "Cancel": [
         "Anuluj"
       ],
+      "Close modal": [
+        "Zamknij okno"
+      ],
       "Submit": [
         "Wyślij"
-      ],
-      "Confirm": [
-        "Potwierdź"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Użyj ustawień “${ label }”"
-      ],
-      "refresh the page": [
-        "Odśwież stronę"
       ],
       "Remove": [
         "Usuń"
@@ -487,6 +493,9 @@
       ],
       "Underline": [
         "Podkreślenie"
+      ],
+      "refresh the page": [
+        "Odśwież stronę"
       ],
       "Go to panel ${ index }": [
         "Przejdź do panelu ${ index }"
@@ -662,6 +671,9 @@
       "Next": [
         "Dalej"
       ],
+      "Signing out": [
+        "Wylogowywanie"
+      ],
       "Clear": [
         "Wyczyść"
       ],
@@ -692,12 +704,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Wylogowywanie"
-      ],
-      "Log in": [
-        "Zaloguj się"
-      ],
       "Details": [
         "Szczegóły"
       ],
@@ -718,6 +724,9 @@
       ],
       "Previous": [
         "Wstecz"
+      ],
+      "Log in": [
+        "Zaloguj się"
       ],
       "Get started": [
         "Rozpocznij"
@@ -887,17 +896,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Dodaj do ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Dowiedz się więcej"
-      ],
-      "Open shop": [
-        "Otwórz sklep"
-      ],
-      "Open calendar": [
-        "Otwórz kalendarz"
-      ],
       "Send anyway": [
         "Wyślij mimo to"
+      ],
+      "Got it": [
+        "Ok"
       ],
       "Maximize composer": [
         "Maksymalizuj edytor"
@@ -965,6 +968,9 @@
       "Not saved": [
         "Nie zapisano"
       ],
+      "Schedule send": [
+        "Zaplanuj wysyłanie"
+      ],
       "Expiration time": [
         "Czas wygaśnięcia"
       ],
@@ -976,6 +982,9 @@
       ],
       "Set": [
         "Ustaw"
+      ],
+      "Schedule message": [
+        "Zaplanuj wiadomość"
       ],
       "Print": [
         "Drukuj"
@@ -1061,6 +1070,9 @@
       "View keys": [
         "Pokaż klucze"
       ],
+      "Edit draft": [
+        "Edytuj szkic"
+      ],
       "Download ${ attachmentName }": [
         "Pobierz ${ attachmentName }"
       ],
@@ -1084,6 +1096,9 @@
       ],
       "Undo": [
         "Cofnij"
+      ],
+      "View message": [
+        "Pokaż wiadomość"
       ],
       "Enable": [
         "Włącz"
@@ -1190,6 +1205,9 @@
       "Hide messages": [
         "Ukryj wiadomości"
       ],
+      "Create new message": [
+        "Utwórz nową wiadomość"
+      ],
       "Import messages": [
         "Importuj wiadomości"
       ],
@@ -1198,6 +1216,15 @@
       ],
       "Start using ${ appName }": [
         "Zacznij korzystać z aplikacji ${ appName }"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "Open shop": [
+        "Otwórz sklep"
+      ],
+      "Open calendar": [
+        "Otwórz kalendarz"
       ]
     },
     "Title": {
@@ -1401,15 +1428,6 @@
       ],
       "Open settings menu": [
         "Otwórz ustawienia"
-      ],
-      "Send feedback": [
-        "Wyślij opinię"
-      ],
-      "Feedback": [
-        "Opinia"
-      ],
-      "Give feedback": [
-        "Wyślij opinię"
       ],
       "Confirm loss of Proton bonuses": [
         "Potwierdź utratę Proton bonusów"
@@ -1624,6 +1642,9 @@
       "Send email": [
         "Wyślij wiadomość"
       ],
+      "Schedule send": [
+        "Zaplanuj wysyłanie"
+      ],
       "New message": [
         "Nowa wiadomość"
       ],
@@ -1740,9 +1761,6 @@
       "Loading": [
         "Ładowanie"
       ],
-      "support team": [
-        "pomocą techniczną"
-      ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
@@ -1842,6 +1860,9 @@
       "Plain text": [
         "Zwykły tekst"
       ],
+      "support team": [
+        "pomocą techniczną"
+      ],
       "Drop the file here to upload": [
         "Upuść plik tutaj, aby przesłać"
       ],
@@ -1933,7 +1954,7 @@
         "Poczekaj na sprawdzenie kontaktów, które mogą zostać ponownie podpisane za pomocą głównego klucza szyfrowania."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
+        "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
@@ -1998,6 +2019,9 @@
         "${ addressCount } adresów e-mail",
         "${ addressCount } adresów e-mail"
       ],
+      "Loading ${ appName }": [
+        "Ładowanie ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Zrzuty ekranu zostały dołączone"
       ],
@@ -2028,18 +2052,6 @@
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
       ],
-      "Loading ${ appName }": [
-        "Ładowanie ${ appName }"
-      ],
-      "here": [
-        "tutaj"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
-      ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
       ],
@@ -2057,6 +2069,15 @@
       ],
       "of": [
         "z"
+      ],
+      "here": [
+        "tutaj"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Skróty klawiszowe podstawowej nawigacji i akcji są zawsze włączone."
@@ -2308,7 +2329,7 @@
         "Połączenia"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Pozwala na posiadanie adresu e-mail z własnymi domenami z ${ mailAppName },, np. jannowak@przykład.pl"
+        "Pozwala na posiadanie adresu e-mail z własnymi domenami z ${ mailAppName }, np. jannowak@przykład.pl"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Dodaj dodatkowe adresy e-mail do swojego konta, takie jak uzytkownik2@protonmail.com"
@@ -2441,6 +2462,9 @@
       ],
       "Do you want to send your message anyway?": [
         "Czy chcesz wysłać tę wiadomość mimo to?"
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Zbyt wiele wiadomości czeka na wysłanie. Poczekaj na wysłanie innej zaplanowanej lub zaplanuj tę wiadomość."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Weryfikacja adresu ${ contactName } nie powiodła się: kontakt nie jest prawidłowo podpisany.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakt, aby móc wysyłać wiadomości na adres ${ contactAddress }."
@@ -2586,6 +2610,9 @@
         "godzin",
         "godziny"
       ],
+      "When do you want your message to be sent?": [
+        "Kiedy chcesz wysłać wiadomość?"
+      ],
       "Draft discarded": [
         "Szkic został usunięty"
       ],
@@ -2615,6 +2642,9 @@
       ],
       "Sending": [
         "Wysyłanie"
+      ],
+      "Scheduled": [
+        "Zaplanowana"
       ],
       "Confirm phishing report": [
         "Potwierdź próbę wyłudzenia informacji"
@@ -2709,6 +2739,15 @@
       "Subject:": [
         "Temat:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Wiadomość zostanie przeniesiona do Szkiców i będzie możliwa do edycji. Musisz zaplanować ponownie wysłanie wiadomości."
+      ],
+      "This message will be sent shortly": [
+        "Wiadomość zostanie wkrótce wysłana"
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        "Wiadomość zostanie wysłana ${ dateString } o godzinie ${ formattedTime }"
+      ],
       "file attached": [
         "załącznik",
         "załączniki",
@@ -2721,8 +2760,14 @@
         "osadzonych obrazów",
         "osadzonych obrazów"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        "Wiadomość zostanie wysłana ${ dateString } o godzinie ${ formattedTime }"
+      ],
       "Message sent": [
         "Wiadomość została wysłana"
+      ],
+      "Scheduling message...": [
+        "Planowanie wiadomości..."
       ],
       "Sending message...": [
         "Wysyłanie wiadomości..."
@@ -2766,9 +2811,6 @@
         "Szacowany pozostały czas: ${ estimatedMinutes } minut",
         "Szacowany pozostały czas: ${ estimatedMinutes } minuty"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Aplikacja Proton przeszła metamorfozę. Chcemy poznać Twoją opinię!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } nieprzeczytany wątek",
         "${ unreadCount } nieprzeczytane wątki",
@@ -2780,6 +2822,12 @@
         "${ unreadCount } nieprzeczytane wiadomości",
         "${ unreadCount } nieprzeczytanych wiadomości",
         "${ unreadCount } nieprzeczytanych wiadomości"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "${ totalMessagesCount } zaplanowana wiadomość",
+        "${ totalMessagesCount } zaplanowane wiadomości",
+        "${ totalMessagesCount } zaplanowanych wiadomości",
+        "${ totalMessagesCount } zaplanowanych wiadomości"
       ],
       "Manage your folders": [
         "Zarządzaj folderami"
@@ -2804,6 +2852,12 @@
       ],
       "(No Recipient)": [
         "(Brak odbiorców)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "${ occurrencesInBody } znalezione powtórzenie",
+        "${ occurrencesInBody } znalezione powtórzenia",
+        "${ occurrencesInBody } znalezionych powtórzeń",
+        "${ occurrencesInBody } znalezionych powtórzeń"
       ],
       "No more results found": [
         "Nie znaleziono więcej wyników"
@@ -3113,9 +3167,6 @@
       "Select how your composer opens by default.": [
         "Wybierz domyślny tryb edytora."
       ],
-      "What is the primary reason for this rating?": [
-        "Jaki jest główny powód tej oceny?"
-      ],
       "Name on card": [
         "Właściciel karty"
       ],
@@ -3278,6 +3329,12 @@
       "Blind Carbon Copy": [
         "Ukryte do wiadomości"
       ],
+      "Date": [
+        "Data"
+      ],
+      "Time": [
+        "Czas"
+      ],
       "From:": [
         "Od:"
       ],
@@ -3356,15 +3413,6 @@
       "Filter": [
         "Filtruj"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Jak oceniasz nową aplikację ProtonMaila?"
-      ],
-      "0 - Not a fan": [
-        "0 - Nie jestem fanem"
-      ],
-      "10 - Love it!": [
-        "10 - Uwielbiam!"
-      ],
       "Also archive": [
         "Również archiwizuj"
       ]
@@ -3401,33 +3449,6 @@
       ],
       "Add a gift code": [
         "Dodaj kod podarunkowy"
-      ],
-      "Inbox": [
-        "Odebrane"
-      ],
-      "Drafts": [
-        "Szkice"
-      ],
-      "Sent": [
-        "Wysłane"
-      ],
-      "Trash": [
-        "Kosz"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Wszystkie wiadomości"
-      ],
-      "Archive": [
-        "Archiwum"
-      ],
-      "Starred": [
-        "Wyróżnione"
-      ],
-      "Outbox": [
-        "Skrzynka nadawcza"
       ],
       "You need to activate your calendar keys to add this event": [
         "Musisz aktywować klucze kalendarza, aby dodać wydarzenie"
@@ -3504,6 +3525,33 @@
       "Add label": [
         "Dodaj etykietę"
       ],
+      "Inbox": [
+        "Odebrane"
+      ],
+      "Drafts": [
+        "Szkice"
+      ],
+      "Scheduled": [
+        "Zaplanowane"
+      ],
+      "Sent": [
+        "Wysłane"
+      ],
+      "Starred": [
+        "Wyróżnione"
+      ],
+      "Archive": [
+        "Archiwum"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Kosz"
+      ],
+      "All mail": [
+        "Wszystkie wiadomości"
+      ],
       "Folders": [
         "Foldery"
       ],
@@ -3515,6 +3563,9 @@
       ],
       "Manage your labels": [
         "Zarządzaj etykietami"
+      ],
+      "Outbox": [
+        "Skrzynka nadawcza"
       ]
     },
     "Placeholder": {
@@ -3590,9 +3641,6 @@
       "e.g. Julia Smith": [
         "np. Julia Nowak"
       ],
-      "Feedback": [
-        "Opinia"
-      ],
       "ZIP": [
         "Kod pocztowy"
       ],
@@ -3637,6 +3685,44 @@
       ],
       "Filter labels": [
         "Filtruj etykiety"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } godzina",
+        "${ hours } godziny",
+        "${ hours } godzin",
+        "${ hours } godziny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } dzień",
+        "${ daysCountLeft } dni",
+        "${ daysCountLeft } dni",
+        "${ daysCountLeft } dnia"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } godzina",
+        "${ hoursCountLeft } godziny",
+        "${ hoursCountLeft } godzin",
+        "${ hoursCountLeft } godziny"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } minuta",
+        "${ minutesCountLeft } minuty",
+        "${ minutesCountLeft } minut",
+        "${ minutesCountLeft } minuty"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } sekunda",
+        "${ secondsCountLeft } sekundy",
+        "${ secondsCountLeft } sekund",
+        "${ secondsCountLeft } sekundy"
       ]
     },
     "Warning": {
@@ -4387,6 +4473,17 @@
         "Zaszyfrowanych i dodanych kontaktów: ${ totalImported }/${ totalToImport }"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplikacje Proton"
+      ],
+      "Go to ${ title }": [
+        "Przejdź do ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Przejdź do ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nie wybrałeś obrazu"
@@ -4409,7 +4506,7 @@
         "Problem z aplikacją Bridge"
       ],
       "Import / export problem": [
-        "Import / eksport"
+        "Problem z importem / eksportem"
       ],
       "Connection problem": [
         "Problem z połączeniem"
@@ -4518,41 +4615,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Zakończyć importowanie?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplikacje Proton"
       ],
-      "Go to ${ title }": [
-        "Przejdź do ${ title }"
+      "Message saved to Drafts": [
+        "Wiadomość została zapisana w Szkicach"
       ],
-      "Go to ${ vpnName }": [
-        "Przejdź do ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Wygodny"
-      ],
-      "Compact": [
-        "Kompaktowy"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolumna"
-      ],
-      "Row": [
-        "Wiersz"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Standardowy"
-      ],
-      "Maximized": [
-        "Zmaksymalizowany"
+      "Edit and reschedule": [
+        "Edytuj i zaplanuj ponownie"
       ]
     },
     "Select files": {
@@ -4603,6 +4671,30 @@
         "Aby wyłączyć wersję beta, otwórz ustawienia i kliknij przycisk \"Dostęp beta\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Wygodny"
+      ],
+      "Compact": [
+        "Kompaktowy"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolumna"
+      ],
+      "Row": [
+        "Wiersz"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Standardowy"
+      ],
+      "Maximized": [
+        "Zmaksymalizowany"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
@@ -4645,16 +4737,6 @@
       ],
       "Normal": [
         "Standardowy"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Ocena jest wymagana"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Opinia została wysłana"
       ]
     },
     "Info for cash payment method": {
@@ -5296,14 +5378,6 @@
         "wyróżnione"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Hasło musi zawierać co najmniej ${ length } znak",
-        "Hasło musi zawierać co najmniej ${ length } znaki",
-        "Hasło musi zawierać co najmniej ${ length } znaków",
-        "Hasło musi zawierać co najmniej ${ length } znaków"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nazwa"
@@ -5432,9 +5506,12 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adres e-mail nie został znaleziony wśród identyfikatorów zdefiniowanych w kluczu przeznaczonym do wysyłania wiadomości (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Hasło musi zawierać co najmniej ${ length } znak",
+        "Hasło musi zawierać co najmniej ${ length } znaki",
+        "Hasło musi zawierać co najmniej ${ length } znaków",
+        "Hasło musi zawierać co najmniej ${ length } znaków"
       ]
     },
     "Message": {
@@ -5446,6 +5523,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } napisał(a):"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adres e-mail nie został znaleziony wśród identyfikatorów zdefiniowanych w kluczu przeznaczonym do wysyłania wiadomości (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5831,6 +5913,68 @@
     "Event title": {
       "(no title)": [
         "(brak tytułu)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "Wydarzenie ${ title } rozpoczyna się teraz"
+      ],
+      "${ title } starts today": [
+        "Wydarzenie ${ title } rozpoczyna się dzisiaj"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpoczęło się o godzinie ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "Wydarzenie ${ title } rozpoczęło się wczoraj"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpoczęło się wczoraj o godzinie ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "Wydarzenie ${ title } rozpoczęło się w dniu: ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpoczęło się w dniu: ${ formattedDate } o godzinie ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "Wydarzenie ${ title } rozpoczęło się w dniu: ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpoczęło się w dniu: ${ _formattedDate } o godzinie ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "Wydarzenie ${ title } rozpoczęło się w dniu: ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "Wydarzenie ${ title } rozpoczęło się w dniu: ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpocznie się o godzinie ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "Wydarzenie ${ title } rozpocznie się jutro"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpocznie się jutro o godzinie ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "Wydarzenie ${ title } rozpocznie się w dniu: ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpocznie się w dniu: ${ _formattedDate2 } o godzinie ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "Wydarzenie ${ title } rozpocznie się w dniu: ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "Wydarzenie ${ title } rozpocznie się w dniu: ${ _formattedDate3 } o godzinie ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "Wydarzenie ${ title } rozpocznie się w dniu: ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "Wydarzenie ${ title } rozpocznie się w dniu: ${ formattedDateWithTime }"
       ]
     },
     "Participant name": {
@@ -6397,6 +6541,9 @@
       "Drafts": [
         "Szkice"
       ],
+      "Scheduled": [
+        "Zaplanowane"
+      ],
       "All": [
         "Wszystkie wiadomości"
       ],
@@ -6548,6 +6695,20 @@
     "Time": {
       "Yesterday": [
         "Wczoraj"
+      ]
+    },
+    "Date label": {
+      "today": [
+        "dzisiaj"
+      ],
+      "tomorrow": [
+        "jutro"
+      ],
+      "Today": [
+        "Dzisiaj"
+      ],
+      "Tomorrow": [
+        "Jutro"
       ]
     },
     "Invitation details (all-day event)": {
@@ -6743,35 +6904,12 @@
         "Wydarzenie obecnie się odbywa."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dzień",
-        "${ daysCountLeft } dni",
-        "${ daysCountLeft } dni",
-        "${ daysCountLeft } dnia"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } godzina",
-        "${ hoursCountLeft } godziny",
-        "${ hoursCountLeft } godzin",
-        "${ hoursCountLeft } godziny"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuta",
-        "${ minutesCountLeft } minuty",
-        "${ minutesCountLeft } minut",
-        "${ minutesCountLeft } minuty"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } sekunda",
-        "${ secondsCountLeft } sekundy",
-        "${ secondsCountLeft } sekund",
-        "${ secondsCountLeft } sekundy"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Wysyłanie zostało anulowane"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        "Planowanie zostało anulowane. Wiadomość została przeniesiona do Szkiców."
       ]
     },
     "Send email with warnings": {
@@ -6782,10 +6920,10 @@
         "Adresy nie są prawidłowe: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Wykryliśmy niektóre ostrzeżenia. Następujący adres e-mail może nie otrzymać wiadomości:",
-        "Wykryliśmy niektóre ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:",
-        "Wykryliśmy niektóre ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:",
-        "Wykryliśmy niektóre ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:"
+        "Wykryliśmy ostrzeżenia. Następujący adres e-mail może nie otrzymać wiadomości:",
+        "Wykryliśmy ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:",
+        "Wykryliśmy ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:",
+        "Wykryliśmy ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:"
       ],
       "Do you want to send the email anyway?": [
         "Czy chcesz wysłać tę wiadomość mimo to?"
@@ -7020,6 +7158,9 @@
       ],
       "No messages found": [
         "Nie znaleziono żadnych wiadomości"
+      ],
+      "No messages scheduled": [
+        "Brak zaplanowanych wiadomości"
       ]
     },
     "Alternative text for welcome image": {

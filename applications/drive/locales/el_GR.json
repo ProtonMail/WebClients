@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Άγνωστο σφάλμα"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
@@ -21,14 +18,17 @@
       "Authentication error.": [
         ""
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        ""
+      "Unknown error": [
+        "Άγνωστο σφάλμα"
       ],
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
       ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -44,6 +44,9 @@
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "File has no contents to preview": [
+        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
       ],
       "Preferences could not be saved": [
         ""
@@ -87,15 +90,6 @@
         ""
       ],
       "Invalid name": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
       "Process aborted": [
@@ -158,6 +152,12 @@
       "Invalid code": [
         ""
       ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
       ],
@@ -201,988 +201,18 @@
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ]
     },
-    "Action": {
-      "Close": [
-        "Κλείσιμο"
-      ],
-      "Confirm": [
-        "Επιβεβαίωση"
-      ],
-      "Cancel": [
-        "Ακύρωση"
-      ],
-      "Close modal": [
-        "Κλείσιμο παραθύρου"
-      ],
-      "Submit": [
-        "Υποβολή"
-      ],
-      "More info: ${ safeTitle }": [
-        "Περισσότερες πληροφορίες: ${ safeTitle }"
-      ],
-      "Use “${ label }” setting": [
-        ""
-      ],
-      "Close navigation": [
-        "Κλείσιμο μενού πλοήγησης"
-      ],
-      "Open navigation": [
-        "Άνοιγμα μενού πλοήγησης"
-      ],
-      "Go to panel ${ index }": [
-        "Μεταβείτε στο πίνακα ελέγχου ${ index }"
-      ],
-      "Load image": [
-        ""
-      ],
-      "Export": [
-        ""
-      ],
-      "Delete": [
-        ""
-      ],
-      "Edit": [
-        ""
-      ],
-      "Remove": [
-        ""
-      ],
-      "Download": [
-        "Λήψη"
-      ],
-      "Use for sending": [
-        ""
-      ],
-      "Trust": [
-        ""
-      ],
-      "Untrust": [
-        ""
-      ],
-      "Upgrade": [
-        ""
-      ],
-      "Email settings": [
-        ""
-      ],
-      "Contact group": [
-        ""
-      ],
-      "Upload picture": [
-        ""
-      ],
-      "Next month": [
-        "Επόμενος μήνας"
-      ],
-      "Previous month": [
-        "Προηγούμενος μήνας"
-      ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
-      "Confirm opening of link ${ link }": [
-        ""
-      ],
-      "View invoice": [
-        "Προβολή τιμολογίου"
-      ],
-      "Get verification code": [
-        "Απόκτηση κωδικού επαλήθευσης"
-      ],
-      "Try another method": [
-        "Δοκιμάστε μια άλλη μέθοδο"
-      ],
-      "Request new code": [
-        "Ζητήστε νέο κωδικό"
-      ],
-      "Verify": [
-        "Επαλήθευση"
-      ],
-      "Did not receive the code?": [
-        "Δεν λάβατε τον κωδικό;"
-      ],
-      "Edit email address": [
-        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
-      ],
-      "Edit phone number": [
-        "Επεξεργασία αριθμού τηλεφώνου"
-      ],
-      "Save": [
-        "Αποθήκευση"
-      ],
-      "Add": [
-        ""
-      ],
-      "Apply": [
-        "Εφαρμογή"
-      ],
-      "Hide advanced PGP settings": [
-        ""
-      ],
-      "Show advanced PGP settings": [
-        ""
-      ],
-      "Done": [
-        "Ολοκληρώθηκε"
-      ],
-      "Clear data": [
-        ""
-      ],
-      "Recover data": [
-        ""
-      ],
-      "Click here.": [
-        ""
-      ],
-      "Re-sign": [
-        ""
-      ],
-      "Add to group": [
-        ""
-      ],
-      "Merge": [
-        ""
-      ],
-      "View": [
-        ""
-      ],
-      "Unmark for deletion": [
-        ""
-      ],
-      "Mark for deletion": [
-        ""
-      ],
-      "Preview contact": [
-        ""
-      ],
-      "Continue": [
-        "Συνέχεια"
-      ],
-      "Delete contact": [
-        ""
-      ],
-      "Delete ${ selectedCount } contact": [
-        "",
-        ""
-      ],
-      "Deselect all": [
-        ""
-      ],
-      "Select all": [
-        ""
-      ],
-      "Compose": [
-        ""
-      ],
-      "Forward as attachment": [
-        ""
-      ],
-      "Merge contacts": [
-        ""
-      ],
-      "Add new contact": [
-        ""
-      ],
-      "Add group": [
-        ""
-      ],
-      "Clear query": [
-        ""
-      ],
-      "Add contact": [
-        ""
-      ],
-      "import": [
-        ""
-      ],
-      "Delete contact group": [
-        ""
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "",
-        ""
-      ],
-      "Add new group": [
-        ""
-      ],
-      "Export contacts": [
-        ""
-      ],
-      "Continue with Google": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Choose a file or drag it here": [
-        ""
-      ],
-      "Import": [
-        ""
-      ],
-      "Next": [
-        "Επόμενο"
-      ],
-      "Signing out": [
-        "Αποσύνδεση"
-      ],
-      "Clear": [
-        "Εκκαθάριση"
-      ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
-      ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
-      ],
-      "Details": [
-        "Λεπτομέρειες"
-      ],
-      "Share via link": [
-        ""
-      ],
-      "Sharing options": [
-        "Επιλογές κοινοποίησης"
-      ],
-      "Zoom out": [
-        "Σμίκρυνση"
-      ],
-      "Reset zoom": [
-        "Επαναφορά μεγέθυνσης"
-      ],
-      "Zoom in": [
-        "Μεγέθυνση"
-      ],
-      "Previous": [
-        "Προηγούμενο"
-      ],
-      "Close this banner": [
-        "Κλείσιμο αυτού του banner"
-      ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
-      "enable desktop notifications": [
-        "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
-      ],
-      "here": [
-        ""
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Copy email to clipboard": [
-        ""
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } εισαγωγή"
-      ],
-      "I have a question": [
-        ""
-      ],
-      "Request a feature": [
-        "Ζητήστε μια δυνατότητα"
-      ],
-      "Report a problem": [
-        ""
-      ],
-      "${ BRAND_NAME } shop": [
-        ""
-      ],
-      "Switch account": [
-        "Αλλαγή λογαριασμού"
-      ],
-      "Sign out": [
-        "Αποσύνδεση"
-      ],
-      "Go to settings": [
-        ""
-      ],
-      "Beta Access": [
-        ""
-      ],
-      "Theme": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        ""
-      ],
-      "Mailbox layout": [
-        ""
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Composer mode": [
-        ""
-      ],
-      "Get started": [
-        ""
-      ],
-      "Start setup": [
-        ""
-      ],
-      "Skip": [
-        ""
-      ],
-      "Back": [
-        "Πίσω"
-      ],
-      "Use ${ label } theme": [
-        ""
-      ],
-      "OK": [
-        "ΟΚ"
-      ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Try again": [
-        ""
-      ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
-      "Retry": [
-        ""
-      ],
-      "Loading verification": [
-        ""
-      ],
-      "Select plan": [
-        ""
-      ],
-      "Compare all features": [
-        ""
-      ],
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
-      "Pay": [
-        ""
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
-      ],
-      "Remove gift code": [
-        ""
-      ],
-      "annual billing": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
-      "Decrease": [
-        ""
-      ],
-      "Increase": [
-        ""
-      ],
-      "Log in": [
-        "Είσοδος"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "Νέο ανέβασμα"
-      ],
-      "Maximize transfers": [
-        "Μεγιστοποίηση μεταφορών"
-      ],
-      "Minimize transfers": [
-        "Ελαχιστοποίηση μεταφορών"
-      ],
-      "Close transfers": [
-        "Κλείσιμο μεταφορών"
-      ],
-      "Pause download": [
-        "Παύση λήψης"
-      ],
-      "Pause upload": [
-        "Παύση μεταφόρτωσης"
-      ],
-      "Resume download": [
-        "Συνέχιση λήψης"
-      ],
-      "Resume upload": [
-        "Συνέχιση μεταφόρτωσης"
-      ],
-      "Cancel download": [
-        "Ακύρωση λήψης"
-      ],
-      "Cancel upload": [
-        "Ακύρωση μεταφόρτωσης"
-      ],
-      "Restart download": [
-        "Επανεκκίνηση λήψης"
-      ],
-      "Restart upload": [
-        "Επανεκκίνηση μεταφόρτωσης"
-      ],
-      "Remove from this list": [
-        "Κατάργηση από αυτή τη λίστα"
-      ],
-      "List layout": [
-        "Διάταξη λίστας"
-      ],
-      "Grid layout": [
-        "Διάταξη πλέγματος"
-      ],
-      "Rename": [
-        "Μετονομασία"
-      ],
-      "Move to folder": [
-        "Μετακίνηση σε φάκελο"
-      ],
-      "Move to trash": [
-        "Μετακίνηση στον κάδο απορριμμάτων"
-      ],
-      "Create new folder": [
-        "Δημιουργία νέου φακέλου"
-      ],
-      "Name: A to Z": [
-        "Όνομα: Α έως το Ω"
-      ],
-      "Name: Z to A": [
-        "Όνομα: Ω ως Α"
-      ],
-      "Modified date: new to old": [
-        "Τροποποιημένη ημερομηνία: νέα σε παλιά"
-      ],
-      "Modified date: old to new": [
-        "Τροποποιημένη ημερομηνία: παλιά σε νέα"
-      ],
-      "Type: A to Z": [
-        "Τύπος: Α έως το Ω"
-      ],
-      "Type: Z to A": [
-        "Τύπος: Ω ως Α"
-      ],
-      "Size: small to large": [
-        "Μέγεθος: μικρό σε μεγάλο"
-      ],
-      "Size: large to small": [
-        "Μέγεθος: μεγάλο σε μικρό"
-      ],
-      "Upload file": [
-        "Φορτώστε ένα αρχείο"
-      ],
-      "Upload folder": [
-        "Φάκελος αποστολής"
-      ],
-      "Delete permanently": [
-        "Οριστική διαγραφή"
-      ],
-      "Restore from trash": [
-        "Επαναφορά από διεγραμμένα"
-      ],
-      "Empty trash": [
-        "Άδειασμα κάδου"
-      ],
-      "Share": [
-        ""
-      ],
-      "Create": [
-        "Δημιουργία"
-      ],
-      "Preview": [
-        "Προεπισκόπηση"
-      ],
-      "Stop sharing": [
-        "Διακοπή κοινής χρήσης"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Share file": [
-        "Κοινοποίηση αρχείου"
-      ],
-      "Start recovering": [
-        "Έναρξη ανάκτησης"
-      ],
-      "View more": [
-        "Δείτε περισσότερα"
-      ],
-      "Move": [
-        "Μετακίνηση"
-      ],
-      "Copy link": [
-        ""
-      ],
-      "Create link": [
-        "Δημιουργία συνδέσμου"
-      ],
-      "Undo": [
-        "Αναίρεση"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        ""
-      ],
-      "Upgrade required": [
-        ""
-      ],
-      "Email settings": [
-        ""
-      ],
-      "Contact group": [
-        ""
-      ],
-      "Link confirmation": [
-        ""
-      ],
-      "Keyboard Shortcuts": [
-        ""
-      ],
-      "What's new": [
-        ""
-      ],
-      "Invalid verification code": [
-        "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Request new verification code": [
-        "Ζητήστε νέο κωδικό επαλήθευσής"
-      ],
-      "Human verification": [
-        "Ανθρώπινη Επαλήθευση"
-      ],
-      "Edit contact group": [
-        ""
-      ],
-      "Create new group": [
-        ""
-      ],
-      "Add to ${ groupName }": [
-        ""
-      ],
-      "Add to ${ groupCount } group": [
-        "",
-        ""
-      ],
-      "Email settings (${ emailAddress })": [
-        ""
-      ],
-      "Delete ${ Name }": [
-        ""
-      ],
-      "Delete ${ count } contact group": [
-        "",
-        ""
-      ],
-      "${ emailsCount } member": [
-        "",
-        ""
-      ],
-      "Edit image": [
-        ""
-      ],
-      "Edit contact": [
-        ""
-      ],
-      "Create contact": [
-        ""
-      ],
-      "Delete ${ count } contact": [
-        "",
-        ""
-      ],
-      "Clearing data": [
-        ""
-      ],
-      "Warning": [
-        "Προειδοποίηση"
-      ],
-      "Recover data": [
-        ""
-      ],
-      "Re-signing contacts": [
-        ""
-      ],
-      "Re-sign all contacts": [
-        ""
-      ],
-      "Exporting contacts": [
-        ""
-      ],
-      "Other names": [
-        ""
-      ],
-      "Email addresses": [
-        ""
-      ],
-      "Phone numbers": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Other information": [
-        ""
-      ],
-      "Contact Details": [
-        ""
-      ],
-      "Merging contacts": [
-        ""
-      ],
-      "Merge contacts": [
-        ""
-      ],
-      "Deleting contacts": [
-        ""
-      ],
-      "View contacts": [
-        ""
-      ],
-      "Contacts": [
-        ""
-      ],
-      "Groups": [
-        ""
-      ],
-      "Settings": [
-        "Ρυθμίσεις"
-      ],
-      "Select action to take on contact group": [
-        ""
-      ],
-      "Add contact group name": [
-        ""
-      ],
-      "Select contact group": [
-        ""
-      ],
-      "Import groups": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Report a problem": [
-        ""
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Open help menu": [
-        ""
-      ],
-      "Back": [
-        "Πίσω"
-      ],
-      "Open settings menu": [
-        ""
-      ],
-      "Select a theme": [
-        ""
-      ],
-      "Confirm loss of Proton bonuses": [
-        ""
-      ],
-      "Unsupported browser": [
-        ""
-      ],
-      "Card verification": [
-        ""
-      ],
-      "Payment verification": [
-        ""
-      ],
-      "Processing...": [
-        ""
-      ],
-      "Card verification in progress": [
-        ""
-      ],
-      "Payment verification in progress": [
-        ""
-      ],
-      "PayPal verification failed": [
-        ""
-      ],
-      "3-D Secure verification failed": [
-        ""
-      ],
-      "Error": [
-        ""
-      ],
-      "ZIP / postal code": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Currency": [
-        ""
-      ],
-      "Billing cycle": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
-      "Processing": [
-        ""
-      ],
-      "Apply gift code": [
-        ""
-      ],
-      "Subtotal": [
-        ""
-      ],
-      "Coupon discount": [
-        ""
-      ],
-      "Total (monthly)": [
-        ""
-      ],
-      "Credits": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Amount due": [
-        ""
-      ],
-      "Cancel subscription": [
-        ""
-      ],
-      "Network error": [
-        ""
-      ],
-      "Select a plan": [
-        ""
-      ],
-      "Customize your plan": [
-        ""
-      ],
-      "Checkout": [
-        ""
-      ],
-      "Plan summary": [
-        ""
-      ],
-      "${ appName } customization": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        ""
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Mailbox layout": [
-        ""
-      ],
-      "Composer mode": [
-        ""
-      ],
-      "Beta Access": [
-        ""
-      ],
-      "Duplicate folder found": [
-        ""
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "Αφήστε εδώ για να ανεβεί"
-      ],
-      "Cancel all active transfers": [
-        "Ακυρώστε όλες τις ενεργές μεταφορές"
-      ],
-      "Change layout": [
-        "Αλλαγή διάταξης"
-      ],
-      "Show actions": [
-        "Εμφάνιση ενεργειών"
-      ],
-      "Sort files/folders": [
-        "Ταξινόμηση αρχείων/φάκελων"
-      ],
-      "Trash": [
-        "Κάδος"
-      ],
-      "Empty trash": [
-        "Άδειασμα κάδου"
-      ],
-      "My files": [
-        "Τα αρχεία μου"
-      ],
-      "You have no folders yet": [
-        "Δεν έχετε ακόμη φακέλους"
-      ],
-      "You have no files to share": [
-        "Δεν έχετε αρχεία για να κοινοποιήσετε"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        "Το φάκελος σας είναι έτοιμος για λήψη"
-      ],
-      "Download completed": [
-        "Η λήψη ολοκληρώθηκε"
-      ],
-      "Download failed": [
-        ""
-      ],
-      "Download canceled": [
-        ""
-      ],
-      "Downloading": [
-        "Γίνεται Λήψη"
-      ],
-      "Enter file password to download": [
-        "Εισάγετε τον κωδικό του αρχείου για λήψη"
-      ],
-      "The link either does not exist or has expired": [
-        "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
-      ],
-      "Restore your files": [
-        "Ανακτήστε τα αρχεία σας"
-      ],
-      "File recovery process": [
-        "Διαδικασία ανάκτησης αρχείων"
-      ],
-      "You have inaccessible files": [
-        "Έχετε μη προσβάσιμα αρχεία"
-      ],
-      "Rename a folder": [
-        "Μετονομασία Φακέλου"
-      ],
-      "Rename a file": [
-        "Μετονομασία αρχείου"
-      ],
-      "File details": [
-        "Λεπτομέρειες αρχείου"
-      ],
-      "Folder details": [
-        "Λεπτομέρειες φακέλου"
-      ],
-      "Name": [
-        "Όνομα"
-      ],
-      "Uploaded by": [
-        "Μεταφορτώθηκε από"
-      ],
-      "Location": [
-        "Τοποθεσία"
-      ],
-      "Modified": [
-        "Τροποποιήθηκε"
-      ],
-      "Type": [
-        "Τύπος"
-      ],
-      "MIME type": [
-        "Τύπος MIME"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Shared": [
-        "Κοινοποιημένα"
-      ],
-      "# of accesses": [
-        ""
-      ],
-      "Create a new folder": [
-        "Δημιουργία νέου φακέλου"
-      ],
-      "Date": [
-        "Ημερομηνία"
-      ],
-      "Select link expiration date": [
-        "Επιλέξτε ημερομηνία λήξης συνδέσμου"
-      ],
-      "Select link expiration time": [
-        "Επιλέξτε το χρόνο λήξης του συνδέσμου"
-      ],
-      "Share via link": [
-        ""
-      ],
-      "Additional settings": [
-        "Επιπλέον ρυθμίσεις"
-      ],
-      "Manage secure link": [
-        "Διαχείριση ασφαλούς συνδέσμου"
-      ],
-      "Stop sharing with everyone?": [
-        ""
-      ],
-      "Discard changes?": [
-        "Απόρριψη αλλαγών;"
-      ],
-      "Discard": [
-        "Απόρριψη"
-      ],
-      "Files details": [
-        "Λεπτομέρειες αρχείων"
-      ],
-      "Number of files": [
-        "Αριθμός αρχείων"
-      ],
-      "Total size": [
-        "Συνολικό μέγεθος"
-      ],
-      "Delete permanently": [
-        "Οριστική διαγραφή"
-      ],
-      "Stop sharing": [
-        "Διακοπή κοινής χρήσης"
-      ]
-    },
     "Info": {
-      "No results found": [
-        "Δεν βρέθηκαν αποτελέσματα"
-      ],
       "Loading": [
         "Φόρτωση"
+      ],
+      "No results found": [
+        "Δεν βρέθηκαν αποτελέσματα"
       ],
       "No contacts added yet": [
         ""
       ],
       "Week": [
         "Εβδομάδα"
-      ],
-      "support team": [
-        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         ""
@@ -1198,6 +228,12 @@
       ],
       "Drop the file here to upload": [
         ""
+      ],
+      "support team": [
+        ""
+      ],
+      "Loading ${ appName }": [
+        "Φόρτωση ${ appName }"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
@@ -1228,6 +264,24 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      ],
+      "Unsupported file": [
+        "Μη υποστηριζόμενο αρχείο"
+      ],
+      "No preview available": [
+        "Δεν υπάρχει διαθέσιμη προεπισκόπηση"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ],
+      "Loading preview": [
+        "Φόρτωση προεπισκόπησης"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        ""
+      ],
+      "of": [
+        "από"
       ],
       "${ contactEmailsLength } Member": [
         "",
@@ -1342,33 +396,6 @@
         "",
         ""
       ],
-      "Loading ${ appName }": [
-        "Φόρτωση ${ appName }"
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
-      ],
-      "Unsupported file": [
-        "Μη υποστηριζόμενο αρχείο"
-      ],
-      "No preview available": [
-        "Δεν υπάρχει διαθέσιμη προεπισκόπηση"
-      ],
-      "Preview": [
-        "Προεπισκόπηση"
-      ],
-      "Loading preview": [
-        "Φόρτωση προεπισκόπησης"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        ""
-      ],
-      "of": [
-        "από"
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
       ],
@@ -1408,29 +435,11 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
       ],
-      "Import contacts": [
-        ""
+      "Screenshot(s) attached": [
+        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
@@ -1671,6 +680,30 @@
       "Expired": [
         ""
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "here": [
         "εδώ"
       ],
@@ -1721,6 +754,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Τελείωσε",
@@ -1799,9 +835,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Κλείνωντας το διαχειριστή μεταφορών, θα ακυρώσει όλες τις ενεργές μεταφορές, είστε σίγουροι;"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
-      ],
       "Create your first folder and start moving your files.": [
         "Δημιουργήστε τον πρώτο σας φάκελο και ξεκινήστε να μετακινείτε τα αρχεία σας."
       ],
@@ -1874,6 +907,9 @@
       "Failed to generate a secure link. Try again later.": [
         "Απέτυχε η δημιουργία ασφαλούς σώνδεσμου. Προσπαθήστε ξανά αργότερα."
       ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        ""
+      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         ""
       ],
@@ -1912,6 +948,973 @@
       ],
       "My Links": [
         "Οι Σύνδεσμοι Μου"
+      ]
+    },
+    "Action": {
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Confirm": [
+        "Επιβεβαίωση"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Close modal": [
+        "Κλείσιμο παραθύρου"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "Use “${ label }” setting": [
+        ""
+      ],
+      "More info: ${ safeTitle }": [
+        "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Κλείσιμο μενού πλοήγησης"
+      ],
+      "Open navigation": [
+        "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Go to panel ${ index }": [
+        "Μεταβείτε στο πίνακα ελέγχου ${ index }"
+      ],
+      "Load image": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Delete": [
+        ""
+      ],
+      "Edit": [
+        ""
+      ],
+      "Remove": [
+        ""
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Use for sending": [
+        ""
+      ],
+      "Trust": [
+        ""
+      ],
+      "Untrust": [
+        ""
+      ],
+      "Upgrade": [
+        ""
+      ],
+      "Email settings": [
+        ""
+      ],
+      "Contact group": [
+        ""
+      ],
+      "Upload picture": [
+        ""
+      ],
+      "Next month": [
+        "Επόμενος μήνας"
+      ],
+      "Previous month": [
+        "Προηγούμενος μήνας"
+      ],
+      "Confirm opening of link ${ link }": [
+        ""
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
+      ],
+      "Signing out": [
+        "Αποσύνδεση"
+      ],
+      "View invoice": [
+        "Προβολή τιμολογίου"
+      ],
+      "Get verification code": [
+        "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Try another method": [
+        "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Verify": [
+        "Επαλήθευση"
+      ],
+      "Did not receive the code?": [
+        "Δεν λάβατε τον κωδικό;"
+      ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
+      ],
+      "Edit phone number": [
+        "Επεξεργασία αριθμού τηλεφώνου"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
+      "Share via link": [
+        ""
+      ],
+      "Sharing options": [
+        "Επιλογές κοινοποίησης"
+      ],
+      "Zoom out": [
+        "Σμίκρυνση"
+      ],
+      "Reset zoom": [
+        "Επαναφορά μεγέθυνσης"
+      ],
+      "Zoom in": [
+        "Μεγέθυνση"
+      ],
+      "Previous": [
+        "Προηγούμενο"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Add": [
+        ""
+      ],
+      "Apply": [
+        "Εφαρμογή"
+      ],
+      "Hide advanced PGP settings": [
+        ""
+      ],
+      "Show advanced PGP settings": [
+        ""
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
+      ],
+      "Clear data": [
+        ""
+      ],
+      "Recover data": [
+        ""
+      ],
+      "Click here.": [
+        ""
+      ],
+      "Re-sign": [
+        ""
+      ],
+      "Add to group": [
+        ""
+      ],
+      "Merge": [
+        ""
+      ],
+      "View": [
+        ""
+      ],
+      "Unmark for deletion": [
+        ""
+      ],
+      "Mark for deletion": [
+        ""
+      ],
+      "Preview contact": [
+        ""
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
+      "Delete contact": [
+        ""
+      ],
+      "Delete ${ selectedCount } contact": [
+        "",
+        ""
+      ],
+      "Deselect all": [
+        ""
+      ],
+      "Select all": [
+        ""
+      ],
+      "Compose": [
+        ""
+      ],
+      "Forward as attachment": [
+        ""
+      ],
+      "Merge contacts": [
+        ""
+      ],
+      "Add new contact": [
+        ""
+      ],
+      "Add group": [
+        ""
+      ],
+      "Clear query": [
+        ""
+      ],
+      "Add contact": [
+        ""
+      ],
+      "import": [
+        ""
+      ],
+      "Delete contact group": [
+        ""
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "",
+        ""
+      ],
+      "Add new group": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Continue with Google": [
+        ""
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Choose a file or drag it here": [
+        ""
+      ],
+      "Import": [
+        ""
+      ],
+      "Close this banner": [
+        "Κλείσιμο αυτού του banner"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
+      ],
+      "enable desktop notifications": [
+        "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "here": [
+        ""
+      ],
+      "Clear": [
+        "Εκκαθάριση"
+      ],
+      "Add screenshot(s)": [
+        "Προσθήκη στιγμιοτύπου/ων οθόνης"
+      ],
+      "Hide info": [
+        "Απόκρυψη πληροφοριών"
+      ],
+      "Show info": [
+        "Εμφάνιση πληροφοριών"
+      ],
+      "Copy email to clipboard": [
+        ""
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } εισαγωγή"
+      ],
+      "I have a question": [
+        ""
+      ],
+      "Request a feature": [
+        "Ζητήστε μια δυνατότητα"
+      ],
+      "Report a problem": [
+        ""
+      ],
+      "${ BRAND_NAME } shop": [
+        ""
+      ],
+      "Switch account": [
+        "Αλλαγή λογαριασμού"
+      ],
+      "Sign out": [
+        "Αποσύνδεση"
+      ],
+      "Go to settings": [
+        ""
+      ],
+      "Beta Access": [
+        ""
+      ],
+      "Theme": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        ""
+      ],
+      "Mailbox layout": [
+        ""
+      ],
+      "Mailbox density": [
+        ""
+      ],
+      "Composer mode": [
+        ""
+      ],
+      "Get started": [
+        ""
+      ],
+      "Start setup": [
+        ""
+      ],
+      "Skip": [
+        ""
+      ],
+      "Back": [
+        "Πίσω"
+      ],
+      "Use ${ label } theme": [
+        ""
+      ],
+      "OK": [
+        "ΟΚ"
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        ""
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
+        ""
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Log in": [
+        "Είσοδος"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "New upload": [
+        "Νέο ανέβασμα"
+      ],
+      "List layout": [
+        "Διάταξη λίστας"
+      ],
+      "Grid layout": [
+        "Διάταξη πλέγματος"
+      ],
+      "Rename": [
+        "Μετονομασία"
+      ],
+      "Move to folder": [
+        "Μετακίνηση σε φάκελο"
+      ],
+      "Move to trash": [
+        "Μετακίνηση στον κάδο απορριμμάτων"
+      ],
+      "Create new folder": [
+        "Δημιουργία νέου φακέλου"
+      ],
+      "Name: A to Z": [
+        "Όνομα: Α έως το Ω"
+      ],
+      "Name: Z to A": [
+        "Όνομα: Ω ως Α"
+      ],
+      "Modified date: new to old": [
+        "Τροποποιημένη ημερομηνία: νέα σε παλιά"
+      ],
+      "Modified date: old to new": [
+        "Τροποποιημένη ημερομηνία: παλιά σε νέα"
+      ],
+      "Type: A to Z": [
+        "Τύπος: Α έως το Ω"
+      ],
+      "Type: Z to A": [
+        "Τύπος: Ω ως Α"
+      ],
+      "Size: small to large": [
+        "Μέγεθος: μικρό σε μεγάλο"
+      ],
+      "Size: large to small": [
+        "Μέγεθος: μεγάλο σε μικρό"
+      ],
+      "Upload file": [
+        "Φορτώστε ένα αρχείο"
+      ],
+      "Upload folder": [
+        "Φάκελος αποστολής"
+      ],
+      "Delete permanently": [
+        "Οριστική διαγραφή"
+      ],
+      "Restore from trash": [
+        "Επαναφορά από διεγραμμένα"
+      ],
+      "Empty trash": [
+        "Άδειασμα κάδου"
+      ],
+      "Maximize transfers": [
+        "Μεγιστοποίηση μεταφορών"
+      ],
+      "Minimize transfers": [
+        "Ελαχιστοποίηση μεταφορών"
+      ],
+      "Close transfers": [
+        "Κλείσιμο μεταφορών"
+      ],
+      "Pause download": [
+        "Παύση λήψης"
+      ],
+      "Pause upload": [
+        "Παύση μεταφόρτωσης"
+      ],
+      "Resume download": [
+        "Συνέχιση λήψης"
+      ],
+      "Resume upload": [
+        "Συνέχιση μεταφόρτωσης"
+      ],
+      "Cancel download": [
+        "Ακύρωση λήψης"
+      ],
+      "Cancel upload": [
+        "Ακύρωση μεταφόρτωσης"
+      ],
+      "Restart download": [
+        "Επανεκκίνηση λήψης"
+      ],
+      "Restart upload": [
+        "Επανεκκίνηση μεταφόρτωσης"
+      ],
+      "Remove from this list": [
+        "Κατάργηση από αυτή τη λίστα"
+      ],
+      "Share": [
+        ""
+      ],
+      "Create": [
+        "Δημιουργία"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ],
+      "Stop sharing": [
+        "Διακοπή κοινής χρήσης"
+      ],
+      "Show shared link details": [
+        ""
+      ],
+      "Share file": [
+        "Κοινοποίηση αρχείου"
+      ],
+      "Start recovering": [
+        "Έναρξη ανάκτησης"
+      ],
+      "View more": [
+        "Δείτε περισσότερα"
+      ],
+      "Move": [
+        "Μετακίνηση"
+      ],
+      "Copy link": [
+        ""
+      ],
+      "Create link": [
+        "Δημιουργία συνδέσμου"
+      ],
+      "Undo": [
+        "Αναίρεση"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        ""
+      ],
+      "Upgrade required": [
+        ""
+      ],
+      "Email settings": [
+        ""
+      ],
+      "Contact group": [
+        ""
+      ],
+      "Link confirmation": [
+        ""
+      ],
+      "Keyboard Shortcuts": [
+        ""
+      ],
+      "What's new": [
+        ""
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Request new verification code": [
+        "Ζητήστε νέο κωδικό επαλήθευσής"
+      ],
+      "Human verification": [
+        "Ανθρώπινη Επαλήθευση"
+      ],
+      "Edit contact group": [
+        ""
+      ],
+      "Create new group": [
+        ""
+      ],
+      "Add to ${ groupName }": [
+        ""
+      ],
+      "Add to ${ groupCount } group": [
+        "",
+        ""
+      ],
+      "Email settings (${ emailAddress })": [
+        ""
+      ],
+      "Delete ${ Name }": [
+        ""
+      ],
+      "Delete ${ count } contact group": [
+        "",
+        ""
+      ],
+      "${ emailsCount } member": [
+        "",
+        ""
+      ],
+      "Edit image": [
+        ""
+      ],
+      "Edit contact": [
+        ""
+      ],
+      "Create contact": [
+        ""
+      ],
+      "Delete ${ count } contact": [
+        "",
+        ""
+      ],
+      "Clearing data": [
+        ""
+      ],
+      "Warning": [
+        "Προειδοποίηση"
+      ],
+      "Recover data": [
+        ""
+      ],
+      "Re-signing contacts": [
+        ""
+      ],
+      "Re-sign all contacts": [
+        ""
+      ],
+      "Exporting contacts": [
+        ""
+      ],
+      "Other names": [
+        ""
+      ],
+      "Email addresses": [
+        ""
+      ],
+      "Phone numbers": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Other information": [
+        ""
+      ],
+      "Contact Details": [
+        ""
+      ],
+      "Merging contacts": [
+        ""
+      ],
+      "Merge contacts": [
+        ""
+      ],
+      "Deleting contacts": [
+        ""
+      ],
+      "View contacts": [
+        ""
+      ],
+      "Contacts": [
+        ""
+      ],
+      "Groups": [
+        ""
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
+      "Select action to take on contact group": [
+        ""
+      ],
+      "Add contact group name": [
+        ""
+      ],
+      "Select contact group": [
+        ""
+      ],
+      "Import groups": [
+        ""
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Report a problem": [
+        ""
+      ],
+      "Open help menu": [
+        ""
+      ],
+      "Back": [
+        "Πίσω"
+      ],
+      "Open settings menu": [
+        ""
+      ],
+      "Select a theme": [
+        ""
+      ],
+      "Confirm loss of Proton bonuses": [
+        ""
+      ],
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Account suspended": [
+        "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό σας"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        ""
+      ],
+      "Mailbox density": [
+        ""
+      ],
+      "Mailbox layout": [
+        ""
+      ],
+      "Composer mode": [
+        ""
+      ],
+      "Beta Access": [
+        ""
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "Αφήστε εδώ για να ανεβεί"
+      ],
+      "Change layout": [
+        "Αλλαγή διάταξης"
+      ],
+      "Show actions": [
+        "Εμφάνιση ενεργειών"
+      ],
+      "Sort files/folders": [
+        "Ταξινόμηση αρχείων/φάκελων"
+      ],
+      "Trash": [
+        "Κάδος"
+      ],
+      "Empty trash": [
+        "Άδειασμα κάδου"
+      ],
+      "Cancel all active transfers": [
+        "Ακυρώστε όλες τις ενεργές μεταφορές"
+      ],
+      "My files": [
+        "Τα αρχεία μου"
+      ],
+      "You have no folders yet": [
+        "Δεν έχετε ακόμη φακέλους"
+      ],
+      "You have no files to share": [
+        "Δεν έχετε αρχεία για να κοινοποιήσετε"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "Το φάκελος σας είναι έτοιμος για λήψη"
+      ],
+      "Download completed": [
+        "Η λήψη ολοκληρώθηκε"
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download canceled": [
+        ""
+      ],
+      "Downloading": [
+        "Γίνεται Λήψη"
+      ],
+      "Enter file password to download": [
+        "Εισάγετε τον κωδικό του αρχείου για λήψη"
+      ],
+      "The link either does not exist or has expired": [
+        "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
+      ],
+      "Restore your files": [
+        "Ανακτήστε τα αρχεία σας"
+      ],
+      "File recovery process": [
+        "Διαδικασία ανάκτησης αρχείων"
+      ],
+      "You have inaccessible files": [
+        "Έχετε μη προσβάσιμα αρχεία"
+      ],
+      "Rename a folder": [
+        "Μετονομασία Φακέλου"
+      ],
+      "Rename a file": [
+        "Μετονομασία αρχείου"
+      ],
+      "File details": [
+        "Λεπτομέρειες αρχείου"
+      ],
+      "Folder details": [
+        "Λεπτομέρειες φακέλου"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
+      "Uploaded by": [
+        "Μεταφορτώθηκε από"
+      ],
+      "Location": [
+        "Τοποθεσία"
+      ],
+      "Modified": [
+        "Τροποποιήθηκε"
+      ],
+      "Type": [
+        "Τύπος"
+      ],
+      "MIME type": [
+        "Τύπος MIME"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Shared": [
+        "Κοινοποιημένα"
+      ],
+      "# of accesses": [
+        ""
+      ],
+      "Create a new folder": [
+        "Δημιουργία νέου φακέλου"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Select link expiration date": [
+        "Επιλέξτε ημερομηνία λήξης συνδέσμου"
+      ],
+      "Select link expiration time": [
+        "Επιλέξτε το χρόνο λήξης του συνδέσμου"
+      ],
+      "Share via link": [
+        ""
+      ],
+      "Additional settings": [
+        "Επιπλέον ρυθμίσεις"
+      ],
+      "Manage secure link": [
+        "Διαχείριση ασφαλούς συνδέσμου"
+      ],
+      "Stop sharing with everyone?": [
+        ""
+      ],
+      "Discard changes?": [
+        "Απόρριψη αλλαγών;"
+      ],
+      "Discard": [
+        "Απόρριψη"
+      ],
+      "Files details": [
+        "Λεπτομέρειες αρχείων"
+      ],
+      "Number of files": [
+        "Αριθμός αρχείων"
+      ],
+      "Total size": [
+        "Συνολικό μέγεθος"
+      ],
+      "Delete permanently": [
+        "Οριστική διαγραφή"
+      ],
+      "Stop sharing": [
+        "Διακοπή κοινής χρήσης"
       ]
     },
     "Label": {
@@ -2020,12 +2023,6 @@
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
@@ -2075,6 +2072,12 @@
         ""
       ],
       "Payer": [
+        ""
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
         ""
       ],
       "Cancel": [
@@ -2185,44 +2188,6 @@
         ""
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Μάθετε περισσότερα"
-      ],
-      "Request an invite": [
-        "Ζητήστε μια πρόσκληση"
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του Browser"
-      ],
-      "Pay invoice": [
-        "Πληρωμή υπολοίπου"
-      ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "My files": [
-        "Τα αρχεία μου"
-      ],
-      "Shared": [
-        "Κοινοποιημένα"
-      ],
-      "Trash": [
-        "Κάδος"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Π.χ., "
@@ -2296,6 +2261,44 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
+      ],
+      "Pay invoice": [
+        "Πληρωμή υπολοίπου"
+      ],
+      "Upgrade account": [
+        "Αναβάθμιση λογαριασμού"
+      ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του Browser"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "My files": [
+        "Τα αρχεία μου"
+      ],
+      "Shared": [
+        "Κοινοποιημένα"
+      ],
+      "Trash": [
+        "Κάδος"
       ]
     },
     "Storage": {
@@ -2490,16 +2493,16 @@
       "Contacts could not be merged": [
         ""
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        ""
-      ],
       "Your local date & time settings seem to be out of sync.": [
         ""
       ],
-      "Are you sure you want to discard your import?": [
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        ""
+      ],
+      "Are you sure you want to discard your import?": [
         ""
       ]
     },
@@ -2574,6 +2577,49 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "",
         ""
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Εφαρμογές Proton"
+      ],
+      "Go to ${ title }": [
+        "Πάντε στο ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ωχ, κάτι πήγε στραβά"
+      ],
+      "There was a problem connecting to Proton.": [
+        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
+      ],
+      "Internal server error": [
+        "Εσωτερικό σφάλμα εξυπηρετητή"
+      ],
+      "You may also refresh the page or try again later.": [
+        "Μπορείτε επίσης να ανανεώσετε την σελίδα ή να προσπαθήσετε αργότερα."
+      ],
+      "Not found": [
+        "Δε βρέθηκε"
+      ],
+      "Access denied": [
+        "Δεν επιτρέπεται η πρόσβαση"
       ]
     },
     "Delinquent modal title": {
@@ -2968,47 +3014,9 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
-      ],
-      "Go to ${ title }": [
-        "Πάντε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ωχ, κάτι πήγε στραβά"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
-      ],
-      "Error: ${ errorMessage }": [
-        ""
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
-      ],
-      "Internal server error": [
-        "Εσωτερικό σφάλμα εξυπηρετητή"
-      ],
-      "You may also refresh the page or try again later.": [
-        "Μπορείτε επίσης να ανανεώσετε την σελίδα ή να προσπαθήσετε αργότερα."
-      ],
-      "Not found": [
-        "Δε βρέθηκε"
-      ],
-      "Access denied": [
-        "Δεν επιτρέπεται η πρόσβαση"
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3112,32 +3120,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
       ]
     },
     "Text": {
@@ -3655,6 +3637,27 @@
         ""
       ],
       "Bitcoin": [
+        ""
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
         ""
       ]
     },

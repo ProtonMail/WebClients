@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Erro desconhecido"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Esta mensagem pode conter hiperligações que não podem ser abertas correctamente pelo seu navegador actual"
+      ],
+      "Unknown error": [
+        "Erro desconhecido"
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Este campo é requerido"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Falha ao carregar o compositor."
       ],
       "Please refresh the page.": [
         "Por favor, actualize a página."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Impossível validar o email, tente mais tarde"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Por favor, tente autenticar novamente e certifique-se de que as permissões estão definidas correctamente."
       ],
+      "File has no contents to preview": [
+        "O ficheiro não tem conteúdo para antever"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Senha da caixa de correio incorrecta. Por favor, tente novamente"
       ],
       "Incorrect login credentials. Please try again": [
         "Credenciais de início de sessão erradas. Por favor, tente novamente"
-      ],
-      "File has no contents to preview": [
-        "O ficheiro não tem conteúdo para antever"
       ],
       "Process aborted": [
         ""
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "O pedido expirou."
       ],
-      "Signature verification failed": [
-        "Falha ao verificar a assinatura"
-      ],
-      "Could not find address ${ email }.": [
-        "Impossível encontrar o endereço ${ email }."
-      ],
       "Email address disabled": [
         "Endereço de email desactivado"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
+      ],
+      "Signature verification failed": [
+        "Falha ao verificar a assinatura"
+      ],
+      "Could not find address ${ email }.": [
+        "Impossível encontrar o endereço ${ email }."
       ],
       "Missing signature": [
         "Assinatura em falta"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "O tempo máximo de expiração são 4 semanas."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "",
+        ""
+      ],
       "Public key could not be trusted": [
         "A chave pública não pôde ser confiada"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Fechar"
       ],
-      "Close modal": [
-        "Fechar diálogo"
+      "Confirm": [
+        "Confirmar"
       ],
       "Cancel": [
         "Cancelar"
       ],
+      "Close modal": [
+        "Fechar diálogo"
+      ],
       "Submit": [
         "Submeter"
-      ],
-      "Confirm": [
-        "Confirmar"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Usar a definição \"${ label }\""
-      ],
-      "refresh the page": [
-        "actualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Sublinhado"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
@@ -646,6 +653,9 @@
       "Next": [
         "Seguinte"
       ],
+      "Signing out": [
+        "A terminar sessão"
+      ],
       "Clear": [
         "Limpar"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "Aceitar"
       ],
-      "Signing out": [
-        "A terminar sessão"
-      ],
-      "Log in": [
-        "Iniciar sessão"
-      ],
       "Details": [
         "Detalhes"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Log in": [
+        "Iniciar sessão"
       ],
       "Get started": [
         "Começar"
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adicionar a ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Enviar mesmo assim"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Maximizar compositor"
@@ -947,6 +948,9 @@
       "Not saved": [
         "Não gravado"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Data de validade"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Definir"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Imprimir"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Ver chaves"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "Transferir ${ attachmentName }"
       ],
@@ -1066,6 +1076,9 @@
       ],
       "Undo": [
         "Desfazer"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "Activar"
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "Ocultar mensagens"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Importar mensagens"
       ],
@@ -1180,6 +1196,15 @@
       ],
       "Start using ${ appName }": [
         "Comece a usar o ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1375,15 +1400,6 @@
       ],
       "Open settings menu": [
         "Abrir menu de definições"
-      ],
-      "Send feedback": [
-        "Enviar comentários"
-      ],
-      "Feedback": [
-        "Comentários"
-      ],
-      "Give feedback": [
-        "Comentar"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -1590,6 +1606,9 @@
       "Send email": [
         "Enviar email"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Nova mensagem"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "A carregar"
       ],
-      "support team": [
-        "equipa de assistência"
-      ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Texto simples"
+      ],
+      "support team": [
+        "equipa de assistência"
       ],
       "Drop the file here to upload": [
         "Largue o ficheiro aqui para enviar"
@@ -1952,6 +1971,9 @@
         "${ addressCount } endereço de email",
         "${ addressCount } endereços de email"
       ],
+      "Loading ${ appName }": [
+        "A carregar ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "Capturas de ecrã anexadas"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         "A sua importação não será processada."
       ],
-      "Loading ${ appName }": [
-        "A carregar ${ appName }"
-      ],
-      "here": [
-        "aqui"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Esta conta foi suspensa devido a uma potencial violação da política."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
-      ],
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "de"
+      ],
+      "here": [
+        "aqui"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Esta conta foi suspensa devido a uma potencial violação da política."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não activos nas definições."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "A verificação de ${ contactName } falhou: o contacto não está correctamente assinado.\nPode ser o resultado de uma reposição de senha.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddress } ou editar o contacto."
       ],
@@ -2518,6 +2540,9 @@
         "Hora",
         "Horas"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Rascunho descartado"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "A enviar"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Confirmar o relatório de phishing"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Assunto:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "ficheiro anexado",
         "ficheiros anexados"
@@ -2645,8 +2682,14 @@
         "imagem incorporada",
         "imagens incorporadas"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Mensagem enviada"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "A enviar mensagem..."
@@ -2688,9 +2731,6 @@
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
         "Tempo restante estimado: ${ estimatedMinutes } minutos"
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Renovámos o Proton e adoraríamos ouvir a sua opinião!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversa não lida",
         "${ unreadCount } conversas não lidas"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } mensagem não lida",
         "${ unreadCount } mensagens não lidas"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        ""
       ],
       "Manage your folders": [
         "Gerir as suas pastas"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(sem destinatário)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "",
+        ""
       ],
       "No more results found": [
         "Não há mais resultados"
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         "Escolha a aparência predefinida do compositor."
       ],
-      "What is the primary reason for this rating?": [
-        "Qual é a principal razão para esta avaliação?"
-      ],
       "Name on card": [
         ""
       ],
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "Cópia cega de mensagem (BCC)"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "De:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Filtro"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Como é que classificaria a sua experiência com o novo Proton?"
-      ],
-      "0 - Not a fan": [
-        "0 - Não sou fã"
-      ],
-      "10 - Love it!": [
-        "10 - Adoro!"
-      ],
       "Also archive": [
         "Arquivar também"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "Caixa de entrada"
-      ],
-      "Drafts": [
-        "Rascunhos"
-      ],
-      "Sent": [
-        "Enviado"
-      ],
-      "Trash": [
-        "Lixo"
-      ],
-      "Spam": [
-        "Assédio"
-      ],
-      "All mail": [
-        "Todo o correio"
-      ],
-      "Archive": [
-        "Arquivo"
-      ],
-      "Starred": [
-        "Com estrela"
-      ],
-      "Outbox": [
-        "Caixa de saída"
       ],
       "You need to activate your calendar keys to add this event": [
         "Tem de activar as chaves da agenda para adicionar este evento"
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Adicionar etiqueta"
       ],
+      "Inbox": [
+        "Caixa de entrada"
+      ],
+      "Drafts": [
+        "Rascunhos"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Enviado"
+      ],
+      "Starred": [
+        "Com estrela"
+      ],
+      "Archive": [
+        "Arquivo"
+      ],
+      "Spam": [
+        "Assédio"
+      ],
+      "Trash": [
+        "Lixo"
+      ],
+      "All mail": [
+        "Todo o correio"
+      ],
       "Folders": [
         "Pastas"
       ],
@@ -3417,6 +3459,9 @@
       ],
       "Manage your labels": [
         "Gerir as suas etiquetas"
+      ],
+      "Outbox": [
+        "Caixa de saída"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "e.g. Júlia Silva"
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "ZIP": [
         ""
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Filtrar etiquetas"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } dia",
+        "${ daysCountLeft } dias"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } hora",
+        "${ hoursCountLeft } horas"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } minuto",
+        "${ minutesCountLeft } minutos"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } segundo",
+        "${ secondsCountLeft } segundos"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         "${ totalImported }/${ totalToImport } contactos encriptados e adicionados à lista de contactos"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicações do Proton"
+      ],
+      "Go to ${ title }": [
+        "Ir para ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ir para ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem seleccionada"
@@ -4360,41 +4439,12 @@
     "Confirm modal title": {
       "Quit import?": [
         "Sair da importação?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicações do Proton"
       ],
-      "Go to ${ title }": [
-        "Ir para ${ title }"
+      "Message saved to Drafts": [
+        ""
       ],
-      "Go to ${ vpnName }": [
-        "Ir para ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortável"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coluna"
-      ],
-      "Row": [
-        "Linha"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizado"
+      "Edit and reschedule": [
+        ""
       ]
     },
     "Select files": {
@@ -4445,6 +4495,30 @@
         "Para desactivar o beta, abra o menu de definições e clique em \"Acesso Beta\"."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortável"
+      ],
+      "Compact": [
+        "Compacta"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coluna"
+      ],
+      "Row": [
+        "Linha"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizado"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Está disponível uma nova versão de ${ appName }. ${ reloadButton }."
@@ -4487,16 +4561,6 @@
       ],
       "Normal": [
         "Normal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Pontuação requerida"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Comentários enviados"
       ]
     },
     "Info for cash payment method": {
@@ -5116,12 +5180,6 @@
         "com estrela"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos $ ${ length } caracteres"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nome"
@@ -5250,9 +5308,10 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Endereço de email não encontrado entre as IDs de utilizador definidas na chave de envio (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A senha deve conter pelo menos ${ length } carácter",
+        "A senha deve conter pelo menos $ ${ length } caracteres"
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Em ${ date }, ${ name } ${ address } escreveu:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Endereço de email não encontrado entre as IDs de utilizador definidas na chave de envio (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(sem título)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Rascunhos"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Todos"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Ontem"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         "Este evento está a acontecer agora."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dia",
-        "${ daysCountLeft } dias"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } hora",
-        "${ hoursCountLeft } horas"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuto",
-        "${ minutesCountLeft } minutos"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } segundo",
-        "${ secondsCountLeft } segundos"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Envio anulado"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "Nenhuma mensagem encontrada"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

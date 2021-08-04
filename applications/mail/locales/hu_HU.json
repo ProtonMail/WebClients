@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Ismeretlen hiba"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
+      ],
+      "Unknown error": [
+        "Ismeretlen hiba"
       ],
       "Authentication canceled.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "A mező kitöltése kötelező"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "A szerkesztőt nem sikerült betölteni."
       ],
       "Please refresh the page.": [
         "Kérjük frissítse az oldalt."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "E-mail ellenőrzése nem sikerült, próbálja meg később"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "File has no contents to preview": [
+        "Nincs előnézeti tartalom"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
       ],
       "Incorrect login credentials. Please try again": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra"
-      ],
-      "File has no contents to preview": [
-        "Nincs előnézeti tartalom"
       ],
       "Process aborted": [
         ""
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "A kérés túllépte az időkorlátot."
       ],
-      "Signature verification failed": [
-        "Aláírás ellenőrzése sikertelen"
-      ],
-      "Could not find address ${ email }.": [
-        "Nem található a cím: ${ email }."
-      ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "A küldő kulcs érvénytelen"
+      ],
+      "Signature verification failed": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "Could not find address ${ email }.": [
+        "Nem található a cím: ${ email }."
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -314,6 +314,13 @@
       "The maximum expiration is 4 weeks.": [
         "A leghosszabb időkorlát 4 hét lehet."
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "",
+        ""
+      ],
       "Public key could not be trusted": [
         "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
       ],
@@ -343,26 +350,23 @@
       "Close": [
         "Bezárás"
       ],
-      "Close modal": [
-        "Ablak bezárása"
+      "Confirm": [
+        "Jóváhagyás"
       ],
       "Cancel": [
         "Mégsem"
       ],
+      "Close modal": [
+        "Ablak bezárása"
+      ],
       "Submit": [
         "Küldés"
-      ],
-      "Confirm": [
-        "Jóváhagyás"
       ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "refresh the page": [
-        "frissítse az oldalt"
       ],
       "Remove": [
         "Eltávolítás"
@@ -477,6 +481,9 @@
       ],
       "Underline": [
         "Aláhúzott"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
@@ -646,6 +653,9 @@
       "Next": [
         "Következő"
       ],
+      "Signing out": [
+        "Kijelentkezés"
+      ],
       "Clear": [
         "Törlés"
       ],
@@ -676,12 +686,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Kijelentkezés"
-      ],
-      "Log in": [
-        "Bejelentkezés"
-      ],
       "Details": [
         "Részletek"
       ],
@@ -702,6 +706,9 @@
       ],
       "Previous": [
         "Előző"
+      ],
+      "Log in": [
+        "Bejelentkezés"
       ],
       "Get started": [
         "Kezdés"
@@ -871,17 +878,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Küldés mindenképpen"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "Szerkesztő maximalizálása"
@@ -947,6 +948,9 @@
       "Not saved": [
         "Nincs mentve"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "Időkorlát"
       ],
@@ -958,6 +962,9 @@
       ],
       "Set": [
         "Beállítás"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "Nyomtatás"
@@ -1043,6 +1050,9 @@
       "View keys": [
         "Kulcsok megtekintése"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "${ attachmentName } letöltése"
       ],
@@ -1066,6 +1076,9 @@
       ],
       "Undo": [
         "Visszavonás"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "Engedélyezés"
@@ -1172,6 +1185,9 @@
       "Hide messages": [
         "Üzenetek elrejtése"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "Üzenetek importálása"
       ],
@@ -1180,6 +1196,15 @@
       ],
       "Start using ${ appName }": [
         "${ appName } használatának megkezdése"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1375,15 +1400,6 @@
       ],
       "Open settings menu": [
         "Beállítások menü megnyitása"
-      ],
-      "Send feedback": [
-        "Visszajelzés küldése"
-      ],
-      "Feedback": [
-        "Visszajelzés"
-      ],
-      "Give feedback": [
-        "Adjon visszajelzést"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -1590,6 +1606,9 @@
       "Send email": [
         "E-mail küldése"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "Új üzenet"
       ],
@@ -1706,9 +1725,6 @@
       "Loading": [
         "Betöltés"
       ],
-      "support team": [
-        ""
-      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
@@ -1805,6 +1821,9 @@
       ],
       "Plain text": [
         "Egyszerű szöveg"
+      ],
+      "support team": [
+        ""
       ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
@@ -1952,6 +1971,9 @@
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
       ],
+      "Loading ${ appName }": [
+        "${ appName } betöltése"
+      ],
       "Screenshot(s) attached": [
         "Képernyőkép(ek) csatolva"
       ],
@@ -1982,18 +2004,6 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Loading ${ appName }": [
-        "${ appName } betöltése"
-      ],
-      "here": [
-        "ide"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
-      ],
       "Unsupported file": [
         "Ismeretlen file"
       ],
@@ -2011,6 +2021,15 @@
       ],
       "of": [
         "/"
+      ],
+      "here": [
+        "ide"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
@@ -2392,6 +2411,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "${ contactName } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddress }) újra alá kell írni vagy átszerkeszteni a névjegyet."
       ],
@@ -2518,6 +2540,9 @@
         "Óra",
         "Óra"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "Piszkozat elvetve"
       ],
@@ -2547,6 +2572,9 @@
       ],
       "Sending": [
         "Küldés"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "Erősítse meg az adathalász bejelentést"
@@ -2637,6 +2665,15 @@
       "Subject:": [
         "Tárgy:"
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "fájl csatolva",
         "fájlok csatolva"
@@ -2645,8 +2682,14 @@
         "beágyazott kép",
         "beágyazott képek"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "Üzenet elküldve"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "Üzenet küldése..."
@@ -2688,9 +2731,6 @@
         "",
         ""
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        "Proton egy ráncfelvarráson esett át. Nagyon szeretnénk megismerni véleményét!"
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } olvasatlan beszélgetés",
         "${ unreadCount } olvasatlan beszélgetés"
@@ -2698,6 +2738,10 @@
       "${ unreadCount } unread message": [
         "${ unreadCount } olvasatlan üzenet",
         "${ unreadCount } olvasatlan üzenet"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        "",
+        ""
       ],
       "Manage your folders": [
         "Mappák kezelése"
@@ -2720,6 +2764,10 @@
       ],
       "(No Recipient)": [
         "(Nincs címzett)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        "",
+        ""
       ],
       "No more results found": [
         ""
@@ -3015,9 +3063,6 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3180,6 +3225,12 @@
       "Blind Carbon Copy": [
         "Titkos másolat"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "Feladó:"
       ],
@@ -3258,15 +3309,6 @@
       "Filter": [
         "Szűrő"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        "Hogyan értékeli a tapasztalatát az új ProtonMail-lel kapcsolatban?"
-      ],
-      "0 - Not a fan": [
-        "0 - Nem rajongok érte"
-      ],
-      "10 - Love it!": [
-        "10 - Imádom!"
-      ],
       "Also archive": [
         "Archiválás is"
       ]
@@ -3303,33 +3345,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "Beérkezett üzenetek"
-      ],
-      "Drafts": [
-        "Piszkozatok"
-      ],
-      "Sent": [
-        "Elküldött"
-      ],
-      "Trash": [
-        "Lomtár"
-      ],
-      "Spam": [
-        "Levélszemét"
-      ],
-      "All mail": [
-        "Összes levél"
-      ],
-      "Archive": [
-        "Archívum"
-      ],
-      "Starred": [
-        "Csillagozott"
-      ],
-      "Outbox": [
-        "Kimenő"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3406,6 +3421,33 @@
       "Add label": [
         "Új címke"
       ],
+      "Inbox": [
+        "Beérkezett üzenetek"
+      ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
+      "Starred": [
+        "Csillagozott"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "All mail": [
+        "Összes levél"
+      ],
       "Folders": [
         "Mappák"
       ],
@@ -3417,6 +3459,9 @@
       ],
       "Manage your labels": [
         "Címkék kezelése"
+      ],
+      "Outbox": [
+        "Kimenő"
       ]
     },
     "Placeholder": {
@@ -3492,9 +3537,6 @@
       "e.g. Julia Smith": [
         "pl. Kovács János"
       ],
-      "Feedback": [
-        "Visszajelzés"
-      ],
       "ZIP": [
         ""
       ],
@@ -3539,6 +3581,32 @@
       ],
       "Filter labels": [
         "Címkék szűrése"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "",
+        ""
+      ],
+      "${ minutes } minute": [
+        "",
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } nap",
+        "${ daysCountLeft } nap"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } óra",
+        "${ hoursCountLeft } óra"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } perc",
+        "${ minutesCountLeft } perc"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } másodperc",
+        "${ secondsCountLeft } másodperc"
       ]
     },
     "Warning": {
@@ -4229,6 +4297,17 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton alkalmazások"
+      ],
+      "Go to ${ title }": [
+        "${ title } megnyitása"
+      ],
+      "Go to ${ vpnName }": [
+        "Menjen ${ vpnName }"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
@@ -4360,40 +4439,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton alkalmazások"
       ],
-      "Go to ${ title }": [
-        "${ title } megnyitása"
-      ],
-      "Go to ${ vpnName }": [
-        "Menjen ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
+      "Message saved to Drafts": [
         ""
       ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
+      "Edit and reschedule": [
         ""
       ]
     },
@@ -4445,6 +4495,30 @@
         "A Béta hozzáférés tiltásához nyissa meg a beállítások lenyíló menüt és válassza a \"béta hozzáférés\" opciót."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
@@ -4487,16 +4561,6 @@
       ],
       "Normal": [
         ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "A pont megadása kötelező"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Visszajelzés elküldve"
       ]
     },
     "Info for cash payment method": {
@@ -5116,12 +5180,6 @@
         "csillagozott"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A jelszónak legalább ${ length } karakterből kell állnia",
-        "A jelszónak legalább ${ length } karakterből kell állnia"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Név"
@@ -5250,9 +5308,10 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
       ]
     },
     "Message": {
@@ -5264,6 +5323,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date } keltezéssel, ${ name } ${ address } írta:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5649,6 +5713,68 @@
     "Event title": {
       "(no title)": [
         "(névtelen)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6141,6 +6267,9 @@
       "Drafts": [
         "Piszkozatok"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "Mind"
       ],
@@ -6288,6 +6417,20 @@
     "Time": {
       "Yesterday": [
         "Tegnap"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6483,27 +6626,12 @@
         "Ez az esemény jelenleg tart."
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } nap",
-        "${ daysCountLeft } nap"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } óra",
-        "${ hoursCountLeft } óra"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } perc",
-        "${ minutesCountLeft } perc"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } másodperc",
-        "${ secondsCountLeft } másodperc"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "Küldés megszakítva"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6738,6 +6866,9 @@
       ],
       "No messages found": [
         "Nincsenek üzenetek"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {

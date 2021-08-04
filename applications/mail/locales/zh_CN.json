@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "未知错误"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
+      ],
+      "Unknown error": [
+        "未知错误"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -30,14 +30,14 @@
       "This field is required": [
         "此项必须填写"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
-      ],
       "The composer failed to load.": [
         "编辑器加载失败。"
       ],
       "Please refresh the page.": [
         "请刷新页面。"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "Can't validate email, try again later": [
         "无法验证邮箱，请重试"
@@ -99,14 +99,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "File has no contents to preview": [
+        "文件没有内容可预览"
+      ],
       "Incorrect mailbox password. Please try again": [
         "邮箱密码错误，请重试"
       ],
       "Incorrect login credentials. Please try again": [
         "登录账号或密码错误，请重试"
-      ],
-      "File has no contents to preview": [
-        "文件没有内容可预览"
       ],
       "Process aborted": [
         ""
@@ -201,12 +201,6 @@
       "Request timed out.": [
         "请求超时。"
       ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
       "Email address disabled": [
         "邮件地址已禁用"
       ],
@@ -230,6 +224,12 @@
       ],
       "The sending key is not valid": [
         "发送密钥无效"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
       ],
       "Missing signature": [
         "缺少签名"
@@ -309,6 +309,12 @@
       "The maximum expiration is 4 weeks.": [
         "有效期不能超过四周。"
       ],
+      "Choose a date in the future.": [
+        ""
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        ""
+      ],
       "Public key could not be trusted": [
         "无法信任公钥"
       ],
@@ -338,26 +344,23 @@
       "Close": [
         "关闭"
       ],
-      "Close modal": [
-        "关闭"
+      "Confirm": [
+        "确定"
       ],
       "Cancel": [
         "取消"
       ],
+      "Close modal": [
+        "关闭"
+      ],
       "Submit": [
         "提交"
-      ],
-      "Confirm": [
-        "确定"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "refresh the page": [
-        "刷新页面"
       ],
       "Remove": [
         "移除"
@@ -472,6 +475,9 @@
       ],
       "Underline": [
         "下划线"
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
@@ -638,6 +644,9 @@
       "Next": [
         "继续"
       ],
+      "Signing out": [
+        "正在退出账户"
+      ],
       "Clear": [
         "清除"
       ],
@@ -668,12 +677,6 @@
       "OK": [
         "确定"
       ],
-      "Signing out": [
-        "正在退出账户"
-      ],
-      "Log in": [
-        "登录"
-      ],
       "Details": [
         "详细信息"
       ],
@@ -694,6 +697,9 @@
       ],
       "Previous": [
         "前一页"
+      ],
+      "Log in": [
+        "登录"
       ],
       "Get started": [
         "入门"
@@ -863,17 +869,11 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "仍然发送"
+      ],
+      "Got it": [
+        ""
       ],
       "Maximize composer": [
         "最大化编辑器"
@@ -938,6 +938,9 @@
       "Not saved": [
         "未保存"
       ],
+      "Schedule send": [
+        ""
+      ],
       "Expiration time": [
         "有效期"
       ],
@@ -949,6 +952,9 @@
       ],
       "Set": [
         "设置"
+      ],
+      "Schedule message": [
+        ""
       ],
       "Print": [
         "打印"
@@ -1034,6 +1040,9 @@
       "View keys": [
         "查看密钥"
       ],
+      "Edit draft": [
+        ""
+      ],
       "Download ${ attachmentName }": [
         "下载 ${ attachmentName }"
       ],
@@ -1057,6 +1066,9 @@
       ],
       "Undo": [
         "撤销"
+      ],
+      "View message": [
+        ""
       ],
       "Enable": [
         "开启"
@@ -1163,6 +1175,9 @@
       "Hide messages": [
         "隐藏这些邮件"
       ],
+      "Create new message": [
+        ""
+      ],
       "Import messages": [
         "导入邮件"
       ],
@@ -1171,6 +1186,15 @@
       ],
       "Start using ${ appName }": [
         "开始使用 ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1361,15 +1385,6 @@
         "返回"
       ],
       "Open settings menu": [
-        ""
-      ],
-      "Send feedback": [
-        ""
-      ],
-      "Feedback": [
-        ""
-      ],
-      "Give feedback": [
         ""
       ],
       "Confirm loss of Proton bonuses": [
@@ -1573,6 +1588,9 @@
       "Send email": [
         "发送邮件"
       ],
+      "Schedule send": [
+        ""
+      ],
       "New message": [
         "撰写邮件"
       ],
@@ -1689,9 +1707,6 @@
       "Loading": [
         "加载中"
       ],
-      "support team": [
-        ""
-      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -1787,6 +1802,9 @@
       ],
       "Plain text": [
         "纯文本"
+      ],
+      "support team": [
+        ""
       ],
       "Drop the file here to upload": [
         ""
@@ -1929,6 +1947,9 @@
       "${ addressCount } email address": [
         ""
       ],
+      "Loading ${ appName }": [
+        "正在加载 ${ appName }"
+      ],
       "Screenshot(s) attached": [
         "已添加截图"
       ],
@@ -1959,18 +1980,6 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Loading ${ appName }": [
-        "正在加载 ${ appName }"
-      ],
-      "here": [
-        "此处"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        ""
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        ""
-      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -1988,6 +1997,15 @@
       ],
       "of": [
         "，共"
+      ],
+      "here": [
+        "此处"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        ""
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        ""
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
@@ -2367,6 +2385,9 @@
       "Do you want to send your message anyway?": [
         ""
       ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "联系人 ${ contactName } 的签名不正确，未能通过验证，这可能是重置密码导致的。您需要重新对联系人签名或修改联系人信息才能向 ${ contactAddress } 发送邮件。"
       ],
@@ -2484,6 +2505,9 @@
       "Hour": [
         "小时"
       ],
+      "When do you want your message to be sent?": [
+        ""
+      ],
       "Draft discarded": [
         "草稿已删除"
       ],
@@ -2513,6 +2537,9 @@
       ],
       "Sending": [
         "正在发送"
+      ],
+      "Scheduled": [
+        ""
       ],
       "Confirm phishing report": [
         "确认举报欺诈"
@@ -2601,14 +2628,29 @@
       "Subject:": [
         "主题："
       ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        ""
+      ],
+      "This message will be sent shortly": [
+        ""
+      ],
+      "This message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "file attached": [
         "个附件"
       ],
       "embedded image": [
         "张嵌入图像"
       ],
+      "Message will be sent ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "Message sent": [
         "邮件已发送"
+      ],
+      "Scheduling message...": [
+        ""
       ],
       "Sending message...": [
         "邮件发送中..."
@@ -2649,14 +2691,14 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         ""
       ],
-      "Proton has received a facelift. We would love to hear what you think about it!": [
-        ""
-      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } 条未读会话"
       ],
       "${ unreadCount } unread message": [
         "${ unreadCount } 封未读邮件"
+      ],
+      "${ totalMessagesCount } scheduled message": [
+        ""
       ],
       "Manage your folders": [
         "管理您的文件夹"
@@ -2678,6 +2720,9 @@
       ],
       "(No Recipient)": [
         "(无收件人)"
+      ],
+      "${ occurrencesInBody } occurrence found": [
+        ""
       ],
       "No more results found": [
         ""
@@ -2966,9 +3011,6 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Name on card": [
         ""
       ],
@@ -3131,6 +3173,12 @@
       "Blind Carbon Copy": [
         "密送"
       ],
+      "Date": [
+        ""
+      ],
+      "Time": [
+        ""
+      ],
       "From:": [
         "发件人："
       ],
@@ -3209,15 +3257,6 @@
       "Filter": [
         "状态"
       ],
-      "How would you rate your experience with the new ProtonMail?": [
-        ""
-      ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
       "Also archive": [
         "同时存档"
       ]
@@ -3254,33 +3293,6 @@
       ],
       "Add a gift code": [
         ""
-      ],
-      "Inbox": [
-        "收件箱"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Sent": [
-        "已发送"
-      ],
-      "Trash": [
-        "废件箱"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "All mail": [
-        "所有邮件"
-      ],
-      "Archive": [
-        "存档"
-      ],
-      "Starred": [
-        "星标邮件"
-      ],
-      "Outbox": [
-        "发件箱"
       ],
       "You need to activate your calendar keys to add this event": [
         ""
@@ -3357,6 +3369,33 @@
       "Add label": [
         "添加标签"
       ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "已发送"
+      ],
+      "Starred": [
+        "星标邮件"
+      ],
+      "Archive": [
+        "存档"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "Trash": [
+        "废件箱"
+      ],
+      "All mail": [
+        "所有邮件"
+      ],
       "Folders": [
         "文件夹"
       ],
@@ -3368,6 +3407,9 @@
       ],
       "Manage your labels": [
         "管理您的标签"
+      ],
+      "Outbox": [
+        "发件箱"
       ]
     },
     "Placeholder": {
@@ -3443,9 +3485,6 @@
       "e.g. Julia Smith": [
         "例如：Julia Smith"
       ],
-      "Feedback": [
-        ""
-      ],
       "ZIP": [
         ""
       ],
@@ -3490,6 +3529,26 @@
       ],
       "Filter labels": [
         "查找标签"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        ""
+      ],
+      "${ minutes } minute": [
+        ""
+      ],
+      "${ daysCountLeft } day": [
+        "${ daysCountLeft } 天"
+      ],
+      "${ hoursCountLeft } hour": [
+        "${ hoursCountLeft } 小时"
+      ],
+      "${ minutesCountLeft } minute": [
+        "${ minutesCountLeft } 分钟"
+      ],
+      "${ secondsCountLeft } second": [
+        "${ secondsCountLeft } 秒"
       ]
     },
     "Warning": {
@@ -4150,6 +4209,17 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton 产品"
+      ],
+      "Go to ${ title }": [
+        "转到 ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "没有选择图像"
@@ -4281,40 +4351,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton 产品"
       ],
-      "Go to ${ title }": [
-        "转到 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
+      "Message saved to Drafts": [
         ""
       ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
+      "Edit and reschedule": [
         ""
       ]
     },
@@ -4366,6 +4407,30 @@
         ""
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 有新版本，请${ reloadButton }。"
@@ -4407,16 +4472,6 @@
         ""
       ],
       "Normal": [
-        ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        ""
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
         ""
       ]
     },
@@ -5026,11 +5081,6 @@
         "星标邮件"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        ""
-      ]
-    },
     "Contact field label": {
       "Name": [
         "姓名"
@@ -5159,9 +5209,9 @@
         "GB"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        ""
       ]
     },
     "Message": {
@@ -5173,6 +5223,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }，${ name } ${ address } 来信："
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5558,6 +5613,68 @@
     "Event title": {
       "(no title)": [
         "(无标题)"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        ""
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start tomorrow": [
+        ""
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        ""
       ]
     },
     "Participant name": {
@@ -6013,6 +6130,9 @@
       "Drafts": [
         "草稿"
       ],
+      "Scheduled": [
+        ""
+      ],
       "All": [
         "全部"
       ],
@@ -6158,6 +6278,20 @@
     "Time": {
       "Yesterday": [
         "昨天"
+      ]
+    },
+    "Date label": {
+      "today": [
+        ""
+      ],
+      "tomorrow": [
+        ""
+      ],
+      "Today": [
+        ""
+      ],
+      "Tomorrow": [
+        ""
       ]
     },
     "Invitation details (all-day event)": {
@@ -6353,23 +6487,12 @@
         "事项正在发生。"
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } 天"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } 小时"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } 分钟"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } 秒"
-      ]
-    },
     "Message notification": {
       "Sending undone": [
         "邮件已撤回"
+      ],
+      "Scheduling cancelled. Message has been moved to Drafts.": [
+        ""
       ]
     },
     "Send email with warnings": {
@@ -6597,6 +6720,9 @@
       ],
       "No messages found": [
         "没有找到邮件"
+      ],
+      "No messages scheduled": [
+        ""
       ]
     },
     "Alternative text for welcome image": {
