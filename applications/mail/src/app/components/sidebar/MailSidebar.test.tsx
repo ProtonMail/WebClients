@@ -4,9 +4,17 @@ import { fireEvent } from '@testing-library/dom';
 import { act } from 'react-dom/test-utils';
 import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import loudRejection from 'loud-rejection';
-import { render, clearAll, addToCache, minimalCache, config, getHistory } from '../../helpers/test/helper';
+import {
+    render,
+    clearAll,
+    addToCache,
+    minimalCache,
+    config,
+    getHistory,
+    setFeatureFlags,
+} from '../../helpers/test/helper';
 import MailSidebar from './MailSidebar';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
@@ -24,8 +32,9 @@ const props = {
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' };
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID };
 const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' };
-const inboxMessages = { LabelID: '0', Unread: 3, Total: 20 };
-const allMailMessages = { LabelID: '5', Unread: 10000, Total: 10001 };
+const inboxMessages = { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 3, Total: 20 };
+const allMailMessages = { LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Unread: 10000, Total: 10001 };
+const scheduledMessages = { LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: 4 };
 const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
@@ -34,6 +43,12 @@ const setupTest = (labels: any[] = [], messageCounts: any[] = [], conversationCo
     addToCache('Labels', labels);
     addToCache('MessageCounts', messageCounts);
     addToCache('ConversationCounts', conversationCounts);
+};
+
+const setupScheduled = (hasPaidMail: boolean) => {
+    addToCache('User', { Email: 'Email', DisplayName: 'DisplayName', Name: 'Name', hasPaidMail });
+
+    setFeatureFlags('ScheduledSend', true);
 };
 
 describe('MailSidebar', () => {
@@ -171,5 +186,52 @@ describe('MailSidebar', () => {
         });
 
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessagesUpdated.Unread}`);
+    });
+
+    it('should not show scheduled sidebar item when feature flag is disabled', async () => {
+        setupTest([], [], [scheduledMessages]);
+
+        const { queryByTestId } = await render(<MailSidebar {...props} />, false);
+
+        expect(queryByTestId(`Scheduled`)).toBeNull();
+    });
+
+    it('should show scheduled sidebar item for paying user', async () => {
+        setupTest([], [], [scheduledMessages]);
+        setupScheduled(true);
+
+        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+
+        const scheduledElement = getByTestId(`navigation-link:Scheduled`);
+
+        const scheduledLocationAside = scheduledElement.querySelectorAll('.navigation-counter-item');
+
+        // We have two navigation counters for scheduled messages, one to display the number of scheduled messages and one for unread scheduled messages
+        expect(scheduledLocationAside[0]?.innerHTML).toBe(`${scheduledMessages.Total}`);
+        expect(scheduledLocationAside[1]?.innerHTML).toBe(`${scheduledMessages.Unread}`);
+    });
+
+    it('should show scheduled sidebar item for free user with scheduled messages', async () => {
+        setupTest([], [], [scheduledMessages]);
+        setupScheduled(false);
+
+        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+
+        const scheduledElement = getByTestId(`navigation-link:Scheduled`);
+
+        const scheduledLocationAside = scheduledElement.querySelectorAll('.navigation-counter-item');
+
+        // We have two navigation counters for scheduled messages, one to display the number of scheduled messages and one for unread scheduled messages
+        expect(scheduledLocationAside[0]?.innerHTML).toBe(`${scheduledMessages.Total}`);
+        expect(scheduledLocationAside[1]?.innerHTML).toBe(`${scheduledMessages.Unread}`);
+    });
+
+    it('should not show scheduled sidebar item for free user without scheduled messages', async () => {
+        setupTest([], [], []);
+        setupScheduled(false);
+
+        const { queryByTestId } = await render(<MailSidebar {...props} />, false);
+
+        expect(queryByTestId(`Scheduled`)).toBeNull();
     });
 });
