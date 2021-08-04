@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import React, { ChangeEvent, DragEvent } from 'react';
+import { ChangeEvent, DragEvent } from 'react';
 
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import {

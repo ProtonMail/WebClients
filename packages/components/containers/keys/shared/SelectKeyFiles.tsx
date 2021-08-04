@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { parseKeyFiles } from '@proton/shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';

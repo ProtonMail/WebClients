@@ -1,5 +1,4 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
-import React from 'react';
 import { FeatureCode, useFeature } from '@proton/components';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';

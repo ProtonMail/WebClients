@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, fireEvent, RenderResult, within } from '@testing-library/react';
 
 import SelectTwo from './SelectTwo';

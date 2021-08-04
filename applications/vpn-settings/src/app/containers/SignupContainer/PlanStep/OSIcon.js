@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import windowsSvg from '@proton/styles/assets/img/pm-images/windows.svg';
 import iosSvg from '@proton/styles/assets/img/pm-images/iOS.svg';

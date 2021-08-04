@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 import { LoaderIcon, Table, TableRow, TableHeader, TableBody, Badge } from '../../../components';
 import { ImportKey, Status } from './interface';
 

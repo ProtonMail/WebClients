@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Loader, useApi, useNotifications } from '@proton/components';
 import { checkInvitation } from '@proton/shared/lib/api/invites';

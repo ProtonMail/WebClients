@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, classnames, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 import { TransferState, Upload, Download } from '../../interfaces/transfer';

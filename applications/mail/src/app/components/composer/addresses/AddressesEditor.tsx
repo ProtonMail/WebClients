@@ -1,4 +1,4 @@
-import React, { useState, MutableRefObject, MouseEvent } from 'react';
+import { useState, MutableRefObject, MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
     Label,

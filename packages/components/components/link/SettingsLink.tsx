@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { useLocation } from 'react-router-dom';

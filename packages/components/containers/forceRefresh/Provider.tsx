@@ -1,4 +1,5 @@
-import React, { useState, useCallback, useImperativeHandle } from 'react';
+import { useState, useCallback, useImperativeHandle } from 'react';
+import * as React from 'react';
 
 import Context, { RefreshFn } from './context';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppLink, { Props as AppLinkProps } from '../link/AppLink';
 import Icon from '../icon/Icon';
 

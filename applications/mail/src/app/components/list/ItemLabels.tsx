@@ -1,5 +1,4 @@
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import React from 'react';
 import { LabelStack } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { orderBy } from '@proton/shared/lib/helpers/array';

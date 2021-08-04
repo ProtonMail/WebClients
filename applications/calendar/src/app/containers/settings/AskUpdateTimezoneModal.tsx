@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Button, useApi, useEventManager, useNotifications, FormModal, useLoading } from '@proton/components';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';

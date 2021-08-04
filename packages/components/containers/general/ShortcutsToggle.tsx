@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { updateShortcuts } from '@proton/shared/lib/api/mailSettings';
 

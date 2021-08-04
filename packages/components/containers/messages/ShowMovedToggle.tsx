@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';

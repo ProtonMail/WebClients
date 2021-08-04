@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, ComponentProps } from 'react';
+import { useState, useEffect, useMemo, ComponentProps } from 'react';
 import { c } from 'ttag';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';

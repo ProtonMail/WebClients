@@ -4,7 +4,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, FormModal, PrimaryButton } from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';

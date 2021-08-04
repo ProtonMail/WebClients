@@ -1,4 +1,5 @@
-import React, { useRef, Ref, forwardRef } from 'react';
+import { useRef, Ref, forwardRef } from 'react';
+import * as React from 'react';
 import { useCombinedRefs, useFocusTrap, classnames } from '@proton/components';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

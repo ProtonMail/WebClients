@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { c } from 'ttag';
 import { addContacts } from '@proton/shared/lib/api/contacts';
 import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { Fragment, useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { algorithmInfo, OpenPGPKey, isExpiredKey, isRevokedKey } from 'pmcrypto';
 import { isValid, format } from 'date-fns';
 import { c } from 'ttag';
@@ -277,7 +277,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                             !isTinyMobile &&
                                 (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
                             !isNarrow && algo,
-                            <React.Fragment key={fingerprint}>
+                            <Fragment key={fingerprint}>
                                 {isPrimary ? <Badge type="primary">{c('Key badge').t`Primary`}</Badge> : null}
                                 {isVerificationOnly ? (
                                     <Badge type="warning">{c('Key badge').t`Verification only`}</Badge>
@@ -286,7 +286,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isTrusted ? <Badge type="success">{c('Key badge').t`Trusted`}</Badge> : null}
                                 {isRevoked ? <Badge type="error">{c('Key badge').t`Revoked`}</Badge> : null}
                                 {isExpired ? <Badge type="error">{c('Key badge').t`Expired`}</Badge> : null}
-                            </React.Fragment>,
+                            </Fragment>,
                             <DropdownActions key={fingerprint} size="small" list={list} />,
                         ].filter(Boolean);
                         return <TableRow key={fingerprint} cells={cells} />;

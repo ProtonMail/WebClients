@@ -1,4 +1,3 @@
-import React from 'react';
 import { StandardPrivateApp } from '@proton/components';
 import {
     UserModel,

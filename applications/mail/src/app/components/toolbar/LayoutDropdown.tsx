@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, DropdownMenu, DropdownMenuButton, useApi, useEventManager, useLoading } from '@proton/components';
 import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';

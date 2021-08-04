@@ -1,4 +1,4 @@
-import React, { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
+import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
 import { classnames, ItemCheckbox } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';

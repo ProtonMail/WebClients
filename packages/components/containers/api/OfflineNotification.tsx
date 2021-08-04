@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 import { LinkButton } from '../../components';
 import { useLoading } from '../../hooks';
 

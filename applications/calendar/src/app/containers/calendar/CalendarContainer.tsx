@@ -12,7 +12,15 @@ import {
 import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
-import React, { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import {
+    MutableRefObject,
+    useCallback,
+    useEffect,
+    useMemo,
+    useReducer,
+    useRef,
+    useState,
+} from 'react';
 import { useAppTitle, useCalendarBootstrap, useModals } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 import { unary } from '@proton/shared/lib/helpers/function';

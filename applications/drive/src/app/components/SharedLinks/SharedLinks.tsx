@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import { useRef, useCallback } from 'react';
 import { c } from 'ttag';
 import useUserSettings from '../../hooks/drive/useUserSettings';
 import FileBrowser from '../FileBrowser/FileBrowser';

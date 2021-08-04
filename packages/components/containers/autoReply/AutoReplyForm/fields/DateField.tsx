@@ -1,4 +1,3 @@
-import React from 'react';
 import { isValid } from 'date-fns';
 import { DateInput } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';

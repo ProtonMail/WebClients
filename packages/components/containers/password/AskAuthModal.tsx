@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { InfoAuthedResponse, TwoFaResponse } from '@proton/shared/lib/authentication/interface';

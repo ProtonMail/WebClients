@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';

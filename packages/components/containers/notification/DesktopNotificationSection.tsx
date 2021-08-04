@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Row, Label, Info } from '../../components';
 import DesktopNotificationPanel, { Props } from './DesktopNotificationPanel';

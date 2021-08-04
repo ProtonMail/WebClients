@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { c } from 'ttag';
 import { APPS_CONFIGURATION, BRAND_NAME, APPS } from '@proton/shared/lib/constants';
 
@@ -29,7 +29,7 @@ const AppsDropdown = () => {
         >
             <ul className="apps-dropdown-list unstyled m1 scroll-if-needed">
                 {apps.map(({ id, icon, title }, index) => (
-                    <React.Fragment key={id}>
+                    <Fragment key={id}>
                         <li>
                             <AppLink
                                 to="/"
@@ -48,7 +48,7 @@ const AppsDropdown = () => {
                         {index % 2 !== 0 && (
                             <li className="apps-dropdown-item-hr dropdown-item-hr" aria-hidden="true" />
                         )}
-                    </React.Fragment>
+                    </Fragment>
                 ))}
                 <li>
                     <SettingsLink

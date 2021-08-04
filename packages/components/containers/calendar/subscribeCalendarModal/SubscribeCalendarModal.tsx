@@ -1,6 +1,7 @@
 import { MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';

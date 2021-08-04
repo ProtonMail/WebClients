@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 import { OnCompose } from '../hooks/composer/useCompose';
 import { mailtoParser } from '../helpers/url';
 import { MESSAGE_ACTIONS } from '../constants';

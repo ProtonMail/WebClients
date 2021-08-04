@@ -1,4 +1,3 @@
-import React from 'react';
 import { Toolbar, ToolbarSeparator } from '@proton/components';
 
 import { useSharedLinksContent } from './SharedLinksContentProvider';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import noContactsImg from '@proton/styles/assets/img/placeholders/empty-address-book.svg';

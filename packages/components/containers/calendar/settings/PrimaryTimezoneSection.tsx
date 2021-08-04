@@ -1,6 +1,5 @@
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import React from 'react';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';

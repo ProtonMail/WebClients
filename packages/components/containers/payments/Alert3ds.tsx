@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey.svg';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure.svg';

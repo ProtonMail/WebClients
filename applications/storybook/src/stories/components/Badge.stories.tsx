@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge } from '@proton/components';
 
 import mdx from './Badge.mdx';

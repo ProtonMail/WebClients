@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
+import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
 import { useToggle } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 

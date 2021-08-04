@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 import { srpAuth } from '@proton/shared/lib/srp';

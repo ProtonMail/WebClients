@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

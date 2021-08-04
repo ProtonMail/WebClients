@@ -1,4 +1,4 @@
-import React, {
+import {
     MutableRefObject,
     useRef,
     useEffect,

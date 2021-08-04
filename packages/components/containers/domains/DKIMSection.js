@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { DKIM_STATE } from '@proton/shared/lib/constants';

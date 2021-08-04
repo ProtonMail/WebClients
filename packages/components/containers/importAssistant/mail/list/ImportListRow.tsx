@@ -1,4 +1,3 @@
-import React from 'react';
 import { format } from 'date-fns';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';

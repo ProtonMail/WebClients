@@ -1,5 +1,3 @@
-import React from 'react';
-
 import AppLink, { Props as LinkProps } from '../link/AppLink';
 import { ButtonLike } from '../button';
 import { Icon } from '../icon';

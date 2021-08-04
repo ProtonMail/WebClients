@@ -1,4 +1,5 @@
-import React, { useState, ChangeEvent, useMemo, useEffect } from 'react';
+import { useState, ChangeEvent, useMemo, useEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import {
     SearchInput,

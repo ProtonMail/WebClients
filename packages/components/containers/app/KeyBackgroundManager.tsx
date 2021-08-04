@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
     activateMemberAddressKeys,

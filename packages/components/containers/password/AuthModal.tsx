@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

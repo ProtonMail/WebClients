@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useImperativeHandle, Ref } from 'react';
+import { useState, forwardRef, useImperativeHandle, Ref } from 'react';
 import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/components';
 

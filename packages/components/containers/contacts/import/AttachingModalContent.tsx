@@ -1,4 +1,4 @@
-import React, { ChangeEvent, DragEvent } from 'react';
+import { ChangeEvent, DragEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import {

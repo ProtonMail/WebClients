@@ -1,4 +1,4 @@
-import React, { ReactNode, LiHTMLAttributes } from 'react';
+import { ReactNode, LiHTMLAttributes } from 'react';
 
 import { classnames } from '../../helpers';
 

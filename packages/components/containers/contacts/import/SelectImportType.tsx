@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { getAllTypes } from '@proton/shared/lib/helpers/contacts';
 
 import { Label, Select } from '../../../components';

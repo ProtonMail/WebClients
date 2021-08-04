@@ -1,4 +1,3 @@
-import React from 'react';
 import { EmailSubscriptionCheckboxes } from '@proton/components';
 import { c } from 'ttag';
 import protonLogoSvg from '@proton/styles/assets/img/shared/proton-logo.svg';

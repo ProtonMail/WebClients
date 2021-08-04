@@ -1,5 +1,6 @@
 import { LoadingMap } from '@proton/shared/lib/interfaces/utils';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import * as React from 'react';
 import {
     Alert,
     Loader,

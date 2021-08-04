@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';

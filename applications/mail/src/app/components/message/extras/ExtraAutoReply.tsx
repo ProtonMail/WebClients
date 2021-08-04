@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, Href } from '@proton/components';
 import { c } from 'ttag';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';

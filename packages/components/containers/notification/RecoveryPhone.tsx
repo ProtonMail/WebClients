@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Alert, Button, ConfirmModal } from '../../components';
 import { useModals, useLoading } from '../../hooks';

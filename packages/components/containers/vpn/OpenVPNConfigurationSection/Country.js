@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';

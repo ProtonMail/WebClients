@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { Tooltip, Icon } from '../../components';

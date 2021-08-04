@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import * as H from 'history';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { noop } from '@proton/shared/lib/helpers/function';

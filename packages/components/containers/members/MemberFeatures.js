@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

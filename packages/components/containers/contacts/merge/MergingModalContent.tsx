@@ -1,5 +1,5 @@
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { getContact, addContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';

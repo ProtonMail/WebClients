@@ -1,4 +1,3 @@
-import React from 'react';
 import { LabelStack } from '@proton/components';
 
 import mdx from './LabelStack.mdx';

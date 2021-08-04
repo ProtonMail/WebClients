@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { useNotifications, FloatingButton, SidebarPrimaryButton, Icon } from '@proton/components';
 import useTrash from '../../../hooks/drive/useTrash';

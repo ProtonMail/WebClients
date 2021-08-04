@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';

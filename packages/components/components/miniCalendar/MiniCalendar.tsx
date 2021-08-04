@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
+import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
 import { addMonths, endOfMonth, startOfMonth, format, isSameMonth } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

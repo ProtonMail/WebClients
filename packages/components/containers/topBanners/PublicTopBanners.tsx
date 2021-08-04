@@ -1,5 +1,3 @@
-import React from 'react';
-
 import OnlineTopBanner from './OnlineTopBanner';
 import NewVersionTopBanner from './NewVersionTopBanner';
 

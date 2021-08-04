@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import { AutoResponder } from '@proton/shared/lib/interfaces/AutoResponder';

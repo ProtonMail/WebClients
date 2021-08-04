@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import envelopSvg from '@proton/styles/assets/img/placeholders/welcome-pane.svg';

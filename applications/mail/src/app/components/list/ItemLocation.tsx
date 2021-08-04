@@ -1,4 +1,3 @@
-import React from 'react';
 import { useFolders, Tooltip, useMailSettings, classnames } from '@proton/components';
 
 import { getCurrentFolders } from '../../helpers/labels';

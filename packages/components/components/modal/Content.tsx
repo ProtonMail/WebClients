@@ -1,4 +1,4 @@
-import React, { ReactNode, FormEvent } from 'react';
+import { ReactNode, FormEvent } from 'react';
 
 import { noop } from '@proton/shared/lib/helpers/function';
 import { classnames } from '../../helpers';

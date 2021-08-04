@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import tinycolor from 'tinycolor2';
 import { Icon } from '../icon';

@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, Ref, useEffect } from 'react';
+import { forwardRef, memo, Ref, useEffect } from 'react';
 import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import {
     useMailSettings,

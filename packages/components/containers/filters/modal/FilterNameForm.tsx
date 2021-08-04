@@ -1,4 +1,5 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { Alert, Field, Input } from '../../../components';

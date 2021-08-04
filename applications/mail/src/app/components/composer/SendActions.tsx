@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import ButtonGroup, { Color, Shape } from '@proton/components/components/button/ButtonGroup';

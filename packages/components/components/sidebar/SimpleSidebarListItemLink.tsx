@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';

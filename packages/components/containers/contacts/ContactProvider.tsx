@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, ReactNode } from 'react';
+import { useLayoutEffect, ReactNode } from 'react';
 
 import createCache from '@proton/shared/lib/helpers/cache';
 import createLRU from '@proton/shared/lib/helpers/lru';

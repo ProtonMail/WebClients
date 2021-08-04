@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent } from 'react';
+import { ChangeEvent, MouseEvent } from 'react';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { useUserSettings } from '../../hooks';

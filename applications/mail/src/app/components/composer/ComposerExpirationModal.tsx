@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Alert, Href, generateUID, useNotifications, Label } from '@proton/components';
 import { range } from '@proton/shared/lib/helpers/array';

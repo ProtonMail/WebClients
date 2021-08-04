@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import FormModal from './FormModal';

@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useEffect } from 'react';
+import { Fragment, useState, ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { TYPES, COMPARATORS, getConditionTypeLabels, getComparatorLabels } from '../constants';
@@ -129,7 +129,7 @@ const FilterConditionsRow = ({
     };
 
     const renderToken = (token: string, i: number) => (
-        <React.Fragment key={`Condition_${conditionIndex}_Token_${i}`}>
+        <Fragment key={`Condition_${conditionIndex}_Token_${i}`}>
             {i > 0 && <span className="ml0-5 mr0-5">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
@@ -144,7 +144,7 @@ const FilterConditionsRow = ({
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
             </span>
-        </React.Fragment>
+        </Fragment>
     );
 
     const renderGenericCondition = () => {
@@ -194,12 +194,12 @@ const FilterConditionsRow = ({
             const comparatorLabel = getComparatorLabels(comparator);
             const values = condition?.values?.map((v, i) => {
                 return i > 0 ? (
-                    <React.Fragment key={`${v}${i}`}>
+                    <Fragment key={`${v}${i}`}>
                         {` `}
                         {c('Label').t`or`}
                         {` `}
                         <strong>{v}</strong>
-                    </React.Fragment>
+                    </Fragment>
                 ) : (
                     <strong key={`${v}${i}`}>{v}</strong>
                 );

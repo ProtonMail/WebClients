@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { DOMAIN_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { isDomain } from '@proton/shared/lib/helpers/validators';

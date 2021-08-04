@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { InnerModal, Loader, TextLoader } from '@proton/components';
 
 const ModalContentLoader: React.FunctionComponent = ({ children }) => {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { TimeInput } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';

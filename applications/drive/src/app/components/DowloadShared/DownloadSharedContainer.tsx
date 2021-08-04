@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useMemo, useCallback, useState } from 'react';
+import { ReactNode, useEffect, useMemo, useCallback, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 

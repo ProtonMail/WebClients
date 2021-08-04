@@ -1,4 +1,3 @@
-import React from 'react';
 import Notification from './Notification';
 import { NotificationOptions } from './interfaces';
 

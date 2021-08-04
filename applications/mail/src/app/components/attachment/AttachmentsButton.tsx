@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useRef, useEffect, forwardRef, Ref } from 'react';
+import { ChangeEvent, useRef, useEffect, forwardRef, Ref } from 'react';
+import * as React from 'react';
 import { ButtonLike, ButtonLikeProps, classnames, Icon } from '@proton/components';
 
 interface Props extends ButtonLikeProps<'label'> {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { PaymentMethod } from '@proton/shared/lib/interfaces';
 import { isExpired } from '@proton/shared/lib/helpers/card';

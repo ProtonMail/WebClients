@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { fromUnixTime, format as formatDate } from 'date-fns';

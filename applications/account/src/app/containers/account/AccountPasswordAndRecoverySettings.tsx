@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PasswordsSection, DeleteSection, RecoveryMethodsSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
 import { UserModel } from '@proton/shared/lib/interfaces';

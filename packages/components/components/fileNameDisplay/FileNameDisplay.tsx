@@ -1,4 +1,3 @@
-import React from 'react';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { MiddleEllipsis } from '../ellipsis';
 

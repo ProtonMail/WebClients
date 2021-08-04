@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import Tooltip from '../tooltip/Tooltip';

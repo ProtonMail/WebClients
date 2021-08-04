@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { AutoReplySection, SettingsPropsShared } from '@proton/components';

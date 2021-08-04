@@ -4,7 +4,7 @@ import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatal
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, ImportedEvent, IMPORT_STEPS, ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
-import React, { ChangeEvent, useState, DragEvent } from 'react';
+import { ChangeEvent, useState, DragEvent } from 'react';
 import { c } from 'ttag';
 
 import { IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';

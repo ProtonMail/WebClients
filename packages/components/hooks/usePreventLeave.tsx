@@ -1,4 +1,5 @@
-import React, { useEffect, useContext, useCallback, useState, useRef } from 'react';
+import { useEffect, useContext, useCallback, useState, useRef } from 'react';
+import * as React from 'react';
 
 const PreventLeaveContext = React.createContext<{
     clearPendingTasks: () => void;

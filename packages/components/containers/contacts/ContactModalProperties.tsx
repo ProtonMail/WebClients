@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, forwardRef, Ref } from 'react';
+import { useCallback, useMemo, forwardRef, Ref } from 'react';
 import { c } from 'ttag';
 import { move } from '@proton/shared/lib/helpers/array';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';

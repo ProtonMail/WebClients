@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { FormModal, Radio, Checkbox, Row } from '@proton/components';

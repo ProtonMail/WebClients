@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -18,11 +18,11 @@ import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings'
 import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
 import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
 
-const MailSettingsRouter = React.lazy(() => import('../containers/mail/MailSettingsRouter'));
-const CalendarSettingsRouter = React.lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
-const ContactsSettingsRouter = React.lazy(() => import('../containers/contacts/ContactsSettingsRouter'));
-const VpnSettingsRouter = React.lazy(() => import('../containers/vpn/VpnSettingsRouter'));
-const DriveSettingsRouter = React.lazy(() => import('../containers/drive/DriveSettingsRouter'));
+const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
+const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
+const ContactsSettingsRouter = lazy(() => import('../containers/contacts/ContactsSettingsRouter'));
+const VpnSettingsRouter = lazy(() => import('../containers/vpn/VpnSettingsRouter'));
+const DriveSettingsRouter = lazy(() => import('../containers/drive/DriveSettingsRouter'));
 
 const DEFAULT_REDIRECT = `/${getSlugFromApp(DEFAULT_APP)}/dashboard`;
 

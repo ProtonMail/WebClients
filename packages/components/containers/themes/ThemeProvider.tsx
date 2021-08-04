@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
+import * as React from 'react';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { APPS } from '@proton/shared/lib/constants';

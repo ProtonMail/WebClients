@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref, useEffect, useRef } from 'react';
+import { forwardRef, Ref, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { clearType, getType } from '@proton/shared/lib/contacts/property';
 import {

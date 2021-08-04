@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, DragEvent } from 'react';
+import { ChangeEvent, useState, DragEvent } from 'react';
 import { c } from 'ttag';
 
 import { extractVcards, readVcf } from '@proton/shared/lib/contacts/vcard';

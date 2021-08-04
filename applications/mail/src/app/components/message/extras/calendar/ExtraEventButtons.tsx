@@ -1,5 +1,5 @@
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import React, { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { classnames } from '@proton/components';
 import { getCalendarEventLink, getDoNotDisplayButtons, InvitationModel } from '../../../../helpers/calendar/invite';
 import { MessageExtended } from '../../../../models/message';

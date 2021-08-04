@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../account';

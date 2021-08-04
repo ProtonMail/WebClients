@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo, ReactNode, ChangeEvent } from 'react';
+import { useState, useEffect, useMemo, ReactNode, ChangeEvent } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';

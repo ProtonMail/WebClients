@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import { truncate } from '@proton/shared/lib/helpers/string';

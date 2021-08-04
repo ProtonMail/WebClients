@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'react';
+import { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { classnames } from '../../helpers';

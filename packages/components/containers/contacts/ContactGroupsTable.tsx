@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
 import { deleteLabel, orderContactGroup } from '@proton/shared/lib/api/labels';

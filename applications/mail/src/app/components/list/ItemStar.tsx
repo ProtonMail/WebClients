@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Icon, useLoading, classnames, Tooltip, useMailSettings } from '@proton/components';
 

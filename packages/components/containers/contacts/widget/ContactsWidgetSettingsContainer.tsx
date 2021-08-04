@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { Label, Field, Info, Icon, PrimaryButton, FullLoader, Tooltip } from '../../../components';

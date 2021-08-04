@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonGroup, Button, classnames } from '@proton/components';
 import { CURRENCIES, CYCLE } from '@proton/shared/lib/constants';

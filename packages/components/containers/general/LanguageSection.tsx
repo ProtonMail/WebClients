@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';

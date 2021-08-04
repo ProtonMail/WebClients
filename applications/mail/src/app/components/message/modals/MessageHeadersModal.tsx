@@ -1,5 +1,4 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import React from 'react';
 import { FormModal } from '@proton/components';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

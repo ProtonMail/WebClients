@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';

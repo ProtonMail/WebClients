@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 

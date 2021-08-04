@@ -1,5 +1,5 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import React, { useEffect, createContext, ReactNode, useContext, useCallback } from 'react';
+import { useEffect, createContext, ReactNode, useContext, useCallback } from 'react';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import createLRU from '@proton/shared/lib/helpers/lru';

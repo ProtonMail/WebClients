@@ -1,4 +1,3 @@
-import React from 'react';
 import { classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 

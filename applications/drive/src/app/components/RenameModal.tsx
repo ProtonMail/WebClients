@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FocusEvent } from 'react';
+import { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';

@@ -1,6 +1,5 @@
 import { Alert } from '@proton/components';
 import { c } from 'ttag';
-import React from 'react';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import CalendarTableRows from './CalendarTableRows';
 

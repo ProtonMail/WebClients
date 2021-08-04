@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { useRouteMatch } from 'react-router-dom';
 import { SidebarList, SidebarListItem, SidebarListItemContent, useOrganization, useUser } from '@proton/components';

@@ -1,4 +1,5 @@
-import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
+import { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
+import * as React from 'react';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import useSelection from '../../hooks/util/useSelection';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';

@@ -1,5 +1,6 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import {
     AddFilterModal,
     useModals,

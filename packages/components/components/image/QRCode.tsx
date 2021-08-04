@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import QRCodeReact from 'qrcode.react';
 
 import { classnames } from '../../helpers';

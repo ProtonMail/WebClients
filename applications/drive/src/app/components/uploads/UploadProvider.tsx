@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
+import * as React from 'react';
 
 import { useModals } from '@proton/components';
 

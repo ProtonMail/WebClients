@@ -1,4 +1,4 @@
-import React, { useEffect, useState, RefObject } from 'react';
+import { useEffect, useState, RefObject } from 'react';
 import { c } from 'ttag';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';

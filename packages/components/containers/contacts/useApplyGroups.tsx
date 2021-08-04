@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { c } from 'ttag';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Card } from '@proton/components';
 
 import mdx from './Card.mdx';

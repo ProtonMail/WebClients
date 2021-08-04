@@ -1,4 +1,3 @@
-import React from 'react';
 import { classnames, Progress } from '@proton/components';
 
 export enum ProgressBarStatus {

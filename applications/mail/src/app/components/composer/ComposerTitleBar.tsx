@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
 import { metaKey, shiftKey, isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';

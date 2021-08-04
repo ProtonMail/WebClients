@@ -1,5 +1,3 @@
-import React from 'react';
-
 import LayoutCard, { LayoutCardProps } from './LayoutCard';
 import { classnames } from '../../helpers';
 

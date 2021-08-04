@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';

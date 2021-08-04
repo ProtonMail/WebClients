@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { UserModel, Organization, Member } from '@proton/shared/lib/interfaces';

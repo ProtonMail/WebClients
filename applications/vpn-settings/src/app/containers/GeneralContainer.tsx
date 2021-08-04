@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { LanguageSection, SettingsPropsShared } from '@proton/components';
 import { locales } from '@proton/shared/lib/i18n/locales';

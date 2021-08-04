@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { Fragment, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
@@ -99,7 +99,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             );
         } else {
             selectedFolder = moveTo?.folder.split('/').map((f: string, i: number) => (
-                <React.Fragment key={f}>
+                <Fragment key={f}>
                     {i !== 0 && (
                         <Icon
                             name="caret"
@@ -120,7 +120,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                             {f}
                         </span>
                     </span>
-                </React.Fragment>
+                </Fragment>
             ));
         }
 

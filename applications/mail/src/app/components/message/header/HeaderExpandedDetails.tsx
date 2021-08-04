@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, useFolders } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

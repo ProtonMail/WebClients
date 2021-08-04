@@ -1,4 +1,4 @@
-import React, { ReactNode, MouseEvent } from 'react';
+import { ReactNode, MouseEvent } from 'react';
 import { c } from 'ttag';
 import noContactsImg from '@proton/styles/assets/img/placeholders/empty-address-book.svg';
 import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';

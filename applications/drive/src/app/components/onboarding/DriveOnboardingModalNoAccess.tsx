@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 import { OnboardingContent, OnboardingModal, OnboardingStep, useSettingsLink } from '@proton/components';
-import React from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 

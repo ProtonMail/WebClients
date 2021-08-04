@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { SimpleFilterModalModel, Step, Errors } from '../interfaces';

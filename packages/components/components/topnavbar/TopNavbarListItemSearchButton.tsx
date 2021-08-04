@@ -1,10 +1,10 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import TopNavbarListItemButton, { TopNavbarListItemButtonProps } from './TopNavbarListItemButton';
 import { Icon } from '../icon';
 
-const TopNavbarListItemSearchButton = React.forwardRef(
+const TopNavbarListItemSearchButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
         return (
             <TopNavbarListItemButton

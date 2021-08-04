@@ -1,4 +1,5 @@
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
+import * as React from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import {

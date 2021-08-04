@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { useNotifications, InlineLinkButton } from '@proton/components';
 import { LinkType, LinkMeta } from '../../interfaces/link';

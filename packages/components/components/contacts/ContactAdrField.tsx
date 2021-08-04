@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { ADDRESS_COMPONENTS } from '@proton/shared/lib/contacts/constants';
 import { classnames, generateUID } from '../../helpers';

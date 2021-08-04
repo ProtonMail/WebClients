@@ -1,5 +1,4 @@
 import { getSequence } from '@proton/shared/lib/calendar/vcalHelper';
-import React from 'react';
 import { c } from 'ttag';
 import { Button } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

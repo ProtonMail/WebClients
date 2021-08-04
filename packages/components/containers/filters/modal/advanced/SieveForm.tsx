@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { c } from 'ttag';
 import { isDarkTheme } from '@proton/shared/lib/themes/helpers';
 import { UserSettings } from '@proton/shared/lib/interfaces';

@@ -1,5 +1,4 @@
 import { requireReadReceipt } from '@proton/shared/lib/mail/messages';
-import React from 'react';
 import { c } from 'ttag';
 import { Icon, InlineLinkButton, useApi, useEventManager, useNotifications, useLoading } from '@proton/components';
 import { readReceipt } from '@proton/shared/lib/api/messages';

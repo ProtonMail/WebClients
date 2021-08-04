@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 import { useHistory } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from 'react';
+import { MutableRefObject } from 'react';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import AlarmWatcher from './AlarmWatcher';
 import useCalendarsAlarms from './useCalendarsAlarms';

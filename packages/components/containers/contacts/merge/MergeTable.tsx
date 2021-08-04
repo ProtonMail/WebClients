@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 

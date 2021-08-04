@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { LABEL_TYPE } from '@proton/shared/lib/constants';

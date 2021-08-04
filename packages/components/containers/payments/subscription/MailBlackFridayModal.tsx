@@ -1,4 +1,3 @@
-import React from 'react';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { CYCLE, BLACK_FRIDAY } from '@proton/shared/lib/constants';
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';

@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, RefObject, useContext, useEffect } from 'react';
+import { createContext, ReactNode, RefObject, useContext, useEffect } from 'react';
 import { useHandler } from '@proton/components';
 
 const MailContentRefContext = createContext<RefObject<HTMLDivElement>>(null as any);

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { Tooltip } from '@proton/components';

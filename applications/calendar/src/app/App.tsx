@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProtonApp, StandardSetup } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import sentry from '@proton/shared/lib/helpers/sentry';

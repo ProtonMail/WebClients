@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';

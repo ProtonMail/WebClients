@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Address } from '@proton/shared/lib/interfaces';

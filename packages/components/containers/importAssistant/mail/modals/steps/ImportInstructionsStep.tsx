@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import gmailCaptchaImg from '@proton/styles/assets/img/import-instructions/gmail-captcha.jpg';

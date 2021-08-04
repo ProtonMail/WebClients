@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';

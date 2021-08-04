@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { InputButton } from '@proton/components';
 import { remove } from '@proton/shared/lib/helpers/array';
 

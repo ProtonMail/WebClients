@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { APPS, isSSOMode, isStandaloneMode, SSO_PATHS } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Route, Switch } from 'react-router-dom';

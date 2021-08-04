@@ -1,4 +1,3 @@
-import React from 'react';
 import { StandardPrivateApp } from '@proton/components';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {

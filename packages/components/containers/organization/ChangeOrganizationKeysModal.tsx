@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { updateOrganizationKeys } from '@proton/shared/lib/api/organization';
 import { OpenPGPKey } from 'pmcrypto';

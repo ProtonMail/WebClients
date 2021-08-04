@@ -1,5 +1,4 @@
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
-import React from 'react';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 
 interface Props {
