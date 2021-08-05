@@ -4,9 +4,9 @@ import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
 import DriveHeader from '../../components/layout/DriveHeader';
 import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';
 import TrashContainerView from './TrashContainerView';
-import EmptyTrashButton from '../../components/Drive/Trash/EmptyTrashButton';
+import EmptyTrashButton from '../../components/sections/Trash/EmptyTrashButton';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
 import AppErrorBoundary from '../../components/AppErrorBoundary';
 
 const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {

@@ -10,7 +10,7 @@ import {
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { openpgpConfig } from './openpgpConfig';
 import useUserSettings from './hooks/drive/useUserSettings';
-import UserSettingsProvider from './components/Drive/UserSettings/UserSettingsProvider';
+import UserSettingsProvider from './components/sections/UserSettingsProvider';
 
 const getAppContainer = () => import('./containers/MainContainer');
 

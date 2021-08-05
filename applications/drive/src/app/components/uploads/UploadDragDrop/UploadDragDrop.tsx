@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
 
 import useFiles from '../../../hooks/drive/useFiles';
-import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from '../../sections/Drive/DriveFolderProvider';
 import { isTransferCancelError } from '../../../utils/transfer';
 
 interface UploadDragDropProps {

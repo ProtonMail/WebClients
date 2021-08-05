@@ -1,8 +1,8 @@
 import { PrivateMainArea, useAppTitle } from '@proton/components';
 import { c } from 'ttag';
-import SharedLinks from '../../components/SharedLinks/SharedLinks';
-import SharedLinksContentProvider from '../../components/SharedLinks/SharedLinksContentProvider';
-import SharedLinksToolbar from '../../components/SharedLinks/SharedLinksToolbar';
+import SharedLinks from '../../components/sections/SharedLinks/SharedLinks';
+import SharedLinksContentProvider from '../../components/sections/SharedLinks/SharedLinksContentProvider';
+import SharedLinksToolbar from '../../components/sections/SharedLinks/SharedLinksToolbar';
 
 interface Props {
     shareId: string;

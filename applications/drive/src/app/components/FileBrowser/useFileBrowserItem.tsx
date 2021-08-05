@@ -4,7 +4,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { msgid, c } from 'ttag';
 import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem, DragMoveControls } from './interfaces';
-import { selectMessageForItemList } from '../Drive/helpers';
+import { selectMessageForItemList } from '../sections/helpers';
 import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 interface Options {

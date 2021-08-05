@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
-import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from '../sections/Drive/DriveFolderProvider';
 import useFileUploadInput from '../../hooks/drive/useFileUploadInput';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from './UploadProvider';
