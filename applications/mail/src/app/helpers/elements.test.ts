@@ -28,7 +28,15 @@ describe('elements', () => {
             const elements = [{ Time: 1 }, { Time: 2 }, { Time: 3 }];
             expect(sort(elements, { sort: 'Time', desc: true }, 'labelID')).toEqual([...elements].reverse());
         });
-        it('should sort by time and fallback on order', () => {
+        it('should fallback on order', () => {
+            const elements = [
+                { Time: 1, Order: 3 },
+                { Time: 1, Order: 2 },
+                { Time: 1, Order: 1 },
+            ];
+            expect(sort(elements, { sort: 'Time', desc: true }, 'labelID')).toEqual([...elements]);
+        });
+        it('should sort by order reversed for time asc', () => {
             const elements = [
                 { Time: 1, Order: 3 },
                 { Time: 1, Order: 2 },
