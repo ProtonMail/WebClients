@@ -1,12 +1,12 @@
 import { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { ACCOUNT_DELETION_REASONS, APPS } from '@proton/shared/lib/constants';
+import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
 import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { getClientID, getAppName } from '@proton/shared/lib/apps/helper';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -24,6 +24,7 @@ import {
     FormModal,
     Alert,
     ErrorButton,
+    Info,
 } from '../../components';
 import {
     useEventManager,
@@ -60,13 +61,9 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
     const ClientID = getClientID(APP_NAME);
     const Client = getClient(ClientID);
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
-    const driveAppName = getAppName(APPS.PROTONDRIVE);
-    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
     const isDisabled = useMemo(() => {
-        if (!model.check || !model.reason || !model.feedback || !model.email || !model.password) {
+        if (!model.check || !model.reason || !model.email || !model.password) {
             return true;
         }
         if (hasTOTPEnabled && !model.twoFa) {
@@ -159,14 +156,12 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             {...rest}
         >
             <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/">
-                <div className="text-bold text-uppercase">{c('Info').t`Warning: deletion is permanent`}</div>
+                <div className="text-bold text-uppercase">
+                    {c('Info')
+                        .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}
+                </div>
                 <div>{c('Info')
                     .t`If you wish to delete this account in order to combine it with another one, do NOT delete it.`}</div>
-            </Alert>
-            <Alert type="warning">
-                <div className="text-bold text-uppercase">{c('Info')
-                    .t`Warning: This also removes access to all connected services and deletes all of your contacts`}</div>
-                <div>{c('Info').t`Example: ${mailAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
             </Alert>
             <Row>
                 <Label htmlFor="reason">{c('Label').t`What is the main reason you are deleting your account?`}</Label>
@@ -188,7 +183,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                 <Field>
                     <TextArea
                         id="feedback"
-                        required
+                        rows={3}
                         value={model.feedback}
                         placeholder={c('Placeholder').t`Feedback`}
                         onChange={handleChange('feedback')}
@@ -197,7 +192,11 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                 </Field>
             </Row>
             <Row>
-                <Label htmlFor="email">{c('Label').t`Email address`}</Label>
+                <Label htmlFor="email">
+                    {c('Label').t`Email address`}
+                    &nbsp;
+                    <Info title={c('Info').t`Please provide an email address in case we need to contact you.`} />
+                </Label>
                 <Field>
                     <div className="mb0-5">
                         <EmailInput
@@ -209,23 +208,25 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                             placeholder={c('Placeholder').t`Email address`}
                         />
                     </div>
-                    <div className="text-sm m0">{c('Info')
-                        .t`Please provide an email address in case we need to contact you.`}</div>
                 </Field>
             </Row>
             <Row>
-                <Label htmlFor="password">{c('Label').t`Login password`}</Label>
+                <Label htmlFor="password">
+                    {c('Label').t`Login password`}
+                    &nbsp;
+                    <Info title={c('Info').t`Enter your login password to confirm your identity.`} />
+                </Label>
                 <Field>
                     <div className="mb0-5">
                         <PasswordInput
                             id="password"
+                            required
                             disabled={loading}
                             value={model.password}
                             onChange={handleChange('password')}
                             placeholder={c('Placeholder').t`Password`}
                         />
                     </div>
-                    <div className="text-sm m0">{c('Info').t`Enter your login password to confirm your identity.`}</div>
                 </Field>
             </Row>
             {hasTOTPEnabled ? (
@@ -234,6 +235,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                     <Field>
                         <TwoFactorInput
                             id="twoFa"
+                            required
                             disabled={loading}
                             value={model.twoFa}
                             onChange={handleChange('twoFa')}
