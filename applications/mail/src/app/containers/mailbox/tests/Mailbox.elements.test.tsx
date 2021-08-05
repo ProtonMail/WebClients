@@ -3,7 +3,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { fireEvent } from '@testing-library/dom';
 import { Element } from '../../../models/element';
 import { Sort } from '../../../models/tools';
-import { clearAll, api, addApiMock, apiMocks, waitForSpyCall } from '../../../helpers/test/helper';
+import { clearAll, api, addApiMock, apiMocks, waitForSpyCall, tick } from '../../../helpers/test/helper';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -147,6 +147,7 @@ describe('Mailbox element list', () => {
                 ConversationID: element1.ID,
                 Flag: MESSAGE_FLAGS.FLAG_RECEIVED,
                 LabelIDs: [labelID],
+                Attachments: [],
             };
 
             const { rerender, getItems } = await setup({
@@ -160,7 +161,7 @@ describe('Mailbox element list', () => {
                 Conversation: element1,
                 Messages: [message],
             }));
-            addApiMock(`mail/v4/messages/messageID1`, () => message);
+            addApiMock(`mail/v4/messages/messageID1`, () => ({ Message: message }));
             addApiMock(`mail/v4/messages/read`, () => {});
             await rerender({ elementID: element1.ID });
 
@@ -168,6 +169,9 @@ describe('Mailbox element list', () => {
             expect(items.length).toBe(2);
             expect(items[1].classList.contains('read')).toBe(true);
             expect(items[0].classList.contains('read')).toBe(false);
+
+            // Needed because of the message images double render
+            await tick();
         });
     });
 
