@@ -2,7 +2,6 @@ import { ReactElement, ReactNode, useRef } from 'react';
 import * as React from 'react';
 import {
     CacheProvider,
-    NotificationsProvider,
     ModalsProvider,
     PrivateAuthenticationStore,
     ModalsChildren,
@@ -29,6 +28,7 @@ import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { ComposeProvider } from '../../containers/ComposeProvider';
+import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
@@ -58,6 +58,9 @@ export const config = {
 const mockDomApi = () => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     window.URL.createObjectURL = jest.fn();
+    // https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
+    const { getComputedStyle } = window;
+    window.getComputedStyle = (elt) => getComputedStyle(elt);
 };
 
 interface Props {
@@ -70,7 +73,7 @@ const TestProvider = ({ children }: Props) => {
     return (
         <ConfigProvider config={config}>
             <ApiContext.Provider value={api}>
-                <NotificationsProvider>
+                <NotificationsTestProvider>
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
                             <CacheProvider cache={cache}>
@@ -98,7 +101,7 @@ const TestProvider = ({ children }: Props) => {
                             </CacheProvider>
                         </AuthenticationProvider>
                     </ModalsProvider>
-                </NotificationsProvider>
+                </NotificationsTestProvider>
             </ApiContext.Provider>
         </ConfigProvider>
     );
