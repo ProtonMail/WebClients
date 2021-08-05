@@ -6,7 +6,6 @@ import {
     HotkeyTuple,
     Icon,
     LabelModal,
-    Loader,
     SidebarList,
     SidebarListItemHeaderLink,
     SimpleSidebarListItemHeader,
@@ -48,13 +47,13 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const [user] = useUser();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
-    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const [displayFolders, toggleFolders] = useLocalState(true, `${user.ID}-display-folders`);
     const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
-    const [labels, loadingLabels] = useLabels();
+    const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
     const { createModal } = useModals();
-    const { feature: scheduledFeature, loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -225,10 +224,6 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
     const showScheduled = // scheduledFeature?.Value
         scheduledFeature?.Value && (user.hasPaidMail || (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0);
-
-    if (loadingMailSettings || loadingLabels || loadingFolders || loadingScheduledFeature) {
-        return <Loader />;
-    }
 
     const getCommonProps = (labelID: string) => ({
         currentLabelID,
