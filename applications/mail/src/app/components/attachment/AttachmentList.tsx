@@ -1,9 +1,7 @@
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { attachmentsSize } from '@proton/shared/lib/mail/messages';
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { Icon, classnames, CircleLoader } from '@proton/components';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -11,7 +9,7 @@ import { MessageExtendedWithData } from '../../models/message';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { useDownload, useDownloadAll } from '../../hooks/useDownload';
 import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
-import { getEmbeddedImages } from '../../helpers/message/messageImages';
+import { getAttachmentCounts } from '../../helpers/message/messages';
 
 export enum AttachmentAction {
     Download,
@@ -66,18 +64,10 @@ const AttachmentList = ({
         }
     }, [pendingUploads]);
 
-    const size = attachmentsSize({ Attachments: attachments } as Message);
-    const sizeLabel = humanSize(size);
-
-    const embeddedImages = getEmbeddedImages(message);
-    const embeddedAttachments = embeddedImages.map(({ attachment }) => attachment);
-    const pureAttachments = attachments.filter(
-        (attachment) => !embeddedAttachments.find((embeddedAttachment) => attachment.ID === embeddedAttachment.ID)
+    const { size, sizeLabel, pureAttachmentsCount, embeddedAttachmentsCount, attachmentsCount } = getAttachmentCounts(
+        attachments,
+        message.messageImages
     );
-
-    const pureAttachmentsCount = pureAttachments.length;
-    const embeddedAttachmentsCount = embeddedAttachments.length;
-    const attachmentsCount = pureAttachmentsCount + embeddedAttachmentsCount;
 
     const handleToggleExpand = () => {
         if (collapsable) {
