@@ -7,7 +7,7 @@ import DriveHeader from '../../components/layout/DriveHeader';
 import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';
 import SharedURLsContainerView from './SharedURLsContainerView';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import ShareFileButton from '../../components/SharedLinks/ShareFileButton';
+import ShareFileButton from '../../components/sections/SharedLinks/ShareFileButton';
 
 const SharedURLsContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {
     const cache = useDriveCache();

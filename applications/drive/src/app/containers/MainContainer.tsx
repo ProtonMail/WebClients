@@ -12,7 +12,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 
 import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';
 import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
-import DriveFolderProvider from '../components/Drive/DriveFolderProvider';
+import DriveFolderProvider from '../components/sections/Drive/DriveFolderProvider';
 import { UploadProvider } from '../components/uploads/UploadProvider';
 import { DownloadProvider } from '../components/downloads/DownloadProvider';
 import { ThumbnailsDownloadProvider } from '../components/downloads/ThumbnailDownloadProvider';

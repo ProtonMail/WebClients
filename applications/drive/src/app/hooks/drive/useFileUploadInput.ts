@@ -1,5 +1,5 @@
 import { useRef, useEffect, ChangeEvent } from 'react';
-import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
 import { isTransferCancelError } from '../../utils/transfer';
 import useFiles from './useFiles';
 

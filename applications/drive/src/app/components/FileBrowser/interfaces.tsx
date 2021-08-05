@@ -1,6 +1,5 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LinkType, SortParams, SortKeys, SharedUrlInfo } from '../../interfaces/link';
-import { LayoutSetting } from '../../interfaces/userSettings';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
@@ -59,12 +58,12 @@ export interface ItemProps {
     secondaryActionActive?: boolean;
     dragMoveControls?: DragMoveControls;
     isPreview?: boolean;
+    ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
+    FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
 }
 
 export interface FileBrowserProps {
-    layout: LayoutSetting;
     loading?: boolean;
-    scrollAreaRef: React.RefObject<HTMLDivElement>;
     shareId: string;
     caption?: string;
     contents: FileBrowserItem[];
@@ -72,6 +71,7 @@ export interface FileBrowserProps {
     type: FileBrowserLayouts;
     isPreview?: boolean;
     sortParams?: SortParams;
+    onScrollEnd: () => void;
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
     onShiftClick?: (item: string) => void;
@@ -80,4 +80,25 @@ export interface FileBrowserProps {
     onToggleAllSelected: () => void;
     setSorting?: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
+    ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
+    FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
+}
+
+export interface FolderContextMenuProps {
+    anchorRef: React.RefObject<HTMLElement>;
+    isOpen: boolean;
+    position:
+        | {
+              top: number;
+              left: number;
+          }
+        | undefined;
+    open: () => void;
+    close: () => void;
+}
+
+export interface ItemContextMenuProps extends FolderContextMenuProps {
+    shareId: string;
+    item: FileBrowserItem;
+    selectedItems: FileBrowserItem[];
 }

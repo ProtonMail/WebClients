@@ -1,12 +1,13 @@
 import { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
+
 import { classnames, Loader, useElementRect } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
-import ItemCell, { Props as ItemCellProps } from './ItemCell';
-import FolderContextMenu from '../FolderContextMenu';
 import useFileBrowserView from '../useFileBrowserView';
+import ItemCell, { Props as ItemCellProps } from './ItemCell';
 
 const itemWidth = 13.5 * rootFontSize; // 13.5 * 16 = we want 216px by default
 const itemHeight = 12.25 * rootFontSize; // 12.25 * 16 = we want 196px by default
@@ -35,8 +36,10 @@ const calculateCellDimensions = (areaWidth: number) => {
 
 type Props = Omit<
     FileBrowserProps,
-    'layout' | 'onToggleAllSelected' | 'isPreview' | 'caption' | 'setSorting' | 'sortParams'
->;
+    'onScrollEnd' | 'onToggleAllSelected' | 'isPreview' | 'caption' | 'setSorting' | 'sortParams'
+> & {
+    scrollAreaRef: React.RefObject<HTMLDivElement>;
+};
 
 type ItemCellData = {
     loading?: boolean;
@@ -94,6 +97,8 @@ function GridView({
     onToggleItemSelected,
     clearSelections,
     scrollAreaRef,
+    ItemContextMenu,
+    FolderContextMenu,
 }: Props) {
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
@@ -132,6 +137,7 @@ function GridView({
             selectItem,
             secondaryActionActive,
             dragMoveControls: getDragMoveControls?.(item),
+            ItemContextMenu,
         }),
     };
 
@@ -176,7 +182,7 @@ function GridView({
                 </FixedSizeGrid>
             )}
 
-            {type === 'drive' && (
+            {FolderContextMenu && (
                 <FolderContextMenu
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}

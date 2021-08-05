@@ -28,7 +28,7 @@ const ListHeader = ({
     const { isDesktop } = useActiveBreakpoint();
     const columns = useFileBrowserColumns(type);
 
-    const canSort = (fn?: () => void) => (type === 'drive' ? fn : undefined);
+    const canSort = (fn?: () => void) => (setSorting ? fn : undefined);
 
     const handleSort = (key: SortKeys) => {
         if (!sortParams || !setSorting) {

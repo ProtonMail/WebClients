@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 import { useNotifications, InlineLinkButton } from '@proton/components';
 import { LinkType, LinkMeta } from '../../interfaces/link';
-import { selectMessageForItemList } from '../../components/Drive/helpers';
+import { selectMessageForItemList } from '../../components/sections/helpers';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 
 const getNotificationTextForItemList = (
