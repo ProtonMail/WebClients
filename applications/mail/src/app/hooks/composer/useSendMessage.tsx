@@ -110,7 +110,7 @@ export const useSendMessage = () => {
                     DeliveryTime: scheduledAt || undefined,
                 };
 
-                return api<{ Sent: Message }>(sendMessage(message.data?.ID, payload));
+                return api<{ Sent: Message }>({ ...sendMessage(message.data?.ID, payload), timeout: 60000 });
             };
 
             const promise = prepareMessageToSend().then((result) => {
