@@ -13,6 +13,7 @@ import {
     LayoutDropdown,
     PreviewButton,
     RenameButton,
+    ShareButton,
     ShareFileButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
@@ -81,6 +82,8 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                         <ToolbarSeparator />
                         <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
                         <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <ToolbarSeparator />
+                        <ShareButton shareId={shareId} selectedItems={selectedItems} />
                         <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}
