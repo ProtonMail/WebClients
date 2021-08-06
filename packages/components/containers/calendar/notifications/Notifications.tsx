@@ -1,10 +1,9 @@
-import { SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
 import { c } from 'ttag';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import { addItem, removeItem, updateItem } from '@proton/shared/lib/helpers/array';
 import { classnames, generateUID } from '../../../helpers';
-import { Tooltip, Icon, ErrorZone, LinkButton } from '../../../components';
+import { ButtonLike, ErrorZone, Icon, LinkButton, Tooltip } from '../../../components';
 import NotificationInput from './inputs/NotificationInput';
 
 export const NOTIFICATION_ID = 'notifications';
@@ -31,10 +30,6 @@ const Notifications = ({
     return (
         <>
             {notifications.map((notification, index) => {
-                if (notification.type === SETTINGS_NOTIFICATION_TYPE.EMAIL) {
-                    // Hide email notifications until supported
-                    return null;
-                }
                 return (
                     <div className="mb0-5 flex flex-nowrap flex-align-items-center" key={notification.id}>
                         <NotificationInput
@@ -45,14 +40,18 @@ const Notifications = ({
                             error={errors?.notifications?.fields.includes(index) ? '' : undefined}
                         />
                         <Tooltip title={c('Action').t`Remove this notification`}>
-                            <LinkButton
+                            <ButtonLike
                                 data-test-id="delete-notification"
-                                className="w2e flex flex-item-noshrink ml0-5"
+                                className="flex flex-item-noshrink ml0-5"
                                 onClick={() => onChange(removeItem(notifications, index))}
+                                icon
+                                type="button"
+                                shape="ghost"
+                                color="norm"
                             >
-                                <Icon name="trash" className="mauto" />
+                                <Icon name="trash" className="flex-item-noshrink" />
                                 <span className="sr-only">{c('Action').t`Remove this notification`}</span>
-                            </LinkButton>
+                            </ButtonLike>
                         </Tooltip>
                     </div>
                 );

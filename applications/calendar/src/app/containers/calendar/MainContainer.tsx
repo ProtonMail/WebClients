@@ -5,9 +5,11 @@ import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import {
     ErrorBoundary,
+    FeatureCode,
     StandardErrorPage,
     useAddresses,
     useCalendars,
+    useFeature,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
@@ -23,6 +25,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [user] = useUser();
+    useFeature(FeatureCode.CalendarEmailNotificationEnabled);
 
     const memoedCalendars = useMemo(() => calendars || [], [calendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);

@@ -57,8 +57,26 @@ describe('getSupportedAlarm', () => {
         expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(undefined);
     });
 
+    // Duplicating EMAIL and DISPLAY to ensure both work
     it('it should filter out attendees, description and summary', () => {
-        const alarm = {
+        const emailAlarm = {
+            ...baseAlarm,
+            action: { value: 'EMAIL' },
+            description: { value: 'test' },
+            summary: { value: 'test' },
+            attendee: [{ value: 'mailto:wild@west.org' }],
+            trigger: {
+                value: { ...baseTriggerValue },
+            },
+        };
+        const emailExpected = {
+            ...baseAlarm,
+            action: { value: 'EMAIL' },
+            trigger: {
+                value: { ...baseTriggerValue },
+            },
+        };
+        const displayAlarm = {
             ...baseAlarm,
             action: { value: 'DISPLAY' },
             description: { value: 'test' },
@@ -68,23 +86,16 @@ describe('getSupportedAlarm', () => {
                 value: { ...baseTriggerValue },
             },
         };
-        const expected = {
+        const displayExpected = {
             ...baseAlarm,
             action: { value: 'DISPLAY' },
             trigger: {
                 value: { ...baseTriggerValue },
             },
         };
-        expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(expected);
-    });
 
-    it('it should filter out email notifications', () => {
-        const alarm = {
-            ...baseAlarm,
-            action: { value: 'EMAIL' },
-        };
-        expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(undefined);
-        expect(getSupportedAlarm(alarm, dtstartAllDay)).toEqual(undefined);
+        expect(getSupportedAlarm(emailAlarm, dtstartPartDay)).toEqual(emailExpected);
+        expect(getSupportedAlarm(displayAlarm, dtstartPartDay)).toEqual(displayExpected);
     });
 
     it('it should filter out future notifications', () => {

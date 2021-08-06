@@ -45,6 +45,7 @@ export enum FeatureCode {
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     ScheduledSend = 'ScheduledSend',
     KeyMigration = 'KeyMigration',
+    CalendarEmailNotificationEnabled = 'CalendarEmailNotificationEnabled',
 }
 
 export interface FeaturesContextValue {

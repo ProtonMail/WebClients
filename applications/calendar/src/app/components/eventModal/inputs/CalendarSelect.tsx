@@ -1,7 +1,6 @@
 import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from '@proton/components';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
-import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import CalendarIcon from '../../CalendarIcon';
 import { getInitialMemberModel } from '../eventForm/state';
@@ -56,12 +55,8 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
         if (!memberEmail || !Address) {
             throw new Error('Address does not exist');
         }
-        const newDefaultPartDayNotifications = getDeviceNotifications(
-            notificationsToModel(DefaultPartDayNotifications, false)
-        );
-        const newDefaultFullDayNotifications = getDeviceNotifications(
-            notificationsToModel(DefaultFullDayNotifications, true)
-        );
+        const newDefaultPartDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
+        const newDefaultFullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
 
         const partDayNotifications =
             model.hasTouchedNotifications.partDay || !isCreateEvent
