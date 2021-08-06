@@ -21,12 +21,13 @@ import {
     Toggle,
 } from '../../../components';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
-import { useLoading } from '../../../hooks';
+import { useFeature, useLoading } from '../../../hooks';
 import { GenericError } from '../../error';
 import Notifications from '../notifications/Notifications';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
 import { TruncatedText } from '../../../components/truncatedText';
+import { FeatureCode } from '../../features';
 
 const URL_MAX_DISPLAY_LENGTH = 100;
 
@@ -49,7 +50,9 @@ export const CalendarModal = ({
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
-    const [model, setModel] = useState(() => getDefaultModel());
+
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+    const [model, setModel] = useState(() => getDefaultModel(emailNotificationsEnabled));
 
     const addressText = useMemo(() => {
         const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
@@ -252,6 +255,7 @@ export const CalendarModal = ({
                                     className="flex-item-fluid"
                                 >
                                     <Notifications
+                                        hasType={emailNotificationsEnabled}
                                         notifications={model.partDayNotifications}
                                         canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                                         defaultNotification={model.defaultPartDayNotification}
@@ -271,6 +275,7 @@ export const CalendarModal = ({
                                     className="flex-item-fluid"
                                 >
                                     <Notifications
+                                        hasType={emailNotificationsEnabled}
                                         notifications={model.fullDayNotifications}
                                         canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                                         defaultNotification={model.defaultFullDayNotification}

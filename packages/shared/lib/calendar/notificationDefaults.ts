@@ -7,11 +7,19 @@ export const DEFAULT_PART_DAY_NOTIFICATIONS = [
         Type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
         Trigger: '-PT15M',
     },
+    {
+        Type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+        Trigger: '-PT15M',
+    },
 ];
 
 export const DEFAULT_FULL_DAY_NOTIFICATIONS = [
     {
         Type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+        Trigger: '-PT15H',
+    },
+    {
+        Type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
         Trigger: '-PT15H',
     },
 ];

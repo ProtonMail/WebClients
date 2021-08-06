@@ -9,11 +9,12 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { isURL } from '@proton/shared/lib/helpers/validators';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import { FormModal, Href, InputFieldTwo, Loader } from '../../../components';
-import { useLoading } from '../../../hooks';
+import { useFeature, useLoading } from '../../../hooks';
 import { GenericError } from '../../error';
 import { classnames } from '../../../helpers';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
+import { FeatureCode } from '../../features';
 
 const CALENDAR_URL_MAX_LENGTH = 10000;
 
@@ -24,7 +25,8 @@ interface Props {
 const SubscribeCalendarModal = ({ ...rest }: Props) => {
     const [, setCalendar] = useState<Calendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
-    const [model, setModel] = useState(() => getDefaultModel());
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+    const [model, setModel] = useState(() => getDefaultModel(emailNotificationsEnabled));
     const [error, setError] = useState(false);
 
     const [loadingAction, withLoadingAction] = useLoading();

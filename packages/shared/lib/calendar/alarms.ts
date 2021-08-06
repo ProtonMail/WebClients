@@ -149,3 +149,5 @@ export const dedupeAlarmsWithNormalizedTriggers = (alarms: VcalValarmRelativeCom
 
     return uniqueBy(sortedAlarms, uniqueAlarmComparator);
 };
+
+export const isEmailNotification = ({ type }: NotificationModel) => type === SETTINGS_NOTIFICATION_TYPE.EMAIL;
