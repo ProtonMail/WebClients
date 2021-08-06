@@ -20,6 +20,8 @@ const ANIMATIONS = {
     MODAL_OUT: 'anime-modal-out',
 };
 
+export const dialogRootClassName = 'modal-container';
+
 /** @type any */
 const Dialog = ({
     onClose,
@@ -75,7 +77,7 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div className={classnames(['modal-container', isBehind && 'modal-container--in-background'])}>
+            <div className={classnames([dialogRootClassName, isBehind && 'modal-container--in-background'])}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"

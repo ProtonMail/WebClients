@@ -42,6 +42,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
+export const dropdownRootClassName = 'dropdown';
+
 const Dropdown = ({
     anchorRef,
     children,
@@ -161,7 +163,7 @@ const Dropdown = ({
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
     const popperClassName = classnames([
-        'dropdown',
+        dropdownRootClassName,
         noMaxSize && 'dropdown--no-max-size',
         `dropdown--${placement}`,
         isClosing && `is-dropdown-out`,
