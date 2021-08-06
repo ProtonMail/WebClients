@@ -9,7 +9,16 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import { Badge, DropdownActions, Icon, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import {
+    Badge,
+    DropdownActions,
+    Icon,
+    Info,
+    Table,
+    TableBody,
+    TableHeader,
+    TableRow,
+} from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
@@ -46,8 +55,8 @@ const CalendarsTable = ({
                 cells={[
                     c('Header').t`Name`,
                     <div className="flex flex-align-items-center">
-                        <span className="mr0-5">{c('Header').t`Status`} </span>
-                        {/* TODO: when url available  <Info url="" /> */}
+                        <span className="mr0-5">{c('Header').t`Status`}</span>
+                        <Info url="https://protonmail.com/support/knowledge-base/calendar-status" />
                     </div>,
                     c('Header').t`Actions`,
                 ]}
@@ -81,7 +90,7 @@ const CalendarsTable = ({
                                 onClick: () => onExport(calendar),
                             },
                         {
-                            text: isSubscribed ? c('Action').t`Unsubscribe` : c('Action').t`Delete`,
+                            text: isSubscribed ? c('Action').t`Remove` : c('Action').t`Delete`,
                             actionType: 'delete',
                             onClick: () => onDelete(ID),
                         },

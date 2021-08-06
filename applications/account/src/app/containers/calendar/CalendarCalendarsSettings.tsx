@@ -31,7 +31,7 @@ const generalSettingsConfig = (showCalendarSubscription: boolean) => ({
             id: 'my-calendars',
         },
         showCalendarSubscription && {
-            text: c('Title').t`Other calendars`,
+            text: c('Title').t`Subscribed calendars`,
             id: 'other-calendars',
         },
         {
@@ -48,7 +48,6 @@ const generalSettingsConfig = (showCalendarSubscription: boolean) => ({
 interface Props extends SettingsPropsShared {
     activeAddresses: Address[];
     calendars: Calendar[];
-    disabledCalendars: Calendar[];
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
     user: UserModel;
@@ -59,13 +58,11 @@ const CalendarCalendarsSettings = ({
     activeAddresses,
     calendars,
     activeCalendars,
-    disabledCalendars,
     defaultCalendar,
     user,
 }: Props) => {
     const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
     const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
-    const [personalDisabledCalendars] = partition<Calendar>(disabledCalendars, getIsPersonalCalendar);
     const { feature: featureUsedCalendarSubscription, loading: loadingUsedCalendarSubscription } = useFeature(
         FeatureCode.CalendarSubscription
     );
@@ -83,7 +80,6 @@ const CalendarCalendarsSettings = ({
                 activeAddresses={activeAddresses}
                 calendars={personalCalendars}
                 activeCalendars={personalActiveCalendars}
-                disabledCalendars={personalDisabledCalendars}
                 defaultCalendar={defaultCalendar}
                 user={user}
             />
@@ -102,7 +98,7 @@ const CalendarCalendarsSettings = ({
                         <div className="flex flex-nowrap flex-align-items-center">
                             <p className="flex-item-fluid mt0 mb0 pr2">
                                 {c('Upgrade notice')
-                                    .t`Upgrade to a paid plan to share your calendar with anyone with a link.`}
+                                    .t`Upgrade to a paid plan to share your personal calendar via link with anyone.`}
                             </p>
                             <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
                                 {c('Action').t`Upgrade`}

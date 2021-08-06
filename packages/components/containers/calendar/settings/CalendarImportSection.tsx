@@ -1,10 +1,8 @@
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
 
-import { Alert, PrimaryButton, Icon } from '../../../components';
+import { Alert, PrimaryButton, Icon, Href } from '../../../components';
 import { useAddresses, useModals } from '../../../hooks';
 
 import { ImportModal } from '../importModal';
@@ -13,8 +11,6 @@ import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../hooks/useOAuth
 import { G_OAUTH_SCOPE_CALENDAR, OAUTH_TEST_IDS } from '../../importAssistant/constants';
 import { OAuthProps, OAUTH_PROVIDER } from '../../importAssistant/interfaces';
 import { ImportCalendarModal } from '../../importAssistant';
-
-const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 
 interface Props {
     defaultCalendar?: Calendar;
@@ -57,14 +53,18 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
     const classicImportRenderer = () => (
         <>
             {showAlert ? (
-                <Alert type="warning">{c('Info').t`You need to have an active calendar to import your events.`}</Alert>
+                <Alert type="warning">{c('Info')
+                    .t`You need to have an active personal calendar to import your events.`}</Alert>
             ) : null}
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">
-                {c('Info')
-                    .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}
+            <SettingsParagraph>
+                {c('Calendar import section description').t`Import events or the contents of a calendar via ICS files.`}
+                <br />
+                <Href url="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">{c(
+                    'Knowledge base link label'
+                ).t`Here's how`}</Href>
             </SettingsParagraph>
             <PrimaryButton onClick={handleImport} disabled={!canImport}>
-                {c('Action').t`Import calendar`}
+                {c('Action').t`Import events`}
             </PrimaryButton>
         </>
     );

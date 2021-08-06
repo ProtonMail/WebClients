@@ -107,7 +107,7 @@ const useGetCalendarActions = ({
 
         createNotification({
             text: isOtherCalendar
-                ? c('Success').t`Calendar created. It might take a few minutes to sync.`
+                ? c('Success').t`Calendar added. It might take a few minutes to sync.`
                 : c('Success').t`Calendar created`,
         });
     };

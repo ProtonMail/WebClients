@@ -81,10 +81,11 @@ const SubscribeCalendarModal = ({ ...rest }: Props) => {
         }
 
         const loading = loadingSetup || loadingAction;
+        const titleAndSubmitCopy = c('Modal title and action').t`Add calendar`;
 
         return {
-            title: c('Title').t`Subscribe to calendar`,
-            submit: c(`Action`).t`Subscribe`,
+            title: titleAndSubmitCopy,
+            submit: titleAndSubmitCopy,
             loading,
             hasClose: true,
             submitProps: {
