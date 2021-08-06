@@ -5,8 +5,6 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { dialogRootClassName, dropdownRootClassName } from '../components';
 import useApiStatus from './useApiStatus';
 
-const EVERY_MINUTE = 60 * 1000;
-
 const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
@@ -24,15 +22,11 @@ const activeElementIsInsideForm = () => {
 };
 
 const dialogIsOpen = () => {
-    return document.querySelector(`.${  dialogRootClassName}`) !== null;
+    return document.querySelector(`.${dialogRootClassName}`) !== null;
 };
 
 const dropdownIsOpen = () => {
-    return document.querySelector(`.${  dropdownRootClassName}`) !== null;
-};
-
-const pageIsVisible = () => {
-    return !document.hidden && document.visibilityState === 'visible';
+    return document.querySelector(`.${dropdownRootClassName}`) !== null;
 };
 
 const useNewVersion = (config: ProtonConfig) => {
@@ -52,28 +46,27 @@ const useNewVersion = (config: ProtonConfig) => {
         }
     };
 
-    const attemptUpdatingToNewVersion = () => {
+    const handleVisibilityChange = () => {
+        const documentIsVisible = !document.hidden && document.visibilityState === 'visible';
         /*
          * These verification functions perform some dom querying operations
          * so in order to not unnecessarily waste performance we do ! &&
          * instead of || to short circuit and exit early should any of the
          * conditions fail before evaluationg all of
          */
-        if (!pageIsVisible() && !activeElementIsInsideForm() && !dialogIsOpen() && !dropdownIsOpen()) {
+        if (!documentIsVisible && !activeElementIsInsideForm() && !dialogIsOpen() && !dropdownIsOpen()) {
             window.location.reload();
         }
     };
 
     useEffect(() => {
-        let attemptUpdatingToNewVersionIntervalId: number;
-
-        const scheduleAttemptToUpdateToNewVersion = () => {
-            attemptUpdatingToNewVersionIntervalId = window.setInterval(attemptUpdatingToNewVersion, EVERY_MINUTE);
+        const registerVisibilityChangeListener = () => {
+            document.addEventListener('visibilitychange', handleVisibilityChange);
         };
 
         const checkForNewVersion = async () => {
             if ((await isNewVersionAvailable()) && !appVersionBad) {
-                scheduleAttemptToUpdateToNewVersion();
+                registerVisibilityChangeListener();
             }
         };
 
@@ -90,7 +83,7 @@ const useNewVersion = (config: ProtonConfig) => {
 
         return () => {
             clearInterval(checkForNewVersionIntervalId);
-            clearInterval(attemptUpdatingToNewVersionIntervalId);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, []);
 };
