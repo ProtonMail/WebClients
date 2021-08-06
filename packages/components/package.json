@@ -5,7 +5,7 @@
     "sideEffects": false,
     "main": "index.ts",
     "scripts": {
-        "test": "jest",
+        "test": "jest --runInBand --ci",
         "export": "./makeExport",
         "i18n:validate": "proton-i18n validate lint-functions {helpers,containers,components,hooks}",
         "i18n:validate:context": "proton-i18n extract reactComponents && proton-i18n validate",

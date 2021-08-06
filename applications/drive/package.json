@@ -16,7 +16,7 @@
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "bundle": "proton-bundler",
         "check-types": "tsc",
-        "test": "jest",
+        "test": "jest --runInBand --ci",
         "pack": "proton-pack",
         "postinstall": "proton-pack config"
     },
