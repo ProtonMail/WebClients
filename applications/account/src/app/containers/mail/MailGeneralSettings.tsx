@@ -52,8 +52,8 @@ const MailGeneralSettings = ({ location, user }: Props) => {
     const { hasPaidMail, canPay } = user;
     const isExternalUser = getHasOnlyExternalAddresses(addresses);
     const isPMAddressActive = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
-    const isSubUser = !addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_ORIGINAL);
-    const showPmMeSection = !isExternalUser && canPay && !isSubUser && !(isPMAddressActive && hasPaidMail);
+    const hasNoOriginalAddresses = !addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_ORIGINAL);
+    const showPmMeSection = !isExternalUser && canPay && !hasNoOriginalAddresses && !(isPMAddressActive && hasPaidMail);
 
     return (
         <PrivateMainSettingsAreaWithPermissions location={location} config={getGeneralPage(user, showPmMeSection)}>
