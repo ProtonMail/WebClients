@@ -11,7 +11,7 @@ import { getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
 import { InitHandshake, SharedLinkPayload, SharedLinkInfo } from '../../interfaces/sharing';
 import { DriveFileBlock } from '../../interfaces/file';
 import { TransferMeta } from '../../interfaces/transfer';
-import { StreamTransformer } from '../../components/downloads/download';
+import { startDownload, StreamTransformer } from '../../components/downloads/download';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 
 function usePublicSharing() {
@@ -79,6 +79,7 @@ function usePublicSharing() {
             Blocks,
             NodeKey,
             SessionKey,
+            ThumbnailURL: Payload.ThumbnailURL,
         };
     };
 
@@ -138,10 +139,23 @@ function usePublicSharing() {
         );
     };
 
+    const downloadThumbnail = (sessionKey: SessionKey, privateKey: OpenPGPKey, downloadURL: string) => {
+        return startDownload(api, {
+            getBlocks: async () => [
+                {
+                    Index: 1,
+                    URL: downloadURL,
+                },
+            ],
+            transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
+        });
+    };
+
     return {
         initSRPHandshake,
         getSharedLinkPayload,
         startSharedFileTransfer,
+        downloadThumbnail,
     };
 }
 

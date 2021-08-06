@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { readableTime } from '@proton/shared/lib/helpers/time';
-import { Icon, FileNameDisplay, Button } from '@proton/components';
+import { Icon, FileNameDisplay, Button, FileIcon } from '@proton/components';
 
 import DownloadProgressBar from './DownloadProgressBar';
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
@@ -14,17 +14,18 @@ import useStatsHistory from '../../hooks/drive/useStatsHistory';
 interface Props {
     name: string;
     size: number;
+    MIMEType: string;
     expirationTime: number | null;
+    downloadThumbnail: Promise<string | null>;
     downloadFile: () => Promise<void>;
 }
 
-const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props) => {
+const DownloadSharedInfo = ({ name, size, MIMEType, expirationTime, downloadFile, downloadThumbnail }: Props) => {
     const { downloads, getDownloadsProgresses } = useDownloadProvider();
     const statsHistory = useStatsHistory(downloads, getDownloadsProgresses);
+    const [thumbnail, setThumbnail] = useState<string | null>(null);
 
-    const expirationDate = expirationTime
-        ? readableTime(expirationTime, 'PP', { locale: dateLocale })
-        : c('Label').t`Never`;
+    const expirationDate = expirationTime ? readableTime(expirationTime, 'PP', { locale: dateLocale }) : null;
     const onDownload = () => {
         downloadFile().catch(console.error);
     };
@@ -32,17 +33,21 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
     const download = downloads[0];
     const latestStats = statsHistory[0];
 
+    useEffect(() => {
+        downloadThumbnail.then(setThumbnail).catch(console.warn);
+    }, [downloadThumbnail]);
+
     const contents: { title: string; info: ReactNode; content: ReactNode } = {
         title: c('Title').t`Your file is ready to be downloaded`,
-        info: (
+        info: expirationDate ? (
             <>
                 {c('Info').t`Link expires: `}
                 <span className="ml0-25 text-no-wrap">{expirationDate}</span>
             </>
-        ),
+        ) : null,
         content: (
-            <div className="flex flex-column w13e">
-                <Button size="large" color="norm" className="ml2 mr2" onClick={onDownload}>
+            <div className="flex flex-column w100">
+                <Button size="large" color="norm" onClick={onDownload}>
                     {c('Action').t`Download`}
                 </Button>
             </div>
@@ -75,15 +80,24 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
 
     return (
         <>
-            <h3 className="text-bold mt2 mb0-25">{contents.title}</h3>
-            <p className="m0">{contents.info}</p>
-            <div className="flex flex-column flex-nowrap flex-align-items-center flex-justify-center mt2 mb2 pt1 pb1 w100">
-                {contents.content}
+            <h3 className="text-bold mt0- mb1">{contents.title}</h3>
+            <div className="bordered rounded p2 w100">
+                <div className="mb1">
+                    {thumbnail === null ? (
+                        <FileIcon size={56} mimeType={MIMEType} alt={name} />
+                    ) : (
+                        <img src={thumbnail} className="download-shared-info--preview-image" alt={name} />
+                    )}
+                </div>
+                <div className="text-bold mb mw100 flex text-center">
+                    <FileNameDisplay text={name} className="center" />
+                </div>
+                <SizeCell size={size} className="color-weak" />
+                <p className="m0 color-weak">{contents.info}</p>
+                <div className="flex flex-column flex-nowrap flex-align-items-center flex-justify-center mt2 w100">
+                    {contents.content}
+                </div>
             </div>
-            <div className="text-bold mb0-5 mw100 flex w100 text-center">
-                <FileNameDisplay text={name} className="center" />
-            </div>
-            <SizeCell size={size} />
         </>
     );
 };
