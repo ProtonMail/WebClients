@@ -1,4 +1,10 @@
-import { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { USER_ROLES } from '../constants';
+import { CachedOrganizationKey, Member } from '../interfaces';
+
+export const getHasOtherAdmins = (members: Member[]) =>
+    members.some(({ Role, Self }) => Self !== 1 && Role === USER_ROLES.ADMIN_ROLE);
+
+export const getNonPrivateMembers = (members: Member[]) => members.filter(({ Private }) => Private === 0);
 
 export const getOrganizationKeyInfo = (organizationKey?: CachedOrganizationKey) => {
     // If the member has the organization key (not the organization itself).

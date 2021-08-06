@@ -97,11 +97,9 @@ const MainContainer = () => {
                 <Route path={`/${appSlug}/domain-names`}>
                     <MailDomainNamesSettings location={location} />
                 </Route>
-                ,
                 <Route path={`/${appSlug}/organization-keys`}>
                     <OrganizationKeysSettings location={location} />
                 </Route>
-                ,
                 <Route path={`/${appSlug}/users-addresses`}>
                     <OrganizationUsersAndAddressesSettings location={location} />
                 </Route>

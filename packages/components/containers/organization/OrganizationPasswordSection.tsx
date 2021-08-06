@@ -1,58 +1,64 @@
+import { useEffect, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { USER_ROLES } from '@proton/shared/lib/constants';
-import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
-import { useMembers, useModals, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
+import { getHasOtherAdmins, getNonPrivateMembers, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { Organization } from '@proton/shared/lib/interfaces';
 
-import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
-import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
-import ReactivateOrganizationKeysModal, { MODES } from './ReactivateOrganizationKeysModal';
-import { getOrganizationKeyInfo } from './helpers/organizationKeysHelper';
-import useDisplayOrganizationKey from './useDisplayOrganizationKey';
+import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { useMembers, useModals, useNotifications, useOrganizationKey, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 
-const OrganizationSection = () => {
-    const [organization, loadingOrganization] = useOrganization();
+import useDisplayOrganizationKey from './useDisplayOrganizationKey';
+import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
+import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
+import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
+
+interface Props {
+    organization?: Organization;
+    onceRef: MutableRefObject<boolean>;
+}
+
+const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
+    const [user] = useUser();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const displayOrganizationKey = useDisplayOrganizationKey(organizationKey);
     const [members, loadingMembers] = useMembers();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
-    const displayOrganizationKey = useDisplayOrganizationKey(organizationKey);
 
-    if (loadingOrganizationKey || loadingOrganization || loadingMembers) {
-        return <Loader />;
-    }
-
-    // Organization is not setup.
-    if (!organization.HasKeys) {
-        return <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
-    }
+    const hasOtherAdmins = members ? getHasOtherAdmins(members) : false;
+    const nonPrivateMembers = members ? getNonPrivateMembers(members) : [];
 
     const { hasOrganizationKey, isOrganizationKeyActive, isOrganizationKeyInactive } =
         getOrganizationKeyInfo(organizationKey);
 
-    const hasOtherAdmins = members.some(({ Role, Self }) => Self !== 1 && Role === USER_ROLES.ADMIN_ROLE);
-
-    const handleOpenOrganizationKeys = () => {
-        const nonPrivateMembers = members.filter(({ Private }) => Private === 0);
-
+    const handleChangeOrganizationKeys = (mode?: 'reset') => {
         if (nonPrivateMembers.length > 0 && !isOrganizationKeyActive) {
             return createNotification({
-                text: c('Error').t`You must privatize all sub-accounts before generating new organization keys`,
+                text: c('Error').t`You must privatize all users before generating new organization keys`,
                 type: 'error',
             });
         }
 
-        if (!organizationKey?.privateKey) {
-            return createNotification({ text: c('Error').t`Organization key is not decrypted.`, type: 'error' });
-        }
-
         createModal(
             <ChangeOrganizationKeysModal
+                mode={mode}
                 hasOtherAdmins={hasOtherAdmins}
-                organizationKey={organizationKey.privateKey}
+                organizationKey={organizationKey?.privateKey}
                 nonPrivateMembers={nonPrivateMembers}
             />
         );
+    };
+
+    const handleResetOrganizationKeys = () => {
+        handleChangeOrganizationKeys('reset');
+    };
+
+    const handleReactivateOrganizationKeys = () => {
+        createModal(<ReactivateOrganizationKeysModal mode="reactivate" onResetKeys={handleResetOrganizationKeys} />);
+    };
+
+    const handleActivateOrganizationKeys = () => {
+        createModal(<ReactivateOrganizationKeysModal mode="activate" />);
     };
 
     const handleChangeOrganizationPassword = () => {
@@ -68,6 +74,34 @@ const OrganizationSection = () => {
         );
     };
 
+    const loading = !organization || loadingMembers || loadingOrganizationKey;
+
+    useEffect(() => {
+        if (onceRef.current || loading || !organizationKey || !user.isAdmin || !organization?.HasKeys) {
+            return;
+        }
+
+        const { hasOrganizationKey, isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
+
+        if (!hasOrganizationKey) {
+            handleActivateOrganizationKeys();
+            onceRef.current = true;
+        }
+        if (isOrganizationKeyInactive) {
+            handleReactivateOrganizationKeys();
+            onceRef.current = true;
+        }
+    }, [organization, organizationKey, user, loadingMembers]);
+
+    if (loading) {
+        return <Loader />;
+    }
+
+    // Organization is not setup.
+    if (!organization?.HasKeys) {
+        return <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
+    }
+
     return (
         <SettingsSection>
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/organization-key">
@@ -77,10 +111,10 @@ const OrganizationSection = () => {
             <Block>
                 {isOrganizationKeyActive && (
                     <>
-                        <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr1 mb0-5">
+                        <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr1">
                             {c('Action').t`Change password`}
                         </Button>
-                        <Button color="norm" onClick={handleOpenOrganizationKeys} className="mr1 mb0-5">
+                        <Button color="norm" onClick={() => handleChangeOrganizationKeys()}>
                             {c('Action').t`Change organization keys`}
                         </Button>
                     </>
@@ -91,11 +125,10 @@ const OrganizationSection = () => {
                             {c('Error')
                                 .t`You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
                         </Alert>
-                        <Button
-                            color="norm"
-                            onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />)}
-                            className="mr1"
-                        >
+                        <Button onClick={handleResetOrganizationKeys} className="mr1">
+                            {c('Action').t`Reset organization keys`}
+                        </Button>
+                        <Button color="norm" onClick={handleReactivateOrganizationKeys} className="mr1">
                             {c('Action').t`Restore administrator privileges`}
                         </Button>
                     </>
@@ -106,11 +139,7 @@ const OrganizationSection = () => {
                             {c('Error')
                                 .t`You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
                         </Alert>
-                        <Button
-                            color="norm"
-                            onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />)}
-                            className="mr1"
-                        >
+                        <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr1">
                             {c('Action').t`Activate organization key`}
                         </Button>
                     </>
@@ -135,4 +164,4 @@ const OrganizationSection = () => {
     );
 };
 
-export default OrganizationSection;
+export default OrganizationPasswordSection;

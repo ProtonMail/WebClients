@@ -74,7 +74,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
 
     const processMember = async (member: Member) => {
         if (!organizationKey?.privateKey) {
-            createNotification({ text: c('Error').t`Organization key is not decrypted.` });
+            createNotification({ text: c('Error').t`Organization key is not decrypted.`, type: 'error' });
             return;
         }
         const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(

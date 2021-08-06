@@ -5,19 +5,16 @@ import { encryptPrivateKey } from 'pmcrypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { OrganizationModel } from '@proton/shared/lib/models';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
-import { FormModal, LearnMore, Alert, Row, Label, Field, PasswordInput } from '../../components';
+import { FormModal, LearnMore, Alert, Row, Label, Field, PasswordInput, Button } from '../../components';
 import { useCache, useLoading, useNotifications, useAuthentication, useEventManager, useApi } from '../../hooks';
-
-export enum MODES {
-    ACTIVATE,
-    REACTIVATE,
-}
 
 interface Props {
     onClose?: () => void;
-    mode: MODES;
+    mode: 'reactivate' | 'activate';
+    onResetKeys?: () => void;
 }
-const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
+
+const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }: Props) => {
     const cache = useCache();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -29,7 +26,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
     const [error, setError] = useState('');
 
     const { title, message, warning, success } = (() => {
-        if (mode === MODES.ACTIVATE) {
+        if (mode === 'activate') {
             return {
                 title: c('Title').t`Activate organization key`,
                 message: c('Info')
@@ -40,7 +37,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
             };
         }
 
-        if (mode === MODES.REACTIVATE) {
+        if (mode === 'reactivate') {
             const learnMore = (
                 <LearnMore key={1} url="https://protonmail.com/support/knowledge-base/restore-administrator/" />
             );
@@ -86,7 +83,21 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
         <FormModal
             title={title}
             close={c('Action').t`Close`}
-            submit={c('Action').t`Submit`}
+            submit={
+                <div>
+                    {onResetKeys && (
+                        <Button
+                            className="mr1"
+                            onClick={() => {
+                                onClose?.();
+                                onResetKeys();
+                            }}
+                        >{c('Action').t`Reset keys`}</Button>
+                    )}
+                    <Button color="norm" loading={loading} onClick={() => withLoading(handleSubmit())}>{c('Action')
+                        .t`Submit`}</Button>
+                </div>
+            }
             onClose={onClose}
             loading={loading}
             onSubmit={() => withLoading(handleSubmit())}
