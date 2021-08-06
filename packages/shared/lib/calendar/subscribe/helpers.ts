@@ -1,4 +1,4 @@
-import { EVENT_ACTIONS } from '../../constants';
+import { EVENT_ACTIONS, HOUR } from '../../constants';
 import { Calendar, CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE, SubscribedCalendar } from '../../interfaces/calendar';
 import {
     CalendarSubscriptionEventManager,
@@ -38,5 +38,7 @@ export const getCalendarHasSubscriptionParameters = (
 };
 
 export const getCalendarIsSynced = (calendar: SubscribedCalendar) => {
-    return calendar.SubscriptionParameters.Status !== CALENDAR_SUBSCRIPTION_STATUS.OK;
+    const { Status, LastUpdateTime } = calendar.SubscriptionParameters;
+
+    return Status > CALENDAR_SUBSCRIPTION_STATUS.OK || Date.now() - LastUpdateTime * 1000 > 12 * HOUR;
 };
