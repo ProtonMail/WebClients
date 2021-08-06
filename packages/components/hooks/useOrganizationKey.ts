@@ -5,7 +5,7 @@ import { useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
 import usePromiseResult from './usePromiseResult';
 import { cachedPromise } from './helpers/cachedPromise';
 
-const useOrganizationKey = (organization: Organization) => {
+const useOrganizationKey = (organization?: Organization) => {
     const cache = useCache();
     const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
     const [user] = useUser();

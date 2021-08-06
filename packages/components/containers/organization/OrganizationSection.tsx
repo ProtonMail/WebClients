@@ -6,7 +6,6 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
 import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';
-import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';
@@ -91,7 +90,6 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
 
     return (
         <>
-            <RestoreAdministratorPrivileges />
             <SettingsParagraph>
                 {c('Info').t`The name will be visible to your users while they are logged in.`}
             </SettingsParagraph>

@@ -1,18 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { c } from 'ttag';
 import {
     SettingsPropsShared,
-    useUser,
     useOrganization,
-    useOrganizationKey,
-    useModals,
     OrganizationSection,
     OrganizationPasswordSection,
 } from '@proton/components';
-import { getOrganizationKeyInfo } from '@proton/components/containers/organization/helpers/organizationKeysHelper';
-import ReactivateOrganizationKeysModal, {
-    MODES,
-} from '@proton/components/containers/organization/ReactivateOrganizationKeysModal';
 import { PERMISSIONS } from '@proton/shared/lib/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
@@ -41,37 +34,8 @@ export const getOrganizationPage = () => {
 };
 
 const OrganizationKeysSettings = ({ location }: SettingsPropsShared) => {
-    const [user] = useUser();
-    const [organization, loadingOrganization] = useOrganization();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [organization] = useOrganization();
     const onceRef = useRef(false);
-    const { createModal } = useModals();
-
-    useEffect(() => {
-        if (
-            onceRef.current ||
-            !organization ||
-            loadingOrganization ||
-            !organizationKey ||
-            loadingOrganizationKey ||
-            !user.isAdmin ||
-            !organization.HasKeys
-        ) {
-            return;
-        }
-
-        const { hasOrganizationKey, isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
-
-        if (!hasOrganizationKey) {
-            createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />);
-            onceRef.current = true;
-        }
-        if (isOrganizationKeyInactive) {
-            createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />);
-            onceRef.current = true;
-        }
-    }, [organization, organizationKey, user]);
-
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
@@ -85,7 +49,7 @@ const OrganizationKeysSettings = ({ location }: SettingsPropsShared) => {
                     onceRef.current = true;
                 }}
             />
-            <OrganizationPasswordSection />
+            <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };

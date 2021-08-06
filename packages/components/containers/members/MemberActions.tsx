@@ -16,6 +16,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getUser } from '@proton/shared/lib/api/user';
 import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface';
 import { LoginTypes } from '@proton/shared/lib/authentication/LoginInterface';
+import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import { DropdownActions } from '../../components';
 import {
@@ -31,7 +32,6 @@ import {
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 import DeleteMemberModal from './DeleteMemberModal';
-import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 
 interface Props {
     member: Member;
