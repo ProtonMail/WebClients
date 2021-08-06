@@ -9,6 +9,7 @@ import { range } from '@proton/shared/lib/helpers/array';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import { Icon, StepDots, StepDot, FormModal, Button, useSettingsLink } from '../../components';
 import {
@@ -28,7 +29,6 @@ import OnboardingStep from './OnboardingStep';
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import OnboardingWelcome from './OnboardingWelcome';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';
-import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 import { useTheme } from '../themes/ThemeProvider';
 
 const themes = Object.values(PROTON_THEMES);
