@@ -2,6 +2,7 @@ module.exports = {
     setupFilesAfterEnv: ['./rtl.setup.js'],
     verbose: true,
     moduleDirectories: ['node_modules'],
+    testEnvironment: './jest.env.js',
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
