@@ -10,7 +10,6 @@ import {
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
-    getIsCalendarDisabled,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 
@@ -37,11 +36,10 @@ const CalendarSettingsRouter = ({ user }: Props) => {
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
-    const { activeCalendars, disabledCalendars, allCalendarIDs } = useMemo(() => {
+    const { activeCalendars, allCalendarIDs } = useMemo(() => {
         return {
             calendars: memoizedCalendars,
             activeCalendars: getProbablyActiveCalendars(memoizedCalendars),
-            disabledCalendars: memoizedCalendars.filter((calendar) => getIsCalendarDisabled(calendar)),
             allCalendarIDs: memoizedCalendars.map(({ ID }) => ID),
         };
     }, [calendars]);
@@ -68,7 +66,6 @@ const CalendarSettingsRouter = ({ user }: Props) => {
                     activeAddresses={activeAddresses}
                     calendars={memoizedCalendars}
                     activeCalendars={activeCalendars}
-                    disabledCalendars={disabledCalendars}
                     defaultCalendar={defaultCalendar}
                     location={location}
                     user={user}
