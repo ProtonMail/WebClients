@@ -94,3 +94,5 @@ export interface ThumbnailDownload {
 export interface ThumbnailMeta {
     modifyTime: number;
 }
+
+export type API = (query: any) => any;
