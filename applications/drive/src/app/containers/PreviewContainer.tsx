@@ -21,7 +21,7 @@ import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/sections/Drive/DriveFolderProvider';
 import { mapLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
-import SharingModal from '../components/SharingModal/SharingModal';
+import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
 import { LinkMeta, LinkType } from '../interfaces/link';
 
 const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
@@ -147,7 +147,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
         }
 
         const [item] = mapLinksToChildren([meta], (linkId) => cache.get.isLinkLocked(shareId, linkId));
-        createModal(<SharingModal shareId={shareId} item={item} />);
+        createModal(<ShareLinkModal shareId={shareId} item={item} />);
     }, [shareId, meta]);
 
     const handleNext = () => onOpen?.(linksAvailableForPreview[currentOpenIndex + 1]);

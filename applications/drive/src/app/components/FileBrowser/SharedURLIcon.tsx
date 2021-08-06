@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Tooltip, useModals } from '@proton/components';
-import SharingModal from '../SharingModal/SharingModal';
+import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
 import { FileBrowserItem } from './interfaces';
 
 interface Props {
@@ -29,7 +29,7 @@ const SharedURLIcon = ({ shareId, item, className }: Props) => {
         (e) => {
             e.stopPropagation(); // To not show file preview when clicking (to not trigger other click event).
             e.preventDefault(); // To not show file preview when pressing enter (to disable click event).
-            createModal(<SharingModal shareId={shareId} item={item} />);
+            createModal(<ShareLinkModal shareId={shareId} item={item} />);
         },
         [shareId, item]
     );

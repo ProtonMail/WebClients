@@ -2,7 +2,7 @@ import React from 'react';
 import { PrimaryButton, useModals, classnames } from '@proton/components';
 import { c } from 'ttag';
 
-import SharingModal from '../SharingModal/SharingModal';
+import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
 import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 
@@ -25,7 +25,7 @@ const ShareButton = ({ shareId, item, className }: Props) => {
             size="small"
             onClick={(e) => {
                 e.stopPropagation();
-                createModal(<SharingModal shareId={shareId} item={item} />);
+                createModal(<ShareLinkModal shareId={shareId} item={item} />);
             }}
         >
             {c('Action').t`Share`}

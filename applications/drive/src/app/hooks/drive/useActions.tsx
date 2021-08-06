@@ -19,7 +19,8 @@ import RenameModal from '../../components/RenameModal';
 import DetailsModal from '../../components/DetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
-import SharingModal from '../../components/SharingModal/SharingModal';
+import ShareModal from '../../components/ShareModal/ShareModal';
+import ShareLinkModal from '../../components/ShareLinkModal/ShareLinkModal';
 import SelectedFileToShareModal from '../../components/SelectedFileToShareModal/SelectedFileToShareModal';
 import FilesDetailsModal from '../../components/FilesDetailsModal';
 
@@ -169,7 +170,7 @@ function useActions() {
     };
 
     const openLinkSharing = (shareId: string, itemToShare: FileBrowserItem) => {
-        createModal(<SharingModal shareId={shareId} item={itemToShare} />);
+        createModal(<ShareLinkModal shareId={shareId} item={itemToShare} />);
     };
 
     const openStopSharing = (shareId: string, itemsToStopSharing: FileBrowserItem[]) => {
@@ -220,6 +221,10 @@ function useActions() {
         });
     };
 
+    const openSharing = (shareId: string, itemToShare: FileBrowserItem) => {
+        createModal(<ShareModal shareId={shareId} item={itemToShare} />);
+    };
+
     return {
         download,
         openCreateFolder,
@@ -234,6 +239,7 @@ function useActions() {
         openFileSharing,
         openLinkSharing,
         openStopSharing,
+        openSharing,
     };
 }
 

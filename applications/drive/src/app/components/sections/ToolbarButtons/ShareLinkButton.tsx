@@ -22,7 +22,7 @@ const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
             title={hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`}
             icon={<Icon name="link" />}
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
-            data-testid="toolbar-share"
+            data-testid="toolbar-share-link"
         />
     );
 };

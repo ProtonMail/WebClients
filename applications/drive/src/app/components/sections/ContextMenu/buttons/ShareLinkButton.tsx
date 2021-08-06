@@ -10,7 +10,7 @@ interface Props {
     close: () => void;
 }
 
-const SharingViaLinkButton = ({ shareId, item, close }: Props) => {
+const ShareLinkButton = ({ shareId, item, close }: Props) => {
     const { openLinkSharing } = useToolbarActions();
 
     const hasSharedLink = !!item.SharedUrl;
@@ -19,11 +19,11 @@ const SharingViaLinkButton = ({ shareId, item, close }: Props) => {
         <ContextMenuButton
             name={hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`}
             icon="link"
-            testId="context-menu-share"
+            testId="context-menu-share-link"
             action={() => openLinkSharing(shareId, item)}
             close={close}
         />
     );
 };
 
-export default SharingViaLinkButton;
+export default ShareLinkButton;
