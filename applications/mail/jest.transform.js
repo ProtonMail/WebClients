@@ -4,7 +4,8 @@ module.exports = require('babel-jest').default.createTransformer({
     plugins: [
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-transform-runtime',
-        'transform-require-context',
         '@babel/plugin-proposal-optional-chaining',
-    ],
+        'transform-class-properties',
+        'transform-require-context'
+    ]
 });
