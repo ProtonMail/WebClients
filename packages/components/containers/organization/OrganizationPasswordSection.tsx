@@ -11,6 +11,7 @@ import useDisplayOrganizationKey from './useDisplayOrganizationKey';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
+import { getActivationText } from './helper';
 
 interface Props {
     organization?: Organization;
@@ -136,8 +137,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                 {!hasOrganizationKey && (
                     <>
                         <Alert type="error">
-                            {c('Error')
-                                .t`You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
+                            {getActivationText()}
                         </Alert>
                         <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr1">
                             {c('Action').t`Activate organization key`}
