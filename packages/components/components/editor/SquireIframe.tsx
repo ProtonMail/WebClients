@@ -1,13 +1,12 @@
 import { useRef, useState, useEffect, forwardRef, Ref } from 'react';
 import { c } from 'ttag';
 import { isMac } from '@proton/shared/lib/helpers/browser';
-
+import { message } from '@proton/shared/lib/sanitize';
 import { useHandler, useModals, useNotifications } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
 import { getLinkAtCursor, makeLink, pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
 import { SquireEditorMetadata } from './interface';
 import { InlineLinkButton } from '../button';
-
 import InsertLinkModal from './modals/InsertLinkModal';
 
 const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
@@ -159,29 +158,46 @@ const SquireIframe = (
         keydownHandler?.(e);
     };
 
+    const handleDrop = (e: DragEvent, squire: SquireType) => {
+        if (!e.dataTransfer) {
+            return;
+        }
+        const hasHtml = e.dataTransfer.types.some((type) => type === 'text/html');
+        if (hasHtml) {
+            const data = e.dataTransfer.getData('text/html');
+            e.preventDefault();
+            squire.insertHTML(message(data));
+        }
+    };
+
     useEffect(() => {
         if (squireReady) {
             const squire = getSquireRef(ref);
+
+            const keydownHandler = (e: KeyboardEvent) => handleKeyDown(e, squire);
+            const dropHandler = (e: DragEvent) => handleDrop(e, squire);
 
             squire.addEventListener('focus', handleFocus);
             squire.addEventListener('input', handleInput);
             squire.addEventListener('paste', handlePaste);
             squire.addEventListener('dragenter', handlePassDragEvents);
             squire.addEventListener('dragleave', handlePassDragEvents);
+            squire.addEventListener('drop', dropHandler);
             squire.addEventListener('cursor', handleCursor);
             // Listening to all keyups as inputs is aggressive but we tested some deletion actions that trigger no other events
             // Also it's keyup and not keydown, keydown is too early and don't contains changes
             squire.addEventListener('keyup', handleInput);
-            squire.addEventListener('keydown', (e: KeyboardEvent) => handleKeyDown(e, squire));
+            squire.addEventListener('keydown', keydownHandler);
             return () => {
                 squire.removeEventListener('focus', handleFocus);
                 squire.removeEventListener('input', handleInput);
                 squire.removeEventListener('paste', handlePaste);
                 squire.removeEventListener('dragenter', handlePassDragEvents);
                 squire.removeEventListener('dragleave', handlePassDragEvents);
+                squire.removeEventListener('drop', dropHandler);
                 squire.removeEventListener('cursor', handleCursor);
                 squire.removeEventListener('keyup', handleInput);
-                squire.removeEventListener('keydown', (e: KeyboardEvent) => handleKeyDown(e, squire));
+                squire.removeEventListener('keydown', keydownHandler);
             };
         }
     }, [squireReady]);
