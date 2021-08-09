@@ -104,28 +104,7 @@
 			}
 		}
 
-		// Transform origins regarding dropdown position
-		@each $position,
-			$origin
-				in (
-					(top, bottom center),
-					(top-left, bottom left),
-					(top-right, bottom right),
-					(bottom, top center),
-					(bottom-left, top left),
-					(bottom-right, top right),
-					(left, right center),
-					(left-bottom, right bottom),
-					(left-top, right top),
-					(right, left center),
-					(right-bottom, left bottom),
-					(right-top, left top)
-				)
-		{
-			&--#{$position} {
-				transform-origin: $origin;
-			}
-		}
+		@include transform-origins;
 	}
 
 	/* Backdrop button, meant to override 'autoClose' option on mobile */

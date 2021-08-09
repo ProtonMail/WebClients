@@ -64,6 +64,7 @@ export { default as useKeyPress } from './useKeyPress';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 
 export { default as useDragMove } from './useDragMove';
+export { default as useIsClosing } from './useIsClosing';
 export { default as useStep } from './useStep';
 export { default as useOnline } from './useOnline';
 export { default as useLoading } from './useLoading';

@@ -26,6 +26,7 @@ const MainContainer = () => {
         FeatureCode.EnabledEarlyAccessDesynchronization,
         FeatureCode.EnabledEarlyAccess,
         FeatureCode.ScheduledSend,
+        FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
         FeatureCode.EnabledEncryptedSearch,
         FeatureCode.UsedMailMobileApp,

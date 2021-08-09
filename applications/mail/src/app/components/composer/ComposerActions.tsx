@@ -1,6 +1,6 @@
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getAttachments, hasFlag } from '@proton/shared/lib/mail/messages';
-import { MutableRefObject } from 'react';
+import { MutableRefObject, useRef } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
 import {
@@ -13,6 +13,9 @@ import {
     useFeature,
     FeatureCode,
     useUser,
+    Spotlight,
+    Href,
+    useSpotlightOnFeature,
 } from '@proton/components';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -134,6 +137,18 @@ const ComposerActions = ({
     const { feature, loading: loadingFeature } = useFeature(FeatureCode.ScheduledSend);
     const hasScheduleSendAccess = !loadingFeature && feature?.Value && hasPaidMail;
 
+    const dropdownRef = useRef(null);
+    const {
+        show: showSpotlight,
+        onDisplayed,
+        onClose: onCloseSpotlight,
+    } = useSpotlightOnFeature(FeatureCode.SpotlightScheduledSend, !opening && hasScheduleSendAccess);
+
+    const handleScheduleSend = () => {
+        onCloseSpotlight();
+        onScheduleSendModal();
+    };
+
     return (
         <footer
             data-testid="composer:footer"
@@ -143,36 +158,60 @@ const ComposerActions = ({
             ])}
             onClick={addressesBlurRef.current}
         >
-            <SendActions
-                disabled={loadingFeature || loadingScheduleCount}
-                loading={loadingFeature || loadingScheduleCount}
-                shape="solid"
-                color="norm"
-                mainAction={
-                    <Tooltip title={titleSendButton}>
-                        <Button
-                            loading={loadingFeature}
-                            onClick={onSend}
-                            disabled={sendDisabled}
-                            className="composer-send-button"
-                            data-testid="composer:send-button"
+            <Spotlight
+                originalPlacement="top-right"
+                show={showSpotlight}
+                onDisplayed={onDisplayed}
+                anchorRef={dropdownRef}
+                content={
+                    <>
+                        {c('Spotlight').t`You can now schedule your messages to be sent later`}
+                        <br />
+                        <Href
+                            url="https://protonmail.com/support/knowledge-base/scheduled-send/"
+                            title="Scheduled send"
                         >
-                            <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
-                            <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
-                        </Button>
-                    </Tooltip>
+                            {c('Info').t`Learn more`}
+                        </Href>
+                    </>
                 }
-                secondAction={
-                    hasScheduleSendAccess ? (
-                        <Tooltip>
-                            <DropdownMenuButton className="text-left" onClick={onScheduleSendModal} data-testid='composer:schedule-send-button'>
-                                <Icon name="clock" />
-                                <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
-                            </DropdownMenuButton>
+            >
+                <SendActions
+                    disabled={loadingFeature || loadingScheduleCount}
+                    loading={loadingFeature || loadingScheduleCount}
+                    shape="solid"
+                    color="norm"
+                    mainAction={
+                        <Tooltip title={titleSendButton}>
+                            <Button
+                                loading={loadingFeature}
+                                onClick={onSend}
+                                disabled={sendDisabled}
+                                className="composer-send-button"
+                                data-testid="composer:send-button"
+                            >
+                                <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
+                                <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
+                            </Button>
                         </Tooltip>
-                    ) : undefined
-                }
-            />
+                    }
+                    secondAction={
+                        hasScheduleSendAccess ? (
+                            <Tooltip>
+                                <DropdownMenuButton
+                                    className="text-left"
+                                    onClick={handleScheduleSend}
+                                    data-testid="composer:schedule-send-button"
+                                >
+                                    <Icon name="clock" />
+                                    <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
+                                </DropdownMenuButton>
+                            </Tooltip>
+                        ) : undefined
+                    }
+                    dropdownRef={dropdownRef}
+                />
+            </Spotlight>
             <div className="flex flex-item-fluid">
                 <div className="flex">
                     <Tooltip title={titleAttachment}>
