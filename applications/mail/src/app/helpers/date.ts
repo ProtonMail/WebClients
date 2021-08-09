@@ -38,8 +38,9 @@ export const formatScheduledDateString = (date: Date | number) => {
         return c('Date label').t`tomorrow`;
     }
 
+    const formattedDate = format(date, 'PPPP', { locale: dateLocale });
     // translator: This segment is part of a longer sentence which looks like this "Message will be sent on Tuesday, May 11 at 12:30 PM"
-    return format(date, 'EEEE, MMMM d', { locale: dateLocale });
+    return c('Date label').t`on ${formattedDate}`;
 };
 
 export const formatScheduledTimeString = (date: Date | number) => {
