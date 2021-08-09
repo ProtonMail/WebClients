@@ -17,18 +17,28 @@ import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import { createEmbeddedImageFromUpload, isEmbeddable, readCID } from '../../helpers/message/messageEmbeddeds';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 
 export interface PendingUpload {
     file: File;
     upload: Upload<UploadResult>;
 }
 
-export const useAttachments = (
-    message: MessageExtended,
-    onChange: MessageChange,
-    onSaveNow: () => Promise<void>,
-    editorActionsRef: EditorActionsRef
-) => {
+interface UseAttachmentsParameters {
+    message: MessageExtended;
+    onChange: MessageChange;
+    onSaveNow: () => Promise<void>;
+    editorActionsRef: EditorActionsRef;
+    onMessageAlreadySent: () => void;
+}
+
+export const useAttachments = ({
+    message,
+    onChange,
+    onSaveNow,
+    editorActionsRef,
+    onMessageAlreadySent,
+}: UseAttachmentsParameters) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
@@ -111,6 +121,10 @@ export const useAttachments = (
             });
             removePendingUpload(pendingUpload);
         } catch (error) {
+            if (error.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+                onMessageAlreadySent();
+            }
+
             removePendingUpload(pendingUpload, error);
         }
     });
@@ -143,7 +157,15 @@ export const useAttachments = (
 
             const messageFromCache = await ensureMessageIsCreated();
             const messageKeys = await getMessageKeys(messageFromCache.data);
+
+            // Message already sent
+            if (messageFromCache.isSentDraft) {
+                onMessageAlreadySent();
+                return;
+            }
+
             const uploads = upload(files, messageFromCache, messageKeys, action, auth.UID);
+
             const pendingUploads = files.map((file, i) => ({ file, upload: uploads[i] }));
             addPendingUploads(pendingUploads);
 
