@@ -12,7 +12,7 @@ export const MONTH = 4 * WEEK;
 export const YEAR = 12 * MONTH;
 
 // Max quantity for all addons
-export const MAX_VPN_ADDON = 496;
+export const MAX_VPN_ADDON = 2000;
 export const MAX_MEMBER_ADDON = 5000;
 export const MAX_DOMAIN_PRO_ADDON = 99;
 export const MAX_DOMAIN_PLUS_ADDON = 10;
