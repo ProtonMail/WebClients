@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { IllustrationPlaceholder } from '@proton/components';
+import { EmptyViewContainer } from '@proton/components';
 
 import noContentSvg from '@proton/styles/assets/img/placeholders/empty-trash.svg';
 
 const EmptyTrash = () => (
-    <div className="p2 mt2 flex w100 flex flex-item-fluid">
-        <IllustrationPlaceholder url={noContentSvg} title={c('Info').t`No files or folders in trash`} />
-    </div>
+    <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`No files or folders in trash` }}>
+        <h3 className="text-bold">{c('Info').t`No files or folders in trash`}</h3>
+    </EmptyViewContainer>
 );
 
 export default EmptyTrash;
