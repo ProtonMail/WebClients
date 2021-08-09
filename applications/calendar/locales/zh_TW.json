@@ -828,7 +828,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1870,10 +1870,285 @@
         "轉寄:"
       ]
     },
-    "Action": {
-      "Close": [
-        "關閉"
+    "Label": {
+      "Copy": [
+        "複製"
       ],
+      "Reveal password": [
+        "顯示密碼"
+      ],
+      "Hide password": [
+        "隱藏密碼"
+      ],
+      "Street address": [
+        "街道地址"
+      ],
+      "City": [
+        "城市"
+      ],
+      "Region": [
+        "地區"
+      ],
+      "Postal code": [
+        "郵遞區號"
+      ],
+      "Country": [
+        "國家"
+      ],
+      "Post office box": [
+        "郵政信箱"
+      ],
+      "Extended address": [
+        "詳細地址"
+      ],
+      "Do not ask again": [
+        "不要再詢問"
+      ],
+      "Email address": [
+        "電子郵件地址"
+      ],
+      "Phone number": [
+        "電話號碼"
+      ],
+      "Verification code": [
+        "驗證碼"
+      ],
+      "Enter the 6-digit code": [
+        "請輸入 6 位數代碼"
+      ],
+      "Add email address": [
+        "新增電子郵件地址"
+      ],
+      "Email format": [
+        "電子郵件格式"
+      ],
+      "Add image URL": [
+        "新增圖片 URL"
+      ],
+      "Upload picture": [
+        "上載圖片"
+      ],
+      "Add to group": [
+        "新增至群組"
+      ],
+      "Encrypt emails": [
+        "加密電子郵件"
+      ],
+      "Sign emails": [
+        "簽署電子郵件"
+      ],
+      "Cryptographic scheme": [
+        "加密配置"
+      ],
+      "Public keys": [
+        "公開金鑰"
+      ],
+      "Automatically save contacts": [
+        "自動儲存聯絡人"
+      ],
+      "Import contacts": [
+        "匯入聯絡人"
+      ],
+      "Export contacts": [
+        "匯出聯絡人"
+      ],
+      "Operating system": [
+        "操作系统"
+      ],
+      "Operating system version": [
+        "作業系統版本"
+      ],
+      "Proton username": [
+        "Proton 使用者名稱"
+      ],
+      "Category": [
+        "類別"
+      ],
+      "What happened?": [
+        "發生了什麼問題？"
+      ],
+      "System information": [
+        "系統資訊"
+      ],
+      "Browser": [
+        "瀏覽器"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "這個評分的主要原因是什麼？"
+      ],
+      "Display name": [
+        "顯示名稱"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "送出"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "Two-factor authentication code": [
+        "兩步驟驗證碼"
+      ],
+      "Username or ProtonMail address": [
+        "使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "鍵盤快捷鍵"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "選取預設情況下您郵件清單的外觀。"
+      ],
+      "Select how your mailbox looks like by default.": [
+        "選取預設情況下的收件匣外觀。"
+      ],
+      "Select how your composer opens by default.": [
+        "選取預設情況下撰寫器開啟的方式。"
+      ],
+      "Enable Beta Access": [
+        "啟用測試版體驗"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Choose a color": [
+        "選擇一種顏色"
+      ],
+      "Default email": [
+        "預設郵件"
+      ],
+      "Display": [
+        "顯示"
+      ],
+      "Description": [
+        "描述"
+      ],
+      "Default event duration": [
+        "預設活動持續時間"
+      ],
+      "URL": [
+        "網址"
+      ],
+      "Default notifications": [
+        "預設通知"
+      ],
+      "Default full day notifications": [
+        "預設整日活動通知"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
+      ],
+      "0 - Not likely": [
+        "0 - 不太可能"
+      ],
+      "10 - Extremely likely": [
+        "10 - 極有可能"
+      ],
+      "All day": [
+        "全天"
+      ],
+      "Repeat on": [
+        "重複於"
+      ],
+      "Repeat every": [
+        "重複間隔"
+      ],
+      "Ends": [
+        "結束"
+      ],
+      "Organizer": [
+        "召集人"
+      ],
+      "Optional": [
+        "列席者"
+      ],
+      "Time of the event": [
+        "事件時間"
+      ],
+      "Event time": [
+        "事件時間"
+      ],
+      "Event title": [
+        "事件標題"
+      ],
+      "Event frequency": [
+        "事件頻率"
+      ],
+      "Event location": [
+        "事件地點"
+      ],
+      "Event notifications": [
+        "事件通知"
+      ],
+      "Participants": [
+        "參與者"
+      ],
+      "Your calendars": [
+        "您的行事曆"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "關閉視窗"
       ],
@@ -1892,6 +2167,9 @@
       "Use “${ label }” setting": [
         "使用「${ label }」設定"
       ],
+      "Close": [
+        "關閉"
+      ],
       "Close navigation": [
         "關閉導覽"
       ],
@@ -1901,11 +2179,11 @@
       "Go to panel ${ index }": [
         "到面板 ${ index }"
       ],
-      "refresh the page": [
-        "刷新此頁"
-      ],
       "Load image": [
         "載入圖片"
+      ],
+      "refresh the page": [
+        "刷新此頁"
       ],
       "Export": [
         "匯出"
@@ -2132,9 +2410,6 @@
       "OK": [
         "確定"
       ],
-      "Log in": [
-        "登入"
-      ],
       "Copy email to clipboard": [
         "複製電子郵件至剪貼簿"
       ],
@@ -2191,6 +2466,9 @@
       ],
       "Back": [
         "上一步"
+      ],
+      "Log in": [
+        "登入"
       ],
       "Remove bonuses": [
         ""
@@ -2335,6 +2613,137 @@
       ],
       "Close popover": [
         "關閉彈出視窗"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此金鑰不適用於加密"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "Request an invite": [
+        "請求一個邀請"
+      ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Go to subscription plans": [
+        "前往訂閱方案"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "付款發票"
+      ],
+      "Upgrade account": [
+        "升級帳戶"
+      ],
+      "Calendars": [
+        "行事曆"
+      ],
+      "My calendars": [
+        "我的行事曆"
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "範例："
+      ],
+      "Start typing an email address": [
+        "在此輸入一個電子郵件地址"
+      ],
+      "Image URL": [
+        "圖片 URL"
+      ],
+      "Filter groups": [
+        "篩選群組"
+      ],
+      "Search for name or email": [
+        "搜尋姓名或電子郵件"
+      ],
+      "Search for group name": [
+        "搜尋群組名稱"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "OS name": [
+        "作業系統名稱"
+      ],
+      "OS version": [
+        "作業系統版本"
+      ],
+      "Proton username": [
+        "Proton 使用者名稱"
+      ],
+      "A way to contact you": [
+        "如何聯繫您"
+      ],
+      "Please describe the problem and include any error messages": [
+        "請描述問題及附上錯誤訊息"
+      ],
+      "Browser name": [
+        "瀏覽器名稱"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
+      "Feedback": [
+        "意見回饋"
+      ],
+      "e.g. Julia Smith": [
+        "範例：衛梓祐"
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        "新增一個行事曆名稱"
+      ],
+      "Add a calendar description": [
+        "新增一個行事曆描述"
+      ],
+      "Add title": [
+        "新增標題"
+      ],
+      "Add location": [
+        "新增位置"
+      ],
+      "Add description": [
+        "新增描述"
+      ],
+      "Add participants": [
+        "新增參與者"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } 小時"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分鐘"
       ]
     },
     "Title": {
@@ -2488,18 +2897,6 @@
       "Select a theme": [
         "選擇佈景主題"
       ],
-      "Sign in again to continue": [
-        "請重新登入以繼續"
-      ],
-      "Account suspended": [
-        "帳號被暫停"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "Enter your password": [
-        "請輸入您的密碼"
-      ],
       "Open help menu": [
         "開啟說明功能表"
       ],
@@ -2517,6 +2914,18 @@
       ],
       "Give feedback": [
         "提供意見回饋"
+      ],
+      "Sign in again to continue": [
+        "請重新登入以繼續"
+      ],
+      "Account suspended": [
+        "帳號被暫停"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Enter your password": [
+        "請輸入您的密碼"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2623,14 +3032,14 @@
       "Beta Access": [
         "測試版體驗"
       ],
+      "Select the way to send this notification": [
+        "請選擇此通知發送的方式"
+      ],
       "Select when you want this notification to be sent": [
         "請選擇您想此通知何時發送"
       ],
       "Select the time to send this notification": [
         "請選擇此通知發送的時間"
-      ],
-      "Select the way to send this notification": [
-        "請選擇此通知發送的方式"
       ],
       "Add another notification to remind you of this event": [
         "新增另一個通知以提醒您此事件"
@@ -2766,415 +3175,6 @@
       ],
       "CANCELLED": [
         "已取消"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "複製"
-      ],
-      "Reveal password": [
-        "顯示密碼"
-      ],
-      "Hide password": [
-        "隱藏密碼"
-      ],
-      "Street address": [
-        "街道地址"
-      ],
-      "City": [
-        "城市"
-      ],
-      "Region": [
-        "地區"
-      ],
-      "Postal code": [
-        "郵遞區號"
-      ],
-      "Country": [
-        "國家"
-      ],
-      "Post office box": [
-        "郵政信箱"
-      ],
-      "Extended address": [
-        "詳細地址"
-      ],
-      "Do not ask again": [
-        "不要再詢問"
-      ],
-      "Email address": [
-        "電子郵件地址"
-      ],
-      "Phone number": [
-        "電話號碼"
-      ],
-      "Verification code": [
-        "驗證碼"
-      ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
-      ],
-      "Add email address": [
-        "新增電子郵件地址"
-      ],
-      "Email format": [
-        "電子郵件格式"
-      ],
-      "Add image URL": [
-        "新增圖片 URL"
-      ],
-      "Upload picture": [
-        "上載圖片"
-      ],
-      "Add to group": [
-        "新增至群組"
-      ],
-      "Encrypt emails": [
-        "加密電子郵件"
-      ],
-      "Sign emails": [
-        "簽署電子郵件"
-      ],
-      "Cryptographic scheme": [
-        "加密配置"
-      ],
-      "Public keys": [
-        "公開金鑰"
-      ],
-      "Automatically save contacts": [
-        "自動儲存聯絡人"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
-      ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
-      "Operating system": [
-        "操作系统"
-      ],
-      "Operating system version": [
-        "作業系統版本"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
-      "Category": [
-        "類別"
-      ],
-      "What happened?": [
-        "發生了什麼問題？"
-      ],
-      "System information": [
-        "系統資訊"
-      ],
-      "Browser": [
-        "瀏覽器"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "送出"
-      ],
-      "Password": [
-        "密碼"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "Two-factor authentication code": [
-        "兩步驟驗證碼"
-      ],
-      "Username or ProtonMail address": [
-        "使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "What is the primary reason for this rating?": [
-        "這個評分的主要原因是什麼？"
-      ],
-      "Display name": [
-        "顯示名稱"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "選取預設情況下您郵件清單的外觀。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "選取預設情況下的收件匣外觀。"
-      ],
-      "Select how your composer opens by default.": [
-        "選取預設情況下撰寫器開啟的方式。"
-      ],
-      "Enable Beta Access": [
-        "啟用測試版體驗"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "Choose a color": [
-        "選擇一種顏色"
-      ],
-      "Default email": [
-        "預設郵件"
-      ],
-      "Display": [
-        "顯示"
-      ],
-      "Description": [
-        "描述"
-      ],
-      "Default event duration": [
-        "預設活動持續時間"
-      ],
-      "URL": [
-        "網址"
-      ],
-      "Default notifications": [
-        "預設通知"
-      ],
-      "Default full day notifications": [
-        "預設整日活動通知"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
-      ],
-      "0 - Not likely": [
-        "0 - 不太可能"
-      ],
-      "10 - Extremely likely": [
-        "10 - 極有可能"
-      ],
-      "All day": [
-        "全天"
-      ],
-      "Repeat on": [
-        "重複於"
-      ],
-      "Repeat every": [
-        "重複間隔"
-      ],
-      "Ends": [
-        "結束"
-      ],
-      "Organizer": [
-        "召集人"
-      ],
-      "Optional": [
-        "列席者"
-      ],
-      "Time of the event": [
-        "事件時間"
-      ],
-      "Event time": [
-        "事件時間"
-      ],
-      "Event title": [
-        "事件標題"
-      ],
-      "Event frequency": [
-        "事件頻率"
-      ],
-      "Event location": [
-        "事件地點"
-      ],
-      "Event notifications": [
-        "事件通知"
-      ],
-      "Participants": [
-        "參與者"
-      ],
-      "Your calendars": [
-        "您的行事曆"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此金鑰不適用於加密"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "了解更多"
-      ],
-      "Request an invite": [
-        "請求一個邀請"
-      ],
-      "clearing your browser cache": [
-        "清除瀏覽器快取"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Go to subscription plans": [
-        "前往訂閱方案"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "付款發票"
-      ],
-      "Upgrade account": [
-        "升級帳戶"
-      ],
-      "Calendars": [
-        "行事曆"
-      ],
-      "My calendars": [
-        "我的行事曆"
-      ],
-      "Other calendars": [
-        "其他行事曆"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "範例："
-      ],
-      "Start typing an email address": [
-        "在此輸入一個電子郵件地址"
-      ],
-      "Image URL": [
-        "圖片 URL"
-      ],
-      "Filter groups": [
-        "篩選群組"
-      ],
-      "Search for name or email": [
-        "搜尋姓名或電子郵件"
-      ],
-      "Search for group name": [
-        "搜尋群組名稱"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "OS name": [
-        "作業系統名稱"
-      ],
-      "OS version": [
-        "作業系統版本"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
-      "A way to contact you": [
-        "如何聯繫您"
-      ],
-      "Please describe the problem and include any error messages": [
-        "請描述問題及附上錯誤訊息"
-      ],
-      "Browser name": [
-        "瀏覽器名稱"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "Feedback": [
-        "意見回饋"
-      ],
-      "e.g. Julia Smith": [
-        "範例：衛梓祐"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        "新增一個行事曆名稱"
-      ],
-      "Add a calendar description": [
-        "新增一個行事曆描述"
-      ],
-      "Add title": [
-        "新增標題"
-      ],
-      "Add location": [
-        "新增位置"
-      ],
-      "Add description": [
-        "新增描述"
-      ],
-      "Add participants": [
-        "新增參與者"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } 小時"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分鐘"
       ]
     },
     "Storage": {
@@ -3417,8 +3417,8 @@
       "Preference saved": [
         "偏好設定已儲存"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
-        "日曆已建立。同步可能需要幾分鐘的時間。"
+      "Calendar added. It might take a few minutes to sync.": [
+        ""
       ],
       "Calendar created": [
         "行事曆已建立"
@@ -4462,6 +4462,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "舒適"
@@ -4484,17 +4495,6 @@
       ],
       "Maximized": [
         "最大化"
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
-        ""
       ]
     },
     "Beta access description": {
@@ -4540,6 +4540,14 @@
         "小時前"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
@@ -4548,14 +4556,6 @@
     "Notification time input": {
       "at": [
         "於"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "透過通知"
-      ],
-      "by email": [
-        "發送電子郵件"
       ]
     },
     "Duration": {
@@ -4634,6 +4634,11 @@
       ],
       "${ value } week after at ${ time }": [
         "${ value } 週後，即是 ${ time }"
+      ]
+    },
+    "Calendar status": {
+      "not synced": [
+        ""
       ]
     },
     "Disabled calendar name suffix": {
@@ -4723,6 +4728,11 @@
       ],
       "This event has been cancelled": [
         "此事件已取消"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {

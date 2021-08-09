@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
-      ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
       ],
       "Authentication canceled.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
+      ],
       "The composer failed to load.": [
         "Ο συνθέτης απέτυχε να φορτώσει."
       ],
       "Please refresh the page.": [
         "Παρακαλούμε ανανεώστε τη σελίδα."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
       ],
       "Can't validate email, try again later": [
         "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Εσφαλμένος κωδικός θυρίδας. Παρακαλούμε ξαναπροσπαθήστε"
       ],
       "Incorrect login credentials. Please try again": [
         "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
+      ],
+      "File has no contents to preview": [
+        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
       ],
       "Process aborted": [
         ""
@@ -203,6 +203,12 @@
       "Request timed out.": [
         "Λήξη χρονικού ορίου αιτήματος."
       ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
+      ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
@@ -226,12 +232,6 @@
       ],
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
-      ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -350,23 +350,26 @@
       "Close": [
         "Κλείσιμο"
       ],
-      "Confirm": [
-        "Επιβεβαίωση"
+      "Close modal": [
+        "Κλείσιμο παραθύρου"
       ],
       "Cancel": [
         "Ακύρωση"
       ],
-      "Close modal": [
-        "Κλείσιμο παραθύρου"
-      ],
       "Submit": [
         "Υποβολή"
+      ],
+      "Confirm": [
+        "Επιβεβαίωση"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -481,9 +484,6 @@
       ],
       "Underline": [
         "Υπογράμμιση"
-      ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
       ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
@@ -653,9 +653,6 @@
       "Next": [
         "Επόμενο"
       ],
-      "Signing out": [
-        "Αποσύνδεση"
-      ],
       "Clear": [
         "Καθαρισμός"
       ],
@@ -686,6 +683,12 @@
       "OK": [
         "ΟΚ"
       ],
+      "Signing out": [
+        "Αποσύνδεση"
+      ],
+      "Log in": [
+        "Είσοδος"
+      ],
       "Details": [
         "Λεπτομέρειες"
       ],
@@ -706,9 +709,6 @@
       ],
       "Previous": [
         "Προηγούμενο"
-      ],
-      "Log in": [
-        "Είσοδος"
       ],
       "Get started": [
         ""
@@ -876,6 +876,15 @@
         "Όχι"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
         ""
       ],
       "Send anyway": [
@@ -1195,15 +1204,6 @@
         "Αποεπιλογή"
       ],
       "Start using ${ appName }": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
         ""
       ]
     },
@@ -1725,6 +1725,9 @@
       "Loading": [
         "Φόρτωση"
       ],
+      "support team": [
+        ""
+      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -1821,9 +1824,6 @@
       ],
       "Plain text": [
         "Απλό κείμενο"
-      ],
-      "support team": [
-        ""
       ],
       "Drop the file here to upload": [
         ""
@@ -1971,9 +1971,6 @@
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
-      "Loading ${ appName }": [
-        "Φόρτωση ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
@@ -2004,6 +2001,18 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Loading ${ appName }": [
+        "Φόρτωση ${ appName }"
+      ],
+      "here": [
+        "εδώ"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
+      ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
@@ -2021,15 +2030,6 @@
       ],
       "of": [
         "από"
-      ],
-      "here": [
-        "εδώ"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
@@ -2221,7 +2221,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -2582,13 +2582,13 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Η αναφορά ενός μηνύματος ως προσπάθεια ηλεκτρονικού \"ψαρέματος\" (phising) θα το αποστείλει σε εμάς, ώστε να το αναλύσουμε και να βελτιώσουμε τα φίλτρα μας. Αυτό σημαίνει ότι θα μπορέσουμε να δούμε το περιεχόμενο ολόκληρου του μηνύματος."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } συνημμένο αρχείο",
-        "${ numPureAttachments } συνημμένα αρχεία"
+      "${ pureAttachmentsCount } file attached": [
+        "",
+        ""
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } ενσωματωμένη εικόνα",
-        "${ numEmbedded } ενσωματωμένες εικόνες"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "",
+        ""
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Μια αίτηση διαγραφής από αυτή τη λίστα θα σταλεί στον αποστολέα του ενημερωτικού δελτίου και θα επεξεργαστεί αυτόματα."
@@ -3346,6 +3346,36 @@
       "Add a gift code": [
         ""
       ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Drafts": [
+        "Πρόχειρα"
+      ],
+      "Sent": [
+        "Απεσταλμένα"
+      ],
+      "Trash": [
+        "Κάδος απορριμμάτων"
+      ],
+      "Spam": [
+        "Ανεπιθύμητα"
+      ],
+      "All mail": [
+        "Όλα τα Μηνύματα"
+      ],
+      "Archive": [
+        "Αρχειοθετημένα"
+      ],
+      "Starred": [
+        "Με αστέρι"
+      ],
+      "Outbox": [
+        "Εξερχόμενα"
+      ],
+      "Scheduled": [
+        ""
+      ],
       "You need to activate your calendar keys to add this event": [
         ""
       ],
@@ -3421,33 +3451,6 @@
       "Add label": [
         "Προσθήκη ετικέτας"
       ],
-      "Inbox": [
-        "Εισερχόμενα"
-      ],
-      "Drafts": [
-        "Πρόχειρα"
-      ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        "Απεσταλμένα"
-      ],
-      "Starred": [
-        "Με αστέρι"
-      ],
-      "Archive": [
-        "Αρχειοθετημένα"
-      ],
-      "Spam": [
-        "Ανεπιθύμητα"
-      ],
-      "Trash": [
-        "Κάδος απορριμμάτων"
-      ],
-      "All mail": [
-        "Όλα τα Μηνύματα"
-      ],
       "Folders": [
         "Φάκελοι"
       ],
@@ -3459,9 +3462,6 @@
       ],
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
-      ],
-      "Outbox": [
-        "Εξερχόμενα"
       ]
     },
     "Placeholder": {
@@ -4297,17 +4297,6 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
-      ],
-      "Go to ${ title }": [
-        "Πάντε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
@@ -4447,6 +4436,41 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Εφαρμογές Proton"
+      ],
+      "Go to ${ title }": [
+        "Πάντε στο ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Select files": {
       "Upload": [
         "Μεταφόρτωση"
@@ -4492,30 +4516,6 @@
         ""
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
         ""
       ]
     },
@@ -5180,6 +5180,26 @@
         "με αστέρι"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Όνομα"
@@ -5294,24 +5314,9 @@
         "Διεύθυνση"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5323,11 +5328,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Στις ${ date }, ${ name } ${ address } έγραψε:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
