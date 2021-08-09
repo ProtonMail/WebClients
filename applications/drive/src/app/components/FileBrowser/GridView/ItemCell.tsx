@@ -5,7 +5,6 @@ import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } fr
 
 import { LinkType } from '../../../interfaces/link';
 import { ItemProps } from '../interfaces';
-import ItemContextMenu from '../ItemContextMenu';
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
 import ShareButton, { shouldRenderShareButton } from '../ShareButton';
@@ -29,6 +28,7 @@ function ItemCell({
     selectItem,
     dragMoveControls,
     secondaryActionActive,
+    ItemContextMenu,
 }: Props) {
     const {
         dragMove: { DragMoveContent, dragging },
@@ -76,10 +76,9 @@ function ItemCell({
                     <DragMoveContainer>{moveText}</DragMoveContainer>
                 </DragMoveContent>
             )}
-            {!item.Disabled && (
+            {!item.Disabled && ItemContextMenu && (
                 <ItemContextMenu
                     item={item}
-                    layoutType={layoutType}
                     selectedItems={selectedItems}
                     shareId={shareId}
                     position={contextMenuPosition}

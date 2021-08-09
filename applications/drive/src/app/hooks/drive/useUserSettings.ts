@@ -1,7 +1,7 @@
 import { useContext, useCallback } from 'react';
 import { useApi } from '@proton/components';
 import { queryUpdateUserSettings, queryUserSettings } from '../../api/userSettings';
-import { UserSettingsContext } from '../../components/Drive/UserSettings/UserSettingsProvider';
+import { UserSettingsContext } from '../../components/sections/UserSettingsProvider';
 import { DEFAULT_USER_SETTINGS } from '../../constants';
 import { LayoutSetting, SortSetting, UserSettings } from '../../interfaces/userSettings';
 

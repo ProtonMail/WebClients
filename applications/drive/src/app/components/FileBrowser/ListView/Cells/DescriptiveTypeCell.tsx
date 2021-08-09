@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { LinkType } from '../../../../interfaces/link';
-import { getMimeTypeDescription } from '../../../Drive/helpers';
+import { getMimeTypeDescription } from '../../../sections/helpers';
 
 interface Props {
     mimeType: string;
