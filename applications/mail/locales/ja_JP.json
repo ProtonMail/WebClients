@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        ""
-      ],
       "Unknown error": [
         "不明なエラー"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        ""
       ],
       "Authentication canceled.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "この項目の入力は必須です"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
+      ],
       "The composer failed to load.": [
         "Composerが読み込みに失敗しました。"
       ],
       "Please refresh the page.": [
         "ページを更新してください。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
       ],
       "Can't validate email, try again later": [
         "メールを検証できません。後でもう一度お試しください。"
@@ -99,14 +99,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "File has no contents to preview": [
-        "ファイルにプレビューするコンテンツがありません"
-      ],
       "Incorrect mailbox password. Please try again": [
         "メールボックスのパスワードが正しくありません。再度入力してください。"
       ],
       "Incorrect login credentials. Please try again": [
         "間違ったログイン情報です。もう一度やり直してください。"
+      ],
+      "File has no contents to preview": [
+        "ファイルにプレビューするコンテンツがありません"
       ],
       "Process aborted": [
         ""
@@ -201,6 +201,12 @@
       "Request timed out.": [
         "リクエストはタイムアウトしました。"
       ],
+      "Signature verification failed": [
+        "署名の検証に失敗しました"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } というメールアドレスが見つかりませんでした。"
+      ],
       "Email address disabled": [
         "メールアドレスが無効です"
       ],
@@ -224,12 +230,6 @@
       ],
       "The sending key is not valid": [
         "送信鍵が有効ではありません"
-      ],
-      "Signature verification failed": [
-        "署名の検証に失敗しました"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Missing signature": [
         "署名がありません"
@@ -344,23 +344,26 @@
       "Close": [
         "閉じる"
       ],
-      "Confirm": [
-        "確認"
+      "Close modal": [
+        "画面を閉じる"
       ],
       "Cancel": [
         "キャンセル"
       ],
-      "Close modal": [
-        "画面を閉じる"
-      ],
       "Submit": [
         "送信"
+      ],
+      "Confirm": [
+        "確認"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "ページを更新"
       ],
       "Remove": [
         "削除"
@@ -475,9 +478,6 @@
       ],
       "Underline": [
         "下線"
-      ],
-      "refresh the page": [
-        "ページを更新"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
@@ -644,9 +644,6 @@
       "Next": [
         "次へ"
       ],
-      "Signing out": [
-        "サインアウトしています"
-      ],
       "Clear": [
         "消去"
       ],
@@ -677,6 +674,12 @@
       "OK": [
         "OK"
       ],
+      "Signing out": [
+        "サインアウトしています"
+      ],
+      "Log in": [
+        "ログイン"
+      ],
       "Details": [
         "詳細"
       ],
@@ -697,9 +700,6 @@
       ],
       "Previous": [
         "前へ"
-      ],
-      "Log in": [
-        "ログイン"
       ],
       "Get started": [
         "はじめましょう"
@@ -867,6 +867,15 @@
         "いいえ"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
         ""
       ],
       "Send anyway": [
@@ -1185,15 +1194,6 @@
         "選択解除"
       ],
       "Start using ${ appName }": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
         ""
       ]
     },
@@ -1707,6 +1707,9 @@
       "Loading": [
         "読み込み中"
       ],
+      "support team": [
+        ""
+      ],
       "No contacts added yet": [
         ""
       ],
@@ -1802,9 +1805,6 @@
       ],
       "Plain text": [
         "プレーンテキスト"
-      ],
-      "support team": [
-        ""
       ],
       "Drop the file here to upload": [
         ""
@@ -1947,9 +1947,6 @@
       "${ addressCount } email address": [
         ""
       ],
-      "Loading ${ appName }": [
-        "${ appName } を読み込み中"
-      ],
       "Screenshot(s) attached": [
         "スクリーンショットが添付されました"
       ],
@@ -1980,6 +1977,18 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Loading ${ appName }": [
+        "${ appName } を読み込み中"
+      ],
+      "here": [
+        "こちら"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
+      ],
       "Unsupported file": [
         ""
       ],
@@ -1997,15 +2006,6 @@
       ],
       "of": [
         " / "
-      ],
-      "here": [
-        "こちら"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
@@ -2196,7 +2196,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -2547,10 +2547,10 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         ""
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } 件の添付ファイル"
+      "${ pureAttachmentsCount } file attached": [
+        ""
       ],
-      "${ numEmbedded } embedded image": [
+      "${ embeddedAttachmentsCount } embedded image": [
         ""
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
@@ -3294,6 +3294,36 @@
       "Add a gift code": [
         ""
       ],
+      "Inbox": [
+        "受信箱"
+      ],
+      "Drafts": [
+        "下書き"
+      ],
+      "Sent": [
+        "送信済み"
+      ],
+      "Trash": [
+        "ごみ箱"
+      ],
+      "Spam": [
+        "迷惑メール"
+      ],
+      "All mail": [
+        "全てのメール"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
+      "Starred": [
+        "星印付き"
+      ],
+      "Outbox": [
+        "送信箱"
+      ],
+      "Scheduled": [
+        ""
+      ],
       "You need to activate your calendar keys to add this event": [
         ""
       ],
@@ -3369,33 +3399,6 @@
       "Add label": [
         "ラベルを追加"
       ],
-      "Inbox": [
-        "受信箱"
-      ],
-      "Drafts": [
-        "下書き"
-      ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        "送信済み"
-      ],
-      "Starred": [
-        "星印付き"
-      ],
-      "Archive": [
-        "アーカイブ"
-      ],
-      "Spam": [
-        "迷惑メール"
-      ],
-      "Trash": [
-        "ごみ箱"
-      ],
-      "All mail": [
-        "全てのメール"
-      ],
       "Folders": [
         "フォルダー"
       ],
@@ -3407,9 +3410,6 @@
       ],
       "Manage your labels": [
         "ラベルを管理"
-      ],
-      "Outbox": [
-        "送信箱"
       ]
     },
     "Placeholder": {
@@ -4209,17 +4209,6 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton アプリケーション"
-      ],
-      "Go to ${ title }": [
-        "${ title } へ移動"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
@@ -4359,6 +4348,41 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton アプリケーション"
+      ],
+      "Go to ${ title }": [
+        "${ title } へ移動"
+      ],
+      "Go to ${ vpnName }": [
+        ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "標準"
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Select files": {
       "Upload": [
         "アップロード"
@@ -4405,30 +4429,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "ベータ版を無効にしたい場合は、設定のドロップダウンメニューを開き、「ベータ版アクセス」オプションをクリックしてください。"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "標準"
-      ],
-      "Maximized": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -5081,6 +5081,25 @@
         "星印を付ける"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "バイト"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "名前"
@@ -5195,22 +5214,8 @@
         "住所"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "バイト"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         ""
       ]
     },
@@ -5222,11 +5227,6 @@
         "Fw:"
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
-        ""
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         ""
       ]
     },

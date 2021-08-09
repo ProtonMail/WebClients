@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
-      ],
       "Unknown error": [
         "Neznámá chyba"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
       ],
       "Authentication canceled.": [
         "Přihlášení zrušeno."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Toto pole je povinné"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybě, prosíme, načtěte stránku ${ refresh }. Pokud stále vidíte tuto chybu, kontaktujte naši ${ supportTeam }."
+      ],
       "The composer failed to load.": [
         "Editor se nepodařilo načíst."
       ],
       "Please refresh the page.": [
         "Prosím obnovte stránku."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Došlo k chybě, prosíme, načtěte stránku ${ refresh }. Pokud stále vidíte tuto chybu, kontaktujte naši ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Nemůžeme ověřit váš e-mail, zkuste to později"
@@ -105,14 +105,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Prosíme, přihlaste se znovu a zkontrolujte, že jsou správně nastavená oprávnění."
       ],
-      "File has no contents to preview": [
-        "Soubor nemá žádný obsah k náhledu"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
       ],
       "Incorrect login credentials. Please try again": [
         "Nesprávné přihlašovací údaje. Zkuste to znovu"
+      ],
+      "File has no contents to preview": [
+        "Soubor nemá žádný obsah k náhledu"
       ],
       "Process aborted": [
         "Transakce zrušena"
@@ -207,6 +207,12 @@
       "Request timed out.": [
         "Vypršel časový limit žádosti."
       ],
+      "Signature verification failed": [
+        "Ověření podpisu selhalo"
+      ],
+      "Could not find address ${ email }.": [
+        "Nenalezena adresa ${ email }"
+      ],
       "Email address disabled": [
         "E-mailová adresa je deaktivovaná"
       ],
@@ -230,12 +236,6 @@
       ],
       "The sending key is not valid": [
         "Klíč pro odesílání je neplatný"
-      ],
-      "Signature verification failed": [
-        "Ověření podpisu selhalo"
-      ],
-      "Could not find address ${ email }.": [
-        "Nenalezena adresa ${ email }"
       ],
       "Missing signature": [
         "Chybící podpis"
@@ -362,23 +362,26 @@
       "Close": [
         "Zavřít"
       ],
-      "Confirm": [
-        "Potvrdit"
+      "Close modal": [
+        "Zavřít okno"
       ],
       "Cancel": [
         "Zrušit"
       ],
-      "Close modal": [
-        "Zavřít okno"
-      ],
       "Submit": [
         "Odeslat"
+      ],
+      "Confirm": [
+        "Potvrdit"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Použijte nastavení “${ label }”"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -493,9 +496,6 @@
       ],
       "Underline": [
         "Podtržení"
-      ],
-      "refresh the page": [
-        "obnovit stránku"
       ],
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
@@ -671,9 +671,6 @@
       "Next": [
         "Další"
       ],
-      "Signing out": [
-        "Odhlašování"
-      ],
       "Clear": [
         "Vyčistit"
       ],
@@ -704,6 +701,12 @@
       "OK": [
         "OK"
       ],
+      "Signing out": [
+        "Odhlašování"
+      ],
+      "Log in": [
+        "Přihlásit se"
+      ],
       "Details": [
         "Detaily"
       ],
@@ -724,9 +727,6 @@
       ],
       "Previous": [
         "Předchozí"
-      ],
-      "Log in": [
-        "Přihlásit se"
       ],
       "Get started": [
         "Začínáme"
@@ -895,6 +895,15 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Přidat do ${ CALENDAR_APP_NAME }"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Open shop": [
+        "Otevřít obchod"
+      ],
+      "Open calendar": [
+        "Otevřít kalendář"
       ],
       "Send anyway": [
         "Přesto odeslat"
@@ -1216,15 +1225,6 @@
       ],
       "Start using ${ appName }": [
         "Začněte užívat ${ appName }"
-      ],
-      "Learn more": [
-        "Více informací"
-      ],
-      "Open shop": [
-        "Otevřít obchod"
-      ],
-      "Open calendar": [
-        "Otevřít kalendář"
       ]
     },
     "Title": {
@@ -1761,6 +1761,9 @@
       "Loading": [
         "Načítání"
       ],
+      "support team": [
+        "tým podpory"
+      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
@@ -1859,9 +1862,6 @@
       ],
       "Plain text": [
         "Obyčejný text"
-      ],
-      "support team": [
-        "tým podpory"
       ],
       "Drop the file here to upload": [
         "Přetažením sem, nahrajte soubor"
@@ -2019,9 +2019,6 @@
         "${ addressCount } emailových adres",
         "${ addressCount } emailové adresy"
       ],
-      "Loading ${ appName }": [
-        "Načítání aplikace ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
       ],
@@ -2052,6 +2049,18 @@
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
       ],
+      "Loading ${ appName }": [
+        "Načítání aplikace ${ appName }"
+      ],
+      "here": [
+        "zde"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Tento účet byl zablokován kvůli možnému porušení pravidel."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
+      ],
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
@@ -2069,15 +2078,6 @@
       ],
       "of": [
         "z"
-      ],
-      "here": [
-        "zde"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Tento účet byl zablokován kvůli možnému porušení pravidel."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
@@ -2271,8 +2271,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Vyúčtováno na konci aktuálního účtovacího období (obnovuje se ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Před zrušením předplatného musíte odebrat všechny své kalendáře a jejich sdílené odkazy. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Před zrušením předplatného musíte odebrat všechny své osobní kalendáře a jejich sdílené odkazy. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
@@ -2652,17 +2652,17 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlášení této zprávy jako pokusu o phishing odešle tuto zprávu Nám, abychom ji mohli analyzovat a zlepšit tím Naše filtry. To znamená, že uvidíme kompletně celý obsah této zprávy."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } příloha připojena",
-        "${ numPureAttachments } přílohy připojeny",
-        "${ numPureAttachments } příloh připojeno",
-        "${ numPureAttachments } příloh připojeno"
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } soubor připojen",
+        "${ pureAttachmentsCount } soubory připojeny",
+        "${ pureAttachmentsCount } souborů připojeno",
+        "${ pureAttachmentsCount } souborů připojeno"
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } Vložený obrázek",
-        "${ numEmbedded } Vložené obrázky",
-        "${ numEmbedded } Vložených obrázků",
-        "${ numEmbedded } Vložených obrázků"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } vložený obrázek",
+        "${ embeddedAttachmentsCount } vložené obrázky",
+        "${ embeddedAttachmentsCount } vložených obrázků",
+        "${ embeddedAttachmentsCount } vložených obrázků"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Žádost o odhlášení z tohoto seznamu bude odesláno odesilateli a automaticky zpracováno."
@@ -3450,6 +3450,36 @@
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
+      "Inbox": [
+        "Doručená pošta"
+      ],
+      "Drafts": [
+        "Rozepsané"
+      ],
+      "Sent": [
+        "Odeslané"
+      ],
+      "Trash": [
+        "Koš"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Všechna pošta"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
+      "Starred": [
+        "Oblíbené"
+      ],
+      "Outbox": [
+        "K odeslání"
+      ],
+      "Scheduled": [
+        "Naplánováno"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Pro přidání této události musíte aktivovat vaše klíče kalendáře"
       ],
@@ -3525,33 +3555,6 @@
       "Add label": [
         "Přidat štítek"
       ],
-      "Inbox": [
-        "Doručená pošta"
-      ],
-      "Drafts": [
-        "Rozepsané"
-      ],
-      "Scheduled": [
-        "Naplánováno"
-      ],
-      "Sent": [
-        "Odeslané"
-      ],
-      "Starred": [
-        "Oblíbené"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Koš"
-      ],
-      "All mail": [
-        "Všechna pošta"
-      ],
       "Folders": [
         "Složky"
       ],
@@ -3563,9 +3566,6 @@
       ],
       "Manage your labels": [
         "Spravovat štítky"
-      ],
-      "Outbox": [
-        "K odeslání"
       ]
     },
     "Placeholder": {
@@ -3690,13 +3690,13 @@
     "Time unit": {
       "${ hours } hour": [
         "${ hours } hodina",
-        "${ hours } hodin",
+        "${ hours } hodiny",
         "${ hours } hodin",
         "${ hours } hodin"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
-        "${ minutes } minut",
+        "${ minutes } minuty",
         "${ minutes } minut",
         "${ minutes } minut"
       ],
@@ -4473,17 +4473,6 @@
         "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikace"
-      ],
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Není vybrán žádný obrázek"
@@ -4623,6 +4612,41 @@
         "Změnit a přeplánovat"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikace"
+      ],
+      "Go to ${ title }": [
+        "Přejít na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Přejít na ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Pohodlné"
+      ],
+      "Compact": [
+        "Kompaktní"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sloupec"
+      ],
+      "Row": [
+        "Řádek"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normální"
+      ],
+      "Maximized": [
+        "Maximalizované"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Nahrát"
@@ -4669,30 +4693,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Pro deaktivaci verze beta, otevřete nastavení a sjeďte dolů v navigaci menu, kde zaklikněte na \"Beta Přístup\" volbu."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Pohodlné"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normální"
-      ],
-      "Maximized": [
-        "Maximalizované"
       ]
     },
     "Message display when a new app version is available": {
@@ -5378,6 +5378,28 @@
         "s hvězdičkou"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovat alespoň ${ length } znak",
+        "Heslo musí obsahovat alespoň ${ length } znaky",
+        "Heslo musí obsahovat alespoň ${ length } znaků",
+        "Heslo musí obsahovat alespoň ${ length } znaků"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bajtů"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Jméno"
@@ -5492,26 +5514,9 @@
         "Adresa"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bajtů"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovat alespoň ${ length } znak",
-        "Heslo musí obsahovat alespoň ${ length } znaky",
-        "Heslo musí obsahovat alespoň ${ length } znaků",
-        "Heslo musí obsahovat alespoň ${ length } znaků"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailová adresa nebyla nalezena mezi identifikátory uživatelů definovaných v klíči pro odesílání (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5523,11 +5528,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Na ${ date }, ${ name } ${ address } napsalo:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailová adresa nebyla nalezena mezi identifikátory uživatelů definovaných v klíči pro odesílání (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {

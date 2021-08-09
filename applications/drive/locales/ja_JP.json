@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "不明なエラー"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         ""
-      ],
-      "Unknown error": [
-        "不明なエラー"
       ],
       "Email address invalid": [
         "無効なメールアドレスです"
@@ -33,6 +33,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
       ],
+      "File has no contents to preview": [
+        "ファイルにプレビューするコンテンツがありません"
+      ],
       "Can't validate email, try again later": [
         ""
       ],
@@ -44,9 +47,6 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
-      ],
-      "File has no contents to preview": [
-        "ファイルにプレビューするコンテンツがありません"
       ],
       "Preferences could not be saved": [
         ""
@@ -88,6 +88,12 @@
         ""
       ],
       "Invalid name": [
+        ""
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
       "Process aborted": [
@@ -150,12 +156,6 @@
       "Invalid code": [
         ""
       ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
       "Incorrect mailbox password. Please try again": [
         ""
       ],
@@ -199,6 +199,967 @@
         ""
       ]
     },
+    "Action": {
+      "Close": [
+        "閉じる"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Close modal": [
+        "画面を閉じる"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Use “${ label }” setting": [
+        ""
+      ],
+      "More info: ${ safeTitle }": [
+        "詳細: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "ナビゲーションを閉じる"
+      ],
+      "Open navigation": [
+        "ナビゲーションを開く"
+      ],
+      "Go to panel ${ index }": [
+        "パネル ${ index } へ移動"
+      ],
+      "Load image": [
+        "画像を読み込む"
+      ],
+      "Export": [
+        "エクスポート"
+      ],
+      "Delete": [
+        "削除"
+      ],
+      "Edit": [
+        "編集"
+      ],
+      "Remove": [
+        "削除"
+      ],
+      "Download": [
+        "ダウンロード"
+      ],
+      "Use for sending": [
+        "送信に使用"
+      ],
+      "Trust": [
+        "信頼する"
+      ],
+      "Untrust": [
+        "信頼しない"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Email settings": [
+        "メールの設定"
+      ],
+      "Contact group": [
+        "連絡先グループ"
+      ],
+      "Upload picture": [
+        "写真をアップロード"
+      ],
+      "Next month": [
+        "翌月"
+      ],
+      "Previous month": [
+        "前の月"
+      ],
+      "refresh the page": [
+        "ページを更新"
+      ],
+      "Confirm opening of link ${ link }": [
+        ""
+      ],
+      "Signing out": [
+        "サインアウトしています"
+      ],
+      "Details": [
+        "詳細"
+      ],
+      "Share via link": [
+        "リンクで共有"
+      ],
+      "Sharing options": [
+        "共有オプション"
+      ],
+      "Zoom out": [
+        "縮小"
+      ],
+      "Reset zoom": [
+        "倍率をリセット"
+      ],
+      "Zoom in": [
+        "拡大"
+      ],
+      "Previous": [
+        "前へ"
+      ],
+      "Next": [
+        "次へ"
+      ],
+      "View invoice": [
+        "請求書を参照"
+      ],
+      "Get verification code": [
+        "検証コードを取得"
+      ],
+      "Try another method": [
+        "別の方法を試してください"
+      ],
+      "Request new code": [
+        "新しいコードをリクエスト"
+      ],
+      "Verify": [
+        "検証"
+      ],
+      "Did not receive the code?": [
+        "コードが受信できませんか？"
+      ],
+      "Edit email address": [
+        "メールアドレスを編集"
+      ],
+      "Edit phone number": [
+        "電話番号を編集"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Add": [
+        "追加"
+      ],
+      "Apply": [
+        "適用"
+      ],
+      "Hide advanced PGP settings": [
+        "拡張 PGP 設定を非表示"
+      ],
+      "Show advanced PGP settings": [
+        "拡張 PGP 設定を表示"
+      ],
+      "Done": [
+        "完了"
+      ],
+      "Clear data": [
+        "データをクリア"
+      ],
+      "Recover data": [
+        "データを復元"
+      ],
+      "Click here.": [
+        "ここをクリック"
+      ],
+      "Re-sign": [
+        "再署名"
+      ],
+      "Add to group": [
+        "グループに追加"
+      ],
+      "Merge": [
+        "統合"
+      ],
+      "View": [
+        "表示"
+      ],
+      "Unmark for deletion": [
+        ""
+      ],
+      "Mark for deletion": [
+        "削除をマーク"
+      ],
+      "Preview contact": [
+        "連絡先をプレビュー"
+      ],
+      "Continue": [
+        "続行"
+      ],
+      "Delete contact": [
+        "連絡先を削除"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } 件の連絡先を削除"
+      ],
+      "Deselect all": [
+        ""
+      ],
+      "Select all": [
+        "全て選択"
+      ],
+      "Compose": [
+        ""
+      ],
+      "Forward as attachment": [
+        "添付ファイルとして転送"
+      ],
+      "Merge contacts": [
+        ""
+      ],
+      "Add new contact": [
+        "新しい連絡先を追加"
+      ],
+      "Add group": [
+        "グループを追加"
+      ],
+      "Clear query": [
+        ""
+      ],
+      "Add contact": [
+        "連絡先を追加"
+      ],
+      "import": [
+        "インポート"
+      ],
+      "Delete contact group": [
+        "連絡先グループを削除"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        ""
+      ],
+      "Add new group": [
+        "新しいグループを追加"
+      ],
+      "Export contacts": [
+        "連絡先をエクスポート"
+      ],
+      "Continue with Google": [
+        ""
+      ],
+      "Import contacts": [
+        "連絡先をインポート"
+      ],
+      "Choose a file or drag it here": [
+        ""
+      ],
+      "Import": [
+        "インポート"
+      ],
+      "Close this banner": [
+        "このバナーを閉じる"
+      ],
+      "Refresh the page": [
+        "ページを更新"
+      ],
+      "enable desktop notifications": [
+        "デスクトップ通知を有効化する"
+      ],
+      "here": [
+        "こちら"
+      ],
+      "Copy email to clipboard": [
+        ""
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } の紹介"
+      ],
+      "I have a question": [
+        ""
+      ],
+      "Request a feature": [
+        "機能を提案"
+      ],
+      "Report a problem": [
+        ""
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } ショップ"
+      ],
+      "Switch account": [
+        "アカウントの切り替え"
+      ],
+      "Sign out": [
+        "サインアウト"
+      ],
+      "Go to settings": [
+        "設定を開く"
+      ],
+      "Beta Access": [
+        "ベータ版アクセス"
+      ],
+      "Theme": [
+        "テーマ"
+      ],
+      "Keyboard shortcuts": [
+        "キーボードショートカット"
+      ],
+      "Mailbox layout": [
+        ""
+      ],
+      "Mailbox density": [
+        ""
+      ],
+      "Composer mode": [
+        ""
+      ],
+      "Clear": [
+        "クリア"
+      ],
+      "Add screenshot(s)": [
+        "スクリーンショットを追加"
+      ],
+      "Hide info": [
+        "情報を非表示"
+      ],
+      "Show info": [
+        "情報を表示"
+      ],
+      "Get started": [
+        "はじめましょう"
+      ],
+      "Start setup": [
+        "セットアップを開始"
+      ],
+      "Skip": [
+        "スキップ"
+      ],
+      "Back": [
+        "戻る"
+      ],
+      "Use ${ label } theme": [
+        "${ label } テーマを使用"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        ""
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
+        ""
+      ],
+      "Log in": [
+        "ログイン"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "New upload": [
+        "新規アップロード"
+      ],
+      "Delete permanently": [
+        "完全に削除"
+      ],
+      "Restore from trash": [
+        "ごみ箱から復元"
+      ],
+      "Empty trash": [
+        "ごみ箱を空にする"
+      ],
+      "Rename": [
+        "名前を変更"
+      ],
+      "Move to folder": [
+        "フォルダーに移動"
+      ],
+      "Move to trash": [
+        "ごみ箱に移動"
+      ],
+      "Create new folder": [
+        "新規フォルダーを作成"
+      ],
+      "Name: A to Z": [
+        "名前: 昇順 （A〜Z）"
+      ],
+      "Name: Z to A": [
+        "名前: 降順 （Z〜A）"
+      ],
+      "Modified date: new to old": [
+        "更新日時: 新しい順"
+      ],
+      "Modified date: old to new": [
+        "更新日時: 古い順"
+      ],
+      "Type: A to Z": [
+        "種類: 昇順 （A〜Z）"
+      ],
+      "Type: Z to A": [
+        "種類: 降順 （Z〜A）"
+      ],
+      "Size: small to large": [
+        "サイズ: 小さい順"
+      ],
+      "Size: large to small": [
+        "サイズ: 大きい順"
+      ],
+      "Upload file": [
+        "ファイルをアップロード"
+      ],
+      "Upload folder": [
+        "フォルダーをアップロード"
+      ],
+      "Maximize transfers": [
+        "転送一覧を最大化"
+      ],
+      "Minimize transfers": [
+        "転送一覧を最小化"
+      ],
+      "Close transfers": [
+        "転送一覧を閉じる"
+      ],
+      "Pause download": [
+        "ダウンロードを一時停止"
+      ],
+      "Pause upload": [
+        "アップロードを一時停止"
+      ],
+      "Resume download": [
+        "ダウンロードを再開"
+      ],
+      "Resume upload": [
+        "アップロードを再開"
+      ],
+      "Cancel download": [
+        "ダウンロードをキャンセル"
+      ],
+      "Cancel upload": [
+        "アップロードをキャンセル"
+      ],
+      "Restart download": [
+        "ダウンロードを再度開始"
+      ],
+      "Restart upload": [
+        "アップロードを再度開始"
+      ],
+      "Remove from this list": [
+        "この一覧から削除"
+      ],
+      "Create": [
+        "作成"
+      ],
+      "List layout": [
+        "一覧表示"
+      ],
+      "Grid layout": [
+        "グリッド表示"
+      ],
+      "Preview": [
+        "プレビュー"
+      ],
+      "Stop sharing": [
+        "共有を停止"
+      ],
+      "Share": [
+        "共有"
+      ],
+      "Show shared link details": [
+        ""
+      ],
+      "Share file": [
+        "ファイルを共有する"
+      ],
+      "Start recovering": [
+        "リカバリーを始める"
+      ],
+      "View more": [
+        "続きを見る"
+      ],
+      "Move": [
+        "移動"
+      ],
+      "Copy link": [
+        "リンクをコピー"
+      ],
+      "Create link": [
+        "リンクを作成する"
+      ],
+      "Undo": [
+        "取り消す"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "アクションドロップダウンを開く"
+      ],
+      "Upgrade required": [
+        "アップグレードが必要です"
+      ],
+      "Email settings": [
+        "メールの設定"
+      ],
+      "Contact group": [
+        "連絡先グループ"
+      ],
+      "Link confirmation": [
+        ""
+      ],
+      "Keyboard Shortcuts": [
+        "キーボードショートカット"
+      ],
+      "What's new": [
+        ""
+      ],
+      "Invalid verification code": [
+        "無効な検証コードです"
+      ],
+      "Request new verification code": [
+        "新しい検証コードをリクエスト"
+      ],
+      "Human verification": [
+        "人間であることの検証"
+      ],
+      "Edit contact group": [
+        "連絡先グループを編集"
+      ],
+      "Create new group": [
+        "新しいグループの作成"
+      ],
+      "Add to ${ groupName }": [
+        "${ groupName } に追加"
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } グループに追加"
+      ],
+      "Email settings (${ emailAddress })": [
+        "メールの設定 (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "${ Name } を削除"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } 件の連絡先を削除"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } メンバー"
+      ],
+      "Edit image": [
+        "画像の編集"
+      ],
+      "Edit contact": [
+        "連絡先を編集"
+      ],
+      "Create contact": [
+        "連絡先を作成"
+      ],
+      "Delete ${ count } contact": [
+        "${ count } 件の連絡先を削除"
+      ],
+      "Clearing data": [
+        "データをクリアしています"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Recover data": [
+        "データを復元"
+      ],
+      "Re-signing contacts": [
+        "連絡先を再署名する"
+      ],
+      "Re-sign all contacts": [
+        "すべての連絡先を再署名する"
+      ],
+      "Exporting contacts": [
+        "連絡先のエクスポート中"
+      ],
+      "Other names": [
+        "別名"
+      ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
+      "Phone numbers": [
+        "電話番号"
+      ],
+      "Addresses": [
+        "アドレス"
+      ],
+      "Other information": [
+        "その他の情報"
+      ],
+      "Contact Details": [
+        "連絡先の詳細"
+      ],
+      "Merging contacts": [
+        "連絡先の統合中"
+      ],
+      "Merge contacts": [
+        "連絡先の統合"
+      ],
+      "Deleting contacts": [
+        ""
+      ],
+      "View contacts": [
+        "連絡先を表示"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Groups": [
+        "グループ"
+      ],
+      "Settings": [
+        "設定"
+      ],
+      "Select action to take on contact group": [
+        ""
+      ],
+      "Add contact group name": [
+        ""
+      ],
+      "Select contact group": [
+        "連絡先グループを選択"
+      ],
+      "Import groups": [
+        "グループをインポート"
+      ],
+      "Import contacts": [
+        "連絡先をインポート"
+      ],
+      "Open help menu": [
+        "ヘルプメニューを開く"
+      ],
+      "Back": [
+        "戻る"
+      ],
+      "Open settings menu": [
+        "設定メニューを開く"
+      ],
+      "Report a problem": [
+        "問題を報告"
+      ],
+      "Select a theme": [
+        "テーマを選択"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Confirm loss of Proton bonuses": [
+        ""
+      ],
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "続行するには再度ログインしてください"
+      ],
+      "Account suspended": [
+        "アカウントが停止されました"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "ユーザー名または ProtonMail アドレスを入力してください"
+      ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } のキーボードショートカット"
+      ],
+      "Mailbox density": [
+        ""
+      ],
+      "Mailbox layout": [
+        ""
+      ],
+      "Composer mode": [
+        ""
+      ],
+      "Beta Access": [
+        "ベータ版アクセス"
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "ドロップしてアップロード"
+      ],
+      "Trash": [
+        "ごみ箱"
+      ],
+      "Empty trash": [
+        "ごみ箱を空にする"
+      ],
+      "Show actions": [
+        "アクションの表示"
+      ],
+      "Sort files/folders": [
+        "ファイル・フォルダーの並び替え"
+      ],
+      "Cancel all active transfers": [
+        "現在の全ての転送処理をキャンセル"
+      ],
+      "My files": [
+        "マイファイル"
+      ],
+      "You have no folders yet": [
+        "フォルダーがありません"
+      ],
+      "You have no files to share": [
+        "共有するファイルがありません"
+      ],
+      "Change layout": [
+        "レイアウトの変更"
+      ],
+      "Your file is ready to be downloaded": [
+        "ファイルのダウンロード準備完了"
+      ],
+      "Download completed": [
+        "ダウンロード完了"
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download canceled": [
+        ""
+      ],
+      "Downloading": [
+        "ダウンロード中"
+      ],
+      "Enter file password to download": [
+        "ファイルのパスワードを入力してください"
+      ],
+      "The link either does not exist or has expired": [
+        "リンクが存在しないか有効期限が切れています"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Restore your files": [
+        "ファイルを復元"
+      ],
+      "File recovery process": [
+        "ファイルの復旧プロセス"
+      ],
+      "You have inaccessible files": [
+        "利用できないファイルがあります"
+      ],
+      "Rename a folder": [
+        "フォルダー名の変更"
+      ],
+      "Rename a file": [
+        "ファイル名の変更"
+      ],
+      "File details": [
+        "ファイルの詳細"
+      ],
+      "Folder details": [
+        "フォルダーの詳細"
+      ],
+      "Name": [
+        "名前"
+      ],
+      "Uploaded by": [
+        "アップロードしたユーザー"
+      ],
+      "Location": [
+        "位置"
+      ],
+      "Modified": [
+        "更新日時"
+      ],
+      "Type": [
+        "種類"
+      ],
+      "MIME type": [
+        "MIME タイプ"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Shared": [
+        "共有中"
+      ],
+      "# of accesses": [
+        ""
+      ],
+      "Create a new folder": [
+        "新規フォルダーの作成"
+      ],
+      "Date": [
+        "日付"
+      ],
+      "Select link expiration date": [
+        "リンクの有効期限を選択"
+      ],
+      "Select link expiration time": [
+        "リンクの有効時間を選択"
+      ],
+      "Share via link": [
+        "リンクで共有"
+      ],
+      "Additional settings": [
+        "詳細設定"
+      ],
+      "Manage secure link": [
+        "セキュアリンクの管理"
+      ],
+      "Stop sharing with everyone?": [
+        "共有を停止してよろしいですか？"
+      ],
+      "Discard changes?": [
+        "変更を破棄してよろしいですか？"
+      ],
+      "Discard": [
+        "破棄"
+      ],
+      "Files details": [
+        "ファイルの詳細"
+      ],
+      "Number of files": [
+        "ファイル数"
+      ],
+      "Total size": [
+        "合計サイズ"
+      ],
+      "Delete permanently": [
+        "完全に削除"
+      ],
+      "Stop sharing": [
+        "共有を停止"
+      ]
+    },
     "Info": {
       "Loading": [
         "読み込み中"
@@ -211,6 +1172,9 @@
       ],
       "Week": [
         "週表示"
+      ],
+      "support team": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         ""
@@ -227,11 +1191,26 @@
       "Drop the file here to upload": [
         ""
       ],
-      "support team": [
-        ""
-      ],
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
+      ],
+      "Unsupported file": [
+        "非対応のファイル"
+      ],
+      "No preview available": [
+        "プレビューは利用できません"
+      ],
+      "Preview": [
+        "プレビュー"
+      ],
+      "Loading preview": [
+        "プレビューを読み込み中"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        ""
+      ],
+      "of": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
@@ -261,24 +1240,6 @@
         ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        ""
-      ],
-      "Unsupported file": [
-        "非対応のファイル"
-      ],
-      "No preview available": [
-        "プレビューは利用できません"
-      ],
-      "Preview": [
-        "プレビュー"
-      ],
-      "Loading preview": [
-        "プレビューを読み込み中"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        ""
-      ],
-      "of": [
         ""
       ],
       "${ contactEmailsLength } Member": [
@@ -434,6 +1395,30 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
       ],
@@ -581,7 +1566,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -669,30 +1654,6 @@
         ""
       ],
       "Expired": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
         ""
       ],
       "here": [
@@ -933,967 +1894,6 @@
         "マイリンク"
       ]
     },
-    "Action": {
-      "Close": [
-        "閉じる"
-      ],
-      "Confirm": [
-        "確認"
-      ],
-      "Cancel": [
-        "キャンセル"
-      ],
-      "Close modal": [
-        "画面を閉じる"
-      ],
-      "Submit": [
-        "送信"
-      ],
-      "Use “${ label }” setting": [
-        ""
-      ],
-      "More info: ${ safeTitle }": [
-        "詳細: ${ safeTitle }"
-      ],
-      "Close navigation": [
-        "ナビゲーションを閉じる"
-      ],
-      "Open navigation": [
-        "ナビゲーションを開く"
-      ],
-      "Go to panel ${ index }": [
-        "パネル ${ index } へ移動"
-      ],
-      "Load image": [
-        "画像を読み込む"
-      ],
-      "Export": [
-        "エクスポート"
-      ],
-      "Delete": [
-        "削除"
-      ],
-      "Edit": [
-        "編集"
-      ],
-      "Remove": [
-        "削除"
-      ],
-      "Download": [
-        "ダウンロード"
-      ],
-      "Use for sending": [
-        "送信に使用"
-      ],
-      "Trust": [
-        "信頼する"
-      ],
-      "Untrust": [
-        "信頼しない"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Email settings": [
-        "メールの設定"
-      ],
-      "Contact group": [
-        "連絡先グループ"
-      ],
-      "Upload picture": [
-        "写真をアップロード"
-      ],
-      "Next month": [
-        "翌月"
-      ],
-      "Previous month": [
-        "前の月"
-      ],
-      "Confirm opening of link ${ link }": [
-        ""
-      ],
-      "refresh the page": [
-        "ページを更新"
-      ],
-      "Signing out": [
-        "サインアウトしています"
-      ],
-      "View invoice": [
-        "請求書を参照"
-      ],
-      "Get verification code": [
-        "検証コードを取得"
-      ],
-      "Try another method": [
-        "別の方法を試してください"
-      ],
-      "Request new code": [
-        "新しいコードをリクエスト"
-      ],
-      "Verify": [
-        "検証"
-      ],
-      "Did not receive the code?": [
-        "コードが受信できませんか？"
-      ],
-      "Edit email address": [
-        "メールアドレスを編集"
-      ],
-      "Edit phone number": [
-        "電話番号を編集"
-      ],
-      "Details": [
-        "詳細"
-      ],
-      "Share via link": [
-        "リンクで共有"
-      ],
-      "Sharing options": [
-        "共有オプション"
-      ],
-      "Zoom out": [
-        "縮小"
-      ],
-      "Reset zoom": [
-        "倍率をリセット"
-      ],
-      "Zoom in": [
-        "拡大"
-      ],
-      "Previous": [
-        "前へ"
-      ],
-      "Next": [
-        "次へ"
-      ],
-      "Save": [
-        "保存"
-      ],
-      "Add": [
-        "追加"
-      ],
-      "Apply": [
-        "適用"
-      ],
-      "Hide advanced PGP settings": [
-        "拡張 PGP 設定を非表示"
-      ],
-      "Show advanced PGP settings": [
-        "拡張 PGP 設定を表示"
-      ],
-      "Done": [
-        "完了"
-      ],
-      "Clear data": [
-        "データをクリア"
-      ],
-      "Recover data": [
-        "データを復元"
-      ],
-      "Click here.": [
-        "ここをクリック"
-      ],
-      "Re-sign": [
-        "再署名"
-      ],
-      "Add to group": [
-        "グループに追加"
-      ],
-      "Merge": [
-        "統合"
-      ],
-      "View": [
-        "表示"
-      ],
-      "Unmark for deletion": [
-        ""
-      ],
-      "Mark for deletion": [
-        "削除をマーク"
-      ],
-      "Preview contact": [
-        "連絡先をプレビュー"
-      ],
-      "Continue": [
-        "続行"
-      ],
-      "Delete contact": [
-        "連絡先を削除"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } 件の連絡先を削除"
-      ],
-      "Deselect all": [
-        ""
-      ],
-      "Select all": [
-        "全て選択"
-      ],
-      "Compose": [
-        ""
-      ],
-      "Forward as attachment": [
-        "添付ファイルとして転送"
-      ],
-      "Merge contacts": [
-        ""
-      ],
-      "Add new contact": [
-        "新しい連絡先を追加"
-      ],
-      "Add group": [
-        "グループを追加"
-      ],
-      "Clear query": [
-        ""
-      ],
-      "Add contact": [
-        "連絡先を追加"
-      ],
-      "import": [
-        "インポート"
-      ],
-      "Delete contact group": [
-        "連絡先グループを削除"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        ""
-      ],
-      "Add new group": [
-        "新しいグループを追加"
-      ],
-      "Export contacts": [
-        "連絡先をエクスポート"
-      ],
-      "Continue with Google": [
-        ""
-      ],
-      "Import contacts": [
-        "連絡先をインポート"
-      ],
-      "Choose a file or drag it here": [
-        ""
-      ],
-      "Import": [
-        "インポート"
-      ],
-      "Close this banner": [
-        "このバナーを閉じる"
-      ],
-      "Refresh the page": [
-        "ページを更新"
-      ],
-      "enable desktop notifications": [
-        "デスクトップ通知を有効化する"
-      ],
-      "here": [
-        "こちら"
-      ],
-      "Clear": [
-        "クリア"
-      ],
-      "Add screenshot(s)": [
-        "スクリーンショットを追加"
-      ],
-      "Hide info": [
-        "情報を非表示"
-      ],
-      "Show info": [
-        "情報を表示"
-      ],
-      "Copy email to clipboard": [
-        ""
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
-      ],
-      "I have a question": [
-        ""
-      ],
-      "Request a feature": [
-        "機能を提案"
-      ],
-      "Report a problem": [
-        ""
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } ショップ"
-      ],
-      "Switch account": [
-        "アカウントの切り替え"
-      ],
-      "Sign out": [
-        "サインアウト"
-      ],
-      "Go to settings": [
-        "設定を開く"
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
-      ],
-      "Theme": [
-        "テーマ"
-      ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
-      ],
-      "Mailbox layout": [
-        ""
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Composer mode": [
-        ""
-      ],
-      "Get started": [
-        "はじめましょう"
-      ],
-      "Start setup": [
-        "セットアップを開始"
-      ],
-      "Skip": [
-        "スキップ"
-      ],
-      "Back": [
-        "戻る"
-      ],
-      "Use ${ label } theme": [
-        "${ label } テーマを使用"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Try again": [
-        ""
-      ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
-      "Retry": [
-        ""
-      ],
-      "Loading verification": [
-        ""
-      ],
-      "Select plan": [
-        ""
-      ],
-      "Compare all features": [
-        ""
-      ],
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
-      "Pay": [
-        ""
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
-      ],
-      "Remove gift code": [
-        ""
-      ],
-      "annual billing": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
-      "Decrease": [
-        ""
-      ],
-      "Increase": [
-        ""
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "ログイン"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "新規アップロード"
-      ],
-      "List layout": [
-        "一覧表示"
-      ],
-      "Grid layout": [
-        "グリッド表示"
-      ],
-      "Rename": [
-        "名前を変更"
-      ],
-      "Move to folder": [
-        "フォルダーに移動"
-      ],
-      "Move to trash": [
-        "ごみ箱に移動"
-      ],
-      "Create new folder": [
-        "新規フォルダーを作成"
-      ],
-      "Name: A to Z": [
-        "名前: 昇順 （A〜Z）"
-      ],
-      "Name: Z to A": [
-        "名前: 降順 （Z〜A）"
-      ],
-      "Modified date: new to old": [
-        "更新日時: 新しい順"
-      ],
-      "Modified date: old to new": [
-        "更新日時: 古い順"
-      ],
-      "Type: A to Z": [
-        "種類: 昇順 （A〜Z）"
-      ],
-      "Type: Z to A": [
-        "種類: 降順 （Z〜A）"
-      ],
-      "Size: small to large": [
-        "サイズ: 小さい順"
-      ],
-      "Size: large to small": [
-        "サイズ: 大きい順"
-      ],
-      "Upload file": [
-        "ファイルをアップロード"
-      ],
-      "Upload folder": [
-        "フォルダーをアップロード"
-      ],
-      "Delete permanently": [
-        "完全に削除"
-      ],
-      "Restore from trash": [
-        "ごみ箱から復元"
-      ],
-      "Empty trash": [
-        "ごみ箱を空にする"
-      ],
-      "Maximize transfers": [
-        "転送一覧を最大化"
-      ],
-      "Minimize transfers": [
-        "転送一覧を最小化"
-      ],
-      "Close transfers": [
-        "転送一覧を閉じる"
-      ],
-      "Pause download": [
-        "ダウンロードを一時停止"
-      ],
-      "Pause upload": [
-        "アップロードを一時停止"
-      ],
-      "Resume download": [
-        "ダウンロードを再開"
-      ],
-      "Resume upload": [
-        "アップロードを再開"
-      ],
-      "Cancel download": [
-        "ダウンロードをキャンセル"
-      ],
-      "Cancel upload": [
-        "アップロードをキャンセル"
-      ],
-      "Restart download": [
-        "ダウンロードを再度開始"
-      ],
-      "Restart upload": [
-        "アップロードを再度開始"
-      ],
-      "Remove from this list": [
-        "この一覧から削除"
-      ],
-      "Share": [
-        "共有"
-      ],
-      "Create": [
-        "作成"
-      ],
-      "Preview": [
-        "プレビュー"
-      ],
-      "Stop sharing": [
-        "共有を停止"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Share file": [
-        "ファイルを共有する"
-      ],
-      "Start recovering": [
-        "リカバリーを始める"
-      ],
-      "View more": [
-        "続きを見る"
-      ],
-      "Move": [
-        "移動"
-      ],
-      "Copy link": [
-        "リンクをコピー"
-      ],
-      "Create link": [
-        "リンクを作成する"
-      ],
-      "Undo": [
-        "取り消す"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "アクションドロップダウンを開く"
-      ],
-      "Upgrade required": [
-        "アップグレードが必要です"
-      ],
-      "Email settings": [
-        "メールの設定"
-      ],
-      "Contact group": [
-        "連絡先グループ"
-      ],
-      "Link confirmation": [
-        ""
-      ],
-      "Keyboard Shortcuts": [
-        "キーボードショートカット"
-      ],
-      "What's new": [
-        ""
-      ],
-      "Invalid verification code": [
-        "無効な検証コードです"
-      ],
-      "Request new verification code": [
-        "新しい検証コードをリクエスト"
-      ],
-      "Human verification": [
-        "人間であることの検証"
-      ],
-      "Edit contact group": [
-        "連絡先グループを編集"
-      ],
-      "Create new group": [
-        "新しいグループの作成"
-      ],
-      "Add to ${ groupName }": [
-        "${ groupName } に追加"
-      ],
-      "Add to ${ groupCount } group": [
-        "${ groupCount } グループに追加"
-      ],
-      "Email settings (${ emailAddress })": [
-        "メールの設定 (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } を削除"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } 件の連絡先を削除"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } メンバー"
-      ],
-      "Edit image": [
-        "画像の編集"
-      ],
-      "Edit contact": [
-        "連絡先を編集"
-      ],
-      "Create contact": [
-        "連絡先を作成"
-      ],
-      "Delete ${ count } contact": [
-        "${ count } 件の連絡先を削除"
-      ],
-      "Clearing data": [
-        "データをクリアしています"
-      ],
-      "Warning": [
-        "警告"
-      ],
-      "Recover data": [
-        "データを復元"
-      ],
-      "Re-signing contacts": [
-        "連絡先を再署名する"
-      ],
-      "Re-sign all contacts": [
-        "すべての連絡先を再署名する"
-      ],
-      "Exporting contacts": [
-        "連絡先のエクスポート中"
-      ],
-      "Other names": [
-        "別名"
-      ],
-      "Email addresses": [
-        "メールアドレス"
-      ],
-      "Phone numbers": [
-        "電話番号"
-      ],
-      "Addresses": [
-        "アドレス"
-      ],
-      "Other information": [
-        "その他の情報"
-      ],
-      "Contact Details": [
-        "連絡先の詳細"
-      ],
-      "Merging contacts": [
-        "連絡先の統合中"
-      ],
-      "Merge contacts": [
-        "連絡先の統合"
-      ],
-      "Deleting contacts": [
-        ""
-      ],
-      "View contacts": [
-        "連絡先を表示"
-      ],
-      "Contacts": [
-        "連絡先"
-      ],
-      "Groups": [
-        "グループ"
-      ],
-      "Settings": [
-        "設定"
-      ],
-      "Select action to take on contact group": [
-        ""
-      ],
-      "Add contact group name": [
-        ""
-      ],
-      "Select contact group": [
-        "連絡先グループを選択"
-      ],
-      "Import groups": [
-        "グループをインポート"
-      ],
-      "Import contacts": [
-        "連絡先をインポート"
-      ],
-      "Report a problem": [
-        "問題を報告"
-      ],
-      "Open help menu": [
-        "ヘルプメニューを開く"
-      ],
-      "Back": [
-        "戻る"
-      ],
-      "Open settings menu": [
-        "設定メニューを開く"
-      ],
-      "Select a theme": [
-        "テーマを選択"
-      ],
-      "Confirm loss of Proton bonuses": [
-        ""
-      ],
-      "Unsupported browser": [
-        ""
-      ],
-      "Card verification": [
-        ""
-      ],
-      "Payment verification": [
-        ""
-      ],
-      "Processing...": [
-        ""
-      ],
-      "Card verification in progress": [
-        ""
-      ],
-      "Payment verification in progress": [
-        ""
-      ],
-      "PayPal verification failed": [
-        ""
-      ],
-      "3-D Secure verification failed": [
-        ""
-      ],
-      "Error": [
-        ""
-      ],
-      "ZIP / postal code": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Currency": [
-        ""
-      ],
-      "Billing cycle": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
-      "Processing": [
-        ""
-      ],
-      "Apply gift code": [
-        ""
-      ],
-      "Subtotal": [
-        ""
-      ],
-      "Coupon discount": [
-        ""
-      ],
-      "Total (monthly)": [
-        ""
-      ],
-      "Credits": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Amount due": [
-        ""
-      ],
-      "Cancel subscription": [
-        ""
-      ],
-      "Network error": [
-        ""
-      ],
-      "Select a plan": [
-        ""
-      ],
-      "Customize your plan": [
-        ""
-      ],
-      "Checkout": [
-        ""
-      ],
-      "Plan summary": [
-        ""
-      ],
-      "${ appName } customization": [
-        ""
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
-      "Account suspended": [
-        "アカウントが停止されました"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "ユーザー名または ProtonMail アドレスを入力してください"
-      ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } のキーボードショートカット"
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Mailbox layout": [
-        ""
-      ],
-      "Composer mode": [
-        ""
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
-      ],
-      "Duplicate folder found": [
-        ""
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "ドロップしてアップロード"
-      ],
-      "Change layout": [
-        "レイアウトの変更"
-      ],
-      "Show actions": [
-        "アクションの表示"
-      ],
-      "Sort files/folders": [
-        "ファイル・フォルダーの並び替え"
-      ],
-      "Trash": [
-        "ごみ箱"
-      ],
-      "Empty trash": [
-        "ごみ箱を空にする"
-      ],
-      "Cancel all active transfers": [
-        "現在の全ての転送処理をキャンセル"
-      ],
-      "My files": [
-        "マイファイル"
-      ],
-      "You have no folders yet": [
-        "フォルダーがありません"
-      ],
-      "You have no files to share": [
-        "共有するファイルがありません"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        "ファイルのダウンロード準備完了"
-      ],
-      "Download completed": [
-        "ダウンロード完了"
-      ],
-      "Download failed": [
-        ""
-      ],
-      "Download canceled": [
-        ""
-      ],
-      "Downloading": [
-        "ダウンロード中"
-      ],
-      "Enter file password to download": [
-        "ファイルのパスワードを入力してください"
-      ],
-      "The link either does not exist or has expired": [
-        "リンクが存在しないか有効期限が切れています"
-      ],
-      "Restore your files": [
-        "ファイルを復元"
-      ],
-      "File recovery process": [
-        "ファイルの復旧プロセス"
-      ],
-      "You have inaccessible files": [
-        "利用できないファイルがあります"
-      ],
-      "Rename a folder": [
-        "フォルダー名の変更"
-      ],
-      "Rename a file": [
-        "ファイル名の変更"
-      ],
-      "File details": [
-        "ファイルの詳細"
-      ],
-      "Folder details": [
-        "フォルダーの詳細"
-      ],
-      "Name": [
-        "名前"
-      ],
-      "Uploaded by": [
-        "アップロードしたユーザー"
-      ],
-      "Location": [
-        "位置"
-      ],
-      "Modified": [
-        "更新日時"
-      ],
-      "Type": [
-        "種類"
-      ],
-      "MIME type": [
-        "MIME タイプ"
-      ],
-      "Size": [
-        "サイズ"
-      ],
-      "Shared": [
-        "共有中"
-      ],
-      "# of accesses": [
-        ""
-      ],
-      "Create a new folder": [
-        "新規フォルダーの作成"
-      ],
-      "Date": [
-        "日付"
-      ],
-      "Select link expiration date": [
-        "リンクの有効期限を選択"
-      ],
-      "Select link expiration time": [
-        "リンクの有効時間を選択"
-      ],
-      "Share via link": [
-        "リンクで共有"
-      ],
-      "Additional settings": [
-        "詳細設定"
-      ],
-      "Manage secure link": [
-        "セキュアリンクの管理"
-      ],
-      "Stop sharing with everyone?": [
-        "共有を停止してよろしいですか？"
-      ],
-      "Discard changes?": [
-        "変更を破棄してよろしいですか？"
-      ],
-      "Discard": [
-        "破棄"
-      ],
-      "Files details": [
-        "ファイルの詳細"
-      ],
-      "Number of files": [
-        "ファイル数"
-      ],
-      "Total size": [
-        "合計サイズ"
-      ],
-      "Delete permanently": [
-        "完全に削除"
-      ],
-      "Stop sharing": [
-        "共有を停止"
-      ]
-    },
     "Label": {
       "Copy": [
         "コピー"
@@ -2003,6 +2003,12 @@
       "Display name": [
         "表示名"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Name on card": [
         ""
       ],
@@ -2049,12 +2055,6 @@
         "有効期限"
       ],
       "Payer": [
-        ""
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
         ""
       ],
       "Cancel": [
@@ -2144,6 +2144,9 @@
       "File": [
         "ファイル"
       ],
+      "Get your own ProtonDrive": [
+        ""
+      ],
       "Report abuse": [
         "不正利用を報告"
       ],
@@ -2158,11 +2161,6 @@
       ],
       "Set expiration date": [
         "有効期限を設定"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Placeholder": {
@@ -2238,6 +2236,11 @@
         "${ minutes } 分"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Link": {
       "Learn more": [
         ""
@@ -2251,14 +2254,14 @@
       "Upgrade account": [
         "アカウントをアップグレード"
       ],
-      "clearing your browser cache": [
-        "ブラウザのキャッシュを消去"
-      ],
       "Upgrade": [
         "アップグレード"
       ],
       "Go to subscription plans": [
         ""
+      ],
+      "clearing your browser cache": [
+        "ブラウザのキャッシュを消去"
       ],
       "click here": [
         ""
@@ -2472,10 +2475,10 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+      "Are you sure you want to discard your import?": [
         ""
       ],
-      "Are you sure you want to discard your import?": [
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ]
     },
@@ -2959,6 +2962,45 @@
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
       ]
     },
+    "Text": {
+      "Settings": [
+        "設定"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "オン"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "オフ"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
@@ -3062,45 +3104,6 @@
         "スクリーンショットの添付"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "オン"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "オフ"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         ""
@@ -3130,6 +3133,27 @@
         ""
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        ""
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
         ""
       ]
     },
@@ -3569,43 +3593,9 @@
         ""
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "アップロード"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
       ]
     },
     "Label to change density": {
@@ -3630,6 +3620,33 @@
       ],
       "Maximized": [
         ""
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "バイト"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Contact field label": {
@@ -3744,20 +3761,6 @@
       ],
       "Address": [
         ""
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "バイト"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Validation": {

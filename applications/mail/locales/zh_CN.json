@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此邮件含有浏览器不能打开的链接"
-      ],
       "Unknown error": [
         "未知错误"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "此邮件含有浏览器不能打开的链接"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -30,14 +30,14 @@
       "This field is required": [
         "此项必须填写"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      ],
       "The composer failed to load.": [
         "编辑器加载失败。"
       ],
       "Please refresh the page.": [
         "请刷新页面。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "Can't validate email, try again later": [
         "无法验证邮箱，请重试"
@@ -99,14 +99,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "File has no contents to preview": [
-        "文件没有内容可预览"
-      ],
       "Incorrect mailbox password. Please try again": [
         "邮箱密码错误，请重试"
       ],
       "Incorrect login credentials. Please try again": [
         "登录账号或密码错误，请重试"
+      ],
+      "File has no contents to preview": [
+        "文件没有内容可预览"
       ],
       "Process aborted": [
         ""
@@ -201,6 +201,12 @@
       "Request timed out.": [
         "请求超时。"
       ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
+      ],
       "Email address disabled": [
         "邮件地址已禁用"
       ],
@@ -224,12 +230,6 @@
       ],
       "The sending key is not valid": [
         "发送密钥无效"
-      ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
       ],
       "Missing signature": [
         "缺少签名"
@@ -344,23 +344,26 @@
       "Close": [
         "关闭"
       ],
-      "Confirm": [
-        "确定"
+      "Close modal": [
+        "关闭"
       ],
       "Cancel": [
         "取消"
       ],
-      "Close modal": [
-        "关闭"
-      ],
       "Submit": [
         "提交"
+      ],
+      "Confirm": [
+        "确定"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Remove": [
         "移除"
@@ -475,9 +478,6 @@
       ],
       "Underline": [
         "下划线"
-      ],
-      "refresh the page": [
-        "刷新页面"
       ],
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
@@ -644,9 +644,6 @@
       "Next": [
         "继续"
       ],
-      "Signing out": [
-        "正在退出账户"
-      ],
       "Clear": [
         "清除"
       ],
@@ -677,6 +674,12 @@
       "OK": [
         "确定"
       ],
+      "Signing out": [
+        "正在退出账户"
+      ],
+      "Log in": [
+        "登录"
+      ],
       "Details": [
         "详细信息"
       ],
@@ -697,9 +700,6 @@
       ],
       "Previous": [
         "前一页"
-      ],
-      "Log in": [
-        "登录"
       ],
       "Get started": [
         "入门"
@@ -867,6 +867,15 @@
         "否"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
         ""
       ],
       "Send anyway": [
@@ -1186,15 +1195,6 @@
       ],
       "Start using ${ appName }": [
         "开始使用 ${ appName }"
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
       ]
     },
     "Title": {
@@ -1707,6 +1707,9 @@
       "Loading": [
         "加载中"
       ],
+      "support team": [
+        ""
+      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -1802,9 +1805,6 @@
       ],
       "Plain text": [
         "纯文本"
-      ],
-      "support team": [
-        ""
       ],
       "Drop the file here to upload": [
         ""
@@ -1947,9 +1947,6 @@
       "${ addressCount } email address": [
         ""
       ],
-      "Loading ${ appName }": [
-        "正在加载 ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "已添加截图"
       ],
@@ -1980,6 +1977,18 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Loading ${ appName }": [
+        "正在加载 ${ appName }"
+      ],
+      "here": [
+        "此处"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        ""
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        ""
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -1997,15 +2006,6 @@
       ],
       "of": [
         "，共"
-      ],
-      "here": [
-        "此处"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        ""
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        ""
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
@@ -2196,7 +2196,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -2547,11 +2547,11 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将得知此邮件的所有内容。"
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } 个附件"
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } 个文件已添加到附件。"
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } 张嵌入图像"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } 张图片已嵌入。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
@@ -3294,6 +3294,36 @@
       "Add a gift code": [
         ""
       ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Sent": [
+        "已发送"
+      ],
+      "Trash": [
+        "废件箱"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "All mail": [
+        "所有邮件"
+      ],
+      "Archive": [
+        "存档"
+      ],
+      "Starred": [
+        "星标邮件"
+      ],
+      "Outbox": [
+        "发件箱"
+      ],
+      "Scheduled": [
+        ""
+      ],
       "You need to activate your calendar keys to add this event": [
         ""
       ],
@@ -3369,33 +3399,6 @@
       "Add label": [
         "添加标签"
       ],
-      "Inbox": [
-        "收件箱"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        "已发送"
-      ],
-      "Starred": [
-        "星标邮件"
-      ],
-      "Archive": [
-        "存档"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "Trash": [
-        "废件箱"
-      ],
-      "All mail": [
-        "所有邮件"
-      ],
       "Folders": [
         "文件夹"
       ],
@@ -3407,9 +3410,6 @@
       ],
       "Manage your labels": [
         "管理您的标签"
-      ],
-      "Outbox": [
-        "发件箱"
       ]
     },
     "Placeholder": {
@@ -4209,17 +4209,6 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton 产品"
-      ],
-      "Go to ${ title }": [
-        "转到 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "没有选择图像"
@@ -4359,6 +4348,41 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton 产品"
+      ],
+      "Go to ${ title }": [
+        "转到 ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
+      ]
+    },
     "Select files": {
       "Upload": [
         "上传"
@@ -4404,30 +4428,6 @@
         ""
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
         ""
       ]
     },
@@ -5081,6 +5081,25 @@
         "星标邮件"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "字节"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "姓名"
@@ -5195,23 +5214,9 @@
         "地址"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "字节"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        ""
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5223,11 +5228,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }，${ name } ${ address } 来信："
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {

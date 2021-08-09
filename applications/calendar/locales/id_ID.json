@@ -828,7 +828,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1870,10 +1870,285 @@
         "Trs:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Tutup"
+    "Label": {
+      "Copy": [
+        "Salin"
       ],
+      "Reveal password": [
+        "Perlihatkan kata sandi"
+      ],
+      "Hide password": [
+        "Sembunyikan kata sandi"
+      ],
+      "Street address": [
+        "Alamat jalan"
+      ],
+      "City": [
+        "Kota"
+      ],
+      "Region": [
+        "Wilayah"
+      ],
+      "Postal code": [
+        "Kode pos"
+      ],
+      "Country": [
+        "Negara"
+      ],
+      "Post office box": [
+        "Kotak pos"
+      ],
+      "Extended address": [
+        "Alamat lengkap"
+      ],
+      "Do not ask again": [
+        "Jangan tanyakan lagi"
+      ],
+      "Email address": [
+        "Alamat surel"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
+      "Verification code": [
+        "Kode verifikasi"
+      ],
+      "Enter the 6-digit code": [
+        "Masukkan kode 6 digit"
+      ],
+      "Add email address": [
+        "Tambah alamat surel"
+      ],
+      "Email format": [
+        "Format surel"
+      ],
+      "Add image URL": [
+        "Tambah URL gambar"
+      ],
+      "Upload picture": [
+        "Unggah gambar"
+      ],
+      "Add to group": [
+        "Tambah ke grup"
+      ],
+      "Encrypt emails": [
+        "Enkripsi surel"
+      ],
+      "Sign emails": [
+        "Tanda tangani surel"
+      ],
+      "Cryptographic scheme": [
+        "Skema kriptografi"
+      ],
+      "Public keys": [
+        "Kunci publik"
+      ],
+      "Automatically save contacts": [
+        "Simpan kontak secara otomatis"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
+      ],
+      "Operating system": [
+        "Sistem operasi"
+      ],
+      "Operating system version": [
+        "Versi sistem operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Apa yang terjadi?"
+      ],
+      "System information": [
+        "Informasi sistem"
+      ],
+      "Browser": [
+        "Peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Nama tampilan"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
+      ],
+      "Two-factor authentication code": [
+        "Kode otentikasi dua faktor"
+      ],
+      "Username or ProtonMail address": [
+        "Nama pengguna atau alamat ProtonMail"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Pintasan papan ketik"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
+      ],
+      "Select how your composer opens by default.": [
+        "Pilih bagaimana komposer Anda terbuka secara bawaan."
+      ],
+      "Enable Beta Access": [
+        "Aktifkan Akses Beta"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Deskripsi"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Sepanjang hari"
+      ],
+      "Repeat on": [
+        "Ulangi"
+      ],
+      "Repeat every": [
+        "Ulangi setiap"
+      ],
+      "Ends": [
+        "Akhir"
+      ],
+      "Organizer": [
+        "Penyelenggara"
+      ],
+      "Optional": [
+        "Opsional"
+      ],
+      "Time of the event": [
+        "Waktu acara"
+      ],
+      "Event time": [
+        "Waktu acara"
+      ],
+      "Event title": [
+        "Judul acara"
+      ],
+      "Event frequency": [
+        "Frekuensi acara"
+      ],
+      "Event location": [
+        "Lokasi acara"
+      ],
+      "Event notifications": [
+        "Notifikasi acara"
+      ],
+      "Participants": [
+        "Peserta"
+      ],
+      "Your calendars": [
+        "Kalender Anda"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Tutup jendela"
       ],
@@ -1892,6 +2167,9 @@
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
       ],
+      "Close": [
+        "Tutup"
+      ],
       "Close navigation": [
         "Tutup navigasi"
       ],
@@ -1901,11 +2179,11 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
-      "refresh the page": [
-        "segarkan halaman"
-      ],
       "Load image": [
         "Muat gambar"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Export": [
         "Ekspor"
@@ -2132,9 +2410,6 @@
       "OK": [
         "OK"
       ],
-      "Log in": [
-        "Masuk"
-      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
@@ -2191,6 +2466,9 @@
       ],
       "Back": [
         "Kembali"
+      ],
+      "Log in": [
+        "Masuk"
       ],
       "Remove bonuses": [
         ""
@@ -2335,6 +2613,137 @@
       ],
       "Close popover": [
         "Tutup jendela"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Lebih lanjut"
+      ],
+      "Request an invite": [
+        "Meminta undangan"
+      ],
+      "clearing your browser cache": [
+        "membersihkan cache peramban Anda"
+      ],
+      "Upgrade": [
+        "Pemutakhiran"
+      ],
+      "Go to subscription plans": [
+        "Ke paket langganan"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Bayar tagihan"
+      ],
+      "Upgrade account": [
+        "Tingkatkan akun"
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "My calendars": [
+        "Kalender saya"
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Misalnya "
+      ],
+      "Start typing an email address": [
+        "Mulai ketik alamat surel"
+      ],
+      "Image URL": [
+        "URL gambar"
+      ],
+      "Filter groups": [
+        "Filter grup"
+      ],
+      "Search for name or email": [
+        "Cari nama atau surel"
+      ],
+      "Search for group name": [
+        "Cari nama grup"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "OS name": [
+        "Nama Sistem Operasi"
+      ],
+      "OS version": [
+        "Versi Sistem Operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "A way to contact you": [
+        "Cara menghubungi Anda"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+      ],
+      "Browser name": [
+        "Nama peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "cth. Julia Smith"
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Tambah judul"
+      ],
+      "Add location": [
+        "Tambah lokasi"
+      ],
+      "Add description": [
+        "Tambah deskripsi"
+      ],
+      "Add participants": [
+        "Tambah peserta"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } menit"
       ]
     },
     "Title": {
@@ -2488,18 +2897,6 @@
       "Select a theme": [
         "Pilih tema"
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
-      ],
-      "Enter your password": [
-        "Masukkan sandi Anda"
-      ],
       "Open help menu": [
         "Buka menu bantuan"
       ],
@@ -2517,6 +2914,18 @@
       ],
       "Give feedback": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ],
+      "Account suspended": [
+        "Akun ditangguhkan"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Masukkan nama pengguna atau alamat surel ProtonMail"
+      ],
+      "Enter your password": [
+        "Masukkan sandi Anda"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2623,14 +3032,14 @@
       "Beta Access": [
         "Akses Beta"
       ],
+      "Select the way to send this notification": [
+        "Pilih cara untuk mengirim notifikasi ini"
+      ],
       "Select when you want this notification to be sent": [
         "Pilih saat Anda ingin notifikasi ini dikirim"
       ],
       "Select the time to send this notification": [
         "Pilih waktu pengiriman notifikasi"
-      ],
-      "Select the way to send this notification": [
-        "Pilih cara untuk mengirim notifikasi ini"
       ],
       "Add another notification to remind you of this event": [
         "Tambah pemberitahuan lain untuk mengingatkan Anda pada acara ini"
@@ -2766,415 +3175,6 @@
       ],
       "CANCELLED": [
         "DIBATALKAN"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Salin"
-      ],
-      "Reveal password": [
-        "Perlihatkan kata sandi"
-      ],
-      "Hide password": [
-        "Sembunyikan kata sandi"
-      ],
-      "Street address": [
-        "Alamat jalan"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Region": [
-        "Wilayah"
-      ],
-      "Postal code": [
-        "Kode pos"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "Post office box": [
-        "Kotak pos"
-      ],
-      "Extended address": [
-        "Alamat lengkap"
-      ],
-      "Do not ask again": [
-        "Jangan tanyakan lagi"
-      ],
-      "Email address": [
-        "Alamat surel"
-      ],
-      "Phone number": [
-        "Nomor telepon"
-      ],
-      "Verification code": [
-        "Kode verifikasi"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
-      ],
-      "Add email address": [
-        "Tambah alamat surel"
-      ],
-      "Email format": [
-        "Format surel"
-      ],
-      "Add image URL": [
-        "Tambah URL gambar"
-      ],
-      "Upload picture": [
-        "Unggah gambar"
-      ],
-      "Add to group": [
-        "Tambah ke grup"
-      ],
-      "Encrypt emails": [
-        "Enkripsi surel"
-      ],
-      "Sign emails": [
-        "Tanda tangani surel"
-      ],
-      "Cryptographic scheme": [
-        "Skema kriptografi"
-      ],
-      "Public keys": [
-        "Kunci publik"
-      ],
-      "Automatically save contacts": [
-        "Simpan kontak secara otomatis"
-      ],
-      "Import contacts": [
-        "Impor kontak"
-      ],
-      "Export contacts": [
-        "Ekspor kontak"
-      ],
-      "Operating system": [
-        "Sistem operasi"
-      ],
-      "Operating system version": [
-        "Versi sistem operasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Apa yang terjadi?"
-      ],
-      "System information": [
-        "Informasi sistem"
-      ],
-      "Browser": [
-        "Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Batal"
-      ],
-      "Submit": [
-        "Kirim"
-      ],
-      "Password": [
-        "Kata Sandi"
-      ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
-      ],
-      "Username or ProtonMail address": [
-        "Nama pengguna atau alamat ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Nama tampilan"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
-      ],
-      "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda terbuka secara bawaan."
-      ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Deskripsi"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Sepanjang hari"
-      ],
-      "Repeat on": [
-        "Ulangi"
-      ],
-      "Repeat every": [
-        "Ulangi setiap"
-      ],
-      "Ends": [
-        "Akhir"
-      ],
-      "Organizer": [
-        "Penyelenggara"
-      ],
-      "Optional": [
-        "Opsional"
-      ],
-      "Time of the event": [
-        "Waktu acara"
-      ],
-      "Event time": [
-        "Waktu acara"
-      ],
-      "Event title": [
-        "Judul acara"
-      ],
-      "Event frequency": [
-        "Frekuensi acara"
-      ],
-      "Event location": [
-        "Lokasi acara"
-      ],
-      "Event notifications": [
-        "Notifikasi acara"
-      ],
-      "Participants": [
-        "Peserta"
-      ],
-      "Your calendars": [
-        "Kalender Anda"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Lebih lanjut"
-      ],
-      "Request an invite": [
-        "Meminta undangan"
-      ],
-      "clearing your browser cache": [
-        "membersihkan cache peramban Anda"
-      ],
-      "Upgrade": [
-        "Pemutakhiran"
-      ],
-      "Go to subscription plans": [
-        "Ke paket langganan"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Bayar tagihan"
-      ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
-      "Calendars": [
-        "Kalender"
-      ],
-      "My calendars": [
-        "Kalender saya"
-      ],
-      "Other calendars": [
-        "Kalender lainnya"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Misalnya "
-      ],
-      "Start typing an email address": [
-        "Mulai ketik alamat surel"
-      ],
-      "Image URL": [
-        "URL gambar"
-      ],
-      "Filter groups": [
-        "Filter grup"
-      ],
-      "Search for name or email": [
-        "Cari nama atau surel"
-      ],
-      "Search for group name": [
-        "Cari nama grup"
-      ],
-      "Name": [
-        "Nama"
-      ],
-      "OS name": [
-        "Nama Sistem Operasi"
-      ],
-      "OS version": [
-        "Versi Sistem Operasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
-      "A way to contact you": [
-        "Cara menghubungi Anda"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
-      ],
-      "Browser name": [
-        "Nama peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Tambah judul"
-      ],
-      "Add location": [
-        "Tambah lokasi"
-      ],
-      "Add description": [
-        "Tambah deskripsi"
-      ],
-      "Add participants": [
-        "Tambah peserta"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } jam"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } menit"
       ]
     },
     "Storage": {
@@ -3417,7 +3417,7 @@
       "Preference saved": [
         "Preferensi berhasil disimpan"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4462,6 +4462,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Longgar"
@@ -4484,17 +4495,6 @@
       ],
       "Maximized": [
         "Dimaksimalkan"
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
-        ""
       ]
     },
     "Beta access description": {
@@ -4540,6 +4540,14 @@
         "jam sebelumnya"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Pilih angka"
@@ -4548,14 +4556,6 @@
     "Notification time input": {
       "at": [
         "pada"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "via notifikasi"
-      ],
-      "by email": [
-        "melalui surel"
       ]
     },
     "Duration": {
@@ -4634,6 +4634,11 @@
       ],
       "${ value } week after at ${ time }": [
         "${ value } minggu setelah pukul ${ time }"
+      ]
+    },
+    "Calendar status": {
+      "not synced": [
+        ""
       ]
     },
     "Disabled calendar name suffix": {
@@ -4723,6 +4728,11 @@
       ],
       "This event has been cancelled": [
         "Acara ini dibatalkan"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {

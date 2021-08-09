@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "未知的錯誤"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "認證錯誤。"
-      ],
-      "Unknown error": [
-        "未知的錯誤"
       ],
       "Email address invalid": [
         "電子郵件地址無效"
@@ -33,6 +33,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
+      "File has no contents to preview": [
+        "預覽的檔案無內容"
+      ],
       "Can't validate email, try again later": [
         "無法驗證電子郵件，請稍後再試"
       ],
@@ -44,9 +47,6 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
-      ],
-      "File has no contents to preview": [
-        "預覽的檔案無內容"
       ],
       "Preferences could not be saved": [
         "無法儲存喜好設定"
@@ -89,6 +89,12 @@
       ],
       "Invalid name": [
         "名稱無效"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
       ],
       "Process aborted": [
         "程序中斷"
@@ -150,12 +156,6 @@
       "Invalid code": [
         ""
       ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
       "Incorrect mailbox password. Please try again": [
         "郵箱密碼不正確。請再試一次"
       ],
@@ -199,6 +199,967 @@
         "找不到有效的位址"
       ]
     },
+    "Action": {
+      "Close": [
+        "關閉"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Close modal": [
+        "關閉方塊"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Use “${ label }” setting": [
+        "使用「${ label }」設定"
+      ],
+      "More info: ${ safeTitle }": [
+        "更多資訊：${ safeTitle }"
+      ],
+      "Close navigation": [
+        "關閉導覽"
+      ],
+      "Open navigation": [
+        "開啟導覽"
+      ],
+      "Go to panel ${ index }": [
+        "到面板 ${ index }"
+      ],
+      "Load image": [
+        "載入圖片"
+      ],
+      "Export": [
+        "匯出"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Edit": [
+        "編輯"
+      ],
+      "Remove": [
+        "刪除"
+      ],
+      "Download": [
+        "下載"
+      ],
+      "Use for sending": [
+        "用於寄送"
+      ],
+      "Trust": [
+        "信任"
+      ],
+      "Untrust": [
+        "取消信任"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Email settings": [
+        "電郵設定"
+      ],
+      "Contact group": [
+        "聯絡人群組"
+      ],
+      "Upload picture": [
+        "上傳圖片"
+      ],
+      "Next month": [
+        "下個月"
+      ],
+      "Previous month": [
+        "上個月"
+      ],
+      "refresh the page": [
+        "重新整理此頁面"
+      ],
+      "Confirm opening of link ${ link }": [
+        "確認開啟連結 ${ link }"
+      ],
+      "Signing out": [
+        "正在登出"
+      ],
+      "Details": [
+        "詳細資訊"
+      ],
+      "Share via link": [
+        "透過連結分享"
+      ],
+      "Sharing options": [
+        "分享選項"
+      ],
+      "Zoom out": [
+        "縮小"
+      ],
+      "Reset zoom": [
+        "重設縮放"
+      ],
+      "Zoom in": [
+        "放大"
+      ],
+      "Previous": [
+        "上一個"
+      ],
+      "Next": [
+        "下一個"
+      ],
+      "View invoice": [
+        "查看帳單"
+      ],
+      "Get verification code": [
+        "取得驗證碼"
+      ],
+      "Try another method": [
+        "換另一個方法試試"
+      ],
+      "Request new code": [
+        "要求新代碼"
+      ],
+      "Verify": [
+        "驗證"
+      ],
+      "Did not receive the code?": [
+        "沒收到代碼？"
+      ],
+      "Edit email address": [
+        "編輯電子郵件地址"
+      ],
+      "Edit phone number": [
+        "編輯電話號碼"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Add": [
+        "新增"
+      ],
+      "Apply": [
+        "套用"
+      ],
+      "Hide advanced PGP settings": [
+        "隱藏進階 PGP 設定"
+      ],
+      "Show advanced PGP settings": [
+        "顯示進階 PGP 設定"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Clear data": [
+        "清除數據"
+      ],
+      "Recover data": [
+        "回復資料"
+      ],
+      "Click here.": [
+        "點擊此處。"
+      ],
+      "Re-sign": [
+        "重新簽署"
+      ],
+      "Add to group": [
+        "新增到群組"
+      ],
+      "Merge": [
+        "合併"
+      ],
+      "View": [
+        "瀏覽"
+      ],
+      "Unmark for deletion": [
+        "取消標記作刪除"
+      ],
+      "Mark for deletion": [
+        "標記作刪除"
+      ],
+      "Preview contact": [
+        "預覽聯絡人"
+      ],
+      "Continue": [
+        "繼續"
+      ],
+      "Delete contact": [
+        "刪除聯絡人"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "刪除 ${ selectedCount } 個聯絡人"
+      ],
+      "Deselect all": [
+        "取消全選"
+      ],
+      "Select all": [
+        "全選"
+      ],
+      "Compose": [
+        "撰寫"
+      ],
+      "Forward as attachment": [
+        "以附件形式轉寄"
+      ],
+      "Merge contacts": [
+        "合併聯絡人"
+      ],
+      "Add new contact": [
+        "新增聯絡人"
+      ],
+      "Add group": [
+        "新增群組"
+      ],
+      "Clear query": [
+        "清除查詢"
+      ],
+      "Add contact": [
+        "新增聯絡人"
+      ],
+      "import": [
+        "匯入"
+      ],
+      "Delete contact group": [
+        "刪除連絡人群組"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "刪除 ${ selectedCount } 個聯絡人群組"
+      ],
+      "Add new group": [
+        "新增群組"
+      ],
+      "Export contacts": [
+        "匯出聯絡人"
+      ],
+      "Continue with Google": [
+        "使用 Google 繼續"
+      ],
+      "Import contacts": [
+        "匯入聯絡人"
+      ],
+      "Choose a file or drag it here": [
+        "選擇檔案或拖曳到此處"
+      ],
+      "Import": [
+        "匯入"
+      ],
+      "Close this banner": [
+        "關閉此橫幅"
+      ],
+      "Refresh the page": [
+        "重新整理此頁面"
+      ],
+      "enable desktop notifications": [
+        "啟用桌面通知"
+      ],
+      "here": [
+        "這裡"
+      ],
+      "Copy email to clipboard": [
+        "複製電子郵件至剪貼簿"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } 介紹"
+      ],
+      "I have a question": [
+        "我要發問"
+      ],
+      "Request a feature": [
+        "功能請求"
+      ],
+      "Report a problem": [
+        "回報問題"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } 商店"
+      ],
+      "Switch account": [
+        "切換帳號"
+      ],
+      "Sign out": [
+        "登出"
+      ],
+      "Go to settings": [
+        "前往設定"
+      ],
+      "Beta Access": [
+        "測試版體驗"
+      ],
+      "Theme": [
+        "佈景主題"
+      ],
+      "Keyboard shortcuts": [
+        "鍵盤快捷鍵"
+      ],
+      "Mailbox layout": [
+        "收件匣佈局"
+      ],
+      "Mailbox density": [
+        "收件匣密度"
+      ],
+      "Composer mode": [
+        "撰寫器模式"
+      ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "新增螢幕截圖"
+      ],
+      "Hide info": [
+        "隱藏資訊"
+      ],
+      "Show info": [
+        "顯示資訊"
+      ],
+      "Get started": [
+        "入門指南"
+      ],
+      "Start setup": [
+        "開始設置"
+      ],
+      "Skip": [
+        "略過"
+      ],
+      "Back": [
+        "返回"
+      ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 佈景主題"
+      ],
+      "OK": [
+        "確定"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        ""
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
+        ""
+      ],
+      "Log in": [
+        "登入"
+      ],
+      "Cancel all uploads": [
+        "取消所有上傳"
+      ],
+      "New upload": [
+        "新增上載"
+      ],
+      "Delete permanently": [
+        "永久刪除"
+      ],
+      "Restore from trash": [
+        "從垃圾桶中還原"
+      ],
+      "Empty trash": [
+        "清空垃圾桶"
+      ],
+      "Rename": [
+        "重新命名"
+      ],
+      "Move to folder": [
+        "移動到資料夾"
+      ],
+      "Move to trash": [
+        "移動到垃圾桶"
+      ],
+      "Create new folder": [
+        "建立新資料夾"
+      ],
+      "Name: A to Z": [
+        "按名稱順序：A 到 Z"
+      ],
+      "Name: Z to A": [
+        "按名稱倒序：Z 到 A"
+      ],
+      "Modified date: new to old": [
+        "按修改日期順序：最新到最舊"
+      ],
+      "Modified date: old to new": [
+        "按修改日期倒序：最舊到最新"
+      ],
+      "Type: A to Z": [
+        "按類型順序：A 到 Z"
+      ],
+      "Type: Z to A": [
+        "按類型倒序：Z 到 A"
+      ],
+      "Size: small to large": [
+        "按大小順序：最小到最大"
+      ],
+      "Size: large to small": [
+        "按大小倒序：最大到最小"
+      ],
+      "Upload file": [
+        "上載檔案"
+      ],
+      "Upload folder": [
+        "上載資料夾"
+      ],
+      "Maximize transfers": [
+        "最大化轉移"
+      ],
+      "Minimize transfers": [
+        "最小化轉移"
+      ],
+      "Close transfers": [
+        "關閉轉移"
+      ],
+      "Pause download": [
+        "暫停下載"
+      ],
+      "Pause upload": [
+        "暫停上載"
+      ],
+      "Resume download": [
+        "恢復下載"
+      ],
+      "Resume upload": [
+        "恢復上載"
+      ],
+      "Cancel download": [
+        "取消下載"
+      ],
+      "Cancel upload": [
+        "取消上載"
+      ],
+      "Restart download": [
+        "重新開始下載"
+      ],
+      "Restart upload": [
+        "重新開始上載"
+      ],
+      "Remove from this list": [
+        "從此清單中移除"
+      ],
+      "Create": [
+        "建立"
+      ],
+      "List layout": [
+        "清單版面佈置"
+      ],
+      "Grid layout": [
+        "格線版面佈置"
+      ],
+      "Preview": [
+        "預覽"
+      ],
+      "Stop sharing": [
+        "停止分享"
+      ],
+      "Share": [
+        "分享"
+      ],
+      "Show shared link details": [
+        "顯示共享鏈結詳細說明"
+      ],
+      "Share file": [
+        "分享檔案"
+      ],
+      "Start recovering": [
+        "開始恢復"
+      ],
+      "View more": [
+        "查看更多"
+      ],
+      "Move": [
+        "移動"
+      ],
+      "Copy link": [
+        "複製連結"
+      ],
+      "Create link": [
+        "建立連結"
+      ],
+      "Undo": [
+        "復原"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "開啟動作下拉選單"
+      ],
+      "Upgrade required": [
+        "需要升級"
+      ],
+      "Email settings": [
+        "電子郵件設定"
+      ],
+      "Contact group": [
+        "聯絡人群組"
+      ],
+      "Link confirmation": [
+        "連結確認"
+      ],
+      "Keyboard Shortcuts": [
+        "鍵盤快捷鍵"
+      ],
+      "What's new": [
+        "最近更新"
+      ],
+      "Invalid verification code": [
+        "無效的驗證碼"
+      ],
+      "Request new verification code": [
+        "要求新的驗證碼"
+      ],
+      "Human verification": [
+        "真人驗證"
+      ],
+      "Edit contact group": [
+        "編輯聯絡人群組"
+      ],
+      "Create new group": [
+        "建立新群組"
+      ],
+      "Add to ${ groupName }": [
+        "新增至 ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "新增至 ${ groupCount } 個群組"
+      ],
+      "Email settings (${ emailAddress })": [
+        "電子郵件設定 (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "刪除 ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "刪除 ${ count } 個聯絡人群組"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } 個成員"
+      ],
+      "Edit image": [
+        "編輯圖片"
+      ],
+      "Edit contact": [
+        "編輯聯絡人"
+      ],
+      "Create contact": [
+        "建立聯絡人"
+      ],
+      "Delete ${ count } contact": [
+        "刪除 ${ count } 個聯絡人"
+      ],
+      "Clearing data": [
+        "清除資料中"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Recover data": [
+        "恢復資料"
+      ],
+      "Re-signing contacts": [
+        "正在重新簽署聯絡人"
+      ],
+      "Re-sign all contacts": [
+        "重新簽署所有聯絡人"
+      ],
+      "Exporting contacts": [
+        "匯出聯絡人"
+      ],
+      "Other names": [
+        "其他名稱"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
+      "Phone numbers": [
+        "電話號碼"
+      ],
+      "Addresses": [
+        "地址"
+      ],
+      "Other information": [
+        "其他資訊"
+      ],
+      "Contact Details": [
+        "聯絡人詳細資料"
+      ],
+      "Merging contacts": [
+        "合併聯絡人"
+      ],
+      "Merge contacts": [
+        "合併聯絡人"
+      ],
+      "Deleting contacts": [
+        "正在刪除聯絡人"
+      ],
+      "View contacts": [
+        "檢視聯絡人"
+      ],
+      "Contacts": [
+        "聯絡人"
+      ],
+      "Groups": [
+        "群組"
+      ],
+      "Settings": [
+        "設定"
+      ],
+      "Select action to take on contact group": [
+        "選擇對聯絡人群組的動作"
+      ],
+      "Add contact group name": [
+        "新增聯絡人群組名稱"
+      ],
+      "Select contact group": [
+        "選擇聯絡人群組"
+      ],
+      "Import groups": [
+        "匯入群組"
+      ],
+      "Import contacts": [
+        "匯入聯絡人"
+      ],
+      "Open help menu": [
+        "開啟說明功能表"
+      ],
+      "Back": [
+        "返回"
+      ],
+      "Open settings menu": [
+        "開啟設定功能表"
+      ],
+      "Report a problem": [
+        "回報問題"
+      ],
+      "Select a theme": [
+        "選擇佈景主題"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Confirm loss of Proton bonuses": [
+        ""
+      ],
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "請再次登入以繼續"
+      ],
+      "Account suspended": [
+        "帳號被暫停"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Enter your password": [
+        "請輸入您的密碼"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } 鍵盤快捷鍵"
+      ],
+      "Mailbox density": [
+        "收件匣密度"
+      ],
+      "Mailbox layout": [
+        "收件匣佈局"
+      ],
+      "Composer mode": [
+        "撰寫器模式"
+      ],
+      "Beta Access": [
+        "測試版體驗"
+      ],
+      "Duplicate folder found": [
+        "發現重複的資料夾"
+      ],
+      "Duplicate file found": [
+        "發現重複的資料夾"
+      ],
+      "Drop to upload": [
+        "拖放到此處以上載"
+      ],
+      "Trash": [
+        "垃圾桶"
+      ],
+      "Empty trash": [
+        "清空垃圾桶"
+      ],
+      "Show actions": [
+        "顯示動作"
+      ],
+      "Sort files/folders": [
+        "排序檔案/資料夾"
+      ],
+      "Cancel all active transfers": [
+        "取消所有進行中的轉移"
+      ],
+      "My files": [
+        "我的檔案"
+      ],
+      "You have no folders yet": [
+        "您還未有任何資料夾"
+      ],
+      "You have no files to share": [
+        "您沒有檔案可以分享"
+      ],
+      "Change layout": [
+        "變更版面佈置"
+      ],
+      "Your file is ready to be downloaded": [
+        "已準備好您的檔案，可供下載"
+      ],
+      "Download completed": [
+        "下載完成"
+      ],
+      "Download failed": [
+        "下載失敗"
+      ],
+      "Download canceled": [
+        "下載已取消"
+      ],
+      "Downloading": [
+        "正在下載"
+      ],
+      "Enter file password to download": [
+        "輸入檔案密碼以下載"
+      ],
+      "The link either does not exist or has expired": [
+        "連結不存在或已過期"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Restore your files": [
+        "還原您的檔案"
+      ],
+      "File recovery process": [
+        "檔案還原過程"
+      ],
+      "You have inaccessible files": [
+        "您有部份檔案無法存取"
+      ],
+      "Rename a folder": [
+        "重新命名資料夾"
+      ],
+      "Rename a file": [
+        "重新命名檔案"
+      ],
+      "File details": [
+        "檔案詳細資訊"
+      ],
+      "Folder details": [
+        "資料夾詳細資訊"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Uploaded by": [
+        "上載者"
+      ],
+      "Location": [
+        "位置"
+      ],
+      "Modified": [
+        "修改日期"
+      ],
+      "Type": [
+        "類型"
+      ],
+      "MIME type": [
+        "MIME 類型"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Shared": [
+        "共用"
+      ],
+      "# of accesses": [
+        "存取次數"
+      ],
+      "Create a new folder": [
+        "建立新資料夾"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Select link expiration date": [
+        "選取連結過期日期"
+      ],
+      "Select link expiration time": [
+        "選取連結過期時間"
+      ],
+      "Share via link": [
+        "透過連結分享"
+      ],
+      "Additional settings": [
+        "其他設定"
+      ],
+      "Manage secure link": [
+        "管理安全連結"
+      ],
+      "Stop sharing with everyone?": [
+        "是否停止分享給所有人？"
+      ],
+      "Discard changes?": [
+        "放棄變更？"
+      ],
+      "Discard": [
+        "放棄"
+      ],
+      "Files details": [
+        "檔案詳細資訊"
+      ],
+      "Number of files": [
+        "檔案數量"
+      ],
+      "Total size": [
+        "總大小"
+      ],
+      "Delete permanently": [
+        "永久刪除"
+      ],
+      "Stop sharing": [
+        "停止分享"
+      ]
+    },
     "Info": {
       "Loading": [
         "正在載入"
@@ -211,6 +1172,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "support team": [
+        "支援團隊"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -227,11 +1191,26 @@
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
       ],
-      "support team": [
-        "支援團隊"
-      ],
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
+      ],
+      "Unsupported file": [
+        "不支援的檔案"
+      ],
+      "No preview available": [
+        "無法預覽"
+      ],
+      "Preview": [
+        "預覽"
+      ],
+      "Loading preview": [
+        "正在載入預覽"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "此瀏覽器不支援預覽 PDF 文件。請下載檔案。"
+      ],
+      "of": [
+        "，共"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
@@ -262,24 +1241,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
-      ],
-      "Unsupported file": [
-        "不支援的檔案"
-      ],
-      "No preview available": [
-        "無法預覽"
-      ],
-      "Preview": [
-        "預覽"
-      ],
-      "Loading preview": [
-        "正在載入預覽"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "此瀏覽器不支援預覽 PDF 文件。請下載檔案。"
-      ],
-      "of": [
-        "，共"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 個成員"
@@ -434,6 +1395,30 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
       ],
@@ -581,7 +1566,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -669,30 +1654,6 @@
         ""
       ],
       "Expired": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
         ""
       ],
       "here": [
@@ -933,967 +1894,6 @@
         "我的連結"
       ]
     },
-    "Action": {
-      "Close": [
-        "關閉"
-      ],
-      "Confirm": [
-        "確認"
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Close modal": [
-        "關閉方塊"
-      ],
-      "Submit": [
-        "提交"
-      ],
-      "Use “${ label }” setting": [
-        "使用「${ label }」設定"
-      ],
-      "More info: ${ safeTitle }": [
-        "更多資訊：${ safeTitle }"
-      ],
-      "Close navigation": [
-        "關閉導覽"
-      ],
-      "Open navigation": [
-        "開啟導覽"
-      ],
-      "Go to panel ${ index }": [
-        "到面板 ${ index }"
-      ],
-      "Load image": [
-        "載入圖片"
-      ],
-      "Export": [
-        "匯出"
-      ],
-      "Delete": [
-        "刪除"
-      ],
-      "Edit": [
-        "編輯"
-      ],
-      "Remove": [
-        "刪除"
-      ],
-      "Download": [
-        "下載"
-      ],
-      "Use for sending": [
-        "用於寄送"
-      ],
-      "Trust": [
-        "信任"
-      ],
-      "Untrust": [
-        "取消信任"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Email settings": [
-        "電郵設定"
-      ],
-      "Contact group": [
-        "聯絡人群組"
-      ],
-      "Upload picture": [
-        "上傳圖片"
-      ],
-      "Next month": [
-        "下個月"
-      ],
-      "Previous month": [
-        "上個月"
-      ],
-      "Confirm opening of link ${ link }": [
-        "確認開啟連結 ${ link }"
-      ],
-      "refresh the page": [
-        "重新整理此頁面"
-      ],
-      "Signing out": [
-        "正在登出"
-      ],
-      "View invoice": [
-        "查看帳單"
-      ],
-      "Get verification code": [
-        "取得驗證碼"
-      ],
-      "Try another method": [
-        "換另一個方法試試"
-      ],
-      "Request new code": [
-        "要求新代碼"
-      ],
-      "Verify": [
-        "驗證"
-      ],
-      "Did not receive the code?": [
-        "沒收到代碼？"
-      ],
-      "Edit email address": [
-        "編輯電子郵件地址"
-      ],
-      "Edit phone number": [
-        "編輯電話號碼"
-      ],
-      "Details": [
-        "詳細資訊"
-      ],
-      "Share via link": [
-        "透過連結分享"
-      ],
-      "Sharing options": [
-        "分享選項"
-      ],
-      "Zoom out": [
-        "縮小"
-      ],
-      "Reset zoom": [
-        "重設縮放"
-      ],
-      "Zoom in": [
-        "放大"
-      ],
-      "Previous": [
-        "上一個"
-      ],
-      "Next": [
-        "下一個"
-      ],
-      "Save": [
-        "儲存"
-      ],
-      "Add": [
-        "新增"
-      ],
-      "Apply": [
-        "套用"
-      ],
-      "Hide advanced PGP settings": [
-        "隱藏進階 PGP 設定"
-      ],
-      "Show advanced PGP settings": [
-        "顯示進階 PGP 設定"
-      ],
-      "Done": [
-        "完成"
-      ],
-      "Clear data": [
-        "清除數據"
-      ],
-      "Recover data": [
-        "回復資料"
-      ],
-      "Click here.": [
-        "點擊此處。"
-      ],
-      "Re-sign": [
-        "重新簽署"
-      ],
-      "Add to group": [
-        "新增到群組"
-      ],
-      "Merge": [
-        "合併"
-      ],
-      "View": [
-        "瀏覽"
-      ],
-      "Unmark for deletion": [
-        "取消標記作刪除"
-      ],
-      "Mark for deletion": [
-        "標記作刪除"
-      ],
-      "Preview contact": [
-        "預覽聯絡人"
-      ],
-      "Continue": [
-        "繼續"
-      ],
-      "Delete contact": [
-        "刪除聯絡人"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "刪除 ${ selectedCount } 個聯絡人"
-      ],
-      "Deselect all": [
-        "取消全選"
-      ],
-      "Select all": [
-        "全選"
-      ],
-      "Compose": [
-        "撰寫"
-      ],
-      "Forward as attachment": [
-        "以附件形式轉寄"
-      ],
-      "Merge contacts": [
-        "合併聯絡人"
-      ],
-      "Add new contact": [
-        "新增聯絡人"
-      ],
-      "Add group": [
-        "新增群組"
-      ],
-      "Clear query": [
-        "清除查詢"
-      ],
-      "Add contact": [
-        "新增聯絡人"
-      ],
-      "import": [
-        "匯入"
-      ],
-      "Delete contact group": [
-        "刪除連絡人群組"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "刪除 ${ selectedCount } 個聯絡人群組"
-      ],
-      "Add new group": [
-        "新增群組"
-      ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
-      "Continue with Google": [
-        "使用 Google 繼續"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
-      ],
-      "Choose a file or drag it here": [
-        "選擇檔案或拖曳到此處"
-      ],
-      "Import": [
-        "匯入"
-      ],
-      "Close this banner": [
-        "關閉此橫幅"
-      ],
-      "Refresh the page": [
-        "重新整理此頁面"
-      ],
-      "enable desktop notifications": [
-        "啟用桌面通知"
-      ],
-      "here": [
-        "這裡"
-      ],
-      "Clear": [
-        "清除"
-      ],
-      "Add screenshot(s)": [
-        "新增螢幕截圖"
-      ],
-      "Hide info": [
-        "隱藏資訊"
-      ],
-      "Show info": [
-        "顯示資訊"
-      ],
-      "Copy email to clipboard": [
-        "複製電子郵件至剪貼簿"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
-      ],
-      "I have a question": [
-        "我要發問"
-      ],
-      "Request a feature": [
-        "功能請求"
-      ],
-      "Report a problem": [
-        "回報問題"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } 商店"
-      ],
-      "Switch account": [
-        "切換帳號"
-      ],
-      "Sign out": [
-        "登出"
-      ],
-      "Go to settings": [
-        "前往設定"
-      ],
-      "Beta Access": [
-        "測試版體驗"
-      ],
-      "Theme": [
-        "佈景主題"
-      ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
-      ],
-      "Mailbox density": [
-        "收件匣密度"
-      ],
-      "Composer mode": [
-        "撰寫器模式"
-      ],
-      "Get started": [
-        "入門指南"
-      ],
-      "Start setup": [
-        "開始設置"
-      ],
-      "Skip": [
-        "略過"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 佈景主題"
-      ],
-      "OK": [
-        "確定"
-      ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Try again": [
-        ""
-      ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
-      "Retry": [
-        ""
-      ],
-      "Loading verification": [
-        ""
-      ],
-      "Select plan": [
-        ""
-      ],
-      "Compare all features": [
-        ""
-      ],
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
-      "Pay": [
-        ""
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
-      ],
-      "Remove gift code": [
-        ""
-      ],
-      "annual billing": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
-      "Decrease": [
-        ""
-      ],
-      "Increase": [
-        ""
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "登入"
-      ],
-      "Cancel all uploads": [
-        "取消所有上傳"
-      ],
-      "New upload": [
-        "新增上載"
-      ],
-      "List layout": [
-        "清單版面佈置"
-      ],
-      "Grid layout": [
-        "格線版面佈置"
-      ],
-      "Rename": [
-        "重新命名"
-      ],
-      "Move to folder": [
-        "移動到資料夾"
-      ],
-      "Move to trash": [
-        "移動到垃圾桶"
-      ],
-      "Create new folder": [
-        "建立新資料夾"
-      ],
-      "Name: A to Z": [
-        "按名稱順序：A 到 Z"
-      ],
-      "Name: Z to A": [
-        "按名稱倒序：Z 到 A"
-      ],
-      "Modified date: new to old": [
-        "按修改日期順序：最新到最舊"
-      ],
-      "Modified date: old to new": [
-        "按修改日期倒序：最舊到最新"
-      ],
-      "Type: A to Z": [
-        "按類型順序：A 到 Z"
-      ],
-      "Type: Z to A": [
-        "按類型倒序：Z 到 A"
-      ],
-      "Size: small to large": [
-        "按大小順序：最小到最大"
-      ],
-      "Size: large to small": [
-        "按大小倒序：最大到最小"
-      ],
-      "Upload file": [
-        "上載檔案"
-      ],
-      "Upload folder": [
-        "上載資料夾"
-      ],
-      "Delete permanently": [
-        "永久刪除"
-      ],
-      "Restore from trash": [
-        "從垃圾桶中還原"
-      ],
-      "Empty trash": [
-        "清空垃圾桶"
-      ],
-      "Maximize transfers": [
-        "最大化轉移"
-      ],
-      "Minimize transfers": [
-        "最小化轉移"
-      ],
-      "Close transfers": [
-        "關閉轉移"
-      ],
-      "Pause download": [
-        "暫停下載"
-      ],
-      "Pause upload": [
-        "暫停上載"
-      ],
-      "Resume download": [
-        "恢復下載"
-      ],
-      "Resume upload": [
-        "恢復上載"
-      ],
-      "Cancel download": [
-        "取消下載"
-      ],
-      "Cancel upload": [
-        "取消上載"
-      ],
-      "Restart download": [
-        "重新開始下載"
-      ],
-      "Restart upload": [
-        "重新開始上載"
-      ],
-      "Remove from this list": [
-        "從此清單中移除"
-      ],
-      "Share": [
-        "分享"
-      ],
-      "Create": [
-        "建立"
-      ],
-      "Preview": [
-        "預覽"
-      ],
-      "Stop sharing": [
-        "停止分享"
-      ],
-      "Show shared link details": [
-        "顯示共享鏈結詳細說明"
-      ],
-      "Share file": [
-        "分享檔案"
-      ],
-      "Start recovering": [
-        "開始恢復"
-      ],
-      "View more": [
-        "查看更多"
-      ],
-      "Move": [
-        "移動"
-      ],
-      "Copy link": [
-        "複製連結"
-      ],
-      "Create link": [
-        "建立連結"
-      ],
-      "Undo": [
-        "復原"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "開啟動作下拉選單"
-      ],
-      "Upgrade required": [
-        "需要升級"
-      ],
-      "Email settings": [
-        "電子郵件設定"
-      ],
-      "Contact group": [
-        "聯絡人群組"
-      ],
-      "Link confirmation": [
-        "連結確認"
-      ],
-      "Keyboard Shortcuts": [
-        "鍵盤快捷鍵"
-      ],
-      "What's new": [
-        "最近更新"
-      ],
-      "Invalid verification code": [
-        "無效的驗證碼"
-      ],
-      "Request new verification code": [
-        "要求新的驗證碼"
-      ],
-      "Human verification": [
-        "真人驗證"
-      ],
-      "Edit contact group": [
-        "編輯聯絡人群組"
-      ],
-      "Create new group": [
-        "建立新群組"
-      ],
-      "Add to ${ groupName }": [
-        "新增至 ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "新增至 ${ groupCount } 個群組"
-      ],
-      "Email settings (${ emailAddress })": [
-        "電子郵件設定 (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "刪除 ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "刪除 ${ count } 個聯絡人群組"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } 個成員"
-      ],
-      "Edit image": [
-        "編輯圖片"
-      ],
-      "Edit contact": [
-        "編輯聯絡人"
-      ],
-      "Create contact": [
-        "建立聯絡人"
-      ],
-      "Delete ${ count } contact": [
-        "刪除 ${ count } 個聯絡人"
-      ],
-      "Clearing data": [
-        "清除資料中"
-      ],
-      "Warning": [
-        "警告"
-      ],
-      "Recover data": [
-        "恢復資料"
-      ],
-      "Re-signing contacts": [
-        "正在重新簽署聯絡人"
-      ],
-      "Re-sign all contacts": [
-        "重新簽署所有聯絡人"
-      ],
-      "Exporting contacts": [
-        "匯出聯絡人"
-      ],
-      "Other names": [
-        "其他名稱"
-      ],
-      "Email addresses": [
-        "電子郵件地址"
-      ],
-      "Phone numbers": [
-        "電話號碼"
-      ],
-      "Addresses": [
-        "地址"
-      ],
-      "Other information": [
-        "其他資訊"
-      ],
-      "Contact Details": [
-        "聯絡人詳細資料"
-      ],
-      "Merging contacts": [
-        "合併聯絡人"
-      ],
-      "Merge contacts": [
-        "合併聯絡人"
-      ],
-      "Deleting contacts": [
-        "正在刪除聯絡人"
-      ],
-      "View contacts": [
-        "檢視聯絡人"
-      ],
-      "Contacts": [
-        "聯絡人"
-      ],
-      "Groups": [
-        "群組"
-      ],
-      "Settings": [
-        "設定"
-      ],
-      "Select action to take on contact group": [
-        "選擇對聯絡人群組的動作"
-      ],
-      "Add contact group name": [
-        "新增聯絡人群組名稱"
-      ],
-      "Select contact group": [
-        "選擇聯絡人群組"
-      ],
-      "Import groups": [
-        "匯入群組"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
-      ],
-      "Report a problem": [
-        "回報問題"
-      ],
-      "Open help menu": [
-        "開啟說明功能表"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Open settings menu": [
-        "開啟設定功能表"
-      ],
-      "Select a theme": [
-        "選擇佈景主題"
-      ],
-      "Confirm loss of Proton bonuses": [
-        ""
-      ],
-      "Unsupported browser": [
-        ""
-      ],
-      "Card verification": [
-        ""
-      ],
-      "Payment verification": [
-        ""
-      ],
-      "Processing...": [
-        ""
-      ],
-      "Card verification in progress": [
-        ""
-      ],
-      "Payment verification in progress": [
-        ""
-      ],
-      "PayPal verification failed": [
-        ""
-      ],
-      "3-D Secure verification failed": [
-        ""
-      ],
-      "Error": [
-        ""
-      ],
-      "ZIP / postal code": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Currency": [
-        ""
-      ],
-      "Billing cycle": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
-      "Processing": [
-        ""
-      ],
-      "Apply gift code": [
-        ""
-      ],
-      "Subtotal": [
-        ""
-      ],
-      "Coupon discount": [
-        ""
-      ],
-      "Total (monthly)": [
-        ""
-      ],
-      "Credits": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Amount due": [
-        ""
-      ],
-      "Cancel subscription": [
-        ""
-      ],
-      "Network error": [
-        ""
-      ],
-      "Select a plan": [
-        ""
-      ],
-      "Customize your plan": [
-        ""
-      ],
-      "Checkout": [
-        ""
-      ],
-      "Plan summary": [
-        ""
-      ],
-      "${ appName } customization": [
-        ""
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "請再次登入以繼續"
-      ],
-      "Account suspended": [
-        "帳號被暫停"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "Enter your password": [
-        "請輸入您的密碼"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 鍵盤快捷鍵"
-      ],
-      "Mailbox density": [
-        "收件匣密度"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
-      ],
-      "Composer mode": [
-        "撰寫器模式"
-      ],
-      "Beta Access": [
-        "測試版體驗"
-      ],
-      "Duplicate folder found": [
-        "發現重複的資料夾"
-      ],
-      "Duplicate file found": [
-        "發現重複的資料夾"
-      ],
-      "Drop to upload": [
-        "拖放到此處以上載"
-      ],
-      "Change layout": [
-        "變更版面佈置"
-      ],
-      "Show actions": [
-        "顯示動作"
-      ],
-      "Sort files/folders": [
-        "排序檔案/資料夾"
-      ],
-      "Trash": [
-        "垃圾桶"
-      ],
-      "Empty trash": [
-        "清空垃圾桶"
-      ],
-      "Cancel all active transfers": [
-        "取消所有進行中的轉移"
-      ],
-      "My files": [
-        "我的檔案"
-      ],
-      "You have no folders yet": [
-        "您還未有任何資料夾"
-      ],
-      "You have no files to share": [
-        "您沒有檔案可以分享"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        "已準備好您的檔案，可供下載"
-      ],
-      "Download completed": [
-        "下載完成"
-      ],
-      "Download failed": [
-        "下載失敗"
-      ],
-      "Download canceled": [
-        "下載已取消"
-      ],
-      "Downloading": [
-        "正在下載"
-      ],
-      "Enter file password to download": [
-        "輸入檔案密碼以下載"
-      ],
-      "The link either does not exist or has expired": [
-        "連結不存在或已過期"
-      ],
-      "Restore your files": [
-        "還原您的檔案"
-      ],
-      "File recovery process": [
-        "檔案還原過程"
-      ],
-      "You have inaccessible files": [
-        "您有部份檔案無法存取"
-      ],
-      "Rename a folder": [
-        "重新命名資料夾"
-      ],
-      "Rename a file": [
-        "重新命名檔案"
-      ],
-      "File details": [
-        "檔案詳細資訊"
-      ],
-      "Folder details": [
-        "資料夾詳細資訊"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "Uploaded by": [
-        "上載者"
-      ],
-      "Location": [
-        "位置"
-      ],
-      "Modified": [
-        "修改日期"
-      ],
-      "Type": [
-        "類型"
-      ],
-      "MIME type": [
-        "MIME 類型"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Shared": [
-        "共用"
-      ],
-      "# of accesses": [
-        "存取次數"
-      ],
-      "Create a new folder": [
-        "建立新資料夾"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Select link expiration date": [
-        "選取連結過期日期"
-      ],
-      "Select link expiration time": [
-        "選取連結過期時間"
-      ],
-      "Share via link": [
-        "透過連結分享"
-      ],
-      "Additional settings": [
-        "其他設定"
-      ],
-      "Manage secure link": [
-        "管理安全連結"
-      ],
-      "Stop sharing with everyone?": [
-        "是否停止分享給所有人？"
-      ],
-      "Discard changes?": [
-        "放棄變更？"
-      ],
-      "Discard": [
-        "放棄"
-      ],
-      "Files details": [
-        "檔案詳細資訊"
-      ],
-      "Number of files": [
-        "檔案數量"
-      ],
-      "Total size": [
-        "總大小"
-      ],
-      "Delete permanently": [
-        "永久刪除"
-      ],
-      "Stop sharing": [
-        "停止分享"
-      ]
-    },
     "Label": {
       "Copy": [
         "複製"
@@ -2003,6 +2003,12 @@
       "Display name": [
         "顯示名稱"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Name on card": [
         ""
       ],
@@ -2049,12 +2055,6 @@
         ""
       ],
       "Payer": [
-        ""
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
         ""
       ],
       "Cancel": [
@@ -2144,6 +2144,9 @@
       "File": [
         "檔案"
       ],
+      "Get your own ProtonDrive": [
+        ""
+      ],
       "Report abuse": [
         "檢舉濫用"
       ],
@@ -2158,11 +2161,6 @@
       ],
       "Set expiration date": [
         "設定到期日"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此金鑰不適用於加密"
       ]
     },
     "Placeholder": {
@@ -2238,6 +2236,11 @@
         "${ minutes } 分鐘"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此金鑰不適用於加密"
+      ]
+    },
     "Link": {
       "Learn more": [
         "瞭解更多"
@@ -2251,14 +2254,14 @@
       "Upgrade account": [
         "升級帳號"
       ],
-      "clearing your browser cache": [
-        "清除瀏覽器快取"
-      ],
       "Upgrade": [
         "升級"
       ],
       "Go to subscription plans": [
         "前往訂閱方案"
+      ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
       ],
       "click here": [
         ""
@@ -2472,10 +2475,10 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告並非端對端加密，請勿傳送任何敏感資訊。"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+      "Are you sure you want to discard your import?": [
         ""
       ],
-      "Are you sure you want to discard your import?": [
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ]
     },
@@ -2959,6 +2962,45 @@
         "${ appName } 的新版本可供使用。${ reloadButton }。"
       ]
     },
+    "Text": {
+      "Settings": [
+        "設定"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "開"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "關"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "欄"
+      ],
+      "Row": [
+        "列"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "舒適"
+      ],
+      "Compact": [
+        "精簡"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "最大化"
+      ],
+      "Normal": [
+        "一般"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "未選取影像"
@@ -3062,45 +3104,6 @@
         "附加螢幕截圖"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "開"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "關"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
-      ]
-    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "當您寄送電子郵件、發出事件邀請或共享檔案給其他人時，對方會看到您這個名稱。"
@@ -3131,6 +3134,27 @@
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
       ]
     },
     "Info for cash payment method": {
@@ -3569,43 +3593,9 @@
         ""
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "上載"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版體驗讓您可在公開發布前使用 ProtonMail、Proton Calendar 與 Proton Drive 的測試版。這代表您可率先嘗試新產品、取得新的更新以及使用新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "若您遇上問題，您還是可以停用測試版體驗。"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "請注意：按一下「套用」按鈕後，服務將會重新載入。"
       ]
     },
     "Label to change density": {
@@ -3630,6 +3620,33 @@
       ],
       "Maximized": [
         "最大化"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "測試版體驗讓您可在公開發布前使用 ProtonMail、Proton Calendar 與 Proton Drive 的測試版。這代表您可率先嘗試新產品、取得新的更新以及使用新功能。"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "若您遇上問題，您還是可以停用測試版體驗。"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "請注意：按一下「套用」按鈕後，服務將會重新載入。"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "位元組"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Contact field label": {
@@ -3744,20 +3761,6 @@
       ],
       "Address": [
         "地址"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "位元組"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Validation": {

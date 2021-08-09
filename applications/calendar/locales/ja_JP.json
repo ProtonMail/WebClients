@@ -828,7 +828,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1870,10 +1870,285 @@
         ""
       ]
     },
-    "Action": {
-      "Close": [
-        "閉じる"
+    "Label": {
+      "Copy": [
+        "コピー"
       ],
+      "Reveal password": [
+        "パスワードを表示"
+      ],
+      "Hide password": [
+        "パスワードを非表示"
+      ],
+      "Street address": [
+        ""
+      ],
+      "City": [
+        "市町村"
+      ],
+      "Region": [
+        ""
+      ],
+      "Postal code": [
+        "郵便番号"
+      ],
+      "Country": [
+        "国名"
+      ],
+      "Post office box": [
+        ""
+      ],
+      "Extended address": [
+        ""
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "メールアドレス"
+      ],
+      "Phone number": [
+        "電話番号"
+      ],
+      "Verification code": [
+        "検証コード"
+      ],
+      "Enter the 6-digit code": [
+        "6 桁のコードを入力"
+      ],
+      "Add email address": [
+        ""
+      ],
+      "Email format": [
+        ""
+      ],
+      "Add image URL": [
+        ""
+      ],
+      "Upload picture": [
+        ""
+      ],
+      "Add to group": [
+        ""
+      ],
+      "Encrypt emails": [
+        ""
+      ],
+      "Sign emails": [
+        ""
+      ],
+      "Cryptographic scheme": [
+        ""
+      ],
+      "Public keys": [
+        "公開鍵"
+      ],
+      "Automatically save contacts": [
+        ""
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Operating system": [
+        "OS"
+      ],
+      "Operating system version": [
+        "OS のバージョン"
+      ],
+      "Proton username": [
+        "Proton ユーザー名"
+      ],
+      "Category": [
+        "カテゴリー"
+      ],
+      "What happened?": [
+        "どのような症状がでましたか？"
+      ],
+      "System information": [
+        "システム情報"
+      ],
+      "Browser": [
+        "ブラウザ"
+      ],
+      "Browser version": [
+        "ブラウザのバージョン"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "表示名"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Password": [
+        "パスワード"
+      ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
+      ],
+      "Two-factor authentication code": [
+        "2 要素認証コード"
+      ],
+      "Username or ProtonMail address": [
+        "ユーザー名または ProtonMail アドレス"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "キーボードショートカット"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "詳細"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "終日"
+      ],
+      "Repeat on": [
+        "繰り返し対象の曜日"
+      ],
+      "Repeat every": [
+        "繰り返し間隔"
+      ],
+      "Ends": [
+        "繰り返しの終了条件"
+      ],
+      "Organizer": [
+        "主催者"
+      ],
+      "Optional": [
+        "オプション"
+      ],
+      "Time of the event": [
+        ""
+      ],
+      "Event time": [
+        ""
+      ],
+      "Event title": [
+        "予定のタイトル"
+      ],
+      "Event frequency": [
+        "予定の繰り返し条件"
+      ],
+      "Event location": [
+        "予定の場所"
+      ],
+      "Event notifications": [
+        "予定の通知"
+      ],
+      "Participants": [
+        "参加者"
+      ],
+      "Your calendars": [
+        "あなたのカレンダー"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "画面を閉じる"
       ],
@@ -1892,6 +2167,9 @@
       "Use “${ label }” setting": [
         ""
       ],
+      "Close": [
+        "閉じる"
+      ],
       "Close navigation": [
         "ナビゲーションを閉じる"
       ],
@@ -1901,11 +2179,11 @@
       "Go to panel ${ index }": [
         "パネル ${ index } へ移動"
       ],
-      "refresh the page": [
-        "ページを更新"
-      ],
       "Load image": [
         "画像を読み込む"
+      ],
+      "refresh the page": [
+        "ページを更新"
       ],
       "Export": [
         "エクスポート"
@@ -2132,9 +2410,6 @@
       "OK": [
         "OK"
       ],
-      "Log in": [
-        "ログイン"
-      ],
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
       ],
@@ -2191,6 +2466,9 @@
       ],
       "Back": [
         "戻る"
+      ],
+      "Log in": [
+        "ログイン"
       ],
       "Remove bonuses": [
         ""
@@ -2335,6 +2613,137 @@
       ],
       "Close popover": [
         "ポップオーバーを閉じる"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "より詳しく"
+      ],
+      "Request an invite": [
+        ""
+      ],
+      "clearing your browser cache": [
+        ""
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        ""
+      ],
+      "Upgrade account": [
+        "アカウントをアップグレード"
+      ],
+      "Calendars": [
+        "カレンダー"
+      ],
+      "My calendars": [
+        "マイカレンダー"
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "例: "
+      ],
+      "Start typing an email address": [
+        ""
+      ],
+      "Image URL": [
+        "画像の URL"
+      ],
+      "Filter groups": [
+        ""
+      ],
+      "Search for name or email": [
+        ""
+      ],
+      "Search for group name": [
+        ""
+      ],
+      "Name": [
+        "名前"
+      ],
+      "OS name": [
+        "OS の名前"
+      ],
+      "OS version": [
+        "OS のバージョン"
+      ],
+      "Proton username": [
+        "Proton ユーザー名"
+      ],
+      "A way to contact you": [
+        "連絡手段"
+      ],
+      "Please describe the problem and include any error messages": [
+        "問題について、エラーメッセージ等も含めてご記入下さい"
+      ],
+      "Browser name": [
+        "ブラウザの名前"
+      ],
+      "Browser version": [
+        "ブラウザのバージョン"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "例: Julia Smith"
+      ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "タイトルを入力"
+      ],
+      "Add location": [
+        "場所を入力"
+      ],
+      "Add description": [
+        "詳細を入力"
+      ],
+      "Add participants": [
+        "参加者を追加"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分"
       ]
     },
     "Title": {
@@ -2488,18 +2897,6 @@
       "Select a theme": [
         ""
       ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
-      "Account suspended": [
-        "アカウントが停止されました"
-      ],
-      "Enter your username or ProtonMail email address": [
-        ""
-      ],
-      "Enter your password": [
-        ""
-      ],
       "Open help menu": [
         "ヘルプメニューを開く"
       ],
@@ -2516,6 +2913,18 @@
         ""
       ],
       "Give feedback": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "続行するには再度ログインしてください"
+      ],
+      "Account suspended": [
+        "アカウントが停止されました"
+      ],
+      "Enter your username or ProtonMail email address": [
+        ""
+      ],
+      "Enter your password": [
         ""
       ],
       "Confirm loss of Proton bonuses": [
@@ -2623,13 +3032,13 @@
       "Beta Access": [
         ""
       ],
+      "Select the way to send this notification": [
+        ""
+      ],
       "Select when you want this notification to be sent": [
         ""
       ],
       "Select the time to send this notification": [
-        ""
-      ],
-      "Select the way to send this notification": [
         ""
       ],
       "Add another notification to remind you of this event": [
@@ -2766,415 +3175,6 @@
       ],
       "CANCELLED": [
         ""
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "コピー"
-      ],
-      "Reveal password": [
-        "パスワードを表示"
-      ],
-      "Hide password": [
-        "パスワードを非表示"
-      ],
-      "Street address": [
-        ""
-      ],
-      "City": [
-        "市町村"
-      ],
-      "Region": [
-        ""
-      ],
-      "Postal code": [
-        "郵便番号"
-      ],
-      "Country": [
-        "国名"
-      ],
-      "Post office box": [
-        ""
-      ],
-      "Extended address": [
-        ""
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "メールアドレス"
-      ],
-      "Phone number": [
-        "電話番号"
-      ],
-      "Verification code": [
-        "検証コード"
-      ],
-      "Enter the 6-digit code": [
-        "6 桁のコードを入力"
-      ],
-      "Add email address": [
-        ""
-      ],
-      "Email format": [
-        ""
-      ],
-      "Add image URL": [
-        ""
-      ],
-      "Upload picture": [
-        ""
-      ],
-      "Add to group": [
-        ""
-      ],
-      "Encrypt emails": [
-        ""
-      ],
-      "Sign emails": [
-        ""
-      ],
-      "Cryptographic scheme": [
-        ""
-      ],
-      "Public keys": [
-        "公開鍵"
-      ],
-      "Automatically save contacts": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Export contacts": [
-        ""
-      ],
-      "Operating system": [
-        "OS"
-      ],
-      "Operating system version": [
-        "OS のバージョン"
-      ],
-      "Proton username": [
-        "Proton ユーザー名"
-      ],
-      "Category": [
-        "カテゴリー"
-      ],
-      "What happened?": [
-        "どのような症状がでましたか？"
-      ],
-      "System information": [
-        "システム情報"
-      ],
-      "Browser": [
-        "ブラウザ"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "キャンセル"
-      ],
-      "Submit": [
-        "送信"
-      ],
-      "Password": [
-        "パスワード"
-      ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
-      "Two-factor authentication code": [
-        "2 要素認証コード"
-      ],
-      "Username or ProtonMail address": [
-        "ユーザー名または ProtonMail アドレス"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "表示名"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "詳細"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "終日"
-      ],
-      "Repeat on": [
-        "繰り返し対象の曜日"
-      ],
-      "Repeat every": [
-        "繰り返し間隔"
-      ],
-      "Ends": [
-        "繰り返しの終了条件"
-      ],
-      "Organizer": [
-        "主催者"
-      ],
-      "Optional": [
-        "オプション"
-      ],
-      "Time of the event": [
-        ""
-      ],
-      "Event time": [
-        ""
-      ],
-      "Event title": [
-        "予定のタイトル"
-      ],
-      "Event frequency": [
-        "予定の繰り返し条件"
-      ],
-      "Event location": [
-        "予定の場所"
-      ],
-      "Event notifications": [
-        "予定の通知"
-      ],
-      "Participants": [
-        "参加者"
-      ],
-      "Your calendars": [
-        "あなたのカレンダー"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "より詳しく"
-      ],
-      "Request an invite": [
-        ""
-      ],
-      "clearing your browser cache": [
-        ""
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        ""
-      ],
-      "Upgrade account": [
-        "アカウントをアップグレード"
-      ],
-      "Calendars": [
-        "カレンダー"
-      ],
-      "My calendars": [
-        "マイカレンダー"
-      ],
-      "Other calendars": [
-        "他のカレンダー"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "例: "
-      ],
-      "Start typing an email address": [
-        ""
-      ],
-      "Image URL": [
-        "画像の URL"
-      ],
-      "Filter groups": [
-        ""
-      ],
-      "Search for name or email": [
-        ""
-      ],
-      "Search for group name": [
-        ""
-      ],
-      "Name": [
-        "名前"
-      ],
-      "OS name": [
-        "OS の名前"
-      ],
-      "OS version": [
-        "OS のバージョン"
-      ],
-      "Proton username": [
-        "Proton ユーザー名"
-      ],
-      "A way to contact you": [
-        "連絡手段"
-      ],
-      "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入下さい"
-      ],
-      "Browser name": [
-        "ブラウザの名前"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
-      ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "例: Julia Smith"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "タイトルを入力"
-      ],
-      "Add location": [
-        "場所を入力"
-      ],
-      "Add description": [
-        "詳細を入力"
-      ],
-      "Add participants": [
-        "参加者を追加"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } 時間"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分"
       ]
     },
     "Storage": {
@@ -3417,7 +3417,7 @@
       "Preference saved": [
         "設定が保存されました。"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4462,6 +4462,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         ""
@@ -4483,17 +4494,6 @@
         ""
       ],
       "Maximized": [
-        ""
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
         ""
       ]
     },
@@ -4540,6 +4540,14 @@
         "時間前"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         ""
@@ -4547,14 +4555,6 @@
     },
     "Notification time input": {
       "at": [
-        ""
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        ""
-      ],
-      "by email": [
         ""
       ]
     },
@@ -4634,6 +4634,11 @@
       ],
       "${ value } week after at ${ time }": [
         "${ value } 週間後の ${ time }"
+      ]
+    },
+    "Calendar status": {
+      "not synced": [
+        ""
       ]
     },
     "Disabled calendar name suffix": {
@@ -4723,6 +4728,11 @@
       ],
       "This event has been cancelled": [
         "この予定はキャンセルされました"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {

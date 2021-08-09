@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
-      ],
       "Unknown error": [
         "Ukendt fejl"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Feltet er påkrævet"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
       "The composer failed to load.": [
         "Skriveværktøjet blev ikke indlæst."
       ],
       "Please refresh the page.": [
         "Genindlæs venligst siden."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Kan ikke bekræfte e-mail, prøv igen senere"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Prøv at verificere igen og sørg for at tilladelserne er angivet korrekt."
       ],
-      "File has no contents to preview": [
-        "Filen har intet indhold at forhåndsvise"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Forkert adgangskode til postkasse, forsøg igen"
       ],
       "Incorrect login credentials. Please try again": [
         "Forkerte loginoplysninger. Prøv venligst igen"
+      ],
+      "File has no contents to preview": [
+        "Filen har intet indhold at forhåndsvise"
       ],
       "Process aborted": [
         "Proces afbrudt"
@@ -203,6 +203,12 @@
       "Request timed out.": [
         "Forespørgsel fik timeout."
       ],
+      "Signature verification failed": [
+        "Bekræftelse af signatur mislykkedes"
+      ],
+      "Could not find address ${ email }.": [
+        "Kunne ikke finde adresse ${ email }."
+      ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
       ],
@@ -226,12 +232,6 @@
       ],
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
-      ],
-      "Signature verification failed": [
-        "Bekræftelse af signatur mislykkedes"
-      ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -350,23 +350,26 @@
       "Close": [
         "Luk"
       ],
-      "Confirm": [
-        "Bekræft"
+      "Close modal": [
+        "Luk vindue"
       ],
       "Cancel": [
         "Annullér"
       ],
-      "Close modal": [
-        "Luk vindue"
-      ],
       "Submit": [
         "Indsend"
+      ],
+      "Confirm": [
+        "Bekræft"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -481,9 +484,6 @@
       ],
       "Underline": [
         "Understreg"
-      ],
-      "refresh the page": [
-        "opdater siden"
       ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
@@ -653,9 +653,6 @@
       "Next": [
         "Næste"
       ],
-      "Signing out": [
-        "Logger ud"
-      ],
       "Clear": [
         "Ryd"
       ],
@@ -686,6 +683,12 @@
       "OK": [
         "Ok"
       ],
+      "Signing out": [
+        "Logger ud"
+      ],
+      "Log in": [
+        "Log ind"
+      ],
       "Details": [
         "Detaljer"
       ],
@@ -706,9 +709,6 @@
       ],
       "Previous": [
         "Forrige"
-      ],
-      "Log in": [
-        "Log ind"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -877,6 +877,15 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Føj til ${ CALENDAR_APP_NAME }"
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Open shop": [
+        "Åbn butik"
+      ],
+      "Open calendar": [
+        "Åbn kalender"
       ],
       "Send anyway": [
         "Send alligevel"
@@ -1196,15 +1205,6 @@
       ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
-      ],
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Open shop": [
-        "Åbn butik"
-      ],
-      "Open calendar": [
-        "Åbn kalender"
       ]
     },
     "Title": {
@@ -1725,6 +1725,9 @@
       "Loading": [
         "Indlæser"
       ],
+      "support team": [
+        "supportteam"
+      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -1821,9 +1824,6 @@
       ],
       "Plain text": [
         "Almindelig tekst"
-      ],
-      "support team": [
-        "supportteam"
       ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
@@ -1971,9 +1971,6 @@
         "${ addressCount } e-mailadresse",
         "${ addressCount } e-mailadresser"
       ],
-      "Loading ${ appName }": [
-        "Indlæser ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Skærmfoto(-s) vedhæftet"
       ],
@@ -2004,6 +2001,18 @@
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
       ],
+      "Loading ${ appName }": [
+        "Indlæser ${ appName }"
+      ],
+      "here": [
+        "hér"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
+      ],
       "Unsupported file": [
         "Ikke-understøttet fil"
       ],
@@ -2021,15 +2030,6 @@
       ],
       "of": [
         "af"
-      ],
-      "here": [
-        "hér"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
@@ -2221,8 +2221,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Faktureres ved udløbet af din aktuelle faktureringscyklus (fornys den ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Du skal fjerne eventuelle ekstra kalendere og delte kalenderlinks, før du kan annullere dit abonnement. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
       ],
       "No payment is required at this time.": [
         "Der kræves ingen betaling på nuværende tidspunkt."
@@ -2582,13 +2582,13 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Rapporteres en besked som et phishing-forsøg videresendes beskeden til os, så vi kan analysere den og forbedre vores filtre. Det betyder, at vi vil kunne se hele beskedindholdet."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } fil vedhæftet",
-        "${ numPureAttachments } filer vedhæftet"
+      "${ pureAttachmentsCount } file attached": [
+        "",
+        ""
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } indlejret billede",
-        "${ numEmbedded } indlejrede billeder"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "",
+        ""
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "En anmodning om at afmelde fra denne mailingliste vil blive sendt til afsenderen af nyhedsbrevet og automatisk behandlet."
@@ -3346,6 +3346,36 @@
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
+      "Inbox": [
+        "Indbakke"
+      ],
+      "Drafts": [
+        "Kladder"
+      ],
+      "Sent": [
+        "Sendt"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Alle mails"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Starred": [
+        "Stjernemarkeret"
+      ],
+      "Outbox": [
+        "Udbakke"
+      ],
+      "Scheduled": [
+        "Planlagt"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Du skal aktivere dine kalendernøgler for at tilføje denne begivenhed"
       ],
@@ -3421,33 +3451,6 @@
       "Add label": [
         "Tilføj etiket"
       ],
-      "Inbox": [
-        "Indbakke"
-      ],
-      "Drafts": [
-        "Kladder"
-      ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
-      "Starred": [
-        "Stjernemarkeret"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Papirkurv"
-      ],
-      "All mail": [
-        "Alle mails"
-      ],
       "Folders": [
         "Mapper"
       ],
@@ -3459,9 +3462,6 @@
       ],
       "Manage your labels": [
         "Administrer dine etiketter"
-      ],
-      "Outbox": [
-        "Udbakke"
       ]
     },
     "Placeholder": {
@@ -4297,17 +4297,6 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
-      ],
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
@@ -4447,6 +4436,41 @@
         "Rediger og planlæg igen"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applikationer"
+      ],
+      "Go to ${ title }": [
+        "Gå til ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Gå til ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maksimeret"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Overfør"
@@ -4493,30 +4517,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Hvis du vil deaktivere beta, skal du åbne indstillingsrullemenuen og klikke på \"Beta-adgang\"."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maksimeret"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,6 +5180,26 @@
         "stjernemarkeret"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Navn"
@@ -5294,24 +5314,9 @@
         "Adresse"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Adgangskode skal indeholde mindst ${ length } tegn",
-        "Adgangskode skal indeholde mindst ${ length } tegn"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5323,11 +5328,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "D. ${ date }, ${ name } skrev ${ address }:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {

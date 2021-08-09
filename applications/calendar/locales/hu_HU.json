@@ -842,7 +842,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1922,10 +1922,285 @@
         "Fwd:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Bezárás"
+    "Label": {
+      "Copy": [
+        "Másolás"
       ],
+      "Reveal password": [
+        "A jelszó felfedése"
+      ],
+      "Hide password": [
+        "A jelszó elrejtése"
+      ],
+      "Street address": [
+        "Utca, házszám"
+      ],
+      "City": [
+        "Település"
+      ],
+      "Region": [
+        "Régió"
+      ],
+      "Postal code": [
+        "Irányítószám"
+      ],
+      "Country": [
+        "Ország"
+      ],
+      "Post office box": [
+        "Postafiók"
+      ],
+      "Extended address": [
+        "Bővebb cím"
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "Verification code": [
+        "Ellenőrző kód"
+      ],
+      "Enter the 6-digit code": [
+        "Írja be a hatjegyű kódot"
+      ],
+      "Add email address": [
+        "E-mail cím hozzáadása"
+      ],
+      "Email format": [
+        "E-mail formátum"
+      ],
+      "Add image URL": [
+        "Kép URL megadása"
+      ],
+      "Upload picture": [
+        "Kép feltöltése"
+      ],
+      "Add to group": [
+        "Hozzáadás csoporthoz"
+      ],
+      "Encrypt emails": [
+        "Üzenetek titkosítása"
+      ],
+      "Sign emails": [
+        "Üzenetek aláírása"
+      ],
+      "Cryptographic scheme": [
+        "Titkosítási séma"
+      ],
+      "Public keys": [
+        "Nyilvános kulcsok"
+      ],
+      "Automatically save contacts": [
+        "Névjegyek automatikus létrehozása"
+      ],
+      "Import contacts": [
+        "Névjegyek importálása"
+      ],
+      "Export contacts": [
+        "Névjegyek exportálása"
+      ],
+      "Operating system": [
+        "Operációs rendszer"
+      ],
+      "Operating system version": [
+        "Az operációs rendszer verziója"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "Category": [
+        "Kategória"
+      ],
+      "What happened?": [
+        "Mi történt?"
+      ],
+      "System information": [
+        "Rendszerinfromáció"
+      ],
+      "Browser": [
+        "Böngésző"
+      ],
+      "Browser version": [
+        "A böngésző verziója"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Megjelenített név"
+      ],
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Two-factor authentication code": [
+        "Kétlépcsős hitelesítő kód"
+      ],
+      "Username or ProtonMail address": [
+        "Felhasználónév vagy ProtonMail cím"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        ""
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Leírás"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Egész nap"
+      ],
+      "Repeat on": [
+        "Ismételődés"
+      ],
+      "Repeat every": [
+        "Ismétlődik minden"
+      ],
+      "Ends": [
+        "Befejező dátum"
+      ],
+      "Organizer": [
+        "Szervező"
+      ],
+      "Optional": [
+        "Választható"
+      ],
+      "Time of the event": [
+        "Az esemény ideje"
+      ],
+      "Event time": [
+        "Esemény időpont"
+      ],
+      "Event title": [
+        "Esemény neve"
+      ],
+      "Event frequency": [
+        "Esemény gyakorisága"
+      ],
+      "Event location": [
+        "Esemény helye"
+      ],
+      "Event notifications": [
+        "Esemény értesítések"
+      ],
+      "Participants": [
+        "Résztvevők"
+      ],
+      "Your calendars": [
+        "Az ön naptárai"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Ablak bezárása"
       ],
@@ -1944,6 +2219,9 @@
       "Use “${ label }” setting": [
         ""
       ],
+      "Close": [
+        "Bezárás"
+      ],
       "Close navigation": [
         "Navigáció bezárása"
       ],
@@ -1953,11 +2231,11 @@
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
-      "refresh the page": [
-        "az oldal frissítése"
-      ],
       "Load image": [
         "Kép betöltése"
+      ],
+      "refresh the page": [
+        "az oldal frissítése"
       ],
       "Export": [
         "Exportálás"
@@ -2186,9 +2464,6 @@
       "OK": [
         ""
       ],
-      "Log in": [
-        "Belépés"
-      ],
       "Copy email to clipboard": [
         ""
       ],
@@ -2245,6 +2520,9 @@
       ],
       "Back": [
         "Vissza"
+      ],
+      "Log in": [
+        "Belépés"
       ],
       "Remove bonuses": [
         ""
@@ -2389,6 +2667,139 @@
       ],
       "Close popover": [
         "Ablak bezárása"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Tudjon meg többet"
+      ],
+      "Request an invite": [
+        "Meghívó kérése"
+      ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Számla befizetése"
+      ],
+      "Upgrade account": [
+        "Csomag váltása"
+      ],
+      "Calendars": [
+        "Naptárak"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Pl., "
+      ],
+      "Start typing an email address": [
+        ""
+      ],
+      "Image URL": [
+        ""
+      ],
+      "Filter groups": [
+        ""
+      ],
+      "Search for name or email": [
+        ""
+      ],
+      "Search for group name": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "OS name": [
+        "Operációs rendszer neve"
+      ],
+      "OS version": [
+        "Operációs rendszer verzió"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "A way to contact you": [
+        "Kapcsolatfelvételi lehetőség"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Browser name": [
+        "Böngésző neve"
+      ],
+      "Browser version": [
+        "Böngésző verziója"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "pl. Kovács János"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Cím megadása"
+      ],
+      "Add location": [
+        "Hely megadása"
+      ],
+      "Add description": [
+        "Leírás megadása"
+      ],
+      "Add participants": [
+        "Résztvevők megadása"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
       ]
     },
     "Title": {
@@ -2546,18 +2957,6 @@
       "Select a theme": [
         ""
       ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
-      "Account suspended": [
-        ""
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
-      ],
       "Open help menu": [
         "Súgó menü megnyitása"
       ],
@@ -2575,6 +2974,18 @@
       ],
       "Give feedback": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ],
+      "Account suspended": [
+        ""
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2681,14 +3092,14 @@
       "Beta Access": [
         ""
       ],
+      "Select the way to send this notification": [
+        "Válassza ki az emlékeztető elküldésének módját"
+      ],
       "Select when you want this notification to be sent": [
         "Válassza ki az emlékeztető elküldésének időpontját"
       ],
       "Select the time to send this notification": [
         "Válassza ki az emlékeztető elküldésének időpontját"
-      ],
-      "Select the way to send this notification": [
-        "Válassza ki az emlékeztető elküldésének módját"
       ],
       "Add another notification to remind you of this event": [
         "További emlékeztető hozzáadása az eseményhez"
@@ -2824,417 +3235,6 @@
       ],
       "CANCELLED": [
         "TÖRÖLVE"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Másolás"
-      ],
-      "Reveal password": [
-        "A jelszó felfedése"
-      ],
-      "Hide password": [
-        "A jelszó elrejtése"
-      ],
-      "Street address": [
-        "Utca, házszám"
-      ],
-      "City": [
-        "Település"
-      ],
-      "Region": [
-        "Régió"
-      ],
-      "Postal code": [
-        "Irányítószám"
-      ],
-      "Country": [
-        "Ország"
-      ],
-      "Post office box": [
-        "Postafiók"
-      ],
-      "Extended address": [
-        "Bővebb cím"
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "E-mail cím"
-      ],
-      "Phone number": [
-        "Telefonszám"
-      ],
-      "Verification code": [
-        "Ellenőrző kód"
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
-      ],
-      "Add email address": [
-        "E-mail cím hozzáadása"
-      ],
-      "Email format": [
-        "E-mail formátum"
-      ],
-      "Add image URL": [
-        "Kép URL megadása"
-      ],
-      "Upload picture": [
-        "Kép feltöltése"
-      ],
-      "Add to group": [
-        "Hozzáadás csoporthoz"
-      ],
-      "Encrypt emails": [
-        "Üzenetek titkosítása"
-      ],
-      "Sign emails": [
-        "Üzenetek aláírása"
-      ],
-      "Cryptographic scheme": [
-        "Titkosítási séma"
-      ],
-      "Public keys": [
-        "Nyilvános kulcsok"
-      ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus létrehozása"
-      ],
-      "Import contacts": [
-        "Névjegyek importálása"
-      ],
-      "Export contacts": [
-        "Névjegyek exportálása"
-      ],
-      "Operating system": [
-        "Operációs rendszer"
-      ],
-      "Operating system version": [
-        "Az operációs rendszer verziója"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "Category": [
-        "Kategória"
-      ],
-      "What happened?": [
-        "Mi történt?"
-      ],
-      "System information": [
-        "Rendszerinfromáció"
-      ],
-      "Browser": [
-        "Böngésző"
-      ],
-      "Browser version": [
-        "A böngésző verziója"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Mégsem"
-      ],
-      "Submit": [
-        "Küldés"
-      ],
-      "Password": [
-        "Jelszó"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
-      "Username or ProtonMail address": [
-        "Felhasználónév vagy ProtonMail cím"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Megjelenített név"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        ""
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Leírás"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Egész nap"
-      ],
-      "Repeat on": [
-        "Ismételődés"
-      ],
-      "Repeat every": [
-        "Ismétlődik minden"
-      ],
-      "Ends": [
-        "Befejező dátum"
-      ],
-      "Organizer": [
-        "Szervező"
-      ],
-      "Optional": [
-        "Választható"
-      ],
-      "Time of the event": [
-        "Az esemény ideje"
-      ],
-      "Event time": [
-        "Esemény időpont"
-      ],
-      "Event title": [
-        "Esemény neve"
-      ],
-      "Event frequency": [
-        "Esemény gyakorisága"
-      ],
-      "Event location": [
-        "Esemény helye"
-      ],
-      "Event notifications": [
-        "Esemény értesítések"
-      ],
-      "Participants": [
-        "Résztvevők"
-      ],
-      "Your calendars": [
-        "Az ön naptárai"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Tudjon meg többet"
-      ],
-      "Request an invite": [
-        "Meghívó kérése"
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Számla befizetése"
-      ],
-      "Upgrade account": [
-        "Csomag váltása"
-      ],
-      "Calendars": [
-        "Naptárak"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Other calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Pl., "
-      ],
-      "Start typing an email address": [
-        ""
-      ],
-      "Image URL": [
-        ""
-      ],
-      "Filter groups": [
-        ""
-      ],
-      "Search for name or email": [
-        ""
-      ],
-      "Search for group name": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "OS name": [
-        "Operációs rendszer neve"
-      ],
-      "OS version": [
-        "Operációs rendszer verzió"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "A way to contact you": [
-        "Kapcsolatfelvételi lehetőség"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
-      ],
-      "Browser name": [
-        "Böngésző neve"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Cím megadása"
-      ],
-      "Add location": [
-        "Hely megadása"
-      ],
-      "Add description": [
-        "Leírás megadása"
-      ],
-      "Add participants": [
-        "Résztvevők megadása"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
       ]
     },
     "Storage": {
@@ -3481,7 +3481,7 @@
       "Preference saved": [
         "Beállítások elmentve"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4549,6 +4549,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         ""
@@ -4570,17 +4581,6 @@
         ""
       ],
       "Maximized": [
-        ""
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
         ""
       ]
     },
@@ -4631,6 +4631,14 @@
         "órával előtte"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Válasszon egy számot"
@@ -4639,14 +4647,6 @@
     "Notification time input": {
       "at": [
         "ekkor:"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "mód:"
-      ],
-      "by email": [
-        "emailben"
       ]
     },
     "Duration": {
@@ -4743,6 +4743,11 @@
         "${ value } héttel utána, ekkor: ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        ""
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         ""
@@ -4832,6 +4837,11 @@
       ],
       "This event has been cancelled": [
         "Ezt az eseményt törölték"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {
