@@ -70,7 +70,7 @@ const PartDayEvent = ({
         if (eventReadError) {
             return (
                 <div className="flex flex-nowrap flex-align-items-center">
-                    <Icon name="lock" className="calendar-eventcell-lock-icon" />
+                    <Icon name="lock-filled" className="calendar-eventcell-lock-icon" />
                     <span className="flex-item-fluid text-ellipsis">&nbsp;</span>
                 </div>
             );

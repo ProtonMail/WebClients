@@ -50,7 +50,7 @@ const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
                     onClick={handleEmptyTrashClick}
                     title={c('Action').t`Empty trash`}
                 >
-                    <Icon size={24} name="empty-folder" className="mauto" />
+                    <Icon size={24} name="broom" className="mauto" />
                 </FloatingButton>
             ) : (
                 <SidebarPrimaryButton

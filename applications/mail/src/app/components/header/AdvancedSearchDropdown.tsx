@@ -531,7 +531,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     {...dropdownSearchButtonProps}
                 >
                     <Icon
-                        name="caret"
+                        name="angle-down"
                         className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
                         alt={c('Action').t`Advanced search`}
                     />

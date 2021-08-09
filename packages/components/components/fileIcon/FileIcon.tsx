@@ -33,7 +33,7 @@ const getIconName = (mimeType: string) => {
         // Exception for XML to use it's own icon and not fallback as text
         name = 'xml';
     } else if (isICS(mimeType)) {
-        name = 'calendar';
+        name = 'calendar-days';
     } else if (isSupportedText(mimeType)) {
         name = 'text';
     } else if (isPDF(mimeType)) {

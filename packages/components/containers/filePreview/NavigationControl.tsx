@@ -40,7 +40,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
     return (
         <div className="flex flex-align-items-center centered-absolute">
             <Button icon shape="ghost" disabled={isPrevDisabled} onClick={onPrev} title={c('Action').t`Previous`}>
-                <Icon name="caret" rotate={90} size={16} alt={c('Action').t`Previous`} />
+                <Icon name="angle-down" rotate={90} size={16} alt={c('Action').t`Previous`} />
             </Button>
             <span className="ml0-5 mr0-5">
                 <span>{current}</span>
@@ -48,7 +48,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 <span>{total}</span>
             </span>
             <Button icon shape="ghost" disabled={isNextDisabled} onClick={onNext} title={c('Action').t`Next`}>
-                <Icon name="caret" rotate={-90} size={16} alt={c('Action').t`Next`} />
+                <Icon name="angle-down" rotate={-90} size={16} alt={c('Action').t`Next`} />
             </Button>
         </div>
     );

@@ -28,7 +28,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
 
     return (
         <div className="bg-warning rounded bordered p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="notifications-enabled" className="flex-item-noshrink mtauto mbauto" />
+            <Icon name="bell" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info').t`The sender has requested a read receipt.`}</span>
             <span className="flex-item-noshrink flex">
                 <InlineLinkButton

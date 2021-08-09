@@ -28,7 +28,9 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                             title={text}
                         >
                             <span className="wizard-marker flex">
-                                {index < step && <Icon name="on" size={12} className="z10 mauto wizard-marker-icon" />}
+                                {index < step && (
+                                    <Icon name="check" size={12} className="z10 mauto wizard-marker-icon" />
+                                )}
                             </span>
                         </li>
                     );

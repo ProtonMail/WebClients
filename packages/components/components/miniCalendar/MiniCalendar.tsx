@@ -134,7 +134,7 @@ const MiniCalendar = ({
                 {hasToday ? (
                     <Tooltip title={todayTitle}>
                         <Button icon shape="ghost" color="weak" size="small" onClick={() => onSelectDate?.(now)}>
-                            <Icon name="calendar-today" className="minicalendar-icon" alt={todayTitle} />
+                            <Icon name="calendar-day" className="minicalendar-icon" alt={todayTitle} />
                         </Button>
                     </Tooltip>
                 ) : null}
@@ -143,12 +143,12 @@ const MiniCalendar = ({
                     <>
                         <Tooltip title={prevMonth}>
                             <Button icon shape="ghost" color="weak" size="small" onClick={() => handleSwitchMonth(-1)}>
-                                <Icon name="caret" className="rotateZ-90 minicalendar-icon" alt={prevMonth} />
+                                <Icon name="angle-down" className="rotateZ-90 minicalendar-icon" alt={prevMonth} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={nextMonth}>
                             <Button icon shape="ghost" color="weak" size="small" onClick={() => handleSwitchMonth(1)}>
-                                <Icon name="caret" className="rotateZ-270 minicalendar-icon" alt={nextMonth} />
+                                <Icon name="angle-down" className="rotateZ-270 minicalendar-icon" alt={nextMonth} />
                             </Button>
                         </Tooltip>
                     </>

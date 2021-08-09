@@ -249,7 +249,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     {...getCommonProps(
                         ShowMoved & SHOW_MOVED.DRAFTS ? MAILBOX_LABEL_IDS.ALL_DRAFTS : MAILBOX_LABEL_IDS.DRAFTS
                     )}
-                    icon="drafts"
+                    icon="file-lines"
                     text={c('Link').t`Drafts`}
                     shortcutText="[G] [D]"
                     isFolder
@@ -270,7 +270,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     {...getCommonProps(
                         ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
                     )}
-                    icon="sent"
+                    icon="paper-plane"
                     text={c('Link').t`Sent`}
                     shortcutText="[G] [E]"
                     isFolder
@@ -288,7 +288,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
-                    icon="archive"
+                    icon="box-archive"
                     text={c('Link').t`Archive`}
                     shortcutText="[G] [A]"
                     isFolder
@@ -297,7 +297,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
-                    icon="spam"
+                    icon="fire"
                     text={c('Link').t`Spam`}
                     shortcutText="[G] [S]"
                     isFolder
@@ -315,7 +315,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
-                    icon="all-emails"
+                    icon="envelopes"
                     text={c('Link').t`All mail`}
                     shortcutText="[G] [M]"
                     isFolder
@@ -345,7 +345,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                             <SidebarListItemHeaderLink
                                 to="/mail/folders-labels"
                                 toApp={APPS.PROTONACCOUNT}
-                                icon="settings"
+                                icon="gear"
                                 title={c('Info').t`Manage your folders`}
                                 info={c('Link').t`Manage your folders`}
                                 target="_self"
@@ -388,7 +388,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                             <SidebarListItemHeaderLink
                                 to="/mail/folders-labels"
                                 toApp={APPS.PROTONACCOUNT}
-                                icon="settings"
+                                icon="gear"
                                 title={c('Info').t`Manage your labels`}
                                 info={c('Link').t`Manage your labels`}
                                 target="_self"

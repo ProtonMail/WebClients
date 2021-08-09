@@ -349,7 +349,7 @@ const CalendarContainerView = ({
                                             disabled={noSelection || !onCreateEvent}
                                             title={c('Action').t`Create event`}
                                         >
-                                            <Icon name="calendar" />
+                                            <Icon name="calendar-days" />
                                         </Button>
                                     </Tooltip>
                                 );

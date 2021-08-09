@@ -57,7 +57,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
                         ref={containerRef}
                         className={classnames(['relative flex', hasError && 'field-icon-container--invalid'])}
                     >
-                        <Icon name="search" className="absolute no-pointer-events left-icon" />
+                        <Icon name="magnifying-glass" className="absolute no-pointer-events left-icon" />
                         {child}
                     </div>
                 );

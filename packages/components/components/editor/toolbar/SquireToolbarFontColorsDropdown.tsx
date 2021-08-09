@@ -40,7 +40,7 @@ const SquireToolbarFontColorsDropdown = ({ squireRef, editorReady }: Props) => {
     return (
         <SquireToolbarDropdown
             noMaxSize
-            content={<Icon name="font-color" alt={c('Action').t`Color`} />}
+            content={<Icon name="font" alt={c('Action').t`Color`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Color`}
         >

@@ -7,7 +7,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 export const getContactsGeneralPage = () => {
     return {
         to: '/contacts/general',
-        icon: 'contacts-groups',
+        icon: 'user-group',
         text: c('Title').t`General`,
         subsections: [
             {

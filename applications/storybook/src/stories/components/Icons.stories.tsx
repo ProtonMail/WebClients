@@ -1,13 +1,13 @@
 import { useState, useMemo } from 'react';
 import { Icon, Input, Mark } from '@proton/components';
-import iconSvg from '@proton/styles/_includes/sprite-icons.svg';
+import iconSvg from '@proton/styles/assets/img/icons/sprite-icons.svg';
 
 export default { component: Icon, title: 'Proton UI / Icons' };
 
 export const PrimaryIcons = () => {
     const primaryIconNames: string[] = iconSvg
-        .match(/id="shape-([^"]+)/g)
-        .map((x: string) => x.replace('id="shape-', ''));
+        .match(/id="ic-([^"]+)/g)
+        .map((x: string) => x.replace('id="ic-', ''));
     const [search, setSearch] = useState('');
     const iconResults = useMemo(() => {
         if (search.length <= 1) {

@@ -175,7 +175,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             </Tooltip>
             <Tooltip title={closeTitle}>
                 <Button icon type="button" shape="ghost" onClick={onClose}>
-                    <Icon className="mauto" name="off" alt={closeTitle} />
+                    <Icon className="mauto" name="xmark" alt={closeTitle} />
                 </Button>
             </Tooltip>
         </div>

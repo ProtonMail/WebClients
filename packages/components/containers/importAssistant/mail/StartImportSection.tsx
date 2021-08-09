@@ -41,7 +41,7 @@ const StartImportSection = () => {
                         onClick={handleOAuthClick}
                         disabled={loadingAddresses}
                     >
-                        <Icon name="gmail" className="mr0-5" />
+                        <Icon name="brand-gmail" className="mr0-5" />
                         {c('Action').t`Continue with Google`}
                     </PrimaryButton>
                 ) : (

@@ -67,7 +67,7 @@ const Info = ({
             >
                 <Icon
                     className={classnames(['icon-16p color-primary', className])}
-                    name={questionMark ? 'question' : 'info'}
+                    name={questionMark ? 'circle-question' : 'circle-info'}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />

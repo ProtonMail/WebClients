@@ -10,7 +10,7 @@ export const getPaymentsPage = () => {
     return {
         text: c('Title').t`Payments`,
         to: '/payments',
-        icon: 'payments',
+        icon: 'wallet',
         permissions: [UPGRADER],
         subsections: [
             {

@@ -59,7 +59,7 @@ const TopNavbarListItemBlackFridayButton = ({ plans, subscription }: Props) => {
             type="button"
             title={text}
             hasRedDot={hasRedDot}
-            icon={<Icon name="blackfriday" />}
+            icon={<Icon name="bag-percent" />}
             text={text}
             onClick={() => {
                 if (APP_NAME === APPS.PROTONVPN_SETTINGS) {

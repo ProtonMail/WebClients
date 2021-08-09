@@ -10,7 +10,7 @@ const UploadFileButton = () => {
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleChange} />
             <ToolbarButton
                 data-testid="toolbar-upload-file"
-                icon={<Icon name="file-upload" />}
+                icon={<Icon name="file-arrow-up" />}
                 title={c('Action').t`Upload file`}
                 onClick={handleClick}
             />

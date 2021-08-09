@@ -11,7 +11,7 @@ export const getMultiUserSupportPage = (organization: Organization) => {
     return {
         text: c('Title').t`Organization`,
         to: '/organization',
-        icon: 'organization',
+        icon: 'buildings',
         subsections: [
             {
                 text:

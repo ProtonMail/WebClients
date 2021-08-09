@@ -26,18 +26,18 @@ const getIcon = (paymentMethod: PaymentMethod) => {
         paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
         paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
     ) {
-        return 'payments-type-pp';
+        return 'brand-paypal';
     }
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD) {
         switch (paymentMethod.Details.Brand) {
             case 'American Express':
-                return 'payments-type-amex';
+                return 'brand-amex';
             case 'Visa':
-                return 'payments-type-visa';
+                return 'brand-visa';
             case 'MasterCard':
-                return 'payments-type-mastercard';
+                return 'brand-mastercard';
             default:
-                return 'payments-type-card';
+                return 'credit-card';
         }
     }
     return '';
@@ -93,14 +93,14 @@ export const getPaymentMethodOptions = ({
                 };
             }),
         paymentMethodsStatus?.Card && {
-            icon: 'payments-type-card',
+            icon: 'credit-card',
             value: PAYMENT_METHOD_TYPES.CARD,
             text: c('Payment method option').t`New credit/debit card`,
         },
         paymentMethodsStatus?.Paypal &&
             !alreadyHavePayPal &&
             (isPaypalAmountValid || isInvoice) && {
-                icon: 'payments-type-pp',
+                icon: 'brand-paypal',
                 text: c('Payment method option').t`PayPal`,
                 value: PAYMENT_METHOD_TYPES.PAYPAL,
             },
@@ -109,14 +109,14 @@ export const getPaymentMethodOptions = ({
             !isHumanVerification &&
             coupon !== BLACK_FRIDAY.COUPON_CODE &&
             amount >= MIN_BITCOIN_AMOUNT && {
-                icon: 'payments-type-bt',
+                icon: 'brand-bitcoin',
                 text: c('Payment method option').t`Bitcoin`,
                 value: PAYMENT_METHOD_TYPES.BITCOIN,
             },
         !isSignup &&
             !isHumanVerification &&
             coupon !== BLACK_FRIDAY.COUPON_CODE && {
-                icon: 'payments-type-cash',
+                icon: 'money-bills',
                 text: c('Label').t`Cash`,
                 value: PAYMENT_METHOD_TYPES.CASH,
             },

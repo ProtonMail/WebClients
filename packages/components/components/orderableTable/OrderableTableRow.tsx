@@ -16,7 +16,7 @@ const OrderableTableRow = ({ index, cells = [], className, ...rest }: Props) => 
             cells={[
                 <OrderableHandle key="icon">
                     <span className="flex" data-testid="table:order-icon">
-                        <Icon className="mtauto mbauto cursor-row-resize" name="text-justify" />
+                        <Icon className="mtauto mbauto cursor-row-resize" name="align-justify" />
                     </span>
                 </OrderableHandle>,
                 ...cells,

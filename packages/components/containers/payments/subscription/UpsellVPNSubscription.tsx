@@ -48,10 +48,10 @@ const UpsellVPNSubscription = () => {
     return (
         <Card rounded bordered={false} className="mt1-5">
             <UpsellItem icon="rocket">{c('VPN upsell feature').t`Higher speed servers (up to 10Gbps)`}</UpsellItem>
-            <UpsellItem icon="tour">
+            <UpsellItem icon="presentation-screen">
                 {c('VPN upsell feature').t`Access geo-blocked content (Netflix, YouTube, etc.)`}
             </UpsellItem>
-            <UpsellItem icon="protonvpn">{c('VPN upsell feature').t`Unlock advanced VPN features`}</UpsellItem>
+            <UpsellItem icon="brand-proton-vpn">{c('VPN upsell feature').t`Unlock advanced VPN features`}</UpsellItem>
             <Button color="norm" className="mt1" onClick={handleUpgradeClick}>
                 {c('Action').t`Upgrade to Plus`}
             </Button>

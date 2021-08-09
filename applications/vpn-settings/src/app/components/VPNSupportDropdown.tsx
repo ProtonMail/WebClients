@@ -26,7 +26,7 @@ const VPNSupportDropdown = (props: Props) => {
             as={Button}
             content={
                 <>
-                    <Icon name="support1" className="mr0-5" /> {c('Header').t`Help`}
+                    <Icon name="life-ring" className="mr0-5" /> {c('Header').t`Help`}
                 </>
             }
             {...props}
@@ -37,15 +37,15 @@ const VPNSupportDropdown = (props: Props) => {
                     href="https://protonvpn.com/support/"
                     target="_blank"
                 >
-                    <Icon className="mt0-25 mr0-5" name="what-is-this" />
+                    <Icon className="mt0-25 mr0-5" name="circle-question" />
                     {c('Action').t`I have a question`}
                 </DropdownMenuLink>
                 <DropdownMenuLink href="https://protonmail.uservoice.com/" target="_blank">
-                    <Icon className="mt0-25 mr0-5" name="help-answer" />
+                    <Icon className="mt0-25 mr0-5" name="messages" />
                     {c('Action').t`Request a feature`}
                 </DropdownMenuLink>
                 <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
-                    <Icon className="mt0-25 mr0-5" name="report-bug" />
+                    <Icon className="mt0-25 mr0-5" name="bug" />
                     {c('Action').t`Report bug`}
                 </DropdownMenuButton>
             </DropdownMenu>

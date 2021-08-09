@@ -221,7 +221,7 @@ const CustomizeImportModal = ({
                     <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Label messages as`}
                         <Tooltip title={c('Tooltip').t`Each imported email will have this label`}>
-                            <Icon name="info" className="ml0-5" />
+                            <Icon name="circle-info" className="ml0-5" />
                         </Tooltip>
                     </FormLabel>
                     <Field className="wauto flex flex-align-items-center flex-nowrap">
@@ -269,7 +269,7 @@ const CustomizeImportModal = ({
                     <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Import interval`}
                         <Tooltip title={c('Tooltip').t`The import will start with the most recent messages.`}>
-                            <Icon name="info" className="ml0-5" />
+                            <Icon name="circle-info" className="ml0-5" />
                         </Tooltip>
                     </FormLabel>
                     <Field>
@@ -306,7 +306,7 @@ const CustomizeImportModal = ({
                 <Row>
                     <FormLabel>{isLabelMapping ? c('Label').t`Manage labels` : c('Label').t`Manage folders`}</FormLabel>
                     <div className="flex flex-align-items-center">
-                        <Icon name={isLabelMapping ? 'folder-label' : 'parent-folder'} className="mr0-5" />
+                        <Icon name={isLabelMapping ? 'tags' : 'folders'} className="mr0-5" />
                         {selectedFoldersCount === totalFoldersCount ? (
                             <span>
                                 {isLabelMapping

@@ -92,7 +92,7 @@ const ShareTable = ({
                                 {calendars.length === 1 ? (
                                     <div className="flex flex-align-items-center">
                                         <Icon
-                                            name="calendar"
+                                            name="calendar-days"
                                             className="mr0-75"
                                             style={{ color: calendars[0].Color }}
                                         />
@@ -108,7 +108,7 @@ const ShareTable = ({
                                             <Option key={ID} value={ID} title={Name}>
                                                 <div className="flex flex-nowrap flex-align-items-center">
                                                     <Icon
-                                                        name="calendar"
+                                                        name="calendar-days"
                                                         className="mr0-75 flex-item-noshrink"
                                                         style={{ color: Color }}
                                                     />

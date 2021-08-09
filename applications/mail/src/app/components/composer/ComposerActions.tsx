@@ -157,7 +157,7 @@ const ComposerActions = ({
                             className="composer-send-button"
                             data-testid="composer:send-button"
                         >
-                            <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
+                            <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
                             <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
                         </Button>
                     </Tooltip>
@@ -194,7 +194,7 @@ const ComposerActions = ({
                             className="ml0-5"
                             data-testid="composer:expiration-button"
                         >
-                            <Icon name="expiration" alt={c('Action').t`Expiration time`} />
+                            <Icon name="hourglass-empty" alt={c('Action').t`Expiration time`} />
                         </Button>
                     </Tooltip>
                     <Tooltip title={titleEncryption}>
@@ -207,7 +207,7 @@ const ComposerActions = ({
                             disabled={lock}
                             className="ml0-5"
                         >
-                            <Icon name="lock-alone" alt={c('Action').t`Encryption`} />
+                            <Icon name="lock" alt={c('Action').t`Encryption`} />
                         </Button>
                     </Tooltip>
                 </div>

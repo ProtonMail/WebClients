@@ -5,7 +5,7 @@ import { Icon } from '../../../components';
 import { MailFeature } from './interface';
 import Features from './Features';
 
-const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('Info').t`Included`} />;
+const CheckIcon = () => <Icon className="color-primary" name="check" alt={c('Info').t`Included`} />;
 const EmDash = '—';
 
 const getFeatures = (): MailFeature[] => {

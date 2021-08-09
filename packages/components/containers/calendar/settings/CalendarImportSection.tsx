@@ -45,7 +45,7 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
             className="inline-flex flex-justify-center flex-align-items-center"
             disabled={loadingAddresses}
         >
-            <Icon name="calendar" className="mr0-5" />
+            <Icon name="calendar-days" className="mr0-5" />
             {c('Action').t`Continue with Google`}
         </PrimaryButton>
     );

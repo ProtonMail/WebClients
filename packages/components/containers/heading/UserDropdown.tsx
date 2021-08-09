@@ -192,7 +192,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                             onClick={handleTourClick}
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}
-                            <Icon className="ml1" name="presentation" />
+                            <Icon className="ml1" name="presentation-screen" />
                         </DropdownMenuButton>
                     )}
 
@@ -205,7 +205,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                         content={
                             <span className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                                 {c('Header').t`Get help`}
-                                <Icon className="ml1 rotateZ-270" name="caret" />
+                                <Icon className="ml1 rotateZ-270" name="angle-down" />
                             </span>
                         }
                     >
@@ -221,7 +221,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                                 target="_blank"
                             >
                                 {c('Action').t`I have a question`}
-                                <Icon className="ml1" name="external-link" />
+                                <Icon className="ml1" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
                             <DropdownMenuLink
@@ -230,7 +230,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                                 target="_blank"
                             >
                                 {c('Action').t`Request a feature`}
-                                <Icon className="ml1" name="external-link" />
+                                <Icon className="ml1" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
                             <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
@@ -245,7 +245,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                         target="_blank"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
-                        <Icon className="ml1" name="external-link" />
+                        <Icon className="ml1" name="arrow-up-right-from-square" />
                     </DropdownMenuLink>
 
                     <hr className="mt0-5 mb0-5" />
@@ -256,7 +256,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                             onClick={handleSwitchAccount}
                         >
                             {c('Action').t`Switch account`}
-                            <Icon className="ml1" name="account-switch" />
+                            <Icon className="ml1" name="switch" />
                         </DropdownMenuButton>
                     ) : null}
 
@@ -269,7 +269,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                             data-cy-header-user-dropdown="logout"
                         >
                             <span className="mr0-5">{c('Action').t`Sign out`}</span>
-                            <Icon name="sign-out-right" />
+                            <Icon name="arrow-right-from-rectangle" />
                         </Button>
                     </div>
                 </DropdownMenu>

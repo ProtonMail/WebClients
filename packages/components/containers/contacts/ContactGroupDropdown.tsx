@@ -186,7 +186,7 @@ const ContactGroupDropdown = ({
                                 className="flex flex-align-items-center"
                                 data-prevent-arrow-navigation
                             >
-                                <Icon name="contacts-groups" /> +
+                                <Icon name="user-group" /> +
                             </Button>
                         </Tooltip>
                     </div>
@@ -221,7 +221,7 @@ const ContactGroupDropdown = ({
                                                 className="flex flex-align-items-center flex-item-fluid flex-nowrap"
                                             >
                                                 <Icon
-                                                    name="circle"
+                                                    name="circle-filled"
                                                     className="ml0-25 mr0-5 flex-item-noshrink"
                                                     size={12}
                                                     color={Color}
@@ -237,7 +237,7 @@ const ContactGroupDropdown = ({
                         ) : null}
                         {!filteredContactGroups.length && keyword ? (
                             <div className="w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1">
-                                <Icon name="attention" className="mr0-5" />
+                                <Icon name="triangle-exclamation" className="mr0-5" />
                                 {c('Info').t`No group found`}
                             </div>
                         ) : null}

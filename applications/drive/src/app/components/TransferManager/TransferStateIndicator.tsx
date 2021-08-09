@@ -43,7 +43,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         },
         [TransferState.Progress]: {
             text: c('Info').t`${speed}/s`,
-            icon: type === TransferType.Download ? 'download' : 'upload',
+            icon: type === TransferType.Download ? 'arrow-down-to-rectangle' : 'arrow-up-from-rectangle',
         },
         [TransferState.Paused]: {
             text: c('Info').t`Paused`,
@@ -51,23 +51,23 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         },
         [TransferState.Done]: {
             text: type === TransferType.Download ? c('Info').t`Downloaded` : c('Info').t`Uploaded`,
-            icon: 'on',
+            icon: 'check',
         },
         [TransferState.Error]: {
             text: c('Info').t`Failed`,
-            icon: 'attention',
+            icon: 'triangle-exclamation',
         },
         [TransferState.NetworkError]: {
             text: c('Info').t`Network issue`,
-            icon: 'attention',
+            icon: 'triangle-exclamation',
         },
         [TransferState.Canceled]: {
             text: c('Info').t`Canceled`,
-            icon: 'off',
+            icon: 'xmark',
         },
         [TransferState.Finalizing]: {
             text: c('Info').t`Finalizing`,
-            icon: 'on',
+            icon: 'check',
         },
     }[transfer.state];
 
@@ -90,7 +90,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             {statusInfo.icon && !isTransferProgress(transfer) && (
                 <Tooltip title={errorText} originalPlacement="top">
                     <span className="flex-item-noshrink no-desktop no-tablet">
-                        <Icon name={errorText ? 'info' : statusInfo.icon} alt={statusInfo.text} />
+                        <Icon name={errorText ? 'circle-info' : statusInfo.icon} alt={statusInfo.text} />
                     </span>
                 </Tooltip>
             )}
@@ -100,7 +100,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
                         <span className="mr0-5">
-                            <Icon name="info" />
+                            <Icon name="circle-info" />
                         </span>
                     </Tooltip>
                 )}
@@ -109,7 +109,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
 
             {shouldShowDirection && (
                 <Icon
-                    name={type === TransferType.Download ? 'download' : 'upload'}
+                    name={type === TransferType.Download ? 'arrow-down-to-rectangle' : 'arrow-up-from-rectangle'}
                     className={classnames([
                         'flex-item-noshrink ml0-5',
                         isTransferDone(transfer) && 'no-tablet no-desktop',

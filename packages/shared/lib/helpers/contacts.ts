@@ -103,26 +103,6 @@ export const getAllFieldLabels = () => ({
     member: c('Contact field label').t`Member`,
 });
 
-// ** NOT USED FOR THE MOMENT **
-// export const getIcons = () => ({
-//     email: 'email',
-//     org: 'organization',
-//     tel: 'phone',
-//     adr: 'address',
-//     bday: 'birthday',
-//     anniversary: 'anniversary',
-//     title: 'title',
-//     role: 'role',
-//     note: 'note',
-//     url: 'domains',
-//     gender: 'gender',
-//     lang: 'alias', // TODO icon missing
-//     tz: 'alias', // TODO icon missing
-//     geo: 'domains',
-//     logo: 'photo',
-//     member: 'member-contact'
-// });
-
 export const getTypeLabels = () => ({
     work: c('Contact type label').t`Work`,
     home: c('Contact type label').t`Personal`,

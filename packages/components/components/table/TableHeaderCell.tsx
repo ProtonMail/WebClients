@@ -14,7 +14,7 @@ const TableHeaderCell = ({ children, direction, onSort, ...rest }: Props) => {
             <span className="mr0-25">{children}</span>
             {direction && (
                 <Icon
-                    name="caret"
+                    name="angle-down"
                     size={12}
                     className={`flex-item-noshrink ${direction === SORT_DIRECTION.DESC ? '' : 'rotateX-180'}`}
                 />

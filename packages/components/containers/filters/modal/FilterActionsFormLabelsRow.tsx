@@ -83,7 +83,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
     return (
         <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
-                <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
+                <Icon name="angle-down" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
             </button>
             <div className={classnames(['flex-item-fluid', !isNarrow && 'ml1'])}>

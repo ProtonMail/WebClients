@@ -17,7 +17,7 @@ const KeyWarningIcon = ({ publicKey, emailAddress, isInternal, supportsEncryptio
     if (!emailAddress) {
         return null;
     }
-    const icon = <Icon name="attention" className={classnames([className, 'color-warning'])} />;
+    const icon = <Icon name="triangle-exclamation" className={classnames([className, 'color-warning'])} />;
     const encryptionWarnings =
         supportsEncryption === false ? [c('PGP key encryption warning').t`Key cannot be used for encryption`] : [];
 
