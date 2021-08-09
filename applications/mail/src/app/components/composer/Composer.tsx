@@ -57,6 +57,7 @@ import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { Event } from '../../models/event';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
+import { useHandleMessageAlreadySent } from '../../hooks/composer/useHandleMessageAlreadySent';
 
 enum ComposerInnerModal {
     None,
@@ -136,9 +137,19 @@ const Composer = (
     // Synced with server version of the edited message
     const { message: syncedMessage, addAction } = useMessage(messageID);
 
+    // onClose handler can be called in a async handler
+    // Input onClose ref can change in the meantime
+    const onClose = useHandler(inputOnClose);
+
+    // Handles message already sent error
+    const onMessageAlreadySent = useHandleMessageAlreadySent({
+        modelMessage,
+        onClose,
+    });
+
     // All message actions
     const initialize = useInitializeMessage(syncedMessage.localID);
-    const saveDraft = useSaveDraft();
+    const saveDraft = useSaveDraft({ onMessageAlreadySent });
     const deleteDraft = useDeleteDraft();
 
     // Computed composer status
@@ -153,10 +164,6 @@ const Composer = (
 
     // Get a ref on the editor to trigger insertion of embedded images
     const editorActionsRef: EditorActionsRef = useRef();
-
-    // onClose handler can be called in a async handler
-    // Input onClose ref can change in the meantime
-    const onClose = useHandler(inputOnClose);
 
     const handleDragEnter = (event: DragEvent) => {
         if (event.dataTransfer?.types.includes(DRAG_ADDRESS_KEY)) {
@@ -401,7 +408,13 @@ const Composer = (
         handleCancelAddAttachment,
         handleRemoveAttachment,
         handleRemoveUpload,
-    } = useAttachments(modelMessage, handleChange, handleSaveNow, editorActionsRef);
+    } = useAttachments({
+        message: modelMessage,
+        onChange: handleChange,
+        onSaveNow: handleSaveNow,
+        editorActionsRef,
+        onMessageAlreadySent,
+    });
 
     // Manage opening
     useEffect(() => {
@@ -481,6 +494,7 @@ const Composer = (
         pendingSave,
         promiseUpload,
         uploadInProgress,
+        onMessageAlreadySent,
     });
 
     const handleSend = useSendHandler({
@@ -492,6 +506,7 @@ const Composer = (
         autoSave,
         addAction,
         onClose,
+        onMessageAlreadySent,
     });
 
     const { loadingScheduleCount, handleScheduleSendModal, handleScheduleSend } = useScheduleSend({

@@ -25,10 +25,20 @@ import useDelaySendSeconds from '../useDelaySendSeconds';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
 import { useSendMoficiations } from './useSendModifications';
+import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
+
+interface UseSendMessageParameters {
+    inputMessage: MessageExtendedWithData;
+    mapSendPrefs: SimpleMap<SendPreferences>;
+    onCompose: OnCompose;
+    alreadySaved?: boolean;
+    sendingMessageNotificationManager?: SendingMessageNotificationManager;
+    useSilentApi?: boolean;
+}
 
 export const useSendMessage = () => {
     const api = useApi();
@@ -43,13 +53,14 @@ export const useSendMessage = () => {
     const sendModification = useSendMoficiations();
 
     return useCallback(
-        async (
-            inputMessage: MessageExtendedWithData,
-            mapSendPrefs: SimpleMap<SendPreferences>,
-            onCompose: OnCompose,
+        async ({
+            inputMessage,
+            mapSendPrefs,
+            onCompose,
             alreadySaved = false,
-            sendingMessageNotificationManager?: SendingMessageNotificationManager
-        ) => {
+            sendingMessageNotificationManager,
+            useSilentApi = false,
+        }: UseSendMessageParameters) => {
             const { localID, data } = inputMessage;
             const hasUndo = !!delaySendSeconds;
 
@@ -110,7 +121,11 @@ export const useSendMessage = () => {
                     DeliveryTime: scheduledAt || undefined,
                 };
 
-                return api<{ Sent: Message }>({ ...sendMessage(message.data?.ID, payload), timeout: 60000 });
+                return api<{ Sent: Message }>({
+                    ...sendMessage(message.data?.ID, payload),
+                    silence: useSilentApi,
+                    timeout: 60000,
+                });
             };
 
             const promise = prepareMessageToSend().then((result) => {
@@ -175,13 +190,21 @@ export const useSendMessage = () => {
                     );
                 }
             } catch (error) {
-                onCompose({
-                    existingDraft: {
-                        localID,
-                        data,
-                    },
-                    fromUndo: true,
-                });
+                if (
+                    ![
+                        SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT,
+                        SEND_EMAIL_ERROR_CODES.MESSAGE_ALREADY_SENT,
+                    ].includes(error.data.Code)
+                ) {
+                    onCompose({
+                        existingDraft: {
+                            localID,
+                            data,
+                        },
+                        fromUndo: true,
+                    });
+                }
+
                 throw error;
             } finally {
                 const currentMessage = messageCache.get(localID) as MessageExtendedWithData;

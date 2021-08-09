@@ -95,6 +95,20 @@ export const MAILTO_PROTOCOL_HANDLER_PATH = `/${
     LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]
 }/?${MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM}=%s`;
 
+export enum SAVE_DRAFT_ERROR_CODES {
+    MESSAGE_ALREADY_SENT = 15034,
+}
+
+export enum SEND_EMAIL_ERROR_CODES {
+    MESSAGE_ALREADY_SENT = 2500,
+}
+
+export enum UPLOAD_ATTACHMENT_ERROR_CODES {
+    MESSAGE_ALREADY_SENT = 11114,
+}
+
+export const MESSAGE_ALREADY_SENT_INTERNAL_ERROR = 'Message already sent';
+
 export const DRAG_ELEMENT_KEY = 'drag-element';
 export const DRAG_ELEMENT_ID_KEY = 'drag-element-id';
 export const DRAG_ADDRESS_KEY = 'drag-address';

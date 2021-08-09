@@ -6,8 +6,9 @@ import { c } from 'ttag';
 import SavingDraftNotification, {
     SavingDraftNotificationAction,
 } from '../../components/notifications/SavingDraftNotification';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageExtended;
@@ -20,6 +21,7 @@ export interface UseCloseHandlerParameters {
     actualSave: (message: MessageExtended) => Promise<void>;
     onClose: () => void;
     onDicard: () => void;
+    onMessageAlreadySent: () => void;
 }
 
 export const useCloseHandler = ({
@@ -33,8 +35,10 @@ export const useCloseHandler = ({
     promiseUpload,
     onClose,
     onDicard,
+    onMessageAlreadySent,
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
+    const messageCache = useMessageCache();
     const isMounted = useIsMounted();
     const onCompose = useOnCompose();
 
@@ -63,6 +67,14 @@ export const useCloseHandler = ({
     });
 
     const handleManualSave = useHandler(async () => {
+        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+
+        // Message already sent
+        if (messageFromCache.isSentDraft) {
+            onMessageAlreadySent();
+            return;
+        }
+
         const notificationID = createNotification({
             text: (
                 <SavingDraftNotification
@@ -97,6 +109,16 @@ export const useCloseHandler = ({
     const handleClose = useHandler(async () => {
         // Closing the composer instantly, all the save process will be in background
         onClose();
+
+        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+
+        if (messageFromCache.isSentDraft) {
+            createNotification({
+                text: c('Error').t`This message has already been sent.`,
+                type: 'error',
+            });
+            return;
+        }
 
         if (lock) {
             // If the composer was locked, either it could have
