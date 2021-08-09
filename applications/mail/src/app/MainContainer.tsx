@@ -1,7 +1,13 @@
 import { useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useActiveBreakpoint, ModalsChildren, ErrorBoundary, StandardErrorPage } from '@proton/components';
-
+import {
+    useActiveBreakpoint,
+    ModalsChildren,
+    ErrorBoundary,
+    StandardErrorPage,
+    FeatureCode,
+    useFeatures,
+} from '@proton/components';
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
 import AttachmentProvider from './containers/AttachmentProvider';
@@ -15,6 +21,15 @@ import { MailContentRefProvider } from './hooks/useClickMailContent';
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
+    useFeatures([
+        FeatureCode.EarlyAccessScope,
+        FeatureCode.EnabledEarlyAccessDesynchronization,
+        FeatureCode.EnabledEarlyAccess,
+        FeatureCode.ScheduledSend,
+        FeatureCode.BundlePromoShown,
+        FeatureCode.EnabledEncryptedSearch,
+        FeatureCode.UsedMailMobileApp,
+    ]);
 
     return (
         <MessageProvider>

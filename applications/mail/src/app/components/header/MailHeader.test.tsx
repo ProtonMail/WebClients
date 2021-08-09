@@ -151,18 +151,13 @@ describe('MailHeader', () => {
             const { searchForm } = await setup();
             const searchInput = searchForm.querySelector('input') as HTMLInputElement;
 
-            // Faking timers because there is a debounce in the search input component
-            jest.useFakeTimers();
+            fireEvent.change(searchInput, { target: { value: searchTerm } });
 
             act(() => {
-                fireEvent.change(searchInput, { target: { value: searchTerm } });
-                jest.runAllTimers();
                 fireEvent.submit(searchForm);
             });
 
             expect(props.onSearch).toHaveBeenCalledWith(searchTerm, undefined);
-
-            jest.useRealTimers();
         });
 
         it('should search with keyword in advanced search', async () => {
