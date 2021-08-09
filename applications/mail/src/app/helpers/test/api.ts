@@ -82,11 +82,14 @@ export const clearFeatureFlags = () => {
 
 export const registerFeatureFlagsApiMock = () => {
     addApiMock(
-        'core/v4/features/:feature',
+        'core/v4/features',
         (args) => {
-            const { feature } = args.params;
+            const { Code } = args.params;
+            const features: string[] = Code.split(',');
             return {
-                Feature: featureFlags[feature] ? featureFlags[feature] : { ...defaultFeatureFlagValue, Code: feature },
+                Features: features.map((code) =>
+                    featureFlags[code] ? featureFlags[code] : { ...defaultFeatureFlagValue, Code: code }
+                ),
             };
         },
         'get'

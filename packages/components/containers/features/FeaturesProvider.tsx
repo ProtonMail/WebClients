@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import * as React from 'react';
-import { getFeature, updateFeatureValue } from '@proton/shared/lib/api/features';
-
+import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
+import { unique } from '@proton/shared/lib/helpers/array';
 import { useApi } from '../../hooks';
 import FeaturesContext, { Feature, FeatureCode } from './FeaturesContext';
 
@@ -11,77 +11,102 @@ interface Props {
 
 const FeaturesProvider = ({ children }: Props) => {
     const api = useApi();
-
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+    const [features, setFeatures] = useState<{ [key in FeatureCode]?: Feature }>({});
+    const [loading, setLoading] = useState<{ [key in FeatureCode]?: boolean }>({});
+    const codePromiseCacheRef = useRef<{ [key in FeatureCode]?: Promise<Feature> | undefined }>({});
+    const codeQueueRef = useRef<FeatureCode[]>([]);
 
-    const [features, setFeatures] = useState<{ [key: string]: Feature }>({});
+    const get = (codes: FeatureCode[]) => {
+        const codeQueue = codeQueueRef.current;
+        codeQueueRef.current = [];
+        const codePromiseCache = codePromiseCacheRef.current;
 
-    const [loading, setLoading] = useState<{ [key: string]: boolean }>({});
+        const allUniqueCodesToFetch = unique(codes.concat(codeQueue)).filter((code) => {
+            return !codePromiseCache[code];
+        });
+        if (!allUniqueCodesToFetch.length) {
+            return Promise.all(
+                codes.map((code) => {
+                    return codePromiseCache[code]!;
+                })
+            );
+        }
 
-    const featureGetPromiseRef = useRef<{ [key: string]: Promise<Feature> }>({});
+        const newLoading = allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
+            acc[code] = true;
+            return acc;
+        }, {});
+        setLoading(newLoading);
 
-    const updateLoading = (code: FeatureCode, isLoading: boolean) => {
-        setLoading((currentLoading) => ({ ...currentLoading, [code]: isLoading }));
+        const promise = silentApi<{ Features: Feature[] }>(getFeatures(allUniqueCodesToFetch))
+            .then(({ Features }) => {
+                const newFeatures = Features.reduce<{ [key in FeatureCode]?: Feature }>((acc, Feature) => {
+                    acc[Feature.Code as FeatureCode] = Feature;
+                    return acc;
+                }, {});
+                setFeatures((currentFeatures) => ({ ...newFeatures, ...currentFeatures }));
+
+                return Features;
+            })
+            .finally(() => {
+                const newLoading = allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
+                    acc[code] = false;
+                    return acc;
+                }, {});
+                setLoading(newLoading);
+            });
+
+        allUniqueCodesToFetch.forEach((code) => {
+            codePromiseCache[code] = promise
+                .then((Features) => {
+                    const Feature = Features.find(({ Code }) => Code === code);
+                    return Feature!;
+                })
+                .catch((e) => {
+                    codePromiseCache[code] = undefined;
+                    throw e;
+                });
+        });
+
+        return Promise.all(
+            codes.map((code) => {
+                return codePromiseCache[code]!;
+            })
+        );
     };
 
-    const addFeature = (code: FeatureCode, feature: Feature) => {
+    const updateFeature = (code: FeatureCode, feature: Feature | undefined) => {
         setFeatures((currentFeatures) => ({ ...currentFeatures, [code]: feature }));
     };
 
-    const updateFeature = addFeature;
-
-    const get = async (code: FeatureCode) => {
-        if (features[code]) {
-            return Promise.resolve(features[code]);
-        }
-
-        const createFeatureGetPromise = async () => {
-            try {
-                updateLoading(code, true);
-
-                const { Feature } = await silentApi<{ Feature: Feature }>(getFeature(code));
-
-                addFeature(code, Feature);
-
-                return Feature;
-            } catch (e) {
-                delete featureGetPromiseRef.current[code];
-
-                throw e;
-            } finally {
-                updateLoading(code, false);
-            }
-        };
-
-        if (!(code in featureGetPromiseRef.current)) {
-            featureGetPromiseRef.current[code] = createFeatureGetPromise();
-        }
-
-        return featureGetPromiseRef.current[code];
-    };
-
     const put = async (code: FeatureCode, value: any) => {
-        const copyFeature = { ...features[code] };
-
+        const oldFeature = features[code];
+        const oldCopiedFeature = oldFeature ? { ...oldFeature } : undefined;
         try {
             // Optimistically apply change
-            updateFeature(code, { ...copyFeature, Value: value });
-
+            if (oldCopiedFeature) {
+                updateFeature(code, { ...oldCopiedFeature, Value: value });
+            }
             const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
-
             updateFeature(code, Feature);
-
             return Feature;
         } catch (e) {
             // Rollback optimistic change if it fails
-            updateFeature(code, copyFeature);
+            if (oldCopiedFeature) {
+                updateFeature(code, oldCopiedFeature);
+            }
             throw e;
         }
     };
 
-    const context = { features, loading, get, put };
+    const enqueue = (codes: FeatureCode[]) => {
+        codeQueueRef.current = unique(codeQueueRef.current.concat(codes));
+    };
 
-    return <FeaturesContext.Provider value={context}>{children}</FeaturesContext.Provider>;
+    return (
+        <FeaturesContext.Provider value={{ features, loading, get, put, enqueue }}>{children}</FeaturesContext.Provider>
+    );
 };
 
 export default FeaturesProvider;
