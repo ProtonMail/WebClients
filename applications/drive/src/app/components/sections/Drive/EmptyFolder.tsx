@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { IllustrationPlaceholder, usePopperAnchor } from '@proton/components';
+import { EmptyViewContainer, usePopperAnchor } from '@proton/components';
 
 import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';
 import UploadButton from '../../uploads/UploadButton';
@@ -36,13 +36,14 @@ const EmptyFolder = () => {
 
     return (
         <>
-            <div role="presentation" ref={anchorRef} onClick={close} className="p2 mt2 flex w100 flex flex-item-fluid">
-                <IllustrationPlaceholder url={noContentSvg} title={c('Info').t`There are no files yet`}>
-                    <p className="m0">{c('Info').t`Drag and drop a file here or choose to upload.`}</p>
-                    <div className="mt2 flex flex-column flex-nowrap w13e flex-item-noshrink">
-                        <UploadButton />
+            <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
+                <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`There are no files yet` }}>
+                    <h3 className="text-bold">{c('Info').t`There are no files yet`}</h3>
+                    <p>{c('Info').t`Drag and drop a file here or choose to upload.`}</p>
+                    <div className="flex flex-justify-center">
+                        <UploadButton className="w13e" />
                     </div>
-                </IllustrationPlaceholder>
+                </EmptyViewContainer>
             </div>
             <FolderContextMenu
                 isOpen={isOpen}

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { IllustrationPlaceholder, PrimaryButton, useModals } from '@proton/components';
+import { PrimaryButton, useModals, EmptyViewContainer } from '@proton/components';
+
 import noLinksSvg from '@proton/styles/assets/img/placeholders/file-share.svg';
 
 import SelectedFileToShareModal from '../../SelectedFileToShareModal/SelectedFileToShareModal';
@@ -19,16 +20,15 @@ const EmptyShared = ({ shareId }: Props) => {
     };
 
     return (
-        <div role="presentation" className="p2 mt2 flex w100 flex flex-item-fluid">
-            <IllustrationPlaceholder className="w20" url={noLinksSvg} title={c('Info').t`Share files with links`}>
-                <p className="m0">{c('Info').t`Create links and share your files with others.`}</p>
-                <div className="mt2 flex flex-column flex-nowrap w13e flex-item-noshrink">
-                    <PrimaryButton size="large" className="text-bold mt0-25 w100" onClick={onShareFile}>
-                        {c('Action').t`Share file`}
-                    </PrimaryButton>
-                </div>
-            </IllustrationPlaceholder>
-        </div>
+        <EmptyViewContainer imageProps={{ src: noLinksSvg, title: c('Info').t`Share files with links` }}>
+            <h3 className="text-bold">{c('Info').t`Share files with links`}</h3>
+            <p>{c('Info').t`Create links and share your files with others.`}</p>
+            <div className="flex flex-justify-center">
+                <PrimaryButton size="large" className="text-bold w13e" onClick={onShareFile}>
+                    {c('Action').t`Share file`}
+                </PrimaryButton>
+            </div>
+        </EmptyViewContainer>
     );
 };
 
