@@ -120,7 +120,7 @@ const CalendarSidebarListItems = ({
                                     size="small"
                                     className="calendar-sidebar-list-item-action no-border flex cursor-pointer flex-item-noshrink no-mobile"
                                     loading={actionsDisabled}
-                                    content={<Icon name="3-dots-horizontal" />}
+                                    content={<Icon name="ellipsis" />}
                                 >
                                     <DropdownMenu>
                                         {dropdownItems.map(({ text, onClick }) => {

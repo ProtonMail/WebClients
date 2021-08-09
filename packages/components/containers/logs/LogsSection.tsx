@@ -179,7 +179,7 @@ const LogsSection = () => {
                             onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                             title={c('Action').t`Reload`}
                         >
-                            <Icon name="reload" className="mr0-5" />
+                            <Icon name="arrows-rotate" className="mr0-5" />
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
 

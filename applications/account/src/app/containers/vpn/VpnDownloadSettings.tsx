@@ -8,7 +8,7 @@ export const getDownloadsPage = () => {
     return {
         text: c('Title').t`VPN apps`,
         to: '/vpn/vpn-apps',
-        icon: 'download',
+        icon: 'arrow-down-to-rectangle',
         subsections: [
             {
                 text: '',

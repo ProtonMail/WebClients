@@ -37,33 +37,33 @@ const ProtonVPNClientsSection = () => {
             <div className="flex on-mobile-flex-column">
                 <VPNClientCard
                     title={c('VPNClient').t`Android`}
-                    icon="android"
+                    icon="brand-android"
                     link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_campaign=ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard&utm_source=account.protonvpn.com&utm_medium=link&utm_content=dashboard&utm_term=android"
                     items={androidLinks}
                 />
                 <VPNClientCard
                     title={c('VPNClient').t`iOS`}
-                    icon="apple"
+                    icon="brand-apple"
                     link="https://apps.apple.com/app/apple-store/id1437005085?pt=106513916&ct=protonvpn.com-dashboard&mt=8"
                 />
                 <VPNClientCard
                     title={c('VPNClient').t`Windows`}
-                    icon="windows"
+                    icon="brand-windows"
                     link="https://protonvpn.com/download-windows/"
                 />
                 <VPNClientCard
                     title={c('VPNClient').t`macOS`}
-                    icon="macos"
+                    icon="brand-macos"
                     link="https://protonvpn.com/download-macos/"
                 />
                 <VPNClientCard
                     title={c('VPNClient').t`GNU/Linux`}
-                    icon="linux"
+                    icon="brand-linux"
                     link="https://protonvpn.com/download-linux/"
                 />
                 <VPNClientCard
                     title={c('VPNClient').t`Chromebook`}
-                    icon="chrome"
+                    icon="brand-chrome"
                     link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_campaign=ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard&utm_source=account.protonvpn.com&utm_medium=link&utm_content=dashboard&utm_term=chromebook"
                     items={androidLinks}
                 />

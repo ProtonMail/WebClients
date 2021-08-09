@@ -183,10 +183,10 @@ const AppearanceOtherSection = () => {
                         >
                             <ButtonGroup className="ml1 no-pointer-events">
                                 <Button icon title={c('Action').t`Read`}>
-                                    <Icon name="read" />
+                                    <Icon name="eye" />
                                 </Button>
                                 <Button icon title={c('Action').t`Unread`}>
-                                    <Icon name="unread" />
+                                    <Icon name="eye-slash" />
                                 </Button>
                             </ButtonGroup>
                         </Radio>
@@ -203,10 +203,10 @@ const AppearanceOtherSection = () => {
                         >
                             <ButtonGroup className="ml1 no-pointer-events">
                                 <Button icon title={c('Action').t`Unread`}>
-                                    <Icon name="unread" />
+                                    <Icon name="eye-slash" />
                                 </Button>
                                 <Button icon title={c('Action').t`Read`}>
-                                    <Icon name="read" />
+                                    <Icon name="eye" />
                                 </Button>
                             </ButtonGroup>
                         </Radio>

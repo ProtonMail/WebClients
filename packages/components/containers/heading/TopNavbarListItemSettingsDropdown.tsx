@@ -26,7 +26,7 @@ const TopNavbarListItemSettingsButton = forwardRef(
                 type="button"
                 as="button"
                 data-test-id="view:general-settings"
-                icon={<Icon name="settings" />}
+                icon={<Icon name="gear" />}
                 text={c('Text').t`Settings`}
                 title={c('Title').t`Open settings menu`}
             />

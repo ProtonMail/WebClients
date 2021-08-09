@@ -16,10 +16,10 @@ const ContactsSettingsSidebarList = () => {
             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
                 <SidebarListItemContent>{APPS_CONFIGURATION[PROTONCONTACTS].name}</SidebarListItemContent>
             </SidebarListItem>
-            <SettingsListItem to={`${path}/general`} icon="apps">
+            <SettingsListItem to={`${path}/general`} icon="grid">
                 {c('Settings section title').t`General`}
             </SettingsListItem>
-            <SettingsListItem to={`${path}/import-export`} icon="export">
+            <SettingsListItem to={`${path}/import-export`} icon="arrow-up-from-screen">
                 {c('Settings section title').t`Import & export`}
             </SettingsListItem>
         </SidebarList>

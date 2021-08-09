@@ -90,7 +90,7 @@ const PlanCard = ({
                                 className={classnames(['flex flex-nowrap mb0-5', feature.notIncluded && 'color-weak'])}
                             >
                                 <span className="flex-item-noshrink mr1">
-                                    {feature.notIncluded ? '—' : <Icon name="on" className="color-primary" />}
+                                    {feature.notIncluded ? '—' : <Icon name="check" className="color-primary" />}
                                 </span>
                                 <span className="flex-item-fluid">
                                     {feature.content} {feature.info}

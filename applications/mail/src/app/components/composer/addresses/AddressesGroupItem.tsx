@@ -112,7 +112,7 @@ const AddressesGroupItem = ({
                 {...dragHandlers}
             >
                 <span className="inline-flex composer-addresses-item-icon pl0-25 ml0-1 pr0-25 no-pointer-events-children h100">
-                    <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
+                    <Icon name="user-group" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                 </span>
                 <Tooltip title={c('Info').t`Click to view group details`}>
                     <span
@@ -129,7 +129,7 @@ const AddressesGroupItem = ({
                         className="composer-addresses-item-remove inline-flex border-left pl0-25 pr0-25 no-pointer-events-children h100"
                         onClick={handleRemove}
                     >
-                        <Icon name="off" size={12} className="mauto" />
+                        <Icon name="xmark" size={12} className="mauto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -157,7 +157,7 @@ const AddressesGroupItem = ({
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleOpenGroupModal}>
-                        <Icon name="contact" className="mr0-5 mt0-25" />
+                        <Icon name="user" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -165,7 +165,7 @@ const AddressesGroupItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="delete" className="mr0-5 mt0-25" />
+                        <Icon name="circle-xmark" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

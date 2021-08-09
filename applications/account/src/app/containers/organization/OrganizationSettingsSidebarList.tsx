@@ -20,7 +20,7 @@ const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
                     <>
                         <SidebarListItem>
                             <SidebarListItemLink to={`/${appSlug}/users-addresses`}>
-                                <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
+                                <SidebarListItemContent left={<SidebarListItemContentIcon name="people" />}>
                                     {c('Settings section title').t`Users & addresses`}
                                 </SidebarListItemContent>
                             </SidebarListItemLink>
@@ -34,7 +34,7 @@ const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
                         </SidebarListItem>
                         <SidebarListItem>
                             <SidebarListItemLink to={`/${appSlug}/organization-keys`}>
-                                <SidebarListItemContent left={<SidebarListItemContentIcon name="security" />}>
+                                <SidebarListItemContent left={<SidebarListItemContentIcon name="shield" />}>
                                     {c('Settings section title').t`Organization & keys`}
                                 </SidebarListItemContent>
                             </SidebarListItemLink>
@@ -43,7 +43,7 @@ const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
                 ) : (
                     <SidebarListItem>
                         <SidebarListItemLink to={`/${appSlug}/multi-user-support`}>
-                            <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
+                            <SidebarListItemContent left={<SidebarListItemContentIcon name="people" />}>
                                 {c('Settings section title').t`Multi-user support`}
                             </SidebarListItemContent>
                         </SidebarListItemLink>

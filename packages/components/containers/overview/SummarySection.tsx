@@ -68,11 +68,11 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     ) : (
                         <ul className="unstyled mt0 mb0">
                             <li className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="protonvpn" className="mr0-5 flex-item-noshrink" />
+                                <Icon name="brand-proton-vpn" className="mr0-5 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(vpnPlan, 'ProtonVPN')}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
+                                <Icon name="brand-proton-mail" className="mr0-5 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(mailPlan, 'ProtonMail')}</span>
                             </li>
                         </ul>
@@ -120,13 +120,13 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <strong className="block mb0-5">{c('Title').t`Application settings`}</strong>
                     <ul className="unstyled mt0 mb0">
                         <li className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
+                            <Icon name="brand-proton-mail" className="mr0-5 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONMAIL}>
                                 {c('Link').t`ProtonMail settings`}
                             </SettingsLink>
                         </li>
                         <li className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="protoncalendar" className="mr0-5 flex-item-noshrink" />
+                            <Icon name="brand-proton-calendar" className="mr0-5 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONCALENDAR}>
                                 {c('Link').t`${calendarAppName} settings`}
                             </SettingsLink>

@@ -99,7 +99,7 @@ const PrivateHeader = ({
                                 shape="outline"
                                 color="norm"
                                 text={c('Link').t`Upgrade`}
-                                icon={<Icon name="upgrade" />}
+                                icon={<Icon name="arrow-up-big-line" />}
                                 path="/dashboard"
                                 title={c('Link').t`Go to subscription plans`}
                             />
@@ -110,7 +110,7 @@ const PrivateHeader = ({
                             <TopNavbarListItemButton
                                 as={AppLink}
                                 text={c('Link').t`Upgrade`}
-                                icon={<Icon name="upgrade" />}
+                                icon={<Icon name="arrow-up-big-line" />}
                                 to="/dashboard"
                                 title={c('Link').t`Go to subscription plans`}
                             />

@@ -72,7 +72,7 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                         <div key="calendar">
                                             <div className="flex flex-nowrap">
                                                 <Icon
-                                                    name="calendar"
+                                                    name="calendar-days"
                                                     style={{ color }}
                                                     className="mr0-75 flex-item-noshrink"
                                                 />

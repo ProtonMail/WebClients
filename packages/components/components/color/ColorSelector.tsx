@@ -32,7 +32,7 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }:
                             data-test-id={`color-selector:${color}`}
                         />
                         <div className="color-selector-item-mask">
-                            <Icon name="on" className="mauto" />
+                            <Icon name="check" className="mauto" />
                         </div>
                     </li>
                 );

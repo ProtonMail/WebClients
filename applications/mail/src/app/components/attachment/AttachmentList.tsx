@@ -144,7 +144,7 @@ const AttachmentList = ({
                     {size !== 0 && <strong className="mr0-5">{sizeLabel}</strong>}
                     {pureAttachmentsCount > 0 && (
                         <span className="mr0-5">
-                            <Icon name="attach" className="mr0-25" />
+                            <Icon name="paperclip" className="mr0-25" />
                             <span>{pureAttachmentsCount}</span>&nbsp;
                             <span className="no-mobile">
                                 {c('Info').ngettext(msgid`file attached`, `files attached`, pureAttachmentsCount)}
@@ -182,7 +182,7 @@ const AttachmentList = ({
                         >
                             {c('Download attachments').t`Download all`}
                         </button>
-                        {showInstant && <Icon className="ml0-5" name="download" />}
+                        {showInstant && <Icon className="ml0-5" name="arrow-down-to-rectangle" />}
                         {showLoader && <CircleLoader className="icon-16p ml0-5" />}
                     </div>
                 )}

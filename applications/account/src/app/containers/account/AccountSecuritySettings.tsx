@@ -7,7 +7,7 @@ export const getSecurityPage = () => {
     return {
         text: c('Title').t`Security`,
         to: '/security',
-        icon: 'security',
+        icon: 'shield',
         subsections: [
             {
                 text: c('Title').t`Session management`,

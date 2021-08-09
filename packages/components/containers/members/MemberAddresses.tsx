@@ -77,7 +77,7 @@ const MemberAddresses = ({ addresses }: MemberAddressesProps) => {
                         {remainingAddresses.length} {c('Info').t`more`}
                         {' '}
                         <span className="no-mobile">{addressesPluralized}</span>
-                        <Icon size={12} className="ml0-25" name="caret" />
+                        <Icon size={12} className="ml0-25" name="angle-down" />
                     </Button>
                 </li>
             );

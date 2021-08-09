@@ -18,7 +18,7 @@ export const getPaymentPage = () => {
     return {
         text: c('Title').t`Payment`,
         to: '/payment',
-        icon: 'payments-type-card',
+        icon: 'credit-card',
         permissions: [UPGRADER, NOT_SUB_USER],
         subsections: [
             {

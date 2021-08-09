@@ -10,11 +10,11 @@ import { AttachmentAction, AttachmentHandler } from './AttachmentList';
 const getActionIcon = (action: AttachmentAction) => {
     switch (action) {
         case AttachmentAction.Download:
-            return 'download';
+            return 'arrow-down-to-rectangle';
         case AttachmentAction.Preview:
-            return 'expand';
+            return 'arrow-up-right-and-arrow-down-left-from-center';
         case AttachmentAction.Remove:
-            return 'off';
+            return 'xmark';
         default:
             return '';
     }

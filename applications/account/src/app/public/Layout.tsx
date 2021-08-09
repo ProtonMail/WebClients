@@ -58,28 +58,28 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                         <span className="text-sm">{c('Info').t`One account for all Proton services`}</span>
                         <div className="p0-5">
                             <Icon
-                                name="protonmail"
+                                name="brand-proton-mail"
                                 className="ml0-5 mr0-5"
                                 alt={mailAppName}
                                 title={mailAppName}
                                 size={20}
                             />
                             <Icon
-                                name="protoncalendar"
+                                name="brand-proton-calendar"
                                 className="ml0-5 mr0-5"
                                 alt={calendarAppName}
                                 title={calendarAppName}
                                 size={20}
                             />
                             <Icon
-                                name="protonvpn"
+                                name="brand-proton-vpn"
                                 className="ml0-5 mr0-5"
                                 alt={vpnAppName}
                                 title={vpnAppName}
                                 size={20}
                             />
                             <Icon
-                                name="protondrive"
+                                name="brand-proton-drive"
                                 className="ml0-5 mr0-5"
                                 alt={driveAppName}
                                 title={driveAppName}

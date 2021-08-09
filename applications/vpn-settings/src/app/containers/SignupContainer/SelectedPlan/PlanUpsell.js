@@ -58,7 +58,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
                         <ul className="selected-plan-list unstyled m0">
                             {upsell.features.map((feature, i) => (
                                 <li key={i} className="flex flex-nowrap">
-                                    <Icon name="on" className="color-primary mt0-25 mr1 flex-item-noshrink" />
+                                    <Icon name="check" className="color-primary mt0-25 mr1 flex-item-noshrink" />
                                     <span className="flex-item-fluid">{feature}</span>
                                 </li>
                             ))}

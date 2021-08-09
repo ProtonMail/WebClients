@@ -41,7 +41,7 @@ const ServerDown = () => (
     <span className="ml0-5">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex-vcenter">
-                <Icon className="color-danger" size={20} name="attention" />
+                <Icon className="color-danger" size={20} name="triangle-exclamation" />
             </div>
         </Tooltip>
     </span>
@@ -50,7 +50,7 @@ const ServerDown = () => (
 export const P2PIcon = () => (
     <span className="ml0-5 mr0-5">
         <Tooltip title={c('Info').t`P2P`}>
-            <Icon name="p2p" size={18} className="rounded bg-strong p0-25" />
+            <Icon name="arrow-right-arrow-left" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
     </span>
 );
@@ -58,7 +58,7 @@ export const P2PIcon = () => (
 export const TorIcon = () => (
     <span className="ml0-5 mr0-5">
         <Tooltip title={c('Info').t`Tor`}>
-            <Icon name="tor" size={18} className="rounded bg-strong p0-25" />
+            <Icon name="brand-tor" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
     </span>
 );
@@ -160,7 +160,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                             text: (
                                                 <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between">
                                                     <span className="mr0-5">{server.Domain}</span>
-                                                    <Icon name="clipboard" title={c('Action').t`Copy`} />
+                                                    <Icon name="copy" title={c('Action').t`Copy`} />
                                                 </div>
                                             ),
                                             onClick(event) {

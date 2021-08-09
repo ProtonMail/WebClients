@@ -77,7 +77,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                                     className="inline-flex flex-justify-center flex-align-items-center"
                                     disabled={loadingAddresses}
                                 >
-                                    <Icon name="contacts" className="mr0-5" />
+                                    <Icon name="book-user" className="mr0-5" />
                                     {c('Action').t`Continue with Google`}
                                 </PrimaryButton>
                             </div>

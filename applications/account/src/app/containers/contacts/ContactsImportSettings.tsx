@@ -7,7 +7,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 export const getImportExportPage = () => {
     return {
         to: '/contacts/import-export',
-        icon: 'import',
+        icon: 'arrow-down-to-screen',
         text: c('Title').t`Import & export`,
         subsections: [
             {

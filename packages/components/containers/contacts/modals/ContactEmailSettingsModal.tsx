@@ -220,7 +220,7 @@ const ContactEmailSettingsModal = ({
                     title={c('Action').t`Close modal`}
                     onClick={onClose}
                 >
-                    <Icon name="close" alt={c('Action').t`Close modal`} />
+                    <Icon name="xmark" alt={c('Action').t`Close modal`} />
                 </Button>
                 <h1 id="modalTitle" className="modal-title text-ellipsis">
                     {c('Title').t`Email settings (${emailAddress})`}

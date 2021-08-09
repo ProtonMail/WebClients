@@ -61,7 +61,7 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
                             title={`${c('Action').t`Remove`} ${label.title}`}
                         >
                             <Icon
-                                name="close"
+                                name="xmark"
                                 size={12}
                                 className="label-stack-item-delete-icon"
                                 alt={c('Action').t`Remove`}

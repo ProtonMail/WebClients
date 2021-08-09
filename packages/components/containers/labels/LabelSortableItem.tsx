@@ -17,7 +17,7 @@ function LabelItem({ label, ...rest }: Props) {
             cells={[
                 <div key="label" className="flex flex-nowrap">
                     <Icon
-                        name="label"
+                        name="tag"
                         style={{ fill: Color }}
                         className="icon-16p flex-item-noshrink mr1 mtauto mbauto"
                     />

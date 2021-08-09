@@ -22,7 +22,7 @@ const PasswordInput = ({ disabled = false, ...rest }: Props) => {
                     type="button"
                     onClick={toggle}
                 >
-                    <Icon className="mauto" name={type === 'password' ? 'read' : 'unread'} />
+                    <Icon className="mauto" name={type === 'password' ? 'eye' : 'eye-slash'} />
                 </button>
             }
             {...rest}

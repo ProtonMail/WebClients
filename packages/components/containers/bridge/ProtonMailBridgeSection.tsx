@@ -20,7 +20,7 @@ interface BridgeClient {
 const initialBridgeClients: BridgeClient[] = [
     {
         id: 'windows',
-        icon: 'windows',
+        icon: 'brand-windows',
         platform: 'Windows',
         versionFile: 'version_windows.json',
         version: 'Latest',
@@ -28,7 +28,7 @@ const initialBridgeClients: BridgeClient[] = [
     },
     {
         id: 'apple',
-        icon: 'macos',
+        icon: 'brand-macos',
         platform: 'macOS',
         versionFile: 'version_darwin.json',
         version: 'Latest',
@@ -36,7 +36,7 @@ const initialBridgeClients: BridgeClient[] = [
     },
     {
         id: 'linux',
-        icon: 'linux',
+        icon: 'brand-linux',
         platform: 'GNU/Linux',
         versionFile: 'version_linux.json',
         version: 'Latest',

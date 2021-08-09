@@ -19,7 +19,7 @@ const StopSharingButton = ({ shareId, disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Stop sharing`}
-            icon={<Icon name="broken-link" />}
+            icon={<Icon name="link-broken" />}
             onClick={() => openStopSharing(shareId, selectedItems)}
             data-testid="toolbar-button-stop-sharing"
         />

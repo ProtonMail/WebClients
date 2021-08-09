@@ -8,7 +8,7 @@ export const getLabelsPage = () => {
     return {
         text: c('Title').t`Folders & labels`,
         to: '/mail/folders-labels',
-        icon: 'folder-label',
+        icon: 'tags',
         description: c('Settings description')
             .t`You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.`,
         subsections: [

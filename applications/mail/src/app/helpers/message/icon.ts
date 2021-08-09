@@ -468,19 +468,19 @@ export const getReceivedStatusIcon = (
 
 export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {
     if (fill === PLAIN) {
-        return 'locks-closed';
+        return 'lock-filled';
     }
     if (fill === CHECKMARK) {
-        return isEncrypted ? 'locks-check' : 'locks-open-check';
+        return isEncrypted ? 'lock-check-filled' : 'unlock-check-filled';
     }
     if (fill === SIGN) {
-        return isEncrypted ? 'locks-signed' : 'locks-open-signed';
+        return isEncrypted ? 'lock-pen-filled' : 'unlock-pen-filled';
     }
     if (fill === WARNING) {
-        return isEncrypted ? 'locks-warning' : 'locks-open-warning';
+        return isEncrypted ? 'lock-triangle-exclamation-filled' : 'unlock-triangle-exclamation-filled';
     }
     if (fill === FAIL) {
-        return 'attention';
+        return 'triangle-exclamation';
     }
     return '';
 };

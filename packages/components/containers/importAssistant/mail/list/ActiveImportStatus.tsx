@@ -23,12 +23,12 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
 
                     {errorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip title={c('Tooltip').t`Account is disconnected`}>
-                            <Icon name="attention-plain" />
+                            <Icon name="triangle-exclamation-filled" />
                         </Tooltip>
                     )}
                     {errorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT && (
                         <Tooltip title={c('Tooltip').t`Your ProtonMail inbox is almost full`}>
-                            <Icon name="attention-plain" />
+                            <Icon name="triangle-exclamation-filled" />
                         </Tooltip>
                     )}
                 </>
@@ -45,7 +45,7 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
                         title={c('Tooltip')
                             .t`Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.`}
                     >
-                        <Icon name="attention-plain" />
+                        <Icon name="triangle-exclamation-filled" />
                     </Tooltip>
                 </>
             );

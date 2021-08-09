@@ -181,9 +181,9 @@ const ImportInstructionsStep = ({
                         onClick={() => changeProvider(PROVIDER_INSTRUCTIONS.GMAIL)}
                         className="inline-flex flex-align-items-center"
                     >
-                        <Icon name="gmail" className="mr0-5" />
+                        <Icon name="brand-gmail" className="mr0-5" />
                         <span>{c('Provider').t`Gmail`}</span>
-                        <Icon name="caret" className="ml0-5 rotateZ-270" />
+                        <Icon name="angle-down" className="ml0-5 rotateZ-270" />
                     </Button>
                 </div>
 
@@ -193,10 +193,10 @@ const ImportInstructionsStep = ({
                         onClick={() => changeProvider(PROVIDER_INSTRUCTIONS.YAHOO)}
                         className="inline-flex flex-align-items-center"
                     >
-                        <Icon name="yahoo" className="mr0-5" />
+                        <Icon name="brand-yahoo" className="mr0-5" />
                         <span>{c('Provider').t`Yahoo Mail`}</span>
                         <Icon
-                            name="caret"
+                            name="angle-down"
                             className="ml0-5"
                             style={{
                                 transform: 'rotate(-90deg)',

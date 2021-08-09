@@ -6,7 +6,7 @@ import Input from '../input/Input';
 import { Button } from '../button';
 import { Icon } from '../icon';
 
-const EditableText = ({ icon = 'compose', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {
+const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {
     const [inputValue, setInputValue] = useState(initialText);
     const { state: editing, toggle: toggleEditing, set: setEditing } = useToggle();
 
@@ -38,12 +38,12 @@ const EditableText = ({ icon = 'compose', onSubmit, initialText = '', children, 
                         <Input autoFocus value={inputValue} onChange={handleChangeInputValue} {...rest} />
                     </div>
                     <Button icon type="submit" className="ml0-5" title={c('Action').t`Confirm`}>
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </Button>
                 </>
             )}
             <Button icon onClick={toggleEditing} className="ml0-5" title={c('Action').t`Close`}>
-                <Icon name="close" />
+                <Icon name="xmark" />
             </Button>
         </form>
     ) : (

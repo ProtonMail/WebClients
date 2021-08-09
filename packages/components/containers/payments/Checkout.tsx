@@ -62,7 +62,7 @@ const Checkout = ({
             <div className={loading ? 'opacity-50' : ''}>{children}</div>
             <p className="text-sm lh-standard flex flex-nowrap color-weak">
                 <span className="flex-item-noshrink mr0-5">
-                    <Icon name="security" />
+                    <Icon name="shield" />
                 </span>
                 <span className="flex-item-fluid">{c('Info')
                     .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>

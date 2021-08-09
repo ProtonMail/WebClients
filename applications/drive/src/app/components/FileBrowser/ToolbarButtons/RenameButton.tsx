@@ -18,7 +18,7 @@ const RenameButton = ({ shareId, selectedItems }: Props) => {
         <ToolbarButton
             disabled={noSelection(selectedItems) || isMultiSelect(selectedItems)}
             title={c('Action').t`Rename`}
-            icon={<Icon name="file-edit" />}
+            icon={<Icon name="note-pen" />}
             onClick={() => openRename(shareId, selectedItems[0])}
             data-testid="toolbar-rename"
         />

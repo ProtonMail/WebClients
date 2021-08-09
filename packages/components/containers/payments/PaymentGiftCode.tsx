@@ -31,7 +31,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
         return (
             <div className="inline-flex flex-nowrap flex-align-items-center">
                 <span className="mr1 flex flex-nowrap flex-align-items-center">
-                    <Icon name="gift" className="mr0-5 mb0-25" />
+                    <Icon name="gift-card" className="mr0-5 mb0-25" />
                     <code>{(gift.replace(/-/g, '').match(/.{1,4}/g) || ['']).join('-').toUpperCase()}</code>
                 </span>
                 <Button

@@ -97,7 +97,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(
                         >
                             {hasGroup ? buildGroupedOptions(options) : buildOptions(options)}
                         </select>
-                        <Icon name="caret" className="absolute no-pointer-events right-icon" />
+                        <Icon name="angle-down" className="absolute no-pointer-events right-icon" />
                     </span>
 
                     {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}

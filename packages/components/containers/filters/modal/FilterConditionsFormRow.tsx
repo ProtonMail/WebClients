@@ -140,7 +140,7 @@ const FilterConditionsRow = ({
                     {token}
                 </span>
                 <button type="button" className="flex flex-item-noshrink ml0-5" onClick={() => onRemoveToken(i)}>
-                    <Icon name="off" size={11} />
+                    <Icon name="xmark" size={11} />
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
             </span>
@@ -236,7 +236,7 @@ const FilterConditionsRow = ({
                     className={classnames(['w20 text-left', isNarrow && 'mb1'])}
                     onClick={toggleSection}
                 >
-                    <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
+                    <Icon name="angle-down" className={classnames([isOpen && 'rotateX-180'])} />
                     <span className={classnames(['ml0-5', condition.error && 'color-danger'])}>{label}</span>
                 </button>
                 <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>

@@ -203,7 +203,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                             onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
                             title={c('Action').t`Create new folder`}
                         >
-                            <Icon name="folder-new" />
+                            <Icon name="folder-plus" />
                         </Button>
                     ) : (
                         <LinkButton

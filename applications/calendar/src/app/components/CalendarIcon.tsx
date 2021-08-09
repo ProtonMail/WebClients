@@ -11,7 +11,7 @@ const CalendarIcon = ({ color, className }: Props) => {
     if (!iconColor) {
         return null;
     }
-    return <Icon className={classnames(['flex-item-noshrink', className])} name="calendar" color={iconColor} />;
+    return <Icon className={classnames(['flex-item-noshrink', className])} name="calendar-days" color={iconColor} />;
 };
 
 export default CalendarIcon;

@@ -96,7 +96,7 @@ export const Basic = () => {
                     label="Input with icon"
                     {...sharedInputProps}
                     placeholder="**** **** **** ****"
-                    icon={<Icon name="cc" />}
+                    icon={<Icon name="credit-card" />}
                 />
             </div>
             <div className="mt1">

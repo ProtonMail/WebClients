@@ -5,7 +5,7 @@ interface Props {
 }
 
 const ReloadSpinner = ({ refreshing = false }: Props) => {
-    return <Icon className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])} name="reload" />;
+    return <Icon className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])} name="arrows-rotate" />;
 };
 
 export default ReloadSpinner;

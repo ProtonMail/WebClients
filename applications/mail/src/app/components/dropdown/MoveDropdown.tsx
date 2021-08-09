@@ -36,7 +36,7 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
     acc.push({
         ...folder,
         Name: folder.Name,
-        icon: folder.subfolders?.length ? 'parent-folder' : 'folder',
+        icon: folder.subfolders?.length ? 'folders' : 'folder',
         level,
     });
 
@@ -85,11 +85,11 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 Name: c('Mailbox').t`Inbox`,
                 icon: 'inbox',
             },
-            { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
+            { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'box-archive' },
             canMoveToSpam && {
                 ID: SPAM,
                 Name: c('Mailbox').t`Spam`,
-                icon: 'spam',
+                icon: 'fire',
             },
             { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])

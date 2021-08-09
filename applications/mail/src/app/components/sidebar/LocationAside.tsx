@@ -32,7 +32,7 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
             {active && (
                 <Icon
                     className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])}
-                    name="reload"
+                    name="arrows-rotate"
                     data-testid="navigation-link:refresh-folder"
                 />
             )}

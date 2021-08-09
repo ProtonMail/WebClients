@@ -15,7 +15,7 @@ const PlanDetails = ({ selectedPlan, cycle, currency }) => {
                 <ul className="selected-plan-list unstyled m0 selected-plan-list--negative">
                     {features.map((feature, i) => (
                         <li key={i} className="flex flex-nowrap">
-                            <Icon name="minus" className="mt0-25 mr1 flex-item-noshrink" />
+                            <Icon name="dash" className="mt0-25 mr1 flex-item-noshrink" />
                             <span className="flex-item-fluid">{feature}</span>
                         </li>
                     ))}

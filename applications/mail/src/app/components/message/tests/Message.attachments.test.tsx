@@ -23,7 +23,7 @@ describe('Message attachments', () => {
     };
     const Attachments = [attachment1, attachment2, attachment3];
     const NumAttachments = Attachments.length;
-    const icons = ['mime-md-unknown', 'mime-md-pdf', 'mime-md-image'];
+    const icons = ['md-unknown', 'md-pdf', 'md-image'];
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
     const embeddedImage = createEmbeddedImage(attachment1);
     const messageImages = createMessageImages([embeddedImage]);
@@ -42,7 +42,7 @@ describe('Message attachments', () => {
             const { getByText } = within(items[i]);
             getByText(Attachments[i].Name);
             getByText(Attachments[i].Size, { exact: false });
-            assertIcon(items[i].querySelector('svg'), icons[i]);
+            assertIcon(items[i].querySelector('svg'), icons[i], undefined, 'mime');
         }
     });
 

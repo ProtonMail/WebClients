@@ -23,7 +23,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSet
 
 const generalSettingsConfig = (showCalendarSubscription: boolean) => ({
     to: '/calendar/calendars',
-    icon: 'calendar',
+    icon: 'calendar-days',
     text: c('Link').t`Calendars`,
     subsections: [
         {

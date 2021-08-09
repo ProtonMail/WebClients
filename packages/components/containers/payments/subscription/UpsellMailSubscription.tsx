@@ -13,9 +13,9 @@ import UpsellItem from './UpsellItem';
 
 const UpsellMailTemplate = ({ children }: { children: React.ReactNode }) => (
     <Card rounded bordered={false} className="mt1-5">
-        <UpsellItem icon="organization-users">{c('Mail upsell feature').t`Get Multi-user support`}</UpsellItem>
-        <UpsellItem icon="organization">{c('Mail upsell feature').t`Host emails for your organization`}</UpsellItem>
-        <UpsellItem icon="keys">{c('Mail upsell feature').t`Create separate logins for each user`}</UpsellItem>
+        <UpsellItem icon="people">{c('Mail upsell feature').t`Get Multi-user support`}</UpsellItem>
+        <UpsellItem icon="buildings">{c('Mail upsell feature').t`Host emails for your organization`}</UpsellItem>
+        <UpsellItem icon="key">{c('Mail upsell feature').t`Create separate logins for each user`}</UpsellItem>
         {children}
     </Card>
 );
