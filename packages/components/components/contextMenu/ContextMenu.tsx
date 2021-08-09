@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { generateUID } from '../../helpers';
 import { Dropdown } from '../dropdown';
-import { CORNERS_ONLY_PLACEMENTS } from '../popper/utils';
+import { CORNERS_ONLY_PLACEMENTS, Position } from '../popper/utils';
 
 interface Props {
     anchorRef: React.RefObject<HTMLElement>;
@@ -38,11 +38,14 @@ const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose =
         };
     }, [isOpen, autoClose, close]);
 
+    // ContextMenu don't use the arrow, no need to complexify the API with arrow positioning
+    const originalPosition: Position | undefined = position ? { ...position, '--arrow-offset': 0 } : undefined;
+
     return (
         <Dropdown
             id={uid}
             isOpen={isOpen}
-            originalPosition={position}
+            originalPosition={originalPosition}
             availablePlacements={CORNERS_ONLY_PLACEMENTS}
             noCaret
             autoCloseOutsideAnchor={false}

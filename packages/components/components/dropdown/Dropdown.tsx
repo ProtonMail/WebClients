@@ -2,14 +2,14 @@ import { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'rea
 import * as React from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { useIsClosing , useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
 import { classnames } from '../../helpers';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { usePopper } from '../popper';
 import { ALL_PLACEMENTS, Position } from '../popper/utils';
 import Portal from '../portal/Portal';
-import { useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
+
 import { useFocusTrap } from '../focus';
-import useIsClosing from './useIsClosing';
 
 interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
     ref?: React.RefObject<HTMLDivElement>;
