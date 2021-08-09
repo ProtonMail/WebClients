@@ -36,7 +36,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
         SCHEDULED
     );
 
-    if (cannotEmpty || isSearch(searchParameters)) {
+    if (cannotEmpty) {
         return null;
     }
 
@@ -55,7 +55,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
                         <DropdownMenuButton
                             data-testid="toolbar:empty"
                             loading={loading}
-                            disabled={!elementIDs.length || !!selectedIDs.length}
+                            disabled={!elementIDs.length || !!selectedIDs.length || isSearch(searchParameters)}
                             className="text-left color-danger"
                             onClick={handleEmptyLabel}
                         >
