@@ -49,9 +49,10 @@ export enum FeatureCode {
 }
 
 export interface FeaturesContextValue {
-    features: { [code: string]: Feature | undefined };
-    loading: { [code: string]: boolean | undefined };
-    get: <V = any>(code: FeatureCode) => Promise<Feature<V>>;
+    features: { [code in FeatureCode]?: Feature | undefined };
+    loading: { [code in FeatureCode]?: boolean | undefined };
+    enqueue: (code: FeatureCode[]) => void;
+    get: <V = any>(code: FeatureCode[]) => Promise<Feature<V>[]>;
     put: <V = any>(code: FeatureCode, value: V) => Promise<Feature<V>>;
 }
 
