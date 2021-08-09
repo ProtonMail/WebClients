@@ -164,26 +164,24 @@ export const CalendarModal = ({
                             />
                         </Field>
                     </Row>
-                    {!isSubscribedCalendar && (
-                        <Row>
-                            <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
-                            <Field className="flex flex-align-items-center">
-                                {model.calendarID ? (
-                                    addressText
-                                ) : (
-                                    <SelectTwo
-                                        id="calendar-address-select"
-                                        value={model.addressID}
-                                        onChange={({ value }) => setModel({ ...model, addressID: value })}
-                                    >
-                                        {model.addressOptions.map(({ value, text }) => (
-                                            <Option key={value} value={value} title={text} />
-                                        ))}
-                                    </SelectTwo>
-                                )}
-                            </Field>
-                        </Row>
-                    )}
+                    <Row>
+                        <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
+                        <Field className="flex flex-align-items-center">
+                            {model.calendarID ? (
+                                addressText
+                            ) : (
+                                <SelectTwo
+                                    id="calendar-address-select"
+                                    value={model.addressID}
+                                    onChange={({ value }) => setModel({ ...model, addressID: value })}
+                                >
+                                    {model.addressOptions.map(({ value, text }) => (
+                                        <Option key={value} value={value} title={text} />
+                                    ))}
+                                </SelectTwo>
+                            )}
+                        </Field>
+                    </Row>
                     <Row>
                         <Label htmlFor="calendar-display-toggle">{c('Label').t`Display`}</Label>
                         <Field>
