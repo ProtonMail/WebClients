@@ -1,7 +1,6 @@
 import { FileBrowserItem } from '../components/FileBrowser/interfaces';
-import { TransfersStats } from '../components/TransferManager/interfaces';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
-import { Transfer, TransferMeta, TransferState } from '../interfaces/transfer';
+import { Transfer, TransferMeta, TransfersStats, TransferState } from '../interfaces/transfer';
 import {
     calculateProgress,
     getMetaForTransfer,

@@ -1,7 +1,6 @@
 import { Progress } from '@proton/components';
 
-import { TransfersStats } from '../TransferManager/interfaces';
-import { Download } from '../../interfaces/transfer';
+import { Download, TransfersStats } from '../../interfaces/transfer';
 import { calculateProgress, getProgressBarStatus } from '../../utils/transfer';
 
 interface Props {

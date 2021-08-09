@@ -1,5 +1,6 @@
-import { Icon, Button, useLoading, usePreventLeave } from '@proton/components';
+import { useLoading, usePreventLeave } from '@proton/components';
 import { c } from 'ttag';
+
 import { useUploadProvider } from '../uploads/UploadProvider';
 import {
     isTransferInitializing,
@@ -12,8 +13,9 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { LinkType } from '../../interfaces/link';
 import useFiles from '../../hooks/drive/useFiles';
-import { TransferType, TransferProps } from './interfaces';
-import { Download, Upload } from '../../interfaces/transfer';
+import { TransferManagerButtonProps, TransferProps } from './interfaces';
+import { Download, TransferType, Upload } from '../../interfaces/transfer';
+import Buttons from './Buttons';
 
 function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
@@ -120,42 +122,36 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     const isPauseResumeAvailable = !isInitializing && !isFinished && !isFinalizing;
     const isRestartAvailable = isFailed;
 
-    return (
-        <div className="transfers-manager-list-item-controls flex flex-nowrap flex-justify-end">
-            {isPauseResumeAvailable && (
-                <Button
-                    icon
-                    type="button"
-                    onClick={togglePause}
-                    disabled={pauseInProgress}
-                    className="transfers-manager-list-item-controls-button"
-                    title={isTransferPaused(transfer) ? resumeText : pauseText}
-                >
-                    <Icon size={12} name={isTransferPaused(transfer) ? 'play' : 'pause'} />
-                </Button>
-            )}
-            {isRestartAvailable && (
-                <Button
-                    icon
-                    onClick={restartTransfer}
-                    className="transfers-manager-list-item-controls-button"
-                    title={restartText}
-                >
-                    <Icon size={12} name="arrow-rotate-right" />
-                </Button>
-            )}
-            <Button
-                icon
-                type="button"
-                disabled={isFinalizing}
-                onClick={handleCancelClick}
-                className="transfers-manager-list-item-controls-button"
-                title={isFinished ? removeText : cancelText}
-            >
-                <Icon size={12} name={isFinished ? 'brush' : 'xmark'} />
-            </Button>
-        </div>
-    );
+    const getButtons = () => {
+        const buttons: TransferManagerButtonProps[] = [];
+        if (isPauseResumeAvailable) {
+            buttons.push({
+                onClick: togglePause,
+                disabled: pauseInProgress,
+                title: isTransferPaused(transfer) ? resumeText : pauseText,
+                iconName: isTransferPaused(transfer) ? 'play' : 'pause',
+            });
+        }
+
+        if (isRestartAvailable) {
+            buttons.push({
+                onClick: restartTransfer,
+                title: restartText,
+                iconName: 'arrow-rotate-right',
+            });
+        }
+
+        buttons.push({
+            onClick: handleCancelClick,
+            title: isFinished ? removeText : cancelText,
+            disabled: isFinalizing,
+            iconName: isFinished ? 'brush' : 'xmark',
+        });
+
+        return buttons;
+    };
+
+    return <Buttons className="transfers-manager-list-item-controls" buttons={getButtons()} />;
 }
 
 export default TransferControls;

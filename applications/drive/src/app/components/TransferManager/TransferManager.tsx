@@ -1,18 +1,27 @@
-import { useCallback, useEffect, useRef, useMemo } from 'react';
-import { useToggle, classnames, useElementRect, useActiveBreakpoint } from '@proton/components';
+import { useCallback, useEffect, useRef, useMemo, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
+import { c } from 'ttag';
+
+import { useToggle, classnames, useElementRect, useActiveBreakpoint } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { c } from 'ttag';
+
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Header from './Header';
 import Transfer from './Transfer';
-import { TransferState, Download, Upload } from '../../interfaces/transfer';
+import {
+    Download,
+    STATE_TO_GROUP_MAP,
+    TransferGroup,
+    TransfersStats,
+    TransferType,
+    Upload,
+} from '../../interfaces/transfer';
 import { isTransferFinished } from '../../utils/transfer';
-import { TransfersStats, TransferType } from './interfaces';
 import useConfirm from '../../hooks/util/useConfirm';
 import useStatsHistory from '../../hooks/drive/useStatsHistory';
+import Toolbar from './Toolbar';
 
 interface TransferListEntry<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
@@ -20,30 +29,11 @@ interface TransferListEntry<T extends TransferType> {
 }
 
 const ROW_HEIGHT_PX = 4.375 * rootFontSize; // 4.375 * 16 =  we want 70px by default
-
-enum TRANSFER_GROUP {
-    ACTIVE,
-    DONE,
-    QUEUED,
-}
-const STATE_TO_GROUP_MAP = {
-    [TransferState.Progress]: TRANSFER_GROUP.ACTIVE,
-    [TransferState.Finalizing]: TRANSFER_GROUP.ACTIVE,
-    [TransferState.Paused]: TRANSFER_GROUP.ACTIVE,
-    [TransferState.Canceled]: TRANSFER_GROUP.ACTIVE,
-    [TransferState.NetworkError]: TRANSFER_GROUP.ACTIVE,
-    [TransferState.Done]: TRANSFER_GROUP.DONE,
-    [TransferState.Error]: TRANSFER_GROUP.DONE,
-    [TransferState.Initializing]: TRANSFER_GROUP.QUEUED,
-    [TransferState.Conflict]: TRANSFER_GROUP.QUEUED,
-    [TransferState.Pending]: TRANSFER_GROUP.QUEUED,
-};
-
 const MAX_VISIBLE_TRANSFERS = 5;
 const MAX_VISIBLE_TRANSFERS_MOBILE = 3;
 
 type ListItemData = {
-    sortedEntries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
+    entries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
     latestStats: TransfersStats;
     calculateAverageSpeed: (id: string) => number;
 };
@@ -51,8 +41,8 @@ type ListItemData = {
 type ListItemRowProps = Omit<ListChildComponentProps, 'data'> & { data: ListItemData };
 
 const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
-    const { calculateAverageSpeed, latestStats, sortedEntries } = data;
-    const { transfer, type } = sortedEntries[index];
+    const { calculateAverageSpeed, latestStats, entries } = data;
+    const { transfer, type } = entries[index];
 
     return (
         <Transfer
@@ -81,6 +71,7 @@ const TransferManager = ({
     allTransfersFinished: boolean;
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [transferGroupFilter, setTransferGroupFilter] = useState<TransferGroup | undefined>(undefined);
     /*
         FixedSizedList (used for virtual scrolling) requires `width` prop to work
         correcty. This is why we use 'useElementRect' hook here.
@@ -122,15 +113,20 @@ const TransferManager = ({
     const downloadEntries = useMemo(() => downloads.map(getDownloadListEntry), [downloads]);
     const uploadEntries = useMemo(() => uploads.map(getUploadListEntry), [uploads]);
 
-    const sortedEntries = useMemo(
-        () =>
-            [...downloadEntries, ...uploadEntries].sort(
+    const entries = useMemo(() => {
+        return [...downloadEntries, ...uploadEntries]
+            .sort(
                 (a, b) =>
                     STATE_TO_GROUP_MAP[a.transfer.state] - STATE_TO_GROUP_MAP[b.transfer.state] ||
                     b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
-            ),
-        [downloadEntries, uploadEntries]
-    );
+            )
+            .filter((entry) => {
+                if (transferGroupFilter === undefined) {
+                    return true;
+                }
+                return STATE_TO_GROUP_MAP[entry.transfer.state] === transferGroupFilter;
+            });
+    }, [downloadEntries, uploadEntries, transferGroupFilter]);
 
     const handleCloseClick = () => {
         if (allTransfersFinished) {
@@ -162,6 +158,13 @@ const TransferManager = ({
 
     const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
 
+    const calcultateItemHeight = useCallback(
+        (itemCount: number) => {
+            return ROW_HEIGHT_PX * Math.min(maxVisibleTransfers, itemCount);
+        },
+        [entries]
+    );
+
     return (
         <div
             id="transfer-manager"
@@ -175,21 +178,29 @@ const TransferManager = ({
                 onToggleMinimize={toggleMinimized}
                 onClose={handleCloseClick}
             />
-
+            <Toolbar onTransferGroupFilterChange={setTransferGroupFilter} currentTransferGroup={transferGroupFilter} />
+            {entries.length === 0 && (
+                <div
+                    className="transfers-manager-list-placeholder flex flex-justify-center flex-align-items-center"
+                    style={{ height: calcultateItemHeight(1) }}
+                >
+                    <span>{c('Info').t`No results found`} </span>
+                </div>
+            )}
             <div className="transfers-manager-list" ref={containerRef}>
                 {rect && (
                     <FixedSizeList
                         className="no-outline"
                         itemData={{
-                            sortedEntries,
+                            entries,
                             latestStats,
                             calculateAverageSpeed,
                         }}
-                        itemCount={sortedEntries.length}
+                        itemCount={entries.length}
                         itemSize={ROW_HEIGHT_PX}
-                        height={ROW_HEIGHT_PX * Math.min(maxVisibleTransfers, sortedEntries.length)}
+                        height={calcultateItemHeight(entries.length)}
                         width={rect.width}
-                        itemKey={(index, { sortedEntries }: ListItemData) => sortedEntries[index].transfer?.id ?? index}
+                        itemKey={(index, { entries }: ListItemData) => entries[index].transfer?.id ?? index}
                     >
                         {ListItemRow}
                     </FixedSizeList>
@@ -199,15 +210,15 @@ const TransferManager = ({
     );
 };
 
-/*
-    This component is introduced specifically to address the race condition of
-    `return null` code branch caused by `clearAllTransfers` call and width
-    calculation inside `TransferManager`.
-
-    Separating this chunk of code into its component guaranties that
-    list element will be *always* present in DOM for correct transfer manager list
-    width calculation.
-*/
+/**
+ * This component is introduced specifically to address the race condition of
+ * `return null` code branch caused by `clearAllTransfers` call and width
+ * calculation inside `TransferManager`.
+ *
+ * Separating this chunk of code into its component guaranties that
+ * list element will be *always* present in DOM for correct transfer manager list
+ * width calculation.
+ */
 const TransferManagerContainer = () => {
     const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();

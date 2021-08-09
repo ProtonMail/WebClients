@@ -1,4 +1,4 @@
-import { Download, Upload } from '../../interfaces/transfer';
+import { Download, TransferType, Upload } from '../../interfaces/transfer';
 
 export interface DownloadProps {
     transfer: Download;
@@ -15,17 +15,15 @@ export interface TransferProps<T extends TransferType> {
     type: T;
 }
 
-export interface TransferStats {
-    active: boolean;
-    progress: number;
-    speed: number;
-}
-export interface TransfersStats {
-    timestamp: Date;
-    stats: { [id: string]: TransferStats };
+export interface TransferManagerButtonProps {
+    disabled?: boolean;
+    title: string;
+    onClick: () => void;
+    iconName: string;
 }
 
-export enum TransferType {
-    Download = 'download',
-    Upload = 'upload',
+export interface TransferManagerButtonsProps {
+    buttons: TransferManagerButtonProps[];
+    className?: string;
+    id?: string;
 }
