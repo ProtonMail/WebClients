@@ -6,20 +6,20 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        ""
-      ],
       "Unknown error": [
         "Bilinmeyen hata"
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Bu ileti, mevcut tarayıcınızda açılamayacak bazı bağlantı adreslerini içerebilir"
+      ],
       "Authentication canceled.": [
-        ""
+        "Kimlik doğrulama iptal edildi."
       ],
       "Your import will not be processed.": [
-        ""
+        "İçe aktarımınız işlenmeyecektir."
       ],
       "Authentication error.": [
-        ""
+        "Kimlik doğrulama hatası."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Kullanmakta olduğunuz tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Bu alan gereklidir"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
+      ],
       "The composer failed to load.": [
         "Oluşturucu yüklenemedi."
       ],
       "Please refresh the page.": [
         "Lütfen sayfayı yenileyin."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
       ],
       "Can't validate email, try again later": [
         "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
@@ -96,19 +96,19 @@
         "Geçersiz isim"
       ],
       "We were unable to connect to your service provider.": [
-        ""
+        "Hizmet sağlayıcınıza bağlanamadık."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Dosyanın önizlenecek içeriği yok"
+        "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlandığından emin olun."
       ],
       "Incorrect mailbox password. Please try again": [
         "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
       ],
       "Incorrect login credentials. Please try again": [
         "Oturum açma bilgileri yanlış. Lütfen tekrar deneyin"
+      ],
+      "File has no contents to preview": [
+        "Dosyanın önizlenecek içeriği yok"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -203,6 +203,12 @@
       "Request timed out.": [
         "İstek zaman aşımına uğradı."
       ],
+      "Signature verification failed": [
+        "İmza doğrulaması başarısız oldu"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
+      ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
       ],
@@ -216,22 +222,16 @@
         "Kişi imzası doğrulanamadı"
       ],
       "No key retrieved for internal user is valid for sending": [
-        ""
+        "Dahili kullanıcı için alınan hiçbir anahtar göndermek için geçerli değil"
       ],
       "Trusted keys are not valid for sending": [
-        ""
+        "Güvenilir anahtarlar göndermek için geçerli değil"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        ""
+        "Kullanıcı için alınan hiçbir WKD anahtarı göndermek için geçerli değil"
       ],
       "The sending key is not valid": [
         "Gönderilen anahtar geçersiz"
-      ],
-      "Signature verification failed": [
-        "İmza doğrulaması başarısız oldu"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
       ],
       "Missing signature": [
         "İmza eksik"
@@ -243,7 +243,7 @@
         "İmza doğrulanmadı"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        ""
+        "${ emailAddress } için olan anahtar özellikleri oluşturulamadı"
       ],
       "Address primary private key not found": [
         "Adres birincil özel anahtarı bulunamadı"
@@ -261,20 +261,20 @@
         "Lütfen içerik aramanızı tekrar etkinleştirin"
       ],
       "Content search cannot be enabled in this browser. Please try another browser": [
-        ""
+        "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen farklı bir tarayıcıda deneyin"
       ],
       "A problem occurred, please try again": [
         "Bir sorun oluştu, lütfen tekrar deneyin"
       ],
       "No address with keys available to compose a message.": [
-        ""
+        "İleti oluşturmak için anahtarları olan adres yok."
       ],
       "Contact your organization’s administrator to resolve this.": [
         "Bunu çözmek için kuruluşunuzun yöneticisi ile temasa geçin."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "",
-        ""
+        "Aynı anda ${ maxActiveComposer } ileti penceresinden daha fazla pencere açamazsınız.",
+        "Aynı anda ${ maxActiveComposer } ileti penceresinden daha fazla pencere açamazsınız."
       ],
       "Message needs to be sent first": [
         "Öncelikle iletinin gönderilmesi gerekiyor"
@@ -292,24 +292,24 @@
         "Ekler yüklenirken bir hata oluştu. İleti gönderilmedi"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "",
-        ""
+        "Ek dosyanın şifresi çözülemedi.\nDosyaya ilişkin özel anahtara sahipseniz, GnuPG benzeri programlarla dosyanın şifresini çözebilirsiniz.",
+        "Ek dosyalardan bazılarının şifreleri çözülemedi.\nDosyalara ilişkin özel anahtara sahipseniz, GnuPG benzeri programlarla dosyanın şifresini çözebilirsiniz."
       ],
       "Your search matched too many results. Please limit your search and try again": [
-        ""
+        "Aramanız çok fazla sonuçla eşleşti. Lütfen aramanızı daraltın ve yeniden deneyin"
       ],
       "There has been an issue with content search. Default search has been used instead": [
-        ""
+        "İçerik aramasıyla ilgili bir sorunla karşılaşıldı. Varsayılan arama yöntemi kullanıldı"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "",
-        ""
+        "Kaldırılan birden çok girilmiş alıcı: ${ recipents }",
+        "Kaldırılan birden çok girilmiş alıcılar: ${ recipents }"
       ],
       "Message passwords do not match.": [
         "İleti şifreleri eşleşmiyor."
       ],
       "Invalid expiration time.": [
-        ""
+        "Geçersiz son kullanma tarihi."
       ],
       "The maximum expiration is 4 weeks.": [
         "En uzun sonlanma süresi 4 haftadır."
@@ -350,23 +350,26 @@
       "Close": [
         "Kapat"
       ],
-      "Confirm": [
-        "Onayla"
+      "Close modal": [
+        "Pencereyi kapat"
       ],
       "Cancel": [
         "İptal"
       ],
-      "Close modal": [
-        "Pencereyi kapat"
-      ],
       "Submit": [
         "Gönder"
+      ],
+      "Confirm": [
+        "Onayla"
       ],
       "More info: ${ safeTitle }": [
         "Daha fazla bilgi: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "“${ label }” ayarını kullan"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Sil"
@@ -481,9 +484,6 @@
       ],
       "Underline": [
         "Alt çizgili"
-      ],
-      "refresh the page": [
-        "sayfayı yenile"
       ],
       "Go to panel ${ index }": [
         "${ index } paneline git"
@@ -653,9 +653,6 @@
       "Next": [
         "İleri"
       ],
-      "Signing out": [
-        "Oturumu kapatılıyor"
-      ],
       "Clear": [
         "Temizle"
       ],
@@ -686,6 +683,12 @@
       "OK": [
         "Tamam"
       ],
+      "Signing out": [
+        "Oturumu kapatılıyor"
+      ],
+      "Log in": [
+        "Oturum aç"
+      ],
       "Details": [
         "Ayrıntılar"
       ],
@@ -706,9 +709,6 @@
       ],
       "Previous": [
         "Önceki"
-      ],
-      "Log in": [
-        "Oturum aç"
       ],
       "Get started": [
         "Başlayalım"
@@ -876,7 +876,16 @@
         "Hayır"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
+        "${ CALENDAR_APP_NAME } grubuna ekle"
+      ],
+      "Learn more": [
+        "Daha fazlasını öğrenin"
+      ],
+      "Open shop": [
+        "Mağazayı aç"
+      ],
+      "Open calendar": [
+        "Takvimi aç"
       ],
       "Send anyway": [
         "Yine de gönder"
@@ -964,7 +973,7 @@
         "Ayarla"
       ],
       "Schedule message": [
-        "Mesajlamaya programla"
+        "İletiyi planla"
       ],
       "Print": [
         "Yazdır"
@@ -1078,7 +1087,7 @@
         "Geri Al"
       ],
       "View message": [
-        "Mesajı görüntüle"
+        "İletiyi görüntüle"
       ],
       "Enable": [
         "Etkinleştir"
@@ -1186,7 +1195,7 @@
         "İletileri gizle"
       ],
       "Create new message": [
-        "Yeni mesaj oluştur"
+        "Yeni ileti oluştur"
       ],
       "Import messages": [
         "İletileri içe aktar"
@@ -1196,15 +1205,6 @@
       ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
-      ],
-      "Learn more": [
-        "Daha fazlasını öğrenin"
-      ],
-      "Open shop": [
-        "Mağazayı aç"
-      ],
-      "Open calendar": [
-        "Takvimi aç"
       ]
     },
     "Title": {
@@ -1558,7 +1558,7 @@
         "${ count } iletiyi sil"
       ],
       "Delete all messages": [
-        "Tüm mesajları sil"
+        "Tüm iletileri sil"
       ],
       "Trust new key?": [
         "Yeni anahtara güvenilsin mi?",
@@ -1725,6 +1725,9 @@
       "Loading": [
         "Yükleniyor"
       ],
+      "support team": [
+        "destek ekibi"
+      ],
       "No contacts added yet": [
         "Henüz kişi eklenmedi"
       ],
@@ -1821,9 +1824,6 @@
       ],
       "Plain text": [
         "Düz metin"
-      ],
-      "support team": [
-        "destek ekibi"
       ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
@@ -1948,7 +1948,7 @@
         "Bu ayarları yalnızca ProtonMail dışındaki alıcılarla PGP kullanıyorsanız değiştirin."
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Yüklenmiş anahtarlardan hiçbirisi şifrelemek için geçerli değil. Şifreleme otomatik olarak durduruldu."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -1971,9 +1971,6 @@
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
       ],
-      "Loading ${ appName }": [
-        "${ appName } yükleniyor"
-      ],
       "Screenshot(s) attached": [
         "Ekran görüntüsü eklendi"
       ],
@@ -1984,25 +1981,37 @@
         "Kişileri içe aktar"
       ],
       "Your contacts are being imported from": [
-        ""
+        "Kişilerinizi içeri aktarılıyor"
       ],
       "to": [
-        ""
+        "alıcı"
       ],
       "Your import has started!": [
         "İçeri aktarma işleminiz başladı!"
       ],
       "We will notify you once your import is finished.": [
-        ""
+        "İçe aktarımınız tamamlandığında size bildireceğiz."
       ],
       "Large imports can take several days to complete.": [
-        ""
+        "Büyük boyutlu içe aktarmaların tamamlanması birkaç gün sürebilir."
       ],
       "You can continue using Proton services as usual.": [
-        ""
+        "Herzamanki gibi Proton servislerini kullanmaya devam edebilirsiniz."
       ],
       "Your import will not be processed.": [
-        ""
+        "İçe aktarımınız işlenmeyecektir."
+      ],
+      "Loading ${ appName }": [
+        "${ appName } yükleniyor"
+      ],
+      "here": [
+        "burada"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
       ],
       "Unsupported file": [
         "Desteklenmeyen dosya"
@@ -2021,15 +2030,6 @@
       ],
       "of": [
         "/"
-      ],
-      "here": [
-        "burada"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
@@ -2221,8 +2221,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Geçerli faturalandırma döngüsünün sonunda faturalandırılır (${ renewalDate } tarihinde yenilenir)"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Aboneliğinizi iptal etmeden önce, tüm ek takvimleri ve tüm paylaşılmış takvim bağlantılarını kaldırmanız gerekmektedir. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
@@ -2325,7 +2325,7 @@
         "Filtreler, gelen ve gönderilen e-postalar da dahil olmak üzere tüm e-postalarda çalışır. Her süzgeç en az bir ad ve geçerli bir Sieve komut betiği içermelidir."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        ""
+        "Filtreler, gelen ve gönderilen e-postalar da dahil olmak üzere tüm e-postalarda çalışır. Her süzgeç en az bir ad, koşul ve eylem içermelidir."
       ],
       "No label selected": [
         "Etiket seçilmedi"
@@ -2412,7 +2412,7 @@
         "Mesajınızı yine de göndermek istiyor musunuz?"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Gönderilecek çok fazla mesaj var. Lütfen, bunu planlamak için başka bir mesaj gönderilene kadar bekleyiniz."
+        "Gönderilecek çok fazla ileti var. Lütfen, bunu planlamak için başka bir mesaj gönderilene kadar bekleyiniz."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "${ contactName } doğrulaması başarısız oldu: ilgili kişi doğru şekilde imzalanmadı.\nBu durum, parola sıfırlama işleminden kaynaklanabilir.\n${ contactAddress } adresine mesaj göndermek veya ilgili kişiyi düzenlemek için ilgili kişiyi yeniden imzalamanız gerekir."
@@ -2472,7 +2472,7 @@
         "Grup bilgilerini görmek için tıklayın"
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        ""
+        "Diğer ProtonMail kullanıcılarına e-posta gönderirken ileti sona erme olduğu gibi çalışır. ProtonMail olmayan kullanıcılara süresi dolan e-postalar göndermek için lütfen iptal edin ve e-postanıza şifre koruması ekleyin."
       ],
       "From": [
         "Gönderen"
@@ -2512,7 +2512,7 @@
         "ProtonMail kullanıcısı olmayanlar için şifreleme"
       ],
       "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+        "ProtonMail'i olmayan alıcılara şifrelenmiş iletiler, daha kısa bir sona erme süresi ayarlanmadıkça 28 gün içinde sona erer."
       ],
       "Message Password": [
         "İleti Parolası"
@@ -2541,19 +2541,19 @@
         "Saat"
       ],
       "When do you want your message to be sent?": [
-        "Mesajınızın ne zaman gönderilmesini istersiniz?"
+        "İletinizin ne zaman gönderilmesini istersiniz?"
       ],
       "Draft discarded": [
         "Taslak silindi"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        ""
+        "Kişi ayrıntılarından vazgeçmek ve bu süreçte belirtilen parmak izine sahip anahtarlara güvenmek istiyor musunuz?"
       ],
       "Do you want to re-sign the contact details?": [
         "İletişim bilgilerini yeniden imzalamak istiyor musunuz?"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        ""
+        "Bu ortak anahtar, ilgili adrese gönderilen e-postaların şifrelenmesi için otomatik olarak kullanılacaktır."
       ],
       "Message headers": [
         "İleti başlıkları"
@@ -2580,21 +2580,21 @@
         "Kimlik avı bildirimini onayla"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        ""
+        "Bir iletiyi oltalama girişimi olarak bildirmek bize iletiyi gönderir, böylece onu analiz edebilir ve filtrelerimizi geliştirebiliriz. Bu, iletinin içeriğini tam olarak görebileceğimiz anlamına gelir."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } dosya eklendi",
-        "${ numPureAttachments } dosya eklendi"
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } dosya eklendi",
+        "${ pureAttachmentsCount } dosya eklendi"
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } gömülü resim",
-        "${ numEmbedded } gömülü resim"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } gömülü resim",
+        "${ embeddedAttachmentsCount } gömülü resim"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        ""
+        "Bültenin göndericisine, gönderi listesinden çıkarılmak için istek gönderilecek ve bu işlem otomatik olarak sürdürülecektir."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        ""
+        "Gönderi listesinden çıkmak için, bültenin göndericisi tarafından belirtilen bu ayrıntılarla birlikte ${ boldFrom } üzerinden bir e-posta gönderilecektir:"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -2606,7 +2606,7 @@
         "Metin: "
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        ""
+        "Bu gönderi listesinden çıkmak için, bülten göndericisi tarafından verilen talimatların olduğu ilgili adrese yönlendirileceksiniz:"
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
@@ -2651,7 +2651,7 @@
         "Bu göndericinin genel anahtarına henüz güvenilmedi."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        ""
+        "${ senderName } için güvenilir anahtarları etkinleştirdiğinizde, ortak anahtarlar kişi ayrıntılarına eklenir."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Kişi ayrıntılarını doğrulamak için kullanılan imza ile ilgili bir hata oluştu, bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
@@ -2666,13 +2666,13 @@
         "Konu:"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        ""
+        "Bu ileti, Taslaklara taşınacak. Böylece onu düzenleyebilirsin. Ne zaman gönderileceğini yeniden planlamanız gerekecek."
       ],
       "This message will be sent shortly": [
-        ""
+        "Bu ileti kısa süre içinde gönderilecek"
       ],
       "This message will be sent ${ dateString } at ${ formattedTime }": [
-        ""
+        "Bu ileti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
       ],
       "file attached": [
         "dosya eklendi",
@@ -2683,13 +2683,13 @@
         "gömülü resimler"
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
-        ""
+        "İleti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
       ],
       "Message sent": [
         "İleti gönderildi"
       ],
       "Scheduling message...": [
-        ""
+        "İleti planlanıyor..."
       ],
       "Sending message...": [
         "İleti gönderiliyor..."
@@ -2701,19 +2701,19 @@
         "Taslak kaydediliyor…"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "Bu eylem tüm iletileri indirecek ve böylece iletiler yerel kaynakta aranabilecektir. Tarayıcı verilerinizi silmeniz bu özelliği durduracaktır."
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden daha yeni iletiler için"
       ],
       "Turn off content search. Activation progress won't be lost.": [
-        ""
+        "İçerik aramasını kapat. İndirilmiş iletiler etkilenmeyecektir."
       ],
       "Activation in progress": [
         "Etkinleştirme devam ediyor"
       ],
       "Indexing paused": [
-        ""
+        "Dizinleme duraklatıldı"
       ],
       "Estimating time remaining...": [
         "Kalan süre tahmin ediliyor..."
@@ -2722,14 +2722,14 @@
         "Mesaj içeriği araması güncelleniyor..."
       ],
       "Downloading message ${ esProgress } out of ${ totalIndexingMessages }...": [
-        ""
+        "İleti indiriliyor ${ esProgress } / ${ totalIndexingMessages }..."
       ],
       "Estimated time remaining: Less than a minute": [
-        ""
+        "Tahmini kalan süre: Bir dakikadan az"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "",
-        ""
+        "Tahmini kalan süre: ${ estimatedMinutes } dakika",
+        "Tahmini kalan süre: ${ estimatedMinutes } dakika"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } okunmamış sohbet",
@@ -2740,8 +2740,8 @@
         "${ unreadCount } okunmamış ileti"
       ],
       "${ totalMessagesCount } scheduled message": [
-        "",
-        ""
+        "${ totalMessagesCount } planlanmış ileti",
+        "${ totalMessagesCount } planlanmış ileti"
       ],
       "Manage your folders": [
         "Klasörlerini yönet"
@@ -3055,13 +3055,13 @@
         "Klavye kısayolları"
       ],
       "Select how your list of messages looks like by default.": [
-        ""
+        "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
       ],
       "Select how your mailbox looks like by default.": [
         "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
       ],
       "Select how your composer opens by default.": [
-        ""
+        "İleti penceresinin varsayılan olarak nasıl açılacağını seçin."
       ],
       "Name on card": [
         "Karttaki isim"
@@ -3226,10 +3226,10 @@
         "Gizli Karbon Kopya"
       ],
       "Date": [
-        ""
+        "Tarih"
       ],
       "Time": [
-        ""
+        "Zaman"
       ],
       "From:": [
         "Kimden:"
@@ -3315,7 +3315,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        ""
+        "Anahtar şifreleme için kullanılamaz"
       ]
     },
     "Link": {
@@ -3346,8 +3346,38 @@
       "Add a gift code": [
         "Hediye kodu ekle"
       ],
+      "Inbox": [
+        "Gelen kutusu"
+      ],
+      "Drafts": [
+        "Taslaklar"
+      ],
+      "Sent": [
+        "Gönderilen"
+      ],
+      "Trash": [
+        "Çöp kutusu"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Tüm postalar"
+      ],
+      "Archive": [
+        "Arşiv"
+      ],
+      "Starred": [
+        "Yıldızlı"
+      ],
+      "Outbox": [
+        "Giden kutusu"
+      ],
+      "Scheduled": [
+        "Planlanmış"
+      ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmeniz gerekir"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Bu daveti yönetmek için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
@@ -3362,7 +3392,7 @@
         "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Bu ICS dosyası birden fazla etkinlik içeriyor. Lütfen dosyayı indirin ve ${ calendarAppName } içine aktarın"
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
@@ -3374,7 +3404,7 @@
         "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Bu etkinliği eklemek için yeni bir takvim oluşturun"
       ],
       "Create a new calendar to answer this invitation": [
         "Bu daveti yanıtlamak için yeni bir takvim oluşturun"
@@ -3421,33 +3451,6 @@
       "Add label": [
         "Etiket ekle"
       ],
-      "Inbox": [
-        "Gelen kutusu"
-      ],
-      "Drafts": [
-        "Taslaklar"
-      ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        "Gönderilen"
-      ],
-      "Starred": [
-        "Yıldızlı"
-      ],
-      "Archive": [
-        "Arşiv"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Çöp kutusu"
-      ],
-      "All mail": [
-        "Tüm postalar"
-      ],
       "Folders": [
         "Klasörler"
       ],
@@ -3459,9 +3462,6 @@
       ],
       "Manage your labels": [
         "Etiketlerinizi yönetin"
-      ],
-      "Outbox": [
-        "Giden kutusu"
       ]
     },
     "Placeholder": {
@@ -3585,12 +3585,12 @@
     },
     "Time unit": {
       "${ hours } hour": [
-        "",
-        ""
+        "${ hours } saat",
+        "${ hours } saat"
       ],
       "${ minutes } minute": [
-        "",
-        ""
+        "${ minutes } dakika",
+        "${ minutes } dakika"
       ],
       "${ daysCountLeft } day": [
         "${ daysCountLeft } gün",
@@ -3614,11 +3614,11 @@
         "Bu özellik ücretli bir Proton hesabı gerektirir"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        ""
+        "Bu kişi grubunu kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "",
-        ""
+        "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
+        "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Bu kişiyi kalıcı olarak silmek istediğinizden emin misiniz?"
@@ -3637,7 +3637,7 @@
         "Şifrelenmiş içeriğin şifresi çözülemedi."
       ],
       "The verification of the contact details' signature failed.": [
-        ""
+        "Kişi ayrıntıları imzasının doğrulanması başarısız oldu."
       ],
       "The contact failed to load.": [
         "Kişi yüklenemedi."
@@ -3649,10 +3649,10 @@
         "Kişiler birleştirilemedi"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        ""
+        "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
       ],
       "Are you sure you want to discard your import?": [
-        ""
+        "İçe aktarılanları silmek istediğinizden emin misiniz?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Yerel tarih ve saat ayarlarınız eşit değil gibi görünüyor."
@@ -3699,7 +3699,7 @@
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        ""
+        "Otomatik, ileti oluşturucudaki yazım biçiminin bu kullanıcıya göndermek için kullanıldığını gösterir. Düz metin, iletinin her zaman gönderim sırasında düz metne dönüştürüleceğini belirtir."
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-posta şifreleme, gönderilen iletilerinizin kimliğini doğrulamaya yardımcı olmak için e-posta imzasını zorunlu kılar"
@@ -3708,10 +3708,10 @@
         "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasına yardımcı olur"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        ""
+        "Bir kullanıcıyı imzalarken veya şifrelerken kullanılacak PGP şemasını seçin. PGP/Satır-içi seçeneğinin düz metin iletilerini zorunlu tuttuğunu dikkate alın"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        ""
+        "Bu e-posta adresine uçtan uca şifreli e-postalar göndermeyi etkinleştirmek için bir ortak anahtar yükleyin"
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak kişiniz yok"
@@ -3768,7 +3768,7 @@
         "Bu özelliğe sadece ücretli kullanıcılar erişilebilir"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "Bu eylem tüm iletileri indirecek ve böylece iletiler yerel kaynakta aranabilecektir. Tarayıcı verilerinizi silmeniz bu özelliği durduracaktır."
       ]
     },
     "Error message": {
@@ -4098,7 +4098,7 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        ""
+        "${ countContacts } kişiden ${ contactsExported.length } kişi başarıyla dışa aktarıldı."
       ],
       "No contacts exported.": [
         "Dışa aktarılan kişi yok."
@@ -4107,12 +4107,12 @@
         "İlerleme: %${ combinedProgress }"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ totalBeDeleted } kişiden ${ model.deleted.length } kişi başarıyla silindi.",
+        "${ totalBeDeleted } kişiden ${ model.deleted.length } kişi başarıyla silindi."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
-        ""
+        "${ totalBeMerged } kişiden ${ model.submitted.length } kişi başarıyla birleştirildi.",
+        "${ totalBeMerged } kişiden ${ model.submitted.length } kişi başarıyla birleştirildi."
       ],
       "No contacts merged.": [
         "Birleştirilen kişi yok."
@@ -4120,13 +4120,13 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        ""
+        "Kişilerin şifresini çözülüyor... Bu birkaç dakika sürebilir. İşlem tamamlandığında dosyayı dışa aktardığınız tüm kişilerle birlikte indirebilirsiniz."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Kişiler birleştiriliyor... Bu birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Kişiler siliniyor... Bu birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Kişiler arasında birleştirme önceliğini sıralamak için Sürükle ve Bırak özelliğini kullanın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
@@ -4135,8 +4135,8 @@
         "Birleştirmek veya saklamak istemediğiniz kişileri silmek için işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme butonuna tıkladıktan sonra gerçekleşir"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "",
-        ""
+        "Dosyanın boyutu en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } olmalı ve en fazla $ ${ MAX_IMPORT_CONTACTS_STRING } kişi içermelidir. Dosyanız daha büyükse, lütfen daha küçük dosyalara bölün.",
+        "Dosyanın maksimum boyutu ${ MAX_IMPORT_FILE_SIZE_STRING } olmalı ve en fazla $ ${ MAX_IMPORT_CONTACTS_STRING } kişi içermelidir. Dosyanız daha büyükse, lütfen daha küçük dosyalara bölün."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesi bazı gruplar içeriyor gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -4181,7 +4181,7 @@
     },
     "Actions message": {
       "You don't have any groups.": [
-        ""
+        "Hiç grubunuz yok."
       ],
       "No results found.": [
         "Sonuç bulunamadı."
@@ -4190,7 +4190,7 @@
         "Lütfen başka bir arama terimi deneyin."
       ],
       "You don't have any contacts.": [
-        ""
+        "Hiç kişiniz yok."
       ],
       "${ addContact } or ${ importContact }.": [
         "${ addContact } veya ${ importContact }."
@@ -4203,15 +4203,15 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        ""
+        "Ad ve soyad'ın işareti aynı anda kaldırılamaz"
       ]
     },
     "Description of the purpose of the import CSV modal": {
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        ""
+        "Yüklediğiniz CSV dosyasında aşağıdaki alanları tespit ettik. İçe aktarmak istediklerinizi seçin."
       ],
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        ""
+        "Ayrıca, CSV alanlarını vCard alanlarıyla otomatik olarak eşleştirdik. Bu eşleşmeyi kendiniz gözden geçirebilir ve değiştirebilirsiniz."
       ]
     },
     "Option": {
@@ -4262,7 +4262,7 @@
         "şimdilik"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        ""
+        "ProtonContacts ${ forNow } desteklemiyor:"
       ]
     },
     "Import warning": {
@@ -4270,7 +4270,7 @@
         "Hiçbir kişi içe aktarılamaz. Ayrıntılar için tıklayın"
       ],
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        ""
+        "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Detaylar için tıklayın"
       ]
     },
     "Import calendar warning": {
@@ -4289,23 +4289,12 @@
     },
     "Import contact": {
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "",
-        ""
+        "Kişinizi şifrelerken ve eklerken bir hata oluştu. Hiçbir kişi içe aktarılamadı.",
+        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. Hiçbir kişi içe aktarılamadı."
       ],
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "",
-        ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
-      ],
-      "Go to ${ title }": [
-        "${ title } gidin"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } uygulamasına git"
+        "${ totalToImport } kişiden ${ totalImported } kişi şifrelendi ve kişi listenize eklendi",
+        "${ totalToImport } kişiden ${ totalImported } kişi şifrelendi ve kişi listenize eklendi"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4438,13 +4427,48 @@
     },
     "Confirm modal title": {
       "Quit import?": [
-        ""
+        "İçe aktarmadan çıkılsın mı?"
       ],
       "Message saved to Drafts": [
-        ""
+        "İleti Taslaklara kaydedildi"
       ],
       "Edit and reschedule": [
-        ""
+        "Düzenle ve yeniden planla"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton uygulamaları"
+      ],
+      "Go to ${ title }": [
+        "${ title } gidin"
+      ],
+      "Go to ${ vpnName }": [
+        "${ vpnName } uygulamasına git"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        "Küçük"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Liste"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Genişletilmiş"
       ]
     },
     "Select files": {
@@ -4481,7 +4505,7 @@
         "Kuruluşunuzu ayarlayın"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        ""
+        "Kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve kuruluşunuzun tüm üyelerinin korunmasını sağlamak için hesaplar oluşturun."
       ]
     },
     "Onboarding Beta": {
@@ -4493,30 +4517,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Betayı devre dışı bırakmak için ayarlar açılır menüsünü açın ve \"Beta Erişimi\" seçeneğine tıklayın."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -4549,7 +4549,7 @@
     },
     "Density mode": {
       "Comfortable": [
-        ""
+        "Rahat"
       ],
       "Compact": [
         "Kompakt"
@@ -4557,10 +4557,10 @@
     },
     "Composer mode": {
       "Maximized": [
-        ""
+        "Genişletilmiş"
       ],
       "Normal": [
-        ""
+        "Normal"
       ]
     },
     "Info for cash payment method": {
@@ -5180,6 +5180,26 @@
         "yıldızlı"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Şifre en az ${ length } karakter içermelidir",
+        "Şifre en az ${ length } karakter içermelidir"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bayt"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Ad"
@@ -5294,24 +5314,9 @@
         "Adres"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bayt"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5323,11 +5328,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ name } ${ address } ${ date } tarihinde yazdı:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5353,34 +5353,34 @@
         "Beklenmeyen bir hata oluştu. İçe aktarma yeniden başlatılmalıdır."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Dosyanız yüklenirken bir hata oluştu. Hiçbir dosya seçilmedi."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Yalnızca ICS dosya formatlarına izin verilir."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "${ formattedFilename } adlı dosyanız boş."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "${ formattedFilename } adlı dosyanız yüklenirken bir hata oluştu. Dosya boyutu en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } olmalıdır."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "${ formattedFilename } adlı dosyanız bir takvim değildir."
       ],
       "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
+        "${ CALENDAR_APP_NAME } takvimleri içe aktarmayı sadece iCal 2.0 sürümü ile destekler."
       ],
       "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        ""
+        "${ formattedFilename } adlı dosyanız bir davettir ve içe aktarılamaz."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "${ formattedFilename } adlı dosyanızda içe aktarılacak bir etkinlik yoktur."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "${ formattedFilename } adlı dosyanız ${ MAX_IMPORT_EVENTS_STRING } etkinlikten daha fazlasını içermektedir."
       ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "${ formattedFilename } adlı dosyanız okunurken bir hata oluştu. Dosya doğru biçime sahip değil."
       ]
     },
     "Error importing contacts": {
@@ -5394,7 +5394,7 @@
         "${ formattedFilename } dosyanız boş."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "${ formattedFilename } dosyanız yüklenirken bir hata oluştu. Maksimum dosya boyutu ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "${ formattedFilename } adlı dosyanız yüklenirken bir hata oluştu. Dosya boyutu en fazla ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } dosyanızda içe aktarılacak kişi yok."
@@ -5586,10 +5586,10 @@
         "Geçersiz ICS dosyası"
       ],
       "Invalid event": [
-        ""
+        "Geçersiz etkinlik"
       ],
       "Unsupported event": [
-        ""
+        "Desteklenmeyen etkinlik"
       ]
     },
     "Event invitation error": {
@@ -5606,13 +5606,13 @@
         "Desteklenmeyen davetiye"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Eklenen ICS dosyası ayrıştırılamadı"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "Eklenen ICS dosyasının şifresi çözülemedi"
       ],
       "We could not retrieve the event from your calendar": [
-        ""
+        "Etkinliği takviminizden alamadık"
       ],
       "We could not update the event in your calendar": [
         "Takviminizdeki etkinliği güncelleyemedik"
@@ -5632,82 +5632,82 @@
     },
     "Error importing event": {
       "Component with wrong format": [
-        ""
+        "Yanlış biçimli bileşen"
       ],
       "Non-Gregorian": [
         ""
       ],
       "To-do entry": [
-        ""
+        "Yapılacaklar kaydı"
       ],
       "Journal entry": [
-        ""
+        "Günlük kaydı"
       ],
       "Free-busy time information": [
-        ""
+        "Serbest-meşgul zaman bilgisi"
       ],
       "Custom timezone": [
-        ""
+        "Özel saat dilimi"
       ],
       "Invalid event": [
-        ""
+        "Geçersiz etkinlik"
       ],
       "Unsupported event": [
-        ""
+        "Desteklenmeyen etkinlik"
       ],
       "Malformed all-day event": [
-        ""
+        "Hatalı tam gün etkinliği"
       ],
       "Missing start time": [
-        ""
+        "Başlama zamanı eksik"
       ],
       "Malformed start time": [
-        ""
+        "Hatalı başlangıç zamanı"
       ],
       "Floating times not supported": [
-        ""
+        "Değişken zamanlar desteklenmiyor"
       ],
       "Start time out of bounds": [
-        ""
+        "Başlangıç zamanı sınır dışında"
       ],
       "Malformed end time": [
-        ""
+        "Hatalı bitiş zamanı"
       ],
       "End time out of bounds": [
-        ""
+        "Bitiş zamanı sınır dışında"
       ],
       "Event duration not supported": [
-        ""
+        "Etkinlik süresi desteklenmiyor"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Takvimin saat dilimi desteklenmiyor"
       ],
       "Timezone not supported": [
-        ""
+        "Saat dilimi desteklenmiyor"
       ],
       "Malformed recurring event": [
-        ""
+        "Hatalı biçimlendirilmiş yinelenen olay"
       ],
       "Recurring rule not supported": [
-        ""
+        "Tekrarlayan kural desteklenmiyor"
       ],
       "Edited event not supported": [
-        ""
+        "Düzenlenen etkinlik desteklenmiyor"
       ],
       "Notification out of bounds": [
-        ""
+        "Bildirim sınır dışında"
       ],
       "Event validation failed": [
-        ""
+        "Etkinlik doğrulaması başarısız oldu"
       ],
       "Encryption failed": [
         "Şifreleme başarısız"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Yinelenen etkinliğin aslı bulunamadı"
       ],
       "no UID, title or start time": [
-        ""
+        "UID, başlık veya başlangıç zamanı yok"
       ]
     },
     "Event title": {
@@ -6268,7 +6268,7 @@
         "Taslaklar"
       ],
       "Scheduled": [
-        ""
+        "Planlanmış"
       ],
       "All": [
         "Tümü"
@@ -6279,12 +6279,12 @@
     },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
-        ""
+        "Alıcının anahtar doğrulaması başarısız oldu: ${ validationErrorsMessage }"
       ]
     },
     "Composer email icon": {
       "End-to-end encrypted to verified recipient": [
-        ""
+        "Doğrulanmış alıcıya uçtan uca şifreli"
       ],
       "End-to-end encrypted": [
         "Uçtan uca şifrelendi"
@@ -6296,7 +6296,7 @@
         "PGP şifreli. ${ warningsText }"
       ],
       "PGP-encrypted to verified recipient": [
-        ""
+        "Doğrulanmış alıcıya PGP şifreli"
       ],
       "PGP-encrypted": [
         "PGP-şifrelendi"
@@ -6310,12 +6310,12 @@
     },
     "Sent email icon": {
       "Sent by you with end-to-end encryption to verified recipient": [
-        "",
-        ""
+        "Doğrulanmış alıcıya uçtan uca şifreli olarak gönderdiniz",
+        "Doğrulanmış alıcılara uçtan uca şifreli olarak gönderdiniz"
       ],
       "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "",
-        ""
+        "ProtonMail tarafından doğrulanmış alıcıya erişilemez şifreleme yöntemiyle gönderildi",
+        "ProtonMail tarafından doğrulanmış alıcılara erişilemez şifreleme yöntemiyle gönderildi"
       ],
       "Sent by you with end-to-end encryption": [
         "Sizin tarafınızdan uçtan uca şifreleme ile gönderildi"
@@ -6421,16 +6421,16 @@
     },
     "Date label": {
       "today": [
-        ""
+        "bugün"
       ],
       "tomorrow": [
-        ""
+        "yarın"
       ],
       "Today": [
-        ""
+        "Bugün"
       ],
       "Tomorrow": [
-        ""
+        "Yarın"
       ]
     },
     "Invitation details (all-day event)": {
@@ -6440,13 +6440,13 @@
     },
     "Calendar invite info": {
       "This response is out of date. This event has been updated.": [
-        ""
+        "Bu yanıt güncel değil. Etkinlik güncellendi."
       ],
       "This event has been updated.": [
         "Bu etkinlik güncellendi."
       ],
       "This response is out of date. You have no calendars.": [
-        ""
+        "Bu yanıt güncel değil. Takviminiz yok."
       ],
       "${ participantName } accepted your invitation.": [
         "${ participantName } davetinizi kabul etti."
@@ -6464,97 +6464,97 @@
         " Bu yanıt, davet ayrıntılarınızla eşleşmiyor. Lütfen takviminizdeki davet ayrıntılarını doğrulayın."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } adlı kişi, etkinlik için olan davetinizi kabul etti."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } adlı kişi, etkinlik için olan davetinizi reddetti."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } adlı kişi, etkinlik için olan davetinizi çekinerek kabul etti."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } adlı kişi, etkinlik için olan davetinizi daha önceden kabul etmişti."
       ],
       "${ participantName } had previously accepted your invitation.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi daha önceden kabul etmişti."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } adlı kişi, etkinlik için olan davetinizi daha önceden reddetmişti."
       ],
       "${ participantName } had previously declined your invitation.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi daha önceden reddetmişti."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } adlı kişi, etkinlik için olan davetinizi daha önceden çekinerek kabul etmişti."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi daha önceden çekinerek kabul etmişti."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
         "${ participantName }, bu etkinliğin olduğu bir gün için yeni saat önerisinde bulundu. Bu önerinin süresi dolmuş. Takviminiz yok."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
-        ""
+        "${ participantName } adlı kişi, bu etkinlik için yeni saat önerisinde bulundu. Bu öneri güncel değil. Takviminiz yok."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi kabul etti ve etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi kabul etti ve yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi reddetti ve etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi reddetti ve yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi çekinerek kabul etti ve etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi çekinerek kabul etti ve yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } adlı kişi, etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } proposed a new time for this event.": [
-        ""
+        "${ participantName } adlı kişi, yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        ""
+        "${ participantName } adlı kişi, etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Bu öneri güncel değil. Etkinlik artık takviminizde yer almıyor."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        ""
+        "${ participantName } adlı kişi, yeni bir saat önerisinde bulunmuştu. Bu öneri güncel değil. Etkinlik artık takviminizde yer almıyor."
       ],
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
+        " Bu yeni saat önerisi, davet ayrıntılarınızla eşleşmiyor. Lütfen takviminizdeki davet ayrıntılarını doğrulayın."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi kabul etmiş ve etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi kabul etmiş ve yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi reddetmiş ve etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi reddetmiş ve yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi çekinerek kabul etmiş ve etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } adlı kişi, davetinizi çekinerek kabul etmiş ve yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
-        ""
+        "${ participantName } adlı kişi, bu etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Bu öneri güncel değil."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        ""
+        "${ participantName } adlı kişi, bu etkinlik için yeni bir saat önerisinde bulunmuştu. Bu öneri güncel değil."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
-        ""
+        "${ participantName } adlı kişi, artık takviminizde bulunmayan bir etkinliğin güncel bilgilerini istedi. Herhangi bir takviminiz yok."
       ],
       "${ participantName } asked for the latest event updates.": [
         "${ participantName } güncel etkinlik bilgilerini istedi."
@@ -6611,19 +6611,19 @@
         "Etkinlik yenileme şu anda desteklenmiyor."
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        ""
+        "Bu yanıt, şu an sadece dizi etkinliklerin tamamına olan yanıtlara destek verildiği için ${ calendarAppName } takvimine eklenemez."
       ],
       "Event rescheduling is not supported for the moment.": [
-        ""
+        "Etkinliği yeniden planlama şu an için desteklenmiyor."
       ],
       "Adding occurrences to an event is not supported for the moment.": [
-        ""
+        "Bir etkinliğe, gerçekleşme bilgisini eklemek şu anda desteklenmiyor."
       ],
       "This event has already happened.": [
         "Bu etkinlik zaten gerçekleşti."
       ],
       "This event is currently happening.": [
-        ""
+        "Bu etkinlik şu anda gerçekleşiyor."
       ]
     },
     "Message notification": {
@@ -6631,24 +6631,24 @@
         "Gönderme geri alındı"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        ""
+        "Planlama iptal edildi. İleti, Taslaklara taşındı."
       ]
     },
     "Send email with warnings": {
       "The following address is not valid: ${ invalidAddresses }": [
-        "",
-        ""
+        "Belirtilen adres geçerli değil: ${ invalidAddresses }",
+        "Belirtilen adresler geçerli değil: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "",
-        ""
+        "Bir uyarı saptadık. Belirtilen adres, gelen e-postaları alamayabilir:",
+        "Bir uyarı saptadık. Belirtilen adresler, gelen e-postaları alamayabilir:"
       ],
       "Do you want to send the email anyway?": [
         "E-postayı yine de göndermek istiyor musunuz?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "",
-        ""
+        "İletiyi göndermeye kesin karar verdiyseniz, belirtilen alıcı e-postayı kendini yok etme özelliği olmadan alacak:",
+        "İletiyi göndermeye kesin karar verdiyseniz, belirtilen alıcılar e-postayı kendini yok etme özelliği olmadan alacaklar:"
       ]
     },
     "Desktop notification title": {
@@ -6682,20 +6682,20 @@
         ""
       ],
       "Do you want to trust the following public key?": [
-        ""
+        "Aşağıdaki ortak anahtara güvenmek ister misiniz?"
       ]
     },
     "Send email with errors": {
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "",
-        ""
+        "Hatalar tespit ettik. E-postanız aşağıdaki nedenden dolayı girilen e-posta adresine gönderilemez:",
+        "Hatalar tespit ettik. E-postanız aşağıdaki nedenlerden dolayı girilen e-posta adreslerinden herhangi birine gönderilemez:"
       ],
       "Please go back to edit the email address you entered.": [
         "Girdiğiniz e-posta adresini düzenlemek için lütfen geri dönün.",
         "Girdiğiniz e-posta adreslerini düzenlemek için lütfen geri dönün."
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        ""
+        "Bazı hatalar tespit ettik. E-postanız aşağıdaki nedenlerden dolayı girilen e-posta adreslerinden bir veya daha fazlasına gönderilemez:"
       ],
       "Do you want to send the email anyway?": [
         "E-postayı yine de göndermek istiyor musunuz?"
@@ -6703,32 +6703,32 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        ""
+        "Aşağıdaki adreslerin kişileri silindi, bu yüzden ilgili şifreleme tercihleri uygun şekilde güncellendi:"
       ]
     },
     "Message image": {
       "Image could not be loaded": [
-        ""
+        "Görüntü yüklenemedi"
       ],
       "Image has not been loaded in order to protect your privacy": [
-        ""
+        "Gizliliğinizi korumak için görüntü yüklenmedi"
       ]
     },
     "Alt": {
       "Has attachments": [
-        ""
+        "Eklentileri var"
       ],
       "Unstar message": [
-        ""
+        "İleti yıldızını kaldır"
       ],
       "Star message": [
-        ""
+        "İletiyi yıldızla"
       ],
       "Unstar conversation": [
-        ""
+        "Konuşma yıldızını kaldır"
       ],
       "Star conversation": [
-        ""
+        "Konuşmayı yıldızla"
       ],
       "Replied to": [
         "Yanıtladı"
@@ -6868,7 +6868,7 @@
         "İleti bulunamadı"
       ],
       "No messages scheduled": [
-        ""
+        "Hiçbir İleti planlanmamış"
       ]
     },
     "Alternative text for welcome image": {

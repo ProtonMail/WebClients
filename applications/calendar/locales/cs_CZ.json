@@ -870,7 +870,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -2026,10 +2026,285 @@
         ""
       ]
     },
-    "Action": {
-      "Close": [
-        "Zavřít"
+    "Label": {
+      "Copy": [
+        "Kopírovat"
       ],
+      "Reveal password": [
+        "Ukázat heslo"
+      ],
+      "Hide password": [
+        "Skrýt heslo"
+      ],
+      "Street address": [
+        "Ulice"
+      ],
+      "City": [
+        "Město"
+      ],
+      "Region": [
+        "Kraj"
+      ],
+      "Postal code": [
+        "PSČ"
+      ],
+      "Country": [
+        "Země"
+      ],
+      "Post office box": [
+        "P.O.Box"
+      ],
+      "Extended address": [
+        "Rozšířená adresa"
+      ],
+      "Do not ask again": [
+        "Příště se neptat"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
+      "Phone number": [
+        "Telefonní číslo"
+      ],
+      "Verification code": [
+        "Ověřovací kód"
+      ],
+      "Enter the 6-digit code": [
+        "Zadejte 6-místný kód"
+      ],
+      "Add email address": [
+        "Přidat e-mailovou adresu"
+      ],
+      "Email format": [
+        "Formát e-mailu"
+      ],
+      "Add image URL": [
+        "Přidat URL obrázku"
+      ],
+      "Upload picture": [
+        "Nahrát obrázek"
+      ],
+      "Add to group": [
+        "Přidat do skupiny"
+      ],
+      "Encrypt emails": [
+        "Šifrovat e-maily"
+      ],
+      "Sign emails": [
+        "Podepsat e-maily"
+      ],
+      "Cryptographic scheme": [
+        "Šifrovací schéma"
+      ],
+      "Public keys": [
+        "Veřejné klíče"
+      ],
+      "Automatically save contacts": [
+        "Automaticky ukládat kontakty"
+      ],
+      "Import contacts": [
+        "Importovat kontakty"
+      ],
+      "Export contacts": [
+        "Exportovat kontakty"
+      ],
+      "Operating system": [
+        "Operační systém"
+      ],
+      "Operating system version": [
+        "Verze operačního systému"
+      ],
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "What happened?": [
+        "Co se stalo?"
+      ],
+      "System information": [
+        "Systémové informace"
+      ],
+      "Browser": [
+        "Prohlížeč"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Zobrazované jméno"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Submit": [
+        "Odeslat"
+      ],
+      "Password": [
+        "Heslo"
+      ],
+      "Mailbox password": [
+        "Heslo k e-mailové schránce"
+      ],
+      "Two-factor authentication code": [
+        "Kód dvoufaktorového ověření"
+      ],
+      "Username or ProtonMail address": [
+        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové zkratky"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "Povolit Beta přístup"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Popis"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Celý den"
+      ],
+      "Repeat on": [
+        "Opakovat v"
+      ],
+      "Repeat every": [
+        "Opakovat každý"
+      ],
+      "Ends": [
+        "Končí"
+      ],
+      "Organizer": [
+        "Organizátor"
+      ],
+      "Optional": [
+        "Volitelné"
+      ],
+      "Time of the event": [
+        "Čas události"
+      ],
+      "Event time": [
+        "Čas"
+      ],
+      "Event title": [
+        "Název události"
+      ],
+      "Event frequency": [
+        "Frekvence události"
+      ],
+      "Event location": [
+        "Místo konání události"
+      ],
+      "Event notifications": [
+        "Oznámení události"
+      ],
+      "Participants": [
+        "Účastníci"
+      ],
+      "Your calendars": [
+        ""
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Zavřít okno"
       ],
@@ -2048,6 +2323,9 @@
       "Use “${ label }” setting": [
         ""
       ],
+      "Close": [
+        "Zavřít"
+      ],
       "Close navigation": [
         "Zavřít menu"
       ],
@@ -2057,11 +2335,11 @@
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
-      "refresh the page": [
-        "aktualizovat stránku"
-      ],
       "Load image": [
         "Načíst obrázek"
+      ],
+      "refresh the page": [
+        "aktualizovat stránku"
       ],
       "Export": [
         "Exportovat"
@@ -2294,9 +2572,6 @@
       "OK": [
         "OK"
       ],
-      "Log in": [
-        "Přihlásit se"
-      ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
@@ -2353,6 +2628,9 @@
       ],
       "Back": [
         "Zpět"
+      ],
+      "Log in": [
+        "Přihlásit se"
       ],
       "Remove bonuses": [
         ""
@@ -2497,6 +2775,143 @@
       ],
       "Close popover": [
         ""
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Zjistit více"
+      ],
+      "Request an invite": [
+        "Požádat o pozvánku"
+      ],
+      "clearing your browser cache": [
+        "vymazávání mezipaměti prohlížeče"
+      ],
+      "Upgrade": [
+        "Upgradovat"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Zaplatit fakturu"
+      ],
+      "Upgrade account": [
+        "Upgradovat účet"
+      ],
+      "Calendars": [
+        "Kalendáře"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Např., "
+      ],
+      "Start typing an email address": [
+        "Začněte psát e-mailovou adresu"
+      ],
+      "Image URL": [
+        "URL adresa obrázku"
+      ],
+      "Filter groups": [
+        "Filtrovat skupiny"
+      ],
+      "Search for name or email": [
+        "Vyhledat jméno nebo e-mail"
+      ],
+      "Search for group name": [
+        "Vyhledat název skupiny"
+      ],
+      "Name": [
+        "Jméno"
+      ],
+      "OS name": [
+        "Název OS"
+      ],
+      "OS version": [
+        "Verze OS"
+      ],
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "A way to contact you": [
+        "Způsob, jak vás kontaktovat"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Popište prosím problém a přiložte všechny chybové zprávy"
+      ],
+      "Browser name": [
+        "Název prohlížeče"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "např. Julia Smith"
+      ],
+      "Mailbox password": [
+        "Heslo k e-mailové schránce"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Přidat titulek"
+      ],
+      "Add location": [
+        "Přidat polohu"
+      ],
+      "Add description": [
+        "Přidat popis"
+      ],
+      "Add participants": [
+        "Přidat účastníky"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "",
+        "",
+        "${ hours } hodin"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
       ]
     },
     "Title": {
@@ -2662,18 +3077,6 @@
       "Select a theme": [
         "Vyberte motiv"
       ],
-      "Sign in again to continue": [
-        "Chcete-li pokračovat, znovu se přihlaste"
-      ],
-      "Account suspended": [
-        "Účet pozastaven"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
-      ],
-      "Enter your password": [
-        "Zadejte Vaše heslo"
-      ],
       "Open help menu": [
         "Otevřít menu nápovědy"
       ],
@@ -2691,6 +3094,18 @@
       ],
       "Give feedback": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Chcete-li pokračovat, znovu se přihlaste"
+      ],
+      "Account suspended": [
+        "Účet pozastaven"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
+      ],
+      "Enter your password": [
+        "Zadejte Vaše heslo"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2797,13 +3212,13 @@
       "Beta Access": [
         "Beta přístup"
       ],
+      "Select the way to send this notification": [
+        ""
+      ],
       "Select when you want this notification to be sent": [
         ""
       ],
       "Select the time to send this notification": [
-        ""
-      ],
-      "Select the way to send this notification": [
         ""
       ],
       "Add another notification to remind you of this event": [
@@ -2940,421 +3355,6 @@
       ],
       "CANCELLED": [
         ""
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Kopírovat"
-      ],
-      "Reveal password": [
-        "Ukázat heslo"
-      ],
-      "Hide password": [
-        "Skrýt heslo"
-      ],
-      "Street address": [
-        "Ulice"
-      ],
-      "City": [
-        "Město"
-      ],
-      "Region": [
-        "Kraj"
-      ],
-      "Postal code": [
-        "PSČ"
-      ],
-      "Country": [
-        "Země"
-      ],
-      "Post office box": [
-        "P.O.Box"
-      ],
-      "Extended address": [
-        "Rozšířená adresa"
-      ],
-      "Do not ask again": [
-        "Příště se neptat"
-      ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
-      "Phone number": [
-        "Telefonní číslo"
-      ],
-      "Verification code": [
-        "Ověřovací kód"
-      ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
-      ],
-      "Add email address": [
-        "Přidat e-mailovou adresu"
-      ],
-      "Email format": [
-        "Formát e-mailu"
-      ],
-      "Add image URL": [
-        "Přidat URL obrázku"
-      ],
-      "Upload picture": [
-        "Nahrát obrázek"
-      ],
-      "Add to group": [
-        "Přidat do skupiny"
-      ],
-      "Encrypt emails": [
-        "Šifrovat e-maily"
-      ],
-      "Sign emails": [
-        "Podepsat e-maily"
-      ],
-      "Cryptographic scheme": [
-        "Šifrovací schéma"
-      ],
-      "Public keys": [
-        "Veřejné klíče"
-      ],
-      "Automatically save contacts": [
-        "Automaticky ukládat kontakty"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
-      ],
-      "Export contacts": [
-        "Exportovat kontakty"
-      ],
-      "Operating system": [
-        "Operační systém"
-      ],
-      "Operating system version": [
-        "Verze operačního systému"
-      ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Co se stalo?"
-      ],
-      "System information": [
-        "Systémové informace"
-      ],
-      "Browser": [
-        "Prohlížeč"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Zrušit"
-      ],
-      "Submit": [
-        "Odeslat"
-      ],
-      "Password": [
-        "Heslo"
-      ],
-      "Mailbox password": [
-        "Heslo k e-mailové schránce"
-      ],
-      "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
-      ],
-      "Username or ProtonMail address": [
-        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Zobrazované jméno"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        "Povolit Beta přístup"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Popis"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Celý den"
-      ],
-      "Repeat on": [
-        "Opakovat v"
-      ],
-      "Repeat every": [
-        "Opakovat každý"
-      ],
-      "Ends": [
-        "Končí"
-      ],
-      "Organizer": [
-        "Organizátor"
-      ],
-      "Optional": [
-        "Volitelné"
-      ],
-      "Time of the event": [
-        "Čas události"
-      ],
-      "Event time": [
-        "Čas"
-      ],
-      "Event title": [
-        "Název události"
-      ],
-      "Event frequency": [
-        "Frekvence události"
-      ],
-      "Event location": [
-        "Místo konání události"
-      ],
-      "Event notifications": [
-        "Oznámení události"
-      ],
-      "Participants": [
-        "Účastníci"
-      ],
-      "Your calendars": [
-        ""
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Zjistit více"
-      ],
-      "Request an invite": [
-        "Požádat o pozvánku"
-      ],
-      "clearing your browser cache": [
-        "vymazávání mezipaměti prohlížeče"
-      ],
-      "Upgrade": [
-        "Upgradovat"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Zaplatit fakturu"
-      ],
-      "Upgrade account": [
-        "Upgradovat účet"
-      ],
-      "Calendars": [
-        "Kalendáře"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Other calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Např., "
-      ],
-      "Start typing an email address": [
-        "Začněte psát e-mailovou adresu"
-      ],
-      "Image URL": [
-        "URL adresa obrázku"
-      ],
-      "Filter groups": [
-        "Filtrovat skupiny"
-      ],
-      "Search for name or email": [
-        "Vyhledat jméno nebo e-mail"
-      ],
-      "Search for group name": [
-        "Vyhledat název skupiny"
-      ],
-      "Name": [
-        "Jméno"
-      ],
-      "OS name": [
-        "Název OS"
-      ],
-      "OS version": [
-        "Verze OS"
-      ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
-      "A way to contact you": [
-        "Způsob, jak vás kontaktovat"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Popište prosím problém a přiložte všechny chybové zprávy"
-      ],
-      "Browser name": [
-        "Název prohlížeče"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
-      "Mailbox password": [
-        "Heslo k e-mailové schránce"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "např. Julia Smith"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Přidat titulek"
-      ],
-      "Add location": [
-        "Přidat polohu"
-      ],
-      "Add description": [
-        "Přidat popis"
-      ],
-      "Add participants": [
-        "Přidat účastníky"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hodina",
-        "",
-        "",
-        "${ hours } hodin"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minut"
       ]
     },
     "Storage": {
@@ -3609,7 +3609,7 @@
       "Preference saved": [
         "Nastavení bylo uloženo"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4723,6 +4723,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         ""
@@ -4744,17 +4755,6 @@
         ""
       ],
       "Maximized": [
-        ""
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
         ""
       ]
     },
@@ -4813,6 +4813,14 @@
         "hodin před"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         ""
@@ -4820,14 +4828,6 @@
     },
     "Notification time input": {
       "at": [
-        ""
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        ""
-      ],
-      "by email": [
         ""
       ]
     },
@@ -4957,6 +4957,11 @@
         ""
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        ""
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         ""
@@ -5049,6 +5054,11 @@
         ""
       ],
       "This event has been cancelled": [
+        ""
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
         ""
       ]
     },

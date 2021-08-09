@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Esta mensagem pode conter hiperligações que não podem ser abertas correctamente pelo seu navegador actual"
-      ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Esta mensagem pode conter hiperligações que não podem ser abertas correctamente pelo seu navegador actual"
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Este campo é requerido"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
+      ],
       "The composer failed to load.": [
         "Falha ao carregar o compositor."
       ],
       "Please refresh the page.": [
         "Por favor, actualize a página."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Impossível validar o email, tente mais tarde"
@@ -101,14 +101,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Por favor, tente autenticar novamente e certifique-se de que as permissões estão definidas correctamente."
       ],
-      "File has no contents to preview": [
-        "O ficheiro não tem conteúdo para antever"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Senha da caixa de correio incorrecta. Por favor, tente novamente"
       ],
       "Incorrect login credentials. Please try again": [
         "Credenciais de início de sessão erradas. Por favor, tente novamente"
+      ],
+      "File has no contents to preview": [
+        "O ficheiro não tem conteúdo para antever"
       ],
       "Process aborted": [
         ""
@@ -203,6 +203,12 @@
       "Request timed out.": [
         "O pedido expirou."
       ],
+      "Signature verification failed": [
+        "Falha ao verificar a assinatura"
+      ],
+      "Could not find address ${ email }.": [
+        "Impossível encontrar o endereço ${ email }."
+      ],
       "Email address disabled": [
         "Endereço de email desactivado"
       ],
@@ -226,12 +232,6 @@
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
-      ],
-      "Signature verification failed": [
-        "Falha ao verificar a assinatura"
-      ],
-      "Could not find address ${ email }.": [
-        "Impossível encontrar o endereço ${ email }."
       ],
       "Missing signature": [
         "Assinatura em falta"
@@ -350,23 +350,26 @@
       "Close": [
         "Fechar"
       ],
-      "Confirm": [
-        "Confirmar"
+      "Close modal": [
+        "Fechar diálogo"
       ],
       "Cancel": [
         "Cancelar"
       ],
-      "Close modal": [
-        "Fechar diálogo"
-      ],
       "Submit": [
         "Submeter"
+      ],
+      "Confirm": [
+        "Confirmar"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Usar a definição \"${ label }\""
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -481,9 +484,6 @@
       ],
       "Underline": [
         "Sublinhado"
-      ],
-      "refresh the page": [
-        "actualizar a página"
       ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
@@ -653,9 +653,6 @@
       "Next": [
         "Seguinte"
       ],
-      "Signing out": [
-        "A terminar sessão"
-      ],
       "Clear": [
         "Limpar"
       ],
@@ -686,6 +683,12 @@
       "OK": [
         "Aceitar"
       ],
+      "Signing out": [
+        "A terminar sessão"
+      ],
+      "Log in": [
+        "Iniciar sessão"
+      ],
       "Details": [
         "Detalhes"
       ],
@@ -706,9 +709,6 @@
       ],
       "Previous": [
         "Anterior"
-      ],
-      "Log in": [
-        "Iniciar sessão"
       ],
       "Get started": [
         "Começar"
@@ -877,6 +877,15 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adicionar a ${ CALENDAR_APP_NAME }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ],
       "Send anyway": [
         "Enviar mesmo assim"
@@ -1196,15 +1205,6 @@
       ],
       "Start using ${ appName }": [
         "Comece a usar o ${ appName }"
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
       ]
     },
     "Title": {
@@ -1725,6 +1725,9 @@
       "Loading": [
         "A carregar"
       ],
+      "support team": [
+        "equipa de assistência"
+      ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
       ],
@@ -1821,9 +1824,6 @@
       ],
       "Plain text": [
         "Texto simples"
-      ],
-      "support team": [
-        "equipa de assistência"
       ],
       "Drop the file here to upload": [
         "Largue o ficheiro aqui para enviar"
@@ -1971,9 +1971,6 @@
         "${ addressCount } endereço de email",
         "${ addressCount } endereços de email"
       ],
-      "Loading ${ appName }": [
-        "A carregar ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Capturas de ecrã anexadas"
       ],
@@ -2004,6 +2001,18 @@
       "Your import will not be processed.": [
         "A sua importação não será processada."
       ],
+      "Loading ${ appName }": [
+        "A carregar ${ appName }"
+      ],
+      "here": [
+        "aqui"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Esta conta foi suspensa devido a uma potencial violação da política."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
+      ],
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
@@ -2021,15 +2030,6 @@
       ],
       "of": [
         "de"
-      ],
-      "here": [
-        "aqui"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Esta conta foi suspensa devido a uma potencial violação da política."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não activos nas definições."
@@ -2221,7 +2221,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -2582,13 +2582,13 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing, enviará a mensagem para nós, para que possamos analisá-la e melhorar os nossos filtros. Isto significa que poderemos ver o conteúdo da mensagem na íntegra."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } ficheiro anexado",
-        "${ numPureAttachments } ficheiros anexados"
+      "${ pureAttachmentsCount } file attached": [
+        "",
+        ""
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } imagem incorporada",
-        "${ numEmbedded } imagens incorporadas"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "",
+        ""
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Um pedido para cancelar a inscrição desta lista de discussão será enviado para o remetente do boletim informativo e processado automaticamente."
@@ -3346,6 +3346,36 @@
       "Add a gift code": [
         ""
       ],
+      "Inbox": [
+        "Caixa de entrada"
+      ],
+      "Drafts": [
+        "Rascunhos"
+      ],
+      "Sent": [
+        "Enviado"
+      ],
+      "Trash": [
+        "Lixo"
+      ],
+      "Spam": [
+        "Assédio"
+      ],
+      "All mail": [
+        "Todo o correio"
+      ],
+      "Archive": [
+        "Arquivo"
+      ],
+      "Starred": [
+        "Com estrela"
+      ],
+      "Outbox": [
+        "Caixa de saída"
+      ],
+      "Scheduled": [
+        ""
+      ],
       "You need to activate your calendar keys to add this event": [
         "Tem de activar as chaves da agenda para adicionar este evento"
       ],
@@ -3421,33 +3451,6 @@
       "Add label": [
         "Adicionar etiqueta"
       ],
-      "Inbox": [
-        "Caixa de entrada"
-      ],
-      "Drafts": [
-        "Rascunhos"
-      ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        "Enviado"
-      ],
-      "Starred": [
-        "Com estrela"
-      ],
-      "Archive": [
-        "Arquivo"
-      ],
-      "Spam": [
-        "Assédio"
-      ],
-      "Trash": [
-        "Lixo"
-      ],
-      "All mail": [
-        "Todo o correio"
-      ],
       "Folders": [
         "Pastas"
       ],
@@ -3459,9 +3462,6 @@
       ],
       "Manage your labels": [
         "Gerir as suas etiquetas"
-      ],
-      "Outbox": [
-        "Caixa de saída"
       ]
     },
     "Placeholder": {
@@ -4297,17 +4297,6 @@
         "${ totalImported }/${ totalToImport } contactos encriptados e adicionados à lista de contactos"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicações do Proton"
-      ],
-      "Go to ${ title }": [
-        "Ir para ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ir para ${ vpnName }"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem seleccionada"
@@ -4447,6 +4436,41 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicações do Proton"
+      ],
+      "Go to ${ title }": [
+        "Ir para ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ir para ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortável"
+      ],
+      "Compact": [
+        "Compacta"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coluna"
+      ],
+      "Row": [
+        "Linha"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizado"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Enviar"
@@ -4493,30 +4517,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Para desactivar o beta, abra o menu de definições e clique em \"Acesso Beta\"."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortável"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coluna"
-      ],
-      "Row": [
-        "Linha"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizado"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,6 +5180,26 @@
         "com estrela"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A senha deve conter pelo menos ${ length } carácter",
+        "A senha deve conter pelo menos $ ${ length } caracteres"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nome"
@@ -5294,24 +5314,9 @@
         "Endereço"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos $ ${ length } caracteres"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Endereço de email não encontrado entre as IDs de utilizador definidas na chave de envio (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5323,11 +5328,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Em ${ date }, ${ name } ${ address } escreveu:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Endereço de email não encontrado entre as IDs de utilizador definidas na chave de envio (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {

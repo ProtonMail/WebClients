@@ -842,8 +842,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Faktureres ved udløbet af din aktuelle faktureringscyklus (fornys den ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Du skal fjerne eventuelle ekstra kalendere og delte kalenderlinks, før du kan annullere dit abonnement. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Du skal fjerne eventuelle ekstra personlige kalendere og delte kalenderlinks, før du kan annullere dit abonnement. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Der kræves ingen betaling på nuværende tidspunkt."
@@ -1922,10 +1922,285 @@
         "Vs:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Luk"
+    "Label": {
+      "Copy": [
+        "Kopiér"
       ],
+      "Reveal password": [
+        "Afslør adgangskode"
+      ],
+      "Hide password": [
+        "Skjul adgangskode"
+      ],
+      "Street address": [
+        "Adresse"
+      ],
+      "City": [
+        "By"
+      ],
+      "Region": [
+        "Region"
+      ],
+      "Postal code": [
+        "Postnummer"
+      ],
+      "Country": [
+        "Land"
+      ],
+      "Post office box": [
+        "Postboks"
+      ],
+      "Extended address": [
+        "Udvidet adresse"
+      ],
+      "Do not ask again": [
+        "Spørg ikke igen"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Verification code": [
+        "Bekræftelseskode"
+      ],
+      "Enter the 6-digit code": [
+        "Indtast den sekscifrede kode"
+      ],
+      "Add email address": [
+        "Tilføj e-mailadresse"
+      ],
+      "Email format": [
+        "E-mailformattering"
+      ],
+      "Add image URL": [
+        "Tilføj billed-URL"
+      ],
+      "Upload picture": [
+        "Upload billede"
+      ],
+      "Add to group": [
+        "Føj til gruppe"
+      ],
+      "Encrypt emails": [
+        "Kryptér e-mails"
+      ],
+      "Sign emails": [
+        "Signér e-mails"
+      ],
+      "Cryptographic scheme": [
+        "Krypteringsmetode"
+      ],
+      "Public keys": [
+        "Offentlige nøgler"
+      ],
+      "Automatically save contacts": [
+        "Gem automatisk kontakter"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Export contacts": [
+        "Eksportér kontakter"
+      ],
+      "Operating system": [
+        "Operativsystem"
+      ],
+      "Operating system version": [
+        "Operativsystemversion"
+      ],
+      "Proton username": [
+        "Proton-brugernavn"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Hvad skete der?"
+      ],
+      "System information": [
+        "Systemoplysninger"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browser-version"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Hvad er den primære årsag til denne bedømmelse?"
+      ],
+      "Display name": [
+        "Vist navn"
+      ],
+      "Cancel": [
+        "Afbryd"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
+      ],
+      "Two-factor authentication code": [
+        "To-faktorgodkendelseskode"
+      ],
+      "Username or ProtonMail address": [
+        "Brugernavn eller ProtonMail-adresse"
+      ],
+      "Name on card": [
+        "Navn på kort"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "Expiry date": [
+        "Udløbsdato"
+      ],
+      "CVV code": [
+        "CVV-kode"
+      ],
+      "Select your country": [
+        "Vælg dit land"
+      ],
+      "ZIP": [
+        "Postnummer"
+      ],
+      "BTC amount:": [
+        "BTC-beløb:"
+      ],
+      "BTC address:": [
+        "BTC-adresse:"
+      ],
+      "Select a method": [
+        "Vælg en metode"
+      ],
+      "Total (${ countdown })": [
+        "I alt (${ countdown })"
+      ],
+      "Total": [
+        "I alt"
+      ],
+      "Proration": [
+        "Proration"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Card holder": [
+        "Kortindehaver"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Vælg hvordan din liste over beskeder ser ud som standard."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Vælg hvordan din postkasse ser ud som standard."
+      ],
+      "Select how your composer opens by default.": [
+        "Vælg hvordan dit skrivevindue åbner som standard."
+      ],
+      "Enable Beta Access": [
+        "Aktivér beta-adgang"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Choose a color": [
+        "Vælg en farve"
+      ],
+      "Default email": [
+        "Standard e-mail"
+      ],
+      "Display": [
+        "Vis"
+      ],
+      "Description": [
+        "Beskrivelse"
+      ],
+      "Default event duration": [
+        "Standardvarighed for begivenheder"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Default notifications": [
+        "Standardnotifikationer"
+      ],
+      "Default full day notifications": [
+        "Standard heldagsnotifikationer"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Hvor sandsynligt er det, at du vil anbefale ${ calendarAppName } til en ven eller kollega?"
+      ],
+      "0 - Not likely": [
+        "0 - Ikke sandsynligt"
+      ],
+      "10 - Extremely likely": [
+        "10 - Ekstremt sandsynligt"
+      ],
+      "All day": [
+        "Hele dagen"
+      ],
+      "Repeat on": [
+        "Gentag på"
+      ],
+      "Repeat every": [
+        "Gentag hver"
+      ],
+      "Ends": [
+        "Slutter"
+      ],
+      "Organizer": [
+        "Arrangør"
+      ],
+      "Optional": [
+        "Valgfri"
+      ],
+      "Time of the event": [
+        "Tidspunkt for begivenheden"
+      ],
+      "Event time": [
+        "Tidspunkt for begivenhed"
+      ],
+      "Event title": [
+        "Begivenhedstitel"
+      ],
+      "Event frequency": [
+        "Hyppighed af begivenhed"
+      ],
+      "Event location": [
+        "Begivenhedsplacering"
+      ],
+      "Event notifications": [
+        "Begivenhedsnotifikationer"
+      ],
+      "Participants": [
+        "Deltagere"
+      ],
+      "Your calendars": [
+        "Din kalendere"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Luk vindue"
       ],
@@ -1944,6 +2219,9 @@
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
       ],
+      "Close": [
+        "Luk"
+      ],
       "Close navigation": [
         "Luk navigation"
       ],
@@ -1953,11 +2231,11 @@
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
-      "refresh the page": [
-        "genopfrisk siden"
-      ],
       "Load image": [
         "Indlæs billede"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
       ],
       "Export": [
         "Exportér"
@@ -2186,9 +2464,6 @@
       "OK": [
         "Ok"
       ],
-      "Log in": [
-        "Log ind"
-      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
@@ -2245,6 +2520,9 @@
       ],
       "Back": [
         "Tilbage"
+      ],
+      "Log in": [
+        "Log ind"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -2389,6 +2667,139 @@
       ],
       "Close popover": [
         "Luk popover"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Request an invite": [
+        "Anmod om invitation"
+      ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
+      ],
+      "Upgrade": [
+        "Opgradere"
+      ],
+      "Go to subscription plans": [
+        "Gå til abonnementer"
+      ],
+      "click here": [
+        "klik hér"
+      ],
+      "Add a gift code": [
+        "Tilføj en gavekode"
+      ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
+      "Upgrade account": [
+        "Opgradér konto"
+      ],
+      "Calendars": [
+        "Kalendere"
+      ],
+      "My calendars": [
+        "Mine kalendere"
+      ],
+      "Subscribed calendars": [
+        "Tilmeldte kalendere"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "F.eks., "
+      ],
+      "Start typing an email address": [
+        "Begynd at indtaste en e-mailadresse"
+      ],
+      "Image URL": [
+        "Billed-URL"
+      ],
+      "Filter groups": [
+        "Filtrér grupper"
+      ],
+      "Search for name or email": [
+        "Søg efter navn eller e-mail"
+      ],
+      "Search for group name": [
+        "Søg efter gruppenavn"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "OS name": [
+        "OS-navn"
+      ],
+      "OS version": [
+        "OS-version"
+      ],
+      "Proton username": [
+        "Proton-brugernavn"
+      ],
+      "A way to contact you": [
+        "En måde at kontakte dig på"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beskriv problemet og inkludér evt. fejlmeddelelser"
+      ],
+      "Browser name": [
+        "Browsernavn"
+      ],
+      "Browser version": [
+        "Browserversion"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "e.g. Julia Smith": [
+        "f.eks. Anne Jensen"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
+      ],
+      "ZIP": [
+        "Postnummer"
+      ],
+      "Postal code": [
+        "Postnummer"
+      ],
+      "Gift code": [
+        "Gavekode"
+      ],
+      "Add a calendar name": [
+        "Tilføj et kalendernavn"
+      ],
+      "Add a calendar description": [
+        "Tilføj en kalederbeskrivelse"
+      ],
+      "Add title": [
+        "Tilføj titel"
+      ],
+      "Add location": [
+        "Tilføj placering"
+      ],
+      "Add description": [
+        "Tilføj beskrivelse"
+      ],
+      "Add participants": [
+        "Tilføj deltagere"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
       ]
     },
     "Title": {
@@ -2546,18 +2957,6 @@
       "Select a theme": [
         "Vælg et tema"
       ],
-      "Sign in again to continue": [
-        "Log ind igen for at fortsætte"
-      ],
-      "Account suspended": [
-        "Konto suspenderet"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
-      ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
       "Open help menu": [
         "Åbn hjælpemenu"
       ],
@@ -2575,6 +2974,18 @@
       ],
       "Give feedback": [
         "Giv feedback"
+      ],
+      "Sign in again to continue": [
+        "Log ind igen for at fortsætte"
+      ],
+      "Account suspended": [
+        "Konto suspenderet"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
       ],
       "Confirm loss of Proton bonuses": [
         "Bekræft tab af Proton-bonusser"
@@ -2681,14 +3092,14 @@
       "Beta Access": [
         "Beta-adgang"
       ],
+      "Select the way to send this notification": [
+        "Vælg måden at sende denne notifikation på"
+      ],
       "Select when you want this notification to be sent": [
         "Vælg når du ønsker, at denne notifikation skal sendes"
       ],
       "Select the time to send this notification": [
         "Vælg tid for afsendelse af denne notifikation"
-      ],
-      "Select the way to send this notification": [
-        "Vælg måden at sende denne notifikation på"
       ],
       "Add another notification to remind you of this event": [
         "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
@@ -2824,417 +3235,6 @@
       ],
       "CANCELLED": [
         "ANNULLERET"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Kopiér"
-      ],
-      "Reveal password": [
-        "Afslør adgangskode"
-      ],
-      "Hide password": [
-        "Skjul adgangskode"
-      ],
-      "Street address": [
-        "Adresse"
-      ],
-      "City": [
-        "By"
-      ],
-      "Region": [
-        "Region"
-      ],
-      "Postal code": [
-        "Postnummer"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Post office box": [
-        "Postboks"
-      ],
-      "Extended address": [
-        "Udvidet adresse"
-      ],
-      "Do not ask again": [
-        "Spørg ikke igen"
-      ],
-      "Email address": [
-        "E-mailadresse"
-      ],
-      "Phone number": [
-        "Telefonnummer"
-      ],
-      "Verification code": [
-        "Bekræftelseskode"
-      ],
-      "Enter the 6-digit code": [
-        "Indtast den sekscifrede kode"
-      ],
-      "Add email address": [
-        "Tilføj e-mailadresse"
-      ],
-      "Email format": [
-        "E-mailformattering"
-      ],
-      "Add image URL": [
-        "Tilføj billed-URL"
-      ],
-      "Upload picture": [
-        "Upload billede"
-      ],
-      "Add to group": [
-        "Føj til gruppe"
-      ],
-      "Encrypt emails": [
-        "Kryptér e-mails"
-      ],
-      "Sign emails": [
-        "Signér e-mails"
-      ],
-      "Cryptographic scheme": [
-        "Krypteringsmetode"
-      ],
-      "Public keys": [
-        "Offentlige nøgler"
-      ],
-      "Automatically save contacts": [
-        "Gem automatisk kontakter"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Export contacts": [
-        "Eksportér kontakter"
-      ],
-      "Operating system": [
-        "Operativsystem"
-      ],
-      "Operating system version": [
-        "Operativsystemversion"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Hvad skete der?"
-      ],
-      "System information": [
-        "Systemoplysninger"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browser-version"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Afbryd"
-      ],
-      "Submit": [
-        "Indsend"
-      ],
-      "Password": [
-        "Adgangskode"
-      ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
-      "Two-factor authentication code": [
-        "To-faktorgodkendelseskode"
-      ],
-      "Username or ProtonMail address": [
-        "Brugernavn eller ProtonMail-adresse"
-      ],
-      "What is the primary reason for this rating?": [
-        "Hvad er den primære årsag til denne bedømmelse?"
-      ],
-      "Display name": [
-        "Vist navn"
-      ],
-      "Name on card": [
-        "Navn på kort"
-      ],
-      "Card number": [
-        "Kortnummer"
-      ],
-      "Expiry date": [
-        "Udløbsdato"
-      ],
-      "CVV code": [
-        "CVV-kode"
-      ],
-      "Select your country": [
-        "Vælg dit land"
-      ],
-      "ZIP": [
-        "Postnummer"
-      ],
-      "BTC amount:": [
-        "BTC-beløb:"
-      ],
-      "BTC address:": [
-        "BTC-adresse:"
-      ],
-      "Select a method": [
-        "Vælg en metode"
-      ],
-      "Total (${ countdown })": [
-        "I alt (${ countdown })"
-      ],
-      "Total": [
-        "I alt"
-      ],
-      "Proration": [
-        "Proration"
-      ],
-      "Cash": [
-        "Kontant"
-      ],
-      "Card holder": [
-        "Kortindehaver"
-      ],
-      "Expires": [
-        "Udløber"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vælg hvordan din liste over beskeder ser ud som standard."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vælg hvordan din postkasse ser ud som standard."
-      ],
-      "Select how your composer opens by default.": [
-        "Vælg hvordan dit skrivevindue åbner som standard."
-      ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
-      ],
-      "Name": [
-        "Navn"
-      ],
-      "Choose a color": [
-        "Vælg en farve"
-      ],
-      "Default email": [
-        "Standard e-mail"
-      ],
-      "Display": [
-        "Vis"
-      ],
-      "Description": [
-        "Beskrivelse"
-      ],
-      "Default event duration": [
-        "Standardvarighed for begivenheder"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Default notifications": [
-        "Standardnotifikationer"
-      ],
-      "Default full day notifications": [
-        "Standard heldagsnotifikationer"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Hvor sandsynligt er det, at du vil anbefale ${ calendarAppName } til en ven eller kollega?"
-      ],
-      "0 - Not likely": [
-        "0 - Ikke sandsynligt"
-      ],
-      "10 - Extremely likely": [
-        "10 - Ekstremt sandsynligt"
-      ],
-      "All day": [
-        "Hele dagen"
-      ],
-      "Repeat on": [
-        "Gentag på"
-      ],
-      "Repeat every": [
-        "Gentag hver"
-      ],
-      "Ends": [
-        "Slutter"
-      ],
-      "Organizer": [
-        "Arrangør"
-      ],
-      "Optional": [
-        "Valgfri"
-      ],
-      "Time of the event": [
-        "Tidspunkt for begivenheden"
-      ],
-      "Event time": [
-        "Tidspunkt for begivenhed"
-      ],
-      "Event title": [
-        "Begivenhedstitel"
-      ],
-      "Event frequency": [
-        "Hyppighed af begivenhed"
-      ],
-      "Event location": [
-        "Begivenhedsplacering"
-      ],
-      "Event notifications": [
-        "Begivenhedsnotifikationer"
-      ],
-      "Participants": [
-        "Deltagere"
-      ],
-      "Your calendars": [
-        "Din kalendere"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nøgle kan ikke benyttes til kryptering"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Request an invite": [
-        "Anmod om invitation"
-      ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
-      ],
-      "Upgrade": [
-        "Opgradere"
-      ],
-      "Go to subscription plans": [
-        "Gå til abonnementer"
-      ],
-      "click here": [
-        "klik hér"
-      ],
-      "Add a gift code": [
-        "Tilføj en gavekode"
-      ],
-      "Pay invoice": [
-        "Betal faktura"
-      ],
-      "Upgrade account": [
-        "Opgradér konto"
-      ],
-      "Calendars": [
-        "Kalendere"
-      ],
-      "My calendars": [
-        "Mine kalendere"
-      ],
-      "Other calendars": [
-        "Andre kalendere"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "F.eks., "
-      ],
-      "Start typing an email address": [
-        "Begynd at indtaste en e-mailadresse"
-      ],
-      "Image URL": [
-        "Billed-URL"
-      ],
-      "Filter groups": [
-        "Filtrér grupper"
-      ],
-      "Search for name or email": [
-        "Søg efter navn eller e-mail"
-      ],
-      "Search for group name": [
-        "Søg efter gruppenavn"
-      ],
-      "Name": [
-        "Navn"
-      ],
-      "OS name": [
-        "OS-navn"
-      ],
-      "OS version": [
-        "OS-version"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
-      ],
-      "A way to contact you": [
-        "En måde at kontakte dig på"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Beskriv problemet og inkludér evt. fejlmeddelelser"
-      ],
-      "Browser name": [
-        "Browsernavn"
-      ],
-      "Browser version": [
-        "Browserversion"
-      ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "e.g. Julia Smith": [
-        "f.eks. Anne Jensen"
-      ],
-      "ZIP": [
-        "Postnummer"
-      ],
-      "Postal code": [
-        "Postnummer"
-      ],
-      "Gift code": [
-        "Gavekode"
-      ],
-      "Add a calendar name": [
-        "Tilføj et kalendernavn"
-      ],
-      "Add a calendar description": [
-        "Tilføj en kalederbeskrivelse"
-      ],
-      "Add title": [
-        "Tilføj titel"
-      ],
-      "Add location": [
-        "Tilføj placering"
-      ],
-      "Add description": [
-        "Tilføj beskrivelse"
-      ],
-      "Add participants": [
-        "Tilføj deltagere"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
       ]
     },
     "Storage": {
@@ -3481,8 +3481,8 @@
       "Preference saved": [
         "Præferencer gemt"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
-        "Kalender oprettet. Det kan tage et par minutter at synkronisere."
+      "Calendar added. It might take a few minutes to sync.": [
+        ""
       ],
       "Calendar created": [
         "Kalender oprettet"
@@ -4549,6 +4549,17 @@
         "Gratis"
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nyt kredit / betalingskort"
+      ],
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Komfortabel"
@@ -4571,17 +4582,6 @@
       ],
       "Maximized": [
         "Maksimeret"
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Nyt kredit / betalingskort"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ]
     },
     "Beta access description": {
@@ -4631,6 +4631,14 @@
         "timer før"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        "e-mail"
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vælg et nummer"
@@ -4639,14 +4647,6 @@
     "Notification time input": {
       "at": [
         "kl."
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "via påmindelse"
-      ],
-      "by email": [
-        "med e-mail"
       ]
     },
     "Duration": {
@@ -4743,6 +4743,11 @@
         "${ value } uger efter kl. ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        ""
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         "deaktiveret"
@@ -4832,6 +4837,11 @@
       ],
       "This event has been cancelled": [
         "Denne begivenhed er blevet aflyst"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        "med e-mail"
       ]
     },
     "Event info": {

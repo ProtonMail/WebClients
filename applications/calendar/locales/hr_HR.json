@@ -856,7 +856,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1974,10 +1974,285 @@
         "Fw:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Zatvori"
+    "Label": {
+      "Copy": [
+        "Kopiraj"
       ],
+      "Reveal password": [
+        "Prikaži lozinku"
+      ],
+      "Hide password": [
+        "Sakrij lozinku"
+      ],
+      "Street address": [
+        "Adresa"
+      ],
+      "City": [
+        "Grad"
+      ],
+      "Region": [
+        "Regija"
+      ],
+      "Postal code": [
+        "Poštanski broj"
+      ],
+      "Country": [
+        "Država"
+      ],
+      "Post office box": [
+        "Poštanski sandučić"
+      ],
+      "Extended address": [
+        "Produžena adresa"
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
+      "Phone number": [
+        "Broj telefona"
+      ],
+      "Verification code": [
+        "Kôd za provjeru"
+      ],
+      "Enter the 6-digit code": [
+        "Unesite 6-znamenkasti kôd"
+      ],
+      "Add email address": [
+        "Dodaj adresu e-pošte"
+      ],
+      "Email format": [
+        "Format e-pošte"
+      ],
+      "Add image URL": [
+        "Dodajte URL slike"
+      ],
+      "Upload picture": [
+        "Učitaj sliku"
+      ],
+      "Add to group": [
+        "Dodaj u grupu"
+      ],
+      "Encrypt emails": [
+        "Šifriraj e-poštu"
+      ],
+      "Sign emails": [
+        "Potpisivanje e-pošte"
+      ],
+      "Cryptographic scheme": [
+        "Kriptografska shema"
+      ],
+      "Public keys": [
+        "Javni ključevi"
+      ],
+      "Automatically save contacts": [
+        "Automatsko spremanje kontakata"
+      ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
+      "Export contacts": [
+        "Izvezi kontakte"
+      ],
+      "Operating system": [
+        "Operativni sustav"
+      ],
+      "Operating system version": [
+        "Verzija operativnog sustava"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "Category": [
+        "Kategorija"
+      ],
+      "What happened?": [
+        "Što se dogodilo?"
+      ],
+      "System information": [
+        "Informacije o sustavu"
+      ],
+      "Browser": [
+        "Preglednik"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
+      "Cancel": [
+        "Poništi"
+      ],
+      "Submit": [
+        "Pošalji"
+      ],
+      "Password": [
+        "Lozinka"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "Two-factor authentication code": [
+        "Kôd dvofaktorske autentikacije"
+      ],
+      "Username or ProtonMail address": [
+        "Korisničko ime ili ProtonMail adresa"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "Omogući Beta pristup"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Opis"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Cijeli dan"
+      ],
+      "Repeat on": [
+        "Ponovi na"
+      ],
+      "Repeat every": [
+        "Ponovi svaki"
+      ],
+      "Ends": [
+        "Završava"
+      ],
+      "Organizer": [
+        "Organizator"
+      ],
+      "Optional": [
+        "Neobavezno"
+      ],
+      "Time of the event": [
+        "Vrijeme događaja"
+      ],
+      "Event time": [
+        "Vrijeme događaja"
+      ],
+      "Event title": [
+        "Naziv događaja"
+      ],
+      "Event frequency": [
+        "Učestalost događaja"
+      ],
+      "Event location": [
+        "Lokacija događaja"
+      ],
+      "Event notifications": [
+        "Obavijest o događaju"
+      ],
+      "Participants": [
+        "Sudionici"
+      ],
+      "Your calendars": [
+        "Vaši kalendari"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Zatvori skočni prozor"
       ],
@@ -1996,6 +2271,9 @@
       "Use “${ label }” setting": [
         ""
       ],
+      "Close": [
+        "Zatvori"
+      ],
       "Close navigation": [
         "Zatvori navigaciju"
       ],
@@ -2005,11 +2283,11 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Load image": [
         "Učitaj sliku"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Export": [
         "Izvoz"
@@ -2240,9 +2518,6 @@
       "OK": [
         "U redu"
       ],
-      "Log in": [
-        "Prijavite se"
-      ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
@@ -2299,6 +2574,9 @@
       ],
       "Back": [
         "Natrag"
+      ],
+      "Log in": [
+        "Prijavite se"
       ],
       "Remove bonuses": [
         ""
@@ -2443,6 +2721,141 @@
       ],
       "Close popover": [
         "Zatvori skočni prozor"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saznajte više"
+      ],
+      "Request an invite": [
+        "Zatraži pozivnicu"
+      ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Go to subscription plans": [
+        "Idi na planove pretplate"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Plati račun"
+      ],
+      "Upgrade account": [
+        "Nadogradi račun"
+      ],
+      "Calendars": [
+        "Kalendari"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Npr. "
+      ],
+      "Start typing an email address": [
+        "Započnite pisati adresu e-pošte"
+      ],
+      "Image URL": [
+        "URL slike"
+      ],
+      "Filter groups": [
+        "Filtrirajte grupe"
+      ],
+      "Search for name or email": [
+        "Pretraga po imenu ili adresi e-pošte"
+      ],
+      "Search for group name": [
+        "Pretraga po nazivu grupe"
+      ],
+      "Name": [
+        "Naziv"
+      ],
+      "OS name": [
+        "Naziv OS-a"
+      ],
+      "OS version": [
+        "Verzija OS-a"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "A way to contact you": [
+        "Način kako da vas kontaktiramo"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Browser name": [
+        "Naziv preglednika"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "npr. Ana Horvat"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Dodaj naslov"
+      ],
+      "Add location": [
+        "Dodaj lokaciju"
+      ],
+      "Add description": [
+        "Dodaj opis"
+      ],
+      "Add participants": [
+        "Dodaj sudionike"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } sat",
+        "${ hours } sata",
+        "${ hours } sati"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minute",
+        "${ minutes } minuta"
       ]
     },
     "Title": {
@@ -2604,18 +3017,6 @@
       "Select a theme": [
         "Odaberi temu"
       ],
-      "Sign in again to continue": [
-        "Ponovno se prijavite da biste nastavili"
-      ],
-      "Account suspended": [
-        "Račun je suspendiran"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
-      ],
-      "Enter your password": [
-        "Unesite vašu lozinku"
-      ],
       "Open help menu": [
         "Otvori izbornik pomoći"
       ],
@@ -2633,6 +3034,18 @@
       ],
       "Give feedback": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Ponovno se prijavite da biste nastavili"
+      ],
+      "Account suspended": [
+        "Račun je suspendiran"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
+      ],
+      "Enter your password": [
+        "Unesite vašu lozinku"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2739,14 +3152,14 @@
       "Beta Access": [
         "Beta pristup"
       ],
+      "Select the way to send this notification": [
+        "Odaberite način slanja ove obavijesti"
+      ],
       "Select when you want this notification to be sent": [
         "Odaberite kada želite da se ova obavijest pošalje"
       ],
       "Select the time to send this notification": [
         "Odaberite vrijeme slanja ove obavijesti"
-      ],
-      "Select the way to send this notification": [
-        "Odaberite način slanja ove obavijesti"
       ],
       "Add another notification to remind you of this event": [
         "Dodajte još obavijesti da vas podsjete na ovaj događaj"
@@ -2882,419 +3295,6 @@
       ],
       "CANCELLED": [
         "OTKAZANO"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Kopiraj"
-      ],
-      "Reveal password": [
-        "Prikaži lozinku"
-      ],
-      "Hide password": [
-        "Sakrij lozinku"
-      ],
-      "Street address": [
-        "Adresa"
-      ],
-      "City": [
-        "Grad"
-      ],
-      "Region": [
-        "Regija"
-      ],
-      "Postal code": [
-        "Poštanski broj"
-      ],
-      "Country": [
-        "Država"
-      ],
-      "Post office box": [
-        "Poštanski sandučić"
-      ],
-      "Extended address": [
-        "Produžena adresa"
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "Adresa e-pošte"
-      ],
-      "Phone number": [
-        "Broj telefona"
-      ],
-      "Verification code": [
-        "Kôd za provjeru"
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
-      ],
-      "Add email address": [
-        "Dodaj adresu e-pošte"
-      ],
-      "Email format": [
-        "Format e-pošte"
-      ],
-      "Add image URL": [
-        "Dodajte URL slike"
-      ],
-      "Upload picture": [
-        "Učitaj sliku"
-      ],
-      "Add to group": [
-        "Dodaj u grupu"
-      ],
-      "Encrypt emails": [
-        "Šifriraj e-poštu"
-      ],
-      "Sign emails": [
-        "Potpisivanje e-pošte"
-      ],
-      "Cryptographic scheme": [
-        "Kriptografska shema"
-      ],
-      "Public keys": [
-        "Javni ključevi"
-      ],
-      "Automatically save contacts": [
-        "Automatsko spremanje kontakata"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Export contacts": [
-        "Izvezi kontakte"
-      ],
-      "Operating system": [
-        "Operativni sustav"
-      ],
-      "Operating system version": [
-        "Verzija operativnog sustava"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "Category": [
-        "Kategorija"
-      ],
-      "What happened?": [
-        "Što se dogodilo?"
-      ],
-      "System information": [
-        "Informacije o sustavu"
-      ],
-      "Browser": [
-        "Preglednik"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Poništi"
-      ],
-      "Submit": [
-        "Pošalji"
-      ],
-      "Password": [
-        "Lozinka"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "Two-factor authentication code": [
-        "Kôd dvofaktorske autentikacije"
-      ],
-      "Username or ProtonMail address": [
-        "Korisničko ime ili ProtonMail adresa"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        "Omogući Beta pristup"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Opis"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Cijeli dan"
-      ],
-      "Repeat on": [
-        "Ponovi na"
-      ],
-      "Repeat every": [
-        "Ponovi svaki"
-      ],
-      "Ends": [
-        "Završava"
-      ],
-      "Organizer": [
-        "Organizator"
-      ],
-      "Optional": [
-        "Neobavezno"
-      ],
-      "Time of the event": [
-        "Vrijeme događaja"
-      ],
-      "Event time": [
-        "Vrijeme događaja"
-      ],
-      "Event title": [
-        "Naziv događaja"
-      ],
-      "Event frequency": [
-        "Učestalost događaja"
-      ],
-      "Event location": [
-        "Lokacija događaja"
-      ],
-      "Event notifications": [
-        "Obavijest o događaju"
-      ],
-      "Participants": [
-        "Sudionici"
-      ],
-      "Your calendars": [
-        "Vaši kalendari"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Request an invite": [
-        "Zatraži pozivnicu"
-      ],
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Go to subscription plans": [
-        "Idi na planove pretplate"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Plati račun"
-      ],
-      "Upgrade account": [
-        "Nadogradi račun"
-      ],
-      "Calendars": [
-        "Kalendari"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Other calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Npr. "
-      ],
-      "Start typing an email address": [
-        "Započnite pisati adresu e-pošte"
-      ],
-      "Image URL": [
-        "URL slike"
-      ],
-      "Filter groups": [
-        "Filtrirajte grupe"
-      ],
-      "Search for name or email": [
-        "Pretraga po imenu ili adresi e-pošte"
-      ],
-      "Search for group name": [
-        "Pretraga po nazivu grupe"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "A way to contact you": [
-        "Način kako da vas kontaktiramo"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Molimo opišite problem i pridružite sve poruke o pogreškama"
-      ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Dodaj naslov"
-      ],
-      "Add location": [
-        "Dodaj lokaciju"
-      ],
-      "Add description": [
-        "Dodaj opis"
-      ],
-      "Add participants": [
-        "Dodaj sudionike"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
       ]
     },
     "Storage": {
@@ -3545,7 +3545,7 @@
       "Preference saved": [
         "Postavke su spremljene"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4636,6 +4636,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         ""
@@ -4657,17 +4668,6 @@
         ""
       ],
       "Maximized": [
-        ""
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
         ""
       ]
     },
@@ -4722,6 +4722,14 @@
         "sata prije"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Odaberite broj"
@@ -4730,14 +4738,6 @@
     "Notification time input": {
       "at": [
         "u"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "putem obavijesti"
-      ],
-      "by email": [
-        "putem e-pošte"
       ]
     },
     "Duration": {
@@ -4850,6 +4850,11 @@
         "${ value } tjedana nakon u ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        ""
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         ""
@@ -4941,6 +4946,11 @@
       ],
       "This event has been cancelled": [
         "Događaj je otkazan"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {
