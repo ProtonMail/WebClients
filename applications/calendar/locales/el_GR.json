@@ -842,7 +842,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1922,10 +1922,285 @@
         "Προώθ:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Κλείσιμο"
+    "Label": {
+      "Copy": [
+        "Αντιγραφή"
       ],
+      "Reveal password": [
+        "Εμφάνιση κωδικού"
+      ],
+      "Hide password": [
+        "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "Street address": [
+        ""
+      ],
+      "City": [
+        ""
+      ],
+      "Region": [
+        ""
+      ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
+      "Country": [
+        "Χώρα"
+      ],
+      "Post office box": [
+        ""
+      ],
+      "Extended address": [
+        ""
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
+      "Phone number": [
+        "Αριθμός τηλεφώνου"
+      ],
+      "Verification code": [
+        "Κωδικός επαλήθευσης"
+      ],
+      "Enter the 6-digit code": [
+        "Εισάγετε τον 6-ψήφιο κωδικό"
+      ],
+      "Add email address": [
+        ""
+      ],
+      "Email format": [
+        ""
+      ],
+      "Add image URL": [
+        ""
+      ],
+      "Upload picture": [
+        ""
+      ],
+      "Add to group": [
+        ""
+      ],
+      "Encrypt emails": [
+        ""
+      ],
+      "Sign emails": [
+        ""
+      ],
+      "Cryptographic scheme": [
+        ""
+      ],
+      "Public keys": [
+        ""
+      ],
+      "Automatically save contacts": [
+        ""
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Operating system": [
+        "Λειτουργικό σύστημα"
+      ],
+      "Operating system version": [
+        "Έκδοση λειτουργικού συστήματος"
+      ],
+      "Proton username": [
+        "Όνομα χρήστη Proton"
+      ],
+      "Category": [
+        "Κατηγορία"
+      ],
+      "What happened?": [
+        "Τι συνέβη;"
+      ],
+      "System information": [
+        "Πληροφορίες Συστήματος"
+      ],
+      "Browser": [
+        "Πρόγραμμα περιήγησης"
+      ],
+      "Browser version": [
+        "Έκδοση Browser"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "Password": [
+        "Κωδικός πρόσβασης"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
+      "Two-factor authentication code": [
+        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
+      ],
+      "Username or ProtonMail address": [
+        "Όνομα χρήστη ή διεύθυνση ProtonMail"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        ""
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Περιγραφή"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Όλη την ημέρα"
+      ],
+      "Repeat on": [
+        "Επανάληψη στις"
+      ],
+      "Repeat every": [
+        "Επανάληψη κάθε"
+      ],
+      "Ends": [
+        "Λήξη"
+      ],
+      "Organizer": [
+        "Διοργανωτής"
+      ],
+      "Optional": [
+        "Προαιρετικό"
+      ],
+      "Time of the event": [
+        "Ώρα του συμβάντος"
+      ],
+      "Event time": [
+        "Ώρα Συμβάντος"
+      ],
+      "Event title": [
+        "Τίτλος εκδήλωσης"
+      ],
+      "Event frequency": [
+        "Συχνότητα συμβάντος"
+      ],
+      "Event location": [
+        "Τοποθεσία συμβάντος"
+      ],
+      "Event notifications": [
+        "Ειδοποιήσεις συμβάντων"
+      ],
+      "Participants": [
+        "Συμμετέχοντες"
+      ],
+      "Your calendars": [
+        "Τα ημερολόγια σας"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Κλείσιμο παραθύρου"
       ],
@@ -1944,6 +2219,9 @@
       "Use “${ label }” setting": [
         ""
       ],
+      "Close": [
+        "Κλείσιμο"
+      ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
       ],
@@ -1953,11 +2231,11 @@
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Load image": [
         ""
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Export": [
         ""
@@ -2186,9 +2464,6 @@
       "OK": [
         "ΟΚ"
       ],
-      "Log in": [
-        "Είσοδος"
-      ],
       "Copy email to clipboard": [
         ""
       ],
@@ -2245,6 +2520,9 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Log in": [
+        "Είσοδος"
       ],
       "Remove bonuses": [
         ""
@@ -2389,6 +2667,139 @@
       ],
       "Close popover": [
         "Κλείστε το αναδυόμενο παράθυρο"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
+      ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Πληρωμή υπολοίπου"
+      ],
+      "Upgrade account": [
+        "Αναβάθμιση λογαριασμού"
+      ],
+      "Calendars": [
+        "Ημερολόγιο"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Π.χ., "
+      ],
+      "Start typing an email address": [
+        ""
+      ],
+      "Image URL": [
+        ""
+      ],
+      "Filter groups": [
+        ""
+      ],
+      "Search for name or email": [
+        ""
+      ],
+      "Search for group name": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "OS name": [
+        "Λειτουργικό Σύστημα"
+      ],
+      "OS version": [
+        "Έκδοση Λειτουργικού"
+      ],
+      "Proton username": [
+        "Όνομα χρήστη Proton"
+      ],
+      "A way to contact you": [
+        "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
+      ],
+      "Browser name": [
+        "Όνομα Browser"
+      ],
+      "Browser version": [
+        "Έκδοση Browser"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "π.χ. Julia Smith"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Προσθέστε τίτλο"
+      ],
+      "Add location": [
+        "Προσθήκη τοποθεσίας"
+      ],
+      "Add description": [
+        "Προσθήκη περιγραφής"
+      ],
+      "Add participants": [
+        "Προσθήκη συμμετεχόντων"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
       ]
     },
     "Title": {
@@ -2546,18 +2957,6 @@
       "Select a theme": [
         ""
       ],
-      "Sign in again to continue": [
-        "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
-      ],
       "Open help menu": [
         ""
       ],
@@ -2575,6 +2974,18 @@
       ],
       "Give feedback": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Account suspended": [
+        "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό σας"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2681,14 +3092,14 @@
       "Beta Access": [
         ""
       ],
+      "Select the way to send this notification": [
+        "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
+      ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
       ],
       "Select the time to send this notification": [
         "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"
-      ],
-      "Select the way to send this notification": [
-        "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
       ],
       "Add another notification to remind you of this event": [
         "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτό το συμβάν"
@@ -2824,417 +3235,6 @@
       ],
       "CANCELLED": [
         "ΑΚΥΡΩΣΗ"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Αντιγραφή"
-      ],
-      "Reveal password": [
-        "Εμφάνιση κωδικού"
-      ],
-      "Hide password": [
-        "Απόκρυψη κωδικού πρόσβασης"
-      ],
-      "Street address": [
-        ""
-      ],
-      "City": [
-        ""
-      ],
-      "Region": [
-        ""
-      ],
-      "Postal code": [
-        "Ταχυδρομικός κώδικας"
-      ],
-      "Country": [
-        "Χώρα"
-      ],
-      "Post office box": [
-        ""
-      ],
-      "Extended address": [
-        ""
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "Διεύθυνση email"
-      ],
-      "Phone number": [
-        "Αριθμός τηλεφώνου"
-      ],
-      "Verification code": [
-        "Κωδικός επαλήθευσης"
-      ],
-      "Enter the 6-digit code": [
-        "Εισάγετε τον 6-ψήφιο κωδικό"
-      ],
-      "Add email address": [
-        ""
-      ],
-      "Email format": [
-        ""
-      ],
-      "Add image URL": [
-        ""
-      ],
-      "Upload picture": [
-        ""
-      ],
-      "Add to group": [
-        ""
-      ],
-      "Encrypt emails": [
-        ""
-      ],
-      "Sign emails": [
-        ""
-      ],
-      "Cryptographic scheme": [
-        ""
-      ],
-      "Public keys": [
-        ""
-      ],
-      "Automatically save contacts": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Export contacts": [
-        ""
-      ],
-      "Operating system": [
-        "Λειτουργικό σύστημα"
-      ],
-      "Operating system version": [
-        "Έκδοση λειτουργικού συστήματος"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
-      "Category": [
-        "Κατηγορία"
-      ],
-      "What happened?": [
-        "Τι συνέβη;"
-      ],
-      "System information": [
-        "Πληροφορίες Συστήματος"
-      ],
-      "Browser": [
-        "Πρόγραμμα περιήγησης"
-      ],
-      "Browser version": [
-        "Έκδοση Browser"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Ακύρωση"
-      ],
-      "Submit": [
-        "Υποβολή"
-      ],
-      "Password": [
-        "Κωδικός πρόσβασης"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "Two-factor authentication code": [
-        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
-      ],
-      "Username or ProtonMail address": [
-        "Όνομα χρήστη ή διεύθυνση ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        ""
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Περιγραφή"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Όλη την ημέρα"
-      ],
-      "Repeat on": [
-        "Επανάληψη στις"
-      ],
-      "Repeat every": [
-        "Επανάληψη κάθε"
-      ],
-      "Ends": [
-        "Λήξη"
-      ],
-      "Organizer": [
-        "Διοργανωτής"
-      ],
-      "Optional": [
-        "Προαιρετικό"
-      ],
-      "Time of the event": [
-        "Ώρα του συμβάντος"
-      ],
-      "Event time": [
-        "Ώρα Συμβάντος"
-      ],
-      "Event title": [
-        "Τίτλος εκδήλωσης"
-      ],
-      "Event frequency": [
-        "Συχνότητα συμβάντος"
-      ],
-      "Event location": [
-        "Τοποθεσία συμβάντος"
-      ],
-      "Event notifications": [
-        "Ειδοποιήσεις συμβάντων"
-      ],
-      "Participants": [
-        "Συμμετέχοντες"
-      ],
-      "Your calendars": [
-        "Τα ημερολόγια σας"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Μάθετε περισσότερα"
-      ],
-      "Request an invite": [
-        "Ζητήστε μια πρόσκληση"
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Πληρωμή υπολοίπου"
-      ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
-      "Calendars": [
-        "Ημερολόγιο"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Other calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Π.χ., "
-      ],
-      "Start typing an email address": [
-        ""
-      ],
-      "Image URL": [
-        ""
-      ],
-      "Filter groups": [
-        ""
-      ],
-      "Search for name or email": [
-        ""
-      ],
-      "Search for group name": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "OS name": [
-        "Λειτουργικό Σύστημα"
-      ],
-      "OS version": [
-        "Έκδοση Λειτουργικού"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
-      "A way to contact you": [
-        "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
-      ],
-      "Browser name": [
-        "Όνομα Browser"
-      ],
-      "Browser version": [
-        "Έκδοση Browser"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Προσθέστε τίτλο"
-      ],
-      "Add location": [
-        "Προσθήκη τοποθεσίας"
-      ],
-      "Add description": [
-        "Προσθήκη περιγραφής"
-      ],
-      "Add participants": [
-        "Προσθήκη συμμετεχόντων"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
       ]
     },
     "Storage": {
@@ -3481,7 +3481,7 @@
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4549,6 +4549,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         ""
@@ -4570,17 +4581,6 @@
         ""
       ],
       "Maximized": [
-        ""
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
         ""
       ]
     },
@@ -4631,6 +4631,14 @@
         "ώρες πριν"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Επιλέξτε έναν αριθμό"
@@ -4639,14 +4647,6 @@
     "Notification time input": {
       "at": [
         "στις"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "μεσω ειδοποίησης"
-      ],
-      "by email": [
-        "μέσω ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Duration": {
@@ -4743,6 +4743,11 @@
         "${ value } εβδομάδες μετά από ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        ""
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         ""
@@ -4832,6 +4837,11 @@
       ],
       "This event has been cancelled": [
         "Αυτό το συμβάν ακυρώθηκε"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {

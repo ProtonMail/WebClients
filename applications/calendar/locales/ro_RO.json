@@ -856,8 +856,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Facturat la sfârșitul ciclului curent de facturare (reînnoire la ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Trebuie să eliminați toate calendare suplimentare și toate legăturile partajate din calendar înainte de a putea anula abonamentul. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nici o plată."
@@ -1974,10 +1974,285 @@
         "Redir:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Închidere"
+    "Label": {
+      "Copy": [
+        "Copiere"
       ],
+      "Reveal password": [
+        "Afișare parolă"
+      ],
+      "Hide password": [
+        "Ascundere parolă"
+      ],
+      "Street address": [
+        "Strada"
+      ],
+      "City": [
+        "Oraș"
+      ],
+      "Region": [
+        "Județ"
+      ],
+      "Postal code": [
+        "Cod poștal"
+      ],
+      "Country": [
+        "Țara"
+      ],
+      "Post office box": [
+        "Cutie poștală"
+      ],
+      "Extended address": [
+        "Adresa extinsă"
+      ],
+      "Do not ask again": [
+        "Nu mă mai întreba"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
+      "Phone number": [
+        "Număr de telefon"
+      ],
+      "Verification code": [
+        "Cod de verificare"
+      ],
+      "Enter the 6-digit code": [
+        "Introduceți codul din 6 cifre"
+      ],
+      "Add email address": [
+        "Adăugare adresă de e-mail"
+      ],
+      "Email format": [
+        "Format e-mail"
+      ],
+      "Add image URL": [
+        "Adăugare URL imagine"
+      ],
+      "Upload picture": [
+        "Încărcare imagine"
+      ],
+      "Add to group": [
+        "Adăugare la grup"
+      ],
+      "Encrypt emails": [
+        "Criptare mesaje"
+      ],
+      "Sign emails": [
+        "Semnare mesaje"
+      ],
+      "Cryptographic scheme": [
+        "Schemă criptografică"
+      ],
+      "Public keys": [
+        "Chei publice"
+      ],
+      "Automatically save contacts": [
+        "Salvare automată contacte"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
+      ],
+      "Operating system": [
+        "Sistem de operare"
+      ],
+      "Operating system version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Ce s-a întâmplat?"
+      ],
+      "System information": [
+        "Informații sistem"
+      ],
+      "Browser": [
+        "Navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Care este motivul principal pentru această evaluare?"
+      ],
+      "Display name": [
+        "Nume afișat"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Submit": [
+        "Trimitere"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "Two-factor authentication code": [
+        "Cod autentificare cu doi factori"
+      ],
+      "Username or ProtonMail address": [
+        "Nume de utilizator sau e-mail ProtonMail"
+      ],
+      "Name on card": [
+        "Titular card"
+      ],
+      "Card number": [
+        "Număr card"
+      ],
+      "Expiry date": [
+        "Data expirării"
+      ],
+      "CVV code": [
+        "Cod CVV"
+      ],
+      "Select your country": [
+        "Selectați țara"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "BTC amount:": [
+        "Suma BTC:"
+      ],
+      "BTC address:": [
+        "Adresa BTC:"
+      ],
+      "Select a method": [
+        "Selectați metoda"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Proration": [
+        "Credit rămas"
+      ],
+      "Cash": [
+        "Numerar"
+      ],
+      "Card holder": [
+        "Titular card"
+      ],
+      "Expires": [
+        "Expirare"
+      ],
+      "Payer": [
+        "Plătitor"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Selectați cum să arate lista de mesaje în mod implicit."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Selectați cum să arate căsuța poștală în mod implicit."
+      ],
+      "Select how your composer opens by default.": [
+        "Selectați modul în care se deschide implicit editorul de mesaje."
+      ],
+      "Enable Beta Access": [
+        "Activare acces la Beta"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Choose a color": [
+        "Alegere culoare"
+      ],
+      "Default email": [
+        "E-mail implicit"
+      ],
+      "Display": [
+        "Afișare"
+      ],
+      "Description": [
+        "Descriere"
+      ],
+      "Default event duration": [
+        "Durată implicită eveniment"
+      ],
+      "URL": [
+        "Adresa URL"
+      ],
+      "Default notifications": [
+        "Notificări implicite"
+      ],
+      "Default full day notifications": [
+        "Notificări întreaga zi implicite"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
+      ],
+      "0 - Not likely": [
+        "0 - Probabil nu"
+      ],
+      "10 - Extremely likely": [
+        "10 - Extrem de probabil"
+      ],
+      "All day": [
+        "Toată ziua"
+      ],
+      "Repeat on": [
+        "Repetare"
+      ],
+      "Repeat every": [
+        "Repetare la fiecare"
+      ],
+      "Ends": [
+        "Sfârșit"
+      ],
+      "Organizer": [
+        "Organizator"
+      ],
+      "Optional": [
+        "Opțional"
+      ],
+      "Time of the event": [
+        "Dată eveniment"
+      ],
+      "Event time": [
+        "Oră eveniment"
+      ],
+      "Event title": [
+        "Titlu eveniment"
+      ],
+      "Event frequency": [
+        "Frecvență eveniment"
+      ],
+      "Event location": [
+        "Loc eveniment"
+      ],
+      "Event notifications": [
+        "Notificări eveniment"
+      ],
+      "Participants": [
+        "Participanţi"
+      ],
+      "Your calendars": [
+        "Calendare"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Închidere"
       ],
@@ -1996,6 +2271,9 @@
       "Use “${ label }” setting": [
         "Folosire setarea „${ label }”"
       ],
+      "Close": [
+        "Închidere"
+      ],
       "Close navigation": [
         "Închidere navigare"
       ],
@@ -2005,11 +2283,11 @@
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
       "Load image": [
         "Încărcare imagine"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
       ],
       "Export": [
         "Exportare"
@@ -2240,9 +2518,6 @@
       "OK": [
         "OK"
       ],
-      "Log in": [
-        "Conectare"
-      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -2299,6 +2574,9 @@
       ],
       "Back": [
         "Înapoi"
+      ],
+      "Log in": [
+        "Conectare"
       ],
       "Remove bonuses": [
         "Eliminare bonusuri"
@@ -2443,6 +2721,141 @@
       ],
       "Close popover": [
         "Închidere"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "Request an invite": [
+        "Solicitați o invitație"
+      ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
+      "Upgrade": [
+        "Migrare"
+      ],
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "click here": [
+        "apăsați aici"
+      ],
+      "Add a gift code": [
+        "Adăugare cod cadou"
+      ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
+      "Upgrade account": [
+        "Migrare cont"
+      ],
+      "Calendars": [
+        "Calendare"
+      ],
+      "My calendars": [
+        "Calendarele mele"
+      ],
+      "Subscribed calendars": [
+        "Calendare abonate"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Start typing an email address": [
+        "Introduceți o adresă de e-mail"
+      ],
+      "Image URL": [
+        "URL imagine"
+      ],
+      "Filter groups": [
+        "Filtrare grupuri"
+      ],
+      "Search for name or email": [
+        "Căutare după nume sau e-mail"
+      ],
+      "Search for group name": [
+        "Căutare nume grup"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "OS name": [
+        "Sistem de operare"
+      ],
+      "OS version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "A way to contact you": [
+        "Modalitate de contactare"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrieți problema incluzând și mesajele de eroare care apar"
+      ],
+      "Browser name": [
+        "Nume navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "e.g. Julia Smith": [
+        "ex: Iulia Sandu"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Cod poștal"
+      ],
+      "Gift code": [
+        "Cod cadou"
+      ],
+      "Add a calendar name": [
+        "Adăugare nume calendar"
+      ],
+      "Add a calendar description": [
+        "Adăugare descriere calendar"
+      ],
+      "Add title": [
+        "Adăugare titlu"
+      ],
+      "Add location": [
+        "Adăugare loc"
+      ],
+      "Add description": [
+        "Adăugare descriere"
+      ],
+      "Add participants": [
+        "Adăugare participanți"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "O oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "Un minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
       ]
     },
     "Title": {
@@ -2604,18 +3017,6 @@
       "Select a theme": [
         "Selectaţi o temă"
       ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
-      ],
       "Open help menu": [
         "Deschidere meniu ajutor"
       ],
@@ -2633,6 +3034,18 @@
       ],
       "Give feedback": [
         "Oferiți feedback"
+      ],
+      "Sign in again to continue": [
+        "Reconectați-vă pentru a continua"
+      ],
+      "Account suspended": [
+        "Cont suspendat"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmare pierdere bonusuri Proton"
@@ -2739,14 +3152,14 @@
       "Beta Access": [
         "Acces la Beta"
       ],
+      "Select the way to send this notification": [
+        "Selectați modul de trimitere a acestei notificări"
+      ],
       "Select when you want this notification to be sent": [
         "Selectați când doriți să fie trimisă această notificare"
       ],
       "Select the time to send this notification": [
         "Selectați timpul când să fie trimisă această notificare"
-      ],
-      "Select the way to send this notification": [
-        "Selectați modul de trimitere a acestei notificări"
       ],
       "Add another notification to remind you of this event": [
         "Adăugare altă notificare pentru reamintirea acestui eveniment"
@@ -2882,419 +3295,6 @@
       ],
       "CANCELLED": [
         "ANULAT"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Copiere"
-      ],
-      "Reveal password": [
-        "Afișare parolă"
-      ],
-      "Hide password": [
-        "Ascundere parolă"
-      ],
-      "Street address": [
-        "Strada"
-      ],
-      "City": [
-        "Oraș"
-      ],
-      "Region": [
-        "Județ"
-      ],
-      "Postal code": [
-        "Cod poștal"
-      ],
-      "Country": [
-        "Țara"
-      ],
-      "Post office box": [
-        "Cutie poștală"
-      ],
-      "Extended address": [
-        "Adresa extinsă"
-      ],
-      "Do not ask again": [
-        "Nu mă mai întreba"
-      ],
-      "Email address": [
-        "Adresă e-mail"
-      ],
-      "Phone number": [
-        "Număr de telefon"
-      ],
-      "Verification code": [
-        "Cod de verificare"
-      ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
-      ],
-      "Add email address": [
-        "Adăugare adresă de e-mail"
-      ],
-      "Email format": [
-        "Format e-mail"
-      ],
-      "Add image URL": [
-        "Adăugare URL imagine"
-      ],
-      "Upload picture": [
-        "Încărcare imagine"
-      ],
-      "Add to group": [
-        "Adăugare la grup"
-      ],
-      "Encrypt emails": [
-        "Criptare mesaje"
-      ],
-      "Sign emails": [
-        "Semnare mesaje"
-      ],
-      "Cryptographic scheme": [
-        "Schemă criptografică"
-      ],
-      "Public keys": [
-        "Chei publice"
-      ],
-      "Automatically save contacts": [
-        "Salvare automată contacte"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
-      "Operating system": [
-        "Sistem de operare"
-      ],
-      "Operating system version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Ce s-a întâmplat?"
-      ],
-      "System information": [
-        "Informații sistem"
-      ],
-      "Browser": [
-        "Navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Anulare"
-      ],
-      "Submit": [
-        "Trimitere"
-      ],
-      "Password": [
-        "Parola"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "Two-factor authentication code": [
-        "Cod autentificare cu doi factori"
-      ],
-      "Username or ProtonMail address": [
-        "Nume de utilizator sau e-mail ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        "Care este motivul principal pentru această evaluare?"
-      ],
-      "Display name": [
-        "Nume afișat"
-      ],
-      "Name on card": [
-        "Titular card"
-      ],
-      "Card number": [
-        "Număr card"
-      ],
-      "Expiry date": [
-        "Data expirării"
-      ],
-      "CVV code": [
-        "Cod CVV"
-      ],
-      "Select your country": [
-        "Selectați țara"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "BTC amount:": [
-        "Suma BTC:"
-      ],
-      "BTC address:": [
-        "Adresa BTC:"
-      ],
-      "Select a method": [
-        "Selectați metoda"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Proration": [
-        "Credit rămas"
-      ],
-      "Cash": [
-        "Numerar"
-      ],
-      "Card holder": [
-        "Titular card"
-      ],
-      "Expires": [
-        "Expirare"
-      ],
-      "Payer": [
-        "Plătitor"
-      ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selectați cum să arate lista de mesaje în mod implicit."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selectați cum să arate căsuța poștală în mod implicit."
-      ],
-      "Select how your composer opens by default.": [
-        "Selectați modul în care se deschide implicit editorul de mesaje."
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "Choose a color": [
-        "Alegere culoare"
-      ],
-      "Default email": [
-        "E-mail implicit"
-      ],
-      "Display": [
-        "Afișare"
-      ],
-      "Description": [
-        "Descriere"
-      ],
-      "Default event duration": [
-        "Durată implicită eveniment"
-      ],
-      "URL": [
-        "Adresa URL"
-      ],
-      "Default notifications": [
-        "Notificări implicite"
-      ],
-      "Default full day notifications": [
-        "Notificări întreaga zi implicite"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
-      ],
-      "0 - Not likely": [
-        "0 - Probabil nu"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extrem de probabil"
-      ],
-      "All day": [
-        "Toată ziua"
-      ],
-      "Repeat on": [
-        "Repetare"
-      ],
-      "Repeat every": [
-        "Repetare la fiecare"
-      ],
-      "Ends": [
-        "Sfârșit"
-      ],
-      "Organizer": [
-        "Organizator"
-      ],
-      "Optional": [
-        "Opțional"
-      ],
-      "Time of the event": [
-        "Dată eveniment"
-      ],
-      "Event time": [
-        "Oră eveniment"
-      ],
-      "Event title": [
-        "Titlu eveniment"
-      ],
-      "Event frequency": [
-        "Frecvență eveniment"
-      ],
-      "Event location": [
-        "Loc eveniment"
-      ],
-      "Event notifications": [
-        "Notificări eveniment"
-      ],
-      "Participants": [
-        "Participanţi"
-      ],
-      "Your calendars": [
-        "Calendare"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Cheia nu poate fi folosită pentru criptare."
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Detalii"
-      ],
-      "Request an invite": [
-        "Solicitați o invitație"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
-      ],
-      "Upgrade": [
-        "Migrare"
-      ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
-      "click here": [
-        "apăsați aici"
-      ],
-      "Add a gift code": [
-        "Adăugare cod cadou"
-      ],
-      "Pay invoice": [
-        "Plată factură"
-      ],
-      "Upgrade account": [
-        "Migrare cont"
-      ],
-      "Calendars": [
-        "Calendare"
-      ],
-      "My calendars": [
-        "Calendarele mele"
-      ],
-      "Other calendars": [
-        "Alte calendare"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ex.: "
-      ],
-      "Start typing an email address": [
-        "Introduceți o adresă de e-mail"
-      ],
-      "Image URL": [
-        "URL imagine"
-      ],
-      "Filter groups": [
-        "Filtrare grupuri"
-      ],
-      "Search for name or email": [
-        "Căutare după nume sau e-mail"
-      ],
-      "Search for group name": [
-        "Căutare nume grup"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "A way to contact you": [
-        "Modalitate de contactare"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare care apar"
-      ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Cod poștal"
-      ],
-      "Gift code": [
-        "Cod cadou"
-      ],
-      "Add a calendar name": [
-        "Adăugare nume calendar"
-      ],
-      "Add a calendar description": [
-        "Adăugare descriere calendar"
-      ],
-      "Add title": [
-        "Adăugare titlu"
-      ],
-      "Add location": [
-        "Adăugare loc"
-      ],
-      "Add description": [
-        "Adăugare descriere"
-      ],
-      "Add participants": [
-        "Adăugare participanți"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "O oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
-      "${ minutes } minute": [
-        "Un minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
       ]
     },
     "Storage": {
@@ -3545,8 +3545,8 @@
       "Preference saved": [
         "Preferințe salvate"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
-        "Calendarul a fost creat. Sincronizarea ar putea dura câteva minute."
+      "Calendar added. It might take a few minutes to sync.": [
+        "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
       ],
       "Calendar created": [
         "Calendar creat"
@@ -4636,6 +4636,17 @@
         "Gratuit"
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        "Card nou de credit / debit"
+      ],
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Confortabilă"
@@ -4658,17 +4669,6 @@
       ],
       "Maximized": [
         "Maximizat"
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Card nou de credit / debit"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ]
     },
     "Beta access description": {
@@ -4722,6 +4722,14 @@
         "de ore în avans"
       ]
     },
+    "Notification type": {
+      "notification": [
+        "notificare"
+      ],
+      "email": [
+        "e-mail"
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Alegeți un număr"
@@ -4730,14 +4738,6 @@
     "Notification time input": {
       "at": [
         "la"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "prin notificare"
-      ],
-      "by email": [
-        "prin e-mail"
       ]
     },
     "Duration": {
@@ -4850,6 +4850,11 @@
         "${ value } săptămâni după la ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        "nesincronizat"
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         "dezactivat"
@@ -4941,6 +4946,11 @@
       ],
       "This event has been cancelled": [
         "Acest eveniment a fost anulat"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        "prin e-mail"
       ]
     },
     "Event info": {

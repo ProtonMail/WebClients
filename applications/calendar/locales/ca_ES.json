@@ -842,8 +842,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Facturat al final del vostre cicle de facturació actual (es renova el ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Heu d'eliminar qualsevol calendari addicional i qualsevol enllaç de calendari compartit abans de poder cancel·lar la vostra subscripció. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Heu d'eliminar qualsevol calendari personal addicional i qualsevol enllaç de calendaris compartits abans de poder cancel·lar la vostra subscripció. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "No cal fer cap pagament ara mateix."
@@ -1922,10 +1922,285 @@
         "Fw:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Tanca"
+    "Label": {
+      "Copy": [
+        "Copia"
       ],
+      "Reveal password": [
+        "Mostra la contrasenya"
+      ],
+      "Hide password": [
+        "Amaga la contrasenya"
+      ],
+      "Street address": [
+        "Adreça"
+      ],
+      "City": [
+        "Ciutat"
+      ],
+      "Region": [
+        "Regió"
+      ],
+      "Postal code": [
+        "Codi postal"
+      ],
+      "Country": [
+        "País"
+      ],
+      "Post office box": [
+        "Apartat de correus"
+      ],
+      "Extended address": [
+        "Adreça ampliada"
+      ],
+      "Do not ask again": [
+        "No m'ho torneu a preguntar"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
+      "Verification code": [
+        "Codi de verificació"
+      ],
+      "Enter the 6-digit code": [
+        "Introduïu el codi de 6 dígits"
+      ],
+      "Add email address": [
+        "Afegir adreça de correu electrònic"
+      ],
+      "Email format": [
+        "Format de correu electrònic"
+      ],
+      "Add image URL": [
+        "Afegir URL de la imatge"
+      ],
+      "Upload picture": [
+        "Carregar imatge"
+      ],
+      "Add to group": [
+        "Afegir a grup"
+      ],
+      "Encrypt emails": [
+        "Xifrar correus electrònics"
+      ],
+      "Sign emails": [
+        "Signar correus electrònics"
+      ],
+      "Cryptographic scheme": [
+        "Esquema criptogràfic"
+      ],
+      "Public keys": [
+        "Claus públiques"
+      ],
+      "Automatically save contacts": [
+        "Desar contactes automàticament"
+      ],
+      "Import contacts": [
+        "Importar contactes"
+      ],
+      "Export contacts": [
+        "Exportar contactes"
+      ],
+      "Operating system": [
+        "Sistema operatiu"
+      ],
+      "Operating system version": [
+        "Versió del sistema operatiu"
+      ],
+      "Proton username": [
+        "Nom d'usuari de Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Què ha passat?"
+      ],
+      "System information": [
+        "Informació del sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Quina és la raó principal per aquesta valoració?"
+      ],
+      "Display name": [
+        "Mostrar el nom"
+      ],
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Submit": [
+        "Envia"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
+      ],
+      "Two-factor authentication code": [
+        "Codi d'autenticació de dos factors"
+      ],
+      "Username or ProtonMail address": [
+        "Nom d'usuari o adreça ProtonMail"
+      ],
+      "Name on card": [
+        "Titular de la targeta"
+      ],
+      "Card number": [
+        "Número de la targeta"
+      ],
+      "Expiry date": [
+        "Data de venciment"
+      ],
+      "CVV code": [
+        "Codi CVV"
+      ],
+      "Select your country": [
+        "Seleccioneu el vostre país"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "BTC amount:": [
+        "Import de BTC:"
+      ],
+      "BTC address:": [
+        "Adreça BTC:"
+      ],
+      "Select a method": [
+        "Seleccioneu un mètode"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Proration": [
+        "Prorrateig"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Card holder": [
+        "Titular de la targeta"
+      ],
+      "Expires": [
+        "Venç"
+      ],
+      "Payer": [
+        "Pagador"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Seleccioneu com es veu per defecte la vostra llista de missatges."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Seleccioneu com es veu per defecte la vostra bústia de correu."
+      ],
+      "Select how your composer opens by default.": [
+        "Seleccioneu com el vostre editor s'obre per defecte."
+      ],
+      "Enable Beta Access": [
+        "Activar Accés Beta"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Choose a color": [
+        "Trieu un color"
+      ],
+      "Default email": [
+        "Adreça de correu electrònic per defecte"
+      ],
+      "Display": [
+        "Mostrar"
+      ],
+      "Description": [
+        "Descripció"
+      ],
+      "Default event duration": [
+        "Durada de l'esdeveniment per defecte"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Default notifications": [
+        "Notificacions per defecte"
+      ],
+      "Default full day notifications": [
+        "Notificacions de dia complet per defecte"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Recomanaríeu ${ calendarAppName } a un amic o col·lega?"
+      ],
+      "0 - Not likely": [
+        "0 - Poc probable"
+      ],
+      "10 - Extremely likely": [
+        "10 - Molt probable"
+      ],
+      "All day": [
+        "Tot el dia"
+      ],
+      "Repeat on": [
+        "Repeteix en"
+      ],
+      "Repeat every": [
+        "Repeteix cada"
+      ],
+      "Ends": [
+        "Finalitza"
+      ],
+      "Organizer": [
+        "Organitzador"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Time of the event": [
+        "Hora de l'esdeveniment"
+      ],
+      "Event time": [
+        "Hora de l'esdeveniment"
+      ],
+      "Event title": [
+        "Títol de l'esdeveniment"
+      ],
+      "Event frequency": [
+        "Freqüència de l'esdeveniment"
+      ],
+      "Event location": [
+        "Ubicació de l'esdeveniment"
+      ],
+      "Event notifications": [
+        "Notificacions d'esdeveniment"
+      ],
+      "Participants": [
+        "Participants"
+      ],
+      "Your calendars": [
+        "El vostre calendari"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Tancar finestra"
       ],
@@ -1944,6 +2219,9 @@
       "Use “${ label }” setting": [
         "Utilitzar la configuració \"${ label }\""
       ],
+      "Close": [
+        "Tanca"
+      ],
       "Close navigation": [
         "Tancar navegació"
       ],
@@ -1953,11 +2231,11 @@
       "Go to panel ${ index }": [
         "Anar al panell ${ index }"
       ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
       "Load image": [
         "Carregar imatge"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Export": [
         "Exportar"
@@ -2186,9 +2464,6 @@
       "OK": [
         "D'acord"
       ],
-      "Log in": [
-        "Inicia la sessió"
-      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -2245,6 +2520,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Log in": [
+        "Inicia la sessió"
       ],
       "Remove bonuses": [
         "Suprimeix beneficis"
@@ -2389,6 +2667,139 @@
       ],
       "Close popover": [
         "Tancar popover"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clau no es pot utilitzar per al xifratge"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Més informació"
+      ],
+      "Request an invite": [
+        "Demana una invitació"
+      ],
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
+      "Upgrade": [
+        "Actualitzar"
+      ],
+      "Go to subscription plans": [
+        "Anar als plans de subscripció"
+      ],
+      "click here": [
+        "feu clic aquí"
+      ],
+      "Add a gift code": [
+        "Afegiu un codi regal"
+      ],
+      "Pay invoice": [
+        "Factura de pagament"
+      ],
+      "Upgrade account": [
+        "Millorar el compte"
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "My calendars": [
+        "Els meus calendaris"
+      ],
+      "Subscribed calendars": [
+        "Calendaris subscrits"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Start typing an email address": [
+        "Comenceu a escriure una adreça de correu electrònic"
+      ],
+      "Image URL": [
+        "URL de la imatge"
+      ],
+      "Filter groups": [
+        "Filtrar grups"
+      ],
+      "Search for name or email": [
+        "Cercar per nom o correu electrònic"
+      ],
+      "Search for group name": [
+        "Cercar per nom de grup"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "OS name": [
+        "Nom del SO"
+      ],
+      "OS version": [
+        "Versió de SO"
+      ],
+      "Proton username": [
+        "Nom d'usuari de Proton"
+      ],
+      "A way to contact you": [
+        "Una manera de contactar amb tu"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
+      ],
+      "Browser name": [
+        "Nom del navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
+      ],
+      "Feedback": [
+        "Opinió"
+      ],
+      "e.g. Julia Smith": [
+        "ex. Julia Smith"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Codi postal"
+      ],
+      "Gift code": [
+        "Codi de regal"
+      ],
+      "Add a calendar name": [
+        "Afegir un nom de calendari"
+      ],
+      "Add a calendar description": [
+        "Afegir una descripció de calendari"
+      ],
+      "Add title": [
+        "Afegir títol"
+      ],
+      "Add location": [
+        "Afegir ubicació"
+      ],
+      "Add description": [
+        "Afegeix una descripció"
+      ],
+      "Add participants": [
+        "Afegeix participants"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
       ]
     },
     "Title": {
@@ -2546,18 +2957,6 @@
       "Select a theme": [
         "Seleccionar un tema"
       ],
-      "Sign in again to continue": [
-        "Torneu a iniciar per continuar"
-      ],
-      "Account suspended": [
-        "Compte suspès"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
-      ],
-      "Enter your password": [
-        "Introdueix la teva contrasenya"
-      ],
       "Open help menu": [
         "Obrir el menú d'ajuda"
       ],
@@ -2575,6 +2974,18 @@
       ],
       "Give feedback": [
         "Doneu la vostra opinió"
+      ],
+      "Sign in again to continue": [
+        "Torneu a iniciar per continuar"
+      ],
+      "Account suspended": [
+        "Compte suspès"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
+      ],
+      "Enter your password": [
+        "Introdueix la teva contrasenya"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmeu la pèrdua dels beneficis de Proton"
@@ -2681,14 +3092,14 @@
       "Beta Access": [
         "Accés Beta"
       ],
+      "Select the way to send this notification": [
+        "Seleccioneu la manera d’enviar aquesta notificació"
+      ],
       "Select when you want this notification to be sent": [
         "Selecciona quan vols que s'enviï aquesta notificació"
       ],
       "Select the time to send this notification": [
         "Seleccioneu l'hora per enviar aquesta notificació"
-      ],
-      "Select the way to send this notification": [
-        "Seleccioneu la manera d’enviar aquesta notificació"
       ],
       "Add another notification to remind you of this event": [
         "Afegeix una altra notificació per recordar-vos aquest esdeveniment"
@@ -2824,417 +3235,6 @@
       ],
       "CANCELLED": [
         "CANCEL·LAT"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Copia"
-      ],
-      "Reveal password": [
-        "Mostra la contrasenya"
-      ],
-      "Hide password": [
-        "Amaga la contrasenya"
-      ],
-      "Street address": [
-        "Adreça"
-      ],
-      "City": [
-        "Ciutat"
-      ],
-      "Region": [
-        "Regió"
-      ],
-      "Postal code": [
-        "Codi postal"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Post office box": [
-        "Apartat de correus"
-      ],
-      "Extended address": [
-        "Adreça ampliada"
-      ],
-      "Do not ask again": [
-        "No m'ho torneu a preguntar"
-      ],
-      "Email address": [
-        "Adreça de correu electrònic"
-      ],
-      "Phone number": [
-        "Número de telèfon"
-      ],
-      "Verification code": [
-        "Codi de verificació"
-      ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
-      ],
-      "Add email address": [
-        "Afegir adreça de correu electrònic"
-      ],
-      "Email format": [
-        "Format de correu electrònic"
-      ],
-      "Add image URL": [
-        "Afegir URL de la imatge"
-      ],
-      "Upload picture": [
-        "Carregar imatge"
-      ],
-      "Add to group": [
-        "Afegir a grup"
-      ],
-      "Encrypt emails": [
-        "Xifrar correus electrònics"
-      ],
-      "Sign emails": [
-        "Signar correus electrònics"
-      ],
-      "Cryptographic scheme": [
-        "Esquema criptogràfic"
-      ],
-      "Public keys": [
-        "Claus públiques"
-      ],
-      "Automatically save contacts": [
-        "Desar contactes automàticament"
-      ],
-      "Import contacts": [
-        "Importar contactes"
-      ],
-      "Export contacts": [
-        "Exportar contactes"
-      ],
-      "Operating system": [
-        "Sistema operatiu"
-      ],
-      "Operating system version": [
-        "Versió del sistema operatiu"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Què ha passat?"
-      ],
-      "System information": [
-        "Informació del sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Cancel·la"
-      ],
-      "Submit": [
-        "Envia"
-      ],
-      "Password": [
-        "Contrasenya"
-      ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
-      "Two-factor authentication code": [
-        "Codi d'autenticació de dos factors"
-      ],
-      "Username or ProtonMail address": [
-        "Nom d'usuari o adreça ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        "Quina és la raó principal per aquesta valoració?"
-      ],
-      "Display name": [
-        "Mostrar el nom"
-      ],
-      "Name on card": [
-        "Titular de la targeta"
-      ],
-      "Card number": [
-        "Número de la targeta"
-      ],
-      "Expiry date": [
-        "Data de venciment"
-      ],
-      "CVV code": [
-        "Codi CVV"
-      ],
-      "Select your country": [
-        "Seleccioneu el vostre país"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "BTC amount:": [
-        "Import de BTC:"
-      ],
-      "BTC address:": [
-        "Adreça BTC:"
-      ],
-      "Select a method": [
-        "Seleccioneu un mètode"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Proration": [
-        "Prorrateig"
-      ],
-      "Cash": [
-        "Efectiu"
-      ],
-      "Card holder": [
-        "Titular de la targeta"
-      ],
-      "Expires": [
-        "Venç"
-      ],
-      "Payer": [
-        "Pagador"
-      ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra llista de missatges."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra bústia de correu."
-      ],
-      "Select how your composer opens by default.": [
-        "Seleccioneu com el vostre editor s'obre per defecte."
-      ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Choose a color": [
-        "Trieu un color"
-      ],
-      "Default email": [
-        "Adreça de correu electrònic per defecte"
-      ],
-      "Display": [
-        "Mostrar"
-      ],
-      "Description": [
-        "Descripció"
-      ],
-      "Default event duration": [
-        "Durada de l'esdeveniment per defecte"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Default notifications": [
-        "Notificacions per defecte"
-      ],
-      "Default full day notifications": [
-        "Notificacions de dia complet per defecte"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Recomanaríeu ${ calendarAppName } a un amic o col·lega?"
-      ],
-      "0 - Not likely": [
-        "0 - Poc probable"
-      ],
-      "10 - Extremely likely": [
-        "10 - Molt probable"
-      ],
-      "All day": [
-        "Tot el dia"
-      ],
-      "Repeat on": [
-        "Repeteix en"
-      ],
-      "Repeat every": [
-        "Repeteix cada"
-      ],
-      "Ends": [
-        "Finalitza"
-      ],
-      "Organizer": [
-        "Organitzador"
-      ],
-      "Optional": [
-        "Opcional"
-      ],
-      "Time of the event": [
-        "Hora de l'esdeveniment"
-      ],
-      "Event time": [
-        "Hora de l'esdeveniment"
-      ],
-      "Event title": [
-        "Títol de l'esdeveniment"
-      ],
-      "Event frequency": [
-        "Freqüència de l'esdeveniment"
-      ],
-      "Event location": [
-        "Ubicació de l'esdeveniment"
-      ],
-      "Event notifications": [
-        "Notificacions d'esdeveniment"
-      ],
-      "Participants": [
-        "Participants"
-      ],
-      "Your calendars": [
-        "El vostre calendari"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clau no es pot utilitzar per al xifratge"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Més informació"
-      ],
-      "Request an invite": [
-        "Demana una invitació"
-      ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
-      ],
-      "Upgrade": [
-        "Actualitzar"
-      ],
-      "Go to subscription plans": [
-        "Anar als plans de subscripció"
-      ],
-      "click here": [
-        "feu clic aquí"
-      ],
-      "Add a gift code": [
-        "Afegiu un codi regal"
-      ],
-      "Pay invoice": [
-        "Factura de pagament"
-      ],
-      "Upgrade account": [
-        "Millorar el compte"
-      ],
-      "Calendars": [
-        "Calendaris"
-      ],
-      "My calendars": [
-        "Els meus calendaris"
-      ],
-      "Other calendars": [
-        "Altres calendaris"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ex., "
-      ],
-      "Start typing an email address": [
-        "Comenceu a escriure una adreça de correu electrònic"
-      ],
-      "Image URL": [
-        "URL de la imatge"
-      ],
-      "Filter groups": [
-        "Filtrar grups"
-      ],
-      "Search for name or email": [
-        "Cercar per nom o correu electrònic"
-      ],
-      "Search for group name": [
-        "Cercar per nom de grup"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "OS name": [
-        "Nom del SO"
-      ],
-      "OS version": [
-        "Versió de SO"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
-      "A way to contact you": [
-        "Una manera de contactar amb tu"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
-      ],
-      "Browser name": [
-        "Nom del navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
-      "Feedback": [
-        "Opinió"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Julia Smith"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Codi postal"
-      ],
-      "Gift code": [
-        "Codi de regal"
-      ],
-      "Add a calendar name": [
-        "Afegir un nom de calendari"
-      ],
-      "Add a calendar description": [
-        "Afegir una descripció de calendari"
-      ],
-      "Add title": [
-        "Afegir títol"
-      ],
-      "Add location": [
-        "Afegir ubicació"
-      ],
-      "Add description": [
-        "Afegeix una descripció"
-      ],
-      "Add participants": [
-        "Afegeix participants"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
       ]
     },
     "Storage": {
@@ -3481,8 +3481,8 @@
       "Preference saved": [
         "Preferència guardada"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
-        "Calendari creat. Pot trigar uns minuts a sincronitzar-se."
+      "Calendar added. It might take a few minutes to sync.": [
+        "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
       ],
       "Calendar created": [
         "Calendari creat"
@@ -4549,6 +4549,17 @@
         "Gratuït"
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nova targeta de crèdit/dèbit"
+      ],
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Còmode"
@@ -4571,17 +4582,6 @@
       ],
       "Maximized": [
         "Maximitzat"
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Nova targeta de crèdit/dèbit"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ]
     },
     "Beta access description": {
@@ -4631,6 +4631,14 @@
         "hores abans"
       ]
     },
+    "Notification type": {
+      "notification": [
+        "notificació"
+      ],
+      "email": [
+        "correu electrònic"
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Tria un número"
@@ -4639,14 +4647,6 @@
     "Notification time input": {
       "at": [
         "a"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "mitjançant notificació"
-      ],
-      "by email": [
-        "per correu electrònic"
       ]
     },
     "Duration": {
@@ -4743,6 +4743,11 @@
         "${ value } setmanes després a les ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        "no sincronitzat"
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         "deshabilitat"
@@ -4832,6 +4837,11 @@
       ],
       "This event has been cancelled": [
         "Aquest esdeveniment ha estat cancel·lat"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        "per correu electrònic"
       ]
     },
     "Event info": {

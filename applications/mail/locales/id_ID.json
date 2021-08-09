@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar lewat peramban Anda"
-      ],
       "Unknown error": [
         "Galat tak diketahui"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar lewat peramban Anda"
       ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Bagian ini wajib isi"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
+      ],
       "The composer failed to load.": [
         "Komposer gagal memuat."
       ],
       "Please refresh the page.": [
         "Silahkan segarkan halaman ini."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
       ],
       "Can't validate email, try again later": [
         "Tidak dapat memvalidasi email, coba lagi nanti"
@@ -99,14 +99,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Silahkan coba otentikasi ulang dan pastikan izin diatur dengan benar."
       ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Sandi kotak masuk salah. Silakan coba lagi"
       ],
       "Incorrect login credentials. Please try again": [
         "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "File has no contents to preview": [
+        "Berkas ini kosong"
       ],
       "Process aborted": [
         ""
@@ -201,6 +201,12 @@
       "Request timed out.": [
         "Terlalu lama memuat."
       ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
+      ],
       "Email address disabled": [
         "Alamat surel nonaktif"
       ],
@@ -224,12 +230,6 @@
       ],
       "The sending key is not valid": [
         "Kunci untuk mengirim tidak valid"
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Missing signature": [
         "Tanda tangan hilang"
@@ -344,23 +344,26 @@
       "Close": [
         "Tutup"
       ],
-      "Confirm": [
-        "Konfirmasi"
+      "Close modal": [
+        "Tutup jendela"
       ],
       "Cancel": [
         "Batal"
       ],
-      "Close modal": [
-        "Tutup jendela"
-      ],
       "Submit": [
         "Kirim"
+      ],
+      "Confirm": [
+        "Konfirmasi"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Remove": [
         "Hapus"
@@ -475,9 +478,6 @@
       ],
       "Underline": [
         "Garis Bawah"
-      ],
-      "refresh the page": [
-        "segarkan halaman"
       ],
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
@@ -644,9 +644,6 @@
       "Next": [
         "Selanjutnya"
       ],
-      "Signing out": [
-        "Keluar"
-      ],
       "Clear": [
         "Bersihkan"
       ],
@@ -677,6 +674,12 @@
       "OK": [
         "OK"
       ],
+      "Signing out": [
+        "Keluar"
+      ],
+      "Log in": [
+        "Masuk"
+      ],
       "Details": [
         "Rincian"
       ],
@@ -697,9 +700,6 @@
       ],
       "Previous": [
         "Sebelumnya"
-      ],
-      "Log in": [
-        "Masuk"
       ],
       "Get started": [
         "Mulai"
@@ -868,6 +868,15 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Tambah ke ${ CALENDAR_APP_NAME }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ],
       "Send anyway": [
         "Tetap kirim"
@@ -1186,15 +1195,6 @@
       ],
       "Start using ${ appName }": [
         "Mulai gunakan ${ appName }"
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
       ]
     },
     "Title": {
@@ -1707,6 +1707,9 @@
       "Loading": [
         "Memuat"
       ],
+      "support team": [
+        "tim dukungan"
+      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -1802,9 +1805,6 @@
       ],
       "Plain text": [
         "Teks biasa"
-      ],
-      "support team": [
-        "tim dukungan"
       ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
@@ -1947,9 +1947,6 @@
       "${ addressCount } email address": [
         "${ addressCount } alamat email"
       ],
-      "Loading ${ appName }": [
-        "Memuat ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
       ],
@@ -1980,6 +1977,18 @@
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ],
+      "Loading ${ appName }": [
+        "Memuat ${ appName }"
+      ],
+      "here": [
+        "di sini"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
+      ],
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
@@ -1997,15 +2006,6 @@
       ],
       "of": [
         "dari"
-      ],
-      "here": [
-        "di sini"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
@@ -2196,7 +2196,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -2547,11 +2547,11 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Pesan phising yang dilaporkan akan dikirimkan kepada kami agar kami dapat menganalisis dan meningkatkan filter kami. Artinya, kami dapat membaca seluruh isi pesan tersebut."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } berkas terlampir"
+      "${ pureAttachmentsCount } file attached": [
+        ""
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } gambar tersemat"
+      "${ embeddedAttachmentsCount } embedded image": [
+        ""
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Permintaan untuk berhenti langganan dari milis ini akan dikirim ke pengirim newsletter dan akan diproses secara otomatis."
@@ -3294,6 +3294,36 @@
       "Add a gift code": [
         ""
       ],
+      "Inbox": [
+        "Kotak masuk"
+      ],
+      "Drafts": [
+        "Draf"
+      ],
+      "Sent": [
+        "Terkirim"
+      ],
+      "Trash": [
+        "Sampah"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Semua surat"
+      ],
+      "Archive": [
+        "Arsip"
+      ],
+      "Starred": [
+        "Dibintangi"
+      ],
+      "Outbox": [
+        "Kotak Keluar"
+      ],
+      "Scheduled": [
+        ""
+      ],
       "You need to activate your calendar keys to add this event": [
         "Anda perlu mengaktifkan kunci kalender Anda untuk menambahkan acara ini"
       ],
@@ -3369,33 +3399,6 @@
       "Add label": [
         "Tambah label"
       ],
-      "Inbox": [
-        "Kotak masuk"
-      ],
-      "Drafts": [
-        "Draf"
-      ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        "Terkirim"
-      ],
-      "Starred": [
-        "Dibintangi"
-      ],
-      "Archive": [
-        "Arsip"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Sampah"
-      ],
-      "All mail": [
-        "Semua surat"
-      ],
       "Folders": [
         "Folder"
       ],
@@ -3407,9 +3410,6 @@
       ],
       "Manage your labels": [
         "Kelola label Anda"
-      ],
-      "Outbox": [
-        "Kotak Keluar"
       ]
     },
     "Placeholder": {
@@ -4209,17 +4209,6 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplikasi Proton"
-      ],
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Gambar belum dipilih"
@@ -4359,6 +4348,41 @@
         ""
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplikasi Proton"
+      ],
+      "Go to ${ title }": [
+        "Kunjungi ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ke ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Dimaksimalkan"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Unggah"
@@ -4405,30 +4429,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Untuk menonaktifkan beta, buka menu dropdown pengaturan dan klik opsi \"Akses Beta\"."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Dimaksimalkan"
       ]
     },
     "Message display when a new app version is available": {
@@ -5081,6 +5081,25 @@
         "dibintangi"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nama"
@@ -5195,23 +5214,9 @@
         "Alamat"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "byte"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5223,11 +5228,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Pada ${ date }, ${ name } ${ address } menulis:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {

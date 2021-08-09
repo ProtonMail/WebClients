@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Bilinmeyen hata"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Kimlik doğrulama hatası."
-      ],
-      "Unknown error": [
-        "Bilinmeyen hata"
       ],
       "Email address invalid": [
         "E-posta adresi geçersiz"
@@ -33,6 +33,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
       ],
+      "File has no contents to preview": [
+        "Dosyanın önizlenecek içeriği yok"
+      ],
       "Can't validate email, try again later": [
         "E-postayı doğrulanamıyor, daha sonra tekrar deneyin"
       ],
@@ -44,9 +47,6 @@
       ],
       "Invalid verification code": [
         "Geçersiz doğrulama kodu"
-      ],
-      "File has no contents to preview": [
-        "Dosyanın önizlenecek içeriği yok"
       ],
       "Preferences could not be saved": [
         ""
@@ -90,6 +90,12 @@
         ""
       ],
       "Invalid name": [
+        ""
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
       "Process aborted": [
@@ -152,12 +158,6 @@
       "Invalid code": [
         "Geçersiz kod"
       ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
       "Incorrect mailbox password. Please try again": [
         "Yanlış posta kutusu şifresi. Lütfen tekrar deneyin"
       ],
@@ -201,6 +201,973 @@
         "Geçerli bir adres bulunamadı"
       ]
     },
+    "Action": {
+      "Close": [
+        "Kapat"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Close modal": [
+        "Pencereyi kapat"
+      ],
+      "Submit": [
+        "Gönder"
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" ayarını kullan"
+      ],
+      "More info: ${ safeTitle }": [
+        "Daha fazla bilgi: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Gezinmeyi kapat"
+      ],
+      "Open navigation": [
+        "Gezinmeyi aç"
+      ],
+      "Go to panel ${ index }": [
+        "${ index } paneline git"
+      ],
+      "Load image": [
+        "Resim yükle"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Remove": [
+        "Kaldır"
+      ],
+      "Download": [
+        "İndir"
+      ],
+      "Use for sending": [
+        "Göndermek için kullan"
+      ],
+      "Trust": [
+        "Güven"
+      ],
+      "Untrust": [
+        "Güvenme"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Email settings": [
+        "E-posta ayarları"
+      ],
+      "Contact group": [
+        "Kişi grubu"
+      ],
+      "Upload picture": [
+        "Resim yükle"
+      ],
+      "Next month": [
+        "Sonraki ay"
+      ],
+      "Previous month": [
+        "Önceki ay"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
+      ],
+      "Confirm opening of link ${ link }": [
+        ""
+      ],
+      "Signing out": [
+        "Çıkış yapılıyor"
+      ],
+      "Details": [
+        "Ayrıntılar"
+      ],
+      "Share via link": [
+        "Bağlantıyla paylaş"
+      ],
+      "Sharing options": [
+        ""
+      ],
+      "Zoom out": [
+        "Uzaklaştır"
+      ],
+      "Reset zoom": [
+        "Yakınlaştırmayı sıfırla"
+      ],
+      "Zoom in": [
+        "Yakınlaştır"
+      ],
+      "Previous": [
+        "Önceki"
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu al"
+      ],
+      "Try another method": [
+        "Başka bir yöntem dene"
+      ],
+      "Request new code": [
+        "Yeni kod iste"
+      ],
+      "Verify": [
+        "Doğrula"
+      ],
+      "Did not receive the code?": [
+        "Kodu almadınız mı?"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Add": [
+        "Ekle"
+      ],
+      "Apply": [
+        "Uygula"
+      ],
+      "Hide advanced PGP settings": [
+        "Gelişmiş PGP ayarlarını gizle"
+      ],
+      "Show advanced PGP settings": [
+        "Gelişmiş PGP ayarlarını göster"
+      ],
+      "Done": [
+        "Bitti"
+      ],
+      "Clear data": [
+        "Veriyi temizle"
+      ],
+      "Recover data": [
+        "Veriyi kurtar"
+      ],
+      "Click here.": [
+        "Buraya tıklayın."
+      ],
+      "Re-sign": [
+        "Tekrar imzala"
+      ],
+      "Add to group": [
+        "Gruba ekle"
+      ],
+      "Merge": [
+        "Birleştir"
+      ],
+      "View": [
+        "Görüntüle"
+      ],
+      "Unmark for deletion": [
+        ""
+      ],
+      "Mark for deletion": [
+        ""
+      ],
+      "Preview contact": [
+        ""
+      ],
+      "Continue": [
+        "Devam et"
+      ],
+      "Delete contact": [
+        "Kişiyi sil"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "",
+        ""
+      ],
+      "Deselect all": [
+        "Tüm seçimi kaldır"
+      ],
+      "Select all": [
+        "Tümünü seç"
+      ],
+      "Compose": [
+        ""
+      ],
+      "Forward as attachment": [
+        ""
+      ],
+      "Merge contacts": [
+        "Kişileri birleştir"
+      ],
+      "Add new contact": [
+        "Yeni kişi ekle"
+      ],
+      "Add group": [
+        "Grup ekle"
+      ],
+      "Clear query": [
+        "Sorguyu temizle"
+      ],
+      "Add contact": [
+        "Kişi ekle"
+      ],
+      "import": [
+        "içe aktar"
+      ],
+      "Delete contact group": [
+        "Kişi grubunu sil"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "",
+        ""
+      ],
+      "Add new group": [
+        "Yeni grup ekle"
+      ],
+      "Export contacts": [
+        "Kişileri dışa aktar"
+      ],
+      "Continue with Google": [
+        "Google ile devam et"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
+      "Choose a file or drag it here": [
+        ""
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Close this banner": [
+        "Bu uyarıyı kapat"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
+      ],
+      "enable desktop notifications": [
+        "masaüstü bildirimlerini etkinleştirmek"
+      ],
+      "here": [
+        ""
+      ],
+      "Copy email to clipboard": [
+        "E-postayı panoya kopyala"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } tanıtımı"
+      ],
+      "I have a question": [
+        "Bir sorum var"
+      ],
+      "Request a feature": [
+        "Bir özellik isteyin"
+      ],
+      "Report a problem": [
+        "Sorun bildir"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } mağazası"
+      ],
+      "Switch account": [
+        "Hesap değiştir"
+      ],
+      "Sign out": [
+        "Çıkış yap"
+      ],
+      "Go to settings": [
+        "Ayarlara git"
+      ],
+      "Beta Access": [
+        "Beta Erişimi"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Keyboard shortcuts": [
+        "Klavye kısayolları"
+      ],
+      "Mailbox layout": [
+        "Posta kutusu düzeni"
+      ],
+      "Mailbox density": [
+        ""
+      ],
+      "Composer mode": [
+        "Oluşturucu modu"
+      ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Add screenshot(s)": [
+        "Ekran görüntüsü(leri) ekle"
+      ],
+      "Hide info": [
+        "Bilgileri gizle"
+      ],
+      "Show info": [
+        "Bilgileri göster"
+      ],
+      "Get started": [
+        "Başlayalım"
+      ],
+      "Start setup": [
+        "Kurulumu başlat"
+      ],
+      "Skip": [
+        "Atla"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Use ${ label } theme": [
+        "${ label } temasını kullan"
+      ],
+      "OK": [
+        "Tamam"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Remove bonuses": [
+        "Bonusları kaldır"
+      ],
+      "Try again": [
+        "Tekrar deneyin"
+      ],
+      "Use a different card": [
+        "Farklı bir kart kullanın"
+      ],
+      "Use a different payment method": [
+        "Farklı bir ödeme yöntemi kullanın"
+      ],
+      "Retry": [
+        "Yeniden dene"
+      ],
+      "Loading verification": [
+        "Doğrulama yükleniyor"
+      ],
+      "Select plan": [
+        "Plan seçin"
+      ],
+      "Compare all features": [
+        "Tüm özellikleri karşılaştırın"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "Yıllık faturalandırmaya geçerek ${ boldSave } tasarruf edin"
+      ],
+      "Pay": [
+        "Öde"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "${ CALENDAR_APP_NAME } ayarlarını açın"
+      ],
+      "Remove gift code": [
+        "Hediye kodunu kaldır"
+      ],
+      "annual billing": [
+        "yıllık faturalandırma"
+      ],
+      "Compare plans": [
+        "Planları karşılaştır"
+      ],
+      "Decrease": [
+        "Azaltın"
+      ],
+      "Increase": [
+        "Arttırın"
+      ],
+      "Log in": [
+        "Oturum aç"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "New upload": [
+        "Yeni yükleme"
+      ],
+      "Delete permanently": [
+        "Kalıcı olarak sil"
+      ],
+      "Restore from trash": [
+        "Çöp kutusundan geri yükle"
+      ],
+      "Empty trash": [
+        "Çöp kutusunu boşalt"
+      ],
+      "Rename": [
+        "Yeniden Adlandır"
+      ],
+      "Move to folder": [
+        "Klasöre taşı"
+      ],
+      "Move to trash": [
+        "Çöp kutusuna taşı"
+      ],
+      "Create new folder": [
+        "Yeni klasör oluştur"
+      ],
+      "Name: A to Z": [
+        "İsim: A'dan Z'ye"
+      ],
+      "Name: Z to A": [
+        "İsim: Z'den A'ya"
+      ],
+      "Modified date: new to old": [
+        "Değiştirilme tarihi: yeniden eskiye"
+      ],
+      "Modified date: old to new": [
+        "Değiştirilme tarihi: eskiden yeniye"
+      ],
+      "Type: A to Z": [
+        "Tür: A'dan Z'ye"
+      ],
+      "Type: Z to A": [
+        "Tür: Z'den A'ya"
+      ],
+      "Size: small to large": [
+        "Boyut: küçükten büyüğe"
+      ],
+      "Size: large to small": [
+        "Boyut: büyükten küçüğe"
+      ],
+      "Upload file": [
+        "Dosya yükle"
+      ],
+      "Upload folder": [
+        "Klasörü yükle"
+      ],
+      "Maximize transfers": [
+        ""
+      ],
+      "Minimize transfers": [
+        ""
+      ],
+      "Close transfers": [
+        ""
+      ],
+      "Pause download": [
+        "İndirmeyi duraklat"
+      ],
+      "Pause upload": [
+        "Yüklemeyi duraklat"
+      ],
+      "Resume download": [
+        "İndirmeyi sürdür"
+      ],
+      "Resume upload": [
+        "Yüklemeyi Sürdür"
+      ],
+      "Cancel download": [
+        "İndirmeyi iptal et"
+      ],
+      "Cancel upload": [
+        "Yüklemeyi iptal et"
+      ],
+      "Restart download": [
+        "İndirmeyi yeniden başlat"
+      ],
+      "Restart upload": [
+        "Yüklemeyi yeniden başlat"
+      ],
+      "Remove from this list": [
+        "Bu listeden kaldır"
+      ],
+      "Create": [
+        "Oluştur"
+      ],
+      "List layout": [
+        "Liste düzeni"
+      ],
+      "Grid layout": [
+        "Izgara düzeni"
+      ],
+      "Preview": [
+        "Ön izle"
+      ],
+      "Stop sharing": [
+        ""
+      ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Show shared link details": [
+        "Paylaşılan bağlantının detaylarını göster"
+      ],
+      "Share file": [
+        "Dosya paylaş"
+      ],
+      "Start recovering": [
+        ""
+      ],
+      "View more": [
+        "Daha fazlasını göster"
+      ],
+      "Move": [
+        "Taşı"
+      ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
+      "Create link": [
+        "Bağlantı oluştur"
+      ],
+      "Undo": [
+        "Geri Al"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        ""
+      ],
+      "Upgrade required": [
+        "Yükseltme gerekli"
+      ],
+      "Email settings": [
+        "E-posta ayarları"
+      ],
+      "Contact group": [
+        "Kişi grubu"
+      ],
+      "Link confirmation": [
+        "Bağlantı onayı"
+      ],
+      "Keyboard Shortcuts": [
+        "Klavye Kısayolları"
+      ],
+      "What's new": [
+        "Neler yeni"
+      ],
+      "Invalid verification code": [
+        "Geçersiz doğrulama kodu"
+      ],
+      "Request new verification code": [
+        "Yeni doğrulama kodu isteyin"
+      ],
+      "Human verification": [
+        "İnsan doğrulaması"
+      ],
+      "Edit contact group": [
+        "Kişi grubunu düzenle"
+      ],
+      "Create new group": [
+        "Yeni grup oluştur"
+      ],
+      "Add to ${ groupName }": [
+        ""
+      ],
+      "Add to ${ groupCount } group": [
+        "",
+        ""
+      ],
+      "Email settings (${ emailAddress })": [
+        ""
+      ],
+      "Delete ${ Name }": [
+        ""
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } kişi grubunu sil",
+        "${ count } kişi grubunu sil"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } üye",
+        "${ emailsCount } üye"
+      ],
+      "Edit image": [
+        ""
+      ],
+      "Edit contact": [
+        "Kişiyi düzenle"
+      ],
+      "Create contact": [
+        "Kişi oluştur"
+      ],
+      "Delete ${ count } contact": [
+        "",
+        ""
+      ],
+      "Clearing data": [
+        "Veri temizleniyor"
+      ],
+      "Warning": [
+        "Uyarı"
+      ],
+      "Recover data": [
+        ""
+      ],
+      "Re-signing contacts": [
+        ""
+      ],
+      "Re-sign all contacts": [
+        ""
+      ],
+      "Exporting contacts": [
+        "Kişiler dışa aktarılıyor"
+      ],
+      "Other names": [
+        "Diğer isimler"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Phone numbers": [
+        "Telefon numaraları"
+      ],
+      "Addresses": [
+        "Adresler"
+      ],
+      "Other information": [
+        "Diğer bilgiler"
+      ],
+      "Contact Details": [
+        "Kişi Ayrıntıları"
+      ],
+      "Merging contacts": [
+        "Kişiler birleştiriliyor"
+      ],
+      "Merge contacts": [
+        "Kişileri birleştir"
+      ],
+      "Deleting contacts": [
+        ""
+      ],
+      "View contacts": [
+        "Kişileri görüntüle"
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Groups": [
+        "Gruplar"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Select action to take on contact group": [
+        ""
+      ],
+      "Add contact group name": [
+        "Kişi grubu adı ekle"
+      ],
+      "Select contact group": [
+        "Kişi grubunu seç"
+      ],
+      "Import groups": [
+        "Grupları içe aktar"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
+      "Open help menu": [
+        "Yardım menüsünü aç"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Open settings menu": [
+        "Ayarlar menüsünü aç"
+      ],
+      "Report a problem": [
+        "Sorun bildir"
+      ],
+      "Select a theme": [
+        "Bir tema seçin"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Proton bonuslarının kaybını onaylayın"
+      ],
+      "Unsupported browser": [
+        "Desteklenmeyen tarayıcı"
+      ],
+      "Card verification": [
+        "Kart doğrulama"
+      ],
+      "Payment verification": [
+        "Ödeme doğrulama"
+      ],
+      "Processing...": [
+        "İşleniyor..."
+      ],
+      "Card verification in progress": [
+        "Kart doğrulama devam ediyor"
+      ],
+      "Payment verification in progress": [
+        "Ödeme doğrulama devam ediyor"
+      ],
+      "PayPal verification failed": [
+        "PayPal doğrulaması başarısız oldu"
+      ],
+      "3-D Secure verification failed": [
+        "3-D güvenli doğrulama başarısız oldu"
+      ],
+      "Error": [
+        "Hata"
+      ],
+      "ZIP / postal code": [
+        "ZIP / posta kodu"
+      ],
+      "Payment details": [
+        "Ödeme detayları"
+      ],
+      "Currency": [
+        "Para Birimi"
+      ],
+      "Billing cycle": [
+        "Faturalandırma döngüsü"
+      ],
+      "Current plan": [
+        "Geçerli plan"
+      ],
+      "Processing": [
+        "İşleniyor"
+      ],
+      "Apply gift code": [
+        "Hediye kodunu uygula"
+      ],
+      "Subtotal": [
+        "Kısmi toplam"
+      ],
+      "Coupon discount": [
+        "Kupon indirimi"
+      ],
+      "Total (monthly)": [
+        "Toplam (aylık)"
+      ],
+      "Credits": [
+        "Krediler"
+      ],
+      "Gift code": [
+        "Hediye kodu"
+      ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
+      "Network error": [
+        "Ağ hatası"
+      ],
+      "Select a plan": [
+        "Bir plan seçiniz"
+      ],
+      "Customize your plan": [
+        "Planınızı özelleştirin"
+      ],
+      "Checkout": [
+        "Ödeme yap"
+      ],
+      "Plan summary": [
+        "Plan özeti"
+      ],
+      "${ appName } customization": [
+        "${ appName } özelleştirme"
+      ],
+      "Sign in again to continue": [
+        "Devam etmek için tekrar giriş yapın"
+      ],
+      "Account suspended": [
+        "Hesap askıya alındı"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi girin"
+      ],
+      "Enter your password": [
+        "Şifrenizi girin"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Klavye Kısayolları"
+      ],
+      "Mailbox density": [
+        ""
+      ],
+      "Mailbox layout": [
+        "Posta kutusu düzeni"
+      ],
+      "Composer mode": [
+        "Oluşturucu modu"
+      ],
+      "Beta Access": [
+        "Beta Erişimi"
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "Yüklemek için bırak"
+      ],
+      "Trash": [
+        "Çöp Kutusu"
+      ],
+      "Empty trash": [
+        "Çöp kutusunu boşalt"
+      ],
+      "Show actions": [
+        "İşlemleri göster"
+      ],
+      "Sort files/folders": [
+        "Dosyaları/klasörleri sırala"
+      ],
+      "Cancel all active transfers": [
+        "Tüm aktif transferleri iptal et"
+      ],
+      "My files": [
+        "Dosyalarım"
+      ],
+      "You have no folders yet": [
+        "Henüz klasörünüz yok"
+      ],
+      "You have no files to share": [
+        "Paylaşacak dosyanız bulunmuyor"
+      ],
+      "Change layout": [
+        "Yerleşimi değiştir"
+      ],
+      "Your file is ready to be downloaded": [
+        ""
+      ],
+      "Download completed": [
+        "İndirme tamamlandı"
+      ],
+      "Download failed": [
+        "İndirme başarısız"
+      ],
+      "Download canceled": [
+        "İndirme iptal edildi"
+      ],
+      "Downloading": [
+        "İndiriliyor"
+      ],
+      "Enter file password to download": [
+        ""
+      ],
+      "The link either does not exist or has expired": [
+        ""
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Restore your files": [
+        ""
+      ],
+      "File recovery process": [
+        ""
+      ],
+      "You have inaccessible files": [
+        ""
+      ],
+      "Rename a folder": [
+        "Bir klasörü yeniden adlandır"
+      ],
+      "Rename a file": [
+        "Bir dosyayı yeniden adlandır"
+      ],
+      "File details": [
+        "Dosya ayrıntıları"
+      ],
+      "Folder details": [
+        "Klasör ayrıntıları"
+      ],
+      "Name": [
+        "İsim"
+      ],
+      "Uploaded by": [
+        "Yükleyen"
+      ],
+      "Location": [
+        "Konum"
+      ],
+      "Modified": [
+        "Değiştirilmiş"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "MIME type": [
+        "MIME türü"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "Shared": [
+        "Paylaşılan"
+      ],
+      "# of accesses": [
+        ""
+      ],
+      "Create a new folder": [
+        "Yeni bir klasör oluştur"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Select link expiration date": [
+        ""
+      ],
+      "Select link expiration time": [
+        ""
+      ],
+      "Share via link": [
+        "Bağlantıyla paylaş"
+      ],
+      "Additional settings": [
+        "Ek ayarlar"
+      ],
+      "Manage secure link": [
+        "Güvenli bağlantıyı yönet"
+      ],
+      "Stop sharing with everyone?": [
+        ""
+      ],
+      "Discard changes?": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Files details": [
+        "Dosya ayrıntıları"
+      ],
+      "Number of files": [
+        "Dosya sayısı"
+      ],
+      "Total size": [
+        "Toplam boyut"
+      ],
+      "Delete permanently": [
+        "Kalıcı olarak sil"
+      ],
+      "Stop sharing": [
+        ""
+      ]
+    },
     "Info": {
       "Loading": [
         "Yükleniyor"
@@ -213,6 +1180,9 @@
       ],
       "Week": [
         "Hafta"
+      ],
+      "support team": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         ""
@@ -229,11 +1199,26 @@
       "Drop the file here to upload": [
         ""
       ],
-      "support team": [
-        ""
-      ],
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
+      ],
+      "Unsupported file": [
+        "Desteklenmeyen dosya"
+      ],
+      "No preview available": [
+        "Önizleme mevcut değil"
+      ],
+      "Preview": [
+        "Ön izle"
+      ],
+      "Loading preview": [
+        "Önizleme yükleniyor"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        ""
+      ],
+      "of": [
+        "/"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
@@ -264,24 +1249,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
-      ],
-      "Unsupported file": [
-        "Desteklenmeyen dosya"
-      ],
-      "No preview available": [
-        "Önizleme mevcut değil"
-      ],
-      "Preview": [
-        "Ön izle"
-      ],
-      "Loading preview": [
-        "Önizleme yükleniyor"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        ""
-      ],
-      "of": [
-        "/"
       ],
       "${ contactEmailsLength } Member": [
         "",
@@ -321,8 +1288,8 @@
         ""
       ],
       "${ updated } contact updated successfully.": [
-        "",
-        ""
+        "${ updated } kişi başarıyla güncellendi.",
+        "${ updated } kişi başarıyla güncellendi."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         ""
@@ -430,7 +1397,7 @@
         "${ appName }, ${ enableDesktopNotifications } için izninize ihtiyaç duyuyor."
       ],
       "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
+        "Beta Erişimini etkinleştirdiniz. ${ appName } uygulamasının son sürümünü kullanmak için ${ refreshButton }. Uygulama yenilenecektir."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
@@ -439,6 +1406,30 @@
         "Ekran görüntüsü(leri) eklendi"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        ""
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
         ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
@@ -589,8 +1580,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Geçerli faturalandırma döngüsünün sonunda faturalandırılır (${ renewalDate } tarihinde yenilenir)"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Aboneliğinizi iptal etmeden önce, tüm ek takvimleri ve tüm paylaşılmış takvim bağlantılarını kaldırmanız gerekmektedir. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
@@ -679,30 +1670,6 @@
       ],
       "Expired": [
         "Süresi dolmuş"
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
       ],
       "here": [
         "Buradan"
@@ -944,977 +1911,10 @@
         "Bu eylemi geri alamazsınız."
       ],
       "Trash": [
-        ""
+        "Çöp Kutusu"
       ],
       "My Links": [
         "Bağlantılarım"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Kapat"
-      ],
-      "Confirm": [
-        "Onayla"
-      ],
-      "Cancel": [
-        "İptal"
-      ],
-      "Close modal": [
-        "Pencereyi kapat"
-      ],
-      "Submit": [
-        "Gönder"
-      ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" ayarını kullan"
-      ],
-      "More info: ${ safeTitle }": [
-        "Daha fazla bilgi: ${ safeTitle }"
-      ],
-      "Close navigation": [
-        "Gezinmeyi kapat"
-      ],
-      "Open navigation": [
-        "Gezinmeyi aç"
-      ],
-      "Go to panel ${ index }": [
-        "${ index } paneline git"
-      ],
-      "Load image": [
-        ""
-      ],
-      "Export": [
-        "Dışa aktar"
-      ],
-      "Delete": [
-        "Sil"
-      ],
-      "Edit": [
-        "Düzenle"
-      ],
-      "Remove": [
-        "Kaldır"
-      ],
-      "Download": [
-        "İndir"
-      ],
-      "Use for sending": [
-        "Göndermek için kullan"
-      ],
-      "Trust": [
-        "Güven"
-      ],
-      "Untrust": [
-        "Güvenme"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Email settings": [
-        "E-posta ayarları"
-      ],
-      "Contact group": [
-        "Kişi grubu"
-      ],
-      "Upload picture": [
-        "Resim yükle"
-      ],
-      "Next month": [
-        "Sonraki ay"
-      ],
-      "Previous month": [
-        "Önceki ay"
-      ],
-      "Confirm opening of link ${ link }": [
-        ""
-      ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
-      "Signing out": [
-        "Çıkış yapılıyor"
-      ],
-      "View invoice": [
-        "Faturayı görüntüle"
-      ],
-      "Get verification code": [
-        "Doğrulama kodu al"
-      ],
-      "Try another method": [
-        "Başka bir yöntem dene"
-      ],
-      "Request new code": [
-        "Yeni kod iste"
-      ],
-      "Verify": [
-        "Doğrula"
-      ],
-      "Did not receive the code?": [
-        "Kodu almadınız mı?"
-      ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
-      "Edit phone number": [
-        "Telefon numarasını düzenle"
-      ],
-      "Details": [
-        "Ayrıntılar"
-      ],
-      "Share via link": [
-        "Bağlantıyla paylaş"
-      ],
-      "Sharing options": [
-        ""
-      ],
-      "Zoom out": [
-        "Uzaklaştır"
-      ],
-      "Reset zoom": [
-        "Yakınlaştırmayı sıfırla"
-      ],
-      "Zoom in": [
-        "Yakınlaştır"
-      ],
-      "Previous": [
-        "Önceki"
-      ],
-      "Next": [
-        "Sonraki"
-      ],
-      "Save": [
-        "Kaydet"
-      ],
-      "Add": [
-        "Ekle"
-      ],
-      "Apply": [
-        "Uygula"
-      ],
-      "Hide advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını gizle"
-      ],
-      "Show advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını göster"
-      ],
-      "Done": [
-        "Bitti"
-      ],
-      "Clear data": [
-        "Veriyi temizle"
-      ],
-      "Recover data": [
-        "Veriyi kurtar"
-      ],
-      "Click here.": [
-        "Buraya tıklayın."
-      ],
-      "Re-sign": [
-        "Tekrar imzala"
-      ],
-      "Add to group": [
-        "Gruba ekle"
-      ],
-      "Merge": [
-        "Birleştir"
-      ],
-      "View": [
-        "Görüntüle"
-      ],
-      "Unmark for deletion": [
-        ""
-      ],
-      "Mark for deletion": [
-        ""
-      ],
-      "Preview contact": [
-        ""
-      ],
-      "Continue": [
-        "Devam et"
-      ],
-      "Delete contact": [
-        "Kişiyi sil"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "",
-        ""
-      ],
-      "Deselect all": [
-        "Tüm seçimi kaldır"
-      ],
-      "Select all": [
-        "Tümünü seç"
-      ],
-      "Compose": [
-        ""
-      ],
-      "Forward as attachment": [
-        ""
-      ],
-      "Merge contacts": [
-        "Kişileri birleştir"
-      ],
-      "Add new contact": [
-        "Yeni kişi ekle"
-      ],
-      "Add group": [
-        "Grup ekle"
-      ],
-      "Clear query": [
-        "Sorguyu temizle"
-      ],
-      "Add contact": [
-        "Kişi ekle"
-      ],
-      "import": [
-        "içe aktar"
-      ],
-      "Delete contact group": [
-        "Kişi grubunu sil"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "",
-        ""
-      ],
-      "Add new group": [
-        "Yeni grup ekle"
-      ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
-      "Continue with Google": [
-        "Google ile devam et"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
-      ],
-      "Choose a file or drag it here": [
-        ""
-      ],
-      "Import": [
-        "İçe aktar"
-      ],
-      "Close this banner": [
-        "Bu uyarıyı kapat"
-      ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
-      "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştirmek"
-      ],
-      "here": [
-        ""
-      ],
-      "Clear": [
-        "Temizle"
-      ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü(leri) ekle"
-      ],
-      "Hide info": [
-        "Bilgileri gizle"
-      ],
-      "Show info": [
-        "Bilgileri göster"
-      ],
-      "Copy email to clipboard": [
-        "E-postayı panoya kopyala"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } tanıtımı"
-      ],
-      "I have a question": [
-        "Bir sorum var"
-      ],
-      "Request a feature": [
-        "Bir özellik isteyin"
-      ],
-      "Report a problem": [
-        "Sorun bildir"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } mağazası"
-      ],
-      "Switch account": [
-        "Hesap değiştir"
-      ],
-      "Sign out": [
-        "Çıkış yap"
-      ],
-      "Go to settings": [
-        "Ayarlara git"
-      ],
-      "Beta Access": [
-        "Beta Erişimi"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Keyboard shortcuts": [
-        "Klavye kısayolları"
-      ],
-      "Mailbox layout": [
-        "Posta kutusu düzeni"
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Composer mode": [
-        "Oluşturucu modu"
-      ],
-      "Get started": [
-        "Başlayalım"
-      ],
-      "Start setup": [
-        "Kurulumu başlat"
-      ],
-      "Skip": [
-        "Atla"
-      ],
-      "Back": [
-        "Geri"
-      ],
-      "Use ${ label } theme": [
-        "${ label } temasını kullan"
-      ],
-      "OK": [
-        "Tamam"
-      ],
-      "Remove bonuses": [
-        "Bonusları kaldır"
-      ],
-      "Try again": [
-        "Tekrar deneyin"
-      ],
-      "Use a different card": [
-        "Farklı bir kart kullanın"
-      ],
-      "Use a different payment method": [
-        "Farklı bir ödeme yöntemi kullanın"
-      ],
-      "Retry": [
-        "Yeniden dene"
-      ],
-      "Loading verification": [
-        "Doğrulama yükleniyor"
-      ],
-      "Select plan": [
-        "Plan seçin"
-      ],
-      "Compare all features": [
-        "Tüm özellikleri karşılaştırın"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "Yıllık faturalandırmaya geçerek ${ boldSave } tasarruf edin"
-      ],
-      "Pay": [
-        "Öde"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME } ayarlarını açın"
-      ],
-      "Remove gift code": [
-        "Hediye kodunu kaldır"
-      ],
-      "annual billing": [
-        "yıllık faturalandırma"
-      ],
-      "Compare plans": [
-        "Planları karşılaştır"
-      ],
-      "Decrease": [
-        "Azaltın"
-      ],
-      "Increase": [
-        "Arttırın"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "Oturum aç"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "Yeni yükleme"
-      ],
-      "List layout": [
-        "Liste düzeni"
-      ],
-      "Grid layout": [
-        ""
-      ],
-      "Rename": [
-        "Yeniden Adlandır"
-      ],
-      "Move to folder": [
-        "Klasöre taşı"
-      ],
-      "Move to trash": [
-        "Çöp kutusuna taşı"
-      ],
-      "Create new folder": [
-        "Yeni klasör oluştur"
-      ],
-      "Name: A to Z": [
-        "İsim: A'dan Z'ye"
-      ],
-      "Name: Z to A": [
-        "İsim: Z'den A'ya"
-      ],
-      "Modified date: new to old": [
-        ""
-      ],
-      "Modified date: old to new": [
-        ""
-      ],
-      "Type: A to Z": [
-        "Tür: A'dan Z'ye"
-      ],
-      "Type: Z to A": [
-        "Tür: Z'den A'ya"
-      ],
-      "Size: small to large": [
-        ""
-      ],
-      "Size: large to small": [
-        ""
-      ],
-      "Upload file": [
-        "Dosya yükle"
-      ],
-      "Upload folder": [
-        "Klasörü yükle"
-      ],
-      "Delete permanently": [
-        "Kalıcı olarak sil"
-      ],
-      "Restore from trash": [
-        "Çöp kutusundan geri yükle"
-      ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
-      "Maximize transfers": [
-        ""
-      ],
-      "Minimize transfers": [
-        ""
-      ],
-      "Close transfers": [
-        ""
-      ],
-      "Pause download": [
-        "İndirmeyi duraklat"
-      ],
-      "Pause upload": [
-        "Yüklemeyi duraklat"
-      ],
-      "Resume download": [
-        "İndirmeyi sürdür"
-      ],
-      "Resume upload": [
-        "Yüklemeyi Sürdür"
-      ],
-      "Cancel download": [
-        "İndirmeyi iptal et"
-      ],
-      "Cancel upload": [
-        "Yüklemeyi iptal et"
-      ],
-      "Restart download": [
-        "İndirmeyi yeniden başlat"
-      ],
-      "Restart upload": [
-        "Yüklemeyi yeniden başlat"
-      ],
-      "Remove from this list": [
-        "Bu listeden kaldır"
-      ],
-      "Share": [
-        "Paylaş"
-      ],
-      "Create": [
-        "Oluştur"
-      ],
-      "Preview": [
-        "Ön izle"
-      ],
-      "Stop sharing": [
-        ""
-      ],
-      "Show shared link details": [
-        "Paylaşılan bağlantının detaylarını göster"
-      ],
-      "Share file": [
-        "Dosya paylaş"
-      ],
-      "Start recovering": [
-        ""
-      ],
-      "View more": [
-        "Daha fazlasını göster"
-      ],
-      "Move": [
-        "Taşı"
-      ],
-      "Copy link": [
-        "Bağlantıyı kopyala"
-      ],
-      "Create link": [
-        "Bağlantı oluştur"
-      ],
-      "Undo": [
-        "Geri Al"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        ""
-      ],
-      "Upgrade required": [
-        "Yükseltme gerekli"
-      ],
-      "Email settings": [
-        "E-posta ayarları"
-      ],
-      "Contact group": [
-        "Kişi grubu"
-      ],
-      "Link confirmation": [
-        "Bağlantı onayı"
-      ],
-      "Keyboard Shortcuts": [
-        "Klavye Kısayolları"
-      ],
-      "What's new": [
-        "Neler yeni"
-      ],
-      "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
-      ],
-      "Request new verification code": [
-        "Yeni doğrulama kodu isteyin"
-      ],
-      "Human verification": [
-        "İnsan doğrulaması"
-      ],
-      "Edit contact group": [
-        "Kişi grubunu düzenle"
-      ],
-      "Create new group": [
-        "Yeni grup oluştur"
-      ],
-      "Add to ${ groupName }": [
-        ""
-      ],
-      "Add to ${ groupCount } group": [
-        "",
-        ""
-      ],
-      "Email settings (${ emailAddress })": [
-        ""
-      ],
-      "Delete ${ Name }": [
-        ""
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } kişi grubunu sil",
-        "${ count } kişi grubunu sil"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } üye",
-        "${ emailsCount } üye"
-      ],
-      "Edit image": [
-        ""
-      ],
-      "Edit contact": [
-        "Kişiyi düzenle"
-      ],
-      "Create contact": [
-        "Kişi oluştur"
-      ],
-      "Delete ${ count } contact": [
-        "",
-        ""
-      ],
-      "Clearing data": [
-        "Veri temizleniyor"
-      ],
-      "Warning": [
-        "Uyarı"
-      ],
-      "Recover data": [
-        ""
-      ],
-      "Re-signing contacts": [
-        ""
-      ],
-      "Re-sign all contacts": [
-        ""
-      ],
-      "Exporting contacts": [
-        "Kişiler dışa aktarılıyor"
-      ],
-      "Other names": [
-        "Diğer isimler"
-      ],
-      "Email addresses": [
-        "E-posta adresleri"
-      ],
-      "Phone numbers": [
-        "Telefon numaraları"
-      ],
-      "Addresses": [
-        "Adresler"
-      ],
-      "Other information": [
-        "Diğer bilgiler"
-      ],
-      "Contact Details": [
-        "Kişi Ayrıntıları"
-      ],
-      "Merging contacts": [
-        "Kişiler birleştiriliyor"
-      ],
-      "Merge contacts": [
-        "Kişileri birleştir"
-      ],
-      "Deleting contacts": [
-        ""
-      ],
-      "View contacts": [
-        "Kişileri görüntüle"
-      ],
-      "Contacts": [
-        "Kişiler"
-      ],
-      "Groups": [
-        "Gruplar"
-      ],
-      "Settings": [
-        "Ayarlar"
-      ],
-      "Select action to take on contact group": [
-        ""
-      ],
-      "Add contact group name": [
-        "Kişi grubu adı ekle"
-      ],
-      "Select contact group": [
-        "Kişi grubunu seç"
-      ],
-      "Import groups": [
-        "Grupları içe aktar"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
-      ],
-      "Report a problem": [
-        "Sorun bildir"
-      ],
-      "Open help menu": [
-        "Yardım menüsünü aç"
-      ],
-      "Back": [
-        "Geri"
-      ],
-      "Open settings menu": [
-        "Ayarlar menüsünü aç"
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Proton bonuslarının kaybını onaylayın"
-      ],
-      "Unsupported browser": [
-        "Desteklenmeyen tarayıcı"
-      ],
-      "Card verification": [
-        "Kart doğrulama"
-      ],
-      "Payment verification": [
-        "Ödeme doğrulama"
-      ],
-      "Processing...": [
-        "İşleniyor..."
-      ],
-      "Card verification in progress": [
-        "Kart doğrulama devam ediyor"
-      ],
-      "Payment verification in progress": [
-        "Ödeme doğrulama devam ediyor"
-      ],
-      "PayPal verification failed": [
-        "PayPal doğrulaması başarısız oldu"
-      ],
-      "3-D Secure verification failed": [
-        "3-D güvenli doğrulama başarısız oldu"
-      ],
-      "Error": [
-        "Hata"
-      ],
-      "ZIP / postal code": [
-        "ZIP / posta kodu"
-      ],
-      "Payment details": [
-        "Ödeme detayları"
-      ],
-      "Currency": [
-        "Para Birimi"
-      ],
-      "Billing cycle": [
-        "Faturalandırma döngüsü"
-      ],
-      "Current plan": [
-        "Geçerli plan"
-      ],
-      "Processing": [
-        "İşleniyor"
-      ],
-      "Apply gift code": [
-        "Hediye kodunu uygula"
-      ],
-      "Subtotal": [
-        "Kısmi toplam"
-      ],
-      "Coupon discount": [
-        "Kupon indirimi"
-      ],
-      "Total (monthly)": [
-        "Toplam (aylık)"
-      ],
-      "Credits": [
-        "Krediler"
-      ],
-      "Gift code": [
-        "Hediye kodu"
-      ],
-      "Amount due": [
-        "Ödenecek tutar"
-      ],
-      "Cancel subscription": [
-        "Aboneliği iptal et"
-      ],
-      "Network error": [
-        "Ağ hatası"
-      ],
-      "Select a plan": [
-        "Bir plan seçiniz"
-      ],
-      "Customize your plan": [
-        "Planınızı özelleştirin"
-      ],
-      "Checkout": [
-        "Ödeme yap"
-      ],
-      "Plan summary": [
-        "Plan özeti"
-      ],
-      "${ appName } customization": [
-        "${ appName } özelleştirme"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "Devam etmek için tekrar giriş yapın"
-      ],
-      "Account suspended": [
-        "Hesap askıya alındı"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi girin"
-      ],
-      "Enter your password": [
-        "Şifrenizi girin"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klavye Kısayolları"
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Mailbox layout": [
-        "Posta kutusu düzeni"
-      ],
-      "Composer mode": [
-        "Oluşturucu modu"
-      ],
-      "Beta Access": [
-        "Beta Erişimi"
-      ],
-      "Duplicate folder found": [
-        ""
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "Yüklemek için bırak"
-      ],
-      "Change layout": [
-        "Yerleşimi değiştir"
-      ],
-      "Show actions": [
-        "İşlemleri göster"
-      ],
-      "Sort files/folders": [
-        ""
-      ],
-      "Trash": [
-        "Çöp Kutusu"
-      ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
-      "Cancel all active transfers": [
-        "Tüm aktif transferleri iptal et"
-      ],
-      "My files": [
-        "Dosyalarım"
-      ],
-      "You have no folders yet": [
-        "Henüz klasörünüz yok"
-      ],
-      "You have no files to share": [
-        "Paylaşacak dosyanız bulunmuyor"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        ""
-      ],
-      "Download completed": [
-        "İndirme tamamlandı"
-      ],
-      "Download failed": [
-        "İndirme başarısız"
-      ],
-      "Download canceled": [
-        "İndirme iptal edildi"
-      ],
-      "Downloading": [
-        "İndiriliyor"
-      ],
-      "Enter file password to download": [
-        ""
-      ],
-      "The link either does not exist or has expired": [
-        ""
-      ],
-      "Restore your files": [
-        ""
-      ],
-      "File recovery process": [
-        ""
-      ],
-      "You have inaccessible files": [
-        ""
-      ],
-      "Rename a folder": [
-        "Bir klasörü yeniden adlandır"
-      ],
-      "Rename a file": [
-        "Bir dosyayı yeniden adlandır"
-      ],
-      "File details": [
-        "Dosya ayrıntıları"
-      ],
-      "Folder details": [
-        "Klasör ayrıntıları"
-      ],
-      "Name": [
-        "İsim"
-      ],
-      "Uploaded by": [
-        "Yükleyen"
-      ],
-      "Location": [
-        "Konum"
-      ],
-      "Modified": [
-        "Değiştirilmiş"
-      ],
-      "Type": [
-        "Tür"
-      ],
-      "MIME type": [
-        "MIME türü"
-      ],
-      "Size": [
-        "Boyut"
-      ],
-      "Shared": [
-        "Paylaşılan"
-      ],
-      "# of accesses": [
-        ""
-      ],
-      "Create a new folder": [
-        "Yeni bir klasör oluştur"
-      ],
-      "Date": [
-        "Tarih"
-      ],
-      "Select link expiration date": [
-        ""
-      ],
-      "Select link expiration time": [
-        ""
-      ],
-      "Share via link": [
-        "Bağlantıyla paylaş"
-      ],
-      "Additional settings": [
-        "Ek ayarlar"
-      ],
-      "Manage secure link": [
-        "Güvenli bağlantıyı yönet"
-      ],
-      "Stop sharing with everyone?": [
-        ""
-      ],
-      "Discard changes?": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Files details": [
-        "Dosya ayrıntıları"
-      ],
-      "Number of files": [
-        "Dosya sayısı"
-      ],
-      "Total size": [
-        "Toplam boyut"
-      ],
-      "Delete permanently": [
-        "Kalıcı olarak sil"
-      ],
-      "Stop sharing": [
-        ""
       ]
     },
     "Label": {
@@ -2026,6 +2026,12 @@
       "Display name": [
         "Görünen ad"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Name on card": [
         "Karttaki isim"
       ],
@@ -2073,12 +2079,6 @@
       ],
       "Payer": [
         "Ödeyen"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
       ],
       "Cancel": [
         "İptal"
@@ -2167,6 +2167,9 @@
       "File": [
         "Dosya"
       ],
+      "Get your own ProtonDrive": [
+        "Kendi ProtonDrive'ınızı edinin"
+      ],
       "Report abuse": [
         ""
       ],
@@ -2180,11 +2183,6 @@
         ""
       ],
       "Set expiration date": [
-        ""
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
         ""
       ]
     },
@@ -2263,6 +2261,11 @@
         "${ minutes } dakika"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Link": {
       "Learn more": [
         "Daha fazla bilgi edinin"
@@ -2276,14 +2279,14 @@
       "Upgrade account": [
         "Hesabınızı yükseltin"
       ],
-      "clearing your browser cache": [
-        "tarayıcınızın önbelleğini temizlemek"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
       "Go to subscription plans": [
         "Abonelik tarifelerine git"
+      ],
+      "clearing your browser cache": [
+        "tarayıcınızın önbelleğini temizlemek"
       ],
       "click here": [
         "buraya tıkla"
@@ -2298,7 +2301,7 @@
         "Paylaşılan"
       ],
       "Trash": [
-        ""
+        "Çöp Kutusu"
       ]
     },
     "Storage": {
@@ -2499,11 +2502,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bu ödeme yöntemini seçerek hesabınızın hemen güncellenemeyeceğini lütfen unutmayın. Ödeme onaylandıktan sonra hesabınızı güncelleyeceğiz."
-      ],
       "Are you sure you want to discard your import?": [
         ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bu ödeme yöntemini seçerek hesabınızın hemen güncellenemeyeceğini lütfen unutmayın. Ödeme onaylandıktan sonra hesabınızı güncelleyeceğiz."
       ]
     },
     "Success": {
@@ -3019,6 +3022,45 @@
         "${ appName } uygulamasının yeni bir sürümü mevcut. ${ reloadButton }."
       ]
     },
+    "Text": {
+      "Settings": [
+        ""
+      ]
+    },
+    "Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Görüntü seçilmedi"
@@ -3122,45 +3164,6 @@
         "Ekran görüntüsü(leri) ekleyin"
       ]
     },
-    "Text": {
-      "Settings": [
-        ""
-      ]
-    },
-    "Enabled": {
-      "On": [
-        ""
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         ""
@@ -3190,6 +3193,27 @@
         ""
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        ""
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
         ""
       ]
     },
@@ -3640,43 +3664,9 @@
         "Bitcoin"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "Yükle"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        ""
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        ""
       ]
     },
     "Label to change density": {
@@ -3701,6 +3691,33 @@
       ],
       "Maximized": [
         ""
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        ""
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bayt"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Contact field label": {
@@ -3815,20 +3832,6 @@
       ],
       "Address": [
         "Adres"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bayt"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Validation": {
@@ -3958,7 +3961,7 @@
         ""
       ],
       "Go to Trash": [
-        "Çöp kutusuna git"
+        "Çöp Kutusuna Git"
       ],
       "Go to Spam": [
         ""
@@ -4039,7 +4042,7 @@
         ""
       ],
       "Move to Trash": [
-        ""
+        "Çöp Kutusuna Taşı"
       ],
       "Delete permanently": [
         ""
@@ -4057,7 +4060,7 @@
         ""
       ],
       "Load embedded images": [
-        ""
+        "Gömülü resimleri yükle"
       ],
       "Show original message": [
         ""

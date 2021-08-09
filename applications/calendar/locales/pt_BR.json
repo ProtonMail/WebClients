@@ -842,7 +842,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -1922,10 +1922,285 @@
         "Enc:"
       ]
     },
-    "Action": {
-      "Close": [
-        "Fechar"
+    "Label": {
+      "Copy": [
+        "Copiar"
       ],
+      "Reveal password": [
+        "Mostrar senha"
+      ],
+      "Hide password": [
+        "Ocultar senha"
+      ],
+      "Street address": [
+        "Endereço"
+      ],
+      "City": [
+        "Cidade"
+      ],
+      "Region": [
+        "Estado"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "Country": [
+        "País"
+      ],
+      "Post office box": [
+        "Caixa postal"
+      ],
+      "Extended address": [
+        "Endereço completo"
+      ],
+      "Do not ask again": [
+        "Não perguntar novamente"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "Phone number": [
+        "Número do telefone"
+      ],
+      "Verification code": [
+        "Código de verificação"
+      ],
+      "Enter the 6-digit code": [
+        "Insira o código de 6 dígitos"
+      ],
+      "Add email address": [
+        "Adicionar endereço de e-mail"
+      ],
+      "Email format": [
+        "Formato do e-mail"
+      ],
+      "Add image URL": [
+        "Adicionar URL da imagem"
+      ],
+      "Upload picture": [
+        "Carregar imagem"
+      ],
+      "Add to group": [
+        "Adicionar ao grupo"
+      ],
+      "Encrypt emails": [
+        "Criptografar e-mails"
+      ],
+      "Sign emails": [
+        "Assinar e-mails"
+      ],
+      "Cryptographic scheme": [
+        "Esquema de criptografia"
+      ],
+      "Public keys": [
+        "Chaves públicas"
+      ],
+      "Automatically save contacts": [
+        "Salvar contatos automaticamente"
+      ],
+      "Import contacts": [
+        "Importar contatos"
+      ],
+      "Export contacts": [
+        "Exportar contatos"
+      ],
+      "Operating system": [
+        "Sistema operacional"
+      ],
+      "Operating system version": [
+        "Versão do sistema operacional"
+      ],
+      "Proton username": [
+        "Nome de usuário Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "O que aconteceu?"
+      ],
+      "System information": [
+        "Informações do sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Qual é a principal razão para essa classificação?"
+      ],
+      "Display name": [
+        "Nome de exibição"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "Two-factor authentication code": [
+        "Autenticação de dois fatores"
+      ],
+      "Username or ProtonMail address": [
+        "Nome de usuário ou endereço do ProtonMail"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos do teclado"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Selecione a aparência padrão de sua lista de mensagens."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Selecione a aparência padrão de sua caixa de correio."
+      ],
+      "Select how your composer opens by default.": [
+        "Selecionar como seu compositor abrirá por padrão."
+      ],
+      "Enable Beta Access": [
+        "Habilitar Acesso Beta"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Choose a color": [
+        "Escolha uma cor"
+      ],
+      "Default email": [
+        "E-mail padrão"
+      ],
+      "Display": [
+        "Exibir"
+      ],
+      "Description": [
+        "Descrição"
+      ],
+      "Default event duration": [
+        "Duração padrão do evento"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Default notifications": [
+        "Notificações padrão"
+      ],
+      "Default full day notifications": [
+        "Notificações padrão para o dia inteiro"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Qual a chance de você recomendar ${ calendarAppName } a um amigo ou colega?"
+      ],
+      "0 - Not likely": [
+        "0 - Acho que não"
+      ],
+      "10 - Extremely likely": [
+        "10 - Extremamente provável"
+      ],
+      "All day": [
+        "Todo o dia"
+      ],
+      "Repeat on": [
+        "Repetir em"
+      ],
+      "Repeat every": [
+        "Repetir a cada"
+      ],
+      "Ends": [
+        "Termina"
+      ],
+      "Organizer": [
+        "Organizador"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Time of the event": [
+        "Horário do evento"
+      ],
+      "Event time": [
+        "Hora do evento"
+      ],
+      "Event title": [
+        "Titulo do evento"
+      ],
+      "Event frequency": [
+        "Frequência do evento"
+      ],
+      "Event location": [
+        "Local do evento"
+      ],
+      "Event notifications": [
+        "Notificações de eventos"
+      ],
+      "Participants": [
+        "Participantes"
+      ],
+      "Your calendars": [
+        "Seus calendários"
+      ]
+    },
+    "Action": {
       "Close modal": [
         "Fechar janela"
       ],
@@ -1944,6 +2219,9 @@
       "Use “${ label }” setting": [
         ""
       ],
+      "Close": [
+        "Fechar"
+      ],
       "Close navigation": [
         "Fechar navegação"
       ],
@@ -1953,11 +2231,11 @@
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Load image": [
         "Carregar imagem"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Export": [
         "Exportar"
@@ -2186,9 +2464,6 @@
       "OK": [
         "OK"
       ],
-      "Log in": [
-        "Iniciar sessão"
-      ],
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
@@ -2245,6 +2520,9 @@
       ],
       "Back": [
         "Voltar"
+      ],
+      "Log in": [
+        "Iniciar sessão"
       ],
       "Remove bonuses": [
         ""
@@ -2389,6 +2667,139 @@
       ],
       "Close popover": [
         "Fechar"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "A chave não pode ser usada para criptografar"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Request an invite": [
+        "Solicitar um convite"
+      ],
+      "clearing your browser cache": [
+        "limpando o cache do seu navegador"
+      ],
+      "Upgrade": [
+        ""
+      ],
+      "Go to subscription plans": [
+        "Ir para Planos de assinatura"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Pagar fatura"
+      ],
+      "Upgrade account": [
+        "Fazer upgrade de conta"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "My calendars": [
+        "Meus calendários"
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex "
+      ],
+      "Start typing an email address": [
+        "Comece a digitar um endereço de e-mail"
+      ],
+      "Image URL": [
+        "URL da imagem"
+      ],
+      "Filter groups": [
+        "Filtrar grupos"
+      ],
+      "Search for name or email": [
+        "Pesquisar por nome ou e-mail"
+      ],
+      "Search for group name": [
+        "Pesquisar por nome do grupo"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "OS name": [
+        "Nome do SO"
+      ],
+      "OS version": [
+        "Versão do SO"
+      ],
+      "Proton username": [
+        "Nome de usuário Proton"
+      ],
+      "A way to contact you": [
+        "Uma maneira de entrar em contato com você"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+      ],
+      "Browser name": [
+        "Nome do navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "ex. Jessica Sales"
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Add a calendar name": [
+        "Adicione o nome do calendário"
+      ],
+      "Add a calendar description": [
+        "Adicione a descrição do calendário"
+      ],
+      "Add title": [
+        "Adicionar título"
+      ],
+      "Add location": [
+        "Adicionar localização"
+      ],
+      "Add description": [
+        "Adicionar descrição"
+      ],
+      "Add participants": [
+        "Adicionar participantes"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -2546,18 +2957,6 @@
       "Select a theme": [
         "Selecionar um tema"
       ],
-      "Sign in again to continue": [
-        "Inicie a sessão novamente para continuar"
-      ],
-      "Account suspended": [
-        "Conta suspensa"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Digite seu nome de usuário ou o endereço de e-mail do ProtonMail"
-      ],
-      "Enter your password": [
-        "Digite sua senha"
-      ],
       "Open help menu": [
         "Abrir o menu de ajuda"
       ],
@@ -2575,6 +2974,18 @@
       ],
       "Give feedback": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Inicie a sessão novamente para continuar"
+      ],
+      "Account suspended": [
+        "Conta suspensa"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Digite seu nome de usuário ou o endereço de e-mail do ProtonMail"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
       ],
       "Confirm loss of Proton bonuses": [
         ""
@@ -2681,14 +3092,14 @@
       "Beta Access": [
         "Acesso Beta"
       ],
+      "Select the way to send this notification": [
+        "Selecione a forma de enviar esta notificação"
+      ],
       "Select when you want this notification to be sent": [
         "Selecione quando você deseja que esta notificação seja enviada"
       ],
       "Select the time to send this notification": [
         "Selecione o horário para enviar esta notificação"
-      ],
-      "Select the way to send this notification": [
-        "Selecione a forma de enviar esta notificação"
       ],
       "Add another notification to remind you of this event": [
         "Adicione outra notificação para lembrá-lo deste evento"
@@ -2824,417 +3235,6 @@
       ],
       "CANCELLED": [
         "CANCELADO"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Copiar"
-      ],
-      "Reveal password": [
-        "Mostrar senha"
-      ],
-      "Hide password": [
-        "Ocultar senha"
-      ],
-      "Street address": [
-        "Endereço"
-      ],
-      "City": [
-        "Cidade"
-      ],
-      "Region": [
-        "Estado"
-      ],
-      "Postal code": [
-        "Código postal"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Post office box": [
-        "Caixa postal"
-      ],
-      "Extended address": [
-        "Endereço completo"
-      ],
-      "Do not ask again": [
-        "Não perguntar novamente"
-      ],
-      "Email address": [
-        "Endereço de e-mail"
-      ],
-      "Phone number": [
-        "Número do telefone"
-      ],
-      "Verification code": [
-        "Código de verificação"
-      ],
-      "Enter the 6-digit code": [
-        "Insira o código de 6 dígitos"
-      ],
-      "Add email address": [
-        "Adicionar endereço de e-mail"
-      ],
-      "Email format": [
-        "Formato do e-mail"
-      ],
-      "Add image URL": [
-        "Adicionar URL da imagem"
-      ],
-      "Upload picture": [
-        "Carregar imagem"
-      ],
-      "Add to group": [
-        "Adicionar ao grupo"
-      ],
-      "Encrypt emails": [
-        "Criptografar e-mails"
-      ],
-      "Sign emails": [
-        "Assinar e-mails"
-      ],
-      "Cryptographic scheme": [
-        "Esquema de criptografia"
-      ],
-      "Public keys": [
-        "Chaves públicas"
-      ],
-      "Automatically save contacts": [
-        "Salvar contatos automaticamente"
-      ],
-      "Import contacts": [
-        "Importar contatos"
-      ],
-      "Export contacts": [
-        "Exportar contatos"
-      ],
-      "Operating system": [
-        "Sistema operacional"
-      ],
-      "Operating system version": [
-        "Versão do sistema operacional"
-      ],
-      "Proton username": [
-        "Nome de usuário Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "O que aconteceu?"
-      ],
-      "System information": [
-        "Informações do sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Cancelar"
-      ],
-      "Submit": [
-        "Enviar"
-      ],
-      "Password": [
-        "Senha"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
-      ],
-      "Two-factor authentication code": [
-        "Autenticação de dois fatores"
-      ],
-      "Username or ProtonMail address": [
-        "Nome de usuário ou endereço do ProtonMail"
-      ],
-      "What is the primary reason for this rating?": [
-        "Qual é a principal razão para essa classificação?"
-      ],
-      "Display name": [
-        "Nome de exibição"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Atalhos do teclado"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selecione a aparência padrão de sua lista de mensagens."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecione a aparência padrão de sua caixa de correio."
-      ],
-      "Select how your composer opens by default.": [
-        "Selecionar como seu compositor abrirá por padrão."
-      ],
-      "Enable Beta Access": [
-        "Habilitar Acesso Beta"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "Choose a color": [
-        "Escolha uma cor"
-      ],
-      "Default email": [
-        "E-mail padrão"
-      ],
-      "Display": [
-        "Exibir"
-      ],
-      "Description": [
-        "Descrição"
-      ],
-      "Default event duration": [
-        "Duração padrão do evento"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Default notifications": [
-        "Notificações padrão"
-      ],
-      "Default full day notifications": [
-        "Notificações padrão para o dia inteiro"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Qual a chance de você recomendar ${ calendarAppName } a um amigo ou colega?"
-      ],
-      "0 - Not likely": [
-        "0 - Acho que não"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extremamente provável"
-      ],
-      "All day": [
-        "Todo o dia"
-      ],
-      "Repeat on": [
-        "Repetir em"
-      ],
-      "Repeat every": [
-        "Repetir a cada"
-      ],
-      "Ends": [
-        "Termina"
-      ],
-      "Organizer": [
-        "Organizador"
-      ],
-      "Optional": [
-        "Opcional"
-      ],
-      "Time of the event": [
-        "Horário do evento"
-      ],
-      "Event time": [
-        "Hora do evento"
-      ],
-      "Event title": [
-        "Titulo do evento"
-      ],
-      "Event frequency": [
-        "Frequência do evento"
-      ],
-      "Event location": [
-        "Local do evento"
-      ],
-      "Event notifications": [
-        "Notificações de eventos"
-      ],
-      "Participants": [
-        "Participantes"
-      ],
-      "Your calendars": [
-        "Seus calendários"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "A chave não pode ser usada para criptografar"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Saiba mais"
-      ],
-      "Request an invite": [
-        "Solicitar um convite"
-      ],
-      "clearing your browser cache": [
-        "limpando o cache do seu navegador"
-      ],
-      "Upgrade": [
-        ""
-      ],
-      "Go to subscription plans": [
-        "Ir para Planos de assinatura"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Pagar fatura"
-      ],
-      "Upgrade account": [
-        "Fazer upgrade de conta"
-      ],
-      "Calendars": [
-        "Calendários"
-      ],
-      "My calendars": [
-        "Meus calendários"
-      ],
-      "Other calendars": [
-        "Outros calendários"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ex "
-      ],
-      "Start typing an email address": [
-        "Comece a digitar um endereço de e-mail"
-      ],
-      "Image URL": [
-        "URL da imagem"
-      ],
-      "Filter groups": [
-        "Filtrar grupos"
-      ],
-      "Search for name or email": [
-        "Pesquisar por nome ou e-mail"
-      ],
-      "Search for group name": [
-        "Pesquisar por nome do grupo"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "OS name": [
-        "Nome do SO"
-      ],
-      "OS version": [
-        "Versão do SO"
-      ],
-      "Proton username": [
-        "Nome de usuário Proton"
-      ],
-      "A way to contact you": [
-        "Uma maneira de entrar em contato com você"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
-      ],
-      "Browser name": [
-        "Nome do navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "ex. Jessica Sales"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        "Adicione o nome do calendário"
-      ],
-      "Add a calendar description": [
-        "Adicione a descrição do calendário"
-      ],
-      "Add title": [
-        "Adicionar título"
-      ],
-      "Add location": [
-        "Adicionar localização"
-      ],
-      "Add description": [
-        "Adicionar descrição"
-      ],
-      "Add participants": [
-        "Adicionar participantes"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
       ]
     },
     "Storage": {
@@ -3481,7 +3481,7 @@
       "Preference saved": [
         "Preferências salvas"
       ],
-      "Calendar created. It might take a few minutes to sync.": [
+      "Calendar added. It might take a few minutes to sync.": [
         ""
       ],
       "Calendar created": [
@@ -4549,6 +4549,17 @@
         ""
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Confortável"
@@ -4571,17 +4582,6 @@
       ],
       "Maximized": [
         "Maximizado"
-      ]
-    },
-    "Payment method option": {
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ],
-      "Bitcoin": [
-        ""
       ]
     },
     "Beta access description": {
@@ -4631,6 +4631,14 @@
         "horas antes"
       ]
     },
+    "Notification type": {
+      "notification": [
+        ""
+      ],
+      "email": [
+        ""
+      ]
+    },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Escolha um número"
@@ -4639,14 +4647,6 @@
     "Notification time input": {
       "at": [
         "às"
-      ]
-    },
-    "Notification type": {
-      "via notification": [
-        "por notificação"
-      ],
-      "by email": [
-        "por e-mail"
       ]
     },
     "Duration": {
@@ -4743,6 +4743,11 @@
         "${ value } semanas depois de ${ time }"
       ]
     },
+    "Calendar status": {
+      "not synced": [
+        ""
+      ]
+    },
     "Disabled calendar name suffix": {
       "disabled": [
         "desativado"
@@ -4832,6 +4837,11 @@
       ],
       "This event has been cancelled": [
         "Este evento foi cancelado"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        ""
       ]
     },
     "Event info": {

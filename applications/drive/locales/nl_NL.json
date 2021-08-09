@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Onbekende fout"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Verificatiefout."
-      ],
-      "Unknown error": [
-        "Onbekende fout"
       ],
       "Email address invalid": [
         "E-mailadres ongeldig"
@@ -33,6 +33,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
       ],
+      "File has no contents to preview": [
+        "Bestand heeft geen inhoud om een voorbeeld te bekijken"
+      ],
       "Can't validate email, try again later": [
         "Kan e-mail niet valideren, probeer het later opnieuw"
       ],
@@ -44,9 +47,6 @@
       ],
       "Invalid verification code": [
         "Ongeldige verificatiecode"
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te bekijken"
       ],
       "Preferences could not be saved": [
         "Voorkeuren konden niet worden opgeslagen"
@@ -91,6 +91,12 @@
       ],
       "Invalid name": [
         "Ongeldige naam"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
       ],
       "Process aborted": [
         ""
@@ -152,12 +158,6 @@
       "Invalid code": [
         ""
       ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
       "Incorrect mailbox password. Please try again": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
       ],
@@ -201,6 +201,973 @@
         "Geen geldig adres gevonden"
       ]
     },
+    "Action": {
+      "Close": [
+        "Sluiten"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Close modal": [
+        "Venster sluiten"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Use “${ label }” setting": [
+        "Gebruik “${ label }”-instelling"
+      ],
+      "More info: ${ safeTitle }": [
+        "Meer informatie: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Sluit navigatie"
+      ],
+      "Open navigation": [
+        "Open navigatie"
+      ],
+      "Go to panel ${ index }": [
+        "Ga naar paneel ${ index }"
+      ],
+      "Load image": [
+        "Afbeelding laden"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Edit": [
+        "Bewerken"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Use for sending": [
+        "Gebruik voor verzenden"
+      ],
+      "Trust": [
+        "Vertrouwen"
+      ],
+      "Untrust": [
+        "Niet meer vertrouwen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Email settings": [
+        "E-mailinstellingen"
+      ],
+      "Contact group": [
+        "Contactgroep"
+      ],
+      "Upload picture": [
+        "Afbeelding uploaden"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Previous month": [
+        "Vorige maand"
+      ],
+      "refresh the page": [
+        "vernieuw de pagina"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Bevestig het openen van link ${ link }"
+      ],
+      "Signing out": [
+        "Uitloggen"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Share via link": [
+        "Deel via link"
+      ],
+      "Sharing options": [
+        "Opties voor delen"
+      ],
+      "Zoom out": [
+        "Zoom uit"
+      ],
+      "Reset zoom": [
+        "Reset zoom"
+      ],
+      "Zoom in": [
+        "Inzoomen"
+      ],
+      "Previous": [
+        "Vorige"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "View invoice": [
+        "Factuur bekijken"
+      ],
+      "Get verification code": [
+        "Krijg verificatie code"
+      ],
+      "Try another method": [
+        "Andere methode proberen"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Verify": [
+        "Verifiëer"
+      ],
+      "Did not receive the code?": [
+        "Code niet ontvangen?"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Edit phone number": [
+        "Wijzig telefoonnummer"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Apply": [
+        "Toepassen"
+      ],
+      "Hide advanced PGP settings": [
+        "Geavanceerde PGP-instellingen verbergen"
+      ],
+      "Show advanced PGP settings": [
+        "Geavanceerde PGP-instellingen tonen"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Clear data": [
+        "Gegevens wissen"
+      ],
+      "Recover data": [
+        "Gegevens herstellen"
+      ],
+      "Click here.": [
+        "Klik hier."
+      ],
+      "Re-sign": [
+        "Opnieuw ondertekenen"
+      ],
+      "Add to group": [
+        "Toevoegen aan groep"
+      ],
+      "Merge": [
+        "Samenvoegen"
+      ],
+      "View": [
+        "Bekijken"
+      ],
+      "Unmark for deletion": [
+        "Niet markeren voor verwijderen"
+      ],
+      "Mark for deletion": [
+        "Markeren voor verwijderen"
+      ],
+      "Preview contact": [
+        "Contactpersoon voorvertonen"
+      ],
+      "Continue": [
+        "Doorgaan"
+      ],
+      "Delete contact": [
+        "Contactpersoon verwijderen"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } contactpersoon verwijderen",
+        "${ selectedCount } contactpersonen verwijderen"
+      ],
+      "Deselect all": [
+        "Alles deselecteren"
+      ],
+      "Select all": [
+        "Alles selecteren"
+      ],
+      "Compose": [
+        "Opstellen"
+      ],
+      "Forward as attachment": [
+        "Doorsturen als bijlage"
+      ],
+      "Merge contacts": [
+        "Contactpersonen samenvoegen"
+      ],
+      "Add new contact": [
+        "Contactpersoon toevoegen"
+      ],
+      "Add group": [
+        "Groep toevoegen"
+      ],
+      "Clear query": [
+        "Zoekopdracht wissen"
+      ],
+      "Add contact": [
+        "Contactpersoon toevoegen"
+      ],
+      "import": [
+        "importeren"
+      ],
+      "Delete contact group": [
+        "Contactgroep verwijderen"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } contactgroep verwijderen",
+        "${ selectedCount } contactgroepen verwijderen"
+      ],
+      "Add new group": [
+        "Voeg nieuwe groep toe"
+      ],
+      "Export contacts": [
+        "Contactgegevens exporteren"
+      ],
+      "Continue with Google": [
+        "Ga verder met Google"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Choose a file or drag it here": [
+        "Kies een bestand of sleep deze hier"
+      ],
+      "Import": [
+        "Importeren"
+      ],
+      "Close this banner": [
+        "Sluit deze banner"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
+      ],
+      "enable desktop notifications": [
+        "schakel desktopmeldingen in"
+      ],
+      "here": [
+        "hier"
+      ],
+      "Copy email to clipboard": [
+        "E-mailadres kopiëren naar klembord"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } inleiding"
+      ],
+      "I have a question": [
+        "Ik heb een vraag"
+      ],
+      "Request a feature": [
+        "Vraag een functie aan"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } winkel"
+      ],
+      "Switch account": [
+        "Account wisselen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Go to settings": [
+        "Ga naar instellingen"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
+      "Theme": [
+        "Thema"
+      ],
+      "Keyboard shortcuts": [
+        "Sneltoetsen"
+      ],
+      "Mailbox layout": [
+        "Mailbox layout"
+      ],
+      "Mailbox density": [
+        "Mailbox dichtheid"
+      ],
+      "Composer mode": [
+        "Opstelmodus"
+      ],
+      "Clear": [
+        "Wissen"
+      ],
+      "Add screenshot(s)": [
+        "Screenshot(s) toevoegen"
+      ],
+      "Hide info": [
+        "Informatie verbergen"
+      ],
+      "Show info": [
+        "Informatie tonen"
+      ],
+      "Get started": [
+        "Aan de slag"
+      ],
+      "Start setup": [
+        "Installatie starten"
+      ],
+      "Skip": [
+        "Overslaan"
+      ],
+      "Back": [
+        "Terug"
+      ],
+      "Use ${ label } theme": [
+        "Gebruik thema ${ label }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        ""
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
+        ""
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "Cancel all uploads": [
+        "Alle uploads annuleren"
+      ],
+      "New upload": [
+        "Nieuwe upload"
+      ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
+      "Restore from trash": [
+        "Herstellen uit prullenbak"
+      ],
+      "Empty trash": [
+        "Prullenbak leegmaken"
+      ],
+      "Rename": [
+        "Hernoemen"
+      ],
+      "Move to folder": [
+        "Naar map verplaatsen"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
+      ],
+      "Create new folder": [
+        "Nieuwe map aanmaken"
+      ],
+      "Name: A to Z": [
+        "Naam: van A naar Z"
+      ],
+      "Name: Z to A": [
+        "Naam: van Z naar A"
+      ],
+      "Modified date: new to old": [
+        "Gewijzigde datum: nieuw naar oud"
+      ],
+      "Modified date: old to new": [
+        "Gewijzigde datum: oud naar nieuw"
+      ],
+      "Type: A to Z": [
+        "Type: van A naar Z"
+      ],
+      "Type: Z to A": [
+        "Type: van Z naar A"
+      ],
+      "Size: small to large": [
+        "Grootte: klein naar groot"
+      ],
+      "Size: large to small": [
+        "Grootte: groot naar klein"
+      ],
+      "Upload file": [
+        "Bestand uploaden"
+      ],
+      "Upload folder": [
+        "Map uploaden"
+      ],
+      "Maximize transfers": [
+        "Maximaliseer overdrachten"
+      ],
+      "Minimize transfers": [
+        "Minimaliseer overdrachten"
+      ],
+      "Close transfers": [
+        "Overdrachten sluiten"
+      ],
+      "Pause download": [
+        "Download pauzeren"
+      ],
+      "Pause upload": [
+        "Uploaden pauzeren"
+      ],
+      "Resume download": [
+        "Download hervatten"
+      ],
+      "Resume upload": [
+        "Upload hervatten"
+      ],
+      "Cancel download": [
+        "Download annuleren"
+      ],
+      "Cancel upload": [
+        "Upload annuleren"
+      ],
+      "Restart download": [
+        "Download herstarten"
+      ],
+      "Restart upload": [
+        "Upload herstarten"
+      ],
+      "Remove from this list": [
+        "Van deze lijst verwijderen"
+      ],
+      "Create": [
+        "Aanmaken"
+      ],
+      "List layout": [
+        "Lijst lay-out"
+      ],
+      "Grid layout": [
+        "Rooster layout"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Stop sharing": [
+        "Delen stoppen"
+      ],
+      "Share": [
+        "Delen"
+      ],
+      "Show shared link details": [
+        ""
+      ],
+      "Share file": [
+        "Deel Bestand"
+      ],
+      "Start recovering": [
+        "Herstellen starten"
+      ],
+      "View more": [
+        "Meer bekijken"
+      ],
+      "Move": [
+        "Verplaatsen"
+      ],
+      "Copy link": [
+        "Link kopiëren"
+      ],
+      "Create link": [
+        "Link aanmaken"
+      ],
+      "Undo": [
+        "Ongedaan maken"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "Open acties dropdownmenu"
+      ],
+      "Upgrade required": [
+        "Upgrade vereist"
+      ],
+      "Email settings": [
+        "E-mail instellingen"
+      ],
+      "Contact group": [
+        "Contactgroep"
+      ],
+      "Link confirmation": [
+        "Link bevestigen"
+      ],
+      "Keyboard Shortcuts": [
+        "Sneltoetsen"
+      ],
+      "What's new": [
+        "Wat is er nieuw"
+      ],
+      "Invalid verification code": [
+        "De ingevoerde code is ongeldig"
+      ],
+      "Request new verification code": [
+        "Nieuwe verificatiecode aanvragen"
+      ],
+      "Human verification": [
+        "Persoonsverificatie"
+      ],
+      "Edit contact group": [
+        "Contactgroep bewerken"
+      ],
+      "Create new group": [
+        "Nieuwe groep maken"
+      ],
+      "Add to ${ groupName }": [
+        "Toevoegen aan ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "Toevoegen aan ${ groupCount } groep",
+        "Toevoegen aan ${ groupCount } groepen"
+      ],
+      "Email settings (${ emailAddress })": [
+        "E-mailinstellingen (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "Verwijder ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } contactgroep verwijderen",
+        "${ count } contactgroepen verwijderen"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } lid",
+        "${ emailsCount } leden"
+      ],
+      "Edit image": [
+        "Afbeelding bewerken"
+      ],
+      "Edit contact": [
+        "Contactpersoon bewerken"
+      ],
+      "Create contact": [
+        "Contact aanmaken"
+      ],
+      "Delete ${ count } contact": [
+        "Verwijder ${ count } contact",
+        "${ count } contacten verwijderen"
+      ],
+      "Clearing data": [
+        "Gegevens aan het wissen"
+      ],
+      "Warning": [
+        "Waarschuwing"
+      ],
+      "Recover data": [
+        "Gegevens herstellen"
+      ],
+      "Re-signing contacts": [
+        "Contacten opnieuw ondertekenen"
+      ],
+      "Re-sign all contacts": [
+        "Alle contacten opnieuw ondertekenen"
+      ],
+      "Exporting contacts": [
+        "Contactpersonen exporteren"
+      ],
+      "Other names": [
+        "Andere namen"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
+      "Phone numbers": [
+        "Telefoonnummers"
+      ],
+      "Addresses": [
+        "Adressen"
+      ],
+      "Other information": [
+        "Overige informatie"
+      ],
+      "Contact Details": [
+        "Contactgegevens"
+      ],
+      "Merging contacts": [
+        "Contactpersonen samenvoegen"
+      ],
+      "Merge contacts": [
+        "Contacten samenvoegen"
+      ],
+      "Deleting contacts": [
+        "Contacten aan het verwijderen"
+      ],
+      "View contacts": [
+        "Contactpersonen weergeven"
+      ],
+      "Contacts": [
+        "Contacten"
+      ],
+      "Groups": [
+        "Groepen"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Select action to take on contact group": [
+        "Selecteer actie voor de contactgroep"
+      ],
+      "Add contact group name": [
+        "Naam toevoegen aan contactgroep"
+      ],
+      "Select contact group": [
+        "Contactgroep selecteren"
+      ],
+      "Import groups": [
+        "Importeer groepen"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Open help menu": [
+        "Open help-menu"
+      ],
+      "Back": [
+        "Vorige"
+      ],
+      "Open settings menu": [
+        "Open instellingen-menu"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "Select a theme": [
+        "Kies een thema"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Confirm loss of Proton bonuses": [
+        ""
+      ],
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "Log opnieuw in om door te gaan"
+      ],
+      "Account suspended": [
+        "Account opgeschort"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Sneltoetsen"
+      ],
+      "Mailbox density": [
+        "Mailbox dichtheid"
+      ],
+      "Mailbox layout": [
+        "Mailbox layout"
+      ],
+      "Composer mode": [
+        "Opstelmodus"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "Sleep hier om te uploaden"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
+      "Empty trash": [
+        "Prullenbak leegmaken"
+      ],
+      "Show actions": [
+        "Actie weergeven"
+      ],
+      "Sort files/folders": [
+        "Sorteer bestanden/mappen"
+      ],
+      "Cancel all active transfers": [
+        "Annuleer alle actieve overschrijvingen"
+      ],
+      "My files": [
+        "Mijn bestanden"
+      ],
+      "You have no folders yet": [
+        "U hebt nog geen mappen"
+      ],
+      "You have no files to share": [
+        "U heeft geen bestanden om te delen"
+      ],
+      "Change layout": [
+        "Lay-out veranderen"
+      ],
+      "Your file is ready to be downloaded": [
+        "Uw bestand is klaar om te worden gedownload"
+      ],
+      "Download completed": [
+        "Download compleet"
+      ],
+      "Download failed": [
+        "Downloaden mislukt"
+      ],
+      "Download canceled": [
+        "Download geannuleerd"
+      ],
+      "Downloading": [
+        "Downloaden"
+      ],
+      "Enter file password to download": [
+        "Voer bestandswachtwoord in om te downloaden"
+      ],
+      "The link either does not exist or has expired": [
+        "De link bestaat niet of is verlopen"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Restore your files": [
+        "Herstel uw bestanden"
+      ],
+      "File recovery process": [
+        "Herstelproces van bestanden"
+      ],
+      "You have inaccessible files": [
+        "U hebt ontoegankelijke bestanden"
+      ],
+      "Rename a folder": [
+        "Een map hernoemen"
+      ],
+      "Rename a file": [
+        "Hernoem een bestand"
+      ],
+      "File details": [
+        "Bestandsdetails"
+      ],
+      "Folder details": [
+        "Map details"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Uploaded by": [
+        "Geüpload door"
+      ],
+      "Location": [
+        "Locatie"
+      ],
+      "Modified": [
+        "Gewijzigd"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "MIME type": [
+        "MIME type"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Shared": [
+        "Gedeeld"
+      ],
+      "# of accesses": [
+        "Aantal weergaven"
+      ],
+      "Create a new folder": [
+        "Nieuwe map aanmaken"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Select link expiration date": [
+        "Selecteer vervaldatum link"
+      ],
+      "Select link expiration time": [
+        "Selecteer vervaltijd link"
+      ],
+      "Share via link": [
+        "Deel via link"
+      ],
+      "Additional settings": [
+        "Aanvullende instellingen"
+      ],
+      "Manage secure link": [
+        "Beveiligde link beheren"
+      ],
+      "Stop sharing with everyone?": [
+        "Stop het delen met iedereen?"
+      ],
+      "Discard changes?": [
+        "Wijzigingen annuleren?"
+      ],
+      "Discard": [
+        "Verwijderen"
+      ],
+      "Files details": [
+        "Bestandsdetails"
+      ],
+      "Number of files": [
+        "Aantal bestanden"
+      ],
+      "Total size": [
+        "Totale grootte"
+      ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
+      "Stop sharing": [
+        "Delen stoppen"
+      ]
+    },
     "Info": {
       "Loading": [
         "Laden"
@@ -213,6 +1180,9 @@
       ],
       "Week": [
         "Week"
+      ],
+      "support team": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -229,11 +1199,26 @@
       "Drop the file here to upload": [
         "Sleep het bestand om te uploaden"
       ],
-      "support team": [
-        ""
-      ],
       "Loading ${ appName }": [
         "${ appName } aan het laden"
+      ],
+      "Unsupported file": [
+        "Niet-ondersteund bestand"
+      ],
+      "No preview available": [
+        "Geen voorbeeld beschikbaar"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Loading preview": [
+        "Voorbeeld laden"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "of": [
+        "van"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
@@ -264,24 +1249,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "Unsupported file": [
-        "Niet-ondersteund bestand"
-      ],
-      "No preview available": [
-        "Geen voorbeeld beschikbaar"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Loading preview": [
-        "Voorbeeld laden"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
-      ],
-      "of": [
-        "van"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Lid",
@@ -441,6 +1408,30 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
       ],
@@ -589,7 +1580,7 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
       ],
       "No payment is required at this time.": [
@@ -678,30 +1669,6 @@
         ""
       ],
       "Expired": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
         ""
       ],
       "here": [
@@ -950,973 +1917,6 @@
         "Mijn linken"
       ]
     },
-    "Action": {
-      "Close": [
-        "Sluiten"
-      ],
-      "Confirm": [
-        "Bevestigen"
-      ],
-      "Cancel": [
-        "Annuleren"
-      ],
-      "Close modal": [
-        "Venster sluiten"
-      ],
-      "Submit": [
-        "Versturen"
-      ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
-      ],
-      "More info: ${ safeTitle }": [
-        "Meer informatie: ${ safeTitle }"
-      ],
-      "Close navigation": [
-        "Sluit navigatie"
-      ],
-      "Open navigation": [
-        "Open navigatie"
-      ],
-      "Go to panel ${ index }": [
-        "Ga naar paneel ${ index }"
-      ],
-      "Load image": [
-        "Afbeelding laden"
-      ],
-      "Export": [
-        "Exporteren"
-      ],
-      "Delete": [
-        "Verwijderen"
-      ],
-      "Edit": [
-        "Bewerken"
-      ],
-      "Remove": [
-        "Verwijderen"
-      ],
-      "Download": [
-        "Downloaden"
-      ],
-      "Use for sending": [
-        "Gebruik voor verzenden"
-      ],
-      "Trust": [
-        "Vertrouwen"
-      ],
-      "Untrust": [
-        "Niet meer vertrouwen"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Email settings": [
-        "E-mailinstellingen"
-      ],
-      "Contact group": [
-        "Contactgroep"
-      ],
-      "Upload picture": [
-        "Afbeelding uploaden"
-      ],
-      "Next month": [
-        "Volgende maand"
-      ],
-      "Previous month": [
-        "Vorige maand"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
-      ],
-      "refresh the page": [
-        "vernieuw de pagina"
-      ],
-      "Signing out": [
-        "Uitloggen"
-      ],
-      "View invoice": [
-        "Factuur bekijken"
-      ],
-      "Get verification code": [
-        "Krijg verificatie code"
-      ],
-      "Try another method": [
-        "Andere methode proberen"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Verify": [
-        "Verifiëer"
-      ],
-      "Did not receive the code?": [
-        "Code niet ontvangen?"
-      ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
-      "Edit phone number": [
-        "Wijzig telefoonnummer"
-      ],
-      "Details": [
-        "Details"
-      ],
-      "Share via link": [
-        "Deel via link"
-      ],
-      "Sharing options": [
-        "Opties voor delen"
-      ],
-      "Zoom out": [
-        "Zoom uit"
-      ],
-      "Reset zoom": [
-        "Reset zoom"
-      ],
-      "Zoom in": [
-        "Inzoomen"
-      ],
-      "Previous": [
-        "Vorige"
-      ],
-      "Next": [
-        "Volgende"
-      ],
-      "Save": [
-        "Opslaan"
-      ],
-      "Add": [
-        "Toevoegen"
-      ],
-      "Apply": [
-        "Toepassen"
-      ],
-      "Hide advanced PGP settings": [
-        "Geavanceerde PGP-instellingen verbergen"
-      ],
-      "Show advanced PGP settings": [
-        "Geavanceerde PGP-instellingen tonen"
-      ],
-      "Done": [
-        "Klaar"
-      ],
-      "Clear data": [
-        "Gegevens wissen"
-      ],
-      "Recover data": [
-        "Gegevens herstellen"
-      ],
-      "Click here.": [
-        "Klik hier."
-      ],
-      "Re-sign": [
-        "Opnieuw ondertekenen"
-      ],
-      "Add to group": [
-        "Toevoegen aan groep"
-      ],
-      "Merge": [
-        "Samenvoegen"
-      ],
-      "View": [
-        "Bekijken"
-      ],
-      "Unmark for deletion": [
-        "Niet markeren voor verwijderen"
-      ],
-      "Mark for deletion": [
-        "Markeren voor verwijderen"
-      ],
-      "Preview contact": [
-        "Contactpersoon voorvertonen"
-      ],
-      "Continue": [
-        "Doorgaan"
-      ],
-      "Delete contact": [
-        "Contactpersoon verwijderen"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } contactpersoon verwijderen",
-        "${ selectedCount } contactpersonen verwijderen"
-      ],
-      "Deselect all": [
-        "Alles deselecteren"
-      ],
-      "Select all": [
-        "Alles selecteren"
-      ],
-      "Compose": [
-        "Opstellen"
-      ],
-      "Forward as attachment": [
-        "Doorsturen als bijlage"
-      ],
-      "Merge contacts": [
-        "Contactpersonen samenvoegen"
-      ],
-      "Add new contact": [
-        "Contactpersoon toevoegen"
-      ],
-      "Add group": [
-        "Groep toevoegen"
-      ],
-      "Clear query": [
-        "Zoekopdracht wissen"
-      ],
-      "Add contact": [
-        "Contactpersoon toevoegen"
-      ],
-      "import": [
-        "importeren"
-      ],
-      "Delete contact group": [
-        "Contactgroep verwijderen"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } contactgroep verwijderen",
-        "${ selectedCount } contactgroepen verwijderen"
-      ],
-      "Add new group": [
-        "Voeg nieuwe groep toe"
-      ],
-      "Export contacts": [
-        "Contactgegevens exporteren"
-      ],
-      "Continue with Google": [
-        "Ga verder met Google"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Choose a file or drag it here": [
-        "Kies een bestand of sleep deze hier"
-      ],
-      "Import": [
-        "Importeren"
-      ],
-      "Close this banner": [
-        "Sluit deze banner"
-      ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
-      "enable desktop notifications": [
-        "schakel desktopmeldingen in"
-      ],
-      "here": [
-        "hier"
-      ],
-      "Clear": [
-        "Wissen"
-      ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
-      "Hide info": [
-        "Informatie verbergen"
-      ],
-      "Show info": [
-        "Informatie tonen"
-      ],
-      "Copy email to clipboard": [
-        "E-mailadres kopiëren naar klembord"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
-      ],
-      "Request a feature": [
-        "Vraag een functie aan"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } winkel"
-      ],
-      "Switch account": [
-        "Account wisselen"
-      ],
-      "Sign out": [
-        "Uitloggen"
-      ],
-      "Go to settings": [
-        "Ga naar instellingen"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
-      "Theme": [
-        "Thema"
-      ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Composer mode": [
-        "Opstelmodus"
-      ],
-      "Get started": [
-        "Aan de slag"
-      ],
-      "Start setup": [
-        "Installatie starten"
-      ],
-      "Skip": [
-        "Overslaan"
-      ],
-      "Back": [
-        "Terug"
-      ],
-      "Use ${ label } theme": [
-        "Gebruik thema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Try again": [
-        ""
-      ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
-      "Retry": [
-        ""
-      ],
-      "Loading verification": [
-        ""
-      ],
-      "Select plan": [
-        ""
-      ],
-      "Compare all features": [
-        ""
-      ],
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
-      "Pay": [
-        ""
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
-      ],
-      "Remove gift code": [
-        ""
-      ],
-      "annual billing": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
-      "Decrease": [
-        ""
-      ],
-      "Increase": [
-        ""
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "Cancel all uploads": [
-        "Alle uploads annuleren"
-      ],
-      "New upload": [
-        "Nieuwe upload"
-      ],
-      "List layout": [
-        "Lijst lay-out"
-      ],
-      "Grid layout": [
-        "Rooster layout"
-      ],
-      "Rename": [
-        "Hernoemen"
-      ],
-      "Move to folder": [
-        "Naar map verplaatsen"
-      ],
-      "Move to trash": [
-        "Naar prullenbak verplaatsen"
-      ],
-      "Create new folder": [
-        "Nieuwe map aanmaken"
-      ],
-      "Name: A to Z": [
-        "Naam: van A naar Z"
-      ],
-      "Name: Z to A": [
-        "Naam: van Z naar A"
-      ],
-      "Modified date: new to old": [
-        "Gewijzigde datum: nieuw naar oud"
-      ],
-      "Modified date: old to new": [
-        "Gewijzigde datum: oud naar nieuw"
-      ],
-      "Type: A to Z": [
-        "Type: van A naar Z"
-      ],
-      "Type: Z to A": [
-        "Type: van Z naar A"
-      ],
-      "Size: small to large": [
-        "Grootte: klein naar groot"
-      ],
-      "Size: large to small": [
-        "Grootte: groot naar klein"
-      ],
-      "Upload file": [
-        "Bestand uploaden"
-      ],
-      "Upload folder": [
-        "Map uploaden"
-      ],
-      "Delete permanently": [
-        "Permanent verwijderen"
-      ],
-      "Restore from trash": [
-        "Herstellen uit prullenbak"
-      ],
-      "Empty trash": [
-        "Prullenbak leegmaken"
-      ],
-      "Maximize transfers": [
-        "Maximaliseer overdrachten"
-      ],
-      "Minimize transfers": [
-        "Minimaliseer overdrachten"
-      ],
-      "Close transfers": [
-        "Overdrachten sluiten"
-      ],
-      "Pause download": [
-        "Download pauzeren"
-      ],
-      "Pause upload": [
-        "Uploaden pauzeren"
-      ],
-      "Resume download": [
-        "Download hervatten"
-      ],
-      "Resume upload": [
-        "Upload hervatten"
-      ],
-      "Cancel download": [
-        "Download annuleren"
-      ],
-      "Cancel upload": [
-        "Upload annuleren"
-      ],
-      "Restart download": [
-        "Download herstarten"
-      ],
-      "Restart upload": [
-        "Upload herstarten"
-      ],
-      "Remove from this list": [
-        "Van deze lijst verwijderen"
-      ],
-      "Share": [
-        "Delen"
-      ],
-      "Create": [
-        "Aanmaken"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Stop sharing": [
-        "Delen stoppen"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Share file": [
-        "Deel Bestand"
-      ],
-      "Start recovering": [
-        "Herstellen starten"
-      ],
-      "View more": [
-        "Meer bekijken"
-      ],
-      "Move": [
-        "Verplaatsen"
-      ],
-      "Copy link": [
-        "Link kopiëren"
-      ],
-      "Create link": [
-        "Link aanmaken"
-      ],
-      "Undo": [
-        "Ongedaan maken"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Open acties dropdownmenu"
-      ],
-      "Upgrade required": [
-        "Upgrade vereist"
-      ],
-      "Email settings": [
-        "E-mail instellingen"
-      ],
-      "Contact group": [
-        "Contactgroep"
-      ],
-      "Link confirmation": [
-        "Link bevestigen"
-      ],
-      "Keyboard Shortcuts": [
-        "Sneltoetsen"
-      ],
-      "What's new": [
-        "Wat is er nieuw"
-      ],
-      "Invalid verification code": [
-        "De ingevoerde code is ongeldig"
-      ],
-      "Request new verification code": [
-        "Nieuwe verificatiecode aanvragen"
-      ],
-      "Human verification": [
-        "Persoonsverificatie"
-      ],
-      "Edit contact group": [
-        "Contactgroep bewerken"
-      ],
-      "Create new group": [
-        "Nieuwe groep maken"
-      ],
-      "Add to ${ groupName }": [
-        "Toevoegen aan ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Toevoegen aan ${ groupCount } groep",
-        "Toevoegen aan ${ groupCount } groepen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailinstellingen (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Verwijder ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } contactgroep verwijderen",
-        "${ count } contactgroepen verwijderen"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } lid",
-        "${ emailsCount } leden"
-      ],
-      "Edit image": [
-        "Afbeelding bewerken"
-      ],
-      "Edit contact": [
-        "Contactpersoon bewerken"
-      ],
-      "Create contact": [
-        "Contact aanmaken"
-      ],
-      "Delete ${ count } contact": [
-        "Verwijder ${ count } contact",
-        "${ count } contacten verwijderen"
-      ],
-      "Clearing data": [
-        "Gegevens aan het wissen"
-      ],
-      "Warning": [
-        "Waarschuwing"
-      ],
-      "Recover data": [
-        "Gegevens herstellen"
-      ],
-      "Re-signing contacts": [
-        "Contacten opnieuw ondertekenen"
-      ],
-      "Re-sign all contacts": [
-        "Alle contacten opnieuw ondertekenen"
-      ],
-      "Exporting contacts": [
-        "Contactpersonen exporteren"
-      ],
-      "Other names": [
-        "Andere namen"
-      ],
-      "Email addresses": [
-        "E-mailadressen"
-      ],
-      "Phone numbers": [
-        "Telefoonnummers"
-      ],
-      "Addresses": [
-        "Adressen"
-      ],
-      "Other information": [
-        "Overige informatie"
-      ],
-      "Contact Details": [
-        "Contactgegevens"
-      ],
-      "Merging contacts": [
-        "Contactpersonen samenvoegen"
-      ],
-      "Merge contacts": [
-        "Contacten samenvoegen"
-      ],
-      "Deleting contacts": [
-        "Contacten aan het verwijderen"
-      ],
-      "View contacts": [
-        "Contactpersonen weergeven"
-      ],
-      "Contacts": [
-        "Contacten"
-      ],
-      "Groups": [
-        "Groepen"
-      ],
-      "Settings": [
-        "Instellingen"
-      ],
-      "Select action to take on contact group": [
-        "Selecteer actie voor de contactgroep"
-      ],
-      "Add contact group name": [
-        "Naam toevoegen aan contactgroep"
-      ],
-      "Select contact group": [
-        "Contactgroep selecteren"
-      ],
-      "Import groups": [
-        "Importeer groepen"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
-      "Open help menu": [
-        "Open help-menu"
-      ],
-      "Back": [
-        "Vorige"
-      ],
-      "Open settings menu": [
-        "Open instellingen-menu"
-      ],
-      "Select a theme": [
-        "Kies een thema"
-      ],
-      "Confirm loss of Proton bonuses": [
-        ""
-      ],
-      "Unsupported browser": [
-        ""
-      ],
-      "Card verification": [
-        ""
-      ],
-      "Payment verification": [
-        ""
-      ],
-      "Processing...": [
-        ""
-      ],
-      "Card verification in progress": [
-        ""
-      ],
-      "Payment verification in progress": [
-        ""
-      ],
-      "PayPal verification failed": [
-        ""
-      ],
-      "3-D Secure verification failed": [
-        ""
-      ],
-      "Error": [
-        ""
-      ],
-      "ZIP / postal code": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Currency": [
-        ""
-      ],
-      "Billing cycle": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
-      "Processing": [
-        ""
-      ],
-      "Apply gift code": [
-        ""
-      ],
-      "Subtotal": [
-        ""
-      ],
-      "Coupon discount": [
-        ""
-      ],
-      "Total (monthly)": [
-        ""
-      ],
-      "Credits": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Amount due": [
-        ""
-      ],
-      "Cancel subscription": [
-        ""
-      ],
-      "Network error": [
-        ""
-      ],
-      "Select a plan": [
-        ""
-      ],
-      "Customize your plan": [
-        ""
-      ],
-      "Checkout": [
-        ""
-      ],
-      "Plan summary": [
-        ""
-      ],
-      "${ appName } customization": [
-        ""
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
-      ],
-      "Account suspended": [
-        "Account opgeschort"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Sneltoetsen"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
-      ],
-      "Composer mode": [
-        "Opstelmodus"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
-      "Duplicate folder found": [
-        ""
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "Sleep hier om te uploaden"
-      ],
-      "Change layout": [
-        "Lay-out veranderen"
-      ],
-      "Show actions": [
-        "Actie weergeven"
-      ],
-      "Sort files/folders": [
-        "Sorteer bestanden/mappen"
-      ],
-      "Trash": [
-        "Prullenbak"
-      ],
-      "Empty trash": [
-        "Prullenbak leegmaken"
-      ],
-      "Cancel all active transfers": [
-        "Annuleer alle actieve overschrijvingen"
-      ],
-      "My files": [
-        "Mijn bestanden"
-      ],
-      "You have no folders yet": [
-        "U hebt nog geen mappen"
-      ],
-      "You have no files to share": [
-        "U heeft geen bestanden om te delen"
-      ],
-      "Drive": [
-        "Drive"
-      ],
-      "Your file is ready to be downloaded": [
-        "Uw bestand is klaar om te worden gedownload"
-      ],
-      "Download completed": [
-        "Download compleet"
-      ],
-      "Download failed": [
-        "Downloaden mislukt"
-      ],
-      "Download canceled": [
-        "Download geannuleerd"
-      ],
-      "Downloading": [
-        "Downloaden"
-      ],
-      "Enter file password to download": [
-        "Voer bestandswachtwoord in om te downloaden"
-      ],
-      "The link either does not exist or has expired": [
-        "De link bestaat niet of is verlopen"
-      ],
-      "Restore your files": [
-        "Herstel uw bestanden"
-      ],
-      "File recovery process": [
-        "Herstelproces van bestanden"
-      ],
-      "You have inaccessible files": [
-        "U hebt ontoegankelijke bestanden"
-      ],
-      "Rename a folder": [
-        "Een map hernoemen"
-      ],
-      "Rename a file": [
-        "Hernoem een bestand"
-      ],
-      "File details": [
-        "Bestandsdetails"
-      ],
-      "Folder details": [
-        "Map details"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "Uploaded by": [
-        "Geüpload door"
-      ],
-      "Location": [
-        "Locatie"
-      ],
-      "Modified": [
-        "Gewijzigd"
-      ],
-      "Type": [
-        "Type"
-      ],
-      "MIME type": [
-        "MIME type"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Shared": [
-        "Gedeeld"
-      ],
-      "# of accesses": [
-        "Aantal weergaven"
-      ],
-      "Create a new folder": [
-        "Nieuwe map aanmaken"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Select link expiration date": [
-        "Selecteer vervaldatum link"
-      ],
-      "Select link expiration time": [
-        "Selecteer vervaltijd link"
-      ],
-      "Share via link": [
-        "Deel via link"
-      ],
-      "Additional settings": [
-        "Aanvullende instellingen"
-      ],
-      "Manage secure link": [
-        "Beveiligde link beheren"
-      ],
-      "Stop sharing with everyone?": [
-        "Stop het delen met iedereen?"
-      ],
-      "Discard changes?": [
-        "Wijzigingen annuleren?"
-      ],
-      "Discard": [
-        "Verwijderen"
-      ],
-      "Files details": [
-        "Bestandsdetails"
-      ],
-      "Number of files": [
-        "Aantal bestanden"
-      ],
-      "Total size": [
-        "Totale grootte"
-      ],
-      "Delete permanently": [
-        "Permanent verwijderen"
-      ],
-      "Stop sharing": [
-        "Delen stoppen"
-      ]
-    },
     "Label": {
       "Copy": [
         "Kopieer"
@@ -2026,6 +2026,12 @@
       "Display name": [
         "Weergavenaam"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Name on card": [
         ""
       ],
@@ -2072,12 +2078,6 @@
         ""
       ],
       "Payer": [
-        ""
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
         ""
       ],
       "Cancel": [
@@ -2167,6 +2167,9 @@
       "File": [
         "Bestand"
       ],
+      "Get your own ProtonDrive": [
+        ""
+      ],
       "Report abuse": [
         "Rapporteer misbruik"
       ],
@@ -2181,11 +2184,6 @@
       ],
       "Set expiration date": [
         "Vervaldatum instellen"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Placeholder": {
@@ -2263,6 +2261,11 @@
         "${ minutes } minuten"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Link": {
       "Learn more": [
         "Meer informatie"
@@ -2276,14 +2279,14 @@
       "Upgrade account": [
         "Account upgraden"
       ],
-      "clearing your browser cache": [
-        "uw browser cache wissen"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Go to subscription plans": [
         "Ga naar abonnementen"
+      ],
+      "clearing your browser cache": [
+        "uw browser cache wissen"
       ],
       "click here": [
         ""
@@ -2499,10 +2502,10 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+      "Are you sure you want to discard your import?": [
         ""
       ],
-      "Are you sure you want to discard your import?": [
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ]
     },
@@ -3019,6 +3022,45 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
+    "Text": {
+      "Settings": [
+        "Instellingen"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Aan"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Uit"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Gemaximaliseerd"
+      ],
+      "Normal": [
+        "Normaal"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
@@ -3122,45 +3164,6 @@
         "Schermafbeelding(en) toevoegen"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Instellingen"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Aan"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Dit is wat mensen zien wanneer u hen een e-mail stuurt, uitnodigt voor een afspraak, of een bestand deelt."
@@ -3191,6 +3194,27 @@
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
       ]
     },
     "Info for cash payment method": {
@@ -3640,43 +3664,9 @@
         ""
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "Uploaden"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
       ]
     },
     "Label to change density": {
@@ -3701,6 +3691,33 @@
       ],
       "Maximized": [
         "Gemaximaliseerd"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Contact field label": {
@@ -3815,20 +3832,6 @@
       ],
       "Address": [
         "Adres"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Validation": {

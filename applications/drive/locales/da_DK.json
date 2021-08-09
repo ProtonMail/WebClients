@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Ukendt fejl"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Godkendelsesfejl."
-      ],
-      "Unknown error": [
-        "Ukendt fejl"
       ],
       "Email address invalid": [
         "E-mailadresse ugyldig"
@@ -33,6 +33,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
+      "File has no contents to preview": [
+        "Fil har intet indhold at forhåndsvise"
+      ],
       "Can't validate email, try again later": [
         "Kan ikke bekræfte e-mail, prøv igen senere"
       ],
@@ -44,9 +47,6 @@
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
-      ],
-      "File has no contents to preview": [
-        "Fil har intet indhold at forhåndsvise"
       ],
       "Preferences could not be saved": [
         "Præferencer kunne ikke gemmes"
@@ -91,6 +91,12 @@
       ],
       "Invalid name": [
         "Ugyldigt navn"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
       ],
       "Process aborted": [
         "Proces afbrudt"
@@ -152,12 +158,6 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
       "Incorrect mailbox password. Please try again": [
         "Forkert adgangskode til postkasse. Prøv venligst igen"
       ],
@@ -201,6 +201,973 @@
         "Ingen gyldig adresse fundet"
       ]
     },
+    "Action": {
+      "Close": [
+        "Luk"
+      ],
+      "Confirm": [
+        "Bekræft"
+      ],
+      "Cancel": [
+        "Annullér"
+      ],
+      "Close modal": [
+        "Luk dialog"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Use “${ label }” setting": [
+        "Brug “${ label }” indstilling"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mere information: ${ safeTitle }"
+      ],
+      "Close navigation": [
+        "Luk navigation"
+      ],
+      "Open navigation": [
+        "Åbn navigation"
+      ],
+      "Go to panel ${ index }": [
+        "Gå til panel ${ index }"
+      ],
+      "Load image": [
+        "Indlæs billede"
+      ],
+      "Export": [
+        "Exportér"
+      ],
+      "Delete": [
+        "Slet"
+      ],
+      "Edit": [
+        "Redigér"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Download": [
+        "Hent"
+      ],
+      "Use for sending": [
+        "Brug til afsendelse"
+      ],
+      "Trust": [
+        "Gør betroet"
+      ],
+      "Untrust": [
+        "Ikke længere betroet"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Email settings": [
+        "E-mailindstillinger"
+      ],
+      "Contact group": [
+        "Kontaktgruppe"
+      ],
+      "Upload picture": [
+        "Overfør billede"
+      ],
+      "Next month": [
+        "Næste måned"
+      ],
+      "Previous month": [
+        "Forrige måned"
+      ],
+      "refresh the page": [
+        "opdater siden"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Bekræft åbning af link ${ link }"
+      ],
+      "Signing out": [
+        "Logger ud"
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Share via link": [
+        "Del via link"
+      ],
+      "Sharing options": [
+        "Indstillinger for deling"
+      ],
+      "Zoom out": [
+        "Zoom ud"
+      ],
+      "Reset zoom": [
+        "Nulstil zoom"
+      ],
+      "Zoom in": [
+        "Zoom ind"
+      ],
+      "Previous": [
+        "Foregående"
+      ],
+      "Next": [
+        "Næste"
+      ],
+      "View invoice": [
+        "Vis faktura"
+      ],
+      "Get verification code": [
+        "Få bekræftelseskode"
+      ],
+      "Try another method": [
+        "Prøv en anden metode"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
+      ],
+      "Verify": [
+        "Verificer"
+      ],
+      "Did not receive the code?": [
+        "Ikke modtaget koden?"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
+      ],
+      "Save": [
+        "Gem"
+      ],
+      "Add": [
+        "Tilføj"
+      ],
+      "Apply": [
+        "Anvend"
+      ],
+      "Hide advanced PGP settings": [
+        "Skjul avancerede PGP-indstillinger"
+      ],
+      "Show advanced PGP settings": [
+        "Vis avancerede PGP-indstillinger"
+      ],
+      "Done": [
+        "Færdig"
+      ],
+      "Clear data": [
+        "Ryd data"
+      ],
+      "Recover data": [
+        "Gendan data"
+      ],
+      "Click here.": [
+        "Klik her."
+      ],
+      "Re-sign": [
+        "Gensignér"
+      ],
+      "Add to group": [
+        "Føj til gruppe"
+      ],
+      "Merge": [
+        "Flet"
+      ],
+      "View": [
+        "Vis"
+      ],
+      "Unmark for deletion": [
+        "Afmarkér fra sletning"
+      ],
+      "Mark for deletion": [
+        "Markér til sletning"
+      ],
+      "Preview contact": [
+        "Forhåndsvis kontakt"
+      ],
+      "Continue": [
+        "Fortsæt"
+      ],
+      "Delete contact": [
+        "Slet kontakt"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Slet ${ selectedCount } kontakt",
+        "Slet ${ selectedCount } kontakter"
+      ],
+      "Deselect all": [
+        "Fravælg alle"
+      ],
+      "Select all": [
+        "Vælg alle"
+      ],
+      "Compose": [
+        "Skriv"
+      ],
+      "Forward as attachment": [
+        "Videresend som vedhæftning"
+      ],
+      "Merge contacts": [
+        "Flet kontakter"
+      ],
+      "Add new contact": [
+        "Tilføj ny kontakt"
+      ],
+      "Add group": [
+        "Tilføj gruppe"
+      ],
+      "Clear query": [
+        "Ryd forespørgsel"
+      ],
+      "Add contact": [
+        "Tilføj kontakt"
+      ],
+      "import": [
+        "importér"
+      ],
+      "Delete contact group": [
+        "Slet kontaktgruppe"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Slet ${ selectedCount } kontaktgruppe",
+        "Slet ${ selectedCount } kontaktgrupper"
+      ],
+      "Add new group": [
+        "Tilføj ny gruppe"
+      ],
+      "Export contacts": [
+        "Eksportér kontakter"
+      ],
+      "Continue with Google": [
+        "Fortsæt med Google"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Choose a file or drag it here": [
+        "Vælg en fil eller træk den hertil"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Close this banner": [
+        "Luk denne banner"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
+      ],
+      "enable desktop notifications": [
+        "aktivér skrivebordsmeddelelser"
+      ],
+      "here": [
+        "her"
+      ],
+      "Copy email to clipboard": [
+        "Kopiér e-mail til upklipsholder"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } introduktion"
+      ],
+      "I have a question": [
+        "Jeg har et spørgsmål"
+      ],
+      "Request a feature": [
+        "Anmod om funktion"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } butik"
+      ],
+      "Switch account": [
+        "Skift konto"
+      ],
+      "Sign out": [
+        "Log ud"
+      ],
+      "Go to settings": [
+        "Gå til indstillinger"
+      ],
+      "Beta Access": [
+        "Beta-adgang"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "Mailbox layout": [
+        "Postkasse layout"
+      ],
+      "Mailbox density": [
+        "Postkasse tæthed"
+      ],
+      "Composer mode": [
+        "Skrivetilstand"
+      ],
+      "Clear": [
+        "Ryd"
+      ],
+      "Add screenshot(s)": [
+        "Tilføj screenshot(s)"
+      ],
+      "Hide info": [
+        "Skjul info"
+      ],
+      "Show info": [
+        "Vis info"
+      ],
+      "Get started": [
+        "Kom godt i gang"
+      ],
+      "Start setup": [
+        "Start opsætning"
+      ],
+      "Skip": [
+        "Spring over"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Use ${ label } theme": [
+        "Brug temaet “${ label }”"
+      ],
+      "OK": [
+        "Ok"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Remove bonuses": [
+        "Fjern bonusser"
+      ],
+      "Try again": [
+        "Forsøg igen"
+      ],
+      "Use a different card": [
+        "Benyt et andet kort"
+      ],
+      "Use a different payment method": [
+        "Benyt en anden betalingsmetode"
+      ],
+      "Retry": [
+        "Prøv igen"
+      ],
+      "Loading verification": [
+        "Indlæser verifikation"
+      ],
+      "Select plan": [
+        "Vælg abonnement"
+      ],
+      "Compare all features": [
+        "Sammenlign alle features"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } ved at skifte til årlig fakturering"
+      ],
+      "Pay": [
+        "Betal"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Åbn ${ CALENDAR_APP_NAME } indstillinger"
+      ],
+      "Remove gift code": [
+        "Fjern gavekode"
+      ],
+      "annual billing": [
+        "årlig fakturering"
+      ],
+      "Compare plans": [
+        "Sammenlign abonnementer"
+      ],
+      "Decrease": [
+        "Formindsk"
+      ],
+      "Increase": [
+        "Forøg"
+      ],
+      "Log in": [
+        "Log ind"
+      ],
+      "Cancel all uploads": [
+        "Annullér alle uploads"
+      ],
+      "New upload": [
+        "Nyt upload"
+      ],
+      "Delete permanently": [
+        "Slet permanent"
+      ],
+      "Restore from trash": [
+        "Gendan fra papirkurven"
+      ],
+      "Empty trash": [
+        "Tøm Papirkurv"
+      ],
+      "Rename": [
+        "Omdøb"
+      ],
+      "Move to folder": [
+        "Flyt til mappe"
+      ],
+      "Move to trash": [
+        "Flyt til papirkurv"
+      ],
+      "Create new folder": [
+        "Opret ny mappe"
+      ],
+      "Name: A to Z": [
+        "Navn: A til Å"
+      ],
+      "Name: Z to A": [
+        "Navn: Å til A"
+      ],
+      "Modified date: new to old": [
+        "Ændret dato: ny til gammel"
+      ],
+      "Modified date: old to new": [
+        "Ændret dato: gammel til ny"
+      ],
+      "Type: A to Z": [
+        "Type: A til Å"
+      ],
+      "Type: Z to A": [
+        "Type: Å til A"
+      ],
+      "Size: small to large": [
+        "Størrelse: Lille til stor"
+      ],
+      "Size: large to small": [
+        "Størrelse: Stor til lille"
+      ],
+      "Upload file": [
+        "Upload fil"
+      ],
+      "Upload folder": [
+        "Upload mappe"
+      ],
+      "Maximize transfers": [
+        "Maksimér overførsler"
+      ],
+      "Minimize transfers": [
+        "Minimer overførsler"
+      ],
+      "Close transfers": [
+        "Luk overførsel"
+      ],
+      "Pause download": [
+        "Sæt download på pause"
+      ],
+      "Pause upload": [
+        "Sæt upload på pause"
+      ],
+      "Resume download": [
+        "Genoptag download"
+      ],
+      "Resume upload": [
+        "Genoptag overførsel"
+      ],
+      "Cancel download": [
+        "Annullér download"
+      ],
+      "Cancel upload": [
+        "Annullér overførsel"
+      ],
+      "Restart download": [
+        "Genstart download"
+      ],
+      "Restart upload": [
+        "Genstart overførsel"
+      ],
+      "Remove from this list": [
+        "Fjern fra denne liste"
+      ],
+      "Create": [
+        "Opret"
+      ],
+      "List layout": [
+        "Liste-layout"
+      ],
+      "Grid layout": [
+        "Gitter-layout"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
+      "Stop sharing": [
+        "Stop deling"
+      ],
+      "Share": [
+        "Del"
+      ],
+      "Show shared link details": [
+        "Vis detaljer om delt link"
+      ],
+      "Share file": [
+        "Del fil"
+      ],
+      "Start recovering": [
+        "Start gendannelse"
+      ],
+      "View more": [
+        "Vis mere"
+      ],
+      "Move": [
+        "Flyt"
+      ],
+      "Copy link": [
+        "Kopiér link"
+      ],
+      "Create link": [
+        "Opret link"
+      ],
+      "Undo": [
+        "Fortryd"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "Åbn handlingsrullemenu"
+      ],
+      "Upgrade required": [
+        "Opgradering påkrævet"
+      ],
+      "Email settings": [
+        "E-mailindstillinger"
+      ],
+      "Contact group": [
+        "Kontaktgruppe"
+      ],
+      "Link confirmation": [
+        "Linkbekræftelse"
+      ],
+      "Keyboard Shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "What's new": [
+        "Nyheder"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Request new verification code": [
+        "Anmod om ny bekræftelseskode"
+      ],
+      "Human verification": [
+        "Menneskelig bekræftelse"
+      ],
+      "Edit contact group": [
+        "Redigér kontaktgruppe"
+      ],
+      "Create new group": [
+        "Opret ny gruppe"
+      ],
+      "Add to ${ groupName }": [
+        "Føj til ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "Føj til ${ groupCount } gruppe",
+        "Føj til ${ groupCount } grupper"
+      ],
+      "Email settings (${ emailAddress })": [
+        "E-mailindstillinger (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "Slet ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "Slet ${ count } kontaktgruppe",
+        "Slet ${ count } kontaktgrupper"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } medlem",
+        "${ emailsCount } medlemmer"
+      ],
+      "Edit image": [
+        "Redigér billede"
+      ],
+      "Edit contact": [
+        "Redigér kontakt"
+      ],
+      "Create contact": [
+        "Opret kontakt"
+      ],
+      "Delete ${ count } contact": [
+        "Slet ${ count } kontakt",
+        "Slet ${ count } kontakter"
+      ],
+      "Clearing data": [
+        "Rydder data"
+      ],
+      "Warning": [
+        "Advarsel"
+      ],
+      "Recover data": [
+        "Gendan data"
+      ],
+      "Re-signing contacts": [
+        "Gensignering af kontakter"
+      ],
+      "Re-sign all contacts": [
+        "Gensignér alle kontakter"
+      ],
+      "Exporting contacts": [
+        "Eksporterer kontakter"
+      ],
+      "Other names": [
+        "Andre navne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
+      "Phone numbers": [
+        "Telefonnumre"
+      ],
+      "Addresses": [
+        "Adresser"
+      ],
+      "Other information": [
+        "Anden information"
+      ],
+      "Contact Details": [
+        "Kontaktoplysninger"
+      ],
+      "Merging contacts": [
+        "Fletter kontakter"
+      ],
+      "Merge contacts": [
+        "Flet kontakter"
+      ],
+      "Deleting contacts": [
+        "Sletter kontakter"
+      ],
+      "View contacts": [
+        "Vis kontakter"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Groups": [
+        "Grupper"
+      ],
+      "Settings": [
+        "Indstillinger"
+      ],
+      "Select action to take on contact group": [
+        "Vælg handling for kontaktgruppe"
+      ],
+      "Add contact group name": [
+        "Tilføj kontaktgruppenavn"
+      ],
+      "Select contact group": [
+        "Vælg kontaktgruppe"
+      ],
+      "Import groups": [
+        "Importer grupper"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Open help menu": [
+        "Åbn hjælpemenu"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Open settings menu": [
+        "Åbn indstillingsmenu"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
+      "Select a theme": [
+        "Vælg et tema"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Bekræft tab af Proton-bonusser"
+      ],
+      "Unsupported browser": [
+        "Browser understøttes ikke"
+      ],
+      "Card verification": [
+        "Kortbekræftelse"
+      ],
+      "Payment verification": [
+        "Betalingsbekræftelse"
+      ],
+      "Processing...": [
+        "Behandler..."
+      ],
+      "Card verification in progress": [
+        "Kortbekræftelse i gang"
+      ],
+      "Payment verification in progress": [
+        "Betalingsbekræftelse i gang"
+      ],
+      "PayPal verification failed": [
+        "PayPal-bekræftelse fejlede"
+      ],
+      "3-D Secure verification failed": [
+        "3-D Secure-bekræftelse mislykkedes"
+      ],
+      "Error": [
+        "Fejl"
+      ],
+      "ZIP / postal code": [
+        "Postnummer"
+      ],
+      "Payment details": [
+        "Betalingsdetaljer"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Billing cycle": [
+        "Faktureringsperiode"
+      ],
+      "Current plan": [
+        "Nuværende abonnement"
+      ],
+      "Processing": [
+        "Behandler"
+      ],
+      "Apply gift code": [
+        "Tilføj gavekode"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Coupon discount": [
+        "Rabatkupon"
+      ],
+      "Total (monthly)": [
+        "Total (månedlig)"
+      ],
+      "Credits": [
+        "Kreditter"
+      ],
+      "Gift code": [
+        "Gavekode"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Cancel subscription": [
+        "Afmeld abonnement"
+      ],
+      "Network error": [
+        "Netværksfejl"
+      ],
+      "Select a plan": [
+        "Vælg et abonnement"
+      ],
+      "Customize your plan": [
+        "Tilpas dit abonnement"
+      ],
+      "Checkout": [
+        "Til kassen"
+      ],
+      "Plan summary": [
+        "Abonnementoversigt"
+      ],
+      "${ appName } customization": [
+        "${ appName } tilpasning"
+      ],
+      "Sign in again to continue": [
+        "Log ind igen for at fortsætte"
+      ],
+      "Account suspended": [
+        "Konto suspenderet"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Tastaturgenveje"
+      ],
+      "Mailbox density": [
+        "Postkasse tæthed"
+      ],
+      "Mailbox layout": [
+        "Postkasse layout"
+      ],
+      "Composer mode": [
+        "Skrivetilstand"
+      ],
+      "Beta Access": [
+        "Beta-adgang"
+      ],
+      "Duplicate folder found": [
+        "Dublet af mappe fundet"
+      ],
+      "Duplicate file found": [
+        "Dublet af fil fundet"
+      ],
+      "Drop to upload": [
+        "Slip for at uploade"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "Empty trash": [
+        "Tøm Papirkurv"
+      ],
+      "Show actions": [
+        "Vis handlinger"
+      ],
+      "Sort files/folders": [
+        "Sorter filer/mapper"
+      ],
+      "Cancel all active transfers": [
+        "Annuller alle aktive overførsler"
+      ],
+      "My files": [
+        "Mine filer"
+      ],
+      "You have no folders yet": [
+        "Du har ingen mapper endnu"
+      ],
+      "You have no files to share": [
+        "Du har ingen filer at dele"
+      ],
+      "Change layout": [
+        "Skift layout"
+      ],
+      "Your file is ready to be downloaded": [
+        "Din fil er klar til download"
+      ],
+      "Download completed": [
+        "Download fuldført"
+      ],
+      "Download failed": [
+        "Download mislykkedes"
+      ],
+      "Download canceled": [
+        "Download annulleret"
+      ],
+      "Downloading": [
+        "Downloader"
+      ],
+      "Enter file password to download": [
+        "Indtast adgangskode for at downloade"
+      ],
+      "The link either does not exist or has expired": [
+        "Linket findes enten ikke eller er udløbet"
+      ],
+      "Drive": [
+        "Drev"
+      ],
+      "Restore your files": [
+        "Gendan dine filer"
+      ],
+      "File recovery process": [
+        "Filgendannelse fremskridt"
+      ],
+      "You have inaccessible files": [
+        "Du har utilgængelige filer"
+      ],
+      "Rename a folder": [
+        "Omdøb en mappe"
+      ],
+      "Rename a file": [
+        "Omdøb en fil"
+      ],
+      "File details": [
+        "Fildetaljer"
+      ],
+      "Folder details": [
+        "Mappedetaljer"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Uploaded by": [
+        "Uploadet af"
+      ],
+      "Location": [
+        "Placering"
+      ],
+      "Modified": [
+        "Ændret"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "MIME type": [
+        "MIME-type"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Shared": [
+        "Delt"
+      ],
+      "# of accesses": [
+        "# af adgange"
+      ],
+      "Create a new folder": [
+        "Opret en ny mappe"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Select link expiration date": [
+        "Vælg link-udløbsdato"
+      ],
+      "Select link expiration time": [
+        "Vælg link-udløbstid"
+      ],
+      "Share via link": [
+        "Del via link"
+      ],
+      "Additional settings": [
+        "Yderligere indstillinger"
+      ],
+      "Manage secure link": [
+        "Administrer sikkert link"
+      ],
+      "Stop sharing with everyone?": [
+        "Stop deling med alle?"
+      ],
+      "Discard changes?": [
+        "Kassér ændringer?"
+      ],
+      "Discard": [
+        "Kassér"
+      ],
+      "Files details": [
+        "Filens detaljer"
+      ],
+      "Number of files": [
+        "Antal filer"
+      ],
+      "Total size": [
+        "Samlet størrelse"
+      ],
+      "Delete permanently": [
+        "Slet permanent"
+      ],
+      "Stop sharing": [
+        "Stop deling"
+      ]
+    },
     "Info": {
       "Loading": [
         "Indlæser"
@@ -213,6 +1180,9 @@
       ],
       "Week": [
         "Uge"
+      ],
+      "support team": [
+        "supportteam"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Er du sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
@@ -229,11 +1199,26 @@
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
       ],
-      "support team": [
-        "supportteam"
-      ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Unsupported file": [
+        "Ikke-understøttet fil"
+      ],
+      "No preview available": [
+        "Ingen forhåndsvisning tilgængelig"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
+      "Loading preview": [
+        "Indlæser forhåndsvisning"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "of": [
+        "af"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
@@ -264,24 +1249,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "Unsupported file": [
-        "Ikke-understøttet fil"
-      ],
-      "No preview available": [
-        "Ingen forhåndsvisning tilgængelig"
-      ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
-      "Loading preview": [
-        "Indlæser forhåndsvisning"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
-      ],
-      "of": [
-        "af"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
@@ -441,6 +1408,30 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
@@ -589,8 +1580,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Faktureres ved udløbet af din aktuelle faktureringscyklus (fornys den ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Du skal fjerne eventuelle ekstra kalendere og delte kalenderlinks, før du kan annullere dit abonnement. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
       ],
       "No payment is required at this time.": [
         "Der kræves ingen betaling på nuværende tidspunkt."
@@ -679,30 +1670,6 @@
       ],
       "Expired": [
         "Udløbet"
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
       ],
       "here": [
         "her"
@@ -950,973 +1917,6 @@
         "Mine Links"
       ]
     },
-    "Action": {
-      "Close": [
-        "Luk"
-      ],
-      "Confirm": [
-        "Bekræft"
-      ],
-      "Cancel": [
-        "Annullér"
-      ],
-      "Close modal": [
-        "Luk dialog"
-      ],
-      "Submit": [
-        "Indsend"
-      ],
-      "Use “${ label }” setting": [
-        "Brug “${ label }” indstilling"
-      ],
-      "More info: ${ safeTitle }": [
-        "Mere information: ${ safeTitle }"
-      ],
-      "Close navigation": [
-        "Luk navigation"
-      ],
-      "Open navigation": [
-        "Åbn navigation"
-      ],
-      "Go to panel ${ index }": [
-        "Gå til panel ${ index }"
-      ],
-      "Load image": [
-        "Indlæs billede"
-      ],
-      "Export": [
-        "Exportér"
-      ],
-      "Delete": [
-        "Slet"
-      ],
-      "Edit": [
-        "Redigér"
-      ],
-      "Remove": [
-        "Fjern"
-      ],
-      "Download": [
-        "Hent"
-      ],
-      "Use for sending": [
-        "Brug til afsendelse"
-      ],
-      "Trust": [
-        "Gør betroet"
-      ],
-      "Untrust": [
-        "Ikke længere betroet"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Email settings": [
-        "E-mailindstillinger"
-      ],
-      "Contact group": [
-        "Kontaktgruppe"
-      ],
-      "Upload picture": [
-        "Overfør billede"
-      ],
-      "Next month": [
-        "Næste måned"
-      ],
-      "Previous month": [
-        "Forrige måned"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
-      ],
-      "refresh the page": [
-        "opdater siden"
-      ],
-      "Signing out": [
-        "Logger ud"
-      ],
-      "View invoice": [
-        "Vis faktura"
-      ],
-      "Get verification code": [
-        "Få bekræftelseskode"
-      ],
-      "Try another method": [
-        "Prøv en anden metode"
-      ],
-      "Request new code": [
-        "Anmod om ny kode"
-      ],
-      "Verify": [
-        "Verificer"
-      ],
-      "Did not receive the code?": [
-        "Ikke modtaget koden?"
-      ],
-      "Edit email address": [
-        "Rediger e-mailadresse"
-      ],
-      "Edit phone number": [
-        "Rediger telefonnummer"
-      ],
-      "Details": [
-        "Detaljer"
-      ],
-      "Share via link": [
-        "Del via link"
-      ],
-      "Sharing options": [
-        "Indstillinger for deling"
-      ],
-      "Zoom out": [
-        "Zoom ud"
-      ],
-      "Reset zoom": [
-        "Nulstil zoom"
-      ],
-      "Zoom in": [
-        "Zoom ind"
-      ],
-      "Previous": [
-        "Foregående"
-      ],
-      "Next": [
-        "Næste"
-      ],
-      "Save": [
-        "Gem"
-      ],
-      "Add": [
-        "Tilføj"
-      ],
-      "Apply": [
-        "Anvend"
-      ],
-      "Hide advanced PGP settings": [
-        "Skjul avancerede PGP-indstillinger"
-      ],
-      "Show advanced PGP settings": [
-        "Vis avancerede PGP-indstillinger"
-      ],
-      "Done": [
-        "Færdig"
-      ],
-      "Clear data": [
-        "Ryd data"
-      ],
-      "Recover data": [
-        "Gendan data"
-      ],
-      "Click here.": [
-        "Klik her."
-      ],
-      "Re-sign": [
-        "Gensignér"
-      ],
-      "Add to group": [
-        "Føj til gruppe"
-      ],
-      "Merge": [
-        "Flet"
-      ],
-      "View": [
-        "Vis"
-      ],
-      "Unmark for deletion": [
-        "Afmarkér fra sletning"
-      ],
-      "Mark for deletion": [
-        "Markér til sletning"
-      ],
-      "Preview contact": [
-        "Forhåndsvis kontakt"
-      ],
-      "Continue": [
-        "Fortsæt"
-      ],
-      "Delete contact": [
-        "Slet kontakt"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Slet ${ selectedCount } kontakt",
-        "Slet ${ selectedCount } kontakter"
-      ],
-      "Deselect all": [
-        "Fravælg alle"
-      ],
-      "Select all": [
-        "Vælg alle"
-      ],
-      "Compose": [
-        "Skriv"
-      ],
-      "Forward as attachment": [
-        "Videresend som vedhæftning"
-      ],
-      "Merge contacts": [
-        "Flet kontakter"
-      ],
-      "Add new contact": [
-        "Tilføj ny kontakt"
-      ],
-      "Add group": [
-        "Tilføj gruppe"
-      ],
-      "Clear query": [
-        "Ryd forespørgsel"
-      ],
-      "Add contact": [
-        "Tilføj kontakt"
-      ],
-      "import": [
-        "importér"
-      ],
-      "Delete contact group": [
-        "Slet kontaktgruppe"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Slet ${ selectedCount } kontaktgruppe",
-        "Slet ${ selectedCount } kontaktgrupper"
-      ],
-      "Add new group": [
-        "Tilføj ny gruppe"
-      ],
-      "Export contacts": [
-        "Eksportér kontakter"
-      ],
-      "Continue with Google": [
-        "Fortsæt med Google"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Choose a file or drag it here": [
-        "Vælg en fil eller træk den hertil"
-      ],
-      "Import": [
-        "Import"
-      ],
-      "Close this banner": [
-        "Luk denne banner"
-      ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
-      "enable desktop notifications": [
-        "aktivér skrivebordsmeddelelser"
-      ],
-      "here": [
-        "her"
-      ],
-      "Clear": [
-        "Ryd"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
-      "Hide info": [
-        "Skjul info"
-      ],
-      "Show info": [
-        "Vis info"
-      ],
-      "Copy email to clipboard": [
-        "Kopiér e-mail til upklipsholder"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
-      ],
-      "Request a feature": [
-        "Anmod om funktion"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } butik"
-      ],
-      "Switch account": [
-        "Skift konto"
-      ],
-      "Sign out": [
-        "Log ud"
-      ],
-      "Go to settings": [
-        "Gå til indstillinger"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "Mailbox layout": [
-        "Postkasse layout"
-      ],
-      "Mailbox density": [
-        "Postkasse tæthed"
-      ],
-      "Composer mode": [
-        "Skrivetilstand"
-      ],
-      "Get started": [
-        "Kom godt i gang"
-      ],
-      "Start setup": [
-        "Start opsætning"
-      ],
-      "Skip": [
-        "Spring over"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Use ${ label } theme": [
-        "Brug temaet “${ label }”"
-      ],
-      "OK": [
-        "Ok"
-      ],
-      "Remove bonuses": [
-        "Fjern bonusser"
-      ],
-      "Try again": [
-        "Forsøg igen"
-      ],
-      "Use a different card": [
-        "Benyt et andet kort"
-      ],
-      "Use a different payment method": [
-        "Benyt en anden betalingsmetode"
-      ],
-      "Retry": [
-        "Prøv igen"
-      ],
-      "Loading verification": [
-        "Indlæser verifikation"
-      ],
-      "Select plan": [
-        "Vælg abonnement"
-      ],
-      "Compare all features": [
-        "Sammenlign alle features"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } ved at skifte til årlig fakturering"
-      ],
-      "Pay": [
-        "Betal"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Åbn ${ CALENDAR_APP_NAME } indstillinger"
-      ],
-      "Remove gift code": [
-        "Fjern gavekode"
-      ],
-      "annual billing": [
-        "årlig fakturering"
-      ],
-      "Compare plans": [
-        "Sammenlign abonnementer"
-      ],
-      "Decrease": [
-        "Formindsk"
-      ],
-      "Increase": [
-        "Forøg"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "Log ind"
-      ],
-      "Cancel all uploads": [
-        "Annullér alle uploads"
-      ],
-      "New upload": [
-        "Nyt upload"
-      ],
-      "List layout": [
-        "Liste-layout"
-      ],
-      "Grid layout": [
-        "Gitter-layout"
-      ],
-      "Rename": [
-        "Omdøb"
-      ],
-      "Move to folder": [
-        "Flyt til mappe"
-      ],
-      "Move to trash": [
-        "Flyt til papirkurv"
-      ],
-      "Create new folder": [
-        "Opret ny mappe"
-      ],
-      "Name: A to Z": [
-        "Navn: A til Å"
-      ],
-      "Name: Z to A": [
-        "Navn: Å til A"
-      ],
-      "Modified date: new to old": [
-        "Ændret dato: ny til gammel"
-      ],
-      "Modified date: old to new": [
-        "Ændret dato: gammel til ny"
-      ],
-      "Type: A to Z": [
-        "Type: A til Å"
-      ],
-      "Type: Z to A": [
-        "Type: Å til A"
-      ],
-      "Size: small to large": [
-        "Størrelse: Lille til stor"
-      ],
-      "Size: large to small": [
-        "Størrelse: Stor til lille"
-      ],
-      "Upload file": [
-        "Upload fil"
-      ],
-      "Upload folder": [
-        "Upload mappe"
-      ],
-      "Delete permanently": [
-        "Slet permanent"
-      ],
-      "Restore from trash": [
-        "Gendan fra papirkurven"
-      ],
-      "Empty trash": [
-        "Tøm Papirkurv"
-      ],
-      "Maximize transfers": [
-        "Maksimér overførsler"
-      ],
-      "Minimize transfers": [
-        "Minimer overførsler"
-      ],
-      "Close transfers": [
-        "Luk overførsel"
-      ],
-      "Pause download": [
-        "Sæt download på pause"
-      ],
-      "Pause upload": [
-        "Sæt upload på pause"
-      ],
-      "Resume download": [
-        "Genoptag download"
-      ],
-      "Resume upload": [
-        "Genoptag overførsel"
-      ],
-      "Cancel download": [
-        "Annullér download"
-      ],
-      "Cancel upload": [
-        "Annullér overførsel"
-      ],
-      "Restart download": [
-        "Genstart download"
-      ],
-      "Restart upload": [
-        "Genstart overførsel"
-      ],
-      "Remove from this list": [
-        "Fjern fra denne liste"
-      ],
-      "Share": [
-        "Del"
-      ],
-      "Create": [
-        "Opret"
-      ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
-      "Stop sharing": [
-        "Stop deling"
-      ],
-      "Show shared link details": [
-        "Vis detaljer om delt link"
-      ],
-      "Share file": [
-        "Del fil"
-      ],
-      "Start recovering": [
-        "Start gendannelse"
-      ],
-      "View more": [
-        "Vis mere"
-      ],
-      "Move": [
-        "Flyt"
-      ],
-      "Copy link": [
-        "Kopiér link"
-      ],
-      "Create link": [
-        "Opret link"
-      ],
-      "Undo": [
-        "Fortryd"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
-      ],
-      "Upgrade required": [
-        "Opgradering påkrævet"
-      ],
-      "Email settings": [
-        "E-mailindstillinger"
-      ],
-      "Contact group": [
-        "Kontaktgruppe"
-      ],
-      "Link confirmation": [
-        "Linkbekræftelse"
-      ],
-      "Keyboard Shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "What's new": [
-        "Nyheder"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
-      "Request new verification code": [
-        "Anmod om ny bekræftelseskode"
-      ],
-      "Human verification": [
-        "Menneskelig bekræftelse"
-      ],
-      "Edit contact group": [
-        "Redigér kontaktgruppe"
-      ],
-      "Create new group": [
-        "Opret ny gruppe"
-      ],
-      "Add to ${ groupName }": [
-        "Føj til ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Føj til ${ groupCount } gruppe",
-        "Føj til ${ groupCount } grupper"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailindstillinger (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Slet ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Slet ${ count } kontaktgruppe",
-        "Slet ${ count } kontaktgrupper"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } medlem",
-        "${ emailsCount } medlemmer"
-      ],
-      "Edit image": [
-        "Redigér billede"
-      ],
-      "Edit contact": [
-        "Redigér kontakt"
-      ],
-      "Create contact": [
-        "Opret kontakt"
-      ],
-      "Delete ${ count } contact": [
-        "Slet ${ count } kontakt",
-        "Slet ${ count } kontakter"
-      ],
-      "Clearing data": [
-        "Rydder data"
-      ],
-      "Warning": [
-        "Advarsel"
-      ],
-      "Recover data": [
-        "Gendan data"
-      ],
-      "Re-signing contacts": [
-        "Gensignering af kontakter"
-      ],
-      "Re-sign all contacts": [
-        "Gensignér alle kontakter"
-      ],
-      "Exporting contacts": [
-        "Eksporterer kontakter"
-      ],
-      "Other names": [
-        "Andre navne"
-      ],
-      "Email addresses": [
-        "E-mailadresser"
-      ],
-      "Phone numbers": [
-        "Telefonnumre"
-      ],
-      "Addresses": [
-        "Adresser"
-      ],
-      "Other information": [
-        "Anden information"
-      ],
-      "Contact Details": [
-        "Kontaktoplysninger"
-      ],
-      "Merging contacts": [
-        "Fletter kontakter"
-      ],
-      "Merge contacts": [
-        "Flet kontakter"
-      ],
-      "Deleting contacts": [
-        "Sletter kontakter"
-      ],
-      "View contacts": [
-        "Vis kontakter"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Groups": [
-        "Grupper"
-      ],
-      "Settings": [
-        "Indstillinger"
-      ],
-      "Select action to take on contact group": [
-        "Vælg handling for kontaktgruppe"
-      ],
-      "Add contact group name": [
-        "Tilføj kontaktgruppenavn"
-      ],
-      "Select contact group": [
-        "Vælg kontaktgruppe"
-      ],
-      "Import groups": [
-        "Importer grupper"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
-      ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Open settings menu": [
-        "Åbn indstillingsmenu"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Bekræft tab af Proton-bonusser"
-      ],
-      "Unsupported browser": [
-        "Browser understøttes ikke"
-      ],
-      "Card verification": [
-        "Kortbekræftelse"
-      ],
-      "Payment verification": [
-        "Betalingsbekræftelse"
-      ],
-      "Processing...": [
-        "Behandler..."
-      ],
-      "Card verification in progress": [
-        "Kortbekræftelse i gang"
-      ],
-      "Payment verification in progress": [
-        "Betalingsbekræftelse i gang"
-      ],
-      "PayPal verification failed": [
-        "PayPal-bekræftelse fejlede"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure-bekræftelse mislykkedes"
-      ],
-      "Error": [
-        "Fejl"
-      ],
-      "ZIP / postal code": [
-        "Postnummer"
-      ],
-      "Payment details": [
-        "Betalingsdetaljer"
-      ],
-      "Currency": [
-        "Valuta"
-      ],
-      "Billing cycle": [
-        "Faktureringsperiode"
-      ],
-      "Current plan": [
-        "Nuværende abonnement"
-      ],
-      "Processing": [
-        "Behandler"
-      ],
-      "Apply gift code": [
-        "Tilføj gavekode"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Coupon discount": [
-        "Rabatkupon"
-      ],
-      "Total (monthly)": [
-        "Total (månedlig)"
-      ],
-      "Credits": [
-        "Kreditter"
-      ],
-      "Gift code": [
-        "Gavekode"
-      ],
-      "Amount due": [
-        "Forfaldent beløb"
-      ],
-      "Cancel subscription": [
-        "Afmeld abonnement"
-      ],
-      "Network error": [
-        "Netværksfejl"
-      ],
-      "Select a plan": [
-        "Vælg et abonnement"
-      ],
-      "Customize your plan": [
-        "Tilpas dit abonnement"
-      ],
-      "Checkout": [
-        "Til kassen"
-      ],
-      "Plan summary": [
-        "Abonnementoversigt"
-      ],
-      "${ appName } customization": [
-        "${ appName } tilpasning"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "Log ind igen for at fortsætte"
-      ],
-      "Account suspended": [
-        "Konto suspenderet"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
-      ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tastaturgenveje"
-      ],
-      "Mailbox density": [
-        "Postkasse tæthed"
-      ],
-      "Mailbox layout": [
-        "Postkasse layout"
-      ],
-      "Composer mode": [
-        "Skrivetilstand"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
-      "Duplicate folder found": [
-        "Dublet af mappe fundet"
-      ],
-      "Duplicate file found": [
-        "Dublet af fil fundet"
-      ],
-      "Drop to upload": [
-        "Slip for at uploade"
-      ],
-      "Change layout": [
-        "Skift layout"
-      ],
-      "Show actions": [
-        "Vis handlinger"
-      ],
-      "Sort files/folders": [
-        "Sorter filer/mapper"
-      ],
-      "Trash": [
-        "Papirkurv"
-      ],
-      "Empty trash": [
-        "Tøm Papirkurv"
-      ],
-      "Cancel all active transfers": [
-        "Annuller alle aktive overførsler"
-      ],
-      "My files": [
-        "Mine filer"
-      ],
-      "You have no folders yet": [
-        "Du har ingen mapper endnu"
-      ],
-      "You have no files to share": [
-        "Du har ingen filer at dele"
-      ],
-      "Drive": [
-        "Drev"
-      ],
-      "Your file is ready to be downloaded": [
-        "Din fil er klar til download"
-      ],
-      "Download completed": [
-        "Download fuldført"
-      ],
-      "Download failed": [
-        "Download mislykkedes"
-      ],
-      "Download canceled": [
-        "Download annulleret"
-      ],
-      "Downloading": [
-        "Downloader"
-      ],
-      "Enter file password to download": [
-        "Indtast adgangskode for at downloade"
-      ],
-      "The link either does not exist or has expired": [
-        "Linket findes enten ikke eller er udløbet"
-      ],
-      "Restore your files": [
-        "Gendan dine filer"
-      ],
-      "File recovery process": [
-        "Filgendannelse fremskridt"
-      ],
-      "You have inaccessible files": [
-        "Du har utilgængelige filer"
-      ],
-      "Rename a folder": [
-        "Omdøb en mappe"
-      ],
-      "Rename a file": [
-        "Omdøb en fil"
-      ],
-      "File details": [
-        "Fildetaljer"
-      ],
-      "Folder details": [
-        "Mappedetaljer"
-      ],
-      "Name": [
-        "Navn"
-      ],
-      "Uploaded by": [
-        "Uploadet af"
-      ],
-      "Location": [
-        "Placering"
-      ],
-      "Modified": [
-        "Ændret"
-      ],
-      "Type": [
-        "Type"
-      ],
-      "MIME type": [
-        "MIME-type"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Shared": [
-        "Delt"
-      ],
-      "# of accesses": [
-        "# af adgange"
-      ],
-      "Create a new folder": [
-        "Opret en ny mappe"
-      ],
-      "Date": [
-        "Dato"
-      ],
-      "Select link expiration date": [
-        "Vælg link-udløbsdato"
-      ],
-      "Select link expiration time": [
-        "Vælg link-udløbstid"
-      ],
-      "Share via link": [
-        "Del via link"
-      ],
-      "Additional settings": [
-        "Yderligere indstillinger"
-      ],
-      "Manage secure link": [
-        "Administrer sikkert link"
-      ],
-      "Stop sharing with everyone?": [
-        "Stop deling med alle?"
-      ],
-      "Discard changes?": [
-        "Kassér ændringer?"
-      ],
-      "Discard": [
-        "Kassér"
-      ],
-      "Files details": [
-        "Filens detaljer"
-      ],
-      "Number of files": [
-        "Antal filer"
-      ],
-      "Total size": [
-        "Samlet størrelse"
-      ],
-      "Delete permanently": [
-        "Slet permanent"
-      ],
-      "Stop sharing": [
-        "Stop deling"
-      ]
-    },
     "Label": {
       "Copy": [
         "Kopiér"
@@ -2026,6 +2026,12 @@
       "Display name": [
         "Vist navn"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Name on card": [
         "Navn på kort"
       ],
@@ -2073,12 +2079,6 @@
       ],
       "Payer": [
         "Betaler"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
       ],
       "Cancel": [
         "Annullér"
@@ -2167,6 +2167,9 @@
       "File": [
         "Fil"
       ],
+      "Get your own ProtonDrive": [
+        ""
+      ],
       "Report abuse": [
         "Anmeld misbrug"
       ],
@@ -2181,11 +2184,6 @@
       ],
       "Set expiration date": [
         "Angiv en udløbsdato"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
     "Placeholder": {
@@ -2263,6 +2261,11 @@
         "${ minutes } minutter"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
     "Link": {
       "Learn more": [
         "Få mere at vide"
@@ -2276,14 +2279,14 @@
       "Upgrade account": [
         "Opgradér konto"
       ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
-      ],
       "Upgrade": [
         "Opgradér"
       ],
       "Go to subscription plans": [
         "Gå til abonnementer"
+      ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
       ],
       "click here": [
         "klik hér"
@@ -2499,11 +2502,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
-      ],
       "Are you sure you want to discard your import?": [
         ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ]
     },
     "Success": {
@@ -3019,6 +3022,45 @@
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
       ]
     },
+    "Text": {
+      "Settings": [
+        "Indstillinger"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Til"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Fra"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maksimeret"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
@@ -3122,45 +3164,6 @@
         "Vedhæft screenshot(s)"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Indstillinger"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Til"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maksimeret"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Dette er, hvad folk vil se, når du sender dem en e-mail, invitere dem til en begivenhed, eller dele en fil med dem."
@@ -3191,6 +3194,27 @@
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
       ]
     },
     "Info for cash payment method": {
@@ -3640,43 +3664,9 @@
         "Bitcoin"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "Upload"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
       ]
     },
     "Label to change density": {
@@ -3701,6 +3691,33 @@
       ],
       "Maximized": [
         "Maksimeret"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Contact field label": {
@@ -3815,20 +3832,6 @@
       ],
       "Address": [
         "Adresse"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Validation": {

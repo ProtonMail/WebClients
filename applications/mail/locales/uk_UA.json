@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити в цьому браузері"
-      ],
       "Unknown error": [
         "Невідома помилка"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити в цьому браузері"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Це поле є обов'язковим"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
+      ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
@@ -105,14 +105,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
       ],
-      "File has no contents to preview": [
-        "Файл не має вмісту для перегляду"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Неправильний пароль поштової скриньки. Спробуйте знову"
       ],
       "Incorrect login credentials. Please try again": [
         "Неправильні дані для входу. Будь ласка спробуйте ще раз"
+      ],
+      "File has no contents to preview": [
+        "Файл не має вмісту для перегляду"
       ],
       "Process aborted": [
         "Процес перервано"
@@ -207,6 +207,12 @@
       "Request timed out.": [
         "Час очікування запиту завершився."
       ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
+      ],
+      "Could not find address ${ email }.": [
+        "Неможливо знайти адресу ${ email }."
+      ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
       ],
@@ -230,12 +236,6 @@
       ],
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
-      ],
-      "Signature verification failed": [
-        "Неможливо перевірити підпис"
-      ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
       ],
       "Missing signature": [
         "Відсутній підпис"
@@ -362,23 +362,26 @@
       "Close": [
         "Закрити"
       ],
-      "Confirm": [
-        "Підтвердити"
+      "Close modal": [
+        "Закрити вікно"
       ],
       "Cancel": [
         "Скасувати"
       ],
-      "Close modal": [
-        "Закрити вікно"
-      ],
       "Submit": [
         "Відправити"
+      ],
+      "Confirm": [
+        "Підтвердити"
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Використовувати налаштування“${ label }”"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -493,9 +496,6 @@
       ],
       "Underline": [
         "Підкреслення"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
@@ -671,9 +671,6 @@
       "Next": [
         "Далі"
       ],
-      "Signing out": [
-        "Вихід"
-      ],
       "Clear": [
         "Очистити"
       ],
@@ -704,6 +701,12 @@
       "OK": [
         "OK"
       ],
+      "Signing out": [
+        "Вихід"
+      ],
+      "Log in": [
+        "Увійти"
+      ],
       "Details": [
         "Подробиці"
       ],
@@ -724,9 +727,6 @@
       ],
       "Previous": [
         "Попередній"
-      ],
-      "Log in": [
-        "Увійти"
       ],
       "Get started": [
         "Розпочнімо"
@@ -895,6 +895,15 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Додати до ${ CALENDAR_APP_NAME }"
+      ],
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Open shop": [
+        "Відкрити магазин"
+      ],
+      "Open calendar": [
+        "Відкрити календар"
       ],
       "Send anyway": [
         "Все одно надіслати"
@@ -1216,15 +1225,6 @@
       ],
       "Start using ${ appName }": [
         "Розпочніть використання ${ appName }"
-      ],
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Open shop": [
-        "Відкрити магазин"
-      ],
-      "Open calendar": [
-        "Відкрити календар"
       ]
     },
     "Title": {
@@ -1761,6 +1761,9 @@
       "Loading": [
         "Завантаження"
       ],
+      "support team": [
+        "командою підтримки"
+      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
@@ -1859,9 +1862,6 @@
       ],
       "Plain text": [
         "Звичайний текст"
-      ],
-      "support team": [
-        "командою підтримки"
       ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
@@ -2019,9 +2019,6 @@
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
       ],
-      "Loading ${ appName }": [
-        "Завантажується ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Знімки додано"
       ],
@@ -2052,6 +2049,18 @@
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
       ],
+      "Loading ${ appName }": [
+        "Завантажується ${ appName }"
+      ],
+      "here": [
+        "тут"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Цей обліковий запис було призупинено через потенційне порушення правил."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
+      ],
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
@@ -2069,15 +2078,6 @@
       ],
       "of": [
         "з"
-      ],
-      "here": [
-        "тут"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Цей обліковий запис було призупинено через потенційне порушення правил."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
@@ -2271,8 +2271,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Сплачується в кінці вашого поточного платіжного циклу (оновлюється ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Для можливості скасування передплати ви повинні вилучити будь-які додаткові календарі та будь-які посилання на спільні календарі. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
@@ -2652,17 +2652,17 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Звітуючи про спробу шахрайства, ви надішлете це повідомлення нам, щоб ми змогли його проаналізувати і вдосконалити наші фільтри. Це означає, що ми матимемо змогу дивитися повний вміст цього повідомлення."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } вкладений файл",
-        "${ numPureAttachments } вкладені файли",
-        "${ numPureAttachments } вкладених файлів",
-        "${ numPureAttachments } вкладених файлів"
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } вкладений файл",
+        "${ pureAttachmentsCount } вкладені файли",
+        "${ pureAttachmentsCount } вкладених файлів",
+        "${ pureAttachmentsCount } вкладених файлів"
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } вбудоване зображення",
-        "${ numEmbedded } вбудовані зображення",
-        "${ numEmbedded } вбудованих зображень",
-        "${ numEmbedded } вбудованих зображень"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } вбудоване зображення",
+        "${ embeddedAttachmentsCount } вбудовані зображення",
+        "${ embeddedAttachmentsCount } вбудованих зображень",
+        "${ embeddedAttachmentsCount } вбудованих зображень"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запит про відмову від розсилки буде надіслано відправнику цього листа й автоматично оброблено."
@@ -3450,6 +3450,36 @@
       "Add a gift code": [
         "Додати подарунковий код"
       ],
+      "Inbox": [
+        "Вхідні"
+      ],
+      "Drafts": [
+        "Чернетки"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
+      "Trash": [
+        "Смітник"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архів"
+      ],
+      "Starred": [
+        "Із зірочкою"
+      ],
+      "Outbox": [
+        "Вихідні"
+      ],
+      "Scheduled": [
+        "Заплановано"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
       ],
@@ -3525,33 +3555,6 @@
       "Add label": [
         "Додати мітку"
       ],
-      "Inbox": [
-        "Вхідні"
-      ],
-      "Drafts": [
-        "Чернетки"
-      ],
-      "Scheduled": [
-        "Заплановано"
-      ],
-      "Sent": [
-        "Надіслані"
-      ],
-      "Starred": [
-        "Із зірочкою"
-      ],
-      "Archive": [
-        "Архів"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "Trash": [
-        "Смітник"
-      ],
-      "All mail": [
-        "Уся пошта"
-      ],
       "Folders": [
         "Теки"
       ],
@@ -3563,9 +3566,6 @@
       ],
       "Manage your labels": [
         "Керуйте своїми мітками"
-      ],
-      "Outbox": [
-        "Вихідні"
       ]
     },
     "Placeholder": {
@@ -4473,17 +4473,6 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Додатки Proton"
-      ],
-      "Go to ${ title }": [
-        "Перейти до ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти до ${ vpnName }"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Жодного зображення не вибрано"
@@ -4623,6 +4612,41 @@
         "Редагувати й запланувати повторно"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Додатки Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти до ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти до ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Вивантажити"
@@ -4669,30 +4693,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Щоб вимкнути бета-версію, відкрийте меню налаштувань і натисніть на параметр \"Бета-доступ\"."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
-      ],
-      "Maximized": [
-        "Розгорнутий"
       ]
     },
     "Message display when a new app version is available": {
@@ -5378,6 +5378,28 @@
         "позначені зірочкою"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "байтів"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Ім'я"
@@ -5492,26 +5514,9 @@
         "Адреса"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "байтів"
-      ],
-      "KB": [
-        "КБ"
-      ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувача, визначених в надісланому ключі (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5523,11 +5528,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } пише:"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу е-пошти не знайдено серед ідентифікаторів користувача, визначених в надісланому ключі (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {

@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
-      ],
       "Unknown error": [
         "Неизвестная ошибка"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Это обязательное поле"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
+      ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Не удается проверить адрес электронной почты. Повторите попытку позже."
@@ -105,14 +105,14 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Пожалуйста, попробуйте повторить аутентификацию и убедитесь, что права доступа правильные."
       ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Неверный пароль. Пожалуйста, попробуйте еще раз"
       ],
       "Incorrect login credentials. Please try again": [
         "Неверные учетные данные. Повторите попытку"
+      ],
+      "File has no contents to preview": [
+        "В файле нет содержимого для предпросмотра"
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -207,6 +207,12 @@
       "Request timed out.": [
         "Истекло время ожидания запроса."
       ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "Could not find address ${ email }.": [
+        "Не могу найти адрес ${ email }."
+      ],
       "Email address disabled": [
         "Адрес электронной почты неактивен"
       ],
@@ -230,12 +236,6 @@
       ],
       "The sending key is not valid": [
         "Недействительный ключ отправки"
-      ],
-      "Signature verification failed": [
-        "Проверка подписи не удалась"
-      ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -362,23 +362,26 @@
       "Close": [
         "Закрыть"
       ],
-      "Confirm": [
-        "Подтвердить"
+      "Close modal": [
+        "Закрыть окно"
       ],
       "Cancel": [
         "Отменить"
       ],
-      "Close modal": [
-        "Закрыть окно"
-      ],
       "Submit": [
         "Отправить"
+      ],
+      "Confirm": [
+        "Подтвердить"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -493,9 +496,6 @@
       ],
       "Underline": [
         "Подчёркнутый"
-      ],
-      "refresh the page": [
-        "обновить страницу"
       ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
@@ -671,9 +671,6 @@
       "Next": [
         "Далее"
       ],
-      "Signing out": [
-        "Выход"
-      ],
       "Clear": [
         "Очистить"
       ],
@@ -704,6 +701,12 @@
       "OK": [
         "OK"
       ],
+      "Signing out": [
+        "Выход"
+      ],
+      "Log in": [
+        "Войти"
+      ],
       "Details": [
         "Подробности"
       ],
@@ -724,9 +727,6 @@
       ],
       "Previous": [
         "Предыдущий"
-      ],
-      "Log in": [
-        "Войти"
       ],
       "Get started": [
         "Приступить к работе"
@@ -895,6 +895,15 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Добавить в ${ CALENDAR_APP_NAME }"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Open shop": [
+        "Открыть магазин"
+      ],
+      "Open calendar": [
+        "Открыть календарь"
       ],
       "Send anyway": [
         "Всё равно отправить"
@@ -1216,15 +1225,6 @@
       ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
-      ],
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Open shop": [
-        "Открыть магазин"
-      ],
-      "Open calendar": [
-        "Открыть календарь"
       ]
     },
     "Title": {
@@ -1761,6 +1761,9 @@
       "Loading": [
         "Загрузка"
       ],
+      "support team": [
+        "служба поддержки"
+      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -1859,9 +1862,6 @@
       ],
       "Plain text": [
         "Простой текст"
-      ],
-      "support team": [
-        "служба поддержки"
       ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
@@ -2019,9 +2019,6 @@
         "${ addressCount } адресов электронной почты",
         "${ addressCount } адреса электронной почты"
       ],
-      "Loading ${ appName }": [
-        "Загрузка ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
       ],
@@ -2052,6 +2049,18 @@
       "Your import will not be processed.": [
         "Импорт ваших данных не будет подвергнут обработке."
       ],
+      "Loading ${ appName }": [
+        "Загрузка ${ appName }"
+      ],
+      "here": [
+        "здесь"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Этот аккаунт был приостановлен из-за потенциального нарушения политики."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
+      ],
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
@@ -2069,15 +2078,6 @@
       ],
       "of": [
         "из"
-      ],
-      "here": [
-        "здесь"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Этот аккаунт был приостановлен из-за потенциального нарушения политики."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
@@ -2271,8 +2271,8 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Счет выставляется в конце текущего расчетного цикла (продлевается ${ renewalDate })"
       ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Вы должны удалить все дополнительные календари и все ссылки календарь, которыми вы поделились, прежде чем вы сможете отменить подписку. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
       ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
@@ -2652,17 +2652,17 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Жалоба о попытке фишинга отправит сообщение нам, чтобы мы смогли проанализировать его и улучшить наши фильтры. Это означает, что мы будем способны увидеть содержимое сообщения полностью."
       ],
-      "${ numPureAttachments } file attached": [
-        "${ numPureAttachments } файл прикреплён",
-        "${ numPureAttachments } файла прикреплены",
-        "${ numPureAttachments } файлов прикреплено",
-        "${ numPureAttachments } файлов прикреплено"
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } файл прикреплён",
+        "${ pureAttachmentsCount } файла прикреплено",
+        "${ pureAttachmentsCount } файлов прикреплено",
+        "${ pureAttachmentsCount } файлов прикреплено"
       ],
-      "${ numEmbedded } embedded image": [
-        "${ numEmbedded } встроенное изображение",
-        "${ numEmbedded } встроенных изображения",
-        "${ numEmbedded } встроенных изображений",
-        "${ numEmbedded } встроенных изображений"
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } встроенное изображение",
+        "${ embeddedAttachmentsCount } встроенных изображения",
+        "${ embeddedAttachmentsCount } встроенных изображений",
+        "${ embeddedAttachmentsCount } встроенных изображений"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запрос на отказ от подписки на этот список рассылки будет послан отправителю рассылки и обработан автоматически."
@@ -3450,6 +3450,36 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
+      "Inbox": [
+        "Входящие"
+      ],
+      "Drafts": [
+        "Черновики"
+      ],
+      "Sent": [
+        "Отправленные"
+      ],
+      "Trash": [
+        "Корзина"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "All mail": [
+        "Все письма"
+      ],
+      "Archive": [
+        "Архив"
+      ],
+      "Starred": [
+        "Избранное"
+      ],
+      "Outbox": [
+        "Исходящие"
+      ],
+      "Scheduled": [
+        "Запланировано"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
       ],
@@ -3525,33 +3555,6 @@
       "Add label": [
         "Добавить ярлык"
       ],
-      "Inbox": [
-        "Входящие"
-      ],
-      "Drafts": [
-        "Черновики"
-      ],
-      "Scheduled": [
-        "Запланировано"
-      ],
-      "Sent": [
-        "Отправленные"
-      ],
-      "Starred": [
-        "Избранное"
-      ],
-      "Archive": [
-        "Архив"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "Trash": [
-        "Корзина"
-      ],
-      "All mail": [
-        "Все письма"
-      ],
       "Folders": [
         "Папки"
       ],
@@ -3563,9 +3566,6 @@
       ],
       "Manage your labels": [
         "Управление ярлыками"
-      ],
-      "Outbox": [
-        "Исходящие"
       ]
     },
     "Placeholder": {
@@ -4473,17 +4473,6 @@
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Приложения Proton"
-      ],
-      "Go to ${ title }": [
-        "Перейти к ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти к ${ vpnName }"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
@@ -4623,6 +4612,41 @@
         "Редактировать и снова запланировать"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Приложения Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти к ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти к ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Обычный"
+      ],
+      "Maximized": [
+        "Максимизированный"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Загрузить"
@@ -4669,30 +4693,6 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Чтобы отключить бета-версию, откройте выпадающее меню настроек и нажмите на опцию «Доступ к Beta»."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Ряд"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Обычный"
-      ],
-      "Maximized": [
-        "Максимизированный"
       ]
     },
     "Message display when a new app version is available": {
@@ -5378,6 +5378,28 @@
         "со звёздами"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символа"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "байт"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Имя"
@@ -5492,26 +5514,9 @@
         "Адрес"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "байт"
-      ],
-      "KB": [
-        "КБ"
-      ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен включать по меньшей мере ${ length } символ",
-        "Пароль должен включать по меньшей мере ${ length } символа",
-        "Пароль должен включать по меньшей мере ${ length } символов",
-        "Пароль должен включать по меньшей мере ${ length } символа"
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -5523,11 +5528,6 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } написал(а):"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
