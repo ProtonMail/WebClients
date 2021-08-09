@@ -127,23 +127,25 @@ const getNotificationTextMoved = (
     if (fromLabelID === SPAM && folderID !== TRASH) {
         if (isMessage) {
             if (elementsCount === 1) {
-                return c('Success').t`Message moved to ${folderName} and sender removed from Block List.`;
+                // translator: Strictly 1 message moved from spam, the variable is the name of the destination folder
+                return c('Success').t`Message moved to ${folderName} and sender added to Allow List.`;
             }
             return joinSentences(
                 c('Success').ngettext(
-                    msgid`${elementsCount} message moved to ${folderName} and sender removed from Block List.`,
-                    `${elementsCount} messages moved to ${folderName} and sender removed from Block List.`,
+                    // translator: The first variable is the number of message moved, written in digits, and the second one is the name of the destination folder
+                    msgid`${elementsCount} message moved to ${folderName} and sender added to Allow List.`,
+                    `${elementsCount} messages moved to ${folderName} and sender added to Allow List.`,
                     elementsCount
                 ),
                 notAuthorized
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to ${folderName} and sender removed from Block List.`;
+            return c('Success').t`Conversation moved to ${folderName} and sender added to Allow List.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} conversation moved to ${folderName} and sender removed from Block List.`,
-            `${elementsCount} conversations moved to ${folderName} and sender removed from Block List.`,
+            msgid`${elementsCount} conversation moved to ${folderName} and sender added to Allow List.`,
+            `${elementsCount} conversations moved to ${folderName} and sender added to Allow List.`,
             elementsCount
         );
     }
