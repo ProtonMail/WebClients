@@ -2,9 +2,12 @@ import { c } from 'ttag';
 import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { useLocation } from 'react-router-dom';
 import ToolbarDropdown from './ToolbarDropdown';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 import { labelIncludes } from '../../helpers/labels';
+import { isSearch } from '../../helpers/elements';
+import { extractSearchParameters } from '../../helpers/mailboxUrl';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED } = MAILBOX_LABEL_IDS;
 
@@ -17,6 +20,9 @@ interface Props {
 const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
     const emptyLabel = useEmptyLabel();
+    const location = useLocation();
+    const searchParameters = extractSearchParameters(location);
+
     const cannotEmpty = labelIncludes(
         labelID,
         INBOX,
@@ -30,7 +36,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
         SCHEDULED
     );
 
-    if (cannotEmpty) {
+    if (cannotEmpty || isSearch(searchParameters)) {
         return null;
     }
 
