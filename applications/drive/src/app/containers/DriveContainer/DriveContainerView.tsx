@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Toolbar, PrivateMainArea, useAppTitle } from '@proton/components';
 
-import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import Drive from '../../components/Drive/Drive';
-import DriveContentProvider from '../../components/Drive/DriveContentProvider';
-import DriveToolbar from '../../components/Drive/DriveToolbar';
+import Drive from '../../components/sections/Drive/Drive';
+import DriveContentProvider from '../../components/sections/Drive/DriveContentProvider';
+import DriveToolbar from '../../components/sections/Drive/DriveToolbar';
 import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
 import { LinkURLType } from '../../constants';
 import useNavigate from '../../hooks/drive/useNavigate';

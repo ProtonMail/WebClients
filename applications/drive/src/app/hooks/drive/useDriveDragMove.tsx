@@ -7,7 +7,7 @@ import { LinkType, LinkMeta } from '../../interfaces/link';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
 import { FileBrowserItem, DragMoveControls } from '../../components/FileBrowser/interfaces';
-import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
 import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 export default function useDriveDragMove(

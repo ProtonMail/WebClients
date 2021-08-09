@@ -14,7 +14,6 @@ import { shallowEqual } from '@proton/shared/lib/helpers/array';
 import { c } from 'ttag';
 import { ItemProps } from '../interfaces';
 import { LinkType } from '../../../interfaces/link';
-import ItemContextMenu from '../ItemContextMenu';
 import useFileBrowserItem from '../useFileBrowserItem';
 import LocationCell from './Cells/LocationCell';
 import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
@@ -40,6 +39,7 @@ const ItemRow = ({
     secondaryActionActive,
     dragMoveControls,
     isPreview,
+    ItemContextMenu,
 }: ItemProps) => {
     const {
         isFolder,
@@ -199,12 +199,11 @@ const ItemRow = ({
                     </TableCell>
                 )}
             </TableRow>
-            {!isPreview && !item.Disabled && (
+            {!isPreview && !item.Disabled && ItemContextMenu && (
                 <ItemContextMenu
                     item={item}
                     selectedItems={selectedItems}
                     shareId={shareId}
-                    layoutType={layoutType}
                     position={contextMenuPosition}
                     {...contextMenu}
                 />

@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
+import { useDriveActiveFolder } from './sections/Drive/DriveFolderProvider';
 import { STATUS_CODE } from '../constants';
 
 interface Props {

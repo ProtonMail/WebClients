@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
-import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
+import { useDriveActiveFolder, DriveFolder } from './sections/Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
 
 interface Props {

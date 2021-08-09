@@ -3,7 +3,7 @@ import { generateUID } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { LinkType } from '../../interfaces/link';
-import { toLinkURLType } from '../../components/Drive/helpers';
+import { toLinkURLType } from '../../components/sections/helpers';
 
 interface NavigationEvenListener {
     id: string;

@@ -1,15 +1,22 @@
 import { useRef } from 'react';
 import * as React from 'react';
-import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from '@proton/components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
+
+import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import ItemRow from './ItemRow';
-import { FileBrowserProps, FileBrowserItem, DragMoveControls, FileBrowserLayouts } from '../interfaces';
-import FolderContextMenu from '../FolderContextMenu';
+
+import {
+    FileBrowserProps,
+    FileBrowserItem,
+    DragMoveControls,
+    FileBrowserLayouts,
+    ItemContextMenuProps,
+} from '../interfaces';
+import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
-import { useFileBrowserColumns } from '../useFileBrowserColumns';
+import ItemRow from './ItemRow';
 
 type ListItemData = {
     itemCount: number;
@@ -26,6 +33,7 @@ type ListItemData = {
     isDesktop?: boolean;
     secondaryActionActive?: boolean;
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
+    ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
 };
 type ListItemRowProps = Omit<ListChildComponentProps, 'data'> & {
     data: ListItemData;
@@ -47,6 +55,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
         secondaryActionActive,
         getDragMoveControls,
         isDesktop,
+        ItemContextMenu,
     } = data;
 
     const columns = useFileBrowserColumns(type);
@@ -77,6 +86,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
             secondaryActionActive={secondaryActionActive}
             dragMoveControls={getDragMoveControls?.(item)}
             isPreview={isPreview}
+            ItemContextMenu={ItemContextMenu}
         />
     );
 };
@@ -99,7 +109,9 @@ const TableBodyRenderer = ({
     );
 };
 
-type Props = Omit<FileBrowserProps, 'layout'>;
+type Props = Omit<FileBrowserProps, 'onScrollEnd'> & {
+    scrollAreaRef: React.RefObject<HTMLDivElement>;
+};
 
 const ListView = ({
     loading,
@@ -119,6 +131,8 @@ const ListView = ({
     sortParams,
     setSorting,
     getDragMoveControls,
+    ItemContextMenu,
+    FolderContextMenu,
 }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
@@ -186,6 +200,7 @@ const ListView = ({
                             selectItem,
                             secondaryActionActive,
                             getDragMoveControls,
+                            ItemContextMenu,
                         }}
                         onScroll={() => {
                             if (isContextMenuOpen) {
@@ -206,7 +221,7 @@ const ListView = ({
                     </FixedSizeList>
                 )}
             </div>
-            {!isPreview && type === 'drive' && (
+            {!isPreview && FolderContextMenu && (
                 <FolderContextMenu
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}
