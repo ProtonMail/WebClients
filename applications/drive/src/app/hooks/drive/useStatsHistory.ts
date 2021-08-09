@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 
-import { TransfersStats, TransferStats } from '../../components/TransferManager/interfaces';
-import { Transfer, TransferProgresses, TransferState } from '../../interfaces/transfer';
+import { Transfer, TransferProgresses, TransfersStats, TransferState, TransferStats } from '../../interfaces/transfer';
 import { isTransferProgress } from '../../utils/transfer';
 
 const PROGRESS_UPDATE_INTERVAL = 500;

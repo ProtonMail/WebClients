@@ -13,7 +13,8 @@ import {
     getProgressBarStatus,
     isTransferPending,
 } from '../../utils/transfer';
-import { TransferType, TransferProps } from './interfaces';
+import { TransferProps } from './interfaces';
+import { TransferType } from '../../interfaces/transfer';
 
 type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
     TransferProps<T> & {
