@@ -9,8 +9,14 @@ interface Props {
 const CalendarResetSection = ({ calendarsToReset = [] }: Props) => {
     return (
         <>
-            <Alert type="warning">{c('Info')
-                .t`You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.`}</Alert>
+            <Alert type="warning">
+                <div className="text-pre-wrap">
+                    {c('Info')
+                        .t`You have reset your password and events linked to the following calendars couldn't be decrypted.
+                Any shared calendar links you created previously will no longer work.
+                Any active subscribed calendars will synchronize again after a few minutes.`}
+                </div>
+            </Alert>
             <CalendarTableRows calendars={calendarsToReset} />
         </>
     );
