@@ -4,19 +4,19 @@ import { c } from 'ttag';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
-import { useDriveActiveFolder, DriveFolder } from './sections/Drive/DriveFolderProvider';
+import useActiveShare from '../hooks/drive/useActiveShare';
 import { MAX_NAME_LENGTH } from '../constants';
 
 interface Props {
     onClose?: () => void;
     onCreateDone?: (folderId: string) => void;
-    folder?: DriveFolder;
+    folder?: { shareId: string; linkId: string };
 }
 
 const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) => {
     const { createNotification } = useNotifications();
 
-    const { folder: activeFolder } = useDriveActiveFolder();
+    const { activeFolder } = useActiveShare();
     const { createNewFolder, events } = useDrive();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton, useLoading } from '@proton/components';
 
 import useToolbarActions from '../../../../hooks/drive/useActions';
-import { DriveFolder } from '../DriveFolderProvider';
+import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 import { FileBrowserItem } from '../../../FileBrowser/interfaces';
 
 interface Props {

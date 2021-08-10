@@ -1,23 +1,25 @@
 import { c } from 'ttag';
+
 import { useNotifications, FloatingButton, SidebarPrimaryButton, Icon } from '@proton/components';
+
+import useActiveShare from '../../../hooks/drive/useActiveShare';
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import useDrive from '../../../hooks/drive/useDrive';
 
 interface Props {
-    shareId: string;
-    floating?: boolean;
-    className?: string;
+    mobileVersion?: boolean;
 }
 
-const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
+const EmptyTrashSidebarButton = ({ mobileVersion = false }: Props) => {
     const cache = useDriveCache();
+    const { activeShareId } = useActiveShare();
     const { events } = useDrive();
     const { emptyTrash } = useTrash();
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();
-    const disabled = !cache.get.trashMetas(shareId).length;
+    const disabled = !cache.get.trashMetas(activeShareId).length;
 
     const handleEmptyTrashClick = () => {
         const title = c('Title').t`Empty trash`;
@@ -30,10 +32,10 @@ const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
             message,
             onConfirm: async () => {
                 try {
-                    await emptyTrash(shareId);
+                    await emptyTrash(activeShareId);
                     const notificationText = c('Notification').t`All items will soon be permanently deleted from trash`;
                     createNotification({ text: notificationText });
-                    await events.callAll(shareId);
+                    await events.callAll(activeShareId);
                 } catch (e) {
                     console.error(e);
                 }
@@ -41,27 +43,20 @@ const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
         });
     };
 
-    return (
-        <>
-            {floating ? (
-                <FloatingButton
-                    disabled={disabled}
-                    color="danger"
-                    onClick={handleEmptyTrashClick}
-                    title={c('Action').t`Empty trash`}
-                >
-                    <Icon size={24} name="broom" className="mauto" />
-                </FloatingButton>
-            ) : (
-                <SidebarPrimaryButton
-                    color="danger"
-                    className={className}
-                    disabled={disabled}
-                    onClick={handleEmptyTrashClick}
-                >{c('Action').t`Empty trash`}</SidebarPrimaryButton>
-            )}
-        </>
+    return mobileVersion ? (
+        <FloatingButton
+            disabled={disabled}
+            color="danger"
+            onClick={handleEmptyTrashClick}
+            title={c('Action').t`Empty trash`}
+        >
+            <Icon size={24} name="broom" className="mauto" />
+        </FloatingButton>
+    ) : (
+        <SidebarPrimaryButton color="danger" className="no-mobile" disabled={disabled} onClick={handleEmptyTrashClick}>
+            {c('Action').t`Empty trash`}
+        </SidebarPrimaryButton>
     );
 };
 
-export default EmptyTrashButton;
+export default EmptyTrashSidebarButton;

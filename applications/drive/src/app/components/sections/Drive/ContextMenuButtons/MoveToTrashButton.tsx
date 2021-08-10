@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import useToolbarActions from '../../../../hooks/drive/useActions';
 import { FileBrowserItem } from '../../../FileBrowser';
 import { ContextMenuButton } from '../../ContextMenu';
-import { DriveFolder } from '../DriveFolderProvider';
+import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 
 interface Props {
     sourceFolder: DriveFolder;

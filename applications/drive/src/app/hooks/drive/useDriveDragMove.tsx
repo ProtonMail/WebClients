@@ -7,7 +7,7 @@ import { LinkType, LinkMeta } from '../../interfaces/link';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
 import { FileBrowserItem, DragMoveControls } from '../../components/FileBrowser/interfaces';
-import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
+import useActiveShare from './useActiveShare';
 import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 export default function useDriveDragMove(
@@ -17,7 +17,7 @@ export default function useDriveDragMove(
 ) {
     const { moveLinks } = useDrive();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Moving files` });
-    const { folder: activeFolder } = useDriveActiveFolder();
+    const { activeFolder } = useActiveShare();
     const { createMoveLinksNotifications } = useListNotifications();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();

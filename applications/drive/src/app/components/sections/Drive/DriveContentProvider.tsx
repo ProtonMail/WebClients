@@ -4,7 +4,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import useSelection from '../../../hooks/util/useSelection';
 import useDrive from '../../../hooks/drive/useDrive';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
+import { DriveFolder, useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { mapLinksToChildren } from '../helpers';
 import { SortKeys } from '../../../interfaces/link';
 import useDriveSorting from '../../../hooks/drive/useDriveSorting';
@@ -144,7 +144,7 @@ const DriveContentProviderInner = ({
  * Exposes functions to (re)load open folder contents.
  */
 const DriveContentProvider = ({ children, folder }: { children: React.ReactNode; folder?: DriveFolder }) => {
-    const { folder: activeFolder } = useDriveActiveFolder();
+    const { activeFolder } = useActiveShare();
 
     const currentFolder = folder || activeFolder;
 
