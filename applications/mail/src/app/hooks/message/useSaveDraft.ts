@@ -97,8 +97,12 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
                     throw error;
                 }
 
+                if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
+                    messageCache.delete(message.localID);
+                }
+
                 createNotification({
-                    text: error,
+                    text: error.data.Error,
                     type: 'error',
                 });
                 throw error;
