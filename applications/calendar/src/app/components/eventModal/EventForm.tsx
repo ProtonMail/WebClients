@@ -93,8 +93,7 @@ const EventForm = ({
     // and since the model is updated onChange, the ref makes sure it is possible even if you
     // delete the only email notification
     const emailNotificationsEnabled = useRef(
-        !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value ||
-            notifications.some(isEmailNotification)
+        !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value || notifications.some(isEmailNotification)
     ).current;
 
     const dateRow = isMinimal ? (
