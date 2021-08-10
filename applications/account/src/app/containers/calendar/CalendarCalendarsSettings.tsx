@@ -69,7 +69,7 @@ const CalendarCalendarsSettings = ({
     // TODO: remove feature
     const showCalendarSubscription = !loadingUsedCalendarSubscription && !!featureUsedCalendarSubscription?.Value;
 
-    useFeature(FeatureCode.CalendarEmailNotificationEnabled);
+    useFeature(FeatureCode.CalendarEmailNotification);
 
     return (
         <PrivateMainSettingsAreaWithPermissions
