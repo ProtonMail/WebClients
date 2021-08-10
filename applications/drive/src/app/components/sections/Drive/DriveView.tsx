@@ -4,23 +4,23 @@ import { c } from 'ttag';
 
 import { Toolbar, PrivateMainArea, useAppTitle } from '@proton/components';
 
-import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
-import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import Drive from '../../components/sections/Drive/Drive';
-import DriveContentProvider from '../../components/sections/Drive/DriveContentProvider';
-import DriveToolbar from '../../components/sections/Drive/DriveToolbar';
-import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
-import { LinkURLType } from '../../constants';
-import useNavigate from '../../hooks/drive/useNavigate';
+import { LinkURLType } from '../../../constants';
+import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
+import DriveBreadcrumbs from '../../DriveBreadcrumbs';
+import useNavigate from '../../../hooks/drive/useNavigate';
+import DriveContentProvider from './DriveContentProvider';
+import DriveToolbar from './DriveToolbar';
+import Drive from './Drive';
 
-function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
+function DriveView({ match }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
     const lastFolderRef = useRef<{
         shareId: string;
         linkId: string;
     }>();
     const cache = useDriveCache();
     const [, setError] = useState();
-    const { setFolder } = useDriveActiveFolder();
+    const { setFolder } = useActiveShare();
     const { navigateToRoot } = useNavigate();
 
     const folder = useMemo(() => {
@@ -72,4 +72,4 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
     );
 }
 
-export default DriveContainerView;
+export default DriveView;

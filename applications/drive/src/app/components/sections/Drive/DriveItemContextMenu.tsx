@@ -13,7 +13,7 @@ import {
     ShareLinkButton,
 } from '../ContextMenu';
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
-import { useDriveActiveFolder } from './DriveFolderProvider';
+import useActiveShare from '../../../hooks/drive/useActiveShare';
 
 const DriveItemContextMenu = ({
     item,
@@ -25,7 +25,7 @@ const DriveItemContextMenu = ({
     open,
     close,
 }: ItemContextMenuProps) => {
-    const { folder: sourceFolder } = useDriveActiveFolder();
+    const { activeFolder: sourceFolder } = useActiveShare();
 
     const isOnlyOneItem = selectedItems.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;

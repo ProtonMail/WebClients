@@ -14,7 +14,7 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
 import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
-import { DriveFolder } from '../../components/sections/Drive/DriveFolderProvider';
+import { DriveFolder } from './useActiveShare';
 import RenameModal from '../../components/RenameModal';
 import DetailsModal from '../../components/DetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal/MoveToFolderModal';

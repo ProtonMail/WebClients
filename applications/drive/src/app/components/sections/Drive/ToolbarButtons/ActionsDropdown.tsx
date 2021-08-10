@@ -12,7 +12,7 @@ import {
 } from '@proton/components';
 
 import { useDriveContent } from '../DriveContentProvider';
-import { useDriveActiveFolder } from '../DriveFolderProvider';
+import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import useToolbarActions from '../../../../hooks/drive/useActions';
 import { LinkType } from '../../../../interfaces/link';
 
@@ -32,7 +32,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
         openSharing,
         openLinkSharing,
     } = useToolbarActions();
-    const { folder } = useDriveActiveFolder();
+    const { activeFolder } = useActiveShare();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
@@ -68,14 +68,14 @@ const ActionsDropdown = ({ shareId }: Props) => {
             name: c('Action').t`Move to folder`,
             icon: 'arrows-up-down-left-right',
             testId: 'actions-dropdown-move',
-            action: () => folder && openMoveToFolder(folder, selectedItems),
+            action: () => openMoveToFolder(activeFolder, selectedItems),
         },
         {
             hidden: false,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () => folder && openMoveToTrash(folder, selectedItems),
+            action: () => openMoveToTrash(activeFolder, selectedItems),
         },
         {
             hidden: isMultiSelect,

@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import { c } from 'ttag';
+
 import {
     PrivateAppContainer,
     useToggle,
@@ -10,14 +12,14 @@ import {
     ModalsChildren,
     Icon,
 } from '@proton/components';
-import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+
+import { LinkType } from '../interfaces/link';
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import DriveHeader from '../components/layout/DriveHeader';
 import ListView from '../components/FileBrowser/ListView/ListView';
-import { LinkType } from '../interfaces/link';
 
 const DriveContainerBlurred = () => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);

@@ -10,6 +10,8 @@ import {
     useModals,
 } from '@proton/components';
 
+import { LinkMeta, LinkType } from '../interfaces/link';
+import useActiveShare from '../hooks/drive/useActiveShare';
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
 import useDriveSorting from '../hooks/drive/useDriveSorting';
@@ -18,18 +20,16 @@ import FileSaver from '../utils/FileSaver/FileSaver';
 import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
-import { useDriveActiveFolder } from '../components/sections/Drive/DriveFolderProvider';
 import { mapLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
-import { LinkMeta, LinkType } from '../interfaces/link';
 
 const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
     const { navigateToLink, navigateToSharedURLs, navigateToTrash } = useNavigate();
     const cache = useDriveCache();
     const downloadControls = useRef<DownloadControls>();
-    const { setFolder } = useDriveActiveFolder();
+    const { setFolder } = useActiveShare();
     const { getLinkMeta, fetchAllFolderPages } = useDrive();
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();

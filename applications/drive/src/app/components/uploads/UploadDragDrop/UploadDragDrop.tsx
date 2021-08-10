@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
 
 import useFiles from '../../../hooks/drive/useFiles';
-import { useDriveActiveFolder } from '../../sections/Drive/DriveFolderProvider';
+import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../../utils/transfer';
 
 interface UploadDragDropProps {
@@ -15,11 +15,11 @@ interface UploadDragDropProps {
 }
 
 const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) => {
-    const { folder } = useDriveActiveFolder();
+    const { activeFolder } = useActiveShare();
     const { uploadDriveFiles } = useFiles();
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
-    const overlayEnabled = !!folder?.shareId && !disabled;
+    const overlayEnabled = !disabled;
 
     const handleDragOver = useCallback(
         (e: React.DragEvent<HTMLDivElement>) => {
@@ -44,7 +44,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
             setOverlayIsVisible(false);
             const { items } = e.dataTransfer;
 
-            if (!folder || !items) {
+            if (!items) {
                 return;
             }
 
@@ -117,7 +117,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 console.error(errors);
             }
 
-            uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload).catch((err) => {
+            uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload).catch((err) => {
                 if (!isTransferCancelError(err)) {
                     console.error(err);
                 }

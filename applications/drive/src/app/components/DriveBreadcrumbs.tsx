@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { CollapsingBreadcrumbs, Icon, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 
-import { DriveFolder } from './sections/Drive/DriveFolderProvider';
+import { DriveFolder } from '../hooks/drive/useActiveShare';
 import { LinkType } from '../interfaces/link';
 import useDrive from '../hooks/drive/useDrive';
 import useNavigate from '../hooks/drive/useNavigate';

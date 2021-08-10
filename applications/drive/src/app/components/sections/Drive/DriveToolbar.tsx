@@ -6,7 +6,7 @@ import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/componen
 import useDrive from '../../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { DriveFolder } from './DriveFolderProvider';
+import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
     DetailsButton,
     DownloadButton,
