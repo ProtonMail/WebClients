@@ -21,7 +21,7 @@ import { partition } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
 
-const generalSettingsConfig = (showCalendarSubscription: boolean) => ({
+const generalSettingsConfig = () => ({
     to: '/calendar/calendars',
     icon: 'calendar-days',
     text: c('Link').t`Calendars`,
@@ -30,7 +30,7 @@ const generalSettingsConfig = (showCalendarSubscription: boolean) => ({
             text: c('Title').t`My calendars`,
             id: 'my-calendars',
         },
-        showCalendarSubscription && {
+        {
             text: c('Title').t`Subscribed calendars`,
             id: 'other-calendars',
         },
@@ -63,19 +63,11 @@ const CalendarCalendarsSettings = ({
 }: Props) => {
     const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
     const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
-    const { feature: featureUsedCalendarSubscription, loading: loadingUsedCalendarSubscription } = useFeature(
-        FeatureCode.CalendarSubscription
-    );
-    // TODO: remove feature
-    const showCalendarSubscription = !loadingUsedCalendarSubscription && !!featureUsedCalendarSubscription?.Value;
 
     useFeature(FeatureCode.CalendarEmailNotification);
 
     return (
-        <PrivateMainSettingsAreaWithPermissions
-            config={generalSettingsConfig(showCalendarSubscription)}
-            location={location}
-        >
+        <PrivateMainSettingsAreaWithPermissions config={generalSettingsConfig()} location={location}>
             <PersonalCalendarsSection
                 activeAddresses={activeAddresses}
                 calendars={personalCalendars}
@@ -83,9 +75,7 @@ const CalendarCalendarsSettings = ({
                 defaultCalendar={defaultCalendar}
                 user={user}
             />
-            {showCalendarSubscription && (
-                <SubscribedCalendarsSection activeAddresses={activeAddresses} calendars={otherCalendars} user={user} />
-            )}
+            <SubscribedCalendarsSection activeAddresses={activeAddresses} calendars={otherCalendars} user={user} />
             <CalendarImportSection
                 activeCalendars={personalActiveCalendars}
                 defaultCalendar={defaultCalendar}
