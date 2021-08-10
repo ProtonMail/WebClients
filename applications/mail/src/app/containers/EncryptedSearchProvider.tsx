@@ -509,7 +509,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const showError = (notSupported?: boolean) => {
             createNotification({
                 text: notSupported
-                    ? c('Error').t`Content search cannot be enabled in this browser. Please try another browser`
+                    ? c('Error')
+                          .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser`
                     : c('Error').t`A problem occurred, please try again`,
                 type: 'error',
             });
