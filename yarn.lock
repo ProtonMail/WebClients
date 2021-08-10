@@ -3770,6 +3770,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/kt@workspace:packages/kt":
+  version: 0.0.0-use.local
+  resolution: "@proton/kt@workspace:packages/kt"
+  dependencies:
+    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@types/elliptic": ^6.4.13
+    "@types/jasmine": ^3.4.6
+    "@types/pkijs": 0.0.6
+    elliptic: ^6.5.4
+    eslint: ^7.3.1
+    jasmine: 3.5.0
+    jasmine-core: 3.5.0
+    karma: ^4.1.0
+    karma-chrome-launcher: ^2.2.0
+    karma-jasmine: ^2.0.1
+    karma-webpack: ^4.0.2
+    pkijs: ^2.1.90
+    pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.4.3"
+    ts-loader: ^6.2.0
+    typescript: ^4.1.2
+    webpack: ^4.33.0
+  languageName: unknown
+  linkType: soft
+
 "@proton/pack@workspace:packages/pack":
   version: 0.0.0-use.local
   resolution: "@proton/pack@workspace:packages/pack"
@@ -5427,6 +5451,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/asn1js@npm:*":
+  version: 2.0.2
+  resolution: "@types/asn1js@npm:2.0.2"
+  checksum: f6eb914bba9815ecb4a04f2b65f0b5cd229b3f28fd033ae441141dd032ab7c941472249ec3df31ad4cd1b7a7260b54a42968ff90419ae8cefe98b0b196c27354
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14":
   version: 7.1.15
   resolution: "@types/babel__core@npm:7.1.15"
@@ -5565,6 +5596,15 @@ __metadata:
     "@types/got": ^8
     "@types/node": "*"
   checksum: 3927d241c89eecde7fdcb546614bead76dba8a15318d366a5a7dfe3ebe09117ca644be161495c6349452f3639afa4645d1f004f54cf1fe94b22a7ce15db066ba
+  languageName: node
+  linkType: hard
+
+"@types/elliptic@npm:^6.4.13":
+  version: 6.4.13
+  resolution: "@types/elliptic@npm:6.4.13"
+  dependencies:
+    "@types/bn.js": "*"
+  checksum: 41d9718067037005f8f010444cb076d380896ed1a92f374cf8792486e0a21789f36012eb54f7aaf6f3a8c385a5db9794538ba3dbb7f15887b55110e5e1cec5e5
   languageName: node
   linkType: hard
 
@@ -5930,6 +5970,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/pkijs@npm:0.0.6":
+  version: 0.0.6
+  resolution: "@types/pkijs@npm:0.0.6"
+  dependencies:
+    "@types/asn1js": "*"
+    "@types/pvutils": "*"
+  checksum: 2d63d0d783e6e69d8a2b51ec3fa4fb56c0e773f7e7ade4aa1cc67a70205d1069b072d3a0f89a155463a3a718656f38fbc057f61d155c3ac52bde2975fadc9d10
+  languageName: node
+  linkType: hard
+
 "@types/prettier@npm:^2.1.5":
   version: 2.3.2
   resolution: "@types/prettier@npm:2.3.2"
@@ -5955,6 +6005,13 @@ __metadata:
   version: 15.7.3
   resolution: "@types/prop-types@npm:15.7.3"
   checksum: bd0eab69d5120ad3784d0c9985f902653d5924707a7f2b3702a330e762dfd61b6494954cb54ad0c52b918ffd6f1e7e27c9270e4442bc15250de348596f2f60cb
+  languageName: node
+  linkType: hard
+
+"@types/pvutils@npm:*":
+  version: 1.0.1
+  resolution: "@types/pvutils@npm:1.0.1"
+  checksum: 33278b572e267abae7e3bf703403f62746881ea8631b4e191bb010e3b0442ace6665f1ccf65876be94aa770735b57a7ef230eede3b9f0e293ead162f3146ab43
   languageName: node
   linkType: hard
 
@@ -7448,6 +7505,15 @@ __metadata:
   dependencies:
     safer-buffer: ~2.1.0
   checksum: 5743ace942e2faa0b72f3b14bf1826509c5ca707ea150c10520f52b04f90aa715cee4370ec2e6279ce1ceb7d3c472ca33270124e90b495bea4c9b02f41b9d8ac
+  languageName: node
+  linkType: hard
+
+"asn1js@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "asn1js@npm:2.1.1"
+  dependencies:
+    pvutils: latest
+  checksum: 59ded28f41849421274b978f22c508fc0bded5959726aaae830e82d597607f88210077bf013fea1661a2d84630a1b4d419b35dbbd6d135da511cdaa6368e5acf
   languageName: node
   linkType: hard
 
@@ -9403,6 +9469,13 @@ __metadata:
   version: 3.1.0
   resolution: "bytes@npm:3.1.0"
   checksum: c3f64645ef37922c8194fef88a052de2a28101882dfdf8a225493888c4941a26ea15164957e7492e5c5e3a8e98ee6276f4834efacb68e2d8ad4d91f903250b6c
+  languageName: node
+  linkType: hard
+
+"bytestreamjs@npm:^1.0.29":
+  version: 1.1.3
+  resolution: "bytestreamjs@npm:1.1.3"
+  checksum: a11fffecdad84047ce985504eb447eded8f482216fac8e35b3f689b4401498cf88b53e3946be3c98553a0a07833cb5436af273889788b0b3ed088b64e51b4c01
   languageName: node
   linkType: hard
 
@@ -12734,7 +12807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"elliptic@npm:^6.5.3":
+"elliptic@npm:^6.5.3, elliptic@npm:^6.5.4":
   version: 6.5.4
   resolution: "elliptic@npm:6.5.4"
   dependencies:
@@ -14719,6 +14792,15 @@ __metadata:
     inherits: ^2.0.1
     readable-stream: ^2.0.0
   checksum: 5f1a9bbff02d30cf5b4f12cfef20b47455876f8318b92d275ca39e3c5adf0636d3a0d8f4821a1c245339c47e79a551dce9ce5c7d9236c16347b934dc13d1d408
+  languageName: node
+  linkType: hard
+
+"fs-access@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "fs-access@npm:1.0.1"
+  dependencies:
+    null-check: ^1.0.0
+  checksum: 4baee19389d3dacda35876cfe61c9d5aeba960af2c78535e899444e68feba1003b5e52800bd81a77b9f9b30f012cb516d0fdf9f914cf732dde7deff8e8082cae
   languageName: node
   linkType: hard
 
@@ -17679,10 +17761,29 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"jasmine-core@npm:3.5.0, jasmine-core@npm:~3.5.0":
+  version: 3.5.0
+  resolution: "jasmine-core@npm:3.5.0"
+  checksum: 04b3922443dcf9d75aab94100a2759c10daadeb5c37e22a5659c67afeea7eff9999acc7c222c59668b4838b725a87e0a252d0b208fb38419b642854f52c23e14
+  languageName: node
+  linkType: hard
+
 "jasmine-core@npm:^3.3, jasmine-core@npm:^3.7.1, jasmine-core@npm:~3.8.0":
   version: 3.8.0
   resolution: "jasmine-core@npm:3.8.0"
   checksum: 1f6dcc5137107650eb0d7fbbd0908284e30e4376e794ef900ab8af73b1987b97101ca1a1c5c740c7bc1cdefe169ef7e06bd4c9ab1fab7e0981de8835ee864737
+  languageName: node
+  linkType: hard
+
+"jasmine@npm:3.5.0":
+  version: 3.5.0
+  resolution: "jasmine@npm:3.5.0"
+  dependencies:
+    glob: ^7.1.4
+    jasmine-core: ~3.5.0
+  bin:
+    jasmine: ./bin/jasmine.js
+  checksum: d5919e7f79b21423be902203af6c581bc1964cbd282ce3ef89133d144a8f55b2e7b81d84d864dd6bd212d90917465f4e73e0ce01cac50d5f96ffdd98d82b5922
   languageName: node
   linkType: hard
 
@@ -18782,6 +18883,16 @@ fsevents@^1.2.7:
   version: 3.1.2
   resolution: "jwt-decode@npm:3.1.2"
   checksum: 144712f200e4ad87d8550f614cb40017b1e6f20b6b105b4184ddbd076566e85e13a015ae1af7fc85ace03768eabe5e0863fa79cb6349adea8396f9f729a93213
+  languageName: node
+  linkType: hard
+
+"karma-chrome-launcher@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "karma-chrome-launcher@npm:2.2.0"
+  dependencies:
+    fs-access: ^1.0.0
+    which: ^1.2.1
+  checksum: c74540a421ce9b2928141e3f8604c234ffe3c88f7798de0f494d1a7d14ffb5bf2059cac38464aa74affe702d09103ae6aa907c7f3636f6e6582b27117baca26b
   languageName: node
   linkType: hard
 
@@ -21476,6 +21587,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"null-check@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "null-check@npm:1.0.0"
+  checksum: f455aa3f6b73eb60f50f4e5223aa05cb51368db8452e2ed008ed25e0e871f0510dcb12cefb78dfbe7d1b0b880b1d3eba291ea8e318739d1d2974fdd34c47cb28
+  languageName: node
+  linkType: hard
+
 "num2fraction@npm:^1.2.2":
   version: 1.2.2
   resolution: "num2fraction@npm:1.2.2"
@@ -22643,6 +22761,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"pkijs@npm:^2.1.90":
+  version: 2.1.96
+  resolution: "pkijs@npm:2.1.96"
+  dependencies:
+    asn1js: ^2.1.1
+    bytestreamjs: ^1.0.29
+    pvutils: ^1.0.17
+  checksum: cab89f8973c710c0e8dace581e3f6e9e54f1fc6ff6da54ea3516311dab0ddd3dee869e30bdf290aad6cc1dc4f52845fb89ae23f352b0ec196ec996553cbbf67e
+  languageName: node
+  linkType: hard
+
 "please-upgrade-node@npm:^3.2.0":
   version: 3.2.0
   resolution: "please-upgrade-node@npm:3.2.0"
@@ -22659,7 +22788,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.4.3":
+"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.4.3, pmcrypto@github:ProtonMail/pmcrypto.git#semver:~6.4.3":
   version: 6.4.3
   resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=ecc5ef7c59ff7a008067a3d45eb59e36f820c220"
   dependencies:
@@ -24467,6 +24596,13 @@ fsevents@^1.2.7:
   version: 1.0.12
   resolution: "push.js@npm:1.0.12"
   checksum: e81eadde1f3f0e2ca5c47cd44fe02cbf2c333bf8b878ae95364203f234fced8060c3aaa8c9ec993289c0d796bd106872cba8a1af8b0b9f2935ccade82b498756
+  languageName: node
+  linkType: hard
+
+"pvutils@npm:^1.0.17, pvutils@npm:latest":
+  version: 1.0.17
+  resolution: "pvutils@npm:1.0.17"
+  checksum: dac525a0a4652ee215fa3582c2735ecb28ab4362079158e85e464e8f1a995f8469ebd668dc3b956a494fdba52a27ade121921a421d83818723e7c55cfdeb6afa
   languageName: node
   linkType: hard
 
