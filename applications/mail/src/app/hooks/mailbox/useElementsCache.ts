@@ -76,11 +76,6 @@ export interface ElementsCache {
     elements: { [ID: string]: Element };
 
     /**
-     * List of element's id which have been updated by recent events
-     */
-    updatedElements: string[];
-
-    /**
      * List of element's id which are allowed to bypass the current filter
      */
     bypassFilter: string[];
