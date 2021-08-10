@@ -22,7 +22,7 @@ const useGetCalendarSetup = ({ calendar: initialCalendar, setModel }: Props) => 
 
     const [error, setError] = useState(false);
 
-    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
 
     useEffect(() => {
         const initializeEmptyCalendar = async () => {
