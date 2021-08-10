@@ -25,7 +25,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [user] = useUser();
-    useFeature(FeatureCode.CalendarEmailNotificationEnabled);
+    useFeature(FeatureCode.CalendarEmailNotification);
 
     const memoedCalendars = useMemo(() => calendars || [], [calendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);

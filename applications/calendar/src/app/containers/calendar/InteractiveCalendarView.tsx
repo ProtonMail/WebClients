@@ -243,7 +243,7 @@ const InteractiveCalendarView = ({
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getSendIcsPreferencesMap = useGetMapSendIcsPreferences();
 
-    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
         return Promise.all([

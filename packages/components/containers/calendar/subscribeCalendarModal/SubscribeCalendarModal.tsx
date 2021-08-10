@@ -25,7 +25,7 @@ interface Props {
 const SubscribeCalendarModal = ({ ...rest }: Props) => {
     const [, setCalendar] = useState<Calendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
-    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
     const [model, setModel] = useState(() => getDefaultModel(emailNotificationsEnabled));
     const [error, setError] = useState(false);
 

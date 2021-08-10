@@ -51,7 +51,7 @@ export const CalendarModal = ({
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
 
-    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
     const [model, setModel] = useState(() => getDefaultModel(emailNotificationsEnabled));
 
     const addressText = useMemo(() => {
