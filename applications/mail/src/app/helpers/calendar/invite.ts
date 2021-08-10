@@ -1,4 +1,3 @@
-import { format, getUnixTime } from 'date-fns';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
@@ -27,6 +26,7 @@ import {
     getIcalMethod,
     getIsCalendar,
     getIsEventComponent,
+    getIsProtonReply,
     getIsRecurring,
     getIsTimezoneComponent,
     getIsValidMethod,
@@ -67,6 +67,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
+import { format, getUnixTime } from 'date-fns';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -277,20 +278,31 @@ export const getIsInvitationFromFuture = ({
  * A PM invite is either a new invitation or one for which the calendar event
  * is linked to the one sent in the ics
  */
-export const getIsPmInvite = ({
+export const getIsProtonInvite = ({
     invitationIcs,
     invitationApi,
     pmData,
 }: {
-    invitationIcs: EventInvitation;
+    invitationIcs: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     pmData?: PmInviteData;
 }) => {
-    if (!invitationApi) {
-        return !!pmData;
+    const { method } = invitationIcs;
+    const { sharedEventID, isProtonReply } = pmData || {};
+    const isLinked = sharedEventID === invitationApi?.calendarEvent.SharedEventID;
+    if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
+        if (!invitationApi) {
+            return !!sharedEventID;
+        }
+        return isLinked;
     }
-    const sharedEventIDIcs = getPmSharedEventID(invitationIcs.vevent);
-    return sharedEventIDIcs === invitationApi.calendarEvent.SharedEventID;
+    if (method === ICAL_METHOD.REPLY) {
+        if (isProtonReply !== undefined) {
+            return isProtonReply;
+        }
+        return isLinked;
+    }
+    return false;
 };
 
 /**
@@ -547,11 +559,23 @@ export const getInitialInvitationModel = ({
             method: invitation.method,
         });
     }
+    const isProtonReply = getIsProtonReply(invitation.vevent);
     const sharedEventID = getPmSharedEventID(invitation.vevent);
     const sharedSessionKey = getPmSharedSessionKey(invitation.vevent);
-    if (sharedEventID && sharedSessionKey) {
-        result.pmData = { sharedEventID, sharedSessionKey };
+    if (isProtonReply !== undefined || sharedEventID || sharedSessionKey) {
+        const pmData: PmInviteData = {};
+        if (isProtonReply !== undefined) {
+            pmData.isProtonReply = isProtonReply;
+        }
+        if (sharedEventID) {
+            pmData.sharedEventID = sharedEventID;
+        }
+        if (sharedSessionKey) {
+            pmData.sharedSessionKey = sharedSessionKey;
+        }
+        result.pmData = pmData;
     }
+
     return result;
 };
 

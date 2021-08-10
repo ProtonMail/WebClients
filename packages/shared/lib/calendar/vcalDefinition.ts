@@ -81,6 +81,7 @@ export const UNIQUE_PROPERTIES = new Set([
     'x-wr-timezone',
     'x-pm-session-key',
     'x-pm-shared-event-id',
+    'x-pm-proton-reply',
     'version',
     'calscale',
     'method',

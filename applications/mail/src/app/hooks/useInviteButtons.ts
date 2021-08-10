@@ -2,7 +2,6 @@ import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/c
 import {
     createInviteIcs,
     generateEmailBody,
-    getEventWithCalendarAlarms,
     getParticipantHasAddressID,
 } from '@proton/shared/lib/calendar/integration/invite';
 import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
@@ -89,7 +88,6 @@ const useInviteButtons = ({
     const sendReplyEmail = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
             const vevent = veventApi || veventIcs;
-            const veventWithAlarms = calendarData?.calendarSettings ? getEventWithCalendarAlarms(vevent, calendarData.calendarSettings) : vevent;
             if (!vevent || !attendee || !getParticipantHasAddressID(attendee) || !organizer || !config) {
                 onUnexpectedError();
                 return false;
@@ -103,10 +101,16 @@ const useInviteButtons = ({
                         partstat,
                     },
                 };
+                const inviteVevent = withDtstamp(omit(vevent, ['dtstamp']), timestamp);
+                if (pmData?.sharedEventID && pmData?.sharedSessionKey) {
+                    inviteVevent['x-pm-shared-event-id'] = { value: pmData.sharedEventID };
+                    inviteVevent['x-pm-session-key'] = { value: pmData.sharedSessionKey };
+                    inviteVevent['x-pm-proton-reply'] = { value: 'true', parameters: { type: 'boolean' } };
+                }
                 const ics = createInviteIcs({
                     method: ICAL_METHOD.REPLY,
                     prodId,
-                    vevent: withDtstamp(omit(veventWithAlarms, ['dtstamp']), timestamp),
+                    vevent: withDtstamp(omit(inviteVevent, ['dtstamp']), timestamp),
                     attendeesTo: [attendeeWithPartstat],
                     keepDtstamp: true,
                 });
@@ -120,7 +124,7 @@ const useInviteButtons = ({
                     subject,
                     plainTextBody: generateEmailBody({
                         method: ICAL_METHOD.REPLY,
-                        vevent: veventWithAlarms,
+                        vevent: inviteVevent,
                         emailAddress: attendee.emailAddress,
                         partstat,
                     }),

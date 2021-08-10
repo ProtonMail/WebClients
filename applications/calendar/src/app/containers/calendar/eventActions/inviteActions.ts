@@ -180,7 +180,6 @@ export const getSendIcsAction =
         sendPreferencesMap,
         contactEmailsMap,
         prodId,
-        enabledProtonProtonInvites,
         getVTimezonesMap,
         onRequestError,
         onReplyError,
@@ -194,7 +193,6 @@ export const getSendIcsAction =
         contactEmailsMap: SimpleMap<ContactEmail>;
         getVTimezonesMap: GetVTimezonesMap;
         prodId: string;
-        enabledProtonProtonInvites: boolean;
         onRequestError: (e: Error) => void;
         onReplyError: (e: Error) => void;
         onCancelError: (e: Error) => void;
@@ -204,6 +202,7 @@ export const getSendIcsAction =
             type,
             sharedEventID,
             sharedSessionKey,
+            isProtonProtonInvite,
             selfAddress,
             selfAttendeeIndex,
             partstat,
@@ -230,13 +229,11 @@ export const getSendIcsAction =
                 }
                 const { attendee: attendees } = vevent;
                 const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
-                const pmVevent = enabledProtonProtonInvites
-                    ? {
-                          ...vevent,
-                          'x-pm-shared-event-id': { value: sharedEventID },
-                          'x-pm-session-key': { value: sharedSessionKey },
-                      }
-                    : { ...vevent };
+                const pmVevent = {
+                    ...vevent,
+                    'x-pm-shared-event-id': { value: sharedEventID },
+                    'x-pm-session-key': { value: sharedSessionKey },
+                };
                 const inviteIcs = createInviteIcs({
                     method: ICAL_METHOD.REQUEST,
                     prodId,
@@ -281,13 +278,11 @@ export const getSendIcsAction =
                         if (!cancelVevent) {
                             throw new Error('Cannot cancel invite ics without the old event component');
                         }
-                        const pmCancelVevent = enabledProtonProtonInvites
-                            ? {
-                                  ...cancelVevent,
-                                  'x-pm-shared-event-id': { value: sharedEventID },
-                                  'x-pm-session-key': { value: sharedSessionKey },
-                              }
-                            : { ...cancelVevent };
+                        const pmCancelVevent = {
+                            ...cancelVevent,
+                            'x-pm-shared-event-id': { value: sharedEventID },
+                            'x-pm-session-key': { value: sharedSessionKey },
+                        };
                         const cancelIcs = createInviteIcs({
                             method: ICAL_METHOD.CANCEL,
                             prodId,
@@ -331,13 +326,11 @@ export const getSendIcsAction =
                     throw new Error('Missing shared event data');
                 }
                 const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
-                const pmVevent = enabledProtonProtonInvites
-                    ? {
-                          ...vevent,
-                          'x-pm-shared-event-id': { value: sharedEventID },
-                          'x-pm-session-key': { value: sharedSessionKey },
-                      }
-                    : { ...vevent };
+                const pmVevent = {
+                    ...vevent,
+                    'x-pm-shared-event-id': { value: sharedEventID },
+                    'x-pm-session-key': { value: sharedSessionKey },
+                };
                 const inviteIcs = createInviteIcs({
                     method: ICAL_METHOD.REQUEST,
                     prodId,
@@ -386,13 +379,11 @@ export const getSendIcsAction =
                     if (!cancelVevent) {
                         throw new Error('Cannot cancel invite ics without the old event component');
                     }
-                    const pmCancelVevent = enabledProtonProtonInvites
-                        ? {
-                              ...cancelVevent,
-                              'x-pm-shared-event-id': { value: sharedEventID },
-                              'x-pm-session-key': { value: sharedSessionKey },
-                          }
-                        : { ...cancelVevent };
+                    const pmCancelVevent = {
+                        ...cancelVevent,
+                        'x-pm-shared-event-id': { value: sharedEventID },
+                        'x-pm-session-key': { value: sharedSessionKey },
+                    };
                     const cancelIcs = createInviteIcs({
                         method: ICAL_METHOD.CANCEL,
                         prodId,
@@ -432,13 +423,11 @@ export const getSendIcsAction =
                     throw new Error('Cannot build cancel ics without attendees');
                 }
                 const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezonesMap);
-                const pmCancelVevent = enabledProtonProtonInvites
-                    ? {
-                          ...cancelVevent,
-                          'x-pm-shared-event-id': { value: sharedEventID },
-                          'x-pm-session-key': { value: sharedSessionKey },
-                      }
-                    : { ...cancelVevent };
+                const pmCancelVevent = {
+                    ...cancelVevent,
+                    'x-pm-shared-event-id': { value: sharedEventID },
+                    'x-pm-session-key': { value: sharedSessionKey },
+                };
                 const cancelIcs = createInviteIcs({
                     method: ICAL_METHOD.CANCEL,
                     prodId,
@@ -482,13 +471,14 @@ export const getSendIcsAction =
                         partstat,
                     },
                 };
-                const pmVevent = enabledProtonProtonInvites
-                    ? {
-                          ...vevent,
-                          'x-pm-shared-event-id': { value: sharedEventID },
-                          'x-pm-session-key': { value: sharedSessionKey },
-                      }
-                    : { ...vevent };
+                const pmVevent = {
+                    ...vevent,
+                    'x-pm-shared-event-id': { value: sharedEventID },
+                    'x-pm-session-key': { value: sharedSessionKey },
+                };
+                if (isProtonProtonInvite) {
+                    pmVevent['x-pm-proton-reply'] = { value: 'true', parameters: { type: 'boolean' } };
+                }
                 const replyIcs = createInviteIcs({
                     method: ICAL_METHOD.REPLY,
                     prodId,

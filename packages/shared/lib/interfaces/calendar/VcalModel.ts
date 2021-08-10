@@ -112,6 +112,11 @@ export interface VcalNumberProperty {
     value: number;
 }
 
+export interface VcalBooleanProperty {
+    value: 'true' | 'false';
+    parameters: { type: 'boolean' };
+}
+
 export interface VcalStringArrayProperty {
     value: string[];
 }
@@ -230,6 +235,7 @@ export interface VcalVeventComponent {
     'related-to'?: VcalStringWithParamsProperty[];
     resources?: VcalStringWithParamsProperty[];
     rdate?: VcalDateTimeProperty[];
+    'x-pm-proton-reply'?: VcalBooleanProperty;
     'x-pm-session-key'?: VcalStringProperty;
     'x-pm-shared-event-id'?: VcalStringProperty;
 }
