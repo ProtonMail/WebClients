@@ -1,7 +1,9 @@
+import { useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { useRef, useState } from 'react';
+import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { useFolders, useHotkeys, useMailSettings, HotkeyTuple, useEventManager } from '@proton/components';
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
@@ -12,6 +14,7 @@ import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { isConversationMode } from '../../helpers/mailSettings';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -29,6 +32,8 @@ export interface MessageHotkeysContext {
     expanded: boolean;
     draft: boolean;
     conversationMode: boolean;
+    mailSettings: MailSettings;
+    messageRef: React.RefObject<HTMLElement>;
 }
 
 export interface MessageHotkeysHandlers {
@@ -37,6 +42,7 @@ export interface MessageHotkeysHandlers {
     toggleOriginalMessage: () => void;
     handleLoadRemoteImages: () => void;
     handleLoadEmbeddedImages: () => void;
+    onBack: () => void;
 }
 
 export const useMessageHotkeys = (
@@ -50,6 +56,8 @@ export const useMessageHotkeys = (
         messageLoaded,
         draft,
         conversationMode,
+        mailSettings,
+        messageRef,
     }: MessageHotkeysContext,
     {
         onFocus,
@@ -57,8 +65,10 @@ export const useMessageHotkeys = (
         toggleOriginalMessage,
         handleLoadRemoteImages,
         handleLoadEmbeddedImages,
+        onBack,
     }: MessageHotkeysHandlers
 ) => {
+    const location = useLocation();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [folders] = useFolders();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
@@ -231,6 +241,11 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
                     setExpanded(false);
+                    if (isConversationMode(labelID, mailSettings, location)) {
+                        messageRef.current?.focus();
+                    } else {
+                        onBack();
+                    }
                     markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
                     await call();
                 }
