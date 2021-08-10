@@ -41,7 +41,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD) {
         if (isUnknown) {
-            return c('Attached ics file error').t`Invalid ICS file`;
+            return c('Attached ics file error').t`Invalid method`;
         }
         // Here we invert response <-> invitation as we take the perspective of the sender
         return isResponse
