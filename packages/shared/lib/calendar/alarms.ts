@@ -81,15 +81,6 @@ export const filterFutureNotifications = (notifications: NotificationModel[]) =>
     });
 };
 
-/**
- * Filter out email notifications
- */
-export const filterEmailNotifications = (notifications: NotificationModel[]) => {
-    return notifications.filter(({ type }) => {
-        return type !== SETTINGS_NOTIFICATION_TYPE.EMAIL;
-    });
-};
-
 export const sortNotificationsByAscendingTrigger = (notifications: NotificationModel[]) =>
     [...notifications].sort((a: NotificationModel, b: NotificationModel) => {
         const triggerA = getValarmTrigger(a);
