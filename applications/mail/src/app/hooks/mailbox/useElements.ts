@@ -233,7 +233,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.end !== cache.params.end ||
         search.attachments !== cache.params.attachments ||
         search.wildcard !== cache.params.wildcard ||
-        esEnabled !== cache.params.esEnabled;
+        (esEnabled !== cache.params.esEnabled && isSearch(search));
 
     const pageCached = () => cache.pages.includes(page);
 
@@ -244,15 +244,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const hasListFromTheStart = () => cache.pages.includes(0);
 
-    const lastHasBeenUpdated = () =>
-        elements.length === PAGE_SIZE &&
-        page === Math.max.apply(null, cache.pages) &&
-        cache.updatedElements.includes(elements[elements.length - 1].ID || '');
-
     // Live cache means we listen to events from event manager without refreshing the list every time
     const isLiveCache = () => !isSearch(search) && hasListFromTheStart();
 
-    const shouldResetCache = () => paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated();
+    const shouldResetCache = () => paramsChanged() || !pageIsConsecutive();
 
     const shouldSendRequest = () =>
         shouldResetCache() ||
