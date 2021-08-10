@@ -7,6 +7,7 @@ import { hasLabel, getCurrentFolderID } from '../helpers/elements';
 import { getLocalID, useMessageCache } from '../containers/MessageProvider';
 import { useConversationCache } from '../containers/ConversationProvider';
 import { ConversationCacheEntry } from '../models/conversation';
+import { hasErrorType } from '../helpers/errors';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 
@@ -18,7 +19,7 @@ const cacheEntryIsFailedLoading = (
     cacheEntry: MessageExtended | ConversationCacheEntry | undefined
 ) => {
     if (conversationMode) {
-        return cacheEntry === undefined;
+        return hasErrorType(cacheEntry?.errors, 'notExist');
     }
     const messageExtended = cacheEntry as MessageExtended;
     return messageExtended?.data?.ID && !messageExtended?.data?.Subject;
