@@ -24,7 +24,7 @@ import {
 import { c } from 'ttag';
 import {
     getDisableButtons,
-    getIsPmInvite,
+    getIsProtonInvite,
     getIsReinvite,
     InvitationModel,
     UPDATE_ACTION,
@@ -158,8 +158,8 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     };
 
     const buttonsDisabled = getDisableButtons(model);
-    const isPmInvite =
-        getIsPmInvite({ invitationIcs, invitationApi, pmData }) ||
+    const isProtonInvite =
+        getIsProtonInvite({ invitationIcs, invitationApi, pmData }) ||
         (pmData && getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode }));
 
     const actions = useInviteButtons({
@@ -171,7 +171,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         subject: formatSubject(message.data?.Subject, RE_PREFIX),
         messageID: message.data?.ID,
         calendarData,
-        pmData: isPmInvite ? pmData : undefined,
+        pmData: isProtonInvite ? pmData : undefined,
         singleEditData,
         onEmailSuccess: handleEmailSuccess,
         onCreateEventSuccess: handleCreateEventSuccess,

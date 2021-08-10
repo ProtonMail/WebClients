@@ -19,6 +19,7 @@ export interface InviteActions {
     type: INVITE_ACTION_TYPES;
     sharedEventID?: string;
     sharedSessionKey?: string;
+    isProtonProtonInvite?: boolean;
     partstat?: ICAL_ATTENDEE_STATUS;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;

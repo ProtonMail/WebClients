@@ -131,6 +131,9 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
             'x-pm-shared-event-id',
             'x-pm-session-key',
         ];
+        if (method === ICAL_METHOD.REPLY) {
+            propertiesToKeep.push('x-pm-proton-reply');
+        }
         // use current time as dtstamp unless indicated otherwise
         if (keepDtstamp) {
             propertiesToKeep.push('dtstamp');
@@ -156,7 +159,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
     }
     if (method === ICAL_METHOD.REQUEST) {
         // strip alarms
-        const propertiesToOmit: (keyof VcalVeventComponent)[] = ['components'];
+        const propertiesToOmit: (keyof VcalVeventComponent)[] = ['components', 'x-pm-proton-reply'];
         // use current time as dtstamp unless indicated otherwise
         if (!keepDtstamp) {
             propertiesToOmit.push('dtstamp');

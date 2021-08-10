@@ -161,6 +161,7 @@ const EventPopover = ({
                       type: isSelfAddressActive
                           ? INVITE_ACTION_TYPES.CANCEL_INVITATION
                           : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
                       selfAddress: model.selfAddress,
                       selfAttendeeIndex: model.selfAttendeeIndex,
                   }
@@ -168,6 +169,7 @@ const EventPopover = ({
                       type: isSelfAddressActive
                           ? INVITE_ACTION_TYPES.DECLINE_INVITATION
                           : INVITE_ACTION_TYPES.DECLINE_DISABLED,
+                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
                       sendCancellationNotice,
                       selfAddress: model.selfAddress,
                       selfAttendeeIndex: model.selfAttendeeIndex,

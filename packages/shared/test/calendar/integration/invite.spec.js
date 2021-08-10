@@ -40,7 +40,50 @@ const exampleVevent = {
             parameters: { cn: 'Unknown attendee 4', partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION },
         },
     ],
+    'x-pm-session-key': { value: 'mNDd2g2LlUFUwTQZwtLuN3/ci3jq1n/DKX0oIAXgHi0=' },
+    'x-pm-shared-event-id': {
+        value: 'bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b6WlLrqVlqUjhJ0hEY8VFDvmn2sG0biE2MBSPv-wF5DmmS8cdH8zPI=',
+    },
+    'x-pm-proton-reply': { value: 'true', parameters: { type: 'boolean' } },
 };
+
+describe('createInviteIcs for REQUEST method', () => {
+    it('should create the correct ics with the expected X-PM fields', () => {
+        const params = {
+            method: ICAL_METHOD.REQUEST,
+            prodId: 'Proton Calendar',
+            attendeesTo: [{ value: 'mailto:name@proton.me', parameters: { partstat: ICAL_ATTENDEE_STATUS.ACCEPTED } }],
+            vevent: exampleVevent,
+            keepDtstamp: true,
+        };
+        const ics = createInviteIcs(params);
+        const expected = `BEGIN:VCALENDAR
+PRODID:Proton Calendar
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:test-event
+DTSTAMP:20200901T120000Z
+DTSTART;TZID=Europe/Zurich:20200312T083000
+DTEND;TZID=America/New_York:20200312T093000
+RRULE:FREQ=WEEKLY;UNTIL=20200515
+LOCATION:asd
+SEQUENCE:0
+ATTENDEE;CN=Unknown attendee 1;PARTSTAT=ACCEPTED:emailto:name1@proton.me
+ATTENDEE;CN=Unknown attendee 2;PARTSTAT=TENTATIVE:emailto:name2@example.com
+ATTENDEE;CN=Unknown attendee 3;PARTSTAT=DECLINED:emailto:name3@example.com
+ATTENDEE;CN=Unknown attendee 4;PARTSTAT=NEEDS-ACTION:emailto:name4@proton.m
+ e
+X-PM-SESSION-KEY:mNDd2g2LlUFUwTQZwtLuN3/ci3jq1n/DKX0oIAXgHi0=
+X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
+ 6WlLrqVlqUjhJ0hEY8VFDvmn2sG0biE2MBSPv-wF5DmmS8cdH8zPI=
+SUMMARY:
+END:VEVENT
+END:VCALENDAR`;
+        expect(ics).toEqual(toCRLF(expected));
+    });
+});
 
 describe('createInviteIcs for REPLY method', () => {
     it('should create the correct ics when there is no summary', () => {
@@ -64,6 +107,10 @@ DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
+X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
+ 6WlLrqVlqUjhJ0hEY8VFDvmn2sG0biE2MBSPv-wF5DmmS8cdH8zPI=
+X-PM-SESSION-KEY:mNDd2g2LlUFUwTQZwtLuN3/ci3jq1n/DKX0oIAXgHi0=
+X-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE
 DTSTAMP:20200901T120000Z
 ATTENDEE;PARTSTAT=ACCEPTED:mailto:name@proton.me
 END:VEVENT
@@ -96,6 +143,10 @@ SEQUENCE:0
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
 SUMMARY:
+X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
+ 6WlLrqVlqUjhJ0hEY8VFDvmn2sG0biE2MBSPv-wF5DmmS8cdH8zPI=
+X-PM-SESSION-KEY:mNDd2g2LlUFUwTQZwtLuN3/ci3jq1n/DKX0oIAXgHi0=
+X-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE
 DTSTAMP:20200901T120000Z
 ATTENDEE;PARTSTAT=TENTATIVE:mailto:name@proton.me
 END:VEVENT
@@ -132,6 +183,38 @@ RECURRENCE-ID:20210618T150000Z
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
 SUMMARY:dcf
+X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
+ 6WlLrqVlqUjhJ0hEY8VFDvmn2sG0biE2MBSPv-wF5DmmS8cdH8zPI=
+X-PM-SESSION-KEY:mNDd2g2LlUFUwTQZwtLuN3/ci3jq1n/DKX0oIAXgHi0=
+X-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE
+DTSTAMP:20200901T120000Z
+ATTENDEE;PARTSTAT=DECLINED:mailto:name@proton.me
+END:VEVENT
+END:VCALENDAR`;
+        expect(ics).toEqual(toCRLF(expected));
+    });
+
+    it('should create the correct ics when there are no X-PM fields', () => {
+        const params = {
+            method: ICAL_METHOD.REPLY,
+            prodId: 'Proton Calendar',
+            attendeesTo: [{ value: 'mailto:name@proton.me', parameters: { partstat: ICAL_ATTENDEE_STATUS.DECLINED } }],
+            vevent: omit(exampleVevent, ['x-pm-shared-event-id', 'x-pm-session-key', 'x-pm-proton-reply']),
+            keepDtstamp: true,
+        };
+        const ics = createInviteIcs(params);
+        const expected = `BEGIN:VCALENDAR
+PRODID:Proton Calendar
+VERSION:2.0
+METHOD:REPLY
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:test-event
+DTSTART;TZID=Europe/Zurich:20200312T083000
+DTEND;TZID=America/New_York:20200312T093000
+SEQUENCE:0
+RRULE:FREQ=WEEKLY;UNTIL=20200515
+LOCATION:asd
 DTSTAMP:20200901T120000Z
 ATTENDEE;PARTSTAT=DECLINED:mailto:name@proton.me
 END:VEVENT
@@ -167,6 +250,9 @@ DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
+X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
+ 6WlLrqVlqUjhJ0hEY8VFDvmn2sG0biE2MBSPv-wF5DmmS8cdH8zPI=
+X-PM-SESSION-KEY:mNDd2g2LlUFUwTQZwtLuN3/ci3jq1n/DKX0oIAXgHi0=
 DTSTAMP:20200901T120000Z
 ATTENDEE:mailto:attendee1@proton.me
 ATTENDEE:mailto:attendee2@proton.me

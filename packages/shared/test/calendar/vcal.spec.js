@@ -203,6 +203,18 @@ FREEBUSY:19980318T030000Z/19980318T040000Z
 URL:http://www.example.com/calendar/busytime/jsmith.ifb
 END:VFREEBUSY`;
 
+const veventWithTrueBoolean = `BEGIN:VEVENT
+X-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE
+END:VEVENT`;
+
+const veventWithFalseBoolean = `BEGIN:VEVENT
+X-PM-PROTON-REPLY;VALUE=BOOLEAN:FALSE
+END:VEVENT`;
+
+const veventWithRandomBoolean = `BEGIN:VEVENT
+X-PM-PROTON-REPLY;VALUE=BOOLEAN:GNEEEE
+END:VEVENT`;
+
 describe('calendar', () => {
     it('should parse vcalendar', () => {
         const result = parse(`BEGIN:VCALENDAR
@@ -266,6 +278,21 @@ END:VCALENDAR`);
             summary: {
                 value: 'Our Blissful Anniversary',
             },
+        });
+    });
+
+    it('should parse Boolean properties', () => {
+        expect(parse(veventWithTrueBoolean)).toEqual({
+            component: 'vevent',
+            'x-pm-proton-reply': { value: 'true', parameters: { type: 'boolean' } },
+        });
+        expect(parse(veventWithFalseBoolean)).toEqual({
+            component: 'vevent',
+            'x-pm-proton-reply': { value: 'false', parameters: { type: 'boolean' } },
+        });
+        expect(parse(veventWithRandomBoolean)).toEqual({
+            component: 'vevent',
+            'x-pm-proton-reply': { value: 'false', parameters: { type: 'boolean' } },
         });
     });
 
