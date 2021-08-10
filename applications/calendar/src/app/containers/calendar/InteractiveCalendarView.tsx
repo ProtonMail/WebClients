@@ -403,6 +403,7 @@ const InteractiveCalendarView = ({
             isAllDay: false,
             verificationStatus,
             tzid,
+            emailNotificationsEnabled,
         });
         const originalOrOccurrenceEvent = eventRecurrence
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
