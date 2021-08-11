@@ -39,6 +39,13 @@ const CONFIG: { [key: string]: any } = {
         RETURN_DOM: true,
         RETURN_DOM_FRAGMENT: true,
     },
+    contentWithoutImg: {
+        ALLOW_UNKNOWN_PROTOCOLS: true,
+        WHOLE_DOCUMENT: false,
+        RETURN_DOM: true,
+        RETURN_DOM_FRAGMENT: true,
+        FORBID_TAGS: ['style', 'input', 'form', 'img'],
+    },
 };
 
 const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
@@ -166,9 +173,31 @@ export const protonizer = (input: string, attachHooks: boolean): Element => {
 export const content = clean('content') as (input: string) => Node;
 
 /**
+ * Sanitize input without images and returns the whole document
+
+ */
+export const contentWithoutImage = clean('contentWithoutImg') as (input: string) => Node;
+
+/**
  * Default config we don't want any custom behaviour
  */
 export const input = (str: string) => {
     const result = DOMPurify.sanitize(str, {});
     return `${result}`;
+};
+
+/**
+ * We don't want to display images inside the autoreply composer.
+ * There is an issue on Firefox where images can still be added by drag&drop,
+ * and squire is not able to detect them. That's why we are removing them here.
+ */
+export const removeImagesFromContent = (message: string) => {
+    const div = document.createElement('div');
+    div.innerHTML = message;
+
+    // Remove all images from the message
+    const allImages = div.querySelectorAll('img');
+    allImages.forEach((img) => img.remove());
+
+    return { message: div.innerHTML, containsImages: allImages.length > 0 };
 };
