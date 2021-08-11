@@ -18,14 +18,13 @@ You'll need to have the following environment to work with this project
 -   Yarn 2
 -   git
 
-```console
+```shell
 # Clone the project
 git clone https://github.com/ProtonMail/web-clients.git
 git clone git@github.com:ProtonMail/web-clients.git
 
 # Install all dependencies for the entire monorepo & symlink
 # local dependents to one another
-
 yarn install
 
 # Run web clients by running proton-<package-name>
