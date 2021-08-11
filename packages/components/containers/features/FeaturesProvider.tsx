@@ -33,11 +33,12 @@ const FeaturesProvider = ({ children }: Props) => {
             );
         }
 
-        const newLoading = allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
-            acc[code] = true;
-            return acc;
-        }, {});
-        setLoading(newLoading);
+        setLoading((oldLoading) => {
+            return allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
+                acc[code] = true;
+                return acc;
+            }, { ...oldLoading });
+        });
 
         const promise = silentApi<{ Features: Feature[] }>(getFeatures(allUniqueCodesToFetch))
             .then(({ Features }) => {
@@ -50,11 +51,12 @@ const FeaturesProvider = ({ children }: Props) => {
                 return Features;
             })
             .finally(() => {
-                const newLoading = allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
-                    acc[code] = false;
-                    return acc;
-                }, {});
-                setLoading(newLoading);
+                setLoading((oldLoading) => {
+                    return allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
+                        acc[code] = false;
+                        return acc;
+                    }, { ...oldLoading });
+                });
             });
 
         allUniqueCodesToFetch.forEach((code) => {
