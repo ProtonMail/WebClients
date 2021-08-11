@@ -10,13 +10,13 @@ const useFeatures = (codes: FeatureCode[], prefetch = true) => {
         // Features are queued up during render to gather possible feature codes from
         // children and merge them together with feature codes from parents
         enqueue(codes);
-    }, [codes]);
+    }, codes);
 
     useEffect(() => {
         if (prefetch) {
             get(codes).catch(noop);
         }
-    }, [codes]);
+    }, codes);
 
     return codes.map((code) => {
         return {
