@@ -28,7 +28,7 @@ $field-container: rem(260) !default;
 	}
 
 	padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	border: 1px solid var(--field-norm);
 	background-color: var(--field-background-color, var(--background-norm));
 	color: var(--field-text-color, var(--text-norm));
@@ -44,10 +44,7 @@ $field-container: rem(260) !default;
 
 	&:hover {
 		border-color: var(--field-hover);
-		background-color: var(
-			--field-hover-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--field-hover-background-color, var(--background-norm));
 		color: var(--field-hover-text-color, var(--text-norm));
 	}
 
@@ -55,19 +52,13 @@ $field-container: rem(260) !default;
 	&.focus,
 	&:focus-within {
 		border-color: var(--interaction-norm);
-		background-color: var(
-			--field-focus-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--field-focus-background-color, var(--background-norm));
 		color: var(--field-focus-text-color, var(--text-norm));
 	}
 
 	&[disabled] {
 		border-color: var(--field-disabled);
-		background-color: var(
-			--field-disabled-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--field-disabled-background-color, var(--background-norm));
 		color: var(--field-disabled-text-color, var(--text-disabled));
 	}
 
@@ -119,12 +110,8 @@ input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
 	// Trick to replace the background color
-	box-shadow: 0 0 0 1000px
-		var(--field-background-color, var(--background-norm)) inset !important;
-	-webkit-text-fill-color: var(
-		--field-text-color,
-		var(--text-norm)
-	) !important;
+	box-shadow: 0 0 0 1000px var(--field-background-color, var(--background-norm)) inset !important;
+	-webkit-text-fill-color: var(--field-text-color, var(--text-norm)) !important;
 }
 
 @if $rtl-option==true {
@@ -137,10 +124,7 @@ select:-webkit-autofill {
 }
 
 select.field {
-	background: var(
-		--select-background-color,
-		var(--field-background-color, var(--background-norm))
-	);
+	background: var(--select-background-color, var(--field-background-color, var(--background-norm)));
 	background-size: rem(15);
 	padding-left: 1em;
 	padding-right: rem(20);

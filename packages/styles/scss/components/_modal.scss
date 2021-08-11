@@ -97,7 +97,7 @@ $modal-tiny-width: em(288) !default;
 	color: var(--text-norm);
 	padding: 0;
 	overflow: hidden;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-large);
 	box-shadow: var(--shadow-lifted);
 	animation: anime-modal-in ease 0.15s 1 normal;
 	animation-fill-mode: both;
@@ -150,7 +150,7 @@ $modal-tiny-width: em(288) !default;
 }
 .modal--tiny {
 	width: $modal-tiny-width;
-	border-radius: $global-bigger-border-radius;
+	border-radius: var(--border-radius-large); /* 3841c2553aaa59762ff4c052fa11ff80 */
 }
 
 .modal--wider {
