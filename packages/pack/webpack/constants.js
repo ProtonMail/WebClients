@@ -5,7 +5,7 @@ const OPENPGP_FILES = Object.fromEntries(
         main: 'openpgp/dist/lightweight/openpgp.min.js',
         elliptic: 'openpgp/dist/lightweight/elliptic.min.js',
         worker: 'openpgp/dist/lightweight/openpgp.worker.min.js',
-        compat: 'openpgp/dist/compat/openpgp.min.js'
+        compat: 'openpgp/dist/compat/openpgp.min.js',
     }).map(([k, v]) => [k, bindNodeModulesPrefix(v)])
 );
 
@@ -20,12 +20,13 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'mutex-browser',
     'interval-tree',
     'sieve.js',
-    'idb'
+    'idb',
+    'bip39',
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
 module.exports = {
     OPENPGP_FILES,
     BABEL_EXCLUDE_FILES,
-    BABEL_INCLUDE_NODE_MODULES
+    BABEL_INCLUDE_NODE_MODULES,
 };

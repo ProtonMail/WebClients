@@ -1,6 +1,13 @@
 import { Key } from './Key';
 import { USER_ROLES } from '../constants';
 
+export enum MNEMONIC_STATUS {
+    DISABLED = 0,
+    ENABLED = 1,
+    OUTDATED = 2,
+    SET = 3,
+}
+
 export interface User {
     ID: string;
     Name: string;
@@ -20,6 +27,7 @@ export interface User {
     Keys: Key[];
     DriveEarlyAccess: number;
     ToMigrate: 0 | 1;
+    MnemonicStatus: MNEMONIC_STATUS;
 }
 
 export interface UserModel extends User {

@@ -5,10 +5,16 @@ import { Api, User as tsUser } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getHasKeyMigrationRunner, getResetAddressesKeys } from '@proton/shared/lib/keys';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { auth } from '@proton/shared/lib/api/auth';
+import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
+import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
+import { getMnemonicReset, GetMnemonicResetData, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
+import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import {
     AccountType,
     RecoveryMethod,
@@ -77,6 +83,118 @@ export const handleNewPassword = async ({
     };
 };
 
+export const handleNewPasswordMnemonic = async ({
+    password,
+    cache,
+}: {
+    password: string;
+    cache: ResetCacheResult;
+}): Promise<ResetActionResponse> => {
+    if (!cache.mnemonicData) {
+        throw new Error('Missing data');
+    }
+    const { authApi, decryptedUserKeys, authResponse } = cache.mnemonicData;
+    const keySalt = generateKeySalt();
+    const keyPassword = await computeKeyPassword(password, keySalt);
+    const reEncryptedUserKeys = await Promise.all(
+        decryptedUserKeys.map(async ({ ID, privateKey }) => {
+            const privateKeyArmored = await encryptPrivateKey(privateKey, keyPassword);
+            return {
+                ID,
+                PrivateKey: privateKeyArmored,
+            };
+        })
+    );
+    await srpVerify({
+        api: authApi,
+        credentials: { password },
+        config: mnemonicReset({
+            KeysSalt: keySalt,
+            UserKeys: reEncryptedUserKeys,
+        }),
+    });
+
+    const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    await persistSession({ ...authResponse, User, keyPassword, api: authApi });
+
+    return {
+        to: STEPS.DONE,
+        session: {
+            ...authResponse,
+            User,
+            keyPassword,
+            flow: 'reset',
+        },
+    };
+};
+
+const handleMnemonic = async ({
+    username,
+    cache,
+    api,
+    mnemonic,
+}: {
+    username: string;
+    cache: ResetCacheResult;
+    api: Api;
+    mnemonic: string;
+}): Promise<ResetActionResponse> => {
+    const randomBytes = await mnemonicToBase64RandomBytes(mnemonic);
+    const info = await api<InfoResponse>(getMnemonicAuthInfo(username));
+    const authResponse = await srpAuth<AuthResponse>({
+        info,
+        api,
+        config: authMnemonic(username),
+        credentials: {
+            username,
+            password: randomBytes,
+        },
+    });
+
+    const { UID, AccessToken } = authResponse;
+    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
+
+    const { MnemonicUserKeys } = await authApi<GetMnemonicResetData>(getMnemonicReset());
+    const decryptedUserKeys = (
+        await Promise.all(
+            MnemonicUserKeys.map(async ({ ID, PrivateKey, Salt }) => {
+                const keyPassword = await computeKeyPassword(randomBytes, Salt);
+                const privateKey = await decryptPrivateKey(PrivateKey, keyPassword).catch(noop);
+                if (!privateKey) {
+                    return;
+                }
+                return {
+                    ID,
+                    privateKey,
+                    publicKey: privateKey.toPublic(),
+                };
+            })
+        )
+    ).filter(isTruthy);
+
+    if (!decryptedUserKeys.length) {
+        return {
+            cache,
+            to: STEPS.ERROR,
+        };
+    }
+
+    return {
+        cache: {
+            ...cache,
+            username,
+            method: 'mnemonic',
+            value: mnemonic,
+            mnemonicData: {
+                decryptedUserKeys,
+                authApi,
+                authResponse,
+            },
+        },
+        to: STEPS.NEW_PASSWORD,
+    };
+};
+
 export const handleRequestToken = async ({
     cache,
     method,
@@ -90,6 +208,14 @@ export const handleRequestToken = async ({
     username: string;
     api: Api;
 }): Promise<ResetActionResponse> => {
+    if (method === 'mnemonic') {
+        return handleMnemonic({
+            cache,
+            username,
+            mnemonic: value,
+            api,
+        });
+    }
     if (method === 'sms') {
         await api(requestLoginResetToken({ Username: username, Phone: value }));
     }

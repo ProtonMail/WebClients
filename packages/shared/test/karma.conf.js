@@ -23,7 +23,7 @@ module.exports = (config) => {
                                 options: { transpileOnly: true },
                             },
                         ],
-                        exclude: /node_modules/,
+                        exclude: /node_modules\/(?!.*(bip39))/,
                     },
                 ],
             },

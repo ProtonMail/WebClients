@@ -329,7 +329,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                 <SetPasswordForm
                     onSubmit={(newPassword) => {
                         createNotification({
-                            text: c('Info').t`This can take a few seconds or a few minutes depending on your device.`,
+                            text: c('Info').t`This can take a few seconds or a few minutes depending on your device`,
                             type: 'info',
                         });
                         return handleNewPassword({
