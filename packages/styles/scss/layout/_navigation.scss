@@ -73,7 +73,7 @@ $padding-left-link: rem(20) !default;
 	@extend .interactive;
 
 	padding: 0.5em;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	color: var(--text-weak);
 
 	.navigation-icon--expand {

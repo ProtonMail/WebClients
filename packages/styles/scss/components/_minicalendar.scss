@@ -107,7 +107,7 @@
 		@extend .interactive;
 
 		width: 100%;
-		border-radius: $global-border-radius;
+		border-radius: var(--border-radius-medium);
 
 		&[aria-pressed='true'] {
 			background: var(--interaction-weak);
@@ -128,7 +128,7 @@
 			left: 0;
 			z-index: 0;
 			background: var(--primary);
-			border-radius: $global-border-radius;
+			border-radius: var(--border-radius-medium);
 			opacity: 0;
 			pointer-events: none;
 			transition: opacity 0.15s easing(easeOutQuad);

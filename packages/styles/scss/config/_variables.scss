@@ -15,14 +15,10 @@ $use-other-typo-helpers: true !default;
 $use-other-line-height-helpers: true !default;
 
 // fonts
-$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-	Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
-$font-family-monospace: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo',
-	monospace, monospace !default;
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+	sans-serif !default;
+$font-family-monospace: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo', monospace, monospace !default;
 // explanation for double monospace http://code.iamkate.com/html-and-css/fixing-browsers-broken-monospace-font-handling/
-
-$global-border-radius: 3px !default;
-$global-bigger-border-radius: 6px !default;
 
 // main breakpoints
 $breakpoint-large: 1500 !default;
