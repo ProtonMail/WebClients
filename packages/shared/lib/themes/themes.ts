@@ -5,9 +5,6 @@ import defaultTheme from '@proton/styles/scss/themes/default-theme.scss';
 import themeDarkSvg from '@proton/styles/assets/img/themes/theme-dark.svg';
 import darkTheme from '@proton/styles/scss/themes/dark-theme.scss';
 
-import themeLightSvg from '@proton/styles/assets/img/themes/theme-light.svg';
-import lightTheme from '@proton/styles/scss/themes/light-theme.scss';
-
 import themeMonokaiSvg from '@proton/styles/assets/img/themes/theme-monokai.svg';
 import monokaiTheme from '@proton/styles/scss/themes/monokai-theme.scss';
 
@@ -17,16 +14,26 @@ import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
 import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
 import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
 
+export enum HistoricThemeTypes {
+    V1_Default = 0,
+    V1_Light = 2,
+    V1_Contrast = 4,
+}
+
 export enum ThemeTypes {
-    Default = 0,
+    Default = 6,
     Dark = 1,
-    Light = 2,
     Monokai = 3,
-    Contrast = 4,
+    Contrast = 7,
     Legacy = 5,
 }
 
-export const PROTON_THEMES = {
+export const ThemeMigrationMap: Partial<{ [key in HistoricThemeTypes]: ThemeTypes | HistoricThemeTypes }> = {
+    [HistoricThemeTypes.V1_Default]: ThemeTypes.Contrast,
+    [HistoricThemeTypes.V1_Contrast]: ThemeTypes.Default,
+};
+
+export const PROTON_THEMES_MAP = {
     [ThemeTypes.Default]: {
         label: 'Proton',
         identifier: ThemeTypes.Default,
@@ -38,12 +45,6 @@ export const PROTON_THEMES = {
         identifier: ThemeTypes.Dark,
         src: themeDarkSvg,
         theme: darkTheme.toString(),
-    },
-    [ThemeTypes.Light]: {
-        label: 'Snow',
-        identifier: ThemeTypes.Light,
-        src: themeLightSvg,
-        theme: lightTheme.toString(),
     },
     [ThemeTypes.Monokai]: {
         label: 'Monokai',
@@ -64,3 +65,11 @@ export const PROTON_THEMES = {
         theme: legacyTheme.toString(),
     },
 } as const;
+
+export const PROTON_THEMES = [
+    ThemeTypes.Default,
+    ThemeTypes.Dark,
+    ThemeTypes.Monokai,
+    ThemeTypes.Contrast,
+    ThemeTypes.Legacy,
+].map((id) => PROTON_THEMES_MAP[id]);
