@@ -1,13 +1,4 @@
-import {
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-    memo,
-    forwardRef,
-    Ref,
-    useImperativeHandle,
-} from 'react';
+import { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, useImperativeHandle } from 'react';
 
 import * as React from 'react';
 import { hasAttachments, isDraft, isSent, isOutbox } from '@proton/shared/lib/mail/messages';
@@ -299,6 +290,8 @@ const MessageView = (
             messageLoaded,
             draft,
             conversationMode,
+            mailSettings,
+            messageRef: elementRef,
         },
         {
             onFocus,
@@ -306,6 +299,7 @@ const MessageView = (
             toggleOriginalMessage,
             handleLoadRemoteImages,
             handleLoadEmbeddedImages,
+            onBack,
         }
     );
 
