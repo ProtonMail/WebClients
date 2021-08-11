@@ -4,7 +4,7 @@
 
 		&-number {
 			display: inline-flex;
-			border-radius: $global-border-radius;
+			border-radius: var(--border-radius-medium);
 
 			@include respond-to($breakpoint-small, 'min') {
 				font-size: rem(20);

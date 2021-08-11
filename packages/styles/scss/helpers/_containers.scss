@@ -81,11 +81,11 @@ $breakpoint-2-columns: 1180 !default;
 }
 
 .rounded {
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 }
 
 .rounded-bigger {
-	border-radius: $global-bigger-border-radius;
+	border-radius: var(--border-radius-large);
 }
 
 .rounded50 {

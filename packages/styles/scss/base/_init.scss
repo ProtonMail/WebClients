@@ -199,7 +199,7 @@ kbd {
 	padding: 0 0.25em;
 	background-color: var(--background-strong);
 	border: 1px solid var(--border-norm);
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 }
 
 hr {

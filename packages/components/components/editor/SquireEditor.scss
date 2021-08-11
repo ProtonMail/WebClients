@@ -77,7 +77,7 @@
 	left: 0;
 	right: 0;
 	background-color: var(--background-weak);
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 }
 
 .editor-toolbar-more-menu .dropdown-item.dropdown-item--no-separator {
