@@ -46,6 +46,7 @@ export enum FeatureCode {
     ScheduledSend = 'ScheduledSend',
     KeyMigration = 'KeyMigration',
     CalendarEmailNotification = 'CalendarEmailNotification',
+    Mnemonic = 'Mnemonic',
 }
 
 export interface FeaturesContextValue {

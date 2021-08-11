@@ -140,7 +140,7 @@ export const getAddressKeyToken = ({
     return decryptMemberToken(Token, [organizationKey.privateKey], [organizationKey.publicKey]);
 };
 
-interface ReformatAddressKeyArguments {
+export interface ReformatAddressKeyArguments {
     email: string;
     name?: string;
     passphrase: string;

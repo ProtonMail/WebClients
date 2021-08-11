@@ -135,3 +135,16 @@ export const queryScopes = () => ({
     method: 'get',
     url: 'auth/scopes',
 });
+
+export const getMnemonicAuthInfo = (Username?: string) => ({
+    method: 'post',
+    url: 'auth/v4/mnemonic/info',
+    data: Username ? { Username } : undefined,
+});
+
+export const authMnemonic = (Username?: string) => ({
+    method: 'post',
+    url: 'auth/v4/mnemonic',
+    data: { Username },
+    ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
+});

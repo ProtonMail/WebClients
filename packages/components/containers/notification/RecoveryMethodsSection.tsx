@@ -1,18 +1,23 @@
 import { c } from 'ttag';
 import { updateNotifyEmail, updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 
-import { Toggle, Info, Loader } from '../../components';
+import { Button, Info, Loader, Toggle } from '../../components';
 
 import {
+    useAddresses,
     useApi,
-    useModals,
-    useUserSettings,
-    useLoading,
-    useEventManager,
-    useNotifications,
     useConfig,
+    useEventManager,
+    useFeature,
+    useLoading,
+    useModals,
     useMyLocation,
+    useNotifications,
+    useUser,
+    useUserSettings,
 } from '../../hooks';
 
 import AuthModal from '../password/AuthModal';
@@ -23,11 +28,15 @@ import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { GenerateMnemonicModal } from '../mnemonic';
+import DisableMnemonicModal from '../mnemonic/DisableMnemonicModal';
+import { FeatureCode } from '../features';
 
 const { VPN } = CLIENT_TYPES;
 
 const RecoveryMethodsSection = () => {
     const { createModal } = useModals();
+    const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [loadingReset, withLoadingReset] = useLoading();
     const [loadingNotify, withLoadingNotify] = useLoading();
@@ -36,7 +45,18 @@ const RecoveryMethodsSection = () => {
     const api = useApi();
     const { CLIENT_TYPE } = useConfig();
     const [myLocation, loadingMyLocation] = useMyLocation();
+    const mnemonicFeature = useFeature(FeatureCode.Mnemonic);
     const defaultCountry = myLocation?.Country?.toUpperCase();
+
+    const [addresses = []] = useAddresses();
+    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
+    const showMnemonic = mnemonicFeature.feature?.Value && hasMigratedKeys;
+
+    const mnemonicEnabled =
+        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
+        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
+        user.MnemonicStatus === MNEMONIC_STATUS.SET;
+    const [loadingMnemonic, withLoadingMnemonic] = useLoading();
 
     if (loadingUserSettings || !userSettings || loadingMyLocation) {
         return <Loader />;
@@ -114,7 +134,7 @@ const RecoveryMethodsSection = () => {
                             <Info
                                 url="https://protonmail.com/blog/notification-emails/"
                                 title={c('Info')
-                                    .t`Disabling this will prevent this email from being used for account recovery`}
+                                    .t`Disabling this will prevent this email from being used for account recovery.`}
                             />
                         </label>
                     </div>
@@ -173,12 +193,95 @@ const RecoveryMethodsSection = () => {
                                     <span className="pr0-5">{c('Label').t`Allow recovery by phone`}</span>
                                     <Info
                                         title={c('Info')
-                                            .t`Disabling this will prevent this phone number from being used for account recovery`}
+                                            .t`Disabling this will prevent this phone number from being used for account recovery.`}
                                     />
                                 </label>
                             </div>
                         </SettingsLayoutRight>
                     </SettingsLayout>
+
+                    {showMnemonic && (
+                        <>
+                            <hr className="mb2 mt2" />
+
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label
+                                        className="pt0 on-mobile-mb0-5 text-semibold"
+                                        htmlFor="mnemonic-phrase-toggle"
+                                    >
+                                        <span className="mr0-5">{c('label').t`Recovery phrase`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.`}
+                                        />
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight className="flex-item-fluid pt0-5">
+                                    <div className="flex flex-align-items-center mb1-5">
+                                        <Toggle
+                                            className="mr0-5"
+                                            loading={loadingMnemonic}
+                                            checked={mnemonicEnabled}
+                                            id="passwordMnemonicResetToggle"
+                                            onChange={({ target: { checked } }) => {
+                                                const handleMnemonicToggle = async (willBeChecked: boolean) => {
+                                                    await new Promise<any>((resolve, reject) => {
+                                                        if (willBeChecked) {
+                                                            createModal(
+                                                                <GenerateMnemonicModal
+                                                                    onClose={reject}
+                                                                    onSuccess={resolve}
+                                                                />
+                                                            );
+                                                        } else {
+                                                            createModal(
+                                                                <DisableMnemonicModal
+                                                                    onClose={reject}
+                                                                    onSuccess={resolve}
+                                                                />
+                                                            );
+                                                        }
+                                                    });
+                                                    await call();
+                                                };
+
+                                                return withLoadingMnemonic(handleMnemonicToggle(checked));
+                                            }}
+                                        />
+                                        <label htmlFor="passwordMnemonicResetToggle" className="mr0-5 flex-item-fluid">
+                                            <span className="pr0-5">{c('Label')
+                                                .t`Allow recovery by recovery phrase`}</span>
+                                            <Info
+                                                title={c('Info')
+                                                    .t`Disabling this will prevent your recovery phrase from being used for account recovery.`}
+                                            />
+                                        </label>
+                                    </div>
+
+                                    {mnemonicEnabled ? (
+                                        <Button
+                                            shape="outline"
+                                            onClick={async () => {
+                                                await new Promise((resolve, reject) => {
+                                                    createModal(
+                                                        <GenerateMnemonicModal
+                                                            onClose={reject}
+                                                            onSuccess={resolve}
+                                                            confirmStep
+                                                        />
+                                                    );
+                                                });
+                                                await call();
+                                            }}
+                                        >
+                                            {c('Action').t`Create new recovery phrase`}
+                                        </Button>
+                                    ) : null}
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        </>
+                    )}
                 </>
             )}
         </SettingsSection>
