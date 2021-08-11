@@ -9,6 +9,8 @@ import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert, useNotific
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import { HOUR } from '@proton/shared/lib/constants';
+import { serverTime } from 'pmcrypto/lib/serverTime';
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { MessageExtendedWithData } from '../../models/message';
@@ -183,9 +185,11 @@ export const useSendVerifications = () => {
                         // otherwise the server might be trying to downgrade the encryption preferences maliciously.
                         const cachedSignatureTime = cachedSendInfo.contactSignatureInfo.creationTime!;
                         const lastMinuteSignatureTime = lastMinuteEncryptionPrefs.contactSignatureTimestamp!;
-                        // const lastMinuteSignatureAge = Math.abs(+lastMinuteSignatureTime - serverTime());
-                        if (+lastMinuteSignatureTime < +cachedSignatureTime) {
-                            // || lastMinuteSignatureAge > 24 * HOUR) {
+                        const lastMinuteSignatureAge = Math.abs(+lastMinuteSignatureTime - serverTime());
+                        if (
+                            +lastMinuteSignatureTime < +cachedSignatureTime ||
+                            (+lastMinuteSignatureTime !== +cachedSignatureTime && lastMinuteSignatureAge > 24 * HOUR)
+                        ) {
                             // The server sent us an old last-minute contact signature. This should never happen, since the server time is used when signing.
                             // This might be an attempt to downgrade the encryption preferences, so we silently discard last-minute prefs and send with cached ones.
                             sendPreferences = cachedSendInfo.sendPreferences!;
