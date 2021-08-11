@@ -220,7 +220,7 @@
 }
 
 // Loading state
-.button-henlo[aria-busy='true'] {
+.button[aria-busy='true'] {
 	position: relative;
 
 	.loader-container {
