@@ -151,11 +151,11 @@ const Dropdown = ({
         };
 
         document.addEventListener('dropdownclose', onClose);
-        document.addEventListener('click', handleClickOutside);
+        document.addEventListener('click', handleClickOutside, { capture: true });
 
         return () => {
             document.removeEventListener('dropdownclose', onClose);
-            document.removeEventListener('click', handleClickOutside);
+            document.removeEventListener('click', handleClickOutside, { capture: true });
         };
     }, [isOpen, autoCloseOutside, onClose, anchorRef.current, popperEl]);
 
