@@ -23,11 +23,15 @@ const enhancedConfig = {
 sentry(enhancedConfig);
 
 if ('registerProtocolHandler' in navigator) {
-    navigator.registerProtocolHandler(
-        'mailto',
-        `${window.location.origin}${MAILTO_PROTOCOL_HANDLER_PATH}`,
-        'ProtonMail'
-    );
+    try {
+        navigator.registerProtocolHandler(
+            'mailto',
+            `${window.location.origin}${MAILTO_PROTOCOL_HANDLER_PATH}`,
+            'ProtonMail'
+        );
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 const App = () => {
