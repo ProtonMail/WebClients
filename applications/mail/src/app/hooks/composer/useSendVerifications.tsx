@@ -102,7 +102,10 @@ export const useSendVerifications = () => {
                         title={c('Title').t`No attachment found`}
                         confirm={c('Action').t`Send anyway`}
                     >
-                        <Alert>{c('Info').t`Do you want to send your message anyway?`}</Alert>
+                        <Alert learnMore="https://protonmail.com/support/knowledge-base/attachment-reminders/">
+                            {c('Info')
+                                .t`You wrote "${keyword}", but no attachment has been added. Do you want to send your message anyway?`}
+                        </Alert>
                     </ConfirmModal>
                 );
             });
