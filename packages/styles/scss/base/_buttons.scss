@@ -1,7 +1,7 @@
 /*
  * Button shape
  */
-.button-henlo {
+.button {
 	display: inline-block;
 	padding: em(7) em(16) em(7); // 35px height
 
@@ -220,7 +220,7 @@
 }
 
 // Loading state
-.button-henlo[aria-busy='true'] {
+.button[aria-busy='true'] {
 	position: relative;
 
 	.loader-container {
