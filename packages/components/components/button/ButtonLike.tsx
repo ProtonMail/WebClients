@@ -71,7 +71,7 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
         const actualColor = group ? 'weak' : color;
 
         const buttonClassName = classnames([
-            actualShape === 'link' ? 'button-link' : 'button-henlo',
+            actualShape === 'link' ? 'button-link' : 'button',
             pill && 'button-pill',
             icon && 'button-for-icon',
             group && 'button-group-item',
