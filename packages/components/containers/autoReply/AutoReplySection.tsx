@@ -5,6 +5,7 @@ import { isMac } from '@proton/shared/lib/helpers/browser';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import { AutoReplyDuration, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
+import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import {
     useMailSettings,
     useLoading,
@@ -78,7 +79,17 @@ const AutoReplySection = () => {
     };
 
     const handleSubmit = async () => {
-        await api(updateAutoresponder(toAutoResponder(model)));
+        // Remove images from the composer in autoreply
+        const { message, containsImages } = removeImagesFromContent(model.message);
+        if (containsImages) {
+            createNotification({
+                type: 'warning',
+                text: c('Info').t`Images have been removed because they are not allowed in auto-reply.`,
+            });
+        }
+        updateModel('message').bind(message);
+
+        await api(updateAutoresponder(toAutoResponder({ ...model, message })));
         await call();
         createNotification({ text: c('Success').t`Auto-reply updated` });
     };

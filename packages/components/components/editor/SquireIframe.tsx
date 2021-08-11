@@ -69,7 +69,7 @@ const SquireIframe = (
     useEffect(() => {
         const init = async (iframeDoc: Document) => {
             try {
-                const squire = await initSquire(iframeDoc, onEllipseClick);
+                const squire = await initSquire(iframeDoc, metadata.supportImages, onEllipseClick);
                 setSquireRef(ref, squire);
                 setSquireReady(true);
                 onReady();
@@ -163,7 +163,8 @@ const SquireIframe = (
             return;
         }
         const hasHtml = e.dataTransfer.types.some((type) => type === 'text/html');
-        if (hasHtml) {
+        // Also check if the composer is not supporting image to trigger content sanitization
+        if (hasHtml || !metadata.supportImages) {
             const data = e.dataTransfer.getData('text/html');
             e.preventDefault();
             squire.insertHTML(message(data));
