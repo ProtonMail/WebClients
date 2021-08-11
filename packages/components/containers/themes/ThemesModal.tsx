@@ -6,8 +6,6 @@ import { FormModal } from '../../components';
 import { useApi } from '../../hooks';
 import { ThemeCards, useTheme } from '.';
 
-const themes = Object.values(PROTON_THEMES);
-
 const ThemesModal = (props: { onClose?: () => void }) => {
     const api = useApi();
     const [theme, setTheme] = useTheme();
@@ -27,7 +25,7 @@ const ThemesModal = (props: { onClose?: () => void }) => {
             <div className="flex">
                 <ThemeCards
                     className="theme-modal-list"
-                    list={themes}
+                    list={PROTON_THEMES}
                     themeIdentifier={theme}
                     onChange={handleThemeChange}
                 />
