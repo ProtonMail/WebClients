@@ -27,7 +27,7 @@
 		width: em(20);
 		height: em(20);
 		margin: auto 0.5em auto 0;
-		border-radius: $global-border-radius;
+		border-radius: var(--border-radius-small);
 
 		border: 1px solid var(--field-norm);
 		background-color: var(--field-background-color, var(--background-norm));

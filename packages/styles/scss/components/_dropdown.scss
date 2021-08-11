@@ -71,7 +71,7 @@
 		top: calc(var(--top) * 1px);
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
-		border-radius: $global-border-radius;
+		border-radius: var(--border-radius-large);
 		box-shadow: var(--shadow-lifted);
 		border: 1px solid var(--border-norm);
 		background: var(--background-norm);
@@ -159,18 +159,10 @@
 		min-width: min(var(--min-width, 1.5em), var(--max-width-bounds));
 		min-height: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
-		border-radius: $global-border-radius;
+		border-radius: var(--border-radius-large);
 		background-color: var(--background-norm);
-		background-image: radial-gradient(
-				farthest-side at 50% 0,
-				var(--backdrop-norm),
-				transparent
-			),
-			radial-gradient(
-				farthest-side at 50% 100%,
-				var(--backdrop-norm),
-				transparent
-			);
+		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
+			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
 		background-position: 50% 0, 0 100%;
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
