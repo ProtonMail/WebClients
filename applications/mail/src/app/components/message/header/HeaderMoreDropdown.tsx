@@ -1,7 +1,7 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useRef } from 'react';
-import * as React from 'react';
 import { c } from 'ttag';
+import { useLocation } from 'react-router-dom';
+
 import {
     Icon,
     DropdownMenu,
@@ -20,11 +20,13 @@ import {
     useLabels,
     useMailSettings,
 } from '@proton/components';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
@@ -44,6 +46,7 @@ import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
+import { isConversationMode } from '../../../helpers/mailSettings';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
@@ -57,6 +60,7 @@ interface Props {
     onSourceMode: (sourceMode: boolean) => void;
     breakpoints: Breakpoints;
     parentMessageRef: React.RefObject<HTMLElement>;
+    mailSettings: MailSettings;
 }
 
 const HeaderMoreDropdown = ({
@@ -69,7 +73,9 @@ const HeaderMoreDropdown = ({
     onSourceMode,
     breakpoints,
     parentMessageRef,
+    mailSettings,
 }: Props) => {
+    const location = useLocation();
     const api = useApi();
     const attachmentsCache = useAttachmentCache();
     const { call } = useEventManager();
@@ -92,7 +98,11 @@ const HeaderMoreDropdown = ({
     const handleUnread = async () => {
         closeDropdown.current?.();
         onToggle();
-        parentMessageRef.current?.focus();
+        if (isConversationMode(labelID, mailSettings, location)) {
+            parentMessageRef.current?.focus();
+        } else {
+            onBack();
+        }
         markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
         await call();
     };
