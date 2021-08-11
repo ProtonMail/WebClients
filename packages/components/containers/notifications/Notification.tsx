@@ -55,4 +55,5 @@ const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => 
         </div>
     );
 };
+
 export default Notification;
