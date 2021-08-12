@@ -44,7 +44,7 @@ const Checkbox = (
         <label
             htmlFor={id}
             className={classnames([
-                'inline-flex',
+                'checkbox-container',
                 !className?.includes('increase-click-surface') && 'relative',
                 className,
             ])}
@@ -56,7 +56,7 @@ const Checkbox = (
                 disabled={disabled || loading}
                 id={id}
                 type="checkbox"
-                className="checkbox"
+                className="checkbox-input"
                 checked={checked}
                 {...rest}
             />
