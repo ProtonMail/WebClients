@@ -28,6 +28,7 @@ interface Props extends HeaderProps {
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
+    onOpenChat?: () => void;
     isNarrow?: boolean;
 }
 
@@ -44,6 +45,7 @@ const PrivateHeader = ({
     floatingButton,
     expanded,
     onToggleExpand,
+    onOpenChat,
     title,
 }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
@@ -125,7 +127,7 @@ const PrivateHeader = ({
                         </TopNavbarListItem>
                     )}
                     <TopNavbarListItem className="relative">
-                        <UserDropdown />
+                        <UserDropdown onOpenChat={onOpenChat} />
                     </TopNavbarListItem>
                 </TopNavbarList>
             </TopNavbar>

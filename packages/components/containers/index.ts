@@ -44,6 +44,7 @@ export * from './rightToLeft';
 export * from './mail';
 export * from './onboarding';
 export * from './topBanners';
+export * from './zendesk';
 export * from './compatibilityCheck';
 export * from './items';
 export * from './importAssistant';

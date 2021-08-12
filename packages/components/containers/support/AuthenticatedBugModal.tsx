@@ -1,14 +1,12 @@
-import { useAddresses, useUser } from '../../hooks';
-import BugModal from './BugModal';
+import { useAddresses, useUser, useUserSettings } from '../../hooks';
+import BugModal, { Props } from './BugModal';
 
-interface Props {
-    onClose?: () => void;
-}
-
-const AuthenticatedBugModal = (props: Props) => {
-    const [{ Name = '' }] = useUser();
+const AuthenticatedBugModal = (props: Omit<Props, 'username' | 'email'>) => {
+    const [{ Name = '', Email }] = useUser();
+    const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();
-    return <BugModal username={Name} addresses={addresses} {...props} />;
+    const email = Email || addresses[0]?.Email || userSettings?.Email?.Value;
+    return <BugModal username={Name} email={email} {...props} />;
 };
 
 export default AuthenticatedBugModal;
