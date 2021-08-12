@@ -17,7 +17,7 @@ export const getAccountPage = () => {
     return {
         text: c('Title').t`Account`,
         to: '/account',
-        icon: 'account',
+        icon: 'circle-user',
         subsections: [
             {
                 text: c('Title').t`Username`,
