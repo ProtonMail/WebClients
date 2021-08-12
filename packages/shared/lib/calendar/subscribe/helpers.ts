@@ -37,7 +37,7 @@ export const getCalendarHasSubscriptionParameters = (
     return !!(calendar as SubscribedCalendar).SubscriptionParameters;
 };
 
-export const getCalendarIsSynced = (calendar: SubscribedCalendar) => {
+export const getCalendarIsNotSynced = (calendar: SubscribedCalendar) => {
     const { Status, LastUpdateTime } = calendar.SubscriptionParameters;
 
     return Status > CALENDAR_SUBSCRIPTION_STATUS.OK || Date.now() - LastUpdateTime * 1000 > 12 * HOUR;

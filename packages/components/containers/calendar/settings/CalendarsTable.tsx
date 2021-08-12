@@ -1,6 +1,6 @@
 import {
     getCalendarHasSubscriptionParameters,
-    getCalendarIsSynced,
+    getCalendarIsNotSynced,
     getIsSubscribedCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { c } from 'ttag';
@@ -9,16 +9,7 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import {
-    Badge,
-    DropdownActions,
-    Icon,
-    Info,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-} from '../../../components';
+import { Badge, DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
@@ -70,7 +61,7 @@ const CalendarsTable = ({
                     const isDefault = ID === defaultCalendarID;
                     const isSubscribed = getIsSubscribedCalendar(calendar);
                     const isNotSynced =
-                        getCalendarHasSubscriptionParameters(calendar) && !getCalendarIsSynced(calendar);
+                        getCalendarHasSubscriptionParameters(calendar) && getCalendarIsNotSynced(calendar);
 
                     const list: { text: string; onClick: () => void }[] = [
                         hasNonDelinquentScope && {
