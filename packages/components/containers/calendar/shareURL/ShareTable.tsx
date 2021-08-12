@@ -18,6 +18,7 @@ import {
     Option,
     Alert,
 } from '../../../components';
+import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {
     calendars: Calendar[];
@@ -45,6 +46,7 @@ const ShareTable = ({
     const shouldDisableCreateButton = disabled || maxLinksPerCalendarReached || !user.hasNonDelinquentScope;
     const { search } = useLocation();
     const shareTableWrapperRef = useRef<HTMLDivElement>(null);
+    const options = calendars.map(({ ID, Name, Color }) => ({ id: ID, name: Name, color: Color }));
 
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
@@ -99,24 +101,12 @@ const ShareTable = ({
                                         <span className="text-ellipsis">{calendars[0].Name}</span>
                                     </div>
                                 ) : (
-                                    <SelectTwo
-                                        disabled={disabled}
-                                        value={selectedCalendarID}
+                                    <CalendarSelect
+                                        calendarID={selectedCalendarID}
+                                        options={options}
                                         onChange={({ value }) => setSelectedCalendarID(value)}
-                                    >
-                                        {calendars.map(({ ID, Name, Color }) => (
-                                            <Option key={ID} value={ID} title={Name}>
-                                                <div className="flex flex-nowrap flex-align-items-center">
-                                                    <Icon
-                                                        name="calendar-days"
-                                                        className="mr0-75 flex-item-noshrink"
-                                                        style={{ color: Color }}
-                                                    />
-                                                    <span className="text-ellipsis">{Name}</span>
-                                                </div>
-                                            </Option>
-                                        ))}
-                                    </SelectTwo>
+                                        disabled={disabled}
+                                    />
                                 )}
                             </div>,
                             <div key="what-others-see">
