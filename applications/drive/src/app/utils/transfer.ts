@@ -1,8 +1,7 @@
-import { TransferState, TransferMeta, Transfer, TransferSummary } from '../interfaces/transfer';
+import { TransferState, TransferMeta, Transfer, TransferSummary, TransfersStats } from '../interfaces/transfer';
 import { LinkMeta } from '../interfaces/link';
 import { FileBrowserItem } from '../components/FileBrowser/interfaces';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
-import { TransfersStats } from '../components/TransferManager/interfaces';
 
 export const isTransferFinished = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled, TransferState.Done].includes(state);

@@ -96,3 +96,38 @@ export interface ThumbnailMeta {
 }
 
 export type API = (query: any) => any;
+
+export interface TransferStats {
+    active: boolean;
+    progress: number;
+    speed: number;
+}
+export interface TransfersStats {
+    timestamp: Date;
+    stats: { [id: string]: TransferStats };
+}
+
+export enum TransferType {
+    Download = 'download',
+    Upload = 'upload',
+}
+
+export enum TransferGroup {
+    ACTIVE,
+    DONE,
+    QUEUED,
+    FAILURE,
+}
+
+export const STATE_TO_GROUP_MAP = {
+    [TransferState.Progress]: TransferGroup.ACTIVE,
+    [TransferState.Finalizing]: TransferGroup.ACTIVE,
+    [TransferState.Paused]: TransferGroup.ACTIVE,
+    [TransferState.Canceled]: TransferGroup.FAILURE,
+    [TransferState.NetworkError]: TransferGroup.FAILURE,
+    [TransferState.Done]: TransferGroup.DONE,
+    [TransferState.Error]: TransferGroup.FAILURE,
+    [TransferState.Initializing]: TransferGroup.QUEUED,
+    [TransferState.Conflict]: TransferGroup.QUEUED,
+    [TransferState.Pending]: TransferGroup.QUEUED,
+};
