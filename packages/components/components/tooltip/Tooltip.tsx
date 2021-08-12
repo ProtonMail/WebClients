@@ -65,7 +65,10 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ..
     const mergedRef = useCombinedRefs(anchorRef, child?.ref);
 
     if (!title) {
-        return child;
+        return React.cloneElement(child, {
+            ref: mergedRef,
+            ...rest,
+        });
     }
 
     if (!child) {
