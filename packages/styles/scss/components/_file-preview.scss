@@ -1,9 +1,6 @@
 .file-preview {
-	color: var(--file-preview-text-color, var(--text-norm));
-	background-color: var(
-		--file-preview-background-color,
-		var(--background-norm)
-	);
+	color: var(--file-preview-text-color);
+	background-color: var(--file-preview-background-color, var(--background-norm));
 	@extend .flex-item-fluid-auto;
 	@extend .flex-column;
 	position: fixed;

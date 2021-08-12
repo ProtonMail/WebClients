@@ -30,15 +30,15 @@
 		border-radius: var(--border-radius-small);
 
 		border: 1px solid var(--field-norm);
-		background-color: var(--field-background-color, var(--background-norm));
-		color: var(--field-text-color, var(--text-norm));
+		background-color: var(--field-background-color);
+		color: var(--field-text-color);
 
 		transition: 0.15s easing(easeOutCubic);
 
 		&:hover {
 			border-color: var(--field-hover);
-			background-color: var(--field-hover-background-color, var(--background-norm));
-			color: var(--field-hover-text-color, var(--text-norm));
+			background-color: var(--field-hover-background-color);
+			color: var(--field-hover-text-color);
 		}
 
 		&-img {
@@ -50,21 +50,21 @@
 
 	&-input:focus + &-fakecheck {
 		border-color: var(--interaction-norm);
-		background-color: var(--field-focus-background-color, var(--background-norm));
-		color: var(--field-focus-text-color, var(--text-norm));
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
 	}
 
 	&-input[aria-invalid='true'] + &-fakecheck {
 		border-color: var(--signal-danger);
-		background-color: var(--field-background-color, var(--background-norm));
+		background-color: var(--field-background-color);
 		color: var(--signal-danger);
 	}
 
 	&-input[disabled] + &-fakecheck,
 	&-input:indeterminate + &-fakecheck {
 		border-color: var(--field-disabled);
-		background-color: var(--field-disabled-background-color, var(--background-norm));
-		color: var(--field-disabled-text-color, var(--text-disabled));
+		background-color: var(--field-disabled-background-color);
+		color: var(--field-disabled-text-color);
 	}
 
 	/*

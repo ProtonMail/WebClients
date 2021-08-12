@@ -112,7 +112,7 @@
 	padding-right: em(16);
 	cursor: text;
 	&.disabled {
-		color: var(--field-disabled-text-color, var(--text-disabled));
+		color: var(--field-disabled-text-color);
 		border-color: var(--field-disabled);
 		.composer-addresses-addressIcon {
 			opacity: 0.5;

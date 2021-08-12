@@ -39,13 +39,13 @@ $padding-left-link: rem(20) !default;
 	}
 
 	&:focus::after {
-		border-left: 4px solid var(--navigation-current-item-marker-color, var(--interaction-norm));
+		border-left: 4px solid var(--navigation-current-item-marker-color);
 	}
 }
 
 [aria-current='page'].navigation-link {
-	background-color: var(--navigation-current-item-background-color, var(--interaction-default-hover));
-	color: var(--navigation-current-item-text-color, var(--text-norm));
+	background-color: var(--navigation-current-item-background-color);
+	color: var(--navigation-current-item-text-color);
 	font-weight: bold;
 
 	&:hover .navigation-icon:not(.navigation-icon--expand),
@@ -101,8 +101,8 @@ $padding-left-link: rem(20) !default;
 
 /* items counters */
 .navigation-counter-item {
-	background: var(--navigation-item-count-background-color, var(--primary));
-	color: var(--navigation-item-count-text-color, var(--primary-contrast));
+	background: var(--navigation-item-count-background-color);
+	color: var(--navigation-item-count-text-color);
 	font-size: rem(11);
 	padding: rem(2) 0.4em 0; // em value for top gives non rounded value, so rem
 	border-radius: rem(11);
@@ -167,9 +167,9 @@ $padding-left-link: rem(20) !default;
 	text-decoration: none;
 
 	&[aria-current='true'] {
-		background-color: var(--navigation-current-item-background-color, var(--interaction-default-hover));
-		color: var(--navigation-current-item-text-color, var(--text-norm));
-		border-left: 2px solid var(--navigation-current-item-marker-color, var(--interaction-norm));
+		background-color: var(--navigation-current-item-background-color);
+		color: var(--navigation-current-item-text-color);
+		border-left: 2px solid var(--navigation-current-item-marker-color);
 		font-weight: bold;
 	}
 }

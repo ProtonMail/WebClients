@@ -1,6 +1,4 @@
 @use "sass:math";
-$scrollbar-thumb-default-color: #{rgba(grey, 0.25)};
-$scrollbar-thumb-default-hover-color: #{rgba(grey, 0.5)};
 
 $scrollbar-size: rem(6) !default;
 $scrollbar-margin: rem(2) !default;
@@ -11,11 +9,7 @@ $scrollbar-margin: rem(2) !default;
 
 		// W3C, Firefox
 		scrollbar-width: thin;
-		scrollbar-color: var(
-				--scrollbar-thumb-color,
-				$scrollbar-thumb-default-color
-			)
-			transparent;
+		scrollbar-color: var(--scrollbar-thumb-color) transparent;
 
 		// webkit specific
 		&::-webkit-scrollbar {
@@ -27,10 +21,7 @@ $scrollbar-margin: rem(2) !default;
 			border: $scrollbar-margin solid transparent; // Margin
 			background-clip: padding-box; // Booyah!
 			border-radius: math.div($real-size, 2);
-			background-color: var(
-				--scrollbar-thumb-color,
-				$scrollbar-thumb-default-color
-			);
+			background-color: var(--scrollbar-thumb-color);
 		}
 
 		&::-webkit-scrollbar-track {
@@ -40,10 +31,7 @@ $scrollbar-margin: rem(2) !default;
 		&::-webkit-scrollbar-thumb:horizontal,
 		&::-webkit-scrollbar-thumb:vertical {
 			&:hover {
-				background-color: var(
-					--scrollbar-thumb-hover-color,
-					$scrollbar-thumb-default-hover-color
-				);
+				background-color: var(--scrollbar-thumb-hover-color);
 			}
 		}
 

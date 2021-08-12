@@ -27,7 +27,7 @@ body {
 	@if $apply-body-styles==true {
 		background: var(--background-norm);
 		color: var(--text-norm);
-		font-family: var(--font-family, $font-family);
+		font-family: var(--font-family);
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;
 
@@ -55,8 +55,8 @@ body {
 }
 
 ::selection {
-	background-color: var(--selection-background-color, var(--primary));
-	color: var(--selection-text-color, var(--primary-contrast));
+	background-color: var(--selection-background-color);
+	color: var(--selection-text-color);
 }
 
 a {
@@ -174,9 +174,9 @@ sub {
 }
 
 mark {
-	background-color: var(--mark-background-color, yellow);
-	color: var(--mark-text-color, black);
-	font-weight: var(--mark-font-weight, normal);
+	background-color: var(--mark-background-color);
+	color: var(--mark-text-color);
+	font-weight: var(--mark-font-weight);
 
 	// Lighter style for less prominent UI
 	&.is-light {
