@@ -67,14 +67,35 @@ export const doNotWindowOpen = () => {
 export const parseURL = (url = '') => {
     const parser = document.createElement('a');
     const searchObject: { [key: string]: any } = {};
-    // Let the browser do the work
+
     parser.href = url;
-    // Convert query string to object
-    const queries = parser.search.replace(/^\?/, '').split('&');
+
+    /*
+        On Firefox, parser.search is not set when setting parser.href
+        Also, the content is not URI encoded, meaning that spaces are not encoded
+        If we want to get the search object, we need to encore the value to be sure it is,
+        and because search is not set, we have to handled the mailto:toList part in the string.
+        Here are the steps :
+            - URL string :
+                mailto:toEmail@protonmail.com?subject=Email Subject&body=Body of the email&cc=ccEmail@protonmail.com&bcc=bccEmail@protonmail.com
+
+            - Encoded :
+                mailto:toEmail@protonmail.com?subject=Email%20Subject&body=Body%20of%20the%20email&cc=ccEmail@protonmail.com&bcc=bccEmail@protonmail.com
+
+            - Replace :
+                mailto:toEmail@protonmail.com&subject=Email%20Subject&body=Body%20of%20the%20email&cc=ccEmail@protonmail.com&bcc=bccEmail@protonmail.com
+
+            - Split :
+                ["mailto:toEmail@protonmail.com", "subject=Email%2520Subject", "body=Body%2520of%2520the%2520email", "cc=ccEmail@protonmail.com", "bcc=bccEmail@protonmail.com"]
+
+            Then its needed to decode the value so that we don't have encoded characters anymore.
+     */
+
+    const queries = encodeURI(parser.href).replace(/\?/, '&').split('&');
 
     for (let i = 0; i < queries.length; i++) {
         const [key, value] = queries[i].split('=');
-        searchObject[key] = value;
+        searchObject[key] = decodeURI(value);
     }
 
     return {
