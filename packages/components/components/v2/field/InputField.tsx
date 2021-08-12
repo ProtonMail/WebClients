@@ -1,12 +1,11 @@
-import * as React from 'react';
-
+import { ElementType, forwardRef, ReactElement, ReactNode } from 'react';
 import { Box, PolymorphicComponentProps } from '../../../helpers/react-polymorphic-box';
 import Icon from '../../icon/Icon';
 import { classnames, generateUID } from '../../../helpers';
 import { useInstance } from '../../../hooks';
 import Input from '../input/Input';
 
-type NodeOrBoolean = React.ReactNode | boolean;
+type NodeOrBoolean = ReactNode | boolean;
 
 // TODO: Add required child props to the as component
 /*
@@ -18,10 +17,10 @@ interface RequiredChildProps {
 }
  */
 
-export interface OwnProps {
-    label?: React.ReactNode;
-    hint?: React.ReactNode;
-    assistiveText?: React.ReactNode;
+export interface InputFieldOwnProps {
+    label?: ReactNode;
+    hint?: ReactNode;
+    assistiveText?: ReactNode;
     disabled?: boolean;
     bigger?: boolean;
     id?: string;
@@ -30,14 +29,19 @@ export interface OwnProps {
     rootClassName?: string;
 }
 
-export type InputFieldProps<E extends React.ElementType> = PolymorphicComponentProps<E, OwnProps>;
+export type InputFieldProps<E extends ElementType> = PolymorphicComponentProps<E, InputFieldOwnProps>;
 
 const defaultElement = Input;
-
-const InputField: <E extends React.ElementType = typeof defaultElement>(
+/* 
+export because of
+https://github.com/storybookjs/storybook/issues/9511
+https://github.com/styleguidist/react-docgen-typescript/issues/314
+https://github.com/styleguidist/react-docgen-typescript/issues/215
+*/
+export const InputField: <E extends ElementType = typeof defaultElement>(
     props: InputFieldProps<E>
-) => React.ReactElement | null = React.forwardRef(
-    <E extends React.ElementType = typeof defaultElement>(
+) => ReactElement | null = forwardRef(
+    <E extends ElementType = typeof defaultElement>(
         {
             label,
             hint,
@@ -54,7 +58,6 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
     ) => {
         const id = useInstance(() => idProp || generateUID());
         const assistiveUid = useInstance(() => generateUID());
-
         const classes = {
             root: classnames([
                 'inputform-container w100',
@@ -67,9 +70,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
             labelContainer: 'flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end',
             inputContainer: 'inputform-field-container relative',
         };
-
         const hintElement = hint && <div className="inputform-label-hint flex-item-noshrink">{hint}</div>;
-
         const labelElement = label && <span className="inputform-label-text">{label}</span>;
 
         const errorElement = error && typeof error !== 'boolean' && (
@@ -84,7 +85,6 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
                 <span>{warning}</span>
             </>
         );
-
         return (
             <label className={classes.root} htmlFor={id}>
                 {(label || hint) && (
