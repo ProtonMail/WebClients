@@ -17,8 +17,8 @@
 	&--header {
 		border-top: 1px solid var(--border-norm);
 		border-right: 1px solid var(--border-norm);
-		border-top-right-radius: $global-border-radius;
-		border-top-left-radius: $global-border-radius;
+		border-top-right-radius: var(--border-radius-medium);
+		border-top-left-radius: var(--border-radius-medium);
 	}
 }
 

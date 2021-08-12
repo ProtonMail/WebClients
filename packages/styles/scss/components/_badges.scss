@@ -4,7 +4,7 @@
 	font-size: rem(11); // to be sure this is the same height everywhere
 	padding: em(2) em(4) em(3);
 	line-height: 1;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-pill);
 }
 
 @each $color in (primary, danger, warning, success, info) {

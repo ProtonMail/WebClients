@@ -17,8 +17,8 @@
 
 	&,
 	div:last-child {
-		border-bottom-left-radius: $global-border-radius;
-		border-bottom-right-radius: $global-border-radius;
+		border-bottom-left-radius: var(--border-radius-medium);
+		border-bottom-right-radius: var(--border-radius-medium);
 	}
 
 	div {

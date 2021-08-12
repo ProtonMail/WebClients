@@ -9,7 +9,7 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 	z-index: 666;
 	min-width: $arrow-width;
 	max-width: $tooltip-width;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	background: $tooltip-bg-color;
 	color: $tooltip-text-color;
 	padding: 0.5em 0.75em;

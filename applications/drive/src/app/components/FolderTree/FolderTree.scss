@@ -1,45 +1,45 @@
 .folder-tree {
-    @extend .bordered;
-    @extend .scroll-if-needed;
+	@extend .bordered;
+	@extend .scroll-if-needed;
 
-    border-radius: $global-border-radius;
-    height: 28em;
+	border-radius: var(--border-radius-medium);
+	height: 28em;
 
-    &-table {
-        width: auto;
-        min-width: 100%;
-        max-width: initial;
-    }
+	&-table {
+		width: auto;
+		min-width: 100%;
+		max-width: initial;
+	}
 
-    &-list-item {
-        td {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
+	&-list-item {
+		td {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 
-        &-expand {
-            padding: 0.85em;
+		&-expand {
+			padding: 0.85em;
 
-            &-button {
-                @extend .button;
-                @extend .button-for-icon;
+			&-button {
+				@extend .button;
+				@extend .button-for-icon;
 
-                display: flex;
-                padding: 0;
-            }
-        }
-    }
+				display: flex;
+				padding: 0;
+			}
+		}
+	}
 
-    &-list-item-name {
-        min-width: 10em;
-    }
+	&-list-item-name {
+		min-width: 10em;
+	}
 
-    &-list-item-selected {
-        justify-content: center;
-        min-width: 3em;
+	&-list-item-selected {
+		justify-content: center;
+		min-width: 3em;
 
-        &-check {
-            padding: 0.15em;
-        }
-    }
+		&-check {
+			padding: 0.15em;
+		}
+	}
 }

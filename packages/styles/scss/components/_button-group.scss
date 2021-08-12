@@ -5,7 +5,7 @@
 	@extend .flex-nowrap;
 	@extend .flex-align-items-stretch;
 
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	background-color: var(--button-group-background-color, var(--background-norm));
 	vertical-align: middle;
 
@@ -74,7 +74,7 @@
 
 	&[class*='button-group-outline'] &-item {
 		padding: em(3) em(8);
-		border-radius: math.div($global-border-radius, 2);
+		border-radius: var(--border-radius-small);
 
 		&.button-for-icon {
 			padding: em(5.5) em(6);

@@ -22,7 +22,7 @@
 [class*='notification-'] {
 	display: block;
 	overflow: hidden;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-large);
 	box-shadow: var(--shadow-lifted);
 
 	a,

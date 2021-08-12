@@ -36,11 +36,11 @@
 	thead {
 		tr:first-of-type {
 			& :nth-child(2) {
-				border-top-left-radius: $global-border-radius;
+				border-top-left-radius: var(--border-radius-medium);
 			}
 
 			& :last-child {
-				border-top-right-radius: $global-border-radius;
+				border-top-right-radius: var(--border-radius-medium);
 			}
 		}
 	}
@@ -48,7 +48,7 @@
 	tbody {
 		tr {
 			&:first-of-type .simple-table-row-th {
-				border-top-left-radius: $global-border-radius;
+				border-top-left-radius: var(--border-radius-medium);
 			}
 
 			&:last-of-type {
@@ -58,11 +58,11 @@
 				}
 
 				& :first-child {
-					border-bottom-left-radius: $global-border-radius;
+					border-bottom-left-radius: var(--border-radius-medium);
 				}
 
 				& :last-child {
-					border-bottom-right-radius: $global-border-radius;
+					border-bottom-right-radius: var(--border-radius-medium);
 				}
 			}
 
@@ -118,7 +118,7 @@ $nb-plans-max: 4 !default;
 				text-transform: uppercase;
 				font-size: rem(12);
 				padding: 0.25em;
-				border-radius: $global-border-radius $global-border-radius 0 0;
+				border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 			}
 		}
 

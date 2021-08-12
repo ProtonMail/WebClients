@@ -9,12 +9,7 @@ $container-to-width: 3em !default;
 .items-column-list {
 	width: var(
 		--width-conversation-column,
-		calc(
-			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div(
-					$conversations-column-width,
-					100%
-				)}
-		)
+		calc((100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div($conversations-column-width, 100%)})
 	);
 }
 
@@ -42,10 +37,7 @@ $container-to-width: 3em !default;
 .view-column-detail,
 // because it's sticky on top
 .message-conversation-summary {
-	background-color: var(
-		--email-message-view-background-color,
-		var(--background-norm)
-	);
+	background-color: var(--email-message-view-background-color, var(--background-norm));
 }
 
 $item-container-height: rem(64) !default;
@@ -59,8 +51,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .item-container-row {
 	@extend %appearing-container;
 	position: relative;
-	padding: $item-container-padding-top-bottom
-		$item-container-padding-left-right; // design wants ~64 height
+	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--border-weak);
 	scroll-margin-top: $item-container-height;
 
@@ -85,26 +76,17 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	}
 
 	&.read {
-		background-color: var(
-			--email-item-read-background-color,
-			var(--background-weak)
-		);
+		background-color: var(--email-item-read-background-color, var(--background-weak));
 		color: var(--email-item-read-text-color, var(--text-norm));
 
 		.item-icon {
-			background-color: var(
-				--email-item-read-icon-background-color,
-				var(--background-strong)
-			);
+			background-color: var(--email-item-read-icon-background-color, var(--background-strong));
 			color: var(--email-item-read-icon-text-color, inherit);
 		}
 	}
 
 	&.unread {
-		background-color: var(
-			--email-item-unread-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--email-item-unread-background-color, var(--background-norm));
 		color: var(--email-item-unread-text-color, var(--text-norm));
 
 		.item-senders,
@@ -116,10 +98,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		}
 
 		.item-icon {
-			background-color: var(
-				--email-item-unread-icon-background-color,
-				var(--background-strong)
-			);
+			background-color: var(--email-item-unread-icon-background-color, var(--background-strong));
 			color: var(--email-item-unread-icon-text-color, inherit);
 		}
 	}
@@ -130,54 +109,33 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	&:focus::after,
 	&.item-is-focused::after {
-		border-left-color: var(
-			--email-item-focus-marker-color,
-			var(--interaction-norm)
-		);
+		border-left-color: var(--email-item-focus-marker-color, var(--interaction-norm));
 	}
 
 	&.item-is-selected,
 	// alias for Angular
 	&.item-container.active {
-		background-color: var(
-			--email-item-selected-background-color,
-			var(--interaction-norm)
-		);
-		color: var(
-			--email-item-selected-text-color,
-			var(--interaction-norm-contrast)
-		);
+		background-color: var(--email-item-selected-background-color, var(--interaction-norm));
+		color: var(--email-item-selected-text-color, var(--interaction-norm-contrast));
 
 		&:focus::after,
 		&.item-is-focused::after {
-			border-left-color: var(
-				--email-item-focus-marker-color,
-				var(--interaction-norm-hover)
-			);
+			border-left-color: var(--email-item-focus-marker-color, var(--interaction-norm-hover));
 		}
 
 		.item-icon {
-			background-color: var(
-				--email-item-selected-icon-background-color,
-				var(--interaction-norm-hover)
-			);
+			background-color: var(--email-item-selected-icon-background-color, var(--interaction-norm-hover));
 			color: var(--email-item-selected-icon-text-color, inherit);
 		}
 	}
 
 	// Styling for contact items inside contact dropdown
 	&.item-contact {
-		background-color: var(
-			--email-item-unread-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--email-item-unread-background-color, var(--background-norm));
 		color: var(--email-item-unread-text-color, var(--text-norm));
 
 		.item-icon {
-			background-color: var(
-				--email-item-unread-icon-background-color,
-				var(--background-strong)
-			);
+			background-color: var(--email-item-unread-icon-background-color, var(--background-strong));
 			color: var(--email-item-unread-icon-text-color, inherit);
 		}
 	}
@@ -289,7 +247,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			bottom: 0;
 			left: 0;
 			z-index: 1;
-			border-radius: $global-border-radius;
+			border-radius: var(--border-radius-medium);
 			background-color: currentColor;
 			opacity: 0;
 		}
@@ -361,13 +319,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		position: absolute;
 		left: -#{em(12)};
 		right: -#{em(12)};
-		top: calc(
-			-1 * (
-					#{$item-container-height-compact-mode} - #{rem(
-							$conversation-icon-size
-						)}
-				) / 2
-		);
+		top: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
 		height: $item-container-height-compact-mode;
 	}
 
@@ -382,19 +334,10 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&::after {
 		content: '';
 		position: absolute;
-		top: calc(
-			-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) /
-						2)
-		);
-		bottom: calc(
-			-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) /
-						2)
-		);
+		top: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
+		bottom: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
 		left: em(-12);
-		width: calc(
-			#{rem($conversation-icon-size)} + #{$item-container-padding-left-right} +
-				#{rem(5)}
-		);
+		width: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-left-right} + #{rem(5)});
 		// icon size + padding container + tiny margin for comfort
 	}
 

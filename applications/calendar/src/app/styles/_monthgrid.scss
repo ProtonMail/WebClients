@@ -6,7 +6,7 @@
 			display: inline-flex;
 			width: 1.75em;
 			height: 1.75em;
-			border-radius: $global-border-radius;
+			border-radius: var(--border-radius-medium);
 		}
 
 		&:hover &-number {
