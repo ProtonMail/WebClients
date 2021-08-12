@@ -23,7 +23,7 @@ import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 
 import createHandlers from './eventForm/createPropFactory';
 import IconRow from './IconRow';
-import CalendarSelect from './inputs/CalendarSelect';
+import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
 import ParticipantsInput from './inputs/ParticipantsInput';
@@ -251,8 +251,7 @@ const EventForm = ({
             id={CALENDAR_INPUT_ID}
             className="flex-item-fluid relative"
         >
-            <CalendarSelect
-                withIcon={false}
+            <CreateEventCalendarSelect
                 id={CALENDAR_INPUT_ID}
                 className="w100"
                 title={c('Title').t`Select which calendar to add this event to`}
