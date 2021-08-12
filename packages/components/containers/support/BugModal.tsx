@@ -27,13 +27,14 @@ import {
 import { useApi, useLoading, useConfig, useNotifications, useToggle } from '../../hooks';
 import { OptionProps } from '../../components/select/Select';
 
-interface Props {
+export interface Props {
     username?: string;
-    addresses?: { Email: string }[];
+    email?: string;
     onClose?: () => void;
+    mode?: 'chat-unavailable';
 }
 
-const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...rest }: Props) => {
+const BugModal = ({ onClose = noop, username: Username = '', email, mode, ...rest }: Props) => {
     const api = useApi();
     const location = useLocation();
     const [loading, withLoading] = useLoading();
@@ -91,7 +92,6 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const Client = getClient(ClientID);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
-    const [{ Email = '' } = {}] = addresses;
     const options = titles.reduce<OptionProps[]>(
         (acc, { text, value, group }: { text: string; value: string; group?: string }) => {
             acc.push({ text, value, group });
@@ -105,7 +105,7 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
             ...getReportInfo(),
             Title: '',
             Description: '',
-            Email: Email || '',
+            Email: email || '',
             Username: Username || '',
         };
     });
@@ -144,11 +144,10 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     };
 
     useEffect(() => {
-        if (!model.Email && addresses.length) {
-            const [{ Email = '' }] = addresses;
-            update({ ...model, Email });
+        if (!model.Email && email) {
+            update({ ...model, Email: email });
         }
-    }, [addresses]);
+    }, [email]);
 
     const OSAndOSVersionFields = (
         <>
@@ -186,9 +185,17 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
             title={c('Title').t`Report a problem`}
             {...rest}
         >
-            <Alert>{c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
-            <Alert type="warning">{c('Warning')
-                .t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
+            {mode === 'chat-unavailable' ? (
+                <Alert type="warning">{c('Warning')
+                    .t`Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.`}</Alert>
+            ) : (
+                <>
+                    <Alert>{c('Info')
+                        .jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
+                    <Alert type="warning">{c('Warning')
+                        .t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
+                </>
+            )}
             {Username ? null : (
                 <Row>
                     <Label htmlFor="Username">{c('Label').t`Proton username`}</Label>
@@ -249,9 +256,7 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
                     <AttachScreenshot id="Attachments" onUpload={setImages} onReset={() => setImages([])} />
                 </Field>
             </Row>
-
             {model.OSArtificial && OSAndOSVersionFields}
-
             <Row>
                 <Label>{c('Label').t`System information`}</Label>
                 <Field className="inline-flex">
