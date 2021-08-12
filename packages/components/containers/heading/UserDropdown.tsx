@@ -29,11 +29,14 @@ import {
     DropdownMenuLink,
 } from '../../components';
 import { classnames, generateUID } from '../../helpers';
-import UserDropdownButton, { Props } from './UserDropdownButton';
+import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import { OnboardingModal } from '../onboarding';
 import { AuthenticatedBugModal, BugModal } from '../support';
 
-const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
+interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
+    onOpenChat?: () => void;
+}
+const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
     const { APP_NAME } = useConfig();
@@ -193,6 +196,15 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}
                             <Icon className="ml1" name="presentation-screen" />
+                        </DropdownMenuButton>
+                    )}
+
+                    {onOpenChat && (
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                            onClick={onOpenChat}
+                        >
+                            {c('Action').t`Chat with us`}
                         </DropdownMenuButton>
                     )}
 
