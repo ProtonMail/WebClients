@@ -562,7 +562,11 @@ const Composer = (
                 />
             )}
             {innerModal === ComposerInnerModal.ScheduleSend && (
-                <ComposerScheduleSendModal onClose={handleCloseInnerModal} onSubmit={handleScheduleSend} />
+                <ComposerScheduleSendModal
+                    onClose={handleCloseInnerModal}
+                    onSubmit={handleScheduleSend}
+                    messageLocalID={modelMessage.localID}
+                />
             )}
             <div
                 className={classnames([
