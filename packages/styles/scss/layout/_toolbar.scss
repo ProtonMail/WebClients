@@ -5,10 +5,9 @@
 	position: relative;
 	z-index: 1;
 	height: rem($toolbar-height);
-	border-bottom: 1px solid
-		var(--toolbar-border-bottom-color, var(--border-norm));
-	background-color: var(--toolbar-background-color, var(--background-weak));
-	color: var(--toolbar-text-color, var(--text-norm));
+	border-bottom: 1px solid var(--toolbar-border-bottom-color);
+	background-color: var(--toolbar-background-color);
+	color: var(--toolbar-text-color);
 }
 
 .toolbar-button {
@@ -26,7 +25,7 @@
 
 .toolbar-separator {
 	width: 1px;
-	background: var(--toolbar-separator-color, var(--border-norm));
+	background: var(--toolbar-separator-color);
 }
 
 .toolbar button[aria-disabled='true'],
