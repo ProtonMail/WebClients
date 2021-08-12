@@ -1,17 +1,6 @@
-@import '@proton/styles/scss/proton-calendar';
+@import '~@proton/styles/scss/proton-calendar';
 
 // Specific styles
-@import
-    '@proton/styles/scss/specifics/placeholder-loading',
-    '@proton/styles/scss/specifics/list',
-    'styles/config',
-    'styles/specifics',
-    'styles/grid',
-    'styles/monthgrid',
-    'styles/daygrid',
-    'styles/eventcell',
-    'styles/aside',
-    'styles/eventpopover',
-    'styles/debug',
-    'styles/loader-container';
-
+@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/list', 'styles/config',
+	'styles/specifics', 'styles/grid', 'styles/monthgrid', 'styles/daygrid', 'styles/eventcell', 'styles/aside',
+	'styles/eventpopover', 'styles/debug', 'styles/loader-container';

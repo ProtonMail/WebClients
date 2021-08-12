@@ -1,9 +1,5 @@
-@import '@proton/styles/scss/proton-mail';
+@import '~@proton/styles/scss/proton-mail';
 
 // Specific styles
-@import
-    '@proton/styles/scss/specifics/placeholder-loading',
-    '@proton/styles/scss/specifics/list',
-    'styles/message',
-    'styles/attachments',
-    'styles/email-reset';
+@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/list', 'styles/message',
+	'styles/attachments', 'styles/email-reset';

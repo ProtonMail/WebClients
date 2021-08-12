@@ -13,12 +13,8 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "test": "jest --ci",
-        "build:sso": "cross-env NODE_ENV=production proton-pack compile --appMode=sso",
-        "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
-        "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
-        "bundle": "proton-bundler",
+        "build": "cross-env NODE_ENV=production proton-pack build --appMode=sso --api=proxy",
         "check-types": "tsc",
-        "pack": "proton-pack",
         "postinstall": "proton-pack config"
     },
     "dependencies": {
@@ -28,7 +24,7 @@
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "abortcontroller-polyfill": "^1.2.1",
+        "abortcontroller-polyfill": "^1.7.3",
         "date-fns": "^2.5.0",
         "dompurify": "^2.0.7",
         "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
@@ -36,12 +32,11 @@
         "react-dom": "^17.0.0",
         "react-helmet": "^6.1.0",
         "tinycolor2": "^1.4.1",
-        "ttag": "^1.7.5",
+        "ttag": "^1.7.24",
         "yetch": "^1.1.0"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.6.0",
-        "@proton/bundler": "workspace:packages/bundler",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^4.0.0",

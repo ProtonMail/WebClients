@@ -1,11 +1,11 @@
-@import '@proton/styles/scss/config/';
+@import '~@proton/styles/scss/config';
 
 .redeem-header-wrapper {
     border-top: solid 1px var(--border-norm);
 }
 
 .redeem-heading-bg {
-    background-image: url(@proton/styles/assets/img/pv-images/redeem/background.jpg);
+    background-image: url(~@proton/styles/assets/img/pv-images/redeem/background.jpg);
     background-size: cover;
     flex: 1;
 }

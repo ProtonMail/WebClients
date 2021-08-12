@@ -16,7 +16,7 @@ set -eo pipefail
 # https://www.youtube.com/watch?v=t3otBjVZzT0&feature=youtu.be
 
 
-OUTPUT_DIR='dist';
+OUTPUT_DIR="$1";
 OUTPUT_FILES="$(find "${OUTPUT_DIR}" -type f)";
 
 function detect {

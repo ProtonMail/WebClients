@@ -26,10 +26,10 @@ const getSassLoaders = (isProduction) => {
         ? [
               postcssPresetEnv({
                   autoprefixer: {
-                      flexbox: 'no-2009'
+                      flexbox: 'no-2009',
                   },
-                  stage: 3
-              })
+                  stage: 3,
+              }),
           ]
         : [];
 
@@ -37,26 +37,30 @@ const getSassLoaders = (isProduction) => {
         {
             loader: require.resolve('css-loader'),
             options: {
-                url: handleUrlResolve
-            }
+                url: { filter: handleUrlResolve },
+            },
         },
         // To get rid of "You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing."
         postcssPlugins.length
             ? {
                   loader: require.resolve('postcss-loader'),
                   options: {
-                      ident: 'postcss',
-                      plugins: postcssPlugins,
-                      sourceMap: isProduction
-                  }
+                      postcssOptions: {
+                          plugins: postcssPlugins,
+                      },
+                      sourceMap: isProduction,
+                  },
               }
             : undefined,
         {
+            loader: require.resolve('resolve-url-loader'),
+        },
+        {
             loader: require.resolve('sass-loader'),
             options: {
-                additionalData: PREPEND_SASS
-            }
-        }
+                additionalData: PREPEND_SASS,
+            },
+        },
     ].filter(Boolean);
 };
 
@@ -64,9 +68,6 @@ module.exports = ({ isProduction }) => {
     const sassLoaders = getSassLoaders(isProduction);
     const miniLoader = {
         loader: MiniCssExtractPlugin.loader,
-        options: {
-            hmr: !isProduction
-        }
     };
     return [
         {
@@ -77,22 +78,22 @@ module.exports = ({ isProduction }) => {
                     loader: require.resolve('css-loader'),
                     options: {
                         importLoaders: 1,
-                        url: handleUrlResolve
-                    }
-                }
+                        url: { filter: handleUrlResolve },
+                    },
+                },
             ],
-            sideEffects: true
+            sideEffects: true,
         },
         {
             test: /\.scss$/,
             exclude: DESIGN_SYSTEM_THEME,
             use: [miniLoader, ...sassLoaders],
-            sideEffects: true
+            sideEffects: true,
         },
         {
             test: DESIGN_SYSTEM_THEME,
             // Prevent loading the theme in <style>, we want to load it as a raw string
-            use: [...sassLoaders]
-        }
+            use: [...sassLoaders],
+        },
     ];
 };
