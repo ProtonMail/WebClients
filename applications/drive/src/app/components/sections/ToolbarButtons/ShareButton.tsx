@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
+import { MEMBER_SHARING_ENABLED } from '../../../constants';
 import useToolbarActions from '../../../hooks/drive/useActions';
 import { FileBrowserItem } from '../../FileBrowser/interfaces';
 import { noSelection, isMultiSelect } from './utils';
@@ -13,6 +14,10 @@ interface Props {
 
 const ShareButton = ({ shareId, selectedItems }: Props) => {
     const { openSharing } = useToolbarActions();
+
+    if (!MEMBER_SHARING_ENABLED) {
+        return <></>;
+    }
 
     const hasShare = !!selectedItems[0]?.ShareUrlShareID;
 

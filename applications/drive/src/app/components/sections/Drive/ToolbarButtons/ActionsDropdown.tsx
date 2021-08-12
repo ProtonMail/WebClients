@@ -11,6 +11,7 @@ import {
     ToolbarButton,
 } from '@proton/components';
 
+import { MEMBER_SHARING_ENABLED } from '../../../../constants';
 import { useDriveContent } from '../DriveContentProvider';
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import useToolbarActions from '../../../../hooks/drive/useActions';
@@ -78,7 +79,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
             action: () => openMoveToTrash(activeFolder, selectedItems),
         },
         {
-            hidden: isMultiSelect,
+            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
             name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
             icon: 'user-group',
             testId: 'actions-dropdown-share',

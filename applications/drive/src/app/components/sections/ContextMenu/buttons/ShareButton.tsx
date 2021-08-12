@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { MEMBER_SHARING_ENABLED } from '../../../../constants';
 import useToolbarActions from '../../../../hooks/drive/useActions';
 import { FileBrowserItem } from '../../../FileBrowser/interfaces';
 import ContextMenuButton from '../ContextMenuButton';
@@ -12,6 +13,10 @@ interface Props {
 
 const ShareButton = ({ shareId, item, close }: Props) => {
     const { openSharing } = useToolbarActions();
+
+    if (!MEMBER_SHARING_ENABLED) {
+        return <></>;
+    }
 
     const hasShare = !!item.ShareUrlShareID;
 
