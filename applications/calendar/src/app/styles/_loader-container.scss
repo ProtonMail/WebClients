@@ -6,7 +6,7 @@
 	max-width: 100%;
 	padding: 1em;
 	transform: translateX(-50%);
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	box-shadow: var(--shadow-lifted);
 	background-color: var(--signal-info);
 	color: var(--signal-info-contrast);

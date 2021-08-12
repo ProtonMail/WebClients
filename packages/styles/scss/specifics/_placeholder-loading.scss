@@ -13,7 +13,7 @@
 %item-loading-pseudo {
 	content: '\00a0';
 	display: inline-block;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	background-color: currentColor;
 	line-height: 1.2;
 	opacity: 0;
@@ -24,8 +24,7 @@
 }
 
 %placeholder-loading {
-	animation: anime-loading-item 0.5s calc(var(--index, 0) * 20ms)
-		easing(easeOutSine) infinite alternate;
+	animation: anime-loading-item 0.5s calc(var(--index, 0) * 20ms) easing(easeOutSine) infinite alternate;
 }
 
 @keyframes anime-item-fade-in {

@@ -13,7 +13,7 @@
 
 	background: var(--background-norm);
 	box-shadow: var(--shadow-lifted);
-	border-radius: $global-border-radius $global-border-radius 0 0;
+	border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 	color: var(--text-norm);
 
 	transition: 0.15s easing(easeOutQuint);
@@ -366,8 +366,8 @@
 
 .editor-squire-wrapper,
 .editor-ellipsis-button-container {
-	border-bottom-left-radius: $global-border-radius;
-	border-bottom-right-radius: $global-border-radius;
+	border-bottom-left-radius: var(--border-radius-medium);
+	border-bottom-right-radius: var(--border-radius-medium);
 }
 .composer-content--has-attachments,
 .editor--showEllipsisButton {
@@ -390,8 +390,8 @@
 	border-left: 1px solid var(--border-norm);
 	border-right: 1px solid var(--border-norm);
 	border-bottom: 1px solid var(--border-norm);
-	border-bottom-left-radius: $global-border-radius;
-	border-bottom-right-radius: $global-border-radius;
+	border-bottom-left-radius: var(--border-radius-medium);
+	border-bottom-right-radius: var(--border-radius-medium);
 
 	.message-attachmentList {
 		border-top: 1px solid var(--border-norm);
@@ -435,6 +435,6 @@
 
 .composer-addresses-item-drag-placeholder {
 	width: var(--width, 5em);
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	border: 1px dashed currentColor;
 }

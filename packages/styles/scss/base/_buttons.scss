@@ -9,7 +9,7 @@
 	box-shadow: inset 0 0 0 var(--button-default-border-width, 0) var(--button-default-border-color, transparent);
 
 	border: none;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	outline: none; // be careful of a11y
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
@@ -196,6 +196,7 @@
 
 .button-small {
 	padding: em(1) em(12) em(2); // 24px height
+	border-radius: var(--border-radius-small);
 }
 
 .button-large {

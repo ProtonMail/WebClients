@@ -9,19 +9,19 @@
 
 .calendar-dayeventcell-inner,
 .calendar-eventcell {
-	border: solid rgb(0 0 0 / .2);
+	border: solid rgb(0 0 0 / 0.2);
 	border-width: 1px 1px 1px 5px;
-	border-radius: $global-border-radius;
+	border-radius: var(--border-radius-medium);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
 	font-weight: 500;
 	cursor: pointer;
 	opacity: var(--opacity);
-	transition: all .1s ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
+	transition: all 0.1s ease-out, opacity 0.5s ease-out, background-color 0.15s ease-in-out;
 	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
 
 	& > * {
-		transition: opacity .1s ease-out;
+		transition: opacity 0.1s ease-out;
 	}
 
 	&.isLoaded {
@@ -43,25 +43,34 @@
 		border-color: var(--color-alpha);
 		border-left-color: var(--color-alt);
 		background-color: var(--background-norm);
-		background-image: linear-gradient(105deg, transparent 38%, var(--color-alpha) 42%, var(--color-alpha) 48%, transparent 52%, transparent 88%, var(--color-alpha) 92%, var(--color-alpha) 100%);
+		background-image: linear-gradient(
+			105deg,
+			transparent 38%,
+			var(--color-alpha) 42%,
+			var(--color-alpha) 48%,
+			transparent 52%,
+			transparent 88%,
+			var(--color-alpha) 92%,
+			var(--color-alpha) 100%
+		);
 		background-size: 5.18px 19.32px;
 		color: currentColor;
 	}
 
 	&.isPast {
-		border-color: rgb(0 0 0 / .1);
+		border-color: rgb(0 0 0 / 0.1);
 		border-left-color: var(--color-alt);
 		background: var(--background-strong);
 		color: inherit;
 
 		&:not(.isSelected) > * {
-			opacity: .5;
+			opacity: 0.5;
 		}
 	}
 
 	&.isSelected {
 		z-index: 6;
-		border-color: rgb(0 0 0 / .4);
+		border-color: rgb(0 0 0 / 0.4);
 		box-shadow: var(--shadow-norm);
 
 		&.isPast,
@@ -78,10 +87,9 @@
 		opacity: var(--opacity);
 	}
 	to {
-		opacity: calc(var(--opacity) - .4);
+		opacity: calc(var(--opacity) - 0.4);
 	}
 }
-
 
 /*
   Full day event
@@ -96,7 +104,7 @@
 	&-inner {
 		position: relative;
 		min-height: 100%;
-		padding: 0 .5em;
+		padding: 0 0.5em;
 
 		&.isNotAllDay {
 			border: none;
@@ -131,11 +139,10 @@
 		color: var(--background-strong);
 	}
 	&-inner.isLoaded &-circle {
-		margin-top: .125em;
+		margin-top: 0.125em;
 		color: var(--color-main);
 	}
 }
-
 
 /*
   Part day event

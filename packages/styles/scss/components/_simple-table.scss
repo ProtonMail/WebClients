@@ -66,11 +66,7 @@
 				right: 0;
 				z-index: -1;
 				height: rem(10);
-				background: linear-gradient(
-					to bottom,
-					rgb(0 0 0 / var(--shadow-norm-opacity)) 0%,
-					transparent 100%
-				);
+				background: linear-gradient(to bottom, rgb(0 0 0 / var(--shadow-norm-opacity)) 0%, transparent 100%);
 				pointer-events: none;
 				transition: opacity 0.125s ease-out;
 			}
@@ -132,12 +128,12 @@
 		}
 		// radiuses
 		> :first-child {
-			border-top-left-radius: $global-bigger-border-radius;
-			border-bottom-left-radius: $global-bigger-border-radius;
+			border-top-left-radius: var(--border-radius-large);
+			border-bottom-left-radius: var(--border-radius-large);
 		}
 		> :last-child {
-			border-top-right-radius: $global-bigger-border-radius;
-			border-bottom-right-radius: $global-bigger-border-radius;
+			border-top-right-radius: var(--border-radius-large);
+			border-bottom-right-radius: var(--border-radius-large);
 		}
 	}
 }

@@ -71,7 +71,7 @@ $price-size: 21;
 
 // then regular styles
 .blackfriday-mostPopular {
-	border-radius: $global-border-radius $global-border-radius 0 0;
+	border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 	left: 0;
 	right: 0;
 	bottom: 100%;

@@ -22,8 +22,9 @@
 	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
 	& &-plan {
 		// specificity ^^
-		border-radius: $global-bigger-border-radius;
+		border-radius: var(--border-radius-large);
 	}
+
 	.plan-selection {
 		&-plan-current {
 			background-color: var(--primary);
@@ -32,11 +33,11 @@
 			bottom: 100%;
 			left: -1px;
 			right: -1px;
-			border-radius: $global-bigger-border-radius $global-bigger-border-radius 0 0;
+			border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
 			padding: 0.35em; // Design wants 28px height ^^
 			&-card {
 				border-color: var(--primary);
-				border-radius: 0 0 $global-bigger-border-radius $global-bigger-border-radius;
+				border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
 			}
 		}
 

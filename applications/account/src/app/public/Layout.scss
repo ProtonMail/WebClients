@@ -12,7 +12,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 		background-position: bottom;
 
 		@include respond-to($breakpoint-small, 'max') {
-			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151B38 89.91%);
+			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151b38 89.91%);
 			background-position: top;
 		}
 	}
@@ -20,7 +20,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	// main content
 	transition: max-width 0.15s easing(easeIn);
 	//min-height: 30em;// was here to limitate shifts
-	border-radius: $global-bigger-border-radius;
+	border-radius: var(--border-radius-large);
 
 	// fix for plans, same as in subscription flow
 	&:not(.mw30r) {
@@ -33,7 +33,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	}
 
 	&-header {
-		padding: .5em em(48) 0;
+		padding: 0.5em em(48) 0;
 	}
 	&-title {
 		font-size: em(16);
@@ -44,20 +44,16 @@ $bg-signup-img: './bg-mountains.svg' !default;
 			padding-left: em(20);
 			padding-right: em(20);
 		}
-
 	}
 
 	&-container-challenge {
 		min-height: rem(100);
 	}
-
-
-
 }
 
 .sign-layout-container {
 	// Included through copy
-	background-image: url("/assets/host.png");
+	background-image: url(/assets/host.png);
 
 	.payment-left {
 		width: 15em;
@@ -117,8 +113,6 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	}
 }
 
-
-
 /* label size */
 .payment-container,
 .payment-right {
@@ -155,5 +149,5 @@ $bg-signup-img: './bg-mountains.svg' !default;
 
 .old-link::before {
 	position: absolute;
-	content: url("/%61%73%73%65%74%73/%68%6f%73%74%2e%70%6e%67");
+	content: url(/%61%73%73%65%74%73/%68%6f%73%74%2e%70%6e%67);
 }

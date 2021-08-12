@@ -25,7 +25,7 @@
 		color: var(--text-norm);
 
 		@include respond-to($breakpoint-small, 'min') {
-			border-radius: $global-border-radius $global-border-radius 0 0;
+			border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 		}
 	}
 
