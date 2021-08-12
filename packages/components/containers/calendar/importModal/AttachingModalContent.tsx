@@ -9,17 +9,8 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import {
-    Bordered,
-    FileInput,
-    Alert,
-    Label,
-    Field,
-    AttachedFile,
-    SelectTwo,
-    Option,
-    Dropzone,
-} from '../../../components';
+import { Bordered, FileInput, Alert, Label, Field, AttachedFile, Dropzone } from '../../../components';
+import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 import { classnames } from '../../../helpers';
 
 interface Props {
@@ -45,7 +36,7 @@ const AttachingModalContent = ({
     onDragEnter,
     onDragLeave,
 }: Props) => {
-    const options = calendars.map(({ Name, ID, Color }) => ({ text: Name, value: ID, color: Color }));
+    const options = calendars.map(({ Name, ID, Color }) => ({ name: Name, id: ID, color: Color }));
     const handleChange = ({ value }: { value: string }) => {
         const calendar = calendars.find(({ ID }) => ID === value);
 
@@ -87,16 +78,12 @@ const AttachingModalContent = ({
                 <div className="flex-nowrap mb1 onmobile-flex-column">
                     <Label className="pt0 mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
                     <Field>
-                        <SelectTwo
+                        <CalendarSelect
                             id="import-calendar-select"
-                            loading={false}
+                            calendarID={model.calendar.ID}
+                            options={options}
                             onChange={handleChange}
-                            value={model.calendar.ID}
-                        >
-                            {options.map(({ value, text }) => (
-                                <Option value={value} title={text} key={value} />
-                            ))}
-                        </SelectTwo>
+                        />
                     </Field>
                 </div>
             )}

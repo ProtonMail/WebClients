@@ -1,33 +1,31 @@
-import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from '@proton/components';
+import { useLoading, useGetCalendarBootstrap, useGetAddresses } from '@proton/components';
+import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
-import CalendarIcon from '../../CalendarIcon';
 import { getInitialMemberModel } from '../eventForm/state';
 
-import './CalendarSelect.scss';
-
 export interface Props extends Omit<SelectProps<string>, 'children'> {
-    withIcon?: boolean;
     model: EventModel;
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;
     frozen?: boolean;
 }
 
-const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, frozen = false, ...rest }: Props) => {
+const CreateEventCalendarSelect = ({ model, setModel, isCreateEvent, frozen = false, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
 
-    const { color, id } = model.calendar;
-    const options = model.calendars.filter(({ isSubscribed }) => !isSubscribed);
-    const name = options.find(({ value }) => value === id)?.text;
+    const { id: calendarID } = model.calendar;
+    const options = model.calendars
+        .filter(({ isSubscribed }) => !isSubscribed)
+        .map(({ value, text, color }) => ({ id: value, name: text, color }));
+    const { name } = options.find(({ id }) => id === calendarID) || options[0];
 
     if (frozen) {
         return (
             <div className="pt0-5 pb0-5 flex">
-                {withIcon !== false && <CalendarIcon className="mr1" color={color} />}
                 <span className="text-ellipsis" title={name}>
                     {name}
                 </span>
@@ -35,8 +33,8 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
         );
     }
 
-    const handleChangeCalendar = async (selectedIndex: number) => {
-        const { color: newColor, value: newId } = options[selectedIndex];
+    const handleChangeCalendar = async (newId: string) => {
+        const { color: newColor } = options.find(({ id }) => id === newId) || options[0];
 
         // grab members and default settings for the new calendar
         const {
@@ -79,28 +77,14 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
     };
 
     return (
-        <>
-            {withIcon !== false && <CalendarIcon className="mr1" color={color} />}
-            <SelectTwo
-                value={id}
-                loading={loading}
-                onChange={({ selectedIndex }) => withLoading(handleChangeCalendar(selectedIndex))}
-                {...rest}
-            >
-                {options.map(({ value, text, color: calendarColor }) => (
-                    <Option value={value} title={text} key={value}>
-                        <div className="flex flex-nowrap flex-align-items-center">
-                            <div
-                                className="calendar-select-color flex-item-noshrink mr0-75"
-                                style={{ backgroundColor: calendarColor }}
-                            />
-                            <div className="text-ellipsis">{text}</div>
-                        </div>
-                    </Option>
-                ))}
-            </SelectTwo>
-        </>
+        <CalendarSelect
+            calendarID={calendarID}
+            options={options}
+            onChange={({ value }) => withLoading(handleChangeCalendar(value))}
+            loading={loading}
+            {...rest}
+        />
     );
 };
 
-export default CalendarSelect;
+export default CreateEventCalendarSelect;
