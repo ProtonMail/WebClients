@@ -18,6 +18,7 @@ import { Alert, DateInput, ErrorZone, generateUID, Label, TimeInput } from '@pro
 
 import ComposerInnerModal from './ComposerInnerModal';
 import { SCHEDULED_MAX_DATE_DAYS } from '../../constants';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 const formatDateInput = (value: Date, locale: Locale) => {
     if (isToday(value)) {
@@ -33,11 +34,21 @@ const formatDateInput = (value: Date, locale: Locale) => {
 interface Props {
     onClose: () => void;
     onSubmit: (timestamp: number) => void;
+    messageLocalID: string;
 }
 
-const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
-    const defaultDate = addDays(new Date(), 1);
-    defaultDate.setHours(9, 0, 0, 0);
+const ComposerScheduleSendModal = ({ onClose, onSubmit, messageLocalID }: Props) => {
+    const messageCache = useMessageCache();
+    const messageFromCache = messageCache.get(messageLocalID);
+
+    const defaultDate =
+        messageFromCache && messageFromCache.scheduledAt
+            ? new Date(messageFromCache.scheduledAt * 1000)
+            : addDays(new Date(), 1);
+
+    if (!messageFromCache || (messageFromCache && !messageFromCache.scheduledAt)) {
+        defaultDate.setHours(9, 0, 0, 0);
+    }
 
     const [date, setDate] = useState(defaultDate);
     const [time, setTime] = useState(defaultDate);
