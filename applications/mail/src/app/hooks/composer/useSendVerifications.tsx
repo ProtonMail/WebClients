@@ -11,6 +11,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { HOUR } from '@proton/shared/lib/constants';
 import { serverTime } from 'pmcrypto/lib/serverTime';
+import { languageCode } from '@proton/shared/lib/i18n';
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { MessageExtendedWithData } from '../../models/message';
@@ -85,11 +86,11 @@ export const useSendVerifications = () => {
         const [contentBeforeBlockquote] = locateBlockquote(message.document);
         const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
         const [keyword] =
-            normalized.match(EN_REGEX) ||
-            normalized.match(FR_REGEX) ||
-            normalized.match(DE_REGEX) ||
-            normalized.match(ES_REGEX) ||
-            normalized.match(RU_REGEX) ||
+            (languageCode === 'en' && normalized.match(EN_REGEX)) ||
+            (languageCode === 'fr' && normalized.match(FR_REGEX)) ||
+            (languageCode === 'de' && normalized.match(DE_REGEX)) ||
+            (languageCode === 'es' && normalized.match(ES_REGEX)) ||
+            (languageCode === 'ru' && normalized.match(RU_REGEX)) ||
             [];
 
         // Attachment word without attachments
