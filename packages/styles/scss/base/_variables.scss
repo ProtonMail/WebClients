@@ -6,7 +6,7 @@
 	--shadow-norm: 0 calc(var(--px)) calc(var(--px) * 4) rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
 	--shadow-lifted: 0 calc(var(--px) * 8) calc(var(--px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
 
-	--default-border-radius: 8;
+	--default-border-radius: 3;
 	--border-radius-em: calc(var(--border-radius, var(--default-border-radius)) * var(--px));
 	--border-radius-small: calc(var(--border-radius-em) * 0.5);
 	--border-radius-medium: var(--border-radius-em);
