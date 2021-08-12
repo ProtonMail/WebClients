@@ -16,14 +16,8 @@ const DriveSidebarList = ({ shareId }: Props) => (
                 <FileRecoveryIcon className="ml0-5" />
             </>
         </DriveSidebarListItem>
-        <DriveSidebarListItem to="/shared-with-me" icon="user-group" shareId={shareId}>
-            {c('Link').t`Shared with me`}
-        </DriveSidebarListItem>
-        <DriveSidebarListItem to="/shared-by-me" icon="folder-arrow-up" shareId={shareId}>
-            {c('Link').t`Shared by me`}
-        </DriveSidebarListItem>
         <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId}>
-            {c('Link').t`Shared links`}
+            {c('Link').t`Shared`}
         </DriveSidebarListItem>
         <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId}>
             {c('Link').t`Trash`}

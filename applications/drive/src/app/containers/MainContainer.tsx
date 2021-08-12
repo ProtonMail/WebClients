@@ -62,6 +62,9 @@ const InitContainer = () => {
         withLoading(initPromise).catch(noop);
     }, []);
 
+    // Empty shared root for blurred container.
+    let shareRoot = { shareId: '', linkId: '' };
+
     if (loading) {
         return (
             <>
@@ -72,26 +75,39 @@ const InitContainer = () => {
     }
 
     if (errorType === ERROR_TYPES.NO_ACCESS) {
-        return <NoAccessContainer reason="notpaid" />;
+        return (
+            <ActiveShareProvider defaultShareRoot={shareRoot}>
+                <NoAccessContainer reason="notpaid" />
+            </ActiveShareProvider>
+        );
     }
 
     // isEnabled means global features is enabled, and value whether user has early access.
     if (earlyAccess.isEnabled && earlyAccess.value === false) {
-        return <NoAccessContainer reason="notbeta" />;
+        return (
+            <ActiveShareProvider defaultShareRoot={shareRoot}>
+                <NoAccessContainer reason="notbeta" />
+            </ActiveShareProvider>
+        );
     }
 
     if (welcomeFlags.isWelcomeFlow) {
-        return <OnboardingContainer onDone={setWelcomeFlagsDone} />;
+        return (
+            <ActiveShareProvider defaultShareRoot={shareRoot}>
+                <OnboardingContainer onDone={setWelcomeFlagsDone} />
+            </ActiveShareProvider>
+        );
     }
 
+    // When drive is loaded without error, it is ensured defaultShareRoot to be set.
+    shareRoot = defaultShareRoot as { shareId: string; linkId: string };
+
     return (
-        <ActiveShareProvider defaultShareRoot={defaultShareRoot as { shareId: string; linkId: string }}>
+        <ActiveShareProvider defaultShareRoot={shareRoot}>
             <ModalsChildren />
             <TransferManager />
             <Switch>
                 <Route path="/trash" component={TrashContainer} />
-                <Route path="/shared-with-me" component={SharedURLsContainer} />
-                <Route path="/shared-by-me" component={SharedURLsContainer} />
                 <Route path="/shared-urls" component={SharedURLsContainer} />
                 <Route path="/" component={DriveContainer} />
                 <Redirect to="/" />
