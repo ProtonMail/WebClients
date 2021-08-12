@@ -1,5 +1,6 @@
 const os = require('os');
 const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 /**
  * parallel doesn't work yet for WSL (GNU/Linux on Windows)
@@ -11,31 +12,24 @@ const isWSL = () => {
     if (process.platform === 'linux' && os.release().includes('Microsoft')) {
         return true;
     }
-
     return false;
 };
 
-const minimizer = [
-    new TerserPlugin({
-        exclude: /\/node_modules\/(?!(asmcrypto\.js|pmcrypto))/,
-        cache: true,
-        extractComments: false,
-        parallel: !isWSL(),
-        sourceMap: true,
-        terserOptions: {
-            mangle: true,
-            compress: true,
-            safari10: true
-        }
-    })
-];
-
 module.exports = ({ isProduction }) => ({
-    splitChunks: {
-        // Share all chunks between async and sync bundles https://webpack.js.org/plugins/split-chunks-plugin/#splitchunks-chunks
-        chunks: 'all',
-        name: true
-    },
+    // Needs to be single because we embed two entry points
+    runtimeChunk: 'single',
     minimize: isProduction,
-    minimizer
+    minimizer: [
+        new TerserPlugin({
+            // openpgp and elliptic are written into assets with WriteWebpackPlugin and get minified
+            exclude: /\/node_modules\/(?!(asmcrypto\.js|pmcrypto))|openpgp|elliptic/,
+            extractComments: false,
+            parallel: !isWSL(),
+            terserOptions: {
+                keep_classnames: isProduction,
+                keep_fnames: isProduction,
+            },
+        }),
+        new CssMinimizerPlugin(),
+    ],
 });

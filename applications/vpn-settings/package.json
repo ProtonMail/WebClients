@@ -12,12 +12,9 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
-        "bundle": "proton-bundler",
-        "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
-        "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
+        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone --api=proxy",
         "check-types": "tsc",
         "test": "echo 123",
-        "pack": "proton-pack",
         "postinstall": "proton-pack config"
     },
     "dependencies": {
@@ -27,15 +24,14 @@
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "abortcontroller-polyfill": "^1.3.0",
+        "abortcontroller-polyfill": "^1.7.3",
         "cross-env": "^7.0.3",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
-        "ttag": "^1.7.14",
+        "ttag": "^1.7.24",
         "yetch": "^1.1.0"
     },
     "devDependencies": {
-        "@proton/bundler": "workspace:packages/bundler",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "eslint": "^7.5.0",

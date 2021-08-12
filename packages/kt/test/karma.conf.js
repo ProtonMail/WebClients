@@ -1,7 +1,13 @@
+const karmaJasmine = require('karma-jasmine');
+const karmaWebpack = require('karma-webpack');
+const karmaChromeLauncher = require('karma-chrome-launcher');
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = (config) => {
     config.set({
         basePath: '..',
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'webpack'],
+        plugins: [karmaJasmine, karmaWebpack, karmaChromeLauncher],
         files: ['test/index.spec.js'],
         preprocessors: {
             'test/index.spec.js': ['webpack'],
@@ -26,9 +32,6 @@ module.exports = (config) => {
                 ],
             },
             devtool: 'inline-source-map',
-        },
-        webpackMiddleware: {
-            stats: 'minimal',
         },
         mime: {
             'text/x-typescript': ['ts', 'tsx'],
