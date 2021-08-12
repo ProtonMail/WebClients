@@ -27,15 +27,6 @@ body {
 	margin-bottom: 0.5em !important;
 }
 
-.inputform-label-hint,
-.inputform-assist {
-	font-size: 1.2rem !important;
-}
-.inputform-field,
-.inputform-label-text {
-	font-size: 1.4rem !important;
-}
-
 @include respond-to($breakpoint-medium) {
 	.on-tablet-m1 {
 		margin: 1em !important;
@@ -60,10 +51,6 @@ body {
 	right: 0;
 	padding: 0 0.5em 0 0;
 	font-size: 2em;
-}
-.icon-ok::after {
-	content: '✔';
-	color: var(--signal-danger);
 }
 .icon-ok::after {
 	content: '✔';
