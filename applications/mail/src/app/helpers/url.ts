@@ -1,6 +1,5 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { message as purifyMessage, sanitizeString } from '@proton/shared/lib/sanitize';
-import { parseURL } from '@proton/shared/lib/helpers/browser';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PartialMessageExtended } from '../models/message';
 
@@ -31,7 +30,16 @@ export const mailtoParser = (mailto: string): PartialMessageExtended => {
     }
 
     const to = sanitizeString(mailto.substring(7, j));
-    const { searchObject = {} as any } = parseURL(mailto.replace(/&amp;/g, '&'));
+
+    const url = new URL(mailto);
+
+    const searchObject = {
+        subject: url.searchParams.get('subject'),
+        cc: url.searchParams.get('cc'),
+        bcc: url.searchParams.get('bcc'),
+        body: url.searchParams.get('body'),
+    };
+
     const message: Partial<Message> = {};
     let decryptedBody;
 
