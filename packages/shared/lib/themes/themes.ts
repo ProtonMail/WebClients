@@ -5,6 +5,9 @@ import defaultTheme from '@proton/styles/scss/themes/default-theme.scss';
 import themeDarkSvg from '@proton/styles/assets/img/themes/theme-dark.svg';
 import darkTheme from '@proton/styles/scss/themes/dark-theme.scss';
 
+import themeLightSvg from '@proton/styles/assets/img/themes/theme-light.svg';
+import lightTheme from '@proton/styles/scss/themes/light-theme.scss';
+
 import themeMonokaiSvg from '@proton/styles/assets/img/themes/theme-monokai.svg';
 import monokaiTheme from '@proton/styles/scss/themes/monokai-theme.scss';
 
@@ -14,24 +17,18 @@ import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
 import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
 import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
 
-export enum HistoricThemeTypes {
-    V1_Default = 0,
-    V1_Light = 2,
-    V1_Contrast = 4,
-}
+export enum HistoricThemeTypes {}
 
 export enum ThemeTypes {
-    Default = 6,
+    Default = 0,
     Dark = 1,
+    Light = 2,
     Monokai = 3,
-    Contrast = 7,
+    Contrast = 4,
     Legacy = 5,
 }
 
-export const ThemeMigrationMap: Partial<{ [key in HistoricThemeTypes]: ThemeTypes | HistoricThemeTypes }> = {
-    [HistoricThemeTypes.V1_Default]: ThemeTypes.Contrast,
-    [HistoricThemeTypes.V1_Contrast]: ThemeTypes.Default,
-};
+export const ThemeMigrationMap: Partial<{ [key in HistoricThemeTypes]: ThemeTypes | HistoricThemeTypes }> = {};
 
 export const PROTON_THEMES_MAP = {
     [ThemeTypes.Default]: {
@@ -45,6 +42,12 @@ export const PROTON_THEMES_MAP = {
         identifier: ThemeTypes.Dark,
         src: themeDarkSvg,
         theme: darkTheme.toString(),
+    },
+    [ThemeTypes.Light]: {
+        label: 'Snow',
+        identifier: ThemeTypes.Light,
+        src: themeLightSvg,
+        theme: lightTheme.toString(),
     },
     [ThemeTypes.Monokai]: {
         label: 'Monokai',
@@ -69,6 +72,7 @@ export const PROTON_THEMES_MAP = {
 export const PROTON_THEMES = [
     ThemeTypes.Default,
     ThemeTypes.Dark,
+    ThemeTypes.Light,
     ThemeTypes.Monokai,
     ThemeTypes.Contrast,
     ThemeTypes.Legacy,
