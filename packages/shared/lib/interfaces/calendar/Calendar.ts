@@ -63,6 +63,12 @@ export interface CalendarAddressOptions {
     text: string;
 }
 
+export interface CalendarSelectOptions {
+    id: string;
+    name: string;
+    color: string;
+}
+
 export interface CalendarViewModelFull {
     calendarID: string;
     name: string;
