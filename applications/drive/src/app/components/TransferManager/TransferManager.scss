@@ -1,116 +1,133 @@
 @import '@proton/styles/scss/config/';
 
 .transfers-manager {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 80;
-    box-shadow: var(--shadow-lifted);
-    color: var(--text-norm);
-    transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 80;
+	box-shadow: var(--shadow-lifted);
+	color: var(--text-norm);
+	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 
-    @include respond-to($breakpoint-small, 'max') {
-        left: 0;
-        bottom: 0;
-    }
+	@include respond-to($breakpoint-small, 'max') {
+		left: 0;
+		bottom: 0;
+	}
 
-    @include respond-to($breakpoint-small, 'min') {
-        width: 60%;
-        max-width: 50em;
-        margin-right: inherit;
-    }
+	@include respond-to($breakpoint-small, 'min') {
+		width: 60%;
+		max-width: 50em;
+		margin-right: inherit;
+	}
 
-    &-heading {
-        background: var(--background-strong);
-        color: var(--text-norm);
+	&-heading {
+		background: var(--background-strong);
+		color: var(--text-norm);
 
-        @include respond-to($breakpoint-small, 'min') {
-            border-radius: $global-border-radius $global-border-radius 0 0;
-        }
-    }
+		@include respond-to($breakpoint-small, 'min') {
+			border-radius: $global-border-radius $global-border-radius 0 0;
+		}
+	}
 
-    &-heading-tooltip {
-        align-self: stretch;
-        justify-content: stretch;
-        align-items: stretch;
+	&-heading-tooltip {
+		align-self: stretch;
+		justify-content: stretch;
+		align-items: stretch;
 
-        &--isDisabled {
-            pointer-events: none;
-        }
-    }
+		&--isDisabled {
+			pointer-events: none;
+		}
+	}
 
-    &-list {
-        background-color: var(--background-norm);
-        color: var(--text-norm);
-        transition: inherit;
-    }
+	&-list {
+		background-color: var(--background-norm);
+		color: var(--text-norm);
+		transition: inherit;
+	}
 
-    &--minimized &-list {
-        max-height: 0;
-        visibility: hidden;
-    }
+	&--minimized &-list {
+		max-height: 0;
+		visibility: hidden;
+	}
 
-    &-list-item {
-        display: grid;
-        grid-template-rows: 1fr auto;
-        grid-template-areas: 'name size status controls' 'progress progress progress progress';
-        column-gap: 1em;
-        row-gap: 1em;
-        align-items: center;
-        height: 5em; // To avoid height blinking on status changing
+	&-list-item {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		grid-template-areas: 'name size status controls' 'progress progress progress progress';
+		column-gap: 1em;
+		row-gap: 1em;
+		align-items: center;
+		height: 5em; // To avoid height blinking on status changing
 
-        @include respond-to($breakpoint-small, 'max') {
-            grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
-        }
+		@include respond-to($breakpoint-small, 'max') {
+			grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
+		}
 
-        @include respond-to($breakpoint-small, 'min') {
-            grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(4.5em, 1fr);
-        }
+		@include respond-to($breakpoint-small, 'min') {
+			grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(4.5em, 1fr);
+		}
 
-        &:not(:last-child) {
-            @extend .border-bottom;
-        }
+		&:not(:last-child) {
+			@extend .border-bottom;
+		}
 
-        @each $place in (name, size, status, controls, progress) {
-            &-#{$place} {
-                grid-area: $place;
-            }
+		@each $place in (name, size, status, controls, progress) {
+			&-#{$place} {
+				grid-area: $place;
+			}
 
-            @if $place != controls and $place != progress {
-                &--canceled &-#{$place} {
-                    opacity: 0.5;
-                }
-            }
-        }
+			@if $place != controls and $place != progress {
+				&--canceled &-#{$place} {
+					opacity: 0.5;
+				}
+			}
+		}
 
-        &-icon {
-            @include respond-to(420, 'max') {
-                display: none;
-            }
-        }
+		&-icon {
+			@include respond-to(420, 'max') {
+				display: none;
+			}
+		}
 
-        &-status {
-            white-space: nowrap;
-            font-variant-numeric: tabular-nums;
+		&-status {
+			white-space: nowrap;
+			font-variant-numeric: tabular-nums;
 
-            @include respond-to($breakpoint-small, 'max') {
-                svg {
-                    margin: 0;
-                }
-            }
-        }
+			@include respond-to($breakpoint-small, 'max') {
+				svg {
+					margin: 0;
+				}
+			}
+		}
 
-        &-size {
-            white-space: nowrap;
-            font-variant-numeric: tabular-nums;
-        }
+		&-size {
+			white-space: nowrap;
+			font-variant-numeric: tabular-nums;
+		}
 
-        &-controls-button {
-            padding: 0.375em;
+		&-controls-button {
+			padding: 0.375em;
 
-            & + & {
-                margin-left: 0.5em;
-            }
-        }
-    }
+			& + & {
+				margin-left: 0.5em;
+			}
+		}
+	}
+
+	&-toolbar {
+		background-color: var(--background-weak);
+	}
+
+	&-list-placeholder {
+		background-color: var(--background-norm);
+	}
+
+	&-controls {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		grid-template-areas: 'status controls';
+		column-gap: 1em;
+		align-items: center;
+		height: 2em;
+	}
 }
