@@ -32,7 +32,7 @@ export const getDashboardPage = (user: UserModel) => {
     return {
         text: c('Title').t`Dashboard`,
         to: '/dashboard',
-        icon: 'dashboard',
+        icon: 'grid',
         permissions: [UPGRADER],
         subsections: [
             !user.hasPaidVpn && {
