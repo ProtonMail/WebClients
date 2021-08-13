@@ -2,16 +2,13 @@ import { c } from 'ttag';
 import { updateNotifyEmail, updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 
 import { Button, Info, Loader, Toggle } from '../../components';
 
 import {
-    useAddresses,
     useApi,
     useConfig,
     useEventManager,
-    useFeature,
     useLoading,
     useModals,
     useMyLocation,
@@ -28,9 +25,8 @@ import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { GenerateMnemonicModal } from '../mnemonic';
-import DisableMnemonicModal from '../mnemonic/DisableMnemonicModal';
-import { FeatureCode } from '../features';
+import { GenerateMnemonicModal, DisableMnemonicModal } from '../mnemonic';
+import useIsMnemonicAvailable from '../../hooks/useIsMnemonicAvailable';
 
 const { VPN } = CLIENT_TYPES;
 
@@ -45,12 +41,9 @@ const RecoveryMethodsSection = () => {
     const api = useApi();
     const { CLIENT_TYPE } = useConfig();
     const [myLocation, loadingMyLocation] = useMyLocation();
-    const mnemonicFeature = useFeature(FeatureCode.Mnemonic);
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
-    const [addresses = []] = useAddresses();
-    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
-    const showMnemonic = mnemonicFeature.feature?.Value && hasMigratedKeys;
+    const isMnemonicAvailable = useIsMnemonicAvailable();
 
     const mnemonicEnabled =
         user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
@@ -200,7 +193,7 @@ const RecoveryMethodsSection = () => {
                         </SettingsLayoutRight>
                     </SettingsLayout>
 
-                    {showMnemonic && (
+                    {isMnemonicAvailable && (
                         <>
                             <hr className="mb2 mt2" />
 
