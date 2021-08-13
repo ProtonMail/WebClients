@@ -16,7 +16,7 @@ interface Props {
 const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportKey, onChangeAddress }: Props) => {
     const createActions = [
         onAddKey && {
-            text: c('Action').t`Create key`,
+            text: c('Action').t`Generate key`,
             onClick: onAddKey,
         },
         onImportKey && {

@@ -17,6 +17,7 @@ interface Arguments {
     Key: Key;
     algorithmInfos: algorithmInfo[];
     signedKeyListMap: SimpleMap<SignedKeyListItem>;
+    isWeak: boolean;
 }
 
 export const getDisplayKey = ({
@@ -28,6 +29,7 @@ export const getDisplayKey = ({
     isLoading,
     signedKeyListMap,
     Key,
+    isWeak,
 }: Arguments): KeyDisplay => {
     const { isSubUser, isPrivate } = User;
     const signedKeyListItem = signedKeyListMap[fingerprint];
@@ -81,5 +83,6 @@ export const getDisplayKey = ({
         algorithm: getFormattedAlgorithmNames(algorithmInfos),
         status,
         permissions,
+        isWeak,
     };
 };

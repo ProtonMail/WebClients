@@ -40,6 +40,7 @@ export interface KeyDisplay {
     algorithmInfos: algorithmInfo[];
     status: KeyStatus;
     permissions: KeyPermissions;
+    isWeak: boolean;
 }
 
 export enum FlagAction {

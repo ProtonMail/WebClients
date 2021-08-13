@@ -9,7 +9,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 
-import { Badge, DropdownActions, KeyWarningIcon, Table, TableBody, TableRow } from '../../components';
+import { Badge, DropdownActions, ContactKeyWarningIcon, Table, TableBody, TableRow } from '../../components';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { classnames } from '../../helpers';
 
@@ -261,7 +261,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
 
                         const cells = [
                             <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
-                                <KeyWarningIcon
+                                <ContactKeyWarningIcon
                                     className="mr0-5 flex-item-noshrink"
                                     publicKey={publicKey}
                                     emailAddress={model.emailAddress}

@@ -107,7 +107,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
 
     return (
         <FormModal
-            title={c('Title').t`Create key`}
+            title={c('Title').t`Generate key`}
             close={c('Action').t`Close`}
             onClose={onClose}
             onSubmit={onClose}

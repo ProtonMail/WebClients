@@ -5,6 +5,7 @@ import Copy from '../../components/button/Copy';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
 import { KeyDisplay, KeyActions } from './shared/interface';
+import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
 
 interface Props extends Partial<KeyActions> {
     keys: KeyDisplay[];
@@ -39,7 +40,7 @@ const KeysTable = ({
                 <tr>{headerCells}</tr>
             </thead>
             <TableBody colSpan={4}>
-                {keys.map(({ ID, fingerprint, algorithm, status, permissions }) => {
+                {keys.map(({ ID, fingerprint, algorithm, status, permissions, isWeak }) => {
                     return (
                         <TableRow
                             key={ID}
@@ -53,6 +54,10 @@ const KeysTable = ({
                                     <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
                                         {fingerprint}
                                     </code>
+                                    <PersonalKeyWarningIcon
+                                        isWeak={isWeak}
+                                        className="mlauto no-mobile flex-item-noshrink"
+                                    />
                                 </div>,
                                 algorithm,
                                 <KeysStatus key={2} {...status} />,
