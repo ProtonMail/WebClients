@@ -1,20 +1,33 @@
-import { useRef, useEffect } from 'react';
-import * as React from 'react';
+import { useRef, useEffect, forwardRef } from 'react';
 import { c } from 'ttag';
 import { parseKeyFiles } from '@proton/shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
+import { Color, Shape } from '../../../components/button';
 
-interface Props {
-    onFiles: (files: OpenPGPKey[]) => void;
+export interface SelectKeyFilesProps {
+    onUpload: (keys: OpenPGPKey[]) => void;
     autoClick?: boolean;
-    multiple: boolean;
+    multiple?: boolean;
     className?: string;
+    children?: React.ReactNode;
+    disabled?: boolean;
+    shape?: Shape;
+    color?: Color;
 }
 
 const SelectKeyFiles = (
-    { onFiles, autoClick = false, multiple = false, className = '' }: Props,
+    {
+        onUpload,
+        autoClick = false,
+        multiple = false,
+        className = '',
+        children = c('Select files').t`Upload`,
+        disabled,
+        shape,
+        color,
+    }: SelectKeyFilesProps,
     ref: React.Ref<HTMLInputElement>
 ) => {
     const fileRef = useRef<HTMLInputElement>(null);
@@ -31,13 +44,19 @@ const SelectKeyFiles = (
             ref={useCombinedRefs(fileRef, ref)}
             className={className}
             multiple={multiple}
-            onChange={({ target }) => {
-                parseKeyFiles(Array.from(target.files as FileList)).then((result) => onFiles(result));
+            onChange={async ({ target }) => {
+                const files = Array.from(target.files as FileList);
+                const keys = await parseKeyFiles(files);
+
+                onUpload(keys);
             }}
+            disabled={disabled}
+            shape={shape}
+            color={color}
         >
-            {c('Select files').t`Upload`}
+            {children}
         </FileInput>
     );
 };
 
-export default React.forwardRef<HTMLInputElement, Props>(SelectKeyFiles);
+export default forwardRef<HTMLInputElement, SelectKeyFilesProps>(SelectKeyFiles);
