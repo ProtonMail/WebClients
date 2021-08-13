@@ -1,0 +1,12 @@
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "me.proton.android.calendar",
+            "sha256_cert_fingerprints": [
+                "DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:ee:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53"
+            ]
+        }
+    }
+]
