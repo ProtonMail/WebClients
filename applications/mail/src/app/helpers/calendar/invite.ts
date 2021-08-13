@@ -447,7 +447,8 @@ export const processEventInvitation = <T>(
             getParticipant({
                 participant: attendee,
                 contactEmails,
-                addresses: ownAddresses,
+                selfAddress,
+                selfAttendee,
                 emailTo: originalTo,
             })
         );
@@ -455,8 +456,8 @@ export const processEventInvitation = <T>(
     if (organizer) {
         processed.organizer = getParticipant({
             participant: organizer,
+            selfAddress,
             contactEmails,
-            addresses: ownAddresses,
             emailTo: originalTo,
         });
     }
@@ -465,8 +466,8 @@ export const processEventInvitation = <T>(
         if (attendee) {
             processed.attendee = getParticipant({
                 participant: attendee,
+                selfAddress,
                 contactEmails,
-                addresses: ownAddresses,
                 emailTo: originalTo,
                 index,
                 calendarAttendees: calendarEvent?.Attendees,
@@ -475,8 +476,9 @@ export const processEventInvitation = <T>(
     } else if (selfAttendee) {
         processed.attendee = getParticipant({
             participant: selfAttendee,
+            selfAddress,
+            selfAttendee,
             contactEmails,
-            addresses: ownAddresses,
             emailTo: originalTo,
             calendarAttendees: calendarEvent?.Attendees,
         });
@@ -629,7 +631,7 @@ export const getSupportedEventInvitation = async ({
     const invitationTzid = vtimezone?.tzid.value;
     const guessTzid = invitationTzid ? getSupportedTimezone(invitationTzid) : undefined;
     try {
-        const supportedEvent = await getSupportedEvent({
+        const supportedEvent = getSupportedEvent({
             method: supportedMethod,
             vcalVeventComponent: withMessageDtstamp(completeVevent, message),
             hasXWrTimezone,
