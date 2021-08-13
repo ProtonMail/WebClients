@@ -18,7 +18,7 @@ loudRejection();
 export const localID = 'localID';
 export const labelID = 'labelID';
 export const messageID = 'messageID';
-export const addressID = 'addressID';
+export const addressID = 'AddressID';
 export const subject = 'Test subject';
 export const body = 'Test body';
 
@@ -29,7 +29,7 @@ export const defaultProps: MessageViewProps = {
     conversationMode: false,
     loading: false,
     labels: [],
-    message: { ID: messageID } as Message,
+    message: { ID: messageID, AddressID: addressID } as Message,
     mailSettings: {} as MailSettings,
     onBack: jest.fn(),
     breakpoints: {} as Breakpoints,
@@ -75,7 +75,7 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
 export const initMessage = (inputMessage: PartialMessageExtended = {}) => {
     const defaultMessage = {
         localID: messageID,
-        data: { ID: messageID, Subject: 'test' },
+        data: { ID: messageID, AddressID: addressID, Subject: 'test' },
         initialized: true,
         verification: {},
     } as MessageExtended;

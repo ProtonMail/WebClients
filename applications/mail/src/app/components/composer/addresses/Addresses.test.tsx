@@ -11,7 +11,7 @@ const email2 = 'test2@test.com';
 
 const message: MessageExtended = {
     localID: 'localId',
-    data: { ToList: [{ Address: email1 }, { Address: email2 }] } as Message,
+    data: { AddressID: 'AddressID', ToList: [{ Address: email1 }, { Address: email2 }] } as Message,
 };
 
 const messageSendInfo: MessageSendInfo = {
