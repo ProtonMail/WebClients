@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { algorithmInfo, getKeys, OpenPGPKey } from 'pmcrypto';
 import { Address, DecryptedKey, UserModel, Key } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList, getSignedKeyListMap } from '@proton/shared/lib/keys';
+import { getIsWeakKey } from '@proton/shared/lib/keys/publicKeys';
 import { getDisplayKey } from './getDisplayKey';
 
 interface Props {
@@ -17,6 +18,7 @@ interface ParsedKey {
     fingerprint: string;
     algorithmInfos: algorithmInfo[];
     isDecrypted: boolean;
+    isWeak: boolean;
 }
 
 const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props) => {
@@ -40,6 +42,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         algorithmInfos:
                             privateKey?.getKeys().map((key) => key.getAlgorithmInfo() as algorithmInfo) || [],
                         isDecrypted: privateKey?.isDecrypted() || false,
+                        isWeak: privateKey ? getIsWeakKey(privateKey) : false,
                     };
                 })
             );

@@ -3,7 +3,7 @@ import {
     Table,
     TableBody,
     TableRow,
-    KeyWarningIcon,
+    ContactKeyWarningIcon,
     useActiveBreakpoint,
     useLoading,
     Loader,
@@ -40,7 +40,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
 
     const fingerprintCell = (
         <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
-            <KeyWarningIcon
+            <ContactKeyWarningIcon
                 className="mr0-5 flex-item-noshrink"
                 publicKey={publicKey}
                 emailAddress={contact.emailAddress}
