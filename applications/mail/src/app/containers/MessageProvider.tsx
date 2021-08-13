@@ -1,4 +1,4 @@
-import { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
+import { useEffect, createContext, ReactNode, useContext } from 'react';
 import { DRAFT_ID_PREFIX, isScheduledSend, isSent } from '@proton/shared/lib/mail/messages';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
@@ -104,30 +104,6 @@ const messageEventListener =
         }
     };
 
-const messageCacheListener = (cache: MessageCache) => async (changedMessageID: string) => {
-    let message = cache.get(changedMessageID);
-
-    if (message && !message.actionInProgress && (message.actionQueue?.length || 0) > 0) {
-        const [action, ...rest] = message.actionQueue || [];
-
-        cache.set(changedMessageID, { ...message, actionInProgress: true, actionQueue: rest });
-
-        try {
-            await action();
-        } catch (error) {
-            console.error('Message action has failed', error);
-        }
-
-        // Message has changed since first read in the cache
-        message = cache.get(changedMessageID) as MessageExtended;
-
-        // In case of deletion, message is not in the cache anymore
-        if (message) {
-            cache.set(changedMessageID, { ...message, actionInProgress: false });
-        }
-    }
-};
-
 interface Props {
     children?: ReactNode;
     cache?: MessageCache; // Only for testing purposes
@@ -146,9 +122,6 @@ const MessageProvider = ({ children, cache: testCache }: Props) => {
     const cache = testCache || realCache;
 
     useEffect(() => subscribe(messageEventListener(cache)), []);
-
-    // useLayoutEffect is mandatory here unless it's possible we listen only too late after the first changes
-    useLayoutEffect(() => cache.subscribe(messageCacheListener(cache)), []);
 
     return <MessageContext.Provider value={cache}>{children}</MessageContext.Provider>;
 };

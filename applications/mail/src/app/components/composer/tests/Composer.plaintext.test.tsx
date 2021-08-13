@@ -1,14 +1,26 @@
 import { fireEvent } from '@testing-library/dom';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { messageCache } from '../../../helpers/test/cache';
 import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
-import { MessageExtended } from '../../../models/message';
 import Composer from '../Composer';
-import { ID, props, setHTML } from './Composer.test.helpers';
+import { ID, prepareMessage, props, setHTML } from './Composer.test.helpers';
+import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 
 jest.setTimeout(20000);
+
+// In this test, switching from plaintext to html will trigger autosave
+// But encryption and save requests are not the point of this test so it's easier and faster to mock that logic
+jest.mock('../../../hooks/message/useSaveDraft', () => {
+    const saveSpy = jest.fn(() => Promise.resolve());
+    return {
+        saveSpy,
+        useCreateDraft: () => () => Promise.resolve(),
+        useSaveDraft: () => saveSpy,
+        useDeleteDraft: () => () => Promise.resolve(),
+    };
+});
+
+const saveSpy = (useSaveDraft as any).saveSpy as jest.Mock;
 
 describe('Composer switch plaintext <-> html', () => {
     afterEach(clearAll);
@@ -16,18 +28,14 @@ describe('Composer switch plaintext <-> html', () => {
     it('should switch from plaintext to html content without loosing content', async () => {
         const content = 'content';
 
-        const message = {
+        prepareMessage({
             localID: ID,
-            initialized: true,
             data: {
-                ID,
                 MIMEType: 'text/plain' as MIME_TYPES,
-                Subject: '',
-                ToList: [] as Recipient[],
+                ToList: [],
             },
             plainText: content,
-        } as MessageExtended;
-        messageCache.set(ID, message);
+        });
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
@@ -42,6 +50,9 @@ describe('Composer switch plaintext <-> html', () => {
         await findByTestId('squire-iframe');
 
         expect(setHTML).toHaveBeenCalledWith(`<p>${content}</p>\n`);
+
+        // Wait for auto save
+        await waitForSpyCall(saveSpy);
     });
 
     it('should switch from html to plaintext content without loosing content', async () => {
@@ -50,18 +61,14 @@ describe('Composer switch plaintext <-> html', () => {
           <div>content line 2<br><div>
         `;
 
-        const message = {
+        prepareMessage({
             localID: ID,
-            initialized: true,
             data: {
-                ID,
                 MIMEType: 'text/html' as MIME_TYPES,
-                Subject: '',
-                ToList: [] as Recipient[],
+                ToList: [],
             },
             document: createDocument(content),
-        } as MessageExtended;
-        messageCache.set(ID, message);
+        });
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
@@ -74,5 +81,8 @@ describe('Composer switch plaintext <-> html', () => {
         const textarea = (await findByTestId('squire-textarea')) as HTMLTextAreaElement;
 
         expect(textarea.value).toBe('content line 1\n\ncontent line 2');
+
+        // Wait for auto save
+        await waitForSpyCall(saveSpy);
     });
 });

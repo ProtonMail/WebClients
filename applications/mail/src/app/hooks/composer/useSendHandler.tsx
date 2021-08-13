@@ -6,7 +6,7 @@ import SendingMessageNotification, {
     createSendingMessageNotificationManager,
     SendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
-import { MessageAction, MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -21,7 +21,6 @@ export interface UseSendHandlerParameters {
     promiseUpload: Promise<void>;
     pendingSave: RefObject<boolean>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
-    addAction: <T>(action: MessageAction<T>) => Promise<T>;
     onClose: () => void;
     onMessageAlreadySent: () => void;
 }
@@ -33,7 +32,6 @@ export const useSendHandler = ({
     promiseUpload,
     pendingSave,
     autoSave,
-    addAction,
     onClose,
     onMessageAlreadySent,
 }: UseSendHandlerParameters) => {
@@ -61,36 +59,34 @@ export const useSendHandler = ({
         const alreadySaved = !!cleanMessage.data.ID && !pendingSave.current && !hasChanged;
         autoSave.abort?.();
 
-        await addAction(async () => {
-            try {
-                await sendMessage({
-                    inputMessage: cleanMessage,
-                    mapSendPrefs,
-                    onCompose,
-                    alreadySaved,
-                    sendingMessageNotificationManager: notifManager,
-                    useSilentApi: true,
-                });
-            } catch (error) {
-                hideNotification(notifManager.ID);
+        try {
+            await sendMessage({
+                inputMessage: cleanMessage,
+                mapSendPrefs,
+                onCompose,
+                alreadySaved,
+                sendingMessageNotificationManager: notifManager,
+                useSilentApi: true,
+            });
+        } catch (error) {
+            hideNotification(notifManager.ID);
 
-                if (
-                    [SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT, SEND_EMAIL_ERROR_CODES.MESSAGE_ALREADY_SENT].includes(
-                        error.data.Code
-                    )
-                ) {
-                    onMessageAlreadySent();
-                    throw error;
-                }
-
-                createNotification({
-                    text: c('Error').t`Error while sending the message. Message is not sent`,
-                    type: 'error',
-                });
-                console.error('Error while sending the message.', error);
+            if (
+                [SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT, SEND_EMAIL_ERROR_CODES.MESSAGE_ALREADY_SENT].includes(
+                    error.data.Code
+                )
+            ) {
+                onMessageAlreadySent();
                 throw error;
             }
-        });
+
+            createNotification({
+                text: c('Error').t`Error while sending the message. Message is not sent`,
+                type: 'error',
+            });
+            console.error('Error while sending the message.', error);
+            throw error;
+        }
     });
 
     const handleSend = useHandler(async () => {

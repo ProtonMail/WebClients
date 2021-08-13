@@ -8,12 +8,11 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { format } from 'date-fns';
 import loudRejection from 'loud-rejection';
 import { render } from '../../../helpers/test/render';
-import { MessageExtended } from '../../../models/message';
 import { setFeatureFlags } from '../../../helpers/test/api';
-import { addToCache, messageCache, minimalCache } from '../../../helpers/test/cache';
+import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { addApiKeys, clearAll, getDropdown, getModal } from '../../../helpers/test/helper';
 import Composer from '../Composer';
-import { ID, props } from './Composer.test.helpers';
+import { ID, prepareMessage, props } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -21,7 +20,14 @@ const user = { Name: 'User', Address: 'user@protonmail.com' };
 
 const setupTest = (hasPaidMail: boolean, scheduledTotalCount = 4) => {
     minimalCache();
-    addToCache('User', { Email: 'Email', DisplayName: 'DisplayName', Name: 'Name', hasPaidMail });
+    addToCache('User', {
+        Email: 'Email',
+        DisplayName: 'DisplayName',
+        Name: 'Name',
+        hasPaidMail,
+        UsedSpace: 10,
+        MaxSpace: 100,
+    });
     addToCache('MailSettings', { ViewMode: 1 });
     addToCache('MessageCounts', [{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: scheduledTotalCount }]);
     setFeatureFlags('ScheduledSend', true);
@@ -30,18 +36,11 @@ const setupTest = (hasPaidMail: boolean, scheduledTotalCount = 4) => {
 };
 
 const setupMessage = (subject = '', toList: Recipient[] = []) => {
-    const message = {
+    prepareMessage({
         localID: ID,
-        initialized: true,
-        data: {
-            ID,
-            MIMEType: 'text/plain' as MIME_TYPES,
-            Subject: subject,
-            ToList: toList as Recipient[],
-        },
+        data: { MIMEType: 'text/plain' as MIME_TYPES, Subject: subject, ToList: toList },
         plainText: '',
-    } as MessageExtended;
-    messageCache.set(ID, message);
+    });
 };
 
 describe('Composer scheduled messages', () => {
