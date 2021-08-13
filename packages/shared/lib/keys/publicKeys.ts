@@ -1,4 +1,4 @@
-import { OpenPGPKey, serverTime, canKeyEncrypt } from 'pmcrypto';
+import { OpenPGPKey, serverTime, canKeyEncrypt, checkKeyStrength } from 'pmcrypto';
 import { c } from 'ttag';
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '../helpers/email';
@@ -41,6 +41,18 @@ export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: str
         return [c('PGP key warning').t`Email address not found among user ids defined in sending key (${keyUserIds})`];
     }
     return [];
+};
+
+/**
+ * Check whether the key is considered weak, based on its type and size.
+ */
+export const getIsWeakKey = (key: OpenPGPKey): boolean => {
+    try {
+        checkKeyStrength(key);
+        return false;
+    } catch {
+        return true;
+    }
 };
 
 /**
