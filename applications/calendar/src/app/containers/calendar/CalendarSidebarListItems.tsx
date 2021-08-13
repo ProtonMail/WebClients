@@ -26,7 +26,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     getCalendarHasSubscriptionParameters,
-    getCalendarIsSynced,
+    getCalendarIsNotSynced,
     getIsPersonalCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getContrastingColor } from '../../helpers/color';
@@ -99,7 +99,7 @@ const CalendarSidebarListItems = ({
                                 </div>
                                 {!isCalendarDisabled &&
                                     getCalendarHasSubscriptionParameters(calendar) &&
-                                    !getCalendarIsSynced(calendar) && (
+                                    getCalendarIsNotSynced(calendar) && (
                                         <div className="flex-item-noshrink">
                                             &nbsp;({c('Calendar status').t`not synced`})
                                         </div>
