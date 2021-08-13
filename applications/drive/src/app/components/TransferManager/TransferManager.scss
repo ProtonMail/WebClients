@@ -129,5 +129,9 @@
 		column-gap: 1em;
 		align-items: center;
 		height: 2em;
+
+		@include respond-to($breakpoint-small, 'min') {
+			grid-template-columns: minmax(min-content, 1fr) auto;
+		}
 	}
 }

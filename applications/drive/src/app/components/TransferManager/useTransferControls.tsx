@@ -44,34 +44,6 @@ function useTransferControls() {
         return pauseUpload(transfer.id);
     };
 
-    const pauseTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            if (!isTransferPaused(entry.transfer)) {
-                const transferId = entry.transfer.id;
-                if (entry.type === TransferType.Download) {
-                    pauseDownload(transferId).catch(console.warn);
-                    return;
-                }
-
-                pauseUpload(transferId);
-            }
-        });
-    };
-
-    const resumeTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            if (isTransferPaused(entry.transfer)) {
-                const transferId = entry.transfer.id;
-                if (entry.type === TransferType.Download) {
-                    resumeDownload(transferId);
-                    return;
-                }
-
-                resumeUpload(transferId);
-            }
-        });
-    };
-
     const restartDownload = async (transfer: Download) => {
         const download = transfer;
         removeDownload(download.id);
@@ -127,12 +99,48 @@ function useTransferControls() {
         }
     };
 
+    const pauseTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
+        entries.forEach((entry) => {
+            if (!isTransferPaused(entry.transfer)) {
+                const transferId = entry.transfer.id;
+                if (entry.type === TransferType.Download) {
+                    pauseDownload(transferId).catch(console.warn);
+                    return;
+                }
+
+                pauseUpload(transferId);
+            }
+        });
+    };
+
+    const resumeTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
+        entries.forEach((entry) => {
+            if (isTransferPaused(entry.transfer)) {
+                const transferId = entry.transfer.id;
+                if (entry.type === TransferType.Download) {
+                    return resumeDownload(transferId);
+                }
+
+                resumeUpload(transferId);
+            }
+        });
+    };
+
+    const cancelTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
+        entries.forEach((entry) => {
+            return entry.type === TransferType.Download
+                ? cancelDownload(entry.transfer.id)
+                : cancelUpload(entry.transfer.id);
+        });
+    };
+
     return {
         cancel,
         restart,
         togglePause,
         pauseTransfers,
         resumeTransfers,
+        cancelTransfers,
     };
 }
 
