@@ -2,7 +2,7 @@
 	@extend .text-uppercase;
 	@extend .inline-flex;
 	font-size: rem(11); // to be sure this is the same height everywhere
-	padding: em(2) em(4) em(3);
+	padding: em(2, 11) em(8, 11) em(3, 11);
 	line-height: 1;
 	border-radius: var(--border-radius-pill);
 }
