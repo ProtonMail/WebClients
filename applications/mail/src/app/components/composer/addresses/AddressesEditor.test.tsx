@@ -260,7 +260,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should open create modal when clicking on create contact', async () => {
-        addApiMock('contacts', () => ({ Contacts: [] }));
+        addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
 
         const { getAllByTestId } = await render(<AddressesEditor {...props} />);
 
