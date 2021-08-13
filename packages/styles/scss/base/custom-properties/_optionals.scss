@@ -44,10 +44,10 @@
 	--email-item-read-icon-background-color: var(--optional-email-item-read-icon-background-color, var(--background-strong));
 	--email-item-read-icon-text-color: var(--optional-email-item-read-icon-text-color, inherit);
 
-	--email-item-selected-background-color: var(--optional-email-item-selected-background-color, var(--background-norm-hover));
-	--email-item-selected-text-color: var(--optional-email-item-selected-text-color, var(--interaction-norm-hover));
+	--email-item-selected-background-color: var(--optional-email-item-selected-background-color, var(--interaction-norm));
+	--email-item-selected-text-color: var(--optional-email-item-selected-text-color, var(--interaction-norm-contrast));
 	--email-item-selected-icon-background-color: var(--optional-email-item-selected-icon-background-color, var(--interaction-norm-hover));
-	--email-item-selected-icon-text-color: var(--optional-email-item-selected-icon-text-color, var(--interaction-norm-contrast));
+	--email-item-selected-icon-text-color: var(--optional-email-item-selected-icon-text-color, inherit);
 
 	--email-item-focus-marker-color: var(--optional-email-item-focus-marker-color, var(--interaction-norm));
 
