@@ -74,7 +74,7 @@ export const isEO = (message?: Partial<Message>) => !!message?.Password;
 export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEIVED);
 
 export const getSender = (message?: Message) => message?.Sender;
-export const getRecipients = (message?: Message) => {
+export const getRecipients = (message?: Partial<Message>) => {
     const { ToList = [], CCList = [], BCCList = [] } = message || {};
     return [...ToList, ...CCList, ...BCCList];
 };
