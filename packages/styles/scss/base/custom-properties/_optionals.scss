@@ -4,7 +4,9 @@
  */
 
 /* prettier-ignore */
-:root {
+:root,
+.ui-standard,
+.ui-prominent {
 	--selection-background-color: var(--optional-selection-background-color, var(--primary));
 	--selection-text-color: var(--optional-selection-text-color, var(--primary-contrast));
 
