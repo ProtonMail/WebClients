@@ -13,30 +13,23 @@
 			border-radius: 50%;
 			background: transparent;
 			transform: scale(0);
-			transition: 0.15s easing(easeOutCubic),
-				0.15s transform easing(easeOutBack);
+			transition: 0.15s easing(easeOutCubic), 0.15s transform easing(easeOutBack);
 		}
 	}
 
 	&:focus + &-fakeradio {
 		border-color: var(--interaction-norm);
-		background-color: var(
-			--field-focus-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--field-focus-background-color, var(--background-norm));
 	}
 
 	&[aria-invalid='true'] + &-fakeradio {
 		border-color: var(--signal-danger);
-		background-color: var(--field-background-color, var(--background-norm));
+		background-color: var(--field-background-color);
 	}
 
 	&[disabled] + &-fakeradio {
 		border-color: var(--field-disabled);
-		background-color: var(
-			--field-disabled-background-color,
-			var(--background-norm)
-		);
+		background-color: var(--field-disabled-background-color, var(--background-norm));
 	}
 
 	/*

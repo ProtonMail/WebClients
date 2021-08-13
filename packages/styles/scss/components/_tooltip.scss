@@ -1,7 +1,5 @@
 $tooltip-width: 14.5em !default;
 $arrow-width: 0.5em !default;
-$tooltip-bg-color: var(--tooltip-background-color, black);
-$tooltip-text-color: var(--tooltip-text-color, white);
 
 /* basic tooltip styles */
 .tooltip {
@@ -10,8 +8,8 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 	min-width: $arrow-width;
 	max-width: $tooltip-width;
 	border-radius: var(--border-radius-medium);
-	background: $tooltip-bg-color;
-	color: $tooltip-text-color;
+	background-color: var(--tooltip-background-color);
+	color: var(--tooltip-text-color);
 	padding: 0.5em 0.75em;
 	text-align: center;
 	word-break: break-word;
@@ -83,28 +81,28 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 	&--top-left::before,
 	&--top-right::before {
 		top: 100%;
-		border-top: $arrow-width solid $tooltip-bg-color;
+		border-top: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--bottom::before,
 	&--bottom-left::before,
 	&--bottom-right::before {
 		bottom: 100%;
-		border-bottom: $arrow-width solid $tooltip-bg-color;
+		border-bottom: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--right::before,
 	&--right-top::before,
 	&--right-bottom::before {
 		left: -#{$arrow-width * 2};
-		border-right: $arrow-width solid $tooltip-bg-color;
+		border-right: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--left::before,
 	&--left-top::before,
 	&--left-bottom::before {
 		right: -#{$arrow-width * 2};
-		border-left: $arrow-width solid $tooltip-bg-color;
+		border-left: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--top::before,

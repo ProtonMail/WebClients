@@ -46,7 +46,7 @@ html,
 }
 
 .content {
-	background-color: var(--sidebar-background-color, var(--background-norm));
+	background-color: var(--sidebar-background-color);
 	color: var(--sidebar-text-color, var(--text-norm));
 }
 
@@ -54,7 +54,7 @@ html,
 	padding: rem(10) rem(15) rem(10) 0;
 	height: rem($header-height);
 	flex-shrink: 0;
-	background-color: var(--header-background-color, var(--background-norm));
+	background-color: var(--header-background-color);
 	color: var(--header-text-color, var(--text-norm));
 }
 
@@ -69,11 +69,10 @@ html,
 .sidebar {
 	width: var(--width-sidebar, #{rem($width-sidebar)});
 	visibility: visible;
-	transition: visibility 0s ease, transform 1s ease, width 0.6s ease,
-		opacity 1s ease;
+	transition: visibility 0s ease, transform 1s ease, width 0.6s ease, opacity 1s ease;
 	transition-delay: 0s;
 	overflow: auto;
-	background-color: var(--sidebar-background-color, var(--background-norm));
+	background-color: var(--sidebar-background-color);
 	color: var(--sidebar-text-color, var(--text-norm));
 
 	@include respond-to($breakpoint-small) {
@@ -149,9 +148,9 @@ html,
 .main {
 	overflow: hidden;
 	border-top-left-radius: 4px;
-	border: solid var(--main-border-color, var(--border-norm));
+	border: solid var(--main-border-color);
 	border-width: 1px 0 0 1px;
-	box-shadow: var(--main-box-shadow, none);
+	box-shadow: var(--main-box-shadow);
 
 	@include respond-to($breakpoint-small) {
 		margin-right: 0;
