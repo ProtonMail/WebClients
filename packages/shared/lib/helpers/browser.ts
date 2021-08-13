@@ -64,31 +64,6 @@ export const doNotWindowOpen = () => {
     return isDuckDuckGo();
 };
 
-export const parseURL = (url = '') => {
-    const parser = document.createElement('a');
-    const searchObject: { [key: string]: any } = {};
-    // Let the browser do the work
-    parser.href = url;
-    // Convert query string to object
-    const queries = parser.search.replace(/^\?/, '').split('&');
-
-    for (let i = 0; i < queries.length; i++) {
-        const [key, value] = queries[i].split('=');
-        searchObject[key] = value;
-    }
-
-    return {
-        protocol: parser.protocol,
-        host: parser.host,
-        hostname: parser.hostname,
-        port: parser.port,
-        pathname: parser.pathname,
-        search: parser.search,
-        searchObject,
-        hash: parser.hash,
-    };
-};
-
 export const getActiveXObject = (name: string) => {
     try {
         // @ts-ignore
