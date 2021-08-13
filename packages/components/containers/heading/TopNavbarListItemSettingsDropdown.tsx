@@ -142,11 +142,11 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                             onClick={handleComposerModeClick}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                         >
-                            <span className="flex-item-fluid text-left">{c('Action').t`Composer mode`}</span>
+                            <span className="flex-item-fluid text-left">{c('Action').t`Composer size`}</span>
                             <span className="color-primary ml0-5">
                                 {ComposerMode === COMPOSER_MODE.MAXIMIZED
-                                    ? c('Composer mode').t`Maximized`
-                                    : c('Composer mode').t`Normal`}
+                                    ? c('Composer size').t`Maximized`
+                                    : c('Composer size').t`Normal`}
                             </span>
                         </DropdownMenuButton>
                     </>
