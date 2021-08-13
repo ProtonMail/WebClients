@@ -2,7 +2,7 @@ import { getConversation } from '@proton/shared/lib/api/conversations';
 import { useCallback } from 'react';
 import { useApi } from '@proton/components';
 import { useUpdateConversationCache } from '../../containers/ConversationProvider';
-import { isNetworkError } from '../../helpers/errors';
+import { isNetworkError, isNotExistError } from '../../helpers/errors';
 import { ConversationCacheEntry, ConversationErrors, ConversationResult } from '../../models/conversation';
 
 export type LoadConversation = (ID: string, messageID: string | undefined) => Promise<ConversationCacheEntry>;
@@ -23,6 +23,8 @@ export const useLoadConversation = (): LoadConversation => {
             const errors: ConversationErrors = {};
             if (isNetworkError(error)) {
                 errors.network = [error];
+            } else if (isNotExistError(error)) {
+                errors.notExist = [error];
             } else {
                 errors.unknown = [error];
             }

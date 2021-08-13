@@ -36,6 +36,7 @@ export interface ConversationResult {
 
 export interface ConversationErrors {
     network?: Error[];
+    notExist?: Error[];
     unknown?: Error[];
 }
 

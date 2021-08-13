@@ -9,7 +9,7 @@ import {
 import { useGetElementsFromIDs } from '../mailbox/useElementsCache';
 import { LoadConversation, useLoadConversation } from './useLoadConversation';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
-import { hasError } from '../../helpers/errors';
+import { hasError, hasErrorType } from '../../helpers/errors';
 
 const init = (
     conversationID: string,
@@ -36,14 +36,19 @@ const load = async (
     setPendingRequest: (value: boolean) => void,
     loadConversation: LoadConversation
 ) => {
-    if ((cache.get(conversationID)?.loadRetry || 0) > LOAD_RETRY_COUNT) {
+    const existingEntry = cache.get(conversationID);
+    if ((existingEntry?.loadRetry || 0) > LOAD_RETRY_COUNT) {
         // Max retries reach, aborting
+        return;
+    }
+    if (hasErrorType(existingEntry?.errors, 'notExist')) {
+        // Conversation not exist or invalid id, retrying will not help, aborting
         return;
     }
 
     setPendingRequest(true);
     const entry = await loadConversation(conversationID, messageID);
-    if (hasError(entry.errors)) {
+    if (hasError(entry.errors) && !hasErrorType(entry.errors, 'notExist')) {
         await wait(LOAD_RETRY_DELAY);
     }
     setPendingRequest(false);
