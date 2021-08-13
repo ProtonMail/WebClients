@@ -32,11 +32,10 @@ getDistDirectory() {
     echo "we extract the bundle"
     rm -rf dist || true
     mkdir dist
-    tar xzf webapp-bundle.tar.gz -C dist;
+    tar xzf webapp-bundle.tar.gz -C dist
   else
     echo "we create the bundle"
-    rm -rf ./dist;
-    yarn run build:sso;
+    yarn run build
   fi
 }
 
