@@ -1,13 +1,12 @@
 /*
  * signup specific styles
  */
-@import '@proton/styles/scss/config/';
-$bg-signup-img: './bg-mountains.svg' !default;
+@import '~@proton/styles/scss/config';
 
 .sign-layout {
 	// nice mountains image
 	&-bg {
-		background: url($bg-signup-img) 0 0 no-repeat;
+		background: url(./bg-mountains.svg) 0 0 no-repeat;
 		background-size: cover;
 		background-position: bottom;
 

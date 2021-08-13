@@ -13,7 +13,7 @@ const getFlagSvg = (abbreviation) => {
     if (!flagsMap[key]) {
         return;
     }
-    return flagsMap[key]().default;
+    return flagsMap[key]();
 };
 
 const Country = ({ server: { EntryCountry, ExitCountry } }) => {
