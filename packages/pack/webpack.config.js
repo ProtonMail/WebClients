@@ -18,7 +18,7 @@ function main({ publicPath, flow, appMode, buildData, featureFlags, writeSRI = t
         appMode,
         buildData,
         featureFlags,
-        writeSRI
+        writeSRI,
     };
 
     const config = {
@@ -26,32 +26,35 @@ function main({ publicPath, flow, appMode, buildData, featureFlags, writeSRI = t
         mode: isProduction ? 'production' : 'development',
         bail: isProduction,
         devtool: false,
+        node: {
+            punycode: false,
+        },
         watchOptions: {
-            ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/]
+            ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/],
         },
         resolve: {
             extensions: ['.js', '.tsx', '.ts'],
-            alias: getAlias()
+            alias: getAlias(),
         },
         entry: {
             // The order is important. The supported.js file sets a global variable that is used by unsupported.js to detect if the main bundle could be parsed.
             index: [
                 firstExisting([path.resolve('./src/app/index.tsx'), path.resolve('./src/app/index.js')]),
-                require.resolve('@proton/shared/lib/browser/supported.js')
+                require.resolve('@proton/shared/lib/browser/supported.js'),
             ],
-            unsupported: [require.resolve('@proton/shared/lib/browser/unsupported.js')]
+            unsupported: [require.resolve('@proton/shared/lib/browser/unsupported.js')],
         },
         output: {
             path: path.resolve('./dist'),
             filename: isProduction ? '[name].[chunkhash:8].js' : '[name].js',
             publicPath,
             chunkFilename: isProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js',
-            crossOriginLoading: 'anonymous'
+            crossOriginLoading: 'anonymous',
         },
         module: {
             // Make missing exports an error instead of warning
             strictExportPresence: true,
-            rules: [...getJsLoaders(options), ...getCssLoaders(options), ...getAssetsLoaders(options)]
+            rules: [...getJsLoaders(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
         },
         plugins: getPlugins(options),
         optimization: getOptimizations(options),
@@ -61,12 +64,12 @@ function main({ publicPath, flow, appMode, buildData, featureFlags, writeSRI = t
             compress: true,
             host: '0.0.0.0',
             historyApiFallback: {
-                index: publicPath
+                index: publicPath,
             },
             disableHostCheck: true,
             publicPath,
-            stats: 'minimal'
-        }
+            stats: 'minimal',
+        },
     };
 
     if (isTtag) {
