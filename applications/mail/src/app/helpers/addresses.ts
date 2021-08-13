@@ -1,24 +1,16 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { addPlusAlias, canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
+import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
 import { ContactGroupsMap, ContactsMap } from '../containers/ContactProvider';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { isMessage } from './elements';
-
-/**
- * Get address from email
- * Remove + alias and transform to lower case
- */
-export const getByEmail = (addresses: Address[], email = '') => {
-    const value = canonizeInternalEmail(email);
-    return addresses.find(({ Email }) => canonizeInternalEmail(Email) === value);
-};
 
 /**
  * Return the matching ContactEmail in the map taking care of email normalization
@@ -113,32 +105,6 @@ export const getRecipientOrGroupKey = (recipientOrGroup: RecipientOrGroup) =>
 
 export const matchRecipientOrGroup = (rog1: RecipientOrGroup, rog2: RecipientOrGroup) =>
     getRecipientOrGroupKey(rog1) === getRecipientOrGroupKey(rog2);
-
-/**
- * Detect if the email address is a valid plus alias and returns the address model appropriate
- */
-export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Address | undefined => {
-    const plusIndex = email.indexOf('+');
-    const atIndex = email.indexOf('@');
-
-    if (plusIndex === -1 || atIndex === -1) {
-        return;
-    }
-
-    // Remove the plus alias part to find a match with existing addresses
-    const address = getByEmail(addresses, email);
-    const { Status, Receive, Send } = address || {};
-
-    if (!Status || !Receive || !Send) {
-        // pm.me addresses on free accounts (Send = 0)
-        return;
-    }
-
-    const plusPart = email.substring(plusIndex + 1, atIndex);
-
-    // Returns an address where the Email is build to respect the existing capitalization and add the plus part
-    return { ...(address as Address), Email: addPlusAlias(address?.Email, plusPart) };
-};
 
 /**
  * Get matching address for the email in the list dealing with potential plus aliases
