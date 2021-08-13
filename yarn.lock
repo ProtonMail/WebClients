@@ -1635,13 +1635,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.11.0, @babel/runtime-corejs3@npm:^7.9.6":
+"@babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.11.0":
   version: 7.14.7
   resolution: "@babel/runtime-corejs3@npm:7.14.7"
   dependencies:
     core-js-pure: ^3.15.0
     regenerator-runtime: ^0.13.4
   checksum: 38684c1b03461661f6b5ba0efe375dd607da62004ff7e75349fb8619ee2594076e0f11c611656886ae202a0d522459fb708c429d9fafe7ad321f9732c9185559
+  languageName: node
+  linkType: hard
+
+"@babel/runtime-corejs3@npm:^7.9.6":
+  version: 7.15.3
+  resolution: "@babel/runtime-corejs3@npm:7.15.3"
+  dependencies:
+    core-js-pure: ^3.16.0
+    regenerator-runtime: ^0.13.4
+  checksum: d0c7e970fc75091f03251075e4a5ba4a0232fbb0fd365dd6263eb3e556a9cfe9a2769c493dff3376309fe6249d8cbcd564f1c2cbc2a2456fbba226fd730f91f2
   languageName: node
   linkType: hard
 
@@ -11350,6 +11360,13 @@ __metadata:
   version: 3.15.2
   resolution: "core-js-pure@npm:3.15.2"
   checksum: 098de70a85d245422046c8859d699f8d1a5e971d12074f26e108a3db539430e641af4bb311888efbb944cfdc747d4b56ec8a1970458a2ce444cc834cabdf1772
+  languageName: node
+  linkType: hard
+
+"core-js-pure@npm:^3.16.0":
+  version: 3.16.1
+  resolution: "core-js-pure@npm:3.16.1"
+  checksum: 57bebea1220ee5aea612cd9f10646b948374d76d70fd0d39bb371c9f0af74c1f66fda1ffc7cb40ee805910f04eb7fb4a239ba70511d7fef347eb2ae481afbb79
   languageName: node
   linkType: hard
 
@@ -22733,6 +22750,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"path-browserify@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "path-browserify@npm:1.0.1"
+  checksum: 45bb7389177dfe5cba5d1ee9589e578c8272ac330c00d388343845199c1d30227ca8d59bb3a15618e478673fcfa2fb7a5ad2bfcc1083d442a61a3a71aecd7dd6
+  languageName: node
+  linkType: hard
+
 "path-dirname@npm:^1.0.0":
   version: 1.0.2
   resolution: "path-dirname@npm:1.0.2"
@@ -24475,6 +24499,7 @@ fsevents@^1.2.7:
     jest: ^27.0.0
     mime-types: ^2.1.27
     openpgp: ^4.10.7
+    path-browserify: ^1.0.1
     prettier: ^2.0.5
     react: ^17.0.0
     react-dom: ^17.0.0
@@ -24484,6 +24509,7 @@ fsevents@^1.2.7:
     ttag: ^1.7.24
     typescript: ^4.0.2
     web-streams-polyfill: ^3.0.3
+    webpack: ^5.50.0
     yetch: ^1.1.0
   languageName: unknown
   linkType: soft

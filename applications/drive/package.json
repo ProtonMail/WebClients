@@ -30,11 +30,13 @@
         "cross-env": "^7.0.3",
         "mime-types": "^2.1.27",
         "openpgp": "^4.10.7",
+        "path-browserify": "^1.0.1",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
         "react-window": "^1.8.5",
         "ttag": "^1.7.24",
         "web-streams-polyfill": "^3.0.3",
+        "webpack": "^5.50.0",
         "yetch": "^1.1.0"
     },
     "devDependencies": {
