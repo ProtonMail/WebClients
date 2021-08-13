@@ -120,7 +120,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 		&:focus::after,
 		&.item-is-focused::after {
-			border-left-color: var(--email-item-focus-marker-color);
+			border-left-color: var(--email-item-selected-focus-marker-color);
 		}
 
 		.item-icon {
