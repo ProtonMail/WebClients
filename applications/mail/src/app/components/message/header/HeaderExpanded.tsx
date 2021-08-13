@@ -239,7 +239,7 @@ const HeaderExpanded = ({
                         <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                     )}
                     {messageLoaded && isScheduledMessage && (
-                        <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Scheduled`}</span>
+                        <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Scheduled`}</span>
                     )}
                     {messageLoaded && !showDetails && (
                         <>
