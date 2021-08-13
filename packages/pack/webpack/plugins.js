@@ -2,46 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WriteWebpackPlugin = require('write-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const SriPlugin = require('webpack-subresource-integrity');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
+const WriteWebpackPlugin = require('./write-webpack-plugin');
 const SriStripPlugin = require('./sri-strip-plugin');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
 
 const { logo, ...logoConfig } = require(path.resolve('./src/assets/logoConfig.js'));
-
-const HTML_MINIFY = {
-    removeAttributeQuotes: true,
-    collapseWhitespace: true,
-    html5: true,
-    minifyCSS: true,
-    removeComments: true,
-    removeEmptyAttributes: true,
-};
-
-const PRODUCTION_PLUGINS = [
-    new OptimizeCSSAssetsPlugin({
-        cssProcessorPluginOptions: {
-            preset: [
-                'default',
-                {
-                    reduceInitial: false,
-                    discardComments: {
-                        removeAll: true,
-                    },
-                    svgo: false,
-                },
-            ],
-        },
-    }),
-];
 
 module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
@@ -52,10 +24,9 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
 
     return [
         ...(isProduction
-            ? [new webpack.HashedModuleIdsPlugin()]
+            ? []
             : [
                   new webpack.HotModuleReplacementPlugin(),
-                  new webpack.NamedModulesPlugin(),
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
                   }),
@@ -71,16 +42,7 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
         new WriteWebpackPlugin([
             {
                 name: 'assets/version.json',
-                data: Buffer.from(
-                    JSON.stringify(
-                        {
-                            ...buildData,
-                            mode: appMode,
-                        },
-                        null,
-                        2
-                    )
-                ),
+                data: Buffer.from(JSON.stringify(buildData, null, 2)),
             },
         ]),
 
@@ -107,22 +69,32 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
         new HtmlWebpackPlugin({
             template: path.resolve('./src/app.ejs'),
             inject: 'body',
-            minify: isProduction && HTML_MINIFY,
+            scriptLoading: 'defer',
+            minify: isProduction && {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            },
         }),
 
         new FaviconsWebpackPlugin({
             logo: path.resolve(logo),
             ...logoConfig,
+            cache: path.resolve('./node_modules/.cache'),
         }),
 
         ...(writeSRI
             ? [
-                  new SriPlugin({
-                      hashFuncNames: ['sha384'],
-                      enabled: isProduction,
-                  }),
+                  new SubresourceIntegrityPlugin(),
                   new SriStripPlugin({
-                      ignore: /\.css$/,
+                      ignore: /\.(css|png|svg|ico|json)$/,
                   }),
               ]
             : []),
@@ -133,16 +105,5 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             WEBPACK_PUBLIC_PATH: JSON.stringify(publicPath),
             WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags),
         }),
-
-        new ScriptExtHtmlWebpackPlugin({
-            defaultAttribute: 'defer',
-        }),
-
-        new webpack.SourceMapDevToolPlugin({
-            test: /.js$/,
-            filename: '[file].map',
-        }),
-
-        ...(isProduction ? PRODUCTION_PLUGINS : []),
     ].filter(Boolean);
 };

@@ -1,5 +1,6 @@
 const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
-const flagsMap = flags.keys().reduce<Partial<{ [key: string]: () => { default: string } }>>((acc, key) => {
+
+const flagsMap = flags.keys().reduce<Partial<{ [key: string]: () => string }>>((acc, key) => {
     acc[key] = () => flags(key);
     return acc;
 }, {});
@@ -9,5 +10,5 @@ export const getFlagSvg = (abbreviation: string) => {
     if (!flagsMap[key]) {
         return;
     }
-    return flagsMap[key]?.().default;
+    return flagsMap[key]?.();
 };

@@ -1,11 +1,11 @@
-@import '@proton/styles/scss/config/';
+@import '~@proton/styles/scss/config';
 
 $amount-size: 48;
 $price-size: 21;
 
 // overrides for dark/light mode => same design
 .blackfriday-mail-modal.modal {
-	background: transparent url(bg-mountains.svg) 50% 50%;
+	background: transparent url(./bg-mountains.svg) 50% 50%;
 	background-size: cover;
 
 	width: rem(800);

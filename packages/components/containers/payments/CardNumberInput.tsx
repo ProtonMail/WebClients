@@ -6,7 +6,7 @@ import { Icon } from '../../components';
 
 const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
-const banksMap = banks.keys().reduce<{ [key: string]: () => { default: string } }>((acc, key) => {
+const banksMap = banks.keys().reduce<{ [key: string]: () => string }>((acc, key) => {
     acc[key] = () => banks(key);
     return acc;
 }, {});
@@ -18,7 +18,7 @@ const getBankSvg = (type = '') => {
         return;
     }
 
-    return banksMap[key]().default;
+    return banksMap[key]();
 };
 
 const isValidNumber = (v: string) => !v || isNumber(v);

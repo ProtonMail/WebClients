@@ -8,10 +8,14 @@ class SriStripPlugin {
     apply(compiler) {
         // afterPlugins and thisCompilation for compatibility with the SRI plugin so that it's run after it
         compiler.hooks.afterPlugins.tap('SriStripPlugin', (compiler) => {
-            compiler.hooks.thisCompilation.tap('SriStripPlugin', () => {
-                compiler.hooks.compilation.tap('SriStripPlugin', (compilation) => {
-                    HtmlWebpackPlugin.getHooks(compilation).alterAssetTags.tapAsync('sri', (data, callback) => {
-                        data.assetTags.styles.forEach((tag) => {
+            compiler.hooks.thisCompilation.tap({ name: 'SriStripPlugin', stage: -1000 }, (compilation) => {
+                HtmlWebpackPlugin.getHooks(compilation).alterAssetTagGroups.tapPromise(
+                    {
+                        name: 'SriStripPlugin',
+                        stage: 10000,
+                    },
+                    async (data) => {
+                        data.headTags.concat(data.bodyTags).forEach((tag) => {
                             const src = tag.attributes.href || tag.attributes.src;
                             if (!this.options.ignore || !this.options.ignore.test(src)) {
                                 return;
@@ -21,9 +25,9 @@ class SriStripPlugin {
                                 delete tag.attributes.crossorigin;
                             }
                         });
-                        callback(null, data);
-                    });
-                });
+                        return data;
+                    }
+                );
             });
         });
     }

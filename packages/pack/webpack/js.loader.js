@@ -14,7 +14,7 @@ const UNSUPPORTED_JS_LOADER = [
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.12' },
+                        corejs: { version: '3.16' },
                     },
                 ],
             ],
@@ -23,7 +23,7 @@ const UNSUPPORTED_JS_LOADER = [
     },
 ];
 
-const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag = false } = {}) => {
+const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = true, isTtag = false } = {}) => {
     const babelReactRefresh = hasReactRefresh ? [require.resolve('react-refresh/babel')] : [];
     const babelPluginsDev = [...babelReactRefresh];
     const babelPluginsProd = [
@@ -36,18 +36,15 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
             cacheDirectory: true,
             cacheCompression: isProduction,
             compact: isProduction,
+            babelrc: false,
+            configFile: false,
             presets: [
-                [require.resolve('@babel/preset-typescript')],
                 [
                     require.resolve('@babel/preset-env'),
                     {
-                        targets: {
-                            browsers: isProduction
-                                ? ['> 0.5%, not IE 11, Firefox ESR, Safari 11']
-                                : ['last 1 chrome version', 'last 1 firefox version', 'last 1 safari version'],
-                        },
+                        targets: browserslist,
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.12' },
+                        corejs: { version: '3.16' },
                         exclude: ['transform-typeof-symbol'], // Exclude transforms that make all code slower
                     },
                 ],
@@ -60,6 +57,7 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                         runtime: 'automatic',
                     },
                 ],
+                [require.resolve('@babel/preset-typescript')],
             ],
             plugins: [
                 require.resolve('@babel/plugin-syntax-dynamic-import'),
@@ -91,10 +89,9 @@ const getJsLoader = (options) => {
 const getJsLoaders = (options) => {
     return [
         {
-            test: /\.(ts|tsx|js|jsx)?$/,
             use: [require.resolve('source-map-loader')],
-            exclude: /web-streams-polyfill/,
             enforce: 'pre',
+            test: /\.(js|mjs|jsx|ts|tsx|css)$/,
         },
         {
             test: /unsupported\.(js|tsx?)$/,
