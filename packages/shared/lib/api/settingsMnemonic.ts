@@ -19,6 +19,12 @@ export const updateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload) => ({
     data,
 });
 
+export const reactivateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload) => ({
+    url: 'settings/mnemonic/reactivate',
+    method: 'put',
+    data,
+});
+
 export const disableMnemonicPhrase = () => ({
     url: 'settings/mnemonic/disable',
     method: 'post',

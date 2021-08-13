@@ -1,4 +1,4 @@
-import { forwardRef, memo, Ref, useEffect } from 'react';
+import { forwardRef, memo, Ref, useEffect, useRef } from 'react';
 import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import {
     useMailSettings,
@@ -10,9 +10,12 @@ import {
     LocationErrorBoundary,
     MailShortcutsModal,
     BetaOnboardingModal,
+    useUser,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
+import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './mailbox/MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
@@ -39,8 +42,14 @@ const PageContainer = (
     const [userSettings] = useUserSettings();
     const { createModal } = useModals();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const isMnemonicAvailable = useIsMnemonicAvailable();
+    const [user] = useUser();
+    const onceRef = useRef(false);
 
     useEffect(() => {
+        if (onceRef.current) {
+            return;
+        }
         const queryParams = new URLSearchParams(location.search);
 
         const hasBetaParam = queryParams.has('beta');
@@ -54,7 +63,10 @@ const PageContainer = (
         // userSettings is used to avoid waiting to load features from useEarlyAccess
         const shouldOpenBetaOnboardingModal = hasBetaParam && !userSettings.EarlyAccess;
 
+        const shouldOpenMnemonicPrompt = isMnemonicAvailable && user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
+
         if (welcomeFlags.isWelcomeFlow) {
+            onceRef.current = true;
             createModal(
                 <MailOnboardingModal
                     onDone={() => {
@@ -73,9 +85,13 @@ const PageContainer = (
                 />
             );
         } else if (shouldOpenBetaOnboardingModal) {
+            onceRef.current = true;
             createModal(<BetaOnboardingModal />);
+        } else if (shouldOpenMnemonicPrompt) {
+            onceRef.current = true;
+            createModal(<MnemonicPromptModal />);
         }
-    }, []);
+    }, [isMnemonicAvailable]);
 
     useContactsListener();
 
