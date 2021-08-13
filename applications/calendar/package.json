@@ -12,7 +12,7 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
-        "test": "jest --ci",
+        "test": "jest --runInBand --ci",
         "build": "cross-env NODE_ENV=production proton-pack build --appMode=sso --api=proxy",
         "check-types": "tsc",
         "postinstall": "proton-pack config"
