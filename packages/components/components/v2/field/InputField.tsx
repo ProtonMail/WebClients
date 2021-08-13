@@ -80,7 +80,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
         );
         const warningElement = warning && typeof warning !== 'boolean' && (
             <>
-                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
+                <Icon name="circle-exclamation-filled" className="aligntop mr0-25" />
                 <span>{warning}</span>
             </>
         );
