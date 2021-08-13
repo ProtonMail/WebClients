@@ -37,7 +37,7 @@ $container-to-width: 3em !default;
 .view-column-detail,
 // because it's sticky on top
 .message-conversation-summary {
-	background-color: var(--email-message-view-background-color, var(--background-norm));
+	background-color: var(--email-message-view-background-color);
 }
 
 $item-container-height: rem(64) !default;
@@ -76,18 +76,18 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	}
 
 	&.read {
-		background-color: var(--email-item-read-background-color, var(--background-weak));
-		color: var(--email-item-read-text-color, var(--text-norm));
+		background-color: var(--email-item-read-background-color);
+		color: var(--email-item-read-text-color);
 
 		.item-icon {
-			background-color: var(--email-item-read-icon-background-color, var(--background-strong));
-			color: var(--email-item-read-icon-text-color, inherit);
+			background-color: var(--email-item-read-icon-background-color);
+			color: var(--email-item-read-icon-text-color);
 		}
 	}
 
 	&.unread {
-		background-color: var(--email-item-unread-background-color, var(--background-norm));
-		color: var(--email-item-unread-text-color, var(--text-norm));
+		background-color: var(--email-item-unread-background-color);
+		color: var(--email-item-unread-text-color);
 
 		.item-senders,
 		.item-senddate-col,
@@ -98,8 +98,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		}
 
 		.item-icon {
-			background-color: var(--email-item-unread-icon-background-color, var(--background-strong));
-			color: var(--email-item-unread-icon-text-color, inherit);
+			background-color: var(--email-item-unread-icon-background-color);
+			color: var(--email-item-unread-icon-text-color);
 		}
 	}
 
@@ -109,34 +109,34 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	&:focus::after,
 	&.item-is-focused::after {
-		border-left-color: var(--email-item-focus-marker-color, var(--interaction-norm));
+		border-left-color: var(--email-item-focus-marker-color);
 	}
 
 	&.item-is-selected,
 	// alias for Angular
 	&.item-container.active {
-		background-color: var(--email-item-selected-background-color, var(--interaction-norm));
-		color: var(--email-item-selected-text-color, var(--interaction-norm-contrast));
+		background-color: var(--email-item-selected-background-color);
+		color: var(--email-item-selected-text-color);
 
 		&:focus::after,
 		&.item-is-focused::after {
-			border-left-color: var(--email-item-focus-marker-color, var(--interaction-norm-hover));
+			border-left-color: var(--email-item-focus-marker-color);
 		}
 
 		.item-icon {
-			background-color: var(--email-item-selected-icon-background-color, var(--interaction-norm-hover));
-			color: var(--email-item-selected-icon-text-color, inherit);
+			background-color: var(--email-item-selected-icon-background-color);
+			color: var(--email-item-selected-icon-text-color);
 		}
 	}
 
 	// Styling for contact items inside contact dropdown
 	&.item-contact {
-		background-color: var(--email-item-unread-background-color, var(--background-norm));
-		color: var(--email-item-unread-text-color, var(--text-norm));
+		background-color: var(--email-item-unread-background-color);
+		color: var(--email-item-unread-text-color);
 
 		.item-icon {
-			background-color: var(--email-item-unread-icon-background-color, var(--background-strong));
-			color: var(--email-item-unread-icon-text-color, inherit);
+			background-color: var(--email-item-unread-icon-background-color);
+			color: var(--email-item-unread-icon-text-color);
 		}
 	}
 }
@@ -419,7 +419,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&:focus,
 	&:hover,
 	&--is-starred {
-		color: var(--favorite-icon-color, orange);
+		color: var(--favorite-icon-color);
 	}
 }
 
