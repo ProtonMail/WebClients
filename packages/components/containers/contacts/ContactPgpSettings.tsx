@@ -32,10 +32,10 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
 
     /**
      * Add / update keys to model
-     * @param {Array<PublicKey>} files
+     * @param {Array<PublicKey>} keys
      */
-    const handleUploadKeys = async (files: OpenPGPKey[]) => {
-        if (!files.length) {
+    const handleUploadKeys = async (keys: OpenPGPKey[]) => {
+        if (!keys.length) {
             return createNotification({
                 type: 'error',
                 text: c('Error').t`Invalid public key file`,
@@ -46,7 +46,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
         const encryptionCapableFingerprints = new Set(model.encryptionCapableFingerprints);
 
         await Promise.all(
-            files.map(async (publicKey) => {
+            keys.map(async (publicKey) => {
                 if (!publicKey.isPublic()) {
                     // do not allow to upload private keys
                     createNotification({
@@ -188,7 +188,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                     />
                 </Label>
                 <Field className="on-mobile-mt0-5">
-                    {model.isPGPExternalWithoutWKDKeys && <SelectKeyFiles onFiles={handleUploadKeys} multiple />}
+                    {model.isPGPExternalWithoutWKDKeys && <SelectKeyFiles onUpload={handleUploadKeys} multiple />}
                 </Field>
             </Row>
             {(hasApiKeys || hasPinnedKeys) && <ContactKeysTable model={model} setModel={setModel} />}

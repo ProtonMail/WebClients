@@ -267,8 +267,9 @@ const AddressKeysSection = () => {
     const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
         createModal(
             <ReactivateKeysModal
+                userKeys={userKeys}
                 keyReactivationRequests={keyReactivationRequests}
-                onProcess={async (keyReactivationRecords, oldPassword, onReactivation) => {
+                onProcess={async (keyReactivationRecords, onReactivation) => {
                     await reactivateKeysProcess({
                         api,
                         user: User,

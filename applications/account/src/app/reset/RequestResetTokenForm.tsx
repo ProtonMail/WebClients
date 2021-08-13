@@ -1,22 +1,15 @@
 import { c } from 'ttag';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import {
-    Button,
-    Tabs,
-    useLoading,
-    useFormErrors,
-    PhoneInput,
-    InputFieldTwo,
-    TextAreaTwo,
-    useModals,
-} from '@proton/components';
+import { Button, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo, useModals } from '@proton/components';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
-import { validateMnemonic } from '@proton/shared/lib/mnemonic';
 import { useHistory } from 'react-router-dom';
+import MnemonicInputField, {
+    useMnemonicInputValidation,
+} from '@proton/components/containers/mnemonic/MnemonicInputField';
 import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmModal';
 
 interface Props {
@@ -41,21 +34,13 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
     const [email, setEmail] = useState(defaultMethod === 'email' ? defaultValue : '');
     const [phone, setPhone] = useState(defaultMethod === 'sms' ? defaultValue : '');
     const [mnemonic, setMnemonic] = useState(defaultMethod === 'mnemonic' ? defaultValue : '');
-    const [mnemonicError, setMnemonicError] = useState('');
+    const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const recoveryMethods = [
         methods?.includes('email') || methods?.includes('login') ? ('email' as const) : undefined,
         methods?.includes('sms') ? ('sms' as const) : undefined,
         methods?.includes('mnemonic') ? ('mnemonic' as const) : undefined,
     ].filter(isTruthy);
-
-    const InvalidPassphraseError = c('Error').t`Wrong recovery phrase. Try again or use another recovery method.`;
-
-    useEffect(() => {
-        validateMnemonic(mnemonic)
-            .then((isValid) => setMnemonicError(!isValid ? InvalidPassphraseError : ''))
-            .catch(() => setMnemonicError(''));
-    }, [mnemonic]);
 
     const currentMethod = recoveryMethods[tabIndex];
 
@@ -152,33 +137,14 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                     recoveryMethods.includes('mnemonic') && {
                         title: c('Recovery method').t`Recovery phrase`,
                         content: (
-                            <InputFieldTwo
-                                id="mnemonic"
-                                bigger
-                                as={TextAreaTwo}
-                                rows={3}
-                                label={c('Label').t`Recovery phrase`}
-                                placeholder={c('Label').t`Your recovery phrase`}
-                                assistiveText={c('Label').t`Recovery phrase contains 12 words`}
+                            <MnemonicInputField
                                 disableChange={loading}
                                 value={mnemonic}
-                                onValue={(newValue: string) => {
-                                    const splittedWords = newValue.split(/\s+/);
-                                    return setMnemonic(splittedWords.slice(0, 12).join(' '));
-                                }}
+                                onValue={setMnemonic}
                                 autoFocus
                                 error={validator(
                                     currentMethod === 'mnemonic'
-                                        ? [
-                                              requiredValidator(mnemonic),
-                                              (() => {
-                                                  const splitWords = mnemonic.split(/\s+/);
-                                                  return splitWords.length !== 12 ? InvalidPassphraseError : '';
-                                              })(),
-                                              (() => {
-                                                  return mnemonicError;
-                                              })(),
-                                          ]
+                                        ? [requiredValidator(mnemonic), ...mnemonicValidation]
                                         : []
                                 )}
                             />

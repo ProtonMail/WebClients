@@ -1,24 +1,25 @@
-import * as React from 'react';
+import { ComponentProps, ElementType, forwardRef, ReactElement, Ref } from 'react';
 
 // from: https://github.com/kripod/react-polymorphic-box
 
-export type BoxOwnProps<E extends React.ElementType = React.ElementType> = {
+export type BoxOwnProps<E extends ElementType = ElementType> = {
     as?: E;
 };
 
-export type BoxProps<E extends React.ElementType> = BoxOwnProps<E> & Omit<React.ComponentProps<E>, keyof BoxOwnProps>;
+export type BoxProps<E extends ElementType> = BoxOwnProps<E> & Omit<ComponentProps<E>, keyof BoxOwnProps>;
 
 const defaultElement = 'div';
 
-export const Box: <E extends React.ElementType = typeof defaultElement>(
-    props: BoxProps<E>
-) => React.ReactElement | null = React.forwardRef((props: BoxOwnProps, ref: React.Ref<Element>) => {
-    const Element = props.as || defaultElement;
-    return <Element ref={ref} {...props} as={undefined} />;
-});
+const BoxComponent = (props: BoxOwnProps, ref: Ref<Element>) => {
+    const { as: Element = defaultElement, ...rest } = props;
+    return <Element ref={ref} {...rest} />;
+};
 
-export type PolymorphicComponentProps<E extends React.ElementType, P> = P & BoxProps<E>;
+export const Box: <E extends ElementType = typeof defaultElement>(props: BoxProps<E>) => ReactElement | null =
+    forwardRef(BoxComponent);
 
-export type PolymorphicComponent<P, D extends React.ElementType = 'div'> = <E extends React.ElementType = D>(
+export type PolymorphicComponentProps<E extends ElementType, P> = P & BoxProps<E>;
+
+export type PolymorphicComponent<P, D extends ElementType = 'div'> = <E extends ElementType = D>(
     props: PolymorphicComponentProps<E, P>
-) => React.ReactElement | null;
+) => ReactElement | null;
