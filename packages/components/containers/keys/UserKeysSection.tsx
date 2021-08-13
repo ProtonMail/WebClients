@@ -1,35 +1,21 @@
 import { c } from 'ttag';
-import { getPrimaryKey, reactivateKeysProcess } from '@proton/shared/lib/keys';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import { Button, Loader } from '../../components';
-import {
-    useUser,
-    useModals,
-    useUserKeys,
-    useEventManager,
-    useAuthentication,
-    useApi,
-    useGetAddresses,
-} from '../../hooks';
+import { useUser, useModals, useUserKeys } from '../../hooks';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
-import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import KeysTable from './KeysTable';
 import useDisplayKeys from './shared/useDisplayKeys';
-import { KeyReactivationRequest } from './reactivateKeys/interface';
 import { getKeyByID } from './shared/helper';
 
 const UserKeysSections = () => {
     const { createModal } = useModals();
-    const { call } = useEventManager();
-    const api = useApi();
-    const authentication = useAuthentication();
     const [User] = useUser();
     const [userKeys, loadingUserKeys] = useUserKeys();
-    const getAddresses = useGetAddresses();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
 
     if (loadingUserKeys || !Array.isArray(userKeys)) {
@@ -66,40 +52,6 @@ const UserKeysSections = () => {
         );
     };
 
-    const handleReactivateKeys = async (keyReactivationRequests: KeyReactivationRequest[]) => {
-        const addresses = await getAddresses();
-        createModal(
-            <ReactivateKeysModal
-                keyReactivationRequests={keyReactivationRequests}
-                onProcess={async (keyReactivationRecords, oldPassword, cb) => {
-                    await reactivateKeysProcess({
-                        api,
-                        user: User,
-                        userKeys,
-                        addresses,
-                        keyReactivationRecords,
-                        keyPassword: authentication.getPassword(),
-                        onReactivation: cb,
-                    });
-                    return call();
-                }}
-            />
-        );
-    };
-    const handleReactivateKey = (ID: string) => {
-        const Key = getKeyByID(User.Keys, ID);
-        if (!Key) {
-            throw new Error('Missing key');
-        }
-        return handleReactivateKeys([
-            {
-                user: User,
-                keys: userKeys,
-                keysToReactivate: [Key],
-            },
-        ]);
-    };
-
     const primaryPrivateKey = getPrimaryKey(userKeys);
     const canExportPrimaryPrivateKey = !!primaryPrivateKey?.privateKey;
 
@@ -126,7 +78,6 @@ const UserKeysSections = () => {
                 keys={userKeysDisplay}
                 onExportPrivateKey={handleExportPrivate}
                 onExportPublicKey={handleExportPublic}
-                onReactivateKey={handleReactivateKey}
             />
         </SettingsSectionWide>
     );
