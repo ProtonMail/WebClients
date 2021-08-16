@@ -44,7 +44,7 @@ const DisableMnemonicModal = (props: Props) => {
                     <>
                         <p className="mt0">{c('Info')
                             .t`If you proceed, you will have to reset your password and will be logged out of any other active sessions.`}</p>
-                        <p className="mb0">{c('Info').t`This will also disable two-factor authentification.`}</p>
+                        <p className="mb0">{c('Info').t`This will also disable two-factor authentication.`}</p>
                     </>
                 ),
                 footer: (
