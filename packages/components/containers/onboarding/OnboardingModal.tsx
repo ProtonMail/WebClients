@@ -9,7 +9,6 @@ import { range } from '@proton/shared/lib/helpers/array';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import { Icon, StepDots, StepDot, FormModal, Button, useSettingsLink } from '../../components';
 import {
@@ -17,7 +16,6 @@ import {
     useEventManager,
     useGetAddresses,
     useOrganization,
-    useOrganizationKey,
     useSubscription,
     useUser,
     useWelcomeFlags,
@@ -65,21 +63,18 @@ const OnboardingModal = ({
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
     const [displayName, setDisplayName] = useState(user.DisplayName || user.Name || '');
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
-    const { hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
     const [theme, setTheme] = useTheme();
     const getAddresses = useGetAddresses();
     const api = useApi();
     const { call } = useEventManager();
     const [welcomeFlags] = useWelcomeFlags();
-    const canManageOrganization =
+    const canSetupOrganization =
         !loadingOrganization &&
         !loadingSubscription &&
-        !loadingOrganizationKey &&
         user.isAdmin &&
         organization.MaxMembers > 1 &&
         organization.UsedMembers === 1 &&
-        !hasOrganizationKey &&
+        !organization.HasKeys &&
         !hasVisionary(subscription);
 
     const handleUpdateWelcomeFlags = async () => {
@@ -182,7 +177,7 @@ const OnboardingModal = ({
         ? [
               welcomeStep,
               hasDisplayNameStep && setDisplayNameStep,
-              canManageOrganization && setupOrganizationStep,
+              canSetupOrganization && setupOrganizationStep,
               themesStep,
               discoverAppsStep,
           ].filter(isTruthy)
