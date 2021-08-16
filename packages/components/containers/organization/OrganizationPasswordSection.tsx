@@ -1,6 +1,10 @@
 import { useEffect, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { getHasOtherAdmins, getNonPrivateMembers, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import {
+    getHasOtherAdmins,
+    getNonPrivateMembers,
+    getOrganizationKeyInfo,
+} from '@proton/shared/lib/organization/helper';
 import { Organization } from '@proton/shared/lib/interfaces';
 
 import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
@@ -21,6 +25,7 @@ interface Props {
 const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     const [user] = useUser();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
     const displayOrganizationKey = useDisplayOrganizationKey(organizationKey);
     const [members, loadingMembers] = useMembers();
     const { createModal } = useModals();
@@ -29,11 +34,8 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     const hasOtherAdmins = members ? getHasOtherAdmins(members) : false;
     const nonPrivateMembers = members ? getNonPrivateMembers(members) : [];
 
-    const { hasOrganizationKey, isOrganizationKeyActive, isOrganizationKeyInactive } =
-        getOrganizationKeyInfo(organizationKey);
-
     const handleChangeOrganizationKeys = (mode?: 'reset') => {
-        if (nonPrivateMembers.length > 0 && !isOrganizationKeyActive) {
+        if (nonPrivateMembers.length > 0 && !organizationKey?.privateKey) {
             return createNotification({
                 text: c('Error').t`You must privatize all users before generating new organization keys`,
                 type: 'error',
@@ -82,13 +84,12 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
             return;
         }
 
-        const { hasOrganizationKey, isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
+        const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
 
-        if (!hasOrganizationKey) {
+        if (organizationKeyInfo.userNeedsToActivateKey) {
             handleActivateOrganizationKeys();
             onceRef.current = true;
-        }
-        if (isOrganizationKeyInactive) {
+        } else if (organizationKeyInfo.userNeedsToReactivateKey) {
             handleReactivateOrganizationKeys();
             onceRef.current = true;
         }
@@ -110,7 +111,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                     .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}
             </SettingsParagraph>
             <Block>
-                {isOrganizationKeyActive && (
+                {organizationKey?.privateKey && (
                     <>
                         <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr1">
                             {c('Action').t`Change password`}
@@ -120,7 +121,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                         </Button>
                     </>
                 )}
-                {isOrganizationKeyInactive && (
+                {organizationKeyInfo.userNeedsToReactivateKey && (
                     <>
                         <Alert type="error">
                             {c('Error')
@@ -134,18 +135,16 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                         </Button>
                     </>
                 )}
-                {!hasOrganizationKey && (
+                {organizationKeyInfo.userNeedsToActivateKey && (
                     <>
-                        <Alert type="error">
-                            {getActivationText()}
-                        </Alert>
+                        <Alert type="error">{getActivationText()}</Alert>
                         <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr1">
                             {c('Action').t`Activate organization key`}
                         </Button>
                     </>
                 )}
             </Block>
-            {hasOrganizationKey && (
+            {displayOrganizationKey.fingerprint && (
                 <Table>
                     <TableHeader cells={[c('Header').t`Organization key fingerprint`, c('Header').t`Key type`]} />
                     <TableBody colSpan={2}>

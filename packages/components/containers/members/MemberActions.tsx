@@ -40,13 +40,19 @@ interface Props {
     organizationKey: CachedOrganizationKey | undefined;
 }
 
-const validateMemberLogin = (organizationKey: CachedOrganizationKey | undefined) => {
-    const { hasOrganizationKey, isOrganizationKeyActive } = getOrganizationKeyInfo(organizationKey);
-    if (!hasOrganizationKey) {
+const validateMemberLogin = (
+    organization: Organization | undefined,
+    organizationKey: CachedOrganizationKey | undefined
+) => {
+    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
+    if (organizationKeyInfo.userNeedsToActivateKey) {
         return c('Error').t`The organization key must be activated first.`;
     }
-    if (!isOrganizationKeyActive) {
+    if (organizationKeyInfo.userNeedsToReactivateKey) {
         return c('Error').t`Permission denied, administrator privileges have been restricted.`;
+    }
+    if (!organizationKey?.privateKey) {
+        return c('Error').t`Organization key is not decrypted.`;
     }
 };
 
@@ -68,7 +74,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
     };
 
     const login = async () => {
-        const error = validateMemberLogin(organizationKey);
+        const error = validateMemberLogin(organization, organizationKey);
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
