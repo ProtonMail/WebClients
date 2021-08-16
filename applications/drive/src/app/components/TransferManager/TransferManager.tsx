@@ -165,6 +165,8 @@ const TransferManager = ({
         [entries]
     );
 
+    const shouldDisplayToolbar = !isNarrow && !minimized;
+
     return (
         <div
             id="transfer-manager"
@@ -178,11 +180,13 @@ const TransferManager = ({
                 onToggleMinimize={toggleMinimized}
                 onClose={handleCloseClick}
             />
-            <Toolbar
-                onTransferGroupFilterChange={setTransferGroupFilter}
-                currentTransferGroup={transferGroupFilter}
-                entries={entries}
-            />
+            {shouldDisplayToolbar && (
+                <Toolbar
+                    onTransferGroupFilterChange={setTransferGroupFilter}
+                    currentTransferGroup={transferGroupFilter}
+                    entries={entries}
+                />
+            )}
             {entries.length === 0 && (
                 <div
                     className="transfers-manager-list-placeholder flex flex-justify-center flex-align-items-center"
