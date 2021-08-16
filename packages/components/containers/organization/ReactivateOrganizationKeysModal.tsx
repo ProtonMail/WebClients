@@ -114,6 +114,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
                         error={error}
                         placeholder={c('Placeholder').t`Password`}
                         autoComplete="off"
+                        autoFocus
                         required
                     />
                 </Field>

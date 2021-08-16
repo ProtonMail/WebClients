@@ -8,13 +8,13 @@ const RestoreAdministratorPrivileges = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
 
-    const { isOrganizationKeyInactive, hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
+    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
 
-    if (loadingOrganization || loadingOrganizationKey) {
+    if (loadingOrganization || loadingOrganizationKey || !organization?.HasKeys) {
         return null;
     }
 
-    if (isOrganizationKeyInactive) {
+    if (organizationKeyInfo.userNeedsToReactivateKey) {
         return (
             <Block>
                 <Alert type="error">
@@ -37,17 +37,15 @@ const RestoreAdministratorPrivileges = () => {
         );
     }
 
-    if (!hasOrganizationKey) {
-       return (
-           <Block>
-               <Alert type="error">
-                   {getActivationText()}
-               </Alert>
-               <ButtonLike as={SettingsLink} path="/organization-keys" color="norm">
-                   {c('Action').t`Activate organization key`}
-               </ButtonLike>
-           </Block>
-       )
+    if (organizationKeyInfo.userNeedsToActivateKey) {
+        return (
+            <Block>
+                <Alert type="error">{getActivationText()}</Alert>
+                <ButtonLike as={SettingsLink} path="/organization-keys" color="norm">
+                    {c('Action').t`Activate organization key`}
+                </ButtonLike>
+            </Block>
+        );
     }
 
     return null;
