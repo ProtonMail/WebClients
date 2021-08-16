@@ -135,7 +135,7 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
                     </div>
                     <div className="flex flex-nowrap flex-justify-end no-scroll flex-item-noshrink">
                         <span className="mr1 text-ellipsis">{c('Label').t`Apply to selected transfers`}</span>
-                        <Buttons buttons={buttons} />
+                        <Buttons buttons={buttons} className="flex-item-noshrink" />
                     </div>
                 </div>
             </Details>
