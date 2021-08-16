@@ -455,11 +455,26 @@
       "here": [
         "此处"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "添加截图"
+      ],
+      "Hide info": [
+        "隐藏信息"
+      ],
+      "Show info": [
+        "显示信息"
+      ],
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "我有疑问"
@@ -499,18 +514,6 @@
       ],
       "Composer mode": [
         "编辑窗模式"
-      ],
-      "Clear": [
-        "清除"
-      ],
-      "Add screenshot(s)": [
-        "添加截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
       ],
       "Get started": [
         "入门"
@@ -599,17 +602,14 @@
       "New upload": [
         "新建上传"
       ],
-      "Delete permanently": [
-        "永久删除"
+      "Upload file": [
+        "上传文件"
       ],
-      "Restore from trash": [
-        "从回收站恢复"
+      "Upload folder": [
+        "上传文件夹"
       ],
-      "Empty trash": [
-        "清空回收站"
-      ],
-      "Rename": [
-        "重命名"
+      "Create new folder": [
+        "创建文件夹"
       ],
       "Move to folder": [
         "移动至文件夹"
@@ -617,8 +617,8 @@
       "Move to trash": [
         "移动至回收站"
       ],
-      "Create new folder": [
-        "创建文件夹"
+      "Rename": [
+        "重命名"
       ],
       "Name: A to Z": [
         "名称: A 到 Z"
@@ -644,11 +644,29 @@
       "Size: large to small": [
         "大小：从大到小"
       ],
-      "Upload file": [
-        "上传文件"
+      "List layout": [
+        "列表布局"
       ],
-      "Upload folder": [
-        "上传文件夹"
+      "Grid layout": [
+        "网格布局"
+      ],
+      "Preview": [
+        "预览"
+      ],
+      "Delete permanently": [
+        "永久删除"
+      ],
+      "Restore from trash": [
+        "从回收站恢复"
+      ],
+      "Empty trash": [
+        "清空回收站"
+      ],
+      "Share file": [
+        "分享文件"
+      ],
+      "Stop sharing": [
+        "停止分享"
       ],
       "Maximize transfers": [
         "最大化传输窗口"
@@ -686,35 +704,20 @@
       "Remove from this list": [
         ""
       ],
-      "Create": [
-        "新建"
-      ],
-      "List layout": [
-        "列表布局"
-      ],
-      "Grid layout": [
-        "网格布局"
-      ],
-      "Preview": [
-        "预览"
-      ],
-      "Stop sharing": [
-        "停止分享"
-      ],
       "Share": [
         "分享"
       ],
       "Show shared link details": [
         ""
       ],
-      "Share file": [
-        "分享文件"
-      ],
       "Start recovering": [
         "开始恢复"
       ],
       "View more": [
         "查看更多"
+      ],
+      "Create": [
+        "新建"
       ],
       "Move": [
         "移动"
@@ -868,6 +871,9 @@
       "Import contacts": [
         ""
       ],
+      "Report a problem": [
+        "反馈问题"
+      ],
       "Open help menu": [
         "打开帮助菜单"
       ],
@@ -876,9 +882,6 @@
       ],
       "Open settings menu": [
         "打开设置菜单"
-      ],
-      "Report a problem": [
-        "反馈问题"
       ],
       "Select a theme": [
         "选择一个主题"
@@ -1015,16 +1018,25 @@
       "Drop to upload": [
         "拖拽文件并上传"
       ],
+      "Show actions": [
+        ""
+      ],
+      "Sort files/folders": [
+        ""
+      ],
+      "Change layout": [
+        "调整布局"
+      ],
       "Trash": [
         "回收站"
       ],
       "Empty trash": [
         "清空回收站"
       ],
-      "Show actions": [
+      "Shared": [
         ""
       ],
-      "Sort files/folders": [
+      "Additional settings": [
         ""
       ],
       "Cancel all active transfers": [
@@ -1032,15 +1044,6 @@
       ],
       "My files": [
         "我的文件"
-      ],
-      "You have no folders yet": [
-        ""
-      ],
-      "You have no files to share": [
-        ""
-      ],
-      "Change layout": [
-        "调整布局"
       ],
       "Your file is ready to be downloaded": [
         ""
@@ -1108,10 +1111,10 @@
       "Size": [
         ""
       ],
-      "Shared": [
+      "# of accesses": [
         ""
       ],
-      "# of accesses": [
+      "You have no folders yet": [
         ""
       ],
       "Create a new folder": [
@@ -1129,9 +1132,6 @@
       "Share via link": [
         "通过链接分享"
       ],
-      "Additional settings": [
-        ""
-      ],
       "Manage secure link": [
         "管理安全链接"
       ],
@@ -1142,6 +1142,9 @@
         ""
       ],
       "Discard": [
+        ""
+      ],
+      "You have no files to share": [
         ""
       ],
       "Files details": [
@@ -1161,11 +1164,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "加载中"
-      ],
       "No results found": [
         ""
+      ],
+      "Loading": [
+        "加载中"
       ],
       "No contacts added yet": [
         ""
@@ -1567,7 +1570,7 @@
         ""
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "退订前您必须先删除所有个人的附加日历以及所有共享日历链接。${ linkButton }"
       ],
       "No payment is required at this time.": [
         ""
@@ -1707,8 +1710,23 @@
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
       ],
+      "There are no files yet": [
+        "还没有文件"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "拖放文件到这里上传文件."
+      ],
+      "No files or folders in trash": [
+        "回收站中没有文件或文件夹"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您确定要清空回收站并永久删除所有项目吗？"
+      ],
+      "Share files with links": [
+        ""
+      ],
+      "Create links and share your files with others.": [
+        ""
       ],
       "${ doneCount } Finished": [
         "${ doneCount } 已完成"
@@ -1779,27 +1797,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         ""
       ],
-      "Create your first folder and start moving your files.": [
-        "创建您的第一个文件夹并开始移动文件。"
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        ""
-      ],
-      "No files or folders in trash": [
-        "回收站中没有文件或文件夹"
-      ],
-      "There are no files yet": [
-        "还没有文件"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "拖放文件到这里上传文件."
-      ],
-      "Share files with links": [
-        ""
-      ],
-      "Create links and share your files with others.": [
-        ""
-      ],
       "Link expires: ": [
         ""
       ],
@@ -1836,6 +1833,9 @@
       "No": [
         "否"
       ],
+      "Create your first folder and start moving your files.": [
+        "创建您的第一个文件夹并开始移动文件。"
+      ],
       "Anyone with this link can access your file.": [
         ""
       ],
@@ -1864,6 +1864,9 @@
         ""
       ],
       "Creating link to file": [
+        ""
+      ],
+      "Go to \"My files\" and upload some files first.": [
         ""
       ],
       "Select an uploaded file and create a link to it.": [
@@ -2129,6 +2132,15 @@
       "Unknown file": [
         "未知文件"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "文件夹"
       ],
@@ -2254,13 +2266,13 @@
       "Upgrade account": [
         "升级账户"
       ],
+      "clearing your browser cache": [
+        ""
+      ],
       "Upgrade": [
         "升级"
       ],
       "Go to subscription plans": [
-        ""
-      ],
-      "clearing your browser cache": [
         ""
       ],
       "click here": [
@@ -2470,6 +2482,9 @@
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -2962,45 +2977,6 @@
         ""
       ]
     },
-    "Text": {
-      "Settings": [
-        ""
-      ]
-    },
-    "Enabled": {
-      "On": [
-        ""
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "未选择图像"
@@ -3102,6 +3078,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "添加截图"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        ""
+      ]
+    },
+    "Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3649,6 +3664,11 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        ""
+      ]
+    },
     "Contact field label": {
       "Name": [
         ""
@@ -3760,11 +3780,6 @@
         ""
       ],
       "Address": [
-        ""
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
         ""
       ]
     },

@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Onbekende fout"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
+      ],
+      "Unknown error": [
+        "Onbekende fout"
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Dit veld is vereist"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "Kon het opstelvenster niet laden."
       ],
       "Please refresh the page.": [
         "Vernieuw de pagina."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "Kan e-mail niet valideren, probeer het later opnieuw"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "Het verzoek timed out."
       ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Could not find address ${ email }.": [
+        "Kon adres ${ email } niet vinden."
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -281,6 +281,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Het limiet voor de grootte van bijlagen is 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        ""
+      ],
+      "This message has already been sent.": [
+        ""
       ],
       "Draft could not be saved. Try again.": [
         "Concept kon niet worden opgeslagen. Probeer het opnieuw."
@@ -350,26 +356,23 @@
       "Close": [
         "Sluiten"
       ],
-      "Close modal": [
-        "Sluit het venster"
+      "Confirm": [
+        "Bevestigen"
       ],
       "Cancel": [
         "Annuleren"
       ],
+      "Close modal": [
+        "Sluit het venster"
+      ],
       "Submit": [
         "Versturen"
-      ],
-      "Confirm": [
-        "Bevestigen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Gebruik “${ label }”-instelling"
-      ],
-      "refresh the page": [
-        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -485,6 +488,9 @@
       "Underline": [
         "Onderstreept"
       ],
+      "refresh the page": [
+        "pagina vernieuwen"
+      ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
@@ -532,6 +538,9 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Signing out": [
+        "Uitloggen"
       ],
       "Add": [
         "Voeg toe"
@@ -683,9 +692,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Uitloggen"
-      ],
       "Log in": [
         "Aanmelden"
       ],
@@ -742,6 +748,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Ik heb een vraag"
@@ -876,15 +885,6 @@
         "Nee"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
         ""
       ],
       "Send anyway": [
@@ -1205,6 +1205,15 @@
       ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1719,14 +1728,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Geen resultaten gevonden"
-      ],
       "Loading": [
         "Laden"
       ],
-      "support team": [
-        ""
+      "No results found": [
+        "Geen resultaten gevonden"
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
@@ -1825,6 +1831,9 @@
       "Plain text": [
         "Platte tekst"
       ],
+      "support team": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Sleep het bestand hierheen om te uploaden"
       ],
@@ -1857,6 +1866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "Loading ${ appName }": [
+        "${ appName } laden"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -2000,9 +2012,6 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
-      ],
-      "Loading ${ appName }": [
-        "${ appName } laden"
       ],
       "here": [
         "hier"
@@ -2408,7 +2417,7 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "U hebt uw e-mail geen onderwerp gegeven. Wilt u het bericht toch versturen?"
       ],
-      "Do you want to send your message anyway?": [
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
         ""
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
@@ -3346,36 +3355,6 @@
       "Add a gift code": [
         ""
       ],
-      "Inbox": [
-        "Inbox"
-      ],
-      "Drafts": [
-        "Concepten"
-      ],
-      "Sent": [
-        "Verzonden"
-      ],
-      "Trash": [
-        "Prullenbak"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Alle e-mails"
-      ],
-      "Archive": [
-        "Archief"
-      ],
-      "Starred": [
-        "Met ster"
-      ],
-      "Outbox": [
-        "Postvak uit"
-      ],
-      "Scheduled": [
-        ""
-      ],
       "You need to activate your calendar keys to add this event": [
         ""
       ],
@@ -3451,6 +3430,33 @@
       "Add label": [
         "Label toevoegen"
       ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Drafts": [
+        "Concepten"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Verzonden"
+      ],
+      "Starred": [
+        "Met ster"
+      ],
+      "Archive": [
+        "Archief"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
+      "All mail": [
+        "Alle e-mails"
+      ],
       "Folders": [
         "Mappen"
       ],
@@ -3462,6 +3468,9 @@
       ],
       "Manage your labels": [
         "Labels beheren"
+      ],
+      "Outbox": [
+        "Postvak uit"
       ]
     },
     "Placeholder": {
@@ -3647,6 +3656,9 @@
       ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -3940,19 +3952,19 @@
         "${ elementsCount } gesprek is verplaatst naar spam en afzender toegevoegd aan de blokkadelijst.",
         "${ elementsCount } gesprekken zijn verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Bericht verplaatst naar ${ folderName } en afzender verwijderd uit de blokkadelijst."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } bericht verplaatst naar ${ folderName } en afzender verwijderd van de blokkadelijst.",
-        "${ elementsCount } berichten verplaatst naar ${ folderName } en afzender verwijderd van de blokkadelijst."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Gesprek verplaatst naar ${ folderName } en afzender verwijderd van de blokkadelijst."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } conversatie verplaatst naar ${ folderName } en afzender verwijderd van de blokkadelijst.",
-        "${ elementsCount } gesprekken zijn verplaatst naar ${ folderName } en afzender verwijderd van de blokkadelijst."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."
@@ -4079,6 +4091,17 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applicaties"
+      ],
+      "Go to ${ title }": [
+        "Ga naar ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ga naar ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4436,41 +4459,6 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applicaties"
-      ],
-      "Go to ${ title }": [
-        "Ga naar ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ga naar ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normaal"
-      ],
-      "Maximized": [
-        "Gemaximaliseerd"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Uploaden"
@@ -4517,6 +4505,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Om de bèta uit te schakelen, open het dropdown menu en klik op de \"Bèta Access\" optie."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normaal"
+      ],
+      "Maximized": [
+        "Gemaximaliseerd"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,12 +5192,6 @@
         "Met ster"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -5314,9 +5320,10 @@
         "Adres"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
       ]
     },
     "Message": {
@@ -5328,6 +5335,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Op ${ date } schreef ${ name } ${ address }:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5589,6 +5601,9 @@
         "Ongeldige gebeurtenis"
       ],
       "Unsupported event": [
+        ""
+      ],
+      "Invalid method": [
         ""
       ]
     },
@@ -6424,6 +6439,9 @@
         ""
       ],
       "tomorrow": [
+        ""
+      ],
+      "on ${ formattedDate }": [
         ""
       ],
       "Today": [

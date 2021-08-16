@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Bilinmeyen hata"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu ileti, mevcut tarayıcınızda açılamayacak bazı bağlantı adreslerini içerebilir"
+      ],
+      "Unknown error": [
+        "Bilinmeyen hata"
       ],
       "Authentication canceled.": [
         "Kimlik doğrulama iptal edildi."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Bu alan gereklidir"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
-      ],
       "The composer failed to load.": [
         "Oluşturucu yüklenemedi."
       ],
       "Please refresh the page.": [
         "Lütfen sayfayı yenileyin."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
       ],
       "Can't validate email, try again later": [
         "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "İstek zaman aşımına uğradı."
       ],
-      "Signature verification failed": [
-        "İmza doğrulaması başarısız oldu"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
-      ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "Gönderilen anahtar geçersiz"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulaması başarısız oldu"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
       ],
       "Missing signature": [
         "İmza eksik"
@@ -281,6 +281,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Ekler 25 MB ile sınırlıdır."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Bu ileti zaten gönderildi. Yeni bir taslak kaydedildi."
+      ],
+      "This message has already been sent.": [
+        "Bu ileti zaten gönderildi."
       ],
       "Draft could not be saved. Try again.": [
         "Taslak kayıt edilemedi. Tekrar deneyin."
@@ -350,26 +356,23 @@
       "Close": [
         "Kapat"
       ],
-      "Close modal": [
-        "Pencereyi kapat"
+      "Confirm": [
+        "Onayla"
       ],
       "Cancel": [
         "İptal"
       ],
+      "Close modal": [
+        "Pencereyi kapat"
+      ],
       "Submit": [
         "Gönder"
-      ],
-      "Confirm": [
-        "Onayla"
       ],
       "More info: ${ safeTitle }": [
         "Daha fazla bilgi: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "“${ label }” ayarını kullan"
-      ],
-      "refresh the page": [
-        "sayfayı yenile"
       ],
       "Remove": [
         "Sil"
@@ -485,6 +488,9 @@
       "Underline": [
         "Alt çizgili"
       ],
+      "refresh the page": [
+        "sayfayı yenile"
+      ],
       "Go to panel ${ index }": [
         "${ index } paneline git"
       ],
@@ -532,6 +538,9 @@
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Signing out": [
+        "Oturumu kapatılıyor"
       ],
       "Add": [
         "Ekle"
@@ -683,9 +692,6 @@
       "OK": [
         "Tamam"
       ],
-      "Signing out": [
-        "Oturumu kapatılıyor"
-      ],
       "Log in": [
         "Oturum aç"
       ],
@@ -742,6 +748,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Bir sorum var"
@@ -877,15 +886,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } grubuna ekle"
-      ],
-      "Learn more": [
-        "Daha fazlasını öğrenin"
-      ],
-      "Open shop": [
-        "Mağazayı aç"
-      ],
-      "Open calendar": [
-        "Takvimi aç"
       ],
       "Send anyway": [
         "Yine de gönder"
@@ -1205,6 +1205,15 @@
       ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
+      ],
+      "Learn more": [
+        "Daha fazlasını öğrenin"
+      ],
+      "Open shop": [
+        "Mağazayı aç"
+      ],
+      "Open calendar": [
+        "Takvimi aç"
       ]
     },
     "Title": {
@@ -1719,14 +1728,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Sonuç bulunamadı"
-      ],
       "Loading": [
         "Yükleniyor"
       ],
-      "support team": [
-        "destek ekibi"
+      "No results found": [
+        "Sonuç bulunamadı"
       ],
       "No contacts added yet": [
         "Henüz kişi eklenmedi"
@@ -1825,6 +1831,9 @@
       "Plain text": [
         "Düz metin"
       ],
+      "support team": [
+        "destek ekibi"
+      ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
       ],
@@ -1857,6 +1866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
+      ],
+      "Loading ${ appName }": [
+        "${ appName } yükleniyor"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bu gruba atanan adreslerin silinmeyeceğini lütfen unutmayın."
@@ -2000,9 +2012,6 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarımınız işlenmeyecektir."
-      ],
-      "Loading ${ appName }": [
-        "${ appName } yükleniyor"
       ],
       "here": [
         "burada"
@@ -2408,8 +2417,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "E-postanıza herhangi bir konu belirtmediniz. Yine de mesajı göndermek istiyor musunuz?"
       ],
-      "Do you want to send your message anyway?": [
-        "Mesajınızı yine de göndermek istiyor musunuz?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        ""
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Gönderilecek çok fazla ileti var. Lütfen, bunu planlamak için başka bir mesaj gönderilene kadar bekleyiniz."
@@ -3346,36 +3355,6 @@
       "Add a gift code": [
         "Hediye kodu ekle"
       ],
-      "Inbox": [
-        "Gelen kutusu"
-      ],
-      "Drafts": [
-        "Taslaklar"
-      ],
-      "Sent": [
-        "Gönderilen"
-      ],
-      "Trash": [
-        "Çöp kutusu"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Tüm postalar"
-      ],
-      "Archive": [
-        "Arşiv"
-      ],
-      "Starred": [
-        "Yıldızlı"
-      ],
-      "Outbox": [
-        "Giden kutusu"
-      ],
-      "Scheduled": [
-        "Planlanmış"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmeniz gerekir"
       ],
@@ -3451,6 +3430,33 @@
       "Add label": [
         "Etiket ekle"
       ],
+      "Inbox": [
+        "Gelen kutusu"
+      ],
+      "Drafts": [
+        "Taslaklar"
+      ],
+      "Scheduled": [
+        "Planlanmış"
+      ],
+      "Sent": [
+        "Gönderilen"
+      ],
+      "Starred": [
+        "Yıldızlı"
+      ],
+      "Archive": [
+        "Arşiv"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Çöp kutusu"
+      ],
+      "All mail": [
+        "Tüm postalar"
+      ],
       "Folders": [
         "Klasörler"
       ],
@@ -3462,6 +3468,9 @@
       ],
       "Manage your labels": [
         "Etiketlerinizi yönetin"
+      ],
+      "Outbox": [
+        "Giden kutusu"
       ]
     },
     "Placeholder": {
@@ -3647,6 +3656,9 @@
       ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
@@ -3940,19 +3952,19 @@
         "${ elementsCount } iletiyi Spam kutusuna ve gönderende Engellen listesine eklendi.",
         "${ elementsCount } iletiyi Spam kutusuna ve gönderende Engellen listesine eklendi."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "İleti ${ folderName } klasörüne taşındı ve gönderici Engellenen listesinden kaldırıldı."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } ileti ${ folderName } klasörüne taşındı ve gönderici Engel Listesinden kaldırıldı.",
-        "${ elementsCount } ileti ${ folderName } klasörüne taşındı ve gönderici Engel Listesinden kaldırıldı."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Konuşma ${ folderName } klasörüne taşındı ve gönderici Engellenen Listesinden çıkarıldı."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } konuşma ${ folderName } klasörüne taşındı ve gönderici Engellenen Listesinden çıkarıldı.",
-        "${ elementsCount } konuşma ${ folderName } klasörüne taşındı ve gönderici Engellenen Listesinden çıkarıldı."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
       "Message moved to ${ folderName }.": [
         "İleti ${ folderName } klasörüne taşındı."
@@ -4079,6 +4091,17 @@
       ],
       "No verification method available": [
         "Kullanılabilir doğrulama yöntemi yok"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton uygulamaları"
+      ],
+      "Go to ${ title }": [
+        "${ title } gidin"
+      ],
+      "Go to ${ vpnName }": [
+        "${ vpnName } uygulamasına git"
       ]
     },
     "Label for contact group name": {
@@ -4436,41 +4459,6 @@
         "Düzenle ve yeniden planla"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
-      ],
-      "Go to ${ title }": [
-        "${ title } gidin"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } uygulamasına git"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        "Küçük"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Genişletilmiş"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Yükle"
@@ -4517,6 +4505,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Betayı devre dışı bırakmak için ayarlar açılır menüsünü açın ve \"Beta Erişimi\" seçeneğine tıklayın."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        "Küçük"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Liste"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Genişletilmiş"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,12 +5192,6 @@
         "yıldızlı"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bayt"
@@ -5314,9 +5320,10 @@
         "Adres"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Şifre en az ${ length } karakter içermelidir",
+        "Şifre en az ${ length } karakter içermelidir"
       ]
     },
     "Message": {
@@ -5328,6 +5335,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ name } ${ address } ${ date } tarihinde yazdı:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5590,6 +5602,9 @@
       ],
       "Unsupported event": [
         "Desteklenmeyen etkinlik"
+      ],
+      "Invalid method": [
+        "Geçersiz yöntem"
       ]
     },
     "Event invitation error": {
@@ -6425,6 +6440,9 @@
       ],
       "tomorrow": [
         "yarın"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate } tarihinde"
       ],
       "Today": [
         "Bugün"

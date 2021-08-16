@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Error desconocido"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual"
+      ],
+      "Unknown error": [
+        "Error desconocido"
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Este campo es obligatorio"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "No se pudo cargar el compositor."
       ],
       "Please refresh the page.": [
         "Actualice la página."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "No se puede validar el correo electrónico, intente más tarde"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "Tiempo de espera agotado."
       ],
-      "Signature verification failed": [
-        "Falló la verificación de la firma"
-      ],
-      "Could not find address ${ email }.": [
-        "No se pudo encontrar la dirección ${ email }."
-      ],
       "Email address disabled": [
         "Dirección de correo deshabilitada"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "La clave para enviar no es válida"
+      ],
+      "Signature verification failed": [
+        "Falló la verificación de la firma"
+      ],
+      "Could not find address ${ email }.": [
+        "No se pudo encontrar la dirección ${ email }."
       ],
       "Missing signature": [
         "Falta la firma"
@@ -281,6 +281,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Los adjuntos están limitados a 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Este mensaje ya fue enviado. Se guardó un borrador nuevo."
+      ],
+      "This message has already been sent.": [
+        "Este mensaje ya fue enviado."
       ],
       "Draft could not be saved. Try again.": [
         "No se pudo guardar el borrador. Vuelva a intentarlo."
@@ -350,26 +356,23 @@
       "Close": [
         "Cerrar"
       ],
-      "Close modal": [
-        "Cerrar ventana"
+      "Confirm": [
+        "Confirmar"
       ],
       "Cancel": [
         "Cancelar"
       ],
+      "Close modal": [
+        "Cerrar ventana"
+      ],
       "Submit": [
         "Enviar"
-      ],
-      "Confirm": [
-        "Confirmar"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Usar ajustes de “${ label }”"
-      ],
-      "refresh the page": [
-        "refresque la página"
       ],
       "Remove": [
         "Eliminar"
@@ -485,6 +488,9 @@
       "Underline": [
         "Subrayado"
       ],
+      "refresh the page": [
+        "refresque la página"
+      ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
@@ -532,6 +538,9 @@
       ],
       "Edit phone number": [
         "Editar número de teléfono"
+      ],
+      "Signing out": [
+        "Cerrando sesión"
       ],
       "Add": [
         "Añadir"
@@ -683,9 +692,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Cerrando sesión"
-      ],
       "Log in": [
         "Iniciar sesión"
       ],
@@ -742,6 +748,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "Presentando ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Chatee con nosotros"
       ],
       "I have a question": [
         "Tengo una pregunta"
@@ -877,15 +886,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Añadir a ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "Más información"
-      ],
-      "Open shop": [
-        "Abrir tienda"
-      ],
-      "Open calendar": [
-        "Abrir calendario"
       ],
       "Send anyway": [
         "Enviar de todos modos"
@@ -1205,6 +1205,15 @@
       ],
       "Start using ${ appName }": [
         "Comenzar con ${ appName }"
+      ],
+      "Learn more": [
+        "Más información"
+      ],
+      "Open shop": [
+        "Abrir tienda"
+      ],
+      "Open calendar": [
+        "Abrir calendario"
       ]
     },
     "Title": {
@@ -1719,14 +1728,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "No se encontraron resultados"
-      ],
       "Loading": [
         "Cargando"
       ],
-      "support team": [
-        "equipo de soporte"
+      "No results found": [
+        "No se encontraron resultados"
       ],
       "No contacts added yet": [
         "Ningún contacto añadido aún"
@@ -1825,6 +1831,9 @@
       "Plain text": [
         "Texto plano"
       ],
+      "support team": [
+        "equipo de soporte"
+      ],
       "Drop the file here to upload": [
         "Arrastre el archivo aquí para subir"
       ],
@@ -1857,6 +1866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear su cuenta, solicite una invitación y responderemos dentro de un día hábil."
+      ],
+      "Loading ${ appName }": [
+        "Cargando ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -2000,9 +2012,6 @@
       ],
       "Your import will not be processed.": [
         "Su importación no será procesada."
-      ],
-      "Loading ${ appName }": [
-        "Cargando ${ appName }"
       ],
       "here": [
         "aquí"
@@ -2408,8 +2417,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "No le ha dado un asunto a su correo electrónico. ¿Desea enviar el mensaje de todos modos?"
       ],
-      "Do you want to send your message anyway?": [
-        "¿Desea enviar el mensaje de todos modos?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        "Escribió \"${ keyword }\", pero no se añadió ningún adjunto. ¿Desea enviar el mensaje de todos modos?"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Demasiados mensajes esperando ser enviados. Espere hasta que se envíe otro mensaje para programar éste."
@@ -3346,36 +3355,6 @@
       "Add a gift code": [
         "Añadir código de regalo"
       ],
-      "Inbox": [
-        "Buzón"
-      ],
-      "Drafts": [
-        "Borradores"
-      ],
-      "Sent": [
-        "Enviados"
-      ],
-      "Trash": [
-        "Papelera"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Todos"
-      ],
-      "Archive": [
-        "Archivo"
-      ],
-      "Starred": [
-        "Destacados"
-      ],
-      "Outbox": [
-        "Enviados"
-      ],
-      "Scheduled": [
-        "Programado"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Necesita activar las claves del calendario para añadir este evento"
       ],
@@ -3451,6 +3430,33 @@
       "Add label": [
         "Añadir etiqueta"
       ],
+      "Inbox": [
+        "Buzón"
+      ],
+      "Drafts": [
+        "Borradores"
+      ],
+      "Scheduled": [
+        "Programado"
+      ],
+      "Sent": [
+        "Enviados"
+      ],
+      "Starred": [
+        "Destacados"
+      ],
+      "Archive": [
+        "Archivo"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Papelera"
+      ],
+      "All mail": [
+        "Todos"
+      ],
       "Folders": [
         "Carpetas"
       ],
@@ -3462,6 +3468,9 @@
       ],
       "Manage your labels": [
         "Administre sus etiquetas"
+      ],
+      "Outbox": [
+        "Enviados"
       ]
     },
     "Placeholder": {
@@ -3647,6 +3656,9 @@
       ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "El chat en vivo es una función premium disponible solo para aquellos con planes de pago de ProtonVPN. En su lugar, abra una solicitud."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los reportes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
@@ -3940,19 +3952,19 @@
         "${ elementsCount } conversación movida a spam y el remitente añadido a la lista no deseada.",
         "${ elementsCount } conversaciones movidas a spam y el remitente añadido a la lista no deseada."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Mensaje movido a ${ folderName } y el remitente eliminado de la lista no deseada."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        "Mensaje movido a ${ folderName } y remitente añadido a la lista deseada."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } mensaje movido a ${ folderName } y el remitente eliminado de la lista no deseada.",
-        "${ elementsCount } mensajes movidos a ${ folderName } y el remitente eliminado de la lista no deseada."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } mensaje movido a ${ folderName } y remitente añadido a la lista deseada.",
+        "${ elementsCount } mensajes movidos a ${ folderName } y remitente añadido a la lista deseada."
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Conversación movida a ${ folderName } y el remitente eliminado de la lista no deseada."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        "Conversación movida a ${ folderName } y remitente añadido a la lista deseada."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } conversación movida a ${ folderName } y el remitente eliminado de la lista no deseada.",
-        "${ elementsCount } conversaciones movidas a ${ folderName } y el remitente eliminado de la lista no deseada."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } conversación movida a ${ folderName } y remitente añadido a la lista deseada.",
+        "${ elementsCount } conversaciones movidas a ${ folderName } y remitente añadido a la lista deseada."
       ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
@@ -4079,6 +4091,17 @@
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicaciones de Proton"
+      ],
+      "Go to ${ title }": [
+        "Ir a ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ir a ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4436,41 +4459,6 @@
         "Editar y reprogramar"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicaciones de Proton"
-      ],
-      "Go to ${ title }": [
-        "Ir a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ir a ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Cómoda"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizada"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Subir"
@@ -4517,6 +4505,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Para deshabilitar la beta, abra el menú desplegable de ajustes y haga clic en la opción “Acceso beta”."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Cómoda"
+      ],
+      "Compact": [
+        "Compacta"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizada"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,12 +5192,6 @@
         "destacado"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter",
-        "La contraseña debe tener al menos ${ length } caracteres"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -5314,9 +5320,10 @@
         "Dirección"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contraseña debe tener al menos ${ length } caracter",
+        "La contraseña debe tener al menos ${ length } caracteres"
       ]
     },
     "Message": {
@@ -5328,6 +5335,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "El ${ date }, ${ name } ${ address } escribió:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5590,6 +5602,9 @@
       ],
       "Unsupported event": [
         "Evento no compatible"
+      ],
+      "Invalid method": [
+        "Método inválido"
       ]
     },
     "Event invitation error": {
@@ -6425,6 +6440,9 @@
       ],
       "tomorrow": [
         "mañana"
+      ],
+      "on ${ formattedDate }": [
+        "el ${ formattedDate }"
       ],
       "Today": [
         "Hoy"

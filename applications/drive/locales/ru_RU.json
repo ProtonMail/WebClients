@@ -467,11 +467,26 @@
       "here": [
         "здесь"
       ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Add screenshot(s)": [
+        "Добавить снимки экрана"
+      ],
+      "Hide info": [
+        "Скрыть информацию"
+      ],
+      "Show info": [
+        "Показать информацию"
+      ],
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
       ],
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Переписывайтесь с нами"
       ],
       "I have a question": [
         "У меня есть вопрос"
@@ -511,18 +526,6 @@
       ],
       "Composer mode": [
         "Режим редактора"
-      ],
-      "Clear": [
-        "Очистить"
-      ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
-      "Show info": [
-        "Показать информацию"
       ],
       "Get started": [
         "Приступить к работе"
@@ -611,17 +614,14 @@
       "New upload": [
         "Новая загрузка"
       ],
-      "Delete permanently": [
-        "Удалить безвозвратно"
+      "Upload file": [
+        "Загрузить файл"
       ],
-      "Restore from trash": [
-        "Восстановить из корзины"
+      "Upload folder": [
+        "Загрузить папку"
       ],
-      "Empty trash": [
-        "Очистить корзину"
-      ],
-      "Rename": [
-        "Переименовать"
+      "Create new folder": [
+        "Создать новую папку"
       ],
       "Move to folder": [
         "Переместить в папку"
@@ -629,8 +629,8 @@
       "Move to trash": [
         "Переместить в корзину"
       ],
-      "Create new folder": [
-        "Создать новую папку"
+      "Rename": [
+        "Переименовать"
       ],
       "Name: A to Z": [
         "Название: от А к Я"
@@ -656,11 +656,29 @@
       "Size: large to small": [
         "Размер: от большого к малому"
       ],
-      "Upload file": [
-        "Загрузить файл"
+      "List layout": [
+        "Отображать списком"
       ],
-      "Upload folder": [
-        "Загрузить папку"
+      "Grid layout": [
+        "Отображать в виде сетки"
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ],
+      "Delete permanently": [
+        "Удалить безвозвратно"
+      ],
+      "Restore from trash": [
+        "Восстановить из корзины"
+      ],
+      "Empty trash": [
+        "Очистить корзину"
+      ],
+      "Share file": [
+        "Поделиться файлом"
+      ],
+      "Stop sharing": [
+        "Закрыть доступ"
       ],
       "Maximize transfers": [
         "Развернуть окно с загрузками"
@@ -698,35 +716,20 @@
       "Remove from this list": [
         "Удалить из этого списка"
       ],
-      "Create": [
-        "Создать"
-      ],
-      "List layout": [
-        "Отображать списком"
-      ],
-      "Grid layout": [
-        "Отображать в виде сетки"
-      ],
-      "Preview": [
-        "Предпросмотр"
-      ],
-      "Stop sharing": [
-        "Закрыть доступ"
-      ],
       "Share": [
         "Поделиться"
       ],
       "Show shared link details": [
         "Показать подробности ссылки, которой вы поделились"
       ],
-      "Share file": [
-        "Поделиться файлом"
-      ],
       "Start recovering": [
         "Начать восстановление"
       ],
       "View more": [
         "Показать больше"
+      ],
+      "Create": [
+        "Создать"
       ],
       "Move": [
         "Переместить"
@@ -892,6 +895,9 @@
       "Import contacts": [
         "Импорт контактов"
       ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
       "Open help menu": [
         "Открыть меню справки"
       ],
@@ -900,9 +906,6 @@
       ],
       "Open settings menu": [
         "Открыть меню настроек"
-      ],
-      "Report a problem": [
-        "Сообщить о проблеме"
       ],
       "Select a theme": [
         "Выбор темы"
@@ -1039,32 +1042,32 @@
       "Drop to upload": [
         "Перетащите для загрузки"
       ],
-      "Trash": [
-        "Корзина"
-      ],
-      "Empty trash": [
-        "Очистить корзину"
-      ],
       "Show actions": [
         "Показать действия"
       ],
       "Sort files/folders": [
         "Сортировка файлов/папок"
       ],
+      "Change layout": [
+        "Изменить отображение"
+      ],
+      "Trash": [
+        "Корзина"
+      ],
+      "Empty trash": [
+        "Очистить корзину"
+      ],
+      "Shared": [
+        "В общем доступе"
+      ],
+      "Additional settings": [
+        "Дополнительные параметры"
+      ],
       "Cancel all active transfers": [
         "Отменить все текущие операции по передаче данных"
       ],
       "My files": [
         "Мои файлы"
-      ],
-      "You have no folders yet": [
-        "У вас пока что нет папок"
-      ],
-      "You have no files to share": [
-        "У вас нет файлов"
-      ],
-      "Change layout": [
-        "Изменить отображение"
       ],
       "Your file is ready to be downloaded": [
         "Ваш файл готов к загрузке"
@@ -1132,11 +1135,11 @@
       "Size": [
         "Размер"
       ],
-      "Shared": [
-        "В общем доступе"
-      ],
       "# of accesses": [
         "сколько раз воспользовались ссылкой"
+      ],
+      "You have no folders yet": [
+        "У вас пока что нет папок"
       ],
       "Create a new folder": [
         "Создать новую папку"
@@ -1153,9 +1156,6 @@
       "Share via link": [
         "Доступ по ссылке"
       ],
-      "Additional settings": [
-        "Дополнительные параметры"
-      ],
       "Manage secure link": [
         "Настройка секретной ссылки"
       ],
@@ -1167,6 +1167,9 @@
       ],
       "Discard": [
         "Отменить"
+      ],
+      "You have no files to share": [
+        "У вас нет файлов"
       ],
       "Files details": [
         "Информация о файлах"
@@ -1185,11 +1188,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Загружаем"
-      ],
       "No results found": [
         "Результаты не найдены"
+      ],
+      "Loading": [
+        "Загружаем"
       ],
       "No contacts added yet": [
         "Контакты еще не добавлены"
@@ -1609,7 +1612,7 @@
         "Счет выставляется в конце текущего расчетного цикла (продлевается ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Вы должны удалить все дополнительные личные календари и все общие ссылки календаря, прежде чем можно будет отменить подписку. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
@@ -1752,8 +1755,23 @@
       "Your files will be encrypted and then saved.": [
         "Ваши файлы будут зашифрованы, а затем сохранены."
       ],
+      "There are no files yet": [
+        "Пока здесь пусто"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Для загрузки файлов перетащите их сюда или выберите через диалоговое окно."
+      ],
+      "No files or folders in trash": [
+        "В корзине нет ни папок, ни файлов"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
+      ],
+      "Share files with links": [
+        "Делитесь файлами с помощью ссылок"
+      ],
+      "Create links and share your files with others.": [
+        "Создавайте ссылки и делитесь файлами с другими."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } завершён",
@@ -1848,27 +1866,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Вы уверены? Если закрыть менеджера передачи, то вся передача информации будет прервана."
       ],
-      "Create your first folder and start moving your files.": [
-        "Создайте свою первую папку и начните загружать ваши файлы."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Сначала загрузите что-нибудь в «Мои файлы»."
-      ],
-      "No files or folders in trash": [
-        "В корзине нет ни папок, ни файлов"
-      ],
-      "There are no files yet": [
-        "Пока здесь пусто"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Для загрузки файлов перетащите их сюда или выберите через диалоговое окно."
-      ],
-      "Share files with links": [
-        "Делитесь файлами с помощью ссылок"
-      ],
-      "Create links and share your files with others.": [
-        "Создавайте ссылки и делитесь файлами с другими."
-      ],
       "Link expires: ": [
         "Срок действия ссылки: "
       ],
@@ -1905,6 +1902,9 @@
       "No": [
         "Нет"
       ],
+      "Create your first folder and start moving your files.": [
+        "Создайте свою первую папку и начните загружать ваши файлы."
+      ],
       "Anyone with this link can access your file.": [
         "Доступ к файлу разрешен всем, у кого есть ссылка."
       ],
@@ -1934,6 +1934,9 @@
       ],
       "Creating link to file": [
         "Создание ссылки на файл"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Сначала загрузите что-нибудь в «Мои файлы»."
       ],
       "Select an uploaded file and create a link to it.": [
         "Выберите загруженный файл и создайте ссылку на него."
@@ -2198,6 +2201,15 @@
       "Unknown file": [
         "Неизвестный файл"
       ],
+      "All": [
+        "Все"
+      ],
+      "Active": [
+        "Активен"
+      ],
+      "Failed": [
+        "Завершено с ошибкой"
+      ],
       "Folder": [
         "Папка"
       ],
@@ -2214,7 +2226,7 @@
         "Файл"
       ],
       "Get your own ProtonDrive": [
-        ""
+        "Время получить свой собственный ProtonDrive"
       ],
       "Report abuse": [
         "Сообщить о злоупотреблении"
@@ -2329,14 +2341,14 @@
       "Upgrade account": [
         "Повысить учётную запись"
       ],
+      "clearing your browser cache": [
+        "очистка кэша браузера"
+      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
-      ],
-      "clearing your browser cache": [
-        "очистка кэша браузера"
       ],
       "click here": [
         "нажмите здесь"
@@ -2552,6 +2564,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Ваши локальные параметры даты и времени не синхронизированы."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -3142,45 +3157,6 @@
         "Доступна новая версия ${ appName } . ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Настройки"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Вкл"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Выкл"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Строка"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "На весь экран"
-      ],
-      "Normal": [
-        "Обычный"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
@@ -3282,6 +3258,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Настройки"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Вкл"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Выкл"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Строка"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "На весь экран"
+      ],
+      "Normal": [
+        "Обычный"
       ]
     },
     "Onboarding Proton": {
@@ -3862,6 +3877,14 @@
         "Гбайт"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен содержать хотя бы ${ length } символ",
+        "Пароль должен содержать хотя бы ${ length } символа",
+        "Пароль должен содержать хотя бы ${ length } символов",
+        "Пароль должен содержать хотя бы ${ length } символа"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Имя"
@@ -3974,14 +3997,6 @@
       ],
       "Address": [
         "Адрес"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен содержать хотя бы ${ length } символ",
-        "Пароль должен содержать хотя бы ${ length } символа",
-        "Пароль должен содержать хотя бы ${ length } символов",
-        "Пароль должен содержать хотя бы ${ length } символа"
       ]
     },
     "PGP key warning": {

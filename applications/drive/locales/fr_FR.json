@@ -459,11 +459,26 @@
       "here": [
         "ici"
       ],
+      "Clear": [
+        "Effacer"
+      ],
+      "Add screenshot(s)": [
+        "Ajouter une ou plusieurs captures d'écran"
+      ],
+      "Hide info": [
+        "Masquer les infos"
+      ],
+      "Show info": [
+        "Afficher les infos"
+      ],
       "Copy email to clipboard": [
         "Copier l’adresse électronique dans le presse-papiers"
       ],
       "${ BRAND_NAME } introduction": [
         "Présentation de ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Dialoguez en ligne avec nous"
       ],
       "I have a question": [
         "J’ai une question"
@@ -499,22 +514,10 @@
         "Mise en page de la boîte aux lettres"
       ],
       "Mailbox density": [
-        "Densité de la boîte aux lettres"
+        "Densité de la messagerie"
       ],
       "Composer mode": [
         "Mode du composeur"
-      ],
-      "Clear": [
-        "Effacer"
-      ],
-      "Add screenshot(s)": [
-        "Ajouter une ou plusieurs captures d'écran"
-      ],
-      "Hide info": [
-        "Masquer les infos"
-      ],
-      "Show info": [
-        "Afficher les infos"
       ],
       "Get started": [
         "Commencer"
@@ -603,26 +606,23 @@
       "New upload": [
         "Nouveau téléchargement"
       ],
-      "Delete permanently": [
-        "Supprimer définitivement"
+      "Upload file": [
+        "Importer un fichier"
       ],
-      "Restore from trash": [
-        "Restaurer depuis la corbeille"
+      "Upload folder": [
+        "Importer un dossier"
       ],
-      "Empty trash": [
-        "Vider la corbeille"
-      ],
-      "Rename": [
-        "Renommer"
+      "Create new folder": [
+        "Créer un nouveau dossier"
       ],
       "Move to folder": [
         "Déplacer vers un dossier"
       ],
       "Move to trash": [
-        "Déplacer vers Corbeille"
+        "Déplacer vers la corbeille"
       ],
-      "Create new folder": [
-        "Créer un nouveau dossier"
+      "Rename": [
+        "Renommer"
       ],
       "Name: A to Z": [
         "Nom : de A à Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Taille : du plus grand au plus petit"
       ],
-      "Upload file": [
-        "Importer un fichier"
+      "List layout": [
+        "Affichage en liste"
       ],
-      "Upload folder": [
-        "Importer un dossier"
+      "Grid layout": [
+        "Affichage en grille"
+      ],
+      "Preview": [
+        "Aperçu"
+      ],
+      "Delete permanently": [
+        "Supprimer définitivement"
+      ],
+      "Restore from trash": [
+        "Restaurer depuis la corbeille"
+      ],
+      "Empty trash": [
+        "Vider la corbeille"
+      ],
+      "Share file": [
+        "Partager un fichier"
+      ],
+      "Stop sharing": [
+        "Arrêter le partage"
       ],
       "Maximize transfers": [
         "Maximiser les transferts"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Retirer de cette liste"
       ],
-      "Create": [
-        "Créer"
-      ],
-      "List layout": [
-        "Affichage en liste"
-      ],
-      "Grid layout": [
-        "Affichage en grille"
-      ],
-      "Preview": [
-        "Aperçu"
-      ],
-      "Stop sharing": [
-        "Arrêter le partage"
-      ],
       "Share": [
         "Partager"
       ],
       "Show shared link details": [
         "Afficher les détails du lien partagé"
       ],
-      "Share file": [
-        "Partager un fichier"
-      ],
       "Start recovering": [
         "Commencer la récupération"
       ],
       "View more": [
         "Afficher plus"
+      ],
+      "Create": [
+        "Créer"
       ],
       "Move": [
         "Déplacer"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Importer les contacts"
       ],
+      "Report a problem": [
+        "Signaler un problème"
+      ],
       "Open help menu": [
         "Ouvrir le menu d'aide"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Ouvrir le menu des paramètres"
-      ],
-      "Report a problem": [
-        "Signaler un problème"
       ],
       "Select a theme": [
         "Choisissez un thème"
@@ -1003,7 +1006,7 @@
         "Raccourcis clavier ${ appName }"
       ],
       "Mailbox density": [
-        "Densité de la boîte aux lettres"
+        "Densité de la messagerie"
       ],
       "Mailbox layout": [
         "Mise en page de la boîte aux lettres"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Déposez pour importer"
       ],
-      "Trash": [
-        "Corbeille"
-      ],
-      "Empty trash": [
-        "Vider la corbeille"
-      ],
       "Show actions": [
         "Afficher les actions"
       ],
       "Sort files/folders": [
         "Trier les fichiers/dossiers"
       ],
+      "Change layout": [
+        "Modifier la mise en page"
+      ],
+      "Trash": [
+        "Corbeille"
+      ],
+      "Empty trash": [
+        "Vider la corbeille"
+      ],
+      "Shared": [
+        "Partagés"
+      ],
+      "Additional settings": [
+        "Paramètres supplémentaires"
+      ],
       "Cancel all active transfers": [
         "Annuler tous les transferts en cours"
       ],
       "My files": [
         "Mes fichiers"
-      ],
-      "You have no folders yet": [
-        "Vous n'avez pas encore de dossiers"
-      ],
-      "You have no files to share": [
-        "Vous n'avez aucun fichier à partager"
-      ],
-      "Change layout": [
-        "Modifier la mise en page"
       ],
       "Your file is ready to be downloaded": [
         "Votre fichier est prêt à être téléchargé"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Taille"
       ],
-      "Shared": [
-        "Partagés"
-      ],
       "# of accesses": [
         "# accès"
+      ],
+      "You have no folders yet": [
+        "Vous n'avez pas encore de dossiers"
       ],
       "Create a new folder": [
         "Créer un nouveau dossier"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Partager avec un lien"
       ],
-      "Additional settings": [
-        "Paramètres supplémentaires"
-      ],
       "Manage secure link": [
         "Gérer les liens sécurisés"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Abandonner"
+      ],
+      "You have no files to share": [
+        "Vous n'avez aucun fichier à partager"
       ],
       "Files details": [
         "Détails des fichiers"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Chargement"
-      ],
       "No results found": [
         "Aucun résultat trouvé"
+      ],
+      "Loading": [
+        "Chargement"
       ],
       "No contacts added yet": [
         "Aucun contact ajouté pour l'instant"
@@ -1581,7 +1584,7 @@
         "Facturé à la fin de votre cycle de facturation actuel (renouvelé le ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est requis pour le moment."
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
+      "There are no files yet": [
+        "Aucun fichier pour l'instant"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Glissez et déposez un fichier ici ou choisissez de l'importer."
+      ],
+      "No files or folders in trash": [
+        "Aucun fichier ou dossier dans la corbeille"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Êtes-vous sûr de vouloir vider la corbeille et supprimer définitivement tous les éléments ?"
+      ],
+      "Share files with links": [
+        "Partager des fichiers avec des liens"
+      ],
+      "Create links and share your files with others.": [
+        "Créez des liens et partagez vos fichiers avec d'autres personnes."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } terminé",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Fermer le gestionnaire de transferts annulera tous les transferts actifs, êtes-vous sûr ?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Créez votre premier dossier et commencez à importer vos fichiers."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Allez dans « Mes fichiers » et commencez à télécharger des fichiers."
-      ],
-      "No files or folders in trash": [
-        "Aucun fichier ou dossier dans la corbeille"
-      ],
-      "There are no files yet": [
-        "Aucun fichier pour l'instant"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Glissez et déposez un fichier ici ou choisissez de l'importer."
-      ],
-      "Share files with links": [
-        "Partager des fichiers avec des liens"
-      ],
-      "Create links and share your files with others.": [
-        "Créez des liens et partagez vos fichiers avec d'autres personnes."
-      ],
       "Link expires: ": [
         "Le lien expire : "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Non"
       ],
+      "Create your first folder and start moving your files.": [
+        "Créez votre premier dossier et commencez à importer vos fichiers."
+      ],
       "Anyone with this link can access your file.": [
         "Toute personne ayant ce lien peut accéder à votre fichier."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Création du lien vers le fichier"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Allez dans « Mes fichiers » et commencez à télécharger des fichiers."
       ],
       "Select an uploaded file and create a link to it.": [
         "Sélectionnez un fichier téléchargé et créez un lien vers celui-ci."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Fichier inconnu"
       ],
+      "All": [
+        "Tous"
+      ],
+      "Active": [
+        "Actifs"
+      ],
+      "Failed": [
+        "Échecs"
+      ],
       "Folder": [
         "Dossier"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Changer d'offre"
       ],
+      "clearing your browser cache": [
+        "vider le cache de votre navigateur"
+      ],
       "Upgrade": [
         "Changer d'offre"
       ],
       "Go to subscription plans": [
         "Aller aux abonnements"
-      ],
-      "clearing your browser cache": [
-        "vider le cache de votre navigateur"
       ],
       "click here": [
         "cliquez ici"
@@ -2499,6 +2511,9 @@
       "Your local date & time settings seem to be out of sync.": [
         "Vos paramètres de date et d'heure locaux semblent désynchronisés."
       ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Le dialogue en ligne en temps réel est une fonctionnalité premium disponible uniquement pour les personnes disposant d’une offre ProtonVPN payante. Veuillez ouvrir un ticket à la place."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
       ],
@@ -2709,18 +2724,18 @@
         "${ deletedItemsCount } éléments supprimés définitivement de la corbeille"
       ],
       "\"${ firstItemName }\" moved to trash": [
-        "« ${ firstItemName } » déplacé vers Corbeille"
+        "« ${ firstItemName } » déplacé vers la corbeille"
       ],
       "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } fichier déplacé vers Corbeille",
+        "${ trashedLinksCount } fichier déplacé vers la corbeille",
         "${ trashedLinksCount } fichiers déplacés vers Corbeille"
       ],
       "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } dossier déplacé vers Corbeille",
+        "${ trashedLinksCount } dossier déplacé vers la corbeille",
         "${ trashedLinksCount } dossiers déplacés vers Corbeille"
       ],
       "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } élément déplacé vers Corbeille",
+        "${ trashedLinksCount } élément déplacé vers la corbeille",
         "${ trashedLinksCount } éléments déplacés vers Corbeille"
       ],
       "\"${ firstItemName }\" restored from trash": [
@@ -3022,45 +3037,6 @@
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Paramètres"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Activé"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Désactivé"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Colonne"
-      ],
-      "Row": [
-        "Ligne"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Confortable"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximisé"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Aucune image sélectionnée"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Joindre une ou des capture(s) d'écran"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Paramètres"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Activé"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Désactivé"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Colonne"
+      ],
+      "Row": [
+        "Ligne"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Confortable"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximisé"
+      ],
+      "Normal": [
+        "Normal"
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "Go"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Le mot de passe doit comporter au moins ${ length } caractère",
+        "Le mot de passe doit comporter au moins ${ length } caractères"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nom"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Adresse"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère",
-        "Le mot de passe doit comporter au moins ${ length } caractères"
       ]
     },
     "PGP key warning": {
@@ -4042,7 +4057,7 @@
         "Déplacer dans les indésirables"
       ],
       "Move to Trash": [
-        "Déplacer vers Corbeille"
+        "Déplacer vers la corbeille"
       ],
       "Delete permanently": [
         "Supprimer définitivement"

@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Ismeretlen hiba"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
+      ],
+      "Unknown error": [
+        "Ismeretlen hiba"
       ],
       "Authentication canceled.": [
         ""
@@ -30,14 +30,14 @@
       "This field is required": [
         "A mező kitöltése kötelező"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
-      ],
       "The composer failed to load.": [
         "A szerkesztőt nem sikerült betölteni."
       ],
       "Please refresh the page.": [
         "Kérjük frissítse az oldalt."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         "E-mail ellenőrzése nem sikerült, próbálja meg később"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "A kérés túllépte az időkorlátot."
       ],
-      "Signature verification failed": [
-        "Aláírás ellenőrzése sikertelen"
-      ],
-      "Could not find address ${ email }.": [
-        "Nem található a cím: ${ email }."
-      ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "A küldő kulcs érvénytelen"
+      ],
+      "Signature verification failed": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "Could not find address ${ email }.": [
+        "Nem található a cím: ${ email }."
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -281,6 +281,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Mellékletek maximális mérete 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        ""
+      ],
+      "This message has already been sent.": [
+        ""
       ],
       "Draft could not be saved. Try again.": [
         "Piszkozat mentése nem sikerült. Próbálja újra."
@@ -350,26 +356,23 @@
       "Close": [
         "Bezárás"
       ],
-      "Close modal": [
-        "Ablak bezárása"
+      "Confirm": [
+        "Jóváhagyás"
       ],
       "Cancel": [
         "Mégsem"
       ],
+      "Close modal": [
+        "Ablak bezárása"
+      ],
       "Submit": [
         "Küldés"
-      ],
-      "Confirm": [
-        "Jóváhagyás"
       ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "refresh the page": [
-        "frissítse az oldalt"
       ],
       "Remove": [
         "Eltávolítás"
@@ -485,6 +488,9 @@
       "Underline": [
         "Aláhúzott"
       ],
+      "refresh the page": [
+        "frissítse az oldalt"
+      ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
@@ -532,6 +538,9 @@
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Signing out": [
+        "Kijelentkezés"
       ],
       "Add": [
         "Hozzáadás"
@@ -683,9 +692,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Kijelentkezés"
-      ],
       "Log in": [
         "Bejelentkezés"
       ],
@@ -742,6 +748,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } bevezető"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Kérdésem van"
@@ -876,15 +885,6 @@
         "Nem"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
         ""
       ],
       "Send anyway": [
@@ -1205,6 +1205,15 @@
       ],
       "Start using ${ appName }": [
         "${ appName } használatának megkezdése"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1719,14 +1728,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Nincs találat"
-      ],
       "Loading": [
         "Betöltés"
       ],
-      "support team": [
-        ""
+      "No results found": [
+        "Nincs találat"
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
@@ -1825,6 +1831,9 @@
       "Plain text": [
         "Egyszerű szöveg"
       ],
+      "support team": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
       ],
@@ -1857,6 +1866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
+      "Loading ${ appName }": [
+        "${ appName } betöltése"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -2000,9 +2012,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "Loading ${ appName }": [
-        "${ appName } betöltése"
       ],
       "here": [
         "ide"
@@ -2408,7 +2417,7 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nem adott meg tárgyat az üzenethez. Elküldi tárgy nélkül?"
       ],
-      "Do you want to send your message anyway?": [
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
         ""
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
@@ -3346,36 +3355,6 @@
       "Add a gift code": [
         ""
       ],
-      "Inbox": [
-        "Beérkezett üzenetek"
-      ],
-      "Drafts": [
-        "Piszkozatok"
-      ],
-      "Sent": [
-        "Elküldött"
-      ],
-      "Trash": [
-        "Lomtár"
-      ],
-      "Spam": [
-        "Levélszemét"
-      ],
-      "All mail": [
-        "Összes levél"
-      ],
-      "Archive": [
-        "Archívum"
-      ],
-      "Starred": [
-        "Csillagozott"
-      ],
-      "Outbox": [
-        "Kimenő"
-      ],
-      "Scheduled": [
-        ""
-      ],
       "You need to activate your calendar keys to add this event": [
         ""
       ],
@@ -3451,6 +3430,33 @@
       "Add label": [
         "Új címke"
       ],
+      "Inbox": [
+        "Beérkezett üzenetek"
+      ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
+      "Starred": [
+        "Csillagozott"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "All mail": [
+        "Összes levél"
+      ],
       "Folders": [
         "Mappák"
       ],
@@ -3462,6 +3468,9 @@
       ],
       "Manage your labels": [
         "Címkék kezelése"
+      ],
+      "Outbox": [
+        "Kimenő"
       ]
     },
     "Placeholder": {
@@ -3647,6 +3656,9 @@
       ],
       "Contacts could not be merged": [
         "A névjegyek egyesítése nem sikerült"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
@@ -3940,19 +3952,19 @@
         "${ elementsCount } beszélgetés átkerült a levélszeméthez, a feladó pedig a tiltólistára.",
         "${ elementsCount } beszélgetés átkerült a levélszeméthez, a feladó pedig a tiltólistára."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Az üzenet átkerült a ${ folderName } mappába, a feladó pedig lekerült a tiltólistáról."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig lekerült a tiltólistáról.",
-        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig lekerült a tiltólistáról."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Az beszélgetés átkerült a ${ folderName } mappába, a feladó pedig lekerült a tiltólistáról."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig lekerült a tiltólistáról.",
-        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig lekerült a tiltólistáról."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
       "Message moved to ${ folderName }.": [
         "Az üzenet átkerült a ${ folderName } mappába."
@@ -4079,6 +4091,17 @@
       ],
       "No verification method available": [
         "Nincs elérhető ellenőrzési módszer"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton alkalmazások"
+      ],
+      "Go to ${ title }": [
+        "${ title } megnyitása"
+      ],
+      "Go to ${ vpnName }": [
+        "Menjen ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4436,41 +4459,6 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton alkalmazások"
-      ],
-      "Go to ${ title }": [
-        "${ title } megnyitása"
-      ],
-      "Go to ${ vpnName }": [
-        "Menjen ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "Feltöltés"
@@ -4517,6 +4505,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "A Béta hozzáférés tiltásához nyissa meg a beállítások lenyíló menüt és válassza a \"béta hozzáférés\" opciót."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,12 +5192,6 @@
         "csillagozott"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A jelszónak legalább ${ length } karakterből kell állnia",
-        "A jelszónak legalább ${ length } karakterből kell állnia"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bájt"
@@ -5314,9 +5320,10 @@
         "Cím"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
       ]
     },
     "Message": {
@@ -5328,6 +5335,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date } keltezéssel, ${ name } ${ address } írta:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5589,6 +5601,9 @@
         ""
       ],
       "Unsupported event": [
+        ""
+      ],
+      "Invalid method": [
         ""
       ]
     },
@@ -6424,6 +6439,9 @@
         ""
       ],
       "tomorrow": [
+        ""
+      ],
+      "on ${ formattedDate }": [
         ""
       ],
       "Today": [

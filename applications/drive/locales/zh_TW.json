@@ -455,11 +455,26 @@
       "here": [
         "這裡"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "新增螢幕截圖"
+      ],
+      "Hide info": [
+        "隱藏資訊"
+      ],
+      "Show info": [
+        "顯示資訊"
+      ],
       "Copy email to clipboard": [
         "複製電子郵件至剪貼簿"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "我要發問"
@@ -499,18 +514,6 @@
       ],
       "Composer mode": [
         "撰寫器模式"
-      ],
-      "Clear": [
-        "清除"
-      ],
-      "Add screenshot(s)": [
-        "新增螢幕截圖"
-      ],
-      "Hide info": [
-        "隱藏資訊"
-      ],
-      "Show info": [
-        "顯示資訊"
       ],
       "Get started": [
         "入門指南"
@@ -599,17 +602,14 @@
       "New upload": [
         "新增上載"
       ],
-      "Delete permanently": [
-        "永久刪除"
+      "Upload file": [
+        "上載檔案"
       ],
-      "Restore from trash": [
-        "從垃圾桶中還原"
+      "Upload folder": [
+        "上載資料夾"
       ],
-      "Empty trash": [
-        "清空垃圾桶"
-      ],
-      "Rename": [
-        "重新命名"
+      "Create new folder": [
+        "建立新資料夾"
       ],
       "Move to folder": [
         "移動到資料夾"
@@ -617,8 +617,8 @@
       "Move to trash": [
         "移動到垃圾桶"
       ],
-      "Create new folder": [
-        "建立新資料夾"
+      "Rename": [
+        "重新命名"
       ],
       "Name: A to Z": [
         "按名稱順序：A 到 Z"
@@ -644,11 +644,29 @@
       "Size: large to small": [
         "按大小倒序：最大到最小"
       ],
-      "Upload file": [
-        "上載檔案"
+      "List layout": [
+        "清單版面佈置"
       ],
-      "Upload folder": [
-        "上載資料夾"
+      "Grid layout": [
+        "格線版面佈置"
+      ],
+      "Preview": [
+        "預覽"
+      ],
+      "Delete permanently": [
+        "永久刪除"
+      ],
+      "Restore from trash": [
+        "從垃圾桶中還原"
+      ],
+      "Empty trash": [
+        "清空垃圾桶"
+      ],
+      "Share file": [
+        "分享檔案"
+      ],
+      "Stop sharing": [
+        "停止分享"
       ],
       "Maximize transfers": [
         "最大化轉移"
@@ -686,35 +704,20 @@
       "Remove from this list": [
         "從此清單中移除"
       ],
-      "Create": [
-        "建立"
-      ],
-      "List layout": [
-        "清單版面佈置"
-      ],
-      "Grid layout": [
-        "格線版面佈置"
-      ],
-      "Preview": [
-        "預覽"
-      ],
-      "Stop sharing": [
-        "停止分享"
-      ],
       "Share": [
         "分享"
       ],
       "Show shared link details": [
         "顯示共享鏈結詳細說明"
       ],
-      "Share file": [
-        "分享檔案"
-      ],
       "Start recovering": [
         "開始恢復"
       ],
       "View more": [
         "查看更多"
+      ],
+      "Create": [
+        "建立"
       ],
       "Move": [
         "移動"
@@ -868,6 +871,9 @@
       "Import contacts": [
         "匯入聯絡人"
       ],
+      "Report a problem": [
+        "回報問題"
+      ],
       "Open help menu": [
         "開啟說明功能表"
       ],
@@ -876,9 +882,6 @@
       ],
       "Open settings menu": [
         "開啟設定功能表"
-      ],
-      "Report a problem": [
-        "回報問題"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -1015,32 +1018,32 @@
       "Drop to upload": [
         "拖放到此處以上載"
       ],
-      "Trash": [
-        "垃圾桶"
-      ],
-      "Empty trash": [
-        "清空垃圾桶"
-      ],
       "Show actions": [
         "顯示動作"
       ],
       "Sort files/folders": [
         "排序檔案/資料夾"
       ],
+      "Change layout": [
+        "變更版面佈置"
+      ],
+      "Trash": [
+        "垃圾桶"
+      ],
+      "Empty trash": [
+        "清空垃圾桶"
+      ],
+      "Shared": [
+        "共用"
+      ],
+      "Additional settings": [
+        "其他設定"
+      ],
       "Cancel all active transfers": [
         "取消所有進行中的轉移"
       ],
       "My files": [
         "我的檔案"
-      ],
-      "You have no folders yet": [
-        "您還未有任何資料夾"
-      ],
-      "You have no files to share": [
-        "您沒有檔案可以分享"
-      ],
-      "Change layout": [
-        "變更版面佈置"
       ],
       "Your file is ready to be downloaded": [
         "已準備好您的檔案，可供下載"
@@ -1108,11 +1111,11 @@
       "Size": [
         "大小"
       ],
-      "Shared": [
-        "共用"
-      ],
       "# of accesses": [
         "存取次數"
+      ],
+      "You have no folders yet": [
+        "您還未有任何資料夾"
       ],
       "Create a new folder": [
         "建立新資料夾"
@@ -1129,9 +1132,6 @@
       "Share via link": [
         "透過連結分享"
       ],
-      "Additional settings": [
-        "其他設定"
-      ],
       "Manage secure link": [
         "管理安全連結"
       ],
@@ -1143,6 +1143,9 @@
       ],
       "Discard": [
         "放棄"
+      ],
+      "You have no files to share": [
+        "您沒有檔案可以分享"
       ],
       "Files details": [
         "檔案詳細資訊"
@@ -1161,11 +1164,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "正在載入"
-      ],
       "No results found": [
         "查無結果"
+      ],
+      "Loading": [
+        "正在載入"
       ],
       "No contacts added yet": [
         "未新增任何聯絡人"
@@ -1707,8 +1710,23 @@
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
       ],
+      "There are no files yet": [
+        "目前還沒有任何檔案"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "把檔案拖放到此處，或選擇上載。"
+      ],
+      "No files or folders in trash": [
+        "垃圾桶中無任何檔案或資料夾"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
+      ],
+      "Share files with links": [
+        "以連結分享檔案"
+      ],
+      "Create links and share your files with others.": [
+        "建立連結並與其他人分享您的檔案。"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } 個已完成"
@@ -1779,27 +1797,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "關閉轉移管理員將取消所有進行中的轉移，您確定要這樣做嗎？"
       ],
-      "Create your first folder and start moving your files.": [
-        "建立您的第一個資料夾，並開始移動您的檔案。"
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "到「我的檔案」然後先上傳一些檔案。"
-      ],
-      "No files or folders in trash": [
-        "垃圾桶中無任何檔案或資料夾"
-      ],
-      "There are no files yet": [
-        "目前還沒有任何檔案"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "把檔案拖放到此處，或選擇上載。"
-      ],
-      "Share files with links": [
-        "以連結分享檔案"
-      ],
-      "Create links and share your files with others.": [
-        "建立連結並與其他人分享您的檔案。"
-      ],
       "Link expires: ": [
         "連結有效期至： "
       ],
@@ -1836,6 +1833,9 @@
       "No": [
         "否"
       ],
+      "Create your first folder and start moving your files.": [
+        "建立您的第一個資料夾，並開始移動您的檔案。"
+      ],
       "Anyone with this link can access your file.": [
         "任何人憑此連結均可存取您的檔案。"
       ],
@@ -1865,6 +1865,9 @@
       ],
       "Creating link to file": [
         "建立檔案的連結"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "到「我的檔案」然後先上傳一些檔案。"
       ],
       "Select an uploaded file and create a link to it.": [
         "選取已上傳的檔案並為其建立連結。"
@@ -2129,6 +2132,15 @@
       "Unknown file": [
         "未知的檔案"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "資料夾"
       ],
@@ -2254,14 +2266,14 @@
       "Upgrade account": [
         "升級帳號"
       ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
+      ],
       "Upgrade": [
         "升級"
       ],
       "Go to subscription plans": [
         "前往訂閱方案"
-      ],
-      "clearing your browser cache": [
-        "清除瀏覽器快取"
       ],
       "click here": [
         ""
@@ -2471,6 +2483,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "您的本機日期和時間設定似乎出現偏差。"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告並非端對端加密，請勿傳送任何敏感資訊。"
@@ -2962,45 +2977,6 @@
         "${ appName } 的新版本可供使用。${ reloadButton }。"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "開"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "關"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "未選取影像"
@@ -3102,6 +3078,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "附加螢幕截圖"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "設定"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "開"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "關"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "欄"
+      ],
+      "Row": [
+        "列"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "舒適"
+      ],
+      "Compact": [
+        "精簡"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "最大化"
+      ],
+      "Normal": [
+        "一般"
       ]
     },
     "Onboarding Proton": {
@@ -3649,6 +3664,11 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密碼至少必須包含 ${ length } 個字元"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "姓名"
@@ -3761,11 +3781,6 @@
       ],
       "Address": [
         "地址"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密碼至少必須包含 ${ length } 個字元"
       ]
     },
     "PGP key warning": {

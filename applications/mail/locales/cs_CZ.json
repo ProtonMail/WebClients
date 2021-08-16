@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Neznámá chyba"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
+      ],
+      "Unknown error": [
+        "Neznámá chyba"
       ],
       "Authentication canceled.": [
         "Přihlášení zrušeno."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Toto pole je povinné"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Došlo k chybě, prosíme, načtěte stránku ${ refresh }. Pokud stále vidíte tuto chybu, kontaktujte naši ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Editor se nepodařilo načíst."
       ],
       "Please refresh the page.": [
         "Prosím obnovte stránku."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybě, prosíme, načtěte stránku ${ refresh }. Pokud stále vidíte tuto chybu, kontaktujte naši ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Nemůžeme ověřit váš e-mail, zkuste to později"
@@ -207,12 +207,6 @@
       "Request timed out.": [
         "Vypršel časový limit žádosti."
       ],
-      "Signature verification failed": [
-        "Ověření podpisu selhalo"
-      ],
-      "Could not find address ${ email }.": [
-        "Nenalezena adresa ${ email }"
-      ],
       "Email address disabled": [
         "E-mailová adresa je deaktivovaná"
       ],
@@ -236,6 +230,12 @@
       ],
       "The sending key is not valid": [
         "Klíč pro odesílání je neplatný"
+      ],
+      "Signature verification failed": [
+        "Ověření podpisu selhalo"
+      ],
+      "Could not find address ${ email }.": [
+        "Nenalezena adresa ${ email }"
       ],
       "Missing signature": [
         "Chybící podpis"
@@ -287,6 +287,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Přílohy nemohou být větší než 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Tato zpráva již byla odeslána. Nový koncept byl uložen."
+      ],
+      "This message has already been sent.": [
+        "Tato zpráva již byla odeslána."
       ],
       "Draft could not be saved. Try again.": [
         "Koncept se nepodařilo uložit, zkuste to znovu."
@@ -362,26 +368,23 @@
       "Close": [
         "Zavřít"
       ],
-      "Close modal": [
-        "Zavřít okno"
+      "Confirm": [
+        "Potvrdit"
       ],
       "Cancel": [
         "Zrušit"
       ],
+      "Close modal": [
+        "Zavřít okno"
+      ],
       "Submit": [
         "Odeslat"
-      ],
-      "Confirm": [
-        "Potvrdit"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Použijte nastavení “${ label }”"
-      ],
-      "refresh the page": [
-        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -497,6 +500,9 @@
       "Underline": [
         "Podtržení"
       ],
+      "refresh the page": [
+        "obnovit stránku"
+      ],
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
@@ -544,6 +550,9 @@
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
+      ],
+      "Signing out": [
+        "Odhlašování"
       ],
       "Add": [
         "Přidat"
@@ -701,9 +710,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Odhlašování"
-      ],
       "Log in": [
         "Přihlásit se"
       ],
@@ -760,6 +766,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Komunikace s námi"
       ],
       "I have a question": [
         "Mám dotaz"
@@ -895,15 +904,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Přidat do ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "Více informací"
-      ],
-      "Open shop": [
-        "Otevřít obchod"
-      ],
-      "Open calendar": [
-        "Otevřít kalendář"
       ],
       "Send anyway": [
         "Přesto odeslat"
@@ -1225,6 +1225,15 @@
       ],
       "Start using ${ appName }": [
         "Začněte užívat ${ appName }"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Open shop": [
+        "Otevřít obchod"
+      ],
+      "Open calendar": [
+        "Otevřít kalendář"
       ]
     },
     "Title": {
@@ -1755,14 +1764,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Nebyly nalezeny žádné výsledky"
-      ],
       "Loading": [
         "Načítání"
       ],
-      "support team": [
-        "tým podpory"
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -1863,6 +1869,9 @@
       "Plain text": [
         "Obyčejný text"
       ],
+      "support team": [
+        "tým podpory"
+      ],
       "Drop the file here to upload": [
         "Přetažením sem, nahrajte soubor"
       ],
@@ -1895,6 +1904,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
+      ],
+      "Loading ${ appName }": [
+        "Načítání aplikace ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -2048,9 +2060,6 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
-      ],
-      "Loading ${ appName }": [
-        "Načítání aplikace ${ appName }"
       ],
       "here": [
         "zde"
@@ -2460,8 +2469,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nedali jste e-mailu žádný předmět. Chcete ho i přesto odeslat?"
       ],
-      "Do you want to send your message anyway?": [
-        "Chcete přesto zprávu poslat?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        "Napsali jste \"${ keyword }\", ale nebyla přidána příloha. Chcete přesto zprávu poslat?"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
@@ -2566,7 +2575,7 @@
         "Pro nahrání souboru jej přetáhněte sem"
       ],
       "Saved at ${ dateString }": [
-        "Uloženo jako ${ dateString }"
+        "Uloženo v ${ dateString }"
       ],
       "Saved ${ dateString }": [
         "Uloženo ${ dateString }"
@@ -3450,36 +3459,6 @@
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
-      "Inbox": [
-        "Doručená pošta"
-      ],
-      "Drafts": [
-        "Rozepsané"
-      ],
-      "Sent": [
-        "Odeslané"
-      ],
-      "Trash": [
-        "Koš"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Všechna pošta"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
-      "Starred": [
-        "Oblíbené"
-      ],
-      "Outbox": [
-        "K odeslání"
-      ],
-      "Scheduled": [
-        "Naplánováno"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Pro přidání této události musíte aktivovat vaše klíče kalendáře"
       ],
@@ -3555,6 +3534,33 @@
       "Add label": [
         "Přidat štítek"
       ],
+      "Inbox": [
+        "Doručená pošta"
+      ],
+      "Drafts": [
+        "Rozepsané"
+      ],
+      "Scheduled": [
+        "Naplánováno"
+      ],
+      "Sent": [
+        "Odeslané"
+      ],
+      "Starred": [
+        "Oblíbené"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Koš"
+      ],
+      "All mail": [
+        "Všechna pošta"
+      ],
       "Folders": [
         "Složky"
       ],
@@ -3566,6 +3572,9 @@
       ],
       "Manage your labels": [
         "Spravovat štítky"
+      ],
+      "Outbox": [
+        "K odeslání"
       ]
     },
     "Placeholder": {
@@ -3767,6 +3776,9 @@
       ],
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Reporty nejsou šifrovány end-to-end metodou, neposílejte žádné citlivé informace."
@@ -4082,23 +4094,23 @@
         "${ elementsCount } komunikací předáno do spamu a odesílatele přiděleny do Blokovacího seznamu.",
         "${ elementsCount } komunikace předána do spamu a odesílatele přiděleny do Blokovacího seznamu."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Zprávy přesunuty do ${ folderName } a odesílatel odstraněn z Blokačního seznamu."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        "Zprávy přesunuty do ${ folderName } a odesílatel přidán do povoleného seznamu."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } zprávy přesunuty do ${ folderName } a odesílatel odstraněn z Blokačního seznamu.",
-        "${ elementsCount } zpráv přesunuto do ${ folderName } a odesílatelé odstraněny z Blokačního seznamu.",
-        "${ elementsCount } zpráv přesunuto do ${ folderName } a odesílatelé odstraněny z Blokačního seznamu.",
-        "${ elementsCount } zpráv přesunuto do ${ folderName } a odesílatelé odstraněny z Blokačního seznamu."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } zpráva přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu.",
+        "${ elementsCount } zpráva přesunuta do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
+        "${ elementsCount } zpráva přesunuta do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
+        "${ elementsCount } zpráva přesunuta do ${ folderName } a odesílatelé přidáni do povoleného seznamu."
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Konverzace přesunuta do ${ folderName } a odesílatel odstraněn z Blokačního seznamu."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        "Konverzace přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } konverzace přesunuta ${ folderName } a odesílatel odstraněn z blokačního seznamu.",
-        "${ elementsCount } konverzací přesunuto ${ folderName } a odesílatelé odstraněny z blokačního seznamu.",
-        "${ elementsCount } konverzací přesunuto ${ folderName } a odesílatelé odstraněny z blokačního seznamu.",
-        "${ elementsCount } konverzace přesunuty ${ folderName } a odesílatelé odstraněny z blokačního seznamu."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } konverzace přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu.",
+        "${ elementsCount } konverzace přesunuta do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
+        "${ elementsCount } konverzace přesunuta do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
+        "${ elementsCount } konverzace přesunuta do ${ folderName } a odesílatelé přidáni do povoleného seznamu."
       ],
       "Message moved to ${ folderName }.": [
         "Zpráva byla přesunuta do složky ${ folderName }."
@@ -4241,6 +4253,17 @@
       ],
       "No verification method available": [
         "Nejsou k dispozici žádné metody ověřování"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikace"
+      ],
+      "Go to ${ title }": [
+        "Přejít na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Přejít na ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4612,41 +4635,6 @@
         "Změnit a přeplánovat"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikace"
-      ],
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Pohodlné"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normální"
-      ],
-      "Maximized": [
-        "Maximalizované"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Nahrát"
@@ -4693,6 +4681,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Pro deaktivaci verze beta, otevřete nastavení a sjeďte dolů v navigaci menu, kde zaklikněte na \"Beta Přístup\" volbu."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Pohodlné"
+      ],
+      "Compact": [
+        "Kompaktní"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sloupec"
+      ],
+      "Row": [
+        "Řádek"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normální"
+      ],
+      "Maximized": [
+        "Maximalizované"
       ]
     },
     "Message display when a new app version is available": {
@@ -5378,14 +5390,6 @@
         "s hvězdičkou"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovat alespoň ${ length } znak",
-        "Heslo musí obsahovat alespoň ${ length } znaky",
-        "Heslo musí obsahovat alespoň ${ length } znaků",
-        "Heslo musí obsahovat alespoň ${ length } znaků"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bajtů"
@@ -5514,9 +5518,12 @@
         "Adresa"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailová adresa nebyla nalezena mezi identifikátory uživatelů definovaných v klíči pro odesílání (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovat alespoň ${ length } znak",
+        "Heslo musí obsahovat alespoň ${ length } znaky",
+        "Heslo musí obsahovat alespoň ${ length } znaků",
+        "Heslo musí obsahovat alespoň ${ length } znaků"
       ]
     },
     "Message": {
@@ -5528,6 +5535,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "Na ${ date }, ${ name } ${ address } napsalo:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailová adresa nebyla nalezena mezi identifikátory uživatelů definovaných v klíči pro odesílání (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5790,6 +5802,9 @@
       ],
       "Unsupported event": [
         "Událost není podporována"
+      ],
+      "Invalid method": [
+        "Neplatná metoda"
       ]
     },
     "Event invitation error": {
@@ -6703,6 +6718,9 @@
       ],
       "tomorrow": [
         "zítra"
+      ],
+      "on ${ formattedDate }": [
+        "dne ${ formattedDate }"
       ],
       "Today": [
         "Dnes"

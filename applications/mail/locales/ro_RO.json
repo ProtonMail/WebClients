@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Eroare necunoscută"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+      ],
+      "Unknown error": [
+        "Eroare necunoscută"
       ],
       "Authentication canceled.": [
         "Autentificare anulată."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Editorul de mesaje nu a putut fi încărcat."
       ],
       "Please refresh the page.": [
         "Reîmprospătați pagina."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
@@ -205,12 +205,6 @@
       "Request timed out.": [
         "Solicitarea a expirat."
       ],
-      "Signature verification failed": [
-        "Eșuare verificare semnătură"
-      ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
       ],
@@ -234,6 +228,12 @@
       ],
       "The sending key is not valid": [
         "Cheia de trimitere nu este validă"
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "Could not find address ${ email }.": [
+        "Nu s-a putut găsi adresa ${ email }."
       ],
       "Missing signature": [
         "Semnătură lipsă"
@@ -284,6 +284,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Atașamentele sunt limitate la 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Acest mesaj a fost deja trimis. A fost salvată o ciornă nouă."
+      ],
+      "This message has already been sent.": [
+        "Acest mesaj a fost deja trimis."
       ],
       "Draft could not be saved. Try again.": [
         "Ciorna nu a putut fi salvată. Mai încercați."
@@ -356,26 +362,23 @@
       "Close": [
         "Închidere"
       ],
-      "Close modal": [
-        "Închidere"
+      "Confirm": [
+        "Confirmare"
       ],
       "Cancel": [
         "Anulare"
       ],
+      "Close modal": [
+        "Închidere"
+      ],
       "Submit": [
         "Trimite"
-      ],
-      "Confirm": [
-        "Confirmare"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Folosire setarea „${ label }”"
-      ],
-      "refresh the page": [
-        "împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -491,6 +494,9 @@
       "Underline": [
         "Subliniat"
       ],
+      "refresh the page": [
+        "împrospătați pagina"
+      ],
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
@@ -538,6 +544,9 @@
       ],
       "Edit phone number": [
         "Editare număr de telefon"
+      ],
+      "Signing out": [
+        "Deconectare"
       ],
       "Add": [
         "Adăugare"
@@ -692,9 +701,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Deconectare"
-      ],
       "Log in": [
         "Conectare"
       ],
@@ -751,6 +757,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "Prezentare ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Conversați cu noi"
       ],
       "I have a question": [
         "Am o întrebare"
@@ -886,15 +895,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adăugare la ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "Aflați mai multe"
-      ],
-      "Open shop": [
-        "Magazin deschis"
-      ],
-      "Open calendar": [
-        "Calendar deschis"
       ],
       "Send anyway": [
         "Trimite așa"
@@ -1215,6 +1215,15 @@
       ],
       "Start using ${ appName }": [
         "Începeți să utilizați ${ appName }"
+      ],
+      "Learn more": [
+        "Aflați mai multe"
+      ],
+      "Open shop": [
+        "Magazin deschis"
+      ],
+      "Open calendar": [
+        "Calendar deschis"
       ]
     },
     "Title": {
@@ -1737,14 +1746,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Nu s-au găsit rezultate"
-      ],
       "Loading": [
         "Se încarcă"
       ],
-      "support team": [
-        "echipa de suport"
+      "No results found": [
+        "Nu s-au găsit rezultate"
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
@@ -1844,6 +1850,9 @@
       "Plain text": [
         "Text simplu"
       ],
+      "support team": [
+        "echipa de suport"
+      ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
       ],
@@ -1876,6 +1885,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
+      ],
+      "Loading ${ appName }": [
+        "Se încarcă ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -2024,9 +2036,6 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
-      ],
-      "Loading ${ appName }": [
-        "Se încarcă ${ appName }"
       ],
       "here": [
         "aici"
@@ -2434,8 +2443,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nu ați introdul subiectul mesajului. Doriți să trimiteți mesajul așa?"
       ],
-      "Do you want to send your message anyway?": [
-        "Vrei să trimiți totuși mesajul tău?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        "Ați scris „${ keyword }”, dar nu a fost adăugat nici un atașament. Doriți să trimiteți așa mesajul?"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
@@ -3398,36 +3407,6 @@
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
-      "Inbox": [
-        "Primite"
-      ],
-      "Drafts": [
-        "Ciorne"
-      ],
-      "Sent": [
-        "Trimise"
-      ],
-      "Trash": [
-        "Gunoi"
-      ],
-      "Spam": [
-        "Nedorite"
-      ],
-      "All mail": [
-        "Toate mesajele"
-      ],
-      "Archive": [
-        "Arhivă"
-      ],
-      "Starred": [
-        "Cu stea"
-      ],
-      "Outbox": [
-        "De trimis"
-      ],
-      "Scheduled": [
-        "Programate"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Trebuie să activați cheile calendarului pentru a adăuga acest eveniment"
       ],
@@ -3503,6 +3482,33 @@
       "Add label": [
         "Adăugare etichetă"
       ],
+      "Inbox": [
+        "Primite"
+      ],
+      "Drafts": [
+        "Ciorne"
+      ],
+      "Scheduled": [
+        "Programate"
+      ],
+      "Sent": [
+        "Trimise"
+      ],
+      "Starred": [
+        "Cu stea"
+      ],
+      "Archive": [
+        "Arhivă"
+      ],
+      "Spam": [
+        "Nedorite"
+      ],
+      "Trash": [
+        "Gunoi"
+      ],
+      "All mail": [
+        "Toate mesajele"
+      ],
       "Folders": [
         "Foldere"
       ],
@@ -3514,6 +3520,9 @@
       ],
       "Manage your labels": [
         "Gestionare etichete"
+      ],
+      "Outbox": [
+        "De trimis"
       ]
     },
     "Placeholder": {
@@ -3707,6 +3716,9 @@
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Chat-ul live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN plătite. În schimb, vă rugăm să deschideți un tichet."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -4011,21 +4023,21 @@
         "${ elementsCount } conversații au fost mutate în «Nedorite» și expeditorul adăugat în lista de adrese blocate.",
         "${ elementsCount } de conversații au fost mutate în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Mesajul a fost mutat în ${ folderName } și expeditorul a fost eliminat din lista de adrese blocate."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        "Mesajul a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "Un mesaj a fost mutat în ${ folderName } și expeditorul a fost eliminat din lista de adrese blocate.",
-        "${ elementsCount } mesaje au fost mutate în ${ folderName } și expeditorul a fost eliminat din lista de adrese blocate.",
-        "${ elementsCount } de mesaje au fost mutate în ${ folderName } și expeditorul a fost eliminat din lista de adrese blocate."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "Un mesaj a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise.",
+        "${ elementsCount } mesaje au fost mutate în «${ folderName }» și expeditorii au fost adăugaţi în lista de adrese permise.",
+        "${ elementsCount } de mesaje au fost mutate în «${ folderName }» și expeditorii au fost adăugaţi în lista de adrese permise."
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Conversația a fost mutată în ${ folderName } și expeditorul a fost eliminat din lista de adrese blocate."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        "Conversația a fost mutată în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "O conversație a fost mutată în «${ folderName }» și expeditorul a fost eliminat din lista de adrese blocate.",
-        "${ elementsCount } conversații au fost mutate în «${ folderName }» și expeditorul a fost eliminat din lista de adrese blocate.",
-        "${ elementsCount } de conversații au fost mutate în «${ folderName }» și expeditorul a fost eliminat din lista de adrese blocate."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "O conversația a fost mutată în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise.",
+        "${ elementsCount } conversații au fost mutate în «${ folderName }» și expeditorii au fost adăugaţi în lista de adrese permise.",
+        "${ elementsCount } de conversații au fost mutate în «${ folderName }» și expeditorii au fost adăugaţi în lista de adrese permise."
       ],
       "Message moved to ${ folderName }.": [
         "Mesaj mutat în ${ folderName }."
@@ -4160,6 +4172,17 @@
       ],
       "No verification method available": [
         "Nicio metodă de verificare disponibilă"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicații Proton"
+      ],
+      "Go to ${ title }": [
+        "Salt la ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Accesare ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4524,41 +4547,6 @@
         "Editare și reprogramare"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicații Proton"
-      ],
-      "Go to ${ title }": [
-        "Salt la ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Accesare ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizat"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Încărcare"
@@ -4605,6 +4593,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Pentru a dezactiva versiunea beta, deschideți meniul derulant din setări și faceți clic pe opțiunea „Acces la Beta\"."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizat"
       ]
     },
     "Message display when a new app version is available": {
@@ -5279,13 +5291,6 @@
         "cu stea"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ]
-    },
     "file size format": {
       "bytes": [
         "octeți"
@@ -5414,9 +5419,11 @@
         "Adresa"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
       ]
     },
     "Message": {
@@ -5428,6 +5435,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "La ${ date }, ${ name } ${ address } a scris:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5690,6 +5702,9 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ],
+      "Invalid method": [
+        "Metodă nevalidă"
       ]
     },
     "Event invitation error": {
@@ -6564,6 +6579,9 @@
       ],
       "tomorrow": [
         "mâine"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
       ],
       "Today": [
         "Astăzi"
