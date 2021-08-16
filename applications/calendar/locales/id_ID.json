@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "Bagian ini wajib isi"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
-      ],
-      "Email is not valid": [
-        "Surel tidak valid"
-      ],
-      "Not a valid number": [
-        "Bukan nomor yang valid"
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak cocok"
-      ],
-      "Request timed out.": [
-        "Waktu permintaan habis."
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Kunci pribadi utama alamat tidak ditemukan"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Kunci pribadi utama kalender tidak didekripsi"
-      ],
-      "Missing signature": [
-        "Tanda tangan hilang"
-      ],
-      "Contact signature not verified": [
-        "Tanda tangan kontak tidak terverifikasi"
-      ],
-      "Signature not verified": [
-        "Tanda tangan tidak terverifikasi"
-      ],
-      "Invalid name": [
-        "Nama tidak valid"
-      ],
-      "Email address disabled": [
-        "Alamat surel nonaktif"
-      ],
-      "No keys retrieved for internal user": [
-        "Tidak ada kunci untuk pengguna internal yang diambil"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Tidak ada kunci valid untuk pengguna internal yang diambil"
-      ],
-      "Contact signature could not be verified": [
-        "Tanda tangan kontak tidak dapat diverifikasi"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Tidak ada kunci yang diambil untuk pengguna internal yang valid untuk pengiriman"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Kunci terpercaya tidak valid untuk mengirim"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
-      ],
-      "The sending key is not valid": [
-        "Kunci untuk mengirim tidak valid"
-      ],
       "Unknown error": [
         "Galat tak diketahui"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "Alamat surel tidak valid"
+      ],
+      "This field is required": [
+        "Bagian ini wajib isi"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -147,17 +84,14 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "Invalid name": [
+        "Nama tidak valid"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak surat salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
       ],
       "Process aborted": [
         ""
@@ -219,6 +153,12 @@
       "Invalid code": [
         ""
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak surat salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
@@ -230,6 +170,66 @@
       ],
       "Name required": [
         ""
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
+      ],
+      "Email is not valid": [
+        "Surel tidak valid"
+      ],
+      "Not a valid number": [
+        "Bukan nomor yang valid"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak cocok"
+      ],
+      "Request timed out.": [
+        "Waktu permintaan habis."
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
+      ],
+      "Address primary private key not found": [
+        "Kunci pribadi utama alamat tidak ditemukan"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Kunci pribadi utama kalender tidak didekripsi"
+      ],
+      "Missing signature": [
+        "Tanda tangan hilang"
+      ],
+      "Contact signature not verified": [
+        "Tanda tangan kontak tidak terverifikasi"
+      ],
+      "Signature not verified": [
+        "Tanda tangan tidak terverifikasi"
+      ],
+      "Email address disabled": [
+        "Alamat surel nonaktif"
+      ],
+      "No keys retrieved for internal user": [
+        "Tidak ada kunci untuk pengguna internal yang diambil"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Tidak ada kunci valid untuk pengguna internal yang diambil"
+      ],
+      "Contact signature could not be verified": [
+        "Tanda tangan kontak tidak dapat diverifikasi"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Tidak ada kunci yang diambil untuk pengguna internal yang valid untuk pengiriman"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Kunci terpercaya tidak valid untuk mengirim"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
+      ],
+      "The sending key is not valid": [
+        "Kunci untuk mengirim tidak valid"
       ],
       "Self invitation not allowed": [
         "Dilarang mengundang diri sendiri"
@@ -301,1854 +301,10 @@
         "Kesalahan"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "byte"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nama"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organisasi"
-      ],
-      "Birthday": [
-        "Ulang tahun"
-      ],
-      "Anniversary": [
-        "Ulang tahun"
-      ],
-      "Title": [
-        "Gelar"
-      ],
-      "Role": [
-        "Peran"
-      ],
-      "Note": [
-        "Catatan"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Jenis kelamin"
-      ],
-      "Language": [
-        "Bahasa"
-      ],
-      "Timezone": [
-        "Zona waktu"
-      ],
-      "Geo": [
-        "Geo"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Anggota"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Kerja"
-      ],
-      "Personal": [
-        "Pribadi"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Surel"
-      ],
-      "Home": [
-        "Rumah"
-      ],
-      "Work": [
-        "Kerja"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ],
-      "Address": [
-        "Alamat"
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "Sesi habis."
-      ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
-      ],
-      "Servers are unreachable.": [
-        "Server tidak terjangkau."
-      ],
-      "Custom daily": [
-        "Kustom harian"
-      ],
-      "Custom weekly": [
-        "Kustom mingguan"
-      ],
-      "Custom monthly": [
-        "Kustom bulanan"
-      ],
-      "Custom yearly": [
-        "Kustom tahunan"
-      ],
-      "Custom": [
-        "Sesuaikan"
-      ],
-      "Daily": [
-        "Harian"
-      ],
-      "Monthly ${ onDayString }": [
-        "Bulanan ${ onDayString }"
-      ],
-      "Yearly": [
-        "Tahunan"
-      ],
-      "Loading": [
-        "Memuat"
-      ],
-      "No results found": [
-        "Hasil tidak ada"
-      ],
-      "support team": [
-        ""
-      ],
-      "No contacts added yet": [
-        "Belum ada kontak yang ditambahkan"
-      ],
-      "Week": [
-        "Pekan"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tautan ini mungkin serangan homograf dan tidak dapat dibuka oleh peramban Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, silahkan gunakan peramban lain untuk membukanya."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Anda akan membuka tab peramban lain dan mengunjungi:"
-      ],
-      "Learn more": [
-        "Pelajari lebih lanjut"
-      ],
-      "Drop the file here to upload": [
-        "Taruh berkas di sini untuk mengunggah"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } anggota)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Surel Anda hanya dipakai untuk verifikasi sekali saja."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
-      ],
-      "Loading ${ appName }": [
-        "Memuat ${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Anggota"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } dan ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME otomatis mengirim pesan dengan mode tulis saat ini. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Mohon dicatat, alamat yang ditempatkan di grup ini TIDAK akan dihapus."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Mohon tunggu saat kami memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Memeriksa kontak ${ progress } dari ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontak berhasil diperbarui."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Untuk memulihkan data Anda, Anda perlu mengaktivasi ulang kunci enkripsi kontak yang dipakai saat data dibuat. Ini memerlukan Anda untuk mengingat kata sandi yang dipakai saat kunci dibuat dulu."
-      ],
-      "Key fingerprint": [
-        "Sidik jari kunci"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak ingat sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Mohon tunggu, sementara kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Untuk menandatangani ulang kontak Anda, kami perlu memeriksa setiap kontak dengan daftar kunci enkripsi yang tersedia di akun Anda. Jika tidak ada yang cocok, kontak Anda akan ditandatangani ulang dengan kunci enkripsi utama."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Mohon dicatat proses ini perlu waktu tergantung ukuran buku alamat Anda."
-      ],
-      "Group assignment applied": [
-        "Penempatan grup diterapkan"
-      ],
-      "Create a new contact group": [
-        "Buat grup kontak baru"
-      ],
-      "No group found": [
-        "Grup tidak ditemukan"
-      ],
-      "Duplicate key updated": [
-        "Kunci ganda diperbarui"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Verifikasi Alamat dengan Kunci Terpercaya telah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Hanya ubah pengaturan ini jika Anda menggunakan PGP dengan penerima bukan ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "Utama"
-      ],
-      "No email address": [
-        "Tidak ada alamat surel"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontak ditemukan"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grup ditemukan"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa aplikasi lain. Kami juga menerima impor vCard 4.0. (encoding UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } alamat surel"
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "di sini"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
-      ],
-      "Free up some space or add more storage space.": [
-        "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Kosongkan beberapa ruang atau hubungi administrator Anda."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Koneksi internet dipulihkan."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "Manage your calendars": [
-        "Kelola kalender Anda"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
-      ],
-      "Loading events": [
-        "Memuat acara"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "Penyelenggara tidak dapat diberitahu saat Anda menolak undangan:"
-      ],
-      "Would you like to delete the event anyway?": [
-        "Yakin ingin tetap menghapus acara ini?"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "Tidak ada peserta yang dapat diberi tahu tentang perubahan Anda:"
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "Peserta berikut tidak dapat diberi tahu tentang perubahan Anda:"
-      ],
-      "Would you like to continue anyway?": [
-        "Anda ingin tetap melanjutkan?"
-      ],
-      "Discard changes?": [
-        "Buang perubahan?"
-      ],
-      "You will lose all unsaved changes.": [
-        "Anda akan kehilangan semua perubahan yang belum disimpan."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Penyelenggara acara ini akan diberi tahu jika Anda menolak undangan. Anda ingin menghapus acara ini?"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Penyelenggara acara ini tidak akan diberi tahu bahwa Anda menolak undangan karena Anda tidak dapat mengirim email dari alamat yang diundang. Ingin tetap menghapus acara ini?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus acara ini?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus acara ini?"
-      ],
-      "Would you like to delete this event?": [
-        "Anda ingin menghapus acara ini?"
-      ],
-      "Which event would you like to delete?": [
-        "Acara mana yang ingin dihapus?"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Acara telah diperbarui. Penyelenggara akan diberi tahu jika Anda menolak undangan. Anda ingin menghapus kegiatan ini?"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Acara ini telah diperbarui penyelenggara. Ingin menghapus acara ini?"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Acara ini telah diperbarui. Penyelenggara tidak akan diberi tahu bahwa Anda menolak undangan karena Anda tidak dapat mengirim email dari alamat yang diundang. Ingin tetap menghapus acara ini?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus semua rangkaian acara ini?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus semua rangkaian acara ini?"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Penyelenggara rangkaian acara ini akan diberi tahu bahwa Anda menolak undangan. Anda ingin menghapus semua rangkaian acara ini?"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "Penyelenggara rangkaian acara ini tidak akan diberi tahu bahwa Anda menolak undangan karena Anda tidak dapat mengirim email dari alamat yang diundang. Ingin tetap menghapus semua acara dalam rangkaian ini?"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "Anda ingin menghapus semua rangkaian acara ini?"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "Kejadian yang sebelumnya diperbarui oleh penyelenggara akan disimpan, tetapi beberapa jawaban Anda akan hilang."
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "Kejadian yang sebelumnya diperbarui oleh penyelenggara akan disimpan."
-      ],
-      "Which event would you like to update?": [
-        "Acara mana yang ingin diperbarui?"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Acara ini telah diperbarui penyelenggara. Anda ingin mengubah jawaban untuk rangkaian kegiatan ini saja?"
-      ],
-      "Would you like to update this event?": [
-        "Apakah Anda ingin memperbarui acara ini?"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "Ingin mengubah jawaban Anda untuk semua rangkaian acara ini?"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "Peserta yang ditambahkan dan dihapus akan diberi tahu tentang semua rangkaian acara ini."
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Anda akan memperbarui semua rangkaian acara. Peserta yang ditambahkan dan dihapus akan diberi tahu."
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Anda akan memperbarui semua rangkaian acara. Peserta yang sudah ada, yang ditambahkan, dan dihapus akan diberi tahu."
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Anda akan memperbarui semua rangkaian acara ini. Peserta yang sudah ada dan yang ditambahkan akan diberi tahu."
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "Anda akan memperbarui semua rangkaian acara ini. Peserta yang dihapus akan diberi tahu."
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Anda akan memperbarui semua rangkaian acara ini. Peserta yang sudah ada dan yang dihapus akan diberi tahu."
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Anda akan memperbarui semua acara dalam rangkaian ini. Undangan akan dikirim ke peserta acara."
-      ],
-      "Would you like to update all events in this series?": [
-        "Anda ingin memperbarui semua acara dalam rangkaian ini?"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "Perubahan sebelumnya pada seri ini akan hilang."
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Beberapa jawaban Anda untuk kejadian sebelumnya yang diperbarui oleh penyelenggara akan hilang."
-      ],
-      "Frequency modifications will be lost.": [
-        "Perubahan frekuensi akan hilang."
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "Penyelenggara telah memperbarui beberapa rangkaian acara ini. Pengubahan kalender belum didukung untuk jenis acara berulang ini."
-      ],
-      "Update recurring event": [
-        "Perbarui acara berulang"
-      ],
-      "Added and removed participants will be notified.": [
-        "Peserta yang ditambahkan dan dihapus akan diberi tahu."
-      ],
-      "An invitation will be sent to added participants.": [
-        "Undangan akan dikirim ke peserta yang ditambahkan."
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "Surel pembatalan akan dikirim ke peserta yang dihapus."
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "Peserta yang sudah ada, yang ditambahkan, dan dihapus akan diberi tahu."
-      ],
-      "Existent and added participants will be notified.": [
-        "Peserta yang sudah ada atau yang ditambahkan akan diberi tahu."
-      ],
-      "Removed participants will be notified.": [
-        "Peserta yang dihapus akan diberi tahu."
-      ],
-      "Existent and removed participants will be notified.": [
-        "Peserta yang sudah ada dan yang dihapus akan diberi tahu."
-      ],
-      "An invitation will be sent to the event participants.": [
-        "Undangan akan dikirim ke peserta acara."
-      ],
-      "Please remove the duplicates and try again.": [
-        "Silakan hapus yang ganda dan coba lagi."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        "Anda harus mengatur ulang/reset kata sandi Anda dan acara yang ditautkan ke kalender berikut tidka dapat dienkripsi. Tautan kalender apapun yang dibagikan yang telah Anda buat sebelumnya tidak akan berlaku lagi."
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Kunci Anda telah diaktivasi ulang. Acara yang tersambung ke kalender-kalender ini dapat didekripsi."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Zona waktu sistem Anda sepertinya berubah menjadi ${ timezone }. Anda ingin memperbarui preferensi zona waktu?"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Maksimal 100 peserta per undangan"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Anda hanya dapat mengubah properti acara pribadi karena Anda tidak dapat mengirim email dari alamat penyelenggara."
-      ],
-      "Loading event": [
-        "Memuat acara"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } mulai sekarang"
-      ],
-      "${ title } starts today": [
-        "${ title } mulai hari ini"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } dimulai pada pukul ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } dimulai besok"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } dimulai besok pada pukul ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } dimulai pada ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } dimulai pada ${ formattedDate } pukul ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } dimulai pada pukul ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } dimulai pada ${ _formattedDate } pukul ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } dimulai pada ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } dimulai pada ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } akan mulai pada pukul ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } akan mulai besok"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } akan mulai besok pada ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } akan mulai pada ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } akan mulai pada ${ _formattedDate2 } pukul ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } akan mulai pada ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } akan mulai pada ${ _formattedDate3 } pukul ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } akan mulai pada ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } akan mulai pada ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(tanpa judul)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Anda"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Pembatalan acara pada ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Undangan acara pada ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Pembaruan acara pada ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Pembatalan acara mulai pada ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Undangan acara mulai pada ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Pembaruan acara mulai pada ${ formattedStart }"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Undangan: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Kapan: ${ formattedStart } (sepanjang hari)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kapan: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Kapan: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Di mana: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Deskripsi: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Anda diundang ke ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } telah dibatalkan."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menerima undangan Anda ke ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah sementara menerima undangan Anda ke ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menolak undangan Anda ke ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "pada Minggu pertama"
-      ],
-      "on the first Monday": [
-        "pada Senin pertama"
-      ],
-      "on the first Tuesday": [
-        "pada Selasa pertama"
-      ],
-      "on the first Wednesday": [
-        "pada Rabu pertama"
-      ],
-      "on the first Thursday": [
-        "pada Kamis pertama"
-      ],
-      "on the first Friday": [
-        "pada Jumat pertama"
-      ],
-      "on the first Saturday": [
-        "pada Sabtu pertama"
-      ],
-      "on the second Sunday": [
-        "pada hari Minggu kedua"
-      ],
-      "on the second Monday": [
-        "pada Senin kedua"
-      ],
-      "on the second Tuesday": [
-        "pada Selasa kedua"
-      ],
-      "on the second Wednesday": [
-        "pada Rabu kedua"
-      ],
-      "on the second Thursday": [
-        "pada Kamis kedua"
-      ],
-      "on the second Friday": [
-        "pada Jumat kedua"
-      ],
-      "on the second Saturday": [
-        "pada Sabtu kedua"
-      ],
-      "on the third Sunday": [
-        "pada hari Minggu ketiga"
-      ],
-      "on the third Monday": [
-        "pada Senin ketiga"
-      ],
-      "on the third Tuesday": [
-        "pada Selasa ketiga"
-      ],
-      "on the third Wednesday": [
-        "pada Rabu ketiga"
-      ],
-      "on the third Thursday": [
-        "pada Kamis ketiga"
-      ],
-      "on the third Friday": [
-        "pada Jumat ketiga"
-      ],
-      "on the third Saturday": [
-        "pada Sabtu ketiga"
-      ],
-      "on the fourth Sunday": [
-        "pada hari Minggu keempat"
-      ],
-      "on the fourth Monday": [
-        "pada Senin keempat"
-      ],
-      "on the fourth Tuesday": [
-        "pada Selasa keempat"
-      ],
-      "on the fourth Wednesday": [
-        "pada Rabu keempat"
-      ],
-      "on the fourth Thursday": [
-        "pada Kamis keempat"
-      ],
-      "on the fourth Friday": [
-        "pada Jumat keempat"
-      ],
-      "on the fourth Saturday": [
-        "pada Sabtu keempat"
-      ],
-      "on the last Sunday": [
-        "pada hari Minggu terakhir"
-      ],
-      "on the last Monday": [
-        "pada Senin terakhir"
-      ],
-      "on the last Tuesday": [
-        "pada Selasa terakhir"
-      ],
-      "on the last Wednesday": [
-        "pada Rabu terakhir"
-      ],
-      "on the last Thursday": [
-        "pada Kamis terakhir"
-      ],
-      "on the last Friday": [
-        "pada Jumat terakhir"
-      ],
-      "on the last Saturday": [
-        "pada Sabtu terakhir"
-      ],
-      "on day ${ dayOfMonth }": [
-        "pada hari ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } kali"
-      ],
-      "until ${ dateString }": [
-        "sampai ${ dateString }"
-      ],
-      "Daily": [
-        "Harian"
-      ],
-      "Every ${ interval } day": [
-        "Setiap ${ interval } hari"
-      ],
-      "Daily, ${ timesString }": [
-        "Harian, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Setiap ${ interval } hari, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Harian, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Setiap ${ interval } hari, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Minggu"
-      ],
-      "Monday": [
-        "Senin"
-      ],
-      "Tuesday": [
-        "Selasa"
-      ],
-      "Wednesday": [
-        "Rabu"
-      ],
-      "Thursday": [
-        "Kamis"
-      ],
-      "Friday": [
-        "Jumat"
-      ],
-      "Saturday": [
-        "Sabtu"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Mingguan pada semua hari"
-      ],
-      "Every ${ interval } week on all days": [
-        "Setiap ${ interval } minggu pada semua hari"
-      ],
-      "Weekly on Sunday": [
-        "Mingguan pada hari Minggu"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Setiap ${ interval } minggu pada hari Minggu"
-      ],
-      "Weekly on Monday": [
-        "Mingguan pada hari Senin"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Setiap ${ interval } minggu pada hari Senin"
-      ],
-      "Weekly on Tuesday": [
-        "Mingguan pada hari Selasa"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Setiap ${ interval } minggu pada hari Selasa"
-      ],
-      "Weekly on Wednesday": [
-        "Mingguan pada hari Rabu"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Setiap ${ interval } minggu pada hari Rabu"
-      ],
-      "Weekly on Thursday": [
-        "Mingguan pada hari Kamis"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Setiap ${ interval } minggu pada hari Kamis"
-      ],
-      "Weekly on Friday": [
-        "Mingguan pada hari Jumat"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Setiap ${ interval } minggu pada hari Jumat"
-      ],
-      "Weekly on Saturday": [
-        "Mingguan pada hari Sabtu"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Setiap ${ interval } minggu pada hari Sabtu"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Mingguan pada ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Setiap ${ interval } minggu pada hari ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Mingguan pada semua hari, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Setiap ${ interval } minggu pada semua hari, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Mingguan pada hari Minggu, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Minggu, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Mingguan pada hari Senin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Senin, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Mingguan pada hari Selasa, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Selasa, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Mingguan pada hari Rabu, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Rabu, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Mingguan pada hari Kamis, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Kamis, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Mingguan pada hari Jumat, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Jumat, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Mingguan pada hari Sabtu, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Setiap ${ interval } minggu pada hari Sabtu, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Mingguan pada ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Setiap ${ interval } minggu pada ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Mingguan pada semua hari, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Setiap ${ interval } minggu pada semua hari, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Mingguan pada hari Minggu, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Minggu, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Mingguan pada hari Senin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Senin, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Mingguan pada hari Selasa, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Selasa, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Mingguan pada hari Rabu, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Rabu, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Mingguan pada hari Kamis, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Kamis, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Mingguan pada hari Jumat, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Jumat, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Mingguan pada hari Sabtu, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Setiap ${ interval } minggu pada hari Sabtu, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Mingguan pada ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Setiap ${ interval } minggu pada ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Bulanan ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Setiap ${ interval } bulan ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Bulanan ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Setiap ${ interval } bulan ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Bulanan ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Setiap ${ interval } bulan ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Tahunan"
-      ],
-      "Every ${ interval } year": [
-        "Setiap ${ interval } tahun"
-      ],
-      "Yearly, ${ timesString }": [
-        "Tahunan, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Setiap ${ interval } tahun, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Tahunan, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Setiap ${ interval } tahun, ${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Navigasi dasar"
-      ],
-      "Basic actions": [
-        "Tindakan dasar"
-      ],
-      "Folder shortcuts": [
-        "Pintasan folder"
-      ],
-      "Composer shortcuts": [
-        "Pintasan komposer"
-      ],
-      "List shortcuts": [
-        "Buat daftar pintasan"
-      ],
-      "Action shortcuts": [
-        "Pintasan tindakan"
-      ],
-      "Message shortcuts": [
-        "Pintasan pesan"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Naikkan"
-      ],
-      "Jump to first": [
-        "Lompat ke pertama"
-      ],
-      "Move down": [
-        "Turunkan"
-      ],
-      "Jump to last": [
-        "Lompat ke terakhir"
-      ],
-      "Move right / expand": [
-        "Geser kanan / buka"
-      ],
-      "Move left / collapse": [
-        "Geser kiri / tutup"
-      ],
-      "Apply / open": [
-        "Terapkan / buka"
-      ],
-      "Cancel / close": [
-        "Batal / tutup"
-      ],
-      "Open this modal": [
-        "Buka jendela ini"
-      ],
-      "Select / unselect": [
-        "Pilih / batal pilih"
-      ],
-      "Go to Inbox": [
-        "Ke Kotak masuk"
-      ],
-      "Go to Archive": [
-        "Ke Arsip"
-      ],
-      "Go to Sent": [
-        "Ke Terkirim"
-      ],
-      "Go to Starred": [
-        "Ke Bintang"
-      ],
-      "Go to Drafts": [
-        "Ke Draf"
-      ],
-      "Go to Trash": [
-        "Ke Tempat Sampah"
-      ],
-      "Go to Spam": [
-        "Ke Spam"
-      ],
-      "Go to All Mail": [
-        "Ke Semua Surat"
-      ],
-      "Save draft": [
-        "Simpan draf"
-      ],
-      "Send email": [
-        "Kirim surel"
-      ],
-      "Close draft": [
-        "Tutup draf"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalkan / maksimalkan komposer"
-      ],
-      "Expand / contract composer": [
-        "Lebarkan / kerutkan komposer"
-      ],
-      "Attach file": [
-        "Lampirkan berkas"
-      ],
-      "Add expiration time": [
-        "Tambah waktu kedaluwarsa"
-      ],
-      "Add encryption": [
-        "Tambah enkripsi"
-      ],
-      "Discard draft": [
-        "Buang draf"
-      ],
-      "Open previous message": [
-        "Buka pesan sebelumnya"
-      ],
-      "Open next message": [
-        "Buka pesan selanjutnya"
-      ],
-      "Show unread emails": [
-        "Tampilkan surel belum dibaca"
-      ],
-      "Show all emails": [
-        "Tampilkan semua surel"
-      ],
-      "Select / unselect all": [
-        "Pilih / batal pilih semua"
-      ],
-      "Search": [
-        "Pencarian"
-      ],
-      "New message": [
-        "Pesan baru"
-      ],
-      "Star": [
-        "Bintang"
-      ],
-      "Mark as unread": [
-        "Tandai belum dibaca"
-      ],
-      "Label as...": [
-        "Labeli sebagai..."
-      ],
-      "Create filter with...": [
-        "Buat filter dengan..."
-      ],
-      "Move to...": [
-        "Pindah ke..."
-      ],
-      "Move to Inbox": [
-        "Pindahkan ke Kotak masuk"
-      ],
-      "Move to Archive": [
-        "Pindahkan ke Arsip"
-      ],
-      "Move to Spam": [
-        "Pindahkan ke Spam"
-      ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
-      "Delete permanently": [
-        "Hapus permanen"
-      ],
-      "Reply": [
-        "Balas"
-      ],
-      "Reply all": [
-        "Balas semua"
-      ],
-      "Forward": [
-        "Teruskan"
-      ],
-      "Load remote content": [
-        "Muat konten jarak jauh"
-      ],
-      "Load embedded images": [
-        "Muat gambar tertanam"
-      ],
-      "Show original message": [
-        "Tampilkan pesan orisinal"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "tidak dikenal"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Tidak dikenal"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard versi < 3.0 tidak didukung"
-      ],
-      "Encryption failed": [
-        "Enkripsi gagal"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Terjadi kesalahan tidak terduga. Impor harus diulang."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Terjadi kesalahan saat mengunggah berkas Anda. Tidak ada berkas yang dipilih."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename } Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Berkas ${ formattedFilename } Anda kosong."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Berkas ${ formattedFilename } Anda tidak memiliki kontak untuk diimpor."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Bls:"
-      ],
-      "Fw:": [
-        "Trs:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Salin"
-      ],
-      "Reveal password": [
-        "Perlihatkan kata sandi"
-      ],
-      "Hide password": [
-        "Sembunyikan kata sandi"
-      ],
-      "Street address": [
-        "Alamat jalan"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Region": [
-        "Wilayah"
-      ],
-      "Postal code": [
-        "Kode pos"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "Post office box": [
-        "Kotak pos"
-      ],
-      "Extended address": [
-        "Alamat lengkap"
-      ],
-      "Do not ask again": [
-        "Jangan tanyakan lagi"
-      ],
-      "Email address": [
-        "Alamat surel"
-      ],
-      "Phone number": [
-        "Nomor telepon"
-      ],
-      "Verification code": [
-        "Kode verifikasi"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
-      ],
-      "Add email address": [
-        "Tambah alamat surel"
-      ],
-      "Email format": [
-        "Format surel"
-      ],
-      "Add image URL": [
-        "Tambah URL gambar"
-      ],
-      "Upload picture": [
-        "Unggah gambar"
-      ],
-      "Add to group": [
-        "Tambah ke grup"
-      ],
-      "Encrypt emails": [
-        "Enkripsi surel"
-      ],
-      "Sign emails": [
-        "Tanda tangani surel"
-      ],
-      "Cryptographic scheme": [
-        "Skema kriptografi"
-      ],
-      "Public keys": [
-        "Kunci publik"
-      ],
-      "Automatically save contacts": [
-        "Simpan kontak secara otomatis"
-      ],
-      "Import contacts": [
-        "Impor kontak"
-      ],
-      "Export contacts": [
-        "Ekspor kontak"
-      ],
-      "Operating system": [
-        "Sistem operasi"
-      ],
-      "Operating system version": [
-        "Versi sistem operasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Apa yang terjadi?"
-      ],
-      "System information": [
-        "Informasi sistem"
-      ],
-      "Browser": [
-        "Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Nama tampilan"
-      ],
-      "Cancel": [
-        "Batal"
-      ],
-      "Submit": [
-        "Kirim"
-      ],
-      "Password": [
-        "Kata Sandi"
-      ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
-      ],
-      "Username or ProtonMail address": [
-        "Nama pengguna atau alamat ProtonMail"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
-      ],
-      "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda terbuka secara bawaan."
-      ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Deskripsi"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Sepanjang hari"
-      ],
-      "Repeat on": [
-        "Ulangi"
-      ],
-      "Repeat every": [
-        "Ulangi setiap"
-      ],
-      "Ends": [
-        "Akhir"
-      ],
-      "Organizer": [
-        "Penyelenggara"
-      ],
-      "Optional": [
-        "Opsional"
-      ],
-      "Time of the event": [
-        "Waktu acara"
-      ],
-      "Event time": [
-        "Waktu acara"
-      ],
-      "Event title": [
-        "Judul acara"
-      ],
-      "Event frequency": [
-        "Frekuensi acara"
-      ],
-      "Event location": [
-        "Lokasi acara"
-      ],
-      "Event notifications": [
-        "Notifikasi acara"
-      ],
-      "Participants": [
-        "Peserta"
-      ],
-      "Your calendars": [
-        "Kalender Anda"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Tutup"
+      ],
       "Close modal": [
         "Tutup jendela"
       ],
@@ -2166,9 +322,6 @@
       ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
-      ],
-      "Close": [
-        "Tutup"
       ],
       "Close navigation": [
         "Tutup navigasi"
@@ -2416,6 +569,9 @@
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
       ],
+      "Chat with us": [
+        ""
+      ],
       "I have a question": [
         "Saya memiliki sebuah pertanyaan"
       ],
@@ -2467,9 +623,6 @@
       "Back": [
         "Kembali"
       ],
-      "Log in": [
-        "Masuk"
-      ],
       "Remove bonuses": [
         ""
       ],
@@ -2517,6 +670,9 @@
       ],
       "Increase": [
         ""
+      ],
+      "Log in": [
+        "Masuk"
       ],
       "Close this banner": [
         "Tutup spanduk ini"
@@ -2613,137 +769,6 @@
       ],
       "Close popover": [
         "Tutup jendela"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Lebih lanjut"
-      ],
-      "Request an invite": [
-        "Meminta undangan"
-      ],
-      "clearing your browser cache": [
-        "membersihkan cache peramban Anda"
-      ],
-      "Upgrade": [
-        "Pemutakhiran"
-      ],
-      "Go to subscription plans": [
-        "Ke paket langganan"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Bayar tagihan"
-      ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
-      "Calendars": [
-        "Kalender"
-      ],
-      "My calendars": [
-        "Kalender saya"
-      ],
-      "Subscribed calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Misalnya "
-      ],
-      "Start typing an email address": [
-        "Mulai ketik alamat surel"
-      ],
-      "Image URL": [
-        "URL gambar"
-      ],
-      "Filter groups": [
-        "Filter grup"
-      ],
-      "Search for name or email": [
-        "Cari nama atau surel"
-      ],
-      "Search for group name": [
-        "Cari nama grup"
-      ],
-      "Name": [
-        "Nama"
-      ],
-      "OS name": [
-        "Nama Sistem Operasi"
-      ],
-      "OS version": [
-        "Versi Sistem Operasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
-      "A way to contact you": [
-        "Cara menghubungi Anda"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
-      ],
-      "Browser name": [
-        "Nama peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
-      ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Tambah judul"
-      ],
-      "Add location": [
-        "Tambah lokasi"
-      ],
-      "Add description": [
-        "Tambah deskripsi"
-      ],
-      "Add participants": [
-        "Tambah peserta"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } jam"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } menit"
       ]
     },
     "Title": {
@@ -2915,18 +940,6 @@
       "Give feedback": [
         ""
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
-      ],
-      "Enter your password": [
-        "Masukkan sandi Anda"
-      ],
       "Confirm loss of Proton bonuses": [
         ""
       ],
@@ -3016,6 +1029,18 @@
       ],
       "${ appName } customization": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ],
+      "Account suspended": [
+        "Akun ditangguhkan"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Masukkan nama pengguna atau alamat surel ProtonMail"
+      ],
+      "Enter your password": [
+        "Masukkan sandi Anda"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"
@@ -3175,6 +1200,1116 @@
       ],
       "CANCELLED": [
         "DIBATALKAN"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Hasil tidak ada"
+      ],
+      "Loading": [
+        "Memuat"
+      ],
+      "support team": [
+        ""
+      ],
+      "No contacts added yet": [
+        "Belum ada kontak yang ditambahkan"
+      ],
+      "Week": [
+        "Pekan"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin serangan homograf dan tidak dapat dibuka oleh peramban Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, silahkan gunakan peramban lain untuk membukanya."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Anda akan membuka tab peramban lain dan mengunjungi:"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Drop the file here to upload": [
+        "Taruh berkas di sini untuk mengunggah"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } anggota)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Surel Anda hanya dipakai untuk verifikasi sekali saja."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+      ],
+      "Loading ${ appName }": [
+        "Memuat ${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Anggota"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } dan ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME otomatis mengirim pesan dengan mode tulis saat ini. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Mohon dicatat, alamat yang ditempatkan di grup ini TIDAK akan dihapus."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Mohon tunggu saat kami memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Memeriksa kontak ${ progress } dari ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontak berhasil diperbarui."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Untuk memulihkan data Anda, Anda perlu mengaktivasi ulang kunci enkripsi kontak yang dipakai saat data dibuat. Ini memerlukan Anda untuk mengingat kata sandi yang dipakai saat kunci dibuat dulu."
+      ],
+      "Key fingerprint": [
+        "Sidik jari kunci"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Tidak ingat sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Mohon tunggu, sementara kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Untuk menandatangani ulang kontak Anda, kami perlu memeriksa setiap kontak dengan daftar kunci enkripsi yang tersedia di akun Anda. Jika tidak ada yang cocok, kontak Anda akan ditandatangani ulang dengan kunci enkripsi utama."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Mohon dicatat proses ini perlu waktu tergantung ukuran buku alamat Anda."
+      ],
+      "Group assignment applied": [
+        "Penempatan grup diterapkan"
+      ],
+      "Create a new contact group": [
+        "Buat grup kontak baru"
+      ],
+      "No group found": [
+        "Grup tidak ditemukan"
+      ],
+      "Duplicate key updated": [
+        "Kunci ganda diperbarui"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Verifikasi Alamat dengan Kunci Terpercaya telah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Hanya ubah pengaturan ini jika Anda menggunakan PGP dengan penerima bukan ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Primary": [
+        "Utama"
+      ],
+      "No email address": [
+        "Tidak ada alamat surel"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontak ditemukan"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup ditemukan"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa aplikasi lain. Kami juga menerima impor vCard 4.0. (encoding UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } alamat surel"
+      ],
+      "Screenshot(s) attached": [
+        "Tangkapan layar terlampir"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
+      "here": [
+        "di sini"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
+      ],
+      "Free up some space or add more storage space.": [
+        "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Kosongkan beberapa ruang atau hubungi administrator Anda."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Koneksi internet dipulihkan."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
+      ],
+      "Session timed out.": [
+        "Sesi habis."
+      ],
+      "Internet connection lost.": [
+        "Koneksi internet terputus."
+      ],
+      "Servers are unreachable.": [
+        "Server tidak terjangkau."
+      ],
+      "Custom daily": [
+        "Kustom harian"
+      ],
+      "Custom weekly": [
+        "Kustom mingguan"
+      ],
+      "Custom monthly": [
+        "Kustom bulanan"
+      ],
+      "Custom yearly": [
+        "Kustom tahunan"
+      ],
+      "Custom": [
+        "Sesuaikan"
+      ],
+      "Daily": [
+        "Harian"
+      ],
+      "Monthly ${ onDayString }": [
+        "Bulanan ${ onDayString }"
+      ],
+      "Yearly": [
+        "Tahunan"
+      ],
+      "Manage your calendars": [
+        "Kelola kalender Anda"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        ""
+      ],
+      "Loading events": [
+        "Memuat acara"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "Penyelenggara tidak dapat diberitahu saat Anda menolak undangan:"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Yakin ingin tetap menghapus acara ini?"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "Tidak ada peserta yang dapat diberi tahu tentang perubahan Anda:"
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "Peserta berikut tidak dapat diberi tahu tentang perubahan Anda:"
+      ],
+      "Would you like to continue anyway?": [
+        "Anda ingin tetap melanjutkan?"
+      ],
+      "Discard changes?": [
+        "Buang perubahan?"
+      ],
+      "You will lose all unsaved changes.": [
+        "Anda akan kehilangan semua perubahan yang belum disimpan."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Penyelenggara acara ini akan diberi tahu jika Anda menolak undangan. Anda ingin menghapus acara ini?"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Penyelenggara acara ini tidak akan diberi tahu bahwa Anda menolak undangan karena Anda tidak dapat mengirim email dari alamat yang diundang. Ingin tetap menghapus acara ini?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus acara ini?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus acara ini?"
+      ],
+      "Would you like to delete this event?": [
+        "Anda ingin menghapus acara ini?"
+      ],
+      "Which event would you like to delete?": [
+        "Acara mana yang ingin dihapus?"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Acara telah diperbarui. Penyelenggara akan diberi tahu jika Anda menolak undangan. Anda ingin menghapus kegiatan ini?"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Acara ini telah diperbarui penyelenggara. Ingin menghapus acara ini?"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Acara ini telah diperbarui. Penyelenggara tidak akan diberi tahu bahwa Anda menolak undangan karena Anda tidak dapat mengirim email dari alamat yang diundang. Ingin tetap menghapus acara ini?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus semua rangkaian acara ini?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus semua rangkaian acara ini?"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Penyelenggara rangkaian acara ini akan diberi tahu bahwa Anda menolak undangan. Anda ingin menghapus semua rangkaian acara ini?"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Penyelenggara rangkaian acara ini tidak akan diberi tahu bahwa Anda menolak undangan karena Anda tidak dapat mengirim email dari alamat yang diundang. Ingin tetap menghapus semua acara dalam rangkaian ini?"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Anda ingin menghapus semua rangkaian acara ini?"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Kejadian yang sebelumnya diperbarui oleh penyelenggara akan disimpan, tetapi beberapa jawaban Anda akan hilang."
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Kejadian yang sebelumnya diperbarui oleh penyelenggara akan disimpan."
+      ],
+      "Which event would you like to update?": [
+        "Acara mana yang ingin diperbarui?"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Acara ini telah diperbarui penyelenggara. Anda ingin mengubah jawaban untuk rangkaian kegiatan ini saja?"
+      ],
+      "Would you like to update this event?": [
+        "Apakah Anda ingin memperbarui acara ini?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Ingin mengubah jawaban Anda untuk semua rangkaian acara ini?"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "Peserta yang ditambahkan dan dihapus akan diberi tahu tentang semua rangkaian acara ini."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Anda akan memperbarui semua rangkaian acara. Peserta yang ditambahkan dan dihapus akan diberi tahu."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Anda akan memperbarui semua rangkaian acara. Peserta yang sudah ada, yang ditambahkan, dan dihapus akan diberi tahu."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Anda akan memperbarui semua rangkaian acara ini. Peserta yang sudah ada dan yang ditambahkan akan diberi tahu."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Anda akan memperbarui semua rangkaian acara ini. Peserta yang dihapus akan diberi tahu."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Anda akan memperbarui semua rangkaian acara ini. Peserta yang sudah ada dan yang dihapus akan diberi tahu."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Anda akan memperbarui semua acara dalam rangkaian ini. Undangan akan dikirim ke peserta acara."
+      ],
+      "Would you like to update all events in this series?": [
+        "Anda ingin memperbarui semua acara dalam rangkaian ini?"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "Perubahan sebelumnya pada seri ini akan hilang."
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Beberapa jawaban Anda untuk kejadian sebelumnya yang diperbarui oleh penyelenggara akan hilang."
+      ],
+      "Frequency modifications will be lost.": [
+        "Perubahan frekuensi akan hilang."
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "Penyelenggara telah memperbarui beberapa rangkaian acara ini. Pengubahan kalender belum didukung untuk jenis acara berulang ini."
+      ],
+      "Update recurring event": [
+        "Perbarui acara berulang"
+      ],
+      "Added and removed participants will be notified.": [
+        "Peserta yang ditambahkan dan dihapus akan diberi tahu."
+      ],
+      "An invitation will be sent to added participants.": [
+        "Undangan akan dikirim ke peserta yang ditambahkan."
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "Surel pembatalan akan dikirim ke peserta yang dihapus."
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "Peserta yang sudah ada, yang ditambahkan, dan dihapus akan diberi tahu."
+      ],
+      "Existent and added participants will be notified.": [
+        "Peserta yang sudah ada atau yang ditambahkan akan diberi tahu."
+      ],
+      "Removed participants will be notified.": [
+        "Peserta yang dihapus akan diberi tahu."
+      ],
+      "Existent and removed participants will be notified.": [
+        "Peserta yang sudah ada dan yang dihapus akan diberi tahu."
+      ],
+      "An invitation will be sent to the event participants.": [
+        "Undangan akan dikirim ke peserta acara."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Silakan hapus yang ganda dan coba lagi."
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        ""
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Kunci Anda telah diaktivasi ulang. Acara yang tersambung ke kalender-kalender ini dapat didekripsi."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Zona waktu sistem Anda sepertinya berubah menjadi ${ timezone }. Anda ingin memperbarui preferensi zona waktu?"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "Maksimal 100 peserta per undangan"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "Anda hanya dapat mengubah properti acara pribadi karena Anda tidak dapat mengirim email dari alamat penyelenggara."
+      ],
+      "Loading event": [
+        "Memuat acara"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Salin"
+      ],
+      "Reveal password": [
+        "Perlihatkan kata sandi"
+      ],
+      "Hide password": [
+        "Sembunyikan kata sandi"
+      ],
+      "Street address": [
+        "Alamat jalan"
+      ],
+      "City": [
+        "Kota"
+      ],
+      "Region": [
+        "Wilayah"
+      ],
+      "Postal code": [
+        "Kode pos"
+      ],
+      "Country": [
+        "Negara"
+      ],
+      "Post office box": [
+        "Kotak pos"
+      ],
+      "Extended address": [
+        "Alamat lengkap"
+      ],
+      "Do not ask again": [
+        "Jangan tanyakan lagi"
+      ],
+      "Email address": [
+        "Alamat surel"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
+      "Verification code": [
+        "Kode verifikasi"
+      ],
+      "Enter the 6-digit code": [
+        "Masukkan kode 6 digit"
+      ],
+      "Add email address": [
+        "Tambah alamat surel"
+      ],
+      "Email format": [
+        "Format surel"
+      ],
+      "Add image URL": [
+        "Tambah URL gambar"
+      ],
+      "Upload picture": [
+        "Unggah gambar"
+      ],
+      "Add to group": [
+        "Tambah ke grup"
+      ],
+      "Encrypt emails": [
+        "Enkripsi surel"
+      ],
+      "Sign emails": [
+        "Tanda tangani surel"
+      ],
+      "Cryptographic scheme": [
+        "Skema kriptografi"
+      ],
+      "Public keys": [
+        "Kunci publik"
+      ],
+      "Automatically save contacts": [
+        "Simpan kontak secara otomatis"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
+      ],
+      "Operating system": [
+        "Sistem operasi"
+      ],
+      "Operating system version": [
+        "Versi sistem operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Apa yang terjadi?"
+      ],
+      "System information": [
+        "Informasi sistem"
+      ],
+      "Browser": [
+        "Peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Nama tampilan"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
+      ],
+      "Two-factor authentication code": [
+        "Kode otentikasi dua faktor"
+      ],
+      "Username or ProtonMail address": [
+        "Nama pengguna atau alamat ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        "Pintasan papan ketik"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
+      ],
+      "Select how your composer opens by default.": [
+        "Pilih bagaimana komposer Anda terbuka secara bawaan."
+      ],
+      "Enable Beta Access": [
+        "Aktifkan Akses Beta"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Deskripsi"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Sepanjang hari"
+      ],
+      "Repeat on": [
+        "Ulangi"
+      ],
+      "Repeat every": [
+        "Ulangi setiap"
+      ],
+      "Ends": [
+        "Akhir"
+      ],
+      "Organizer": [
+        "Penyelenggara"
+      ],
+      "Optional": [
+        "Opsional"
+      ],
+      "Time of the event": [
+        "Waktu acara"
+      ],
+      "Event time": [
+        "Waktu acara"
+      ],
+      "Event title": [
+        "Judul acara"
+      ],
+      "Event frequency": [
+        "Frekuensi acara"
+      ],
+      "Event location": [
+        "Lokasi acara"
+      ],
+      "Event notifications": [
+        "Notifikasi acara"
+      ],
+      "Participants": [
+        "Peserta"
+      ],
+      "Your calendars": [
+        "Kalender Anda"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Lebih lanjut"
+      ],
+      "Request an invite": [
+        "Meminta undangan"
+      ],
+      "clearing your browser cache": [
+        "membersihkan cache peramban Anda"
+      ],
+      "Upgrade": [
+        "Pemutakhiran"
+      ],
+      "Go to subscription plans": [
+        "Ke paket langganan"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Bayar tagihan"
+      ],
+      "Upgrade account": [
+        "Tingkatkan akun"
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "My calendars": [
+        "Kalender saya"
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Misalnya "
+      ],
+      "Start typing an email address": [
+        "Mulai ketik alamat surel"
+      ],
+      "Image URL": [
+        "URL gambar"
+      ],
+      "Filter groups": [
+        "Filter grup"
+      ],
+      "Search for name or email": [
+        "Cari nama atau surel"
+      ],
+      "Search for group name": [
+        "Cari nama grup"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "OS name": [
+        "Nama Sistem Operasi"
+      ],
+      "OS version": [
+        "Versi Sistem Operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "A way to contact you": [
+        "Cara menghubungi Anda"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+      ],
+      "Browser name": [
+        "Nama peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "cth. Julia Smith"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Tambah judul"
+      ],
+      "Add location": [
+        "Tambah lokasi"
+      ],
+      "Add description": [
+        "Tambah deskripsi"
+      ],
+      "Add participants": [
+        "Tambah peserta"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } menit"
       ]
     },
     "Storage": {
@@ -3357,6 +2492,9 @@
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
@@ -4570,6 +3708,874 @@
       ],
       "120 minutes": [
         ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nama"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisasi"
+      ],
+      "Birthday": [
+        "Ulang tahun"
+      ],
+      "Anniversary": [
+        "Ulang tahun"
+      ],
+      "Title": [
+        "Gelar"
+      ],
+      "Role": [
+        "Peran"
+      ],
+      "Note": [
+        "Catatan"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Jenis kelamin"
+      ],
+      "Language": [
+        "Bahasa"
+      ],
+      "Timezone": [
+        "Zona waktu"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Anggota"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Kerja"
+      ],
+      "Personal": [
+        "Pribadi"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Surel"
+      ],
+      "Home": [
+        "Rumah"
+      ],
+      "Work": [
+        "Kerja"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ],
+      "Address": [
+        "Alamat"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } mulai sekarang"
+      ],
+      "${ title } starts today": [
+        "${ title } mulai hari ini"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } dimulai pada pukul ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } dimulai besok"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } dimulai besok pada pukul ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } dimulai pada ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } dimulai pada ${ formattedDate } pukul ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } dimulai pada pukul ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } dimulai pada ${ _formattedDate } pukul ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } dimulai pada ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } dimulai pada ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } akan mulai pada pukul ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } akan mulai besok"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } akan mulai besok pada ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } akan mulai pada ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } akan mulai pada ${ _formattedDate2 } pukul ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } akan mulai pada ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } akan mulai pada ${ _formattedDate3 } pukul ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } akan mulai pada ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } akan mulai pada ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(tanpa judul)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Anda"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Pembatalan acara pada ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Undangan acara pada ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Pembaruan acara pada ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Pembatalan acara mulai pada ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Undangan acara mulai pada ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Pembaruan acara mulai pada ${ formattedStart }"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Undangan: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Kapan: ${ formattedStart } (sepanjang hari)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Kapan: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Kapan: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Di mana: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Deskripsi: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Anda diundang ke ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } telah dibatalkan."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } telah menerima undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } telah sementara menerima undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } telah menolak undangan Anda ke ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "pada Minggu pertama"
+      ],
+      "on the first Monday": [
+        "pada Senin pertama"
+      ],
+      "on the first Tuesday": [
+        "pada Selasa pertama"
+      ],
+      "on the first Wednesday": [
+        "pada Rabu pertama"
+      ],
+      "on the first Thursday": [
+        "pada Kamis pertama"
+      ],
+      "on the first Friday": [
+        "pada Jumat pertama"
+      ],
+      "on the first Saturday": [
+        "pada Sabtu pertama"
+      ],
+      "on the second Sunday": [
+        "pada hari Minggu kedua"
+      ],
+      "on the second Monday": [
+        "pada Senin kedua"
+      ],
+      "on the second Tuesday": [
+        "pada Selasa kedua"
+      ],
+      "on the second Wednesday": [
+        "pada Rabu kedua"
+      ],
+      "on the second Thursday": [
+        "pada Kamis kedua"
+      ],
+      "on the second Friday": [
+        "pada Jumat kedua"
+      ],
+      "on the second Saturday": [
+        "pada Sabtu kedua"
+      ],
+      "on the third Sunday": [
+        "pada hari Minggu ketiga"
+      ],
+      "on the third Monday": [
+        "pada Senin ketiga"
+      ],
+      "on the third Tuesday": [
+        "pada Selasa ketiga"
+      ],
+      "on the third Wednesday": [
+        "pada Rabu ketiga"
+      ],
+      "on the third Thursday": [
+        "pada Kamis ketiga"
+      ],
+      "on the third Friday": [
+        "pada Jumat ketiga"
+      ],
+      "on the third Saturday": [
+        "pada Sabtu ketiga"
+      ],
+      "on the fourth Sunday": [
+        "pada hari Minggu keempat"
+      ],
+      "on the fourth Monday": [
+        "pada Senin keempat"
+      ],
+      "on the fourth Tuesday": [
+        "pada Selasa keempat"
+      ],
+      "on the fourth Wednesday": [
+        "pada Rabu keempat"
+      ],
+      "on the fourth Thursday": [
+        "pada Kamis keempat"
+      ],
+      "on the fourth Friday": [
+        "pada Jumat keempat"
+      ],
+      "on the fourth Saturday": [
+        "pada Sabtu keempat"
+      ],
+      "on the last Sunday": [
+        "pada hari Minggu terakhir"
+      ],
+      "on the last Monday": [
+        "pada Senin terakhir"
+      ],
+      "on the last Tuesday": [
+        "pada Selasa terakhir"
+      ],
+      "on the last Wednesday": [
+        "pada Rabu terakhir"
+      ],
+      "on the last Thursday": [
+        "pada Kamis terakhir"
+      ],
+      "on the last Friday": [
+        "pada Jumat terakhir"
+      ],
+      "on the last Saturday": [
+        "pada Sabtu terakhir"
+      ],
+      "on day ${ dayOfMonth }": [
+        "pada hari ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } kali"
+      ],
+      "until ${ dateString }": [
+        "sampai ${ dateString }"
+      ],
+      "Daily": [
+        "Harian"
+      ],
+      "Every ${ interval } day": [
+        "Setiap ${ interval } hari"
+      ],
+      "Daily, ${ timesString }": [
+        "Harian, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Setiap ${ interval } hari, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Harian, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Setiap ${ interval } hari, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Minggu"
+      ],
+      "Monday": [
+        "Senin"
+      ],
+      "Tuesday": [
+        "Selasa"
+      ],
+      "Wednesday": [
+        "Rabu"
+      ],
+      "Thursday": [
+        "Kamis"
+      ],
+      "Friday": [
+        "Jumat"
+      ],
+      "Saturday": [
+        "Sabtu"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Mingguan pada semua hari"
+      ],
+      "Every ${ interval } week on all days": [
+        "Setiap ${ interval } minggu pada semua hari"
+      ],
+      "Weekly on Sunday": [
+        "Mingguan pada hari Minggu"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Setiap ${ interval } minggu pada hari Minggu"
+      ],
+      "Weekly on Monday": [
+        "Mingguan pada hari Senin"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Setiap ${ interval } minggu pada hari Senin"
+      ],
+      "Weekly on Tuesday": [
+        "Mingguan pada hari Selasa"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Setiap ${ interval } minggu pada hari Selasa"
+      ],
+      "Weekly on Wednesday": [
+        "Mingguan pada hari Rabu"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Setiap ${ interval } minggu pada hari Rabu"
+      ],
+      "Weekly on Thursday": [
+        "Mingguan pada hari Kamis"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Setiap ${ interval } minggu pada hari Kamis"
+      ],
+      "Weekly on Friday": [
+        "Mingguan pada hari Jumat"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Setiap ${ interval } minggu pada hari Jumat"
+      ],
+      "Weekly on Saturday": [
+        "Mingguan pada hari Sabtu"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Setiap ${ interval } minggu pada hari Sabtu"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Mingguan pada ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Setiap ${ interval } minggu pada hari ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Mingguan pada semua hari, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Setiap ${ interval } minggu pada semua hari, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Mingguan pada hari Minggu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Minggu, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Mingguan pada hari Senin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Senin, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Mingguan pada hari Selasa, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Selasa, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Mingguan pada hari Rabu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Rabu, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Mingguan pada hari Kamis, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Kamis, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Mingguan pada hari Jumat, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Jumat, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Mingguan pada hari Sabtu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Sabtu, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Mingguan pada ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Setiap ${ interval } minggu pada ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Mingguan pada semua hari, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Setiap ${ interval } minggu pada semua hari, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Mingguan pada hari Minggu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Minggu, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Mingguan pada hari Senin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Senin, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Mingguan pada hari Selasa, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Selasa, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Mingguan pada hari Rabu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Rabu, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Mingguan pada hari Kamis, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Kamis, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Mingguan pada hari Jumat, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Jumat, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Mingguan pada hari Sabtu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Sabtu, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Mingguan pada ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Setiap ${ interval } minggu pada ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Bulanan ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Setiap ${ interval } bulan ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Bulanan ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Setiap ${ interval } bulan ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Bulanan ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Setiap ${ interval } bulan ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Tahunan"
+      ],
+      "Every ${ interval } year": [
+        "Setiap ${ interval } tahun"
+      ],
+      "Yearly, ${ timesString }": [
+        "Tahunan, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Setiap ${ interval } tahun, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Tahunan, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Setiap ${ interval } tahun, ${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Navigasi dasar"
+      ],
+      "Basic actions": [
+        "Tindakan dasar"
+      ],
+      "Folder shortcuts": [
+        "Pintasan folder"
+      ],
+      "Composer shortcuts": [
+        "Pintasan komposer"
+      ],
+      "List shortcuts": [
+        "Buat daftar pintasan"
+      ],
+      "Action shortcuts": [
+        "Pintasan tindakan"
+      ],
+      "Message shortcuts": [
+        "Pintasan pesan"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Naikkan"
+      ],
+      "Jump to first": [
+        "Lompat ke pertama"
+      ],
+      "Move down": [
+        "Turunkan"
+      ],
+      "Jump to last": [
+        "Lompat ke terakhir"
+      ],
+      "Move right / expand": [
+        "Geser kanan / buka"
+      ],
+      "Move left / collapse": [
+        "Geser kiri / tutup"
+      ],
+      "Apply / open": [
+        "Terapkan / buka"
+      ],
+      "Cancel / close": [
+        "Batal / tutup"
+      ],
+      "Open this modal": [
+        "Buka jendela ini"
+      ],
+      "Select / unselect": [
+        "Pilih / batal pilih"
+      ],
+      "Go to Inbox": [
+        "Ke Kotak masuk"
+      ],
+      "Go to Archive": [
+        "Ke Arsip"
+      ],
+      "Go to Sent": [
+        "Ke Terkirim"
+      ],
+      "Go to Starred": [
+        "Ke Bintang"
+      ],
+      "Go to Drafts": [
+        "Ke Draf"
+      ],
+      "Go to Trash": [
+        "Ke Tempat Sampah"
+      ],
+      "Go to Spam": [
+        "Ke Spam"
+      ],
+      "Go to All Mail": [
+        "Ke Semua Surat"
+      ],
+      "Save draft": [
+        "Simpan draf"
+      ],
+      "Send email": [
+        "Kirim surel"
+      ],
+      "Close draft": [
+        "Tutup draf"
+      ],
+      "Minimize / maximize composer": [
+        "Minimalkan / maksimalkan komposer"
+      ],
+      "Expand / contract composer": [
+        "Lebarkan / kerutkan komposer"
+      ],
+      "Attach file": [
+        "Lampirkan berkas"
+      ],
+      "Add expiration time": [
+        "Tambah waktu kedaluwarsa"
+      ],
+      "Add encryption": [
+        "Tambah enkripsi"
+      ],
+      "Discard draft": [
+        "Buang draf"
+      ],
+      "Open previous message": [
+        "Buka pesan sebelumnya"
+      ],
+      "Open next message": [
+        "Buka pesan selanjutnya"
+      ],
+      "Show unread emails": [
+        "Tampilkan surel belum dibaca"
+      ],
+      "Show all emails": [
+        "Tampilkan semua surel"
+      ],
+      "Select / unselect all": [
+        "Pilih / batal pilih semua"
+      ],
+      "Search": [
+        "Pencarian"
+      ],
+      "New message": [
+        "Pesan baru"
+      ],
+      "Star": [
+        "Bintang"
+      ],
+      "Mark as unread": [
+        "Tandai belum dibaca"
+      ],
+      "Label as...": [
+        "Labeli sebagai..."
+      ],
+      "Create filter with...": [
+        "Buat filter dengan..."
+      ],
+      "Move to...": [
+        "Pindah ke..."
+      ],
+      "Move to Inbox": [
+        "Pindahkan ke Kotak masuk"
+      ],
+      "Move to Archive": [
+        "Pindahkan ke Arsip"
+      ],
+      "Move to Spam": [
+        "Pindahkan ke Spam"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
+      ],
+      "Delete permanently": [
+        "Hapus permanen"
+      ],
+      "Reply": [
+        "Balas"
+      ],
+      "Reply all": [
+        "Balas semua"
+      ],
+      "Forward": [
+        "Teruskan"
+      ],
+      "Load remote content": [
+        "Muat konten jarak jauh"
+      ],
+      "Load embedded images": [
+        "Muat gambar tertanam"
+      ],
+      "Show original message": [
+        "Tampilkan pesan orisinal"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "tidak dikenal"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Tidak dikenal"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard versi < 3.0 tidak didukung"
+      ],
+      "Encryption failed": [
+        "Enkripsi gagal"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Terjadi kesalahan tidak terduga. Impor harus diulang."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Terjadi kesalahan saat mengunggah berkas Anda. Tidak ada berkas yang dipilih."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Ada kesalahan saat mengunggah berkas ${ formattedFilename } Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Berkas ${ formattedFilename } Anda kosong."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Berkas ${ formattedFilename } Anda tidak memiliki kontak untuk diimpor."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Bls:"
+      ],
+      "Fw:": [
+        "Trs:"
       ]
     },
     "Event info. Organizer name": {

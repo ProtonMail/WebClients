@@ -459,11 +459,26 @@
       "here": [
         "dagi"
       ],
+      "Clear": [
+        "Teṣfa"
+      ],
+      "Add screenshot(s)": [
+        "Rnu tuṭṭfa(win) n ugdil"
+      ],
+      "Hide info": [
+        "Ffer isallen"
+      ],
+      "Show info": [
+        "Sken isallen"
+      ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣer tecfawit"
       ],
       "${ BRAND_NAME } introduction": [
         "Tazwart n ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Mmeslay yid-neɣ"
       ],
       "I have a question": [
         "Sɛiɣ asteqsi"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         "Askar n umsuddes"
-      ],
-      "Clear": [
-        "Teṣfa"
-      ],
-      "Add screenshot(s)": [
-        "Rnu tuṭṭfa(win) n ugdil"
-      ],
-      "Hide info": [
-        "Ffer isallen"
-      ],
-      "Show info": [
-        "Sken isallen"
       ],
       "Get started": [
         "Bdu"
@@ -603,17 +606,14 @@
       "New upload": [
         "Asali amaynut"
       ],
-      "Delete permanently": [
-        "Kkes i lebda"
+      "Upload file": [
+        "Sali afaylu"
       ],
-      "Restore from trash": [
-        "Err-d seg tqecwalt"
+      "Upload folder": [
+        "Sali akaram"
       ],
-      "Empty trash": [
-        "Smir taqecwalt"
-      ],
-      "Rename": [
-        "Beddel isem"
+      "Create new folder": [
+        "Rnu akaram amaynut"
       ],
       "Move to folder": [
         "Awi ɣer ukaram"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Awi ar iḍumman"
       ],
-      "Create new folder": [
-        "Rnu akaram amaynut"
+      "Rename": [
+        "Beddel isem"
       ],
       "Name: A to Z": [
         "Isem: A ɣer Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Tiddi: Seg umeqqran ar umeẓyan"
       ],
-      "Upload file": [
-        "Sali afaylu"
+      "List layout": [
+        "Tabdart n tissa"
       ],
-      "Upload folder": [
-        "Sali akaram"
+      "Grid layout": [
+        "Tissi n uferrug"
+      ],
+      "Preview": [
+        "Taskant"
+      ],
+      "Delete permanently": [
+        "Kkes i lebda"
+      ],
+      "Restore from trash": [
+        "Err-d seg tqecwalt"
+      ],
+      "Empty trash": [
+        "Smir taqecwalt"
+      ],
+      "Share file": [
+        "Bḍu afaylu"
+      ],
+      "Stop sharing": [
+        "Ḥbes beḍḍu"
       ],
       "Maximize transfers": [
         "Semɣer asiweḍ"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Kkes seg tebdart-a"
       ],
-      "Create": [
-        "Rnu"
-      ],
-      "List layout": [
-        "Tabdart n tissa"
-      ],
-      "Grid layout": [
-        "Tissi n uferrug"
-      ],
-      "Preview": [
-        "Taskant"
-      ],
-      "Stop sharing": [
-        "Ḥbes beḍḍu"
-      ],
       "Share": [
         "Bḍu"
       ],
       "Show shared link details": [
         "Sken-d ifutas n useɣwen yettwabḍan"
       ],
-      "Share file": [
-        "Bḍu afaylu"
-      ],
       "Start recovering": [
         "Bdu tiririt"
       ],
       "View more": [
         "Sken ugar"
+      ],
+      "Create": [
+        "Rnu"
       ],
       "Move": [
         "Senkez"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Kter inermisen"
       ],
+      "Report a problem": [
+        "Azen ugur"
+      ],
       "Open help menu": [
         "Ldi umuɣ n tallelt"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Ldi umuɣ n yiɣewwaren"
-      ],
-      "Report a problem": [
-        "Azen ugur"
       ],
       "Select a theme": [
         "Fren asentel"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Ẓuɣer asali"
       ],
-      "Trash": [
-        "Taqecwalt"
-      ],
-      "Empty trash": [
-        "Smir taqecwalt"
-      ],
       "Show actions": [
         "Sken tigawin"
       ],
       "Sort files/folders": [
         "Smizzwer ifuyla/ikaramen"
       ],
+      "Change layout": [
+        "Snifel tissi"
+      ],
+      "Trash": [
+        "Taqecwalt"
+      ],
+      "Empty trash": [
+        "Smir taqecwalt"
+      ],
+      "Shared": [
+        "Yettwabḍa"
+      ],
+      "Additional settings": [
+        "Iɣewwaren imernan"
+      ],
       "Cancel all active transfers": [
         "Sefsex meṛṛa ayen i tsiwḍeḍ"
       ],
       "My files": [
         "Ifuyla-inu"
-      ],
-      "You have no folders yet": [
-        "Ur tesεiḍ ara εad ikaramen"
-      ],
-      "You have no files to share": [
-        "Ur tesεiḍ ara afaylu ara tebḍuḍ"
-      ],
-      "Change layout": [
-        "Snifel tissi"
       ],
       "Your file is ready to be downloaded": [
         "Afaylu-inek•inem yewjed i usader"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Tiddi"
       ],
-      "Shared": [
-        "Yettwabḍa"
-      ],
       "# of accesses": [
         "# n yinekcumen"
+      ],
+      "You have no folders yet": [
+        "Ur tesεiḍ ara εad ikaramen"
       ],
       "Create a new folder": [
         "Rnu akaram amaynut"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Bḍu s useɣwen"
       ],
-      "Additional settings": [
-        "Iɣewwaren imernan"
-      ],
       "Manage secure link": [
         "Sefrek aseɣwen aɣellsan"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Sefsex"
+      ],
+      "You have no files to share": [
+        "Ur tesεiḍ ara afaylu ara tebḍuḍ"
       ],
       "Files details": [
         "Talqayt n ifuyla"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Azdam"
-      ],
       "No results found": [
         "Ulac igmaḍ yettwafen"
+      ],
+      "Loading": [
+        "Azdam"
       ],
       "No contacts added yet": [
         "Ur inermisen akka tura"
@@ -1581,7 +1584,7 @@
         "Ad d-taweḍ tfaṭurt taggara n wallus n tfatuṛt-ik·im tamirant (ad tettwales deg ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Ilaq ad tekkseḍ iwitayen izaden akked yal aseɣwan n uwitay yettwabḍan send ad tesfesxeḍ ajerred-ik·im. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Ulac axelleṣ i d-yettwasutren taswiεt-a."
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
       ],
+      "There are no files yet": [
+        "Ulac ɛad ifuyla"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Ẓuɣer neɣ sers afaylu da neɣ fren asali."
+      ],
+      "No files or folders in trash": [
+        "Ulac ifuyla neɣ ikaramen deg tqecwalt"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
+      ],
+      "Share files with links": [
+        "Bḍu ifuyla s yisɣewnen"
+      ],
+      "Create links and share your files with others.": [
+        "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } yekfa",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Amdal n umsefrak n usiweḍ ad isefsex meṛṛa ayen i tsawaḍeḍ tura, s tidet tebɣiḍ aya?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Snulfu-d akaram-inek/m amezwaru sakin bdu asenkez n ifuyla."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Ddu ɣer \"Ifuyla-inu\" sakin sili kra n yifuyla."
-      ],
-      "No files or folders in trash": [
-        "Ulac ifuyla neɣ ikaramen deg tqecwalt"
-      ],
-      "There are no files yet": [
-        "Ulac ɛad ifuyla"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ẓuɣer neɣ sers afaylu da neɣ fren asali."
-      ],
-      "Share files with links": [
-        "Bḍu ifuyla s yisɣewnen"
-      ],
-      "Create links and share your files with others.": [
-        "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
-      ],
       "Link expires: ": [
         "Aseɣwen ad ifat di: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Ala"
       ],
+      "Create your first folder and start moving your files.": [
+        "Snulfu-d akaram-inek/m amezwaru sakin bdu asenkez n ifuyla."
+      ],
       "Anyone with this link can access your file.": [
         "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ufaylu-ik•im."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Asnulfu n useɣwen ɣer ufaylu"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Ddu ɣer \"Ifuyla-inu\" sakin sili kra n yifuyla."
       ],
       "Select an uploaded file and create a link to it.": [
         "Fren afaylu yulin u snulfu-d aseɣwen ɣur-s."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Afaylu arussin"
       ],
+      "All": [
+        "Akk"
+      ],
+      "Active": [
+        "Urmid"
+      ],
+      "Failed": [
+        "Yecceḍ"
+      ],
       "Folder": [
         "Akaram"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Sali aswir n umiḍan"
       ],
+      "clearing your browser cache": [
+        "asfaḍ n tuffirt n yiminig"
+      ],
       "Upgrade": [
         "Leqqem"
       ],
       "Go to subscription plans": [
         "Rzu ɣer yiɣawasen n ujerred"
-      ],
-      "clearing your browser cache": [
-        "asfaḍ n tuffirt n yiminig"
       ],
       "click here": [
         "sit dagi"
@@ -2498,6 +2510,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Isefka-inek·inem n wadeg akked iɣewwaren n wakud ur mtawan ara."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ProtonVPN n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n uneqqis ur tettuwgelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
@@ -3022,45 +3037,6 @@
         "Lqem amaynut ${ appName } yella. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Iɣewwaren"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Yermed"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Yensa"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Tigejdit"
-      ],
-      "Row": [
-        "Izirig"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Yerked"
-      ],
-      "Compact": [
-        "Ussid"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Afellay"
-      ],
-      "Normal": [
-        "Amagnu"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ulac tugna yettwafernen"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Iɣewwaren"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Yermed"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Yensa"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Tigejdit"
+      ],
+      "Row": [
+        "Izirig"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Yerked"
+      ],
+      "Compact": [
+        "Ussid"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Afellay"
+      ],
+      "Normal": [
+        "Amagnu"
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GAṬ"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ length } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ length } n yisekkilen"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Isem"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Tansa"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Awal uffir ilaq ad isɛu ma drus ${ length } n usekkil",
-        "Awal uffir ilaq ad isɛu ma drus ${ length } n yisekkilen"
       ]
     },
     "PGP key warning": {

@@ -93,10 +93,10 @@
         "Nom no vàlid"
       ],
       "We were unable to connect to your service provider.": [
-        ""
+        "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
+        "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -459,11 +459,26 @@
       "here": [
         "aquí"
       ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Add screenshot(s)": [
+        "Afegir captura(es) de pantalla"
+      ],
+      "Hide info": [
+        "Amagar informació"
+      ],
+      "Show info": [
+        "Mostra informació"
+      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
       "${ BRAND_NAME } introduction": [
         "Introducció ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Xategeu amb nosaltres"
       ],
       "I have a question": [
         "Tinc una pregunta"
@@ -504,18 +519,6 @@
       "Composer mode": [
         "Mode d'editor"
       ],
-      "Clear": [
-        "Netejar"
-      ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
-      "Hide info": [
-        "Amagar informació"
-      ],
-      "Show info": [
-        "Mostra informació"
-      ],
       "Get started": [
         "Començar"
       ],
@@ -535,16 +538,16 @@
         "D'acord"
       ],
       "Continue import": [
-        ""
+        "Continua la importació"
       ],
       "Discard": [
-        ""
+        "Descartar"
       ],
       "Reconnect": [
-        ""
+        "Reconnectar"
       ],
       "Start import": [
-        ""
+        "Començar importació"
       ],
       "Remove bonuses": [
         "Suprimeix bonus"
@@ -603,17 +606,14 @@
       "New upload": [
         "Càrrega nova"
       ],
-      "Delete permanently": [
-        "Suprimeix permanentment"
+      "Upload file": [
+        "Puja el fitxer"
       ],
-      "Restore from trash": [
-        "Recuperar de la paperera"
+      "Upload folder": [
+        "Carrega Carpeta"
       ],
-      "Empty trash": [
-        "Buidar paperera"
-      ],
-      "Rename": [
-        "Reanomenar"
+      "Create new folder": [
+        "Crea una carpeta nova"
       ],
       "Move to folder": [
         "Mou a la carpeta"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Mou a la paperera"
       ],
-      "Create new folder": [
-        "Crea una carpeta nova"
+      "Rename": [
+        "Reanomenar"
       ],
       "Name: A to Z": [
         "Nom: A - Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Mida: de gran a petit"
       ],
-      "Upload file": [
-        "Puja el fitxer"
+      "List layout": [
+        "Disseny de llista"
       ],
-      "Upload folder": [
-        "Carrega Carpeta"
+      "Grid layout": [
+        "Disseny de quadrícula"
+      ],
+      "Preview": [
+        "Vista prèvia"
+      ],
+      "Delete permanently": [
+        "Suprimeix permanentment"
+      ],
+      "Restore from trash": [
+        "Recuperar de la paperera"
+      ],
+      "Empty trash": [
+        "Buidar paperera"
+      ],
+      "Share file": [
+        "Compartir arxius"
+      ],
+      "Stop sharing": [
+        "Deixa de compartir"
       ],
       "Maximize transfers": [
         "Maximitzar les transferències"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Esborra de la llista"
       ],
-      "Create": [
-        "Crear"
-      ],
-      "List layout": [
-        "Disseny de llista"
-      ],
-      "Grid layout": [
-        "Disseny de quadrícula"
-      ],
-      "Preview": [
-        "Vista prèvia"
-      ],
-      "Stop sharing": [
-        "Deixa de compartir"
-      ],
       "Share": [
         "Compartir"
       ],
       "Show shared link details": [
         "Mostrar els detalls de l'enllaç compartit"
       ],
-      "Share file": [
-        "Compartir arxius"
-      ],
       "Start recovering": [
         "Començar a recuperar"
       ],
       "View more": [
         "Veure més"
+      ],
+      "Create": [
+        "Crear"
       ],
       "Move": [
         "Mou"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Importar contactes"
       ],
+      "Report a problem": [
+        "Avisar d'un problema"
+      ],
       "Open help menu": [
         "Obrir el menú d'ajuda"
       ],
@@ -885,17 +891,14 @@
       "Open settings menu": [
         "Obrir el menú de preferències"
       ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
       "Start import process": [
-        ""
+        "Inicia el procés d'importació"
       ],
       "Import in progress": [
-        ""
+        "Importació en curs"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmeu la pèrdua de bonificacions de Proton"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Arrosega per pujar"
       ],
-      "Trash": [
-        "Paperera"
-      ],
-      "Empty trash": [
-        "Buidar paperera"
-      ],
       "Show actions": [
         "Mostra accions"
       ],
       "Sort files/folders": [
         "Ordenar fitxers/carpetes"
       ],
+      "Change layout": [
+        "Cambiar la disposició"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "Empty trash": [
+        "Buidar paperera"
+      ],
+      "Shared": [
+        "Compartit"
+      ],
+      "Additional settings": [
+        "Ajustos addicionals"
+      ],
       "Cancel all active transfers": [
         "Cancel·leu totes les transferències actives"
       ],
       "My files": [
         "Els meus arxius"
-      ],
-      "You have no folders yet": [
-        "Encara no tens cap carpeta"
-      ],
-      "You have no files to share": [
-        "No tens arxius per compartir"
-      ],
-      "Change layout": [
-        "Cambiar la disposició"
       ],
       "Your file is ready to be downloaded": [
         "El vostre fitxer està preparat per descarregar"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Mida"
       ],
-      "Shared": [
-        "Compartit"
-      ],
       "# of accesses": [
         "# d'accessos"
+      ],
+      "You have no folders yet": [
+        "Encara no tens cap carpeta"
       ],
       "Create a new folder": [
         "Crear una nova carpeta"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Comparteix via enllaç"
       ],
-      "Additional settings": [
-        "Ajustos addicionals"
-      ],
       "Manage secure link": [
         "Gestiona l'enllaç segur"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Descartar"
+      ],
+      "You have no files to share": [
+        "No tens arxius per compartir"
       ],
       "Files details": [
         "Detalls de l’arxiu"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Carregant"
-      ],
       "No results found": [
         "No s'han trobat resultats"
+      ],
+      "Loading": [
+        "Carregant"
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -1409,28 +1412,28 @@
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Import contacts": [
-        ""
+        "Importar contactes"
       ],
       "Your contacts are being imported from": [
-        ""
+        "Els vostres contactes s'estan important des de"
       ],
       "to": [
-        ""
+        "a"
       ],
       "Your import has started!": [
-        ""
+        "La vostra importació ha començat!"
       ],
       "We will notify you once your import is finished.": [
-        ""
+        "Us notificarem un cop hagi acabat la importació."
       ],
       "Large imports can take several days to complete.": [
-        ""
+        "Les grans importacions poden trigar diversos dies a completar-se."
       ],
       "You can continue using Proton services as usual.": [
-        ""
+        "Podeu continuar utilitzant els serveis de Proton com sempre."
       ],
       "Your import will not be processed.": [
-        ""
+        "La vostra importació no es processarà."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Els teus arxius serán cifrats i desats."
       ],
+      "There are no files yet": [
+        "Encara no hi ha arxius"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Arrosega i solta un arxiu aquí o escull per carregar."
+      ],
+      "No files or folders in trash": [
+        "Cap arxiu o carpeta a la paperera"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Esteu segur que voleu buidar la paperera i suprimir permanentment tots els elements?"
+      ],
+      "Share files with links": [
+        "Compartir fitxers amb enllaços"
+      ],
+      "Create links and share your files with others.": [
+        "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Finalitzat",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Tancar el gestor de transferències cancel·larà totes les transferències actives, n'esteu segur?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Crea la teva primera carpeta i comença a moure els teus arxius."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Aneu a \"Els meus fitxers\" i pengeu alguns fitxers primer."
-      ],
-      "No files or folders in trash": [
-        "Cap arxiu o carpeta a la paperera"
-      ],
-      "There are no files yet": [
-        "Encara no hi ha arxius"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Arrosega i solta un arxiu aquí o escull per carregar."
-      ],
-      "Share files with links": [
-        "Compartir fitxers amb enllaços"
-      ],
-      "Create links and share your files with others.": [
-        "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
-      ],
       "Link expires: ": [
         "L'enllaç caduca el: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "No"
       ],
+      "Create your first folder and start moving your files.": [
+        "Crea la teva primera carpeta i comença a moure els teus arxius."
+      ],
       "Anyone with this link can access your file.": [
         "Qualsevol que tingui aquest enllaç pot accedir al vostre arxiu."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Preparant el enllaç al fitxer"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Aneu a \"Els meus fitxers\" i pengeu alguns fitxers primer."
       ],
       "Select an uploaded file and create a link to it.": [
         "Seleccioneu un fitxer carregat i creeu-hi un enllaç."
@@ -2027,10 +2030,10 @@
         "Mostrar el nom"
       ],
       "From: ${ fromEmailAddress }": [
-        ""
+        "Des de: ${ fromEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
-        ""
+        "Per a: ${ toEmailAddress }"
       ],
       "Name on card": [
         "Titular de la targeta"
@@ -2151,6 +2154,15 @@
       ],
       "Unknown file": [
         "Fitxer desconegut"
+      ],
+      "All": [
+        "Totes"
+      ],
+      "Active": [
+        "Actives"
+      ],
+      "Failed": [
+        "Fallides"
       ],
       "Folder": [
         "Carpeta"
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Millorar el compte"
       ],
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
       "Upgrade": [
         "Actualitzar"
       ],
       "Go to subscription plans": [
         "Anar als plans de subscripció"
-      ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
       ],
       "click here": [
         "feu clic aquí"
@@ -2499,11 +2511,14 @@
       "Your local date & time settings seem to be out of sync.": [
         "La vostra configuració de data i hora local no sembla estar sincronitzada."
       ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
       "Are you sure you want to discard your import?": [
-        ""
+        "Esteu segur que voleu descartar la seva importació?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
@@ -3022,45 +3037,6 @@
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Preferències"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Activat"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Desactivat"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximitzat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
@@ -3164,6 +3140,45 @@
         "Adjunta captura(es) de pantalla"
       ]
     },
+    "Text": {
+      "Settings": [
+        "Preferències"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Activat"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Desactivat"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Còmode"
+      ],
+      "Compact": [
+        "Compacte"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximitzat"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
@@ -3198,23 +3213,23 @@
     },
     "Loading info": {
       "Connecting to your contacts provider": [
-        ""
+        "Connectant al vostre proveïdor de contactes"
       ]
     },
     "Wizard step": {
       "Authenticate": [
-        ""
+        "Autenticar"
       ],
       "Configure Import": [
-        ""
+        "Configurar importació"
       ],
       "Import": [
-        ""
+        "Importar"
       ]
     },
     "Confirm modal title": {
       "Quit import?": [
-        ""
+        "Sortir de la importació?"
       ]
     },
     "Info for cash payment method": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nom"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Adreça"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ]
     },
     "PGP key warning": {

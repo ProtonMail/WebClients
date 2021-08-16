@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "Toto pole je povinné"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
-      ],
-      "Email is not valid": [
-        "Emailová adresa není platná"
-      ],
-      "Not a valid number": [
-        "Neplatné číslo"
-      ],
-      "Passwords do not match": [
-        "Hesla se neshodují"
-      ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
-      ],
-      "Signature verification failed": [
-        "Ověření podpisu selhalo"
-      ],
-      "Could not find address ${ email }.": [
-        "Nelze najít adresu ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Primární soukromý klíč adresy nebyl nalezen"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Primární soukromý klíč kalendáře není dešifrován"
-      ],
-      "Missing signature": [
-        "Podpis není nastaven"
-      ],
-      "Contact signature not verified": [
-        "Podpis kontaktu nebyl ověřen"
-      ],
-      "Signature not verified": [
-        "Podpis nebyl ověřen"
-      ],
-      "Invalid name": [
-        "Neplatné jméno"
-      ],
-      "Email address disabled": [
-        "E-mailová adresa je zakázána"
-      ],
-      "No keys retrieved for internal user": [
-        "Pro interního uživatele nebyly nalezeny žádné klíče"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Pro interního uživatele nebyly nalezeny žádné validní klíče"
-      ],
-      "Contact signature could not be verified": [
-        "Podpis kontaktu nemohl být ověřen"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Žádný klíč pro interní uživatele není platný pro odeslání"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Důvěryhodné klíče nejsou platné pro odeslání"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Žádný klíč WKD uživatele není platný pro odeslání"
-      ],
-      "The sending key is not valid": [
-        "Odesílací klíč není platný"
-      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "E-mailová adresa je neplatná"
+      ],
+      "This field is required": [
+        "Toto pole je povinné"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -153,17 +90,14 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
+      "Invalid name": [
+        "Neplatné jméno"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Nesprávné přihlašovací údaje. Zkuste to znovu"
       ],
       "Process aborted": [
         ""
@@ -225,6 +159,12 @@
       "Invalid code": [
         ""
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Nesprávné přihlašovací údaje. Zkuste to znovu"
+      ],
       "Primary address key is not decrypted": [
         "Klíč hlavní adresy není dešifrován"
       ],
@@ -236,6 +176,66 @@
       ],
       "Name required": [
         ""
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
+      ],
+      "Email is not valid": [
+        "Emailová adresa není platná"
+      ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
+      ],
+      "Request timed out.": [
+        "Vypršel časový limit žádosti."
+      ],
+      "Signature verification failed": [
+        "Ověření podpisu selhalo"
+      ],
+      "Could not find address ${ email }.": [
+        "Nelze najít adresu ${ email }."
+      ],
+      "Address primary private key not found": [
+        "Primární soukromý klíč adresy nebyl nalezen"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Primární soukromý klíč kalendáře není dešifrován"
+      ],
+      "Missing signature": [
+        "Podpis není nastaven"
+      ],
+      "Contact signature not verified": [
+        "Podpis kontaktu nebyl ověřen"
+      ],
+      "Signature not verified": [
+        "Podpis nebyl ověřen"
+      ],
+      "Email address disabled": [
+        "E-mailová adresa je zakázána"
+      ],
+      "No keys retrieved for internal user": [
+        "Pro interního uživatele nebyly nalezeny žádné klíče"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Pro interního uživatele nebyly nalezeny žádné validní klíče"
+      ],
+      "Contact signature could not be verified": [
+        "Podpis kontaktu nemohl být ověřen"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Žádný klíč pro interní uživatele není platný pro odeslání"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Důvěryhodné klíče nejsou platné pro odeslání"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Žádný klíč WKD uživatele není platný pro odeslání"
+      ],
+      "The sending key is not valid": [
+        "Odesílací klíč není platný"
       ],
       "Self invitation not allowed": [
         ""
@@ -319,1992 +319,10 @@
         "Chyba"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        "",
-        "",
-        ""
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bajtů"
-      ],
-      "KB": [
-        ""
-      ],
-      "MB": [
-        ""
-      ],
-      "GB": [
-        ""
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        ""
-      ],
-      "Email": [
-        ""
-      ],
-      "Phone": [
-        ""
-      ],
-      "Address": [
-        ""
-      ],
-      "Photo": [
-        ""
-      ],
-      "Organization": [
-        ""
-      ],
-      "Birthday": [
-        ""
-      ],
-      "Anniversary": [
-        ""
-      ],
-      "Title": [
-        ""
-      ],
-      "Role": [
-        ""
-      ],
-      "Note": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Gender": [
-        ""
-      ],
-      "Language": [
-        ""
-      ],
-      "Timezone": [
-        ""
-      ],
-      "Geo": [
-        ""
-      ],
-      "Logo": [
-        ""
-      ],
-      "Member": [
-        ""
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        ""
-      ],
-      "Personal": [
-        ""
-      ],
-      "Mobile": [
-        ""
-      ],
-      "Main": [
-        ""
-      ],
-      "Yomi": [
-        ""
-      ],
-      "Other": [
-        ""
-      ],
-      "Fax": [
-        ""
-      ],
-      "Pager": [
-        ""
-      ]
-    },
-    "Property type": {
-      "Email": [
-        ""
-      ],
-      "Home": [
-        ""
-      ],
-      "Work": [
-        ""
-      ],
-      "Other": [
-        ""
-      ],
-      "Phone": [
-        ""
-      ],
-      "Mobile": [
-        ""
-      ],
-      "Main": [
-        ""
-      ],
-      "Fax": [
-        ""
-      ],
-      "Pager": [
-        ""
-      ],
-      "Address": [
-        ""
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "Relace vypršela."
-      ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
-      ],
-      "Servers are unreachable.": [
-        "Servery jsou nedostupné."
-      ],
-      "Custom daily": [
-        ""
-      ],
-      "Custom weekly": [
-        ""
-      ],
-      "Custom monthly": [
-        ""
-      ],
-      "Custom yearly": [
-        ""
-      ],
-      "Custom": [
-        "Vlastní"
-      ],
-      "Daily": [
-        "Denně"
-      ],
-      "Monthly ${ onDayString }": [
-        "Měsíčně ${ onDayString }"
-      ],
-      "Yearly": [
-        "Ročně"
-      ],
-      "Loading": [
-        "Načítá se"
-      ],
-      "No results found": [
-        "Nebyly nalezeny žádné výsledky"
-      ],
-      "support team": [
-        ""
-      ],
-      "No contacts added yet": [
-        "Žádné kontakty dosud nebyly přidány"
-      ],
-      "Week": [
-        "Týden"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Chystáte se otevřít další záložku prohlížeče a navštívit odkaz:"
-      ],
-      "Learn more": [
-        "Více informací"
-      ],
-      "Drop the file here to upload": [
-        "Přetažením sem, nahrajte soubor"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } člen)",
-        "(${ memberCount } členové)",
-        "(${ memberCount } členů)",
-        "(${ memberCount } členů)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na „Požádat o nový kód“ pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko „Upravit“ pro její opravu."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
-      ],
-      "Loading ${ appName }": [
-        "Načítám ${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } člen",
-        "${ contactEmailsLength } členové",
-        "${ contactEmailsLength } členů",
-        "${ contactEmailsLength } členů"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } a ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        ""
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        ""
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        ""
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        ""
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        ""
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        ""
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        ""
-      ],
-      "${ updated } contact updated successfully.": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        ""
-      ],
-      "Key fingerprint": [
-        "Identifikátor klíče"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        ""
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        ""
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        ""
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        ""
-      ],
-      "Group assignment applied": [
-        "Přiřazení skupiny bylo aplikováno"
-      ],
-      "Create a new contact group": [
-        "Vytvořit novou skupinu kontaktů"
-      ],
-      "No group found": [
-        "Nebyla nalezena žádná skupina"
-      ],
-      "Duplicate key updated": [
-        "Duplicitní klíč byl aktualizován"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        ""
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        ""
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "Výchozí"
-      ],
-      "No email address": [
-        "Žádná e-mailová adresa"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt nalezen",
-        "${ contactsCount } kontakty nalezeny",
-        "${ contactsCount } kontaktů nalezeno",
-        "${ contactsCount } kontaktů nalezeno"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } skupina nalezena",
-        "${ groupCounts } skupiny nalezeny",
-        "${ groupCounts } skupin nalezeno",
-        "${ groupCounts } skupin nalezeno"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Podporujeme import souborů CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací. Podporujeme také import vCard 4.0. (kódování UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-mailová adresa",
-        "${ addressCount } e-mailové adresy",
-        "${ addressCount } e-mailových adres",
-        "${ addressCount } e-mailových adres"
-      ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "zde"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        ""
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        ""
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        ""
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup byl omezen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce."
-      ],
-      "Free up some space or add more storage space.": [
-        "Uvolněte místo nebo přidejte další úložný prostor."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste 100% kapacity úložiště. Nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Připojení k internetu obnoveno."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Připojení k internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "Manage your calendars": [
-        ""
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
-      ],
-      "Loading events": [
-        "Načítání událostí"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        ""
-      ],
-      "Would you like to delete the event anyway?": [
-        ""
-      ],
-      "None of the participants can be notified about your changes:": [
-        ""
-      ],
-      "The following participants cannot be notified about your changes:": [
-        ""
-      ],
-      "Would you like to continue anyway?": [
-        ""
-      ],
-      "Discard changes?": [
-        "Zrušit změny?"
-      ],
-      "You will lose all unsaved changes.": [
-        "Ztratíte všechny neuložené změny."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        ""
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        ""
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        ""
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        ""
-      ],
-      "Would you like to delete this event?": [
-        "Chcete smazat tuto událost?"
-      ],
-      "Which event would you like to delete?": [
-        ""
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        ""
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        ""
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        ""
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        ""
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        ""
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        ""
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        ""
-      ],
-      "Would you like to delete all the events in this series?": [
-        ""
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        ""
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        ""
-      ],
-      "Which event would you like to update?": [
-        "Kterou událost chcete aktualizovat?"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        ""
-      ],
-      "Would you like to update this event?": [
-        "Chcete aktualizovat tuto událost?"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        ""
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        ""
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        ""
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        ""
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        ""
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        ""
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        ""
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        ""
-      ],
-      "Would you like to update all events in this series?": [
-        ""
-      ],
-      "Previous modifications on this series will be lost.": [
-        ""
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        ""
-      ],
-      "Frequency modifications will be lost.": [
-        ""
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        ""
-      ],
-      "Update recurring event": [
-        "Aktualizovat opakující se událost"
-      ],
-      "Added and removed participants will be notified.": [
-        ""
-      ],
-      "An invitation will be sent to added participants.": [
-        ""
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        ""
-      ],
-      "Existent, added and removed participants will be notified.": [
-        ""
-      ],
-      "Existent and added participants will be notified.": [
-        ""
-      ],
-      "Removed participants will be notified.": [
-        ""
-      ],
-      "Existent and removed participants will be notified.": [
-        ""
-      ],
-      "An invitation will be sent to the event participants.": [
-        ""
-      ],
-      "Please remove the duplicates and try again.": [
-        ""
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        ""
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        ""
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        ""
-      ],
-      "Loading event": [
-        "Načítání události"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } začíná právě teď"
-      ],
-      "${ title } starts today": [
-        ""
-      ],
-      "${ title } started at ${ formattedHour }": [
-        ""
-      ],
-      "${ title } started yesterday": [
-        ""
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        ""
-      ],
-      "${ title } started on ${ formattedDate }": [
-        ""
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        ""
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } začalo ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } začal/a ${ _formattedDate } v ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } začalo ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } začalo ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } začne v ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } začne zítra"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } začne zítra ve ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } začne ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } začne ${ _formattedDate2 } ve ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } začne ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        ""
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } začne ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } začne ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        ""
-      ]
-    },
-    "Participant name": {
-      "You": [
-        ""
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        ""
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        ""
-      ],
-      "Update for an event on ${ formattedStart }": [
-        ""
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        ""
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        ""
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        ""
-      ],
-      "Invitation: ${ eventTitle }": [
-        ""
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        ""
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        ""
-      ],
-      "When: ${ formattedStart }": [
-        ""
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        ""
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        ""
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        ""
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        ""
-      ],
-      "${ eventTitle } has been cancelled.": [
-        ""
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        ""
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        ""
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        ""
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        ""
-      ],
-      "on the first Monday": [
-        ""
-      ],
-      "on the first Tuesday": [
-        ""
-      ],
-      "on the first Wednesday": [
-        ""
-      ],
-      "on the first Thursday": [
-        ""
-      ],
-      "on the first Friday": [
-        ""
-      ],
-      "on the first Saturday": [
-        ""
-      ],
-      "on the second Sunday": [
-        ""
-      ],
-      "on the second Monday": [
-        ""
-      ],
-      "on the second Tuesday": [
-        ""
-      ],
-      "on the second Wednesday": [
-        ""
-      ],
-      "on the second Thursday": [
-        ""
-      ],
-      "on the second Friday": [
-        ""
-      ],
-      "on the second Saturday": [
-        ""
-      ],
-      "on the third Sunday": [
-        ""
-      ],
-      "on the third Monday": [
-        ""
-      ],
-      "on the third Tuesday": [
-        ""
-      ],
-      "on the third Wednesday": [
-        ""
-      ],
-      "on the third Thursday": [
-        ""
-      ],
-      "on the third Friday": [
-        ""
-      ],
-      "on the third Saturday": [
-        ""
-      ],
-      "on the fourth Sunday": [
-        ""
-      ],
-      "on the fourth Monday": [
-        ""
-      ],
-      "on the fourth Tuesday": [
-        ""
-      ],
-      "on the fourth Wednesday": [
-        ""
-      ],
-      "on the fourth Thursday": [
-        ""
-      ],
-      "on the fourth Friday": [
-        ""
-      ],
-      "on the fourth Saturday": [
-        ""
-      ],
-      "on the last Sunday": [
-        ""
-      ],
-      "on the last Monday": [
-        ""
-      ],
-      "on the last Tuesday": [
-        ""
-      ],
-      "on the last Wednesday": [
-        ""
-      ],
-      "on the last Thursday": [
-        ""
-      ],
-      "on the last Friday": [
-        ""
-      ],
-      "on the last Saturday": [
-        ""
-      ],
-      "on day ${ dayOfMonth }": [
-        ""
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "until ${ dateString }": [
-        ""
-      ],
-      "Daily": [
-        ""
-      ],
-      "Every ${ interval } day": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Daily, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Daily, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        ""
-      ],
-      "Monday": [
-        ""
-      ],
-      "Tuesday": [
-        ""
-      ],
-      "Wednesday": [
-        ""
-      ],
-      "Thursday": [
-        ""
-      ],
-      "Friday": [
-        ""
-      ],
-      "Saturday": [
-        ""
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        ""
-      ],
-      "Every ${ interval } week on all days": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Sunday": [
-        ""
-      ],
-      "Every ${ interval } week on Sunday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Monday": [
-        ""
-      ],
-      "Every ${ interval } week on Monday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Tuesday": [
-        ""
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Wednesday": [
-        ""
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Thursday": [
-        ""
-      ],
-      "Every ${ interval } week on Thursday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Friday": [
-        ""
-      ],
-      "Every ${ interval } week on Friday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Saturday": [
-        ""
-      ],
-      "Every ${ interval } week on Saturday": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on all days, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on all days, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        ""
-      ],
-      "Every ${ interval } year": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Yearly, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "Yearly, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "",
-        "",
-        "",
-        ""
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        ""
-      ],
-      "Basic actions": [
-        ""
-      ],
-      "Folder shortcuts": [
-        ""
-      ],
-      "Composer shortcuts": [
-        ""
-      ],
-      "List shortcuts": [
-        ""
-      ],
-      "Action shortcuts": [
-        ""
-      ],
-      "Message shortcuts": [
-        ""
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        ""
-      ],
-      "Jump to first": [
-        ""
-      ],
-      "Move down": [
-        ""
-      ],
-      "Jump to last": [
-        ""
-      ],
-      "Move right / expand": [
-        ""
-      ],
-      "Move left / collapse": [
-        ""
-      ],
-      "Apply / open": [
-        ""
-      ],
-      "Cancel / close": [
-        ""
-      ],
-      "Open this modal": [
-        ""
-      ],
-      "Select / unselect": [
-        ""
-      ],
-      "Go to Inbox": [
-        ""
-      ],
-      "Go to Archive": [
-        ""
-      ],
-      "Go to Sent": [
-        ""
-      ],
-      "Go to Starred": [
-        ""
-      ],
-      "Go to Drafts": [
-        ""
-      ],
-      "Go to Trash": [
-        ""
-      ],
-      "Go to Spam": [
-        ""
-      ],
-      "Go to All Mail": [
-        ""
-      ],
-      "Save draft": [
-        ""
-      ],
-      "Send email": [
-        ""
-      ],
-      "Close draft": [
-        ""
-      ],
-      "Minimize / maximize composer": [
-        ""
-      ],
-      "Expand / contract composer": [
-        ""
-      ],
-      "Attach file": [
-        ""
-      ],
-      "Add expiration time": [
-        ""
-      ],
-      "Add encryption": [
-        ""
-      ],
-      "Discard draft": [
-        ""
-      ],
-      "Open previous message": [
-        ""
-      ],
-      "Open next message": [
-        ""
-      ],
-      "Show unread emails": [
-        ""
-      ],
-      "Show all emails": [
-        ""
-      ],
-      "Select / unselect all": [
-        ""
-      ],
-      "Search": [
-        ""
-      ],
-      "New message": [
-        ""
-      ],
-      "Star": [
-        ""
-      ],
-      "Mark as unread": [
-        ""
-      ],
-      "Label as...": [
-        ""
-      ],
-      "Create filter with...": [
-        ""
-      ],
-      "Move to...": [
-        ""
-      ],
-      "Move to Inbox": [
-        ""
-      ],
-      "Move to Archive": [
-        ""
-      ],
-      "Move to Spam": [
-        ""
-      ],
-      "Move to Trash": [
-        ""
-      ],
-      "Delete permanently": [
-        ""
-      ],
-      "Reply": [
-        ""
-      ],
-      "Reply all": [
-        ""
-      ],
-      "Forward": [
-        ""
-      ],
-      "Load remote content": [
-        ""
-      ],
-      "Load embedded images": [
-        ""
-      ],
-      "Show original message": [
-        ""
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        ""
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        ""
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        ""
-      ],
-      "Encryption failed": [
-        ""
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        ""
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        ""
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        ""
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        ""
-      ]
-    },
-    "Message": {
-      "Re:": [
-        ""
-      ],
-      "Fw:": [
-        ""
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Kopírovat"
-      ],
-      "Reveal password": [
-        "Ukázat heslo"
-      ],
-      "Hide password": [
-        "Skrýt heslo"
-      ],
-      "Street address": [
-        "Ulice"
-      ],
-      "City": [
-        "Město"
-      ],
-      "Region": [
-        "Kraj"
-      ],
-      "Postal code": [
-        "PSČ"
-      ],
-      "Country": [
-        "Země"
-      ],
-      "Post office box": [
-        "P.O.Box"
-      ],
-      "Extended address": [
-        "Rozšířená adresa"
-      ],
-      "Do not ask again": [
-        "Příště se neptat"
-      ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
-      "Phone number": [
-        "Telefonní číslo"
-      ],
-      "Verification code": [
-        "Ověřovací kód"
-      ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
-      ],
-      "Add email address": [
-        "Přidat e-mailovou adresu"
-      ],
-      "Email format": [
-        "Formát e-mailu"
-      ],
-      "Add image URL": [
-        "Přidat URL obrázku"
-      ],
-      "Upload picture": [
-        "Nahrát obrázek"
-      ],
-      "Add to group": [
-        "Přidat do skupiny"
-      ],
-      "Encrypt emails": [
-        "Šifrovat e-maily"
-      ],
-      "Sign emails": [
-        "Podepsat e-maily"
-      ],
-      "Cryptographic scheme": [
-        "Šifrovací schéma"
-      ],
-      "Public keys": [
-        "Veřejné klíče"
-      ],
-      "Automatically save contacts": [
-        "Automaticky ukládat kontakty"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
-      ],
-      "Export contacts": [
-        "Exportovat kontakty"
-      ],
-      "Operating system": [
-        "Operační systém"
-      ],
-      "Operating system version": [
-        "Verze operačního systému"
-      ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Co se stalo?"
-      ],
-      "System information": [
-        "Systémové informace"
-      ],
-      "Browser": [
-        "Prohlížeč"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Zobrazované jméno"
-      ],
-      "Cancel": [
-        "Zrušit"
-      ],
-      "Submit": [
-        "Odeslat"
-      ],
-      "Password": [
-        "Heslo"
-      ],
-      "Mailbox password": [
-        "Heslo k e-mailové schránce"
-      ],
-      "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
-      ],
-      "Username or ProtonMail address": [
-        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        "Povolit Beta přístup"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Popis"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Celý den"
-      ],
-      "Repeat on": [
-        "Opakovat v"
-      ],
-      "Repeat every": [
-        "Opakovat každý"
-      ],
-      "Ends": [
-        "Končí"
-      ],
-      "Organizer": [
-        "Organizátor"
-      ],
-      "Optional": [
-        "Volitelné"
-      ],
-      "Time of the event": [
-        "Čas události"
-      ],
-      "Event time": [
-        "Čas"
-      ],
-      "Event title": [
-        "Název události"
-      ],
-      "Event frequency": [
-        "Frekvence události"
-      ],
-      "Event location": [
-        "Místo konání události"
-      ],
-      "Event notifications": [
-        "Oznámení události"
-      ],
-      "Participants": [
-        "Účastníci"
-      ],
-      "Your calendars": [
-        ""
-      ]
-    },
     "Action": {
+      "Close": [
+        "Zavřít"
+      ],
       "Close modal": [
         "Zavřít okno"
       ],
@@ -2322,9 +340,6 @@
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "Close": [
-        "Zavřít"
       ],
       "Close navigation": [
         "Zavřít menu"
@@ -2578,6 +593,9 @@
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
       ],
+      "Chat with us": [
+        "Komunikace s námi"
+      ],
       "I have a question": [
         "Mám dotaz"
       ],
@@ -2629,9 +647,6 @@
       "Back": [
         "Zpět"
       ],
-      "Log in": [
-        "Přihlásit se"
-      ],
       "Remove bonuses": [
         ""
       ],
@@ -2679,6 +694,9 @@
       ],
       "Increase": [
         ""
+      ],
+      "Log in": [
+        "Přihlásit se"
       ],
       "Close this banner": [
         "Zavřít tento banner"
@@ -2775,143 +793,6 @@
       ],
       "Close popover": [
         ""
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Zjistit více"
-      ],
-      "Request an invite": [
-        "Požádat o pozvánku"
-      ],
-      "clearing your browser cache": [
-        "vymazávání mezipaměti prohlížeče"
-      ],
-      "Upgrade": [
-        "Upgradovat"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Zaplatit fakturu"
-      ],
-      "Upgrade account": [
-        "Upgradovat účet"
-      ],
-      "Calendars": [
-        "Kalendáře"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Subscribed calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Např., "
-      ],
-      "Start typing an email address": [
-        "Začněte psát e-mailovou adresu"
-      ],
-      "Image URL": [
-        "URL adresa obrázku"
-      ],
-      "Filter groups": [
-        "Filtrovat skupiny"
-      ],
-      "Search for name or email": [
-        "Vyhledat jméno nebo e-mail"
-      ],
-      "Search for group name": [
-        "Vyhledat název skupiny"
-      ],
-      "Name": [
-        "Jméno"
-      ],
-      "OS name": [
-        "Název OS"
-      ],
-      "OS version": [
-        "Verze OS"
-      ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
-      "A way to contact you": [
-        "Způsob, jak vás kontaktovat"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Popište prosím problém a přiložte všechny chybové zprávy"
-      ],
-      "Browser name": [
-        "Název prohlížeče"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "např. Julia Smith"
-      ],
-      "Mailbox password": [
-        "Heslo k e-mailové schránce"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Přidat titulek"
-      ],
-      "Add location": [
-        "Přidat polohu"
-      ],
-      "Add description": [
-        "Přidat popis"
-      ],
-      "Add participants": [
-        "Přidat účastníky"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hodina",
-        "",
-        "",
-        "${ hours } hodin"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minut"
       ]
     },
     "Title": {
@@ -3095,18 +976,6 @@
       "Give feedback": [
         ""
       ],
-      "Sign in again to continue": [
-        "Chcete-li pokračovat, znovu se přihlaste"
-      ],
-      "Account suspended": [
-        "Účet pozastaven"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
-      ],
-      "Enter your password": [
-        "Zadejte Vaše heslo"
-      ],
       "Confirm loss of Proton bonuses": [
         ""
       ],
@@ -3196,6 +1065,18 @@
       ],
       "${ appName } customization": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Chcete-li pokračovat, znovu se přihlaste"
+      ],
+      "Account suspended": [
+        "Účet pozastaven"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
+      ],
+      "Enter your password": [
+        "Zadejte Vaše heslo"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Klávesové zkratky"
@@ -3355,6 +1236,1146 @@
       ],
       "CANCELLED": [
         ""
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ],
+      "Loading": [
+        "Načítá se"
+      ],
+      "support team": [
+        ""
+      ],
+      "No contacts added yet": [
+        "Žádné kontakty dosud nebyly přidány"
+      ],
+      "Week": [
+        "Týden"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Chystáte se otevřít další záložku prohlížeče a navštívit odkaz:"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Drop the file here to upload": [
+        "Přetažením sem, nahrajte soubor"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na „Požádat o nový kód“ pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko „Upravit“ pro její opravu."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
+      ],
+      "Loading ${ appName }": [
+        "Načítám ${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } člen",
+        "${ contactEmailsLength } členové",
+        "${ contactEmailsLength } členů",
+        "${ contactEmailsLength } členů"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } a ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        ""
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        ""
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        ""
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        ""
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        ""
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        ""
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        ""
+      ],
+      "${ updated } contact updated successfully.": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        ""
+      ],
+      "Key fingerprint": [
+        "Identifikátor klíče"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        ""
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        ""
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        ""
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        ""
+      ],
+      "Group assignment applied": [
+        "Přiřazení skupiny bylo aplikováno"
+      ],
+      "Create a new contact group": [
+        "Vytvořit novou skupinu kontaktů"
+      ],
+      "No group found": [
+        "Nebyla nalezena žádná skupina"
+      ],
+      "Duplicate key updated": [
+        "Duplicitní klíč byl aktualizován"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        ""
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        ""
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Primary": [
+        "Výchozí"
+      ],
+      "No email address": [
+        "Žádná e-mailová adresa"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt nalezen",
+        "${ contactsCount } kontakty nalezeny",
+        "${ contactsCount } kontaktů nalezeno",
+        "${ contactsCount } kontaktů nalezeno"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } skupina nalezena",
+        "${ groupCounts } skupiny nalezeny",
+        "${ groupCounts } skupin nalezeno",
+        "${ groupCounts } skupin nalezeno"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Podporujeme import souborů CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací. Podporujeme také import vCard 4.0. (kódování UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mailová adresa",
+        "${ addressCount } e-mailové adresy",
+        "${ addressCount } e-mailových adres",
+        "${ addressCount } e-mailových adres"
+      ],
+      "Screenshot(s) attached": [
+        "Snímek/snímky byly připojeny"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Před zrušením předplatného musíte odebrat všechny své osobní kalendáře a jejich sdílené odkazy. ${ linkButton }"
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
+      "here": [
+        "zde"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        ""
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        ""
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        ""
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup byl omezen. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce."
+      ],
+      "Free up some space or add more storage space.": [
+        "Uvolněte místo nebo přidejte další úložný prostor."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Dosáhli jste 100% kapacity úložiště. Nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Připojení k internetu obnoveno."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Připojení k internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "Session timed out.": [
+        "Relace vypršela."
+      ],
+      "Internet connection lost.": [
+        "Připojení k Internetu bylo ztraceno."
+      ],
+      "Servers are unreachable.": [
+        "Servery jsou nedostupné."
+      ],
+      "Custom daily": [
+        ""
+      ],
+      "Custom weekly": [
+        ""
+      ],
+      "Custom monthly": [
+        ""
+      ],
+      "Custom yearly": [
+        ""
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Daily": [
+        "Denně"
+      ],
+      "Monthly ${ onDayString }": [
+        "Měsíčně ${ onDayString }"
+      ],
+      "Yearly": [
+        "Ročně"
+      ],
+      "Manage your calendars": [
+        ""
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        ""
+      ],
+      "Loading events": [
+        "Načítání událostí"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        ""
+      ],
+      "Would you like to delete the event anyway?": [
+        ""
+      ],
+      "None of the participants can be notified about your changes:": [
+        ""
+      ],
+      "The following participants cannot be notified about your changes:": [
+        ""
+      ],
+      "Would you like to continue anyway?": [
+        ""
+      ],
+      "Discard changes?": [
+        "Zrušit změny?"
+      ],
+      "You will lose all unsaved changes.": [
+        "Ztratíte všechny neuložené změny."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        ""
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        ""
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        ""
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        ""
+      ],
+      "Would you like to delete this event?": [
+        "Chcete smazat tuto událost?"
+      ],
+      "Which event would you like to delete?": [
+        ""
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        ""
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        ""
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        ""
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        ""
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        ""
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        ""
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        ""
+      ],
+      "Would you like to delete all the events in this series?": [
+        ""
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        ""
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        ""
+      ],
+      "Which event would you like to update?": [
+        "Kterou událost chcete aktualizovat?"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        ""
+      ],
+      "Would you like to update this event?": [
+        "Chcete aktualizovat tuto událost?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        ""
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        ""
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        ""
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        ""
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        ""
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        ""
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        ""
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        ""
+      ],
+      "Would you like to update all events in this series?": [
+        ""
+      ],
+      "Previous modifications on this series will be lost.": [
+        ""
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        ""
+      ],
+      "Frequency modifications will be lost.": [
+        ""
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        ""
+      ],
+      "Update recurring event": [
+        "Aktualizovat opakující se událost"
+      ],
+      "Added and removed participants will be notified.": [
+        ""
+      ],
+      "An invitation will be sent to added participants.": [
+        ""
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        ""
+      ],
+      "Existent, added and removed participants will be notified.": [
+        ""
+      ],
+      "Existent and added participants will be notified.": [
+        ""
+      ],
+      "Removed participants will be notified.": [
+        ""
+      ],
+      "Existent and removed participants will be notified.": [
+        ""
+      ],
+      "An invitation will be sent to the event participants.": [
+        ""
+      ],
+      "Please remove the duplicates and try again.": [
+        ""
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        "Změnili jste nastavení hesla a události propojené do kalendářů, nemohli být šifrovány. Jakékoliv vytvořené a sdílené odkazy kalendářů už nebudou dále fungovat. Přihlášené a aktivní kalendáře budou synchronizovány po pár minutech."
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        ""
+      ],
+      "Loading event": [
+        "Načítání události"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Reveal password": [
+        "Ukázat heslo"
+      ],
+      "Hide password": [
+        "Skrýt heslo"
+      ],
+      "Street address": [
+        "Ulice"
+      ],
+      "City": [
+        "Město"
+      ],
+      "Region": [
+        "Kraj"
+      ],
+      "Postal code": [
+        "PSČ"
+      ],
+      "Country": [
+        "Země"
+      ],
+      "Post office box": [
+        "P.O.Box"
+      ],
+      "Extended address": [
+        "Rozšířená adresa"
+      ],
+      "Do not ask again": [
+        "Příště se neptat"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
+      "Phone number": [
+        "Telefonní číslo"
+      ],
+      "Verification code": [
+        "Ověřovací kód"
+      ],
+      "Enter the 6-digit code": [
+        "Zadejte 6-místný kód"
+      ],
+      "Add email address": [
+        "Přidat e-mailovou adresu"
+      ],
+      "Email format": [
+        "Formát e-mailu"
+      ],
+      "Add image URL": [
+        "Přidat URL obrázku"
+      ],
+      "Upload picture": [
+        "Nahrát obrázek"
+      ],
+      "Add to group": [
+        "Přidat do skupiny"
+      ],
+      "Encrypt emails": [
+        "Šifrovat e-maily"
+      ],
+      "Sign emails": [
+        "Podepsat e-maily"
+      ],
+      "Cryptographic scheme": [
+        "Šifrovací schéma"
+      ],
+      "Public keys": [
+        "Veřejné klíče"
+      ],
+      "Automatically save contacts": [
+        "Automaticky ukládat kontakty"
+      ],
+      "Import contacts": [
+        "Importovat kontakty"
+      ],
+      "Export contacts": [
+        "Exportovat kontakty"
+      ],
+      "Operating system": [
+        "Operační systém"
+      ],
+      "Operating system version": [
+        "Verze operačního systému"
+      ],
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "What happened?": [
+        "Co se stalo?"
+      ],
+      "System information": [
+        "Systémové informace"
+      ],
+      "Browser": [
+        "Prohlížeč"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Zobrazované jméno"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Submit": [
+        "Odeslat"
+      ],
+      "Password": [
+        "Heslo"
+      ],
+      "Mailbox password": [
+        "Heslo k e-mailové schránce"
+      ],
+      "Two-factor authentication code": [
+        "Kód dvoufaktorového ověření"
+      ],
+      "Username or ProtonMail address": [
+        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové zkratky"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "Povolit Beta přístup"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Popis"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Celý den"
+      ],
+      "Repeat on": [
+        "Opakovat v"
+      ],
+      "Repeat every": [
+        "Opakovat každý"
+      ],
+      "Ends": [
+        "Končí"
+      ],
+      "Organizer": [
+        "Organizátor"
+      ],
+      "Optional": [
+        "Volitelné"
+      ],
+      "Time of the event": [
+        "Čas události"
+      ],
+      "Event time": [
+        "Čas"
+      ],
+      "Event title": [
+        "Název události"
+      ],
+      "Event frequency": [
+        "Frekvence události"
+      ],
+      "Event location": [
+        "Místo konání události"
+      ],
+      "Event notifications": [
+        "Oznámení události"
+      ],
+      "Participants": [
+        "Účastníci"
+      ],
+      "Your calendars": [
+        ""
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Zjistit více"
+      ],
+      "Request an invite": [
+        "Požádat o pozvánku"
+      ],
+      "clearing your browser cache": [
+        "vymazávání mezipaměti prohlížeče"
+      ],
+      "Upgrade": [
+        "Upgradovat"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Zaplatit fakturu"
+      ],
+      "Upgrade account": [
+        "Upgradovat účet"
+      ],
+      "Calendars": [
+        "Kalendáře"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        "Odběr kalendářů"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Např., "
+      ],
+      "Start typing an email address": [
+        "Začněte psát e-mailovou adresu"
+      ],
+      "Image URL": [
+        "URL adresa obrázku"
+      ],
+      "Filter groups": [
+        "Filtrovat skupiny"
+      ],
+      "Search for name or email": [
+        "Vyhledat jméno nebo e-mail"
+      ],
+      "Search for group name": [
+        "Vyhledat název skupiny"
+      ],
+      "Name": [
+        "Jméno"
+      ],
+      "OS name": [
+        "Název OS"
+      ],
+      "OS version": [
+        "Verze OS"
+      ],
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "A way to contact you": [
+        "Způsob, jak vás kontaktovat"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Popište prosím problém a přiložte všechny chybové zprávy"
+      ],
+      "Browser name": [
+        "Název prohlížeče"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "např. Julia Smith"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Mailbox password": [
+        "Heslo k e-mailové schránce"
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Přidat titulek"
+      ],
+      "Add location": [
+        "Přidat polohu"
+      ],
+      "Add description": [
+        "Přidat popis"
+      ],
+      "Add participants": [
+        "Přidat účastníky"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "",
+        "",
+        "${ hours } hodin"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
       ]
     },
     "Storage": {
@@ -3544,6 +2565,9 @@
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
       ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Reporty nejsou šifrovány end-to-end metodou, neposílejte žádné citlivé informace."
       ],
@@ -3610,7 +2634,7 @@
         "Nastavení bylo uloženo"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        ""
+        "Kalendář je vytvořen. Synchronizace zabere pár minut."
       ],
       "Calendar created": [
         ""
@@ -4815,10 +3839,10 @@
     },
     "Notification type": {
       "notification": [
-        ""
+        "upozornění"
       ],
       "email": [
-        ""
+        "e-mail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -4842,6 +3866,988 @@
         ""
       ],
       "120 minutes": [
+        ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bajtů"
+      ],
+      "KB": [
+        ""
+      ],
+      "MB": [
+        ""
+      ],
+      "GB": [
+        ""
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        ""
+      ],
+      "Email": [
+        ""
+      ],
+      "Phone": [
+        ""
+      ],
+      "Address": [
+        ""
+      ],
+      "Photo": [
+        ""
+      ],
+      "Organization": [
+        ""
+      ],
+      "Birthday": [
+        ""
+      ],
+      "Anniversary": [
+        ""
+      ],
+      "Title": [
+        ""
+      ],
+      "Role": [
+        ""
+      ],
+      "Note": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Gender": [
+        ""
+      ],
+      "Language": [
+        ""
+      ],
+      "Timezone": [
+        ""
+      ],
+      "Geo": [
+        ""
+      ],
+      "Logo": [
+        ""
+      ],
+      "Member": [
+        ""
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        ""
+      ],
+      "Personal": [
+        ""
+      ],
+      "Mobile": [
+        ""
+      ],
+      "Main": [
+        ""
+      ],
+      "Yomi": [
+        ""
+      ],
+      "Other": [
+        ""
+      ],
+      "Fax": [
+        ""
+      ],
+      "Pager": [
+        ""
+      ]
+    },
+    "Property type": {
+      "Email": [
+        ""
+      ],
+      "Home": [
+        ""
+      ],
+      "Work": [
+        ""
+      ],
+      "Other": [
+        ""
+      ],
+      "Phone": [
+        ""
+      ],
+      "Mobile": [
+        ""
+      ],
+      "Main": [
+        ""
+      ],
+      "Fax": [
+        ""
+      ],
+      "Pager": [
+        ""
+      ],
+      "Address": [
+        ""
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } začíná právě teď"
+      ],
+      "${ title } starts today": [
+        ""
+      ],
+      "${ title } started at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started yesterday": [
+        ""
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } začalo ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } začal/a ${ _formattedDate } v ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } začalo ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } začalo ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } začne v ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } začne zítra"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } začne zítra ve ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } začne ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } začne ${ _formattedDate2 } ve ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } začne ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } začne ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } začne ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        ""
+      ]
+    },
+    "Participant name": {
+      "You": [
+        ""
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        ""
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        ""
+      ],
+      "Update for an event on ${ formattedStart }": [
+        ""
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        ""
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        ""
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        ""
+      ],
+      "Invitation: ${ eventTitle }": [
+        ""
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        ""
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        ""
+      ],
+      "When: ${ formattedStart }": [
+        ""
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        ""
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        ""
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        ""
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        ""
+      ],
+      "${ eventTitle } has been cancelled.": [
+        ""
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        ""
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        ""
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        ""
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        ""
+      ],
+      "on the first Monday": [
+        ""
+      ],
+      "on the first Tuesday": [
+        ""
+      ],
+      "on the first Wednesday": [
+        ""
+      ],
+      "on the first Thursday": [
+        ""
+      ],
+      "on the first Friday": [
+        ""
+      ],
+      "on the first Saturday": [
+        ""
+      ],
+      "on the second Sunday": [
+        ""
+      ],
+      "on the second Monday": [
+        ""
+      ],
+      "on the second Tuesday": [
+        ""
+      ],
+      "on the second Wednesday": [
+        ""
+      ],
+      "on the second Thursday": [
+        ""
+      ],
+      "on the second Friday": [
+        ""
+      ],
+      "on the second Saturday": [
+        ""
+      ],
+      "on the third Sunday": [
+        ""
+      ],
+      "on the third Monday": [
+        ""
+      ],
+      "on the third Tuesday": [
+        ""
+      ],
+      "on the third Wednesday": [
+        ""
+      ],
+      "on the third Thursday": [
+        ""
+      ],
+      "on the third Friday": [
+        ""
+      ],
+      "on the third Saturday": [
+        ""
+      ],
+      "on the fourth Sunday": [
+        ""
+      ],
+      "on the fourth Monday": [
+        ""
+      ],
+      "on the fourth Tuesday": [
+        ""
+      ],
+      "on the fourth Wednesday": [
+        ""
+      ],
+      "on the fourth Thursday": [
+        ""
+      ],
+      "on the fourth Friday": [
+        ""
+      ],
+      "on the fourth Saturday": [
+        ""
+      ],
+      "on the last Sunday": [
+        ""
+      ],
+      "on the last Monday": [
+        ""
+      ],
+      "on the last Tuesday": [
+        ""
+      ],
+      "on the last Wednesday": [
+        ""
+      ],
+      "on the last Thursday": [
+        ""
+      ],
+      "on the last Friday": [
+        ""
+      ],
+      "on the last Saturday": [
+        ""
+      ],
+      "on day ${ dayOfMonth }": [
+        ""
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "until ${ dateString }": [
+        ""
+      ],
+      "Daily": [
+        ""
+      ],
+      "Every ${ interval } day": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Daily, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Daily, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        ""
+      ],
+      "Monday": [
+        ""
+      ],
+      "Tuesday": [
+        ""
+      ],
+      "Wednesday": [
+        ""
+      ],
+      "Thursday": [
+        ""
+      ],
+      "Friday": [
+        ""
+      ],
+      "Saturday": [
+        ""
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        ""
+      ],
+      "Every ${ interval } week on all days": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Sunday": [
+        ""
+      ],
+      "Every ${ interval } week on Sunday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Monday": [
+        ""
+      ],
+      "Every ${ interval } week on Monday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Tuesday": [
+        ""
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Wednesday": [
+        ""
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Thursday": [
+        ""
+      ],
+      "Every ${ interval } week on Thursday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Friday": [
+        ""
+      ],
+      "Every ${ interval } week on Friday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Saturday": [
+        ""
+      ],
+      "Every ${ interval } week on Saturday": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        ""
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on all days, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on all days, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        ""
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        ""
+      ],
+      "Every ${ interval } year": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Yearly, ${ timesString }": [
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Yearly, ${ untilString }": [
+        ""
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        ""
+      ],
+      "Basic actions": [
+        ""
+      ],
+      "Folder shortcuts": [
+        ""
+      ],
+      "Composer shortcuts": [
+        ""
+      ],
+      "List shortcuts": [
+        ""
+      ],
+      "Action shortcuts": [
+        ""
+      ],
+      "Message shortcuts": [
+        ""
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        ""
+      ],
+      "Jump to first": [
+        ""
+      ],
+      "Move down": [
+        ""
+      ],
+      "Jump to last": [
+        ""
+      ],
+      "Move right / expand": [
+        ""
+      ],
+      "Move left / collapse": [
+        ""
+      ],
+      "Apply / open": [
+        ""
+      ],
+      "Cancel / close": [
+        ""
+      ],
+      "Open this modal": [
+        ""
+      ],
+      "Select / unselect": [
+        ""
+      ],
+      "Go to Inbox": [
+        ""
+      ],
+      "Go to Archive": [
+        ""
+      ],
+      "Go to Sent": [
+        ""
+      ],
+      "Go to Starred": [
+        ""
+      ],
+      "Go to Drafts": [
+        ""
+      ],
+      "Go to Trash": [
+        ""
+      ],
+      "Go to Spam": [
+        ""
+      ],
+      "Go to All Mail": [
+        ""
+      ],
+      "Save draft": [
+        ""
+      ],
+      "Send email": [
+        ""
+      ],
+      "Close draft": [
+        ""
+      ],
+      "Minimize / maximize composer": [
+        ""
+      ],
+      "Expand / contract composer": [
+        ""
+      ],
+      "Attach file": [
+        ""
+      ],
+      "Add expiration time": [
+        ""
+      ],
+      "Add encryption": [
+        ""
+      ],
+      "Discard draft": [
+        ""
+      ],
+      "Open previous message": [
+        ""
+      ],
+      "Open next message": [
+        ""
+      ],
+      "Show unread emails": [
+        ""
+      ],
+      "Show all emails": [
+        ""
+      ],
+      "Select / unselect all": [
+        ""
+      ],
+      "Search": [
+        ""
+      ],
+      "New message": [
+        ""
+      ],
+      "Star": [
+        ""
+      ],
+      "Mark as unread": [
+        ""
+      ],
+      "Label as...": [
+        ""
+      ],
+      "Create filter with...": [
+        ""
+      ],
+      "Move to...": [
+        ""
+      ],
+      "Move to Inbox": [
+        ""
+      ],
+      "Move to Archive": [
+        ""
+      ],
+      "Move to Spam": [
+        ""
+      ],
+      "Move to Trash": [
+        ""
+      ],
+      "Delete permanently": [
+        ""
+      ],
+      "Reply": [
+        ""
+      ],
+      "Reply all": [
+        ""
+      ],
+      "Forward": [
+        ""
+      ],
+      "Load remote content": [
+        ""
+      ],
+      "Load embedded images": [
+        ""
+      ],
+      "Show original message": [
+        ""
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        ""
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        ""
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        ""
+      ],
+      "Encryption failed": [
+        ""
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        ""
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        ""
+      ]
+    },
+    "Message": {
+      "Re:": [
+        ""
+      ],
+      "Fw:": [
         ""
       ]
     },
@@ -4959,7 +4965,7 @@
     },
     "Calendar status": {
       "not synced": [
-        ""
+        "bez synchronizace"
       ]
     },
     "Disabled calendar name suffix": {
@@ -5059,7 +5065,7 @@
     },
     "Notification suffix": {
       "by email": [
-        ""
+        "e-mailem"
       ]
     },
     "Event info": {

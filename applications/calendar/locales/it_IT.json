@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "Questo campo è obbligatorio"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
-      ],
-      "Email is not valid": [
-        "Email non valida"
-      ],
-      "Not a valid number": [
-        "Numero non valido"
-      ],
-      "Passwords do not match": [
-        "Le password non corrispondono"
-      ],
-      "Request timed out.": [
-        "Timeout della richiesta."
-      ],
-      "Signature verification failed": [
-        "Verifica della firma fallita"
-      ],
-      "Could not find address ${ email }.": [
-        "Impossibile trovare l'indirizzo ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Chiave privata primaria indirizzo non trovata"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "La chiave privata primaria del calendario non è decifrata"
-      ],
-      "Missing signature": [
-        "Firma mancante"
-      ],
-      "Contact signature not verified": [
-        "Firma del contatto non verificata"
-      ],
-      "Signature not verified": [
-        "Firma non verificata"
-      ],
-      "Invalid name": [
-        "Nome non valido"
-      ],
-      "Email address disabled": [
-        "Indirizzo email disabilitato"
-      ],
-      "No keys retrieved for internal user": [
-        "Nessuna chiave recuperata per l'utente interno"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nessuna chiave valida recuperata per l'utente interno"
-      ],
-      "Contact signature could not be verified": [
-        "La firma del contatto non può essere verificata"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nessuna chiave recuperata per l'utente locale è valida per l'invio"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Le chiavi attendibili non sono valide per l'invio"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nessuna chiave WKD recuperata per l'utente è valida per l'invio"
-      ],
-      "The sending key is not valid": [
-        "La chiave di invio non è valida"
-      ],
       "Unknown error": [
         "Errore sconosciuto"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "Indirizzo email non valido"
+      ],
+      "This field is required": [
+        "Questo campo è obbligatorio"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
@@ -149,17 +86,14 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
+      "Invalid name": [
+        "Nome non valido"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Password della casella di posta non corretta. Riprova"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Credenziali di accesso non valide. Si prega di riprovare"
       ],
       "Process aborted": [
         "Processo interrotto"
@@ -221,6 +155,12 @@
       "Invalid code": [
         "Codice non valido"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Password della casella di posta non corretta. Riprova"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Credenziali di accesso non valide. Si prega di riprovare"
+      ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
       ],
@@ -232,6 +172,66 @@
       ],
       "Name required": [
         "Nome obbligatorio"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "Email is not valid": [
+        "Email non valida"
+      ],
+      "Not a valid number": [
+        "Numero non valido"
+      ],
+      "Passwords do not match": [
+        "Le password non corrispondono"
+      ],
+      "Request timed out.": [
+        "Timeout della richiesta."
+      ],
+      "Signature verification failed": [
+        "Verifica della firma fallita"
+      ],
+      "Could not find address ${ email }.": [
+        "Impossibile trovare l'indirizzo ${ email }."
+      ],
+      "Address primary private key not found": [
+        "Chiave privata primaria indirizzo non trovata"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "La chiave privata primaria del calendario non è decifrata"
+      ],
+      "Missing signature": [
+        "Firma mancante"
+      ],
+      "Contact signature not verified": [
+        "Firma del contatto non verificata"
+      ],
+      "Signature not verified": [
+        "Firma non verificata"
+      ],
+      "Email address disabled": [
+        "Indirizzo email disabilitato"
+      ],
+      "No keys retrieved for internal user": [
+        "Nessuna chiave recuperata per l'utente interno"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Nessuna chiave valida recuperata per l'utente interno"
+      ],
+      "Contact signature could not be verified": [
+        "La firma del contatto non può essere verificata"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Nessuna chiave recuperata per l'utente locale è valida per l'invio"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Le chiavi attendibili non sono valide per l'invio"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nessuna chiave WKD recuperata per l'utente è valida per l'invio"
+      ],
+      "The sending key is not valid": [
+        "La chiave di invio non è valida"
       ],
       "Self invitation not allowed": [
         "Auto-invito non consentito"
@@ -307,1900 +307,10 @@
         "Errore"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La password deve contenere almeno ${ length } carattere",
-        "La password deve contenere almeno ${ length } caratteri"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "byte"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nome"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "Phone": [
-        "Telefono"
-      ],
-      "Address": [
-        "Indirizzo"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organizzazione"
-      ],
-      "Birthday": [
-        "Compleanno"
-      ],
-      "Anniversary": [
-        "Anniversario"
-      ],
-      "Title": [
-        "Titolo"
-      ],
-      "Role": [
-        "Ruolo"
-      ],
-      "Note": [
-        "Nota"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Genere"
-      ],
-      "Language": [
-        "Lingua"
-      ],
-      "Timezone": [
-        "Fuso orario"
-      ],
-      "Geo": [
-        "Geo"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Membro"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Lavoro"
-      ],
-      "Personal": [
-        "Personale"
-      ],
-      "Mobile": [
-        "Mobile"
-      ],
-      "Main": [
-        "Principale"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Altro"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Cercapersone"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Email"
-      ],
-      "Home": [
-        "Casa"
-      ],
-      "Work": [
-        "Lavoro"
-      ],
-      "Other": [
-        "Altro"
-      ],
-      "Phone": [
-        "Telefono"
-      ],
-      "Mobile": [
-        "Mobile"
-      ],
-      "Main": [
-        "Principale"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Cercapersone"
-      ],
-      "Address": [
-        "Indirizzo"
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "Sessione scaduta."
-      ],
-      "Internet connection lost.": [
-        "Connessione ad Internet interrotta."
-      ],
-      "Servers are unreachable.": [
-        "I server non sono raggiungibili."
-      ],
-      "Custom daily": [
-        "Personalizzato giornaliero"
-      ],
-      "Custom weekly": [
-        "Personalizzato settimanale"
-      ],
-      "Custom monthly": [
-        "Personalizzato mensile"
-      ],
-      "Custom yearly": [
-        "Personalizzato annuale"
-      ],
-      "Custom": [
-        "Personalizzato"
-      ],
-      "Daily": [
-        "Giornalmente"
-      ],
-      "Monthly ${ onDayString }": [
-        "Mensile ${ onDayString }"
-      ],
-      "Yearly": [
-        "Annuale"
-      ],
-      "Loading": [
-        "Caricamento"
-      ],
-      "No results found": [
-        "Nessun risultato trovato"
-      ],
-      "support team": [
-        "team di supporto"
-      ],
-      "No contacts added yet": [
-        "Nessun contatto ancora aggiunto"
-      ],
-      "Week": [
-        "Settimana"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Questo link potrebbe essere un attacco omografo e non può essere aperto dai browser Internet Explorer ed Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Stai per aprire un'altra scheda del browser e visitare:"
-      ],
-      "Learn more": [
-        "Per saperne di più"
-      ],
-      "Drop the file here to upload": [
-        "Trascina qui il file per caricare"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } membro)",
-        "(${ memberCount } membri)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Inserisci il codice di verifica inviato a ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica su ${ strong }. Se questo indirizzo email non è corretto, clicca \"Modifica\" per correggerlo."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, si prega di verificare di essere umano."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
-      ],
-      "Loading ${ appName }": [
-        "Caricamento di ${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Membro",
-        "${ contactEmailsLength } Membri"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } e ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a questo gruppo."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a questo gruppo."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ProtonMail firma sempre i messaggi crittografati."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente del compositore. Per favore nota che ProtonMail firma sempre i messaggi crittografati"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Attendi mentre cerchiamo contatti che contengono dati cifrati con la chiave inattiva."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Controllo contatto ${ progress } di ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contatto aggiornato con successo.",
-        "${ updated } contatti aggiornati con successo."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperare i dati, è necessario riattivare la chiave di crittografia dei contatti utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
-      ],
-      "Key fingerprint": [
-        "Impronta digitale della chiave"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
-      ],
-      "Group assignment applied": [
-        "Assegnazione di gruppo applicata"
-      ],
-      "Create a new contact group": [
-        "Crea un nuovo gruppo di contatto"
-      ],
-      "No group found": [
-        "Nessun gruppo trovato"
-      ],
-      "Duplicate key updated": [
-        "Chiave duplicata aggiornata"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non ProtonMail che utilizza un servizio compatibile PGP."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Per questo indirizzo è attivata la verifica tramite chiavi affidabili. Per poter spedire a questo indirizzo prima rendi attendibili le chiavi pubbliche che possono essere usate per l'invio."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilizzare la verifica dell'indirizzo, devi fidarti di una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di cifratura vengano falsificate."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Cambia queste impostazioni solo se stai usando PGP con destinatari non-ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Nessuna delle chiavi caricate sono valide per la crittografia. La crittografia è disabilitata automaticamente."
-      ],
-      "Primary": [
-        "Primario"
-      ],
-      "No email address": [
-        "Nessun indirizzo email"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contatto trovato",
-        "${ contactsCount } contatti trovati"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } gruppo trovato",
-        "${ groupCounts } gruppi trovati"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Supportiamo l'importazione di file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app. Supportiamo anche l'importazione di vCard 4.0. (Codifica UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decifrare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } indirizzo email",
-        "${ addressCount } indirizzi email"
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot allegato/i"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "qui"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se credi che questo sia un errore, contattaci ${ contactLink }."
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } memoria bonus"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connessione per ProtonVPN (consente di collegare più dispositivi al VPN)",
-        "+${ organization.BonusVPN } connessioni per ProtonVPN (consente di collegare più dispositivi al VPN)"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "La tua banca richiede una verifica 3-D Secure per scopi di sicurezza."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Sarai presto reindirizzato a PayPal per verificare il pagamento."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Sarai presto reindirizzato alla tua banca per verificare il pagamento."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Per favore verifica la carta nella nuova scheda che è stata aperta."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Per favore verifica il pagamento nella nuova scheda che è stata aperta."
-      ],
-      "Verification can take a few minutes.": [
-        "La verifica può richiedere alcuni minuti."
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Il pagamento può richiedere alcuni minuti per una verifica completa."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Per favore riprova, usa un altro metodo di pagamento o contatta PayPal per assistenza."
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Per favore riprova, usa un altro metodo di pagamento o contatta la tua banca per assistenza."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per Visa e MasterCard, le 3 cifre sul retro della carta. Per American Express, le 4 cifre sulla parte anteriore della carta."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Importo inferiore al minimo (${ amount })."
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Le transazioni in Bitcoin potrebbero richiedere un po' di tempo per essere confermate (fino a 24 ore). Una volta confermate, aggiungeremo il credito al tuo account. Dopo la conferma della transazione, potrai pagare la tua fattura con il credito."
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Verifica il pagamento nella nuova scheda."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Questo ti consentirà di utilizzare PayPal per pagare il tuo abbonamento Proton. Ti reindirizzeremo su PayPal in una nuova scheda del browser. Se utilizzi un blocco pop-up, disattivalo per continuare."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Devi avere una carta di credito o un conto bancario collegato al tuo account PayPal per aggiungerlo come metodo di pagamento."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti."
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Fatturato come ${ billedPrice } all'anno"
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Fatturato come ${ billedPrice } ogni 2 anni"
-      ],
-      "Included": [
-        "Incluso"
-      ],
-      "* Customizable features": [
-        "* Caratteristiche personalizzabili"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accesso ai tuoi servizi di streaming, come ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, non importa dove ti trovi."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accesso a contenuti bloccati, come social media, notizie, Wikipedia, YouTube, e molti altri, non importa dove sei."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Per iniziare con email private e sicure."
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Un Internet gratuito e non censurato dovrebbe essere disponibile per tutti."
-      ],
-      "Starter VPN service with P2P support.": [
-        "Servizio VPN di base con supporto P2P."
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "VPN completa con velocità fino a 10 Gbps."
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Per gli individui che hanno bisogno di una cassetta postale completa con protezione avanzata."
-      ],
-      "For professionals that need secure business communications.": [
-        "Per i professionisti che hanno bisogno di comunicazioni aziendali sicure."
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Pacchetto VPN + ${ mailAppName } per famiglie e piccole imprese."
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Per famiglie e piccoli team; include sia Mail che VPN."
-      ],
-      "Save 20%": [
-        "Sconto del 20%"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Il tuo account è in fase di upgrade, questo può richiedere fino a 30 secondi."
-      ],
-      "Thank you for supporting our mission.": [
-        "Grazie per il sostegno alla nostra missione."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
-      ],
-      "Account successfully updated": [
-        "Account aggiornato con successo"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
-      ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Gratis"
-      ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Gratis"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Fatturato al termine del ciclo di fatturazione attuale ( si rinnova il ${ renewalDate })"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento. ${ linkButton }"
-      ],
-      "No payment is required at this time.": [
-        "Al momento non è richiesto alcun pagamento."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% di sconto applicato al tuo abbonamento con coupon ${ code }"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 applicato al tuo abbonamento"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 applicato al tuo abbonamento"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Il nuovo sconto Black Friday 2020 è stato applicato"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Sconto applicato al tuo abbonamento con coupon ${ code }"
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
-      ],
-      "30 days money-back guarantee.": [
-        "Garanzia soddisfatti o rimborsati per 30 giorni."
-      ],
-      "Save extra 20%": [
-        "Risparmia un 20% extra"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } sul tuo abbonamento passando alla ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } sia su Mail che sulla VPN aggiungendo un abbonamento Mail."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } sia su VPN che su Mail aggiungendo un abbonamento VPN."
-      ],
-      "Storage GB": [
-        "Archivio GB"
-      ],
-      "Users": [
-        "Utenti"
-      ],
-      "Domains": [
-        "Domini"
-      ],
-      "Addresses": [
-        "Indirizzi"
-      ],
-      "Connections": [
-        "Connessioni"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Consente di ospitare gli indirizzi di posta elettronica per i tuoi domini su ${ mailAppName }, ad esempio john.smith@example.com"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Aggiungi indirizzi aggiuntivi al tuo account come utente2@protonmail.com"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Numero di connessioni VPN che possono essere assegnate agli utenti. Ogni dispositivo connesso utilizza una connessione VPN."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus è limitato ad un utente e parte da 5 GB di archiviazione."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Passa a ${ professionalPlan } per aggiungere altri utenti."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connessione VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connessioni VPN."
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Ogni connessione aggiuntiva può essere assegnata agli utenti della tua organizzazione."
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Passa a ${ professionalPlan } per aggiungere altre connessioni."
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional parte da un utente, e ogni utente aggiunge 5 GB e 5 indirizzi email alla riserva dell'organizzazione."
-      ],
-      "Not customizable": [
-        "Non personalizzabile"
-      ],
-      "Expired": [
-        "Scaduto"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navigazione di base e le azioni rimangono disponibili indipendentemente dal fatto che le scorciatoie da tastiera siano attive o meno nelle impostazioni."
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
-      ],
-      "Free up some space or add more storage space.": [
-        "Libera dello spazio o aggiungi più spazio di archiviazione."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libera dello spazio o contatta il tuo amministratore."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Hai raggiunto ${ spaceDisplayed }% della tua capacità di archiviazione. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Connessione Internet ripristinata."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Connessione Internet persa. Controlla la connettività del tuo dispositivo."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Hai abilitato l'Accesso Beta. Clicca ${ refreshButton } per usare l'ultima versione di ${ appName }. L'applicazione sarà ricaricata."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Hai disabilitato l'Accesso Beta. Clicca ${ refreshButton } per usare la versione stabile di ${ appName }. L'applicazione sarà ricaricata."
-      ],
-      "Manage your calendars": [
-        "Gestisci i tuoi calendari"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } è stato aggiunto alla suite Proton. Ci piacerebbe sentire cosa ne pensi!"
-      ],
-      "Loading events": [
-        "Caricamento eventi"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "L'organizzatore non può essere avvisato che si rifiuta l'invito:"
-      ],
-      "Would you like to delete the event anyway?": [
-        "Vuoi comunque eliminare l'evento?"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "Nessuno dei partecipanti può essere avvisato delle tue modifiche:"
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "I seguenti partecipanti non possono essere avvisati delle tue modifiche:"
-      ],
-      "Would you like to continue anyway?": [
-        "Vuoi continuare comunque?"
-      ],
-      "Discard changes?": [
-        "Annullare le modifiche?"
-      ],
-      "You will lose all unsaved changes.": [
-        "Perderai tutte le modifiche non salvate."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "L'organizzatore di questo evento sarà avvisato del tuo rifiuto. Vuoi eliminare questo evento?"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "L'organizzatore di questo evento non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare questo evento?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Verrà inviata una email di cancellazione ai partecipanti all'evento. Vuoi eliminare questo evento?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Il tuo indirizzo è disabilitato. Una email di cancellazione non può essere inviata ai partecipanti all'evento. Vuoi comunque eliminare questo evento?"
-      ],
-      "Would you like to delete this event?": [
-        "Vuoi cancellare questo evento?"
-      ],
-      "Which event would you like to delete?": [
-        "Quale evento vuoi eliminare?"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Questo evento è stato aggiornato. L'organizzatore sarà avvisato del tuo rifiuto. Vuoi eliminare questo evento?"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Questo evento è stato aggiornato dall'organizzatore. Vuoi eliminare questo evento?"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Questo evento è stato aggiornato. L'organizzatore non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare questo evento?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Verrà inviata una email di cancellazione ai partecipanti all'evento. Vuoi eliminare tutti gli eventi in questa serie?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Il tuo indirizzo è disabilitato. Una email di cancellazione non può essere inviata ai partecipanti all'evento. Vuoi comunque eliminare tutti gli eventi di questa serie?"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "L'organizzatore di questa serie di eventi verrà avvisato del tuo rifiuto all'invito. Vuoi eliminare tutti gli eventi in questa serie?"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "L'organizzatore di questa serie di eventi non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare tutti gli eventi di questa serie?"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "Vuoi eliminare tutti gli eventi di questa serie?"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "Le occorrenze precedentemente aggiornate dall'organizzatore saranno mantenute, ma alcune delle tue risposte andranno perse."
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "Le occorrenze precedentemente aggiornate dall'organizzatore verranno mantenute."
-      ],
-      "Which event would you like to update?": [
-        "Quale evento vuoi aggiornare?"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Questo evento è stato aggiornato dall'organizzatore. Vuoi modificare la tua risposta solo per questa occorrenza in questa serie?"
-      ],
-      "Would you like to update this event?": [
-        "Vuoi aggiornare questo evento?"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "Vuoi cambiare la tua risposta per tutti gli eventi di questa serie?"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "I partecipanti aggiunti e rimossi saranno avvisati di tutti gli eventi di questa serie."
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Si aggiorneranno tutti gli eventi di questa serie. I partecipanti aggiunti e rimossi verranno notificati."
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Aggiornerai tutti gli eventi di questa serie. I partecipanti attivi, aggiunti e rimossi saranno notificati."
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Aggiornerai tutti gli eventi di questa serie. Verranno notificati i partecipanti esistenti e aggiunti."
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "Aggiornerai tutti gli eventi di questa serie. I partecipanti rimossi saranno avvisati."
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Aggiornerai tutti gli eventi di questa serie. Verranno notificati i partecipanti esistenti e rimossi."
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Aggiornerai tutti gli eventi di questa serie. Un invito verrà inviato ai partecipanti all'evento."
-      ],
-      "Would you like to update all events in this series?": [
-        "Vuoi aggiornare tutti gli eventi in questa serie?"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "Le modifiche precedenti di questa serie andranno perse."
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
-      ],
-      "Frequency modifications will be lost.": [
-        "Le modifiche di frequenza andranno perse."
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "L'organizzatore ha aggiornato alcuni degli eventi di questa serie. La modifica del calendario non è ancora supportata per questo tipo di eventi ricorrenti."
-      ],
-      "Update recurring event": [
-        "Aggiorna l'evento ricorrente"
-      ],
-      "Added and removed participants will be notified.": [
-        "I partecipanti aggiunti e rimossi saranno notificati."
-      ],
-      "An invitation will be sent to added participants.": [
-        "Un invito verrà inviato ai partecipanti aggiunti."
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "Una email di cancellazione verrà inviata ai partecipanti rimossi."
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "I partecipanti esistenti, aggiunti e rimossi saranno notificati."
-      ],
-      "Existent and added participants will be notified.": [
-        "I partecipanti esistenti e aggiunti saranno notificati."
-      ],
-      "Removed participants will be notified.": [
-        "I partecipanti rimossi saranno notificati."
-      ],
-      "Existent and removed participants will be notified.": [
-        "I partecipanti esistenti e rimossi saranno notificati."
-      ],
-      "An invitation will be sent to the event participants.": [
-        "Un invito verrà inviato ai partecipanti all'evento."
-      ],
-      "Please remove the duplicates and try again.": [
-        "Rimuovi i duplicati e riprova."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        "Hai reimpostato la password e gli eventi collegati ai seguenti calendari non possono essere decifrati. Qualsiasi link di calendario condiviso che hai creato in precedenza non funzionerà più."
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Hai riattivato le tue chiavi e gli eventi collegati ai seguenti calendari possono ora essere decifrati."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Il fuso orario di sistema sembra essere cambiato a ${ timezone }. Vuoi aggiornare la tua preferenza di fuso orario?"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Sono ammessi al massimo 100 partecipanti per invito"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "È possibile modificare solo le proprietà degli eventi personali in quanto non è possibile inviare email dall'indirizzo dell'organizzatore."
-      ],
-      "Loading event": [
-        "Caricamento evento"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } inizia adesso"
-      ],
-      "${ title } starts today": [
-        "${ title } inizia oggi"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } è cominciato alle ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } è iniziato ieri"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } è iniziato ieri alle ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } è iniziato il ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } è iniziato il ${ formattedDate } alle ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } è iniziato il ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } è iniziato il ${ _formattedDate } alle ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } è iniziato il ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } è iniziato il ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } inizierà alle ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } inizierà domani"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } inizierà domani alle ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } inizierà il ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } inizierà il ${ _formattedDate2 } alle ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } inizierà il ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } inizierà il ${ _formattedDate3 } alle ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } inizierà il ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } inizierà il ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(nessun titolo)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Tu"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Cancellazione di un evento su ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Invito per un evento su ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Aggiornamento per un evento su ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Cancellazione di un evento che inizia il ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Invito per un evento che inizia il ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Aggiornamento per un evento che inizia il ${ formattedStart }"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Invito: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Quando: ${ formattedStart } (tutto il giorno)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quando: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Quando: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Dove: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descrizione: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } è stato annullato."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha accettato il tuo invito a ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha accettato provvisoriamente il tuo invito a ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha rifiutato il tuo invito a ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "la prima Domenica"
-      ],
-      "on the first Monday": [
-        "il primo Lunedì"
-      ],
-      "on the first Tuesday": [
-        "il primo Martedì"
-      ],
-      "on the first Wednesday": [
-        "il primo Mercoledì"
-      ],
-      "on the first Thursday": [
-        "il primo Giovedì"
-      ],
-      "on the first Friday": [
-        "il primo Venerdì"
-      ],
-      "on the first Saturday": [
-        "il primo Sabato"
-      ],
-      "on the second Sunday": [
-        "la seconda Domenica"
-      ],
-      "on the second Monday": [
-        "il secondo Lunedì"
-      ],
-      "on the second Tuesday": [
-        "il secondo Martedì"
-      ],
-      "on the second Wednesday": [
-        "il secondo Mercoledì"
-      ],
-      "on the second Thursday": [
-        "il secondo Giovedì"
-      ],
-      "on the second Friday": [
-        "il secondo Venerdì"
-      ],
-      "on the second Saturday": [
-        "il secondo Sabato"
-      ],
-      "on the third Sunday": [
-        "la terza Domenica"
-      ],
-      "on the third Monday": [
-        "il terzo Lunedì"
-      ],
-      "on the third Tuesday": [
-        "il terzo Martedì"
-      ],
-      "on the third Wednesday": [
-        "il terzo Mercoledì"
-      ],
-      "on the third Thursday": [
-        "il terzo Giovedì"
-      ],
-      "on the third Friday": [
-        "il terzo Venerdì"
-      ],
-      "on the third Saturday": [
-        "il terzo Sabato"
-      ],
-      "on the fourth Sunday": [
-        "la quarta Domenica"
-      ],
-      "on the fourth Monday": [
-        "il quarto Lunedì"
-      ],
-      "on the fourth Tuesday": [
-        "il quarto Martedì"
-      ],
-      "on the fourth Wednesday": [
-        "il quarto Mercoledì"
-      ],
-      "on the fourth Thursday": [
-        "il quarto Giovedì"
-      ],
-      "on the fourth Friday": [
-        "il quarto Venerdì"
-      ],
-      "on the fourth Saturday": [
-        "il quarto Sabato"
-      ],
-      "on the last Sunday": [
-        "l'ultima Domenica"
-      ],
-      "on the last Monday": [
-        "l'ultimo Lunedì"
-      ],
-      "on the last Tuesday": [
-        "l'ultimo Martedì"
-      ],
-      "on the last Wednesday": [
-        "l'ultimo Mercoledì"
-      ],
-      "on the last Thursday": [
-        "l'ultimo Giovedì"
-      ],
-      "on the last Friday": [
-        "l'ultimo Venerdì"
-      ],
-      "on the last Saturday": [
-        "l'ultimo Sabato"
-      ],
-      "on day ${ dayOfMonth }": [
-        "al giorno ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } volta",
-        "${ count } volte"
-      ],
-      "until ${ dateString }": [
-        "fino a ${ dateString }"
-      ],
-      "Daily": [
-        "Giornalmente"
-      ],
-      "Every ${ interval } day": [
-        "Ogni ${ interval } giorno",
-        "Ogni ${ interval } giorni"
-      ],
-      "Daily, ${ timesString }": [
-        "Giornaliero, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Ogni ${ interval } giorno, ${ timesString }",
-        "Ogni ${ interval } giorni, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Giornaliero, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Ogni ${ interval } giorno, ${ untilString }",
-        "Ogni ${ interval } giorni, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Domenica"
-      ],
-      "Monday": [
-        "Lunedì"
-      ],
-      "Tuesday": [
-        "Martedì"
-      ],
-      "Wednesday": [
-        "Mercoledì"
-      ],
-      "Thursday": [
-        "Giovedì"
-      ],
-      "Friday": [
-        "Venerdì"
-      ],
-      "Saturday": [
-        "Sabato"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Settimanale su tutti i giorni"
-      ],
-      "Every ${ interval } week on all days": [
-        "Ogni ${ interval } settimana, tutti i giorni",
-        "Ogni ${ interval } settimane, tutti i giorni"
-      ],
-      "Weekly on Sunday": [
-        "Settimanale la Domenica"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "La Domenica di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di domenica"
-      ],
-      "Weekly on Monday": [
-        "Settimanale il Lunedì"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Il lunedì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di lunedì"
-      ],
-      "Weekly on Tuesday": [
-        "Settimanale il Martedì"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Il Martedì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Martedì"
-      ],
-      "Weekly on Wednesday": [
-        "Settimanale il Mercoledì"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Il Mercoledì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Mercoledì"
-      ],
-      "Weekly on Thursday": [
-        "Settimanale il Giovedì"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Il Giovedì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Giovedì"
-      ],
-      "Weekly on Friday": [
-        "Settimanale il Venerdì"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Il Venerdì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Venerdì"
-      ],
-      "Weekly on Saturday": [
-        "Settimanale il Sabato"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Il Sabato di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Sabato"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Settimanale su ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Ogni ${ interval } settimana di ${ multipleDaysString }",
-        "Ogni ${ interval } settimane di ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Settimanale su tutti i giorni, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Ogni ${ interval } settimana, tutti i giorni, ${ timesString }",
-        "Ogni ${ interval } settimane, tutti i giorni, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Settimanale di domenica, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Domenica, ${ timesString }",
-        "Ogni ${ interval } settimane di Domenica, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Settimanale il lunedì, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Lunedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Lunedì, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Settimanale il martedì, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Martedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Martedi, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Settimanale il mercoledì, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Mercoledì, ${ timesString }",
-        "Ogni ${ interval } settimane di Mercoledì, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Settimanale il giovedì, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Giovedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Giovedì, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Settimanale il venerdì, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Venerdì, ${ timesString }",
-        "Ogni ${ interval } settimane di Venerdì, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Settimanale il sabato, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Sabato, ${ timesString }",
-        "Ogni ${ interval } settimane di Sabato, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Settimanale su ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Ogni ${ interval } settimana di ${ multipleDaysString }, ${ timesString }",
-        "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Settimanale in tutti i giorni, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Ogni ${ interval } settimana, tutti i giorni, ${ untilString }",
-        "Ogni ${ interval } settimane tutti i giorni, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Settimanale la domenica, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Domenica, ${ untilString }",
-        "Ogni ${ interval } settimane di Domenica, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Settimanale il lunedì, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Lunedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Lunedì, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Settimanale il martedì, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Martedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Martedì, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Settimanale il mercoledì, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Mercoledì, ${ untilString }",
-        "Ogni ${ interval } settimane di Mercoledì, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Settimanale il giovedì, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Giovedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Giovedì, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Settimanale il venerdì, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Venerdì, ${ untilString }",
-        "Ogni ${ interval } settimane di Venerdì, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Settimanale il sabato, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Sabato, ${ untilString }",
-        "Ogni ${ interval } settimane di Sabato, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Settimanale su ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Ogni ${ interval } settimana di ${ multipleDaysString }, ${ untilString }",
-        "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Mensile ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Ogni ${ interval } mese ${ onDayString }",
-        "Ogni ${ interval } mesi ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensile ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Ogni ${ interval } mese ${ onDayString }, ${ timesString }",
-        "Ogni ${ interval } mesi ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensile ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Ogni ${ interval } mese ${ onDayString }, ${ untilString }",
-        "Ogni ${ interval } mesi ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Annuale"
-      ],
-      "Every ${ interval } year": [
-        "Ogni ${ interval } anno",
-        "Ogni ${ interval } anni"
-      ],
-      "Yearly, ${ timesString }": [
-        "Annualmente, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Ogni ${ interval } anno, ${ timesString }",
-        "Ogni ${ interval } anni, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Annualmente, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Ogni ${ interval } anno, ${ untilString }",
-        "Ogni ${ interval } anni, ${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Navigazione di base"
-      ],
-      "Basic actions": [
-        "Azioni di base"
-      ],
-      "Folder shortcuts": [
-        "Scorciatoie cartella"
-      ],
-      "Composer shortcuts": [
-        "Compositore scorciatoie"
-      ],
-      "List shortcuts": [
-        "Lista scorciatoie"
-      ],
-      "Action shortcuts": [
-        "Tasti di scelta rapida"
-      ],
-      "Message shortcuts": [
-        "Scorciatoie messaggio"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Sposta su"
-      ],
-      "Jump to first": [
-        "Vai al primo"
-      ],
-      "Move down": [
-        "Sposta in basso"
-      ],
-      "Jump to last": [
-        "Vai all'ultimo"
-      ],
-      "Move right / expand": [
-        "Sposta a destra / espandi"
-      ],
-      "Move left / collapse": [
-        "Sposta a sinistra / comprimi"
-      ],
-      "Apply / open": [
-        "Applica / apri"
-      ],
-      "Cancel / close": [
-        "Annulla / chiudi"
-      ],
-      "Open this modal": [
-        "Apri questa finestra"
-      ],
-      "Select / unselect": [
-        "Seleziona / deseleziona"
-      ],
-      "Go to Inbox": [
-        "Vai alla posta in entrata"
-      ],
-      "Go to Archive": [
-        "Vai all'archivio"
-      ],
-      "Go to Sent": [
-        "Vai alla posta inviata"
-      ],
-      "Go to Starred": [
-        "Va' ai Preferiti"
-      ],
-      "Go to Drafts": [
-        "Va' alle Bozze"
-      ],
-      "Go to Trash": [
-        "Va' al Cestino"
-      ],
-      "Go to Spam": [
-        "Va' a Spam"
-      ],
-      "Go to All Mail": [
-        "Va' a Tutti i Messaggi"
-      ],
-      "Save draft": [
-        "Salva la bozza"
-      ],
-      "Send email": [
-        "Invia email"
-      ],
-      "Close draft": [
-        "Chiudi bozza"
-      ],
-      "Minimize / maximize composer": [
-        "Minimizza / massimizza il compositore"
-      ],
-      "Expand / contract composer": [
-        "Espandi / comprimi il compositore"
-      ],
-      "Attach file": [
-        "Allega file"
-      ],
-      "Add expiration time": [
-        "Aggiungi data di scadenza"
-      ],
-      "Add encryption": [
-        "Aggiungi crittografia"
-      ],
-      "Discard draft": [
-        "Scarta bozza"
-      ],
-      "Open previous message": [
-        "Apri messaggio precedente"
-      ],
-      "Open next message": [
-        "Apri il prossimo messaggio"
-      ],
-      "Show unread emails": [
-        "Mostra email non lette"
-      ],
-      "Show all emails": [
-        "Mostra tutte le email"
-      ],
-      "Select / unselect all": [
-        "Seleziona / deseleziona tutto"
-      ],
-      "Search": [
-        "Cercare"
-      ],
-      "New message": [
-        "Nuovo messaggio"
-      ],
-      "Star": [
-        "Preferito"
-      ],
-      "Mark as unread": [
-        "Segna come da leggere"
-      ],
-      "Label as...": [
-        "Etichettare come..."
-      ],
-      "Create filter with...": [
-        "Crea filtro con..."
-      ],
-      "Move to...": [
-        "Sposta in..."
-      ],
-      "Move to Inbox": [
-        "Sposta in Posta in arrivo"
-      ],
-      "Move to Archive": [
-        "Sposta in Archivio"
-      ],
-      "Move to Spam": [
-        "Sposta in Spam"
-      ],
-      "Move to Trash": [
-        "Sposta nel Cestino"
-      ],
-      "Delete permanently": [
-        "Elimina definitivamente"
-      ],
-      "Reply": [
-        "Rispondi"
-      ],
-      "Reply all": [
-        "Rispondi a tutti"
-      ],
-      "Forward": [
-        "Inoltra"
-      ],
-      "Load remote content": [
-        "Carica il contenuto remoto"
-      ],
-      "Load embedded images": [
-        "Carica le immagini incorporate"
-      ],
-      "Show original message": [
-        "Mostra il messaggio originale"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "sconosciuto"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Sconosciuto"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "versioni di vCard < 3.0 non supportate"
-      ],
-      "Encryption failed": [
-        "Criptaggio fallito"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Si è verificato un errore imprevisto. L'importazione deve essere riavviata."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Si è verificato un errore durante il caricamento del file. Nessun file è stato selezionato."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. Nessun file .csv o .vcf selezionato"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Il tuo file ${ formattedFilename } è vuoto."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Il tuo file ${ formattedFilename } non ha alcun contatto da importare."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Il tuo file ${ formattedFilename } contiene più di ${ MAX_IMPORT_CONTACTS_STRING } contatti."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "R:"
-      ],
-      "Fw:": [
-        "I:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Copia"
-      ],
-      "Reveal password": [
-        "Mostra password"
-      ],
-      "Hide password": [
-        "Nascondi password"
-      ],
-      "Street address": [
-        "Indirizzo"
-      ],
-      "City": [
-        "Città"
-      ],
-      "Region": [
-        "Regione"
-      ],
-      "Postal code": [
-        "Codice postale"
-      ],
-      "Country": [
-        "Paese"
-      ],
-      "Post office box": [
-        "Casella postale"
-      ],
-      "Extended address": [
-        "Indirizzo completo"
-      ],
-      "Do not ask again": [
-        "Non chiedermelo più"
-      ],
-      "Email address": [
-        "Indirizzo email"
-      ],
-      "Phone number": [
-        "Numero di telefono"
-      ],
-      "Verification code": [
-        "Codice di verifica"
-      ],
-      "Enter the 6-digit code": [
-        "Inserisci il codice a 6 cifre"
-      ],
-      "Add email address": [
-        "Aggiungi indirizzo email"
-      ],
-      "Email format": [
-        "Formato email"
-      ],
-      "Add image URL": [
-        "Aggiungi URL immagine"
-      ],
-      "Upload picture": [
-        "Carica immagine"
-      ],
-      "Add to group": [
-        "Aggiungi al gruppo"
-      ],
-      "Encrypt emails": [
-        "Email criptate"
-      ],
-      "Sign emails": [
-        "Firma email"
-      ],
-      "Cryptographic scheme": [
-        "Schema crittografico"
-      ],
-      "Public keys": [
-        "Chiavi pubbliche"
-      ],
-      "Automatically save contacts": [
-        "Salvataggio automatico dei contatti"
-      ],
-      "Import contacts": [
-        "Importa i contatti"
-      ],
-      "Export contacts": [
-        "Esporta contatti"
-      ],
-      "Operating system": [
-        "Sistema operativo"
-      ],
-      "Operating system version": [
-        "Versione del sistema operativo"
-      ],
-      "Proton username": [
-        "Nome utente di Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Cos'è successo?"
-      ],
-      "System information": [
-        "Informazioni sul sistema"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Versione del browser"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        "Qual è la ragione principale di questa valutazione?"
-      ],
-      "Display name": [
-        "Nome visualizzato"
-      ],
-      "Cancel": [
-        "Annulla"
-      ],
-      "Submit": [
-        "Invia"
-      ],
-      "Password": [
-        "Password"
-      ],
-      "Mailbox password": [
-        "Password della casella email"
-      ],
-      "Two-factor authentication code": [
-        "Codice di autenticazione a due fattori"
-      ],
-      "Username or ProtonMail address": [
-        "Nome utente o indirizzo ProtonMail"
-      ],
-      "Name on card": [
-        "Nome sulla carta"
-      ],
-      "Card number": [
-        "Numero carta"
-      ],
-      "Expiry date": [
-        "Data di scadenza"
-      ],
-      "CVV code": [
-        "Codice CVV"
-      ],
-      "Select your country": [
-        "Seleziona il tuo paese"
-      ],
-      "ZIP": [
-        "CAP"
-      ],
-      "BTC amount:": [
-        "Importo BTC:"
-      ],
-      "BTC address:": [
-        "Indirizzo BTC:"
-      ],
-      "Select a method": [
-        "Seleziona metodo"
-      ],
-      "Total (${ countdown })": [
-        "Totale (${ countdown })"
-      ],
-      "Total": [
-        "Totale"
-      ],
-      "Proration": [
-        "Calcolo proporzionale"
-      ],
-      "Cash": [
-        "Contanti"
-      ],
-      "Card holder": [
-        "Titolare carta"
-      ],
-      "Expires": [
-        "Scadenza"
-      ],
-      "Payer": [
-        "Pagante"
-      ],
-      "Keyboard shortcuts": [
-        "Scorciatoie da tastiera"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleziona come far apparire il tuo elenco di messaggi per impostazione predefinita."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Seleziona come far apparire la casella di posta per impostazione predefinita."
-      ],
-      "Select how your composer opens by default.": [
-        "Seleziona come aprire il compositore per impostazione predefinita."
-      ],
-      "Enable Beta Access": [
-        "Abilita Accesso Beta"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "Choose a color": [
-        "Scegli un colore"
-      ],
-      "Default email": [
-        "Email predefinita"
-      ],
-      "Display": [
-        "Visualizzazione"
-      ],
-      "Description": [
-        "Descrizione"
-      ],
-      "Default event duration": [
-        "Durata predefinita dell'evento"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Default notifications": [
-        "Notifiche predefinite"
-      ],
-      "Default full day notifications": [
-        "Notifiche predefinite per un giorno intero"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Quanto è probabile che consigli ${ calendarAppName } ad un amico o collega?"
-      ],
-      "0 - Not likely": [
-        "0 - Per niente"
-      ],
-      "10 - Extremely likely": [
-        "10 - Estremamente probabile"
-      ],
-      "All day": [
-        "Tutta la giornata"
-      ],
-      "Repeat on": [
-        "Ripeti il"
-      ],
-      "Repeat every": [
-        "Ripeti ogni"
-      ],
-      "Ends": [
-        "Termina"
-      ],
-      "Organizer": [
-        "Organizzatore"
-      ],
-      "Optional": [
-        "Facoltativo"
-      ],
-      "Time of the event": [
-        "Ora dell'evento"
-      ],
-      "Event time": [
-        "Data evento"
-      ],
-      "Event title": [
-        "Titolo dell'evento"
-      ],
-      "Event frequency": [
-        "Frequenza evento"
-      ],
-      "Event location": [
-        "Posizione evento"
-      ],
-      "Event notifications": [
-        "Notifiche dell'evento"
-      ],
-      "Participants": [
-        "Partecipanti"
-      ],
-      "Your calendars": [
-        "I tuoi calendari"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Chiudi"
+      ],
       "Close modal": [
         "Chiudi finestra"
       ],
@@ -2218,9 +328,6 @@
       ],
       "Use “${ label }” setting": [
         "Usa l’impostazione “${ label }”"
-      ],
-      "Close": [
-        "Chiudi"
       ],
       "Close navigation": [
         "Chiudi navigazione"
@@ -2470,6 +577,9 @@
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduzione"
       ],
+      "Chat with us": [
+        "Chatta con noi"
+      ],
       "I have a question": [
         "Ho una domanda"
       ],
@@ -2521,9 +631,6 @@
       "Back": [
         "Indietro"
       ],
-      "Log in": [
-        "Accedi"
-      ],
       "Remove bonuses": [
         "Rimuovi bonus"
       ],
@@ -2571,6 +678,9 @@
       ],
       "Increase": [
         "Aumenta"
+      ],
+      "Log in": [
+        "Accedi"
       ],
       "Close this banner": [
         "Chiudi questo banner"
@@ -2667,139 +777,6 @@
       ],
       "Close popover": [
         "Chiudi popover"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Impossibile usare la chiave per la crittografia"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Per saperne di più"
-      ],
-      "Request an invite": [
-        "Richiedi un invito"
-      ],
-      "clearing your browser cache": [
-        "pulendo la cache del browser"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Go to subscription plans": [
-        "Vai ai piani di abbonamento"
-      ],
-      "click here": [
-        "clicca qui"
-      ],
-      "Add a gift code": [
-        "Aggiungi un codice regalo"
-      ],
-      "Pay invoice": [
-        "Pagamento della fattura"
-      ],
-      "Upgrade account": [
-        "Effettua l'upgrade dell'account"
-      ],
-      "Calendars": [
-        "Calendari"
-      ],
-      "My calendars": [
-        "Miei calendari"
-      ],
-      "Subscribed calendars": [
-        "Calendari registrati"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ad es "
-      ],
-      "Start typing an email address": [
-        "Inizia a digitare un indirizzo email"
-      ],
-      "Image URL": [
-        "URL dell'immagine"
-      ],
-      "Filter groups": [
-        "Filtra gruppi"
-      ],
-      "Search for name or email": [
-        "Cerca nome o email"
-      ],
-      "Search for group name": [
-        "Cerca per nome gruppo"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "OS name": [
-        "Nome del sistema operativo"
-      ],
-      "OS version": [
-        "Versione del sistema operativo"
-      ],
-      "Proton username": [
-        "Nome utente di Proton"
-      ],
-      "A way to contact you": [
-        "Un modo per contattarti"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Per favore descrivi il problema e includi eventuali messaggi di errore"
-      ],
-      "Browser name": [
-        "Nome del browser"
-      ],
-      "Browser version": [
-        "Versione del browser"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "e.g. Julia Smith": [
-        "es. Julia Smith"
-      ],
-      "Mailbox password": [
-        "Password della casella email"
-      ],
-      "ZIP": [
-        "CAP"
-      ],
-      "Postal code": [
-        "Codice postale"
-      ],
-      "Gift code": [
-        "Codice regalo"
-      ],
-      "Add a calendar name": [
-        "Aggiungi un nome al calendario"
-      ],
-      "Add a calendar description": [
-        "Aggiungi una descrizione al calendario"
-      ],
-      "Add title": [
-        "Aggiungi titolo"
-      ],
-      "Add location": [
-        "Aggiungi posizione"
-      ],
-      "Add description": [
-        "Aggiungi descrizione"
-      ],
-      "Add participants": [
-        "Aggiungi Partecipanti"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ora",
-        "${ hours } ore"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
       ]
     },
     "Title": {
@@ -2975,18 +952,6 @@
       "Give feedback": [
         "Fornisci feedback"
       ],
-      "Sign in again to continue": [
-        "Accedi di nuovo per continuare"
-      ],
-      "Account suspended": [
-        "Account sospeso"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Inserisci il tuo nome utente o l'indirizzo email di ProtonMail"
-      ],
-      "Enter your password": [
-        "Inserisci la tua password"
-      ],
       "Confirm loss of Proton bonuses": [
         "Conferma la perdita dei bonus di Proton"
       ],
@@ -3076,6 +1041,18 @@
       ],
       "${ appName } customization": [
         "Personalizzazione di ${ appName }"
+      ],
+      "Sign in again to continue": [
+        "Accedi di nuovo per continuare"
+      ],
+      "Account suspended": [
+        "Account sospeso"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Inserisci il tuo nome utente o l'indirizzo email di ProtonMail"
+      ],
+      "Enter your password": [
+        "Inserisci la tua password"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Tasti scorciatoie"
@@ -3235,6 +1212,1126 @@
       ],
       "CANCELLED": [
         "ANNULLATO"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Nessun risultato trovato"
+      ],
+      "Loading": [
+        "Caricamento"
+      ],
+      "support team": [
+        "team di supporto"
+      ],
+      "No contacts added yet": [
+        "Nessun contatto ancora aggiunto"
+      ],
+      "Week": [
+        "Settimana"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Questo link potrebbe essere un attacco omografo e non può essere aperto dai browser Internet Explorer ed Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Stai per aprire un'altra scheda del browser e visitare:"
+      ],
+      "Learn more": [
+        "Per saperne di più"
+      ],
+      "Drop the file here to upload": [
+        "Trascina qui il file per caricare"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membri)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Inserisci il codice di verifica inviato a ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica su ${ strong }. Se questo indirizzo email non è corretto, clicca \"Modifica\" per correggerlo."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Per contrastare spam e abusi, si prega di verificare di essere umano."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "La tua email sarà utilizzata solo per questa verifica una tantum."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
+      ],
+      "Loading ${ appName }": [
+        "Caricamento di ${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Membro",
+        "${ contactEmailsLength } Membri"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } e ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a questo gruppo."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a questo gruppo."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a ${ groupsEnumeration }."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ProtonMail firma sempre i messaggi crittografati."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente del compositore. Per favore nota che ProtonMail firma sempre i messaggi crittografati"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Attendi mentre cerchiamo contatti che contengono dati cifrati con la chiave inattiva."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Controllo contatto ${ progress } di ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contatto aggiornato con successo.",
+        "${ updated } contatti aggiornati con successo."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Per recuperare i dati, è necessario riattivare la chiave di crittografia dei contatti utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
+      ],
+      "Key fingerprint": [
+        "Impronta digitale della chiave"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
+      ],
+      "Group assignment applied": [
+        "Assegnazione di gruppo applicata"
+      ],
+      "Create a new contact group": [
+        "Crea un nuovo gruppo di contatto"
+      ],
+      "No group found": [
+        "Nessun gruppo trovato"
+      ],
+      "Duplicate key updated": [
+        "Chiave duplicata aggiornata"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non ProtonMail che utilizza un servizio compatibile PGP."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Per questo indirizzo è attivata la verifica tramite chiavi affidabili. Per poter spedire a questo indirizzo prima rendi attendibili le chiavi pubbliche che possono essere usate per l'invio."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Per utilizzare la verifica dell'indirizzo, devi fidarti di una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di cifratura vengano falsificate."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Cambia queste impostazioni solo se stai usando PGP con destinatari non-ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Nessuna delle chiavi caricate sono valide per la crittografia. La crittografia è disabilitata automaticamente."
+      ],
+      "Primary": [
+        "Primario"
+      ],
+      "No email address": [
+        "Nessun indirizzo email"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contatto trovato",
+        "${ contactsCount } contatti trovati"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } gruppo trovato",
+        "${ groupCounts } gruppi trovati"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Supportiamo l'importazione di file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app. Supportiamo anche l'importazione di vCard 4.0. (Codifica UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "L'applicazione deve decifrare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } indirizzo email",
+        "${ addressCount } indirizzi email"
+      ],
+      "Screenshot(s) attached": [
+        "Screenshot allegato/i"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } memoria bonus"
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } connessione per ProtonVPN (consente di collegare più dispositivi al VPN)",
+        "+${ organization.BonusVPN } connessioni per ProtonVPN (consente di collegare più dispositivi al VPN)"
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        "La tua banca richiede una verifica 3-D Secure per scopi di sicurezza."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Sarai presto reindirizzato a PayPal per verificare il pagamento."
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        "Sarai presto reindirizzato alla tua banca per verificare il pagamento."
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        "Per favore verifica la carta nella nuova scheda che è stata aperta."
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        "Per favore verifica il pagamento nella nuova scheda che è stata aperta."
+      ],
+      "Verification can take a few minutes.": [
+        "La verifica può richiedere alcuni minuti."
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        "Il pagamento può richiedere alcuni minuti per una verifica completa."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Per favore riprova, usa un altro metodo di pagamento o contatta PayPal per assistenza."
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        "Per favore riprova, usa un altro metodo di pagamento o contatta la tua banca per assistenza."
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Per Visa e MasterCard, le 3 cifre sul retro della carta. Per American Express, le 4 cifre sulla parte anteriore della carta."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Importo inferiore al minimo (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Le transazioni in Bitcoin potrebbero richiedere un po' di tempo per essere confermate (fino a 24 ore). Una volta confermate, aggiungeremo il credito al tuo account. Dopo la conferma della transazione, potrai pagare la tua fattura con il credito."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
+      ],
+      "Please verify the payment in the new tab.": [
+        "Verifica il pagamento nella nuova scheda."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Questo ti consentirà di utilizzare PayPal per pagare il tuo abbonamento Proton. Ti reindirizzeremo su PayPal in una nuova scheda del browser. Se utilizzi un blocco pop-up, disattivalo per continuare."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "Devi avere una carta di credito o un conto bancario collegato al tuo account PayPal per aggiungerlo come metodo di pagamento."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti."
+      ],
+      "Billed as ${ billedPrice } per year": [
+        "Fatturato come ${ billedPrice } all'anno"
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        "Fatturato come ${ billedPrice } ogni 2 anni"
+      ],
+      "Included": [
+        "Incluso"
+      ],
+      "* Customizable features": [
+        "* Caratteristiche personalizzabili"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accesso ai tuoi servizi di streaming, come ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, non importa dove ti trovi."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accesso a contenuti bloccati, come social media, notizie, Wikipedia, YouTube, e molti altri, non importa dove sei."
+      ],
+      "For getting started with private and secure emailing.": [
+        "Per iniziare con email private e sicure."
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        "Un Internet gratuito e non censurato dovrebbe essere disponibile per tutti."
+      ],
+      "Starter VPN service with P2P support.": [
+        "Servizio VPN di base con supporto P2P."
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        "VPN completa con velocità fino a 10 Gbps."
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        "Per gli individui che hanno bisogno di una cassetta postale completa con protezione avanzata."
+      ],
+      "For professionals that need secure business communications.": [
+        "Per i professionisti che hanno bisogno di comunicazioni aziendali sicure."
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        "Pacchetto VPN + ${ mailAppName } per famiglie e piccole imprese."
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        "Per famiglie e piccoli team; include sia Mail che VPN."
+      ],
+      "Save 20%": [
+        "Sconto del 20%"
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        "Il tuo account è in fase di upgrade, questo può richiedere fino a 30 secondi."
+      ],
+      "Thank you for supporting our mission.": [
+        "Grazie per il sostegno alla nostra missione."
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
+      ],
+      "Account successfully updated": [
+        "Account aggiornato con successo"
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
+      ],
+      "(Mail + VPN)": [
+        "(Mail + VPN)"
+      ],
+      "${ mailAppName } Free": [
+        "${ mailAppName } Gratis"
+      ],
+      "${ vpnAppName } Free": [
+        "${ vpnAppName } Gratis"
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        "Fatturato al termine del ciclo di fatturazione attuale ( si rinnova il ${ renewalDate })"
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento. ${ linkButton }"
+      ],
+      "No payment is required at this time.": [
+        "Al momento non è richiesto alcun pagamento."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        "20% di sconto applicato al tuo abbonamento con coupon ${ code }"
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        "Black Friday 2018 applicato al tuo abbonamento"
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        "Black Friday 2019 applicato al tuo abbonamento"
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        "Il nuovo sconto Black Friday 2020 è stato applicato"
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        "Sconto applicato al tuo abbonamento con coupon ${ code }"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
+      ],
+      "30 days money-back guarantee.": [
+        "Garanzia soddisfatti o rimborsati per 30 giorni."
+      ],
+      "Save extra 20%": [
+        "Risparmia un 20% extra"
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        "${ save20 } sul tuo abbonamento passando alla ${ annualBilling }"
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        "${ saveExtra20 } sia su Mail che sulla VPN aggiungendo un abbonamento Mail."
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        "${ saveExtra20 } sia su VPN che su Mail aggiungendo un abbonamento VPN."
+      ],
+      "Storage GB": [
+        "Archivio GB"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "Domains": [
+        "Domini"
+      ],
+      "Addresses": [
+        "Indirizzi"
+      ],
+      "Connections": [
+        "Connessioni"
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Consente di ospitare gli indirizzi di posta elettronica per i tuoi domini su ${ mailAppName }, ad esempio john.smith@example.com"
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        "Aggiungi indirizzi aggiuntivi al tuo account come utente2@protonmail.com"
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        "Numero di connessioni VPN che possono essere assegnate agli utenti. Ogni dispositivo connesso utilizza una connessione VPN."
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        "ProtonMail Plus è limitato ad un utente e parte da 5 GB di archiviazione."
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        "Passa a ${ professionalPlan } per aggiungere altri utenti."
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connessione VPN.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connessioni VPN."
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        "Ogni connessione aggiuntiva può essere assegnata agli utenti della tua organizzazione."
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        "Passa a ${ professionalPlan } per aggiungere altre connessioni."
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailAppName } Professional parte da un utente, e ogni utente aggiunge 5 GB e 5 indirizzi email alla riserva dell'organizzazione."
+      ],
+      "Not customizable": [
+        "Non personalizzabile"
+      ],
+      "Expired": [
+        "Scaduto"
+      ],
+      "here": [
+        "qui"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Se credi che questo sia un errore, contattaci ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "La navigazione di base e le azioni rimangono disponibili indipendentemente dal fatto che le scorciatoie da tastiera siano attive o meno nelle impostazioni."
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
+      ],
+      "Free up some space or add more storage space.": [
+        "Libera dello spazio o aggiungi più spazio di archiviazione."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Libera dello spazio o contatta il tuo amministratore."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Hai raggiunto ${ spaceDisplayed }% della tua capacità di archiviazione. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Connessione Internet ripristinata."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Connessione Internet persa. Controlla la connettività del tuo dispositivo."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        "Hai abilitato l'Accesso Beta. Clicca ${ refreshButton } per usare l'ultima versione di ${ appName }. L'applicazione sarà ricaricata."
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        "Hai disabilitato l'Accesso Beta. Clicca ${ refreshButton } per usare la versione stabile di ${ appName }. L'applicazione sarà ricaricata."
+      ],
+      "Session timed out.": [
+        "Sessione scaduta."
+      ],
+      "Internet connection lost.": [
+        "Connessione ad Internet interrotta."
+      ],
+      "Servers are unreachable.": [
+        "I server non sono raggiungibili."
+      ],
+      "Custom daily": [
+        "Personalizzato giornaliero"
+      ],
+      "Custom weekly": [
+        "Personalizzato settimanale"
+      ],
+      "Custom monthly": [
+        "Personalizzato mensile"
+      ],
+      "Custom yearly": [
+        "Personalizzato annuale"
+      ],
+      "Custom": [
+        "Personalizzato"
+      ],
+      "Daily": [
+        "Giornalmente"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensile ${ onDayString }"
+      ],
+      "Yearly": [
+        "Annuale"
+      ],
+      "Manage your calendars": [
+        "Gestisci i tuoi calendari"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        "${ calendarAppName } è stato aggiunto alla suite Proton. Ci piacerebbe sentire cosa ne pensi!"
+      ],
+      "Loading events": [
+        "Caricamento eventi"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "L'organizzatore non può essere avvisato che si rifiuta l'invito:"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Vuoi comunque eliminare l'evento?"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "Nessuno dei partecipanti può essere avvisato delle tue modifiche:"
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "I seguenti partecipanti non possono essere avvisati delle tue modifiche:"
+      ],
+      "Would you like to continue anyway?": [
+        "Vuoi continuare comunque?"
+      ],
+      "Discard changes?": [
+        "Annullare le modifiche?"
+      ],
+      "You will lose all unsaved changes.": [
+        "Perderai tutte le modifiche non salvate."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "L'organizzatore di questo evento sarà avvisato del tuo rifiuto. Vuoi eliminare questo evento?"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "L'organizzatore di questo evento non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare questo evento?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "Verrà inviata una email di cancellazione ai partecipanti all'evento. Vuoi eliminare questo evento?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Il tuo indirizzo è disabilitato. Una email di cancellazione non può essere inviata ai partecipanti all'evento. Vuoi comunque eliminare questo evento?"
+      ],
+      "Would you like to delete this event?": [
+        "Vuoi cancellare questo evento?"
+      ],
+      "Which event would you like to delete?": [
+        "Quale evento vuoi eliminare?"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Questo evento è stato aggiornato. L'organizzatore sarà avvisato del tuo rifiuto. Vuoi eliminare questo evento?"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Questo evento è stato aggiornato dall'organizzatore. Vuoi eliminare questo evento?"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Questo evento è stato aggiornato. L'organizzatore non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare questo evento?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "Verrà inviata una email di cancellazione ai partecipanti all'evento. Vuoi eliminare tutti gli eventi in questa serie?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Il tuo indirizzo è disabilitato. Una email di cancellazione non può essere inviata ai partecipanti all'evento. Vuoi comunque eliminare tutti gli eventi di questa serie?"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "L'organizzatore di questa serie di eventi verrà avvisato del tuo rifiuto all'invito. Vuoi eliminare tutti gli eventi in questa serie?"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "L'organizzatore di questa serie di eventi non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare tutti gli eventi di questa serie?"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Vuoi eliminare tutti gli eventi di questa serie?"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Le occorrenze precedentemente aggiornate dall'organizzatore saranno mantenute, ma alcune delle tue risposte andranno perse."
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Le occorrenze precedentemente aggiornate dall'organizzatore verranno mantenute."
+      ],
+      "Which event would you like to update?": [
+        "Quale evento vuoi aggiornare?"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Questo evento è stato aggiornato dall'organizzatore. Vuoi modificare la tua risposta solo per questa occorrenza in questa serie?"
+      ],
+      "Would you like to update this event?": [
+        "Vuoi aggiornare questo evento?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Vuoi cambiare la tua risposta per tutti gli eventi di questa serie?"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "I partecipanti aggiunti e rimossi saranno avvisati di tutti gli eventi di questa serie."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Si aggiorneranno tutti gli eventi di questa serie. I partecipanti aggiunti e rimossi verranno notificati."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Aggiornerai tutti gli eventi di questa serie. I partecipanti attivi, aggiunti e rimossi saranno notificati."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Aggiornerai tutti gli eventi di questa serie. Verranno notificati i partecipanti esistenti e aggiunti."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Aggiornerai tutti gli eventi di questa serie. I partecipanti rimossi saranno avvisati."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Aggiornerai tutti gli eventi di questa serie. Verranno notificati i partecipanti esistenti e rimossi."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Aggiornerai tutti gli eventi di questa serie. Un invito verrà inviato ai partecipanti all'evento."
+      ],
+      "Would you like to update all events in this series?": [
+        "Vuoi aggiornare tutti gli eventi in questa serie?"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "Le modifiche precedenti di questa serie andranno perse."
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
+      ],
+      "Frequency modifications will be lost.": [
+        "Le modifiche di frequenza andranno perse."
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "L'organizzatore ha aggiornato alcuni degli eventi di questa serie. La modifica del calendario non è ancora supportata per questo tipo di eventi ricorrenti."
+      ],
+      "Update recurring event": [
+        "Aggiorna l'evento ricorrente"
+      ],
+      "Added and removed participants will be notified.": [
+        "I partecipanti aggiunti e rimossi saranno notificati."
+      ],
+      "An invitation will be sent to added participants.": [
+        "Un invito verrà inviato ai partecipanti aggiunti."
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "Una email di cancellazione verrà inviata ai partecipanti rimossi."
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "I partecipanti esistenti, aggiunti e rimossi saranno notificati."
+      ],
+      "Existent and added participants will be notified.": [
+        "I partecipanti esistenti e aggiunti saranno notificati."
+      ],
+      "Removed participants will be notified.": [
+        "I partecipanti rimossi saranno notificati."
+      ],
+      "Existent and removed participants will be notified.": [
+        "I partecipanti esistenti e rimossi saranno notificati."
+      ],
+      "An invitation will be sent to the event participants.": [
+        "Un invito verrà inviato ai partecipanti all'evento."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Rimuovi i duplicati e riprova."
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        "Hai reimpostato la password e gli eventi collegati ai seguenti calendari non possono essere decifrati.\nQualsiasi collegamento al calendario condiviso creato in precedenza non funzionerà più.\nTutti i calendari attivi a cui sei iscritto si sincronizzeranno di nuovo dopo pochi minuti."
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Hai riattivato le tue chiavi e gli eventi collegati ai seguenti calendari possono ora essere decifrati."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Il fuso orario di sistema sembra essere cambiato a ${ timezone }. Vuoi aggiornare la tua preferenza di fuso orario?"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "Sono ammessi al massimo 100 partecipanti per invito"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "È possibile modificare solo le proprietà degli eventi personali in quanto non è possibile inviare email dall'indirizzo dell'organizzatore."
+      ],
+      "Loading event": [
+        "Caricamento evento"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Copia"
+      ],
+      "Reveal password": [
+        "Mostra password"
+      ],
+      "Hide password": [
+        "Nascondi password"
+      ],
+      "Street address": [
+        "Indirizzo"
+      ],
+      "City": [
+        "Città"
+      ],
+      "Region": [
+        "Regione"
+      ],
+      "Postal code": [
+        "Codice postale"
+      ],
+      "Country": [
+        "Paese"
+      ],
+      "Post office box": [
+        "Casella postale"
+      ],
+      "Extended address": [
+        "Indirizzo completo"
+      ],
+      "Do not ask again": [
+        "Non chiedermelo più"
+      ],
+      "Email address": [
+        "Indirizzo email"
+      ],
+      "Phone number": [
+        "Numero di telefono"
+      ],
+      "Verification code": [
+        "Codice di verifica"
+      ],
+      "Enter the 6-digit code": [
+        "Inserisci il codice a 6 cifre"
+      ],
+      "Add email address": [
+        "Aggiungi indirizzo email"
+      ],
+      "Email format": [
+        "Formato email"
+      ],
+      "Add image URL": [
+        "Aggiungi URL immagine"
+      ],
+      "Upload picture": [
+        "Carica immagine"
+      ],
+      "Add to group": [
+        "Aggiungi al gruppo"
+      ],
+      "Encrypt emails": [
+        "Email criptate"
+      ],
+      "Sign emails": [
+        "Firma email"
+      ],
+      "Cryptographic scheme": [
+        "Schema crittografico"
+      ],
+      "Public keys": [
+        "Chiavi pubbliche"
+      ],
+      "Automatically save contacts": [
+        "Salvataggio automatico dei contatti"
+      ],
+      "Import contacts": [
+        "Importa i contatti"
+      ],
+      "Export contacts": [
+        "Esporta contatti"
+      ],
+      "Operating system": [
+        "Sistema operativo"
+      ],
+      "Operating system version": [
+        "Versione del sistema operativo"
+      ],
+      "Proton username": [
+        "Nome utente di Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Cos'è successo?"
+      ],
+      "System information": [
+        "Informazioni sul sistema"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Versione del browser"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Qual è la ragione principale di questa valutazione?"
+      ],
+      "Display name": [
+        "Nome visualizzato"
+      ],
+      "Name on card": [
+        "Nome sulla carta"
+      ],
+      "Card number": [
+        "Numero carta"
+      ],
+      "Expiry date": [
+        "Data di scadenza"
+      ],
+      "CVV code": [
+        "Codice CVV"
+      ],
+      "Select your country": [
+        "Seleziona il tuo paese"
+      ],
+      "ZIP": [
+        "CAP"
+      ],
+      "BTC amount:": [
+        "Importo BTC:"
+      ],
+      "BTC address:": [
+        "Indirizzo BTC:"
+      ],
+      "Select a method": [
+        "Seleziona metodo"
+      ],
+      "Total (${ countdown })": [
+        "Totale (${ countdown })"
+      ],
+      "Total": [
+        "Totale"
+      ],
+      "Proration": [
+        "Calcolo proporzionale"
+      ],
+      "Cash": [
+        "Contanti"
+      ],
+      "Card holder": [
+        "Titolare carta"
+      ],
+      "Expires": [
+        "Scadenza"
+      ],
+      "Payer": [
+        "Pagante"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Submit": [
+        "Invia"
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Mailbox password": [
+        "Password della casella email"
+      ],
+      "Two-factor authentication code": [
+        "Codice di autenticazione a due fattori"
+      ],
+      "Username or ProtonMail address": [
+        "Nome utente o indirizzo ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        "Scorciatoie da tastiera"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Seleziona come far apparire il tuo elenco di messaggi per impostazione predefinita."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Seleziona come far apparire la casella di posta per impostazione predefinita."
+      ],
+      "Select how your composer opens by default.": [
+        "Seleziona come aprire il compositore per impostazione predefinita."
+      ],
+      "Enable Beta Access": [
+        "Abilita Accesso Beta"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Choose a color": [
+        "Scegli un colore"
+      ],
+      "Default email": [
+        "Email predefinita"
+      ],
+      "Display": [
+        "Visualizzazione"
+      ],
+      "Description": [
+        "Descrizione"
+      ],
+      "Default event duration": [
+        "Durata predefinita dell'evento"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Default notifications": [
+        "Notifiche predefinite"
+      ],
+      "Default full day notifications": [
+        "Notifiche predefinite per un giorno intero"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Quanto è probabile che consigli ${ calendarAppName } ad un amico o collega?"
+      ],
+      "0 - Not likely": [
+        "0 - Per niente"
+      ],
+      "10 - Extremely likely": [
+        "10 - Estremamente probabile"
+      ],
+      "All day": [
+        "Tutta la giornata"
+      ],
+      "Repeat on": [
+        "Ripeti il"
+      ],
+      "Repeat every": [
+        "Ripeti ogni"
+      ],
+      "Ends": [
+        "Termina"
+      ],
+      "Organizer": [
+        "Organizzatore"
+      ],
+      "Optional": [
+        "Facoltativo"
+      ],
+      "Time of the event": [
+        "Ora dell'evento"
+      ],
+      "Event time": [
+        "Data evento"
+      ],
+      "Event title": [
+        "Titolo dell'evento"
+      ],
+      "Event frequency": [
+        "Frequenza evento"
+      ],
+      "Event location": [
+        "Posizione evento"
+      ],
+      "Event notifications": [
+        "Notifiche dell'evento"
+      ],
+      "Participants": [
+        "Partecipanti"
+      ],
+      "Your calendars": [
+        "I tuoi calendari"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Impossibile usare la chiave per la crittografia"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Per saperne di più"
+      ],
+      "Request an invite": [
+        "Richiedi un invito"
+      ],
+      "clearing your browser cache": [
+        "pulendo la cache del browser"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Go to subscription plans": [
+        "Vai ai piani di abbonamento"
+      ],
+      "click here": [
+        "clicca qui"
+      ],
+      "Add a gift code": [
+        "Aggiungi un codice regalo"
+      ],
+      "Pay invoice": [
+        "Pagamento della fattura"
+      ],
+      "Upgrade account": [
+        "Effettua l'upgrade dell'account"
+      ],
+      "Calendars": [
+        "Calendari"
+      ],
+      "My calendars": [
+        "Miei calendari"
+      ],
+      "Subscribed calendars": [
+        "Calendari registrati"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ad es "
+      ],
+      "Start typing an email address": [
+        "Inizia a digitare un indirizzo email"
+      ],
+      "Image URL": [
+        "URL dell'immagine"
+      ],
+      "Filter groups": [
+        "Filtra gruppi"
+      ],
+      "Search for name or email": [
+        "Cerca nome o email"
+      ],
+      "Search for group name": [
+        "Cerca per nome gruppo"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "OS name": [
+        "Nome del sistema operativo"
+      ],
+      "OS version": [
+        "Versione del sistema operativo"
+      ],
+      "Proton username": [
+        "Nome utente di Proton"
+      ],
+      "A way to contact you": [
+        "Un modo per contattarti"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Per favore descrivi il problema e includi eventuali messaggi di errore"
+      ],
+      "Browser name": [
+        "Nome del browser"
+      ],
+      "Browser version": [
+        "Versione del browser"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "e.g. Julia Smith": [
+        "es. Julia Smith"
+      ],
+      "ZIP": [
+        "CAP"
+      ],
+      "Postal code": [
+        "Codice postale"
+      ],
+      "Gift code": [
+        "Codice regalo"
+      ],
+      "Mailbox password": [
+        "Password della casella email"
+      ],
+      "Add a calendar name": [
+        "Aggiungi un nome al calendario"
+      ],
+      "Add a calendar description": [
+        "Aggiungi una descrizione al calendario"
+      ],
+      "Add title": [
+        "Aggiungi titolo"
+      ],
+      "Add location": [
+        "Aggiungi posizione"
+      ],
+      "Add description": [
+        "Aggiungi descrizione"
+      ],
+      "Add participants": [
+        "Aggiungi Partecipanti"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
       ]
     },
     "Storage": {
@@ -3419,6 +2516,9 @@
       ],
       "Contacts could not be merged": [
         "I contatti non possono essere uniti"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ProtonVPN a pagamento. Si prega di aprire un ticket."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
@@ -4661,6 +3761,912 @@
       ],
       "120 minutes": [
         "120 minuti"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La password deve contenere almeno ${ length } carattere",
+        "La password deve contenere almeno ${ length } caratteri"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nome"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Phone": [
+        "Telefono"
+      ],
+      "Address": [
+        "Indirizzo"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organizzazione"
+      ],
+      "Birthday": [
+        "Compleanno"
+      ],
+      "Anniversary": [
+        "Anniversario"
+      ],
+      "Title": [
+        "Titolo"
+      ],
+      "Role": [
+        "Ruolo"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Genere"
+      ],
+      "Language": [
+        "Lingua"
+      ],
+      "Timezone": [
+        "Fuso orario"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Membro"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Lavoro"
+      ],
+      "Personal": [
+        "Personale"
+      ],
+      "Mobile": [
+        "Mobile"
+      ],
+      "Main": [
+        "Principale"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Altro"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Cercapersone"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Email"
+      ],
+      "Home": [
+        "Casa"
+      ],
+      "Work": [
+        "Lavoro"
+      ],
+      "Other": [
+        "Altro"
+      ],
+      "Phone": [
+        "Telefono"
+      ],
+      "Mobile": [
+        "Mobile"
+      ],
+      "Main": [
+        "Principale"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Cercapersone"
+      ],
+      "Address": [
+        "Indirizzo"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } inizia adesso"
+      ],
+      "${ title } starts today": [
+        "${ title } inizia oggi"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } è cominciato alle ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } è iniziato ieri"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } è iniziato ieri alle ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } è iniziato il ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } è iniziato il ${ formattedDate } alle ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } è iniziato il ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } è iniziato il ${ _formattedDate } alle ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } è iniziato il ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } è iniziato il ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } inizierà alle ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } inizierà domani"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } inizierà domani alle ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } inizierà il ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } inizierà il ${ _formattedDate2 } alle ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } inizierà il ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } inizierà il ${ _formattedDate3 } alle ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } inizierà il ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } inizierà il ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(nessun titolo)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Tu"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Cancellazione di un evento su ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invito per un evento su ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Aggiornamento per un evento su ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Cancellazione di un evento che inizia il ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invito per un evento che inizia il ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Aggiornamento per un evento che inizia il ${ formattedStart }"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Invito: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Quando: ${ formattedStart } (tutto il giorno)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Quando: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Quando: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Dove: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Descrizione: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } è stato annullato."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha accettato il tuo invito a ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha accettato provvisoriamente il tuo invito a ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha rifiutato il tuo invito a ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "la prima Domenica"
+      ],
+      "on the first Monday": [
+        "il primo Lunedì"
+      ],
+      "on the first Tuesday": [
+        "il primo Martedì"
+      ],
+      "on the first Wednesday": [
+        "il primo Mercoledì"
+      ],
+      "on the first Thursday": [
+        "il primo Giovedì"
+      ],
+      "on the first Friday": [
+        "il primo Venerdì"
+      ],
+      "on the first Saturday": [
+        "il primo Sabato"
+      ],
+      "on the second Sunday": [
+        "la seconda Domenica"
+      ],
+      "on the second Monday": [
+        "il secondo Lunedì"
+      ],
+      "on the second Tuesday": [
+        "il secondo Martedì"
+      ],
+      "on the second Wednesday": [
+        "il secondo Mercoledì"
+      ],
+      "on the second Thursday": [
+        "il secondo Giovedì"
+      ],
+      "on the second Friday": [
+        "il secondo Venerdì"
+      ],
+      "on the second Saturday": [
+        "il secondo Sabato"
+      ],
+      "on the third Sunday": [
+        "la terza Domenica"
+      ],
+      "on the third Monday": [
+        "il terzo Lunedì"
+      ],
+      "on the third Tuesday": [
+        "il terzo Martedì"
+      ],
+      "on the third Wednesday": [
+        "il terzo Mercoledì"
+      ],
+      "on the third Thursday": [
+        "il terzo Giovedì"
+      ],
+      "on the third Friday": [
+        "il terzo Venerdì"
+      ],
+      "on the third Saturday": [
+        "il terzo Sabato"
+      ],
+      "on the fourth Sunday": [
+        "la quarta Domenica"
+      ],
+      "on the fourth Monday": [
+        "il quarto Lunedì"
+      ],
+      "on the fourth Tuesday": [
+        "il quarto Martedì"
+      ],
+      "on the fourth Wednesday": [
+        "il quarto Mercoledì"
+      ],
+      "on the fourth Thursday": [
+        "il quarto Giovedì"
+      ],
+      "on the fourth Friday": [
+        "il quarto Venerdì"
+      ],
+      "on the fourth Saturday": [
+        "il quarto Sabato"
+      ],
+      "on the last Sunday": [
+        "l'ultima Domenica"
+      ],
+      "on the last Monday": [
+        "l'ultimo Lunedì"
+      ],
+      "on the last Tuesday": [
+        "l'ultimo Martedì"
+      ],
+      "on the last Wednesday": [
+        "l'ultimo Mercoledì"
+      ],
+      "on the last Thursday": [
+        "l'ultimo Giovedì"
+      ],
+      "on the last Friday": [
+        "l'ultimo Venerdì"
+      ],
+      "on the last Saturday": [
+        "l'ultimo Sabato"
+      ],
+      "on day ${ dayOfMonth }": [
+        "al giorno ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } volta",
+        "${ count } volte"
+      ],
+      "until ${ dateString }": [
+        "fino a ${ dateString }"
+      ],
+      "Daily": [
+        "Giornalmente"
+      ],
+      "Every ${ interval } day": [
+        "Ogni ${ interval } giorno",
+        "Ogni ${ interval } giorni"
+      ],
+      "Daily, ${ timesString }": [
+        "Giornaliero, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Ogni ${ interval } giorno, ${ timesString }",
+        "Ogni ${ interval } giorni, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Giornaliero, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Ogni ${ interval } giorno, ${ untilString }",
+        "Ogni ${ interval } giorni, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Domenica"
+      ],
+      "Monday": [
+        "Lunedì"
+      ],
+      "Tuesday": [
+        "Martedì"
+      ],
+      "Wednesday": [
+        "Mercoledì"
+      ],
+      "Thursday": [
+        "Giovedì"
+      ],
+      "Friday": [
+        "Venerdì"
+      ],
+      "Saturday": [
+        "Sabato"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Settimanale su tutti i giorni"
+      ],
+      "Every ${ interval } week on all days": [
+        "Ogni ${ interval } settimana, tutti i giorni",
+        "Ogni ${ interval } settimane, tutti i giorni"
+      ],
+      "Weekly on Sunday": [
+        "Settimanale la Domenica"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "La Domenica di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di domenica"
+      ],
+      "Weekly on Monday": [
+        "Settimanale il Lunedì"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Il lunedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di lunedì"
+      ],
+      "Weekly on Tuesday": [
+        "Settimanale il Martedì"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Il Martedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di Martedì"
+      ],
+      "Weekly on Wednesday": [
+        "Settimanale il Mercoledì"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Il Mercoledì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di Mercoledì"
+      ],
+      "Weekly on Thursday": [
+        "Settimanale il Giovedì"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Il Giovedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di Giovedì"
+      ],
+      "Weekly on Friday": [
+        "Settimanale il Venerdì"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Il Venerdì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di Venerdì"
+      ],
+      "Weekly on Saturday": [
+        "Settimanale il Sabato"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Il Sabato di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di Sabato"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Settimanale su ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Ogni ${ interval } settimana di ${ multipleDaysString }",
+        "Ogni ${ interval } settimane di ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Settimanale su tutti i giorni, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Ogni ${ interval } settimana, tutti i giorni, ${ timesString }",
+        "Ogni ${ interval } settimane, tutti i giorni, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Settimanale di domenica, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Domenica, ${ timesString }",
+        "Ogni ${ interval } settimane di Domenica, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Settimanale il lunedì, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Lunedì, ${ timesString }",
+        "Ogni ${ interval } settimane di Lunedì, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Settimanale il martedì, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Martedì, ${ timesString }",
+        "Ogni ${ interval } settimane di Martedi, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Settimanale il mercoledì, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Mercoledì, ${ timesString }",
+        "Ogni ${ interval } settimane di Mercoledì, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Settimanale il giovedì, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Giovedì, ${ timesString }",
+        "Ogni ${ interval } settimane di Giovedì, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Settimanale il venerdì, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Venerdì, ${ timesString }",
+        "Ogni ${ interval } settimane di Venerdì, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Settimanale il sabato, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Ogni ${ interval } settimana di Sabato, ${ timesString }",
+        "Ogni ${ interval } settimane di Sabato, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Settimanale su ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Ogni ${ interval } settimana di ${ multipleDaysString }, ${ timesString }",
+        "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Settimanale in tutti i giorni, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Ogni ${ interval } settimana, tutti i giorni, ${ untilString }",
+        "Ogni ${ interval } settimane tutti i giorni, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Settimanale la domenica, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Domenica, ${ untilString }",
+        "Ogni ${ interval } settimane di Domenica, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Settimanale il lunedì, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Lunedì, ${ untilString }",
+        "Ogni ${ interval } settimane di Lunedì, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Settimanale il martedì, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Martedì, ${ untilString }",
+        "Ogni ${ interval } settimane di Martedì, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Settimanale il mercoledì, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Mercoledì, ${ untilString }",
+        "Ogni ${ interval } settimane di Mercoledì, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Settimanale il giovedì, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Giovedì, ${ untilString }",
+        "Ogni ${ interval } settimane di Giovedì, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Settimanale il venerdì, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Venerdì, ${ untilString }",
+        "Ogni ${ interval } settimane di Venerdì, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Settimanale il sabato, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Ogni ${ interval } settimana di Sabato, ${ untilString }",
+        "Ogni ${ interval } settimane di Sabato, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Settimanale su ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Ogni ${ interval } settimana di ${ multipleDaysString }, ${ untilString }",
+        "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Mensile ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Ogni ${ interval } mese ${ onDayString }",
+        "Ogni ${ interval } mesi ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensile ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Ogni ${ interval } mese ${ onDayString }, ${ timesString }",
+        "Ogni ${ interval } mesi ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensile ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Ogni ${ interval } mese ${ onDayString }, ${ untilString }",
+        "Ogni ${ interval } mesi ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Annuale"
+      ],
+      "Every ${ interval } year": [
+        "Ogni ${ interval } anno",
+        "Ogni ${ interval } anni"
+      ],
+      "Yearly, ${ timesString }": [
+        "Annualmente, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Ogni ${ interval } anno, ${ timesString }",
+        "Ogni ${ interval } anni, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Annualmente, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Ogni ${ interval } anno, ${ untilString }",
+        "Ogni ${ interval } anni, ${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Navigazione di base"
+      ],
+      "Basic actions": [
+        "Azioni di base"
+      ],
+      "Folder shortcuts": [
+        "Scorciatoie cartella"
+      ],
+      "Composer shortcuts": [
+        "Compositore scorciatoie"
+      ],
+      "List shortcuts": [
+        "Lista scorciatoie"
+      ],
+      "Action shortcuts": [
+        "Tasti di scelta rapida"
+      ],
+      "Message shortcuts": [
+        "Scorciatoie messaggio"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Sposta su"
+      ],
+      "Jump to first": [
+        "Vai al primo"
+      ],
+      "Move down": [
+        "Sposta in basso"
+      ],
+      "Jump to last": [
+        "Vai all'ultimo"
+      ],
+      "Move right / expand": [
+        "Sposta a destra / espandi"
+      ],
+      "Move left / collapse": [
+        "Sposta a sinistra / comprimi"
+      ],
+      "Apply / open": [
+        "Applica / apri"
+      ],
+      "Cancel / close": [
+        "Annulla / chiudi"
+      ],
+      "Open this modal": [
+        "Apri questa finestra"
+      ],
+      "Select / unselect": [
+        "Seleziona / deseleziona"
+      ],
+      "Go to Inbox": [
+        "Vai alla posta in entrata"
+      ],
+      "Go to Archive": [
+        "Vai all'archivio"
+      ],
+      "Go to Sent": [
+        "Vai alla posta inviata"
+      ],
+      "Go to Starred": [
+        "Va' ai Preferiti"
+      ],
+      "Go to Drafts": [
+        "Va' alle Bozze"
+      ],
+      "Go to Trash": [
+        "Va' al Cestino"
+      ],
+      "Go to Spam": [
+        "Va' a Spam"
+      ],
+      "Go to All Mail": [
+        "Va' a Tutti i Messaggi"
+      ],
+      "Save draft": [
+        "Salva la bozza"
+      ],
+      "Send email": [
+        "Invia email"
+      ],
+      "Close draft": [
+        "Chiudi bozza"
+      ],
+      "Minimize / maximize composer": [
+        "Minimizza / massimizza il compositore"
+      ],
+      "Expand / contract composer": [
+        "Espandi / comprimi il compositore"
+      ],
+      "Attach file": [
+        "Allega file"
+      ],
+      "Add expiration time": [
+        "Aggiungi data di scadenza"
+      ],
+      "Add encryption": [
+        "Aggiungi crittografia"
+      ],
+      "Discard draft": [
+        "Scarta bozza"
+      ],
+      "Open previous message": [
+        "Apri messaggio precedente"
+      ],
+      "Open next message": [
+        "Apri il prossimo messaggio"
+      ],
+      "Show unread emails": [
+        "Mostra email non lette"
+      ],
+      "Show all emails": [
+        "Mostra tutte le email"
+      ],
+      "Select / unselect all": [
+        "Seleziona / deseleziona tutto"
+      ],
+      "Search": [
+        "Cercare"
+      ],
+      "New message": [
+        "Nuovo messaggio"
+      ],
+      "Star": [
+        "Preferito"
+      ],
+      "Mark as unread": [
+        "Segna come da leggere"
+      ],
+      "Label as...": [
+        "Etichettare come..."
+      ],
+      "Create filter with...": [
+        "Crea filtro con..."
+      ],
+      "Move to...": [
+        "Sposta in..."
+      ],
+      "Move to Inbox": [
+        "Sposta in Posta in arrivo"
+      ],
+      "Move to Archive": [
+        "Sposta in Archivio"
+      ],
+      "Move to Spam": [
+        "Sposta in Spam"
+      ],
+      "Move to Trash": [
+        "Sposta nel Cestino"
+      ],
+      "Delete permanently": [
+        "Elimina definitivamente"
+      ],
+      "Reply": [
+        "Rispondi"
+      ],
+      "Reply all": [
+        "Rispondi a tutti"
+      ],
+      "Forward": [
+        "Inoltra"
+      ],
+      "Load remote content": [
+        "Carica il contenuto remoto"
+      ],
+      "Load embedded images": [
+        "Carica le immagini incorporate"
+      ],
+      "Show original message": [
+        "Mostra il messaggio originale"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "sconosciuto"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Sconosciuto"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "versioni di vCard < 3.0 non supportate"
+      ],
+      "Encryption failed": [
+        "Criptaggio fallito"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Si è verificato un errore imprevisto. L'importazione deve essere riavviata."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Si è verificato un errore durante il caricamento del file. Nessun file è stato selezionato."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. Nessun file .csv o .vcf selezionato"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Il tuo file ${ formattedFilename } è vuoto."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Il tuo file ${ formattedFilename } non ha alcun contatto da importare."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Il tuo file ${ formattedFilename } contiene più di ${ MAX_IMPORT_CONTACTS_STRING } contatti."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "R:"
+      ],
+      "Fw:": [
+        "I:"
       ]
     },
     "Event info. Organizer name": {

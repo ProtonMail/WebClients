@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "Αυτό το πεδίο είναι υποχρεωτικό"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
-      ],
-      "Email is not valid": [
-        "Η διεύθυνση email δεν είναι έγκυρη"
-      ],
-      "Not a valid number": [
-        "Μη έγκυρος αριθμός"
-      ],
-      "Passwords do not match": [
-        "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
-      ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
-      ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
-      ],
-      "Missing signature": [
-        "Λείπει η υπογραφή"
-      ],
-      "Contact signature not verified": [
-        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
-      ],
-      "Signature not verified": [
-        "Υπογραφή δεν πιστοποιήθηκε"
-      ],
-      "Invalid name": [
-        ""
-      ],
-      "Email address disabled": [
-        "Η διεύθυνση email έχει απενεργοποιηθεί"
-      ],
-      "No keys retrieved for internal user": [
-        "Κανένα πλήκτρο δεν ανακτήθηκε για τον εσωτερικό χρήστη"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Δεν υπάρχουν έγκυρα κλειδιά που ανακτήθηκαν για τον εσωτερικό χρήστη"
-      ],
-      "Contact signature could not be verified": [
-        "Δεν ήταν δυνατή η επαλήθευση της υπογραφής επαφής"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Κανένα κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για την αποστολή"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Κανένα κλειδί WKD που ανακτήθηκε για το χρήστη δεν είναι έγκυρο για την αποστολή"
-      ],
-      "The sending key is not valid": [
-        "Το κλειδί αποστολής δεν είναι έγκυρο"
-      ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
+      ],
+      "This field is required": [
+        "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -149,17 +86,14 @@
       "A group with this name already exists": [
         ""
       ],
+      "Invalid name": [
+        ""
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
       ],
       "Process aborted": [
         ""
@@ -221,6 +155,12 @@
       "Invalid code": [
         ""
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
+      ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
@@ -232,6 +172,66 @@
       ],
       "Name required": [
         ""
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
+      ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+      ],
+      "Request timed out.": [
+        "Λήξη χρονικού ορίου αιτήματος."
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
+      ],
+      "Address primary private key not found": [
+        "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Missing signature": [
+        "Λείπει η υπογραφή"
+      ],
+      "Contact signature not verified": [
+        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
+      ],
+      "Signature not verified": [
+        "Υπογραφή δεν πιστοποιήθηκε"
+      ],
+      "Email address disabled": [
+        "Η διεύθυνση email έχει απενεργοποιηθεί"
+      ],
+      "No keys retrieved for internal user": [
+        "Κανένα πλήκτρο δεν ανακτήθηκε για τον εσωτερικό χρήστη"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Δεν υπάρχουν έγκυρα κλειδιά που ανακτήθηκαν για τον εσωτερικό χρήστη"
+      ],
+      "Contact signature could not be verified": [
+        "Δεν ήταν δυνατή η επαλήθευση της υπογραφής επαφής"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Κανένα κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για την αποστολή"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Κανένα κλειδί WKD που ανακτήθηκε για το χρήστη δεν είναι έγκυρο για την αποστολή"
+      ],
+      "The sending key is not valid": [
+        "Το κλειδί αποστολής δεν είναι έγκυρο"
       ],
       "Self invitation not allowed": [
         "Δεν επιτρέπεται η αυτοπρόσκληση"
@@ -307,1900 +307,10 @@
         "Σφάλμα"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        ""
-      ],
-      "KB": [
-        ""
-      ],
-      "MB": [
-        ""
-      ],
-      "GB": [
-        ""
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        ""
-      ],
-      "Email": [
-        ""
-      ],
-      "Phone": [
-        ""
-      ],
-      "Address": [
-        ""
-      ],
-      "Photo": [
-        ""
-      ],
-      "Organization": [
-        ""
-      ],
-      "Birthday": [
-        ""
-      ],
-      "Anniversary": [
-        ""
-      ],
-      "Title": [
-        ""
-      ],
-      "Role": [
-        ""
-      ],
-      "Note": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Gender": [
-        ""
-      ],
-      "Language": [
-        ""
-      ],
-      "Timezone": [
-        ""
-      ],
-      "Geo": [
-        ""
-      ],
-      "Logo": [
-        ""
-      ],
-      "Member": [
-        ""
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        ""
-      ],
-      "Personal": [
-        ""
-      ],
-      "Mobile": [
-        ""
-      ],
-      "Main": [
-        ""
-      ],
-      "Yomi": [
-        ""
-      ],
-      "Other": [
-        ""
-      ],
-      "Fax": [
-        ""
-      ],
-      "Pager": [
-        ""
-      ]
-    },
-    "Property type": {
-      "Email": [
-        ""
-      ],
-      "Home": [
-        ""
-      ],
-      "Work": [
-        ""
-      ],
-      "Other": [
-        ""
-      ],
-      "Phone": [
-        ""
-      ],
-      "Mobile": [
-        ""
-      ],
-      "Main": [
-        ""
-      ],
-      "Fax": [
-        ""
-      ],
-      "Pager": [
-        ""
-      ],
-      "Address": [
-        ""
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "Η χρονική περίοδος σύνδεσης έληξε."
-      ],
-      "Internet connection lost.": [
-        ""
-      ],
-      "Servers are unreachable.": [
-        "Αδυναμία πρόσβασης σε διακομιστή."
-      ],
-      "Custom daily": [
-        "Προσαρμοσμένη καθημερινή"
-      ],
-      "Custom weekly": [
-        "Προσαρμοσμένη εβδομαδιαία"
-      ],
-      "Custom monthly": [
-        "Προσαρμοσμένη μηνιαία"
-      ],
-      "Custom yearly": [
-        "Προσαρμοσμένη ετήσια"
-      ],
-      "Custom": [
-        "Προσαρμοσμένο"
-      ],
-      "Daily": [
-        "Καθημερινά"
-      ],
-      "Monthly ${ onDayString }": [
-        "Μηνιαίως ${ onDayString }"
-      ],
-      "Yearly": [
-        "Ετήσια"
-      ],
-      "Loading": [
-        "Φόρτωση"
-      ],
-      "No results found": [
-        "Δεν βρέθηκαν αποτελέσματα"
-      ],
-      "support team": [
-        ""
-      ],
-      "No contacts added yet": [
-        ""
-      ],
-      "Week": [
-        "Εβδομάδα"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        ""
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        ""
-      ],
-      "You are about to open another browser tab and visit:": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Drop the file here to upload": [
-        ""
-      ],
-      "(${ memberCount } member)": [
-        "",
-        ""
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης σε ${ strong }. Εάν αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι λανθασμένη, κάντε κλικ στο \"Επεξεργασία\" για να τη διορθώσετε."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
-      ],
-      "Loading ${ appName }": [
-        "Φόρτωση ${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "",
-        ""
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        ""
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        ""
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        ""
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        ""
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        ""
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        ""
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        ""
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        ""
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        ""
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        ""
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        ""
-      ],
-      "${ updated } contact updated successfully.": [
-        "",
-        ""
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        ""
-      ],
-      "Key fingerprint": [
-        ""
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        ""
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        ""
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        ""
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        ""
-      ],
-      "Group assignment applied": [
-        ""
-      ],
-      "Create a new contact group": [
-        ""
-      ],
-      "No group found": [
-        ""
-      ],
-      "Duplicate key updated": [
-        ""
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        ""
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        ""
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        ""
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        ""
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        ""
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        ""
-      ],
-      "No email address": [
-        ""
-      ],
-      "${ contactsCount } contact found": [
-        "",
-        ""
-      ],
-      "${ groupCounts } group found": [
-        "",
-        ""
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        ""
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        ""
-      ],
-      "${ addressCount } email address": [
-        "",
-        ""
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "εδώ"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        ""
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
-      ],
-      "Free up some space or add more storage space.": [
-        "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Η σύνδεση στο Διαδίκτυο χάθηκε. Ελέγξτε τη συνδεσιμότητα της συσκευής σας."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "Manage your calendars": [
-        "Διαχείριση των ημερολογίων σας"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
-      ],
-      "Loading events": [
-        "Φόρτωση γεγονότων"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "Ο διοργανωτής δεν μπορεί να ειδοποιηθεί ότι απορρίπτετε την πρόσκληση:"
-      ],
-      "Would you like to delete the event anyway?": [
-        "Θα θέλατε να διαγράψετε το γεγονός ούτως ή άλλως;"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "Κανένας από τους συμμετέχοντες δεν μπορεί να ενημερωθεί για τις αλλαγές σας:"
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "Οι παρακάτω συμμετέχοντες δεν μπορούν να ειδοποιηθούν για τις αλλαγές σας:"
-      ],
-      "Would you like to continue anyway?": [
-        "Θα θέλατε να συνεχίσετε ούτως ή άλλως;"
-      ],
-      "Discard changes?": [
-        "Απόρριψη αλλαγών;"
-      ],
-      "You will lose all unsaved changes.": [
-        "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Ο διοργανωτής αυτής της εκδήλωσης θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Ο διοργανωτής αυτού του συμβάντος δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση που έχετε προσκαλέσει. Θέλετε να διαγράψετε αυτό το συμβάν ούτως ή άλλως;"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός ούτως ή άλλως;"
-      ],
-      "Would you like to delete this event?": [
-        "Θα θέλατε να διαγράψετε αυτό το γεγονός;"
-      ],
-      "Which event would you like to delete?": [
-        "Ποιο γεγονός θα θέλατε να διαγράψετε;"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Αυτό το γεγονός έχει ενημερωθεί. Ο διοργανωτής θα ειδοποιηθεί ότι θα αρνηθείτε την πρόσκληση. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Το συμβάν έχει ενημερωθεί. Ο διοργανωτής δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση που έχετε προσκαλέσει. Θέλετε να διαγράψετε αυτό το συμβάν ούτως ή άλλως;"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά;"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά ούτως ή άλλως;"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Ο διοργανωτής αυτής της σειράς εκδηλώσεων θα ειδοποιηθεί ότι θα απορρίψετε την πρόσκληση. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά;"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "Ο διοργανωτής αυτής της σειράς συμβάντων δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση που έχετε προσκαλέσει. Θα θέλατε να διαγράψετε ούτως ή άλλως όλα τα συμβάντα αυτής της σειράς;"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά;"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν, αλλά μερικές από τις απαντήσεις σας θα χαθούν."
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν."
-      ],
-      "Which event would you like to update?": [
-        "Ποια εκδήλωση θα θέλατε να ενημερώσετε;"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Αυτό το γεγονός έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να αλλάξετε την απάντησή σας μόνο για αυτή την εμφάνιση σε αυτή τη σειρά;"
-      ],
-      "Would you like to update this event?": [
-        "Θα θέλατε να ενημερώσετε αυτό το γεγονός;"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "Θα θέλατε να αλλάξετε την απάντηση σας για όλα τα γεγονότα σε αυτή τη σειρά;"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν για όλα τα γεγονότα αυτής της σειράς."
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Θα ενημερώσετε όλα τα γεγονότα αυτής της σειράς. Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν."
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Θα ενημερώσετε όλα τα γεγονότα σε αυτήν τη σειρά. Θα ειδοποιηθούν οι συμμετέχοντες, θα προστεθούν και θα αφαιρεθούν."
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Θα ενημερώσετε όλα τα συμβάντα αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και πρόσθετοι συμμετέχοντες."
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "Θα ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά. Θα ειδοποιηθούν οι αποσυρθέντες συμμετέχοντες."
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Θα ενημερώσετε όλα τα συμβάντα αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και καταργημένοι συμμετέχοντες."
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Μια πρόσκληση θα σταλεί στους συμμετέχοντες της εκδήλωσης."
-      ],
-      "Would you like to update all events in this series?": [
-        "Θα θέλατε να ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά;"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "Οι προηγούμενες τροποποιήσεις αυτής της σειράς θα χαθούν."
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
-      ],
-      "Frequency modifications will be lost.": [
-        "Οι τροποποιήσεις συχνότητας θα χαθούν."
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "Ο διοργανωτής έχει ενημερώσει μερικά από τα γεγονότα αυτής της σειράς. Η αλλαγή του ημερολογίου δεν υποστηρίζεται ακόμα για αυτόν τον τύπο επαναλαμβανόμενων γεγονότων."
-      ],
-      "Update recurring event": [
-        "Ενημέρωση επαναλαμβανόμενου συμβάντος"
-      ],
-      "Added and removed participants will be notified.": [
-        "Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν."
-      ],
-      "An invitation will be sent to added participants.": [
-        "Μια πρόσκληση θα σταλεί στους πρόσθετους συμμετέχοντες."
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "Ένα email ακύρωσης θα αποσταλεί σε αφαιρεμένους συμμετέχοντες."
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "Θα ειδοποιούνται οι συμμετέχοντες, οι οποίοι έχουν προστεθεί και αφαιρεθεί."
-      ],
-      "Existent and added participants will be notified.": [
-        "Οι υπάρχοντες και πρόσθετοι συμμετέχοντες θα ειδοποιηθούν."
-      ],
-      "Removed participants will be notified.": [
-        "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
-      ],
-      "Existent and removed participants will be notified.": [
-        "Οι υπάρχοντες και αφαιρεθέντες συμμετέχοντες θα ειδοποιηθούν."
-      ],
-      "An invitation will be sent to the event participants.": [
-        "Μια πρόσκληση θα σταλεί στους συμμετέχοντες της εκδήλωσης."
-      ],
-      "Please remove the duplicates and try again.": [
-        "Καταργήστε τα διπλότυπα και προσπαθήστε ξανά."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        ""
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Έχετε επανενεργοποιήσει τα κλειδιά και τα συμβάντα που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Η ζώνη ώρας του συστήματός σας φαίνεται να έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Το πολύ 100 συμμετέχοντες επιτρέπονται ανά πρόσκληση"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Μπορείτε να τροποποιήσετε μόνο τις προσωπικές ιδιότητες του συμβάντος, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση του διοργανωτή."
-      ],
-      "Loading event": [
-        "Φόρτωση γεγονότος"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } ξεκινά τώρα"
-      ],
-      "${ title } starts today": [
-        "${ title } ξεκινά σήμερα"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } ξεκίνησε στις ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } ξεκίνησε χθες"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } ξεκίνησε χθες στις ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        ""
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } ξεκίνησε στις ${ formattedDate } στις ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } ξεκίνησε στις ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ξεκίνησε στις ${ _formattedDate } στις ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } ξεκίνησε στις ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } ξεκίνησε στις ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει από ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } θα ξεκινήσει αύριο"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει αύριο στις ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate2 } στις ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate3 } στις ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } θα ξεκινήσει στις ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(χωρίς τίτλο)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Εσείς"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Πρόσκληση για μια εκδήλωση στις ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Ενημέρωση για μια εκδήλωση στις ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Πρόσκληση για μια εκδήλωση που αρχίζει στις ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Πρόσκληση: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Πότε: ${ formattedStart } (όλη την ημέρα)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Πότε: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Πότε: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Πού: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Περιγραφή: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Σας προσκαλούμε σε ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } έχει ακυρωθεί."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } έχει αποδεχθεί την πρόσκληση σας στο ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } έχει αποδεχτεί προσωρινά την πρόσκληση σας στο ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } έχει απορρίψει την πρόσκληση σας στο ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "κάθε πρώτη Κυριακή"
-      ],
-      "on the first Monday": [
-        "κάθε πρώτη Δευτέρα"
-      ],
-      "on the first Tuesday": [
-        "κάθε πρώτη Τρίτη"
-      ],
-      "on the first Wednesday": [
-        "κάθε πρώτη Τετάρτη"
-      ],
-      "on the first Thursday": [
-        "κάθε πρώτη Πέμπτη"
-      ],
-      "on the first Friday": [
-        "κάθε πρώτη Παρασκευή"
-      ],
-      "on the first Saturday": [
-        "κάθε πρώτο Σάββατο"
-      ],
-      "on the second Sunday": [
-        "κάθε δεύτερη Κυριακή"
-      ],
-      "on the second Monday": [
-        "κάθε δεύτερη Δευτέρα"
-      ],
-      "on the second Tuesday": [
-        "κάθε δεύτερη Τρίτη"
-      ],
-      "on the second Wednesday": [
-        "κάθε δεύτερη Τετάρτη"
-      ],
-      "on the second Thursday": [
-        "κάθε δεύτερη Πέμπτη"
-      ],
-      "on the second Friday": [
-        "κάθε δεύτερη Παρασκευή"
-      ],
-      "on the second Saturday": [
-        "κάθε δεύτερο Σάββατο"
-      ],
-      "on the third Sunday": [
-        "κάθε τρίτη Κυριακή"
-      ],
-      "on the third Monday": [
-        "κάθε τρίτη Δευτέρα"
-      ],
-      "on the third Tuesday": [
-        "κάθε τρίτη Τρίτη"
-      ],
-      "on the third Wednesday": [
-        "κάθε τρίτη Τετάρτη"
-      ],
-      "on the third Thursday": [
-        "κάθε τρίτη Πέμπτη"
-      ],
-      "on the third Friday": [
-        "κάθε τρίτη Παρασκευή"
-      ],
-      "on the third Saturday": [
-        "κάθε τρίτο Σάββατο"
-      ],
-      "on the fourth Sunday": [
-        "κάθε τέταρτη Κυριακή"
-      ],
-      "on the fourth Monday": [
-        "κάθε τέταρτη Δευτέρα"
-      ],
-      "on the fourth Tuesday": [
-        "κάθε τέταρτη Τρίτη"
-      ],
-      "on the fourth Wednesday": [
-        "κάθε τέταρτη Τετάρτη"
-      ],
-      "on the fourth Thursday": [
-        "κάθε τέταρτη Πέμπτη"
-      ],
-      "on the fourth Friday": [
-        "κάθε τέταρτη Παρασκευή"
-      ],
-      "on the fourth Saturday": [
-        "κάθε τέταρτο Σάββατο"
-      ],
-      "on the last Sunday": [
-        "κάθε τελευταία Κυριακή"
-      ],
-      "on the last Monday": [
-        "κάθε τελευταία Δευτέρα"
-      ],
-      "on the last Tuesday": [
-        "κάθε τελευταία Τρίτη"
-      ],
-      "on the last Wednesday": [
-        "κάθε τελευταία Τετάρτη"
-      ],
-      "on the last Thursday": [
-        "κάθε τελευταία Πέμπτη"
-      ],
-      "on the last Friday": [
-        "κάθε τελευταία Παρασκευή"
-      ],
-      "on the last Saturday": [
-        "κάθε τελευταίο Σάββατο"
-      ],
-      "on day ${ dayOfMonth }": [
-        "την ημέρα ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } φορά",
-        "${ count } φορές"
-      ],
-      "until ${ dateString }": [
-        "μέχρι ${ dateString }"
-      ],
-      "Daily": [
-        "Καθημερινά"
-      ],
-      "Every ${ interval } day": [
-        "",
-        ""
-      ],
-      "Daily, ${ timesString }": [
-        "Καθημερινά, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Daily, ${ untilString }": [
-        "Καθημερινά, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "",
-        ""
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Κυριακή"
-      ],
-      "Monday": [
-        "Δευτέρα"
-      ],
-      "Tuesday": [
-        "Τρίτη"
-      ],
-      "Wednesday": [
-        "Τετάρτη"
-      ],
-      "Thursday": [
-        "Πέμπτη"
-      ],
-      "Friday": [
-        "Παρασκευή"
-      ],
-      "Saturday": [
-        "Σάββατο"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Εβδομαδιαία σε όλες τις μέρες"
-      ],
-      "Every ${ interval } week on all days": [
-        "Κάθε ${ interval } εβδομάδα όλες τις ημέρες",
-        "Κάθε ${ interval } εβδομάδες, σε όλες τις μέρες"
-      ],
-      "Weekly on Sunday": [
-        "Εβδομαδιαία την Κυριακή"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Κάθε ${ interval } εβδομάδα την Κυριακή",
-        "Κάθε ${ interval } εβδομάδες την Κυριακή"
-      ],
-      "Weekly on Monday": [
-        "Εβδομαδιαία την Δευτέρα"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Κάθε ${ interval } εβδομάδα τη Δευτέρα",
-        "Κάθε ${ interval } εβδομάδες την Δευτέρα"
-      ],
-      "Weekly on Tuesday": [
-        "Εβδομαδιαία την Τρίτη"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Κάθε ${ interval } εβδομάδα την Τρίτη",
-        "Κάθε ${ interval } εβδομάδες την Τρίτη"
-      ],
-      "Weekly on Wednesday": [
-        "Εβδομαδιαία την Τετάρτη"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Κάθε ${ interval } εβδομάδα την Τετάρτη",
-        "Κάθε ${ interval } εβδομάδες την Τετάρτη"
-      ],
-      "Weekly on Thursday": [
-        "Εβδομαδιαία την Πέμπτη"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Κάθε ${ interval } εβδομάδα την Πέμπτη",
-        "Κάθε ${ interval } εβδομάδες την Πέμπτη"
-      ],
-      "Weekly on Friday": [
-        "Εβδομαδιαία την Παρασκευή"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Κάθε ${ interval } εβδομάδα την Παρασκευή",
-        "Κάθε ${ interval } εβδομάδες την Παρασκευή"
-      ],
-      "Weekly on Saturday": [
-        "Εβδομαδιαία το Σάββατο"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Κάθε ${ interval } εβδομάδα το Σάββατο",
-        "Κάθε ${ interval } εβδομάδες το Σάββατο"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Εβδομαδιαία σε όλες τις μέρες, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Εβδομαδιαία την Κυριακή, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Εβδομαδιαία την Δευτέρα, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Δευτέρα, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Εβδομαδιαία την Τρίτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Εβδομαδιαία την Τετάρτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Εβδομαδιαία την Πέμπτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Εβδομαδιαία την Παρασκευή, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Εβδομαδιαία το Σάββατο, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Εβδομαδιαία σε όλες τις μέρες, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες σε όλες τις μέρες, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Εβδομαδιαία την Κυριακή, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Εβδομαδιαία την Δευτέρα, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Εβδομαδιαία την Τρίτη, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Εβδομαδιαία την Τετάρτη, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Εβδομαδιαία την Πέμπτη, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Εβδομαδιαία την Παρασκευή, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Εβδομαδιαία το Σάββατο, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Μηνιαίως ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }",
-        "Κάθε ${ interval } μήνες ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Μηνιαίως ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
-        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Μηνιαίως ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
-        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Ετήσια"
-      ],
-      "Every ${ interval } year": [
-        "Κάθε ${ interval } χρόνο",
-        "Κάθε ${ interval } χρόνια"
-      ],
-      "Yearly, ${ timesString }": [
-        "Ετήσια, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Κάθε ${ interval } χρόνο, ${ timesString }",
-        "Κάθε ${ interval } χρόνια, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Ετήσια, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Κάθε ${ interval } χρόνο, ${ untilString }",
-        "Κάθε ${ interval } χρόνια, ${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        ""
-      ],
-      "Basic actions": [
-        ""
-      ],
-      "Folder shortcuts": [
-        ""
-      ],
-      "Composer shortcuts": [
-        ""
-      ],
-      "List shortcuts": [
-        ""
-      ],
-      "Action shortcuts": [
-        ""
-      ],
-      "Message shortcuts": [
-        ""
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        ""
-      ],
-      "Jump to first": [
-        ""
-      ],
-      "Move down": [
-        ""
-      ],
-      "Jump to last": [
-        ""
-      ],
-      "Move right / expand": [
-        ""
-      ],
-      "Move left / collapse": [
-        ""
-      ],
-      "Apply / open": [
-        ""
-      ],
-      "Cancel / close": [
-        ""
-      ],
-      "Open this modal": [
-        ""
-      ],
-      "Select / unselect": [
-        ""
-      ],
-      "Go to Inbox": [
-        ""
-      ],
-      "Go to Archive": [
-        ""
-      ],
-      "Go to Sent": [
-        ""
-      ],
-      "Go to Starred": [
-        ""
-      ],
-      "Go to Drafts": [
-        ""
-      ],
-      "Go to Trash": [
-        ""
-      ],
-      "Go to Spam": [
-        ""
-      ],
-      "Go to All Mail": [
-        ""
-      ],
-      "Save draft": [
-        ""
-      ],
-      "Send email": [
-        ""
-      ],
-      "Close draft": [
-        ""
-      ],
-      "Minimize / maximize composer": [
-        ""
-      ],
-      "Expand / contract composer": [
-        ""
-      ],
-      "Attach file": [
-        ""
-      ],
-      "Add expiration time": [
-        ""
-      ],
-      "Add encryption": [
-        ""
-      ],
-      "Discard draft": [
-        ""
-      ],
-      "Open previous message": [
-        ""
-      ],
-      "Open next message": [
-        ""
-      ],
-      "Show unread emails": [
-        ""
-      ],
-      "Show all emails": [
-        ""
-      ],
-      "Select / unselect all": [
-        ""
-      ],
-      "Search": [
-        ""
-      ],
-      "New message": [
-        ""
-      ],
-      "Star": [
-        ""
-      ],
-      "Mark as unread": [
-        ""
-      ],
-      "Label as...": [
-        ""
-      ],
-      "Create filter with...": [
-        ""
-      ],
-      "Move to...": [
-        ""
-      ],
-      "Move to Inbox": [
-        ""
-      ],
-      "Move to Archive": [
-        ""
-      ],
-      "Move to Spam": [
-        ""
-      ],
-      "Move to Trash": [
-        ""
-      ],
-      "Delete permanently": [
-        ""
-      ],
-      "Reply": [
-        ""
-      ],
-      "Reply all": [
-        ""
-      ],
-      "Forward": [
-        ""
-      ],
-      "Load remote content": [
-        ""
-      ],
-      "Load embedded images": [
-        ""
-      ],
-      "Show original message": [
-        ""
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        ""
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        ""
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        ""
-      ],
-      "Encryption failed": [
-        ""
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        ""
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        ""
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        ""
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        ""
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Απ:"
-      ],
-      "Fw:": [
-        "Προώθ:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Αντιγραφή"
-      ],
-      "Reveal password": [
-        "Εμφάνιση κωδικού"
-      ],
-      "Hide password": [
-        "Απόκρυψη κωδικού πρόσβασης"
-      ],
-      "Street address": [
-        ""
-      ],
-      "City": [
-        ""
-      ],
-      "Region": [
-        ""
-      ],
-      "Postal code": [
-        "Ταχυδρομικός κώδικας"
-      ],
-      "Country": [
-        "Χώρα"
-      ],
-      "Post office box": [
-        ""
-      ],
-      "Extended address": [
-        ""
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "Διεύθυνση email"
-      ],
-      "Phone number": [
-        "Αριθμός τηλεφώνου"
-      ],
-      "Verification code": [
-        "Κωδικός επαλήθευσης"
-      ],
-      "Enter the 6-digit code": [
-        "Εισάγετε τον 6-ψήφιο κωδικό"
-      ],
-      "Add email address": [
-        ""
-      ],
-      "Email format": [
-        ""
-      ],
-      "Add image URL": [
-        ""
-      ],
-      "Upload picture": [
-        ""
-      ],
-      "Add to group": [
-        ""
-      ],
-      "Encrypt emails": [
-        ""
-      ],
-      "Sign emails": [
-        ""
-      ],
-      "Cryptographic scheme": [
-        ""
-      ],
-      "Public keys": [
-        ""
-      ],
-      "Automatically save contacts": [
-        ""
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Export contacts": [
-        ""
-      ],
-      "Operating system": [
-        "Λειτουργικό σύστημα"
-      ],
-      "Operating system version": [
-        "Έκδοση λειτουργικού συστήματος"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
-      "Category": [
-        "Κατηγορία"
-      ],
-      "What happened?": [
-        "Τι συνέβη;"
-      ],
-      "System information": [
-        "Πληροφορίες Συστήματος"
-      ],
-      "Browser": [
-        "Πρόγραμμα περιήγησης"
-      ],
-      "Browser version": [
-        "Έκδοση Browser"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
-      "Cancel": [
-        "Ακύρωση"
-      ],
-      "Submit": [
-        "Υποβολή"
-      ],
-      "Password": [
-        "Κωδικός πρόσβασης"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "Two-factor authentication code": [
-        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
-      ],
-      "Username or ProtonMail address": [
-        "Όνομα χρήστη ή διεύθυνση ProtonMail"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        ""
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Περιγραφή"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Όλη την ημέρα"
-      ],
-      "Repeat on": [
-        "Επανάληψη στις"
-      ],
-      "Repeat every": [
-        "Επανάληψη κάθε"
-      ],
-      "Ends": [
-        "Λήξη"
-      ],
-      "Organizer": [
-        "Διοργανωτής"
-      ],
-      "Optional": [
-        "Προαιρετικό"
-      ],
-      "Time of the event": [
-        "Ώρα του συμβάντος"
-      ],
-      "Event time": [
-        "Ώρα Συμβάντος"
-      ],
-      "Event title": [
-        "Τίτλος εκδήλωσης"
-      ],
-      "Event frequency": [
-        "Συχνότητα συμβάντος"
-      ],
-      "Event location": [
-        "Τοποθεσία συμβάντος"
-      ],
-      "Event notifications": [
-        "Ειδοποιήσεις συμβάντων"
-      ],
-      "Participants": [
-        "Συμμετέχοντες"
-      ],
-      "Your calendars": [
-        "Τα ημερολόγια σας"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Κλείσιμο"
+      ],
       "Close modal": [
         "Κλείσιμο παραθύρου"
       ],
@@ -2218,9 +328,6 @@
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "Close": [
-        "Κλείσιμο"
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
@@ -2470,6 +577,9 @@
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
       ],
+      "Chat with us": [
+        ""
+      ],
       "I have a question": [
         ""
       ],
@@ -2521,9 +631,6 @@
       "Back": [
         "Πίσω"
       ],
-      "Log in": [
-        "Είσοδος"
-      ],
       "Remove bonuses": [
         ""
       ],
@@ -2571,6 +678,9 @@
       ],
       "Increase": [
         ""
+      ],
+      "Log in": [
+        "Είσοδος"
       ],
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
@@ -2667,139 +777,6 @@
       ],
       "Close popover": [
         "Κλείστε το αναδυόμενο παράθυρο"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Μάθετε περισσότερα"
-      ],
-      "Request an invite": [
-        "Ζητήστε μια πρόσκληση"
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Πληρωμή υπολοίπου"
-      ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
-      "Calendars": [
-        "Ημερολόγιο"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Subscribed calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Π.χ., "
-      ],
-      "Start typing an email address": [
-        ""
-      ],
-      "Image URL": [
-        ""
-      ],
-      "Filter groups": [
-        ""
-      ],
-      "Search for name or email": [
-        ""
-      ],
-      "Search for group name": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "OS name": [
-        "Λειτουργικό Σύστημα"
-      ],
-      "OS version": [
-        "Έκδοση Λειτουργικού"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
-      "A way to contact you": [
-        "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
-      ],
-      "Browser name": [
-        "Όνομα Browser"
-      ],
-      "Browser version": [
-        "Έκδοση Browser"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Προσθέστε τίτλο"
-      ],
-      "Add location": [
-        "Προσθήκη τοποθεσίας"
-      ],
-      "Add description": [
-        "Προσθήκη περιγραφής"
-      ],
-      "Add participants": [
-        "Προσθήκη συμμετεχόντων"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
       ]
     },
     "Title": {
@@ -2975,18 +952,6 @@
       "Give feedback": [
         ""
       ],
-      "Sign in again to continue": [
-        "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
-      ],
       "Confirm loss of Proton bonuses": [
         ""
       ],
@@ -3076,6 +1041,18 @@
       ],
       "${ appName } customization": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Account suspended": [
+        "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό σας"
       ],
       "${ appName } Keyboard Shortcuts": [
         ""
@@ -3235,6 +1212,1126 @@
       ],
       "CANCELLED": [
         "ΑΚΥΡΩΣΗ"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Δεν βρέθηκαν αποτελέσματα"
+      ],
+      "Loading": [
+        "Φόρτωση"
+      ],
+      "support team": [
+        ""
+      ],
+      "No contacts added yet": [
+        ""
+      ],
+      "Week": [
+        "Εβδομάδα"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        ""
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        ""
+      ],
+      "You are about to open another browser tab and visit:": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Drop the file here to upload": [
+        ""
+      ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης σε ${ strong }. Εάν αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι λανθασμένη, κάντε κλικ στο \"Επεξεργασία\" για να τη διορθώσετε."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      ],
+      "Loading ${ appName }": [
+        "Φόρτωση ${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "",
+        ""
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        ""
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        ""
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        ""
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        ""
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        ""
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        ""
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        ""
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        ""
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        ""
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        ""
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        ""
+      ],
+      "${ updated } contact updated successfully.": [
+        "",
+        ""
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        ""
+      ],
+      "Key fingerprint": [
+        ""
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        ""
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        ""
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        ""
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        ""
+      ],
+      "Group assignment applied": [
+        ""
+      ],
+      "Create a new contact group": [
+        ""
+      ],
+      "No group found": [
+        ""
+      ],
+      "Duplicate key updated": [
+        ""
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        ""
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        ""
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        ""
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        ""
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        ""
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Primary": [
+        ""
+      ],
+      "No email address": [
+        ""
+      ],
+      "${ contactsCount } contact found": [
+        "",
+        ""
+      ],
+      "${ groupCounts } group found": [
+        "",
+        ""
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        ""
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        ""
+      ],
+      "${ addressCount } email address": [
+        "",
+        ""
+      ],
+      "Screenshot(s) attached": [
+        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "",
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "",
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
+      "here": [
+        "εδώ"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        ""
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
+      ],
+      "Free up some space or add more storage space.": [
+        "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Η σύνδεση στο Διαδίκτυο χάθηκε. Ελέγξτε τη συνδεσιμότητα της συσκευής σας."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "Session timed out.": [
+        "Η χρονική περίοδος σύνδεσης έληξε."
+      ],
+      "Internet connection lost.": [
+        ""
+      ],
+      "Servers are unreachable.": [
+        "Αδυναμία πρόσβασης σε διακομιστή."
+      ],
+      "Custom daily": [
+        "Προσαρμοσμένη καθημερινή"
+      ],
+      "Custom weekly": [
+        "Προσαρμοσμένη εβδομαδιαία"
+      ],
+      "Custom monthly": [
+        "Προσαρμοσμένη μηνιαία"
+      ],
+      "Custom yearly": [
+        "Προσαρμοσμένη ετήσια"
+      ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
+      "Daily": [
+        "Καθημερινά"
+      ],
+      "Monthly ${ onDayString }": [
+        "Μηνιαίως ${ onDayString }"
+      ],
+      "Yearly": [
+        "Ετήσια"
+      ],
+      "Manage your calendars": [
+        "Διαχείριση των ημερολογίων σας"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        ""
+      ],
+      "Loading events": [
+        "Φόρτωση γεγονότων"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "Ο διοργανωτής δεν μπορεί να ειδοποιηθεί ότι απορρίπτετε την πρόσκληση:"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Θα θέλατε να διαγράψετε το γεγονός ούτως ή άλλως;"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "Κανένας από τους συμμετέχοντες δεν μπορεί να ενημερωθεί για τις αλλαγές σας:"
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "Οι παρακάτω συμμετέχοντες δεν μπορούν να ειδοποιηθούν για τις αλλαγές σας:"
+      ],
+      "Would you like to continue anyway?": [
+        "Θα θέλατε να συνεχίσετε ούτως ή άλλως;"
+      ],
+      "Discard changes?": [
+        "Απόρριψη αλλαγών;"
+      ],
+      "You will lose all unsaved changes.": [
+        "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Ο διοργανωτής αυτής της εκδήλωσης θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Ο διοργανωτής αυτού του συμβάντος δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση που έχετε προσκαλέσει. Θέλετε να διαγράψετε αυτό το συμβάν ούτως ή άλλως;"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός ούτως ή άλλως;"
+      ],
+      "Would you like to delete this event?": [
+        "Θα θέλατε να διαγράψετε αυτό το γεγονός;"
+      ],
+      "Which event would you like to delete?": [
+        "Ποιο γεγονός θα θέλατε να διαγράψετε;"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Αυτό το γεγονός έχει ενημερωθεί. Ο διοργανωτής θα ειδοποιηθεί ότι θα αρνηθείτε την πρόσκληση. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Το συμβάν έχει ενημερωθεί. Ο διοργανωτής δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση που έχετε προσκαλέσει. Θέλετε να διαγράψετε αυτό το συμβάν ούτως ή άλλως;"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά;"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά ούτως ή άλλως;"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Ο διοργανωτής αυτής της σειράς εκδηλώσεων θα ειδοποιηθεί ότι θα απορρίψετε την πρόσκληση. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά;"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Ο διοργανωτής αυτής της σειράς συμβάντων δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση που έχετε προσκαλέσει. Θα θέλατε να διαγράψετε ούτως ή άλλως όλα τα συμβάντα αυτής της σειράς;"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά;"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν, αλλά μερικές από τις απαντήσεις σας θα χαθούν."
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν."
+      ],
+      "Which event would you like to update?": [
+        "Ποια εκδήλωση θα θέλατε να ενημερώσετε;"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Αυτό το γεγονός έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να αλλάξετε την απάντησή σας μόνο για αυτή την εμφάνιση σε αυτή τη σειρά;"
+      ],
+      "Would you like to update this event?": [
+        "Θα θέλατε να ενημερώσετε αυτό το γεγονός;"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Θα θέλατε να αλλάξετε την απάντηση σας για όλα τα γεγονότα σε αυτή τη σειρά;"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν για όλα τα γεγονότα αυτής της σειράς."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Θα ενημερώσετε όλα τα γεγονότα αυτής της σειράς. Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Θα ενημερώσετε όλα τα γεγονότα σε αυτήν τη σειρά. Θα ειδοποιηθούν οι συμμετέχοντες, θα προστεθούν και θα αφαιρεθούν."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Θα ενημερώσετε όλα τα συμβάντα αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και πρόσθετοι συμμετέχοντες."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Θα ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά. Θα ειδοποιηθούν οι αποσυρθέντες συμμετέχοντες."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Θα ενημερώσετε όλα τα συμβάντα αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και καταργημένοι συμμετέχοντες."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Μια πρόσκληση θα σταλεί στους συμμετέχοντες της εκδήλωσης."
+      ],
+      "Would you like to update all events in this series?": [
+        "Θα θέλατε να ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά;"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "Οι προηγούμενες τροποποιήσεις αυτής της σειράς θα χαθούν."
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
+      ],
+      "Frequency modifications will be lost.": [
+        "Οι τροποποιήσεις συχνότητας θα χαθούν."
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "Ο διοργανωτής έχει ενημερώσει μερικά από τα γεγονότα αυτής της σειράς. Η αλλαγή του ημερολογίου δεν υποστηρίζεται ακόμα για αυτόν τον τύπο επαναλαμβανόμενων γεγονότων."
+      ],
+      "Update recurring event": [
+        "Ενημέρωση επαναλαμβανόμενου συμβάντος"
+      ],
+      "Added and removed participants will be notified.": [
+        "Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν."
+      ],
+      "An invitation will be sent to added participants.": [
+        "Μια πρόσκληση θα σταλεί στους πρόσθετους συμμετέχοντες."
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "Ένα email ακύρωσης θα αποσταλεί σε αφαιρεμένους συμμετέχοντες."
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "Θα ειδοποιούνται οι συμμετέχοντες, οι οποίοι έχουν προστεθεί και αφαιρεθεί."
+      ],
+      "Existent and added participants will be notified.": [
+        "Οι υπάρχοντες και πρόσθετοι συμμετέχοντες θα ειδοποιηθούν."
+      ],
+      "Removed participants will be notified.": [
+        "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
+      ],
+      "Existent and removed participants will be notified.": [
+        "Οι υπάρχοντες και αφαιρεθέντες συμμετέχοντες θα ειδοποιηθούν."
+      ],
+      "An invitation will be sent to the event participants.": [
+        "Μια πρόσκληση θα σταλεί στους συμμετέχοντες της εκδήλωσης."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Καταργήστε τα διπλότυπα και προσπαθήστε ξανά."
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        ""
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Έχετε επανενεργοποιήσει τα κλειδιά και τα συμβάντα που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Η ζώνη ώρας του συστήματός σας φαίνεται να έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "Το πολύ 100 συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "Μπορείτε να τροποποιήσετε μόνο τις προσωπικές ιδιότητες του συμβάντος, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση του διοργανωτή."
+      ],
+      "Loading event": [
+        "Φόρτωση γεγονότος"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Reveal password": [
+        "Εμφάνιση κωδικού"
+      ],
+      "Hide password": [
+        "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "Street address": [
+        ""
+      ],
+      "City": [
+        ""
+      ],
+      "Region": [
+        ""
+      ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
+      "Country": [
+        "Χώρα"
+      ],
+      "Post office box": [
+        ""
+      ],
+      "Extended address": [
+        ""
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
+      "Phone number": [
+        "Αριθμός τηλεφώνου"
+      ],
+      "Verification code": [
+        "Κωδικός επαλήθευσης"
+      ],
+      "Enter the 6-digit code": [
+        "Εισάγετε τον 6-ψήφιο κωδικό"
+      ],
+      "Add email address": [
+        ""
+      ],
+      "Email format": [
+        ""
+      ],
+      "Add image URL": [
+        ""
+      ],
+      "Upload picture": [
+        ""
+      ],
+      "Add to group": [
+        ""
+      ],
+      "Encrypt emails": [
+        ""
+      ],
+      "Sign emails": [
+        ""
+      ],
+      "Cryptographic scheme": [
+        ""
+      ],
+      "Public keys": [
+        ""
+      ],
+      "Automatically save contacts": [
+        ""
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Operating system": [
+        "Λειτουργικό σύστημα"
+      ],
+      "Operating system version": [
+        "Έκδοση λειτουργικού συστήματος"
+      ],
+      "Proton username": [
+        "Όνομα χρήστη Proton"
+      ],
+      "Category": [
+        "Κατηγορία"
+      ],
+      "What happened?": [
+        "Τι συνέβη;"
+      ],
+      "System information": [
+        "Πληροφορίες Συστήματος"
+      ],
+      "Browser": [
+        "Πρόγραμμα περιήγησης"
+      ],
+      "Browser version": [
+        "Έκδοση Browser"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "Password": [
+        "Κωδικός πρόσβασης"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
+      "Two-factor authentication code": [
+        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
+      ],
+      "Username or ProtonMail address": [
+        "Όνομα χρήστη ή διεύθυνση ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        ""
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Περιγραφή"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Όλη την ημέρα"
+      ],
+      "Repeat on": [
+        "Επανάληψη στις"
+      ],
+      "Repeat every": [
+        "Επανάληψη κάθε"
+      ],
+      "Ends": [
+        "Λήξη"
+      ],
+      "Organizer": [
+        "Διοργανωτής"
+      ],
+      "Optional": [
+        "Προαιρετικό"
+      ],
+      "Time of the event": [
+        "Ώρα του συμβάντος"
+      ],
+      "Event time": [
+        "Ώρα Συμβάντος"
+      ],
+      "Event title": [
+        "Τίτλος εκδήλωσης"
+      ],
+      "Event frequency": [
+        "Συχνότητα συμβάντος"
+      ],
+      "Event location": [
+        "Τοποθεσία συμβάντος"
+      ],
+      "Event notifications": [
+        "Ειδοποιήσεις συμβάντων"
+      ],
+      "Participants": [
+        "Συμμετέχοντες"
+      ],
+      "Your calendars": [
+        "Τα ημερολόγια σας"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
+      ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Πληρωμή υπολοίπου"
+      ],
+      "Upgrade account": [
+        "Αναβάθμιση λογαριασμού"
+      ],
+      "Calendars": [
+        "Ημερολόγιο"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Π.χ., "
+      ],
+      "Start typing an email address": [
+        ""
+      ],
+      "Image URL": [
+        ""
+      ],
+      "Filter groups": [
+        ""
+      ],
+      "Search for name or email": [
+        ""
+      ],
+      "Search for group name": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "OS name": [
+        "Λειτουργικό Σύστημα"
+      ],
+      "OS version": [
+        "Έκδοση Λειτουργικού"
+      ],
+      "Proton username": [
+        "Όνομα χρήστη Proton"
+      ],
+      "A way to contact you": [
+        "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
+      ],
+      "Browser name": [
+        "Όνομα Browser"
+      ],
+      "Browser version": [
+        "Έκδοση Browser"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "π.χ. Julia Smith"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Προσθέστε τίτλο"
+      ],
+      "Add location": [
+        "Προσθήκη τοποθεσίας"
+      ],
+      "Add description": [
+        "Προσθήκη περιγραφής"
+      ],
+      "Add participants": [
+        "Προσθήκη συμμετεχόντων"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
       ]
     },
     "Storage": {
@@ -3418,6 +2515,9 @@
         ""
       ],
       "Contacts could not be merged": [
+        ""
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -4661,6 +3761,912 @@
       ],
       "120 minutes": [
         ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        ""
+      ],
+      "KB": [
+        ""
+      ],
+      "MB": [
+        ""
+      ],
+      "GB": [
+        ""
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        ""
+      ],
+      "Email": [
+        ""
+      ],
+      "Phone": [
+        ""
+      ],
+      "Address": [
+        ""
+      ],
+      "Photo": [
+        ""
+      ],
+      "Organization": [
+        ""
+      ],
+      "Birthday": [
+        ""
+      ],
+      "Anniversary": [
+        ""
+      ],
+      "Title": [
+        ""
+      ],
+      "Role": [
+        ""
+      ],
+      "Note": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Gender": [
+        ""
+      ],
+      "Language": [
+        ""
+      ],
+      "Timezone": [
+        ""
+      ],
+      "Geo": [
+        ""
+      ],
+      "Logo": [
+        ""
+      ],
+      "Member": [
+        ""
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        ""
+      ],
+      "Personal": [
+        ""
+      ],
+      "Mobile": [
+        ""
+      ],
+      "Main": [
+        ""
+      ],
+      "Yomi": [
+        ""
+      ],
+      "Other": [
+        ""
+      ],
+      "Fax": [
+        ""
+      ],
+      "Pager": [
+        ""
+      ]
+    },
+    "Property type": {
+      "Email": [
+        ""
+      ],
+      "Home": [
+        ""
+      ],
+      "Work": [
+        ""
+      ],
+      "Other": [
+        ""
+      ],
+      "Phone": [
+        ""
+      ],
+      "Mobile": [
+        ""
+      ],
+      "Main": [
+        ""
+      ],
+      "Fax": [
+        ""
+      ],
+      "Pager": [
+        ""
+      ],
+      "Address": [
+        ""
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } ξεκινά τώρα"
+      ],
+      "${ title } starts today": [
+        "${ title } ξεκινά σήμερα"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } ξεκίνησε στις ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } ξεκίνησε χθες"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } ξεκίνησε χθες στις ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } ξεκίνησε στις ${ formattedDate } στις ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } ξεκίνησε στις ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } ξεκίνησε στις ${ _formattedDate } στις ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } ξεκίνησε στις ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } ξεκίνησε στις ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } θα ξεκινήσει από ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } θα ξεκινήσει αύριο"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } θα ξεκινήσει αύριο στις ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } θα ξεκινήσει στις ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } θα ξεκινήσει στις ${ _formattedDate2 } στις ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } θα ξεκινήσει στις ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } θα ξεκινήσει στις ${ _formattedDate3 } στις ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } θα ξεκινήσει στις ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } θα ξεκινήσει στις ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(χωρίς τίτλο)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Εσείς"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Πρόσκληση για μια εκδήλωση στις ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Ενημέρωση για μια εκδήλωση στις ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Πρόσκληση για μια εκδήλωση που αρχίζει στις ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Πρόσκληση: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Πότε: ${ formattedStart } (όλη την ημέρα)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Πότε: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Πότε: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Πού: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Περιγραφή: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Σας προσκαλούμε σε ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } έχει ακυρωθεί."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } έχει αποδεχθεί την πρόσκληση σας στο ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } έχει αποδεχτεί προσωρινά την πρόσκληση σας στο ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } έχει απορρίψει την πρόσκληση σας στο ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "κάθε πρώτη Κυριακή"
+      ],
+      "on the first Monday": [
+        "κάθε πρώτη Δευτέρα"
+      ],
+      "on the first Tuesday": [
+        "κάθε πρώτη Τρίτη"
+      ],
+      "on the first Wednesday": [
+        "κάθε πρώτη Τετάρτη"
+      ],
+      "on the first Thursday": [
+        "κάθε πρώτη Πέμπτη"
+      ],
+      "on the first Friday": [
+        "κάθε πρώτη Παρασκευή"
+      ],
+      "on the first Saturday": [
+        "κάθε πρώτο Σάββατο"
+      ],
+      "on the second Sunday": [
+        "κάθε δεύτερη Κυριακή"
+      ],
+      "on the second Monday": [
+        "κάθε δεύτερη Δευτέρα"
+      ],
+      "on the second Tuesday": [
+        "κάθε δεύτερη Τρίτη"
+      ],
+      "on the second Wednesday": [
+        "κάθε δεύτερη Τετάρτη"
+      ],
+      "on the second Thursday": [
+        "κάθε δεύτερη Πέμπτη"
+      ],
+      "on the second Friday": [
+        "κάθε δεύτερη Παρασκευή"
+      ],
+      "on the second Saturday": [
+        "κάθε δεύτερο Σάββατο"
+      ],
+      "on the third Sunday": [
+        "κάθε τρίτη Κυριακή"
+      ],
+      "on the third Monday": [
+        "κάθε τρίτη Δευτέρα"
+      ],
+      "on the third Tuesday": [
+        "κάθε τρίτη Τρίτη"
+      ],
+      "on the third Wednesday": [
+        "κάθε τρίτη Τετάρτη"
+      ],
+      "on the third Thursday": [
+        "κάθε τρίτη Πέμπτη"
+      ],
+      "on the third Friday": [
+        "κάθε τρίτη Παρασκευή"
+      ],
+      "on the third Saturday": [
+        "κάθε τρίτο Σάββατο"
+      ],
+      "on the fourth Sunday": [
+        "κάθε τέταρτη Κυριακή"
+      ],
+      "on the fourth Monday": [
+        "κάθε τέταρτη Δευτέρα"
+      ],
+      "on the fourth Tuesday": [
+        "κάθε τέταρτη Τρίτη"
+      ],
+      "on the fourth Wednesday": [
+        "κάθε τέταρτη Τετάρτη"
+      ],
+      "on the fourth Thursday": [
+        "κάθε τέταρτη Πέμπτη"
+      ],
+      "on the fourth Friday": [
+        "κάθε τέταρτη Παρασκευή"
+      ],
+      "on the fourth Saturday": [
+        "κάθε τέταρτο Σάββατο"
+      ],
+      "on the last Sunday": [
+        "κάθε τελευταία Κυριακή"
+      ],
+      "on the last Monday": [
+        "κάθε τελευταία Δευτέρα"
+      ],
+      "on the last Tuesday": [
+        "κάθε τελευταία Τρίτη"
+      ],
+      "on the last Wednesday": [
+        "κάθε τελευταία Τετάρτη"
+      ],
+      "on the last Thursday": [
+        "κάθε τελευταία Πέμπτη"
+      ],
+      "on the last Friday": [
+        "κάθε τελευταία Παρασκευή"
+      ],
+      "on the last Saturday": [
+        "κάθε τελευταίο Σάββατο"
+      ],
+      "on day ${ dayOfMonth }": [
+        "την ημέρα ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } φορά",
+        "${ count } φορές"
+      ],
+      "until ${ dateString }": [
+        "μέχρι ${ dateString }"
+      ],
+      "Daily": [
+        "Καθημερινά"
+      ],
+      "Every ${ interval } day": [
+        "",
+        ""
+      ],
+      "Daily, ${ timesString }": [
+        "Καθημερινά, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "",
+        ""
+      ],
+      "Daily, ${ untilString }": [
+        "Καθημερινά, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "",
+        ""
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Κυριακή"
+      ],
+      "Monday": [
+        "Δευτέρα"
+      ],
+      "Tuesday": [
+        "Τρίτη"
+      ],
+      "Wednesday": [
+        "Τετάρτη"
+      ],
+      "Thursday": [
+        "Πέμπτη"
+      ],
+      "Friday": [
+        "Παρασκευή"
+      ],
+      "Saturday": [
+        "Σάββατο"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Εβδομαδιαία σε όλες τις μέρες"
+      ],
+      "Every ${ interval } week on all days": [
+        "Κάθε ${ interval } εβδομάδα όλες τις ημέρες",
+        "Κάθε ${ interval } εβδομάδες, σε όλες τις μέρες"
+      ],
+      "Weekly on Sunday": [
+        "Εβδομαδιαία την Κυριακή"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή"
+      ],
+      "Weekly on Monday": [
+        "Εβδομαδιαία την Δευτέρα"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα"
+      ],
+      "Weekly on Tuesday": [
+        "Εβδομαδιαία την Τρίτη"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη"
+      ],
+      "Weekly on Wednesday": [
+        "Εβδομαδιαία την Τετάρτη"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη"
+      ],
+      "Weekly on Thursday": [
+        "Εβδομαδιαία την Πέμπτη"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη"
+      ],
+      "Weekly on Friday": [
+        "Εβδομαδιαία την Παρασκευή"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή"
+      ],
+      "Weekly on Saturday": [
+        "Εβδομαδιαία το Σάββατο"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Εβδομαδιαία στις ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Εβδομαδιαία σε όλες τις μέρες, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Εβδομαδιαία την Κυριακή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Εβδομαδιαία την Δευτέρα, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Δευτέρα, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Εβδομαδιαία την Τρίτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Εβδομαδιαία την Τετάρτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Εβδομαδιαία την Πέμπτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Εβδομαδιαία την Παρασκευή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Εβδομαδιαία το Σάββατο, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Εβδομαδιαία στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Εβδομαδιαία σε όλες τις μέρες, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες σε όλες τις μέρες, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Εβδομαδιαία την Κυριακή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Εβδομαδιαία την Δευτέρα, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Εβδομαδιαία την Τρίτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Εβδομαδιαία την Τετάρτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Εβδομαδιαία την Πέμπτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Εβδομαδιαία την Παρασκευή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Εβδομαδιαία το Σάββατο, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Εβδομαδιαία στις ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Μηνιαίως ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Μηνιαίως ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Μηνιαίως ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Ετήσια"
+      ],
+      "Every ${ interval } year": [
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
+      ],
+      "Yearly, ${ timesString }": [
+        "Ετήσια, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } χρόνια, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Ετήσια, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } χρόνια, ${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        ""
+      ],
+      "Basic actions": [
+        ""
+      ],
+      "Folder shortcuts": [
+        ""
+      ],
+      "Composer shortcuts": [
+        ""
+      ],
+      "List shortcuts": [
+        ""
+      ],
+      "Action shortcuts": [
+        ""
+      ],
+      "Message shortcuts": [
+        ""
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        ""
+      ],
+      "Jump to first": [
+        ""
+      ],
+      "Move down": [
+        ""
+      ],
+      "Jump to last": [
+        ""
+      ],
+      "Move right / expand": [
+        ""
+      ],
+      "Move left / collapse": [
+        ""
+      ],
+      "Apply / open": [
+        ""
+      ],
+      "Cancel / close": [
+        ""
+      ],
+      "Open this modal": [
+        ""
+      ],
+      "Select / unselect": [
+        ""
+      ],
+      "Go to Inbox": [
+        ""
+      ],
+      "Go to Archive": [
+        ""
+      ],
+      "Go to Sent": [
+        ""
+      ],
+      "Go to Starred": [
+        ""
+      ],
+      "Go to Drafts": [
+        ""
+      ],
+      "Go to Trash": [
+        ""
+      ],
+      "Go to Spam": [
+        ""
+      ],
+      "Go to All Mail": [
+        ""
+      ],
+      "Save draft": [
+        ""
+      ],
+      "Send email": [
+        ""
+      ],
+      "Close draft": [
+        ""
+      ],
+      "Minimize / maximize composer": [
+        ""
+      ],
+      "Expand / contract composer": [
+        ""
+      ],
+      "Attach file": [
+        ""
+      ],
+      "Add expiration time": [
+        ""
+      ],
+      "Add encryption": [
+        ""
+      ],
+      "Discard draft": [
+        ""
+      ],
+      "Open previous message": [
+        ""
+      ],
+      "Open next message": [
+        ""
+      ],
+      "Show unread emails": [
+        ""
+      ],
+      "Show all emails": [
+        ""
+      ],
+      "Select / unselect all": [
+        ""
+      ],
+      "Search": [
+        ""
+      ],
+      "New message": [
+        ""
+      ],
+      "Star": [
+        ""
+      ],
+      "Mark as unread": [
+        ""
+      ],
+      "Label as...": [
+        ""
+      ],
+      "Create filter with...": [
+        ""
+      ],
+      "Move to...": [
+        ""
+      ],
+      "Move to Inbox": [
+        ""
+      ],
+      "Move to Archive": [
+        ""
+      ],
+      "Move to Spam": [
+        ""
+      ],
+      "Move to Trash": [
+        ""
+      ],
+      "Delete permanently": [
+        ""
+      ],
+      "Reply": [
+        ""
+      ],
+      "Reply all": [
+        ""
+      ],
+      "Forward": [
+        ""
+      ],
+      "Load remote content": [
+        ""
+      ],
+      "Load embedded images": [
+        ""
+      ],
+      "Show original message": [
+        ""
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        ""
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        ""
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        ""
+      ],
+      "Encryption failed": [
+        ""
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        ""
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        ""
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Απ:"
+      ],
+      "Fw:": [
+        "Προώθ:"
       ]
     },
     "Event info. Organizer name": {

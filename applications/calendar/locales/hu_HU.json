@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "A mező kitöltése kötelező"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        ""
-      ],
-      "Email is not valid": [
-        ""
-      ],
-      "Not a valid number": [
-        ""
-      ],
-      "Passwords do not match": [
-        ""
-      ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
-      ],
-      "Signature verification failed": [
-        "Az aláírás ellenőrzése sikertelen volt"
-      ],
-      "Could not find address ${ email }.": [
-        "A(z) ${ email }. e-mail cím nem található."
-      ],
-      "Address primary private key not found": [
-        "A cím elsődleges titkosító kulcsa nem található"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
-      ],
-      "Missing signature": [
-        "Hiányzó aláírás"
-      ],
-      "Contact signature not verified": [
-        "Névjegy aláírása nincs ellenőrizve"
-      ],
-      "Signature not verified": [
-        "Aláírás nincs ellenőrizve"
-      ],
-      "Invalid name": [
-        ""
-      ],
-      "Email address disabled": [
-        "Az e-mail cím le van tiltva"
-      ],
-      "No keys retrieved for internal user": [
-        "Nem található kulcs a belső felhasználóhoz"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nem található érvényes kulcs a belső felhasználóhoz"
-      ],
-      "Contact signature could not be verified": [
-        "Nem sikerült ellenőrizni a névjegy aláírását"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nem található a küldéshez érvényes kulcs a belső felhasználóhoz"
-      ],
-      "Trusted keys are not valid for sending": [
-        "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nem sikerült a küldéshez érvényes WKD kulcs letöltése"
-      ],
-      "The sending key is not valid": [
-        "A küldő kulcs érvénytelen"
-      ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "Érvénytelen e-mail cím"
+      ],
+      "This field is required": [
+        "A mező kitöltése kötelező"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -149,17 +86,14 @@
       "A group with this name already exists": [
         ""
       ],
+      "Invalid name": [
+        ""
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Helytelen bejelentkezési adatok. Próbálja meg újra"
       ],
       "Process aborted": [
         ""
@@ -221,6 +155,12 @@
       "Invalid code": [
         ""
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Helytelen bejelentkezési adatok. Próbálja meg újra"
+      ],
       "Primary address key is not decrypted": [
         "Az elsődleges cím kulcsa nincs visszafejtve"
       ],
@@ -232,6 +172,66 @@
       ],
       "Name required": [
         ""
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        ""
+      ],
+      "Email is not valid": [
+        ""
+      ],
+      "Not a valid number": [
+        ""
+      ],
+      "Passwords do not match": [
+        ""
+      ],
+      "Request timed out.": [
+        "A kérés túllépte az időkorlátot."
+      ],
+      "Signature verification failed": [
+        "Az aláírás ellenőrzése sikertelen volt"
+      ],
+      "Could not find address ${ email }.": [
+        "A(z) ${ email }. e-mail cím nem található."
+      ],
+      "Address primary private key not found": [
+        "A cím elsődleges titkosító kulcsa nem található"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
+      ],
+      "Missing signature": [
+        "Hiányzó aláírás"
+      ],
+      "Contact signature not verified": [
+        "Névjegy aláírása nincs ellenőrizve"
+      ],
+      "Signature not verified": [
+        "Aláírás nincs ellenőrizve"
+      ],
+      "Email address disabled": [
+        "Az e-mail cím le van tiltva"
+      ],
+      "No keys retrieved for internal user": [
+        "Nem található kulcs a belső felhasználóhoz"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Nem található érvényes kulcs a belső felhasználóhoz"
+      ],
+      "Contact signature could not be verified": [
+        "Nem sikerült ellenőrizni a névjegy aláírását"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Nem található a küldéshez érvényes kulcs a belső felhasználóhoz"
+      ],
+      "Trusted keys are not valid for sending": [
+        "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nem sikerült a küldéshez érvényes WKD kulcs letöltése"
+      ],
+      "The sending key is not valid": [
+        "A küldő kulcs érvénytelen"
       ],
       "Self invitation not allowed": [
         "Önmaga meghívása nem lehetséges"
@@ -307,1900 +307,10 @@
         "Hiba"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bájt"
-      ],
-      "KB": [
-        ""
-      ],
-      "MB": [
-        ""
-      ],
-      "GB": [
-        ""
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Név"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Cím"
-      ],
-      "Photo": [
-        "Fénykép"
-      ],
-      "Organization": [
-        "Szervezet"
-      ],
-      "Birthday": [
-        "Születésnap"
-      ],
-      "Anniversary": [
-        "Évforduló"
-      ],
-      "Title": [
-        "Cím"
-      ],
-      "Role": [
-        "Beosztás"
-      ],
-      "Note": [
-        "Megjegyzés"
-      ],
-      "URL": [
-        ""
-      ],
-      "Gender": [
-        "Nem"
-      ],
-      "Language": [
-        "Nyelv"
-      ],
-      "Timezone": [
-        "Időzóna"
-      ],
-      "Geo": [
-        "Földrajzi hely"
-      ],
-      "Logo": [
-        "Logó"
-      ],
-      "Member": [
-        "Tag"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Munkahely"
-      ],
-      "Personal": [
-        "Személyes"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Elsődleges"
-      ],
-      "Yomi": [
-        ""
-      ],
-      "Other": [
-        "Egyéb"
-      ],
-      "Fax": [
-        ""
-      ],
-      "Pager": [
-        "Személyhívó"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
-      ],
-      "Home": [
-        "Otthoni"
-      ],
-      "Work": [
-        ""
-      ],
-      "Other": [
-        ""
-      ],
-      "Phone": [
-        ""
-      ],
-      "Mobile": [
-        ""
-      ],
-      "Main": [
-        ""
-      ],
-      "Fax": [
-        ""
-      ],
-      "Pager": [
-        ""
-      ],
-      "Address": [
-        ""
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "A munkamenet lejárt."
-      ],
-      "Internet connection lost.": [
-        ""
-      ],
-      "Servers are unreachable.": [
-        "A szerverek nem érhetők el."
-      ],
-      "Custom daily": [
-        "Egyéni, naponta"
-      ],
-      "Custom weekly": [
-        "Egyéni, hetente"
-      ],
-      "Custom monthly": [
-        "Egyéni, havonta"
-      ],
-      "Custom yearly": [
-        "Egyéni, évente"
-      ],
-      "Custom": [
-        "Egyéni"
-      ],
-      "Daily": [
-        "Napi"
-      ],
-      "Monthly ${ onDayString }": [
-        "Havonta: ${ onDayString }"
-      ],
-      "Yearly": [
-        "Éves"
-      ],
-      "Loading": [
-        "Betöltés"
-      ],
-      "No results found": [
-        "Nincs találat"
-      ],
-      "support team": [
-        ""
-      ],
-      "No contacts added yet": [
-        "Még nincsenek névjegyek"
-      ],
-      "Week": [
-        "Hét"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        ""
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        ""
-      ],
-      "You are about to open another browser tab and visit:": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Drop the file here to upload": [
-        "Húzza ide a fájlt a feltöltéshez"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } tag)",
-        "(${ memberCount } tagok)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        ""
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        ""
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        ""
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
-      ],
-      "Loading ${ appName }": [
-        "A(z) ${ appName } betöltése"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } tag",
-        "${ contactEmailsLength } tagok"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } és ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ProtonMail mindig aláírja a titkosított üzeneteket"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "A csoporthoz rendelt címek NEM kerülnek törlésre."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Névjegy ellenőrzése ${ progress }/${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } névjegy sikeresen frissítve.",
-        "${ updated } névjegyek sikeresen frissítve."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
-      ],
-      "Key fingerprint": [
-        "Kulcs ujjlenyomat"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
-      ],
-      "Group assignment applied": [
-        "Csoport hozzárendelés alkalmazva"
-      ],
-      "Create a new contact group": [
-        "Új névjegy csoport létrehozása"
-      ],
-      "No group found": [
-        "Nem található csoport"
-      ],
-      "Duplicate key updated": [
-        ""
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        ""
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        ""
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        ""
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        ""
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        ""
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        ""
-      ],
-      "No email address": [
-        ""
-      ],
-      "${ contactsCount } contact found": [
-        "",
-        ""
-      ],
-      "${ groupCounts } group found": [
-        "",
-        ""
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        ""
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        ""
-      ],
-      "${ addressCount } email address": [
-        "",
-        ""
-      ],
-      "Screenshot(s) attached": [
-        "Képernyőkép(ek) csatolva"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Az oldal frissítése vagy ${ link } automatikusan megoldja a legtöbb problémát."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "itt"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
-      ],
-      "Free up some space or add more storage space.": [
-        "Szabadítson fel helyet vagy vásároljon több területet."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Szabadítson fel területet vagy írjon az adminisztrátornak."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Internet kapcsolat visszaállítva."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        ""
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "Manage your calendars": [
-        "Naptárak kezelése"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
-      ],
-      "Loading events": [
-        "Események betöltése"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "A szervező nem értesíthető, hogy elutasította a meghívót:"
-      ],
-      "Would you like to delete the event anyway?": [
-        "Ebben az esetben is törli az eseményt?"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "Egyik résztvevő sem értesíthető a módosításokról:"
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "A következő résztvevők nem értesíthetők a módosításokról:"
-      ],
-      "Would you like to continue anyway?": [
-        "Ebben az esetben is folytatja?"
-      ],
-      "Discard changes?": [
-        "Módosítások elvetése?"
-      ],
-      "You will lose all unsaved changes.": [
-        "A nem mentett módosítások el fognak veszni."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Az esemény szervezője értesítést kap, hogy elutasítja a meghívást. Szeretné törölni az eseményt?"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Az esemény szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel az ön címe le van tiltva. Ebben az esetben is törli az eseményt?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "A részvevők egy lemondási értesítőt fognak kapni. Szeretné törölni az eseményt?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is szeretné törölni az eseményt?"
-      ],
-      "Would you like to delete this event?": [
-        "Valóban törli ezt az eseményt?"
-      ],
-      "Which event would you like to delete?": [
-        "Melyik eseményt szeretné törölni?"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Az esemény frissítésre került. Az esemény szervezője értesítést kap, hogy elutasítja a meghívást. Szeretné törölni az eseményt?"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Az eseményt a szervező frissítette. Szeretné törölni az eseményt?"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Az esemény frissítésre került. Az esemény szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel a meghívóban szereplő címről nem tud levelet küldeni. Ebben az esetben is törli az eseményt?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "A részvevők egy lemondási értesítőt fognak kapni. Szeretné törölni a sorozat összes eseményét?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is törli a sorozat összes eseményét?"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Az eseménysorozat szervezője értesítést kap, hogy elutasítja a meghívást. Szeretné törölni a sorozat összes eseményét?"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "Az eseménysorozat szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel a meghívóban szereplő címről nem tud levelet küldeni. Ebben az esetben is törli a sorozat összes eseményét?"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "Valóban törli a sorozat összes eseményét?"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "A szervező által korábban frissített alkalmak megmaradnak, de az ön által küldött egyes válaszok elvesznek."
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "A szervező által korábban frissített alkalmak megmaradnak."
-      ],
-      "Which event would you like to update?": [
-        "Melyik eseményt szeretné frissíteni?"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Az eseményt a szervező frissítette. Szeretné a válaszát csak ennél az alkalomnál módosítani?"
-      ],
-      "Would you like to update this event?": [
-        "Valóban szeretné ezt az eseményt frissíteni?"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "Szeretné a válaszát a sorozat valamennyi eseményénél frissíteni?"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "A felvett és eltávolított résztvevők értesítést kapnak a sorozat összes eseményéről."
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "A sorozat összes eseményét frissíteni fogja. A felvett és eltávolított résztvevők is értesítést kapnak."
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "A sorozat összes eseményét frissíteni fogja. A meglévő, felvett és eltávolított résztvevők is értesítést kapnak."
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "A sorozat összes eseményét frissíteni fogja. A meglévő és a felvett résztvevők is értesítést kapnak."
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "A sorozat összes eseményét frissíteni fogja. Az eltávolított résztvevők értesítést kapnak."
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "A sorozat összes eseményét frissíteni fogja. A meglévő és az eltávolított résztvevők is értesítést kapnak."
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "A sorozat összes eseményét frissíteni fogja. Egy meghívó kerül kiküldésre minden résztvevőnek."
-      ],
-      "Would you like to update all events in this series?": [
-        "Valóban szeretné a sorozat valamennyi eseményét frissíteni?"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "A sorozat korábbi módosításai elvesznek."
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "A szervező által korábban frissített eseményekre adott egyes válaszai elvesznek."
-      ],
-      "Frequency modifications will be lost.": [
-        "Az ismétlődés változtatásai el fognak veszni."
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "A szervező módosította a sorozat néhány eseményét. A naptár megváltoztatása még nem támogatott ilyen típusú ismétlődő eseménynél."
-      ],
-      "Update recurring event": [
-        "Ismétlődő esemény frissítése"
-      ],
-      "Added and removed participants will be notified.": [
-        "A felvett és az eltávolított résztvevők is értesítést kapnak."
-      ],
-      "An invitation will be sent to added participants.": [
-        "Egy meghívó kerül elküldésre az összes résztvevőnek."
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "Egy lemondó értesítés kerül elküldésre az eltávolított résztvevőknek."
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "A meglévő, felvett és az eltávolított résztvevők is értesítést kapnak."
-      ],
-      "Existent and added participants will be notified.": [
-        "A meglévő és a felvett résztvevők is értesítést kapnak."
-      ],
-      "Removed participants will be notified.": [
-        "Az eltávolított résztvevők értesítést kapnak."
-      ],
-      "Existent and removed participants will be notified.": [
-        "A meglévő és az eltávolított résztvevők is értesítést kapnak."
-      ],
-      "An invitation will be sent to the event participants.": [
-        "Egy meghívó kerül elküldésre az esemény résztvevőinek."
-      ],
-      "Please remove the duplicates and try again.": [
-        "Kérjük, távolítsa el az ismétlődéseket és próbálja újra!"
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        "Visszaállította a jelszavát, így a következő naptárhoz tartozó eseményeket nem lehet dekódolni. A korábban megosztott naptár-hivatkozások nem fognak többé működni."
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Újraaktiválta a titkosítási kulcsait, így a következő naptárakban lévő események ismét visszafejthetőek."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Úgy tűnik, hogy a rendszer időzónája $ {timezone} -re változott. Szeretne erre az időzónára frissíteni?"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Maximum 100 résztvevő lehetséges meghívónként"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Kizárólag a személyes események tulajdonságait módosíthatja mivel a szervező nevében nem tud leveleket küldeni."
-      ],
-      "Loading event": [
-        "Esemény betöltése"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } most kezdődik"
-      ],
-      "${ title } starts today": [
-        "${ title } ma kezdődik"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } elkezdődött ekkor: ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } tegnap kezdődött"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } tegnap kezdődött ekkor: ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        ""
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } ekkor kezdődött: ${ formattedDate } ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } kezdődik: ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate } ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } ekkor kezdődött: ${ formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } holnap kezdődik"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } holnap ekkor kezdődik: ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } ekkor kezdődik: ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } ekkor kezdődik: ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(névtelen)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Ön"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        ""
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        ""
-      ],
-      "Update for an event on ${ formattedStart }": [
-        ""
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        ""
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        ""
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        ""
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Meghívó: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        ""
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        ""
-      ],
-      "When: ${ formattedStart }": [
-        ""
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        ""
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        ""
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        ""
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        ""
-      ],
-      "${ eventTitle } has been cancelled.": [
-        ""
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        ""
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        ""
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        ""
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "első vasárnap"
-      ],
-      "on the first Monday": [
-        "első hétfő"
-      ],
-      "on the first Tuesday": [
-        "első kedd"
-      ],
-      "on the first Wednesday": [
-        "első szerda"
-      ],
-      "on the first Thursday": [
-        "első csütörtök"
-      ],
-      "on the first Friday": [
-        "első péntek"
-      ],
-      "on the first Saturday": [
-        "első szombat"
-      ],
-      "on the second Sunday": [
-        "második vasárnap"
-      ],
-      "on the second Monday": [
-        "második hétfő"
-      ],
-      "on the second Tuesday": [
-        "második kedd"
-      ],
-      "on the second Wednesday": [
-        "második szerda"
-      ],
-      "on the second Thursday": [
-        "második csütörtök"
-      ],
-      "on the second Friday": [
-        "második péntek"
-      ],
-      "on the second Saturday": [
-        "második szombat"
-      ],
-      "on the third Sunday": [
-        "harmadik vasárnap"
-      ],
-      "on the third Monday": [
-        "harmadik hétfő"
-      ],
-      "on the third Tuesday": [
-        "harmadik kedd"
-      ],
-      "on the third Wednesday": [
-        "harmadik szerda"
-      ],
-      "on the third Thursday": [
-        "harmadik csütörtök"
-      ],
-      "on the third Friday": [
-        "harmadik péntek"
-      ],
-      "on the third Saturday": [
-        "harmadik szombat"
-      ],
-      "on the fourth Sunday": [
-        "negyedik vasárnap"
-      ],
-      "on the fourth Monday": [
-        "negyedik hétfő"
-      ],
-      "on the fourth Tuesday": [
-        "negyedik kedd"
-      ],
-      "on the fourth Wednesday": [
-        "negyedik szerda"
-      ],
-      "on the fourth Thursday": [
-        "negyedik csütörtök"
-      ],
-      "on the fourth Friday": [
-        "negyedik péntek"
-      ],
-      "on the fourth Saturday": [
-        "negyedik szombat"
-      ],
-      "on the last Sunday": [
-        "utolsó vasárnap"
-      ],
-      "on the last Monday": [
-        "utolsó hétfő"
-      ],
-      "on the last Tuesday": [
-        "utolsó kedd"
-      ],
-      "on the last Wednesday": [
-        "utolsó szerda"
-      ],
-      "on the last Thursday": [
-        "utolsó csütörtök"
-      ],
-      "on the last Friday": [
-        "utolsó péntek"
-      ],
-      "on the last Saturday": [
-        "utolsó szombat"
-      ],
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. napon"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } alkalommal",
-        "${ count } alkalommal"
-      ],
-      "until ${ dateString }": [
-        "eddig: ${ dateString }"
-      ],
-      "Daily": [
-        "Naponta"
-      ],
-      "Every ${ interval } day": [
-        "",
-        ""
-      ],
-      "Daily, ${ timesString }": [
-        "Naponta, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Daily, ${ untilString }": [
-        "Naponta, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "",
-        ""
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Vasárnap"
-      ],
-      "Monday": [
-        "Hétfő"
-      ],
-      "Tuesday": [
-        "Kedd"
-      ],
-      "Wednesday": [
-        "Szerda"
-      ],
-      "Thursday": [
-        "Csütörtök"
-      ],
-      "Friday": [
-        "Péntek"
-      ],
-      "Saturday": [
-        "Szombat"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Hetente, minden nap"
-      ],
-      "Every ${ interval } week on all days": [
-        "Minden ${ interval } héten, minden nap",
-        "Minden ${ interval }. héten, minden nap"
-      ],
-      "Weekly on Sunday": [
-        "Minden vasárnap"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Minden ${ interval }. héten, vasárnap",
-        "Minden ${ interval } héten, vasárnap"
-      ],
-      "Weekly on Monday": [
-        "Minden hétfőn"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Minden ${ interval } héten, hétfőn",
-        "Minden ${ interval } héten, hétfőn"
-      ],
-      "Weekly on Tuesday": [
-        "Minden kedden"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Minden ${ interval }. héten, kedden",
-        "Minden ${ interval }. héten, kedden"
-      ],
-      "Weekly on Wednesday": [
-        "Minden szerdán"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Minden ${ interval }. héten, szerdán",
-        "Minden ${ interval }. héten, szerdán"
-      ],
-      "Weekly on Thursday": [
-        "Minden csütörtökön"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Minden ${ interval }. héten, csütörtökön",
-        "Minden ${ interval }. héten, csütörtökön"
-      ],
-      "Weekly on Friday": [
-        "Minden pénteken"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Minden ${ interval }. héten, pénteken",
-        "Minden ${ interval }. héten, pénteken"
-      ],
-      "Weekly on Saturday": [
-        "Minden szombaton"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Minden ${ interval }. héten, szombaton",
-        "Minden ${ interval }. héten, szombaton"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Hetente ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Hetente minden nap, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Minden ${ interval }. héten, minden nap, ${ timesString }",
-        "Minden ${ interval }. héten, minden nap, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Minden vasárnap, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Minden hétfőn, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Minden ${ interval }. héten, hétfőn, ${ timesString }",
-        "Minden ${ interval }. héten, hétfőn, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Minden kedden, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Minden ${ interval }. héten, kedden, ${ timesString }",
-        "Minden ${ interval }. héten, kedden, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Minden szerdán, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Minden ${ interval }. héten, szerdán, ${ timesString }",
-        "Minden ${ interval }. héten, szerdán, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Minden csütörtökön, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
-        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Minden pénteken, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Minden ${ interval }. héten, pénteken, ${ timesString }",
-        "Minden ${ interval }. héten, pénteken, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Minden szombaton, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Hetente ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Hetente minden nap, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Minden ${ interval }. héten, minden nap, ${ untilString }",
-        "Minden ${ interval }. héten, minden nap, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Hetente, vasárnaponként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
-        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Hetente, hétfőnként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
-        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Hetente, keddenként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Minden ${ interval }. héten, kedden, ${ untilString }",
-        "Minden ${ interval }. héten, kedden, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Hetente, szerdánként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Minden ${ interval }. héten, szerdán, ${ untilString }",
-        "Minden ${ interval }. héten, szerdán, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Hetente, csütörtökönként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
-        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Hetente, péntekenként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Minden ${ interval }. héten, pénteken, ${ untilString }",
-        "Minden ${ interval }. héten, pénteken, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Hetente, szombatonként, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Minden ${ interval }. héten, szombaton, ${ untilString }",
-        "Minden ${ interval }. héten, szombaton, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Hetente ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Havonta: ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Havonta ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Havonta ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Évente"
-      ],
-      "Every ${ interval } year": [
-        "Minden ${ interval }. évben",
-        "Minden ${ interval }. évben"
-      ],
-      "Yearly, ${ timesString }": [
-        "Évente, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Minden ${ interval }. évben, { timesString }",
-        "Minden ${ interval }. évben, { timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Évente, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Minden ${ interval }. évben, ${ untilString }",
-        "Minden ${ interval }. évben, ${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Alapvető navigáció"
-      ],
-      "Basic actions": [
-        "Alapműveletek"
-      ],
-      "Folder shortcuts": [
-        "Mappa gyorsbillentyűk"
-      ],
-      "Composer shortcuts": [
-        "Szerkesztő gyorsbillentyűk"
-      ],
-      "List shortcuts": [
-        "Lista gyorsbillentyűk"
-      ],
-      "Action shortcuts": [
-        "Művelet gyorsbillentyűk"
-      ],
-      "Message shortcuts": [
-        "Üzenet gyorsbillentyűk"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Mozgás felfelé"
-      ],
-      "Jump to first": [
-        "Ugrás az elsőre"
-      ],
-      "Move down": [
-        "Mozgás lefelé"
-      ],
-      "Jump to last": [
-        "Ugrás az utolsóra"
-      ],
-      "Move right / expand": [
-        "Mozgás jobbra, kibontás"
-      ],
-      "Move left / collapse": [
-        "Mozgás balra, becsukás"
-      ],
-      "Apply / open": [
-        "Alkalmazás, megnyitás"
-      ],
-      "Cancel / close": [
-        "Elvetés, bezárás"
-      ],
-      "Open this modal": [
-        "Ablak megnyitása"
-      ],
-      "Select / unselect": [
-        "Kijelölés / kijelölés megszüntetése"
-      ],
-      "Go to Inbox": [
-        "Ugrás a beérkezett üzenetekhez"
-      ],
-      "Go to Archive": [
-        "Ugrás az archívumhoz"
-      ],
-      "Go to Sent": [
-        "Ugrás az elküldött levelekhez"
-      ],
-      "Go to Starred": [
-        "Ugrás a csillagozottakhoz"
-      ],
-      "Go to Drafts": [
-        "Ugrás a piszkozatokhoz"
-      ],
-      "Go to Trash": [
-        "Ugrás a lomtárhoz"
-      ],
-      "Go to Spam": [
-        "Ugrás a levélszeméthez"
-      ],
-      "Go to All Mail": [
-        "Ugrás az Összes Üzenethez"
-      ],
-      "Save draft": [
-        "Piszkozat mentése"
-      ],
-      "Send email": [
-        "E-mail küldése"
-      ],
-      "Close draft": [
-        "Piszkozat bezárása"
-      ],
-      "Minimize / maximize composer": [
-        "Szerkesztő kicsinyítése / felnagyítása"
-      ],
-      "Expand / contract composer": [
-        "Szerkesztő kiterjesztése / összehúzása"
-      ],
-      "Attach file": [
-        "Fájl csatolása"
-      ],
-      "Add expiration time": [
-        "Időkorlát megadása"
-      ],
-      "Add encryption": [
-        "Titkosítás hozzáadása"
-      ],
-      "Discard draft": [
-        "Piszkozat elvetése"
-      ],
-      "Open previous message": [
-        "Előző üzenet megnyitása"
-      ],
-      "Open next message": [
-        "Következő üzenet megnyitása"
-      ],
-      "Show unread emails": [
-        "Olvasatlan üzenetek megjelenítése"
-      ],
-      "Show all emails": [
-        "Összes üzenet megjelenítése"
-      ],
-      "Select / unselect all": [
-        "Összes kijelölése / kijelölés megszüntetése"
-      ],
-      "Search": [
-        "Keresés"
-      ],
-      "New message": [
-        "Új üzenet"
-      ],
-      "Star": [
-        "Csillagozás"
-      ],
-      "Mark as unread": [
-        "Megjelölés olvasatlanként"
-      ],
-      "Label as...": [
-        "Címkézés, mint..."
-      ],
-      "Create filter with...": [
-        "Szűrő készítése..."
-      ],
-      "Move to...": [
-        "Áthelyezés..."
-      ],
-      "Move to Inbox": [
-        "Áthelyezés a beérkezett üzenetekhez"
-      ],
-      "Move to Archive": [
-        "Áthelyezés az archívumba"
-      ],
-      "Move to Spam": [
-        "Áthelyezés a levélszeméthez"
-      ],
-      "Move to Trash": [
-        "Áthelyezés a lomtárba"
-      ],
-      "Delete permanently": [
-        "Végleges törlés"
-      ],
-      "Reply": [
-        "Válasz"
-      ],
-      "Reply all": [
-        "Válasz mindenkinek"
-      ],
-      "Forward": [
-        "Továbbítás"
-      ],
-      "Load remote content": [
-        "Távoli tartalom betöltése"
-      ],
-      "Load embedded images": [
-        "Beágyazott képek betöltése"
-      ],
-      "Show original message": [
-        "Eredeti üzenet megjelenítése"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        ""
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        ""
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        ""
-      ],
-      "Encryption failed": [
-        ""
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        ""
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        ""
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        ""
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        ""
-      ]
-    },
-    "Message": {
-      "Re:": [
-        ""
-      ],
-      "Fw:": [
-        "Fwd:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Másolás"
-      ],
-      "Reveal password": [
-        "A jelszó felfedése"
-      ],
-      "Hide password": [
-        "A jelszó elrejtése"
-      ],
-      "Street address": [
-        "Utca, házszám"
-      ],
-      "City": [
-        "Település"
-      ],
-      "Region": [
-        "Régió"
-      ],
-      "Postal code": [
-        "Irányítószám"
-      ],
-      "Country": [
-        "Ország"
-      ],
-      "Post office box": [
-        "Postafiók"
-      ],
-      "Extended address": [
-        "Bővebb cím"
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "E-mail cím"
-      ],
-      "Phone number": [
-        "Telefonszám"
-      ],
-      "Verification code": [
-        "Ellenőrző kód"
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
-      ],
-      "Add email address": [
-        "E-mail cím hozzáadása"
-      ],
-      "Email format": [
-        "E-mail formátum"
-      ],
-      "Add image URL": [
-        "Kép URL megadása"
-      ],
-      "Upload picture": [
-        "Kép feltöltése"
-      ],
-      "Add to group": [
-        "Hozzáadás csoporthoz"
-      ],
-      "Encrypt emails": [
-        "Üzenetek titkosítása"
-      ],
-      "Sign emails": [
-        "Üzenetek aláírása"
-      ],
-      "Cryptographic scheme": [
-        "Titkosítási séma"
-      ],
-      "Public keys": [
-        "Nyilvános kulcsok"
-      ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus létrehozása"
-      ],
-      "Import contacts": [
-        "Névjegyek importálása"
-      ],
-      "Export contacts": [
-        "Névjegyek exportálása"
-      ],
-      "Operating system": [
-        "Operációs rendszer"
-      ],
-      "Operating system version": [
-        "Az operációs rendszer verziója"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "Category": [
-        "Kategória"
-      ],
-      "What happened?": [
-        "Mi történt?"
-      ],
-      "System information": [
-        "Rendszerinfromáció"
-      ],
-      "Browser": [
-        "Böngésző"
-      ],
-      "Browser version": [
-        "A böngésző verziója"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Megjelenített név"
-      ],
-      "Cancel": [
-        "Mégsem"
-      ],
-      "Submit": [
-        "Küldés"
-      ],
-      "Password": [
-        "Jelszó"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
-      "Username or ProtonMail address": [
-        "Felhasználónév vagy ProtonMail cím"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        ""
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Leírás"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Egész nap"
-      ],
-      "Repeat on": [
-        "Ismételődés"
-      ],
-      "Repeat every": [
-        "Ismétlődik minden"
-      ],
-      "Ends": [
-        "Befejező dátum"
-      ],
-      "Organizer": [
-        "Szervező"
-      ],
-      "Optional": [
-        "Választható"
-      ],
-      "Time of the event": [
-        "Az esemény ideje"
-      ],
-      "Event time": [
-        "Esemény időpont"
-      ],
-      "Event title": [
-        "Esemény neve"
-      ],
-      "Event frequency": [
-        "Esemény gyakorisága"
-      ],
-      "Event location": [
-        "Esemény helye"
-      ],
-      "Event notifications": [
-        "Esemény értesítések"
-      ],
-      "Participants": [
-        "Résztvevők"
-      ],
-      "Your calendars": [
-        "Az ön naptárai"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Bezárás"
+      ],
       "Close modal": [
         "Ablak bezárása"
       ],
@@ -2218,9 +328,6 @@
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "Close": [
-        "Bezárás"
       ],
       "Close navigation": [
         "Navigáció bezárása"
@@ -2470,6 +577,9 @@
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } bevezető"
       ],
+      "Chat with us": [
+        ""
+      ],
       "I have a question": [
         ""
       ],
@@ -2521,9 +631,6 @@
       "Back": [
         "Vissza"
       ],
-      "Log in": [
-        "Belépés"
-      ],
       "Remove bonuses": [
         ""
       ],
@@ -2571,6 +678,9 @@
       ],
       "Increase": [
         ""
+      ],
+      "Log in": [
+        "Belépés"
       ],
       "Close this banner": [
         ""
@@ -2667,139 +777,6 @@
       ],
       "Close popover": [
         "Ablak bezárása"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Tudjon meg többet"
-      ],
-      "Request an invite": [
-        "Meghívó kérése"
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Számla befizetése"
-      ],
-      "Upgrade account": [
-        "Csomag váltása"
-      ],
-      "Calendars": [
-        "Naptárak"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Subscribed calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Pl., "
-      ],
-      "Start typing an email address": [
-        ""
-      ],
-      "Image URL": [
-        ""
-      ],
-      "Filter groups": [
-        ""
-      ],
-      "Search for name or email": [
-        ""
-      ],
-      "Search for group name": [
-        ""
-      ],
-      "Name": [
-        ""
-      ],
-      "OS name": [
-        "Operációs rendszer neve"
-      ],
-      "OS version": [
-        "Operációs rendszer verzió"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "A way to contact you": [
-        "Kapcsolatfelvételi lehetőség"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
-      ],
-      "Browser name": [
-        "Böngésző neve"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Cím megadása"
-      ],
-      "Add location": [
-        "Hely megadása"
-      ],
-      "Add description": [
-        "Leírás megadása"
-      ],
-      "Add participants": [
-        "Résztvevők megadása"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
       ]
     },
     "Title": {
@@ -2975,18 +952,6 @@
       "Give feedback": [
         ""
       ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
-      "Account suspended": [
-        ""
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
-      ],
       "Confirm loss of Proton bonuses": [
         ""
       ],
@@ -3076,6 +1041,18 @@
       ],
       "${ appName } customization": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ],
+      "Account suspended": [
+        ""
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
@@ -3235,6 +1212,1126 @@
       ],
       "CANCELLED": [
         "TÖRÖLVE"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Nincs találat"
+      ],
+      "Loading": [
+        "Betöltés"
+      ],
+      "support team": [
+        ""
+      ],
+      "No contacts added yet": [
+        "Még nincsenek névjegyek"
+      ],
+      "Week": [
+        "Hét"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        ""
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        ""
+      ],
+      "You are about to open another browser tab and visit:": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Drop the file here to upload": [
+        "Húzza ide a fájlt a feltöltéshez"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tagok)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        ""
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        ""
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        ""
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        ""
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
+      "Loading ${ appName }": [
+        "A(z) ${ appName } betöltése"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } tag",
+        "${ contactEmailsLength } tagok"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } és ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ProtonMail mindig aláírja a titkosított üzeneteket"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "A csoporthoz rendelt címek NEM kerülnek törlésre."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Névjegy ellenőrzése ${ progress }/${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } névjegy sikeresen frissítve.",
+        "${ updated } névjegyek sikeresen frissítve."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
+      ],
+      "Key fingerprint": [
+        "Kulcs ujjlenyomat"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
+      ],
+      "Group assignment applied": [
+        "Csoport hozzárendelés alkalmazva"
+      ],
+      "Create a new contact group": [
+        "Új névjegy csoport létrehozása"
+      ],
+      "No group found": [
+        "Nem található csoport"
+      ],
+      "Duplicate key updated": [
+        ""
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        ""
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        ""
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        ""
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        ""
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        ""
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Primary": [
+        ""
+      ],
+      "No email address": [
+        ""
+      ],
+      "${ contactsCount } contact found": [
+        "",
+        ""
+      ],
+      "${ groupCounts } group found": [
+        "",
+        ""
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        ""
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        ""
+      ],
+      "${ addressCount } email address": [
+        "",
+        ""
+      ],
+      "Screenshot(s) attached": [
+        "Képernyőkép(ek) csatolva"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Az oldal frissítése vagy ${ link } automatikusan megoldja a legtöbb problémát."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "",
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "",
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
+      "here": [
+        "itt"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
+      ],
+      "Free up some space or add more storage space.": [
+        "Szabadítson fel helyet vagy vásároljon több területet."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Szabadítson fel területet vagy írjon az adminisztrátornak."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Internet kapcsolat visszaállítva."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        ""
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "Session timed out.": [
+        "A munkamenet lejárt."
+      ],
+      "Internet connection lost.": [
+        ""
+      ],
+      "Servers are unreachable.": [
+        "A szerverek nem érhetők el."
+      ],
+      "Custom daily": [
+        "Egyéni, naponta"
+      ],
+      "Custom weekly": [
+        "Egyéni, hetente"
+      ],
+      "Custom monthly": [
+        "Egyéni, havonta"
+      ],
+      "Custom yearly": [
+        "Egyéni, évente"
+      ],
+      "Custom": [
+        "Egyéni"
+      ],
+      "Daily": [
+        "Napi"
+      ],
+      "Monthly ${ onDayString }": [
+        "Havonta: ${ onDayString }"
+      ],
+      "Yearly": [
+        "Éves"
+      ],
+      "Manage your calendars": [
+        "Naptárak kezelése"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        ""
+      ],
+      "Loading events": [
+        "Események betöltése"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "A szervező nem értesíthető, hogy elutasította a meghívót:"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Ebben az esetben is törli az eseményt?"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "Egyik résztvevő sem értesíthető a módosításokról:"
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "A következő résztvevők nem értesíthetők a módosításokról:"
+      ],
+      "Would you like to continue anyway?": [
+        "Ebben az esetben is folytatja?"
+      ],
+      "Discard changes?": [
+        "Módosítások elvetése?"
+      ],
+      "You will lose all unsaved changes.": [
+        "A nem mentett módosítások el fognak veszni."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Az esemény szervezője értesítést kap, hogy elutasítja a meghívást. Szeretné törölni az eseményt?"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Az esemény szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel az ön címe le van tiltva. Ebben az esetben is törli az eseményt?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "A részvevők egy lemondási értesítőt fognak kapni. Szeretné törölni az eseményt?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is szeretné törölni az eseményt?"
+      ],
+      "Would you like to delete this event?": [
+        "Valóban törli ezt az eseményt?"
+      ],
+      "Which event would you like to delete?": [
+        "Melyik eseményt szeretné törölni?"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Az esemény frissítésre került. Az esemény szervezője értesítést kap, hogy elutasítja a meghívást. Szeretné törölni az eseményt?"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Az eseményt a szervező frissítette. Szeretné törölni az eseményt?"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Az esemény frissítésre került. Az esemény szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel a meghívóban szereplő címről nem tud levelet küldeni. Ebben az esetben is törli az eseményt?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "A részvevők egy lemondási értesítőt fognak kapni. Szeretné törölni a sorozat összes eseményét?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is törli a sorozat összes eseményét?"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Az eseménysorozat szervezője értesítést kap, hogy elutasítja a meghívást. Szeretné törölni a sorozat összes eseményét?"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Az eseménysorozat szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel a meghívóban szereplő címről nem tud levelet küldeni. Ebben az esetben is törli a sorozat összes eseményét?"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Valóban törli a sorozat összes eseményét?"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "A szervező által korábban frissített alkalmak megmaradnak, de az ön által küldött egyes válaszok elvesznek."
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "A szervező által korábban frissített alkalmak megmaradnak."
+      ],
+      "Which event would you like to update?": [
+        "Melyik eseményt szeretné frissíteni?"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Az eseményt a szervező frissítette. Szeretné a válaszát csak ennél az alkalomnál módosítani?"
+      ],
+      "Would you like to update this event?": [
+        "Valóban szeretné ezt az eseményt frissíteni?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Szeretné a válaszát a sorozat valamennyi eseményénél frissíteni?"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "A felvett és eltávolított résztvevők értesítést kapnak a sorozat összes eseményéről."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "A sorozat összes eseményét frissíteni fogja. A felvett és eltávolított résztvevők is értesítést kapnak."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "A sorozat összes eseményét frissíteni fogja. A meglévő, felvett és eltávolított résztvevők is értesítést kapnak."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "A sorozat összes eseményét frissíteni fogja. A meglévő és a felvett résztvevők is értesítést kapnak."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "A sorozat összes eseményét frissíteni fogja. Az eltávolított résztvevők értesítést kapnak."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "A sorozat összes eseményét frissíteni fogja. A meglévő és az eltávolított résztvevők is értesítést kapnak."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "A sorozat összes eseményét frissíteni fogja. Egy meghívó kerül kiküldésre minden résztvevőnek."
+      ],
+      "Would you like to update all events in this series?": [
+        "Valóban szeretné a sorozat valamennyi eseményét frissíteni?"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "A sorozat korábbi módosításai elvesznek."
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "A szervező által korábban frissített eseményekre adott egyes válaszai elvesznek."
+      ],
+      "Frequency modifications will be lost.": [
+        "Az ismétlődés változtatásai el fognak veszni."
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "A szervező módosította a sorozat néhány eseményét. A naptár megváltoztatása még nem támogatott ilyen típusú ismétlődő eseménynél."
+      ],
+      "Update recurring event": [
+        "Ismétlődő esemény frissítése"
+      ],
+      "Added and removed participants will be notified.": [
+        "A felvett és az eltávolított résztvevők is értesítést kapnak."
+      ],
+      "An invitation will be sent to added participants.": [
+        "Egy meghívó kerül elküldésre az összes résztvevőnek."
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "Egy lemondó értesítés kerül elküldésre az eltávolított résztvevőknek."
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "A meglévő, felvett és az eltávolított résztvevők is értesítést kapnak."
+      ],
+      "Existent and added participants will be notified.": [
+        "A meglévő és a felvett résztvevők is értesítést kapnak."
+      ],
+      "Removed participants will be notified.": [
+        "Az eltávolított résztvevők értesítést kapnak."
+      ],
+      "Existent and removed participants will be notified.": [
+        "A meglévő és az eltávolított résztvevők is értesítést kapnak."
+      ],
+      "An invitation will be sent to the event participants.": [
+        "Egy meghívó kerül elküldésre az esemény résztvevőinek."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Kérjük, távolítsa el az ismétlődéseket és próbálja újra!"
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        ""
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Újraaktiválta a titkosítási kulcsait, így a következő naptárakban lévő események ismét visszafejthetőek."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Úgy tűnik, hogy a rendszer időzónája $ {timezone} -re változott. Szeretne erre az időzónára frissíteni?"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "Maximum 100 résztvevő lehetséges meghívónként"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "Kizárólag a személyes események tulajdonságait módosíthatja mivel a szervező nevében nem tud leveleket küldeni."
+      ],
+      "Loading event": [
+        "Esemény betöltése"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Másolás"
+      ],
+      "Reveal password": [
+        "A jelszó felfedése"
+      ],
+      "Hide password": [
+        "A jelszó elrejtése"
+      ],
+      "Street address": [
+        "Utca, házszám"
+      ],
+      "City": [
+        "Település"
+      ],
+      "Region": [
+        "Régió"
+      ],
+      "Postal code": [
+        "Irányítószám"
+      ],
+      "Country": [
+        "Ország"
+      ],
+      "Post office box": [
+        "Postafiók"
+      ],
+      "Extended address": [
+        "Bővebb cím"
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "Verification code": [
+        "Ellenőrző kód"
+      ],
+      "Enter the 6-digit code": [
+        "Írja be a hatjegyű kódot"
+      ],
+      "Add email address": [
+        "E-mail cím hozzáadása"
+      ],
+      "Email format": [
+        "E-mail formátum"
+      ],
+      "Add image URL": [
+        "Kép URL megadása"
+      ],
+      "Upload picture": [
+        "Kép feltöltése"
+      ],
+      "Add to group": [
+        "Hozzáadás csoporthoz"
+      ],
+      "Encrypt emails": [
+        "Üzenetek titkosítása"
+      ],
+      "Sign emails": [
+        "Üzenetek aláírása"
+      ],
+      "Cryptographic scheme": [
+        "Titkosítási séma"
+      ],
+      "Public keys": [
+        "Nyilvános kulcsok"
+      ],
+      "Automatically save contacts": [
+        "Névjegyek automatikus létrehozása"
+      ],
+      "Import contacts": [
+        "Névjegyek importálása"
+      ],
+      "Export contacts": [
+        "Névjegyek exportálása"
+      ],
+      "Operating system": [
+        "Operációs rendszer"
+      ],
+      "Operating system version": [
+        "Az operációs rendszer verziója"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "Category": [
+        "Kategória"
+      ],
+      "What happened?": [
+        "Mi történt?"
+      ],
+      "System information": [
+        "Rendszerinfromáció"
+      ],
+      "Browser": [
+        "Böngésző"
+      ],
+      "Browser version": [
+        "A böngésző verziója"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Megjelenített név"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Two-factor authentication code": [
+        "Kétlépcsős hitelesítő kód"
+      ],
+      "Username or ProtonMail address": [
+        "Felhasználónév vagy ProtonMail cím"
+      ],
+      "Keyboard shortcuts": [
+        ""
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Leírás"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Egész nap"
+      ],
+      "Repeat on": [
+        "Ismételődés"
+      ],
+      "Repeat every": [
+        "Ismétlődik minden"
+      ],
+      "Ends": [
+        "Befejező dátum"
+      ],
+      "Organizer": [
+        "Szervező"
+      ],
+      "Optional": [
+        "Választható"
+      ],
+      "Time of the event": [
+        "Az esemény ideje"
+      ],
+      "Event time": [
+        "Esemény időpont"
+      ],
+      "Event title": [
+        "Esemény neve"
+      ],
+      "Event frequency": [
+        "Esemény gyakorisága"
+      ],
+      "Event location": [
+        "Esemény helye"
+      ],
+      "Event notifications": [
+        "Esemény értesítések"
+      ],
+      "Participants": [
+        "Résztvevők"
+      ],
+      "Your calendars": [
+        "Az ön naptárai"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Tudjon meg többet"
+      ],
+      "Request an invite": [
+        "Meghívó kérése"
+      ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Számla befizetése"
+      ],
+      "Upgrade account": [
+        "Csomag váltása"
+      ],
+      "Calendars": [
+        "Naptárak"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Pl., "
+      ],
+      "Start typing an email address": [
+        ""
+      ],
+      "Image URL": [
+        ""
+      ],
+      "Filter groups": [
+        ""
+      ],
+      "Search for name or email": [
+        ""
+      ],
+      "Search for group name": [
+        ""
+      ],
+      "Name": [
+        ""
+      ],
+      "OS name": [
+        "Operációs rendszer neve"
+      ],
+      "OS version": [
+        "Operációs rendszer verzió"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "A way to contact you": [
+        "Kapcsolatfelvételi lehetőség"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Browser name": [
+        "Böngésző neve"
+      ],
+      "Browser version": [
+        "Böngésző verziója"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "pl. Kovács János"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Cím megadása"
+      ],
+      "Add location": [
+        "Hely megadása"
+      ],
+      "Add description": [
+        "Leírás megadása"
+      ],
+      "Add participants": [
+        "Résztvevők megadása"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
       ]
     },
     "Storage": {
@@ -3419,6 +2516,9 @@
       ],
       "Contacts could not be merged": [
         "A névjegyek egyesítése nem sikerült"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
@@ -4661,6 +3761,912 @@
       ],
       "120 minutes": [
         ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bájt"
+      ],
+      "KB": [
+        ""
+      ],
+      "MB": [
+        ""
+      ],
+      "GB": [
+        ""
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Név"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Cím"
+      ],
+      "Photo": [
+        "Fénykép"
+      ],
+      "Organization": [
+        "Szervezet"
+      ],
+      "Birthday": [
+        "Születésnap"
+      ],
+      "Anniversary": [
+        "Évforduló"
+      ],
+      "Title": [
+        "Cím"
+      ],
+      "Role": [
+        "Beosztás"
+      ],
+      "Note": [
+        "Megjegyzés"
+      ],
+      "URL": [
+        ""
+      ],
+      "Gender": [
+        "Nem"
+      ],
+      "Language": [
+        "Nyelv"
+      ],
+      "Timezone": [
+        "Időzóna"
+      ],
+      "Geo": [
+        "Földrajzi hely"
+      ],
+      "Logo": [
+        "Logó"
+      ],
+      "Member": [
+        "Tag"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Munkahely"
+      ],
+      "Personal": [
+        "Személyes"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Elsődleges"
+      ],
+      "Yomi": [
+        ""
+      ],
+      "Other": [
+        "Egyéb"
+      ],
+      "Fax": [
+        ""
+      ],
+      "Pager": [
+        "Személyhívó"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
+      ],
+      "Home": [
+        "Otthoni"
+      ],
+      "Work": [
+        ""
+      ],
+      "Other": [
+        ""
+      ],
+      "Phone": [
+        ""
+      ],
+      "Mobile": [
+        ""
+      ],
+      "Main": [
+        ""
+      ],
+      "Fax": [
+        ""
+      ],
+      "Pager": [
+        ""
+      ],
+      "Address": [
+        ""
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } most kezdődik"
+      ],
+      "${ title } starts today": [
+        "${ title } ma kezdődik"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } elkezdődött ekkor: ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } tegnap kezdődött"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } tegnap kezdődött ekkor: ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } ekkor kezdődött: ${ formattedDate } ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } kezdődik: ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate } ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } ekkor kezdődött: ${ formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } holnap kezdődik"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } holnap ekkor kezdődik: ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } ekkor kezdődik: ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } ekkor kezdődik: ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(névtelen)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Ön"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        ""
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        ""
+      ],
+      "Update for an event on ${ formattedStart }": [
+        ""
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        ""
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        ""
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        ""
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Meghívó: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        ""
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        ""
+      ],
+      "When: ${ formattedStart }": [
+        ""
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        ""
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        ""
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        ""
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        ""
+      ],
+      "${ eventTitle } has been cancelled.": [
+        ""
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        ""
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        ""
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        ""
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "első vasárnap"
+      ],
+      "on the first Monday": [
+        "első hétfő"
+      ],
+      "on the first Tuesday": [
+        "első kedd"
+      ],
+      "on the first Wednesday": [
+        "első szerda"
+      ],
+      "on the first Thursday": [
+        "első csütörtök"
+      ],
+      "on the first Friday": [
+        "első péntek"
+      ],
+      "on the first Saturday": [
+        "első szombat"
+      ],
+      "on the second Sunday": [
+        "második vasárnap"
+      ],
+      "on the second Monday": [
+        "második hétfő"
+      ],
+      "on the second Tuesday": [
+        "második kedd"
+      ],
+      "on the second Wednesday": [
+        "második szerda"
+      ],
+      "on the second Thursday": [
+        "második csütörtök"
+      ],
+      "on the second Friday": [
+        "második péntek"
+      ],
+      "on the second Saturday": [
+        "második szombat"
+      ],
+      "on the third Sunday": [
+        "harmadik vasárnap"
+      ],
+      "on the third Monday": [
+        "harmadik hétfő"
+      ],
+      "on the third Tuesday": [
+        "harmadik kedd"
+      ],
+      "on the third Wednesday": [
+        "harmadik szerda"
+      ],
+      "on the third Thursday": [
+        "harmadik csütörtök"
+      ],
+      "on the third Friday": [
+        "harmadik péntek"
+      ],
+      "on the third Saturday": [
+        "harmadik szombat"
+      ],
+      "on the fourth Sunday": [
+        "negyedik vasárnap"
+      ],
+      "on the fourth Monday": [
+        "negyedik hétfő"
+      ],
+      "on the fourth Tuesday": [
+        "negyedik kedd"
+      ],
+      "on the fourth Wednesday": [
+        "negyedik szerda"
+      ],
+      "on the fourth Thursday": [
+        "negyedik csütörtök"
+      ],
+      "on the fourth Friday": [
+        "negyedik péntek"
+      ],
+      "on the fourth Saturday": [
+        "negyedik szombat"
+      ],
+      "on the last Sunday": [
+        "utolsó vasárnap"
+      ],
+      "on the last Monday": [
+        "utolsó hétfő"
+      ],
+      "on the last Tuesday": [
+        "utolsó kedd"
+      ],
+      "on the last Wednesday": [
+        "utolsó szerda"
+      ],
+      "on the last Thursday": [
+        "utolsó csütörtök"
+      ],
+      "on the last Friday": [
+        "utolsó péntek"
+      ],
+      "on the last Saturday": [
+        "utolsó szombat"
+      ],
+      "on day ${ dayOfMonth }": [
+        "${ dayOfMonth }. napon"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } alkalommal",
+        "${ count } alkalommal"
+      ],
+      "until ${ dateString }": [
+        "eddig: ${ dateString }"
+      ],
+      "Daily": [
+        "Naponta"
+      ],
+      "Every ${ interval } day": [
+        "",
+        ""
+      ],
+      "Daily, ${ timesString }": [
+        "Naponta, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "",
+        ""
+      ],
+      "Daily, ${ untilString }": [
+        "Naponta, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "",
+        ""
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Vasárnap"
+      ],
+      "Monday": [
+        "Hétfő"
+      ],
+      "Tuesday": [
+        "Kedd"
+      ],
+      "Wednesday": [
+        "Szerda"
+      ],
+      "Thursday": [
+        "Csütörtök"
+      ],
+      "Friday": [
+        "Péntek"
+      ],
+      "Saturday": [
+        "Szombat"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Hetente, minden nap"
+      ],
+      "Every ${ interval } week on all days": [
+        "Minden ${ interval } héten, minden nap",
+        "Minden ${ interval }. héten, minden nap"
+      ],
+      "Weekly on Sunday": [
+        "Minden vasárnap"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Minden ${ interval }. héten, vasárnap",
+        "Minden ${ interval } héten, vasárnap"
+      ],
+      "Weekly on Monday": [
+        "Minden hétfőn"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Minden ${ interval } héten, hétfőn",
+        "Minden ${ interval } héten, hétfőn"
+      ],
+      "Weekly on Tuesday": [
+        "Minden kedden"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Minden ${ interval }. héten, kedden",
+        "Minden ${ interval }. héten, kedden"
+      ],
+      "Weekly on Wednesday": [
+        "Minden szerdán"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Minden ${ interval }. héten, szerdán",
+        "Minden ${ interval }. héten, szerdán"
+      ],
+      "Weekly on Thursday": [
+        "Minden csütörtökön"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Minden ${ interval }. héten, csütörtökön",
+        "Minden ${ interval }. héten, csütörtökön"
+      ],
+      "Weekly on Friday": [
+        "Minden pénteken"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Minden ${ interval }. héten, pénteken",
+        "Minden ${ interval }. héten, pénteken"
+      ],
+      "Weekly on Saturday": [
+        "Minden szombaton"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Minden ${ interval }. héten, szombaton",
+        "Minden ${ interval }. héten, szombaton"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Hetente ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Hetente minden nap, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Minden ${ interval }. héten, minden nap, ${ timesString }",
+        "Minden ${ interval }. héten, minden nap, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Minden vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Minden hétfőn, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }",
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Minden kedden, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Minden ${ interval }. héten, kedden, ${ timesString }",
+        "Minden ${ interval }. héten, kedden, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Minden szerdán, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Minden ${ interval }. héten, szerdán, ${ timesString }",
+        "Minden ${ interval }. héten, szerdán, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Minden csütörtökön, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Minden pénteken, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Minden ${ interval }. héten, pénteken, ${ timesString }",
+        "Minden ${ interval }. héten, pénteken, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Minden szombaton, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Hetente ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Hetente minden nap, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Minden ${ interval }. héten, minden nap, ${ untilString }",
+        "Minden ${ interval }. héten, minden nap, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Hetente, vasárnaponként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Hetente, hétfőnként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Hetente, keddenként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Minden ${ interval }. héten, kedden, ${ untilString }",
+        "Minden ${ interval }. héten, kedden, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Hetente, szerdánként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Minden ${ interval }. héten, szerdán, ${ untilString }",
+        "Minden ${ interval }. héten, szerdán, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Hetente, csütörtökönként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Hetente, péntekenként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Minden ${ interval }. héten, pénteken, ${ untilString }",
+        "Minden ${ interval }. héten, pénteken, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Hetente, szombatonként, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Minden ${ interval }. héten, szombaton, ${ untilString }",
+        "Minden ${ interval }. héten, szombaton, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Hetente ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Havonta: ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Havonta ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Havonta ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Évente"
+      ],
+      "Every ${ interval } year": [
+        "Minden ${ interval }. évben",
+        "Minden ${ interval }. évben"
+      ],
+      "Yearly, ${ timesString }": [
+        "Évente, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Minden ${ interval }. évben, { timesString }",
+        "Minden ${ interval }. évben, { timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Évente, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Minden ${ interval }. évben, ${ untilString }",
+        "Minden ${ interval }. évben, ${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Alapvető navigáció"
+      ],
+      "Basic actions": [
+        "Alapműveletek"
+      ],
+      "Folder shortcuts": [
+        "Mappa gyorsbillentyűk"
+      ],
+      "Composer shortcuts": [
+        "Szerkesztő gyorsbillentyűk"
+      ],
+      "List shortcuts": [
+        "Lista gyorsbillentyűk"
+      ],
+      "Action shortcuts": [
+        "Művelet gyorsbillentyűk"
+      ],
+      "Message shortcuts": [
+        "Üzenet gyorsbillentyűk"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Mozgás felfelé"
+      ],
+      "Jump to first": [
+        "Ugrás az elsőre"
+      ],
+      "Move down": [
+        "Mozgás lefelé"
+      ],
+      "Jump to last": [
+        "Ugrás az utolsóra"
+      ],
+      "Move right / expand": [
+        "Mozgás jobbra, kibontás"
+      ],
+      "Move left / collapse": [
+        "Mozgás balra, becsukás"
+      ],
+      "Apply / open": [
+        "Alkalmazás, megnyitás"
+      ],
+      "Cancel / close": [
+        "Elvetés, bezárás"
+      ],
+      "Open this modal": [
+        "Ablak megnyitása"
+      ],
+      "Select / unselect": [
+        "Kijelölés / kijelölés megszüntetése"
+      ],
+      "Go to Inbox": [
+        "Ugrás a beérkezett üzenetekhez"
+      ],
+      "Go to Archive": [
+        "Ugrás az archívumhoz"
+      ],
+      "Go to Sent": [
+        "Ugrás az elküldött levelekhez"
+      ],
+      "Go to Starred": [
+        "Ugrás a csillagozottakhoz"
+      ],
+      "Go to Drafts": [
+        "Ugrás a piszkozatokhoz"
+      ],
+      "Go to Trash": [
+        "Ugrás a lomtárhoz"
+      ],
+      "Go to Spam": [
+        "Ugrás a levélszeméthez"
+      ],
+      "Go to All Mail": [
+        "Ugrás az Összes Üzenethez"
+      ],
+      "Save draft": [
+        "Piszkozat mentése"
+      ],
+      "Send email": [
+        "E-mail küldése"
+      ],
+      "Close draft": [
+        "Piszkozat bezárása"
+      ],
+      "Minimize / maximize composer": [
+        "Szerkesztő kicsinyítése / felnagyítása"
+      ],
+      "Expand / contract composer": [
+        "Szerkesztő kiterjesztése / összehúzása"
+      ],
+      "Attach file": [
+        "Fájl csatolása"
+      ],
+      "Add expiration time": [
+        "Időkorlát megadása"
+      ],
+      "Add encryption": [
+        "Titkosítás hozzáadása"
+      ],
+      "Discard draft": [
+        "Piszkozat elvetése"
+      ],
+      "Open previous message": [
+        "Előző üzenet megnyitása"
+      ],
+      "Open next message": [
+        "Következő üzenet megnyitása"
+      ],
+      "Show unread emails": [
+        "Olvasatlan üzenetek megjelenítése"
+      ],
+      "Show all emails": [
+        "Összes üzenet megjelenítése"
+      ],
+      "Select / unselect all": [
+        "Összes kijelölése / kijelölés megszüntetése"
+      ],
+      "Search": [
+        "Keresés"
+      ],
+      "New message": [
+        "Új üzenet"
+      ],
+      "Star": [
+        "Csillagozás"
+      ],
+      "Mark as unread": [
+        "Megjelölés olvasatlanként"
+      ],
+      "Label as...": [
+        "Címkézés, mint..."
+      ],
+      "Create filter with...": [
+        "Szűrő készítése..."
+      ],
+      "Move to...": [
+        "Áthelyezés..."
+      ],
+      "Move to Inbox": [
+        "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "Move to Archive": [
+        "Áthelyezés az archívumba"
+      ],
+      "Move to Spam": [
+        "Áthelyezés a levélszeméthez"
+      ],
+      "Move to Trash": [
+        "Áthelyezés a lomtárba"
+      ],
+      "Delete permanently": [
+        "Végleges törlés"
+      ],
+      "Reply": [
+        "Válasz"
+      ],
+      "Reply all": [
+        "Válasz mindenkinek"
+      ],
+      "Forward": [
+        "Továbbítás"
+      ],
+      "Load remote content": [
+        "Távoli tartalom betöltése"
+      ],
+      "Load embedded images": [
+        "Beágyazott képek betöltése"
+      ],
+      "Show original message": [
+        "Eredeti üzenet megjelenítése"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        ""
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        ""
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        ""
+      ],
+      "Encryption failed": [
+        ""
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        ""
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        ""
+      ]
+    },
+    "Message": {
+      "Re:": [
+        ""
+      ],
+      "Fw:": [
+        "Fwd:"
       ]
     },
     "Event info. Organizer name": {

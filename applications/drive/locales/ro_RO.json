@@ -463,11 +463,26 @@
       "here": [
         "aici"
       ],
+      "Clear": [
+        "Golire"
+      ],
+      "Add screenshot(s)": [
+        "Adăugare captură"
+      ],
+      "Hide info": [
+        "Ascundere informații"
+      ],
+      "Show info": [
+        "Afișare informații"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
       "${ BRAND_NAME } introduction": [
         "Prezentare ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Conversați cu noi"
       ],
       "I have a question": [
         "Am o întrebare"
@@ -507,18 +522,6 @@
       ],
       "Composer mode": [
         "Mod editor mesaje"
-      ],
-      "Clear": [
-        "Golire"
-      ],
-      "Add screenshot(s)": [
-        "Adăugare captură"
-      ],
-      "Hide info": [
-        "Ascundere informații"
-      ],
-      "Show info": [
-        "Afișare informații"
       ],
       "Get started": [
         "Să începem"
@@ -607,17 +610,14 @@
       "New upload": [
         "Încărcare nouă"
       ],
-      "Delete permanently": [
-        "Ștergere permanentă"
+      "Upload file": [
+        "Încărcare fișier"
       ],
-      "Restore from trash": [
-        "Restaurare din «Gunoi»"
+      "Upload folder": [
+        "Încărcare folder"
       ],
-      "Empty trash": [
-        "Golire «Gunoi»"
-      ],
-      "Rename": [
-        "Redenumire"
+      "Create new folder": [
+        "Creare folder"
       ],
       "Move to folder": [
         "Mutare în folder"
@@ -625,8 +625,8 @@
       "Move to trash": [
         "Mutare în «Gunoi»"
       ],
-      "Create new folder": [
-        "Creare folder"
+      "Rename": [
+        "Redenumire"
       ],
       "Name: A to Z": [
         "Nume: de la A la Z"
@@ -652,11 +652,29 @@
       "Size: large to small": [
         "Mărime: mare la început"
       ],
-      "Upload file": [
-        "Încărcare fișier"
+      "List layout": [
+        "Aspect listă"
       ],
-      "Upload folder": [
-        "Încărcare folder"
+      "Grid layout": [
+        "Aspect grilă"
+      ],
+      "Preview": [
+        "Examinare"
+      ],
+      "Delete permanently": [
+        "Ștergere permanentă"
+      ],
+      "Restore from trash": [
+        "Restaurare din «Gunoi»"
+      ],
+      "Empty trash": [
+        "Golire «Gunoi»"
+      ],
+      "Share file": [
+        "Partajare fişier"
+      ],
+      "Stop sharing": [
+        "Oprire partajare"
       ],
       "Maximize transfers": [
         "Maximizare transferuri"
@@ -694,35 +712,20 @@
       "Remove from this list": [
         "Eliminare din listă"
       ],
-      "Create": [
-        "Creare"
-      ],
-      "List layout": [
-        "Aspect listă"
-      ],
-      "Grid layout": [
-        "Aspect grilă"
-      ],
-      "Preview": [
-        "Examinare"
-      ],
-      "Stop sharing": [
-        "Oprire partajare"
-      ],
       "Share": [
         "Partajare"
       ],
       "Show shared link details": [
         "Afișare detalii legătură partajată"
       ],
-      "Share file": [
-        "Partajare fişier"
-      ],
       "Start recovering": [
         "Pornire recuperare"
       ],
       "View more": [
         "Detalii"
+      ],
+      "Create": [
+        "Creare"
       ],
       "Move": [
         "Mutare"
@@ -884,6 +887,9 @@
       "Import contacts": [
         "Importare contacte"
       ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
       "Open help menu": [
         "Deschidere meniu ajutor"
       ],
@@ -892,9 +898,6 @@
       ],
       "Open settings menu": [
         "Deschidere meniu setări"
-      ],
-      "Report a problem": [
-        "Raportare problemă"
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -1031,32 +1034,32 @@
       "Drop to upload": [
         "Plasare pentru încărcare"
       ],
-      "Trash": [
-        "Gunoi"
-      ],
-      "Empty trash": [
-        "Golire «Gunoi»"
-      ],
       "Show actions": [
         "Afișare acțiuni"
       ],
       "Sort files/folders": [
         "Sortare fișiere/foldere"
       ],
+      "Change layout": [
+        "Schimbare aspect"
+      ],
+      "Trash": [
+        "Gunoi"
+      ],
+      "Empty trash": [
+        "Golire «Gunoi»"
+      ],
+      "Shared": [
+        "Partajat"
+      ],
+      "Additional settings": [
+        "Setări adiționale"
+      ],
       "Cancel all active transfers": [
         "Anulare toate transferurile active"
       ],
       "My files": [
         "Fișierele mele"
-      ],
-      "You have no folders yet": [
-        "Încă nu aveți foldere"
-      ],
-      "You have no files to share": [
-        "Nu aveți fișiere de partajat"
-      ],
-      "Change layout": [
-        "Schimbare aspect"
       ],
       "Your file is ready to be downloaded": [
         "Fișierul este gata de descărcare"
@@ -1124,11 +1127,11 @@
       "Size": [
         "Mărime"
       ],
-      "Shared": [
-        "Partajat"
-      ],
       "# of accesses": [
         "Nr. de accesări"
+      ],
+      "You have no folders yet": [
+        "Încă nu aveți foldere"
       ],
       "Create a new folder": [
         "Creare folder"
@@ -1145,9 +1148,6 @@
       "Share via link": [
         "Partajare prin legătură"
       ],
-      "Additional settings": [
-        "Setări adiționale"
-      ],
       "Manage secure link": [
         "Gestionare legătură securizată"
       ],
@@ -1159,6 +1159,9 @@
       ],
       "Discard": [
         "Anulare"
+      ],
+      "You have no files to share": [
+        "Nu aveți fișiere de partajat"
       ],
       "Files details": [
         "Detalii fișiere"
@@ -1177,11 +1180,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Se încarcă"
-      ],
       "No results found": [
         "Nu s-au găsit rezultate"
+      ],
+      "Loading": [
+        "Se încarcă"
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
@@ -1737,8 +1740,23 @@
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "There are no files yet": [
+        "Încă nu există fișiere"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Trageți și plasați un fișier aici sau încărcați-l."
+      ],
+      "No files or folders in trash": [
+        "Nu există fișiere sau foldere în «Gunoi»"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sigur doriți să goliți folderul «Gunoi» și să ștergeți definitiv tot din el?"
+      ],
+      "Share files with links": [
+        "Partajază fișiere cu legături"
+      ],
+      "Create links and share your files with others.": [
+        "Creaţi legături şi partajaţi fişierele cu alţii."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } finalizat",
@@ -1825,27 +1843,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Închizând managerul de transferuri se vor anula toate transferurile active, confirmați?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Creați primul folder și începeți să vă mutați fișierele."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Accesați „Fișierele mele” și încărcați mai întâi câteva fișiere."
-      ],
-      "No files or folders in trash": [
-        "Nu există fișiere sau foldere în «Gunoi»"
-      ],
-      "There are no files yet": [
-        "Încă nu există fișiere"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Trageți și plasați un fișier aici sau încărcați-l."
-      ],
-      "Share files with links": [
-        "Partajază fișiere cu legături"
-      ],
-      "Create links and share your files with others.": [
-        "Creaţi legături şi partajaţi fişierele cu alţii."
-      ],
       "Link expires: ": [
         "Expirare legătură: "
       ],
@@ -1882,6 +1879,9 @@
       "No": [
         "Nu"
       ],
+      "Create your first folder and start moving your files.": [
+        "Creați primul folder și începeți să vă mutați fișierele."
+      ],
       "Anyone with this link can access your file.": [
         "Oricine are această legătură vă poate accesa fișierul."
       ],
@@ -1911,6 +1911,9 @@
       ],
       "Creating link to file": [
         "Se creează legătura către fișier"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Accesați „Fișierele mele” și încărcați mai întâi câteva fișiere."
       ],
       "Select an uploaded file and create a link to it.": [
         "Selectaţi un fişier încărcat şi creaţi o legătură la acesta."
@@ -2175,6 +2178,15 @@
       "Unknown file": [
         "Fișier necunoscut"
       ],
+      "All": [
+        "Toate"
+      ],
+      "Active": [
+        "Activ"
+      ],
+      "Failed": [
+        "Eșuate"
+      ],
       "Folder": [
         "Folder"
       ],
@@ -2304,14 +2316,14 @@
       "Upgrade account": [
         "Migrare cont"
       ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
       "Upgrade": [
         "Migrare"
       ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
       ],
       "click here": [
         "apăsați aici"
@@ -2525,6 +2537,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Setările locale de dată și oră par să nu fie sincronizate."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Chat-ul live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN plătite. În schimb, vă rugăm să deschideți un tichet."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -3082,45 +3097,6 @@
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Setări"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Activat"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Dezactivat"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximizat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Imagine neselectată"
@@ -3222,6 +3198,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Atașare captură ecran"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Setări"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Activat"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Dezactivat"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximizat"
+      ],
+      "Normal": [
+        "Normal"
       ]
     },
     "Onboarding Proton": {
@@ -3791,6 +3806,13 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nume"
@@ -3903,13 +3925,6 @@
       ],
       "Address": [
         "Adresa"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
       ]
     },
     "PGP key warning": {

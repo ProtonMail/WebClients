@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "此欄位為必填"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此欄位至少須有 ${ minimumLength } 個字元。"
-      ],
-      "Email is not valid": [
-        "電子郵件無效"
-      ],
-      "Not a valid number": [
-        "號碼無效"
-      ],
-      "Passwords do not match": [
-        "密碼不相符"
-      ],
-      "Request timed out.": [
-        "請求逾時。"
-      ],
-      "Signature verification failed": [
-        "簽名驗證失敗"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到地址 ${ email } 。"
-      ],
-      "Address primary private key not found": [
-        "找不到地址主要金鑰"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "行事曆主要私密金鑰並未解密"
-      ],
-      "Missing signature": [
-        "簽章遺失"
-      ],
-      "Contact signature not verified": [
-        "連絡人簽章未驗證"
-      ],
-      "Signature not verified": [
-        "簽章未驗證"
-      ],
-      "Invalid name": [
-        "名稱無效"
-      ],
-      "Email address disabled": [
-        "電子郵件地址已停用"
-      ],
-      "No keys retrieved for internal user": [
-        "內部使用者沒有提取到任何金鑰"
-      ],
-      "No valid keys retrieved for internal user": [
-        "內部使用者沒有提取到任何有效的金鑰"
-      ],
-      "Contact signature could not be verified": [
-        "連絡人簽章無法驗證"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "內部使用者沒有提取到任何用於寄送的有效金鑰"
-      ],
-      "Trusted keys are not valid for sending": [
-        "信任的金鑰用於寄送時無效"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "使用者沒有提取到任何用於寄送的有效 WKD 金鑰"
-      ],
-      "The sending key is not valid": [
-        "寄送金鑰無效"
-      ],
       "Unknown error": [
         "未知的錯誤"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "電子郵件地址無效"
+      ],
+      "This field is required": [
+        "此欄位為必填"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -147,17 +84,14 @@
       "A group with this name already exists": [
         "以此為名的群組已存在"
       ],
+      "Invalid name": [
+        "名稱無效"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "郵箱密碼不正確，請再試一次"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "登入認證不正確，請再試一次"
       ],
       "Process aborted": [
         ""
@@ -219,6 +153,12 @@
       "Invalid code": [
         ""
       ],
+      "Incorrect mailbox password. Please try again": [
+        "郵箱密碼不正確，請再試一次"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "登入認證不正確，請再試一次"
+      ],
       "Primary address key is not decrypted": [
         "主要地址金鑰並未被加密"
       ],
@@ -230,6 +170,66 @@
       ],
       "Name required": [
         "名稱為必填"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此欄位至少須有 ${ minimumLength } 個字元。"
+      ],
+      "Email is not valid": [
+        "電子郵件無效"
+      ],
+      "Not a valid number": [
+        "號碼無效"
+      ],
+      "Passwords do not match": [
+        "密碼不相符"
+      ],
+      "Request timed out.": [
+        "請求逾時。"
+      ],
+      "Signature verification failed": [
+        "簽名驗證失敗"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到地址 ${ email } 。"
+      ],
+      "Address primary private key not found": [
+        "找不到地址主要金鑰"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "行事曆主要私密金鑰並未解密"
+      ],
+      "Missing signature": [
+        "簽章遺失"
+      ],
+      "Contact signature not verified": [
+        "連絡人簽章未驗證"
+      ],
+      "Signature not verified": [
+        "簽章未驗證"
+      ],
+      "Email address disabled": [
+        "電子郵件地址已停用"
+      ],
+      "No keys retrieved for internal user": [
+        "內部使用者沒有提取到任何金鑰"
+      ],
+      "No valid keys retrieved for internal user": [
+        "內部使用者沒有提取到任何有效的金鑰"
+      ],
+      "Contact signature could not be verified": [
+        "連絡人簽章無法驗證"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "內部使用者沒有提取到任何用於寄送的有效金鑰"
+      ],
+      "Trusted keys are not valid for sending": [
+        "信任的金鑰用於寄送時無效"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "使用者沒有提取到任何用於寄送的有效 WKD 金鑰"
+      ],
+      "The sending key is not valid": [
+        "寄送金鑰無效"
       ],
       "Self invitation not allowed": [
         "不允許自我邀請"
@@ -301,1854 +301,10 @@
         "錯誤"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密碼至少必須包含 ${ length } 個字元"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "位元組"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "姓名"
-      ],
-      "Email": [
-        "電子郵件"
-      ],
-      "Phone": [
-        "電話號碼"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Photo": [
-        "相片"
-      ],
-      "Organization": [
-        "組織"
-      ],
-      "Birthday": [
-        "生日"
-      ],
-      "Anniversary": [
-        "週年紀念日"
-      ],
-      "Title": [
-        "頭銜"
-      ],
-      "Role": [
-        "角色"
-      ],
-      "Note": [
-        "備註"
-      ],
-      "URL": [
-        "網址"
-      ],
-      "Gender": [
-        "性別"
-      ],
-      "Language": [
-        "語言"
-      ],
-      "Timezone": [
-        "時區"
-      ],
-      "Geo": [
-        "經緯"
-      ],
-      "Logo": [
-        "標誌"
-      ],
-      "Member": [
-        "成員"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "工作"
-      ],
-      "Personal": [
-        "私人"
-      ],
-      "Mobile": [
-        "手機"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Yomi": [
-        "漢字讀音"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Fax": [
-        "傳真"
-      ],
-      "Pager": [
-        "呼叫器"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "電子郵件"
-      ],
-      "Home": [
-        "住家"
-      ],
-      "Work": [
-        "工作"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Phone": [
-        "電話號碼"
-      ],
-      "Mobile": [
-        "手機"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Fax": [
-        "傳真"
-      ],
-      "Pager": [
-        "呼叫器"
-      ],
-      "Address": [
-        "地址"
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "工作階段已逾時。"
-      ],
-      "Internet connection lost.": [
-        "網際網路連線中斷。"
-      ],
-      "Servers are unreachable.": [
-        "無法連線到伺服器。"
-      ],
-      "Custom daily": [
-        "自訂每天"
-      ],
-      "Custom weekly": [
-        "自訂每週"
-      ],
-      "Custom monthly": [
-        "自訂每月"
-      ],
-      "Custom yearly": [
-        "自訂每年"
-      ],
-      "Custom": [
-        "自訂"
-      ],
-      "Daily": [
-        "每日"
-      ],
-      "Monthly ${ onDayString }": [
-        "每月的 ${ onDayString }"
-      ],
-      "Yearly": [
-        "每年"
-      ],
-      "Loading": [
-        "載入中"
-      ],
-      "No results found": [
-        "查無結果"
-      ],
-      "support team": [
-        "支援團隊"
-      ],
-      "No contacts added yet": [
-        "未新增任何聯絡人"
-      ],
-      "Week": [
-        "週"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
-      ],
-      "You are about to open another browser tab and visit:": [
-        "您即將開啟另一瀏覽器索引標籤並造訪："
-      ],
-      "Learn more": [
-        "瞭解更多"
-      ],
-      "Drop the file here to upload": [
-        "拖放檔案到此處上載"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } 個成員)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "你的Proton帳戶已被暫停。請先支付任何逾期的款項，然後繼續使用你的帳戶。"
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "你想接收新的驗證碼還是選擇另一種驗證方式？"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "輸入從 ${ destinationText } 接收的驗證碼。"
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "如果你看不到郵件，請檢查您的垃圾郵件文件夾。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "為防止惡意行為，請證明您不是機器人。"
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次驗證。"
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼只會用於此一次驗證。"
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "如果你無法建立帳戶，請聯絡我們。我們將會於一個工作天內處理你的申請。"
-      ],
-      "Loading ${ appName }": [
-        "載入${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } 個成員"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：ProtonMail 一律簽署加密的郵件。"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "請注意：指派到此群組中的電子郵件地址不會被刪除。"
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "正在檢查 ${ progress } 個 (共 ${ max } 個) 聯絡人..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } 個聯絡人已成功更新。"
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "若要恢復您的資料，您需要重新啟用在資料建立時所使用的聯絡人加密金鑰。您必須記得該金鑰產生時所使用的密碼。"
-      ],
-      "Key fingerprint": [
-        "金鑰指紋"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "記不起您的密碼嗎？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "請注意：此過程或需時，視乎您的通訊錄大小而定。"
-      ],
-      "Group assignment applied": [
-        "已套用群組分配"
-      ],
-      "Create a new contact group": [
-        "建立新的聯絡人群組"
-      ],
-      "No group found": [
-        "未找到群組"
-      ],
-      "Duplicate key updated": [
-        "重複金鑰已更新"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要寄送到此電子郵件地址，請首先信任可用於寄送的公開金鑰。"
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此電子郵件地址已停用。若要寄送到此電子郵件地址，請其擁有者首先啟用此電子郵件地址。"
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "如要使用地址驗證，您必須信任一或多個可用的公開金鑰，包括您想用於寄送的公開金鑰。這樣做是為了防止加密金鑰遭到偽造。"
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "所有上傳的金鑰都無法用於加密。加密將會自動停用。"
-      ],
-      "Primary": [
-        "主要"
-      ],
-      "No email address": [
-        "沒有電子郵件地址"
-      ],
-      "${ contactsCount } contact found": [
-        "找到 ${ contactsCount } 個聯絡人"
-      ],
-      "${ groupCounts } group found": [
-        "找到 ${ groupCounts } 個群組"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我們支援匯入來自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及其他一些應用程式的 CSV 檔案。我們也支援匯入 vCard 4.0。(以 UTF-8 編碼)。"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "應用程式需要在本機先解密您的聯絡人，然後才匯出。過程結束時，將會產生一個 VCF 檔案以供您下載。"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } 個電子郵件地址"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的螢幕截圖"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "此處"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "因為可能違反政策，因此這個已被暫時停用。"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如果您相信這是錯的，請聯絡我們 ${ contactLink }。"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "你的帳戶有最少一張有過期的發票。你將會無法存取部份功能。${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "由於未付款發票，帳號存取受限。請聯絡管理員。"
-      ],
-      "Free up some space or add more storage space.": [
-        "請清空部分空間或增加更多儲存空間。"
-      ],
-      "Free up some space or contact your administrator.": [
-        "請清空部分空間或聯絡您的系統管理員。"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 ${ spaceDisplayed }%。${ freeUpMessage }${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "網際網路連線已恢復。"
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "網絡連線已中斷。請檢查你的裝置是否連接正常。"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "您目前已登入為 ${ user.Name } (${ user.Email })，帳號的存取受限。"
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "您已啟用了測試版體驗。按一下${ refreshButton }以使用最新版本的 ${ appName }。應用程式將會重新載入。"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "您已停用了測試版體驗。按一下${ refreshButton }以使用穩定版本的 ${ appName }。應用程式將會重新載入。"
-      ],
-      "Manage your calendars": [
-        "管理您的行事曆"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } 已被新增至 Proton 套裝中。我們想要聽聽您的想法！"
-      ],
-      "Loading events": [
-        "載入活動中"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "召集人無法知悉您拒絕了此邀請："
-      ],
-      "Would you like to delete the event anyway?": [
-        "您確定要刪除此活動？"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "參與者無一能知悉您的變更："
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "下列參與者無法知悉您的變更："
-      ],
-      "Would you like to continue anyway?": [
-        "您無論如何都要繼續？"
-      ],
-      "Discard changes?": [
-        "放棄變更？"
-      ],
-      "You will lose all unsaved changes.": [
-        "您所有未儲存的變更將會消失。"
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "此事件的召集人將會收到通知，得悉您拒絕邀請。您要刪除此事件嗎？"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "取消函即將發送給各事件參與者。您要刪除此事件嗎？"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "您的電子郵件地址已停用。取消函無法發送給各事件參與者。您仍然要刪除此事件嗎？"
-      ],
-      "Would you like to delete this event?": [
-        "您確定要刪除此活動？"
-      ],
-      "Which event would you like to delete?": [
-        "您要刪除哪一個事件？"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "此事件已更新。召集人將收到通知，得悉您拒絕邀請。您要刪除此事件嗎？"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "此事件已由召集人更新。您要刪除此事件嗎？"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "此事件已更新。此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "取消函將發送給各事件參與者。您要刪除此一系列中全部事件嗎？"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "您的電子郵件地址已停用。取消函無法發送給各事件參與者。您仍然要刪除此一系列中全部事件嗎？"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "此一系列事件的召集人將會收到通知，得悉您拒絕邀請。您要刪除此一系列的全部事件嗎？"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "此一系列事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此一系列的全部事件嗎？"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "您要刪除此一系列中全部事件嗎？"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "召集人先前更新的事件將會保留，但您的某些回答將會遺失。"
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "召集人先前更新的事件將會保留。"
-      ],
-      "Which event would you like to update?": [
-        "您要更新哪一個事件？"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "此事件已由召集人更新。您要在此一系列事件中僅更改此一回的回答嗎？"
-      ],
-      "Would you like to update this event?": [
-        "您要更新此事件嗎？"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "您要變更您就此一系列中全部事件的回答嗎？"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "已新增及已移除的參與者將獲通知此一系列中的全部事件。"
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "您即將更新此一系列中全部事件。已新增及已移除的參與者將獲通知。"
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "您即將更新此一系列中全部事件。現有、已新增及已移除的參與者將獲通知。"
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "您即將更新此一系列中全部事件。現有及已新增的參與者將獲通知。"
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "您即將更新此一系列中全部事件。已移除的參與者將獲通知。"
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "您即將更新此一系列中全部事件。現有及已移除的參與者將獲通知。"
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "您即將更新此一系列中全部事件。邀請將發送給各事件參與者。"
-      ],
-      "Would you like to update all events in this series?": [
-        "您要更新此一系列中全部事件嗎？"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "此一系列中先前所作的變更將會消失。"
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "您對召集人先前更新的事件所作的某些回答將會遺失。"
-      ],
-      "Frequency modifications will be lost.": [
-        "頻率修改將會消失。"
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "召集人已更新此一系列事件中的一些事件。可惜，此類型的週期性事件暫時未支援在行事曆變更。"
-      ],
-      "Update recurring event": [
-        "更新週期性事件"
-      ],
-      "Added and removed participants will be notified.": [
-        "已新增及已移除的參與者將獲通知。"
-      ],
-      "An invitation will be sent to added participants.": [
-        "邀請將發送給已新增參與者。"
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "取消函將發送給已移除的參與者。"
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "現有、已新增及已移除的參與者將獲通知。"
-      ],
-      "Existent and added participants will be notified.": [
-        "現有及已新增的參與者將獲通知。"
-      ],
-      "Removed participants will be notified.": [
-        "已移除的參與者將獲通知。"
-      ],
-      "Existent and removed participants will be notified.": [
-        "現有及已移除的參與者將獲通知。"
-      ],
-      "An invitation will be sent to the event participants.": [
-        "邀請將發送給各事件參與者。"
-      ],
-      "Please remove the duplicates and try again.": [
-        "請移除重複項目後再試一次。"
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        "您已重設密碼，連結到下列行事曆的事件無法解密。您先前建立的任何共享行事曆連結將不再運作。"
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "每一邀請允許最多 100 個參與者"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "您僅可以修改個人事件屬性，因為您無法以召集人電子郵件地址傳送電子郵件。"
-      ],
-      "Loading event": [
-        "正在載入事件"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } 現在開始"
-      ],
-      "${ title } starts today": [
-        "${ title } 是日開始"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } 已於 ${ formattedHour } 開始"
-      ],
-      "${ title } started yesterday": [
-        "${ title } 已在昨天開始"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } 已在昨天 ${ formattedHour } 開始"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } 已在 ${ formattedDate } 開始"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } 已在 ${ formattedDate } 於 ${ formattedHour } 開始"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } 已在 ${ _formattedDate } 開始"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } 已在 ${ _formattedDate } 於 ${ formattedHour } 開始"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } 已在 ${ formattedDateWithoutTime } 開始"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } 已在 ${ _formattedDateWithTime } 開始"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } 將於 ${ formattedHour } 開始"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } 將在明天開始"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } 將在明天 ${ formattedHour } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } 將在 ${ _formattedDate2 } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } 將在 ${ _formattedDate2 } 於 ${ formattedHour } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } 將在 ${ _formattedDate3 } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } 將在 ${ _formattedDate3 } 於 ${ formattedHour } 開始"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } 將在 ${ _formattedDateWithoutTime } 開始"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } 將在 ${ formattedDateWithTime } 開始"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(無標題)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "您"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "原訂 ${ formattedStart } 一事取消"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "誠邀 ${ formattedStart } 撥冗出席"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "原訂 ${ formattedStart } 一事有變"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "原訂自 ${ formattedStart } 起一事取消"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "誠邀自 ${ formattedStart } 起撥冗出席"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "原訂自 ${ formattedStart } 起一事有變"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "誠邀出席：${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "日期：${ formattedStart }（整天）"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "日期：${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "地點：${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } 已告取消，特此通知。"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲接受"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已被謝絕"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "第一個週日"
-      ],
-      "on the first Monday": [
-        "第一個週一"
-      ],
-      "on the first Tuesday": [
-        "第一個週二"
-      ],
-      "on the first Wednesday": [
-        "第一個週三"
-      ],
-      "on the first Thursday": [
-        "第一個週四"
-      ],
-      "on the first Friday": [
-        "第一個週五"
-      ],
-      "on the first Saturday": [
-        "第一個週六"
-      ],
-      "on the second Sunday": [
-        "第二個週日"
-      ],
-      "on the second Monday": [
-        "第二個週一"
-      ],
-      "on the second Tuesday": [
-        "第二個週二"
-      ],
-      "on the second Wednesday": [
-        "第二個週三"
-      ],
-      "on the second Thursday": [
-        "第二個週四"
-      ],
-      "on the second Friday": [
-        "第二個週五"
-      ],
-      "on the second Saturday": [
-        "第二個週六"
-      ],
-      "on the third Sunday": [
-        "第三個週日"
-      ],
-      "on the third Monday": [
-        "第三個週一"
-      ],
-      "on the third Tuesday": [
-        "第三個週二"
-      ],
-      "on the third Wednesday": [
-        "第三個週三"
-      ],
-      "on the third Thursday": [
-        "第三個週四"
-      ],
-      "on the third Friday": [
-        "第三個週五"
-      ],
-      "on the third Saturday": [
-        "第三個週六"
-      ],
-      "on the fourth Sunday": [
-        "第四個週日"
-      ],
-      "on the fourth Monday": [
-        "第四個週一"
-      ],
-      "on the fourth Tuesday": [
-        "第四個週二"
-      ],
-      "on the fourth Wednesday": [
-        "第四個週三"
-      ],
-      "on the fourth Thursday": [
-        "第四個週四"
-      ],
-      "on the fourth Friday": [
-        "第四個週五"
-      ],
-      "on the fourth Saturday": [
-        "第四個週六"
-      ],
-      "on the last Sunday": [
-        "最後一個週日"
-      ],
-      "on the last Monday": [
-        "最後一個週一"
-      ],
-      "on the last Tuesday": [
-        "最後一個週二"
-      ],
-      "on the last Wednesday": [
-        "最後一個週三"
-      ],
-      "on the last Thursday": [
-        "最後一個週四"
-      ],
-      "on the last Friday": [
-        "最後一個週五"
-      ],
-      "on the last Saturday": [
-        "最後一個週六"
-      ],
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } 日"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "總共 ${ count } 次"
-      ],
-      "until ${ dateString }": [
-        "直到 ${ dateString } 為止"
-      ],
-      "Daily": [
-        "每天"
-      ],
-      "Every ${ interval } day": [
-        "每 ${ interval } 天"
-      ],
-      "Daily, ${ timesString }": [
-        "每天，${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "每天，${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "每 ${ interval } 天，${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "週日"
-      ],
-      "Monday": [
-        "週一"
-      ],
-      "Tuesday": [
-        "週二"
-      ],
-      "Wednesday": [
-        "週三"
-      ],
-      "Thursday": [
-        "週四"
-      ],
-      "Friday": [
-        "週五"
-      ],
-      "Saturday": [
-        "週六"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "每星期，週中每一日"
-      ],
-      "Every ${ interval } week on all days": [
-        "每 ${ interval } 個星期，週中每一日"
-      ],
-      "Weekly on Sunday": [
-        "每星期的週日"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "每 ${ interval } 個星期的週日"
-      ],
-      "Weekly on Monday": [
-        "每星期的週一"
-      ],
-      "Every ${ interval } week on Monday": [
-        "每 ${ interval } 個星期的週一"
-      ],
-      "Weekly on Tuesday": [
-        "每星期的週二"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "每 ${ interval } 個星期的週二"
-      ],
-      "Weekly on Wednesday": [
-        "每星期的週三"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "每 ${ interval } 個星期的週三"
-      ],
-      "Weekly on Thursday": [
-        "每星期的週四"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "每 ${ interval } 個星期的週四"
-      ],
-      "Weekly on Friday": [
-        "每星期的週五"
-      ],
-      "Every ${ interval } week on Friday": [
-        "每 ${ interval } 個星期的週五"
-      ],
-      "Weekly on Saturday": [
-        "每星期的週六"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "每 ${ interval } 個星期的週六"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "每星期的${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "每 ${ interval } 個星期的 ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "每星期，週中每一日，${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "每 ${ interval } 個星期，週中每一日，${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "每星期的週日，${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "每 ${ interval } 個星期的週日，${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "每星期的週一，${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "每 ${ interval } 個星期的週一，${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "每星期的週二，${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "每 ${ interval } 個星期的週二，${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "每星期的週三，${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "每 ${ interval } 個星期的週三，${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "每星期的週四，${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "每 ${ interval } 個星期的週四，${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "每星期的週五，${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "每 ${ interval } 個星期的週五，${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "每星期的週六，${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "每 ${ interval } 個星期的週六，${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "每星期的${ multipleDaysString }，${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "每 ${ interval } 個星期的 ${ multipleDaysString }，${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "每星期，週中每一日，${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "每 ${ interval } 個星期，週中每一日，${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "每星期的週日，${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "每 ${ interval } 個星期的週日，${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "每星期的週一，${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "每 ${ interval } 個星期的週一，${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "每星期的週二，${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "每 ${ interval } 個星期的週二，${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "每星期的週三，${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "每 ${ interval } 個星期的週三，${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "每星期的週四，${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "每 ${ interval } 個星期的週四，${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "每星期的週五，${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "每 ${ interval } 個星期的週五，${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "每星期的週六，${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "每 ${ interval } 個星期的週六，${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每星期的${ multipleDaysString }，${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "每 ${ interval } 個星期的 ${ multipleDaysString }，${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "每月的 ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "每 ${ interval } 個月的 ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "每月的 ${ onDayString }，${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "每 ${ interval } 個月的 ${ onDayString }，${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "每月的 ${ onDayString }，${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "每 ${ interval } 個月的 ${ onDayString }，${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "每年"
-      ],
-      "Every ${ interval } year": [
-        "每 ${ interval } 年"
-      ],
-      "Yearly, ${ timesString }": [
-        "每年，${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "每 ${ interval } 年，${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "每年，${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "每 ${ interval } 年，${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "基本導覽"
-      ],
-      "Basic actions": [
-        "基本動作"
-      ],
-      "Folder shortcuts": [
-        "資料夾捷徑"
-      ],
-      "Composer shortcuts": [
-        "撰寫器快捷鍵"
-      ],
-      "List shortcuts": [
-        "列表快捷鍵"
-      ],
-      "Action shortcuts": [
-        "動作快捷鍵"
-      ],
-      "Message shortcuts": [
-        "郵件快捷鍵"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "上移"
-      ],
-      "Jump to first": [
-        "跳到第一個"
-      ],
-      "Move down": [
-        "往下移"
-      ],
-      "Jump to last": [
-        "跳到最後一個"
-      ],
-      "Move right / expand": [
-        "往右移 / 展開"
-      ],
-      "Move left / collapse": [
-        "往左移 / 收合"
-      ],
-      "Apply / open": [
-        "套用 / 開啟"
-      ],
-      "Cancel / close": [
-        "取消 / 關閉"
-      ],
-      "Open this modal": [
-        "開啟此方塊"
-      ],
-      "Select / unselect": [
-        "選取 / 取消選取"
-      ],
-      "Go to Inbox": [
-        "前往 [收件匣]"
-      ],
-      "Go to Archive": [
-        "前往 [封存]"
-      ],
-      "Go to Sent": [
-        "前往 [已傳送]"
-      ],
-      "Go to Starred": [
-        "前往 [已加星號]"
-      ],
-      "Go to Drafts": [
-        "前往 [草稿]"
-      ],
-      "Go to Trash": [
-        "前往 [垃圾桶]"
-      ],
-      "Go to Spam": [
-        "前往 [垃圾郵件]"
-      ],
-      "Go to All Mail": [
-        "前往 [所有郵件]"
-      ],
-      "Save draft": [
-        "儲存草稿"
-      ],
-      "Send email": [
-        "傳送電子郵件"
-      ],
-      "Close draft": [
-        "關閉草稿"
-      ],
-      "Minimize / maximize composer": [
-        "最小化 / 最大化撰寫器"
-      ],
-      "Expand / contract composer": [
-        "展開 / 收合撰寫器"
-      ],
-      "Attach file": [
-        "附加檔案"
-      ],
-      "Add expiration time": [
-        "新增到期時間"
-      ],
-      "Add encryption": [
-        "新增加密"
-      ],
-      "Discard draft": [
-        "捨棄草稿"
-      ],
-      "Open previous message": [
-        "開啟上一封郵件"
-      ],
-      "Open next message": [
-        "開啟下一封郵件"
-      ],
-      "Show unread emails": [
-        "顯示未讀電子郵件"
-      ],
-      "Show all emails": [
-        "顯示所有電子郵件"
-      ],
-      "Select / unselect all": [
-        "全選 / 取消全選"
-      ],
-      "Search": [
-        "搜尋"
-      ],
-      "New message": [
-        "新郵件"
-      ],
-      "Star": [
-        "加上星號"
-      ],
-      "Mark as unread": [
-        "標記為未讀"
-      ],
-      "Label as...": [
-        "加上標籤..."
-      ],
-      "Create filter with...": [
-        "建立篩選器為..."
-      ],
-      "Move to...": [
-        "移動到..."
-      ],
-      "Move to Inbox": [
-        "移動到 [收件匣]"
-      ],
-      "Move to Archive": [
-        "移動到 [封存]"
-      ],
-      "Move to Spam": [
-        "移動到 [垃圾郵件]"
-      ],
-      "Move to Trash": [
-        "移動到 [垃圾桶]"
-      ],
-      "Delete permanently": [
-        "永久刪除"
-      ],
-      "Reply": [
-        "回覆"
-      ],
-      "Reply all": [
-        "回覆所有人"
-      ],
-      "Forward": [
-        "轉寄"
-      ],
-      "Load remote content": [
-        "載入遠端內容"
-      ],
-      "Load embedded images": [
-        "載入內嵌圖片"
-      ],
-      "Show original message": [
-        "顯示原始郵件"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "未知"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "未知"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard 版本 < 3.0 不受支援"
-      ],
-      "Encryption failed": [
-        "加密失敗"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "發生未知的錯誤。匯入必須重新啟動。"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "上載您的檔案時發生錯誤。未選取任何檔案。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案。"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "您的檔案 ${ formattedFilename } 是空的。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "您的檔案 ${ formattedFilename } 沒有任何聯絡人可供匯入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。"
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "回覆:"
-      ],
-      "Fw:": [
-        "轉寄:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "複製"
-      ],
-      "Reveal password": [
-        "顯示密碼"
-      ],
-      "Hide password": [
-        "隱藏密碼"
-      ],
-      "Street address": [
-        "街道地址"
-      ],
-      "City": [
-        "城市"
-      ],
-      "Region": [
-        "地區"
-      ],
-      "Postal code": [
-        "郵遞區號"
-      ],
-      "Country": [
-        "國家"
-      ],
-      "Post office box": [
-        "郵政信箱"
-      ],
-      "Extended address": [
-        "詳細地址"
-      ],
-      "Do not ask again": [
-        "不要再詢問"
-      ],
-      "Email address": [
-        "電子郵件地址"
-      ],
-      "Phone number": [
-        "電話號碼"
-      ],
-      "Verification code": [
-        "驗證碼"
-      ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
-      ],
-      "Add email address": [
-        "新增電子郵件地址"
-      ],
-      "Email format": [
-        "電子郵件格式"
-      ],
-      "Add image URL": [
-        "新增圖片 URL"
-      ],
-      "Upload picture": [
-        "上載圖片"
-      ],
-      "Add to group": [
-        "新增至群組"
-      ],
-      "Encrypt emails": [
-        "加密電子郵件"
-      ],
-      "Sign emails": [
-        "簽署電子郵件"
-      ],
-      "Cryptographic scheme": [
-        "加密配置"
-      ],
-      "Public keys": [
-        "公開金鑰"
-      ],
-      "Automatically save contacts": [
-        "自動儲存聯絡人"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
-      ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
-      "Operating system": [
-        "操作系统"
-      ],
-      "Operating system version": [
-        "作業系統版本"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
-      "Category": [
-        "類別"
-      ],
-      "What happened?": [
-        "發生了什麼問題？"
-      ],
-      "System information": [
-        "系統資訊"
-      ],
-      "Browser": [
-        "瀏覽器"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        "這個評分的主要原因是什麼？"
-      ],
-      "Display name": [
-        "顯示名稱"
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "送出"
-      ],
-      "Password": [
-        "密碼"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "Two-factor authentication code": [
-        "兩步驟驗證碼"
-      ],
-      "Username or ProtonMail address": [
-        "使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "選取預設情況下您郵件清單的外觀。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "選取預設情況下的收件匣外觀。"
-      ],
-      "Select how your composer opens by default.": [
-        "選取預設情況下撰寫器開啟的方式。"
-      ],
-      "Enable Beta Access": [
-        "啟用測試版體驗"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "Choose a color": [
-        "選擇一種顏色"
-      ],
-      "Default email": [
-        "預設郵件"
-      ],
-      "Display": [
-        "顯示"
-      ],
-      "Description": [
-        "描述"
-      ],
-      "Default event duration": [
-        "預設活動持續時間"
-      ],
-      "URL": [
-        "網址"
-      ],
-      "Default notifications": [
-        "預設通知"
-      ],
-      "Default full day notifications": [
-        "預設整日活動通知"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
-      ],
-      "0 - Not likely": [
-        "0 - 不太可能"
-      ],
-      "10 - Extremely likely": [
-        "10 - 極有可能"
-      ],
-      "All day": [
-        "全天"
-      ],
-      "Repeat on": [
-        "重複於"
-      ],
-      "Repeat every": [
-        "重複間隔"
-      ],
-      "Ends": [
-        "結束"
-      ],
-      "Organizer": [
-        "召集人"
-      ],
-      "Optional": [
-        "列席者"
-      ],
-      "Time of the event": [
-        "事件時間"
-      ],
-      "Event time": [
-        "事件時間"
-      ],
-      "Event title": [
-        "事件標題"
-      ],
-      "Event frequency": [
-        "事件頻率"
-      ],
-      "Event location": [
-        "事件地點"
-      ],
-      "Event notifications": [
-        "事件通知"
-      ],
-      "Participants": [
-        "參與者"
-      ],
-      "Your calendars": [
-        "您的行事曆"
-      ]
-    },
     "Action": {
+      "Close": [
+        "關閉"
+      ],
       "Close modal": [
         "關閉視窗"
       ],
@@ -2166,9 +322,6 @@
       ],
       "Use “${ label }” setting": [
         "使用「${ label }」設定"
-      ],
-      "Close": [
-        "關閉"
       ],
       "Close navigation": [
         "關閉導覽"
@@ -2416,6 +569,9 @@
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
       ],
+      "Chat with us": [
+        ""
+      ],
       "I have a question": [
         "我要發問"
       ],
@@ -2467,9 +623,6 @@
       "Back": [
         "上一步"
       ],
-      "Log in": [
-        "登入"
-      ],
       "Remove bonuses": [
         ""
       ],
@@ -2517,6 +670,9 @@
       ],
       "Increase": [
         ""
+      ],
+      "Log in": [
+        "登入"
       ],
       "Close this banner": [
         "關閉此橫幅"
@@ -2613,137 +769,6 @@
       ],
       "Close popover": [
         "關閉彈出視窗"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此金鑰不適用於加密"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "了解更多"
-      ],
-      "Request an invite": [
-        "請求一個邀請"
-      ],
-      "clearing your browser cache": [
-        "清除瀏覽器快取"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Go to subscription plans": [
-        "前往訂閱方案"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "付款發票"
-      ],
-      "Upgrade account": [
-        "升級帳戶"
-      ],
-      "Calendars": [
-        "行事曆"
-      ],
-      "My calendars": [
-        "我的行事曆"
-      ],
-      "Subscribed calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "範例："
-      ],
-      "Start typing an email address": [
-        "在此輸入一個電子郵件地址"
-      ],
-      "Image URL": [
-        "圖片 URL"
-      ],
-      "Filter groups": [
-        "篩選群組"
-      ],
-      "Search for name or email": [
-        "搜尋姓名或電子郵件"
-      ],
-      "Search for group name": [
-        "搜尋群組名稱"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "OS name": [
-        "作業系統名稱"
-      ],
-      "OS version": [
-        "作業系統版本"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
-      "A way to contact you": [
-        "如何聯繫您"
-      ],
-      "Please describe the problem and include any error messages": [
-        "請描述問題及附上錯誤訊息"
-      ],
-      "Browser name": [
-        "瀏覽器名稱"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
-      "Feedback": [
-        "意見回饋"
-      ],
-      "e.g. Julia Smith": [
-        "範例：衛梓祐"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        "新增一個行事曆名稱"
-      ],
-      "Add a calendar description": [
-        "新增一個行事曆描述"
-      ],
-      "Add title": [
-        "新增標題"
-      ],
-      "Add location": [
-        "新增位置"
-      ],
-      "Add description": [
-        "新增描述"
-      ],
-      "Add participants": [
-        "新增參與者"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } 小時"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分鐘"
       ]
     },
     "Title": {
@@ -2915,18 +940,6 @@
       "Give feedback": [
         "提供意見回饋"
       ],
-      "Sign in again to continue": [
-        "請重新登入以繼續"
-      ],
-      "Account suspended": [
-        "帳號被暫停"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "Enter your password": [
-        "請輸入您的密碼"
-      ],
       "Confirm loss of Proton bonuses": [
         ""
       ],
@@ -3016,6 +1029,18 @@
       ],
       "${ appName } customization": [
         ""
+      ],
+      "Sign in again to continue": [
+        "請重新登入以繼續"
+      ],
+      "Account suspended": [
+        "帳號被暫停"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Enter your password": [
+        "請輸入您的密碼"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 鍵盤快捷鍵"
@@ -3175,6 +1200,1116 @@
       ],
       "CANCELLED": [
         "已取消"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "查無結果"
+      ],
+      "Loading": [
+        "載入中"
+      ],
+      "support team": [
+        "支援團隊"
+      ],
+      "No contacts added yet": [
+        "未新增任何聯絡人"
+      ],
+      "Week": [
+        "週"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
+      ],
+      "You are about to open another browser tab and visit:": [
+        "您即將開啟另一瀏覽器索引標籤並造訪："
+      ],
+      "Learn more": [
+        "瞭解更多"
+      ],
+      "Drop the file here to upload": [
+        "拖放檔案到此處上載"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 個成員)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "你的Proton帳戶已被暫停。請先支付任何逾期的款項，然後繼續使用你的帳戶。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "你想接收新的驗證碼還是選擇另一種驗證方式？"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "輸入從 ${ destinationText } 接收的驗證碼。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "如果你看不到郵件，請檢查您的垃圾郵件文件夾。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "為防止惡意行為，請證明您不是機器人。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的電子郵件只會用於此一次驗證。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的電話號碼只會用於此一次驗證。"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "如果你無法建立帳戶，請聯絡我們。我們將會於一個工作天內處理你的申請。"
+      ],
+      "Loading ${ appName }": [
+        "載入${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } 個成員"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } 和 ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：ProtonMail 一律簽署加密的郵件。"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "請注意：指派到此群組中的電子郵件地址不會被刪除。"
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "正在檢查 ${ progress } 個 (共 ${ max } 個) 聯絡人..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } 個聯絡人已成功更新。"
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "若要恢復您的資料，您需要重新啟用在資料建立時所使用的聯絡人加密金鑰。您必須記得該金鑰產生時所使用的密碼。"
+      ],
+      "Key fingerprint": [
+        "金鑰指紋"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "記不起您的密碼嗎？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "請注意：此過程或需時，視乎您的通訊錄大小而定。"
+      ],
+      "Group assignment applied": [
+        "已套用群組分配"
+      ],
+      "Create a new contact group": [
+        "建立新的聯絡人群組"
+      ],
+      "No group found": [
+        "未找到群組"
+      ],
+      "Duplicate key updated": [
+        "重複金鑰已更新"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要寄送到此電子郵件地址，請首先信任可用於寄送的公開金鑰。"
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "此電子郵件地址已停用。若要寄送到此電子郵件地址，請其擁有者首先啟用此電子郵件地址。"
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "如要使用地址驗證，您必須信任一或多個可用的公開金鑰，包括您想用於寄送的公開金鑰。這樣做是為了防止加密金鑰遭到偽造。"
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "所有上傳的金鑰都無法用於加密。加密將會自動停用。"
+      ],
+      "Primary": [
+        "主要"
+      ],
+      "No email address": [
+        "沒有電子郵件地址"
+      ],
+      "${ contactsCount } contact found": [
+        "找到 ${ contactsCount } 個聯絡人"
+      ],
+      "${ groupCounts } group found": [
+        "找到 ${ groupCounts } 個群組"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "我們支援匯入來自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及其他一些應用程式的 CSV 檔案。我們也支援匯入 vCard 4.0。(以 UTF-8 編碼)。"
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "應用程式需要在本機先解密您的聯絡人，然後才匯出。過程結束時，將會產生一個 VCF 檔案以供您下載。"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } 個電子郵件地址"
+      ],
+      "Screenshot(s) attached": [
+        "已附加的螢幕截圖"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
+      "here": [
+        "此處"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "因為可能違反政策，因此這個已被暫時停用。"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "如果您相信這是錯的，請聯絡我們 ${ contactLink }。"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "你的帳戶有最少一張有過期的發票。你將會無法存取部份功能。${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "由於未付款發票，帳號存取受限。請聯絡管理員。"
+      ],
+      "Free up some space or add more storage space.": [
+        "請清空部分空間或增加更多儲存空間。"
+      ],
+      "Free up some space or contact your administrator.": [
+        "請清空部分空間或聯絡您的系統管理員。"
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "您的儲存空間容量已達到 ${ spaceDisplayed }%。${ freeUpMessage }${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "網際網路連線已恢復。"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "網絡連線已中斷。請檢查你的裝置是否連接正常。"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "您目前已登入為 ${ user.Name } (${ user.Email })，帳號的存取受限。"
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        "您已啟用了測試版體驗。按一下${ refreshButton }以使用最新版本的 ${ appName }。應用程式將會重新載入。"
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        "您已停用了測試版體驗。按一下${ refreshButton }以使用穩定版本的 ${ appName }。應用程式將會重新載入。"
+      ],
+      "Session timed out.": [
+        "工作階段已逾時。"
+      ],
+      "Internet connection lost.": [
+        "網際網路連線中斷。"
+      ],
+      "Servers are unreachable.": [
+        "無法連線到伺服器。"
+      ],
+      "Custom daily": [
+        "自訂每天"
+      ],
+      "Custom weekly": [
+        "自訂每週"
+      ],
+      "Custom monthly": [
+        "自訂每月"
+      ],
+      "Custom yearly": [
+        "自訂每年"
+      ],
+      "Custom": [
+        "自訂"
+      ],
+      "Daily": [
+        "每日"
+      ],
+      "Monthly ${ onDayString }": [
+        "每月的 ${ onDayString }"
+      ],
+      "Yearly": [
+        "每年"
+      ],
+      "Manage your calendars": [
+        "管理您的行事曆"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        "${ calendarAppName } 已被新增至 Proton 套裝中。我們想要聽聽您的想法！"
+      ],
+      "Loading events": [
+        "載入活動中"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "召集人無法知悉您拒絕了此邀請："
+      ],
+      "Would you like to delete the event anyway?": [
+        "您確定要刪除此活動？"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "參與者無一能知悉您的變更："
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "下列參與者無法知悉您的變更："
+      ],
+      "Would you like to continue anyway?": [
+        "您無論如何都要繼續？"
+      ],
+      "Discard changes?": [
+        "放棄變更？"
+      ],
+      "You will lose all unsaved changes.": [
+        "您所有未儲存的變更將會消失。"
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "此事件的召集人將會收到通知，得悉您拒絕邀請。您要刪除此事件嗎？"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "取消函即將發送給各事件參與者。您要刪除此事件嗎？"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "您的電子郵件地址已停用。取消函無法發送給各事件參與者。您仍然要刪除此事件嗎？"
+      ],
+      "Would you like to delete this event?": [
+        "您確定要刪除此活動？"
+      ],
+      "Which event would you like to delete?": [
+        "您要刪除哪一個事件？"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "此事件已更新。召集人將收到通知，得悉您拒絕邀請。您要刪除此事件嗎？"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "此事件已由召集人更新。您要刪除此事件嗎？"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "此事件已更新。此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "取消函將發送給各事件參與者。您要刪除此一系列中全部事件嗎？"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "您的電子郵件地址已停用。取消函無法發送給各事件參與者。您仍然要刪除此一系列中全部事件嗎？"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "此一系列事件的召集人將會收到通知，得悉您拒絕邀請。您要刪除此一系列的全部事件嗎？"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "此一系列事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此一系列的全部事件嗎？"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "您要刪除此一系列中全部事件嗎？"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "召集人先前更新的事件將會保留，但您的某些回答將會遺失。"
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "召集人先前更新的事件將會保留。"
+      ],
+      "Which event would you like to update?": [
+        "您要更新哪一個事件？"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "此事件已由召集人更新。您要在此一系列事件中僅更改此一回的回答嗎？"
+      ],
+      "Would you like to update this event?": [
+        "您要更新此事件嗎？"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "您要變更您就此一系列中全部事件的回答嗎？"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "已新增及已移除的參與者將獲通知此一系列中的全部事件。"
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "您即將更新此一系列中全部事件。已新增及已移除的參與者將獲通知。"
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "您即將更新此一系列中全部事件。現有、已新增及已移除的參與者將獲通知。"
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "您即將更新此一系列中全部事件。現有及已新增的參與者將獲通知。"
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "您即將更新此一系列中全部事件。已移除的參與者將獲通知。"
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "您即將更新此一系列中全部事件。現有及已移除的參與者將獲通知。"
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "您即將更新此一系列中全部事件。邀請將發送給各事件參與者。"
+      ],
+      "Would you like to update all events in this series?": [
+        "您要更新此一系列中全部事件嗎？"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "此一系列中先前所作的變更將會消失。"
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "您對召集人先前更新的事件所作的某些回答將會遺失。"
+      ],
+      "Frequency modifications will be lost.": [
+        "頻率修改將會消失。"
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "召集人已更新此一系列事件中的一些事件。可惜，此類型的週期性事件暫時未支援在行事曆變更。"
+      ],
+      "Update recurring event": [
+        "更新週期性事件"
+      ],
+      "Added and removed participants will be notified.": [
+        "已新增及已移除的參與者將獲通知。"
+      ],
+      "An invitation will be sent to added participants.": [
+        "邀請將發送給已新增參與者。"
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "取消函將發送給已移除的參與者。"
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "現有、已新增及已移除的參與者將獲通知。"
+      ],
+      "Existent and added participants will be notified.": [
+        "現有及已新增的參與者將獲通知。"
+      ],
+      "Removed participants will be notified.": [
+        "已移除的參與者將獲通知。"
+      ],
+      "Existent and removed participants will be notified.": [
+        "現有及已移除的參與者將獲通知。"
+      ],
+      "An invitation will be sent to the event participants.": [
+        "邀請將發送給各事件參與者。"
+      ],
+      "Please remove the duplicates and try again.": [
+        "請移除重複項目後再試一次。"
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        ""
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "每一邀請允許最多 100 個參與者"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "您僅可以修改個人事件屬性，因為您無法以召集人電子郵件地址傳送電子郵件。"
+      ],
+      "Loading event": [
+        "正在載入事件"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "複製"
+      ],
+      "Reveal password": [
+        "顯示密碼"
+      ],
+      "Hide password": [
+        "隱藏密碼"
+      ],
+      "Street address": [
+        "街道地址"
+      ],
+      "City": [
+        "城市"
+      ],
+      "Region": [
+        "地區"
+      ],
+      "Postal code": [
+        "郵遞區號"
+      ],
+      "Country": [
+        "國家"
+      ],
+      "Post office box": [
+        "郵政信箱"
+      ],
+      "Extended address": [
+        "詳細地址"
+      ],
+      "Do not ask again": [
+        "不要再詢問"
+      ],
+      "Email address": [
+        "電子郵件地址"
+      ],
+      "Phone number": [
+        "電話號碼"
+      ],
+      "Verification code": [
+        "驗證碼"
+      ],
+      "Enter the 6-digit code": [
+        "請輸入 6 位數代碼"
+      ],
+      "Add email address": [
+        "新增電子郵件地址"
+      ],
+      "Email format": [
+        "電子郵件格式"
+      ],
+      "Add image URL": [
+        "新增圖片 URL"
+      ],
+      "Upload picture": [
+        "上載圖片"
+      ],
+      "Add to group": [
+        "新增至群組"
+      ],
+      "Encrypt emails": [
+        "加密電子郵件"
+      ],
+      "Sign emails": [
+        "簽署電子郵件"
+      ],
+      "Cryptographic scheme": [
+        "加密配置"
+      ],
+      "Public keys": [
+        "公開金鑰"
+      ],
+      "Automatically save contacts": [
+        "自動儲存聯絡人"
+      ],
+      "Import contacts": [
+        "匯入聯絡人"
+      ],
+      "Export contacts": [
+        "匯出聯絡人"
+      ],
+      "Operating system": [
+        "操作系统"
+      ],
+      "Operating system version": [
+        "作業系統版本"
+      ],
+      "Proton username": [
+        "Proton 使用者名稱"
+      ],
+      "Category": [
+        "類別"
+      ],
+      "What happened?": [
+        "發生了什麼問題？"
+      ],
+      "System information": [
+        "系統資訊"
+      ],
+      "Browser": [
+        "瀏覽器"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "這個評分的主要原因是什麼？"
+      ],
+      "Display name": [
+        "顯示名稱"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "送出"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "Two-factor authentication code": [
+        "兩步驟驗證碼"
+      ],
+      "Username or ProtonMail address": [
+        "使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Keyboard shortcuts": [
+        "鍵盤快捷鍵"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "選取預設情況下您郵件清單的外觀。"
+      ],
+      "Select how your mailbox looks like by default.": [
+        "選取預設情況下的收件匣外觀。"
+      ],
+      "Select how your composer opens by default.": [
+        "選取預設情況下撰寫器開啟的方式。"
+      ],
+      "Enable Beta Access": [
+        "啟用測試版體驗"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Choose a color": [
+        "選擇一種顏色"
+      ],
+      "Default email": [
+        "預設郵件"
+      ],
+      "Display": [
+        "顯示"
+      ],
+      "Description": [
+        "描述"
+      ],
+      "Default event duration": [
+        "預設活動持續時間"
+      ],
+      "URL": [
+        "網址"
+      ],
+      "Default notifications": [
+        "預設通知"
+      ],
+      "Default full day notifications": [
+        "預設整日活動通知"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
+      ],
+      "0 - Not likely": [
+        "0 - 不太可能"
+      ],
+      "10 - Extremely likely": [
+        "10 - 極有可能"
+      ],
+      "All day": [
+        "全天"
+      ],
+      "Repeat on": [
+        "重複於"
+      ],
+      "Repeat every": [
+        "重複間隔"
+      ],
+      "Ends": [
+        "結束"
+      ],
+      "Organizer": [
+        "召集人"
+      ],
+      "Optional": [
+        "列席者"
+      ],
+      "Time of the event": [
+        "事件時間"
+      ],
+      "Event time": [
+        "事件時間"
+      ],
+      "Event title": [
+        "事件標題"
+      ],
+      "Event frequency": [
+        "事件頻率"
+      ],
+      "Event location": [
+        "事件地點"
+      ],
+      "Event notifications": [
+        "事件通知"
+      ],
+      "Participants": [
+        "參與者"
+      ],
+      "Your calendars": [
+        "您的行事曆"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此金鑰不適用於加密"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "Request an invite": [
+        "請求一個邀請"
+      ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Go to subscription plans": [
+        "前往訂閱方案"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "付款發票"
+      ],
+      "Upgrade account": [
+        "升級帳戶"
+      ],
+      "Calendars": [
+        "行事曆"
+      ],
+      "My calendars": [
+        "我的行事曆"
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "範例："
+      ],
+      "Start typing an email address": [
+        "在此輸入一個電子郵件地址"
+      ],
+      "Image URL": [
+        "圖片 URL"
+      ],
+      "Filter groups": [
+        "篩選群組"
+      ],
+      "Search for name or email": [
+        "搜尋姓名或電子郵件"
+      ],
+      "Search for group name": [
+        "搜尋群組名稱"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "OS name": [
+        "作業系統名稱"
+      ],
+      "OS version": [
+        "作業系統版本"
+      ],
+      "Proton username": [
+        "Proton 使用者名稱"
+      ],
+      "A way to contact you": [
+        "如何聯繫您"
+      ],
+      "Please describe the problem and include any error messages": [
+        "請描述問題及附上錯誤訊息"
+      ],
+      "Browser name": [
+        "瀏覽器名稱"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
+      "Feedback": [
+        "意見回饋"
+      ],
+      "e.g. Julia Smith": [
+        "範例：衛梓祐"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "Add a calendar name": [
+        "新增一個行事曆名稱"
+      ],
+      "Add a calendar description": [
+        "新增一個行事曆描述"
+      ],
+      "Add title": [
+        "新增標題"
+      ],
+      "Add location": [
+        "新增位置"
+      ],
+      "Add description": [
+        "新增描述"
+      ],
+      "Add participants": [
+        "新增參與者"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } 小時"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分鐘"
       ]
     },
     "Storage": {
@@ -3357,6 +2492,9 @@
       ],
       "Contacts could not be merged": [
         "聯絡人無法合併"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告並非端對端加密，請勿傳送任何敏感資訊。"
@@ -4570,6 +3708,874 @@
       ],
       "120 minutes": [
         "120 分鐘"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "位元組"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密碼至少必須包含 ${ length } 個字元"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "姓名"
+      ],
+      "Email": [
+        "電子郵件"
+      ],
+      "Phone": [
+        "電話號碼"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Photo": [
+        "相片"
+      ],
+      "Organization": [
+        "組織"
+      ],
+      "Birthday": [
+        "生日"
+      ],
+      "Anniversary": [
+        "週年紀念日"
+      ],
+      "Title": [
+        "頭銜"
+      ],
+      "Role": [
+        "角色"
+      ],
+      "Note": [
+        "備註"
+      ],
+      "URL": [
+        "網址"
+      ],
+      "Gender": [
+        "性別"
+      ],
+      "Language": [
+        "語言"
+      ],
+      "Timezone": [
+        "時區"
+      ],
+      "Geo": [
+        "經緯"
+      ],
+      "Logo": [
+        "標誌"
+      ],
+      "Member": [
+        "成員"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "工作"
+      ],
+      "Personal": [
+        "私人"
+      ],
+      "Mobile": [
+        "手機"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Yomi": [
+        "漢字讀音"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Fax": [
+        "傳真"
+      ],
+      "Pager": [
+        "呼叫器"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "電子郵件"
+      ],
+      "Home": [
+        "住家"
+      ],
+      "Work": [
+        "工作"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Phone": [
+        "電話號碼"
+      ],
+      "Mobile": [
+        "手機"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Fax": [
+        "傳真"
+      ],
+      "Pager": [
+        "呼叫器"
+      ],
+      "Address": [
+        "地址"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } 現在開始"
+      ],
+      "${ title } starts today": [
+        "${ title } 是日開始"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } 已於 ${ formattedHour } 開始"
+      ],
+      "${ title } started yesterday": [
+        "${ title } 已在昨天開始"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } 已在昨天 ${ formattedHour } 開始"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } 已在 ${ formattedDate } 開始"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } 已在 ${ formattedDate } 於 ${ formattedHour } 開始"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } 已在 ${ _formattedDate } 開始"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } 已在 ${ _formattedDate } 於 ${ formattedHour } 開始"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } 已在 ${ formattedDateWithoutTime } 開始"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } 已在 ${ _formattedDateWithTime } 開始"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } 將於 ${ formattedHour } 開始"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } 將在明天開始"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } 將在明天 ${ formattedHour } 開始"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } 將在 ${ _formattedDate2 } 開始"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } 將在 ${ _formattedDate2 } 於 ${ formattedHour } 開始"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } 將在 ${ _formattedDate3 } 開始"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } 將在 ${ _formattedDate3 } 於 ${ formattedHour } 開始"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } 將在 ${ _formattedDateWithoutTime } 開始"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } 將在 ${ formattedDateWithTime } 開始"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(無標題)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "您"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "原訂 ${ formattedStart } 一事取消"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "誠邀 ${ formattedStart } 撥冗出席"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "原訂 ${ formattedStart } 一事有變"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "原訂自 ${ formattedStart } 起一事取消"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "誠邀自 ${ formattedStart } 起撥冗出席"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "原訂自 ${ formattedStart } 起一事有變"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "誠邀出席：${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "日期：${ formattedStart }（整天）"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "日期：${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "地點：${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "描述：${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } 已告取消，特此通知。"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲接受"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已被謝絕"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "第一個週日"
+      ],
+      "on the first Monday": [
+        "第一個週一"
+      ],
+      "on the first Tuesday": [
+        "第一個週二"
+      ],
+      "on the first Wednesday": [
+        "第一個週三"
+      ],
+      "on the first Thursday": [
+        "第一個週四"
+      ],
+      "on the first Friday": [
+        "第一個週五"
+      ],
+      "on the first Saturday": [
+        "第一個週六"
+      ],
+      "on the second Sunday": [
+        "第二個週日"
+      ],
+      "on the second Monday": [
+        "第二個週一"
+      ],
+      "on the second Tuesday": [
+        "第二個週二"
+      ],
+      "on the second Wednesday": [
+        "第二個週三"
+      ],
+      "on the second Thursday": [
+        "第二個週四"
+      ],
+      "on the second Friday": [
+        "第二個週五"
+      ],
+      "on the second Saturday": [
+        "第二個週六"
+      ],
+      "on the third Sunday": [
+        "第三個週日"
+      ],
+      "on the third Monday": [
+        "第三個週一"
+      ],
+      "on the third Tuesday": [
+        "第三個週二"
+      ],
+      "on the third Wednesday": [
+        "第三個週三"
+      ],
+      "on the third Thursday": [
+        "第三個週四"
+      ],
+      "on the third Friday": [
+        "第三個週五"
+      ],
+      "on the third Saturday": [
+        "第三個週六"
+      ],
+      "on the fourth Sunday": [
+        "第四個週日"
+      ],
+      "on the fourth Monday": [
+        "第四個週一"
+      ],
+      "on the fourth Tuesday": [
+        "第四個週二"
+      ],
+      "on the fourth Wednesday": [
+        "第四個週三"
+      ],
+      "on the fourth Thursday": [
+        "第四個週四"
+      ],
+      "on the fourth Friday": [
+        "第四個週五"
+      ],
+      "on the fourth Saturday": [
+        "第四個週六"
+      ],
+      "on the last Sunday": [
+        "最後一個週日"
+      ],
+      "on the last Monday": [
+        "最後一個週一"
+      ],
+      "on the last Tuesday": [
+        "最後一個週二"
+      ],
+      "on the last Wednesday": [
+        "最後一個週三"
+      ],
+      "on the last Thursday": [
+        "最後一個週四"
+      ],
+      "on the last Friday": [
+        "最後一個週五"
+      ],
+      "on the last Saturday": [
+        "最後一個週六"
+      ],
+      "on day ${ dayOfMonth }": [
+        "${ dayOfMonth } 日"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "總共 ${ count } 次"
+      ],
+      "until ${ dateString }": [
+        "直到 ${ dateString } 為止"
+      ],
+      "Daily": [
+        "每天"
+      ],
+      "Every ${ interval } day": [
+        "每 ${ interval } 天"
+      ],
+      "Daily, ${ timesString }": [
+        "每天，${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "每天，${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "每 ${ interval } 天，${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "週日"
+      ],
+      "Monday": [
+        "週一"
+      ],
+      "Tuesday": [
+        "週二"
+      ],
+      "Wednesday": [
+        "週三"
+      ],
+      "Thursday": [
+        "週四"
+      ],
+      "Friday": [
+        "週五"
+      ],
+      "Saturday": [
+        "週六"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "每星期，週中每一日"
+      ],
+      "Every ${ interval } week on all days": [
+        "每 ${ interval } 個星期，週中每一日"
+      ],
+      "Weekly on Sunday": [
+        "每星期的週日"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "每 ${ interval } 個星期的週日"
+      ],
+      "Weekly on Monday": [
+        "每星期的週一"
+      ],
+      "Every ${ interval } week on Monday": [
+        "每 ${ interval } 個星期的週一"
+      ],
+      "Weekly on Tuesday": [
+        "每星期的週二"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "每 ${ interval } 個星期的週二"
+      ],
+      "Weekly on Wednesday": [
+        "每星期的週三"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "每 ${ interval } 個星期的週三"
+      ],
+      "Weekly on Thursday": [
+        "每星期的週四"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "每 ${ interval } 個星期的週四"
+      ],
+      "Weekly on Friday": [
+        "每星期的週五"
+      ],
+      "Every ${ interval } week on Friday": [
+        "每 ${ interval } 個星期的週五"
+      ],
+      "Weekly on Saturday": [
+        "每星期的週六"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "每 ${ interval } 個星期的週六"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "每星期的${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "每 ${ interval } 個星期的 ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "每星期，週中每一日，${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "每 ${ interval } 個星期，週中每一日，${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "每星期的週日，${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "每 ${ interval } 個星期的週日，${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "每星期的週一，${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "每 ${ interval } 個星期的週一，${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "每星期的週二，${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "每 ${ interval } 個星期的週二，${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "每星期的週三，${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "每 ${ interval } 個星期的週三，${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "每星期的週四，${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "每 ${ interval } 個星期的週四，${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "每星期的週五，${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "每 ${ interval } 個星期的週五，${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "每星期的週六，${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "每 ${ interval } 個星期的週六，${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "每星期的${ multipleDaysString }，${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "每 ${ interval } 個星期的 ${ multipleDaysString }，${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "每星期，週中每一日，${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "每 ${ interval } 個星期，週中每一日，${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "每星期的週日，${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "每 ${ interval } 個星期的週日，${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "每星期的週一，${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "每 ${ interval } 個星期的週一，${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "每星期的週二，${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "每 ${ interval } 個星期的週二，${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "每星期的週三，${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "每 ${ interval } 個星期的週三，${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "每星期的週四，${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "每 ${ interval } 個星期的週四，${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "每星期的週五，${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "每 ${ interval } 個星期的週五，${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "每星期的週六，${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "每 ${ interval } 個星期的週六，${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "每星期的${ multipleDaysString }，${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "每 ${ interval } 個星期的 ${ multipleDaysString }，${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "每月的 ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "每 ${ interval } 個月的 ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "每月的 ${ onDayString }，${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "每 ${ interval } 個月的 ${ onDayString }，${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "每月的 ${ onDayString }，${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "每 ${ interval } 個月的 ${ onDayString }，${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "每年"
+      ],
+      "Every ${ interval } year": [
+        "每 ${ interval } 年"
+      ],
+      "Yearly, ${ timesString }": [
+        "每年，${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "每 ${ interval } 年，${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "每年，${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "每 ${ interval } 年，${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "基本導覽"
+      ],
+      "Basic actions": [
+        "基本動作"
+      ],
+      "Folder shortcuts": [
+        "資料夾捷徑"
+      ],
+      "Composer shortcuts": [
+        "撰寫器快捷鍵"
+      ],
+      "List shortcuts": [
+        "列表快捷鍵"
+      ],
+      "Action shortcuts": [
+        "動作快捷鍵"
+      ],
+      "Message shortcuts": [
+        "郵件快捷鍵"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "上移"
+      ],
+      "Jump to first": [
+        "跳到第一個"
+      ],
+      "Move down": [
+        "往下移"
+      ],
+      "Jump to last": [
+        "跳到最後一個"
+      ],
+      "Move right / expand": [
+        "往右移 / 展開"
+      ],
+      "Move left / collapse": [
+        "往左移 / 收合"
+      ],
+      "Apply / open": [
+        "套用 / 開啟"
+      ],
+      "Cancel / close": [
+        "取消 / 關閉"
+      ],
+      "Open this modal": [
+        "開啟此方塊"
+      ],
+      "Select / unselect": [
+        "選取 / 取消選取"
+      ],
+      "Go to Inbox": [
+        "前往 [收件匣]"
+      ],
+      "Go to Archive": [
+        "前往 [封存]"
+      ],
+      "Go to Sent": [
+        "前往 [已傳送]"
+      ],
+      "Go to Starred": [
+        "前往 [已加星號]"
+      ],
+      "Go to Drafts": [
+        "前往 [草稿]"
+      ],
+      "Go to Trash": [
+        "前往 [垃圾桶]"
+      ],
+      "Go to Spam": [
+        "前往 [垃圾郵件]"
+      ],
+      "Go to All Mail": [
+        "前往 [所有郵件]"
+      ],
+      "Save draft": [
+        "儲存草稿"
+      ],
+      "Send email": [
+        "傳送電子郵件"
+      ],
+      "Close draft": [
+        "關閉草稿"
+      ],
+      "Minimize / maximize composer": [
+        "最小化 / 最大化撰寫器"
+      ],
+      "Expand / contract composer": [
+        "展開 / 收合撰寫器"
+      ],
+      "Attach file": [
+        "附加檔案"
+      ],
+      "Add expiration time": [
+        "新增到期時間"
+      ],
+      "Add encryption": [
+        "新增加密"
+      ],
+      "Discard draft": [
+        "捨棄草稿"
+      ],
+      "Open previous message": [
+        "開啟上一封郵件"
+      ],
+      "Open next message": [
+        "開啟下一封郵件"
+      ],
+      "Show unread emails": [
+        "顯示未讀電子郵件"
+      ],
+      "Show all emails": [
+        "顯示所有電子郵件"
+      ],
+      "Select / unselect all": [
+        "全選 / 取消全選"
+      ],
+      "Search": [
+        "搜尋"
+      ],
+      "New message": [
+        "新郵件"
+      ],
+      "Star": [
+        "加上星號"
+      ],
+      "Mark as unread": [
+        "標記為未讀"
+      ],
+      "Label as...": [
+        "加上標籤..."
+      ],
+      "Create filter with...": [
+        "建立篩選器為..."
+      ],
+      "Move to...": [
+        "移動到..."
+      ],
+      "Move to Inbox": [
+        "移動到 [收件匣]"
+      ],
+      "Move to Archive": [
+        "移動到 [封存]"
+      ],
+      "Move to Spam": [
+        "移動到 [垃圾郵件]"
+      ],
+      "Move to Trash": [
+        "移動到 [垃圾桶]"
+      ],
+      "Delete permanently": [
+        "永久刪除"
+      ],
+      "Reply": [
+        "回覆"
+      ],
+      "Reply all": [
+        "回覆所有人"
+      ],
+      "Forward": [
+        "轉寄"
+      ],
+      "Load remote content": [
+        "載入遠端內容"
+      ],
+      "Load embedded images": [
+        "載入內嵌圖片"
+      ],
+      "Show original message": [
+        "顯示原始郵件"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "未知"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "未知"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard 版本 < 3.0 不受支援"
+      ],
+      "Encryption failed": [
+        "加密失敗"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "發生未知的錯誤。匯入必須重新啟動。"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "上載您的檔案時發生錯誤。未選取任何檔案。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案。"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "您的檔案 ${ formattedFilename } 是空的。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "您的檔案 ${ formattedFilename } 沒有任何聯絡人可供匯入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。"
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "回覆:"
+      ],
+      "Fw:": [
+        "轉寄:"
       ]
     },
     "Event info. Organizer name": {

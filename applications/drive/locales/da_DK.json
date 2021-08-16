@@ -459,11 +459,26 @@
       "here": [
         "her"
       ],
+      "Clear": [
+        "Ryd"
+      ],
+      "Add screenshot(s)": [
+        "Tilføj screenshot(s)"
+      ],
+      "Hide info": [
+        "Skjul info"
+      ],
+      "Show info": [
+        "Vis info"
+      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Jeg har et spørgsmål"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         "Skrivetilstand"
-      ],
-      "Clear": [
-        "Ryd"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
-      "Hide info": [
-        "Skjul info"
-      ],
-      "Show info": [
-        "Vis info"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -603,17 +606,14 @@
       "New upload": [
         "Nyt upload"
       ],
-      "Delete permanently": [
-        "Slet permanent"
+      "Upload file": [
+        "Upload fil"
       ],
-      "Restore from trash": [
-        "Gendan fra papirkurven"
+      "Upload folder": [
+        "Upload mappe"
       ],
-      "Empty trash": [
-        "Tøm Papirkurv"
-      ],
-      "Rename": [
-        "Omdøb"
+      "Create new folder": [
+        "Opret ny mappe"
       ],
       "Move to folder": [
         "Flyt til mappe"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Flyt til papirkurv"
       ],
-      "Create new folder": [
-        "Opret ny mappe"
+      "Rename": [
+        "Omdøb"
       ],
       "Name: A to Z": [
         "Navn: A til Å"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Størrelse: Stor til lille"
       ],
-      "Upload file": [
-        "Upload fil"
+      "List layout": [
+        "Liste-layout"
       ],
-      "Upload folder": [
-        "Upload mappe"
+      "Grid layout": [
+        "Gitter-layout"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
+      "Delete permanently": [
+        "Slet permanent"
+      ],
+      "Restore from trash": [
+        "Gendan fra papirkurven"
+      ],
+      "Empty trash": [
+        "Tøm Papirkurv"
+      ],
+      "Share file": [
+        "Del fil"
+      ],
+      "Stop sharing": [
+        "Stop deling"
       ],
       "Maximize transfers": [
         "Maksimér overførsler"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Fjern fra denne liste"
       ],
-      "Create": [
-        "Opret"
-      ],
-      "List layout": [
-        "Liste-layout"
-      ],
-      "Grid layout": [
-        "Gitter-layout"
-      ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
-      "Stop sharing": [
-        "Stop deling"
-      ],
       "Share": [
         "Del"
       ],
       "Show shared link details": [
         "Vis detaljer om delt link"
       ],
-      "Share file": [
-        "Del fil"
-      ],
       "Start recovering": [
         "Start gendannelse"
       ],
       "View more": [
         "Vis mere"
+      ],
+      "Create": [
+        "Opret"
       ],
       "Move": [
         "Flyt"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Importér kontakter"
       ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
       "Open help menu": [
         "Åbn hjælpemenu"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Åbn indstillingsmenu"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Slip for at uploade"
       ],
-      "Trash": [
-        "Papirkurv"
-      ],
-      "Empty trash": [
-        "Tøm Papirkurv"
-      ],
       "Show actions": [
         "Vis handlinger"
       ],
       "Sort files/folders": [
         "Sorter filer/mapper"
       ],
+      "Change layout": [
+        "Skift layout"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "Empty trash": [
+        "Tøm Papirkurv"
+      ],
+      "Shared": [
+        "Delt"
+      ],
+      "Additional settings": [
+        "Yderligere indstillinger"
+      ],
       "Cancel all active transfers": [
         "Annuller alle aktive overførsler"
       ],
       "My files": [
         "Mine filer"
-      ],
-      "You have no folders yet": [
-        "Du har ingen mapper endnu"
-      ],
-      "You have no files to share": [
-        "Du har ingen filer at dele"
-      ],
-      "Change layout": [
-        "Skift layout"
       ],
       "Your file is ready to be downloaded": [
         "Din fil er klar til download"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Størrelse"
       ],
-      "Shared": [
-        "Delt"
-      ],
       "# of accesses": [
         "# af adgange"
+      ],
+      "You have no folders yet": [
+        "Du har ingen mapper endnu"
       ],
       "Create a new folder": [
         "Opret en ny mappe"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Del via link"
       ],
-      "Additional settings": [
-        "Yderligere indstillinger"
-      ],
       "Manage secure link": [
         "Administrer sikkert link"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Kassér"
+      ],
+      "You have no files to share": [
+        "Du har ingen filer at dele"
       ],
       "Files details": [
         "Filens detaljer"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Indlæser"
-      ],
       "No results found": [
         "Ingen resultater fundet"
+      ],
+      "Loading": [
+        "Indlæser"
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Dine filer vil blive krypteret og derefter gemt."
       ],
+      "There are no files yet": [
+        "Der er ingen filer endnu"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Træk og slip en fil her eller vælg at uploade."
+      ],
+      "No files or folders in trash": [
+        "Ingen filer eller mapper i papirkurven"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
+      ],
+      "Share files with links": [
+        "Del filer med links"
+      ],
+      "Create links and share your files with others.": [
+        "Opret links og del dine filer med andre."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Færdig",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Lukning af overførselsmanager vil annullere alle aktive overførsler, er du sikker?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Opret din første mappe og begynd at flytte dine filer."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Gå til \"Mine filer\" og upload nogle filer først."
-      ],
-      "No files or folders in trash": [
-        "Ingen filer eller mapper i papirkurven"
-      ],
-      "There are no files yet": [
-        "Der er ingen filer endnu"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Træk og slip en fil her eller vælg at uploade."
-      ],
-      "Share files with links": [
-        "Del filer med links"
-      ],
-      "Create links and share your files with others.": [
-        "Opret links og del dine filer med andre."
-      ],
       "Link expires: ": [
         "Link udløber: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Nej"
       ],
+      "Create your first folder and start moving your files.": [
+        "Opret din første mappe og begynd at flytte dine filer."
+      ],
       "Anyone with this link can access your file.": [
         "Alle med dette link kan få adgang til din fil."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Opretter link til fil"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Gå til \"Mine filer\" og upload nogle filer først."
       ],
       "Select an uploaded file and create a link to it.": [
         "Vælg en uploadet fil og opret et link til den."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Ukendt fil"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "Mappe"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Opgradér konto"
       ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
+      ],
       "Upgrade": [
         "Opgradér"
       ],
       "Go to subscription plans": [
         "Gå til abonnementer"
-      ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
       ],
       "click here": [
         "klik hér"
@@ -2498,6 +2510,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
@@ -3022,45 +3037,6 @@
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Indstillinger"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Til"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maksimeret"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Vedhæft screenshot(s)"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Indstillinger"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Til"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Fra"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maksimeret"
+      ],
+      "Normal": [
+        "Normal"
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Navn"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Adresse"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Adgangskode skal indeholde mindst ${ length } tegn",
-        "Adgangskode skal indeholde mindst ${ length } tegn"
       ]
     },
     "PGP key warning": {
