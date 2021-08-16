@@ -44,7 +44,7 @@ const validateAddUser = (
     organizationKey: CachedOrganizationKey | undefined,
     verifiedDomains: Domain[]
 ) => {
-    const { isOrganizationKeyActive, hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
+    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
     const { MaxMembers, HasKeys, UsedMembers, MaxAddresses, UsedAddresses, MaxSpace, AssignedSpace } = organization;
     if (MaxMembers === 1) {
         return c('Error')
@@ -65,11 +65,14 @@ const validateAddUser = (
     if (MaxSpace - AssignedSpace < 1) {
         return c('Error').t`All storage space has been allocated. Please reduce storage allocated to other users.`;
     }
-    if (!hasOrganizationKey) {
+    if (organizationKeyInfo.userNeedsToActivateKey) {
         return c('Error').t`The organization key must be activated first.`;
     }
-    if (!isOrganizationKeyActive) {
+    if (organizationKeyInfo.userNeedsToReactivateKey) {
         return c('Error').t`Permission denied, administrator privileges have been restricted.`;
+    }
+    if (!organizationKey?.privateKey) {
+        return c('Error').t`Organization key is not decrypted.`;
     }
 };
 
