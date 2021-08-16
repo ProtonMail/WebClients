@@ -39,6 +39,7 @@ const addGlobalOptions = (program) => {
             '/'
         )
         .option('--no-sri', 'disable sri')
+        .option('--proxy <apiUrl>', 'Use /api local URL for API but proxy it to the given URL', '')
         .option(
             '--api <api>',
             '',
@@ -51,6 +52,7 @@ const addGlobalOptions = (program) => {
 
 const getWebpackArgs = (options, env, { buildData }) => {
     const envArgs = {
+        proxyApiUrl: options.proxy,
         appMode: options.appMode,
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
@@ -63,6 +65,7 @@ const getWebpackArgs = (options, env, { buildData }) => {
         .reduce((acc, [key, value]) => {
             return `${acc} --env ${key}=${value.replace(/ /g, '\\ ')}`;
         }, '');
+
     return `${webpackEnvArgs} ${extraWebpackArgs}`;
 };
 
