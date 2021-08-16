@@ -11,6 +11,7 @@ const getConfig = (env) => {
 
     const options = {
         isProduction,
+        proxy: env.proxyApiUrl,
         publicPath: env.publicPath || '/',
         appMode: env.appMode || 'standalone',
         featureFlags: env.featureFlags || '',
@@ -88,6 +89,14 @@ const getConfig = (env) => {
                 webSocketURL: 'auto://0.0.0.0:0/ws',
             },
             webSocketServer: 'ws',
+            ...(options.proxy && {
+                proxy: {
+                    '/api': {
+                        target: options.proxy,
+                        secure: false,
+                    },
+                },
+            }),
         },
     };
 };
