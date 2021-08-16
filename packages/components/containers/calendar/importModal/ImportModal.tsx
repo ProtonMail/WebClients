@@ -11,8 +11,9 @@ import { IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/cale
 
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 
-import { useApi, useEventManager } from '../../../hooks';
+import { useApi, useEventManager, useFeature } from '../../../hooks';
 import { FormModal, PrimaryButton, onlyDragFiles } from '../../../components';
+import { FeatureCode } from '../../features';
 
 import AttachingModalContent from './AttachingModalContent';
 import ImportingModalContent from './ImportingModalContent';
@@ -40,6 +41,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
+    const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -116,7 +118,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     setModel({ ...model, loading: true });
                     const { components, calscale, xWrTimezone } = await parseIcs(fileAttached);
                     const { errors, rest: parsed } = splitErrors(
-                        await getSupportedEvents({ components, calscale, xWrTimezone })
+                        await getSupportedEvents({ components, calscale, xWrTimezone, enabledEmailNotifications })
                     );
                     if (!parsed.length && !errors.length) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, fileAttached.name);

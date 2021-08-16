@@ -47,9 +47,16 @@ export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
  */
 export const getSupportedAlarm = (
     alarm: VcalValarmComponent,
-    dtstart: VcalDateOrDateTimeProperty
+    dtstart: VcalDateOrDateTimeProperty,
+    enabledEmailNotifications = false
 ): VcalValarmRelativeComponent | undefined => {
     if (!getIsValidAlarm(alarm)) {
+        return;
+    }
+
+    const supportedAction = getSupportedAlarmAction(alarm.action);
+
+    if (supportedAction.value === 'EMAIL' && !enabledEmailNotifications) {
         return;
     }
 
@@ -78,14 +85,18 @@ export const getSupportedAlarm = (
 
     return {
         component: 'valarm',
-        action: getSupportedAlarmAction(alarm.action),
+        action: supportedAction,
         trigger: { value: normalizedTrigger },
     };
 };
 
-export const getSupportedAlarms = (valarms: VcalValarmComponent[], dtstart: VcalDateOrDateTimeProperty) => {
+export const getSupportedAlarms = (
+    valarms: VcalValarmComponent[],
+    dtstart: VcalDateOrDateTimeProperty,
+    enabledEmailNotifications = false
+) => {
     return valarms
-        .map((alarm) => getSupportedAlarm(alarm, dtstart))
+        .map((alarm) => getSupportedAlarm(alarm, dtstart, enabledEmailNotifications))
         .filter(isTruthy)
         .slice(0, MAX_NOTIFICATIONS);
 };
