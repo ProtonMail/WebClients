@@ -4,6 +4,24 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { dialogRootClassName, dropdownRootClassName } from '../components';
 
+const versionInterface = {
+    subscriber: null as null | Function,
+
+    subscribe(subscriber: Function) {
+        this.subscriber = subscriber;
+
+        return () => {
+            this.subscriber = null;
+        };
+    },
+
+    fakeNewVersionAvailable() {
+        this.subscriber?.();
+    },
+};
+
+(window as any).versionInterface = versionInterface;
+
 const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
@@ -15,24 +33,32 @@ const userIsBusy = () => {
      * should any of the conditions fail before evaluationg all of them
      */
     if (document.querySelector(`.${dialogRootClassName}`) !== null) {
+        console.log('true, dialog open');
         return true;
     }
 
     if (document.querySelector(`.${dropdownRootClassName}`) !== null) {
+        console.log('true, dropdown open');
         return true;
     }
 
     const { activeElement } = document;
 
     if (activeElement === null) {
+        console.log('false, activeElement is null');
         return false;
     }
 
-    return (
+    if (
         (activeElement.closest('form') ||
             activeElement.closest('iframe') ||
             activeElement.closest('[contenteditable]')) !== null
-    );
+    ) {
+        console.log('true, focus inside forbidden element');
+        return true;
+    }
+
+    return false;
 };
 
 const useNewVersion = (config: ProtonConfig) => {
@@ -80,9 +106,14 @@ const useNewVersion = (config: ProtonConfig) => {
             EVERY_THIRTY_MINUTES
         );
 
+        const unsub = versionInterface.subscribe(() => {
+            registerVisibilityChangeListener();
+        });
+
         return () => {
             clearInterval(checkForNewVersionIntervalId);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
+            unsub();
         };
     }, []);
 };
