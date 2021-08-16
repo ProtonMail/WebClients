@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Ukendt fejl"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
+      ],
+      "Unknown error": [
+        "Ukendt fejl"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Feltet er påkrævet"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Skriveværktøjet blev ikke indlæst."
       ],
       "Please refresh the page.": [
         "Genindlæs venligst siden."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Kan ikke bekræfte e-mail, prøv igen senere"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "Forespørgsel fik timeout."
       ],
-      "Signature verification failed": [
-        "Bekræftelse af signatur mislykkedes"
-      ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
-      ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
+      ],
+      "Signature verification failed": [
+        "Bekræftelse af signatur mislykkedes"
+      ],
+      "Could not find address ${ email }.": [
+        "Kunne ikke finde adresse ${ email }."
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -281,6 +281,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Vedhæftninger er begrænset til 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        ""
+      ],
+      "This message has already been sent.": [
+        ""
       ],
       "Draft could not be saved. Try again.": [
         "Kladde kunne ikke gemmes. Prøv igen."
@@ -350,26 +356,23 @@
       "Close": [
         "Luk"
       ],
-      "Close modal": [
-        "Luk vindue"
+      "Confirm": [
+        "Bekræft"
       ],
       "Cancel": [
         "Annullér"
       ],
+      "Close modal": [
+        "Luk vindue"
+      ],
       "Submit": [
         "Indsend"
-      ],
-      "Confirm": [
-        "Bekræft"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
-      ],
-      "refresh the page": [
-        "opdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -485,6 +488,9 @@
       "Underline": [
         "Understreg"
       ],
+      "refresh the page": [
+        "opdater siden"
+      ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
@@ -532,6 +538,9 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Signing out": [
+        "Logger ud"
       ],
       "Add": [
         "Tilføj"
@@ -683,9 +692,6 @@
       "OK": [
         "Ok"
       ],
-      "Signing out": [
-        "Logger ud"
-      ],
       "Log in": [
         "Log ind"
       ],
@@ -742,6 +748,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Jeg har et spørgsmål"
@@ -877,15 +886,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Føj til ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Open shop": [
-        "Åbn butik"
-      ],
-      "Open calendar": [
-        "Åbn kalender"
       ],
       "Send anyway": [
         "Send alligevel"
@@ -1205,6 +1205,15 @@
       ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Open shop": [
+        "Åbn butik"
+      ],
+      "Open calendar": [
+        "Åbn kalender"
       ]
     },
     "Title": {
@@ -1719,14 +1728,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Ingen resultater fundet"
-      ],
       "Loading": [
         "Indlæser"
       ],
-      "support team": [
-        "supportteam"
+      "No results found": [
+        "Ingen resultater fundet"
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
@@ -1825,6 +1831,9 @@
       "Plain text": [
         "Almindelig tekst"
       ],
+      "support team": [
+        "supportteam"
+      ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
       ],
@@ -1857,6 +1866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "Loading ${ appName }": [
+        "Indlæser ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -2000,9 +2012,6 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
-      ],
-      "Loading ${ appName }": [
-        "Indlæser ${ appName }"
       ],
       "here": [
         "hér"
@@ -2408,8 +2417,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har ikke givet din e-mail noget emne. Vil du sende beskeden alligevel?"
       ],
-      "Do you want to send your message anyway?": [
-        "Vil du sende din besked alligevel?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        ""
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Der er for mange meddelelser, der venter på at blive afsendt. Vent med at planlægge denne meddelelse, indtil en anden er blevet sendt."
@@ -3346,36 +3355,6 @@
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
-      "Inbox": [
-        "Indbakke"
-      ],
-      "Drafts": [
-        "Kladder"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
-      "Trash": [
-        "Papirkurv"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Alle mails"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
-      "Starred": [
-        "Stjernemarkeret"
-      ],
-      "Outbox": [
-        "Udbakke"
-      ],
-      "Scheduled": [
-        "Planlagt"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Du skal aktivere dine kalendernøgler for at tilføje denne begivenhed"
       ],
@@ -3451,6 +3430,33 @@
       "Add label": [
         "Tilføj etiket"
       ],
+      "Inbox": [
+        "Indbakke"
+      ],
+      "Drafts": [
+        "Kladder"
+      ],
+      "Scheduled": [
+        "Planlagt"
+      ],
+      "Sent": [
+        "Sendt"
+      ],
+      "Starred": [
+        "Stjernemarkeret"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "All mail": [
+        "Alle mails"
+      ],
       "Folders": [
         "Mapper"
       ],
@@ -3462,6 +3468,9 @@
       ],
       "Manage your labels": [
         "Administrer dine etiketter"
+      ],
+      "Outbox": [
+        "Udbakke"
       ]
     },
     "Placeholder": {
@@ -3647,6 +3656,9 @@
       ],
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
@@ -3940,19 +3952,19 @@
         "${ elementsCount } samtale flyttet til spam og afsender føjet til blokeringsliste.",
         "${ elementsCount } samtaler flyttet til spam og afsender føjet til blokeringsliste."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Besked flyttet til ${ folderName } og afsender fjernet fra blokeringsliste."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } besked flyttet til ${ folderName } og afsender fjernet fra blokeringsliste.",
-        "${ elementsCount } beskeder flyttet til ${ folderName } og afsender fjernet fra blokeringsliste."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Samtale flyttet til ${ folderName } og afsender fjernet fra blokeringsliste."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } samtale flyttet til ${ folderName } og afsender fjernet fra blokeringsliste.",
-        "${ elementsCount } samtaler flyttet til ${ folderName } og afsender fjernet fra blokeringsliste."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "",
+        ""
       ],
       "Message moved to ${ folderName }.": [
         "Besked flyttet til ${ folderName }."
@@ -4079,6 +4091,17 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applikationer"
+      ],
+      "Go to ${ title }": [
+        "Gå til ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Gå til ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4436,41 +4459,6 @@
         "Rediger og planlæg igen"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
-      ],
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maksimeret"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Overfør"
@@ -4517,6 +4505,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Hvis du vil deaktivere beta, skal du åbne indstillingsrullemenuen og klikke på \"Beta-adgang\"."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maksimeret"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,12 +5192,6 @@
         "stjernemarkeret"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Adgangskode skal indeholde mindst ${ length } tegn",
-        "Adgangskode skal indeholde mindst ${ length } tegn"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -5314,9 +5320,10 @@
         "Adresse"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
       ]
     },
     "Message": {
@@ -5328,6 +5335,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "D. ${ date }, ${ name } skrev ${ address }:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5590,6 +5602,9 @@
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
+      ],
+      "Invalid method": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -6425,6 +6440,9 @@
       ],
       "tomorrow": [
         "i morgen"
+      ],
+      "on ${ formattedDate }": [
+        ""
       ],
       "Today": [
         "I dag"

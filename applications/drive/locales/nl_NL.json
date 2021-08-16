@@ -459,11 +459,26 @@
       "here": [
         "hier"
       ],
+      "Clear": [
+        "Wissen"
+      ],
+      "Add screenshot(s)": [
+        "Screenshot(s) toevoegen"
+      ],
+      "Hide info": [
+        "Informatie verbergen"
+      ],
+      "Show info": [
+        "Informatie tonen"
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Ik heb een vraag"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         "Opstelmodus"
-      ],
-      "Clear": [
-        "Wissen"
-      ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
-      "Hide info": [
-        "Informatie verbergen"
-      ],
-      "Show info": [
-        "Informatie tonen"
       ],
       "Get started": [
         "Aan de slag"
@@ -603,17 +606,14 @@
       "New upload": [
         "Nieuwe upload"
       ],
-      "Delete permanently": [
-        "Permanent verwijderen"
+      "Upload file": [
+        "Bestand uploaden"
       ],
-      "Restore from trash": [
-        "Herstellen uit prullenbak"
+      "Upload folder": [
+        "Map uploaden"
       ],
-      "Empty trash": [
-        "Prullenbak leegmaken"
-      ],
-      "Rename": [
-        "Hernoemen"
+      "Create new folder": [
+        "Nieuwe map aanmaken"
       ],
       "Move to folder": [
         "Naar map verplaatsen"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Naar prullenbak verplaatsen"
       ],
-      "Create new folder": [
-        "Nieuwe map aanmaken"
+      "Rename": [
+        "Hernoemen"
       ],
       "Name: A to Z": [
         "Naam: van A naar Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Grootte: groot naar klein"
       ],
-      "Upload file": [
-        "Bestand uploaden"
+      "List layout": [
+        "Lijst lay-out"
       ],
-      "Upload folder": [
-        "Map uploaden"
+      "Grid layout": [
+        "Rooster layout"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
+      "Restore from trash": [
+        "Herstellen uit prullenbak"
+      ],
+      "Empty trash": [
+        "Prullenbak leegmaken"
+      ],
+      "Share file": [
+        "Deel Bestand"
+      ],
+      "Stop sharing": [
+        "Delen stoppen"
       ],
       "Maximize transfers": [
         "Maximaliseer overdrachten"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Van deze lijst verwijderen"
       ],
-      "Create": [
-        "Aanmaken"
-      ],
-      "List layout": [
-        "Lijst lay-out"
-      ],
-      "Grid layout": [
-        "Rooster layout"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Stop sharing": [
-        "Delen stoppen"
-      ],
       "Share": [
         "Delen"
       ],
       "Show shared link details": [
         ""
       ],
-      "Share file": [
-        "Deel Bestand"
-      ],
       "Start recovering": [
         "Herstellen starten"
       ],
       "View more": [
         "Meer bekijken"
+      ],
+      "Create": [
+        "Aanmaken"
       ],
       "Move": [
         "Verplaatsen"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
       "Open help menu": [
         "Open help-menu"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Open instellingen-menu"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
       ],
       "Select a theme": [
         "Kies een thema"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Sleep hier om te uploaden"
       ],
-      "Trash": [
-        "Prullenbak"
-      ],
-      "Empty trash": [
-        "Prullenbak leegmaken"
-      ],
       "Show actions": [
         "Actie weergeven"
       ],
       "Sort files/folders": [
         "Sorteer bestanden/mappen"
       ],
+      "Change layout": [
+        "Lay-out veranderen"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
+      "Empty trash": [
+        "Prullenbak leegmaken"
+      ],
+      "Shared": [
+        "Gedeeld"
+      ],
+      "Additional settings": [
+        "Aanvullende instellingen"
+      ],
       "Cancel all active transfers": [
         "Annuleer alle actieve overschrijvingen"
       ],
       "My files": [
         "Mijn bestanden"
-      ],
-      "You have no folders yet": [
-        "U hebt nog geen mappen"
-      ],
-      "You have no files to share": [
-        "U heeft geen bestanden om te delen"
-      ],
-      "Change layout": [
-        "Lay-out veranderen"
       ],
       "Your file is ready to be downloaded": [
         "Uw bestand is klaar om te worden gedownload"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Grootte"
       ],
-      "Shared": [
-        "Gedeeld"
-      ],
       "# of accesses": [
         "Aantal weergaven"
+      ],
+      "You have no folders yet": [
+        "U hebt nog geen mappen"
       ],
       "Create a new folder": [
         "Nieuwe map aanmaken"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Deel via link"
       ],
-      "Additional settings": [
-        "Aanvullende instellingen"
-      ],
       "Manage secure link": [
         "Beveiligde link beheren"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Verwijderen"
+      ],
+      "You have no files to share": [
+        "U heeft geen bestanden om te delen"
       ],
       "Files details": [
         "Bestandsdetails"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Laden"
-      ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "Loading": [
+        "Laden"
       ],
       "No contacts added yet": [
         "Nog geen contacten toegevoegd"
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
       ],
+      "There are no files yet": [
+        "Er zijn nog geen bestanden"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Sleep een bestand hierheen of kies om te uploaden."
+      ],
+      "No files or folders in trash": [
+        "Geen bestanden of mappen in de prullenbak"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
+      ],
+      "Share files with links": [
+        "Bestanden delen met links"
+      ],
+      "Create links and share your files with others.": [
+        "Maak links en deel uw bestanden met anderen."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Voltooid",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Het sluiten van een transfer manager zal alle actieve overboekingen annuleren, weet u het zeker?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
-      ],
-      "No files or folders in trash": [
-        "Geen bestanden of mappen in de prullenbak"
-      ],
-      "There are no files yet": [
-        "Er zijn nog geen bestanden"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Sleep een bestand hierheen of kies om te uploaden."
-      ],
-      "Share files with links": [
-        "Bestanden delen met links"
-      ],
-      "Create links and share your files with others.": [
-        "Maak links en deel uw bestanden met anderen."
-      ],
       "Link expires: ": [
         "Link verloopt: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Nee"
       ],
+      "Create your first folder and start moving your files.": [
+        "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
+      ],
       "Anyone with this link can access your file.": [
         "Iedereen met deze link heeft toegang tot dit bestand."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Link naar bestand maken"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
       ],
       "Select an uploaded file and create a link to it.": [
         "Selecteer een geüpload bestand en maak er een link naartoe."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Onbekend bestand"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "Map"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Account upgraden"
       ],
+      "clearing your browser cache": [
+        "uw browser cache wissen"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Go to subscription plans": [
         "Ga naar abonnementen"
-      ],
-      "clearing your browser cache": [
-        "uw browser cache wissen"
       ],
       "click here": [
         ""
@@ -2498,6 +2510,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Uw lokale datum- en tijdinstellingen lijken niet gesynchroniseerd te zijn."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -3022,45 +3037,6 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Instellingen"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Aan"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Instellingen"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Aan"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Uit"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Gemaximaliseerd"
+      ],
+      "Normal": [
+        "Normaal"
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Naam"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Adres"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
       ]
     },
     "PGP key warning": {

@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "未知的錯誤"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
+      ],
+      "Unknown error": [
+        "未知的錯誤"
       ],
       "Authentication canceled.": [
         "認證已取消。"
@@ -30,14 +30,14 @@
       "This field is required": [
         "此欄位必填"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
-      ],
       "The composer failed to load.": [
         "撰寫器載入失敗。"
       ],
       "Please refresh the page.": [
         "請重新整理此頁面。"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
       "Can't validate email, try again later": [
         "無法驗證電子郵件，請稍後再試"
@@ -201,12 +201,6 @@
       "Request timed out.": [
         "請求已逾時。"
       ],
-      "Signature verification failed": [
-        "簽章驗證失敗"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到電子郵件地址 ${ email }。"
-      ],
       "Email address disabled": [
         "電子郵件地址已停用"
       ],
@@ -230,6 +224,12 @@
       ],
       "The sending key is not valid": [
         "寄送金鑰無效"
+      ],
+      "Signature verification failed": [
+        "簽章驗證失敗"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到電子郵件地址 ${ email }。"
       ],
       "Missing signature": [
         "簽章遺失"
@@ -278,6 +278,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "附件總大小上限為 25 MB。"
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "這個郵件已經傳送。新的草稿已儲存。"
+      ],
+      "This message has already been sent.": [
+        "這個郵件已經發送。"
       ],
       "Draft could not be saved. Try again.": [
         "無法儲存草稿。再試一次。"
@@ -344,26 +350,23 @@
       "Close": [
         "關閉"
       ],
-      "Close modal": [
-        "關閉對話視窗"
+      "Confirm": [
+        "確認"
       ],
       "Cancel": [
         "取消"
       ],
+      "Close modal": [
+        "關閉對話視窗"
+      ],
       "Submit": [
         "提交"
-      ],
-      "Confirm": [
-        "確認"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "使用「${ label }」設定"
-      ],
-      "refresh the page": [
-        "更新頁面"
       ],
       "Remove": [
         "移除"
@@ -479,6 +482,9 @@
       "Underline": [
         "底線"
       ],
+      "refresh the page": [
+        "更新頁面"
+      ],
       "Go to panel ${ index }": [
         "到面板 ${ index }"
       ],
@@ -526,6 +532,9 @@
       ],
       "Edit phone number": [
         "編輯電話號碼"
+      ],
+      "Signing out": [
+        "正在登出"
       ],
       "Add": [
         "新增"
@@ -674,9 +683,6 @@
       "OK": [
         "確定"
       ],
-      "Signing out": [
-        "正在登出"
-      ],
       "Log in": [
         "登入"
       ],
@@ -733,6 +739,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "我要發問"
@@ -868,15 +877,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "新增至 ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "瞭解詳情"
-      ],
-      "Open shop": [
-        "開啟商店"
-      ],
-      "Open calendar": [
-        "開啟行事曆"
       ],
       "Send anyway": [
         "仍要傳送"
@@ -1195,6 +1195,15 @@
       ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
+      ],
+      "Learn more": [
+        "瞭解詳情"
+      ],
+      "Open shop": [
+        "開啟商店"
+      ],
+      "Open calendar": [
+        "開啟行事曆"
       ]
     },
     "Title": {
@@ -1701,14 +1710,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "查無結果"
-      ],
       "Loading": [
         "正在載入"
       ],
-      "support team": [
-        "支援團隊"
+      "No results found": [
+        "查無結果"
       ],
       "No contacts added yet": [
         "未新增任何聯絡人"
@@ -1806,6 +1812,9 @@
       "Plain text": [
         "純文字"
       ],
+      "support team": [
+        "支援團隊"
+      ],
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
       ],
@@ -1838,6 +1847,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
+      ],
+      "Loading ${ appName }": [
+        "正在載入 ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電子郵件地址不會被刪除。"
@@ -1976,9 +1988,6 @@
       ],
       "Your import will not be processed.": [
         "您的匯入將不會處理。"
-      ],
-      "Loading ${ appName }": [
-        "正在載入 ${ appName }"
       ],
       "here": [
         "這裡"
@@ -2197,7 +2206,7 @@
         "在您目前的付款週期結束時扣帳 (於 ${ renewalDate } 續期)"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "您必須先移除所有額外的行事曆與任何已共享的行事曆連結，才能取消您的訂閱。${ linkButton }"
       ],
       "No payment is required at this time.": [
         "這一次沒有付款的必要。"
@@ -2382,7 +2391,7 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "您的電子郵件未有加上主旨。無論如何，您仍要傳送郵件嗎？"
       ],
-      "Do you want to send your message anyway?": [
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
         ""
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
@@ -2428,7 +2437,7 @@
         ""
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        ""
+        "您確定要刪除此資料夾中的全部郵件？"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
@@ -2506,7 +2515,7 @@
         "小時"
       ],
       "When do you want your message to be sent?": [
-        ""
+        "您要何時傳送您的郵件？"
       ],
       "Draft discarded": [
         "草稿已丟棄"
@@ -2539,7 +2548,7 @@
         "正在傳送"
       ],
       "Scheduled": [
-        ""
+        "已排程"
       ],
       "Confirm phishing report": [
         "確認網路釣魚報告"
@@ -2548,10 +2557,10 @@
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
       ],
       "${ pureAttachmentsCount } file attached": [
-        ""
+        "${ pureAttachmentsCount } 個附件"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        ""
+        "${ embeddedAttachmentsCount } 個內嵌影像"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "取消訂閱此郵遞論壇的請求將會被傳送到電子報的傳送者並自動處理。"
@@ -3294,36 +3303,6 @@
       "Add a gift code": [
         "新增禮品代碼"
       ],
-      "Inbox": [
-        "收件匣"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Sent": [
-        "已傳送"
-      ],
-      "Trash": [
-        "垃圾桶"
-      ],
-      "Spam": [
-        "垃圾郵件"
-      ],
-      "All mail": [
-        "所有郵件"
-      ],
-      "Archive": [
-        "封存"
-      ],
-      "Starred": [
-        "已加星號"
-      ],
-      "Outbox": [
-        "寄件匣"
-      ],
-      "Scheduled": [
-        "已排程"
-      ],
       "You need to activate your calendar keys to add this event": [
         "您需要先啟用您的行事曆金鑰，才可以新增此事件"
       ],
@@ -3399,6 +3378,33 @@
       "Add label": [
         "新增標籤"
       ],
+      "Inbox": [
+        "收件匣"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Scheduled": [
+        "已排程"
+      ],
+      "Sent": [
+        "已傳送"
+      ],
+      "Starred": [
+        "已加星號"
+      ],
+      "Archive": [
+        "封存"
+      ],
+      "Spam": [
+        "垃圾郵件"
+      ],
+      "Trash": [
+        "垃圾桶"
+      ],
+      "All mail": [
+        "所有郵件"
+      ],
       "Folders": [
         "資料夾"
       ],
@@ -3410,6 +3416,9 @@
       ],
       "Manage your labels": [
         "管理您的標籤"
+      ],
+      "Outbox": [
+        "寄件匣"
       ]
     },
     "Placeholder": {
@@ -3536,7 +3545,7 @@
         "${ hours } 小時"
       ],
       "${ minutes } minute": [
-        ""
+        "${ minutes } 分鐘"
       ],
       "${ daysCountLeft } day": [
         "${ daysCountLeft } 天"
@@ -3587,6 +3596,9 @@
       ],
       "Contacts could not be merged": [
         "聯絡人無法合併"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "錯誤提報表並未使用端到端加密，請勿傳送任何敏感資訊。"
@@ -3686,10 +3698,10 @@
         ""
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "一個方案即可同時存取 ${ vpnAppName } 和 ${ mailAppName } (數百萬人用來保護他們資料的加密電子郵件服務) 的所有付費功能。"
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
+        "在 ${ mailAppName } 上為您自己的網域託管電子郵件，例如 john.smith@example.com"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
         "建立連結到您帳號的多個電子郵件地址，例如 username2@protonmail.com"
@@ -3869,17 +3881,17 @@
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
         "${ elementsCount } 個會話已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "郵件已移動到${ folderName }，並將寄件人從封鎖清單中移除。"
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } 封郵件已移動到${ folderName }，並將寄件人從封鎖清單中移除。"
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "會話已移動到${ folderName }，並將寄件人從封鎖清單中移除。"
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } 個會話已移動到${ folderName }，並將寄件人從封鎖清單中移除。"
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
       "Message moved to ${ folderName }.": [
         "郵件已移動到 ${ folderName }。"
@@ -3998,6 +4010,17 @@
       ],
       "No verification method available": [
         "無可用的驗證方法"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton 應用程式"
+      ],
+      "Go to ${ title }": [
+        "前往 ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "前往 ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4348,41 +4371,6 @@
         "編輯與重新排程"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton 應用程式"
-      ],
-      "Go to ${ title }": [
-        "前往 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "前往 ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "一般"
-      ],
-      "Maximized": [
-        "最大化"
-      ]
-    },
     "Select files": {
       "Upload": [
         "上載"
@@ -4429,6 +4417,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "如要停用測試版，請開啟設定下拉功能表並按一下「測試版體驗」選項。"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "舒適"
+      ],
+      "Compact": [
+        "精簡"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "欄"
+      ],
+      "Row": [
+        "列"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "一般"
+      ],
+      "Maximized": [
+        "最大化"
       ]
     },
     "Message display when a new app version is available": {
@@ -4661,7 +4673,7 @@
         "伺服器上全磁碟加密"
       ],
       "Split tunneling": [
-        ""
+        "Split tunneling"
       ],
       "Custom connection profiles": [
         "自訂連線設定檔"
@@ -5081,11 +5093,6 @@
         "已加星號"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密碼至少必須包含 ${ length } 個字元"
-      ]
-    },
     "file size format": {
       "bytes": [
         "位元組"
@@ -5214,9 +5221,9 @@
         "地址"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密碼至少必須包含 ${ length } 個字元"
       ]
     },
     "Message": {
@@ -5228,6 +5235,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "在 ${ date }，${ name } ${ address } 寫道："
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
       ]
     },
     "Default display name vcard": {
@@ -5490,6 +5502,9 @@
       ],
       "Unsupported event": [
         "不支援的事件"
+      ],
+      "Invalid method": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -5623,19 +5638,19 @@
         "${ title } 今天開始"
       ],
       "${ title } started at ${ formattedHour }": [
-        ""
+        "${ title } 已於 ${ formattedHour } 開始"
       ],
       "${ title } started yesterday": [
-        ""
+        "${ title } 已在昨天開始"
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        ""
+        "${ title } 已在昨天 ${ formattedHour } 開始"
       ],
       "${ title } started on ${ formattedDate }": [
-        ""
+        "${ title } 已在 ${ formattedDate } 開始"
       ],
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        ""
+        "${ title } 已於 ${ formattedDate } 於 ${ formattedHour } 開始"
       ],
       "${ title } started on ${ _formattedDate }": [
         ""
@@ -5653,7 +5668,7 @@
         ""
       ],
       "${ title } will start tomorrow": [
-        ""
+        "${ title } 將於明天開始"
       ],
       "${ title } will start tomorrow at ${ formattedHour }": [
         ""
@@ -6286,6 +6301,9 @@
       ],
       "tomorrow": [
         "明天"
+      ],
+      "on ${ formattedDate }": [
+        "在 ${ formattedDate }"
       ],
       "Today": [
         "今天"

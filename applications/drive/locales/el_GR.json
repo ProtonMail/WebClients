@@ -459,11 +459,26 @@
       "here": [
         ""
       ],
+      "Clear": [
+        "Εκκαθάριση"
+      ],
+      "Add screenshot(s)": [
+        "Προσθήκη στιγμιοτύπου/ων οθόνης"
+      ],
+      "Hide info": [
+        "Απόκρυψη πληροφοριών"
+      ],
+      "Show info": [
+        "Εμφάνιση πληροφοριών"
+      ],
       "Copy email to clipboard": [
         ""
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         ""
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Clear": [
-        "Εκκαθάριση"
-      ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
-      ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
       ],
       "Get started": [
         ""
@@ -603,17 +606,14 @@
       "New upload": [
         "Νέο ανέβασμα"
       ],
-      "Delete permanently": [
-        "Οριστική διαγραφή"
+      "Upload file": [
+        "Φορτώστε ένα αρχείο"
       ],
-      "Restore from trash": [
-        "Επαναφορά από διεγραμμένα"
+      "Upload folder": [
+        "Φάκελος αποστολής"
       ],
-      "Empty trash": [
-        "Άδειασμα κάδου"
-      ],
-      "Rename": [
-        "Μετονομασία"
+      "Create new folder": [
+        "Δημιουργία νέου φακέλου"
       ],
       "Move to folder": [
         "Μετακίνηση σε φάκελο"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Μετακίνηση στον κάδο απορριμμάτων"
       ],
-      "Create new folder": [
-        "Δημιουργία νέου φακέλου"
+      "Rename": [
+        "Μετονομασία"
       ],
       "Name: A to Z": [
         "Όνομα: Α έως το Ω"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Μέγεθος: μεγάλο σε μικρό"
       ],
-      "Upload file": [
-        "Φορτώστε ένα αρχείο"
+      "List layout": [
+        "Διάταξη λίστας"
       ],
-      "Upload folder": [
-        "Φάκελος αποστολής"
+      "Grid layout": [
+        "Διάταξη πλέγματος"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ],
+      "Delete permanently": [
+        "Οριστική διαγραφή"
+      ],
+      "Restore from trash": [
+        "Επαναφορά από διεγραμμένα"
+      ],
+      "Empty trash": [
+        "Άδειασμα κάδου"
+      ],
+      "Share file": [
+        "Κοινοποίηση αρχείου"
+      ],
+      "Stop sharing": [
+        "Διακοπή κοινής χρήσης"
       ],
       "Maximize transfers": [
         "Μεγιστοποίηση μεταφορών"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Κατάργηση από αυτή τη λίστα"
       ],
-      "Create": [
-        "Δημιουργία"
-      ],
-      "List layout": [
-        "Διάταξη λίστας"
-      ],
-      "Grid layout": [
-        "Διάταξη πλέγματος"
-      ],
-      "Preview": [
-        "Προεπισκόπηση"
-      ],
-      "Stop sharing": [
-        "Διακοπή κοινής χρήσης"
-      ],
       "Share": [
         ""
       ],
       "Show shared link details": [
         ""
       ],
-      "Share file": [
-        "Κοινοποίηση αρχείου"
-      ],
       "Start recovering": [
         "Έναρξη ανάκτησης"
       ],
       "View more": [
         "Δείτε περισσότερα"
+      ],
+      "Create": [
+        "Δημιουργία"
       ],
       "Move": [
         "Μετακίνηση"
@@ -876,6 +879,9 @@
       "Import contacts": [
         ""
       ],
+      "Report a problem": [
+        ""
+      ],
       "Open help menu": [
         ""
       ],
@@ -883,9 +889,6 @@
         "Πίσω"
       ],
       "Open settings menu": [
-        ""
-      ],
-      "Report a problem": [
         ""
       ],
       "Select a theme": [
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Αφήστε εδώ για να ανεβεί"
       ],
-      "Trash": [
-        "Κάδος"
-      ],
-      "Empty trash": [
-        "Άδειασμα κάδου"
-      ],
       "Show actions": [
         "Εμφάνιση ενεργειών"
       ],
       "Sort files/folders": [
         "Ταξινόμηση αρχείων/φάκελων"
       ],
+      "Change layout": [
+        "Αλλαγή διάταξης"
+      ],
+      "Trash": [
+        "Κάδος"
+      ],
+      "Empty trash": [
+        "Άδειασμα κάδου"
+      ],
+      "Shared": [
+        "Κοινοποιημένα"
+      ],
+      "Additional settings": [
+        "Επιπλέον ρυθμίσεις"
+      ],
       "Cancel all active transfers": [
         "Ακυρώστε όλες τις ενεργές μεταφορές"
       ],
       "My files": [
         "Τα αρχεία μου"
-      ],
-      "You have no folders yet": [
-        "Δεν έχετε ακόμη φακέλους"
-      ],
-      "You have no files to share": [
-        "Δεν έχετε αρχεία για να κοινοποιήσετε"
-      ],
-      "Change layout": [
-        "Αλλαγή διάταξης"
       ],
       "Your file is ready to be downloaded": [
         "Το φάκελος σας είναι έτοιμος για λήψη"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Μέγεθος"
       ],
-      "Shared": [
-        "Κοινοποιημένα"
-      ],
       "# of accesses": [
         ""
+      ],
+      "You have no folders yet": [
+        "Δεν έχετε ακόμη φακέλους"
       ],
       "Create a new folder": [
         "Δημιουργία νέου φακέλου"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         ""
       ],
-      "Additional settings": [
-        "Επιπλέον ρυθμίσεις"
-      ],
       "Manage secure link": [
         "Διαχείριση ασφαλούς συνδέσμου"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Απόρριψη"
+      ],
+      "You have no files to share": [
+        "Δεν έχετε αρχεία για να κοινοποιήσετε"
       ],
       "Files details": [
         "Λεπτομέρειες αρχείων"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Φόρτωση"
-      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
+      ],
+      "Loading": [
+        "Φόρτωση"
       ],
       "No contacts added yet": [
         ""
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
       ],
+      "There are no files yet": [
+        "Δεν υπάρχουν ακόμη αρχεία"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
+      ],
+      "No files or folders in trash": [
+        "Δεν υπάρχουν αρχεία ή φάκελοι στον κάδο απορριμμάτων"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
+      ],
+      "Share files with links": [
+        "Κοινή χρήση αρχείων με συνδέσμους"
+      ],
+      "Create links and share your files with others.": [
+        "Δημιουργήστε συνδέσμους και κοινοποιήστε τα αρχεία σας με άλλους."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Τελείωσε",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Κλείνωντας το διαχειριστή μεταφορών, θα ακυρώσει όλες τις ενεργές μεταφορές, είστε σίγουροι;"
       ],
-      "Create your first folder and start moving your files.": [
-        "Δημιουργήστε τον πρώτο σας φάκελο και ξεκινήστε να μετακινείτε τα αρχεία σας."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
-      ],
-      "No files or folders in trash": [
-        "Δεν υπάρχουν αρχεία ή φάκελοι στον κάδο απορριμμάτων"
-      ],
-      "There are no files yet": [
-        "Δεν υπάρχουν ακόμη αρχεία"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
-      ],
-      "Share files with links": [
-        "Κοινή χρήση αρχείων με συνδέσμους"
-      ],
-      "Create links and share your files with others.": [
-        "Δημιουργήστε συνδέσμους και κοινοποιήστε τα αρχεία σας με άλλους."
-      ],
       "Link expires: ": [
         "Ο σύνδεσμος λήγει: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Όχι"
       ],
+      "Create your first folder and start moving your files.": [
+        "Δημιουργήστε τον πρώτο σας φάκελο και ξεκινήστε να μετακινείτε τα αρχεία σας."
+      ],
       "Anyone with this link can access your file.": [
         ""
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Δημιουργία συνδέσμου προς το αρχείο"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
       ],
       "Select an uploaded file and create a link to it.": [
         "Επιλέξτε ένα αρχείο που ανεβάσατε και δημιουργήστε ένα σύνδεσμο προς αυτό."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Άγνωστο αρχείο"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "Φάκελος"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
       ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του Browser"
+      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
       "Go to subscription plans": [
         ""
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του Browser"
       ],
       "click here": [
         ""
@@ -2497,6 +2509,9 @@
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -3022,45 +3037,6 @@
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        ""
-      ]
-    },
-    "Enabled": {
-      "On": [
-        ""
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        ""
+      ]
+    },
+    "Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
     "Contact field label": {
       "Name": [
         ""
@@ -3831,12 +3852,6 @@
         ""
       ],
       "Address": [
-        ""
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
         ""
       ]
     },

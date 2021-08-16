@@ -459,11 +459,26 @@
       "here": [
         ""
       ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Add screenshot(s)": [
+        "Ekran görüntüsü(leri) ekle"
+      ],
+      "Hide info": [
+        "Bilgileri gizle"
+      ],
+      "Show info": [
+        "Bilgileri göster"
+      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Bir sorum var"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         "Oluşturucu modu"
-      ],
-      "Clear": [
-        "Temizle"
-      ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü(leri) ekle"
-      ],
-      "Hide info": [
-        "Bilgileri gizle"
-      ],
-      "Show info": [
-        "Bilgileri göster"
       ],
       "Get started": [
         "Başlayalım"
@@ -603,17 +606,14 @@
       "New upload": [
         "Yeni yükleme"
       ],
-      "Delete permanently": [
-        "Kalıcı olarak sil"
+      "Upload file": [
+        "Dosya yükle"
       ],
-      "Restore from trash": [
-        "Çöp kutusundan geri yükle"
+      "Upload folder": [
+        "Klasörü yükle"
       ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
-      "Rename": [
-        "Yeniden Adlandır"
+      "Create new folder": [
+        "Yeni klasör oluştur"
       ],
       "Move to folder": [
         "Klasöre taşı"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Çöp kutusuna taşı"
       ],
-      "Create new folder": [
-        "Yeni klasör oluştur"
+      "Rename": [
+        "Yeniden Adlandır"
       ],
       "Name: A to Z": [
         "İsim: A'dan Z'ye"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Boyut: büyükten küçüğe"
       ],
-      "Upload file": [
-        "Dosya yükle"
+      "List layout": [
+        "Liste düzeni"
       ],
-      "Upload folder": [
-        "Klasörü yükle"
+      "Grid layout": [
+        "Izgara düzeni"
+      ],
+      "Preview": [
+        "Ön izle"
+      ],
+      "Delete permanently": [
+        "Kalıcı olarak sil"
+      ],
+      "Restore from trash": [
+        "Çöp kutusundan geri yükle"
+      ],
+      "Empty trash": [
+        "Çöp kutusunu boşalt"
+      ],
+      "Share file": [
+        "Dosya paylaş"
+      ],
+      "Stop sharing": [
+        ""
       ],
       "Maximize transfers": [
         ""
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Bu listeden kaldır"
       ],
-      "Create": [
-        "Oluştur"
-      ],
-      "List layout": [
-        "Liste düzeni"
-      ],
-      "Grid layout": [
-        "Izgara düzeni"
-      ],
-      "Preview": [
-        "Ön izle"
-      ],
-      "Stop sharing": [
-        ""
-      ],
       "Share": [
         "Paylaş"
       ],
       "Show shared link details": [
         "Paylaşılan bağlantının detaylarını göster"
       ],
-      "Share file": [
-        "Dosya paylaş"
-      ],
       "Start recovering": [
         ""
       ],
       "View more": [
         "Daha fazlasını göster"
+      ],
+      "Create": [
+        "Oluştur"
       ],
       "Move": [
         "Taşı"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Kişileri içe aktar"
       ],
+      "Report a problem": [
+        "Sorun bildir"
+      ],
       "Open help menu": [
         "Yardım menüsünü aç"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Ayarlar menüsünü aç"
-      ],
-      "Report a problem": [
-        "Sorun bildir"
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Yüklemek için bırak"
       ],
-      "Trash": [
-        "Çöp Kutusu"
-      ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
       "Show actions": [
         "İşlemleri göster"
       ],
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
       ],
+      "Change layout": [
+        "Yerleşimi değiştir"
+      ],
+      "Trash": [
+        "Çöp Kutusu"
+      ],
+      "Empty trash": [
+        "Çöp kutusunu boşalt"
+      ],
+      "Shared": [
+        "Paylaşılan"
+      ],
+      "Additional settings": [
+        "Ek ayarlar"
+      ],
       "Cancel all active transfers": [
         "Tüm aktif transferleri iptal et"
       ],
       "My files": [
         "Dosyalarım"
-      ],
-      "You have no folders yet": [
-        "Henüz klasörünüz yok"
-      ],
-      "You have no files to share": [
-        "Paylaşacak dosyanız bulunmuyor"
-      ],
-      "Change layout": [
-        "Yerleşimi değiştir"
       ],
       "Your file is ready to be downloaded": [
         ""
@@ -1116,11 +1119,11 @@
       "Size": [
         "Boyut"
       ],
-      "Shared": [
-        "Paylaşılan"
-      ],
       "# of accesses": [
         ""
+      ],
+      "You have no folders yet": [
+        "Henüz klasörünüz yok"
       ],
       "Create a new folder": [
         "Yeni bir klasör oluştur"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Bağlantıyla paylaş"
       ],
-      "Additional settings": [
-        "Ek ayarlar"
-      ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         ""
+      ],
+      "You have no files to share": [
+        "Paylaşacak dosyanız bulunmuyor"
       ],
       "Files details": [
         "Dosya ayrıntıları"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Yükleniyor"
-      ],
       "No results found": [
         "Sonuç bulunamadı"
+      ],
+      "Loading": [
+        "Yükleniyor"
       ],
       "No contacts added yet": [
         ""
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelenecek ve ardından kaydedilecektir."
       ],
+      "There are no files yet": [
+        "Henüz dosya yok"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Buraya bir dosya sürükleyip bırakın veya yüklemeyi seçin."
+      ],
+      "No files or folders in trash": [
+        "Çöp Kutusunda dosya veya klasör yok"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "Share files with links": [
+        "Bağlantılarla dosya paylaşın"
+      ],
+      "Create links and share your files with others.": [
+        "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Tamamlandı",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Transfer yöneticisinin kapatılması tüm aktif transferleri iptal edecek, emin misiniz?"
       ],
-      "Create your first folder and start moving your files.": [
-        "İlk klasörünüzü oluşturun ve dosyalarınızı taşımaya başlayın."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "İlk önce \"Dosyalarım\" klasörüne gidip dosya yükleyin."
-      ],
-      "No files or folders in trash": [
-        "Çöp Kutusunda dosya veya klasör yok"
-      ],
-      "There are no files yet": [
-        "Henüz dosya yok"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Buraya bir dosya sürükleyip bırakın veya yüklemeyi seçin."
-      ],
-      "Share files with links": [
-        "Bağlantılarla dosya paylaşın"
-      ],
-      "Create links and share your files with others.": [
-        "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
-      ],
       "Link expires: ": [
         ""
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Hayır"
       ],
+      "Create your first folder and start moving your files.": [
+        "İlk klasörünüzü oluşturun ve dosyalarınızı taşımaya başlayın."
+      ],
       "Anyone with this link can access your file.": [
         ""
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         ""
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "İlk önce \"Dosyalarım\" klasörüne gidip dosya yükleyin."
       ],
       "Select an uploaded file and create a link to it.": [
         "Yüklenmiş bir dosyayı seçin ve bağlantı oluşturun."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Bilinmeyen dosya"
       ],
+      "All": [
+        "Tümü"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "Failed": [
+        "Başarısız"
+      ],
       "Folder": [
         "Klasör"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Hesabınızı yükseltin"
       ],
+      "clearing your browser cache": [
+        "tarayıcınızın önbelleğini temizlemek"
+      ],
       "Upgrade": [
         "Yükselt"
       ],
       "Go to subscription plans": [
         "Abonelik tarifelerine git"
-      ],
-      "clearing your browser cache": [
-        "tarayıcınızın önbelleğini temizlemek"
       ],
       "click here": [
         "buraya tıkla"
@@ -2497,6 +2509,9 @@
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -3022,45 +3037,6 @@
         "${ appName } uygulamasının yeni bir sürümü mevcut. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        ""
-      ]
-    },
-    "Enabled": {
-      "On": [
-        ""
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Görüntü seçilmedi"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Ekran görüntüsü(leri) ekleyin"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        ""
+      ]
+    },
+    "Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
     "Contact field label": {
       "Name": [
         ""
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Adres"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
       ]
     },
     "PGP key warning": {

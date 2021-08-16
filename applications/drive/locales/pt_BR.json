@@ -459,11 +459,26 @@
       "here": [
         "aqui"
       ],
+      "Clear": [
+        "Limpar"
+      ],
+      "Add screenshot(s)": [
+        "Adicionar captura(s) de tela"
+      ],
+      "Hide info": [
+        "Ocultar informação"
+      ],
+      "Show info": [
+        "Mostrar informação"
+      ],
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         "Modo do compositor"
-      ],
-      "Clear": [
-        "Limpar"
-      ],
-      "Add screenshot(s)": [
-        "Adicionar captura(s) de tela"
-      ],
-      "Hide info": [
-        "Ocultar informação"
-      ],
-      "Show info": [
-        "Mostrar informação"
       ],
       "Get started": [
         "Começar"
@@ -603,17 +606,14 @@
       "New upload": [
         "Novo envio"
       ],
-      "Delete permanently": [
-        "Excluir permanentemente"
+      "Upload file": [
+        "Enviar arquivo"
       ],
-      "Restore from trash": [
-        "Restaurar da lixeira"
+      "Upload folder": [
+        "Enviar pasta"
       ],
-      "Empty trash": [
-        "Esvaziar lixeira"
-      ],
-      "Rename": [
-        "Renomear"
+      "Create new folder": [
+        "Criar nova pasta"
       ],
       "Move to folder": [
         "Mover para pasta"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Mover para lixeira"
       ],
-      "Create new folder": [
-        "Criar nova pasta"
+      "Rename": [
+        "Renomear"
       ],
       "Name: A to Z": [
         "Nome: A a Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Tamanho: maior para menor"
       ],
-      "Upload file": [
-        "Enviar arquivo"
+      "List layout": [
+        "Exibição em lista"
       ],
-      "Upload folder": [
-        "Enviar pasta"
+      "Grid layout": [
+        "Exibição em grade"
+      ],
+      "Preview": [
+        "Visualizar"
+      ],
+      "Delete permanently": [
+        "Excluir permanentemente"
+      ],
+      "Restore from trash": [
+        "Restaurar da lixeira"
+      ],
+      "Empty trash": [
+        "Esvaziar lixeira"
+      ],
+      "Share file": [
+        "Compartilhar arquivo"
+      ],
+      "Stop sharing": [
+        "Parar compartilhamento"
       ],
       "Maximize transfers": [
         "Maximizar transferências"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Remover desta lista"
       ],
-      "Create": [
-        "Criar"
-      ],
-      "List layout": [
-        "Exibição em lista"
-      ],
-      "Grid layout": [
-        "Exibição em grade"
-      ],
-      "Preview": [
-        "Visualizar"
-      ],
-      "Stop sharing": [
-        "Parar compartilhamento"
-      ],
       "Share": [
         "Compartilhar"
       ],
       "Show shared link details": [
         "Mostrar detalhes do link compartilhado"
       ],
-      "Share file": [
-        "Compartilhar arquivo"
-      ],
       "Start recovering": [
         "Comece a recuperar"
       ],
       "View more": [
         "Visualizar mais"
+      ],
+      "Create": [
+        "Criar"
       ],
       "Move": [
         "Mover"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Importar contatos"
       ],
+      "Report a problem": [
+        "Relatar um problema"
+      ],
       "Open help menu": [
         "Abrir o menu de ajuda"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Abrir o menu de configurações"
-      ],
-      "Report a problem": [
-        "Relatar um problema"
       ],
       "Select a theme": [
         "Selecione um tema"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Solte para fazer o upload"
       ],
-      "Trash": [
-        "Lixeira"
-      ],
-      "Empty trash": [
-        "Esvaziar lixeira"
-      ],
       "Show actions": [
         "Mostrar ações"
       ],
       "Sort files/folders": [
         "Ordenar arquivos/pastas"
       ],
+      "Change layout": [
+        "Alterar layout"
+      ],
+      "Trash": [
+        "Lixeira"
+      ],
+      "Empty trash": [
+        "Esvaziar lixeira"
+      ],
+      "Shared": [
+        "Compartilhado"
+      ],
+      "Additional settings": [
+        "Configurações adicionais"
+      ],
       "Cancel all active transfers": [
         "Cancelar todas as transferências ativas"
       ],
       "My files": [
         "Meus arquivos"
-      ],
-      "You have no folders yet": [
-        "Você ainda não tem pastas"
-      ],
-      "You have no files to share": [
-        "Você não possui arquivos para compartilhar"
-      ],
-      "Change layout": [
-        "Alterar layout"
       ],
       "Your file is ready to be downloaded": [
         "Seu arquivo está pronto para ser baixado"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Tamanho"
       ],
-      "Shared": [
-        "Compartilhado"
-      ],
       "# of accesses": [
         "# de acessos"
+      ],
+      "You have no folders yet": [
+        "Você ainda não tem pastas"
       ],
       "Create a new folder": [
         "Criar uma nova pasta"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Compartilhar via link"
       ],
-      "Additional settings": [
-        "Configurações adicionais"
-      ],
       "Manage secure link": [
         "Gerenciar link seguro"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Descartar"
+      ],
+      "You have no files to share": [
+        "Você não possui arquivos para compartilhar"
       ],
       "Files details": [
         "Detalhes dos arquivos"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Carregando"
-      ],
       "No results found": [
         "Nenhum resultado encontrado"
+      ],
+      "Loading": [
+        "Carregando"
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Seus arquivos serão criptografados e depois salvos."
       ],
+      "There are no files yet": [
+        "Ainda não há arquivos"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Arraste e solte um arquivo aqui ou escolha para fazer upload."
+      ],
+      "No files or folders in trash": [
+        "Não há arquivos ou pastas na lixeira"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Você tem certeza que deseja esvaziar a Lixeira e excluir permanentemente todos os itens?"
+      ],
+      "Share files with links": [
+        "Compartilhar arquivos com links"
+      ],
+      "Create links and share your files with others.": [
+        "Crie links e compartilhe seus arquivos com outros."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Concluído",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Fechar o gerenciador de transferências cancelará todas as transferências ativas. Tem certeza?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Crie sua primeira pasta e comece a mover seus arquivos."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Vá para \"Meus arquivos\" e carregue alguns arquivos primeiro."
-      ],
-      "No files or folders in trash": [
-        "Não há arquivos ou pastas na lixeira"
-      ],
-      "There are no files yet": [
-        "Ainda não há arquivos"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Arraste e solte um arquivo aqui ou escolha para fazer upload."
-      ],
-      "Share files with links": [
-        "Compartilhar arquivos com links"
-      ],
-      "Create links and share your files with others.": [
-        "Crie links e compartilhe seus arquivos com outros."
-      ],
       "Link expires: ": [
         "O link expira em: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Não"
       ],
+      "Create your first folder and start moving your files.": [
+        "Crie sua primeira pasta e comece a mover seus arquivos."
+      ],
       "Anyone with this link can access your file.": [
         "Qualquer um com este link pode acessar seu arquivo."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Criando link para o arquivo"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Vá para \"Meus arquivos\" e carregue alguns arquivos primeiro."
       ],
       "Select an uploaded file and create a link to it.": [
         "Selecione um arquivo enviado e crie um link para ele."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Arquivo desconhecido"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "Pasta"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Fazer upgrade na conta"
       ],
+      "clearing your browser cache": [
+        "limpando o cache do seu navegador"
+      ],
       "Upgrade": [
         "Upgrade"
       ],
       "Go to subscription plans": [
         "Ir para Planos de assinatura"
-      ],
-      "clearing your browser cache": [
-        "limpando o cache do seu navegador"
       ],
       "click here": [
         "clique aqui"
@@ -2498,6 +2510,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Suas configurações locais de data e hora parecem estar fora de sincronia."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
@@ -3022,45 +3037,6 @@
         "Uma nova versão do ${ appName } está disponível. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Configurações"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Ativo"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Desativado"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Coluna"
-      ],
-      "Row": [
-        "Linha"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Confortável"
-      ],
-      "Compact": [
-        "Compacto"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximizado"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem selecionada"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Configurações"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Ativo"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Desativado"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Coluna"
+      ],
+      "Row": [
+        "Linha"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Confortável"
+      ],
+      "Compact": [
+        "Compacto"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximizado"
+      ],
+      "Normal": [
+        "Normal"
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A senha deve conter ao menos ${ length } caractere",
+        "A senha deve conter ao menos ${ length } caracteres"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nome"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Endereço"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A senha deve conter ao menos ${ length } caractere",
-        "A senha deve conter ao menos ${ length } caracteres"
       ]
     },
     "PGP key warning": {

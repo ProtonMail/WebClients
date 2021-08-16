@@ -459,11 +459,26 @@
       "here": [
         "hier"
       ],
+      "Clear": [
+        "Löschen"
+      ],
+      "Add screenshot(s)": [
+        "Bildschirmfoto(s) hinzufügen"
+      ],
+      "Hide info": [
+        "Info ausblenden"
+      ],
+      "Show info": [
+        "Info anzeigen"
+      ],
       "Copy email to clipboard": [
         "E-Mail-Adresse in Zwischenablage kopieren"
       ],
       "${ BRAND_NAME } introduction": [
         "Einführung in ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Chatten Sie mit uns"
       ],
       "I have a question": [
         "Ich habe eine Frage"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         "Verfassen-Modus"
-      ],
-      "Clear": [
-        "Löschen"
-      ],
-      "Add screenshot(s)": [
-        "Bildschirmfoto(s) hinzufügen"
-      ],
-      "Hide info": [
-        "Info ausblenden"
-      ],
-      "Show info": [
-        "Info anzeigen"
       ],
       "Get started": [
         "Erste Schritte"
@@ -603,17 +606,14 @@
       "New upload": [
         "Jetzt hochladen"
       ],
-      "Delete permanently": [
-        "Dauerhaft löschen"
+      "Upload file": [
+        "Datei hochladen"
       ],
-      "Restore from trash": [
-        "Aus dem Papierkorb wiederherstellen"
+      "Upload folder": [
+        "Ordner hochladen"
       ],
-      "Empty trash": [
-        "Papierkorb leeren"
-      ],
-      "Rename": [
-        "Umbenennen"
+      "Create new folder": [
+        "Neuen Ordner erstellen"
       ],
       "Move to folder": [
         "In Ordner verschieben"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "In den Papierkorb verschieben"
       ],
-      "Create new folder": [
-        "Neuen Ordner erstellen"
+      "Rename": [
+        "Umbenennen"
       ],
       "Name: A to Z": [
         "Name: A bis Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Größe: Absteigend"
       ],
-      "Upload file": [
-        "Datei hochladen"
+      "List layout": [
+        "Listenansicht"
       ],
-      "Upload folder": [
-        "Ordner hochladen"
+      "Grid layout": [
+        "Rasteransicht"
+      ],
+      "Preview": [
+        "Vorschau"
+      ],
+      "Delete permanently": [
+        "Dauerhaft löschen"
+      ],
+      "Restore from trash": [
+        "Aus dem Papierkorb wiederherstellen"
+      ],
+      "Empty trash": [
+        "Papierkorb leeren"
+      ],
+      "Share file": [
+        "Datei teilen"
+      ],
+      "Stop sharing": [
+        "Teilen beenden"
       ],
       "Maximize transfers": [
         "Übertragungsfenster maximieren"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Aus dieser Liste entfernen"
       ],
-      "Create": [
-        "Erstellen"
-      ],
-      "List layout": [
-        "Listenansicht"
-      ],
-      "Grid layout": [
-        "Rasteransicht"
-      ],
-      "Preview": [
-        "Vorschau"
-      ],
-      "Stop sharing": [
-        "Teilen beenden"
-      ],
       "Share": [
         "Teilen"
       ],
       "Show shared link details": [
         "Details zum freigegebenen Link anzeigen"
       ],
-      "Share file": [
-        "Datei teilen"
-      ],
       "Start recovering": [
         "Wiederherstellung starten"
       ],
       "View more": [
         "Mehr anzeigen"
+      ],
+      "Create": [
+        "Erstellen"
       ],
       "Move": [
         "Verschieben"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Kontakte importieren"
       ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
       "Open help menu": [
         "Menü „Hilfe” öffnen"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Menü „Einstellungen” öffnen"
-      ],
-      "Report a problem": [
-        "Ein Problem melden"
       ],
       "Select a theme": [
         "Farbschema auswählen"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"
       ],
-      "Trash": [
-        "Papierkorb"
-      ],
-      "Empty trash": [
-        "Papierkorb leeren"
-      ],
       "Show actions": [
         "Aktionen anzeigen"
       ],
       "Sort files/folders": [
         "Dateien/Ordner sortieren"
       ],
+      "Change layout": [
+        "Layout ändern"
+      ],
+      "Trash": [
+        "Papierkorb"
+      ],
+      "Empty trash": [
+        "Papierkorb leeren"
+      ],
+      "Shared": [
+        "Geteilt"
+      ],
+      "Additional settings": [
+        "Zusätzliche Einstellungen"
+      ],
       "Cancel all active transfers": [
         "Alle aktiven Übertragungen abbrechen"
       ],
       "My files": [
         "Meine Dateien"
-      ],
-      "You have no folders yet": [
-        "Sie haben noch keinen Ordner"
-      ],
-      "You have no files to share": [
-        "Sie haben keine Dateien zum Teilen"
-      ],
-      "Change layout": [
-        "Layout ändern"
       ],
       "Your file is ready to be downloaded": [
         "Die angeforderte Datei kann jetzt heruntergeladen werden"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Größe"
       ],
-      "Shared": [
-        "Geteilt"
-      ],
       "# of accesses": [
         "# Anzahl der Zugriffe"
+      ],
+      "You have no folders yet": [
+        "Sie haben noch keinen Ordner"
       ],
       "Create a new folder": [
         "Neuen Ordner erstellen"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Als Link teilen"
       ],
-      "Additional settings": [
-        "Zusätzliche Einstellungen"
-      ],
       "Manage secure link": [
         "Sicheren Link verwalten"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Verwerfen"
+      ],
+      "You have no files to share": [
+        "Sie haben keine Dateien zum Teilen"
       ],
       "Files details": [
         "Dateiinformationen"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Wird geladen"
-      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ],
+      "Loading": [
+        "Wird geladen"
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "Ihre Dateien werden verschlüsselt und anschließend gespeichert."
       ],
+      "There are no files yet": [
+        "Es sind keine Dateien vorhanden"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Eine Datei hier ziehen und ablegen oder „Jetzt hochladen” wählen."
+      ],
+      "No files or folders in trash": [
+        "Keine Dateien oder Ordner im Papierkorb"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sind Sie sicher, dass Sie den Papierkorb leeren und alle Elemente dauerhaft löschen möchten?"
+      ],
+      "Share files with links": [
+        "Dateien mit Links teilen"
+      ],
+      "Create links and share your files with others.": [
+        "Links erstellen und Ihre Dateien mit anderen teilen."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } beendet",
@@ -1738,8 +1756,8 @@
         "${ doneDownloadsCount } heruntergeladen"
       ],
       "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } wird hochgeladen (${ uploadProgress }%)",
-        "${ activeUploadsCount } werden hochgeladen (${ uploadProgress }%)"
+        "${ activeUploadsCount } Datei wird hochgeladen (${ uploadProgress }%)",
+        "${ activeUploadsCount } Dateien werden hochgeladen (${ uploadProgress }%)"
       ],
       "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } wird heruntergeladen (${ downloadProgress }%)",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Das Schließen des Übertragungsfensters wird alle aktiven Übertragungen beenden. Dennoch fortfahren?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Erstellen Sie Ihren ersten Ordner und beginnen Sie mit dem Verschieben Ihrer Dateien."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Gehen Sie zu „Meine Dateien” und laden Sie zuerst einige Dateien hoch."
-      ],
-      "No files or folders in trash": [
-        "Keine Dateien oder Ordner im Papierkorb"
-      ],
-      "There are no files yet": [
-        "Es sind keine Dateien vorhanden"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Eine Datei hier ziehen und ablegen oder „Jetzt hochladen” wählen."
-      ],
-      "Share files with links": [
-        "Dateien mit Links teilen"
-      ],
-      "Create links and share your files with others.": [
-        "Links erstellen und Ihre Dateien mit anderen teilen."
-      ],
       "Link expires: ": [
         "Link läuft ab: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Nein"
       ],
+      "Create your first folder and start moving your files.": [
+        "Erstellen Sie Ihren ersten Ordner und beginnen Sie mit dem Verschieben Ihrer Dateien."
+      ],
       "Anyone with this link can access your file.": [
         "Jeder mit diesem Link kann auf Ihre Datei zugreifen."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "Link zur Datei wird erstellt"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Gehen Sie zu „Meine Dateien” und laden Sie zuerst einige Dateien hoch."
       ],
       "Select an uploaded file and create a link to it.": [
         "Eine hochgeladene Datei auswählen und einen Link zu dieser erstellen."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Unbekannte Datei"
       ],
+      "All": [
+        "Alle"
+      ],
+      "Active": [
+        "Aktive"
+      ],
+      "Failed": [
+        "Fehlgeschlagene"
+      ],
       "Folder": [
         "Ordner"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Konto upgraden"
       ],
+      "clearing your browser cache": [
+        "Ihren Browser-Cache leeren"
+      ],
       "Upgrade": [
         "Upgrade"
       ],
       "Go to subscription plans": [
         "Zu den Abonnement-Plänen"
-      ],
-      "clearing your browser cache": [
-        "Ihren Browser-Cache leeren"
       ],
       "click here": [
         "hier klicken"
@@ -2498,6 +2510,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht mehr synchron zu sein."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Der Live-Chat ist eine Premium-Funktion, die nur Kunden mit kostenpflichtigen ProtonVPN-Tarifen zur Verfügung steht. Bitte öffnen Sie stattdessen ein Support-Ticket."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
@@ -3022,45 +3037,6 @@
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Einstellungen"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Ein"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Aus"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Spalte"
-      ],
-      "Row": [
-        "Zeile"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Gut lesbar"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximiert"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Kein Bild ausgewählt"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Einstellungen"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Ein"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Aus"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Spalte"
+      ],
+      "Row": [
+        "Zeile"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Gut lesbar"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximiert"
+      ],
+      "Normal": [
+        "Normal"
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Das Passwort muss mindestens ${ length } Zeichen enthalten",
+        "Das Passwort muss mindestens ${ length } Zeichen enthalten"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Name"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Adresse"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Das Passwort muss mindestens ${ length } Zeichen enthalten",
-        "Das Passwort muss mindestens ${ length } Zeichen enthalten"
       ]
     },
     "PGP key warning": {

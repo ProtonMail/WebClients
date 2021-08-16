@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "Ovo polje je obavezno"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
-      ],
-      "Email is not valid": [
-        "Adresa e-pošte nije važeća"
-      ],
-      "Not a valid number": [
-        "Broj telefona nije važeći"
-      ],
-      "Passwords do not match": [
-        "Lozinke se ne poklapaju"
-      ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
-      ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Primarni privatni ključ adrese nije pronađen"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Primarni, privatni ključ kalendara nije dešifriran"
-      ],
-      "Missing signature": [
-        "Nedostaje potpis"
-      ],
-      "Contact signature not verified": [
-        "Potpis kontakta nije potvrđen"
-      ],
-      "Signature not verified": [
-        "Potpis nije ovjeren"
-      ],
-      "Invalid name": [
-        "Nevažeći naziv"
-      ],
-      "Email address disabled": [
-        "Adresa e-pošte je onemogućena"
-      ],
-      "No keys retrieved for internal user": [
-        "Nije pronađen nijedan ključ za unutarnjeg korisnika"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nije pronađen nijedan valjani ključ za unutarnjeg korisnika"
-      ],
-      "Contact signature could not be verified": [
-        "Nije moguće provjeriti potpis kontakta"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nijedan ključ dohvaćen za unutarnjeg korisnika nije valjan za slanje"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Pouzdani ključevi nisu valjani za slanje"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nijedan WKD ključ dohvaćen za korisnika nije valjan za slanje"
-      ],
-      "The sending key is not valid": [
-        "Ključ slanja nije važeći"
-      ],
       "Unknown error": [
         "Nepoznata pogreška"
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "Adresa e-pošte nije valjana"
+      ],
+      "This field is required": [
+        "Ovo polje je obavezno"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         ""
@@ -151,17 +88,14 @@
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
+      "Invalid name": [
+        "Nevažeći naziv"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
       ],
       "Process aborted": [
         ""
@@ -223,6 +157,12 @@
       "Invalid code": [
         ""
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
+      ],
       "Primary address key is not decrypted": [
         "Primarni ključ adrese e-pošte nije dešifriran"
       ],
@@ -234,6 +174,66 @@
       ],
       "Name required": [
         ""
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Email is not valid": [
+        "Adresa e-pošte nije važeća"
+      ],
+      "Not a valid number": [
+        "Broj telefona nije važeći"
+      ],
+      "Passwords do not match": [
+        "Lozinke se ne poklapaju"
+      ],
+      "Request timed out.": [
+        "Zahtjev je istekao."
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Could not find address ${ email }.": [
+        "Ne mogu pronaći adresu ${ email }."
+      ],
+      "Address primary private key not found": [
+        "Primarni privatni ključ adrese nije pronađen"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Primarni, privatni ključ kalendara nije dešifriran"
+      ],
+      "Missing signature": [
+        "Nedostaje potpis"
+      ],
+      "Contact signature not verified": [
+        "Potpis kontakta nije potvrđen"
+      ],
+      "Signature not verified": [
+        "Potpis nije ovjeren"
+      ],
+      "Email address disabled": [
+        "Adresa e-pošte je onemogućena"
+      ],
+      "No keys retrieved for internal user": [
+        "Nije pronađen nijedan ključ za unutarnjeg korisnika"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Nije pronađen nijedan valjani ključ za unutarnjeg korisnika"
+      ],
+      "Contact signature could not be verified": [
+        "Nije moguće provjeriti potpis kontakta"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Nijedan ključ dohvaćen za unutarnjeg korisnika nije valjan za slanje"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Pouzdani ključevi nisu valjani za slanje"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nijedan WKD ključ dohvaćen za korisnika nije valjan za slanje"
+      ],
+      "The sending key is not valid": [
+        "Ključ slanja nije važeći"
       ],
       "Self invitation not allowed": [
         "Nije dopušteno pozivanje samog sebe"
@@ -313,1946 +313,10 @@
         "Pogreška"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lozinka mora sadržavati najmanje ${ length } znak",
-        "Lozinka mora sadržavati najmanje ${ length } znaka",
-        "Lozinka mora sadržavati najmanje ${ length } znakova"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bajtova"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Naziv"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Photo": [
-        "Fotografija"
-      ],
-      "Organization": [
-        "Organizacija"
-      ],
-      "Birthday": [
-        "Rođendan"
-      ],
-      "Anniversary": [
-        "Godišnjica"
-      ],
-      "Title": [
-        "Naslov"
-      ],
-      "Role": [
-        "Uloga"
-      ],
-      "Note": [
-        "Bilješka"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Spol"
-      ],
-      "Language": [
-        "Jezik"
-      ],
-      "Timezone": [
-        "Vremenska zona"
-      ],
-      "Geo": [
-        "Geolokacija"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Član"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Posao"
-      ],
-      "Personal": [
-        "Privatno"
-      ],
-      "Mobile": [
-        "Mobitel"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Dojavljivač"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-pošta"
-      ],
-      "Home": [
-        "Kuća"
-      ],
-      "Work": [
-        "Posao"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobitel"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Dojavljivač"
-      ],
-      "Address": [
-        "Adresa"
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "Sesija je istekla."
-      ],
-      "Internet connection lost.": [
-        ""
-      ],
-      "Servers are unreachable.": [
-        "Poslužitelji nisu dostupni."
-      ],
-      "Custom daily": [
-        "Prilagođeno dnevno"
-      ],
-      "Custom weekly": [
-        "Prilagođeno tjedno"
-      ],
-      "Custom monthly": [
-        "Prilagođeno mjesečno"
-      ],
-      "Custom yearly": [
-        "Prilagođeno godišnje"
-      ],
-      "Custom": [
-        "Prilagođeno"
-      ],
-      "Daily": [
-        "Dnevno"
-      ],
-      "Monthly ${ onDayString }": [
-        "Mjesečno ${ onDayString }"
-      ],
-      "Yearly": [
-        "Godišnje"
-      ],
-      "Loading": [
-        "Učitavanje"
-      ],
-      "No results found": [
-        "Nema rezultata"
-      ],
-      "support team": [
-        ""
-      ],
-      "No contacts added yet": [
-        "Nema dodanih kontakata"
-      ],
-      "Week": [
-        "Tjedan"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        ""
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        ""
-      ],
-      "You are about to open another browser tab and visit:": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Drop the file here to upload": [
-        "Ispustite datoteku ovdje za prijenos"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } član)",
-        "(${ memberCount } člana)",
-        "(${ memberCount } članova)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
-      ],
-      "Loading ${ appName }": [
-        "Učitavanje ${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } član",
-        "${ contactEmailsLength } člana",
-        "${ contactEmailsLength } članova"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatski šalje poruku koristeći trenutni način rada prozora za novu poruku. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Pričekajte dok potražimo kontakte koji sadrže podatke šifrirane neaktivnim ključem."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Provjera kontakta ${ progress } od ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt je uspješno ažuriran.",
-        "${ updated } kontakta su uspješno ažurirana.",
-        "${ updated } kontakata je uspješno ažurirano."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Da biste oporavili vaše podatke, trebate ponovno aktivirati ključ za šifriranje kontakta koji se koristio u vrijeme kada su podaci stvoreni. To će zahtijevati da zapamtite lozinku koja se koristila prilikom generiranja ključa."
-      ],
-      "Key fingerprint": [
-        "Otisak prsta ključa"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Pričekajte dok potražimo kontakte koji se mogu ponovno potpisati primarnim ključem šifriranja."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
-      ],
-      "Group assignment applied": [
-        "Primijenjena grupna dodjela"
-      ],
-      "Create a new contact group": [
-        "Stvori novu grupu kontakata"
-      ],
-      "No group found": [
-        "Nije pronađena nijedna grupa"
-      ],
-      "Duplicate key updated": [
-        "Ažuriran je duplicirani ključ"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "Glavno"
-      ],
-      "No email address": [
-        "Nema adresa e-pošte"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt pronađen",
-        "${ contactsCount } kontakta pronađena",
-        "${ contactsCount } kontakata pronađeno"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grupa pronađena",
-        "${ groupCounts } grupe pronađene",
-        "${ groupCounts } grupa pronađeno"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } adresa e-pošte",
-        "${ addressCount } adrese e-pošte",
-        "${ addressCount } adresa e-pošte"
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "ovdje"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
-        "",
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Included": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        ""
-      ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Account successfully updated": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        ""
-      ],
-      "(Mail + VPN)": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
-      "No payment is required at this time.": [
-        ""
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
-      "Domains": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Connections": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        "",
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
-      "Not customizable": [
-        ""
-      ],
-      "Expired": [
-        ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
-      ],
-      "Free up some space or add more storage space.": [
-        "Oslobodite malo prostora ili dodajte više prostora za pohranu."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Oslobodite malo prostora ili se obratite administratoru."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosegli ste 100% svog prostora za pohranu. Ne možete slati ni primati nove e-poruke. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosegli ste ${ spaceDisplayed }% svog prostora za pohranu. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Uspostavljena je internetska veza."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Nema internetske veze. Molimo provjerite povezanost uređaja."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "Manage your calendars": [
-        "Upravljajte svojim kalendarima"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
-      ],
-      "Loading events": [
-        "Učitavanje događaja"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "Organizator ne može biti obaviješten da odbijate pozivnicu:"
-      ],
-      "Would you like to delete the event anyway?": [
-        "Želite li ipak izbrisati događaj?"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "Nitko od sudionika ne može biti obaviješten o vašim promjenama:"
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "Sljedeći sudionici ne mogu biti obaviješteni o vašim promjenama:"
-      ],
-      "Would you like to continue anyway?": [
-        "Želite li svejedno nastaviti?"
-      ],
-      "Discard changes?": [
-        "Odbaci promjene?"
-      ],
-      "You will lose all unsaved changes.": [
-        "Izgubit ćete sve nespremljene promjene."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Organizator ovog događaja biti će obaviješten da odbijate pozivnicu. Želite li izbrisati ovaj događaj?"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Organizator ovog događaja neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovaj događaj?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "E-pošta o otkazivanju bit će poslana sudionicima događaja. Želite li izbrisati ovaj događaj?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Vaša je adresa onemogućena. E-pošta o otkazivanju ne može biti poslana sudionicima događaja. Želite li ipak izbrisati ovaj događaj?"
-      ],
-      "Would you like to delete this event?": [
-        "Želite li ukloniti ovaj događaj?"
-      ],
-      "Which event would you like to delete?": [
-        "Koji događaj želite ukloniti?"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Ovaj događaj je ažuriran. Organizator će biti obaviješten da odbijate pozivnicu. Želite li izbrisati ovaj događaj?"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Organizator je ažurirao ovaj događaj. Želite li izbrisati ovaj događaj?"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Događaj je ažuriran. Organizator neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovaj događaj?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "E-pošta o otkazivanju bit će poslana sudionicima događaja. Želite li izbrisati sve događaje u ovom nizu?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Vaša je adresa onemogućena. E-pošta o otkazivanju ne može biti poslana sudionicima događaja. Želite li ipak izbrisati sve događaje u ovom nizu?"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Organizator ovog niza događaja biti će obaviješten da odbijate pozivnicu. Želite li izbrisati sve događaje u ovom nizu?"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "Organizator serije ovih događaja neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovu seriju događaja?"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "Želite li ukloniti sve događaje u ovom nizu?"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "Ponavljanja koja je organizator prethodno ažurirao zadržati će se, ali neki od vaših odgovora će se ukloniti."
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "Ponavljanja koja je organizator prethodno ažurirao bit će zadržana."
-      ],
-      "Which event would you like to update?": [
-        "Koji događaj želite ažurirati?"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Organizator je ažurirao ovaj događaj. Želite li promijeniti svoj odgovor samo za ovo ponavljanje u nizu?"
-      ],
-      "Would you like to update this event?": [
-        "Želite li ažurirati ovaj događaj?"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "Želite li promijeniti svoj odgovor za sve događaje u ovom nizu?"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "Dodani i uklonjeni sudionici bit će obaviješteni o svim događajima u ovom nizu."
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Ažurirat ćete sve događaje iz ovog niza. Dodani i uklonjeni sudionici bit će obaviješteni."
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Ažurirat ćete sve događaje iz ovog niza. Postojeći, dodani i uklonjeni sudionici bit će obaviješteni."
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Ažurirat ćete sve događaje iz ovog niza. Postojeći i dodani sudionici bit će obaviješteni."
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "Ažurirat ćete sve događaje iz ovog niza. Uklonjeni sudionici bit će obaviješteni."
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Ažurirat ćete sve događaje iz ovog niza. Postojeći i uklonjeni sudionici bit će obaviješteni."
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Ažurirat ćete sve događaje iz ovog niza. Pozivnica će biti poslana sudionicima događaja."
-      ],
-      "Would you like to update all events in this series?": [
-        "Želite li ažurirati sve događaje u ovom nizu?"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "Prethodne promjene ove serije bit će izgubljene."
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Ukloniti će se neki vaši odgovori na događaje koje je organizator prethodno ažurirao."
-      ],
-      "Frequency modifications will be lost.": [
-        "Izmjene frekvencije bit će izgubljene."
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "Organizator je ažurirao neke događaje iz ovog niza. Promjena kalendara još nije podržana za ovu vrstu ponavljajućih događaja."
-      ],
-      "Update recurring event": [
-        "Ažuriraj ponavljajući događaj"
-      ],
-      "Added and removed participants will be notified.": [
-        "Dodani i uklonjeni sudionici bit će obaviješteni."
-      ],
-      "An invitation will be sent to added participants.": [
-        "Pozivnica će biti poslana dodanim sudionicima."
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "E-poruka o otkazivanju biti će poslana svim uklonjenim sudionicima."
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "Postojeći, dodani i uklonjeni sudionici bit će obaviješteni."
-      ],
-      "Existent and added participants will be notified.": [
-        "Postojeći i dodani sudionici bit će obaviješteni."
-      ],
-      "Removed participants will be notified.": [
-        "Uklonjeni sudionici bit će obaviješteni."
-      ],
-      "Existent and removed participants will be notified.": [
-        "Postojeći i uklonjeni sudionici bit će obaviješteni."
-      ],
-      "An invitation will be sent to the event participants.": [
-        "Pozivnica će biti poslana sudionicima događaja."
-      ],
-      "Please remove the duplicates and try again.": [
-        "Uklonite duplikate i pokušajte ponovo."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        "Poništili ste lozinku i događaji povezani sa sljedećim kalendarima nisu se mogli dešifrirati. Sve poveznice dijeljenih kalendara koje ste prethodno stvorili više neće raditi."
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Poništili ste lozinku te događaji povezani sa sljedećim kalendarima se sada mogu dešifrirati."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Vremenska zona vašeg sustava promijenjena je u ${ timezone }. Želite li ažurirati svoje postavke vremenske zone?"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Dopušteno je najviše 100 sudionika po pozivnici"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Možete mijenjati samo svojstva osobnih događaja pošto ne možete slati e-poruke s adrese organizatora."
-      ],
-      "Loading event": [
-        "Učitavanje događaja"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } započinje danas"
-      ],
-      "${ title } starts today": [
-        "${ title } započinje danas"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } započinje u ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } započeo jučer"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } započeo jučer u ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } započinje ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } započelo ${ formattedDate } u ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } je započeo ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } započelo ${ _formattedDate } u ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } započeo u ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } započeo u ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } će započeti u ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } će započeti sutra"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } će započeti sutra u ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } će započeti u ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } će započeti ${ _formattedDate2 } u ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } će započeti u ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } će započeti ${ _formattedDate3 } u ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } će započeti u ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } će započeti u ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(bez naslova)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Vi"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Otkazani događaj ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Pozivnica za događaj ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Ažuriranje događaja ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Otkazani događaj s početkom ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Pozivnica za događaj s početkom ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Ažuriranje događaja s početkom ${ formattedStart }"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Pozivnica: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Kada: ${ formattedStart } (cijeli dan)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kada: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Kada: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Gdje: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Opis: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Pozvani ste na ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } je ažuriran.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } je otkazan."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } je prihvatio vašu pozivnicu za ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } je uvjetno prihvatio vašu pozivnicu za ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } je odbio vašu pozivnicu za ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "na prva nedjelju"
-      ],
-      "on the first Monday": [
-        "na prvi ponedjeljak"
-      ],
-      "on the first Tuesday": [
-        "na prvi utorak"
-      ],
-      "on the first Wednesday": [
-        "na prvu srijedu"
-      ],
-      "on the first Thursday": [
-        "na prvi četvrtak"
-      ],
-      "on the first Friday": [
-        "na prvi petak"
-      ],
-      "on the first Saturday": [
-        "na prvu subotu"
-      ],
-      "on the second Sunday": [
-        "na drugu nedjelju"
-      ],
-      "on the second Monday": [
-        "na drugi ponedjeljak"
-      ],
-      "on the second Tuesday": [
-        "na drugi utorak"
-      ],
-      "on the second Wednesday": [
-        "na drugu srijedu"
-      ],
-      "on the second Thursday": [
-        "na drugi četvrtak"
-      ],
-      "on the second Friday": [
-        "na drugi petak"
-      ],
-      "on the second Saturday": [
-        "na drugu subotu"
-      ],
-      "on the third Sunday": [
-        "na treću nedjelju"
-      ],
-      "on the third Monday": [
-        "na treći ponedjeljak"
-      ],
-      "on the third Tuesday": [
-        "na treći utorak"
-      ],
-      "on the third Wednesday": [
-        "na treću srijedu"
-      ],
-      "on the third Thursday": [
-        "na treći četvrtak"
-      ],
-      "on the third Friday": [
-        "na treći petak"
-      ],
-      "on the third Saturday": [
-        "na treću subotu"
-      ],
-      "on the fourth Sunday": [
-        "na četvrtu nedjelju"
-      ],
-      "on the fourth Monday": [
-        "na četvrti ponedjeljak"
-      ],
-      "on the fourth Tuesday": [
-        "na četvrti utorak"
-      ],
-      "on the fourth Wednesday": [
-        "na četvrtu srijedu"
-      ],
-      "on the fourth Thursday": [
-        "na četvrti četvrtak"
-      ],
-      "on the fourth Friday": [
-        "na četvrti petak"
-      ],
-      "on the fourth Saturday": [
-        "na četvrtu subotu"
-      ],
-      "on the last Sunday": [
-        "na zadnju nedjelju"
-      ],
-      "on the last Monday": [
-        "na zadnji ponedjeljak"
-      ],
-      "on the last Tuesday": [
-        "na zadnji utorak"
-      ],
-      "on the last Wednesday": [
-        "na zadnju srijedu"
-      ],
-      "on the last Thursday": [
-        "na zadnji četvrtak"
-      ],
-      "on the last Friday": [
-        "na zadnji petak"
-      ],
-      "on the last Saturday": [
-        "na zadnju subotu"
-      ],
-      "on day ${ dayOfMonth }": [
-        "na dan ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } put",
-        "${ count } puta",
-        "${ count } puta"
-      ],
-      "until ${ dateString }": [
-        "do ${ dateString }"
-      ],
-      "Daily": [
-        "Dnevno"
-      ],
-      "Every ${ interval } day": [
-        "Svaki ${ interval } dan",
-        "Svaka ${ interval } dana",
-        "Svakih ${ interval } dana"
-      ],
-      "Daily, ${ timesString }": [
-        "Dnevno, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Svaki ${ interval } dan, ${ timesString }",
-        "Svakih ${ interval } dana, ${ timesString }",
-        "Svakih ${ interval } dana, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Dnevno, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Svaki ${ interval } dan, ${ untilString }",
-        "Svakih ${ interval } dana, ${ untilString }",
-        "Svakih ${ interval } dana, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Nedjelja"
-      ],
-      "Monday": [
-        "Ponedjeljak"
-      ],
-      "Tuesday": [
-        "Utorak"
-      ],
-      "Wednesday": [
-        "Srijeda"
-      ],
-      "Thursday": [
-        "Četvrtak"
-      ],
-      "Friday": [
-        "Petak"
-      ],
-      "Saturday": [
-        "Subota"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Tjedno, svim danima"
-      ],
-      "Every ${ interval } week on all days": [
-        "Svaki ${ interval } tjedan, svim danima",
-        "Svaka ${ interval } tjedna, svim danima",
-        "Svakih ${ interval } tjedana, svim danima"
-      ],
-      "Weekly on Sunday": [
-        "Tjedno nedjeljom"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Svaki ${ interval } tjedan nedjeljom",
-        "Svaka ${ interval } tjedna nedjeljom",
-        "Svakih ${ interval } tjedana nedjeljom"
-      ],
-      "Weekly on Monday": [
-        "Tjedno ponedjeljkom"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Svaki ${ interval } tjedan ponedjeljkom",
-        "Svaka ${ interval } tjedna ponedjeljkom",
-        "Svakih ${ interval } tjedana ponedjeljkom"
-      ],
-      "Weekly on Tuesday": [
-        "Tjedno utorkom"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Svaki ${ interval } tjedan utorkom",
-        "Svaka ${ interval } tjedna utorkom",
-        "Svakih ${ interval } tjedana utorkom"
-      ],
-      "Weekly on Wednesday": [
-        "Tjedno srijedom"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Svaki ${ interval } tjedan srijedom",
-        "Svaka ${ interval } tjedna srijedom",
-        "Svakih ${ interval } tjedana srijedom"
-      ],
-      "Weekly on Thursday": [
-        "Tjedno četvrtkom"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Svaki ${ interval } tjedan četvrtkom",
-        "Svaka ${ interval } tjedna četvrtkom",
-        "Svakih ${ interval } tjedana četvrtkom"
-      ],
-      "Weekly on Friday": [
-        "Tjedno petkom"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Svaki ${ interval } tjedan petkom",
-        "Svaka ${ interval } tjedna petkom",
-        "Svakih ${ interval } tjedana petkom"
-      ],
-      "Weekly on Saturday": [
-        "Tjedno subotom"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Svaki ${ interval } tjedan subotom",
-        "Svaka ${ interval } tjedna subotom",
-        "Svakih ${ interval } tjedana subotom"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Tjedno na ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Tjedno svakim danom, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
-        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
-        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Tjedno nedjeljom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
-        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
-        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Tjedno ponedjeljkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
-        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
-        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Tjedno utorkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
-        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
-        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Tjedno srijedom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
-        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
-        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Tjedno četvrtkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
-        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
-        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Tjedno petkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Svaki ${ interval } tjedan petkom, ${ timesString }",
-        "Svaka ${ interval } tjedna petkom, ${ timesString }",
-        "Svakih ${ interval } tjedana petkom, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Tjedno subotom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Svaki ${ interval } tjedan subotom, ${ timesString }",
-        "Svaka ${ interval } tjedna subotom, ${ timesString }",
-        "Svakih ${ interval } tjedana subotom, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Tjedno na ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Tjedno svakim danom, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
-        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
-        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Tjedno nedjeljom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
-        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
-        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Tjedno ponedjeljkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
-        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
-        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Tjedno utorkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
-        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
-        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Tjedno srijedom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
-        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
-        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Tjedno četvrtkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
-        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
-        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Tjedno petkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Svaki ${ interval } tjedan petkom, ${ untilString }",
-        "Svaka ${ interval } tjedna petkom, ${ untilString }",
-        "Svakih ${ interval } tjedana petkom, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Tjedno subotom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Svaki ${ interval } tjedan subotom, ${ untilString }",
-        "Svaka ${ interval } tjedna subotom, ${ untilString }",
-        "Svakih ${ interval } tjedana subotom, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Tjedno na ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Mjesečno ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Mjesečno ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mjesečno ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Godišnje"
-      ],
-      "Every ${ interval } year": [
-        "Svaku ${ interval } godinu",
-        "Svake ${ interval } godine",
-        "Svakih ${ interval } godina"
-      ],
-      "Yearly, ${ timesString }": [
-        "Godišnje, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Svaku ${ interval } godinu, ${ timesString }",
-        "Svake ${ interval } godine, ${ timesString }",
-        "Svakih ${ interval } godina, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Godišnje, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Svaku ${ interval } godinu, ${ untilString }",
-        "Svake ${ interval } godine, ${ untilString }",
-        "Svakih ${ interval } godina, ${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Osnovna navigacija"
-      ],
-      "Basic actions": [
-        "Osnovne radnje"
-      ],
-      "Folder shortcuts": [
-        "Prečaci mapa"
-      ],
-      "Composer shortcuts": [
-        "Prečaci prozora za novu poruku"
-      ],
-      "List shortcuts": [
-        "Popis prečaca"
-      ],
-      "Action shortcuts": [
-        "Prečaci radnji"
-      ],
-      "Message shortcuts": [
-        "Prečaci poruke"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Premjesti gore"
-      ],
-      "Jump to first": [
-        "Preskoči na prvo"
-      ],
-      "Move down": [
-        "Premjesti dolje"
-      ],
-      "Jump to last": [
-        "Preskoči na zadnje"
-      ],
-      "Move right / expand": [
-        "Pomakni desno / proširi"
-      ],
-      "Move left / collapse": [
-        "Pomakni lijevo / smanji"
-      ],
-      "Apply / open": [
-        "Primijeni / otvori"
-      ],
-      "Cancel / close": [
-        "Odustani / zatvori"
-      ],
-      "Open this modal": [
-        "Otvori ovaj modal"
-      ],
-      "Select / unselect": [
-        "Odaberi / poništi odabir"
-      ],
-      "Go to Inbox": [
-        "Idi u Pristiglu poštu"
-      ],
-      "Go to Archive": [
-        "Idi u Arhivu"
-      ],
-      "Go to Sent": [
-        "Idi u Poslano"
-      ],
-      "Go to Starred": [
-        "Idi u Sa zvjezdicom"
-      ],
-      "Go to Drafts": [
-        "Idi u Skice"
-      ],
-      "Go to Trash": [
-        "Idi u Otpad"
-      ],
-      "Go to Spam": [
-        "Idi u Neželjenu poštu"
-      ],
-      "Go to All Mail": [
-        "Premjesti u Svu poštu"
-      ],
-      "Save draft": [
-        "Spremi skicu"
-      ],
-      "Send email": [
-        "Pošalji e-poruku"
-      ],
-      "Close draft": [
-        "Zatvori skicu"
-      ],
-      "Minimize / maximize composer": [
-        "Smanji / povećaj prozor za novu poruku"
-      ],
-      "Expand / contract composer": [
-        "Proširi / smanji prozor za novu poruku"
-      ],
-      "Attach file": [
-        "Priloži datoteku"
-      ],
-      "Add expiration time": [
-        "Dodaj vrijeme isteka"
-      ],
-      "Add encryption": [
-        "Dodaj šifriranje"
-      ],
-      "Discard draft": [
-        "Odbaci skicu"
-      ],
-      "Open previous message": [
-        "Otvori prethodnu poruku"
-      ],
-      "Open next message": [
-        "Otvori sljedeću poruku"
-      ],
-      "Show unread emails": [
-        "Prikaži nepročitane e-poruke"
-      ],
-      "Show all emails": [
-        "Prikaži svu e-poštu"
-      ],
-      "Select / unselect all": [
-        "Odaberi sve / poništi sav odabir"
-      ],
-      "Search": [
-        "Pretraga"
-      ],
-      "New message": [
-        "Nova poruka"
-      ],
-      "Star": [
-        "Zvjezdica"
-      ],
-      "Mark as unread": [
-        "Označi kao nepročitano"
-      ],
-      "Label as...": [
-        "Označi kao..."
-      ],
-      "Create filter with...": [
-        "Stvori filtar s..."
-      ],
-      "Move to...": [
-        "Premjesti u..."
-      ],
-      "Move to Inbox": [
-        "Premjesti u Pristiglu poštu"
-      ],
-      "Move to Archive": [
-        "Premjesti u Arhivu"
-      ],
-      "Move to Spam": [
-        "Premjesti u Neželjenu poštu"
-      ],
-      "Move to Trash": [
-        "Premjesti u Otpad"
-      ],
-      "Delete permanently": [
-        "Trajno izbriši"
-      ],
-      "Reply": [
-        "Odgovor"
-      ],
-      "Reply all": [
-        "Odgovori svima"
-      ],
-      "Forward": [
-        "Proslijedi"
-      ],
-      "Load remote content": [
-        "Učitaj udaljeni sadržaj"
-      ],
-      "Load embedded images": [
-        "Učitaj ugrađene slike"
-      ],
-      "Show original message": [
-        "Prikaži originalnu poruku"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "nepoznato"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Nepoznato"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard verzija < 3.0 nije podržana"
-      ],
-      "Encryption failed": [
-        "Neuspješno šifriranje"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Nije odabrana .csv ili .vcf datoteka"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Vaša datoteka ${ formattedFilename } je prazna."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Vaša datoteka ${ formattedFilename } nema kontakte za uvoz."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_CONTACTS_STRING } kontakata."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Kopiraj"
-      ],
-      "Reveal password": [
-        "Prikaži lozinku"
-      ],
-      "Hide password": [
-        "Sakrij lozinku"
-      ],
-      "Street address": [
-        "Adresa"
-      ],
-      "City": [
-        "Grad"
-      ],
-      "Region": [
-        "Regija"
-      ],
-      "Postal code": [
-        "Poštanski broj"
-      ],
-      "Country": [
-        "Država"
-      ],
-      "Post office box": [
-        "Poštanski sandučić"
-      ],
-      "Extended address": [
-        "Produžena adresa"
-      ],
-      "Do not ask again": [
-        ""
-      ],
-      "Email address": [
-        "Adresa e-pošte"
-      ],
-      "Phone number": [
-        "Broj telefona"
-      ],
-      "Verification code": [
-        "Kôd za provjeru"
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
-      ],
-      "Add email address": [
-        "Dodaj adresu e-pošte"
-      ],
-      "Email format": [
-        "Format e-pošte"
-      ],
-      "Add image URL": [
-        "Dodajte URL slike"
-      ],
-      "Upload picture": [
-        "Učitaj sliku"
-      ],
-      "Add to group": [
-        "Dodaj u grupu"
-      ],
-      "Encrypt emails": [
-        "Šifriraj e-poštu"
-      ],
-      "Sign emails": [
-        "Potpisivanje e-pošte"
-      ],
-      "Cryptographic scheme": [
-        "Kriptografska shema"
-      ],
-      "Public keys": [
-        "Javni ključevi"
-      ],
-      "Automatically save contacts": [
-        "Automatsko spremanje kontakata"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Export contacts": [
-        "Izvezi kontakte"
-      ],
-      "Operating system": [
-        "Operativni sustav"
-      ],
-      "Operating system version": [
-        "Verzija operativnog sustava"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "Category": [
-        "Kategorija"
-      ],
-      "What happened?": [
-        "Što se dogodilo?"
-      ],
-      "System information": [
-        "Informacije o sustavu"
-      ],
-      "Browser": [
-        "Preglednik"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
-      "Cancel": [
-        "Poništi"
-      ],
-      "Submit": [
-        "Pošalji"
-      ],
-      "Password": [
-        "Lozinka"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "Two-factor authentication code": [
-        "Kôd dvofaktorske autentikacije"
-      ],
-      "Username or ProtonMail address": [
-        "Korisničko ime ili ProtonMail adresa"
-      ],
-      "Name on card": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Expiry date": [
-        ""
-      ],
-      "CVV code": [
-        ""
-      ],
-      "Select your country": [
-        ""
-      ],
-      "ZIP": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
-      "BTC address:": [
-        ""
-      ],
-      "Select a method": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
-      "Total": [
-        ""
-      ],
-      "Proration": [
-        ""
-      ],
-      "Cash": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Payer": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
-        "Omogući Beta pristup"
-      ],
-      "Name": [
-        ""
-      ],
-      "Choose a color": [
-        ""
-      ],
-      "Default email": [
-        ""
-      ],
-      "Display": [
-        ""
-      ],
-      "Description": [
-        "Opis"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "URL": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
-      ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        ""
-      ],
-      "All day": [
-        "Cijeli dan"
-      ],
-      "Repeat on": [
-        "Ponovi na"
-      ],
-      "Repeat every": [
-        "Ponovi svaki"
-      ],
-      "Ends": [
-        "Završava"
-      ],
-      "Organizer": [
-        "Organizator"
-      ],
-      "Optional": [
-        "Neobavezno"
-      ],
-      "Time of the event": [
-        "Vrijeme događaja"
-      ],
-      "Event time": [
-        "Vrijeme događaja"
-      ],
-      "Event title": [
-        "Naziv događaja"
-      ],
-      "Event frequency": [
-        "Učestalost događaja"
-      ],
-      "Event location": [
-        "Lokacija događaja"
-      ],
-      "Event notifications": [
-        "Obavijest o događaju"
-      ],
-      "Participants": [
-        "Sudionici"
-      ],
-      "Your calendars": [
-        "Vaši kalendari"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Zatvori"
+      ],
       "Close modal": [
         "Zatvori skočni prozor"
       ],
@@ -2270,9 +334,6 @@
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "Close": [
-        "Zatvori"
       ],
       "Close navigation": [
         "Zatvori navigaciju"
@@ -2524,6 +585,9 @@
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } predstavljanje"
       ],
+      "Chat with us": [
+        ""
+      ],
       "I have a question": [
         "Imam pitanje"
       ],
@@ -2575,9 +639,6 @@
       "Back": [
         "Natrag"
       ],
-      "Log in": [
-        "Prijavite se"
-      ],
       "Remove bonuses": [
         ""
       ],
@@ -2625,6 +686,9 @@
       ],
       "Increase": [
         ""
+      ],
+      "Log in": [
+        "Prijavite se"
       ],
       "Close this banner": [
         "Zatvori natpis"
@@ -2721,141 +785,6 @@
       ],
       "Close popover": [
         "Zatvori skočni prozor"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Request an invite": [
-        "Zatraži pozivnicu"
-      ],
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Go to subscription plans": [
-        "Idi na planove pretplate"
-      ],
-      "click here": [
-        ""
-      ],
-      "Add a gift code": [
-        ""
-      ],
-      "Pay invoice": [
-        "Plati račun"
-      ],
-      "Upgrade account": [
-        "Nadogradi račun"
-      ],
-      "Calendars": [
-        "Kalendari"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Subscribed calendars": [
-        ""
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Npr. "
-      ],
-      "Start typing an email address": [
-        "Započnite pisati adresu e-pošte"
-      ],
-      "Image URL": [
-        "URL slike"
-      ],
-      "Filter groups": [
-        "Filtrirajte grupe"
-      ],
-      "Search for name or email": [
-        "Pretraga po imenu ili adresi e-pošte"
-      ],
-      "Search for group name": [
-        "Pretraga po nazivu grupe"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "A way to contact you": [
-        "Način kako da vas kontaktiramo"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Molimo opišite problem i pridružite sve poruke o pogreškama"
-      ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
-      "Feedback": [
-        ""
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "ZIP": [
-        ""
-      ],
-      "Postal code": [
-        ""
-      ],
-      "Gift code": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add title": [
-        "Dodaj naslov"
-      ],
-      "Add location": [
-        "Dodaj lokaciju"
-      ],
-      "Add description": [
-        "Dodaj opis"
-      ],
-      "Add participants": [
-        "Dodaj sudionike"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
       ]
     },
     "Title": {
@@ -3035,18 +964,6 @@
       "Give feedback": [
         ""
       ],
-      "Sign in again to continue": [
-        "Ponovno se prijavite da biste nastavili"
-      ],
-      "Account suspended": [
-        "Račun je suspendiran"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
-      ],
-      "Enter your password": [
-        "Unesite vašu lozinku"
-      ],
       "Confirm loss of Proton bonuses": [
         ""
       ],
@@ -3136,6 +1053,18 @@
       ],
       "${ appName } customization": [
         ""
+      ],
+      "Sign in again to continue": [
+        "Ponovno se prijavite da biste nastavili"
+      ],
+      "Account suspended": [
+        "Račun je suspendiran"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
+      ],
+      "Enter your password": [
+        "Unesite vašu lozinku"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } tipkovni prečaci"
@@ -3295,6 +1224,1136 @@
       ],
       "CANCELLED": [
         "OTKAZANO"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Nema rezultata"
+      ],
+      "Loading": [
+        "Učitavanje"
+      ],
+      "support team": [
+        ""
+      ],
+      "No contacts added yet": [
+        "Nema dodanih kontakata"
+      ],
+      "Week": [
+        "Tjedan"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        ""
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        ""
+      ],
+      "You are about to open another browser tab and visit:": [
+        ""
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Drop the file here to upload": [
+        "Ispustite datoteku ovdje za prijenos"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
+      ],
+      "Loading ${ appName }": [
+        "Učitavanje ${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } član",
+        "${ contactEmailsLength } člana",
+        "${ contactEmailsLength } članova"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } i ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatski šalje poruku koristeći trenutni način rada prozora za novu poruku. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Pričekajte dok potražimo kontakte koji sadrže podatke šifrirane neaktivnim ključem."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Provjera kontakta ${ progress } od ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt je uspješno ažuriran.",
+        "${ updated } kontakta su uspješno ažurirana.",
+        "${ updated } kontakata je uspješno ažurirano."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Da biste oporavili vaše podatke, trebate ponovno aktivirati ključ za šifriranje kontakta koji se koristio u vrijeme kada su podaci stvoreni. To će zahtijevati da zapamtite lozinku koja se koristila prilikom generiranja ključa."
+      ],
+      "Key fingerprint": [
+        "Otisak prsta ključa"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Pričekajte dok potražimo kontakte koji se mogu ponovno potpisati primarnim ključem šifriranja."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
+      ],
+      "Group assignment applied": [
+        "Primijenjena grupna dodjela"
+      ],
+      "Create a new contact group": [
+        "Stvori novu grupu kontakata"
+      ],
+      "No group found": [
+        "Nije pronađena nijedna grupa"
+      ],
+      "Duplicate key updated": [
+        "Ažuriran je duplicirani ključ"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Primary": [
+        "Glavno"
+      ],
+      "No email address": [
+        "Nema adresa e-pošte"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt pronađen",
+        "${ contactsCount } kontakta pronađena",
+        "${ contactsCount } kontakata pronađeno"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grupa pronađena",
+        "${ groupCounts } grupe pronađene",
+        "${ groupCounts } grupa pronađeno"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } adresa e-pošte",
+        "${ addressCount } adrese e-pošte",
+        "${ addressCount } adresa e-pošte"
+      ],
+      "Screenshot(s) attached": [
+        "Snimka(e) zaslona su pridodane"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "",
+        "",
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "",
+        "",
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
+      "here": [
+        "ovdje"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
+      ],
+      "Free up some space or add more storage space.": [
+        "Oslobodite malo prostora ili dodajte više prostora za pohranu."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Oslobodite malo prostora ili se obratite administratoru."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "Dosegli ste 100% svog prostora za pohranu. Ne možete slati ni primati nove e-poruke. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "Dosegli ste ${ spaceDisplayed }% svog prostora za pohranu. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Uspostavljena je internetska veza."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Nema internetske veze. Molimo provjerite povezanost uređaja."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        ""
+      ],
+      "Session timed out.": [
+        "Sesija je istekla."
+      ],
+      "Internet connection lost.": [
+        ""
+      ],
+      "Servers are unreachable.": [
+        "Poslužitelji nisu dostupni."
+      ],
+      "Custom daily": [
+        "Prilagođeno dnevno"
+      ],
+      "Custom weekly": [
+        "Prilagođeno tjedno"
+      ],
+      "Custom monthly": [
+        "Prilagođeno mjesečno"
+      ],
+      "Custom yearly": [
+        "Prilagođeno godišnje"
+      ],
+      "Custom": [
+        "Prilagođeno"
+      ],
+      "Daily": [
+        "Dnevno"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mjesečno ${ onDayString }"
+      ],
+      "Yearly": [
+        "Godišnje"
+      ],
+      "Manage your calendars": [
+        "Upravljajte svojim kalendarima"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        ""
+      ],
+      "Loading events": [
+        "Učitavanje događaja"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "Organizator ne može biti obaviješten da odbijate pozivnicu:"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Želite li ipak izbrisati događaj?"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "Nitko od sudionika ne može biti obaviješten o vašim promjenama:"
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "Sljedeći sudionici ne mogu biti obaviješteni o vašim promjenama:"
+      ],
+      "Would you like to continue anyway?": [
+        "Želite li svejedno nastaviti?"
+      ],
+      "Discard changes?": [
+        "Odbaci promjene?"
+      ],
+      "You will lose all unsaved changes.": [
+        "Izgubit ćete sve nespremljene promjene."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Organizator ovog događaja biti će obaviješten da odbijate pozivnicu. Želite li izbrisati ovaj događaj?"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Organizator ovog događaja neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovaj događaj?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "E-pošta o otkazivanju bit će poslana sudionicima događaja. Želite li izbrisati ovaj događaj?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Vaša je adresa onemogućena. E-pošta o otkazivanju ne može biti poslana sudionicima događaja. Želite li ipak izbrisati ovaj događaj?"
+      ],
+      "Would you like to delete this event?": [
+        "Želite li ukloniti ovaj događaj?"
+      ],
+      "Which event would you like to delete?": [
+        "Koji događaj želite ukloniti?"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Ovaj događaj je ažuriran. Organizator će biti obaviješten da odbijate pozivnicu. Želite li izbrisati ovaj događaj?"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Organizator je ažurirao ovaj događaj. Želite li izbrisati ovaj događaj?"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Događaj je ažuriran. Organizator neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovaj događaj?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "E-pošta o otkazivanju bit će poslana sudionicima događaja. Želite li izbrisati sve događaje u ovom nizu?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Vaša je adresa onemogućena. E-pošta o otkazivanju ne može biti poslana sudionicima događaja. Želite li ipak izbrisati sve događaje u ovom nizu?"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Organizator ovog niza događaja biti će obaviješten da odbijate pozivnicu. Želite li izbrisati sve događaje u ovom nizu?"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Organizator serije ovih događaja neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovu seriju događaja?"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Želite li ukloniti sve događaje u ovom nizu?"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Ponavljanja koja je organizator prethodno ažurirao zadržati će se, ali neki od vaših odgovora će se ukloniti."
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Ponavljanja koja je organizator prethodno ažurirao bit će zadržana."
+      ],
+      "Which event would you like to update?": [
+        "Koji događaj želite ažurirati?"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Organizator je ažurirao ovaj događaj. Želite li promijeniti svoj odgovor samo za ovo ponavljanje u nizu?"
+      ],
+      "Would you like to update this event?": [
+        "Želite li ažurirati ovaj događaj?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Želite li promijeniti svoj odgovor za sve događaje u ovom nizu?"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "Dodani i uklonjeni sudionici bit će obaviješteni o svim događajima u ovom nizu."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Ažurirat ćete sve događaje iz ovog niza. Dodani i uklonjeni sudionici bit će obaviješteni."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Ažurirat ćete sve događaje iz ovog niza. Postojeći, dodani i uklonjeni sudionici bit će obaviješteni."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Ažurirat ćete sve događaje iz ovog niza. Postojeći i dodani sudionici bit će obaviješteni."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Ažurirat ćete sve događaje iz ovog niza. Uklonjeni sudionici bit će obaviješteni."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Ažurirat ćete sve događaje iz ovog niza. Postojeći i uklonjeni sudionici bit će obaviješteni."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Ažurirat ćete sve događaje iz ovog niza. Pozivnica će biti poslana sudionicima događaja."
+      ],
+      "Would you like to update all events in this series?": [
+        "Želite li ažurirati sve događaje u ovom nizu?"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "Prethodne promjene ove serije bit će izgubljene."
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Ukloniti će se neki vaši odgovori na događaje koje je organizator prethodno ažurirao."
+      ],
+      "Frequency modifications will be lost.": [
+        "Izmjene frekvencije bit će izgubljene."
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "Organizator je ažurirao neke događaje iz ovog niza. Promjena kalendara još nije podržana za ovu vrstu ponavljajućih događaja."
+      ],
+      "Update recurring event": [
+        "Ažuriraj ponavljajući događaj"
+      ],
+      "Added and removed participants will be notified.": [
+        "Dodani i uklonjeni sudionici bit će obaviješteni."
+      ],
+      "An invitation will be sent to added participants.": [
+        "Pozivnica će biti poslana dodanim sudionicima."
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "E-poruka o otkazivanju biti će poslana svim uklonjenim sudionicima."
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "Postojeći, dodani i uklonjeni sudionici bit će obaviješteni."
+      ],
+      "Existent and added participants will be notified.": [
+        "Postojeći i dodani sudionici bit će obaviješteni."
+      ],
+      "Removed participants will be notified.": [
+        "Uklonjeni sudionici bit će obaviješteni."
+      ],
+      "Existent and removed participants will be notified.": [
+        "Postojeći i uklonjeni sudionici bit će obaviješteni."
+      ],
+      "An invitation will be sent to the event participants.": [
+        "Pozivnica će biti poslana sudionicima događaja."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Uklonite duplikate i pokušajte ponovo."
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        ""
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Poništili ste lozinku te događaji povezani sa sljedećim kalendarima se sada mogu dešifrirati."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Vremenska zona vašeg sustava promijenjena je u ${ timezone }. Želite li ažurirati svoje postavke vremenske zone?"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "Dopušteno je najviše 100 sudionika po pozivnici"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "Možete mijenjati samo svojstva osobnih događaja pošto ne možete slati e-poruke s adrese organizatora."
+      ],
+      "Loading event": [
+        "Učitavanje događaja"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Reveal password": [
+        "Prikaži lozinku"
+      ],
+      "Hide password": [
+        "Sakrij lozinku"
+      ],
+      "Street address": [
+        "Adresa"
+      ],
+      "City": [
+        "Grad"
+      ],
+      "Region": [
+        "Regija"
+      ],
+      "Postal code": [
+        "Poštanski broj"
+      ],
+      "Country": [
+        "Država"
+      ],
+      "Post office box": [
+        "Poštanski sandučić"
+      ],
+      "Extended address": [
+        "Produžena adresa"
+      ],
+      "Do not ask again": [
+        ""
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
+      "Phone number": [
+        "Broj telefona"
+      ],
+      "Verification code": [
+        "Kôd za provjeru"
+      ],
+      "Enter the 6-digit code": [
+        "Unesite 6-znamenkasti kôd"
+      ],
+      "Add email address": [
+        "Dodaj adresu e-pošte"
+      ],
+      "Email format": [
+        "Format e-pošte"
+      ],
+      "Add image URL": [
+        "Dodajte URL slike"
+      ],
+      "Upload picture": [
+        "Učitaj sliku"
+      ],
+      "Add to group": [
+        "Dodaj u grupu"
+      ],
+      "Encrypt emails": [
+        "Šifriraj e-poštu"
+      ],
+      "Sign emails": [
+        "Potpisivanje e-pošte"
+      ],
+      "Cryptographic scheme": [
+        "Kriptografska shema"
+      ],
+      "Public keys": [
+        "Javni ključevi"
+      ],
+      "Automatically save contacts": [
+        "Automatsko spremanje kontakata"
+      ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
+      "Export contacts": [
+        "Izvezi kontakte"
+      ],
+      "Operating system": [
+        "Operativni sustav"
+      ],
+      "Operating system version": [
+        "Verzija operativnog sustava"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "Category": [
+        "Kategorija"
+      ],
+      "What happened?": [
+        "Što se dogodilo?"
+      ],
+      "System information": [
+        "Informacije o sustavu"
+      ],
+      "Browser": [
+        "Preglednik"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
+      ],
+      "Cancel": [
+        "Poništi"
+      ],
+      "Submit": [
+        "Pošalji"
+      ],
+      "Password": [
+        "Lozinka"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "Two-factor authentication code": [
+        "Kôd dvofaktorske autentikacije"
+      ],
+      "Username or ProtonMail address": [
+        "Korisničko ime ili ProtonMail adresa"
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "Omogući Beta pristup"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Opis"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
+        ""
+      ],
+      "All day": [
+        "Cijeli dan"
+      ],
+      "Repeat on": [
+        "Ponovi na"
+      ],
+      "Repeat every": [
+        "Ponovi svaki"
+      ],
+      "Ends": [
+        "Završava"
+      ],
+      "Organizer": [
+        "Organizator"
+      ],
+      "Optional": [
+        "Neobavezno"
+      ],
+      "Time of the event": [
+        "Vrijeme događaja"
+      ],
+      "Event time": [
+        "Vrijeme događaja"
+      ],
+      "Event title": [
+        "Naziv događaja"
+      ],
+      "Event frequency": [
+        "Učestalost događaja"
+      ],
+      "Event location": [
+        "Lokacija događaja"
+      ],
+      "Event notifications": [
+        "Obavijest o događaju"
+      ],
+      "Participants": [
+        "Sudionici"
+      ],
+      "Your calendars": [
+        "Vaši kalendari"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saznajte više"
+      ],
+      "Request an invite": [
+        "Zatraži pozivnicu"
+      ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Go to subscription plans": [
+        "Idi na planove pretplate"
+      ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
+      "Pay invoice": [
+        "Plati račun"
+      ],
+      "Upgrade account": [
+        "Nadogradi račun"
+      ],
+      "Calendars": [
+        "Kalendari"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Npr. "
+      ],
+      "Start typing an email address": [
+        "Započnite pisati adresu e-pošte"
+      ],
+      "Image URL": [
+        "URL slike"
+      ],
+      "Filter groups": [
+        "Filtrirajte grupe"
+      ],
+      "Search for name or email": [
+        "Pretraga po imenu ili adresi e-pošte"
+      ],
+      "Search for group name": [
+        "Pretraga po nazivu grupe"
+      ],
+      "Name": [
+        "Naziv"
+      ],
+      "OS name": [
+        "Naziv OS-a"
+      ],
+      "OS version": [
+        "Verzija OS-a"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "A way to contact you": [
+        "Način kako da vas kontaktiramo"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Browser name": [
+        "Naziv preglednika"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
+      "Feedback": [
+        ""
+      ],
+      "e.g. Julia Smith": [
+        "npr. Ana Horvat"
+      ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
+      ],
+      "Add title": [
+        "Dodaj naslov"
+      ],
+      "Add location": [
+        "Dodaj lokaciju"
+      ],
+      "Add description": [
+        "Dodaj opis"
+      ],
+      "Add participants": [
+        "Dodaj sudionike"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } sat",
+        "${ hours } sata",
+        "${ hours } sati"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minute",
+        "${ minutes } minuta"
       ]
     },
     "Storage": {
@@ -3481,6 +2540,9 @@
       ],
       "Contacts could not be merged": [
         "Nije bilo moguće spajanje kontakata"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
@@ -4752,6 +3814,950 @@
       ],
       "120 minutes": [
         ""
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bajtova"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Naziv"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Photo": [
+        "Fotografija"
+      ],
+      "Organization": [
+        "Organizacija"
+      ],
+      "Birthday": [
+        "Rođendan"
+      ],
+      "Anniversary": [
+        "Godišnjica"
+      ],
+      "Title": [
+        "Naslov"
+      ],
+      "Role": [
+        "Uloga"
+      ],
+      "Note": [
+        "Bilješka"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Spol"
+      ],
+      "Language": [
+        "Jezik"
+      ],
+      "Timezone": [
+        "Vremenska zona"
+      ],
+      "Geo": [
+        "Geolokacija"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Član"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Posao"
+      ],
+      "Personal": [
+        "Privatno"
+      ],
+      "Mobile": [
+        "Mobitel"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Dojavljivač"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-pošta"
+      ],
+      "Home": [
+        "Kuća"
+      ],
+      "Work": [
+        "Posao"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobitel"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Dojavljivač"
+      ],
+      "Address": [
+        "Adresa"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } započinje danas"
+      ],
+      "${ title } starts today": [
+        "${ title } započinje danas"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } započinje u ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } započeo jučer"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } započeo jučer u ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } započinje ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } započelo ${ formattedDate } u ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } je započeo ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } započelo ${ _formattedDate } u ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } započeo u ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } započeo u ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } će započeti u ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } će započeti sutra"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } će započeti sutra u ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } će započeti u ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } će započeti ${ _formattedDate2 } u ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } će započeti u ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } će započeti ${ _formattedDate3 } u ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } će započeti u ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } će započeti u ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(bez naslova)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Vi"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Otkazani događaj ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Pozivnica za događaj ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Ažuriranje događaja ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Otkazani događaj s početkom ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Pozivnica za događaj s početkom ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Ažuriranje događaja s početkom ${ formattedStart }"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Pozivnica: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Kada: ${ formattedStart } (cijeli dan)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Kada: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Kada: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Gdje: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Opis: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Pozvani ste na ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } je ažuriran.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } je otkazan."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } je prihvatio vašu pozivnicu za ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } je uvjetno prihvatio vašu pozivnicu za ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } je odbio vašu pozivnicu za ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "na prva nedjelju"
+      ],
+      "on the first Monday": [
+        "na prvi ponedjeljak"
+      ],
+      "on the first Tuesday": [
+        "na prvi utorak"
+      ],
+      "on the first Wednesday": [
+        "na prvu srijedu"
+      ],
+      "on the first Thursday": [
+        "na prvi četvrtak"
+      ],
+      "on the first Friday": [
+        "na prvi petak"
+      ],
+      "on the first Saturday": [
+        "na prvu subotu"
+      ],
+      "on the second Sunday": [
+        "na drugu nedjelju"
+      ],
+      "on the second Monday": [
+        "na drugi ponedjeljak"
+      ],
+      "on the second Tuesday": [
+        "na drugi utorak"
+      ],
+      "on the second Wednesday": [
+        "na drugu srijedu"
+      ],
+      "on the second Thursday": [
+        "na drugi četvrtak"
+      ],
+      "on the second Friday": [
+        "na drugi petak"
+      ],
+      "on the second Saturday": [
+        "na drugu subotu"
+      ],
+      "on the third Sunday": [
+        "na treću nedjelju"
+      ],
+      "on the third Monday": [
+        "na treći ponedjeljak"
+      ],
+      "on the third Tuesday": [
+        "na treći utorak"
+      ],
+      "on the third Wednesday": [
+        "na treću srijedu"
+      ],
+      "on the third Thursday": [
+        "na treći četvrtak"
+      ],
+      "on the third Friday": [
+        "na treći petak"
+      ],
+      "on the third Saturday": [
+        "na treću subotu"
+      ],
+      "on the fourth Sunday": [
+        "na četvrtu nedjelju"
+      ],
+      "on the fourth Monday": [
+        "na četvrti ponedjeljak"
+      ],
+      "on the fourth Tuesday": [
+        "na četvrti utorak"
+      ],
+      "on the fourth Wednesday": [
+        "na četvrtu srijedu"
+      ],
+      "on the fourth Thursday": [
+        "na četvrti četvrtak"
+      ],
+      "on the fourth Friday": [
+        "na četvrti petak"
+      ],
+      "on the fourth Saturday": [
+        "na četvrtu subotu"
+      ],
+      "on the last Sunday": [
+        "na zadnju nedjelju"
+      ],
+      "on the last Monday": [
+        "na zadnji ponedjeljak"
+      ],
+      "on the last Tuesday": [
+        "na zadnji utorak"
+      ],
+      "on the last Wednesday": [
+        "na zadnju srijedu"
+      ],
+      "on the last Thursday": [
+        "na zadnji četvrtak"
+      ],
+      "on the last Friday": [
+        "na zadnji petak"
+      ],
+      "on the last Saturday": [
+        "na zadnju subotu"
+      ],
+      "on day ${ dayOfMonth }": [
+        "na dan ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } put",
+        "${ count } puta",
+        "${ count } puta"
+      ],
+      "until ${ dateString }": [
+        "do ${ dateString }"
+      ],
+      "Daily": [
+        "Dnevno"
+      ],
+      "Every ${ interval } day": [
+        "Svaki ${ interval } dan",
+        "Svaka ${ interval } dana",
+        "Svakih ${ interval } dana"
+      ],
+      "Daily, ${ timesString }": [
+        "Dnevno, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Svaki ${ interval } dan, ${ timesString }",
+        "Svakih ${ interval } dana, ${ timesString }",
+        "Svakih ${ interval } dana, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Dnevno, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Svaki ${ interval } dan, ${ untilString }",
+        "Svakih ${ interval } dana, ${ untilString }",
+        "Svakih ${ interval } dana, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Nedjelja"
+      ],
+      "Monday": [
+        "Ponedjeljak"
+      ],
+      "Tuesday": [
+        "Utorak"
+      ],
+      "Wednesday": [
+        "Srijeda"
+      ],
+      "Thursday": [
+        "Četvrtak"
+      ],
+      "Friday": [
+        "Petak"
+      ],
+      "Saturday": [
+        "Subota"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Tjedno, svim danima"
+      ],
+      "Every ${ interval } week on all days": [
+        "Svaki ${ interval } tjedan, svim danima",
+        "Svaka ${ interval } tjedna, svim danima",
+        "Svakih ${ interval } tjedana, svim danima"
+      ],
+      "Weekly on Sunday": [
+        "Tjedno nedjeljom"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Svaki ${ interval } tjedan nedjeljom",
+        "Svaka ${ interval } tjedna nedjeljom",
+        "Svakih ${ interval } tjedana nedjeljom"
+      ],
+      "Weekly on Monday": [
+        "Tjedno ponedjeljkom"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Svaki ${ interval } tjedan ponedjeljkom",
+        "Svaka ${ interval } tjedna ponedjeljkom",
+        "Svakih ${ interval } tjedana ponedjeljkom"
+      ],
+      "Weekly on Tuesday": [
+        "Tjedno utorkom"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Svaki ${ interval } tjedan utorkom",
+        "Svaka ${ interval } tjedna utorkom",
+        "Svakih ${ interval } tjedana utorkom"
+      ],
+      "Weekly on Wednesday": [
+        "Tjedno srijedom"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Svaki ${ interval } tjedan srijedom",
+        "Svaka ${ interval } tjedna srijedom",
+        "Svakih ${ interval } tjedana srijedom"
+      ],
+      "Weekly on Thursday": [
+        "Tjedno četvrtkom"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Svaki ${ interval } tjedan četvrtkom",
+        "Svaka ${ interval } tjedna četvrtkom",
+        "Svakih ${ interval } tjedana četvrtkom"
+      ],
+      "Weekly on Friday": [
+        "Tjedno petkom"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Svaki ${ interval } tjedan petkom",
+        "Svaka ${ interval } tjedna petkom",
+        "Svakih ${ interval } tjedana petkom"
+      ],
+      "Weekly on Saturday": [
+        "Tjedno subotom"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Svaki ${ interval } tjedan subotom",
+        "Svaka ${ interval } tjedna subotom",
+        "Svakih ${ interval } tjedana subotom"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Tjedno na ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Tjedno svakim danom, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Tjedno nedjeljom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Tjedno ponedjeljkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Tjedno utorkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
+        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
+        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Tjedno srijedom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
+        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
+        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Tjedno četvrtkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Tjedno petkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Svaki ${ interval } tjedan petkom, ${ timesString }",
+        "Svaka ${ interval } tjedna petkom, ${ timesString }",
+        "Svakih ${ interval } tjedana petkom, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Tjedno subotom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Svaki ${ interval } tjedan subotom, ${ timesString }",
+        "Svaka ${ interval } tjedna subotom, ${ timesString }",
+        "Svakih ${ interval } tjedana subotom, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Tjedno na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Tjedno svakim danom, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Tjedno nedjeljom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Tjedno ponedjeljkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Tjedno utorkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
+        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
+        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Tjedno srijedom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
+        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
+        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Tjedno četvrtkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Tjedno petkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Svaki ${ interval } tjedan petkom, ${ untilString }",
+        "Svaka ${ interval } tjedna petkom, ${ untilString }",
+        "Svakih ${ interval } tjedana petkom, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Tjedno subotom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Svaki ${ interval } tjedan subotom, ${ untilString }",
+        "Svaka ${ interval } tjedna subotom, ${ untilString }",
+        "Svakih ${ interval } tjedana subotom, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Tjedno na ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Mjesečno ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mjesečno ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mjesečno ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Godišnje"
+      ],
+      "Every ${ interval } year": [
+        "Svaku ${ interval } godinu",
+        "Svake ${ interval } godine",
+        "Svakih ${ interval } godina"
+      ],
+      "Yearly, ${ timesString }": [
+        "Godišnje, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Svaku ${ interval } godinu, ${ timesString }",
+        "Svake ${ interval } godine, ${ timesString }",
+        "Svakih ${ interval } godina, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Godišnje, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Svaku ${ interval } godinu, ${ untilString }",
+        "Svake ${ interval } godine, ${ untilString }",
+        "Svakih ${ interval } godina, ${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Osnovna navigacija"
+      ],
+      "Basic actions": [
+        "Osnovne radnje"
+      ],
+      "Folder shortcuts": [
+        "Prečaci mapa"
+      ],
+      "Composer shortcuts": [
+        "Prečaci prozora za novu poruku"
+      ],
+      "List shortcuts": [
+        "Popis prečaca"
+      ],
+      "Action shortcuts": [
+        "Prečaci radnji"
+      ],
+      "Message shortcuts": [
+        "Prečaci poruke"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Premjesti gore"
+      ],
+      "Jump to first": [
+        "Preskoči na prvo"
+      ],
+      "Move down": [
+        "Premjesti dolje"
+      ],
+      "Jump to last": [
+        "Preskoči na zadnje"
+      ],
+      "Move right / expand": [
+        "Pomakni desno / proširi"
+      ],
+      "Move left / collapse": [
+        "Pomakni lijevo / smanji"
+      ],
+      "Apply / open": [
+        "Primijeni / otvori"
+      ],
+      "Cancel / close": [
+        "Odustani / zatvori"
+      ],
+      "Open this modal": [
+        "Otvori ovaj modal"
+      ],
+      "Select / unselect": [
+        "Odaberi / poništi odabir"
+      ],
+      "Go to Inbox": [
+        "Idi u Pristiglu poštu"
+      ],
+      "Go to Archive": [
+        "Idi u Arhivu"
+      ],
+      "Go to Sent": [
+        "Idi u Poslano"
+      ],
+      "Go to Starred": [
+        "Idi u Sa zvjezdicom"
+      ],
+      "Go to Drafts": [
+        "Idi u Skice"
+      ],
+      "Go to Trash": [
+        "Idi u Otpad"
+      ],
+      "Go to Spam": [
+        "Idi u Neželjenu poštu"
+      ],
+      "Go to All Mail": [
+        "Premjesti u Svu poštu"
+      ],
+      "Save draft": [
+        "Spremi skicu"
+      ],
+      "Send email": [
+        "Pošalji e-poruku"
+      ],
+      "Close draft": [
+        "Zatvori skicu"
+      ],
+      "Minimize / maximize composer": [
+        "Smanji / povećaj prozor za novu poruku"
+      ],
+      "Expand / contract composer": [
+        "Proširi / smanji prozor za novu poruku"
+      ],
+      "Attach file": [
+        "Priloži datoteku"
+      ],
+      "Add expiration time": [
+        "Dodaj vrijeme isteka"
+      ],
+      "Add encryption": [
+        "Dodaj šifriranje"
+      ],
+      "Discard draft": [
+        "Odbaci skicu"
+      ],
+      "Open previous message": [
+        "Otvori prethodnu poruku"
+      ],
+      "Open next message": [
+        "Otvori sljedeću poruku"
+      ],
+      "Show unread emails": [
+        "Prikaži nepročitane e-poruke"
+      ],
+      "Show all emails": [
+        "Prikaži svu e-poštu"
+      ],
+      "Select / unselect all": [
+        "Odaberi sve / poništi sav odabir"
+      ],
+      "Search": [
+        "Pretraga"
+      ],
+      "New message": [
+        "Nova poruka"
+      ],
+      "Star": [
+        "Zvjezdica"
+      ],
+      "Mark as unread": [
+        "Označi kao nepročitano"
+      ],
+      "Label as...": [
+        "Označi kao..."
+      ],
+      "Create filter with...": [
+        "Stvori filtar s..."
+      ],
+      "Move to...": [
+        "Premjesti u..."
+      ],
+      "Move to Inbox": [
+        "Premjesti u Pristiglu poštu"
+      ],
+      "Move to Archive": [
+        "Premjesti u Arhivu"
+      ],
+      "Move to Spam": [
+        "Premjesti u Neželjenu poštu"
+      ],
+      "Move to Trash": [
+        "Premjesti u Otpad"
+      ],
+      "Delete permanently": [
+        "Trajno izbriši"
+      ],
+      "Reply": [
+        "Odgovor"
+      ],
+      "Reply all": [
+        "Odgovori svima"
+      ],
+      "Forward": [
+        "Proslijedi"
+      ],
+      "Load remote content": [
+        "Učitaj udaljeni sadržaj"
+      ],
+      "Load embedded images": [
+        "Učitaj ugrađene slike"
+      ],
+      "Show original message": [
+        "Prikaži originalnu poruku"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "nepoznato"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Nepoznato"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard verzija < 3.0 nije podržana"
+      ],
+      "Encryption failed": [
+        "Neuspješno šifriranje"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Nije odabrana .csv ili .vcf datoteka"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Vaša datoteka ${ formattedFilename } je prazna."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Vaša datoteka ${ formattedFilename } nema kontakte za uvoz."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_CONTACTS_STRING } kontakata."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
       ]
     },
     "Event info. Organizer name": {
