@@ -455,11 +455,26 @@
       "here": [
         "di sini"
       ],
+      "Clear": [
+        "Bersihkan"
+      ],
+      "Add screenshot(s)": [
+        "Tambah tangkapan layar"
+      ],
+      "Hide info": [
+        "Sembunyikan info"
+      ],
+      "Show info": [
+        "Tampilkan info"
+      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Saya memiliki sebuah pertanyaan"
@@ -499,18 +514,6 @@
       ],
       "Composer mode": [
         "Mode menulis"
-      ],
-      "Clear": [
-        "Bersihkan"
-      ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
-      "Show info": [
-        "Tampilkan info"
       ],
       "Get started": [
         "Mulai"
@@ -599,17 +602,14 @@
       "New upload": [
         "Unggah baru"
       ],
-      "Delete permanently": [
-        "Hapus permanen"
+      "Upload file": [
+        "Unggah berkas"
       ],
-      "Restore from trash": [
-        "Kembalikan dari kotak sampah"
+      "Upload folder": [
+        "Unggah folder"
       ],
-      "Empty trash": [
-        "Kosongkan kotak sampah"
-      ],
-      "Rename": [
-        "Ubah nama"
+      "Create new folder": [
+        "Buat folder baru"
       ],
       "Move to folder": [
         "Pindah ke folder"
@@ -617,8 +617,8 @@
       "Move to trash": [
         "Pindah ke kotak sampah"
       ],
-      "Create new folder": [
-        "Buat folder baru"
+      "Rename": [
+        "Ubah nama"
       ],
       "Name: A to Z": [
         "Nama: A ke Z"
@@ -644,11 +644,29 @@
       "Size: large to small": [
         "Ukuran: besar ke kecil"
       ],
-      "Upload file": [
-        "Unggah berkas"
+      "List layout": [
+        "Senarai"
       ],
-      "Upload folder": [
-        "Unggah folder"
+      "Grid layout": [
+        "Kotak-kotak"
+      ],
+      "Preview": [
+        "Pratinjau"
+      ],
+      "Delete permanently": [
+        "Hapus permanen"
+      ],
+      "Restore from trash": [
+        "Kembalikan dari kotak sampah"
+      ],
+      "Empty trash": [
+        "Kosongkan kotak sampah"
+      ],
+      "Share file": [
+        "Bagikan berkas"
+      ],
+      "Stop sharing": [
+        "Berhenti berbagi"
       ],
       "Maximize transfers": [
         "Perbesar jendela transfer"
@@ -686,35 +704,20 @@
       "Remove from this list": [
         "Hapus dari daftar ini"
       ],
-      "Create": [
-        "Buat"
-      ],
-      "List layout": [
-        "Senarai"
-      ],
-      "Grid layout": [
-        "Kotak-kotak"
-      ],
-      "Preview": [
-        "Pratinjau"
-      ],
-      "Stop sharing": [
-        "Berhenti berbagi"
-      ],
       "Share": [
         "Bagikan"
       ],
       "Show shared link details": [
         ""
       ],
-      "Share file": [
-        "Bagikan berkas"
-      ],
       "Start recovering": [
         "Mulai memulihkan"
       ],
       "View more": [
         "Lihat lainnya"
+      ],
+      "Create": [
+        "Buat"
       ],
       "Move": [
         "Pindah"
@@ -868,6 +871,9 @@
       "Import contacts": [
         "Impor kontak"
       ],
+      "Report a problem": [
+        "Laporkan sebuah masalah"
+      ],
       "Open help menu": [
         "Buka menu bantuan"
       ],
@@ -876,9 +882,6 @@
       ],
       "Open settings menu": [
         "Buka menu pengaturan"
-      ],
-      "Report a problem": [
-        "Laporkan sebuah masalah"
       ],
       "Select a theme": [
         "Pilih tema"
@@ -1015,32 +1018,32 @@
       "Drop to upload": [
         "Taruh untuk mengunggah"
       ],
-      "Trash": [
-        "Sampah"
-      ],
-      "Empty trash": [
-        "Kosongkan sampah"
-      ],
       "Show actions": [
         "Tampilkan tindakan"
       ],
       "Sort files/folders": [
         "Urutkan berkas/folder"
       ],
+      "Change layout": [
+        "Ganti tata letak"
+      ],
+      "Trash": [
+        "Sampah"
+      ],
+      "Empty trash": [
+        "Kosongkan sampah"
+      ],
+      "Shared": [
+        "Dibagikan"
+      ],
+      "Additional settings": [
+        "Pengaturan tambahan"
+      ],
       "Cancel all active transfers": [
         "Batalkan semua transfer aktif"
       ],
       "My files": [
         "Berkas saya"
-      ],
-      "You have no folders yet": [
-        "Anda belum memiliki folder"
-      ],
-      "You have no files to share": [
-        "Anda tidak memiliki berkas untuk dibagikan"
-      ],
-      "Change layout": [
-        "Ganti tata letak"
       ],
       "Your file is ready to be downloaded": [
         "Berkas Anda siap diunduh"
@@ -1108,11 +1111,11 @@
       "Size": [
         "Ukuran"
       ],
-      "Shared": [
-        "Dibagikan"
-      ],
       "# of accesses": [
         "# akses"
+      ],
+      "You have no folders yet": [
+        "Anda belum memiliki folder"
       ],
       "Create a new folder": [
         "Buat folder baru"
@@ -1129,9 +1132,6 @@
       "Share via link": [
         "Bagikan via tautan"
       ],
-      "Additional settings": [
-        "Pengaturan tambahan"
-      ],
       "Manage secure link": [
         "Kelola tautan aman"
       ],
@@ -1143,6 +1143,9 @@
       ],
       "Discard": [
         "Batalkan"
+      ],
+      "You have no files to share": [
+        "Anda tidak memiliki berkas untuk dibagikan"
       ],
       "Files details": [
         "Informasi berkas"
@@ -1161,11 +1164,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Memuat"
-      ],
       "No results found": [
         "Tidak ada hasil"
+      ],
+      "Loading": [
+        "Memuat"
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
@@ -1707,8 +1710,23 @@
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
       ],
+      "There are no files yet": [
+        "Tidak ada berkas"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Seret berkas ke sini atau pilih berkas yang ingin diunggah."
+      ],
+      "No files or folders in trash": [
+        "Kotak sampah kosong"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Anda yakin ingin mengosongkan kotak sampah dan menghapus semua berkas secara permanen?"
+      ],
+      "Share files with links": [
+        "Berbagi berkas dengan tautan"
+      ],
+      "Create links and share your files with others.": [
+        "Buat tautan dan bagikan berkas Anda dengan yang lain."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Selesai"
@@ -1779,27 +1797,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Menutup jendela transfer akan membatalkan semua transfer yang sedang aktif. Anda yakin?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Buat folder pertama Anda dan pindahkan berkas Anda."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Pergi ke \"Berkas saya\" dan unggah beberapa berkas pertama kali."
-      ],
-      "No files or folders in trash": [
-        "Kotak sampah kosong"
-      ],
-      "There are no files yet": [
-        "Tidak ada berkas"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Seret berkas ke sini atau pilih berkas yang ingin diunggah."
-      ],
-      "Share files with links": [
-        "Berbagi berkas dengan tautan"
-      ],
-      "Create links and share your files with others.": [
-        "Buat tautan dan bagikan berkas Anda dengan yang lain."
-      ],
       "Link expires: ": [
         "Tautan kedaluwarsa: "
       ],
@@ -1836,6 +1833,9 @@
       "No": [
         "Tidak"
       ],
+      "Create your first folder and start moving your files.": [
+        "Buat folder pertama Anda dan pindahkan berkas Anda."
+      ],
       "Anyone with this link can access your file.": [
         "Siapapun dengan tautan ini bisa mengakses berkas Anda."
       ],
@@ -1865,6 +1865,9 @@
       ],
       "Creating link to file": [
         "Membuat tautan untuk berkas"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Pergi ke \"Berkas saya\" dan unggah beberapa berkas pertama kali."
       ],
       "Select an uploaded file and create a link to it.": [
         "Pilih sebuah berkas yang diunggah dan buat sebuah tautan untuk berkas itu."
@@ -2129,6 +2132,15 @@
       "Unknown file": [
         "Berkas tidak diketahui"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "Folder"
       ],
@@ -2254,14 +2266,14 @@
       "Upgrade account": [
         "Tingkatkan akun"
       ],
+      "clearing your browser cache": [
+        "membersihkan singgahan peramban Anda"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Go to subscription plans": [
         "Ke paket langganan"
-      ],
-      "clearing your browser cache": [
-        "membersihkan singgahan peramban Anda"
       ],
       "click here": [
         ""
@@ -2471,6 +2483,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
@@ -2962,45 +2977,6 @@
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Pengaturan"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Aktif"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Tidak ada gambar yang dipilih"
@@ -3102,6 +3078,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Pengaturan"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Aktif"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Nonaktif"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Dimaksimalkan"
+      ],
+      "Normal": [
+        "Normal"
       ]
     },
     "Onboarding Proton": {
@@ -3649,6 +3664,11 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Nama"
@@ -3761,11 +3781,6 @@
       ],
       "Address": [
         "Alamat"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
       ]
     },
     "PGP key warning": {

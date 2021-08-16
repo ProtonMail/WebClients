@@ -6,72 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "This field is required": [
-        "Acest câmp este obligatoriu"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minim de ${ minimumLength } caractere."
-      ],
-      "Email is not valid": [
-        "E-mailul nu este valid"
-      ],
-      "Not a valid number": [
-        "Nu este un număr valid"
-      ],
-      "Passwords do not match": [
-        "Parolele nu coincid"
-      ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
-      ],
-      "Signature verification failed": [
-        "Eșuare verificare semnătură"
-      ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Nu s-a găsit adresa cheii private primare."
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Cheia privată primară a calendarului nu este decriptată."
-      ],
-      "Missing signature": [
-        "Semnătură lipsă."
-      ],
-      "Contact signature not verified": [
-        "Semnătura contactului nu a fost verificată"
-      ],
-      "Signature not verified": [
-        "Semnătură neverificată"
-      ],
-      "Invalid name": [
-        "Nume nevalid."
-      ],
-      "Email address disabled": [
-        "Adresă de e-mail dezactivată"
-      ],
-      "No keys retrieved for internal user": [
-        "Nicio cheie preluată pentru utilizatorul intern"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nicio cheie validă preluată pentru utilizatorul intern"
-      ],
-      "Contact signature could not be verified": [
-        "Semnătura contactului nu a putut fi verificată"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nicio cheie preluată pentru utilizatorul intern nu este valabilă pentru trimitere."
-      ],
-      "Trusted keys are not valid for sending": [
-        "Cheile de încredere nu sunt valide pentru trimitere."
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nicio cheie WKD preluată pentru utilizator nu este validă pentru trimitere."
-      ],
-      "The sending key is not valid": [
-        "Cheia de trimitere nu este validă."
-      ],
       "Unknown error": [
         "Eroare necunoscută."
       ],
@@ -92,6 +26,9 @@
       ],
       "Email address invalid": [
         "Adresă de e-mail nevalidă"
+      ],
+      "This field is required": [
+        "Acest câmp este obligatoriu"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -151,17 +88,14 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja."
       ],
+      "Invalid name": [
+        "Nume nevalid."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Parolă mesaje incorectă. Reîncercați."
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Date de conectare incorecte. Reîncercați."
       ],
       "Process aborted": [
         "Proces abandonat."
@@ -223,6 +157,12 @@
       "Invalid code": [
         "Cod nevalid."
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Parolă mesaje incorectă. Reîncercați."
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Date de conectare incorecte. Reîncercați."
+      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -234,6 +174,66 @@
       ],
       "Name required": [
         "Numele este obligatoriu"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minim de ${ minimumLength } caractere."
+      ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
+      ],
+      "Request timed out.": [
+        "Solicitarea a expirat."
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "Could not find address ${ email }.": [
+        "Nu s-a putut găsi adresa ${ email }."
+      ],
+      "Address primary private key not found": [
+        "Nu s-a găsit adresa cheii private primare."
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Cheia privată primară a calendarului nu este decriptată."
+      ],
+      "Missing signature": [
+        "Semnătură lipsă."
+      ],
+      "Contact signature not verified": [
+        "Semnătura contactului nu a fost verificată"
+      ],
+      "Signature not verified": [
+        "Semnătură neverificată"
+      ],
+      "Email address disabled": [
+        "Adresă de e-mail dezactivată"
+      ],
+      "No keys retrieved for internal user": [
+        "Nicio cheie preluată pentru utilizatorul intern"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Nicio cheie validă preluată pentru utilizatorul intern"
+      ],
+      "Contact signature could not be verified": [
+        "Semnătura contactului nu a putut fi verificată"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Nicio cheie preluată pentru utilizatorul intern nu este valabilă pentru trimitere."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Cheile de încredere nu sunt valide pentru trimitere."
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nicio cheie WKD preluată pentru utilizator nu este validă pentru trimitere."
+      ],
+      "The sending key is not valid": [
+        "Cheia de trimitere nu este validă."
       ],
       "Self invitation not allowed": [
         "Autoinvitarea nu este permisă"
@@ -313,1946 +313,10 @@
         "Eroare"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter.",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "baiți"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nume"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Photo": [
-        "Fotografie"
-      ],
-      "Organization": [
-        "Organizația"
-      ],
-      "Birthday": [
-        "Data nașterii"
-      ],
-      "Anniversary": [
-        "Aniversare"
-      ],
-      "Title": [
-        "Adresare"
-      ],
-      "Role": [
-        "Rol"
-      ],
-      "Note": [
-        "Observații"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Gen"
-      ],
-      "Language": [
-        "Limba"
-      ],
-      "Timezone": [
-        "Fus orar"
-      ],
-      "Geo": [
-        "Coordonate"
-      ],
-      "Logo": [
-        "Sigla"
-      ],
-      "Member": [
-        "Membru"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Serviciu"
-      ],
-      "Personal": [
-        "Personal"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Altul"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Pager"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
-      ],
-      "Home": [
-        "Acasă"
-      ],
-      "Work": [
-        "Serviciu"
-      ],
-      "Other": [
-        "Altul"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Address": [
-        "Adresa"
-      ]
-    },
-    "Info": {
-      "Session timed out.": [
-        "Sesiune expirată."
-      ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
-      ],
-      "Servers are unreachable.": [
-        "Serverele nu sunt accesibile."
-      ],
-      "Custom daily": [
-        "Zilnic personalizat"
-      ],
-      "Custom weekly": [
-        "Săptămânal personalizat"
-      ],
-      "Custom monthly": [
-        "Lunar personalizat"
-      ],
-      "Custom yearly": [
-        "Anual personalizat"
-      ],
-      "Custom": [
-        "Personalizat"
-      ],
-      "Daily": [
-        "Zilnic"
-      ],
-      "Monthly ${ onDayString }": [
-        "Lunar ${ onDayString }"
-      ],
-      "Yearly": [
-        "Anual"
-      ],
-      "Loading": [
-        "Se încarcă"
-      ],
-      "No results found": [
-        "Nu s-au găsit rezultate"
-      ],
-      "support team": [
-        "echipa de suport"
-      ],
-      "No contacts added yet": [
-        "Încă nu s-au adăugat contacte"
-      ],
-      "Week": [
-        "Săptămâna"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Se va deschide o nouă filă în navigator cu adresa:"
-      ],
-      "Learn more": [
-        "Detalii"
-      ],
-      "Drop the file here to upload": [
-        "Plasați fișierul aici pentru a fi încărcat"
-      ],
-      "(${ memberCount } member)": [
-        "(Un membru)",
-        "(${ memberCount } membri)",
-        "(${ memberCount } de membri)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "E-mailul va fi folosit doar pentru această verificare unică."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Dacă aveți probleme cu crearea contului, solicitați o invitație și vă vom răspunde în termen de o zi lucrătoare."
-      ],
-      "Loading ${ appName }": [
-        "Se încarcă ${ appName }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "Un membru",
-        "${ contactEmailsLength } membri",
-        "${ contactEmailsLength } de membri"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } și ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa de e-mail sau adresele de adăugat în acest grup."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Se verifică contactul ${ progress } din ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "S-a actualizat un contact.",
-        "S-au actualizat ${ updated } contacte.",
-        "S-au actualizat ${ updated } de contacte."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Pentru a vă recupera datele, trebuie să reactivați cheia de criptare a contactelor folosită în momentul creării datelor. Va trebui să vă amintiți parola utilizată atunci când a fost generată cheia."
-      ],
-      "Key fingerprint": [
-        "Amprentă cheie"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
-      ],
-      "Group assignment applied": [
-        "Atribuire grup aplicată"
-      ],
-      "Create a new contact group": [
-        "Creare grup contacte"
-      ],
-      "No group found": [
-        "Nu există grupuri"
-      ],
-      "Duplicate key updated": [
-        "Cheie duplicat actualizată"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
-      ],
-      "Primary": [
-        "Primară"
-      ],
-      "No email address": [
-        "Lipsă adresă de e-mail"
-      ],
-      "${ contactsCount } contact found": [
-        "S-a găsit un contact",
-        "S-au găsit ${ contactsCount } contacte",
-        "S-au găsit ${ contactsCount } de contacte"
-      ],
-      "${ groupCounts } group found": [
-        "S-a găsit un grup",
-        "S-au găsit ${ groupCounts } grupuri",
-        "S-au găsit ${ groupCounts } de grupuri"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
-      ],
-      "${ addressCount } email address": [
-        "O adresă de e-mail",
-        "${ addressCount } adrese de e-mail",
-        "${ addressCount } de adrese de e-mail"
-      ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
-      ],
-      "Import contacts": [
-        ""
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        ""
-      ],
-      "Your import has started!": [
-        ""
-      ],
-      "We will notify you once your import is finished.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        ""
-      ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "here": [
-        "aici"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } spațiu bonus"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+ o conexiune pentru ProtonVPN (permite conectarea mai multor dispozitive la VPN)",
-        "+${ organization.BonusVPN } conexiuni pentru ProtonVPN (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } de conexiuni pentru ProtonVPN (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Banca solicită verificarea cu sistemul 3-D Secure din motive de securitate."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu se va aplica nici o taxă. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Pentru verificare se va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pentru verificarea plății se va deschide o filă către PayPal."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Pentru verificarea efectuării plății se va deschide o filă către bancă."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Verificați cardul în noua filă deschisă."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verificați efectuarea plății în noua fereastră deschisă."
-      ],
-      "Verification can take a few minutes.": [
-        "Verificarea poate dura câteva minute."
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Verificarea plății poate dura câteva minute."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Mai încercați, folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Mai încercați, folosiți o metodă de plată diferită sau sunați-vă banca pentru asistență."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pentru Visa și MasterCard, cele 3 cifre de pe spatele cardului. Pentru American Express, cele 4 cifre de pe faţa cardului."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Suma este sub minimul acceptat (${ amount })."
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Verificați plata în noua filă."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceți clic pe butonul de mai jos."
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Aceasta va activa PayPal ca metodă de plată pentru abonamentul la Proton. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Trebuie să aveți un card de credit sau un cont bancar asociat cu contul de PayPal pentru a-l adăuga ca metodă de plată."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Folosim 3-D Secure pentru a vă proteja plățile."
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Facturat cu ${ billedPrice } anual"
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Facturat cu ${ billedPrice } la doi ani"
-      ],
-      "Included": [
-        "Inclus"
-      ],
-      "* Customizable features": [
-        "* Funcții personalizabile"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Pentru a folosi mesaje private și securizate."
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Un internet gratuit și necenzurat ce ar trebui să fie disponibil tuturor."
-      ],
-      "Starter VPN service with P2P support.": [
-        "Serviciu VPN de bază cu suport P2P."
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "VPN complet cu viteză de până la 10 Gbps."
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Pentru persoanele care au nevoie de o căsuță poștală cu funcții complete și protecție avansată."
-      ],
-      "For professionals that need secure business communications.": [
-        "Pentru profesioniștii care au nevoie de comunicații de afaceri securizate."
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } pachet pentru familii și afaceri mici."
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Pentru familii şi echipe mici; include atât e-mail cât şi VPN."
-      ],
-      "Save 20%": [
-        "Economisiți 20%"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Contul se convertește, ar putea dura până la 30 de secunde."
-      ],
-      "Thank you for supporting our mission.": [
-        "Vă mulțumim pentru că ne sprijiniți misiunea."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Contul va fi modificat după verificarea plății."
-      ],
-      "Account successfully updated": [
-        "Contul a fost actualizat."
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
-      ],
-      "(Mail + VPN)": [
-        "(e-mail + VPN)"
-      ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } gratuit"
-      ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } gratuit"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturat la sfârșitul ciclului curent de facturare (reînnoire la ${ renewalDate })"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul. ${ linkButton }"
-      ],
-      "No payment is required at this time.": [
-        "Momentan nu este necesară nici o plată."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Cuponul ${ code } a aplicat o reducere de 20%."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "S-a aplicat reducerea de „Vinerea neagră” 2018 la abonament."
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "S-a aplicat reducerea de „Vinerea neagră” 2019 la abonament."
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Reducerea de „Vinerea Neagră” 2020 pentru utilizatorii noi a fost aplicată."
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Cuponul ${ code } a aplicat o reducere de 20% la abonament."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
-      ],
-      "30 days money-back guarantee.": [
-        "Banii înapoi în 30 de zile garantat."
-      ],
-      "Save extra 20%": [
-        "Mai economisiți 20%"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } din abonament trecând la ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } pentru e-mail și VPN prin adăugarea unui abonament de e-mail."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } pentru e-mail și VPN prin adăugarea unui abonament de VPN."
-      ],
-      "Storage GB": [
-        "GB stocare"
-      ],
-      "Users": [
-        "Utilizatori"
-      ],
-      "Domains": [
-        "Domenii"
-      ],
-      "Addresses": [
-        "Adrese"
-      ],
-      "Connections": [
-        "Conexiuni"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Vă permite să găzduiți e-mailuri pe domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com."
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Adăugați adrese suplimentare în cont precum utilizator2@protonmail.com."
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Numărul de conexiuni VPN care poate fi atribuit utilizatorilor. Fiecare dispozitiv conectat consumă o conexiune VPN."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus este limitat la un utilizator și începe cu 5 GB de stocare."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Treceți la ${ professionalPlan } pentru a adăuga mai mulți utilizatori."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include o conexiune VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexiuni VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } de conexiuni VPN."
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Fiecare conexiune suplimentară poate fi atribuită utilizatorilor din organizație."
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Treceți la ${ professionalPlan } pentru a adăuga mai multe conexiuni."
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Profesional începe cu un utilizator și fiecare utilizator adaugă 5 GB și 5 adrese de e-mail la totalul organizației."
-      ],
-      "Not customizable": [
-        "Nu poate fi personalizat"
-      ],
-      "Expired": [
-        "Expirat"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
-      ],
-      "Free up some space or add more storage space.": [
-        "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Eliberați ceva spațiu sau contactați administratorul."
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "S-a atins capacitatea maximă de stocare. Nu se mai pot trimite sau primi mesaje. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "Internet connection restored.": [
-        "Conexiunea la internet a revenit."
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "V-ați conectat cu ${ user.Name } (${ user.Email }) și aveți acces restricționat."
-      ],
-      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Ați activat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza cea mai recentă versiune de ${ appName }. Aplicația va fi reîncărcată."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Ați dezactivat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza versiunea stabilă de ${ appName }. Aplicația va fi reîncărcată."
-      ],
-      "Manage your calendars": [
-        "Gestionare calendare"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } a fost adăugată la serviciul Proton. Ne-ar plăcea să auzim ce credeți despre această aplicație!"
-      ],
-      "Loading events": [
-        "Se încarcă evenimentele"
-      ],
-      "The organizer cannot be notified that you decline the invitation:": [
-        "Organizatorul nu poate fi notificat că refuzați invitația:"
-      ],
-      "Would you like to delete the event anyway?": [
-        "Doriți totuși să ștergeți acest eveniment?"
-      ],
-      "None of the participants can be notified about your changes:": [
-        "Niciun participant nu poate fi notificat cu privire la modificările pe care le-ați efectuat:"
-      ],
-      "The following participants cannot be notified about your changes:": [
-        "Următorii participanți nu pot fi notificați privind modificările pe care le-ați efectuat:"
-      ],
-      "Would you like to continue anyway?": [
-        "Doriți totuși să continuați?"
-      ],
-      "Discard changes?": [
-        "Anulare modificări?"
-      ],
-      "You will lose all unsaved changes.": [
-        "Veți pierde toate modificările nesalvate."
-      ],
-      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Organizatorul acestui eveniment va fi notificat că refuzați invitația. Doriți să ștergeți acest eveniment?"
-      ],
-      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Organizatorul acestui eveniment nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Un e-mail de anulare va fi trimis participanților la eveniment. Doriți să ștergeți acest eveniment?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți acest eveniment?"
-      ],
-      "Would you like to delete this event?": [
-        "Doriți să ștergeți acest eveniment?"
-      ],
-      "Which event would you like to delete?": [
-        "Ce eveniment doriți să ștergeți?"
-      ],
-      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Acest eveniment a fost actualizat. Organizatorul va fi notificat că refuzați invitația. Doriți să ștergeți acest eveniment?"
-      ],
-      "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Acest eveniment a fost actualizat de către organizator. Doriți să ştergeți acest eveniment?"
-      ],
-      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Acest eveniment a fost actualizat. Organizatorul nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
-      ],
-      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Un e-mail de anulare va fi trimis participanților la eveniment. Doriți să ștergeți toate evenimentele din această serie?"
-      ],
-      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți toate evenimentele din această serie?"
-      ],
-      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Organizatorul acestei serii de evenimente va fi notificat că refuzați invitația. Doriți să ştergeți toate evenimentele din această serie?"
-      ],
-      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "Organizatorul acestei serii de evenimente nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți toate evenimentele din această serie?"
-      ],
-      "Would you like to delete all the events in this series?": [
-        "Doriți să ștergeți toate evenimentele din această serie?"
-      ],
-      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "Evenimentele actualizate anterior de organizator vor fi păstrate, dar unele din răspunsurile dvs. vor fi pierdute."
-      ],
-      "Occurrences previously updated by the organizer will be kept.": [
-        "Manifestările anterioare actualizate de organizator vor fi păstrate."
-      ],
-      "Which event would you like to update?": [
-        "Ce eveniment doriți să ștergeți?"
-      ],
-      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Acest eveniment a fost actualizat de către organizator. Doriți să vă schimbați răspunsul doar pentru această manifestare din serie?"
-      ],
-      "Would you like to update this event?": [
-        "Doriți să actualizați acest eveniment?"
-      ],
-      "Would you like to change your answer for all the events in this series?": [
-        "Doriţi să vă schimbaţi răspunsul pentru toate evenimentele din serie?"
-      ],
-      "Added and removed participants will be notified about all the events in this series.": [
-        "Participanţii adăugaţi şi eliminaţi vor fi notificaţi cu privire la toate evenimentele din această serie."
-      ],
-      "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Veţi actualiza toate evenimentele din această serie. Participanţii adăugați şi eliminaţi vor fi notificați."
-      ],
-      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Veţi actualiza toate evenimentele din această serie. Participanții existenți, adăugați şi eliminați vor fi notificați."
-      ],
-      "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Veţi actualiza toate evenimentele din această serie. Participanţii existenți și adăugaţi vor fi notificaţi."
-      ],
-      "You will update all the events in this series. Removed participants will be notified.": [
-        "Veţi actualiza toate evenimentele din această serie. Participanţii eliminaţi vor fi notificaţi."
-      ],
-      "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Veţi actualiza toate evenimentele din această serie. Participanţii existenți și eliminați vor fi notificaţi."
-      ],
-      "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Veţi actualiza toate evenimentele din această serie. O invitaţie va fi trimisă participanţilor la eveniment."
-      ],
-      "Would you like to update all events in this series?": [
-        "Doriţi să actualizați toate evenimentele din serie?"
-      ],
-      "Previous modifications on this series will be lost.": [
-        "Modificările anterioare ale acestei serii vor fi pierdute."
-      ],
-      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
-      ],
-      "Frequency modifications will be lost.": [
-        "Modificările de frecvență vor fi pierdute."
-      ],
-      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "Organizatorul a actualizat unele dintre evenimentele din această serie. Schimbarea calendarului nu este încă suportată pentru acest tip de evenimente recurente."
-      ],
-      "Update recurring event": [
-        "Actualizare eveniment recurent"
-      ],
-      "Added and removed participants will be notified.": [
-        "Participanții adăugați şi eliminaţi vor fi notificați."
-      ],
-      "An invitation will be sent to added participants.": [
-        "O invitație va fi trimisă participanților adăugați."
-      ],
-      "A cancellation email will be sent to removed participants.": [
-        "Un e-mail de anulare va fi trimis participanților eliminați."
-      ],
-      "Existent, added and removed participants will be notified.": [
-        "Participanții existenți, adăugați şi eliminați vor fi notificați."
-      ],
-      "Existent and added participants will be notified.": [
-        "Participanţii existenți și adăugaţi vor fi notificaţi."
-      ],
-      "Removed participants will be notified.": [
-        "Participanţii eliminaţi vor fi notificaţi."
-      ],
-      "Existent and removed participants will be notified.": [
-        "Participanţii existenți și eliminați vor fi notificaţi."
-      ],
-      "An invitation will be sent to the event participants.": [
-        "O invitație va fi trimisă participanților la eveniment."
-      ],
-      "Please remove the duplicates and try again.": [
-        "Eliminați duplicatele și reîncercați."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted. Any shared calendar links you created previously will no longer work.": [
-        "Ați resetat parola și evenimentele legate de următoarele calendare nu au putut fi decriptate. Niciun calendar comun creat anterior nu va mai funcționa."
-      ],
-      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Ați reactivat cheile și evenimentele legate de următoarele calendare se pot decripta acum."
-      ],
-      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Cel mult 100 de participanți sunt autorizați per invitație"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Puteți modifica doar proprietățile evenimentelor personale deoarece nu puteți trimite e-mailuri de la adresa organizatorului."
-      ],
-      "Loading event": [
-        "Se încarcă evenimentul"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } începe acum"
-      ],
-      "${ title } starts today": [
-        "${ title } începe astăzi"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } a început la ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } a început ieri"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } a început ieri la ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } a început ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } a început ${ formattedDate } la ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } a început ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } a început ${ _formattedDate } la ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } a început ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } a început ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } va începe la ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } va începe mâine"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } va începe mâine la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } va începe ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } va începe ${ _formattedDate2 } la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } va începe ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } va începe ${ _formattedDate3 } la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } va începe ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } va începe ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(fără titlu)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Dvs."
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Anulare eveniment ce are loc ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Invitație la un eveniment ce are loc ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Actualizarea unui eveniment ce are loc ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Anulare eveniment care începe ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Invitație la un eveniment care începe ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Actualizarea unui eveniment care începe ${ formattedStart }"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Invitație: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Când: ${ formattedStart } (toată ziua)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Când: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Când: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Unde: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descriere: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } a fost anulat."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "în prima duminică"
-      ],
-      "on the first Monday": [
-        "în prima luni"
-      ],
-      "on the first Tuesday": [
-        "în prima marți"
-      ],
-      "on the first Wednesday": [
-        "în prima miercuri"
-      ],
-      "on the first Thursday": [
-        "în prima joi"
-      ],
-      "on the first Friday": [
-        "în prima vineri"
-      ],
-      "on the first Saturday": [
-        "în prima sâmbătă"
-      ],
-      "on the second Sunday": [
-        "în a doua duminică"
-      ],
-      "on the second Monday": [
-        "în a doua luni"
-      ],
-      "on the second Tuesday": [
-        "în a doua marți"
-      ],
-      "on the second Wednesday": [
-        "în a doua miercuri"
-      ],
-      "on the second Thursday": [
-        "în a doua joi"
-      ],
-      "on the second Friday": [
-        "în a doua vineri"
-      ],
-      "on the second Saturday": [
-        "în a doua sâmbătă"
-      ],
-      "on the third Sunday": [
-        "în a treia duminică"
-      ],
-      "on the third Monday": [
-        "în a treia luni"
-      ],
-      "on the third Tuesday": [
-        "în a treia marți"
-      ],
-      "on the third Wednesday": [
-        "în a treia miercuri"
-      ],
-      "on the third Thursday": [
-        "în a treia joi"
-      ],
-      "on the third Friday": [
-        "în a treia vineri"
-      ],
-      "on the third Saturday": [
-        "în a treia sâmbătă"
-      ],
-      "on the fourth Sunday": [
-        "în a patra duminică"
-      ],
-      "on the fourth Monday": [
-        "în a patra luni"
-      ],
-      "on the fourth Tuesday": [
-        "în a patra marți"
-      ],
-      "on the fourth Wednesday": [
-        "în a patra miercuri"
-      ],
-      "on the fourth Thursday": [
-        "în a patra joi"
-      ],
-      "on the fourth Friday": [
-        "în a patra vineri"
-      ],
-      "on the fourth Saturday": [
-        "în a patra sâmbătă"
-      ],
-      "on the last Sunday": [
-        "în ultima duminică"
-      ],
-      "on the last Monday": [
-        "în ultima luni"
-      ],
-      "on the last Tuesday": [
-        "în ultima marți"
-      ],
-      "on the last Wednesday": [
-        "în ultima miercuri"
-      ],
-      "on the last Thursday": [
-        "în ultima joi"
-      ],
-      "on the last Friday": [
-        "în ultima vineri"
-      ],
-      "on the last Saturday": [
-        "în ultima sâmbătă"
-      ],
-      "on day ${ dayOfMonth }": [
-        "în ziua ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "O dată",
-        "de ${ count } ori",
-        "de ${ count } de ori"
-      ],
-      "until ${ dateString }": [
-        "până la ${ dateString }"
-      ],
-      "Daily": [
-        "Zilnic"
-      ],
-      "Every ${ interval } day": [
-        "Zilnic",
-        "La fiecare ${ interval } zile",
-        "La fiecare ${ interval } de zile"
-      ],
-      "Daily, ${ timesString }": [
-        "Zilnic, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Zilnic, ${ timesString }",
-        "La fiecare ${ interval } zile, ${ timesString }",
-        "La fiecare ${ interval } de zile, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Zilnic, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Zilnic, ${ untilString }",
-        "La fiecare ${ interval } zile, ${ untilString }",
-        "La fiecare ${ interval } de zile, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Duminică"
-      ],
-      "Monday": [
-        "Luni"
-      ],
-      "Tuesday": [
-        "Marți"
-      ],
-      "Wednesday": [
-        "Miercuri"
-      ],
-      "Thursday": [
-        "Joi"
-      ],
-      "Friday": [
-        "Vineri"
-      ],
-      "Saturday": [
-        "Sâmbătă"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Zilnic, săptămânal"
-      ],
-      "Every ${ interval } week on all days": [
-        "Zilnic, săptămânal",
-        "Zilnic, la fiecare ${ interval } săptămâni",
-        "Zilnic, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Sunday": [
-        "Duminică, săptămânal"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Duminică, săptămânal",
-        "Duminică, la fiecare ${ interval } săptămâni",
-        "Duminică, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Monday": [
-        "Luni, săptămânal"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Luni, săptămânal",
-        "Luni, la fiecare ${ interval } săptămâni",
-        "Luni, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Tuesday": [
-        "Marți, săptămânal"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Marți, săptămânal",
-        "Marți, la fiecare ${ interval } săptămâni",
-        "Marți, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Wednesday": [
-        "Miercuri, săptămânal"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Miercuri, săptămânal",
-        "Miercuri, la fiecare ${ interval } săptămâni",
-        "Miercuri, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Thursday": [
-        "Joi, săptămânal"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Joi, săptămânal",
-        "Joi, la fiecare ${ interval } săptămâni",
-        "Joi, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Friday": [
-        "Vineri, săptămânal"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Vineri, săptămânal",
-        "Vineri, la fiecare ${ interval } săptămâni",
-        "Vineri, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Saturday": [
-        "Sâmbătă, săptămânal"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Sâmbătă, săptămânal",
-        "Sâmbătă, la fiecare ${ interval } săptămâni",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "${ multipleDaysString }, săptămânal"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Săptămânal, ${ multipleDaysString }",
-        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }",
-        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Zilnic, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Săptămânal, zilnic, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, zilnic, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, zilnic, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Duminică, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Duminica, săptămânal, ${ timesString }",
-        "Duminica, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Duminica, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Luni, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Luni, săptămânal, ${ timesString }",
-        "Luni, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Luni, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Marți, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Marți, săptâmânal, ${ timesString }",
-        "Marți, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Marți, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Miercuri, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Miercuri, săptâmânal, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Joi, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Joi, săptâmânal, ${ timesString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Vineri, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Vineri, săptâmânal, ${ timesString }",
-        "Vineri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Vineri, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Sâmbătă, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Sâmbătă, săptâmânal, ${ timesString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Săptămânal ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ multipleDaysString }, săptâmânal, ${ timesString }",
-        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Zilnic, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Zilnic, săptâmânal, ${ untilString }",
-        "Zilnic, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Zilnic, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Duminică, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Duminică, săptâmânal, ${ untilString }",
-        "Duminică, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Duminică, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Luni, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Luni, săptâmânal, ${ untilString }",
-        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Luni, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Marți, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Marți, săptâmânal, ${ untilString }",
-        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Marți, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Miercuri, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Miercuri, săptâmânal, ${ untilString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Vineri, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Vineri, săptâmânal, ${ untilString }",
-        "Vineri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Vineri, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Sâmbătă, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Sâmbătă, la fiecare ${ interval } săptămână, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Săptămânal ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ multipleDaysString }, săptâmânal, ${ untilString }",
-        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Lunar, ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "${ onDayString }, lunar",
-        "${ onDayString }, la fiecare ${ interval } luni",
-        "${ onDayString }, la fiecare ${ interval } de luni"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "${ onDayString }, lunar, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ onDayString }, lunar, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "${ onDayString }, lunar, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ onDayString }, lunar, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Anual"
-      ],
-      "Every ${ interval } year": [
-        "Anual",
-        "La fiecare ${ interval } ani",
-        "La fiecare ${ interval } de ani"
-      ],
-      "Yearly, ${ timesString }": [
-        "Anual, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Anual, ${ timesString }",
-        "La fiecare ${ interval } ani, ${ timesString }",
-        "La fiecare ${ interval } ani, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Anual, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Anual, ${ untilString }",
-        "La fiecare ${ interval } ani, ${ untilString }",
-        "La fiecare ${ interval } de ani, ${ untilString }"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Navigare de bază"
-      ],
-      "Basic actions": [
-        "Acțiuni de bază"
-      ],
-      "Folder shortcuts": [
-        "Combinații de taste foldere"
-      ],
-      "Composer shortcuts": [
-        "Combinații de taste editor mesaje"
-      ],
-      "List shortcuts": [
-        "Combinații de taste listă mesaje"
-      ],
-      "Action shortcuts": [
-        "Combinații de taste acțiuni"
-      ],
-      "Message shortcuts": [
-        "Combinații de taste mesaje"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Mutare în sus"
-      ],
-      "Jump to first": [
-        "Salt la primul"
-      ],
-      "Move down": [
-        "Mutare în jos"
-      ],
-      "Jump to last": [
-        "Salt la ultimul"
-      ],
-      "Move right / expand": [
-        "Mutare la dreapta/extindere"
-      ],
-      "Move left / collapse": [
-        "Mutare la stânga/restrângere"
-      ],
-      "Apply / open": [
-        "Aplicare/deschidere"
-      ],
-      "Cancel / close": [
-        "Anulare/închidere"
-      ],
-      "Open this modal": [
-        "Deschidere ca fereastră"
-      ],
-      "Select / unselect": [
-        "Selectare/deselectare"
-      ],
-      "Go to Inbox": [
-        "Accesare «Primite»"
-      ],
-      "Go to Archive": [
-        "Accesare «Arhivă»"
-      ],
-      "Go to Sent": [
-        "Accesare «Trimise»"
-      ],
-      "Go to Starred": [
-        "Accesare «Cu stea»"
-      ],
-      "Go to Drafts": [
-        "Accesare «Ciorne»"
-      ],
-      "Go to Trash": [
-        "Accesare «Gunoi»"
-      ],
-      "Go to Spam": [
-        "Accesare «Nedorite»"
-      ],
-      "Go to All Mail": [
-        "Accesare «Toate mesajele»"
-      ],
-      "Save draft": [
-        "Salvare ciornă"
-      ],
-      "Send email": [
-        "Trimitere e-mail"
-      ],
-      "Close draft": [
-        "Închidere ciornă"
-      ],
-      "Minimize / maximize composer": [
-        "Micșorare/mărire editor"
-      ],
-      "Expand / contract composer": [
-        "Extindere/restrângere editor"
-      ],
-      "Attach file": [
-        "Atașare fișier"
-      ],
-      "Add expiration time": [
-        "Adăugare dată de expirare"
-      ],
-      "Add encryption": [
-        "Adăugare criptare"
-      ],
-      "Discard draft": [
-        "Aruncare ciornă"
-      ],
-      "Open previous message": [
-        "Deschidere mesaj anterior"
-      ],
-      "Open next message": [
-        "Deschidere mesaj următor"
-      ],
-      "Show unread emails": [
-        "Afișare mesaje necitite"
-      ],
-      "Show all emails": [
-        "Afișare toate mesajele"
-      ],
-      "Select / unselect all": [
-        "Selectare/deselectare toate"
-      ],
-      "Search": [
-        "Căutare"
-      ],
-      "New message": [
-        "Mesaj nou"
-      ],
-      "Star": [
-        "Marcare cu stea"
-      ],
-      "Mark as unread": [
-        "Marcare ca necitit"
-      ],
-      "Label as...": [
-        "Etichetare ca..."
-      ],
-      "Create filter with...": [
-        "Creare filtru cu..."
-      ],
-      "Move to...": [
-        "Mutare în..."
-      ],
-      "Move to Inbox": [
-        "Mutare în «Primite»"
-      ],
-      "Move to Archive": [
-        "Mutare în «Arhivă»"
-      ],
-      "Move to Spam": [
-        "Mutare în «Nedorite»"
-      ],
-      "Move to Trash": [
-        "Mutare în «Gunoi»"
-      ],
-      "Delete permanently": [
-        "Ștergere permanentă"
-      ],
-      "Reply": [
-        "Răspuns"
-      ],
-      "Reply all": [
-        "Răspuns tuturor"
-      ],
-      "Forward": [
-        "Redirecționare"
-      ],
-      "Load remote content": [
-        "Încărcare conținut extern"
-      ],
-      "Load embedded images": [
-        "Încărcare imagini integrate"
-      ],
-      "Show original message": [
-        "Afișare mesaj original"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "necunoscut"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Necunoscut"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "versiunile vCard < 3.0 nu sunt suportate"
-      ],
-      "Encryption failed": [
-        "Criptare eșuată"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "A apărut o eroare neașteptată. Importarea trebuie repornită."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Nu s-a selectat un fișier în format .csv sau .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Fișierul ${ formattedFilename } este gol."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Fișierul ${ formattedFilename } nu are contacte de importat."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Răsp:"
-      ],
-      "Fw:": [
-        "Redir:"
-      ]
-    },
-    "Label": {
-      "Copy": [
-        "Copiere"
-      ],
-      "Reveal password": [
-        "Afișare parolă"
-      ],
-      "Hide password": [
-        "Ascundere parolă"
-      ],
-      "Street address": [
-        "Strada"
-      ],
-      "City": [
-        "Oraș"
-      ],
-      "Region": [
-        "Județ"
-      ],
-      "Postal code": [
-        "Cod poștal"
-      ],
-      "Country": [
-        "Țara"
-      ],
-      "Post office box": [
-        "Cutie poștală"
-      ],
-      "Extended address": [
-        "Adresa extinsă"
-      ],
-      "Do not ask again": [
-        "Nu mă mai întreba"
-      ],
-      "Email address": [
-        "Adresă e-mail"
-      ],
-      "Phone number": [
-        "Număr de telefon"
-      ],
-      "Verification code": [
-        "Cod de verificare"
-      ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
-      ],
-      "Add email address": [
-        "Adăugare adresă de e-mail"
-      ],
-      "Email format": [
-        "Format e-mail"
-      ],
-      "Add image URL": [
-        "Adăugare URL imagine"
-      ],
-      "Upload picture": [
-        "Încărcare imagine"
-      ],
-      "Add to group": [
-        "Adăugare la grup"
-      ],
-      "Encrypt emails": [
-        "Criptare mesaje"
-      ],
-      "Sign emails": [
-        "Semnare mesaje"
-      ],
-      "Cryptographic scheme": [
-        "Schemă criptografică"
-      ],
-      "Public keys": [
-        "Chei publice"
-      ],
-      "Automatically save contacts": [
-        "Salvare automată contacte"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
-      "Operating system": [
-        "Sistem de operare"
-      ],
-      "Operating system version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Ce s-a întâmplat?"
-      ],
-      "System information": [
-        "Informații sistem"
-      ],
-      "Browser": [
-        "Navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        "Care este motivul principal pentru această evaluare?"
-      ],
-      "Display name": [
-        "Nume afișat"
-      ],
-      "Cancel": [
-        "Anulare"
-      ],
-      "Submit": [
-        "Trimitere"
-      ],
-      "Password": [
-        "Parola"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "Two-factor authentication code": [
-        "Cod autentificare cu doi factori"
-      ],
-      "Username or ProtonMail address": [
-        "Nume de utilizator sau e-mail ProtonMail"
-      ],
-      "Name on card": [
-        "Titular card"
-      ],
-      "Card number": [
-        "Număr card"
-      ],
-      "Expiry date": [
-        "Data expirării"
-      ],
-      "CVV code": [
-        "Cod CVV"
-      ],
-      "Select your country": [
-        "Selectați țara"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "BTC amount:": [
-        "Suma BTC:"
-      ],
-      "BTC address:": [
-        "Adresa BTC:"
-      ],
-      "Select a method": [
-        "Selectați metoda"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Proration": [
-        "Credit rămas"
-      ],
-      "Cash": [
-        "Numerar"
-      ],
-      "Card holder": [
-        "Titular card"
-      ],
-      "Expires": [
-        "Expirare"
-      ],
-      "Payer": [
-        "Plătitor"
-      ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selectați cum să arate lista de mesaje în mod implicit."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selectați cum să arate căsuța poștală în mod implicit."
-      ],
-      "Select how your composer opens by default.": [
-        "Selectați modul în care se deschide implicit editorul de mesaje."
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "Choose a color": [
-        "Alegere culoare"
-      ],
-      "Default email": [
-        "E-mail implicit"
-      ],
-      "Display": [
-        "Afișare"
-      ],
-      "Description": [
-        "Descriere"
-      ],
-      "Default event duration": [
-        "Durată implicită eveniment"
-      ],
-      "URL": [
-        "Adresa URL"
-      ],
-      "Default notifications": [
-        "Notificări implicite"
-      ],
-      "Default full day notifications": [
-        "Notificări întreaga zi implicite"
-      ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
-      ],
-      "0 - Not likely": [
-        "0 - Probabil nu"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extrem de probabil"
-      ],
-      "All day": [
-        "Toată ziua"
-      ],
-      "Repeat on": [
-        "Repetare"
-      ],
-      "Repeat every": [
-        "Repetare la fiecare"
-      ],
-      "Ends": [
-        "Sfârșit"
-      ],
-      "Organizer": [
-        "Organizator"
-      ],
-      "Optional": [
-        "Opțional"
-      ],
-      "Time of the event": [
-        "Dată eveniment"
-      ],
-      "Event time": [
-        "Oră eveniment"
-      ],
-      "Event title": [
-        "Titlu eveniment"
-      ],
-      "Event frequency": [
-        "Frecvență eveniment"
-      ],
-      "Event location": [
-        "Loc eveniment"
-      ],
-      "Event notifications": [
-        "Notificări eveniment"
-      ],
-      "Participants": [
-        "Participanţi"
-      ],
-      "Your calendars": [
-        "Calendare"
-      ]
-    },
     "Action": {
+      "Close": [
+        "Închidere"
+      ],
       "Close modal": [
         "Închidere"
       ],
@@ -2270,9 +334,6 @@
       ],
       "Use “${ label }” setting": [
         "Folosire setarea „${ label }”"
-      ],
-      "Close": [
-        "Închidere"
       ],
       "Close navigation": [
         "Închidere navigare"
@@ -2524,6 +585,9 @@
       "${ BRAND_NAME } introduction": [
         "Prezentare ${ BRAND_NAME }"
       ],
+      "Chat with us": [
+        "Conversați cu noi"
+      ],
       "I have a question": [
         "Am o întrebare"
       ],
@@ -2575,9 +639,6 @@
       "Back": [
         "Înapoi"
       ],
-      "Log in": [
-        "Conectare"
-      ],
       "Remove bonuses": [
         "Eliminare bonusuri"
       ],
@@ -2625,6 +686,9 @@
       ],
       "Increase": [
         "Mărire"
+      ],
+      "Log in": [
+        "Conectare"
       ],
       "Close this banner": [
         "Închidere acest banner"
@@ -2721,141 +785,6 @@
       ],
       "Close popover": [
         "Închidere"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Cheia nu poate fi folosită pentru criptare."
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Detalii"
-      ],
-      "Request an invite": [
-        "Solicitați o invitație"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
-      ],
-      "Upgrade": [
-        "Migrare"
-      ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
-      "click here": [
-        "apăsați aici"
-      ],
-      "Add a gift code": [
-        "Adăugare cod cadou"
-      ],
-      "Pay invoice": [
-        "Plată factură"
-      ],
-      "Upgrade account": [
-        "Migrare cont"
-      ],
-      "Calendars": [
-        "Calendare"
-      ],
-      "My calendars": [
-        "Calendarele mele"
-      ],
-      "Subscribed calendars": [
-        "Calendare abonate"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ex.: "
-      ],
-      "Start typing an email address": [
-        "Introduceți o adresă de e-mail"
-      ],
-      "Image URL": [
-        "URL imagine"
-      ],
-      "Filter groups": [
-        "Filtrare grupuri"
-      ],
-      "Search for name or email": [
-        "Căutare după nume sau e-mail"
-      ],
-      "Search for group name": [
-        "Căutare nume grup"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "A way to contact you": [
-        "Modalitate de contactare"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare care apar"
-      ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Cod poștal"
-      ],
-      "Gift code": [
-        "Cod cadou"
-      ],
-      "Add a calendar name": [
-        "Adăugare nume calendar"
-      ],
-      "Add a calendar description": [
-        "Adăugare descriere calendar"
-      ],
-      "Add title": [
-        "Adăugare titlu"
-      ],
-      "Add location": [
-        "Adăugare loc"
-      ],
-      "Add description": [
-        "Adăugare descriere"
-      ],
-      "Add participants": [
-        "Adăugare participanți"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "O oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
-      "${ minutes } minute": [
-        "Un minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
       ]
     },
     "Title": {
@@ -3035,18 +964,6 @@
       "Give feedback": [
         "Oferiți feedback"
       ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
-      ],
       "Confirm loss of Proton bonuses": [
         "Confirmare pierdere bonusuri Proton"
       ],
@@ -3136,6 +1053,18 @@
       ],
       "${ appName } customization": [
         "Personalizare ${ appName }"
+      ],
+      "Sign in again to continue": [
+        "Reconectați-vă pentru a continua"
+      ],
+      "Account suspended": [
+        "Cont suspendat"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Combinații de taste ${ appName }"
@@ -3295,6 +1224,1136 @@
       ],
       "CANCELLED": [
         "ANULAT"
+      ]
+    },
+    "Info": {
+      "No results found": [
+        "Nu s-au găsit rezultate"
+      ],
+      "Loading": [
+        "Se încarcă"
+      ],
+      "support team": [
+        "echipa de suport"
+      ],
+      "No contacts added yet": [
+        "Încă nu s-au adăugat contacte"
+      ],
+      "Week": [
+        "Săptămâna"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Se va deschide o nouă filă în navigator cu adresa:"
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Drop the file here to upload": [
+        "Plasați fișierul aici pentru a fi încărcat"
+      ],
+      "(${ memberCount } member)": [
+        "(Un membru)",
+        "(${ memberCount } membri)",
+        "(${ memberCount } de membri)"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-mailul va fi folosit doar pentru această verificare unică."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Dacă aveți probleme cu crearea contului, solicitați o invitație și vă vom răspunde în termen de o zi lucrătoare."
+      ],
+      "Loading ${ appName }": [
+        "Se încarcă ${ appName }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "Un membru",
+        "${ contactEmailsLength } membri",
+        "${ contactEmailsLength } de membri"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } și ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } conține adrese de e-mail multiple. Selectați adresa de e-mail sau adresele de adăugat în acest grup."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } conține adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Se verifică contactul ${ progress } din ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "S-a actualizat un contact.",
+        "S-au actualizat ${ updated } contacte.",
+        "S-au actualizat ${ updated } de contacte."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Pentru a vă recupera datele, trebuie să reactivați cheia de criptare a contactelor folosită în momentul creării datelor. Va trebui să vă amintiți parola utilizată atunci când a fost generată cheia."
+      ],
+      "Key fingerprint": [
+        "Amprentă cheie"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
+      ],
+      "Group assignment applied": [
+        "Atribuire grup aplicată"
+      ],
+      "Create a new contact group": [
+        "Creare grup contacte"
+      ],
+      "No group found": [
+        "Nu există grupuri"
+      ],
+      "Duplicate key updated": [
+        "Cheie duplicat actualizată"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
+      ],
+      "Primary": [
+        "Primară"
+      ],
+      "No email address": [
+        "Lipsă adresă de e-mail"
+      ],
+      "${ contactsCount } contact found": [
+        "S-a găsit un contact",
+        "S-au găsit ${ contactsCount } contacte",
+        "S-au găsit ${ contactsCount } de contacte"
+      ],
+      "${ groupCounts } group found": [
+        "S-a găsit un grup",
+        "S-au găsit ${ groupCounts } grupuri",
+        "S-au găsit ${ groupCounts } de grupuri"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
+      ],
+      "${ addressCount } email address": [
+        "O adresă de e-mail",
+        "${ addressCount } adrese de e-mail",
+        "${ addressCount } de adrese de e-mail"
+      ],
+      "Screenshot(s) attached": [
+        "Capturi de ecran adăugate"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
+      ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+ ${ bonusSpace } spațiu bonus"
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "+ o conexiune pentru ProtonVPN (permite conectarea mai multor dispozitive la VPN)",
+        "+${ organization.BonusVPN } conexiuni pentru ProtonVPN (vă permite să conectați mai multe dispozitive la VPN)",
+        "+${ organization.BonusVPN } de conexiuni pentru ProtonVPN (vă permite să conectați mai multe dispozitive la VPN)"
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        "Banca solicită verificarea cu sistemul 3-D Secure din motive de securitate."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu se va aplica nici o taxă. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        "Pentru verificare se va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Pentru verificarea plății se va deschide o filă către PayPal."
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        "Pentru verificarea efectuării plății se va deschide o filă către bancă."
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        "Verificați cardul în noua filă deschisă."
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        "Verificați efectuarea plății în noua fereastră deschisă."
+      ],
+      "Verification can take a few minutes.": [
+        "Verificarea poate dura câteva minute."
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        "Verificarea plății poate dura câteva minute."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Mai încercați, folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        "Mai încercați, folosiți o metodă de plată diferită sau sunați-vă banca pentru asistență."
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Pentru Visa și MasterCard, cele 3 cifre de pe spatele cardului. Pentru American Express, cele 4 cifre de pe faţa cardului."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Suma este sub minimul acceptat (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
+      ],
+      "Please verify the payment in the new tab.": [
+        "Verificați plata în noua filă."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceți clic pe butonul de mai jos."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Aceasta va activa PayPal ca metodă de plată pentru abonamentul la Proton. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "Trebuie să aveți un card de credit sau un cont bancar asociat cu contul de PayPal pentru a-l adăuga ca metodă de plată."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "Folosim 3-D Secure pentru a vă proteja plățile."
+      ],
+      "Billed as ${ billedPrice } per year": [
+        "Facturat cu ${ billedPrice } anual"
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        "Facturat cu ${ billedPrice } la doi ani"
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "* Customizable features": [
+        "* Funcții personalizabile"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
+      ],
+      "For getting started with private and secure emailing.": [
+        "Pentru a folosi mesaje private și securizate."
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        "Un internet gratuit și necenzurat ce ar trebui să fie disponibil tuturor."
+      ],
+      "Starter VPN service with P2P support.": [
+        "Serviciu VPN de bază cu suport P2P."
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        "VPN complet cu viteză de până la 10 Gbps."
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        "Pentru persoanele care au nevoie de o căsuță poștală cu funcții complete și protecție avansată."
+      ],
+      "For professionals that need secure business communications.": [
+        "Pentru profesioniștii care au nevoie de comunicații de afaceri securizate."
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        "VPN + ${ mailAppName } pachet pentru familii și afaceri mici."
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        "Pentru familii şi echipe mici; include atât e-mail cât şi VPN."
+      ],
+      "Save 20%": [
+        "Economisiți 20%"
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        "Contul se convertește, ar putea dura până la 30 de secunde."
+      ],
+      "Thank you for supporting our mission.": [
+        "Vă mulțumim pentru că ne sprijiniți misiunea."
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "Contul va fi modificat după verificarea plății."
+      ],
+      "Account successfully updated": [
+        "Contul a fost actualizat."
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
+      ],
+      "(Mail + VPN)": [
+        "(e-mail + VPN)"
+      ],
+      "${ mailAppName } Free": [
+        "${ mailAppName } gratuit"
+      ],
+      "${ vpnAppName } Free": [
+        "${ vpnAppName } gratuit"
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        "Facturat la sfârșitul ciclului curent de facturare (reînnoire la ${ renewalDate })"
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul. ${ linkButton }"
+      ],
+      "No payment is required at this time.": [
+        "Momentan nu este necesară nici o plată."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        "Cuponul ${ code } a aplicat o reducere de 20%."
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        "S-a aplicat reducerea de „Vinerea neagră” 2018 la abonament."
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        "S-a aplicat reducerea de „Vinerea neagră” 2019 la abonament."
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        "Reducerea de „Vinerea Neagră” 2020 pentru utilizatorii noi a fost aplicată."
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        "Cuponul ${ code } a aplicat o reducere de 20% la abonament."
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
+      ],
+      "30 days money-back guarantee.": [
+        "Banii înapoi în 30 de zile garantat."
+      ],
+      "Save extra 20%": [
+        "Mai economisiți 20%"
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        "${ save20 } din abonament trecând la ${ annualBilling }"
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        "${ saveExtra20 } pentru e-mail și VPN prin adăugarea unui abonament de e-mail."
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        "${ saveExtra20 } pentru e-mail și VPN prin adăugarea unui abonament de VPN."
+      ],
+      "Storage GB": [
+        "GB stocare"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "Domains": [
+        "Domenii"
+      ],
+      "Addresses": [
+        "Adrese"
+      ],
+      "Connections": [
+        "Conexiuni"
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Vă permite să găzduiți e-mailuri pe domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com."
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        "Adăugați adrese suplimentare în cont precum utilizator2@protonmail.com."
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        "Numărul de conexiuni VPN care poate fi atribuit utilizatorilor. Fiecare dispozitiv conectat consumă o conexiune VPN."
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        "ProtonMail Plus este limitat la un utilizator și începe cu 5 GB de stocare."
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        "Treceți la ${ professionalPlan } pentru a adăuga mai mulți utilizatori."
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include o conexiune VPN.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexiuni VPN.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } de conexiuni VPN."
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        "Fiecare conexiune suplimentară poate fi atribuită utilizatorilor din organizație."
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        "Treceți la ${ professionalPlan } pentru a adăuga mai multe conexiuni."
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailAppName } Profesional începe cu un utilizator și fiecare utilizator adaugă 5 GB și 5 adrese de e-mail la totalul organizației."
+      ],
+      "Not customizable": [
+        "Nu poate fi personalizat"
+      ],
+      "Expired": [
+        "Expirat"
+      ],
+      "here": [
+        "aici"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
+      ],
+      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
+        "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
+      ],
+      "Free up some space or add more storage space.": [
+        "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Eliberați ceva spațiu sau contactați administratorul."
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "S-a atins capacitatea maximă de stocare. Nu se mai pot trimite sau primi mesaje. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "Internet connection restored.": [
+        "Conexiunea la internet a revenit."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+        "V-ați conectat cu ${ user.Name } (${ user.Email }) și aveți acces restricționat."
+      ],
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
+      ],
+      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
+        "Ați activat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza cea mai recentă versiune de ${ appName }. Aplicația va fi reîncărcată."
+      ],
+      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
+        "Ați dezactivat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza versiunea stabilă de ${ appName }. Aplicația va fi reîncărcată."
+      ],
+      "Session timed out.": [
+        "Sesiune expirată."
+      ],
+      "Internet connection lost.": [
+        "Conexiunea la internet s-a întrerupt."
+      ],
+      "Servers are unreachable.": [
+        "Serverele nu sunt accesibile."
+      ],
+      "Custom daily": [
+        "Zilnic personalizat"
+      ],
+      "Custom weekly": [
+        "Săptămânal personalizat"
+      ],
+      "Custom monthly": [
+        "Lunar personalizat"
+      ],
+      "Custom yearly": [
+        "Anual personalizat"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Daily": [
+        "Zilnic"
+      ],
+      "Monthly ${ onDayString }": [
+        "Lunar ${ onDayString }"
+      ],
+      "Yearly": [
+        "Anual"
+      ],
+      "Manage your calendars": [
+        "Gestionare calendare"
+      ],
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        "${ calendarAppName } a fost adăugată la serviciul Proton. Ne-ar plăcea să auzim ce credeți despre această aplicație!"
+      ],
+      "Loading events": [
+        "Se încarcă evenimentele"
+      ],
+      "The organizer cannot be notified that you decline the invitation:": [
+        "Organizatorul nu poate fi notificat că refuzați invitația:"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "None of the participants can be notified about your changes:": [
+        "Niciun participant nu poate fi notificat cu privire la modificările pe care le-ați efectuat:"
+      ],
+      "The following participants cannot be notified about your changes:": [
+        "Următorii participanți nu pot fi notificați privind modificările pe care le-ați efectuat:"
+      ],
+      "Would you like to continue anyway?": [
+        "Doriți totuși să continuați?"
+      ],
+      "Discard changes?": [
+        "Anulare modificări?"
+      ],
+      "You will lose all unsaved changes.": [
+        "Veți pierde toate modificările nesalvate."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Organizatorul acestui eveniment va fi notificat că refuzați invitația. Doriți să ștergeți acest eveniment?"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Organizatorul acestui eveniment nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "Un e-mail de anulare va fi trimis participanților la eveniment. Doriți să ștergeți acest eveniment?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "Would you like to delete this event?": [
+        "Doriți să ștergeți acest eveniment?"
+      ],
+      "Which event would you like to delete?": [
+        "Ce eveniment doriți să ștergeți?"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Acest eveniment a fost actualizat. Organizatorul va fi notificat că refuzați invitația. Doriți să ștergeți acest eveniment?"
+      ],
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Acest eveniment a fost actualizat de către organizator. Doriți să ştergeți acest eveniment?"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Acest eveniment a fost actualizat. Organizatorul nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "Un e-mail de anulare va fi trimis participanților la eveniment. Doriți să ștergeți toate evenimentele din această serie?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți toate evenimentele din această serie?"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Organizatorul acestei serii de evenimente va fi notificat că refuzați invitația. Doriți să ştergeți toate evenimentele din această serie?"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Organizatorul acestei serii de evenimente nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți toate evenimentele din această serie?"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Doriți să ștergeți toate evenimentele din această serie?"
+      ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Evenimentele actualizate anterior de organizator vor fi păstrate, dar unele din răspunsurile dvs. vor fi pierdute."
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Manifestările anterioare actualizate de organizator vor fi păstrate."
+      ],
+      "Which event would you like to update?": [
+        "Ce eveniment doriți să ștergeți?"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Acest eveniment a fost actualizat de către organizator. Doriți să vă schimbați răspunsul doar pentru această manifestare din serie?"
+      ],
+      "Would you like to update this event?": [
+        "Doriți să actualizați acest eveniment?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Doriţi să vă schimbaţi răspunsul pentru toate evenimentele din serie?"
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "Participanţii adăugaţi şi eliminaţi vor fi notificaţi cu privire la toate evenimentele din această serie."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Veţi actualiza toate evenimentele din această serie. Participanţii adăugați şi eliminaţi vor fi notificați."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Veţi actualiza toate evenimentele din această serie. Participanții existenți, adăugați şi eliminați vor fi notificați."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Veţi actualiza toate evenimentele din această serie. Participanţii existenți și adăugaţi vor fi notificaţi."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Veţi actualiza toate evenimentele din această serie. Participanţii eliminaţi vor fi notificaţi."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Veţi actualiza toate evenimentele din această serie. Participanţii existenți și eliminați vor fi notificaţi."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Veţi actualiza toate evenimentele din această serie. O invitaţie va fi trimisă participanţilor la eveniment."
+      ],
+      "Would you like to update all events in this series?": [
+        "Doriţi să actualizați toate evenimentele din serie?"
+      ],
+      "Previous modifications on this series will be lost.": [
+        "Modificările anterioare ale acestei serii vor fi pierdute."
+      ],
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
+      ],
+      "Frequency modifications will be lost.": [
+        "Modificările de frecvență vor fi pierdute."
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "Organizatorul a actualizat unele dintre evenimentele din această serie. Schimbarea calendarului nu este încă suportată pentru acest tip de evenimente recurente."
+      ],
+      "Update recurring event": [
+        "Actualizare eveniment recurent"
+      ],
+      "Added and removed participants will be notified.": [
+        "Participanții adăugați şi eliminaţi vor fi notificați."
+      ],
+      "An invitation will be sent to added participants.": [
+        "O invitație va fi trimisă participanților adăugați."
+      ],
+      "A cancellation email will be sent to removed participants.": [
+        "Un e-mail de anulare va fi trimis participanților eliminați."
+      ],
+      "Existent, added and removed participants will be notified.": [
+        "Participanții existenți, adăugați şi eliminați vor fi notificați."
+      ],
+      "Existent and added participants will be notified.": [
+        "Participanţii existenți și adăugaţi vor fi notificaţi."
+      ],
+      "Removed participants will be notified.": [
+        "Participanţii eliminaţi vor fi notificaţi."
+      ],
+      "Existent and removed participants will be notified.": [
+        "Participanţii existenți și eliminați vor fi notificaţi."
+      ],
+      "An invitation will be sent to the event participants.": [
+        "O invitație va fi trimisă participanților la eveniment."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Eliminați duplicatele și reîncercați."
+      ],
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
+        "V-ați resetat parola și evenimentele legate la următoarele calendare nu s-au putut decripta.\nOrice legătură de calendar partajată creată anterior nu va mai funcționa.\nOrice calendar activ abonat se va resincroniza după câteva minute."
+      ],
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Ați reactivat cheile și evenimentele legate de următoarele calendare se pot decripta acum."
+      ],
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "Cel mult 100 de participanți sunt autorizați per invitație"
+      ],
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "Puteți modifica doar proprietățile evenimentelor personale deoarece nu puteți trimite e-mailuri de la adresa organizatorului."
+      ],
+      "Loading event": [
+        "Se încarcă evenimentul"
+      ]
+    },
+    "Label": {
+      "Copy": [
+        "Copiere"
+      ],
+      "Reveal password": [
+        "Afișare parolă"
+      ],
+      "Hide password": [
+        "Ascundere parolă"
+      ],
+      "Street address": [
+        "Strada"
+      ],
+      "City": [
+        "Oraș"
+      ],
+      "Region": [
+        "Județ"
+      ],
+      "Postal code": [
+        "Cod poștal"
+      ],
+      "Country": [
+        "Țara"
+      ],
+      "Post office box": [
+        "Cutie poștală"
+      ],
+      "Extended address": [
+        "Adresa extinsă"
+      ],
+      "Do not ask again": [
+        "Nu mă mai întreba"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
+      "Phone number": [
+        "Număr de telefon"
+      ],
+      "Verification code": [
+        "Cod de verificare"
+      ],
+      "Enter the 6-digit code": [
+        "Introduceți codul din 6 cifre"
+      ],
+      "Add email address": [
+        "Adăugare adresă de e-mail"
+      ],
+      "Email format": [
+        "Format e-mail"
+      ],
+      "Add image URL": [
+        "Adăugare URL imagine"
+      ],
+      "Upload picture": [
+        "Încărcare imagine"
+      ],
+      "Add to group": [
+        "Adăugare la grup"
+      ],
+      "Encrypt emails": [
+        "Criptare mesaje"
+      ],
+      "Sign emails": [
+        "Semnare mesaje"
+      ],
+      "Cryptographic scheme": [
+        "Schemă criptografică"
+      ],
+      "Public keys": [
+        "Chei publice"
+      ],
+      "Automatically save contacts": [
+        "Salvare automată contacte"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
+      ],
+      "Operating system": [
+        "Sistem de operare"
+      ],
+      "Operating system version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Ce s-a întâmplat?"
+      ],
+      "System information": [
+        "Informații sistem"
+      ],
+      "Browser": [
+        "Navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Care este motivul principal pentru această evaluare?"
+      ],
+      "Display name": [
+        "Nume afișat"
+      ],
+      "Name on card": [
+        "Titular card"
+      ],
+      "Card number": [
+        "Număr card"
+      ],
+      "Expiry date": [
+        "Data expirării"
+      ],
+      "CVV code": [
+        "Cod CVV"
+      ],
+      "Select your country": [
+        "Selectați țara"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "BTC amount:": [
+        "Suma BTC:"
+      ],
+      "BTC address:": [
+        "Adresa BTC:"
+      ],
+      "Select a method": [
+        "Selectați metoda"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Proration": [
+        "Credit rămas"
+      ],
+      "Cash": [
+        "Numerar"
+      ],
+      "Card holder": [
+        "Titular card"
+      ],
+      "Expires": [
+        "Expirare"
+      ],
+      "Payer": [
+        "Plătitor"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Submit": [
+        "Trimitere"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "Two-factor authentication code": [
+        "Cod autentificare cu doi factori"
+      ],
+      "Username or ProtonMail address": [
+        "Nume de utilizator sau e-mail ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Selectați cum să arate lista de mesaje în mod implicit."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Selectați cum să arate căsuța poștală în mod implicit."
+      ],
+      "Select how your composer opens by default.": [
+        "Selectați modul în care se deschide implicit editorul de mesaje."
+      ],
+      "Enable Beta Access": [
+        "Activare acces la Beta"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Choose a color": [
+        "Alegere culoare"
+      ],
+      "Default email": [
+        "E-mail implicit"
+      ],
+      "Display": [
+        "Afișare"
+      ],
+      "Description": [
+        "Descriere"
+      ],
+      "Default event duration": [
+        "Durată implicită eveniment"
+      ],
+      "URL": [
+        "Adresa URL"
+      ],
+      "Default notifications": [
+        "Notificări implicite"
+      ],
+      "Default full day notifications": [
+        "Notificări întreaga zi implicite"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
+      ],
+      "0 - Not likely": [
+        "0 - Probabil nu"
+      ],
+      "10 - Extremely likely": [
+        "10 - Extrem de probabil"
+      ],
+      "All day": [
+        "Toată ziua"
+      ],
+      "Repeat on": [
+        "Repetare"
+      ],
+      "Repeat every": [
+        "Repetare la fiecare"
+      ],
+      "Ends": [
+        "Sfârșit"
+      ],
+      "Organizer": [
+        "Organizator"
+      ],
+      "Optional": [
+        "Opțional"
+      ],
+      "Time of the event": [
+        "Dată eveniment"
+      ],
+      "Event time": [
+        "Oră eveniment"
+      ],
+      "Event title": [
+        "Titlu eveniment"
+      ],
+      "Event frequency": [
+        "Frecvență eveniment"
+      ],
+      "Event location": [
+        "Loc eveniment"
+      ],
+      "Event notifications": [
+        "Notificări eveniment"
+      ],
+      "Participants": [
+        "Participanţi"
+      ],
+      "Your calendars": [
+        "Calendare"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "Request an invite": [
+        "Solicitați o invitație"
+      ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
+      "Upgrade": [
+        "Migrare"
+      ],
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "click here": [
+        "apăsați aici"
+      ],
+      "Add a gift code": [
+        "Adăugare cod cadou"
+      ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
+      "Upgrade account": [
+        "Migrare cont"
+      ],
+      "Calendars": [
+        "Calendare"
+      ],
+      "My calendars": [
+        "Calendarele mele"
+      ],
+      "Subscribed calendars": [
+        "Calendare abonate"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Start typing an email address": [
+        "Introduceți o adresă de e-mail"
+      ],
+      "Image URL": [
+        "URL imagine"
+      ],
+      "Filter groups": [
+        "Filtrare grupuri"
+      ],
+      "Search for name or email": [
+        "Căutare după nume sau e-mail"
+      ],
+      "Search for group name": [
+        "Căutare nume grup"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "OS name": [
+        "Sistem de operare"
+      ],
+      "OS version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "A way to contact you": [
+        "Modalitate de contactare"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrieți problema incluzând și mesajele de eroare care apar"
+      ],
+      "Browser name": [
+        "Nume navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "e.g. Julia Smith": [
+        "ex: Iulia Sandu"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Cod poștal"
+      ],
+      "Gift code": [
+        "Cod cadou"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "Add a calendar name": [
+        "Adăugare nume calendar"
+      ],
+      "Add a calendar description": [
+        "Adăugare descriere calendar"
+      ],
+      "Add title": [
+        "Adăugare titlu"
+      ],
+      "Add location": [
+        "Adăugare loc"
+      ],
+      "Add description": [
+        "Adăugare descriere"
+      ],
+      "Add participants": [
+        "Adăugare participanți"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "O oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "Un minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
       ]
     },
     "Storage": {
@@ -3481,6 +2540,9 @@
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -4752,6 +3814,950 @@
       ],
       "120 minutes": [
         "120 de minute"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "baiți"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter.",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nume"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Photo": [
+        "Fotografie"
+      ],
+      "Organization": [
+        "Organizația"
+      ],
+      "Birthday": [
+        "Data nașterii"
+      ],
+      "Anniversary": [
+        "Aniversare"
+      ],
+      "Title": [
+        "Adresare"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Observații"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Gen"
+      ],
+      "Language": [
+        "Limba"
+      ],
+      "Timezone": [
+        "Fus orar"
+      ],
+      "Geo": [
+        "Coordonate"
+      ],
+      "Logo": [
+        "Sigla"
+      ],
+      "Member": [
+        "Membru"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Serviciu"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
+      ],
+      "Home": [
+        "Acasă"
+      ],
+      "Work": [
+        "Serviciu"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Address": [
+        "Adresa"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } începe acum"
+      ],
+      "${ title } starts today": [
+        "${ title } începe astăzi"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } a început la ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } a început ieri"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } a început ieri la ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } a început ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } a început ${ formattedDate } la ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } a început ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } a început ${ _formattedDate } la ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } a început ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } a început ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } va începe la ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } va începe mâine"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } va începe mâine la ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } va începe ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } va începe ${ _formattedDate2 } la ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } va începe ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } va începe ${ _formattedDate3 } la ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } va începe ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } va începe ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(fără titlu)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Dvs."
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Anulare eveniment ce are loc ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitație la un eveniment ce are loc ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Actualizarea unui eveniment ce are loc ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Anulare eveniment care începe ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitație la un eveniment care începe ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Actualizarea unui eveniment care începe ${ formattedStart }"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Invitație: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Când: ${ formattedStart } (toată ziua)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Când: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Când: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Unde: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Descriere: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } a fost anulat."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "în prima duminică"
+      ],
+      "on the first Monday": [
+        "în prima luni"
+      ],
+      "on the first Tuesday": [
+        "în prima marți"
+      ],
+      "on the first Wednesday": [
+        "în prima miercuri"
+      ],
+      "on the first Thursday": [
+        "în prima joi"
+      ],
+      "on the first Friday": [
+        "în prima vineri"
+      ],
+      "on the first Saturday": [
+        "în prima sâmbătă"
+      ],
+      "on the second Sunday": [
+        "în a doua duminică"
+      ],
+      "on the second Monday": [
+        "în a doua luni"
+      ],
+      "on the second Tuesday": [
+        "în a doua marți"
+      ],
+      "on the second Wednesday": [
+        "în a doua miercuri"
+      ],
+      "on the second Thursday": [
+        "în a doua joi"
+      ],
+      "on the second Friday": [
+        "în a doua vineri"
+      ],
+      "on the second Saturday": [
+        "în a doua sâmbătă"
+      ],
+      "on the third Sunday": [
+        "în a treia duminică"
+      ],
+      "on the third Monday": [
+        "în a treia luni"
+      ],
+      "on the third Tuesday": [
+        "în a treia marți"
+      ],
+      "on the third Wednesday": [
+        "în a treia miercuri"
+      ],
+      "on the third Thursday": [
+        "în a treia joi"
+      ],
+      "on the third Friday": [
+        "în a treia vineri"
+      ],
+      "on the third Saturday": [
+        "în a treia sâmbătă"
+      ],
+      "on the fourth Sunday": [
+        "în a patra duminică"
+      ],
+      "on the fourth Monday": [
+        "în a patra luni"
+      ],
+      "on the fourth Tuesday": [
+        "în a patra marți"
+      ],
+      "on the fourth Wednesday": [
+        "în a patra miercuri"
+      ],
+      "on the fourth Thursday": [
+        "în a patra joi"
+      ],
+      "on the fourth Friday": [
+        "în a patra vineri"
+      ],
+      "on the fourth Saturday": [
+        "în a patra sâmbătă"
+      ],
+      "on the last Sunday": [
+        "în ultima duminică"
+      ],
+      "on the last Monday": [
+        "în ultima luni"
+      ],
+      "on the last Tuesday": [
+        "în ultima marți"
+      ],
+      "on the last Wednesday": [
+        "în ultima miercuri"
+      ],
+      "on the last Thursday": [
+        "în ultima joi"
+      ],
+      "on the last Friday": [
+        "în ultima vineri"
+      ],
+      "on the last Saturday": [
+        "în ultima sâmbătă"
+      ],
+      "on day ${ dayOfMonth }": [
+        "în ziua ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "O dată",
+        "de ${ count } ori",
+        "de ${ count } de ori"
+      ],
+      "until ${ dateString }": [
+        "până la ${ dateString }"
+      ],
+      "Daily": [
+        "Zilnic"
+      ],
+      "Every ${ interval } day": [
+        "Zilnic",
+        "La fiecare ${ interval } zile",
+        "La fiecare ${ interval } de zile"
+      ],
+      "Daily, ${ timesString }": [
+        "Zilnic, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Zilnic, ${ timesString }",
+        "La fiecare ${ interval } zile, ${ timesString }",
+        "La fiecare ${ interval } de zile, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Zilnic, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Zilnic, ${ untilString }",
+        "La fiecare ${ interval } zile, ${ untilString }",
+        "La fiecare ${ interval } de zile, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Duminică"
+      ],
+      "Monday": [
+        "Luni"
+      ],
+      "Tuesday": [
+        "Marți"
+      ],
+      "Wednesday": [
+        "Miercuri"
+      ],
+      "Thursday": [
+        "Joi"
+      ],
+      "Friday": [
+        "Vineri"
+      ],
+      "Saturday": [
+        "Sâmbătă"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Zilnic, săptămânal"
+      ],
+      "Every ${ interval } week on all days": [
+        "Zilnic, săptămânal",
+        "Zilnic, la fiecare ${ interval } săptămâni",
+        "Zilnic, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Sunday": [
+        "Duminică, săptămânal"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Duminică, săptămânal",
+        "Duminică, la fiecare ${ interval } săptămâni",
+        "Duminică, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Monday": [
+        "Luni, săptămânal"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Luni, săptămânal",
+        "Luni, la fiecare ${ interval } săptămâni",
+        "Luni, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Tuesday": [
+        "Marți, săptămânal"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Marți, săptămânal",
+        "Marți, la fiecare ${ interval } săptămâni",
+        "Marți, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Wednesday": [
+        "Miercuri, săptămânal"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Miercuri, săptămânal",
+        "Miercuri, la fiecare ${ interval } săptămâni",
+        "Miercuri, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Thursday": [
+        "Joi, săptămânal"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Joi, săptămânal",
+        "Joi, la fiecare ${ interval } săptămâni",
+        "Joi, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Friday": [
+        "Vineri, săptămânal"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Vineri, săptămânal",
+        "Vineri, la fiecare ${ interval } săptămâni",
+        "Vineri, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Saturday": [
+        "Sâmbătă, săptămânal"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Sâmbătă, săptămânal",
+        "Sâmbătă, la fiecare ${ interval } săptămâni",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "${ multipleDaysString }, săptămânal"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Săptămânal, ${ multipleDaysString }",
+        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }",
+        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Zilnic, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Săptămânal, zilnic, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, zilnic, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, zilnic, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Duminică, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Duminica, săptămânal, ${ timesString }",
+        "Duminica, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Duminica, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Luni, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Luni, săptămânal, ${ timesString }",
+        "Luni, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Luni, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Marți, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Marți, săptâmânal, ${ timesString }",
+        "Marți, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Marți, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Miercuri, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Miercuri, săptâmânal, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Joi, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Joi, săptâmânal, ${ timesString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Vineri, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Vineri, săptâmânal, ${ timesString }",
+        "Vineri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Vineri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Sâmbătă, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Sâmbătă, săptâmânal, ${ timesString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Săptămânal ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "${ multipleDaysString }, săptâmânal, ${ timesString }",
+        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Zilnic, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Zilnic, săptâmânal, ${ untilString }",
+        "Zilnic, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Zilnic, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Duminică, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Duminică, săptâmânal, ${ untilString }",
+        "Duminică, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Duminică, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Luni, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Luni, săptâmânal, ${ untilString }",
+        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Luni, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Marți, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Marți, săptâmânal, ${ untilString }",
+        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Marți, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Miercuri, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Miercuri, săptâmânal, ${ untilString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Joi, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Joi, săptămânal, ${ untilString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Vineri, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Vineri, săptâmânal, ${ untilString }",
+        "Vineri, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Vineri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Sâmbătă, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Sâmbătă, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Săptămânal ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "${ multipleDaysString }, săptâmânal, ${ untilString }",
+        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Lunar, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "${ onDayString }, lunar",
+        "${ onDayString }, la fiecare ${ interval } luni",
+        "${ onDayString }, la fiecare ${ interval } de luni"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "${ onDayString }, lunar, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ onDayString }, lunar, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "${ onDayString }, lunar, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ onDayString }, lunar, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Anual"
+      ],
+      "Every ${ interval } year": [
+        "Anual",
+        "La fiecare ${ interval } ani",
+        "La fiecare ${ interval } de ani"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anual, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Anual, ${ timesString }",
+        "La fiecare ${ interval } ani, ${ timesString }",
+        "La fiecare ${ interval } ani, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anual, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Anual, ${ untilString }",
+        "La fiecare ${ interval } ani, ${ untilString }",
+        "La fiecare ${ interval } de ani, ${ untilString }"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Navigare de bază"
+      ],
+      "Basic actions": [
+        "Acțiuni de bază"
+      ],
+      "Folder shortcuts": [
+        "Combinații de taste foldere"
+      ],
+      "Composer shortcuts": [
+        "Combinații de taste editor mesaje"
+      ],
+      "List shortcuts": [
+        "Combinații de taste listă mesaje"
+      ],
+      "Action shortcuts": [
+        "Combinații de taste acțiuni"
+      ],
+      "Message shortcuts": [
+        "Combinații de taste mesaje"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Mutare în sus"
+      ],
+      "Jump to first": [
+        "Salt la primul"
+      ],
+      "Move down": [
+        "Mutare în jos"
+      ],
+      "Jump to last": [
+        "Salt la ultimul"
+      ],
+      "Move right / expand": [
+        "Mutare la dreapta/extindere"
+      ],
+      "Move left / collapse": [
+        "Mutare la stânga/restrângere"
+      ],
+      "Apply / open": [
+        "Aplicare/deschidere"
+      ],
+      "Cancel / close": [
+        "Anulare/închidere"
+      ],
+      "Open this modal": [
+        "Deschidere ca fereastră"
+      ],
+      "Select / unselect": [
+        "Selectare/deselectare"
+      ],
+      "Go to Inbox": [
+        "Accesare «Primite»"
+      ],
+      "Go to Archive": [
+        "Accesare «Arhivă»"
+      ],
+      "Go to Sent": [
+        "Accesare «Trimise»"
+      ],
+      "Go to Starred": [
+        "Accesare «Cu stea»"
+      ],
+      "Go to Drafts": [
+        "Accesare «Ciorne»"
+      ],
+      "Go to Trash": [
+        "Accesare «Gunoi»"
+      ],
+      "Go to Spam": [
+        "Accesare «Nedorite»"
+      ],
+      "Go to All Mail": [
+        "Accesare «Toate mesajele»"
+      ],
+      "Save draft": [
+        "Salvare ciornă"
+      ],
+      "Send email": [
+        "Trimitere e-mail"
+      ],
+      "Close draft": [
+        "Închidere ciornă"
+      ],
+      "Minimize / maximize composer": [
+        "Micșorare/mărire editor"
+      ],
+      "Expand / contract composer": [
+        "Extindere/restrângere editor"
+      ],
+      "Attach file": [
+        "Atașare fișier"
+      ],
+      "Add expiration time": [
+        "Adăugare dată de expirare"
+      ],
+      "Add encryption": [
+        "Adăugare criptare"
+      ],
+      "Discard draft": [
+        "Aruncare ciornă"
+      ],
+      "Open previous message": [
+        "Deschidere mesaj anterior"
+      ],
+      "Open next message": [
+        "Deschidere mesaj următor"
+      ],
+      "Show unread emails": [
+        "Afișare mesaje necitite"
+      ],
+      "Show all emails": [
+        "Afișare toate mesajele"
+      ],
+      "Select / unselect all": [
+        "Selectare/deselectare toate"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "New message": [
+        "Mesaj nou"
+      ],
+      "Star": [
+        "Marcare cu stea"
+      ],
+      "Mark as unread": [
+        "Marcare ca necitit"
+      ],
+      "Label as...": [
+        "Etichetare ca..."
+      ],
+      "Create filter with...": [
+        "Creare filtru cu..."
+      ],
+      "Move to...": [
+        "Mutare în..."
+      ],
+      "Move to Inbox": [
+        "Mutare în «Primite»"
+      ],
+      "Move to Archive": [
+        "Mutare în «Arhivă»"
+      ],
+      "Move to Spam": [
+        "Mutare în «Nedorite»"
+      ],
+      "Move to Trash": [
+        "Mutare în «Gunoi»"
+      ],
+      "Delete permanently": [
+        "Ștergere permanentă"
+      ],
+      "Reply": [
+        "Răspuns"
+      ],
+      "Reply all": [
+        "Răspuns tuturor"
+      ],
+      "Forward": [
+        "Redirecționare"
+      ],
+      "Load remote content": [
+        "Încărcare conținut extern"
+      ],
+      "Load embedded images": [
+        "Încărcare imagini integrate"
+      ],
+      "Show original message": [
+        "Afișare mesaj original"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "necunoscut"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Necunoscut"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "versiunile vCard < 3.0 nu sunt suportate"
+      ],
+      "Encryption failed": [
+        "Criptare eșuată"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "A apărut o eroare neașteptată. Importarea trebuie repornită."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Nu s-a selectat un fișier în format .csv sau .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Fișierul ${ formattedFilename } este gol."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Fișierul ${ formattedFilename } nu are contacte de importat."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Răsp:"
+      ],
+      "Fw:": [
+        "Redir:"
       ]
     },
     "Event info. Organizer name": {

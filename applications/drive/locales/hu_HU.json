@@ -459,11 +459,26 @@
       "here": [
         ""
       ],
+      "Clear": [
+        "Törlés"
+      ],
+      "Add screenshot(s)": [
+        "Képernyőkép hozzáadása"
+      ],
+      "Hide info": [
+        "Információ elrejtése"
+      ],
+      "Show info": [
+        "Információ megjelenítése"
+      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } bevezető"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         "Kérdésem van"
@@ -503,18 +518,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Clear": [
-        "Törlés"
-      ],
-      "Add screenshot(s)": [
-        "Képernyőkép hozzáadása"
-      ],
-      "Hide info": [
-        "Információ elrejtése"
-      ],
-      "Show info": [
-        "Információ megjelenítése"
       ],
       "Get started": [
         "Kezdés"
@@ -603,17 +606,14 @@
       "New upload": [
         "Új feltöltés"
       ],
-      "Delete permanently": [
-        "Végleges törlés"
+      "Upload file": [
+        "Fájl feltöltése"
       ],
-      "Restore from trash": [
-        "Visszaállítás a Lomtárból"
+      "Upload folder": [
+        "Mappa feltöltése"
       ],
-      "Empty trash": [
-        "Lomtár ürítése"
-      ],
-      "Rename": [
-        "Átnevezés"
+      "Create new folder": [
+        "Új mappa létrehozása"
       ],
       "Move to folder": [
         "Áthelyezés mappába"
@@ -621,8 +621,8 @@
       "Move to trash": [
         "Áthelyezés a lomtárba"
       ],
-      "Create new folder": [
-        "Új mappa létrehozása"
+      "Rename": [
+        "Átnevezés"
       ],
       "Name: A to Z": [
         "Név: A-Z"
@@ -648,11 +648,29 @@
       "Size: large to small": [
         "Méret: csökkenő"
       ],
-      "Upload file": [
-        "Fájl feltöltése"
+      "List layout": [
+        "Lista elrendezés"
       ],
-      "Upload folder": [
-        "Mappa feltöltése"
+      "Grid layout": [
+        "Rács elrendezés"
+      ],
+      "Preview": [
+        "Előnézet"
+      ],
+      "Delete permanently": [
+        "Végleges törlés"
+      ],
+      "Restore from trash": [
+        "Visszaállítás a Lomtárból"
+      ],
+      "Empty trash": [
+        "Lomtár ürítése"
+      ],
+      "Share file": [
+        "Fájl megosztása"
+      ],
+      "Stop sharing": [
+        "Megosztás megszüntetése"
       ],
       "Maximize transfers": [
         "Le- és feltöltések megnyitása"
@@ -690,35 +708,20 @@
       "Remove from this list": [
         "Eltávolítás a listából"
       ],
-      "Create": [
-        "Létrehozás"
-      ],
-      "List layout": [
-        "Lista elrendezés"
-      ],
-      "Grid layout": [
-        "Rács elrendezés"
-      ],
-      "Preview": [
-        "Előnézet"
-      ],
-      "Stop sharing": [
-        "Megosztás megszüntetése"
-      ],
       "Share": [
         "Megosztás"
       ],
       "Show shared link details": [
         ""
       ],
-      "Share file": [
-        "Fájl megosztása"
-      ],
       "Start recovering": [
         "Helyreállítás indítása"
       ],
       "View more": [
         "Továbbiak megteknintése"
+      ],
+      "Create": [
+        "Létrehozás"
       ],
       "Move": [
         "Áthelyezés"
@@ -876,6 +879,9 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
+      "Report a problem": [
+        "Probléma jelentése"
+      ],
       "Open help menu": [
         "Súgó menü megnyitása"
       ],
@@ -884,9 +890,6 @@
       ],
       "Open settings menu": [
         "Beállítások menü megnyitása"
-      ],
-      "Report a problem": [
-        "Probléma jelentése"
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -1023,32 +1026,32 @@
       "Drop to upload": [
         "Húzza a fájlokat ide a feltöltéshez"
       ],
-      "Trash": [
-        "Lomtár"
-      ],
-      "Empty trash": [
-        "Lomtár ürítése"
-      ],
       "Show actions": [
         "Műveletek megjelenítése"
       ],
       "Sort files/folders": [
         "Fájlok és mappák rendezése"
       ],
+      "Change layout": [
+        "Elrendezés módosítása"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "Empty trash": [
+        "Lomtár ürítése"
+      ],
+      "Shared": [
+        "Megosztott"
+      ],
+      "Additional settings": [
+        "További beállítások"
+      ],
       "Cancel all active transfers": [
         "Minden folyamatban lévő átvitel megszakítása"
       ],
       "My files": [
         "Saját fájlok"
-      ],
-      "You have no folders yet": [
-        "Még nincsenek mappái"
-      ],
-      "You have no files to share": [
-        "Még nincs fájl amit megoszthatna"
-      ],
-      "Change layout": [
-        "Elrendezés módosítása"
       ],
       "Your file is ready to be downloaded": [
         "A fájl készen áll a letöltésre"
@@ -1116,11 +1119,11 @@
       "Size": [
         "Méret"
       ],
-      "Shared": [
-        "Megosztott"
-      ],
       "# of accesses": [
         "Elérések száma"
+      ],
+      "You have no folders yet": [
+        "Még nincsenek mappái"
       ],
       "Create a new folder": [
         "Új mappa létrehozása"
@@ -1137,9 +1140,6 @@
       "Share via link": [
         "Megosztás hivatkozással"
       ],
-      "Additional settings": [
-        "További beállítások"
-      ],
       "Manage secure link": [
         "Biztonságos hivatkozás kezelése"
       ],
@@ -1151,6 +1151,9 @@
       ],
       "Discard": [
         "Elvetés"
+      ],
+      "You have no files to share": [
+        "Még nincs fájl amit megoszthatna"
       ],
       "Files details": [
         "Fájlok adatai"
@@ -1169,11 +1172,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Betöltés"
-      ],
       "No results found": [
         "Nincs találat"
+      ],
+      "Loading": [
+        "Betöltés"
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
@@ -1722,8 +1725,23 @@
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
       ],
+      "There are no files yet": [
+        "Még nincsenek fájlok"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Ejtsen ide fájlokat vagy válassza a feltöltést."
+      ],
+      "No files or folders in trash": [
+        "Nincsenek mappák vagy fájlok a lomtárban"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
+      ],
+      "Share files with links": [
+        "Fájlok megosztása linkekkel"
+      ],
+      "Create links and share your files with others.": [
+        "Hozzon létre linkeket, így ossza meg a fájljait másokkal."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } kész",
@@ -1802,27 +1820,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Az áttöltéskezelő bezárása megszakítja az összes jelenlegi fájlátvitelt. Folytatja?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Hozza létre első mappáját és helyezze el benne a fájljait."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Nyissa meg a Saját fájlokat és töltsön fel néhány fájlt."
-      ],
-      "No files or folders in trash": [
-        "Nincsenek mappák vagy fájlok a lomtárban"
-      ],
-      "There are no files yet": [
-        "Még nincsenek fájlok"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ejtsen ide fájlokat vagy válassza a feltöltést."
-      ],
-      "Share files with links": [
-        "Fájlok megosztása linkekkel"
-      ],
-      "Create links and share your files with others.": [
-        "Hozzon létre linkeket, így ossza meg a fájljait másokkal."
-      ],
       "Link expires: ": [
         "A link lejár: "
       ],
@@ -1859,6 +1856,9 @@
       "No": [
         "Nem"
       ],
+      "Create your first folder and start moving your files.": [
+        "Hozza létre első mappáját és helyezze el benne a fájljait."
+      ],
       "Anyone with this link can access your file.": [
         "A hivatkozás birtokában bárki hozzáférhet a fájlhoz."
       ],
@@ -1888,6 +1888,9 @@
       ],
       "Creating link to file": [
         "A fájl linkjének létrehozása"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Nyissa meg a Saját fájlokat és töltsön fel néhány fájlt."
       ],
       "Select an uploaded file and create a link to it.": [
         "Válasszon ki egy feltöltött fájlt és hozzon létre egy linket hozzá."
@@ -2152,6 +2155,15 @@
       "Unknown file": [
         "Ismeretlen fájl"
       ],
+      "All": [
+        ""
+      ],
+      "Active": [
+        ""
+      ],
+      "Failed": [
+        ""
+      ],
       "Folder": [
         "Mappa"
       ],
@@ -2279,14 +2291,14 @@
       "Upgrade account": [
         "Csomag váltása"
       ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
       ],
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
       ],
       "click here": [
         ""
@@ -2498,6 +2510,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "A helyi dátum és idő beállítása valószínűleg hibás."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem végpontok közt titkosítottak, kérünk ne küldjön semmilyen érzékeny információt."
@@ -3022,45 +3037,6 @@
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Beállítások"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Be"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Ki"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
@@ -3162,6 +3138,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Képernyőkép csatolása"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Beállítások"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Be"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Ki"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3720,6 +3735,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Név"
@@ -3832,12 +3853,6 @@
       ],
       "Address": [
         "Cím"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A jelszónak legalább ${ length } karakterből kell állnia",
-        "A jelszónak legalább ${ length } karakterből kell állnia"
       ]
     },
     "PGP key warning": {

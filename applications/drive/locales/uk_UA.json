@@ -467,11 +467,26 @@
       "here": [
         "тут"
       ],
+      "Clear": [
+        "Очистити"
+      ],
+      "Add screenshot(s)": [
+        "Додати знімки екрана"
+      ],
+      "Hide info": [
+        "Сховати відомості"
+      ],
+      "Show info": [
+        "Показати відомості"
+      ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
       "${ BRAND_NAME } introduction": [
         "Вступ ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Чат з нами"
       ],
       "I have a question": [
         "У мене є питання"
@@ -511,18 +526,6 @@
       ],
       "Composer mode": [
         "Режим редактора"
-      ],
-      "Clear": [
-        "Очистити"
-      ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
-      "Hide info": [
-        "Сховати відомості"
-      ],
-      "Show info": [
-        "Показати відомості"
       ],
       "Get started": [
         "Розпочнімо"
@@ -611,17 +614,14 @@
       "New upload": [
         "Нове завантаження"
       ],
-      "Delete permanently": [
-        "Видалити назавжди"
+      "Upload file": [
+        "Завантажити файл"
       ],
-      "Restore from trash": [
-        "Відновити зі смітника"
+      "Upload folder": [
+        "Відвантажити теку"
       ],
-      "Empty trash": [
-        "Очистити смітник"
-      ],
-      "Rename": [
-        "Перейменувати"
+      "Create new folder": [
+        "Створити нову теку"
       ],
       "Move to folder": [
         "Перемістити до теки"
@@ -629,8 +629,8 @@
       "Move to trash": [
         "Перемістити до смітника"
       ],
-      "Create new folder": [
-        "Створити нову теку"
+      "Rename": [
+        "Перейменувати"
       ],
       "Name: A to Z": [
         "Назва: від А до Я"
@@ -656,11 +656,29 @@
       "Size: large to small": [
         "Розмір: від більших до менших"
       ],
-      "Upload file": [
-        "Завантажити файл"
+      "List layout": [
+        "Стиль списку"
       ],
-      "Upload folder": [
-        "Відвантажити теку"
+      "Grid layout": [
+        "Схема сітки"
+      ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
+      "Delete permanently": [
+        "Видалити назавжди"
+      ],
+      "Restore from trash": [
+        "Відновити зі смітника"
+      ],
+      "Empty trash": [
+        "Очистити смітник"
+      ],
+      "Share file": [
+        "Спільний доступ до файлу"
+      ],
+      "Stop sharing": [
+        "Припинити спільний доступ"
       ],
       "Maximize transfers": [
         "Розгорнути передачі"
@@ -698,35 +716,20 @@
       "Remove from this list": [
         "Вилучити з цього списку"
       ],
-      "Create": [
-        "Створити"
-      ],
-      "List layout": [
-        "Стиль списку"
-      ],
-      "Grid layout": [
-        "Схема сітки"
-      ],
-      "Preview": [
-        "Попередній перегляд"
-      ],
-      "Stop sharing": [
-        "Припинити спільний доступ"
-      ],
       "Share": [
         "Спільний доступ"
       ],
       "Show shared link details": [
         "Показати подробиці посилання для спільного доступу"
       ],
-      "Share file": [
-        "Спільний доступ до файлу"
-      ],
       "Start recovering": [
         "Почати відновлення"
       ],
       "View more": [
         "Докладніше"
+      ],
+      "Create": [
+        "Створити"
       ],
       "Move": [
         "Перемістити"
@@ -892,6 +895,9 @@
       "Import contacts": [
         "Імпортувати контакти"
       ],
+      "Report a problem": [
+        "Повідомити про проблему"
+      ],
       "Open help menu": [
         "Відкрити меню довідки"
       ],
@@ -900,9 +906,6 @@
       ],
       "Open settings menu": [
         "Відкрити меню налаштувань"
-      ],
-      "Report a problem": [
-        "Повідомити про проблему"
       ],
       "Select a theme": [
         "Вибрати тему"
@@ -1039,32 +1042,32 @@
       "Drop to upload": [
         "Перетягніть для вивантаження"
       ],
-      "Trash": [
-        "Смітник"
-      ],
-      "Empty trash": [
-        "Очистити смітник"
-      ],
       "Show actions": [
         "Показати дії"
       ],
       "Sort files/folders": [
         "Сортувати файли/теки"
       ],
+      "Change layout": [
+        "Змінити вигляд"
+      ],
+      "Trash": [
+        "Смітник"
+      ],
+      "Empty trash": [
+        "Очистити смітник"
+      ],
+      "Shared": [
+        "Спільний доступ"
+      ],
+      "Additional settings": [
+        "Додаткові налаштування"
+      ],
       "Cancel all active transfers": [
         "Скасувати всі активні передачі"
       ],
       "My files": [
         "Мій файли"
-      ],
-      "You have no folders yet": [
-        "У вас поки немає тек"
-      ],
-      "You have no files to share": [
-        "У вас немає файлів, щоб поділитися"
-      ],
-      "Change layout": [
-        "Змінити вигляд"
       ],
       "Your file is ready to be downloaded": [
         "Файл готовий до завантаження"
@@ -1132,11 +1135,11 @@
       "Size": [
         "Розмір"
       ],
-      "Shared": [
-        "Спільний доступ"
-      ],
       "# of accesses": [
         "# доступів"
+      ],
+      "You have no folders yet": [
+        "У вас поки немає тек"
       ],
       "Create a new folder": [
         "Створити нову теку"
@@ -1153,9 +1156,6 @@
       "Share via link": [
         "Спільний доступ за посиланням"
       ],
-      "Additional settings": [
-        "Додаткові налаштування"
-      ],
       "Manage secure link": [
         "Керувати захищеним посиланням"
       ],
@@ -1167,6 +1167,9 @@
       ],
       "Discard": [
         "Відхилити"
+      ],
+      "You have no files to share": [
+        "У вас немає файлів, щоб поділитися"
       ],
       "Files details": [
         "Подробиці про файли"
@@ -1185,11 +1188,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Завантаження"
-      ],
       "No results found": [
         "Результатів не знайдено"
+      ],
+      "Loading": [
+        "Завантаження"
       ],
       "No contacts added yet": [
         "Контактів ще не додано"
@@ -1609,7 +1612,7 @@
         "Сплачується в кінці вашого поточного платіжного циклу (оновлюється ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Для можливості скасування передплати ви повинні вилучити будь-які додаткові особисті та будь-які посилання на спільні календарі. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
@@ -1752,8 +1755,23 @@
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
       ],
+      "There are no files yet": [
+        "Поки що тут немає файлів"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Перетягніть файл сюди або виберіть що вивантажити."
+      ],
+      "No files or folders in trash": [
+        "Немає файлів чи тек у смітнику"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете очистити смітник та остаточно видалити всі елементи?"
+      ],
+      "Share files with links": [
+        "Поділіться файлами за допомогою посилань"
+      ],
+      "Create links and share your files with others.": [
+        "Створіть посилання та діліться файлами з іншими."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } завершено",
@@ -1848,27 +1866,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Закриття менеджера передавання скасує всі активні передавання, ви впевнені?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Створіть свою першу теку та почніть переміщувати свої файли."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Перейдіть у \"Мої файли\" і спочатку завантажте деякі файли."
-      ],
-      "No files or folders in trash": [
-        "Немає файлів чи тек у смітнику"
-      ],
-      "There are no files yet": [
-        "Поки що тут немає файлів"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Перетягніть файл сюди або виберіть що вивантажити."
-      ],
-      "Share files with links": [
-        "Поділіться файлами за допомогою посилань"
-      ],
-      "Create links and share your files with others.": [
-        "Створіть посилання та діліться файлами з іншими."
-      ],
       "Link expires: ": [
         "Термін дії посилання: "
       ],
@@ -1905,6 +1902,9 @@
       "No": [
         "Ні"
       ],
+      "Create your first folder and start moving your files.": [
+        "Створіть свою першу теку та почніть переміщувати свої файли."
+      ],
       "Anyone with this link can access your file.": [
         "Будь-хто за цим посиланням може отримати доступ до вашого файлу."
       ],
@@ -1934,6 +1934,9 @@
       ],
       "Creating link to file": [
         "Створення посилання на файл"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Перейдіть у \"Мої файли\" і спочатку завантажте деякі файли."
       ],
       "Select an uploaded file and create a link to it.": [
         "Виберіть вивантажений файл та створіть посилання на нього."
@@ -2198,6 +2201,15 @@
       "Unknown file": [
         "Невідомий файл"
       ],
+      "All": [
+        "Усі"
+      ],
+      "Active": [
+        "Активні"
+      ],
+      "Failed": [
+        "Невдалі"
+      ],
       "Folder": [
         "Тека"
       ],
@@ -2329,14 +2341,14 @@
       "Upgrade account": [
         "Покращити обліковий запис"
       ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
+      ],
       "Upgrade": [
         "Покращити"
       ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
       ],
       "click here": [
         "натисніть тут"
@@ -2552,6 +2564,9 @@
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Здається, ваші локальні налаштування дати та часу не синхронізовані."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Живий чат - це преміум можливість, доступна лише користувачам платних тарифних планів ProtonVPN. Будь ласка, створіть запит натомість."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте будь-яку конфіденційну інформацію."
@@ -3142,45 +3157,6 @@
         "Доступна нова версія ${ appName }. ${ reloadButton }."
       ]
     },
-    "Text": {
-      "Settings": [
-        "Налаштування"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Увімкнено"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Не вибрано жодного зображення"
@@ -3282,6 +3258,45 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Додати знімки екрану"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Налаштування"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Увімкнено"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Вимкнено"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Розгорнутий"
+      ],
+      "Normal": [
+        "Звичайний"
       ]
     },
     "Onboarding Proton": {
@@ -3862,6 +3877,14 @@
         "ГБ"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Ім'я"
@@ -3974,14 +3997,6 @@
       ],
       "Address": [
         "Адреса"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
       ]
     },
     "PGP key warning": {

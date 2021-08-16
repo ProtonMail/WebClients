@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Error desconegut"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot incloure enllaços d’URL que no es puguin obrir correctament al vostre navegador actual"
+      ],
+      "Unknown error": [
+        "Error desconegut"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Aquest camp és obligatori"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "El compositor no s'ha pogut carregar."
       ],
       "Please refresh the page.": [
         "Si us plau, refresqueu la pàgina."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "No es pot validar el correu electrònic, torneu-ho a provar més tard"
@@ -203,12 +203,6 @@
       "Request timed out.": [
         "S'ha esgotat el temps d'espera."
       ],
-      "Signature verification failed": [
-        "Verificació de la signatura fallida"
-      ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar el correu ${ email }."
-      ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
       ],
@@ -232,6 +226,12 @@
       ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
+      ],
+      "Signature verification failed": [
+        "Verificació de la signatura fallida"
+      ],
+      "Could not find address ${ email }.": [
+        "No s'ha pogut trobar el correu ${ email }."
       ],
       "Missing signature": [
         "Signatura no trobada"
@@ -281,6 +281,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Els fitxers adjunts no poden ser més grans que 25 MB."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
+      ],
+      "This message has already been sent.": [
+        "Aquest missatge ja s'ha enviat."
       ],
       "Draft could not be saved. Try again.": [
         "L'esborrany no s'ha pogut desar. Torni a provar-ho."
@@ -350,26 +356,23 @@
       "Close": [
         "Tancar"
       ],
-      "Close modal": [
-        "Tancar el modal"
+      "Confirm": [
+        "Confirmar"
       ],
       "Cancel": [
         "Cancel·lar"
       ],
+      "Close modal": [
+        "Tancar el modal"
+      ],
       "Submit": [
         "Enviar"
-      ],
-      "Confirm": [
-        "Confirmar"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Utilitzar la configuració \"${ label }\""
-      ],
-      "refresh the page": [
-        "refresqueu la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -485,6 +488,9 @@
       "Underline": [
         "Subratllat"
       ],
+      "refresh the page": [
+        "refresqueu la pàgina"
+      ],
       "Go to panel ${ index }": [
         "Anar al panell ${ index }"
       ],
@@ -532,6 +538,9 @@
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
+      ],
+      "Signing out": [
+        "Tancant la sessió"
       ],
       "Add": [
         "Afegir"
@@ -683,9 +692,6 @@
       "OK": [
         "Accepta"
       ],
-      "Signing out": [
-        "Tancant la sessió"
-      ],
       "Log in": [
         "Inicia sessió"
       ],
@@ -742,6 +748,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "Introducció ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Xategeu amb nosaltres"
       ],
       "I have a question": [
         "Tinc una pregunta"
@@ -877,15 +886,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Afegir a ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "Més informació"
-      ],
-      "Open shop": [
-        "Obrir la botiga"
-      ],
-      "Open calendar": [
-        "Obrir el calendari"
       ],
       "Send anyway": [
         "Enviar de totes maneres"
@@ -1205,6 +1205,15 @@
       ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
+      ],
+      "Learn more": [
+        "Més informació"
+      ],
+      "Open shop": [
+        "Obrir la botiga"
+      ],
+      "Open calendar": [
+        "Obrir el calendari"
       ]
     },
     "Title": {
@@ -1719,14 +1728,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "No s'han trobat resultats"
-      ],
       "Loading": [
         "Carregant"
       ],
-      "support team": [
-        "equip de suport"
+      "No results found": [
+        "No s'han trobat resultats"
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -1825,6 +1831,9 @@
       "Plain text": [
         "Text plà"
       ],
+      "support team": [
+        "equip de suport"
+      ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
@@ -1857,6 +1866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
+      "Loading ${ appName }": [
+        "Carregant ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -2000,9 +2012,6 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
-      ],
-      "Loading ${ appName }": [
-        "Carregant ${ appName }"
       ],
       "here": [
         "aquí"
@@ -2408,8 +2417,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "No has afegit al vostre correu electrònic cap assumpte. Vols enviar el missatge de totes maneres?"
       ],
-      "Do you want to send your message anyway?": [
-        "Voleu enviar el missatge igualment?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        "Heu escrit \"${ keyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Hi ha massa missatges esperant per enviar. Espereu que s'enviï un altre missatge per programar aquest."
@@ -3346,36 +3355,6 @@
       "Add a gift code": [
         "Afegiu un codi regal"
       ],
-      "Inbox": [
-        "Safata d'entrada"
-      ],
-      "Drafts": [
-        "Esborranys"
-      ],
-      "Sent": [
-        "Enviat"
-      ],
-      "Trash": [
-        "Paperera"
-      ],
-      "Spam": [
-        "Correu brossa"
-      ],
-      "All mail": [
-        "Tot el correu"
-      ],
-      "Archive": [
-        "Arxiu"
-      ],
-      "Starred": [
-        "Destacat"
-      ],
-      "Outbox": [
-        "Bústia de sortida"
-      ],
-      "Scheduled": [
-        "Programat"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
       ],
@@ -3451,6 +3430,33 @@
       "Add label": [
         "Afegir etiqueta"
       ],
+      "Inbox": [
+        "Safata d'entrada"
+      ],
+      "Drafts": [
+        "Esborranys"
+      ],
+      "Scheduled": [
+        "Programat"
+      ],
+      "Sent": [
+        "Enviat"
+      ],
+      "Starred": [
+        "Destacat"
+      ],
+      "Archive": [
+        "Arxiu"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "All mail": [
+        "Tot el correu"
+      ],
       "Folders": [
         "Carpetes"
       ],
@@ -3462,6 +3468,9 @@
       ],
       "Manage your labels": [
         "Gestiona les teves etiquetes"
+      ],
+      "Outbox": [
+        "Bústia de sortida"
       ]
     },
     "Placeholder": {
@@ -3647,6 +3656,9 @@
       ],
       "Contacts could not be merged": [
         "Els contactes no s’han pogut combinar"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
@@ -3940,19 +3952,19 @@
         "${ elementsCount } missatge mogut al correu brossa i remitent afegit a la llista de bloqueig.",
         "${ elementsCount } missatges moguts al correu brossa i remitent afegit a la llista de bloqueig."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Missatge mogut a ${ folderName } i el remitent esborrat de la llista de bloqueig."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        "Missatge mogut a ${ folderName } i remitent afegit a la Llista d'Autoritzats."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } missatge mogut a ${ folderName } i remitent eliminat de la llista de bloqueig.",
-        "${ elementsCount } missatges moguts a ${ folderName } i remitent eliminat de la llista de bloqueig."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } missatge mogut a ${ folderName } i remitent afegit a la Llista d'Autoritzats.",
+        "${ elementsCount } missatges moguts a ${ folderName } i remitent afegit a la Llista d'Autoritzats."
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Conversa moguda a ${ folderName } i el remitent esborrat de la llista de bloqueig."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        "Conversa moguda a ${ folderName } i remitent afegit a la Llista d'Autoritzats."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } conversa moguda a ${ folderName } i remitent eliminat de la llista de bloqueig.",
-        "${ elementsCount } converses mogudes a ${ folderName } i remitent eliminat de la llista de bloqueig."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } conversa moguda a ${ folderName } i remitent afegit a la Llista d'Autoritzats.",
+        "${ elementsCount } converses mogudes a ${ folderName } i remitent afegit a la Llista d'Autoritzats."
       ],
       "Message moved to ${ folderName }.": [
         "Missatge mogut a ${ folderName }."
@@ -4079,6 +4091,17 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicacions de Proton"
+      ],
+      "Go to ${ title }": [
+        "Ves a ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Anar a ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4436,41 +4459,6 @@
         "Editar i tornar a programar"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicacions de Proton"
-      ],
-      "Go to ${ title }": [
-        "Ves a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Anar a ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximitzat"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Carregar"
@@ -4517,6 +4505,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Per desactivar la versió beta, obriu el menú desplegable de les preferències i cliqueu a l'opció \"Accés Beta\"."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Còmode"
+      ],
+      "Compact": [
+        "Compacte"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximitzat"
       ]
     },
     "Message display when a new app version is available": {
@@ -5180,12 +5192,6 @@
         "destacat"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -5314,9 +5320,10 @@
         "Adreça"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ]
     },
     "Message": {
@@ -5328,6 +5335,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "El ${ date }, ${ name } ${ address } va escriure:"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5590,6 +5602,9 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
+      ],
+      "Invalid method": [
+        "Mètode no vàlid"
       ]
     },
     "Event invitation error": {
@@ -6425,6 +6440,9 @@
       ],
       "tomorrow": [
         "demà"
+      ],
+      "on ${ formattedDate }": [
+        "el ${ formattedDate }"
       ],
       "Today": [
         "Avui"

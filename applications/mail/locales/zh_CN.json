@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "未知错误"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
+      ],
+      "Unknown error": [
+        "未知错误"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -30,14 +30,14 @@
       "This field is required": [
         "此项必须填写"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
-      ],
       "The composer failed to load.": [
         "编辑器加载失败。"
       ],
       "Please refresh the page.": [
         "请刷新页面。"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "Can't validate email, try again later": [
         "无法验证邮箱，请重试"
@@ -201,12 +201,6 @@
       "Request timed out.": [
         "请求超时。"
       ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
       "Email address disabled": [
         "邮件地址已禁用"
       ],
@@ -230,6 +224,12 @@
       ],
       "The sending key is not valid": [
         "发送密钥无效"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
       ],
       "Missing signature": [
         "缺少签名"
@@ -278,6 +278,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "附件大小不能超过 25 MB。"
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        ""
+      ],
+      "This message has already been sent.": [
+        ""
       ],
       "Draft could not be saved. Try again.": [
         "草稿保存失败，请重试。"
@@ -344,26 +350,23 @@
       "Close": [
         "关闭"
       ],
-      "Close modal": [
-        "关闭"
+      "Confirm": [
+        "确定"
       ],
       "Cancel": [
         "取消"
       ],
+      "Close modal": [
+        "关闭"
+      ],
       "Submit": [
         "提交"
-      ],
-      "Confirm": [
-        "确定"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         ""
-      ],
-      "refresh the page": [
-        "刷新页面"
       ],
       "Remove": [
         "移除"
@@ -479,6 +482,9 @@
       "Underline": [
         "下划线"
       ],
+      "refresh the page": [
+        "刷新页面"
+      ],
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
       ],
@@ -526,6 +532,9 @@
       ],
       "Edit phone number": [
         "编辑手机号码"
+      ],
+      "Signing out": [
+        "正在退出账户"
       ],
       "Add": [
         "添加"
@@ -674,9 +683,6 @@
       "OK": [
         "确定"
       ],
-      "Signing out": [
-        "正在退出账户"
-      ],
       "Log in": [
         "登录"
       ],
@@ -733,6 +739,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
+      ],
+      "Chat with us": [
+        ""
       ],
       "I have a question": [
         ""
@@ -867,15 +876,6 @@
         "否"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
-      ],
-      "Learn more": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
         ""
       ],
       "Send anyway": [
@@ -1195,6 +1195,15 @@
       ],
       "Start using ${ appName }": [
         "开始使用 ${ appName }"
+      ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
       ]
     },
     "Title": {
@@ -1701,14 +1710,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "未找到结果"
-      ],
       "Loading": [
         "加载中"
       ],
-      "support team": [
-        ""
+      "No results found": [
+        "未找到结果"
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -1806,6 +1812,9 @@
       "Plain text": [
         "纯文本"
       ],
+      "support team": [
+        ""
+      ],
       "Drop the file here to upload": [
         ""
       ],
@@ -1838,6 +1847,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "Loading ${ appName }": [
+        "正在加载 ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         ""
@@ -1976,9 +1988,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "Loading ${ appName }": [
-        "正在加载 ${ appName }"
       ],
       "here": [
         "此处"
@@ -2197,7 +2206,7 @@
         ""
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "退订前您必须先删除所有个人的附加日历以及所有共享日历链接。${ linkButton }"
       ],
       "No payment is required at this time.": [
         ""
@@ -2382,7 +2391,7 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "您还未填写邮件主题，确定要发送邮件吗？"
       ],
-      "Do you want to send your message anyway?": [
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
         ""
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
@@ -3294,36 +3303,6 @@
       "Add a gift code": [
         ""
       ],
-      "Inbox": [
-        "收件箱"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Sent": [
-        "已发送"
-      ],
-      "Trash": [
-        "废件箱"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "All mail": [
-        "所有邮件"
-      ],
-      "Archive": [
-        "存档"
-      ],
-      "Starred": [
-        "星标邮件"
-      ],
-      "Outbox": [
-        "发件箱"
-      ],
-      "Scheduled": [
-        ""
-      ],
       "You need to activate your calendar keys to add this event": [
         ""
       ],
@@ -3399,6 +3378,33 @@
       "Add label": [
         "添加标签"
       ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        "已发送"
+      ],
+      "Starred": [
+        "星标邮件"
+      ],
+      "Archive": [
+        "存档"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "Trash": [
+        "废件箱"
+      ],
+      "All mail": [
+        "所有邮件"
+      ],
       "Folders": [
         "文件夹"
       ],
@@ -3410,6 +3416,9 @@
       ],
       "Manage your labels": [
         "管理您的标签"
+      ],
+      "Outbox": [
+        "发件箱"
       ]
     },
     "Placeholder": {
@@ -3586,6 +3595,9 @@
         ""
       ],
       "Contacts could not be merged": [
+        ""
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -3869,17 +3881,17 @@
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
         "${ elementsCount } 条会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "邮件已移至${ folderName }，其发件人已移出黑名单。"
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } 封邮件已移至${ folderName }，其发件人已移出黑名单。"
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "会话已移至${ folderName }，其发件人已移出黑名单。"
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } 条会话已移至${ folderName }，其发件人已移出黑名单。"
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        ""
       ],
       "Message moved to ${ folderName }.": [
         "邮件已移至${ folderName }。"
@@ -3998,6 +4010,17 @@
       ],
       "No verification method available": [
         "没有可用的验证方法"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton 产品"
+      ],
+      "Go to ${ title }": [
+        "转到 ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        ""
       ]
     },
     "Label for contact group name": {
@@ -4348,41 +4371,6 @@
         ""
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton 产品"
-      ],
-      "Go to ${ title }": [
-        "转到 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
-        ""
-      ]
-    },
     "Select files": {
       "Upload": [
         "上传"
@@ -4428,6 +4416,30 @@
         ""
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
+        ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
         ""
       ]
     },
@@ -5081,11 +5093,6 @@
         "星标邮件"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        ""
-      ]
-    },
     "file size format": {
       "bytes": [
         "字节"
@@ -5214,9 +5221,9 @@
         "地址"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        ""
       ]
     },
     "Message": {
@@ -5228,6 +5235,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }，${ name } ${ address } 来信："
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5489,6 +5501,9 @@
         ""
       ],
       "Unsupported event": [
+        ""
+      ],
+      "Invalid method": [
         ""
       ]
     },
@@ -6285,6 +6300,9 @@
         ""
       ],
       "tomorrow": [
+        ""
+      ],
+      "on ${ formattedDate }": [
         ""
       ],
       "Today": [

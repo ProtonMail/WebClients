@@ -467,11 +467,26 @@
       "here": [
         ""
       ],
+      "Clear": [
+        ""
+      ],
+      "Add screenshot(s)": [
+        ""
+      ],
+      "Hide info": [
+        ""
+      ],
+      "Show info": [
+        ""
+      ],
       "Copy email to clipboard": [
         ""
       ],
       "${ BRAND_NAME } introduction": [
         ""
+      ],
+      "Chat with us": [
+        "Komunikace s námi"
       ],
       "I have a question": [
         ""
@@ -510,18 +525,6 @@
         ""
       ],
       "Composer mode": [
-        ""
-      ],
-      "Clear": [
-        ""
-      ],
-      "Add screenshot(s)": [
-        ""
-      ],
-      "Hide info": [
-        ""
-      ],
-      "Show info": [
         ""
       ],
       "Get started": [
@@ -611,16 +614,13 @@
       "New upload": [
         ""
       ],
-      "Delete permanently": [
+      "Upload file": [
         ""
       ],
-      "Restore from trash": [
+      "Upload folder": [
         ""
       ],
-      "Empty trash": [
-        "Vysypat koš"
-      ],
-      "Rename": [
+      "Create new folder": [
         ""
       ],
       "Move to folder": [
@@ -629,7 +629,7 @@
       "Move to trash": [
         ""
       ],
-      "Create new folder": [
+      "Rename": [
         ""
       ],
       "Name: A to Z": [
@@ -656,10 +656,28 @@
       "Size: large to small": [
         ""
       ],
-      "Upload file": [
+      "List layout": [
         ""
       ],
-      "Upload folder": [
+      "Grid layout": [
+        ""
+      ],
+      "Preview": [
+        ""
+      ],
+      "Delete permanently": [
+        ""
+      ],
+      "Restore from trash": [
+        ""
+      ],
+      "Empty trash": [
+        "Vysypat koš"
+      ],
+      "Share file": [
+        ""
+      ],
+      "Stop sharing": [
         ""
       ],
       "Maximize transfers": [
@@ -698,34 +716,19 @@
       "Remove from this list": [
         ""
       ],
-      "Create": [
-        ""
-      ],
-      "List layout": [
-        ""
-      ],
-      "Grid layout": [
-        ""
-      ],
-      "Preview": [
-        ""
-      ],
-      "Stop sharing": [
-        ""
-      ],
       "Share": [
         ""
       ],
       "Show shared link details": [
         "Zobrazit detaily sdíleného odkazu"
       ],
-      "Share file": [
-        ""
-      ],
       "Start recovering": [
         ""
       ],
       "View more": [
+        ""
+      ],
+      "Create": [
         ""
       ],
       "Move": [
@@ -892,6 +895,9 @@
       "Import contacts": [
         "Importovat kontakty"
       ],
+      "Report a problem": [
+        ""
+      ],
       "Open help menu": [
         ""
       ],
@@ -899,9 +905,6 @@
         ""
       ],
       "Open settings menu": [
-        ""
-      ],
-      "Report a problem": [
         ""
       ],
       "Select a theme": [
@@ -1039,31 +1042,31 @@
       "Drop to upload": [
         ""
       ],
-      "Trash": [
-        ""
-      ],
-      "Empty trash": [
-        "Vysypat koš"
-      ],
       "Show actions": [
         ""
       ],
       "Sort files/folders": [
         ""
       ],
+      "Change layout": [
+        ""
+      ],
+      "Trash": [
+        ""
+      ],
+      "Empty trash": [
+        "Vysypat koš"
+      ],
+      "Shared": [
+        ""
+      ],
+      "Additional settings": [
+        ""
+      ],
       "Cancel all active transfers": [
         ""
       ],
       "My files": [
-        ""
-      ],
-      "You have no folders yet": [
-        ""
-      ],
-      "You have no files to share": [
-        ""
-      ],
-      "Change layout": [
         ""
       ],
       "Your file is ready to be downloaded": [
@@ -1132,10 +1135,10 @@
       "Size": [
         ""
       ],
-      "Shared": [
+      "# of accesses": [
         ""
       ],
-      "# of accesses": [
+      "You have no folders yet": [
         ""
       ],
       "Create a new folder": [
@@ -1153,9 +1156,6 @@
       "Share via link": [
         ""
       ],
-      "Additional settings": [
-        ""
-      ],
       "Manage secure link": [
         ""
       ],
@@ -1166,6 +1166,9 @@
         ""
       ],
       "Discard": [
+        ""
+      ],
+      "You have no files to share": [
         ""
       ],
       "Files details": [
@@ -1185,11 +1188,11 @@
       ]
     },
     "Info": {
-      "Loading": [
-        "Načítá se"
-      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "Loading": [
+        "Načítá se"
       ],
       "No contacts added yet": [
         "Žádné kontakty"
@@ -1609,7 +1612,7 @@
         "Vyúčtováno na konci aktuálního účtovacího období (obnovuje se ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Před zrušením předplatného musíte odebrat všechny své osobní kalendáře a jejich sdílené odkazy. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
@@ -1752,8 +1755,23 @@
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
       ],
+      "There are no files yet": [
+        "Soubory tam ještě nejsou"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Zachyťte a přetáhněte soubor sem nebo vyberte soubor nahrát."
+      ],
+      "No files or folders in trash": [
+        "Žádné soubory nebo složky v koši"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
+      ],
+      "Share files with links": [
+        "Sdílejte soubory přes s odkazovými řádky"
+      ],
+      "Create links and share your files with others.": [
+        "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Ukončený",
@@ -1848,27 +1866,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Uzavíráme správce přenosu, budou zrušeny aktivní přenosy, jste si touto akcí jistí?"
       ],
-      "Create your first folder and start moving your files.": [
-        "Vytvořte si Váš první soubor a začněte stěhovat své složky."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
-      ],
-      "No files or folders in trash": [
-        "Žádné soubory nebo složky v koši"
-      ],
-      "There are no files yet": [
-        "Soubory tam ještě nejsou"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Zachyťte a přetáhněte soubor sem nebo vyberte soubor nahrát."
-      ],
-      "Share files with links": [
-        "Sdílejte soubory přes s odkazovými řádky"
-      ],
-      "Create links and share your files with others.": [
-        "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
-      ],
       "Link expires: ": [
         "Expirace odkazového řádku: "
       ],
@@ -1905,6 +1902,9 @@
       "No": [
         "Ne"
       ],
+      "Create your first folder and start moving your files.": [
+        "Vytvořte si Váš první soubor a začněte stěhovat své složky."
+      ],
       "Anyone with this link can access your file.": [
         "Kdokoliv s tímto odkazovým řádkem může mít přístup k Vašim souborům."
       ],
@@ -1934,6 +1934,9 @@
       ],
       "Creating link to file": [
         "Vytvářím odkazový řádek k souboru"
+      ],
+      "Go to \"My files\" and upload some files first.": [
+        "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
       ],
       "Select an uploaded file and create a link to it.": [
         "Vyberte nahraný soubor a vytvořte k němu odkazový řádek."
@@ -2198,6 +2201,15 @@
       "Unknown file": [
         ""
       ],
+      "All": [
+        "Vše"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "Failed": [
+        "Selhalo"
+      ],
       "Folder": [
         ""
       ],
@@ -2329,13 +2341,13 @@
       "Upgrade account": [
         ""
       ],
+      "clearing your browser cache": [
+        ""
+      ],
       "Upgrade": [
         ""
       ],
       "Go to subscription plans": [
-        ""
-      ],
-      "clearing your browser cache": [
         ""
       ],
       "click here": [
@@ -2551,6 +2563,9 @@
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -3142,45 +3157,6 @@
         ""
       ]
     },
-    "Text": {
-      "Settings": [
-        ""
-      ]
-    },
-    "Enabled": {
-      "On": [
-        ""
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         ""
@@ -3281,6 +3257,45 @@
     },
     "Label, make it short please": {
       "Attach screenshot(s)": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        ""
+      ]
+    },
+    "Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
         ""
       ]
     },
@@ -3862,6 +3877,14 @@
         ""
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Jméno"
@@ -3974,14 +3997,6 @@
       ],
       "Address": [
         "Adresa"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        "",
-        "",
-        ""
       ]
     },
     "PGP key warning": {

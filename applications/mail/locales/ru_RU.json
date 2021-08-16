@@ -6,11 +6,11 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Неизвестная ошибка"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -30,14 +30,14 @@
       "This field is required": [
         "Это обязательное поле"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
-      ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Не удается проверить адрес электронной почты. Повторите попытку позже."
@@ -207,12 +207,6 @@
       "Request timed out.": [
         "Истекло время ожидания запроса."
       ],
-      "Signature verification failed": [
-        "Проверка подписи не удалась"
-      ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
       "Email address disabled": [
         "Адрес электронной почты неактивен"
       ],
@@ -236,6 +230,12 @@
       ],
       "The sending key is not valid": [
         "Недействительный ключ отправки"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "Could not find address ${ email }.": [
+        "Не могу найти адрес ${ email }."
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -287,6 +287,12 @@
       ],
       "Attachments are limited to 25 MB.": [
         "Размер вложений ограничен 25 МБ."
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Это сообщение уже было отправлено. Сохранён новый черновик."
+      ],
+      "This message has already been sent.": [
+        "Это сообщение уже отправлено."
       ],
       "Draft could not be saved. Try again.": [
         "Черновик не сохранился. Попробуйте еще раз."
@@ -362,26 +368,23 @@
       "Close": [
         "Закрыть"
       ],
-      "Close modal": [
-        "Закрыть окно"
+      "Confirm": [
+        "Подтвердить"
       ],
       "Cancel": [
         "Отменить"
       ],
+      "Close modal": [
+        "Закрыть окно"
+      ],
       "Submit": [
         "Отправить"
-      ],
-      "Confirm": [
-        "Подтвердить"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
-      ],
-      "refresh the page": [
-        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -497,6 +500,9 @@
       "Underline": [
         "Подчёркнутый"
       ],
+      "refresh the page": [
+        "обновить страницу"
+      ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
       ],
@@ -544,6 +550,9 @@
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Signing out": [
+        "Выход"
       ],
       "Add": [
         "Добавить"
@@ -701,9 +710,6 @@
       "OK": [
         "OK"
       ],
-      "Signing out": [
-        "Выход"
-      ],
       "Log in": [
         "Войти"
       ],
@@ -760,6 +766,9 @@
       ],
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Переписывайтесь с нами"
       ],
       "I have a question": [
         "У меня есть вопрос"
@@ -895,15 +904,6 @@
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Добавить в ${ CALENDAR_APP_NAME }"
-      ],
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Open shop": [
-        "Открыть магазин"
-      ],
-      "Open calendar": [
-        "Открыть календарь"
       ],
       "Send anyway": [
         "Всё равно отправить"
@@ -1225,6 +1225,15 @@
       ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Open shop": [
+        "Открыть магазин"
+      ],
+      "Open calendar": [
+        "Открыть календарь"
       ]
     },
     "Title": {
@@ -1755,14 +1764,11 @@
       ]
     },
     "Info": {
-      "No results found": [
-        "Результаты не найдены"
-      ],
       "Loading": [
         "Загрузка"
       ],
-      "support team": [
-        "служба поддержки"
+      "No results found": [
+        "Результаты не найдены"
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
@@ -1863,6 +1869,9 @@
       "Plain text": [
         "Простой текст"
       ],
+      "support team": [
+        "служба поддержки"
+      ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
       ],
@@ -1895,6 +1904,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "Loading ${ appName }": [
+        "Загрузка ${ appName }"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -2048,9 +2060,6 @@
       ],
       "Your import will not be processed.": [
         "Импорт ваших данных не будет подвергнут обработке."
-      ],
-      "Loading ${ appName }": [
-        "Загрузка ${ appName }"
       ],
       "here": [
         "здесь"
@@ -2272,7 +2281,7 @@
         "Счет выставляется в конце текущего расчетного цикла (продлевается ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Вы должны удалить все дополнительные личные календари и все общие ссылки календаря, прежде чем можно будет отменить подписку. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
@@ -2460,8 +2469,8 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Вы не указали тему сообщения. Всё равно отправить сообщение?"
       ],
-      "Do you want to send your message anyway?": [
-        "Вы хотите отправить письмо в любом случае?"
+      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+        "Вы написали \"${ keyword }\", но вложение не было добавлено. Вы всё равно хотите отправить своё сообщение?"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Слишком много сообщений ожидают отправки. Пожалуйста, дождитесь пока не будет отправлено другое сообщение, чтобы запланировать это."
@@ -3450,36 +3459,6 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
-      "Inbox": [
-        "Входящие"
-      ],
-      "Drafts": [
-        "Черновики"
-      ],
-      "Sent": [
-        "Отправленные"
-      ],
-      "Trash": [
-        "Корзина"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Все письма"
-      ],
-      "Archive": [
-        "Архив"
-      ],
-      "Starred": [
-        "Избранное"
-      ],
-      "Outbox": [
-        "Исходящие"
-      ],
-      "Scheduled": [
-        "Запланировано"
-      ],
       "You need to activate your calendar keys to add this event": [
         "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
       ],
@@ -3555,6 +3534,33 @@
       "Add label": [
         "Добавить ярлык"
       ],
+      "Inbox": [
+        "Входящие"
+      ],
+      "Drafts": [
+        "Черновики"
+      ],
+      "Scheduled": [
+        "Запланировано"
+      ],
+      "Sent": [
+        "Отправленные"
+      ],
+      "Starred": [
+        "Избранное"
+      ],
+      "Archive": [
+        "Архив"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Trash": [
+        "Корзина"
+      ],
+      "All mail": [
+        "Все письма"
+      ],
       "Folders": [
         "Папки"
       ],
@@ -3566,6 +3572,9 @@
       ],
       "Manage your labels": [
         "Управление ярлыками"
+      ],
+      "Outbox": [
+        "Исходящие"
       ]
     },
     "Placeholder": {
@@ -3767,6 +3776,9 @@
       ],
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -4082,23 +4094,23 @@
         "${ elementsCount } цепочек сообщений перемещено в спам, а отправитель добавлен в список блокируемых.",
         "${ elementsCount } цепочек сообщений перемещено в спам, а отправитель добавлен в список блокируемых."
       ],
-      "Message moved to ${ folderName } and sender removed from Block List.": [
-        "Сообщение перемещено в ${ folderName }, а отправитель удалён из списка блокируемых."
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        "Сообщение перемещено в ${ folderName }, а отправитель добавлен в список разрешенных."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } сообщение перемещено в ${ folderName }, а отправитель удалён из списка блокируемых.",
-        "${ elementsCount } сообщения перемещены в ${ folderName }, а отправитель удалён из списка блокируемых.",
-        "${ elementsCount } сообщений перемещено в ${ folderName }, а отправитель удалён из списка блокируемых.",
-        "${ elementsCount } сообщений перемещено в ${ folderName }, а отправитель удалён из списка блокируемых."
+      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } сообщение перемещено в ${ folderName }, а отправитель добавлен в Список Разрешенных.",
+        "${ elementsCount } сообщения перемещены в ${ folderName }, а отправитель добавлен в Список Разрешенных.",
+        "${ elementsCount } сообщения перемещены в ${ folderName }, а отправитель добавлен в Список Разрешенных.",
+        "${ elementsCount } сообщения перемещены в ${ folderName }, а отправитель добавлен в Список Разрешенных."
       ],
-      "Conversation moved to ${ folderName } and sender removed from Block List.": [
-        "Цепочка сообщений перемещена в ${ folderName }, а отправитель удалён из списка блокируемых."
+      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+        "Переписка перемещена в ${ folderName }, а отправитель добавлен в Список Разрешенных."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender removed from Block List.": [
-        "${ elementsCount } цепочка сообщений перемещена в ${ folderName }, а отправитель удалён из списка блокируемых.",
-        "${ elementsCount } цепочки сообщений перемещены в ${ folderName }, а отправитель удалён из списка блокируемых.",
-        "${ elementsCount } цепочек сообщений перемещено в ${ folderName }, а отправитель удалён из списка блокируемых.",
-        "${ elementsCount } цепочек сообщений перемещено в ${ folderName }, а отправитель удалён из списка блокируемых."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
+        "${ elementsCount } переписка перемещена в ${ folderName }, а отправитель добавлен в Список Разрешенных.",
+        "${ elementsCount } перепискок(и) перемещено в ${ folderName }, а отправитель добавлен в Список Разрешенных.",
+        "${ elementsCount } перепискок(и) перемещено в ${ folderName }, а отправитель добавлен в Список Разрешенных.",
+        "${ elementsCount } перепискок(и) перемещено в ${ folderName }, а отправитель добавлен в Список Разрешенных."
       ],
       "Message moved to ${ folderName }.": [
         "Сообщение перемещено в ${ folderName }."
@@ -4241,6 +4253,17 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Приложения Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти к ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти к ${ vpnName }"
       ]
     },
     "Label for contact group name": {
@@ -4612,41 +4635,6 @@
         "Редактировать и снова запланировать"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Приложения Proton"
-      ],
-      "Go to ${ title }": [
-        "Перейти к ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти к ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Ряд"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Обычный"
-      ],
-      "Maximized": [
-        "Максимизированный"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Загрузить"
@@ -4693,6 +4681,30 @@
       ],
       "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         "Чтобы отключить бета-версию, откройте выпадающее меню настроек и нажмите на опцию «Доступ к Beta»."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Обычный"
+      ],
+      "Maximized": [
+        "Максимизированный"
       ]
     },
     "Message display when a new app version is available": {
@@ -5378,14 +5390,6 @@
         "со звёздами"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен включать по меньшей мере ${ length } символ",
-        "Пароль должен включать по меньшей мере ${ length } символа",
-        "Пароль должен включать по меньшей мере ${ length } символов",
-        "Пароль должен включать по меньшей мере ${ length } символа"
-      ]
-    },
     "file size format": {
       "bytes": [
         "байт"
@@ -5514,9 +5518,12 @@
         "Адрес"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символа"
       ]
     },
     "Message": {
@@ -5528,6 +5535,11 @@
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } написал(а):"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -5790,6 +5802,9 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
+      ],
+      "Invalid method": [
+        "Недействительный метод"
       ]
     },
     "Event invitation error": {
@@ -6703,6 +6718,9 @@
       ],
       "tomorrow": [
         "завтра"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
       ],
       "Today": [
         "Сегодня"
