@@ -7,6 +7,12 @@ import { BLOCKQUOTE_SELECTORS } from './message/messageBlockquote';
 
 const JUICE_OPTIONS = {
     applyAttributesTableElements: false,
+    removeStyleTags: true,
+    preserveFontFaces: false,
+    preserveImportant: false,
+    preserveMediaQueries: false,
+    preserveKeyFrames: false,
+    preservePseudos: false,
 };
 
 const DECLASSIFY_OPTIONS = {
@@ -24,7 +30,9 @@ export const inlineCss = (document: Element) => {
         const cheerioDoc = (cheerio as any).load(document.innerHTML);
         juice.juiceDocument(cheerioDoc, JUICE_OPTIONS);
         declassify.pruneAttrs(['id', 'class'], cheerioDoc, DECLASSIFY_OPTIONS.ignore);
-        document.innerHTML = cheerioDoc.html();
+        // Extra security not to leak any global styling
+        cheerioDoc('style').remove();
+        document.innerHTML = cheerioDoc('body').html();
     } catch (err) {
         console.error(err);
     }
