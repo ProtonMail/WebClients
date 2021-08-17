@@ -5,6 +5,7 @@
 	*,
 	*::before,
 	*::after {
+		animation-delay: 1ms !important; // Seems to help onanimationend not triggering
 		animation-duration: 0s !important;
 		transition-duration: 0s !important;
 	}

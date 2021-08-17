@@ -45,16 +45,6 @@ const Dialog = ({
     const hasCalledClose = useRef(false);
     const focusTrapProps = useFocusTrap({ rootRef });
 
-    const handleAnimationEnd = ({ animationName }) => {
-        if (animationName === ANIMATIONS.MODAL_OUT && isClosing) {
-            hasCalledExit.current = true;
-            onExit?.();
-        }
-        if (animationName === ANIMATIONS.MODAL_IN && !isClosing) {
-            onEnter?.();
-        }
-    };
-
     useLayoutEffect(() => {
         hasCalledClose.current = isClosing;
     }, [isClosing]);
@@ -100,7 +90,15 @@ const Dialog = ({
                         extraClassNames,
                         'no-outline',
                     ])}
-                    onAnimationEnd={handleAnimationEnd}
+                    onAnimationEnd={({ animationName }) => {
+                        if (animationName === ANIMATIONS.MODAL_OUT && isClosing) {
+                            hasCalledExit.current = true;
+                            onExit?.();
+                        }
+                        if (animationName === ANIMATIONS.MODAL_IN && !isClosing) {
+                            onEnter?.();
+                        }
+                    }}
                     {...rest}
                     ref={rootRef}
                     {...focusTrapProps}

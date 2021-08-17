@@ -1,26 +1,17 @@
-import { cloneElement, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { cloneElement, useState } from 'react';
 
 import OverlayModal from '../../components/modal/Overlay';
 import ModalErrorBoundary from '../app/ModalErrorBoundary';
+import { Modal } from './interface';
 
-const ModalsContainer = ({ modals, removeModal, hideModal }) => {
+interface Props {
+    modals: Modal[];
+    removeModal: (id: string) => void;
+    hideModal: (id: string) => void;
+}
+
+const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
-
-    useEffect(() => {
-        // Start hiding the container if the last modal wants to close
-        if (modals.length === 1 && modals[0].isClosing) {
-            return setContainerIsClosing(true);
-        }
-
-        if (modals.length >= 1) {
-            return setContainerIsClosing(false);
-        }
-    }, [modals]);
-
-    if (modals.length === 0 && !containerIsClosing) {
-        return null;
-    }
 
     const list = modals.map(({ id, content, isClosing, isFirst, isLast, isBehind }) => {
         if (!content) {
@@ -50,22 +41,22 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
         return <ModalErrorBoundary {...props}>{cloneElement(content, props)}</ModalErrorBoundary>;
     });
 
-    const handleContainerAnimationEnd = () => {
-        setContainerIsClosing(false);
-    };
-
     return (
         <>
-            <OverlayModal isClosing={containerIsClosing} onExit={handleContainerAnimationEnd} />
+            {(modals.length >= 1 || containerIsClosing) && (
+                <OverlayModal
+                    isClosing={!modals.length || (modals.length === 1 && modals[0].isClosing)}
+                    onStart={() => {
+                        setContainerIsClosing(true);
+                    }}
+                    onExit={() => {
+                        setContainerIsClosing(false);
+                    }}
+                />
+            )}
             {list}
         </>
     );
-};
-
-ModalsContainer.propTypes = {
-    modals: PropTypes.arrayOf(PropTypes.object).isRequired,
-    removeModal: PropTypes.func.isRequired,
-    hideModal: PropTypes.func.isRequired,
 };
 
 export default ModalsContainer;
