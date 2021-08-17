@@ -3,7 +3,6 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { dialogRootClassName, dropdownRootClassName } from '../components';
-import useApiStatus from './useApiStatus';
 
 const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
 
@@ -30,8 +29,6 @@ const dropdownIsOpen = () => {
 };
 
 const useNewVersion = (config: ProtonConfig) => {
-    const { appVersionBad } = useApiStatus();
-
     const { VERSION_PATH, COMMIT } = config;
 
     const getVersion = () => fetch(VERSION_PATH).then((response) => response.json());
@@ -65,7 +62,7 @@ const useNewVersion = (config: ProtonConfig) => {
         };
 
         const checkForNewVersion = async () => {
-            if ((await isNewVersionAvailable()) && !appVersionBad) {
+            if (await isNewVersionAvailable()) {
                 registerVisibilityChangeListener();
             }
         };
