@@ -96,7 +96,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
             return;
         }
 
-        return createModal(
+        createModal(
             <DecryptFileKeyModal
                 privateKey={first.privateKey}
                 onSuccess={(decryptedPrivateKey) => {

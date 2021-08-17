@@ -24,7 +24,7 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
-    const [confirmationModalID, setConfirmationModalID] = useState<number>();
+    const [confirmationModalID, setConfirmationModalID] = useState<string>();
 
     const getSrc = (target: Element): LinkSource => {
         const extract = () => {

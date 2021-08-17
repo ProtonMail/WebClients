@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import * as React from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import {
@@ -166,7 +165,7 @@ const getCardPayment = async ({
     checkResult,
     paymentParameters,
 }: {
-    createModal: (modal: React.ReactNode) => void;
+    createModal: (modal: JSX.Element) => void;
     api: Api;
     currency: string;
     paymentParameters: PaymentParameters;

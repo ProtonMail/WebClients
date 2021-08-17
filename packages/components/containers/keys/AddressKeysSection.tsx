@@ -171,7 +171,7 @@ const AddressKeysSection = () => {
             });
         };
 
-        return createModal(
+        createModal(
             <DeleteKeyModal
                 onDelete={onDelete}
                 onExport={privateKey ? onExport : undefined}
@@ -243,7 +243,7 @@ const AddressKeysSection = () => {
         if (!decryptedAddressKey) {
             throw new Error('Key not found');
         }
-        return createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={decryptedAddressKey.privateKey} />);
+        createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={decryptedAddressKey.privateKey} />);
     };
 
     const handleExportPublic = (ID: string) => {
@@ -255,7 +255,7 @@ const AddressKeysSection = () => {
         if (!Key) {
             throw new Error('Key not found');
         }
-        return createModal(
+        createModal(
             <ExportPublicKeyModal
                 name={addressEmail}
                 fallbackPrivateKey={Key.PrivateKey}
@@ -265,7 +265,7 @@ const AddressKeysSection = () => {
     };
 
     const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
-        return createModal(
+        createModal(
             <ReactivateKeysModal
                 keyReactivationRequests={keyReactivationRequests}
                 onProcess={async (keyReactivationRecords, oldPassword, onReactivation) => {

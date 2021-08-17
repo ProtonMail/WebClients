@@ -69,7 +69,7 @@ const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
         createNotification({ type: 'success', text: c('Info').t`Link created` });
         setIsLoadingCreate(false);
 
-        return createModal(
+        createModal(
             <ShareLinkSuccessModal
                 onSubmit={(e: MouseEvent<HTMLButtonElement>) => {
                     textToClipboard(link, e.currentTarget);
