@@ -8,24 +8,31 @@ const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
-const activeElementIsInsideForm = () => {
+const userIsBusy = () => {
+    /*
+     * These verifications perform some dom querying operations so in
+     * order to not unnecessarily waste performance we return early
+     * should any of the conditions fail before evaluationg all of them
+     */
+    if (document.querySelector(`.${dialogRootClassName}`) !== null) {
+        return true;
+    }
+
+    if (document.querySelector(`.${dropdownRootClassName}`) !== null) {
+        return true;
+    }
+
     const { activeElement } = document;
 
     if (activeElement === null) {
         return false;
     }
 
-    const closestFormAncestor = activeElement.closest('form');
-
-    return closestFormAncestor !== null;
-};
-
-const dialogIsOpen = () => {
-    return document.querySelector(`.${dialogRootClassName}`) !== null;
-};
-
-const dropdownIsOpen = () => {
-    return document.querySelector(`.${dropdownRootClassName}`) !== null;
+    return (
+        (activeElement.closest('form') ||
+            activeElement.closest('iframe') ||
+            activeElement.closest('[contenteditable]')) !== null
+    );
 };
 
 const useNewVersion = (config: ProtonConfig) => {
@@ -45,13 +52,8 @@ const useNewVersion = (config: ProtonConfig) => {
 
     const handleVisibilityChange = () => {
         const documentIsVisible = !document.hidden && document.visibilityState === 'visible';
-        /*
-         * These verification functions perform some dom querying operations
-         * so in order to not unnecessarily waste performance we do ! &&
-         * instead of || to short circuit and exit early should any of the
-         * conditions fail before evaluationg all of
-         */
-        if (!documentIsVisible && !activeElementIsInsideForm() && !dialogIsOpen() && !dropdownIsOpen()) {
+
+        if (!documentIsVisible && !userIsBusy()) {
             window.location.reload();
         }
     };
