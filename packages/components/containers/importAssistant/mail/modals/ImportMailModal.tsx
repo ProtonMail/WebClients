@@ -232,7 +232,13 @@ const ImportMailModal = ({
                 errorLabel: Error,
                 needIMAPDetails: modalModel.needIMAPDetails || Code === IMPORT_ERROR.IMAP_CONNECTION_ERROR,
             });
+            return;
         }
+
+        createNotification({
+            text: error.message,
+            type: 'error',
+        });
     };
 
     const submitAuthentication = async (needIMAPDetails = false) => {
