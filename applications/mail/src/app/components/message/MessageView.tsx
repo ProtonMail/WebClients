@@ -24,6 +24,8 @@ import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
 
 import './MessageView.scss';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -82,8 +84,11 @@ const MessageView = (
     // Actual expanded state
     const [expanded, setExpanded] = useState(getInitialExpand);
 
-    // Show or not the blockquote content
-    const [originalMessageMode, setOriginalMessageMode] = useState(false);
+    // Show or not the blockquote content, show by default in case of
+    // a forwarded message which is the result of an encrypted search
+    const { isSearchResult } = useEncryptedSearchContext();
+    const defaultOriginalMessageMode = isSearchResult(inputMessage.ID) && isMessageForwarded(inputMessage.Subject);
+    const [originalMessageMode, setOriginalMessageMode] = useState(defaultOriginalMessageMode);
 
     // HTML source should be shown instead of normal rendered content
     const [sourceMode, setSourceMode] = useState(false);

@@ -58,7 +58,10 @@ const MessageBody = ({
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode;
     const htmlContent = !!content && highlightKeywords ? highlightString(content, true) : content;
-    const htmlBlockquote = !!blockquote && highlightKeywords ? highlightString(blockquote, false) : blockquote;
+    const htmlBlockquote =
+        !!blockquote && highlightKeywords
+            ? highlightString(blockquote, !htmlContent.includes('data-auto-scroll'))
+            : blockquote;
 
     useEffect(() => {
         if (!loadingMode && !decryptingMode && onMessageReady) {
