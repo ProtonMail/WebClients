@@ -26,11 +26,11 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
     const { subscribedCalendars, loading } = useSubscribedCalendars(calendars);
 
     const handleCreate = () => {
-        return createModal(<SubscribeCalendarModal />);
+        createModal(<SubscribeCalendarModal />);
     };
 
     const handleEdit = (calendar: Calendar) => {
-        return createModal(<CalendarModal calendar={calendar} />);
+        createModal(<CalendarModal calendar={calendar} />);
     };
 
     const handleDelete = async (id: string) => {
@@ -86,8 +86,9 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
                     {c('Subscribed calendar section description')
                         .t`Add public, external, or shared calendars using a URL.`}
                     <br />
-                    <Href url="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c('Knowledge base link label')
-                        .t`Here's how`}</Href>
+                    <Href url="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
+                        'Knowledge base link label'
+                    ).t`Here's how`}</Href>
                 </SettingsParagraph>
             }
             onAdd={handleCreate}

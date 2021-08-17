@@ -19,10 +19,10 @@ interface Props {
     canAdd: boolean;
     add: string;
     description?: ReactNode;
-    onAdd: () => Promise<void>;
+    onAdd: () => void;
     onSetDefault?: (id: string) => Promise<void>;
-    onEdit: (calendar: Calendar) => Promise<void>;
-    onDelete: (id: string) => Promise<void>;
+    onEdit: (calendar: Calendar) => void;
+    onDelete: (id: string) => void;
     onExport?: (calendar: Calendar) => void;
     canUpgradeLimit?: boolean;
     calendarLimitReachedText: string;

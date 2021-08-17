@@ -20,9 +20,10 @@ const TwoFactorSection = () => {
 
     const handleChange = () => {
         if (hasTOTPEnabled) {
-            return createModal(<DisableTOTPModal />);
+            createModal(<DisableTOTPModal />);
+        } else {
+            createModal(<EnableTOTPModal />);
         }
-        return createModal(<EnableTOTPModal />);
     };
 
     const twoFactorAuthLink =

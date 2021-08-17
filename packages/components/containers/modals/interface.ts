@@ -1,6 +1,6 @@
 export interface Modal {
     id: string;
-    content: JSX.Element;
+    content: JSX.Element | undefined;
     isClosing: boolean;
     isFirst?: boolean;
     isLast?: boolean;
@@ -8,7 +8,7 @@ export interface Modal {
 }
 
 export interface ModalManager {
-    createModal: (content: JSX.Element, id?: string) => string;
+    createModal: (content?: JSX.Element, id?: string) => string;
     hideModal: (id: string) => void;
     removeModal: (id: string) => void;
     getModal: (id: string) => Modal | undefined;

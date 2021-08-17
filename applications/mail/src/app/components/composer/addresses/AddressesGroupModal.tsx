@@ -16,6 +16,7 @@ interface Props {
     messageSendInfo?: MessageSendInfo;
     onClose: () => void;
     onSubmit: (recipientGroup: RecipientGroup) => void;
+    onExit?: () => void;
 }
 
 const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubmit, onClose, ...rest }: Props) => {

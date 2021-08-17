@@ -263,18 +263,18 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const handleError = (e: any) => {
         if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
             const apiErrorMessage = getApiErrorMessage(e);
-            return createModal(<AbuseModal message={apiErrorMessage} />);
+            createModal(<AbuseModal message={apiErrorMessage} />);
+            return;
         }
         if (e.name === 'TOTPError' || e.name === 'PasswordError') {
-            return createNotification({ type: 'error', text: e.message });
+            createNotification({ type: 'error', text: e.message });
+            return;
         }
-        if (step === AuthStep.LOGIN) {
-            handleCancel();
-        }
-        if (step === AuthStep.UNLOCK && e.name !== 'PasswordError') {
-            handleCancel();
-        }
-        if (step === AuthStep.TOTP && e.name !== 'TOTPError') {
+        if (
+            step === AuthStep.LOGIN ||
+            (step === AuthStep.UNLOCK && e.name !== 'PasswordError') ||
+            (step === AuthStep.TOTP && e.name !== 'TOTPError')
+        ) {
             handleCancel();
         }
         errorHandler(e);
@@ -286,8 +286,8 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                 needHelp={needHelp}
                 footer={footer}
                 hasChallenge={hasChallenge}
-                onSubmit={(username, password, payload) =>
-                    handleLogin({
+                onSubmit={(username, password, payload) => {
+                    return handleLogin({
                         username,
                         password,
                         payload,
@@ -297,8 +297,8 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                         ignoreUnlock,
                     })
                         .then(handleResult)
-                        .catch(handleError)
-                }
+                        .catch(handleError);
+                }}
             />
         );
     }
