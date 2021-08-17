@@ -420,7 +420,7 @@ const InteractiveCalendarView = ({
         if (partstat) {
             return {
                 ...createResult,
-                ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings),
+                ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings, emailNotificationsEnabled),
             };
         }
         return {

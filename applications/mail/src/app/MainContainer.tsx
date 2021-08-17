@@ -30,6 +30,7 @@ const MainContainer = () => {
         FeatureCode.EnabledEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
         FeatureCode.Mnemonic,
+        FeatureCode.CalendarEmailNotification,
     ]);
 
     return (
