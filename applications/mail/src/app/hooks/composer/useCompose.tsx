@@ -148,6 +148,7 @@ export const useCompose = (
                     plainText: undefined,
                     document: undefined,
                     openDraftFromUndo: fromUndo,
+                    isSentDraft: false,
                 });
             } else {
                 messageCache.set(localID, {
