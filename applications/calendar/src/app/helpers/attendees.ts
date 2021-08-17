@@ -1,3 +1,4 @@
+import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { c } from 'ttag';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
@@ -11,7 +12,8 @@ const { NEEDS_ACTION, DECLINED, ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 export const modifyEventModelPartstat = (
     model: Partial<EventModel>,
     partstat: ICAL_ATTENDEE_STATUS,
-    calendarSettings: CalendarSettings
+    calendarSettings: CalendarSettings,
+    enabledEmailNotifications = false
 ): Partial<EventModel> => {
     const { attendees = [], isAllDay, selfAttendeeIndex } = model;
     const selfAttendee = selfAttendeeIndex !== undefined ? attendees[selfAttendeeIndex] : undefined;
@@ -35,10 +37,17 @@ export const modifyEventModelPartstat = (
         return modelWithPartstat;
     }
     const { DefaultPartDayNotifications, DefaultFullDayNotifications } = calendarSettings;
+
+    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
+    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
     return {
         ...modelWithPartstat,
-        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false),
-        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true),
+        partDayNotifications: enabledEmailNotifications
+            ? partDayNotifications
+            : getDeviceNotifications(partDayNotifications),
+        fullDayNotifications: enabledEmailNotifications
+            ? fullDayNotifications
+            : getDeviceNotifications(fullDayNotifications),
     };
 };
 
