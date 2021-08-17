@@ -61,9 +61,10 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
 
     const handleEdit = (type?: 'sieve') => () => {
         if (type === 'sieve') {
-            return createModal(<AdvancedFilterModal filter={filter} />);
+            createModal(<AdvancedFilterModal filter={filter} />);
+        } else {
+            createModal(<FilterModal filter={filter} />);
         }
-        createModal(<FilterModal filter={filter} />);
     };
 
     const list = [

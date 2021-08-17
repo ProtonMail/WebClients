@@ -47,7 +47,7 @@ const AddressesGroupItem = ({
     const { groupsWithContactsMap } = useContactCache();
     const { getGroupLabel } = useRecipientLabel();
 
-    const [modalID, setModalID] = useState();
+    const [modalID, setModalID] = useState<string | undefined>();
 
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const {
@@ -75,14 +75,20 @@ const AddressesGroupItem = ({
     };
 
     const handleOpenGroupModal = () => {
-        setModalID(createModal());
+        setModalID(createModal(undefined));
     };
 
     const handleCloseGroupModal = () => {
+        if (modalID === undefined){
+            return;
+        }
         hideModal(modalID);
     };
 
     const handleRemoveGroupModal = () => {
+        if (modalID === undefined){
+            return;
+        }
         removeModal(modalID);
         setModalID(undefined);
     };

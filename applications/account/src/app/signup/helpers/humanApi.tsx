@@ -81,7 +81,7 @@ const humanApiHelper = <T,>(
     });
 };
 
-const createHumanApi = ({ api, createModal }: { api: Api; createModal: (node: React.ReactNode) => void }) => {
+const createHumanApi = ({ api, createModal }: { api: Api; createModal: (node: JSX.Element) => void }) => {
     let verificationsTokens:
         | undefined
         | { verificationToken: string; verificationTokenType: HumanVerificationMethodType };

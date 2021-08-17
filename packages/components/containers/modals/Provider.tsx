@@ -1,12 +1,16 @@
-import { useState, useMemo } from 'react';
-import PropTypes from 'prop-types';
+import { useState, useMemo, ReactNode } from 'react';
 
 import ModalsContext from './modalsContext';
 import ModalsChildrenContext from './childrenContext';
 import createManager from './manager';
+import { Modal } from './interface';
 
-const ModalsProvider = ({ children }) => {
-    const [modals, setModals] = useState([]);
+interface Props {
+    children: ReactNode;
+}
+
+const ModalsProvider = ({ children }: Props) => {
+    const [modals, setModals] = useState<Modal[]>([]);
 
     const manager = useMemo(() => {
         return createManager(modals, setModals);
@@ -17,10 +21,6 @@ const ModalsProvider = ({ children }) => {
             <ModalsChildrenContext.Provider value={modals}>{children}</ModalsChildrenContext.Provider>
         </ModalsContext.Provider>
     );
-};
-
-ModalsProvider.propTypes = {
-    children: PropTypes.node.isRequired,
 };
 
 export default ModalsProvider;

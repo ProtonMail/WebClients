@@ -27,6 +27,7 @@ interface Props {
     onClose: () => void;
     setModel: (value: EventModel) => void;
     tzid: string;
+    onExit: () => void;
 }
 
 const CreateEventModal = ({
