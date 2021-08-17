@@ -139,6 +139,7 @@ export const getSupportedEvent = ({
     guessTzid,
     componentId = '',
     isEventInvitation,
+    enabledEmailNotifications,
 }: {
     method?: ICAL_METHOD;
     vcalVeventComponent: VcalVeventComponent;
@@ -147,6 +148,7 @@ export const getSupportedEvent = ({
     guessTzid?: string;
     componentId?: string;
     isEventInvitation?: boolean;
+    enabledEmailNotifications?: boolean;
 }): VcalVeventComponent => {
     const isImport = method === ICAL_METHOD.PUBLISH;
     try {
@@ -348,7 +350,7 @@ export const getSupportedEvent = ({
         if (isImport) {
             if (!isEventInvitation) {
                 const alarms = components?.filter(({ component }) => component === 'valarm') || [];
-                const supportedAlarms = getSupportedAlarms(alarms, dtstart);
+                const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
                 const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
 
                 if (dedupedAlarms.length) {
