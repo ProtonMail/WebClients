@@ -73,7 +73,7 @@ const CalendarSidebar = ({
     const handleCreate = async () => {
         const calendarUserSettings = await getCalendarUserSettings();
 
-        return createModal(
+        createModal(
             <CalendarModal
                 activeCalendars={personalCalendars.filter(getIsCalendarActive)}
                 defaultCalendarID={calendarUserSettings.DefaultCalendarID}

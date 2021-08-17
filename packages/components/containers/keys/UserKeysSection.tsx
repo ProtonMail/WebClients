@@ -52,7 +52,7 @@ const UserKeysSections = () => {
         if (!userKey?.privateKey) {
             throw new Error('Could not find key');
         }
-        return createModal(<ExportPrivateKeyModal name={userName} privateKey={userKey.privateKey} />);
+        createModal(<ExportPrivateKeyModal name={userName} privateKey={userKey.privateKey} />);
     };
 
     const handleExportPublic = (ID: string) => {
@@ -61,14 +61,14 @@ const UserKeysSections = () => {
         if (!Key) {
             throw new Error('Could not find key');
         }
-        return createModal(
+        createModal(
             <ExportPublicKeyModal name={userName} fallbackPrivateKey={Key.PrivateKey} publicKey={userKey?.publicKey} />
         );
     };
 
     const handleReactivateKeys = async (keyReactivationRequests: KeyReactivationRequest[]) => {
         const addresses = await getAddresses();
-        return createModal(
+        createModal(
             <ReactivateKeysModal
                 keyReactivationRequests={keyReactivationRequests}
                 onProcess={async (keyReactivationRecords, oldPassword, cb) => {

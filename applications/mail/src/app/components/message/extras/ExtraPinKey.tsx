@@ -177,7 +177,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             isInternal: isSenderInternal,
             bePinnedPublicKey,
         };
-        return createModal(<TrustPublicKeyModal contact={contact} />);
+        createModal(<TrustPublicKeyModal contact={contact} />);
     };
 
     return (

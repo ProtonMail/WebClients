@@ -215,7 +215,7 @@ const InteractiveCalendarView = ({
     const config = useConfig();
     const isSavingEvent = useRef(false);
 
-    const [eventModalID, setEventModalID] = useState();
+    const [eventModalID, setEventModalID] = useState<string | undefined>();
 
     const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
     const displayNameEmailMap = useMemo(() => {
@@ -746,7 +746,7 @@ const InteractiveCalendarView = ({
     }: OnSaveConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING && data) {
-                return createModal(
+                createModal(
                     <EditRecurringConfirmModal
                         types={data.types}
                         hasSingleModifications={data.hasSingleModifications}
@@ -759,13 +759,13 @@ const InteractiveCalendarView = ({
                         onConfirm={resolve}
                     />
                 );
-            }
-            if (type === SAVE_CONFIRMATION_TYPES.SINGLE) {
-                return createModal(
+            } else if (type === SAVE_CONFIRMATION_TYPES.SINGLE) {
+                createModal(
                     <EditSingleConfirmModal inviteActions={inviteActions} onClose={reject} onConfirm={resolve} />
                 );
+            } else {
+                return reject(new Error('Unknown type'));
             }
-            return reject(new Error('Unknown type'));
         });
     };
 
@@ -777,12 +777,9 @@ const InteractiveCalendarView = ({
     }: OnDeleteConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
             if (type === DELETE_CONFIRMATION_TYPES.SINGLE) {
-                return createModal(
-                    <DeleteConfirmModal onClose={reject} onConfirm={resolve} inviteActions={inviteActions} />
-                );
-            }
-            if (type === DELETE_CONFIRMATION_TYPES.RECURRING && data) {
-                return createModal(
+                createModal(<DeleteConfirmModal onClose={reject} onConfirm={resolve} inviteActions={inviteActions} />);
+            } else if (type === DELETE_CONFIRMATION_TYPES.RECURRING && data) {
+                createModal(
                     <DeleteRecurringConfirmModal
                         types={data.types}
                         isInvitation={isInvitation}
@@ -792,8 +789,9 @@ const InteractiveCalendarView = ({
                         onConfirm={resolve}
                     />
                 );
+            } else {
+                return reject(new Error('Unknown type'));
             }
-            return reject(new Error('Unknown type'));
         });
     };
 
@@ -1323,7 +1321,7 @@ const InteractiveCalendarView = ({
                     }}
                     onDelete={(inviteActions) => {
                         if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
-                            return;
+                            return Promise.reject(new Error('Undefined behavior'));
                         }
                         return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions)
                             .then(() => hideModal(eventModalID))

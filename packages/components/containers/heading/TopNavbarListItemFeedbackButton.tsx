@@ -1,12 +1,11 @@
 import { c } from 'ttag';
-import { ReactNode } from 'react';
 
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import Icon from '../../components/icon/Icon';
 import { useModals } from '../../hooks';
 
 interface Props {
-    modal: ReactNode;
+    modal: JSX.Element;
 }
 
 const TopNavbarListItemFeedbackButton = ({ modal }: Props) => {

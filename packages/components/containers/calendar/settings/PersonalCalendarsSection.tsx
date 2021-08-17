@@ -33,11 +33,11 @@ const PersonalCalendarsSection = ({
     const defaultCalendarID = defaultCalendar?.ID;
 
     const handleCreate = () => {
-        return createModal(<CalendarModal activeCalendars={activeCalendars} defaultCalendarID={defaultCalendarID} />);
+        createModal(<CalendarModal activeCalendars={activeCalendars} defaultCalendarID={defaultCalendarID} />);
     };
 
     const handleEdit = (calendar: Calendar) => {
-        return createModal(<CalendarModal calendar={calendar} />);
+        createModal(<CalendarModal calendar={calendar} />);
     };
 
     const handleSetDefault = async (calendarID: string) => {
