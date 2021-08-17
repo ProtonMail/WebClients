@@ -233,7 +233,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         createModal(
             <ConfirmModal
                 onConfirm={resumeIndexing}
-                title={c('Title').t`Enable encrypted search`}
+                title={c('Title').t`Enable message content search`}
                 confirm={c('Action').t`Enable`}
                 mode="alert"
             >
