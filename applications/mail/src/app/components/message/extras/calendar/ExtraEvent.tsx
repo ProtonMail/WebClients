@@ -10,10 +10,12 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useEffect, useState } from 'react';
 import {
+    FeatureCode,
     Icon,
     InlineLinkButton,
     Loader,
     useApi,
+    useFeature,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
     useLoading,
@@ -93,6 +95,7 @@ const ExtraEvent = ({
     const [loading, withLoading] = useLoading(true);
     const [retryCount, setRetryCount] = useState<number>(0);
     const api = useApi();
+    const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
@@ -225,6 +228,7 @@ const ExtraEvent = ({
                     contactEmails,
                     ownAddresses,
                     overwrite: !!hasDecryptionError,
+                    enabledEmailNotifications,
                 });
                 const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =

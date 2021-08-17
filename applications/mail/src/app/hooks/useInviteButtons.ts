@@ -20,7 +20,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { useCallback } from 'react';
-import { useApi, useConfig } from '@proton/components';
+import { FeatureCode, useApi, useConfig, useFeature } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from 'pmcrypto';
@@ -81,6 +81,7 @@ const useInviteButtons = ({
     const api = useApi();
     const sendIcs = useSendIcs();
     const config = useConfig();
+    const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const { contactsMap: contactEmailsMap } = useContactCache();
 
@@ -174,6 +175,7 @@ const useInviteButtons = ({
                     calendarData,
                     pmData,
                     overwrite,
+                    enabledEmailNotifications,
                 });
                 onCreateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
@@ -203,6 +205,7 @@ const useInviteButtons = ({
                     api,
                     calendarData,
                     singleEditData,
+                    enabledEmailNotifications,
                 });
                 onUpdateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };

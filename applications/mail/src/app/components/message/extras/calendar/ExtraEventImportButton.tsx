@@ -4,7 +4,7 @@ import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import { useCallback, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { useNotifications, AddToCalendarButton } from '@proton/components';
+import { useNotifications, AddToCalendarButton, FeatureCode, useFeature } from '@proton/components';
 import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
 
 const ExtraEventImportButton = ({ model, setModel }: Props) => {
     const { createNotification } = useNotifications();
+    const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
 
     const {
         calendarData,
@@ -21,7 +22,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
     } = model;
 
     const veventToSave = calendarData?.calendarSettings
-        ? getEventWithCalendarAlarms(vevent, calendarData.calendarSettings)
+        ? getEventWithCalendarAlarms(vevent, calendarData.calendarSettings, enabledEmailNotifications)
         : vevent;
 
     const handleSuccess = useCallback(([{ response, component }]: ImportedEvent[]) => {
