@@ -46,7 +46,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
     let placeholderTooltip = '';
     if (showPlaceholder) {
         placeholderTooltip = isError
-            ? c('Message image').t`Image could not be loaded`
+            ? c('Message image').t`Image has not been loaded due to a security SSL certificate issue`
             : c('Message image').t`Image has not been loaded in order to protect your privacy`;
     }
     const icon = isError ? 'circle-xmark' : 'file-shapes';
