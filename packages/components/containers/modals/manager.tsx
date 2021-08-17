@@ -1,13 +1,16 @@
-const updatePosition = (modal, i, arr) => ({
+import { Dispatch, SetStateAction } from 'react';
+import { Modal, ModalManager } from './interface';
+
+const updatePosition = (modal: Modal, i: number, arr: Modal[]): Modal => ({
     ...modal,
     isFirst: i === 0,
     isLast: i === arr.length - 1,
     isBehind: i !== arr.length - 1,
 });
 
-export default (modals, setModals) => {
-    const hideModal = (id) => {
-        return setModals((oldModals) => {
+export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): ModalManager => {
+    const hideModal = (id: string) => {
+        return setModals((oldModals: Modal[]) => {
             return oldModals.map((old) => {
                 if (old.id !== id) {
                     return old;
@@ -20,13 +23,13 @@ export default (modals, setModals) => {
         });
     };
 
-    const removeModal = (id) => {
+    const removeModal = (id: string) => {
         return setModals((oldModals) => {
             return oldModals.filter(({ id: otherId }) => id !== otherId).map(updatePosition);
         });
     };
 
-    const createModal = (content, id = Math.random().toString(36).substr(2, 9)) => {
+    const createModal = (content: JSX.Element, id = Math.random().toString(36).substr(2, 9)) => {
         setModals((oldModals) => {
             return oldModals.find(({ id: otherId }) => id === otherId)
                 ? oldModals
@@ -43,7 +46,7 @@ export default (modals, setModals) => {
         return id;
     };
 
-    const getModal = (id) => {
+    const getModal = (id: string) => {
         return modals.find(({ id: otherId }) => id === otherId);
     };
 
@@ -52,6 +55,5 @@ export default (modals, setModals) => {
         hideModal,
         removeModal,
         getModal,
-        resetModals: () => setModals([]),
     };
 };
