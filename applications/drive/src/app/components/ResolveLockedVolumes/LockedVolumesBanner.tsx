@@ -5,16 +5,16 @@ import { InlineLinkButton, TopBanner, useModals, useAddressesKeys, useUser, useL
 import { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
-import FilesRecoveryModal from './FilesRecoveryModal';
+import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
-import useKeyReactivationFlow from '../../hooks/drive/useKeyReactivationFlow';
+import useKeyReactivationFlow from './KeyReactivation/useResolveLockedSharesFlow';
 
 interface Props {
     onClose: () => void;
 }
 
-const FileRecoveryBanner = ({ onClose }: Props) => {
+const LockedVolumesBanner = ({ onClose }: Props) => {
     const cache = useDriveCache();
     const { createModal } = useModals();
     const [User] = useUser();
@@ -88,4 +88,4 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
     ) : null;
 };
 
-export default FileRecoveryBanner;
+export default LockedVolumesBanner;
