@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { setupTotp, TOTP_WRONG_ERROR } from '@proton/shared/lib/api/settings';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -9,17 +9,14 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 
 import { QRCode, Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
-import {
-    useConfig,
-    useNotifications,
-    useLoading,
-    useApi,
-    useEventManager,
-    useGetAddresses,
-    useGetUser,
-} from '../../hooks';
+import { useConfig, useNotifications, useLoading, useApi, useEventManager, useUser, useModals } from '../../hooks';
 
 import PasswordTotpInputs from '../password/PasswordTotpInputs';
+import AuthModal from '../password/AuthModal';
+
+interface SetupTOTPResponse {
+    TwoFactorRecoveryCodes: string[];
+}
 
 const STEPS = {
     INFO: 1,
@@ -28,39 +25,24 @@ const STEPS = {
     RECOVERY_CODES: 4,
 };
 
-const INITIAL_STATE = {
-    sharedSecret: '',
-    uri: '',
-    period: 0,
-    digits: 0,
-};
-
 const EnableTOTPModal = (props: any) => {
     const { APP_NAME } = useConfig();
-    const getAddresses = useGetAddresses();
-    const getUser = useGetUser();
+    const [user] = useUser();
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [{ sharedSecret, uri = '', period, digits }, setTotpData] = useState(INITIAL_STATE);
+    const { createModal } = useModals();
+    const [{ sharedSecret, uri = '', period, digits }] = useState(() => {
+        return getTOTPData(user.Email || user.Name);
+    });
     const [step, setStep] = useState(STEPS.INFO);
     const [manualCode, setManualCode] = useState(false);
-    const [recoveryCodes, setRecoveryCodes] = useState([]);
+    const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [totpError, setTotpError] = useState('');
     const [loading, withLoading] = useLoading();
-
-    useEffect(() => {
-        const run = async () => {
-            const [user, addresses] = await Promise.all([getUser(), getAddresses()]);
-            const primaryAddress = addresses.find(({ Keys = [] }) => Keys.length > 0);
-            const identifier = primaryAddress?.Email || user.Name;
-            setTotpData(getTOTPData(identifier));
-        };
-        run();
-    }, []);
 
     const { section, ...modalProps } = (() => {
         if (!sharedSecret) {
@@ -169,14 +151,32 @@ const EnableTOTPModal = (props: any) => {
         if (step === STEPS.CONFIRM_CODE) {
             const handleSubmit = async () => {
                 try {
-                    const { TwoFactorRecoveryCodes } = await srpAuth({
-                        api,
-                        credentials: { password },
-                        config: setupTotp(sharedSecret, totp),
-                    });
+                    const apiConfig = setupTotp(sharedSecret, totp);
+                    let result: SetupTOTPResponse;
+
+                    // Signed into a public user as an admin, the password and totp are related to the admin and not the user
+                    // so to clarify that we ask in another modal
+                    if (user.isSubUser) {
+                        result = await new Promise<SetupTOTPResponse>((resolve, reject) => {
+                            createModal(
+                                <AuthModal<SetupTOTPResponse>
+                                    onClose={reject}
+                                    onSuccess={({ result }) => resolve(result)}
+                                    config={apiConfig}
+                                />
+                            );
+                        });
+                    } else {
+                        result = await srpAuth<SetupTOTPResponse>({
+                            api,
+                            credentials: { password },
+                            config: apiConfig,
+                        });
+                    }
+
                     await call();
                     createNotification({ text: c('Info').t`Two-factor authentication enabled` });
-                    setRecoveryCodes(TwoFactorRecoveryCodes);
+                    setRecoveryCodes(result.TwoFactorRecoveryCodes);
                     setStep(STEPS.RECOVERY_CODES);
                 } catch (error) {
                     const { code, message } = getApiError(error);
@@ -198,7 +198,8 @@ const EnableTOTPModal = (props: any) => {
                 section: (
                     <PasswordTotpInputs
                         password={password}
-                        setPassword={setPassword}
+                        // Password is asked for in a modal when signed into public user
+                        setPassword={user.isSubUser ? undefined : setPassword}
                         passwordError={passwordError}
                         totp={totp}
                         setTotp={setTotp}
@@ -206,7 +207,10 @@ const EnableTOTPModal = (props: any) => {
                         showTotp
                     />
                 ),
-                close: <Button type="button" onClick={() => setStep(STEPS.SCAN_CODE)}>{c('Action').t`Back`}</Button>,
+                close: c('Action').t`Back`,
+                onClose: () => {
+                    setStep(STEPS.SCAN_CODE);
+                },
                 onSubmit() {
                     withLoading(handleSubmit());
                 },
