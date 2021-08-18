@@ -1,9 +1,11 @@
 import { Alert } from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
 import mdx from './Alert.mdx';
 
 export default {
     component: Alert,
-    title: 'Components / Alert',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

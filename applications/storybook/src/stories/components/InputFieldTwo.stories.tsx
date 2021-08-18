@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components';
-import mdx from './InputField.mdx';
+import { getTitle } from '../../helpers/title';
+
+import mdx from './InputFieldTwo.mdx';
 
 export default {
     component: InputFieldTwo,
-    title: 'Components / InputFieldTwo',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

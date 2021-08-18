@@ -10,12 +10,13 @@ import {
     RadioGroup,
     ButtonGroup,
 } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './ButtonGroup.mdx';
 
 export default {
     component: ButtonGroup,
-    title: 'Components / Button Group',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

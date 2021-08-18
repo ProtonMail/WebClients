@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Scale } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Scale.mdx';
 
 export default {
     component: Scale,
-    title: 'Components / Scale',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

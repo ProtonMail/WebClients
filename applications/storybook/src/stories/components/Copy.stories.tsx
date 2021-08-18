@@ -1,10 +1,11 @@
 import { Copy } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Copy.mdx';
 
 export default {
     component: Copy,
-    title: 'Components / Copy',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

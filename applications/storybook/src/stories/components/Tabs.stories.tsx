@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { Tabs } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
-import mdx from './Tabs.mdx';
 import bulbasaur from '../../assets/bulbasaur.png';
 import charmander from '../../assets/charmander.png';
 import squirtle from '../../assets/squirtle.png';
 
+import mdx from './Tabs.mdx';
+
 export default {
-    title: 'Components / Tabs',
+    title: getTitle(__filename, false),
     component: Tabs,
     parameters: {
         docs: {
