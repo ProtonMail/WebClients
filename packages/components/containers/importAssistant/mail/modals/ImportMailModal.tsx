@@ -15,7 +15,7 @@ import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { useLoading, useModals, useApi, useEventManager, useNotifications } from '../../../../hooks';
+import { useLoading, useModals, useApi, useEventManager, useErrorHandler, useNotifications } from '../../../../hooks';
 import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../../hooks/useOAuthPopup';
 
 import { ConfirmModal, FormModal, Button, PrimaryButton, Alert, useDebounceInput } from '../../../../components';
@@ -105,6 +105,7 @@ const ImportMailModal = ({
 
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const errorHandler = useErrorHandler();
 
     const { triggerOAuthPopup } = useOAuthPopup({
         authorizationUrl: getOAuthAuthorizationUrl({ scope: G_OAUTH_SCOPE_MAIL }),
@@ -235,10 +236,7 @@ const ImportMailModal = ({
             return;
         }
 
-        createNotification({
-            text: error.message,
-            type: 'error',
-        });
+        errorHandler(error);
     };
 
     const submitAuthentication = async (needIMAPDetails = false) => {
