@@ -1,10 +1,11 @@
 import { Countdown } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Countdown.mdx';
 
 export default {
     component: Countdown,
-    title: 'Components / Countdown',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

@@ -1,10 +1,11 @@
 import { Button, Card } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Card.mdx';
 
 export default {
     component: Card,
-    title: 'Components / Card',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

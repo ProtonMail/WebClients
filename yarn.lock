@@ -19981,6 +19981,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.startcase@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.startcase@npm:4.4.0"
+  checksum: 38d3e4116d795f0d6423b86a5da8a10448aa76b812a2a0b074ef2a55b49522fe82ce3bca727a025021d90cb7e88d4ed6880015b5c6cdb0bdf5333552d8541833
+  languageName: node
+  linkType: hard
+
 "lodash.template@npm:^4.4.0":
   version: 4.5.0
   resolution: "lodash.template@npm:4.5.0"
@@ -26424,6 +26431,7 @@ fsevents@^1.2.7:
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     husky: ^4.3.6
     lint-staged: ^10.5.3
+    lodash.startcase: ^4.4.0
     prettier: ^2.2.1
     sort-package-json: ^1.48.1
     typescript: ^4.1.3

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
-export default { component: SimpleDropdown, title: 'Proton UI / Dropdown' };
+export default { component: SimpleDropdown, title: getTitle(__filename) };
 
 export const Basic = () => {
     return (

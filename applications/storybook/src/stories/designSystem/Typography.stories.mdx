@@ -1,6 +1,7 @@
 import { Meta, Source } from '@storybook/addon-docs/blocks';
+import { getTitle } from '../../helpers/title';
 
-<Meta title="Design System / Typography" />
+<Meta title={getTitle(__filename)} />
 
 # Typography
 
@@ -9,16 +10,15 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 ProtonMail V4.0 utilizes a system font stack. System fonts are the default fonts used by any given OS, helping performance by eliminating the need to download font files.
 
 <Source
-  language='css'
-  dark
-  format
-  code={`
+    language="css"
+    dark
+    format
+    code={`
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 `}
 />
-
 
 ## Heading sizes
 

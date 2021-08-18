@@ -1,10 +1,11 @@
 import { Meter } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Meter.mdx';
 
 export default {
     component: Meter,
-    title: 'Components / Meter',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

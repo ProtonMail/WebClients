@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Toggle, useLoading } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Toggle.mdx';
 
 export default {
     component: Toggle,
-    title: 'Components / Toggle',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,
