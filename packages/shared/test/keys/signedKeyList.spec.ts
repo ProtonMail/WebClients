@@ -93,4 +93,50 @@ describe('active keys', () => {
             },
         ]);
     });
+
+    it('should should fall back to key flags when no signed key list exists', async () => {
+        const keyPassword = '123';
+        const userKey = await getUserKey('123', keyPassword);
+        const addressKeysFull = await Promise.all([
+            getAddressKey('a', userKey.key.privateKey, 'a@a.com'),
+            getAddressKey('b', userKey.key.privateKey, 'a@a.com'),
+            getAddressKey('c', userKey.key.privateKey, 'a@a.com'),
+        ]);
+        addressKeysFull[2].Key.Flags = 1;
+        addressKeysFull[0].Key.Primary = 1;
+        addressKeysFull[1].Key.Primary = 0;
+        addressKeysFull[2].Key.Primary = 0;
+        const addressKeys = addressKeysFull.map(({ Key }) => Key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const activeKeys = await getActiveKeys(undefined, addressKeys, decryptedAddressKeys);
+        expect(activeKeys).toEqual([
+            {
+                ID: 'a',
+                primary: 1,
+                flags: 3,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+            {
+                ID: 'b',
+                primary: 0,
+                flags: 3,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+            {
+                ID: 'c',
+                primary: 0,
+                flags: 1,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+        ]);
+    });
 });
