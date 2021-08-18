@@ -73,6 +73,11 @@ module.exports = {
                     chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css',
                 }),
             ],
+            node: {
+                ...config.node,
+                __dirname: true,
+                __filename: true,
+            },
         };
     },
 };

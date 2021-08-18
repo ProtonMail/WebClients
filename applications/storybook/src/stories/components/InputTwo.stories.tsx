@@ -2,11 +2,13 @@ import { useState } from 'react';
 import * as React from 'react';
 import { InputTwo } from '@proton/components';
 import ccIcon from '@proton/styles/assets/img/credit-card-icons/cc-master.svg';
-import mdx from './Input.mdx';
+import { getTitle } from '../../helpers/title';
+
+import mdx from './InputTwo.mdx';
 
 export default {
     component: InputTwo,
-    title: 'Components / InputTwo',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
 import { SelectTwo, Option, Icon } from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
 import mdx from './Select.mdx';
 
 export default {
-    title: 'Components / Select',
+    title: getTitle(__filename, false),
     component: SelectTwo,
     parameters: {
         docs: {
