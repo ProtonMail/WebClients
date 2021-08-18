@@ -13,7 +13,6 @@ import {
     isTransferFinalizing,
     isTransferOngoing,
     isTransferPaused,
-    isTransferProgress,
 } from '../../utils/transfer';
 import { TransferManagerButtonProps } from './interfaces';
 
@@ -55,8 +54,6 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
     const [isExpanded, setIsExpanded] = useState(false);
     const transferManagerControls = useTransferControls();
 
-    const hasPausedTransfers = entries.map(extractTransferFromEntry).some(isTransferPaused);
-    const hasTransfersInProgress = entries.map(extractTransferFromEntry).some(isTransferProgress);
     const areAllActiveTransfersPaused = entries
         .map(extractTransferFromEntry)
         .filter(isTransferOngoing)
@@ -78,15 +75,11 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
     const buttons: TransferManagerButtonProps[] = [
         {
             onClick: () => {
-                const ongoingEntries = entries.filter((entry) => isTransferOngoing(entry.transfer));
-
-                if (hasTransfersInProgress) {
-                    return transferManagerControls.pauseTransfers(ongoingEntries);
+                if (shouldDisplayResume) {
+                    return transferManagerControls.resumeTransfers(entries);
                 }
 
-                if (hasPausedTransfers) {
-                    return transferManagerControls.resumeTransfers(ongoingEntries);
-                }
+                return transferManagerControls.pauseTransfers(entries);
             },
             disabled: hasOnlyInactiveTransfers,
             title: shouldDisplayResume ? c('Action').t`Resume transfers` : c('Action').t`Pause transfers`,
