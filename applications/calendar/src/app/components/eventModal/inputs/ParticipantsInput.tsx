@@ -29,6 +29,7 @@ interface Props {
     className?: string;
     onChange: (recipients: AttendeeModel[]) => void;
     setParticipantError?: (value: boolean) => void;
+    collapsible?: boolean;
 }
 
 const ParticipantsInput = ({
@@ -40,6 +41,7 @@ const ParticipantsInput = ({
     id,
     addresses,
     setParticipantError,
+    collapsible = true,
 }: Props) => {
     const numberOfParticipants = value.length;
     const anchorRef = useRef<HTMLInputElement>(null);
@@ -112,6 +114,22 @@ const ParticipantsInput = ({
         );
     };
 
+    const participantRows = (
+        <div className="pt0-25">
+            {value.map((participant) => {
+                return (
+                    <ParticipantRow
+                        key={participant.email}
+                        attendee={participant}
+                        contactEmailsMap={contactEmailsMap}
+                        onToggleOptional={toggleIsOptional}
+                        onDelete={onDelete}
+                    />
+                );
+            })}
+        </div>
+    );
+
     return (
         <>
             <AddressesAutocomplete
@@ -151,30 +169,21 @@ const ParticipantsInput = ({
                     {c('Info').t`At most 100 participants are allowed per invitation`}
                 </Alert>
             )}
-            {value.length > 0 && (
-                <Details className="no-border mt0-25" open>
-                    <Summary>
-                        {c('Event form').ngettext(
-                            msgid`${numberOfParticipants} participant`,
-                            `${numberOfParticipants} participants`,
-                            numberOfParticipants
-                        )}
-                    </Summary>
-                    <div className="pt0-25">
-                        {value.map((participant) => {
-                            return (
-                                <ParticipantRow
-                                    key={participant.email}
-                                    attendee={participant}
-                                    contactEmailsMap={contactEmailsMap}
-                                    onToggleOptional={toggleIsOptional}
-                                    onDelete={onDelete}
-                                />
-                            );
-                        })}
-                    </div>
-                </Details>
-            )}
+            {value.length > 0 &&
+                (collapsible ? (
+                    <Details className="no-border mt0-25" open>
+                        <Summary>
+                            {c('Event form').ngettext(
+                                msgid`${numberOfParticipants} participant`,
+                                `${numberOfParticipants} participants`,
+                                numberOfParticipants
+                            )}
+                        </Summary>
+                        {participantRows}
+                    </Details>
+                ) : (
+                    participantRows
+                ))}
             {value.length > 0 && (
                 <div className="pt0-25">
                     <OrganizerRow model={model} addresses={addresses} />

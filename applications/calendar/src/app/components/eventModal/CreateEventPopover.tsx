@@ -1,9 +1,11 @@
+import { CSSProperties, Ref, useRef, useState } from 'react';
+import { c } from 'ttag';
+
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
-import { CSSProperties, Ref, useRef } from 'react';
 import { Button, classnames, PrimaryButton } from '@proton/components';
-import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from '../events/PopoverContainer';
 import PopoverFooter from '../events/PopoverFooter';
@@ -41,7 +43,9 @@ const CreateEventPopover = ({
     isNarrow,
     textareaMaxHeight,
 }: Props) => {
-    const errors = validateEventModel(model);
+    const [participantError, setParticipantError] = useState(false);
+    const errors = { ...validateEventModel(model), participantError };
+    const cannotSave = model.isOrganizer && model.attendees.length > 100;
     const formRef = useRef<HTMLFormElement>(null);
     const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({
         containerEl: formRef.current,
@@ -85,6 +89,7 @@ const CreateEventPopover = ({
                     isMinimal
                     isCreateEvent
                     textareaMaxHeight={textareaMaxHeight}
+                    setParticipantError={setParticipantError}
                 />
                 <PopoverFooter>
                     <Button
@@ -97,7 +102,7 @@ const CreateEventPopover = ({
                         data-test-id="create-event-popover:save"
                         type="submit"
                         loading={loadingAction && lastAction === ACTION.SUBMIT}
-                        disabled={loadingAction}
+                        disabled={loadingAction || cannotSave}
                     >
                         {c('Action').t`Save`}
                     </PrimaryButton>
