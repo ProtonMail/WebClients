@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Dropzone, Button } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Dropzone.mdx';
 
 export default {
     component: Dropzone,
-    title: 'Components / Dropzone',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

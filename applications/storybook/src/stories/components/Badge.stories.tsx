@@ -1,10 +1,11 @@
 import { Badge } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Badge.mdx';
 
 export default {
     component: Badge,
-    title: 'Components / Badge',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

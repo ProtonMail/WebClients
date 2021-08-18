@@ -10,10 +10,12 @@ import {
     Marks,
     Icon,
 } from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
 import mdx from './Autocomplete.mdx';
 
 export default {
-    title: 'Components / Autocomplete',
+    title: getTitle(__filename, false),
     component: Autocomplete,
     parameters: {
         docs: {

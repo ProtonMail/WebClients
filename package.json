@@ -26,6 +26,7 @@
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
+        "lodash.startcase": "^4.4.0",
         "typescript": "^4.1.3"
     },
     "devDependencies": {

@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
 import { Icon, Input, Mark } from '@proton/components';
 import iconSvg from '@proton/styles/assets/img/icons/sprite-icons.svg';
+import { getTitle } from '../../helpers/title';
 
-export default { component: Icon, title: 'Proton UI / Icons' };
+export default { component: Icon, title: getTitle(__filename) };
 
 export const PrimaryIcons = () => {
     const primaryIconNames: string[] = iconSvg.match(/id="ic-([^"]+)/g).map((x: string) => x.replace('id="ic-', ''));

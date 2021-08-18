@@ -2,12 +2,13 @@ import { useState } from 'react';
 import * as React from 'react';
 import { InputButton } from '@proton/components';
 import { remove } from '@proton/shared/lib/helpers/array';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './InputButton.mdx';
 
 export default {
     component: InputButton,
-    title: 'Components / InputButton',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,

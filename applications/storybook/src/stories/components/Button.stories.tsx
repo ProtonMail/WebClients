@@ -11,12 +11,13 @@ import {
     ButtonLike,
     Checkbox,
 } from '@proton/components';
+import { getTitle } from '../../helpers/title';
 
 import mdx from './Button.mdx';
 
 export default {
     component: Button,
-    title: 'Components / Button',
+    title: getTitle(__filename, false),
     parameters: {
         docs: {
             page: mdx,
