@@ -40,15 +40,23 @@ export const getActiveKeys = async (
     }
 
     const signedKeyListMap = getSignedKeyListMap(getParsedSignedKeyList(signedKeyList?.Data));
+    const keysMap = keys.reduce<{ [key: string]: Key | undefined }>((acc, key) => {
+        acc[key.ID] = key;
+        return acc;
+    }, {});
 
     const result = await Promise.all(
         decryptedKeys.map(async ({ ID, privateKey }, index) => {
             const fingerprint = privateKey.getFingerprint();
+            const Key = keysMap[ID];
             const signedKeyListItem = signedKeyListMap[fingerprint];
             return getActiveKeyObject(privateKey, {
                 ID,
-                primary: signedKeyListItem?.Primary ?? index === 0 ? 1 : 0,
-                flags: signedKeyListItem?.Flags ?? getDefaultKeyFlags(),
+                primary: signedKeyListItem?.Primary ?? Key?.Primary ?? index === 0 ? 1 : 0,
+                // SKL may not exist for non-migrated users, fall back to the flag value of the key.
+                // Should be improved by asserting SKLs for migrated users, but pushed to later since SKL
+                // signatures are not verified.
+                flags: signedKeyListItem?.Flags ?? Key?.Flags ?? getDefaultKeyFlags(),
             });
         })
     );
