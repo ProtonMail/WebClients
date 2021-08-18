@@ -18,15 +18,15 @@ interface Props {
     onSubmit: () => Promise<unknown>;
 }
 
-const WARNING_TITLE = c('Label').t`WARNING: DELETION IS PERMANENT`;
-const WARNING_INFO = c('Info').t`Are you sure you want to delete your old files \
-permanently? Your old files will be deleted in 72 hours.`;
-const WARNING_CONFIRMATION_TEXT = c('Label').t`Yes, I want to permanently delete \
-my old files`;
-
 const DeleteOldFilesConfirmModal = ({ onClose = noop, onSubmit, ...rest }: Props) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isLoading, withLoading] = useLoading();
+
+    const WARNING_TITLE = c('Label').t`WARNING: DELETION IS PERMANENT`;
+    const WARNING_INFO = c('Info').t`Are you sure you want to delete your old files
+        permanently? Your old files will be deleted in 72 hours.`;
+    const WARNING_CONFIRMATION_TEXT = c('Label').t`Yes, I want to permanently delete
+        my old files`;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(e.target.checked);

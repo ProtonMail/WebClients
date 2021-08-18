@@ -4,7 +4,7 @@ import { DialogModal, useLoading, useNotifications } from '@proton/components';
 import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 import FilesRecoveryState from './FilesRecoveryState';
-import useDrive from '../../hooks/drive/useDrive';
+import useDrive from '../../../hooks/drive/useDrive';
 
 interface Props {
     lockedShareList: {

@@ -3,9 +3,9 @@ import { c } from 'ttag';
 
 import { useModals, useNotifications } from '@proton/components';
 
-import DeleteOldFilesConfirmModal from '../../components/DeleteOldFilesConfirmModal';
-import KeyReactivationModal, { ReactivationOptions } from '../../components/KeyReactivationModal';
-import useFiles from './useFiles';
+import DeleteOldFilesConfirmModal from './DeleteOldFilesConfirmModal';
+import KeyReactivationModal, { ReactivationOptions } from './KeyReactivationModal';
+import useFiles from '../../../hooks/drive/useFiles';
 
 interface ReactivationParams {
     onSuccess?: () => void;

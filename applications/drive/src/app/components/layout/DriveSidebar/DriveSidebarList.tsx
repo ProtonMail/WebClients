@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 import DriveSidebarListItem from './DriveSidebarListItem';
-import FileRecoveryIcon from '../../FilesRecoveryModal/FileRecoveryIcon';
+import FileRecoveryIcon from '../../ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
 
 interface Props {
     shareId?: string;
