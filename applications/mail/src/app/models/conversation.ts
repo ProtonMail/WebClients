@@ -1,3 +1,4 @@
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -18,6 +19,7 @@ export interface Conversation {
     NumAttachments?: number;
     ContextNumAttachments?: number;
     ExpirationTime?: number;
+    AttachmentInfo?: SimpleMap<{ inline?: number; attachment?: number }>;
 }
 
 export interface ConversationLabel {

@@ -2,7 +2,9 @@ import { c, msgid } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { isICS } from '@proton/shared/lib/helpers/filePreview';
 
+import { Conversation } from '../../models/conversation';
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -63,6 +65,8 @@ const ItemRowLayout = ({
         `${occurrencesInBody} occurrences found`,
         occurrencesInBody
     );
+    const attachmentInfo = (element as Conversation)?.AttachmentInfo;
+    const hasOnlyIcsAttachments = attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
@@ -127,7 +131,11 @@ const ItemRowLayout = ({
             </span>
 
             <span className="flex w2e ml0-5 text-center">
-                <ItemAttachmentIcon element={element} className="flex-item-noshrink" />
+                <ItemAttachmentIcon
+                    icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                    element={element}
+                    className="flex-item-noshrink"
+                />
             </span>
 
             <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-align-items-center flex-justify-end">
