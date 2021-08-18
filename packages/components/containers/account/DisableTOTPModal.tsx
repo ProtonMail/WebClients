@@ -5,10 +5,11 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { Alert, FormModal } from '../../components';
+import { Alert, FormModal, Loader } from '../../components';
 import { useLoading, useApi, useEventManager, useNotifications } from '../../hooks';
 
 import PasswordTotpInputs from '../password/PasswordTotpInputs';
+import useAskAuth from '../password/useAskAuth';
 
 const STEPS = {
     CONFIRM: 1,
@@ -24,6 +25,8 @@ const DisableTOTPModal = (props: any) => {
     const [totp, setTotp] = useState('');
     const [error, setError] = useState('');
     const [loading, withLoading] = useLoading();
+    // Special case for admins signed into public users, TOTP is requested if it's enabled on the admin
+    const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
 
     const { section, ...modalProps } = (() => {
         if (step === STEPS.CONFIRM) {
@@ -37,26 +40,10 @@ const DisableTOTPModal = (props: any) => {
         }
 
         if (step === STEPS.PASSWORD) {
-            const handleSubmit = async () => {
-                try {
-                    await srpAuth({
-                        api,
-                        credentials: { password, totp },
-                        config: disableTotp(),
-                    });
-                    await call();
-                    createNotification({ text: c('Info').t`Two-factor authentication disabled` });
-                    props.onClose();
-                } catch (error) {
-                    const { code, message } = getApiError(error);
-                    if (code === PASSWORD_WRONG_ERROR) {
-                        setError(message);
-                    }
-                }
-            };
-
             return {
-                section: (
+                section: isLoadingAuth ? (
+                    <Loader />
+                ) : (
                     <PasswordTotpInputs
                         password={password}
                         setPassword={setPassword}
@@ -64,10 +51,27 @@ const DisableTOTPModal = (props: any) => {
                         totp={totp}
                         setTotp={setTotp}
                         totpError={error}
-                        showTotp
+                        showTotp={hasTOTPEnabled}
                     />
                 ),
                 onSubmit() {
+                    const handleSubmit = async () => {
+                        try {
+                            await srpAuth({
+                                api,
+                                credentials: { password, totp },
+                                config: disableTotp(),
+                            });
+                            await call();
+                            createNotification({ text: c('Info').t`Two-factor authentication disabled` });
+                            props.onClose();
+                        } catch (error) {
+                            const { code, message } = getApiError(error);
+                            if (code === PASSWORD_WRONG_ERROR) {
+                                setError(message);
+                            }
+                        }
+                    };
                     withLoading(handleSubmit());
                 },
                 submit: c('Action').t`Submit`,
