@@ -14,6 +14,7 @@
     animation: eventpopoverIn ease 0.15s;
     animation-fill-mode: both;
     padding: rem(24);
+    overflow: auto;
     // transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
 
     &-actions {
