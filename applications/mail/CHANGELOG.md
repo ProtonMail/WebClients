@@ -1,4 +1,22 @@
-Release 4.0.4 - Aug 18, 2021
+## Release 4.0.5 - Sep 1, 2021
+
+### Improvements
+
+-   Improved handling of drafts that have been sent from other clients
+-   When clicking on the Refresh icon next to a location in the sidebar, filters are now preserved
+-   Added a clearer notification text when a message is marked as not spam
+-   Added autofocus to the name field of the modals used for creating folders and labels
+
+### Bug fixes
+
+-   Fixed an issue where an unnecessary character would be added at the end of a link confirmation URL
+-   Fixed an issue where a request timeout would prevent a message with bigger attachments from sending
+-   Fixed an issue where Shift+Click for selecting multiple items in a list would not work in compact density mode on Firefox
+-   Fixed an issue where the subject and the body would not be populated when using a mailto: link in Firefox
+-   Fixed an issue where conversation ordering was incorrect if several conversations have the exact same timestamp
+-   Fixed an issue where on very rare occasions a negative attachments counter would be displayed
+
+## Release 4.0.4 - Aug 18, 2021
 
 ### Improvements
 
