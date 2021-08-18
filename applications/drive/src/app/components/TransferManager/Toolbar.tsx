@@ -52,7 +52,7 @@ const isInvalidForCancellation = (transfer: Upload | Download) =>
     isTransferDone(transfer);
 
 const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }: ToolbarProps) => {
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
     const transferManagerControls = useTransferControls();
 
     const hasPausedTransfers = entries.map(extractTransferFromEntry).some(isTransferPaused);
