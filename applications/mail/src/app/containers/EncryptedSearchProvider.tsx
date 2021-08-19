@@ -19,8 +19,6 @@ import { deleteDB } from 'idb';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';
 import {
-    CachedMessage,
-    CacheIndexedDB,
     EncryptedSearch,
     EncryptedSearchFunctions,
     ESDBStatus,
@@ -31,8 +29,9 @@ import {
     LastEmail,
     MessageForSearch,
     IsSearchResult,
+    ESCache,
 } from '../models/encryptedSearch';
-import { defaultESStatus, ES_MAX_CACHE, PAGE_SIZE } from '../constants';
+import { defaultESCache, defaultESStatus, PAGE_SIZE } from '../constants';
 import { extractSearchParameters, filterFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../helpers/elements';
 import {
@@ -49,15 +48,12 @@ import {
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
-    cacheDB,
-    checkIsCacheLimited,
     hybridSearch,
     normaliseSearchParams,
     shouldOnlySortResults,
-    sizeOfCache,
     uncachedSearch,
-    updateCache,
 } from '../helpers/encryptedSearch/esSearch';
+import { cacheDB, refreshESCache } from '../helpers/encryptedSearch/esCache';
 import {
     checkIsDBLimited,
     correctDecryptionErrors,
@@ -85,9 +81,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const [messageCounts] = useMessageCounts();
     const isSearch = testIsSearch(extractSearchParameters(location));
 
-    // Keep a state of cached messages, search results to update in case of new events
+    // Keep a state of search results to update in case of new events
     // and information on the status of IndexedDB
     const [esStatus, setESStatus] = useState<ESStatus>(defaultESStatus);
+    // Keep a reference to cached messages, such that they can be queried at any time
+    const esCacheRef = useRef<ESCache>(defaultESCache);
     // Allow to abort indexing
     const abortControllerRef = useRef<AbortController>(new AbortController());
     // Allow to track progress during indexing or refreshing
@@ -156,27 +154,19 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Report the status of IndexedDB
      */
     const getESDBStatus = () => {
-        const {
-            dbExists,
-            isBuilding,
-            isDBLimited,
-            esEnabled,
-            isCacheReady,
-            isCacheLimited,
-            isRefreshing,
-            isSearchPartial,
-            isSearching,
-        } = esStatus;
+        const { dbExists, isBuilding, isDBLimited, esEnabled, isRefreshing, isSearchPartial, isSearching, isCaching } =
+            esStatus;
+        const { isCacheLimited } = esCacheRef.current;
         const esDBStatus: ESDBStatus = {
             dbExists,
             isBuilding,
             isDBLimited,
             esEnabled,
-            isCacheReady,
             isCacheLimited,
             isRefreshing,
             isSearchPartial,
             isSearching,
+            isCaching,
         };
         return esDBStatus;
     };
@@ -210,56 +200,42 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     /**
-     * Cache the whole IndexedDB and returns the cache promise
+     * Cache IndexedDB
      */
-    const cacheIndexedDB: CacheIndexedDB = async (force) => {
-        const { esEnabled, dbExists } = esStatus;
-        const defaultResult = {
-            cachedMessages: [],
-            isCacheLimited: false,
-        };
+    const cacheIndexedDB = async () => {
+        const { esEnabled, dbExists, cachedIndexKey, isCaching } = esStatus;
 
         if (dbExists && esEnabled) {
-            const indexKey = await getIndexKey(getUserKeys, userID);
+            const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
             const isIDBIntact = await canUseES(userID);
             if (!indexKey || !isIDBIntact) {
                 await dbCorruptError();
-                return defaultResult;
+                return;
             }
 
-            const { cachePromise, isCacheLimited } = esStatus;
-            const esCache = await cachePromise;
-            if ((esCache.length || (await getNumMessagesDB(userID)) === 0) && !force) {
-                return {
-                    cachedMessages: esCache,
-                    isCacheLimited,
-                };
+            const { isCacheReady } = esCacheRef.current;
+            if (isCaching || isCacheReady) {
+                return;
             }
-
-            const cacheDBPromise = cacheDB(indexKey, userID);
-            const newCachePromise = cacheDBPromise
-                .then((result) => {
-                    setESStatus((esStatus) => {
-                        return {
-                            ...esStatus,
-                            isCacheReady: true,
-                            isCacheLimited: result.isCacheLimited,
-                        };
-                    });
-                    return result.cachedMessages;
-                })
-                .catch(() => [] as CachedMessage[]);
 
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
-                    cachePromise: newCachePromise,
+                    isCaching: true,
                     cachedIndexKey: indexKey,
                 };
             });
-            return cacheDBPromise;
+
+            await cacheDB(indexKey, userID, esCacheRef);
+
+            esCacheRef.current.isCacheReady = true;
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    isCaching: false,
+                };
+            });
         }
-        return defaultResult;
     };
 
     /**
@@ -273,7 +249,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // have happened during indexing
         const attemptReDecryption =
             Addresses && Addresses.some((AddressEvent) => AddressEvent.Action === EVENT_ACTIONS.UPDATE);
-        let newMessagesDecrypted = false;
         if (attemptReDecryption) {
             recordProgress(0, 0);
 
@@ -287,7 +262,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 });
             }
 
-            newMessagesDecrypted = await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress);
+            await correctDecryptionErrors(
+                userID,
+                indexKey,
+                api,
+                getMessageKeys,
+                recordProgress,
+                esCacheRef
+            );
 
             if (!isUpdatingMessageContent) {
                 setESStatus((esStatus) => {
@@ -300,11 +282,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         if (!Messages || !Messages.length) {
-            // Rebuild the cache if there are new decrypted messages. If there
-            // also message events, this operation is performed later
-            if (newMessagesDecrypted) {
-                void cacheIndexedDB(true);
-            }
             return;
         }
 
@@ -313,8 +290,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             recordProgress(0, 0);
         }
 
-        const { labelID, permanentResults, setElementsCache, cachePromise, isCacheLimited } = esStatus;
-        const esCache = await cachePromise;
+        const { labelID, permanentResults, setElementsCache } = esStatus;
 
         const searchParameters = extractSearchParameters(location);
         const filterParameter = filterFromUrl(location);
@@ -322,10 +298,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const isSearch = testIsSearch(searchParameters);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
 
-        const { cacheChanged, searchChanged } = await syncMessageEvents(
+        const searchChanged = await syncMessageEvents(
             Messages,
             userID,
-            esCache,
+            esCacheRef,
             permanentResults,
             isSearch,
             api,
@@ -341,28 +317,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return {
                     ...esStatus,
                     permanentResults,
-                };
-            });
-        }
-
-        // If there are new messages that were decrypted, rebuild the cache, otherwise modify
-        // the existing cache
-        if (newMessagesDecrypted) {
-            void cacheIndexedDB(true);
-        } else if (cacheChanged) {
-            // In case messages were deleted and the resulting cache is smaller, it is updated to
-            // make room to more messages
-            if (isCacheLimited) {
-                const lastEmail: LastEmail = { Time: esCache[0].Time, Order: esCache[0].Order };
-                const cacheLimit = ES_MAX_CACHE - sizeOfCache(esCache);
-                await updateCache(indexKey, userID, lastEmail, esCache, cacheLimit);
-            }
-            const didCacheBecomeLimited = await checkIsCacheLimited(userID, esCache.length);
-            setESStatus((esStatus) => {
-                return {
-                    ...esStatus,
-                    cachePromise: Promise.resolve(esCache),
-                    isCacheLimited: didCacheBecomeLimited,
                 };
             });
         }
@@ -398,7 +352,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 indexKey,
                 getMessageKeys,
                 recordProgress,
-                messageCounts
+                messageCounts,
+                esCacheRef
             );
 
             if (!wasAlreadyRefreshing) {
@@ -417,12 +372,15 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Conclude any type of syncing routine
      */
-    const finaliseSyncing = async (event: Event) => {
+    const finaliseSyncing = async (event: Event, indexKey: CryptoKey) => {
         // In case everything goes through, save the last event ID from which to
         // catch up the next time
         if (event.EventID) {
             setItem(`ES:${userID}:Event`, event.EventID);
         }
+
+        // In case many messages were removed from cache, fill the remaining space
+        await refreshESCache(userID, indexKey, esCacheRef);
 
         // Check if DB became limited after the update
         const isDBLimited = await checkIsDBLimited(userID, messageCounts, api);
@@ -468,7 +426,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return catchUpFromEvent(indexKey, eventToCheck);
         }
 
-        return finaliseSyncing(eventToCheck);
+        return finaliseSyncing(eventToCheck, indexKey);
     };
 
     /**
@@ -558,7 +516,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             eventToCheck = newEventToCheck;
         }
 
-        return finaliseSyncing(eventToCheck);
+        return finaliseSyncing(eventToCheck, indexKey);
     };
 
     /**
@@ -701,8 +659,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const {
             dbExists,
             esEnabled,
-            isCacheReady,
-            cachePromise,
             previousNormSearchParams,
             permanentResults,
             isSearchPartial: wasSearchPartial,
@@ -741,20 +697,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
 
-        // Wait for the cache to be built, falls back to uncached search if caching fails
-        let esCache = await cachePromise;
-        let { isCacheLimited } = esStatus;
-
-        // If encrypted search is enabled while search results (from a previous server-side search) are
-        // being shown, the cache will naturally be empty, therefore we trigger it. If, despite this,
-        // the cache is still empty, it means an error has occured and that search should fallback to
-        // uncached search.
-        if (!esCache.length) {
-            const cachingResult = await cacheIndexedDB();
-            esCache = cachingResult.cachedMessages;
-            isCacheLimited = cachingResult.isCacheLimited;
-        }
-
         // Record the number of messages that were actually searched (i.e. not discarded by means of filters)
         let numMessagesSearched = 0;
         const incrementMessagesSearched = () => {
@@ -766,9 +708,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         let lastEmail: LastEmail | undefined;
         try {
             ({ searchResults, isSearchPartial, lastEmail } = await hybridSearch(
-                esCache,
+                esCacheRef,
                 normalisedSearchParams,
-                isCacheLimited,
                 cachedIndexKey,
                 getUserKeys,
                 userID,
@@ -805,12 +746,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         void sendESMetrics(
             api,
             userID,
-            sizeOfCache(esCache),
+            esCacheRef.current.cacheSize,
             numMessagesSearched,
             Math.ceil(t2 - t1),
             searchResults.length,
-            !isCacheReady,
-            isCacheLimited
+            !esCacheRef.current.isCacheReady,
+            esCacheRef.current.isCacheLimited
         );
 
         return true;
@@ -820,10 +761,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Increase the number of results in case the cache is limited as the user changes page
      */
     const incrementSearch: IncrementSearch = async (page, setElementsCache, shouldLoadMore) => {
+        const { isCacheLimited } = esCacheRef.current;
         const {
             dbExists,
             esEnabled,
-            isCacheLimited,
             labelID,
             permanentResults,
             lastEmail,
@@ -999,6 +940,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     lastEmail: defaultESStatus.lastEmail,
                     previousNormSearchParams: defaultESStatus.previousNormSearchParams,
                     page: defaultESStatus.page,
+                    isSearchPartial: defaultESStatus.isSearchPartial,
+                    isSearching: defaultESStatus.isSearching,
                 };
             });
         }

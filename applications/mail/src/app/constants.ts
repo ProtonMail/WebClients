@@ -1,6 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { CachedMessage, ESIndexingState, ESStatus } from './models/encryptedSearch';
+import { ESCache, ESIndexingState, ESStatus } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -157,7 +157,6 @@ export const defaultESStatus: ESStatus = {
     permanentResults: [],
     setElementsCache: () => {},
     labelID: '',
-    cachePromise: (async () => [] as CachedMessage[])(),
     lastEmail: undefined,
     previousNormSearchParams: undefined,
     page: 0,
@@ -166,11 +165,16 @@ export const defaultESStatus: ESStatus = {
     isBuilding: false,
     isDBLimited: false,
     esEnabled: false,
-    isCacheReady: false,
-    isCacheLimited: false,
     isRefreshing: false,
     isSearchPartial: false,
     isSearching: false,
+    isCaching: false,
+};
+export const defaultESCache: ESCache = {
+    esCache: [],
+    cacheSize: 0,
+    isCacheLimited: true,
+    isCacheReady: false,
 };
 export const defaultESIndexingState: ESIndexingState = {
     esProgress: 0,

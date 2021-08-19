@@ -10,13 +10,13 @@ import {
     CachedMessage,
     EncryptedSearchDB,
     ESBaseMessage,
+    ESCache,
     MessageForSearch,
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
 import {
     AesKeyGenParams,
-    ES_MAX_CACHE,
     ES_MAX_PAGES_PER_BATCH,
     ES_MAX_PARALLEL_MESSAGES,
     PAGE_SIZE,
@@ -29,16 +29,10 @@ import {
     getTotalMessages,
     refreshOpenpgp,
 } from './esUtils';
-import {
-    applySearch,
-    normaliseSearchParams,
-    sizeOfCache,
-    sizeOfCachedMessage,
-    splitCachedMessage,
-    uncachedSearch,
-} from './esSearch';
+import { applySearch, normaliseSearchParams, splitCachedMessage, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesMetadata } from './esAPI';
 import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
+import { sizeOfCachedMessage, removeFromESCache, addToESCache, replaceInESCache } from './esCache';
 
 /**
  * Check whether the DB is limited, either after indexing or if it became so
@@ -140,43 +134,12 @@ export const compareESBaseMessages = (message1: ESBaseMessage, message2: ESBaseM
 };
 
 /**
- * Add a message to the cache while keeping it ordered by Time and Order
- */
-export const insertInCache = (esCache: CachedMessage[], newMessage: CachedMessage) => {
-    let indexToInsert = 0;
-    for (let index = esCache.length - 1; index >= 0; index--) {
-        if (
-            esCache[index].Time < newMessage.Time ||
-            (esCache[index].Time === newMessage.Time && esCache[index].Order < newMessage.Order)
-        ) {
-            indexToInsert = index + 1;
-            break;
-        }
-    }
-    esCache.splice(indexToInsert, 0, newMessage);
-};
-
-/**
- * Make room in the cache for new messages by deleting the oldest ones
- */
-export const cleanCache = (esCache: CachedMessage[], initialCacheSize: number, targetSpace: number) => {
-    let cacheSize = initialCacheSize;
-    let indexCutoff = 0;
-    while (cacheSize + targetSpace >= ES_MAX_CACHE) {
-        const size = sizeOfCachedMessage(esCache[indexCutoff++]);
-        cacheSize -= size;
-    }
-    esCache.splice(0, indexCutoff);
-    return cacheSize;
-};
-
-/**
  * Synchronise IDB (and optionally cache and search results) with new message events
  */
 export const syncMessageEvents = async (
     Messages: MessageEvent[],
     userID: string,
-    esCache: CachedMessage[],
+    esCacheRef: React.MutableRefObject<ESCache>,
     permanentResults: MessageForSearch[],
     isSearch: boolean,
     api: Api,
@@ -186,11 +149,7 @@ export const syncMessageEvents = async (
     recordProgressLocal?: () => void
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
-    let cacheChanged = false;
     let searchChanged = false;
-    let cacheOldestTime = esCache.length ? esCache[0].Time : 0;
-    let cacheOldestOrder = esCache.length ? esCache[0].Order : 0;
-    let cacheSize = sizeOfCache(esCache);
 
     // In case something happens while displaying search results, this function keeps
     // the results in sync live (e.g. by creating or removing messages from the results)
@@ -235,22 +194,16 @@ export const syncMessageEvents = async (
 
             // If a message is deleted:
             //   - delete it from DB
-            //   - if a cache exists, delete it from there
+            //   - if a cache exists and has it, delete it from there
             //   - if results are being shown, delete it from there too
             if (Action === EVENT_ACTIONS.DELETE) {
                 const size = await removeMessageSize(userID, esDB, ID, indexKey);
-                await esDB.delete('messages', ID);
-
-                if (esCache.length) {
-                    const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
-                    if (index !== -1) {
-                        esCache.splice(index, 1);
-                        cacheSize -= size;
-                        cacheChanged = true;
-                        cacheOldestTime = esCache[0].Time;
-                        cacheOldestOrder = esCache[0].Order;
-                    }
+                if (size === -1) {
+                    continue;
                 }
+                await esDB.delete('messages', ID);
+    
+                removeFromESCache(ID, esCacheRef, size);
 
                 const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
                 if (isSearch && resultIndex !== -1) {
@@ -285,26 +238,7 @@ export const syncMessageEvents = async (
                 const size = sizeOfCachedMessage(messageToCache);
                 updateSizeIDB(userID, size);
 
-                if (esCache.length) {
-                    let addToCache = true;
-                    if (cacheSize + size >= ES_MAX_CACHE) {
-                        if (
-                            messageToCache.Time < cacheOldestTime ||
-                            (messageToCache.Time === cacheOldestTime && messageToCache.Order < cacheOldestOrder)
-                        ) {
-                            addToCache = false;
-                        } else {
-                            cacheSize = cleanCache(esCache, cacheSize, size);
-                        }
-                    }
-                    if (addToCache) {
-                        insertInCache(esCache, messageToCache);
-                        cacheSize += size;
-                        cacheChanged = true;
-                        cacheOldestTime = esCache[0].Time;
-                        cacheOldestOrder = esCache[0].Order;
-                    }
-                }
+                addToESCache(messageToCache, esCacheRef, size);
 
                 if (isSearch && applySearch(normalisedSearchParams, messageToCache)) {
                     updatePermanentResults({ messageToCache });
@@ -378,20 +312,7 @@ export const syncMessageEvents = async (
                 updateSizeIDB(userID, sizeDelta);
 
                 // If a cache exists, update the message there too
-                if (esCache.length) {
-                    const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
-                    if (index !== -1) {
-                        if (cacheSize + sizeDelta >= ES_MAX_CACHE) {
-                            cacheSize = cleanCache(esCache, cacheSize, sizeDelta);
-                        }
-                        esCache.splice(index, 1);
-                        insertInCache(esCache, newMessageToCache);
-                        cacheSize += sizeDelta;
-                        cacheChanged = true;
-                        cacheOldestTime = esCache[0].Time;
-                        cacheOldestOrder = esCache[0].Order;
-                    }
-                }
+                replaceInESCache(newMessageToCache, esCacheRef, Action === EVENT_ACTIONS.UPDATE_DRAFT, sizeDelta);
 
                 // If results are being shown:
                 //   - if the old message was part of the search and the new one still is, update it;
@@ -420,10 +341,7 @@ export const syncMessageEvents = async (
 
     esDB.close();
 
-    return {
-        cacheChanged,
-        searchChanged,
-    };
+    return searchChanged;
 };
 
 /**
@@ -434,7 +352,8 @@ export const correctDecryptionErrors = async (
     indexKey: CryptoKey,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    recordProgress: (progress: number, total: number) => void
+    recordProgress: (progress: number, total: number) => void,
+    esCacheRef: React.MutableRefObject<ESCache>
 ) => {
     const { resultsArray: searchResults } = await uncachedSearch(
         userID,
@@ -466,6 +385,9 @@ export const correctDecryptionErrors = async (
             throw new Error('Failed to encrypt recovered message');
         }
 
+        recordProgress(index + 1, searchResults.length);
+        addToESCache(newMessage, esCacheRef);
+
         if (!(await storeToDB(newCiphertextToStore, esDB))) {
             throw new Error('Failed to store recovered message');
         }
@@ -488,7 +410,8 @@ export const refreshIndex = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    messageCounts: any
+    messageCounts: any,
+    esCacheRef: React.MutableRefObject<ESCache>
 ) => {
     // Get the latest event to catch up after refreshing
     const eventSinceRefresh = await queryEvents(api);
@@ -500,7 +423,7 @@ export const refreshIndex = async (
     // before attempting to refresh the index, we also retry decryption of previously failed
     // messages. This is due to refresh not trying to decrypt all messages, but only drafts
     // and completely new messages
-    await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress);
+    await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress, esCacheRef);
 
     // Progress is wiped before actual refreshing
     recordProgress(0, 0);
@@ -526,8 +449,11 @@ export const refreshIndex = async (
 
     if (searchResults.length) {
         for (const { ID } of searchResults) {
-            await removeMessageSize(userID, esDB, ID, indexKey);
-            await esDB.delete('messages', ID);
+            const size = await removeMessageSize(userID, esDB, ID, indexKey);
+            if (size !== -1) {
+                await esDB.delete('messages', ID);
+                removeFromESCache(ID, esCacheRef);
+            }
         }
     }
 
@@ -585,9 +511,11 @@ export const refreshIndex = async (
                     if (!newCiphertextToStore) {
                         throw new Error('Ciphertext to store is undefined');
                     }
-
+                    const sizeDelta = sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage);
+                    updateSizeIDB(userID, sizeDelta);
                     // Note that if DB is limited, storeToDB already takes care of it
                     await storeToDB(newCiphertextToStore, esDB);
+                    replaceInESCache(newMessageToCache, esCacheRef, false, sizeDelta);
                 }
 
                 indexedIDs.delete(ID);
@@ -597,14 +525,14 @@ export const refreshIndex = async (
                     throw new Error('Cannot fetch new message');
                 }
 
-                updateSizeIDB(userID, sizeOfCachedMessage(fetchedMessageToCache));
-
                 const newCiphertextToStore = await encryptToDB(fetchedMessageToCache, indexKey);
                 if (!newCiphertextToStore) {
                     throw new Error('Ciphertext to store is undefined');
                 }
-
+                const size = sizeOfCachedMessage(fetchedMessageToCache);
+                updateSizeIDB(userID, size);
                 await storeToDB(newCiphertextToStore, esDB);
+                addToESCache(fetchedMessageToCache, esCacheRef, size);
             }
             recordProgress(numMessages++, Total);
         }
@@ -617,6 +545,7 @@ export const refreshIndex = async (
         const tx = esDB.transaction('messages', 'readwrite');
         indexedIDs.forEach(async (_, key) => {
             await tx.store.delete(key);
+            removeFromESCache(key, esCacheRef);
         });
         await tx.done;
     }
