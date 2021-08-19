@@ -32,10 +32,13 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     const { createNotification } = useNotifications();
 
     const hasOtherAdmins = members ? getHasOtherAdmins(members) : false;
-    const nonPrivateMembers = members ? getNonPrivateMembers(members) : [];
+    const publicMembers = members ? getNonPrivateMembers(members) : [];
 
     const handleChangeOrganizationKeys = (mode?: 'reset') => {
-        if (nonPrivateMembers.length > 0 && !organizationKey?.privateKey) {
+        if (!organizationKey) {
+            throw new Error('Organization key not loaded');
+        }
+        if (publicMembers.length > 0 && !organizationKey.privateKey) {
             return createNotification({
                 text: c('Error').t`You must privatize all users before generating new organization keys`,
                 type: 'error',
@@ -46,8 +49,8 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
             <ChangeOrganizationKeysModal
                 mode={mode}
                 hasOtherAdmins={hasOtherAdmins}
-                organizationKey={organizationKey?.privateKey}
-                nonPrivateMembers={nonPrivateMembers}
+                organizationKey={organizationKey}
+                publicMembers={publicMembers}
             />
         );
     };
