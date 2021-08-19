@@ -1,5 +1,5 @@
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { MouseEvent, useState } from 'react';
+import { ComponentPropsWithoutRef, MouseEvent, useState } from 'react';
 import { c } from 'ttag';
 import { Calendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 
@@ -24,13 +24,13 @@ import { Alert, Loader } from '../../../components';
 import useCalendarShareUrls from './useCalendarShareUrls';
 import { SettingsParagraph, SettingsSection } from '../../account';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     defaultCalendar?: Calendar;
     calendars: Calendar[];
     user: UserModel;
 }
 
-const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
+const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
     const { linksMap, isLoadingLinks } = useCalendarShareUrls(calendars);
     const [isLoadingCreate, setIsLoadingCreate] = useState(false);
     const [isLoadingMap, setIsLoadingMap] = useState<SimpleMap<boolean>>({});
@@ -155,7 +155,7 @@ const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
     );
 
     return (
-        <SettingsSection>
+        <SettingsSection {...rest}>
             {calendars.length ? (
                 <>
                     {infoParagraph}
