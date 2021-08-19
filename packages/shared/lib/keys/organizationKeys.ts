@@ -80,7 +80,7 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
 
     // Performed iteratively to not spam the API
     for (const member of publicMembers) {
-        if (member.Keys.length === 0) {
+        if (!member.Keys?.length) {
             continue;
         }
 
@@ -121,7 +121,10 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
         const AddressKeyTokens = (
             await Promise.all(
                 memberAddresses.map(async (address) => {
-                    const result = await Promise.all(
+                    if (!address.Keys?.length) {
+                        return;
+                    }
+                    return Promise.all(
                         address.Keys.map(async ({ ID, Token, Signature, PrivateKey }) => {
                             if (!Token) {
                                 throw new Error('Missing token');
@@ -147,10 +150,6 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
                             };
                         })
                     );
-                    if (!result.length) {
-                        return;
-                    }
-                    return result;
                 })
             )
         )
@@ -182,6 +181,9 @@ export const getReEncryptedPublicMemberTokensPayloadLegacy = async ({
 
     // Performed iteratively to not spam the API
     for (const member of publicMembers) {
+        if (!member.Keys?.length) {
+            continue;
+        }
         const memberAddresses = await api<{ Addresses: [] }>(queryAddresses(member.ID)).then(
             ({ Addresses }) => Addresses || []
         );
