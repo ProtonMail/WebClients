@@ -229,7 +229,7 @@ export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemb
 
     for (const member of membersToMigrate) {
         // Some members might not be setup.
-        if (!member.Keys) {
+        if (!member.Keys?.length) {
             continue;
         }
         const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(
