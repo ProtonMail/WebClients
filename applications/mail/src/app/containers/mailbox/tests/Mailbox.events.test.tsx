@@ -3,8 +3,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
 import { PAGE_SIZE, DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
-import { Conversation, ConversationLabel } from '../../../models/conversation';
-import { Element } from '../../../models/element';
+import { Conversation } from '../../../models/conversation';
 import { MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
 import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
@@ -120,28 +119,6 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expect(api.mock.calls.length).toBe(6);
-    });
-
-    it('should reload the list if the last element has been updated', async () => {
-        // If the last element of the list has been updated by an event
-        // We're not sure that the sort is good so the cache has to be reset
-
-        const setTime = (element: Element, time: number) => {
-            ((element as Conversation).Labels as ConversationLabel[])[0].ContextTime = time;
-            return element;
-        };
-
-        const total = PAGE_SIZE;
-        const conversations = getElements(total);
-        conversations.forEach((element, i) => setTime(element, i + 10));
-        await setup({ conversations });
-
-        const element = setTime({ ...conversations[4] }, 0);
-        await sendEvent({
-            Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }],
-        });
-
-        expect(api.mock.calls.length).toBe(7);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
