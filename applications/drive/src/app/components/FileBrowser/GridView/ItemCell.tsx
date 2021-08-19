@@ -100,24 +100,6 @@ function ItemCell({
                 ])}
                 {...itemHandlers}
             >
-                <div
-                    className={classnames([
-                        'flex file-browser-grid-item--select',
-                        selectedItems.length ? null : 'file-browser-grid-item--select-hover-only',
-                    ])}
-                    {...checkboxWrapperHandlers}
-                >
-                    <Checkbox
-                        disabled={item.Disabled}
-                        className="increase-click-surface file-browser-grid-item-checkbox"
-                        checked={isSelected}
-                        {...checkboxHandlers}
-                    />
-                </div>
-                {item.SharedUrl && (
-                    <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share-icon" />
-                )}
-
                 <div className="flex flex-item-fluid flex-justify-center flex-align-items-center file-browser-grid-item--container">
                     {item.CachedThumbnailURL && !isThumbnailDisabled ? (
                         <img
@@ -136,6 +118,23 @@ function ItemCell({
                         <ShareButton shareId={shareId} item={item} className="file-browser-grid-item--share-button" />
                     )}
                 </div>
+                <div
+                    className={classnames([
+                        'flex file-browser-grid-item--select',
+                        selectedItems.length ? null : 'file-browser-grid-item--select-hover-only',
+                    ])}
+                    {...checkboxWrapperHandlers}
+                >
+                    <Checkbox
+                        disabled={item.Disabled}
+                        className="increase-click-surface file-browser-grid-item-checkbox"
+                        checked={isSelected}
+                        {...checkboxHandlers}
+                    />
+                </div>
+                {item.SharedUrl && (
+                    <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share-icon" />
+                )}
                 <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 flex" title={item.Name}>
                     <FileNameDisplay text={item.Name} className="center" />
                 </div>
