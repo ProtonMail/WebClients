@@ -1,11 +1,14 @@
 import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
-import { updateOrganizationKeys } from '@proton/shared/lib/api/organization';
-import { OpenPGPKey } from 'pmcrypto';
+import { updateOrganizationKeysLegacy, updateOrganizationKeysV2 } from '@proton/shared/lib/api/organization';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
-import { generateOrganizationKeys, reEncryptOrganizationTokens } from '@proton/shared/lib/keys';
-import { queryAddresses } from '@proton/shared/lib/api/members';
-import { Address, Member } from '@proton/shared/lib/interfaces';
+import {
+    generateOrganizationKeys,
+    getHasMigratedAddressKeys,
+    getReEncryptedPublicMemberTokensPayloadLegacy,
+    getReEncryptedPublicMemberTokensPayloadV2,
+} from '@proton/shared/lib/keys';
+import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
 import {
     useEventManager,
@@ -15,6 +18,7 @@ import {
     useAuthentication,
     useStep,
     useApi,
+    useGetAddresses,
 } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 
@@ -23,8 +27,8 @@ import SelectEncryption from '../keys/addKey/SelectEncryption';
 interface Props {
     onClose?: () => void;
     hasOtherAdmins: boolean;
-    nonPrivateMembers: Member[];
-    organizationKey?: OpenPGPKey;
+    publicMembers: Member[];
+    organizationKey: CachedOrganizationKey;
     mode?: 'reset';
 }
 
@@ -32,7 +36,7 @@ const ChangeOrganizationKeysModal = ({
     onClose,
     mode,
     hasOtherAdmins,
-    nonPrivateMembers,
+    publicMembers,
     organizationKey,
     ...rest
 }: Props) => {
@@ -42,6 +46,7 @@ const ChangeOrganizationKeysModal = ({
     const { createNotification } = useNotifications();
     const authentication = useAuthentication();
 
+    const getAddresses = useGetAddresses();
     const { step, next, previous } = useStep();
     const [loading, withLoading] = useLoading();
     const [newPassword, setNewPassword] = useState('');
@@ -63,31 +68,42 @@ const ChangeOrganizationKeysModal = ({
             });
 
         // Check this case for safety.
-        if (nonPrivateMembers.length >= 1 && !organizationKey) {
+        if (publicMembers.length >= 1 && !organizationKey.privateKey) {
             throw new Error('Private members received without an existing organization key.');
         }
 
-        const nonPrivateMembersAddresses = await Promise.all(
-            nonPrivateMembers.map((member) =>
-                api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(({ Addresses = [] }) => Addresses)
-            )
-        );
+        const addresses = await getAddresses();
 
-        const tokens = organizationKey
-            ? await reEncryptOrganizationTokens({
-                  nonPrivateMembers,
-                  nonPrivateMembersAddresses,
-                  oldOrganizationKey: organizationKey,
-                  newOrganizationKey: privateKey,
-              })
-            : [];
-
-        const apiConfig = updateOrganizationKeys({
-            PrivateKey: privateKeyArmored,
-            BackupPrivateKey: backupArmoredPrivateKey,
-            BackupKeySalt: backupKeySalt,
-            Tokens: tokens,
-        });
+        let apiConfig: any;
+        if (getHasMigratedAddressKeys(addresses)) {
+            apiConfig = updateOrganizationKeysV2({
+                PrivateKey: privateKeyArmored,
+                BackupPrivateKey: backupArmoredPrivateKey,
+                BackupKeySalt: backupKeySalt,
+                Members: organizationKey.privateKey
+                    ? await getReEncryptedPublicMemberTokensPayloadV2({
+                          api,
+                          publicMembers,
+                          oldOrganizationKey: organizationKey,
+                          newOrganizationKey: { privateKey, publicKey: privateKey.toPublic() },
+                      })
+                    : [],
+            });
+        } else {
+            apiConfig = updateOrganizationKeysLegacy({
+                PrivateKey: privateKeyArmored,
+                BackupPrivateKey: backupArmoredPrivateKey,
+                BackupKeySalt: backupKeySalt,
+                Tokens: organizationKey.privateKey
+                    ? await getReEncryptedPublicMemberTokensPayloadLegacy({
+                          api,
+                          publicMembers,
+                          oldOrganizationKey: organizationKey,
+                          newOrganizationKey: { privateKey, publicKey: privateKey.toPublic() },
+                      })
+                    : [],
+            });
+        }
 
         await new Promise((resolve, reject) => {
             createModal(<AuthModal onClose={reject} onSuccess={resolve} config={apiConfig} />);
