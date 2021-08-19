@@ -3,10 +3,14 @@ import { c } from 'ttag';
 import { GIGA, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { updateOrganizationName, updateOrganizationKeys } from '@proton/shared/lib/api/organization';
+import {
+    updateOrganizationName,
+    updateOrganizationKeysLegacy,
+    updateOrganizationKeysV2,
+} from '@proton/shared/lib/api/organization';
 import { updateVPN, updateQuota } from '@proton/shared/lib/api/members';
 
-import { generateOrganizationKeys } from '@proton/shared/lib/keys';
+import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import { FormModal, Button, Row, Label, Input, PasswordInput, Alert, Select } from '../../components';
 import {
     useUser,
@@ -17,6 +21,7 @@ import {
     useAuthentication,
     useLoading,
     useNotifications,
+    useAddresses,
 } from '../../hooks';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
@@ -32,12 +37,14 @@ enum STEPS {
 interface Props {
     onClose?: () => void;
 }
+
 const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
+    const [addresses] = useAddresses();
     const [members = []] = useMembers();
     const [loading, withLoading] = useLoading();
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
@@ -153,14 +160,25 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                             encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                         });
 
-                    await api(
-                        updateOrganizationKeys({
-                            PrivateKey: privateKeyArmored,
-                            BackupPrivateKey: backupArmoredPrivateKey,
-                            BackupKeySalt: backupKeySalt,
-                            Tokens: [],
-                        })
-                    );
+                    if (getHasMigratedAddressKeys(addresses)) {
+                        await api(
+                            updateOrganizationKeysV2({
+                                PrivateKey: privateKeyArmored,
+                                BackupPrivateKey: backupArmoredPrivateKey,
+                                BackupKeySalt: backupKeySalt,
+                                Members: [],
+                            })
+                        );
+                    } else {
+                        await api(
+                            updateOrganizationKeysLegacy({
+                                PrivateKey: privateKeyArmored,
+                                BackupPrivateKey: backupArmoredPrivateKey,
+                                BackupKeySalt: backupKeySalt,
+                                Tokens: [],
+                            })
+                        );
+                    }
 
                     setStep(STEPS.STORAGE);
                 },

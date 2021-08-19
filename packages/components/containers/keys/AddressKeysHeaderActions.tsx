@@ -25,7 +25,7 @@ const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportK
         },
     ].filter(isTruthy);
 
-    if (!createActions.length) {
+    if (!createActions.length && addresses.length <= 1) {
         return null;
     }
 

@@ -6,7 +6,7 @@ import { DecryptedKey, Key as tsKey, KeyPair, User } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 
-const getUserKeyPassword = ({ Token }: tsKey, keyPassword: string, organizationKey?: KeyPair) => {
+export const getUserKeyPassword = ({ Token }: tsKey, keyPassword: string, organizationKey?: KeyPair) => {
     if (Token && organizationKey) {
         return decryptMemberToken(Token, [organizationKey.privateKey], [organizationKey.publicKey]);
     }

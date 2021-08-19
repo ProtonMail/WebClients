@@ -228,13 +228,17 @@ export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemb
     }
 
     for (const member of membersToMigrate) {
+        // Some members might not be setup.
+        if (!member.Keys) {
+            continue;
+        }
         const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(
             ({ Addresses }) => Addresses
         );
         const memberUserKeys = await getDecryptedUserKeys(member.Keys, '', decryptedOrganizationKeyResult);
         const primaryMemberUserKey = getPrimaryKey(memberUserKeys)?.privateKey;
         if (!primaryMemberUserKey) {
-            throw new Error('Missing primary private user key');
+            throw new Error('Not able to decrypt the primary member user key');
         }
 
         const memberAddressesKeys = (
@@ -258,8 +262,9 @@ export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemb
             )
         ).filter(isTruthy);
 
+        // Some members might not have keys setup for the address.
         if (!memberAddressesKeys.length) {
-            return;
+            continue;
         }
 
         const payload = await getAddressKeysMigrationPayload(
