@@ -5,6 +5,8 @@ import {
     verifyMessage as pmcryptoVerifyMessage,
     createCleartextMessage,
     DecryptResultPmcrypto,
+    getKeys,
+    getMessage,
 } from 'pmcrypto';
 import processMIMESource from 'pmcrypto/lib/message/processMIME';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -12,7 +14,9 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { MessageErrors } from '../../models/message';
+import { KeyId } from '@proton/shared/lib/contacts/keyVerifications';
+import { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -194,4 +198,41 @@ export const verifyMessage = async (
             verificationErrors: [error],
         };
     }
+};
+
+/**
+ * Try to get the key responsible for the message encryption from user's keys
+ * keyFound contains the address, the key and keyIds of the key in case we need to display which key is needed to the user
+ * matchingKey is the keyID of the key that we need to store in localStorage
+ */
+export const getMessageDecryptionKeyFromAddress = async (address: Address, message: MessageExtendedWithData) => {
+    const cryptoMessage = await getMessage(message.data.Body);
+    const encryptionKeyIDs = cryptoMessage.getEncryptionKeyIds() as KeyId[];
+
+    const addressKeyIDs: { address: Address; key: AddressKey; keyIDs: KeyId[] }[] = [];
+    await Promise.all(
+        address.Keys.map(async (key) => {
+            const compiled = await getKeys(key.PrivateKey);
+            compiled.forEach((openPGPKey) => {
+                const keyIDs = openPGPKey.getKeyIds() as KeyId[];
+                addressKeyIDs.push({ address, key, keyIDs });
+            });
+        })
+    );
+
+    let matchingKey: KeyId | undefined;
+
+    const keyFound = addressKeyIDs.find(({ keyIDs }) => {
+        return keyIDs.some((keyID) =>
+            encryptionKeyIDs.some((encryptionKeyID) => {
+                const isFound = encryptionKeyID.equals(keyID);
+                if (isFound) {
+                    matchingKey = keyID;
+                }
+                return isFound;
+            })
+        );
+    });
+
+    return { keyFound, matchingKey };
 };
