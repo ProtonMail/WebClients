@@ -1,6 +1,7 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { IDBPDatabase, openDB } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
+import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Element } from '../../models/element';
 import {
@@ -17,7 +18,6 @@ import { ES_MAX_CACHE, ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../consta
 import { getNumMessagesDB, getOldestTime } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
-
 /**
  * Normalise keyword
  */
@@ -143,7 +143,7 @@ export const applySearch = (
 
     if (to) {
         let keywordFound = false;
-        for (const recipient of messageToSearch.ToList) {
+        for (const recipient of getRecipients(messageToSearch)) {
             keywordFound =
                 keywordFound ||
                 recipient.Address.toLocaleLowerCase().includes(to) ||

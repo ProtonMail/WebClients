@@ -36,7 +36,7 @@ export const queryMessageMetadata = ({
         BeginID,
         EndID,
         Keyword,
-        To,
+        Recipients: To,
         From,
         Subject,
         Attachments,
