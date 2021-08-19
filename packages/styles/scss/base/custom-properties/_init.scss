@@ -6,10 +6,9 @@
 	--shadow-norm: 0 calc(var(--px)) calc(var(--px) * 4) rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
 	--shadow-lifted: 0 calc(var(--px) * 8) calc(var(--px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
 
-	--border-radius-em: calc(var(--border-radius) * var(--px));
-	--border-radius-small: calc(var(--border-radius-em) * 0.5);
-	--border-radius-medium: var(--border-radius-em);
-	--border-radius-large: calc(var(--border-radius-em) * 1.5);
+	--border-radius-small: calc(0.5 * var(--border-radius) * var(--px));
+	--border-radius-medium: calc(var(--border-radius) * var(--px));
+	--border-radius-large: calc(1.5 * var(--border-radius) * var(--px));
 
 	--border-radius-pill: 9999em;
 }
