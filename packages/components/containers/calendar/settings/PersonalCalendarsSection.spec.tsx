@@ -67,7 +67,7 @@ describe('PersonalCalendarsSection', () => {
         const createCalendarCopy = 'Create calendar';
 
         // Free user reached limit
-        expect(screen.getByText(`You have reached the maximum of 1 calendar.`)).toBeInTheDocument();
+        expect(screen.getByText(`You have reached the maximum of 1 personal calendar.`)).toBeInTheDocument();
         expect(
             screen.getByText(
                 `Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`
@@ -84,7 +84,7 @@ describe('PersonalCalendarsSection', () => {
         );
 
         expect(
-            screen.getByText(`You have reached the maximum of ${MAX_CALENDARS_PER_USER} calendars.`)
+            screen.getByText(`You have reached the maximum of ${MAX_CALENDARS_PER_USER} personal calendars.`)
         ).toBeInTheDocument();
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();
 
@@ -97,7 +97,7 @@ describe('PersonalCalendarsSection', () => {
         );
 
         expect(
-            screen.queryByText(`You have reached the maximum of ${MAX_CALENDARS_PER_USER} calendars.`)
+            screen.queryByText(`You have reached the maximum of ${MAX_CALENDARS_PER_USER} personal calendars.`)
         ).not.toBeInTheDocument();
 
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();
@@ -105,7 +105,7 @@ describe('PersonalCalendarsSection', () => {
         // Free user without calendars
         rerender(renderComponent());
 
-        expect(screen.queryByText(`You have reached the maximum of 1 calendar.`)).not.toBeInTheDocument();
+        expect(screen.queryByText(`You have reached the maximum of 1 personal calendar.`)).not.toBeInTheDocument();
         expect(screen.queryByText(createCalendarCopy)).not.toBeDisabled();
     });
 });
