@@ -16,7 +16,7 @@ const StopSharingButton = ({ shareId, items, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Stop sharing`}
-            icon="broken-link"
+            icon="link-broken"
             testId="context-menu-stop-sharing"
             action={() => openStopSharing(shareId, items)}
             close={close}
