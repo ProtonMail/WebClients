@@ -103,7 +103,6 @@ const emptyCache = (
         total: undefined,
         elements: {},
         pages: [],
-        updatedElements: [],
         bypassFilter: [],
         retry,
     };
@@ -233,7 +232,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.end !== cache.params.end ||
         search.attachments !== cache.params.attachments ||
         search.wildcard !== cache.params.wildcard ||
-        esEnabled !== cache.params.esEnabled;
+        (esEnabled !== cache.params.esEnabled && isSearch(search));
 
     const pageCached = () => cache.pages.includes(page);
 
@@ -244,15 +243,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const hasListFromTheStart = () => cache.pages.includes(0);
 
-    const lastHasBeenUpdated = () =>
-        elements.length === PAGE_SIZE &&
-        page === Math.max.apply(null, cache.pages) &&
-        cache.updatedElements.includes(elements[elements.length - 1].ID || '');
-
     // Live cache means we listen to events from event manager without refreshing the list every time
     const isLiveCache = () => !isSearch(search) && hasListFromTheStart();
 
-    const shouldResetCache = () => paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated();
+    const shouldResetCache = () => paramsChanged() || !pageIsConsecutive();
 
     const shouldSendRequest = () =>
         shouldResetCache() ||
@@ -278,7 +272,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 total: Total,
                 pages,
                 elements: toMap(Elements, 'ID'),
-                updatedElements: [],
                 retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
             };
         });
@@ -360,7 +353,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         try {
             const { Total, Elements } = await queryElements(queryParameters);
             const elementsMap = toMap(Elements, 'ID');
-            const updatedElements = cache.updatedElements.filter((elementID) => !elementsMap[elementID]);
 
             setCache((cache) => {
                 return {
@@ -375,7 +367,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                         ...cache.elements,
                         ...elementsMap,
                     },
-                    updatedElements,
                     bypassFilter: cache.bypassFilter,
                     retry: newRetry(queryParameters, undefined),
                 };
@@ -456,7 +447,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         // These 2 cache values will trigger the effect for any event containing something
         // which could lead to consider refreshing the list
         cache.invalidated,
-        cache.updatedElements,
         cache.pendingRequest,
         esEnabled && isSearch(search),
     ]);
@@ -586,12 +576,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 delete newElements[elementID];
             });
 
-            const updatedElements = [...cache.updatedElements, ...Object.keys(newReplacements), ...toDelete];
-
             return {
                 ...cache,
                 elements: newElements,
-                updatedElements,
             };
         });
     });

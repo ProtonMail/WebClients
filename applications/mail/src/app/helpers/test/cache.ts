@@ -37,7 +37,6 @@ export const elementsCache: ElementsCache = {
     pages: [],
     page: 0,
     total: 0,
-    updatedElements: [],
     bypassFilter: [],
     retry: { payload: undefined, count: 0, error: undefined },
 };
