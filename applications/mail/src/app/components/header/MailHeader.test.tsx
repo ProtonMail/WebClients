@@ -27,7 +27,14 @@ const getProps = () => ({
     onOpenShortcutsModal: jest.fn(),
 });
 
-const user = { Email: 'Email', DisplayName: 'DisplayName', Name: 'Name', hasPaidMail: false };
+const user = {
+    Email: 'Email',
+    DisplayName: 'DisplayName',
+    Name: 'Name',
+    hasPaidMail: false,
+    UsedSpace: 10,
+    MaxSpace: 100,
+};
 
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;

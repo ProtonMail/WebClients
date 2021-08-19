@@ -45,7 +45,12 @@ export const clearAll = () => {
 };
 
 export const waitForSpyCall = async (mock: jest.Mock) =>
-    act(async () => waitFor(() => expect(mock).toHaveBeenCalled()));
+    act(async () =>
+        waitFor(() => expect(mock).toHaveBeenCalled(), {
+            interval: 100,
+            timeout: 5000,
+        })
+    );
 
 export const waitForEventManagerCall = async () => {
     // Hard override of the typing as event manager is mocked

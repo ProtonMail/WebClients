@@ -1,10 +1,7 @@
 import { fireEvent } from '@testing-library/dom';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { clearAll, messageCache, render, tick } from '../../../helpers/test/helper';
-import { MessageExtended } from '../../../models/message';
+import { clearAll, render, tick } from '../../../helpers/test/helper';
 import Composer from '../Composer';
-import { ID, props } from './Composer.test.helpers';
+import { ID, props, prepareMessage } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
 
@@ -35,17 +32,7 @@ describe('Composer attachments', () => {
     afterEach(clearAll);
 
     it('should not show embedded modal when plaintext mode', async () => {
-        const message = {
-            localID: ID,
-            initialized: true,
-            data: {
-                ID,
-                MIMEType: 'text/plain' as MIME_TYPES,
-                Subject: '',
-                ToList: [] as Recipient[],
-            },
-        } as MessageExtended;
-        messageCache.set(ID, message);
+        prepareMessage({ localID: ID, data: { ToList: [] } });
         const { getByTestId, queryByText } = await render(<Composer {...props} messageID={ID} />);
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
         fireEvent.change(inputAttachment, { target: { files: [png] } });

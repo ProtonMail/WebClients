@@ -7,11 +7,14 @@ import { MessageExtended } from '../../models/message';
 import { ElementsCache, ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { ConversationCacheEntry } from '../../models/conversation';
+import { addKeysToAddressKeysCache } from './crypto';
 
 export interface ResolvedRequest<T> {
     status: STATUS;
     value: T;
 }
+
+export const resolvedRequest = <T>(value: T): ResolvedRequest<T> => ({ status: STATUS.RESOLVED, value });
 
 export const getInstance = () => {
     const instance = createCache();
@@ -59,8 +62,6 @@ export const clearContactCache = () => {
     contactCache.groupsLabelCache = new Map<string, string>();
 };
 
-export const resolvedRequest = <T>(value: T): ResolvedRequest<T> => ({ status: STATUS.RESOLVED, value });
-
 export const addToCache = (key: string, value: any) => {
     cache.set(key, resolvedRequest(value));
 };
@@ -77,6 +78,7 @@ export const minimalCache = () => {
     addToCache('MessageCounts', []);
     addToCache('ConversationCounts', []);
     cache.set('ADDRESS_KEYS', addressKeysCache);
+    addKeysToAddressKeysCache('AddressID', undefined);
 };
 
 export const addAddressToCache = (inputAddress: Partial<Address>) => {
