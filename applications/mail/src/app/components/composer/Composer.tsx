@@ -21,6 +21,7 @@ import {
     ConfirmModal,
     ErrorButton,
     Alert,
+    useLoading,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
@@ -110,6 +111,7 @@ const Composer = (
     const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
     const isMounted = useIsMounted();
+    const [syncInProgress, withSyncInProgress] = useLoading();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -135,7 +137,7 @@ const Composer = (
     const reloadSendInfo = useReloadSendInfo();
 
     // Synced with server version of the edited message
-    const { message: syncedMessage, addAction } = useMessage(messageID);
+    const { message: syncedMessage } = useMessage(messageID);
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
@@ -153,7 +155,6 @@ const Composer = (
     const deleteDraft = useDeleteDraft();
 
     // Computed composer status
-    const syncInProgress = !!syncedMessage.actionInProgress;
     const hasRecipients = getRecipients(modelMessage.data).length > 0;
     const lock = opening;
 
@@ -179,7 +180,7 @@ const Composer = (
             syncedMessage.initialized === undefined &&
             modelMessage.initialized === undefined
         ) {
-            void addAction(initialize);
+            void initialize();
         }
     }, [
         syncInProgress,
@@ -308,7 +309,7 @@ const Composer = (
     });
 
     const actualSave = (message: MessageExtended) => {
-        return addAction(() => saveDraft(message as MessageExtendedWithData));
+        return withSyncInProgress(saveDraft(message as MessageExtendedWithData));
     };
 
     const {
@@ -425,7 +426,7 @@ const Composer = (
             const uploadInitialAttachments = async () => {
                 const files = syncedMessage.initialAttachments;
                 updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
-                await addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
+                await actualSave(syncedMessage);
                 await handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
             };
             void uploadInitialAttachments();
@@ -457,7 +458,7 @@ const Composer = (
     const handleDiscard = async () => {
         const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
         if (messageFromCache.data?.ID) {
-            await addAction(() => deleteDraft(messageFromCache));
+            await withSyncInProgress(deleteDraft(messageFromCache));
         }
         createNotification({ text: c('Info').t`Draft discarded` });
     };
@@ -504,7 +505,6 @@ const Composer = (
         promiseUpload,
         pendingSave,
         autoSave,
-        addAction,
         onClose,
         onMessageAlreadySent,
     });

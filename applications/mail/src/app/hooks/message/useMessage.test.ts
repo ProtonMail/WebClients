@@ -1,7 +1,7 @@
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useMessage } from './useMessage';
-import { renderHook, clearAll, messageCache, tick, cache, elementsCache } from '../../helpers/test/helper';
+import { renderHook, clearAll, messageCache, cache, elementsCache } from '../../helpers/test/helper';
 import { MessageExtended } from '../../models/message';
 import { ELEMENTS_CACHE_KEY } from '../mailbox/useElementsCache';
 
@@ -40,27 +40,6 @@ describe('useMessage', () => {
             messageCache.set(ID, message);
             const hook = setup(ID);
             expect(hook.result.current.message).toBe(message);
-        });
-    });
-
-    describe('message actions', () => {
-        it('should add the action to the queue', async () => {
-            let resolve: (value: unknown) => void = noop;
-            const action = () =>
-                new Promise((r) => {
-                    resolve = r;
-                });
-
-            const hook = setup(ID);
-            hook.result.current.addAction(action);
-
-            expect(hook.result.current.message?.actionInProgress).toBe(true);
-            expect(hook.result.current.message?.actionQueue?.length).toBe(0);
-
-            resolve(undefined);
-            await tick();
-
-            expect(hook.result.current.message?.actionInProgress).toBe(false);
         });
     });
 

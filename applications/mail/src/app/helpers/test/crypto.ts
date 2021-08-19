@@ -87,19 +87,10 @@ export const addKeysToUserKeysCache = (key: GeneratedKey) => {
     cache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
 };
 
-export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey) => {
-    const currentValue = addressKeysCache.get(addressID);
-    if (currentValue) {
-        addressKeysCache.set(
-            addressID,
-            resolvedRequest([...currentValue.value, { publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }])
-        );
-    } else {
-        addressKeysCache.set(
-            addressID,
-            resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }])
-        );
-    }
+export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey | undefined) => {
+    const currentValue = addressKeysCache.get(addressID)?.value || [];
+    const newValue = key ? [{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }] : [];
+    addressKeysCache.set(addressID, resolvedRequest([...currentValue, ...newValue]));
 };
 
 export const encryptSessionKey = async ({ data, algorithm }: SessionKey, publicKey: OpenPGPKey) => {
