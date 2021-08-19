@@ -86,8 +86,13 @@ const AutoReplySection = () => {
                 type: 'warning',
                 text: c('Info').t`Images have been removed because they are not allowed in auto-reply.`,
             });
+
+            updateModel('message').bind(message);
+            // update the composer to remove the image from it
+            if (editorRef.current) {
+                editorRef.current.value = model.message;
+            }
         }
-        updateModel('message').bind(message);
 
         await api(updateAutoresponder(toAutoResponder({ ...model, message })));
         await call();
