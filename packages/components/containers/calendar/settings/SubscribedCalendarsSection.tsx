@@ -2,7 +2,7 @@ import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import { useState } from 'react';
+import { ComponentPropsWithoutRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Alert, ConfirmModal, ErrorButton, Href } from '../../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
@@ -12,7 +12,7 @@ import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarM
 import CalendarsSection from './CalendarsSection';
 import { SettingsParagraph } from '../../account';
 
-export interface SubscribedCalendarsSectionProps {
+export interface SubscribedCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
     activeAddresses: Address[];
     calendars: Calendar[];
     user: UserModel;
@@ -23,6 +23,7 @@ const SubscribedCalendarsSection = ({
     calendars = [],
     user,
     unavailable,
+    ...rest
 }: SubscribedCalendarsSectionProps) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -84,7 +85,7 @@ const SubscribedCalendarsSection = ({
             loadingMap={loadingMap}
             canAdd={canAddCalendar}
             isFeatureUnavailable={unavailable}
-            add={c('Action').t`Subscribe to calendar`}
+            add={c('Action').t`Add calendar`}
             calendarLimitReachedText={c('Calendar limit warning').ngettext(
                 msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
                 `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`,
@@ -104,6 +105,7 @@ const SubscribedCalendarsSection = ({
             onEdit={handleEdit}
             onDelete={handleDelete}
             canUpgradeLimit={false}
+            {...rest}
         />
     );
 };
