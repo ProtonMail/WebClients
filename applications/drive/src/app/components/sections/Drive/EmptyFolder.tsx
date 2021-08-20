@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { EmptyViewContainer, usePopperAnchor } from '@proton/components';
 
 import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';
-import UploadButton from '../../uploads/UploadButton';
+import { UploadButton } from './UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 
 const EmptyFolder = () => {

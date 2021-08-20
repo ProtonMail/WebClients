@@ -1,6 +1,8 @@
 import * as React from 'react';
+
 import { Sidebar, SidebarNav } from '@proton/components';
-import { useDriveActiveFolder } from '../../sections/Drive/DriveFolderProvider';
+
+import useActiveShare from '../../../hooks/drive/useActiveShare';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
 
@@ -9,11 +11,10 @@ interface Props {
     toggleHeaderExpanded: () => void;
     primary: React.ReactNode;
     logo: React.ReactNode;
-    shareId?: string;
 }
 
-const DriveSidebar = ({ shareId, logo, primary, isHeaderExpanded, toggleHeaderExpanded }: Props) => {
-    const { folder } = useDriveActiveFolder();
+const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }: Props) => {
+    const { activeShareId } = useActiveShare();
 
     return (
         <Sidebar
@@ -24,7 +25,7 @@ const DriveSidebar = ({ shareId, logo, primary, isHeaderExpanded, toggleHeaderEx
             version={<DriveSidebarFooter />}
         >
             <SidebarNav>
-                <DriveSidebarList shareId={shareId ?? folder?.shareId} />
+                <DriveSidebarList shareId={activeShareId} />
             </SidebarNav>
         </Sidebar>
     );

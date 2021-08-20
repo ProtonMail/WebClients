@@ -17,7 +17,7 @@ import {
 } from '@proton/components';
 
 import FolderTree, { FolderTreeItem } from '../FolderTree/FolderTree';
-import { DriveFolder } from '../sections/Drive/DriveFolderProvider';
+import { DriveFolder } from '../../hooks/drive/useActiveShare';
 import HasNoFolders from './HasNoFolders';
 import { selectMessageForItemList } from '../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';

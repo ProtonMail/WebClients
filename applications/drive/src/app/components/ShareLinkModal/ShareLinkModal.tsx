@@ -28,13 +28,13 @@ interface Props {
     shareId: string;
 }
 
-enum SharingModalState {
+enum ShareLinkModalState {
     Loading,
     GeneratedLink,
 }
 
-function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, ...rest }: Props) {
-    const [modalState, setModalState] = useState(SharingModalState.Loading);
+function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, item, ...rest }: Props) {
+    const [modalState, setModalState] = useState(ShareLinkModalState.Loading);
     const [isSharingFormDirty, setIsSharingFormDirty] = useState(false);
     const [deleting, withDeleting] = useLoading(false);
     const [saving, withSaving] = useLoading(false);
@@ -96,7 +96,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                 setError(err);
             })
             .finally(() => {
-                setModalState(SharingModalState.GeneratedLink);
+                setModalState(ShareLinkModalState.GeneratedLink);
             });
     }, [shareId, item.LinkID, item.SharedUrl, shareUrlInfo?.ShareURL.ShareID]);
 
@@ -210,7 +210,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         });
     };
 
-    const loading = modalState === SharingModalState.Loading;
+    const loading = modalState === ShareLinkModalState.Loading;
 
     const [generatedPassword, customPassword] = splitGeneratedAndCustomPassword(password, shareUrlInfo?.ShareURL);
 
@@ -226,7 +226,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             return <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={error} isCreationError={!item} />;
         }
 
-        if (modalState === SharingModalState.GeneratedLink) {
+        if (modalState === ShareLinkModalState.GeneratedLink) {
             const isValidForPasswordRemoval =
                 hasCustomPassword(shareUrlInfo.ShareURL) && !hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL);
 
@@ -261,4 +261,4 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     );
 }
 
-export default SharingModal;
+export default ShareLinkModal;

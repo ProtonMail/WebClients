@@ -18,7 +18,7 @@ import FolderTree, { FolderTreeItem } from '../FolderTree/FolderTree';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
-import SharingModal from '../SharingModal/SharingModal';
+import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
 import { mapLinksToChildren } from '../sections/helpers';
 import { LinkType } from '../../interfaces/link';
 import HasNoFilesToShare from './HasNoFilesToShare';
@@ -121,7 +121,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
 
     const handleSubmit = async () => {
         if (selectedFile) {
-            createModal(<SharingModal shareId={shareId} item={selectedFile} />);
+            createModal(<ShareLinkModal shareId={shareId} item={selectedFile} />);
             onClose?.();
         }
     };

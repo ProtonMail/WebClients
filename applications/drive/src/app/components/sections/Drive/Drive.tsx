@@ -5,7 +5,7 @@ import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { FileBrowser, FileBrowserItem } from '../../FileBrowser';
-import { DriveFolder } from './DriveFolderProvider';
+import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from './EmptyFolder';
 import FolderContextMenu from './FolderContextMenu';

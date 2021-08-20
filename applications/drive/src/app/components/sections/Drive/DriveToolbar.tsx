@@ -6,13 +6,14 @@ import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/componen
 import useDrive from '../../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { DriveFolder } from './DriveFolderProvider';
+import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
     DetailsButton,
     DownloadButton,
     LayoutDropdown,
     PreviewButton,
     RenameButton,
+    ShareButton,
     ShareFileButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
@@ -81,6 +82,8 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                         <ToolbarSeparator />
                         <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
                         <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <ToolbarSeparator />
+                        <ShareButton shareId={shareId} selectedItems={selectedItems} />
                         <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}

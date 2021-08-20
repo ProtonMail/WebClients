@@ -11,8 +11,9 @@ import {
     ToolbarButton,
 } from '@proton/components';
 
+import { MEMBER_SHARING_ENABLED } from '../../../../constants';
 import { useDriveContent } from '../DriveContentProvider';
-import { useDriveActiveFolder } from '../DriveFolderProvider';
+import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import useToolbarActions from '../../../../hooks/drive/useActions';
 import { LinkType } from '../../../../interfaces/link';
 
@@ -23,14 +24,22 @@ interface Props {
 const ActionsDropdown = ({ shareId }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { openDetails, openFilesDetails, openMoveToFolder, openMoveToTrash, openRename, openLinkSharing } =
-        useToolbarActions();
-    const { folder } = useDriveActiveFolder();
+    const {
+        openDetails,
+        openFilesDetails,
+        openMoveToFolder,
+        openMoveToTrash,
+        openRename,
+        openSharing,
+        openLinkSharing,
+    } = useToolbarActions();
+    const { activeFolder } = useActiveShare();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isMultiSelect = selectedItems.length > 1;
+    const hasShare = !!selectedItems[0]?.ShareUrlShareID;
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
 
     const menuItems = [
@@ -60,21 +69,28 @@ const ActionsDropdown = ({ shareId }: Props) => {
             name: c('Action').t`Move to folder`,
             icon: 'arrows-up-down-left-right',
             testId: 'actions-dropdown-move',
-            action: () => folder && openMoveToFolder(folder, selectedItems),
-        },
-        {
-            hidden: isMultiSelect || hasFoldersSelected,
-            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
-            icon: 'link',
-            testId: 'actions-dropdown-share',
-            action: () => openLinkSharing(shareId, selectedItems[0]),
+            action: () => openMoveToFolder(activeFolder, selectedItems),
         },
         {
             hidden: false,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () => folder && openMoveToTrash(folder, selectedItems),
+            action: () => openMoveToTrash(activeFolder, selectedItems),
+        },
+        {
+            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
+            name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
+            icon: 'user-group',
+            testId: 'actions-dropdown-share',
+            action: () => openSharing(shareId, selectedItems[0]),
+        },
+        {
+            hidden: isMultiSelect || hasFoldersSelected,
+            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
+            icon: 'link',
+            testId: 'actions-dropdown-share-link',
+            action: () => openLinkSharing(shareId, selectedItems[0]),
         },
     ];
 

@@ -171,3 +171,6 @@ export const fileDescriptions: { [type: string]: string } = {
     'text/x-python': 'Python',
     'application/typescript': 'TypeScript',
 };
+
+// Delete once sharing between members is fully implemented.
+export const MEMBER_SHARING_ENABLED = false;
