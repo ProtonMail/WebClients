@@ -37,7 +37,7 @@ export interface KeyDisplay {
     flags: number;
     primary: 0 | 1;
     algorithm: string;
-    algorithmInfo?: algorithmInfo;
+    algorithmInfos: algorithmInfo[];
     status: KeyStatus;
     permissions: KeyPermissions;
 }

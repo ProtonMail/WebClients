@@ -1,6 +1,6 @@
 import { algorithmInfo } from 'pmcrypto';
 
-import { getFormattedAlgorithmName, getDefaultKeyFlags } from '@proton/shared/lib/keys';
+import { getFormattedAlgorithmNames, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -15,14 +15,14 @@ interface Arguments {
     isDecrypted: boolean;
     isLoading: boolean;
     Key: Key;
-    algorithmInfo?: algorithmInfo;
+    algorithmInfos: algorithmInfo[];
     signedKeyListMap: SimpleMap<SignedKeyListItem>;
 }
 
 export const getDisplayKey = ({
     User,
     Address,
-    algorithmInfo,
+    algorithmInfos,
     fingerprint,
     isDecrypted,
     isLoading,
@@ -75,10 +75,10 @@ export const getDisplayKey = ({
     return {
         ID,
         fingerprint,
-        algorithmInfo,
+        algorithmInfos,
         flags,
         primary,
-        algorithm: getFormattedAlgorithmName(algorithmInfo),
+        algorithm: getFormattedAlgorithmNames(algorithmInfos),
         status,
         permissions,
     };
