@@ -17,6 +17,8 @@ import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
 import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
 import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
 
+export enum HistoricThemeTypes {}
+
 export enum ThemeTypes {
     Default = 0,
     Dark = 1,
@@ -26,7 +28,9 @@ export enum ThemeTypes {
     Legacy = 5,
 }
 
-export const PROTON_THEMES = {
+export const ThemeMigrationMap: Partial<{ [key in HistoricThemeTypes]: ThemeTypes | HistoricThemeTypes }> = {};
+
+export const PROTON_THEMES_MAP = {
     [ThemeTypes.Default]: {
         label: 'Proton',
         identifier: ThemeTypes.Default,
@@ -64,3 +68,12 @@ export const PROTON_THEMES = {
         theme: legacyTheme.toString(),
     },
 } as const;
+
+export const PROTON_THEMES = [
+    ThemeTypes.Default,
+    ThemeTypes.Dark,
+    ThemeTypes.Light,
+    ThemeTypes.Monokai,
+    ThemeTypes.Contrast,
+    ThemeTypes.Legacy,
+].map((id) => PROTON_THEMES_MAP[id]);

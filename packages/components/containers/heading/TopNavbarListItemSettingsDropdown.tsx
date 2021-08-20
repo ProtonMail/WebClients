@@ -1,6 +1,6 @@
 import { forwardRef, ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
-import { PROTON_THEMES } from '@proton/shared/lib/themes/themes';
+import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 
 import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
@@ -102,7 +102,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                     className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                 >
                     <span className="flex-item-fluid text-left">{c('Action').t`Theme`}</span>
-                    <span className="color-primary ml0-5">{PROTON_THEMES[theme].label}</span>
+                    <span className="color-primary ml0-5">{PROTON_THEMES_MAP[theme].label}</span>
                 </DropdownMenuButton>
                 {APP_NAME === APPS.PROTONMAIL && (
                     <>
