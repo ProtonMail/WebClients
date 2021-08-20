@@ -7,6 +7,8 @@ import {
     updateStickyLabels,
     updateDraftType,
     updateRightToLeft,
+    updateFontFace,
+    updateFontSize,
 } from '@proton/shared/lib/api/mailSettings';
 import { MESSAGE_BUTTONS, VIEW_MODE, MIME_TYPES, RIGHT_TO_LEFT, STICKY_LABELS } from '@proton/shared/lib/constants';
 
@@ -26,6 +28,9 @@ import StickyLabelsToggle from './StickyLabelsToggle';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import FontFaceSelect from './FontFaceSelect';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/squireConfig';
+import FontSizeSelect from './FontSizeSelect';
 
 const { READ_UNREAD, UNREAD_READ } = MESSAGE_BUTTONS;
 
@@ -39,6 +44,8 @@ const AppearanceOtherSection = () => {
             StickyLabels = 0,
             DraftMIMEType = MIME_TYPES.DEFAULT,
             RightToLeft = 0,
+            FontFace = DEFAULT_FONT_FACE,
+            FontSize = DEFAULT_FONT_SIZE,
         } = {},
     ] = useMailSettings();
     const { createNotification } = useNotifications();
@@ -48,6 +55,8 @@ const AppearanceOtherSection = () => {
     const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
     const [loadingDraftType, withLoadingDraftType] = useLoading();
     const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
+    const [loadingFontFace, withLoadingFontFace] = useLoading();
+    const [loadingFontSize, withLoadingFontSize] = useLoading();
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -83,6 +92,18 @@ const AppearanceOtherSection = () => {
 
     const handleChangeRightToLeft = async (value: RIGHT_TO_LEFT) => {
         await api(updateRightToLeft(value));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleChangeFontFace = async (value: string) => {
+        await api(updateFontFace(value));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleChangeFontSize = async (value: number) => {
+        await api(updateFontSize(value));
         await call();
         notifyPreferenceSaved();
     };
@@ -163,6 +184,32 @@ const AppearanceOtherSection = () => {
                         loading={loadingRightToLeft}
                         data-testid="appearance:text-direction-select"
                     />
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="fontFace" className="text-semibold">
+                        {c('Label').t`Composer default font/size`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="flex flex-row flex-justify-space-between">
+                    <div>
+                        <FontFaceSelect
+                            id="fontFace"
+                            fontFace={FontFace}
+                            onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
+                            loading={loadingFontFace}
+                        />
+                    </div>
+                    <div>
+                        <FontSizeSelect
+                            id="fontSize"
+                            fontSize={FontSize}
+                            onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
+                            loading={loadingFontSize}
+                        />
+                    </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
 

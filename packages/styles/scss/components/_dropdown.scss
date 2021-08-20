@@ -240,6 +240,43 @@
 				pointer-events: none;
 			}
 		}
+
+		// Dropdown item container which contains several elements
+		// Created for specific use case in the mail composer
+		&-container {
+			@extend .interactive;
+
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--text-norm);
+				text-decoration: none;
+			}
+
+			&.active {
+				background-color: var(--interaction-default-hover);
+			}
+
+			&.dropdown-item--is-selected {
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+					pointer-events: all;
+				}
+			}
+
+			.dropdown-item-button {
+				background-color: transparent;
+
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: transparent;
+				}
+			}
+		}
 	}
 
 	&-item-hr {

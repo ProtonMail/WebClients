@@ -166,3 +166,15 @@ export const updateInheritParentFolderColor = (InheritParentFolderColor: number)
     method: 'put',
     data: { InheritParentFolderColor },
 });
+
+export const updateFontFace = (FontFace: string) => ({
+    url: 'mail/v4/settings/fontface',
+    method: 'put',
+    data: { FontFace },
+});
+
+export const updateFontSize = (FontSize: number) => ({
+    url: 'mail/v4/settings/fontsize',
+    method: 'put',
+    data: { FontSize },
+});

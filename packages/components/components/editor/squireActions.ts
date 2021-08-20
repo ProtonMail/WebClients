@@ -1,15 +1,12 @@
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 import { getElement } from '@proton/shared/lib/helpers/dom';
+import { LinkData, SquireType } from './interface';
 import {
-    SquireType,
-    LinkData,
     DEFAULT_LINK,
     DEFAULT_BACKGROUND,
     RGB_REGEX,
     FONT_FACE,
     DEFAULT_FONT_COLOR,
-    DEFAULT_FONT_FACE,
-    DEFAULT_FONT_SIZE,
     FONT_SIZES,
     EMBEDDABLE_TYPES,
 } from './squireConfig';
@@ -120,17 +117,17 @@ export const getPathInfo = (squire: SquireType) => {
 export const getFontLabel = (font: FONT_FACE) => Object.entries(FONT_FACE).find(([, value]) => value === font)?.[0];
 
 export const getFontFaceAtCursor = (squire: SquireType) => {
-    const { family = 'arial' } = squire.getFontInfo();
-    const first = family.split(',')[0].replace(/"/g, '').trim();
-    return Object.entries(FONT_FACE).find(([, value]) => value.includes(first))?.[1] || DEFAULT_FONT_FACE;
+    const { family } = squire.getFontInfo();
+    const first = family?.split(',')[0].replace(/"/g, '').trim();
+    return Object.entries(FONT_FACE).find(([, value]) => first && value.includes(first))?.[1];
 };
 
 export const getFontSizeAtCursor = (squire: SquireType) => {
-    const { size = `${DEFAULT_FONT_SIZE}px` } = squire.getFontInfo();
-    const stringValue = /(\d+)px/.exec(size)?.[1];
+    const { size } = squire.getFontInfo();
+    const stringValue = size ? /(\d+)px/.exec(size)?.[1] : undefined;
     const value = Number(stringValue);
     if (!value) {
-        return 14;
+        return undefined;
     }
     return FONT_SIZES.reduce(
         (acc, currentValue) => (Math.abs(value - currentValue) < Math.abs(value - acc) ? currentValue : acc),
