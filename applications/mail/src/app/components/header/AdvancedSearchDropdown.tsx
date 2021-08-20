@@ -458,7 +458,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         : isRefreshing
         ? c('Info').t`Updating message content search...`
         : // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
-          c('Info').jt`Downloading message ${esProgress} out of ${totalIndexingMessages}...`;
+          c('Info').jt`Downloading message ${esProgress} out of ${totalIndexingMessages}`;
     const etaMessage =
         estimatedMinutes <= 1
             ? c('Info').t`Estimated time remaining: Less than a minute`
@@ -562,7 +562,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                         {showProgress && (
                             <div className="mt0-5 flex flex-column">
                                 <span
-                                    className="color-weak relative advanced-search-progress-status"
+                                    className="color-weak relative advanced-search-progress-status mb0-5"
                                     aria-live="polite"
                                     aria-atomic="true"
                                 >
@@ -577,7 +577,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                     aria-live="polite"
                                     aria-atomic="true"
                                     className={classnames([
-                                        'color-weak relative advanced-search-time-remaining',
+                                        'color-weak relative advanced-search-time-remaining mt0-5',
                                         isEstimating || isPaused(user.ID) ? 'visibility-hidden' : undefined,
                                     ])}
                                 >
