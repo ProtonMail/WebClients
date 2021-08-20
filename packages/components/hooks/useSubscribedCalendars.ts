@@ -65,9 +65,13 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
     const handleUpdateSubscription = (calendarID: string, subscription: CalendarSubscription) => {
         setSubscribedCalendars((subscribedCalendars) => {
             const index = subscribedCalendars?.findIndex((calendar) => calendar.ID === calendarID);
+            const oldCalendar = subscribedCalendars[index];
             return updateItem(subscribedCalendars, index, {
-                ...subscribedCalendars[index],
-                ...subscription,
+                ...oldCalendar,
+                SubscriptionParameters: {
+                    ...oldCalendar.SubscriptionParameters,
+                    ...subscription,
+                },
             });
         });
     };
