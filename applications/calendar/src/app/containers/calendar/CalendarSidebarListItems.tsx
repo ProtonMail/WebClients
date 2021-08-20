@@ -84,26 +84,26 @@ const CalendarSidebarListItems = ({
                 },
         ].filter(isTruthy);
 
+        const isNotSynced = getCalendarHasSubscriptionParameters(calendar) && getCalendarIsNotSynced(calendar);
+
         return (
             <SidebarListItem key={ID}>
                 <SidebarListItemDiv className="calendar-sidebar-list-item pt0-5 pb0-5 pr0-5">
                     <SidebarListItemContent
                         data-test-id="calendar-sidebar:user-calendars"
                         left={left}
-                        className={classnames(['flex', isCalendarDisabled && 'color-weak'])}
+                        className={classnames(['flex', (isCalendarDisabled || isNotSynced) && 'color-weak'])}
                     >
                         <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                             <div className="flex flex-nowrap mr0-5">
                                 <div className="text-ellipsis" title={Name}>
                                     {Name}
                                 </div>
-                                {!isCalendarDisabled &&
-                                    getCalendarHasSubscriptionParameters(calendar) &&
-                                    getCalendarIsNotSynced(calendar) && (
-                                        <div className="flex-item-noshrink">
-                                            &nbsp;({c('Calendar status').t`not synced`})
-                                        </div>
-                                    )}
+                                {!isCalendarDisabled && isNotSynced && (
+                                    <div className="flex-item-noshrink">
+                                        &nbsp;({c('Calendar status').t`not synced`})
+                                    </div>
+                                )}
                                 {isCalendarDisabled && (
                                     <div className="flex-item-noshrink">
                                         &nbsp;({c('Disabled calendar name suffix').t`disabled`})
