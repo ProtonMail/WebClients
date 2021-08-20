@@ -1,16 +1,13 @@
 import { MutableRefObject, ReactNode } from 'react';
 import { c } from 'ttag';
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
-
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
 import Icon from '../../icon/Icon';
 import { classnames } from '../../../helpers';
-
 import SquireToolbarDropdown from './SquireToolbarDropdown';
-import { SquireType } from '../squireConfig';
 import { setTextDirection } from '../squireActions';
-import { SquireEditorMetadata, ALIGNMENT } from '../interface';
+import { SquireEditorMetadata, ALIGNMENT, SquireType } from '../interface';
 
 const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');
 

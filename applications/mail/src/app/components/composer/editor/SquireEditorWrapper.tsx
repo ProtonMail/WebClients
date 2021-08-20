@@ -9,6 +9,7 @@ import { RIGHT_TO_LEFT, MIME_TYPES } from '@proton/shared/lib/constants';
 import { diff } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
+import { pick } from '@proton/shared/lib/helpers/object';
 import { MessageExtended } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
@@ -80,6 +81,10 @@ const SquireEditorWrapper = ({
 
     const isPlainText = testIsPlainText(message.data);
     const rightToLeft = message.data?.RightToLeft ? RIGHT_TO_LEFT.ON : RIGHT_TO_LEFT.OFF;
+    const defaultFont = useMemo(
+        () => (mailSettings ? pick(mailSettings, ['FontFace', 'FontSize']) : undefined),
+        [mailSettings]
+    );
 
     const metadata: SquireEditorMetadata = useMemo(
         () => ({
@@ -288,6 +293,7 @@ const SquireEditorWrapper = ({
             onAddImages={onAddAttachments}
             toolbarMoreDropdownExtension={<EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />}
             keydownHandler={keydownHandler}
+            defaultFont={defaultFont}
         />
     );
 };

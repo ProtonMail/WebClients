@@ -2,6 +2,7 @@ import { Ref, RefObject, MutableRefObject } from 'react';
 import { content } from '@proton/shared/lib/sanitize';
 import { c } from 'ttag';
 import { contentWithoutImage } from '@proton/shared/lib/sanitize/purify';
+import { FontData, SquireType } from './interface';
 
 export enum FONT_FACE {
     Georgia = 'georgia',
@@ -73,54 +74,6 @@ export const RGB_REGEX = /rgb\((\d+)\s*,\s*(\d+),\s*(\d+)\)/;
 
 export const EMBEDDABLE_TYPES = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
-export interface SquireType {
-    getDocument: () => Document;
-    getHTML: () => string;
-    setHTML: (content: string) => void;
-    getPath: () => string;
-    getSelection: () => Range;
-    setSelection: (range: Range) => void;
-    hasFormat: (tag: string, attributes?: { [key: string]: string }) => boolean;
-    getFontInfo: () => {
-        color: string | undefined;
-        backgroundColor: string | undefined;
-        family: string | undefined;
-        size: string | undefined;
-    };
-    setFontFace: (fontFace: string) => void;
-    setFontSize: (fontSize: string) => void;
-    setTextColour: (color: string) => void;
-    setHighlightColour: (color: string) => void;
-    setTextAlignment: (alignment: string) => void;
-    setTextDirection: (direction?: string) => void;
-    forEachBlock: (callback: (block: Element) => void, mutates: boolean) => void;
-    focus: () => void;
-    bold: () => void;
-    removeBold: () => void;
-    italic: () => void;
-    removeItalic: () => void;
-    underline: () => void;
-    removeUnderline: () => void;
-    makeOrderedList: () => void;
-    makeUnorderedList: () => void;
-    removeList: () => void;
-    increaseQuoteLevel: () => void;
-    decreaseQuoteLevel: () => void;
-    makeLink: (link: string, attributes?: { [key: string]: string | undefined }) => void;
-    insertImage: (url: string, attributes?: { [key: string]: string | undefined }) => void;
-    insertHTML: (html: string) => void;
-    removeAllFormatting: () => void;
-    addEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
-    removeEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
-    fireEvent: (type: string, event?: Event) => void;
-    getCursorPosition: () => DOMRect;
-}
-
-export interface LinkData {
-    link: string;
-    title: string;
-}
-
 export const getSquireRef = (ref: Ref<SquireType>) => (ref as RefObject<SquireType>).current as SquireType;
 export const setSquireRef = (ref: Ref<SquireType>, squire: any) => {
     (ref as any as MutableRefObject<any>).current = squire;
@@ -139,7 +92,7 @@ export const SQUIRE_CONFIG = (supportImage: boolean) => ({
 /**
  * Custom CSS inside the IFRAME
  */
-export const insertCustomStyle = (document: Document) => {
+export const insertCustomStyle = (document: Document, defaultFont: FontData | undefined) => {
     const head = document.head || document.getElementsByTagName('head')[0];
     const style = document.createElement('style');
 
@@ -205,6 +158,8 @@ export const insertCustomStyle = (document: Document) => {
         [id="squire"] {
             outline: none;
             padding: 0.5rem;
+            font-family: ${defaultFont?.FontFace ? defaultFont?.FontFace : DEFAULT_FONT_FACE};
+            font-size: ${defaultFont?.FontSize ? defaultFont?.FontSize : `${DEFAULT_FONT_SIZE}px`};
         }
 
         [id="ellipsis"] {
@@ -316,9 +271,11 @@ const wrapInsertHTML = (squire: any, supportImage: boolean) => {
 export const initSquire = async (
     document: Document,
     supportImage: boolean,
+    defaultFont: FontData | undefined,
     onEllipseClick: () => void
 ): Promise<any> => {
-    insertCustomStyle(document);
+    insertCustomStyle(document, defaultFont);
+
     const { default: Squire } = await import('squire-rte');
 
     // Good old HTML management because there is no React or anything inside the iframe
