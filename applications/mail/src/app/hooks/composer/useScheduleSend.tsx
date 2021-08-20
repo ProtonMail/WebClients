@@ -13,6 +13,7 @@ import { ConfirmModal } from '@proton/components/components/modal';
 import { Button } from '@proton/components/components/button';
 import { useConversationCounts, useMessageCounts, useModals } from '@proton/components/hooks';
 import { useMailSettings } from '@proton/components/hooks/useMailSettings';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 interface Props {
     modelMessage: MessageExtendedWithData;
@@ -31,6 +32,7 @@ export const useScheduleSend = ({
 }: Props) => {
     const location = useLocation();
     const { createModal } = useModals();
+    const messageCache = useMessageCache();
 
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
@@ -75,6 +77,13 @@ export const useScheduleSend = ({
             ...modelMessage,
             scheduledAt,
         });
+
+        // Save scheduled date in the cache so that the user can have the date fields completed if he edits the message and re-schedules it
+        const messageFromCache = messageCache.get(modelMessage.localID);
+        if (messageFromCache) {
+            messageFromCache.scheduledAt = scheduledAt;
+        }
+
         setTimeout(handleSend);
     };
 
