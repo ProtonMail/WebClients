@@ -1,15 +1,11 @@
 import { c } from 'ttag';
-
 import { updateThemeType } from '@proton/shared/lib/api/settings';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { useApi } from '../../hooks';
 import { SettingsSectionWide, SettingsParagraph } from '../account';
-
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
-
-const themes = Object.values(PROTON_THEMES);
 
 const ThemesSection = () => {
     const api = useApi();
@@ -26,7 +22,7 @@ const ThemesSection = () => {
             <ThemeCards
                 className="flex"
                 liClassName="mr1 mb1"
-                list={themes}
+                list={PROTON_THEMES}
                 themeIdentifier={theme}
                 onChange={handleThemeChange}
             />

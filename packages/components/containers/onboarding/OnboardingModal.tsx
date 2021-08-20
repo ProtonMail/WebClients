@@ -29,8 +29,6 @@ import OnboardingWelcome from './OnboardingWelcome';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';
 import { useTheme } from '../themes/ThemeProvider';
 
-const themes = Object.values(PROTON_THEMES);
-
 interface Props {
     title?: string;
     isLoading?: boolean;
@@ -157,7 +155,7 @@ const OnboardingModal = ({
 
     const themesStep = (
         <OnboardingStep submit={c('Action').t`Next`} close={null} onSubmit={handleNext}>
-            <OnboardingThemes themeIdentifier={theme} themes={themes} onChange={handleThemeChange} />
+            <OnboardingThemes themeIdentifier={theme} themes={PROTON_THEMES} onChange={handleThemeChange} />
         </OnboardingStep>
     );
 

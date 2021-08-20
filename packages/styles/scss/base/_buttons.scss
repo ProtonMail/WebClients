@@ -111,86 +111,81 @@
 		$group: 'interaction-';
 	}
 
+	// Default colors definition
+	$textColor: var(--#{$group + $color});
+	$hoverTextColor: var(--#{$group + $color}-hover);
+	$activeTextColor: var(--#{$group + $color}-active);
+
+	@if $color == 'norm' {
+		$textColor: var(--interaction-norm-accent, var(--interaction-norm));
+		$hoverTextColor: var(--interaction-norm-accent-hover, var(--interaction-norm-hover));
+		$activeTextColor: var(--interaction-norm-accent-active, var(--interaction-norm-active));
+	}
+
+	@if $color == 'weak' {
+		$textColor: var(--text-norm);
+		$hoverTextColor: var(--text-norm);
+		$activeTextColor: var(--text-norm);
+	}
+
 	// Default shape
 	.button-solid-#{$color} {
+		$solidDefaultTextColor: #{$textColor};
+		$solidHoverTextColor: #{$hoverTextColor};
+		$solidActiveTextColor: #{$activeTextColor};
+
+		@if $color != 'weak' {
+			$solidDefaultTextColor: var(--#{$group + $color}-contrast);
+			$solidHoverTextColor: var(--#{$group + $color}-contrast);
+			$solidActiveTextColor: var(--#{$group + $color}-contrast);
+		}
+
 		--button-default-background-color: var(--#{$group + $color});
-
-		@if $color == 'weak' {
-			--button-default-text-color: var(--text-norm);
-		} @else {
-			--button-default-text-color: var(--#{$group + $color}-contrast);
-		}
-
-		@each $state in (hover, active) {
-			--button-#{$state}-background-color: var(--#{$group + $color}-#{$state});
-
-			@if $color == 'weak' {
-				--button-#{$state}-text-color: var(--text-norm);
-			} @else {
-				--button-#{$state}-text-color: var(--#{$group + $color}-contrast);
-			}
-		}
+		--button-hover-background-color: var(--#{$group + $color}-hover);
+		--button-active-background-color: var(--#{$group + $color}-active);
+		--button-default-text-color: #{$solidDefaultTextColor};
+		--button-hover-text-color: #{$solidHoverTextColor};
+		--button-active-text-color: #{$solidActiveTextColor};
 	}
 
 	// Outline shape
 	.button-outline-#{$color} {
+		$defaultBorderColor: var(--#{$group + $color});
+		$hoverBorderColor: var(--#{$group + $color}-hover);
+		$activeBorderColor: var(--#{$group + $color}-active);
+
+		@if $color == 'norm' {
+			$defaultBorderColor: var(--interaction-norm-accent, var(--interaction-norm));
+			$hoverBorderColor: var(--interaction-norm-accent-hover, var(--interaction-norm-hover));
+			$activeBorderColor: var(--interaction-norm-accent-active, var(--interaction-norm-active));
+		}
+
 		--button-default-border-width: 1px;
-		--button-default-border-color: var(--#{$group + $color});
-
-		@if $color == 'weak' {
-			--button-default-text-color: var(--text-norm);
-		} @else {
-			--button-default-text-color: var(--#{$group + $color});
-		}
-
-		@each $state in (hover, active) {
-			--button-#{$state}-border-width: 2px;
-			--button-#{$state}-border-color: var(--#{$group + $color}-#{$state});
-
-			@if $color == 'weak' {
-				--button-#{$state}-text-color: var(--text-norm);
-			} @else {
-				--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
-			}
-		}
+		--button-hover-border-width: 2px;
+		--button-active-border-width: 2px;
+		--button-default-border-color: #{$defaultBorderColor};
+		--button-hover-border-color: #{$hoverBorderColor};
+		--button-active-border-color: #{$activeBorderColor};
+		--button-default-text-color: #{$textColor};
+		--button-hover-text-color: #{$hoverTextColor};
+		--button-active-text-color: #{$activeTextColor};
 	}
 
 	// Ghost shape
 	.button-ghost-#{$color} {
 		--button-default-background-color: var(--interaction-default);
-
-		@if $color == 'weak' {
-			--button-default-text-color: var(--text-norm);
-		} @else {
-			--button-default-text-color: var(--#{$group + $color});
-		}
-
-		@each $state in (hover, active) {
-			--button-#{$state}-background-color: var(--interaction-default-#{$state});
-
-			@if $color == 'weak' {
-				--button-#{$state}-text-color: var(--text-norm);
-			} @else {
-				--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
-			}
-		}
+		--button-hover-background-color: var(--interaction-default-hover);
+		--button-active-background-color: var(--interaction-default-active);
+		--button-default-text-color: #{$textColor};
+		--button-hover-text-color: #{$hoverTextColor};
+		--button-active-text-color: #{$activeTextColor};
 	}
 
 	// Link shape
 	.button-link-#{$color} {
-		@if $color == 'weak' {
-			--button-default-text-color: var(--text-weak);
-		} @else {
-			--button-default-text-color: var(--#{$group + $color});
-		}
-
-		@each $state in (hover, active) {
-			@if $color == 'weak' {
-				--button-#{$state}-text-color: var(--text-norm);
-			} @else {
-				--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
-			}
-		}
+		--button-default-text-color: #{$textColor};
+		--button-hover-text-color: #{$hoverTextColor};
+		--button-active-text-color: #{$activeTextColor};
 	}
 }
 
