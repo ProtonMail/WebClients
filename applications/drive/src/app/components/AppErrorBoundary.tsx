@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import { useDriveActiveFolder } from './sections/Drive/DriveFolderProvider';
+import useActiveShare from '../hooks/drive/useActiveShare';
 import { STATUS_CODE } from '../constants';
 
 interface Props {
@@ -22,7 +22,7 @@ interface Props {
 
 const AppErrorBoundary = ({ children }: Props) => {
     const location = useLocation();
-    const { setFolder } = useDriveActiveFolder();
+    const { setDefaultRoot } = useActiveShare();
     const [state, setState] = useState<{ id: string; error?: Error }>({
         id: generateUID('error-boundary'),
     });
@@ -35,7 +35,7 @@ const AppErrorBoundary = ({ children }: Props) => {
 
     const handleError = (error: Error) => {
         setState((prev) => ({ ...prev, error }));
-        setFolder(undefined);
+        setDefaultRoot();
     };
 
     const renderError = () => {

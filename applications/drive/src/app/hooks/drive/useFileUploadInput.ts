@@ -1,5 +1,5 @@
 import { useRef, useEffect, ChangeEvent } from 'react';
-import { useDriveActiveFolder } from '../../components/sections/Drive/DriveFolderProvider';
+import useActiveShare from './useActiveShare';
 import { isTransferCancelError } from '../../utils/transfer';
 import useFiles from './useFiles';
 
@@ -7,7 +7,7 @@ const useFileUploadInput = (forFolders?: boolean) => {
     const DS_STORE = '.DS_Store';
 
     const { uploadDriveFiles } = useFiles();
-    const { folder: activeFolder } = useDriveActiveFolder();
+    const { activeFolder } = useActiveShare();
 
     const inputRef = useRef<HTMLInputElement>(null);
 
