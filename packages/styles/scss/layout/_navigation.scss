@@ -61,6 +61,10 @@ $padding-left-link: rem(20) !default;
 // labels/folders sections
 .navigation-link-header-group-link {
 	outline: none;
+	@supports selector(:focus-visible) {
+		// had to do this because of Safari
+		outline: unset;
+	}
 	color: var(--text-weak);
 
 	&:hover,

@@ -11,6 +11,10 @@
 	border: none;
 	border-radius: var(--border-radius-medium);
 	outline: none; // be careful of a11y
+	@supports selector(:focus-visible) {
+		// had to do this because of Safari
+		outline: unset;
+	}
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
 	text-align: center;
@@ -297,6 +301,10 @@
  */
 .interactive {
 	outline: none; // be careful of a11y
+	@supports selector(:focus-visible) {
+		// had to do this because of Safari
+		outline: unset;
+	}
 	background-color: var(--interaction-default);
 	color: inherit;
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
