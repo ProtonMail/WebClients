@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     reactivateKeysProcess,
     importKeysProcess,
@@ -10,6 +9,7 @@ import {
     setAddressKeyFlags,
 } from '@proton/shared/lib/keys';
 
+import { algorithmInfo } from 'pmcrypto';
 import { Loader, Button } from '../../components';
 import {
     useAddresses,
@@ -188,7 +188,10 @@ const AddressKeysSection = () => {
             throw new Error('Keys not found');
         }
 
-        const existingAlgorithms = addressKeysDisplay.map(({ algorithmInfo }) => algorithmInfo).filter(isTruthy);
+        const existingAlgorithms = addressKeysDisplay.reduce<algorithmInfo[]>(
+            (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
+            []
+        );
         createModal(
             <AddKeyModal
                 existingAlgorithms={existingAlgorithms}
