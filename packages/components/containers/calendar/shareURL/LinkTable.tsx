@@ -86,7 +86,7 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                                 </div>
                                             </div>
                                         </div>,
-                                        <div key="label" className="text-ellipsis">
+                                        <div key="label" className="text-ellipsis" title={purpose || ''}>
                                             {purpose}
                                         </div>,
                                         <DropdownActions
