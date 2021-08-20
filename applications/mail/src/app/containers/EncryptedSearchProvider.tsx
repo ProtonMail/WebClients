@@ -822,14 +822,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     /**
-     * Check whether to highlight keywords upon opening a result of an encrypted search
+     * Check whether to highlight keywords upon opening a result of any search (both server-side and encrypted)
      */
     const shouldHighlight = () => {
-        const { dbExists, esEnabled } = esStatus;
-        if (!dbExists || !esEnabled) {
-            return false;
-        }
-
         const searchParameters = extractSearchParameters(location);
         const isSearch = testIsSearch(searchParameters);
         if (!isSearch) {
