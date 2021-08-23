@@ -1,3 +1,20 @@
+# [4.0.0-beta.19] - 2021-08-25
+
+Just in time for the new season, this latest release improves how you secure and interact with your data. We give you more control when uploading and downloading multiple files and also made a number of fixes and UX improvements to enhance the everyday convenience of using Proton Drive.
+
+## Fixed
+
+-   Space trimming in file and folder names fixed and made consistent
+-   Empty pages placeholers aligned
+-   The top message bar width issue fixed when names happen to be very long and contain no spaces
+
+## Added
+
+-   Bulk transfers management: pause, resume, cancel, retry or review failed ones in Transfer manager
+-   Share button added in Grid view when mouse over a file event happens
+-   Thumbnail of shared image file will be displayed when in download page
+-   Grid mode available in Shared and Trash sections
+
 # [4.0.0-beta.18] - 2021-07-29
 
 ## Fixed
