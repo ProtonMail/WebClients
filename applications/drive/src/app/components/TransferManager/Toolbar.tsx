@@ -6,7 +6,14 @@ import { classnames, Details, Radio, Summary } from '@proton/components';
 import { Download, TransferGroup, TransferType, Upload } from '../../interfaces/transfer';
 import useTransferControls from './useTransferControls';
 import Buttons from './Buttons';
-import { isTransferActive, isTransferOngoing, isTransferPaused, isTransferProgress } from '../../utils/transfer';
+import {
+    isTransferCanceled,
+    isTransferDone,
+    isTransferFailed,
+    isTransferFinalizing,
+    isTransferOngoing,
+    isTransferPaused,
+} from '../../utils/transfer';
 import { TransferManagerButtonProps } from './interfaces';
 
 const TRANSFER_GROUPS = [
@@ -37,15 +44,19 @@ interface ToolbarProps {
 
 const extractTransferFromEntry = ({ transfer }: TransferManagerEntry) => transfer;
 
+const isInvalidForCancellation = (transfer: Upload | Download) =>
+    isTransferCanceled(transfer) ||
+    isTransferFailed(transfer) ||
+    isTransferFinalizing(transfer) ||
+    isTransferDone(transfer);
+
 const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }: ToolbarProps) => {
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
     const transferManagerControls = useTransferControls();
 
-    const hasPausedTransfers = entries.map(extractTransferFromEntry).some(isTransferPaused);
-    const hasTransfersInProgress = entries.map(extractTransferFromEntry).some(isTransferProgress);
     const areAllActiveTransfersPaused = entries
         .map(extractTransferFromEntry)
-        .filter(isTransferActive)
+        .filter(isTransferOngoing)
         .every(isTransferPaused);
     const hasOnlyInactiveTransfers = entries
         .map(extractTransferFromEntry)
@@ -64,21 +75,31 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
     const buttons: TransferManagerButtonProps[] = [
         {
             onClick: () => {
-                if (hasTransfersInProgress) {
-                    return transferManagerControls.pauseTransfers(entries);
-                }
-
-                if (hasPausedTransfers) {
+                if (shouldDisplayResume) {
                     return transferManagerControls.resumeTransfers(entries);
                 }
+
+                return transferManagerControls.pauseTransfers(entries);
             },
             disabled: hasOnlyInactiveTransfers,
             title: shouldDisplayResume ? c('Action').t`Resume transfers` : c('Action').t`Pause transfers`,
             iconName: shouldDisplayResume ? 'play' : 'pause',
+            actionType: shouldDisplayResume ? 'play' : 'pause',
+        },
+        {
+            onClick: () => {
+                transferManagerControls.cancelTransfers(
+                    entries.filter((entry) => !isInvalidForCancellation(entry.transfer))
+                );
+            },
+            // Only cancelled/failed/finalizing/done transfers -> cancel button disabled
+            disabled: entries.map(extractTransferFromEntry).every(isInvalidForCancellation),
+            title: c('Action').t`Cancel transfers`,
+            iconName: 'xmark',
+            actionType: 'cancel',
         },
     ];
 
-    const buttonLabel = c('Label').t`Apply to selected transfers`;
     return (
         <div className="transfers-manager-toolbar">
             <Details
@@ -107,9 +128,9 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
                             </Radio>
                         ))}
                     </div>
-                    <div className="flex flex-nowrap flex-justify-end">
-                        <span className="mr1">{buttonLabel}</span>
-                        <Buttons buttons={buttons} />
+                    <div className="flex flex-nowrap flex-justify-end no-scroll flex-item-noshrink">
+                        <span className="mr1 text-ellipsis">{c('Label').t`Apply to selected transfers`}</span>
+                        <Buttons buttons={buttons} className="flex-item-noshrink" />
                     </div>
                 </div>
             </Details>
