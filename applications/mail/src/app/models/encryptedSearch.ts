@@ -114,6 +114,17 @@ export type ESDBStatus = Pick<
     | 'isSearching'
 >;
 
+export interface ESIndexingState {
+    esProgress: number;
+    estimatedMinutes: number;
+    startTime: number;
+    endTime: number;
+    oldestTime: number;
+    esPrevProgress: number;
+    totalIndexingMessages: number;
+    currentProgressValue: number;
+}
+
 export interface UncachedSearchOptions {
     incrementMessagesSearched?: () => void;
     messageLimit?: number;

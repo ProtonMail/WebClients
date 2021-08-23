@@ -1,6 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { CachedMessage, ESStatus } from './models/encryptedSearch';
+import { CachedMessage, ESIndexingState, ESStatus } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -118,7 +118,7 @@ export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
 export const OPENPGP_REFRESH_CUTOFF = 10;
-export const ES_MAX_METADATA_QUERY = 150;
+export const ES_MAX_PARALLEL_MESSAGES = 150;
 export const ES_MAX_CONCURRENT = 10;
 export const ES_MAX_CACHE = 500000000; // 500 MB
 export const ES_MAX_PAGES_PER_BATCH = 100;
@@ -171,6 +171,16 @@ export const defaultESStatus: ESStatus = {
     isRefreshing: false,
     isSearchPartial: false,
     isSearching: false,
+};
+export const defaultESIndexingState: ESIndexingState = {
+    esProgress: 0,
+    estimatedMinutes: 0,
+    startTime: 0,
+    endTime: 0,
+    oldestTime: 0,
+    esPrevProgress: 0,
+    totalIndexingMessages: 0,
+    currentProgressValue: 0,
 };
 
 export const WELCOME_PANE_OPTIONS_URLS = {
