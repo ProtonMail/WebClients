@@ -750,7 +750,7 @@
         "Introdução do ${ BRAND_NAME }"
       ],
       "Chat with us": [
-        ""
+        "Converse conosco"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -2231,7 +2231,7 @@
         "Cobrado no final do seu ciclo de faturamento atual (renovação em ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Nenhum pagamento é necessário no momento."
@@ -3953,18 +3953,18 @@
         "${ elementsCount } conversas movidas para o spam e remetente adicionados à lista de bloqueio."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        ""
+        "Mensagem movida para ${ folderName } e remetente adicionado à Lista de Permissões."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "",
-        ""
+        "${ elementsCount } mensagem movida para ${ folderName } e remetente adicionado à lista de permissão.",
+        "${ elementsCount } mensagens movidas para ${ folderName } e remetente adicionado à lista de permissões."
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        ""
+        "A conversa foi movida para ${ folderName } e o remetente foi adicionado à Lista de Permissões."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "",
-        ""
+        "${ elementsCount } conversa movida para ${ folderName } e remetente adicionado à Lista de permissão.",
+        "${ elementsCount } conversas movidas para ${ folderName } e remetente adicionado à Lista de Permissão."
       ],
       "Message moved to ${ folderName }.": [
         "Mensagem movida para ${ folderName }."

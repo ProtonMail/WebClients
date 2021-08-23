@@ -105,7 +105,7 @@
         "Ödeme işlemi başarısız oldu"
       ],
       "Payment process consumed": [
-        ""
+        "Ödeme süresi bitti"
       ],
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
@@ -393,10 +393,10 @@
         "Zaman dilimini seçin"
       ],
       "Show less": [
-        ""
+        "Daha az göster"
       ],
       "Show more": [
-        ""
+        "Daha fazla göster"
       ],
       "View invoice": [
         "Faturayı görüntüle"
@@ -450,13 +450,13 @@
         "Veriyi kurtar"
       ],
       "Click here.": [
-        ""
+        "Buraya tıklayın."
       ],
       "Re-sign": [
         ""
       ],
       "Add to group": [
-        ""
+        "Gruba ekle"
       ],
       "Merge": [
         "Birleştir"
@@ -605,16 +605,16 @@
         ""
       ],
       "Theme": [
-        ""
+        "Tema"
       ],
       "Keyboard shortcuts": [
         "Klavye kısayolları"
       ],
       "Mailbox layout": [
-        ""
+        "Posta kutusu düzeni"
       ],
       "Mailbox density": [
-        ""
+        "Posta kutusu yoğunluğu"
       ],
       "Composer mode": [
         ""
@@ -635,7 +635,7 @@
         ""
       ],
       "Try again": [
-        ""
+        "Tekrar deneyin"
       ],
       "Use a different card": [
         ""
@@ -647,10 +647,10 @@
         ""
       ],
       "Loading verification": [
-        ""
+        "Doğrulama yükleniyor"
       ],
       "Select plan": [
-        ""
+        "Plan seçin"
       ],
       "Compare all features": [
         ""
@@ -659,19 +659,19 @@
         ""
       ],
       "Pay": [
-        ""
+        "Öde"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         ""
       ],
       "Remove gift code": [
-        ""
+        "Hediye kodunu kaldır"
       ],
       "annual billing": [
-        ""
+        "yıllık faturalandırma"
       ],
       "Compare plans": [
-        ""
+        "Planları karşılaştır"
       ],
       "Decrease": [
         ""
@@ -704,7 +704,7 @@
         "Güncelle"
       ],
       "Create": [
-        ""
+        "Oluştur"
       ],
       "Yes, I'll attend": [
         "Evet, katılıyorum"
@@ -725,13 +725,13 @@
         "Hayır"
       ],
       "Share": [
-        ""
+        "Paylaş"
       ],
       "New event": [
         "Yeni etkinlik"
       ],
       "Create event": [
-        ""
+        "Etkinlik oluştur"
       ],
       "Send": [
         "Gönder"
@@ -935,19 +935,19 @@
         "Bir tema seçin"
       ],
       "Open help menu": [
-        ""
+        "Yardım menüsünü aç"
       ],
       "Back": [
         "Geri"
       ],
       "Open settings menu": [
-        ""
+        "Ayarlar menüsünü aç"
       ],
       "Send feedback": [
-        ""
+        "Geri bildirim gönder"
       ],
       "Feedback": [
-        ""
+        "Geri bildirim"
       ],
       "Give feedback": [
         ""
@@ -956,7 +956,7 @@
         ""
       ],
       "Unsupported browser": [
-        ""
+        "Desteklenmeyen tarayıcı"
       ],
       "Card verification": [
         ""
@@ -965,7 +965,7 @@
         ""
       ],
       "Processing...": [
-        ""
+        "İşleniyor..."
       ],
       "Card verification in progress": [
         ""
@@ -1016,7 +1016,7 @@
         ""
       ],
       "Gift code": [
-        ""
+        "Hediye kodu"
       ],
       "Amount due": [
         ""
@@ -1025,22 +1025,22 @@
         ""
       ],
       "Network error": [
-        ""
+        "Ağ hatası"
       ],
       "Select a plan": [
-        ""
+        "Bir plan seçin"
       ],
       "Customize your plan": [
-        ""
+        "Planınızı özelleştirin"
       ],
       "Checkout": [
-        ""
+        "Ödeme yap"
       ],
       "Plan summary": [
         ""
       ],
       "${ appName } customization": [
-        ""
+        "${ appName } özelleştirme"
       ],
       "Sign in again to continue": [
         "Devam etmek için tekrar giriş yapın"
@@ -1055,13 +1055,13 @@
         "Şifrenizi giriniz"
       ],
       "${ appName } Keyboard Shortcuts": [
-        ""
+        "${ appName } Klavye Kısayolları"
       ],
       "Mailbox density": [
-        ""
+        "Posta kutusu yoğunluğu"
       ],
       "Mailbox layout": [
-        ""
+        "Posta kutusu düzeni"
       ],
       "Composer mode": [
         ""
@@ -1082,10 +1082,10 @@
         "Bu etkinliğin hatırlatılması için başka bir bildirim ekleyin"
       ],
       "Update calendar": [
-        ""
+        "Takvimi güncelle"
       ],
       "Create calendar": [
-        ""
+        "Takvim oluştur"
       ],
       "Change my answer": [
         "Cevabımı değiştir"
@@ -1118,7 +1118,7 @@
         ""
       ],
       "Send invitation": [
-        ""
+        "Davetiye gönder"
       ],
       "Update event": [
         "Etkinliği güncelle"
@@ -4630,23 +4630,23 @@
         ""
       ],
       "Encryption failed": [
-        ""
+        "Şifreleme başarısız"
       ]
     },
     "Error importing calendar": {
       "An unexpected error occurred. Import must be restarted.": [
-        ""
+        "Beklenmedik bir hata oluştu. İçe aktarma yeniden başlatılmalıdır."
       ]
     },
     "Error importing contacts": {
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Dosyanız yüklenirken bir hata oluştu. Hiçbir dosya seçilmedi."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        ""
+        "${ formattedFilename } dosyanız yüklenirken bir hata oluştu. .csv veya .vcf dosyası seçilmedi"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "${ formattedFilename } dosyanız boş."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         ""
@@ -4751,32 +4751,32 @@
     },
     "Calendar status": {
       "not synced": [
-        ""
+        "eşitlenmedi"
       ]
     },
     "Disabled calendar name suffix": {
       "disabled": [
-        ""
+        "devre dışı"
       ]
     },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
-        ""
+        "Takvimi yönet"
       ]
     },
     "Add calendar icon tooltip": {
       "Create calendar": [
-        ""
+        "Takvim oluştur"
       ]
     },
     "Placeholder for contact with no name": {
       "(No name)": [
-        ""
+        "(İsim yok)"
       ]
     },
     "Reply to calendar invitation": {
       "Cannot send to organizer address: ${ apiErrorMessage }": [
-        ""
+        "Organizatör adresine gönderilemiyor: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {
@@ -4818,25 +4818,25 @@
     },
     "Calendar invite info": {
       "You accepted the invitation": [
-        ""
+        "Daveti kabul ettiniz"
       ],
       "${ name } accepted the invitation": [
         "${ name } daveti kabul etti"
       ],
       "You declined the invitation": [
-        ""
+        "Daveti reddettiniz"
       ],
       "${ name } declined the invitation": [
         "${ name } daveti reddetti"
       ],
       "You tentatively accepted the invitation": [
-        ""
+        "Daveti geçici olarak kabul ettiniz"
       ],
       "${ name } tentatively accepted the invitation": [
         "${ name } daveti geçici olarak kabul etti"
       ],
       "You haven't answered the invitation yet": [
-        ""
+        "Davete henüz cevap vermediniz"
       ],
       "${ name } hasn't answered the invitation yet": [
         "${ name } davete henüz cevap vermedi"
@@ -4847,7 +4847,7 @@
     },
     "Notification suffix": {
       "by email": [
-        ""
+        "e-posta ile"
       ]
     },
     "Event info": {
@@ -4862,7 +4862,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        ""
+        "Etkinlik, devre dışı bırakılmış bir takvime ait."
       ]
     }
   }

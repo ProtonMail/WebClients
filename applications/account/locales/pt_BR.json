@@ -883,46 +883,46 @@
         "Nós recomendamos adicionar um e-mail vinculado, para que possa recuperar a sua conta se perder a sua senha."
       ],
       "Disabling this will prevent this email from being used for account recovery.": [
-        ""
+        "Desativar isto impedirá que este e-mail seja usado para recuperação da conta."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Quando as notificações estão ativas, será enviado um alerta para o seu endereço de recuperação/notificação avisando que você tem novas mensagens na sua conta ProtonMail."
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
-        ""
+        "Desativar isto impedirá que este número de telefone seja usado para recuperação da conta."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
+        "Uma frase de recuperação permitirá que você acesse sua conta e recupere suas mensagens criptografadas caso você perca sua senha."
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
+        "Desativar isto impedirá que sua frase de recuperação seja usado para recuperação da conta."
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Criar uma nova frase de recuperação desativará a antiga."
       ],
       "Are you sure you want to continue?": [
-        ""
+        "Tem certeza que quer continuar?"
       ],
       "Recovery phrase copied to clipboard": [
-        ""
+        "Frase de recuperação copiada para a área de transferência"
       ],
       "Your recovery phrase": [
-        ""
+        "Sua frase de recuperação"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
+        "Sua frase de recuperação é uma sequência de 12 palavras em uma ordem específica."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
+        "Por favor anote sua frase de recuperação na ordem em que aparece e a mantenha em local seguro. Sua frase de recuperação pode ser usada para acessar sua conta e suas mensagens criptografadas."
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
+        "Se prosseguir, sua senha será redefinida e você será desconectado de todas as sessões ativas."
       ],
       "This will also disable two-factor authentification.": [
-        ""
+        "Isto também desativará a autenticação de dois fatores."
       ],
       "Recovery phrase has been disabled": [
-        ""
+        "Frase de recuperação desativada"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
@@ -1357,16 +1357,16 @@
         "Por razões de segurança, por favor, confirme que você não é um robô."
       ],
       "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        ""
+        "Se prosseguir, você será forçado a redefinir sua senha e você será desconectado de todas as sessões ativas."
       ],
       "This will also disable two-factor authentication.": [
-        ""
+        "Isto também desativará a autenticação de dois fatores."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há um método de recuperação salvo para esta conta."
       ],
       "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        ""
+        "Entre a frase de recuperação associada à sua conta ${ BRAND_NAME }."
       ],
       "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
         "Digite o de recuperação ${ recoveryMethodText } associado à sua conta ${ BRAND_NAME }. Nós lhe enviaremos um código para confirmar a redefinição da senha."
@@ -1396,7 +1396,7 @@
         "Digite o endereço de e-mail associado à sua conta Proton ou o nome de usuário da sua conta."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        ""
+        "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ]
     },
     "Action": {
@@ -1668,7 +1668,7 @@
         "Introdução do ${ BRAND_NAME }"
       ],
       "Chat with us": [
-        ""
+        "Converse conosco"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -1878,22 +1878,22 @@
         "Adicionar etiqueta"
       ],
       "Create new recovery phrase": [
-        ""
+        "Crie uma nova frase de recuperação"
       ],
       "Create new recovery phrase?": [
-        ""
+        "Criar uma nova frase de recuperação?"
       ],
       "Enter password to continue": [
-        ""
+        "Entre sua senha para continuar"
       ],
       "Copy to clipboard": [
-        ""
+        "Copiar para a área de transferência"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Desativar a frase de recuperação?"
       ],
       "Disable recovery phrase": [
-        ""
+        "Desativar a frase de recuperação"
       ],
       "Revoke all other sessions": [
         "Revogar todas as outras sessões"
@@ -2157,7 +2157,7 @@
         "Enviar um código"
       ],
       "Return to sign in": [
-        ""
+        "Voltar ao inicio de sessão"
       ],
       "Didn't receive a code?": [
         "Não recebeu o código?"
@@ -2516,7 +2516,7 @@
         "Não foi possível verificar o nome de usuário, tente novamente mais tarde"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
       ]
     },
     "Loading info": {
@@ -3088,13 +3088,13 @@
         "Permitir a recuperação por telefone"
       ],
       "Allow recovery by recovery phrase": [
-        ""
+        "Permita a recuperação através de uma frase de recuperação"
       ],
       "Recovery phrase": [
-        ""
+        "Frase de recuperação"
       ],
       "Your recovery phrase": [
-        ""
+        "Sua frase de recuperação"
       ],
       "Auto-load remote content": [
         "Carregar o conteúdo remoto automaticamente"
@@ -3214,7 +3214,7 @@
         "Telefone"
       ],
       "Recovery phrase contains 12 words": [
-        ""
+        "A frase de recuperação contem 12 palavras"
       ],
       "Code": [
         "Código"
@@ -3956,7 +3956,7 @@
         "Criando conta"
       ],
       "Reset password?": [
-        ""
+        "Redefinir senha?"
       ],
       "Warning!": [
         "Atenção!"
@@ -5162,7 +5162,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        ""
+        "Aqui está como"
       ]
     },
     "Calendar import section description": {
@@ -6982,7 +6982,7 @@
         "Número do telefone"
       ],
       "Recovery phrase": [
-        ""
+        "Frase de recuperação"
       ]
     },
     "Badge for user sessions table": {
@@ -7225,7 +7225,7 @@
         "Criando novos usuários"
       ],
       "Reading emails of non-private users": [
-        ""
+        "Ler e-mails de usuários não particulares"
       ],
       "Changing organization password": [
         "Alterando a senha da organização"
@@ -8535,7 +8535,7 @@
         "Número do telefone"
       ],
       "Recovery phrase": [
-        ""
+        "Frase de recuperação"
       ]
     },
     "blackfriday Info": {
