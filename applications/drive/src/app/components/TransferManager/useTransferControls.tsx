@@ -134,6 +134,12 @@ function useTransferControls() {
         });
     };
 
+    const restartTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
+        entries.forEach((entry) => {
+            restart(entry.transfer, entry.type).catch(console.error);
+        });
+    };
+
     return {
         cancel,
         restart,
@@ -141,6 +147,7 @@ function useTransferControls() {
         pauseTransfers,
         resumeTransfers,
         cancelTransfers,
+        restartTransfers,
     };
 }
 

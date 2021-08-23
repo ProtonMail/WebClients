@@ -98,6 +98,22 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
             iconName: 'xmark',
             actionType: 'cancel',
         },
+        {
+            onClick: () => {
+                return transferManagerControls.restartTransfers(
+                    entries.filter(({ transfer }) => {
+                        return isTransferFailed(transfer);
+                    })
+                );
+            },
+            /*
+             * Restart enabled when there're failed transfers in the list. This also covers
+             * the case when theres only transfers in progress
+             */
+            disabled: !entries.map(extractTransferFromEntry).some(isTransferFailed),
+            title: c('Action').t`Restart transfers`,
+            iconName: 'arrow-rotate-right',
+        },
     ];
 
     return (
