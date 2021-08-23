@@ -5,8 +5,9 @@ import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { Collapsible, Icon, Info } from '@proton/components';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { c, msgid } from 'ttag';
 
 import { getOrganizerDisplayData } from '../../helpers/attendees';
@@ -83,6 +84,12 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
 
     const wrapClassName = 'flex flex-nowrap mb0-75 ml0-25 mr0-25';
     const iconClassName = 'flex-item-noshrink mr1 mt0-25';
+
+    const locationWrapRef = useRef<HTMLDivElement>(null);
+    const descriptionWrapRef = useRef<HTMLDivElement>(null);
+
+    useLinkHandler(locationWrapRef);
+    useLinkHandler(descriptionWrapRef);
 
     const canonizedOrganizerEmail = canonizeEmailByGuess(organizer?.email || '');
 
@@ -179,7 +186,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
     const eventDetailsContent = (
         <>
             {trimmedLocation ? (
-                <div className={wrapClassName}>
+                <div className={wrapClassName} ref={locationWrapRef}>
                     <Icon name="map-marker" className={iconClassName} />
                     <span
                         className="text-hyphens scroll-if-needed"
@@ -243,7 +250,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                 </div>
             ) : null}
             {htmlString ? (
-                <div className={wrapClassName}>
+                <div className={wrapClassName} ref={descriptionWrapRef}>
                     <Icon name="align-left" className={iconClassName} />
                     <div
                         className="text-break mt0 mb0 text-pre-wrap"
