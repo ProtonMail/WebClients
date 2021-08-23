@@ -3,9 +3,13 @@ import { c } from 'ttag';
 
 import { classnames, Details, Radio, Summary } from '@proton/components';
 
-import { TransferGroup } from '../../interfaces/transfer';
+import { Download, TransferGroup, TransferType, Upload } from '../../interfaces/transfer';
+import useTransferControls from './useTransferControls';
+import Buttons from './Buttons';
+import { isTransferActive, isTransferOngoing, isTransferPaused, isTransferProgress } from '../../utils/transfer';
+import { TransferManagerButtonProps } from './interfaces';
 
-const TRANSFER_FILTER = [
+const TRANSFER_GROUPS = [
     {
         value: undefined,
         // translator: the label is for a button resetting current filter and displaying all the transfers."
@@ -23,22 +27,58 @@ const TRANSFER_FILTER = [
     },
 ];
 
+type TransferManagerEntry = { transfer: Upload | Download; type: TransferType };
+
 interface ToolbarProps {
     currentTransferGroup?: TransferGroup;
     onTransferGroupFilterChange: (transferGroup: TransferGroup | undefined) => void;
+    entries: TransferManagerEntry[];
 }
-const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup }: ToolbarProps) => {
+
+const extractTransferFromEntry = ({ transfer }: TransferManagerEntry) => transfer;
+
+const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }: ToolbarProps) => {
     const [isExpanded, setIsExpanded] = useState(true);
+    const transferManagerControls = useTransferControls();
 
-    // const buttons: TransferControlsButtonProps[] = [
-    //     {
-    //         onClick: () => {},
-    //         disabled: false,
-    //         title: hasPausedTransfers ? c('Action').t`Pause transfers` : c('Action').t`Resume transfers`,
-    //         iconName: hasPausedTransfers ? 'resume' : 'pause',
-    //     },
-    // ];
+    const hasPausedTransfers = entries.map(extractTransferFromEntry).some(isTransferPaused);
+    const hasTransfersInProgress = entries.map(extractTransferFromEntry).some(isTransferProgress);
+    const areAllActiveTransfersPaused = entries
+        .map(extractTransferFromEntry)
+        .filter(isTransferActive)
+        .every(isTransferPaused);
+    const hasOnlyInactiveTransfers = entries
+        .map(extractTransferFromEntry)
+        .every((transfer) => !isTransferOngoing(transfer));
 
+    /*
+     * Pause icon get priority over resume. Here are the rules:
+     *
+     * - mixed transfer –> pause
+     * - only in progress –> pause
+     * - cancelled or failed -> pause (disabled)
+     * – all *active* transfers are paused -> resume
+     */
+    const shouldDisplayResume = entries.length !== 0 && areAllActiveTransfersPaused && !hasOnlyInactiveTransfers;
+
+    const buttons: TransferManagerButtonProps[] = [
+        {
+            onClick: () => {
+                if (hasTransfersInProgress) {
+                    return transferManagerControls.pauseTransfers(entries);
+                }
+
+                if (hasPausedTransfers) {
+                    return transferManagerControls.resumeTransfers(entries);
+                }
+            },
+            disabled: hasOnlyInactiveTransfers,
+            title: shouldDisplayResume ? c('Action').t`Resume transfers` : c('Action').t`Pause transfers`,
+            iconName: shouldDisplayResume ? 'play' : 'pause',
+        },
+    ];
+
+    const buttonLabel = c('Label').t`Apply to selected transfers`;
     return (
         <div className="transfers-manager-toolbar">
             <Details
@@ -53,21 +93,24 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup }: ToolbarP
                 </Summary>
                 <div className={classnames(['transfers-manager-controls pb1 pt0-5 pl1 pr1'])}>
                     <div className="transfers-manager-status-filter flex flex-nowrap flex-align-items-center text-ellipsis">
-                        {TRANSFER_FILTER.map((filter) => (
+                        {TRANSFER_GROUPS.map((group) => (
                             <Radio
                                 name="transfers-manager-controls-radio"
                                 className="mr1"
-                                value={filter.value}
-                                key={filter.value}
-                                id={`transfer-filter-${filter.value}`}
-                                checked={filter.value === currentTransferGroup}
-                                onChange={() => onTransferGroupFilterChange(filter.value)}
+                                value={group.value}
+                                key={group.label}
+                                id={`transfer-filter-${group.value}`}
+                                checked={group.value === currentTransferGroup}
+                                onChange={() => onTransferGroupFilterChange(group.value)}
                             >
-                                {filter.label}
+                                {group.label}
                             </Radio>
                         ))}
                     </div>
-                    {/* <TransferManagerControls buttons={buttons}/> */}
+                    <div className="flex flex-nowrap flex-justify-end">
+                        <span className="mr1">{buttonLabel}</span>
+                        <Buttons buttons={buttons} />
+                    </div>
                 </div>
             </Details>
         </div>

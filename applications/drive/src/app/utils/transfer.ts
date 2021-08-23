@@ -40,6 +40,16 @@ export const isTransferPending = ({ state }: { state: TransferState }) => state 
 
 export const isTransferFinalizing = ({ state }: { state: TransferState }) => state === TransferState.Finalizing;
 
+export const isTransferOngoing = ({ state }: { state: TransferState }) => {
+    return ![
+        TransferState.Initializing,
+        TransferState.Error,
+        TransferState.Canceled,
+        TransferState.Done,
+        TransferState.Finalizing,
+    ].includes(state);
+};
+
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
