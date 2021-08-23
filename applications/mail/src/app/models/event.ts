@@ -17,6 +17,7 @@ export interface LabelIDsChanges {
 }
 
 export interface Event {
+    More?: 0 | 1;
     EventID?: string;
     Refresh?: number;
     Conversations?: ConversationEvent[];
