@@ -2,6 +2,8 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
+import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { IDBPDatabase, openDB } from 'idb';
 import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
 import { getMessageFromDB } from './esSync';
@@ -26,7 +28,7 @@ export const isRecoveryNeeded = (userID: string) => !!getItem(`ES:${userID}:Reco
  * Check whether a previously started indexing process has terminated successfully
  */
 export const isDBReadyAfterBuilding = (userID: string) =>
-    !getItem(`ES:${userID}:BuildEvent`) && !getItem(`ES:${userID}:Recover`);
+    !getItem(`ES:${userID}:BuildProgress`) && !getItem(`ES:${userID}:Recover`);
 
 /**
  * Check whether a key exists and the corresponding indexing process has terminated successfully
@@ -78,8 +80,8 @@ export const getNumMessagesDB = async (userID: string) => {
  * Fetch the number of messages in the mailbox when indexing had started, i.e.
  * excluding those that have changed since then
  */
-export const getTotalFromBuildEvent = (userID: string) => {
-    const buildBlob = getItem(`ES:${userID}:BuildEvent`);
+export const getTotalFromBuildProgress = (userID: string) => {
+    const buildBlob = getItem(`ES:${userID}:BuildProgress`);
     if (!buildBlob) {
         return 0;
     }
@@ -88,39 +90,29 @@ export const getTotalFromBuildEvent = (userID: string) => {
 };
 
 /**
- * Fetch the number of messages already indexed
+ * Fetch the indexing progress from BuildProgress
  */
-export const getCurrentFromBuildEvent = (userID: string) => {
-    const buildBlob = getItem(`ES:${userID}:BuildEvent`);
+export const getProgressFromBuildProgress = (userID: string) => {
+    const buildBlob = getItem(`ES:${userID}:BuildProgress`);
     if (!buildBlob) {
         return 0;
     }
-    const { currentMessages }: { currentMessages: number | undefined } = JSON.parse(buildBlob);
-    return currentMessages || 0;
+    const { currentMessages, totalMessages }: { currentMessages: number | undefined; totalMessages: number } =
+        JSON.parse(buildBlob);
+
+    return Math.ceil(((currentMessages || 0) / totalMessages) * 100);
 };
 
 /**
- * Set the number of messages already indexed in BuildEvent and save it to localStorage
+ * Set the number of messages already indexed in BuildProgress and save it to localStorage
  */
-export const setCurrentFromBuildEvent = (userID: string, currentMessages: number) => {
-    const buildBlob = getItem(`ES:${userID}:BuildEvent`);
+export const setCurrentFromBuildProgress = (userID: string, currentMessages: number) => {
+    const buildBlob = getItem(`ES:${userID}:BuildProgress`);
     if (!buildBlob) {
         return;
     }
-    const { event, totalMessages }: { event: string; totalMessages: number } = JSON.parse(buildBlob);
-    setItem(`ES:${userID}:BuildEvent`, JSON.stringify({ event, totalMessages, currentMessages }));
-};
-
-/**
- * Fetch the last event before the start of indexing
- */
-export const getBuildEvent = (userID: string) => {
-    const buildBlob = getItem(`ES:${userID}:BuildEvent`);
-    if (!buildBlob) {
-        return;
-    }
-    const { event }: { event: string } = JSON.parse(buildBlob);
-    return event;
+    const { totalMessages }: { totalMessages: number } = JSON.parse(buildBlob);
+    setItem(`ES:${userID}:BuildProgress`, JSON.stringify({ totalMessages, currentMessages }));
 };
 
 /**
@@ -178,17 +170,6 @@ export const getTotalMessages = async (inputMessageCounts: any, api: Api) => {
 };
 
 /**
- * Read whether a previous event catching up failed
- */
-export const getCatchUpFail = (userID: string) => {
-    const catchUpFail = getItem(`ES:${userID}:CatchUpFail`);
-    if (!catchUpFail) {
-        return false;
-    }
-    return catchUpFail === 'true';
-};
-
-/**
  * Check whether ES can be used not just because the index key exists in localStorage
  * but also because IDB is not corrupt, i.e. the object store exists
  */
@@ -200,4 +181,21 @@ export const canUseES = async (userID: string) => {
     const isIntact = esDB.objectStoreNames.contains('messages');
     esDB.close();
     return isIntact;
+};
+
+/**
+ * Destroy and load openpgp workers back again
+ */
+export const refreshOpenpgp = async () => {
+    const { openpgp } = window as any;
+    // In case the workers are performing some operations, wait until they are done
+    const openpgpWorkers = openpgp.getWorker();
+    if (!openpgpWorkers) {
+        return;
+    }
+    while (openpgpWorkers.workers.some((worker: any) => worker.requests)) {
+        await wait(200);
+    }
+    await destroyOpenPGP();
+    await loadOpenPGP();
 };

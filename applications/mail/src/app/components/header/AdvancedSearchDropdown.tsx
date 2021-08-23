@@ -55,10 +55,12 @@ import {
     wasIndexingDone,
     isDBReadyAfterBuilding,
     isPaused,
-    getTotalFromBuildEvent,
-    getCurrentFromBuildEvent,
+    getProgressFromBuildProgress,
 } from '../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { ESIndexingState } from '../../models/encryptedSearch';
+import { defaultESIndexingState } from '../../constants';
+import { estimateIndexingTime } from '../../helpers/encryptedSearch/esBuild';
 
 import './AdvancedSearchDropdown.scss';
 import { useClickMailContent } from '../../hooks/useClickMailContent';
@@ -82,27 +84,6 @@ interface LabelInfo {
     group: string;
 }
 
-interface ESState {
-    esProgress: number;
-    estimatedMinutes: number;
-    startTime: number;
-    endTime: number;
-    oldestTime: number;
-    esPrevProgress: number;
-    totalIndexingMessages: number;
-    currentProgressValue: number;
-}
-
-const defaultESState = {
-    esProgress: 0,
-    estimatedMinutes: 0,
-    startTime: 0,
-    endTime: 0,
-    oldestTime: 0,
-    esPrevProgress: 0,
-    totalIndexingMessages: 0,
-    currentProgressValue: 0,
-};
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
@@ -177,16 +158,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         cacheIndexedDB,
     } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
-    const [esState, setESState] = useState<ESState>(defaultESState);
+    const [esState, setESState] = useState<ESIndexingState>(defaultESIndexingState);
     const { esProgress, oldestTime, totalIndexingMessages, estimatedMinutes, currentProgressValue } = esState;
-    const progressFromBuildEvent = Math.ceil(
-        (getCurrentFromBuildEvent(user.ID) / getTotalFromBuildEvent(user.ID)) * 100
-    );
-    let progressValue = currentProgressValue || progressFromBuildEvent;
-    if (Number.isNaN(progressFromBuildEvent)) {
-        progressValue = 100;
-    }
-    const abortControllerRef = useRef<AbortController>(new AbortController());
+    const abortProgressRef = useRef<AbortController>(new AbortController());
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
     const { feature: scheduledFeature, loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
@@ -244,35 +218,25 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     };
 
     const setProgress = async () => {
-        while (!abortControllerRef.current.signal.aborted) {
+        while (!abortProgressRef.current.signal.aborted) {
             setESState((esState) => {
-                const [esProgress] = getProgressRecorderRef().current;
-                const { esProgress: stateESProgress, startTime, esPrevProgress, totalIndexingMessages } = esState;
+                const [esProgress, esTotal] = getProgressRecorderRef().current;
                 const endTime = performance.now();
 
-                let estimatedMinutes = 0;
-                let currentProgressValue = 0;
-                if (
-                    esProgress !== stateESProgress &&
-                    stateESProgress !== 0 &&
-                    totalIndexingMessages !== 0 &&
-                    endTime !== startTime &&
-                    esProgress !== esPrevProgress
-                ) {
-                    estimatedMinutes = Math.ceil(
-                        (((endTime - startTime) / (esProgress - esPrevProgress)) *
-                            (totalIndexingMessages - esProgress)) /
-                            60000
-                    );
-                    currentProgressValue = Math.ceil((esProgress / totalIndexingMessages) * 100);
-                }
+                const { estimatedMinutes, currentProgressValue } = estimateIndexingTime(
+                    esProgress,
+                    esTotal,
+                    endTime,
+                    esState
+                );
 
                 return {
                     ...esState,
                     endTime,
                     esProgress,
+                    totalIndexingMessages: esTotal,
                     estimatedMinutes: estimatedMinutes || esState.estimatedMinutes,
-                    currentProgressValue,
+                    currentProgressValue: currentProgressValue || esState.currentProgressValue,
                 };
             });
             await wait(2 * SECOND);
@@ -292,7 +256,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     };
 
     const startProgress = async () => {
-        abortControllerRef.current = new AbortController();
+        abortProgressRef.current = new AbortController();
         const [esPrevProgress, totalIndexingMessages] = getProgressRecorderRef().current;
         setESState((esState) => {
             return {
@@ -302,18 +266,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 totalIndexingMessages,
             };
         });
-        await wait(10 * SECOND);
         void setProgress();
     };
 
     const stopProgress = () => {
-        abortControllerRef.current.abort();
-        setESState((esState) => {
-            return {
-                ...defaultESState,
-                totalIndexingMessages: esState.totalIndexingMessages,
-            };
-        });
+        abortProgressRef.current.abort();
+        setESState(() => defaultESIndexingState);
     };
 
     useEffect(() => {
@@ -397,10 +355,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     // Switches
     const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
     const showAdvancedSearch = !showEncryptedSearch || showMore;
-    const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isBuilding);
+    const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
     const showSubTitleSection = wasIndexingDone(user.ID) && !isRefreshing && isDBLimited;
     const isEstimating =
         estimatedMinutes === 0 && (totalIndexingMessages === 0 || esProgress !== totalIndexingMessages);
+
+    // ES progress
+    const progressFromBuildEvent = isRefreshing ? 0 : getProgressFromBuildProgress(user.ID);
+    const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Header
     const esTitle = <span className="mr0-5">{c('Action').t`Search message content`}</span>;
@@ -422,12 +384,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     className="mlauto flex-item-noshrink"
                     checked={wasIndexingDone(user.ID) && esEnabled && !isBuilding}
                     onChange={toggleEncryptedSearch}
-                    disabled={!wasIndexingDone(user.ID) || isBuilding}
+                    disabled={showProgress}
                 />
             </span>
         </Tooltip>
     ) : (
-        <Button onClick={confirmationToIndex} loading={esEnabled && !indexKeyExists(user.ID)}>
+        <Button onClick={confirmationToIndex} loading={esEnabled && !isBuilding}>
             {c('Action').t`Activate`}
         </Button>
     );
@@ -451,14 +413,18 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     );
 
     // Progress indicator
-    const progressStatus = isPaused(user.ID)
-        ? c('Info').t`Indexing paused`
-        : isEstimating
-        ? c('Info').t`Estimating time remaining...`
-        : isRefreshing
-        ? c('Info').t`Updating message content search...`
-        : // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
-          c('Info').jt`Downloading message ${esProgress} out of ${totalIndexingMessages}`;
+    let progressStatus: string = '';
+    if (isPaused(user.ID)) {
+        progressStatus = c('Info').t`Indexing paused`;
+    } else if (isEstimating) {
+        progressStatus = c('Info').t`Estimating time remaining...`;
+    } else if (isRefreshing) {
+        progressStatus = c('Info').t`Updating message content search...`;
+    } else {
+        // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
+        progressStatus = c('Info').jt`Downloading message ${esProgress} out of ${totalIndexingMessages}` as string;
+    }
+
     const etaMessage =
         estimatedMinutes <= 1
             ? c('Info').t`Estimated time remaining: Less than a minute`
@@ -479,6 +445,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         />
     );
     const disablePauseResumeButton = wasIndexingDone(user.ID) && isBuilding;
+    const showPauseResumeButton = showProgress && (!wasIndexingDone(user.ID) || isBuilding) && !isRefreshing;
     const pauseResumeButton = isPaused(user.ID) ? (
         <Button
             shape="solid"
@@ -570,7 +537,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 </span>
                                 <div className="flex flex-justify-space-between">
                                     {progressBar}
-                                    {(!wasIndexingDone(user.ID) || isBuilding) && pauseResumeButton}
+                                    {showPauseResumeButton && pauseResumeButton}
                                 </div>
                                 <span
                                     id="timeRemaining"

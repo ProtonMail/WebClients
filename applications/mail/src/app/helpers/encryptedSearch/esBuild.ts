@@ -1,8 +1,7 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
-import { wait } from '@proton/shared/lib/helpers/promise';
+import { MINUTE } from '@proton/shared/lib/constants';
 import { openDB, IDBPDatabase, deleteDB } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -13,6 +12,7 @@ import {
     CachedMessage,
     EncryptedSearchDB,
     ESBaseMessage,
+    ESIndexingState,
     GetUserKeys,
     MessageForSearch,
     RecoveryPoint,
@@ -25,7 +25,7 @@ import {
     localisedForwardFlags,
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
-import { updateSizeIDB } from './esUtils';
+import { refreshOpenpgp, updateSizeIDB } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { sizeOfCachedMessage } from './esSearch';
 import { toText } from '../parserHtml';
@@ -361,17 +361,7 @@ const storeMessagesBatches = async (
         Messages = resultMetadata.Messages;
 
         if (batchCount++ >= OPENPGP_REFRESH_CUTOFF) {
-            const { openpgp } = window as any;
-            // In case the workers are performing some operations, wait until they are done
-            const openpgpWorkers = openpgp.getWorker();
-            if (!openpgpWorkers) {
-                continue;
-            }
-            while (openpgpWorkers.workers.some((worker: any) => worker.requests)) {
-                await wait(1000);
-            }
-            await destroyOpenPGP();
-            await loadOpenPGP();
+            await refreshOpenpgp();
             batchCount = 0;
         }
     }
@@ -456,11 +446,9 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
 
     // Save the event before starting building IndexedDB
     const previousEvent = await queryEvents(api);
-    if (previousEvent) {
-        setItem(
-            `ES:${userID}:BuildEvent`,
-            JSON.stringify({ event: previousEvent.EventID, totalMessages: initialiser.Total })
-        );
+    if (previousEvent && previousEvent.EventID) {
+        setItem(`ES:${userID}:BuildProgress`, JSON.stringify({ totalMessages: initialiser.Total }));
+        setItem(`ES:${userID}:Event`, previousEvent.EventID);
     } else {
         removeItem(`ES:${userID}:Recover`);
         return result;
@@ -478,7 +466,8 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         });
     } catch (error) {
         removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:BuildEvent`);
+        removeItem(`ES:${userID}:Event`);
+        removeItem(`ES:${userID}:BuildProgress`);
         return {
             ...result,
             notSupported: true,
@@ -501,7 +490,8 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         setItem(`ES:${userID}:Key`, encryptedKey);
     } catch (error) {
         removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:BuildEvent`);
+        removeItem(`ES:${userID}:Event`);
+        removeItem(`ES:${userID}:BuildProgress`);
         return result;
     }
 
@@ -511,4 +501,28 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         ...result,
         indexKey,
     };
+};
+
+/**
+ * Compute the estimated time remaining of indexing
+ */
+export const estimateIndexingTime = (
+    esProgress: number,
+    esTotal: number,
+    endTime: number,
+    esState: ESIndexingState
+) => {
+    let estimatedMinutes = 0;
+    let currentProgressValue = 0;
+
+    if (esTotal !== 0 && endTime !== esState.startTime && esProgress !== esState.esPrevProgress) {
+        const remainingMessages = esTotal - esProgress;
+
+        estimatedMinutes = Math.ceil(
+            (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / MINUTE
+        );
+        currentProgressValue = Math.ceil((esProgress / esTotal) * 100);
+    }
+
+    return { estimatedMinutes, currentProgressValue };
 };
