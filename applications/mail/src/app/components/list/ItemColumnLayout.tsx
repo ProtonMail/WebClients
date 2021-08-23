@@ -127,7 +127,7 @@ const ItemColumnLayout = ({
                 </div>
             </div>
 
-            {shouldHighlight() && (
+            {bodyContent && (
                 <>
                     <div
                         className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll"

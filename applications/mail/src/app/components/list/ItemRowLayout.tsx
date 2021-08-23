@@ -99,7 +99,7 @@ const ItemRowLayout = ({
                     >
                         {subjectContent}
                     </span>
-                    {shouldHighlight() && (
+                    {bodyContent && (
                         <>
                             <span
                                 className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
