@@ -5,7 +5,7 @@ import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/message
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
-import { ES_MAX_METADATA_QUERY } from '../../constants';
+import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 import { getNumMessagesDB, getSizeIDB } from './esUtils';
 
 /**
@@ -48,7 +48,7 @@ export const queryMessagesMetadata = async (
         api,
         signal,
         queryMessageMetadata({
-            Limit: ES_MAX_METADATA_QUERY,
+            Limit: ES_MAX_PARALLEL_MESSAGES,
             Location: '5',
             Sort: 'Time',
             Desc: 1,
