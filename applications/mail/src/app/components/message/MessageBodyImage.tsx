@@ -8,15 +8,35 @@ import { MessageEmbeddedImage, MessageImage } from '../../models/message';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 
-const sizeToStyle = (attributes: SimpleMap<string>) => {
+const spineToCamelCase = (value: string) => value.replaceAll(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+
+const forEachStyle = (style: CSSStyleDeclaration | undefined, iterator: (property: string, value: string) => void) => {
+    if (!style) {
+        return;
+    }
+    for (let i = 0; i < (style.length || 0); i++) {
+        const prop = style.item(i);
+        iterator(prop, style[prop as any]);
+    }
+};
+
+const extractStyle = (original: HTMLElement | undefined): CSSProperties => {
+    if (!original) {
+        return {};
+    }
     const style: CSSProperties = {};
+    forEachStyle(original.style, (prop, value) => {
+        if (prop !== 'display') {
+            style[spineToCamelCase(prop)] = value;
+        }
+    });
     sizeProps.forEach((prop) => {
-        const value = attributes[prop]?.trim();
+        const value = original?.getAttribute(prop)?.trim();
         if (value?.endsWith('%') || value === 'auto') {
             style[prop] = value;
         } else if (value) {
             style[prop] = `${value}px`;
-        } else {
+        } else if (!style[prop]) {
             style[prop] = '30px';
         }
     });
@@ -41,15 +61,6 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
             ? !showRemoteImages
             : !showEmbeddedImages || (image as MessageEmbeddedImage).status !== 'loaded');
     const showImage = !showPlaceholder;
-    const showLoader = type === 'remote' ? false : (image as MessageEmbeddedImage).status === 'loading';
-    // Avoid nested ternary
-    let placeholderTooltip = '';
-    if (showPlaceholder) {
-        placeholderTooltip = isError
-            ? c('Message image').t`Image has not been loaded due to a security SSL certificate issue`
-            : c('Message image').t`Image has not been loaded in order to protect your privacy`;
-    }
-    const icon = isError ? 'circle-xmark' : 'file-shapes';
 
     const attributes =
         image.original?.getAttributeNames().reduce<SimpleMap<string>>((acc, name) => {
@@ -57,10 +68,8 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
             return acc;
         }, {}) || {};
 
-    const sizeStyle = sizeToStyle(attributes);
-
-    sizeProps.forEach((prop) => {
-        anchor.style[prop] = showPlaceholder ? (sizeStyle[prop] as string) : '';
+    forEachStyle(image.original?.style, (prop, value) => {
+        anchor.style[prop as any] = value;
     });
 
     useEffect(() => {
@@ -77,24 +86,34 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
         setIsError(true);
     };
 
+    if (showImage) {
+        // eslint-disable-next-line jsx-a11y/alt-text
+        return <img ref={imageRef} src={image.url} onError={handleError} />;
+    }
+
+    const showLoader = type === 'remote' ? false : (image as MessageEmbeddedImage).status === 'loading';
+
+    const placeholderTooltip = isError
+        ? c('Message image').t`Image has not been loaded due to a security SSL certificate issue`
+        : c('Message image').t`Image has not been loaded in order to protect your privacy`;
+
+    const icon = isError ? 'circle-xmark' : 'file-shapes';
+
+    const style = extractStyle(image.original);
+
+    // showPlaceholder
     return (
         <Tooltip title={placeholderTooltip}>
             <span
-                style={sizeStyle}
+                style={style}
                 className={classnames([
-                    showPlaceholder &&
-                        'proton-image-placeholder inline-flex bordered rounded flex-justify-center flex-align-items-center',
+                    'proton-image-placeholder inline-flex bordered rounded flex-justify-center flex-align-items-center',
                     isError && 'color-danger border--danger',
                 ])}
             >
-                {showPlaceholder && !showLoader ? <Icon name={icon} size={20} /> : null}
+                {!showLoader ? <Icon name={icon} size={20} /> : null}
 
-                {showPlaceholder && showLoader ? <Loader className="" /> : null}
-
-                {showImage ? (
-                    // eslint-disable-next-line jsx-a11y/alt-text
-                    <img ref={imageRef} src={image.url} onError={handleError} />
-                ) : null}
+                {showLoader ? <Loader className="" /> : null}
             </span>
         </Tooltip>
     );
