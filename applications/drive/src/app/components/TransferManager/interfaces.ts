@@ -22,7 +22,7 @@ export interface TransferManagerButtonProps {
     iconName: string;
 }
 
-export interface TransferManagerButtonsProps {
+export interface TransfersManagerButtonsProps {
     buttons: TransferManagerButtonProps[];
     className?: string;
     id?: string;

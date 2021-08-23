@@ -1,8 +1,8 @@
 import { Icon, Button, classnames } from '@proton/components';
 
-import { TransferManagerButtonsProps } from './interfaces';
+import { TransfersManagerButtonsProps } from './interfaces';
 
-const Buttons = ({ className, buttons, id }: TransferManagerButtonsProps) => {
+const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
     const elClassName = classnames(['flex flex-nowrap flex-justify-end', className]);
 
     return (
