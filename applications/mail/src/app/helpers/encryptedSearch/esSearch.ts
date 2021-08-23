@@ -245,13 +245,17 @@ export const uncachedSearchAsc = async (
     options: UncachedSearchOptions
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
-    const { incrementMessagesSearched, messageLimit, setCache, beginOrder } = options;
+    const { incrementMessagesSearched, messageLimit, setCache, beginOrder, abortSearchingRef } = options;
     const resultsArray: MessageForSearch[] = [];
 
     let lastEmail: LastEmail | undefined;
     let lowerBound = [normalisedSearchParams.begin || (await getOldestTime(userID)), beginOrder || 0];
 
     while (!lastEmail) {
+        if (abortSearchingRef && abortSearchingRef.current.signal.aborted) {
+            return { resultsArray, lastEmail };
+        }
+
         const storedData = await esDB.getAllFromIndex(
             'messages',
             'byTime',
@@ -310,7 +314,7 @@ export const uncachedSearchDesc = async (
     options: UncachedSearchOptions
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
-    const { incrementMessagesSearched, messageLimit, beginOrder, setCache } = options;
+    const { incrementMessagesSearched, messageLimit, beginOrder, setCache, abortSearchingRef } = options;
     const resultsArray: MessageForSearch[] = [];
 
     const queryStart = await initialiseQuery(
@@ -324,6 +328,10 @@ export const uncachedSearchDesc = async (
     let lastEmail: LastEmail | undefined;
 
     while (!lastEmail) {
+        if (abortSearchingRef && abortSearchingRef.current.signal.aborted) {
+            return { resultsArray, lastEmail };
+        }
+
         let storedData: StoredCiphertext[];
         ({ lower, upper, startingOrder, storedData } = await queryNewData(getTimes, lower, upper, startingOrder, esDB));
 
@@ -368,11 +376,15 @@ export const uncachedSearchDesc = async (
 export const cachedSearch = (
     esCache: CachedMessage[],
     normalisedSearchParams: NormalisedSearchParams,
-    incrementMessagesSearched: () => void
+    incrementMessagesSearched: () => void,
+    abortSearchingRef: React.MutableRefObject<AbortController>
 ) => {
     const searchResults: MessageForSearch[] = [];
 
     esCache.forEach((messageToSearch: CachedMessage) => {
+        if (abortSearchingRef.current.signal.aborted) {
+            return;
+        }
         if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
             const messageForSearch = splitCachedMessage(messageToSearch);
             searchResults.push(messageForSearch);
@@ -420,7 +432,8 @@ export const hybridSearch = async (
     getUserKeys: GetUserKeys,
     userID: string,
     incrementMessagesSearched: () => void,
-    setCache: (Elements: Element[]) => void
+    setCache: (Elements: Element[]) => void,
+    abortSearchingRef: React.MutableRefObject<AbortController>
 ) => {
     let searchResults: MessageForSearch[] = [];
     let isSearchPartial = false;
@@ -432,7 +445,7 @@ export const hybridSearch = async (
     if (isDescending || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
         // searchResults is initialised with the first portion of cached results
         let lastLength = esCacheRef.current.esCache.length;
-        searchResults = cachedSearch(esCacheRef.current.esCache, normalisedSearchParams, incrementMessagesSearched);
+        searchResults = cachedSearch(esCacheRef.current.esCache, normalisedSearchParams, incrementMessagesSearched, abortSearchingRef);
         let resultsCounter = searchResults.length;
 
         // The first batch of results (if any) are shown only if the cache is still being built, or if it has finished
@@ -443,12 +456,21 @@ export const hybridSearch = async (
 
         // If the cache is still being built, incremental portions of cache are searched
         while (!esCacheRef.current.isCacheReady) {
+            if(abortSearchingRef.current.signal.aborted){
+                return {
+                    searchResults,
+                    isSearchPartial,
+                    lastEmail,
+                };
+            }
+
             const newLastLength = esCacheRef.current.esCache.length;
             searchResults.push(
                 ...cachedSearch(
                     esCacheRef.current.esCache.slice(lastLength),
                     normalisedSearchParams,
-                    incrementMessagesSearched
+                    incrementMessagesSearched,
+                    abortSearchingRef
                 )
             );
 
@@ -468,12 +490,13 @@ export const hybridSearch = async (
             ...cachedSearch(
                 esCacheRef.current.esCache.slice(lastLength),
                 normalisedSearchParams,
-                incrementMessagesSearched
+                incrementMessagesSearched,
+                abortSearchingRef
             )
         );
 
         // Once caching has terminated, if the cache turns out to be not limited, we stop searching
-        if (!esCacheRef.current.isCacheLimited) {
+        if (!esCacheRef.current.isCacheLimited || abortSearchingRef.current.signal.aborted) {
             return {
                 searchResults,
                 isSearchPartial,
@@ -482,7 +505,7 @@ export const hybridSearch = async (
         }
 
         // If enough messages to fill two pages were already found, we don't continue the search
-        if (searchResults.length >= 2 * PAGE_SIZE) {
+        if (searchResults.length >= 2 * PAGE_SIZE || abortSearchingRef.current.signal.aborted) {
             // The last message in cache is assumed to be the oldest
             const { Time, Order } = esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1];
             const lastEmailInCache: LastEmail = { Time, Order };
@@ -501,7 +524,7 @@ export const hybridSearch = async (
 
     // If the cache hasn't been searched because the order is ascending, the search
     // parameters shouldn't be influenced by the cache timespan
-    let shouldKeepSearching = true;
+    let shouldKeepSearching = !abortSearchingRef.current.signal.aborted;
     let beginOrder: number | undefined;
     if (isDescending) {
         // The remaining messages are searched from DB, but only if the indicated timespan
@@ -535,6 +558,7 @@ export const hybridSearch = async (
             messageLimit: remainingMessages,
             setCache: setCacheIncremental,
             beginOrder,
+            abortSearchingRef,
         });
         searchResults.push(...uncachedResult.resultsArray);
         lastEmail = uncachedResult.lastEmail;

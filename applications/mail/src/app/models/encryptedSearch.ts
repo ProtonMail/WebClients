@@ -137,6 +137,7 @@ export interface UncachedSearchOptions {
     setCache?: (newResults: MessageForSearch[]) => void;
     beginOrder?: number;
     lastEmailTime?: number;
+    abortSearchingRef?: React.MutableRefObject<AbortController>;
 }
 
 export type GetUserKeys = () => Promise<DecryptedKey[]>;
