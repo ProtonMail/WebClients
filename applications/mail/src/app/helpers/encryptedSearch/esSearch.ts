@@ -1,3 +1,5 @@
+import { Recipient } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { IDBPDatabase, openDB } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
@@ -23,10 +25,37 @@ import { getIndexKey } from './esBuild';
  * Normalise keyword
  */
 const normaliseKeyword = (keyword: string) => {
-    return keyword
-        .toLocaleLowerCase()
-        .split(' ')
-        .filter((s) => s);
+    const trimmedKeyword = keyword.trim().toLocaleLowerCase();
+    const quotesIndexes: number[] = [];
+
+    let index = 0;
+    while (index !== -1) {
+        index = trimmedKeyword.indexOf(`"`, index);
+        if (index !== -1) {
+            quotesIndexes.push(index);
+            index++;
+        }
+    }
+
+    const normalisedKeywords: string[] = [];
+    let previousIndex = -1;
+    for (let index = 0; index < quotesIndexes.length; index++) {
+        const keyword = trimmedKeyword.slice(previousIndex + 1, quotesIndexes[index]);
+
+        if (index % 2 === 1) {
+            // If the user placed quotes, we want to keep everything inside as a single block
+            normalisedKeywords.push(keyword);
+        } else {
+            // Otherwise we split by whitespace
+            normalisedKeywords.push(...keyword.split(' '));
+        }
+
+        previousIndex = quotesIndexes[index];
+    }
+
+    normalisedKeywords.push(...trimmedKeyword.slice(quotesIndexes[quotesIndexes.length - 1] + 1).split(' '));
+
+    return normalisedKeywords.filter(isTruthy);
 };
 
 /**
@@ -70,48 +99,51 @@ export const normaliseSearchParams = (
 /**
  * Check if keywords are in subject, Sender, body, ToList, CCList or BCCList
  */
-const testKeyword = (normalisedKeywords: string[], messageToSearch: CachedMessage) => {
-    const { Subject, Sender, decryptedBody, decryptedSubject, ToList, CCList, BCCList } = messageToSearch;
+const testKeywords = (normalisedKeywords: string[], messageToSearch: CachedMessage, addresses: string[]) => {
+    const { Subject, decryptedBody, decryptedSubject } = messageToSearch;
     const subject = decryptedSubject || Subject;
+
+    const messageStrings = [subject, ...addresses, decryptedBody || ''];
 
     let result = true;
     let index = 0;
     while (result && index !== normalisedKeywords.length) {
         const keyword = normalisedKeywords[index];
-        result =
-            result &&
-            (subject.toLocaleLowerCase().includes(keyword) ||
-                Sender.Address.toLocaleLowerCase().includes(keyword) ||
-                Sender.Name.toLocaleLowerCase().includes(keyword) ||
-                ToList.map((recipient) => recipient.Address)
-                    .join(' ')
-                    .toLocaleLowerCase()
-                    .includes(keyword) ||
-                CCList.map((recipient) => recipient.Address)
-                    .join(' ')
-                    .toLocaleLowerCase()
-                    .includes(keyword) ||
-                BCCList.map((recipient) => recipient.Address)
-                    .join(' ')
-                    .toLocaleLowerCase()
-                    .includes(keyword) ||
-                ToList.map((recipient) => recipient.Name)
-                    .join(' ')
-                    .toLocaleLowerCase()
-                    .includes(keyword) ||
-                CCList.map((recipient) => recipient.Name)
-                    .join(' ')
-                    .toLocaleLowerCase()
-                    .includes(keyword) ||
-                BCCList.map((recipient) => recipient.Name)
-                    .join(' ')
-                    .toLocaleLowerCase()
-                    .includes(keyword) ||
-                (!!decryptedBody && decryptedBody.toLocaleLowerCase().includes(keyword)));
+        result = result && messageStrings.some((string) => string.includes(keyword));
         index++;
     }
 
     return result;
+};
+
+/**
+ * Test whether a given message fulfills every metadata requirement
+ */
+export const testMetadata = (
+    normalisedSearchParams: NormalisedSearchParams,
+    messageToSearch: CachedMessage,
+    recipients: string[],
+    sender: string[]
+) => {
+    const { address, from, to, begin, end, attachments, labelID, decryptionError, filter } = normalisedSearchParams;
+    const { AddressID, Time, LabelIDs, NumAttachments, decryptionError: messageError, Unread } = messageToSearch;
+
+    if (
+        !LabelIDs.includes(labelID) ||
+        (address && AddressID !== address) ||
+        (begin && Time < begin) ||
+        (end && Time > end) ||
+        (from && !sender.some((string) => string.includes(from))) ||
+        (to && !recipients.some((string) => string.includes(to))) ||
+        (typeof attachments !== 'undefined' &&
+            ((attachments === 0 && NumAttachments > 0) || (attachments === 1 && NumAttachments === 0))) ||
+        (typeof decryptionError !== 'undefined' && decryptionError !== messageError) ||
+        (typeof filter?.Unread !== 'undefined' && filter?.Unread !== Unread)
+    ) {
+        return false;
+    }
+
+    return true;
 };
 
 /**
@@ -122,48 +154,30 @@ export const applySearch = (
     messageToSearch: CachedMessage,
     incrementMessagesSearched?: () => void
 ) => {
-    const { address, from, to, normalisedKeywords, begin, end, attachments, labelID, decryptionError, filter } =
-        normalisedSearchParams;
+    const { Sender } = messageToSearch;
 
-    if (
-        !messageToSearch.LabelIDs.includes(labelID) ||
-        (address && messageToSearch.AddressID !== address) ||
-        (begin && messageToSearch.Time < begin) ||
-        (end && messageToSearch.Time > end) ||
-        (from &&
-            !messageToSearch.Sender.Address.toLocaleLowerCase().includes(from) &&
-            !messageToSearch.Sender.Name.toLocaleLowerCase().includes(from)) ||
-        (typeof attachments !== 'undefined' &&
-            ((attachments === 0 && messageToSearch.NumAttachments > 0) ||
-                (attachments === 1 && messageToSearch.NumAttachments === 0))) ||
-        (typeof decryptionError !== 'undefined' && decryptionError !== messageToSearch.decryptionError) ||
-        (typeof filter?.Unread !== 'undefined' && filter?.Unread !== messageToSearch.Unread)
-    ) {
+    const transformRecipients = (recipients: Recipient[]) => [
+        ...recipients.map((recipient) => recipient.Address.toLocaleLowerCase()),
+        ...recipients.map((recipient) => recipient.Name.toLocaleLowerCase()),
+    ];
+
+    const recipients = transformRecipients(getRecipients(messageToSearch));
+    const sender = transformRecipients([Sender]);
+
+    if (!testMetadata(normalisedSearchParams, messageToSearch, recipients, sender)) {
         return false;
-    }
-
-    if (to) {
-        let keywordFound = false;
-        for (const recipient of getRecipients(messageToSearch)) {
-            keywordFound =
-                keywordFound ||
-                recipient.Address.toLocaleLowerCase().includes(to) ||
-                recipient.Name.toLocaleLowerCase().includes(to);
-        }
-        if (!keywordFound) {
-            return false;
-        }
     }
 
     if (incrementMessagesSearched) {
         incrementMessagesSearched();
     }
 
+    const { normalisedKeywords } = normalisedSearchParams;
     if (!normalisedKeywords) {
         return true;
     }
 
-    return testKeyword(normalisedKeywords, messageToSearch);
+    return testKeywords(normalisedKeywords, messageToSearch, [...recipients, ...sender]);
 };
 
 /**
