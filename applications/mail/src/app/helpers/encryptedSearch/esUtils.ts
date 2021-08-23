@@ -7,7 +7,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { IDBPDatabase, openDB } from 'idb';
 import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
 import { getMessageFromDB } from './esSync';
-import { sizeOfCachedMessage } from './esSearch';
+import { sizeOfCachedMessage } from './esCache';
 
 /**
  * Check whether the index key exists
@@ -150,7 +150,10 @@ export const removeMessageSize = async (
 ) => {
     const message = await getMessageFromDB(ID, indexKey, esDB);
     if (!message) {
-        return 0;
+        // If the message is not in IndexedDB, it means the latter is only partial for
+        // space constraints and the message was too old to fit. In this case, any update
+        // is ignored
+        return -1;
     }
     const size = sizeOfCachedMessage(message);
     updateSizeIDB(userID, -size);

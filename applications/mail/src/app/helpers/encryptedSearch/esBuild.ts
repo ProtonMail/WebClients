@@ -27,8 +27,8 @@ import {
 } from '../../constants';
 import { refreshOpenpgp, updateSizeIDB } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
-import { sizeOfCachedMessage } from './esSearch';
 import { toText } from '../parserHtml';
+import { sizeOfCachedMessage } from './esCache';
 
 /**
  * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
