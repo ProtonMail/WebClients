@@ -117,7 +117,7 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
     ];
 
     return (
-        <div className="transfers-manager-toolbar">
+        <div className="transfers-manager-toolbar" data-testid="drive-transfers-manager:toolbar-details">
             <Details
                 open={isExpanded}
                 onToggle={() => {
