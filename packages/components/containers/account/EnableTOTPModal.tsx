@@ -57,9 +57,10 @@ const EnableTOTPModal = (props: any) => {
                     ? 'https://protonvpn.com/support/two-factor-authentication'
                     : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
 
+            // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
             const guideButton = (
                 <Href key="0" url={twoFactorAuthLink}>{c('Info')
-                    .t`reading our two-factor authentication Guide first`}</Href>
+                    .t`read our two-factor authentication Guide first`}</Href>
             );
 
             return {
@@ -70,8 +71,11 @@ const EnableTOTPModal = (props: any) => {
                                 .t`This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.`}
                         </Block>
                         <Alert>
-                            {c('Info')
-                                .jt`If you have never used two-factor authentication before, we strongly recommend you ${guideButton}.`}
+                            {
+                                // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
+                                c('Info')
+                                    .jt`If you have never used two-factor authentication before, we strongly recommend you ${guideButton}.`
+                            }
                         </Alert>
                     </>
                 ),
