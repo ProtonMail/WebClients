@@ -65,10 +65,9 @@ const MnemonicPromptModal = (props: Props) => {
                         <div className="pb1 text-center mauto w66 on-mobile-w100">
                             <img src={userPromptSvg} alt="" />
                         </div>
-                        <h1 className="mb0-5 text-2xl text-bold text-center">{c('Info')
-                            .t`Create recovery passphrase`}</h1>
+                        <h1 className="mb0-5 text-2xl text-bold text-center">{c('Info').t`Create recovery phrase`}</h1>
                         <p className="mt0 mb0">{c('Info')
-                            .t`A recovery passphrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}</p>
+                            .t`A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}</p>
                     </>
                 ),
                 footer: (
@@ -79,7 +78,7 @@ const MnemonicPromptModal = (props: Props) => {
                             loading={!mnemonicData || reactivatingMnemonic}
                             color="norm"
                         >
-                            {c('Action').t`Create passphrase`}
+                            {c('Action').t`Create recovery phrase`}
                         </Button>
                         <Button className="mt1" onClick={onClose} fullWidth>
                             {c('Action').t`Don't secure account`}
@@ -97,7 +96,7 @@ const MnemonicPromptModal = (props: Props) => {
             const { mnemonic } = mnemonicData;
 
             return {
-                title: c('Info').t`Your recovery passphrase`,
+                title: c('Info').t`Your recovery phrase`,
                 section: <MnemonicPhraseStepContent mnemonic={mnemonic} />,
                 footer: <MnemonicPhraseStepButtons mnemonic={mnemonic} />,
             };
