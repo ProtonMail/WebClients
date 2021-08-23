@@ -115,14 +115,14 @@ const replyAll = (
 /**
  * Format and build a forward
  */
-const forward = (
-    { data, decryptedSubject = '' }: PartialMessageExtended,
-    useEncrypted = false
-): PartialMessageExtended => {
+const forward = (referenceMessage: PartialMessageExtended, useEncrypted = false): PartialMessageExtended => {
+    const { data, decryptedSubject = '' } = referenceMessage;
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data?.Subject, FW_PREFIX);
     const Attachments = data?.Attachments;
 
-    return { data: { Subject, ToList: [], Attachments } };
+    const { messageImages } = keepEmbeddeds(referenceMessage);
+
+    return { data: { Subject, ToList: [], Attachments }, messageImages };
 };
 
 export const handleActions = (
