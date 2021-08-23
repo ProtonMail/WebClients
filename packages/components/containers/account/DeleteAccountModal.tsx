@@ -160,8 +160,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                     {c('Info')
                         .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}
                 </div>
-                <div>{c('Info')
-                    .t`If you wish to delete this account in order to combine it with another one, do NOT delete it.`}</div>
+                <div>{c('Info').t`If you wish to combine this account with another one, do NOT delete it.`}</div>
             </Alert>
             <Row>
                 <Label htmlFor="reason">{c('Label').t`What is the main reason you are deleting your account?`}</Label>
@@ -179,7 +178,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             </Row>
             <Row>
                 <Label htmlFor="feedback">{c('Label')
-                    .t`We are sorry to see you go. Please explain why you are leaving to help us to improve.`}</Label>
+                    .t`We are sorry to see you go. Please explain why you are leaving to help us improve.`}</Label>
                 <Field>
                     <TextArea
                         id="feedback"
