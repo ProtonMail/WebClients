@@ -16,7 +16,7 @@ const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
                     className="transfers-manager-list-item-controls-button"
                     title={title}
                     key={title}
-                    data-test-id={actionType ? `drive-transfers-manager:toolbar-button-${actionType}` : undefined}
+                    data-testid={actionType ? `drive-transfers-manager:toolbar-button-${actionType}` : undefined}
                 >
                     <Icon size={12} name={iconName} />
                 </Button>
