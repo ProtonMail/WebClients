@@ -21,7 +21,6 @@ function ItemCell({
     className,
     item,
     selectedItems,
-    layoutType,
     onToggleSelect,
     onClick,
     onShiftClick,
@@ -53,9 +52,6 @@ function ItemCell({
     });
 
     const thumbnailProvider = useThumbnailsDownloadProvider();
-
-    // Backend do not provide thumbnail in shared or trash for now.
-    const isThumbnailDisabled = layoutType === 'trash' || layoutType === 'sharing';
 
     useEffect(() => {
         if (item.HasThumbnail) {
@@ -101,7 +97,7 @@ function ItemCell({
                 {...itemHandlers}
             >
                 <div className="flex flex-item-fluid flex-justify-center flex-align-items-center file-browser-grid-item--container">
-                    {item.CachedThumbnailURL && !isThumbnailDisabled ? (
+                    {item.CachedThumbnailURL ? (
                         <img
                             src={item.CachedThumbnailURL}
                             className="file-browser-grid-item--thumbnail"
