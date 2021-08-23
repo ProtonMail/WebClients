@@ -103,7 +103,7 @@ const testKeywords = (normalisedKeywords: string[], messageToSearch: CachedMessa
     const { Subject, decryptedBody, decryptedSubject } = messageToSearch;
     const subject = decryptedSubject || Subject;
 
-    const messageStrings = [subject, ...addresses, decryptedBody || ''];
+    const messageStrings = [subject.toLocaleLowerCase(), ...addresses, (decryptedBody || '').toLocaleLowerCase()];
 
     let result = true;
     let index = 0;
