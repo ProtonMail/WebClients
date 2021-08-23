@@ -30,6 +30,7 @@ import {
     MessageForSearch,
     IsSearchResult,
     ESCache,
+    ESSetsElementsCache,
 } from '../models/encryptedSearch';
 import { defaultESCache, defaultESStatus, PAGE_SIZE } from '../constants';
 import { extractSearchParameters, filterFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
@@ -87,7 +88,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // Keep a reference to cached messages, such that they can be queried at any time
     const esCacheRef = useRef<ESCache>(defaultESCache);
     // Allow to abort indexing
-    const abortControllerRef = useRef<AbortController>(new AbortController());
+    const abortIndexingRef = useRef<AbortController>(new AbortController());
+    // Allow to abort searching
+    const abortSearchingRef = useRef<AbortController>(new AbortController());
     // Allow to track progress during indexing or refreshing
     const progressRecorderRef = useRef<[number, number]>([0, 0]);
     // Allow to track progress during indexing or refreshing
@@ -105,7 +108,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Delete localStorage blobs and IDB
      */
     const esDelete = async () => {
-        abortControllerRef.current.abort();
+        abortIndexingRef.current.abort();
+        abortSearchingRef.current.abort();
         removeItem(`ES:${userID}:Key`);
         removeItem(`ES:${userID}:Event`);
         removeItem(`ES:${userID}:BuildProgress`);
@@ -120,7 +124,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Abort ongoing operations if the user logs out
      */
     useOnLogout(async () => {
-        abortControllerRef.current.abort();
+        abortIndexingRef.current.abort();
+        abortSearchingRef.current.abort();
     });
 
     /**
@@ -176,22 +181,27 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const toggleEncryptedSearch = () => {
         const currentOption = esStatus.esEnabled;
+
         setESStatus((esStatus) => {
             return {
                 ...esStatus,
                 esEnabled: !currentOption,
             };
         });
+
         if (currentOption) {
+            abortSearchingRef.current.abort();
             removeItem(`ES:${userID}:ESEnabled`);
         } else {
-            // Every time ES is enabled, we reset sorting to avoid carrying on with size sorting if
-            // it was previously used
+            // Every time ES is enabled, we reset sorting to avoid carrying on with SIZE sorting in
+            // case it was previously used. SIZE sorting is not supported by ES
             if (testIsSearch(extractSearchParameters(location))) {
                 history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
             }
             setItem(`ES:${userID}:ESEnabled`, 'true');
         }
+
+        // If IDB was evicted by the browser in the meantime, we erase everything else too
         void canUseES(userID).then((isIDBIntact) => {
             if (!isIDBIntact) {
                 void dbCorruptError();
@@ -523,7 +533,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Pause a running indexig
      */
     const pauseIndexing = async () => {
-        abortControllerRef.current.abort();
+        abortIndexingRef.current.abort();
         setESStatus((esStatus) => {
             return {
                 ...esStatus,
@@ -563,7 +573,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         };
 
         removeItem(`ES:${userID}:Pause`);
-        abortControllerRef.current = new AbortController();
+        abortIndexingRef.current = new AbortController();
 
         let indexKey: CryptoKey;
         if (!indexKeyExists(userID) && !isResumed) {
@@ -603,10 +613,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 recordProgress(newProgress, totalMessages);
             };
 
-            success = await buildDB(userID, indexKey, getMessageKeys, api, abortControllerRef, recordProgressLocal);
+            success = await buildDB(userID, indexKey, getMessageKeys, api, abortIndexingRef, recordProgressLocal);
 
             // Kill switch in case user logs out or pauses
-            if (abortControllerRef.current.signal.aborted || isPaused(userID)) {
+            if (abortIndexingRef.current.signal.aborted || isPaused(userID)) {
                 return;
             }
 
@@ -675,6 +685,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return false;
         }
 
+        // Prevent old searches from interfering with newer ones
+        abortSearchingRef.current.abort();
+
         const searchParameters = extractSearchParameters(location);
         const filterParameter = filterFromUrl(location);
         const sortParameter = sortFromUrl(location);
@@ -703,6 +716,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             numMessagesSearched++;
         };
 
+        abortSearchingRef.current = new AbortController();
+        const controlledSetCache: ESSetsElementsCache = (Elements, page) => {
+            if (!abortSearchingRef.current.signal.aborted) {
+                setCache(Elements, page);
+            }
+        };
+
         let searchResults: MessageForSearch[] = [];
         let isSearchPartial = false;
         let lastEmail: LastEmail | undefined;
@@ -714,7 +734,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 getUserKeys,
                 userID,
                 incrementMessagesSearched,
-                setCache
+                controlledSetCache,
+                abortSearchingRef
             ));
         } catch (error) {
             // If the key is the problem, then we want to wipe the DB and fall back to
@@ -727,32 +748,34 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             throw error;
         }
 
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                permanentResults: searchResults,
-                labelID,
-                setElementsCache: setCache,
-                lastEmail,
-                previousNormSearchParams: normalisedSearchParams,
-                page: 0,
-                isSearchPartial,
-                isSearching: false,
-            };
-        });
-        setCache(searchResults);
+        if (!abortSearchingRef.current.signal.aborted) {
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    permanentResults: searchResults,
+                    labelID,
+                    setElementsCache: setCache,
+                    lastEmail,
+                    previousNormSearchParams: normalisedSearchParams,
+                    page: 0,
+                    isSearchPartial,
+                    isSearching: false,
+                };
+            });
+            setCache(searchResults);
 
-        const t2 = performance.now();
-        void sendESMetrics(
-            api,
-            userID,
-            esCacheRef.current.cacheSize,
-            numMessagesSearched,
-            Math.ceil(t2 - t1),
-            searchResults.length,
-            !esCacheRef.current.isCacheReady,
-            esCacheRef.current.isCacheLimited
-        );
+            const t2 = performance.now();
+            void sendESMetrics(
+                api,
+                userID,
+                esCacheRef.current.cacheSize,
+                numMessagesSearched,
+                Math.ceil(t2 - t1),
+                searchResults.length,
+                !esCacheRef.current.isCacheReady,
+                esCacheRef.current.isCacheLimited
+            );
+        }
 
         return true;
     };
@@ -772,7 +795,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             isSearchPartial,
             cachedIndexKey,
         } = esStatus;
-        if (!dbExists || !esEnabled || !isCacheLimited) {
+        if (!dbExists || !esEnabled || !isCacheLimited || abortSearchingRef.current.signal.aborted) {
             return false;
         }
 
@@ -828,21 +851,24 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             messageLimit,
             beginOrder: lastEmail?.Order,
             lastEmailTime: lastEmail?.Time,
+            abortSearchingRef,
         });
 
-        permanentResults.push(...searchOutput.resultsArray);
-        const newIsSearchPartial = !!searchOutput.lastEmail;
+        if (!abortSearchingRef.current.signal.aborted) {
+            permanentResults.push(...searchOutput.resultsArray);
+            const newIsSearchPartial = !!searchOutput.lastEmail;
 
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                permanentResults,
-                lastEmail: searchOutput.lastEmail,
-                isSearchPartial: newIsSearchPartial,
-                isSearching: false,
-            };
-        });
-        setElementsCache(permanentResults, page);
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    permanentResults,
+                    lastEmail: searchOutput.lastEmail,
+                    isSearchPartial: newIsSearchPartial,
+                    isSearching: false,
+                };
+            });
+            setElementsCache(permanentResults, page);
+        }
 
         return true;
     };
@@ -931,6 +957,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // Remove previous search data from the status when no longer in search mode
     useEffect(() => {
         if (!isSearch) {
+            abortSearchingRef.current.abort();
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,

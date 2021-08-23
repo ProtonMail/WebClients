@@ -210,7 +210,7 @@ const storeMessages = async (
     indexKey: CryptoKey,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    abortControllerRef: React.MutableRefObject<AbortController>,
+    abortIndexingRef: React.MutableRefObject<AbortController>,
     recordLocalProgress: (localProgress: number) => void
 ) => {
     const numMessagesBefore = await esDB.count('messages');
@@ -219,11 +219,11 @@ const storeMessages = async (
     let counter = 1;
 
     const esIteratee = async (message: Message) => {
-        if (abortControllerRef.current.signal.aborted) {
+        if (abortIndexingRef.current.signal.aborted) {
             throw new Error('Operation aborted');
         }
 
-        const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortControllerRef.current.signal);
+        const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortIndexingRef.current.signal);
 
         if (!messageToCache) {
             throw new Error('Plaintext to store is undefined');
@@ -280,7 +280,7 @@ const storeMessagesBatches = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     api: Api,
-    abortControllerRef: React.MutableRefObject<AbortController>,
+    abortIndexingRef: React.MutableRefObject<AbortController>,
     inputLastMessage: RecoveryPoint | undefined,
     recordProgress: (progress: number) => void
 ) => {
@@ -290,7 +290,7 @@ const storeMessagesBatches = async (
             EndID: inputLastMessage?.ID,
             End: inputLastMessage?.Time,
         },
-        abortControllerRef.current.signal
+        abortIndexingRef.current.signal
     );
 
     let Messages: Message[];
@@ -317,7 +317,7 @@ const storeMessagesBatches = async (
             indexKey,
             api,
             getMessageKeys,
-            abortControllerRef,
+            abortIndexingRef,
             recordLocalProgress
         ).catch((error) => {
             if (error.name === 'QuotaExceededError') {
@@ -329,7 +329,7 @@ const storeMessagesBatches = async (
             }
         });
 
-        if (!storeOutput || abortControllerRef.current.signal.aborted) {
+        if (!storeOutput || abortIndexingRef.current.signal.aborted) {
             return false;
         }
         const { recoveryPoint, batchSize } = storeOutput;
@@ -351,7 +351,7 @@ const storeMessagesBatches = async (
                 EndID: recoveryPoint.ID,
                 End: recoveryPoint.Time,
             },
-            abortControllerRef.current.signal
+            abortIndexingRef.current.signal
         );
 
         if (!resultMetadata) {
@@ -377,7 +377,7 @@ export const buildDB = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     api: Api,
-    abortControllerRef: React.MutableRefObject<AbortController>,
+    abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void
 ) => {
     const recoverBlob = getItem(`ES:${userID}:Recover`);
@@ -397,7 +397,7 @@ export const buildDB = async (
         indexKey,
         getMessageKeys,
         api,
-        abortControllerRef,
+        abortIndexingRef,
         recoveryPoint,
         recordProgress
     );
