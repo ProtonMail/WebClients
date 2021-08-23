@@ -4,7 +4,7 @@ import { localisedForwardFlags } from '../../constants';
 import { CachedMessage, ESBaseMessage, MessageForSearch, NormalisedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
 import { isMessageForwarded, prepareMessageMetadata } from './esBuild';
-import { applySearch, getTimeLimits, normaliseSearchParams, sizeOfCache, splitCachedMessage } from './esSearch';
+import { applySearch, getTimeLimits, normaliseSearchParams, splitCachedMessage } from './esSearch';
 import { compareESBaseMessages } from './esSync';
 
 describe('encryptedSearch', () => {
@@ -257,13 +257,6 @@ describe('encryptedSearch', () => {
         it('should split a CachedMessage into a MessageForSearch', () => {
             const splitMessage = splitCachedMessage(cachedMessage);
             expect(splitMessage).toStrictEqual(messageForSearch);
-        });
-    });
-
-    describe('sizeOfCache', () => {
-        const esCache: CachedMessage[] = [cachedMessage, cachedMessage, cachedMessage, cachedMessage];
-        it('should estimate the size of the entire cache', () => {
-            expect(sizeOfCache(esCache)).toEqual(1016);
         });
     });
 });

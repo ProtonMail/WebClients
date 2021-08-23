@@ -18,15 +18,16 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
     const location = useLocation();
     const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputTotal, inputOnPage);
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled, isSearchPartial, isCacheLimited } = getESDBStatus();
+    const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
     const searchParameters = extractSearchParameters(location);
     const isSearch = testIsSearch(searchParameters);
 
-    const useLoadMore = isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial;
+    const useLoadMore =
+        isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial && !isSearching;
     const loadMore = (
         <DropdownMenuButton
             className="text-underline"
-            onClick={() => onPage(total + 1)}
+            onClick={() => onPage(total)}
             aria-label={c('Action').t`Load more`}
         >
             {c('Action').t`Load more`}

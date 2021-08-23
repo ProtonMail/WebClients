@@ -1,12 +1,13 @@
-import { Recipient } from '@proton/shared/lib/interfaces';
 import { IDBPDatabase, openDB } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Element } from '../../models/element';
 import {
     CachedMessage,
     EncryptedSearchDB,
+    ESCache,
     GetUserKeys,
     LastEmail,
     MessageForSearch,
@@ -14,8 +15,8 @@ import {
     StoredCiphertext,
     UncachedSearchOptions,
 } from '../../models/encryptedSearch';
-import { ES_MAX_CACHE, ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
-import { getNumMessagesDB, getOldestTime } from './esUtils';
+import { ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
+import { getOldestTime } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
 /**
@@ -197,7 +198,7 @@ export const splitCachedMessage = (cachedMessage: CachedMessage) => {
 /**
  * Initialise some helpers to query the correct time frames
  */
-export const initialiseQuery = async (userID: string, beginOrder: number | undefined, begin?: number, end?: number) => {
+export const initialiseQuery = async (userID: string, beginOrder?: number, begin?: number, end?: number) => {
     // Data is retrieved in batches, in such a way that decryption of earlier batches
     // can start before fetching later batches. Messages are retrieved in reverse chronological order.
     // Initial time represents the oldest moment in time the search has to go back to. It is
@@ -264,22 +265,25 @@ export const uncachedSearchAsc = async (
 
         lowerBound = [storedData[storedData.length - 1].Time, storedData[storedData.length - 1].Order];
 
-        for (const storedCiphertext of storedData) {
-            if (!storedCiphertext.LabelIDs.includes(normalisedSearchParams.labelID)) {
-                continue;
-            }
-            const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
-            if (!messageToSearch) {
-                continue;
-            }
-            if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-                const messageForSearch = splitCachedMessage(messageToSearch);
-                resultsArray.push(messageForSearch);
-            }
-            if (messageLimit && resultsArray.length >= messageLimit) {
-                lastEmail = { Time: storedCiphertext.Time, Order: storedCiphertext.Order };
-                break;
-            }
+        await Promise.all(
+            storedData.map(async (storedCiphertext) => {
+                if (!storedCiphertext.LabelIDs.includes(normalisedSearchParams.labelID)) {
+                    return;
+                }
+                const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
+                if (!messageToSearch) {
+                    return;
+                }
+                if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
+                    const messageForSearch = splitCachedMessage(messageToSearch);
+                    resultsArray.push(messageForSearch);
+                }
+            })
+        );
+
+        if (messageLimit && resultsArray.length >= messageLimit) {
+            const lastCiphertext = storedData[storedData.length - 1];
+            lastEmail = { Time: lastCiphertext.Time, Order: lastCiphertext.Order };
         }
 
         if (normalisedSearchParams.end && storedData[storedData.length - 1].Time > normalisedSearchParams.end) {
@@ -323,23 +327,25 @@ export const uncachedSearchDesc = async (
         let storedData: StoredCiphertext[];
         ({ lower, upper, startingOrder, storedData } = await queryNewData(getTimes, lower, upper, startingOrder, esDB));
 
-        for (let index = storedData.length - 1; index >= 0; index--) {
-            const storedCiphertext = storedData[index];
-            if (!storedCiphertext.LabelIDs.includes(normalisedSearchParams.labelID)) {
-                continue;
-            }
-            const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
-            if (!messageToSearch) {
-                continue;
-            }
-            if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-                const messageForSearch = splitCachedMessage(messageToSearch);
-                resultsArray.push(messageForSearch);
-            }
-            if (messageLimit && resultsArray.length >= messageLimit) {
-                lastEmail = { Time: storedCiphertext.Time, Order: storedCiphertext.Order };
-                break;
-            }
+        await Promise.all(
+            storedData.map(async (storedCiphertext) => {
+                if (!storedCiphertext.LabelIDs.includes(normalisedSearchParams.labelID)) {
+                    return;
+                }
+                const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
+                if (!messageToSearch) {
+                    return;
+                }
+                if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
+                    const messageForSearch = splitCachedMessage(messageToSearch);
+                    resultsArray.push(messageForSearch);
+                }
+            })
+        );
+
+        if (messageLimit && resultsArray.length >= messageLimit) {
+            const lastCiphertext = storedData[0];
+            lastEmail = { Time: lastCiphertext.Time, Order: lastCiphertext.Order };
         }
 
         if (lower[0] === initialTime) {
@@ -357,167 +363,9 @@ export const uncachedSearchDesc = async (
 };
 
 /**
- * Estimate the size of a CachedMessage object
- */
-export const sizeOfCachedMessage = (cachedMessage: CachedMessage) => {
-    const sizeOfRecipient = (recipient: Recipient) => {
-        let innerBytes = 0;
-        let innerKey: keyof typeof recipient;
-        for (innerKey in recipient) {
-            if (Object.prototype.hasOwnProperty.call(recipient, innerKey)) {
-                const innerValue = recipient[innerKey];
-                if (!innerValue) {
-                    continue;
-                }
-                innerBytes += (innerKey.length + innerValue.length) * 2;
-            }
-        }
-        return innerBytes;
-    };
-
-    let bytes = 0;
-    let key: keyof typeof cachedMessage;
-
-    for (key in cachedMessage) {
-        if (Object.prototype.hasOwnProperty.call(cachedMessage, key)) {
-            const value = cachedMessage[key];
-            if (!value) {
-                continue;
-            }
-
-            bytes += key.length * 2;
-
-            if (typeof value === 'boolean') {
-                bytes += 4;
-            } else if (typeof value === 'string') {
-                bytes += value.length * 2;
-            } else if (typeof value === 'number') {
-                bytes += 8;
-            } else if (Array.isArray(value)) {
-                for (let i = 0; i < value.length; i++) {
-                    const innerValue = value[i];
-                    if (typeof innerValue === 'string') {
-                        bytes += innerValue.length * 2;
-                    } else {
-                        bytes += sizeOfRecipient(innerValue);
-                    }
-                }
-            } else {
-                bytes += sizeOfRecipient(value);
-            }
-        }
-    }
-
-    return bytes;
-};
-
-/**
- * Check whether the cache is limited
- */
-export const checkIsCacheLimited = async (userID: string, esCacheLength: number) => {
-    const count = await getNumMessagesDB(userID);
-    return esCacheLength < count;
-};
-
-/**
- * Callback to sort cached messages by Time and Order
- */
-export const sortCachedMessages = (firstEl: CachedMessage, secondEl: CachedMessage) => {
-    return firstEl.Time - secondEl.Time || firstEl.Order - secondEl.Order;
-};
-
-/**
- * Cache IndexedDB
- */
-export const cacheDB = async (
-    indexKey: CryptoKey,
-    userID: string,
-    cacheLimit: number = ES_MAX_CACHE,
-    endTime?: number,
-    beginOrder?: number
-) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
-
-    // If IDB is empty, there is nothing to cache
-    if ((await esDB.count('messages')) === 0) {
-        return {
-            cachedMessages: [],
-            isCacheLimited: false,
-        };
-    }
-
-    const queryStart = await initialiseQuery(userID, beginOrder, undefined, endTime);
-    const { getTimes, initialTime } = queryStart;
-    let { lower, upper, startingOrder } = queryStart;
-    const cachedMessages: CachedMessage[] = [];
-    let cacheSize = 0;
-    let isCacheLimited = false;
-
-    while (!isCacheLimited) {
-        let storedData: StoredCiphertext[];
-        ({ lower, upper, startingOrder, storedData } = await queryNewData(getTimes, lower, upper, startingOrder, esDB));
-
-        for (let index = storedData.length - 1; index >= 0; index--) {
-            const storedCiphertext = storedData[index];
-            const messageToCache = await decryptFromDB(storedCiphertext, indexKey);
-            if (!messageToCache) {
-                continue;
-            }
-            cacheSize += sizeOfCachedMessage(messageToCache);
-            if (cacheSize < cacheLimit) {
-                cachedMessages.push(messageToCache);
-            } else {
-                isCacheLimited = true;
-                break;
-            }
-        }
-
-        if (lower[0] === initialTime) {
-            break;
-        }
-    }
-
-    esDB.close();
-
-    // Sort the cached messages by time, such that the first element is the oldest
-    cachedMessages.sort(sortCachedMessages);
-
-    return {
-        cachedMessages,
-        isCacheLimited,
-    };
-};
-
-/**
- * Fills a partial cache with new messages from IDB
- */
-export const updateCache = async (
-    indexKey: CryptoKey,
-    userID: string,
-    lastEmail: LastEmail,
-    esCache: CachedMessage[],
-    cacheLimit: number
-) => {
-    const { cachedMessages } = await cacheDB(indexKey, userID, cacheLimit, lastEmail.Time, lastEmail.Order);
-    esCache.push(...cachedMessages);
-    esCache.sort(sortCachedMessages);
-};
-
-/**
- * Estimate the size of the entire cache
- */
-export const sizeOfCache = (esCache: CachedMessage[]) => {
-    let size = 0;
-    esCache.forEach((cachedMessage) => {
-        size += sizeOfCachedMessage(cachedMessage);
-    });
-    return size;
-};
-
-/**
  * Perfom an cached search, i.e. over the given messages only
  */
-export const cachedSearch = async (
+export const cachedSearch = (
     esCache: CachedMessage[],
     normalisedSearchParams: NormalisedSearchParams,
     incrementMessagesSearched: () => void
@@ -566,9 +414,8 @@ export const uncachedSearch = async (
  * Perform a search by switching between cached and uncached search when necessary
  */
 export const hybridSearch = async (
-    esCache: CachedMessage[],
+    esCacheRef: React.MutableRefObject<ESCache>,
     normalisedSearchParams: NormalisedSearchParams,
-    isCacheLimited: boolean,
     cachedIndexKey: CryptoKey | undefined,
     getUserKeys: GetUserKeys,
     userID: string,
@@ -580,79 +427,116 @@ export const hybridSearch = async (
     let lastEmail: LastEmail | undefined;
     const isDescending = normalisedSearchParams.sort.desc;
 
-    if (esCache.length) {
-        // The cache contains the newest messages, which means that if chronological order is chosen with
-        // a limited cache, the latter should be ignored
-        if (!isCacheLimited || isDescending) {
-            searchResults.push(...(await cachedSearch(esCache, normalisedSearchParams, incrementMessagesSearched)));
+    // Messages in cache are the most recent ones, therefore if the cache is not ready and full and the search
+    // is in descending order, we cannot used cached messages
+    if (isDescending || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
+        // searchResults is initialised with the first portion of cached results
+        let lastLength = esCacheRef.current.esCache.length;
+        searchResults = cachedSearch(esCacheRef.current.esCache, normalisedSearchParams, incrementMessagesSearched);
+        let resultsCounter = searchResults.length;
+
+        // The first batch of results (if any) are shown only if the cache is still being built, or if it has finished
+        // but it's limited. Otherwise we want to show all results at the end
+        if (resultsCounter !== 0 && (!esCacheRef.current.isCacheReady || esCacheRef.current.isCacheLimited)) {
+            setCache(searchResults);
         }
 
-        if (isCacheLimited) {
-            // If enough messages to fill two pages were already found, we don't continue the search
-            if (searchResults.length >= 2 * PAGE_SIZE) {
-                const lastEmailInCache: LastEmail = { Time: esCache[0].Time, Order: esCache[0].Order };
-                return { searchResults, isSearchPartial: true, lastEmail: lastEmailInCache };
+        // If the cache is still being built, incremental portions of cache are searched
+        while (!esCacheRef.current.isCacheReady) {
+            const newLastLength = esCacheRef.current.esCache.length;
+            searchResults.push(
+                ...cachedSearch(
+                    esCacheRef.current.esCache.slice(lastLength),
+                    normalisedSearchParams,
+                    incrementMessagesSearched
+                )
+            );
+
+            // In case there are new results, we show them
+            if (searchResults.length > resultsCounter) {
+                setCache(searchResults);
             }
 
-            // If the cache hasn't been searched because the order is ascending, the search
-            // parameters shouldn't be influenced by the cache timespan
-            let shouldKeepSearching = true;
-            let beginOrder: number | undefined;
-            if (isDescending) {
-                // The remaining messages are searched from DB, but only if the indicated timespan
-                // hasn't been already covered by cache. The cache is ordered such that the first message is the oldest
-                const { Time: startCache } = esCache[0];
-                beginOrder = esCache[0].Order;
-                const intervalEnd = Math.min(startCache, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
-                const intervalStart = normalisedSearchParams.begin || 0;
-                shouldKeepSearching = intervalStart < startCache;
-                normalisedSearchParams = {
-                    ...normalisedSearchParams,
-                    begin: intervalStart,
-                    end: intervalEnd,
-                };
-            }
-
-            if (shouldKeepSearching) {
-                if (searchResults.length > 0) {
-                    setCache(searchResults);
-                }
-
-                const remainingMessages = 2 * PAGE_SIZE - searchResults.length;
-
-                const setCacheIncremental = (newResults: MessageForSearch[]) => {
-                    setCache(searchResults.concat(newResults));
-                };
-
-                const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
-                if (!indexKey) {
-                    throw new Error('Key not found');
-                }
-
-                const uncachedResult = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
-                    incrementMessagesSearched,
-                    messageLimit: remainingMessages,
-                    setCache: setCacheIncremental,
-                    beginOrder,
-                });
-                searchResults.push(...uncachedResult.resultsArray);
-                lastEmail = uncachedResult.lastEmail;
-                isSearchPartial = !!lastEmail;
-            }
+            resultsCounter = searchResults.length;
+            lastLength = newLastLength;
+            await wait(200);
         }
-    } else {
+
+        // To avoid any race condition at the end of the while loop, one last search of the very last portion
+        // is performed
+        searchResults.push(
+            ...cachedSearch(
+                esCacheRef.current.esCache.slice(lastLength),
+                normalisedSearchParams,
+                incrementMessagesSearched
+            )
+        );
+
+        // Once caching has terminated, if the cache turns out to be not limited, we stop searching
+        if (!esCacheRef.current.isCacheLimited) {
+            return {
+                searchResults,
+                isSearchPartial,
+                lastEmail,
+            };
+        }
+
+        // If enough messages to fill two pages were already found, we don't continue the search
+        if (searchResults.length >= 2 * PAGE_SIZE) {
+            // The last message in cache is assumed to be the oldest
+            const { Time, Order } = esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1];
+            const lastEmailInCache: LastEmail = { Time, Order };
+            return {
+                searchResults,
+                isSearchPartial: true,
+                lastEmail: lastEmailInCache,
+            };
+        }
+
+        // If there were more results in the last batch, we show them before continuing with uncached search
+        if (searchResults.length > resultsCounter) {
+            setCache(searchResults);
+        }
+    }
+
+    // If the cache hasn't been searched because the order is ascending, the search
+    // parameters shouldn't be influenced by the cache timespan
+    let shouldKeepSearching = true;
+    let beginOrder: number | undefined;
+    if (isDescending) {
+        // The remaining messages are searched from DB, but only if the indicated timespan
+        // hasn't been already covered by cache. The cache is ordered such that the last message is the oldest
+        const { Time: startCache, Order } = esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1];
+        beginOrder = Order;
+        const intervalEnd = Math.min(startCache, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
+        const intervalStart = normalisedSearchParams.begin || 0;
+        shouldKeepSearching = intervalStart < startCache;
+        normalisedSearchParams = {
+            ...normalisedSearchParams,
+            begin: intervalStart,
+            end: intervalEnd,
+        };
+    }
+
+    if (shouldKeepSearching) {
+        const remainingMessages = 2 * PAGE_SIZE - searchResults.length;
+
+        const setCacheIncremental = (newResults: MessageForSearch[]) => {
+            setCache(searchResults.concat(newResults));
+        };
+
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         if (!indexKey) {
             throw new Error('Key not found');
         }
 
-        // This is used if the cache is empty
         const uncachedResult = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
             incrementMessagesSearched,
-            messageLimit: 2 * PAGE_SIZE,
-            setCache,
+            messageLimit: remainingMessages,
+            setCache: setCacheIncremental,
+            beginOrder,
         });
-        searchResults = uncachedResult.resultsArray;
+        searchResults.push(...uncachedResult.resultsArray);
         lastEmail = uncachedResult.lastEmail;
         isSearchPartial = !!lastEmail;
     }

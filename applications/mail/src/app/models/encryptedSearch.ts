@@ -85,7 +85,6 @@ export interface ESStatus {
     permanentResults: MessageForSearch[];
     setElementsCache: ESSetsElementsCache;
     labelID: string;
-    cachePromise: Promise<CachedMessage[]>;
     lastEmail: LastEmail | undefined;
     previousNormSearchParams: NormalisedSearchParams | undefined;
     page: number;
@@ -94,25 +93,32 @@ export interface ESStatus {
     isBuilding: boolean;
     isDBLimited: boolean;
     esEnabled: boolean;
-    isCacheReady: boolean;
-    isCacheLimited: boolean;
     isRefreshing: boolean;
     isSearchPartial: boolean;
     isSearching: boolean;
+    isCaching: boolean;
 }
 
-export type ESDBStatus = Pick<
-    ESStatus,
-    | 'dbExists'
-    | 'isBuilding'
-    | 'isDBLimited'
-    | 'esEnabled'
-    | 'isCacheReady'
-    | 'isCacheLimited'
-    | 'isRefreshing'
-    | 'isSearchPartial'
-    | 'isSearching'
->;
+export interface ESCache {
+    esCache: CachedMessage[];
+    cacheSize: number;
+    isCacheLimited: boolean;
+    isCacheReady: boolean;
+}
+
+export interface ESDBStatus
+    extends Pick<
+            ESStatus,
+            | 'dbExists'
+            | 'isBuilding'
+            | 'isDBLimited'
+            | 'esEnabled'
+            | 'isRefreshing'
+            | 'isSearchPartial'
+            | 'isSearching'
+            | 'isCaching'
+        >,
+        Pick<ESCache, 'isCacheLimited'> {}
 
 export interface ESIndexingState {
     esProgress: number;
@@ -143,8 +149,6 @@ export type IncrementSearch = (
     shouldLoadMore: boolean
 ) => Promise<boolean>;
 
-export type CacheIndexedDB = (force?: boolean) => Promise<{ cachedMessages: CachedMessage[]; isCacheLimited: boolean }>;
-
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 
 export type HighlightMetadata = (
@@ -157,7 +161,6 @@ export type IsSearchResult = (ID: string) => boolean;
 
 export interface EncryptedSearchFunctions {
     encryptedSearch: EncryptedSearch;
-    cacheIndexedDB: CacheIndexedDB;
     highlightString: HighlightString;
     highlightMetadata: HighlightMetadata;
     isSearchResult: IsSearchResult;
@@ -166,6 +169,7 @@ export interface EncryptedSearchFunctions {
     toggleEncryptedSearch: () => void;
     resumeIndexing: () => Promise<void>;
     pauseIndexing: () => Promise<void>;
+    cacheIndexedDB: () => Promise<void>;
     incrementSearch: IncrementSearch;
     shouldHighlight: () => boolean;
 }
