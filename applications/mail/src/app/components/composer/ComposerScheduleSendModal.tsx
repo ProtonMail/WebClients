@@ -63,6 +63,12 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit, messageLocalID }: Props)
 
         tmpDate.setHours(hours, minutes, 0, 0);
 
+        // Save scheduled date in the cache so that the user can have the date fields completed
+        // if he cancel scheduling to re-schedule it later or if he edits the message and re-schedules it
+        if (messageFromCache) {
+            messageFromCache.scheduledAt = getUnixTime(tmpDate);
+        }
+
         return tmpDate;
     }, [date, time]);
 
