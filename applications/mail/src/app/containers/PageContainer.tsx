@@ -111,8 +111,6 @@ const PageContainer = (
             isBlurred={welcomeFlags.isWelcomeFlow}
             labelID={labelID}
             elementID={elementID}
-            location={location}
-            history={history}
             breakpoints={breakpoints}
         >
             <LocationErrorBoundary>

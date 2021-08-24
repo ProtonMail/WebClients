@@ -1,6 +1,5 @@
 import { useCallback, memo } from 'react';
 import { c } from 'ttag';
-import { Location } from 'history';
 import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo, useMailSettings, Tooltip } from '@proton/components';
 
 import MailSidebarList from './MailSidebarList';
@@ -11,11 +10,10 @@ import { MESSAGE_ACTIONS } from '../../constants';
 interface Props {
     labelID: string;
     expanded?: boolean;
-    location: Location;
     onToggleExpand: () => void;
 }
 
-const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand }: Props) => {
+const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
     const onCompose = useOnCompose();
 
     const handleCompose = useCallback(() => {
@@ -50,7 +48,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand }: Pr
             version={<SidebarVersion />}
         >
             <SidebarNav>
-                <MailSidebarList labelID={labelID} location={location} />
+                <MailSidebarList labelID={labelID} />
             </SidebarNav>
         </Sidebar>
     );
