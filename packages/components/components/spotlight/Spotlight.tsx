@@ -71,7 +71,7 @@ const Spotlight = ({
         }
     };
 
-    const closeText = c('Action').t`Close spotlight`;
+    const closeText = c('Action').t`Close`;
 
     return (
         <>
