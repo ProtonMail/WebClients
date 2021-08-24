@@ -1,4 +1,4 @@
-import { CSSProperties, ChangeEvent, DragEvent } from 'react';
+import { CSSProperties, ChangeEvent, DragEvent, useState } from 'react';
 import { c } from 'ttag';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -21,6 +21,8 @@ interface Props {
     onDragStart?: (event: DragEvent) => void;
     onDragEnd?: (event: DragEvent) => void;
     dragged?: boolean;
+    index: number;
+    onFocus: (index: number) => void;
 }
 
 const ContactRow = ({
@@ -35,11 +37,23 @@ const ContactRow = ({
     onDragStart,
     onDragEnd,
     dragged,
+    index,
+    onFocus,
 }: Props) => {
     const { createNotification } = useNotifications();
     const { ID, Name, LabelIDs = [], emails = [] } = contact;
+    const [hasFocus, setHasFocus] = useState(false);
 
     const contactGroups = contact.LabelIDs.map((ID) => contactGroupsMap[ID] as ContactGroup);
+
+    const handleFocus = () => {
+        setHasFocus(true);
+        onFocus(index);
+    };
+
+    const handleBlur = () => {
+        setHasFocus(false);
+    };
 
     const handleCopyEmail = () => {
         if (emails[0]) {
@@ -62,7 +76,13 @@ const ContactRow = ({
             className={classnames([
                 'item-container item-contact flex cursor-pointer bg-global-white button-show-on-hover',
                 dragged && 'item-dragging',
+                hasFocus && 'item-is-focused',
             ])}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            tabIndex={-1}
+            data-element-id={contact.ID}
+            data-shortcut-target="contact-container"
         >
             <div className="flex flex-nowrap w100 h100 mtauto mbauto flex-align-items-center">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />

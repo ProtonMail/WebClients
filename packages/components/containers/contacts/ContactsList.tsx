@@ -1,10 +1,12 @@
-import { useRef, ChangeEvent } from 'react';
+import { useRef, ChangeEvent, useMemo } from 'react';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { List, AutoSizer } from 'react-virtualized';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import { useContactFocus } from 'proton-mail/src/app/hooks/contact/useContactFocus';
+import { useContactHotkeys } from 'proton-mail/src/app/hooks/contact/useContactHotkeys';
 import ContactRow from './ContactRow';
 import { useItemsDraggable } from '../items';
 import { classnames } from '../../helpers';
@@ -35,8 +37,31 @@ const ContactsList = ({
     activateDrag = true,
 }: Props) => {
     const listRef = useRef<List>(null);
-    const containerRef = useRef(null);
+    const listContainerRef = useRef<HTMLDivElement>(null);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
+
+    const contactIDs: string[] = useMemo(() => {
+        return contacts.map((contact) => contact.ID);
+    }, [contacts]);
+
+    const handleElement = (id: string) => onClick(id);
+
+    const { focusIndex, getFocusedId, setFocusIndex, handleFocus } = useContactFocus({
+        elementIDs: contactIDs,
+        listRef: listContainerRef,
+    });
+
+    const elementRef = useContactHotkeys(
+        {
+            elementIDs: contactIDs,
+            focusIndex,
+        },
+        {
+            getFocusedId,
+            setFocusIndex,
+            handleElement,
+        }
+    );
 
     // Useless if activateDrag is false but hook has to be run anyway
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
@@ -53,13 +78,13 @@ const ContactsList = ({
 
     return (
         <div
-            ref={containerRef}
+            ref={elementRef}
             className={classnames([
                 isDesktop ? 'items-column-list' : 'items-column-list--mobile',
                 isCompactView && 'list-compact',
             ])}
         >
-            <div className="items-column-list-inner items-column-list-inner--no-border">
+            <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--no-border">
                 <AutoSizer>
                     {({ height, width }) => (
                         <List
@@ -79,12 +104,15 @@ const ContactsList = ({
                                     onDragStart={(event) => handleDragStart?.(event, contacts[index])}
                                     onDragEnd={handleDragEnd}
                                     dragged={draggedIDs.includes(contacts[index].ID)}
+                                    index={index}
+                                    onFocus={handleFocus}
                                 />
                             )}
                             rowCount={contacts.length}
                             height={height}
                             width={width}
                             rowHeight={isCompactView ? contactRowHeightCompact : contactRowHeightComfort}
+                            tabIndex={-1}
                         />
                     )}
                 </AutoSizer>

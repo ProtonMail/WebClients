@@ -79,11 +79,15 @@ const useContactList = ({ search, contactID, contactGroupID }: Props) => {
 
     const contactIDs = useMemo(() => formattedContacts.map((contact) => contact.ID), [formattedContacts]);
 
-    const { checkedIDs, selectedIDs, handleCheck, handleCheckAll, handleCheckOne } = useItemsSelection(
-        contactID,
-        contactIDs,
-        [contactID, contactGroupID]
-    );
+    const {
+        checkedIDs,
+        selectedIDs,
+        handleCheck,
+        handleCheckAll,
+        handleCheckOne,
+        handleCheckOnlyOne,
+        handleCheckRange,
+    } = useItemsSelection(contactID, contactIDs, [contactID, contactGroupID]);
 
     const hasCheckedAllFiltered = useMemo(() => {
         const filteredContactsLength = filteredContacts.length;
@@ -100,6 +104,8 @@ const useContactList = ({ search, contactID, contactGroupID }: Props) => {
         handleCheck,
         handleCheckAll,
         handleCheckOne,
+        handleCheckOnlyOne,
+        handleCheckRange,
         contactEmailsMap,
         contactGroupName,
         contactGroupsMap,
