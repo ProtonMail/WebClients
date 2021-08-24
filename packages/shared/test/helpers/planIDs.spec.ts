@@ -312,7 +312,7 @@ describe('switchPlan', () => {
         } as Organization;
         expect(
             switchPlan({
-                planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1 },
+                planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1, [ADDON_NAMES.VPN]: 6 },
                 plans: MOCK_PLANS,
                 planID: PLANS.PROFESSIONAL,
                 service: PLAN_SERVICES.MAIL,
