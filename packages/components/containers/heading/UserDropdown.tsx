@@ -1,11 +1,10 @@
-import { useState, MouseEvent } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 
 import {
@@ -23,10 +22,10 @@ import {
     Icon,
     DropdownMenu,
     DropdownMenuButton,
-    Tooltip,
     Button,
     SimpleDropdown,
     DropdownMenuLink,
+    Copy,
 } from '../../components';
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
@@ -51,9 +50,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { createModal } = useModals();
 
     const { createNotification } = useNotifications();
-    const handleCopyEmail = (e: MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-        textToClipboard(Email, e.currentTarget);
+    const handleCopyEmail = () => {
         createNotification({
             type: 'success',
             text: c('Success').t`Email address copied to clipboard`,
@@ -165,18 +162,14 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 >
                                     {Email}
                                 </span>
-                                <Tooltip title={c('Action').t`Copy email to clipboard`}>
-                                    <Button
-                                        className="flex-item-noshrink ml1 mr-6p button-show-on-hover-element"
-                                        icon
-                                        shape="ghost"
-                                        color="weak"
-                                        size="small"
-                                        onClick={handleCopyEmail}
-                                    >
-                                        <Icon name="copy" alt={c('Action').t`Copy email to clipboard`} />
-                                    </Button>
-                                </Tooltip>
+                                <Copy
+                                    value={Email}
+                                    className="mr-6p button-show-on-hover-element"
+                                    onCopy={handleCopyEmail}
+                                    tooltipText={c('Action').t`Copy email to clipboard`}
+                                    size="small"
+                                    shape="ghost"
+                                />
                             </div>
                         ) : null}
 
