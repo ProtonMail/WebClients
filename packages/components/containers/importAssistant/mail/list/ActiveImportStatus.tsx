@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge, Tooltip, Icon, Meter } from '../../../../components';
+import { Badge, Tooltip, Icon, Progress } from '../../../../components';
 
 import { ImportMailStatus, ImportMailError } from '../interfaces';
 
@@ -52,13 +52,12 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
         default:
             return (
                 <span className="inline-flex flex-align-items-center w100">
-                    <Meter
-                        aria-labelledby="meterLabel"
-                        optimum={100}
+                    <Progress
+                        aria-labelledby="progressLabel"
                         value={percentageValue}
-                        className="flex-item-fluid"
+                        className="flex-item-fluid progress-bar--success"
                     />
-                    <span id="meterLabel" className="ml0-5">{`${percentageValue}%`}</span>
+                    <span id="progressLabel" className="ml0-5">{`${percentageValue}%`}</span>
                 </span>
             );
     }
