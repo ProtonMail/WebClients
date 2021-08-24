@@ -11,7 +11,7 @@ const getPosition = (
     availablePlacements: string[],
     offset: number,
     originalPosition?: Position
-) => {
+): { position: Position; placement: string } => {
     const anchorRect = anchorEl.getBoundingClientRect();
     const tooltipRect = popperEl.getBoundingClientRect();
     const contentRect = contentAreaEl.getBoundingClientRect();
@@ -41,6 +41,7 @@ const getPosition = (
             position: {
                 top: -9999,
                 left: -9999,
+                '--arrow-offset': 0,
             },
             placement: 'hidden',
         };
@@ -75,7 +76,7 @@ const usePopper = ({
     originalPosition,
     offset = 10,
 }: Props) => {
-    const initialPosition = { top: -1000, left: -1000 };
+    const initialPosition: Position = { top: -1000, left: -1000, '--arrow-offset': 0 };
     const [placement, setPlacement] = useState(originalPlacement);
     const [position, setPosition] = useState(initialPosition);
 
