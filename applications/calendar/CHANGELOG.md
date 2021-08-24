@@ -1,4 +1,4 @@
-## Release: 4.0.3 — August 18, 2021
+## Release: 4.0.3 — August 25, 2021
 
 ### New features
 
@@ -12,6 +12,7 @@
 
 -   Redirect Myanmar time zone to Indian/Cocos
 -   Handle case where an email address is disabled under one user and active under another in the same organisation
+-   Extend support to recognize invites formatted with floating times
 
 ## Release: 4.0.2 — July 28, 2021
 
