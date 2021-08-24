@@ -19,15 +19,15 @@ describe('encryptedSearch', () => {
         IsReplied: 0,
         IsRepliedAll: 0,
         IsForwarded: 0,
-        ToList: [],
-        CCList: [],
-        BCCList: [],
+        ToList: [{ Name: 'To', Address: 'ToAddress' }],
+        CCList: [{ Name: 'CC', Address: 'CCAddress' }],
+        BCCList: [{ Name: 'BCC', Address: 'BCCAddress' }],
         Time: 0,
         Size: 0,
         NumAttachments: 0,
         ExpirationTime: 0,
         AddressID: 'AddressID',
-        LabelIDs: [],
+        LabelIDs: ['0'],
         decryptedBody: '',
     };
     const cachedMessage: CachedMessage = {
@@ -139,7 +139,10 @@ describe('encryptedSearch', () => {
     describe('applySearch', () => {
         it('should fail search due to labelID', () => {
             expect(
-                applySearch({ labelID: '0' } as NormalisedSearchParams, { LabelIDs: ['1'] } as CachedMessage)
+                applySearch(
+                    { labelID: '0' } as NormalisedSearchParams,
+                    { ...cachedMessage, LabelIDs: ['1'] } as CachedMessage
+                )
             ).toEqual(false);
         });
 
@@ -147,7 +150,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', address: 'address' } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], AddressID: 'AddressID' } as CachedMessage
+                    { ...cachedMessage, AddressID: 'AddressID' } as CachedMessage
                 )
             ).toEqual(false);
         });
@@ -156,7 +159,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', begin: 1619679525 } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], Time: 1619679524 } as CachedMessage
+                    { ...cachedMessage, Time: 1619679524 } as CachedMessage
                 )
             ).toEqual(false);
         });
@@ -165,7 +168,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', end: 1619733599 } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], Time: 1619733600 } as CachedMessage
+                    { ...cachedMessage, Time: 1619733600 } as CachedMessage
                 )
             ).toEqual(false);
         });
@@ -174,7 +177,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', attachments: 0 } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], NumAttachments: 1 } as CachedMessage
+                    { ...cachedMessage, NumAttachments: 1 } as CachedMessage
                 )
             ).toEqual(false);
         });
@@ -183,22 +186,20 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', decryptionError: true } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], decryptionError: false } as CachedMessage
+                    { ...cachedMessage, decryptionError: false } as CachedMessage
                 )
             ).toEqual(false);
         });
 
         it('should succeed search without keywords', () => {
-            expect(
-                applySearch({ labelID: '0' } as NormalisedSearchParams, { LabelIDs: ['0'] } as CachedMessage)
-            ).toEqual(true);
+            expect(applySearch({ labelID: '0' } as NormalisedSearchParams, cachedMessage)).toEqual(true);
         });
 
         it('should succeed search with single keyword', () => {
             expect(
                 applySearch(
                     { labelID: '0', normalisedKeywords: ['test'] } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], Subject: 'test' } as CachedMessage
+                    { ...cachedMessage, Subject: 'test' } as CachedMessage
                 )
             ).toEqual(true);
         });
@@ -207,7 +208,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', normalisedKeywords: ['test', 'test2'] } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], Subject: 'testtest2' } as CachedMessage
+                    { ...cachedMessage, Subject: 'testtest2' } as CachedMessage
                 )
             ).toEqual(true);
         });
@@ -216,7 +217,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', normalisedKeywords: ['test', 'test2'] } as NormalisedSearchParams,
-                    { LabelIDs: ['0'], Subject: 'test', Sender: { Address: 'test2' } } as CachedMessage
+                    { ...cachedMessage, Subject: 'test', Sender: { Address: 'test2', Name: '' } } as CachedMessage
                 )
             ).toEqual(true);
         });
