@@ -102,7 +102,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     <Header title={c('Title').t`Reset password`} left={<BackButton onClick={onBack || handleBack} />} />
                     <Content>
                         <div className="mb1-75">{c('Info')
-                            .t`Enter the email address associated with your Proton Account or your account username.`}</div>
+                            .t`Enter your Proton account email address or username.`}</div>
                         <RequestRecoveryForm
                             defaultUsername={cache?.username}
                             onSubmit={(username) => {
