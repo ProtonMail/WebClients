@@ -1,8 +1,8 @@
-$tooltip-width: 14.5em !default;
-$arrow-width: 0.5em !default;
-
 /* basic tooltip styles */
 .tooltip {
+	$tooltip-width: 14.5em;
+	$arrow-width: 0.5em;
+
 	position: fixed;
 	z-index: 666;
 	min-width: $arrow-width;
@@ -112,12 +112,12 @@ $arrow-width: 0.5em !default;
 
 	&--top-left::before,
 	&--bottom-left::before {
-		left: 0;
+		left: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
 	&--top-right::before,
 	&--bottom-right::before {
-		right: 0;
+		right: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
 	&--left::before,
@@ -127,11 +127,11 @@ $arrow-width: 0.5em !default;
 
 	&--left-top::before,
 	&--right-top::before {
-		top: 0;
+		top: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
 	&--left-bottom::before,
 	&--right-bottom::before {
-		bottom: 0;
+		bottom: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 }

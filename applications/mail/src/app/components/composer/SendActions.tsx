@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { forwardRef, ReactNode, Ref } from 'react';
 import { c } from 'ttag';
 
 import ButtonGroup, { Color, Shape } from '@proton/components/components/button/ButtonGroup';
@@ -15,15 +15,20 @@ interface Props {
     shape?: Shape;
     mainAction: ReactNode;
     secondAction?: ReactNode;
+    dropdownRef?: Ref<HTMLElement>;
 }
 
-const SendActions = ({ loading = false, disabled = false, color, shape, mainAction, secondAction }: Props) => {
+const SendActions = (
+    { loading = false, disabled = false, color, shape, mainAction, secondAction, dropdownRef }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     return (
-        <ButtonGroup shape={shape} color={color}>
+        <ButtonGroup ref={ref} shape={shape} color={color}>
             {mainAction}
 
             {secondAction && (
                 <SimpleDropdown
+                    ref={dropdownRef}
                     as={Button}
                     icon
                     originalPlacement="bottom-right"
@@ -40,4 +45,4 @@ const SendActions = ({ loading = false, disabled = false, color, shape, mainActi
     );
 };
 
-export default SendActions;
+export default forwardRef(SendActions);

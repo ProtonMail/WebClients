@@ -44,6 +44,7 @@ export enum FeatureCode {
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     ScheduledSend = 'ScheduledSend',
+    SpotlightScheduledSend = 'SpotlightScheduledSend',
     KeyMigration = 'KeyMigration',
     CalendarEmailNotification = 'CalendarEmailNotification',
     Mnemonic = 'Mnemonic',

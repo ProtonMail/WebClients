@@ -33,7 +33,7 @@ const inverted: { [key: string]: string } = {
     top: 'bottom',
 };
 
-export type Position = { top: number; left: number };
+export type Position = { top: number; left: number; '--arrow-offset': 0 | string };
 
 type ElementRect = {
     top: number;
@@ -108,6 +108,11 @@ const calculatePosition = (
     let placeLeft = target.left - tooltip.width - offset;
     let placeRight = target.left + target.width + offset;
 
+    const minHeight = target.height < tooltip.height ? target.height : tooltip.height;
+    const minWidth = target.width < tooltip.width ? target.width : tooltip.width;
+    const horizontalOffset = `${minWidth / 2}px`;
+    const verticalOffset = `${minHeight / 2}px`;
+
     if (originalPosition) {
         alignCenter = {
             top: originalPosition.top + target.height / 2 - tooltip.height / 2,
@@ -126,18 +131,18 @@ const calculatePosition = (
     }
 
     const placementList: { [key: string]: Position } = {
-        top: { left: alignCenter.left, top: placeAbove },
-        bottom: { left: alignCenter.left, top: placeBelow },
-        left: { left: placeLeft, top: alignCenter.top },
-        right: { left: placeRight, top: alignCenter.top },
-        'bottom-left': { left: alignLeft, top: placeBelow },
-        'top-left': { left: alignLeft, top: placeAbove },
-        'bottom-right': { left: alignRight, top: placeBelow },
-        'top-right': { left: alignRight, top: placeAbove },
-        'right-bottom': { left: placeRight, top: alignBottom },
-        'right-top': { left: placeRight, top: alignTop },
-        'left-bottom': { left: placeLeft, top: alignBottom },
-        'left-top': { left: placeLeft, top: alignTop },
+        top: { left: alignCenter.left, top: placeAbove, '--arrow-offset': 0 },
+        bottom: { left: alignCenter.left, top: placeBelow, '--arrow-offset': 0 },
+        left: { left: placeLeft, top: alignCenter.top, '--arrow-offset': 0 },
+        right: { left: placeRight, top: alignCenter.top, '--arrow-offset': 0 },
+        'bottom-left': { left: alignLeft, top: placeBelow, '--arrow-offset': horizontalOffset },
+        'top-left': { left: alignLeft, top: placeAbove, '--arrow-offset': horizontalOffset },
+        'bottom-right': { left: alignRight, top: placeBelow, '--arrow-offset': horizontalOffset },
+        'top-right': { left: alignRight, top: placeAbove, '--arrow-offset': horizontalOffset },
+        'right-bottom': { left: placeRight, top: alignBottom, '--arrow-offset': verticalOffset },
+        'right-top': { left: placeRight, top: alignTop, '--arrow-offset': verticalOffset },
+        'left-bottom': { left: placeLeft, top: alignBottom, '--arrow-offset': verticalOffset },
+        'left-top': { left: placeLeft, top: alignTop, '--arrow-offset': verticalOffset },
     };
 
     return placementList[placement];
