@@ -111,6 +111,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, ...rest }: Pr
                         onChange={handleUrlChange}
                         placeholder={i18n[type].placeholder}
                         required
+                        autoFocus
                     />
                 </Field>
             </Row>

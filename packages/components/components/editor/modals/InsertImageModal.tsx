@@ -88,6 +88,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                         error={imageState === ImageState.Error ? c('Info').t`Not a valid URL` : undefined}
                         onChange={handleChange}
                         data-testid="insert-image:url"
+                        autoFocus
                     />
                 </div>
             </div>
