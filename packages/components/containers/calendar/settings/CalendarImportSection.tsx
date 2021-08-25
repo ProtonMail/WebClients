@@ -1,8 +1,9 @@
-import { UserModel } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
+
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, PrimaryButton, Icon, Href } from '../../../components';
+import { Alert, PrimaryButton, Href, GoogleButton } from '../../../components';
 import { useAddresses, useModals } from '../../../hooks';
 
 import { ImportModal } from '../importModal';
@@ -39,16 +40,7 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
         });
     };
 
-    const oauthImportRenderer = () => (
-        <PrimaryButton
-            onClick={handleOAuthClick}
-            className="inline-flex flex-justify-center flex-align-items-center"
-            disabled={loadingAddresses}
-        >
-            <Icon name="calendar-days" className="mr0-5" />
-            {c('Action').t`Continue with Google`}
-        </PrimaryButton>
-    );
+    const oauthImportRenderer = () => <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} />;
 
     const classicImportRenderer = () => (
         <>
