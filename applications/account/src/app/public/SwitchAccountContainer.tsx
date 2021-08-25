@@ -164,7 +164,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                         <div className="no-scroll ml1 border-bottom pr1 pb1 mt0-25 flex-item-fluid flex flex-align-items-center">
                             <button
                                 type="button"
-                                className="flex-item-fluid text-left increase-click-surface"
+                                className="flex-item-fluid text-left increase-click-surface outline-offset-2p"
                                 onClick={() => handleClickSession(LocalID)}
                             >
                                 <strong className="block text-ellipsis" title={nameToDisplay}>
