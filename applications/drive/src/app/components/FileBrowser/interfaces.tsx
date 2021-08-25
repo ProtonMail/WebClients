@@ -48,7 +48,6 @@ export interface ItemProps {
     style?: React.CSSProperties;
     item: FileBrowserItem;
     shareId: string;
-    layoutType: FileBrowserLayouts;
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
     selectItem: (item: string) => void;
