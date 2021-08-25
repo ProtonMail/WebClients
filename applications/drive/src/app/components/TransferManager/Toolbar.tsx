@@ -75,11 +75,12 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
     const buttons: TransferManagerButtonProps[] = [
         {
             onClick: () => {
+                const ongoingEntries = entries.filter(({ transfer }) => isTransferOngoing(transfer));
                 if (shouldDisplayResume) {
-                    return transferManagerControls.resumeTransfers(entries);
+                    return transferManagerControls.resumeTransfers(ongoingEntries);
                 }
 
-                return transferManagerControls.pauseTransfers(entries);
+                return transferManagerControls.pauseTransfers(ongoingEntries);
             },
             disabled: hasOnlyInactiveTransfers,
             title: shouldDisplayResume ? c('Action').t`Resume transfers` : c('Action').t`Pause transfers`,
