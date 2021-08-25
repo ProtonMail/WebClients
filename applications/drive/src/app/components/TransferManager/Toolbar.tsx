@@ -114,6 +114,7 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
             disabled: !entries.map(extractTransferFromEntry).some(isTransferFailed),
             title: c('Action').t`Restart transfers`,
             iconName: 'arrow-rotate-right',
+            actionType: 'restart',
         },
     ];
 
