@@ -56,6 +56,7 @@ import {
     isDBReadyAfterBuilding,
     isPaused,
     getProgressFromBuildProgress,
+    getTotalFromBuildProgress,
 } from '../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ESIndexingState } from '../../models/encryptedSearch';
@@ -413,6 +414,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     );
 
     // Progress indicator
+    const totalProgressToShow = Math.max(esProgress, getTotalFromBuildProgress(user.ID));
     let progressStatus: string = '';
     if (isPaused(user.ID)) {
         progressStatus = c('Info').t`Indexing paused`;
@@ -422,7 +424,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         progressStatus = c('Info').t`Updating message content search...`;
     } else {
         // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
-        progressStatus = c('Info').jt`Downloading message ${esProgress} out of ${totalIndexingMessages}` as string;
+        progressStatus = c('Info').jt`Downloading message ${esProgress} out of ${totalProgressToShow}` as string;
     }
 
     const etaMessage =

@@ -1,10 +1,10 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { openDB, IDBPDatabase, deleteDB } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
-import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';
@@ -167,10 +167,20 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    signal?: AbortSignal
-) => {
+    signal?: AbortSignal,
+    messageMetadata?: Message
+): Promise<CachedMessage | undefined> => {
     const message = await queryMessage(api, messageID, signal);
     if (!message) {
+        // If a permanent error happened and metadata was given, the returned
+        // CachedMessage is as if decryption failed
+        if (messageMetadata) {
+            return {
+                ...prepareMessageMetadata(messageMetadata),
+                decryptionError: true,
+            };
+        }
+        // Otherwise an undefined message is returned
         return;
     }
 
@@ -223,7 +233,13 @@ const storeMessages = async (
             throw new Error('Operation aborted');
         }
 
-        const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortIndexingRef.current.signal);
+        const messageToCache = await fetchMessage(
+            message.ID,
+            api,
+            getMessageKeys,
+            abortIndexingRef.current.signal,
+            message
+        );
 
         if (!messageToCache) {
             throw new Error('Plaintext to store is undefined');
@@ -335,7 +351,7 @@ const storeMessagesBatches = async (
         const { recoveryPoint, batchSize } = storeOutput;
 
         if (recoveryPoint.ID === '' && recoveryPoint.Time === -1) {
-            // If the quota has been reached, indexing is condisered to be successful. Since
+            // If the quota has been reached, indexing is considered to be successful. Since
             // messages are fetched in chronological order, IndexedDB is guaranteed to contain
             // the most recent messages only
             return true;
