@@ -17,7 +17,7 @@ const RequestNewCodeModal = ({ verificationModel, onEdit, onResend, ...rest }: P
     const [loading, withLoading] = useLoading();
     return (
         <FormModal
-            title={c('Title').t`Request new verification code`}
+            title={c('Title').t`Request new code`}
             mode="alert"
             loading={loading}
             noTitleEllipsis
