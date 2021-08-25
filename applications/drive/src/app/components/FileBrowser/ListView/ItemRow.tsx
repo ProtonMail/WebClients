@@ -30,7 +30,6 @@ const ItemRow = ({
     style,
     shareId,
     selectedItems,
-    layoutType,
     onToggleSelect,
     onClick,
     onShiftClick,
@@ -71,9 +70,6 @@ const ItemRow = ({
         columns.includes('share_num_access') && item.SharedUrl
             ? cache.get.shareURL(shareId, item.SharedUrl?.ShareUrlID)
             : undefined;
-
-    // Backend do not provide thumbnail in shared or trash for now.
-    const isThumbnailDisabled = layoutType === 'trash' || layoutType === 'sharing';
 
     useEffect(() => {
         if (item.HasThumbnail) {
@@ -141,7 +137,7 @@ const ItemRow = ({
                 </TableCell>
 
                 <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid">
-                    {item.CachedThumbnailURL && !isThumbnailDisabled ? (
+                    {item.CachedThumbnailURL ? (
                         <img
                             src={item.CachedThumbnailURL}
                             alt={iconText}
