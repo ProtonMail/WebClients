@@ -254,7 +254,7 @@ const CreateAccountForm = ({
                     rootClassName="mt0-5"
                 />
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
-                    {c('Action').t`Create account`}
+                    {c('Action').t`Next`}
                 </Button>
                 <div className="text-center mt2">{c('Info').jt`Already have an account? ${loginLink}`}</div>
             </form>
