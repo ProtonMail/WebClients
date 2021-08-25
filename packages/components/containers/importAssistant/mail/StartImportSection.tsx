@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useAddresses, useModals, useUser } from '../../../hooks';
 import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../hooks/useOAuthPopup';
-import { Icon, PrimaryButton } from '../../../components';
+import { PrimaryButton, GoogleButton } from '../../../components';
 
 import { SettingsSection, SettingsParagraph } from '../../account';
 
@@ -36,14 +36,7 @@ const StartImportSection = () => {
 
             <div>
                 {OAUTH_TEST_IDS.includes(user.ID) ? (
-                    <PrimaryButton
-                        className="inline-flex flex-justify-center flex-align-items-center mt0-5 mr1"
-                        onClick={handleOAuthClick}
-                        disabled={loadingAddresses}
-                    >
-                        <Icon name="brand-gmail" className="mr0-5" />
-                        {c('Action').t`Continue with Google`}
-                    </PrimaryButton>
+                    <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} />
                 ) : (
                     <PrimaryButton
                         className="inline-flex flex-justify-center flex-align-items-center mt0-5"
