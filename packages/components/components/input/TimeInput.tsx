@@ -12,6 +12,7 @@ import { usePopperAnchor } from '../popper';
 import { generateUID } from '../../helpers';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import { useHotkeys } from '../../hooks';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });
@@ -118,22 +119,54 @@ const TimeInput = ({
         close();
     };
 
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        const { key } = event;
-        if (key === 'Enter') {
-            parseAndSetDate(temporaryInput);
-            event.preventDefault();
-            return close();
-        }
-
-        if (key === 'ArrowDown') {
-            handleSelectDate(addMinutes(value, interval));
-        }
-
-        if (key === 'ArrowUp') {
-            handleSelectDate(addMinutes(value, -1 * interval));
-        }
-    };
+    useHotkeys(anchorRef, [
+        [
+            'Escape',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    parseAndSetDate(temporaryInput);
+                    close();
+                }
+            },
+        ],
+        [
+            'Enter',
+            (e) => {
+                parseAndSetDate(temporaryInput);
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    close();
+                } else {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    open();
+                }
+            },
+        ],
+        [
+            'ArrowDown',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleSelectDate(addMinutes(value, interval));
+                }
+            },
+        ],
+        [
+            'ArrowUp',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleSelectDate(addMinutes(value, -1 * interval));
+                }
+            },
+        ],
+    ]);
 
     const scrollRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLUListElement>(null);
@@ -200,7 +233,6 @@ const TimeInput = ({
                 ref={anchorRef}
                 onFocus={() => open()}
                 onBlur={handleBlur}
-                onKeyDown={handleKeyDown}
                 onClick={() => open()}
                 value={temporaryInput}
                 onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setTemporaryInput(value)}
