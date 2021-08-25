@@ -23,4 +23,4 @@ export interface EncryptionConfig {
     curve?: string;
     numBits?: number;
 }
-export type HumanVerificationMethodType = 'captcha' | 'payment' | 'sms' | 'email' | 'invite';
+export type HumanVerificationMethodType = 'captcha' | 'payment' | 'sms' | 'email' | 'invite' | 'coupon';

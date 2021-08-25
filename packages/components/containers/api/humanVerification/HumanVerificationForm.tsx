@@ -18,7 +18,7 @@ import RequestNewCodeModal from './RequestNewCodeModal';
 
 import './HumanVerificationModal.scss';
 
-export enum Steps {
+export enum HumanVerificationSteps {
     ENTER_DESTINATION,
     VERIFY_CODE,
 }
@@ -34,8 +34,8 @@ interface Props {
     defaultEmail?: string;
     defaultPhone?: string;
     defaultCountry?: string;
-    step: Steps;
-    onChangeStep: (step: Steps) => void;
+    step: HumanVerificationSteps;
+    onChangeStep: (step: HumanVerificationSteps) => void;
 }
 
 const HumanVerificationForm = ({
@@ -57,13 +57,13 @@ const HumanVerificationForm = ({
 
     const sendCode = async (verificationModel: VerificationModel) => {
         await api(getRoute(verificationModel));
-        onChangeStep(Steps.VERIFY_CODE);
+        onChangeStep(HumanVerificationSteps.VERIFY_CODE);
         const methodTo = verificationModel.value;
         createNotification({ text: c('Success').t`Code sent to ${methodTo}` });
     };
 
     const handleEditDestination = () => {
-        onChangeStep(Steps.ENTER_DESTINATION);
+        onChangeStep(HumanVerificationSteps.ENTER_DESTINATION);
     };
 
     const handleResend = async () => {
@@ -117,7 +117,7 @@ const HumanVerificationForm = ({
                                 value: email,
                             };
                             await sendCode(verificationRef.current);
-                            onChangeStep(Steps.VERIFY_CODE);
+                            onChangeStep(HumanVerificationSteps.VERIFY_CODE);
                         }}
                     />
                 </>
@@ -140,7 +140,7 @@ const HumanVerificationForm = ({
                                 value: phone,
                             };
                             await sendCode(verificationRef.current);
-                            onChangeStep(Steps.VERIFY_CODE);
+                            onChangeStep(HumanVerificationSteps.VERIFY_CODE);
                         }}
                         defaultPhone={
                             defaultPhone ||
@@ -173,7 +173,7 @@ const HumanVerificationForm = ({
         );
     }
 
-    if (step === Steps.VERIFY_CODE && verificationModel) {
+    if (step === HumanVerificationSteps.VERIFY_CODE && verificationModel) {
         return (
             <VerifyCodeForm
                 verification={verificationModel}

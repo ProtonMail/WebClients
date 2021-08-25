@@ -5,7 +5,7 @@ import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { FormModal } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
-import HumanVerificationForm, { Steps } from './HumanVerificationForm';
+import HumanVerificationForm, { HumanVerificationSteps } from './HumanVerificationForm';
 
 interface Props<T> {
     token: string;
@@ -20,7 +20,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
     const title = c('Title').t`Human verification`;
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const [step, setStep] = useState(Steps.ENTER_DESTINATION);
+    const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
 
     const handleSubmit = async (token: string, tokenType: HumanVerificationMethodType) => {
         if (loading) {

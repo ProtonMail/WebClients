@@ -1,0 +1,31 @@
+{
+    "name": "proton-verification",
+    "description": "Human Verification",
+    "license": "GPL-3.0",
+    "scripts": {
+        "start": "proton-pack dev-server --appMode=standalone",
+        "test": "jest --runInBand --ci",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "check-types": "tsc",
+        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone --api=proxy",
+        "postinstall": "proton-pack config"
+    },
+    "dependencies": {
+        "@proton/components": "workspace:packages/components",
+        "core-js": "^3.16.1",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0",
+        "yetch": "^1.1.0"
+    },
+    "devDependencies": {
+        "@proton/i18n": "workspace:packages/i18n",
+        "@proton/pack": "workspace:packages/pack",
+        "babel-jest": "^27.0.0",
+        "cross-env": "^7.0.3",
+        "eslint": "^7.32.0",
+        "jest": "^27.0.0",
+        "typescript": "^4.1.2"
+    }
+}
