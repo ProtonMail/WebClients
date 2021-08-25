@@ -15,12 +15,7 @@ import {
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import {
-    AesKeyGenParams,
-    ES_MAX_PAGES_PER_BATCH,
-    ES_MAX_PARALLEL_MESSAGES,
-    PAGE_SIZE,
-} from '../../constants';
+import { AesKeyGenParams, ES_MAX_PAGES_PER_BATCH, ES_MAX_PARALLEL_MESSAGES, PAGE_SIZE } from '../../constants';
 import {
     getNumMessagesDB,
     getOldestMessage,
@@ -202,7 +197,7 @@ export const syncMessageEvents = async (
                     continue;
                 }
                 await esDB.delete('messages', ID);
-    
+
                 removeFromESCache(ID, esCacheRef, size);
 
                 const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
@@ -223,7 +218,8 @@ export const syncMessageEvents = async (
                 // Fetch the whole message since the event only contains metadata
                 const messageToCache = prefetchedMessages.find((prefetchedMessage) => prefetchedMessage.ID === ID);
                 if (!messageToCache) {
-                    throw new Error('Plaintext to store is undefined');
+                    // If a permanent error occured while fetching, we ignore the update
+                    continue;
                 }
 
                 const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
@@ -272,7 +268,8 @@ export const syncMessageEvents = async (
                         (prefetchedMessage) => prefetchedMessage.ID === ID
                     );
                     if (!fetchedMessageToCache) {
-                        throw new Error('Plaintext to store is undefined');
+                        // If a permanent error occured while fetching, we ignore the update
+                        continue;
                     }
                     newMessageToCache = fetchedMessageToCache;
                 }
@@ -522,7 +519,8 @@ export const refreshIndex = async (
             } else {
                 const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys);
                 if (!fetchedMessageToCache) {
-                    throw new Error('Cannot fetch new message');
+                    // If a permanent error occured while fetching, we ignore the update
+                    continue;
                 }
 
                 const newCiphertextToStore = await encryptToDB(fetchedMessageToCache, indexKey);
