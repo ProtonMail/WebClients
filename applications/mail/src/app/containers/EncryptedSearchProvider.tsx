@@ -45,7 +45,6 @@ import {
     getTotalFromBuildProgress,
     setCurrentFromBuildProgress,
     canUseES,
-    getTotalMessages,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -272,14 +271,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 });
             }
 
-            await correctDecryptionErrors(
-                userID,
-                indexKey,
-                api,
-                getMessageKeys,
-                recordProgress,
-                esCacheRef
-            );
+            await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress, esCacheRef);
 
             if (!isUpdatingMessageContent) {
                 setESStatus((esStatus) => {
@@ -475,6 +467,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         let refreshEvent: Event | undefined;
         try {
             refreshEvent = await checkResfresh(indexKey, currentEvent, true);
+
+            // We store the event to check after refresh has happened, such that if anything fails
+            // later, the process will continue from after the refresh. Otherwise, a new
+            // refresh would be triggered
+            if (refreshEvent) {
+                if (refreshEvent.EventID) {
+                    setItem(`ES:${userID}:Event`, refreshEvent.EventID);
+                } else {
+                    throw new Error('Refresh event has no ID');
+                }
+            }
         } catch (error) {
             setESStatus((esStatus) => {
                 return {
@@ -485,30 +488,28 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return catchUpFromLS(indexKey);
         }
 
-        let eventToCheck = refreshEvent || currentEvent;
-
-        // It is not possible to know a priori how many events there will be, as they are given in batches.
-        // Therefore we set the total amount as the total number of messages in the mailbox
-        const Total = await getTotalMessages(messageCounts, api);
-        recordProgress(0, Total);
-        const recordProgressLocal = () => {
-            const [current] = progressRecorderRef.current;
-            recordProgress(current + 1, Total);
-        };
+        // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
+        recordProgress(0, 0);
 
         // We want to sync all messages, potentially in multiple batches if the More flag
         // is set. Even it isn't, we still fetch a further batch and, if the event ID hasn't
         // changed, we can be sure nothing else has happened and the syncing process is considered
         // successful
         let keepSyncing = true;
-        let newEventToCheck: Event | undefined;
+        let index = 0;
+        const newEventsToCheck: Event[] = [refreshEvent || currentEvent];
         while (keepSyncing) {
             try {
-                await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
+                const nextEventToCheck = newEventsToCheck[index++];
 
-                newEventToCheck = await queryEvents(api, eventToCheck.EventID);
+                const newEventToCheck = await queryEvents(api, nextEventToCheck.EventID);
                 if (!newEventToCheck || !newEventToCheck.EventID) {
                     throw new Error('No event found');
+                }
+
+                keepSyncing = nextEventToCheck.More === 1 || newEventToCheck.EventID !== nextEventToCheck.EventID;
+                if (keepSyncing) {
+                    newEventsToCheck.push(newEventToCheck);
                 }
             } catch (error) {
                 setESStatus((esStatus) => {
@@ -517,16 +518,39 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                         isRefreshing: false,
                     };
                 });
-                // In case syncing fails, we retry but from the event after refreshing, otherwise
-                // a new refresh will be triggered
-                return catchUpFromEvent(indexKey, eventToCheck);
+                return catchUpFromLS(indexKey);
             }
-
-            keepSyncing = eventToCheck.More === 1 || newEventToCheck.EventID !== eventToCheck.EventID;
-            eventToCheck = newEventToCheck;
         }
 
-        return finaliseSyncing(eventToCheck, indexKey);
+        // Since we are only interested in Message and Address events, they are the only ones used to
+        // compute the total
+        const Total = newEventsToCheck.reduce((accumulator, event) => {
+            const addressEvents = (event.Addresses || []).filter(
+                (AddressEvent) => AddressEvent.Action === EVENT_ACTIONS.UPDATE
+            ).length;
+            return accumulator + (event.Messages?.length || 0) + addressEvents;
+        }, 0);
+        const recordProgressLocal = () => {
+            const [current] = progressRecorderRef.current;
+            recordProgress(current + 1, Total);
+        };
+
+        try {
+            // It's important that these events are synced sequentially
+            for (const eventToCheck of newEventsToCheck) {
+                await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
+            }
+        } catch (error) {
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    isRefreshing: false,
+                };
+            });
+            return catchUpFromLS(indexKey);
+        }
+
+        return finaliseSyncing(newEventsToCheck[newEventsToCheck.length - 1], indexKey);
     };
 
     /**
@@ -987,6 +1011,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return;
             }
 
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    dbExists: wasIndexingDone(userID),
+                    esEnabled: isESEnabled(userID),
+                };
+            });
+
             // If indexing was not successful, try to recover (unless it was paused).
             // Otherwise, just set the correct parameters to ESDBStatus
             if (isRecoveryNeeded(userID)) {
@@ -995,14 +1027,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 }
                 return;
             }
-
-            setESStatus((esStatus) => {
-                return {
-                    ...esStatus,
-                    dbExists: wasIndexingDone(userID),
-                    esEnabled: isESEnabled(userID),
-                };
-            });
 
             // Compare the last event "seen" by the DB (saved in localStorage) and
             // the present one to check whether any event has happened while offline,

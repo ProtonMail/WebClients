@@ -7,17 +7,38 @@ import { ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 import { getNumMessagesDB, getSizeIDB } from './esUtils';
+import { isNetworkError } from '../errors';
+
+// Error message codes that trigger a retry
+const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
 
 /**
  * Api calls for ES should be transparent and with low priority to avoid jailing
  */
-const apiHelper = async <T>(api: Api, signal: AbortSignal | undefined, options: Object) => {
-    return api<T>({
-        ...options,
-        silence: true,
-        headers: { Priority: 'u=7' },
-        signal,
-    }).catch(() => undefined);
+const apiHelper = async <T>(api: Api, signal: AbortSignal | undefined, options: Object): Promise<T | undefined> => {
+    let apiResponse: T;
+    try {
+        apiResponse = await api<T>({
+            ...options,
+            silence: true,
+            headers: { Priority: 'u=7' },
+            signal,
+        });
+    } catch (error) {
+        // Network and temporary errors trigger a retry, for any other error undefined is returned
+        if (isNetworkError(error) || ES_TEMPORARY_ERRORS.includes(error.data.Code)) {
+            const {
+                response: { headers },
+            } = error;
+
+            const retryAfterSeconds = parseInt(headers.get('retry-after') || '1', 10);
+            await wait(retryAfterSeconds * 1000);
+            return apiHelper<T>(api, signal, options);
+        }
+        return;
+    }
+
+    return apiResponse;
 };
 
 /**
