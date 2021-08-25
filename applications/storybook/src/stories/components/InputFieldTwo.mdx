@@ -2,6 +2,43 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/add
 
 # InputField
 
+<Canvas>
+    <Story id="components-inputfieldtwo--basic" />
+</Canvas>
+
+## Validation
+
+The `error` and `warning` props toggle the error state. If a node is provided, the `assistiveText` will be replaced.
+
+<Canvas>
+    <Story id="components-inputfieldtwo--validation" />
+</Canvas>
+
+
+## Adornments
+
+<Canvas>
+    <Story id="components-inputfieldtwo--adornments" />
+</Canvas>
+
+## Sizes
+
+The `bigger` prop to increases the size.
+
+<Canvas>
+    <Story id="components-inputfieldtwo--sizes" />
+</Canvas>
+
+## Custom elements
+
+The `as` prop allows for InputField to render as another element.
+
+<Canvas>
+    <Story id="components-inputfieldtwo--custom-elements" />
+</Canvas>
+
+## Playground
+
 <Primary />
 
 <ArgsTable story={PRIMARY_STORY} />

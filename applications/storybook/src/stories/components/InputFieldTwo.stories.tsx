@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components';
+import { Icon, InputFieldTwo, PasswordInputTwo, TextAreaTwo } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
 import mdx from './InputFieldTwo.mdx';
@@ -10,6 +10,41 @@ export default {
     parameters: {
         docs: {
             page: mdx,
+        },
+    },
+};
+
+export const Playground = ({ ...args }) => <InputFieldTwo {...args} />;
+Playground.args = {
+    label: 'Basic input',
+    hint: '',
+    assistiveText: '',
+    disabled: false,
+    bigger: false,
+    id: '',
+    error: '',
+    warning: '',
+    rootClassName: '',
+};
+Playground.argTypes = {
+    label: {
+        type: { name: 'string' },
+    },
+    hint: {
+        type: { name: 'string' },
+    },
+    assistiveText: {
+        type: { name: 'string' },
+    },
+    error: {
+        type: { name: 'string' },
+    },
+    warning: {
+        type: { name: 'string' },
+    },
+    as: {
+        table: {
+            disable: true,
         },
     },
 };
@@ -48,34 +83,6 @@ export const Basic = () => {
                     {...sharedInputProps}
                 />
             </div>
-            <div className="mb1 mt1">
-                <InputFieldTwo
-                    label="Error"
-                    error="Something's not quite right here"
-                    hint={hint}
-                    {...sharedInputProps}
-                />
-            </div>
-            <div className="mb1 mt1">
-                <InputFieldTwo label="Warning" warning="This value might be wrong" hint={hint} {...sharedInputProps} />
-            </div>
-            <div className="mb1 mt1">
-                <InputFieldTwo
-                    label="Warning as boolean"
-                    warning
-                    assistiveText="Should be hidden"
-                    {...sharedInputProps}
-                />
-            </div>
-            <div className="mb1 mt1">
-                <InputFieldTwo
-                    label="Error as boolean"
-                    error
-                    assistiveText="Should be hidden"
-                    hint={hint}
-                    {...sharedInputProps}
-                />
-            </div>
             <div className="mt1">
                 <InputFieldTwo
                     disabled
@@ -85,24 +92,80 @@ export const Basic = () => {
                     {...sharedInputProps}
                 />
             </div>
-            <div className="mt1">
+        </div>
+    );
+};
+
+export const Validation = () => {
+    const sharedInputProps = {
+        placeholder: "e.g. 'John Fitzgerald'",
+    };
+
+    return (
+        <div>
+            <div className="mb1">
+                <InputFieldTwo label="Error" error="Something's not quite right here" {...sharedInputProps} />
+            </div>
+            <div className="mb1 mt1">
+                <InputFieldTwo label="Warning" warning="This value might be wrong" {...sharedInputProps} />
+            </div>
+            <div className="mb1 mt1">
                 <InputFieldTwo
-                    as={PasswordInputTwo}
-                    label="Password input"
+                    label="Warning as boolean"
+                    warning
+                    assistiveText="Should be hidden"
                     {...sharedInputProps}
-                    placeholder="Password"
                 />
             </div>
             <div className="mt1">
+                <InputFieldTwo label="Error as boolean" error assistiveText="Should be hidden" {...sharedInputProps} />
+            </div>
+        </div>
+    );
+};
+
+export const Adornments = () => {
+    return (
+        <div>
+            <div className="mb1">
                 <InputFieldTwo
                     label="Input with icon"
-                    {...sharedInputProps}
                     placeholder="**** **** **** ****"
                     icon={<Icon name="credit-card" />}
                 />
             </div>
             <div className="mt1">
-                <InputFieldTwo label="Input with suffix" {...sharedInputProps} suffix="@protonmail.com" />
+                <InputFieldTwo label="Input with suffix" placeholder="username" suffix="@protonmail.com" />
+            </div>
+        </div>
+    );
+};
+
+export const Sizes = () => {
+    const sharedInputProps = {
+        placeholder: "e.g. 'John Fitzgerald'",
+    };
+
+    return (
+        <div>
+            <div className="mb1">
+                <InputFieldTwo label="Default" {...sharedInputProps} />
+            </div>
+            <div className="mt1">
+                <InputFieldTwo label="Bigger" bigger {...sharedInputProps} />
+            </div>
+        </div>
+    );
+};
+
+export const CustomElements = () => {
+    return (
+        <div>
+            <div className="mb1">
+                <InputFieldTwo as={PasswordInputTwo} label="Password input" placeholder="Password" />
+            </div>
+            <div className="mb1">
+                <InputFieldTwo as={TextAreaTwo} rows={3} label="Text area" placeholder="Placeholder" />
             </div>
         </div>
     );
