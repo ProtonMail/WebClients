@@ -35,7 +35,9 @@ const ES_REGEX =
 const RU_REGEX = /прикрепленный файл|прикреплённый файл|прикреплен|прикреплён|прикрепил|прикрепила/gi;
 const IT_REGEX =
     /vedi in allegato|vedi allegato|vedi accluso|\u00e8 allegato|in allegato|sono allegati|in allegato vi sono|in allegato a questa email|in allegato a questo messaggio|invio in allegato|allego|ho allegato|in allegato trovi|trova in allegato|trova accluso|incluso troverai|file allegato|vedi allegato|vedi allegati|file allegati|vedi l'allegato|ti allego/gi;
-const BR_REGEX =
+const PT_PT_REGEX =
+    /ver em anexo|ver anexo|ver inclu\u00eddo|est\u00e1 anexado|est\u00e1 em anexo|est\u00e3o anexados|est\u00e3o em anexo|anexado a este email|anexado a esta mensagem|estou a anexar|anexo|anexei|anexei|anexo|anexei|queira encontrar em anexo|segue em anexo|encontra-se inclu\u00eddo|segue inclu\u00eddo|ficheiro anexado|ver o anexo|ver anexos|ficheiros anexados|ver o anexo/gi;
+const PT_BR_REGEX =
     /ver anexado|ver anexo|ver inclu\u00eddo|est\u00e1 anexado|anexado|est\u00e3o anexados|anexados|anexado a este e-mail|anexado a esta mensagem|estou anexando|eu estou anexando|anexei|eu anexei|estou incluindo|eu estou incluindo|inclu\u00ed|eu inclu\u00ed|enviar anexo|enviar o anexo|enviar inclu\u00eddo|ver anexos|arquivo anexado|arquivos anexados|em anexo|anexo|veja em anexo|veja o anexo|veja os anexos/gi;
 const NL_REGEX =
     /zie bijgevoegd|zie bijlage|zie toegevoegd|is bijgevoegd|bijgevoegd is|zijn bijgevoegd|bijgevoegd zijn|toegevoegd aan dit e-mailbericht|toegevoegd aan dit bericht|Ik voeg bij|Ik heb bijgevoegd|Ik voeg een bijlage bij|Ik heb een bijlage bijgevoegd|bijlage bijvoegen|bijlagen bijvoegen|bijlage opgenomen|opgenomen bijlage|bijgevoegd bestand|zie de bijlage|zie bijlagen|bijgevoegde bestanden|de bijlage bekijken/gi;
@@ -100,7 +102,8 @@ export const useSendVerifications = () => {
             (languageCode === 'es' && normalized.match(ES_REGEX)) ||
             (languageCode === 'ru' && normalized.match(RU_REGEX)) ||
             (languageCode === 'it' && normalized.match(IT_REGEX)) ||
-            (languageCode === 'br' && normalized.match(BR_REGEX)) ||
+            (languageCode === 'pt-PT' && normalized.match(PT_PT_REGEX)) ||
+            (languageCode === 'pt-BR' && normalized.match(PT_BR_REGEX)) ||
             (languageCode === 'nl' && normalized.match(NL_REGEX)) ||
             (languageCode === 'pl' && normalized.match(PL_REGEX)) ||
             [];
