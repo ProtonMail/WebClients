@@ -22,7 +22,9 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
     const [expanded, setExpand] = useState(false);
 
     const handleSearch = useCallback((keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
-        history.push(setKeywordInUrl({ ...history.location, pathname: `/${getHumanLabelID(labelID)}` }, keyword));
+        history.push(
+            setKeywordInUrl({ ...history.location, hash: '', pathname: `/${getHumanLabelID(labelID)}` }, keyword)
+        );
     }, []);
 
     const handleToggleExpand = useCallback(() => setExpand((expanded) => !expanded), []);
