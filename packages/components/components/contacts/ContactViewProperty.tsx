@@ -88,7 +88,7 @@ const ContactViewProperty = ({
                     <>
                         {!isOwnAddress && (
                             <Tooltip title={c('Title').t`Email settings`}>
-                                <Button icon color="weak" shape="outline" onClick={handleSettings} className="ml0-5">
+                                <Button icon color="weak" shape="outline" onClick={handleSettings}>
                                     <Icon name="gear" alt={c('Action').t`Email settings`} />
                                 </Button>
                             </Tooltip>
@@ -150,21 +150,17 @@ const ContactViewProperty = ({
         if (field === 'email') {
             return (
                 <>
-                    <span className="w100">
-                        <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
-                        <a className="mr0-5" href={`mailto:${value}`} title={value}>
+                    <span className="w100 flex">
+                        <a className="mr0-5 flex-item-fluid text-ellipsis" href={`mailto:${value}`} title={value}>
                             {value}
                         </a>
-                        {!!contactGroups.length && (
-                            <div className="mt1">
-                                <ContactGroupLabels
-                                    className="max-w100"
-                                    contactGroups={contactGroups}
-                                    isStacked={false}
-                                />
-                            </div>
-                        )}
+                        <span className="flex-item-noshrink flex contact-view-actions">{getActions()}</span>
                     </span>
+                    {!!contactGroups.length && (
+                        <div className="mt1">
+                            <ContactGroupLabels className="max-w100" contactGroups={contactGroups} isStacked={false} />
+                        </div>
+                    )}
                 </>
             );
         }
@@ -179,9 +175,11 @@ const ContactViewProperty = ({
         }
         if (field === 'tel') {
             return (
-                <span className="w100">
-                    <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
-                    <a href={`tel:${value}`}>{value}</a>
+                <span className="w100 flex">
+                    <a className="mr0-5 flex-item-fluid text-ellipsis" href={`tel:${value}`}>
+                        {value}
+                    </a>
+                    <span className=" flex-item-noshrink flex contact-view-actions">{getActions()}</span>
                 </span>
             );
         }
@@ -198,16 +196,18 @@ const ContactViewProperty = ({
         if (field === 'adr') {
             const lines = formatAdr(property.value);
             return (
-                <span className="w100">
-                    <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
-                    {lines.map((line, index) => (
-                        // No better key here and should not change in time anyway
-                        // eslint-disable-next-line react/no-array-index-key
-                        <Fragment key={index}>
-                            {line}
-                            {index !== lines.length - 1 && <br />}
-                        </Fragment>
-                    ))}
+                <span className="w100 flex">
+                    <span className="mr0-5 flex-item-fluid text-ellipsis">
+                        {lines.map((line, index) => (
+                            // No better key here and should not change in time anyway
+                            // eslint-disable-next-line react/no-array-index-key
+                            <Fragment key={index}>
+                                {line}
+                                {index !== lines.length - 1 && <br />}
+                            </Fragment>
+                        ))}
+                    </span>
+                    <span className="flex-item-noshrink flex contact-view-actions">{getActions()}</span>
                 </span>
             );
         }
