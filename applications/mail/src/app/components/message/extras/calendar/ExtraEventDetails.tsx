@@ -1,14 +1,16 @@
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import * as React from 'react';
-import { classnames } from '@proton/components';
+import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
+import urlify from '@proton/shared/lib/calendar/urlify';
 import { c } from 'ttag';
+import { useMemo } from 'react';
+import * as React from 'react';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { classnames, Icon } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { getAllDayInfo, getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { formatEndDateTime, formatStartDateTime, InvitationModel } from '../../../../helpers/calendar/invite';
+import { getParticipantsList, InvitationModel } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
 const { REFRESH, REPLY } = ICAL_METHOD;
@@ -19,7 +21,6 @@ interface Props {
 }
 const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const {
-        isOrganizerMode,
         isImport,
         hasMultipleVevents,
         calendarData,
@@ -30,11 +31,12 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const displayApiDetails = [REFRESH, REPLY].includes(method);
     const { vevent, organizer, participants } = invitationApi && displayApiDetails ? invitationApi : invitationIcs;
     const { rrule, dtstart } = vevent;
-    const dtend = getDtendProperty(vevent);
-    const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
 
-    const location = vevent.location?.value;
-    const totalParticipants = participants?.length;
+    const trimmedLocation = vevent.location?.value?.trim();
+    const sanitizedAndUrlifiedLocation = useMemo(
+        () => restrictedCalendarSanitize(urlify(trimmedLocation || '')),
+        [trimmedLocation]
+    );
     const frequencyString = rrule
         ? getFrequencyString(rrule.value, dtstart, {
               weekStartsOn,
@@ -42,31 +44,32 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
           })
         : undefined;
     const calendar = calendarData?.calendar?.Name;
+    const participantsList = getParticipantsList(participants, organizer);
 
-    const properties: { label: string; value: string | React.ReactNode; key: string }[] = [
+    const iconClassName = 'flex-item-noshrink mr1 mb0-25';
+    const properties: { icon: string; label: string; value: string | React.ReactNode; key: string }[] = [
+        !!frequencyString && {
+            icon: 'arrows-rotate',
+            label: c('ICS widget label for event details').t`Repeats`,
+            value: frequencyString,
+            key: 'frequency',
+        },
+        !!calendar && {
+            icon: 'calendar-days',
+            label: c('ICS widget label for event details').t`Calendar`,
+            value: calendar,
+            key: 'calendar',
+        },
+        !!trimmedLocation && {
+            icon: 'map-marker',
+            label: c('ICS widget label for event details').t`Location`,
+            value: sanitizedAndUrlifiedLocation,
+            key: 'location',
+        },
         {
-            label: c('Label').t`Start time`,
-            value: formatStartDateTime(dtstart, dateLocale, isAllDay, isSingleAllDay),
-            key: 'startTime',
-        },
-        !isSingleAllDay && {
-            label: c('Label').t`End time`,
-            value: formatEndDateTime(dtend, dateLocale, isAllDay),
-            key: 'endTime',
-        },
-        !!frequencyString && { label: c('Label').t`Repeats`, value: frequencyString, key: 'frequency' },
-        !!calendar && { label: c('Label').t`Calendar`, value: calendar, key: 'calendar' },
-        !!location && { label: c('Label').t`Location`, value: location, key: 'location' },
-        !isOrganizerMode &&
-            organizer && {
-                label: c('Label').t`Organizer`,
-                value: <ExtraEventParticipants list={[organizer]} />,
-                key: 'organizer',
-            },
-        totalParticipants && {
-            label:
-                totalParticipants === 1 ? c('Label').t`Participant` : c('Label').t`Participants (${totalParticipants})`,
-            value: <ExtraEventParticipants list={participants} />,
+            icon: 'user-group',
+            label: c('ICS widget label for event details').t`Participants`,
+            value: <ExtraEventParticipants list={participantsList} />,
             key: 'participants',
         },
     ].filter(isTruthy);
@@ -77,15 +80,21 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
 
     return (
         <>
-            {properties.map(({ value, label, key }, index) => {
+            {properties.map(({ value, icon, label, key }, index) => {
                 return (
-                    <div
-                        key={key}
-                        className={classnames(['flex on-mobile-flex-column', index < properties.length - 1 && 'mb0-5'])}
-                    >
+                    <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                        <span className="mr1 w20 on-mobile-w100 on-mobile-mr0">{label}</span>
-                        <div className="flex-item-fluid on-mobile-pl1 text-hyphens">{value}</div>
+                        <span className="on-mobile-mr0" title={label}>
+                            <Icon name={icon} className={iconClassName} />
+                        </span>
+                        {key === 'location' ? (
+                            <div
+                                className="flex-item-fluid text-hyphens"
+                                dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }}
+                            />
+                        ) : (
+                            <div className="flex-item-fluid text-hyphens">{value}</div>
+                        )}
                     </div>
                 );
             })}

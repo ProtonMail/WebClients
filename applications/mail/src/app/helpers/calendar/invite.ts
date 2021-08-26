@@ -41,7 +41,7 @@ import { addDays, format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { unary } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -834,4 +834,20 @@ export const getDisableButtons = (model: RequireSome<InvitationModel, 'invitatio
     const alwaysDisable =
         !calendarData?.calendar || calendarData.isCalendarDisabled || calendarData.calendarNeedsUserAction;
     return isImport ? alwaysDisable : alwaysDisable || !isAddressActive;
+};
+
+export const getParticipantsList = (attendees?: Participant[], organizer?: Participant) => {
+    const list = attendees ? [...attendees] : [];
+    if (organizer) {
+        // we remove the organizer from the list of participants in case it's duplicated there
+        const canonicalOrganizerEmail = canonizeEmailByGuess(organizer.emailAddress);
+        const organizerIndex = list.findIndex(
+            ({ emailAddress }) => canonizeEmailByGuess(emailAddress) === canonicalOrganizerEmail
+        );
+        if (organizerIndex !== -1) {
+            list.splice(organizerIndex, 1);
+        }
+        list.unshift(organizer);
+    }
+    return list;
 };

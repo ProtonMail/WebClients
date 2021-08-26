@@ -1,42 +1,41 @@
+import { LinkButton } from '@proton/components';
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
-import { buildMailTo } from '@proton/shared/lib/helpers/email';
+import { useState } from 'react';
+import { c } from 'ttag';
+import ExtraEventParticipant from './ExtraEventParticipant';
+
+const DEFAULT_NUMBER_VISIBLE_PARTICIPANTS = 5;
 
 interface Props {
-    list?: Participant[];
+    list: Participant[];
 }
-const ExtraEventParticipants = ({ list = [] }: Props) => {
+const ExtraEventParticipants = ({ list }: Props) => {
+    const [isShowingMore, setIsShowingMore] = useState(false);
+
     if (!list.length) {
         return null;
     }
 
+    const totalParticipants = list.length;
+    const totalHiddenParticipants = totalParticipants - DEFAULT_NUMBER_VISIBLE_PARTICIPANTS;
+    const listOfVisibleParticipants = isShowingMore ? list : list.slice(0, DEFAULT_NUMBER_VISIBLE_PARTICIPANTS);
+
     return (
         <div className="text-break">
-            {list.map((participant, i) => {
-                const { displayEmail, displayName } = participant;
-                const isLast = i === list.length - 1;
-
-                if (displayName !== displayEmail) {
-                    return (
-                        // eslint-disable-next-line react/no-array-index-key
-                        <div key={`${displayName}-${displayEmail}-${i}`}>
-                            <span title={displayName}>{`${displayName} `}</span>(
-                            <a href={buildMailTo(displayEmail)} title={displayEmail}>
-                                {displayEmail}
-                            </a>
-                            ){!isLast && ', '}
-                        </div>
-                    );
-                }
+            {listOfVisibleParticipants.map((participant, i) => {
                 return (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <div key={`${displayEmail}-${i}`}>
-                        <a href={buildMailTo(displayEmail)} title={displayEmail}>
-                            {displayEmail}
-                        </a>
-                        {!isLast && ', '}
-                    </div>
+                    <ExtraEventParticipant
+                        participant={participant}
+                        isOrganizer={i === 0}
+                        key={participant.emailAddress}
+                    />
                 );
             })}
+            {totalParticipants > DEFAULT_NUMBER_VISIBLE_PARTICIPANTS && (
+                <LinkButton onClick={() => setIsShowingMore((prevState) => !prevState)}>
+                    {isShowingMore ? c('Action').t`Show less` : c('Action').t`Show ${totalHiddenParticipants} more`}
+                </LinkButton>
+            )}
         </div>
     );
 };
