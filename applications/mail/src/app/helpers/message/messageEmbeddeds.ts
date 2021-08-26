@@ -115,8 +115,12 @@ export const findCIDsInContent = (content: string) =>
 export const insertActualEmbeddedImages = (document: Element, embeddedImages: MessageEmbeddedImage[]) => {
     embeddedImages.forEach((image) => {
         const match = document.querySelector(`[data-embedded-img="${image.cid}"]`);
-        match?.removeAttribute('data-embedded-img');
-        match?.setAttribute('src', `cid:${image.cid}`);
+        if (match) {
+            match.removeAttribute('data-embedded-img');
+            match.removeAttribute('proton-src');
+            match.removeAttribute('src');
+            match.setAttribute('src', `cid:${image.cid}`);
+        }
     });
 };
 
