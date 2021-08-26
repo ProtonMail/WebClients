@@ -11,7 +11,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { HOUR } from '@proton/shared/lib/constants';
 import { serverTime } from 'pmcrypto/lib/serverTime';
-import { languageCode } from '@proton/shared/lib/i18n';
+import { languageCode, localeCode } from '@proton/shared/lib/i18n';
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { MessageExtendedWithData } from '../../models/message';
@@ -95,6 +95,7 @@ export const useSendVerifications = () => {
 
         const [contentBeforeBlockquote] = locateBlockquote(message.document);
         const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
+
         const [keyword] =
             (languageCode === 'en' && normalized.match(EN_REGEX)) ||
             (languageCode === 'fr' && normalized.match(FR_REGEX)) ||
@@ -102,8 +103,8 @@ export const useSendVerifications = () => {
             (languageCode === 'es' && normalized.match(ES_REGEX)) ||
             (languageCode === 'ru' && normalized.match(RU_REGEX)) ||
             (languageCode === 'it' && normalized.match(IT_REGEX)) ||
-            (languageCode === 'pt-PT' && normalized.match(PT_PT_REGEX)) ||
-            (languageCode === 'pt-BR' && normalized.match(PT_BR_REGEX)) ||
+            (languageCode === 'pt' && normalized.match(PT_PT_REGEX)) ||
+            (languageCode === 'pt' && localeCode === 'pt_BR' && normalized.match(PT_BR_REGEX)) ||
             (languageCode === 'nl' && normalized.match(NL_REGEX)) ||
             (languageCode === 'pl' && normalized.match(PL_REGEX)) ||
             [];
