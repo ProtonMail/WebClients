@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import * as React from 'react';
 import NotificationsContext from './notificationsContext';
-import NotificationsContainer from './Container';
-import createNotificationManager from './manager';
+import NotificationsChildrenContext from './childrenContext';
 import { NotificationOptions } from './interfaces';
+import createManager from './manager';
+import { useInstance } from '../../hooks';
 
 interface Props {
     children: React.ReactNode;
@@ -11,24 +12,16 @@ interface Props {
 
 const NotificationsProvider = ({ children }: Props) => {
     const [notifications, setNotifications] = useState<NotificationOptions[]>([]);
-    const managerRef = useRef<ReturnType<typeof createNotificationManager>>();
 
-    if (!managerRef.current) {
-        managerRef.current = createNotificationManager(setNotifications);
-    }
-
-    const manager = managerRef.current;
-
-    const { hideNotification, removeNotification } = manager;
+    const manager = useInstance(() => {
+        return createManager(setNotifications);
+    });
 
     return (
         <NotificationsContext.Provider value={manager}>
-            {children}
-            <NotificationsContainer
-                notifications={notifications}
-                removeNotification={removeNotification}
-                hideNotification={hideNotification}
-            />
+            <NotificationsChildrenContext.Provider value={notifications}>
+                {children}
+            </NotificationsChildrenContext.Provider>
         </NotificationsContext.Provider>
     );
 };

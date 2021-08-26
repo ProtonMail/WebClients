@@ -30,6 +30,7 @@ import Signout from './Signout';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import NotificationsProvider from '../notifications/Provider';
+import NotificationsChildren from '../notifications/Children';
 import ModalsProvider from '../modals/Provider';
 import ApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
@@ -277,6 +278,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                                                     <CacheProvider cache={cacheRef.current}>
                                                         <GlobalLoaderProvider>
                                                             <GlobalLoader />
+                                                            <NotificationsChildren />
                                                             {(() => {
                                                                 if (isLoggingOut) {
                                                                     return (
