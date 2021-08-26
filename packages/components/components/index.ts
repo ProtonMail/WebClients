@@ -64,3 +64,4 @@ export * from './treeview';
 export * from './version';
 export * from './v2';
 export * from './vr';
+export * from './collapsible';
