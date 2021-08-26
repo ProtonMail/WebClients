@@ -161,6 +161,38 @@ describe('properties to model negative trigger', () => {
         });
     });
 
+    test('part day notification 60 minutes before', () => {
+        expect(
+            triggerToModel({
+                isAllDay: false,
+                type: DEVICE,
+                trigger: fromTriggerString('-PT60M'),
+            })
+        ).toEqual({
+            isAllDay: false,
+            value: 60,
+            unit: MINUTES,
+            type: DEVICE,
+            when: BEFORE,
+        });
+    });
+
+    test('part day notification with two components 1 week minutes before', () => {
+        expect(
+            triggerToModel({
+                isAllDay: false,
+                type: DEVICE,
+                trigger: fromTriggerString('-PT24H6D'),
+            })
+        ).toEqual({
+            isAllDay: false,
+            value: 1,
+            unit: WEEK,
+            type: DEVICE,
+            when: BEFORE,
+        });
+    });
+
     test('all day notification 1 day before at 00:00', () => {
         expect(
             triggerToModel({
