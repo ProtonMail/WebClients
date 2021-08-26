@@ -304,4 +304,24 @@ describe('switchPlan', () => {
             [PLANS.VPNPLUS]: 1,
         });
     });
+
+    it('should handle transfer addons - bonuses', () => {
+        const organization = {
+            UsedVPN: 18,
+            BonusVPN: 2,
+        } as Organization;
+        expect(
+            switchPlan({
+                planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1, [ADDON_NAMES.VPN]: 6 },
+                plans: MOCK_PLANS,
+                planID: PLANS.PROFESSIONAL,
+                service: PLAN_SERVICES.MAIL,
+                organization,
+            })
+        ).toEqual({
+            [PLANS.PROFESSIONAL]: 1,
+            [PLANS.VPNPLUS]: 1,
+            [ADDON_NAMES.VPN]: 6,
+        });
+    });
 });

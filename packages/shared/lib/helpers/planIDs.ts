@@ -81,7 +81,14 @@ export const switchPlan = ({
         return { [plansMap[VISIONARY].ID]: 1 };
     }
 
-    const { UsedDomains = 0, UsedAddresses = 0, UsedSpace = 0, UsedVPN = 0, UsedMembers = 0 } = organization || {};
+    const {
+        UsedDomains = 0,
+        UsedAddresses = 0,
+        UsedSpace = 0,
+        UsedVPN = 0,
+        UsedMembers = 0,
+        BonusVPN = 0,
+    } = organization || {};
     const selectedPlan = plans.find(({ ID }) => ID === planID);
 
     const transferDomains = (from: PLANS, to: PLANS) => {
@@ -141,7 +148,7 @@ export const switchPlan = ({
             ...(!planIDs[plansMap[VPNBASIC].ID]
                 ? {
                       [plansMap[VPNPLUS].ID]: vpnAddons || planIDs[plansMap[VPNPLUS].ID] ? 1 : 0,
-                      [plansMap[VPN].ID]: vpnAddons ? vpnAddons - plansMap[VPNPLUS].MaxVPN : 0,
+                      [plansMap[VPN].ID]: vpnAddons ? vpnAddons - plansMap[VPNPLUS].MaxVPN - BonusVPN : 0,
                   }
                 : undefined),
             [planID]: 1,
