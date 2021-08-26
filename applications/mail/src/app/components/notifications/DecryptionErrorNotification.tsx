@@ -3,7 +3,7 @@ import { Button, Href, SettingsLink } from '@proton/components';
 import * as React from 'react';
 import Icon from '@proton/components/components/icon/Icon';
 import { APPS } from '@proton/shared/lib/constants';
-import { CTA_TEXTS, reActivateKeySettingsURL, restoringEncryptedMessagesURL } from '../../constants';
+import { reActivateKeySettingsURL, restoringEncryptedMessagesURL } from '../../constants';
 
 interface Props {
     onDiscard: () => void;
@@ -18,7 +18,7 @@ const DecryptionErrorNotification = ({ onDiscard, keyFound = false }: Props) => 
                 url={restoringEncryptedMessagesURL}
                 className="text-bold link align-baseline color-inherit"
             >
-                {CTA_TEXTS().learnMore}
+                {c('Action').t`Learn more`}
             </Href>
         );
 

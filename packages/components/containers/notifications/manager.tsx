@@ -112,4 +112,6 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
     };
 }
 
+export type NotificationsManager = ReturnType<typeof createNotificationManager>;
+
 export default createNotificationManager;
