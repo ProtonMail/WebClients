@@ -5,7 +5,6 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
@@ -55,7 +54,6 @@ const encryptBody = async (content: string, messageKeys: MessageKeys) => {
 
 export const prepareAndEncryptBody = async (message: MessageExtended, messageKeys: MessageKeys) => {
     const plainText = isPlainText(message.data);
-    // const document = plainText ? undefined : prepareExport(message);
     const content = plainText ? getPlainTextContent(message) : prepareExport(message);
     return encryptBody(content, messageKeys);
 };
