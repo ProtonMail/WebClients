@@ -206,6 +206,21 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         );
     }, [dynamicTotal, cache.page, cache.params, cache.bypassFilter]);
 
+    /**
+     * Define when we need to request the API to get more elements
+     * Dynamic computations (dynamicTotal and dynamicPageLength) have been proved not to be reliable enough
+     * So the logic here is a lot more basic
+     * It only checks when there is not a full page to show if the label has more than a cache size of elements
+     * It doesn't rely at all on the optimistic counter logic
+     */
+    const needsMoreElements = () => {
+        if (cache.total === undefined) {
+            return false;
+        }
+        const howManyElementsAhead = cache.total - cache.page * PAGE_SIZE;
+        return elements.length < PAGE_SIZE && howManyElementsAhead > ELEMENTS_CACHE_REQUEST_SIZE;
+    };
+
     const placeholderCount = useMemo(() => {
         if (dynamicPageLength) {
             return dynamicPageLength;
@@ -252,7 +267,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         shouldResetCache() ||
         (!cache.pendingRequest &&
             cache.retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-            (cache.invalidated || !pageCached()));
+            (needsMoreElements() || cache.invalidated || !pageCached()));
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
@@ -444,10 +459,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.end,
         search.attachments,
         search.wildcard,
-        // These 2 cache values will trigger the effect for any event containing something
-        // which could lead to consider refreshing the list
         cache.invalidated,
         cache.pendingRequest,
+        elements.length,
         esEnabled && isSearch(search),
     ]);
 
