@@ -223,9 +223,6 @@ export const syncMessageEvents = async (
                 }
 
                 const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
-                if (!newCiphertextToStore) {
-                    throw new Error('Ciphertext to store is undefined');
-                }
 
                 if (!(await storeToDB(newCiphertextToStore, esDB))) {
                     throw new Error('Failed to store recovered message');
@@ -296,9 +293,6 @@ export const syncMessageEvents = async (
                 }
 
                 const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
-                if (!newCiphertextToStore) {
-                    throw new Error('Ciphertext to store is undefined');
-                }
 
                 // Store the new message to DB
                 if (!(await storeToDB(newCiphertextToStore, esDB))) {
@@ -378,9 +372,6 @@ export const correctDecryptionErrors = async (
         }
 
         const newCiphertextToStore = await encryptToDB(newMessage, indexKey);
-        if (!newCiphertextToStore) {
-            throw new Error('Failed to encrypt recovered message');
-        }
 
         recordProgress(index + 1, searchResults.length);
         addToESCache(newMessage, esCacheRef);
@@ -505,9 +496,7 @@ export const refreshIndex = async (
                     };
 
                     const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
-                    if (!newCiphertextToStore) {
-                        throw new Error('Ciphertext to store is undefined');
-                    }
+
                     const sizeDelta = sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage);
                     updateSizeIDB(userID, sizeDelta);
                     // Note that if DB is limited, storeToDB already takes care of it
@@ -524,9 +513,7 @@ export const refreshIndex = async (
                 }
 
                 const newCiphertextToStore = await encryptToDB(fetchedMessageToCache, indexKey);
-                if (!newCiphertextToStore) {
-                    throw new Error('Ciphertext to store is undefined');
-                }
+
                 const size = sizeOfCachedMessage(fetchedMessageToCache);
                 updateSizeIDB(userID, size);
                 await storeToDB(newCiphertextToStore, esDB);
