@@ -1,3 +1,24 @@
+## Release 4.0.6 - Sep 15, 2021
+
+### Improvements
+
+-   Matching keywords are now visually highlighted within search results to facilitate finding information
+-   Added the ability to copy the primary email address right from the contact widget
+-   Attachment reminder - added support for Italian, Portuguese, Dutch and Polish
+-   Added an informational message for cases where an image cannot be loaded due to it's hosting on http as opposed to https
+-   Improved the search algorithm to include contacts in the "CC" and "BCC" fields when searching inside the "To" field
+-   Placed the cursor auto-focus on the URL field when adding images or links from the composer
+
+### Bug fixes
+
+-   Fixed an issue where emails using special styles would be displayed with a message "Can't load styles"
+-   Fixed an issue where an empty inbox would be displayed if quickly moving hundreds of messages to another location several times
+-   Fixed an issue where it was not possible to open contact settings when a contact email address was very long
+-   Fixed an issue where the message selection would be reset if marking emails as unread and read quickly one after another
+-   Adjusted styling for the banner displayed on emails where an expiration date is set
+-   Fixed an issue where images in particular newsletters would appear either too big or too small
+-   Fixed an issue where "Composer size" would be referred to as "Composer mode" in the top navigation bar quick settings
+
 ## Release 4.0.5 - Sep 1, 2021
 
 ### Improvements
