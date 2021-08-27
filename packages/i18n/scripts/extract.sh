@@ -9,17 +9,19 @@ set -eo pipefail
 #
 # We remove as much files a possible so it's faster
 getFileList() {
-  # can't use the iregex flag, it doesn't work on PopOS 20.04 (wtf) and on MacOS as the find utility is too old. -> can't even run find --version
-  find ./i18n-js \
+  # Remove what we do not need to filter + it makes find more complex
+  rm -rf node_modules | true
+  rm -rf rm -rf webpack:/*/webpack | true
+
+  # can't use the iregex flag,
+  # it doesn't work on PopOS 20.04 (wtf) and on MacOS as the find utility
+  # is too old. -> can't even run find --version
+  find * \
     -type f \
-    -o -name "*.js" \
-    -o -name "*.ts" \
-    -o -name "*.jsx" \
-    -o -name "*.tsx" \
-    -not -path "*/pmcrypto/*" \
-    -not -path "*/core-js/*" \
-    -not -path "*/dist/openpgp.*" | grep -E '(src|packages/(components|shared))'
-  }
+    -o -name "*.ts" -o -name "*.tsx" \
+    -o -name "*.js" -o -name "*.jsx"
+  # -not -path does not work
+}
 
 getDistDirectory() {
   # inside the CI we have the dist directory available
@@ -69,17 +71,19 @@ function main {
 
   # Extract on top of the extracted code from the bundle
   # Use direct relative path instead of npx or dlx since it doesn't resolve to the installed dependencies
-  ../../node_modules/.bin/ttag extract $(getFileList) -o "$1";
+  (
+    cd i18n-js;
+    ../../../node_modules/.bin/ttag extract $(getFileList) -o "../${1}";
+  )
 
   # Remove useless path
   if [[ "$OSTYPE" = "darwin"* ]]; then
-    sed -i '' 's|i18n-js/webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    sed -i '' 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   else
-    sed -i 's|i18n-js/webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   fi
 
   rm -rf "./i18n-js";
-  ls -lh ./po
 }
 
 main "$1";
