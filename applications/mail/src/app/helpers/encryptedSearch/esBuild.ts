@@ -120,36 +120,30 @@ export const prepareMessageMetadata = (message: Message | MessageForSearch) => {
 /**
  * Create encrypted object to store in IndexedDB
  */
-export const encryptToDB = async (messageToCache: CachedMessage, indexKey: CryptoKey) => {
+export const encryptToDB = async (messageToCache: CachedMessage, indexKey: CryptoKey): Promise<StoredCiphertext> => {
     const messageToEncrypt = JSON.stringify(messageToCache);
     const textEncoder = new TextEncoder();
 
-    try {
-        const iv = new Uint8Array(12);
-        crypto.getRandomValues(iv);
+    const iv = new Uint8Array(12);
+    crypto.getRandomValues(iv);
 
-        const encryptedMessage = await crypto.subtle.encrypt(
-            { iv, name: AesKeyGenParams.name },
-            indexKey,
-            textEncoder.encode(messageToEncrypt)
-        );
+    const encryptedMessage = await crypto.subtle.encrypt(
+        { iv, name: AesKeyGenParams.name },
+        indexKey,
+        textEncoder.encode(messageToEncrypt)
+    );
 
-        const { ID, Time, Order, LabelIDs } = messageToCache;
-        const storedCiphertext: StoredCiphertext = {
-            ID,
-            Time,
-            Order,
-            LabelIDs,
-            aesGcmCiphertext: {
-                ciphertext: encryptedMessage,
-                iv,
-            },
-        };
-
-        return storedCiphertext;
-    } catch (error) {
-        // return undefined
-    }
+    const { ID, Time, Order, LabelIDs } = messageToCache;
+    return {
+        ID,
+        Time,
+        Order,
+        LabelIDs,
+        aesGcmCiphertext: {
+            ciphertext: encryptedMessage,
+            iv,
+        },
+    };
 };
 
 /**
@@ -223,8 +217,6 @@ const storeMessages = async (
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordLocalProgress: (localProgress: number) => void
 ) => {
-    const numMessagesBefore = await esDB.count('messages');
-    const messagesToStore: StoredCiphertext[] = [];
     let batchSize = 0;
     let counter = 1;
 
@@ -233,56 +225,41 @@ const storeMessages = async (
             throw new Error('Operation aborted');
         }
 
-        const messageToCache = await fetchMessage(
+        // Since we are passing metadata, messageToCache cannot be undefined
+        // even if there was a permanent error while fetching the message
+        const messageToCache = (await fetchMessage(
             message.ID,
             api,
             getMessageKeys,
             abortIndexingRef.current.signal,
             message
-        );
+        ))!;
 
-        if (!messageToCache) {
-            throw new Error('Plaintext to store is undefined');
-        }
-
-        batchSize += sizeOfCachedMessage(messageToCache);
-        const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
-
-        if (!newCiphertextToStore) {
-            throw new Error('Ciphertext to store is undefined');
-        }
-
-        messagesToStore.push(newCiphertextToStore);
         recordLocalProgress(counter++);
+        batchSize += sizeOfCachedMessage(messageToCache);
+        return encryptToDB(messageToCache, indexKey);
     };
 
-    await runInQueue<void>(
+    // ciphertexts is a list of symmetrically encrypted messages in reverse chronological order
+    const ciphertexts = await runInQueue<StoredCiphertext>(
         messagesMetadata.map((message) => () => esIteratee(message)),
         ES_MAX_CONCURRENT
     );
 
-    const recoveryPoint: RecoveryPoint = { ID: '', Time: Number.MAX_SAFE_INTEGER };
-    let recoveryOrder = Number.MAX_SAFE_INTEGER;
-    const tx = esDB.transaction('messages', 'readwrite');
-    await Promise.all(
-        messagesToStore.map(async (ciphertext) => {
-            void tx.store.put(ciphertext);
-            if (
-                ciphertext.Time < recoveryPoint.Time ||
-                (ciphertext.Time === recoveryPoint.Time && ciphertext.Order < recoveryOrder)
-            ) {
-                recoveryPoint.ID = ciphertext.ID;
-                recoveryPoint.Time = ciphertext.Time;
-                recoveryOrder = ciphertext.Order;
-            }
-        })
-    );
-    await tx.done;
-
-    const numMessagesAfter = await esDB.count('messages');
-    if (numMessagesBefore + messagesMetadata.length !== numMessagesAfter) {
-        throw new Error('Messages not stored correctly');
+    if (abortIndexingRef.current.signal.aborted) {
+        throw new Error('Operation aborted');
     }
+
+    // Since transactions are atomic, i.e. either all ciphertexts are stored or
+    // none of them is, it's safe to take the last ciphertext as recovery point
+    const recoveryPoint: RecoveryPoint = {
+        ID: ciphertexts[ciphertexts.length - 1].ID,
+        Time: ciphertexts[ciphertexts.length - 1].Time,
+    };
+
+    const tx = esDB.transaction('messages', 'readwrite');
+    await Promise.all(ciphertexts.map(async (ciphertext) => tx.store.put(ciphertext)));
+    await tx.done;
 
     return { recoveryPoint, batchSize };
 };
