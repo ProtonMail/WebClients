@@ -33,7 +33,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand }: Accoun
     const canHaveOrganization = !user.isMember && !user.isSubUser;
 
     const backButtonCopy = {
-        [APPS.PROTONMAIL]: c('Navigation').t`Back to Mailbox`,
+        [APPS.PROTONMAIL]: c('Navigation').t`Back to Mail`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Back to Calendar`,
         [APPS.PROTONCONTACTS]: c('Navigation').t`Back to Contacts`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to Drive`,
