@@ -18,7 +18,7 @@ getFileList() {
     -o -name "*.tsx" \
     -not -path "*/pmcrypto/*" \
     -not -path "*/core-js/*" \
-    -not -path "*/dist/openpgp.*" | grep -E '(webpack:\/src|packages/(components|shared))'
+    -not -path "*/dist/openpgp.*" | grep -E '(src|packages/(components|shared))'
   }
 
 getDistDirectory() {
