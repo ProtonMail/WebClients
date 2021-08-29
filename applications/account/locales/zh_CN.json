@@ -1869,16 +1869,16 @@
         "新建恢复密语吗？"
       ],
       "Enter password to continue": [
-        ""
+        "请输入密码以继续"
       ],
       "Copy to clipboard": [
-        ""
+        "复制到剪贴板"
       ],
       "Disable recovery phrase?": [
-        ""
+        "禁用恢复密语吗？"
       ],
       "Disable recovery phrase": [
-        ""
+        "禁用恢复密语"
       ],
       "Revoke all other sessions": [
         "撤销所有其他会话"
@@ -2142,7 +2142,7 @@
         "发送验证码"
       ],
       "Return to sign in": [
-        ""
+        "返回登录"
       ],
       "Didn't receive a code?": [
         "没收到验证码？"
@@ -2501,7 +2501,7 @@
         "无法检查用户名，请稍后再试"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
+        "恢复密语错误，请重试或使用其他恢复方式。"
       ]
     },
     "Loading info": {
@@ -3069,13 +3069,13 @@
         "允许通过手机恢复"
       ],
       "Allow recovery by recovery phrase": [
-        ""
+        "允许通过恢复密语来恢复"
       ],
       "Recovery phrase": [
-        ""
+        "恢复密语"
       ],
       "Your recovery phrase": [
-        ""
+        "您的恢复密语"
       ],
       "Auto-load remote content": [
         "自动加载外链内容"
@@ -3195,7 +3195,7 @@
         "手机"
       ],
       "Recovery phrase contains 12 words": [
-        ""
+        "恢复密语包含 12 个字"
       ],
       "Code": [
         "验证码"
@@ -3865,7 +3865,7 @@
         "地址"
       ],
       "Organization & keys": [
-        ""
+        "机构和密钥"
       ],
       "Password & keys": [
         "密码与密钥"
@@ -3937,7 +3937,7 @@
         "创建账户"
       ],
       "Reset password?": [
-        ""
+        "重置密码?"
       ],
       "Warning!": [
         "警告！"
@@ -4337,22 +4337,22 @@
         "同时享用 ProtonVPN 和 ProtonMail（拥有数百万用户的加密邮箱服务）的所有收费功能。"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
+        "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        ""
+        "创建多个电子邮件地址连接到您的账户，例如 username2@protonmail.com"
       ],
       "Discount applied for annual billing cycle": [
-        ""
+        "年费折扣已计入"
       ],
       "Discount applied for two-year billing cycle": [
-        ""
+        "两年折扣已计入"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        ""
+        "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"
@@ -4361,16 +4361,16 @@
         "开启或关闭推送通知"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        ""
+        "启用高级日志会在安全日志中记录每个事件的 IP 地址。"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        ""
+        "“已发送”或“草稿”文件夹中的邮件始终会显示在对应的文件夹中，不受移动邮件的影响。"
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "当您点击链接时，反钓鱼功能将询问您是否打开网页链接。"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        ""
+        "此功能会延迟发送邮件，让您有机会在选定的时间范围内撤销发送。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
@@ -4379,7 +4379,7 @@
         "您的 DKIM 签名机制已就绪。"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        ""
+        "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
       ]
     },
     "Security phrase": {
@@ -4465,7 +4465,7 @@
         "语言设置已生效"
       ],
       "Auto-reply disabled": [
-        ""
+        "自动回复已禁用"
       ],
       "Auto-reply updated": [
         "自动回复已保存"
@@ -4504,7 +4504,7 @@
         ""
       ],
       "Gift code applied": [
-        ""
+        "礼品码有效"
       ],
       "Payment method deleted": [
         "付款方式已删除"
@@ -4525,10 +4525,10 @@
         "验证码已发至 ${ methodTo }"
       ],
       "Verification successful": [
-        ""
+        "验证成功"
       ],
       "Invoice paid": [
-        ""
+        "支付完成"
       ],
       "Invoice customized": [
         ""
@@ -4819,7 +4819,7 @@
         ""
       ],
       "It’s too expensive": [
-        ""
+        "价格太贵"
       ],
       "I’m unhappy with customer service": [
         "我不满意客户服务"
@@ -5007,54 +5007,54 @@
     },
     "Export calendar": {
       "Loading events": [
-        ""
+        "日程加载中"
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        ""
+        "正在解密您日历中的日程: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        ""
+        "导出结束前请勿关闭此网页。"
       ],
       "Error decrypting event": [
-        ""
+        "解密日程时出错"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        ""
+        "密码重置 - 多个日程无法解密"
       ],
       "Password reset - event cannot be decrypted": [
-        ""
+        "密码重置 - 日程无法解密"
       ],
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        ""
+        "${ totalProcessed }/${ totalToProcess } 日程已导出"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        ""
+        "成功导出日历，您现在可以保存 ICS 文件。"
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        ""
+        "由于密码重置，您的某些日程无法解密和导出。"
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        ""
+        "您可以保存成功导出日程的 ICS 文件。"
       ],
       "Learn how to restore encrypted events with old password": [
-        ""
+        "了解如何使用旧密码来恢复加密日程"
       ],
       "Some of your events could not be exported.": [
-        ""
+        "某些日程无法导出。"
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        ""
+        "网络连接中断，致使导出过程失败，请重试。"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        ""
+        "由于密码重置，您的任何日程都无法解密和导出。"
       ],
       "None of the events could be exported.": [
-        ""
+        "没有任何日程可以导出。"
       ]
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        ""
+        "日程无法导出的详细信息"
       ]
     },
     "Header": {
@@ -5068,22 +5068,22 @@
         "操作"
       ],
       "Calendar": [
-        ""
+        "日历"
       ],
       "Label": [
-        ""
+        "标签"
       ],
       "What others see": [
-        ""
+        "对外显示"
       ],
       "Get help": [
-        ""
+        "获取帮助"
       ],
       "Folders": [
         ""
       ],
       "Notifications": [
-        ""
+        "通知"
       ],
       "Event": [
         "事件"
@@ -5109,12 +5109,12 @@
         ""
       ],
       "Not synced": [
-        ""
+        "未同步"
       ]
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        ""
+        "升级到付费套餐以创建至多 ${ MAX_CALENDARS_PER_USER } 个日历，让您工作、社交、生活全不误。"
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
         "升级至付费方案以使用链接分享您的个人日历。"
@@ -5164,10 +5164,10 @@
     },
     "Subscribed calendar extension warning": {
       "This link might be wrong": [
-        ""
+        "此链接可能有误"
       ],
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "通过使用此链接，Google 会将您订阅的日历设为公开"
       ]
     },
     "Modal title and action": {
@@ -5177,20 +5177,20 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "了解如何获取私人日历链接。"
       ]
     },
     "Subscribe to calendar modal": {
       "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        ""
+        "您可以通过在下方粘贴相应链接来订阅其他人的日历，这将使您可以访问此日历的只读版本。\n${ kbLink }"
       ],
       "Calendar URL": [
-        ""
+        "日历链接"
       ]
     },
     "Error message": {
       "Invalid URL": [
-        ""
+        "链接无效"
       ],
       "Oops, something went wrong": [
         "糟糕，出错了"
@@ -5199,22 +5199,22 @@
         "连接 Proton 失败。"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "请${ refresh }或检查网络连接。"
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "错误：${ errorMessage }"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        ""
+        "子会话过多，请清除 cookie 并重新登录。"
       ],
       "Brace yourself till we get the error fixed.": [
-        ""
+        "别担心，我们会解决的。"
       ],
       "You may also ${ refresh } or try again later.": [
-        ""
+        "您也可以${ refresh }页面或稍后再试。"
       ],
       "There was a problem unsubscribing you.": [
-        ""
+        "取消订阅您时出现问题。"
       ],
       "Please ${ signIn } to update your email subscription preferences.": [
         "请${ signIn }来更新您的邮件订阅设置。"
@@ -5294,7 +5294,7 @@
         "格式错误，组件无法读取。"
       ],
       "Unknown": [
-        ""
+        "未知"
       ],
       "Component with wrong format": [
         "组件格式错误"
@@ -5309,16 +5309,16 @@
         "记录条目"
       ],
       "Free-busy time information": [
-        ""
+        "忙碌/空闲时间信息"
       ],
       "Custom timezone": [
         "自定义时区"
       ],
       "Invalid event": [
-        ""
+        "无效的日程"
       ],
       "Unsupported event": [
-        ""
+        "不支持的日程"
       ],
       "Malformed all-day event": [
         "全天日程格式不正确"
@@ -5587,7 +5587,7 @@
         "顶尖加密方式"
       ],
       "Compatibility": [
-        ""
+        "版本要求"
       ]
     },
     "Progress bar description": {
@@ -5600,16 +5600,16 @@
     },
     "TableHeader": {
       "Import": [
-        ""
+        "导入"
       ],
       "CSV field": [
-        ""
+        "CSV 字段"
       ],
       "vCard field": [
-        ""
+        "vCard 字段"
       ],
       "Values": [
-        ""
+        "值"
       ],
       "Name": [
         "名称"
@@ -5660,18 +5660,18 @@
     },
     "Import contacts": {
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        ""
+        "联系人导入成功，已显示在您的通讯录中。"
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        ""
+        "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
       ]
     },
     "Import contact": {
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        ""
+        "加密并添加联系人时出错，未能导入任何联系人。"
       ],
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        ""
+        "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
       ]
     },
     "Autoresponse": {
@@ -5696,7 +5696,7 @@
         "GNU/Linux"
       ],
       "Chromebook": [
-        ""
+        "Chromebook"
       ],
       "Android TV": [
         "Android TV"
@@ -5704,7 +5704,7 @@
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
-        ""
+        "OpenVPN / IKEv2 账号密码已重新生成"
       ],
       "A disabled address cannot be primary": [
         "已禁用的地址不能为主地址"
@@ -5715,15 +5715,15 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        ""
+        "(通过 { entryCountryName })"
       ]
     },
     "Link": {
       "View guide": [
-        ""
+        "查看指南"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        ""
+        "UDP 和 TCP 协议有何区别？"
       ],
       "Learn more": [
         "了解更多"
@@ -5732,7 +5732,7 @@
         "升级"
       ],
       "Go to subscription plans": [
-        ""
+        "转至订阅计划"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -5765,7 +5765,7 @@
         "隐私政策"
       ],
       "Previous version": [
-        ""
+        "先前版本"
       ],
       "Reset password": [
         "重置密码"
@@ -5788,30 +5788,30 @@
     },
     "Feature": {
       "Access to all countries": [
-        ""
+        "解说全部线路"
       ],
       "Secure Core servers": [
-        ""
+        "Secure Core 服务器"
       ],
       "Fastest VPN servers": [
-        ""
+        "高速 VPN 服务器"
       ],
       "Torrenting support (P2P)": [
-        ""
+        "支持 BT 下载 (P2P)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        ""
+        "最多可连接 ${ plusVpnConnections } 台设备"
       ],
       "Secure streaming support": [
-        ""
+        "安全流媒体支持"
       ],
       "VPN ${ connectionsPluralized }": [
-        ""
+        "VPN ${ connectionsPluralized }"
       ]
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        ""
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, 应有尽有。"
       ]
     },
     "Message": {
@@ -5819,13 +5819,13 @@
         "确定要关闭双重验证吗？"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        ""
+        "配置一个自定义域名邮箱（例如 you@yourcompany.com）。只需要几分钟，我们的向导将指导您完成整个过程。"
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        ""
+        "升级到任何付费套餐以使用自定义域名并解锁高级功能"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        ""
+        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐以使用 catch-all 邮箱并解锁高级功能"
       ],
       "Re:": [
         "回复："
@@ -5836,13 +5836,13 @@
     },
     "Label for news": {
       "Proton company announcements": [
-        ""
+        "Proton 公司公告"
       ],
       "Proton product announcements": [
-        ""
+        "Proton 产品公告"
       ],
       "Proton for Business newsletter": [
-        ""
+        "Proton 商业通讯"
       ],
       "Proton newsletter": [
         "Proton 新闻"
@@ -5851,7 +5851,7 @@
         "Proton 公测版公告"
       ],
       "Proton announcements": [
-        ""
+        "Proton 公告"
       ],
       "Proton major features": [
         "Proton 主要功能特性"
@@ -5865,13 +5865,13 @@
     },
     "Frequency of news": {
       "(1 email per quarter)": [
-        ""
+        "（1 封邮件/季度）"
       ],
       "(1-2 emails per month)": [
-        ""
+        "（1-2 封邮件/月）"
       ],
       "(1 email per month)": [
-        ""
+        "（1 封邮件/月）"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -5896,19 +5896,19 @@
     },
     "Header for addresses table": {
       "Address": [
-        ""
+        "地址"
       ],
       "Status": [
-        ""
+        "状态"
       ],
       "Actions": [
         ""
       ],
       "Username": [
-        ""
+        "用户名"
       ],
       "Domain": [
-        ""
+        "域名"
       ]
     },
     "Address status": {
@@ -5964,19 +5964,19 @@
     },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
+        "这是当您向他人发送电子邮件、邀请他人参加活动或与之共享文件时对方会看到的内容。"
       ],
       "Choose a display name": [
-        ""
+        "选择显示名称"
       ],
       "Select a theme": [
-        ""
+        "选择主题"
       ],
       "You can change this anytime in your settings.": [
-        ""
+        "您可以随时在设置中更改。"
       ],
       "Discover all Proton services": [
-        ""
+        "探索所有 Proton 系列服务"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         ""
@@ -6267,7 +6267,7 @@
         ""
       ],
       "Tor over VPN": [
-        ""
+        "Tor + VPN"
       ],
       "Secure Core servers": [
         "Secure Core 服务器"
