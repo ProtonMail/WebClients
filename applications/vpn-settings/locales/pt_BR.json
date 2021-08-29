@@ -288,7 +288,7 @@
         "Cobrado no final do seu ciclo de faturamento atua (renova em ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
@@ -589,7 +589,7 @@
         "Para acompanhar o desenvolvimento dos produtos da Proton, você poderá se inscrever em nossos e-mails e/ou visitar nosso blog periodicamente."
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        ""
+        "Aviso: a exclusão é permanente. Isso também remove o acesso a todos os serviços conectados e exclui todos os seus contatos."
       ],
       "If you wish to delete this account in order to combine it with another one, do NOT delete it.": [
         "Se você deseja excluir esta conta para combiná-la com outra, NÃO a exclua."
@@ -687,46 +687,46 @@
         "Recomendamos adicionar um e-mail vinculado para que você possa recuperar sua conta caso perca sua senha."
       ],
       "Disabling this will prevent this email from being used for account recovery.": [
-        ""
+        "Desativar isso impedirá que este e-mail seja usado para recuperação de conta."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Quando as notificações estão ativas, será enviado um alerta para o seu endereço de recuperação/notificação avisando que você tem novas mensagens na sua conta do ProtonMail."
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
-        ""
+        "Desativar isto impedirá que este número de telefone seja usado para recuperação da conta."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
+        "Uma frase de recuperação permite que você acesse sua conta e recupere suas mensagens criptografadas se você esquecer sua senha."
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
+        "Desativar isto impedirá que sua frase de recuperação seja usado para recuperação da conta."
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
-        ""
+        "A criação de uma nova frase de recuperação desativará a antiga."
       ],
       "Are you sure you want to continue?": [
-        ""
+        "Tem certeza que quer continuar?"
       ],
       "Recovery phrase copied to clipboard": [
-        ""
+        "Frase de recuperação copiada para a área de transferência"
       ],
       "Your recovery phrase": [
-        ""
+        "Sua frase de recuperação"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
+        "Sua frase de recuperação é uma sequência de 12 palavras em uma ordem específica."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
+        "Por favor anote sua frase de recuperação na ordem em que aparece e a mantenha em local seguro. Sua frase de recuperação pode ser usada para acessar sua conta e suas mensagens criptografadas."
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
+        "Se prosseguir, sua senha será redefinida e você será desconectado de todas as sessões ativas."
       ],
       "This will also disable two-factor authentification.": [
-        ""
+        "Isto também desativará a autenticação de dois fatores."
       ],
       "Recovery phrase has been disabled": [
-        ""
+        "Frase de recuperação desativada"
       ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
@@ -828,7 +828,7 @@
         "Redefinir sua senha significa que sua senha antiga e os locais onde ela foi salva não funcionarão mais. Você tem certeza de que deseja redefinir sua senha?"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        ""
+        "Isto pode demorar alguns segundos ou minutos dependendo do seu dispositivo"
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Faça o upgrade para um plano pago para acessar recursos premium e aumentar o seu espaço de armazenamento."
@@ -1128,13 +1128,13 @@
         "Permitir recuperação por telefone"
       ],
       "Allow recovery by recovery phrase": [
-        ""
+        "Permita a recuperação através de uma frase de recuperação"
       ],
       "Recovery phrase": [
-        ""
+        "Frase de recuperação"
       ],
       "Your recovery phrase": [
-        ""
+        "Sua frase de recuperação"
       ],
       "Cash": [
         "Dinheiro"
@@ -1268,7 +1268,7 @@
         "Introdução do ${ BRAND_NAME }"
       ],
       "Chat with us": [
-        ""
+        "Converse conosco"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -1460,22 +1460,22 @@
         "Atualizar"
       ],
       "Create new recovery phrase": [
-        ""
+        "Crie uma nova frase de recuperação"
       ],
       "Create new recovery phrase?": [
-        ""
+        "Criar uma nova frase de recuperação?"
       ],
       "Enter password to continue": [
-        ""
+        "Digite a senha para continuar"
       ],
       "Copy to clipboard": [
-        ""
+        "Copiar para a área de transferência"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Desativar a frase de recuperação?"
       ],
       "Disable recovery phrase": [
-        ""
+        "Desativar a frase de recuperação"
       ],
       "Edit": [
         "Editar"
@@ -2329,7 +2329,7 @@
     },
     "Warning": {
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+        "Bate papo ao vivo é uma funcionalidade premium disponível apenas para aqueles com planos ProtonVPN pagos. Por favor, abra um chamado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
@@ -3370,7 +3370,7 @@
         "Número do telefone"
       ],
       "Recovery phrase": [
-        ""
+        "Frase de recuperação"
       ]
     },
     "Confirmation title": {
