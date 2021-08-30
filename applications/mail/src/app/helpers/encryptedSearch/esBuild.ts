@@ -8,12 +8,11 @@ import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';
 import {
-    CachedMessage,
+    ESMessage,
     EncryptedSearchDB,
     ESBaseMessage,
     ESIndexingState,
     GetUserKeys,
-    MessageForSearch,
     RecoveryPoint,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
@@ -101,7 +100,7 @@ export const cleanText = (text: string, removeQuote: boolean) => {
 /**
  * Turns a Message into a ESBaseMessage
  */
-export const prepareMessageMetadata = (message: Message | MessageForSearch) => {
+export const prepareMessageMetadata = (message: Message | ESMessage) => {
     const messageForSearch: ESBaseMessage = {
         ID: message.ID,
         ConversationID: message.ConversationID,
@@ -129,7 +128,7 @@ export const prepareMessageMetadata = (message: Message | MessageForSearch) => {
 /**
  * Create encrypted object to store in IndexedDB
  */
-export const encryptToDB = async (messageToCache: CachedMessage, indexKey: CryptoKey): Promise<StoredCiphertext> => {
+export const encryptToDB = async (messageToCache: ESMessage, indexKey: CryptoKey): Promise<StoredCiphertext> => {
     const messageToEncrypt = JSON.stringify(messageToCache);
     const textEncoder = new TextEncoder();
 
@@ -164,7 +163,7 @@ export const isMessageForwarded = (subject: string) => {
 };
 
 /**
- * Fetches a message and return a CachedMessage
+ * Fetches a message and return a ESMessage
  */
 export const fetchMessage = async (
     messageID: string,
@@ -172,11 +171,11 @@ export const fetchMessage = async (
     getMessageKeys: GetMessageKeys,
     signal?: AbortSignal,
     messageMetadata?: Message
-): Promise<CachedMessage | undefined> => {
+): Promise<ESMessage | undefined> => {
     const message = await queryMessage(api, messageID, signal);
     if (!message) {
         // If a permanent error happened and metadata was given, the returned
-        // CachedMessage is as if decryption failed
+        // ESMessage is as if decryption failed
         if (messageMetadata) {
             return {
                 ...prepareMessageMetadata(messageMetadata),
@@ -204,7 +203,7 @@ export const fetchMessage = async (
     // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
     const removeQuote = message.LabelIDs.includes('2') || !isMessageForwarded(message.Subject);
 
-    const cachedMessage: CachedMessage = {
+    const cachedMessage: ESMessage = {
         ...prepareMessageMetadata(message),
         decryptedBody: typeof decryptedBody === 'string' ? cleanText(decryptedBody, removeQuote) : undefined,
         decryptedSubject,
