@@ -89,6 +89,10 @@ export const storeToDB = async (newCiphertextToStore: StoredCiphertext, esDB: ID
                 // save is older than the oldest message present, then it should be discarded. Otherwise,
                 // the oldest message is deleted in favour of the newer one
                 const oldestMessage = await getOldestMessage(esDB);
+                if (!oldestMessage) {
+                    return false;
+                }
+
                 const oldestTime = [oldestMessage.Time, oldestMessage.Order];
                 const currentTime = [newCiphertextToStore.Time, newCiphertextToStore.Order];
 

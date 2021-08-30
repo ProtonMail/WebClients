@@ -24,7 +24,17 @@ import {
     localisedForwardFlags,
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
-import { createESDB, deleteESDB, getES, openESDB, refreshOpenpgp, removeES, setES, updateSizeIDB } from './esUtils';
+import {
+    createESDB,
+    deleteESDB,
+    getES,
+    getOldestMessage,
+    openESDB,
+    refreshOpenpgp,
+    removeES,
+    setES,
+    updateSizeIDB,
+} from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { toText } from '../parserHtml';
 import { sizeOfCachedMessage } from './esCache';
@@ -285,15 +295,11 @@ const storeMessagesBatches = async (
         abortIndexingRef.current.signal
     );
 
-    let Messages: Message[];
-    if (resultMetadata) {
-        ({ Messages } = resultMetadata);
-    } else {
-        if (inputLastMessage) {
-            setES.Recover(userID, JSON.stringify(inputLastMessage));
-        }
+    if (!resultMetadata) {
         return false;
     }
+
+    let { Messages } = resultMetadata;
 
     let batchCount = 0;
     let progress = 0;
@@ -313,7 +319,7 @@ const storeMessagesBatches = async (
             recordLocalProgress
         ).catch((error) => {
             if (error.name === 'QuotaExceededError') {
-                const quotaRecoveryPoint: RecoveryPoint = { ID: '', Time: -1 };
+                const quotaRecoveryPoint: RecoveryPoint = { ID: 'QuotaExceededError', Time: -1 };
                 return {
                     recoveryPoint: quotaRecoveryPoint,
                     batchSize: 0,
@@ -326,14 +332,13 @@ const storeMessagesBatches = async (
         }
         const { recoveryPoint, batchSize } = storeOutput;
 
-        if (recoveryPoint.ID === '' && recoveryPoint.Time === -1) {
+        if (recoveryPoint.ID === 'QuotaExceededError' && recoveryPoint.Time === -1) {
             // If the quota has been reached, indexing is considered to be successful. Since
             // messages are fetched in chronological order, IndexedDB is guaranteed to contain
             // the most recent messages only
             return true;
         }
 
-        setES.Recover(userID, JSON.stringify(recoveryPoint));
         updateSizeIDB(userID, batchSize);
         progress += Messages.length;
 
@@ -372,14 +377,15 @@ export const buildDB = async (
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void
 ) => {
-    const recoverBlob = getES.Recover(userID);
-
-    let recoveryPoint: RecoveryPoint | undefined;
-    if (recoverBlob) {
-        recoveryPoint = JSON.parse(recoverBlob);
-    }
-
     const esDB = await openESDB(userID);
+
+    // Use the oldest message stored as recovery point
+    let recoveryPoint: RecoveryPoint | undefined;
+    const oldestMessage = await getOldestMessage(esDB);
+    if (oldestMessage) {
+        const { ID, Time } = oldestMessage;
+        recoveryPoint = { ID, Time };
+    }
 
     // Start fetching messages from the recovery point saved in local storage
     // or from scratch if a recovery point was not found
@@ -393,10 +399,6 @@ export const buildDB = async (
         recoveryPoint,
         recordProgress
     );
-
-    if (success) {
-        removeES.Recover(userID);
-    }
 
     esDB.close();
 
@@ -427,22 +429,12 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         return result;
     }
 
-    if (initialiser.Total !== 0) {
-        // +1 is added so that firstMessage will be included in the very first batch of messages
-        const firstRecoveryPoint: RecoveryPoint = {
-            ID: initialiser.firstMessage.ID,
-            Time: initialiser.firstMessage.Time + 1,
-        };
-        setES.Recover(userID, JSON.stringify(firstRecoveryPoint));
-    }
-
     // Save the event before starting building IndexedDB
     const previousEvent = await queryEvents(api);
     if (previousEvent && previousEvent.EventID) {
         setES.Progress(userID, JSON.stringify({ totalMessages: initialiser.Total }));
         setES.Event(userID, previousEvent.EventID);
     } else {
-        removeES.Recover(userID);
         return result;
     }
 
@@ -451,7 +443,6 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     try {
         esDB = await createESDB(userID);
     } catch (error) {
-        removeES.Recover(userID);
         removeES.Event(userID);
         removeES.Progress(userID);
         return {
@@ -475,7 +466,6 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         });
         setES.Key(userID, encryptedKey);
     } catch (error) {
-        removeES.Recover(userID);
         removeES.Event(userID);
         removeES.Progress(userID);
         return result;
