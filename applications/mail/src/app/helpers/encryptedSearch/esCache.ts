@@ -1,10 +1,9 @@
-import { openDB } from 'idb';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ES_MAX_CACHE } from '../../constants';
-import { CachedMessage, EncryptedSearchDB, ESCache, StoredCiphertext } from '../../models/encryptedSearch';
+import { CachedMessage, ESCache, StoredCiphertext } from '../../models/encryptedSearch';
 import { initialiseQuery, queryNewData } from './esSearch';
 import { decryptFromDB } from './esSync';
-import { getNumMessagesDB } from './esUtils';
+import { getNumMessagesDB, openESDB } from './esUtils';
 
 /**
  * Estimate the size of a CachedMessage object
@@ -96,7 +95,7 @@ export const cacheDB = async (
     const { getTimes, initialTime } = queryStart;
     let { lower, upper, startingOrder } = queryStart;
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     let keepCaching = true;
     while (keepCaching) {
         let storedData: StoredCiphertext[];
