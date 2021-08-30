@@ -4,7 +4,7 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
-import { Alert, ButtonLike, Card, PrimaryButton, SettingsLink } from '../../../components';
+import { Alert, ButtonLike, Card, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
 
 import { SettingsSection } from '../../account';
 
@@ -17,6 +17,7 @@ interface Props {
     loading?: boolean;
     loadingMap: SimpleMap<boolean>;
     canAdd: boolean;
+    isFeatureUnavailable?: boolean;
     add: string;
     description?: ReactNode;
     onAdd: () => void;
@@ -34,6 +35,7 @@ const CalendarsSection = ({
     loading = false,
     loadingMap,
     canAdd,
+    isFeatureUnavailable = false,
     add,
     description,
     onAdd,
@@ -46,8 +48,10 @@ const CalendarsSection = ({
 }: Props) => {
     return (
         <SettingsSection>
-            {!canAdd && user.hasNonDelinquentScope && <Alert type="warning">{calendarLimitReachedText}</Alert>}
-            {user.isFree && canUpgradeLimit && !canAdd && (
+            {!canAdd && !isFeatureUnavailable && user.hasNonDelinquentScope && (
+                <Alert type="warning">{calendarLimitReachedText}</Alert>
+            )}
+            {user.isFree && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
                 <Card className="mb1">
                     <div className="flex flex-nowrap flex-align-items-center">
                         <p className="flex-item-fluid mt0 mb0 pr2">
@@ -65,9 +69,20 @@ const CalendarsSection = ({
             )}
             {description}
             <div className="mb1">
-                <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
-                    {add}
-                </PrimaryButton>
+                {isFeatureUnavailable ? (
+                    <Tooltip title={c('Tooltip').t`This feature is unavailable for the moment`}>
+                        {/* a <span> is added artificially so that the disabled prop of the button does not hide the tooltip */}
+                        <span>
+                            <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled>
+                                {add}
+                            </PrimaryButton>
+                        </span>
+                    </Tooltip>
+                ) : (
+                    <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
+                        {add}
+                    </PrimaryButton>
+                )}
             </div>
             {!!calendars.length && (
                 <CalendarsTable
