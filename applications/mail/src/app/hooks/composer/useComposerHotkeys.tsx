@@ -91,6 +91,10 @@ export const useComposerHotkeys = ({
     const ctrlOrMetaKey = (e: KeyboardEvent) => (isMac() ? e.metaKey : e.ctrlKey);
 
     const squireKeydownHandler = useHandler(async (e: KeyboardEvent) => {
+        if (!e.key) {
+            return;
+        }
+
         switch (e.key.toLowerCase()) {
             case 'escape':
                 if (Shortcuts) {
