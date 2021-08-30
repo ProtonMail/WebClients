@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { message } from '../../../shared/lib/sanitize';
 
 interface EmbeddedVerificationProps {
   token: string;
@@ -11,7 +12,27 @@ interface EmbeddedVerificationProps {
 const EmbeddedVerification = ({ token, methods, onSuccess }: EmbeddedVerificationProps) => {
   const [iframeHeight, setIframeHeight] = useState<number | undefined>();
 
+  const embedUrl = useMemo(
+    () => {
+      const url = new URL(window.location.origin)
+      const segments = url.host.split('.')
+      segments[0] = APPS_CONFIGURATION[APPS.PROTONVERIFICATION].subdomain
+      url.hostname = segments.join('.')
+
+      return url
+    },
+    []
+  )
+
   const handleMessage = (e: MessageEvent) => {
+    if (e.origin !== embedUrl.origin) {
+      /*
+       * Post message from unknown origin, exit to make sure
+       * this handler doesn't do anything with it
+       */
+      return
+    }
+
     switch (e.data.type) {
       case 'verification-height': {
         setIframeHeight(e.data.height);
@@ -35,22 +56,10 @@ const EmbeddedVerification = ({ token, methods, onSuccess }: EmbeddedVerificatio
     }
   }, []);
 
-  const src = useMemo(
-    () => {
-      const url = new URL(window.location.origin)
-      const segments = url.host.split('.')
-      segments[0] = APPS_CONFIGURATION[APPS.PROTONVERIFICATION].subdomain
-      url.hostname = segments.join('.')
-
-      return `${url.toString()}?methods=${methods.join(',')}&token=${token}&origin=${window.location.origin}`
-    },
-    []
-  )
-
   return (
     <iframe
         style={{ height: `${iframeHeight}px`, width: '100%' }}
-        src={src}
+        src={`${embedUrl.toString()}?methods=${methods.join(',')}&token=${token}&origin=${window.location.origin}`}
         title="verification-iframe"
     />
   )
