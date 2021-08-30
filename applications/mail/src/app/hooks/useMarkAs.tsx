@@ -112,11 +112,12 @@ export const useMarkAs = () => {
         if (!silent) {
             const notificationText = getNotificationTextMarked(isMessage, elements.length, status);
 
-            const handleUndo = async (token: string) => {
+            const handleUndo = async () => {
                 try {
                     // Stop the event manager to prevent race conditions
                     stop();
                     rollback();
+                    const token = await promise;
                     await api(undoActions(token));
                 } finally {
                     start();
@@ -125,17 +126,7 @@ export const useMarkAs = () => {
             };
 
             createNotification({
-                text: (
-                    <UndoActionNotification
-                        onUndo={async () => {
-                            const token = await promise;
-                            handleUndo(token);
-                        }}
-                        promise={promise}
-                    >
-                        {notificationText}
-                    </UndoActionNotification>
-                ),
+                text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
                 expiration: SUCCESS_NOTIFICATION_EXPIRATION,
             });
         }
