@@ -109,6 +109,10 @@ const AutoReplySection = () => {
     const squireKeydownHandler = useHandler((e: KeyboardEvent) => {
         const ctrlOrMetaKey = (e: KeyboardEvent) => (isMac() ? e.metaKey : e.ctrlKey);
 
+        if (!e.key) {
+            return;
+        }
+
         switch (e.key.toLowerCase()) {
             case 'enter':
                 if (Shortcuts && ctrlOrMetaKey(e)) {
