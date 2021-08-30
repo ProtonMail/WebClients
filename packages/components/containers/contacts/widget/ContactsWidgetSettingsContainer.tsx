@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Label, Field, Info, Icon, PrimaryButton, FullLoader, Tooltip } from '../../../components';
+import { Label, Field, Info, PrimaryButton, FullLoader, Tooltip, GoogleButton } from '../../../components';
 import { useAddresses, useContacts, useMailSettings, useModals, useUser, useUserKeys } from '../../../hooks';
 import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../hooks/useOAuthPopup';
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
@@ -72,14 +72,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                         </Label>
                         {OAUTH_TEST_IDS.includes(user.ID) ? (
                             <div className="mt1">
-                                <PrimaryButton
-                                    onClick={handleOAuthClick}
-                                    className="inline-flex flex-justify-center flex-align-items-center"
-                                    disabled={loadingAddresses}
-                                >
-                                    <Icon name="book-user" className="mr0-5" />
-                                    {c('Action').t`Continue with Google`}
-                                </PrimaryButton>
+                                <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} />
                             </div>
                         ) : (
                             <>
