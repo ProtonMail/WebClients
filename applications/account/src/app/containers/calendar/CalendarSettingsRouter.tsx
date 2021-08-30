@@ -22,9 +22,10 @@ import CalendarGeneralSettings from './CalendarGeneralSettings';
 
 interface Props {
     user: UserModel;
+    loadingFeatures: boolean;
 }
 
-const CalendarSettingsRouter = ({ user }: Props) => {
+const CalendarSettingsRouter = ({ user, loadingFeatures }: Props) => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
@@ -52,7 +53,7 @@ const CalendarSettingsRouter = ({ user }: Props) => {
 
     useCalendarsKeysSettingsListener(allCalendarIDs);
 
-    if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings) {
+    if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings || loadingFeatures) {
         return <PrivateMainAreaLoading />;
     }
 

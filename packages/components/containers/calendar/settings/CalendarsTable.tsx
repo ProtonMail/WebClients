@@ -1,6 +1,6 @@
 import {
     getCalendarHasSubscriptionParameters,
-    getCalendarIsNotSynced,
+    getCalendarIsNotSyncedInfo,
     getIsSubscribedCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { c } from 'ttag';
@@ -9,7 +9,17 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import { Badge, DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import {
+    Badge,
+    DropdownActions,
+    Icon,
+    Info,
+    Table,
+    TableBody,
+    TableHeader,
+    TableRow,
+    Tooltip,
+} from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
@@ -60,8 +70,9 @@ const CalendarsTable = ({
                     const isActive = getIsCalendarProbablyActive(calendar);
                     const isDefault = ID === defaultCalendarID;
                     const isSubscribed = getIsSubscribedCalendar(calendar);
-                    const isNotSynced =
-                        getCalendarHasSubscriptionParameters(calendar) && getCalendarIsNotSynced(calendar);
+                    const isNotSyncedInfo = getCalendarHasSubscriptionParameters(calendar)
+                        ? getCalendarIsNotSyncedInfo(calendar)
+                        : undefined;
 
                     const list: { text: string; onClick: () => void }[] = [
                         hasNonDelinquentScope && {
@@ -113,8 +124,12 @@ const CalendarsTable = ({
                                     {isDefault && <Badge type="primary">{c('Calendar status').t`Default`}</Badge>}
                                     {isActive && <Badge type="success">{c('Calendar status').t`Active`}</Badge>}
                                     {isDisabled && <Badge type="warning">{c('Calendar status').t`Disabled`}</Badge>}
-                                    {isSubscribed && isNotSynced && (
-                                        <Badge type="warning">{c('Calendar status').t`Not synced`}</Badge>
+                                    {isSubscribed && isNotSyncedInfo && (
+                                        <Tooltip title={isNotSyncedInfo.text}>
+                                            <span>
+                                                <Badge type="warning">{isNotSyncedInfo.label}</Badge>
+                                            </span>
+                                        </Tooltip>
                                     )}
                                 </div>,
                                 <DropdownActions

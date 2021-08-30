@@ -26,7 +26,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     getCalendarHasSubscriptionParameters,
-    getCalendarIsNotSynced,
+    getCalendarIsNotSyncedInfo,
     getIsPersonalCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getContrastingColor } from '../../helpers/color';
@@ -84,7 +84,9 @@ const CalendarSidebarListItems = ({
                 },
         ].filter(isTruthy);
 
-        const isNotSynced = getCalendarHasSubscriptionParameters(calendar) && getCalendarIsNotSynced(calendar);
+        const isNotSyncedInfo = getCalendarHasSubscriptionParameters(calendar)
+            ? getCalendarIsNotSyncedInfo(calendar)
+            : undefined;
 
         return (
             <SidebarListItem key={ID}>
@@ -92,16 +94,20 @@ const CalendarSidebarListItems = ({
                     <SidebarListItemContent
                         data-test-id="calendar-sidebar:user-calendars"
                         left={left}
-                        className={classnames(['flex', (isCalendarDisabled || isNotSynced) && 'color-weak'])}
+                        className={classnames(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                     >
                         <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                             <div className="flex flex-nowrap mr0-5">
                                 <div className="text-ellipsis" title={Name}>
                                     {Name}
                                 </div>
-                                {!isCalendarDisabled && isNotSynced && (
+                                {!isCalendarDisabled && isNotSyncedInfo && (
                                     <div className="flex-item-noshrink">
-                                        &nbsp;({c('Calendar status').t`not synced`})
+                                        &nbsp;(
+                                        <Tooltip title={isNotSyncedInfo.text}>
+                                            <span>{isNotSyncedInfo.label}</span>
+                                        </Tooltip>
+                                        )
                                     </div>
                                 )}
                                 {isCalendarDisabled && (
