@@ -1,6 +1,6 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { IDBPDatabase, openDB } from 'idb';
+import { IDBPDatabase } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -18,7 +18,7 @@ import {
     UncachedSearchOptions,
 } from '../../models/encryptedSearch';
 import { ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
-import { getOldestTime } from './esUtils';
+import { getOldestTime, openESDB } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
 /**
@@ -258,7 +258,7 @@ export const uncachedSearchAsc = async (
     normalisedSearchParams: NormalisedSearchParams,
     options: UncachedSearchOptions
 ) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const { incrementMessagesSearched, messageLimit, setCache, beginOrder, abortSearchingRef } = options;
     const resultsArray: MessageForSearch[] = [];
 
@@ -327,7 +327,7 @@ export const uncachedSearchDesc = async (
     normalisedSearchParams: NormalisedSearchParams,
     options: UncachedSearchOptions
 ) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const { incrementMessagesSearched, messageLimit, beginOrder, setCache, abortSearchingRef } = options;
     const resultsArray: MessageForSearch[] = [];
 
@@ -459,7 +459,12 @@ export const hybridSearch = async (
     if (isDescending || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
         // searchResults is initialised with the first portion of cached results
         let lastLength = esCacheRef.current.esCache.length;
-        searchResults = cachedSearch(esCacheRef.current.esCache, normalisedSearchParams, incrementMessagesSearched, abortSearchingRef);
+        searchResults = cachedSearch(
+            esCacheRef.current.esCache,
+            normalisedSearchParams,
+            incrementMessagesSearched,
+            abortSearchingRef
+        );
         let resultsCounter = searchResults.length;
 
         // The first batch of results (if any) are shown only if the cache is still being built, or if it has finished
@@ -470,7 +475,7 @@ export const hybridSearch = async (
 
         // If the cache is still being built, incremental portions of cache are searched
         while (!esCacheRef.current.isCacheReady) {
-            if(abortSearchingRef.current.signal.aborted){
+            if (abortSearchingRef.current.signal.aborted) {
                 return {
                     searchResults,
                     isSearchPartial,

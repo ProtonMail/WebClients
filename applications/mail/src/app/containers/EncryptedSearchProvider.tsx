@@ -10,12 +10,10 @@ import {
     useSubscribeEventManager,
     useUser,
 } from '@proton/components';
-import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EVENT_ACTIONS, SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { deleteDB } from 'idb';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';
 import {
@@ -45,6 +43,11 @@ import {
     getTotalFromBuildProgress,
     setCurrentFromBuildProgress,
     canUseES,
+    deleteESDB,
+    removeESFlags,
+    removeES,
+    setES,
+    getES,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -109,14 +112,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const esDelete = async () => {
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
-        removeItem(`ES:${userID}:Key`);
-        removeItem(`ES:${userID}:Event`);
-        removeItem(`ES:${userID}:BuildProgress`);
-        removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:Pause`);
-        removeItem(`ES:${userID}:ESEnabled`);
-        removeItem(`ES:${userID}:SizeIDB`);
-        return deleteDB(`ES:${userID}:DB`).catch(() => undefined);
+        removeESFlags(userID);
+        setESStatus(() => defaultESStatus);
+        return deleteESDB(userID);
     };
 
     /**
@@ -133,7 +131,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const dbCorruptError = async () => {
         await esDelete();
-        setESStatus(() => defaultESStatus);
         createNotification({
             text: c('Error').t`Please activate your content search again`,
             type: 'error',
@@ -190,14 +187,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         if (currentOption) {
             abortSearchingRef.current.abort();
-            removeItem(`ES:${userID}:ESEnabled`);
+            removeES.Enabled(userID);
         } else {
             // Every time ES is enabled, we reset sorting to avoid carrying on with SIZE sorting in
             // case it was previously used. SIZE sorting is not supported by ES
             if (testIsSearch(extractSearchParameters(location))) {
                 history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
             }
-            setItem(`ES:${userID}:ESEnabled`, 'true');
+            setES.Enabled(userID);
         }
 
         // If IDB was evicted by the browser in the meantime, we erase everything else too
@@ -378,7 +375,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // In case everything goes through, save the last event ID from which to
         // catch up the next time
         if (event.EventID) {
-            setItem(`ES:${userID}:Event`, event.EventID);
+            setES.Event(userID, event.EventID);
         }
 
         // In case many messages were removed from cache, fill the remaining space
@@ -436,7 +433,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const catchUpFromLS = async (indexKey: CryptoKey): Promise<void> => {
         const isIDBIntact = await canUseES(userID);
-        const storedEventID = getItem(`ES:${userID}:Event`);
+        const storedEventID = getES.Event(userID);
         if (!isIDBIntact || !storedEventID) {
             await dbCorruptError();
             return;
@@ -473,7 +470,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // refresh would be triggered
             if (refreshEvent) {
                 if (refreshEvent.EventID) {
-                    setItem(`ES:${userID}:Event`, refreshEvent.EventID);
+                    setES.Event(userID, refreshEvent.EventID);
                 } else {
                     throw new Error('Refresh event has no ID');
                 }
@@ -564,7 +561,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 isBuilding: false,
             };
         });
-        setItem(`ES:${userID}:Pause`, 'true');
+        setES.Pause(userID);
         const isIDBIntact = await canUseES(userID);
         if (!isIDBIntact) {
             await dbCorruptError();
@@ -583,7 +580,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 esEnabled: true,
             };
         });
-        setItem(`ES:${userID}:ESEnabled`, 'true');
+        setES.Enabled(userID);
 
         const showError = (notSupported?: boolean) => {
             createNotification({
@@ -596,7 +593,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             setESStatus(() => defaultESStatus);
         };
 
-        removeItem(`ES:${userID}:Pause`);
+        removeES.Pause(userID);
         abortIndexingRef.current = new AbortController();
 
         let indexKey: CryptoKey;
@@ -671,7 +668,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // Note that it's safe to remove the BuildProgress blob because the event to catch
         // up from is stored in the Event blob
-        removeItem(`ES:${userID}:BuildProgress`);
+        removeES.Progress(userID);
 
         setESStatus((esStatus) => {
             return {

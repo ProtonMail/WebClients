@@ -3,7 +3,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { openDB, IDBPDatabase } from 'idb';
+import { IDBPDatabase } from 'idb';
 import { MessageEvent } from '../../models/event';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import {
@@ -23,6 +23,7 @@ import {
     removeMessageSize,
     getTotalMessages,
     refreshOpenpgp,
+    openESDB,
 } from './esUtils';
 import { applySearch, normaliseSearchParams, splitCachedMessage, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesMetadata } from './esAPI';
@@ -143,7 +144,7 @@ export const syncMessageEvents = async (
     normalisedSearchParams: NormalisedSearchParams,
     recordProgressLocal?: () => void
 ) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     let searchChanged = false;
 
     // In case something happens while displaying search results, this function keeps
@@ -360,7 +361,7 @@ export const correctDecryptionErrors = async (
 
     recordProgress(0, searchResults.length);
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
 
     let newMessagesFound = false;
     for (let index = 0; index < searchResults.length; index++) {
@@ -416,7 +417,7 @@ export const refreshIndex = async (
     // Progress is wiped before actual refreshing
     recordProgress(0, 0);
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
 
     // Fetching and preparing all metadata
     const Total = await getTotalMessages(messageCounts, api);

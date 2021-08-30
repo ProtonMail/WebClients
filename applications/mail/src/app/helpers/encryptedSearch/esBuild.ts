@@ -1,9 +1,8 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api } from '@proton/shared/lib/interfaces';
-import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { openDB, IDBPDatabase, deleteDB } from 'idb';
+import { IDBPDatabase } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
 import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
@@ -25,7 +24,7 @@ import {
     localisedForwardFlags,
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
-import { refreshOpenpgp, updateSizeIDB } from './esUtils';
+import { createESDB, deleteESDB, getES, openESDB, refreshOpenpgp, removeES, setES, updateSizeIDB } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { toText } from '../parserHtml';
 import { sizeOfCachedMessage } from './esCache';
@@ -34,7 +33,7 @@ import { sizeOfCachedMessage } from './esCache';
  * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
  */
 export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
-    const encryptedKey = getItem(`ES:${userID}:Key`);
+    const encryptedKey = getES.Key(userID);
 
     if (!encryptedKey) {
         return;
@@ -291,7 +290,7 @@ const storeMessagesBatches = async (
         ({ Messages } = resultMetadata);
     } else {
         if (inputLastMessage) {
-            setItem(`ES:${userID}:Recover`, JSON.stringify(inputLastMessage));
+            setES.Recover(userID, JSON.stringify(inputLastMessage));
         }
         return false;
     }
@@ -334,7 +333,7 @@ const storeMessagesBatches = async (
             return true;
         }
 
-        setItem(`ES:${userID}:Recover`, JSON.stringify(recoveryPoint));
+        setES.Recover(userID, JSON.stringify(recoveryPoint));
         updateSizeIDB(userID, batchSize);
         progress += Messages.length;
 
@@ -373,14 +372,14 @@ export const buildDB = async (
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void
 ) => {
-    const recoverBlob = getItem(`ES:${userID}:Recover`);
+    const recoverBlob = getES.Recover(userID);
 
     let recoveryPoint: RecoveryPoint | undefined;
     if (recoverBlob) {
         recoveryPoint = JSON.parse(recoverBlob);
     }
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
 
     // Start fetching messages from the recovery point saved in local storage
     // or from scratch if a recovery point was not found
@@ -396,7 +395,7 @@ export const buildDB = async (
     );
 
     if (success) {
-        removeItem(`ES:${userID}:Recover`);
+        removeES.Recover(userID);
     }
 
     esDB.close();
@@ -415,7 +414,7 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
 
     // Remove IndexedDB in case there is a corrupt leftover
     try {
-        await deleteDB(`ES:${userID}:DB`).catch(() => undefined);
+        await deleteESDB(userID);
     } catch (error) {
         return result;
     }
@@ -434,33 +433,27 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
             ID: initialiser.firstMessage.ID,
             Time: initialiser.firstMessage.Time + 1,
         };
-        setItem(`ES:${userID}:Recover`, JSON.stringify(firstRecoveryPoint));
+        setES.Recover(userID, JSON.stringify(firstRecoveryPoint));
     }
 
     // Save the event before starting building IndexedDB
     const previousEvent = await queryEvents(api);
     if (previousEvent && previousEvent.EventID) {
-        setItem(`ES:${userID}:BuildProgress`, JSON.stringify({ totalMessages: initialiser.Total }));
-        setItem(`ES:${userID}:Event`, previousEvent.EventID);
+        setES.Progress(userID, JSON.stringify({ totalMessages: initialiser.Total }));
+        setES.Event(userID, previousEvent.EventID);
     } else {
-        removeItem(`ES:${userID}:Recover`);
+        removeES.Recover(userID);
         return result;
     }
 
     // Set up DB
     let esDB;
     try {
-        esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`, 1, {
-            upgrade(esDB) {
-                esDB.createObjectStore('messages', { keyPath: 'ID' }).createIndex('byTime', ['Time', 'Order'], {
-                    unique: true,
-                });
-            },
-        });
+        esDB = await createESDB(userID);
     } catch (error) {
-        removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:Event`);
-        removeItem(`ES:${userID}:BuildProgress`);
+        removeES.Recover(userID);
+        removeES.Event(userID);
+        removeES.Progress(userID);
         return {
             ...result,
             notSupported: true,
@@ -480,15 +473,15 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
             publicKeys: [primaryUserKey.publicKey],
             privateKeys: [primaryUserKey.privateKey],
         });
-        setItem(`ES:${userID}:Key`, encryptedKey);
+        setES.Key(userID, encryptedKey);
     } catch (error) {
-        removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:Event`);
-        removeItem(`ES:${userID}:BuildProgress`);
+        removeES.Recover(userID);
+        removeES.Event(userID);
+        removeES.Progress(userID);
         return result;
     }
 
-    setItem(`ES:${userID}:SizeIDB`, '0');
+    setES.Size(userID, '0');
 
     return {
         ...result,
