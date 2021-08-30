@@ -25,7 +25,7 @@ import {
     HighlightMetadata,
     HighlightString,
     LastEmail,
-    MessageForSearch,
+    ESMessage,
     IsSearchResult,
     ESCache,
     ESSetsElementsCache,
@@ -744,7 +744,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             }
         };
 
-        let searchResults: MessageForSearch[] = [];
+        let searchResults: ESMessage[] = [];
         let isSearchPartial = false;
         let lastEmail: LastEmail | undefined;
         try {

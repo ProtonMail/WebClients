@@ -6,8 +6,6 @@ import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { EncryptedSearchDB } from '../../models/encryptedSearch';
-import { getMessageFromDB } from './esSync';
-import { sizeOfCachedMessage } from './esCache';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 
 /**
@@ -206,27 +204,6 @@ export const updateSizeIDB = (userID: string, addend: number) => {
     const sizeIDB = getSizeIDB(userID);
     const newSize = sizeIDB + addend;
     setES.Size(userID, `${newSize}`);
-};
-
-/**
- * Remove a single message's size from the rolling estimated size of IDB
- */
-export const removeMessageSize = async (
-    userID: string,
-    esDB: IDBPDatabase<EncryptedSearchDB>,
-    ID: string,
-    indexKey: CryptoKey
-) => {
-    const message = await getMessageFromDB(ID, indexKey, esDB);
-    if (!message) {
-        // If the message is not in IndexedDB, it means the latter is only partial for
-        // space constraints and the message was too old to fit. In this case, any update
-        // is ignored
-        return -1;
-    }
-    const size = sizeOfCachedMessage(message);
-    updateSizeIDB(userID, -size);
-    return size;
 };
 
 /**
