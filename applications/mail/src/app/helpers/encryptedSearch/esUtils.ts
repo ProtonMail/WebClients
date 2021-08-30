@@ -5,9 +5,10 @@ import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsMo
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
-import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
+import { EncryptedSearchDB } from '../../models/encryptedSearch';
 import { getMessageFromDB } from './esSync';
 import { sizeOfCachedMessage } from './esCache';
+import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -29,7 +30,6 @@ export const getES = {
     Key: (userID: string) => getESItem(userID, 'Key'),
     Event: (userID: string) => getESItem(userID, 'Event'),
     Progress: (userID: string) => getESItem(userID, 'BuildProgress'),
-    Recover: (userID: string) => getESItem(userID, 'Recover'),
     Size: (userID: string) => getESItem(userID, 'SizeIDB'),
     Pause: (userID: string) => getESItem(userID, 'Pause'),
     Enabled: (userID: string) => getESItem(userID, 'ESEnabled'),
@@ -39,7 +39,6 @@ export const setES = {
     Key: (userID: string, blobValue: string) => setESItem(userID, 'Key', blobValue),
     Event: (userID: string, blobValue: string) => setESItem(userID, 'Event', blobValue),
     Progress: (userID: string, blobValue: string) => setESItem(userID, 'BuildProgress', blobValue),
-    Recover: (userID: string, blobValue: string) => setESItem(userID, 'Recover', blobValue),
     Size: (userID: string, blobValue: string) => setESItem(userID, 'SizeIDB', blobValue),
     Pause: (userID: string) => setESItem(userID, 'Pause', 'true'),
     Enabled: (userID: string) => setESItem(userID, 'ESEnabled', 'true'),
@@ -49,7 +48,6 @@ export const removeES = {
     Key: (userID: string) => removeESItem(userID, 'Key'),
     Event: (userID: string) => removeESItem(userID, 'Event'),
     Progress: (userID: string) => removeESItem(userID, 'BuildProgress'),
-    Recover: (userID: string) => removeESItem(userID, 'Recover'),
     Size: (userID: string) => removeESItem(userID, 'SizeIDB'),
     Pause: (userID: string) => removeESItem(userID, 'Pause'),
     Enabled: (userID: string) => removeESItem(userID, 'ESEnabled'),
@@ -83,12 +81,12 @@ export const isPaused = (userID: string) => !!getES.Pause(userID);
 /**
  * Check whether a recovery point exists
  */
-export const isRecoveryNeeded = (userID: string) => !!getES.Recover(userID);
+export const isRecoveryNeeded = (userID: string) => !!getES.Progress(userID);
 
 /**
  * Check whether a previously started indexing process has terminated successfully
  */
-export const isDBReadyAfterBuilding = (userID: string) => !getES.Progress(userID) && !getES.Recover(userID);
+export const isDBReadyAfterBuilding = (userID: string) => !isRecoveryNeeded(userID);
 
 /**
  * Check whether a key exists and the corresponding indexing process has terminated successfully
@@ -104,8 +102,11 @@ export const isESEnabled = (userID: string) => !!getES.Enabled(userID);
  * Fetch the oldest message from IDB
  */
 export const getOldestMessage = async (esDB: IDBPDatabase<EncryptedSearchDB>) => {
-    const oldestMessage: StoredCiphertext = (await esDB.getAllFromIndex('messages', 'byTime', undefined, 1))[0];
-    return oldestMessage;
+    return esDB.getAllFromIndex('messages', 'byTime', undefined, 1).then((array) => {
+        if (array.length === 1) {
+            return array[0];
+        }
+    });
 };
 
 /**
@@ -115,7 +116,7 @@ export const getOldestTimePoint = async (userID: string) => {
     const esDB = await openESDB(userID);
     const oldestMessage = await getOldestMessage(esDB);
     esDB.close();
-    return [oldestMessage.Time, oldestMessage.Order] as [number, number];
+    return [oldestMessage?.Time || 0, oldestMessage?.Order || 0] as [number, number];
 };
 
 /**
@@ -166,13 +167,21 @@ export const getProgressFromBuildProgress = (userID: string) => {
 /**
  * Set the number of messages already indexed in BuildProgress and save it to localStorage
  */
-export const setCurrentFromBuildProgress = (userID: string, currentMessages: number) => {
+export const setCurrentToBuildProgress = (userID: string, currentMessages: number) => {
     const buildBlob = getES.Progress(userID);
     if (!buildBlob) {
         return;
     }
     const { totalMessages }: { totalMessages: number } = JSON.parse(buildBlob);
-    setES.Progress(userID, JSON.stringify({ totalMessages, currentMessages }));
+    // Since messages are stored to IDB in batches, we only store up the current
+    // number modulo the batch size
+    setES.Progress(
+        userID,
+        JSON.stringify({
+            totalMessages,
+            currentMessages: Math.floor(currentMessages / ES_MAX_PARALLEL_MESSAGES) * ES_MAX_PARALLEL_MESSAGES,
+        })
+    );
 };
 
 /**

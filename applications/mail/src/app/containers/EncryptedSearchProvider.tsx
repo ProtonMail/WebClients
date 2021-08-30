@@ -41,7 +41,7 @@ import {
     isESEnabled,
     wasIndexingDone,
     getTotalFromBuildProgress,
-    setCurrentFromBuildProgress,
+    setCurrentToBuildProgress,
     canUseES,
     deleteESDB,
     removeESFlags,
@@ -630,7 +630,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             recordProgress(currentMessages, totalMessages);
             const recordProgressLocal = (progress: number) => {
                 const newProgress = currentMessages + progress;
-                setCurrentFromBuildProgress(userID, newProgress);
+                setCurrentToBuildProgress(userID, newProgress);
                 recordProgress(newProgress, totalMessages);
             };
 
