@@ -248,7 +248,7 @@ describe('Mailbox element list', () => {
                     },
                 },
             ];
-            const labelRequestSpy = jest.fn();
+            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
             const { getByTestId } = await setup({ conversations, page: 1, mockConversations: false });

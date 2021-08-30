@@ -15,7 +15,7 @@ import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 
-const { ALL_MAIL, ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, STARRED, SPAM, TRASH } = MAILBOX_LABEL_IDS;
+const { SPAM, TRASH } = MAILBOX_LABEL_IDS;
 
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
@@ -219,20 +219,22 @@ export const useApplyLabels = () => {
                 return tokens;
             };
 
-            const handleUndo = async (tokens: string[]) => {
+            // No await ==> optimistic
+            const promise = handleDo();
+
+            const handleUndo = async () => {
                 try {
-                    const filteredTokens = tokens.filter(isTruthy);
                     // Stop the event manager to prevent race conditions
                     stop();
+                    Object.values(rollbacks).forEach((rollback) => rollback());
+                    const tokens = await promise;
+                    const filteredTokens = tokens.filter(isTruthy);
                     await Promise.all(filteredTokens.map((token) => api(undoActions(token))));
                 } finally {
                     start();
                     await call();
                 }
             };
-
-            // No await ==> optimistic
-            const promise = handleDo();
 
             let notificationText = c('Success').t`Labels applied.`;
 
@@ -252,17 +254,7 @@ export const useApplyLabels = () => {
 
             if (!silent) {
                 createNotification({
-                    text: (
-                        <UndoActionNotification
-                            onUndo={async () => {
-                                const tokens = await promise;
-                                handleUndo(tokens);
-                            }}
-                            promise={promise}
-                        >
-                            {notificationText}
-                        </UndoActionNotification>
-                    ),
+                    text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
                     expiration: SUCCESS_NOTIFICATION_EXPIRATION,
                 });
             }
@@ -278,7 +270,6 @@ export const useMoveToFolder = () => {
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
-    const labelIDs = labels.map(({ ID }) => ID);
     const optimisticApplyLabels = useOptimisticApplyLabels();
 
     const moveToFolder = useCallback(
@@ -289,9 +280,6 @@ export const useMoveToFolder = () => {
 
             const isMessage = testIsMessage(elements[0]);
             const action = isMessage ? labelMessages : labelConversations;
-            const canUndo = isMessage
-                ? !([ALL_MAIL, ALL_DRAFTS, ALL_SENT] as string[]).includes(fromLabelID)
-                : ![...labelIDs, ALL_DRAFTS, DRAFTS, ALL_SENT, SENT, STARRED, ALL_MAIL].includes(fromLabelID);
             const authorizedToMove = isMessage
                 ? getMessagesAuthorizedToMove(elements as Message[], folderID)
                 : elements;
@@ -337,11 +325,12 @@ export const useMoveToFolder = () => {
                     fromLabelID
                 );
 
-                const handleUndo = async (token: string) => {
+                const handleUndo = async () => {
                     try {
                         // Stop the event manager to prevent race conditions
                         stop();
                         rollback();
+                        const token = await promise;
                         await api(undoActions(token));
                     } finally {
                         start();
@@ -350,21 +339,7 @@ export const useMoveToFolder = () => {
                 };
 
                 createNotification({
-                    text: (
-                        <UndoActionNotification
-                            onUndo={
-                                canUndo
-                                    ? async () => {
-                                          const token = await promise;
-                                          handleUndo(token);
-                                      }
-                                    : undefined
-                            }
-                            promise={promise}
-                        >
-                            {notificationText}
-                        </UndoActionNotification>
-                    ),
+                    text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
                     expiration: SUCCESS_NOTIFICATION_EXPIRATION,
                 });
             }
