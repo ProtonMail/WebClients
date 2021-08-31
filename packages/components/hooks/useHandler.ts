@@ -1,4 +1,4 @@
-import { useRef, useEffect, RefObject, useMemo } from 'react';
+import { useRef, useEffect, RefObject, useMemo, DependencyList } from 'react';
 import { debounce, throttle } from '@proton/shared/lib/helpers/function';
 
 import useEventManager from './useEventManager';
@@ -48,7 +48,7 @@ export const useEventListener = (
     ref: RefObject<Document | Element | null | undefined>,
     eventName: string,
     handler: Handler,
-    dependencies: React.DependencyList
+    dependencies: DependencyList
 ) => {
     const actualHandler = useHandler(handler);
 

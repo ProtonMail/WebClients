@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { updateLabel } from '@proton/shared/lib/api/labels';
@@ -17,7 +17,7 @@ const ToggleNotify = ({ label }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
-    const handleChange = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         const newLabel = {
             ...label,
             Notify: +target.checked,

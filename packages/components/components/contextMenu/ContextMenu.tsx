@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
-import * as React from 'react';
+import { useState, useEffect, RefObject, ReactNode } from 'react';
 
 import { generateUID } from '../../helpers';
 import { Dropdown } from '../dropdown';
 import { CORNERS_ONLY_PLACEMENTS, Position } from '../popper/utils';
 
 interface Props {
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement>;
     isOpen: boolean;
-    children: React.ReactNode;
+    children: ReactNode;
     position?: {
         top: number;
         left: number;

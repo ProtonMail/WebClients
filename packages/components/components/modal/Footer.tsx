@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.ComponentPropsWithoutRef<'footer'> {
-    children?: React.ReactNode;
+interface Props extends ComponentPropsWithoutRef<'footer'> {
+    children?: ReactNode;
     isColumn?: boolean;
 }
 

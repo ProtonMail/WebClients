@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -20,7 +19,7 @@ const UnlockForm = ({
     cancelButton,
 }: {
     onSubmit: (totp: string) => Promise<void>;
-    cancelButton?: React.ReactNode;
+    cancelButton?: ReactNode;
 }) => {
     const [loading, withLoading] = useLoading();
     const [keyPassword, setKeyPassword] = useState('');
@@ -65,7 +64,7 @@ const TOTPForm = ({
     cancelButton,
 }: {
     onSubmit: (totp: string) => Promise<void>;
-    cancelButton?: React.ReactNode;
+    cancelButton?: ReactNode;
 }) => {
     const [loading, withLoading] = useLoading();
     const [totp, setTotp] = useState('');
@@ -114,8 +113,8 @@ const LoginForm = ({
 }: {
     onSubmit: (username: string, password: string, payload: ChallengeResult) => Promise<void>;
     hasChallenge?: boolean;
-    needHelp?: React.ReactNode;
-    footer?: React.ReactNode;
+    needHelp?: ReactNode;
+    footer?: ReactNode;
 }) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState('');
@@ -220,8 +219,8 @@ const LoginForm = ({
 
 interface Props {
     onLogin: OnLoginCallback;
-    needHelp?: React.ReactNode;
-    footer?: React.ReactNode;
+    needHelp?: ReactNode;
+    footer?: ReactNode;
     hasChallenge?: boolean;
     ignoreUnlock?: boolean;
 }

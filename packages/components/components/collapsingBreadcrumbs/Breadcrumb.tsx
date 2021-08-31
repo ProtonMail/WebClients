@@ -1,8 +1,7 @@
-import { Ref } from 'react';
-import * as React from 'react';
+import { forwardRef, LiHTMLAttributes, Ref } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
+interface Props extends Omit<LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     children: string;
     active?: boolean;
     noShrink?: boolean;
@@ -33,4 +32,4 @@ const Breadcrumb = ({ children, onClick, active, noShrink, className, ...rest }:
     );
 };
 
-export default React.forwardRef<HTMLLIElement, Props>(Breadcrumb);
+export default forwardRef<HTMLLIElement, Props>(Breadcrumb);

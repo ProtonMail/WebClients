@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { Children, ComponentPropsWithoutRef, isValidElement } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.ComponentPropsWithoutRef<'ul'> {}
+interface Props extends ComponentPropsWithoutRef<'ul'> {}
 
 const TopNavbarList = ({ children }: Props) => {
-    const validElements = React.Children.toArray(children).filter((child) => React.isValidElement(child));
+    const validElements = Children.toArray(children).filter((child) => isValidElement(child));
     const navIconsLength = validElements.length;
     return (
         <ul

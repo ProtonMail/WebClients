@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { Info, Toggle } from '../../components';
@@ -16,7 +16,7 @@ const AddressVerificationSection = () => {
     const [loading, withLoading] = useLoading();
     const [{ PromptPin = 0 } = {}] = useMailSettings();
 
-    const handleChange = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(updatePromptPin(+target.checked));
         await call();
         createNotification({ text: c('Success').t`Preference saved` });

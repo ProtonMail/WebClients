@@ -1,10 +1,9 @@
-import { useEffect, useRef } from 'react';
-import * as React from 'react';
+import { forwardRef, InputHTMLAttributes, Ref, useEffect, useRef } from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
 
-export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     loading?: boolean;
     backgroundColor?: string;
     borderColor?: string;
@@ -29,7 +28,7 @@ const Checkbox = (
         labelOnClick,
         ...rest
     }: Props,
-    ref: React.Ref<HTMLInputElement>
+    ref: Ref<HTMLInputElement>
 ) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const combinedRef = useCombinedRefs(inputRef, ref);
@@ -72,4 +71,4 @@ const Checkbox = (
     );
 };
 
-export default React.forwardRef<HTMLInputElement, Props>(Checkbox);
+export default forwardRef<HTMLInputElement, Props>(Checkbox);

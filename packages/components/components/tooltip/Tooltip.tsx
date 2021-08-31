@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { Children, cloneElement, ReactElement, ReactNode, useState } from 'react';
 import { generateUID, classnames } from '../../helpers';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
@@ -9,8 +8,8 @@ import { useCombinedRefs } from '../../hooks';
 type TooltipType = 'info' | 'error' | 'warning';
 
 interface Props {
-    children: React.ReactElement;
-    title?: React.ReactNode;
+    children: ReactElement;
+    title?: ReactNode;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     type?: TooltipType;
 }
@@ -59,13 +58,13 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ..
     });
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
 
-    const child = React.Children.only(children);
+    const child = Children.only(children);
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
     // @ts-ignore
     const mergedRef = useCombinedRefs(anchorRef, child?.ref);
 
     if (!title) {
-        return React.cloneElement(child, {
+        return cloneElement(child, {
             ref: mergedRef,
             ...rest,
         });
@@ -77,7 +76,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ..
 
     return (
         <>
-            {React.cloneElement(child, {
+            {cloneElement(child, {
                 ref: mergedRef,
                 ...rest,
                 ...mergeCallbacks(tooltipHandlers, child.props),

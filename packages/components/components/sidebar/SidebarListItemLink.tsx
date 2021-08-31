@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { forwardRef, ReactNode, Ref } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { classnames } from '../../helpers';
 
 export interface Props extends NavLinkProps {
-    children: React.ReactNode;
+    children: ReactNode;
     itemClassName?: string;
 }
 
-const SidebarListItemLink = React.forwardRef(
-    ({ children, itemClassName = 'navigation-link', className, ...rest }: Props, ref: React.Ref<HTMLAnchorElement>) => {
+const SidebarListItemLink = forwardRef(
+    ({ children, itemClassName = 'navigation-link', className, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
         return (
             <NavLink ref={ref} className={classnames([itemClassName, className])} {...rest}>
                 {children}

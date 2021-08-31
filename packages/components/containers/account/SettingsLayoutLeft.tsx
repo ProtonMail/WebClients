@@ -1,10 +1,9 @@
-import * as React from 'react';
-
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 
 import './SettingsLayoutLeft.scss';
 
-const SettingsLayoutLeft = ({ className, ...rest }: React.ComponentPropsWithoutRef<'div'>) => {
+const SettingsLayoutLeft = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
     return <div className={classnames(['settings-layout-left', className])} {...rest} />;
 };
 

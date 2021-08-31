@@ -1,19 +1,18 @@
-import * as React from 'react';
-
+import { ComponentPropsWithRef, forwardRef, KeyboardEvent, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 import { DropdownCaret } from '../dropdown';
 import { CircleLoader } from '../loader';
 
-interface SelectButtonProps extends Omit<React.ComponentPropsWithRef<'button'>, 'value'> {
-    value?: React.ReactNode;
+interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {
+    value?: ReactNode;
     loading?: boolean;
     isOpen?: boolean;
     onOpen?: () => void;
 }
 
-const SelectButton = React.forwardRef<HTMLButtonElement, SelectButtonProps>(
+const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
     ({ className, value, loading, isOpen, onOpen, children, ...rest }, ref) => {
-        const handleAnchorKeydown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+        const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
                     onOpen?.();

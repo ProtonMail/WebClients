@@ -1,5 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
-import * as React from 'react';
+import { useState, useEffect, useMemo, ChangeEvent, FocusEvent } from 'react';
 import { format, parse, addDays, Locale } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { c } from 'ttag';
@@ -108,7 +107,7 @@ const DateInput = ({
         }
     };
 
-    const handleFocusInput = (event: React.FocusEvent<HTMLInputElement>) => {
+    const handleFocusInput = (event: FocusEvent<HTMLInputElement>) => {
         onFocus?.(event);
         open();
 
@@ -116,7 +115,7 @@ const DateInput = ({
         setTemporaryInput(currentInput);
     };
 
-    const handleBlurInput = (event: React.FocusEvent<HTMLInputElement>) => {
+    const handleBlurInput = (event: FocusEvent<HTMLInputElement>) => {
         onBlur?.(event);
         parseAndTriggerChange();
         close();
@@ -179,7 +178,7 @@ const DateInput = ({
         setTimeout(() => anchorRef.current?.blur());
     };
 
-    const handleInputChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
         setTemporaryInput(value);
     };
 

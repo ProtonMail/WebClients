@@ -1,6 +1,5 @@
+import { ReactNode, useRef } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { useRef } from 'react';
-import * as React from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import SidebarListItem from './SidebarListItem';
@@ -10,7 +9,7 @@ interface Props {
     toggle: boolean;
     onToggle: (display: boolean) => void;
     hasCaret?: boolean;
-    right?: React.ReactNode;
+    right?: ReactNode;
     text: string;
     title?: string;
     onFocus?: () => void;

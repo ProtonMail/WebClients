@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { HTMLAttributes } from 'react';
 
-export type SubTitleProps = React.HTMLAttributes<HTMLHeadingElement>;
+export type SubTitleProps = HTMLAttributes<HTMLHeadingElement>;
 
 const SubTitle = ({ children, ...rest }: SubTitleProps) => <h2 {...rest}>{children}</h2>;
 

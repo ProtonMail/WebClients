@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 import QRCodeReact from 'qrcode.react';
 
 import { classnames } from '../../helpers';
 
-interface Props extends React.ComponentPropsWithoutRef<'svg'> {
+interface Props extends ComponentPropsWithoutRef<'svg'> {
     size?: number;
     value: string;
 }
 
-const QRCode = React.forwardRef<SVGElement, Props>(({ size = 200, className, ...rest }: Props, ref) => {
+const QRCode = forwardRef<SVGElement, Props>(({ size = 200, className, ...rest }: Props, ref) => {
     return (
         <QRCodeReact
             className={classnames(['qr-code', className])}

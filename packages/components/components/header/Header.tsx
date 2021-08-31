@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    children?: React.ReactNode;
+export interface Props extends HTMLAttributes<HTMLDivElement> {
+    children?: ReactNode;
 }
 
 const Header = ({ children, ...rest }: Props) => {

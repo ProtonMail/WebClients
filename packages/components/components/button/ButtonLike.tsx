@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { ElementType, forwardRef, ReactElement } from 'react';
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { CircleLoader } from '../loader';
@@ -38,73 +37,72 @@ interface ButtonLikeOwnProps {
     group?: boolean;
 }
 
-export type ButtonLikeProps<E extends React.ElementType> = PolymorphicComponentProps<E, ButtonLikeOwnProps>;
+export type ButtonLikeProps<E extends ElementType> = PolymorphicComponentProps<E, ButtonLikeOwnProps>;
 
 const defaultElement = 'button';
 
-const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
-    props: ButtonLikeProps<E>
-) => React.ReactElement | null = React.forwardRef(
-    <E extends React.ElementType = typeof defaultElement>(
-        {
-            loading = false,
-            disabled = false,
-            className,
-            tabIndex,
-            children,
-            shape: shapeProp,
-            color = 'weak',
-            size = 'medium',
-            fullWidth,
-            pill,
-            icon,
-            group,
-            ...restProps
-        }: ButtonLikeProps<E>,
-        ref: typeof restProps.ref
-    ) => {
-        const isDisabled = loading || disabled;
+const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonLikeProps<E>) => ReactElement | null =
+    forwardRef(
+        <E extends ElementType = typeof defaultElement>(
+            {
+                loading = false,
+                disabled = false,
+                className,
+                tabIndex,
+                children,
+                shape: shapeProp,
+                color = 'weak',
+                size = 'medium',
+                fullWidth,
+                pill,
+                icon,
+                group,
+                ...restProps
+            }: ButtonLikeProps<E>,
+            ref: typeof restProps.ref
+        ) => {
+            const isDisabled = loading || disabled;
 
-        const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
+            const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
 
-        const actualShape = group ? 'ghost' : shape;
-        const actualColor = group ? 'weak' : color;
+            const actualShape = group ? 'ghost' : shape;
+            const actualColor = group ? 'weak' : color;
 
-        const buttonClassName = classnames([
-            actualShape === 'link' ? 'button-link' : 'button',
-            pill && 'button-pill',
-            icon && 'button-for-icon',
-            group && 'button-group-item',
-            size !== 'medium' && `button-${size}`,
-            `button-${actualShape}-${actualColor}`,
-            restProps.as !== 'button' ? 'inline-block text-center' : '',
-            fullWidth && 'w100',
-            className,
-        ]);
+            const buttonClassName = classnames([
+                actualShape === 'link' ? 'button-link' : 'button',
+                pill && 'button-pill',
+                icon && 'button-for-icon',
+                group && 'button-group-item',
+                size !== 'medium' && `button-${size}`,
+                `button-${actualShape}-${actualColor}`,
+                restProps.as !== 'button' ? 'inline-block text-center' : '',
+                fullWidth && 'w100',
+                className,
+            ]);
 
-        const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
+            const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
 
-        return (
-            <Box
-                as={defaultElement}
-                ref={ref}
-                className={buttonClassName}
-                disabled={isDisabled}
-                tabIndex={isDisabled ? -1 : tabIndex}
-                aria-busy={loading}
-                {...roleProps}
-                {...restProps}
-            >
-                {children}
-                {loading && (
-                    <span className="loader-container">
-                        <CircleLoader />
-                    </span>
-                )}
-            </Box>
-        );
-    }
-);
+            return (
+                <Box
+                    as={defaultElement}
+                    ref={ref}
+                    className={buttonClassName}
+                    disabled={isDisabled}
+                    tabIndex={isDisabled ? -1 : tabIndex}
+                    aria-busy={loading}
+                    {...roleProps}
+                    {...restProps}
+                >
+                    {children}
+                    {loading && (
+                        <span className="loader-container">
+                            <CircleLoader />
+                        </span>
+                    )}
+                </Box>
+            );
+        }
+    );
 
 (ButtonLike as any).displayName = 'ButtonLike';
 export default ButtonLike;

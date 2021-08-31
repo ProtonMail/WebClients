@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 
 interface Props {
     onClick: (index: number) => void;
     current: number;
-    list: React.ReactNode[];
+    list: ReactNode[];
     getIsDisabled?: (index: number) => boolean;
     className?: string;
 }

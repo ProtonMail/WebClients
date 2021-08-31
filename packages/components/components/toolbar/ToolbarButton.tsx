@@ -1,18 +1,17 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
-import * as React from 'react';
+import { ButtonHTMLAttributes, cloneElement, forwardRef, ReactElement, ReactNode, Ref } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
-    icon: React.ReactElement;
+    icon: ReactElement;
     children?: ReactNode;
-    title?: React.ReactNode;
+    title?: ReactNode;
 }
 
 const ToolbarButton = (
     { icon, children, className, disabled, tabIndex, title, onClick, ...rest }: Props,
-    ref: React.Ref<HTMLButtonElement>
+    ref: Ref<HTMLButtonElement>
 ) => {
     const content = (
         <button
@@ -24,7 +23,7 @@ const ToolbarButton = (
             ref={ref}
             {...rest}
         >
-            {React.cloneElement(icon, {
+            {cloneElement(icon, {
                 className: classnames([icon.props.className, 'toolbar-icon mauto']),
             })}
             {children}
@@ -38,4 +37,4 @@ const ToolbarButton = (
     return content;
 };
 
-export default React.forwardRef<HTMLButtonElement, Props>(ToolbarButton);
+export default forwardRef<HTMLButtonElement, Props>(ToolbarButton);

@@ -1,8 +1,8 @@
-import { forwardRef, Ref } from 'react';
+import { ComponentPropsWithRef, forwardRef, ReactNode, Ref } from 'react';
 import { classnames } from '../../../helpers';
 
-export interface TextAreaTwoProps extends Omit<React.ComponentPropsWithRef<'textarea'>, 'prefix'> {
-    error?: React.ReactNode | boolean;
+export interface TextAreaTwoProps extends Omit<ComponentPropsWithRef<'textarea'>, 'prefix'> {
+    error?: ReactNode | boolean;
     disableChange?: boolean;
     onValue?: (value: string) => void;
 }

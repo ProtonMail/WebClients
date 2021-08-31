@@ -1,5 +1,4 @@
-import { ChangeEvent } from 'react';
-import * as React from 'react';
+import { ChangeEvent, KeyboardEvent } from 'react';
 import { c } from 'ttag';
 
 import { Alert, Field, Input } from '../../../components';
@@ -21,7 +20,7 @@ interface Props {
 }
 
 const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChange, loading }: Props) => {
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && !loading && !errors.name) {
             e.preventDefault();
             e.stopPropagation();

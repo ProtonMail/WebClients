@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import { move } from '@proton/shared/lib/helpers/array';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
@@ -13,7 +13,7 @@ import MergeTable from './MergeTable';
 interface Props {
     userKeysList: DecryptedKey[];
     model: ContactMergeModel;
-    updateModel: React.Dispatch<React.SetStateAction<ContactMergeModel>>;
+    updateModel: Dispatch<SetStateAction<ContactMergeModel>>;
     beMergedModel: { [ID: string]: string[] };
     beDeletedModel: { [ID: string]: string };
 }

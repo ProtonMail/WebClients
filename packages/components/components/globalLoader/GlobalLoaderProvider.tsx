@@ -1,5 +1,4 @@
-import { createContext, useReducer, useCallback, useMemo } from 'react';
-import * as React from 'react';
+import { createContext, useReducer, useCallback, useMemo, ReactNode } from 'react';
 
 export interface TaskOptions {
     text?: string;
@@ -49,7 +48,7 @@ export const GlobalLoaderContext = createContext<{
 } | null>(null);
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const GlobalLoaderProvider = ({ children }: Props) => {

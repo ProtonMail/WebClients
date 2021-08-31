@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button, Checkbox, FormModal } from '../../components';
@@ -10,7 +10,7 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
 
     const [earlyAccessEnabled, setEarlyAccessEnabled] = useSynchronizingState(earlyAccess.value);
 
-    const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = async (e: ChangeEvent<HTMLInputElement>) => {
         setEarlyAccessEnabled(e.target.checked);
     };
 

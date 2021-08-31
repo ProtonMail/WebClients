@@ -1,5 +1,4 @@
-import { ChangeEvent, useState, useRef, useEffect, useMemo } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useState, useRef, useEffect, useMemo, KeyboardEvent, ReactNode, MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -41,7 +40,7 @@ const DIMMED_OPACITY_CLASSNAME = 'opacity-30';
 
 interface WrapperProps {
     isLabel: boolean;
-    children: React.ReactNode;
+    children: ReactNode;
     checkboxId: string;
     className: string;
 }
@@ -189,18 +188,18 @@ const ImportManageFoldersRow = ({
         setEditMode(!editMode);
     };
 
-    const handleSave = (e: React.MouseEvent | React.KeyboardEvent) => {
+    const handleSave = (e: MouseEvent | KeyboardEvent) => {
         e.stopPropagation();
         setEditMode(false);
         initialValue.current = inputValue;
     };
 
-    const preventDefaultAndStopPropagation = (e: React.MouseEvent) => {
+    const preventDefaultAndStopPropagation = (e: MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
     };
 
-    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         const { value } = target;
         setInputValue(value);
 
@@ -261,7 +260,7 @@ const ImportManageFoldersRow = ({
                 ref={inputRef}
                 value={inputValue}
                 onChange={handleChange}
-                onPressEnter={(e: React.KeyboardEvent) => {
+                onPressEnter={(e: KeyboardEvent) => {
                     e.preventDefault();
                     if (hasError) {
                         return;

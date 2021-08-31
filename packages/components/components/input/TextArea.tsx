@@ -1,13 +1,11 @@
-import { useState, useRef, useEffect, Ref, ChangeEvent } from 'react';
-import * as React from 'react';
+import { useState, useRef, useEffect, Ref, ChangeEvent, DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
 
 import { generateUID, classnames } from '../../helpers';
 import useAutoGrow from '../../hooks/useAutoGrow';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
-export interface Props
-    extends React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
+export interface Props extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
     ref?: Ref<HTMLTextAreaElement>; // override ref so that LegacyRef isn't used
     error?: string;
     isSubmitted?: boolean;

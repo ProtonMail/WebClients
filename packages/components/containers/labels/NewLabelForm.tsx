@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
@@ -12,7 +12,7 @@ import { useMailSettings } from '../../hooks';
 
 interface Props {
     label: Partial<tsLabel | Folder>;
-    onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeName: (e: ChangeEvent<HTMLInputElement>) => void;
     onChangeColor: (color: string) => void;
     onChangeParentID?: (parentID: string | number) => void;
     onChangeNotify?: (value: number) => void;

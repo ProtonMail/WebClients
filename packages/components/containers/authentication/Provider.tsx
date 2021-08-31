@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { PrivateAuthenticationStore, PublicAuthenticationStore } from '../app/interface';
 
 import AuthenticationContext from './authenticationContext';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
     store: PrivateAuthenticationStore | PublicAuthenticationStore;
 }
 const AuthenticationProvider = ({ store, children }: Props) => {

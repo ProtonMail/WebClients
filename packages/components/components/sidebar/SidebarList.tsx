@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
-import * as React from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.HTMLAttributes<HTMLUListElement> {
+interface Props extends HTMLAttributes<HTMLUListElement> {
     listClassName?: string;
     className?: string;
     children?: ReactNode;

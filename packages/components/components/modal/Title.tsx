@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
+interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
     id: string;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const Title = ({ children, className, ...rest }: Props) => {

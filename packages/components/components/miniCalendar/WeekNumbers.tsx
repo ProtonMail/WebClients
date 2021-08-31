@@ -1,5 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
-import * as React from 'react';
+import { MouseEvent, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { getISOWeek } from 'date-fns';
 import { classnames } from '../../helpers';
@@ -36,7 +35,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
     const rangeStartRef = useRef<number | undefined>(undefined);
     const rangeEndRef = useRef<number | undefined>(undefined);
 
-    const handleMouseDown = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+    const handleMouseDown = ({ target }: MouseEvent<HTMLUListElement>) => {
         const targetWeek = getTargetWeek(target);
         if (rangeStartRef.current || !targetWeek || !onSelectWeekRange) {
             return;
@@ -64,7 +63,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
         document.addEventListener('mouseup', handleMouseUp);
     };
 
-    const handleMouseOver = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+    const handleMouseOver = ({ target }: MouseEvent<HTMLUListElement>) => {
         const targetWeek = getTargetWeek(target);
         if (!rangeStartRef.current || !targetWeek || !onSelectWeekRange) {
             return;

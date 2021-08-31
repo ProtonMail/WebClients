@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { ChangeEvent } from 'react';
 import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
 
 import { Select } from '../../components';
@@ -7,7 +6,7 @@ import { Select } from '../../components';
 interface Props {
     pgpScheme: number;
     id: string;
-    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
     disabled: boolean;
 }
 

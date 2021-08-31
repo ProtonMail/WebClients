@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    children: React.ReactNode;
+export interface Props extends HTMLAttributes<HTMLDivElement> {
+    children: ReactNode;
 }
 
 const SidebarListItemDiv = ({ children, className = '', ...rest }: Props) => {

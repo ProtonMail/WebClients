@@ -1,5 +1,13 @@
-import { Fragment, ReactElement } from 'react';
-import * as React from 'react';
+import {
+    Children,
+    cloneElement,
+    ComponentPropsWithoutRef,
+    forwardRef,
+    Fragment,
+    isValidElement,
+    ReactElement,
+    ReactNode,
+} from 'react';
 import { classnames } from '../../helpers';
 import { Vr } from '../vr';
 
@@ -9,19 +17,19 @@ export type Shape = 'solid' | 'outline' | 'ghost';
 
 export type Size = 'small' | 'medium' | 'large';
 
-export interface Props extends React.ComponentPropsWithoutRef<'div'> {
-    children: React.ReactNode;
+export interface Props extends ComponentPropsWithoutRef<'div'> {
+    children: ReactNode;
     color?: Color;
     shape?: Shape;
     size?: Size;
 }
 
-const ButtonGroup = React.forwardRef<HTMLDivElement, Props>(
+const ButtonGroup = forwardRef<HTMLDivElement, Props>(
     ({ children, color = 'weak', shape = 'outline', size = 'medium', className = '', ...rest }, ref) => {
-        const childrenWithSeparators = React.Children.toArray(children)
-            .filter((x): x is ReactElement => x !== null && React.isValidElement(x))
+        const childrenWithSeparators = Children.toArray(children)
+            .filter((x): x is ReactElement => x !== null && isValidElement(x))
             .map((child, index, array) => {
-                const clonedChild = React.cloneElement(child, { group: true, size });
+                const clonedChild = cloneElement(child, { group: true, size });
                 if (index === array.length - 1) {
                     return clonedChild;
                 }

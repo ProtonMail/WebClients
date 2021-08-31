@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 import { classnames } from '../../helpers';
 import { CircleLoader } from '../loader';
 
-export interface Props extends Omit<React.ComponentPropsWithRef<'button'>, 'color'> {
+export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
     loading?: boolean;
     isSelected?: boolean;
     /*
@@ -12,7 +12,7 @@ export interface Props extends Omit<React.ComponentPropsWithRef<'button'>, 'colo
     actionType?: 'delete';
 }
 
-const DropdownMenuButton = React.forwardRef<HTMLButtonElement, Props>(
+const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
     (
         {
             className = '',

@@ -1,6 +1,5 @@
+import { useState, useRef, useEffect, FunctionComponent, ReactNode } from 'react';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
-import { useState, useRef, useEffect, FunctionComponent } from 'react';
-import * as React from 'react';
 import { AddressesModel, UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
@@ -42,7 +41,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
     onInit?: () => void;
     onLogout: () => void;
-    fallback?: React.ReactNode;
+    fallback?: ReactNode;
     openpgpConfig?: any;
     preloadModels?: M[];
     eventModels?: EvtM[];

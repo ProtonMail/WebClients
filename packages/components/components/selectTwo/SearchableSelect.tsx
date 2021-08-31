@@ -1,5 +1,13 @@
-import { useState, useRef, useMemo } from 'react';
-import * as React from 'react';
+import {
+    useState,
+    useRef,
+    useMemo,
+    FormEvent,
+    KeyboardEvent,
+    MouseEvent,
+    ReactElement,
+    ComponentPropsWithoutRef,
+} from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
@@ -22,10 +30,7 @@ const defaultFilterFunction = <V,>(option: OptionProps<V>, keyword: string) =>
     (option.searchStrings && arrayIncludesString(option.searchStrings, keyword));
 
 export interface Props<V>
-    extends Omit<
-        React.ComponentPropsWithoutRef<'button'>,
-        'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'
-    > {
+    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
     value?: V;
     /**
      * Optionally allows controlling the Select's open state
@@ -35,7 +40,7 @@ export interface Props<V>
      * Children Options of the Select, have to be of type Option
      * (or something that implements the same interface)
      */
-    children: React.ReactElement<OptionProps<V>>[];
+    children: ReactElement<OptionProps<V>>[];
     onChange?: (e: SelectChangeEvent<V>) => void;
     onClose?: () => void;
     onOpen?: () => void;
@@ -78,7 +83,7 @@ const SearchableSelect = <V extends any>({
 
     const { isOpen, selectedIndex, open, close: handleClose, setFocusedIndex, handleChange } = select;
 
-    const close = (event?: React.MouseEvent<HTMLDivElement> | Event) => {
+    const close = (event?: MouseEvent<HTMLDivElement> | Event) => {
         if (event?.target instanceof Node && searchContainerRef?.current?.contains(event.target)) {
             return;
         }
@@ -103,7 +108,7 @@ const SearchableSelect = <V extends any>({
         setSearchValue('');
     };
 
-    const handleDropdownContentKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const handleDropdownContentKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
         switch (e.key) {
             case 'Escape': {
                 close();
@@ -115,7 +120,7 @@ const SearchableSelect = <V extends any>({
         }
     };
 
-    const onSearchChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const onSearchChange = (event: FormEvent<HTMLInputElement>) => {
         setSearchValue(event.currentTarget.value);
 
         if (!event.currentTarget.value) {

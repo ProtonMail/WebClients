@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import Tooltip from '../tooltip/Tooltip';
 import { classnames } from '../../helpers';
 
@@ -14,7 +14,7 @@ const CLASSNAMES = {
 } as const;
 
 export interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
     tooltip?: string;
     type?: keyof typeof CLASSNAMES;

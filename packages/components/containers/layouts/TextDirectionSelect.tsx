@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
@@ -20,7 +20,7 @@ const TextDirectionSelect = ({ id, rightToLeft, onChange, loading, ...rest }: Pr
         { text: c('Option').t`Right to Left`, value: ON },
     ];
 
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
         onChange(parseInt(target.value, 10) as RIGHT_TO_LEFT);
     };
 

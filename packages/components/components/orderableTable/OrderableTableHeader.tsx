@@ -1,13 +1,12 @@
-import * as React from 'react';
-
+import { ReactNode } from 'react';
 import { TableHeader } from '../table';
 import './OrderableTableHeader.scss';
 import { classnames } from '../../helpers';
 
 interface Props {
-    cells?: React.ReactNode[];
+    cells?: ReactNode[];
     className?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 const OrderableTableHeader = ({ cells = [], className = '', children = null, ...rest }: Props) => (

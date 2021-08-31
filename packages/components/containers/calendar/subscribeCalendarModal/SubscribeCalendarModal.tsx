@@ -1,7 +1,6 @@
+import { ChangeEvent, useState } from 'react';
 import { MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
-import { useState } from 'react';
-import * as React from 'react';
 import { c } from 'ttag';
 
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
@@ -125,7 +124,7 @@ ${kbLink}
                         maxLength={CALENDAR_URL_MAX_LENGTH}
                         label={c('Subscribe to calendar modal').t`Calendar URL`}
                         value={calendarURL}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCalendarURL(e.target.value.trim())}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => setCalendarURL(e.target.value.trim())}
                     />
                 </>
             )}
