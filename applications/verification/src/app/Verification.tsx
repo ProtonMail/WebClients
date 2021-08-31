@@ -12,6 +12,9 @@ interface VerificationSearchParameters {
     theme?: ThemeTypes;
     token?: string;
     origin?: string;
+    defaultCountry?: string;
+    defaultEmail?: string;
+    defaultPhone?: string;
 }
 
 const getClient = () => {
@@ -92,7 +95,16 @@ const Verification = () => {
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
-    const { methods, embed, theme, token, origin } = search;
+    const {
+        methods,
+        embed,
+        theme,
+        token,
+        origin,
+        defaultCountry,
+        defaultEmail,
+        defaultPhone
+    } = search;
 
     const [, setTheme] = useTheme();
 
@@ -175,6 +187,9 @@ const Verification = () => {
             onSubmit={handleSubmit}
             methods={methods}
             token={token}
+            defaultCountry={defaultCountry}
+            defaultEmail={defaultEmail}
+            defaultPhone={defaultPhone}
         />
     );
 
