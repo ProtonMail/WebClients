@@ -47,6 +47,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     label={c('Label').t`Two-factor authentication code`}
                     error={validator([requiredValidator(totp)])}
                     disableChange={loading}
+                    autoComplete="one-time-code"
                     autoFocus
                     value={totp}
                     onValue={setTotp}

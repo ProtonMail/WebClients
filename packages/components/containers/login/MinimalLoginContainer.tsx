@@ -102,6 +102,7 @@ const TOTPForm = ({
                     value={totp}
                     className="w100"
                     placeholder="123456"
+                    autoComplete="one-time-code"
                     onChange={loading ? noop : ({ target: { value } }) => setTotp(value)}
                     data-cy-login="TOTP"
                 />
