@@ -76,7 +76,14 @@ const EmbeddedVerification = ({
 
     const src = `${embedUrl.toString()}?${stringifySearchParams(params)}`;
 
-    return <iframe style={{ height: `${iframeHeight}px`, width: '100%' }} src={src} title="verification-iframe" />;
+    return (
+        <iframe
+            style={{ height: `${iframeHeight}px`, width: '100%' }}
+            src={src}
+            title="verification-iframe"
+            sandbox="allow-scripts allow-same-origin allow-popups"
+        />
+    );
 };
 
 export default EmbeddedVerification;
