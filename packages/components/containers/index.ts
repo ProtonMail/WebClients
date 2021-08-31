@@ -42,6 +42,7 @@ export * from './overview';
 export * from './password';
 export * from './paymentMethods';
 export * from './payments';
+export * from './recovery';
 export * from './resetPassword';
 export * from './rightToLeft';
 export * from './search';

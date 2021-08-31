@@ -17,8 +17,7 @@ import {
 
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
-import AccountPasswordAndRecoverySettings from '../containers/account/AccountPasswordAndRecoverySettings';
-import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
+import AccountPasswordAndSecuritySettings from '../containers/account/AccountPasswordAndSecuritySettings';
 import AccountPaymentSettings from '../containers/account/AccountPaymentSettings';
 import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
 import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
@@ -27,6 +26,7 @@ import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings'
 import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
 import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
 import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
+import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
@@ -95,9 +95,11 @@ const MainContainer = () => {
                 <Route path={`/${appSlug}/dashboard`}>
                     <AccountDashboardSettings location={location} setActiveSection={() => {}} />
                 </Route>
-                <Route path={`/${appSlug}/authentication`}>
-                    <AccountPasswordAndRecoverySettings location={location} setActiveSection={() => {}} user={user} />
-                </Route>
+                {hasRecoverySettings(user) && (
+                    <Route path={`/${appSlug}/recovery`}>
+                        <AccountRecoverySettings location={location} setActiveSection={() => {}} />
+                    </Route>
+                )}
                 <Route path={`/${appSlug}/payment`}>
                     <AccountPaymentSettings location={location} setActiveSection={() => {}} />
                 </Route>
@@ -105,7 +107,7 @@ const MainContainer = () => {
                     <AccountEasySwitchSettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/security`}>
-                    <AccountSecuritySettings location={location} setActiveSection={() => {}} />
+                    <AccountPasswordAndSecuritySettings location={location} setActiveSection={() => {}} user={user} />
                 </Route>
                 <Route path={`/${appSlug}/multi-user-support`}>
                     <OrganizationMultiUserSupportSettings location={location} />

@@ -12,12 +12,12 @@ import {
     LocationErrorBoundary,
     MailShortcutsModal,
     BetaOnboardingModal,
+    useIsMnemonicAvailable,
     useUser,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
-import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './mailbox/MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
@@ -44,7 +44,7 @@ const PageContainer = (
     const [userSettings] = useUserSettings();
     const { createModal } = useModals();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const isMnemonicAvailable = useIsMnemonicAvailable();
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const [user] = useUser();
     const onceRef = useRef(false);
     const { feature: hasSeenMnemonicPrompt } = useFeature(FeatureCode.SeenMnemonicPrompt);

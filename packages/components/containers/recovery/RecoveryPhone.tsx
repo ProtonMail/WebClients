@@ -27,7 +27,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm phone number`} onConfirm={resolve} onClose={reject}>
-                        <Alert className="mb1" type="warning">
+                        <Alert type="warning">
                             {c('Warning')
                                 .t`By deleting this phone number, you will no longer be able to recover your account.`}
                             <br />
@@ -53,7 +53,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
-                    withLoading(handleSubmit());
+                    void withLoading(handleSubmit());
                 }
             }}
         >
@@ -69,8 +69,8 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                 />
             </div>
             <div className="mb0-5">
-                <Button color="norm" type="submit" disabled={(phone || '') === input} loading={loading}>
-                    {c('Action').t`Update`}
+                <Button shape="outline" type="submit" disabled={(phone || '') === input} loading={loading}>
+                    {c('Action').t`Save`}
                 </Button>
             </div>
         </form>
