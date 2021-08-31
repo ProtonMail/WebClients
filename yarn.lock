@@ -3618,14 +3618,15 @@ __metadata:
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
-    "@testing-library/jest-dom": ^4.0.0
-    "@testing-library/react": ^8.0.7
-    "@testing-library/react-hooks": ^3.2.1
+    "@testing-library/jest-dom": ^5.14.1
+    "@testing-library/react": ^12.0.0
+    "@testing-library/react-hooks": ^7.0.1
+    "@testing-library/user-event": ^13.2.1
     "@types/blueimp-load-image": ^2.23.7
     "@types/card-validator": ^4.1.0
     "@types/codemirror": 0.0.76
     "@types/credit-card-type": ^7.0.0
-    "@types/jest": ^26.0.0
+    "@types/jest": ^27.0.1
     "@types/markdown-it": ^10.0.1
     "@types/qrcode.react": ^1.0.1
     "@types/react": ^17.0.0
@@ -5583,7 +5584,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-hooks@npm:^7.0.0":
+"@testing-library/react-hooks@npm:^7.0.0, @testing-library/react-hooks@npm:^7.0.1":
   version: 7.0.1
   resolution: "@testing-library/react-hooks@npm:7.0.1"
   dependencies:
@@ -5641,6 +5642,17 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: c15fde8238cd36d3cf4f1fc026ce18f45fa1121851665b30de5f6a1d512d3024ef9c491cef13c700cd43f34c611404324012ae35a4eabcee0d1b8c9b0515222a
+  languageName: node
+  linkType: hard
+
+"@testing-library/user-event@npm:^13.2.1":
+  version: 13.2.1
+  resolution: "@testing-library/user-event@npm:13.2.1"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  peerDependencies:
+    "@testing-library/dom": ">=7.21.4"
+  checksum: fea514ffc89688632f3d29f9a4d93005ac9f2259010d064a1c9bd2bef5bb8a0a606086fe55b09cc45186e1de200dc3dc9ca86475f9ddc00b0a307288159798a9
   languageName: node
   linkType: hard
 
@@ -24116,13 +24128,16 @@ fsevents@^1.2.7:
     "@proton/pack": "workspace:packages/pack"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
-    "@testing-library/jest-dom": ^4.0.0
-    "@testing-library/react": ^8.0.7
-    "@types/jest": ^26.0.0
+    "@testing-library/jest-dom": ^5.14.1
+    "@testing-library/react": ^12.0.0
+    "@testing-library/react-hooks": ^7.0.1
+    "@testing-library/user-event": ^13.2.1
+    "@types/jest": ^27.0.1
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@types/react-helmet": ^6.1.1
     abortcontroller-polyfill: ^1.7.3
+    babel-jest: ^27.0.0
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
     date-fns: ^2.5.0
