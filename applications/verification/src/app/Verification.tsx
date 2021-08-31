@@ -95,22 +95,13 @@ const Verification = () => {
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
-    const {
-        methods,
-        embed,
-        theme,
-        token,
-        origin,
-        defaultCountry,
-        defaultEmail,
-        defaultPhone
-    } = search;
+    const { methods, embed, theme, token, origin, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const [, setTheme] = useTheme();
 
     useEffect(() => {
         if (theme) {
-            setTheme(theme);
+            setTheme(Number(theme));
         }
     }, []);
 
