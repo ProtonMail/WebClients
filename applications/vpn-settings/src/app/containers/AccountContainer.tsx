@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import {
+    AccountRecoverySection,
     UsernameSection,
     PasswordsSection,
     EmailSubscriptionSection,
     DeleteSection,
-    RecoveryMethodsSection,
     OpenVPNCredentialsSection,
     SettingsPropsShared,
 } from '@proton/components';
@@ -31,7 +31,7 @@ export const getAccountPage = () => {
                 id: 'openvpn',
             },
             {
-                text: c('Title').t`Recovery & notification`,
+                text: c('Title').t`Recovery`,
                 id: 'email',
             },
             {
@@ -60,7 +60,7 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
             <UsernameSection />
             <PasswordsSection open={action === 'change-password'} />
             <OpenVPNCredentialsSection />
-            <RecoveryMethodsSection />
+            <AccountRecoverySection />
             <EmailSubscriptionSection />
             <DeleteSection />
         </PrivateMainSettingsAreaWithPermissions>

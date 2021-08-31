@@ -30,7 +30,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm address`} onConfirm={resolve} onClose={reject}>
-                        <Alert className="mb1" type="warning">
+                        <Alert type="warning">
                             {hasReset &&
                                 !hasNotify &&
                                 c('Warning')
@@ -67,7 +67,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
-                    withLoading(submit());
+                    void withLoading(submit());
                 }
             }}
         >
@@ -84,8 +84,8 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                 />
             </div>
             <div className="mb0-5">
-                <Button type="submit" color="norm" disabled={(email || '') === input} loading={loading}>
-                    {c('Action').t`Update`}
+                <Button type="submit" shape="outline" disabled={(email || '') === input} loading={loading}>
+                    {c('Action').t`Save`}
                 </Button>
             </div>
         </form>

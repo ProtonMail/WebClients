@@ -20,4 +20,5 @@ export interface SectionConfig {
     description?: string;
     subsections?: SubSectionConfig[];
     permissions?: PERMISSIONS[];
+    notification?: boolean;
 }
