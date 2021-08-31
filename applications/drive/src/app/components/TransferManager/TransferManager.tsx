@@ -115,11 +115,7 @@ const TransferManager = ({
 
     const entries = useMemo(() => {
         return [...downloadEntries, ...uploadEntries]
-            .sort(
-                (a, b) =>
-                    STATE_TO_GROUP_MAP[a.transfer.state] - STATE_TO_GROUP_MAP[b.transfer.state] ||
-                    b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
-            )
+            .sort((a, b) => b.transfer.startDate.getTime() - a.transfer.startDate.getTime())
             .filter((entry) => {
                 if (transferGroupFilter === undefined) {
                     return true;
