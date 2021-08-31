@@ -1,4 +1,5 @@
 import { differenceInMinutes } from 'date-fns';
+import isTruthy from '../helpers/isTruthy';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
@@ -60,18 +61,27 @@ export const normalizeRelativeTrigger = (duration: VcalDurationValue, isAllDay: 
             ? { ...duration, seconds: 0 }
             : { ...duration, weeks: 0, days: days + 7 * weeks, seconds: 0 };
     }
-    // we only admit one trigger component for part-day events
+    // We only admit one trigger component for part-day events
+    // If that's the case already, no need to normalize
+    if ([minutes, hours, weeks, days].filter(isTruthy).length <= 1) {
+        return { ...duration, seconds: 0 };
+    }
+    // Otherwise, normalize to a single component
     const result = { weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 0, isNegative };
-    if (minutes % 60 !== 0) {
-        return { ...result, minutes: normalizeDurationToUnit(duration, MINUTE) };
+    const totalMinutes = normalizeDurationToUnit(duration, MINUTE);
+    if (totalMinutes % 60 !== 0) {
+        return { ...result, minutes: totalMinutes };
     }
-    if (hours % 24 !== 0) {
-        return { ...result, hours: normalizeDurationToUnit(duration, HOUR) };
+    const totalHours = Math.floor(totalMinutes / 60);
+    if (totalHours % 24 !== 0) {
+        return { ...result, hours: totalHours };
     }
-    if (days % 7 !== 0) {
-        return { ...result, days: normalizeDurationToUnit(duration, DAY) };
+    const totalDays = Math.floor(totalHours / 24);
+    if (totalDays % 7 !== 0) {
+        return { ...result, days: totalDays };
     }
-    return { ...result, weeks: normalizeDurationToUnit(duration, WEEK) };
+    const totalWeeks = Math.floor(totalDays / 7);
+    return { ...result, weeks: totalWeeks };
 };
 
 export const normalizeTrigger = (trigger: VcalTriggerProperty, dtstart: VcalDateOrDateTimeProperty) => {
