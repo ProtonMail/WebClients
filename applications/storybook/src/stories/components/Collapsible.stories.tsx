@@ -1,4 +1,4 @@
-import { Collapsible } from '@proton/components';
+import Collapsible, { Props as CollapsibleProps } from '@proton/components/components/collapsible/Collapsible';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Collapsible.mdx';
@@ -13,9 +13,22 @@ export default {
     },
 };
 
+export const Playground = (args: CollapsibleProps) => <Collapsible {...args} />;
+const args: CollapsibleProps = {
+    children:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?',
+    headerContent: 'Header content',
+};
+Playground.args = args;
+Playground.argTypes = {
+    headerContent: {
+        type: { name: 'string' },
+    },
+};
+
 export const Basic = ({ ...args }) => (
-    <Collapsible headerContent={<span>I am but a header</span>} {...args}>
-        <h3>This is the content</h3>
+    <Collapsible headerContent={<h3 className="mb0">I am but a header</h3>} {...args}>
+        <p>This is the content</p>
         <p>And it&#39;s grrrrrreat!</p>
     </Collapsible>
 );

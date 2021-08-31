@@ -1,12 +1,15 @@
 import { useRef, useEffect, forwardRef, ReactNode, Ref } from 'react';
 import { c } from 'ttag';
-import { parseKeyFiles } from '@proton/shared/lib/keys';
+import { parseRecoveryFiles } from '@proton/shared/lib/recoveryFile/recoveryFile';
+import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import { OpenPGPKey } from 'pmcrypto';
+import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
 import { Color, Shape } from '../../../components/button';
 
-interface Props {
+export interface Props {
+    recoverySecrets: KeyWithRecoverySecret[];
     onUpload: (keys: OpenPGPKey[]) => void;
     autoClick?: boolean;
     multiple?: boolean;
@@ -17,8 +20,9 @@ interface Props {
     color?: Color;
 }
 
-const SelectKeyFiles = (
+const SelectRecoveryFiles = (
     {
+        recoverySecrets,
         onUpload,
         autoClick = false,
         multiple = false,
@@ -40,13 +44,14 @@ const SelectKeyFiles = (
 
     return (
         <FileInput
-            accept=".txt,.asc"
+            accept={KEY_FILE_EXTENSION}
             ref={useCombinedRefs(fileRef, ref)}
             className={className}
             multiple={multiple}
             onChange={async ({ target }) => {
                 const files = Array.from(target.files as FileList);
-                const keys = await parseKeyFiles(files);
+
+                const keys = await parseRecoveryFiles(files, recoverySecrets);
 
                 onUpload(keys);
             }}
@@ -59,4 +64,4 @@ const SelectKeyFiles = (
     );
 };
 
-export default forwardRef<HTMLInputElement, Props>(SelectKeyFiles);
+export default forwardRef<HTMLInputElement, Props>(SelectRecoveryFiles);

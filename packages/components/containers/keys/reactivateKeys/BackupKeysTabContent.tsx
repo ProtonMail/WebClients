@@ -1,81 +1,63 @@
-import { c } from 'ttag';
+import { Dispatch, SetStateAction } from 'react';
+import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { Button, Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
-import SelectKeyFiles, { SelectKeyFilesProps } from '../shared/SelectKeyFiles';
+import { useNotifications } from '../../../hooks';
+import KeyUploadContent from './KeyUploadContent';
+import SelectKeyFiles from '../shared/SelectKeyFiles';
 
 interface Props {
-    uploadedBackupKeys: OpenPGPKey[];
-    onRemoveKey: (keyToremove: OpenPGPKey) => void;
-    handleUploadKeys: (keys: OpenPGPKey[]) => void;
+    uploadedKeys: OpenPGPKey[];
+    setUploadedKeys: Dispatch<SetStateAction<OpenPGPKey[]>>;
     disabled?: boolean;
     error?: string;
 }
 
-const BackupKeysTabContent = ({ uploadedBackupKeys, onRemoveKey, handleUploadKeys, disabled, error }: Props) => {
-    const SelectBackupKeyFiles = (props: Omit<Omit<Omit<SelectKeyFilesProps, 'multiple'>, 'onUpload'>, 'disabled'>) => (
-        <SelectKeyFiles {...props} multiple onUpload={handleUploadKeys} disabled={disabled} />
-    );
+const BackupKeysTabContent = (props: Props) => {
+    const { createNotification } = useNotifications();
 
-    if (uploadedBackupKeys.length) {
-        return (
-            <>
-                <Table className="simple-table--has-actions">
-                    <TableBody>
-                        {uploadedBackupKeys.map((key) => {
-                            const fingerprint = key.getFingerprint();
+    const parseKeysOnUpload = (keys: OpenPGPKey[]) => {
+        const privateKeys = keys.filter((key) => key.isPrivate());
+        if (privateKeys.length === 0) {
+            createNotification({
+                type: 'error',
+                text:
+                    keys.length === 1
+                        ? c('Error').t`Uploaded file is not a valid private key. Please verify and try again.`
+                        : c('Error').t`Uploaded files are not valid private keys. Please verify and try again.`,
+            });
+            return;
+        }
 
-                            return (
-                                <TableRow
-                                    key={fingerprint}
-                                    cells={[
-                                        <div
-                                            key={1}
-                                            className="flex flex-row flex-nowrap flex-align-items-center flex-justify-space-between"
-                                        >
-                                            <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
-                                                {fingerprint}
-                                            </code>
-                                            <Button
-                                                className="ml0-5"
-                                                icon
-                                                color="weak"
-                                                shape="outline"
-                                                onClick={() => onRemoveKey(key)}
-                                                disabled={disabled}
-                                            >
-                                                <Icon name="trash" alt={c('Label').t`Delete`} />
-                                            </Button>
-                                        </div>,
-                                    ]}
-                                    className="on-mobile-hide-td2 on-tiny-mobile-hide-td3"
-                                />
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-                <SelectBackupKeyFiles shape="link" color="norm">
-                    {c('Select files').t`Upload additional private keys`}
-                </SelectBackupKeyFiles>
-            </>
-        );
-    }
+        const numberOfNonPrivateKeys = keys.length - privateKeys.length;
+        if (numberOfNonPrivateKeys > 0) {
+            createNotification({
+                type: 'info',
+                text:
+                    numberOfNonPrivateKeys === 1
+                        ? c('Info').t`Uploaded file is not a valid private key. Please verify and try again.`
+                        : // translator: the singular version won't be used, it's the string "Uploaded file is not a valid private key. Please verify and try again." that will be used.
+                          c('Info').ngettext(
+                              msgid`${numberOfNonPrivateKeys} uploaded file is not a valid private key. Please verify and try again.`,
+                              `${numberOfNonPrivateKeys} uploaded files are not valid private keys. Please verify and try again.`,
+                              numberOfNonPrivateKeys
+                          ),
+            });
+        }
+
+        return privateKeys;
+    };
 
     return (
-        <div className="flex flex-wrap on-mobile-flex-column flex-align-items-center">
-            <div className="mr1 on-mobile-mr0 flex-item-fluid min-w14e">
-                <InputFieldTwo
-                    id="backup-key"
-                    label={c('Label').t`Backup key`}
-                    placeholder={c('Label').t`Uploaded private keys`}
-                    assistiveText={c('Label').t`Upload your backup key`}
-                    error={error}
-                    readOnly
-                />
-            </div>
-            <div className="mt0-25">
-                <SelectBackupKeyFiles>{c('Select files').t`Browse`}</SelectBackupKeyFiles>
-            </div>
-        </div>
+        <KeyUploadContent
+            id="backup-key"
+            label={c('Label').t`Backup key`}
+            placeholder={c('Label').t`Uploaded private keys`}
+            assistiveText={c('Label').t`Upload your backup key`}
+            additionalUploadText={c('Select files').t`Upload additional private keys`}
+            parseKeysOnUpload={parseKeysOnUpload}
+            selectFilesComponent={SelectKeyFiles}
+            {...props}
+        />
     );
 };
 
