@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { getAppUrlFromApiUrl, getAppUrlRelativeToOrigin, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+
+import { useConfig } from '../../hooks';
 
 interface EmbeddedVerificationProps {
     token: string;
@@ -21,47 +23,47 @@ const EmbeddedVerification = ({
     defaultPhone,
 }: EmbeddedVerificationProps) => {
     const [iframeHeight, setIframeHeight] = useState<number | undefined>();
+    const { API_URL } = useConfig();
 
     const embedUrl = useMemo(() => {
-        const url = new URL(window.location.origin);
-        const segments = url.host.split('.');
-        segments[0] = APPS_CONFIGURATION[APPS.PROTONVERIFICATION].subdomain;
-        url.hostname = segments.join('.');
+        if (window.location.origin.includes('localhost')) {
+            return getAppUrlFromApiUrl(API_URL, APPS.PROTONVERIFICATION);
+        }
 
-        return url;
+        return getAppUrlRelativeToOrigin(window.location.origin, APPS.PROTONVERIFICATION);
     }, []);
 
-    const handleMessage = (e: MessageEvent) => {
-        if (e.origin !== embedUrl.origin) {
-            /*
-             * Post message from unknown origin, exit to make sure
-             * this handler doesn't do anything with it
-             */
-            return;
-        }
-
-        switch (e.data.type) {
-            case 'verification-height': {
-                setIframeHeight(e.data.height);
-                break;
-            }
-
-            case 'verification-success': {
-                onSuccess(e.data.payload.token, e.data.payload.tokenType);
-                break;
-            }
-
-            default:
-        }
-    };
-
     useEffect(() => {
+        const handleMessage = (e: MessageEvent) => {
+            if (e.origin !== embedUrl.origin) {
+                /*
+                 * Post message from unexpected origin, exit to make sure
+                 * this handler doesn't do anything with it
+                 */
+                return;
+            }
+
+            switch (e.data.type) {
+                case 'verification-height': {
+                    setIframeHeight(e.data.height);
+                    break;
+                }
+
+                case 'verification-success': {
+                    onSuccess(e.data.payload.token, e.data.payload.tokenType);
+                    break;
+                }
+
+                default:
+            }
+        };
+
         window.addEventListener('message', handleMessage);
 
         return () => {
             window.removeEventListener('message', handleMessage);
         };
-    }, []);
+    }, [onSuccess]);
 
     const params = {
         methods,

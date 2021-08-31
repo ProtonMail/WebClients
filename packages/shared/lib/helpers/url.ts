@@ -1,4 +1,4 @@
-import { LINK_TYPES } from '../constants';
+import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES } from '../constants';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
@@ -185,5 +185,25 @@ export const getApiSubdomainUrl = (pathname: string) => {
     }
     url.hostname = getRelativeApiHostname(url.hostname);
     url.pathname = pathname;
+    return url;
+}
+
+export const getAppUrlFromApiUrl = (apiUrl: string, appName: APP_NAMES) => {
+    const { subdomain } = APPS_CONFIGURATION[appName];
+    const url = new URL(apiUrl);
+    const { hostname } = url;
+    const index = hostname.indexOf('.');
+    const tail = hostname.substr(index + 1);
+    url.pathname = '';
+    url.hostname = `${subdomain}.${tail}`;
+    return url;
+};
+
+export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) => {
+    const { subdomain } = APPS_CONFIGURATION[appName];
+    const url = new URL(origin);
+    const segments = url.host.split('.');
+    segments[0] = subdomain;
+    url.hostname = segments.join('.');
     return url;
 };
