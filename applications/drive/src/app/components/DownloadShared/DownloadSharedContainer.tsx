@@ -167,6 +167,8 @@ const DownloadSharedContainer = () => {
         content = <EnterPasswordInfo submitPassword={submitPassword} />;
     }
 
+    const getAccountLabel = c('Label').t`Get your own ${appName}`;
+
     return (
         content && (
             <>
@@ -182,8 +184,8 @@ const DownloadSharedContainer = () => {
                             {content}
                         </div>
                         <div className="flex flex-justify-center w100 m1-5">
-                            <Link to="/" className="text-sm m0" title={c('Label').t`Get your own ProtonDrive`}>
-                                {c('Label').t`Get your own ProtonDrive`}
+                            <Link to="/" className="text-sm m0" title={getAccountLabel}>
+                                {getAccountLabel}
                             </Link>
                         </div>
                     </div>
