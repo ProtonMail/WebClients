@@ -163,11 +163,11 @@ const Verification = () => {
         </main>
     );
 
-    if (!methods) {
+    if (methods === undefined) {
         return wrapInMain('You need to specify recovery methods');
     }
 
-    if (!token) {
+    if (token === undefined) {
         return wrapInMain('You need to specify a token');
     }
 

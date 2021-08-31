@@ -69,9 +69,9 @@ const EmbeddedVerification = ({
         methods,
         token,
         origin: window.location.origin,
-        defaultCountry,
-        defaultEmail,
-        defaultPhone,
+        defaultCountry: defaultCountry || undefined,
+        defaultEmail: defaultEmail || undefined,
+        defaultPhone: defaultPhone || undefined,
     };
 
     const src = `${embedUrl.toString()}?${stringifySearchParams(params)}`;
