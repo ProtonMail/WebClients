@@ -1,4 +1,4 @@
-import { useRef, useEffect, forwardRef } from 'react';
+import { useRef, useEffect, forwardRef, ReactNode, Ref } from 'react';
 import { c } from 'ttag';
 import { parseKeyFiles } from '@proton/shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
@@ -11,7 +11,7 @@ export interface SelectKeyFilesProps {
     autoClick?: boolean;
     multiple?: boolean;
     className?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
     disabled?: boolean;
     shape?: Shape;
     color?: Color;
@@ -28,7 +28,7 @@ const SelectKeyFiles = (
         shape,
         color,
     }: SelectKeyFilesProps,
-    ref: React.Ref<HTMLInputElement>
+    ref: Ref<HTMLInputElement>
 ) => {
     const fileRef = useRef<HTMLInputElement>(null);
 

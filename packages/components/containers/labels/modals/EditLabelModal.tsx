@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
@@ -114,7 +113,7 @@ const EditLabelModal = ({
         });
     };
 
-    const handleChangeName = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setModel({
             ...model,
             Name: target.value,

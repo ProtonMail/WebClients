@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { CSSProperties, ElementType, forwardRef, ReactNode, useState } from 'react';
 import Dropdown from './Dropdown';
 import { usePopperAnchor } from '../popper';
 import DropdownButton, { DropdownButtonProps } from './DropdownButton';
@@ -8,19 +7,19 @@ import { useCombinedRefs } from '../../hooks';
 
 interface OwnProps {
     hasCaret?: boolean;
-    content?: React.ReactNode;
-    children?: React.ReactNode;
+    content?: ReactNode;
+    children?: ReactNode;
     originalPlacement?: string;
     autoClose?: boolean;
     dropdownClassName?: string;
-    dropdownStyle?: React.CSSProperties;
+    dropdownStyle?: CSSProperties;
     disableDefaultArrowNavigation?: boolean;
 }
 
-export type Props<T extends React.ElementType> = OwnProps & DropdownButtonProps<T>;
+export type Props<T extends ElementType> = OwnProps & DropdownButtonProps<T>;
 
-const SimpleDropdown = React.forwardRef(
-    <E extends React.ElementType>(
+const SimpleDropdown = forwardRef(
+    <E extends ElementType>(
         {
             content,
             children,

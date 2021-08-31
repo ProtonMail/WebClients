@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { MouseEvent, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { generateUID, classnames } from '../../helpers';
@@ -11,7 +10,7 @@ import useTooltipHandlers from '../tooltip/useTooltipHandlers';
 interface Props {
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     url?: string;
-    title?: React.ReactNode;
+    title?: ReactNode;
     buttonClass?: string;
     buttonTabIndex?: number;
     className?: string;
@@ -43,7 +42,7 @@ const Info = ({
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
     });
 
-    const handleClick = (event: React.MouseEvent) => {
+    const handleClick = (event: MouseEvent) => {
         event.preventDefault();
         if (url) {
             window.open(url);

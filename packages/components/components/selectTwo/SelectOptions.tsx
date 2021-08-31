@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import * as React from 'react';
+import { Children, cloneElement, ComponentPropsWithoutRef, KeyboardEvent, ReactElement, useContext } from 'react';
 
 import { Props as OptionProps } from '../option/Option';
 import { SelectChangeEvent } from './select';
 import { SelectContext } from './useSelect';
 
-interface SelectOptionsProps<V> extends Omit<React.ComponentPropsWithoutRef<'ul'>, 'onChange'> {
+interface SelectOptionsProps<V> extends Omit<ComponentPropsWithoutRef<'ul'>, 'onChange'> {
     selected: number | null;
-    children: React.ReactElement<OptionProps<V>>[];
+    children: ReactElement<OptionProps<V>>[];
     disableFocusOnActive?: boolean;
     onChange: (e: SelectChangeEvent<V>) => void;
 }
@@ -22,7 +21,7 @@ const SelectOptions = <V,>({
 }: SelectOptionsProps<V>) => {
     const { focusedIndex, focusPreviousIndex, focusNextIndex, close } = useContext(SelectContext);
 
-    const handleMenuKeydown = (e: React.KeyboardEvent<HTMLUListElement>) => {
+    const handleMenuKeydown = (e: KeyboardEvent<HTMLUListElement>) => {
         onKeyDown?.(e);
 
         switch (e.key) {
@@ -56,8 +55,8 @@ const SelectOptions = <V,>({
         handleChange({ value, selectedIndex: index });
     };
 
-    const items = React.Children.map(children, (child, index) => {
-        return React.cloneElement(child, {
+    const items = Children.map(children, (child, index) => {
+        return cloneElement(child, {
             disableFocusOnActive,
             selected: selected === index,
             active: focusedIndex === index,

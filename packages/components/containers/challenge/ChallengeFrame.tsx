@@ -1,5 +1,13 @@
-import { MutableRefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import * as React from 'react';
+import {
+    DetailedHTMLProps,
+    IframeHTMLAttributes,
+    MutableRefObject,
+    ReactNode,
+    useLayoutEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import { getStyleSrcsData, getStyleSrcUrls, handleEvent } from './challengeHelper';
 import { THEME_ID } from '../themes/ThemeProvider';
 import { ICONS_ID } from '../../components/icon/Icons';
@@ -11,12 +19,9 @@ export const CHALLENGE_TIMEOUT_MS = 9000;
 type Stage = 'initialize' | 'initialized' | 'load' | 'loaded' | 'error';
 
 export interface Props
-    extends Omit<
-        React.DetailedHTMLProps<React.IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>,
-        'onClick' | 'onError'
-    > {
+    extends Omit<DetailedHTMLProps<IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>, 'onClick' | 'onError'> {
     challengeRef: MutableRefObject<ChallengeRef | undefined>;
-    children?: React.ReactNode;
+    children?: ReactNode;
     src: string;
     className?: string;
     bodyClassName?: string;

@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { ChangeEvent } from 'react';
 import { STICKY_LABELS } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';
@@ -17,7 +16,7 @@ interface Props {
 const StickyLabelsToggle = ({ id, stickyLabels, onToggle, loading, ...rest }: Props) => {
     const { state, toggle } = useToggle(stickyLabels === ON);
 
-    const handleToggle = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleToggle = ({ target }: ChangeEvent<HTMLInputElement>) => {
         onToggle(target.checked ? ON : OFF);
         toggle();
     };

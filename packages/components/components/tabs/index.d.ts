@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 export interface Tab {
     title: string;
-    content?: React.ReactNode;
+    content?: ReactNode;
 }

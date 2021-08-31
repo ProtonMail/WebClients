@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ElementType, forwardRef, ReactElement } from 'react';
 import { classnames } from '../../helpers';
 import Button from '../button/Button';
 import DropdownCaret from './DropdownCaret';
@@ -12,14 +12,14 @@ export interface OwnProps {
     isOpen?: boolean;
 }
 
-export type DropdownButtonProps<E extends React.ElementType> = PolymorphicComponentProps<E, OwnProps>;
+export type DropdownButtonProps<E extends ElementType> = PolymorphicComponentProps<E, OwnProps>;
 
 const defaultElement = Button;
 
-export const DropdownButton: <E extends React.ElementType = typeof defaultElement>(
+export const DropdownButton: <E extends ElementType = typeof defaultElement>(
     props: DropdownButtonProps<E>
-) => React.ReactElement | null = React.forwardRef(
-    <E extends React.ElementType = typeof defaultElement>(
+) => ReactElement | null = forwardRef(
+    <E extends ElementType = typeof defaultElement>(
         {
             children,
             className,

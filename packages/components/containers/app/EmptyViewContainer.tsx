@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ComponentPropsWithRef, ReactNode } from 'react';
 
 interface Props {
-    imageProps?: React.ComponentPropsWithRef<'img'>;
-    children: React.ReactNode;
+    imageProps?: ComponentPropsWithRef<'img'>;
+    children: ReactNode;
 }
 
 const EmptyViewContainer = ({ imageProps, children }: Props) => {

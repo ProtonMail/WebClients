@@ -1,8 +1,7 @@
-import { useMemo } from 'react';
-import * as React from 'react';
+import { HTMLProps, useMemo } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.HTMLProps<HTMLSpanElement> {
+interface Props extends HTMLProps<HTMLSpanElement> {
     text: string;
     /**
      * number of characters you want to keep at the end: 6 will give “blablabla…bla.bla’”

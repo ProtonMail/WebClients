@@ -1,5 +1,4 @@
-import { useRef, CSSProperties } from 'react';
-import * as React from 'react';
+import { useRef, CSSProperties, ReactNode } from 'react';
 import { List, AutoSizer } from 'react-virtualized';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
@@ -9,7 +8,7 @@ interface Props {
     userSettings: UserSettings;
     contactRowHeightComfort?: number;
     contactRowHeightCompact?: number;
-    rowRenderer: ({ index, style, key }: { index: number; style: CSSProperties; key: string }) => React.ReactNode;
+    rowRenderer: ({ index, style, key }: { index: number; style: CSSProperties; key: string }) => ReactNode;
     className?: string;
 }
 

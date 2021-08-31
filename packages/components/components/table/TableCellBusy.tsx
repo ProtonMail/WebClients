@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 
 import { CircleLoader } from '../loader';
 
-interface Props extends React.ComponentPropsWithoutRef<'td'> {
+interface Props extends ComponentPropsWithoutRef<'td'> {
     colSpan?: number;
 }
 

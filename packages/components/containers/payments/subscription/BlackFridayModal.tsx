@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
@@ -56,15 +55,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
         [TWO_YEARS]: c('blackfriday Title').t`for 2 years`,
     };
 
-    const BILLED_DESCRIPTION = ({
-        cycle,
-        amount,
-        notice,
-    }: {
-        cycle: Cycle;
-        amount: React.ReactNode;
-        notice: number;
-    }) => {
+    const BILLED_DESCRIPTION = ({ cycle, amount, notice }: { cycle: Cycle; amount: ReactNode; notice: number }) => {
         const supNotice = <sup key="notice">{notice}</sup>;
         if (cycle === MONTHLY) {
             return c('blackfriday Title').jt`Billed as ${amount} ${supNotice}`;
@@ -78,7 +69,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
         return null;
     };
 
-    const AFTER_INFO = ({ amount, notice }: { amount: React.ReactNode; notice: number }) => {
+    const AFTER_INFO = ({ amount, notice }: { amount: ReactNode; notice: number }) => {
         if (notice === 1) {
             return c('blackfriday Title')
                 .jt`(${notice}) Renews after 1 year at a discounted annual price of ${amount} every year (20% discount).`;

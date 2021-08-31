@@ -1,10 +1,9 @@
-import { ChangeEvent, forwardRef, useRef } from 'react';
-import * as React from 'react';
+import { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, ReactNode, Ref, useRef } from 'react';
 import { ButtonLike, Color, Shape } from '../button';
 import { useCombinedRefs } from '../../hooks';
 
-export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-    children: React.ReactNode;
+export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    children: ReactNode;
     id?: string;
     className?: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -15,7 +14,7 @@ export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes
 
 const FileInput = (
     { children, id = 'fileInput', className, onChange, disabled, shape, color, ...rest }: Props,
-    ref: React.Ref<HTMLInputElement>
+    ref: Ref<HTMLInputElement>
 ) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const combinedRef = useCombinedRefs(inputRef, ref);

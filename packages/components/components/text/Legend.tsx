@@ -1,7 +1,5 @@
-import * as React from 'react';
+import { HTMLAttributes } from 'react';
 
-const Legend = ({ children, ...rest }: React.HTMLAttributes<HTMLLegendElement>) => (
-    <legend {...rest}>{children}</legend>
-);
+const Legend = ({ children, ...rest }: HTMLAttributes<HTMLLegendElement>) => <legend {...rest}>{children}</legend>;
 
 export default Legend;

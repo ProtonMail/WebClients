@@ -1,5 +1,4 @@
-import { Ref, useState } from 'react';
-import * as React from 'react';
+import { DetailedHTMLProps, forwardRef, OptionHTMLAttributes, Ref, SelectHTMLAttributes, useState } from 'react';
 
 import { generateUID, classnames } from '../../helpers';
 import useInput from '../input/useInput';
@@ -7,8 +6,7 @@ import ErrorZone from '../text/ErrorZone';
 
 import Icon from '../icon/Icon';
 
-export interface OptionProps
-    extends React.DetailedHTMLProps<React.OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
+export interface OptionProps extends DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
     value: string | number;
     text: string | number;
     group?: string;
@@ -51,8 +49,7 @@ const buildGroupedOptions = (options: OptionProps[] = []) => {
     );
 };
 
-export interface Props
-    extends React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
+export interface Props extends DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
     ref?: Ref<HTMLSelectElement>; // override ref so that LegacyRef isn't used
     error?: string;
     isSubmitted?: boolean;
@@ -62,7 +59,7 @@ export interface Props
     classNameContainer?: string;
 }
 
-const Select = React.forwardRef<HTMLSelectElement, Props>(
+const Select = forwardRef<HTMLSelectElement, Props>(
     (
         {
             options,

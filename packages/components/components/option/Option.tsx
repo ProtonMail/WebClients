@@ -1,11 +1,10 @@
-import { useEffect, useRef } from 'react';
-import * as React from 'react';
+import { ComponentPropsWithoutRef, useEffect, useRef } from 'react';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import usePrevious from '../../hooks/usePrevious';
 import { DropdownMenuButton } from '../dropdown';
 import { classnames } from '../../helpers';
 
-export interface Props<V> extends Omit<React.ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
+export interface Props<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
     value: V;
     onChange?: (value: V) => void;
     selected?: boolean;

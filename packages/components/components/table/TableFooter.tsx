@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import TableCell from './TableCell';
 
-interface Props extends React.HTMLAttributes<HTMLTableSectionElement> {
-    cells: React.ReactNode[];
+interface Props extends HTMLAttributes<HTMLTableSectionElement> {
+    cells: ReactNode[];
 }
 
 const TableFooter = ({ cells = [], ...rest }: Props) => {

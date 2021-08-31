@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { AnimationEvent, MouseEvent, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
 
@@ -21,15 +21,15 @@ const ANIMATIONS = {
 };
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
     type: NotificationType;
     isClosing: boolean;
     onExit: () => void;
-    onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+    onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => {
-    const handleAnimationEnd = ({ animationName }: React.AnimationEvent<HTMLDivElement>) => {
+    const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
         if (animationName === ANIMATIONS.NOTIFICATION_OUT && isClosing) {
             onExit();
         }

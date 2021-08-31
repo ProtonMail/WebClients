@@ -1,5 +1,4 @@
-import { useState, useEffect, useMemo, ReactNode, ChangeEvent } from 'react';
-import * as React from 'react';
+import { useState, useEffect, useMemo, ReactNode, ChangeEvent, FormEvent } from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -140,7 +139,7 @@ const ContactGroupDropdown = ({
         return contactGroups.filter(({ Name }) => normalize(Name, true).includes(normalizedKeyword));
     }, [keyword, contactGroups]);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         await withLoading(handleApply());
     };

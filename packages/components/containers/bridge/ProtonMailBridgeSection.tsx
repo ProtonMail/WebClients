@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import * as React from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Select, Icon, ButtonLike } from '../../components';
@@ -98,7 +97,7 @@ const ProtonMailBridgeSection = () => {
         void run();
     }, []);
 
-    const handleSelect = ({ target }: React.ChangeEvent<HTMLSelectElement>) => setLinuxLink(target.value);
+    const handleSelect = ({ target }: ChangeEvent<HTMLSelectElement>) => setLinuxLink(target.value);
 
     const renderBox = ({ id, icon, platform, version, downloads }: BridgeClient) => {
         const options =

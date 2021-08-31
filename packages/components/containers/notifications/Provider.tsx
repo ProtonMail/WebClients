@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useState } from 'react';
 import NotificationsContext from './notificationsContext';
 import NotificationsChildrenContext from './childrenContext';
 import { NotificationOptions } from './interfaces';
@@ -7,7 +6,7 @@ import createManager from './manager';
 import { useInstance } from '../../hooks';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const NotificationsProvider = ({ children }: Props) => {

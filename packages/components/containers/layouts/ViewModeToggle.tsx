@@ -1,6 +1,5 @@
-import * as React from 'react';
-
 import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { ChangeEvent } from 'react';
 
 import { Toggle } from '../../components';
 import { useToggle } from '../../hooks';
@@ -17,7 +16,7 @@ interface Props {
 const ViewModeToggle = ({ viewMode, onToggle, loading, id, ...rest }: Props) => {
     const { state, toggle } = useToggle(viewMode === GROUP);
 
-    const handleToggle = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleToggle = ({ target }: ChangeEvent<HTMLInputElement>) => {
         onToggle(target.checked ? GROUP : SINGLE);
         toggle();
     };

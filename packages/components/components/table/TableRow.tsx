@@ -1,13 +1,12 @@
-import * as React from 'react';
-
+import { forwardRef, HTMLAttributes, ReactNode } from 'react';
 import TableCell from './TableCell';
 
-interface Props extends React.HTMLAttributes<HTMLTableRowElement> {
-    cells?: React.ReactNode[];
-    children?: React.ReactNode;
+interface Props extends HTMLAttributes<HTMLTableRowElement> {
+    cells?: ReactNode[];
+    children?: ReactNode;
 }
 
-const TableRow = React.forwardRef<HTMLTableRowElement, Props>(({ cells = [], children, ...rest }, ref) => {
+const TableRow = forwardRef<HTMLTableRowElement, Props>(({ cells = [], children, ...rest }, ref) => {
     return (
         <tr ref={ref} {...rest}>
             {children || cells.map((cell, index) => <TableCell key={index.toString()}>{cell}</TableCell>)}

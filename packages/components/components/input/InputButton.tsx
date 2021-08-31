@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 import ButtonLike from '../button/ButtonLike';
 
-export interface InputButtonProps extends React.ComponentPropsWithoutRef<'input'> {
+export interface InputButtonProps extends ComponentPropsWithoutRef<'input'> {
     id?: string;
     type?: 'checkbox' | 'radio';
     title: string;
     checked: boolean;
-    labelProps?: React.ComponentPropsWithoutRef<'label'>;
+    labelProps?: ComponentPropsWithoutRef<'label'>;
 }
 
 const InputButton = ({

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
 
 interface Props {
-    children: React.ReactNode;
-    component?: React.ReactNode;
+    children: ReactNode;
+    component?: ReactNode;
 }
 
 const LocationErrorBoundary = ({ children, component }: Props) => {

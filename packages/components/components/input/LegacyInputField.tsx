@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
 interface Props {
-    label: React.ReactNode;
-    input: React.ReactNode;
+    label: ReactNode;
+    input: ReactNode;
     className?: string;
 }
 const LegacyInputField = ({ label, input, className }: Props) => {

@@ -1,15 +1,13 @@
-import { Ref } from 'react';
-import * as React from 'react';
-
+import { forwardRef, HTMLAttributes, ReactNode, Ref } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
     hasToolbar?: boolean;
     hasRowMode?: boolean;
 }
-const PrivateMainArea = React.forwardRef(
+const PrivateMainArea = forwardRef(
     ({ className, hasToolbar = false, children, hasRowMode = false, ...rest }: Props, ref: Ref<HTMLDivElement>) => {
         return (
             <main

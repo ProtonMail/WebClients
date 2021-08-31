@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { Calendar, CalendarSettings, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
@@ -23,8 +24,8 @@ import { useCalendarModelEventManager } from '../../eventManager';
 
 interface Props {
     calendar?: Calendar | SubscribedCalendar;
-    setCalendar: React.Dispatch<React.SetStateAction<Calendar | undefined>>;
-    setError: React.Dispatch<React.SetStateAction<boolean>>;
+    setCalendar: Dispatch<SetStateAction<Calendar | undefined>>;
+    setError: Dispatch<SetStateAction<boolean>>;
     defaultCalendarID?: string | null;
     onClose?: () => void;
     activeCalendars?: Calendar[];

@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import * as React from 'react';
+import { useState, useRef, useEffect, DragEvent } from 'react';
 import { c } from 'ttag';
 
 import { order, getParents } from '@proton/shared/lib/helpers/folder';
@@ -109,7 +108,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                             onDragEnd={() => {
                                 clear();
                             }}
-                            onDragOver={(event: React.DragEvent) => {
+                            onDragOver={(event: DragEvent) => {
                                 event.preventDefault();
 
                                 const { currentTarget, clientY } = event;

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import TableRowBusy from './TableRowBusy';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
     colSpan?: number;
     loading?: boolean;
 }

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ComponentPropsWithRef, forwardRef, Ref, useRef } from 'react';
 
-type Props = React.ComponentPropsWithRef<'details'>;
+type Props = ComponentPropsWithRef<'details'>;
 
-const Details = ({ children, className, onToggle, open, ...props }: Props, ref: React.Ref<HTMLDetailsElement>) => {
-    const initialToggle = React.useRef(true);
+const Details = ({ children, className, onToggle, open, ...props }: Props, ref: Ref<HTMLDetailsElement>) => {
+    const initialToggle = useRef(true);
 
     return (
         <details
@@ -28,4 +28,4 @@ const Details = ({ children, className, onToggle, open, ...props }: Props, ref: 
     );
 };
 
-export default React.forwardRef<HTMLDetailsElement, Props>(Details);
+export default forwardRef<HTMLDetailsElement, Props>(Details);

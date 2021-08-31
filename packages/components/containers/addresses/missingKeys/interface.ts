@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 
 export enum Status {
@@ -15,4 +15,4 @@ export interface AddressWithStatus extends Address {
     };
 }
 
-export type SetFormattedAddresses = React.Dispatch<React.SetStateAction<AddressWithStatus[]>>;
+export type SetFormattedAddresses = Dispatch<SetStateAction<AddressWithStatus[]>>;

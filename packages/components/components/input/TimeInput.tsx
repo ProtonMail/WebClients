@@ -1,5 +1,4 @@
-import { useEffect, useState, useMemo, useRef, ChangeEvent } from 'react';
-import * as React from 'react';
+import { useEffect, useState, useMemo, useRef, ChangeEvent, MouseEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Locale, addMinutes, startOfDay, format, parse } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -247,7 +246,7 @@ const TimeInput = ({
                 autoClose={false}
                 autoCloseOutside={false}
                 contentProps={{
-                    onMouseDown: (event: React.MouseEvent<HTMLDivElement>) => {
+                    onMouseDown: (event: MouseEvent<HTMLDivElement>) => {
                         // Prevent default to stop the input getting blurred.
                         event.preventDefault();
                     },

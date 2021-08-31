@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, Ref } from 'react';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { useLocation } from 'react-router-dom';
@@ -10,7 +10,7 @@ export interface Props extends Omit<AppLinkProps, 'to' | 'toApp'> {
     app?: APP_NAMES;
 }
 
-const SettingsLink = ({ path, app, children, ...rest }: Props, ref: React.Ref<HTMLAnchorElement>) => {
+const SettingsLink = ({ path, app, children, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
     const location = useLocation();
     const { APP_NAME } = useConfig();
 
@@ -45,4 +45,4 @@ const SettingsLink = ({ path, app, children, ...rest }: Props, ref: React.Ref<HT
     );
 };
 
-export default React.forwardRef<HTMLAnchorElement, Props>(SettingsLink);
+export default forwardRef<HTMLAnchorElement, Props>(SettingsLink);

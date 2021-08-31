@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLAttributes } from 'react';
 import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
 
-export interface Props extends React.HTMLAttributes<HTMLSpanElement> {
+export interface Props extends HTMLAttributes<HTMLSpanElement> {
     className?: string;
 }
 

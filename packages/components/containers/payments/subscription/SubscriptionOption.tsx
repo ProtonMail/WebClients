@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, Icon, Info } from '../../../components';
@@ -6,10 +6,10 @@ import { Button, Icon, Info } from '../../../components';
 interface SubscriptionOptionProps {
     name: string;
     title: string;
-    price: React.ReactNode;
+    price: ReactNode;
     description: string;
     features: { content: string; info?: string }[];
-    onSelect: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    onSelect: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const SubscriptionOption = ({ name, title, price, description, features = [], onSelect }: SubscriptionOptionProps) => (

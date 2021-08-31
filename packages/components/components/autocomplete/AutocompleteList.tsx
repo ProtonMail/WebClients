@@ -1,25 +1,25 @@
-import * as React from 'react';
+import { Children, cloneElement, MouseEvent, ReactElement, RefObject } from 'react';
 import { c, msgid } from 'ttag';
 import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';
 
 interface Props<V> {
     id: string;
-    children: React.ReactElement<OptionProps<V>>[];
+    children: ReactElement<OptionProps<V>>[];
     onClose: () => void;
     isOpen: boolean;
     highlightedIndex: number;
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement>;
 }
 
 const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex, anchorRef }: Props<V>) => {
-    const items = React.Children.map(children, (child, index) => {
-        return React.cloneElement(child, {
+    const items = Children.map(children, (child, index) => {
+        return cloneElement(child, {
             active: highlightedIndex === index,
         });
     });
 
-    const handleListMouseDown = (e: React.MouseEvent<HTMLUListElement>) => {
+    const handleListMouseDown = (e: MouseEvent<HTMLUListElement>) => {
         /*
          * prevent blurs on the input field triggered by a mousedown
          * since otherwise you can't select an option from the list

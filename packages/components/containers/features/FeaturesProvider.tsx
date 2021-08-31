@@ -1,12 +1,11 @@
-import { useRef, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useRef, useState } from 'react';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { useApi } from '../../hooks';
 import FeaturesContext, { Feature, FeatureCode } from './FeaturesContext';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const FeaturesProvider = ({ children }: Props) => {
@@ -34,10 +33,13 @@ const FeaturesProvider = ({ children }: Props) => {
         }
 
         setLoading((oldLoading) => {
-            return allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
-                acc[code] = true;
-                return acc;
-            }, { ...oldLoading });
+            return allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>(
+                (acc, code) => {
+                    acc[code] = true;
+                    return acc;
+                },
+                { ...oldLoading }
+            );
         });
 
         const promise = silentApi<{ Features: Feature[] }>(getFeatures(allUniqueCodesToFetch))
@@ -52,10 +54,13 @@ const FeaturesProvider = ({ children }: Props) => {
             })
             .finally(() => {
                 setLoading((oldLoading) => {
-                    return allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>((acc, code) => {
-                        acc[code] = false;
-                        return acc;
-                    }, { ...oldLoading });
+                    return allUniqueCodesToFetch.reduce<{ [key in FeatureCode]?: boolean }>(
+                        (acc, code) => {
+                            acc[code] = false;
+                            return acc;
+                        },
+                        { ...oldLoading }
+                    );
                 });
             });
 

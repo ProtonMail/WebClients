@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
@@ -16,14 +16,14 @@ import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListIte
 import { Vr } from '../../components/vr';
 
 interface Props extends HeaderProps {
-    logo?: React.ReactNode;
-    settingsButton?: React.ReactNode;
-    contactsButton?: React.ReactNode;
-    feedbackButton?: React.ReactNode;
+    logo?: ReactNode;
+    settingsButton?: ReactNode;
+    contactsButton?: ReactNode;
+    feedbackButton?: ReactNode;
     backUrl?: string;
-    floatingButton?: React.ReactNode;
-    searchBox?: React.ReactNode;
-    searchDropdown?: React.ReactNode;
+    floatingButton?: ReactNode;
+    searchBox?: ReactNode;
+    searchDropdown?: ReactNode;
     hasAppsDropdown?: boolean;
     title: string;
     expanded: boolean;

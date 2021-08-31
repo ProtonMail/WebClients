@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from '@proton/shared/lib/interfaces';
 import { CYCLE, PLANS, PLAN_SERVICES, APPS } from '@proton/shared/lib/constants';
@@ -21,7 +21,7 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-export interface Props extends React.ComponentPropsWithoutRef<'div'> {
+export interface Props extends ComponentPropsWithoutRef<'div'> {
     index?: number;
     cycle: Cycle;
     currency: Currency;

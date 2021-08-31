@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 interface Props {
-    link?: React.ReactNode;
+    link?: ReactNode;
 }
 const FooterDetails = ({ link }: Props) => {
     const currentYear = new Date().getFullYear();

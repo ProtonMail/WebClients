@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 
 export interface NotificationOptions {
     id: number;
     key: any;
-    text: React.ReactNode;
+    text: ReactNode;
     type: NotificationType;
     isClosing: boolean;
     disableAutoClose?: boolean;

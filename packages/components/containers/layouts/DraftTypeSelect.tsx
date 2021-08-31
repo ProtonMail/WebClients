@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -20,7 +20,7 @@ const DraftTypeSelect = ({ id, draftType, onChange, loading, ...rest }: Props) =
         { text: c('Option').t`Plain text`, value: PLAINTEXT },
     ];
 
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => onChange(target.value as MIME_TYPES);
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(target.value as MIME_TYPES);
 
     return <Select id={id} value={draftType} options={options} disabled={loading} onChange={handleChange} {...rest} />;
 };

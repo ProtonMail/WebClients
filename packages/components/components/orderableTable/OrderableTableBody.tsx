@@ -1,9 +1,8 @@
-import * as React from 'react';
-
+import { ReactNode } from 'react';
 import { TableBody } from '../table';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
     colSpan?: number;
     loading?: boolean;
 }

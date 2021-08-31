@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { forwardRef, Ref } from 'react';
 import Icon from './Icon';
 import { classnames } from '../../helpers';
 
@@ -20,7 +19,7 @@ interface Props {
 
 const RoundedIcon = (
     { className = '', iconClassName, type = 'success', padding = 'p0-5', title, name, ...rest }: Props,
-    ref: React.Ref<HTMLSpanElement>
+    ref: Ref<HTMLSpanElement>
 ) => {
     return (
         <span
@@ -38,4 +37,4 @@ const RoundedIcon = (
     );
 };
 
-export default React.forwardRef<HTMLSpanElement, Props>(RoundedIcon);
+export default forwardRef<HTMLSpanElement, Props>(RoundedIcon);
