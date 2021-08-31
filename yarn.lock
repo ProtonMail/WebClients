@@ -3809,8 +3809,8 @@ __metadata:
     ttag: ^1.7.24
     ttag-cli: ^1.9.3
     webpack: ^5.51.1
-    webpack-cli: ^4.7.2
-    webpack-dev-server: ^4.0.0-rc.0
+    webpack-cli: ^4.8.0
+    webpack-dev-server: ^4.0.0
     webpack-subresource-integrity: ^5.0.0
   bin:
     proton-pack: ./bin/protonPack.js
@@ -7176,15 +7176,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@webpack-cli/serve@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "@webpack-cli/serve@npm:1.5.1"
+"@webpack-cli/serve@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "@webpack-cli/serve@npm:1.5.2"
   peerDependencies:
     webpack-cli: 4.x.x
   peerDependenciesMeta:
     webpack-dev-server:
       optional: true
-  checksum: a6fdda6cc2cac00ab5e38a9f1fe2b9411cb3e28128efb82a639eb0c08fa1f8c2e78f606c47c6906039db49394ef5135e6a778bdd6b72c614b2651fa1eff35f03
+  checksum: e20d487e6cf6093c37f4f58cce592b94c30ae5ac28ea71b84cd59ba934c73d0e2eb266fd9da18af1d9390b8579a3887bed6e0bd4aea1669ea9d7c99e509e0f1b
   languageName: node
   linkType: hard
 
@@ -19304,13 +19304,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"killable@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "killable@npm:1.0.1"
-  checksum: 397df2b8a74b800b5d19986375fe6d5e2c548163f1da49eee8b03bb0fa7e98ae8c5b93d9f34b83634d3a32a9b239f758e6de388b4bedb50f2f438fc91434e92f
-  languageName: node
-  linkType: hard
-
 "kind-of@npm:^3.0.2, kind-of@npm:^3.0.3, kind-of@npm:^3.2.0":
   version: 3.2.2
   resolution: "kind-of@npm:3.2.2"
@@ -29918,14 +29911,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"webpack-cli@npm:^4.7.2":
-  version: 4.7.2
-  resolution: "webpack-cli@npm:4.7.2"
+"webpack-cli@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "webpack-cli@npm:4.8.0"
   dependencies:
     "@discoveryjs/json-ext": ^0.5.0
     "@webpack-cli/configtest": ^1.0.4
     "@webpack-cli/info": ^1.3.0
-    "@webpack-cli/serve": ^1.5.1
+    "@webpack-cli/serve": ^1.5.2
     colorette: ^1.2.1
     commander: ^7.0.0
     execa: ^5.0.0
@@ -29948,7 +29941,7 @@ fsevents@^1.2.7:
       optional: true
   bin:
     webpack-cli: bin/cli.js
-  checksum: 7731e0ee4160b2077103507a69e5278d89b541dd3362ac52c97df99ffdf1450c24ef4d4beb1f88b58a1eede628f0e0b983496a1c75bebf7efb0f9ea75a3d6368
+  checksum: 2f751571c5f005159a5d79664d31dd8315aa676b4e5bff9dc49a90611e787901201ff98052012df504487ebc44708551a00ef25a02b1d80d638e904e1a8acab2
   languageName: node
   linkType: hard
 
@@ -29999,13 +29992,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"webpack-dev-server@npm:^4.0.0-rc.0":
-  version: 4.0.0-rc.0
-  resolution: "webpack-dev-server@npm:4.0.0-rc.0"
+"webpack-dev-server@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "webpack-dev-server@npm:4.0.0"
   dependencies:
     ansi-html: ^0.0.7
     bonjour: ^3.5.0
     chokidar: ^3.5.1
+    colorette: ^1.2.2
     compression: ^1.7.4
     connect-history-api-fallback: ^1.6.0
     del: ^6.0.0
@@ -30015,8 +30009,6 @@ fsevents@^1.2.7:
     http-proxy-middleware: ^2.0.0
     internal-ip: ^6.2.0
     ipaddr.js: ^2.0.1
-    is-absolute-url: ^3.0.3
-    killable: ^1.0.1
     open: ^8.0.9
     p-retry: ^4.5.0
     portfinder: ^1.0.28
@@ -30028,15 +30020,15 @@ fsevents@^1.2.7:
     strip-ansi: ^7.0.0
     url: ^0.11.0
     webpack-dev-middleware: ^5.0.0
-    ws: ^7.5.3
+    ws: ^8.1.0
   peerDependencies:
-    webpack: ^4.0.0 || ^5.0.0
+    webpack: ^4.37.0 || ^5.0.0
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack-dev-server: bin/webpack-dev-server.js
-  checksum: 4c491ad5ae568c82b3587b3c0e14c26559039eb6ef24842d347c8a50a7f91cb07e919e5ec9b1b50048f78de5d5e478813b87509607dc83e023e12d012b994709
+  checksum: 88a70f3ad3b4ecfdd3d292d6064e8fed6e0d0752eabcc3e2d6c87dbf9ddccb284e0f20a078274aa35300a3f28d5372ea40496d4470f96c919364f94923919099
   languageName: node
   linkType: hard
 
@@ -30562,7 +30554,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ws@npm:^7.4.6, ws@npm:^7.5.3":
+"ws@npm:^7.4.6":
   version: 7.5.3
   resolution: "ws@npm:7.5.3"
   peerDependencies:
@@ -30574,6 +30566,21 @@ fsevents@^1.2.7:
     utf-8-validate:
       optional: true
   checksum: 77ce9a21297a3a2a7a312f17bd7b98c14df11c151db12f1df814393c0e9c11e94592fc4b5b26e6d3da9de5006cbdb4bdfed0a7a2fb165fc5010d43af07b50d1c
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.1.0":
+  version: 8.2.1
+  resolution: "ws@npm:8.2.1"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: b8309bc3d4b15a0b020b2ed19deb75f1d9d7280b4619861680273678003285936bd252c213ec4285b18a6562ea7327d61b235e82421fe2a76c567dc2cce249c1
   languageName: node
   linkType: hard
 
