@@ -52,6 +52,25 @@ const getSearchFromHash = (search: string) => {
     return searchHash;
 };
 
+export const stringifySearchParams = (params: { [key: string]: string | string[] | undefined }) => {
+    const urlSearchParams = new URLSearchParams();
+
+    Object.entries(params)
+        .filter(([, value]) => Boolean(value))
+        .forEach(([key, value]) => {
+            /*
+             * typescript is not able to determine that stringifiedValue
+             * can't be undefined because of the previous filter condition
+             * therefore, typecast to string
+             */
+            const stringifiedValue = Array.isArray(value) ? value.join(',') : (value as string);
+
+            urlSearchParams.set(key, stringifiedValue);
+        });
+
+    return urlSearchParams.toString();
+};
+
 /**
  * Return a param (native) map based on the search string
  */
