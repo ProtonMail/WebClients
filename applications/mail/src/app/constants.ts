@@ -159,7 +159,6 @@ export const defaultESStatus: ESStatus = {
     labelID: '',
     lastEmail: undefined,
     previousNormSearchParams: undefined,
-    page: 0,
     cachedIndexKey: undefined,
     dbExists: false,
     isBuilding: false,

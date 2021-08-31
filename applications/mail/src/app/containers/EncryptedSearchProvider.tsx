@@ -16,6 +16,7 @@ import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';
+import { Element } from '../models/element';
 import {
     EncryptedSearch,
     EncryptedSearchFunctions,
@@ -28,10 +29,9 @@ import {
     ESMessage,
     IsSearchResult,
     ESCache,
-    ESSetsElementsCache,
 } from '../models/encryptedSearch';
 import { defaultESCache, defaultESStatus, PAGE_SIZE } from '../constants';
-import { extractSearchParameters, filterFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
+import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../helpers/elements';
 import {
     indexKeyExists,
@@ -97,6 +97,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const progressRecorderRef = useRef<[number, number]>([0, 0]);
     // Allow to track progress during indexing or refreshing
     const syncingEventsRef = useRef<Promise<void>>(Promise.resolve());
+    // Allow to track changes in page to set the elements list accordingly
+    const pageRef = useRef<number>(0);
 
     /**
      * Chain several synchronisations to account for events being fired when
@@ -311,7 +313,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         );
 
         if (searchChanged) {
-            setElementsCache(permanentResults);
+            setElementsCache(permanentResults, pageRef.current);
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -718,7 +720,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (!wasSearchPartial && previousNormSearchParams) {
             const shouldSortOnly = shouldOnlySortResults(normalisedSearchParams, previousNormSearchParams);
             if (shouldSortOnly) {
-                setCache(permanentResults);
+                setCache(permanentResults, pageRef.current);
                 return true;
             }
         }
@@ -738,9 +740,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         };
 
         abortSearchingRef.current = new AbortController();
-        const controlledSetCache: ESSetsElementsCache = (Elements, page) => {
+        const controlledSetCache = (Elements: Element[]) => {
             if (!abortSearchingRef.current.signal.aborted) {
-                setCache(Elements, page);
+                setCache(Elements, pageRef.current);
             }
         };
 
@@ -783,7 +785,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     isSearching: false,
                 };
             });
-            setCache(searchResults);
+            setCache(searchResults, pageRef.current);
 
             const t2 = performance.now();
             void sendESMetrics(
@@ -812,24 +814,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             labelID,
             permanentResults,
             lastEmail,
-            page: lastPage,
             isSearchPartial,
             cachedIndexKey,
+            isSearching,
         } = esStatus;
-        if (!dbExists || !esEnabled || !isCacheLimited || abortSearchingRef.current.signal.aborted) {
-            return false;
+        if (!dbExists || !esEnabled || !isCacheLimited || abortSearchingRef.current.signal.aborted || isSearching) {
+            return;
         }
 
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                page,
-            };
-        });
-
         const lastFilledPage = Math.floor(permanentResults.length / PAGE_SIZE) - 1;
-        if (page <= lastPage || page < lastFilledPage) {
-            return false;
+        if (page <= pageRef.current || page < lastFilledPage) {
+            return;
         }
 
         const searchParameters = extractSearchParameters(location);
@@ -837,7 +832,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const sortParameter = sortFromUrl(location);
         const isSearch = testIsSearch(searchParameters);
         if (!isSearch || !isSearchPartial) {
-            return false;
+            return;
         }
 
         const neededResults = PAGE_SIZE * (lastFilledPage + 2);
@@ -845,20 +840,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (permanentResults.length < neededResults) {
             messageLimit = neededResults - permanentResults.length;
         } else {
-            return false;
+            return;
         }
         // If the user wants to load more, then one page is added such that
         // the page+1 wrt the one the user is visualising is already cached
         if (shouldLoadMore) {
             messageLimit += PAGE_SIZE;
-        }
-
-        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
-        const isIDBIntact = await canUseES(userID);
-        if (!indexKey || !isIDBIntact) {
-            await dbCorruptError();
-            return false;
         }
 
         setESStatus((esStatus) => {
@@ -867,6 +854,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 isSearching: true,
             };
         });
+
+        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        if (!indexKey) {
+            await dbCorruptError();
+            return;
+        }
 
         const searchOutput = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
             messageLimit,
@@ -890,8 +884,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             });
             setElementsCache(permanentResults, page);
         }
-
-        return true;
     };
 
     /**
@@ -975,6 +967,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         addSyncing(catchUpFromEvent(indexKey, event));
     });
 
+    useEffect(() => {
+        pageRef.current = pageFromUrl(location);
+    }, [pageFromUrl(location)]);
+
     // Remove previous search data from the status when no longer in search mode
     useEffect(() => {
         if (!isSearch) {
@@ -987,7 +983,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     labelID: defaultESStatus.labelID,
                     lastEmail: defaultESStatus.lastEmail,
                     previousNormSearchParams: defaultESStatus.previousNormSearchParams,
-                    page: defaultESStatus.page,
                     isSearchPartial: defaultESStatus.isSearchPartial,
                     isSearching: defaultESStatus.isSearching,
                 };

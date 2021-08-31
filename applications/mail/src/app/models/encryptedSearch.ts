@@ -77,7 +77,7 @@ export interface NormalisedSearchParams extends Omit<ElementsCacheParams, 'wildc
     decryptionError?: boolean;
 }
 
-export type ESSetsElementsCache = (Elements: Element[], page?: number) => void;
+export type ESSetsElementsCache = (Elements: Element[], page: number) => void;
 
 export interface ESStatus {
     permanentResults: ESMessage[];
@@ -85,7 +85,6 @@ export interface ESStatus {
     labelID: string;
     lastEmail: LastEmail | undefined;
     previousNormSearchParams: NormalisedSearchParams | undefined;
-    page: number;
     cachedIndexKey: CryptoKey | undefined;
     dbExists: boolean;
     isBuilding: boolean;
@@ -146,7 +145,7 @@ export type IncrementSearch = (
     page: number,
     setElementsCache: ESSetsElementsCache,
     shouldLoadMore: boolean
-) => Promise<boolean>;
+) => Promise<void>;
 
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 
