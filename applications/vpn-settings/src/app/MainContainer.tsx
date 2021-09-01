@@ -48,7 +48,7 @@ const MainContainer = () => {
     const { createModal } = useModals();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState(false);
-    const canEnableChat = user.hasPaidVpn;
+    const [canEnableChat] = useState(user.hasPaidVpn);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
