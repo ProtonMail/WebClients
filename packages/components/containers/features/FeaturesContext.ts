@@ -41,6 +41,7 @@ export enum FeatureCode {
     EnabledEncryptedSearch = 'EnabledEncryptedSearch',
     EnabledProtonProtonInvites = 'EnabledProtonProtonInvites',
     CalendarSubscription = 'CalendarSubscription',
+    CalendarSubscriptionBeta = 'CalendarSubscriptionBeta',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     ScheduledSend = 'ScheduledSend',

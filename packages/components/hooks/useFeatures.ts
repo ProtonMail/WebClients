@@ -23,7 +23,7 @@ const useFeatures = (codes: FeatureCode[], prefetch = true) => {
             get: <V = any>() => get<V>([code]).then(([result]) => result),
             update: <V = any>(value: V) => put<V>(code, value),
             feature: features[code],
-            loading: loading[code] === undefined || loading[code],
+            loading: loading[code] === undefined || !!loading[code],
         };
     });
 };
