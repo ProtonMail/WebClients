@@ -5,173 +5,7 @@
   },
   "contexts": {
     "": {},
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Error": {
-      "This field is required": [
-        "Este campo é obrigatório"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Esse campo requer um mínimo de ${ minimumLength } caracteres."
-      ],
-      "Email is not valid": [
-        "E-mail não é válido"
-      ],
-      "Not a valid number": [
-        "Não é um número válido"
-      ],
-      "Passwords do not match": [
-        "As senhas não conferem"
-      ],
-      "Signature verification failed": [
-        "Falha na verificação da assinatura"
-      ],
-      "Request timed out.": [
-        "Solicitação expirada."
-      ],
-      "Email address invalid": [
-        "Endereço de e-mail inválido"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo deu errado. Por favor, ${ refresh } a página para tentar novamente. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
-      ],
-      "Unknown error": [
-        "Erro desconhecido"
-      ],
-      "Checkout expired, please try again.": [
-        "Pedido expirado. Por favor, tente novamente."
-      ],
-      "Invalid code": [
-        "Código inválido"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Erro ao conectar com a API do Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Quantidade abaixo do mínimo."
-      ],
-      "Amount above the maximum.": [
-        "Quantidade acima do máximo."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "O valor mínimo que pode ser doado é ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "A quantidade mínima de crédito que pode ser adicionado é ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "O pagamento mínimo que aceitamos é ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Processo abortado"
-      ],
-      "Payment process cancelled": [
-        "Processo de pagamento cancelado"
-      ],
-      "Payment process failed": [
-        "Falha no processo de pagamento"
-      ],
-      "Payment process consumed": [
-        "Processo de pagamento concluído"
-      ],
-      "Payment process not supported": [
-        "Processo de pagamento não suportado"
-      ],
-      "Unknown payment token status": [
-        "Status da token de pagamento desconhecido"
-      ],
-      "Tab closed": [
-        "Guia fechada"
-      ],
-      "Name on card required": [
-        "Nome do cartão de credito obrigatório"
-      ],
-      "Invalid expiration date": [
-        "Data de validade inválida"
-      ],
-      "Invalid card number": [
-        "Número do cartão inválido"
-      ],
-      "Invalid ${ name } code": [
-        "Código ${ name } inválido"
-      ],
-      "Invalid postal code": [
-        "CEP inválido"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Por favor, crie novas chaves antes de tentar alterar sua senha."
-      ],
-      "Please set a recovery/notification email first": [
-        "Por favor, defina um e-mail para recuperação/notificação"
-      ],
-      "Please set a recovery phone number first": [
-        "Por favor, defina um número de telefone de recuperação"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão disponíveis no momento. Por favor, tente novamente mais tarde"
-      ],
-      "You have no invoices.": [
-        "Você não tem faturas."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "A sua conta ou organização tem neste momento uma fatura em atraso. Por favor regularize a situação."
-      ],
-      "File has no contents to preview": [
-        "Arquivo não tem conteúdo para pré-visualização"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "E-mail ou senha incorreta. Por favor, tente novamente"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Credenciais de acesso incorretas. Por favor, tente novamente"
-      ],
-      "Can't validate email, try again later": [
-        "Não é possível validar o e-mail, tente novamente mais tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "Não é possível validar o telefone, tente novamente mais tarde"
-      ],
-      "Enter 6 digits": [
-        "Insira 6 dígitos"
-      ],
-      "Invalid verification code": [
-        "Código de verificação inválido"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Por favor, digite '${ dangerWord }'"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A senha deve conter ao menos ${ length } caractere",
-        "A senha deve conter ao menos ${ length } caracteres"
-      ]
-    },
     "Info": {
-      "Session timed out.": [
-        "Sessão expirada."
-      ],
-      "Internet connection lost.": [
-        "Perda de conexão com a internet."
-      ],
-      "Servers are unreachable.": [
-        "Os servidores estão inacessíveis."
-      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -532,7 +366,7 @@
         "Lembre-se da senha para fazer login e descriptografar e-mails. ${ boldAlert }. Recomendamos adicionar um e-mail de recuperação primeiro."
       ],
       "read our two-factor authentication Guide first": [
-        ""
+        "leia nosso guia de autenticação de dois fatores primeiro"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este assistente habilitará a autenticação de dois fatores (2FA) em sua conta Proton. A autenticação de dois fatores tornará sua conta Proton mais segura, portanto, recomendamos ativá-la."
@@ -580,7 +414,7 @@
         "Aviso: a exclusão é permanente. Isso também remove o acesso a todos os serviços conectados e exclui todos os seus contatos."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
+        "Se você deseja combinar esta conta com outra, NÃO a apague."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Por favor, forneça um endereço de e-mail para entrar em contato com você."
@@ -711,7 +545,7 @@
         "Se prosseguir, sua senha será redefinida e você será desconectado de todas as sessões ativas."
       ],
       "This will also disable two-factor authentication.": [
-        ""
+        "Isto também desativará a autenticação de dois fatores."
       ],
       "Recovery phrase has been disabled": [
         "Frase de recuperação desativada"
@@ -817,6 +651,75 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Isto pode demorar alguns segundos ou minutos dependendo do seu dispositivo"
+      ],
+      "Session timed out.": [
+        "Sessão expirada."
+      ],
+      "Internet connection lost.": [
+        "Perda de conexão com a internet."
+      ],
+      "Servers are unreachable.": [
+        "Os servidores estão inacessíveis."
+      ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "Faça o upgrade para um plano pago para acessar recursos premium e aumentar o seu espaço de armazenamento."
+      ],
+      "billed as ${ billedPrice }": [
+        "faturado como ${ billedPrice }"
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Suporte para protocolos de compartilhamento de arquivos, como BitTorrent."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Envie todo o seu tráfego na Internet através da rede Tor com um único clique."
+      ],
+      "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
+        "Ao clicar em criar conta, você concorda com o nosso ${ termsOfServiceLink } e ${ privacyPolicyLink }."
+      ],
+      "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
+        "Sua conta Proton existente pode ser usada para acessar todos os serviços da Proton. Por favor, inicie a sessão com ${ email }"
+      ],
+      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
+        "Se você já é um usuário do ProtonMail, você pode usar sua conta Proton para entrar no ProtonVPN."
+      ],
+      "This plan is temporarily disabled": [
+        "Este plano está temporariamente desativado"
+      ],
+      "You are saving 20% with an annual plan": [
+        "Você está economizando 20% com um plano anual"
+      ],
+      "You are saving 33% with an two-year plan": [
+        "Você está economizando 33% com um plano de dois anos"
+      ],
+      "All plans support: ${ supportedOS }": [
+        "Todos os planos suportam: ${ supportedOS }"
+      ],
+      "30-days money back guarantee": [
+        "Garantia de devolução do seu dinheiro por até 30 dias"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "O NetShield protege seu dispositivo e acelera sua navegação, bloqueando anúncios, rastreadores e malware."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Protege contra ameaças de privacidade na VPN, transmitindo seu tráfego de internet através de múltiplos servidores."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obtenha acesso a todos os recursos pagos tanto do ProtonVPN quanto do ProtonMail (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
+      ],
+      "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
+        "Clique abaixo para reenviar o código para ${ destinationText }. Se ${ destinationType } estiver incorreto. Por favor clique em \"${ editI18n }\"."
+      ],
+      "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
+        "Para evitar abusos, verifique se você é humano. Por favor, não feche esta guia até que você tenha verificado sua conta."
+      ],
+      "Your payment details are protected with TLS encryption and Swiss laws": [
+        "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças"
+      ],
+      "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
+        "Sua conta foi criada com sucesso. Por favor, clique no botão \"Fechar\" para voltar para o programa."
+      ],
+      "Creating your account": [
+        "Criando sua conta"
       ]
     },
     "Label": {
@@ -1020,7 +923,7 @@
         "Qual é a principal razão pela qual você está excluindo sua conta?"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        ""
+        "Sentimos muito em vê-lo partir. Por favor, explique por que você está partindo para nos ajudar a melhorar."
       ],
       "Login password": [
         "Senha do login"
@@ -1108,6 +1011,42 @@
       ],
       "Danger": [
         "Perigo"
+      ],
+      "Back to:": [
+        "Voltar para:"
+      ],
+      "Enter the code displayed on your TV": [
+        "Digite o código exibido na sua TV"
+      ],
+      "Verification method": [
+        "Método de verificação"
+      ],
+      "6-digit code": [
+        "Código de 6 dígitos"
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "Total price": [
+        "Valor total"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "Annual discount (${ discountPercentage }%)": [
+        "Desconto anual de (${ discountPercentage }%)"
+      ],
+      "Total price (annually)": [
+        "Valor total (anual)"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Two-year discount (${ discountPercentage }%)": [
+        "Desconto a cada 2 anos de (${ discountPercentage }%)"
+      ],
+      "Total price (two-year)": [
+        "Valor total (dois anos)"
       ]
     },
     "Action": {
@@ -1449,6 +1388,54 @@
       ],
       "Reset my password": [
         "Redefinir minha senha"
+      ],
+      "Report bug": [
+        "Reportar um problema"
+      ],
+      "Activate my coupon": [
+        "Ativar meu cupom"
+      ],
+      "Hide additional features": [
+        "Ocultar recursos adicionais"
+      ],
+      "Select": [
+        "Selecionar"
+      ],
+      "Verify code again": [
+        "Verificar código novamente"
+      ],
+      "Verify code": [
+        "Verificar código"
+      ],
+      "Create account": [
+        "Criar uma conta"
+      ],
+      "Go to login": [
+        "Ir para login"
+      ],
+      "View full plan comparison": [
+        "Ver comparação completa de planos"
+      ],
+      "Send": [
+        "Enviar"
+      ],
+      "Resend": [
+        "Reenviar"
+      ],
+      "Use another verification method": [
+        "Utilizar outro método de verificação"
+      ],
+      "Confirm payment": [
+        "Confirmar pagamento"
+      ],
+      "Pay annually and save 20%": [
+        "Pague anualmente e economize 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Experimente ${ upsellPlan.title } por apenas ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Página inicial"
       ]
     },
     "Storage": {
@@ -1504,6 +1491,191 @@
       ],
       "here": [
         "aqui"
+      ],
+      "Upgrade now": [
+        "Faça o upgrade agora"
+      ],
+      "Sign up for free": [
+        "Cadastre-se gratuitamente"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Ainda não tem uma conta? Cadastre-se gratuitamente!"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ],
+      "Forgot username?": [
+        "Esqueceu seu nome de usuário?"
+      ],
+      "Common login problems": [
+        "Problemas comuns para iniciar sessão"
+      ],
+      "Contact support": [
+        "Contatar o suporte"
+      ],
+      "Terms of Service": [
+        "Termos de serviço"
+      ],
+      "Privacy Policy": [
+        "Politica de privacidade"
+      ],
+      "Log in": [
+        "Iniciar sessão"
+      ],
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Endereço de e-mail inválido"
+      ],
+      "This field is required": [
+        "Este campo é obrigatório"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo deu errado. Por favor, ${ refresh } a página para tentar novamente. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
+      ],
+      "Unknown error": [
+        "Erro desconhecido"
+      ],
+      "Checkout expired, please try again.": [
+        "Pedido expirado. Por favor, tente novamente."
+      ],
+      "Invalid code": [
+        "Código inválido"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Erro ao conectar com a API do Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Quantidade abaixo do mínimo."
+      ],
+      "Amount above the maximum.": [
+        "Quantidade acima do máximo."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "O valor mínimo que pode ser doado é ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "A quantidade mínima de crédito que pode ser adicionado é ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "O pagamento mínimo que aceitamos é ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Processo abortado"
+      ],
+      "Payment process cancelled": [
+        "Processo de pagamento cancelado"
+      ],
+      "Payment process failed": [
+        "Falha no processo de pagamento"
+      ],
+      "Payment process consumed": [
+        "Processo de pagamento concluído"
+      ],
+      "Payment process not supported": [
+        "Processo de pagamento não suportado"
+      ],
+      "Unknown payment token status": [
+        "Status da token de pagamento desconhecido"
+      ],
+      "Tab closed": [
+        "Guia fechada"
+      ],
+      "Name on card required": [
+        "Nome do cartão de credito obrigatório"
+      ],
+      "Invalid expiration date": [
+        "Data de validade inválida"
+      ],
+      "Invalid card number": [
+        "Número do cartão inválido"
+      ],
+      "Invalid ${ name } code": [
+        "Código ${ name } inválido"
+      ],
+      "Invalid postal code": [
+        "CEP inválido"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Por favor, crie novas chaves antes de tentar alterar sua senha."
+      ],
+      "Please set a recovery/notification email first": [
+        "Por favor, defina um e-mail para recuperação/notificação"
+      ],
+      "Please set a recovery phone number first": [
+        "Por favor, defina um número de telefone de recuperação"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Os pagamentos não estão disponíveis no momento. Por favor, tente novamente mais tarde"
+      ],
+      "You have no invoices.": [
+        "Você não tem faturas."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "A sua conta ou organização tem neste momento uma fatura em atraso. Por favor regularize a situação."
+      ],
+      "File has no contents to preview": [
+        "Arquivo não tem conteúdo para pré-visualização"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "E-mail ou senha incorreta. Por favor, tente novamente"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Credenciais de acesso incorretas. Por favor, tente novamente"
+      ],
+      "Can't validate email, try again later": [
+        "Não é possível validar o e-mail, tente novamente mais tarde"
+      ],
+      "Can't validate phone, try again later": [
+        "Não é possível validar o telefone, tente novamente mais tarde"
+      ],
+      "Enter 6 digits": [
+        "Insira 6 dígitos"
+      ],
+      "Invalid verification code": [
+        "Código de verificação inválido"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Por favor, digite '${ dangerWord }'"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Esse campo requer um mínimo de ${ minimumLength } caracteres."
+      ],
+      "Email is not valid": [
+        "E-mail não é válido"
+      ],
+      "Not a valid number": [
+        "Não é um número válido"
+      ],
+      "Passwords do not match": [
+        "As senhas não conferem"
+      ],
+      "Signature verification failed": [
+        "Falha na verificação da assinatura"
+      ],
+      "Request timed out.": [
+        "Solicitação expirada."
+      ],
+      "Code wrong or not valid anymore": [
+        "Código errado ou não é mais válido"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
+      ],
+      "Invalid invitation link": [
+        "Link de convite inválido"
+      ],
+      "Can't check username, try again later": [
+        "Não foi possível verificar o nome de usuário, tente novamente mais tarde"
       ]
     },
     "Title": {
@@ -1723,14 +1895,176 @@
       "Invalid verification code": [
         "Código de verificação inválido"
       ],
-      "Request new verification code": [
-        "Solicitar novo código de verificação"
+      "Request new code": [
+        "Solicitar novo código"
       ],
       "Human verification": [
         "Verificação humana"
       ],
       "Confirm reset password": [
         "Confirme senha de redefinição"
+      ],
+      "Upgrade": [
+        "Upgrade"
+      ],
+      "My subscription": [
+        "Minha assinatura"
+      ],
+      "Dashboard": [
+        "Painel de controle"
+      ],
+      "Plans": [
+        "Planos"
+      ],
+      "Your current plan": [
+        "O seu plano atual"
+      ],
+      "Your plan": [
+        "O seu plano"
+      ],
+      "Billing": [
+        "Faturamento"
+      ],
+      "Gift Code": [
+        "Código-presente"
+      ],
+      "General": [
+        "Geral"
+      ],
+      "Language": [
+        "Idioma"
+      ],
+      "Account": [
+        "Conta"
+      ],
+      "Username": [
+        "Nome de usuário"
+      ],
+      "Passwords": [
+        "Senhas"
+      ],
+      "Two-factor authentication": [
+        "Autenticação de dois fatores"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "Nome de usuário OpenVPN / IKEv2"
+      ],
+      "Recovery & notification": [
+        "Recuperação e notificação"
+      ],
+      "Email subscriptions": [
+        "Inscrições de e-mail"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
+      "Downloads": [
+        "Baixar"
+      ],
+      "ProtonVPN clients": [
+        "Clientes ProtonVPN"
+      ],
+      "OpenVPN configuration files": [
+        "Arquivos de configuração OpenVPN"
+      ],
+      "Payments": [
+        "Pagamentos"
+      ],
+      "Payment methods": [
+        "Métodos de pagamento"
+      ],
+      "Invoices": [
+        "Faturas"
+      ],
+      "Device connected!": [
+        "Dispositivo conectado!"
+      ],
+      "TV log in": [
+        "Iniciar sessão na TV"
+      ],
+      "Forgot username": [
+        "Esqueci meu nome de usuário"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ],
+      "Log in": [
+        "Iniciar sessão"
+      ],
+      "User log in": [
+        "Login do usuário"
+      ],
+      "Redeem coupon": [
+        "Resgatar cupom"
+      ],
+      "Redeem your coupon and start protecting your online privacy": [
+        "Resgate seu cupom e comece a proteger sua privacidade online"
+      ],
+      "Swiss Based": [
+        "Sediado na Suíça"
+      ],
+      "Secure Core Servers": [
+        "Servidores Secure Core"
+      ],
+      "No Logs": [
+        "Sem registros"
+      ],
+      "Kill Switch": [
+        "Kill Switch"
+      ],
+      "DNS leak prevention": [
+        "Proteção de vazamento de DNS"
+      ],
+      "Strong encryption": [
+        "Criptografia forte"
+      ],
+      "Checking invitation parameters": [
+        "Verificando parâmetros do convite"
+      ],
+      "You already have a Proton account": [
+        "Você já tem uma conta Proton"
+      ],
+      "Create an account": [
+        "Criar uma conta"
+      ],
+      "Already have a Proton account?": [
+        "Já tem uma conta Proton?"
+      ],
+      "ProtonVPN plan comparison": [
+        "Comparação de plano ProtonVPN"
+      ],
+      "Select an account verification method": [
+        "Selecione um método de verificação da conta"
+      ],
+      "Resend code": [
+        "Reenviar código"
+      ],
+      "Enter verification code": [
+        "Digite o código de verificação"
+      ],
+      "Are you human?": [
+        "Você é humano?"
+      ],
+      "Provide payment details": [
+        "Fornecer detalhes do pagamento"
+      ],
+      "${ title } plan details": [
+        "Detalhes do plano ${ title }"
+      ],
+      "Upgrade and get more": [
+        "Faça o upgrade e obtenha mais"
+      ],
+      "Summary": [
+        "Resumo"
+      ],
+      "Account created": [
+        "Conta criada"
+      ],
+      "Sign up": [
+        "Registre-se"
+      ],
+      "Settings": [
+        "Configurações"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1965,6 +2299,12 @@
       ],
       "Choose a new password": [
         "Digite a nova senha"
+      ],
+      "Enter coupon code": [
+        "Insira o código do cupom"
+      ],
+      "Confirm password": [
+        "Confirmar senha"
       ]
     },
     "Warning": {
@@ -2007,6 +2347,51 @@
     "Header": {
       "Get help": [
         "Obter ajuda"
+      ],
+      "Help": [
+        "Ajuda"
+      ],
+      "Simultaneous connections": [
+        "Conexões simultâneas"
+      ],
+      "Countries": [
+        "Países"
+      ],
+      "Speed": [
+        "Velocidade"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "Suporte para compartilhamento de arquivos P2P/BitTorrent"
+      ],
+      "Tor over VPN": [
+        "Tor com VPN"
+      ],
+      "Secure Core VPN": [
+        "VPN Secure Core"
+      ],
+      "Apps for Android / Linux / iOS / Windows": [
+        "Applicativos para Android / Linux / iOS / Windows"
+      ],
+      "Advanced encryption": [
+        "Criptografia avançada"
+      ],
+      "Kill Switch / Always-on": [
+        "Kill Switch / Sempre ativo"
+      ],
+      "No logs policy": [
+        "Nenhuma política de registros"
+      ],
+      "No data limits": [
+        "Sem limites de dados"
+      ],
+      "Access blocked content": [
+        "Acesso ao conteúdo bloqueado"
+      ],
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro por até 30 dias"
+      ],
+      "Streaming service support": [
+        "Suporte de serviço de streaming"
       ]
     },
     "Onboarding Proton": {
@@ -2206,6 +2591,24 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um vale-presente ou recebeu um de nossa equipe de suporte, você pode inserir o código aqui."
+      ],
+      "Save 20% when billed annually": [
+        "Economize 20% no plano anual"
+      ],
+      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
+        "Fornece uma proteção adicional contra o comprometimento do servidor VPN ao rotear conexões através da nossa rede Secure Core"
+      ],
+      "Includes ProtonMail encrypted email with all features": [
+        "Inclui o e-mail criptografado do ProtonMail com todos os recursos"
+      ],
+      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
+        "Nome de usuário que é usado para todos os serviços da Proton. Isto também pode ser usado mais tarde para criar uma conta segura do ProtonMail."
+      ],
+      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
+        "Se você esquecer sua senha, você não terá mais acesso à sua conta ou aos seus dados. Por favor, salve a senha em um lugar seguro."
+      ],
+      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
+        "Seu e-mail não é compartilhado com terceiros e só será usado para recuperação, perguntas e a comunicação relacionadas à conta."
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -2373,6 +2776,56 @@
       "${ n } server": [
         "${ n } servidor",
         "${ n } servidores"
+      ],
+      "${ freeServersCount.free_vpn } server": [
+        "${ freeServersCount.free_vpn } servidor",
+        "${ freeServersCount.free_vpn } servidores"
+      ],
+      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
+        "Mais de 350 servidores em ${ countries[PLANS.VPNBASIC].count } país",
+        "Mais de 350 servidores em ${ countries[PLANS.VPNBASIC].count }+ países"
+      ],
+      "High speed": [
+        "Alta velocidade"
+      ],
+      "Filesharing/P2P support": [
+        "Suporte a compartilhamento de arquivos/P2P"
+      ],
+      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
+        "${ nFreeServers } em ${ countries.free_vpn.count } país",
+        "${ nFreeServers } em ${ countries.free_vpn.count } países"
+      ],
+      "${ maxConnections } VPN connection": [
+        "${ maxConnections } conexão VPN",
+        "${ maxConnections } conexões VPN"
+      ],
+      "Medium speed": [
+        "Velocidade média"
+      ],
+      "Strict no-logs policy": [
+        "Política estrita de não registro"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Velocidade máxima (até 10 Gbps)"
+      ],
+      "Streaming service support": [
+        "Suporte de serviço de streaming"
+      ],
+      "All advanced security features": [
+        "Todos os recursos avançados de segurança"
+      ],
+      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
+        "Mais de 1200 servidores em ${ countries[PLANS.VPNPLUS].count } país",
+        "Mais de 1200 servidores em ${ countries[PLANS.VPNPLUS].count }+ países"
+      ],
+      "ProtonMail Visionary account": [
+        "Conta ProtonMail Visionário"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Velocidade máxima (10 Gbps)"
+      ],
+      "ProtonMail Plus account": [
+        "Conta do ProtonMail Plus"
       ]
     },
     "Netflix": {
@@ -2488,6 +2941,24 @@
       ],
       "50 addresses": [
         "50 endereços"
+      ],
+      "P2P/BitTorrent support": [
+        "Suporte ao P2P/Bittorrent"
+      ],
+      "Adblocker (NetShield)": [
+        "Adblocker (NetShield)"
+      ],
+      "Secure Core VPN": [
+        "VPN Secure Core"
+      ],
+      "Tor over VPN": [
+        "Tor com VPN"
+      ],
+      "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
+        "Todos os recursos do plano ${ PLAN_NAMES[PLAN.PLUS] }"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "Suporte para compartilhamento de arquivos P2P/BitTorrent"
       ]
     },
     "Billing cycle option": {
@@ -2510,6 +2981,9 @@
     "Price": {
       "Free": [
         "Gratuito"
+      ],
+      "FREE": [
+        "GRATUITO"
       ]
     },
     "Countdown unit": {
@@ -2576,6 +3050,15 @@
     "Suffix": {
       "/ month": [
         "/mês"
+      ],
+      "/monthly": [
+        "/mensalmente"
+      ],
+      "/2-year": [
+        "/2 anos"
+      ],
+      "/year": [
+        "/ano"
       ]
     },
     "Option": {
@@ -2656,6 +3139,12 @@
       ],
       "Free server configs": [
         "Configurações do servidor gratuito"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "State": {
@@ -2666,6 +3155,9 @@
     "Plan info": {
       "(current plan)": [
         "(plano atual)"
+      ],
+      "Most popular": [
+        "Mais popular"
       ]
     },
     "Free price": {
@@ -2771,6 +3263,15 @@
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN / IKEv2 regeneradas"
+      ],
+      "Coupons are temporarily disabled": [
+        "Os cupons estão temporariamente desativados"
+      ],
+      "Invites are temporarily disabled": [
+        "Os convites estão temporariamente desativados"
+      ],
+      "Verification code successfully sent to ${ destination }": [
+        "O código de verificação enviado com sucesso para ${ destination }"
       ]
     },
     "VPNClient": {
@@ -2996,6 +3497,137 @@
     "Password": {
       "Confirm new password": [
         "Confirmar nova senha"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A senha deve conter ao menos ${ length } caractere",
+        "A senha deve conter ao menos ${ length } caracteres"
+      ]
+    },
+    "Plan details": {
+      "Medium": [
+        "Média"
+      ],
+      "High": [
+        "Alta"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Velocidade máxima (até 10 Gbps)"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Velocidade máxima (10 Gbps)"
+      ]
+    },
+    "Dropdown button": {
+      "Need help?": [
+        "Precisa de ajuda?"
+      ]
+    },
+    "Image alt": {
+      "Laptop & smartphone shown connected to ProtonVPN network.": [
+        "Notebook e smartphone são exibidos conectados na rede ProtonVPN."
+      ],
+      "Swiss based": [
+        "Sediado na Suíça"
+      ],
+      "Secure core servers": [
+        "Servidores Secure Core"
+      ],
+      "No logs": [
+        "Sem registros"
+      ],
+      "Kill switch to prevent IP exposure": [
+        "Kill switch para prevenir a exposição do IP"
+      ],
+      "DNS leak prevention": [
+        "Proteção de vazamento de DNS"
+      ],
+      "Strong encryption": [
+        "Criptografia forte"
+      ]
+    },
+    "About": {
+      "Protect your data with Swiss privacy laws, some of the strongest in the world": [
+        "Proteja seus dados com as leis de privacidade suíças, uma das mais fortes do mundo"
+      ],
+      "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
+        "Proteja-se contra ataques avançados baseados na rede, direcionando seu tráfego através de servidores robustos"
+      ],
+      "Keep your browsing history private - we do not keep any records of our users' online activity": [
+        "Mantenha o seu histórico de navegação em sigilo - não mantemos quaisquer registros das atividades online dos nossos usuários"
+      ],
+      "Keep your data secure even if you are disconnected from your VPN server": [
+        "Mantenha seus dados seguros mesmo quando você estiver desconectado do seu servidor VPN"
+      ],
+      "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
+        "Previna que as solicitações de DNS revelem seu histórico de navegação ao criptografar todas as consultas de DNS"
+      ],
+      "Defend your Internet connection with AES-256, the highest strength encryption.": [
+        "Proteja sua conexão com a Internet com AES-256, a criptografia de maior força."
+      ]
+    },
+    "PlanPrice": {
+      "${ totalMonthlyPriceText } / mo": [
+        "${ totalMonthlyPriceText } / mês"
+      ],
+      "Billed as ${ totalBilledText }": [
+        "Faturado como ${ totalBilledText }"
+      ],
+      "SAVE ${ discountText }": [
+        "ECONOMIZE ${ discountText }"
+      ]
+    },
+    "Plan Action": {
+      "Get ${ plan.title }": [
+        "Obtenha ${ plan.title }"
+      ]
+    },
+    "Plan Description": {
+      "Privacy and security for everyone": [
+        "Privacidade e segurança para todos"
+      ],
+      "Basic privacy features": [
+        "Recursos básicos de privacidade"
+      ],
+      "Advanced security features": [
+        "Recursos avançados de segurança"
+      ],
+      "The complete privacy suite": [
+        "A suíte de privacidade completa"
+      ],
+      "Bundle plan": [
+        "Plano de pacote"
+      ]
+    },
+    "VerificationType": {
+      "email": [
+        "e-mail"
+      ],
+      "phone": [
+        "telefone"
+      ]
+    },
+    "Plan upsell": {
+      "Monthly plan": [
+        "Plano mensal"
+      ],
+      "Yearly plan": [
+        "Plano anual"
       ]
     },
     "blackfriday Info": {
