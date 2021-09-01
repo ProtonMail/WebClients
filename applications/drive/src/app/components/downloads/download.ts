@@ -23,6 +23,7 @@ import { isTransferCancelError } from '../../utils/transfer';
 
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
 const MAX_RETRIES_BEFORE_FAIL = 3;
+const TIME_TO_RESET_RETRIES = 2 * 60 * 1000;
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
@@ -180,6 +181,7 @@ export const initDownload = ({
 
         const getBlockQueue = (startIndex = 1) => orderBy(blocks, 'Index').filter(({ Index }) => Index >= startIndex);
 
+        let lastConsecutiveRetryTs = 0;
         // Downloads several blocks at once, but streams sequentially only one block at a time
         // Other blocks are put into buffer until previous blocks have finished downloading
         const startDownload = async (blockQueue: DriveFileBlock[], numRetries = 0) => {
@@ -196,7 +198,20 @@ export const initDownload = ({
                 revertProgress();
                 abortController = new AbortController();
                 blocks = newBlocks;
-                await startDownload(getBlockQueue(activeIndex), numRetries + 1);
+
+                let retryCount = 1;
+                /*
+                 * If download speed is too low, it might require several retries to cover
+                 * the whole block page (an amount of attempts greater than the value of
+                 * MAX_RETRIES_BEFORE_FAIL). For these cases retry count gets in considertaion
+                 * only within a certain timeframe defined by TIME_TO_RESET_RETRIES
+                 */
+                if (Date.now() - lastConsecutiveRetryTs < TIME_TO_RESET_RETRIES) {
+                    retryCount = numRetries + 1;
+                }
+
+                lastConsecutiveRetryTs = Date.now();
+                await startDownload(getBlockQueue(activeIndex), retryCount);
             };
 
             let ongoingNumberOfDownloads = 0;
@@ -275,10 +290,13 @@ export const initDownload = ({
             } catch (e) {
                 if (!paused) {
                     abortController.abort();
-
-                    // If block expired, need to request new blocks and retry
-                    if (e.status === STATUS_CODE.UNPROCESSABLE_ENTITY && numRetries < MAX_RETRIES_BEFORE_FAIL) {
-                        console.error(`Blocks for download ${id}, might have expired. Retry num: ${numRetries}`);
+                    /*
+                     * If a block gets expired, backend returns 404. In this case
+                     * we need to request new blocks and restart the download
+                     * from the active index
+                     */
+                    if (e.status === STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+                        // console.error(`Blocks for download ${id}, might have expired. Retry num: ${numRetries}`);
                         return retryDownload(activeIndex);
                     }
 
