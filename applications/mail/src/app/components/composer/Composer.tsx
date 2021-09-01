@@ -308,8 +308,12 @@ const Composer = (
         }
     });
 
-    const actualSave = (message: MessageExtended) => {
-        return withSyncInProgress(saveDraft(message as MessageExtendedWithData));
+    const actualSave = async (message: MessageExtended) => {
+        try {
+            await withSyncInProgress(saveDraft(message as MessageExtendedWithData));
+        } catch {
+            // Nothing, notifications are managed in saveDraft
+        }
     };
 
     const {
