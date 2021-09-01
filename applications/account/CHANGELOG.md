@@ -1,3 +1,9 @@
+## Release: 4.0.6 — September 1, 2021
+
+### Fixes
+
+- Minor text corrections and improvements
+
 ## Release: 4.0.5 — August 26, 2021
 
 ### Fixes
