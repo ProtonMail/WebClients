@@ -6,7 +6,7 @@ import { LayoutSetting, SortSetting, UserSettings } from './interfaces/userSetti
 
 export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
-export const BATCH_REQUEST_SIZE = 150;
+export const BATCH_REQUEST_SIZE = 50;
 export const FILE_CHUNK_SIZE = 4 * MB;
 export const MEMORY_DOWNLOAD_LIMIT = (isMobile() ? 100 : 1000) * MB;
 // openpgp.js creates hardwareConcurrency of web workers to do decryption.
