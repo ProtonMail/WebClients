@@ -43,7 +43,10 @@ const ItemColumnLayout = ({
     breakpoints,
     unread,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const useES = dbExists && esEnabled && shouldHighlight();
+
     const body = (element as ESMessage).decryptedBody;
     const { Subject } = element;
 
@@ -136,7 +139,7 @@ const ItemColumnLayout = ({
                 </div>
             </div>
 
-            {bodyContent && (
+            {useES && (
                 <>
                     <div
                         className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll"
