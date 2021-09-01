@@ -4,7 +4,16 @@ import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useActiveBreakpoint, useToggle, PrivateHeader, PrivateAppContainer, Logo, useUser } from '@proton/components';
+import {
+    useActiveBreakpoint,
+    useToggle,
+    PrivateHeader,
+    PrivateAppContainer,
+    Logo,
+    useUser,
+    useFeatures,
+    FeatureCode,
+} from '@proton/components';
 
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
@@ -38,6 +47,9 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const [isBlurred] = useState(false);
+
+    const features = useFeatures([FeatureCode.CalendarEmailNotification, FeatureCode.CalendarSubscriptionBeta]);
+    const loadingFeatures = features.some(({ loading }) => loading);
 
     useEffect(() => {
         setExpand(false);
@@ -110,7 +122,7 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${calendarSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <CalendarSettingsRouter user={user} />
+                        <CalendarSettingsRouter user={user} loadingFeatures={loadingFeatures} />
                     </Suspense>
                 </Route>
                 <Route path={`/${contactsSlug}`}>

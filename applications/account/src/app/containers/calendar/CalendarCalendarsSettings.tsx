@@ -4,13 +4,11 @@ import {
     CalendarImportSection,
     CalendarShareSection,
     Card,
-    FeatureCode,
     PersonalCalendarsSection,
     SettingsLink,
     SettingsPropsShared,
     SettingsSection,
     SubscribedCalendarsSection,
-    useFeature,
 } from '@proton/components';
 import { c } from 'ttag';
 
@@ -63,8 +61,6 @@ const CalendarCalendarsSettings = ({
 }: Props) => {
     const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
     const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
-
-    useFeature(FeatureCode.CalendarEmailNotification);
 
     return (
         <PrivateMainSettingsAreaWithPermissions config={generalSettingsConfig()} location={location}>
