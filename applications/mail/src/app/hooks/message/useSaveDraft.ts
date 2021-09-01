@@ -4,6 +4,8 @@ import { useApi, useEventManager, useMailSettings, useNotifications } from '@pro
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { c } from 'ttag';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { mergeMessages } from '../../helpers/message/messages';
@@ -11,6 +13,7 @@ import { useMessageCache, updateMessageCache } from '../../containers/MessagePro
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
+import { isNetworkError } from '../../helpers/errors';
 
 const { ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -54,24 +57,51 @@ const useUpdateDraft = () => {
     const messageCache = useMessageCache();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
+    const { createNotification } = useNotifications();
 
-    return useCallback(async (message: MessageExtendedWithData) => {
-        const messageFromCache = messageCache.get(message.localID) as MessageExtended;
-        const previousAddressID = messageFromCache.data?.AddressID || '';
-        const newMessageKeys = await getMessageKeys(message.data);
-        const messageToSave = mergeMessages(messageFromCache, message) as MessageExtendedWithData;
-        const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
-        updateMessageCache(messageCache, message.localID, {
-            ...newMessageKeys,
-            data: {
-                ...mergeSavedMessage(message.data, newMessage),
-                // If sender has changed, attachments are re-encrypted and then have to be updated
-                Attachments: newMessage.Attachments,
-            },
-            document: message.document,
-            plainText: message.plainText,
-        });
-        await call();
+    return useCallback(async (message: MessageExtendedWithData, onMessageAlreadySent?: () => void) => {
+        try {
+            const messageFromCache = messageCache.get(message.localID) as MessageExtended;
+            const previousAddressID = messageFromCache.data?.AddressID || '';
+            const newMessageKeys = await getMessageKeys(message.data);
+            const messageToSave = mergeMessages(messageFromCache, message) as MessageExtendedWithData;
+            const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
+            updateMessageCache(messageCache, message.localID, {
+                ...newMessageKeys,
+                data: {
+                    ...mergeSavedMessage(message.data, newMessage),
+                    // If sender has changed, attachments are re-encrypted and then have to be updated
+                    Attachments: newMessage.Attachments,
+                },
+                document: message.document,
+                plainText: message.plainText,
+            });
+            await call();
+        } catch (error) {
+            if (!error.data) {
+                const errorMessage = c('Error').t`Error while saving draft. Please try again`;
+                createNotification({ text: errorMessage, type: 'error' });
+                if (!isNetworkError(error)) {
+                    captureMessage(errorMessage, { extra: { message, error } });
+                }
+                throw error;
+            }
+
+            if (error.data.Code === SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
+                onMessageAlreadySent?.();
+                throw error;
+            }
+
+            if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
+                messageCache.delete(message.localID);
+            }
+
+            createNotification({
+                text: error.data.Error,
+                type: 'error',
+            });
+            throw error;
+        }
     }, []);
 };
 
@@ -83,30 +113,12 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
     const messageCache = useMessageCache();
     const updateDraft = useUpdateDraft();
     const createDraft = useCreateDraft();
-    const { createNotification } = useNotifications();
 
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
 
         if (messageFromCache?.data?.ID) {
-            try {
-                await updateDraft(message);
-            } catch (error) {
-                if (error.data.Code === SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
-                    onMessageAlreadySent?.();
-                    throw error;
-                }
-
-                if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
-                    messageCache.delete(message.localID);
-                }
-
-                createNotification({
-                    text: error.data.Error,
-                    type: 'error',
-                });
-                throw error;
-            }
+            await updateDraft(message, onMessageAlreadySent);
         } else {
             await createDraft(message);
         }
