@@ -1,7 +1,7 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { IDBPDatabase } from 'idb';
-import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
+import { endOfDay, endOfToday, startOfDay, sub } from 'date-fns';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
@@ -20,6 +20,7 @@ import { ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
 import { getOldestTime, openESDB } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
+
 /**
  * Normalise keyword
  */
@@ -185,10 +186,7 @@ export const applySearch = (
  */
 export const getTimeLimits = (prevStart: number, begin: number | undefined, end: number | undefined) => {
     const endTime = prevStart ? prevStart - 1 : end || roundMilliseconds(endOfToday().getTime());
-    const startTime = Math.max(
-        begin || 0,
-        roundMilliseconds(startOfMonth(sub(endTime * 1000, { months: 1 })).getTime())
-    );
+    const startTime = Math.max(begin || 0, roundMilliseconds(startOfDay(sub(endTime * 1000, { days: 1 })).getTime()));
 
     const lower: [number, number] = [startTime, 0];
     const upper: [number, number] = [endTime, Number.MAX_SAFE_INTEGER];
