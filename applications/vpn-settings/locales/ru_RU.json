@@ -5,175 +5,7 @@
   },
   "contexts": {
     "": {},
-    "file size format": {
-      "bytes": [
-        "байт"
-      ],
-      "KB": [
-        "КБ"
-      ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
-      ]
-    },
-    "Error": {
-      "This field is required": [
-        "Это обязательное поле"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля: ${ minimumLength }."
-      ],
-      "Email is not valid": [
-        "Эл. почта недействительна"
-      ],
-      "Not a valid number": [
-        "Неверный номер"
-      ],
-      "Passwords do not match": [
-        "Пароли не совпадают"
-      ],
-      "Signature verification failed": [
-        "Ошибка проверки подписи"
-      ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
-      "Email address invalid": [
-        "Недействительный адрес эл. почты"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Используемый Вами браузер не позволяет совершить платёж. Пожалуйста, используйте другой браузер, либо войдите через компьютер."
-      ],
-      "Unknown error": [
-        "Неизвестная ошибка"
-      ],
-      "Checkout expired, please try again.": [
-        "Срок действия заказа истек, попробуйте еще раз."
-      ],
-      "Invalid code": [
-        "Неверный код"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Ошибка при подключении к Bitcoin API."
-      ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
-      ],
-      "Amount above the maximum.": [
-        "Сумма выше допустимого максимума."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Минимальная сумма, которая может быть добавлена, составляет: ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Процесс прерван"
-      ],
-      "Payment process cancelled": [
-        "Процесс оплаты отменён"
-      ],
-      "Payment process failed": [
-        "Сбой в процессе оплаты"
-      ],
-      "Payment process consumed": [
-        "Процесс оплаты завершён"
-      ],
-      "Payment process not supported": [
-        "Процесс оплаты не поддерживается"
-      ],
-      "Unknown payment token status": [
-        "Неизвестный статус платёжного токена"
-      ],
-      "Tab closed": [
-        "Вкладка закрыта"
-      ],
-      "Name on card required": [
-        "Требуется имя на карте"
-      ],
-      "Invalid expiration date": [
-        "Недействительная дата окончания"
-      ],
-      "Invalid card number": [
-        "Недействительный номер карты"
-      ],
-      "Invalid ${ name } code": [
-        "Недействительный код ${ name }"
-      ],
-      "Invalid postal code": [
-        "Недействительный почтовый индекс"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
-      ],
-      "Please set a recovery/notification email first": [
-        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
-      ],
-      "Please set a recovery phone number first": [
-        "Пожалуйста, сначала укажите номер телефона для восстановления"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
-      ],
-      "You have no invoices.": [
-        "У вас нет счетов."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
-      ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Неверные учетные данные. Пожалуйста, попробуйте снова"
-      ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
-      "Enter 6 digits": [
-        "Введите 6 цифр"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Пожалуйста, введите '${ dangerWord }'"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен включать по меньшей мере ${ length } символ",
-        "Пароль должен включать по меньшей мере ${ length } символа",
-        "Пароль должен включать по меньшей мере ${ length } символов",
-        "Пароль должен включать по меньшей мере ${ length } символов"
-      ]
-    },
     "Info": {
-      "Session timed out.": [
-        "Время сессии истекло."
-      ],
-      "Internet connection lost.": [
-        "Подключение к Интернету прервано."
-      ],
-      "Servers are unreachable.": [
-        "Серверы недоступны."
-      ],
       "No results found": [
         "Результаты не найдены"
       ],
@@ -586,7 +418,7 @@
         "Внимание: удаление безвозвратно. Это также отключит доступ ко всем подключенным сервисам и удалит все ваши контакты."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
+        "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Пожалуйста, укажите адрес электронной почты для случая, если нам понадобится связаться с вами."
@@ -721,7 +553,7 @@
         "Если вы продолжите, вам придется сбросить свой пароль, и все остальные активные сеансы будут завершены."
       ],
       "This will also disable two-factor authentication.": [
-        ""
+        "Это также отключит двухфакторную аутентификацию."
       ],
       "Recovery phrase has been disabled": [
         "Фраза для восстановления доступа к учетной записи была отключена"
@@ -827,6 +659,75 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
+      ],
+      "Session timed out.": [
+        "Время сессии истекло."
+      ],
+      "Internet connection lost.": [
+        "Подключение к Интернету прервано."
+      ],
+      "Servers are unreachable.": [
+        "Серверы недоступны."
+      ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "Перейдите на платный тариф, чтобы разблокировать платный функционал и увеличить пространство для хранения."
+      ],
+      "billed as ${ billedPrice }": [
+        "оплачивается в сумме ${ billedPrice }"
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Поддержка протоколов обмена файлами, таких как Bittorrent."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Отправьте Ваш интернет-трафик через сеть Tor одним щелчком."
+      ],
+      "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
+        "Нажав на кнопку Создать аккаунт, вы соглашаетесь соблюдать наши ${ termsOfServiceLink } и ${ privacyPolicyLink }."
+      ],
+      "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
+        "Ваш аккаунт Proton может быть использован для доступа ко всем сервисам Proton. Пожалуйста, войдите с ${ email }"
+      ],
+      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
+        "Если вы являетесь пользователем ProtonMail, вы можете использовать свою учетную запись Proton для входа в ProtonVPN."
+      ],
+      "This plan is temporarily disabled": [
+        "Этот тариф временно отключён"
+      ],
+      "You are saving 20% with an annual plan": [
+        "Вы экономите 20% с годовом планом"
+      ],
+      "You are saving 33% with an two-year plan": [
+        "Вы экономите 33% с двухлетним планом"
+      ],
+      "All plans support: ${ supportedOS }": [
+        "Все тарифные планы поддерживают: ${ supportedOS }"
+      ],
+      "30-days money back guarantee": [
+        "30-дневная гарантия возврата денег"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Защищает от угроз конфиденциальности VPN, передавая ваш интернет-трафик через несколько серверов."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Получите доступ ко всем платным функциям ProtonVPN и ProtonMail (зашифрованный сервис электронной почты, который миллионы пользователей используют для защиты своих данных) в рамках одного тарифного плана."
+      ],
+      "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
+        "Нажмите ниже, чтобы повторно отправить код на ${ destinationText }. Если ${ destinationType } неправильный, пожалуйста, нажмите \"${ editI18n }\"."
+      ],
+      "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
+        "Чтобы предотвратить неправильное использование, пожалуйста, подтвердите, что вы являетесь человеком. Пожалуйста, не закрывайте эту вкладку, пока не подтвердите свой аккаунт."
+      ],
+      "Your payment details are protected with TLS encryption and Swiss laws": [
+        "Ваши платежные данные защищены шифрованием TLS и законами Швейцарии"
+      ],
+      "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
+        "Ваша учетная запись успешно создана. Пожалуйста, нажмите кнопку \"Закрыть\", чтобы вернуться в приложение."
+      ],
+      "Creating your account": [
+        "Создание учетной записи"
       ]
     },
     "Label": {
@@ -1038,7 +939,7 @@
         "Какова основная причина, по которой вы удаляете свою учетную запись?"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        ""
+        "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать наш сервис."
       ],
       "Login password": [
         "Пароль для входа"
@@ -1126,6 +1027,42 @@
       ],
       "Danger": [
         "Ненадежный"
+      ],
+      "Back to:": [
+        "Назад к:"
+      ],
+      "Enter the code displayed on your TV": [
+        "Введите код, отображаемый на вашем ТВ"
+      ],
+      "Verification method": [
+        "Способ подтверждения"
+      ],
+      "6-digit code": [
+        "6-значный код"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "Total price": [
+        "Общая цена"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "Annual discount (${ discountPercentage }%)": [
+        "Годовая скидка (${ discountPercentage }%)"
+      ],
+      "Total price (annually)": [
+        "Общая цена (за год)"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Two-year discount (${ discountPercentage }%)": [
+        "Двухлетняя скидка (${ discountPercentage }%)"
+      ],
+      "Total price (two-year)": [
+        "Общая цена (два года)"
       ]
     },
     "Action": {
@@ -1467,6 +1404,54 @@
       ],
       "Reset my password": [
         "Сбросить мой пароль"
+      ],
+      "Report bug": [
+        "Сообщить об ошибке"
+      ],
+      "Activate my coupon": [
+        "Активировать мой купон"
+      ],
+      "Hide additional features": [
+        "Скрыть дополнительные функции"
+      ],
+      "Select": [
+        "Выбрать"
+      ],
+      "Verify code again": [
+        "Подтвердить код еще раз"
+      ],
+      "Verify code": [
+        "Подтвердите код"
+      ],
+      "Create account": [
+        "Создать учетную запись"
+      ],
+      "Go to login": [
+        "Перейти ко входу"
+      ],
+      "View full plan comparison": [
+        "Посмотреть полное сравнение планов"
+      ],
+      "Send": [
+        "Отправить"
+      ],
+      "Resend": [
+        "Отправить заново"
+      ],
+      "Use another verification method": [
+        "Использовать другой способ проверки"
+      ],
+      "Confirm payment": [
+        "Подтверждение платежа"
+      ],
+      "Pay annually and save 20%": [
+        "Платите ежегодно и сэкономьте 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Попробуйте ${ upsellPlan.title } всего за ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Домашняя страница"
       ]
     },
     "Storage": {
@@ -1522,6 +1507,191 @@
       ],
       "here": [
         "здесь"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Sign up for free": [
+        "Зарегистрируйтесь бесплатно"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "У вас еще нет аккаунта? Зарегистрируйтесь бесплатно!"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
+      ],
+      "Forgot username?": [
+        "Забыли имя пользователя?"
+      ],
+      "Common login problems": [
+        "Распространённые проблемы входа"
+      ],
+      "Contact support": [
+        "Связаться с поддержкой"
+      ],
+      "Terms of Service": [
+        "Условия использования"
+      ],
+      "Privacy Policy": [
+        "Политика конфиденциальности"
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "Close": [
+        "Закрыть"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Недействительный адрес эл. почты"
+      ],
+      "This field is required": [
+        "Это обязательное поле"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Используемый Вами браузер не позволяет совершить платёж. Пожалуйста, используйте другой браузер, либо войдите через компьютер."
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
+      ],
+      "Checkout expired, please try again.": [
+        "Срок действия заказа истек, попробуйте еще раз."
+      ],
+      "Invalid code": [
+        "Неверный код"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Ошибка при подключении к Bitcoin API."
+      ],
+      "Amount below minimum.": [
+        "Сумма ниже допустимого минимума."
+      ],
+      "Amount above the maximum.": [
+        "Сумма выше допустимого максимума."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Минимальная сумма, которая может быть добавлена, составляет: ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Процесс прерван"
+      ],
+      "Payment process cancelled": [
+        "Процесс оплаты отменён"
+      ],
+      "Payment process failed": [
+        "Сбой в процессе оплаты"
+      ],
+      "Payment process consumed": [
+        "Процесс оплаты завершён"
+      ],
+      "Payment process not supported": [
+        "Процесс оплаты не поддерживается"
+      ],
+      "Unknown payment token status": [
+        "Неизвестный статус платёжного токена"
+      ],
+      "Tab closed": [
+        "Вкладка закрыта"
+      ],
+      "Name on card required": [
+        "Требуется имя на карте"
+      ],
+      "Invalid expiration date": [
+        "Недействительная дата окончания"
+      ],
+      "Invalid card number": [
+        "Недействительный номер карты"
+      ],
+      "Invalid ${ name } code": [
+        "Недействительный код ${ name }"
+      ],
+      "Invalid postal code": [
+        "Недействительный почтовый индекс"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
+      ],
+      "Please set a recovery/notification email first": [
+        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
+      ],
+      "Please set a recovery phone number first": [
+        "Пожалуйста, сначала укажите номер телефона для восстановления"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
+      ],
+      "You have no invoices.": [
+        "У вас нет счетов."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
+      ],
+      "File has no contents to preview": [
+        "В файле нет содержимого для предпросмотра"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Неверные учетные данные. Пожалуйста, попробуйте снова"
+      ],
+      "Can't validate email, try again later": [
+        "Не удается проверить адрес электронной почты, повторите попытку позже"
+      ],
+      "Can't validate phone, try again later": [
+        "Не удается проверить телефон, повторите попытку позже"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Пожалуйста, введите '${ dangerWord }'"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля: ${ minimumLength }."
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Not a valid number": [
+        "Неверный номер"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "Signature verification failed": [
+        "Ошибка проверки подписи"
+      ],
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
+      ],
+      "Code wrong or not valid anymore": [
+        "Неверный или недействительный код"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
+      ],
+      "Invalid invitation link": [
+        "Пригласительная ссылка недействительная"
+      ],
+      "Can't check username, try again later": [
+        "Не могу проверить имя пользователя, повторите попытку позже"
       ]
     },
     "Title": {
@@ -1741,14 +1911,176 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
-      "Request new verification code": [
-        "Запросить новый проверочный код"
+      "Request new code": [
+        "Запросить новый код"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
       ],
       "Confirm reset password": [
         "Подтвердите пароль сброса"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "My subscription": [
+        "Моя подписка"
+      ],
+      "Dashboard": [
+        "Приборная панель"
+      ],
+      "Plans": [
+        "Тарифы"
+      ],
+      "Your current plan": [
+        "Текущий тарифный план"
+      ],
+      "Your plan": [
+        "Ваш тариф"
+      ],
+      "Billing": [
+        "Оплата"
+      ],
+      "Gift Code": [
+        "Подарочный код"
+      ],
+      "General": [
+        "Общие положения"
+      ],
+      "Language": [
+        "Язык"
+      ],
+      "Account": [
+        "Аккаунт"
+      ],
+      "Username": [
+        "Имя пользователя"
+      ],
+      "Passwords": [
+        "Пароли"
+      ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "Имя пользователя OpenVPN / IKEv2"
+      ],
+      "Recovery & notification": [
+        "Восстановление и уведомление"
+      ],
+      "Email subscriptions": [
+        "Подписки на рассылки"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Downloads": [
+        "Загрузки"
+      ],
+      "ProtonVPN clients": [
+        "Клиенты ProtonVPN"
+      ],
+      "OpenVPN configuration files": [
+        "Конфигурационные файлы OpenVPN"
+      ],
+      "Payments": [
+        "Платежи"
+      ],
+      "Payment methods": [
+        "Способы оплаты"
+      ],
+      "Invoices": [
+        "Счета"
+      ],
+      "Device connected!": [
+        "Устройство подключено!"
+      ],
+      "TV log in": [
+        "Вход на ТВ"
+      ],
+      "Forgot username": [
+        "Забыли имя пользователя"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "User log in": [
+        "Вход пользователя"
+      ],
+      "Redeem coupon": [
+        "Активировать купон"
+      ],
+      "Redeem your coupon and start protecting your online privacy": [
+        "Активируйте купон и начните защищать вашу конфиденциальность в сети"
+      ],
+      "Swiss Based": [
+        "Находимся в Швейцарии"
+      ],
+      "Secure Core Servers": [
+        "Сервера Secure Core"
+      ],
+      "No Logs": [
+        "Нет журналов активности"
+      ],
+      "Kill Switch": [
+        "Kill Switch"
+      ],
+      "DNS leak prevention": [
+        "Предотвращение утечки DNS"
+      ],
+      "Strong encryption": [
+        "Сильное шифрование"
+      ],
+      "Checking invitation parameters": [
+        "Проверка параметров приглашения"
+      ],
+      "You already have a Proton account": [
+        "У вас уже есть аккаунт Proton"
+      ],
+      "Create an account": [
+        "Создание аккаунта"
+      ],
+      "Already have a Proton account?": [
+        "У вас уже есть аккаунт Proton?"
+      ],
+      "ProtonVPN plan comparison": [
+        "Сравнение тарифных планов ProtonVPN"
+      ],
+      "Select an account verification method": [
+        "Выберите метод проверки аккаунта"
+      ],
+      "Resend code": [
+        "Отправить код повторно"
+      ],
+      "Enter verification code": [
+        "Введите код подтверждения"
+      ],
+      "Are you human?": [
+        "Вы человек?"
+      ],
+      "Provide payment details": [
+        "Укажите платежные реквизиты"
+      ],
+      "${ title } plan details": [
+        "Подробности плана ${ title }"
+      ],
+      "Upgrade and get more": [
+        "Улучшить и получить больше"
+      ],
+      "Summary": [
+        "Сводка"
+      ],
+      "Account created": [
+        "Аккаунт создан"
+      ],
+      "Sign up": [
+        "Зарегистрироваться"
+      ],
+      "Settings": [
+        "Настройки"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1983,6 +2315,12 @@
       ],
       "Choose a new password": [
         "Задайте новый пароль"
+      ],
+      "Enter coupon code": [
+        "Введите код купона"
+      ],
+      "Confirm password": [
+        "Подтвердите пароль"
       ]
     },
     "Warning": {
@@ -2025,6 +2363,51 @@
     "Header": {
       "Get help": [
         "Получить помощь"
+      ],
+      "Help": [
+        "Справка"
+      ],
+      "Simultaneous connections": [
+        "Одновременные подключения"
+      ],
+      "Countries": [
+        "Страны"
+      ],
+      "Speed": [
+        "Скорость"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "Поддержка P2P файлообмена / BitTorrent"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
+      ],
+      "Secure Core VPN": [
+        "Secure Core VPN"
+      ],
+      "Apps for Android / Linux / iOS / Windows": [
+        "Приложения для Android / Linux / iOS / Windows"
+      ],
+      "Advanced encryption": [
+        "Расширенное шифрование"
+      ],
+      "Kill Switch / Always-on": [
+        "Kill Switch / Всегда включен"
+      ],
+      "No logs policy": [
+        "Политика отсутствия журналов активности"
+      ],
+      "No data limits": [
+        "Нет ограничений на объем данных"
+      ],
+      "Access blocked content": [
+        "Обход блокировок"
+      ],
+      "30-day money-back guarantee": [
+        "30-дневная гарантия возврата денег"
+      ],
+      "Streaming service support": [
+        "Поддержка стриминговых сервисов"
       ]
     },
     "Onboarding Proton": {
@@ -2224,6 +2607,24 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
+      ],
+      "Save 20% when billed annually": [
+        "Сэкономьте 20% при ежегодной оплате"
+      ],
+      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
+        "Предоставляет дополнительную защиту от компрометации VPN-сервера, направляя соединения через нашу сеть Secure Core"
+      ],
+      "Includes ProtonMail encrypted email with all features": [
+        "Включает зашифрованную почту ProtonMail со всеми функциями"
+      ],
+      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
+        "Имя пользователя, которое используется для всех сервисов Proton. Это также может быть использовано позже для создания безопасной учетной записи ProtonMail."
+      ],
+      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
+        "Если забудете пароль, у вас больше не будет доступа к вашей учетной записи или вашей информации. Пожалуйста, сохраните его в надёжном месте."
+      ],
+      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
+        "Ваш email не передается третьим лицам и используется только для уведомлений и вопросов, связанных с аккаунтом, и для восстановления доступа."
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -2395,6 +2796,66 @@
         "${ n } сервера",
         "${ n } серверов",
         "${ n } серверов"
+      ],
+      "${ freeServersCount.free_vpn } server": [
+        "${ freeServersCount.free_vpn } сервер",
+        "${ freeServersCount.free_vpn } сервера",
+        "${ freeServersCount.free_vpn } серверов",
+        "${ freeServersCount.free_vpn } серверов"
+      ],
+      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
+        "350+ серверов в ${[PLANS.VPNBASIC].count } стране",
+        "350+ серверов в ${[PLANS.VPNBASIC].count } странах",
+        "350+ серверов в ${[PLANS.VPNBASIC].count } странах",
+        "350+ серверов в ${[PLANS.VPNBASIC].count } странах"
+      ],
+      "High speed": [
+        "Высокая скорость"
+      ],
+      "Filesharing/P2P support": [
+        "Обмен файлами/Поддержка P2P"
+      ],
+      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
+        "${ nFreeServers } серверов в ${ countries.free_vpn.count } стране",
+        "${ nFreeServers } серверов в ${ countries.free_vpn.count } странах",
+        "${ nFreeServers } серверов в ${ countries.free_vpn.count } странах",
+        "${ nFreeServers } серверов в ${ countries.free_vpn.count } странах"
+      ],
+      "${ maxConnections } VPN connection": [
+        "${ maxConnections } VPN-подключение",
+        "${ maxConnections } VPN подключений",
+        "${ maxConnections } VPN подключений",
+        "${ maxConnections } VPN подключений"
+      ],
+      "Medium speed": [
+        "Средняя скорость"
+      ],
+      "Strict no-logs policy": [
+        "Строгая политика отсутствия журналов активности"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Наивысшая скорость (до 10 Гбит/с)"
+      ],
+      "Streaming service support": [
+        "Поддержка стриминговых сервисов"
+      ],
+      "All advanced security features": [
+        "Все расширенные функции безопасности"
+      ],
+      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
+        "1200+ серверов в ${[PLANS.VPNPLUS].count } стране",
+        "1200+ серверов в ${[PLANS.VPNPLUS].count } странах",
+        "1200+ серверов в ${[PLANS.VPNPLUS].count } странах",
+        "1200+ серверов в ${[PLANS.VPNPLUS].count } странах"
+      ],
+      "ProtonMail Visionary account": [
+        "Аккаунт ProtonMail Visionary"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Наивысшая скорость (10 Гбит/с)"
+      ],
+      "ProtonMail Plus account": [
+        "Аккаунт ProtonMail Plus"
       ]
     },
     "Netflix": {
@@ -2516,6 +2977,24 @@
       ],
       "50 addresses": [
         "50 адресов"
+      ],
+      "P2P/BitTorrent support": [
+        "Поддержка P2P/BitTorrent"
+      ],
+      "Adblocker (NetShield)": [
+        "Блокировщик рекламы (NetShield)"
+      ],
+      "Secure Core VPN": [
+        "Secure Core VPN"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
+      ],
+      "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
+        "Все ${ PLAN_NAMES[PLAN.PLUS] } функции тарифного плана"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "Поддержка P2P файлообмена / BitTorrent"
       ]
     },
     "Billing cycle option": {
@@ -2538,6 +3017,9 @@
     "Price": {
       "Free": [
         "Free"
+      ],
+      "FREE": [
+        "БЕСПЛАТНО"
       ]
     },
     "Countdown unit": {
@@ -2616,6 +3098,15 @@
     "Suffix": {
       "/ month": [
         "/ месяц"
+      ],
+      "/monthly": [
+        "/в месяц"
+      ],
+      "/2-year": [
+        "/2-года"
+      ],
+      "/year": [
+        "/год"
       ]
     },
     "Option": {
@@ -2696,6 +3187,12 @@
       ],
       "Free server configs": [
         "Конфигурации бесплатных серверов"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "State": {
@@ -2706,6 +3203,9 @@
     "Plan info": {
       "(current plan)": [
         "(текущий план)"
+      ],
+      "Most popular": [
+        "Самый популярный"
       ]
     },
     "Free price": {
@@ -2821,6 +3321,15 @@
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "Учётные данные OpenVPN / IKEv2 обновлены"
+      ],
+      "Coupons are temporarily disabled": [
+        "Купоны временно отключены"
+      ],
+      "Invites are temporarily disabled": [
+        "Приглашения временно отключены"
+      ],
+      "Verification code successfully sent to ${ destination }": [
+        "Проверочный код успешно отправлен на ${ destination }"
       ]
     },
     "VPNClient": {
@@ -3048,6 +3557,139 @@
     "Password": {
       "Confirm new password": [
         "Подтвердите новый пароль"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "байт"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символов"
+      ]
+    },
+    "Plan details": {
+      "Medium": [
+        "Средняя"
+      ],
+      "High": [
+        "Высокая"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Наивысшая скорость (до 10 Гбит/с)"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Наивысшая скорость (10 Гбит/с)"
+      ]
+    },
+    "Dropdown button": {
+      "Need help?": [
+        "Нужна помощь?"
+      ]
+    },
+    "Image alt": {
+      "Laptop & smartphone shown connected to ProtonVPN network.": [
+        "Ноутбук и смартфон показаны подключенными к сети ProtonVPN."
+      ],
+      "Swiss based": [
+        "В Швейцарии"
+      ],
+      "Secure core servers": [
+        "Сервера Secure Core"
+      ],
+      "No logs": [
+        "Нет журналов активности"
+      ],
+      "Kill switch to prevent IP exposure": [
+        "Kill Switch предотвращает утечку IP"
+      ],
+      "DNS leak prevention": [
+        "Предотвращение утечки DNS"
+      ],
+      "Strong encryption": [
+        "Сильное шифрование"
+      ]
+    },
+    "About": {
+      "Protect your data with Swiss privacy laws, some of the strongest in the world": [
+        "Защитите ваши данные с помощью Швейцарских законов о конфиденциальности - одних из самых сильных в мире"
+      ],
+      "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
+        "Защитите себя от сложных сетевых атак путем маршрутизации вашего трафика через усиленные серверы"
+      ],
+      "Keep your browsing history private - we do not keep any records of our users' online activity": [
+        "Держите вашу историю браузера в секрете - мы не храним никаких записей о активности наших пользователей в сети"
+      ],
+      "Keep your data secure even if you are disconnected from your VPN server": [
+        "Защита данных даже в случае отключения от VPN-сервера"
+      ],
+      "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
+        "Предотвратите обнаружение и запись ваших DNS запросов, полностью зашифровав их"
+      ],
+      "Defend your Internet connection with AES-256, the highest strength encryption.": [
+        "Защитите свое Интернет-подключение с помощью AES-256, наивысшего шифрования."
+      ]
+    },
+    "PlanPrice": {
+      "${ totalMonthlyPriceText } / mo": [
+        "${ totalMonthlyPriceText } / мес"
+      ],
+      "Billed as ${ totalBilledText }": [
+        "К оплате ${ totalBilledText }"
+      ],
+      "SAVE ${ discountText }": [
+        "СКИДКА ${ discountText }"
+      ]
+    },
+    "Plan Action": {
+      "Get ${ plan.title }": [
+        "Получить ${ plan.title }"
+      ]
+    },
+    "Plan Description": {
+      "Privacy and security for everyone": [
+        "Конфиденциальность и безопасность для всех"
+      ],
+      "Basic privacy features": [
+        "Основные функции конфиденциальности"
+      ],
+      "Advanced security features": [
+        "Расширенные функции безопасности"
+      ],
+      "The complete privacy suite": [
+        "Полный набор конфиденциальности"
+      ],
+      "Bundle plan": [
+        "Комплектный тарифный план"
+      ]
+    },
+    "VerificationType": {
+      "email": [
+        "эл. почта"
+      ],
+      "phone": [
+        "телефон"
+      ]
+    },
+    "Plan upsell": {
+      "Monthly plan": [
+        "Ежемесячный тарифный план"
+      ],
+      "Yearly plan": [
+        "Годовой тарифный план"
       ]
     },
     "blackfriday Info": {

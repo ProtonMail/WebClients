@@ -5,589 +5,1221 @@
   },
   "contexts": {
     "": {},
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } starter nu"
+    "Error": {
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
       ],
-      "${ title } starts today": [
-        "${ title } starter i dag"
+      "Authentication canceled.": [
+        "Godkendelse annulleret."
       ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } startede ${ formattedHour }"
+      "Your import will not be processed.": [
+        "Din import vil ikke blive behandlet."
       ],
-      "${ title } started yesterday": [
-        "${ title } startede i går"
+      "Authentication error.": [
+        "Godkendelsesfejl."
       ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } startede i går ${ formattedHour }"
+      "Unknown error": [
+        "Ukendt fejl"
       ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } startede ${ formattedDate }"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
       ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } startede ${ formattedDate } ${ formattedHour }"
+      "Email address invalid": [
+        "E-mailadresse ugyldig"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } startede ${ _formattedDate }"
+      "This field is required": [
+        "Dette felt skal udfyldes"
       ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } startede ${ _formattedDate } ${ formattedHour }"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } startede ${ formattedDateWithoutTime }"
+      "Process aborted": [
+        "Proces afbrudt"
       ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } startede ${ _formattedDateWithTime }"
+      "Payment process cancelled": [
+        "Betalingproces annulleret"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } starter ${ formattedHour }"
+      "Payment process failed": [
+        "Betalingproces mislykkedes"
       ],
-      "${ title } will start tomorrow": [
-        "${ title } starter i morgen"
+      "Payment process consumed": [
+        "Betalingssession udløbet"
       ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } starter i morgen ${ formattedHour }"
+      "Payment process not supported": [
+        "Betalingsproces understøttes ikke"
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } starter ${ _formattedDate2 }"
+      "Unknown payment token status": [
+        "Ukendt betalings-token status"
       ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } starter ${ _formattedDate2 } ${ formattedHour }"
+      "Tab closed": [
+        "Fane lukket"
       ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } starter ${ _formattedDate3 }"
+      "Name on card required": [
+        "Navn på kort er obligatorisk"
       ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } starter ${ _formattedDate3 } ${ formattedHour }"
+      "Invalid expiration date": [
+        "Ugyldig udløbsdato"
       ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } starter ${ _formattedDateWithoutTime }"
+      "Invalid card number": [
+        "Ugyldigt kortnummer"
       ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } starter ${ formattedDateWithTime }"
+      "Invalid ${ name } code": [
+        "Ugyldig ${ name }-kode"
+      ],
+      "Invalid postal code": [
+        "Ugyldigt postnummer"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fejl under oprettelse af forbindelse til Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Beløb under minimum."
+      ],
+      "Amount above the maximum.": [
+        "Beløb overstiger maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Det mindste beløb, der kan doneres, er ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Den mindste betaling vi accepterer er ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Checkout udløbet, prøv venligst igen."
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "Preferences could not be saved": [
+        "Præferencer kunne ikke gemmes"
+      ],
+      "Some groups could not be deleted": [
+        "Nogle grupper kunne ikke slettes"
+      ],
+      "Image upload failed": [
+        "Billed-upload mislykkedes"
+      ],
+      "Contact could not be saved": [
+        "Kontakt kunne ikke gemmes"
+      ],
+      "Some contacts could not be deleted": [
+        "Nogle kontakter kunne ikke slettes"
+      ],
+      "Invalid public key file": [
+        "Ugyldig offentlig nøglefil"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Du kan ikke sende en mail til mere end 100 modtagere"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
+        "Nogle kontakter har ingen e-mailadresse: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Du kan ikke sende vCards med mere end 10 kontakter"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Der opstod en fejl under eksport af kontakternes vCards"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "En af grupperne har ingen kontakter: ${ noContactGroupList }",
+        "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Du skal angive et navn"
+      ],
+      "A group with this name already exists": [
+        "En gruppe med dette navn findes allerede"
+      ],
+      "Invalid name": [
+        "Ugyldigt navn"
+      ],
+      "Primary address key is not decrypted": [
+        "Primære adressenøgle er ikke dekrypteret"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Forkert adgangskode til postkasse. Prøv venligst igen"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Forkerte login-oplysninger. Prøv venligst igen"
+      ],
+      "Can't validate email, try again later": [
+        "Kan ikke bekræfte e-mail, prøv igen senere"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan ikke bekræfte telefon, prøv igen senere"
+      ],
+      "Enter 6 digits": [
+        "Indtast 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "No valid address found": [
+        "Ingen gyldig adresse fundet"
+      ],
+      "Primary address key is not decrypted.": [
+        "Primære adressenøgle er ikke dekrypteret."
+      ],
+      "Name required": [
+        "Navn påkrævet"
+      ],
+      "Address primary private key not found": [
+        "Adresses primære private nøgle ikke fundet"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Kalenders primære private nøgle er ikke dekrypteret"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
+      ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
+      "Passwords do not match": [
+        "Adgangskoder matcher ikke"
+      ],
+      "Request timed out.": [
+        "Forespørgsel fik timeout."
+      ],
+      "Missing signature": [
+        "Manglende signatur"
+      ],
+      "Contact signature not verified": [
+        "Kontaktsignatur ikke bekræftet"
+      ],
+      "Signature not verified": [
+        "Signatur ikke bekræftet"
+      ],
+      "Signature verification failed": [
+        "Bekræftelse af signatur mislykkedes"
+      ],
+      "Could not find address ${ email }.": [
+        "Kunne ikke finde adresse ${ email }."
+      ],
+      "Email address disabled": [
+        "E-mailadresse deaktiveret"
+      ],
+      "No keys retrieved for internal user": [
+        "Ingen nøgler hentet for intern bruger"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Ingen gyldige nøgler hentet for intern bruger"
+      ],
+      "Contact signature could not be verified": [
+        "Kontaktsignatur kunne ikke bekræftes"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Betroede nøgler er ikke gyldige til afsendelse"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
+      ],
+      "The sending key is not valid": [
+        "Afsendelsesnøglen er ikke gyldig"
+      ],
+      "Self invitation not allowed": [
+        "Selvinvitation er ikke tilladt"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } har ikke en gyldig e-mailadresse",
+        "Nogle kontakter har ikke en gyldig e-mailadresse: ${ list }"
+      ],
+      "${ _list } doesn't have an email address": [
+        "${ _list } har ikke en e-mailadresse",
+        "Nogle kontakter har ikke e-mailadresse: ${ _list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } har ugyldige e-mails",
+        "Nogle grupper har ugyldige e-mails: ${ list }"
+      ],
+      "${ _list2 } has no contacts": [
+        "${ _list2 } har ingen kontakter",
+        "Nogle grupper har ingen kontakter: ${ _list2 }"
+      ],
+      "Failed to get original occurrence in series": [
+        "Kunne ikke hente original forekomst i serie"
+      ],
+      "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
+        "Det er kun muligt at flytte begivenheder mellem ${ minDateString } - ${ maxDateString }"
+      ],
+      "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
+        "Det er kun muligt at oprette begivenheder mellem ${ minDateString } - ${ maxDateString }"
+      ],
+      "Invitation failed to be sent": [
+        "Invitation kunne ikke sendes"
+      ],
+      "Answer failed to be sent": [
+        "Svaret kunne ikke sendes"
+      ],
+      "Cancellation failed to be sent": [
+        "Aflysning kunne ikke sendes"
+      ],
+      "Invalid link to the event": [
+        "Ugyldigt link til begivenheden"
+      ],
+      "Please create an address first.": [
+        "Opret en adresse først."
+      ],
+      "Start time must be before end time": [
+        "Starttidspunkt skal være før sluttidspunkt"
+      ],
+      "Interval cannot be empty": [
+        "Interval må ikke være tomt"
+      ],
+      "Ends on date cannot be empty": [
+        "Sluttdato kan ikke være tom"
+      ],
+      "Ends on date must be after start time": [
+        "Slutter på dato skal være efter starttidspunktet"
+      ],
+      "Number of occurrences cannot be empty": [
+        "Antallet af forekomster kan ikke være tom"
+      ],
+      "A maximum of 10 notifications is allowed": [
+        "Højst 10 notifikationer er tilladt"
+      ],
+      "Invalid email address": [
+        "Ugyldig e-mailadresse"
+      ],
+      "Decryption error: Decryption of this event's content failed.": [
+        "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
+      ],
+      "Error: ${ errorMessage }": [
+        "Fejl: ${ errorMessage }"
+      ],
+      "Error": [
+        "Fejl"
       ]
     },
-    "Event title": {
-      "(no title)": [
-        "(ingen titel)"
+    "Action": {
+      "Close": [
+        "Luk"
+      ],
+      "Close navigation": [
+        "Luk navigation"
+      ],
+      "Open navigation": [
+        "Åbn navigation"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mere information: ${ safeTitle }"
+      ],
+      "Go to panel ${ index }": [
+        "Gå til panel ${ index }"
+      ],
+      "Confirm": [
+        "Bekræft"
+      ],
+      "Cancel": [
+        "Annullér"
+      ],
+      "Close modal": [
+        "Luk vindue"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Use “${ label }” setting": [
+        "Brug “${ label }” indstilling"
+      ],
+      "Load image": [
+        "Indlæs billede"
+      ],
+      "Export": [
+        "Exportér"
+      ],
+      "Delete": [
+        "Slet"
+      ],
+      "Edit": [
+        "Redigér"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Use for sending": [
+        "Brug til afsendelse"
+      ],
+      "Trust": [
+        "Gør betroet"
+      ],
+      "Untrust": [
+        "Ikke længere betroet"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Email settings": [
+        "E-mailindstillinger"
+      ],
+      "Contact group": [
+        "Kontaktgruppe"
+      ],
+      "Upload picture": [
+        "Overfør billede"
+      ],
+      "Next month": [
+        "Næste måned"
+      ],
+      "Previous month": [
+        "Forrige måned"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Bekræft åbning af link ${ link }"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
+      ],
+      "Select timezone": [
+        "Vælg tidszone"
+      ],
+      "Show less": [
+        "Vis mindre"
+      ],
+      "Show more": [
+        "Vis mere"
+      ],
+      "Signing out": [
+        "Logger ud"
+      ],
+      "Copy email to clipboard": [
+        "Kopiér e-mail til upklipsholder"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } introduktion"
+      ],
+      "Chat with us": [
+        "Chat med os"
+      ],
+      "I have a question": [
+        "Jeg har et spørgsmål"
+      ],
+      "Request a feature": [
+        "Anmod om en funktion"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } butik"
+      ],
+      "Switch account": [
+        "Skift konto"
+      ],
+      "Sign out": [
+        "Log ud"
+      ],
+      "Go to settings": [
+        "Gå til indstillinger"
+      ],
+      "Beta Access": [
+        "Beta-adgang"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "Mailbox layout": [
+        "Postkasse layout"
+      ],
+      "Mailbox density": [
+        "Postkasse tæthed"
+      ],
+      "Composer size": [
+        "Skrivevinduestørrelse"
+      ],
+      "Get started": [
+        "Kom godt i gang"
+      ],
+      "Next": [
+        "Næste"
+      ],
+      "Start setup": [
+        "Start opsætning"
+      ],
+      "Skip": [
+        "Spring over"
+      ],
+      "Done": [
+        "Udført"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Use ${ label } theme": [
+        "Brug ${ label } temaet"
+      ],
+      "OK": [
+        "Ok"
+      ],
+      "Clear": [
+        "Ryd"
+      ],
+      "Add screenshot(s)": [
+        "Tilføj screenshot(s)"
+      ],
+      "Hide info": [
+        "Skjul info"
+      ],
+      "Show info": [
+        "Vis info"
+      ],
+      "Remove bonuses": [
+        "Fjern bonusser"
+      ],
+      "Verify": [
+        "Bekræft"
+      ],
+      "Try again": [
+        "Prøv igen"
+      ],
+      "Use a different card": [
+        "Benyt et andet kort"
+      ],
+      "Use a different payment method": [
+        "Benyt en anden betalingsmetode"
+      ],
+      "Retry": [
+        "Prøv igen"
+      ],
+      "Loading verification": [
+        "Indlæser verifikation"
+      ],
+      "Select plan": [
+        "Vælg abonnement"
+      ],
+      "Compare all features": [
+        "Sammenlign alle features"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } ved at skifte til årlig fakturering"
+      ],
+      "Continue": [
+        "Fortsæt"
+      ],
+      "Pay": [
+        "Betal"
+      ],
+      "Apply": [
+        "Anvend"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Åbn ${ CALENDAR_APP_NAME } indstillinger"
+      ],
+      "Remove gift code": [
+        "Fjern gavekode"
+      ],
+      "annual billing": [
+        "årlig fakturering"
+      ],
+      "Compare plans": [
+        "Sammenlign abonnementer"
+      ],
+      "Decrease": [
+        "Formindsk"
+      ],
+      "Increase": [
+        "Forøg"
+      ],
+      "Save": [
+        "Gem"
+      ],
+      "Add": [
+        "Tilføj"
+      ],
+      "Hide advanced PGP settings": [
+        "Skjul avancerede PGP-indstillinger"
+      ],
+      "Show advanced PGP settings": [
+        "Vis avancerede PGP-indstillinger"
+      ],
+      "Clear data": [
+        "Ryd data"
+      ],
+      "Recover data": [
+        "Gendan data"
+      ],
+      "Click here.": [
+        "Klik her."
+      ],
+      "Re-sign": [
+        "Gensignér"
+      ],
+      "Add to group": [
+        "Føj til gruppe"
+      ],
+      "Merge": [
+        "Flet"
+      ],
+      "View": [
+        "Vis"
+      ],
+      "Unmark for deletion": [
+        "Afmarkér fra sletning"
+      ],
+      "Mark for deletion": [
+        "Markér til sletning"
+      ],
+      "Preview contact": [
+        "Forhåndsvis kontakt"
+      ],
+      "Delete contact": [
+        "Slet kontakt"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Slet ${ selectedCount } kontakt",
+        "Slet ${ selectedCount } kontakter"
+      ],
+      "Deselect all": [
+        "Fravælg alle"
+      ],
+      "Select all": [
+        "Vælg alle"
+      ],
+      "Compose": [
+        "Skriv"
+      ],
+      "Forward as attachment": [
+        "Videresend som vedhæftning"
+      ],
+      "Merge contacts": [
+        "Flet kontakter"
+      ],
+      "Add new contact": [
+        "Tilføj ny kontakt"
+      ],
+      "Add group": [
+        "Tilføj gruppe"
+      ],
+      "Clear query": [
+        "Ryd forespørgsel"
+      ],
+      "Add contact": [
+        "Tilføj kontakt"
+      ],
+      "import": [
+        "importér"
+      ],
+      "Delete contact group": [
+        "Slet kontaktgruppe"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Slet ${ selectedCount } kontaktgruppe",
+        "Slet ${ selectedCount } kontaktgrupper"
+      ],
+      "Add new group": [
+        "Tilføj ny gruppe"
+      ],
+      "Export contacts": [
+        "Eksportér kontakter"
+      ],
+      "Continue with Google": [
+        "Fortsæt med Google"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Choose a file or drag it here": [
+        "Vælg en fil eller træk den hertil"
+      ],
+      "Import": [
+        "Importér"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        "Kassér"
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Log in": [
+        "Log ind"
+      ],
+      "View invoice": [
+        "Vis faktura"
+      ],
+      "Get verification code": [
+        "Få bekræftelseskode"
+      ],
+      "Try another method": [
+        "Prøv en anden metode"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
+      ],
+      "Did not receive the code?": [
+        "Ikke modtaget koden?"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
+      ],
+      "Close this banner": [
+        "Luk denne banner"
+      ],
+      "Refresh the page": [
+        "Genopfrisk siden"
+      ],
+      "enable desktop notifications": [
+        "aktivér skrivebordsmeddelelser"
+      ],
+      "here": [
+        "her"
+      ],
+      "Remove this notification": [
+        "Fjern denne notifikation"
+      ],
+      "Add notification": [
+        "Tilføj notifikation"
+      ],
+      "Update": [
+        "Opdatér"
+      ],
+      "Create": [
+        "Opret"
+      ],
+      "Yes, I'll attend": [
+        "Ja, jeg deltager"
+      ],
+      "Maybe I'll attend": [
+        "Måske deltager jeg"
+      ],
+      "No, I won't attend": [
+        "Nej, jeg deltager ikke"
+      ],
+      "Yes": [
+        "Ja"
+      ],
+      "Maybe": [
+        "Måske"
+      ],
+      "No": [
+        "Nej"
+      ],
+      "Share": [
+        "Del"
+      ],
+      "New event": [
+        "Ny begivenhed"
+      ],
+      "Create event": [
+        "Opret begivenhed"
+      ],
+      "Send": [
+        "Send"
+      ],
+      "Previous day": [
+        "Forrige dag"
+      ],
+      "Previous week": [
+        "Forrige uge"
+      ],
+      "Previous year": [
+        "Sidste år"
+      ],
+      "Next day": [
+        "Næste dag"
+      ],
+      "Next week": [
+        "Næste uge"
+      ],
+      "Next year": [
+        "Næste år"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Make this participant required": [
+        "Gør denne deltager påkrævet"
+      ],
+      "Make this participant optional": [
+        "Gør denne deltager valgfri"
+      ],
+      "Remove this participant": [
+        "Fjern denne deltager"
+      ],
+      "Hide time zones": [
+        "Skjul tidszoner"
+      ],
+      "Show time zones": [
+        "Vis tidszoner"
+      ],
+      "More options": [
+        "Flere muligheder"
+      ],
+      "Close popover": [
+        "Luk popover"
       ]
     },
-    "Participant name": {
-      "You": [
-        "Dig"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Annullering af en begivenhed den ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Invitation til en begivenhed den ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Opdatering til en begivenhed den ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Annullering af en begivenhed med start den ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Invitation til en begivenhed med start den ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Opdatering til en begivenhed med start den ${ formattedStart }"
-      ],
-      "Invitation: ${ eventTitle }": [
-        "Invitation: ${ eventTitle }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Hvornår: ${ formattedStart } (hele dagen)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Hvornår: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Hvornår: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Hvor: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivelse: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
+    "Title": {
+      "Open actions dropdown": [
+        "Åbn handlingsrullemenu"
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
+      "Keyboard Shortcuts": [
+        "Tastaturgenveje"
       ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } er blevet annulleret."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har accepteret din invitation til ${ eventTitle }"
+      "Upgrade required": [
+        "Opgradering påkrævet"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
+      "Email settings": [
+        "E-mailindstillinger"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "på den første søndag"
+      "Contact group": [
+        "Kontaktgruppe"
       ],
-      "on the first Monday": [
-        "på den første mandag"
+      "Link confirmation": [
+        "Linkbekræftelse"
       ],
-      "on the first Tuesday": [
-        "på den første tirsdag"
+      "What's new": [
+        "Nyheder"
       ],
-      "on the first Wednesday": [
-        "på den første onsdag"
+      "Open help menu": [
+        "Åbn hjælpemenu"
       ],
-      "on the first Thursday": [
-        "på den første torsdag"
+      "Back": [
+        "Tilbage"
       ],
-      "on the first Friday": [
-        "på den første fredag"
+      "Open settings menu": [
+        "Åbn indstillingsmenu"
       ],
-      "on the first Saturday": [
-        "på den første lørdag"
+      "Send feedback": [
+        "Send feedback"
       ],
-      "on the second Sunday": [
-        "på den første søndag"
+      "Feedback": [
+        "Feedback"
       ],
-      "on the second Monday": [
-        "på den anden mandag"
+      "Give feedback": [
+        "Giv feedback"
       ],
-      "on the second Tuesday": [
-        "på den anden tirsdag"
+      "Select a theme": [
+        "Vælg et tema"
       ],
-      "on the second Wednesday": [
-        "på den anden onsdag"
+      "Report a problem": [
+        "Anmeld et problem"
       ],
-      "on the second Thursday": [
-        "på den anden torsdag"
+      "Confirm loss of Proton bonuses": [
+        "Bekræft tab af Proton-bonusser"
       ],
-      "on the second Friday": [
-        "på den anden fredag"
+      "Unsupported browser": [
+        "Browser understøttes ikke"
       ],
-      "on the second Saturday": [
-        "på den anden lørdag"
+      "Card verification": [
+        "Kortbekræftelse"
       ],
-      "on the third Sunday": [
-        "på den tredje søndag"
+      "Payment verification": [
+        "Betalingsbekræftelse"
       ],
-      "on the third Monday": [
-        "på den tredje mandag"
+      "Processing...": [
+        "Behandler..."
       ],
-      "on the third Tuesday": [
-        "på den tredje tirsdag"
+      "Card verification in progress": [
+        "Kortbekræftelse i gang"
       ],
-      "on the third Wednesday": [
-        "på den tredje onsdag"
+      "Payment verification in progress": [
+        "Betalingsbekræftelse i gang"
       ],
-      "on the third Thursday": [
-        "på den tredje torsdag"
+      "PayPal verification failed": [
+        "PayPal-bekræftelse fejlede"
       ],
-      "on the third Friday": [
-        "på den tredje fredag"
+      "3-D Secure verification failed": [
+        "3-D Secure-bekræftelse mislykkedes"
       ],
-      "on the third Saturday": [
-        "på den tredje lørdag"
+      "Error": [
+        "Fejl"
       ],
-      "on the fourth Sunday": [
-        "på den fjerde søndag"
+      "ZIP / postal code": [
+        "Postnummer"
       ],
-      "on the fourth Monday": [
-        "på den fjerde mandag"
+      "Payment details": [
+        "Betalingsdetaljer"
       ],
-      "on the fourth Tuesday": [
-        "på den fjerde tirsdag"
+      "Currency": [
+        "Valuta"
       ],
-      "on the fourth Wednesday": [
-        "på den fjerde onsdag"
+      "Billing cycle": [
+        "Faktureringsperiode"
       ],
-      "on the fourth Thursday": [
-        "på den fjerde torsdag"
+      "Current plan": [
+        "Nuværende abonnement"
       ],
-      "on the fourth Friday": [
-        "på den fjerde fredag"
+      "Processing": [
+        "Behandler"
       ],
-      "on the fourth Saturday": [
-        "på den fjerde lørdag"
+      "Apply gift code": [
+        "Tilføj gavekode"
       ],
-      "on the last Sunday": [
-        "på den sidste søndag"
+      "Subtotal": [
+        "Subtotal"
       ],
-      "on the last Monday": [
-        "på den sidste mandag"
+      "Coupon discount": [
+        "Rabatkupon"
       ],
-      "on the last Tuesday": [
-        "på den sidste tirsdag"
+      "Total (monthly)": [
+        "I alt (månedlig)"
       ],
-      "on the last Wednesday": [
-        "på den sidste onsdag"
+      "Credits": [
+        "Kreditter"
       ],
-      "on the last Thursday": [
-        "på den sidste torsdag"
+      "Gift code": [
+        "Gavekode"
       ],
-      "on the last Friday": [
-        "på den sidste fredag"
+      "Amount due": [
+        "Forfaldent beløb"
       ],
-      "on the last Saturday": [
-        "på den sidste lørdag"
+      "Cancel subscription": [
+        "Afmeld abonnement"
       ],
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } gang",
-        "${ count } gange"
+      "Network error": [
+        "Netværksfejl"
       ],
-      "until ${ dateString }": [
-        "indtil ${ dateString }"
+      "Select a plan": [
+        "Vælg et abonnement"
       ],
-      "Daily": [
-        "Dagligt"
+      "Customize your plan": [
+        "Tilpas dit abonnement"
       ],
-      "Every ${ interval } day": [
-        "Hver ${ interval } dag",
-        "Hver ${ interval } dag"
+      "Checkout": [
+        "Til kassen"
       ],
-      "Daily, ${ timesString }": [
-        "Daglig, ${ timesString }"
+      "Plan summary": [
+        "Abonnementoversigt"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
+      "${ appName } customization": [
+        "${ appName } tilpasning"
       ],
-      "Daily, ${ untilString }": [
-        "Daglig, ${ untilString }"
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Tastaturgenveje"
       ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Søndag"
+      "Mailbox density": [
+        "Postkasse tæthed"
       ],
-      "Monday": [
-        "Mandag"
+      "Mailbox layout": [
+        "Postkasse layout"
       ],
-      "Tuesday": [
-        "Tirsdag"
+      "Composer mode": [
+        "Skrivetilstand"
       ],
-      "Wednesday": [
-        "Onsdag"
+      "Beta Access": [
+        "Beta-adgang"
       ],
-      "Thursday": [
-        "Torsdag"
+      "Edit contact group": [
+        "Redigér kontaktgruppe"
       ],
-      "Friday": [
-        "Fredag"
+      "Create new group": [
+        "Opret ny gruppe"
       ],
-      "Saturday": [
-        "Lørdag"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Ugentligt på alle dage"
+      "Add to ${ groupName }": [
+        "Føj til ${ groupName }"
       ],
-      "Every ${ interval } week on all days": [
-        "Hver ${ interval } uge på alle dage",
-        "Hver ${ interval } uge på alle dage"
+      "Add to ${ groupCount } group": [
+        "Føj til ${ groupCount } gruppe",
+        "Føj til ${ groupCount } grupper"
       ],
-      "Weekly on Sunday": [
-        "Ugentligt om søndagen"
+      "Email settings (${ emailAddress })": [
+        "E-mailindstillinger (${ emailAddress })"
       ],
-      "Every ${ interval } week on Sunday": [
-        "Hver ${ interval } uge om søndagen",
-        "Hver ${ interval } uge om søndagen"
+      "Delete ${ Name }": [
+        "Slet ${ Name }"
       ],
-      "Weekly on Monday": [
-        "Ugentligt om mandagen"
+      "Delete ${ count } contact group": [
+        "Slet ${ count } kontaktgruppe",
+        "Slet ${ count } kontaktgrupper"
       ],
-      "Every ${ interval } week on Monday": [
-        "Hver ${ interval } uge om mandagen",
-        "Hver ${ interval } uge om mandagen"
+      "${ emailsCount } member": [
+        "${ emailsCount } medlem",
+        "${ emailsCount } medlemmer"
       ],
-      "Weekly on Tuesday": [
-        "Ugentligt om tirsdagen"
+      "Edit image": [
+        "Redigér billede"
       ],
-      "Every ${ interval } week on Tuesday": [
-        "Hver ${ interval } uge om tirsdagen",
-        "Hver ${ interval } uge om tirsdagen"
+      "Edit contact": [
+        "Rediger kontakt"
       ],
-      "Weekly on Wednesday": [
-        "Ugentligt om onsdagen"
+      "Create contact": [
+        "Opret kontakt"
       ],
-      "Every ${ interval } week on Wednesday": [
-        "Hver ${ interval } uge om onsdagen",
-        "Hver ${ interval } uge om onsdagen"
+      "Delete ${ count } contact": [
+        "Slet ${ count } kontakt",
+        "Slet ${ count } kontakter"
       ],
-      "Weekly on Thursday": [
-        "Ugentligt om torsdagen"
+      "Clearing data": [
+        "Rydder data"
       ],
-      "Every ${ interval } week on Thursday": [
-        "Hver ${ interval } uge om torsdagen",
-        "Hver ${ interval } uge om torsdagen"
+      "Warning": [
+        "Advarsel"
       ],
-      "Weekly on Friday": [
-        "Ugentligt om fredagen"
+      "Recover data": [
+        "Gendan data"
       ],
-      "Every ${ interval } week on Friday": [
-        "Hver ${ interval } uge om fredagen",
-        "Hver ${ interval } uge om fredagen"
+      "Re-signing contacts": [
+        "Gensignering af kontakter"
       ],
-      "Weekly on Saturday": [
-        "Ugentligt om lørdagen"
+      "Re-sign all contacts": [
+        "Gensignér alle kontakter"
       ],
-      "Every ${ interval } week on Saturday": [
-        "Hver ${ interval } uge om lørdagen",
-        "Hver ${ interval } uge om lørdagen"
+      "Exporting contacts": [
+        "Eksporterer kontakter"
       ],
-      "Weekly on ${ multipleDaysString }": [
-        "Ugentlig på ${ multipleDaysString }"
+      "Other names": [
+        "Andre navne"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }"
+      "Email addresses": [
+        "E-mailadresser"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Ugentlig på alle dage, ${ timesString }"
+      "Phone numbers": [
+        "Telefonnumre"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uge på alle dage, ${ timesString }",
-        "Hver ${ interval } uge på alle dage, ${ timesString }"
+      "Addresses": [
+        "Adresser"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Ugentligt om søndagen, ${ timesString }"
+      "Other information": [
+        "Anden information"
       ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Hver ${ interval } uge om søndagen, ${ timesString }",
-        "Hver ${ interval } uge om søndagen, ${ timesString }"
+      "Contact Details": [
+        "Kontaktoplysninger"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Ugentligt om mandagen, ${ timesString }"
+      "Merging contacts": [
+        "Fletter kontakter"
       ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Hver ${ interval } uge om mandagen, ${ timesString }",
-        "Hver ${ interval } uge om mandagen, ${ timesString }"
+      "Merge contacts": [
+        "Flet kontakter"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Ugentligt om tirsdagen, ${ timesString }"
+      "Deleting contacts": [
+        "Sletter kontakter"
       ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Hver ${ interval } uge om tirsdagen, ${ timesString }",
-        "Hver ${ interval } uge om tirsdagen, ${ timesString }"
+      "View contacts": [
+        "Vis kontakter"
       ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Ugentligt om onsdagen, ${ timesString }"
+      "Contacts": [
+        "Kontakter"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Hver ${ interval } uge om onsdagen, ${ timesString }",
-        "Hver ${ interval } uge om onsdagen, ${ timesString }"
+      "Groups": [
+        "Grupper"
       ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Ugentligt om torsdagen, ${ timesString }"
+      "Settings": [
+        "Indstillinger"
       ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uge om torsdagen, ${ timesString }",
-        "Hver ${ interval } uge om torsdagen, ${ timesString }"
+      "Select action to take on contact group": [
+        "Vælg handling for kontaktgruppe"
       ],
-      "Weekly on Friday, ${ timesString }": [
-        "Ugentligt om fredagen, ${ timesString }"
+      "Add contact group name": [
+        "Tilføj kontaktgruppenavn"
       ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uge om fredagen, ${ timesString }",
-        "Hver ${ interval } uge om fredagen, ${ timesString }"
+      "Select contact group": [
+        "Vælg kontaktgruppe"
       ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Ugentligt om lørdagen, ${ timesString }"
+      "Import groups": [
+        "Importer grupper"
       ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uge om lørdagen, ${ timesString }",
-        "Hver ${ interval } uge om lørdagen, ${ timesString }"
+      "Import contacts": [
+        "Importér kontakter"
       ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ timesString }"
+      "Start import process": [
+        ""
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }"
+      "Import in progress": [
+        ""
       ],
-      "Weekly on all days, ${ untilString }": [
-        "Ugentlig på alle dage, ${ untilString }"
+      "Sign in again to continue": [
+        "Log ind igen for at fortsætte"
       ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uge på alle dage, ${ untilString }",
-        "Hver ${ interval } uge på alle dage, ${ untilString }"
+      "Account suspended": [
+        "Konto suspenderet"
       ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Ugentligt om søndagen, ${ untilString }"
+      "Enter your username or ProtonMail email address": [
+        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uge om søndagen, ${ untilString }",
-        "Hver ${ interval } uge om søndagen, ${ untilString }"
+      "Enter your password": [
+        "Indtast din adgangskode"
       ],
-      "Weekly on Monday, ${ untilString }": [
-        "Ugentligt om mandagen, ${ untilString }"
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uge om mandagen, ${ untilString }",
-        "Hver ${ interval } uge om mandagen, ${ untilString }"
+      "Request new code": [
+        "Anmod om ny kode"
       ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Ugentligt om tirsdagen, ${ untilString }"
+      "Human verification": [
+        "Menneskelig bekræftelse"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }",
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }"
+      "Select the way to send this notification": [
+        "Vælg måden at sende denne notifikation på"
       ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Ugentligt om onsdagen, ${ untilString }"
+      "Select when you want this notification to be sent": [
+        "Vælg når du ønsker, at denne notifikation skal sendes"
       ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uge om onsdagen, ${ untilString }",
-        "Hver ${ interval } uge om onsdagen, ${ untilString }"
+      "Select the time to send this notification": [
+        "Vælg tid for afsendelse af denne notifikation"
       ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Ugentligt om torsdagen, ${ untilString }"
+      "Add another notification to remind you of this event": [
+        "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
       ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uge om torsdagen, ${ untilString }",
-        "Hver ${ interval } uge om torsdagen, ${ untilString }"
+      "Update calendar": [
+        "Opdater kalender"
       ],
-      "Weekly on Friday, ${ untilString }": [
-        "Ugentligt om fredagen, ${ untilString }"
+      "Create calendar": [
+        "Opret kalender"
       ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uge om fredagen, ${ untilString }",
-        "Hver ${ interval } uge om fredagen, ${ untilString }"
+      "Change my answer": [
+        "Skift mit svar"
       ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Ugentligt om lørdagen, ${ untilString }"
+      "Calendar": [
+        "Kalender"
       ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uge om lørdagen, ${ untilString }",
-        "Hver ${ interval } uge om lørdagen, ${ untilString }"
+      "Organizer cannot be notified": [
+        "Arrangør kan ikke underrettes"
       ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ untilString }"
+      "Participants cannot be notified": [
+        "Deltagere kan ikke underrettes"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Månedligt ${ onDayString }"
+      "Delete event": [
+        "Slet begivenhed"
       ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Hver ${ interval } måned ${ onDayString }",
-        "Hver ${ interval } måned ${ onDayString }"
+      "Delete recurring event": [
+        "Slet tilbagevendende begivenhed"
       ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Månedligt ${ onDayString }, ${ timesString }"
+      "Update recurring event": [
+        "Opdater tilbagevendende begivenhed"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
+      "Save changes": [
+        "Gem ændringer"
       ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Månedligt ${ onDayString }, ${ untilString }"
+      "Add participants": [
+        "Tilføj deltagere"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Årlig"
+      "Remove participants": [
+        "Fjern deltagere"
       ],
-      "Every ${ interval } year": [
-        "Hver ${ interval } år",
-        "Hver ${ interval } år"
+      "Send invitation": [
+        "Send invitation"
       ],
-      "Yearly, ${ timesString }": [
-        "Årligt, ${ timesString }"
+      "Update event": [
+        "Opdater begivenhed"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Hver ${ interval } år, ${ timesString }",
-        "Hver ${ interval } år, ${ timesString }"
+      "You have invited participants with equivalent emails": [
+        "Du har inviteret deltagere med tilsvarende e-mails"
       ],
-      "Yearly, ${ untilString }": [
-        "Årligt, ${ untilString }"
+      "Reset calendar keys": [
+        "Nulstil kalendernøgler"
       ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Hver ${ interval } år, ${ untilString }",
-        "Hver ${ interval } år, ${ untilString }"
+      "Reactivate calendar keys": [
+        "Genaktivér kalendernøgler"
+      ],
+      "Calendar alarm": [
+        "Kalenderalarm"
+      ],
+      "Choose how often this event repeats": [
+        "Vælg hvor ofte denne begivenhed gentages"
+      ],
+      "Select event frequency interval": [
+        "Vælg frekvensinterval for begivenhed"
+      ],
+      "Select a day in the month": [
+        "Vælg en dag i måneden"
+      ],
+      "Select when this event will stop happening": [
+        "Vælg hvornår denne begivenhed ophører med at forekomme"
+      ],
+      "Select event's last date": [
+        "Vælg begivenhedens sidste dato"
+      ],
+      "Choose how many times this event will repeat": [
+        "Vælg hvor mange gange denne begivenhed skal gentages"
+      ],
+      "Select event start date": [
+        "Vælg startdato for begivenhed"
+      ],
+      "Select event start time": [
+        "Vælg starttidspunkt for begivenhed"
+      ],
+      "Select the time zone for the event start time": [
+        "Vælg tidszonen for begivenhedens starttidspunkt"
+      ],
+      "Select event end date": [
+        "Vælg begivenhedens slutdato"
+      ],
+      "Select event end time": [
+        "Vælg sluttidspunkt for begivenhed"
+      ],
+      "Select the time zone for the event end time": [
+        "Vælg tidszonen for begivenhedens sluttidspunkt"
+      ],
+      "Event is happening on defined time slot": [
+        "Begivenheden finder sted indenfor defineret tidsramme"
+      ],
+      "Event is happening all day": [
+        "Begivenheden foregår hele dagen"
+      ],
+      "Hide time zones for event start and end times": [
+        "Skjul tidszoner for start- og sluttider"
+      ],
+      "Show time zones for event start and end times": [
+        "Vis tidszoner for start- og sluttider"
+      ],
+      "Add event title": [
+        "Tilføj begivenhedstitel"
+      ],
+      "Select event frequency": [
+        "Vælg hyppighed for begivenhed"
+      ],
+      "Add event location": [
+        "Tilføj placering for begivenhed"
+      ],
+      "Add more information related to this event": [
+        "Tilføj flere oplysninger relateret til denne begivenhed"
+      ],
+      "Select which calendar to add this event to": [
+        "Vælg hvilken kalender denne begivenhed skal tilføjes"
+      ],
+      "Create event": [
+        "Opret begivenhed"
+      ],
+      "Edit event": [
+        "Redigér begivenhed"
+      ],
+      "Event details": [
+        "Begivenhedsdetaljer"
+      ],
+      "More options": [
+        "Flere muligheder"
+      ],
+      "CANCELLED": [
+        "ANNULLERET"
       ]
     },
     "Info": {
-      "Custom daily": [
-        "Tilpasset daglig"
-      ],
-      "Custom weekly": [
-        "Tilpasset ugentlig"
-      ],
-      "Custom monthly": [
-        "Tilpasset månedligt"
-      ],
-      "Custom yearly": [
-        "Tilpasset årligt"
-      ],
-      "Custom": [
-        "Tilpasset"
-      ],
-      "Daily": [
-        "Daglig"
-      ],
-      "Monthly ${ onDayString }": [
-        "Månedlig ${ onDayString }"
-      ],
-      "Yearly": [
-        "Årlig"
-      ],
-      "Session timed out.": [
-        "Session er udløbet."
-      ],
-      "Internet connection lost.": [
-        "Internetforbindelse afbrudt."
-      ],
-      "Servers are unreachable.": [
-        "Serverne er utilgængelige."
-      ],
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "support team": [
-        "supportteam"
-      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
-      ],
-      "Loading": [
-        "Indlæser"
       ],
       "Week": [
         "Uge"
@@ -606,6 +1238,12 @@
       ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
+      ],
+      "support team": [
+        "supportteam"
+      ],
+      "Loading": [
+        "Indlæser"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
@@ -856,45 +1494,6 @@
       "Not customizable": [
         "Kan ikke tilpasses"
       ],
-      "here": [
-        "hér"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
       "Expired": [
         "Udløbet"
       ],
@@ -1038,6 +1637,45 @@
       "Your import will not be processed.": [
         ""
       ],
+      "here": [
+        "hér"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
       ],
@@ -1076,1333 +1714,213 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ]
-    },
-    "Error": {
-      "Address primary private key not found": [
-        "Adresses primære private nøgle ikke fundet"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Kalenders primære private nøgle er ikke dekrypteret"
+      "Custom daily": [
+        "Tilpasset daglig"
       ],
-      "This field is required": [
-        "Dette felt skal udfyldes"
+      "Custom weekly": [
+        "Tilpasset ugentlig"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette felt kræver minimum ${ minimumLength } tegn."
+      "Custom monthly": [
+        "Tilpasset månedligt"
       ],
-      "Email is not valid": [
-        "E-mail er ikke gyldig"
+      "Custom yearly": [
+        "Tilpasset årligt"
       ],
-      "Not a valid number": [
-        "Ikke et gyldigt nummer"
+      "Custom": [
+        "Tilpasset"
       ],
-      "Passwords do not match": [
-        "Adgangskoder matcher ikke"
+      "Daily": [
+        "Daglig"
       ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
+      "Monthly ${ onDayString }": [
+        "Månedlig ${ onDayString }"
       ],
-      "Signature verification failed": [
-        "Bekræftelse af signatur mislykkedes"
+      "Yearly": [
+        "Årlig"
       ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
+      "Session timed out.": [
+        "Session er udløbet."
       ],
-      "Missing signature": [
-        "Manglende signatur"
+      "Internet connection lost.": [
+        "Internetforbindelse afbrudt."
       ],
-      "Contact signature not verified": [
-        "Kontaktsignatur ikke bekræftet"
+      "Servers are unreachable.": [
+        "Serverne er utilgængelige."
       ],
-      "Signature not verified": [
-        "Signatur ikke bekræftet"
+      "Manage your calendars": [
+        "Administrer dine kalendere"
       ],
-      "Invalid name": [
-        "Ugyldigt navn"
+      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
+        "${ calendarAppName } er blevet tilføjet til Proton-suiten. Vi vil gerne høre hvad du synes om den!"
       ],
-      "Email address disabled": [
-        "E-mailadresse deaktiveret"
+      "Loading events": [
+        "Indlæser begivenheder"
       ],
-      "No keys retrieved for internal user": [
-        "Ingen nøgler hentet for intern bruger"
+      "The organizer cannot be notified that you decline the invitation:": [
+        "Arrangøren kan ikke få at vide, at du afslår invitationen:"
       ],
-      "No valid keys retrieved for internal user": [
-        "Ingen gyldige nøgler hentet for intern bruger"
+      "Would you like to delete the event anyway?": [
+        "Vil du alligevel slette denne begivenhed?"
       ],
-      "Contact signature could not be verified": [
-        "Kontaktsignatur kunne ikke bekræftes"
+      "None of the participants can be notified about your changes:": [
+        "Ingen af deltagerne kan få besked om dine ændringer:"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
+      "The following participants cannot be notified about your changes:": [
+        "Følgende deltagere kan ikke få besked om dine ændringer:"
       ],
-      "Trusted keys are not valid for sending": [
-        "Betroede nøgler er ikke gyldige til afsendelse"
+      "Would you like to continue anyway?": [
+        "Vil du fortsætte alligevel?"
       ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
+      "Discard changes?": [
+        "Kassér ændringer?"
       ],
-      "The sending key is not valid": [
-        "Afsendelsesnøglen er ikke gyldig"
+      "You will lose all unsaved changes.": [
+        "Du vil miste alle ikke-gemte ændringer."
       ],
-      "Unknown error": [
-        "Ukendt fejl"
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Arrangøren af denne begivenhed vil blive underrettet om at du afslår invitationen. Vil du slette denne begivenhed?"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Arrangøren af denne begivenhed vil ikke blive informeret om, at du afviser invitationen, da du ikke kan sende e-mails fra den inviterede adresse. Vil du alligevel slette denne begivenhed?"
       ],
-      "Authentication canceled.": [
-        "Godkendelse annulleret."
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "En aflysningsmail vil blive sendt til deltagerne i arrangementet. Vil du slette denne begivenhed?"
       ],
-      "Your import will not be processed.": [
-        "Din import vil ikke blive behandlet."
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Din adresse er deaktiveret. En aflysningsmail kan ikke sendes til deltagerne i arrangementet. Vil du slette denne begivenhed alligevel?"
       ],
-      "Authentication error.": [
-        "Godkendelsesfejl."
+      "Would you like to delete this event?": [
+        "Vil du slette denne begivenhed?"
       ],
-      "Email address invalid": [
-        "E-mailadresse ugyldig"
+      "Which event would you like to delete?": [
+        "Hvilken begivenhed ønsker du at slette?"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Denne begivenhed er blevet opdateret. Arrangøren vil blive informeret om at du afslår invitationen. Vil du slette denne begivenhed?"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Denne begivenhed er blevet opdateret af arrangøren. Vil du slette denne begivenhed?"
       ],
-      "Process aborted": [
-        "Proces afbrudt"
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Denne begivenhed er blevet opdateret. Arrangøren vil ikke blive underrettet om at du afslår invitationen, da du ikke kan sende e-mails fra den inviterede adresse. Vil du alligevel slette denne begivenhed?"
       ],
-      "Payment process cancelled": [
-        "Betalingproces annulleret"
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "En aflysningsmail vil blive sendt til deltagerne i arrangementet. Vil du slette denne begivenhed?"
       ],
-      "Payment process failed": [
-        "Betalingproces mislykkedes"
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Din adresse er deaktiveret. En aflysningsmail kan ikke sendes til deltagerne i arrangementet. Vil du slette denne begivenhed alligevel?"
       ],
-      "Payment process consumed": [
-        "Betalingssession udløbet"
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Arrangøren af denne serie begivenheder vil blive underrettet om at du afslår invitationen. Vil du slette alle begivenhed i denne serie?"
       ],
-      "Payment process not supported": [
-        "Betalingsproces understøttes ikke"
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Arrangøren af denne serie af begivenheder vil ikke blive informeret om, at du afviser invitationen, da du ikke kan sende e-mails fra den inviterede adresse. Vil du alligevel slette alle begivenheder i denne serie?"
       ],
-      "Unknown payment token status": [
-        "Ukendt betalings-token status"
+      "Would you like to delete all the events in this series?": [
+        "Vil du slette alle begivenheder i denne serie?"
       ],
-      "Tab closed": [
-        "Fane lukket"
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Forekomster som arrangøren tidligere har opdateret beholdes, men nogle af dine svar vil gå tabt."
       ],
-      "Name on card required": [
-        "Navn på kort er obligatorisk"
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Forekomster som arrangøren tidligere har opdateret vil blive opbevaret."
       ],
-      "Invalid expiration date": [
-        "Ugyldig udløbsdato"
+      "Which event would you like to update?": [
+        "Hvilken begivenhed ønsker du at opdatere?"
       ],
-      "Invalid card number": [
-        "Ugyldigt kortnummer"
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Denne begivenhed er blevet opdateret af arrangøren. Vil du kun ændre dit svar for denne ene forekomst i denne serie?"
       ],
-      "Invalid ${ name } code": [
-        "Ugyldig ${ name }-kode"
+      "Would you like to update this event?": [
+        "Ønsker du at opdatere denne begivenhed?"
       ],
-      "Invalid postal code": [
-        "Ugyldigt postnummer"
+      "Would you like to change your answer for all the events in this series?": [
+        "Vil du ændre dit svar for alle begivenhederne i denne serie?"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Fejl under oprettelse af forbindelse til Bitcoin-API."
+      "Added and removed participants will be notified about all the events in this series.": [
+        "Tilføjede og fjernede deltagere vil blive underrettet om alle begivenheder i denne serie."
       ],
-      "Amount below minimum.": [
-        "Beløb under minimum."
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Du vil opdatere alle begivenheder i denne serie. Tilføjede og fjernede deltagere vil blive underrettet."
       ],
-      "Amount above the maximum.": [
-        "Beløb overstiger maksimum."
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Du vil opdatere alle begivenheder i denne serie. Eksisterende, tilføjede og fjernede deltagere vil blive underrettet."
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Det mindste beløb, der kan doneres, er ${ price }"
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Du vil opdatere alle begivenheder i denne serie. Eksisterende og tilføjede deltagere vil blive underrettet."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Du vil opdatere alle begivenheder i denne serie. Fjernede deltagere vil blive underrettet."
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Den mindste betaling vi accepterer er ${ _price2 }"
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Du vil opdatere alle begivenheder i denne serie. Eksisterende og fjernede deltagere vil blive underrettet."
       ],
-      "Checkout expired, please try again.": [
-        "Checkout udløbet, prøv venligst igen."
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Du vil opdatere alle begivenheder i denne serie. En invitation vil blive sendt til deltagerne i arrangementet."
       ],
-      "Invalid code": [
-        "Ugyldig kode"
+      "Would you like to update all events in this series?": [
+        "Vil du opdatere alle begivenheder i denne serie?"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen"
+      "Previous modifications on this series will be lost.": [
+        "Tidligere ændringer på denne serie vil gå tabt."
       ],
-      "Incorrect login credentials. Please try again": [
-        "Forkerte login-oplysninger. Prøv venligst igen"
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
       ],
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
+      "Frequency modifications will be lost.": [
+        "Hyppighedsændringer vil gå tabt."
       ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefon, prøv igen senere"
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "Arrangøren har opdateret nogle af begivenhederne i denne serie. Ændring af kalenderen understøttes endnu ikke for denne type tilbagevendende begivenheder."
       ],
-      "Enter 6 digits": [
-        "Indtast 6 cifre"
+      "Update recurring event": [
+        "Opdater tilbagevendende begivenhed"
       ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
+      "Added and removed participants will be notified.": [
+        "Tilføjede og fjernede deltagere vil blive underrettet."
       ],
-      "Preferences could not be saved": [
-        "Præferencer kunne ikke gemmes"
+      "An invitation will be sent to added participants.": [
+        "En invitation vil blive sendt til tilføjede deltagere."
       ],
-      "Some groups could not be deleted": [
-        "Nogle grupper kunne ikke slettes"
+      "A cancellation email will be sent to removed participants.": [
+        "En aflysningsmail vil blive sendt til fjernede deltagere."
       ],
-      "Image upload failed": [
-        "Billed-upload mislykkedes"
+      "Existent, added and removed participants will be notified.": [
+        "Eksisterende, tilføjede og fjernede deltagere vil blive underrettet."
       ],
-      "Contact could not be saved": [
-        "Kontakt kunne ikke gemmes"
+      "Existent and added participants will be notified.": [
+        "Eksisterende og tilføjede deltagere vil blive underrettet."
       ],
-      "Some contacts could not be deleted": [
-        "Nogle kontakter kunne ikke slettes"
+      "Removed participants will be notified.": [
+        "Fjernede deltagere vil blive underrettet."
       ],
-      "Invalid public key file": [
-        "Ugyldig offentlig nøglefil"
+      "Existent and removed participants will be notified.": [
+        "Eksisterende og fjernede deltagere vil blive underrettet."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Du kan ikke sende en mail til mere end 100 modtagere"
+      "An invitation will be sent to the event participants.": [
+        "En invitation vil blive sendt til begivenhedens deltagere."
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
-        "Nogle kontakter har ingen e-mailadresse: ${ noEmailsContactNamesList } "
+      "Please remove the duplicates and try again.": [
+        "Fjern venligst dubletterne og prøv igen."
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Du kan ikke sende vCards med mere end 10 kontakter"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Der opstod en fejl under eksport af kontakternes vCards"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "En af grupperne har ingen kontakter: ${ noContactGroupList }",
-        "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Du skal angive et navn"
-      ],
-      "A group with this name already exists": [
-        "En gruppe med dette navn findes allerede"
-      ],
-      "Primary address key is not decrypted": [
-        "Primære adressenøgle er ikke dekrypteret"
-      ],
-      "We were unable to connect to your service provider.": [
+      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         ""
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Du har genaktiveret dine nøgler, og begivenheder tilknyttet flg. kalendere kan nu dekrypteres."
       ],
-      "No valid address found": [
-        "Ingen gyldig adresse fundet"
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
       ],
-      "Primary address key is not decrypted.": [
-        "Primære adressenøgle er ikke dekrypteret."
+      "At most 100 participants are allowed per invitation": [
+        "Højst 100 deltagere er tilladt pr. invitation"
       ],
-      "Name required": [
-        "Navn påkrævet"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
+      "You can only modify personal event properties as you can't send emails from the organizer address.": [
+        "Du kan kun ændre personlige begivenhedsegenskaber, da du ikke kan sende e-mails fra arrangørens adresse."
       ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Adgangskode skal indeholde mindst ${ length } tegn",
-        "Adgangskode skal indeholde mindst ${ length } tegn"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Navn"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organisation"
-      ],
-      "Birthday": [
-        "Fødselsdag"
-      ],
-      "Anniversary": [
-        "Årsdag"
-      ],
-      "Title": [
-        "Titel"
-      ],
-      "Role": [
-        "Rolle"
-      ],
-      "Note": [
-        "Notat"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Køn"
-      ],
-      "Language": [
-        "Sprog"
-      ],
-      "Timezone": [
-        "Tidszone"
-      ],
-      "Geo": [
-        "Geo"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Medlem"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Arbejde"
-      ],
-      "Personal": [
-        "Personlig"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Personsøger"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
-      ],
-      "Home": [
-        "Hjem"
-      ],
-      "Work": [
-        "Arbejde"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Personsøger"
-      ],
-      "Address": [
-        "Adresse"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Grundlæggende navigation"
-      ],
-      "Basic actions": [
-        "Grundlæggende handlinger"
-      ],
-      "Folder shortcuts": [
-        "Mappegenveje"
-      ],
-      "Composer shortcuts": [
-        "Skrivevinduegenveje"
-      ],
-      "List shortcuts": [
-        "Vis genveje"
-      ],
-      "Action shortcuts": [
-        "Genveje til handling"
-      ],
-      "Message shortcuts": [
-        "Beskedgenveje"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Flyt op"
-      ],
-      "Jump to first": [
-        "Gå til første"
-      ],
-      "Move down": [
-        "Flyt ned"
-      ],
-      "Jump to last": [
-        "Gå til sidste"
-      ],
-      "Move right / expand": [
-        "Flyt til højre / udvid"
-      ],
-      "Move left / collapse": [
-        "Flyt til venstre / kollaps"
-      ],
-      "Apply / open": [
-        "Anvend / åbn"
-      ],
-      "Cancel / close": [
-        "Annuller / luk"
-      ],
-      "Open this modal": [
-        "Åbn dette hjælpevindue"
-      ],
-      "Select / unselect": [
-        "Vælg / fravælg"
-      ],
-      "Go to Inbox": [
-        "Gå til Indbakke"
-      ],
-      "Go to Archive": [
-        "Gå til Arkiv"
-      ],
-      "Go to Sent": [
-        "Gå til Sendt"
-      ],
-      "Go to Starred": [
-        "Gå til Stjernemarkeret"
-      ],
-      "Go to Drafts": [
-        "Gå til Kladder"
-      ],
-      "Go to Trash": [
-        "Gå til Papirkurv"
-      ],
-      "Go to Spam": [
-        "Gå til Spam"
-      ],
-      "Go to All Mail": [
-        "Gå til Alle mails"
-      ],
-      "Save draft": [
-        "Gem kladde"
-      ],
-      "Send email": [
-        "Send e-mail"
-      ],
-      "Close draft": [
-        "Luk kladde"
-      ],
-      "Minimize / maximize composer": [
-        "Minimer / maksimer skrivevinduet"
-      ],
-      "Expand / contract composer": [
-        "Udvid / sammentræk skrivevinduet"
-      ],
-      "Attach file": [
-        "Vedhæft fil"
-      ],
-      "Add expiration time": [
-        "Tilføj udløbstid"
-      ],
-      "Add encryption": [
-        "Tilføj kryptering"
-      ],
-      "Discard draft": [
-        "Kassér kladde"
-      ],
-      "Open previous message": [
-        "Åbn forrige besked"
-      ],
-      "Open next message": [
-        "Åbn næste besked"
-      ],
-      "Show unread emails": [
-        "Vis ulæste e-mails"
-      ],
-      "Show all emails": [
-        "Vis alle e-mails"
-      ],
-      "Select / unselect all": [
-        "Vælg / fravælg alle"
-      ],
-      "Search": [
-        "Søg"
-      ],
-      "New message": [
-        "Ny besked"
-      ],
-      "Star": [
-        "Stjernemarkér"
-      ],
-      "Mark as unread": [
-        "Markér som ulæst"
-      ],
-      "Label as...": [
-        "Tilføj etiket..."
-      ],
-      "Create filter with...": [
-        "Opret filter med..."
-      ],
-      "Move to...": [
-        "Flyt til..."
-      ],
-      "Move to Inbox": [
-        "Flyt til Indbakke"
-      ],
-      "Move to Archive": [
-        "Flyt til Arkiv"
-      ],
-      "Move to Spam": [
-        "Flyt til Spam"
-      ],
-      "Move to Trash": [
-        "Flyt til Papirkurv"
-      ],
-      "Delete permanently": [
-        "Slet permanent"
-      ],
-      "Reply": [
-        "Svar"
-      ],
-      "Reply all": [
-        "Svar alle"
-      ],
-      "Forward": [
-        "Videresend"
-      ],
-      "Load remote content": [
-        "Indlæs eksternt indhold"
-      ],
-      "Load embedded images": [
-        "Indlæs indlejrede billeder"
-      ],
-      "Show original message": [
-        "Vis oprindelig besked"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "ukendt"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Ukendt"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard-versioner < 3.0 understøttes ikke"
-      ],
-      "Encryption failed": [
-        "Kryptering mislykkedes"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "En uventet fejl opstod. Import skal genstartes."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Ingen .csv eller .vcf-fil er valgt"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Din fil ${ formattedFilename } er tom."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Din fil ${ formattedFilename } har ingen kontakter til import."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Sv:"
-      ],
-      "Fw:": [
-        "Vs:"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Luk"
-      ],
-      "Close navigation": [
-        "Luk navigation"
-      ],
-      "Open navigation": [
-        "Åbn navigation"
-      ],
-      "More info: ${ safeTitle }": [
-        "Mere information: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "Gå til panel ${ index }"
-      ],
-      "Confirm": [
-        "Bekræft"
-      ],
-      "Cancel": [
-        "Annullér"
-      ],
-      "Close modal": [
-        "Luk vindue"
-      ],
-      "Submit": [
-        "Indsend"
-      ],
-      "Use “${ label }” setting": [
-        "Brug “${ label }” indstilling"
-      ],
-      "Load image": [
-        "Indlæs billede"
-      ],
-      "refresh the page": [
-        "genopfrisk siden"
-      ],
-      "Export": [
-        "Exportér"
-      ],
-      "Delete": [
-        "Slet"
-      ],
-      "Edit": [
-        "Redigér"
-      ],
-      "Remove": [
-        "Fjern"
-      ],
-      "Download": [
-        "Download"
-      ],
-      "Use for sending": [
-        "Brug til afsendelse"
-      ],
-      "Trust": [
-        "Gør betroet"
-      ],
-      "Untrust": [
-        "Ikke længere betroet"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Email settings": [
-        "E-mailindstillinger"
-      ],
-      "Contact group": [
-        "Kontaktgruppe"
-      ],
-      "Upload picture": [
-        "Overfør billede"
-      ],
-      "Next month": [
-        "Næste måned"
-      ],
-      "Previous month": [
-        "Forrige måned"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
-      ],
-      "Select timezone": [
-        "Vælg tidszone"
-      ],
-      "Show less": [
-        "Vis mindre"
-      ],
-      "Show more": [
-        "Vis mere"
-      ],
-      "Signing out": [
-        "Logger ud"
-      ],
-      "Copy email to clipboard": [
-        "Kopiér e-mail til upklipsholder"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
-      "Chat with us": [
-        "Chat med os"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
-      ],
-      "Request a feature": [
-        "Anmod om en funktion"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } butik"
-      ],
-      "Switch account": [
-        "Skift konto"
-      ],
-      "Sign out": [
-        "Log ud"
-      ],
-      "Go to settings": [
-        "Gå til indstillinger"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "Mailbox layout": [
-        "Postkasse layout"
-      ],
-      "Mailbox density": [
-        "Postkasse tæthed"
-      ],
-      "Composer size": [
-        "Skrivevinduestørrelse"
-      ],
-      "Get started": [
-        "Kom godt i gang"
-      ],
-      "Next": [
-        "Næste"
-      ],
-      "Start setup": [
-        "Start opsætning"
-      ],
-      "Skip": [
-        "Spring over"
-      ],
-      "Done": [
-        "Udført"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Use ${ label } theme": [
-        "Brug ${ label } temaet"
-      ],
-      "OK": [
-        "Ok"
-      ],
-      "Clear": [
-        "Ryd"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
-      "Hide info": [
-        "Skjul info"
-      ],
-      "Show info": [
-        "Vis info"
-      ],
-      "Remove bonuses": [
-        "Fjern bonusser"
-      ],
-      "Verify": [
-        "Bekræft"
-      ],
-      "Try again": [
-        "Prøv igen"
-      ],
-      "Use a different card": [
-        "Benyt et andet kort"
-      ],
-      "Use a different payment method": [
-        "Benyt en anden betalingsmetode"
-      ],
-      "Retry": [
-        "Prøv igen"
-      ],
-      "Loading verification": [
-        "Indlæser verifikation"
-      ],
-      "Select plan": [
-        "Vælg abonnement"
-      ],
-      "Compare all features": [
-        "Sammenlign alle features"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } ved at skifte til årlig fakturering"
-      ],
-      "Continue": [
-        "Fortsæt"
-      ],
-      "Pay": [
-        "Betal"
-      ],
-      "Apply": [
-        "Anvend"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Åbn ${ CALENDAR_APP_NAME } indstillinger"
-      ],
-      "Remove gift code": [
-        "Fjern gavekode"
-      ],
-      "annual billing": [
-        "årlig fakturering"
-      ],
-      "Compare plans": [
-        "Sammenlign abonnementer"
-      ],
-      "Decrease": [
-        "Formindsk"
-      ],
-      "Increase": [
-        "Forøg"
-      ],
-      "Log in": [
-        "Log ind"
-      ],
-      "View invoice": [
-        "Vis faktura"
-      ],
-      "Get verification code": [
-        "Få bekræftelseskode"
-      ],
-      "Try another method": [
-        "Prøv en anden metode"
-      ],
-      "Request new code": [
-        "Anmod om ny kode"
-      ],
-      "Did not receive the code?": [
-        "Ikke modtaget koden?"
-      ],
-      "Edit email address": [
-        "Rediger e-mailadresse"
-      ],
-      "Edit phone number": [
-        "Rediger telefonnummer"
-      ],
-      "Save": [
-        "Gem"
-      ],
-      "Add": [
-        "Tilføj"
-      ],
-      "Hide advanced PGP settings": [
-        "Skjul avancerede PGP-indstillinger"
-      ],
-      "Show advanced PGP settings": [
-        "Vis avancerede PGP-indstillinger"
-      ],
-      "Clear data": [
-        "Ryd data"
-      ],
-      "Recover data": [
-        "Gendan data"
-      ],
-      "Click here.": [
-        "Klik her."
-      ],
-      "Re-sign": [
-        "Gensignér"
-      ],
-      "Add to group": [
-        "Føj til gruppe"
-      ],
-      "Merge": [
-        "Flet"
-      ],
-      "View": [
-        "Vis"
-      ],
-      "Unmark for deletion": [
-        "Afmarkér fra sletning"
-      ],
-      "Mark for deletion": [
-        "Markér til sletning"
-      ],
-      "Preview contact": [
-        "Forhåndsvis kontakt"
-      ],
-      "Delete contact": [
-        "Slet kontakt"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Slet ${ selectedCount } kontakt",
-        "Slet ${ selectedCount } kontakter"
-      ],
-      "Deselect all": [
-        "Fravælg alle"
-      ],
-      "Select all": [
-        "Vælg alle"
-      ],
-      "Compose": [
-        "Skriv"
-      ],
-      "Forward as attachment": [
-        "Videresend som vedhæftning"
-      ],
-      "Merge contacts": [
-        "Flet kontakter"
-      ],
-      "Add new contact": [
-        "Tilføj ny kontakt"
-      ],
-      "Add group": [
-        "Tilføj gruppe"
-      ],
-      "Clear query": [
-        "Ryd forespørgsel"
-      ],
-      "Add contact": [
-        "Tilføj kontakt"
-      ],
-      "import": [
-        "importér"
-      ],
-      "Delete contact group": [
-        "Slet kontaktgruppe"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Slet ${ selectedCount } kontaktgruppe",
-        "Slet ${ selectedCount } kontaktgrupper"
-      ],
-      "Add new group": [
-        "Tilføj ny gruppe"
-      ],
-      "Export contacts": [
-        "Eksportér kontakter"
-      ],
-      "Continue with Google": [
-        "Fortsæt med Google"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Choose a file or drag it here": [
-        "Vælg en fil eller træk den hertil"
-      ],
-      "Import": [
-        "Importér"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        "Kassér"
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Close this banner": [
-        "Luk denne banner"
-      ],
-      "Refresh the page": [
-        "Genopfrisk siden"
-      ],
-      "enable desktop notifications": [
-        "aktivér skrivebordsmeddelelser"
-      ],
-      "here": [
-        "her"
-      ],
-      "Remove this notification": [
-        "Fjern denne notifikation"
-      ],
-      "Add notification": [
-        "Tilføj notifikation"
-      ],
-      "Update": [
-        "Opdatér"
-      ],
-      "Create": [
-        "Opret"
-      ],
-      "Yes, I'll attend": [
-        "Ja, jeg deltager"
-      ],
-      "Maybe I'll attend": [
-        "Måske deltager jeg"
-      ],
-      "No, I won't attend": [
-        "Nej, jeg deltager ikke"
-      ],
-      "Yes": [
-        "Ja"
-      ],
-      "Maybe": [
-        "Måske"
-      ],
-      "No": [
-        "Nej"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
-      ],
-      "Keyboard Shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "Upgrade required": [
-        "Opgradering påkrævet"
-      ],
-      "Email settings": [
-        "E-mailindstillinger"
-      ],
-      "Contact group": [
-        "Kontaktgruppe"
-      ],
-      "Link confirmation": [
-        "Linkbekræftelse"
-      ],
-      "What's new": [
-        "Nyheder"
-      ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Open settings menu": [
-        "Åbn indstillingsmenu"
-      ],
-      "Send feedback": [
-        "Send feedback"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "Give feedback": [
-        "Giv feedback"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Bekræft tab af Proton-bonusser"
-      ],
-      "Unsupported browser": [
-        "Browser understøttes ikke"
-      ],
-      "Card verification": [
-        "Kortbekræftelse"
-      ],
-      "Payment verification": [
-        "Betalingsbekræftelse"
-      ],
-      "Processing...": [
-        "Behandler..."
-      ],
-      "Card verification in progress": [
-        "Kortbekræftelse i gang"
-      ],
-      "Payment verification in progress": [
-        "Betalingsbekræftelse i gang"
-      ],
-      "PayPal verification failed": [
-        "PayPal-bekræftelse fejlede"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure-bekræftelse mislykkedes"
-      ],
-      "Error": [
-        "Fejl"
-      ],
-      "ZIP / postal code": [
-        "Postnummer"
-      ],
-      "Payment details": [
-        "Betalingsdetaljer"
-      ],
-      "Currency": [
-        "Valuta"
-      ],
-      "Billing cycle": [
-        "Faktureringsperiode"
-      ],
-      "Current plan": [
-        "Nuværende abonnement"
-      ],
-      "Processing": [
-        "Behandler"
-      ],
-      "Apply gift code": [
-        "Tilføj gavekode"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Coupon discount": [
-        "Rabatkupon"
-      ],
-      "Total (monthly)": [
-        "I alt (månedlig)"
-      ],
-      "Credits": [
-        "Kreditter"
-      ],
-      "Gift code": [
-        "Gavekode"
-      ],
-      "Amount due": [
-        "Forfaldent beløb"
-      ],
-      "Cancel subscription": [
-        "Afmeld abonnement"
-      ],
-      "Network error": [
-        "Netværksfejl"
-      ],
-      "Select a plan": [
-        "Vælg et abonnement"
-      ],
-      "Customize your plan": [
-        "Tilpas dit abonnement"
-      ],
-      "Checkout": [
-        "Til kassen"
-      ],
-      "Plan summary": [
-        "Abonnementoversigt"
-      ],
-      "${ appName } customization": [
-        "${ appName } tilpasning"
-      ],
-      "Sign in again to continue": [
-        "Log ind igen for at fortsætte"
-      ],
-      "Account suspended": [
-        "Konto suspenderet"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
-      ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
-      "Request new verification code": [
-        "Anmod om ny bekræftelseskode"
-      ],
-      "Human verification": [
-        "Menneskelig bekræftelse"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tastaturgenveje"
-      ],
-      "Mailbox density": [
-        "Postkasse tæthed"
-      ],
-      "Mailbox layout": [
-        "Postkasse layout"
-      ],
-      "Composer mode": [
-        "Skrivetilstand"
-      ],
-      "Edit contact group": [
-        "Redigér kontaktgruppe"
-      ],
-      "Create new group": [
-        "Opret ny gruppe"
-      ],
-      "Add to ${ groupName }": [
-        "Føj til ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Føj til ${ groupCount } gruppe",
-        "Føj til ${ groupCount } grupper"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailindstillinger (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Slet ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Slet ${ count } kontaktgruppe",
-        "Slet ${ count } kontaktgrupper"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } medlem",
-        "${ emailsCount } medlemmer"
-      ],
-      "Edit image": [
-        "Redigér billede"
-      ],
-      "Edit contact": [
-        "Rediger kontakt"
-      ],
-      "Create contact": [
-        "Opret kontakt"
-      ],
-      "Delete ${ count } contact": [
-        "Slet ${ count } kontakt",
-        "Slet ${ count } kontakter"
-      ],
-      "Clearing data": [
-        "Rydder data"
-      ],
-      "Warning": [
-        "Advarsel"
-      ],
-      "Recover data": [
-        "Gendan data"
-      ],
-      "Re-signing contacts": [
-        "Gensignering af kontakter"
-      ],
-      "Re-sign all contacts": [
-        "Gensignér alle kontakter"
-      ],
-      "Exporting contacts": [
-        "Eksporterer kontakter"
-      ],
-      "Other names": [
-        "Andre navne"
-      ],
-      "Email addresses": [
-        "E-mailadresser"
-      ],
-      "Phone numbers": [
-        "Telefonnumre"
-      ],
-      "Addresses": [
-        "Adresser"
-      ],
-      "Other information": [
-        "Anden information"
-      ],
-      "Contact Details": [
-        "Kontaktoplysninger"
-      ],
-      "Merging contacts": [
-        "Fletter kontakter"
-      ],
-      "Merge contacts": [
-        "Flet kontakter"
-      ],
-      "Deleting contacts": [
-        "Sletter kontakter"
-      ],
-      "View contacts": [
-        "Vis kontakter"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Groups": [
-        "Grupper"
-      ],
-      "Settings": [
-        "Indstillinger"
-      ],
-      "Select action to take on contact group": [
-        "Vælg handling for kontaktgruppe"
-      ],
-      "Add contact group name": [
-        "Tilføj kontaktgruppenavn"
-      ],
-      "Select contact group": [
-        "Vælg kontaktgruppe"
-      ],
-      "Import groups": [
-        "Importer grupper"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Select the way to send this notification": [
-        "Vælg måden at sende denne notifikation på"
-      ],
-      "Select when you want this notification to be sent": [
-        "Vælg når du ønsker, at denne notifikation skal sendes"
-      ],
-      "Select the time to send this notification": [
-        "Vælg tid for afsendelse af denne notifikation"
-      ],
-      "Add another notification to remind you of this event": [
-        "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
-      ],
-      "Update calendar": [
-        "Opdater kalender"
-      ],
-      "Create calendar": [
-        "Opret kalender"
-      ],
-      "Change my answer": [
-        "Skift mit svar"
+      "Loading event": [
+        "Indlæser begivenhed"
       ]
     },
     "Storage": {
@@ -2414,40 +1932,6 @@
       ],
       "Release notes": [
         "Udgivelsesnoter"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Upgrade": [
-        "Opgradere"
-      ],
-      "Go to subscription plans": [
-        "Gå til abonnementer"
-      ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
-      ],
-      "click here": [
-        "klik hér"
-      ],
-      "Add a gift code": [
-        "Tilføj en gavekode"
-      ],
-      "Request an invite": [
-        "Anmod om invitation"
-      ],
-      "Pay invoice": [
-        "Betal faktura"
-      ],
-      "Upgrade account": [
-        "Opgradér konto"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
     "Label": {
@@ -2553,33 +2037,6 @@
       "Proration": [
         "Proration"
       ],
-      "Cancel": [
-        "Afbryd"
-      ],
-      "Submit": [
-        "Indsend"
-      ],
-      "Password": [
-        "Adgangskode"
-      ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
-      "Two-factor authentication code": [
-        "To-faktorgodkendelseskode"
-      ],
-      "Username or ProtonMail address": [
-        "Brugernavn eller ProtonMail-adresse"
-      ],
-      "Phone number": [
-        "Telefonnummer"
-      ],
-      "Verification code": [
-        "Bekræftelseskode"
-      ],
-      "Enter the 6-digit code": [
-        "Indtast den sekscifrede kode"
-      ],
       "Cash": [
         "Kontant"
       ],
@@ -2603,6 +2060,9 @@
       ],
       "Select how your composer opens by default.": [
         "Vælg hvordan dit skrivevindue åbner som standard."
+      ],
+      "Enable Beta Access": [
+        "Aktivér beta-adgang"
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -2640,14 +2100,38 @@
       "Export contacts": [
         "Eksportér kontakter"
       ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
-      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
       "To: ${ toEmailAddress }": [
         ""
+      ],
+      "Cancel": [
+        "Afbryd"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
+      ],
+      "Two-factor authentication code": [
+        "To-faktorgodkendelseskode"
+      ],
+      "Username or ProtonMail address": [
+        "Brugernavn eller ProtonMail-adresse"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Verification code": [
+        "Bekræftelseskode"
+      ],
+      "Enter the 6-digit code": [
+        "Indtast den sekscifrede kode"
       ],
       "Name": [
         "Navn"
@@ -2675,6 +2159,95 @@
       ],
       "Default full day notifications": [
         "Standard heldagsnotifikationer"
+      ],
+      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        "Hvor sandsynligt er det, at du vil anbefale ${ calendarAppName } til en ven eller kollega?"
+      ],
+      "0 - Not likely": [
+        "0 - Ikke sandsynligt"
+      ],
+      "10 - Extremely likely": [
+        "10 - Ekstremt sandsynligt"
+      ],
+      "All day": [
+        "Hele dagen"
+      ],
+      "Repeat on": [
+        "Gentag på"
+      ],
+      "Repeat every": [
+        "Gentag hver"
+      ],
+      "Ends": [
+        "Slutter"
+      ],
+      "Organizer": [
+        "Arrangør"
+      ],
+      "Optional": [
+        "Valgfrit"
+      ],
+      "Time of the event": [
+        "Tidspunkt for begivenheden"
+      ],
+      "Event time": [
+        "Tidspunkt for begivenhed"
+      ],
+      "Event title": [
+        "Begivenhedstitel"
+      ],
+      "Event frequency": [
+        "Hyppighed af begivenhed"
+      ],
+      "Event location": [
+        "Begivenhedsplacering"
+      ],
+      "Event notifications": [
+        "Begivenhedsnotifikationer"
+      ],
+      "Participants": [
+        "Deltagere"
+      ],
+      "Your calendars": [
+        "Din kalendere"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Upgrade": [
+        "Opgradere"
+      ],
+      "Go to subscription plans": [
+        "Gå til abonnementer"
+      ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
+      ],
+      "click here": [
+        "klik hér"
+      ],
+      "Add a gift code": [
+        "Tilføj en gavekode"
+      ],
+      "Request an invite": [
+        "Anmod om invitation"
+      ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
+      "Upgrade account": [
+        "Opgradér konto"
+      ],
+      "Calendars": [
+        "Kalendere"
+      ],
+      "My calendars": [
+        "Mine kalendere"
+      ],
+      "Subscribed calendars": [
+        "Tilmeldte kalendere"
       ]
     },
     "Placeholder": {
@@ -2717,9 +2290,6 @@
       "Gift code": [
         "Gavekode"
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
       ],
@@ -2738,11 +2308,26 @@
       "Name": [
         "Navn"
       ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
+      ],
       "Add a calendar name": [
         "Tilføj et kalendernavn"
       ],
       "Add a calendar description": [
         "Tilføj en kalederbeskrivelse"
+      ],
+      "Add title": [
+        "Tilføj titel"
+      ],
+      "Add location": [
+        "Tilføj placering"
+      ],
+      "Add description": [
+        "Tilføj beskrivelse"
+      ],
+      "Add participants": [
+        "Tilføj deltagere"
       ]
     },
     "Time unit": {
@@ -2959,12 +2544,6 @@
       "You have successfully unsubscribed": [
         "Du har nu afmeldt dig"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kode sendt til ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Bekræftelse gennemført"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
       ],
@@ -2991,6 +2570,12 @@
       "Fingerprint copied to clipboard": [
         "Fingeraftryk kopieret til udklipsholder"
       ],
+      "Code sent to ${ methodTo }": [
+        "Kode sendt til ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Bekræftelse gennemført"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender oprettet. Det kan tage et par minutter at synkronisere."
       ],
@@ -2999,6 +2584,84 @@
       ],
       "Calendar updated": [
         "Kalender opdateret"
+      ],
+      "An invitation will be sent to added participants for all the events in this series.": [
+        "En invitation vil blive sendt til tilføjede deltagere for alle begivenheder i denne serie."
+      ],
+      "A cancellation email will be sent to removed participants for all the events in this series.": [
+        "En aflysningsmail vil blive sendt til fjernede deltagerne for alle begivenheder i denne serie."
+      ],
+      "Invitation sent and event created": [
+        "Invitation sendt og begivenhed oprettet"
+      ],
+      "Event created": [
+        "Begivenhed oprettet"
+      ],
+      "Participation status updated": [
+        "Deltagelsesstatus opdateret"
+      ],
+      "Participants notified and changes saved": [
+        "Deltagere underrettet og ændringer gemt"
+      ],
+      "Invitation sent and participants added": [
+        "Invitation sendt og deltagere tilføjet"
+      ],
+      "Cancellation sent and participants removed": [
+        "Aflysning sendt og deltagere fjernet"
+      ],
+      "Participants notified and event updated": [
+        "Deltagere underrettet og begivenhed opdateret"
+      ],
+      "Event updated": [
+        "Begivenhed opdateret"
+      ],
+      "Cancellation sent and event deleted": [
+        "Aflysning sendt og begivenhed slettet"
+      ],
+      "Answer sent and event deleted": [
+        "Svar sendt og begivenhed slettet"
+      ],
+      "Event deleted": [
+        "Begivenhed slettet"
+      ],
+      "Invitation sent and events created": [
+        "Invitation sendt og begivenheder oprettet"
+      ],
+      "Events created": [
+        "Begivenheder oprettet"
+      ],
+      "Future events updated": [
+        "Kommende begivenheder opdateret"
+      ],
+      "Participation status updated for all events": [
+        "Deltagelsesstatus opdateret for alle begivenheder"
+      ],
+      "Participants notified and all events updated": [
+        "Deltagere underrettet og alle begivenheder opdateret"
+      ],
+      "Invitation sent and participants added to all events": [
+        "Invitation sendt og deltagere tilføjet til alle begivenheder"
+      ],
+      "Cancellation sent and participants removed from all events": [
+        "Aflysning sendt og deltagere fjernet fra alle begivenheder"
+      ],
+      "Invitation sent and all events updated": [
+        "Invitation sendt og alle begivenheder opdateret"
+      ],
+      "All events updated": [
+        "Alle begivenheder opdateret"
+      ],
+      "Future events deleted": [
+        "Kommende begivenheder slettet"
+      ],
+      "Cancellation sent and all events deleted": [
+        "Aflysning sendt og alle begivenheder slettet"
+      ],
+      "Answer sent and all events deleted": [
+        "Svar sendt og alle begivenheder slettet"
+      ],
+      "All events deleted": [
+        "Alle begivenheder slettet"
       ]
     },
     "Hint": {
@@ -3008,6 +2671,11 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Fundet ${ items.length } forslag, brug tastatur til navigation.",
         "Fundet ${ items.length } forslag, brug tastatur til navigation."
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
     "Select search results": {
@@ -3060,6 +2728,9 @@
       ],
       "Contacts, groups and settings": [
         "Kontakter, grupper og indstillinger"
+      ],
+      "Name": [
+        "Navn"
       ]
     },
     "Text": {
@@ -3682,28 +3353,6 @@
         "Gratis"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Forfalden faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuel"
-      ],
-      "No verification method available": [
-        "Ingen bekræftelsesmetode tilgængelig"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Nyt kredit / betalingskort"
@@ -3713,6 +3362,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
       ]
     },
     "Label to change density": {
@@ -3878,6 +3540,49 @@
       ],
       "Ignore group": [
         "Ignorer gruppe"
+      ],
+      "This event": [
+        "Denne begivenhed"
+      ],
+      "This and future events": [
+        "Denne og fremtidige begivenheder"
+      ],
+      "All events": [
+        "Alle begivenheder"
+      ],
+      "Does not repeat": [
+        "Gentages ikke"
+      ],
+      "Every day": [
+        "Hver dag"
+      ],
+      "Every week": [
+        "Hver uge"
+      ],
+      "Every month": [
+        "Hver måned"
+      ],
+      "Every year": [
+        "Hvert år"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Day": [
+        "Dag",
+        "Dage"
+      ],
+      "Week": [
+        "Uge",
+        "Uger"
+      ],
+      "Month": [
+        "Måned",
+        "Måneder"
+      ],
+      "Year": [
+        "År",
+        "År"
       ]
     },
     "Import contact groups info": {
@@ -3889,6 +3594,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
+      ],
+      "By leaving now, you will lose your event.": [
+        "Ved at forlade nu, mister du din begivenhed."
       ]
     },
     "Import calendar": {
@@ -3946,19 +3654,6 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Upload"
@@ -3983,6 +3678,28 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Forfalden faktura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuel"
+      ],
+      "No verification method available": [
+        "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
     "Message display when a new app version is available": {
@@ -4044,6 +3761,1108 @@
       ],
       "120 minutes": [
         "120 minutter"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } starter nu"
+      ],
+      "${ title } starts today": [
+        "${ title } starter i dag"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } startede ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } startede i går"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } startede i går ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } startede ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } startede ${ formattedDate } ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } startede ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } startede ${ _formattedDate } ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } startede ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } startede ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } starter ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } starter i morgen"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } starter i morgen ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } starter ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } starter ${ _formattedDate2 } ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } starter ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } starter ${ _formattedDate3 } ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } starter ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } starter ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(ingen titel)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Dig"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Annullering af en begivenhed den ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitation til en begivenhed den ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Opdatering til en begivenhed den ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Annullering af en begivenhed med start den ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitation til en begivenhed med start den ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Opdatering til en begivenhed med start den ${ formattedStart }"
+      ],
+      "Invitation: ${ eventTitle }": [
+        "Invitation: ${ eventTitle }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Hvornår: ${ formattedStart } (hele dagen)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Hvornår: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Hvornår: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Hvor: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Beskrivelse: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } er blevet annulleret."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } har accepteret din invitation til ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "på den første søndag"
+      ],
+      "on the first Monday": [
+        "på den første mandag"
+      ],
+      "on the first Tuesday": [
+        "på den første tirsdag"
+      ],
+      "on the first Wednesday": [
+        "på den første onsdag"
+      ],
+      "on the first Thursday": [
+        "på den første torsdag"
+      ],
+      "on the first Friday": [
+        "på den første fredag"
+      ],
+      "on the first Saturday": [
+        "på den første lørdag"
+      ],
+      "on the second Sunday": [
+        "på den første søndag"
+      ],
+      "on the second Monday": [
+        "på den anden mandag"
+      ],
+      "on the second Tuesday": [
+        "på den anden tirsdag"
+      ],
+      "on the second Wednesday": [
+        "på den anden onsdag"
+      ],
+      "on the second Thursday": [
+        "på den anden torsdag"
+      ],
+      "on the second Friday": [
+        "på den anden fredag"
+      ],
+      "on the second Saturday": [
+        "på den anden lørdag"
+      ],
+      "on the third Sunday": [
+        "på den tredje søndag"
+      ],
+      "on the third Monday": [
+        "på den tredje mandag"
+      ],
+      "on the third Tuesday": [
+        "på den tredje tirsdag"
+      ],
+      "on the third Wednesday": [
+        "på den tredje onsdag"
+      ],
+      "on the third Thursday": [
+        "på den tredje torsdag"
+      ],
+      "on the third Friday": [
+        "på den tredje fredag"
+      ],
+      "on the third Saturday": [
+        "på den tredje lørdag"
+      ],
+      "on the fourth Sunday": [
+        "på den fjerde søndag"
+      ],
+      "on the fourth Monday": [
+        "på den fjerde mandag"
+      ],
+      "on the fourth Tuesday": [
+        "på den fjerde tirsdag"
+      ],
+      "on the fourth Wednesday": [
+        "på den fjerde onsdag"
+      ],
+      "on the fourth Thursday": [
+        "på den fjerde torsdag"
+      ],
+      "on the fourth Friday": [
+        "på den fjerde fredag"
+      ],
+      "on the fourth Saturday": [
+        "på den fjerde lørdag"
+      ],
+      "on the last Sunday": [
+        "på den sidste søndag"
+      ],
+      "on the last Monday": [
+        "på den sidste mandag"
+      ],
+      "on the last Tuesday": [
+        "på den sidste tirsdag"
+      ],
+      "on the last Wednesday": [
+        "på den sidste onsdag"
+      ],
+      "on the last Thursday": [
+        "på den sidste torsdag"
+      ],
+      "on the last Friday": [
+        "på den sidste fredag"
+      ],
+      "on the last Saturday": [
+        "på den sidste lørdag"
+      ],
+      "on day ${ dayOfMonth }": [
+        "på dag ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } gang",
+        "${ count } gange"
+      ],
+      "until ${ dateString }": [
+        "indtil ${ dateString }"
+      ],
+      "Daily": [
+        "Dagligt"
+      ],
+      "Every ${ interval } day": [
+        "Hver ${ interval } dag",
+        "Hver ${ interval } dag"
+      ],
+      "Daily, ${ timesString }": [
+        "Daglig, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Hver ${ interval } dag, ${ timesString }",
+        "Hver ${ interval } dag, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Daglig, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Hver ${ interval } dag, ${ untilString }",
+        "Hver ${ interval } dag, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Søndag"
+      ],
+      "Monday": [
+        "Mandag"
+      ],
+      "Tuesday": [
+        "Tirsdag"
+      ],
+      "Wednesday": [
+        "Onsdag"
+      ],
+      "Thursday": [
+        "Torsdag"
+      ],
+      "Friday": [
+        "Fredag"
+      ],
+      "Saturday": [
+        "Lørdag"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Ugentligt på alle dage"
+      ],
+      "Every ${ interval } week on all days": [
+        "Hver ${ interval } uge på alle dage",
+        "Hver ${ interval } uge på alle dage"
+      ],
+      "Weekly on Sunday": [
+        "Ugentligt om søndagen"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Hver ${ interval } uge om søndagen",
+        "Hver ${ interval } uge om søndagen"
+      ],
+      "Weekly on Monday": [
+        "Ugentligt om mandagen"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Hver ${ interval } uge om mandagen",
+        "Hver ${ interval } uge om mandagen"
+      ],
+      "Weekly on Tuesday": [
+        "Ugentligt om tirsdagen"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Hver ${ interval } uge om tirsdagen",
+        "Hver ${ interval } uge om tirsdagen"
+      ],
+      "Weekly on Wednesday": [
+        "Ugentligt om onsdagen"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Hver ${ interval } uge om onsdagen",
+        "Hver ${ interval } uge om onsdagen"
+      ],
+      "Weekly on Thursday": [
+        "Ugentligt om torsdagen"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Hver ${ interval } uge om torsdagen",
+        "Hver ${ interval } uge om torsdagen"
+      ],
+      "Weekly on Friday": [
+        "Ugentligt om fredagen"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Hver ${ interval } uge om fredagen",
+        "Hver ${ interval } uge om fredagen"
+      ],
+      "Weekly on Saturday": [
+        "Ugentligt om lørdagen"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Hver ${ interval } uge om lørdagen",
+        "Hver ${ interval } uge om lørdagen"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Ugentlig på ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Hver ${ interval } uge på ${ multipleDaysString }",
+        "Hver ${ interval } uge på ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Ugentlig på alle dage, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Hver ${ interval } uge på alle dage, ${ timesString }",
+        "Hver ${ interval } uge på alle dage, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Ugentligt om søndagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Hver ${ interval } uge om søndagen, ${ timesString }",
+        "Hver ${ interval } uge om søndagen, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Ugentligt om mandagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Hver ${ interval } uge om mandagen, ${ timesString }",
+        "Hver ${ interval } uge om mandagen, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Ugentligt om tirsdagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Hver ${ interval } uge om tirsdagen, ${ timesString }",
+        "Hver ${ interval } uge om tirsdagen, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Ugentligt om onsdagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Hver ${ interval } uge om onsdagen, ${ timesString }",
+        "Hver ${ interval } uge om onsdagen, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Ugentligt om torsdagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Hver ${ interval } uge om torsdagen, ${ timesString }",
+        "Hver ${ interval } uge om torsdagen, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Ugentligt om fredagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Hver ${ interval } uge om fredagen, ${ timesString }",
+        "Hver ${ interval } uge om fredagen, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Ugentligt om lørdagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Hver ${ interval } uge om lørdagen, ${ timesString }",
+        "Hver ${ interval } uge om lørdagen, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Ugentligt på ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }",
+        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Ugentlig på alle dage, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Hver ${ interval } uge på alle dage, ${ untilString }",
+        "Hver ${ interval } uge på alle dage, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Ugentligt om søndagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Hver ${ interval } uge om søndagen, ${ untilString }",
+        "Hver ${ interval } uge om søndagen, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Ugentligt om mandagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Hver ${ interval } uge om mandagen, ${ untilString }",
+        "Hver ${ interval } uge om mandagen, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Ugentligt om tirsdagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Hver ${ interval } uge om tirsdagen, ${ untilString }",
+        "Hver ${ interval } uge om tirsdagen, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Ugentligt om onsdagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Hver ${ interval } uge om onsdagen, ${ untilString }",
+        "Hver ${ interval } uge om onsdagen, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Ugentligt om torsdagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Hver ${ interval } uge om torsdagen, ${ untilString }",
+        "Hver ${ interval } uge om torsdagen, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Ugentligt om fredagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Hver ${ interval } uge om fredagen, ${ untilString }",
+        "Hver ${ interval } uge om fredagen, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Ugentligt om lørdagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Hver ${ interval } uge om lørdagen, ${ untilString }",
+        "Hver ${ interval } uge om lørdagen, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Ugentligt på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }",
+        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Månedligt ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Hver ${ interval } måned ${ onDayString }",
+        "Hver ${ interval } måned ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Månedligt ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
+        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Månedligt ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
+        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Årlig"
+      ],
+      "Every ${ interval } year": [
+        "Hver ${ interval } år",
+        "Hver ${ interval } år"
+      ],
+      "Yearly, ${ timesString }": [
+        "Årligt, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Hver ${ interval } år, ${ timesString }",
+        "Hver ${ interval } år, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Årligt, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Hver ${ interval } år, ${ untilString }",
+        "Hver ${ interval } år, ${ untilString }"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Navn"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisation"
+      ],
+      "Birthday": [
+        "Fødselsdag"
+      ],
+      "Anniversary": [
+        "Årsdag"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Role": [
+        "Rolle"
+      ],
+      "Note": [
+        "Notat"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Køn"
+      ],
+      "Language": [
+        "Sprog"
+      ],
+      "Timezone": [
+        "Tidszone"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Medlem"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Arbejde"
+      ],
+      "Personal": [
+        "Personlig"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Primær"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Personsøger"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
+      ],
+      "Home": [
+        "Hjem"
+      ],
+      "Work": [
+        "Arbejde"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Primær"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Personsøger"
+      ],
+      "Address": [
+        "Adresse"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Grundlæggende navigation"
+      ],
+      "Basic actions": [
+        "Grundlæggende handlinger"
+      ],
+      "Folder shortcuts": [
+        "Mappegenveje"
+      ],
+      "Composer shortcuts": [
+        "Skrivevinduegenveje"
+      ],
+      "List shortcuts": [
+        "Vis genveje"
+      ],
+      "Action shortcuts": [
+        "Genveje til handling"
+      ],
+      "Message shortcuts": [
+        "Beskedgenveje"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Flyt op"
+      ],
+      "Jump to first": [
+        "Gå til første"
+      ],
+      "Move down": [
+        "Flyt ned"
+      ],
+      "Jump to last": [
+        "Gå til sidste"
+      ],
+      "Move right / expand": [
+        "Flyt til højre / udvid"
+      ],
+      "Move left / collapse": [
+        "Flyt til venstre / kollaps"
+      ],
+      "Apply / open": [
+        "Anvend / åbn"
+      ],
+      "Cancel / close": [
+        "Annuller / luk"
+      ],
+      "Open this modal": [
+        "Åbn dette hjælpevindue"
+      ],
+      "Select / unselect": [
+        "Vælg / fravælg"
+      ],
+      "Go to Inbox": [
+        "Gå til Indbakke"
+      ],
+      "Go to Archive": [
+        "Gå til Arkiv"
+      ],
+      "Go to Sent": [
+        "Gå til Sendt"
+      ],
+      "Go to Starred": [
+        "Gå til Stjernemarkeret"
+      ],
+      "Go to Drafts": [
+        "Gå til Kladder"
+      ],
+      "Go to Trash": [
+        "Gå til Papirkurv"
+      ],
+      "Go to Spam": [
+        "Gå til Spam"
+      ],
+      "Go to All Mail": [
+        "Gå til Alle mails"
+      ],
+      "Save draft": [
+        "Gem kladde"
+      ],
+      "Send email": [
+        "Send e-mail"
+      ],
+      "Close draft": [
+        "Luk kladde"
+      ],
+      "Minimize / maximize composer": [
+        "Minimer / maksimer skrivevinduet"
+      ],
+      "Expand / contract composer": [
+        "Udvid / sammentræk skrivevinduet"
+      ],
+      "Attach file": [
+        "Vedhæft fil"
+      ],
+      "Add expiration time": [
+        "Tilføj udløbstid"
+      ],
+      "Add encryption": [
+        "Tilføj kryptering"
+      ],
+      "Discard draft": [
+        "Kassér kladde"
+      ],
+      "Open previous message": [
+        "Åbn forrige besked"
+      ],
+      "Open next message": [
+        "Åbn næste besked"
+      ],
+      "Show unread emails": [
+        "Vis ulæste e-mails"
+      ],
+      "Show all emails": [
+        "Vis alle e-mails"
+      ],
+      "Select / unselect all": [
+        "Vælg / fravælg alle"
+      ],
+      "Search": [
+        "Søg"
+      ],
+      "New message": [
+        "Ny besked"
+      ],
+      "Star": [
+        "Stjernemarkér"
+      ],
+      "Mark as unread": [
+        "Markér som ulæst"
+      ],
+      "Label as...": [
+        "Tilføj etiket..."
+      ],
+      "Create filter with...": [
+        "Opret filter med..."
+      ],
+      "Move to...": [
+        "Flyt til..."
+      ],
+      "Move to Inbox": [
+        "Flyt til Indbakke"
+      ],
+      "Move to Archive": [
+        "Flyt til Arkiv"
+      ],
+      "Move to Spam": [
+        "Flyt til Spam"
+      ],
+      "Move to Trash": [
+        "Flyt til Papirkurv"
+      ],
+      "Delete permanently": [
+        "Slet permanent"
+      ],
+      "Reply": [
+        "Svar"
+      ],
+      "Reply all": [
+        "Svar alle"
+      ],
+      "Forward": [
+        "Videresend"
+      ],
+      "Load remote content": [
+        "Indlæs eksternt indhold"
+      ],
+      "Load embedded images": [
+        "Indlæs indlejrede billeder"
+      ],
+      "Show original message": [
+        "Vis oprindelig besked"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "ukendt"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Ukendt"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard-versioner < 3.0 understøttes ikke"
+      ],
+      "Encryption failed": [
+        "Kryptering mislykkedes"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "En uventet fejl opstod. Import skal genstartes."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Ingen .csv eller .vcf-fil er valgt"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Din fil ${ formattedFilename } er tom."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Din fil ${ formattedFilename } har ingen kontakter til import."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Sv:"
+      ],
+      "Fw:": [
+        "Vs:"
+      ]
+    },
+    "Event info. Organizer name": {
+      "You": [
+        "Dig"
+      ]
+    },
+    "Notifications": {
+      "At time of event": [
+        "På tidspunktet for begivenheden"
+      ],
+      "${ value } minute before": [
+        "${ value } minut før",
+        "${ value } minutter før"
+      ],
+      "${ value } hour before": [
+        "${ value } time før",
+        "${ value } timer før"
+      ],
+      "${ value } day before": [
+        "${ value } dag før",
+        "${ value } dage før"
+      ],
+      "${ value } week before": [
+        "${ value } uge før",
+        "${ value } uger før"
+      ],
+      "${ value } minute after": [
+        "${ value } minut efter",
+        "${ value } minutter efter"
+      ],
+      "${ value } hour after": [
+        "${ value } time efter",
+        "${ value } timer efter"
+      ],
+      "${ value } day after": [
+        "${ value } dag efter",
+        "${ value } dage efter"
+      ],
+      "${ value } week after": [
+        "${ value } uge efter",
+        "${ value } uger efter"
+      ],
+      "Unknown": [
+        "Ukendt"
+      ],
+      "On the same day at ${ time }": [
+        "Samme dag kl. ${ time }"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } minut før kl. ${ time }",
+        "${ value } minutter før kl. ${ time }"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } time før kl. ${ time }",
+        "${ value } timer før kl. ${ time }"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } dag før kl. ${ time }",
+        "${ value } dage før kl. ${ time }"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } uge før kl. ${ time }",
+        "${ value } uger før kl. ${ time }"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } minut efter kl. ${ time }",
+        "${ value } minutter efter kl. ${ time }"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } time efter kl. ${ time }",
+        "${ value } timer efter kl. ${ time }"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } dag efter kl. ${ time }",
+        "${ value } dage efter kl. ${ time }"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } uge efter kl. ${ time }",
+        "${ value } uger efter kl. ${ time }"
+      ]
+    },
+    "Calendar status": {
+      "not synced": [
+        "ikke synkroniseret"
+      ]
+    },
+    "Disabled calendar name suffix": {
+      "disabled": [
+        "deaktiveret"
+      ]
+    },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "Administrer kalender"
+      ]
+    },
+    "Add calendar icon tooltip": {
+      "Create calendar": [
+        "Opret kalender"
+      ]
+    },
+    "Placeholder for contact with no name": {
+      "(No name)": [
+        "(Intet navn)"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Cannot send to organizer address: ${ apiErrorMessage }": [
+        "Kan ikke sende til arrangøradresse: ${ apiErrorMessage }"
+      ]
+    },
+    "Modal title": {
+      "Time zone changed": [
+        "Tidszone ændret"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Dag"
+      ],
+      "Week": [
+        "Uge"
+      ],
+      "Month": [
+        "Måned"
+      ]
+    },
+    "Event form": {
+      "${ numberOfParticipants } participant": [
+        "${ numberOfParticipants } deltager",
+        "${ numberOfParticipants } deltagere"
+      ]
+    },
+    "Custom frequency option": {
+      "Never": [
+        "Aldrig"
+      ],
+      "On date…": [
+        "På dato…"
+      ],
+      "After repeating…": [
+        "Efter gentagelse…"
+      ],
+      "time": [
+        "gang",
+        "gange"
+      ]
+    },
+    "Calendar invite info": {
+      "You accepted the invitation": [
+        "Du accepterede invitationen"
+      ],
+      "${ name } accepted the invitation": [
+        "${ name } accepterede invitationen"
+      ],
+      "You declined the invitation": [
+        "Du afviste invitationen"
+      ],
+      "${ name } declined the invitation": [
+        "${ name } afviste invitationen"
+      ],
+      "You tentatively accepted the invitation": [
+        "Du har foreløbigt accepteret invitationen"
+      ],
+      "${ name } tentatively accepted the invitation": [
+        "${ name } accepterede foreløbigt invitationen"
+      ],
+      "You haven't answered the invitation yet": [
+        "Du har endnu ikke besvaret invitationen"
+      ],
+      "${ name } hasn't answered the invitation yet": [
+        "${ name } har endnu ikke besvaret invitationen"
+      ],
+      "This event has been cancelled": [
+        "Denne begivenhed er blevet aflyst"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        "med e-mail"
+      ]
+    },
+    "Event info": {
+      "Organized by:": [
+        "Organiseret af:"
+      ]
+    },
+    "Disabled calendar": {
+      "Disabled": [
+        "Deaktiveret"
+      ]
+    },
+    "Disabled calendar tooltip": {
+      "The event belongs to a disabled calendar.": [
+        "Begivenheden hører til en deaktiveret kalender."
       ]
     }
   }

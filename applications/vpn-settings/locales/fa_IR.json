@@ -5,173 +5,7 @@
   },
   "contexts": {
     "": {},
-    "file size format": {
-      "bytes": [
-        "بایت"
-      ],
-      "KB": [
-        "کیلوبایت"
-      ],
-      "MB": [
-        "مگابایت"
-      ],
-      "GB": [
-        "گیگابایت"
-      ]
-    },
-    "Error": {
-      "This field is required": [
-        "این بخش الزامی است"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "حداقل ${ minimumLength } کاراکتر برای این قسمت الزامی است."
-      ],
-      "Email is not valid": [
-        "ایمیل معتبر نیست"
-      ],
-      "Not a valid number": [
-        "شماره معتبر نیست"
-      ],
-      "Passwords do not match": [
-        "رمزهای عبور مطابقت ندارند"
-      ],
-      "Signature verification failed": [
-        "تصدیق امضا ناموفق بود"
-      ],
-      "Request timed out.": [
-        "مهلت درخواست تمام شد."
-      ],
-      "Email address invalid": [
-        "نشانی ایمیل نامعتبر است"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "مرورگری که شما استفاده میکنید اجازه پرداخت کامل معامله را نمیدهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
-      ],
-      "Unknown error": [
-        "خطای ناشناخته"
-      ],
-      "Checkout expired, please try again.": [
-        "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید."
-      ],
-      "Invalid code": [
-        "کد نامعتبر"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "خطا در اتصال به API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "مقدار کمتر از حداقل."
-      ],
-      "Amount above the maximum.": [
-        "مقدار بیش از اندازه می باشد."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "حداقل مبلغ قابل اهدا هست ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "حداقل مقدار اعتباری که می‌توان اضافه کرد ${ _price } است"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "حداقل پرداختی که می‌پذیریم ${ _price2 } است"
-      ],
-      "Process aborted": [
-        "فرآیند قطع شد"
-      ],
-      "Payment process cancelled": [
-        "روند پرداخت لغو شد"
-      ],
-      "Payment process failed": [
-        "روند پرداخت انجام نشد"
-      ],
-      "Payment process consumed": [
-        "عملیات پرداخت انجام شد"
-      ],
-      "Payment process not supported": [
-        "روند پرداخت پشتیبانی نمی شود"
-      ],
-      "Unknown payment token status": [
-        "وضعیت نشانه پرداخت ناشناخته"
-      ],
-      "Tab closed": [
-        "بستن زبانه"
-      ],
-      "Name on card required": [
-        "نام روی کارت الزامی است"
-      ],
-      "Invalid expiration date": [
-        "تاریخ انقضا نامعتبر"
-      ],
-      "Invalid card number": [
-        "شماره کارت نامعتبر"
-      ],
-      "Invalid ${ name } code": [
-        "کد ${ name } نامعتبر"
-      ],
-      "Invalid postal code": [
-        "کد پستی نامعتبر"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "لطفا قبل از تلاش برای تغییر رمز عبور خود کلیدها را ایجاد کنید."
-      ],
-      "Please set a recovery/notification email first": [
-        "لطفا ابتدا یک ایمیل بازیابی/اعلان تنظیم کنید"
-      ],
-      "Please set a recovery phone number first": [
-        "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
-      ],
-      "Payments are currently not available, please try again later": [
-        "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
-      ],
-      "You have no invoices.": [
-        "هیچ صورت‌حسابی ندارید."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "حساب یا سازمان شما در حال حاضر دارای یک صورت‌حساب به تعویق افتاده است. لطفاً تمام صورتحساب‌های پرداخت نشده را پرداخت کنید."
-      ],
-      "File has no contents to preview": [
-        "فایل هیچ محتوایی برای پیش‌نمایش ندارد"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "گذرواژه نادرست صندوق ایمیل. لطفاً دوباره امتحان کنید"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "مشخصات ورودی نادرست است. لطفا دوباره تلاش کنید"
-      ],
-      "Can't validate email, try again later": [
-        "تأیید ایمیل ممکن نبود، بعداً دوباره امتحان کنید"
-      ],
-      "Can't validate phone, try again later": [
-        "تأیید تلفن ممکن نبود، بعداً دوباره امتحان کنید"
-      ],
-      "Enter 6 digits": [
-        "۶ رقم را وارد کنید"
-      ],
-      "Invalid verification code": [
-        "کد تایید نامعتبر"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "لطفاً ‘${ dangerWord }’ را وارد کنید"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
-        "گذرواژه باید حداقل شامل ${ length } نویسه باشد"
-      ]
-    },
     "Info": {
-      "Session timed out.": [
-        "مهلت نشست پایان یافت."
-      ],
-      "Internet connection lost.": [
-        "اتصال اینترنت قطع شد."
-      ],
-      "Servers are unreachable.": [
-        "سرورها قابل دسترس نیستند."
-      ],
       "No results found": [
         "هیچ نتیجه‌ای یافت نشد"
       ],
@@ -418,7 +252,7 @@
         "شما باید یک کارت اعتباری یا حساب بانکی به حساب پی‌پل خود متصل کنید تا امکان استفاده از این روش پرداخت را داشته باشید."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
+        "برای ویزا و مستر کارت ، 3 رقم پشت کارت شما. برای American Express، 4 رقم جلوی کارت شما."
       ],
       "Amount below minimum (${ amount }).": [
         "مقدار کمتر از حداقل (${ amount })."
@@ -675,13 +509,13 @@
         "توصیه می‌کنیم یک ایمیل پیوند یافته اضافه کنید تا در صورت گم کردن گذرواژه، بتوانید حساب خود را بازیابی کنید."
       ],
       "Disabling this will prevent this email from being used for account recovery.": [
-        ""
+        "غیرفعال کردن این گزینه از استفاده شدن این ایمیل برای بازیابی جلوگیری می‌کند."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "هنگامی که اعلان ها فعال هستند، اگر شما پیغام‌های جدیدی در حساب ProtonMail خود داشته باشید، یک هشدار به آدرس بازیابی / اطلاع تان ارسال می‌کنیم."
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
-        ""
+        "غیرفعال کردن این گزینه از استفادهٔ این شماره‌تلفن برای بازیابی حساب کاربری جلوگیری می‌کند."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         ""
@@ -816,7 +650,76 @@
         "بازنشانی گذرواژه به معنی رمز عبور قدیمی شما است و مکانهایی که ذخیره می شوند دیگر کار نمی کنند. آیا مطمئن هستید که می خواهید رمزعبور خود را دوباره تنظیم کنید?"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        ""
+        "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد"
+      ],
+      "Session timed out.": [
+        "مهلت نشست پایان یافت."
+      ],
+      "Internet connection lost.": [
+        "اتصال اینترنت قطع شد."
+      ],
+      "Servers are unreachable.": [
+        "سرورها قابل دسترس نیستند."
+      ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "به یک طرح پرداختی ارتقا دهید تا به امکانات برتر دست یافته و فضای حافظه خود را افزایش دهید."
+      ],
+      "billed as ${ billedPrice }": [
+        "حساب شده به میزان ${ billedPrice }"
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "پشتیبانی از پروتکل های به اشتراک گذاری فایل مانند BitTorrent."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor مسیر گذاری کنید."
+      ],
+      "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
+        "با کلیک حساب ایجاد کن شما میپذیرید که پایبند { termsOfServiceLink }$ و { privacyPolicyLink }$ ما باشید."
+      ],
+      "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
+        "برای دسترسی به کلیه خدمات پروتون می توانید از حساب پروتون موجود خود استفاده کنید. لطفا با ${ email } وارید شوید"
+      ],
+      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
+        "اگر شما یک کاربر ProtonMail هستید، می‌توانید از حساب پروتون خود برای ورود به ProtonVPN استفاده کنید."
+      ],
+      "This plan is temporarily disabled": [
+        "این طرح به طور موقت غیرفعال است"
+      ],
+      "You are saving 20% with an annual plan": [
+        "شما با طرح سالانه ۲۰٪ پس‌انداز می‌کنید"
+      ],
+      "You are saving 33% with an two-year plan": [
+        "شما با یک طرح دو ساله ۳۳٪ پس انداز می‌کنید"
+      ],
+      "All plans support: ${ supportedOS }": [
+        "پشتیبانی تمامی طرح ها از: ${ supportedOS }"
+      ],
+      "30-days money back guarantee": [
+        "۳۰ روز ضمانت بازگشت پول"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield دستگاه شما را محافظت کرده و با مسدود کردن آگهی‌ها، ردیاب‌ها، و بدافزارها سرعت مرورگری شما را بالا می‌برد."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "با عبور دادن ترافیک اینترنت شما از میان چندین سرور در برابر تهدیدهای حریم خصوصی VPN دفاع میکند."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "با یک طرح به تمام امکانات پرداختی هر دوی ProtonVPN و ProtonMail (سرویس ایمیل رمز نگاری شده ای که میلیونها برای حفاظت اطلاعاتشان استفاده میکنند) دست یابید."
+      ],
+      "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
+        "زیر را کلیک کنید تا کد دوباره به ${ destinationText } ارسال شود. اگر ${ destinationType } نادرست است، لطفا ${ editI18n }\" را کلیک کنید."
+      ],
+      "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
+        "برای جلوگیری از سوء استفاده، لطفاً تأیید کنید که انسان هستید. لطفاً تا زمانی که حساب خود را تأیید نکردید، این زبانه را نبندید."
+      ],
+      "Your payment details are protected with TLS encryption and Swiss laws": [
+        "اطلاعات پرداخت شما با رمزنگاری TLS و قوانین سوئیس محافظت می شود"
+      ],
+      "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
+        "حساب کاربری شما با موفقیت ایجاد شد. لطفا دکمه \"بستن\" را فشار دهید تا به برنامه برگردانید."
+      ],
+      "Creating your account": [
+        "ایجاد حساب کاربری خود"
       ]
     },
     "Label": {
@@ -869,8 +772,8 @@
         "آموزش"
       ],
       "${ n } VPN connection available": [
-        "",
-        ""
+        "${ n } اتصال وی‌پی‌ان در دسترس است",
+        "${ n } اتصال وی‌پی‌ان در دسترس است"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "",
@@ -1020,7 +923,7 @@
         "دلیل اصلی که حساب کاربری‌تان را حذف می‌کنید چیست؟"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        ""
+        "ما از رفتن شما متاسف هستیم. لطفا توضیح دهید که چرا ترک می‌کنید تا به ما در بهتر شدن کمک کنید."
       ],
       "Login password": [
         "رمز عبور"
@@ -1108,6 +1011,42 @@
       ],
       "Danger": [
         "خطر"
+      ],
+      "Back to:": [
+        "بازگشت به:"
+      ],
+      "Enter the code displayed on your TV": [
+        "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
+      ],
+      "Verification method": [
+        "روش تأیید"
+      ],
+      "6-digit code": [
+        "کد ۶ رقمی"
+      ],
+      "1 month": [
+        "۱ ماه"
+      ],
+      "Total price": [
+        "قیمت کل"
+      ],
+      "12 months": [
+        "۱۲ ماه"
+      ],
+      "Annual discount (${ discountPercentage }%)": [
+        "تخفیف سالانه (${ discountPercentage }%)"
+      ],
+      "Total price (annually)": [
+        "قیمت کل (سالانه)"
+      ],
+      "24 months": [
+        "۲۴ ماه"
+      ],
+      "Two-year discount (${ discountPercentage }%)": [
+        "تخفیف دو ساله (${ discountPercentage }%)"
+      ],
+      "Total price (two-year)": [
+        "قیمت کل (دو ساله)"
       ]
     },
     "Action": {
@@ -1238,7 +1177,7 @@
         "ارتقا به Professional"
       ],
       "Activate": [
-        ""
+        "فعالسازی"
       ],
       "Customize subscription": [
         "سفارشی‌سازی اشتراک"
@@ -1449,6 +1388,54 @@
       ],
       "Reset my password": [
         "رمز عبورم را بازنشانی کن"
+      ],
+      "Report bug": [
+        "گزارش اشکال"
+      ],
+      "Activate my coupon": [
+        "کد تخفیفم را فعال کن"
+      ],
+      "Hide additional features": [
+        "مخفی کردن ویژگی‌های اضافی"
+      ],
+      "Select": [
+        "انتخاب"
+      ],
+      "Verify code again": [
+        "تایید دوباره کد"
+      ],
+      "Verify code": [
+        "تایید کد"
+      ],
+      "Create account": [
+        "ایجاد حساب‌کاربری"
+      ],
+      "Go to login": [
+        "رفتن به صفحه ورود"
+      ],
+      "View full plan comparison": [
+        "نمایش مقایسه کامل طرح‌ها"
+      ],
+      "Send": [
+        "ارسال"
+      ],
+      "Resend": [
+        "ارسال مجدد"
+      ],
+      "Use another verification method": [
+        "از روش تایید دیگری استفاده کنید"
+      ],
+      "Confirm payment": [
+        "تایید پرداخت"
+      ],
+      "Pay annually and save 20%": [
+        "۲۰٪ تخفیف با پرداخت سالانه"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "فقط با ${ totalMonthlyText } از ${ upsellPlan.title } استفاده کنید."
+      ],
+      "Homepage": [
+        "صفحه اصلی"
       ]
     },
     "Storage": {
@@ -1504,6 +1491,191 @@
       ],
       "here": [
         "اینجا"
+      ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ],
+      "Sign up for free": [
+        "ثبت نام رایگان"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "حساب کاربری ندارید؟ ثبت نام رایگان!"
+      ],
+      "Reset password": [
+        "بازنشانی رمز عبور"
+      ],
+      "Forgot username?": [
+        "نام کاربریتان را فراموش کرده‌اید؟"
+      ],
+      "Common login problems": [
+        "مشکلات متداول ورود به حساب کاربری"
+      ],
+      "Contact support": [
+        "تماس با پشتیبانی"
+      ],
+      "Terms of Service": [
+        "شرایط خدمات"
+      ],
+      "Privacy Policy": [
+        "سیاست حریم خصوصی"
+      ],
+      "Log in": [
+        "ورود"
+      ],
+      "Close": [
+        "بستن"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "نشانی ایمیل نامعتبر است"
+      ],
+      "This field is required": [
+        "این بخش الزامی است"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "مرورگری که شما استفاده میکنید اجازه پرداخت کامل معامله را نمیدهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
+      ],
+      "Unknown error": [
+        "خطای ناشناخته"
+      ],
+      "Checkout expired, please try again.": [
+        "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید."
+      ],
+      "Invalid code": [
+        "کد نامعتبر"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "خطا در اتصال به API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "مقدار کمتر از حداقل."
+      ],
+      "Amount above the maximum.": [
+        "مقدار بیش از اندازه می باشد."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "حداقل مبلغ قابل اهدا هست ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "حداقل مقدار اعتباری که می‌توان اضافه کرد ${ _price } است"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "حداقل پرداختی که می‌پذیریم ${ _price2 } است"
+      ],
+      "Process aborted": [
+        "فرآیند قطع شد"
+      ],
+      "Payment process cancelled": [
+        "روند پرداخت لغو شد"
+      ],
+      "Payment process failed": [
+        "روند پرداخت انجام نشد"
+      ],
+      "Payment process consumed": [
+        "عملیات پرداخت انجام شد"
+      ],
+      "Payment process not supported": [
+        "روند پرداخت پشتیبانی نمی شود"
+      ],
+      "Unknown payment token status": [
+        "وضعیت نشانه پرداخت ناشناخته"
+      ],
+      "Tab closed": [
+        "بستن زبانه"
+      ],
+      "Name on card required": [
+        "نام روی کارت الزامی است"
+      ],
+      "Invalid expiration date": [
+        "تاریخ انقضا نامعتبر"
+      ],
+      "Invalid card number": [
+        "شماره کارت نامعتبر"
+      ],
+      "Invalid ${ name } code": [
+        "کد ${ name } نامعتبر"
+      ],
+      "Invalid postal code": [
+        "کد پستی نامعتبر"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "لطفا قبل از تلاش برای تغییر رمز عبور خود کلیدها را ایجاد کنید."
+      ],
+      "Please set a recovery/notification email first": [
+        "لطفا ابتدا یک ایمیل بازیابی/اعلان تنظیم کنید"
+      ],
+      "Please set a recovery phone number first": [
+        "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
+      ],
+      "Payments are currently not available, please try again later": [
+        "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
+      ],
+      "You have no invoices.": [
+        "هیچ صورت‌حسابی ندارید."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "حساب یا سازمان شما در حال حاضر دارای یک صورت‌حساب به تعویق افتاده است. لطفاً تمام صورتحساب‌های پرداخت نشده را پرداخت کنید."
+      ],
+      "File has no contents to preview": [
+        "فایل هیچ محتوایی برای پیش‌نمایش ندارد"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "گذرواژه نادرست صندوق ایمیل. لطفاً دوباره امتحان کنید"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "مشخصات ورودی نادرست است. لطفا دوباره تلاش کنید"
+      ],
+      "Can't validate email, try again later": [
+        "تأیید ایمیل ممکن نبود، بعداً دوباره امتحان کنید"
+      ],
+      "Can't validate phone, try again later": [
+        "تأیید تلفن ممکن نبود، بعداً دوباره امتحان کنید"
+      ],
+      "Enter 6 digits": [
+        "۶ رقم را وارد کنید"
+      ],
+      "Invalid verification code": [
+        "کد تایید نامعتبر"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "لطفاً ‘${ dangerWord }’ را وارد کنید"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "حداقل ${ minimumLength } کاراکتر برای این قسمت الزامی است."
+      ],
+      "Email is not valid": [
+        "ایمیل معتبر نیست"
+      ],
+      "Not a valid number": [
+        "شماره معتبر نیست"
+      ],
+      "Passwords do not match": [
+        "رمزهای عبور مطابقت ندارند"
+      ],
+      "Signature verification failed": [
+        "تصدیق امضا ناموفق بود"
+      ],
+      "Request timed out.": [
+        "مهلت درخواست تمام شد."
+      ],
+      "Code wrong or not valid anymore": [
+        "کد غلط یا دیگر غیر معتبر است"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
+      ],
+      "Invalid invitation link": [
+        "پیوند دعوت نامعتبر است"
+      ],
+      "Can't check username, try again later": [
+        "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
       ]
     },
     "Title": {
@@ -1723,14 +1895,176 @@
       "Invalid verification code": [
         "کد تایید نامعتبر"
       ],
-      "Request new verification code": [
-        "درخواست کد تایید جدید"
+      "Request new code": [
+        "درخواست کد جدید"
       ],
       "Human verification": [
         "تأیید ربات نبودن"
       ],
       "Confirm reset password": [
         "تایید بازنشانی رمز عبور"
+      ],
+      "Upgrade": [
+        "ارتقا"
+      ],
+      "My subscription": [
+        "اشتراک من"
+      ],
+      "Dashboard": [
+        "داشبورد"
+      ],
+      "Plans": [
+        "طرح ها"
+      ],
+      "Your current plan": [
+        "طرح جاری شما"
+      ],
+      "Your plan": [
+        "طرح شما"
+      ],
+      "Billing": [
+        "صورت‌حساب"
+      ],
+      "Gift Code": [
+        "کد هدیه"
+      ],
+      "General": [
+        "عمومی"
+      ],
+      "Language": [
+        "زبان"
+      ],
+      "Account": [
+        "حساب کاربری"
+      ],
+      "Username": [
+        "نام کاربری"
+      ],
+      "Passwords": [
+        "گذرواژه‌ها"
+      ],
+      "Two-factor authentication": [
+        "احراز هویت دو مرحله‌ای"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "نام کاربری OpenVPN / IKEv2"
+      ],
+      "Recovery & notification": [
+        "بازیابی و اعلان‌ها"
+      ],
+      "Email subscriptions": [
+        "اشتراک ایمیل"
+      ],
+      "Delete": [
+        "حذف"
+      ],
+      "Downloads": [
+        "دانلودها"
+      ],
+      "ProtonVPN clients": [
+        "نرم‌افزارهای ProtonVPN"
+      ],
+      "OpenVPN configuration files": [
+        "فایل‌های پیکربندی OpenVPN"
+      ],
+      "Payments": [
+        "پرداخت‌ها"
+      ],
+      "Payment methods": [
+        "روش‌های پرداخت"
+      ],
+      "Invoices": [
+        "صورت‌حساب‌ها"
+      ],
+      "Device connected!": [
+        "دستگاه متصل شد!"
+      ],
+      "TV log in": [
+        "ورود تلویزیون"
+      ],
+      "Forgot username": [
+        "فراموشی نام کاربری"
+      ],
+      "Reset password": [
+        "بازنشانی رمز عبور"
+      ],
+      "Log in": [
+        "ورود"
+      ],
+      "User log in": [
+        "ورود کاربر"
+      ],
+      "Redeem coupon": [
+        "بازخرید کوپن"
+      ],
+      "Redeem your coupon and start protecting your online privacy": [
+        "کوپن خود را پس بگیرید و از حریم شخصی آنلاین خود محافظت کنید"
+      ],
+      "Swiss Based": [
+        "مستقر سوئیس"
+      ],
+      "Secure Core Servers": [
+        "سرور های Secure Core"
+      ],
+      "No Logs": [
+        "بدون لاگ"
+      ],
+      "Kill Switch": [
+        "Kill Switch"
+      ],
+      "DNS leak prevention": [
+        "جلوگیری از نشت DNS"
+      ],
+      "Strong encryption": [
+        "رمزنگاری قوی"
+      ],
+      "Checking invitation parameters": [
+        "بررسی کردن مولفه های دعوت نامه"
+      ],
+      "You already have a Proton account": [
+        "شما در حال حاضر یک حساب Proton دارید"
+      ],
+      "Create an account": [
+        "ایجاد حساب کاربری"
+      ],
+      "Already have a Proton account?": [
+        "در حال حاضر حساب پروتون دارید؟"
+      ],
+      "ProtonVPN plan comparison": [
+        "مقایسه طرح‌های ProtonVPN"
+      ],
+      "Select an account verification method": [
+        "یک روش تأیید حساب را انتخاب کنید"
+      ],
+      "Resend code": [
+        "ارسال مجدد کد"
+      ],
+      "Enter verification code": [
+        "کد دریافتی را وارد کنید"
+      ],
+      "Are you human?": [
+        "شما ربات نیستید؟"
+      ],
+      "Provide payment details": [
+        "جزئیات پرداخت را ارائه دهید"
+      ],
+      "${ title } plan details": [
+        "جزئیات طرح ${ title }"
+      ],
+      "Upgrade and get more": [
+        "ارتقاء و دریافت امکانات بیشتر"
+      ],
+      "Summary": [
+        "خلاصه"
+      ],
+      "Account created": [
+        "حساب کاربری ایجاد شد"
+      ],
+      "Sign up": [
+        "ثبت نام"
+      ],
+      "Settings": [
+        "تنظیمات"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1965,6 +2299,12 @@
       ],
       "Choose a new password": [
         "یک رمز عبور جدید انتخاب کنید"
+      ],
+      "Enter coupon code": [
+        "کد تخفیف را وارد کنید"
+      ],
+      "Confirm password": [
+        "تکرار رمز عبور"
       ]
     },
     "Warning": {
@@ -2006,7 +2346,52 @@
     },
     "Header": {
       "Get help": [
-        ""
+        "کمک گرفتن"
+      ],
+      "Help": [
+        "راهنمایی"
+      ],
+      "Simultaneous connections": [
+        "اتصالات هم زمان"
+      ],
+      "Countries": [
+        "کشورها"
+      ],
+      "Speed": [
+        "سرعت"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "پشتیبانی BitTorrent/اشتراک فایل P2P"
+      ],
+      "Tor over VPN": [
+        "Tor بر روی VPN"
+      ],
+      "Secure Core VPN": [
+        "Secure Core VPN"
+      ],
+      "Apps for Android / Linux / iOS / Windows": [
+        "برنامه‌های اندروید / لینوکس / iOS / ویندوز"
+      ],
+      "Advanced encryption": [
+        "رمزنگاری پیشرفته"
+      ],
+      "Kill Switch / Always-on": [
+        "Kill Switch / Always-on"
+      ],
+      "No logs policy": [
+        "سیاست عدم ثبت رویدادها"
+      ],
+      "No data limits": [
+        "عدم محدودیت داده"
+      ],
+      "Access blocked content": [
+        "دسترسی به محتوای مسدود شده"
+      ],
+      "30-day money-back guarantee": [
+        "۳۰ روز ضمانت بازگشت پول"
+      ],
+      "Streaming service support": [
+        "پشتیبانی از سرویس پخش آنلاین"
       ]
     },
     "Onboarding Proton": {
@@ -2206,6 +2591,24 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "اگر شما کد هدیه خریده‌اید یا از تیم پشتیبانی ما دریافت کرده‌اید، می‌توانید آن را اینجا وارد کنید."
+      ],
+      "Save 20% when billed annually": [
+        "با پرداخت سالانه ۲۰% تخفیف بگیرید"
+      ],
+      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
+        "ارائه حفاظت بیشتر در برابر لو رفتن سرور های VPN با مسیریابی از طریق شبکه امن ما"
+      ],
+      "Includes ProtonMail encrypted email with all features": [
+        "شامل ProtonMail با همه امکانات"
+      ],
+      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
+        "نام کاربری برای کلیه خدمات پروتون استفاده می شود. همچنین می توانید بعداً برای ایجاد یک حساب ایمن ProtonMail استفاده کنید."
+      ],
+      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
+        "اگر رمز را فرمواش کنید، دیگر دسترسی به اطلاعات یا حساب کاربری خود ندارید. لطفا رمز را در محل امن نگه‌دارید."
+      ],
+      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
+        "ایمیل شما با اشخاص ثالث به اشتراک گذاشته نمی شود و فقط برای بازیابی و سوالات مربوط به حساب یا ارتباطات مورد استفاده قرار می گیرد."
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -2371,8 +2774,58 @@
         "{ n }$ اتصال VPN"
       ],
       "${ n } server": [
-        "",
-        ""
+        "${ n } سرور",
+        "${ n } سرور"
+      ],
+      "${ freeServersCount.free_vpn } server": [
+        "${ freeServersCount.free_vpn } سرور",
+        "${ freeServersCount.free_vpn } سرور"
+      ],
+      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
+        "+۳۵۰ سرور در ${ countries[PLANS.VPNBASIC].count } کشور",
+        "+۳۵۰ سرور در +${ countries[PLANS.VPNBASIC].count } کشور"
+      ],
+      "High speed": [
+        "سرعت بالا"
+      ],
+      "Filesharing/P2P support": [
+        "پشتیبانی Filesharing / P2P"
+      ],
+      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
+        "${ nFreeServers } در ${ countries.free_vpn.count } کشور",
+        "${ nFreeServers } در ${ countries.free_vpn.count } کشور"
+      ],
+      "${ maxConnections } VPN connection": [
+        "{ maxConnections }$ اتصال VPN",
+        "{ maxConnections }$ اتصال VPN"
+      ],
+      "Medium speed": [
+        "سرعت متوسط"
+      ],
+      "Strict no-logs policy": [
+        "سیاست سخت‌گیرانهٔ عدم ثبت رویدادها"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "بالاترین سرعت (تا ۱۰ گیگابیت بر ثانیه)"
+      ],
+      "Streaming service support": [
+        "پشتیبانی از سرویس پخش آنلاین"
+      ],
+      "All advanced security features": [
+        "همه امکانات امنیتی پیشرفته"
+      ],
+      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
+        "+۱۲۰۰ سرور در ${ countries[PLANS.VPNPLUS].count } کشور",
+        "+۱۲۰۰ سرور در ${ countries[PLANS.VPNPLUS].count } کشور"
+      ],
+      "ProtonMail Visionary account": [
+        "حساب ProtonMail رویایی"
+      ],
+      "Highest speed (10 Gbps)": [
+        "بالاترین سرعت (۱۰ Gbps)"
+      ],
+      "ProtonMail Plus account": [
+        "حساب کاربری ProtonMail Plus"
       ]
     },
     "Netflix": {
@@ -2409,8 +2862,8 @@
         "دسترسی به محتوای مسدود شده"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
+        "${ freeServers } در ${ freeCountries } کشور",
+        "${ freeServers } در ${ freeCountries } کشور"
       ],
       "Medium speed": [
         "سرعت متوسط"
@@ -2488,6 +2941,24 @@
       ],
       "50 addresses": [
         "۵۰ نشانی"
+      ],
+      "P2P/BitTorrent support": [
+        "پشتیبانی P2P/BitTorrent"
+      ],
+      "Adblocker (NetShield)": [
+        "مسدودکنندهٔ آگهی (NetShield)"
+      ],
+      "Secure Core VPN": [
+        "Secure Core VPN"
+      ],
+      "Tor over VPN": [
+        "Tor بر روی VPN"
+      ],
+      "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
+        "تمام امکانات طرح ${ PLAN_NAMES[PLAN.PLUS] }"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "پشتیبانی BitTorrent/اشتراک فایل P2P"
       ]
     },
     "Billing cycle option": {
@@ -2509,6 +2980,9 @@
     },
     "Price": {
       "Free": [
+        "رایگان"
+      ],
+      "FREE": [
         "رایگان"
       ]
     },
@@ -2576,6 +3050,15 @@
     "Suffix": {
       "/ month": [
         "/ ماه"
+      ],
+      "/monthly": [
+        "/ماهیانه"
+      ],
+      "/2-year": [
+        "/ برای 2 سال"
+      ],
+      "/year": [
+        "/ سال"
       ]
     },
     "Option": {
@@ -2656,6 +3139,12 @@
       ],
       "Free server configs": [
         "پیکربندی‌های سرور رایگان"
+      ],
+      "Email address": [
+        "آدرس ایمیل"
+      ],
+      "SMS": [
+        "پیامک"
       ]
     },
     "State": {
@@ -2666,6 +3155,9 @@
     "Plan info": {
       "(current plan)": [
         "(طرح جاری)"
+      ],
+      "Most popular": [
+        "محبوب‌ترین‌"
       ]
     },
     "Free price": {
@@ -2771,6 +3263,15 @@
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "جزئیات ورودی OpenVPN / IKEv2 دوباره تولید شد"
+      ],
+      "Coupons are temporarily disabled": [
+        "کوپن ها به طور موقت غیرفعال می شوند"
+      ],
+      "Invites are temporarily disabled": [
+        "دعوت ها به طور موقت غیرفعال می شوند"
+      ],
+      "Verification code successfully sent to ${ destination }": [
+        "کد تایید با موفقیت به ${ destination } ارسال شد"
       ]
     },
     "VPNClient": {
@@ -2996,6 +3497,137 @@
     "Password": {
       "Confirm new password": [
         "تأیید رمز عبور جديد"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "بایت"
+      ],
+      "KB": [
+        "کیلوبایت"
+      ],
+      "MB": [
+        "مگابایت"
+      ],
+      "GB": [
+        "گیگابایت"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
+        "گذرواژه باید حداقل شامل ${ length } نویسه باشد"
+      ]
+    },
+    "Plan details": {
+      "Medium": [
+        "متوسط"
+      ],
+      "High": [
+        "بالا"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "بالاترین سرعت (تا ۱۰ گیگابیت بر ثانیه)"
+      ],
+      "Highest speed (10 Gbps)": [
+        "بالاترین سرعت (۱۰ Gbps)"
+      ]
+    },
+    "Dropdown button": {
+      "Need help?": [
+        "به کمک نیاز دارید؟"
+      ]
+    },
+    "Image alt": {
+      "Laptop & smartphone shown connected to ProtonVPN network.": [
+        "لپ تاپ & تلفن هوشمند نشان داده شده متصل به ProtonVPN."
+      ],
+      "Swiss based": [
+        "مستقر در سوئیس"
+      ],
+      "Secure core servers": [
+        "سرورهای Secure core"
+      ],
+      "No logs": [
+        "عدم رکورد"
+      ],
+      "Kill switch to prevent IP exposure": [
+        "Kill switch برای جلوگیری از دسترسی IP"
+      ],
+      "DNS leak prevention": [
+        "جلوگیری از نشت DNS"
+      ],
+      "Strong encryption": [
+        "رمزنگاری قوی"
+      ]
+    },
+    "About": {
+      "Protect your data with Swiss privacy laws, some of the strongest in the world": [
+        "محافظت از اطلاعات خود با قوانین حریم خصوصی سوییس، یکی از قوی‌ترین قوانین در دنیا"
+      ],
+      "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
+        "با روت کردن ترافیک خود از طریق سرورهای سخت شده، از خود در برابر حملات پیشرفته مبتنی بر شبکه دفاع کنید"
+      ],
+      "Keep your browsing history private - we do not keep any records of our users' online activity": [
+        "سابقه مرور خود را به صورت خصوصی حفظ کنید و ما هیچ سابقه ای از فعالیت آنلاین کاربران خود نداریم"
+      ],
+      "Keep your data secure even if you are disconnected from your VPN server": [
+        "داده های خود را حتی اگر از سرور VPN قطع شدید ، ایمن نگه دارید"
+      ],
+      "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
+        "جلوگیری DNS requests از آشکار کردن تاریخچه مرور شما با رمزگذاری تمام DNS queries ها"
+      ],
+      "Defend your Internet connection with AES-256, the highest strength encryption.": [
+        "حمایت از اتصال اینترنتی خود با AES-256 ،بالاترین قدرت رمزنگاری."
+      ]
+    },
+    "PlanPrice": {
+      "${ totalMonthlyPriceText } / mo": [
+        "${ totalMonthlyPriceText } ماهانه"
+      ],
+      "Billed as ${ totalBilledText }": [
+        "صورتحساب به عنوان ${ totalBilledText }"
+      ],
+      "SAVE ${ discountText }": [
+        "${ discountText } تخفیف بگیرید"
+      ]
+    },
+    "Plan Action": {
+      "Get ${ plan.title }": [
+        "دریافت ${ plan.title }"
+      ]
+    },
+    "Plan Description": {
+      "Privacy and security for everyone": [
+        "حریم خصوصی و امنیت برای همه"
+      ],
+      "Basic privacy features": [
+        "امکانات حریم خصوصی پایه"
+      ],
+      "Advanced security features": [
+        "ویژگی های امنیتی پیشرفته"
+      ],
+      "The complete privacy suite": [
+        "مجموعه کامل حریم خصوصی"
+      ],
+      "Bundle plan": [
+        "طرح بسته ای"
+      ]
+    },
+    "VerificationType": {
+      "email": [
+        "ایمیل"
+      ],
+      "phone": [
+        "تلفن"
+      ]
+    },
+    "Plan upsell": {
+      "Monthly plan": [
+        "طرح ماهانه"
+      ],
+      "Yearly plan": [
+        "طرح سالانه"
       ]
     },
     "blackfriday Info": {
