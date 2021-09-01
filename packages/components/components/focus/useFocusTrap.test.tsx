@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import * as React from 'react';
-import { wait, render, fireEvent } from '@testing-library/react';
+import { waitFor, render, fireEvent } from '@testing-library/react';
 import useFocusTrap from './useFocusTrap';
 
 describe('FocusTrap', () => {
@@ -148,7 +148,7 @@ describe('FocusTrap', () => {
         const closeButton = getByTestId('close');
         fireEvent.mouseUp(closeButton);
         fireEvent.click(closeButton);
-        await wait(() => {
+        await waitFor(() => {
             expect(openerButton).not.toHaveFocus();
         });
     });
@@ -176,7 +176,7 @@ describe('FocusTrap', () => {
         fireEvent.click(openerButton);
         expect(getByTestId('input')).toHaveFocus();
         fireEvent.keyDown(getByTestId('input'), { key: 'Esc' });
-        await wait(() => {
+        await waitFor(() => {
             expect(openerButton).toHaveFocus();
         });
     });
@@ -216,21 +216,21 @@ describe('FocusTrap', () => {
         const openerButton = getByTestId('button1');
         openerButton.focus();
         openerButton.click();
-        await wait(() => {
+        await waitFor(() => {
             expect(getByTestId('input1')).toHaveFocus();
         });
         const openerButton2 = getByTestId('button2');
         openerButton2.focus();
         openerButton2.click();
-        await wait(() => {
+        await waitFor(() => {
             expect(getByTestId('input2')).toHaveFocus();
         });
         openerButton.click();
-        await wait(() => {
+        await waitFor(() => {
             expect(getByTestId('input2')).toHaveFocus();
         });
         openerButton2.click();
-        await wait(() => {
+        await waitFor(() => {
             expect(openerButton2).toHaveFocus();
         });
     });
