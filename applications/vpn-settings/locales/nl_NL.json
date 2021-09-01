@@ -5,173 +5,7 @@
   },
   "contexts": {
     "": {},
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Error": {
-      "This field is required": [
-        "Dit veld is verplicht"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
-      ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
-      ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Request timed out.": [
-        "Het verzoek timed out."
-      ],
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
-      "Unknown error": [
-        "Onbekende fout"
-      ],
-      "Checkout expired, please try again.": [
-        "Checkout is verlopen, probeer het opnieuw."
-      ],
-      "Invalid code": [
-        "Ongeldige code"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Fout bij het verbinden met de Bitcoin-API."
-      ],
-      "Amount below minimum.": [
-        "Bedrag onder minimum."
-      ],
-      "Amount above the maximum.": [
-        "Bedrag boven het maximum."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Het minimum bedrag dat kan worden toegevoegd is ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "De minimale betaling die we accepteren is ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Proces afgebroken"
-      ],
-      "Payment process cancelled": [
-        "Betalingsverzoek geannuleerd"
-      ],
-      "Payment process failed": [
-        "Betalingsverzoek geannuleerd"
-      ],
-      "Payment process consumed": [
-        "Betalingsverzoek verwerkt"
-      ],
-      "Payment process not supported": [
-        "Betalingsproces niet ondersteund"
-      ],
-      "Unknown payment token status": [
-        "Onbekende betalingstoken status"
-      ],
-      "Tab closed": [
-        "Tab gesloten"
-      ],
-      "Name on card required": [
-        "Naam op kaart vereist"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
-      ],
-      "Invalid card number": [
-        "Ongeldige kaartnummer"
-      ],
-      "Invalid ${ name } code": [
-        "Ongeldige ${ name } code"
-      ],
-      "Invalid postal code": [
-        "Ongeldige postcode"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
-      ],
-      "Please set a recovery/notification email first": [
-        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
-      ],
-      "Please set a recovery phone number first": [
-        "Stel eerst een hersteltelefoonnummer in"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
-      ],
-      "You have no invoices.": [
-        "U heeft geen facturen."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te tonen"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
-      ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
-      "Enter 6 digits": [
-        "Voer 6 cijfers in"
-      ],
-      "Invalid verification code": [
-        "Ongeldige verificatiecode"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Vul alstublieft '${ dangerWord }' in"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
     "Info": {
-      "Session timed out.": [
-        "Sessie verlopen."
-      ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
-      ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
-      ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
@@ -532,7 +366,7 @@
         "Vergeet niet het wachtwoord voor het inloggen en decoderen van e-mails. ${ boldAlert }. We raden u aan eerst een herstel-e-mailadres toe te voegen."
       ],
       "read our two-factor authentication Guide first": [
-        ""
+        "eerst de instructies over tweestapsverificatie (2FA) te lezen"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw Proton account. Tweestapsverificatie zal uw Proton account veiliger maken en daarom raden we aan om het in te schakelen."
@@ -675,13 +509,13 @@
         "We raden aan om een gekoppeld e-mailadres toe te voegen, zodat u uw account kunt herstellen als u uw wachtwoord kwijtraakt."
       ],
       "Disabling this will prevent this email from being used for account recovery.": [
-        ""
+        "Dit uitschakelen zal voorkomen dat dit e-mailadres gebruikt zal worden voor accountherstel."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel/notificatie adres als u nieuwe berichten in uw ProtonMail account heeft."
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
-        ""
+        "Dit uitschakelen zal voorkomen dat dit telefoonnummer wordt gebruikt voor accountherstel."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         ""
@@ -816,7 +650,76 @@
         "Het resetten van uw wachtwoord betekent dat uw oude wachtwoord en de plaatsten waar deze opgeslagen is, niet meer zal werken. Weet u zeker dat u uw wachtwoord wilt resetten?"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        ""
+        "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
+      ],
+      "Session timed out.": [
+        "Sessie verlopen."
+      ],
+      "Internet connection lost.": [
+        "Internetverbinding verbroken."
+      ],
+      "Servers are unreachable.": [
+        "Servers zijn onbereikbaar."
+      ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
+      ],
+      "billed as ${ billedPrice }": [
+        "gefactureerd als ${ billedPrice }"
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Ondersteuning voor filesharing protocollen zoals BitTorrent."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
+      ],
+      "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
+        "Door op Account aanmaken te drukken gaat u akkoord met onze ${ termsOfServiceLink } en ${ privacyPolicyLink }."
+      ],
+      "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
+        "Uw bestaande Proton account kan gebruikt worden voor alle Proton diensten. Log in met ${ email }"
+      ],
+      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
+        "Als u een ProtonMail gebruiker bent kunt u uw Proton account gebruiken om in te loggen bij ProtonVPN."
+      ],
+      "This plan is temporarily disabled": [
+        "Dit abonnement is tijdelijk uitgeschakeld"
+      ],
+      "You are saving 20% with an annual plan": [
+        "U bespaart 20% met een jaarlijks abonnement"
+      ],
+      "You are saving 33% with an two-year plan": [
+        "U bespaart 33% met een twee jarig abonnement"
+      ],
+      "All plans support: ${ supportedOS }": [
+        "Alle abonnementen ondersteunen: ${ supportedOS }"
+      ],
+      "30-days money back guarantee": [
+        "30-dagen geld terug garantie"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Verdedigt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te passeren."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Krijg toegang tot alle betaalde functies voor zowel ProtonVPN als ProtonMail (de versleutelde e-maildienst die miljoenen gebruiken om hun gegevens te beschermen) met één abonnement."
+      ],
+      "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
+        "Klik hieronder om de code opnieuw naar ${ destinationText } te versturen. Als ${ destinationType } onjuist is, druk dan op \"${ editI18n }\"."
+      ],
+      "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
+        "Om misbruik te voorkomen, bevestig dat u een mens bent. Sluit dit tabblad niet totdat u het account heeft geverifieerd."
+      ],
+      "Your payment details are protected with TLS encryption and Swiss laws": [
+        "Uw betalingsgegevens worden beschermd met TLS versleuteling en de Zwitserse wetgeving"
+      ],
+      "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
+        "Uw account is succesvol aangemaakt. Druk op de \"Sluiten\" knop om terug te keren naar de app."
+      ],
+      "Creating your account": [
+        "Account aan het aanmaken"
       ]
     },
     "Label": {
@@ -1020,7 +923,7 @@
         "Wat is de voornaamste reden dat u uw account verwijdert?"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        ""
+        "We vinden het jammer u te zien gaan. Leg uit waarom i vertrekt om ons te helpen te verbeteren."
       ],
       "Login password": [
         "Inlogwachtwoord"
@@ -1108,6 +1011,42 @@
       ],
       "Danger": [
         "Gevaar"
+      ],
+      "Back to:": [
+        "Terug nar:"
+      ],
+      "Enter the code displayed on your TV": [
+        "Voer de op uw TV weergegeven code in"
+      ],
+      "Verification method": [
+        "Verificatiemethode"
+      ],
+      "6-digit code": [
+        "6-cijferige code"
+      ],
+      "1 month": [
+        "1 maand"
+      ],
+      "Total price": [
+        "Totaalprijs"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "Annual discount (${ discountPercentage }%)": [
+        "Jaarlijkse korting (${ discountPercentage }%)"
+      ],
+      "Total price (annually)": [
+        "Totaalprijs (jaarlijks)"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "Two-year discount (${ discountPercentage }%)": [
+        "Tweejaarlijkse korting (${ discountPercentage }%)"
+      ],
+      "Total price (two-year)": [
+        "Totaalprijs (twee jaar)"
       ]
     },
     "Action": {
@@ -1238,7 +1177,7 @@
         "Upgrade naar Professional"
       ],
       "Activate": [
-        ""
+        "Activeer"
       ],
       "Customize subscription": [
         "Abonnement aanpassen"
@@ -1449,6 +1388,54 @@
       ],
       "Reset my password": [
         "Mijn wachtwoord resetten"
+      ],
+      "Report bug": [
+        "Bug melden"
+      ],
+      "Activate my coupon": [
+        "Activeer mijn coupon"
+      ],
+      "Hide additional features": [
+        "Aanvullende functies verbergen"
+      ],
+      "Select": [
+        "Selecteer"
+      ],
+      "Verify code again": [
+        "Verifieer code opnieuw"
+      ],
+      "Verify code": [
+        "Bevestig de code"
+      ],
+      "Create account": [
+        "Account aanmaken"
+      ],
+      "Go to login": [
+        "Ga naar login"
+      ],
+      "View full plan comparison": [
+        "Bekijk de volledige abonnementsvergelijking"
+      ],
+      "Send": [
+        "Verzenden"
+      ],
+      "Resend": [
+        "Opnieuw versturen"
+      ],
+      "Use another verification method": [
+        "Gebruik een andere verificatiemethode"
+      ],
+      "Confirm payment": [
+        "Betaling bevestigen"
+      ],
+      "Pay annually and save 20%": [
+        "Betaal jaarlijks en bespaar 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Probeer ${ upsellPlan.title } voor maar ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Startpagina"
       ]
     },
     "Storage": {
@@ -1504,6 +1491,191 @@
       ],
       "here": [
         "hier"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Sign up for free": [
+        "Meld gratis aan"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Nog geen account? Registreer nu gratis!"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ],
+      "Forgot username?": [
+        "Gebruikersnaam vergeten?"
+      ],
+      "Common login problems": [
+        "Bekende aanmeldproblemen"
+      ],
+      "Contact support": [
+        "Neem contact op met ondersteuning"
+      ],
+      "Terms of Service": [
+        "Algemene Voorwaarden"
+      ],
+      "Privacy Policy": [
+        "Privacybeleid"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "Close": [
+        "Sluit"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "This field is required": [
+        "Dit veld is verplicht"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+      ],
+      "Unknown error": [
+        "Onbekende fout"
+      ],
+      "Checkout expired, please try again.": [
+        "Checkout is verlopen, probeer het opnieuw."
+      ],
+      "Invalid code": [
+        "Ongeldige code"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fout bij het verbinden met de Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Bedrag onder minimum."
+      ],
+      "Amount above the maximum.": [
+        "Bedrag boven het maximum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Het minimum bedrag dat kan worden toegevoegd is ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "De minimale betaling die we accepteren is ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Proces afgebroken"
+      ],
+      "Payment process cancelled": [
+        "Betalingsverzoek geannuleerd"
+      ],
+      "Payment process failed": [
+        "Betalingsverzoek geannuleerd"
+      ],
+      "Payment process consumed": [
+        "Betalingsverzoek verwerkt"
+      ],
+      "Payment process not supported": [
+        "Betalingsproces niet ondersteund"
+      ],
+      "Unknown payment token status": [
+        "Onbekende betalingstoken status"
+      ],
+      "Tab closed": [
+        "Tab gesloten"
+      ],
+      "Name on card required": [
+        "Naam op kaart vereist"
+      ],
+      "Invalid expiration date": [
+        "Ongeldige vervaldatum"
+      ],
+      "Invalid card number": [
+        "Ongeldige kaartnummer"
+      ],
+      "Invalid ${ name } code": [
+        "Ongeldige ${ name } code"
+      ],
+      "Invalid postal code": [
+        "Ongeldige postcode"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
+      ],
+      "Please set a recovery/notification email first": [
+        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
+      ],
+      "Please set a recovery phone number first": [
+        "Stel eerst een hersteltelefoonnummer in"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
+      ],
+      "You have no invoices.": [
+        "U heeft geen facturen."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
+      ],
+      "File has no contents to preview": [
+        "Bestand heeft geen inhoud om een voorbeeld te tonen"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
+      ],
+      "Can't validate email, try again later": [
+        "Kan e-mail niet valideren, probeer het later opnieuw"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan telefoon niet valideren, probeer het later opnieuw"
+      ],
+      "Enter 6 digits": [
+        "Voer 6 cijfers in"
+      ],
+      "Invalid verification code": [
+        "Ongeldige verificatiecode"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Vul alstublieft '${ dangerWord }' in"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Request timed out.": [
+        "Het verzoek timed out."
+      ],
+      "Code wrong or not valid anymore": [
+        "Code verkeerd of niet meer geldig"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
+      ],
+      "Invalid invitation link": [
+        "Ongeldige uitnodigingskoppeling"
+      ],
+      "Can't check username, try again later": [
+        "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ]
     },
     "Title": {
@@ -1723,14 +1895,176 @@
       "Invalid verification code": [
         "Ongeldige verificatiecode"
       ],
-      "Request new verification code": [
-        "Nieuwe verificatiecode aanvragen"
+      "Request new code": [
+        "Nieuwe code aanvragen"
       ],
       "Human verification": [
         "Persoonsverificatie"
       ],
       "Confirm reset password": [
         "Herstelwachtwoord bevestigen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "My subscription": [
+        "Mijn abonnement"
+      ],
+      "Dashboard": [
+        "Dashboard"
+      ],
+      "Plans": [
+        "Abonnementen"
+      ],
+      "Your current plan": [
+        "Uw huidige abonnement"
+      ],
+      "Your plan": [
+        "Uw abonnement"
+      ],
+      "Billing": [
+        "Facturatie"
+      ],
+      "Gift Code": [
+        "Geschenk Code"
+      ],
+      "General": [
+        "Algemeen"
+      ],
+      "Language": [
+        "Taal"
+      ],
+      "Account": [
+        "Account"
+      ],
+      "Username": [
+        "Gebruikersnaam"
+      ],
+      "Passwords": [
+        "Wachtwoorden"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN / IKEv2 gebruikersnaam"
+      ],
+      "Recovery & notification": [
+        "Herstel & notificaties"
+      ],
+      "Email subscriptions": [
+        "Nieuwsbrieven"
+      ],
+      "Delete": [
+        "Verwijder"
+      ],
+      "Downloads": [
+        "Downloads"
+      ],
+      "ProtonVPN clients": [
+        "ProtonVPN-clients"
+      ],
+      "OpenVPN configuration files": [
+        "OpenVPN-configuratiebestanden"
+      ],
+      "Payments": [
+        "Betalingen"
+      ],
+      "Payment methods": [
+        "Betaalmethoden"
+      ],
+      "Invoices": [
+        "Facturen"
+      ],
+      "Device connected!": [
+        "Appparaat verbonden!"
+      ],
+      "TV log in": [
+        "TV inloggen"
+      ],
+      "Forgot username": [
+        "Gebruikersnaam vergeten"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "User log in": [
+        "Gebruikerslogin"
+      ],
+      "Redeem coupon": [
+        "Coupon inwisselen"
+      ],
+      "Redeem your coupon and start protecting your online privacy": [
+        "Uw coupon inwisselen en beginnen met het beschermen van uw online privacy"
+      ],
+      "Swiss Based": [
+        "Gevestigd in Zwitserland"
+      ],
+      "Secure Core Servers": [
+        "Secure Core Servers"
+      ],
+      "No Logs": [
+        "Logboek is leeg"
+      ],
+      "Kill Switch": [
+        "Kill Switch"
+      ],
+      "DNS leak prevention": [
+        "DNS-lekbescherming"
+      ],
+      "Strong encryption": [
+        "Sterke versleuteling"
+      ],
+      "Checking invitation parameters": [
+        "Uitnodigingsparameters controleren"
+      ],
+      "You already have a Proton account": [
+        "U heeft al een Proton account"
+      ],
+      "Create an account": [
+        "Een account aanmaken"
+      ],
+      "Already have a Proton account?": [
+        "Heeft u al een Proton account?"
+      ],
+      "ProtonVPN plan comparison": [
+        "ProtonVPN abonnement vergelijking"
+      ],
+      "Select an account verification method": [
+        "Selecteer een account verificatiemethode"
+      ],
+      "Resend code": [
+        "Verstuur code opnieuw"
+      ],
+      "Enter verification code": [
+        "Voer verificatiecode in"
+      ],
+      "Are you human?": [
+        "Bent u een mens?"
+      ],
+      "Provide payment details": [
+        "Geef uw betalingsgegevens op"
+      ],
+      "${ title } plan details": [
+        "${ title } abonnement details"
+      ],
+      "Upgrade and get more": [
+        "Upgrade en krijg meer"
+      ],
+      "Summary": [
+        "Overzicht"
+      ],
+      "Account created": [
+        "Account aangemaakt"
+      ],
+      "Sign up": [
+        "Registreren"
+      ],
+      "Settings": [
+        "Instellingen"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1965,6 +2299,12 @@
       ],
       "Choose a new password": [
         "Kies een nieuw wachtwoord"
+      ],
+      "Enter coupon code": [
+        "Voer couponcode in"
+      ],
+      "Confirm password": [
+        "Bevestig wachtwoord"
       ]
     },
     "Warning": {
@@ -2007,6 +2347,51 @@
     "Header": {
       "Get help": [
         ""
+      ],
+      "Help": [
+        "Help"
+      ],
+      "Simultaneous connections": [
+        "Simultanee verbindingen"
+      ],
+      "Countries": [
+        "Landen"
+      ],
+      "Speed": [
+        "Snelheid"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "P2P filesharing/BitTorrent ondersteuning"
+      ],
+      "Tor over VPN": [
+        "Tor via VPN"
+      ],
+      "Secure Core VPN": [
+        "Secure Core VPN"
+      ],
+      "Apps for Android / Linux / iOS / Windows": [
+        "Apps voor Android / Linux / iOS / Windows"
+      ],
+      "Advanced encryption": [
+        "Geavanceerde encryptie"
+      ],
+      "Kill Switch / Always-on": [
+        "Kill Switch / Altijd ingeschakeld"
+      ],
+      "No logs policy": [
+        "Geen logbestandenbeleid"
+      ],
+      "No data limits": [
+        "Geen data limieten"
+      ],
+      "Access blocked content": [
+        "Toegang tot geblokkeerde inhoud"
+      ],
+      "30-day money-back guarantee": [
+        "30-dagen geld terug garantie"
+      ],
+      "Streaming service support": [
+        "Streaming service ondersteuning"
       ]
     },
     "Onboarding Proton": {
@@ -2206,6 +2591,24 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Save 20% when billed annually": [
+        "Bespaar 20% wanneer u jaarlijks betaalt"
+      ],
+      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
+        "Biedt extra bescherming tegen VPN server bootstelling door te verbinden met ons Secure Core nerwerk"
+      ],
+      "Includes ProtonMail encrypted email with all features": [
+        "Bevat ProtonMail versleutelde e-mail met alle functies"
+      ],
+      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
+        "Gebruikersnaam gebruikt voor alle Proton diensten. Deze kan later ook gebruikt worden om een veilig ProtonMail account aan te maken."
+      ],
+      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
+        "Als u uw wachtwoord vergeet, heeft u geen toegang meer tot uw account of uw gegevens. Sla deze s.v.p. op een veilige plaats op."
+      ],
+      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
+        "Uw e-mailadres wordt niet gedeeld met derden en wordt alleen gebruikt voor herstel en accountgerelateerde vragen of communicatie."
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -2371,8 +2774,58 @@
         "${ n } VPN-verbindingen"
       ],
       "${ n } server": [
+        "${ n } server",
+        "${ n } servers"
+      ],
+      "${ freeServersCount.free_vpn } server": [
+        "${ freeServersCount.free_vpn } server",
+        "${ freeServersCount.free_vpn } servers"
+      ],
+      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
+        "Meer dan 350 servers in ${ landen[PLANS.VPNBASIC].count } land",
+        "Meer dan 350 servers in ${ landen[PLANS.VPNBASIC].count }+ landen"
+      ],
+      "High speed": [
+        "Hoge Snelheid"
+      ],
+      "Filesharing/P2P support": [
+        "Filesharing/P2P support"
+      ],
+      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
         "",
         ""
+      ],
+      "${ maxConnections } VPN connection": [
+        "${ maxConnections } VPN-verbinding",
+        "${ maxConnections } VPN-verbindingen"
+      ],
+      "Medium speed": [
+        "Gemiddelde snelheid"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logboekbeleid"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Hoogste snelheid (tot 10 Gbps)"
+      ],
+      "Streaming service support": [
+        "Streaming service ondersteuning"
+      ],
+      "All advanced security features": [
+        "Alle geavanceerde beveiligingsfuncties"
+      ],
+      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
+        "1200 servers in ${ landen[PLANS.VPNPLUS].count } land",
+        "1200 servers in ${ landen[PLANS.VPNPLUS].count } landen"
+      ],
+      "ProtonMail Visionary account": [
+        "ProtonMail Visionary account"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Hoogste snelheid (10 Gbps)"
+      ],
+      "ProtonMail Plus account": [
+        "ProtonMail Plus account"
       ]
     },
     "Netflix": {
@@ -2488,6 +2941,24 @@
       ],
       "50 addresses": [
         "50 adressen"
+      ],
+      "P2P/BitTorrent support": [
+        "P2P/Bittorrent ondersteuning"
+      ],
+      "Adblocker (NetShield)": [
+        "Adblocker (NetShield)"
+      ],
+      "Secure Core VPN": [
+        "Secure Core VPN"
+      ],
+      "Tor over VPN": [
+        "Tor via VPN"
+      ],
+      "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
+        "Alle ${ PLAN_NAMES[PLAN.PLUS] } plan functies"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "P2P filesharing/BitTorrent ondersteuning"
       ]
     },
     "Billing cycle option": {
@@ -2510,6 +2981,9 @@
     "Price": {
       "Free": [
         "Gratis"
+      ],
+      "FREE": [
+        "GRATIS"
       ]
     },
     "Countdown unit": {
@@ -2576,6 +3050,15 @@
     "Suffix": {
       "/ month": [
         "/ maand"
+      ],
+      "/monthly": [
+        "/maandelijks"
+      ],
+      "/2-year": [
+        "/2-jaar"
+      ],
+      "/year": [
+        "/jaar"
       ]
     },
     "Option": {
@@ -2656,6 +3139,12 @@
       ],
       "Free server configs": [
         "Gratis server configuraties"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "State": {
@@ -2666,6 +3155,9 @@
     "Plan info": {
       "(current plan)": [
         "(huidig abonnement)"
+      ],
+      "Most popular": [
+        "Meest populair"
       ]
     },
     "Free price": {
@@ -2771,6 +3263,15 @@
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      ],
+      "Coupons are temporarily disabled": [
+        "Coupons zijn tijdelijk uitgeschakeld"
+      ],
+      "Invites are temporarily disabled": [
+        "Uitnodigingen zijn tijdelijk uitgeschakeld"
+      ],
+      "Verification code successfully sent to ${ destination }": [
+        "Verificatiecode succesvol verstuurd naar ${ destination }"
       ]
     },
     "VPNClient": {
@@ -2996,6 +3497,137 @@
     "Password": {
       "Confirm new password": [
         "Bevestig nieuw wachtwoord"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
+    "Plan details": {
+      "Medium": [
+        "Gemiddeld"
+      ],
+      "High": [
+        "Hoog"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Hoogste snelheid (tot 10 Gbps)"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Hoogste snelheid (10 Gbps)"
+      ]
+    },
+    "Dropdown button": {
+      "Need help?": [
+        "Heeft u hulp nodig?"
+      ]
+    },
+    "Image alt": {
+      "Laptop & smartphone shown connected to ProtonVPN network.": [
+        "Laptop & smartphone toont aangesloten te zijn op het ProtonVPN netwerk."
+      ],
+      "Swiss based": [
+        "Gevestigd in Zwitserland"
+      ],
+      "Secure core servers": [
+        "Secure Core servers"
+      ],
+      "No logs": [
+        "Geen logboeken"
+      ],
+      "Kill switch to prevent IP exposure": [
+        "Kill switch om IP-blootstelling te voorkomen"
+      ],
+      "DNS leak prevention": [
+        "DNS-lekbescherming"
+      ],
+      "Strong encryption": [
+        "Sterke versleuteling"
+      ]
+    },
+    "About": {
+      "Protect your data with Swiss privacy laws, some of the strongest in the world": [
+        "Bescherm uw gegevens met de Zwitserse privacywetgeving, een van de sterkste ter wereld"
+      ],
+      "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
+        "Verdedig uzelf tegen geavanceerde netwerkaanvallen door uw verkeer via beveiligde servers te leiden"
+      ],
+      "Keep your browsing history private - we do not keep any records of our users' online activity": [
+        "Houd uw surfgeschiedenis privé - we houden geen gegevens bij van de online activiteiten van onze gebruikers"
+      ],
+      "Keep your data secure even if you are disconnected from your VPN server": [
+        "Houd uw gegevens veilig zelfs als u niet verbonden bent met de VPN server"
+      ],
+      "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
+        "Voorkom dat uw DNS verzoeken uw surfgeschiedenis onthullen door al uw DNS queries te versleutelen"
+      ],
+      "Defend your Internet connection with AES-256, the highest strength encryption.": [
+        "Verdedig uw internetverbinding met AES-256, de sterkste versleuteling."
+      ]
+    },
+    "PlanPrice": {
+      "${ totalMonthlyPriceText } / mo": [
+        "${ totalMonthlyPriceText } / maand"
+      ],
+      "Billed as ${ totalBilledText }": [
+        "Gefactureerd als ${ totalBilledText }"
+      ],
+      "SAVE ${ discountText }": [
+        "BESPAAR ${ discountText }"
+      ]
+    },
+    "Plan Action": {
+      "Get ${ plan.title }": [
+        "Verkrijg ${ plan.title }"
+      ]
+    },
+    "Plan Description": {
+      "Privacy and security for everyone": [
+        "Privacy en veiligheid voor iedereen"
+      ],
+      "Basic privacy features": [
+        "Basic privacy eigenschappen"
+      ],
+      "Advanced security features": [
+        "Geavanceerde beveiligingsfuncties"
+      ],
+      "The complete privacy suite": [
+        "Het volledige privacypakket"
+      ],
+      "Bundle plan": [
+        "Bundelabonnement"
+      ]
+    },
+    "VerificationType": {
+      "email": [
+        "e-mail"
+      ],
+      "phone": [
+        "telefoon"
+      ]
+    },
+    "Plan upsell": {
+      "Monthly plan": [
+        "Maandelijks abonnement"
+      ],
+      "Yearly plan": [
+        "Jaarlijks abonnement"
       ]
     },
     "blackfriday Info": {
