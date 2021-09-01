@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, MutableRefObject, useImperativeHandle } from 'react';
+import { c } from 'ttag';
 import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
-import { useConfig } from '../../hooks';
+import { useConfig, useNotifications } from '../../hooks';
 
 // The sizes for these are hardcoded since the widget calculates it based on the viewport, and since it's in
 // an iframe it needs to have something reasonable.
@@ -15,12 +16,29 @@ const CLOSED_SIZE = {
     width: `${140 / 16}rem`,
 };
 
+const SINGLE_CHAT_KEY = 'zk_state';
+const SINGLE_CHAT_TIMEOUT = 10000;
+
 const getIframeUrl = (apiUrl: string, zendeskKey: string) => {
     const url = new URL(apiUrl, window.location.origin);
     url.hostname = getRelativeApiHostname(url.hostname);
     url.pathname = '/core/v4/resources/zendesk';
     url.searchParams.set('Key', zendeskKey);
     return url;
+};
+
+export const getIsSelfChat = () => {
+    return sessionStorage.getItem(SINGLE_CHAT_KEY);
+};
+const removeSelfActiveMarker = () => {
+    return sessionStorage.removeItem(SINGLE_CHAT_KEY);
+};
+const getIsActiveInAnotherWindow = () => {
+    return !getIsSelfChat() && +(localStorage.getItem(SINGLE_CHAT_KEY) || 0) > Date.now();
+};
+const setActiveMarker = () => {
+    localStorage.setItem(SINGLE_CHAT_KEY, `${+Date.now() + SINGLE_CHAT_TIMEOUT}`);
+    sessionStorage.setItem(SINGLE_CHAT_KEY, '1');
 };
 
 export interface ZendeskRef {
@@ -224,4 +242,52 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
         />
     );
 };
-export default LiveChatZendesk;
+
+const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
+    const { createNotification } = useNotifications();
+    const [isActive, setIsActive] = useState(() => !getIsActiveInAnotherWindow());
+    const actualZendeskRef = useRef<ZendeskRef>();
+
+    useEffect(() => {
+        const interval = window.setInterval(() => {
+            if (getIsActiveInAnotherWindow()) {
+                return;
+            }
+            setIsActive(true);
+            setActiveMarker();
+        }, SINGLE_CHAT_TIMEOUT / 2);
+
+        return () => {
+            clearInterval(interval);
+            removeSelfActiveMarker();
+        };
+    }, []);
+
+    useImperativeHandle(zendeskRef, () => ({
+        run: (...args) => actualZendeskRef.current?.run(...args),
+        show: (...args) => {
+            if (getIsActiveInAnotherWindow()) {
+                createNotification({
+                    text: c('Info').t`Chat active in another window`,
+                    type: 'error',
+                });
+                return;
+            }
+            actualZendeskRef.current?.show(...args);
+        },
+    }));
+
+    useEffect(() => {
+        if (!isActive) {
+            rest.onLoaded();
+        }
+    }, []);
+
+    if (!isActive) {
+        return null;
+    }
+
+    return <LiveChatZendesk zendeskRef={actualZendeskRef} {...rest} />;
+};
+
+export default LiveChatZendeskSingleton;

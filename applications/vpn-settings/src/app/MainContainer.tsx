@@ -16,13 +16,12 @@ import {
     MainLogo,
     ErrorBoundary,
     StandardErrorPage,
-    LiveChatZendesk,
-    ZendeskRef,
     AuthenticatedBugModal,
     useModals,
     useUserSettings,
 } from '@proton/components';
 import { hasPermission } from '@proton/shared/lib/helpers/permissions';
+import LiveChatZendesk, { ZendeskRef, getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { c } from 'ttag';
 import { getPages } from './pages';
 import DashboardContainer from './containers/DashboardContainer';
@@ -53,7 +52,7 @@ const MainContainer = () => {
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
-        const hasChatRequest = searchParams.get('chat');
+        const hasChatRequest = searchParams.get('chat') || getIsSelfChat();
 
         searchParams.delete('chat');
         history.replace({
