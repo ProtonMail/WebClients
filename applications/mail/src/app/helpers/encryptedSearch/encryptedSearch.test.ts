@@ -224,7 +224,7 @@ describe('encryptedSearch', () => {
 
         it('should derive the correct time boundaries without end', () => {
             const { lower, upper } = getTimeLimits(1619679525, 1619279525, undefined);
-            expect(lower[0]).toEqual(1619279525);
+            expect(lower[0] - timeOffset).toEqual(1619568000);
             expect(upper[0]).toEqual(1619679524);
         });
 

@@ -696,6 +696,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             permanentResults,
             isSearchPartial: wasSearchPartial,
             cachedIndexKey,
+            isCaching,
         } = esStatus;
 
         if (!dbExists || !esEnabled) {
@@ -710,6 +711,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // Prevent old searches from interfering with newer ones
         abortSearchingRef.current.abort();
+
+        // Caching needs to be triggered here for when a refresh happens on a search URL
+        if (!isCaching && !esCacheRef.current.isCacheReady) {
+            void cacheIndexedDB();
+        }
 
         const searchParameters = extractSearchParameters(location);
         const filterParameter = filterFromUrl(location);
@@ -822,8 +828,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return;
         }
 
-        const lastFilledPage = Math.floor(permanentResults.length / PAGE_SIZE) - 1;
-        if (page <= pageRef.current || page < lastFilledPage) {
+        const lastFilledPage = Math.ceil(permanentResults.length / PAGE_SIZE) - 1;
+        if (page <= pageRef.current || page < lastFilledPage - 1) {
             return;
         }
 

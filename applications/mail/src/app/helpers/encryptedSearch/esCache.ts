@@ -69,10 +69,28 @@ export const checkIsCacheLimited = async (userID: string, esCacheRef: React.Muta
 };
 
 /**
- * Callback to sort cached messages by Time and Order
+ * Callback to sort cached messages by Time and Order, such that the last element is the oldest
  */
 export const sortCachedMessages = (firstEl: ESMessage, secondEl: ESMessage) => {
     return secondEl.Time - firstEl.Time || secondEl.Order - firstEl.Order;
+};
+
+/**
+ * Remove extra messages from cache
+ */
+export const trimCache = (esCacheRef: React.MutableRefObject<ESCache>) => {
+    esCacheRef.current.esCache.sort(sortCachedMessages);
+
+    let rollingSize = 0;
+    for (let index = 0; index < esCacheRef.current.esCache.length; index++) {
+        if (rollingSize >= ES_MAX_CACHE) {
+            esCacheRef.current.esCache = esCacheRef.current.esCache.slice(0, index);
+            esCacheRef.current.cacheSize = rollingSize;
+            return;
+        }
+
+        rollingSize += sizeOfCachedMessage(esCacheRef.current.esCache[index]);
+    }
 };
 
 /**
@@ -85,12 +103,6 @@ export const cacheDB = async (
     endTime?: number,
     beginOrder?: number
 ) => {
-    // If IDB is empty, there is nothing to cache
-    if ((await getNumMessagesDB(userID)) === 0) {
-        esCacheRef.current.isCacheLimited = false;
-        return;
-    }
-
     const queryStart = await initialiseQuery(userID, beginOrder, undefined, endTime);
     const { getTimes, initialTime } = queryStart;
     let { lower, upper, startingOrder } = queryStart;
@@ -116,8 +128,9 @@ export const cacheDB = async (
 
     esDB.close();
 
-    // Sort the cached messages by time, such that the last element is the oldest
-    esCacheRef.current.esCache.sort(sortCachedMessages);
+    // Since batches are processed as a whole, trimming is necessery to make sure the cache
+    // size limit is not exceeded by too much
+    trimCache(esCacheRef);
     esCacheRef.current.isCacheLimited = await checkIsCacheLimited(userID, esCacheRef);
 };
 
