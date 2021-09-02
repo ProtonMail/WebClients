@@ -83,7 +83,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
             'prefill',
             {
                 name: { value: name, readOnly: true },
-                email: { value: email, readOnly: true },
+                email: { value: email, readOnly: Boolean(email) },
             },
         ]);
     }, [state.loaded, name, email]);
