@@ -159,7 +159,7 @@ const EventForm = ({
     );
 
     const locationRow = (
-        <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
+        <IconRow icon="map-marker" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
             <Input
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
