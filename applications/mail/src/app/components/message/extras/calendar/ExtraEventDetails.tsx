@@ -83,7 +83,6 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
             {properties.map(({ value, icon, label, key }, index) => {
                 return (
                     <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
-                        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                         <span className="on-mobile-mr0" title={label}>
                             <Icon name={icon} className={iconClassName} />
                         </span>
