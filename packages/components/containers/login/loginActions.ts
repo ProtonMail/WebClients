@@ -191,7 +191,7 @@ const handleKeyUpgrade = async ({
     addresses?: tsAddress;
     isOnePasswordMode?: boolean;
 }) => {
-    const { authApi, hasGenerateKeys, keyMigrationFeatureValue } = cache;
+    const { authApi, hasGenerateKeys } = cache;
 
     const [User, Addresses] = await Promise.all([
         maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
@@ -208,7 +208,8 @@ const handleKeyUpgrade = async ({
             keyPassword,
             clearKeyPassword,
             isOnePasswordMode,
-            hasAddressKeyMigration: User.ToMigrate === 1 && getHasKeyMigrationRunner(keyMigrationFeatureValue),
+            // The API checks if the user has migrated keys, not if ToMigrate is truthy
+            hasAddressKeyMigration: false,
             api: authApi,
         }).catch((e) => {
             traceError(e);
