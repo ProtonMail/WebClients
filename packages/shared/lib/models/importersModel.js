@@ -2,11 +2,11 @@ import { getMailImports, getMailImportReports } from '../api/mailImport';
 import updateCollection from '../helpers/updateCollection';
 
 export const getImportersModel = (api) => {
-    return api(getMailImports()).then(({ Importers }) => Importers);
+    return api(getMailImports()).then(({ Importers }) => Importers).catch(() => []);;
 };
 
 export const getImportHistoriesModel = (api) => {
-    return api(getMailImportReports()).then(({ Imports }) => Imports);
+    return api(getMailImportReports()).then(({ Imports }) => Imports).catch(() => []);
 };
 
 export const ImportersModel = {
