@@ -58,6 +58,7 @@ const validateMemberLogin = (
 
 const MemberActions = ({ member, addresses = [], organization, organizationKey }: Props) => {
     const api = useApi();
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const { call } = useEventManager();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
@@ -90,7 +91,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
         });
 
         if (isSSOMode) {
-            const memberApi = <T,>(config: any) => api<T>(withUIDHeaders(UID, config));
+            const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
             const User = await memberApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
             const done = (localID: number) => {
@@ -102,7 +103,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
                 }
             };
 
-            const validatedSession = await maybeResumeSessionByUser(api, User);
+            const validatedSession = await maybeResumeSessionByUser(silentApi, User);
             if (validatedSession) {
                 memberApi(revoke()).catch(noop);
                 done(validatedSession.LocalID);
