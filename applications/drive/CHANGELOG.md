@@ -1,4 +1,4 @@
-# [4.0.0-beta.19] - 2021-08-25
+# [4.0.0-beta.19] - 2021-09-01
 
 Just in time for the new season, this latest release improves how you secure and interact with your data. We give you more control when uploading and downloading multiple files and also made a number of fixes and UX improvements to enhance the everyday convenience of using Proton Drive.
 
