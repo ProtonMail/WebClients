@@ -6,6 +6,9 @@ import {
     SettingsPropsShared,
     PmMeSection,
     useAddresses,
+    useFeature,
+    FeatureCode,
+    SpyTrackerTemporarySection,
 } from '@proton/components';
 
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
@@ -34,6 +37,10 @@ export const getGeneralPage = (user: UserModel, showPmMeSection: boolean) => {
                 text: c('Title').t`Advanced`,
                 id: 'advanced',
             },
+            {
+                text: c('Title').t`Spy Tracker Protection`,
+                id: 'spy-tracker',
+            },
         ].filter(isTruthy),
     };
 };
@@ -44,6 +51,7 @@ interface Props extends SettingsPropsShared {
 
 const MailGeneralSettings = ({ location, user }: Props) => {
     const [addresses, loading] = useAddresses();
+    const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
 
     if (loading && !Array.isArray(addresses)) {
         return <PrivateMainAreaLoading />;
@@ -60,6 +68,7 @@ const MailGeneralSettings = ({ location, user }: Props) => {
             {showPmMeSection && <PmMeSection isPMAddressActive={isPMAddressActive} />}
             <MessagesSection />
             <MailGeneralAdvancedSection />
+            {feature?.Value ? <SpyTrackerTemporarySection /> : null}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };

@@ -49,6 +49,7 @@ export enum FeatureCode {
     KeyMigration = 'KeyMigration',
     CalendarEmailNotification = 'CalendarEmailNotification',
     Mnemonic = 'Mnemonic',
+    SpyTrackerProtection = 'SpyTrackerProtection',
 }
 
 export interface FeaturesContextValue {
