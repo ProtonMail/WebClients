@@ -1,4 +1,5 @@
 import withApiHandlers, { InactiveSessionError } from '../../lib/api/helpers/withApiHandlers';
+import { withUIDHeaders } from '../../lib/fetch/headers';
 
 const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }) => {
     const error = new Error(message);
@@ -193,6 +194,31 @@ describe('auth handlers', () => {
         const r2 = api(123);
         await expectAsync(r2).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(4);
+    });
+
+    it('should only error with InactiveSession if the initial UID is the same', async () => {
+        const returns = [
+            () => Promise.reject(getApiError({ status: 401 })),
+            () => Promise.reject(getApiError({ status: 400 })),
+            () => Promise.reject(getApiError({ status: 401 })),
+            () => Promise.reject(getApiError({ status: 400 })),
+        ];
+        let i = 0;
+        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
+        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+            return e;
+        });
+        const api = withApiHandlers({ call, UID: '123' });
+
+        const error = await api(withUIDHeaders('321', {})).catch(handleError);
+        expect(error.status).toBe(401);
+        expect(call).toHaveBeenCalledTimes(2);
+        expect(handleError).toHaveBeenCalledTimes(1);
+
+        const error2 = await api({}).catch(handleError);
+        expect(error2.name).toBe('InactiveSession');
+        expect(call).toHaveBeenCalledTimes(4);
+        expect(handleError).toHaveBeenCalledTimes(2);
     });
 
     it('should refresh once and handle 429 max attempts', async () => {

@@ -178,25 +178,32 @@ export default ({ call, UID, onUnlock, onVerification }) => {
 
                 const ignoreUnauthorized =
                     Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.UNAUTHORIZED);
-                const requestUID = (headers && headers['x-pm-uid']) || UID;
+                const requestUID = headers?.['x-pm-uid'] ?? UID;
                 // Sending a request with a UID but without an authorization header is when the public app makes
                 // authenticated requests (mostly for persisted sessions), and ignoring "login" or "signup" requests.
                 if (
                     status === HTTP_ERROR_CODES.UNAUTHORIZED &&
                     !ignoreUnauthorized &&
-                    (UID || (requestUID && !(headers && !!headers.Authorization)))
+                    (UID || (requestUID && !headers?.Authorization))
                 ) {
                     return refreshHandler(requestUID, getDateHeader(response && response.headers)).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (error) => {
-                            // Any 4xx and the session is no longer valid, 429 is already handled in the refreshHandler
+                            // Any 4xx from the refresh call and the session is no longer valid, 429 is already handled in the refreshHandler
                             if (error.status >= 400 && error.status <= 499) {
-                                // Disable any further requests on this session if it was created with a UID
-                                if (UID) {
+                                // Disable any further requests on this session if it was created with a UID and the request was done with the failing UID
+                                if (UID && requestUID === UID) {
                                     loggedOut = true;
+                                    // Inactive session error is only thrown when this error was caused by a logged in session requesting through the same UID
+                                    // to have a specific error consumers can use
+                                    throw InactiveSessionError();
                                 }
-                                throw InactiveSessionError();
+                                // The original 401 error is thrown to make it more clear that this auth & refresh failure
+                                // was caused by an original auth failure and consumers can just check for 401 instead of 4xx
+                                throw e;
                             }
+                            // Otherwise, this is not actually an authentication error, it might have failed because the API responds with 5xx, or because the client is offline etc
+                            // and as such the error from the refresh call is thrown
                             throw error;
                         }
                     );

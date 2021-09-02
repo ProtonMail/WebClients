@@ -162,10 +162,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     }
 
                     if (e.name === 'InactiveSession') {
-                        // Logout if the provider was created with a UID
-                        if (UID) {
-                            onLogout();
-                        }
+                        onLogout();
                         throw e;
                     }
 
