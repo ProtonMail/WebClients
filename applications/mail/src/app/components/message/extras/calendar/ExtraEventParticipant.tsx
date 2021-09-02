@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
 
@@ -28,7 +29,7 @@ const ExtraEventParticipant = ({ participant, isOrganizer = false }: Props) => {
         return (
             <div className="flex flex-column">
                 {emailRow}
-                <div className="color-weak">Organizer</div>
+                <div className="color-weak">{c('ICS widget label for event details').t`Organizer`}</div>
             </div>
         );
     }

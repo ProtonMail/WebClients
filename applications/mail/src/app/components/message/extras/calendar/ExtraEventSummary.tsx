@@ -6,18 +6,18 @@ import {
     getOrganizerSummaryText,
 } from '../../../../helpers/calendar/summary';
 
-export const getSummaryParagraph = (text1?: string, text2?: string) => {
-    if (!text1 && !text2) {
+export const getSummaryContent = (firstLine?: string, secondLine?: string) => {
+    if (!firstLine && !secondLine) {
         return null;
     }
     const content =
-        text1 && text2 ? (
+        firstLine && secondLine ? (
             <>
-                <span>{text1}</span>
-                <span>{text2}</span>
+                <span>{firstLine}</span>
+                <span>{secondLine}</span>
             </>
         ) : (
-            <span>{text1 || text2}</span>
+            <span>{firstLine || secondLine}</span>
         );
 
     return <div className="mt0-5 mb0-5 rounded bordered bg-weak p0-5 flex flex-column">{content}</div>;
@@ -35,7 +35,7 @@ const ExtraEventSummary = ({ model }: Props) => {
         return null;
     }
 
-    return getSummaryParagraph(hasBeenUpdatedText, summaryText);
+    return getSummaryContent(hasBeenUpdatedText, summaryText);
 };
 
 export default ExtraEventSummary;
