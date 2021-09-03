@@ -49,7 +49,7 @@ const getClient = () => {
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
-const postMessage = windowIsEmbedded ? window.parent.postMessage : window.postMessage;
+const postMessage = windowIsEmbedded ? window.parent.postMessage.bind(window.parent) : window.postMessage.bind(window);
 
 const replyToOrigin = (token: string, tokenType: HumanVerificationMethodType, origin: string) => {
     const client = getClient();
@@ -108,6 +108,7 @@ const Verification = () => {
     const getOriginError = () => {
         return new Error('origin parameter missing');
     };
+
     const sendHeight = (resizes: ResizeObserverEntry[]) => {
         if (!origin) {
             throw getOriginError();
