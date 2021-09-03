@@ -9,11 +9,16 @@ export enum CALENDAR_TYPE {
     SUBSCRIPTION = 1,
 }
 
+export enum CalendarDisplay {
+    HIDDEN = 0,
+    VISIBLE = 1,
+}
+
 export interface Calendar {
     ID: string;
     Name: string;
     Description: string;
-    Display: 0 | 1;
+    Display: CalendarDisplay;
     Color: string;
     Flags: number;
     Type: CALENDAR_TYPE;
