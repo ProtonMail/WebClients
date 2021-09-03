@@ -69,6 +69,7 @@ export interface MessageEmbeddedImage {
     type: 'embedded';
     original?: HTMLElement;
     cid: string;
+    cloc: string;
     url?: string;
     attachment: Attachment;
     id: string;

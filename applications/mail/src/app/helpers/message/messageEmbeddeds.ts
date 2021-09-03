@@ -38,17 +38,20 @@ export const isEmbeddable = (fileType: string) => embeddableTypes.includes(fileT
 /**
  * Read CID of the attachment (through its header)
  */
-export const readCID = ({ Headers = {} }: Attachment = {}) => {
+export const readContentIDandLocation = ({ Headers = {} }: Attachment = {}) => {
+    let cid = '';
+    let cloc = '';
+
     if (Headers['content-id']) {
-        return trimQuotes(Headers['content-id']);
+        cid = trimQuotes(Headers['content-id']);
     }
 
     // We can find an image without cid so base64 the location
     if (Headers['content-location']) {
-        return trimQuotes(Headers['content-location']);
+        cloc = trimQuotes(Headers['content-location']);
     }
 
-    return '';
+    return { cid, cloc };
 };
 
 /**
@@ -71,30 +74,43 @@ export const createBlob = (attachment: Attachment, data: Uint8Array | string) =>
 /**
  * Prepare MessageEmbeddedImage structure based on an upload result
  */
-export const createEmbeddedImageFromUpload = (upload: UploadResult): MessageEmbeddedImage => ({
-    type: 'embedded',
-    id: generateUID('embedded'),
-    cid: readCID(upload.attachment),
-    attachment: upload.attachment,
-    status: 'loaded',
-});
+export const createEmbeddedImageFromUpload = (upload: UploadResult): MessageEmbeddedImage => {
+    const { cid, cloc } = readContentIDandLocation(upload.attachment);
+
+    return {
+        type: 'embedded',
+        id: generateUID('embedded'),
+        cid,
+        cloc,
+        attachment: upload.attachment,
+        status: 'loaded',
+    };
+};
 
 /**
  * Find embedded element in div
  */
-export const findEmbedded = (cid: string, document: Element) => {
-    // If cid is an empty string, it can give a false positive
-    if (!cid) {
+export const findEmbedded = (cid: string, cloc: string, document: Element) => {
+    let selector: string[] = [];
+
+    // If cid and cloc are an empty string, it can give a false positive
+    if (!cid && !cloc) {
         return [];
     }
-    const selector = [
-        `img[src="${cid}"]`,
-        `img[src="cid:${cid}"]`,
-        `img[data-embedded-img="${cid}"]`,
-        `img[data-embedded-img="cid:${cid}"]`,
-        `img[data-src="cid:${cid}"]`,
-        `img[proton-src="cid:${cid}"]`,
-    ];
+
+    if (cid) {
+        selector = [
+            `img[src="${cid}"]`,
+            `img[src="cid:${cid}"]`,
+            `img[data-embedded-img="${cid}"]`,
+            `img[data-embedded-img="cid:${cid}"]`,
+            `img[data-src="cid:${cid}"]`,
+            `img[proton-src="cid:${cid}"]`,
+        ];
+    }
+    if (cloc) {
+        selector = [...selector, `img[proton-src="${cloc}"]`];
+    }
 
     return querySelectorAll({ document }, selector.join(', '));
 };
@@ -131,7 +147,10 @@ export const replaceEmbeddedAttachments = (
 ) => {
     const embeddedImages = getEmbeddedImages(message);
     const newEmbeddedImages = embeddedImages.map((image) => {
-        const attachment = attachments.find((attachment) => readCID(attachment) === image.cid);
+        const attachment = attachments.find((attachment) => {
+            const { cid, cloc } = readContentIDandLocation(attachment);
+            return image.cid === cid || image.cloc === cloc;
+        });
         if (attachment) {
             return { ...image, attachment };
         }
@@ -144,8 +163,8 @@ export const replaceEmbeddedAttachments = (
  * Remove an embedded attachment from the document
  */
 export const removeEmbeddedHTML = (document: Element, attachment: Attachment) => {
-    const cid = readCID(attachment);
-    const elements = findEmbedded(cid, document);
+    const { cid, cloc } = readContentIDandLocation(attachment);
+    const elements = findEmbedded(cid, cloc, document);
     elements.map((node) => node.remove());
 };
 
@@ -154,9 +173,9 @@ export const removeEmbeddedHTML = (document: Element, attachment: Attachment) =>
  */
 export const insertBlobImages = (document: Element, embeddedImages: MessageEmbeddedImage[]) => {
     embeddedImages.forEach((embeddedImage) => {
-        const { cid, url } = embeddedImage;
+        const { cid, cloc, url } = embeddedImage;
         if (url) {
-            findEmbedded(cid, document).forEach((element) => {
+            findEmbedded(cid, cloc, document).forEach((element) => {
                 element.removeAttribute('proton-src');
                 element.setAttribute('src', url);
             });

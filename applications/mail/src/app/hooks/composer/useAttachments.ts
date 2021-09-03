@@ -16,7 +16,11 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
-import { createEmbeddedImageFromUpload, isEmbeddable, readCID } from '../../helpers/message/messageEmbeddeds';
+import {
+    createEmbeddedImageFromUpload,
+    isEmbeddable,
+    readContentIDandLocation,
+} from '../../helpers/message/messageEmbeddeds';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 
 export interface PendingUpload {
@@ -217,10 +221,10 @@ export const useAttachments = ({
         onChange((message: MessageExtended) => {
             const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
 
-            const cid = readCID(attachment);
+            const { cid, cloc } = readContentIDandLocation(attachment);
             const embeddedImages = getEmbeddedImages(message);
-            const embeddedImage = embeddedImages.find((image) => image.cid === cid);
-            const newEmbeddedImages = embeddedImages.filter((image) => image.cid !== cid);
+            const embeddedImage = embeddedImages.find((image) => image.cid === cid || image.cloc === cloc);
+            const newEmbeddedImages = embeddedImages.filter((image) => image.cid !== cid || image.cloc === cloc);
 
             if (embeddedImage) {
                 setTimeout(() => {
