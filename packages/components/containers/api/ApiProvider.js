@@ -126,7 +126,14 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     }
                     setApiServerTime(updateServerTime(serverTime));
                     setApiStatus(defaultApiStatus);
-                    return output === 'stream' ? response.body : response[output]();
+
+                    if (output === 'stream') {
+                        return response.body;
+                    }
+                    if (output === 'raw') {
+                        return response;
+                    }
+                    return response[output]();
                 })
                 .catch((e) => {
                     const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;

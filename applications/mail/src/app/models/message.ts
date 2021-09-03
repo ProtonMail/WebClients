@@ -52,28 +52,24 @@ export interface MessageVerification {
     attachedPublicKeys: OpenPGPKey[] | undefined;
 }
 
-/**
- * Message attachments limited to the embedded images
- * Mapped by the CID of the embedded attachment
- */
-// export type EmbeddedMap = Map<string, EmbeddedInfo>;
-
-export interface MessageRemoteImage {
-    type: 'remote';
-    original: HTMLElement;
-    url: string;
-    id: string;
-}
-
-export interface MessageEmbeddedImage {
-    type: 'embedded';
+export interface AbstractMessageImage {
+    type: 'remote' | 'embedded';
     original?: HTMLElement;
-    cid: string;
-    cloc: string;
     url?: string;
-    attachment: Attachment;
     id: string;
     status: 'not-loaded' | 'loading' | 'loaded';
+}
+
+export interface MessageRemoteImage extends AbstractMessageImage {
+    type: 'remote';
+    error?: unknown;
+}
+
+export interface MessageEmbeddedImage extends AbstractMessageImage {
+    type: 'embedded';
+    cid: string;
+    cloc: string;
+    attachment: Attachment;
 }
 
 export type MessageImage = MessageRemoteImage | MessageEmbeddedImage;
