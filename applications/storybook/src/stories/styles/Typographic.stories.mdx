@@ -154,7 +154,7 @@ import { Meta, Source } from '@storybook/addon-docs';
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 flex-align-self-center">
-      Applies standard <code>line-height</code> (defined with Sass variable <code>$base-line-height</code> in <code>design-system-config</code>) to element.<br /> 
+      Applies standard <code>line-height</code> (defined with Sass variable <code>$base-line-height</code> in <code>design-system-config</code>) to element.<br />
       This helps to fix some issues caused by vertical rhythm formulas (if you want to reduce <code>line-height</code>, you may use <code>lh100</code>, but use it wisely, it may create issues with user-generated content).
   </div>
   <div class="w49">
@@ -211,7 +211,7 @@ import { Meta, Source } from '@storybook/addon-docs';
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 flex-align-self-center">
-      Applies only <code>word-wrap: break-word;</code> to element (when hyphenation is not needed)
+      Applies only <code>word-break: break-word;</code> to element (when hyphenation is not needed), if needed, you have also <code>text-break-all</code> (<code>word-break: break-word;</code>).
   </div>
   <div class="w49">
 <Source
@@ -345,7 +345,7 @@ Other text alignment helpers: <code>align-top</code>,<code>align-bottom</code>, 
   dark
   format
   code={`
-<p>Example of 
+<p>Example of
   <button className="link align-baseline">
   why align-baseline is useful
   </button>…</p>

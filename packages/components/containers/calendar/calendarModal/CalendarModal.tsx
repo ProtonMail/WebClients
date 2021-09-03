@@ -168,7 +168,7 @@ export const CalendarModal = ({
                         <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
                         <Field className="flex flex-align-items-center">
                             {model.calendarID ? (
-                                addressText
+                                <span className="pt0-5">{addressText}</span>
                             ) : (
                                 <SelectTwo
                                     id="calendar-address-select"
@@ -184,7 +184,7 @@ export const CalendarModal = ({
                     </Row>
                     <Row>
                         <Label htmlFor="calendar-display-toggle">{c('Label').t`Display`}</Label>
-                        <Field>
+                        <Field className="pt0-25">
                             <Toggle
                                 id="calendar-display-toggle"
                                 checked={model.display}
@@ -237,7 +237,7 @@ export const CalendarModal = ({
                         <>
                             <Row>
                                 <Label>{c('Label').t`URL`}</Label>
-                                <span style={{ wordBreak: 'break-all' }}>
+                                <span className="pt0-5 text-break-all">
                                     <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>{subscribeURL}</TruncatedText>
                                 </span>
                             </Row>
