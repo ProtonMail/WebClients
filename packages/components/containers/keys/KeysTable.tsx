@@ -15,7 +15,6 @@ const KeysTable = ({
     onSetPrimary,
     onExportPrivateKey,
     onExportPublicKey,
-    onReactivateKey,
     onSetCompromised,
     onSetNotCompromised,
     onSetObsolete,
@@ -61,7 +60,6 @@ const KeysTable = ({
                                     key={3}
                                     isLoading={status.isLoading}
                                     ID={ID}
-                                    onReactivateKey={permissions.canReactivate ? onReactivateKey : undefined}
                                     onDeleteKey={permissions.canDelete ? onDeleteKey : undefined}
                                     onExportPublicKey={permissions.canExportPublicKey ? onExportPublicKey : undefined}
                                     onExportPrivateKey={

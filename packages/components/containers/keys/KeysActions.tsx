@@ -10,7 +10,6 @@ interface Props extends Partial<KeyActions> {
 const KeysActions = ({
     isLoading,
     ID,
-    onReactivateKey,
     onExportPublicKey,
     onExportPrivateKey,
     onSetPrimary,
@@ -21,10 +20,6 @@ const KeysActions = ({
     onSetNotObsolete,
 }: Props) => {
     const list = [
-        onReactivateKey && {
-            text: c('Keys actions').t`Reactivate`,
-            onClick: () => onReactivateKey(ID),
-        },
         onExportPublicKey && {
             text: c('Keys actions').t`Export`,
             onClick: () => onExportPublicKey(ID),

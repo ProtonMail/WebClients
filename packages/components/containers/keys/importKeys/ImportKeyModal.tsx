@@ -106,7 +106,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
         );
     };
 
-    const handleFiles = (keys: OpenPGPKey[]) => {
+    const handleUploadKeys = (keys: OpenPGPKey[]) => {
         const privateKeys = keys.filter((key) => key.isPrivate());
         if (privateKeys.length === 0) {
             return createNotification({
@@ -143,7 +143,13 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 children: (
                     <>
                         <Alert>{c('Label').t`Please select files to upload`}</Alert>
-                        <SelectKeyFiles ref={selectRef} onFiles={handleFiles} multiple className="hidden" autoClick />
+                        <SelectKeyFiles
+                            ref={selectRef}
+                            onUpload={handleUploadKeys}
+                            multiple
+                            className="hidden"
+                            autoClick
+                        />
                     </>
                 ),
             };
