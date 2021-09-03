@@ -308,6 +308,12 @@ export enum PACKAGE_TYPE {
     SEND_CLEAR_MIME = 32,
 }
 
+export enum PACKAGE_SIGNATURES_MODE {
+    SIGNATURES_NONE = 0,
+    SIGNATURES_ATTACHMENTS = 1,
+    SIGNATURES_BODY = 2,
+}
+
 export enum PGP_SCHEMES {
     PGP_INLINE = 'pgp-inline',
     PGP_MIME = 'pgp-mime',
