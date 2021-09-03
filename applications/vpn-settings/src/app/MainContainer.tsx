@@ -50,20 +50,21 @@ const MainContainer = () => {
     );
     const { createModal } = useModals();
     const zendeskRef = useRef<ZendeskRef>();
-    const [showChat, setShowChat] = useState(false);
+    const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const canEnableChat = useCanEnableChat(user);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
-        const hasChatRequest = searchParams.get('chat') || getIsSelfChat();
+        const hasChatRequest = !!searchParams.get('chat');
+        const isSelfChat = getIsSelfChat();
 
         searchParams.delete('chat');
         history.replace({
             search: searchParams.toString(),
         });
-        if (hasChatRequest) {
+        if (hasChatRequest || isSelfChat) {
             if (canEnableChat) {
-                setShowChat(true);
+                setShowChat({ autoToggle: hasChatRequest, render: true });
             } else {
                 createModal(<AuthenticatedBugModal mode="chat-unavailable" />);
             }
@@ -86,8 +87,8 @@ const MainContainer = () => {
             onOpenChat={
                 canEnableChat
                     ? () => {
-                          setShowChat(true);
-                          zendeskRef.current?.show();
+                          setShowChat({ autoToggle: true, render: true });
+                          zendeskRef.current?.toggle();
                       }
                     : undefined
             }
@@ -161,13 +162,20 @@ const MainContainer = () => {
                         />
                         <Redirect to={dashboardPage ? '/dashboard' : '/downloads'} />
                     </Switch>
-                    {showChat && canEnableChat ? (
+                    {showChat.render && canEnableChat ? (
                         <LiveChatZendesk
                             zendeskRef={zendeskRef}
                             zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
                             name={user.DisplayName || user.Name}
                             email={user.Email || userSettings?.Email?.Value || ''}
-                            onLoaded={() => zendeskRef.current?.show()}
+                            onLoaded={() => {
+                                if (showChat.autoToggle) {
+                                    zendeskRef.current?.toggle();
+                                }
+                            }}
+                            onUnavailable={() => {
+                                createModal(<AuthenticatedBugModal mode="chat-no-agents" />);
+                            }}
                             locale={localeCode.replace('_', '-')}
                         />
                     ) : null}

@@ -195,7 +195,10 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                     {onOpenChat && (
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                            onClick={onOpenChat}
+                            onClick={() => {
+                                close();
+                                onOpenChat();
+                            }}
                         >
                             {c('Action').t`Chat with us`}
                         </DropdownMenuButton>
