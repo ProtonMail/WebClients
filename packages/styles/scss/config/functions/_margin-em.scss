@@ -8,18 +8,13 @@
  * @return {String} - The 4 margin values
  */
 @function margin-em($font-size, $base-height, $base-font-size, $type-vr) {
-	$coef: ceil(
-		math.div(1, ((math.div(($base-height * $base-font-size), $font-size))))
-	);
+	$coef: ceil(math.div(1, ((math.div(($base-height * $base-font-size), $font-size)))));
 	$other_coef: ceil(math.div(($base-height * $base-font-size), $font-size));
 	$height: math.div(($base-font-size * $base-height), $font-size);
 	$margin: ($height * $coef);
 
 	@if $type-vr== 'double_top_single_bottom' {
-		@return (
-			($margin * $other_coef) * 1em 0
-				((math.div($margin, 2)) * $other_coef) * 1em 0
-		);
+		@return (($margin * $other_coef) * 1em 0 ((math.div($margin, 2)) * $other_coef) * 1em 0);
 	}
 
 	@if $type-vr== 'single_top_single_bottom' {
@@ -30,5 +25,7 @@
 		@return (((math.div($margin, 2)) * $other_coef) * 1em 0 0 0);
 	} @else if $type-vr == 'double_top_double_bottom_without_coef' {
 		@return (($margin * 1em) 0);
+	} @else if $type-vr == 'none' {
+		@return 0;
 	}
 }

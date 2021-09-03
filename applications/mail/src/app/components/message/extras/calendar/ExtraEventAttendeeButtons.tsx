@@ -224,10 +224,10 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
         return (
-            <>
-                <div className="text-bold mb0-25">{c('Calendar invite buttons label').t`Attending?`}</div>
-                <CalendarInviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} className="mb0-5" />
-            </>
+            <div className="mt1-5 mb0-5 flex flex-align-items-center">
+                <div className="text-bold mr1">{c('Calendar invite buttons label').t`Attending?`}</div>
+                <CalendarInviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} />
+            </div>
         );
     }
     return null;

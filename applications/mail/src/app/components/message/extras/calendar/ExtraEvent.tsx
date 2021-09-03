@@ -270,7 +270,7 @@ const ExtraEvent = ({
 
     if (loading) {
         return (
-            <div className="rounded bordered bg-norm mb1 pl1 pr1 pt0-5 pb0-5">
+            <div className="rounded bordered bg-norm mb0-5 pl1 pr1 pt0-5 pb0-5">
                 <Loader />
             </div>
         );
@@ -302,7 +302,7 @@ const ExtraEvent = ({
     }
 
     return (
-        <div className="rounded bordered bg-norm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
+        <div className="rounded bordered bg-norm mb0-5 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
             <ExtraEventSummary model={model} />
             <ExtraEventHeader model={model} />
             <ExtraEventWarning model={model} />
