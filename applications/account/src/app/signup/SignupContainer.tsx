@@ -44,7 +44,6 @@ import {
     Payment as PaymentComponent,
     PlanSelection,
     SubscriptionCheckout,
-    useFeature,
     useApi,
     useConfig,
     useLoading,
@@ -53,6 +52,7 @@ import {
     usePayment,
     usePlans,
     useVPNCountriesCount,
+    useFeatures,
 } from '@proton/components';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
@@ -73,7 +73,7 @@ import {
     SignupModel,
 } from './interfaces';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getToAppName } from '../public/helper';
+import { getHasAppExternalSignup, getToAppName } from '../public/helper';
 import createHumanApi from './helpers/humanApi';
 import CreatingAccount from './CreatingAccount';
 import handleCreateUser from './helpers/handleCreateUser';
@@ -212,7 +212,10 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
-    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
+    const [keyMigrationFeature, externalSignupFeature] = useFeatures([
+        FeatureCode.KeyMigration,
+        FeatureCode.ExternalSignup,
+    ]);
 
     const cacheRef = useRef<CacheRef>({});
     const [humanApi] = useState(() => createHumanApi({ api, createModal }));
@@ -480,8 +483,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     }
 
     const toAppName = getToAppName(toApp);
-    // TODO: Only some apps are allowed for this
-    const disableExternalSignup = true;
+    const hasAppExternalSignup = (externalSignupFeature.feature?.Value && getHasAppExternalSignup(toApp));
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
@@ -639,15 +641,18 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             onChange={setModelDiff}
                             humanApi={humanApi}
                             domains={model.domains}
-                            onSubmit={(payload) => {
+                            onSubmit={async (payload) => {
                                 if (payload) {
                                     addChallengePayload(payload);
                                 }
-                                const nextStep = model.signupType === 'email' ? VERIFICATION_CODE : RECOVERY_EMAIL;
-                                setModelDiff({ step: nextStep });
+                                if (model.signupType === 'email') {
+                                    return handlePrePlanStep();
+                                }
+                                setModelDiff({ step: RECOVERY_EMAIL });
                             }}
                             hasChallenge={!cacheRef.current.payload || !Object.keys(cacheRef.current.payload).length}
-                            hasExternalSignup={!disableExternalSignup}
+                            hasExternalSignup={hasAppExternalSignup}
+                            loading={externalSignupFeature.loading}
                         />
                     </Content>
                 </>
