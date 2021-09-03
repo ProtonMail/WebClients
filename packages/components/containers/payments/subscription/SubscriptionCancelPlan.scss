@@ -1,0 +1,10 @@
+@import '~@proton/styles/scss/config';
+
+.subscription-cancel-plan {
+	&-info {
+		min-height: 4em;
+		@include respond-to($breakpoint-small) {
+			min-height: unset;
+		}
+	}
+}

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import {
     Currency,
@@ -21,7 +22,7 @@ import { Button, Info } from '../../../components';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 
-import PlanCard, { PlanCardFeature } from './PlanCard';
+import PlanCard from './PlanCard';
 
 import './PlanSelection.scss';
 import PlanSelectionComparison from './PlanSelectionComparison';
@@ -42,12 +43,36 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-const getFeatures = (
+const mailAppName = getAppName(APPS.PROTONMAIL);
+const driveAppName = getAppName(APPS.PROTONDRIVE);
+const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+
+export const getPlanInfo = (isVpn: boolean): { [key in keyof typeof NAMES]: string } => {
+    return {
+        free_mail: c('Info').t`For getting started with private and secure emailing.`,
+        free_vpn: c('Info').t`A free and uncensored Internet should be available to all.`,
+        [PLANS.VPNBASIC]: c('Info').t`Starter VPN service with P2P support.`,
+        [PLANS.VPNPLUS]: c('Info').t`Full-featured VPN with speed up to 10 Gbps.`,
+        [PLANS.PLUS]: c('Info').t`For individuals that need a fully-featured mailbox with advanced protection.`,
+        [PLANS.PROFESSIONAL]: c('Info').t`For professionals that need secure business communications.`,
+        [PLANS.VISIONARY]: isVpn
+            ? c('Info').t`VPN + ${mailAppName} bundle for families and small businesses.`
+            : c('Info').t`For families and small teams; includes both Mail and VPN.`,
+    };
+};
+
+export interface PlanFeature {
+    content: ReactNode;
+    info?: ReactNode;
+    notIncluded?: boolean;
+}
+
+export const getPlanFeatures = (
     plan: Plan,
     service: PLAN_SERVICES,
     vpnCountries: VPNCountries,
     serversCount: VPNServers
-): PlanCardFeature[] => {
+): PlanFeature[] => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
@@ -58,9 +83,6 @@ const getFeatures = (
 
     const plusCountries = vpnCountries[PLANS.VPNPLUS].count;
 
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-    const driveAppName = getAppName(APPS.PROTONDRIVE);
-    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
     const { Name } = plan;
     // TODO: Improve the free plan logic.
     const planName = Name as keyof typeof NAMES;
@@ -291,7 +313,6 @@ const PlanSelection = ({
     onChangeCurrency,
 }: Props) => {
     const currentPlan = subscription ? getPlan(subscription, service) : null;
-    const mailAppName = getAppName(APPS.PROTONMAIL);
     const isVpnApp = service === PLAN_SERVICES.VPN;
     const planNamesMap = toMap(plans, 'Name');
     const [vpnServersCount] = useVPNServersCount();
@@ -310,17 +331,7 @@ const PlanSelection = ({
     ].filter(isTruthy);
     const plansToShow = isVpnApp ? VPNPlans : MailPlans;
 
-    const INFOS = {
-        free_mail: c('Info').t`For getting started with private and secure emailing.`,
-        free_vpn: c('Info').t`A free and uncensored Internet should be available to all.`,
-        [PLANS.VPNBASIC]: c('Info').t`Starter VPN service with P2P support.`,
-        [PLANS.VPNPLUS]: c('Info').t`Full-featured VPN with speed up to 10 Gbps.`,
-        [PLANS.PLUS]: c('Info').t`For individuals that need a fully-featured mailbox with advanced protection.`,
-        [PLANS.PROFESSIONAL]: c('Info').t`For professionals that need secure business communications.`,
-        [PLANS.VISIONARY]: isVpnApp
-            ? c('Info').t`VPN + ${mailAppName} bundle for families and small businesses.`
-            : c('Info').t`For families and small teams; includes both Mail and VPN.`,
-    } as const;
+    const planInfo = getPlanInfo(isVpnApp);
 
     const boldSave = <strong key="save">{c('Info').t`Save 20%`}</strong>;
 
@@ -373,8 +384,8 @@ const PlanSelection = ({
                             cycle={cycle}
                             key={plan.ID}
                             price={plan.Pricing[cycle]}
-                            info={INFOS[plan.Name as PLANS]}
-                            features={getFeatures(plan, service, vpnCountries, vpnServersCount)}
+                            info={planInfo[plan.Name as PLANS]}
+                            features={getPlanFeatures(plan, service, vpnCountries, vpnServersCount)}
                             onClick={() => {
                                 onChangePlanIDs(
                                     switchPlan({

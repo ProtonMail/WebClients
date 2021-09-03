@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
@@ -41,7 +40,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
      * subscriptionCancelData is undefined if the user skipped
      * the cancel-subscription-form step
      */
-    const handleUnsubscribe = async (subscriptionCancelData: SubscriptionCancelModel | void) => {
+    const handleUnsubscribe = async (subscriptionCancelData: SubscriptionCancelModel) => {
         const downgradeNotificationId = createNotification({
             type: 'info',
             text: c('State').t`Downgrading your account, please wait`,
@@ -77,8 +76,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        const subscriptionCancelData = await new Promise<SubscriptionCancelModel | void>((resolve, reject) => {
-            createModal(<SubscriptionCancelModal onSubmit={resolve} onSkip={resolve} onClose={reject} />);
+        const subscriptionCancelData = await new Promise<SubscriptionCancelModel>((resolve, reject) => {
+            createModal(<SubscriptionCancelModal onSubmit={resolve} onClose={reject} />);
         });
 
         await new Promise<void>((resolve, reject) => {
@@ -99,11 +98,6 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             {children}
         </Button>
     );
-};
-
-UnsubscribeButton.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node.isRequired,
 };
 
 export default UnsubscribeButton;
