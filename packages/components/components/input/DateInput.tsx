@@ -9,6 +9,7 @@ import { usePopperAnchor } from '../popper';
 import Dropdown from '../dropdown/Dropdown';
 import { generateUID } from '../../helpers';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
+import { useHotkeys } from '../../hooks';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'PP', { locale });
@@ -47,7 +48,6 @@ const DateInput = ({
     onChange,
     onFocus,
     onBlur,
-    onKeyDown,
     displayWeekNumbers,
     weekStartsOn,
     min = DEFAULT_MIN,
@@ -125,19 +125,54 @@ const DateInput = ({
         setTemporaryInput('');
     };
 
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        onKeyDown?.(event);
-        if (event.key === 'Enter') {
-            parseAndTriggerChange();
-            event.preventDefault();
-        }
-        if (event.key === 'ArrowDown') {
-            setTemporaryInput(toFormatted(addDays(actualValue, -1), dateLocale));
-        }
-        if (event.key === 'ArrowUp') {
-            setTemporaryInput(toFormatted(addDays(actualValue, 1), dateLocale));
-        }
-    };
+    useHotkeys(anchorRef, [
+        [
+            'Escape',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    parseAndTriggerChange();
+                    close();
+                }
+            },
+        ],
+        [
+            'Enter',
+            (e) => {
+                parseAndTriggerChange();
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    close();
+                } else {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    open();
+                }
+            },
+        ],
+        [
+            'ArrowDown',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setTemporaryInput(toFormatted(addDays(actualValue, -1), dateLocale));
+                }
+            },
+        ],
+        [
+            'ArrowUp',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setTemporaryInput(toFormatted(addDays(actualValue, 1), dateLocale));
+                }
+            },
+        ],
+    ]);
 
     const handleClickDate = (newDate: Date) => {
         setTemporaryInput(toFormatted(newDate, dateLocale));
@@ -159,7 +194,6 @@ const DateInput = ({
                 ref={anchorRef}
                 onFocus={handleFocusInput}
                 onBlur={handleBlurInput}
-                onKeyDown={handleKeyDown}
                 value={showTemporary ? temporaryInput : currentInput}
                 onChange={handleInputChange}
                 placeholder={
