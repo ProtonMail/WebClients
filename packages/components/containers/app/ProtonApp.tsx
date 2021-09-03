@@ -39,7 +39,6 @@ import { setTmpEventID } from './loadEventID';
 import clearKeyCache from './clearKeyCache';
 import { OnLoginCallbackArguments } from './interface';
 import { useInstance, PreventLeaveProvider } from '../../hooks';
-import useNewVersion from '../../hooks/useNewVersion';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import ThemeProvider from '../themes/ThemeProvider';
 
@@ -261,8 +260,6 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     useEffect(() => {
         document.querySelector('.app-root-loader')?.classList.add('hidden');
     }, []);
-
-    useNewVersion(config);
 
     return (
         <ConfigProvider config={config}>

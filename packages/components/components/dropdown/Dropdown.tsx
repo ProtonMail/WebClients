@@ -2,6 +2,8 @@ import { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'rea
 import * as React from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { dropdownRootClassName } from '@proton/shared/lib/busy';
+
 import { useIsClosing , useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
 import { classnames } from '../../helpers';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
@@ -41,8 +43,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     disableDefaultArrowNavigation?: boolean;
     UNSTABLE_AUTO_HEIGHT?: boolean;
 }
-
-export const dropdownRootClassName = 'dropdown';
 
 const Dropdown = ({
     anchorRef,

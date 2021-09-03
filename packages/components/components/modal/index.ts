@@ -1,4 +1,3 @@
-export * from './Dialog';
 export { default as DialogModal } from './Dialog';
 export { default as ContentModal } from './Content';
 export { default as InnerModal } from './Inner';

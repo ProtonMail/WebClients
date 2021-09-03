@@ -1,5 +1,6 @@
 import { useEffect, useContext, useCallback, useState, useRef } from 'react';
 import * as React from 'react';
+import useBeforeUnload from './useBeforeUnload';
 
 const PreventLeaveContext = React.createContext<{
     clearPendingTasks: () => void;
@@ -46,20 +47,7 @@ export const PreventLeaveProvider = ({ children }: { children: React.ReactNode }
         [hasPendingTasks]
     );
 
-    useEffect(() => {
-        if (!hasPendingTasks) {
-            return;
-        }
-        const unloadCallback = (e: BeforeUnloadEvent) => {
-            e.preventDefault();
-            e.returnValue = '';
-            return '';
-        };
-        window.addEventListener('beforeunload', unloadCallback);
-        return () => {
-            window.removeEventListener('beforeunload', unloadCallback);
-        };
-    }, [hasPendingTasks]);
+    useBeforeUnload(hasPendingTasks)
 
     useEffect(() => {
         return () => clearPendingTasks();
