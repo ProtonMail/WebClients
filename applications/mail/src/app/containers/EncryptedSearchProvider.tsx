@@ -95,7 +95,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const abortSearchingRef = useRef<AbortController>(new AbortController());
     // Allow to track progress during indexing or refreshing
     const progressRecorderRef = useRef<[number, number]>([0, 0]);
-    // Allow to track progress during indexing or refreshing
+    // Allow to track progress during syncing
     const syncingEventsRef = useRef<Promise<void>>(Promise.resolve());
     // Allow to track changes in page to set the elements list accordingly
     const pageRef = useRef<number>(0);
@@ -104,8 +104,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Chain several synchronisations to account for events being fired when
      * previous ones are still being processed
      */
-    const addSyncing = (newPromise: Promise<void>) => {
-        syncingEventsRef.current = syncingEventsRef.current.then(() => newPromise);
+    const addSyncing = async (callback: () => Promise<void>) => {
+        syncingEventsRef.current = syncingEventsRef.current.then(() => callback());
     };
 
     /**
@@ -664,7 +664,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // indexing even it this step fails, because it will be retried at every new
         // event and refresh
         const catchUpPromise = catchUpFromLS(indexKey);
-        addSyncing(catchUpPromise);
+        addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
         // Note that it's safe to remove the BuildProgress blob because the event to catch
@@ -969,7 +969,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Every time a new event happens, we simply catch up everything since the last
         // processed event. In case any failure occurs, the event ID stored will not be
         // overwritten
-        addSyncing(catchUpFromEvent(indexKey, event));
+        addSyncing(() => catchUpFromEvent(indexKey, event));
     });
 
     useEffect(() => {
@@ -1028,7 +1028,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // Compare the last event "seen" by the DB (saved in localStorage) and
             // the present one to check whether any event has happened while offline,
             // but only if indexing was successful
-            addSyncing(catchUpFromLS(indexKey));
+            addSyncing(() => catchUpFromLS(indexKey));
         };
 
         void run();
