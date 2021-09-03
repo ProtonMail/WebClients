@@ -7,3 +7,7 @@ export const getToAppName = (toApp?: APP_NAMES) => {
 
     return APPS_CONFIGURATION[toApp]?.name || '';
 };
+
+export const getHasAppExternalSignup = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONVPN_SETTINGS;
+};
