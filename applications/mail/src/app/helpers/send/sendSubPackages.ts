@@ -1,24 +1,27 @@
 import { arrayToBinaryString, encodeBase64, encryptMessage, generateSessionKey } from 'pmcrypto';
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
-import { Api } from '@proton/shared/lib/interfaces';
+import { MIME_TYPES, PACKAGE_TYPE, PACKAGE_SIGNATURES_MODE, AES256 } from '@proton/shared/lib/constants';
 import { Package, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getAttachments, isEO } from '@proton/shared/lib/mail/messages';
+import { Api } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-
 import { MessageExtendedWithData } from '../../models/message';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO, SEND_CLEAR_MIME } = PACKAGE_TYPE;
+const { SIGNATURES_NONE, SIGNATURES_ATTACHMENTS } = PACKAGE_SIGNATURES_MODE;
+
+const getSignatureFlag = ({ sign }: Pick<SendPreferences, 'sign'>, message: Message) =>
+    sign && getAttachments(message).every(({ Signature }) => Signature) ? SIGNATURES_ATTACHMENTS : SIGNATURES_NONE;
 
 /**
  * Package for a ProtonMail user.
  */
-const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, message: Message) => ({
+const sendPM = async (sendPrefs: SendPreferences, message: Message) => ({
     Type: SEND_PM,
-    PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
-    Signature: getAttachments(message).every(({ Signature }) => Signature),
+    PublicKey: (sendPrefs.publicKeys?.length && sendPrefs.publicKeys[0]) || undefined,
+    Signature: getSignatureFlag(sendPrefs, message),
 });
 
 /**
@@ -52,7 +55,7 @@ const sendPMEncryptedOutside = async (message: Message, api: Api) => {
 /**
  * Package for a PGP/MIME user.
  */
-const sendPGPMime = async ({ encrypt, sign, publicKeys }: Pick<SendPreferences, 'encrypt' | 'sign' | 'publicKeys'>) => {
+const sendPGPMime = async ({ encrypt, sign, publicKeys }: SendPreferences) => {
     if (encrypt) {
         return {
             Type: SEND_PGP_MIME,
@@ -70,22 +73,19 @@ const sendPGPMime = async ({ encrypt, sign, publicKeys }: Pick<SendPreferences, 
 /**
  * Package for a PGP/Inline user.
  */
-const sendPGPInline = async (
-    { encrypt, sign, publicKeys }: Pick<SendPreferences, 'encrypt' | 'sign' | 'publicKeys'>,
-    message: Message
-) => {
-    if (encrypt) {
+const sendPGPInline = async (sendPrefs: SendPreferences, message: Message) => {
+    if (sendPrefs.encrypt) {
         return {
             Type: SEND_PGP_INLINE,
-            PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
-            Signature: getAttachments(message).every(({ Signature }) => Signature),
+            PublicKey: (sendPrefs.publicKeys?.length && sendPrefs.publicKeys[0]) || undefined,
+            Signature: getSignatureFlag(sendPrefs, message),
         };
     }
 
     // PGP/Inline signature only
     return {
         Type: SEND_CLEAR,
-        Signature: +sign,
+        Signature: getSignatureFlag(sendPrefs, message),
     };
 };
 
@@ -125,19 +125,19 @@ export const attachSubPackages = async (
         if (!sendPrefs) {
             throw new Error('Missing send preferences');
         }
-        const { encrypt, sign, pgpScheme, mimeType, publicKeys } = sendPrefs;
+        const { encrypt, sign, pgpScheme, mimeType } = sendPrefs;
         const packageType = mimeType === 'text/html' ? DEFAULT : PLAINTEXT;
 
         switch (pgpScheme) {
             case SEND_PM:
-                return bindPackageSet(sendPM({ publicKeys }, message.data), email, packageType);
+                return bindPackageSet(sendPM(sendPrefs, message.data), email, packageType);
             case SEND_PGP_MIME:
                 if (!sign && !encrypt) {
                     return bindPackageSet(sendClear(), email, DEFAULT);
                 }
-                return bindPackageSet(sendPGPMime({ encrypt, sign, publicKeys }), email, MIME);
+                return bindPackageSet(sendPGPMime(sendPrefs), email, MIME);
             case SEND_PGP_INLINE:
-                return bindPackageSet(sendPGPInline({ encrypt, sign, publicKeys }, message.data), email, PLAINTEXT);
+                return bindPackageSet(sendPGPInline(sendPrefs, message.data), email, PLAINTEXT);
             case SEND_EO:
             case SEND_CLEAR:
             default:
