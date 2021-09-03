@@ -39,9 +39,10 @@ const DomainActions = ({ domain, domainAddresses }) => {
                         onConfirm={handleConfirmDelete}
                         confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     >
-                        <Alert type="info">{c('Info')
+                        <Alert className="mb1" type="info">{c('Info')
                             .t`Please note that if you delete this domain, all the addresses associated with it will be disabled.`}</Alert>
-                        <Alert type="error">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
+                        <Alert className="mb1" type="error">{c('Info')
+                            .t`Are you sure you want to delete this domain?`}</Alert>
                     </ConfirmModal>
                 );
             },

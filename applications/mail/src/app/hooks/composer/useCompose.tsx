@@ -99,6 +99,7 @@ export const useCompose = (
                     }}
                 >
                     <Alert
+                        className="mb1"
                         learnMore="https://protonmail.com/support/knowledge-base/increase-my-storage-space/"
                         type="warning"
                     >{c('Info')
@@ -181,7 +182,7 @@ export const useCompose = (
                             title={c('Title').t`Sending original message`}
                             confirm={c('Action').t`OK`}
                         >
-                            <Alert>{c('Info')
+                            <Alert className="mb1">{c('Info')
                                 .t`The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.`}</Alert>
                         </ConfirmModal>
                     );

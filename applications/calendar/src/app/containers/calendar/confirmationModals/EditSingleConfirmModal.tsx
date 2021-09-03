@@ -100,7 +100,9 @@ const EditSingleConfirmModal = ({ inviteActions, onConfirm, ...rest }: Props) =>
     };
     return (
         <FormModal title={title} small submit={submit} close={c('Action').t`Cancel`} onSubmit={handleSubmit} {...rest}>
-            <Alert type="info">{alertText}</Alert>
+            <Alert className="mb1" type="info">
+                {alertText}
+            </Alert>
         </FormModal>
     );
 };

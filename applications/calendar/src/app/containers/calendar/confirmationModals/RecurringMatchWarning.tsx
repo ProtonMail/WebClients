@@ -9,7 +9,7 @@ const RecurringMatchWarning = (props: any) => {
             cancel={c('Action').t`Cancel`}
             {...props}
         >
-            <Alert type="warning">{c('Recurring update')
+            <Alert className="mb1" type="warning">{c('Recurring update')
                 .t`Specific changes on single events of this series will be reverted.`}</Alert>
         </ConfirmModal>
     );

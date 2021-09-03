@@ -56,10 +56,10 @@ const useShowConfirmModal = () => {
                         title={title}
                         confirm={c('Action').t`Download`}
                     >
-                        <Alert type="warning" learnMore={learnMore}>
+                        <Alert className="mb1" type="warning" learnMore={learnMore}>
                             {warningContent}
                         </Alert>
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info').ngettext(
                                 msgid`Do you want to download this attachment anyway?`,
                                 `Do you want to download these attachments anyway?`,

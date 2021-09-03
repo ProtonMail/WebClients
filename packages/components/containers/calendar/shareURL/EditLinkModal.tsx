@@ -29,7 +29,7 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: Props) 
             loading={isLoading}
             {...rest}
         >
-            <Alert>{c('Info').t`Only you can see the labels.`}</Alert>
+            <Alert className="mb1">{c('Info').t`Only you can see the labels.`}</Alert>
             <label htmlFor="your-calendar-url-label" className="sr-only">
                 {c('Label').t`Your calendar URL label`}
             </label>

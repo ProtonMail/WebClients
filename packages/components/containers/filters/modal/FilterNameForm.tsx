@@ -43,7 +43,7 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {isSieveFilter
                     ? c('Info')
                           .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.`

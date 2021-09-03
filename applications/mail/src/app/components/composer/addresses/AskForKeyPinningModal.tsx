@@ -77,7 +77,7 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
             loading={loading || loadingUserKeys}
             {...rest}
         >
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/address-verification">
+            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/address-verification">
                 {c('Key pinning').ngettext(
                     msgid`You have enabled Address Verification with Trusted Keys for this email address,
                         but no active encryption key has been trusted.

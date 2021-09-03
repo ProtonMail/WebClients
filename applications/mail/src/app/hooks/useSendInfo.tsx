@@ -122,7 +122,7 @@ export const useUpdateRecipientSendInfo = (
                             onNotResign={handleRemove}
                             onError={handleRemove}
                         >
-                            <Alert type="error">
+                            <Alert className="mb1" type="error">
                                 {c('Info')
                                     .t`The verification of ${contactName} has failed: the contact is not signed correctly.
                                     This may be the result of a password reset.
@@ -314,7 +314,7 @@ export const useUpdateGroupSendInfo = (
                             onNotResign={noop}
                             onError={noop}
                         >
-                            <Alert type="error">
+                            <Alert className="mb1" type="error">
                                 {c('Info').ngettext(
                                     msgid`The verification of ${contactNames} has failed: the contact is not signed correctly.
                                     This may be the result of a password reset.

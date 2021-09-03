@@ -39,11 +39,11 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                 onResign={onResignContact}
                 contacts={[contact]}
             >
-                <Alert type="info">
+                <Alert className="mb1" type="info">
                     {c('Info')
                         .t`When you enabled trusted keys for ${senderName}, the public keys were added to the contact details.`}
                 </Alert>
-                <Alert type="error">
+                <Alert className="mb1" type="error">
                     {c('Info')
                         .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
                 </Alert>

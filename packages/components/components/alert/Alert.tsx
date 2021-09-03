@@ -3,10 +3,10 @@ import { classnames } from '../../helpers';
 import LearnMore from '../link/LearnMore';
 
 const CLASSES = {
-    info: 'mb1 alert-block',
-    warning: 'mb1 alert-block--warning',
-    error: 'mb1 alert-block--danger',
-    success: 'mb1 alert-block--success',
+    info: 'alert-block',
+    warning: 'alert-block--warning',
+    error: 'alert-block--danger',
+    success: 'alert-block--success',
 } as const;
 
 interface Props {

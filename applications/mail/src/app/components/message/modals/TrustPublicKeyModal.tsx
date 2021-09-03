@@ -145,8 +145,10 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
             loading={loading}
             {...rest}
         >
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/address-verification">{alertMessage}</Alert>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
+            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/address-verification">
+                {alertMessage}
+            </Alert>
+            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
                 {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
             </Alert>
             <div>

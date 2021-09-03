@@ -401,9 +401,9 @@ const SubscriptionModal = ({
                                 </>
                             ) : (
                                 <>
-                                    <Alert>{c('Info').t`No payment is required at this time.`}</Alert>
+                                    <Alert className="mb1">{c('Info').t`No payment is required at this time.`}</Alert>
                                     {checkResult?.Credit && creditsRemaining ? (
-                                        <Alert>{c('Info')
+                                        <Alert className="mb1">{c('Info')
                                             .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</Alert>
                                     ) : null}
                                 </>

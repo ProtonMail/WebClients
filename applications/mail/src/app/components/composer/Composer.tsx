@@ -476,7 +476,8 @@ const Composer = (
                     title={c('Title').t`Delete draft`}
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                 >
-                    <Alert type="error">{c('Info').t`Are you sure you want to permanently delete this draft?`}</Alert>
+                    <Alert className="mb1" type="error">{c('Info')
+                        .t`Are you sure you want to permanently delete this draft?`}</Alert>
                 </ConfirmModal>
             );
         });

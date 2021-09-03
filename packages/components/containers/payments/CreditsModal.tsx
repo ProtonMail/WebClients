@@ -85,6 +85,7 @@ const CreditsModal = (props: Props) => {
         >
             <PaymentInfo method={method} />
             <Alert
+                className="mb1"
                 learnMore={
                     APP_NAME === APPS.PROTONVPN_SETTINGS
                         ? 'https://protonvpn.com/support/vpn-credit-proration/'

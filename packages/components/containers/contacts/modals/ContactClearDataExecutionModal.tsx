@@ -75,7 +75,7 @@ const ContactClearDataExecutionModal = ({ onClose = noop, errorKey, ...rest }: P
             close={execution ? <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button> : null}
             {...rest}
         >
-            <Alert type="info">{c('Info')
+            <Alert className="mb1" type="info">{c('Info')
                 .t`Please wait while we look for contacts that contain data encrypted with the inactive key.`}</Alert>
             <DynamicProgress
                 id="clear-data-execution-progress"

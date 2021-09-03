@@ -61,7 +61,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                         onClose={reject}
                         onConfirm={() => resolve(undefined)}
                     >
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?`}</Alert>
                     </ConfirmModal>
                 );

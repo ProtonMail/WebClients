@@ -64,7 +64,7 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
                     cancel={c('Action').t`Continue import`}
                     confirm={<Button color="danger" type="submit">{c('Action').t`Cancel import`}</Button>}
                 >
-                    <Alert type="error">
+                    <Alert className="mb1" type="error">
                         {c('Warning')
                             .t`If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?`}
                     </Alert>

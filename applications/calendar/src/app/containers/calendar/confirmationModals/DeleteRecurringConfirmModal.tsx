@@ -132,8 +132,14 @@ const DeleteRecurringConfirmModal = ({
             onSubmit={handleConfirm}
             {...rest}
         >
-            <Alert type="error">{alertText}</Alert>
-            {warningText && <Alert type="warning">{warningText}</Alert>}
+            <Alert className="mb1" type="error">
+                {alertText}
+            </Alert>
+            {warningText && (
+                <Alert className="mb1" type="warning">
+                    {warningText}
+                </Alert>
+            )}
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}

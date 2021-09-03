@@ -9,7 +9,7 @@ interface Props {
 const CalendarReactivateSection = ({ calendarsToReactivate = [] }: Props) => {
     return (
         <>
-            <Alert type="info">{c('Info')
+            <Alert className="mb1" type="info">{c('Info')
                 .t`You have reactivated your keys and events linked to the following calendars can now be decrypted.`}</Alert>
             <CalendarTableRows calendars={calendarsToReactivate} />
         </>

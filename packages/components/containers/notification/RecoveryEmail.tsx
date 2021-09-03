@@ -30,7 +30,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm address`} onConfirm={resolve} onClose={reject}>
-                        <Alert type="warning">
+                        <Alert className="mb1" type="warning">
                             {hasReset &&
                                 !hasNotify &&
                                 c('Warning')

@@ -61,13 +61,13 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
             {...rest}
             {...additionalModalProps}
         >
-            <Alert type="warning" className="text-break">
+            <Alert className="mb1 text-break" type="warning">
                 {`${c('Info').t`You are about to open another browser tab and visit:`} `}
                 <span className="text-bold">{link}</span>
             </Alert>
 
             {punyCodeLink && (
-                <Alert type="warning">
+                <Alert className="mb1" type="warning">
                     {`${punyCodeLinkText} `}
                     <Href
                         url="https://protonmail.com/support/knowledge-base/homograph-attacks/"

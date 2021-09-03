@@ -42,7 +42,7 @@ const ExportPublicKeyModal = ({ name, fallbackPrivateKey, publicKey, onClose, ..
             onSubmit={handleSubmit}
             {...rest}
         >
-            <Alert type="info">
+            <Alert className="mb1" type="info">
                 {c('Info')
                     .t`Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!`}
             </Alert>

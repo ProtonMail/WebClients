@@ -16,7 +16,7 @@ function ErrorState({ modalTitleID, error, isCreationError, onClose }: Props) {
             </HeaderModal>
             <div className="modal-content">
                 <InnerModal>
-                    <Alert type="error">
+                    <Alert className="mb1" type="error">
                         {isCreationError
                             ? c('Info').t`Failed to generate a secure link. Try again later.`
                             : c('Info').t`Failed to open a secure link. The reason is: ${error}`}

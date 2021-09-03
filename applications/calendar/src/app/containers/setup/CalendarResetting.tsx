@@ -4,7 +4,7 @@ import { Alert, Loader } from '@proton/components';
 const CalendarResetting = () => {
     return (
         <>
-            <Alert>{c('Info').t`Give us a moment while we reset your calendar.`}</Alert>
+            <Alert className="mb1">{c('Info').t`Give us a moment while we reset your calendar.`}</Alert>
             <div className="text-center">
                 <Loader size="medium" />
                 <p>{c('Info').t`Resetting your calendar...`}</p>

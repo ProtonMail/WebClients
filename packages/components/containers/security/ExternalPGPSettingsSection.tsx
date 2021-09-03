@@ -40,7 +40,7 @@ const ExternalPGPSettingsSection = () => {
                     onConfirm={() => resolve(true)}
                     onClose={() => resolve(false)}
                 >
-                    <Alert>
+                    <Alert className="mb1">
                         {c('Info')
                             .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}
                     </Alert>

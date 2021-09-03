@@ -64,7 +64,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         small={false}
                         className="pm-modal--shorterLabels"
                     >
-                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
+                        <Alert
+                            className="mb1"
+                            type="warning"
+                            learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/"
+                        >
                             {c('Info')
                                 .t`A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.`}
                         </Alert>
@@ -96,7 +100,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         small={false}
                         className="pm-modal--shorterLabels"
                     >
-                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
+                        <Alert
+                            className="mb1"
+                            type="warning"
+                            learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/"
+                        >
                             {c('Info')
                                 .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFrom} with following details as defined by the sender of the newsletter:`}
                         </Alert>
@@ -165,7 +173,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         small={false}
                         className="pm-modal--shorterLabels"
                     >
-                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
+                        <Alert
+                            className="mb1"
+                            type="warning"
+                            learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/"
+                        >
                             {c('Info')
                                 .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
                         </Alert>

@@ -153,8 +153,9 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 title={c('Title').t`Are you sure you want to close?`}
                 confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
             >
-                <Alert>{c('Info').t`All your changes will be lost.`}</Alert>
-                <Alert type="error">{c('Info').t`Are you sure you want to discard your changes?`}</Alert>
+                <Alert className="mb1">{c('Info').t`All your changes will be lost.`}</Alert>
+                <Alert className="mb1" type="error">{c('Info')
+                    .t`Are you sure you want to discard your changes?`}</Alert>
             </ConfirmModal>
         );
     };

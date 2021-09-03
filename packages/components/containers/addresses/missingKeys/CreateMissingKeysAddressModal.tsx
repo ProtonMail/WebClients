@@ -166,7 +166,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
             loading={loading}
             {...rest}
         >
-            <Alert>{c('Info')
+            <Alert className="mb1">{c('Info')
                 .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}</Alert>
             <SelectEncryption
                 encryptionType={encryptionType}
