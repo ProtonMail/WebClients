@@ -3,6 +3,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { IDBPDatabase } from 'idb';
 import { MessageEvent } from '../../models/event';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
@@ -14,7 +15,13 @@ import {
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { AesKeyGenParams, ES_MAX_PAGES_PER_BATCH, ES_MAX_PARALLEL_MESSAGES, PAGE_SIZE } from '../../constants';
+import {
+    AesKeyGenParams,
+    ES_MAX_CONCURRENT,
+    ES_MAX_PAGES_PER_BATCH,
+    ES_MAX_PARALLEL_MESSAGES,
+    PAGE_SIZE,
+} from '../../constants';
 import {
     getNumMessagesDB,
     getOldestMessage,
@@ -370,7 +377,7 @@ export const correctDecryptionErrors = async (
     api: Api,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    esCacheRef: React.MutableRefObject<ESCache>
+    esCacheRef?: React.MutableRefObject<ESCache>
 ) => {
     const { resultsArray: searchResults } = await uncachedSearch(
         userID,
@@ -400,7 +407,9 @@ export const correctDecryptionErrors = async (
 
                 const size = sizeOfCachedMessage(newMessage);
                 updateSizeIDB(userID, size);
-                addToESCache(newMessage, esCacheRef, size);
+                if (esCacheRef) {
+                    addToESCache(newMessage, esCacheRef, size);
+                }
                 recordProgress(counter++, searchResults.length);
 
                 return newCiphertextToStore;
@@ -420,6 +429,43 @@ export const correctDecryptionErrors = async (
 };
 
 /**
+ * Fetch, prepare and store the specified messages to IndexedDB
+ */
+const syncMessagesBatch = async (
+    userID: string,
+    messagesMetadata: Message[],
+    esDB: IDBPDatabase<EncryptedSearchDB>,
+    indexKey: CryptoKey,
+    api: Api,
+    getMessageKeys: GetMessageKeys,
+    recordLocalProgress: (localProgress: number) => void
+) => {
+    let counter = 1;
+
+    const esIteratee = async (message: Message) => {
+        // Since we are passing metadata, messageToCache cannot be undefined
+        // even if there was a permanent error while fetching the message
+        const messageToCache = (await fetchMessage(message.ID, api, getMessageKeys, undefined, message))!;
+
+        const size = sizeOfCachedMessage(messageToCache);
+        updateSizeIDB(userID, size);
+
+        recordLocalProgress(counter++);
+        return encryptToDB(messageToCache, indexKey);
+    };
+
+    // ciphertexts is a list of symmetrically encrypted messages in reverse chronological order
+    const ciphertexts = await runInQueue<StoredCiphertext>(
+        messagesMetadata.map((message) => () => esIteratee(message)),
+        ES_MAX_CONCURRENT
+    );
+
+    const tx = esDB.transaction('messages', 'readwrite');
+    await Promise.all(ciphertexts.map(async (ciphertext) => tx.store.put(ciphertext)));
+    await tx.done;
+};
+
+/**
  * Refresh index when we get a Refresh=1 from queryEvents
  */
 export const refreshIndex = async (
@@ -428,8 +474,7 @@ export const refreshIndex = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    messageCounts: any,
-    esCacheRef: React.MutableRefObject<ESCache>
+    messageCounts: any
 ) => {
     // Get the latest event to catch up after refreshing
     const eventSinceRefresh = await queryEvents(api);
@@ -441,7 +486,7 @@ export const refreshIndex = async (
     // before attempting to refresh the index, we also retry decryption of previously failed
     // messages. This is due to refresh not trying to decrypt all messages, but only drafts
     // and completely new messages
-    await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress, esCacheRef);
+    await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress);
 
     // Progress is wiped before actual refreshing
     recordProgress(0, 0);
@@ -458,24 +503,11 @@ export const refreshIndex = async (
 
     // All drafts from IndexedDB are removed before starting, they will be fetched again in the loop below. This
     // is to avoid checking whether the body was modified or not
-    let searchResults: ESMessage[] = [];
+    let drafts: ESMessage[] = [];
     try {
-        ({ resultsArray: searchResults } = await uncachedSearch(userID, indexKey, normaliseSearchParams({}, '8'), {}));
+        ({ resultsArray: drafts } = await uncachedSearch(userID, indexKey, normaliseSearchParams({}, '8'), {}));
     } catch (error) {
         throw new Error('Drafts fetching failed');
-    }
-
-    if (searchResults.length) {
-        await handleIDBInteractions(
-            esDB,
-            searchResults.map((result) => result.ID),
-            []
-        );
-        searchResults.forEach((result) => {
-            const size = sizeOfCachedMessage(result);
-            updateSizeIDB(userID, -size);
-            removeFromESCache(result.ID, esCacheRef, size);
-        });
     }
 
     const indexedIDs = new Map((await esDB.getAllKeys('messages')).map((ID) => [ID, undefined]));
@@ -507,12 +539,25 @@ export const refreshIndex = async (
 
         // Any interaction with IDB is postponed
         const messagesToAdd: StoredCiphertext[] = [];
+        const messagesToFetch: Message[] = [];
 
         for (const message of fetchedMetadata) {
             const { ID } = message;
 
             if (indexedIDs.has(ID)) {
-                // If indexedIDs has ID, update metadata if something changed
+                // First we check if the message is an existing draft. If it is and its Time
+                // is the same, it means it hasn't been modified. Otherwise it is added to the
+                // messages to fetch
+                const draft = drafts.find(({ ID }) => message.ID === ID);
+                if (draft) {
+                    if (draft.Time !== message.Time) {
+                        messagesToFetch.push(message);
+                    }
+                    indexedIDs.delete(ID);
+                    continue;
+                }
+
+                // Update metadata if something changed
                 const oldMessage = await getMessageFromDB(ID, indexKey, esDB);
                 if (!oldMessage) {
                     throw new Error('Old message is undefined');
@@ -535,37 +580,41 @@ export const refreshIndex = async (
                     const sizeDelta = sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage);
                     updateSizeIDB(userID, sizeDelta);
                     messagesToAdd.push(newCiphertextToStore);
-                    replaceInESCache(newMessageToCache, esCacheRef, false, sizeDelta);
                 }
 
                 indexedIDs.delete(ID);
+                recordProgress(numMessages++, Total);
             } else {
-                const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys);
-                if (!fetchedMessageToCache) {
-                    // If a permanent error occured while fetching, we ignore the update
-                    continue;
-                }
-
-                const newCiphertextToStore = await encryptToDB(fetchedMessageToCache, indexKey);
-
-                const size = sizeOfCachedMessage(fetchedMessageToCache);
-                updateSizeIDB(userID, size);
-                messagesToAdd.push(newCiphertextToStore);
-                addToESCache(fetchedMessageToCache, esCacheRef, size);
+                // New messages are retrieved later in parallel
+                messagesToFetch.push(message);
             }
-            recordProgress(numMessages++, Total);
         }
 
-        await handleIDBInteractions(esDB, [], messagesToAdd);
-        await refreshOpenpgp();
+        // Messages for which only the metadata changed are updated
+        if (messagesToAdd.length) {
+            await handleIDBInteractions(esDB, [], messagesToAdd);
+        }
+
+        // Then new messages are fetched and stored
+        if (messagesToFetch.length) {
+            const recordLocalProgress = (numMessages: number) => (progressLocal: number) =>
+                recordProgress(numMessages + progressLocal, Total);
+            await syncMessagesBatch(
+                userID,
+                messagesToFetch,
+                esDB,
+                indexKey,
+                api,
+                getMessageKeys,
+                recordLocalProgress(numMessages)
+            );
+            await refreshOpenpgp();
+        }
     }
 
+    // All messages that haven't been removed from indexedIDs no longer exist
     const messagesToRemove = [...indexedIDs.keys()];
     await handleIDBInteractions(esDB, messagesToRemove, []);
-    messagesToRemove.forEach((ID) => {
-        const size = removeFromESCache(ID, esCacheRef) || 0;
-        updateSizeIDB(userID, -size);
-    });
 
     esDB.close();
 

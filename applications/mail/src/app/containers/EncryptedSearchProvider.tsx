@@ -353,8 +353,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 indexKey,
                 getMessageKeys,
                 recordProgress,
-                messageCounts,
-                esCacheRef
+                messageCounts
             );
 
             if (!wasAlreadyRefreshing) {
