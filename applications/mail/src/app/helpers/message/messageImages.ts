@@ -5,7 +5,7 @@ import {
     MessageRemoteImage,
     PartialMessageExtended,
 } from '../../models/message';
-import { ATTRIBUTES } from '../transforms/transformRemote';
+import { ATTRIBUTES } from './messageRemotes';
 
 const REGEXP_FIXER = (() => {
     const str = ATTRIBUTES.map((key) => `proton-${key}`).join('|');
