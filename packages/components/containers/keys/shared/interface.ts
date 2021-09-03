@@ -1,7 +1,6 @@
 import { algorithmInfo } from 'pmcrypto';
 
 export interface KeyPermissions {
-    canReactivate: boolean;
     canExportPublicKey: boolean;
     canExportPrivateKey: boolean;
     canSetPrimary: boolean;
@@ -16,7 +15,6 @@ export interface KeyActions {
     onDeleteKey: (id: string) => void;
     onExportPrivateKey: (id: string) => void;
     onExportPublicKey: (id: string) => void;
-    onReactivateKey: (id: string) => void;
     onSetPrimary: (id: string) => void;
     onSetCompromised: (id: string) => void;
     onSetNotCompromised: (id: string) => void;

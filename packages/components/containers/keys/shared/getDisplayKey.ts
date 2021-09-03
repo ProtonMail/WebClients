@@ -62,7 +62,6 @@ export const getDisplayKey = ({
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
 
     const permissions = {
-        canReactivate: !isSubUser && !isDecrypted,
         canExportPublicKey: true,
         canExportPrivateKey: isDecrypted,
         canSetPrimary: canModify && !isAddressDisabled && isDecrypted && canEncryptAndSign,

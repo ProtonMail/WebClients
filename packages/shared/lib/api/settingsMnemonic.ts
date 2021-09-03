@@ -1,5 +1,15 @@
 import { MNEMONIC_STATUS } from '../interfaces';
 
+export interface MnemonicKeyResponse {
+    ID: string;
+    PrivateKey: string;
+    Salt: string;
+}
+export const getMnemonicUserKeys = () => ({
+    url: 'settings/mnemonic',
+    method: 'get',
+});
+
 interface UpdateMnemonicPhrasePayload {
     MnemonicUserKeys: {
         ID: string;

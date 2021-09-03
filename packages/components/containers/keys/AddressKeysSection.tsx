@@ -267,8 +267,9 @@ const AddressKeysSection = () => {
     const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
         createModal(
             <ReactivateKeysModal
+                userKeys={userKeys}
                 keyReactivationRequests={keyReactivationRequests}
-                onProcess={async (keyReactivationRecords, oldPassword, onReactivation) => {
+                onProcess={async (keyReactivationRecords, onReactivation) => {
                     await reactivateKeysProcess({
                         api,
                         user: User,
@@ -282,23 +283,6 @@ const AddressKeysSection = () => {
                 }}
             />
         );
-    };
-
-    const handleReactivateKey = (ID: string) => {
-        if (isLoadingKey || !addressKeys) {
-            return;
-        }
-        const Key = getKeyByID(Address?.Keys || [], ID);
-        if (!Address || !Key) {
-            throw new Error('Key not found');
-        }
-        return handleReactivateKeys([
-            {
-                address: Address,
-                keys: addressKeys,
-                keysToReactivate: [Key],
-            },
-        ]);
     };
 
     const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
@@ -346,7 +330,6 @@ const AddressKeysSection = () => {
                 keys={addressKeysDisplay}
                 onExportPrivateKey={handleExportPrivate}
                 onExportPublicKey={handleExportPublic}
-                onReactivateKey={handleReactivateKey}
                 onDeleteKey={handleDeleteKey}
                 onSetPrimary={handleSetPrimaryKey}
                 onSetCompromised={handleSetCompromised}
