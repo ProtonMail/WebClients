@@ -21,9 +21,9 @@ const DowngradeModal = ({ user, ...rest }: Props) => {
 
     return (
         <ConfirmModal title={title} confirm={confirm} {...rest}>
-            <Alert>{c('Info')
+            <Alert className="mb1">{c('Info')
                 .t`Once you click "Downgrade", it may take a few minutes to downgrade your account to a Free plan. `}</Alert>
-            <Alert type="error">
+            <Alert className="mb1" type="error">
                 {hasBundle
                     ? c('Info')
                           .t`If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.`
@@ -32,7 +32,7 @@ const DowngradeModal = ({ user, ...rest }: Props) => {
                           .t`If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.`
                     : c('Info').t`If you proceed with the downgrade, you will lose access to ProtonVPN paid features.`}
             </Alert>
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {[
                     hasMail &&
                         c('Info')

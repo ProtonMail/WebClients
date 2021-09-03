@@ -64,10 +64,12 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
             className="modal--smaller"
             {...rest}
         >
-            <Alert type="info">
+            <Alert className="mb1" type="info">
                 {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
             </Alert>
-            <Alert type="error">{alertText}</Alert>
+            <Alert className="mb1" type="error">
+                {alertText}
+            </Alert>
         </FormModal>
     );
 };

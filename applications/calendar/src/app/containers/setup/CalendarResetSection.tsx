@@ -9,7 +9,7 @@ interface Props {
 const CalendarResetSection = ({ calendarsToReset = [] }: Props) => {
     return (
         <>
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 <div className="text-pre-wrap">
                     {c('Info')
                         .t`You have reset your password and events linked to the following calendars couldn't be decrypted.

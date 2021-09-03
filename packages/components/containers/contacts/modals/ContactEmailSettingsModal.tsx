@@ -229,17 +229,17 @@ const ContactEmailSettingsModal = ({
             <ContentModal onSubmit={() => withLoading(handleSubmit())} onReset={onClose}>
                 <InnerModal>
                     {!isMimeTypeFixed ? (
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info')
                                 .t`Select the email format you want to be used by default when sending an email to this email address.`}
                         </Alert>
                     ) : hasPGPInline ? (
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info')
                                 .t`PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.`}
                         </Alert>
                     ) : (
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info')
                                 .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages`}
                         </Alert>

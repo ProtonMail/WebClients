@@ -9,7 +9,7 @@ const CloseConfirmationModal = (props: any) => {
             confirm={c('Action').t`Discard`}
             {...props}
         >
-            <Alert type="warning">{c('Info').t`You will lose all unsaved changes.`}</Alert>
+            <Alert className="mb1" type="warning">{c('Info').t`You will lose all unsaved changes.`}</Alert>
         </ConfirmModal>
     );
 };

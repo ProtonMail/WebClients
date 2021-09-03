@@ -190,7 +190,7 @@ const UsersAndAddressesSection = () => {
                 {c('Info for members section')
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
-            {/* <Alert learnMore="https://protonmail.com/support/knowledge-base/user-roles/">{c('Info for members section')
+            {/* <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/user-roles/">{c('Info for members section')
                 .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert> */}
             <Block className="flex flex-align-items-start">
                 <Button

@@ -125,7 +125,7 @@ const HeaderMoreDropdown = ({
     const handlePhishing = () => {
         createModal(
             <ConfirmModal title={c('Info').t`Confirm phishing report`} onConfirm={handleConfirmPhishing} onClose={noop}>
-                <Alert type="warning">{c('Info')
+                <Alert className="mb1" type="warning">{c('Info')
                     .t`Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.`}</Alert>
             </ConfirmModal>
         );
@@ -140,7 +140,9 @@ const HeaderMoreDropdown = ({
                     onConfirm={() => resolve(undefined)}
                     onClose={reject}
                 >
-                    <Alert type="error">{getModalText(false, false, 1)}</Alert>
+                    <Alert className="mb1" type="error">
+                        {getModalText(false, false, 1)}
+                    </Alert>
                 </ConfirmModal>
             );
         });

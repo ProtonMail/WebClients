@@ -203,7 +203,7 @@ const ImportGroupsModalContent = ({ model, setModel }: Props) => {
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {c('Description')
                     .t`It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.`}
             </Alert>

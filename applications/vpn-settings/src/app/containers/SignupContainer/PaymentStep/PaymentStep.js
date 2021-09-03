@@ -30,7 +30,8 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
             <SubTitle>{c('Title').t`Provide payment details`}</SubTitle>
             <Row>
                 <div>
-                    <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss laws`}</Alert>
+                    <Alert className="mb1">{c('Info')
+                        .t`Your payment details are protected with TLS encryption and Swiss laws`}</Alert>
                     <Payment
                         fieldClassName="wauto flex-item-fluid-auto"
                         type="signup"

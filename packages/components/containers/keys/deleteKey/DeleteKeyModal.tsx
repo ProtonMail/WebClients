@@ -42,11 +42,11 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 },
                 children: (
                     <>
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info')
                                 .t`This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.`}
                         </Alert>
-                        <Alert type="error">
+                        <Alert className="mb1" type="error">
                             {c('Confirm').t`Are you sure you want to permanently delete this key?`}
                         </Alert>
                     </>
@@ -65,11 +65,11 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 close: <Button onClick={() => setStep(STEPS.CONFIRM_DELETE)}>{c('Action').t`No`}</Button>,
                 children: (
                     <>
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Alert')
                                 .t`Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.`}
                         </Alert>
-                        <Alert>{c('Confirm').t`Do you want to export your key?`}</Alert>
+                        <Alert className="mb1">{c('Confirm').t`Do you want to export your key?`}</Alert>
                     </>
                 ),
             };
@@ -85,10 +85,10 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 close: <Button onClick={() => setStep(STEPS.EXPORT_KEY)}>{c('Action').t`No`}</Button>,
                 children: (
                     <>
-                        <Alert type="error">
+                        <Alert className="mb1" type="error">
                             {c('Alert').t`You will face a permanent data loss by not making a backup of your key.`}
                         </Alert>
-                        <Alert type="error">
+                        <Alert className="mb1" type="error">
                             {c('Confirm').t`Are you sure you want to delete this key without backing it up?`}
                         </Alert>
                     </>
@@ -100,7 +100,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
             return {
                 loading: true,
                 submit: <ErrorButton type="submit" loading>{c('Action').t`Delete`}</ErrorButton>,
-                children: <Alert>{c('alert').t`The key for your address is now being deleted.`}</Alert>,
+                children: <Alert className="mb1">{c('alert').t`The key for your address is now being deleted.`}</Alert>,
             };
         }
 
@@ -108,7 +108,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
             const fp = <code key="0">{fingerprint}</code>;
             return {
                 submit: null,
-                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} has been deleted.`}</Alert>,
+                children: <Alert className="mb1">{c('Info').jt`Key with fingerprint ${fp} has been deleted.`}</Alert>,
             };
         }
 

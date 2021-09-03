@@ -15,7 +15,8 @@ const ProtonVPNCredentialsSection = () => {
 
     return (
         <>
-            <Alert>{c('Info').jt`Use the following credentials to log into the ${downloadLink}.`}</Alert>
+            <Alert className="mb1">{c('Info')
+                .jt`Use the following credentials to log into the ${downloadLink}.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Proton username`}</Label>
                 <Field className="mt0-5">

@@ -36,9 +36,10 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
                     confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                     onClose={reject}
                 >
-                    <Alert type="info">{c('Info')
+                    <Alert className="mb1" type="info">{c('Info')
                         .t`Please note that if you delete this filter, we will stop processing all the automated actions it triggers.`}</Alert>
-                    <Alert type="error">{c('Info').t`Are you sure you want to delete this filter?`}</Alert>
+                    <Alert className="mb1" type="error">{c('Info')
+                        .t`Are you sure you want to delete this filter?`}</Alert>
                 </ConfirmModal>
             );
         });

@@ -17,7 +17,7 @@ const RestoreAdministratorPrivileges = () => {
     if (organizationKeyInfo.userNeedsToReactivateKey) {
         return (
             <Block>
-                <Alert type="error">
+                <Alert className="mb1" type="error">
                     <div>
                         {c('Restore administrator panel')
                             .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
@@ -40,7 +40,9 @@ const RestoreAdministratorPrivileges = () => {
     if (organizationKeyInfo.userNeedsToActivateKey) {
         return (
             <Block>
-                <Alert type="error">{getActivationText()}</Alert>
+                <Alert className="mb1" type="error">
+                    {getActivationText()}
+                </Alert>
                 <ButtonLike as={SettingsLink} path="/organization-keys" color="norm">
                     {c('Action').t`Activate organization key`}
                 </ButtonLike>

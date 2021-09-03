@@ -180,7 +180,9 @@ function GeneratedLinkState({
                                 ).t`Copy link`}</PrimaryButton>
                             </div>
                         </Row>
-                        <Alert>{password ? SHARING_INFO_LABEL.withPassword : SHARING_INFO_LABEL.default}</Alert>
+                        <Alert className="mb1">
+                            {password ? SHARING_INFO_LABEL.withPassword : SHARING_INFO_LABEL.default}
+                        </Alert>
                         <Details
                             open={additionalSettingsExpanded}
                             onToggle={() => {

@@ -48,7 +48,9 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
                     onClose={reject}
                     onConfirm={resolve}
                 >
-                    <Alert type="error">{alertText}</Alert>
+                    <Alert className="mb1" type="error">
+                        {alertText}
+                    </Alert>
                 </ConfirmModal>
             );
         });

@@ -31,7 +31,10 @@ const DisableTOTPModal = (props: any) => {
     const { section, ...modalProps } = (() => {
         if (step === STEPS.CONFIRM) {
             return {
-                section: <Alert>{c('Message').t`Are you sure you want to disable two-factor authentication?`}</Alert>,
+                section: (
+                    <Alert className="mb1">{c('Message')
+                        .t`Are you sure you want to disable two-factor authentication?`}</Alert>
+                ),
                 onSubmit() {
                     setStep(STEPS.PASSWORD);
                 },

@@ -40,12 +40,12 @@ export const useEmptyLabel = () => {
                         onConfirm={() => resolve(undefined)}
                         onClose={reject}
                     >
-                        <Alert type="info">
+                        <Alert className="mb1" type="info">
                             {isLabel
                                 ? c('Info').t`All messages stored with this label will be permanently deleted.`
                                 : c('Info').t`All messages stored in this folder will be permanently deleted.`}
                         </Alert>
-                        <Alert type="error">
+                        <Alert className="mb1" type="error">
                             {isLabel
                                 ? c('Info').t`Are you sure you want to delete all messages with this label?`
                                 : c('Info').t`Are you sure you want to delete all messages in this folder?`}

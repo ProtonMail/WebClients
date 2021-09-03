@@ -128,7 +128,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                     setStep(STEPS.SELECT_FILES);
                 },
                 children: (
-                    <Alert>
+                    <Alert className="mb1">
                         {c('Alert')
                             .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.`}
                     </Alert>
@@ -142,7 +142,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 onSubmit: () => selectRef.current?.click(),
                 children: (
                     <>
-                        <Alert>{c('Label').t`Please select files to upload`}</Alert>
+                        <Alert className="mb1">{c('Label').t`Please select files to upload`}</Alert>
                         <SelectKeyFiles
                             ref={selectRef}
                             onUpload={handleUploadKeys}

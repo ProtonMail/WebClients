@@ -96,7 +96,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                 title: c('Title').t`Set organization keys`,
                 section: (
                     <>
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}</Alert>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </>
@@ -112,9 +112,9 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                 title: c('Title').t`Set organization password`,
                 section: (
                     <>
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.`}</Alert>
-                        <Alert type="warning">
+                        <Alert className="mb1" type="warning">
                             {c('Info')
                                 .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}
                             <br />
@@ -190,7 +190,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                 title: c('Title').t`Allocate storage`,
                 section: (
                     <>
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.`}</Alert>
                         <Row>
                             <Label htmlFor="storage">{c('Label').t`Account storage`}</Label>
@@ -227,7 +227,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                 title: c('Title').t`Allocate VPN connections`,
                 section: (
                     <>
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users.`}</Alert>
                         <Row>
                             <Label htmlFor="vpn">{c('Label').t`VPN Connections`}</Label>

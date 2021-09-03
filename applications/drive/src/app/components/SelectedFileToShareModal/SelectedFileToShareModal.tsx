@@ -133,7 +133,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
         title: c('Action').t`Share file`,
         content: (
             <>
-                <Alert>{c('Info').t`Select an uploaded file and create a link to it.`}</Alert>
+                <Alert className="mb1">{c('Info').t`Select an uploaded file and create a link to it.`}</Alert>
                 <FolderTree
                     items={treeItems}
                     initiallyExpandedFolders={initiallyExpandedFolders}

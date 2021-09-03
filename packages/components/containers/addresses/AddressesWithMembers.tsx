@@ -91,7 +91,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
             {currentMember && (
                 <div className="mb1">
                     {mustActivateOrganizationKey ? (
-                        <Alert type="warning">
+                        <Alert className="mb1" type="warning">
                             {c('Warning')
                                 .jt`You must ${activateLink} organization keys before adding an email address to a non-private member.`}
                         </Alert>

@@ -168,7 +168,10 @@ const HumanVerificationForm = ({
     const [index, setIndex] = useState(0);
 
     if (tabs.length === 0) {
-        return <Alert type="error">{c('Human verification method').t`No verification method available`}</Alert>;
+        return (
+            <Alert className="mb1" type="error">{c('Human verification method')
+                .t`No verification method available`}</Alert>
+        );
     }
 
     if (step === Steps.VERIFY_CODE && verificationModel) {

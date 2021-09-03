@@ -234,11 +234,15 @@ const SendWithErrorsConfirmationModal = ({
 
     return (
         <FormModal title={title} submit={submit} onSubmit={handleConfirm} {...rest}>
-            <Alert type="warning">{warningText}</Alert>
+            <Alert className="mb1" type="warning">
+                {warningText}
+            </Alert>
             <div>
                 <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
             </div>
-            <Alert type={alertType}>{alertText}</Alert>
+            <Alert className="mb1" type={alertType}>
+                {alertText}
+            </Alert>
         </FormModal>
     );
 };

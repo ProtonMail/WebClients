@@ -155,7 +155,11 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             loading={loading}
             {...rest}
         >
-            <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/">
+            <Alert
+                className="mb1"
+                type="warning"
+                learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/"
+            >
                 <div className="text-bold text-uppercase">
                     {c('Info')
                         .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}

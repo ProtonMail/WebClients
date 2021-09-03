@@ -297,7 +297,7 @@ const MergingModalContent = ({
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {totalBeMerged > 0
                     ? c('Description')
                           .t`Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.`

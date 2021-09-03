@@ -155,7 +155,7 @@ const ContactResignModal = ({
     );
     const content = emailsWithKeys.length ? (
         <>
-            <Alert type="info">
+            <Alert className="mb1" type="info">
                 {c('Info')
                     .t`Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?`}
             </Alert>
@@ -168,7 +168,7 @@ const ContactResignModal = ({
             )}
         </>
     ) : (
-        <Alert type="info">{c('Info').t`Do you want to re-sign the contact details?`}</Alert>
+        <Alert className="mb1" type="info">{c('Info').t`Do you want to re-sign the contact details?`}</Alert>
     );
 
     return (

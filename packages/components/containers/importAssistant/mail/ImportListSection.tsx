@@ -82,7 +82,7 @@ const ImportListSection = () => {
 
         if (hasStoragePausedImports) {
             return (
-                <Alert type="warning">
+                <Alert className="mb1" type="warning">
                     {c('Info').t`Proton paused an import because your account is running low on space. You can:`}
                     <ul className="m0">
                         <li>{c('Info').t`free up space by deleting older messages or other data`}</li>
@@ -94,7 +94,7 @@ const ImportListSection = () => {
 
         if (hasAuthPausedImports) {
             return (
-                <Alert type="warning">
+                <Alert className="mb1" type="warning">
                     {c('Info')
                         .t`Proton paused an import because it lost the connection with your other email provider. Please reconnect.`}
                 </Alert>
@@ -103,7 +103,7 @@ const ImportListSection = () => {
 
         if (delayedImport) {
             return (
-                <Alert type="warning">
+                <Alert className="mb1" type="warning">
                     {c('Info').t`Your import from ${delayedImport.Email} is temporarily delayed.`}
                     <br />
                     {bandwidthMessage}

@@ -161,7 +161,9 @@ export const usePermanentDelete = (labelID: string) => {
                     onConfirm={() => resolve(undefined)}
                     onClose={reject}
                 >
-                    <Alert type="error">{modalText}</Alert>
+                    <Alert className="mb1" type="error">
+                        {modalText}
+                    </Alert>
                 </ConfirmModal>
             );
         });

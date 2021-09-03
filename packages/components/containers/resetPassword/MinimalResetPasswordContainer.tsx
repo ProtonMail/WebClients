@@ -48,6 +48,7 @@ const RequestResetTokenForm = ({
             }}
         >
             <Alert
+                className="mb1"
                 learnMore={
                     isVPN
                         ? 'https://protonvpn.com/support/reset-protonvpn-account-password/'
@@ -108,7 +109,7 @@ const ValidateTokenForm = ({ onSubmit }: { onSubmit: (token: string) => Promise<
                 withLoading(onSubmit(token));
             }}
         >
-            <Alert>{c('Info')
+            <Alert className="mb1">{c('Info')
                 .t`We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.`}</Alert>
             <Label htmlFor="reset-token" className="sr-only">
                 {c('Label').t`Token`}
@@ -124,7 +125,7 @@ const ValidateTokenForm = ({ onSubmit }: { onSubmit: (token: string) => Promise<
                     required
                 />
             </div>
-            <Alert type="warning">{c('Info')
+            <Alert className="mb1" type="warning">{c('Info')
                 .t`IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.`}</Alert>
             <div className="text-right mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Reset password`}</PrimaryButton>
@@ -150,11 +151,12 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
             }}
         >
             <Alert
+                className="mb1"
                 type="warning"
                 learnMore="https://protonmail.com/support/knowledge-base/updating-your-login-password/"
             >{c('Info')
                 .jt`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${hereLink}.`}</Alert>
-            <Alert type="warning">{c('Info').t`ALL YOUR DATA WILL BE LOST!`}</Alert>
+            <Alert className="mb1" type="warning">{c('Info').t`ALL YOUR DATA WILL BE LOST!`}</Alert>
             <Label htmlFor="danger" className="sr-only">
                 {c('Label').t`Danger`}
             </Label>
@@ -169,8 +171,10 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
                 />
             </div>
             {isVPN ? null : (
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c('Info')
-                    .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
+                <Alert
+                    className="mb1"
+                    learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/"
+                >{c('Info').t`If you remember your old password later, you can recover your existing messages.`}</Alert>
             )}
             <div className="text-right mb1">
                 <PrimaryButton type="submit" loading={loading}>{c('Action').t`Reset my password`}</PrimaryButton>
@@ -197,7 +201,8 @@ const SetPasswordForm = ({ onSubmit }: { onSubmit: (password: string) => Promise
                 withLoading(onSubmit(password));
             }}
         >
-            <Alert type="warning">{c('Info').t`Keep this password safe, it cannot be recovered.`}</Alert>
+            <Alert className="mb1" type="warning">{c('Info')
+                .t`Keep this password safe, it cannot be recovered.`}</Alert>
             <Label htmlFor="new-password" className="sr-only">
                 {c('Label').t`New password`}
             </Label>
@@ -225,7 +230,7 @@ const SetPasswordForm = ({ onSubmit }: { onSubmit: (password: string) => Promise
                     required
                 />
             </div>
-            <Alert type="warning">{c('Info')
+            <Alert className="mb1" type="warning">{c('Info')
                 .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}</Alert>
             <div className="text-right mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Submit`}</PrimaryButton>
@@ -287,7 +292,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                                     onConfirm={resolve}
                                     onClose={reject}
                                 >
-                                    <Alert type="warning">{c('Info')
+                                    <Alert className="mb1" type="warning">{c('Info')
                                         .t`Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?`}</Alert>
                                 </ConfirmModal>
                             );

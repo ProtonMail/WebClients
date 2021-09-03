@@ -23,7 +23,7 @@ const UpgradeModal = ({ onConfirm = noop, onClose = noop, ...rest }: Props) => {
             confirm={c('Action').t`Upgrade`}
             {...rest}
         >
-            <Alert type="warning">{c('Warning').t`This feature requires a paid Proton account`}</Alert>
+            <Alert className="mb1" type="warning">{c('Warning').t`This feature requires a paid Proton account`}</Alert>
         </ConfirmModal>
     );
 };

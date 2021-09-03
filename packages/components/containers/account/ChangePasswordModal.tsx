@@ -160,7 +160,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 return {
                     title: c('Title').t`Change password for ${Name} (${Email})`,
                     extraAlert: (
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info').t`Enter your own password (as organization admin) and this user's new password.`}
                         </Alert>
                     ),
@@ -227,7 +227,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             return {
                 title: c('Title').t`Switch to two-password mode`,
                 extraAlert: (
-                    <Alert>
+                    <Alert className="mb1">
                         {c('Info')
                             .t`Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.`}
                     </Alert>
@@ -412,7 +412,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     confirmPassword: c('Label').t`Confirm password`,
                 },
                 extraAlert: (
-                    <Alert>
+                    <Alert className="mb1">
                         {c('Info')
                             .t`ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
                     </Alert>
@@ -446,7 +446,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const boldAlert = <b key="bold-alert">{c('Info').t`Proton can't help you recover any lost passwords`}</b>;
     const alert = (
         <>
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Info')
                     .jt`Make sure you remember the password to log in and decrypt emails. ${boldAlert}. We recommend adding a recovery email first.`}
             </Alert>

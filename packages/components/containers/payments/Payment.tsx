@@ -84,7 +84,10 @@ const Payment = ({
                 {MIN_DONATION_AMOUNT}
             </Price>
         );
-        return <Alert type="error">{c('Error').jt`The minimum amount that can be donated is ${price}`}</Alert>;
+        return (
+            <Alert className="mb1" type="error">{c('Error')
+                .jt`The minimum amount that can be donated is ${price}`}</Alert>
+        );
     }
 
     if (type === 'credit' && amount < MIN_CREDIT_AMOUNT) {
@@ -93,7 +96,10 @@ const Payment = ({
                 {MIN_CREDIT_AMOUNT}
             </Price>
         );
-        return <Alert type="error">{c('Error').jt`The minimum amount of credit that can be added is ${price}`}</Alert>;
+        return (
+            <Alert className="mb1" type="error">{c('Error')
+                .jt`The minimum amount of credit that can be added is ${price}`}</Alert>
+        );
     }
 
     if (amount <= 0) {
@@ -102,7 +108,7 @@ const Payment = ({
                 {0}
             </Price>
         );
-        return <Alert type="error">{c('Error').jt`The minimum payment we accept is ${price}`}</Alert>;
+        return <Alert className="mb1" type="error">{c('Error').jt`The minimum payment we accept is ${price}`}</Alert>;
     }
 
     if (loading) {
@@ -164,7 +170,7 @@ const Payment = ({
             {type === 'subscription' &&
             method &&
             [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any) ? (
-                <Alert type="warning">{c('Warning')
+                <Alert className="mb1" type="warning">{c('Warning')
                     .t`Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.`}</Alert>
             ) : null}
         </>
