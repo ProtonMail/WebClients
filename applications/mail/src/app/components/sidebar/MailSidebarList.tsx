@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { Location } from 'history';
+import { useLocation } from 'react-router-dom';
 import {
     FeatureCode,
     HotkeyTuple,
@@ -26,7 +26,6 @@ import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import SidebarItem from './SidebarItem';
@@ -38,12 +37,12 @@ export type UnreadCounts = { [labelID: string]: number | undefined };
 
 interface Props {
     labelID: string;
-    location: Location;
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
-const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
+const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
+    const location = useLocation();
     const [user] = useUser();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
@@ -205,7 +204,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
             return acc;
         }, {});
         return unreadCounterMap;
-    }, [mailSettings, labels, folders, conversationCounts, messageCounts]);
+    }, [mailSettings, labels, folders, conversationCounts, messageCounts, location]);
 
     const totalMessagesMap = useDeepMemo(() => {
         if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
@@ -219,7 +218,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
             return acc;
         }, {});
         return unreadCounterMap;
-    }, [messageCounts, conversationCounts, labels, folders, mailSettings]);
+    }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
     // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
     const showScheduled =
