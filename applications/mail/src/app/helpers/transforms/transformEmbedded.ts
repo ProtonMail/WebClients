@@ -8,7 +8,7 @@ import { hasShowEmbedded } from '../mailSettings';
 import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
 import {
     findEmbedded,
-    readCID,
+    readContentIDandLocation,
     decryptEmbeddedImages,
     markEmbeddedImagesAsLoaded,
     insertBlobImages,
@@ -32,20 +32,22 @@ export const transformEmbedded = async (
     if (message.document) {
         newEmbeddedImages = getAttachments(message.data)
             .map((attachment) => {
-                const cid = readCID(attachment);
+                const { cid, cloc } = readContentIDandLocation(attachment);
 
-                const existing = existingEmbeddedImage.find((embeddedImage) => embeddedImage.cid === cid);
+                const existing = existingEmbeddedImage.find(
+                    (embeddedImage) => embeddedImage.cid === cid || embeddedImage.cloc === cloc
+                );
 
                 if (existing) {
                     return [];
                 }
 
-                const matches = findEmbedded(cid, message.document as Element);
+                const matches = findEmbedded(cid, cloc, message.document as Element);
 
                 return matches.map((match) => {
                     const id = generateUID('embedded');
                     if (draft) {
-                        match.setAttribute('data-embedded-img', cid);
+                        match.setAttribute('data-embedded-img', cid || cloc);
                     } else {
                         insertImageAnchor(id, 'embedded', match);
                     }
@@ -54,6 +56,7 @@ export const transformEmbedded = async (
                         original: match,
                         id,
                         cid,
+                        cloc,
                         attachment,
                         status: 'not-loaded' as 'not-loaded',
                     };
