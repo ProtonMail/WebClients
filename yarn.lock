@@ -1645,16 +1645,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:^7.9.6":
-  version: 7.15.3
-  resolution: "@babel/runtime-corejs3@npm:7.15.3"
-  dependencies:
-    core-js-pure: ^3.16.0
-    regenerator-runtime: ^0.13.4
-  checksum: d0c7e970fc75091f03251075e4a5ba4a0232fbb0fd365dd6263eb3e556a9cfe9a2769c493dff3376309fe6249d8cbcd564f1c2cbc2a2456fbba226fd730f91f2
-  languageName: node
-  linkType: hard
-
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.4.3, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.1, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.14.6
   resolution: "@babel/runtime@npm:7.14.6"
@@ -11413,13 +11403,6 @@ __metadata:
   version: 3.15.2
   resolution: "core-js-pure@npm:3.15.2"
   checksum: 098de70a85d245422046c8859d699f8d1a5e971d12074f26e108a3db539430e641af4bb311888efbb944cfdc747d4b56ec8a1970458a2ce444cc834cabdf1772
-  languageName: node
-  linkType: hard
-
-"core-js-pure@npm:^3.16.0":
-  version: 3.16.1
-  resolution: "core-js-pure@npm:3.16.1"
-  checksum: 57bebea1220ee5aea612cd9f10646b948374d76d70fd0d39bb371c9f0af74c1f66fda1ffc7cb40ee805910f04eb7fb4a239ba70511d7fef347eb2ae481afbb79
   languageName: node
   linkType: hard
 
@@ -24191,7 +24174,6 @@ fsevents@^1.2.7:
     react-dom: ^17.0.0
     react-test-renderer: ^17.0.0
     react-window: ^1.8.5
-    service-worker-loader: ^4.0.2
     ttag: ^1.7.24
     typescript: ^4.0.2
     web-streams-polyfill: ^3.0.3
@@ -26302,7 +26284,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^2.1.0, schema-utils@npm:^2.6.5, schema-utils@npm:^2.7.0":
+"schema-utils@npm:^2.6.5, schema-utils@npm:^2.7.0":
   version: 2.7.1
   resolution: "schema-utils@npm:2.7.1"
   dependencies:
@@ -26538,19 +26520,6 @@ fsevents@^1.2.7:
     parseurl: ~1.3.3
     send: 0.17.1
   checksum: 97e8c94ec02950d019000ca12a8e0b4fdeaaabb7ae965c1c05557b55b48114716ae92688972a8d9f06a5e2d5957c305253a859ec223bb39a1e0732366d0e2768
-  languageName: node
-  linkType: hard
-
-"service-worker-loader@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "service-worker-loader@npm:4.0.2"
-  dependencies:
-    "@babel/runtime-corejs3": ^7.9.6
-    loader-utils: ^2.0.0
-    schema-utils: ^2.1.0
-  peerDependencies:
-    webpack: ^3.0.0 || ^4.0.0
-  checksum: 49288584b9e773bfecd517c91dd0ebba33e54e5a3e3e3f45d1ccdde66ea6413df2d23c2a6029a7d308543ce6a156dd05ee23e47a7a6c9b5ea9ad8a03bc5df23c
   languageName: node
   linkType: hard
 
