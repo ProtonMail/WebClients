@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { dialogRootClassName } from '@proton/shared/lib/busy';
 
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
@@ -19,8 +20,6 @@ const ANIMATIONS = {
     MODAL_IN: 'anime-modal-in',
     MODAL_OUT: 'anime-modal-out',
 };
-
-export const dialogRootClassName = 'modal-container';
 
 /** @type any */
 const Dialog = ({

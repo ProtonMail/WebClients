@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { LoaderPage, ProtonApp, StandardSetup } from '@proton/components';
 import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/importAssistant/constants';
 
+import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 
@@ -20,6 +21,7 @@ const enhancedConfig = {
     ...config,
 };
 
+newVersionUpdater(enhancedConfig);
 sentry(enhancedConfig);
 
 if ('registerProtocolHandler' in navigator) {
