@@ -47,32 +47,35 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const participantsList = getParticipantsList(participants, organizer);
 
     const iconClassName = 'flex-item-noshrink mr1 mb0-25';
-    const properties: { icon: string; label: string; value: string | React.ReactNode; key: string }[] = [
-        !!frequencyString && {
-            icon: 'arrows-rotate',
-            label: c('ICS widget label for event details').t`Repeats`,
-            value: frequencyString,
-            key: 'frequency',
-        },
-        !!calendar && {
-            icon: 'calendar-days',
-            label: c('ICS widget label for event details').t`Calendar`,
-            value: calendar,
-            key: 'calendar',
-        },
-        !!trimmedLocation && {
-            icon: 'map-marker',
-            label: c('ICS widget label for event details').t`Location`,
-            value: sanitizedAndUrlifiedLocation,
-            key: 'location',
-        },
-        {
-            icon: 'user-group',
-            label: c('ICS widget label for event details').t`Participants`,
-            value: <ExtraEventParticipants list={participantsList} />,
-            key: 'participants',
-        },
-    ].filter(isTruthy);
+    const properties: { icon: string; label: string; value: string | React.ReactNode; key: string; title?: string }[] =
+        [
+            !!frequencyString && {
+                icon: 'arrows-rotate',
+                label: c('ICS widget label for event details').t`Repeats`,
+                value: frequencyString,
+                key: 'frequency',
+                title: frequencyString,
+            },
+            !!calendar && {
+                icon: 'calendar-days',
+                label: c('ICS widget label for event details').t`Calendar`,
+                value: calendar,
+                key: 'calendar',
+                title: calendar,
+            },
+            !!trimmedLocation && {
+                icon: 'map-marker',
+                label: c('ICS widget label for event details').t`Location`,
+                value: sanitizedAndUrlifiedLocation,
+                key: 'location',
+            },
+            {
+                icon: 'user-group',
+                label: c('ICS widget label for event details').t`Participants`,
+                value: <ExtraEventParticipants list={participantsList} />,
+                key: 'participants',
+            },
+        ].filter(isTruthy);
 
     if (isImport && hasMultipleVevents) {
         return null;
@@ -80,7 +83,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
 
     return (
         <>
-            {properties.map(({ value, icon, label, key }, index) => {
+            {properties.map(({ value, icon, label, key, title }, index) => {
                 return (
                     <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
                         <span className="on-mobile-mr0" title={label}>
@@ -88,11 +91,16 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                         </span>
                         {key === 'location' ? (
                             <div
-                                className="flex-item-fluid text-hyphens"
+                                className="flex-item-fluid text-break"
                                 dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }}
                             />
                         ) : (
-                            <div className="flex-item-fluid text-hyphens">{value}</div>
+                            <div
+                                className={classnames(['flex-item-fluid', key !== 'participants' && 'text-ellipsis'])}
+                                title={title}
+                            >
+                                {value}
+                            </div>
                         )}
                     </div>
                 );

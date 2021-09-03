@@ -1,6 +1,5 @@
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { Dispatch, SetStateAction } from 'react';
-import { classnames } from '@proton/components';
 import { getCalendarEventLink, getDoNotDisplayButtons, InvitationModel } from '../../../../helpers/calendar/invite';
 import { MessageExtended } from '../../../../models/message';
 import ExtraEventAlert from './ExtraEventAlert';
@@ -27,7 +26,7 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const { to, toApp, text } = getCalendarEventLink(model);
 
     return (
-        <div className={classnames(['mb0-5 border-bottom'])}>
+        <div className="mb0-5 border-bottom">
             <ExtraEventAlert model={model} />
             <ExtraEventLink to={to} text={text} toApp={toApp} />
             {displayButtons}

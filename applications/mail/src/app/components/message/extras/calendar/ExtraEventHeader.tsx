@@ -82,11 +82,11 @@ const ExtraEventHeader = ({ model }: Props) => {
 
     return (
         <div className="mb0-5">
-            <div className="text-2xl flex flex-column text-ellipsis text-strong mt0-25 mb0-25" title={title}>
+            <div className="text-2xl text-ellipsis text-strong" title={title}>
                 {title}
             </div>
-            <div className="text-lg mt0-25 mb0-25">{dateHeader}</div>
-            {optionalHeader && <div className="text-sm mt0-25 mb0-25 color-weak">{optionalHeader}</div>}
+            <div className="text-lg mb0-25">{dateHeader}</div>
+            {optionalHeader && <div className="text-sm color-weak">{optionalHeader}</div>}
         </div>
     );
 };

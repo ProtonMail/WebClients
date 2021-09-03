@@ -21,7 +21,7 @@ const ExtraEventParticipants = ({ list }: Props) => {
     const listOfVisibleParticipants = isShowingMore ? list : list.slice(0, DEFAULT_NUMBER_VISIBLE_PARTICIPANTS);
 
     return (
-        <div className="text-break">
+        <>
             {listOfVisibleParticipants.map((participant, i) => {
                 return (
                     <ExtraEventParticipant
@@ -36,7 +36,7 @@ const ExtraEventParticipants = ({ list }: Props) => {
                     {isShowingMore ? c('Action').t`Show less` : c('Action').t`Show ${totalHiddenParticipants} more`}
                 </LinkButton>
             )}
-        </div>
+        </>
     );
 };
 
