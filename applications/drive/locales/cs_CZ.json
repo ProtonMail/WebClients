@@ -6,6 +6,45 @@
   "contexts": {
     "": {},
     "Error": {
+      "This field is required": [
+        "Toto pole je povinné"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
+      ],
+      "Email is not valid": [
+        "Emailová adresa není platná"
+      ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
+      ],
+      "Request timed out.": [
+        "Vypršel časový limit žádosti."
+      ],
+      "Signature verification failed": [
+        "Ověření podpisu selhalo"
+      ],
+      "Could not find address ${ email }.": [
+        "Nelze najít adresu ${ email }."
+      ],
+      "Missing signature": [
+        "Chybí podpis"
+      ],
+      "Contact signature not verified": [
+        "Podpis kontaktu nebyl ověřen"
+      ],
+      "Signature not verified": [
+        "Podpis nebyl ověřen"
+      ],
+      "Invalid name": [
+        "Neplatný název"
+      ],
+      "Unknown error": [
+        "Neznámá chyba"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva může obsahovat některé URL odkazy, které nelze otevřít Vaším současným prohlížečem"
       ],
@@ -18,20 +57,32 @@
       "Authentication error.": [
         "Ověření selhalo."
       ],
-      "Unknown error": [
-        "Neznámá chyba"
-      ],
       "Email address invalid": [
         "E-mailová adresa je neplatná"
       ],
-      "This field is required": [
-        "Toto pole je povinné"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Prohlížeč, který využíváte, nepodporuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
+      "Incorrect mailbox password. Please try again": [
+        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu"
+      ],
+      "Can't validate email, try again later": [
+        "Nemůžeme ověřit váš e-mail, zkuste to později"
+      ],
+      "Can't validate phone, try again later": [
+        "Nemůžeme ověřit váš telefon, zkuste to později"
+      ],
+      "Enter 6 digits": [
+        "Zadejte 6 číslic"
+      ],
+      "Invalid verification code": [
+        "Neplatný ověřovací kód"
       ],
       "Process aborted": [
         "Platební transakce byla přerušena"
@@ -138,65 +189,14 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
-      "Invalid name": [
-        "Neplatný název"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu"
-      ],
-      "Can't validate email, try again later": [
-        "Nemůžeme ověřit váš e-mail, zkuste to později"
-      ],
-      "Can't validate phone, try again later": [
-        "Nemůžeme ověřit váš telefon, zkuste to později"
-      ],
-      "Enter 6 digits": [
-        "Zadejte 6 číslic"
-      ],
-      "Invalid verification code": [
-        "Neplatný ověřovací kód"
-      ],
       "File has no contents to preview": [
         "Soubor nemá žádný obsah k náhledu"
-      ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
-      ],
-      "Email is not valid": [
-        "Emailová adresa není platná"
-      ],
-      "Not a valid number": [
-        "Neplatné číslo"
-      ],
-      "Passwords do not match": [
-        "Hesla se neshodují"
-      ],
-      "Missing signature": [
-        "Chybí podpis"
-      ],
-      "Contact signature not verified": [
-        "Podpis kontaktu nebyl ověřen"
-      ],
-      "Signature not verified": [
-        "Podpis nebyl ověřen"
-      ],
-      "Signature verification failed": [
-        "Ověření podpisu selhalo"
-      ],
-      "Could not find address ${ email }.": [
-        "Nelze najít adresu ${ email }."
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -205,1009 +205,157 @@
         "Nesprávné heslo. Zkuste to znovu."
       ]
     },
-    "Action": {
-      "Close": [
-        "Zavřít"
-      ],
-      "Use “${ label }” setting": [
-        "Použijte nastavení “${ label }”"
-      ],
-      "Confirm": [
-        "Potvrdit"
-      ],
-      "Cancel": [
-        "Zrušit"
-      ],
-      "Submit": [
-        "Odeslat"
-      ],
-      "Close modal": [
-        "Zavřít okno"
-      ],
-      "Close navigation": [
-        "Zavřít menu"
-      ],
-      "Open navigation": [
-        "Otevřít menu"
-      ],
-      "More info: ${ safeTitle }": [
-        "Více informací: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "Přejít na panel ${ index }"
-      ],
-      "Load image": [
-        "Načíst obrázek"
-      ],
-      "Export": [
-        "Exportovat"
-      ],
-      "Delete": [
-        "Odstranit"
-      ],
-      "Edit": [
-        "Upravit"
-      ],
-      "Remove": [
-        "Odstranit"
-      ],
-      "Download": [
-        "Stáhnout"
-      ],
-      "Use for sending": [
-        "Použít pro odesílání"
-      ],
-      "Trust": [
-        "Důvěřovat"
-      ],
-      "Untrust": [
-        "Nedůvěřovat"
-      ],
-      "Upgrade": [
-        "Rozšířit"
-      ],
-      "Email settings": [
-        "Nastavení e-mailu"
-      ],
-      "Contact group": [
-        "Skupina kontaktů"
-      ],
-      "Upload picture": [
-        "Nahrát obrázek"
-      ],
-      "Next month": [
-        "Další měsíc"
-      ],
-      "Previous month": [
-        "Předchozí měsíc"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Potvrďte otevření odkazu ${ link }"
-      ],
-      "Continue with Google": [
-        "Pokračovat pomocí účtu Google"
-      ],
-      "refresh the page": [
-        "aktualizovat stránku"
-      ],
-      "Signing out": [
-        "Odhlásit se"
-      ],
-      "Close this banner": [
-        "Zavřít tento banner"
-      ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
-      "enable desktop notifications": [
-        "povolit oznámení na ploše"
-      ],
-      "here": [
-        "zde"
-      ],
-      "Copy email to clipboard": [
-        "Zkopírovat e-mail do schránky"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } úvod"
-      ],
-      "Chat with us": [
-        "Komunikace s námi"
-      ],
-      "I have a question": [
-        "Mám dotaz"
-      ],
-      "Request a feature": [
-        "Požádat o funkci"
-      ],
-      "Report a problem": [
-        "Nahlásit problém"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } obchod"
-      ],
-      "Switch account": [
-        "Přepnout účet"
-      ],
-      "Sign out": [
-        "Odhlásit se"
-      ],
-      "Go to settings": [
-        "Přejít do nastavení"
-      ],
-      "Beta Access": [
-        "Beta přístup"
-      ],
-      "Theme": [
-        "Vzhled"
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Composer size": [
-        "Velikost okna pro psaní zpráv"
-      ],
-      "Get started": [
-        "Začínáme"
-      ],
-      "Next": [
-        "Další"
-      ],
-      "Start setup": [
-        "Spusťte nastavení"
-      ],
-      "Skip": [
-        "Přeskočít"
-      ],
-      "Done": [
-        "Hotovo"
-      ],
-      "Back": [
-        "Zpět"
-      ],
-      "Use ${ label } theme": [
-        "Použít ${ label } motiv"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Clear": [
-        "Vymazat"
-      ],
-      "Add screenshot(s)": [
-        "Přidat snímek(y) obrazovky"
-      ],
-      "Hide info": [
-        "Skrýt informace"
-      ],
-      "Show info": [
-        "Zobrazit informace"
-      ],
-      "Remove bonuses": [
-        "Odebrat bonusy"
-      ],
-      "Verify": [
-        "Ověřit"
-      ],
-      "Try again": [
-        "Zkusit znovu"
-      ],
-      "Use a different card": [
-        "Použít jinou platební kartu"
-      ],
-      "Use a different payment method": [
-        "Použít jinou platební metodu"
-      ],
-      "Retry": [
-        "Obnovit"
-      ],
-      "Loading verification": [
-        "Načítání ověření"
-      ],
-      "Select plan": [
-        "Vybrat plán"
-      ],
-      "Compare all features": [
-        "Porovnat všechny funkce"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } přechodem na roční fakturaci"
-      ],
-      "Continue": [
-        "Pokračovat"
-      ],
-      "Pay": [
-        "Zaplatit"
-      ],
-      "Apply": [
-        "Použít"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Otevřít nastavení ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Odstranit dárkový kód"
-      ],
-      "annual billing": [
-        "roční fakturace"
-      ],
-      "Compare plans": [
-        "Porovnání plánů"
-      ],
-      "Decrease": [
-        "Snížit"
-      ],
-      "Increase": [
-        "Zvýšit"
-      ],
-      "Save": [
-        "Uložit"
-      ],
-      "Add": [
-        "Přidat"
-      ],
-      "Hide advanced PGP settings": [
-        "Skrýt pokročilé nastavení PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Zobrazit pokročilá nastavení PGP"
-      ],
-      "Clear data": [
-        "Smazat data"
-      ],
-      "Recover data": [
-        "Obnovit data"
-      ],
-      "Click here.": [
-        "Klikněte zde."
-      ],
-      "Re-sign": [
-        "Znovu podepsat"
-      ],
-      "Add to group": [
-        "Přidat do skupiny"
-      ],
-      "Merge": [
-        "Sloučit"
-      ],
-      "View": [
-        "Zobrazit"
-      ],
-      "Unmark for deletion": [
-        "Zrušit označení pro odstranění"
-      ],
-      "Mark for deletion": [
-        "Označit pro odstranění"
-      ],
-      "Preview contact": [
-        "Náhled kontaktu"
-      ],
-      "Delete contact": [
-        "Smazat kontakt"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Smazat ${ selectedCount } kontakt",
-        "Smazat ${ selectedCount } kontakty",
-        "Smazat ${ selectedCount } kontaktů",
-        "Smazat ${ selectedCount } kontakty"
-      ],
-      "Deselect all": [
-        "Odznačit vše"
-      ],
-      "Select all": [
-        "Vybrat vše"
-      ],
-      "Compose": [
-        "Vytvořit"
-      ],
-      "Forward as attachment": [
-        "Přeposlat jako přílohu"
-      ],
-      "Merge contacts": [
-        "Sloučit kontakty"
-      ],
-      "Add new contact": [
-        "Přidat nový kontakt"
-      ],
-      "Add group": [
-        "Přidat skupinu"
-      ],
-      "Clear query": [
-        "Smazat dotaz"
-      ],
-      "Add contact": [
-        "Přidat kontakt"
-      ],
-      "import": [
-        "importovat"
-      ],
-      "Delete contact group": [
-        "Smazat skupinu kontaktů"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Smazat ${ selectedCount } skupinu kontaktů",
-        "Smazat ${ selectedCount } skupiny kontaktů",
-        "Smazat ${ selectedCount } skupiny kontaktů",
-        "Smazat ${ selectedCount } skupiny kontaktů"
-      ],
-      "Add new group": [
-        "Přidat novou skupinu"
-      ],
-      "Export contacts": [
-        "Exportovat kontakty"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
-      ],
-      "Choose a file or drag it here": [
-        "Vyberte soubor nebo jej sem přetáhněte"
-      ],
-      "Import": [
-        "Importovat"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "Přihlásit se"
-      ],
-      "View invoice": [
-        "Zobrazit fakturu"
-      ],
-      "Get verification code": [
-        "Získat ověřovací kód"
-      ],
-      "Try another method": [
-        "Zkuste jinou metodu"
-      ],
-      "Request new code": [
-        "Poslat nový kód"
-      ],
-      "Did not receive the code?": [
-        "Nedostali jste kód?"
-      ],
-      "Edit email address": [
-        "Upravit e-mailovou adresu"
-      ],
-      "Edit phone number": [
-        "Upravit telefonní číslo"
-      ],
-      "Details": [
-        "Detaily"
-      ],
-      "Share via link": [
-        "Sdílej skrze odkaz"
-      ],
-      "Sharing options": [
-        "Možnosti sdílení"
-      ],
-      "Zoom out": [
-        "Oddálit"
-      ],
-      "Reset zoom": [
-        "Obnovit velikost zobrazení na původní hodnotu"
-      ],
-      "Zoom in": [
-        "Přiblížit"
-      ],
-      "Previous": [
-        "Předchozí"
-      ],
-      "Delete permanently": [
-        "Navždy smazat"
-      ],
-      "Undo": [
-        "Zpět"
-      ],
-      "Cancel all uploads": [
-        "Zrušit všechna nahrávání"
-      ],
-      "New upload": [
-        "Nové nahrávání"
-      ],
-      "Rename": [
-        "Přejmenovat"
-      ],
-      "Move to folder": [
-        "Přesunout do složky"
-      ],
-      "Move to trash": [
-        "Přesunout do koše"
-      ],
-      "Share options": [
-        ""
-      ],
-      "Share": [
-        "Sdílet"
-      ],
-      "Create new folder": [
-        "Vytvořit novou složku"
-      ],
-      "Name: A to Z": [
-        "Jméno: A až Z"
-      ],
-      "Name: Z to A": [
-        "Jméno: Z až A"
-      ],
-      "Modified date: new to old": [
-        "Upravený datum: nový až starý"
-      ],
-      "Modified date: old to new": [
-        "Upravený datum: starý až nový"
-      ],
-      "Type: A to Z": [
-        "Jméno: A až Z"
-      ],
-      "Type: Z to A": [
-        "Jméno: Z až A"
-      ],
-      "Size: small to large": [
-        "Velikost: Vzestupně"
-      ],
-      "Size: large to small": [
-        "Velikost: Sestupně"
-      ],
-      "Upload file": [
-        "Nahrát soubor"
-      ],
-      "Upload folder": [
-        "Nahrát složku"
-      ],
-      "List layout": [
-        "Rozložení seznamu"
-      ],
-      "Grid layout": [
-        "Rozložení mřížky"
-      ],
-      "Preview": [
-        "Náhled"
-      ],
-      "Share file": [
-        "Sdílet odkaz"
-      ],
-      "Stop sharing": [
-        "Zrušit sdílení"
-      ],
-      "Empty trash": [
-        "Vysypat koš"
-      ],
-      "Restore from trash": [
-        "Obnovení z koše"
-      ],
-      "Maximize transfers": [
-        "Maximum transferů"
-      ],
-      "Minimize transfers": [
-        "Minimum transferů"
-      ],
-      "Close transfers": [
-        "Uzavření transferů"
-      ],
-      "Pause download": [
-        "Pozastavit stahování"
-      ],
-      "Pause upload": [
-        "Pozastavit nahrávání"
-      ],
-      "Resume download": [
-        "Souhrn stahování"
-      ],
-      "Resume upload": [
-        "Souhrn nahrávání"
-      ],
-      "Cancel download": [
-        "Zrušit stahování"
-      ],
-      "Cancel upload": [
-        "Zrušit nahrávání"
-      ],
-      "Restart download": [
-        "Restartovat stahování"
-      ],
-      "Restart upload": [
-        "Restartovat nahrávání"
-      ],
-      "Remove from this list": [
-        "Odebrat ze seznamu"
-      ],
-      "Resume transfers": [
-        ""
-      ],
-      "Pause transfers": [
-        ""
-      ],
-      "Cancel transfers": [
-        ""
-      ],
-      "Restart transfers": [
-        ""
-      ],
-      "Start recovering": [
-        "Počátek zotavení"
-      ],
-      "Show shared link details": [
-        "Zobrazit detaily sdíleného odkazu"
-      ],
-      "View more": [
-        "Zobrazit více"
-      ],
-      "Create": [
-        "Vytvořit"
-      ],
-      "Move": [
-        "Přesunout"
-      ],
-      "Copy link": [
-        "Kopírovat odkaz"
-      ],
-      "Create link": [
-        "Vytvořit odkaz"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovat alespoň ${ length } znaků",
+        "Hesel musí obsahovat alespoň ${ length } znaků",
+        "Hesel musí obsahovat alespoň ${ length } znaků",
+        "Hesla musí obsahovat alespoň ${ length } znaků"
       ]
     },
-    "Title": {
-      "Open actions dropdown": [
-        "Otevřít seznam akcí"
-      ],
-      "Upgrade required": [
-        "Vyžadována aktualizace"
-      ],
-      "Email settings": [
-        "Nastavení e-mailu"
-      ],
-      "Contact group": [
-        "Skupina kontaktů"
-      ],
-      "Link confirmation": [
-        "Potvrzení odkazu"
-      ],
-      "Keyboard Shortcuts": [
-        "Klávesové zkratky"
-      ],
-      "What's new": [
-        "Co je nového"
-      ],
-      "Open help menu": [
-        "Otevřít menu nápovědy"
-      ],
-      "Back": [
-        "Zpět"
-      ],
-      "Open settings menu": [
-        "Otevřít nabídku nastavení"
-      ],
-      "Select a theme": [
-        "Vyberte motiv"
-      ],
-      "Report a problem": [
-        "Nahlásit problém"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Potvrdit odebrání Proton bonusů"
-      ],
-      "Unsupported browser": [
-        "Nepodporovaný prohlížeč"
-      ],
-      "Card verification": [
-        "Ověření karty"
-      ],
-      "Payment verification": [
-        "Ověřování platby"
-      ],
-      "Processing...": [
-        "Zpracovávání..."
-      ],
-      "Card verification in progress": [
-        "Probíhá ověřování karty"
-      ],
-      "Payment verification in progress": [
-        "Probíhá ověřování platby"
-      ],
-      "PayPal verification failed": [
-        "Ověření platby PayPal se nezdařilo"
-      ],
-      "3-D Secure verification failed": [
-        "Ověření 3D Secure selhalo"
-      ],
-      "Error": [
-        "Chyba"
-      ],
-      "ZIP / postal code": [
-        "ZIP / PSČ"
-      ],
-      "Payment details": [
-        "Platební údaje"
-      ],
-      "Currency": [
-        "Měna"
-      ],
-      "Billing cycle": [
-        "Fakturační cyklus"
-      ],
-      "Current plan": [
-        "Aktuální plán"
-      ],
-      "Processing": [
-        "Zpracovává se"
-      ],
-      "Apply gift code": [
-        "Použít dárkový kód"
-      ],
-      "Subtotal": [
-        "Mezisoučet"
-      ],
-      "Coupon discount": [
-        "Slevový kupón"
-      ],
-      "Total (monthly)": [
-        "Celkem (měsíčně)"
-      ],
-      "Credits": [
-        "Kredity"
-      ],
-      "Gift code": [
-        "Dárkový kód"
-      ],
-      "Amount due": [
-        "Částka k zaplacení"
-      ],
-      "Cancel subscription": [
-        "Zrušit předplatné"
-      ],
-      "Network error": [
-        "Chyba sítě"
-      ],
-      "Select a plan": [
-        "Vyberte plán"
-      ],
-      "Customize your plan": [
-        "Přizpůsobte si svůj plán"
-      ],
-      "Checkout": [
-        "Objednat"
-      ],
-      "Plan summary": [
-        "Shrnutí plánu"
-      ],
-      "${ appName } customization": [
-        "${ appName } přizpůsobení"
-      ],
-      "Edit contact group": [
-        "Upravit skupinu kontaktů"
-      ],
-      "Create new group": [
-        "Vytvořit novou skupinu"
-      ],
-      "Add to ${ groupName }": [
-        "Přidat do ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Přidat do skupiny ${ groupCount }",
-        "Přidat do skupin ${ groupCount }",
-        "Přidat do skupin ${ groupCount }",
-        "Přidat do skupin ${ groupCount }"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Nastavení e-mailu (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Odstranit ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Vymazat ${ count } skupinu kontaktu",
-        "Vymazat ${ count } skupin kontaktů",
-        "Vymazat ${ count } skupin kontaktů",
-        "Vymazat ${ count } skupinu kontaktů"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } člen",
-        "${ emailsCount } členové",
-        "${ emailsCount } členů",
-        "${ emailsCount } členů"
-      ],
-      "Edit image": [
-        "Upravit obrázek"
-      ],
-      "Edit contact": [
-        "Upravit kontakt"
-      ],
-      "Create contact": [
-        "Vytvořit kontakt"
-      ],
-      "Delete ${ count } contact": [
-        "Smazat ${ count } kontakty",
-        "Smazat ${ count } kontakty",
-        "Smazat ${ count } kontaků",
-        "Smazat ${ count } kontaků"
-      ],
-      "Clearing data": [
-        "Vymazat data"
-      ],
-      "Warning": [
-        "Varování"
-      ],
-      "Recover data": [
-        "Obnovit data"
-      ],
-      "Re-signing contacts": [
-        "Znovu podepsat kontakty"
-      ],
-      "Re-sign all contacts": [
-        "Znovu podepsat všechny kontakty"
-      ],
-      "Exporting contacts": [
-        "Exportovat kontakty"
-      ],
-      "Other names": [
-        "Ostatní jména"
-      ],
-      "Email addresses": [
-        "E-mailové adresy"
-      ],
-      "Phone numbers": [
-        "Telefonní čísla"
-      ],
-      "Addresses": [
-        "Adresy"
-      ],
-      "Other information": [
-        "Další informace"
-      ],
-      "Contact Details": [
-        "Detaily kontaktu"
-      ],
-      "Merging contacts": [
-        "Slučování kontaktů"
-      ],
-      "Merge contacts": [
-        "Sloučit kontakty"
-      ],
-      "Deleting contacts": [
-        "Mazání kontaktů"
-      ],
-      "View contacts": [
-        "Zobrazit kontakty"
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Groups": [
-        "Skupiny"
-      ],
-      "Settings": [
-        "Nastavení"
-      ],
-      "Select action to take on contact group": [
-        "Vyberte akci k provedení ve skupině kontaktů"
-      ],
-      "Add contact group name": [
-        "Přidat název skupiny kontaktů"
-      ],
-      "Select contact group": [
-        "Vybrat skupinu kontaktů"
-      ],
-      "Import groups": [
-        "Importovat skupiny"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klávesové zkratky"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
-      ],
-      "Composer mode": [
-        "Režim psaní zpráv"
-      ],
-      "Beta Access": [
-        "Beta přístup"
-      ],
-      "Sign in again to continue": [
-        "Chcete-li pokračovat, znovu se přihlaste"
-      ],
-      "Account suspended": [
-        "Účet pozastaven"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
-      ],
-      "Enter your password": [
-        "Zadejte Vaše heslo"
-      ],
-      "Invalid verification code": [
-        "Neplatný ověřovací kód"
-      ],
-      "Request new code": [
-        "Poslat nový kód"
-      ],
-      "Human verification": [
-        "Captcha"
-      ],
-      "Delete permanently": [
-        "Navždy smazat"
-      ],
-      "Stop sharing": [
-        "Zrušit sdílení"
-      ],
-      "Duplicate folder found": [
-        "Byl nalezena duplicitní složka"
-      ],
-      "Duplicate file found": [
-        "Byl nalezen duplicitní soubor"
-      ],
-      "Drop to upload": [
-        "Přetáhnout a nahrát"
-      ],
-      "Show actions": [
-        "Zobrazit akce"
-      ],
-      "Sort files/folders": [
-        "Seřadit soubory/složky"
-      ],
-      "My files": [
-        "Moje soubory"
-      ],
-      "Change layout": [
-        "Změnit rozložení"
-      ],
-      "Shared": [
-        "Sdílet"
-      ],
-      "Empty trash": [
-        "Vysypat koš"
-      ],
-      "Trash": [
-        "Koš"
-      ],
-      "Additional settings": [
-        "Další funkce"
-      ],
-      "Cancel all active transfers": [
-        "Zrušit všechny aktivní transfery"
-      ],
-      "Drive": [
-        "Disk"
-      ],
-      "Restore your files": [
-        "Obnovit soubory"
-      ],
-      "File recovery process": [
-        "Proces obnovy souboru"
-      ],
-      "You have inaccessible files": [
-        "Máte nedostupné soubory"
-      ],
-      "Rename a folder": [
-        "Přejmenovat složku"
-      ],
-      "Rename a file": [
-        "Přejmenovat soubory"
-      ],
-      "File details": [
-        "Podrobnosti souboru"
-      ],
-      "Folder details": [
-        "Podrobnosti složky"
-      ],
+    "Contact field label": {
       "Name": [
         "Jméno"
       ],
-      "Uploaded by": [
-        "Nahráno uživatelem"
+      "Email": [
+        "E-mail"
       ],
-      "Location": [
-        "Umístění"
+      "Phone": [
+        "Telefon"
       ],
-      "Modified": [
-        "Upraveno"
+      "Address": [
+        "Adresa"
       ],
-      "Type": [
-        "Typ"
+      "Photo": [
+        "Fotka"
       ],
-      "MIME type": [
-        "MIME typ"
+      "Organization": [
+        "Organizace"
       ],
-      "Size": [
-        "Velikost"
+      "Birthday": [
+        "Datum narození"
       ],
-      "# of accesses": [
-        "# přístupů"
+      "Anniversary": [
+        "Výročí"
       ],
-      "You have no folders yet": [
-        "Zatím nemáte žádné složky"
+      "Title": [
+        "Titul"
       ],
-      "Create a new folder": [
-        "Vytvořit novou složku"
+      "Role": [
+        "Role"
       ],
-      "Manage share": [
-        ""
+      "Note": [
+        "Poznámka"
       ],
-      "Date": [
-        "Datum"
+      "URL": [
+        "URL"
       ],
-      "Select link expiration date": [
-        "Vyberte datum pro vypršení platnosti odkazu"
+      "Gender": [
+        "Pohlaví"
       ],
-      "Select link expiration time": [
-        "Vyberte časovou dobu pro vypršení odkazu"
+      "Language": [
+        "Jazyk"
       ],
-      "Share via link": [
-        "Sdílet odkaz"
+      "Timezone": [
+        "Časové pásmo"
       ],
-      "Manage secure link": [
-        "Spravovat zabezpečený odkaz"
+      "Geo": [
+        "Souřadnice"
       ],
-      "Stop sharing with everyone?": [
-        "Přestat sdílet se všemi?"
+      "Logo": [
+        "Logo"
       ],
-      "Discard changes?": [
-        "Zrušit změny?"
+      "Member": [
+        "Člen"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Práce"
       ],
-      "Discard": [
-        "Zahodit"
+      "Personal": [
+        "Osobní"
       ],
-      "You have no files to share": [
-        "Nemáte žádné soubory ke sdílení"
+      "Mobile": [
+        "Mobil"
       ],
-      "Files details": [
-        "Podrobnosti souboru"
+      "Main": [
+        "Hlavní"
       ],
-      "Number of files": [
-        "Počet souborů"
+      "Yomi": [
+        "Yomi"
       ],
-      "Total size": [
-        "Celková velikost"
+      "Other": [
+        "Ostatní"
       ],
-      "Your file is ready to be downloaded": [
-        "Soubor je připraven ke stažení"
+      "Fax": [
+        "Fax"
       ],
-      "Download completed": [
-        "Stahování dokončeno"
+      "Pager": [
+        "Pager"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
       ],
-      "Download failed": [
-        "Soubor se nepodařilo stáhnout"
+      "Home": [
+        "Domov"
       ],
-      "Download canceled": [
-        "Stahování zrušeno"
+      "Work": [
+        "Práce"
       ],
-      "Downloading": [
-        "Stahování"
+      "Other": [
+        "Ostatní"
       ],
-      "Enter file password to download": [
-        "Zadejte heslo pro stažení souboru"
+      "Phone": [
+        "Telefon"
       ],
-      "The link either does not exist or has expired": [
-        "Odkaz buď neexistuje, nebo jeho platnost vypršela"
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Hlavní"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Address": [
+        "Adresa"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bajty"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Info": {
+      "Session timed out.": [
+        "Relace vypršela."
+      ],
+      "Internet connection lost.": [
+        "Připojení k Internetu bylo ztraceno."
+      ],
+      "Servers are unreachable.": [
+        "Servery jsou nedostupné."
+      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "support team": [
+        "tým podpory"
       ],
       "No contacts added yet": [
         "Žádné kontakty"
@@ -1230,14 +378,20 @@
       "Drop the file here to upload": [
         "Přetažením sem, nahrajte soubor"
       ],
-      "support team": [
-        "tým podpory"
-      ],
       "Loading": [
         "Načítá se"
       ],
       "Loading ${ appName }": [
         "Načtení aplikace ${ appName }"
+      ],
+      "here": [
+        "zde"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Tento účet byl zablokován kvůli možnému porušení pravidel."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup byl omezen. ${ payInvoiceLink }"
@@ -1277,6 +431,36 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Zakázali jste Beta Přístup. Klikněte na ${ refreshButton } pro použití stabilní verze ${ appName }. Aplikace bude znovu načtena."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
@@ -1677,45 +861,6 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
-      "here": [
-        "zde"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Tento účet byl zablokován kvůli možnému porušení pravidel."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
-      ],
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
@@ -1733,15 +878,6 @@
       ],
       "of": [
         "z"
-      ],
-      "Session timed out.": [
-        "Relace vypršela."
-      ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
-      ],
-      "Servers are unreachable.": [
-        "Servery jsou nedostupné."
       ],
       "Loading folder contents": [
         "Nahrávání obsahu souboru"
@@ -1790,30 +926,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
-      ],
-      "There are no files yet": [
-        "Soubory tam ještě nejsou"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Zachyťte a přetáhněte soubor sem nebo vyberte soubor nahrát."
-      ],
-      "Share files with links": [
-        "Sdílejte soubory přes s odkazovými řádky"
-      ],
-      "Create links and share your files with others.": [
-        "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
-      ],
-      "My Links": [
-        "Mé odkazové řádky"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
-      ],
-      "No files or folders in trash": [
-        "Žádné soubory nebo složky v koši"
-      ],
-      "Trash": [
-        "Koš"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Ukončených",
@@ -1908,6 +1020,45 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Uzavíráme správce přenosu, budou zrušeny aktivní přenosy, jste si touto akcí jistí?"
       ],
+      "There are no files yet": [
+        "Soubory tam ještě nejsou"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Zachyťte a přetáhněte soubor sem nebo vyberte soubor nahrát."
+      ],
+      "Share files with links": [
+        "Sdílejte soubory přes s odkazovými řádky"
+      ],
+      "Create links and share your files with others.": [
+        "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
+      ],
+      "My Links": [
+        "Mé odkazové řádky"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
+      ],
+      "No files or folders in trash": [
+        "Žádné soubory nebo složky v koši"
+      ],
+      "Trash": [
+        "Koš"
+      ],
+      "Link expires: ": [
+        "Expirace odkazového řádku: "
+      ],
+      "Your file has finished downloading.": [
+        "Stahování souboru ukončeno."
+      ],
+      "Your file failed to download.": [
+        "Stahování souboru se nepodařilo."
+      ],
+      "Your download has been canceled.": [
+        "Stahování bylo přerušeno."
+      ],
+      "Your file is being downloaded.": [
+        "Soubor se stahuje."
+      ],
       "Would you like to restore your files?": [
         "Chcete obnovit soubory?"
       ],
@@ -1933,10 +1084,10 @@
         "Vytvořte si Váš první soubor a začněte stěhovat své složky."
       ],
       "Loading share": [
-        ""
+        "Načítání sdílení"
       ],
       "Creating share": [
-        ""
+        "Vytvářím sdílení"
       ],
       "Anyone with this link can access your file.": [
         "Kdokoliv s tímto odkazovým řádkem může mít přístup k Vašim souborům."
@@ -1973,86 +1124,1263 @@
       ],
       "Select an uploaded file and create a link to it.": [
         "Vyberte nahraný soubor a vytvořte k němu odkazový řádek."
-      ],
-      "Link expires: ": [
-        "Expirace odkazového řádku: "
-      ],
-      "Your file has finished downloading.": [
-        "Stahování souboru ukončeno."
-      ],
-      "Your file failed to download.": [
-        "Stahování souboru se nepodařilo."
-      ],
-      "Your download has been canceled.": [
-        "Stahování bylo přerušeno."
-      ],
-      "Your file is being downloaded.": [
-        "Soubor se stahuje."
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Například., "
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailová adresa nebyla nalezena mezi identifikátory uživatelů definovaných v klíči pro odesílání (${ keyUserIds })"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Nesynchronizováno"
       ],
-      "e.g. Julia Smith": [
-        "například Julia Smith"
+      "Syncing": [
+        "Synchronizace"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Kalendář se synchronizuje"
       ],
-      "OS name": [
-        "Název operačního systému"
+      "More than 12 hours passed since last update": [
+        "Od poslední aktualizace uběhlo už více jak 12 hodin"
       ],
-      "OS version": [
-        "Verze operačního systému"
+      "Calendar link is wrong": [
+        "Odkaz na kalendář je chybný"
       ],
-      "Proton username": [
-        "Proton uživatelské jméno"
+      "Calendar is too big": [
+        "Kalendář je příliš velký"
       ],
-      "A way to contact you": [
-        "Způsob, jak vás kontaktovat"
+      "Calendar link is not accessible": [
+        "Odkaz na kalendář není přístupný"
       ],
-      "Please describe the problem and include any error messages": [
-        "Popište prosím problém a přiložte všechny chybové zprávy"
+      "Calendar link is temporarily unaccessible": [
+        "Odkaz na kalendář je dočasně nedostupný"
       ],
-      "Browser name": [
-        "Název prohlížeče"
+      "Failed to sync calendar": [
+        "Synchronizace kalendáře selhala"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "neznámé"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Neznámé"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard verze < 3.0 není podporována"
       ],
-      "Browser version": [
-        "Verze prohlížeče"
+      "Encryption failed": [
+        "Šifrování selhalo"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Došlo k neočekávané chybě. Import musí být restartován."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo k chybě při nahrávání souboru. Nebyl vybrán žádný soubor."
       ],
-      "ZIP": [
-        "PSČ"
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Nebyl vybrán žádný .csv nebo .vcf soubor"
       ],
-      "Postal code": [
-        "PSČ"
+      "Your file ${ formattedFilename } is empty.": [
+        "Váš soubor ${ formattedFilename } je prázdný."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_CONTACTS_STRING } kontaktů."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Základní navigace"
+      ],
+      "Basic actions": [
+        "Základní akce"
+      ],
+      "Folder shortcuts": [
+        "Zkratky složek"
+      ],
+      "Composer shortcuts": [
+        "Vytvoření zkratek"
+      ],
+      "List shortcuts": [
+        "Seznam zkratek"
+      ],
+      "Action shortcuts": [
+        "Zkratky akcí"
+      ],
+      "Message shortcuts": [
+        "Zkratky zpráv"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Přesunout nahoru"
+      ],
+      "Jump to first": [
+        "Přejít na první"
+      ],
+      "Move down": [
+        "Přesunout dolů"
+      ],
+      "Jump to last": [
+        "Přejít na poslední"
+      ],
+      "Move right / expand": [
+        "Přetáhnout doprava rozbalit"
+      ],
+      "Move left / collapse": [
+        "Přetáhnout doleva zabalit"
+      ],
+      "Apply / open": [
+        "Použít / otevřít"
+      ],
+      "Cancel / close": [
+        "Zrušit/zavřít"
+      ],
+      "Open this modal": [
+        "Otevřete tento způsob"
+      ],
+      "Select / unselect": [
+        "Vybrat / zrušit výběr"
+      ],
+      "Go to Inbox": [
+        "Přejít do složky Doručená pošta"
+      ],
+      "Go to Archive": [
+        "Přejít do archivu"
+      ],
+      "Go to Sent": [
+        "Přejít do odeslaných"
+      ],
+      "Go to Starred": [
+        "Přejít do oblíbených"
+      ],
+      "Go to Drafts": [
+        "Přejděte do návrhů"
+      ],
+      "Go to Trash": [
+        "Přejít do koše"
+      ],
+      "Go to Spam": [
+        "Přejít do spamu"
+      ],
+      "Go to All Mail": [
+        "Přejít na všechnu poštu"
+      ],
+      "Save draft": [
+        "Uložit koncept"
+      ],
+      "Send email": [
+        "Odeslat email"
+      ],
+      "Close draft": [
+        "Zavřít koncept"
+      ],
+      "Minimize / maximize composer": [
+        "Minimalizovat / maximalizovat tvorbu"
+      ],
+      "Expand / contract composer": [
+        "Rozšířit / smlouva správce knihovny"
+      ],
+      "Attach file": [
+        "Přiložit soubor"
+      ],
+      "Add expiration time": [
+        "Přidat dobu platnosti"
+      ],
+      "Add encryption": [
+        "Přidat šifrování"
+      ],
+      "Discard draft": [
+        "Zrušit koncept"
+      ],
+      "Open previous message": [
+        "Otevřít předchozí zprávu"
+      ],
+      "Open next message": [
+        "Otevřít následující zprvcu"
+      ],
+      "Show unread emails": [
+        "Zobrazit nepřečtené emaily"
+      ],
+      "Show all emails": [
+        "Zobrazit všechny emaily"
+      ],
+      "Select / unselect all": [
+        "Vybrat vše/zrušit výběr všeho"
+      ],
+      "Search": [
+        "Hledat"
+      ],
+      "New message": [
+        "Nová zpráva"
+      ],
+      "Star": [
+        "Hvězdička"
+      ],
+      "Mark as unread": [
+        "Označit jako nepřečtené"
+      ],
+      "Label as...": [
+        "Označit jako..."
+      ],
+      "Create filter with...": [
+        "Vytvořit filtr s..."
+      ],
+      "Move to...": [
+        "Přesunout do..."
+      ],
+      "Move to Inbox": [
+        "Přesunout do složky Doručená pošta"
+      ],
+      "Move to Archive": [
+        "Přesunout do archivu"
+      ],
+      "Move to Spam": [
+        "Přesunout do spamu"
+      ],
+      "Move to Trash": [
+        "Přesunout do koše"
+      ],
+      "Delete permanently": [
+        "Navždy smazat"
+      ],
+      "Reply": [
+        "Odpovědět"
+      ],
+      "Reply all": [
+        "Odpovědět všem"
+      ],
+      "Forward": [
+        "Přeposlat"
+      ],
+      "Load remote content": [
+        "Načíst vzdálený obsah"
+      ],
+      "Load embedded images": [
+        "Načíst vložené obrázky"
+      ],
+      "Show original message": [
+        "Zobrazit původní zprávu"
+      ]
+    },
+    "Action": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Use “${ label }” setting": [
+        "Použijte nastavení “${ label }”"
+      ],
+      "Confirm": [
+        "Potvrdit"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Submit": [
+        "Odeslat"
+      ],
+      "Close modal": [
+        "Zavřít okno"
+      ],
+      "Close navigation": [
+        "Zavřít menu"
+      ],
+      "Open navigation": [
+        "Otevřít menu"
+      ],
+      "More info: ${ safeTitle }": [
+        "Více informací: ${ safeTitle }"
+      ],
+      "Go to panel ${ index }": [
+        "Přejít na panel ${ index }"
+      ],
+      "refresh the page": [
+        "aktualizovat stránku"
+      ],
+      "Load image": [
+        "Načíst obrázek"
+      ],
+      "Export": [
+        "Exportovat"
+      ],
+      "Delete": [
+        "Odstranit"
+      ],
+      "Edit": [
+        "Upravit"
+      ],
+      "Remove": [
+        "Odstranit"
+      ],
+      "Download": [
+        "Stáhnout"
+      ],
+      "Use for sending": [
+        "Použít pro odesílání"
+      ],
+      "Trust": [
+        "Důvěřovat"
+      ],
+      "Untrust": [
+        "Nedůvěřovat"
+      ],
+      "Upgrade": [
+        "Rozšířit"
+      ],
+      "Email settings": [
+        "Nastavení e-mailu"
+      ],
+      "Contact group": [
+        "Skupina kontaktů"
+      ],
+      "Upload picture": [
+        "Nahrát obrázek"
+      ],
+      "Next month": [
+        "Další měsíc"
+      ],
+      "Previous month": [
+        "Předchozí měsíc"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Potvrďte otevření odkazu ${ link }"
+      ],
+      "Continue with Google": [
+        "Pokračovat pomocí účtu Google"
+      ],
+      "Signing out": [
+        "Odhlásit se"
+      ],
+      "Log in": [
+        "Přihlásit se"
+      ],
+      "Close this banner": [
+        "Zavřít tento banner"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
+      ],
+      "enable desktop notifications": [
+        "povolit oznámení na ploše"
+      ],
+      "here": [
+        "zde"
+      ],
+      "View invoice": [
+        "Zobrazit fakturu"
+      ],
+      "Get verification code": [
+        "Získat ověřovací kód"
+      ],
+      "Try another method": [
+        "Zkuste jinou metodu"
+      ],
+      "Request new code": [
+        "Poslat nový kód"
+      ],
+      "Verify": [
+        "Ověřit"
+      ],
+      "Did not receive the code?": [
+        "Nedostali jste kód?"
+      ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
+      ],
+      "Edit phone number": [
+        "Upravit telefonní číslo"
+      ],
+      "Copy email to clipboard": [
+        "Zkopírovat e-mail do schránky"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } úvod"
+      ],
+      "Chat with us": [
+        "Komunikace s námi"
+      ],
+      "I have a question": [
+        "Mám dotaz"
+      ],
+      "Request a feature": [
+        "Požádat o funkci"
+      ],
+      "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } obchod"
+      ],
+      "Switch account": [
+        "Přepnout účet"
+      ],
+      "Sign out": [
+        "Odhlásit se"
+      ],
+      "Go to settings": [
+        "Přejít do nastavení"
+      ],
+      "Beta Access": [
+        "Beta přístup"
+      ],
+      "Theme": [
+        "Vzhled"
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové zkratky"
+      ],
+      "Mailbox layout": [
+        "Rozvržení mailové schránky"
+      ],
+      "Mailbox density": [
+        "Hustota mailové schránky"
+      ],
+      "Composer size": [
+        "Velikost okna pro psaní zpráv"
+      ],
+      "Get started": [
+        "Začínáme"
+      ],
+      "Next": [
+        "Další"
+      ],
+      "Start setup": [
+        "Spusťte nastavení"
+      ],
+      "Skip": [
+        "Přeskočít"
+      ],
+      "Done": [
+        "Hotovo"
+      ],
+      "Back": [
+        "Zpět"
+      ],
+      "Use ${ label } theme": [
+        "Použít ${ label } motiv"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Clear": [
+        "Vymazat"
+      ],
+      "Add screenshot(s)": [
+        "Přidat snímek(y) obrazovky"
+      ],
+      "Hide info": [
+        "Skrýt informace"
+      ],
+      "Show info": [
+        "Zobrazit informace"
+      ],
+      "Remove bonuses": [
+        "Odebrat bonusy"
+      ],
+      "Try again": [
+        "Zkusit znovu"
+      ],
+      "Use a different card": [
+        "Použít jinou platební kartu"
+      ],
+      "Use a different payment method": [
+        "Použít jinou platební metodu"
+      ],
+      "Retry": [
+        "Obnovit"
+      ],
+      "Loading verification": [
+        "Načítání ověření"
+      ],
+      "Select plan": [
+        "Vybrat plán"
+      ],
+      "Compare all features": [
+        "Porovnat všechny funkce"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } přechodem na roční fakturaci"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Pay": [
+        "Zaplatit"
+      ],
+      "Apply": [
+        "Použít"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Otevřít nastavení ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Odstranit dárkový kód"
+      ],
+      "annual billing": [
+        "roční fakturace"
+      ],
+      "Compare plans": [
+        "Porovnání plánů"
+      ],
+      "Decrease": [
+        "Snížit"
+      ],
+      "Increase": [
+        "Zvýšit"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Add": [
+        "Přidat"
+      ],
+      "Hide advanced PGP settings": [
+        "Skrýt pokročilé nastavení PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Zobrazit pokročilá nastavení PGP"
+      ],
+      "Clear data": [
+        "Smazat data"
+      ],
+      "Recover data": [
+        "Obnovit data"
+      ],
+      "Click here.": [
+        "Klikněte zde."
+      ],
+      "Re-sign": [
+        "Znovu podepsat"
+      ],
+      "Add to group": [
+        "Přidat do skupiny"
+      ],
+      "Merge": [
+        "Sloučit"
+      ],
+      "View": [
+        "Zobrazit"
+      ],
+      "Unmark for deletion": [
+        "Zrušit označení pro odstranění"
+      ],
+      "Mark for deletion": [
+        "Označit pro odstranění"
+      ],
+      "Preview contact": [
+        "Náhled kontaktu"
+      ],
+      "Delete contact": [
+        "Smazat kontakt"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Smazat ${ selectedCount } kontakt",
+        "Smazat ${ selectedCount } kontakty",
+        "Smazat ${ selectedCount } kontaktů",
+        "Smazat ${ selectedCount } kontakty"
+      ],
+      "Deselect all": [
+        "Odznačit vše"
+      ],
+      "Select all": [
+        "Vybrat vše"
+      ],
+      "Compose": [
+        "Vytvořit"
+      ],
+      "Forward as attachment": [
+        "Přeposlat jako přílohu"
+      ],
+      "Merge contacts": [
+        "Sloučit kontakty"
+      ],
+      "Add new contact": [
+        "Přidat nový kontakt"
+      ],
+      "Add group": [
+        "Přidat skupinu"
+      ],
+      "Clear query": [
+        "Smazat dotaz"
+      ],
+      "Add contact": [
+        "Přidat kontakt"
+      ],
+      "import": [
+        "importovat"
+      ],
+      "Delete contact group": [
+        "Smazat skupinu kontaktů"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Smazat ${ selectedCount } skupinu kontaktů",
+        "Smazat ${ selectedCount } skupiny kontaktů",
+        "Smazat ${ selectedCount } skupiny kontaktů",
+        "Smazat ${ selectedCount } skupiny kontaktů"
+      ],
+      "Add new group": [
+        "Přidat novou skupinu"
+      ],
+      "Export contacts": [
+        "Exportovat kontakty"
+      ],
+      "Import contacts": [
+        "Importovat kontakty"
+      ],
+      "Choose a file or drag it here": [
+        "Vyberte soubor nebo jej sem přetáhněte"
+      ],
+      "Import": [
+        "Importovat"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Details": [
+        "Detaily"
+      ],
+      "Share via link": [
+        "Sdílej skrze odkaz"
+      ],
+      "Sharing options": [
+        "Možnosti sdílení"
+      ],
+      "Zoom out": [
+        "Oddálit"
+      ],
+      "Reset zoom": [
+        "Obnovit velikost zobrazení na původní hodnotu"
+      ],
+      "Zoom in": [
+        "Přiblížit"
+      ],
+      "Previous": [
+        "Předchozí"
+      ],
+      "Delete permanently": [
+        "Navždy smazat"
+      ],
+      "Undo": [
+        "Zpět"
+      ],
+      "Cancel all uploads": [
+        "Zrušit všechna nahrávání"
+      ],
+      "Share": [
+        "Sdílet"
+      ],
+      "Show shared link details": [
+        "Zobrazit detaily sdíleného odkazu"
+      ],
+      "Maximize transfers": [
+        "Maximum transferů"
+      ],
+      "Minimize transfers": [
+        "Minimum transferů"
+      ],
+      "Close transfers": [
+        "Uzavření transferů"
+      ],
+      "Pause download": [
+        "Pozastavit stahování"
+      ],
+      "Pause upload": [
+        "Pozastavit nahrávání"
+      ],
+      "Resume download": [
+        "Souhrn stahování"
+      ],
+      "Resume upload": [
+        "Souhrn nahrávání"
+      ],
+      "Cancel download": [
+        "Zrušit stahování"
+      ],
+      "Cancel upload": [
+        "Zrušit nahrávání"
+      ],
+      "Restart download": [
+        "Restartovat stahování"
+      ],
+      "Restart upload": [
+        "Restartovat nahrávání"
+      ],
+      "Remove from this list": [
+        "Odebrat ze seznamu"
+      ],
+      "Resume transfers": [
+        "Obnovit přenosy"
+      ],
+      "Pause transfers": [
+        "Přerušit přenosy"
+      ],
+      "Cancel transfers": [
+        "Zrušit přenosy"
+      ],
+      "Restart transfers": [
+        "Restartovat přenosy"
+      ],
+      "New upload": [
+        "Nové nahrávání"
+      ],
+      "Rename": [
+        "Přejmenovat"
+      ],
+      "Move to folder": [
+        "Přesunout do složky"
+      ],
+      "Move to trash": [
+        "Přesunout do koše"
+      ],
+      "Share options": [
+        "Možnosti sdílení"
+      ],
+      "Create new folder": [
+        "Vytvořit novou složku"
+      ],
+      "Name: A to Z": [
+        "Jméno: A až Z"
+      ],
+      "Name: Z to A": [
+        "Jméno: Z až A"
+      ],
+      "Modified date: new to old": [
+        "Upravený datum: nový až starý"
+      ],
+      "Modified date: old to new": [
+        "Upravený datum: starý až nový"
+      ],
+      "Type: A to Z": [
+        "Jméno: A až Z"
+      ],
+      "Type: Z to A": [
+        "Jméno: Z až A"
+      ],
+      "Size: small to large": [
+        "Velikost: Vzestupně"
+      ],
+      "Size: large to small": [
+        "Velikost: Sestupně"
+      ],
+      "Upload file": [
+        "Nahrát soubor"
+      ],
+      "Upload folder": [
+        "Nahrát složku"
+      ],
+      "List layout": [
+        "Rozložení seznamu"
+      ],
+      "Grid layout": [
+        "Rozložení mřížky"
+      ],
+      "Preview": [
+        "Náhled"
+      ],
+      "Share file": [
+        "Sdílet odkaz"
+      ],
+      "Stop sharing": [
+        "Zrušit sdílení"
+      ],
+      "Empty trash": [
+        "Vysypat koš"
+      ],
+      "Restore from trash": [
+        "Obnovení z koše"
+      ],
+      "Start recovering": [
+        "Počátek zotavení"
+      ],
+      "View more": [
+        "Zobrazit více"
+      ],
+      "Create": [
+        "Vytvořit"
+      ],
+      "Move": [
+        "Přesunout"
+      ],
+      "Copy link": [
+        "Kopírovat odkaz"
+      ],
+      "Create link": [
+        "Vytvořit odkaz"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "Otevřít seznam akcí"
+      ],
+      "Upgrade required": [
+        "Vyžadována aktualizace"
+      ],
+      "Email settings": [
+        "Nastavení e-mailu"
+      ],
+      "Contact group": [
+        "Skupina kontaktů"
+      ],
+      "Link confirmation": [
+        "Potvrzení odkazu"
+      ],
+      "Keyboard Shortcuts": [
+        "Klávesové zkratky"
+      ],
+      "What's new": [
+        "Co je nového"
+      ],
+      "Sign in again to continue": [
+        "Chcete-li pokračovat, znovu se přihlaste"
+      ],
+      "Account suspended": [
+        "Účet pozastaven"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
+      ],
+      "Enter your password": [
+        "Zadejte Vaše heslo"
+      ],
+      "Invalid verification code": [
+        "Neplatný ověřovací kód"
+      ],
+      "Request new code": [
+        "Poslat nový kód"
+      ],
+      "Human verification": [
+        "Captcha"
+      ],
+      "Open help menu": [
+        "Otevřít menu nápovědy"
+      ],
+      "Back": [
+        "Zpět"
+      ],
+      "Open settings menu": [
+        "Otevřít nabídku nastavení"
+      ],
+      "Select a theme": [
+        "Vyberte motiv"
+      ],
+      "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Potvrdit odebrání Proton bonusů"
+      ],
+      "Unsupported browser": [
+        "Nepodporovaný prohlížeč"
+      ],
+      "Card verification": [
+        "Ověření karty"
+      ],
+      "Payment verification": [
+        "Ověřování platby"
+      ],
+      "Processing...": [
+        "Zpracovávání..."
+      ],
+      "Card verification in progress": [
+        "Probíhá ověřování karty"
+      ],
+      "Payment verification in progress": [
+        "Probíhá ověřování platby"
+      ],
+      "PayPal verification failed": [
+        "Ověření platby PayPal se nezdařilo"
+      ],
+      "3-D Secure verification failed": [
+        "Ověření 3D Secure selhalo"
+      ],
+      "Error": [
+        "Chyba"
+      ],
+      "ZIP / postal code": [
+        "ZIP / PSČ"
+      ],
+      "Payment details": [
+        "Platební údaje"
+      ],
+      "Currency": [
+        "Měna"
+      ],
+      "Billing cycle": [
+        "Fakturační cyklus"
+      ],
+      "Current plan": [
+        "Aktuální plán"
+      ],
+      "Processing": [
+        "Zpracovává se"
+      ],
+      "Apply gift code": [
+        "Použít dárkový kód"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Coupon discount": [
+        "Slevový kupón"
+      ],
+      "Total (monthly)": [
+        "Celkem (měsíčně)"
+      ],
+      "Credits": [
+        "Kredity"
       ],
       "Gift code": [
         "Dárkový kód"
       ],
-      "Start typing an email address": [
-        "Začněte psát e-mailovou adresu"
+      "Amount due": [
+        "Částka k zaplacení"
       ],
-      "Image URL": [
-        "URL adresa obrázku"
+      "Cancel subscription": [
+        "Zrušit předplatné"
       ],
-      "Filter groups": [
-        "Filtrovat skupiny"
+      "Network error": [
+        "Chyba sítě"
       ],
-      "Search for name or email": [
-        "Vyhledat jméno nebo e-mail"
+      "Select a plan": [
+        "Vyberte plán"
       ],
-      "Search for group name": [
-        "Vyhledat název skupiny"
+      "Customize your plan": [
+        "Přizpůsobte si svůj plán"
+      ],
+      "Checkout": [
+        "Objednat"
+      ],
+      "Plan summary": [
+        "Shrnutí plánu"
+      ],
+      "${ appName } customization": [
+        "${ appName } přizpůsobení"
+      ],
+      "Edit contact group": [
+        "Upravit skupinu kontaktů"
+      ],
+      "Create new group": [
+        "Vytvořit novou skupinu"
+      ],
+      "Add to ${ groupName }": [
+        "Přidat do ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "Přidat do skupiny ${ groupCount }",
+        "Přidat do skupin ${ groupCount }",
+        "Přidat do skupin ${ groupCount }",
+        "Přidat do skupin ${ groupCount }"
+      ],
+      "Email settings (${ emailAddress })": [
+        "Nastavení e-mailu (${ emailAddress })"
+      ],
+      "Delete ${ Name }": [
+        "Odstranit ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "Vymazat ${ count } skupinu kontaktu",
+        "Vymazat ${ count } skupin kontaktů",
+        "Vymazat ${ count } skupin kontaktů",
+        "Vymazat ${ count } skupinu kontaktů"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } člen",
+        "${ emailsCount } členové",
+        "${ emailsCount } členů",
+        "${ emailsCount } členů"
+      ],
+      "Edit image": [
+        "Upravit obrázek"
+      ],
+      "Edit contact": [
+        "Upravit kontakt"
+      ],
+      "Create contact": [
+        "Vytvořit kontakt"
+      ],
+      "Delete ${ count } contact": [
+        "Smazat ${ count } kontakty",
+        "Smazat ${ count } kontakty",
+        "Smazat ${ count } kontaků",
+        "Smazat ${ count } kontaků"
+      ],
+      "Clearing data": [
+        "Vymazat data"
+      ],
+      "Warning": [
+        "Varování"
+      ],
+      "Recover data": [
+        "Obnovit data"
+      ],
+      "Re-signing contacts": [
+        "Znovu podepsat kontakty"
+      ],
+      "Re-sign all contacts": [
+        "Znovu podepsat všechny kontakty"
+      ],
+      "Exporting contacts": [
+        "Exportovat kontakty"
+      ],
+      "Other names": [
+        "Ostatní jména"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
+      ],
+      "Phone numbers": [
+        "Telefonní čísla"
+      ],
+      "Addresses": [
+        "Adresy"
+      ],
+      "Other information": [
+        "Další informace"
+      ],
+      "Contact Details": [
+        "Detaily kontaktu"
+      ],
+      "Merging contacts": [
+        "Slučování kontaktů"
+      ],
+      "Merge contacts": [
+        "Sloučit kontakty"
+      ],
+      "Deleting contacts": [
+        "Mazání kontaktů"
+      ],
+      "View contacts": [
+        "Zobrazit kontakty"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Groups": [
+        "Skupiny"
+      ],
+      "Settings": [
+        "Nastavení"
+      ],
+      "Select action to take on contact group": [
+        "Vyberte akci k provedení ve skupině kontaktů"
+      ],
+      "Add contact group name": [
+        "Přidat název skupiny kontaktů"
+      ],
+      "Select contact group": [
+        "Vybrat skupinu kontaktů"
+      ],
+      "Import groups": [
+        "Importovat skupiny"
+      ],
+      "Import contacts": [
+        "Importovat kontakty"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Klávesové zkratky"
+      ],
+      "Mailbox density": [
+        "Hustota mailové schránky"
+      ],
+      "Mailbox layout": [
+        "Rozvržení mailové schránky"
+      ],
+      "Composer mode": [
+        "Režim psaní zpráv"
+      ],
+      "Beta Access": [
+        "Beta přístup"
+      ],
+      "Delete permanently": [
+        "Navždy smazat"
+      ],
+      "Stop sharing": [
+        "Zrušit sdílení"
+      ],
+      "Duplicate folder found": [
+        "Byl nalezena duplicitní složka"
+      ],
+      "Duplicate file found": [
+        "Byl nalezen duplicitní soubor"
+      ],
+      "Drop to upload": [
+        "Přetáhnout a nahrát"
+      ],
+      "My files": [
+        "Moje soubory"
+      ],
+      "Additional settings": [
+        "Další funkce"
+      ],
+      "Cancel all active transfers": [
+        "Zrušit všechny aktivní transfery"
+      ],
+      "Show actions": [
+        "Zobrazit akce"
+      ],
+      "Sort files/folders": [
+        "Seřadit soubory/složky"
+      ],
+      "Change layout": [
+        "Změnit rozložení"
+      ],
+      "Shared": [
+        "Sdílet"
+      ],
+      "Empty trash": [
+        "Vysypat koš"
+      ],
+      "Trash": [
+        "Koš"
+      ],
+      "Your file is ready to be downloaded": [
+        "Soubor je připraven ke stažení"
+      ],
+      "Download completed": [
+        "Stahování dokončeno"
+      ],
+      "Download failed": [
+        "Soubor se nepodařilo stáhnout"
+      ],
+      "Download canceled": [
+        "Stahování zrušeno"
+      ],
+      "Downloading": [
+        "Stahování"
+      ],
+      "Enter file password to download": [
+        "Zadejte heslo pro stažení souboru"
+      ],
+      "The link either does not exist or has expired": [
+        "Odkaz buď neexistuje, nebo jeho platnost vypršela"
+      ],
+      "Drive": [
+        "Disk"
+      ],
+      "Restore your files": [
+        "Obnovit soubory"
+      ],
+      "File recovery process": [
+        "Proces obnovy souboru"
+      ],
+      "You have inaccessible files": [
+        "Máte nedostupné soubory"
+      ],
+      "Rename a folder": [
+        "Přejmenovat složku"
+      ],
+      "Rename a file": [
+        "Přejmenovat soubory"
+      ],
+      "File details": [
+        "Podrobnosti souboru"
+      ],
+      "Folder details": [
+        "Podrobnosti složky"
       ],
       "Name": [
-        "Název"
+        "Jméno"
       ],
-      "Mailbox password": [
-        "Heslo k e-mailové schránce"
+      "Uploaded by": [
+        "Nahráno uživatelem"
       ],
-      "New name": [
-        "Nový název"
+      "Location": [
+        "Umístění"
       ],
-      "Enter a new folder name": [
-        "Zadejte nový název složky"
+      "Modified": [
+        "Upraveno"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "MIME type": [
+        "MIME typ"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "# of accesses": [
+        "# přístupů"
+      ],
+      "You have no folders yet": [
+        "Zatím nemáte žádné složky"
+      ],
+      "Create a new folder": [
+        "Vytvořit novou složku"
+      ],
+      "Manage share": [
+        "Spravovat sdílení"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Select link expiration date": [
+        "Vyberte datum pro vypršení platnosti odkazu"
+      ],
+      "Select link expiration time": [
+        "Vyberte časovou dobu pro vypršení odkazu"
+      ],
+      "Share via link": [
+        "Sdílet odkaz"
+      ],
+      "Manage secure link": [
+        "Spravovat zabezpečený odkaz"
+      ],
+      "Stop sharing with everyone?": [
+        "Přestat sdílet se všemi?"
+      ],
+      "Discard changes?": [
+        "Zrušit změny?"
+      ],
+      "Discard": [
+        "Zahodit"
+      ],
+      "You have no files to share": [
+        "Nemáte žádné soubory ke sdílení"
+      ],
+      "Files details": [
+        "Podrobnosti souboru"
+      ],
+      "Number of files": [
+        "Počet souborů"
+      ],
+      "Total size": [
+        "Celková velikost"
       ]
     },
     "Label": {
@@ -2089,6 +2417,36 @@
       "Do not ask again": [
         "Příště se neptat"
       ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Submit": [
+        "Odeslat"
+      ],
+      "Password": [
+        "Heslo"
+      ],
+      "Mailbox password": [
+        "Heslo k e-mailové schránce"
+      ],
+      "Two-factor authentication code": [
+        "Kód dvoufaktorového ověření"
+      ],
+      "Username or ProtonMail address": [
+        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
+      "Phone number": [
+        "Telefonní číslo"
+      ],
+      "Verification code": [
+        "Ověřovací kód"
+      ],
+      "Enter the 6-digit code": [
+        "Zadejte 6-místný kód"
+      ],
       "Display name": [
         "Zobrazované jméno"
       ],
@@ -2100,9 +2458,6 @@
       ],
       "Proton username": [
         "Proton uživatelské jméno"
-      ],
-      "Email address": [
-        "E-mailová adresa"
       ],
       "Category": [
         "Kategorie"
@@ -2224,33 +2579,6 @@
       "Enable Beta Access": [
         "Zapnout přístup do beta verze"
       ],
-      "Cancel": [
-        "Zrušit"
-      ],
-      "Submit": [
-        "Odeslat"
-      ],
-      "Password": [
-        "Heslo"
-      ],
-      "Mailbox password": [
-        "Heslo k e-mailové schránce"
-      ],
-      "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
-      ],
-      "Username or ProtonMail address": [
-        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
-      ],
-      "Phone number": [
-        "Telefonní číslo"
-      ],
-      "Verification code": [
-        "Ověřovací kód"
-      ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
-      ],
       "Merge a folder": [
         "Sloučit složku"
       ],
@@ -2275,33 +2603,6 @@
       "Apply to all duplicated files": [
         "Použít na všechny duplicitní soubory"
       ],
-      "Audio file": [
-        "Zvukový soubor"
-      ],
-      "Video file": [
-        "Video soubor"
-      ],
-      "Text": [
-        "Text"
-      ],
-      "Image": [
-        "Obrázek"
-      ],
-      "Unknown file": [
-        "Neznámý soubor"
-      ],
-      "All": [
-        "Vše"
-      ],
-      "Active": [
-        "Aktivní"
-      ],
-      "Failed": [
-        "Selhalo"
-      ],
-      "Apply to selected transfers": [
-        ""
-      ],
       "Folder": [
         "Složka"
       ],
@@ -2317,6 +2618,39 @@
       "File": [
         "Soubor"
       ],
+      "All": [
+        "Vše"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "Failed": [
+        "Selhalo"
+      ],
+      "Apply to selected transfers": [
+        "Použít na vybrané přenosy"
+      ],
+      "Audio file": [
+        "Zvukový soubor"
+      ],
+      "Video file": [
+        "Video soubor"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Image": [
+        "Obrázek"
+      ],
+      "Unknown file": [
+        "Neznámý soubor"
+      ],
+      "Get your own ${ appName }": [
+        "Získejte své vlastní ${ appName }"
+      ],
+      "Report abuse": [
+        "Nahlásit zneužití"
+      ],
       "Folder name": [
         "Název složky"
       ],
@@ -2328,12 +2662,71 @@
       ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Například., "
       ],
-      "Get your own ${ appName }": [
-        ""
+      "Mailbox password": [
+        "Heslo k e-mailové schránce"
       ],
-      "Report abuse": [
-        "Nahlásit zneužití"
+      "e.g. Julia Smith": [
+        "například Julia Smith"
+      ],
+      "OS name": [
+        "Název operačního systému"
+      ],
+      "OS version": [
+        "Verze operačního systému"
+      ],
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "A way to contact you": [
+        "Způsob, jak vás kontaktovat"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Popište prosím problém a přiložte všechny chybové zprávy"
+      ],
+      "Browser name": [
+        "Název prohlížeče"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
+      ],
+      "ZIP": [
+        "PSČ"
+      ],
+      "Postal code": [
+        "PSČ"
+      ],
+      "Gift code": [
+        "Dárkový kód"
+      ],
+      "Start typing an email address": [
+        "Začněte psát e-mailovou adresu"
+      ],
+      "Image URL": [
+        "URL adresa obrázku"
+      ],
+      "Filter groups": [
+        "Filtrovat skupiny"
+      ],
+      "Search for name or email": [
+        "Vyhledat jméno nebo e-mail"
+      ],
+      "Search for group name": [
+        "Vyhledat název skupiny"
+      ],
+      "Name": [
+        "Název"
+      ],
+      "New name": [
+        "Nový název"
+      ],
+      "Enter a new folder name": [
+        "Zadejte nový název složky"
       ]
     },
     "Time unit": {
@@ -2348,6 +2741,11 @@
         "${ minutes } minut",
         "${ minutes } minut",
         "${ minutes } minuty"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Klíč nelze použít k šifrování"
       ]
     },
     "Storage": {
@@ -2371,6 +2769,9 @@
       "Upgrade account": [
         "Rozšířit účet"
       ],
+      "Request an invite": [
+        "Požádat o pozvánku"
+      ],
       "Upgrade": [
         "Rozšířit"
       ],
@@ -2385,9 +2786,6 @@
       ],
       "Add a gift code": [
         "Přidat dárkový kód"
-      ],
-      "Request an invite": [
-        "Požádat o pozvánku"
       ],
       "My files": [
         "Moje soubory"
@@ -2476,7 +2874,7 @@
         "Neaktivní sdílený odkaz"
       ],
       "Active sharing link": [
-        ""
+        "Aktivní sdílený odkaz"
       ]
     },
     "Table header": {
@@ -2610,6 +3008,12 @@
       "Address copied to clipboard": [
         "Adresa byla zkopírována do schránky"
       ],
+      "Code sent to ${ methodTo }": [
+        "Kód zaslán na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Ověření proběhlo úspěšně"
+      ],
       "Bug reported": [
         "Chyba nahlášena"
       ],
@@ -2646,12 +3050,6 @@
       "Keyboard shortcuts preferences updated": [
         "Nastavení klávesových zkratek upraveno"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kód zaslán na ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Ověření proběhlo úspěšně"
-      ],
       "Your files were successfully recovered to \"My files\".": [
         "Vaše soubory byly úspěšně obnoveny do složky \"Moje soubory\"."
       ],
@@ -2677,22 +3075,6 @@
         "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici.",
         "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici.",
         "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici."
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Klíč nelze použít k šifrování"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikace"
-      ],
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
       ]
     },
     "Error message": {
@@ -2727,9 +3109,42 @@
         "Můžete také ${ refresh } nebo to zkusit později."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikace"
+      ],
+      "Go to ${ title }": [
+        "Přejít na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Přejít na ${ vpnName }"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Je k dispozici nová verze aplikace ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Faktura po splatnosti"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuál"
+      ],
+      "No verification method available": [
+        "Není k dispozici žádná metoda ověření"
       ]
     },
     "Header": {
@@ -3386,6 +3801,30 @@
         "Bitcoin"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Komfortní"
+      ],
+      "Compact": [
+        "Kompaktní"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sloupec"
+      ],
+      "Row": [
+        "Řádek"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normální"
+      ],
+      "Maximized": [
+        "Maximalizováno"
+      ]
+    },
     "Notification": {
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
@@ -3400,10 +3839,10 @@
         "\"${ firstItemName }\" trvale odstraněn z koše"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
-        "${ deletedItemsCount } soubory trvale odstraněny z koše",
-        "",
-        "",
-        ""
+        "${ deletedItemsCount } soubor trvale odstraněn z koše",
+        "${ deletedItemsCount } souborů trvale odstraněno z koše",
+        "${ deletedItemsCount } souborů trvale odstraněno z koše",
+        "${ deletedItemsCount } soubory trvale odstraněny z koše"
       ],
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } složka trvale odstraněna z koše",
@@ -3522,9 +3961,6 @@
         "${ failedCount } odkazů na Váš profil se nepodařilo vymazat.",
         "${ failedCount } odkazů na Váš profil se nepodařilo vymazat."
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Všechny položky budou brzy nevratně smazány z koše"
-      ],
       "Move ${ movingCount } file": [
         "Přesunout ${ movingCount } soubory",
         "Přesunout ${ movingCount } soubory",
@@ -3542,6 +3978,9 @@
         "Přestěhuj ${ movingCount } položky",
         "Přestěhuj ${ movingCount } položek",
         "Přestěhuj ${ movingCount } položek"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Všechny položky budou brzy nevratně smazány z koše"
       ],
       "Failed to move, please try again": [
         "Nepodařilo se přesunout, zkuste to prosím znovu"
@@ -3842,414 +4281,6 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Poznámka: po kliknutí na tlačítko Použít se služba znovu načte."
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortní"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normální"
-      ],
-      "Maximized": [
-        "Maximalizováno"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Faktura po splatnosti"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuál"
-      ],
-      "No verification method available": [
-        "Není k dispozici žádná metoda ověření"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Jméno"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Photo": [
-        "Fotka"
-      ],
-      "Organization": [
-        "Organizace"
-      ],
-      "Birthday": [
-        "Datum narození"
-      ],
-      "Anniversary": [
-        "Výročí"
-      ],
-      "Title": [
-        "Titul"
-      ],
-      "Role": [
-        "Role"
-      ],
-      "Note": [
-        "Poznámka"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Pohlaví"
-      ],
-      "Language": [
-        "Jazyk"
-      ],
-      "Timezone": [
-        "Časové pásmo"
-      ],
-      "Geo": [
-        "Souřadnice"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Člen"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Práce"
-      ],
-      "Personal": [
-        "Osobní"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Hlavní"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Ostatní"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Pager"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
-      ],
-      "Home": [
-        "Domov"
-      ],
-      "Work": [
-        "Práce"
-      ],
-      "Other": [
-        "Ostatní"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Hlavní"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Address": [
-        "Adresa"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovat alespoň ${ length } znaků",
-        "Hesel musí obsahovat alespoň ${ length } znaků",
-        "Hesel musí obsahovat alespoň ${ length } znaků",
-        "Hesla musí obsahovat alespoň ${ length } znaků"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bajty"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "neznámé"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Neznámé"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard verze < 3.0 není podporována"
-      ],
-      "Encryption failed": [
-        "Šifrování selhalo"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Došlo k neočekávané chybě. Import musí být restartován."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Došlo k chybě při nahrávání souboru. Nebyl vybrán žádný soubor."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Nebyl vybrán žádný .csv nebo .vcf soubor"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Váš soubor ${ formattedFilename } je prázdný."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_CONTACTS_STRING } kontaktů."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailová adresa nebyla nalezena mezi identifikátory uživatelů definovaných v klíči pro odesílání (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Základní navigace"
-      ],
-      "Basic actions": [
-        "Základní akce"
-      ],
-      "Folder shortcuts": [
-        "Zkratky složek"
-      ],
-      "Composer shortcuts": [
-        "Vytvoření zkratek"
-      ],
-      "List shortcuts": [
-        "Seznam zkratek"
-      ],
-      "Action shortcuts": [
-        "Zkratky akcí"
-      ],
-      "Message shortcuts": [
-        "Zkratky zpráv"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Přesunout nahoru"
-      ],
-      "Jump to first": [
-        "Přejít na první"
-      ],
-      "Move down": [
-        "Přesunout dolů"
-      ],
-      "Jump to last": [
-        "Přejít na poslední"
-      ],
-      "Move right / expand": [
-        "Přetáhnout doprava rozbalit"
-      ],
-      "Move left / collapse": [
-        "Přetáhnout doleva zabalit"
-      ],
-      "Apply / open": [
-        "Použít / otevřít"
-      ],
-      "Cancel / close": [
-        "Zrušit/zavřít"
-      ],
-      "Open this modal": [
-        "Otevřete tento způsob"
-      ],
-      "Select / unselect": [
-        "Vybrat / zrušit výběr"
-      ],
-      "Go to Inbox": [
-        "Přejít do složky Doručená pošta"
-      ],
-      "Go to Archive": [
-        "Přejít do archivu"
-      ],
-      "Go to Sent": [
-        "Přejít do odeslaných"
-      ],
-      "Go to Starred": [
-        "Přejít do oblíbených"
-      ],
-      "Go to Drafts": [
-        "Přejděte do návrhů"
-      ],
-      "Go to Trash": [
-        "Přejít do koše"
-      ],
-      "Go to Spam": [
-        "Přejít do spamu"
-      ],
-      "Go to All Mail": [
-        "Přejít na všechnu poštu"
-      ],
-      "Save draft": [
-        "Uložit koncept"
-      ],
-      "Send email": [
-        "Odeslat email"
-      ],
-      "Close draft": [
-        "Zavřít koncept"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalizovat / maximalizovat tvorbu"
-      ],
-      "Expand / contract composer": [
-        "Rozšířit / smlouva správce knihovny"
-      ],
-      "Attach file": [
-        "Přiložit soubor"
-      ],
-      "Add expiration time": [
-        "Přidat dobu platnosti"
-      ],
-      "Add encryption": [
-        "Přidat šifrování"
-      ],
-      "Discard draft": [
-        "Zrušit koncept"
-      ],
-      "Open previous message": [
-        "Otevřít předchozí zprávu"
-      ],
-      "Open next message": [
-        "Otevřít následující zprvcu"
-      ],
-      "Show unread emails": [
-        "Zobrazit nepřečtené emaily"
-      ],
-      "Show all emails": [
-        "Zobrazit všechny emaily"
-      ],
-      "Select / unselect all": [
-        "Vybrat vše/zrušit výběr všeho"
-      ],
-      "Search": [
-        "Hledat"
-      ],
-      "New message": [
-        "Nová zpráva"
-      ],
-      "Star": [
-        "Hvězdička"
-      ],
-      "Mark as unread": [
-        "Označit jako nepřečtené"
-      ],
-      "Label as...": [
-        "Označit jako..."
-      ],
-      "Create filter with...": [
-        "Vytvořit filtr s..."
-      ],
-      "Move to...": [
-        "Přesunout do..."
-      ],
-      "Move to Inbox": [
-        "Přesunout do složky Doručená pošta"
-      ],
-      "Move to Archive": [
-        "Přesunout do archivu"
-      ],
-      "Move to Spam": [
-        "Přesunout do spamu"
-      ],
-      "Move to Trash": [
-        "Přesunout do koše"
-      ],
-      "Delete permanently": [
-        "Navždy smazat"
-      ],
-      "Reply": [
-        "Odpovědět"
-      ],
-      "Reply all": [
-        "Odpovědět všem"
-      ],
-      "Forward": [
-        "Přeposlat"
-      ],
-      "Load remote content": [
-        "Načíst vzdálený obsah"
-      ],
-      "Load embedded images": [
-        "Načíst vložené obrázky"
-      ],
-      "Show original message": [
-        "Zobrazit původní zprávu"
       ]
     },
     "Validation Error": {

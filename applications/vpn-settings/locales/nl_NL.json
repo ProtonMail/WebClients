@@ -5,7 +5,216 @@
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Error": {
+      "This field is required": [
+        "Dit veld is verplicht"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Request timed out.": [
+        "Het verzoek timed out."
+      ],
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+      ],
+      "Unknown error": [
+        "Onbekende fout"
+      ],
+      "Checkout expired, please try again.": [
+        "Checkout is verlopen, probeer het opnieuw."
+      ],
+      "Invalid code": [
+        "Ongeldige code"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fout bij het verbinden met de Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Bedrag onder minimum."
+      ],
+      "Amount above the maximum.": [
+        "Bedrag boven het maximum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Het minimum bedrag dat kan worden toegevoegd is ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "De minimale betaling die we accepteren is ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Proces afgebroken"
+      ],
+      "Payment process cancelled": [
+        "Betalingsverzoek geannuleerd"
+      ],
+      "Payment process failed": [
+        "Betalingsverzoek geannuleerd"
+      ],
+      "Payment process consumed": [
+        "Betalingsverzoek verwerkt"
+      ],
+      "Payment process not supported": [
+        "Betalingsproces niet ondersteund"
+      ],
+      "Unknown payment token status": [
+        "Onbekende betalingstoken status"
+      ],
+      "Tab closed": [
+        "Tab gesloten"
+      ],
+      "Name on card required": [
+        "Naam op kaart vereist"
+      ],
+      "Invalid expiration date": [
+        "Ongeldige vervaldatum"
+      ],
+      "Invalid card number": [
+        "Ongeldige kaartnummer"
+      ],
+      "Invalid ${ name } code": [
+        "Ongeldige ${ name } code"
+      ],
+      "Invalid postal code": [
+        "Ongeldige postcode"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
+      ],
+      "Please set a recovery/notification email first": [
+        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
+      ],
+      "Please set a recovery phone number first": [
+        "Stel eerst een hersteltelefoonnummer in"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
+      ],
+      "Can't validate email, try again later": [
+        "Kan e-mail niet valideren, probeer het later opnieuw"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan telefoon niet valideren, probeer het later opnieuw"
+      ],
+      "Enter 6 digits": [
+        "Voer 6 cijfers in"
+      ],
+      "Invalid verification code": [
+        "Ongeldige verificatiecode"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
+      ],
+      "You have no invoices.": [
+        "U heeft geen facturen."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
+      ],
+      "File has no contents to preview": [
+        "Bestand heeft geen inhoud om een voorbeeld te tonen"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Vul alstublieft '${ dangerWord }' in"
+      ],
+      "Code wrong or not valid anymore": [
+        "Code verkeerd of niet meer geldig"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
+      ],
+      "Invalid invitation link": [
+        "Ongeldige uitnodigingskoppeling"
+      ],
+      "Can't check username, try again later": [
+        "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Niet gesynchroniseerd"
+      ],
+      "Syncing": [
+        "Synchroniseren"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "De agenda wordt gesynchroniseerd"
+      ],
+      "More than 12 hours passed since last update": [
+        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        "De agenda is te groot"
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        "Synchronisatie van de agenda is mislukt"
+      ]
+    },
     "Info": {
+      "Session timed out.": [
+        "Sessie verlopen."
+      ],
+      "Internet connection lost.": [
+        "Internetverbinding verbroken."
+      ],
+      "Servers are unreachable.": [
+        "Servers zijn onbereikbaar."
+      ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
@@ -550,33 +759,6 @@
       "Recovery phrase has been disabled": [
         ""
       ],
-      "You have no saved payment methods.": [
-        "U heeft geen opgeslagen betalingsmethoden."
-      ],
-      "Expired": [
-        "Verlopen"
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
-      ],
-      "Unsupported file": [
-        "Niet-ondersteund bestand"
-      ],
-      "No preview available": [
-        "Geen voorbeeld beschikbaar"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Loading preview": [
-        "Voorbeeld laden"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
-      ],
-      "of": [
-        "van"
-      ],
       "here": [
         "hier"
       ],
@@ -616,6 +798,33 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
+      "You have no saved payment methods.": [
+        "U heeft geen opgeslagen betalingsmethoden."
+      ],
+      "Expired": [
+        "Verlopen"
+      ],
+      "You can customize and download your invoices for accounting purposes.": [
+        "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
+      ],
+      "Unsupported file": [
+        "Niet-ondersteund bestand"
+      ],
+      "No preview available": [
+        "Geen voorbeeld beschikbaar"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Loading preview": [
+        "Voorbeeld laden"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "of": [
+        "van"
+      ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Voer uw herstel e-mailadres in, en we sturen u uw gebruikersnaam(namen). (Dit is meestal het e-mailadres dat u hebt opgegeven tijdens aanmelding.)"
       ],
@@ -651,15 +860,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
-      ],
-      "Session timed out.": [
-        "Sessie verlopen."
-      ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
-      ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
@@ -967,6 +1167,18 @@
       "Your recovery phrase": [
         ""
       ],
+      "Username or ProtonMail address": [
+        "Gebruikersnaam of ProtonMail e-mailadres"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Verification code": [
+        "Verificatiecode"
+      ],
+      "Enter the 6-digit code": [
+        "Voer de 6-cijferige code in"
+      ],
       "Cash": [
         "Cash"
       ],
@@ -987,18 +1199,6 @@
       ],
       "Customize invoices": [
         "Facturen aanpassen"
-      ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
-      ],
-      "Phone number": [
-        "Telefoonnummer"
-      ],
-      "Verification code": [
-        "Verificatiecode"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -1308,6 +1508,30 @@
       "Disable recovery phrase": [
         ""
       ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "View invoice": [
+        "Factuur bekijken"
+      ],
+      "Get verification code": [
+        "Krijg verificatie code"
+      ],
+      "Try another method": [
+        "Andere methode proberen"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Did not receive the code?": [
+        "Code niet ontvangen?"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Edit phone number": [
+        "Wijzig telefoonnummer"
+      ],
       "Edit": [
         "Bewerk"
       ],
@@ -1352,30 +1576,6 @@
       ],
       "Previous": [
         "Vorige"
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "View invoice": [
-        "Factuur bekijken"
-      ],
-      "Get verification code": [
-        "Krijg verificatie code"
-      ],
-      "Try another method": [
-        "Andere methode proberen"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Did not receive the code?": [
-        "Code niet ontvangen?"
-      ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
-      "Edit phone number": [
-        "Wijzig telefoonnummer"
       ],
       "Email me my username(s)": [
         "E-mail me mijn gebruikersnaam(namen)"
@@ -1527,155 +1727,6 @@
       ],
       "Close": [
         "Sluit"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
-      ],
-      "This field is required": [
-        "Dit veld is verplicht"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
-      "Unknown error": [
-        "Onbekende fout"
-      ],
-      "Checkout expired, please try again.": [
-        "Checkout is verlopen, probeer het opnieuw."
-      ],
-      "Invalid code": [
-        "Ongeldige code"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Fout bij het verbinden met de Bitcoin-API."
-      ],
-      "Amount below minimum.": [
-        "Bedrag onder minimum."
-      ],
-      "Amount above the maximum.": [
-        "Bedrag boven het maximum."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Het minimum bedrag dat kan worden toegevoegd is ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "De minimale betaling die we accepteren is ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Proces afgebroken"
-      ],
-      "Payment process cancelled": [
-        "Betalingsverzoek geannuleerd"
-      ],
-      "Payment process failed": [
-        "Betalingsverzoek geannuleerd"
-      ],
-      "Payment process consumed": [
-        "Betalingsverzoek verwerkt"
-      ],
-      "Payment process not supported": [
-        "Betalingsproces niet ondersteund"
-      ],
-      "Unknown payment token status": [
-        "Onbekende betalingstoken status"
-      ],
-      "Tab closed": [
-        "Tab gesloten"
-      ],
-      "Name on card required": [
-        "Naam op kaart vereist"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
-      ],
-      "Invalid card number": [
-        "Ongeldige kaartnummer"
-      ],
-      "Invalid ${ name } code": [
-        "Ongeldige ${ name } code"
-      ],
-      "Invalid postal code": [
-        "Ongeldige postcode"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
-      ],
-      "Please set a recovery/notification email first": [
-        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
-      ],
-      "Please set a recovery phone number first": [
-        "Stel eerst een hersteltelefoonnummer in"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
-      ],
-      "You have no invoices.": [
-        "U heeft geen facturen."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te tonen"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
-      ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
-      "Enter 6 digits": [
-        "Voer 6 cijfers in"
-      ],
-      "Invalid verification code": [
-        "Ongeldige verificatiecode"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Vul alstublieft '${ dangerWord }' in"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
-      ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
-      ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Request timed out.": [
-        "Het verzoek timed out."
-      ],
-      "Code wrong or not valid anymore": [
-        "Code verkeerd of niet meer geldig"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
-      ],
-      "Invalid invitation link": [
-        "Ongeldige uitnodigingskoppeling"
-      ],
-      "Can't check username, try again later": [
-        "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ]
     },
     "Title": {
@@ -1862,6 +1913,24 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
+      "Account suspended": [
+        "Account opgeschort"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "Invalid verification code": [
+        "Ongeldige verificatiecode"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Human verification": [
+        "Persoonsverificatie"
+      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -1882,24 +1951,6 @@
       ],
       "Action": [
         "Actie"
-      ],
-      "Account suspended": [
-        "Account opgeschort"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
-      "Invalid verification code": [
-        "Ongeldige verificatiecode"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Human verification": [
-        "Persoonsverificatie"
       ],
       "Confirm reset password": [
         "Herstelwachtwoord bevestigen"
@@ -2205,6 +2256,12 @@
       "Phone number updated": [
         "Telefoonnummer bijgewerkt"
       ],
+      "Code sent to ${ methodTo }": [
+        "Code verzonden naar ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificatie gelukt"
+      ],
       "Payment method deleted": [
         "Betalingsmethode verwijderd"
       ],
@@ -2213,12 +2270,6 @@
       ],
       "Invoice customized": [
         "Factuur aangepast"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Code verzonden naar ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificatie gelukt"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
         "Als u een geldige e-mail hebt ingevoerd, sturen we u een e-mail met uw gebruikersnamen in de volgende minuut."
@@ -3353,6 +3404,33 @@
         ""
       ]
     },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "Gebaseerd in Zwitserland, wereldwijd beschikbaar."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Onbetaalde factuur"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Handmatig"
+      ],
+      "No verification method available": [
+        "Geen verificatiemethode beschikbaar"
+      ]
+    },
     "Confirmation title": {
       "Delete payment method": [
         "Betalingsmethode verwijderen"
@@ -3467,56 +3545,9 @@
         "ProtonMail factuur"
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Gebaseerd in Zwitserland, wereldwijd beschikbaar."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Onbetaalde factuur"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Handmatig"
-      ],
-      "No verification method available": [
-        "Geen verificatiemethode beschikbaar"
-      ]
-    },
     "Password": {
       "Confirm new password": [
         "Bevestig nieuw wachtwoord"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
       ]
     },
     "Plan details": {

@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "不明なエラー"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "認証エラー"
-      ],
-      "Unknown error": [
-        "不明なエラー"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
@@ -93,6 +93,24 @@
       "Invalid code": [
         "無効なコードです"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "メールボックスのパスワードが正しくありません。再度入力してください。"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "間違ったログイン情報です。もう一度やり直してください。"
+      ],
+      "Can't validate email, try again later": [
+        "メールアドレスを検証できませんした。再度お試しください"
+      ],
+      "Can't validate phone, try again later": [
+        "電話番号の検証ができませんでした。再度お試しください"
+      ],
+      "Enter 6 digits": [
+        "6 桁の数字を入力"
+      ],
+      "Invalid verification code": [
+        "無効な検証コード"
+      ],
       "Preferences could not be saved": [
         "設定が保存できませんでした。"
       ],
@@ -144,24 +162,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "メールボックスのパスワードが正しくありません。再度入力してください。"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "間違ったログイン情報です。もう一度やり直してください。"
-      ],
-      "Can't validate email, try again later": [
-        "メールアドレスを検証できませんした。再度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
-      ],
-      "Enter 6 digits": [
-        "6 桁の数字を入力"
-      ],
-      "Invalid verification code": [
-        "無効な検証コード"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
       ],
@@ -192,6 +192,12 @@
       "Request timed out.": [
         "リクエストがタイムアウトしました。"
       ],
+      "Signature verification failed": [
+        "署名の検証に失敗しました"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } というメールアドレスが見つかりませんでした。"
+      ],
       "Missing signature": [
         "署名がありません"
       ],
@@ -200,12 +206,6 @@
       ],
       "Signature not verified": [
         "署名が確認されていません"
-      ],
-      "Signature verification failed": [
-        "署名の検証に失敗しました"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Email address disabled": [
         "メールアドレスが無効です"
@@ -335,6 +335,9 @@
       "Load image": [
         "画像を読み込む"
       ],
+      "refresh the page": [
+        "ページを更新"
+      ],
       "Export": [
         "エクスポート"
       ],
@@ -380,8 +383,8 @@
       "Confirm opening of link ${ link }": [
         "リンク ${ link } を確認"
       ],
-      "refresh the page": [
-        "ページを更新"
+      "Continue with Google": [
+        "Googleで続行"
       ],
       "Select timezone": [
         "タイムゾーンの選択"
@@ -536,6 +539,30 @@
       "Increase": [
         "増加"
       ],
+      "Log in": [
+        "ログイン"
+      ],
+      "View invoice": [
+        "請求書を参照"
+      ],
+      "Get verification code": [
+        "認証コードを取得"
+      ],
+      "Try another method": [
+        "別の方法を試してください"
+      ],
+      "Request new code": [
+        "新しいコードの発行"
+      ],
+      "Did not receive the code?": [
+        "コードを受け取っていませんか?"
+      ],
+      "Edit email address": [
+        "メールアドレスを編集"
+      ],
+      "Edit phone number": [
+        "電話番号を編集"
+      ],
       "Save": [
         "保存"
       ],
@@ -626,9 +653,6 @@
       "Export contacts": [
         "連絡先をエクスポート"
       ],
-      "Continue with Google": [
-        "Googleで続行"
-      ],
       "Import contacts": [
         "連絡先のインポート"
       ],
@@ -649,30 +673,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Log in": [
-        "ログイン"
-      ],
-      "View invoice": [
-        "請求書を参照"
-      ],
-      "Get verification code": [
-        "認証コードを取得"
-      ],
-      "Try another method": [
-        "別の方法を試してください"
-      ],
-      "Request new code": [
-        "新しいコードの発行"
-      ],
-      "Did not receive the code?": [
-        "コードを受け取っていませんか?"
-      ],
-      "Edit email address": [
-        "メールアドレスを編集"
-      ],
-      "Edit phone number": [
-        "電話番号を編集"
       ],
       "Close this banner": [
         "このバナーを閉じる"
@@ -907,6 +907,27 @@
       "${ appName } customization": [
         "${ appName } のカスタマイズ"
       ],
+      "Sign in again to continue": [
+        "続行するには再度ログインしてください"
+      ],
+      "Account suspended": [
+        "アカウントが停止されました"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "ユーザー名または ProtonMail アドレスを入力してください"
+      ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
+      "Invalid verification code": [
+        "無効な検証コード"
+      ],
+      "Request new code": [
+        "新しいコードの発行"
+      ],
+      "Human verification": [
+        "人間であることの検証"
+      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } のキーボードショートカット"
       ],
@@ -1035,27 +1056,6 @@
       ],
       "Import in progress": [
         ""
-      ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
-      "Account suspended": [
-        "アカウントが停止されました"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "ユーザー名または ProtonMail アドレスを入力してください"
-      ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
-      "Invalid verification code": [
-        "無効な検証コード"
-      ],
-      "Request new code": [
-        "新しいコードの発行"
-      ],
-      "Human verification": [
-        "人間であることの検証"
       ],
       "Select the way to send this notification": [
         ""
@@ -1206,8 +1206,14 @@
       "No results found": [
         "結果が見つかりませんでした"
       ],
+      "support team": [
+        "サポートチーム"
+      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません。"
+      ],
+      "Loading": [
+        "読み込み中"
       ],
       "Week": [
         "週"
@@ -1226,12 +1232,6 @@
       ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
-      ],
-      "support team": [
-        "サポートチーム"
-      ],
-      "Loading": [
-        "読み込み中"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
@@ -1482,6 +1482,45 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "here": [
+        "こちら"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "受信トレイに関連するメッセージを確認できない場合、迷惑メールフォルダを確認してください。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "メールアドレスは、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
       ],
@@ -1616,45 +1655,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "here": [
-        "こちら"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "受信トレイに関連するメッセージを確認できない場合、迷惑メールフォルダを確認してください。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "メールアドレスは、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "電話番号は、この一度限りの認証にのみ使用されます。"
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
@@ -2029,6 +2029,33 @@
       "Payer": [
         "支払人"
       ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Password": [
+        "パスワード"
+      ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
+      ],
+      "Two-factor authentication code": [
+        "2 要素認証コード"
+      ],
+      "Username or ProtonMail address": [
+        "ユーザー名または ProtonMail アドレス"
+      ],
+      "Phone number": [
+        "電話番号"
+      ],
+      "Verification code": [
+        "検証コード"
+      ],
+      "Enter the 6-digit code": [
+        "6 桁のコードを入力"
+      ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
       ],
@@ -2085,33 +2112,6 @@
       ],
       "To: ${ toEmailAddress }": [
         ""
-      ],
-      "Cancel": [
-        "キャンセル"
-      ],
-      "Submit": [
-        "送信"
-      ],
-      "Password": [
-        "パスワード"
-      ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
-      "Two-factor authentication code": [
-        "2 要素認証コード"
-      ],
-      "Username or ProtonMail address": [
-        "ユーザー名または ProtonMail アドレス"
-      ],
-      "Phone number": [
-        "電話番号"
-      ],
-      "Verification code": [
-        "検証コード"
-      ],
-      "Enter the 6-digit code": [
-        "6 桁のコードを入力"
       ],
       "Name": [
         "名前"
@@ -2270,6 +2270,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
+      ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
       ],
@@ -2287,9 +2290,6 @@
       ],
       "Name": [
         "名前"
-      ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
       ],
       "Add a calendar name": [
         "カレンダー名を入力..."
@@ -2316,6 +2316,11 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
       ]
     },
     "Tooltip": {
@@ -2520,6 +2525,12 @@
       "You have successfully unsubscribed": [
         "退会手続きが正常に行なわれました。"
       ],
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } にコードを送信しました"
+      ],
+      "Verification successful": [
+        "検証に成功しました"
+      ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
       ],
@@ -2543,12 +2554,6 @@
       ],
       "Fingerprint copied to clipboard": [
         "フィンガープリントをクリップボードにコピーしました"
-      ],
-      "Code sent to ${ methodTo }": [
-        "${ methodTo } にコードを送信しました"
-      ],
-      "Verification successful": [
-        "検証に成功しました"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2643,11 +2648,6 @@
         ""
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
         ""
       ]
     },
@@ -3326,6 +3326,28 @@
         "Bitcoin"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "未払いの請求"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "メールアドレス"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "手動"
+      ],
+      "No verification method available": [
+        "検証方法がありません"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
@@ -3631,28 +3653,6 @@
         ""
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "未払いの請求"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "メールアドレス"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "手動"
-      ],
-      "No verification method available": [
-        "検証方法がありません"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
@@ -3708,6 +3708,37 @@
       ],
       "120 minutes": [
         "120分"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        ""
+      ],
+      "Syncing": [
+        ""
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        ""
+      ],
+      "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        ""
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        ""
       ]
     },
     "Alarm notification": {
@@ -4225,6 +4256,11 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "パスワードは ${ length } 文字以上必要です"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "名前"
@@ -4337,11 +4373,6 @@
       ],
       "Address": [
         "メールアドレス"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "パスワードは ${ length } 文字以上必要です"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4519,6 +4550,11 @@
         ""
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
+      ]
+    },
     "Import contact. Contact identifier": {
       "unknown": [
         "不明"
@@ -4563,11 +4599,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
       ]
     },
     "Message": {
@@ -4640,11 +4671,6 @@
       ],
       "${ value } week after at ${ time }": [
         "${ value } 週間後の ${ time }"
-      ]
-    },
-    "Calendar status": {
-      "not synced": [
-        ""
       ]
     },
     "Disabled calendar name suffix": {

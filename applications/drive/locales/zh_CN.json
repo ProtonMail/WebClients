@@ -6,6 +6,45 @@
   "contexts": {
     "": {},
     "Error": {
+      "This field is required": [
+        "此字段必填"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
+      "Not a valid number": [
+        "无效号码"
+      ],
+      "Passwords do not match": [
+        "两次输入的密码不一致"
+      ],
+      "Request timed out.": [
+        "请求超时。"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
+      ],
+      "Missing signature": [
+        "缺少签名"
+      ],
+      "Contact signature not verified": [
+        "未验证联系人签名"
+      ],
+      "Signature not verified": [
+        "签名未验证"
+      ],
+      "Invalid name": [
+        "名称无效"
+      ],
+      "Unknown error": [
+        "未知错误"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
       ],
@@ -18,20 +57,32 @@
       "Authentication error.": [
         "验证错误。"
       ],
-      "Unknown error": [
-        "未知错误"
-      ],
       "Email address invalid": [
         "邮箱格式不正确"
       ],
-      "This field is required": [
-        "此字段必填"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      "Incorrect mailbox password. Please try again": [
+        "邮箱密码错误，请重试"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "账号或密码错误，请重试"
+      ],
+      "Can't validate email, try again later": [
+        "无法验证电子邮件，请稍后再试"
+      ],
+      "Can't validate phone, try again later": [
+        "无法验证手机，请稍候再重试"
+      ],
+      "Enter 6 digits": [
+        "请输入 6 位验证码"
+      ],
+      "Invalid verification code": [
+        "无效的验证代码"
       ],
       "Process aborted": [
         "操作已中止"
@@ -132,1058 +183,170 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "Invalid name": [
-        "名称无效"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "邮箱密码错误，请重试"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "账号或密码错误，请重试"
-      ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再重试"
-      ],
-      "Enter 6 digits": [
-        "请输入 6 位验证码"
-      ],
-      "Invalid verification code": [
-        "无效的验证代码"
-      ],
       "File has no contents to preview": [
         "文件没有内容可预览"
-      ],
-      "Request timed out.": [
-        "请求超时。"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此字段至少需要 ${ minimumLength } 个字符。"
-      ],
-      "Email is not valid": [
-        "无效邮箱"
-      ],
-      "Not a valid number": [
-        "无效号码"
-      ],
-      "Passwords do not match": [
-        "两次输入的密码不一致"
-      ],
-      "Missing signature": [
-        "缺少签名"
-      ],
-      "Contact signature not verified": [
-        "未验证联系人签名"
-      ],
-      "Signature not verified": [
-        "签名未验证"
-      ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
       ],
       "No valid address found": [
         "未找到有效地址"
       ],
       "Incorrect password. Please try again.": [
-        ""
+        "密码错误，请重试。"
       ]
     },
-    "Action": {
-      "Close": [
-        "关闭"
-      ],
-      "Use “${ label }” setting": [
-        "使用 \"${ label }\" 设置"
-      ],
-      "Confirm": [
-        "确认"
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "提交"
-      ],
-      "Close modal": [
-        "关闭"
-      ],
-      "Close navigation": [
-        "关闭导航栏"
-      ],
-      "Open navigation": [
-        "打开导航栏"
-      ],
-      "More info: ${ safeTitle }": [
-        "更多信息：${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "前往面板 ${ index }"
-      ],
-      "Load image": [
-        "加载图片"
-      ],
-      "Export": [
-        "导出"
-      ],
-      "Delete": [
-        "删除"
-      ],
-      "Edit": [
-        "编辑"
-      ],
-      "Remove": [
-        "移除"
-      ],
-      "Download": [
-        "下載"
-      ],
-      "Use for sending": [
-        "用于发送邮件"
-      ],
-      "Trust": [
-        "信任"
-      ],
-      "Untrust": [
-        "取消信任"
-      ],
-      "Upgrade": [
-        "升级"
-      ],
-      "Email settings": [
-        "邮件设置"
-      ],
-      "Contact group": [
-        "联系人群组"
-      ],
-      "Upload picture": [
-        "上传图片"
-      ],
-      "Next month": [
-        "下个月"
-      ],
-      "Previous month": [
-        "上个月"
-      ],
-      "Confirm opening of link ${ link }": [
-        "确认打开链接 ${ link }"
-      ],
-      "Continue with Google": [
-        "使用 Google 帐号登录"
-      ],
-      "refresh the page": [
-        "刷新页面"
-      ],
-      "Signing out": [
-        "正在登出"
-      ],
-      "Close this banner": [
-        "关闭此横幅"
-      ],
-      "Refresh the page": [
-        "刷新此页"
-      ],
-      "enable desktop notifications": [
-        "启用桌面通知"
-      ],
-      "here": [
-        "此处"
-      ],
-      "Copy email to clipboard": [
-        "复制邮箱地址"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
-      ],
-      "Chat with us": [
-        "联系我们"
-      ],
-      "I have a question": [
-        "我有疑问"
-      ],
-      "Request a feature": [
-        "请求功能"
-      ],
-      "Report a problem": [
-        "反馈问题"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } 商店"
-      ],
-      "Switch account": [
-        "切换帐户"
-      ],
-      "Sign out": [
-        "登出"
-      ],
-      "Go to settings": [
-        "前往设置"
-      ],
-      "Beta Access": [
-        "测试版功能"
-      ],
-      "Theme": [
-        "主題"
-      ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Composer size": [
-        ""
-      ],
-      "Get started": [
-        "入门"
-      ],
-      "Next": [
-        "后一页"
-      ],
-      "Start setup": [
-        "开始设置"
-      ],
-      "Skip": [
-        "跳过"
-      ],
-      "Done": [
-        "完成"
-      ],
-      "Back": [
-        "后退"
-      ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 主题"
-      ],
-      "OK": [
-        "确定"
-      ],
-      "Clear": [
-        "清除"
-      ],
-      "Add screenshot(s)": [
-        "添加截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
-      ],
-      "Remove bonuses": [
-        "放弃特权"
-      ],
-      "Verify": [
-        "验证"
-      ],
-      "Try again": [
-        "重试"
-      ],
-      "Use a different card": [
-        "使用其他银行卡"
-      ],
-      "Use a different payment method": [
-        "改用其他支付方式"
-      ],
-      "Retry": [
-        "重试"
-      ],
-      "Loading verification": [
-        "正在准备验证"
-      ],
-      "Select plan": [
-        "选择套餐"
-      ],
-      "Compare all features": [
-        "功能对比"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "年付可享 ${ boldSave } 优惠"
-      ],
-      "Continue": [
-        "继续"
-      ],
-      "Pay": [
-        "支付"
-      ],
-      "Apply": [
-        "应用"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "打开 ${ CALENDAR_APP_NAME } 设置"
-      ],
-      "Remove gift code": [
-        "移除礼品码"
-      ],
-      "annual billing": [
-        "年费"
-      ],
-      "Compare plans": [
-        "套餐对比"
-      ],
-      "Decrease": [
-        "减少"
-      ],
-      "Increase": [
-        "增加"
-      ],
-      "Save": [
-        "保存"
-      ],
-      "Add": [
-        "添加"
-      ],
-      "Hide advanced PGP settings": [
-        "隐藏高级 PGP 设置"
-      ],
-      "Show advanced PGP settings": [
-        "显示高级 PGP 设置"
-      ],
-      "Clear data": [
-        "清除数据"
-      ],
-      "Recover data": [
-        "恢复数据"
-      ],
-      "Click here.": [
-        "点击此处。"
-      ],
-      "Re-sign": [
-        "重新签名"
-      ],
-      "Add to group": [
-        "添加至群组"
-      ],
-      "Merge": [
-        "合并"
-      ],
-      "View": [
-        "查看"
-      ],
-      "Unmark for deletion": [
-        "取消待删除标记"
-      ],
-      "Mark for deletion": [
-        "标记为待删除"
-      ],
-      "Preview contact": [
-        "预览联系人"
-      ],
-      "Delete contact": [
-        "删除联系人"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "删除 ${ selectedCount } 个联系人"
-      ],
-      "Deselect all": [
-        "取消全选"
-      ],
-      "Select all": [
-        "全选"
-      ],
-      "Compose": [
-        "写邮件"
-      ],
-      "Forward as attachment": [
-        "作为附件转发"
-      ],
-      "Merge contacts": [
-        "合并联系人"
-      ],
-      "Add new contact": [
-        "添加新联系人"
-      ],
-      "Add group": [
-        "添加群组"
-      ],
-      "Clear query": [
-        "清除查询记录"
-      ],
-      "Add contact": [
-        "添加联系人"
-      ],
-      "import": [
-        "导入"
-      ],
-      "Delete contact group": [
-        "删除联系人群组"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "删除 ${ selectedCount } 个联系人群组"
-      ],
-      "Add new group": [
-        "添加新群组"
-      ],
-      "Export contacts": [
-        "导出联系人"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Choose a file or drag it here": [
-        "选择一个文件或将其拖到此处"
-      ],
-      "Import": [
-        "导入"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        ""
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Log in": [
-        "登录"
-      ],
-      "View invoice": [
-        "查看账单"
-      ],
-      "Get verification code": [
-        "获取验证码"
-      ],
-      "Try another method": [
-        "更换验证方式"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Did not receive the code?": [
-        "没有收到验证码？"
-      ],
-      "Edit email address": [
-        "编辑邮箱地址"
-      ],
-      "Edit phone number": [
-        "编辑电话号码"
-      ],
-      "Details": [
-        "详细信息"
-      ],
-      "Share via link": [
-        "通过链接分享"
-      ],
-      "Sharing options": [
-        "共享选项"
-      ],
-      "Zoom out": [
-        "缩小"
-      ],
-      "Reset zoom": [
-        "重置缩放"
-      ],
-      "Zoom in": [
-        "放大"
-      ],
-      "Previous": [
-        "前一页"
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Undo": [
-        "撤销"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "新建上传"
-      ],
-      "Rename": [
-        "重命名"
-      ],
-      "Move to folder": [
-        "移动至文件夹"
-      ],
-      "Move to trash": [
-        "移至垃圾箱"
-      ],
-      "Share options": [
-        ""
-      ],
-      "Share": [
-        "分享"
-      ],
-      "Create new folder": [
-        "创建文件夹"
-      ],
-      "Name: A to Z": [
-        "名称: A 到 Z"
-      ],
-      "Name: Z to A": [
-        "名称: Z 到 A"
-      ],
-      "Modified date: new to old": [
-        "修改日期：从新到旧"
-      ],
-      "Modified date: old to new": [
-        "修改日期：从旧到新"
-      ],
-      "Type: A to Z": [
-        "类型：A 到 Z"
-      ],
-      "Type: Z to A": [
-        "类型：Z 到 A"
-      ],
-      "Size: small to large": [
-        "大小：从小到大"
-      ],
-      "Size: large to small": [
-        "大小：从大到小"
-      ],
-      "Upload file": [
-        "上传文件"
-      ],
-      "Upload folder": [
-        "上传文件夹"
-      ],
-      "List layout": [
-        "列表布局"
-      ],
-      "Grid layout": [
-        "网格布局"
-      ],
-      "Preview": [
-        "预览"
-      ],
-      "Share file": [
-        "分享文件"
-      ],
-      "Stop sharing": [
-        "停止分享"
-      ],
-      "Empty trash": [
-        "清空垃圾箱"
-      ],
-      "Restore from trash": [
-        "从回收站恢复"
-      ],
-      "Maximize transfers": [
-        "最大化传输窗口"
-      ],
-      "Minimize transfers": [
-        "最小化传输窗口"
-      ],
-      "Close transfers": [
-        "关闭传输窗口"
-      ],
-      "Pause download": [
-        "暂停下载"
-      ],
-      "Pause upload": [
-        "暂停上传"
-      ],
-      "Resume download": [
-        "恢复下载"
-      ],
-      "Resume upload": [
-        "恢复上传"
-      ],
-      "Cancel download": [
-        "取消下载"
-      ],
-      "Cancel upload": [
-        "取消上传"
-      ],
-      "Restart download": [
-        "重新开始下载"
-      ],
-      "Restart upload": [
-        "重新开始上传"
-      ],
-      "Remove from this list": [
-        ""
-      ],
-      "Resume transfers": [
-        ""
-      ],
-      "Pause transfers": [
-        ""
-      ],
-      "Cancel transfers": [
-        ""
-      ],
-      "Restart transfers": [
-        ""
-      ],
-      "Start recovering": [
-        "开始恢复"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "View more": [
-        "查看更多"
-      ],
-      "Create": [
-        "创建"
-      ],
-      "Move": [
-        "移动"
-      ],
-      "Copy link": [
-        "复制链接"
-      ],
-      "Create link": [
-        "创建链接"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
       ]
     },
-    "Title": {
-      "Open actions dropdown": [
-        "展开"
-      ],
-      "Upgrade required": [
-        "需要升级"
-      ],
-      "Email settings": [
-        "邮件设置"
-      ],
-      "Contact group": [
-        "联系人群组"
-      ],
-      "Link confirmation": [
-        "确认打开链接"
-      ],
-      "Keyboard Shortcuts": [
-        "键盘快捷键"
-      ],
-      "What's new": [
-        "更新内容"
-      ],
-      "Open help menu": [
-        "打开帮助菜单"
-      ],
-      "Back": [
-        "后退"
-      ],
-      "Open settings menu": [
-        "打开设置菜单"
-      ],
-      "Select a theme": [
-        "选择一个主题"
-      ],
-      "Report a problem": [
-        "反馈问题"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "确定放弃 Proton 特权"
-      ],
-      "Unsupported browser": [
-        "不支持此浏览器"
-      ],
-      "Card verification": [
-        "银行卡验证"
-      ],
-      "Payment verification": [
-        "确认支付"
-      ],
-      "Processing...": [
-        "正在处理..."
-      ],
-      "Card verification in progress": [
-        "正在验证银行卡"
-      ],
-      "Payment verification in progress": [
-        "正在确认支付"
-      ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure 验证失败"
-      ],
-      "Error": [
-        "失败"
-      ],
-      "ZIP / postal code": [
-        "邮政编码"
-      ],
-      "Payment details": [
-        "支付明细"
-      ],
-      "Currency": [
-        "货币"
-      ],
-      "Billing cycle": [
-        "计费周期"
-      ],
-      "Current plan": [
-        "当前套餐"
-      ],
-      "Processing": [
-        "处理中"
-      ],
-      "Apply gift code": [
-        "使用礼品码"
-      ],
-      "Subtotal": [
-        "小计"
-      ],
-      "Coupon discount": [
-        "优惠券折扣"
-      ],
-      "Total (monthly)": [
-        "合计（按月）"
-      ],
-      "Credits": [
-        "余额"
-      ],
-      "Gift code": [
-        "礼品码"
-      ],
-      "Amount due": [
-        "应付金额"
-      ],
-      "Cancel subscription": [
-        "停止订购"
-      ],
-      "Network error": [
-        "网络错误"
-      ],
-      "Select a plan": [
-        "选择套餐"
-      ],
-      "Customize your plan": [
-        "自定义您的套餐"
-      ],
-      "Checkout": [
-        "结算"
-      ],
-      "Plan summary": [
-        "订单概览"
-      ],
-      "${ appName } customization": [
-        "自定义 ${ appName }"
-      ],
-      "Edit contact group": [
-        "更改联系人群组"
-      ],
-      "Create new group": [
-        "创建新群组"
-      ],
-      "Add to ${ groupName }": [
-        "添加到 ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "添加到 ${ groupCount } 个群组"
-      ],
-      "Email settings (${ emailAddress })": [
-        "邮件设置（${ emailAddress }）"
-      ],
-      "Delete ${ Name }": [
-        "删除 ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "删除 ${ count } 个联系人群组"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } 位成员"
-      ],
-      "Edit image": [
-        "更改图片"
-      ],
-      "Edit contact": [
-        "编辑联系人"
-      ],
-      "Create contact": [
-        "创建联系人"
-      ],
-      "Delete ${ count } contact": [
-        "删除 ${ count } 个联系人"
-      ],
-      "Clearing data": [
-        "正在清除数据"
-      ],
-      "Warning": [
-        "警告"
-      ],
-      "Recover data": [
-        "恢复数据"
-      ],
-      "Re-signing contacts": [
-        "正在重新签署联系人"
-      ],
-      "Re-sign all contacts": [
-        "重新签署所有联系人"
-      ],
-      "Exporting contacts": [
-        "导出联系人"
-      ],
-      "Other names": [
-        "其他名称"
-      ],
-      "Email addresses": [
-        "邮箱地址数"
-      ],
-      "Phone numbers": [
-        "电话号码"
-      ],
-      "Addresses": [
-        "邮箱地址"
-      ],
-      "Other information": [
-        "其他信息"
-      ],
-      "Contact Details": [
-        "联系人详情"
-      ],
-      "Merging contacts": [
-        "正在合并联系人"
-      ],
-      "Merge contacts": [
-        "合并联系人"
-      ],
-      "Deleting contacts": [
-        "删除联系人中"
-      ],
-      "View contacts": [
-        "查看联系人"
-      ],
-      "Contacts": [
-        "通讯录"
-      ],
-      "Groups": [
-        "群组"
-      ],
-      "Settings": [
-        "设置"
-      ],
-      "Select action to take on contact group": [
-        "选择针对联系人群组的动作"
-      ],
-      "Add contact group name": [
-        "添加联系人群组名称"
-      ],
-      "Select contact group": [
-        "选择联系人群组"
-      ],
-      "Import groups": [
-        "导入分组"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 快捷键"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
-      ],
-      "Composer mode": [
-        "邮件格式"
-      ],
-      "Beta Access": [
-        "Beta测试版访问权限"
-      ],
-      "Sign in again to continue": [
-        "再次登录方可继续"
-      ],
-      "Account suspended": [
-        "账号已被冻结"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "请输入用户名或 ProtonMail 邮箱"
-      ],
-      "Enter your password": [
-        "输入您的密码"
-      ],
-      "Invalid verification code": [
-        "无效的验证代码"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Human verification": [
-        "身份验证"
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Stop sharing": [
-        "停止分享"
-      ],
-      "Duplicate folder found": [
-        ""
-      ],
-      "Duplicate file found": [
-        ""
-      ],
-      "Drop to upload": [
-        "拖拽文件并上传"
-      ],
-      "Show actions": [
-        ""
-      ],
-      "Sort files/folders": [
-        ""
-      ],
-      "My files": [
-        "我的文件"
-      ],
-      "Change layout": [
-        "调整布局"
-      ],
-      "Shared": [
-        "共享"
-      ],
-      "Empty trash": [
-        "清空垃圾箱"
-      ],
-      "Trash": [
-        "废件箱"
-      ],
-      "Additional settings": [
-        ""
-      ],
-      "Cancel all active transfers": [
-        ""
-      ],
-      "Drive": [
-        "云盘"
-      ],
-      "Restore your files": [
-        ""
-      ],
-      "File recovery process": [
-        ""
-      ],
-      "You have inaccessible files": [
-        ""
-      ],
-      "Rename a folder": [
-        "重命名文件夹"
-      ],
-      "Rename a file": [
-        "重命名文件"
-      ],
-      "File details": [
-        "文件详细信息"
-      ],
-      "Folder details": [
-        "文件夹详细信息"
-      ],
+    "Contact field label": {
       "Name": [
-        "姓名"
+        "名称"
       ],
-      "Uploaded by": [
-        ""
+      "Email": [
+        "邮件"
       ],
-      "Location": [
-        "位置"
+      "Phone": [
+        "电话"
       ],
-      "Modified": [
-        "修改"
+      "Address": [
+        "地址"
       ],
-      "Type": [
-        "类型"
+      "Photo": [
+        "照片"
       ],
-      "MIME type": [
-        ""
+      "Organization": [
+        "机构"
       ],
-      "Size": [
-        "大小"
+      "Birthday": [
+        "生日"
       ],
-      "# of accesses": [
-        ""
+      "Anniversary": [
+        "周年"
       ],
-      "You have no folders yet": [
-        ""
+      "Title": [
+        "标题"
       ],
-      "Create a new folder": [
-        "新建文件夹"
+      "Role": [
+        "身份"
       ],
-      "Manage share": [
-        ""
+      "Note": [
+        "备注"
       ],
-      "Date": [
-        "日期"
+      "URL": [
+        "网址"
       ],
-      "Select link expiration date": [
-        ""
+      "Gender": [
+        "性别"
       ],
-      "Select link expiration time": [
-        ""
+      "Language": [
+        "语言"
       ],
-      "Share via link": [
-        "通过链接分享"
+      "Timezone": [
+        "时区"
       ],
-      "Manage secure link": [
-        "管理安全链接"
+      "Geo": [
+        "地理位置"
       ],
-      "Stop sharing with everyone?": [
-        ""
+      "Logo": [
+        "商标"
       ],
-      "Discard changes?": [
-        "放弃更改？"
+      "Member": [
+        "成员"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "工作"
       ],
-      "Discard": [
-        "放弃"
+      "Personal": [
+        "私人"
       ],
-      "You have no files to share": [
-        ""
+      "Mobile": [
+        "手机"
       ],
-      "Files details": [
-        ""
+      "Main": [
+        "主要"
       ],
-      "Number of files": [
-        "文件数"
+      "Yomi": [
+        "读音"
       ],
-      "Total size": [
-        ""
+      "Other": [
+        "其它"
       ],
-      "Your file is ready to be downloaded": [
-        ""
+      "Fax": [
+        "传真"
       ],
-      "Download completed": [
-        ""
+      "Pager": [
+        "寻呼机"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "邮件"
       ],
-      "Download failed": [
-        ""
+      "Home": [
+        "首页"
       ],
-      "Download canceled": [
-        ""
+      "Work": [
+        "工作"
       ],
-      "Downloading": [
-        "下載中"
+      "Other": [
+        "其它"
       ],
-      "Enter file password to download": [
-        ""
+      "Phone": [
+        "电话"
       ],
-      "The link either does not exist or has expired": [
-        ""
+      "Mobile": [
+        "手机"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Fax": [
+        "传真"
+      ],
+      "Pager": [
+        "寻呼机"
+      ],
+      "Address": [
+        "地址"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "字节"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Info": {
+      "Session timed out.": [
+        "会话已超时。"
+      ],
+      "Internet connection lost.": [
+        "网络连接断开。"
+      ],
+      "Servers are unreachable.": [
+        "无法连接服务器。"
+      ],
       "No results found": [
         "搜索无结果"
+      ],
+      "support team": [
+        "客服团队"
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -1206,14 +369,20 @@
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
       ],
-      "support team": [
-        "客服团队"
-      ],
       "Loading": [
         "加载中"
       ],
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
+      ],
+      "here": [
+        "这里"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "此帐户因可能违反用户协议而被封禁"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "如果您坚信其中有误，请联系 ${ contactLink }"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
@@ -1253,6 +422,36 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "您已经关闭了 \"测试版功能\"。请点击 ${ refreshButton } 以使用稳定版的 ${ appName }，应用将重新启动"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电子邮件地址不正确，请点击 \"编辑\""
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\""
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "为了防止垃圾邮件和滥用，请验证您是人类。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的电子邮件将只会用于此一次性验证"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的电话号码将只会用于此一次性验证"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
       "Screenshot(s) attached": [
         "已附加的屏幕截图"
@@ -1632,45 +831,6 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
       ],
-      "here": [
-        "这里"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "此帐户因可能违反用户协议而被封禁"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如果您坚信其中有误，请联系 ${ contactLink }"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "您想重新获取验证码还是更换验证方式？"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "验证码已发至 ${ destinationText }，请在下方输入。"
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电子邮件地址不正确，请点击 \"编辑\""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\""
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "为了防止垃圾邮件和滥用，请验证您是人类。"
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "您的电子邮件将只会用于此一次性验证"
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "您的电话号码将只会用于此一次性验证"
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -1689,86 +849,53 @@
       "of": [
         "/"
       ],
-      "Session timed out.": [
-        "会话已超时。"
-      ],
-      "Internet connection lost.": [
-        "网络连接断开。"
-      ],
-      "Servers are unreachable.": [
-        "无法连接服务器。"
-      ],
       "Loading folder contents": [
         "正在载入文件夹内容"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        ""
+        "一次上传数百个文件可能会影响性能。"
       ],
       "Moving files": [
-        ""
+        "正在移动文件"
       ],
       "Are you sure you want to permanently delete selected item(s) from trash?": [
         "您确定要永久删除这些项目吗？"
       ],
       "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        ""
+        "这将删除链接并移除任何拥有该链接的人对您文件的访问权限。"
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
       ],
       "${ uploadName } already exists in this location.": [
-        ""
+        "${ uploadName } 已存在于该路径。"
       ],
       "What do you want to do?": [
-        ""
+        "您想要做什么？"
       ],
       "Folder contents will merge into a single folder": [
-        ""
+        "文件夹内容将合并为一个文件夹"
       ],
       "A number will be added to the folder name": [
-        ""
+        "将在文件夹名称中添加一个编号"
       ],
       "A number will be added to the filename": [
-        ""
+        "将在文件名中添加一个编号"
       ],
       "This will overwrite the existing folder": [
-        ""
+        "这将覆盖现有文件夹"
       ],
       "This will overwrite the existing file": [
-        ""
+        "这将覆盖现有文件"
       ],
       "Folder will not be uploaded": [
-        ""
+        "将不会上传文件夹"
       ],
       "File will not be uploaded": [
-        ""
+        "将不会上传文件"
       ],
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
-      ],
-      "There are no files yet": [
-        "还没有文件"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "拖放文件到这里上传文件."
-      ],
-      "Share files with links": [
-        ""
-      ],
-      "Create links and share your files with others.": [
-        ""
-      ],
-      "My Links": [
-        ""
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "您确定要清空回收站并永久删除所有项目吗？"
-      ],
-      "No files or folders in trash": [
-        "回收站中没有文件或文件夹"
-      ],
-      "Trash": [
-        "废件箱"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } 已完成"
@@ -1780,10 +907,10 @@
         "${ doneDownloadsCount } 已下载"
       ],
       "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        ""
+        "${ activeUploadsCount } 项在上传中 (${ uploadProgress }%)"
       ],
       "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        ""
+        "${ activeDownloadsCount } 项在下载中 (${ downloadProgress }%)"
       ],
       "${ pausedCount } Paused": [
         "${ pausedCount } 已暂停"
@@ -1795,13 +922,13 @@
         "${ errorCount } 失败"
       ],
       "Something went wrong, please try again later.": [
-        ""
+        "出错了，请稍后再试。"
       ],
       "Initializing": [
         "正在初始化"
       ],
       "Conflict": [
-        ""
+        "冲突"
       ],
       "Queued": [
         "等待中"
@@ -1822,7 +949,7 @@
         "失败"
       ],
       "Network issue": [
-        ""
+        "网络问题"
       ],
       "Canceled": [
         "已取消"
@@ -1837,6 +964,45 @@
         "正在上传"
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
+        "关闭传输管理器将会取消所有活动传输，您确定吗？"
+      ],
+      "There are no files yet": [
+        "还没有文件"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "拖放文件到这里上传文件."
+      ],
+      "Share files with links": [
+        "通过链接共享文件"
+      ],
+      "Create links and share your files with others.": [
+        "创建链接然后与他人共享您的文件。"
+      ],
+      "My Links": [
+        "我的链接"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "您确定要清空回收站并永久删除所有项目吗？"
+      ],
+      "No files or folders in trash": [
+        "回收站中没有文件或文件夹"
+      ],
+      "Trash": [
+        "废件箱"
+      ],
+      "Link expires: ": [
+        ""
+      ],
+      "Your file has finished downloading.": [
+        ""
+      ],
+      "Your file failed to download.": [
+        ""
+      ],
+      "Your download has been canceled.": [
+        ""
+      ],
+      "Your file is being downloaded.": [
         ""
       ],
       "Would you like to restore your files?": [
@@ -1904,86 +1070,1245 @@
       ],
       "Select an uploaded file and create a link to it.": [
         ""
-      ],
-      "Link expires: ": [
-        ""
-      ],
-      "Your file has finished downloading.": [
-        ""
-      ],
-      "Your file failed to download.": [
-        ""
-      ],
-      "Your download has been canceled.": [
-        ""
-      ],
-      "Your file is being downloaded.": [
-        ""
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "例如："
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "未同步"
       ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
+      "Syncing": [
+        "同步中"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "日历正在同步中"
       ],
-      "OS name": [
-        "OS 名称"
+      "More than 12 hours passed since last update": [
+        "离上一个更新已经超过了12小时"
       ],
-      "OS version": [
-        "OS 版本"
+      "Calendar link is wrong": [
+        "日历链接错误"
       ],
-      "Proton username": [
-        "Proton 用户名"
+      "Calendar is too big": [
+        ""
       ],
-      "A way to contact you": [
-        "您的联系方式"
+      "Calendar link is not accessible": [
+        "日历链接不能被访问"
       ],
-      "Please describe the problem and include any error messages": [
-        "请描述问题，并附上任何错误提示"
+      "Calendar link is temporarily unaccessible": [
+        "日历链接暂时不能被访问"
       ],
-      "Browser name": [
-        "浏览器名称"
+      "Failed to sync calendar": [
+        "同步日历失败"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "未知"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "未知"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "不支持 vCard 3.0 以下版本"
       ],
-      "Browser version": [
-        "浏览器版本"
+      "Encryption failed": [
+        "加密失败"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "出现意外错误，需重新开始导入。"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "文件上传失败，尚未选择文件。"
       ],
-      "ZIP": [
-        "邮编"
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "文件 ${ formattedFilename } 上传失败，未选择 .csv 或 .vcf 文件"
       ],
-      "Postal code": [
+      "Your file ${ formattedFilename } is empty.": [
+        "文件 ${ formattedFilename } 是空的。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "文件 ${ formattedFilename } 上传失败，文件大小不能超过 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "文件 ${ formattedFilename } 中没有可导入的联系人。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "文件 ${ formattedFilename } 中的联系人数已超过 ${ MAX_IMPORT_CONTACTS_STRING }。"
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "基本导航"
+      ],
+      "Basic actions": [
+        "基本操作"
+      ],
+      "Folder shortcuts": [
+        "类别快捷键"
+      ],
+      "Composer shortcuts": [
+        "编辑窗快捷键"
+      ],
+      "List shortcuts": [
+        "列表快捷键"
+      ],
+      "Action shortcuts": [
+        "操作快捷键"
+      ],
+      "Message shortcuts": [
+        "消息快捷键"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "上移"
+      ],
+      "Jump to first": [
+        "跳转到第一个"
+      ],
+      "Move down": [
+        "下移"
+      ],
+      "Jump to last": [
+        "跳转到最后一个"
+      ],
+      "Move right / expand": [
+        "右移 / 展开"
+      ],
+      "Move left / collapse": [
+        "左移 / 折叠"
+      ],
+      "Apply / open": [
+        "应用 / 打开"
+      ],
+      "Cancel / close": [
+        "取消 / 关闭"
+      ],
+      "Open this modal": [
+        "打开此面板"
+      ],
+      "Select / unselect": [
+        "选择 / 取消选择"
+      ],
+      "Go to Inbox": [
+        "转到收件箱"
+      ],
+      "Go to Archive": [
+        "转至归档"
+      ],
+      "Go to Sent": [
+        "转至发件箱"
+      ],
+      "Go to Starred": [
+        "转至星标邮件"
+      ],
+      "Go to Drafts": [
+        "转至草稿箱"
+      ],
+      "Go to Trash": [
+        "移至回收站"
+      ],
+      "Go to Spam": [
+        "转至垃圾邮件"
+      ],
+      "Go to All Mail": [
+        "转至所有邮件"
+      ],
+      "Save draft": [
+        "保存草稿"
+      ],
+      "Send email": [
+        "发送邮件"
+      ],
+      "Close draft": [
+        "关闭草稿"
+      ],
+      "Minimize / maximize composer": [
+        "最小化/最大化编辑窗"
+      ],
+      "Expand / contract composer": [
+        "展开/还原编辑窗"
+      ],
+      "Attach file": [
+        "添加附件"
+      ],
+      "Add expiration time": [
+        "添加到期时间"
+      ],
+      "Add encryption": [
+        "添加加密"
+      ],
+      "Discard draft": [
+        "舍弃草稿"
+      ],
+      "Open previous message": [
+        "打开上则消息"
+      ],
+      "Open next message": [
+        "打开下则消息"
+      ],
+      "Show unread emails": [
+        "显示未读邮件"
+      ],
+      "Show all emails": [
+        "显示所有邮件"
+      ],
+      "Select / unselect all": [
+        "全选 / 反选"
+      ],
+      "Search": [
+        "搜索"
+      ],
+      "New message": [
+        "新邮件"
+      ],
+      "Star": [
+        "星标"
+      ],
+      "Mark as unread": [
+        "标记为未读"
+      ],
+      "Label as...": [
+        "标记为"
+      ],
+      "Create filter with...": [
+        "创建过滤器..."
+      ],
+      "Move to...": [
+        "移至..."
+      ],
+      "Move to Inbox": [
+        "移动到收件箱"
+      ],
+      "Move to Archive": [
+        "移动到归档"
+      ],
+      "Move to Spam": [
+        "移动到垃圾箱"
+      ],
+      "Move to Trash": [
+        "移到垃圾箱"
+      ],
+      "Delete permanently": [
+        "永久删除"
+      ],
+      "Reply": [
+        "回复"
+      ],
+      "Reply all": [
+        "回复全部"
+      ],
+      "Forward": [
+        "转发"
+      ],
+      "Load remote content": [
+        "加载外部内容"
+      ],
+      "Load embedded images": [
+        "加载嵌入图像"
+      ],
+      "Show original message": [
+        "显示原始邮件"
+      ]
+    },
+    "Action": {
+      "Close": [
+        "关闭"
+      ],
+      "Use “${ label }” setting": [
+        "使用 \"${ label }\" 设置"
+      ],
+      "Confirm": [
+        "确认"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Close modal": [
+        "关闭"
+      ],
+      "Close navigation": [
+        "关闭导航栏"
+      ],
+      "Open navigation": [
+        "打开导航栏"
+      ],
+      "More info: ${ safeTitle }": [
+        "更多信息：${ safeTitle }"
+      ],
+      "Go to panel ${ index }": [
+        "前往面板 ${ index }"
+      ],
+      "refresh the page": [
+        "刷新页面"
+      ],
+      "Load image": [
+        "加载图片"
+      ],
+      "Export": [
+        "导出"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Edit": [
+        "编辑"
+      ],
+      "Remove": [
+        "移除"
+      ],
+      "Download": [
+        "下載"
+      ],
+      "Use for sending": [
+        "用于发送邮件"
+      ],
+      "Trust": [
+        "信任"
+      ],
+      "Untrust": [
+        "取消信任"
+      ],
+      "Upgrade": [
+        "升级"
+      ],
+      "Email settings": [
+        "邮件设置"
+      ],
+      "Contact group": [
+        "联系人群组"
+      ],
+      "Upload picture": [
+        "上传图片"
+      ],
+      "Next month": [
+        "下个月"
+      ],
+      "Previous month": [
+        "上个月"
+      ],
+      "Confirm opening of link ${ link }": [
+        "确认打开链接 ${ link }"
+      ],
+      "Continue with Google": [
+        "使用 Google 帐号登录"
+      ],
+      "Signing out": [
+        "正在退出账户"
+      ],
+      "Log in": [
+        "登录"
+      ],
+      "Close this banner": [
+        "关闭此横幅"
+      ],
+      "Refresh the page": [
+        "刷新此页"
+      ],
+      "enable desktop notifications": [
+        "启用桌面通知"
+      ],
+      "here": [
+        "此处"
+      ],
+      "View invoice": [
+        "查看账单"
+      ],
+      "Get verification code": [
+        "获取验证码"
+      ],
+      "Try another method": [
+        "更换验证方式"
+      ],
+      "Request new code": [
+        "请求新验证码"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "Did not receive the code?": [
+        "没有收到验证码？"
+      ],
+      "Edit email address": [
+        "编辑邮箱地址"
+      ],
+      "Edit phone number": [
+        "编辑电话号码"
+      ],
+      "Copy email to clipboard": [
+        "复制邮箱地址"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } 简介"
+      ],
+      "Chat with us": [
+        "联系我们"
+      ],
+      "I have a question": [
+        "我有疑问"
+      ],
+      "Request a feature": [
+        "请求功能"
+      ],
+      "Report a problem": [
+        "反馈问题"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } 商店"
+      ],
+      "Switch account": [
+        "切换帐户"
+      ],
+      "Sign out": [
+        "退出"
+      ],
+      "Go to settings": [
+        "前往设置"
+      ],
+      "Beta Access": [
+        "测试版功能"
+      ],
+      "Theme": [
+        "主題"
+      ],
+      "Keyboard shortcuts": [
+        "键盘快捷键"
+      ],
+      "Mailbox layout": [
+        "邮箱布局"
+      ],
+      "Mailbox density": [
+        "邮箱密度"
+      ],
+      "Composer size": [
+        ""
+      ],
+      "Get started": [
+        "入门"
+      ],
+      "Next": [
+        "后一页"
+      ],
+      "Start setup": [
+        "开始设置"
+      ],
+      "Skip": [
+        "跳过"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Back": [
+        "后退"
+      ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 主题"
+      ],
+      "OK": [
+        "确定"
+      ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "添加截图"
+      ],
+      "Hide info": [
+        "隐藏信息"
+      ],
+      "Show info": [
+        "显示信息"
+      ],
+      "Remove bonuses": [
+        "放弃特权"
+      ],
+      "Try again": [
+        "重试"
+      ],
+      "Use a different card": [
+        "使用其他银行卡"
+      ],
+      "Use a different payment method": [
+        "改用其他支付方式"
+      ],
+      "Retry": [
+        "重试"
+      ],
+      "Loading verification": [
+        "正在准备验证"
+      ],
+      "Select plan": [
+        "选择套餐"
+      ],
+      "Compare all features": [
+        "功能对比"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "年付可享 ${ boldSave } 优惠"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Pay": [
+        "支付"
+      ],
+      "Apply": [
+        "应用"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "打开 ${ CALENDAR_APP_NAME } 设置"
+      ],
+      "Remove gift code": [
+        "移除礼品码"
+      ],
+      "annual billing": [
+        "年费"
+      ],
+      "Compare plans": [
+        "套餐对比"
+      ],
+      "Decrease": [
+        "减少"
+      ],
+      "Increase": [
+        "增加"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Add": [
+        "添加"
+      ],
+      "Hide advanced PGP settings": [
+        "隐藏高级 PGP 设置"
+      ],
+      "Show advanced PGP settings": [
+        "显示高级 PGP 设置"
+      ],
+      "Clear data": [
+        "清除数据"
+      ],
+      "Recover data": [
+        "恢复数据"
+      ],
+      "Click here.": [
+        "点击此处。"
+      ],
+      "Re-sign": [
+        "重新签名"
+      ],
+      "Add to group": [
+        "添加至群组"
+      ],
+      "Merge": [
+        "合并"
+      ],
+      "View": [
+        "查看"
+      ],
+      "Unmark for deletion": [
+        "取消待删除标记"
+      ],
+      "Mark for deletion": [
+        "标记为待删除"
+      ],
+      "Preview contact": [
+        "预览联系人"
+      ],
+      "Delete contact": [
+        "删除联系人"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "删除 ${ selectedCount } 个联系人"
+      ],
+      "Deselect all": [
+        "取消全选"
+      ],
+      "Select all": [
+        "全选"
+      ],
+      "Compose": [
+        "写邮件"
+      ],
+      "Forward as attachment": [
+        "作为附件转发"
+      ],
+      "Merge contacts": [
+        "合并联系人"
+      ],
+      "Add new contact": [
+        "添加新联系人"
+      ],
+      "Add group": [
+        "添加群组"
+      ],
+      "Clear query": [
+        "清除查询记录"
+      ],
+      "Add contact": [
+        "添加联系人"
+      ],
+      "import": [
+        "导入"
+      ],
+      "Delete contact group": [
+        "删除联系人群组"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "删除 ${ selectedCount } 个联系人群组"
+      ],
+      "Add new group": [
+        "添加新群组"
+      ],
+      "Export contacts": [
+        "导出联系人"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Choose a file or drag it here": [
+        "选择一个文件或将其拖到此处"
+      ],
+      "Import": [
+        "导入"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Details": [
+        "详细信息"
+      ],
+      "Share via link": [
+        "通过链接分享"
+      ],
+      "Sharing options": [
+        "共享选项"
+      ],
+      "Zoom out": [
+        "缩小"
+      ],
+      "Reset zoom": [
+        "重置缩放"
+      ],
+      "Zoom in": [
+        "放大"
+      ],
+      "Previous": [
+        "前一页"
+      ],
+      "Delete permanently": [
+        "永久删除"
+      ],
+      "Undo": [
+        "撤销"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "Share": [
+        "分享"
+      ],
+      "Show shared link details": [
+        ""
+      ],
+      "Maximize transfers": [
+        "最大化传输窗口"
+      ],
+      "Minimize transfers": [
+        "最小化传输窗口"
+      ],
+      "Close transfers": [
+        "关闭传输窗口"
+      ],
+      "Pause download": [
+        "暂停下载"
+      ],
+      "Pause upload": [
+        "暂停上传"
+      ],
+      "Resume download": [
+        "恢复下载"
+      ],
+      "Resume upload": [
+        "恢复上传"
+      ],
+      "Cancel download": [
+        "取消下载"
+      ],
+      "Cancel upload": [
+        "取消上传"
+      ],
+      "Restart download": [
+        "重新开始下载"
+      ],
+      "Restart upload": [
+        "重新开始上传"
+      ],
+      "Remove from this list": [
+        ""
+      ],
+      "Resume transfers": [
+        ""
+      ],
+      "Pause transfers": [
+        ""
+      ],
+      "Cancel transfers": [
+        ""
+      ],
+      "Restart transfers": [
+        ""
+      ],
+      "New upload": [
+        "新建上传"
+      ],
+      "Rename": [
+        "重命名"
+      ],
+      "Move to folder": [
+        "移动至文件夹"
+      ],
+      "Move to trash": [
+        "移至垃圾箱"
+      ],
+      "Share options": [
+        ""
+      ],
+      "Create new folder": [
+        "创建文件夹"
+      ],
+      "Name: A to Z": [
+        "名称: A 到 Z"
+      ],
+      "Name: Z to A": [
+        "名称: Z 到 A"
+      ],
+      "Modified date: new to old": [
+        "修改日期：从新到旧"
+      ],
+      "Modified date: old to new": [
+        "修改日期：从旧到新"
+      ],
+      "Type: A to Z": [
+        "类型：A 到 Z"
+      ],
+      "Type: Z to A": [
+        "类型：Z 到 A"
+      ],
+      "Size: small to large": [
+        "大小：从小到大"
+      ],
+      "Size: large to small": [
+        "大小：从大到小"
+      ],
+      "Upload file": [
+        "上传文件"
+      ],
+      "Upload folder": [
+        "上传文件夹"
+      ],
+      "List layout": [
+        "列表布局"
+      ],
+      "Grid layout": [
+        "网格布局"
+      ],
+      "Preview": [
+        "预览"
+      ],
+      "Share file": [
+        "分享文件"
+      ],
+      "Stop sharing": [
+        "停止分享"
+      ],
+      "Empty trash": [
+        "清空垃圾箱"
+      ],
+      "Restore from trash": [
+        "从回收站恢复"
+      ],
+      "Start recovering": [
+        "开始恢复"
+      ],
+      "View more": [
+        "查看更多"
+      ],
+      "Create": [
+        "创建"
+      ],
+      "Move": [
+        "移动"
+      ],
+      "Copy link": [
+        "复制链接"
+      ],
+      "Create link": [
+        "创建链接"
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "展开"
+      ],
+      "Upgrade required": [
+        "需要升级"
+      ],
+      "Email settings": [
+        "邮件设置"
+      ],
+      "Contact group": [
+        "联系人群组"
+      ],
+      "Link confirmation": [
+        "确认打开链接"
+      ],
+      "Keyboard Shortcuts": [
+        "键盘快捷键"
+      ],
+      "What's new": [
+        "更新内容"
+      ],
+      "Sign in again to continue": [
+        "再次登录方可继续"
+      ],
+      "Account suspended": [
+        "账号已被冻结"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "请输入用户名或 ProtonMail 邮箱"
+      ],
+      "Enter your password": [
+        "输入您的密码"
+      ],
+      "Invalid verification code": [
+        "无效的验证代码"
+      ],
+      "Request new code": [
+        "请求新验证码"
+      ],
+      "Human verification": [
+        "身份验证"
+      ],
+      "Open help menu": [
+        "打开帮助菜单"
+      ],
+      "Back": [
+        "后退"
+      ],
+      "Open settings menu": [
+        "打开设置菜单"
+      ],
+      "Select a theme": [
+        "选择一个主题"
+      ],
+      "Report a problem": [
+        "反馈问题"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "确定放弃 Proton 特权"
+      ],
+      "Unsupported browser": [
+        "不支持此浏览器"
+      ],
+      "Card verification": [
+        "银行卡验证"
+      ],
+      "Payment verification": [
+        "确认支付"
+      ],
+      "Processing...": [
+        "正在处理..."
+      ],
+      "Card verification in progress": [
+        "正在验证银行卡"
+      ],
+      "Payment verification in progress": [
+        "正在确认支付"
+      ],
+      "PayPal verification failed": [
+        "PayPal 验证失败"
+      ],
+      "3-D Secure verification failed": [
+        "3-D Secure 验证失败"
+      ],
+      "Error": [
+        "失败"
+      ],
+      "ZIP / postal code": [
         "邮政编码"
+      ],
+      "Payment details": [
+        "支付明细"
+      ],
+      "Currency": [
+        "货币"
+      ],
+      "Billing cycle": [
+        "计费周期"
+      ],
+      "Current plan": [
+        "当前套餐"
+      ],
+      "Processing": [
+        "处理中"
+      ],
+      "Apply gift code": [
+        "使用礼品码"
+      ],
+      "Subtotal": [
+        "小计"
+      ],
+      "Coupon discount": [
+        "优惠券折扣"
+      ],
+      "Total (monthly)": [
+        "合计（按月）"
+      ],
+      "Credits": [
+        "余额"
       ],
       "Gift code": [
         "礼品码"
       ],
-      "Start typing an email address": [
-        "开始输入电子邮件地址"
+      "Amount due": [
+        "应付金额"
       ],
-      "Image URL": [
-        "图片链接"
+      "Cancel subscription": [
+        "停止订购"
       ],
-      "Filter groups": [
-        "查找群组"
+      "Network error": [
+        "网络错误"
       ],
-      "Search for name or email": [
-        "搜索名称或电子邮件地址"
+      "Select a plan": [
+        "选择套餐"
       ],
-      "Search for group name": [
-        "搜索群组名称"
+      "Customize your plan": [
+        "自定义您的套餐"
+      ],
+      "Checkout": [
+        "结算"
+      ],
+      "Plan summary": [
+        "订单概览"
+      ],
+      "${ appName } customization": [
+        "自定义 ${ appName }"
+      ],
+      "Edit contact group": [
+        "更改联系人群组"
+      ],
+      "Create new group": [
+        "创建新群组"
+      ],
+      "Add to ${ groupName }": [
+        "添加到 ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "添加到 ${ groupCount } 个群组"
+      ],
+      "Email settings (${ emailAddress })": [
+        "邮件设置（${ emailAddress }）"
+      ],
+      "Delete ${ Name }": [
+        "删除 ${ Name }"
+      ],
+      "Delete ${ count } contact group": [
+        "删除 ${ count } 个联系人群组"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } 位成员"
+      ],
+      "Edit image": [
+        "更改图片"
+      ],
+      "Edit contact": [
+        "编辑联系人"
+      ],
+      "Create contact": [
+        "创建联系人"
+      ],
+      "Delete ${ count } contact": [
+        "删除 ${ count } 个联系人"
+      ],
+      "Clearing data": [
+        "正在清除数据"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Recover data": [
+        "恢复数据"
+      ],
+      "Re-signing contacts": [
+        "正在重新签署联系人"
+      ],
+      "Re-sign all contacts": [
+        "重新签署所有联系人"
+      ],
+      "Exporting contacts": [
+        "导出联系人"
+      ],
+      "Other names": [
+        "其他名称"
+      ],
+      "Email addresses": [
+        "邮箱地址数"
+      ],
+      "Phone numbers": [
+        "电话号码"
+      ],
+      "Addresses": [
+        "邮箱地址"
+      ],
+      "Other information": [
+        "其他信息"
+      ],
+      "Contact Details": [
+        "联系人详情"
+      ],
+      "Merging contacts": [
+        "正在合并联系人"
+      ],
+      "Merge contacts": [
+        "合并联系人"
+      ],
+      "Deleting contacts": [
+        "删除联系人中"
+      ],
+      "View contacts": [
+        "查看联系人"
+      ],
+      "Contacts": [
+        "通讯录"
+      ],
+      "Groups": [
+        "群组"
+      ],
+      "Settings": [
+        "设置"
+      ],
+      "Select action to take on contact group": [
+        "选择针对联系人群组的动作"
+      ],
+      "Add contact group name": [
+        "添加联系人群组名称"
+      ],
+      "Select contact group": [
+        "选择联系人群组"
+      ],
+      "Import groups": [
+        "导入分组"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } 快捷键"
+      ],
+      "Mailbox density": [
+        "邮箱密度"
+      ],
+      "Mailbox layout": [
+        "邮箱布局"
+      ],
+      "Composer mode": [
+        "邮件格式"
+      ],
+      "Beta Access": [
+        "Beta测试版访问权限"
+      ],
+      "Delete permanently": [
+        "永久删除"
+      ],
+      "Stop sharing": [
+        "停止分享"
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
+      "Drop to upload": [
+        "拖拽文件并上传"
+      ],
+      "My files": [
+        "我的文件"
+      ],
+      "Additional settings": [
+        ""
+      ],
+      "Cancel all active transfers": [
+        ""
+      ],
+      "Show actions": [
+        ""
+      ],
+      "Sort files/folders": [
+        ""
+      ],
+      "Change layout": [
+        "调整布局"
+      ],
+      "Shared": [
+        "共享"
+      ],
+      "Empty trash": [
+        "清空垃圾箱"
+      ],
+      "Trash": [
+        "废件箱"
+      ],
+      "Your file is ready to be downloaded": [
+        ""
+      ],
+      "Download completed": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download canceled": [
+        ""
+      ],
+      "Downloading": [
+        "下載中"
+      ],
+      "Enter file password to download": [
+        ""
+      ],
+      "The link either does not exist or has expired": [
+        ""
+      ],
+      "Drive": [
+        "云盘"
+      ],
+      "Restore your files": [
+        ""
+      ],
+      "File recovery process": [
+        ""
+      ],
+      "You have inaccessible files": [
+        ""
+      ],
+      "Rename a folder": [
+        "重命名文件夹"
+      ],
+      "Rename a file": [
+        "重命名文件"
+      ],
+      "File details": [
+        "文件详细信息"
+      ],
+      "Folder details": [
+        "文件夹详细信息"
       ],
       "Name": [
         "姓名"
       ],
-      "Mailbox password": [
-        "邮箱密码"
+      "Uploaded by": [
+        ""
       ],
-      "New name": [
-        "新名称"
+      "Location": [
+        "位置"
       ],
-      "Enter a new folder name": [
-        "输入新文件夹名称"
+      "Modified": [
+        "修改"
+      ],
+      "Type": [
+        "类型"
+      ],
+      "MIME type": [
+        ""
+      ],
+      "Size": [
+        "大小"
+      ],
+      "# of accesses": [
+        ""
+      ],
+      "You have no folders yet": [
+        ""
+      ],
+      "Create a new folder": [
+        "新建文件夹"
+      ],
+      "Manage share": [
+        ""
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Select link expiration date": [
+        ""
+      ],
+      "Select link expiration time": [
+        ""
+      ],
+      "Share via link": [
+        "通过链接分享"
+      ],
+      "Manage secure link": [
+        "管理安全链接"
+      ],
+      "Stop sharing with everyone?": [
+        ""
+      ],
+      "Discard changes?": [
+        "放弃更改？"
+      ],
+      "Discard": [
+        "放弃"
+      ],
+      "You have no files to share": [
+        ""
+      ],
+      "Files details": [
+        ""
+      ],
+      "Number of files": [
+        "文件数"
+      ],
+      "Total size": [
+        ""
       ]
     },
     "Label": {
@@ -2020,6 +2345,36 @@
       "Do not ask again": [
         "不再询问"
       ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Two-factor authentication code": [
+        "双重验证码"
+      ],
+      "Username or ProtonMail address": [
+        "用户名或 ProtonMail 地址"
+      ],
+      "Email address": [
+        "邮箱地址"
+      ],
+      "Phone number": [
+        "手机号码"
+      ],
+      "Verification code": [
+        "验证码"
+      ],
+      "Enter the 6-digit code": [
+        "请输入 6 位验证码"
+      ],
       "Display name": [
         "显示名称"
       ],
@@ -2031,9 +2386,6 @@
       ],
       "Proton username": [
         "Proton 用户名"
-      ],
-      "Email address": [
-        "邮箱地址"
       ],
       "Category": [
         "类别"
@@ -2155,33 +2507,6 @@
       "Enable Beta Access": [
         "启用测试版功能"
       ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "提交"
-      ],
-      "Password": [
-        "密码"
-      ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "Two-factor authentication code": [
-        "双重验证码"
-      ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
-      ],
-      "Phone number": [
-        "手机号码"
-      ],
-      "Verification code": [
-        "验证码"
-      ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
-      ],
       "Merge a folder": [
         ""
       ],
@@ -2206,33 +2531,6 @@
       "Apply to all duplicated files": [
         ""
       ],
-      "Audio file": [
-        "音频文件"
-      ],
-      "Video file": [
-        "视频文件"
-      ],
-      "Text": [
-        "文本"
-      ],
-      "Image": [
-        "图片"
-      ],
-      "Unknown file": [
-        "未知文件格式"
-      ],
-      "All": [
-        "全部"
-      ],
-      "Active": [
-        "启用"
-      ],
-      "Failed": [
-        "失败"
-      ],
-      "Apply to selected transfers": [
-        ""
-      ],
       "Folder": [
         "文件夹"
       ],
@@ -2248,6 +2546,39 @@
       "File": [
         "文件"
       ],
+      "All": [
+        "全部"
+      ],
+      "Active": [
+        "启用"
+      ],
+      "Failed": [
+        "失败"
+      ],
+      "Apply to selected transfers": [
+        ""
+      ],
+      "Audio file": [
+        "音频文件"
+      ],
+      "Video file": [
+        "视频文件"
+      ],
+      "Text": [
+        "文本"
+      ],
+      "Image": [
+        "图片"
+      ],
+      "Unknown file": [
+        "未知文件格式"
+      ],
+      "Get your own ${ appName }": [
+        ""
+      ],
+      "Report abuse": [
+        ""
+      ],
       "Folder name": [
         "文件夹名称"
       ],
@@ -2259,12 +2590,71 @@
       ],
       "Set expiration date": [
         ""
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "例如："
       ],
-      "Get your own ${ appName }": [
-        ""
+      "Mailbox password": [
+        "邮箱密码"
       ],
-      "Report abuse": [
-        ""
+      "e.g. Julia Smith": [
+        "例如：Julia Smith"
+      ],
+      "OS name": [
+        "OS 名称"
+      ],
+      "OS version": [
+        "OS 版本"
+      ],
+      "Proton username": [
+        "Proton 用户名"
+      ],
+      "A way to contact you": [
+        "您的联系方式"
+      ],
+      "Please describe the problem and include any error messages": [
+        "请描述问题，并附上任何错误提示"
+      ],
+      "Browser name": [
+        "浏览器名称"
+      ],
+      "Browser version": [
+        "浏览器版本"
+      ],
+      "ZIP": [
+        "邮编"
+      ],
+      "Postal code": [
+        "邮政编码"
+      ],
+      "Gift code": [
+        "礼品码"
+      ],
+      "Start typing an email address": [
+        "开始输入电子邮件地址"
+      ],
+      "Image URL": [
+        "图片链接"
+      ],
+      "Filter groups": [
+        "查找群组"
+      ],
+      "Search for name or email": [
+        "搜索名称或电子邮件地址"
+      ],
+      "Search for group name": [
+        "搜索群组名称"
+      ],
+      "Name": [
+        "姓名"
+      ],
+      "New name": [
+        "新名称"
+      ],
+      "Enter a new folder name": [
+        "输入新文件夹名称"
       ]
     },
     "Time unit": {
@@ -2273,6 +2663,11 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分钟"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
       ]
     },
     "Storage": {
@@ -2296,6 +2691,9 @@
       "Upgrade account": [
         "升级账户"
       ],
+      "Request an invite": [
+        "请求邀请"
+      ],
       "Upgrade": [
         "升级"
       ],
@@ -2310,9 +2708,6 @@
       ],
       "Add a gift code": [
         "使用礼品码"
-      ],
-      "Request an invite": [
-        "请求邀请"
       ],
       "My files": [
         "我的文件"
@@ -2529,6 +2924,12 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
+      "Code sent to ${ methodTo }": [
+        "验证码已发至 ${ methodTo }"
+      ],
+      "Verification successful": [
+        "验证成功"
+      ],
       "Bug reported": [
         "问题已反馈"
       ],
@@ -2559,12 +2960,6 @@
       "Keyboard shortcuts preferences updated": [
         "键盘快捷键设置已更新"
       ],
-      "Code sent to ${ methodTo }": [
-        "验证码已发至 ${ methodTo }"
-      ],
-      "Verification successful": [
-        "验证成功"
-      ],
       "Your files were successfully recovered to \"My files\".": [
         ""
       ],
@@ -2587,22 +2982,6 @@
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "找到 ${ items.length } 建议，使用键盘导航。"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton 产品"
-      ],
-      "Go to ${ title }": [
-        "转到${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "跳转到 ${ vpnName }"
       ]
     },
     "Error message": {
@@ -2637,9 +3016,42 @@
         "您也可以${ refresh }页面或稍后再试。"
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton 产品"
+      ],
+      "Go to ${ title }": [
+        "转到${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "跳转到 ${ vpnName }"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 有新版本，请${ reloadButton }。"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期账单"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "验证码"
+      ],
+      "Email": [
+        "邮件"
+      ],
+      "SMS": [
+        "短信"
+      ],
+      "Manual": [
+        "手动"
+      ],
+      "No verification method available": [
+        "无可用的验证方法"
       ]
     },
     "Header": {
@@ -3263,6 +3675,30 @@
         "比特币"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "舒适"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "常规"
+      ],
+      "Maximized": [
+        "满屏"
+      ]
+    },
     "Notification": {
       "Contact group updated": [
         "群组已更改"
@@ -3348,9 +3784,6 @@
       "${ failedCount } link to your file failed to be deleted.": [
         ""
       ],
-      "All items will soon be permanently deleted from trash": [
-        "所有项目将很快从回收站永久删除"
-      ],
       "Move ${ movingCount } file": [
         "移动 ${ movingCount } 个文件"
       ],
@@ -3359,6 +3792,9 @@
       ],
       "Move ${ movingCount } item": [
         "移动 ${ movingCount } 个项目"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "所有项目将很快从回收站永久删除"
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
@@ -3629,411 +4065,6 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "请注意：点击 \"应用\" 按钮后，服务将重新加载"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "舒适"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "常规"
-      ],
-      "Maximized": [
-        "满屏"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "逾期账单"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "验证码"
-      ],
-      "Email": [
-        "邮件"
-      ],
-      "SMS": [
-        "短信"
-      ],
-      "Manual": [
-        "手动"
-      ],
-      "No verification method available": [
-        "无可用的验证方法"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "名称"
-      ],
-      "Email": [
-        "邮件"
-      ],
-      "Phone": [
-        "电话"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Photo": [
-        "照片"
-      ],
-      "Organization": [
-        "机构"
-      ],
-      "Birthday": [
-        "生日"
-      ],
-      "Anniversary": [
-        "周年"
-      ],
-      "Title": [
-        "标题"
-      ],
-      "Role": [
-        "身份"
-      ],
-      "Note": [
-        "备注"
-      ],
-      "URL": [
-        "网址"
-      ],
-      "Gender": [
-        "性别"
-      ],
-      "Language": [
-        "语言"
-      ],
-      "Timezone": [
-        "时区"
-      ],
-      "Geo": [
-        "地理位置"
-      ],
-      "Logo": [
-        "商标"
-      ],
-      "Member": [
-        "成员"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "工作"
-      ],
-      "Personal": [
-        "私人"
-      ],
-      "Mobile": [
-        "手机"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Yomi": [
-        "读音"
-      ],
-      "Other": [
-        "其它"
-      ],
-      "Fax": [
-        "传真"
-      ],
-      "Pager": [
-        "寻呼机"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "邮件"
-      ],
-      "Home": [
-        "首页"
-      ],
-      "Work": [
-        "工作"
-      ],
-      "Other": [
-        "其它"
-      ],
-      "Phone": [
-        "电话"
-      ],
-      "Mobile": [
-        "手机"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Fax": [
-        "传真"
-      ],
-      "Pager": [
-        "寻呼机"
-      ],
-      "Address": [
-        "地址"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密码必须至少包含 ${ length } 个字符"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "字节"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "未知"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "未知"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "不支持 vCard 3.0 以下版本"
-      ],
-      "Encryption failed": [
-        "加密失败"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "出现意外错误，需重新开始导入。"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "文件上传失败，尚未选择文件。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "文件 ${ formattedFilename } 上传失败，未选择 .csv 或 .vcf 文件"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "文件 ${ formattedFilename } 是空的。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "文件 ${ formattedFilename } 上传失败，文件大小不能超过 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "文件 ${ formattedFilename } 中没有可导入的联系人。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "文件 ${ formattedFilename } 中的联系人数已超过 ${ MAX_IMPORT_CONTACTS_STRING }。"
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "基本导航"
-      ],
-      "Basic actions": [
-        "基本操作"
-      ],
-      "Folder shortcuts": [
-        "类别快捷键"
-      ],
-      "Composer shortcuts": [
-        "编辑窗快捷键"
-      ],
-      "List shortcuts": [
-        "列表快捷键"
-      ],
-      "Action shortcuts": [
-        "操作快捷键"
-      ],
-      "Message shortcuts": [
-        "消息快捷键"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "上移"
-      ],
-      "Jump to first": [
-        "跳转到第一个"
-      ],
-      "Move down": [
-        "下移"
-      ],
-      "Jump to last": [
-        "跳转到最后一个"
-      ],
-      "Move right / expand": [
-        "右移 / 展开"
-      ],
-      "Move left / collapse": [
-        "左移 / 折叠"
-      ],
-      "Apply / open": [
-        "应用 / 打开"
-      ],
-      "Cancel / close": [
-        "取消 / 关闭"
-      ],
-      "Open this modal": [
-        "打开此面板"
-      ],
-      "Select / unselect": [
-        "选择 / 取消选择"
-      ],
-      "Go to Inbox": [
-        "转到收件箱"
-      ],
-      "Go to Archive": [
-        "转至归档"
-      ],
-      "Go to Sent": [
-        "转至发件箱"
-      ],
-      "Go to Starred": [
-        "转至星标邮件"
-      ],
-      "Go to Drafts": [
-        "转至草稿箱"
-      ],
-      "Go to Trash": [
-        "移至回收站"
-      ],
-      "Go to Spam": [
-        "转至垃圾邮件"
-      ],
-      "Go to All Mail": [
-        "转至所有邮件"
-      ],
-      "Save draft": [
-        "保存草稿"
-      ],
-      "Send email": [
-        "发送邮件"
-      ],
-      "Close draft": [
-        "关闭草稿"
-      ],
-      "Minimize / maximize composer": [
-        "最小化/最大化编辑窗"
-      ],
-      "Expand / contract composer": [
-        "展开/还原编辑窗"
-      ],
-      "Attach file": [
-        "添加附件"
-      ],
-      "Add expiration time": [
-        "添加到期时间"
-      ],
-      "Add encryption": [
-        "添加加密"
-      ],
-      "Discard draft": [
-        "舍弃草稿"
-      ],
-      "Open previous message": [
-        "打开上则消息"
-      ],
-      "Open next message": [
-        "打开下则消息"
-      ],
-      "Show unread emails": [
-        "显示未读邮件"
-      ],
-      "Show all emails": [
-        "显示所有邮件"
-      ],
-      "Select / unselect all": [
-        "全选 / 反选"
-      ],
-      "Search": [
-        "搜索"
-      ],
-      "New message": [
-        "新邮件"
-      ],
-      "Star": [
-        "星标"
-      ],
-      "Mark as unread": [
-        "标记为未读"
-      ],
-      "Label as...": [
-        "标记为"
-      ],
-      "Create filter with...": [
-        "创建过滤器..."
-      ],
-      "Move to...": [
-        "移至..."
-      ],
-      "Move to Inbox": [
-        "移动到收件箱"
-      ],
-      "Move to Archive": [
-        "移动到归档"
-      ],
-      "Move to Spam": [
-        "移动到垃圾箱"
-      ],
-      "Move to Trash": [
-        "移到垃圾箱"
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Reply": [
-        "回复"
-      ],
-      "Reply all": [
-        "回复全部"
-      ],
-      "Forward": [
-        "转发"
-      ],
-      "Load remote content": [
-        "加载外部内容"
-      ],
-      "Load embedded images": [
-        "加载嵌入图像"
-      ],
-      "Show original message": [
-        "显示原始邮件"
       ]
     },
     "Validation Error": {

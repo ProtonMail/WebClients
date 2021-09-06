@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Unbekannter Fehler"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Diese Nachricht kann einige Internetadressen enthalten, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Authentifizierungsfehler"
-      ],
-      "Unknown error": [
-        "Unbekannter Fehler"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
@@ -93,6 +93,24 @@
       "Invalid code": [
         "Ungültiger Code"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Ungültiges Postfach-Passwort. Bitte versuchen Sie es erneut."
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
+      ],
+      "Can't validate email, try again later": [
+        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
+      ],
+      "Can't validate phone, try again later": [
+        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
+      ],
+      "Enter 6 digits": [
+        "6 Ziffern eingeben"
+      ],
+      "Invalid verification code": [
+        "Ungültiger Verifizierungscode"
+      ],
       "Preferences could not be saved": [
         "Einstellungen konnten nicht gespeichert werden"
       ],
@@ -146,24 +164,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Bitte versuchen Sie sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt sind."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Ungültiges Postfach-Passwort. Bitte versuchen Sie es erneut."
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
-      ],
-      "Can't validate email, try again later": [
-        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
-      "Can't validate phone, try again later": [
-        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
-      "Enter 6 digits": [
-        "6 Ziffern eingeben"
-      ],
-      "Invalid verification code": [
-        "Ungültiger Verifizierungscode"
-      ],
       "No valid address found": [
         "Keine gültige Adresse gefunden"
       ],
@@ -194,6 +194,12 @@
       "Request timed out.": [
         "Zeitüberschreitung der Anfrage."
       ],
+      "Signature verification failed": [
+        "Signaturprüfung fehlgeschlagen"
+      ],
+      "Could not find address ${ email }.": [
+        "Adresse ${ email } wurde nicht gefunden."
+      ],
       "Missing signature": [
         "Signatur fehlt"
       ],
@@ -202,12 +208,6 @@
       ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
-      ],
-      "Signature verification failed": [
-        "Signaturprüfung fehlgeschlagen"
-      ],
-      "Could not find address ${ email }.": [
-        "Adresse ${ email } wurde nicht gefunden."
       ],
       "Email address disabled": [
         "E‐Mail‐Adresse deaktiviert"
@@ -341,6 +341,9 @@
       "Load image": [
         "Bild laden"
       ],
+      "refresh the page": [
+        "Seite aktualisieren"
+      ],
       "Export": [
         "Exportieren"
       ],
@@ -386,8 +389,8 @@
       "Confirm opening of link ${ link }": [
         "Öffnen des Links ${ link } bestätigen"
       ],
-      "refresh the page": [
-        "Seite aktualisieren"
+      "Continue with Google": [
+        "Mit Google anmelden"
       ],
       "Select timezone": [
         "Zeitzone wählen"
@@ -542,6 +545,30 @@
       "Increase": [
         "Vergrößern"
       ],
+      "Log in": [
+        "Anmelden"
+      ],
+      "View invoice": [
+        "Rechnung anzeigen"
+      ],
+      "Get verification code": [
+        "Bestätigungscode abrufen"
+      ],
+      "Try another method": [
+        "Eine weitere Methode verwenden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Did not receive the code?": [
+        "Code nicht erhalten?"
+      ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
+      "Edit phone number": [
+        "Rufnummer bearbeiten"
+      ],
       "Save": [
         "Speichern"
       ],
@@ -634,9 +661,6 @@
       "Export contacts": [
         "Kontakte exportieren"
       ],
-      "Continue with Google": [
-        "Mit Google anmelden"
-      ],
       "Import contacts": [
         "Kontakte importieren"
       ],
@@ -657,30 +681,6 @@
       ],
       "Start import": [
         "Importvorgang starten"
-      ],
-      "Log in": [
-        "Anmelden"
-      ],
-      "View invoice": [
-        "Rechnung anzeigen"
-      ],
-      "Get verification code": [
-        "Bestätigungscode abrufen"
-      ],
-      "Try another method": [
-        "Eine weitere Methode verwenden"
-      ],
-      "Request new code": [
-        "Neuen Code anfordern"
-      ],
-      "Did not receive the code?": [
-        "Code nicht erhalten?"
-      ],
-      "Edit email address": [
-        "E-Mail-Adresse bearbeiten"
-      ],
-      "Edit phone number": [
-        "Rufnummer bearbeiten"
       ],
       "Close this banner": [
         "Diesen Hinweis schließen"
@@ -915,6 +915,27 @@
       "${ appName } customization": [
         "${ appName } anpassen"
       ],
+      "Sign in again to continue": [
+        "Erneut anmelden, um fortzufahren"
+      ],
+      "Account suspended": [
+        "Konto gesperrt"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Benutzernamen oder Ihre ProtonMail-E-Mail-Adresse eingeben"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
+      "Invalid verification code": [
+        "Ungültiger Bestätigungsschlüssel"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Human verification": [
+        "Captcha"
+      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Tastaturkürzel"
       ],
@@ -1047,27 +1068,6 @@
       ],
       "Import in progress": [
         "Importvorgang wird ausgeführt"
-      ],
-      "Sign in again to continue": [
-        "Erneut anmelden, um fortzufahren"
-      ],
-      "Account suspended": [
-        "Konto gesperrt"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Benutzernamen oder Ihre ProtonMail-E-Mail-Adresse eingeben"
-      ],
-      "Enter your password": [
-        "Passwort eingeben"
-      ],
-      "Invalid verification code": [
-        "Ungültiger Bestätigungsschlüssel"
-      ],
-      "Request new code": [
-        "Neuen Code anfordern"
-      ],
-      "Human verification": [
-        "Captcha"
       ],
       "Select the way to send this notification": [
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
@@ -1218,8 +1218,14 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
+      "support team": [
+        "Support-Team"
+      ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
+      ],
+      "Loading": [
+        "Wird geladen"
       ],
       "Week": [
         "Woche"
@@ -1238,12 +1244,6 @@
       ],
       "Drop the file here to upload": [
         "Datei zum Hochladen hier hinein ziehen"
-      ],
-      "support team": [
-        "Support-Team"
-      ],
-      "Loading": [
-        "Wird geladen"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
@@ -1497,6 +1497,45 @@
       "Expired": [
         "Ausgelaufen"
       ],
+      "here": [
+        "hier"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Richtlinien gesperrt."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiterhin nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Möchten Sie einen neuen Verifizierungscode anfordern oder eine alternative Bestätigungsmethode verwenden?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Geben Sie den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden können, überprüfen Sie bitte Ihren Spam-Ordner."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlegende Navigation und Aktionen bleiben verfügbar, unabhängig davon, ob in den Einstellungen Tastaturkürzel aktiviert sind oder nicht."
       ],
@@ -1636,45 +1675,6 @@
       ],
       "Your import will not be processed.": [
         "Ihr Importauftrag konnte nicht verarbeitet werden."
-      ],
-      "here": [
-        "hier"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Richtlinien gesperrt."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiterhin nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Verifizierungscode anfordern oder eine alternative Bestätigungsmethode verwenden?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Geben Sie den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden können, überprüfen Sie bitte Ihren Spam-Ordner."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
@@ -2049,6 +2049,33 @@
       "Payer": [
         "Zahlungsleistender"
       ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Submit": [
+        "Senden"
+      ],
+      "Password": [
+        "Passwort"
+      ],
+      "Mailbox password": [
+        "Postfach-Passwort"
+      ],
+      "Two-factor authentication code": [
+        "Zwei-Faktor-Authentifizierungscode"
+      ],
+      "Username or ProtonMail address": [
+        "Benutzername oder ProtonMail-E-Mail-Adresse"
+      ],
+      "Phone number": [
+        "Rufnummer"
+      ],
+      "Verification code": [
+        "Verifizierungscode"
+      ],
+      "Enter the 6-digit code": [
+        "6-stelligen Code eingeben"
+      ],
       "Keyboard shortcuts": [
         "Tastaturkürzel"
       ],
@@ -2105,33 +2132,6 @@
       ],
       "To: ${ toEmailAddress }": [
         "An: ${ toEmailAddress }"
-      ],
-      "Cancel": [
-        "Abbrechen"
-      ],
-      "Submit": [
-        "Senden"
-      ],
-      "Password": [
-        "Passwort"
-      ],
-      "Mailbox password": [
-        "Postfach-Passwort"
-      ],
-      "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungscode"
-      ],
-      "Username or ProtonMail address": [
-        "Benutzername oder ProtonMail-E-Mail-Adresse"
-      ],
-      "Phone number": [
-        "Rufnummer"
-      ],
-      "Verification code": [
-        "Verifizierungscode"
-      ],
-      "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
       ],
       "Name": [
         "Name"
@@ -2290,6 +2290,9 @@
       "Gift code": [
         "Geschenkgutschein"
       ],
+      "Mailbox password": [
+        "Postfach-Passwort"
+      ],
       "Start typing an email address": [
         "E-Mail-Adresse eingeben"
       ],
@@ -2307,9 +2310,6 @@
       ],
       "Name": [
         "Name"
-      ],
-      "Mailbox password": [
-        "Postfach-Passwort"
       ],
       "Add a calendar name": [
         "Kalendername hinzufügen"
@@ -2338,6 +2338,11 @@
       "${ minutes } minute": [
         "${ minutes } Minute",
         "${ minutes } Minuten"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
       ]
     },
     "Tooltip": {
@@ -2544,6 +2549,12 @@
       "You have successfully unsubscribed": [
         "Sie haben Sich erfolgreich abgemeldet"
       ],
+      "Code sent to ${ methodTo }": [
+        "Code gesendet an ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Erfolgreich bestätigt"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Tastaturkürzel-Voreinstellungen aktualisiert"
       ],
@@ -2569,12 +2580,6 @@
       ],
       "Fingerprint copied to clipboard": [
         "Fingerabdruck in Zwischenablage kopiert"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Code gesendet an ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Erfolgreich bestätigt"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender hinzugefügt. Die Synchronisierung kann einige Minuten dauern."
@@ -2671,11 +2676,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } Vorschlag gefunden. Verwenden Sie die Tastatur zum Navigieren.",
         "${ items.length } Vorschläge gefunden. Verwenden Sie die Tastatur zum Navigieren."
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
       ]
     },
     "Select search results": {
@@ -3364,6 +3364,28 @@
         "Bitcoin"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Überfällige Rechnung"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-Mail-Adresse"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Keine Bestätigungsmethode verfügbar"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Mit dem Beta-Zugang können Sie die Beta-Version von ProtonMail, Proton Calendar und Proton Drive nutzen, bevor sie für die Öffentlichkeit freigegeben werden. Das bedeutet, dass Sie die Ersten sein können, die neue Produkte ausprobieren, neue Aktualisierungen erhalten und neue Funktionen nutzen können."
@@ -3680,28 +3702,6 @@
         "Importvorgang abbrechen?"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Überfällige Rechnung"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-Mail-Adresse"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuell"
-      ],
-      "No verification method available": [
-        "Keine Bestätigungsmethode verfügbar"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
@@ -3761,6 +3761,37 @@
       ],
       "120 minutes": [
         "120 Minuten"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Nicht synchronisiert"
+      ],
+      "Syncing": [
+        "Wird synchronisiert"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Kalender wird synchronisiert"
+      ],
+      "More than 12 hours passed since last update": [
+        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+      ],
+      "Calendar link is wrong": [
+        "Ungültiger Kalender-Link"
+      ],
+      "Calendar is too big": [
+        "Kalender ist zu groß"
+      ],
+      "Calendar link is not accessible": [
+        "Kalender-Link ist nicht erreichbar"
+      ],
+      "Calendar link is temporarily unaccessible": [
+        "Kalender-Link ist vorübergehend nicht erreichbar"
+      ],
+      "Failed to sync calendar": [
+        "Kalender konnte nicht synchronisiert werden"
       ]
     },
     "Alarm notification": {
@@ -4315,6 +4346,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Passwort muss mindestens ${ length } Zeichen enthalten",
+        "Das Passwort muss mindestens ${ length } Zeichen enthalten"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Name"
@@ -4427,12 +4464,6 @@
       ],
       "Address": [
         "Anschrift"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Passwort muss mindestens ${ length } Zeichen enthalten",
-        "Das Passwort muss mindestens ${ length } Zeichen enthalten"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4610,6 +4641,11 @@
         "Originalnachricht anzeigen"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-Mail-Adresse nicht unter den im Sendeschlüssel definierten Benutzer-IDs gefunden (${ keyUserIds })"
+      ]
+    },
     "Import contact. Contact identifier": {
       "unknown": [
         "Unbekannt"
@@ -4654,11 +4690,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Beim Lesen Ihrer Datei ist ein Fehler aufgetreten ${ formattedFilename }. Format der Datei ungültig."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-Mail-Adresse nicht unter den im Sendeschlüssel definierten Benutzer-IDs gefunden (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -4747,11 +4778,6 @@
       "${ value } week after at ${ time }": [
         "${ value } Woche später um ${ time }",
         "${ value } Wochen später um ${ time }"
-      ]
-    },
-    "Calendar status": {
-      "not synced": [
-        "nicht synchronisiert"
       ]
     },
     "Disabled calendar name suffix": {
