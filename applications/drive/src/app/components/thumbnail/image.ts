@@ -29,9 +29,11 @@ async function scaleImage(img: HTMLImageElement): Promise<Uint8Array> {
 }
 
 export function calculateThumbnailSize(img: { width: number; height: number }): [width: number, height: number] {
-    // Keep image smaller than our thumbnail as is.
-    if (!(img.width > THUMBNAIL_MAX_SIDE || img.height > THUMBNAIL_MAX_SIDE)) {
-        return [img.width, img.height];
+    const imgWidth = img.width || THUMBNAIL_MAX_SIDE;
+    const imgHeight = img.height || THUMBNAIL_MAX_SIDE;
+    // // Keep image smaller than our thumbnail as is.
+    if (!(imgWidth > THUMBNAIL_MAX_SIDE || imgHeight > THUMBNAIL_MAX_SIDE)) {
+        return [imgWidth, imgHeight];
     }
 
     // getSize returns the other side, always as non-zero integer.
@@ -41,10 +43,10 @@ export function calculateThumbnailSize(img: { width: number; height: number }): 
     };
 
     // Otherwise scale down based on the bigger side.
-    if (img.width > img.height) {
-        return [THUMBNAIL_MAX_SIDE, getSize(img.height / img.width)];
+    if (imgWidth > imgHeight) {
+        return [THUMBNAIL_MAX_SIDE, getSize(imgHeight / imgWidth)];
     }
-    return [getSize(img.width / img.height), THUMBNAIL_MAX_SIDE];
+    return [getSize(imgWidth / imgHeight), THUMBNAIL_MAX_SIDE];
 }
 
 async function canvasToThumbnail(canvas: HTMLCanvasElement): Promise<ArrayBuffer> {
