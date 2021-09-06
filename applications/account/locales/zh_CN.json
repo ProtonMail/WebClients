@@ -5,373 +5,12 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Authentication canceled.": [
-        "验证被取消。"
-      ],
-      "Your import will not be processed.": [
-        "您的导入将不会被处理。"
-      ],
-      "Authentication error.": [
-        "验证错误。"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此邮件含有浏览器不能打开的链接"
-      ],
-      "Unknown error": [
-        "未知错误"
-      ],
-      "Email address invalid": [
-        "邮箱格式不正确"
-      ],
-      "This field is required": [
-        "此字段必填"
-      ],
-      "The composer failed to load.": [
-        "编辑器加载失败。"
-      ],
-      "Please refresh the page.": [
-        "请刷新页面。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "验证失败，请等待一小时后重试。"
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "验证代码错误，请确认正确复制代码后重试。更改该记录可能需要 24 小时才能生效。"
-      ],
-      "Name required": [
-        "姓名是必填的"
-      ],
-      "No valid address found": [
-        "未找到有效地址"
-      ],
-      "Primary address key is not decrypted.": [
-        "主密钥尚未解密。"
-      ],
-      "Primary address key is not decrypted": [
-        "主密钥尚未解密。"
-      ],
-      "Incorrect password": [
-        "密码错误"
-      ],
-      "Invalid private key file": [
-        "私钥文件无效"
-      ],
-      "Uploaded key does not match fingerprint": [
-        "上传的密钥指纹不符"
-      ],
-      "Checkout expired, please try again.": [
-        "支付超时，请重试。"
-      ],
-      "Invalid code": [
-        "无效代码"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "连接比特币 API 失败。"
-      ],
-      "Amount below minimum.": [
-        "金额太小。"
-      ],
-      "Amount above the maximum.": [
-        "金额太大。"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "捐款金额不应低于 ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "充值金额不能低于 ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "支付金额不能低于 ${ _price2 }"
-      ],
-      "Process aborted": [
-        "操作已中止"
-      ],
-      "Payment process cancelled": [
-        "支付已取消"
-      ],
-      "Payment process failed": [
-        "支付失败"
-      ],
-      "Payment process consumed": [
-        "已经支付过了"
-      ],
-      "Payment process not supported": [
-        "不支持此支付流程"
-      ],
-      "Unknown payment token status": [
-        "支付状态不明"
-      ],
-      "Tab closed": [
-        "标签页已关闭"
-      ],
-      "Name on card required": [
-        "必须填写持卡人姓名"
-      ],
-      "Invalid expiration date": [
-        "有效期不正确"
-      ],
-      "Invalid card number": [
-        "卡号无效"
-      ],
-      "Invalid ${ name } code": [
-        "${ name } 码不正确"
-      ],
-      "Invalid postal code": [
-        "邮政编码不正确"
-      ],
-      "You must set a name": [
-        "必须填写名称"
-      ],
-      "A group with this name already exists": [
-        "此群组名已被使用"
-      ],
-      "Invalid name": [
-        "无效的名称"
-      ],
-      "We were unable to connect to your service provider.": [
-        "我们无法连接到您的服务提供商。"
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "请尝试重新验证并确保权限正确。"
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "待导入账户的文件夹过多，请自定导入内容并删除部分文件夹。"
-      ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超过了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
-      ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分文件夹名称超过了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "部分标签名称不可用，请自定导入内容并予以更改。"
-      ],
-      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "部分文件夹名称不可用，请自定导入内容并予以更改。"
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "标签名称过长，请选择一个不同的名字"
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "文件夹名称过长，请更改。"
-      ],
-      "Label name cannot be empty": [
-        "标签名称不能为空"
-      ],
-      "Folder name cannot be empty": [
-        "文件夹名称不能为空"
-      ],
-      "This label name is not available. Please choose a different name": [
-        "标签名称不可用，请选择一个不同的名字。"
-      ],
-      "This folder name is not available. Please choose a different name": [
-        "文件夹名称不可用，请选择一个不同的名字。"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "更改密码前请先生成密钥。"
-      ],
-      "Please set a recovery/notification email first": [
-        "请先设置密保/通知邮箱"
-      ],
-      "Please set a recovery phone number first": [
-        "请先设置密保手机"
-      ],
-      "Payments are currently not available, please try again later": [
-        "目前付款不可用，请稍后再试"
-      ],
-      "You have no invoices.": [
-        "您目前没有账单。"
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "您的账户或机构有到期未支付的账单，请前往支付。"
-      ],
-      "File has no contents to preview": [
-        "文件没有内容可预览"
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "自动回复为付费功能，请升级到付费账户以使用此功能。"
-      ],
-      "Passwords do not match": [
-        "密码不一致"
-      ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "请升级到多用户的专业版或尊享版账户以使用多用户功能。"
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "生成组织密钥前须将所有用户设为私密"
-      ],
-      "Organization key is not decrypted.": [
-        "机构密钥尚未解密。"
-      ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您已失去机构密钥，重置密钥前您无法添加用户、地址或登录非私密的成员账户。"
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您需要激活机构密钥，否则无法添加用户、地址或登录非私密的成员账户。"
-      ],
-      "The organization key must be activated first.": [
-        "必须先激活机构密钥。"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "权限被拒绝, 管理员权限受到限制。"
-      ],
-      "Invalid password": [
-        "无效的密码"
-      ],
-      "Invalid address": [
-        "无效的地址"
-      ],
-      "Address already associated to a user": [
-        "已与用户关联的地址"
-      ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
-        "开通多用户的专业版或尊享版账户方可管理多个用户。"
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "添加用户前请先开启多用户功能。"
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "向组织中添加用户之前，请先配置自定义域名。"
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "您已使用了您套餐中的所有用户。请升级您的套餐以增加新的用户。"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "您的地址数已达上限，升级账户后方可再添加地址。"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "已分配所有存储空间。请减少分配给其他用户的存储空间。"
-      ],
-      "Empty condition": [
-        "条件为空"
-      ],
-      "Condition incomplete": [
-        "条件不完整"
-      ],
-      "Filter with this name already exists": [
-        "这个名称已经用过了"
-      ],
-      "Error in one of the conditions": [
-        "条件存在错误"
-      ],
-      "Require at least one condition": [
-        "至少应有一个条件"
-      ],
-      "Require at least one action": [
-        "至少应有一项操作"
-      ],
-      "Filter with this name already exist": [
-        "这个名称已经用过了"
-      ],
-      "Invalid Sieve code": [
-        "Sieve 代码无效"
-      ],
-      "Invalid domain": [
-        "域名无效"
-      ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "您的用户名为 ${ Local }。要创建 ${ Local }@${ Domain }，请前往设置 > 地址 > 短域名（pm.me）"
-      ],
-      "Error": [
-        "错误"
-      ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再重试"
-      ],
-      "Enter 6 digits": [
-        "输入 6 位验证码"
-      ],
-      "Invalid verification code": [
-        "验证码无效"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "邮箱密码不正确。请重试"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "登录凭据不正确。请重试"
-      ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
-      "Domain not available, try again later": [
-        "网站域名不可用，请稍后再试"
-      ],
-      "Address primary private key not found": [
-        "找不到地址主私钥"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "日历主密钥未解密。"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此字段至少需要 ${ minimumLength } 个字符。"
-      ],
-      "Email is not valid": [
-        "电子邮箱地址无效"
-      ],
-      "Not a valid number": [
-        "无效号码"
-      ],
-      "Missing signature": [
-        "缺少签名"
-      ],
-      "Contact signature not verified": [
-        "未验证联系人签名"
-      ],
-      "Signature not verified": [
-        "签名未验证"
-      ],
-      "Request timed out.": [
-        "请求超时。"
-      ],
-      "The session has expired. Please sign in again.": [
-        "会话已过期. 请重新登陆."
-      ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "未能获得活动会话。请刷新或稍后再试。"
-      ],
-      "No active sessions": [
-        "没有活跃的会话"
-      ],
-      "Can't check username, try again later": [
-        "无法检查用户名，请稍后再试"
-      ],
-      "Wrong recovery phrase. Try again or use another recovery method.": [
-        "密语错误，请重试或使用另一种方式恢复。"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } 小时"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分钟"
-      ]
-    },
     "Action": {
+      "Continue with Google": [
+        "使用 Google 账号继续"
+      ],
       "Use “${ label }” setting": [
         "使用 \"${ label }\" 设置"
-      ],
-      "Close navigation": [
-        "关闭导航栏"
-      ],
-      "Open navigation": [
-        "打开导航栏"
       ],
       "Show less": [
         "显示更少"
@@ -379,20 +18,38 @@
       "Show more": [
         "显示更多"
       ],
+      "Select timezone": [
+        "选择时区"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Close navigation": [
+        "关闭导航栏"
+      ],
+      "Open navigation": [
+        "打开导航栏"
+      ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
-      "Delete": [
-        "删除"
-      ],
-      "Select timezone": [
-        "选择时区"
-      ],
       "Cancel": [
         "取消"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Confirm": [
+        "确认"
+      ],
+      "Close modal": [
+        "关闭"
+      ],
+      "Close": [
+        "关闭"
       ],
       "Save": [
         "保存"
@@ -460,23 +117,11 @@
       "Confirm opening of link ${ link }": [
         "确认打开链接 ${ link }"
       ],
-      "Confirm": [
-        "确认"
-      ],
       "Next month": [
         "下个月"
       ],
       "Previous month": [
         "上个月"
-      ],
-      "Submit": [
-        "提交"
-      ],
-      "Close modal": [
-        "关闭"
-      ],
-      "Close": [
-        "关闭"
       ],
       "Remove": [
         "移除"
@@ -484,29 +129,83 @@
       "refresh the page": [
         "刷新页面"
       ],
-      "Add user": [
-        "添加用户"
+      "Continue import": [
+        "继续导入"
       ],
-      "Add address": [
-        "添加地址"
+      "Discard": [
+        "放弃"
       ],
-      "Done": [
-        "完成"
+      "Reconnect": [
+        "重新连接"
+      ],
+      "Start import": [
+        "开始导入"
+      ],
+      "Customize import": [
+        "自定义导入"
+      ],
+      "Reset to default": [
+        "重置所有选项"
+      ],
+      "Rename": [
+        "重命名"
+      ],
+      "Stay": [
+        "留在此页"
+      ],
+      "Quit": [
+        "退出"
+      ],
+      "Hide labels": [
+        "隐藏标签"
+      ],
+      "Hide folders": [
+        "隐藏文件夹"
+      ],
+      "Show labels": [
+        "显示标签"
+      ],
+      "Show folders": [
+        "显示文件夹"
+      ],
+      "Edit label": [
+        "编辑标签"
+      ],
+      "Back": [
+        "上一步"
       ],
       "Next": [
         "下一步"
       ],
-      "Review": [
-        "评论"
+      "Start Import Assistant": [
+        "启动导入助手"
       ],
-      "Set catch-all": [
-        "设置全部抓取功能"
+      "Skip to import": [
+        "前往导入"
       ],
-      "Add domain": [
-        "添加域名"
+      "Delete all messages": [
+        "刪除所有邮件"
       ],
-      "Refresh status": [
-        "刷新状态"
+      "Cancel import": [
+        "取消导入"
+      ],
+      "Resume": [
+        "继续"
+      ],
+      "Keep": [
+        "保留"
+      ],
+      "Delete record": [
+        "删除记录"
+      ],
+      "Delete original messages": [
+        "删除原始邮件"
+      ],
+      "Download the Import-Export app": [
+        "下载导入导出应用"
+      ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 主题"
       ],
       "Update": [
         "更改"
@@ -547,9 +246,6 @@
       "Subscribe to calendar": [
         "订阅日历"
       ],
-      "Continue with Google": [
-        "使用 Google 账号继续"
-      ],
       "Import events": [
         "导入事件"
       ],
@@ -557,7 +253,7 @@
         "更改日历视图"
       ],
       "Choose a file or drag it here": [
-        "选择文件或将其托拽至此处"
+        "选择文件或将其拖至此处"
       ],
       "Import": [
         "导入"
@@ -568,20 +264,17 @@
       "Copy link": [
         "复制链接"
       ],
-      "Edit label": [
-        "编辑标签"
-      ],
       "Create link": [
         "创建链接"
       ],
       "Delete link": [
         "删除链接"
       ],
+      "No": [
+        "否"
+      ],
       "Upload": [
         "上传"
-      ],
-      "Back": [
-        "上一步"
       ],
       "Create key": [
         "创建密钥"
@@ -598,9 +291,6 @@
       "Export key": [
         "导出密钥"
       ],
-      "No": [
-        "否"
-      ],
       "Warning": [
         "警告"
       ],
@@ -612,6 +302,39 @@
       ],
       "Export private key": [
         "导出私钥"
+      ],
+      "Activate ${ Name }@pm.me": [
+        "激活 ${ Name }@pm.me"
+      ],
+      "Show shortcuts": [
+        "显示快捷方式"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Export contacts": [
+        "导出联系人"
+      ],
+      "Add user": [
+        "添加用户"
+      ],
+      "Add address": [
+        "添加地址"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Review": [
+        "评论"
+      ],
+      "Set catch-all": [
+        "设置全部抓取功能"
+      ],
+      "Add domain": [
+        "添加域名"
+      ],
+      "Refresh status": [
+        "刷新状态"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -638,7 +361,7 @@
         "切换账户"
       ],
       "Sign out": [
-        "登出"
+        "退出"
       ],
       "Get started": [
         "入门"
@@ -662,7 +385,7 @@
         "显示信息"
       ],
       "Signing out": [
-        "登出"
+        "正在退出账户"
       ],
       "Remove bonuses": [
         "移除额外奖励"
@@ -745,87 +468,6 @@
       "Remove gift code": [
         "移除礼品码"
       ],
-      "Activate ${ Name }@pm.me": [
-        "激活 ${ Name }@pm.me"
-      ],
-      "Show shortcuts": [
-        "显示快捷方式"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Export contacts": [
-        "导出联系人"
-      ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 主题"
-      ],
-      "Continue import": [
-        "继续导入"
-      ],
-      "Discard": [
-        "放弃"
-      ],
-      "Reconnect": [
-        "重新连接"
-      ],
-      "Start import": [
-        "开始导入"
-      ],
-      "Customize import": [
-        "自定义导入"
-      ],
-      "Reset to default": [
-        "重置所有选项"
-      ],
-      "Rename": [
-        "重命名"
-      ],
-      "Stay": [
-        "留在此页"
-      ],
-      "Quit": [
-        "退出"
-      ],
-      "Hide labels": [
-        "隐藏标签"
-      ],
-      "Hide folders": [
-        "隐藏文件夹"
-      ],
-      "Show labels": [
-        "显示标签"
-      ],
-      "Show folders": [
-        "显示文件夹"
-      ],
-      "Start Import Assistant": [
-        "启动导入助手"
-      ],
-      "Skip to import": [
-        "前往导入"
-      ],
-      "Delete all messages": [
-        "刪除所有邮件"
-      ],
-      "Cancel import": [
-        "取消导入"
-      ],
-      "Resume": [
-        "继续"
-      ],
-      "Keep": [
-        "保留"
-      ],
-      "Delete record": [
-        "删除记录"
-      ],
-      "Delete original messages": [
-        "删除原始邮件"
-      ],
-      "Download the Import-Export app": [
-        "下载导入导出应用"
-      ],
       "enable desktop notifications": [
         "启用桌面通知"
       ],
@@ -882,30 +524,6 @@
       ],
       "Reload": [
         "重载"
-      ],
-      "Hide": [
-        "隱藏"
-      ],
-      "Show": [
-        "显示"
-      ],
-      "Reset credentials": [
-        "重置凭证信息"
-      ],
-      "Copy": [
-        "复制"
-      ],
-      "Download all configurations": [
-        "下载所有配置"
-      ],
-      "Get ProtonVPN Plus": [
-        "开通 ProtonVPN 高级版"
-      ],
-      "Read": [
-        "已读"
-      ],
-      "Unread": [
-        "标为未读"
       ],
       "Mark as default": [
         "标记为默认"
@@ -967,6 +585,36 @@
       "Activate organization key": [
         "激活机构密钥"
       ],
+      "Hide": [
+        "隱藏"
+      ],
+      "Show": [
+        "显示"
+      ],
+      "Reset credentials": [
+        "重置凭证信息"
+      ],
+      "Copy": [
+        "复制"
+      ],
+      "Download all configurations": [
+        "下载所有配置"
+      ],
+      "Get ProtonVPN Plus": [
+        "开通 ProtonVPN 高级版"
+      ],
+      "Save address": [
+        "保存地址"
+      ],
+      "activate": [
+        "激活"
+      ],
+      "Read": [
+        "已读"
+      ],
+      "Unread": [
+        "标为未读"
+      ],
       "Preview": [
         "预览"
       ],
@@ -1021,12 +669,6 @@
       "Add label": [
         "添加标签"
       ],
-      "Save address": [
-        "保存地址"
-      ],
-      "activate": [
-        "激活"
-      ],
       "View invoice": [
         "查看账单"
       ],
@@ -1061,13 +703,13 @@
         "取消订阅"
       ],
       "sign in": [
-        "登入"
+        "登录"
       ],
       "Add ${ BRAND_NAME } account": [
         "添加 ${ BRAND_NAME } 账户"
       ],
       "Sign out all accounts": [
-        "登出所有账户"
+        "退出所有账户"
       ],
       "Send my username": [
         "发送我的用户名"
@@ -1118,7 +760,7 @@
         "发送验证码"
       ],
       "Return to sign in": [
-        "返回登入界面"
+        "返回登录界面"
       ],
       "Didn't receive a code?": [
         "没收到验证码？"
@@ -1128,6 +770,14 @@
       ],
       "Contact support": [
         "联系客服"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } 小时"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分钟"
       ]
     },
     "Placeholder": {
@@ -1155,9 +805,6 @@
       "Text": [
         "文本"
       ],
-      "yourdomain.com": [
-        "yourdomain.com"
-      ],
       "Add a calendar name": [
         "填写分类名称"
       ],
@@ -1166,6 +813,12 @@
       ],
       "Password": [
         "密码"
+      ],
+      "Name": [
+        "名称"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
       ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
@@ -1209,9 +862,6 @@
       "Postal code": [
         "邮政编码"
       ],
-      "Name": [
-        "名称"
-      ],
       "Two-factor authentication code": [
         "双重验证码"
       ],
@@ -1233,14 +883,364 @@
       "Search users": [
         "搜索用户"
       ],
-      "Type text or keyword": [
-        "输入文本或关键词"
-      ],
       "Choose address": [
         "选择地址"
       ],
       "Choose display name": [
         "选择显示名称"
+      ],
+      "Type text or keyword": [
+        "输入文本或关键词"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "邮箱格式不正确"
+      ],
+      "This field is required": [
+        "此字段必填"
+      ],
+      "The composer failed to load.": [
+        "编辑器加载失败。"
+      ],
+      "Please refresh the page.": [
+        "请刷新页面。"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
+      ],
+      "We were unable to connect to your service provider.": [
+        "我们无法连接到您的服务提供商。"
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "请尝试重新验证并确保权限正确。"
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "待导入账户的文件夹过多，请自定导入内容并删除部分文件夹。"
+      ],
+      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
+        "部分标签名称超过了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
+      ],
+      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
+        "部分文件夹名称超过了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "部分标签名称不可用，请自定导入内容并予以更改。"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "部分文件夹名称不可用，请自定导入内容并予以更改。"
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "标签名称过长，请选择一个不同的名字"
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "文件夹名称过长，请更改。"
+      ],
+      "Label name cannot be empty": [
+        "标签名称不能为空"
+      ],
+      "Folder name cannot be empty": [
+        "文件夹名称不能为空"
+      ],
+      "This label name is not available. Please choose a different name": [
+        "标签名称不可用，请选择一个不同的名字。"
+      ],
+      "This folder name is not available. Please choose a different name": [
+        "文件夹名称不可用，请选择一个不同的名字。"
+      ],
+      "Name required": [
+        "姓名是必填的"
+      ],
+      "No valid address found": [
+        "未找到有效地址"
+      ],
+      "Primary address key is not decrypted.": [
+        "主密钥尚未解密。"
+      ],
+      "Primary address key is not decrypted": [
+        "主密钥尚未解密。"
+      ],
+      "Incorrect password": [
+        "密码错误"
+      ],
+      "Invalid private key file": [
+        "私钥文件无效"
+      ],
+      "Uploaded key does not match fingerprint": [
+        "上传的密钥指纹不符"
+      ],
+      "You must set a name": [
+        "必须填写名称"
+      ],
+      "A group with this name already exists": [
+        "此群组名已被使用"
+      ],
+      "Invalid name": [
+        "无效的名称"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "验证失败，请等待一小时后重试。"
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "验证代码错误，请确认正确复制代码后重试。更改该记录可能需要 24 小时才能生效。"
+      ],
+      "Checkout expired, please try again.": [
+        "支付超时，请重试。"
+      ],
+      "Invalid code": [
+        "无效代码"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "连接比特币 API 失败。"
+      ],
+      "Amount below minimum.": [
+        "金额太小。"
+      ],
+      "Amount above the maximum.": [
+        "金额太大。"
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "捐款金额不应低于 ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "充值金额不能低于 ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "支付金额不能低于 ${ _price2 }"
+      ],
+      "Process aborted": [
+        "操作已中止"
+      ],
+      "Payment process cancelled": [
+        "支付已取消"
+      ],
+      "Payment process failed": [
+        "支付失败"
+      ],
+      "Payment process consumed": [
+        "已经支付过了"
+      ],
+      "Payment process not supported": [
+        "不支持此支付流程"
+      ],
+      "Unknown payment token status": [
+        "支付状态不明"
+      ],
+      "Tab closed": [
+        "标签页已关闭"
+      ],
+      "Name on card required": [
+        "必须填写持卡人姓名"
+      ],
+      "Invalid expiration date": [
+        "有效期不正确"
+      ],
+      "Invalid card number": [
+        "卡号无效"
+      ],
+      "Invalid ${ name } code": [
+        "${ name } 码不正确"
+      ],
+      "Invalid postal code": [
+        "邮政编码不正确"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "更改密码前请先生成密钥。"
+      ],
+      "Please set a recovery/notification email first": [
+        "请先设置密保/通知邮箱"
+      ],
+      "Please set a recovery phone number first": [
+        "请先设置密保手机"
+      ],
+      "Payments are currently not available, please try again later": [
+        "目前付款不可用，请稍后再试"
+      ],
+      "You have no invoices.": [
+        "您目前没有账单。"
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "您的账户或机构有到期未支付的账单，请前往支付。"
+      ],
+      "File has no contents to preview": [
+        "文件没有内容可预览"
+      ],
+      "Passwords do not match": [
+        "密码不一致"
+      ],
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
+        "请升级到多用户的专业版或尊享版账户以使用多用户功能。"
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "生成组织密钥前须将所有用户设为私密"
+      ],
+      "Organization key is not decrypted.": [
+        "机构密钥尚未解密。"
+      ],
+      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "您已失去机构密钥，重置密钥前您无法添加用户、地址或登录非私密的成员账户。"
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "您需要激活机构密钥，否则无法添加用户、地址或登录非私密的成员账户。"
+      ],
+      "The organization key must be activated first.": [
+        "必须先激活机构密钥。"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "权限被拒绝, 管理员权限受到限制。"
+      ],
+      "Invalid password": [
+        "无效的密码"
+      ],
+      "Invalid address": [
+        "无效的地址"
+      ],
+      "Address already associated to a user": [
+        "已与用户关联的地址"
+      ],
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
+        "开通多用户的专业版或尊享版账户方可管理多个用户。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "添加用户前请先开启多用户功能。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "向组织中添加用户之前，请先配置自定义域名。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用了您套餐中的所有用户。请升级您的套餐以增加新的用户。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "您的地址数已达上限，升级账户后方可再添加地址。"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "已分配所有存储空间。请减少分配给其他用户的存储空间。"
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "您的用户名为 ${ Local }。要创建 ${ Local }@${ Domain }，请前往设置 > 地址 > 短域名（pm.me）"
+      ],
+      "Error": [
+        "错误"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "自动回复为付费功能，请升级到付费账户以使用此功能。"
+      ],
+      "Empty condition": [
+        "条件为空"
+      ],
+      "Condition incomplete": [
+        "条件不完整"
+      ],
+      "Filter with this name already exists": [
+        "这个名称已经用过了"
+      ],
+      "Error in one of the conditions": [
+        "条件存在错误"
+      ],
+      "Require at least one condition": [
+        "至少应有一个条件"
+      ],
+      "Require at least one action": [
+        "至少应有一项操作"
+      ],
+      "Filter with this name already exist": [
+        "这个名称已经用过了"
+      ],
+      "Invalid Sieve code": [
+        "Sieve 代码无效"
+      ],
+      "Invalid domain": [
+        "域名无效"
+      ],
+      "Can't validate email, try again later": [
+        "无法验证电子邮件，请稍后再试"
+      ],
+      "Can't validate phone, try again later": [
+        "无法验证手机，请稍候再重试"
+      ],
+      "Enter 6 digits": [
+        "输入 6 位验证码"
+      ],
+      "Invalid verification code": [
+        "验证码无效"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "邮箱密码不正确。请重试"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "登录凭据不正确。请重试"
+      ],
+      "Authentication canceled.": [
+        "验证被取消。"
+      ],
+      "Your import will not be processed.": [
+        "您的导入将不会被处理。"
+      ],
+      "Authentication error.": [
+        "验证错误。"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "此邮件含有浏览器不能打开的链接"
+      ],
+      "Unknown error": [
+        "未知错误"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "Email is not valid": [
+        "电子邮箱地址无效"
+      ],
+      "Not a valid number": [
+        "无效号码"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
+      ],
+      "Domain not available, try again later": [
+        "网站域名不可用，请稍后再试"
+      ],
+      "Address primary private key not found": [
+        "找不到地址主私钥"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "日历主密钥未解密。"
+      ],
+      "Request timed out.": [
+        "请求超时。"
+      ],
+      "Missing signature": [
+        "缺少签名"
+      ],
+      "Contact signature not verified": [
+        "未验证联系人签名"
+      ],
+      "Signature not verified": [
+        "签名未验证"
+      ],
+      "The session has expired. Please sign in again.": [
+        "登录状态已过期，请重新登录。"
+      ],
+      "Failed to get active sessions. Please refresh or try again later.": [
+        "未能获得活动会话。请刷新或稍后再试。"
+      ],
+      "No active sessions": [
+        "没有活跃的会话"
+      ],
+      "Can't check username, try again later": [
+        "无法检查用户名，请稍后再试"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "密语错误，请重试或使用另一种方式恢复。"
       ]
     },
     "Label": {
@@ -1256,20 +1256,59 @@
       "Do not ask again": [
         "不再询问"
       ],
-      "Domain name": [
-        "域名"
+      "From: ${ fromEmailAddress }": [
+        "来自: ${ fromEmailAddress }"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "请添加下面的 TXT 记录。注意：DNS 记录更新可能需要若干小时。"
+      "To: ${ toEmailAddress }": [
+        "导入到：${ toEmailAddress }"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "请添加下列三条 CNAME 记录。注意：DNS 记录更新可能需要若干小时。"
+      "Import all messages": [
+        "导入所有信件"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "请添加下列 MX 记录。注意：DNS 记录更新可能需要若干小时。"
+      "Last 12 months only": [
+        "仅过去 12 个月"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "下面是一条简单的 DMARC 记录，表示只将错误报告发送给您，不采取其他操作。"
+      "Last 3 months only": [
+        "仅过去 3 个月"
+      ],
+      "Last month only": [
+        "仅上个月"
+      ],
+      "Email": [
+        "邮件"
+      ],
+      "App password": [
+        "应用密码"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Mail Server (IMAP)": [
+        "邮件服务器 (IMAP)"
+      ],
+      "Port": [
+        "端口"
+      ],
+      "Import interval": [
+        "导入间隔"
+      ],
+      "From: ${ modalModel.email }": [
+        "从：${ modalModel.email }"
+      ],
+      "To: ${ emailAddress }": [
+        "收件人：{ emailAddress }"
+      ],
+      "Label messages as": [
+        "给导入的邮件加标签"
+      ],
+      "Import to email address": [
+        "导入到电子邮件地址"
+      ],
+      "Manage labels": [
+        "管理标签"
+      ],
+      "Manage folders": [
+        "管理文件夹"
       ],
       "Name": [
         "姓名"
@@ -1330,6 +1369,36 @@
       ],
       "Please select files to upload": [
         "请选择要上传的文件"
+      ],
+      "Date format": [
+        "日期格式"
+      ],
+      "Default language": [
+        "默认语言"
+      ],
+      "Time format": [
+        "时间格式"
+      ],
+      "Week start": [
+        "每周第一天"
+      ],
+      "Automatically save contacts": [
+        "自动保存联系人"
+      ],
+      "Domain name": [
+        "域名"
+      ],
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "请添加下面的 TXT 记录。注意：DNS 记录更新可能需要若干小时。"
+      ],
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "请添加下列三条 CNAME 记录。注意：DNS 记录更新可能需要若干小时。"
+      ],
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "请添加下列 MX 记录。注意：DNS 记录更新可能需要若干小时。"
+      ],
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "下面是一条简单的 DMARC 记录，表示只将错误报告发送给您，不采取其他操作。"
       ],
       "Display name": [
         "显示名称"
@@ -1454,75 +1523,6 @@
       "Select a method": [
         "选择支付方式"
       ],
-      "Date format": [
-        "日期格式"
-      ],
-      "Default language": [
-        "默认语言"
-      ],
-      "Time format": [
-        "时间格式"
-      ],
-      "Week start": [
-        "每周第一天"
-      ],
-      "Automatically save contacts": [
-        "自动保存联系人"
-      ],
-      "From: ${ fromEmailAddress }": [
-        "来自: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "导入到：${ toEmailAddress }"
-      ],
-      "Import all messages": [
-        "导入所有信件"
-      ],
-      "Last 12 months only": [
-        "仅过去 12 个月"
-      ],
-      "Last 3 months only": [
-        "仅过去 3 个月"
-      ],
-      "Last month only": [
-        "仅上个月"
-      ],
-      "Email": [
-        "邮件"
-      ],
-      "App password": [
-        "应用密码"
-      ],
-      "Password": [
-        "密码"
-      ],
-      "Mail Server (IMAP)": [
-        "邮件服务器 (IMAP)"
-      ],
-      "Port": [
-        "端口"
-      ],
-      "Import interval": [
-        "导入间隔"
-      ],
-      "From: ${ modalModel.email }": [
-        "从：${ modalModel.email }"
-      ],
-      "To: ${ emailAddress }": [
-        "收件人：{ emailAddress }"
-      ],
-      "Label messages as": [
-        "给导入的邮件加标签"
-      ],
-      "Import to email address": [
-        "导入到电子邮件地址"
-      ],
-      "Manage labels": [
-        "管理标签"
-      ],
-      "Manage folders": [
-        "管理文件夹"
-      ],
       "Your password (admin)": [
         "您的密码(管理员)"
       ],
@@ -1613,11 +1613,77 @@
       "Your recovery phrase": [
         "您的恢复密语"
       ],
+      "Cash": [
+        "现金"
+      ],
+      "Card holder": [
+        "持卡人"
+      ],
+      "Expires": [
+        "到期"
+      ],
+      "Payer": [
+        "付款人"
+      ],
+      "Credits used": [
+        "扣除余额"
+      ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Customize invoices": [
+        "自定义账单"
+      ],
+      "Organization name": [
+        "组织名称"
+      ],
+      "Organization password": [
+        "组织密码"
+      ],
+      "Account storage": [
+        "账户存储空间"
+      ],
+      "VPN Connections": [
+        "VPN 连接"
+      ],
+      "New organization password": [
+        "新机构密码"
+      ],
+      "Confirm organization password": [
+        "确认机构密码"
+      ],
+      "VPN connections": [
+        "VPN 连接"
+      ],
+      "Private User": [
+        "私密账户"
+      ],
+      "Admin rights": [
+        "管理员权限"
+      ],
+      "Addresses": [
+        "地址"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Key strength": [
+        "密钥强度"
+      ],
       "OpenVPN / IKEv2 username": [
         "OpenVPN / IKEv2 用户名"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 密码"
+      ],
+      "User": [
+        "用户"
+      ],
+      "Signature": [
+        "落款"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail 标识"
       ],
       "Inbox": [
         "收件箱"
@@ -1642,27 +1708,6 @@
       ],
       "Read/unread toolbar order": [
         "标为已读/未读按钮顺序"
-      ],
-      "Cash": [
-        "现金"
-      ],
-      "Card holder": [
-        "持卡人"
-      ],
-      "Expires": [
-        "到期"
-      ],
-      "Payer": [
-        "付款人"
-      ],
-      "Credits used": [
-        "扣除余额"
-      ],
-      "Amount due": [
-        "应付金额"
-      ],
-      "Customize invoices": [
-        "自定义账单"
       ],
       "Timezone": [
         "时区"
@@ -1714,42 +1759,6 @@
       ],
       "Default PGP settings": [
         "默认 PGP 设置"
-      ],
-      "Organization name": [
-        "组织名称"
-      ],
-      "Organization password": [
-        "组织密码"
-      ],
-      "Account storage": [
-        "账户存储空间"
-      ],
-      "VPN Connections": [
-        "VPN 连接"
-      ],
-      "New organization password": [
-        "新机构密码"
-      ],
-      "Confirm organization password": [
-        "确认机构密码"
-      ],
-      "VPN connections": [
-        "VPN 连接"
-      ],
-      "Private User": [
-        "私密账户"
-      ],
-      "Admin rights": [
-        "管理员权限"
-      ],
-      "Addresses": [
-        "地址"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Key strength": [
-        "密钥强度"
       ],
       "Filter Name": [
         "筛选规则名称"
@@ -1868,15 +1877,6 @@
       "Inherit color from parent folder": [
         "继承母文件夹的颜色"
       ],
-      "User": [
-        "用户"
-      ],
-      "Signature": [
-        "落款"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail 标识"
-      ],
       "Auto-load remote content": [
         "自动加载外链内容"
       ],
@@ -1932,83 +1932,14 @@
         "验证码"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "您当前的存储空间："
-      ],
-      "Upgrade storage": [
-        "升级存储空间"
-      ],
-      "Release notes": [
-        "版本说明"
+    "Select search results": {
+      "No results found": [
+        "搜索无结果"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "了解更多"
-      ],
-      "Upgrade": [
-        "升级"
-      ],
-      "Go to subscription plans": [
-        "转至订阅计划"
-      ],
-      "clearing your browser cache": [
-        "清除浏览器缓存"
-      ],
-      "click here": [
-        "点击此处"
-      ],
-      "Add a gift code": [
-        "使用礼品码"
-      ],
-      "Pay invoice": [
-        "支付发票"
-      ],
-      "Upgrade account": [
-        "升级账户"
-      ],
-      "View guide": [
-        "查看指南"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "UDP 和 TCP 协议有何区别？"
-      ],
-      "Request an invite": [
-        "请求邀请"
-      ],
-      "Calendars": [
-        "分类"
-      ],
-      "General": [
-        "常规"
-      ],
-      "Terms": [
-        "服务条款"
-      ],
-      "Privacy policy": [
-        "隐私协议"
-      ],
-      "Previous version": [
-        "先前版本"
-      ],
-      "Sign in": [
-        "登录"
-      ],
-      "Common sign up issues": [
-        "常见注册问题"
-      ],
-      "Reset password": [
-        "重置密码"
-      ],
-      "Forgot username?": [
-        "忘记用户名？"
-      ],
-      "Common sign in issues": [
-        "常见登录问题"
-      ],
-      "Create an account": [
-        "创建账户"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "搜索时区"
       ]
     },
     "Info": {
@@ -2017,6 +1948,9 @@
       ],
       "No results found": [
         "未找到结果"
+      ],
+      "Loading": [
+        "加载中"
       ],
       "Insert image": [
         "插入图片"
@@ -2105,56 +2039,122 @@
       "Week": [
         "周"
       ],
-      "Loading": [
-        "加载中"
-      ],
       "support team": [
         "客服团队"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF 用于指定谁有权为该域名发送邮件，因此我们强烈建议将 ProtonMail 加入 SPF 信息中。请在 DNS 中添加下面的 TXT 记录，通常可以在您的域名注册商网站上设置。"
+      "Import calendars": [
+        "导入日历"
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "若您需要保留现有的 SPF 记录，可在 ${ spfValue } 之后插入 ${ spf }，但不要创建多个 SPF 记录。"
+      "Your events are being imported from": [
+        "您的日程将从"
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail 支持对自有域名予以 DKIM 数字签名。在您的域名 DNS 中加入下面的 CNAME 记录即可使用 DKIM，通常可以在域名注册商网站上设置。"
+      "to": [
+        "导入至"
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "注意：某些域名注册商不允许 CNAME 以句点结尾（但某些注册商又要求必须如此）。如果您的注册商不接受这种格式的 CNAME，请将末尾的句点全部删除后再试一次。"
+      "Your import has started!": [
+        "导入已开始！"
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "只要你想使用DKIM，就在DNS中保留这些记录。"
+      "We will notify you once your import is finished.": [
+        "导入完成后，我们会通知您。"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "在您可以通过ProtonMail接收您的自定义域名地址的电子邮件之前，您需要在您的DNS中添加以下MX记录。这通常可以在您的域名注册商的控制面板中完成。"
+      "Large imports can take several days to complete.": [
+        "大批量的导入可能需要几天才能完成。"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "删除其他 MX 记录，或者确保 ProtonMail 的优先级数字最小。"
+      "You can continue using Proton services as usual.": [
+        "您可以正常使用 Proton 服务。"
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "若此域名正接收邮件，请在更改 MX 记录前点选 ${ boldAddresses } 选项卡并添加所有活跃中的邮件地址以确保平稳转移服务。"
+      "Your import will not be processed.": [
+        "您的导入将不会被处理。"
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
+      "To prepare your external account for import, please follow the instructions for:": [
+        "请按下列步骤准备导入您的其他邮箱："
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } 对邮件送达没有影响，但我们建议${ quarantine }以提高安全性。"
+      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
+        "若您使用的是其他邮箱或已经完成准备工作，就可以开始导入了。"
       ],
-      "${ n } address": [
-        "${ n } 个地址"
+      "Enter the credentials of the email account you want to import from.": [
+        "输入您要导入的邮箱账号和密码。"
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "请注意，如果删除这个域名，且其下所有地址都将被停用。"
+      "Your login information will not be saved after the import is completed.": [
+        "导入完成后将不会被保存您的登录信息。"
       ],
-      "Are you sure you want to delete this domain?": [
-        "确定要删除此域名吗？"
+      "Import mailbox": [
+        "导入收件箱"
       ],
-      "domain used": [
-        "域名用量"
+      "Label all imported messages as": [
+        "给导入的所有邮件加标签"
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "您可以为自有域名设置一个揽取邮箱地址，发往该域名下的无效地址（可能由发件人输错导致）的邮件都将被投递到揽取邮箱中。"
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "已在 Gmail 中找到 { providerFoldersNumLocalized } 个标签"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个标签"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
+      ],
+      "Your messages are being imported from": [
+        "您的邮件将从"
+      ],
+      "Please select the folders you would like to import:": [
+        "请选择要导入的文件夹："
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "全部（${ totalFoldersCount } 个标签）"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "全部（${ totalFoldersCount } 个文件夹）"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "已选择 ${ selectedFoldersCount } 个标签"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "已选择 ${ selectedFoldersCount } 个文件夹"
+      ],
+      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
+        "将您的数据安全地转移至 Proton。导入助手能够连接您的其他邮箱，并导入您所需邮件和文件夹。"
+      ],
+      "No imports to display.": [
+        "无导入记录。"
+      ],
+      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "一旦您的电子邮件提供商重置了您账户的 ${ bandwithLimitLink }，Proton 将会尝试恢复导入。您不需要做任何事情。如果您取消导入，您将无法恢复导入，您需要重新开始。"
+      ],
+      "Check the status of current and previous imports.": [
+        "查看当前和先前导入的状态。"
+      ],
+      "Proton paused an import because your account is running low on space. You can:": [
+        "您的账户存储空间过小，导入已暂停。您可以："
+      ],
+      "free up space by deleting older messages or other data": [
+        "删除旧邮件和其他数据释放空间"
+      ],
+      "purchase additional storage": [
+        "付费扩容"
+      ],
+      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "与邮件服务商的连接中断，导入操作已暂停。请重新连接。"
+      ],
+      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
+        "您从 ${ delayedImport.Email } 导入被暂时推迟。"
+      ],
+      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
+        "出于安全原因，「导入/导出」应用程序会在将您设备上的电子邮件迁移到 Proton 服务器之前对其进行加密。也可以导出为本地备份。"
+      ],
+      "Available on macOS, Windows, and Linux.": [
+        "多平台 macOS, Windows, 以及 Linux。"
+      ],
+      "Choose the look and feel of the application.": [
+        "调整界面外观。"
       ],
       "Are you sure you want to delete this calendar?": [
         "您确定要删除此日历吗？"
@@ -2219,6 +2219,15 @@
       "You need to have a personal calendar to create a link.": [
         "您需要有个人日历才能创建链接。"
       ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "如果您认定旧密钥已泄露，可以创建一个新密钥。"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "此地址已有采用此算法的密钥，再创建会减慢账户加载速度，以后删除此密钥也可能出现问题。如果您的旧密钥不慎泄露，请将其标记为“已泄露”。确定要继续创建密钥吗？"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "密钥 ${ fp } 已创建。"
+      ],
       "uploading a backup key": [
         "上传备份密钥"
       ],
@@ -2255,15 +2264,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "密钥 ${ fp } 已删除。"
       ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "如果您认定旧密钥已泄露，可以创建一个新密钥。"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "此地址已有采用此算法的密钥，再创建会减慢账户加载速度，以后删除此密钥也可能出现问题。如果您的旧密钥不慎泄露，请将其标记为“已泄露”。确定要继续创建密钥吗？"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "密钥 ${ fp } 已创建。"
-      ],
       "No addresses exist": [
         "没有地址"
       ],
@@ -2272,6 +2272,63 @@
       ],
       "No contact encryption keys exist": [
         "没有联系人加密密钥"
+      ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "向您的帐户添加一个@pm.me 电子邮件地址。这个简单的域名代表\"ProtonMail me\"或\"Private Message me\"。"
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "我们支持从 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 等应用中导入 CSV 文件或导入 （UTF-8 编码）的 vCard 4.0 文件。"
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "应用程序需要在本地解密您的联系人，然后才能导出。 在进程结束时，将生成一个 VCF 文件，您将能够下载它。"
+      ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF 用于指定谁有权为该域名发送邮件，因此我们强烈建议将 ProtonMail 加入 SPF 信息中。请在 DNS 中添加下面的 TXT 记录，通常可以在您的域名注册商网站上设置。"
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "若您需要保留现有的 SPF 记录，可在 ${ spfValue } 之后插入 ${ spf }，但不要创建多个 SPF 记录。"
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail 支持对自有域名予以 DKIM 数字签名。在您的域名 DNS 中加入下面的 CNAME 记录即可使用 DKIM，通常可以在域名注册商网站上设置。"
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "注意：某些域名注册商不允许 CNAME 以句点结尾（但某些注册商又要求必须如此）。如果您的注册商不接受这种格式的 CNAME，请将末尾的句点全部删除后再试一次。"
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "只要你想使用DKIM，就在DNS中保留这些记录。"
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "在您可以通过ProtonMail接收您的自定义域名地址的电子邮件之前，您需要在您的DNS中添加以下MX记录。这通常可以在您的域名注册商的控制面板中完成。"
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "删除其他 MX 记录，或者确保 ProtonMail 的优先级数字最小。"
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "若此域名正接收邮件，请在更改 MX 记录前点选 ${ boldAddresses } 选项卡并添加所有活跃中的邮件地址以确保平稳转移服务。"
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } 对邮件送达没有影响，但我们建议${ quarantine }以提高安全性。"
+      ],
+      "${ n } address": [
+        "${ n } 个地址"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "请注意，如果删除这个域名，且其下所有地址都将被停用。"
+      ],
+      "Are you sure you want to delete this domain?": [
+        "确定要删除此域名吗？"
+      ],
+      "domain used": [
+        "域名用量"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "您可以为自有域名设置一个揽取邮箱地址，发往该域名下的无效地址（可能由发件人输错导致）的邮件都将被投递到揽取邮箱中。"
       ],
       "Screenshot(s) attached": [
         "已添加截图"
@@ -2561,132 +2618,6 @@
       "30 days money-back guarantee.": [
         "30 天退款保证。"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "向您的帐户添加一个@pm.me 电子邮件地址。这个简单的域名代表\"ProtonMail me\"或\"Private Message me\"。"
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我们支持从 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 等应用中导入 CSV 文件或导入 （UTF-8 编码）的 vCard 4.0 文件。"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "应用程序需要在本地解密您的联系人，然后才能导出。 在进程结束时，将生成一个 VCF 文件，您将能够下载它。"
-      ],
-      "Choose the look and feel of the application.": [
-        "调整界面外观。"
-      ],
-      "Import calendars": [
-        "导入日历"
-      ],
-      "Your events are being imported from": [
-        "您的日程将从"
-      ],
-      "to": [
-        "导入至"
-      ],
-      "Your import has started!": [
-        "导入已开始！"
-      ],
-      "We will notify you once your import is finished.": [
-        "导入完成后，我们会通知您。"
-      ],
-      "Large imports can take several days to complete.": [
-        "大批量的导入可能需要几天才能完成。"
-      ],
-      "You can continue using Proton services as usual.": [
-        "您可以正常使用 Proton 服务。"
-      ],
-      "Your import will not be processed.": [
-        "您的导入将不会被处理。"
-      ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "请按下列步骤准备导入您的其他邮箱："
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "若您使用的是其他邮箱或已经完成准备工作，就可以开始导入了。"
-      ],
-      "Enter the credentials of the email account you want to import from.": [
-        "输入您要导入的邮箱账号和密码。"
-      ],
-      "Your login information will not be saved after the import is completed.": [
-        "导入完成后将不会被保存您的登录信息。"
-      ],
-      "Import mailbox": [
-        "导入收件箱"
-      ],
-      "Label all imported messages as": [
-        "给导入的所有邮件加标签"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "已在 Gmail 中找到 { providerFoldersNumLocalized } 个标签"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "已选择 ${ selectedFoldersCountLocalized } 个标签"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
-      ],
-      "Your messages are being imported from": [
-        "您的邮件将从"
-      ],
-      "Please select the folders you would like to import:": [
-        "请选择要导入的文件夹："
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "全部（${ totalFoldersCount } 个标签）"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "全部（${ totalFoldersCount } 个文件夹）"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "已选择 ${ selectedFoldersCount } 个标签"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "已选择 ${ selectedFoldersCount } 个文件夹"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "将您的数据安全地转移至 Proton。导入助手能够连接您的其他邮箱，并导入您所需邮件和文件夹。"
-      ],
-      "No imports to display.": [
-        "无导入记录。"
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "一旦您的电子邮件提供商重置了您账户的 ${ bandwithLimitLink }，Proton 将会尝试恢复导入。您不需要做任何事情。如果您取消导入，您将无法恢复导入，您需要重新开始。"
-      ],
-      "Check the status of current and previous imports.": [
-        "查看当前和先前导入的状态。"
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "您的账户存储空间过小，导入已暂停。您可以："
-      ],
-      "free up space by deleting older messages or other data": [
-        "删除旧邮件和其他数据释放空间"
-      ],
-      "purchase additional storage": [
-        "付费扩容"
-      ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "与邮件服务商的连接中断，导入操作已暂停。请重新连接。"
-      ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "您从 ${ delayedImport.Email } 导入被暂时推迟。"
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "出于安全原因，「导入/导出」应用程序会在将您设备上的电子邮件迁移到 Proton 服务器之前对其进行加密。也可以导出为本地备份。"
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "多平台 macOS, Windows, 以及 Linux。"
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
       ],
@@ -2853,7 +2784,7 @@
         "您的恢复密语"
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "如果继续，您将必须重置密码，并且会登出任何其他活动会话。"
+        "如果继续操作，您就必须重置密码，并且其他已登录的设备将全部下线。"
       ],
       "This will also disable two-factor authentication.": [
         "这也将禁用双重身份认证。"
@@ -2865,7 +2796,7 @@
         "确定要将其余所有设备下线吗？"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "除非您手动退出账户或更改密码，否则在此设备的登陆将会保持。会话会在该设备60天无活动后过期。"
+        "除非您手动退出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动退出。"
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
@@ -2881,75 +2812,6 @@
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "试图使用您的 Proton 账户登录任何 Proton 产品的操作都会被记录。"
-      ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "若想提高上网安全性，请为您的设备安装 ProtonVPN 应用程序并连接到 ProtonVPN 服务器。"
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ProtonVPN 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "了解如何使用第三方 VPN 客户端登录到 ProtonVPN。"
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "我们建议您尽可能使用官方 ProtonVPN 客户端。"
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "您不能使用 OpenVPN / IKEv2 凭证登录 ProtonVPN 客户端或 ProtonVPN 总览。${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "在没有客户端时，请使用以下凭证连接到 ProtonVPN 服务器。示例包括：macOS 下的 Tunnelblick, GNU/Linux 下的 OpenVPN。"
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "不要在 ProtonVPN 客户端或 ProtonVPN 总览上使用 OpenVPN / IKEv2 凭证。${ learnMore }"
-      ],
-      "Server load": [
-        "服务器加载"
-      ],
-      "Server is currently down": [
-        "服务器目前不可用"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "需要订阅 Plus 或 Visionary 套餐"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "需要 Basic、Plus 或 Visionary 订阅方案"
-      ],
-      "${ number } server": [
-        "${ number } 个服务器"
-      ],
-      "${ number } city": [
-        "${ number } 个城市"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ProtonVPN 服务器。"
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "安全核心 (Secure Core) 配置文件能够提升防护等级，抵御针对 VPN 网络的攻击。"
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "安全核心功能需升级为 ProtonVPN 专业版或尊享版。"
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "国家/地区配置文件用于连接所选国家的某个随机服务器。"
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "国家级连接需升级为 ProtonVPN 基础版、专业版或尊享版。"
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "服务器配置文件用于连接所选国家的特定服务器。"
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "免费服务器配置文件用于连接到三个免费位置的特定服务器。"
-      ],
-      "Plan upgrade required": [
-        "需要升级套餐"
       ],
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
@@ -2977,39 +2839,6 @@
       ],
       "of": [
         "/"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "在每个月的指定时段开启自动回复。"
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "在指定的时段开启自动回复。"
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "在每周的指定时段开启自动回复。"
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "在手动关闭前保持自动回复开启。"
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "在指定的时段开启自动回复。"
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "使用自动回复通知对方您不在办公室或暂时无法回复。"
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐，方能开启不在办公室时自动回复。"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "地址验证是一项高级的安全功能，除非您对其有所了解，否则不要打开此功能。"
-      ],
-      "Encryption setting updated": [
-        "加密设置已更改"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "若发出的邮件已经过数字签名，PGP 客户端更有可能自动检测您的 PGP 密钥。"
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "该操作将为您的机构创建密钥。4096 位密钥只适用于性能较高的计算机，我们建议大多数用户使用 2048 位密钥。"
@@ -3095,6 +2924,129 @@
       "more": [
         "更多"
       ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "若想提高上网安全性，请为您的设备安装 ProtonVPN 应用程序并连接到 ProtonVPN 服务器。"
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ProtonVPN 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "了解如何使用第三方 VPN 客户端登录到 ProtonVPN。"
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "我们建议您尽可能使用官方 ProtonVPN 客户端。"
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "您不能使用 OpenVPN / IKEv2 凭证登录 ProtonVPN 客户端或 ProtonVPN 总览。${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "在没有客户端时，请使用以下凭证连接到 ProtonVPN 服务器。示例包括：macOS 下的 Tunnelblick, GNU/Linux 下的 OpenVPN。"
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "不要在 ProtonVPN 客户端或 ProtonVPN 总览上使用 OpenVPN / IKEv2 凭证。${ learnMore }"
+      ],
+      "Server load": [
+        "服务器加载"
+      ],
+      "Server is currently down": [
+        "服务器目前不可用"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "需要订阅 Plus 或 Visionary 套餐"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "需要 Basic、Plus 或 Visionary 订阅方案"
+      ],
+      "${ number } server": [
+        "${ number } 个服务器"
+      ],
+      "${ number } city": [
+        "${ number } 个城市"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ProtonVPN 服务器。"
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "安全核心 (Secure Core) 配置文件能够提升防护等级，抵御针对 VPN 网络的攻击。"
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "安全核心功能需升级为 ProtonVPN 专业版或尊享版。"
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "国家/地区配置文件用于连接所选国家的某个随机服务器。"
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "国家级连接需升级为 ProtonVPN 基础版、专业版或尊享版。"
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "服务器配置文件用于连接所选国家的特定服务器。"
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "免费服务器配置文件用于连接到三个免费位置的特定服务器。"
+      ],
+      "Plan upgrade required": [
+        "需要升级套餐"
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "请注意，如果删除此地址，您将无法再用其收发邮件。"
+      ],
+      "Are you sure you want to delete this address?": [
+        "确定要删除此地址吗？"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
+      ],
+      "Queued": [
+        "等待中"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "使用新地址收发邮件前，您需要先为其创建密钥。"
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "让对方知道您关心他们的隐私。"
+      ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "在每个月的指定时段开启自动回复。"
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "在指定的时段开启自动回复。"
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "在每周的指定时段开启自动回复。"
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "在手动关闭前保持自动回复开启。"
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "在指定的时段开启自动回复。"
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "使用自动回复通知对方您不在办公室或暂时无法回复。"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐，方能开启不在办公室时自动回复。"
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "地址验证是一项高级的安全功能，除非您对其有所了解，否则不要打开此功能。"
+      ],
+      "Encryption setting updated": [
+        "加密设置已更改"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "若发出的邮件已经过数字签名，PGP 客户端更有可能自动检测您的 PGP 密钥。"
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条筛选规则至少应有名称和一段 Sieve 代码。"
       ],
@@ -3147,7 +3099,7 @@
         "设置新文件夹的名称和位置，若不选取父文件夹，则将创建顶层文件夹。"
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "标有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
+        "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
       ],
       "Are you sure you want to delete this label?": [
         "确定要删除此标签吗？"
@@ -3157,27 +3109,6 @@
       ],
       "Are you sure you want to delete this folder?": [
         "确定要删除此文件夹吗？"
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "请注意，如果删除此地址，您将无法再用其收发邮件。"
-      ],
-      "Are you sure you want to delete this address?": [
-        "确定要删除此地址吗？"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
-      ],
-      "Queued": [
-        "等待中"
-      ],
-      "Done": [
-        "完成"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "使用新地址收发邮件前，您需要先为其创建密钥。"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "让对方知道您关心他们的隐私。"
       ],
       "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
         "禁用后可防止所有文件在您不知情的情况下加载到您的设备上。"
@@ -3266,14 +3197,14 @@
       "Servers are unreachable.": [
         "无法连接服务器。"
       ],
-      "Users can't make changes to organization settings. If you need admin priviledges, reach out to your system administrator.": [
-        "用户无法更改组织设置。若您需要管理员权限，请向系统管理员咨询。"
+      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
+        "用户不能更改机构设置。如果需要管理员权限，请向系统管理员咨询。"
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "开通付费账户方可解锁更大的存储空间和更多高级功能。"
       ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "用户不能更改机构设置。如果需要管理员权限，请向系统管理员咨询。"
+      "Users can't make changes to organization settings. If you need admin priviledges, reach out to your system administrator.": [
+        "用户无法更改组织设置。若您需要管理员权限，请向系统管理员咨询。"
       ],
       "to continue to ${ toAppName }": [
         "即可使用 ${ toAppName }"
@@ -3345,7 +3276,7 @@
         "这将替换您的临时密码。您今后将使用此密码来访问您的 ${ BRAND_NAME } 账户。"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "您可以使用此邮件地址${ strongAddressAvailable } 登陆所有 ${ BRAND_NAME } 服务。"
+        "您可以使用 ${ strongAddressAvailable } 登录所有的 ${ BRAND_NAME } 服务。"
       ],
       "Your recovery email address:": [
         "您的密保邮箱："
@@ -3354,7 +3285,7 @@
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
       ],
       "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "如果继续，您将必须重置密码，并且会登出所有其他活动会话。"
+        "如果继续操作，您就必须重置密码，并且其他已登录的设备将全部下线。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很不幸，此账户没有设置恢复密码的方式。"
@@ -3393,14 +3324,83 @@
         "这可能需要几秒钟或几分钟, 具体取决于您的设备。"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "搜索无结果"
+    "Storage": {
+      "Your current storage:": [
+        "您当前的存储空间："
+      ],
+      "Upgrade storage": [
+        "升级存储空间"
+      ],
+      "Release notes": [
+        "版本说明"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "搜索时区"
+    "Link": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "Upgrade": [
+        "升级"
+      ],
+      "Go to subscription plans": [
+        "转至订阅计划"
+      ],
+      "clearing your browser cache": [
+        "清除浏览器缓存"
+      ],
+      "click here": [
+        "点击此处"
+      ],
+      "Add a gift code": [
+        "使用礼品码"
+      ],
+      "Pay invoice": [
+        "支付发票"
+      ],
+      "Upgrade account": [
+        "升级账户"
+      ],
+      "View guide": [
+        "查看指南"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "UDP 和 TCP 协议有何区别？"
+      ],
+      "Request an invite": [
+        "请求邀请"
+      ],
+      "Calendars": [
+        "分类"
+      ],
+      "General": [
+        "常规"
+      ],
+      "Terms": [
+        "服务条款"
+      ],
+      "Privacy policy": [
+        "隐私协议"
+      ],
+      "Previous version": [
+        "先前版本"
+      ],
+      "Sign in": [
+        "登录"
+      ],
+      "Common sign up issues": [
+        "常见注册问题"
+      ],
+      "Reset password": [
+        "重置密码"
+      ],
+      "Forgot username?": [
+        "忘记用户名？"
+      ],
+      "Common sign in issues": [
+        "常见登录问题"
+      ],
+      "Create an account": [
+        "创建账户"
       ]
     },
     "Title": {
@@ -3413,32 +3413,44 @@
       "Next": [
         "后一页"
       ],
-      "Expand content": [
-        "展开內容"
-      ],
-      "Link confirmation": [
-        "确认链接"
-      ],
       "What's new": [
         "更新内容"
       ],
       "Open actions dropdown": [
         "展开操作菜单"
       ],
+      "Expand content": [
+        "展开內容"
+      ],
+      "Link confirmation": [
+        "确认链接"
+      ],
       "Keyboard Shortcuts": [
         "快捷键"
       ],
-      "Edit domain": [
-        "编辑域"
+      "Start import process": [
+        "开始导入过程"
       ],
-      "Add domain": [
-        "添加域"
+      "Import in progress": [
+        "导入进行中"
       ],
-      "Catch-All address": [
-        "揽取地址"
+      "Customize import": [
+        "自定义导入"
       ],
-      "Delete ${ domain.DomainName }": [
-        "删除 ${ domain.DomainName }"
+      "Prepare for import": [
+        "准备导入"
+      ],
+      "Prepare Yahoo Mail for import": [
+        "准备从Yahoo Mail导入"
+      ],
+      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
+        "准备Gmail导入 ${ gmailInstructionsStep }/${ totalSteps }"
+      ],
+      "Reconnect your account": [
+        "重新连接账户"
+      ],
+      "Start a new import": [
+        "开始导入"
       ],
       "Error": [
         "错误"
@@ -3479,6 +3491,9 @@
       "Your calendar link": [
         "您的日历链接"
       ],
+      "Create key": [
+        "创建密钥"
+      ],
       "Re-activate keys": [
         "重新激活密钥"
       ],
@@ -3494,14 +3509,44 @@
       "Delete key": [
         "删除密钥"
       ],
-      "Create key": [
-        "创建密钥"
-      ],
       "Success": [
         "成功"
       ],
       "Import key": [
         "导入密钥"
+      ],
+      "Enable keyboard shortcuts": [
+        "启用快捷键"
+      ],
+      "Exporting contacts": [
+        "导出联系人"
+      ],
+      "Select action to take on contact group": [
+        "选择对联系人群组的操作"
+      ],
+      "Add contact group name": [
+        "添加联系人群组名称"
+      ],
+      "Select contact group": [
+        "选择联系人群组"
+      ],
+      "Import groups": [
+        "导入群组"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Edit domain": [
+        "编辑域"
+      ],
+      "Add domain": [
+        "添加域"
+      ],
+      "Catch-All address": [
+        "揽取地址"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "删除 ${ domain.DomainName }"
       ],
       "Open help menu": [
         "打开帮助菜单"
@@ -3614,51 +3659,6 @@
       "Plan summary": [
         "计划摘要"
       ],
-      "Enable keyboard shortcuts": [
-        "启用快捷键"
-      ],
-      "Exporting contacts": [
-        "导出联系人"
-      ],
-      "Select action to take on contact group": [
-        "选择对联系人群组的操作"
-      ],
-      "Add contact group name": [
-        "添加联系人群组名称"
-      ],
-      "Select contact group": [
-        "选择联系人群组"
-      ],
-      "Import groups": [
-        "导入群组"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Start import process": [
-        "开始导入过程"
-      ],
-      "Import in progress": [
-        "导入进行中"
-      ],
-      "Customize import": [
-        "自定义导入"
-      ],
-      "Prepare for import": [
-        "准备导入"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "准备从Yahoo Mail导入"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "准备Gmail导入 ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Reconnect your account": [
-        "重新连接账户"
-      ],
-      "Start a new import": [
-        "开始导入"
-      ],
       "Change password for ${ Name } (${ Email })": [
         "更改 ${ Name } (${ Email } ) 的密码"
       ],
@@ -3716,18 +3716,6 @@
       "Clear": [
         "清除"
       ],
-      "1. Select platform": [
-        "1. 选择平台"
-      ],
-      "2. Select protocol": [
-        "2. 选择协议"
-      ],
-      "3. Select config file and download": [
-        "3. 选择配置文件并下载"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "获取 ProtonVPN Plus 以访问所有服务器"
-      ],
       "Pay invoice": [
         "支付账单"
       ],
@@ -3742,9 +3730,6 @@
       ],
       "Status": [
         "状态"
-      ],
-      "Automatically sign outgoing messages?": [
-        "自动对向外发送的邮件予以数字签名？"
       ],
       "Change organization name": [
         "更改机构名称"
@@ -3790,6 +3775,30 @@
       ],
       "Add user": [
         "添加用户"
+      ],
+      "1. Select platform": [
+        "1. 选择平台"
+      ],
+      "2. Select protocol": [
+        "2. 选择协议"
+      ],
+      "3. Select config file and download": [
+        "3. 选择配置文件并下载"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "获取 ProtonVPN Plus 以访问所有服务器"
+      ],
+      "Add address": [
+        "添加地址"
+      ],
+      "Delete ${ address.Email }": [
+        "删除 ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "生成缺失的密钥"
+      ],
+      "Automatically sign outgoing messages?": [
+        "自动对向外发送的邮件予以数字签名？"
       ],
       "Edit filter": [
         "更改规则"
@@ -3839,15 +3848,6 @@
       "Sort labels alphabetically": [
         "按字母顺序排列标签"
       ],
-      "Add address": [
-        "添加地址"
-      ],
-      "Delete ${ address.Email }": [
-        "删除 ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "生成缺失的密钥"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
       ],
@@ -3866,14 +3866,38 @@
       "Account suspended": [
         "账户已封禁"
       ],
-      "Sorry, you can't access this page": [
-        "对不起，您无权查看此页面"
+      "General": [
+        "常规"
       ],
-      "Upgrade": [
-        "升级"
+      "Theme": [
+        "主題"
       ],
-      "Proton Logo": [
-        "Proton标志"
+      "Contacts": [
+        "通讯录"
+      ],
+      "Import & export": [
+        "导入与导出"
+      ],
+      "Import": [
+        "导入"
+      ],
+      "Export": [
+        "导出"
+      ],
+      "My calendars": [
+        "我的日历"
+      ],
+      "Subscribed calendars": [
+        "已订阅日历"
+      ],
+      "Share outside Proton": [
+        ""
+      ],
+      "Time zone": [
+        "时区"
+      ],
+      "Layout": [
+        "布局"
       ],
       "Domain names": [
         "域名"
@@ -3881,23 +3905,17 @@
       "Catch-all address": [
         "揽取地址"
       ],
+      "Import Assistant": [
+        "导入助手"
+      ],
       "Appearance": [
         "外观"
-      ],
-      "Theme": [
-        "主題"
-      ],
-      "Layout": [
-        "布局"
       ],
       "Other": [
         "其他"
       ],
       "Auto reply": [
         "自动回复"
-      ],
-      "Import Assistant": [
-        "导入助手"
       ],
       "Encryption & keys": [
         "加密与密钥"
@@ -3932,9 +3950,6 @@
       "Labels": [
         "标签"
       ],
-      "General": [
-        "常规"
-      ],
       "Short domain (@pm.me)": [
         "短域名（@pm.me）"
       ],
@@ -3959,35 +3974,11 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import & export": [
-        "导入与导出"
-      ],
       "Current & past imports": [
         "当前和过去导入"
       ],
       "Import-Export app": [
         "「导入/导出」应用程序"
-      ],
-      "Contacts": [
-        "通讯录"
-      ],
-      "Import": [
-        "导入"
-      ],
-      "Export": [
-        "导出"
-      ],
-      "My calendars": [
-        "我的日历"
-      ],
-      "Subscribed calendars": [
-        "已订阅日历"
-      ],
-      "Share outside Proton": [
-        ""
-      ],
-      "Time zone": [
-        "时区"
       ],
       "Password & recovery": [
         "密码和恢复"
@@ -4037,21 +4028,6 @@
       "Email subscriptions": [
         "邮件订阅"
       ],
-      "VPN apps": [
-        "VPN apps"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
-      ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN/IKEv2"
-      ],
-      "Credentials": [
-        "凭据"
-      ],
-      "OpenVPN configuration files": [
-        "OpenVPN 配置文件"
-      ],
       "Organization": [
         "机构"
       ],
@@ -4070,8 +4046,32 @@
       "Password & keys": [
         "密码与密钥"
       ],
+      "VPN apps": [
+        "VPN apps"
+      ],
+      "ProtonVPN": [
+        "ProtonVPN"
+      ],
+      "OpenVPN / IKEv2": [
+        "OpenVPN/IKEv2"
+      ],
+      "Credentials": [
+        "凭据"
+      ],
+      "OpenVPN configuration files": [
+        "OpenVPN 配置文件"
+      ],
+      "Sorry, you can't access this page": [
+        "对不起，您无权查看此页面"
+      ],
+      "Upgrade": [
+        "升级"
+      ],
       "Settings": [
         "设置"
+      ],
+      "Proton Logo": [
+        "Proton标志"
       ],
       "Choose an account": [
         "选择帐户"
@@ -4140,222 +4140,43 @@
         "无法重置密码"
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "向 ProtonMail 账户中添加您自己的域名。"
+    "Loading info": {
+      "Connecting to your calendar provider": [
+        "正在连接到您的日历提供商"
+      ],
+      "Connecting to your email provider": [
+        "正在连接到您的邮件提供商"
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "电子邮箱通常不使用 \"www\" 子域名。您确定要继续使用吗？"
+    "Wizard step": {
+      "Authenticate": [
+        "验证账户"
+      ],
+      "Configure Import": [
+        "导入配置"
+      ],
+      "Import": [
+        "导入"
       ]
     },
-    "Success": {
-      "Verify code copied to clipboard!": [
-        "验证码已复制到剪贴板！"
+    "Confirm modal title": {
+      "Quit import?": [
+        "退出导入？"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF 内容已复制"
+      "Quit import customization?": [
+        "退出导入定制？"
       ],
-      "Value copied to clipboard!": [
-        "内容已复制！"
+      "Import is incomplete!": [
+        "导入未完成！"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC 内容已复制！"
+      "Remove from the list?": [
+        "从列表中移除此项？"
       ],
-      "Domain verified": [
-        "域已验证"
-      ],
-      "Catch-all address updated": [
-        "揽取地址已更新"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "已新增日历，可能需要几分钟才能同步"
-      ],
-      "Calendar created": [
-        "日历已创建"
-      ],
-      "Calendar updated": [
-        "日历已更新"
-      ],
-      "Default calendar updated": [
-        "默认日历已更新"
-      ],
-      "Calendar removed": [
-        "日历已移除"
-      ],
-      "Preference saved": [
-        "设置已保存"
-      ],
-      "Email address copied to clipboard": [
-        "邮箱地址已复制到剪贴板"
-      ],
-      "Bug reported": [
-        "问题已反馈"
-      ],
-      "You have successfully unsubscribed": [
-        "您已退订成功"
-      ],
-      "Payment method updated": [
-        "支付方式已更改"
-      ],
-      "Payment method added": [
-        "支付方式已添加"
-      ],
-      "Credits added": [
-        "信用已添加"
-      ],
-      "Gift code applied": [
-        "礼品码有效"
-      ],
-      "Locale updated": [
-        "语言设置已生效"
-      ],
-      "Premium address created": [
-        "地址已激活"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "键盘快捷键设置已更新"
-      ],
-      "Import resumed": [
-        "导入已继续"
-      ],
-      "Import canceled": [
-        "导入已取消"
-      ],
-      "Import record deleted": [
-        "导入记录已删除"
-      ],
-      "Deleting original messages": [
-        "正在删除原始邮件"
-      ],
-      "Password updated": [
-        "密码已更新"
-      ],
-      "Account deleted. Logging out...": [
-        "账户已删除。正在登出..."
-      ],
-      "Email updated": [
-        "邮箱已更改"
-      ],
-      "Phone number updated": [
-        "电话号码已更改"
-      ],
-      "Session revoked": [
-        "会话已撤销"
-      ],
-      "Sessions revoked": [
-        "会话已撤销"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } 已复制"
-      ],
-      "Buttons position saved": [
-        "按钮位置已保存"
-      ],
-      "Payment method deleted": [
-        "付款方式已删除"
-      ],
-      "Invoice paid": [
-        "支付完成"
-      ],
-      "Invoice customized": [
-        "账单信息已更改"
-      ],
-      "Auto-reply disabled": [
-        "自动回复已禁用"
-      ],
-      "Auto-reply updated": [
-        "自动回复已保存"
-      ],
-      "Organization activated": [
-        "机构已激活"
-      ],
-      "Keys updated": [
-        "密钥已更新"
-      ],
-      "User updated": [
-        "用户已更新"
-      ],
-      "User created": [
-        "用户已创建"
-      ],
-      "Address added": [
-        "地址已添加"
-      ],
-      "Address updated": [
-        "地址已更新"
-      ],
-      "Code sent to ${ methodTo }": [
-        "验证码已发至 ${ methodTo }"
-      ],
-      "Verification successful": [
-        "验证成功"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "若您输入的密保邮箱正确，我们将马上发送邮件告知您的用户名。"
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "若您输入的验证手机号正确，我们将马上发送短信告知您的用户名。"
-      ]
-    },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "出于安全考虑，我们需要验证您是否持有域名 ${ domainName }。请将下列 DNS TXT 记录加入您的域名中，通常可以在域名注册商的控制面板上设置。"
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "向您的单位添加新用户并为其创建地址。"
-      ],
-      "Add a new address for any user of your organization.": [
-        "为您单位的任何用户添加新地址。"
-      ]
-    },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "验证成功后请勿删除该 TXT 记录，我们需要根据它确认您是否仍持有该域名。"
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS 更新可能需要一天的时间。"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "请添加下面的 TXT 记录："
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "类型"
-      ],
-      "Host name": [
-        "主机名"
-      ],
-      "Value / Data / Points to": [
-        "数据"
-      ],
-      "Value / Data": [
-        "内容"
-      ],
-      "Priority": [
-        "优先权"
+      "Delete all messages": [
+        "刪除所有邮件"
       ]
     },
     "Warning": {
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
-      ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "此功能仅限 ProtonMail 专业版及以上套餐使用"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
-      ],
       "Are you sure you want to discard your import?": [
         "您确定要放弃导入吗？"
       ],
@@ -4382,6 +4203,21 @@
       ],
       "You will not see this import record in the list anymore.": [
         "此处将不会再出现这条导入记录。"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
+      ],
+      "This feature is only available for ProtonMail Professional plans or higher": [
+        "此功能仅限 ProtonMail 专业版及以上套餐使用"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "您的本地日期和时间设置似乎不同步。"
@@ -4414,20 +4250,241 @@
         "您需要先${ activateLink } 机构密钥方可为非私密用户添加邮箱地址。"
       ]
     },
-    "Tab in domain modal": {
-      "Addresses": [
-        "邮箱地址"
+    "Import instructions emphasis": {
+      "Security": [
+        "安全"
+      ],
+      "turn on access": [
+        "打开访问权限"
+      ],
+      "app password": [
+        "应用专用密码"
+      ],
+      "Gmail Settings": [
+        "Gmail 设置"
+      ],
+      "Forwarding and POP/IMAP": [
+        "转发和 POP/IMAP"
+      ],
+      "IMAP access": [
+        "IMAP 访问"
+      ],
+      "Labels": [
+        "标签"
+      ],
+      "2-step verification": [
+        "两步验证"
+      ],
+      "Account info": [
+        "账户信息"
+      ],
+      "Account security": [
+        "账户安全"
+      ],
+      "Manage app passwords": [
+        "管理应用密码"
+      ]
+    },
+    "Import instructions": {
+      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
+        "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，对安全性较低的应用${ boldAccess }。如果找不到此选项，您可能已经开启了两步验证。"
+      ],
+      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
+        "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，创建一个${ boldAppPassword }，导入过程中需要用到这个密码。"
+      ],
+      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
+        "在 ${ boldGmailSettings }中，确保${ boldForwarding } 中的 ${ boldIMAPAccess }选项已开启。"
+      ],
+      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
+        "在${ boldLabels }设置中，选择您要导入到 ProtonMail 的文件夹。"
+      ],
+      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
+        "允许 ProtonMail 访问您的 Gmail 账户：根据您是否已开启${ bold2Steps }按相应步骤操作。"
+      ],
+      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
+        "最后，使用您要导入的账户${ googleMailLink }，${ googleCaptchaLink }。"
+      ],
+      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, go to ${ boldManageAppPass } to generate a password. You will need this password during the import.": [
+        "登录雅虎邮箱，点击右上角您的用户名打开${ boldAccountInfo }。在${ boldAccountSec } 中，点击${ boldManageAppPass }并创建一个密码，导入过程中需要用到这个密码。"
+      ]
+    },
+    "Import instructions tab title": {
+      "2-step verification disabled (default settings)": [
+        "两步验证已关闭（默认设置）"
+      ],
+      "2-step verification enabled": [
+        "两步验证已开启"
+      ]
+    },
+    "Import instructions image alternative text": {
+      "How to turn on access for Less Secure Apps in Gmail settings": [
+        "如何在 Gmail 设置中开启对安全性较低的应用的访问权限"
+      ],
+      "How to create an app password in Gmail settings": [
+        "如何在 Gmail 设置中创建应用专用密码"
+      ],
+      "How to enable IMAP Forwarding in Gmail settings": [
+        "如何在 Gmail 设置中开启 IMAP 转发"
+      ],
+      "How to show folders in IMAP in Gmail settings": [
+        "如何在 Gmail 设置中显示 IMAP 文件夹"
+      ],
+      "How to disable CAPTCHA in Gmail": [
+        "如何禁用 Gmail 中的人机验证"
+      ]
+    },
+    "Import instructions external link": {
+      "login to Gmail": [
+        "登录到 Gmail"
+      ],
+      "then open this page to unlock captcha": [
+        "然后打开此页面以解锁人机验证"
+      ]
+    },
+    "Provider": {
+      "Gmail": [
+        "谷歌邮箱"
+      ],
+      "Yahoo Mail": [
+        "雅虎邮件"
+      ]
+    },
+    "Import error": {
+      "Invalid IMAP port": [
+        "IMAP 端口号无效"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "如果 Gmail 的${ bold2StepsDisabled }（这是默认选项），请确认："
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "如果 Gmail 的${ bold2StepsEnabled }，请确认您使用的是应用专用密码，而非平时使用的密码。"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "您也可以尝试在浏览器中退出${ boldGoogleAccounts }，然后解锁${ linkCAPTCHA }。"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
+      ],
+      "your password is correct": [
+        "密码输入无误"
+      ],
+      "\"Less secure app access\" is turned on in your Google account security settings": [
+        "Google 账户的安全设置中已开启「允许不够安全的应用」选项"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "ProtonMail 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "如果 Gmail 的${ bold2StepsDisabled }（这是 Gmail 的默认设置），请确认："
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "如果${ bold2StepsEnabled }，请确认您的邮箱地址和应用专用密码输入无误。${ boldNot }输入您平常用的密码。"
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
+      ],
+      "your email address and password are correct": [
+        "您输入的邮箱地址和密码正确"
+      ],
+      "your app password is correct. Do ${ boldNot } use your regular password": [
+        "应用密码输入无误，${ boldNot }输入您平常用的密码"
+      ],
+      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
+        "Proton 无法连接您的 Yahoo 账户，请确认："
+      ],
+      "IMAP access is enabled in your Yahoo account": [
+        "您的 Yahoo 账户已开启 IMAP 功能"
+      ],
+      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
+        "ProtonMail 无法连接您的 Yahoo Mail 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
+        "您的邮箱地址和应用专用密码输入无误，${ boldNot }输入您平常用的密码"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton 无法连接该邮箱，请确认："
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton 无法连接您的账户，请确认："
+      ],
+      "IMAP access is enabled in your external account": [
+        "您已在该邮箱中开启 IMAP 功能"
+      ],
+      "Use your app password if:": [
+        "在以下情况下使用您的应用密码："
+      ],
+      "2-step verification is enabled in your external account": [
+        "该邮箱开启了两步验证"
+      ],
+      "your email account requires one to export your data": [
+        "该邮箱需要应用专用密码才能导出数据"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "ProtonMail 无法连接该邮箱账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "下列情况需使用应用专用密码，不能用平常输入的密码："
+      ],
+      "2-step verification is enabled in your external email account": [
+        "该邮箱开启了两步验证"
+      ],
+      "your email account requires an app password to export your data": [
+        "该邮箱需要应用专用密码才能导出数据"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "请求过于频繁，请稍后再试。"
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "两步验证已关闭"
+      ],
+      "2-step verification is enabled": [
+        "两步验证已开启"
+      ],
+      "all your other Google accounts": [
+        "您所有其他的 Google 账户"
+      ],
+      "not": [
+        "不要"
+      ],
+      "CAPTCHA": [
+        "验证码"
       ]
     },
     "Tooltip": {
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
+      "Customize import to reduce the number of labels": [
+        "自定义导入以减少标签数量"
       ],
-      "Your DKIM signing is working.": [
-        "您的 DKIM 签名机制已就绪。"
+      "Customize import to reduce the number of folders": [
+        "自定义导入，减少文件夹数量。"
       ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
+      "Edit label names": [
+        "编辑标签名称"
+      ],
+      "Edit folder names": [
+        "更改文件夹名称"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
+      ],
+      "Each imported email will have this label": [
+        "每一封导入的邮件都会有这个标签"
+      ],
+      "The import will start with the most recent messages.": [
+        "导入将从最近的信息开始。"
+      ],
+      "Account is disconnected": [
+        "账户已断开连接"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "您的 ProtonMail 收件箱几乎已满"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "您的外部帐户可能已达到24小时带宽上限。Proton将尽快恢复导入。"
+      ],
+      "This feature is unavailable for the moment": [
+        "该功能暂时不可用"
       ],
       "ProtonMail users will use this key by default for sending": [
         "ProtonMail 用户默认使用这个密钥发送邮件"
@@ -4446,6 +4503,18 @@
       ],
       "This address has been disabled": [
         "此地址已被停用"
+      ],
+      "You do not have any contacts to export": [
+        "没有任何联系人可供导出"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
+      ],
+      "Your DKIM signing is working.": [
+        "您的 DKIM 签名机制已就绪。"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "使用多个电子邮箱地址 / 别名连接到您的帐户，例如 username2@protonmail.com"
@@ -4495,39 +4564,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
-      "You do not have any contacts to export": [
-        "没有任何联系人可供导出"
-      ],
-      "Customize import to reduce the number of labels": [
-        "自定义导入以减少标签数量"
-      ],
-      "Customize import to reduce the number of folders": [
-        "自定义导入，减少文件夹数量。"
-      ],
-      "Edit label names": [
-        "编辑标签名称"
-      ],
-      "Edit folder names": [
-        "更改文件夹名称"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
-      ],
-      "Each imported email will have this label": [
-        "每一封导入的邮件都会有这个标签"
-      ],
-      "The import will start with the most recent messages.": [
-        "导入将从最近的信息开始。"
-      ],
-      "Account is disconnected": [
-        "账户已断开连接"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "您的 ProtonMail 收件箱几乎已满"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "您的外部帐户可能已达到24小时带宽上限。Proton将尽快恢复导入。"
-      ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "启用高级日志会在安全日志中记录每个事件的 IP 地址。"
       ],
@@ -4559,84 +4595,214 @@
         "此功能会延迟发送邮件，让您有机会在选定的时间范围内撤销发送。"
       ]
     },
-    "Label in domain modal": {
-      "Domain": [
-        "域名"
-      ],
-      "Verify": [
-        "验证"
-      ],
-      "Addresses": [
-        "邮箱地址"
+    "Security phrase": {
+      "Permanently delete messages in ${ email }": [
+        "永久删除 ${ email } 的信息"
       ]
     },
-    "Domain label": {
-      "Verified": [
-        "已验证"
+    "Instructions": {
+      "To confirm this action enter the following text in the box below.": [
+        "要确认此操作，请在下方的框中输入以下文本："
+      ],
+      "Enter phrase to confirm": [
+        "输入以进行确认"
       ]
     },
-    "Badge for domain": {
-      "Missing keys": [
-        "缺少密钥"
+    "Import status": {
+      "Paused": [
+        "已暂停"
       ],
-      "Enabled": [
-        "开启"
+      "Canceled": [
+        "已取消"
       ],
-      "Disabled": [
-        "关闭"
+      "Completed": [
+        "完成"
+      ],
+      "Failed": [
+        "失败"
+      ],
+      "${ percentageValue }% paused": [
+        "${ percentageValue }% 已暂停"
+      ],
+      "Started": [
+        "已开始"
+      ],
+      "Canceling": [
+        "正在取消"
+      ],
+      "Delayed": [
+        "已延迟"
       ]
     },
-    "Title header for addresses domain table": {
-      "Address": [
-        "邮箱地址"
+    "Success": {
+      "Import resumed": [
+        "导入已继续"
       ],
-      "Status": [
-        "状态"
+      "Import canceled": [
+        "导入已取消"
       ],
-      "Catch-All": [
-        "全部捕获"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "域名已删除"
+      "Import record deleted": [
+        "导入记录已删除"
+      ],
+      "Deleting original messages": [
+        "正在删除原始邮件"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "已新增日历，可能需要几分钟才能同步"
+      ],
+      "Calendar created": [
+        "日历已创建"
+      ],
+      "Calendar updated": [
+        "日历已更新"
+      ],
+      "Default calendar updated": [
+        "默认日历已更新"
+      ],
+      "Calendar removed": [
+        "日历已移除"
+      ],
+      "Preference saved": [
+        "设置已保存"
+      ],
+      "Locale updated": [
+        "语言设置已生效"
+      ],
+      "Premium address created": [
+        "地址已激活"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "键盘快捷键设置已更新"
+      ],
+      "Verify code copied to clipboard!": [
+        "验证码已复制到剪贴板！"
+      ],
+      "SPF value copied to clipboard!": [
+        "SPF 内容已复制"
+      ],
+      "Value copied to clipboard!": [
+        "内容已复制！"
+      ],
+      "DMARC value copied to clipboard!": [
+        "DMARC 内容已复制！"
+      ],
+      "Domain verified": [
+        "域已验证"
+      ],
+      "Catch-all address updated": [
+        "揽取地址已更新"
+      ],
+      "Email address copied to clipboard": [
+        "邮箱地址已复制到剪贴板"
+      ],
+      "Bug reported": [
+        "问题已反馈"
+      ],
+      "You have successfully unsubscribed": [
+        "您已退订成功"
+      ],
+      "Payment method updated": [
+        "支付方式已更改"
+      ],
+      "Payment method added": [
+        "支付方式已添加"
+      ],
+      "Credits added": [
+        "信用已添加"
+      ],
+      "Gift code applied": [
+        "礼品码有效"
+      ],
+      "Password updated": [
+        "密码已更新"
+      ],
+      "Account deleted. Logging out...": [
+        "账户已删除，正在退出..."
+      ],
+      "Email updated": [
+        "邮箱已更改"
+      ],
+      "Phone number updated": [
+        "电话号码已更改"
+      ],
+      "Session revoked": [
+        "会话已撤销"
       ],
       "Sessions revoked": [
         "会话已撤销"
       ],
-      "User deleted": [
-        "用户已删除"
+      "Payment method deleted": [
+        "付款方式已删除"
+      ],
+      "Invoice paid": [
+        "支付完成"
+      ],
+      "Invoice customized": [
+        "账单信息已更改"
+      ],
+      "Organization activated": [
+        "机构已激活"
+      ],
+      "Keys updated": [
+        "密钥已更新"
+      ],
+      "User updated": [
+        "用户已更新"
+      ],
+      "User created": [
+        "用户已创建"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } 已复制"
+      ],
+      "Address added": [
+        "地址已添加"
+      ],
+      "Address updated": [
+        "地址已更新"
+      ],
+      "Buttons position saved": [
+        "按钮位置已保存"
+      ],
+      "Auto-reply disabled": [
+        "自动回复已禁用"
+      ],
+      "Auto-reply updated": [
+        "自动回复已保存"
+      ],
+      "Code sent to ${ methodTo }": [
+        "验证码已发至 ${ methodTo }"
+      ],
+      "Verification successful": [
+        "验证成功"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "若您输入的密保邮箱正确，我们将马上发送邮件告知您的用户名。"
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "若您输入的验证手机号正确，我们将马上发送短信告知您的用户名。"
       ]
     },
-    "Header for addresses table": {
-      "Domain": [
-        "域名"
+    "Title header": {
+      "Import": [
+        "导入"
       ],
       "Status": [
         "状态"
       ],
+      "Date": [
+        "日期"
+      ],
+      "Size": [
+        "大小"
+      ],
       "Actions": [
         "操作"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Username": [
-        "用户名"
       ]
     },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "配置一个自定义域名邮箱（例如 you@yourcompany.com）。只需要几分钟，我们的向导将指导您完成整个过程。"
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        "升级到任何付费套餐以使用自定义域名并解锁高级功能"
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐以使用 catch-all 邮箱并解锁高级功能"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "确定要关闭双重验证吗？"
+    "Import error link": {
+      "bandwidth limit": [
+        "带宽限制"
       ]
     },
     "Duration": {
@@ -4796,6 +4962,9 @@
       ],
       "Not synced": [
         "未同步"
+      ],
+      "Syncing": [
+        "同步中"
       ]
     },
     "Upgrade notice": {
@@ -4821,7 +4990,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "就是这样"
+        "了解如何操作"
       ]
     },
     "Calendar import section description": {
@@ -5132,119 +5301,6 @@
         ""
       ]
     },
-    "Key state badge": {
-      "Error": [
-        "错误"
-      ],
-      "Primary": [
-        "主密钥"
-      ],
-      "Active": [
-        "已启用"
-      ],
-      "Inactive": [
-        "已停用"
-      ],
-      "Compromised": [
-        "已泄露"
-      ],
-      "Obsolete": [
-        "已作废"
-      ],
-      "Disabled": [
-        "地址停用"
-      ]
-    },
-    "Key status displayed in a badge": {
-      "Key uploaded": [
-        "密钥已上传"
-      ]
-    },
-    "Title header for keys table": {
-      "Email": [
-        "邮箱"
-      ],
-      "Fingerprint": [
-        "指纹"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "Action": [
-        "操作"
-      ],
-      "Key type": [
-        "密钥类型"
-      ],
-      "Actions": [
-        "操作"
-      ]
-    },
-    "Keys actions": {
-      "Reactivate": [
-        "重新激活"
-      ],
-      "Export": [
-        "导出"
-      ],
-      "Export private key": [
-        "导出私钥"
-      ],
-      "Make primary": [
-        "设为主密钥"
-      ],
-      "Mark obsolete": [
-        "作废"
-      ],
-      "Disables encryption with this key": [
-        "停止使用此密钥加密"
-      ],
-      "Mark not obsolete": [
-        "取消作废"
-      ],
-      "Enable encryption with this key": [
-        "允许使用此密钥加密"
-      ],
-      "Mark compromised": [
-        "标为已泄露"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "停止使用此密钥加密及验证数字签名"
-      ],
-      "Mark not compromised": [
-        "标为未泄露"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "允许使用此密钥加密及验证数字签名"
-      ],
-      "Delete": [
-        "删除"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "上传"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to permanently delete this key?": [
-        "确定要永久删除此密钥吗？"
-      ],
-      "Do you want to export your key?": [
-        "要导出密钥吗？"
-      ],
-      "Are you sure you want to delete this key without backing it up?": [
-        "确定要删除此密钥并且不备份吗？"
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "正在删除该地址的密钥。"
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "正在生成密钥，可能需要几分钟，并且您的浏览器可能会出现卡顿。"
-      ]
-    },
     "encryption": {
       "State of the art": [
         "顶尖加密方式"
@@ -5259,6 +5315,21 @@
       ],
       "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
         ""
+      ],
+      "Automatic (${ defaultFormat })": [
+        "自动 (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "自动 (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "添加到已有队列"
+      ],
+      "Create new group": [
+        "创建群组"
+      ],
+      "Ignore group": [
+        "忽略分组"
       ],
       "Select a reason": [
         "请选择原因"
@@ -5286,21 +5357,6 @@
       ],
       "Other": [
         "其他"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "自动 (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自动 (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "添加到已有队列"
-      ],
-      "Create new group": [
-        "创建群组"
-      ],
-      "Ignore group": [
-        "忽略分组"
       ],
       "I use a different Proton account": [
         "我要改用其他 Proton 账户"
@@ -5475,6 +5531,362 @@
       ],
       "No parent folder": [
         "无上层文件夹"
+      ]
+    },
+    "alert": {
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "正在生成密钥，可能需要几分钟，并且您的浏览器可能会出现卡顿。"
+      ],
+      "The key for your address is now being deleted.": [
+        "正在删除该地址的密钥。"
+      ]
+    },
+    "Key state badge": {
+      "Error": [
+        "错误"
+      ],
+      "Primary": [
+        "主密钥"
+      ],
+      "Active": [
+        "已启用"
+      ],
+      "Inactive": [
+        "已停用"
+      ],
+      "Compromised": [
+        "已泄露"
+      ],
+      "Obsolete": [
+        "已作废"
+      ],
+      "Disabled": [
+        "地址停用"
+      ]
+    },
+    "Key status displayed in a badge": {
+      "Key uploaded": [
+        "密钥已上传"
+      ]
+    },
+    "Title header for keys table": {
+      "Email": [
+        "邮箱"
+      ],
+      "Fingerprint": [
+        "指纹"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Action": [
+        "操作"
+      ],
+      "Key type": [
+        "密钥类型"
+      ],
+      "Actions": [
+        "操作"
+      ]
+    },
+    "Keys actions": {
+      "Reactivate": [
+        "重新激活"
+      ],
+      "Export": [
+        "导出"
+      ],
+      "Export private key": [
+        "导出私钥"
+      ],
+      "Make primary": [
+        "设为主密钥"
+      ],
+      "Mark obsolete": [
+        "作废"
+      ],
+      "Disables encryption with this key": [
+        "停止使用此密钥加密"
+      ],
+      "Mark not obsolete": [
+        "取消作废"
+      ],
+      "Enable encryption with this key": [
+        "允许使用此密钥加密"
+      ],
+      "Mark compromised": [
+        "标为已泄露"
+      ],
+      "Disables signature verification and encryption with this key": [
+        "停止使用此密钥加密及验证数字签名"
+      ],
+      "Mark not compromised": [
+        "标为未泄露"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "允许使用此密钥加密及验证数字签名"
+      ],
+      "Delete": [
+        "删除"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上传"
+      ]
+    },
+    "Confirm": {
+      "Are you sure you want to permanently delete this key?": [
+        "确定要永久删除此密钥吗？"
+      ],
+      "Do you want to export your key?": [
+        "要导出密钥吗？"
+      ],
+      "Are you sure you want to delete this key without backing it up?": [
+        "确定要删除此密钥并且不备份吗？"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "星期日"
+      ],
+      "Monday": [
+        "星期一"
+      ],
+      "Tuesday": [
+        "星期二"
+      ],
+      "Wednesday": [
+        "星期三"
+      ],
+      "Thursday": [
+        "星期四"
+      ],
+      "Friday": [
+        "星期五"
+      ],
+      "Saturday": [
+        "星期六"
+      ]
+    },
+    "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "共 ${ countContacts } 名联系人，成功导出 ${ contactsExported.length } 名联系人。"
+      ],
+      "No contacts exported.": [
+        "没有导出联系人。"
+      ]
+    },
+    "TableHeader": {
+      "Import": [
+        "导入"
+      ],
+      "CSV field": [
+        "CSV 字段"
+      ],
+      "vCard field": [
+        "vCard 字段"
+      ],
+      "Values": [
+        "值"
+      ],
+      "Name": [
+        "名称"
+      ],
+      "Country": [
+        "国家"
+      ],
+      "City": [
+        "城市"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Action": [
+        "操作"
+      ]
+    },
+    "Error notification": {
+      "First name and last name cannot be unchecked at the same time": [
+        "姓氏和名字至少应勾选一个"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "我们从您选择的 CSV 文件中检测到了以下信息，请选择要导入的内容。"
+      ],
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "另外，我们已将 CSV 自动转换成 vCard 信息，您可以查看并修改对应关系。"
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } 名联系人"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "联系人 ${ contactId }: "
+      ]
+    },
+    "Import contacts warning": {
+      "for now": [
+        "暂时"
+      ],
+      "ProtonContacts does not support ${ forNow }:": [
+        "ProtonContacts 不支持 ${ forNow }:"
+      ]
+    },
+    "Import contacts": {
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "联系人导入成功，已显示在您的通讯录中。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
+      ]
+    },
+    "Import contact": {
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密并添加联系人时出错，未能导入任何联系人。"
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "向 ProtonMail 账户中添加您自己的域名。"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "电子邮箱通常不使用 \"www\" 子域名。您确定要继续使用吗？"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "出于安全考虑，我们需要验证您是否持有域名 ${ domainName }。请将下列 DNS TXT 记录加入您的域名中，通常可以在域名注册商的控制面板上设置。"
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "向您的单位添加新用户并为其创建地址。"
+      ],
+      "Add a new address for any user of your organization.": [
+        "为您单位的任何用户添加新地址。"
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "验证成功后请勿删除该 TXT 记录，我们需要根据它确认您是否仍持有该域名。"
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "DNS 更新可能需要一天的时间。"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "请添加下面的 TXT 记录："
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "类型"
+      ],
+      "Host name": [
+        "主机名"
+      ],
+      "Value / Data / Points to": [
+        "数据"
+      ],
+      "Value / Data": [
+        "内容"
+      ],
+      "Priority": [
+        "优先权"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "邮箱地址"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "域名"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "Addresses": [
+        "邮箱地址"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "已验证"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "缺少密钥"
+      ],
+      "Enabled": [
+        "开启"
+      ],
+      "Disabled": [
+        "关闭"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "邮箱地址"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Catch-All": [
+        "全部捕获"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "域名已删除"
+      ],
+      "Sessions revoked": [
+        "会话已撤销"
+      ],
+      "User deleted": [
+        "用户已删除"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "域名"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Actions": [
+        "操作"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Username": [
+        "用户名"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "配置一个自定义域名邮箱（例如 you@yourcompany.com）。只需要几分钟，我们的向导将指导您完成整个过程。"
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        "升级到任何付费套餐以使用自定义域名并解锁高级功能"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐以使用 catch-all 邮箱并解锁高级功能"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "确定要关闭双重验证吗？"
       ]
     },
     "Onboarding Proton": {
@@ -5824,7 +6236,7 @@
         "完全正向保密 (PFS)"
       ],
       "Full Disk Encryption on Servers": [
-        ""
+        "服务器端全盘加密"
       ],
       "Split tunneling": [
         "VPN 分流"
@@ -6135,412 +6547,6 @@
         "免费"
       ]
     },
-    "Day": {
-      "Sunday": [
-        "星期日"
-      ],
-      "Monday": [
-        "星期一"
-      ],
-      "Tuesday": [
-        "星期二"
-      ],
-      "Wednesday": [
-        "星期三"
-      ],
-      "Thursday": [
-        "星期四"
-      ],
-      "Friday": [
-        "星期五"
-      ],
-      "Saturday": [
-        "星期六"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "共 ${ countContacts } 名联系人，成功导出 ${ contactsExported.length } 名联系人。"
-      ],
-      "No contacts exported.": [
-        "没有导出联系人。"
-      ]
-    },
-    "TableHeader": {
-      "Import": [
-        "导入"
-      ],
-      "CSV field": [
-        "CSV 字段"
-      ],
-      "vCard field": [
-        "vCard 字段"
-      ],
-      "Values": [
-        "值"
-      ],
-      "Name": [
-        "名称"
-      ],
-      "Country": [
-        "国家"
-      ],
-      "City": [
-        "城市"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "Action": [
-        "操作"
-      ]
-    },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "姓氏和名字至少应勾选一个"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "我们从您选择的 CSV 文件中检测到了以下信息，请选择要导入的内容。"
-      ],
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "另外，我们已将 CSV 自动转换成 vCard 信息，您可以查看并修改对应关系。"
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } 名联系人"
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "联系人 ${ contactId }: "
-      ]
-    },
-    "Import contacts warning": {
-      "for now": [
-        "暂时"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts 不支持 ${ forNow }:"
-      ]
-    },
-    "Import contacts": {
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "联系人导入成功，已显示在您的通讯录中。"
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
-      ]
-    },
-    "Import contact": {
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密并添加联系人时出错，未能导入任何联系人。"
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your calendar provider": [
-        "正在连接到您的日历提供商"
-      ],
-      "Connecting to your email provider": [
-        "正在连接到您的邮件提供商"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "验证账户"
-      ],
-      "Configure Import": [
-        "导入配置"
-      ],
-      "Import": [
-        "导入"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "退出导入？"
-      ],
-      "Quit import customization?": [
-        "退出导入定制？"
-      ],
-      "Import is incomplete!": [
-        "导入未完成！"
-      ],
-      "Remove from the list?": [
-        "从列表中移除此项？"
-      ],
-      "Delete all messages": [
-        "刪除所有邮件"
-      ]
-    },
-    "Import instructions emphasis": {
-      "Security": [
-        "安全"
-      ],
-      "turn on access": [
-        "打开访问权限"
-      ],
-      "app password": [
-        "应用专用密码"
-      ],
-      "Gmail Settings": [
-        "Gmail 设置"
-      ],
-      "Forwarding and POP/IMAP": [
-        "转发和 POP/IMAP"
-      ],
-      "IMAP access": [
-        "IMAP 访问"
-      ],
-      "Labels": [
-        "标签"
-      ],
-      "2-step verification": [
-        "两步验证"
-      ],
-      "Account info": [
-        "账户信息"
-      ],
-      "Account security": [
-        "账户安全"
-      ],
-      "Manage app passwords": [
-        "管理应用密码"
-      ]
-    },
-    "Import instructions": {
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，对安全性较低的应用${ boldAccess }。如果找不到此选项，您可能已经开启了两步验证。"
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，创建一个${ boldAppPassword }，导入过程中需要用到这个密码。"
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "在 ${ boldGmailSettings }中，确保${ boldForwarding } 中的 ${ boldIMAPAccess }选项已开启。"
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "在${ boldLabels }设置中，选择您要导入到 ProtonMail 的文件夹。"
-      ],
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "允许 ProtonMail 访问您的 Gmail 账户：根据您是否已开启${ bold2Steps }按相应步骤操作。"
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "最后，使用您要导入的账户${ googleMailLink }，${ googleCaptchaLink }。"
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, go to ${ boldManageAppPass } to generate a password. You will need this password during the import.": [
-        "登录雅虎邮箱，点击右上角您的用户名打开${ boldAccountInfo }。在${ boldAccountSec } 中，点击${ boldManageAppPass }并创建一个密码，导入过程中需要用到这个密码。"
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "两步验证已关闭（默认设置）"
-      ],
-      "2-step verification enabled": [
-        "两步验证已开启"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "如何在 Gmail 设置中开启对安全性较低的应用的访问权限"
-      ],
-      "How to create an app password in Gmail settings": [
-        "如何在 Gmail 设置中创建应用专用密码"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "如何在 Gmail 设置中开启 IMAP 转发"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "如何在 Gmail 设置中显示 IMAP 文件夹"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "如何禁用 Gmail 中的人机验证"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "登录到 Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "然后打开此页面以解锁人机验证"
-      ]
-    },
-    "Provider": {
-      "Gmail": [
-        "谷歌邮箱"
-      ],
-      "Yahoo Mail": [
-        "雅虎邮件"
-      ]
-    },
-    "Import error": {
-      "Invalid IMAP port": [
-        "IMAP 端口号无效"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "如果 Gmail 的${ bold2StepsDisabled }（这是默认选项），请确认："
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "如果 Gmail 的${ bold2StepsEnabled }，请确认您使用的是应用专用密码，而非平时使用的密码。"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "您也可以尝试在浏览器中退出${ boldGoogleAccounts }，然后解锁${ linkCAPTCHA }。"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
-      ],
-      "your password is correct": [
-        "密码输入无误"
-      ],
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "Google 账户的安全设置中已开启「允许不够安全的应用」选项"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "如果 Gmail 的${ bold2StepsDisabled }（这是 Gmail 的默认设置），请确认："
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "如果${ bold2StepsEnabled }，请确认您的邮箱地址和应用专用密码输入无误。${ boldNot }输入您平常用的密码。"
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
-      ],
-      "your email address and password are correct": [
-        "您输入的邮箱地址和密码正确"
-      ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "应用密码输入无误，${ boldNot }输入您平常用的密码"
-      ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton 无法连接您的 Yahoo 账户，请确认："
-      ],
-      "IMAP access is enabled in your Yahoo account": [
-        "您的 Yahoo 账户已开启 IMAP 功能"
-      ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接您的 Yahoo Mail 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "您的邮箱地址和应用专用密码输入无误，${ boldNot }输入您平常用的密码"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton 无法连接该邮箱，请确认："
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton 无法连接您的账户，请确认："
-      ],
-      "IMAP access is enabled in your external account": [
-        "您已在该邮箱中开启 IMAP 功能"
-      ],
-      "Use your app password if:": [
-        "在以下情况下使用您的应用密码："
-      ],
-      "2-step verification is enabled in your external account": [
-        "该邮箱开启了两步验证"
-      ],
-      "your email account requires one to export your data": [
-        "该邮箱需要应用专用密码才能导出数据"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接该邮箱账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Use your app password instead of your regular password if:": [
-        "下列情况需使用应用专用密码，不能用平常输入的密码："
-      ],
-      "2-step verification is enabled in your external email account": [
-        "该邮箱开启了两步验证"
-      ],
-      "your email account requires an app password to export your data": [
-        "该邮箱需要应用专用密码才能导出数据"
-      ],
-      "Too many recent requests. Please try again in a few moments.": [
-        "请求过于频繁，请稍后再试。"
-      ]
-    },
-    "Import error emphasis": {
-      "2-step verification is disabled": [
-        "两步验证已关闭"
-      ],
-      "2-step verification is enabled": [
-        "两步验证已开启"
-      ],
-      "all your other Google accounts": [
-        "您所有其他的 Google 账户"
-      ],
-      "not": [
-        "不要"
-      ],
-      "CAPTCHA": [
-        "验证码"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "永久删除 ${ email } 的信息"
-      ]
-    },
-    "Instructions": {
-      "To confirm this action enter the following text in the box below.": [
-        "要确认此操作，请在下方的框中输入以下文本："
-      ],
-      "Enter phrase to confirm": [
-        "输入以进行确认"
-      ]
-    },
-    "Import status": {
-      "Paused": [
-        "已暂停"
-      ],
-      "Canceled": [
-        "已取消"
-      ],
-      "Completed": [
-        "完成"
-      ],
-      "Failed": [
-        "失败"
-      ],
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% 已暂停"
-      ],
-      "Started": [
-        "已开始"
-      ],
-      "Canceling": [
-        "正在取消"
-      ],
-      "Delayed": [
-        "已延迟"
-      ]
-    },
-    "Title header": {
-      "Import": [
-        "导入"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Actions": [
-        "操作"
-      ]
-    },
-    "Import error link": {
-      "bandwidth limit": [
-        "带宽限制"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 有新版本，请${ reloadButton }。"
@@ -6704,97 +6710,6 @@
         "启用进阶日志"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "安卓"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 账号密码已重新生成"
-      ],
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } 已创建"
-      ],
-      "A disabled address cannot be primary": [
-        "已禁用的地址不能为主地址"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(通过 { entryCountryName })"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "解说全部线路"
-      ],
-      "Secure Core servers": [
-        "Secure Core 服务器"
-      ],
-      "Fastest VPN servers": [
-        "高速 VPN 服务器"
-      ],
-      "Torrenting support (P2P)": [
-        "支持 BT 下载 (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "最多可连接 ${ plusVpnConnections } 台设备"
-      ],
-      "Secure streaming support": [
-        "安全流媒体支持"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, 应有尽有。"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "常规"
-      ],
-      "Maximized": [
-        "满屏"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "舒适"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
     "Confirmation title": {
       "Delete payment method": [
         "删除支付方式"
@@ -6909,31 +6824,6 @@
         "ProtonMail 账单"
       ]
     },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "您好，我现在有事不在，暂时无法处理邮件。"
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "当收到不含受信密钥 ProtonMail 联系人的电子邮件时，将会有一个是否要启用受信密钥的横幅请求。"
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "使用可在下方配置的首选 PGP 格式，自动对所有发往非 ProtonMail 邮箱的邮件予以数字签名，以便他人验证您的邮件真实性。"
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "发送邮件时自动附上您的公钥，这样收件人就可以用其验证您的邮件真实性并向您发送加密邮件。"
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "选择用于与非 ProtonMail PGP 用户数字签名或加密邮件的默认 PGP 设置。请注意，内联 PGP 强制使用纯文本邮件。了解更多"
-      ]
-    },
     "Restore administrator panel": {
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由于密码更改，您的组织管理员权限已被限制。下列操作暂不可用："
@@ -6968,6 +6858,29 @@
     "Max VPN Connections": {
       "Connection": [
         "台设备可同时连接"
+      ]
+    },
+    "Feature": {
+      "VPN ${ connectionsPluralized }": [
+        "VPN ${ connectionsPluralized }"
+      ],
+      "Access to all countries": [
+        "解说全部线路"
+      ],
+      "Secure Core servers": [
+        "Secure Core 服务器"
+      ],
+      "Fastest VPN servers": [
+        "高速 VPN 服务器"
+      ],
+      "Torrenting support (P2P)": [
+        "支持 BT 下载 (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "最多可连接 ${ plusVpnConnections } 台设备"
+      ],
+      "Secure streaming support": [
+        "安全流媒体支持"
       ]
     },
     "User role": {
@@ -7011,6 +6924,150 @@
     "Private Member": {
       "private": [
         "私有"
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "安卓"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "Notification": {
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "OpenVPN / IKEv2 账号密码已重新生成"
+      ],
+      "A disabled address cannot be primary": [
+        "已禁用的地址不能为主地址"
+      ],
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } 已创建"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(通过 { entryCountryName })"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, 应有尽有。"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "默认"
+      ],
+      "Active": [
+        "已启用"
+      ],
+      "Disabled": [
+        "已禁用"
+      ],
+      "Orphan": [
+        "孤立的"
+      ],
+      "Missing keys": [
+        "丢失的密钥"
+      ]
+    },
+    "Success notification": {
+      "Address deleted": [
+        "地址已删除"
+      ],
+      "Address enabled": [
+        "地址已启用"
+      ],
+      "Address disabled": [
+        "地址已禁用"
+      ],
+      "Status updated": [
+        "状态已更改"
+      ],
+      "Filter removed": [
+        "规则已删除"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } 标签已删除"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "启用"
+      ],
+      "Disable": [
+        "禁用"
+      ],
+      "Generate missing keys": [
+        "生成缺失的密钥"
+      ],
+      "Delete": [
+        "刪除"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "常规"
+      ],
+      "Maximized": [
+        "满屏"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "舒适"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "您好，我现在有事不在，暂时无法处理邮件。"
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "当收到不含受信密钥 ProtonMail 联系人的电子邮件时，将会有一个是否要启用受信密钥的横幅请求。"
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "使用可在下方配置的首选 PGP 格式，自动对所有发往非 ProtonMail 邮箱的邮件予以数字签名，以便他人验证您的邮件真实性。"
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "发送邮件时自动附上您的公钥，这样收件人就可以用其验证您的邮件真实性并向您发送加密邮件。"
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "选择用于与非 ProtonMail PGP 用户数字签名或加密邮件的默认 PGP 设置。请注意，内联 PGP 强制使用纯文本邮件。了解更多"
       ]
     },
     "Step in filter modal": {
@@ -7129,26 +7186,6 @@
       ],
       "Trash": [
         "回收站"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "状态已更改"
-      ],
-      "Filter removed": [
-        "规则已删除"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } 标签已删除"
-      ],
-      "Address deleted": [
-        "地址已删除"
-      ],
-      "Address enabled": [
-        "地址已启用"
-      ],
-      "Address disabled": [
-        "地址已禁用"
       ]
     },
     "Settings/filters": {
@@ -7283,37 +7320,6 @@
         "标签已排序"
       ]
     },
-    "Address status": {
-      "Default": [
-        "默认"
-      ],
-      "Active": [
-        "已启用"
-      ],
-      "Disabled": [
-        "已禁用"
-      ],
-      "Orphan": [
-        "孤立的"
-      ],
-      "Missing keys": [
-        "丢失的密钥"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "启用"
-      ],
-      "Disable": [
-        "禁用"
-      ],
-      "Generate missing keys": [
-        "生成缺失的密钥"
-      ],
-      "Delete": [
-        "刪除"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 秒"
@@ -7370,6 +7376,139 @@
       ],
       "No verification method available": [
         "无可用的验证方法"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "姓名"
+      ],
+      "Email": [
+        "邮箱"
+      ],
+      "Phone": [
+        "电话"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Photo": [
+        "照片"
+      ],
+      "Organization": [
+        "单位"
+      ],
+      "Birthday": [
+        "生日"
+      ],
+      "Anniversary": [
+        "纪念日"
+      ],
+      "Title": [
+        "头衔"
+      ],
+      "Role": [
+        "身份"
+      ],
+      "Note": [
+        "备注"
+      ],
+      "URL": [
+        "网址"
+      ],
+      "Gender": [
+        "性别"
+      ],
+      "Language": [
+        "语言"
+      ],
+      "Timezone": [
+        "时区"
+      ],
+      "Geo": [
+        "坐标"
+      ],
+      "Logo": [
+        "标志"
+      ],
+      "Member": [
+        "成员"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "工作"
+      ],
+      "Personal": [
+        "私人"
+      ],
+      "Mobile": [
+        "手机"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Yomi": [
+        "读音"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Fax": [
+        "传真"
+      ],
+      "Pager": [
+        "寻呼机"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "邮箱"
+      ],
+      "Home": [
+        "家庭"
+      ],
+      "Work": [
+        "工作"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Phone": [
+        "电话"
+      ],
+      "Mobile": [
+        "手机"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Fax": [
+        "传真"
+      ],
+      "Pager": [
+        "寻呼机"
+      ],
+      "Address": [
+        "地址"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "字节"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Participant name": {
@@ -7906,137 +8045,27 @@
         "出现意外错误，需重新开始导入。"
       ]
     },
-    "Contact field label": {
-      "Name": [
-        "姓名"
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "日历正在同步中"
       ],
-      "Email": [
-        "邮箱"
+      "More than 12 hours passed since last update": [
+        "离上一个更新已经超过了12小时"
       ],
-      "Phone": [
-        "电话"
+      "Calendar link is wrong": [
+        "日历链接错误"
       ],
-      "Address": [
-        "地址"
+      "Calendar is too big": [
+        ""
       ],
-      "Photo": [
-        "照片"
+      "Calendar link is not accessible": [
+        "日历链接不能被访问"
       ],
-      "Organization": [
-        "单位"
+      "Calendar link is temporarily unaccessible": [
+        "日历链接暂时不能被访问"
       ],
-      "Birthday": [
-        "生日"
-      ],
-      "Anniversary": [
-        "纪念日"
-      ],
-      "Title": [
-        "头衔"
-      ],
-      "Role": [
-        "身份"
-      ],
-      "Note": [
-        "备注"
-      ],
-      "URL": [
-        "网址"
-      ],
-      "Gender": [
-        "性别"
-      ],
-      "Language": [
-        "语言"
-      ],
-      "Timezone": [
-        "时区"
-      ],
-      "Geo": [
-        "坐标"
-      ],
-      "Logo": [
-        "标志"
-      ],
-      "Member": [
-        "成员"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "工作"
-      ],
-      "Personal": [
-        "私人"
-      ],
-      "Mobile": [
-        "手机"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Yomi": [
-        "读音"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Fax": [
-        "传真"
-      ],
-      "Pager": [
-        "寻呼机"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "邮箱"
-      ],
-      "Home": [
-        "家庭"
-      ],
-      "Work": [
-        "工作"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Phone": [
-        "电话"
-      ],
-      "Mobile": [
-        "手机"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Fax": [
-        "传真"
-      ],
-      "Pager": [
-        "寻呼机"
-      ],
-      "Address": [
-        "地址"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密码必须至少包含 ${ length } 个字符"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "字节"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
+      "Failed to sync calendar": [
+        "同步日历失败"
       ]
     },
     "Import contact. Contact identifier": {
@@ -8255,25 +8284,15 @@
         "显示原始邮件"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } 和 ${ lastCategory }"
-      ]
-    },
-    "Email Unsubscribe": {
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        ""
-      ],
-      "You resubscribed to ${ categoriesJsx } emails.": [
-        ""
-      ],
-      "Which emails do you want to receive from Proton?": [
-        "您想要从 Proton 接收哪些电子邮件？"
-      ]
-    },
     "Settings section title": {
       "General": [
         "常规"
+      ],
+      "Import & export": [
+        "导入与导出"
+      ],
+      "Calendars": [
+        "日历"
       ],
       "Identity & addresses": [
         "身份和地址"
@@ -8296,17 +8315,8 @@
       "Encryption & keys": [
         "加密与密钥"
       ],
-      "Import & export": [
-        "导入与导出"
-      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
-      ],
-      "Calendars": [
-        "日历"
-      ],
-      "VPN apps": [
-        "VPN apps"
       ],
       "Users & addresses": [
         ""
@@ -8319,6 +8329,9 @@
       ],
       "Multi-user support": [
         "多用户功能"
+      ],
+      "VPN apps": [
+        "VPN apps"
       ],
       "Account": [
         "账户"
@@ -8349,6 +8362,22 @@
       ],
       "Back to Drive": [
         "返回网盘"
+      ]
+    },
+    "Email Unsubscribe Categories": {
+      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
+        "${ allCategoriesExceptTheLastOne } 和 ${ lastCategory }"
+      ]
+    },
+    "Email Unsubscribe": {
+      "You unsubscribed from ${ categoriesJsx } emails.": [
+        ""
+      ],
+      "You resubscribed to ${ categoriesJsx } emails.": [
+        ""
+      ],
+      "Which emails do you want to receive from Proton?": [
+        "您想要从 Proton 接收哪些电子邮件？"
       ]
     },
     "Signup label": {

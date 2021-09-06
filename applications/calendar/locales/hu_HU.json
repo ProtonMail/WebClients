@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Ismeretlen hiba"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Hitelesítési hiba."
-      ],
-      "Unknown error": [
-        "Ismeretlen hiba"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
@@ -93,6 +93,24 @@
       "Invalid code": [
         "Érvénytelen kód"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Helytelen bejelentkezési adatok. Próbálja meg újra"
+      ],
+      "Can't validate email, try again later": [
+        "E-mail ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Enter 6 digits": [
+        "6 számjegyet írjon be"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
       "Preferences could not be saved": [
         "Beállítások mentése nem sikerült"
       ],
@@ -146,24 +164,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Helytelen bejelentkezési adatok. Próbálja meg újra"
-      ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Enter 6 digits": [
-        "6 számjegyet írjon be"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
-      ],
       "No valid address found": [
         "Nem található érvényes e-mail cím"
       ],
@@ -194,6 +194,12 @@
       "Request timed out.": [
         "A kérés túllépte az időkorlátot."
       ],
+      "Signature verification failed": [
+        "Az aláírás ellenőrzése sikertelen volt"
+      ],
+      "Could not find address ${ email }.": [
+        "A(z) ${ email }. e-mail cím nem található."
+      ],
       "Missing signature": [
         "Hiányzó aláírás"
       ],
@@ -202,12 +208,6 @@
       ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
-      ],
-      "Signature verification failed": [
-        "Az aláírás ellenőrzése sikertelen volt"
-      ],
-      "Could not find address ${ email }.": [
-        "A(z) ${ email }. e-mail cím nem található."
       ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
@@ -341,6 +341,9 @@
       "Load image": [
         "Kép betöltése"
       ],
+      "refresh the page": [
+        "az oldal frissítése"
+      ],
       "Export": [
         "Exportálás"
       ],
@@ -386,8 +389,8 @@
       "Confirm opening of link ${ link }": [
         "Link megnyitásának jóváhagyása: ${ link }"
       ],
-      "refresh the page": [
-        "az oldal frissítése"
+      "Continue with Google": [
+        "Folytatás Google fiókkal"
       ],
       "Select timezone": [
         "Időzóna kiválasztása"
@@ -542,6 +545,30 @@
       "Increase": [
         "Növel"
       ],
+      "Log in": [
+        "Belépés"
+      ],
+      "View invoice": [
+        "Számla megtekintése"
+      ],
+      "Get verification code": [
+        "Ellenőrző kód küldése"
+      ],
+      "Try another method": [
+        "Másik módszer"
+      ],
+      "Request new code": [
+        "Új kód kérése"
+      ],
+      "Did not receive the code?": [
+        "Nem kapta meg a kódot?"
+      ],
+      "Edit email address": [
+        "E-mail cím módosítása"
+      ],
+      "Edit phone number": [
+        "Telefonszám módosítása"
+      ],
       "Save": [
         "Mentés"
       ],
@@ -634,9 +661,6 @@
       "Export contacts": [
         "Névjegyek exportálása"
       ],
-      "Continue with Google": [
-        "Folytatás Google fiókkal"
-      ],
       "Import contacts": [
         "Névjegyek importálása"
       ],
@@ -657,30 +681,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Log in": [
-        "Belépés"
-      ],
-      "View invoice": [
-        "Számla megtekintése"
-      ],
-      "Get verification code": [
-        "Ellenőrző kód küldése"
-      ],
-      "Try another method": [
-        "Másik módszer"
-      ],
-      "Request new code": [
-        "Új kód kérése"
-      ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
-      ],
-      "Edit email address": [
-        "E-mail cím módosítása"
-      ],
-      "Edit phone number": [
-        "Telefonszám módosítása"
       ],
       "Close this banner": [
         "Panel bezárása"
@@ -915,6 +915,27 @@
       "${ appName } customization": [
         "${ appName } testreszabása"
       ],
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ],
+      "Account suspended": [
+        "Fiók felfüggesztve"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Request new code": [
+        "Új kód kérése"
+      ],
+      "Human verification": [
+        "Robot ellenőrzés"
+      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
       ],
@@ -1047,27 +1068,6 @@
       ],
       "Import in progress": [
         ""
-      ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
-      "Account suspended": [
-        "Fiók felfüggesztve"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
-      ],
-      "Request new code": [
-        "Új kód kérése"
-      ],
-      "Human verification": [
-        "Robot ellenőrzés"
       ],
       "Select the way to send this notification": [
         "Válassza ki az emlékeztető elküldésének módját"
@@ -1218,8 +1218,14 @@
       "No results found": [
         "Nincs találat"
       ],
+      "support team": [
+        "ügyfélszolgálati csoport"
+      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
+      ],
+      "Loading": [
+        "Betöltés"
       ],
       "Week": [
         "Hét"
@@ -1238,12 +1244,6 @@
       ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
-      ],
-      "support team": [
-        "ügyfélszolgálati csoport"
-      ],
-      "Loading": [
-        "Betöltés"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
@@ -1497,6 +1497,45 @@
       "Expired": [
         "Lejárt"
       ],
+      "here": [
+        "itt"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
       ],
@@ -1636,45 +1675,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "here": [
-        "itt"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
@@ -2049,6 +2049,33 @@
       "Payer": [
         "Teherviselő"
       ],
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Two-factor authentication code": [
+        "Kétlépcsős hitelesítő kód"
+      ],
+      "Username or ProtonMail address": [
+        "Felhasználónév vagy ProtonMail cím"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "Verification code": [
+        "Ellenőrző kód"
+      ],
+      "Enter the 6-digit code": [
+        "Írja be a hatjegyű kódot"
+      ],
       "Keyboard shortcuts": [
         "Gyorsbillentyűk"
       ],
@@ -2105,33 +2132,6 @@
       ],
       "To: ${ toEmailAddress }": [
         ""
-      ],
-      "Cancel": [
-        "Mégsem"
-      ],
-      "Submit": [
-        "Küldés"
-      ],
-      "Password": [
-        "Jelszó"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
-      "Username or ProtonMail address": [
-        "Felhasználónév vagy ProtonMail cím"
-      ],
-      "Phone number": [
-        "Telefonszám"
-      ],
-      "Verification code": [
-        "Ellenőrző kód"
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
       ],
       "Name": [
         "Név"
@@ -2290,6 +2290,9 @@
       "Gift code": [
         "Ajándék kód"
       ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
       ],
@@ -2307,9 +2310,6 @@
       ],
       "Name": [
         "Név"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
       ],
       "Add a calendar name": [
         "Adja meg a naptár nevét"
@@ -2338,6 +2338,11 @@
       "${ minutes } minute": [
         "${ minutes } perc",
         "${ minutes } perc"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
       ]
     },
     "Tooltip": {
@@ -2544,6 +2549,12 @@
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
       ],
+      "Code sent to ${ methodTo }": [
+        "Kód elküldve: ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sikeres ellenőrzés"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Gyorsbillentyű beállítások frissítve"
       ],
@@ -2569,12 +2580,6 @@
       ],
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kód elküldve: ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Sikeres ellenőrzés"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2671,11 +2676,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
         "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Select search results": {
@@ -3364,6 +3364,28 @@
         "Bitcoin"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Lejárt számla"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Kézi"
+      ],
+      "No verification method available": [
+        "Nincs elérhető ellenőrzési módszer"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
@@ -3680,28 +3702,6 @@
         ""
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Lejárt számla"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Kézi"
-      ],
-      "No verification method available": [
-        "Nincs elérhető ellenőrzési módszer"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
@@ -3761,6 +3761,37 @@
       ],
       "120 minutes": [
         "120 perc"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        ""
+      ],
+      "Syncing": [
+        ""
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        ""
+      ],
+      "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        ""
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        ""
       ]
     },
     "Alarm notification": {
@@ -4315,6 +4346,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Név"
@@ -4427,12 +4464,6 @@
       ],
       "Address": [
         "Cím"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A jelszónak legalább ${ length } karakterből kell állnia",
-        "A jelszónak legalább ${ length } karakterből kell állnia"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4610,6 +4641,11 @@
         "Eredeti üzenet megjelenítése"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+      ]
+    },
     "Import contact. Contact identifier": {
       "unknown": [
         "ismeretlen"
@@ -4654,11 +4690,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -4747,11 +4778,6 @@
       "${ value } week after at ${ time }": [
         "${ value } héttel utána, ekkor: ${ time }",
         "${ value } héttel utána, ekkor: ${ time }"
-      ]
-    },
-    "Calendar status": {
-      "not synced": [
-        ""
       ]
     },
     "Disabled calendar name suffix": {

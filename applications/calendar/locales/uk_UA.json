@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Невідома помилка"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Помилка автентифікації."
-      ],
-      "Unknown error": [
-        "Невідома помилка"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
@@ -93,6 +93,24 @@
       "Invalid code": [
         "Недійсний код"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Неправильний пароль поштової скриньки. Спробуйте знову"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Неправильні дані для входу. Будь ласка спробуйте ще раз"
+      ],
+      "Can't validate email, try again later": [
+        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
+      ],
+      "Can't validate phone, try again later": [
+        "Не вдається перевіити номер телефону. Спробуйте знову пізніше"
+      ],
+      "Enter 6 digits": [
+        "Введіть 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Хибний код підтвердження"
+      ],
       "Preferences could not be saved": [
         "Не вдалося зберегти налаштування"
       ],
@@ -150,24 +168,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Неправильний пароль поштової скриньки. Спробуйте знову"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Неправильні дані для входу. Будь ласка спробуйте ще раз"
-      ],
-      "Can't validate email, try again later": [
-        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
-      ],
-      "Can't validate phone, try again later": [
-        "Не вдається перевіити номер телефону. Спробуйте знову пізніше"
-      ],
-      "Enter 6 digits": [
-        "Введіть 6 цифр"
-      ],
-      "Invalid verification code": [
-        "Хибний код підтвердження"
-      ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
       ],
@@ -198,6 +198,12 @@
       "Request timed out.": [
         "Час очікування запиту сплив."
       ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
+      ],
+      "Could not find address ${ email }.": [
+        "Неможливо знайти адресу ${ email }."
+      ],
       "Missing signature": [
         "Відсутній підпис"
       ],
@@ -206,12 +212,6 @@
       ],
       "Signature not verified": [
         "Підпис не перевірено"
-      ],
-      "Signature verification failed": [
-        "Неможливо перевірити підпис"
-      ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
       ],
       "Email address disabled": [
         "Адресу е-пошти вимкнено"
@@ -353,6 +353,9 @@
       "Load image": [
         "Завантажити зображення"
       ],
+      "refresh the page": [
+        "оновити сторінку"
+      ],
       "Export": [
         "Експорт"
       ],
@@ -398,8 +401,8 @@
       "Confirm opening of link ${ link }": [
         "Підтвердити відкриття посилання ${ link }"
       ],
-      "refresh the page": [
-        "оновити сторінку"
+      "Continue with Google": [
+        "Продовжити з Google"
       ],
       "Select timezone": [
         "Вибрати часовий пояс"
@@ -554,6 +557,30 @@
       "Increase": [
         "Збільшити"
       ],
+      "Log in": [
+        "Увійти"
+      ],
+      "View invoice": [
+        "Переглянути рахунок-фактуру"
+      ],
+      "Get verification code": [
+        "Отримати код підтвердження"
+      ],
+      "Try another method": [
+        "Спробувати інший спосіб"
+      ],
+      "Request new code": [
+        "Отримати новий код"
+      ],
+      "Did not receive the code?": [
+        "Не отримали код?"
+      ],
+      "Edit email address": [
+        "Змінити електронну адресу"
+      ],
+      "Edit phone number": [
+        "Змінити номер телефону"
+      ],
       "Save": [
         "Зберегти"
       ],
@@ -650,9 +677,6 @@
       "Export contacts": [
         "Експортувати контакти"
       ],
-      "Continue with Google": [
-        "Продовжити з Google"
-      ],
       "Import contacts": [
         "Імпортувати контакти"
       ],
@@ -673,30 +697,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Log in": [
-        "Увійти"
-      ],
-      "View invoice": [
-        "Переглянути рахунок-фактуру"
-      ],
-      "Get verification code": [
-        "Отримати код підтвердження"
-      ],
-      "Try another method": [
-        "Спробувати інший спосіб"
-      ],
-      "Request new code": [
-        "Отримати новий код"
-      ],
-      "Did not receive the code?": [
-        "Не отримали код?"
-      ],
-      "Edit email address": [
-        "Змінити електронну адресу"
-      ],
-      "Edit phone number": [
-        "Змінити номер телефону"
       ],
       "Close this banner": [
         "Закрити цей банер"
@@ -931,6 +931,27 @@
       "${ appName } customization": [
         "Налаштування ${ appName }"
       ],
+      "Sign in again to continue": [
+        "Увійдіть знову для продовження"
+      ],
+      "Account suspended": [
+        "Обліковий запис призупинено"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
+      ],
+      "Enter your password": [
+        "Введіть свій пароль"
+      ],
+      "Invalid verification code": [
+        "Недійсний код підтвердження"
+      ],
+      "Request new code": [
+        "Отримати новий код"
+      ],
+      "Human verification": [
+        "Перевірка \"Я не робот\""
+      ],
       "${ appName } Keyboard Shortcuts": [
         "Комбінації клавіш ${ appName }"
       ],
@@ -1071,27 +1092,6 @@
       ],
       "Import in progress": [
         ""
-      ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
-      ],
-      "Account suspended": [
-        "Обліковий запис призупинено"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
-      ],
-      "Enter your password": [
-        "Введіть свій пароль"
-      ],
-      "Invalid verification code": [
-        "Недійсний код підтвердження"
-      ],
-      "Request new code": [
-        "Отримати новий код"
-      ],
-      "Human verification": [
-        "Перевірка \"Я не робот\""
       ],
       "Select the way to send this notification": [
         "Виберіть спосіб надсилання цього сповіщення"
@@ -1242,8 +1242,14 @@
       "No results found": [
         "Результатів не знайдено"
       ],
+      "support team": [
+        "командою підтримки"
+      ],
       "No contacts added yet": [
         "Контактів ще не додано"
+      ],
+      "Loading": [
+        "Завантаження"
       ],
       "Week": [
         "Тиждень"
@@ -1262,12 +1268,6 @@
       ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
-      ],
-      "support team": [
-        "командою підтримки"
-      ],
-      "Loading": [
-        "Завантаження"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } учасник)",
@@ -1527,6 +1527,45 @@
       "Expired": [
         "Термін дії минув"
       ],
+      "here": [
+        "тут"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Цей обліковий запис було призупинено через потенційне порушення правил."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваша електронна пошта використається лише для цієї одноразової перевірки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефону використається лише для цієї одноразової перевірки."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
       ],
@@ -1676,45 +1715,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "here": [
-        "тут"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Цей обліковий запис було призупинено через потенційне порушення правил."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Введіть код перевірки, який був надісланий на ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ваш номер телефону використається лише для цієї одноразової перевірки."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ було обмежено. ${ payInvoiceLink }"
@@ -2089,6 +2089,33 @@
       "Payer": [
         "Платник"
       ],
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Submit": [
+        "Надіслати"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Two-factor authentication code": [
+        "Код двоетапної перевірки"
+      ],
+      "Username or ProtonMail address": [
+        "Ім'я користувача або адреса ProtonMail"
+      ],
+      "Phone number": [
+        "Номер телефону"
+      ],
+      "Verification code": [
+        "Код підтвердження"
+      ],
+      "Enter the 6-digit code": [
+        "Введіть 6-значний код"
+      ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
       ],
@@ -2145,33 +2172,6 @@
       ],
       "To: ${ toEmailAddress }": [
         ""
-      ],
-      "Cancel": [
-        "Скасувати"
-      ],
-      "Submit": [
-        "Надіслати"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
-      ],
-      "Username or ProtonMail address": [
-        "Ім'я користувача або адреса ProtonMail"
-      ],
-      "Phone number": [
-        "Номер телефону"
-      ],
-      "Verification code": [
-        "Код підтвердження"
-      ],
-      "Enter the 6-digit code": [
-        "Введіть 6-значний код"
       ],
       "Name": [
         "Назва"
@@ -2330,6 +2330,9 @@
       "Gift code": [
         "Подарунковий код"
       ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
       "Start typing an email address": [
         "Почніть вводити адресу електронної пошти"
       ],
@@ -2347,9 +2350,6 @@
       ],
       "Name": [
         "Назва"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
       ],
       "Add a calendar name": [
         "Додати назву календаря"
@@ -2382,6 +2382,11 @@
         "${ minutes } хвилини",
         "${ minutes } хвилин",
         "${ minutes } хвилин"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не можна застосовувати для шифрування"
       ]
     },
     "Tooltip": {
@@ -2592,6 +2597,12 @@
       "You have successfully unsubscribed": [
         "Ви успішно відписались"
       ],
+      "Code sent to ${ methodTo }": [
+        "Код надісланий до ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Перевірка пройшла успішно"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Налаштування комбінацій клавіш оновлено"
       ],
@@ -2621,12 +2632,6 @@
       ],
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Код надісланий до ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Перевірка пройшла успішно"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Календар додано. Може знадобитися кілька хвилин для синхронізації."
@@ -2725,11 +2730,6 @@
         "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
         "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
         "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не можна застосовувати для шифрування"
       ]
     },
     "Select search results": {
@@ -3440,6 +3440,28 @@
         "Bitcoin"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Протермінований рахунок"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Електронна пошта"
+      ],
+      "SMS": [
+        "СМС"
+      ],
+      "Manual": [
+        "Вручну"
+      ],
+      "No verification method available": [
+        "Немає доступних способів перевірки"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Бета-доступ дозволяє вам користуватися тестовою версією ProtonMail, Proton Calendar та Proton Drive до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
@@ -3778,28 +3800,6 @@
         ""
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Протермінований рахунок"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Електронна пошта"
-      ],
-      "SMS": [
-        "СМС"
-      ],
-      "Manual": [
-        "Вручну"
-      ],
-      "No verification method available": [
-        "Немає доступних способів перевірки"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна нова версія ${ appName }. ${ reloadButton }."
@@ -3867,6 +3867,37 @@
       ],
       "120 minutes": [
         "120 хвилин"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Не синхронізовано"
+      ],
+      "Syncing": [
+        "Синхронізація"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Календар синхронізується"
+      ],
+      "More than 12 hours passed since last update": [
+        "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Calendar link is wrong": [
+        "Хибне посилання календаря"
+      ],
+      "Calendar is too big": [
+        "Календар завеликий"
+      ],
+      "Calendar link is not accessible": [
+        "Календар за посиланням недоступний"
+      ],
+      "Calendar link is temporarily unaccessible": [
+        "Календар за посиланням тимчасово недоступний"
+      ],
+      "Failed to sync calendar": [
+        "Не вдалося синхронізувати календар"
       ]
     },
     "Alarm notification": {
@@ -4495,6 +4526,14 @@
         "ГБ"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Ім'я"
@@ -4607,14 +4646,6 @@
       ],
       "Address": [
         "Адреса"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4792,6 +4823,11 @@
         "Показати оригінальне повідомлення"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+      ]
+    },
     "Import contact. Contact identifier": {
       "unknown": [
         "невідомо"
@@ -4836,11 +4872,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -4961,11 +4992,6 @@
         "${ value } тижні після, о ${ time }",
         "${ value } тижнів після, о ${ time }",
         "${ value } тижнів після, о ${ time }"
-      ]
-    },
-    "Calendar status": {
-      "not synced": [
-        "не синхронізовано"
       ]
     },
     "Disabled calendar name suffix": {

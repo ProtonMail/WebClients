@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Bilinmeyen hata"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu ileti, mevcut tarayıcınızda açılamayacak bazı bağlantı adreslerini içerebilir"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "Doğrulama hatası."
-      ],
-      "Unknown error": [
-        "Bilinmeyen hata"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermemektedir. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
@@ -93,6 +93,24 @@
       "Invalid code": [
         "Geçersiz kod"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Giriş bilgileri yanlış, lütfen tekrar deneyin"
+      ],
+      "Can't validate email, try again later": [
+        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Enter 6 digits": [
+        "6 hane girin"
+      ],
+      "Invalid verification code": [
+        "Doğrulama kodu geçersiz"
+      ],
       "Preferences could not be saved": [
         "Tercihler kaydedilemedi"
       ],
@@ -146,24 +164,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Giriş bilgileri yanlış, lütfen tekrar deneyin"
-      ],
-      "Can't validate email, try again later": [
-        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Enter 6 digits": [
-        "6 hane girin"
-      ],
-      "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
-      ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
@@ -194,6 +194,12 @@
       "Request timed out.": [
         "İstek zaman aşımına uğradı."
       ],
+      "Signature verification failed": [
+        "İmza doğrulaması başarısız oldu"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
+      ],
       "Missing signature": [
         "İmza eksik"
       ],
@@ -202,12 +208,6 @@
       ],
       "Signature not verified": [
         "İmza doğrulanamadı"
-      ],
-      "Signature verification failed": [
-        "İmza doğrulaması başarısız oldu"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
       ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
@@ -341,6 +341,9 @@
       "Load image": [
         "Resim yükle"
       ],
+      "refresh the page": [
+        "sayfayı yenileyin"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -386,8 +389,8 @@
       "Confirm opening of link ${ link }": [
         "${ link } bağlantısını açmayı onaylayın"
       ],
-      "refresh the page": [
-        "sayfayı yenileyin"
+      "Continue with Google": [
+        "Google ile devam et"
       ],
       "Select timezone": [
         "Zaman dilimini seçin"
@@ -542,6 +545,30 @@
       "Increase": [
         "Arttır"
       ],
+      "Log in": [
+        "Giriş yap"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu al"
+      ],
+      "Try another method": [
+        "Başka bir yöntem deneyin"
+      ],
+      "Request new code": [
+        "Yeni kod isteyin"
+      ],
+      "Did not receive the code?": [
+        "Kodu alamadınız mı?"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -634,9 +661,6 @@
       "Export contacts": [
         "Kişileri dışa aktar"
       ],
-      "Continue with Google": [
-        "Google ile devam et"
-      ],
       "Import contacts": [
         "Kişileri içe aktar"
       ],
@@ -657,30 +681,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Log in": [
-        "Giriş yap"
-      ],
-      "View invoice": [
-        "Faturayı görüntüle"
-      ],
-      "Get verification code": [
-        "Doğrulama kodu al"
-      ],
-      "Try another method": [
-        "Başka bir yöntem deneyin"
-      ],
-      "Request new code": [
-        "Yeni kod isteyin"
-      ],
-      "Did not receive the code?": [
-        "Kodu alamadınız mı?"
-      ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
-      "Edit phone number": [
-        "Telefon numarasını düzenle"
       ],
       "Close this banner": [
         "Bu uyarıyı kapat"
@@ -915,6 +915,27 @@
       "${ appName } customization": [
         "${ appName } özelleştirme"
       ],
+      "Sign in again to continue": [
+        "Devam etmek için tekrar giriş yapın"
+      ],
+      "Account suspended": [
+        "Hesap askıya alındı"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi giriniz"
+      ],
+      "Enter your password": [
+        "Şifrenizi giriniz"
+      ],
+      "Invalid verification code": [
+        "Geçersiz doğrulama kodu"
+      ],
+      "Request new code": [
+        "Yeni kod isteyin"
+      ],
+      "Human verification": [
+        "İnsan doğrulaması"
+      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Klavye Kısayolları"
       ],
@@ -1047,27 +1068,6 @@
       ],
       "Import in progress": [
         ""
-      ],
-      "Sign in again to continue": [
-        "Devam etmek için tekrar giriş yapın"
-      ],
-      "Account suspended": [
-        "Hesap askıya alındı"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi giriniz"
-      ],
-      "Enter your password": [
-        "Şifrenizi giriniz"
-      ],
-      "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
-      ],
-      "Request new code": [
-        "Yeni kod isteyin"
-      ],
-      "Human verification": [
-        "İnsan doğrulaması"
       ],
       "Select the way to send this notification": [
         "Bu bildirimi gönderme yöntemini seçin"
@@ -1218,8 +1218,14 @@
       "No results found": [
         "Sonuç bulunamadı"
       ],
+      "support team": [
+        "destek ekibi"
+      ],
       "No contacts added yet": [
         "Henüz kişi eklenmedi"
+      ],
+      "Loading": [
+        "Yükleniyor"
       ],
       "Week": [
         "Hafta"
@@ -1238,12 +1244,6 @@
       ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
-      ],
-      "support team": [
-        "destek ekibi"
-      ],
-      "Loading": [
-        "Yükleniyor"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
@@ -1497,6 +1497,45 @@
       "Expired": [
         "Süresi dolmuş"
       ],
+      "here": [
+        "burada"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen önceki faturalarınızı ödeyiniz."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "${ destinationText } adresine gönderilen doğrulama kodunu giriniz."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "E-postayı gelen kutunuzda bulamazsanız, lütfen spam kutusunu kontrol ediniz."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni Kod İste\" seçeneğine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" seçeneğine tıklayın."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Spam ve kötüye kullanımla mücadele etmek için lütfen insan olduğunuzu doğrulayın."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-postanız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hesap oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde size yanıt vereceğiz."
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
       ],
@@ -1636,45 +1675,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "here": [
-        "burada"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen önceki faturalarınızı ödeyiniz."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu giriniz."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda bulamazsanız, lütfen spam kutusunu kontrol ediniz."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni Kod İste\" seçeneğine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" seçeneğine tıklayın."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanımla mücadele etmek için lütfen insan olduğunuzu doğrulayın."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "E-postanız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hesap oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde size yanıt vereceğiz."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Hesabınızda vadesi geçmiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
@@ -2049,6 +2049,33 @@
       "Payer": [
         "Ödeyen"
       ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Submit": [
+        "Gönder"
+      ],
+      "Password": [
+        "Şifre"
+      ],
+      "Mailbox password": [
+        "Posta kutusu şifresi"
+      ],
+      "Two-factor authentication code": [
+        "İki faktörlü kimlik doğrulama kodu"
+      ],
+      "Username or ProtonMail address": [
+        "Kullanıcı ya da ProtonMail adresi"
+      ],
+      "Phone number": [
+        "Telefon numarası"
+      ],
+      "Verification code": [
+        "Doğrulama kodu"
+      ],
+      "Enter the 6-digit code": [
+        "6 haneli kodu girin"
+      ],
       "Keyboard shortcuts": [
         "Klavye kısayolları"
       ],
@@ -2105,33 +2132,6 @@
       ],
       "To: ${ toEmailAddress }": [
         ""
-      ],
-      "Cancel": [
-        "İptal et"
-      ],
-      "Submit": [
-        "Gönder"
-      ],
-      "Password": [
-        "Şifre"
-      ],
-      "Mailbox password": [
-        "Posta kutusu şifresi"
-      ],
-      "Two-factor authentication code": [
-        "İki faktörlü kimlik doğrulama kodu"
-      ],
-      "Username or ProtonMail address": [
-        "Kullanıcı ya da ProtonMail adresi"
-      ],
-      "Phone number": [
-        "Telefon numarası"
-      ],
-      "Verification code": [
-        "Doğrulama kodu"
-      ],
-      "Enter the 6-digit code": [
-        "6 haneli kodu girin"
       ],
       "Name": [
         "İsim"
@@ -2290,6 +2290,9 @@
       "Gift code": [
         "Hediye kodu"
       ],
+      "Mailbox password": [
+        "Posta kutusu şifresi"
+      ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
       ],
@@ -2307,9 +2310,6 @@
       ],
       "Name": [
         "İsim"
-      ],
-      "Mailbox password": [
-        "Posta kutusu şifresi"
       ],
       "Add a calendar name": [
         "Takvim adı ekleyin"
@@ -2338,6 +2338,11 @@
       "${ minutes } minute": [
         "${ minutes } dakika",
         "${ minutes } dakika"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Anahtar şifreleme için kullanılamaz"
       ]
     },
     "Tooltip": {
@@ -2544,6 +2549,12 @@
       "You have successfully unsubscribed": [
         "Aboneliğinizi başarıyla iptal ettiniz"
       ],
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } kod gönder"
+      ],
+      "Verification successful": [
+        "Doğrulama başarılı"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Klavye kısayol tercihleri güncellendi"
       ],
@@ -2569,12 +2580,6 @@
       ],
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
-      ],
-      "Code sent to ${ methodTo }": [
-        "${ methodTo } kod gönder"
-      ],
-      "Verification successful": [
-        "Doğrulama başarılı"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Takvim eklendi. Eşlenmesi birkaç dakika sürebilir."
@@ -2671,11 +2676,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } önerisi bulundu, gezinmek için klavye kullanın.",
         "${ items.length } önerisi bulundu, gezinmek için klavye kullanın."
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Anahtar şifreleme için kullanılamaz"
       ]
     },
     "Select search results": {
@@ -3364,6 +3364,28 @@
         "Bitcoin"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Gecikmiş fatura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "El ile"
+      ],
+      "No verification method available": [
+        "Kullanılabilir doğrulama yöntemi yok"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Beta Erişimi, herkese sunulmadan önce ProtonMail, Proton Calendar ve Proton Drive'ın beta sürümünü kullanmanıza olanak tanır. Bu, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişi olabileceğiniz anlamına gelir."
@@ -3680,28 +3702,6 @@
         ""
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Gecikmiş fatura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-posta"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "El ile"
-      ],
-      "No verification method available": [
-        "Kullanılabilir doğrulama yöntemi yok"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } uygulamasının yeni bir sürümü mevcut. ${ reloadButton }."
@@ -3761,6 +3761,37 @@
       ],
       "120 minutes": [
         "120 dakika"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        ""
+      ],
+      "Syncing": [
+        ""
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        ""
+      ],
+      "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        ""
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        ""
       ]
     },
     "Alarm notification": {
@@ -4315,6 +4346,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Şifre en az ${ length } karakter içermelidir",
+        "Şifre en az ${ length } karakter içermelidir"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Ad"
@@ -4427,12 +4464,6 @@
       ],
       "Address": [
         "Adres"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4610,6 +4641,11 @@
         "İletinin aslını görüntüle"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
+      ]
+    },
     "Import contact. Contact identifier": {
       "unknown": [
         "bilinmiyor"
@@ -4654,11 +4690,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "${ formattedFilename } dosyanız okunurken bir hata oluştu. Dosya doğru biçime sahip değil."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Message": {
@@ -4747,11 +4778,6 @@
       "${ value } week after at ${ time }": [
         "${ value }, ${ time } hafta sonra",
         "${ value }, ${ time } hafta sonra"
-      ]
-    },
-    "Calendar status": {
-      "not synced": [
-        "eşitlenmedi"
       ]
     },
     "Disabled calendar name suffix": {
