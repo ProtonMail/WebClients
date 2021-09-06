@@ -3,11 +3,12 @@ import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import SidebarListItemLink, { Props as SidebarListItemProps } from './SidebarListItemLink';
+import { IconSize } from '../icon/Icon';
 
 interface Props extends SidebarListItemProps {
     to: string;
     icon?: string;
-    iconSize?: number;
+    iconSize?: IconSize;
     iconColor?: string;
     children: React.ReactNode;
 }

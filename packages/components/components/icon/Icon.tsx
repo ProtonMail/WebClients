@@ -1,67 +1,65 @@
-import { forwardRef, memo } from 'react';
-import * as React from 'react';
+import { forwardRef } from 'react';
+
 import { classnames } from '../../helpers';
 
-export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+export type IconSize = 6 | 8 | 10 | 11 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 28 | 40 | 42 | 48 | 56 | 60 | 100 | 110;
+
+export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+    /** Determines which icon to render based on its name */
     name: string;
+    /** If specified, renders an sr-only element for screenreaders */
     alt?: string;
+    /** If specified, renders an inline title element */
     title?: string;
-    viewBox?: string;
-    className?: string;
-    size?: number;
-    color?: string;
+    /** The size of the icon */
+    size?: IconSize;
+    /** How many degrees the icon should be rotated */
     rotate?: number;
+    /** Applied as inline css 'color' attribute on the svg element */
+    color?: string;
+    /** Icon name prefix */
     nameSpaceSvg?: string;
 }
 
-/**
- * Component to print svg icon
- * <Icon name="tag" alt="My label" />
- * @param name of the svg icon present in the design-system
- * @param className used on svg tag
- * @param size      To construct the icon size className icon-<size>p (default 16)
- * @param viewBox
- * @param color
- * @param alt       Used by screen reader
- * @param title     equivalent of title attribute
- * @param rotate    How many degrees the icon should be rotated
- */
-const Icon = (
-    {
-        name,
-        alt,
-        title,
-        color,
-        className = '',
-        viewBox = '0 0 16 16',
-        size = 16,
-        rotate = 0,
-        nameSpaceSvg = 'ic',
-        ...rest
-    }: Props,
-    ref: React.Ref<SVGSVGElement>
-) => {
-    const style = {
-        ...(color && { color }),
-        ...(rotate && { transform: `rotate(${rotate}deg)` }),
-    };
-    return (
-        <>
-            <svg
-                style={style}
-                viewBox={viewBox}
-                className={classnames([`icon-${size}p`, className])}
-                role="img"
-                focusable="false"
-                ref={ref}
-                {...rest}
-            >
-                {title ? <title>{title}</title> : null}
-                <use xlinkHref={name.startsWith('#') ? name : `#${nameSpaceSvg}-${name}`} />
-            </svg>
-            {alt ? <span className="sr-only">{alt}</span> : null}
-        </>
-    );
-};
+const Icon = forwardRef<SVGSVGElement, IconProps>(
+    (
+        {
+            name,
+            alt,
+            title,
+            color,
+            className = '',
+            viewBox = '0 0 16 16',
+            size = 16,
+            rotate = 0,
+            nameSpaceSvg = 'ic',
+            ...rest
+        },
+        ref
+    ) => {
+        const style = {
+            ...(color && { color }),
+            ...(rotate && { transform: `rotate(${rotate}deg)` }),
+        };
 
-export default memo(forwardRef<SVGSVGElement, Props>(Icon));
+        return (
+            <>
+                <svg
+                    style={style}
+                    viewBox={viewBox}
+                    className={classnames([`icon-${size}p`, className])}
+                    role="img"
+                    focusable="false"
+                    ref={ref}
+                    {...rest}
+                >
+                    {title ? <title>{title}</title> : null}
+                    <use xlinkHref={name.startsWith('#') ? name : `#${nameSpaceSvg}-${name}`} />
+                </svg>
+                {alt ? <span className="sr-only">{alt}</span> : null}
+            </>
+        );
+    }
+);
+
+export default Icon;
