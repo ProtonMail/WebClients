@@ -316,7 +316,8 @@ const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
         show: (...args) => {
             if (getIsActiveInAnotherWindow()) {
                 createNotification({
-                    text: c('Info').t`Chat active in another window`,
+                    text: c('Info')
+                        .t`You can only have one chat instance open at a time. Please close previous conversations before starting a new one.`,
                     type: 'error',
                 });
                 return;
