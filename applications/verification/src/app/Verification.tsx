@@ -19,7 +19,7 @@ interface VerificationSearchParameters {
 const getClient = () => {
     const {
         navigator: { standalone, userAgent },
-    } = (window as any).navigator.standalone;
+    } = window as any;
     const lowercaseUserAgent = userAgent.toLowerCase();
     const safari = /safari/.test(lowercaseUserAgent);
     const ios = /iphone|ipod|ipad/.test(lowercaseUserAgent);
