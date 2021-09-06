@@ -4,6 +4,7 @@ import {
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
+    IconSize,
     useEventManager,
     SidebarListItemLink,
     useLoading,
@@ -35,7 +36,7 @@ interface Props {
     labelID: string;
     isFolder: boolean;
     icon?: string;
-    iconSize?: number;
+    iconSize?: IconSize;
     text: string;
     shortcutText?: string;
     content?: ReactNode;
