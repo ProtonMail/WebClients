@@ -1,8 +1,8 @@
+import { useMemo, useState } from 'react';
+
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
-import { useMemo, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import {
     ErrorBoundary,
     FeatureCode,
@@ -19,7 +19,7 @@ import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
 import MainContainerSetup from './MainContainerSetup';
 
-import favicons from '../../../assets/favicons';
+import Favicon from '../../components/Favicon';
 
 const MainContainer = () => {
     const [addresses] = useAddresses();
@@ -68,14 +68,9 @@ const MainContainer = () => {
 };
 
 const WrappedMainContainer = () => {
-    const date = new Date().getDate();
-
     return (
         <ErrorBoundary component={<StandardErrorPage />}>
-            <Helmet>
-                <link rel="icon" type="image/svg+xml" href={favicons[date][0]} />
-                <link rel="alternate icon" href={favicons[date][1]} />
-            </Helmet>
+            <Favicon />
             <MainContainer />
         </ErrorBoundary>
     );
