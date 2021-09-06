@@ -26,6 +26,7 @@ import {
 import {
     createESDB,
     deleteESDB,
+    esSentryReport,
     getES,
     getOldestMessage,
     openESDB,
@@ -54,7 +55,7 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
         message: await pmcryptoGetMessage(encryptedKey),
         publicKeys: [primaryUserKey.publicKey],
         privateKeys: [primaryUserKey.privateKey],
-    }).catch(() => undefined);
+    }).catch((error: any) => esSentryReport('getIndexKey: decryption', { error }));
 
     if (!decryptionResult) {
         return;
@@ -64,7 +65,7 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 
     const importedKey = await crypto.subtle
         .importKey('jwk', JSON.parse(decryptedKey), { name: AesKeyGenParams.name }, false, KeyUsages)
-        .catch(() => undefined);
+        .catch((error: any) => esSentryReport('getIndexKey: parsing', { error }));
 
     if ((importedKey as CryptoKey).algorithm) {
         return importedKey;
@@ -196,8 +197,8 @@ export const fetchMessage = async (
             ({ decryptedSubject, decryptedBody } = decryptionResult);
             decryptionError = false;
         }
-    } catch (error) {
-        // leave them undefined
+    } catch (error: any) {
+        esSentryReport('fetchMessage: decryption', { error });
     }
 
     // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
@@ -316,7 +317,9 @@ const storeMessagesBatches = async (
             getMessageKeys,
             abortIndexingRef,
             recordLocalProgress
-        ).catch((error) => {
+        ).catch((error: any) => {
+            esSentryReport('storeMessagesBatches: storeMessages', { error });
+
             if (error.name === 'QuotaExceededError') {
                 const quotaRecoveryPoint: RecoveryPoint = { ID: 'QuotaExceededError', Time: -1 };
                 return {
@@ -416,7 +419,8 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     // Remove IndexedDB in case there is a corrupt leftover
     try {
         await deleteESDB(userID);
-    } catch (error) {
+    } catch (error: any) {
+        esSentryReport('initialiseDB: deleteESDB', { error });
         return result;
     }
 
@@ -441,7 +445,9 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     let esDB;
     try {
         esDB = await createESDB(userID);
-    } catch (error) {
+    } catch (error: any) {
+        esSentryReport('initialiseDB: createESDB', { error });
+
         removeES.Event(userID);
         removeES.Progress(userID);
         return {
@@ -464,7 +470,9 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
             privateKeys: [primaryUserKey.privateKey],
         });
         setES.Key(userID, encryptedKey);
-    } catch (error) {
+    } catch (error: any) {
+        esSentryReport('initialiseDB: key generation', { error });
+
         removeES.Event(userID);
         removeES.Progress(userID);
         return result;

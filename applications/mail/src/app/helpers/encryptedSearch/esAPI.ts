@@ -6,7 +6,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
-import { getNumMessagesDB, getSizeIDB } from './esUtils';
+import { esSentryReport, getNumMessagesDB, getSizeIDB } from './esUtils';
 import { isNetworkError } from '../errors';
 
 // Error message codes that trigger a retry
@@ -15,7 +15,12 @@ const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
 /**
  * Api calls for ES should be transparent and with low priority to avoid jailing
  */
-const apiHelper = async <T>(api: Api, signal: AbortSignal | undefined, options: Object): Promise<T | undefined> => {
+const apiHelper = async <T>(
+    api: Api,
+    signal: AbortSignal | undefined,
+    options: Object,
+    route: string
+): Promise<T | undefined> => {
     let apiResponse: T;
     try {
         apiResponse = await api<T>({
@@ -24,7 +29,7 @@ const apiHelper = async <T>(api: Api, signal: AbortSignal | undefined, options: 
             headers: { Priority: 'u=7' },
             signal,
         });
-    } catch (error) {
+    } catch (error: any) {
         // Network and temporary errors trigger a retry, for any other error undefined is returned
         if (isNetworkError(error) || ES_TEMPORARY_ERRORS.includes(error.data.Code)) {
             const {
@@ -33,8 +38,10 @@ const apiHelper = async <T>(api: Api, signal: AbortSignal | undefined, options: 
 
             const retryAfterSeconds = parseInt(headers.get('retry-after') || '1', 10);
             await wait(retryAfterSeconds * 1000);
-            return apiHelper<T>(api, signal, options);
+            return apiHelper<T>(api, signal, options, route);
         }
+
+        esSentryReport(`apiHelper: ${route}`, { error });
         return;
     }
 
@@ -46,9 +53,9 @@ const apiHelper = async <T>(api: Api, signal: AbortSignal | undefined, options: 
  */
 export const queryEvents = async (api: Api, lastEvent?: string, signal?: AbortSignal) => {
     if (lastEvent) {
-        return apiHelper<Event>(api, signal, getEvents(lastEvent));
+        return apiHelper<Event>(api, signal, getEvents(lastEvent), 'getEvents');
     }
-    return apiHelper<Event>(api, signal, getLatestID());
+    return apiHelper<Event>(api, signal, getLatestID(), 'getLatestID');
 };
 
 /**
@@ -74,7 +81,8 @@ export const queryMessagesMetadata = async (
             Sort: 'Time',
             Desc: 1,
             ...options,
-        } as any)
+        } as any),
+        'queryMessageMetadata'
     );
 };
 
@@ -93,7 +101,7 @@ export const queryMessagesCount = async (api: Api, signal?: AbortSignal) => {
  * Fetch one message
  */
 export const queryMessage = async (api: Api, messageID: string, signal?: AbortSignal) => {
-    const result = await apiHelper<{ Message: Message }>(api, signal, getMessage(messageID));
+    const result = await apiHelper<{ Message: Message }>(api, signal, getMessage(messageID), 'getMessage');
     return result?.Message;
 };
 
@@ -136,9 +144,14 @@ export const sendESMetrics = async (
         isCacheLimited,
     };
 
-    return apiHelper<{ Code: number }>(api, undefined, {
-        method: 'post',
-        url: 'metrics',
-        data: { Log, Data },
-    });
+    return apiHelper<{ Code: number }>(
+        api,
+        undefined,
+        {
+            method: 'post',
+            url: 'metrics',
+            data: { Log, Data },
+        },
+        'metrics'
+    );
 };
