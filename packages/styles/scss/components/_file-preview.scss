@@ -39,7 +39,7 @@
 
 	&-image {
 		@extend .mauto;
-		object-fit: cover;
+		object-fit: contain;
 		max-width: none;
 		position: absolute;
 		top: 0;

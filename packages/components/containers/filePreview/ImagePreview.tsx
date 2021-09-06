@@ -10,6 +10,20 @@ interface Props {
     contents?: Uint8Array[];
 }
 
+const FALLBACK_IMAGE_DIMENSION_VALUE = window.innerHeight / 2;
+
+/*
+ * Svg image dimension are 0 in Firefox. For these cases fallback values
+ * will be used, so the image preview is visible.
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1328124
+ */
+function getImageNaturalDimensions(imageElement: HTMLImageElement | null) {
+    return {
+        height: imageElement?.naturalHeight || FALLBACK_IMAGE_DIMENSION_VALUE,
+        width: imageElement?.naturalWidth || FALLBACK_IMAGE_DIMENSION_VALUE,
+    };
+}
+
 const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -46,8 +60,9 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
             return;
         }
 
-        const heightRatio = containerBounds.height / imageRef.current.naturalHeight;
-        const widthRatio = containerBounds.width / imageRef.current.naturalWidth;
+        const dimensions = getImageNaturalDimensions(imageRef.current);
+        const heightRatio = containerBounds.height / dimensions.height;
+        const widthRatio = containerBounds.width / dimensions.width;
 
         const scale = Math.min(1, heightRatio, widthRatio);
 
@@ -60,9 +75,10 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
         }
     };
 
-    const dimensions = {
-        height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
-        width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined,
+    const dimensions = getImageNaturalDimensions(imageRef.current);
+    const scaledDimensions = {
+        height: dimensions.height * scale,
+        width: dimensions.width * scale,
     };
 
     return (
@@ -72,13 +88,13 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                     <UnsupportedPreview onSave={onSave} type="image" />
                 ) : (
                     imageData.src && (
-                        <div className="flex-no-min-children mauto relative" style={dimensions}>
+                        <div className="flex-no-min-children mauto relative" style={scaledDimensions}>
                             <img
                                 ref={imageRef}
                                 onLoad={() => fitToContainer()}
                                 onError={handleBrokenImage}
                                 className="file-preview-image"
-                                style={dimensions}
+                                style={scaledDimensions}
                                 src={imageData.src}
                                 alt={c('Info').t`Preview`}
                             />
