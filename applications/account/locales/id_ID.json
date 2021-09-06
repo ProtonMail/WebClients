@@ -5,373 +5,12 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Authentication canceled.": [
-        "Otentikasi dibatalkan."
-      ],
-      "Your import will not be processed.": [
-        "Impor Anda tidak akan diproses."
-      ],
-      "Authentication error.": [
-        "Kesalahan otentikasi."
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
-      ],
-      "Unknown error": [
-        "Galat tak diketahui"
-      ],
-      "Email address invalid": [
-        "Alamat email tidak valid"
-      ],
-      "This field is required": [
-        "Bagian ini wajib isi"
-      ],
-      "The composer failed to load.": [
-        "Komposer gagal memuat."
-      ],
-      "Please refresh the page.": [
-        "Mohon segarkan halaman ini."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, mohon ${ refresh } ntuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini, silakan hubungi ${ supportTeam } kami."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban Anda tidak mengizinkan pembayaran dengan hak akses penuh. Mohon gunakan peramban lain atau masuk via komputer."
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "Verifikasi gagal, silakan coba satu jam lagi."
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Kode verifikasi salah. Pastikan Anda menyalin kode verifikasi dengan benar dan coba lagi. Perubahan memerlukan waktu hingga 24 jam."
-      ],
-      "Name required": [
-        "Nama diperlukan"
-      ],
-      "No valid address found": [
-        "Tidak ditemukan alamat valid"
-      ],
-      "Primary address key is not decrypted.": [
-        "Kunci alamat utama tidak didekripsi."
-      ],
-      "Primary address key is not decrypted": [
-        "Kunci alamat utama tidak didekripsi"
-      ],
-      "Incorrect password": [
-        "Kata sandi salah"
-      ],
-      "Invalid private key file": [
-        "Berkas kunci pribadi tidak valid"
-      ],
-      "Uploaded key does not match fingerprint": [
-        "Kunci yang diunggah tidak cocok dengan sidik jari"
-      ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kadaluwarsa, silakan coba lagi."
-      ],
-      "Invalid code": [
-        "Kode tidak valid"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Jumlah di bawah minimum."
-      ],
-      "Amount above the maximum.": [
-        "Jumlah di atas maksimum."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Sumbangan minimal ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Tambahan kredit minimal ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Pembayaran minimal ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Proses dibatalkan"
-      ],
-      "Payment process cancelled": [
-        "Proses pembayaran dibatalkan"
-      ],
-      "Payment process failed": [
-        "Proses pembayaran gagal"
-      ],
-      "Payment process consumed": [
-        "Proses pembayaran terlalu lama"
-      ],
-      "Payment process not supported": [
-        "Proses pembayaran tidak didukung"
-      ],
-      "Unknown payment token status": [
-        "Status token pembayaran tidak dikenal"
-      ],
-      "Tab closed": [
-        "Tab ditutup"
-      ],
-      "Name on card required": [
-        "Wajib isi nama di kartu"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid postal code": [
-        "Kode pos tidak valid"
-      ],
-      "You must set a name": [
-        "Anda harus menyetel nama"
-      ],
-      "A group with this name already exists": [
-        "Grup dengan nama ini sudah ada"
-      ],
-      "Invalid name": [
-        "Nama tidak valid"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Kami tidak dapat tersambung dengan penyedia layanan Anda."
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Coba autentikasi ulang dan pastikan izin disetel dengan benar."
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Ada terlalu banyak folder di akun eksternal Anda. Mohon sesuaikan impor untuk menghapus sebagian folder."
-      ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sebagian nama label Anda melebihi batas karakter maksimal ProtonMail. Mohon sesuaikan impor untuk mengedit nama label tersebut."
-      ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sebagian nama folder Anda melebihi batas karakter maksimal ProtonMail. Mohon sesuaikan impor untuk mengedit nama folder tersebut."
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Sebagian nama label Anda tidak tersedia. Mohon sesuaikan impor untuk mengedit nama label tersebut."
-      ],
-      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Sebagian nama folder Anda tidak tersedia. Mohon sesuaikan impor untuk mengedit nama folder tersebut."
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "Nama label terlalu panjang. Mohon pilih nama lain."
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "Nama folder terlalu panjang. Mohon pilih nama lain."
-      ],
-      "Label name cannot be empty": [
-        "Nama label tidak boleh kosong"
-      ],
-      "Folder name cannot be empty": [
-        "Nama folder tidak bisa dikosongkan"
-      ],
-      "This label name is not available. Please choose a different name": [
-        "Label nama tidak tersedia. Mohon pilih nama lain"
-      ],
-      "This folder name is not available. Please choose a different name": [
-        "Nama folder ini tidak tersedia. Mohon pilih nama lain"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
-      ],
-      "Please set a recovery/notification email first": [
-        "Harap setel email pemulihan/pemberitahuan terlebih dahulu"
-      ],
-      "Please set a recovery phone number first": [
-        "Harap atur nomor telepon pemulihan terlebih dahulu"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Pembayaran tidak bisa dilakukan. Coba lagi nanti"
-      ],
-      "You have no invoices.": [
-        "Tidak ada tagihan."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ada tagihan yang lewat jatuh tempo. Mohon lunasi semua tagihan."
-      ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Jawab otomatis adalah fitur berbayar. Silakan tingkatkan ke paket berbayar untuk menggunakan fitur ini."
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak cocok"
-      ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Silakan tingkatkan ke paket Professional dengan lebih dari 1 pengguna, atau akun Visioner untuk mendapatkan dukungan multi-pengguna."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        ""
-      ],
-      "Organization key is not decrypted.": [
-        "Kunci organisasi tidak didekripsi."
-      ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Anda telah kehilangan akses ke kunci organisasi Anda. Tanpa pemulihan Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Anda harus mengaktifkan kunci organisasi Anda. Tanpa aktivasi Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
-      ],
-      "The organization key must be activated first.": [
-        "Kunci organisasi harus diaktifkan terlebih dahulu."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Izin ditolak, hak istimewa administrator telah dibatasi."
-      ],
-      "Invalid password": [
-        "Kata sandi tidak valid"
-      ],
-      "Invalid address": [
-        "Alamat tidak valid"
-      ],
-      "Address already associated to a user": [
-        "Alamat sudah terkait dengan pengguna"
-      ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
-        "Harap tingkatkan ke paket Professional dengan lebih dari 1 pengguna, atau akun Visioner, untuk mengelola banyak pengguna."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
-      ],
-      "Empty condition": [
-        "Kondisi kosong"
-      ],
-      "Condition incomplete": [
-        "Kondisi tidak lengkap"
-      ],
-      "Filter with this name already exists": [
-        "Filter dengan nama ini sudah ada"
-      ],
-      "Error in one of the conditions": [
-        "Kesalahan pada salah satu kondisi"
-      ],
-      "Require at least one condition": [
-        "Perlu minimal satu kondisi"
-      ],
-      "Require at least one action": [
-        "Perlu minimal satu tindakan"
-      ],
-      "Filter with this name already exist": [
-        "Filter dengan nama ini sudah ada"
-      ],
-      "Invalid Sieve code": [
-        "Kode Sieve tidak valid"
-      ],
-      "Invalid domain": [
-        "Domain tidak valid"
-      ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } adalah nama pengguna Anda. Untuk membuat ${ Local }@${ Domain }, silakan kunjungi Pengaturan > Alamat > Domain pendek (pm.me)"
-      ],
-      "Error": [
-        "Kesalahan"
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi email, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
-      "Enter 6 digits": [
-        "Masukkan 6 digit"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak surat salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
-      "Domain not available, try again later": [
-        "Domain tidak tersedia, coba lagi nanti"
-      ],
-      "Address primary private key not found": [
-        "Kunci pribadi utama alamat tidak ditemukan"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Kunci pribadi utama kalender tidak didekripsi"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
-      ],
-      "Email is not valid": [
-        "Email tidak valid"
-      ],
-      "Not a valid number": [
-        "Bukan nomor yang valid"
-      ],
-      "Missing signature": [
-        "Tanda tangan hilang"
-      ],
-      "Contact signature not verified": [
-        "Tanda tangan kontak tidak terverifikasi"
-      ],
-      "Signature not verified": [
-        "Tanda tangan tidak terverifikasi"
-      ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
-      ],
-      "The session has expired. Please sign in again.": [
-        "Sesi telah habis. Silakan masuk lagi."
-      ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Gagal mendapatkan sesi aktif. Silakan segarkan atau coba lagi nanti."
-      ],
-      "No active sessions": [
-        "Tidak ada sesi aktif"
-      ],
-      "Can't check username, try again later": [
-        "Gagal periksa nama pengguna. Coba lagi nanti"
-      ],
-      "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } jam"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } menit"
-      ]
-    },
     "Action": {
+      "Continue with Google": [
+        "Lanjutkan dengan Google"
+      ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
-      ],
-      "Close navigation": [
-        "Tutup navigasi"
-      ],
-      "Open navigation": [
-        "Buka navigasi"
       ],
       "Show less": [
         "Tampilkan lebih sedikit"
@@ -379,20 +18,38 @@
       "Show more": [
         "Tampilkan lebih banyak"
       ],
+      "Select timezone": [
+        "Pilih zona waktu"
+      ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Close navigation": [
+        "Tutup navigasi"
+      ],
+      "Open navigation": [
+        "Buka navigasi"
+      ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
-      "Delete": [
-        "Hapus"
-      ],
-      "Select timezone": [
-        "Pilih zona waktu"
-      ],
       "Cancel": [
         "Batal"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Confirm": [
+        "Konfirmasi"
+      ],
+      "Close modal": [
+        "Tutup jendela"
+      ],
+      "Close": [
+        "Tutup"
       ],
       "Save": [
         "Simpan"
@@ -460,23 +117,11 @@
       "Confirm opening of link ${ link }": [
         "Konfirmasi membuka tautan ${ link }"
       ],
-      "Confirm": [
-        "Konfirmasi"
-      ],
       "Next month": [
         "Bulan selanjutnya"
       ],
       "Previous month": [
         "Bulan lalu"
-      ],
-      "Submit": [
-        "Kirim"
-      ],
-      "Close modal": [
-        "Tutup jendela"
-      ],
-      "Close": [
-        "Tutup"
       ],
       "Remove": [
         "Hapus"
@@ -484,29 +129,83 @@
       "refresh the page": [
         "segarkan halaman"
       ],
-      "Add user": [
-        "Tambah pengguna"
+      "Continue import": [
+        "Lanjutkan impor"
       ],
-      "Add address": [
-        "Tambah alamat"
+      "Discard": [
+        "Buang"
       ],
-      "Done": [
-        "Selesai"
+      "Reconnect": [
+        "Sambungkan kembali"
+      ],
+      "Start import": [
+        "Mulai impor"
+      ],
+      "Customize import": [
+        "Sesuaikan impor"
+      ],
+      "Reset to default": [
+        "Atur ulang ke awal"
+      ],
+      "Rename": [
+        "Ubah nama"
+      ],
+      "Stay": [
+        "Tinggal"
+      ],
+      "Quit": [
+        "Keluar"
+      ],
+      "Hide labels": [
+        "Sembunyikan label"
+      ],
+      "Hide folders": [
+        "Sembunyikan folder"
+      ],
+      "Show labels": [
+        "Tampilkan label"
+      ],
+      "Show folders": [
+        "Tampilkan folder"
+      ],
+      "Edit label": [
+        "Edit label"
+      ],
+      "Back": [
+        "Kembali"
       ],
       "Next": [
         "Selanjutnya"
       ],
-      "Review": [
-        "Ulas"
+      "Start Import Assistant": [
+        "Mulai Import Assistant"
       ],
-      "Set catch-all": [
-        "Atur catch-all"
+      "Skip to import": [
+        "Lewati ke impor"
       ],
-      "Add domain": [
-        "Tambah domain"
+      "Delete all messages": [
+        "Hapus semua pesan"
       ],
-      "Refresh status": [
-        "Segarkan status"
+      "Cancel import": [
+        "Batalkan impor"
+      ],
+      "Resume": [
+        "Lanjutkan"
+      ],
+      "Keep": [
+        "Simpan"
+      ],
+      "Delete record": [
+        "Hapus rekaman"
+      ],
+      "Delete original messages": [
+        "Hapus pesan semula"
+      ],
+      "Download the Import-Export app": [
+        "Unduh aplikasi Impor-Ekspor"
+      ],
+      "Use ${ label } theme": [
+        "Gunakan tema ${ label }"
       ],
       "Update": [
         "Perbarui"
@@ -547,9 +246,6 @@
       "Subscribe to calendar": [
         "Langganan ke kalender"
       ],
-      "Continue with Google": [
-        "Lanjutkan dengan Google"
-      ],
       "Import events": [
         "Impor acara"
       ],
@@ -568,20 +264,17 @@
       "Copy link": [
         "Salin tautan"
       ],
-      "Edit label": [
-        "Edit label"
-      ],
       "Create link": [
         "Buat tautan"
       ],
       "Delete link": [
         "Hapus tautan"
       ],
+      "No": [
+        "Tidak"
+      ],
       "Upload": [
         "Unggah"
-      ],
-      "Back": [
-        "Kembali"
       ],
       "Create key": [
         "Buat kunci"
@@ -598,9 +291,6 @@
       "Export key": [
         "Ekspor kunci"
       ],
-      "No": [
-        "Tidak"
-      ],
       "Warning": [
         "Peringatan"
       ],
@@ -612,6 +302,39 @@
       ],
       "Export private key": [
         "Ekspor kunci pribadi"
+      ],
+      "Activate ${ Name }@pm.me": [
+        "Aktifkan ${ Name }@pm.me"
+      ],
+      "Show shortcuts": [
+        "Tampilkan pintasan"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
+      ],
+      "Add user": [
+        "Tambah pengguna"
+      ],
+      "Add address": [
+        "Tambah alamat"
+      ],
+      "Done": [
+        "Selesai"
+      ],
+      "Review": [
+        "Ulas"
+      ],
+      "Set catch-all": [
+        "Atur catch-all"
+      ],
+      "Add domain": [
+        "Tambah domain"
+      ],
+      "Refresh status": [
+        "Segarkan status"
       ],
       "Copy email to clipboard": [
         "Salin surel ke papan klip"
@@ -745,87 +468,6 @@
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktifkan ${ Name }@pm.me"
-      ],
-      "Show shortcuts": [
-        "Tampilkan pintasan"
-      ],
-      "Import contacts": [
-        "Impor kontak"
-      ],
-      "Export contacts": [
-        "Ekspor kontak"
-      ],
-      "Use ${ label } theme": [
-        "Gunakan tema ${ label }"
-      ],
-      "Continue import": [
-        "Lanjutkan impor"
-      ],
-      "Discard": [
-        "Buang"
-      ],
-      "Reconnect": [
-        "Sambungkan kembali"
-      ],
-      "Start import": [
-        "Mulai impor"
-      ],
-      "Customize import": [
-        "Sesuaikan impor"
-      ],
-      "Reset to default": [
-        "Atur ulang ke awal"
-      ],
-      "Rename": [
-        "Ubah nama"
-      ],
-      "Stay": [
-        "Tinggal"
-      ],
-      "Quit": [
-        "Keluar"
-      ],
-      "Hide labels": [
-        "Sembunyikan label"
-      ],
-      "Hide folders": [
-        "Sembunyikan folder"
-      ],
-      "Show labels": [
-        "Tampilkan label"
-      ],
-      "Show folders": [
-        "Tampilkan folder"
-      ],
-      "Start Import Assistant": [
-        "Mulai Import Assistant"
-      ],
-      "Skip to import": [
-        "Lewati ke impor"
-      ],
-      "Delete all messages": [
-        "Hapus semua pesan"
-      ],
-      "Cancel import": [
-        "Batalkan impor"
-      ],
-      "Resume": [
-        "Lanjutkan"
-      ],
-      "Keep": [
-        "Simpan"
-      ],
-      "Delete record": [
-        "Hapus rekaman"
-      ],
-      "Delete original messages": [
-        "Hapus pesan semula"
-      ],
-      "Download the Import-Export app": [
-        "Unduh aplikasi Impor-Ekspor"
-      ],
       "enable desktop notifications": [
         "mengaktifkan pemberitahuan desktop"
       ],
@@ -882,30 +524,6 @@
       ],
       "Reload": [
         "Muat ulang"
-      ],
-      "Hide": [
-        "Sembunyikan"
-      ],
-      "Show": [
-        "Tampilkan"
-      ],
-      "Reset credentials": [
-        "Atur ulang kredensial"
-      ],
-      "Copy": [
-        "Salin"
-      ],
-      "Download all configurations": [
-        "Unduh semua konfigurasi"
-      ],
-      "Get ProtonVPN Plus": [
-        "Dapatkan ProtonVPN Plus"
-      ],
-      "Read": [
-        "Baca"
-      ],
-      "Unread": [
-        "Belum dibaca"
       ],
       "Mark as default": [
         "Tandai sebagai standar"
@@ -967,6 +585,36 @@
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
+      "Hide": [
+        "Sembunyikan"
+      ],
+      "Show": [
+        "Tampilkan"
+      ],
+      "Reset credentials": [
+        "Atur ulang kredensial"
+      ],
+      "Copy": [
+        "Salin"
+      ],
+      "Download all configurations": [
+        "Unduh semua konfigurasi"
+      ],
+      "Get ProtonVPN Plus": [
+        "Dapatkan ProtonVPN Plus"
+      ],
+      "Save address": [
+        "Simpan alamat"
+      ],
+      "activate": [
+        "aktifkan"
+      ],
+      "Read": [
+        "Baca"
+      ],
+      "Unread": [
+        "Belum dibaca"
+      ],
       "Preview": [
         "Pratinjau"
       ],
@@ -1020,12 +668,6 @@
       ],
       "Add label": [
         "Tambah label"
-      ],
-      "Save address": [
-        "Simpan alamat"
-      ],
-      "activate": [
-        "aktifkan"
       ],
       "View invoice": [
         "Lihat tagihan"
@@ -1130,6 +772,14 @@
         "Hubungi dukungan"
       ]
     },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } menit"
+      ]
+    },
     "Placeholder": {
       "E.g., ": [
         "Misalnya "
@@ -1155,9 +805,6 @@
       "Text": [
         "Teks"
       ],
-      "yourdomain.com": [
-        "domainanda.com"
-      ],
       "Add a calendar name": [
         "Masukkan nama kalender"
       ],
@@ -1166,6 +813,12 @@
       ],
       "Password": [
         "Kata sandi"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "yourdomain.com": [
+        "domainanda.com"
       ],
       "e.g. Julia Smith": [
         "misal. Julia Smith"
@@ -1209,9 +862,6 @@
       "Postal code": [
         "Kode pos"
       ],
-      "Name": [
-        "Nama"
-      ],
       "Two-factor authentication code": [
         "Kode otentikasi dua faktor"
       ],
@@ -1233,14 +883,364 @@
       "Search users": [
         "Cari pengguna"
       ],
-      "Type text or keyword": [
-        "Ketik teks atau kata kunci"
-      ],
       "Choose address": [
         "Pilih alamat"
       ],
       "Choose display name": [
         "Pilih nama tampilan"
+      ],
+      "Type text or keyword": [
+        "Ketik teks atau kata kunci"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Alamat email tidak valid"
+      ],
+      "This field is required": [
+        "Bagian ini wajib isi"
+      ],
+      "The composer failed to load.": [
+        "Komposer gagal memuat."
+      ],
+      "Please refresh the page.": [
+        "Mohon segarkan halaman ini."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, mohon ${ refresh } ntuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini, silakan hubungi ${ supportTeam } kami."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban Anda tidak mengizinkan pembayaran dengan hak akses penuh. Mohon gunakan peramban lain atau masuk via komputer."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Kami tidak dapat tersambung dengan penyedia layanan Anda."
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Coba autentikasi ulang dan pastikan izin disetel dengan benar."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Ada terlalu banyak folder di akun eksternal Anda. Mohon sesuaikan impor untuk menghapus sebagian folder."
+      ],
+      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda melebihi batas karakter maksimal ProtonMail. Mohon sesuaikan impor untuk mengedit nama label tersebut."
+      ],
+      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda melebihi batas karakter maksimal ProtonMail. Mohon sesuaikan impor untuk mengedit nama folder tersebut."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda tidak tersedia. Mohon sesuaikan impor untuk mengedit nama label tersebut."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda tidak tersedia. Mohon sesuaikan impor untuk mengedit nama folder tersebut."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "Nama label terlalu panjang. Mohon pilih nama lain."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "Nama folder terlalu panjang. Mohon pilih nama lain."
+      ],
+      "Label name cannot be empty": [
+        "Nama label tidak boleh kosong"
+      ],
+      "Folder name cannot be empty": [
+        "Nama folder tidak bisa dikosongkan"
+      ],
+      "This label name is not available. Please choose a different name": [
+        "Label nama tidak tersedia. Mohon pilih nama lain"
+      ],
+      "This folder name is not available. Please choose a different name": [
+        "Nama folder ini tidak tersedia. Mohon pilih nama lain"
+      ],
+      "Name required": [
+        "Nama diperlukan"
+      ],
+      "No valid address found": [
+        "Tidak ditemukan alamat valid"
+      ],
+      "Primary address key is not decrypted.": [
+        "Kunci alamat utama tidak didekripsi."
+      ],
+      "Primary address key is not decrypted": [
+        "Kunci alamat utama tidak didekripsi"
+      ],
+      "Incorrect password": [
+        "Kata sandi salah"
+      ],
+      "Invalid private key file": [
+        "Berkas kunci pribadi tidak valid"
+      ],
+      "Uploaded key does not match fingerprint": [
+        "Kunci yang diunggah tidak cocok dengan sidik jari"
+      ],
+      "You must set a name": [
+        "Anda harus menyetel nama"
+      ],
+      "A group with this name already exists": [
+        "Grup dengan nama ini sudah ada"
+      ],
+      "Invalid name": [
+        "Nama tidak valid"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verifikasi gagal, silakan coba satu jam lagi."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Kode verifikasi salah. Pastikan Anda menyalin kode verifikasi dengan benar dan coba lagi. Perubahan memerlukan waktu hingga 24 jam."
+      ],
+      "Checkout expired, please try again.": [
+        "Pembayaran kadaluwarsa, silakan coba lagi."
+      ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Gagal sambung ke API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Jumlah di bawah minimum."
+      ],
+      "Amount above the maximum.": [
+        "Jumlah di atas maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Sumbangan minimal ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Tambahan kredit minimal ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Pembayaran minimal ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Proses dibatalkan"
+      ],
+      "Payment process cancelled": [
+        "Proses pembayaran dibatalkan"
+      ],
+      "Payment process failed": [
+        "Proses pembayaran gagal"
+      ],
+      "Payment process consumed": [
+        "Proses pembayaran terlalu lama"
+      ],
+      "Payment process not supported": [
+        "Proses pembayaran tidak didukung"
+      ],
+      "Unknown payment token status": [
+        "Status token pembayaran tidak dikenal"
+      ],
+      "Tab closed": [
+        "Tab ditutup"
+      ],
+      "Name on card required": [
+        "Wajib isi nama di kartu"
+      ],
+      "Invalid expiration date": [
+        "Tanggal kedaluwarsa tidak valid"
+      ],
+      "Invalid card number": [
+        "Nomor kartu tidak valid"
+      ],
+      "Invalid ${ name } code": [
+        "Kode ${ name } tidak valid"
+      ],
+      "Invalid postal code": [
+        "Kode pos tidak valid"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
+      ],
+      "Please set a recovery/notification email first": [
+        "Harap setel email pemulihan/pemberitahuan terlebih dahulu"
+      ],
+      "Please set a recovery phone number first": [
+        "Harap atur nomor telepon pemulihan terlebih dahulu"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Pembayaran tidak bisa dilakukan. Coba lagi nanti"
+      ],
+      "You have no invoices.": [
+        "Tidak ada tagihan."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Ada tagihan yang lewat jatuh tempo. Mohon lunasi semua tagihan."
+      ],
+      "File has no contents to preview": [
+        "Berkas ini kosong"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak cocok"
+      ],
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
+        "Silakan tingkatkan ke paket Professional dengan lebih dari 1 pengguna, atau akun Visioner untuk mendapatkan dukungan multi-pengguna."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        ""
+      ],
+      "Organization key is not decrypted.": [
+        "Kunci organisasi tidak didekripsi."
+      ],
+      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Anda telah kehilangan akses ke kunci organisasi Anda. Tanpa pemulihan Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Anda harus mengaktifkan kunci organisasi Anda. Tanpa aktivasi Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
+      ],
+      "The organization key must be activated first.": [
+        "Kunci organisasi harus diaktifkan terlebih dahulu."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Izin ditolak, hak istimewa administrator telah dibatasi."
+      ],
+      "Invalid password": [
+        "Kata sandi tidak valid"
+      ],
+      "Invalid address": [
+        "Alamat tidak valid"
+      ],
+      "Address already associated to a user": [
+        "Alamat sudah terkait dengan pengguna"
+      ],
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
+        "Harap tingkatkan ke paket Professional dengan lebih dari 1 pengguna, atau akun Visioner, untuk mengelola banyak pengguna."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } adalah nama pengguna Anda. Untuk membuat ${ Local }@${ Domain }, silakan kunjungi Pengaturan > Alamat > Domain pendek (pm.me)"
+      ],
+      "Error": [
+        "Kesalahan"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Jawab otomatis adalah fitur berbayar. Silakan tingkatkan ke paket berbayar untuk menggunakan fitur ini."
+      ],
+      "Empty condition": [
+        "Kondisi kosong"
+      ],
+      "Condition incomplete": [
+        "Kondisi tidak lengkap"
+      ],
+      "Filter with this name already exists": [
+        "Filter dengan nama ini sudah ada"
+      ],
+      "Error in one of the conditions": [
+        "Kesalahan pada salah satu kondisi"
+      ],
+      "Require at least one condition": [
+        "Perlu minimal satu kondisi"
+      ],
+      "Require at least one action": [
+        "Perlu minimal satu tindakan"
+      ],
+      "Filter with this name already exist": [
+        "Filter dengan nama ini sudah ada"
+      ],
+      "Invalid Sieve code": [
+        "Kode Sieve tidak valid"
+      ],
+      "Invalid domain": [
+        "Domain tidak valid"
+      ],
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi email, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Enter 6 digits": [
+        "Masukkan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak surat salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "Authentication canceled.": [
+        "Otentikasi dibatalkan."
+      ],
+      "Your import will not be processed.": [
+        "Impor Anda tidak akan diproses."
+      ],
+      "Authentication error.": [
+        "Kesalahan otentikasi."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
+      ],
+      "Unknown error": [
+        "Galat tak diketahui"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
+      ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
+      "Not a valid number": [
+        "Bukan nomor yang valid"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
+      ],
+      "Domain not available, try again later": [
+        "Domain tidak tersedia, coba lagi nanti"
+      ],
+      "Address primary private key not found": [
+        "Kunci pribadi utama alamat tidak ditemukan"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Kunci pribadi utama kalender tidak didekripsi"
+      ],
+      "Request timed out.": [
+        "Terlalu lama memuat."
+      ],
+      "Missing signature": [
+        "Tanda tangan hilang"
+      ],
+      "Contact signature not verified": [
+        "Tanda tangan kontak tidak terverifikasi"
+      ],
+      "Signature not verified": [
+        "Tanda tangan tidak terverifikasi"
+      ],
+      "The session has expired. Please sign in again.": [
+        "Sesi telah habis. Silakan masuk lagi."
+      ],
+      "Failed to get active sessions. Please refresh or try again later.": [
+        "Gagal mendapatkan sesi aktif. Silakan segarkan atau coba lagi nanti."
+      ],
+      "No active sessions": [
+        "Tidak ada sesi aktif"
+      ],
+      "Can't check username, try again later": [
+        "Gagal periksa nama pengguna. Coba lagi nanti"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        ""
       ]
     },
     "Label": {
@@ -1256,20 +1256,59 @@
       "Do not ask again": [
         "Jangan tanyakan lagi"
       ],
-      "Domain name": [
-        "Nama domain"
+      "From: ${ fromEmailAddress }": [
+        "Dari: ${ fromEmailAddress }"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Harap tambahkan data TXT berikut ini. Catatan, data DNS perlu waktu beberapa jam untuk diperbarui."
+      "To: ${ toEmailAddress }": [
+        "Ke: ${ toEmailAddress }"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Harap tambahkan 3 data CNAME berikut. Catatan, data DNS memerlukan waktu beberapa jam untuk diperbarui."
+      "Import all messages": [
+        "Import all messages"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Harap tambahkan data MX berikut. Catatan, data DNS perlu waktu beberapa jam untuk diperbarui."
+      "Last 12 months only": [
+        "Hanya 12 bulan terakhir"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Berikut adalah data DMARC dasar yang tidak melakukan apa pun kecuali mengirimkan laporan ke email Anda."
+      "Last 3 months only": [
+        "Hanya 3 bulan terakhir"
+      ],
+      "Last month only": [
+        "Hanya sebulan terakhir"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "App password": [
+        "Kata Sandi Aplikasi"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Mail Server (IMAP)": [
+        "Server Mail (IMAP)"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Import interval": [
+        "Interval impor"
+      ],
+      "From: ${ modalModel.email }": [
+        "Dari: ${ modalModel.email }"
+      ],
+      "To: ${ emailAddress }": [
+        "Untuk: ${ emailAddress }"
+      ],
+      "Label messages as": [
+        "Label pesan sebagai"
+      ],
+      "Import to email address": [
+        "Impor ke alamat surel"
+      ],
+      "Manage labels": [
+        "Kelola label"
+      ],
+      "Manage folders": [
+        "Kelola folder"
       ],
       "Name": [
         "Nama"
@@ -1330,6 +1369,36 @@
       ],
       "Please select files to upload": [
         "Pilih berkas untuk diunggah"
+      ],
+      "Date format": [
+        "Format tanggal"
+      ],
+      "Default language": [
+        "Bahasa bawaan"
+      ],
+      "Time format": [
+        "Format waktu"
+      ],
+      "Week start": [
+        "Awal pekan"
+      ],
+      "Automatically save contacts": [
+        "Simpan kontak secara otomatis"
+      ],
+      "Domain name": [
+        "Nama domain"
+      ],
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Harap tambahkan data TXT berikut ini. Catatan, data DNS perlu waktu beberapa jam untuk diperbarui."
+      ],
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Harap tambahkan 3 data CNAME berikut. Catatan, data DNS memerlukan waktu beberapa jam untuk diperbarui."
+      ],
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Harap tambahkan data MX berikut. Catatan, data DNS perlu waktu beberapa jam untuk diperbarui."
+      ],
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Berikut adalah data DMARC dasar yang tidak melakukan apa pun kecuali mengirimkan laporan ke email Anda."
       ],
       "Display name": [
         "Nama tampilan"
@@ -1454,75 +1523,6 @@
       "Select a method": [
         "Pilih metode"
       ],
-      "Date format": [
-        "Format tanggal"
-      ],
-      "Default language": [
-        "Bahasa bawaan"
-      ],
-      "Time format": [
-        "Format waktu"
-      ],
-      "Week start": [
-        "Awal pekan"
-      ],
-      "Automatically save contacts": [
-        "Simpan kontak secara otomatis"
-      ],
-      "From: ${ fromEmailAddress }": [
-        "Dari: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Ke: ${ toEmailAddress }"
-      ],
-      "Import all messages": [
-        "Import all messages"
-      ],
-      "Last 12 months only": [
-        "Hanya 12 bulan terakhir"
-      ],
-      "Last 3 months only": [
-        "Hanya 3 bulan terakhir"
-      ],
-      "Last month only": [
-        "Hanya sebulan terakhir"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "App password": [
-        "Kata Sandi Aplikasi"
-      ],
-      "Password": [
-        "Kata Sandi"
-      ],
-      "Mail Server (IMAP)": [
-        "Server Mail (IMAP)"
-      ],
-      "Port": [
-        "Port"
-      ],
-      "Import interval": [
-        "Interval impor"
-      ],
-      "From: ${ modalModel.email }": [
-        "Dari: ${ modalModel.email }"
-      ],
-      "To: ${ emailAddress }": [
-        "Untuk: ${ emailAddress }"
-      ],
-      "Label messages as": [
-        "Label pesan sebagai"
-      ],
-      "Import to email address": [
-        "Impor ke alamat surel"
-      ],
-      "Manage labels": [
-        "Kelola label"
-      ],
-      "Manage folders": [
-        "Kelola folder"
-      ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ],
@@ -1613,11 +1613,77 @@
       "Your recovery phrase": [
         ""
       ],
+      "Cash": [
+        "Tunai"
+      ],
+      "Card holder": [
+        "Pemegang kartu"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
+      "Payer": [
+        "Pembayar"
+      ],
+      "Credits used": [
+        "Kredit terpakai"
+      ],
+      "Amount due": [
+        "Jumlah jatuh tempo"
+      ],
+      "Customize invoices": [
+        "Sesuaikan tagihan"
+      ],
+      "Organization name": [
+        "Nama organisasi"
+      ],
+      "Organization password": [
+        "Sandi organisasi"
+      ],
+      "Account storage": [
+        "Penyimpanan akun"
+      ],
+      "VPN Connections": [
+        "Koneksi VPN"
+      ],
+      "New organization password": [
+        "Sandi organisasi baru"
+      ],
+      "Confirm organization password": [
+        "Konfirmasi sandi organisasi"
+      ],
+      "VPN connections": [
+        "Koneksi VPN"
+      ],
+      "Private User": [
+        "Pengguna Pribadi"
+      ],
+      "Admin rights": [
+        "Hak admin"
+      ],
+      "Addresses": [
+        "Alamat"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Key strength": [
+        "Kekuatan kunci"
+      ],
       "OpenVPN / IKEv2 username": [
         "Nama pengguna OpenVPN / IKEv2"
       ],
       "OpenVPN / IKEv2 password": [
         "Kata sandi OpenVPN / IKEv2"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "Signature": [
+        "Tanda tangan"
+      ],
+      "ProtonMail footer": [
+        "Footer ProtonMail"
       ],
       "Inbox": [
         "Kotak masuk"
@@ -1642,27 +1708,6 @@
       ],
       "Read/unread toolbar order": [
         "Urutan bilah alat dibaca/belum dibaca"
-      ],
-      "Cash": [
-        "Tunai"
-      ],
-      "Card holder": [
-        "Pemegang kartu"
-      ],
-      "Expires": [
-        "Kedaluwarsa"
-      ],
-      "Payer": [
-        "Pembayar"
-      ],
-      "Credits used": [
-        "Kredit terpakai"
-      ],
-      "Amount due": [
-        "Jumlah jatuh tempo"
-      ],
-      "Customize invoices": [
-        "Sesuaikan tagihan"
       ],
       "Timezone": [
         "Zona waktu"
@@ -1714,42 +1759,6 @@
       ],
       "Default PGP settings": [
         "Pengaturan PGP bawaan"
-      ],
-      "Organization name": [
-        "Nama organisasi"
-      ],
-      "Organization password": [
-        "Sandi organisasi"
-      ],
-      "Account storage": [
-        "Penyimpanan akun"
-      ],
-      "VPN Connections": [
-        "Koneksi VPN"
-      ],
-      "New organization password": [
-        "Sandi organisasi baru"
-      ],
-      "Confirm organization password": [
-        "Konfirmasi sandi organisasi"
-      ],
-      "VPN connections": [
-        "Koneksi VPN"
-      ],
-      "Private User": [
-        "Pengguna Pribadi"
-      ],
-      "Admin rights": [
-        "Hak admin"
-      ],
-      "Addresses": [
-        "Alamat"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Key strength": [
-        "Kekuatan kunci"
       ],
       "Filter Name": [
         "Nama Filter"
@@ -1868,15 +1877,6 @@
       "Inherit color from parent folder": [
         "Ikuti warna folder induk"
       ],
-      "User": [
-        "Pengguna"
-      ],
-      "Signature": [
-        "Tanda tangan"
-      ],
-      "ProtonMail footer": [
-        "Footer ProtonMail"
-      ],
       "Auto-load remote content": [
         "Muat konten jarak jauh secara otomatis"
       ],
@@ -1932,83 +1932,14 @@
         "Kode"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "Penyimpanan Anda saat ini:"
-      ],
-      "Upgrade storage": [
-        "Tingkatkan penyimpanan"
-      ],
-      "Release notes": [
-        "Catatan rilis"
+    "Select search results": {
+      "No results found": [
+        "Hasil tidak ditemukan"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Pelajari lebih lanjut"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Go to subscription plans": [
-        "Pergi ke paket langganan"
-      ],
-      "clearing your browser cache": [
-        "membersihkan singgahan peramban Anda"
-      ],
-      "click here": [
-        "klik di sini"
-      ],
-      "Add a gift code": [
-        "Tambah kode hadiah"
-      ],
-      "Pay invoice": [
-        "Bayar tagihan"
-      ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
-      "View guide": [
-        "Lihat panduan"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Apa bedanya protokol UDP dan TCP?"
-      ],
-      "Request an invite": [
-        "Minta undangan"
-      ],
-      "Calendars": [
-        "Kalender"
-      ],
-      "General": [
-        "Umum"
-      ],
-      "Terms": [
-        "Ketentuan"
-      ],
-      "Privacy policy": [
-        "Kebijakan privasi"
-      ],
-      "Previous version": [
-        "Versi sebelumnya"
-      ],
-      "Sign in": [
-        "Masuk"
-      ],
-      "Common sign up issues": [
-        "Masalah umum proses daftar"
-      ],
-      "Reset password": [
-        "Atur ulang kata sandi"
-      ],
-      "Forgot username?": [
-        "Lupa nama pengguna?"
-      ],
-      "Common sign in issues": [
-        "Masalah umum proses masuk"
-      ],
-      "Create an account": [
-        "Buat akun"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Cari zona waktu"
       ]
     },
     "Info": {
@@ -2017,6 +1948,9 @@
       ],
       "No results found": [
         "Hasil tidak ditemukan"
+      ],
+      "Loading": [
+        "Memuat"
       ],
       "Insert image": [
         "Sisipkan gambar"
@@ -2105,56 +2039,122 @@
       "Week": [
         "Pekan"
       ],
-      "Loading": [
-        "Memuat"
-      ],
       "support team": [
         "tim dukungan"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF digunakan untuk menentukan siapa yang diizinkan mengirim email untuk domain tersebut, jadi kami sangat menyarankan untuk menyertakan ProtonMail dalam data SPF Anda. Harap tambahkan record TXT berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
+      "Import calendars": [
+        "Impor kalender"
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Jika Anda ingin mempertahankan data SPF yang sudah ada, Anda dapat menambahkan ${ spf } setelah ${ spfValue }. Jangan buat banyak data SPF."
+      "Your events are being imported from": [
+        "Acara Anda sedang diimpor dari"
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, tambahkan data CNAME berikut ke pengaturan DNS untuk domain ini. Ini biasanya dapat dilakukan di panel kontrol registrar nama domain Anda."
+      "to": [
+        "ke"
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
+      "Your import has started!": [
+        "Proses impor dimulai!"
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Pertahankan data ini di DNS selama Anda ingin menggunakan DKIM."
+      "We will notify you once your import is finished.": [
+        "Kami akan memberitahu Anda saat proses impor selesai."
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Sebelum Anda dapat menerima email untuk alamat domain kustom Anda di ProtonMail, Anda perlu menambahkan MX record berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
+      "Large imports can take several days to complete.": [
+        "Ukuran impor yang besar memerlukan waktu berhari-hari untuk selesai."
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Hapus data MX lainnya atau pastikan Prioritas ProtonMail adalah angka terendah."
+      "You can continue using Proton services as usual.": [
+        "Anda dapat terus menggunakan layanan Proton seperti biasa."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Jika domain ini saat ini menerima email, pilih tab ${ boldAddresses } dan tambahkan semua alamat email aktif sebelum mengubah data MX untuk memastikan kelancaran transisi."
+      "Your import will not be processed.": [
+        "Impor Anda tidak akan diproses."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
+      "To prepare your external account for import, please follow the instructions for:": [
+        "Demi menyiapkan akun eksternal untuk mengimpor, harap mengikuti petunjuk:"
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } tidak berpengaruh pada pengiriman email, tetapi kami merekomendasikan ${ quarantine } untuk keamanan yang lebih baik."
+      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
+        "Jika Anda menggunakan layanan surel berbeda atau akun Anda sudah disiapkan, Anda dapat melewati menuju impor."
       ],
-      "${ n } address": [
-        "${ n } alamat"
+      "Enter the credentials of the email account you want to import from.": [
+        "Masukkan kredensial akun surel Anda yang ingin Anda impor."
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Untuk diketahui bahwa jika Anda menghapus domain ini, semua alamat yang berasosiasi dengan domain tersebut akan dinonaktifkan."
+      "Your login information will not be saved after the import is completed.": [
+        "Informasi masuk Anda tidak akan disimpan setelah impor selesai."
       ],
-      "Are you sure you want to delete this domain?": [
-        "Yakin ingin menghapus domain ini?"
+      "Import mailbox": [
+        "Impor mailbox"
       ],
-      "domain used": [
-        "domain dipakai"
+      "Label all imported messages as": [
+        "Labeli semua pesan terimpor sebagai"
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Jika Anda memiliki domain kustom dengan ProtonMail, Anda dapat menyetel alamat surel catch-all yang akan menerima pesan yang dikirim ke domain Anda namun ke alamat surel yang tidak valid (misal, salah ketik)."
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "{ providerFoldersNumLocalized } label ditemukan di Gmail"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } folder ditemukan"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "{ selectedFoldersCountLocalized } label dipilih"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } folder dipilih"
+      ],
+      "Your messages are being imported from": [
+        "Pesan Anda sedang diimpor dari"
+      ],
+      "Please select the folders you would like to import:": [
+        "Silakan pilih folder yang ingin Anda impor:"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Buat sebuah label untuk pesan yang diimpor, rentang waktu untuk impor ini, dam label yang Anda ingin impor."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Buat label untuk pesan yang diimpor, rentang waktu untuk proses impor, dan folder yang ingin Anda impor."
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Semua (${ totalFoldersCount } label)"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Semua (${ totalFoldersCount } folder)"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label dipilih"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } folder dipilih"
+      ],
+      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
+        "Transfer data Anda secara aman ke Proton. Import Assistant menyambung ke layanan surel eksternal dan mengimpor folder dan pesan yang Anda pilih."
+      ],
+      "No imports to display.": [
+        "Tidak ada impor untuk ditampilkan."
+      ],
+      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "Proton akan mencoba melanjutkan impor sesegera mungkin saat layanan surel Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apapun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan Anda harus mengulanginya dari awal."
+      ],
+      "Check the status of current and previous imports.": [
+        "Periksa status impor sekarang dan sebelumnya."
+      ],
+      "Proton paused an import because your account is running low on space. You can:": [
+        "Proton menjeda impor karena akun Anda kekurangan ruang peyimpanan. Anda dapat:"
+      ],
+      "free up space by deleting older messages or other data": [
+        "kosongkan ruang dengan menghapus pesan lama atau data lainnya"
+      ],
+      "purchase additional storage": [
+        "beli penyimpanan tambahan"
+      ],
+      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "Proton menjeda impor karena terputus sambungan dengan penyedia surel Anda. Mohon sambung ulang."
+      ],
+      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
+        "Impor Anda dari ${ delayedImport.Email } ditunda sementara."
+      ],
+      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
+        "Untuk keamanan tingkat lanjut, aplikasi Import-Export mengenkripsi surel di perangkat Anda sebelum memindahkannya ke server Proton. Anda juga dapat mengekspor pesan untuk cadangan lokal."
+      ],
+      "Available on macOS, Windows, and Linux.": [
+        "Tersedia di macOS, Windows, dan Linux."
+      ],
+      "Choose the look and feel of the application.": [
+        "Pilih tampilan aplikasi."
       ],
       "Are you sure you want to delete this calendar?": [
         "Yakin ingin menghapus kalender ini?"
@@ -2219,6 +2219,15 @@
       "You need to have a personal calendar to create a link.": [
         ""
       ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Anda dapat membuat kunci enkripsi baru jika Anda pikir kunci sebelumnya bocor."
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "Kunci dengan algoritma enkripsi yang sama sudah aktif untuk alamat ini. Membuat kunci lain akan menyebabkan proses muat akun lebih lambat dan menimbulkan masalah saat kunci ini dihapus. Jika Anda membuat kunci baru karena kunci lama Anda bocor, mohon tandai kunci tersebut sebagai kunci bocor. Yakin ingin melanjutkan?"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Kunci dengan sidik jari ${ fp } berhasil dibuat."
+      ],
       "uploading a backup key": [
         "mengunggah kunci cadangan"
       ],
@@ -2255,15 +2264,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Kunci dengan sidik jari ${ fp } dihapus."
       ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Anda dapat membuat kunci enkripsi baru jika Anda pikir kunci sebelumnya bocor."
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Kunci dengan algoritma enkripsi yang sama sudah aktif untuk alamat ini. Membuat kunci lain akan menyebabkan proses muat akun lebih lambat dan menimbulkan masalah saat kunci ini dihapus. Jika Anda membuat kunci baru karena kunci lama Anda bocor, mohon tandai kunci tersebut sebagai kunci bocor. Yakin ingin melanjutkan?"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Kunci dengan sidik jari ${ fp } berhasil dibuat."
-      ],
       "No addresses exist": [
         "Alamat tidak ada"
       ],
@@ -2272,6 +2272,63 @@
       ],
       "No contact encryption keys exist": [
         "Kunci enkripsi kontak tidak ada"
+      ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "Buat alamat surel @pm.me untuk akun Anda. Ini sederhana, kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        ""
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa program lain. Kami juga menerima impor vCard 4.0. (enkoding UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
+      ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF digunakan untuk menentukan siapa yang diizinkan mengirim email untuk domain tersebut, jadi kami sangat menyarankan untuk menyertakan ProtonMail dalam data SPF Anda. Harap tambahkan record TXT berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "Jika Anda ingin mempertahankan data SPF yang sudah ada, Anda dapat menambahkan ${ spf } setelah ${ spfValue }. Jangan buat banyak data SPF."
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, tambahkan data CNAME berikut ke pengaturan DNS untuk domain ini. Ini biasanya dapat dilakukan di panel kontrol registrar nama domain Anda."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Pertahankan data ini di DNS selama Anda ingin menggunakan DKIM."
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Sebelum Anda dapat menerima email untuk alamat domain kustom Anda di ProtonMail, Anda perlu menambahkan MX record berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "Hapus data MX lainnya atau pastikan Prioritas ProtonMail adalah angka terendah."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Jika domain ini saat ini menerima email, pilih tab ${ boldAddresses } dan tambahkan semua alamat email aktif sebelum mengubah data MX untuk memastikan kelancaran transisi."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } tidak berpengaruh pada pengiriman email, tetapi kami merekomendasikan ${ quarantine } untuk keamanan yang lebih baik."
+      ],
+      "${ n } address": [
+        "${ n } alamat"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Untuk diketahui bahwa jika Anda menghapus domain ini, semua alamat yang berasosiasi dengan domain tersebut akan dinonaktifkan."
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Yakin ingin menghapus domain ini?"
+      ],
+      "domain used": [
+        "domain dipakai"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Jika Anda memiliki domain kustom dengan ProtonMail, Anda dapat menyetel alamat surel catch-all yang akan menerima pesan yang dikirim ke domain Anda namun ke alamat surel yang tidak valid (misal, salah ketik)."
       ],
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
@@ -2561,132 +2618,6 @@
       "30 days money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Buat alamat surel @pm.me untuk akun Anda. Ini sederhana, kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        ""
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa program lain. Kami juga menerima impor vCard 4.0. (enkoding UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
-      ],
-      "Choose the look and feel of the application.": [
-        "Pilih tampilan aplikasi."
-      ],
-      "Import calendars": [
-        "Impor kalender"
-      ],
-      "Your events are being imported from": [
-        "Acara Anda sedang diimpor dari"
-      ],
-      "to": [
-        "ke"
-      ],
-      "Your import has started!": [
-        "Proses impor dimulai!"
-      ],
-      "We will notify you once your import is finished.": [
-        "Kami akan memberitahu Anda saat proses impor selesai."
-      ],
-      "Large imports can take several days to complete.": [
-        "Ukuran impor yang besar memerlukan waktu berhari-hari untuk selesai."
-      ],
-      "You can continue using Proton services as usual.": [
-        "Anda dapat terus menggunakan layanan Proton seperti biasa."
-      ],
-      "Your import will not be processed.": [
-        "Impor Anda tidak akan diproses."
-      ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Demi menyiapkan akun eksternal untuk mengimpor, harap mengikuti petunjuk:"
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Jika Anda menggunakan layanan surel berbeda atau akun Anda sudah disiapkan, Anda dapat melewati menuju impor."
-      ],
-      "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun surel Anda yang ingin Anda impor."
-      ],
-      "Your login information will not be saved after the import is completed.": [
-        "Informasi masuk Anda tidak akan disimpan setelah impor selesai."
-      ],
-      "Import mailbox": [
-        "Impor mailbox"
-      ],
-      "Label all imported messages as": [
-        "Labeli semua pesan terimpor sebagai"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "{ providerFoldersNumLocalized } label ditemukan di Gmail"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } folder ditemukan"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "{ selectedFoldersCountLocalized } label dipilih"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } folder dipilih"
-      ],
-      "Your messages are being imported from": [
-        "Pesan Anda sedang diimpor dari"
-      ],
-      "Please select the folders you would like to import:": [
-        "Silakan pilih folder yang ingin Anda impor:"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Buat sebuah label untuk pesan yang diimpor, rentang waktu untuk impor ini, dam label yang Anda ingin impor."
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Buat label untuk pesan yang diimpor, rentang waktu untuk proses impor, dan folder yang ingin Anda impor."
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Semua (${ totalFoldersCount } label)"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Semua (${ totalFoldersCount } folder)"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label dipilih"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } folder dipilih"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Transfer data Anda secara aman ke Proton. Import Assistant menyambung ke layanan surel eksternal dan mengimpor folder dan pesan yang Anda pilih."
-      ],
-      "No imports to display.": [
-        "Tidak ada impor untuk ditampilkan."
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton akan mencoba melanjutkan impor sesegera mungkin saat layanan surel Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apapun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan Anda harus mengulanginya dari awal."
-      ],
-      "Check the status of current and previous imports.": [
-        "Periksa status impor sekarang dan sebelumnya."
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "Proton menjeda impor karena akun Anda kekurangan ruang peyimpanan. Anda dapat:"
-      ],
-      "free up space by deleting older messages or other data": [
-        "kosongkan ruang dengan menghapus pesan lama atau data lainnya"
-      ],
-      "purchase additional storage": [
-        "beli penyimpanan tambahan"
-      ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton menjeda impor karena terputus sambungan dengan penyedia surel Anda. Mohon sambung ulang."
-      ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Impor Anda dari ${ delayedImport.Email } ditunda sementara."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Untuk keamanan tingkat lanjut, aplikasi Import-Export mengenkripsi surel di perangkat Anda sebelum memindahkannya ke server Proton. Anda juga dapat mengekspor pesan untuk cadangan lokal."
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "Tersedia di macOS, Windows, dan Linux."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
       ],
@@ -2882,75 +2813,6 @@
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Log mencakup upaya otentikasi untuk semua layanan Proton yang menggunakan kredensial ProtonMail Anda."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ProtonVPN untuk perangkat Anda dan sambungkan ke server ProtonVPN."
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Anda dapat menggunakan kredensial berikut untuk menyambungkan ke server ProtonVPN menggunakan aplikasi pihak ketiga, aplikasi VPN sumber terbuka, seperti Tunnerblick untuk macOS atau OpenVPN untuk GNU/Linux."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Pelajari cara masuk ke ProtonVPN dengan aplikasi VPN pihak ketiga."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Kami menyarankan Anda untuk menggunakan aplikasi resmi ProtonVPN jika memungkinkan."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Anda tidak dapat menggunakan kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ProtonVPN atau dasbor ProtonVPN. ${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gunakan kredensial berikut saat menghubungkan ke server ProtonVPN tanpa aplikasi. Contoh kasus penggunaan termasuk: Tunnelblick di macOS, OpenVPN di GNU/Linux."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Jangan menggunakan kredensial OpenVPN / IKEv2 di aplikasi ProtonVPN atau di dasbor ProtonVPN. ${ learnMore }"
-      ],
-      "Server load": [
-        "Beban server"
-      ],
-      "Server is currently down": [
-        "Server sedang tidak aktif"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Dibutuhkan langganan Plus atau Visionary"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Dibutuhkan langganan Basic, Plus atau Visionary"
-      ],
-      "${ number } server": [
-        "${ number } server"
-      ],
-      "${ number } city": [
-        "${ number } kota"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Pasang konfigurasi Secure Core untuk mendapat manfaat perlindungan tambahan terhadap ancaman titik akhir VPN."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Diperlukan paket ProtonVPN Plus atau Visionary untuk fitur Secure Core."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Membutuhkan paket ProtonVPN Basic, Plus atau Visionary untuk sambungan tingkat Negara."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Pasang berkas Konfigurasi server untuk menyambung ke server khusus di negara pilihan Anda."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Pasang berkas konfigurasi server gratis untuk menyambung ke server tertentu dari salah satu dari tiga lokasi gratis."
-      ],
-      "Plan upgrade required": [
-        "Diperlukan peningkatan paket"
-      ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran tersimpan."
       ],
@@ -2977,39 +2839,6 @@
       ],
       "of": [
         "dari"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Balasan otomatis aktif setiap bulan antara waktu mulai dan akhir yang dipilih."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Balasan otomatis selalu aktif pada hari-hari dalam pekan yang Anda pilih, di antara jam yang dipilih."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Balasan otomatis aktif setiap minggu antara waktu mulai dan akhir yang dipilih."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Balasan otomatis aktif sampai Anda menonaktifkannya."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Balasan otomatis aktif dari waktu mulai sampai waktu akhir."
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Gunakan balas secara otomatis untuk memberitahu kontak bahwa Anda sedang diluar kantor atau Anda dalam keadaan tidak dapat menaggapi."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Verifikasi alamat adalah fitur keamanan tingkat lanjut. Aktifkan ini jika Anda benar-benar tahu fungsinya."
-      ],
-      "Encryption setting updated": [
-        "Pengaturan enkripsi diperbarui"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Klien PGP akan mendeteksi kunci PGP Anda secara otomatis jika pesan keluar ditandatangani."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ubah pengaturan ini jika Anda menggunakan PGP dengan penerima di luar ProtonMail."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Ini akan menciptakan kunci enkripsi baru untuk organisasi Anda. Kunci 4096-bit hanya bekerja pada komputer dengan kinerja tinggi, untuk sebagian besar pengguna, sebaiknya gunakan kunci 2048-bit."
@@ -3095,6 +2924,129 @@
       "more": [
         "lebih"
       ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ProtonVPN untuk perangkat Anda dan sambungkan ke server ProtonVPN."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Anda dapat menggunakan kredensial berikut untuk menyambungkan ke server ProtonVPN menggunakan aplikasi pihak ketiga, aplikasi VPN sumber terbuka, seperti Tunnerblick untuk macOS atau OpenVPN untuk GNU/Linux."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Pelajari cara masuk ke ProtonVPN dengan aplikasi VPN pihak ketiga."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Kami menyarankan Anda untuk menggunakan aplikasi resmi ProtonVPN jika memungkinkan."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "Anda tidak dapat menggunakan kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ProtonVPN atau dasbor ProtonVPN. ${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Gunakan kredensial berikut saat menghubungkan ke server ProtonVPN tanpa aplikasi. Contoh kasus penggunaan termasuk: Tunnelblick di macOS, OpenVPN di GNU/Linux."
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "Jangan menggunakan kredensial OpenVPN / IKEv2 di aplikasi ProtonVPN atau di dasbor ProtonVPN. ${ learnMore }"
+      ],
+      "Server load": [
+        "Beban server"
+      ],
+      "Server is currently down": [
+        "Server sedang tidak aktif"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Dibutuhkan langganan Plus atau Visionary"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Dibutuhkan langganan Basic, Plus atau Visionary"
+      ],
+      "${ number } server": [
+        "${ number } server"
+      ],
+      "${ number } city": [
+        "${ number } kota"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Pasang konfigurasi Secure Core untuk mendapat manfaat perlindungan tambahan terhadap ancaman titik akhir VPN."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "Diperlukan paket ProtonVPN Plus atau Visionary untuk fitur Secure Core."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "Membutuhkan paket ProtonVPN Basic, Plus atau Visionary untuk sambungan tingkat Negara."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Pasang berkas Konfigurasi server untuk menyambung ke server khusus di negara pilihan Anda."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Pasang berkas konfigurasi server gratis untuk menyambung ke server tertentu dari salah satu dari tiga lokasi gratis."
+      ],
+      "Plan upgrade required": [
+        "Diperlukan peningkatan paket"
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Harap perhatikan bahwa jika Anda menghapus alamat ini, Anda tidak dapat lagi mengirim atau menerima email menggunakan alamat ini."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Yakin ingin menghapus alamat ini?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
+      ],
+      "Queued": [
+        "Antri"
+      ],
+      "Done": [
+        "Selesai"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Biarkan kontak Anda tau bahwa Anda perduli tentang privasi mereka."
+      ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Balasan otomatis aktif setiap bulan antara waktu mulai dan akhir yang dipilih."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Balasan otomatis selalu aktif pada hari-hari dalam pekan yang Anda pilih, di antara jam yang dipilih."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Balasan otomatis aktif setiap minggu antara waktu mulai dan akhir yang dipilih."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Balasan otomatis aktif sampai Anda menonaktifkannya."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Balasan otomatis aktif dari waktu mulai sampai waktu akhir."
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Gunakan balas secara otomatis untuk memberitahu kontak bahwa Anda sedang diluar kantor atau Anda dalam keadaan tidak dapat menaggapi."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        ""
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Verifikasi alamat adalah fitur keamanan tingkat lanjut. Aktifkan ini jika Anda benar-benar tahu fungsinya."
+      ],
+      "Encryption setting updated": [
+        "Pengaturan enkripsi diperbarui"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Klien PGP akan mendeteksi kunci PGP Anda secara otomatis jika pesan keluar ditandatangani."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Ubah pengaturan ini jika Anda menggunakan PGP dengan penerima di luar ProtonMail."
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama dan skrip Sieve yang valid."
       ],
@@ -3157,27 +3109,6 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Apakah Anda yakin ingin menghapus folder ini?"
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Harap perhatikan bahwa jika Anda menghapus alamat ini, Anda tidak dapat lagi mengirim atau menerima email menggunakan alamat ini."
-      ],
-      "Are you sure you want to delete this address?": [
-        "Yakin ingin menghapus alamat ini?"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
-      ],
-      "Queued": [
-        "Antri"
-      ],
-      "Done": [
-        "Selesai"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Biarkan kontak Anda tau bahwa Anda perduli tentang privasi mereka."
       ],
       "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
         "Saat dinonaktifkan, ini mencegah semua berkas dimuat di perangkat Anda tanpa Anda ketahui.\t"
@@ -3266,14 +3197,14 @@
       "Servers are unreachable.": [
         "Server tidak terjangkau."
       ],
-      "Users can't make changes to organization settings. If you need admin priviledges, reach out to your system administrator.": [
-        "Pengguna tidak bisa mengubah pengaturan organisasi. Jika Anda butuh hak akses admin, hubungi administrator sistem Anda."
+      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
+        "Pengguna tidak bisa mengubah pengaturan organisasi. Jika Anda butuh akses admin, hubungi administrator sistem Anda."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Tingkatkan ke paket berbayar untuk mengakses fitur-fitur premium dan meningkatkan ruang penyimpanan Anda."
       ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Pengguna tidak bisa mengubah pengaturan organisasi. Jika Anda butuh akses admin, hubungi administrator sistem Anda."
+      "Users can't make changes to organization settings. If you need admin priviledges, reach out to your system administrator.": [
+        "Pengguna tidak bisa mengubah pengaturan organisasi. Jika Anda butuh hak akses admin, hubungi administrator sistem Anda."
       ],
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
@@ -3393,14 +3324,83 @@
         "Ini memerlukan waktu beberapa detik atau menit tergantung dengan perangkat Anda"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Hasil tidak ditemukan"
+    "Storage": {
+      "Your current storage:": [
+        "Penyimpanan Anda saat ini:"
+      ],
+      "Upgrade storage": [
+        "Tingkatkan penyimpanan"
+      ],
+      "Release notes": [
+        "Catatan rilis"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Cari zona waktu"
+    "Link": {
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Go to subscription plans": [
+        "Pergi ke paket langganan"
+      ],
+      "clearing your browser cache": [
+        "membersihkan singgahan peramban Anda"
+      ],
+      "click here": [
+        "klik di sini"
+      ],
+      "Add a gift code": [
+        "Tambah kode hadiah"
+      ],
+      "Pay invoice": [
+        "Bayar tagihan"
+      ],
+      "Upgrade account": [
+        "Tingkatkan akun"
+      ],
+      "View guide": [
+        "Lihat panduan"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Apa bedanya protokol UDP dan TCP?"
+      ],
+      "Request an invite": [
+        "Minta undangan"
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "General": [
+        "Umum"
+      ],
+      "Terms": [
+        "Ketentuan"
+      ],
+      "Privacy policy": [
+        "Kebijakan privasi"
+      ],
+      "Previous version": [
+        "Versi sebelumnya"
+      ],
+      "Sign in": [
+        "Masuk"
+      ],
+      "Common sign up issues": [
+        "Masalah umum proses daftar"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ],
+      "Forgot username?": [
+        "Lupa nama pengguna?"
+      ],
+      "Common sign in issues": [
+        "Masalah umum proses masuk"
+      ],
+      "Create an account": [
+        "Buat akun"
       ]
     },
     "Title": {
@@ -3413,32 +3413,44 @@
       "Next": [
         "Selanjutnya"
       ],
-      "Expand content": [
-        "Buka konten"
-      ],
-      "Link confirmation": [
-        "Konfirmasi tautan"
-      ],
       "What's new": [
         "Apa yang baru"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
+      "Expand content": [
+        "Buka konten"
+      ],
+      "Link confirmation": [
+        "Konfirmasi tautan"
+      ],
       "Keyboard Shortcuts": [
         "Pintasan Papan Ketik"
       ],
-      "Edit domain": [
-        "Ubah domain"
+      "Start import process": [
+        "Mulai proses impor"
       ],
-      "Add domain": [
-        "Tambah domain"
+      "Import in progress": [
+        "Impor sedang berjalan"
       ],
-      "Catch-All address": [
-        "Tangkap semua alamat"
+      "Customize import": [
+        "Sesuaikan impor"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Hapus ${ domain.DomainName }"
+      "Prepare for import": [
+        "Menyiapkan impor"
+      ],
+      "Prepare Yahoo Mail for import": [
+        "Mempersiapkan Yahoo Mail untuk mengimpor"
+      ],
+      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
+        "Meyiapkan Gmail untuk impor ${ gmailInstructionsStep }/${ totalSteps }"
+      ],
+      "Reconnect your account": [
+        "Sambung kembali akun Anda"
+      ],
+      "Start a new import": [
+        "Mulai impor baru"
       ],
       "Error": [
         "Kesalahan"
@@ -3479,6 +3491,9 @@
       "Your calendar link": [
         "Tautan kalender Anda"
       ],
+      "Create key": [
+        "Buat kunci"
+      ],
       "Re-activate keys": [
         "Aktivasi ulang kunci"
       ],
@@ -3494,14 +3509,44 @@
       "Delete key": [
         "Hapus kunci"
       ],
-      "Create key": [
-        "Buat kunci"
-      ],
       "Success": [
         "Berhasil"
       ],
       "Import key": [
         "Impor kunci"
+      ],
+      "Enable keyboard shortcuts": [
+        "Aktifkan pintasan papan ketik"
+      ],
+      "Exporting contacts": [
+        "Mengekspor kontak"
+      ],
+      "Select action to take on contact group": [
+        "Pilih tindakan yang diambil di grup kontak"
+      ],
+      "Add contact group name": [
+        "Tambah nama grup kontak"
+      ],
+      "Select contact group": [
+        "Pilih grup kontak"
+      ],
+      "Import groups": [
+        "Impor grup"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Edit domain": [
+        "Ubah domain"
+      ],
+      "Add domain": [
+        "Tambah domain"
+      ],
+      "Catch-All address": [
+        "Tangkap semua alamat"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Hapus ${ domain.DomainName }"
       ],
       "Open help menu": [
         "Buka menu bantuan"
@@ -3614,51 +3659,6 @@
       "Plan summary": [
         "Ringkasan paket"
       ],
-      "Enable keyboard shortcuts": [
-        "Aktifkan pintasan papan ketik"
-      ],
-      "Exporting contacts": [
-        "Mengekspor kontak"
-      ],
-      "Select action to take on contact group": [
-        "Pilih tindakan yang diambil di grup kontak"
-      ],
-      "Add contact group name": [
-        "Tambah nama grup kontak"
-      ],
-      "Select contact group": [
-        "Pilih grup kontak"
-      ],
-      "Import groups": [
-        "Impor grup"
-      ],
-      "Import contacts": [
-        "Impor kontak"
-      ],
-      "Start import process": [
-        "Mulai proses impor"
-      ],
-      "Import in progress": [
-        "Impor sedang berjalan"
-      ],
-      "Customize import": [
-        "Sesuaikan impor"
-      ],
-      "Prepare for import": [
-        "Menyiapkan impor"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Mempersiapkan Yahoo Mail untuk mengimpor"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Meyiapkan Gmail untuk impor ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Reconnect your account": [
-        "Sambung kembali akun Anda"
-      ],
-      "Start a new import": [
-        "Mulai impor baru"
-      ],
       "Change password for ${ Name } (${ Email })": [
         "Ubah sandi untuk ${ Name } (${ Email })"
       ],
@@ -3716,18 +3716,6 @@
       "Clear": [
         "Bersihkan"
       ],
-      "1. Select platform": [
-        "1. Pilih platform"
-      ],
-      "2. Select protocol": [
-        "2. Pilih protokol"
-      ],
-      "3. Select config file and download": [
-        "3. Pilih berkas konfigurasi dan unduh"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Dapatkan ProtonVPN Plus untuk mengakses semua server"
-      ],
       "Pay invoice": [
         "Bayar tagihan"
       ],
@@ -3742,9 +3730,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Automatically sign outgoing messages?": [
-        "Tanda tangani pesan keluar secara otomatis?"
       ],
       "Change organization name": [
         "Ubah nama organisasi"
@@ -3790,6 +3775,30 @@
       ],
       "Add user": [
         "Tambah pengguna"
+      ],
+      "1. Select platform": [
+        "1. Pilih platform"
+      ],
+      "2. Select protocol": [
+        "2. Pilih protokol"
+      ],
+      "3. Select config file and download": [
+        "3. Pilih berkas konfigurasi dan unduh"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Dapatkan ProtonVPN Plus untuk mengakses semua server"
+      ],
+      "Add address": [
+        "Tambah alamat"
+      ],
+      "Delete ${ address.Email }": [
+        "Hapus ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Buat kunci yang hilang"
+      ],
+      "Automatically sign outgoing messages?": [
+        "Tanda tangani pesan keluar secara otomatis?"
       ],
       "Edit filter": [
         "Ubah filter"
@@ -3839,15 +3848,6 @@
       "Sort labels alphabetically": [
         "Urutkan sesuai abjad"
       ],
-      "Add address": [
-        "Tambah alamat"
-      ],
-      "Delete ${ address.Email }": [
-        "Hapus ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Buat kunci yang hilang"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"
       ],
@@ -3866,14 +3866,38 @@
       "Account suspended": [
         "Akun ditangguhkan"
       ],
-      "Sorry, you can't access this page": [
-        "Maaf, Anda tidak dapat mengakses halaman ini"
+      "General": [
+        "Umum"
       ],
-      "Upgrade": [
-        "Tingkatkan"
+      "Theme": [
+        "Tema"
       ],
-      "Proton Logo": [
-        "Logo Proton"
+      "Contacts": [
+        "Kontak"
+      ],
+      "Import & export": [
+        "Impor & ekspor"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "My calendars": [
+        "Kalender saya"
+      ],
+      "Subscribed calendars": [
+        ""
+      ],
+      "Share outside Proton": [
+        "Bagikan diluar Proton"
+      ],
+      "Time zone": [
+        "Zona waktu"
+      ],
+      "Layout": [
+        "Tata letak"
       ],
       "Domain names": [
         "Nama domain"
@@ -3881,23 +3905,17 @@
       "Catch-all address": [
         "Alamat Tangkap semua"
       ],
+      "Import Assistant": [
+        "Asisten Impor"
+      ],
       "Appearance": [
         "Tampilan"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Layout": [
-        "Tata letak"
       ],
       "Other": [
         "Lainnya"
       ],
       "Auto reply": [
         "Balasan otomatis"
-      ],
-      "Import Assistant": [
-        "Asisten Impor"
       ],
       "Encryption & keys": [
         "Enkripsi & kunci"
@@ -3932,9 +3950,6 @@
       "Labels": [
         "Label"
       ],
-      "General": [
-        "Umum"
-      ],
       "Short domain (@pm.me)": [
         "Domain pendek (@pm.me)"
       ],
@@ -3959,35 +3974,11 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import & export": [
-        "Impor & ekspor"
-      ],
       "Current & past imports": [
         "Impor sekarang & sebelumnya"
       ],
       "Import-Export app": [
         "Aplikasi Import-Export"
-      ],
-      "Contacts": [
-        "Kontak"
-      ],
-      "Import": [
-        "Impor"
-      ],
-      "Export": [
-        "Ekspor"
-      ],
-      "My calendars": [
-        "Kalender saya"
-      ],
-      "Subscribed calendars": [
-        ""
-      ],
-      "Share outside Proton": [
-        "Bagikan diluar Proton"
-      ],
-      "Time zone": [
-        "Zona waktu"
       ],
       "Password & recovery": [
         "Kata sandi & pemulihan"
@@ -4037,21 +4028,6 @@
       "Email subscriptions": [
         "Langganan via surel"
       ],
-      "VPN apps": [
-        "Aplikasi VPN"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
-      ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
-      "Credentials": [
-        "Kredensial"
-      ],
-      "OpenVPN configuration files": [
-        "Berkas konfigurasi OpenVPN"
-      ],
       "Organization": [
         "Organisasi"
       ],
@@ -4070,8 +4046,32 @@
       "Password & keys": [
         "Kata sandi & kunci"
       ],
+      "VPN apps": [
+        "Aplikasi VPN"
+      ],
+      "ProtonVPN": [
+        "ProtonVPN"
+      ],
+      "OpenVPN / IKEv2": [
+        "OpenVPN / IKEv2"
+      ],
+      "Credentials": [
+        "Kredensial"
+      ],
+      "OpenVPN configuration files": [
+        "Berkas konfigurasi OpenVPN"
+      ],
+      "Sorry, you can't access this page": [
+        "Maaf, Anda tidak dapat mengakses halaman ini"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
       "Settings": [
         "Pengaturan"
+      ],
+      "Proton Logo": [
+        "Logo Proton"
       ],
       "Choose an account": [
         "Pilih akun"
@@ -4140,222 +4140,43 @@
         "Tidak ada metode pemulihan"
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Tambahkan domain yang Anda miliki ke akun ProtonMail Anda."
+    "Loading info": {
+      "Connecting to your calendar provider": [
+        "Menghubungkan ke penyedia kalender Anda"
+      ],
+      "Connecting to your email provider": [
+        "Menghubungkan ke penyedia email Anda"
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "subdomain 'www' biasanya tidak digunakan untuk email. Yakin ingin menggunakan domain ini?"
+    "Wizard step": {
+      "Authenticate": [
+        "Otentikasi"
+      ],
+      "Configure Import": [
+        "Konfigurasi Impor"
+      ],
+      "Import": [
+        "Impor"
       ]
     },
-    "Success": {
-      "Verify code copied to clipboard!": [
-        "Kode verifikasi disalin ke papan klip!"
+    "Confirm modal title": {
+      "Quit import?": [
+        "Keluar dari impor?"
       ],
-      "SPF value copied to clipboard!": [
-        "Nilai SPF disalin ke papan klip!"
+      "Quit import customization?": [
+        "Keluar dari impor penyesuaian?"
       ],
-      "Value copied to clipboard!": [
-        "Nilai disalin ke papan klip!"
+      "Import is incomplete!": [
+        "Impor tidak lengkap!"
       ],
-      "DMARC value copied to clipboard!": [
-        "Nilai DMARC disalin ke papan klip!"
+      "Remove from the list?": [
+        "Hapus dari daftar?"
       ],
-      "Domain verified": [
-        "Domain berhasil diverifikasi"
-      ],
-      "Catch-all address updated": [
-        "Alamat Catch-all diperbarui"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        ""
-      ],
-      "Calendar created": [
-        "Kalender berhasil dibuat"
-      ],
-      "Calendar updated": [
-        "Kalender berhasil diperbarui"
-      ],
-      "Default calendar updated": [
-        "Kalendar bawaan diperbarui"
-      ],
-      "Calendar removed": [
-        "Kalender berhasil dihapus"
-      ],
-      "Preference saved": [
-        "Preferensi disimpan"
-      ],
-      "Email address copied to clipboard": [
-        "Alamat email disalin ke papan klip"
-      ],
-      "Bug reported": [
-        "Bug berhasil dilaporkan"
-      ],
-      "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
-      ],
-      "Payment method updated": [
-        "Metode pembayaran berhasil diperbarui"
-      ],
-      "Payment method added": [
-        "Metode pembayaran berhasil ditambahkan"
-      ],
-      "Credits added": [
-        "Kredit ditambahkan"
-      ],
-      "Gift code applied": [
-        "Kode hadiah diterapkan"
-      ],
-      "Locale updated": [
-        "Bahasa diperbarui"
-      ],
-      "Premium address created": [
-        "Alamat premium berhasil dibuat"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferensi pintasan papan ketik diperbarui"
-      ],
-      "Import resumed": [
-        "Impor dilanjutkan"
-      ],
-      "Import canceled": [
-        "Impor dibatalkan"
-      ],
-      "Import record deleted": [
-        "Rekaman impor dihapus"
-      ],
-      "Deleting original messages": [
-        "Hapus pesan asli"
-      ],
-      "Password updated": [
-        "Kata sandi berhasil diperbarui"
-      ],
-      "Account deleted. Logging out...": [
-        "Akun dihapus. Keluar akun..."
-      ],
-      "Email updated": [
-        "Email diperbarui"
-      ],
-      "Phone number updated": [
-        "Nomor telepon telah diperbarui"
-      ],
-      "Session revoked": [
-        "Sesi berhasil dicabut"
-      ],
-      "Sessions revoked": [
-        "Sesi berhasil dicabut"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } tersalin di papan klip Anda"
-      ],
-      "Buttons position saved": [
-        "Posisi tombol berhasil disimpan"
-      ],
-      "Payment method deleted": [
-        "Metode pembayaran berhasil dihapus"
-      ],
-      "Invoice paid": [
-        "Tagihan dibayar"
-      ],
-      "Invoice customized": [
-        "Tagihan berhasil disesuaikan"
-      ],
-      "Auto-reply disabled": [
-        "Balasan otomatis dinonaktifkan"
-      ],
-      "Auto-reply updated": [
-        "Balasan-otomatis berhasil diperbarui"
-      ],
-      "Organization activated": [
-        "Organisasi berhasil diaktifkan"
-      ],
-      "Keys updated": [
-        "Kunci berhasil diperbarui"
-      ],
-      "User updated": [
-        "Pengguna berhasil diperbarui"
-      ],
-      "User created": [
-        "Pengguna berhasil dibuat"
-      ],
-      "Address added": [
-        "Alamat ditambahkan"
-      ],
-      "Address updated": [
-        "Alamat Diperbarui"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kode dikirim ke ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verifikasi berhasil"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Jika Anda memasukkan email pemulihan yang valid, kami akan mengirimkan email dengan nama pengguna Anda di menit berikutnya."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Jika Anda memasukkan nomor telepon pemulihan yang valid, kami akan mengirimkan Anda sms dengan nama pengguna Anda di menit berikutnya."
-      ]
-    },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Demi keamanan, kami perlu memverifikasi bahwa Anda adalah pemilik ${ domainName }. Harap tambahkan rekam DNS TXT berikut ke domain Anda. Ini biasanya dapat dilakukan di kontrol panel registrar nama domain Anda."
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "Tambah pengguna baru ke organisasi Anda dan buat alamat untuknya."
-      ],
-      "Add a new address for any user of your organization.": [
-        "Tambah alamat baru untuk siapapun pengguna organisasi Anda."
-      ]
-    },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Setelah sukses memverifikasi, jangan menghapus data TXT ini karena diperlukan untuk mengkonfirmasi bahwa anda masih memiliki domain."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Pembaruan perubahan DNS perlu waktu sampai satu hari."
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Harap tambahkan data TXT berikut ini:"
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "Tipe"
-      ],
-      "Host name": [
-        "Nama host"
-      ],
-      "Value / Data / Points to": [
-        "Nilai / Data / Poin ke"
-      ],
-      "Value / Data": [
-        "Nilai / Data"
-      ],
-      "Priority": [
-        "Prioritas"
+      "Delete all messages": [
+        "Hapus semua pesan"
       ]
     },
     "Warning": {
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
-      ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Fitur ini hanya tersedia untuk ProtonMail Professional atau lebih tinggi"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
-      ],
       "Are you sure you want to discard your import?": [
         "Yakin ingin membuang impor Anda?"
       ],
@@ -4382,6 +4203,21 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Anda tidak akan lagi melihat rekaman impor ini di daftar."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
+      ],
+      "This feature is only available for ProtonMail Professional plans or higher": [
+        "Fitur ini hanya tersedia untuk ProtonMail Professional atau lebih tinggi"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
@@ -4414,20 +4250,241 @@
         "Anda harus ${ activateLink } kunci organisasi sebelum menambahkan alamat email ke anggota non-pribadi."
       ]
     },
-    "Tab in domain modal": {
-      "Addresses": [
-        "Alamat"
+    "Import instructions emphasis": {
+      "Security": [
+        "Keamanan"
+      ],
+      "turn on access": [
+        "aktifkan akses"
+      ],
+      "app password": [
+        "kata sandi aplikasi"
+      ],
+      "Gmail Settings": [
+        "Pengaturan Gmail"
+      ],
+      "Forwarding and POP/IMAP": [
+        "Penerusan dan POP/IMAP"
+      ],
+      "IMAP access": [
+        "Akses IMAP"
+      ],
+      "Labels": [
+        "Label"
+      ],
+      "2-step verification": [
+        "Verifikasi 2 langkah"
+      ],
+      "Account info": [
+        "Info akun"
+      ],
+      "Account security": [
+        "Keamanan akun"
+      ],
+      "Manage app passwords": [
+        "Kelola kata sandi aplikasi"
+      ]
+    },
+    "Import instructions": {
+      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
+        "Ke ${ googleAccountLink }. Di bagian ${ boldSecurity }, ${ boldAccess } untuk aplikasi yang kurang aman. Jika Anda tidak memiliki opsi ini, Anda mungkin perlu mengaktifkan verifikasi 2 langkah."
+      ],
+      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
+        "Ke ${ googleAccountLink }. Di bagian ${ boldSecurity }, buat ${ boldAppPassword } jika Anda belum memilikinya. Anda perlu kata sandi ini selama proses impor."
+      ],
+      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
+        "Di ${ boldGmailSettings }, kunjungi ${ boldForwarding } dan pastikan ${ boldIMAPAccess } aktif."
+      ],
+      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
+        "Di bagian ${ boldLabels }, pilih folder yang diizinkan untuk diimpor ke ProtonMail."
+      ],
+      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
+        "Izinkan akses ProtonMail ke akun Gmail Anda: atur ${ bold2Steps } aktif dan ikuti langkah di bawah."
+      ],
+      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
+        "Akhirnya, ${ googleMailLink } dengan akun yang mau Anda impor, ${ googleCaptchaLink }."
+      ],
+      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, go to ${ boldManageAppPass } to generate a password. You will need this password during the import.": [
+        "Masuk ke Yahoo Mail dan klik nama Anda di bagian sudut kanan atas untuk mengakses ${ boldAccountInfo }. Di bagian ${ boldAccountSec }, kunjungi ${ boldManageAppPass } untuk membuat kata sandi. Anda perlu kata sandi ini selama proses impor."
+      ]
+    },
+    "Import instructions tab title": {
+      "2-step verification disabled (default settings)": [
+        "Verifikasi 2 langkah nonaktif (pengaturan baku)"
+      ],
+      "2-step verification enabled": [
+        "Verifikasi 2 langkah aktif"
+      ]
+    },
+    "Import instructions image alternative text": {
+      "How to turn on access for Less Secure Apps in Gmail settings": [
+        "Bagaimana cara mengaktifkan akses ke Aplikasi Kurang Aman di pengaturan Gmail"
+      ],
+      "How to create an app password in Gmail settings": [
+        "Bagaimana cara membuat kata sandi aplikasi di pengaturan Gmail"
+      ],
+      "How to enable IMAP Forwarding in Gmail settings": [
+        "Bagaimana cara mengaktifkan Penerusan IMAP di pengaturan Gmail"
+      ],
+      "How to show folders in IMAP in Gmail settings": [
+        "Bagaimana menampilkan folder IMAP di pengaturan Gmail"
+      ],
+      "How to disable CAPTCHA in Gmail": [
+        "Cara menonaktifkan CAPTCHA di Gmail"
+      ]
+    },
+    "Import instructions external link": {
+      "login to Gmail": [
+        "masuk ke Gmail"
+      ],
+      "then open this page to unlock captcha": [
+        "kemudian buka laman ini untuk membuka kunci captcha"
+      ]
+    },
+    "Provider": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import error": {
+      "Invalid IMAP port": [
+        "Port IMAP tidak valid"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Jika ${ bold2StepsDisabled } di Gmail (pengaturan baku), pastikan:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP Gmail aktif."
+      ],
+      "your password is correct": [
+        "kata sandi Anda benar"
+      ],
+      "\"Less secure app access\" is turned on in your Google account security settings": [
+        "\"Akses aplikasi kurang aman\" diaktifkan di pengaturan keamanan akun Google Anda"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung dengan akun Gmail. Pastikan alamat server mail dan nomor port Anda benar."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Jika ${ bold2StepsEnabled }, mohon pastikan alamat surel dan kata sandi aplikasi benar. ${ boldNot } gunakan kata sandi Anda biasanya."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP telah aktif di akun Gmail Anda."
+      ],
+      "your email address and password are correct": [
+        "alamat surel dan kata sandi Anda benar"
+      ],
+      "your app password is correct. Do ${ boldNot } use your regular password": [
+        "kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
+      ],
+      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Yahoo Mail Anda. Mohon pastikan:"
+      ],
+      "IMAP access is enabled in your Yahoo account": [
+        "Akses IMAP telah diaktifkan di akun Yahoo Anda"
+      ],
+      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung dengan akun Yahoo Mail Anda. Pastikan alamat server mail dan nomor port benar."
+      ],
+      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
+        "alamat surel dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan:"
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan:"
+      ],
+      "IMAP access is enabled in your external account": [
+        "Akses IMAP telah diaktifkan di akun eksternal Anda"
+      ],
+      "Use your app password if:": [
+        "Gunakan kata sandi aplikasi Anda jika:"
+      ],
+      "2-step verification is enabled in your external account": [
+        "verifikasi 2 langkah telah diaktifkan di akun eksternal Anda"
+      ],
+      "your email account requires one to export your data": [
+        "akun surel Anda memerlukan satu untuk mengekspor data"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port benar."
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
+      ],
+      "2-step verification is enabled in your external email account": [
+        "verifikasi 2 langkah aktif di akun surel eksternal Anda"
+      ],
+      "your email account requires an app password to export your data": [
+        "akun surel Anda membutuhkan kata sandi aplikasi untuk mengekspor data Anda"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Verifikasi 2 langkah dinonaktifkan"
+      ],
+      "2-step verification is enabled": [
+        "Verifikasi 2 langkah aktif"
+      ],
+      "all your other Google accounts": [
+        "semua akun Google Anda lainnya"
+      ],
+      "not": [
+        "jangan"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ]
     },
     "Tooltip": {
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
+      "Customize import to reduce the number of labels": [
+        "Sesuaikan impor untuk mengurangi jumlah label"
       ],
-      "Your DKIM signing is working.": [
-        "Penandatanganan DKIM anda berfungsi."
+      "Customize import to reduce the number of folders": [
+        "Sesuaikan impor untuk mengurangi jumlah folder"
       ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
+      "Edit label names": [
+        "Edit nama label"
+      ],
+      "Edit folder names": [
+        "Edit nama folder"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "Subfolder sistem akan muncul di folder terpisah di ProtonMail"
+      ],
+      "Each imported email will have this label": [
+        "Setiap surel yang diimpor akan punya label ini"
+      ],
+      "The import will start with the most recent messages.": [
+        "Import akan dimulai dengan pesan terbaru."
+      ],
+      "Account is disconnected": [
+        "Akun terputus"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "Kotak masuk ProtonMail Anda hampir penuh"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "Akun eksternal Anda mungkin mencapai batas bandwidth 24 jam. Proton akan mencoba melanjutkan impor sesegera mungkin."
+      ],
+      "This feature is unavailable for the moment": [
+        ""
       ],
       "ProtonMail users will use this key by default for sending": [
         "Pengguna ProtonMail akan memakai kunci ini secara bawaan untuk mengirim"
@@ -4446,6 +4503,18 @@
       ],
       "This address has been disabled": [
         "Alamat ini telah dinonaktifkan"
+      ],
+      "You do not have any contacts to export": [
+        "Anda tidak memiliki kontak untuk diekspor"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
+      ],
+      "Your DKIM signing is working.": [
+        "Penandatanganan DKIM anda berfungsi."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Gunakan banyak alamat / alias yang tertaut ke akun Anda, cth. username2@protonmail.com"
@@ -4495,39 +4564,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
       ],
-      "You do not have any contacts to export": [
-        "Anda tidak memiliki kontak untuk diekspor"
-      ],
-      "Customize import to reduce the number of labels": [
-        "Sesuaikan impor untuk mengurangi jumlah label"
-      ],
-      "Customize import to reduce the number of folders": [
-        "Sesuaikan impor untuk mengurangi jumlah folder"
-      ],
-      "Edit label names": [
-        "Edit nama label"
-      ],
-      "Edit folder names": [
-        "Edit nama folder"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Subfolder sistem akan muncul di folder terpisah di ProtonMail"
-      ],
-      "Each imported email will have this label": [
-        "Setiap surel yang diimpor akan punya label ini"
-      ],
-      "The import will start with the most recent messages.": [
-        "Import akan dimulai dengan pesan terbaru."
-      ],
-      "Account is disconnected": [
-        "Akun terputus"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Kotak masuk ProtonMail Anda hampir penuh"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Akun eksternal Anda mungkin mencapai batas bandwidth 24 jam. Proton akan mencoba melanjutkan impor sesegera mungkin."
-      ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Mengaktifkan catatan lanjut merekam alamat IP untuk setiap kejadian di catatan keamanan."
       ],
@@ -4559,84 +4595,214 @@
         "Fitur ini menunda pengiriman email Anda, memberikan kesempatan kepada Anda untuk membatalkan pengiriman selama selama kerangka waktu yang dipilih."
       ]
     },
-    "Label in domain modal": {
-      "Domain": [
-        "Domain"
-      ],
-      "Verify": [
-        "Verifikasi"
-      ],
-      "Addresses": [
-        "Alamat"
+    "Security phrase": {
+      "Permanently delete messages in ${ email }": [
+        "Hapus pesan secara permanen di ${ email }"
       ]
     },
-    "Domain label": {
-      "Verified": [
-        "Terverifikasi"
+    "Instructions": {
+      "To confirm this action enter the following text in the box below.": [
+        "Untuk mengonfirmasi tindakan ini masukkan teks di bawah ini."
+      ],
+      "Enter phrase to confirm": [
+        "Masukkan frase untuk konfirmasi"
       ]
     },
-    "Badge for domain": {
-      "Missing keys": [
-        "Kunci yang hilang"
+    "Import status": {
+      "Paused": [
+        "Dijeda"
       ],
-      "Enabled": [
-        "Aktif"
+      "Canceled": [
+        "Dibatalkan"
       ],
-      "Disabled": [
-        "Nonaktif"
+      "Completed": [
+        "Selesai"
+      ],
+      "Failed": [
+        "Gagal"
+      ],
+      "${ percentageValue }% paused": [
+        "${ percentageValue }% dijeda"
+      ],
+      "Started": [
+        "Dimulai"
+      ],
+      "Canceling": [
+        "Membatalkan"
+      ],
+      "Delayed": [
+        "Ditunda"
       ]
     },
-    "Title header for addresses domain table": {
-      "Address": [
-        "Alamat"
+    "Success": {
+      "Import resumed": [
+        "Impor dilanjutkan"
       ],
-      "Status": [
-        "Status"
+      "Import canceled": [
+        "Impor dibatalkan"
       ],
-      "Catch-All": [
-        "Tangkap-semua"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "Domain berhasil dihapus"
+      "Import record deleted": [
+        "Rekaman impor dihapus"
+      ],
+      "Deleting original messages": [
+        "Hapus pesan asli"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        ""
+      ],
+      "Calendar created": [
+        "Kalender berhasil dibuat"
+      ],
+      "Calendar updated": [
+        "Kalender berhasil diperbarui"
+      ],
+      "Default calendar updated": [
+        "Kalendar bawaan diperbarui"
+      ],
+      "Calendar removed": [
+        "Kalender berhasil dihapus"
+      ],
+      "Preference saved": [
+        "Preferensi disimpan"
+      ],
+      "Locale updated": [
+        "Bahasa diperbarui"
+      ],
+      "Premium address created": [
+        "Alamat premium berhasil dibuat"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferensi pintasan papan ketik diperbarui"
+      ],
+      "Verify code copied to clipboard!": [
+        "Kode verifikasi disalin ke papan klip!"
+      ],
+      "SPF value copied to clipboard!": [
+        "Nilai SPF disalin ke papan klip!"
+      ],
+      "Value copied to clipboard!": [
+        "Nilai disalin ke papan klip!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "Nilai DMARC disalin ke papan klip!"
+      ],
+      "Domain verified": [
+        "Domain berhasil diverifikasi"
+      ],
+      "Catch-all address updated": [
+        "Alamat Catch-all diperbarui"
+      ],
+      "Email address copied to clipboard": [
+        "Alamat email disalin ke papan klip"
+      ],
+      "Bug reported": [
+        "Bug berhasil dilaporkan"
+      ],
+      "You have successfully unsubscribed": [
+        "Anda berhasil berhenti berlangganan"
+      ],
+      "Payment method updated": [
+        "Metode pembayaran berhasil diperbarui"
+      ],
+      "Payment method added": [
+        "Metode pembayaran berhasil ditambahkan"
+      ],
+      "Credits added": [
+        "Kredit ditambahkan"
+      ],
+      "Gift code applied": [
+        "Kode hadiah diterapkan"
+      ],
+      "Password updated": [
+        "Kata sandi berhasil diperbarui"
+      ],
+      "Account deleted. Logging out...": [
+        "Akun dihapus. Keluar akun..."
+      ],
+      "Email updated": [
+        "Email diperbarui"
+      ],
+      "Phone number updated": [
+        "Nomor telepon telah diperbarui"
+      ],
+      "Session revoked": [
+        "Sesi berhasil dicabut"
       ],
       "Sessions revoked": [
         "Sesi berhasil dicabut"
       ],
-      "User deleted": [
-        "Pengguna berhasil dihapus"
+      "Payment method deleted": [
+        "Metode pembayaran berhasil dihapus"
+      ],
+      "Invoice paid": [
+        "Tagihan dibayar"
+      ],
+      "Invoice customized": [
+        "Tagihan berhasil disesuaikan"
+      ],
+      "Organization activated": [
+        "Organisasi berhasil diaktifkan"
+      ],
+      "Keys updated": [
+        "Kunci berhasil diperbarui"
+      ],
+      "User updated": [
+        "Pengguna berhasil diperbarui"
+      ],
+      "User created": [
+        "Pengguna berhasil dibuat"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } tersalin di papan klip Anda"
+      ],
+      "Address added": [
+        "Alamat ditambahkan"
+      ],
+      "Address updated": [
+        "Alamat Diperbarui"
+      ],
+      "Buttons position saved": [
+        "Posisi tombol berhasil disimpan"
+      ],
+      "Auto-reply disabled": [
+        "Balasan otomatis dinonaktifkan"
+      ],
+      "Auto-reply updated": [
+        "Balasan-otomatis berhasil diperbarui"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Jika Anda memasukkan email pemulihan yang valid, kami akan mengirimkan email dengan nama pengguna Anda di menit berikutnya."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Jika Anda memasukkan nomor telepon pemulihan yang valid, kami akan mengirimkan Anda sms dengan nama pengguna Anda di menit berikutnya."
       ]
     },
-    "Header for addresses table": {
-      "Domain": [
-        "Domain"
+    "Title header": {
+      "Import": [
+        "Impor"
       ],
       "Status": [
         "Status"
       ],
+      "Date": [
+        "Tanggal"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
       "Actions": [
         "Tindakan"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Username": [
-        "Nama pengguna"
       ]
     },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Siapkan sebuah alamat email domain khusus (mis. you@yourcompany.com). Hanya perlu beberapa menit, dan wisaya kami akan memandu Anda melalui proses tersebut."
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        ""
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        ""
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Yakin ingin menonaktifkan otentikasi dua-faktor?"
+    "Import error link": {
+      "bandwidth limit": [
+        "batas bandwidth"
       ]
     },
     "Duration": {
@@ -4796,6 +4962,9 @@
       ],
       "Not synced": [
         "Tidak disinkronkan"
+      ],
+      "Syncing": [
+        ""
       ]
     },
     "Upgrade notice": {
@@ -5132,119 +5301,6 @@
         "Tampilan penuh"
       ]
     },
-    "Key state badge": {
-      "Error": [
-        "Kesalahan"
-      ],
-      "Primary": [
-        "Utama"
-      ],
-      "Active": [
-        "Aktif"
-      ],
-      "Inactive": [
-        "Tidak aktif"
-      ],
-      "Compromised": [
-        "Bocor"
-      ],
-      "Obsolete": [
-        "Usang"
-      ],
-      "Disabled": [
-        "Dinonaktifkan"
-      ]
-    },
-    "Key status displayed in a badge": {
-      "Key uploaded": [
-        "Kunci diunggah"
-      ]
-    },
-    "Title header for keys table": {
-      "Email": [
-        "Surel"
-      ],
-      "Fingerprint": [
-        "Sidik jari"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Action": [
-        "Tindakan"
-      ],
-      "Key type": [
-        "Tipe kunci"
-      ],
-      "Actions": [
-        "Tindakan"
-      ]
-    },
-    "Keys actions": {
-      "Reactivate": [
-        "Aktifkan kembali"
-      ],
-      "Export": [
-        "Ekspor"
-      ],
-      "Export private key": [
-        "Ekspor kunci pribadi"
-      ],
-      "Make primary": [
-        "Jadikan yang utama"
-      ],
-      "Mark obsolete": [
-        "Tandai usang"
-      ],
-      "Disables encryption with this key": [
-        "Nonaktifkan enkripsi dengan kunci ini"
-      ],
-      "Mark not obsolete": [
-        "Tandai tidak usang"
-      ],
-      "Enable encryption with this key": [
-        "Aktifkan enkripsi dengan kunci ini"
-      ],
-      "Mark compromised": [
-        "Tandai telah bocor"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "Nonaktifkan verifikasi tanda tangan dan enkripsi dengan kunci ini"
-      ],
-      "Mark not compromised": [
-        "Tandai tidak bocor"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "Aktifkan verifikasi dan enkripsi tanda tangan dengan kunci ini"
-      ],
-      "Delete": [
-        "Hapus"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Unggah"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to permanently delete this key?": [
-        "Apakah Anda yakin mau menghapus kunci ini secara permanen?"
-      ],
-      "Do you want to export your key?": [
-        "Apakah Anda mau mengekspor kunci Anda?"
-      ],
-      "Are you sure you want to delete this key without backing it up?": [
-        "Apakah Anda yakin mau menghapus kunci ini tanpa membuat cadangannya?"
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Kunci alamat Anda sedang dihapus."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Kunci enkripsi untuk alamat Anda sedang dibuat. Proses berjalan beberapa menit dan akan menghentikan peramban Anda sementara."
-      ]
-    },
     "encryption": {
       "State of the art": [
         "Canggih"
@@ -5259,6 +5315,21 @@
       ],
       "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
         ""
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Otomatis (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Otomatis (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Tambah ke grup yang sudah ada"
+      ],
+      "Create new group": [
+        "Buat grup baru"
+      ],
+      "Ignore group": [
+        "Abaikan grup"
       ],
       "Select a reason": [
         "Pilih alasan"
@@ -5286,21 +5357,6 @@
       ],
       "Other": [
         "Lainnya"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Otomatis (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Otomatis (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Tambah ke grup yang sudah ada"
-      ],
-      "Create new group": [
-        "Buat grup baru"
-      ],
-      "Ignore group": [
-        "Abaikan grup"
       ],
       "I use a different Proton account": [
         "Saya menggunakan akun Proton lain"
@@ -5475,6 +5531,362 @@
       ],
       "No parent folder": [
         "Tidak ada folder induk"
+      ]
+    },
+    "alert": {
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Kunci enkripsi untuk alamat Anda sedang dibuat. Proses berjalan beberapa menit dan akan menghentikan peramban Anda sementara."
+      ],
+      "The key for your address is now being deleted.": [
+        "Kunci alamat Anda sedang dihapus."
+      ]
+    },
+    "Key state badge": {
+      "Error": [
+        "Kesalahan"
+      ],
+      "Primary": [
+        "Utama"
+      ],
+      "Active": [
+        "Aktif"
+      ],
+      "Inactive": [
+        "Tidak aktif"
+      ],
+      "Compromised": [
+        "Bocor"
+      ],
+      "Obsolete": [
+        "Usang"
+      ],
+      "Disabled": [
+        "Dinonaktifkan"
+      ]
+    },
+    "Key status displayed in a badge": {
+      "Key uploaded": [
+        "Kunci diunggah"
+      ]
+    },
+    "Title header for keys table": {
+      "Email": [
+        "Surel"
+      ],
+      "Fingerprint": [
+        "Sidik jari"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Action": [
+        "Tindakan"
+      ],
+      "Key type": [
+        "Tipe kunci"
+      ],
+      "Actions": [
+        "Tindakan"
+      ]
+    },
+    "Keys actions": {
+      "Reactivate": [
+        "Aktifkan kembali"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Export private key": [
+        "Ekspor kunci pribadi"
+      ],
+      "Make primary": [
+        "Jadikan yang utama"
+      ],
+      "Mark obsolete": [
+        "Tandai usang"
+      ],
+      "Disables encryption with this key": [
+        "Nonaktifkan enkripsi dengan kunci ini"
+      ],
+      "Mark not obsolete": [
+        "Tandai tidak usang"
+      ],
+      "Enable encryption with this key": [
+        "Aktifkan enkripsi dengan kunci ini"
+      ],
+      "Mark compromised": [
+        "Tandai telah bocor"
+      ],
+      "Disables signature verification and encryption with this key": [
+        "Nonaktifkan verifikasi tanda tangan dan enkripsi dengan kunci ini"
+      ],
+      "Mark not compromised": [
+        "Tandai tidak bocor"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "Aktifkan verifikasi dan enkripsi tanda tangan dengan kunci ini"
+      ],
+      "Delete": [
+        "Hapus"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Unggah"
+      ]
+    },
+    "Confirm": {
+      "Are you sure you want to permanently delete this key?": [
+        "Apakah Anda yakin mau menghapus kunci ini secara permanen?"
+      ],
+      "Do you want to export your key?": [
+        "Apakah Anda mau mengekspor kunci Anda?"
+      ],
+      "Are you sure you want to delete this key without backing it up?": [
+        "Apakah Anda yakin mau menghapus kunci ini tanpa membuat cadangannya?"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "Minggu"
+      ],
+      "Monday": [
+        "Senin"
+      ],
+      "Tuesday": [
+        "Selasa"
+      ],
+      "Wednesday": [
+        "Rabu"
+      ],
+      "Thursday": [
+        "Kamis"
+      ],
+      "Friday": [
+        "Jumat"
+      ],
+      "Saturday": [
+        "Sabtu"
+      ]
+    },
+    "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
+      ],
+      "No contacts exported.": [
+        "Tidak ada kontak yang diekspor."
+      ]
+    },
+    "TableHeader": {
+      "Import": [
+        "Impor"
+      ],
+      "CSV field": [
+        "Bidang CSV"
+      ],
+      "vCard field": [
+        "Bidang vCard"
+      ],
+      "Values": [
+        "Nilai"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "Country": [
+        "Negara"
+      ],
+      "City": [
+        "Kota"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Action": [
+        "Tindakan"
+      ]
+    },
+    "Error notification": {
+      "First name and last name cannot be unchecked at the same time": [
+        "Nama depan dan nama belakang tidak boleh dikosongkan sekaligus"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
+      ],
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Kami juga menyamakan kotak CSV dengan kotak vCard secara otomatis. Anda bisa memeriksa dan mengubahnya secara manual."
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontak"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Kontak ${ contactId }: "
+      ]
+    },
+    "Import contacts warning": {
+      "for now": [
+        "untuk sekarang"
+      ],
+      "ProtonContacts does not support ${ forNow }:": [
+        "ProtonContacts ${ forNow } tidak mendukung:"
+      ]
+    },
+    "Import contacts": {
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontak berhasil diimpor. Kontak yang diimpor akan muncul di daftar kontak Anda."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Ada kesalahan saat mengenkripsi dan menambah kontak. ${ totalImported } dari ${ totalToImport } kontak berhasil diimpor."
+      ]
+    },
+    "Import contact": {
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Ada kesalahan saat mengenkripsi dan menambah kontak. Kontak tidak dapat diimpor."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "Tambahkan domain yang Anda miliki ke akun ProtonMail Anda."
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "subdomain 'www' biasanya tidak digunakan untuk email. Yakin ingin menggunakan domain ini?"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Demi keamanan, kami perlu memverifikasi bahwa Anda adalah pemilik ${ domainName }. Harap tambahkan rekam DNS TXT berikut ke domain Anda. Ini biasanya dapat dilakukan di kontrol panel registrar nama domain Anda."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Tambah pengguna baru ke organisasi Anda dan buat alamat untuknya."
+      ],
+      "Add a new address for any user of your organization.": [
+        "Tambah alamat baru untuk siapapun pengguna organisasi Anda."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Setelah sukses memverifikasi, jangan menghapus data TXT ini karena diperlukan untuk mengkonfirmasi bahwa anda masih memiliki domain."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "Pembaruan perubahan DNS perlu waktu sampai satu hari."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Harap tambahkan data TXT berikut ini:"
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "Tipe"
+      ],
+      "Host name": [
+        "Nama host"
+      ],
+      "Value / Data / Points to": [
+        "Nilai / Data / Poin ke"
+      ],
+      "Value / Data": [
+        "Nilai / Data"
+      ],
+      "Priority": [
+        "Prioritas"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Alamat"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "Domain"
+      ],
+      "Verify": [
+        "Verifikasi"
+      ],
+      "Addresses": [
+        "Alamat"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Terverifikasi"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "Kunci yang hilang"
+      ],
+      "Enabled": [
+        "Aktif"
+      ],
+      "Disabled": [
+        "Nonaktif"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Alamat"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Catch-All": [
+        "Tangkap-semua"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "Domain berhasil dihapus"
+      ],
+      "Sessions revoked": [
+        "Sesi berhasil dicabut"
+      ],
+      "User deleted": [
+        "Pengguna berhasil dihapus"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "Domain"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Tindakan"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Username": [
+        "Nama pengguna"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "Siapkan sebuah alamat email domain khusus (mis. you@yourcompany.com). Hanya perlu beberapa menit, dan wisaya kami akan memandu Anda melalui proses tersebut."
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        ""
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        ""
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Yakin ingin menonaktifkan otentikasi dua-faktor?"
       ]
     },
     "Onboarding Proton": {
@@ -6135,412 +6547,6 @@
         "Gratis"
       ]
     },
-    "Day": {
-      "Sunday": [
-        "Minggu"
-      ],
-      "Monday": [
-        "Senin"
-      ],
-      "Tuesday": [
-        "Selasa"
-      ],
-      "Wednesday": [
-        "Rabu"
-      ],
-      "Thursday": [
-        "Kamis"
-      ],
-      "Friday": [
-        "Jumat"
-      ],
-      "Saturday": [
-        "Sabtu"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
-      ],
-      "No contacts exported.": [
-        "Tidak ada kontak yang diekspor."
-      ]
-    },
-    "TableHeader": {
-      "Import": [
-        "Impor"
-      ],
-      "CSV field": [
-        "Bidang CSV"
-      ],
-      "vCard field": [
-        "Bidang vCard"
-      ],
-      "Values": [
-        "Nilai"
-      ],
-      "Name": [
-        "Nama"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Action": [
-        "Tindakan"
-      ]
-    },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Nama depan dan nama belakang tidak boleh dikosongkan sekaligus"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
-      ],
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Kami juga menyamakan kotak CSV dengan kotak vCard secara otomatis. Anda bisa memeriksa dan mengubahnya secara manual."
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontak"
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Kontak ${ contactId }: "
-      ]
-    },
-    "Import contacts warning": {
-      "for now": [
-        "untuk sekarang"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } tidak mendukung:"
-      ]
-    },
-    "Import contacts": {
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontak berhasil diimpor. Kontak yang diimpor akan muncul di daftar kontak Anda."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambah kontak. ${ totalImported } dari ${ totalToImport } kontak berhasil diimpor."
-      ]
-    },
-    "Import contact": {
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambah kontak. Kontak tidak dapat diimpor."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your calendar provider": [
-        "Menghubungkan ke penyedia kalender Anda"
-      ],
-      "Connecting to your email provider": [
-        "Menghubungkan ke penyedia email Anda"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Otentikasi"
-      ],
-      "Configure Import": [
-        "Konfigurasi Impor"
-      ],
-      "Import": [
-        "Impor"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "Keluar dari impor?"
-      ],
-      "Quit import customization?": [
-        "Keluar dari impor penyesuaian?"
-      ],
-      "Import is incomplete!": [
-        "Impor tidak lengkap!"
-      ],
-      "Remove from the list?": [
-        "Hapus dari daftar?"
-      ],
-      "Delete all messages": [
-        "Hapus semua pesan"
-      ]
-    },
-    "Import instructions emphasis": {
-      "Security": [
-        "Keamanan"
-      ],
-      "turn on access": [
-        "aktifkan akses"
-      ],
-      "app password": [
-        "kata sandi aplikasi"
-      ],
-      "Gmail Settings": [
-        "Pengaturan Gmail"
-      ],
-      "Forwarding and POP/IMAP": [
-        "Penerusan dan POP/IMAP"
-      ],
-      "IMAP access": [
-        "Akses IMAP"
-      ],
-      "Labels": [
-        "Label"
-      ],
-      "2-step verification": [
-        "Verifikasi 2 langkah"
-      ],
-      "Account info": [
-        "Info akun"
-      ],
-      "Account security": [
-        "Keamanan akun"
-      ],
-      "Manage app passwords": [
-        "Kelola kata sandi aplikasi"
-      ]
-    },
-    "Import instructions": {
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Ke ${ googleAccountLink }. Di bagian ${ boldSecurity }, ${ boldAccess } untuk aplikasi yang kurang aman. Jika Anda tidak memiliki opsi ini, Anda mungkin perlu mengaktifkan verifikasi 2 langkah."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Ke ${ googleAccountLink }. Di bagian ${ boldSecurity }, buat ${ boldAppPassword } jika Anda belum memilikinya. Anda perlu kata sandi ini selama proses impor."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "Di ${ boldGmailSettings }, kunjungi ${ boldForwarding } dan pastikan ${ boldIMAPAccess } aktif."
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "Di bagian ${ boldLabels }, pilih folder yang diizinkan untuk diimpor ke ProtonMail."
-      ],
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Izinkan akses ProtonMail ke akun Gmail Anda: atur ${ bold2Steps } aktif dan ikuti langkah di bawah."
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Akhirnya, ${ googleMailLink } dengan akun yang mau Anda impor, ${ googleCaptchaLink }."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, go to ${ boldManageAppPass } to generate a password. You will need this password during the import.": [
-        "Masuk ke Yahoo Mail dan klik nama Anda di bagian sudut kanan atas untuk mengakses ${ boldAccountInfo }. Di bagian ${ boldAccountSec }, kunjungi ${ boldManageAppPass } untuk membuat kata sandi. Anda perlu kata sandi ini selama proses impor."
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Verifikasi 2 langkah nonaktif (pengaturan baku)"
-      ],
-      "2-step verification enabled": [
-        "Verifikasi 2 langkah aktif"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Bagaimana cara mengaktifkan akses ke Aplikasi Kurang Aman di pengaturan Gmail"
-      ],
-      "How to create an app password in Gmail settings": [
-        "Bagaimana cara membuat kata sandi aplikasi di pengaturan Gmail"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Bagaimana cara mengaktifkan Penerusan IMAP di pengaturan Gmail"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Bagaimana menampilkan folder IMAP di pengaturan Gmail"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Cara menonaktifkan CAPTCHA di Gmail"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "masuk ke Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "kemudian buka laman ini untuk membuka kunci captcha"
-      ]
-    },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
-    "Import error": {
-      "Invalid IMAP port": [
-        "Port IMAP tidak valid"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Jika ${ bold2StepsDisabled } di Gmail (pengaturan baku), pastikan:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP Gmail aktif."
-      ],
-      "your password is correct": [
-        "kata sandi Anda benar"
-      ],
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Akses aplikasi kurang aman\" diaktifkan di pengaturan keamanan akun Google Anda"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung dengan akun Gmail. Pastikan alamat server mail dan nomor port Anda benar."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Jika ${ bold2StepsEnabled }, mohon pastikan alamat surel dan kata sandi aplikasi benar. ${ boldNot } gunakan kata sandi Anda biasanya."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP telah aktif di akun Gmail Anda."
-      ],
-      "your email address and password are correct": [
-        "alamat surel dan kata sandi Anda benar"
-      ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
-      ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun Yahoo Mail Anda. Mohon pastikan:"
-      ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Akses IMAP telah diaktifkan di akun Yahoo Anda"
-      ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung dengan akun Yahoo Mail Anda. Pastikan alamat server mail dan nomor port benar."
-      ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "alamat surel dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan:"
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan:"
-      ],
-      "IMAP access is enabled in your external account": [
-        "Akses IMAP telah diaktifkan di akun eksternal Anda"
-      ],
-      "Use your app password if:": [
-        "Gunakan kata sandi aplikasi Anda jika:"
-      ],
-      "2-step verification is enabled in your external account": [
-        "verifikasi 2 langkah telah diaktifkan di akun eksternal Anda"
-      ],
-      "your email account requires one to export your data": [
-        "akun surel Anda memerlukan satu untuk mengekspor data"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port benar."
-      ],
-      "Use your app password instead of your regular password if:": [
-        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
-      ],
-      "2-step verification is enabled in your external email account": [
-        "verifikasi 2 langkah aktif di akun surel eksternal Anda"
-      ],
-      "your email account requires an app password to export your data": [
-        "akun surel Anda membutuhkan kata sandi aplikasi untuk mengekspor data Anda"
-      ],
-      "Too many recent requests. Please try again in a few moments.": [
-        "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
-      ]
-    },
-    "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Verifikasi 2 langkah dinonaktifkan"
-      ],
-      "2-step verification is enabled": [
-        "Verifikasi 2 langkah aktif"
-      ],
-      "all your other Google accounts": [
-        "semua akun Google Anda lainnya"
-      ],
-      "not": [
-        "jangan"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Hapus pesan secara permanen di ${ email }"
-      ]
-    },
-    "Instructions": {
-      "To confirm this action enter the following text in the box below.": [
-        "Untuk mengonfirmasi tindakan ini masukkan teks di bawah ini."
-      ],
-      "Enter phrase to confirm": [
-        "Masukkan frase untuk konfirmasi"
-      ]
-    },
-    "Import status": {
-      "Paused": [
-        "Dijeda"
-      ],
-      "Canceled": [
-        "Dibatalkan"
-      ],
-      "Completed": [
-        "Selesai"
-      ],
-      "Failed": [
-        "Gagal"
-      ],
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% dijeda"
-      ],
-      "Started": [
-        "Dimulai"
-      ],
-      "Canceling": [
-        "Membatalkan"
-      ],
-      "Delayed": [
-        "Ditunda"
-      ]
-    },
-    "Title header": {
-      "Import": [
-        "Impor"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Date": [
-        "Tanggal"
-      ],
-      "Size": [
-        "Ukuran"
-      ],
-      "Actions": [
-        "Tindakan"
-      ]
-    },
-    "Import error link": {
-      "bandwidth limit": [
-        "batas bandwidth"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
@@ -6704,97 +6710,6 @@
         "Aktifkan log lanjutan"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
-      ],
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } dibuat"
-      ],
-      "A disabled address cannot be primary": [
-        "Alamat yang dinonaktifkan tidak dapat dijadikan sebagai alamat utama"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "Akses ke semua negara"
-      ],
-      "Secure Core servers": [
-        "Server Secure Core"
-      ],
-      "Fastest VPN servers": [
-        "Server VPN tercepat"
-      ],
-      "Torrenting support (P2P)": [
-        "Mendukung torrent (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Koneksi hingga ${ plusVpnConnections } perangkat"
-      ],
-      "Secure streaming support": [
-        "Mendukung pengaliran aman"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "${ connectionsPluralized } VPN"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Dimaksimalkan"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
     "Confirmation title": {
       "Delete payment method": [
         "Hapus metode pembayaran"
@@ -6909,31 +6824,6 @@
         "Tagihan ProtonMail"
       ]
     },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Saya sedang di luar kantor dengan akses surel terbatas."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Saat menerima email dari pengguna ProtonMail lain yang tidak memiliki kunci terpercaya dalam kontak Anda, sebuah layar banner akan bertanya apakah Anda ingin mengaktifkan kunci terpercaya."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Tandatangani pesan keluar secara otomatis agar pengguna dapat memverifikasi keaslian pesan Anda. Ini dilakukan dengan kombinasi Skema PGP standar yang dapat dikonfigurasikan dibawah ini."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Ini akan menambahkan kunci publik Anda pada setiap pesan terkirim. Penerima dapat menggunakannya untuk memverifikasi keaslian pesan dan mengirim pesan terenkripsi kepada Anda."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Pilih pengaturan PGP standar yang digunakan untuk menandatangani atau mengenkripsi pesan dengan pengguna PGP non-ProtonMail. Perhatikan bahwa PGP Inline memaksa untuk pesan teks biasa. Pelajari lebih lanjut"
-      ]
-    },
     "Restore administrator panel": {
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Karena adanya perubahan kata sandi, hak istimewa administrator organisasi Anda telah dibatasi. Tindakan berikut tidak lagi diizinkan:"
@@ -6968,6 +6858,29 @@
     "Max VPN Connections": {
       "Connection": [
         "Sambungan"
+      ]
+    },
+    "Feature": {
+      "VPN ${ connectionsPluralized }": [
+        "${ connectionsPluralized } VPN"
+      ],
+      "Access to all countries": [
+        "Akses ke semua negara"
+      ],
+      "Secure Core servers": [
+        "Server Secure Core"
+      ],
+      "Fastest VPN servers": [
+        "Server VPN tercepat"
+      ],
+      "Torrenting support (P2P)": [
+        "Mendukung torrent (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Koneksi hingga ${ plusVpnConnections } perangkat"
+      ],
+      "Secure streaming support": [
+        "Mendukung pengaliran aman"
       ]
     },
     "User role": {
@@ -7011,6 +6924,150 @@
     "Private Member": {
       "private": [
         "pribadi"
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "Notification": {
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
+      ],
+      "A disabled address cannot be primary": [
+        "Alamat yang dinonaktifkan tidak dapat dijadikan sebagai alamat utama"
+      ],
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } dibuat"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(via ${ entryCountryName })"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Bawaan"
+      ],
+      "Active": [
+        "Aktif"
+      ],
+      "Disabled": [
+        "Nonaktif"
+      ],
+      "Orphan": [
+        "Tidak berinduk"
+      ],
+      "Missing keys": [
+        "Kunci yang hilang"
+      ]
+    },
+    "Success notification": {
+      "Address deleted": [
+        "Alamat dihapus"
+      ],
+      "Address enabled": [
+        "Alamat diaktifkan"
+      ],
+      "Address disabled": [
+        "Alamat dinonaktifkan"
+      ],
+      "Status updated": [
+        "Status berhasil diperbarui"
+      ],
+      "Filter removed": [
+        "Filter berhasil dihapus"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } berhasil dihapus"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Aktifkan"
+      ],
+      "Disable": [
+        "Nonaktifkan"
+      ],
+      "Generate missing keys": [
+        "Buat kunci yang hilang"
+      ],
+      "Delete": [
+        "Hapus"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Dimaksimalkan"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Saya sedang di luar kantor dengan akses surel terbatas."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Saat menerima email dari pengguna ProtonMail lain yang tidak memiliki kunci terpercaya dalam kontak Anda, sebuah layar banner akan bertanya apakah Anda ingin mengaktifkan kunci terpercaya."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Tandatangani pesan keluar secara otomatis agar pengguna dapat memverifikasi keaslian pesan Anda. Ini dilakukan dengan kombinasi Skema PGP standar yang dapat dikonfigurasikan dibawah ini."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Ini akan menambahkan kunci publik Anda pada setiap pesan terkirim. Penerima dapat menggunakannya untuk memverifikasi keaslian pesan dan mengirim pesan terenkripsi kepada Anda."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Pilih pengaturan PGP standar yang digunakan untuk menandatangani atau mengenkripsi pesan dengan pengguna PGP non-ProtonMail. Perhatikan bahwa PGP Inline memaksa untuk pesan teks biasa. Pelajari lebih lanjut"
       ]
     },
     "Step in filter modal": {
@@ -7129,26 +7186,6 @@
       ],
       "Trash": [
         "Tempat sampah"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "Status berhasil diperbarui"
-      ],
-      "Filter removed": [
-        "Filter berhasil dihapus"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } berhasil dihapus"
-      ],
-      "Address deleted": [
-        "Alamat dihapus"
-      ],
-      "Address enabled": [
-        "Alamat diaktifkan"
-      ],
-      "Address disabled": [
-        "Alamat dinonaktifkan"
       ]
     },
     "Settings/filters": {
@@ -7283,37 +7320,6 @@
         "Label diurutkan"
       ]
     },
-    "Address status": {
-      "Default": [
-        "Bawaan"
-      ],
-      "Active": [
-        "Aktif"
-      ],
-      "Disabled": [
-        "Nonaktif"
-      ],
-      "Orphan": [
-        "Tidak berinduk"
-      ],
-      "Missing keys": [
-        "Kunci yang hilang"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "Aktifkan"
-      ],
-      "Disable": [
-        "Nonaktifkan"
-      ],
-      "Generate missing keys": [
-        "Buat kunci yang hilang"
-      ],
-      "Delete": [
-        "Hapus"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 detik"
@@ -7370,6 +7376,139 @@
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nama"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisasi"
+      ],
+      "Birthday": [
+        "Tanggal lahir"
+      ],
+      "Anniversary": [
+        "Ulang tahun"
+      ],
+      "Title": [
+        "Judul"
+      ],
+      "Role": [
+        "Peran"
+      ],
+      "Note": [
+        "Catatan"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Gender"
+      ],
+      "Language": [
+        "Bahasa"
+      ],
+      "Timezone": [
+        "Zona waktu"
+      ],
+      "Geo": [
+        "Koordinat"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Anggota"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Pekerjaan"
+      ],
+      "Personal": [
+        "Pribadi"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Pager"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Email"
+      ],
+      "Home": [
+        "Rumah"
+      ],
+      "Work": [
+        "Kantor"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Mobile": [
+        "Ponsel"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ],
+      "Address": [
+        "Alamat"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Participant name": {
@@ -7906,137 +8045,27 @@
         "Ada kesalahan tidak terduga. Proses impor harus diulang."
       ]
     },
-    "Contact field label": {
-      "Name": [
-        "Nama"
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        ""
       ],
-      "Email": [
-        "Email"
+      "More than 12 hours passed since last update": [
+        ""
       ],
-      "Phone": [
-        "Telepon"
+      "Calendar link is wrong": [
+        ""
       ],
-      "Address": [
-        "Alamat"
+      "Calendar is too big": [
+        ""
       ],
-      "Photo": [
-        "Foto"
+      "Calendar link is not accessible": [
+        ""
       ],
-      "Organization": [
-        "Organisasi"
+      "Calendar link is temporarily unaccessible": [
+        ""
       ],
-      "Birthday": [
-        "Tanggal lahir"
-      ],
-      "Anniversary": [
-        "Ulang tahun"
-      ],
-      "Title": [
-        "Judul"
-      ],
-      "Role": [
-        "Peran"
-      ],
-      "Note": [
-        "Catatan"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Gender"
-      ],
-      "Language": [
-        "Bahasa"
-      ],
-      "Timezone": [
-        "Zona waktu"
-      ],
-      "Geo": [
-        "Koordinat"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Anggota"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Pekerjaan"
-      ],
-      "Personal": [
-        "Pribadi"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Pager"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Email"
-      ],
-      "Home": [
-        "Rumah"
-      ],
-      "Work": [
-        "Kantor"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Mobile": [
-        "Ponsel"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ],
-      "Address": [
-        "Alamat"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "byte"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
+      "Failed to sync calendar": [
+        ""
       ]
     },
     "Import contact. Contact identifier": {
@@ -8255,25 +8284,15 @@
         "Tampilkan pesan orisinal"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } dan ${ lastCategory }"
-      ]
-    },
-    "Email Unsubscribe": {
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Anda berhenti berlangganan dari email ${ categoriesJsx }."
-      ],
-      "You resubscribed to ${ categoriesJsx } emails.": [
-        "Anda berlangganan lagi ke email ${ categoriesJsx }."
-      ],
-      "Which emails do you want to receive from Proton?": [
-        "Email mana yang ingin menerima surat dari Proton?"
-      ]
-    },
     "Settings section title": {
       "General": [
         "Umum"
+      ],
+      "Import & export": [
+        "Impor & ekspor"
+      ],
+      "Calendars": [
+        "Kalender"
       ],
       "Identity & addresses": [
         "Identitas & alamat"
@@ -8296,17 +8315,8 @@
       "Encryption & keys": [
         "Enkripsi & kunci"
       ],
-      "Import & export": [
-        "Impor & ekspor"
-      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
-      ],
-      "Calendars": [
-        "Kalender"
-      ],
-      "VPN apps": [
-        "Aplikasi VPN"
       ],
       "Users & addresses": [
         "Pengguna & alamat"
@@ -8319,6 +8329,9 @@
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
+      ],
+      "VPN apps": [
+        "Aplikasi VPN"
       ],
       "Account": [
         "Akun"
@@ -8349,6 +8362,22 @@
       ],
       "Back to Drive": [
         "Kembali ke Drive"
+      ]
+    },
+    "Email Unsubscribe Categories": {
+      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
+        "${ allCategoriesExceptTheLastOne } dan ${ lastCategory }"
+      ]
+    },
+    "Email Unsubscribe": {
+      "You unsubscribed from ${ categoriesJsx } emails.": [
+        "Anda berhenti berlangganan dari email ${ categoriesJsx }."
+      ],
+      "You resubscribed to ${ categoriesJsx } emails.": [
+        "Anda berlangganan lagi ke email ${ categoriesJsx }."
+      ],
+      "Which emails do you want to receive from Proton?": [
+        "Email mana yang ingin menerima surat dari Proton?"
       ]
     },
     "Signup label": {

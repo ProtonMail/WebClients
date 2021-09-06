@@ -5,7 +5,218 @@
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "байт"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
+    "Error": {
+      "This field is required": [
+        "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля: ${ minimumLength }."
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Not a valid number": [
+        "Неверный номер"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "Signature verification failed": [
+        "Ошибка проверки подписи"
+      ],
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
+      ],
+      "Email address invalid": [
+        "Недействительный адрес эл. почты"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Используемый Вами браузер не позволяет совершить платёж. Пожалуйста, используйте другой браузер, либо войдите через компьютер."
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
+      ],
+      "Checkout expired, please try again.": [
+        "Срок действия заказа истек, попробуйте еще раз."
+      ],
+      "Invalid code": [
+        "Неверный код"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Ошибка при подключении к Bitcoin API."
+      ],
+      "Amount below minimum.": [
+        "Сумма ниже допустимого минимума."
+      ],
+      "Amount above the maximum.": [
+        "Сумма выше допустимого максимума."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Минимальная сумма, которая может быть добавлена, составляет: ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Процесс прерван"
+      ],
+      "Payment process cancelled": [
+        "Процесс оплаты отменён"
+      ],
+      "Payment process failed": [
+        "Сбой в процессе оплаты"
+      ],
+      "Payment process consumed": [
+        "Процесс оплаты завершён"
+      ],
+      "Payment process not supported": [
+        "Процесс оплаты не поддерживается"
+      ],
+      "Unknown payment token status": [
+        "Неизвестный статус платёжного токена"
+      ],
+      "Tab closed": [
+        "Вкладка закрыта"
+      ],
+      "Name on card required": [
+        "Требуется имя на карте"
+      ],
+      "Invalid expiration date": [
+        "Недействительная дата окончания"
+      ],
+      "Invalid card number": [
+        "Недействительный номер карты"
+      ],
+      "Invalid ${ name } code": [
+        "Недействительный код ${ name }"
+      ],
+      "Invalid postal code": [
+        "Недействительный почтовый индекс"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
+      ],
+      "Please set a recovery/notification email first": [
+        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
+      ],
+      "Please set a recovery phone number first": [
+        "Пожалуйста, сначала укажите номер телефона для восстановления"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Неверные учетные данные. Пожалуйста, попробуйте снова"
+      ],
+      "Can't validate email, try again later": [
+        "Не удается проверить адрес электронной почты, повторите попытку позже"
+      ],
+      "Can't validate phone, try again later": [
+        "Не удается проверить телефон, повторите попытку позже"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
+      ],
+      "You have no invoices.": [
+        "У вас нет счетов."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
+      ],
+      "File has no contents to preview": [
+        "В файле нет содержимого для предпросмотра"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Пожалуйста, введите '${ dangerWord }'"
+      ],
+      "Code wrong or not valid anymore": [
+        "Неверный или недействительный код"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
+      ],
+      "Invalid invitation link": [
+        "Пригласительная ссылка недействительная"
+      ],
+      "Can't check username, try again later": [
+        "Не могу проверить имя пользователя, повторите попытку позже"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символов"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        ""
+      ],
+      "Syncing": [
+        "Синхронизация"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        ""
+      ],
+      "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        ""
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        ""
+      ]
+    },
     "Info": {
+      "Session timed out.": [
+        "Время сессии истекло."
+      ],
+      "Internet connection lost.": [
+        "Подключение к Интернету прервано."
+      ],
+      "Servers are unreachable.": [
+        "Серверы недоступны."
+      ],
       "No results found": [
         "Результаты не найдены"
       ],
@@ -558,33 +769,6 @@
       "Recovery phrase has been disabled": [
         "Фраза для восстановления доступа к учетной записи была отключена"
       ],
-      "You have no saved payment methods.": [
-        "У вас нет сохраненных способов оплаты."
-      ],
-      "Expired": [
-        "Истек"
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Вы можете настраивать и скачивать свои счета, чтобы вести учёт расходов."
-      ],
-      "Unsupported file": [
-        "Неподдерживаемый файл"
-      ],
-      "No preview available": [
-        "Предпросмотр недоступен"
-      ],
-      "Preview": [
-        "Предпросмотр"
-      ],
-      "Loading preview": [
-        "Загрузка предпросмотра"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Этот браузер не поддерживает предпросмотр PDF-документов. Пожалуйста, скачайте файл."
-      ],
-      "of": [
-        "из"
-      ],
       "here": [
         "здесь"
       ],
@@ -624,6 +808,33 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
+      "You have no saved payment methods.": [
+        "У вас нет сохраненных способов оплаты."
+      ],
+      "Expired": [
+        "Истек"
+      ],
+      "You can customize and download your invoices for accounting purposes.": [
+        "Вы можете настраивать и скачивать свои счета, чтобы вести учёт расходов."
+      ],
+      "Unsupported file": [
+        "Неподдерживаемый файл"
+      ],
+      "No preview available": [
+        "Предпросмотр недоступен"
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ],
+      "Loading preview": [
+        "Загрузка предпросмотра"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Этот браузер не поддерживает предпросмотр PDF-документов. Пожалуйста, скачайте файл."
+      ],
+      "of": [
+        "из"
+      ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Введите свой резервный адрес электронной почты, и мы отправим вам имя вашего пользователя. (Обычно это тот адрес, который вы давали при регистрации.)"
       ],
@@ -659,15 +870,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
-      ],
-      "Session timed out.": [
-        "Время сессии истекло."
-      ],
-      "Internet connection lost.": [
-        "Подключение к Интернету прервано."
-      ],
-      "Servers are unreachable.": [
-        "Серверы недоступны."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Перейдите на платный тариф, чтобы разблокировать платный функционал и увеличить пространство для хранения."
@@ -983,6 +1185,18 @@
       "Your recovery phrase": [
         "Ваша фраза для восстановления доступа к учетной записи"
       ],
+      "Username or ProtonMail address": [
+        "Имя пользователя или адрес ProtonMail"
+      ],
+      "Phone number": [
+        "Номер телефона"
+      ],
+      "Verification code": [
+        "Проверочный код"
+      ],
+      "Enter the 6-digit code": [
+        "Введите код из 6 цифр"
+      ],
       "Cash": [
         "Наличные"
       ],
@@ -1003,18 +1217,6 @@
       ],
       "Customize invoices": [
         "Настройка счетов"
-      ],
-      "Username or ProtonMail address": [
-        "Имя пользователя или адрес ProtonMail"
-      ],
-      "Phone number": [
-        "Номер телефона"
-      ],
-      "Verification code": [
-        "Проверочный код"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из 6 цифр"
       ],
       "Username": [
         "Имя пользователя"
@@ -1324,6 +1526,30 @@
       "Disable recovery phrase": [
         "Отключить фразу для восстановления доступа к учетной записи"
       ],
+      "Log in": [
+        "Войти"
+      ],
+      "View invoice": [
+        "Просмотр счета"
+      ],
+      "Get verification code": [
+        "Получить проверочный код"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Did not receive the code?": [
+        "Не получили код?"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
       "Edit": [
         "Редактировать"
       ],
@@ -1368,30 +1594,6 @@
       ],
       "Previous": [
         "Пред."
-      ],
-      "Log in": [
-        "Войти"
-      ],
-      "View invoice": [
-        "Просмотр счета"
-      ],
-      "Get verification code": [
-        "Получить проверочный код"
-      ],
-      "Try another method": [
-        "Попробуйте другой способ"
-      ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Did not receive the code?": [
-        "Не получили код?"
-      ],
-      "Edit email address": [
-        "Изменить адрес эл. почты"
-      ],
-      "Edit phone number": [
-        "Изменить номер телефона"
       ],
       "Email me my username(s)": [
         "Отправить мне имя моего пользователя"
@@ -1543,155 +1745,6 @@
       ],
       "Close": [
         "Закрыть"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "Недействительный адрес эл. почты"
-      ],
-      "This field is required": [
-        "Это обязательное поле"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Используемый Вами браузер не позволяет совершить платёж. Пожалуйста, используйте другой браузер, либо войдите через компьютер."
-      ],
-      "Unknown error": [
-        "Неизвестная ошибка"
-      ],
-      "Checkout expired, please try again.": [
-        "Срок действия заказа истек, попробуйте еще раз."
-      ],
-      "Invalid code": [
-        "Неверный код"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Ошибка при подключении к Bitcoin API."
-      ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
-      ],
-      "Amount above the maximum.": [
-        "Сумма выше допустимого максимума."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Минимальная сумма, которая может быть добавлена, составляет: ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Процесс прерван"
-      ],
-      "Payment process cancelled": [
-        "Процесс оплаты отменён"
-      ],
-      "Payment process failed": [
-        "Сбой в процессе оплаты"
-      ],
-      "Payment process consumed": [
-        "Процесс оплаты завершён"
-      ],
-      "Payment process not supported": [
-        "Процесс оплаты не поддерживается"
-      ],
-      "Unknown payment token status": [
-        "Неизвестный статус платёжного токена"
-      ],
-      "Tab closed": [
-        "Вкладка закрыта"
-      ],
-      "Name on card required": [
-        "Требуется имя на карте"
-      ],
-      "Invalid expiration date": [
-        "Недействительная дата окончания"
-      ],
-      "Invalid card number": [
-        "Недействительный номер карты"
-      ],
-      "Invalid ${ name } code": [
-        "Недействительный код ${ name }"
-      ],
-      "Invalid postal code": [
-        "Недействительный почтовый индекс"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
-      ],
-      "Please set a recovery/notification email first": [
-        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
-      ],
-      "Please set a recovery phone number first": [
-        "Пожалуйста, сначала укажите номер телефона для восстановления"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
-      ],
-      "You have no invoices.": [
-        "У вас нет счетов."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
-      ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Неверные учетные данные. Пожалуйста, попробуйте снова"
-      ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
-      "Enter 6 digits": [
-        "Введите 6 цифр"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Пожалуйста, введите '${ dangerWord }'"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля: ${ minimumLength }."
-      ],
-      "Email is not valid": [
-        "Эл. почта недействительна"
-      ],
-      "Not a valid number": [
-        "Неверный номер"
-      ],
-      "Passwords do not match": [
-        "Пароли не совпадают"
-      ],
-      "Signature verification failed": [
-        "Ошибка проверки подписи"
-      ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
-      "Code wrong or not valid anymore": [
-        "Неверный или недействительный код"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
-      ],
-      "Invalid invitation link": [
-        "Пригласительная ссылка недействительная"
-      ],
-      "Can't check username, try again later": [
-        "Не могу проверить имя пользователя, повторите попытку позже"
       ]
     },
     "Title": {
@@ -1878,6 +1931,24 @@
       "Confirm phone number": [
         "Подтвердите номер телефона"
       ],
+      "Account suspended": [
+        "Аккаунт заблокирован"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Пожалуйста, введите ваше имя пользователя или эл. адрес ProtonMail"
+      ],
+      "Enter your password": [
+        "Введите свой пароль"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Human verification": [
+        "Проверка \"Я не робот\""
+      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
@@ -1898,24 +1969,6 @@
       ],
       "Action": [
         "Действия"
-      ],
-      "Account suspended": [
-        "Аккаунт заблокирован"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Пожалуйста, введите ваше имя пользователя или эл. адрес ProtonMail"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Human verification": [
-        "Проверка \"Я не робот\""
       ],
       "Confirm reset password": [
         "Подтвердите пароль сброса"
@@ -2221,6 +2274,12 @@
       "Phone number updated": [
         "Номер телефона обновлен"
       ],
+      "Code sent to ${ methodTo }": [
+        "Код отправлен на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
+      ],
       "Payment method deleted": [
         "Способ оплаты удалён"
       ],
@@ -2229,12 +2288,6 @@
       ],
       "Invoice customized": [
         "Счёт настроен"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Код отправлен на ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Проверка прошла успешно"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
         "Если вы ввели действительный адрес эл. почты для уведомлений, мы отправим вам письмо с вашими именами пользователей в течение следующей минуты."
@@ -3413,6 +3466,33 @@
         "Фраза для восстановления доступа к учетной записи"
       ]
     },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "Находится в Швейцарии, доступно по всему миру."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Просроченный счёт"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Вручную"
+      ],
+      "No verification method available": [
+        "Нет доступных способов проверки"
+      ]
+    },
     "Confirmation title": {
       "Delete payment method": [
         "Удаление способа оплаты"
@@ -3527,58 +3607,9 @@
         "Счёт ProtonMail"
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Находится в Швейцарии, доступно по всему миру."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Просроченный счёт"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Эл. почта"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Вручную"
-      ],
-      "No verification method available": [
-        "Нет доступных способов проверки"
-      ]
-    },
     "Password": {
       "Confirm new password": [
         "Подтвердите новый пароль"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "байт"
-      ],
-      "KB": [
-        "КБ"
-      ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен включать по меньшей мере ${ length } символ",
-        "Пароль должен включать по меньшей мере ${ length } символа",
-        "Пароль должен включать по меньшей мере ${ length } символов",
-        "Пароль должен включать по меньшей мере ${ length } символов"
       ]
     },
     "Plan details": {
