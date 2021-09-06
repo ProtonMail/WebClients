@@ -11,7 +11,6 @@ interface VerificationSearchParameters {
     embed?: boolean;
     theme?: ThemeTypes;
     token?: string;
-    origin?: string;
     defaultCountry?: string;
     defaultEmail?: string;
     defaultPhone?: string;
@@ -49,9 +48,7 @@ const getClient = () => {
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
-const postMessage = windowIsEmbedded ? window.parent.postMessage.bind(window.parent) : window.postMessage.bind(window);
-
-const replyToOrigin = (token: string, tokenType: HumanVerificationMethodType, origin: string) => {
+const replyToOrigin = (token: string, tokenType: HumanVerificationMethodType) => {
     const client = getClient();
 
     switch (client) {
@@ -72,12 +69,12 @@ const replyToOrigin = (token: string, tokenType: HumanVerificationMethodType, or
         }
 
         case 'web': {
-            postMessage(
+            window.parent.postMessage(
                 {
                     type: 'verification-success',
                     payload: { token, tokenType },
                 },
-                origin
+                '*'
             );
             break;
         }
@@ -95,7 +92,7 @@ const Verification = () => {
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
-    const { methods, embed, theme, token, origin, defaultCountry, defaultEmail, defaultPhone } = search;
+    const { methods, embed, theme, token, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const [, setTheme] = useTheme();
 
@@ -116,12 +113,12 @@ const Verification = () => {
 
         const [entry] = resizes;
 
-        postMessage(
+        window.parent.postMessage(
             {
                 type: 'verification-height',
                 height: entry.target.clientHeight,
             },
-            origin
+            '*'
         );
     };
 
@@ -145,7 +142,7 @@ const Verification = () => {
             throw getOriginError();
         }
 
-        replyToOrigin(token, tokenType, origin);
+        replyToOrigin(token, tokenType);
 
         if (!windowIsEmbedded) {
             /*
