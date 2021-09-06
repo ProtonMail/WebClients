@@ -20,7 +20,7 @@ const SendWithChangedPreferencesModal = ({ emails, onSubmit, onClose, ...rest }:
             onClose={onClose}
             {...rest}
         >
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Send email with changed preferences')
                     .t`The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:`}
             </Alert>

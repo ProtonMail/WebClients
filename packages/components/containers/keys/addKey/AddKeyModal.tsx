@@ -52,7 +52,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 },
                 children: (
                     <>
-                        <Alert>
+                        <Alert className="mb1">
                             {c('Info')
                                 .t`You can generate a new encryption key if you think your previous key has been compromised.`}
                         </Alert>
@@ -71,7 +71,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 close: c('Action').t`No`,
                 submit: c('Action').t`Continue`,
                 children: (
-                    <Alert type="warning">
+                    <Alert className="mb1" type="warning">
                         {c('Info')
                             .t`A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?`}
                     </Alert>
@@ -84,7 +84,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 loading: true,
                 submit: c('Action').t`Continue`,
                 children: (
-                    <Alert>
+                    <Alert className="mb1">
                         {c('alert')
                             .t`The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.`}
                     </Alert>
@@ -96,7 +96,9 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
             const fp = <code key="0">{newKeyFingerprint}</code>;
             return {
                 submit: null,
-                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created.`}</Alert>,
+                children: (
+                    <Alert className="mb1">{c('Info').jt`Key with fingerprint ${fp} successfully created.`}</Alert>
+                ),
             };
         }
 

@@ -226,7 +226,7 @@ const ImportManageFolders = ({
 
     return (
         <>
-            <Alert className="mt2 mb1">{c('Info').t`Please select the folders you would like to import:`}</Alert>
+            <Alert className="mb1 mt2">{c('Info').t`Please select the folders you would like to import:`}</Alert>
 
             <div className="flex pt1">
                 <div className="flex-item-fluid text-ellipsis pr0-5">

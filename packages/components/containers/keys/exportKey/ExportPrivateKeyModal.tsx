@@ -48,11 +48,12 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
             onSubmit={handleSubmit}
             {...rest}
         >
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Info')
                     .t`IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!`}
             </Alert>
-            <Alert>{c('Info').t`Please enter a password to encrypt your private key with before exporting.`}</Alert>
+            <Alert className="mb1">{c('Info')
+                .t`Please enter a password to encrypt your private key with before exporting.`}</Alert>
             <Row>
                 <Label htmlFor={id}>{c('Label').t`Enter password`}</Label>
                 <Field>

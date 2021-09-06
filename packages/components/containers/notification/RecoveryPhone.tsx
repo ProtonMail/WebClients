@@ -27,7 +27,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm phone number`} onConfirm={resolve} onClose={reject}>
-                        <Alert type="warning">
+                        <Alert className="mb1" type="warning">
                             {c('Warning')
                                 .t`By deleting this phone number, you will no longer be able to recover your account.`}
                             <br />

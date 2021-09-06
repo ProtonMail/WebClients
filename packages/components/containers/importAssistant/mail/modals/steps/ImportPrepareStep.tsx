@@ -312,7 +312,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
 
     return (
         <>
-            <Alert type={showSizeWarning ? 'warning' : 'info'} className="mt1 mb1">
+            <Alert className="mb1 mt1" type={showSizeWarning ? 'warning' : 'info'}>
                 {showSizeWarning && (
                     <div className="mb1">
                         {c('Warning')
@@ -324,14 +324,14 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
             </Alert>
 
             {showMaxFoldersError && (
-                <Alert type="error" className="mt1 mb1">
+                <Alert className="mb1 mt1" type="error">
                     {c('Error')
                         .t`There are too many folders in your external account. Please customize the import to delete some folders.`}
                 </Alert>
             )}
 
             {(showFoldersNameTooLongError || showLabelsNameTooLongError) && (
-                <Alert type="error" className="mt1 mb1">
+                <Alert className="mb1 mt1" type="error">
                     {isLabelMapping
                         ? c('Error')
                               .t`Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`
@@ -341,7 +341,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
             )}
 
             {showUnavailableNamesError && (
-                <Alert type="error" className="mt1 mb1">
+                <Alert className="mb1 mt1" type="error">
                     {isLabelMapping
                         ? c('Error')
                               .t`Some of your label names are unavailable. Please customize the import to edit these names.`

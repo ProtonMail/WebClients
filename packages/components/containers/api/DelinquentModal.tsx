@@ -28,7 +28,7 @@ const DelinquentModal = ({ ...rest }: Props) => {
             small
             {...rest}
         >
-            <Alert type="warning">{c('Info')
+            <Alert className="mb1" type="warning">{c('Info')
                 .t`Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.`}</Alert>
         </FormModal>
     );

@@ -104,11 +104,11 @@ const ContactGroupsTable = ({ hasPaidMail, showUpgradeModal }: Props) => {
                                         onConfirm={handleConfirmDeletion(ID)}
                                         confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                                     >
-                                        <Alert type="info">
+                                        <Alert className="mb1" type="info">
                                             {c('Info')
                                                 .t`Please note that addresses assigned to this group will NOT be deleted.`}
                                         </Alert>
-                                        <Alert type="error">
+                                        <Alert className="mb1" type="error">
                                             {c('Info')
                                                 .t`Are you sure you want to permanently delete this contact group?`}
                                         </Alert>

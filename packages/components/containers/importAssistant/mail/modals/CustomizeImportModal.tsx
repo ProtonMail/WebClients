@@ -107,7 +107,8 @@ const CustomizeImportModal = ({
                 cancel={c('Action').t`Stay`}
                 confirm={<Button color="danger" type="submit">{c('Action').t`Quit`}</Button>}
             >
-                <Alert type="error">{c('Warning').t`You will lose any customization you made so far.`}</Alert>
+                <Alert className="mb1" type="error">{c('Warning')
+                    .t`You will lose any customization you made so far.`}</Alert>
             </ConfirmModal>
         );
     };
@@ -208,7 +209,7 @@ const CustomizeImportModal = ({
             className="customize-import-modal"
             {...rest}
         >
-            <Alert>
+            <Alert className="mb1">
                 {isLabelMapping
                     ? c('Info')
                           .t`Create a label for the imported messages, a time range for this import, and the labels you would like to import.`

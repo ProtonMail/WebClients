@@ -45,7 +45,7 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
     const classicImportRenderer = () => (
         <>
             {showAlert ? (
-                <Alert type="warning">{c('Info')
+                <Alert className="mb1" type="warning">{c('Info')
                     .t`You need to have an active personal calendar to import your events.`}</Alert>
             ) : null}
             <SettingsParagraph>

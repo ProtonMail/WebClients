@@ -43,7 +43,8 @@ const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }: Props)
             onClose={onClose}
             {...rest}
         >
-            <Alert>{c('Label').jt`Enter the password for key with fingerprint: ${fingerprintCode}`}</Alert>
+            <Alert className="mb1">{c('Label')
+                .jt`Enter the password for key with fingerprint: ${fingerprintCode}`}</Alert>
             <Row>
                 <Label htmlFor={id}>{c('Label').t`Enter password`}</Label>
                 <Field>

@@ -5,7 +5,7 @@ const MXSection = () => {
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
     return (
         <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
+            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
                 {c('Info')
                     .t`Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
@@ -25,7 +25,7 @@ const MXSection = () => {
                     <TableRow cells={['MX', '@', 'mailsec.protonmail.ch', '20']} />
                 </TableBody>
             </Table>
-            <Alert>
+            <Alert className="mb1">
                 {c('Info').t`Delete any other MX records or make sure ProtonMail's Priority is the lowest number.`}
                 <br />
                 {c('Info')

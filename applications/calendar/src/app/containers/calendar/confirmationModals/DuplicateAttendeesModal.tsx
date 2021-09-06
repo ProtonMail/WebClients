@@ -22,7 +22,7 @@ const DuplicateAttendeesModal = ({ onClose, duplicateAttendees, ...rest }: Props
         >
             <p>{c('Info').t`Please remove the duplicates and try again.`}</p>
             {duplicateAttendees.map((group) => (
-                <Alert type="warning" key={group.join('')}>
+                <Alert className="mb1" type="warning" key={group.join('')}>
                     {group.map((email) => (
                         <p className="text-ellipsis" key={email} title={email}>
                             {email}

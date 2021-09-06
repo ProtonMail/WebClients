@@ -9,11 +9,11 @@ const VerifySection = ({ domain }) => {
     const domainName = domain.DomainName;
     return (
         <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
+            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
                 {c('Info for domain modal')
                     .t`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Warning for domain modal')
                     .t`After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.`}
             </Alert>
@@ -46,7 +46,7 @@ const VerifySection = ({ domain }) => {
                     />
                 </TableBody>
             </Table>
-            <Alert type="warning">{c('Warning for domain modal')
+            <Alert className="mb1" type="warning">{c('Warning for domain modal')
                 .t`It can take up to a day for DNS changes to update.`}</Alert>
         </>
     );

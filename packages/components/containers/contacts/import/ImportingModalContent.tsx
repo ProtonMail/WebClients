@@ -106,7 +106,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {c('Description')
                     .t`Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
             </Alert>

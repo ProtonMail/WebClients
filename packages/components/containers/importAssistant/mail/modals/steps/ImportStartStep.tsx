@@ -234,7 +234,7 @@ const ImportStartStep = ({
             : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors';
 
         return (
-            <Alert type="error" learnMore={isRateLimitError ? undefined : learnMoreLink}>
+            <Alert className="mb1" type="error" learnMore={isRateLimitError ? undefined : learnMoreLink}>
                 {message}
             </Alert>
         );
@@ -250,7 +250,7 @@ const ImportStartStep = ({
             ].includes(errorCode) ? (
                 renderError()
             ) : (
-                <Alert>
+                <Alert className="mb1">
                     {c('Info').t`Enter the credentials of the email account you want to import from.`}
                     <br />
                     {c('Info').t`Your login information will not be saved after the import is completed.`}

@@ -37,7 +37,11 @@ const Bitcoin = ({ amount, currency, type }) => {
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount) => c('Info').jt`Amount below minimum (${amount}).`;
-        return <Alert type="warning">{i18n(<Price currency={currency}>{MIN_BITCOIN_AMOUNT}</Price>)}</Alert>;
+        return (
+            <Alert className="mb1" type="warning">
+                {i18n(<Price currency={currency}>{MIN_BITCOIN_AMOUNT}</Price>)}
+            </Alert>
+        );
     }
 
     if (loading) {
@@ -47,7 +51,7 @@ const Bitcoin = ({ amount, currency, type }) => {
     if (error || !model.amountBitcoin || !model.address) {
         return (
             <>
-                <Alert type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
+                <Alert className="mb1" type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
                 <Button onClick={() => withLoading(request())}>{c('Action').t`Try again`}</Button>
             </>
         );
@@ -66,10 +70,11 @@ const Bitcoin = ({ amount, currency, type }) => {
                 <BitcoinDetails amount={model.amountBitcoin} address={model.address} />
                 <div className="pt1 pl1 pr1">
                     {type === 'invoice' ? (
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</Alert>
                     ) : (
                         <Alert
+                            className="mb1"
                             learnMore={
                                 APP_NAME === APPS.PROTONVPN_SETTINGS
                                     ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'

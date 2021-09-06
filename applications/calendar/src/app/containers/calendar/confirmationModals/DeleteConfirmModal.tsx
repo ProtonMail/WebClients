@@ -66,7 +66,9 @@ const DeleteConfirmModal = ({ inviteActions, onConfirm, ...rest }: Props) => {
             onSubmit={handleSubmit}
             {...rest}
         >
-            <Alert type="error">{alertText}</Alert>
+            <Alert className="mb1" type="error">
+                {alertText}
+            </Alert>
         </FormModal>
     );
 };

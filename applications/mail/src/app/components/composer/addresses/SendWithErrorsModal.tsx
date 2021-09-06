@@ -23,7 +23,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                 onClose={onClose}
                 {...rest}
             >
-                <Alert type="error">
+                <Alert className="mb1" type="error">
                     {c('Send email with errors').ngettext(
                         msgid`We have detected errors. Your email cannot be sent to the email address entered due to the following reason:`,
                         `We have detected errors. Your email cannot be sent to any of the email addresses entered due to the following reasons:`,
@@ -40,7 +40,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                         </li>
                     ))}
                 </ul>
-                <Alert>
+                <Alert className="mb1">
                     {c('Send email with errors').ngettext(
                         msgid`Please go back to edit the email address you entered.`,
                         `Please go back to edit the email addresses you entered.`,
@@ -58,7 +58,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
             onClose={onClose}
             {...rest}
         >
-            <Alert type="error">
+            <Alert className="mb1" type="error">
                 {c('Send email with errors')
                     .t`We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:`}
             </Alert>
@@ -72,7 +72,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                     </li>
                 ))}
             </ul>
-            <Alert>{c('Send email with errors').t`Do you want to send the email anyway?`}</Alert>
+            <Alert className="mb1">{c('Send email with errors').t`Do you want to send the email anyway?`}</Alert>
         </FormModal>
     );
 };

@@ -97,7 +97,7 @@ const ExportModal = ({ contactGroupID: LabelID, userKeysList, onSave = noop, ...
             loading={loadingContacts}
             {...rest}
         >
-            <Alert>
+            <Alert className="mb1">
                 {c('Description')
                     .t`Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.`}
             </Alert>

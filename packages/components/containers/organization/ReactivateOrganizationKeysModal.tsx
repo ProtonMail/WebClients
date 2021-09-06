@@ -103,7 +103,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
             onSubmit={() => withLoading(handleSubmit())}
             {...rest}
         >
-            <Alert>{message}</Alert>
+            <Alert className="mb1">{message}</Alert>
             <Row>
                 <Label htmlFor="organizationPassword">{c('Label').t`Organization password`}</Label>
                 <Field>
@@ -119,7 +119,9 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
                     />
                 </Field>
             </Row>
-            <Alert type="warning">{warning}</Alert>
+            <Alert className="mb1" type="warning">
+                {warning}
+            </Alert>
         </FormModal>
     );
 };

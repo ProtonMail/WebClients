@@ -110,7 +110,7 @@ const PaymentVerificationModal = ({
                             <p className="text-center">
                                 <PaymentVerificationImage payment={payment} type={type} />
                             </p>
-                            <Alert>
+                            <Alert className="mb1">
                                 {isAddCard
                                     ? c('Info')
                                           .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
@@ -126,7 +126,7 @@ const PaymentVerificationModal = ({
                                     : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
                             </p>
                             <Loader />
-                            <Alert>{c('Info')
+                            <Alert className="mb1">{c('Info')
                                 .t`Verification will open a new tab, please disable any popup blockers.`}</Alert>
                         </>
                     ),
@@ -141,7 +141,7 @@ const PaymentVerificationModal = ({
                             <p className="text-center">
                                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                             </p>
-                            <Alert>
+                            <Alert className="mb1">
                                 {isAddCard && isPayPal
                                     ? c('Info').t`Verification can take a few minutes.`
                                     : c('Info').t`Payment can take a few minutes to fully verify.`}

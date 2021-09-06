@@ -104,7 +104,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
 
     // Organization is not setup.
     if (!organization?.HasKeys) {
-        return <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
+        return <Alert className="mb1" type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
     return (
@@ -126,7 +126,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                 )}
                 {organizationKeyInfo.userNeedsToReactivateKey && (
                     <>
-                        <Alert type="error">
+                        <Alert className="mb1" type="error">
                             {c('Error')
                                 .t`You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
                         </Alert>
@@ -140,7 +140,9 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                 )}
                 {organizationKeyInfo.userNeedsToActivateKey && (
                     <>
-                        <Alert type="error">{getActivationText()}</Alert>
+                        <Alert className="mb1" type="error">
+                            {getActivationText()}
+                        </Alert>
                         <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr1">
                             {c('Action').t`Activate organization key`}
                         </Button>

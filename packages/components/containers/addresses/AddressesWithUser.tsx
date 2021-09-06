@@ -62,7 +62,7 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
     );
 
     if (!loadingAddresses && !addresses.length) {
-        return <Alert>{c('Info').t`No addresses exist`}</Alert>;
+        return <Alert className="mb1">{c('Info').t`No addresses exist`}</Alert>;
     }
 
     return (

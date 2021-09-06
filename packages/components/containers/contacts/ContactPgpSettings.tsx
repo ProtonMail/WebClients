@@ -82,29 +82,37 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
     return (
         <>
             {!hasApiKeys && (
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
+                <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
                     {c('Info')
                         .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.`}
                 </Alert>
             )}
             {!!model.publicKeys.pinnedKeys.length && askForPinning && (
-                <Alert type="error">{c('Info')
+                <Alert className="mb1" type="error">{c('Info')
                     .t`Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.`}</Alert>
             )}
             {model.pgpAddressDisabled && (
-                <Alert type="warning">{c('Info')
+                <Alert className="mb1" type="warning">{c('Info')
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
             {hasApiKeys && (
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/address-verification/">{c('Info')
+                <Alert
+                    className="mb1"
+                    learnMore="https://protonmail.com/support/knowledge-base/address-verification/"
+                >{c('Info')
                     .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
             )}
             {!hasApiKeys && !model.sign && (
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">{c('Info')
-                    .t`Only change these settings if you are using PGP with non-ProtonMail recipients.`}</Alert>
+                <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">{c(
+                    'Info'
+                ).t`Only change these settings if you are using PGP with non-ProtonMail recipients.`}</Alert>
             )}
             {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && (
-                <Alert type="error" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">{c('Info')
+                <Alert
+                    className="mb1"
+                    type="error"
+                    learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
+                >{c('Info')
                     .t`None of the uploaded keys are valid for encryption. Encryption is automatically disabled.`}</Alert>
             )}
             {!hasApiKeys && (

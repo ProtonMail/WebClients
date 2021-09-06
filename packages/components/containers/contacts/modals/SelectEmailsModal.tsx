@@ -111,7 +111,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, ...rest }: P
 
     return (
         <FormModal submit={c('Action').t`Apply`} title={title} onSubmit={handleSubmit} onClose={onClose} {...rest}>
-            <Alert>{text}</Alert>
+            <Alert className="mb1">{text}</Alert>
             {model
                 .filter(({ contactEmails = [] }) => contactEmails.length > 1) // Only display contact with multiple emails
                 .map(({ ID: contactID, Name, contactEmails = [] }) => {

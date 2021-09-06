@@ -96,7 +96,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            <Alert>
+            <Alert className="mb1">
                 {c('Info')
                     .t`If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.`}
                 <br />

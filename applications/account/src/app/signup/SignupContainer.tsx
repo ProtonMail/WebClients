@@ -740,7 +740,8 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                                                 errors={paymentErrors}
                                             />
                                         ) : (
-                                            <Alert>{c('Info').t`No payment is required at this time.`}</Alert>
+                                            <Alert className="mb1">{c('Info')
+                                                .t`No payment is required at this time.`}</Alert>
                                         )}
                                     </div>
                                 </div>

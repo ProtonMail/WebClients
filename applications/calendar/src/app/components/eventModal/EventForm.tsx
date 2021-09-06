@@ -264,7 +264,7 @@ const EventForm = ({
     );
 
     const organizerDisabledAlert = isOrganizerDisabled ? (
-        <Alert type="warning">
+        <Alert className="mb1" type="warning">
             <span className="mr0-25">
                 {c('Info')
                     .t`You can only modify personal event properties as you can't send emails from the organizer address.`}

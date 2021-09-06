@@ -33,9 +33,10 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     onClose={reject}
                 >
-                    <Alert type="info">{c('Info')
+                    <Alert className="mb1" type="info">{c('Info')
                         .t`Please note that if you delete this address, you will no longer be able to send or receive emails using this address.`}</Alert>
-                    <Alert type="error">{c('Info').t`Are you sure you want to delete this address?`}</Alert>
+                    <Alert className="mb1" type="error">{c('Info')
+                        .t`Are you sure you want to delete this address?`}</Alert>
                 </ConfirmModal>
             );
         });
@@ -61,7 +62,7 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
         return new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal onConfirm={resolve} onClose={reject}>
-                    <Alert type="warning">{c('Warning')
+                    <Alert className="mb1" type="warning">{c('Warning')
                         .t`By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?`}</Alert>
                 </ConfirmModal>
             );

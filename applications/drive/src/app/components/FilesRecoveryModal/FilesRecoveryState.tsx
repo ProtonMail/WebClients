@@ -24,7 +24,7 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
                     <div className="p1 flex w100">
                         <img src={keyAndFileSvg} alt={title} className="w50 mauto" />
                     </div>
-                    <Alert className="mt1 mb1">
+                    <Alert className="mb1 mt1">
                         <div>{c('Info').jt`Would you like to restore your files?`}</div>
                         <div>{c('Info').jt`Recovery process might take some time.`}</div>
                     </Alert>

@@ -73,7 +73,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
                             onConfirm={() => resolve(undefined)}
                             title={c('Title').t`Change role`}
                         >
-                            <Alert>
+                            <Alert className="mb1">
                                 {member.Subscriber === MEMBER_SUBSCRIBER.PAYER
                                     ? c('Info')
                                           .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`

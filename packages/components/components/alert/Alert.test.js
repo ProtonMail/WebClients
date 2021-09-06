@@ -5,7 +5,11 @@ import Alert from './Alert';
 describe('Alert component', () => {
     const text = 'Panda';
     const learnMoreText = 'Learn more';
-    const { container } = render(<Alert learnMore="https://protonmail.com">{text}</Alert>);
+    const { container } = render(
+        <Alert className="mb1" learnMore="https://protonmail.com">
+            {text}
+        </Alert>
+    );
     const { firstChild } = container;
 
     it('renders children and should contain "Learn more" link', () => {
@@ -17,7 +21,11 @@ describe('Alert component', () => {
     });
 
     it('should have error class for warning type', () => {
-        const { container } = render(<Alert type="warning">{text}</Alert>);
+        const { container } = render(
+            <Alert className="mb1" type="warning">
+                {text}
+            </Alert>
+        );
         expect(container.firstChild).toHaveClass('mb1 alert-block--warning');
     });
 });

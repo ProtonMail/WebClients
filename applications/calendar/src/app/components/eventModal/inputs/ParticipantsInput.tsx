@@ -147,7 +147,7 @@ const ParticipantsInput = ({
                 }}
             />
             {numberOfParticipants > 100 && (
-                <Alert className="mt0-5" type="error">
+                <Alert className="mb1 mt0-5" type="error">
                     {c('Info').t`At most 100 participants are allowed per invitation`}
                 </Alert>
             )}

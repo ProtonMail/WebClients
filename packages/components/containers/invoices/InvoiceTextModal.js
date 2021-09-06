@@ -31,7 +31,7 @@ const InvoiceTextModal = ({ onClose, ...rest }) => {
             title={c('Title').t`Add invoice details`}
             {...rest}
         >
-            <Alert>{c('Info message for custom invoice modal')
+            <Alert className="mb1">{c('Info message for custom invoice modal')
                 .t`Add your name (or company name) and address to your invoices.`}</Alert>
             <Block>
                 <Label htmlFor="invoiceTextarea">{c('Label').t`Customize invoices`}</Label>

@@ -117,7 +117,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {c('Import calendar').t`Please don't close the tab before the importing process is finished.`}
             </Alert>
             <DynamicProgress

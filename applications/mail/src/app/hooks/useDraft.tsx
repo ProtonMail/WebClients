@@ -42,7 +42,7 @@ export const useDraftVerifications = () => {
                             title={c('Title').t`Sending notice`}
                             confirm={c('Action').t`OK`}
                         >
-                            <Alert>{c('Info')
+                            <Alert className="mb1">{c('Info')
                                 .t`Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${email}`}</Alert>
                         </ConfirmModal>
                     );

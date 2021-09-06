@@ -70,7 +70,8 @@ export const useSendVerifications = () => {
                         confirm={c('Action').t`OK`}
                         cancel={null}
                     >
-                        <Alert type="warning">{c('Info').t`Please add at least one recipient before sending.`}</Alert>
+                        <Alert className="mb1" type="warning">{c('Info')
+                            .t`Please add at least one recipient before sending.`}</Alert>
                     </ConfirmModal>
                 );
             });
@@ -86,7 +87,7 @@ export const useSendVerifications = () => {
                         title={c('Title').t`Message without subject?`}
                         confirm={c('Action').t`Send anyway`}
                     >
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`You have not given your email any subject. Do you want to send the message anyway?`}</Alert>
                     </ConfirmModal>
                 );
@@ -119,7 +120,10 @@ export const useSendVerifications = () => {
                         title={c('Title').t`No attachment found`}
                         confirm={c('Action').t`Send anyway`}
                     >
-                        <Alert learnMore="https://protonmail.com/support/knowledge-base/attachment-reminders/">
+                        <Alert
+                            className="mb1"
+                            learnMore="https://protonmail.com/support/knowledge-base/attachment-reminders/"
+                        >
                             {c('Info')
                                 .t`You wrote "${keyword}", but no attachment has been added. Do you want to send your message anyway?`}
                         </Alert>

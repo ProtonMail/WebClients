@@ -63,11 +63,11 @@ const ImportCsvModalContent = ({ model, setModel }: Props) => {
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {c('Description of the purpose of the import CSV modal')
                     .t`We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.`}
             </Alert>
-            <Alert>
+            <Alert className="mb1">
                 {c('Description of the purpose of the import CSV modal')
                     .t`Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.`}
             </Alert>

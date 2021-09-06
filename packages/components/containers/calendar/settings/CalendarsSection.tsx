@@ -49,7 +49,9 @@ const CalendarsSection = ({
     return (
         <SettingsSection>
             {!canAdd && !isFeatureUnavailable && user.hasNonDelinquentScope && (
-                <Alert type="warning">{calendarLimitReachedText}</Alert>
+                <Alert className="mb1" type="warning">
+                    {calendarLimitReachedText}
+                </Alert>
             )}
             {user.isFree && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
                 <Card className="mb1">
