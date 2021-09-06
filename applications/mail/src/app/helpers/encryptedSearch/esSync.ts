@@ -29,6 +29,7 @@ import {
     getTotalMessages,
     refreshOpenpgp,
     openESDB,
+    esSentryReport,
 } from './esUtils';
 import { applySearch, normaliseSearchParams, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesMetadata } from './esAPI';
@@ -83,7 +84,9 @@ export const storeToDB = async (newCiphertextToStore: StoredCiphertext, esDB: ID
         try {
             await esDB.put('messages', newCiphertextToStore);
             return true;
-        } catch (error) {
+        } catch (error: any) {
+            esSentryReport('storeToDB: put failed', { error });
+
             if (error.name === 'QuotaExceededError') {
                 // If there is no space left an error is thrown. If the message we are trying to
                 // save is older than the oldest message present, then it should be discarded. Otherwise,

@@ -48,6 +48,7 @@ import {
     removeES,
     setES,
     getES,
+    esSentryReport,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -401,6 +402,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         try {
             refreshEvent = await checkResfresh(indexKey, currentEvent, false);
         } catch (error) {
+            esSentryReport('catchUpFromEvent: checkResfresh', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -415,6 +417,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         try {
             await syncIndexedDB(eventToCheck, indexKey);
         } catch (error) {
+            esSentryReport('catchUpFromEvent: syncIndexedDB', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -477,6 +480,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 }
             }
         } catch (error) {
+            esSentryReport('catchUpFromLS: checkResfresh', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -510,6 +514,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     newEventsToCheck.push(newEventToCheck);
                 }
             } catch (error) {
+                esSentryReport('catchUpFromLS: queryEvents', { error });
                 setESStatus((esStatus) => {
                     return {
                         ...esStatus,
@@ -539,6 +544,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
             }
         } catch (error) {
+            esSentryReport('catchUpFromLS: syncIndexedDB', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -765,7 +771,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 controlledSetCache,
                 abortSearchingRef
             ));
-        } catch (error) {
+        } catch (error: any) {
+            esSentryReport('encryptedSearch: hybridSearch', { error });
             // If the key is the problem, then we want to wipe the DB and fall back to
             // server-side search, otherwise we want to show a generic error and still
             // fall back to server-side search

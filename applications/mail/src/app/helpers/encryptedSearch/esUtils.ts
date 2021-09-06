@@ -4,6 +4,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { EncryptedSearchDB } from '../../models/encryptedSearch';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
@@ -64,6 +65,13 @@ export const createESDB = async (userID: string) => {
             });
         },
     });
+};
+
+/**
+ * Helper to send ES-related sentry reports
+ */
+export const esSentryReport = (errorMessage: string, extra?: any) => {
+    captureMessage(`[EncryptedSearch] ${errorMessage}`, { extra });
 };
 
 /**
