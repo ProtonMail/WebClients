@@ -30,6 +30,8 @@ export const isSupportedImage = (mimeType: string) =>
         .filter(Boolean)
         .includes(mimeType);
 
+export const isSVG = (mimeType: string) => mimeType === 'image/svg+xml';
+
 export const isSupportedText = (mimeType: string) =>
     mimeType.startsWith('text/') || ['application/javascript', 'application/typescript'].includes(mimeType);
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
