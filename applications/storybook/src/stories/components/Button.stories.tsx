@@ -9,6 +9,7 @@ import {
     RadioGroup,
     ButtonLike,
     Checkbox,
+    Icon,
 } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
@@ -138,8 +139,11 @@ export const Variants = () => {
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
                             <TableCell key={color}>
-                                <Button shape={shape} color={color}>
-                                    Loremium
+                                <Button shape={shape} color={color} className="mr0-5 mb0-5">
+                                    Lorem
+                                </Button>
+                                <Button icon shape={shape} color={color} className="mb0-5">
+                                    <Icon name="brand-proton-mail" />
                                 </Button>
                             </TableCell>
                         ))}

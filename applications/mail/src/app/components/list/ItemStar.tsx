@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, classnames, Tooltip, useMailSettings } from '@proton/components';
+import { Icon, IconSize, useLoading, classnames, Tooltip, useMailSettings } from '@proton/components';
 
 import { Element } from '../../models/element';
 import { isStarred as testIsStarred, isMessage } from '../../helpers/elements';
@@ -8,7 +8,7 @@ import { useStar } from '../../hooks/useApplyLabels';
 
 interface Props {
     element?: Element;
-    size?: number;
+    size?: IconSize;
 }
 
 const ItemStar = ({ element = {}, size }: Props) => {

@@ -1,4 +1,4 @@
-import Icon, { Props as IconProps } from './Icon';
+import Icon, { IconProps } from './Icon';
 
 const nameSpaceSvg = 'mime';
 

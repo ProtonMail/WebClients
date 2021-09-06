@@ -1,5 +1,5 @@
 import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo } from '../../containers/filePreview/helpers';
-import { Props as IconProps } from '../icon/Icon';
+import { IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
 const iconsMap: { [mimeType: string]: { name: string } } = {

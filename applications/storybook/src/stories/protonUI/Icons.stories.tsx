@@ -17,7 +17,7 @@ export const PrimaryIcons = () => {
     return (
         <div>
             <Input placeholder="Name..." value={search} onChange={({ target: { value } }) => setSearch(value)} />
-            <div className="flex mb2">
+            <div className="flex flex-justify-center mt2 mb2">
                 {iconResults.map((iconName: string) => (
                     <div className="w200p text-center p1" key={iconName}>
                         <Icon name={iconName} size={24} />
