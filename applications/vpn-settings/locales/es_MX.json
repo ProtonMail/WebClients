@@ -5,7 +5,216 @@
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Error": {
+      "This field is required": [
+        "Este campo es obligatorio"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
+      "Email is not valid": [
+        "Correo no válido"
+      ],
+      "Not a valid number": [
+        "Número no válido"
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden entre sí"
+      ],
+      "Signature verification failed": [
+        "Falló la verificación de la firma"
+      ],
+      "Request timed out.": [
+        "Tiempo de espera agotado."
+      ],
+      "Email address invalid": [
+        "Dirección de correo inválida"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "El navegador que está utilizando no permite que el pago sea autorizado. Utilice un navegador diferente o inicie sesión a través de una computadora."
+      ],
+      "Unknown error": [
+        "Error desconocido"
+      ],
+      "Checkout expired, please try again.": [
+        "La compra ha expirado, por favor intente de nuevo."
+      ],
+      "Invalid code": [
+        "Código inválido"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Error al conectar a la API de Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Cantidad menor al mínimo."
+      ],
+      "Amount above the maximum.": [
+        "Cantidad mayor al máximo."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "La cantidad mínima que se puede donar es de ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "La cantidad mínima de crédito que se puede añadir es de ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "El pago mínimo que aceptamos es de ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Proceso abortado"
+      ],
+      "Payment process cancelled": [
+        "Proceso de pago cancelado"
+      ],
+      "Payment process failed": [
+        "Proceso de pago fallido"
+      ],
+      "Payment process consumed": [
+        "Proceso de pago completado"
+      ],
+      "Payment process not supported": [
+        "Proceso de pago no soportado"
+      ],
+      "Unknown payment token status": [
+        "Estado de token de pago desconocido"
+      ],
+      "Tab closed": [
+        "Pestaña cerrada"
+      ],
+      "Name on card required": [
+        "Nombre en la tarjeta requerido"
+      ],
+      "Invalid expiration date": [
+        "Fecha de expiración inválida"
+      ],
+      "Invalid card number": [
+        "Número de tarjeta inválido"
+      ],
+      "Invalid ${ name } code": [
+        "Código ${ name } inválido"
+      ],
+      "Invalid postal code": [
+        "Código postal inválido"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Genere claves antes de intentar cambiar su contraseña."
+      ],
+      "Please set a recovery/notification email first": [
+        "Establezca primero un correo electrónico de recuperación/notificación"
+      ],
+      "Please set a recovery phone number first": [
+        "Establezca primero un número de teléfono de recuperación"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Contraseña del buzón incorrecta. Por favor, inténtelo de nuevo"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Credenciales de acceso incorrectas. Por favor, inténtelo de nuevo"
+      ],
+      "Can't validate email, try again later": [
+        "No se puede validar el correo electrónico, intente más tarde"
+      ],
+      "Can't validate phone, try again later": [
+        "No se puede validar el teléfono, intente más tarde"
+      ],
+      "Enter 6 digits": [
+        "Ingrese 6 dígitos"
+      ],
+      "Invalid verification code": [
+        "Código de verificación inválido"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Los pagos no están disponibles, vuelva a intentarlo más tarde"
+      ],
+      "You have no invoices.": [
+        "No tiene facturas."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Su cuenta u organización tiene actualmente una factura vencida. Por favor, pague todas las facturas pendientes de pago."
+      ],
+      "File has no contents to preview": [
+        "El archivo no tiene contenido para previsualizar"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Por favor, ingrese '${ dangerWord }'"
+      ],
+      "Code wrong or not valid anymore": [
+        "Código incorrecto o inválido"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Si la hora en su televisor ha expirado, haga clic en Actualizar en su televisor e ingrese su código de nuevo."
+      ],
+      "Invalid invitation link": [
+        "Enlace de invitación inválido"
+      ],
+      "Can't check username, try again later": [
+        "No se puede comprobar el nombre de usuario, inténtelo nuevamente más tarde"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contraseña debe tener al menos ${ length } caracter",
+        "La contraseña debe tener al menos ${ length } caracteres"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "No sincronizado"
+      ],
+      "Syncing": [
+        "Sincronizando"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "El calendario se está sincronizando"
+      ],
+      "More than 12 hours passed since last update": [
+        "Han pasado más de 12 horas desde la última actualización"
+      ],
+      "Calendar link is wrong": [
+        "El enlace del calendario es erróneo"
+      ],
+      "Calendar is too big": [
+        "El calendario es muy grande"
+      ],
+      "Calendar link is not accessible": [
+        "El enlace del calendario no es accesible"
+      ],
+      "Calendar link is temporarily unaccessible": [
+        "El enlace del calendario está inaccesible temporalmente"
+      ],
+      "Failed to sync calendar": [
+        "Error al sincronizar el calendario"
+      ]
+    },
     "Info": {
+      "Session timed out.": [
+        "Sesión agotada."
+      ],
+      "Internet connection lost.": [
+        "Sin conexión a Internet."
+      ],
+      "Servers are unreachable.": [
+        "Los servidores no están disponibles."
+      ],
       "No results found": [
         "No se encontraron resultados"
       ],
@@ -550,33 +759,6 @@
       "Recovery phrase has been disabled": [
         "La frase de recuperación ha sido deshabilitada"
       ],
-      "You have no saved payment methods.": [
-        "No tiene ningún método de pago guardado."
-      ],
-      "Expired": [
-        "Expirado"
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Puede personalizar y descargar sus facturas con fines contables."
-      ],
-      "Unsupported file": [
-        "Archivo no soportado"
-      ],
-      "No preview available": [
-        "Vista previa no disponible"
-      ],
-      "Preview": [
-        "Vista previa"
-      ],
-      "Loading preview": [
-        "Cargando vista previa"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
-      ],
-      "of": [
-        "de"
-      ],
       "here": [
         "aquí"
       ],
@@ -616,6 +798,33 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear su cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
+      "You have no saved payment methods.": [
+        "No tiene ningún método de pago guardado."
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "You can customize and download your invoices for accounting purposes.": [
+        "Puede personalizar y descargar sus facturas con fines contables."
+      ],
+      "Unsupported file": [
+        "Archivo no soportado"
+      ],
+      "No preview available": [
+        "Vista previa no disponible"
+      ],
+      "Preview": [
+        "Vista previa"
+      ],
+      "Loading preview": [
+        "Cargando vista previa"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
+      ],
+      "of": [
+        "de"
+      ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Ingrese su dirección de correo electrónico de recuperación y le enviaremos su nombre de usuario(s). (Esta suele ser la dirección de correo electrónico que proporcionó durante el registro)."
       ],
@@ -651,15 +860,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Esto puede tardar unos segundos o minutos dependiendo de su dispositivo"
-      ],
-      "Session timed out.": [
-        "Sesión agotada."
-      ],
-      "Internet connection lost.": [
-        "Sin conexión a Internet."
-      ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Actualice a un plan de pago para acceder a funciones premium y aumentar su espacio de almacenamiento."
@@ -967,6 +1167,18 @@
       "Your recovery phrase": [
         "Su frase de recuperación"
       ],
+      "Username or ProtonMail address": [
+        "Nombre de usuario o dirección de ProtonMail"
+      ],
+      "Phone number": [
+        "Número telefónico"
+      ],
+      "Verification code": [
+        "Código de verificación"
+      ],
+      "Enter the 6-digit code": [
+        "Ingrese el código de 6 dígitos"
+      ],
       "Cash": [
         "Efectivo"
       ],
@@ -987,18 +1199,6 @@
       ],
       "Customize invoices": [
         "Personalizar facturas"
-      ],
-      "Username or ProtonMail address": [
-        "Nombre de usuario o dirección de ProtonMail"
-      ],
-      "Phone number": [
-        "Número telefónico"
-      ],
-      "Verification code": [
-        "Código de verificación"
-      ],
-      "Enter the 6-digit code": [
-        "Ingrese el código de 6 dígitos"
       ],
       "Username": [
         "Nombre de usuario"
@@ -1308,6 +1508,30 @@
       "Disable recovery phrase": [
         "Deshabilitar frase de recuperación"
       ],
+      "Log in": [
+        "Iniciar sesión"
+      ],
+      "View invoice": [
+        "Ver factura"
+      ],
+      "Get verification code": [
+        "Obtener código de verificación"
+      ],
+      "Try another method": [
+        "Intente otro método"
+      ],
+      "Request new code": [
+        "Solicitar un código nuevo"
+      ],
+      "Did not receive the code?": [
+        "¿No recibió el código?"
+      ],
+      "Edit email address": [
+        "Editar dirección de correo"
+      ],
+      "Edit phone number": [
+        "Editar número de teléfono"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1352,30 +1576,6 @@
       ],
       "Previous": [
         "Anterior"
-      ],
-      "Log in": [
-        "Iniciar sesión"
-      ],
-      "View invoice": [
-        "Ver factura"
-      ],
-      "Get verification code": [
-        "Obtener código de verificación"
-      ],
-      "Try another method": [
-        "Intente otro método"
-      ],
-      "Request new code": [
-        "Solicitar un código nuevo"
-      ],
-      "Did not receive the code?": [
-        "¿No recibió el código?"
-      ],
-      "Edit email address": [
-        "Editar dirección de correo"
-      ],
-      "Edit phone number": [
-        "Editar número de teléfono"
       ],
       "Email me my username(s)": [
         "Enviarme mi nombre de usuario(s)"
@@ -1527,155 +1727,6 @@
       ],
       "Close": [
         "Cerrar"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "Dirección de correo inválida"
-      ],
-      "This field is required": [
-        "Este campo es obligatorio"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que está utilizando no permite que el pago sea autorizado. Utilice un navegador diferente o inicie sesión a través de una computadora."
-      ],
-      "Unknown error": [
-        "Error desconocido"
-      ],
-      "Checkout expired, please try again.": [
-        "La compra ha expirado, por favor intente de nuevo."
-      ],
-      "Invalid code": [
-        "Código inválido"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Error al conectar a la API de Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Cantidad menor al mínimo."
-      ],
-      "Amount above the maximum.": [
-        "Cantidad mayor al máximo."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "La cantidad mínima que se puede donar es de ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "La cantidad mínima de crédito que se puede añadir es de ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "El pago mínimo que aceptamos es de ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Proceso abortado"
-      ],
-      "Payment process cancelled": [
-        "Proceso de pago cancelado"
-      ],
-      "Payment process failed": [
-        "Proceso de pago fallido"
-      ],
-      "Payment process consumed": [
-        "Proceso de pago completado"
-      ],
-      "Payment process not supported": [
-        "Proceso de pago no soportado"
-      ],
-      "Unknown payment token status": [
-        "Estado de token de pago desconocido"
-      ],
-      "Tab closed": [
-        "Pestaña cerrada"
-      ],
-      "Name on card required": [
-        "Nombre en la tarjeta requerido"
-      ],
-      "Invalid expiration date": [
-        "Fecha de expiración inválida"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta inválido"
-      ],
-      "Invalid ${ name } code": [
-        "Código ${ name } inválido"
-      ],
-      "Invalid postal code": [
-        "Código postal inválido"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Genere claves antes de intentar cambiar su contraseña."
-      ],
-      "Please set a recovery/notification email first": [
-        "Establezca primero un correo electrónico de recuperación/notificación"
-      ],
-      "Please set a recovery phone number first": [
-        "Establezca primero un número de teléfono de recuperación"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Los pagos no están disponibles, vuelva a intentarlo más tarde"
-      ],
-      "You have no invoices.": [
-        "No tiene facturas."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Su cuenta u organización tiene actualmente una factura vencida. Por favor, pague todas las facturas pendientes de pago."
-      ],
-      "File has no contents to preview": [
-        "El archivo no tiene contenido para previsualizar"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Contraseña del buzón incorrecta. Por favor, inténtelo de nuevo"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Credenciales de acceso incorrectas. Por favor, inténtelo de nuevo"
-      ],
-      "Can't validate email, try again later": [
-        "No se puede validar el correo electrónico, intente más tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "No se puede validar el teléfono, intente más tarde"
-      ],
-      "Enter 6 digits": [
-        "Ingrese 6 dígitos"
-      ],
-      "Invalid verification code": [
-        "Código de verificación inválido"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Por favor, ingrese '${ dangerWord }'"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
-      ],
-      "Email is not valid": [
-        "Correo no válido"
-      ],
-      "Not a valid number": [
-        "Número no válido"
-      ],
-      "Passwords do not match": [
-        "Las contraseñas no coinciden entre sí"
-      ],
-      "Signature verification failed": [
-        "Falló la verificación de la firma"
-      ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
-      ],
-      "Code wrong or not valid anymore": [
-        "Código incorrecto o inválido"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Si la hora en su televisor ha expirado, haga clic en Actualizar en su televisor e ingrese su código de nuevo."
-      ],
-      "Invalid invitation link": [
-        "Enlace de invitación inválido"
-      ],
-      "Can't check username, try again later": [
-        "No se puede comprobar el nombre de usuario, inténtelo nuevamente más tarde"
       ]
     },
     "Title": {
@@ -1862,6 +1913,24 @@
       "Confirm phone number": [
         "Confirmar número de teléfono"
       ],
+      "Account suspended": [
+        "Cuenta suspendida"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Ingrese su nombre de usuario o dirección de correo de ProtonMail"
+      ],
+      "Enter your password": [
+        "Ingrese su contraseña"
+      ],
+      "Invalid verification code": [
+        "Código de verificación inválido"
+      ],
+      "Request new code": [
+        "Solicitar un código nuevo"
+      ],
+      "Human verification": [
+        "Verificación humana"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -1882,24 +1951,6 @@
       ],
       "Action": [
         "Acción"
-      ],
-      "Account suspended": [
-        "Cuenta suspendida"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Ingrese su nombre de usuario o dirección de correo de ProtonMail"
-      ],
-      "Enter your password": [
-        "Ingrese su contraseña"
-      ],
-      "Invalid verification code": [
-        "Código de verificación inválido"
-      ],
-      "Request new code": [
-        "Solicitar un código nuevo"
-      ],
-      "Human verification": [
-        "Verificación humana"
       ],
       "Confirm reset password": [
         "Confirmar restablecimiento de contraseña"
@@ -2205,6 +2256,12 @@
       "Phone number updated": [
         "Número de teléfono actualizado"
       ],
+      "Code sent to ${ methodTo }": [
+        "Código enviado a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificación exitosa"
+      ],
       "Payment method deleted": [
         "Método de pago eliminado"
       ],
@@ -2213,12 +2270,6 @@
       ],
       "Invoice customized": [
         "Factura personalizada"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Código enviado a ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificación exitosa"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
         "Si ingresó un correo de notificación válido, enviaremos un correo electrónico con su nombre de usuario en el siguiente minuto."
@@ -3353,6 +3404,33 @@
         "Frase de recuperación"
       ]
     },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "Con sede en Suiza, disponible globalmente."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factura atrasada"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Correo"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "No hay un método de verificación disponible"
+      ]
+    },
     "Confirmation title": {
       "Delete payment method": [
         "Eliminar método de pago"
@@ -3467,56 +3545,9 @@
         "Factura de ProtonMail"
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Con sede en Suiza, disponible globalmente."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Factura atrasada"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Correo"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "No hay un método de verificación disponible"
-      ]
-    },
     "Password": {
       "Confirm new password": [
         "Confirmar contraseña nueva"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter",
-        "La contraseña debe tener al menos ${ length } caracteres"
       ]
     },
     "Plan details": {

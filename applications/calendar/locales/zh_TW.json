@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "未知的錯誤"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
       ],
@@ -17,9 +20,6 @@
       ],
       "Authentication error.": [
         "認證錯誤。"
-      ],
-      "Unknown error": [
-        "未知的錯誤"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
@@ -93,6 +93,24 @@
       "Invalid code": [
         "無效的代碼"
       ],
+      "Incorrect mailbox password. Please try again": [
+        "郵箱密碼不正確，請再試一次"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "登入認證不正確，請再試一次"
+      ],
+      "Can't validate email, try again later": [
+        "無法驗證電子郵件，請稍後再試"
+      ],
+      "Can't validate phone, try again later": [
+        "無法驗證電話號碼，請稍後再試"
+      ],
+      "Enter 6 digits": [
+        "請輸入 6 位數字"
+      ],
+      "Invalid verification code": [
+        "無效的驗證碼"
+      ],
       "Preferences could not be saved": [
         "無法儲存喜好設定"
       ],
@@ -144,24 +162,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "郵箱密碼不正確，請再試一次"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "登入認證不正確，請再試一次"
-      ],
-      "Can't validate email, try again later": [
-        "無法驗證電子郵件，請稍後再試"
-      ],
-      "Can't validate phone, try again later": [
-        "無法驗證電話號碼，請稍後再試"
-      ],
-      "Enter 6 digits": [
-        "請輸入 6 位數字"
-      ],
-      "Invalid verification code": [
-        "無效的驗證碼"
-      ],
       "No valid address found": [
         "找不到有效的地址"
       ],
@@ -192,6 +192,12 @@
       "Request timed out.": [
         "請求逾時。"
       ],
+      "Signature verification failed": [
+        "簽名驗證失敗"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到地址 ${ email } 。"
+      ],
       "Missing signature": [
         "簽章遺失"
       ],
@@ -200,12 +206,6 @@
       ],
       "Signature not verified": [
         "簽章未驗證"
-      ],
-      "Signature verification failed": [
-        "簽名驗證失敗"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到地址 ${ email } 。"
       ],
       "Email address disabled": [
         "電子郵件地址已停用"
@@ -238,13 +238,13 @@
         "${ list } 沒有有效的電子郵件地址"
       ],
       "${ _list } doesn't have an email address": [
-        ""
+        "${ _list } 沒有電子郵件地址"
       ],
       "${ list } has invalid emails": [
         "${ list } 沒有有效的電子郵件"
       ],
       "${ _list2 } has no contacts": [
-        ""
+        "${ _list2 } 沒有聯絡人"
       ],
       "Failed to get original occurrence in series": [
         "無法取得系列中原本事件。"
@@ -335,6 +335,9 @@
       "Load image": [
         "載入圖片"
       ],
+      "refresh the page": [
+        "刷新此頁"
+      ],
       "Export": [
         "匯出"
       ],
@@ -380,8 +383,8 @@
       "Confirm opening of link ${ link }": [
         "確認開啟連結 ${ link }"
       ],
-      "refresh the page": [
-        "刷新此頁"
+      "Continue with Google": [
+        "以 Google 繼續"
       ],
       "Select timezone": [
         "選擇時區"
@@ -536,6 +539,30 @@
       "Increase": [
         "加"
       ],
+      "Log in": [
+        "登入"
+      ],
+      "View invoice": [
+        "檢視發票"
+      ],
+      "Get verification code": [
+        "取得驗證碼"
+      ],
+      "Try another method": [
+        "嘗試其他方法"
+      ],
+      "Request new code": [
+        "重發驗證碼"
+      ],
+      "Did not receive the code?": [
+        "尚未收到驗證碼？"
+      ],
+      "Edit email address": [
+        "編輯電子郵件地址"
+      ],
+      "Edit phone number": [
+        "編輯電話號碼"
+      ],
       "Save": [
         "儲存"
       ],
@@ -626,9 +653,6 @@
       "Export contacts": [
         "匯出聯絡人"
       ],
-      "Continue with Google": [
-        "以 Google 繼續"
-      ],
       "Import contacts": [
         "匯入聯絡人"
       ],
@@ -649,30 +673,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Log in": [
-        "登入"
-      ],
-      "View invoice": [
-        "檢視發票"
-      ],
-      "Get verification code": [
-        "取得驗證碼"
-      ],
-      "Try another method": [
-        "嘗試其他方法"
-      ],
-      "Request new code": [
-        "重發驗證碼"
-      ],
-      "Did not receive the code?": [
-        "尚未收到驗證碼？"
-      ],
-      "Edit email address": [
-        "編輯電子郵件地址"
-      ],
-      "Edit phone number": [
-        "編輯電話號碼"
       ],
       "Close this banner": [
         "關閉此橫幅"
@@ -907,6 +907,27 @@
       "${ appName } customization": [
         "${ appName } 自訂化"
       ],
+      "Sign in again to continue": [
+        "請重新登入以繼續"
+      ],
+      "Account suspended": [
+        "帳號被暫停"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Enter your password": [
+        "請輸入您的密碼"
+      ],
+      "Invalid verification code": [
+        "無效的驗證碼"
+      ],
+      "Request new code": [
+        "重發驗證碼"
+      ],
+      "Human verification": [
+        "真人驗證"
+      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 鍵盤快捷鍵"
       ],
@@ -1035,27 +1056,6 @@
       ],
       "Import in progress": [
         ""
-      ],
-      "Sign in again to continue": [
-        "請重新登入以繼續"
-      ],
-      "Account suspended": [
-        "帳號被暫停"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "Enter your password": [
-        "請輸入您的密碼"
-      ],
-      "Invalid verification code": [
-        "無效的驗證碼"
-      ],
-      "Request new code": [
-        "重發驗證碼"
-      ],
-      "Human verification": [
-        "真人驗證"
       ],
       "Select the way to send this notification": [
         "請選擇此通知發送的方式"
@@ -1206,8 +1206,14 @@
       "No results found": [
         "查無結果"
       ],
+      "support team": [
+        "支援團隊"
+      ],
       "No contacts added yet": [
         "未新增任何聯絡人"
+      ],
+      "Loading": [
+        "載入中"
       ],
       "Week": [
         "週"
@@ -1226,12 +1232,6 @@
       ],
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
-      ],
-      "support team": [
-        "支援團隊"
-      ],
-      "Loading": [
-        "載入中"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 個成員)"
@@ -1482,6 +1482,45 @@
       "Expired": [
         "過期"
       ],
+      "here": [
+        "此處"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "因為可能違反政策，因此這個已被暫時停用。"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "如果您相信這是錯的，請聯絡我們 ${ contactLink }。"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "你的Proton帳戶已被暫停。請先支付任何逾期的款項，然後繼續使用你的帳戶。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "你想接收新的驗證碼還是選擇另一種驗證方式？"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "輸入從 ${ destinationText } 接收的驗證碼。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "如果你看不到郵件，請檢查您的垃圾郵件文件夾。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "為防止惡意行為，請證明您不是機器人。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的電子郵件只會用於此一次驗證。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的電話號碼只會用於此一次驗證。"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "如果你無法建立帳戶，請聯絡我們。我們將會於一個工作天內處理你的申請。"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
@@ -1616,45 +1655,6 @@
       ],
       "Your import will not be processed.": [
         ""
-      ],
-      "here": [
-        "此處"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "因為可能違反政策，因此這個已被暫時停用。"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如果您相信這是錯的，請聯絡我們 ${ contactLink }。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "你的Proton帳戶已被暫停。請先支付任何逾期的款項，然後繼續使用你的帳戶。"
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "你想接收新的驗證碼還是選擇另一種驗證方式？"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "輸入從 ${ destinationText } 接收的驗證碼。"
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "如果你看不到郵件，請檢查您的垃圾郵件文件夾。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "為防止惡意行為，請證明您不是機器人。"
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次驗證。"
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼只會用於此一次驗證。"
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "如果你無法建立帳戶，請聯絡我們。我們將會於一個工作天內處理你的申請。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
@@ -1885,7 +1885,7 @@
         "請移除重複項目後再試一次。"
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        ""
+        "您已重設密碼，無法解密連結到以下日曆的事件連結。\n任何您先前建立的分享日曆連結都將無法運作。\n任何作用中的已訂閱日曆將會於數分鐘後再次同步。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
@@ -2029,6 +2029,33 @@
       "Payer": [
         "付款人"
       ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "送出"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "Two-factor authentication code": [
+        "兩步驟驗證碼"
+      ],
+      "Username or ProtonMail address": [
+        "使用者名稱或 ProtonMail 電子郵件地址"
+      ],
+      "Phone number": [
+        "電話號碼"
+      ],
+      "Verification code": [
+        "驗證碼"
+      ],
+      "Enter the 6-digit code": [
+        "請輸入 6 位數代碼"
+      ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
       ],
@@ -2085,33 +2112,6 @@
       ],
       "To: ${ toEmailAddress }": [
         ""
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "送出"
-      ],
-      "Password": [
-        "密碼"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "Two-factor authentication code": [
-        "兩步驟驗證碼"
-      ],
-      "Username or ProtonMail address": [
-        "使用者名稱或 ProtonMail 電子郵件地址"
-      ],
-      "Phone number": [
-        "電話號碼"
-      ],
-      "Verification code": [
-        "驗證碼"
-      ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
       ],
       "Name": [
         "名稱"
@@ -2270,6 +2270,9 @@
       "Gift code": [
         "禮品代碼"
       ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
       "Start typing an email address": [
         "在此輸入一個電子郵件地址"
       ],
@@ -2287,9 +2290,6 @@
       ],
       "Name": [
         "名稱"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
       ],
       "Add a calendar name": [
         "新增一個行事曆名稱"
@@ -2316,6 +2316,11 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分鐘"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此金鑰不適用於加密"
       ]
     },
     "Tooltip": {
@@ -2520,6 +2525,12 @@
       "You have successfully unsubscribed": [
         "您已成功取消訂閱"
       ],
+      "Code sent to ${ methodTo }": [
+        "已向 ${ methodTo } 發送驗證碼"
+      ],
+      "Verification successful": [
+        "驗證成功"
+      ],
       "Keyboard shortcuts preferences updated": [
         "鍵盤快捷鍵喜好設定已更新"
       ],
@@ -2543,12 +2554,6 @@
       ],
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
-      ],
-      "Code sent to ${ methodTo }": [
-        "已向 ${ methodTo } 發送驗證碼"
-      ],
-      "Verification successful": [
-        "驗證成功"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "日曆已新增。同步可能需要幾分鐘的時間。"
@@ -2644,11 +2649,6 @@
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "找到 ${ items.length } 建議，使用鍵盤來選取。"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此金鑰不適用於加密"
       ]
     },
     "Select search results": {
@@ -3326,6 +3326,28 @@
         "比特幣"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期帳單"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
+      "Email": [
+        "電子郵件"
+      ],
+      "SMS": [
+        "簡訊"
+      ],
+      "Manual": [
+        "手動"
+      ],
+      "No verification method available": [
+        "沒有可用的驗證方式"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "測試版體驗讓您可以在釋出到公眾前使用 ProtonMail、Proton Calendar 與 Proton Drive 的測試版。這代表了您會是第一個嘗試新產品、取得新的更新以及使用新功能的人。"
@@ -3631,28 +3653,6 @@
         ""
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "逾期帳單"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA 驗證碼"
-      ],
-      "Email": [
-        "電子郵件"
-      ],
-      "SMS": [
-        "簡訊"
-      ],
-      "Manual": [
-        "手動"
-      ],
-      "No verification method available": [
-        "沒有可用的驗證方式"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 的新版本可供使用。${ reloadButton }。"
@@ -3708,6 +3708,37 @@
       ],
       "120 minutes": [
         "120 分鐘"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "未同步"
+      ],
+      "Syncing": [
+        "正在同步"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "日曆正在同步"
+      ],
+      "More than 12 hours passed since last update": [
+        "距離上次更新已經過了12小時以上"
+      ],
+      "Calendar link is wrong": [
+        "日曆連結錯誤"
+      ],
+      "Calendar is too big": [
+        "日曆太大了"
+      ],
+      "Calendar link is not accessible": [
+        "日曆無法存取"
+      ],
+      "Calendar link is temporarily unaccessible": [
+        "日曆連結暫時無法存取"
+      ],
+      "Failed to sync calendar": [
+        "同步日曆失敗"
       ]
     },
     "Alarm notification": {
@@ -4225,6 +4256,11 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密碼至少必須包含 ${ length } 個字元"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "姓名"
@@ -4337,11 +4373,6 @@
       ],
       "Address": [
         "地址"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密碼至少必須包含 ${ length } 個字元"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4519,6 +4550,11 @@
         "顯示原始郵件"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+      ]
+    },
     "Import contact. Contact identifier": {
       "unknown": [
         "未知"
@@ -4563,11 +4599,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
       ]
     },
     "Message": {
@@ -4640,11 +4671,6 @@
       ],
       "${ value } week after at ${ time }": [
         "${ value } 週後，即是 ${ time }"
-      ]
-    },
-    "Calendar status": {
-      "not synced": [
-        "未同步"
       ]
     },
     "Disabled calendar name suffix": {

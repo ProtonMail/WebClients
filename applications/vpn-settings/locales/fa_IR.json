@@ -5,7 +5,216 @@
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "بایت"
+      ],
+      "KB": [
+        "کیلوبایت"
+      ],
+      "MB": [
+        "مگابایت"
+      ],
+      "GB": [
+        "گیگابایت"
+      ]
+    },
+    "Error": {
+      "This field is required": [
+        "این بخش الزامی است"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "حداقل ${ minimumLength } کاراکتر برای این قسمت الزامی است."
+      ],
+      "Email is not valid": [
+        "ایمیل معتبر نیست"
+      ],
+      "Not a valid number": [
+        "شماره معتبر نیست"
+      ],
+      "Passwords do not match": [
+        "رمزهای عبور مطابقت ندارند"
+      ],
+      "Signature verification failed": [
+        "تصدیق امضا ناموفق بود"
+      ],
+      "Request timed out.": [
+        "مهلت درخواست تمام شد."
+      ],
+      "Email address invalid": [
+        "نشانی ایمیل نامعتبر است"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "مرورگری که شما استفاده میکنید اجازه پرداخت کامل معامله را نمیدهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
+      ],
+      "Unknown error": [
+        "خطای ناشناخته"
+      ],
+      "Checkout expired, please try again.": [
+        "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید."
+      ],
+      "Invalid code": [
+        "کد نامعتبر"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "خطا در اتصال به API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "مقدار کمتر از حداقل."
+      ],
+      "Amount above the maximum.": [
+        "مقدار بیش از اندازه می باشد."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "حداقل مبلغ قابل اهدا هست ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "حداقل مقدار اعتباری که می‌توان اضافه کرد ${ _price } است"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "حداقل پرداختی که می‌پذیریم ${ _price2 } است"
+      ],
+      "Process aborted": [
+        "فرآیند قطع شد"
+      ],
+      "Payment process cancelled": [
+        "روند پرداخت لغو شد"
+      ],
+      "Payment process failed": [
+        "روند پرداخت انجام نشد"
+      ],
+      "Payment process consumed": [
+        "عملیات پرداخت انجام شد"
+      ],
+      "Payment process not supported": [
+        "روند پرداخت پشتیبانی نمی شود"
+      ],
+      "Unknown payment token status": [
+        "وضعیت نشانه پرداخت ناشناخته"
+      ],
+      "Tab closed": [
+        "بستن زبانه"
+      ],
+      "Name on card required": [
+        "نام روی کارت الزامی است"
+      ],
+      "Invalid expiration date": [
+        "تاریخ انقضا نامعتبر"
+      ],
+      "Invalid card number": [
+        "شماره کارت نامعتبر"
+      ],
+      "Invalid ${ name } code": [
+        "کد ${ name } نامعتبر"
+      ],
+      "Invalid postal code": [
+        "کد پستی نامعتبر"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "لطفا قبل از تلاش برای تغییر رمز عبور خود کلیدها را ایجاد کنید."
+      ],
+      "Please set a recovery/notification email first": [
+        "لطفا ابتدا یک ایمیل بازیابی/اعلان تنظیم کنید"
+      ],
+      "Please set a recovery phone number first": [
+        "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "گذرواژه نادرست صندوق ایمیل. لطفاً دوباره امتحان کنید"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "مشخصات ورودی نادرست است. لطفا دوباره تلاش کنید"
+      ],
+      "Can't validate email, try again later": [
+        "تأیید ایمیل ممکن نبود، بعداً دوباره امتحان کنید"
+      ],
+      "Can't validate phone, try again later": [
+        "تأیید تلفن ممکن نبود، بعداً دوباره امتحان کنید"
+      ],
+      "Enter 6 digits": [
+        "۶ رقم را وارد کنید"
+      ],
+      "Invalid verification code": [
+        "کد تایید نامعتبر"
+      ],
+      "Payments are currently not available, please try again later": [
+        "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
+      ],
+      "You have no invoices.": [
+        "هیچ صورت‌حسابی ندارید."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "حساب یا سازمان شما در حال حاضر دارای یک صورت‌حساب به تعویق افتاده است. لطفاً تمام صورتحساب‌های پرداخت نشده را پرداخت کنید."
+      ],
+      "File has no contents to preview": [
+        "فایل هیچ محتوایی برای پیش‌نمایش ندارد"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "لطفاً ‘${ dangerWord }’ را وارد کنید"
+      ],
+      "Code wrong or not valid anymore": [
+        "کد غلط یا دیگر غیر معتبر است"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
+      ],
+      "Invalid invitation link": [
+        "پیوند دعوت نامعتبر است"
+      ],
+      "Can't check username, try again later": [
+        "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
+        "گذرواژه باید حداقل شامل ${ length } نویسه باشد"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        ""
+      ],
+      "Syncing": [
+        "در حال همگام‌سازی"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        ""
+      ],
+      "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        ""
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        ""
+      ]
+    },
     "Info": {
+      "Session timed out.": [
+        "مهلت نشست پایان یافت."
+      ],
+      "Internet connection lost.": [
+        "اتصال اینترنت قطع شد."
+      ],
+      "Servers are unreachable.": [
+        "سرورها قابل دسترس نیستند."
+      ],
       "No results found": [
         "هیچ نتیجه‌ای یافت نشد"
       ],
@@ -550,33 +759,6 @@
       "Recovery phrase has been disabled": [
         ""
       ],
-      "You have no saved payment methods.": [
-        "شما روش پرداخت ذخیره شده‌ای ندارید."
-      ],
-      "Expired": [
-        "منقضی شده"
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
-      ],
-      "Unsupported file": [
-        "فایل پشتیبانی نشده"
-      ],
-      "No preview available": [
-        "پیش‌نمایشی در دسترس نیست"
-      ],
-      "Preview": [
-        "پیش‌نمایش"
-      ],
-      "Loading preview": [
-        "در حال بارگذاری پیش‌نمایش"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "این مرورگر از پیش‌نمایش پرونده‌های PDF را پشتیبانی نمی‌کند. لطفاً فایل را بارگیری کنید."
-      ],
-      "of": [
-        "از"
-      ],
       "here": [
         "اینجا"
       ],
@@ -616,6 +798,33 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر شما در ساختن حسابتان مشکل دارید، لطفاً درخواست یک دعوتنامه داده و ما در طی یک روز کاری به شما پاسخ خواهیم داد."
       ],
+      "You have no saved payment methods.": [
+        "شما روش پرداخت ذخیره شده‌ای ندارید."
+      ],
+      "Expired": [
+        "منقضی شده"
+      ],
+      "You can customize and download your invoices for accounting purposes.": [
+        "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
+      ],
+      "Unsupported file": [
+        "فایل پشتیبانی نشده"
+      ],
+      "No preview available": [
+        "پیش‌نمایشی در دسترس نیست"
+      ],
+      "Preview": [
+        "پیش‌نمایش"
+      ],
+      "Loading preview": [
+        "در حال بارگذاری پیش‌نمایش"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "این مرورگر از پیش‌نمایش پرونده‌های PDF را پشتیبانی نمی‌کند. لطفاً فایل را بارگیری کنید."
+      ],
+      "of": [
+        "از"
+      ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "آدرس ایمیل بازیابی خود را وارد کنید ، و ما نام کاربری (های) شما را برای شما ارسال خواهیم کرد. (این معمولاً آدرس ایمیلی است که در هنگام ثبت نام ارائه داده اید.)"
       ],
@@ -651,15 +860,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد"
-      ],
-      "Session timed out.": [
-        "مهلت نشست پایان یافت."
-      ],
-      "Internet connection lost.": [
-        "اتصال اینترنت قطع شد."
-      ],
-      "Servers are unreachable.": [
-        "سرورها قابل دسترس نیستند."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "به یک طرح پرداختی ارتقا دهید تا به امکانات برتر دست یافته و فضای حافظه خود را افزایش دهید."
@@ -967,6 +1167,18 @@
       "Your recovery phrase": [
         ""
       ],
+      "Username or ProtonMail address": [
+        "نام کاربری یا نشانی ProtonMail"
+      ],
+      "Phone number": [
+        "شماره تلفن"
+      ],
+      "Verification code": [
+        "کد تأیید"
+      ],
+      "Enter the 6-digit code": [
+        "کد ۶-رقمی را وارد کنید"
+      ],
       "Cash": [
         "نقدی"
       ],
@@ -987,18 +1199,6 @@
       ],
       "Customize invoices": [
         "شخصی‌سازی صورتحساب‌ها"
-      ],
-      "Username or ProtonMail address": [
-        "نام کاربری یا نشانی ProtonMail"
-      ],
-      "Phone number": [
-        "شماره تلفن"
-      ],
-      "Verification code": [
-        "کد تأیید"
-      ],
-      "Enter the 6-digit code": [
-        "کد ۶-رقمی را وارد کنید"
       ],
       "Username": [
         "نام کاربری"
@@ -1308,6 +1508,30 @@
       "Disable recovery phrase": [
         ""
       ],
+      "Log in": [
+        "ورود"
+      ],
+      "View invoice": [
+        "مشاهده صورتحساب"
+      ],
+      "Get verification code": [
+        "دریافت کد تأیید"
+      ],
+      "Try another method": [
+        "روش دیگری را امتحان کنید"
+      ],
+      "Request new code": [
+        "درخواست کد جدید"
+      ],
+      "Did not receive the code?": [
+        "کد را دریافت نکردید؟"
+      ],
+      "Edit email address": [
+        "ویرایش نشانی ایمیل"
+      ],
+      "Edit phone number": [
+        "ویرایش شماره‌تلفن"
+      ],
       "Edit": [
         "ویرایش"
       ],
@@ -1352,30 +1576,6 @@
       ],
       "Previous": [
         "قبلی"
-      ],
-      "Log in": [
-        "ورود"
-      ],
-      "View invoice": [
-        "مشاهده صورتحساب"
-      ],
-      "Get verification code": [
-        "دریافت کد تأیید"
-      ],
-      "Try another method": [
-        "روش دیگری را امتحان کنید"
-      ],
-      "Request new code": [
-        "درخواست کد جدید"
-      ],
-      "Did not receive the code?": [
-        "کد را دریافت نکردید؟"
-      ],
-      "Edit email address": [
-        "ویرایش نشانی ایمیل"
-      ],
-      "Edit phone number": [
-        "ویرایش شماره‌تلفن"
       ],
       "Email me my username(s)": [
         "نام کاربری(های) من را برای من ایمیل کنید"
@@ -1527,155 +1727,6 @@
       ],
       "Close": [
         "بستن"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "نشانی ایمیل نامعتبر است"
-      ],
-      "This field is required": [
-        "این بخش الزامی است"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "مرورگری که شما استفاده میکنید اجازه پرداخت کامل معامله را نمیدهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
-      ],
-      "Unknown error": [
-        "خطای ناشناخته"
-      ],
-      "Checkout expired, please try again.": [
-        "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید."
-      ],
-      "Invalid code": [
-        "کد نامعتبر"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "خطا در اتصال به API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "مقدار کمتر از حداقل."
-      ],
-      "Amount above the maximum.": [
-        "مقدار بیش از اندازه می باشد."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "حداقل مبلغ قابل اهدا هست ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "حداقل مقدار اعتباری که می‌توان اضافه کرد ${ _price } است"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "حداقل پرداختی که می‌پذیریم ${ _price2 } است"
-      ],
-      "Process aborted": [
-        "فرآیند قطع شد"
-      ],
-      "Payment process cancelled": [
-        "روند پرداخت لغو شد"
-      ],
-      "Payment process failed": [
-        "روند پرداخت انجام نشد"
-      ],
-      "Payment process consumed": [
-        "عملیات پرداخت انجام شد"
-      ],
-      "Payment process not supported": [
-        "روند پرداخت پشتیبانی نمی شود"
-      ],
-      "Unknown payment token status": [
-        "وضعیت نشانه پرداخت ناشناخته"
-      ],
-      "Tab closed": [
-        "بستن زبانه"
-      ],
-      "Name on card required": [
-        "نام روی کارت الزامی است"
-      ],
-      "Invalid expiration date": [
-        "تاریخ انقضا نامعتبر"
-      ],
-      "Invalid card number": [
-        "شماره کارت نامعتبر"
-      ],
-      "Invalid ${ name } code": [
-        "کد ${ name } نامعتبر"
-      ],
-      "Invalid postal code": [
-        "کد پستی نامعتبر"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "لطفا قبل از تلاش برای تغییر رمز عبور خود کلیدها را ایجاد کنید."
-      ],
-      "Please set a recovery/notification email first": [
-        "لطفا ابتدا یک ایمیل بازیابی/اعلان تنظیم کنید"
-      ],
-      "Please set a recovery phone number first": [
-        "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
-      ],
-      "Payments are currently not available, please try again later": [
-        "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
-      ],
-      "You have no invoices.": [
-        "هیچ صورت‌حسابی ندارید."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "حساب یا سازمان شما در حال حاضر دارای یک صورت‌حساب به تعویق افتاده است. لطفاً تمام صورتحساب‌های پرداخت نشده را پرداخت کنید."
-      ],
-      "File has no contents to preview": [
-        "فایل هیچ محتوایی برای پیش‌نمایش ندارد"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "گذرواژه نادرست صندوق ایمیل. لطفاً دوباره امتحان کنید"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "مشخصات ورودی نادرست است. لطفا دوباره تلاش کنید"
-      ],
-      "Can't validate email, try again later": [
-        "تأیید ایمیل ممکن نبود، بعداً دوباره امتحان کنید"
-      ],
-      "Can't validate phone, try again later": [
-        "تأیید تلفن ممکن نبود، بعداً دوباره امتحان کنید"
-      ],
-      "Enter 6 digits": [
-        "۶ رقم را وارد کنید"
-      ],
-      "Invalid verification code": [
-        "کد تایید نامعتبر"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "لطفاً ‘${ dangerWord }’ را وارد کنید"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "حداقل ${ minimumLength } کاراکتر برای این قسمت الزامی است."
-      ],
-      "Email is not valid": [
-        "ایمیل معتبر نیست"
-      ],
-      "Not a valid number": [
-        "شماره معتبر نیست"
-      ],
-      "Passwords do not match": [
-        "رمزهای عبور مطابقت ندارند"
-      ],
-      "Signature verification failed": [
-        "تصدیق امضا ناموفق بود"
-      ],
-      "Request timed out.": [
-        "مهلت درخواست تمام شد."
-      ],
-      "Code wrong or not valid anymore": [
-        "کد غلط یا دیگر غیر معتبر است"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
-      ],
-      "Invalid invitation link": [
-        "پیوند دعوت نامعتبر است"
-      ],
-      "Can't check username, try again later": [
-        "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
       ]
     },
     "Title": {
@@ -1862,6 +1913,24 @@
       "Confirm phone number": [
         "تأیید شماره تلفن"
       ],
+      "Account suspended": [
+        "حساب تعلیق شده است"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "نام کاربری یا نشانی ایمیل ProtonMail خود را وارد کنید"
+      ],
+      "Enter your password": [
+        "رمزعبورت را وارد کن"
+      ],
+      "Invalid verification code": [
+        "کد تایید نامعتبر"
+      ],
+      "Request new code": [
+        "درخواست کد جدید"
+      ],
+      "Human verification": [
+        "تأیید ربات نبودن"
+      ],
       "Pay invoice": [
         "پرداخت صورتحساب"
       ],
@@ -1882,24 +1951,6 @@
       ],
       "Action": [
         "اقدام"
-      ],
-      "Account suspended": [
-        "حساب تعلیق شده است"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "نام کاربری یا نشانی ایمیل ProtonMail خود را وارد کنید"
-      ],
-      "Enter your password": [
-        "رمزعبورت را وارد کن"
-      ],
-      "Invalid verification code": [
-        "کد تایید نامعتبر"
-      ],
-      "Request new code": [
-        "درخواست کد جدید"
-      ],
-      "Human verification": [
-        "تأیید ربات نبودن"
       ],
       "Confirm reset password": [
         "تایید بازنشانی رمز عبور"
@@ -2205,6 +2256,12 @@
       "Phone number updated": [
         "شماره تماس به روز شد"
       ],
+      "Code sent to ${ methodTo }": [
+        "کد ارسال شد به ${ methodTo }"
+      ],
+      "Verification successful": [
+        "تایید با موفقیت بود"
+      ],
       "Payment method deleted": [
         "نحوه پرداخت حذف شد"
       ],
@@ -2213,12 +2270,6 @@
       ],
       "Invoice customized": [
         "صورتحساب سفارشی شد"
-      ],
-      "Code sent to ${ methodTo }": [
-        "کد ارسال شد به ${ methodTo }"
-      ],
-      "Verification successful": [
-        "تایید با موفقیت بود"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
         "اگر یک ایمیل اعلان معتبر وارد کردید تا دقایقی دیگر ایمیلی با نام کاربری خود برای شما ارسال می کنیم."
@@ -3353,6 +3404,33 @@
         ""
       ]
     },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "مستقر در سوئیس، قابل دسترس به صورت جهانی."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "صورتحساب‌ عقب افتاده"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "ایمیل"
+      ],
+      "SMS": [
+        "پیامک"
+      ],
+      "Manual": [
+        "دستی"
+      ],
+      "No verification method available": [
+        "هیچ شیوه تاییدی در دسترس نیست"
+      ]
+    },
     "Confirmation title": {
       "Delete payment method": [
         "حذف نحوه پرداخت"
@@ -3467,56 +3545,9 @@
         "صورتحساب ProtonMail"
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "مستقر در سوئیس، قابل دسترس به صورت جهانی."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "صورتحساب‌ عقب افتاده"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "ایمیل"
-      ],
-      "SMS": [
-        "پیامک"
-      ],
-      "Manual": [
-        "دستی"
-      ],
-      "No verification method available": [
-        "هیچ شیوه تاییدی در دسترس نیست"
-      ]
-    },
     "Password": {
       "Confirm new password": [
         "تأیید رمز عبور جديد"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "بایت"
-      ],
-      "KB": [
-        "کیلوبایت"
-      ],
-      "MB": [
-        "مگابایت"
-      ],
-      "GB": [
-        "گیگابایت"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
-        "گذرواژه باید حداقل شامل ${ length } نویسه باشد"
       ]
     },
     "Plan details": {
