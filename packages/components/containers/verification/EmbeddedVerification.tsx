@@ -68,7 +68,6 @@ const EmbeddedVerification = ({
     const params = {
         methods,
         token,
-        origin: window.location.origin,
         defaultCountry: defaultCountry || undefined,
         defaultEmail: defaultEmail || undefined,
         defaultPhone: defaultPhone || undefined,
