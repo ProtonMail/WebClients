@@ -1,6 +1,7 @@
 import { Ref, RefObject, MutableRefObject } from 'react';
 import { content } from '@proton/shared/lib/sanitize';
 import { c } from 'ttag';
+import { contentWithoutImage } from '@proton/shared/lib/sanitize/purify';
 
 export enum FONT_FACE {
     Georgia = 'georgia',
@@ -125,15 +126,15 @@ export const setSquireRef = (ref: Ref<SquireType>, squire: any) => {
     (ref as any as MutableRefObject<any>).current = squire;
 };
 
-export const SQUIRE_CONFIG = {
+export const SQUIRE_CONFIG = (supportImage: boolean) => ({
     sanitizeToDOMFragment(html: string, isPaste: boolean, self: any) {
         // eslint-disable-next-line no-underscore-dangle
         const doc = self._doc as Document;
         // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
-        const frag = html ? content(html) : null;
+        const frag = html ? (!supportImage ? contentWithoutImage(html) : content(html)) : null;
         return frag ? doc.importNode(frag, true) : doc.createDocumentFragment();
     },
-};
+});
 
 /**
  * Custom CSS inside the IFRAME
@@ -291,12 +292,12 @@ export const insertCustomStyle = (document: Document) => {
     (document.childNodes[0] as Element).className = IFRAME_CLASS;
 };
 
-const wrapInsertHTML = (squire: any) => {
+const wrapInsertHTML = (squire: any, supportImage: boolean) => {
     const ghost = squire.insertHTML;
     squire.insertHTML = async (html: string, isPaste: boolean) => {
         if (isPaste) {
             try {
-                const fragment = SQUIRE_CONFIG.sanitizeToDOMFragment(html, isPaste, squire);
+                const fragment = SQUIRE_CONFIG(supportImage).sanitizeToDOMFragment(html, isPaste, squire);
                 const { firstElementChild: first, lastElementChild: last } = fragment as any as ParentNode;
 
                 // Check if it is just one image being pasted.
@@ -312,7 +313,11 @@ const wrapInsertHTML = (squire: any) => {
     };
 };
 
-export const initSquire = async (document: Document, onEllipseClick: () => void): Promise<any> => {
+export const initSquire = async (
+    document: Document,
+    supportImage: boolean,
+    onEllipseClick: () => void
+): Promise<any> => {
     insertCustomStyle(document);
     const { default: Squire } = await import('squire-rte');
 
@@ -328,8 +333,8 @@ export const initSquire = async (document: Document, onEllipseClick: () => void)
     const ellipsisContainer = document.querySelector('#ellipsis-container');
     const ellipsisButton = document.querySelector('#ellipsis');
 
-    const squire = new Squire(squireContainer, SQUIRE_CONFIG);
-    wrapInsertHTML(squire);
+    const squire = new Squire(squireContainer, SQUIRE_CONFIG(supportImage));
+    wrapInsertHTML(squire, supportImage);
 
     ellipsisButton?.addEventListener('click', onEllipseClick);
     const fallbackElements = [document.documentElement, document.body, ellipsisContainer];

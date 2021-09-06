@@ -5,6 +5,7 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import { FormModal, ConfirmModal, Alert, Loader, Button } from '../../../components';
 import {
     useLoading,
@@ -217,14 +218,29 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     };
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        let newModel = model;
+
+        // Remove images from the composer in autoreply
+        if (model.actions.autoReply) {
+            const { message, containsImages } = removeImagesFromContent(model.actions.autoReply);
+            if (containsImages) {
+                createNotification({
+                    type: 'warning',
+                    text: c('Info').t`Images have been removed because they are not allowed in auto-reply.`,
+                });
+            }
+            newModel = { ...model, actions: { ...actions, autoReply: message } };
+            setModel(newModel);
+        }
+
         event.preventDefault();
 
         if (isEdit) {
-            await editFilter(convertModel(model));
+            await editFilter(convertModel(newModel));
             return;
         }
 
-        await createFilter(convertModel(model));
+        await createFilter(convertModel(newModel));
     };
 
     const handleClose = () => {
@@ -287,7 +303,9 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             title={title}
             onClose={handleClose}
             loading={loading || loadingLabels || loadingFolders}
-            onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
+            onSubmit={(event: FormEvent<HTMLFormElement>) => {
+                withLoading(handleSubmit(event));
+            }}
             footer={
                 <FooterFilterModal
                     model={model}
