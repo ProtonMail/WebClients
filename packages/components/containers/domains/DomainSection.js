@@ -15,7 +15,7 @@ const DomainSection = ({ domain, onChange }) => {
 
     return (
         <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/custom-domains/">
+            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/custom-domains/">
                 {c('Label for adding a new custom domain').t`Add a domain that you own to your ProtonMail account.`}
             </Alert>
             <Row>
@@ -36,7 +36,7 @@ const DomainSection = ({ domain, onChange }) => {
                 </Field>
             </Row>
             {!domain.ID && domainName.toLowerCase().startsWith('www.') ? (
-                <Alert type="warning">{c('Domain modal')
+                <Alert className="mb1" type="warning">{c('Domain modal')
                     .t`'www' subdomains are typically not used for email. Are you sure you want to use this domain value?`}</Alert>
             ) : null}
         </>

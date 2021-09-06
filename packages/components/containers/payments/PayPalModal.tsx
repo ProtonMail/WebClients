@@ -75,11 +75,11 @@ const PayPalModal = (props: any) => {
                             }}
                         >{c('Action').t`Cancel`}</Button>
                     </p>
-                    <Alert>{c('Info').t`Verification can take a few minutes.`}</Alert>
+                    <Alert className="mb1">{c('Info').t`Verification can take a few minutes.`}</Alert>
                 </>
             ) : (
                 <>
-                    <Alert>
+                    <Alert className="mb1">
                         {c('Info')
                             .t`This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
                     </Alert>
@@ -94,7 +94,7 @@ const PayPalModal = (props: any) => {
                             }}
                         >{c('Action').t`Add PayPal payment method`}</PrimaryButton>
                     </div>
-                    <Alert>{c('Info')
+                    <Alert className="mb1">{c('Info')
                         .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
                 </>
             )}

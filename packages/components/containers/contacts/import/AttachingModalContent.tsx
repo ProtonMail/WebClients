@@ -30,9 +30,11 @@ const AttachingModalContent = ({
     onDragLeave,
 }: Props) => {
     const alert = model.failure ? (
-        <Alert type="error">{model.failure?.message}</Alert>
+        <Alert className="mb1" type="error">
+            {model.failure?.message}
+        </Alert>
     ) : (
-        <Alert learnMore="https://protonmail.com/support/knowledge-base/adding-contacts/">
+        <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/adding-contacts/">
             {c('Description').ngettext(
                 msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
                 `The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files.`,

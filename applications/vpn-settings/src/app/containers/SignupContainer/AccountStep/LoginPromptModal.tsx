@@ -16,7 +16,7 @@ const LoginPromptModal = ({ email, ...rest }: Props) => {
             onConfirm={handleConfirm}
             {...rest}
         >
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Info')
                     .t`Your existing Proton account can be used to access all Proton services. Please login with ${email}`}
             </Alert>

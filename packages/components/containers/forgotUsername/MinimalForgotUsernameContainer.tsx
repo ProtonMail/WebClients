@@ -28,7 +28,7 @@ const MinimalForgotUsernameContainer = () => {
                 withLoading(handleSubmit());
             }}
         >
-            <Alert>{c('Info')
+            <Alert className="mb1">{c('Info')
                 .t`Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)`}</Alert>
             <div className="mb1">
                 <EmailInput

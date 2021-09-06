@@ -72,7 +72,7 @@ const ContactResignExecutionModal = ({ onClose = noop, ...rest }: Props) => {
             close={execution ? <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button> : null}
             {...rest}
         >
-            <Alert type="info">{c('Info')
+            <Alert className="mb1" type="info">{c('Info')
                 .t`Please wait while we look for contacts that can be re-signed with the primary encryption key.`}</Alert>
             <DynamicProgress
                 id="clear-data-execution-progress"

@@ -25,7 +25,7 @@ const ChallengeError = () => {
     );
 
     return (
-        <Alert type="error">
+        <Alert className="mb1" type="error">
             {c('Error')
                 .jt`Something went wrong, please ${refresh} in order to proceed. If you still see this error message please contact our ${supportTeam}.`}
         </Alert>

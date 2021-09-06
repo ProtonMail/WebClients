@@ -152,8 +152,9 @@ const ImportContactsModal = ({ onClose = noop, oauthProps: initialOAuthProps, ad
                 cancel={c('Action').t`Continue import`}
                 confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
             >
-                <Alert>{c('Info').t`Your import will not be processed.`}</Alert>
-                <Alert type="error">{c('Warning').t`Are you sure you want to discard your import?`}</Alert>
+                <Alert className="mb1">{c('Info').t`Your import will not be processed.`}</Alert>
+                <Alert className="mb1" type="error">{c('Warning')
+                    .t`Are you sure you want to discard your import?`}</Alert>
             </ConfirmModal>
         );
     };

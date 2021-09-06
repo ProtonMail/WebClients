@@ -76,7 +76,9 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
             className="modal--smaller"
             {...rest}
         >
-            <Alert type="error">{text}</Alert>
+            <Alert className="mb1" type="error">
+                {text}
+            </Alert>
         </FormModal>
     );
 };

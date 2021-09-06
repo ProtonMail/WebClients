@@ -69,7 +69,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            <Alert>
+            <Alert className="mb1">
                 {c('Info')
                     .t`Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.`}
                 <br />

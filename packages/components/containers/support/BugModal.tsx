@@ -186,13 +186,13 @@ const BugModal = ({ onClose = noop, username: Username = '', email, mode, ...res
             {...rest}
         >
             {mode === 'chat-unavailable' ? (
-                <Alert type="warning">{c('Warning')
+                <Alert className="mb1" type="warning">{c('Warning')
                     .t`Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.`}</Alert>
             ) : (
                 <>
-                    <Alert>{c('Info')
+                    <Alert className="mb1">{c('Info')
                         .jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
-                    <Alert type="warning">{c('Warning')
+                    <Alert className="mb1" type="warning">{c('Warning')
                         .t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
                 </>
             )}

@@ -133,7 +133,7 @@ const ShareTable = ({
                 </TableBody>
             </Table>
             {maxLinksPerCalendarReached && (
-                <Alert className="mb1-5" type="warning">{c('Info')
+                <Alert className="mb1" type="warning">{c('Info')
                     .t`You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`}</Alert>
             )}
         </div>

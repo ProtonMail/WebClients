@@ -84,7 +84,7 @@ function NewLabelForm({ label: labelOrFolder, onChangeColor, onChangeName, onCha
     return (
         <div className="center flex-item-fluid">
             {!labelOrFolder.ID && labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
-                <Alert>{c('Info')
+                <Alert className="mb1">{c('Info')
                     .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}</Alert>
             ) : null}
             <Row>

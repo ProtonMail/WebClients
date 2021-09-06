@@ -36,7 +36,9 @@ const useConfirm = () => {
                 onConfirm={onConfirm}
                 onClose={onCancel}
             >
-                <Alert type="error">{content}</Alert>
+                <Alert className="mb1" type="error">
+                    {content}
+                </Alert>
             </ConfirmModal>
         );
     };

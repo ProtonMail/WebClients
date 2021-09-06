@@ -11,7 +11,10 @@ const PaymentInfo = ({ method }: Props) => {
         return null;
     }
 
-    return <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>;
+    return (
+        <Alert className="mb1">{c('Info')
+            .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
+    );
 };
 
 export default PaymentInfo;

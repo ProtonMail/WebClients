@@ -21,7 +21,7 @@ const SendWithWarningsModal = ({ mapWarnings, onSubmit, onClose, ...rest }: Prop
             onClose={onClose}
             {...rest}
         >
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Send email with warnings').ngettext(
                     msgid`We have detected some warnings. The following email address may not receive emails:`,
                     `We have detected some warnings. The following email addresses may not receive emails:`,
@@ -38,7 +38,7 @@ const SendWithWarningsModal = ({ mapWarnings, onSubmit, onClose, ...rest }: Prop
                     </li>
                 ))}
             </ul>
-            <Alert>{c('Send email with warnings').t`Do you want to send the email anyway?`}</Alert>
+            <Alert className="mb1">{c('Send email with warnings').t`Do you want to send the email anyway?`}</Alert>
         </FormModal>
     );
 };

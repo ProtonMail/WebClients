@@ -60,7 +60,8 @@ const SessionsSection = () => {
     const handleOpenModal = () => {
         createModal(
             <ConfirmModal onConfirm={() => withLoadingRevokeAll(handleRevokeAllSessions())}>
-                <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
+                <Alert className="mb1">{c('Info')
+                    .t`Do you want to revoke all other sessions than the current one?`}</Alert>
             </ConfirmModal>
         );
     };

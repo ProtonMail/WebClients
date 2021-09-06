@@ -52,7 +52,7 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
             close={c('Action').t`Close`}
             {...rest}
         >
-            <Alert type="info">
+            <Alert className="mb1" type="info">
                 {c('Info')
                     .t`To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.`}
             </Alert>
@@ -68,7 +68,7 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
                     />
                 </div>
             )}
-            <Alert type="info">
+            <Alert className="mb1" type="info">
                 {c('Info')
                     .t`Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.`}
                 <LinkButton className="ml0-5" onClick={handleClear} disabled={!errorKey}>

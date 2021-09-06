@@ -14,7 +14,7 @@ const Cash = () => {
 
     return (
         <div className="p1 bordered bg-weak mb1">
-            <Alert>{c('Info for cash payment method')
+            <Alert className="mb1">{c('Info for cash payment method')
                 .jt`Please contact us at ${email} for instructions on how to pay us with cash.`}</Alert>
             <div className="text-center">
                 <img src={envelopSvg} alt="" />

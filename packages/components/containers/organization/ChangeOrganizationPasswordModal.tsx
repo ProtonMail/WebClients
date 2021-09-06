@@ -57,7 +57,7 @@ const ChangeOrganizationPasswordModal = ({ onClose, hasOtherAdmins, organization
             {...rest}
         >
             {hasOtherAdmins && (
-                <Alert>{c('Info')
+                <Alert className="mb1">{c('Info')
                     .t`Other administrators exist in your organization, you are responsible for communicating the new password to them.`}</Alert>
             )}
             <Row>
@@ -88,7 +88,7 @@ const ChangeOrganizationPasswordModal = ({ onClose, hasOtherAdmins, organization
                     />
                 </Field>
             </Row>
-            <Alert type="warning">
+            <Alert className="mb1" type="warning">
                 {c('Info')
                     .t`Do NOT forget this password. If you forget it, you will not be able to manage your organization.`}
                 <br />

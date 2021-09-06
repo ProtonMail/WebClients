@@ -35,7 +35,8 @@ const DeleteMemberModal = ({ member, onConfirm, onClose, ...rest }: Props) => {
             <Card rounded className="text-break user-select mb1">
                 {member.Name}
             </Card>
-            <Alert type="error">{c('Info').t`To confirm, please enter the name of the user you wish to delete.`}</Alert>
+            <Alert className="mb1" type="error">{c('Info')
+                .t`To confirm, please enter the name of the user you wish to delete.`}</Alert>
             <Input
                 autoComplete="false"
                 value={username}

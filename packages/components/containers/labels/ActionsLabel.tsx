@@ -44,8 +44,12 @@ function ActionsLabel({ label }: Props) {
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     onClose={reject}
                 >
-                    <Alert type="info">{I18N[Type].content}</Alert>
-                    <Alert type="error">{I18N[Type].confirm}</Alert>
+                    <Alert className="mb1" type="info">
+                        {I18N[Type].content}
+                    </Alert>
+                    <Alert className="mb1" type="error">
+                        {I18N[Type].confirm}
+                    </Alert>
                 </ConfirmModal>
             );
         });

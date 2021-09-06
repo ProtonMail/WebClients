@@ -34,7 +34,7 @@ const PastImportRowActions = ({ ID, email, showDeleteSource }: Props) => {
                     cancel={c('Action').t`Keep`}
                     confirm={<Button color="danger" type="submit">{c('Action').t`Remove`}</Button>}
                 >
-                    <Alert type="error">
+                    <Alert className="mb1" type="error">
                         {c('Warning').t`You will not see this import record in the list anymore.`}
                     </Alert>
                 </ConfirmModal>

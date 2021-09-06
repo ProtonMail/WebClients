@@ -28,7 +28,7 @@ const WarningModalContent = ({ model }: Props) => {
 
     return (
         <>
-            <Alert type="warning" learnMore={learnMore}>
+            <Alert className="mb1" type="warning" learnMore={learnMore}>
                 <div>{c('Import calendar warning').jt`${CALENDAR_APP_NAME} does not support ${forNow}:`}</div>
                 <ul>
                     <li>{c('Import calendar warning').t`Attendees`}</li>

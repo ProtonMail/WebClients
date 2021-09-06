@@ -141,7 +141,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
     return (
         <>
-            <Alert>
+            <Alert className="mb1">
                 {c('Export calendar').t`Please don't close the tab before the exporting process is finished.`}
             </Alert>
             <DynamicProgress

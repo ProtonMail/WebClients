@@ -205,7 +205,7 @@ const ImportInstructionsStep = ({
                     </Button>
                 </div>
 
-                <Alert>
+                <Alert className="mb1">
                     {c('Info')
                         .t`If you are using a different email provider or your account is already prepared, you can skip to import.`}
                 </Alert>

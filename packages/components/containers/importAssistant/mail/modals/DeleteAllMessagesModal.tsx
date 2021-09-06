@@ -30,7 +30,9 @@ const DeleteAllMessagesModal = ({ email, ...rest }: Props) => {
                 </ErrorButton>
             }
         >
-            <Alert type="error">{instructions}</Alert>
+            <Alert className="mb1" type="error">
+                {instructions}
+            </Alert>
 
             <div>{c('Instructions').t`To confirm this action enter the following text in the box below.`}</div>
 

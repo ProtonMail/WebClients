@@ -120,7 +120,7 @@ const ChangeOrganizationKeysModal = ({
                 submit: c('Action').t`Next`,
                 section: (
                     <>
-                        <Alert>{c('Info')
+                        <Alert className="mb1">{c('Info')
                             .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}</Alert>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </>
@@ -138,7 +138,7 @@ const ChangeOrganizationKeysModal = ({
                 section: (
                     <>
                         {hasOtherAdmins && (
-                            <Alert>{c('Info')
+                            <Alert className="mb1">{c('Info')
                                 .t`Other administrators exist in your organization, you are responsible for communicating the new password to them.`}</Alert>
                         )}
                         <Row>
@@ -173,7 +173,7 @@ const ChangeOrganizationKeysModal = ({
                                 />
                             </Field>
                         </Row>
-                        <Alert type="warning">
+                        <Alert className="mb1" type="warning">
                             {c('Info')
                                 .t`Do NOT forget this password. If you forget it, you will not be able to manage your organization.`}
                             <br />

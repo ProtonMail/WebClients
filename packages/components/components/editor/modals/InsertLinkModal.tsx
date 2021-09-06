@@ -85,7 +85,8 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, ...rest }: Pr
             innerRef={modalContentRef}
             {...rest}
         >
-            <Alert>{c('Info').t`Please select the type of link you want to insert and fill in all the fields.`}</Alert>
+            <Alert className="mb1">{c('Info')
+                .t`Please select the type of link you want to insert and fill in all the fields.`}</Alert>
             <Row>
                 <Label htmlFor="link-modal-type" className="flex flex-column">
                     {c('Info').t`Link type`}

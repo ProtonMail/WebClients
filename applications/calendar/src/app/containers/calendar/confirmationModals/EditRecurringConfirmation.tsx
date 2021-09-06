@@ -181,7 +181,9 @@ const EditRecurringConfirmModal = ({
                 close={c('Action').t`Cancel`}
                 {...rest}
             >
-                <Alert type="warning">{alertText}</Alert>
+                <Alert className="mb1" type="warning">
+                    {alertText}
+                </Alert>
             </FormModal>
         );
     }
@@ -194,7 +196,9 @@ const EditRecurringConfirmModal = ({
             {...rest}
             onConfirm={() => onConfirm({ type, inviteActions })}
         >
-            <Alert type="info">{alertText}</Alert>
+            <Alert className="mb1" type="info">
+                {alertText}
+            </Alert>
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}
@@ -203,8 +207,16 @@ const EditRecurringConfirmModal = ({
                     data-test-id="update-recurring-popover:update-option-radio"
                 />
             ) : null}
-            {recurringWarningText ? <Alert type="warning">{recurringWarningText}</Alert> : null}
-            {rruleWarningText ? <Alert type="warning">{rruleWarningText}</Alert> : null}
+            {recurringWarningText ? (
+                <Alert className="mb1" type="warning">
+                    {recurringWarningText}
+                </Alert>
+            ) : null}
+            {rruleWarningText ? (
+                <Alert className="mb1" type="warning">
+                    {rruleWarningText}
+                </Alert>
+            ) : null}
         </ConfirmModal>
     );
 };

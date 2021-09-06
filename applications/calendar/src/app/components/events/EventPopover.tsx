@@ -259,7 +259,9 @@ const EventPopover = ({
                 <PopoverHeader onClose={onClose} className="flex-item-noshrink">
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
-                <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
+                <Alert className="mb1" type="error">
+                    {getEventErrorMessage(eventReadError)}
+                </Alert>
                 {!isSubscribedCalendar && <PopoverFooter>{deleteButton}</PopoverFooter>}
             </PopoverContainer>
         );

@@ -113,7 +113,9 @@ const ExportSummaryModalContent = ({ model }: Props) => {
 
     return (
         <>
-            <Alert type={isSuccess ? 'info' : isPartialSuccess ? 'warning' : 'error'}>{getAlertMessage()}</Alert>
+            <Alert className="mb1" type={isSuccess ? 'info' : isPartialSuccess ? 'warning' : 'error'}>
+                {getAlertMessage()}
+            </Alert>
             <DynamicProgress
                 id="progress-export-calendar"
                 value={totalFetched + totalProcessed + totalErrors}

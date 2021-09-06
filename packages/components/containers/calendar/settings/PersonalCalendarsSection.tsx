@@ -75,9 +75,11 @@ const PersonalCalendarsSection = ({
                     onClose={reject}
                     onConfirm={resolve}
                 >
-                    <Alert type="error">{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
+                    <Alert className="mb1" type="error">{c('Info')
+                        .t`Are you sure you want to delete this calendar?`}</Alert>
                     {isDeleteDefaultCalendar && firstRemainingCalendar && (
-                        <Alert type="warning">{c('Info').jt`${calendarName} will be set as default calendar.`}</Alert>
+                        <Alert className="mb1" type="warning">{c('Info')
+                            .jt`${calendarName} will be set as default calendar.`}</Alert>
                     )}
                 </ConfirmModal>
             );
