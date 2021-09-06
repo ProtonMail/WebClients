@@ -90,18 +90,16 @@ const ContactRow = ({
                         )}
                     </div>
                 </div>
-                <div className="flex flex-column flex-nowrap pt0-5">
-                    {hasPaidMail && contactGroups && <ContactGroupLabels contactGroups={contactGroups} />}
-                    {emails[0] && (
-                        <Copy
-                            value={emails[0]}
-                            className="flex-align-self-end button-show-on-hover-element mt0-25"
-                            onCopy={handleCopyEmail}
-                            tooltipText={c('Action').t`Copy email to clipboard`}
-                            size="small"
-                        />
-                    )}
-                </div>
+                {hasPaidMail && contactGroups && <ContactGroupLabels contactGroups={contactGroups} className="mr0-5" />}
+                {emails[0] && (
+                    <Copy
+                        value={emails[0]}
+                        className="button-show-on-hover-element"
+                        onCopy={handleCopyEmail}
+                        tooltipText={c('Action').t`Copy email to clipboard`}
+                        size="small"
+                    />
+                )}
             </div>
         </div>
     );
