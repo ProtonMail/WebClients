@@ -58,6 +58,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                                 <SimpleSquireEditor
                                     ref={editorRef}
                                     onReady={handleReady}
+                                    supportImages={false}
                                     onChange={(value: string) => {
                                         setEditorValue(value);
                                         handleUpdateActions({ autoReply: value });
