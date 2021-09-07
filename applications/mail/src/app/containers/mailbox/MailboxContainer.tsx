@@ -81,7 +81,11 @@ const MailboxContainer = ({
             searchParams.forEach((param) => {
                 const pair = param.split('=');
                 if (pair[0] === MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM) {
-                    onMailTo(decodeURIComponent(pair[1]));
+                    try {
+                        onMailTo(decodeURIComponent(pair[1]));
+                    } catch (e) {
+                        console.error(e);
+                    }
                 }
             });
         }
