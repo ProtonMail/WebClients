@@ -571,9 +571,19 @@ export const combine: Combine = {
         return preVcards.reduce((acc, { value, checked }) => (value && checked ? `${acc} ${value}` : acc), '').trim();
     },
     adr(preVcards: PreVcardsProperty) {
+        // To avoid unintended CRLF sequences inside the values of vCard address fields (those are interpreted as field separators unless followed by a space), we sanitize string values
+        const sanitizeStringValue = (value: string) => value.replaceAll('\n', ' ');
+
         const propertyADR = new Array(7).fill('');
         preVcards.forEach(({ value, checked, combineIndex }) => {
             if (checked) {
+                // Remove unintended CRLF sequences
+                if (typeof value === 'string') {
+                    value = sanitizeStringValue(value);
+                } else {
+                    value = value.map((val) => sanitizeStringValue(val));
+                }
+
                 propertyADR[combineIndex || 0] = value;
             }
         });
