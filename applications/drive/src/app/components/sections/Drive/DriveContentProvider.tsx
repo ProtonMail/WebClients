@@ -1,14 +1,18 @@
 import { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 import * as React from 'react';
+
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import useSelection from '../../../hooks/util/useSelection';
-import useDrive from '../../../hooks/drive/useDrive';
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { DriveFolder, useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { mapLinksToChildren } from '../helpers';
+
+import { STATUS_CODE } from '../../../constants';
 import { SortKeys } from '../../../interfaces/link';
+import { DriveFolder, useActiveShare } from '../../../hooks/drive/useActiveShare';
+import useDrive from '../../../hooks/drive/useDrive';
 import useDriveSorting from '../../../hooks/drive/useDriveSorting';
+import useNavigate from '../../../hooks/drive/useNavigate';
+import useSelection from '../../../hooks/util/useSelection';
+import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { FileBrowserItem } from '../../FileBrowser/interfaces';
+import { mapLinksToChildren } from '../helpers';
 
 export interface DriveSortParams {
     sortField: SortKeys;
@@ -40,6 +44,7 @@ const DriveContentProviderInner = ({
     const { fetchNextFolderContents, fetchAllFolderPagesWithLoader } = useDrive();
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
+    const { navigateToRoot } = useNavigate();
 
     const { sortParams, sortedList, setSorting } = useDriveSorting(
         (sortParams) => cache.get.childLinkMetas(shareId, linkId, sortParams) || []
@@ -81,7 +86,7 @@ const DriveContentProviderInner = ({
                 contentLoading.current = false;
                 setLoading(false);
             }
-        } catch (e) {
+        } catch (e: any) {
             const children = cache.get.childLinks(shareId, linkId, sortParams);
 
             if (signal?.aborted) {
@@ -90,9 +95,14 @@ const DriveContentProviderInner = ({
 
             contentLoading.current = false;
             if (!children?.length) {
-                setError(() => {
-                    throw e;
-                });
+                if (e.status === STATUS_CODE.NOT_FOUND) {
+                    navigateToRoot();
+                } else {
+                    // Will by handled by AppErrorBoundary.
+                    setError(() => {
+                        throw e;
+                    });
+                }
             } else if (!signal?.aborted) {
                 setLoading(false);
             }
