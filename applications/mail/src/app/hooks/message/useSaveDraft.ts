@@ -77,7 +77,7 @@ const useUpdateDraft = () => {
                 plainText: message.plainText,
             });
             await call();
-        } catch (error) {
+        } catch (error: any) {
             if (!error.data) {
                 const errorMessage = c('Error').t`Error while saving draft. Please try again`;
                 createNotification({ text: errorMessage, type: 'error' });

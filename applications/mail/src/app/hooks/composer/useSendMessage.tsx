@@ -189,13 +189,13 @@ export const useSendMessage = () => {
                         })
                     );
                 }
-            } catch (error) {
+            } catch (error: any) {
                 if (
                     ![
                         SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT,
                         SEND_EMAIL_ERROR_CODES.MESSAGE_ALREADY_SENT,
                         SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST,
-                    ].includes(error.data.Code)
+                    ].includes(error?.data?.Code)
                 ) {
                     onCompose({
                         existingDraft: {

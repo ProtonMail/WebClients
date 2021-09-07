@@ -1,4 +1,3 @@
-import { RefObject } from 'react';
 import { c } from 'ttag';
 import { useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
@@ -13,13 +12,15 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { PromiseHandlers } from '../usePromise';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
     promiseUpload: Promise<void>;
-    pendingSave: RefObject<boolean>;
+    pendingSave: PromiseHandlers<void>;
+    pendingAutoSave: PromiseHandlers<void>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
     onClose: () => void;
     onMessageAlreadySent: () => void;
@@ -31,6 +32,7 @@ export const useSendHandler = ({
     mapSendInfo,
     promiseUpload,
     pendingSave,
+    pendingAutoSave,
     autoSave,
     onClose,
     onMessageAlreadySent,
@@ -46,6 +48,8 @@ export const useSendHandler = ({
     const messageCache = useMessageCache();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
+        await pendingSave.promise; // Wait for potential ongoing save request
+
         let verificationResults;
         try {
             verificationResults = await extendedVerifications(modelMessage as MessageExtendedWithData, mapSendInfo);
@@ -55,25 +59,27 @@ export const useSendHandler = ({
             return;
         }
 
+        const messageFromCache = messageCache.get(modelMessage.localID);
         const { cleanMessage, mapSendPrefs, hasChanged } = verificationResults;
-        const alreadySaved = !!cleanMessage.data.ID && !pendingSave.current && !hasChanged;
-        autoSave.abort?.();
+        const alreadySaved = !!messageFromCache?.data?.ID && !pendingAutoSave.isPending && !hasChanged;
+        autoSave.abort?.(); // Save will take place in the send process
+        const inputMessage = alreadySaved ? (messageFromCache as MessageExtendedWithData) : cleanMessage;
 
         try {
             await sendMessage({
-                inputMessage: cleanMessage,
+                inputMessage,
                 mapSendPrefs,
                 onCompose,
                 alreadySaved,
                 sendingMessageNotificationManager: notifManager,
                 useSilentApi: true,
             });
-        } catch (error) {
+        } catch (error: any) {
             hideNotification(notifManager.ID);
 
             if (
                 [SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT, SEND_EMAIL_ERROR_CODES.MESSAGE_ALREADY_SENT].includes(
-                    error.data.Code
+                    error.data?.Code
                 )
             ) {
                 onMessageAlreadySent();
@@ -97,8 +103,8 @@ export const useSendHandler = ({
         if (!scheduledAt) {
             try {
                 await preliminaryVerifications(modelMessage as MessageExtendedWithData);
-            } catch (error) {
-                if (error.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+            } catch (error: any) {
+                if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                     onMessageAlreadySent();
                 }
                 throw error;
