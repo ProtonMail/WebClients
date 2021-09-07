@@ -1,11 +1,11 @@
 RewriteEngine On
 
-# Redirect to https if not coming from https && not forwarded from https && not curl nor any health check user-agent    
-RewriteCond %{HTTPS} !=on                                                                                               
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https                                                                           
-RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)                                                           
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]                                                              
-                                                                                                                        
+# Redirect to https if not coming from https && not forwarded from https && not curl nor any health check user-agent
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
@@ -31,6 +31,12 @@ ErrorDocument 403   /assets/errors/403.html
     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
 </Files>
 
+# The download service worker gets chunk hash appended to the end of the filename
+<Files ~ "^downloadSW">
+  Header set Service-Worker-Allowed "/"
+  Header set Service-Worker "script"
+</Files>
+
 <IfModule mod_mime.c>
   AddType application/font-woff2 .woff2
 </IfModule>
@@ -38,9 +44,4 @@ ErrorDocument 403   /assets/errors/403.html
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg
 </IfModule>
-
-<Files "downloadSW.js">
-  Header set Service-Worker-Allowed "/"
-  Header set Service-Worker "script"
-</Files>
 
