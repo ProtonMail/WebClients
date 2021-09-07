@@ -11,18 +11,13 @@ const ExtraEventParticipant = ({ participant, isOrganizer = false }: Props) => {
     const { displayEmail, displayName } = participant;
 
     const displayText = displayName !== displayEmail ? `${displayName} <${displayEmail}>` : displayEmail;
-    const organizerText = c('ICS widget label for event details').t`Organizer`;
 
     return (
         <div className={classnames(['text-ellipsis', isOrganizer && 'mb0-25'])}>
+            {isOrganizer && <span className="mr0-25">{c('ICS widget label for event details').t`Organizer:`}</span>}
             <a href={buildMailTo(displayEmail)} title={displayText}>
                 {displayText}
             </a>
-            {isOrganizer && (
-                <div className="color-weak text-sm text-ellipsis" title={organizerText}>
-                    {organizerText}
-                </div>
-            )}
         </div>
     );
 };
