@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useMemo, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { c } from 'ttag';
-
 import { useToggle, classnames, useElementRect, useActiveBreakpoint } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import busy from '@proton/shared/lib/busy';
 
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
@@ -93,8 +93,10 @@ const TransferManager = ({
 
     useEffect(() => {
         window.addEventListener('unload', onClear);
+        const unregister = busy.register();
         return () => {
             window.removeEventListener('unload', onClear);
+            unregister();
         };
     }, [onClear]);
 

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren, ProminentContainer } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
 import * as config from './config';
@@ -27,7 +28,7 @@ const enhancedConfig = {
     APP_VERSION_DISPLAY: '4.0.0-beta.19',
     ...config,
 };
-
+newVersionUpdater(enhancedConfig);
 sentry(enhancedConfig);
 
 const App = () => {

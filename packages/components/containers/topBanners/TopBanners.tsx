@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import NewVersionTopBanner from './NewVersionTopBanner';
+import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
@@ -20,7 +20,7 @@ const TopBanners = ({ children }: Props) => {
             <OnlineTopBanner />
             <TimeOutOfSyncTopBanner />
             <StorageLimitTopBanner />
-            <NewVersionTopBanner />
+            <BadAppVersionBanner />
             <SubUserTopBanner />
             <DeskopNotificationTopBanner />
             <EarlyAccessDesynchronizedBanner />

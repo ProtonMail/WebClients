@@ -2,6 +2,8 @@ import { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'rea
 import * as React from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { dropdownRootClassName } from '@proton/shared/lib/busy';
+
 import { useIsClosing , useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
 import { classnames } from '../../helpers';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
@@ -161,7 +163,7 @@ const Dropdown = ({
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
     const popperClassName = classnames([
-        'dropdown',
+        dropdownRootClassName,
         noMaxSize && 'dropdown--no-max-size',
         `dropdown--${placement}`,
         isClosing && `is-dropdown-out`,

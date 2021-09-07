@@ -2,25 +2,31 @@ import { c } from 'ttag';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { useConfig } from '../../hooks';
-import { InlineLinkButton } from '../../components/button';
+import useApiStatus from '../../hooks/useApiStatus';
+import { InlineLinkButton } from '../../components';
 import TopBanner from './TopBanner';
 
-const NewVersionTopBannerView = ({ isError = false }: { isError?: boolean }) => {
+const BadAppVersionBanner = () => {
     const { APP_NAME } = useConfig();
+    const { appVersionBad } = useApiStatus();
+
+    if (!appVersionBad) {
+        return null;
+    }
 
     const appName = APPS_CONFIGURATION[APP_NAME].name;
-    const reloadTab = () => window.location.reload();
+    const reload = () => window.location.reload();
     const reloadButton = (
-        <InlineLinkButton key="reload-button" className="color-inherit" onClick={() => reloadTab()}>{c('Action')
+        <InlineLinkButton key="reload-button" className="color-inherit" onClick={reload}>{c('Action')
             .t`Refresh the page`}</InlineLinkButton>
     );
 
     return (
-        <TopBanner className={isError ? 'bg-danger' : 'bg-info'}>
+        <TopBanner className="bg-danger">
             {c('Message display when a new app version is available')
                 .jt`A new version of ${appName} is available. ${reloadButton}.`}
         </TopBanner>
     );
 };
 
-export default NewVersionTopBannerView;
+export default BadAppVersionBanner;

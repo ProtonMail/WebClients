@@ -1,11 +1,11 @@
 import OnlineTopBanner from './OnlineTopBanner';
-import NewVersionTopBanner from './NewVersionTopBanner';
+import BadAppVersionBanner from './BadAppVersionBanner';
 
 const PublicTopBanners = () => {
     return (
         <>
             <OnlineTopBanner />
-            <NewVersionTopBanner />
+            <BadAppVersionBanner />
         </>
     );
 };
