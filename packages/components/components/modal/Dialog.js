@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { dialogRootClassName } from '@proton/shared/lib/busy';
 
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
@@ -75,7 +76,7 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div className={classnames(['modal-container', isBehind && 'modal-container--in-background'])}>
+            <div className={classnames([dialogRootClassName, isBehind && 'modal-container--in-background'])}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
