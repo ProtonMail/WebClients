@@ -27,10 +27,10 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
         <div key={email} className={classnames(['address-item flex mb0-25 pl0-5'])}>
             <div className="flex flex-item-fluid p0-5" title={displayFull ? `${contactName} <${contactEmail}>` : email}>
                 {displayFull ? (
-                    <>
+                    <div className="flex flex-nowrap w100">
                         <div className="max-w50 text-ellipsis">{contactName}</div>
                         <div className="ml0-25 max-w50 text-ellipsis">{`<${contactEmail}>`}</div>
-                    </>
+                    </div>
                 ) : (
                     <div className="max-w100 text-ellipsis">{email}</div>
                 )}
