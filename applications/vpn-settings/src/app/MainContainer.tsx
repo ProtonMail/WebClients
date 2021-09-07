@@ -21,7 +21,11 @@ import {
     useUserSettings,
 } from '@proton/components';
 import { hasPermission } from '@proton/shared/lib/helpers/permissions';
-import LiveChatZendesk, { ZendeskRef, getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
+import LiveChatZendesk, {
+    ZendeskRef,
+    getIsSelfChat,
+    useCanEnableChat,
+} from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { c } from 'ttag';
 import { getPages } from './pages';
 import DashboardContainer from './containers/DashboardContainer';
@@ -47,8 +51,7 @@ const MainContainer = () => {
     const { createModal } = useModals();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState(false);
-    const [hasInitialPaid] = useState(user.hasPaidVpn);
-    const canEnableChat = hasInitialPaid || user.hasPaidVpn;
+    const canEnableChat = useCanEnableChat(user);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
