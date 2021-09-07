@@ -125,7 +125,7 @@ const Verification = () => {
     const resizeObserver = useInstance(() => new ResizeObserver(sendHeight));
 
     const registerRootRef = (el: HTMLElement) => {
-        if (windowIsEmbedded) {
+        if (el && windowIsEmbedded) {
             resizeObserver.observe(el);
         }
     };
