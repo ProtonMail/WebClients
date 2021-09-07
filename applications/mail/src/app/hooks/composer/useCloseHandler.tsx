@@ -1,5 +1,5 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { RefObject, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useHandler, useIsMounted, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import { c } from 'ttag';
@@ -9,6 +9,7 @@ import SavingDraftNotification, {
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useMessageCache } from '../../containers/MessageProvider';
+import { PromiseHandlers } from '../usePromise';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageExtended;
@@ -16,9 +17,9 @@ export interface UseCloseHandlerParameters {
     ensureMessageContent: () => void;
     uploadInProgress: boolean;
     promiseUpload: Promise<void>;
-    pendingSave: RefObject<boolean>;
+    pendingAutoSave: PromiseHandlers<void>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
-    actualSave: (message: MessageExtended) => Promise<void>;
+    saveNow: (message: MessageExtended) => Promise<void>;
     onClose: () => void;
     onDicard: () => void;
     onMessageAlreadySent: () => void;
@@ -28,10 +29,9 @@ export const useCloseHandler = ({
     modelMessage,
     lock,
     ensureMessageContent,
-    autoSave,
-    actualSave,
+    saveNow,
     uploadInProgress,
-    pendingSave,
+    pendingAutoSave,
     promiseUpload,
     onClose,
     onDicard,
@@ -55,9 +55,8 @@ export const useCloseHandler = ({
     const notficationRef = useRef<SavingDraftNotificationAction>();
 
     const handleManualSaveAfterUploads = useHandler(async (notificationID: number) => {
-        autoSave.abort?.();
         try {
-            await actualSave(modelMessage);
+            await saveNow(modelMessage);
             notficationRef.current?.saved();
             await wait(3000);
         } finally {
@@ -132,7 +131,7 @@ export const useCloseHandler = ({
         ensureMessageContent();
 
         // Message requires to be saved in background
-        if (pendingSave.current || uploadInProgress) {
+        if (pendingAutoSave.isPending || uploadInProgress) {
             try {
                 await handleManualSave();
             } catch {
