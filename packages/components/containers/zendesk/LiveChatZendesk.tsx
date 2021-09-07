@@ -1,6 +1,11 @@
 import React, { useEffect, useState, useRef, MutableRefObject, useImperativeHandle } from 'react';
 import { c } from 'ttag';
 import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
+import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
+import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
+import { addHours } from 'date-fns';
+import { UserModel } from '@proton/shared/lib/interfaces';
+
 import { useConfig, useNotifications } from '../../hooks';
 
 // The sizes for these are hardcoded since the widget calculates it based on the viewport, and since it's in
@@ -28,17 +33,60 @@ const getIframeUrl = (apiUrl: string, zendeskKey: string) => {
 };
 
 export const getIsSelfChat = () => {
-    return sessionStorage.getItem(SINGLE_CHAT_KEY);
+    return sessionStorageWrapper.getItem(SINGLE_CHAT_KEY);
 };
 const removeSelfActiveMarker = () => {
-    return sessionStorage.removeItem(SINGLE_CHAT_KEY);
+    return sessionStorageWrapper.removeItem(SINGLE_CHAT_KEY);
 };
 const getIsActiveInAnotherWindow = () => {
-    return !getIsSelfChat() && +(localStorage.getItem(SINGLE_CHAT_KEY) || 0) > Date.now();
+    return !getIsSelfChat() && +(localStorageWrapper.getItem(SINGLE_CHAT_KEY) || 0) > Date.now();
 };
 const setActiveMarker = () => {
-    localStorage.setItem(SINGLE_CHAT_KEY, `${+Date.now() + SINGLE_CHAT_TIMEOUT}`);
-    sessionStorage.setItem(SINGLE_CHAT_KEY, '1');
+    localStorageWrapper.setItem(SINGLE_CHAT_KEY, `${+Date.now() + SINGLE_CHAT_TIMEOUT}`);
+    sessionStorageWrapper.setItem(SINGLE_CHAT_KEY, '1');
+};
+
+const clearPaidMarkers = () => {
+    if (!localStorageWrapper.hasStorage()) {
+        return;
+    }
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key?.startsWith('LiveChat')) {
+            if (+(localStorage.getItem(key) || 0) < Date.now()) {
+                localStorage.removeItem(key);
+            }
+        }
+    }
+};
+const setPaidMarker = (userID: string) => {
+    return localStorageWrapper.setItem(`LiveChat-${userID}`, addHours(new Date(), 24).getTime().toString());
+};
+const getPaidMarker = (userID: string) => {
+    return +(localStorageWrapper.getItem(`LiveChat-${userID}`) || 0);
+};
+
+export const useCanEnableChat = (user: UserModel) => {
+    const hasCachedChat = getPaidMarker(user.ID) > Date.now();
+    const canEnableChat = user.hasPaidVpn || hasCachedChat;
+
+    useEffect(() => {
+        clearPaidMarkers();
+        if (!user.hasPaidVpn) {
+            return;
+        }
+        const setMarker = () => {
+            // Clear old items
+            clearPaidMarkers();
+            // Enable the user to access chat 24 hours after in case she unsubscribes
+            setPaidMarker(user.ID);
+        };
+        setMarker();
+        const handle = window.setInterval(setMarker, 60000);
+        return () => window.clearInterval(handle);
+    }, [user.hasPaidVpn]);
+
+    return canEnableChat;
 };
 
 export interface ZendeskRef {
