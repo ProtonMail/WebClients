@@ -1,9 +1,8 @@
 import { ChangeEvent } from 'react';
 import { c } from 'ttag';
-
 import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
 
-import Select from '../select/Select';
+import { Select } from '../../components';
 
 interface Props {
     value: string;

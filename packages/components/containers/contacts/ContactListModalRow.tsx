@@ -2,9 +2,9 @@ import { CSSProperties, ChangeEvent } from 'react';
 
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import ContactGroupLabels from '../../containers/contacts/ContactGroupLabels';
+import { Checkbox } from '../../components';
 import { classnames } from '../../helpers';
-import Checkbox from '../input/Checkbox';
+import ContactGroupLabels from './ContactGroupLabels';
 
 interface Props {
     style: CSSProperties;

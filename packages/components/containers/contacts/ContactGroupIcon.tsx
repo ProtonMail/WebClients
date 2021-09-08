@@ -1,5 +1,4 @@
-import Tooltip from '../tooltip/Tooltip';
-import Icon from '../icon/Icon';
+import { Icon, Tooltip } from '../../components';
 
 interface Props {
     name: string;

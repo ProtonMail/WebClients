@@ -9,12 +9,9 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 
+import { Badge, DropdownActions, KeyWarningIcon, Table, TableBody, TableRow } from '../../components';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import { Table, TableBody, TableRow } from '../table';
 import { classnames } from '../../helpers';
-import Badge from '../badge/Badge';
-import DropdownActions from '../dropdown/DropdownActions';
-import KeyWarningIcon from '../icon/KeyWarningIcon';
 
 interface Props {
     model: ContactPublicKeyModel;

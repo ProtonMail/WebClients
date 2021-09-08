@@ -3,13 +3,14 @@ import { ContactProperties, ContactEmail, ContactGroup } from '@proton/shared/li
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
+
 import { useModals } from '../../hooks';
-import ContactSummary from '../../components/contacts/ContactSummary';
-import ContactViewProperties from '../../components/contacts/ContactViewProperties';
 import { classnames } from '../../helpers';
 import ContactModal from './modals/ContactModal';
 import ContactDeleteModal from './modals/ContactDeleteModal';
 import ContactViewErrors from './ContactViewErrors';
+import ContactSummary from './ContactSummary';
+import ContactViewProperties from './ContactViewProperties';
 import { Button } from '../../components';
 
 import './ContactView.scss';

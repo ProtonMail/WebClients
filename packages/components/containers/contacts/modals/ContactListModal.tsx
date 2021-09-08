@@ -9,9 +9,9 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Checkbox, SearchInput, PrimaryButton, FormModal } from '../../../components';
 import { useActiveBreakpoint, useUserSettings, useContactEmailsSortedByName } from '../../../hooks';
 import ContactList from '../ContactList';
-import ContactListModalRow from '../../../components/contacts/ContactListModalRow';
-import EmptyContacts from '../../../components/contacts/EmptyContacts';
-import EmptyResults from '../../../components/contacts/EmptyResults';
+import ContactListModalRow from '../ContactListModalRow';
+import EmptyContacts from '../EmptyContacts';
+import EmptyResults from '../EmptyResults';
 
 import { useContactGroups } from '../../../hooks/useCategories';
 import { classnames } from '../../../helpers';
