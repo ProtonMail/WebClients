@@ -51,9 +51,6 @@ const LOCALES = (() => {
     try {
         return require(path.join(process.cwd(), 'locales', 'config', 'locales.json'));
     } catch (e) {
-        if (!process.argv.includes('print-config')) {
-            console.log('No po/locales.json available yet');
-        }
         return {};
     }
 })();
