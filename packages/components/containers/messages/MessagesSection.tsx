@@ -6,7 +6,6 @@ import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Info } from '../../components';
 import { useMailSettings } from '../../hooks';
 
-import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
@@ -24,21 +23,6 @@ const MessagesSection = () => {
 
     return (
         <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="remoteToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Auto-load remote content`}</span>
-                        <Info
-                            url="https://protonmail.com/support/knowledge-base/images-by-default/"
-                            title={c('Info')
-                                .t`When disabled, this prevents all files from loading on your device without your knowledge.	`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
-                    <RemoteToggle id="remoteToggle" showImages={showImages} onChange={handleChange} />
-                </SettingsLayoutRight>
-            </SettingsLayout>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="embeddedToggle" className="text-semibold">

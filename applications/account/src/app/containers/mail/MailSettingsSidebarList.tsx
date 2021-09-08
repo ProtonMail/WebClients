@@ -1,6 +1,14 @@
 import { c } from 'ttag';
 import { useRouteMatch } from 'react-router-dom';
-import { SidebarList, SidebarListItem, SidebarListItemContent, useOrganization, useUser } from '@proton/components';
+import {
+    FeatureCode,
+    SidebarList,
+    SidebarListItem,
+    SidebarListItemContent,
+    useFeature,
+    useOrganization,
+    useUser,
+} from '@proton/components';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import SettingsListItem from '../../components/SettingsListItem';
@@ -12,6 +20,7 @@ const MailSettingsSidebarList = () => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const hasOrganization = organization?.HasKeys;
+    const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
 
     return (
         <SidebarList>
@@ -21,6 +30,11 @@ const MailSettingsSidebarList = () => {
             <SettingsListItem to={`${path}/general`} icon="grid">
                 {c('Settings section title').t`General`}
             </SettingsListItem>
+            {spyTrackerFeature?.Value && (
+                <SettingsListItem to={`${path}/email-privacy`} icon="image">
+                    {c('Settings section title').t`Email privacy` /* TODO: Replace icon */}
+                </SettingsListItem>
+            )}
             <SettingsListItem to={`${path}/identity-addresses`} icon="address-card">
                 {c('Settings section title').t`Identity & addresses`}
             </SettingsListItem>
