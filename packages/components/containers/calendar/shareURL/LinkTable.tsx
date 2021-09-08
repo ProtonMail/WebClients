@@ -76,8 +76,10 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                                     style={{ color }}
                                                     className="mr0-75 flex-item-noshrink"
                                                 />
-                                                <div className="text-ellipsis">
-                                                    {calendarName}
+                                                <div>
+                                                    <div className="text-ellipsis" title={calendarName}>
+                                                        {calendarName}
+                                                    </div>
                                                     <div className="text-sm color-weak m0">
                                                         {accessLevel === ACCESS_LEVEL.FULL
                                                             ? c('Access level').t`Full`
@@ -86,7 +88,7 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                                 </div>
                                             </div>
                                         </div>,
-                                        <div key="label" className="text-ellipsis">
+                                        <div key="label" className="text-ellipsis" title={purpose || ''}>
                                             {purpose}
                                         </div>,
                                         <DropdownActions
