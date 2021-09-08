@@ -170,4 +170,5 @@ export interface EncryptedSearchFunctions {
     cacheIndexedDB: () => Promise<void>;
     incrementSearch: IncrementSearch;
     shouldHighlight: () => boolean;
+    esDelete: () => Promise<void>;
 }
