@@ -8,9 +8,13 @@ import {
     PrivateHeader,
     FloatingButton,
     MainLogo,
+    Tooltip,
     TopNavbarListItemSettingsDropdown,
     TopNavbarListItemContactsDropdown,
     Icon,
+    useModals,
+    ConfirmModal,
+    DropdownMenuButton,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -48,7 +52,9 @@ const MailHeader = ({
     const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const { cacheIndexedDB } = useEncryptedSearchContext();
+    const { cacheIndexedDB, getESDBStatus, esDelete } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const { createModal } = useModals();
 
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
@@ -87,12 +93,44 @@ const MailHeader = ({
     const labelName = getLabelName(labelID, labels, folders);
     const logo = <MainLogo to="/inbox" />;
 
+    const handleDeleteESIndex = () => {
+        createModal(
+            <ConfirmModal
+                onConfirm={esDelete}
+                title={c(`Info`).t`Disable message content search`}
+                confirm={c(`Info`).t`Clear data`}
+                mode="alert"
+            >
+                {c('Info')
+                    .t`Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.`}
+            </ConfirmModal>
+        );
+    };
+    const clearDataButton =
+        dbExists || esEnabled ? (
+            <>
+                <hr className="mt0-5 mb0-5" />
+                <Tooltip
+                    title={c('Info')
+                        .t`Clears browser data related to message content search including downloaded messages`}
+                >
+                    <DropdownMenuButton onClick={handleDeleteESIndex} className="flex flex-nowrap flex-justify-center">
+                        <span className="color-weak">{c('Action').t`Clear browser data`}</span>
+                    </DropdownMenuButton>
+                </Tooltip>
+            </>
+        ) : null;
+
     return (
         <PrivateHeader
             logo={logo}
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
-            settingsButton={<TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={
+                <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
+                    {clearDataButton}
+                </TopNavbarListItemSettingsDropdown>
+            }
             contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
