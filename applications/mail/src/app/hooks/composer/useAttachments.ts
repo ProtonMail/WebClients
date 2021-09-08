@@ -123,7 +123,7 @@ export const useAttachments = ({
 
             removePendingUpload(pendingUpload);
         } catch (error: any) {
-            if (error.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+            if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                 onMessageAlreadySent();
             }
 

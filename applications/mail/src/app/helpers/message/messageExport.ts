@@ -12,7 +12,7 @@ import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { getEmbeddedImages, restoreAllPrefixedAttributes } from './messageImages';
+import { restoreAllPrefixedAttributes } from './messageImages';
 import { insertActualEmbeddedImages } from './messageEmbeddeds';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
@@ -28,7 +28,7 @@ export const prepareExport = (message: MessageExtended) => {
     const document = message.document.cloneNode(true) as Element;
 
     // Embedded images
-    insertActualEmbeddedImages(document, getEmbeddedImages(message));
+    insertActualEmbeddedImages(document);
 
     let content = getDocumentContent(document);
 
