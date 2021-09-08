@@ -6,6 +6,7 @@ export * from './autoReply';
 export * from './bridge';
 export * from './cache';
 export * from './calendar';
+export * from './challenge';
 export * from './compatibilityCheck';
 export * from './contacts';
 export * from './domains';

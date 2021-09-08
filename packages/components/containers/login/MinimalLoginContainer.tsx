@@ -7,20 +7,9 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
-import {
-    captureChallengeMessage,
-    Challenge,
-    ChallengeError,
-    ChallengeRef,
-    ChallengeResult,
-    FullLoader,
-    Input,
-    Label,
-    LinkButton,
-    PasswordInput,
-    PrimaryButton,
-} from '../../components';
+import { FullLoader, Input, Label, LinkButton, PasswordInput, PrimaryButton } from '../../components';
 import { OnLoginCallback } from '../app/interface';
+import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';

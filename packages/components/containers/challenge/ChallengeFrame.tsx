@@ -1,8 +1,8 @@
 import { MutableRefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import * as React from 'react';
 import { getStyleSrcsData, getStyleSrcUrls, handleEvent } from './challengeHelper';
-import { THEME_ID } from '../../containers/themes/ThemeProvider';
-import { ICONS_ID } from '../icon/Icons';
+import { THEME_ID } from '../themes/ThemeProvider';
+import { ICONS_ID } from '../../components/icon/Icons';
 import { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
 export const ERROR_TIMEOUT_MS = 15000;

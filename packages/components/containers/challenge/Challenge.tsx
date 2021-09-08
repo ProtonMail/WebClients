@@ -4,7 +4,7 @@ import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
 
 import { classnames } from '../../helpers';
 import { useConfig } from '../../hooks';
-import { Loader } from '../loader';
+import { Loader } from '../../components/loader';
 
 import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
 import ChallengeError from './ChallengeError';
@@ -17,7 +17,17 @@ interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {
     onError: (challengeLog: ChallengeLog[]) => void;
 }
 
-const Challenge = ({ children, style, onSuccess, onError, bodyClassName, loaderClassName, name, type, ...rest }: Props) => {
+const Challenge = ({
+    children,
+    style,
+    onSuccess,
+    onError,
+    bodyClassName,
+    loaderClassName,
+    name,
+    type,
+    ...rest
+}: Props) => {
     const config = useConfig();
 
     const [isLoading, setIsLoading] = useState(true);
