@@ -80,10 +80,10 @@ const EventForm = ({
 
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const showParticipants = !isImportedEvent;
     // selfAddress may not need be defined
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     const canEditSharedEventData = !isSubscribedCalendar && isOrganizer && isSelfAddressActive;
+    const showParticipants = !isImportedEvent && (!isMinimal || isCreateEvent) && canEditSharedEventData;
     const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
@@ -238,6 +238,7 @@ const EventForm = ({
                 id={PARTICIPANTS_INPUT_ID}
                 model={model}
                 addresses={addresses}
+                collapsible={!isMinimal}
                 setParticipantError={setParticipantError}
                 {...createHandlers({ model, setModel, field: 'attendees' }).model}
             />
@@ -278,7 +279,7 @@ const EventForm = ({
             {canEditSharedEventData && titleRow}
             {canEditSharedEventData && dateRow}
             {!isMinimal && canEditSharedEventData && frequencyRow}
-            {!isMinimal && canEditSharedEventData && showParticipants && participantsRow}
+            {showParticipants && participantsRow}
             {canEditSharedEventData && locationRow}
             {!isMinimal && showNotifications && notificationsRow}
             {!isSubscribedCalendar && calendars.length > 0 && calendarRow}
