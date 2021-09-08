@@ -19,6 +19,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
@@ -119,6 +120,10 @@ const HeaderExpanded = ({
             return;
         }
         onToggle();
+    };
+
+    const handleAttachmentIconClick = () => {
+        scrollIntoView(parentMessageRef.current, { block: 'end' });
     };
 
     const handleCompose = (action: MESSAGE_ACTIONS) => async () => {
@@ -316,7 +321,11 @@ const HeaderExpanded = ({
                                 maxNumber={5}
                                 className="on-mobile-pt0-25"
                             />
-                            <ItemAttachmentIcon element={message.data} className="ml0-5" />
+                            <ItemAttachmentIcon
+                                onClick={handleAttachmentIconClick}
+                                element={message.data}
+                                className="ml0-5"
+                            />
                         </div>
                     </>
                 )}
@@ -338,7 +347,11 @@ const HeaderExpanded = ({
                                     showUnlabel
                                     maxNumber={1}
                                 />
-                                <ItemAttachmentIcon element={message.data} className="ml0-5" />
+                                <ItemAttachmentIcon
+                                    onClick={handleAttachmentIconClick}
+                                    element={message.data}
+                                    className="ml0-5"
+                                />
                             </div>
                         </>
                     ) : (
