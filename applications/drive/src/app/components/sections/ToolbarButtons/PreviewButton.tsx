@@ -1,6 +1,7 @@
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/filePreview';
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, isPreviewAvailable } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 
 import useToolbarActions from '../../../hooks/drive/useActions';
 import { FileBrowserItem } from '../../FileBrowser/interfaces';

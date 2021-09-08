@@ -1,6 +1,8 @@
+import { isICS } from '@proton/shared/lib/helpers/filePreview';
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
+import { Conversation } from '../../models/conversation';
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -64,6 +66,9 @@ const ItemColumnLayout = ({
         occurrencesInBody
     );
 
+    const attachmentInfo = (element as Conversation)?.AttachmentInfo;
+    const hasOnlyIcsAttachments = attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
+
     return (
         <div
             className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender"
@@ -123,7 +128,11 @@ const ItemColumnLayout = ({
                         labelID={labelID}
                         maxNumber={breakpoints.isNarrow ? 1 : 5}
                     />
-                    <ItemAttachmentIcon element={element} className="ml0-5 flex-align-self-center" />
+                    <ItemAttachmentIcon
+                        icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                        element={element}
+                        className="ml0-5 flex-align-self-center"
+                    />
                 </div>
             </div>
 
