@@ -22,8 +22,9 @@ const RemoteToggle = ({ id, showImages, onChange }: Props) => {
     const api = useApi();
     const { state, toggle } = useToggle(hasBit(showImages, REMOTE));
 
+    // Use !checked because we want to display ON toggle if auto load is disabled and vice versa
     const handleChange = async (checked: boolean) => {
-        const bit = checked ? setBit(showImages, REMOTE) : clearBit(showImages, REMOTE);
+        const bit = !checked ? setBit(showImages, REMOTE) : clearBit(showImages, REMOTE);
         await api(updateShowImages(bit));
         await call();
         toggle();
@@ -33,7 +34,7 @@ const RemoteToggle = ({ id, showImages, onChange }: Props) => {
     return (
         <Toggle
             id={id}
-            checked={state}
+            checked={!state} // Use !state because we want to display ON toggle if auto load is disabled and vice versa
             onChange={({ target }) => withLoading(handleChange(target.checked))}
             loading={loading}
         />

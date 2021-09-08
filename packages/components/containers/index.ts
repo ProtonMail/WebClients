@@ -13,6 +13,7 @@ export * from './domains';
 export * from './earlyAccess';
 export * from './error';
 export * from './eventManager';
+export * from './emailPrivacy';
 export * from './features';
 export * from './filePreview';
 export * from './filters';

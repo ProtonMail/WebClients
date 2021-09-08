@@ -7,4 +7,3 @@ export { default as DateFormatSection } from './DateFormatSection';
 export { default as WeekStartSection } from './WeekStartSection';
 export { default as ShortcutsToggle } from './ShortcutsToggle';
 export { default as PmMeSection } from './PmMeSection';
-export { default as SpyTrackerTemporarySection } from './SpyTrackerTemporarySection';
