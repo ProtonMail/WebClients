@@ -19,6 +19,8 @@ const ExtraEventHeader = ({ model }: Props) => {
         invitationIcs,
         invitationIcs: { method, attendee: attendeeIcs },
         invitationApi,
+        isOutdated,
+        isPartyCrasher,
         isImport,
         hasMultipleVevents,
     } = model;
@@ -75,8 +77,9 @@ const ExtraEventHeader = ({ model }: Props) => {
         );
     }, [dtstart, dtend, isAllDay, isSingleAllDay]);
 
+    const canShowOptionalHeader = method === ICAL_METHOD.REQUEST && !isOutdated && !isPartyCrasher && !isImport;
     const optionalHeader =
-        (invitationApi?.attendee || attendeeIcs)?.role === ICAL_ATTENDEE_ROLE.OPTIONAL
+        canShowOptionalHeader && attendeeIcs?.role === ICAL_ATTENDEE_ROLE.OPTIONAL
             ? c('Calendar invite info').t`(Attendance optional)`
             : null;
 
