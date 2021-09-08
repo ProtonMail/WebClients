@@ -6,7 +6,7 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 
-import { ContactUpgradeModal, FullLoader, SearchInput } from '../../../components';
+import { FullLoader, SearchInput } from '../../../components';
 import {
     useContactEmails,
     useContactGroups,
@@ -22,6 +22,7 @@ import ContactGroupModal from '../modals/ContactGroupModal';
 import ContactGroupDetailsModal from '../modals/ContactGroupDetailsModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import ContactGroupDeleteModal from '../modals/ContactGroupDeleteModal';
+import ContactUpgradeModal from '../ContactUpgradeModal';
 import { CustomAction } from './types';
 
 interface Props {

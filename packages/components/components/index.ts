@@ -8,7 +8,6 @@ export * from './button';
 export * from './card';
 export * from './collapsingBreadcrumbs';
 export * from './color';
-export * from './contacts';
 export * from './container';
 export * from './contextMenu';
 export * from './countdown';

@@ -1,9 +1,7 @@
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 
-import ConfirmModal from '../modal/Confirm';
-import Alert from '../alert/Alert';
-import useSettingsLink from '../link/useSettingsLink';
+import { ConfirmModal, Alert, useSettingsLink } from '../../components';
 
 interface Props {
     onConfirm?: () => void;

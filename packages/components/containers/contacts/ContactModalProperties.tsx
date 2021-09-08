@@ -5,9 +5,10 @@ import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants'
 import { ContactPropertyChange, ContactProperties, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
+
 import { Button, Icon, OrderableContainer, OrderableElement } from '../../components';
-import ContactModalRow from '../../components/contacts/ContactModalRow';
-import EncryptedIcon from '../../components/contacts/EncryptedIcon';
+import ContactModalRow from './ContactModalRow';
+import EncryptedIcon from './EncryptedIcon';
 
 const ICONS: { [key: string]: string } = {
     fn: 'user',
