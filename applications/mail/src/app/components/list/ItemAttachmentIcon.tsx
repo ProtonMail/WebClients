@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { c, msgid } from 'ttag';
 import { classnames, Icon, Tooltip } from '@proton/components';
 
@@ -7,10 +8,12 @@ import { Element } from '../../models/element';
 interface Props {
     element?: Element;
     className?: string;
+    onClick?: () => void;
 }
 
-const ItemAttachmentIcon = ({ element = {}, className }: Props) => {
+const ItemAttachmentIcon = ({ element = {}, className, onClick }: Props) => {
     const numAttachments = getNumAttachments(element);
+    const isButton = onClick !== undefined;
 
     if (numAttachments === 0) {
         return null;
@@ -22,11 +25,22 @@ const ItemAttachmentIcon = ({ element = {}, className }: Props) => {
         numAttachments
     );
 
+    const commonProps = {
+        className: classnames(['flex', className]),
+        'data-testid': 'item-attachment-icon',
+    };
+    const buttonProps = {
+        onClick,
+        type: 'button',
+    };
+
     return (
         <Tooltip title={title}>
-            <div className={classnames(['flex', className])} data-testid="item-attachment-icon">
+            {React.createElement(
+                isButton ? 'button' : 'div',
+                { ...commonProps, ...(isButton ? buttonProps : {}) },
                 <Icon name="paperclip" size={14} alt={title} />
-            </div>
+            )}
         </Tooltip>
     );
 };
