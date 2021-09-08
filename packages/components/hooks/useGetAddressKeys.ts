@@ -46,3 +46,5 @@ export const useGetAddressKeys = (): GetAddressKeys => {
         [cache, miss]
     );
 };
+
+export default useGetAddressKeys;

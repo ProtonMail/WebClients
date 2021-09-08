@@ -4,3 +4,4 @@ import createUseModelHook from './helpers/createModelHook';
 
 export const useImporters = createUseModelHook<Importer[]>(ImportersModel);
 export const useImportHistory = createUseModelHook<ImportHistory[]>(ImportHistoriesModel);
+export default useImporters;
