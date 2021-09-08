@@ -24259,6 +24259,7 @@ fsevents@^1.2.7:
     babel-loader: ^8.2.2
     cross-env: ^7.0.3
     eslint: ^7.9.0
+    lodash.startcase: ^4.4.0
     netlify-cli: ^2.67.4
     prettier: ^2.1.2
     prop-types: 15.7.2
@@ -26092,7 +26093,6 @@ fsevents@^1.2.7:
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     husky: ^4.3.6
     lint-staged: ^10.5.3
-    lodash.startcase: ^4.4.0
     prettier: ^2.2.1
     sort-package-json: ^1.48.1
     typescript: ^4.1.3
