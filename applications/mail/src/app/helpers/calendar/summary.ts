@@ -1,9 +1,4 @@
-import {
-    ICAL_ATTENDEE_ROLE,
-    ICAL_ATTENDEE_STATUS,
-    ICAL_EVENT_STATUS,
-    ICAL_METHOD,
-} from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { c } from 'ttag';
@@ -13,7 +8,6 @@ import { InvitationModel, UPDATE_ACTION } from './invite';
 const { REPLY, COUNTER, REFRESH, REQUEST, CANCEL, ADD } = ICAL_METHOD;
 const { NEEDS_ACTION, ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
 const { CANCELLED } = ICAL_EVENT_STATUS;
-const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 const { KEEP_PARTSTAT, RESET_PARTSTAT } = UPDATE_ACTION;
 
 export const getHasBeenUpdatedText = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
@@ -291,31 +285,15 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
         const attendee = attendeeApi || attendeeIcs;
         // force unanswered partstat if the event is not in the db
         const partstat = !veventApi ? NEEDS_ACTION : attendee?.partstat || NEEDS_ACTION;
-        const role = attendee?.role || REQUIRED;
 
         if (partstat === ACCEPTED) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info').t`You already accepted this invitation.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info').t`You already accepted this invitation.`;
-            }
+            return c('Calendar invite info').t`You already accepted this invitation.`;
         }
         if (partstat === TENTATIVE) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info').t`You already tentatively accepted this invitation.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info').t`You already tentatively accepted this invitation.`;
-            }
+            return c('Calendar invite info').t`You already tentatively accepted this invitation.`;
         }
         if (partstat === DECLINED) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info').t`You already declined this invitation.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info').t`You already declined this invitation.`;
-            }
+            return c('Calendar invite info').t`You already declined this invitation.`;
         }
     }
 

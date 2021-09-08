@@ -1,10 +1,8 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import urlify from '@proton/shared/lib/calendar/urlify';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
@@ -15,11 +13,7 @@ import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { c, msgid } from 'ttag';
 
 import { getOrganizerDisplayData } from '../../helpers/attendees';
-import {
-    CalendarViewEvent,
-    CalendarViewEventTemporaryEvent,
-    DisplayNameEmail,
-} from '../../containers/calendar/interface';
+import { DisplayNameEmail } from '../../containers/calendar/interface';
 import AttendeeStatusIcon from './AttendeeStatusIcon';
 import getAttendanceTooltip from './getAttendanceTooltip';
 import Participant from './Participant';
@@ -58,7 +52,10 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
         isInvitation || isSubscribedCalendar,
         displayNameEmailMap
     );
-    const sanitizedLocation = useMemo(() => restrictedCalendarSanitize(urlify(model.location.trim())), [model.location]);
+    const sanitizedLocation = useMemo(
+        () => restrictedCalendarSanitize(urlify(model.location.trim())),
+        [model.location]
+    );
     const htmlString = useMemo(() => {
         const description = urlify(model.description.trim());
         return restrictedCalendarSanitize(description);
