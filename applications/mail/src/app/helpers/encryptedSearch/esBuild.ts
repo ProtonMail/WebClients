@@ -84,7 +84,7 @@ export const cleanText = (text: string, removeQuote: boolean) => {
         const styleElements = body.getElementsByTagName('style');
         const styleElement = styleElements.item(0);
         if (styleElement) {
-            styleElement.outerHTML = '';
+            styleElement.remove();
         }
         removeStyle = styleElements.length !== 0;
     }
@@ -159,7 +159,10 @@ export const encryptToDB = async (messageToCache: ESMessage, indexKey: CryptoKey
  * Compare the subject to a set of known translations of the Fw: flag and decide
  * if the message is a forwarded one
  */
-export const isMessageForwarded = (subject: string) => {
+export const isMessageForwarded = (subject: string | undefined) => {
+    if (!subject) {
+        return false;
+    }
     return localisedForwardFlags.some((fwFlag) => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag);
 };
 
@@ -227,7 +230,7 @@ const storeMessages = async (
     recordLocalProgress: (localProgress: number) => void
 ) => {
     let batchSize = 0;
-    let counter = 1;
+    let counter = 0;
 
     const esIteratee = async (message: Message) => {
         if (abortIndexingRef.current.signal.aborted) {
@@ -244,7 +247,7 @@ const storeMessages = async (
             message
         ))!;
 
-        recordLocalProgress(counter++);
+        recordLocalProgress(++counter);
         batchSize += sizeOfCachedMessage(messageToCache);
         return encryptToDB(messageToCache, indexKey);
     };
@@ -389,7 +392,7 @@ export const buildDB = async (
         recoveryPoint = { ID, Time };
     }
 
-    // Start fetching messages from the recovery point saved in local storage
+    // Start fetching messages from the last stored message
     // or from scratch if a recovery point was not found
     const success = await storeMessagesBatches(
         userID,

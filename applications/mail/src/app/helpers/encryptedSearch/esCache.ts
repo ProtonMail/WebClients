@@ -79,8 +79,6 @@ export const sortCachedMessages = (firstEl: ESMessage, secondEl: ESMessage) => {
  * Remove extra messages from cache
  */
 export const trimCache = (esCacheRef: React.MutableRefObject<ESCache>) => {
-    esCacheRef.current.esCache.sort(sortCachedMessages);
-
     let rollingSize = 0;
     for (let index = 0; index < esCacheRef.current.esCache.length; index++) {
         if (rollingSize >= ES_MAX_CACHE) {
@@ -128,6 +126,8 @@ export const cacheDB = async (
 
     esDB.close();
 
+    // Sort the cached messages by time, such that the last element is the oldest
+    esCacheRef.current.esCache.sort(sortCachedMessages);
     // Since batches are processed as a whole, trimming is necessery to make sure the cache
     // size limit is not exceeded by too much
     trimCache(esCacheRef);
