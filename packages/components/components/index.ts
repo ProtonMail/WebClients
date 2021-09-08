@@ -28,7 +28,6 @@ export * from './importAssistant';
 export * from './input';
 export * from './label';
 export * from './labelStack';
-export * from './layout';
 export * from './link';
 export * from './loader';
 export * from './logo';

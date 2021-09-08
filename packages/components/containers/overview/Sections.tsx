@@ -1,8 +1,8 @@
 import { hasPermission } from '@proton/shared/lib/helpers/permissions';
 import { PERMISSIONS } from '@proton/shared/lib/constants';
 
+import { SubSectionConfig } from '../layout';
 import LinkItem from './LinkItem';
-import { SubSectionConfig } from '../../components/layout';
 
 interface Props {
     to: string;
