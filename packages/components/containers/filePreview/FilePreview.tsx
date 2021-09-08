@@ -1,3 +1,4 @@
+import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from '@proton/shared/lib/helpers/filePreview';
 import { forwardRef, Ref, useRef } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
@@ -7,7 +8,6 @@ import PreviewLoader from './PreviewLoader';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import PDFPreview from './PDFPreview';
-import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
 import { useCombinedRefs, useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../../components';
 
