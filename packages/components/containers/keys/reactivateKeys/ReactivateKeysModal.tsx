@@ -362,11 +362,15 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         if (numberOfNonPrivateKeys > 0) {
             createNotification({
                 type: 'info',
-                text: c('Info').ngettext(
-                    msgid`${numberOfNonPrivateKeys} uploaded file is not a valid private key. Please verify and try again.`,
-                    `${numberOfNonPrivateKeys} uploaded files are not valid private keys. Please verify and try again.`,
-                    numberOfNonPrivateKeys
-                ),
+                text:
+                    numberOfNonPrivateKeys === 1
+                        ? c('Info').t`Uploaded file is not a valid private key. Please verify and try again.`
+                        : // translator: the singular version won't be used, it's the string "Uploaded file is not a valid private key. Please verify and try again." that will be used. Please keep the variable inside the singular translation to avoid bugs.
+                          c('Info').ngettext(
+                              msgid`${numberOfNonPrivateKeys} uploaded file is not a valid private key. Please verify and try again.`,
+                              `${numberOfNonPrivateKeys} uploaded files are not valid private keys. Please verify and try again.`,
+                              numberOfNonPrivateKeys
+                          ),
             });
         }
 
