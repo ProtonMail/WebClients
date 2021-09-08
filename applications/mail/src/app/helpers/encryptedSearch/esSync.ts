@@ -137,17 +137,16 @@ export const compareESBaseMessages = (message1: ESBaseMessage, message2: ESBaseM
 };
 
 /**
- * Remove messages from and addmessages to IDB
+ * Remove messages from and add messages to IDB
  */
-export const handleIDBInteractions = async (
+export const executeIDBOperations = async (
     esDB: IDBPDatabase<EncryptedSearchDB>,
     messagesToRemove: string[],
     messagesToAdd: StoredCiphertext[]
 ) => {
     const tx = esDB.transaction('messages', 'readwrite');
 
-    // Firstly, all messages that were deleted are removed from IDB and cache. In order
-    // to update the rolling size estimate, each message is also fetched and decrypted
+    // Firstly, all messages that were deleted are removed from IDB
     if (messagesToRemove.length) {
         for (const ID of messagesToRemove) {
             void tx.store.delete(ID);
@@ -156,24 +155,26 @@ export const handleIDBInteractions = async (
 
     // Then all messages to add are inserted, if a message fails
     // it is saved for retry
-    const ciphertextErrors: StoredCiphertext[] = [];
-    if (messagesToAdd.length) {
-        for (const ciphertext of messagesToAdd) {
-            void tx.store.put(ciphertext).catch(() => {
-                ciphertextErrors.push(ciphertext);
-            });
-        }
-    }
-    await tx.done;
-
-    // The most likely cause for failure is the quota being exceeded,
-    // therefore we use the storeToDB routine which inserts newer messages by
-    // removing older ones, or discards the message if it's too old
-    if (ciphertextErrors.length) {
-        for (const newCiphertextToStore of ciphertextErrors) {
-            if (!(await storeToDB(newCiphertextToStore, esDB))) {
-                throw new Error('Sync of some messages failed');
+    try {
+        if (messagesToAdd.length) {
+            for (const ciphertext of messagesToAdd) {
+                void tx.store.put(ciphertext);
             }
+        }
+        await tx.done;
+    } catch (error: any) {
+        // The most likely cause for failure is the quota being exceeded,
+        // therefore we use the storeToDB routine which inserts newer messages by
+        // removing older ones, or discards the message if it's too old
+        if (error.name === 'QuotaExceededError') {
+            for (const ciphertext of messagesToAdd) {
+                if (!(await storeToDB(ciphertext, esDB))) {
+                    throw new Error('Sync of some messages failed');
+                }
+            }
+        } else {
+            // Otherwise the same error is thrown
+            throw error;
         }
     }
 };
@@ -364,7 +365,7 @@ export const syncMessageEvents = async (
         }
     }
 
-    await handleIDBInteractions(esDB, messagesToRemove, messagesToAdd);
+    await executeIDBOperations(esDB, messagesToRemove, messagesToAdd);
 
     esDB.close();
 
@@ -396,7 +397,7 @@ export const correctDecryptionErrors = async (
 
     recordProgress(0, searchResults.length);
 
-    let counter = 1;
+    let counter = 0;
     const messagesToAdd = (
         await Promise.all(
             searchResults.map(async (message) => {
@@ -413,7 +414,7 @@ export const correctDecryptionErrors = async (
                 if (esCacheRef) {
                     addToESCache(newMessage, esCacheRef, size);
                 }
-                recordProgress(counter++, searchResults.length);
+                recordProgress(++counter, searchResults.length);
 
                 return newCiphertextToStore;
             })
@@ -424,7 +425,7 @@ export const correctDecryptionErrors = async (
 
     if (newMessagesFound) {
         const esDB = await openESDB(userID);
-        await handleIDBInteractions(esDB, [], messagesToAdd);
+        await executeIDBOperations(esDB, [], messagesToAdd);
         esDB.close();
     }
 
@@ -443,7 +444,7 @@ const syncMessagesBatch = async (
     getMessageKeys: GetMessageKeys,
     recordLocalProgress: (localProgress: number) => void
 ) => {
-    let counter = 1;
+    let counter = 0;
 
     const esIteratee = async (message: Message) => {
         // Since we are passing metadata, messageToCache cannot be undefined
@@ -453,7 +454,7 @@ const syncMessagesBatch = async (
         const size = sizeOfCachedMessage(messageToCache);
         updateSizeIDB(userID, size);
 
-        recordLocalProgress(counter++);
+        recordLocalProgress(++counter);
         return encryptToDB(messageToCache, indexKey);
     };
 
@@ -513,7 +514,7 @@ export const refreshIndex = async (
         throw new Error('Drafts fetching failed');
     }
 
-    const indexedIDs = new Map((await esDB.getAllKeys('messages')).map((ID) => [ID, undefined]));
+    const indexedIDs = new Set(await esDB.getAllKeys('messages'));
 
     // In case of big mailboxes, we don't want all pages at once in memory
     for (let startPageBatch = 0; startPageBatch < numBatches; startPageBatch++) {
@@ -595,7 +596,7 @@ export const refreshIndex = async (
 
         // Messages for which only the metadata changed are updated
         if (messagesToAdd.length) {
-            await handleIDBInteractions(esDB, [], messagesToAdd);
+            await executeIDBOperations(esDB, [], messagesToAdd);
         }
 
         // Then new messages are fetched and stored
@@ -616,8 +617,8 @@ export const refreshIndex = async (
     }
 
     // All messages that haven't been removed from indexedIDs no longer exist
-    const messagesToRemove = [...indexedIDs.keys()];
-    await handleIDBInteractions(esDB, messagesToRemove, []);
+    const messagesToRemove = [...indexedIDs];
+    await executeIDBOperations(esDB, messagesToRemove, []);
 
     esDB.close();
 

@@ -91,6 +91,7 @@ export const insertMarks = (content: string, normalisedKeywords: string[], setAu
             [, previousIndex] = position;
             span.appendChild(html.createTextNode(text.slice(oldPreviousIndex, position[0])));
             const mark = html.createElement('mark');
+            mark.setAttribute('class', 'proton-search-highlight');
             const markedText = html.createTextNode(text.slice(position[0], position[1]));
             mark.appendChild(markedText);
             span.appendChild(mark);
@@ -103,7 +104,7 @@ export const insertMarks = (content: string, normalisedKeywords: string[], setAu
     recursiveBodyTraversal(html.body, applySearchMarkup);
 
     if (setAutoScroll) {
-        const marks = html.body.getElementsByTagName('mark');
+        const marks = html.body.getElementsByClassName('proton-search-highlight');
         marks.item(0)?.setAttribute('data-auto-scroll', 'true');
     }
 

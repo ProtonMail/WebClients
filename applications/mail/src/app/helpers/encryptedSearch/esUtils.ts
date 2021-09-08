@@ -108,11 +108,7 @@ export const isESEnabled = (userID: string) => !!getES.Enabled(userID);
  * Fetch the oldest message from IDB
  */
 export const getOldestMessage = async (esDB: IDBPDatabase<EncryptedSearchDB>) => {
-    return esDB.getAllFromIndex('messages', 'byTime', undefined, 1).then((array) => {
-        if (array.length === 1) {
-            return array[0];
-        }
-    });
+    return esDB.getFromIndex('messages', 'byTime', IDBKeyRange.lowerBound([0, 0]));
 };
 
 /**

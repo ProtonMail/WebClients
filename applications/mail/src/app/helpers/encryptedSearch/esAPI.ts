@@ -3,6 +3,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { SECOND } from '@proton/shared/lib/constants';
 import { ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
@@ -19,7 +20,7 @@ const apiHelper = async <T>(
     api: Api,
     signal: AbortSignal | undefined,
     options: Object,
-    route: string
+    callingContext: string
 ): Promise<T | undefined> => {
     let apiResponse: T;
     try {
@@ -31,17 +32,21 @@ const apiHelper = async <T>(
         });
     } catch (error: any) {
         // Network and temporary errors trigger a retry, for any other error undefined is returned
-        if (isNetworkError(error) || ES_TEMPORARY_ERRORS.includes(error.data.Code)) {
-            const {
-                response: { headers },
-            } = error;
+        if (isNetworkError(error) || (error?.status && ES_TEMPORARY_ERRORS.includes(error.status))) {
+            let retryAfterSeconds = 1;
 
-            const retryAfterSeconds = parseInt(headers.get('retry-after') || '1', 10);
-            await wait(retryAfterSeconds * 1000);
-            return apiHelper<T>(api, signal, options, route);
+            const { response } = error;
+            if (response) {
+                const { headers } = response;
+                retryAfterSeconds = headers ? parseInt(headers.get('retry-after') || '1', 10) : retryAfterSeconds;
+            }
+
+            await wait(retryAfterSeconds * SECOND);
+
+            return apiHelper<T>(api, signal, options, callingContext);
         }
 
-        esSentryReport(`apiHelper: ${route}`, { error });
+        esSentryReport(`apiHelper: ${callingContext}`, { error });
         return;
     }
 
