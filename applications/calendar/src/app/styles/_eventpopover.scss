@@ -1,21 +1,37 @@
-.eventpopover {
-	position: absolute;
-	z-index: 300;
-	width: rem(500);
-	max-width: 100%;
-	max-height: 100%;
-	transform-origin: 50%;
-	border-radius: var(--border-radius-medium);
-	box-shadow: var(--shadow-lifted);
-	background: var(--background-norm);
-	color: var(--text-norm);
-	animation: eventpopoverIn ease 0.15s;
-	animation-fill-mode: both;
-	// transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
+@import '~@proton/styles/scss/config';
 
-	&-title {
-		font-size: rem(22);
-	}
+.eventpopover {
+    position: absolute;
+    z-index: 300;
+    width: rem(500);
+    max-width: 100%;
+    max-height: 100%;
+    transform-origin: 50%;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-lifted);
+    background: var(--background-norm);
+    color: var(--text-norm);
+    animation: eventpopoverIn ease 0.15s;
+    animation-fill-mode: both;
+    padding: rem(24);
+    overflow: auto;
+    // transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
+
+    &-actions {
+        > * + * {
+            margin-left: rem(8);
+        }
+
+        &-separator {
+            background-color: var(--border-norm);
+            width: rem(1);
+            height: rem(28);
+        }
+    }
+
+    &-title {
+        font-size: rem(24);
+    }
 
 	&--full-width {
 		top: 0;
@@ -27,27 +43,39 @@
 		max-height: 100%;
 	}
 
-	.participant {
-		&-status {
-			position: absolute;
-			left: 100%;
-			top: 100%;
-			transform: translate3d(-50%, -50%, 0);
-		}
+    .participant {
+        height: rem(32);
 
+        &-text {
+            line-height: rem(20);
+        }
+
+        &-extra-text {
+            line-height: rem(16);
+        }
+
+        &:first-child,
+        &.is-organizer,
 		+ .participant {
-			margin-top: em(20); // from design
+			margin-top: em(12); // from design
 		}
-	}
-
-	.partstatIcon {
-		border: em(1) solid transparent;
-		width: em(16); // from design
-		height: em(16); // from design
 
 		&.needsAction {
 			border-color: var(--border-norm);
 		}
+
+		&-display {
+			border-radius: var(--border-radius-medium);
+		}
+	}
+
+	.partstatIcon {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		transform: translate3d(50%, 50%, 0);
+		padding: rem(2);
+		border: rem(1) solid var(--background-norm);
 	}
 
 	.tabs {

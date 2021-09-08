@@ -69,6 +69,6 @@ export const getOrganizerDisplayData = (
     }
     const { displayName } = displayNameEmailMap[canonicalEmail] || {};
     const name = displayName || cn || email;
-    const title = name === email ? email : `${name} (${email})`;
+    const title = name === email ? email : `${name} <${email}>`;
     return { name, title };
 };
