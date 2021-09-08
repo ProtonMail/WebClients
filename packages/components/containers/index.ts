@@ -24,6 +24,7 @@ export * from './invoices';
 export * from './items';
 export * from './keys';
 export * from './labels';
+export * from './layout';
 export * from './layouts';
 export * from './login';
 export * from './logs';
