@@ -21,7 +21,7 @@ enum STEPS {
 interface Props {
     confirmStep?: boolean;
     onClose?: () => void;
-    onSuccess: (data?: any) => void;
+    onSuccess: () => void;
 }
 
 const GenerateMnemonicModal = (props: Props) => {

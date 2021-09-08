@@ -17,7 +17,7 @@ enum STEPS {
 
 interface Props {
     onClose?: () => void;
-    onSuccess: (data?: any) => void;
+    onSuccess: () => void;
 }
 
 const DisableMnemonicModal = (props: Props) => {
