@@ -57,3 +57,5 @@ export const useCalendarBootstrap = (calendarID?: string) => {
     }
     return useCachedModelResult(cache.get(KEY), calendarID, getCalendarBootstrap);
 };
+
+export default useGetCalendarBootstrap;
