@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-unresolved, import/no-webpack-loader-syntax
-import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium, isIos } from '@proton/shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
@@ -60,7 +58,13 @@ export async function initDownloadSW() {
     if (isUnsupported()) {
         throw new Error('Saving file via download is unsupported by this browser');
     }
-    await registerServiceWorker({ scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}` });
+    await navigator.serviceWorker.register(
+        /* webpackChunkName: "downloadSW" */
+        new URL('./downloadSW', import.meta.url),
+        {
+            scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}`,
+        }
+    );
     serviceWorkerKeepAlive();
 }
 
