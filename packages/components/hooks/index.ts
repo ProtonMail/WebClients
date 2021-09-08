@@ -90,6 +90,7 @@ export { default as useProductPayerPeriod } from './useProductPayerPeriod';
 export { default as usePromiseResult } from './usePromiseResult';
 export { default as useSearch } from './useSearch';
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
+export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useStep } from './useStep';
 export { default as useSubscription } from './useSubscription';
 export { default as useSvgGraphicsBbox } from './useSvgGraphicsBbox';
