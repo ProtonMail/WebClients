@@ -15,6 +15,7 @@ interface Props {
     onOpen?: () => void;
     noMaxSize?: boolean;
     disabled?: boolean;
+    originalPlacement?: string;
     [rest: string]: any;
 }
 
@@ -27,6 +28,7 @@ const SquireToolbarDropdown = ({
     noMaxSize,
     autoClose = true,
     disabled = false,
+    originalPlacement = 'bottom',
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -67,6 +69,7 @@ const SquireToolbarDropdown = ({
                 id={uid}
                 autoClose={autoClose}
                 autoCloseOutside={autoClose}
+                originalPlacement={originalPlacement}
                 isOpen={isOpen}
                 noMaxSize={noMaxSize}
                 anchorRef={anchorRef}

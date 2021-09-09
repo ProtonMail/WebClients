@@ -12,13 +12,11 @@ import {
 } from 'react';
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
-
 import { classnames } from '../../helpers';
 import EditorToolbar from './toolbar/SquireToolbar';
 import SquireIframe from './SquireIframe';
-import { SquireType } from './squireConfig';
 import { setTextDirectionWithoutFocus, insertImage, clearUndoHistory } from './squireActions';
-import { SquireEditorMetadata } from './interface';
+import { FontData, SquireEditorMetadata, SquireType } from './interface';
 
 import './SquireEditor.scss';
 
@@ -42,6 +40,7 @@ export interface SquireEditorRef {
 }
 
 interface Props {
+    id?: string;
     className?: string;
     placeholder?: string;
     metadata?: Partial<SquireEditorMetadata>;
@@ -56,7 +55,7 @@ interface Props {
     onAddImages?: (files: File[]) => void;
     toolbarMoreDropdownExtension?: ReactNode;
     keydownHandler?: (e: KeyboardEvent) => void;
-    id?: string;
+    defaultFont?: FontData;
 }
 
 /**
@@ -68,6 +67,7 @@ interface Props {
  */
 const SquireEditor = (
     {
+        id,
         className,
         placeholder,
         metadata: inputMetadata = defaultMetadata,
@@ -82,7 +82,7 @@ const SquireEditor = (
         onAddImages = noop,
         toolbarMoreDropdownExtension = null,
         keydownHandler,
-        id,
+        defaultFont,
     }: Props,
     ref: Ref<SquireEditorRef>
 ) => {
@@ -185,6 +185,7 @@ const SquireEditor = (
                         onEllipseClick={onEllipseClick}
                         data-test-id="composer:body"
                         keydownHandler={keydownHandler}
+                        defaultFont={defaultFont}
                     />
                 )}
             </div>
@@ -196,6 +197,7 @@ const SquireEditor = (
                 editorReady={editorReady}
                 onAddImages={onAddImages}
                 moreDropdownExtension={toolbarMoreDropdownExtension}
+                defaultFont={defaultFont}
             />
         </div>
     );

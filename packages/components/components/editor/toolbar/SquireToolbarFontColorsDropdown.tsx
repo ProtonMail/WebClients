@@ -1,12 +1,11 @@
 import { MutableRefObject, useState, useEffect } from 'react';
 import { c } from 'ttag';
-
 import Icon from '../../icon/Icon';
 import ColorSelector from '../../color/ColorSelector';
-
-import { SquireType, DEFAULT_FONT_COLOR, DEFAULT_BACKGROUND, FONT_COLORS } from '../squireConfig';
+import { DEFAULT_FONT_COLOR, DEFAULT_BACKGROUND, FONT_COLORS } from '../squireConfig';
 import { getColorsAtCursor, listenToCursor } from '../squireActions';
 import SquireToolbarDropdown from './SquireToolbarDropdown';
+import { SquireType } from '../interface';
 
 interface Props {
     squireRef: MutableRefObject<SquireType>;
