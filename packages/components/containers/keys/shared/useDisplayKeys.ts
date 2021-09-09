@@ -15,7 +15,7 @@ interface ParsedKey {
     Key: Key;
     privateKey?: OpenPGPKey;
     fingerprint: string;
-    algorithmInfo: algorithmInfo;
+    algorithmInfos: algorithmInfo[];
     isDecrypted: boolean;
 }
 
@@ -37,7 +37,8 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                     return {
                         Key,
                         fingerprint: privateKey?.getFingerprint() || '',
-                        algorithmInfo: (privateKey?.getAlgorithmInfo() as algorithmInfo) || { algorithm: '' },
+                        algorithmInfos:
+                            privateKey?.getKeys().map((key) => key.getAlgorithmInfo() as algorithmInfo) || [],
                         isDecrypted: privateKey?.isDecrypted() || false,
                     };
                 })
