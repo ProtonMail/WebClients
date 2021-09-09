@@ -9,6 +9,7 @@
 -   Improved keyboard shortcuts when navigating interfaces to pick a date and when editing contacts.
 -   Improved the error messages and instructions when sending a message to a recipient, whose encryption key is invalid.
 -   Improved the error message when trying to include an image to the auto reply option, while configuring an automated filter.
+-   Show calendar icon when email contains an invitation
 
 ### Bug fixes
 
