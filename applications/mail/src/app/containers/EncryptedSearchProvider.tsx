@@ -1054,6 +1054,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         highlightMetadata,
         shouldHighlight,
         isSearchResult,
+        esDelete,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

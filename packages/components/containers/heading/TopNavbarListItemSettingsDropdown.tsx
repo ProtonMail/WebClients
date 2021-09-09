@@ -34,7 +34,9 @@ const TopNavbarListItemSettingsButton = forwardRef(
     }
 );
 
-interface Props extends ComponentPropsWithoutRef<typeof AppLink> {}
+interface Props extends ComponentPropsWithoutRef<typeof AppLink> {
+    children?: React.ReactNode;
+}
 
 const TopNavbarListItemSettingsDropdown = (props: Props) => {
     const { APP_NAME } = useConfig();
@@ -69,14 +71,14 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
         createModal(<MailComposerModeModal />);
     };
 
-    const { to, toApp } = props;
+    const { to, toApp, children } = props;
 
     return (
         <SimpleDropdown
             as={TopNavbarListItemSettingsButton}
             originalPlacement="bottom-left"
             hasCaret={false}
-            dropdownStyle={{ '--min-width': '16em', '--max-height': 'none' }}
+            dropdownStyle={{ '--min-width': '18em', '--max-height': 'none' }}
         >
             <DropdownMenu>
                 <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">
@@ -151,6 +153,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                         </DropdownMenuButton>
                     </>
                 )}
+
+                {children}
             </DropdownMenu>
         </SimpleDropdown>
     );
