@@ -224,7 +224,6 @@ const EventPopover = ({
                 <Alert className="mb1" type="error">
                     {getEventErrorMessage(eventReadError)}
                 </Alert>
-                {!isSubscribedCalendar && <PopoverFooter>{deleteButton}</PopoverFooter>}
             </PopoverContainer>
         );
     }
