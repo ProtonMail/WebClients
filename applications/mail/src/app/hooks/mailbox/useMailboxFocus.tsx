@@ -1,4 +1,4 @@
-import { useEffect, useState, MutableRefObject, useRef } from 'react';
+import { useEffect, useState, MutableRefObject, useRef, useCallback } from 'react';
 import { useHandler } from '@proton/components';
 
 export interface MailboxFocusContext {
@@ -12,7 +12,10 @@ export interface MailboxFocusContext {
 export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComposerOpened }: MailboxFocusContext) => {
     const [focusIndex, setFocusIndex] = useState<number>();
 
-    const getFocusedId = () => (focusIndex !== undefined ? elementIDs[focusIndex] : undefined);
+    const getFocusedId = useCallback(
+        () => (focusIndex !== undefined ? elementIDs[focusIndex] : undefined),
+        [focusIndex]
+    );
 
     const labelIDRef = useRef(labelID);
     const focusedIDRef = useRef(getFocusedId());
@@ -32,7 +35,7 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
         }
     };
 
-    const focusOnLastMessage = () => {
+    const focusOnLastMessage = useCallback(() => {
         const messages = document.querySelectorAll('[data-shortcut-target="message-container"]');
         if (messages.length) {
             const lastMessage = messages[messages.length - 1] as HTMLElement;
@@ -42,7 +45,7 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
         }
         const trashWarning = document.querySelector('[data-shortcut-target="trash-warning"]') as HTMLElement;
         trashWarning?.focus();
-    };
+    }, []);
 
     const focusOnElementByID = (elementID?: string) => {
         if (!elementID) {

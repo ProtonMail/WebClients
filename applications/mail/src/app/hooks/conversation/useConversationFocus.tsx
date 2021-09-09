@@ -1,18 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const useConversationFocus = (messages: Message[]) => {
     const [focusIndex, setFocusIndex] = useState<number>();
 
-    const getFocusedMessage = () => (focusIndex !== undefined ? messages[focusIndex] : undefined);
-    const getFocusedId = () => getFocusedMessage()?.ID;
+    const getFocusedId = useCallback(
+        () => (focusIndex !== undefined ? messages[focusIndex] : undefined)?.ID,
+        [focusIndex, messages]
+    );
 
-    const handleFocus = (index: number | undefined) => {
-        if (index === focusIndex) {
-            return;
-        }
-        setFocusIndex(index);
-    };
+    const handleFocus = useCallback(
+        (index: number | undefined) => {
+            if (index === focusIndex) {
+                return;
+            }
+            setFocusIndex(index);
+        },
+        [focusIndex]
+    );
 
     useEffect(() => {
         if (focusIndex === undefined) {
