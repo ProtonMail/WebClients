@@ -47,7 +47,7 @@ export const usePromise = <P>() => {
                 reject(error);
             };
         });
-        promiseRef.current = { promise, resolver, rejecter, renew, isPending: true };
+        Object.assign(promiseRef.current, { promise, resolver, rejecter, renew, isPending: true });
         if (isMounted()) {
             setFakeState({});
         }
