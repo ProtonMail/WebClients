@@ -7,6 +7,7 @@ import { MessageExtended } from '../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
 import { MAX_EXPIRATION_TIME } from '../../constants';
 import { MessageChange } from './Composer';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 // expiresIn value is in seconds and default is 7 days
 const ONE_WEEK = 3600 * 24 * 7;
@@ -37,6 +38,9 @@ interface Props {
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
+    const messageCache = useMessageCache();
+    const messageFromCache = message?.localID ? messageCache.get(message?.localID) : undefined;
+
     const [uid] = useState(generateUID('password-modal'));
 
     const values = initValues(message);
@@ -84,6 +88,9 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         }
 
         onChange({ expiresIn: valueInHours * 3600 });
+        if (messageFromCache) {
+            messageFromCache.expiresIn = valueInHours * 3600;
+        }
         onClose();
     };
 
