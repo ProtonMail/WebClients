@@ -438,7 +438,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
               );
     const progressBar = (
         <Progress
-            value={progressValue}
+            value={progressValue || 0}
             aria-describedby="timeRemaining"
             className={classnames([
                 'mt1 mb1 flex-item-fluid',

@@ -283,7 +283,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 beforeFirstLoad: false,
                 invalidated: false,
                 pendingRequest: false,
-                page: inputPage || page,
+                page: inputPage,
                 total: Total,
                 pages,
                 elements: toMap(Elements, 'ID'),

@@ -1,4 +1,4 @@
-import { Icon, DropdownMenu, DropdownMenuButton, ToolbarButton } from '@proton/components';
+import { Icon, DropdownMenu, DropdownMenuButton, EllipsisLoader, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
 import { useLocation } from 'react-router';
 import ToolbarDropdown from './ToolbarDropdown';
@@ -22,9 +22,12 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
     const searchParameters = extractSearchParameters(location);
     const isSearch = testIsSearch(searchParameters);
 
-    const useLoadMore =
-        isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial && !isSearching;
-    const loadMore = (
+    const useLoadMore = isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial;
+    const loadMore = isSearching ? (
+        <div className="flex flex-justify-center">
+            <EllipsisLoader />
+        </div>
+    ) : (
         <DropdownMenuButton
             className="text-underline"
             onClick={() => onPage(total)}

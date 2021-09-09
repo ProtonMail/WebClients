@@ -1,34 +1,98 @@
-import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { getItem, setItem, removeItem } from '@proton/shared/lib/helpers/storage';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { IDBPDatabase, openDB } from 'idb';
-import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
-import { getMessageFromDB } from './esSync';
-import { sizeOfCachedMessage } from './esCache';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { IDBPDatabase, openDB, deleteDB } from 'idb';
+import { EncryptedSearchDB } from '../../models/encryptedSearch';
+import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
+
+/**
+ * Helpers to work with ES blobs in localStorage
+ */
+const getESItem = (userID: string, blobName: string) => getItem(`ES:${userID}:${blobName}`);
+const setESItem = (userID: string, blobName: string, blobValue: string) =>
+    setItem(`ES:${userID}:${blobName}`, blobValue);
+const removeESItem = (userID: string, blobName: string) => removeItem(`ES:${userID}:${blobName}`);
+export const removeESFlags = (userID: string) => {
+    Object.keys(window.localStorage).forEach((key) => {
+        const chunks = key.split(':');
+        if (chunks[0] === 'ES' && chunks[1] === userID) {
+            removeItem(key);
+        }
+    });
+};
+// Getters
+export const getES = {
+    Key: (userID: string) => getESItem(userID, 'Key'),
+    Event: (userID: string) => getESItem(userID, 'Event'),
+    Progress: (userID: string) => getESItem(userID, 'BuildProgress'),
+    Size: (userID: string) => getESItem(userID, 'SizeIDB'),
+    Pause: (userID: string) => getESItem(userID, 'Pause'),
+    Enabled: (userID: string) => getESItem(userID, 'ESEnabled'),
+};
+// Setters
+export const setES = {
+    Key: (userID: string, blobValue: string) => setESItem(userID, 'Key', blobValue),
+    Event: (userID: string, blobValue: string) => setESItem(userID, 'Event', blobValue),
+    Progress: (userID: string, blobValue: string) => setESItem(userID, 'BuildProgress', blobValue),
+    Size: (userID: string, blobValue: string) => setESItem(userID, 'SizeIDB', blobValue),
+    Pause: (userID: string) => setESItem(userID, 'Pause', 'true'),
+    Enabled: (userID: string) => setESItem(userID, 'ESEnabled', 'true'),
+};
+// Removers
+export const removeES = {
+    Key: (userID: string) => removeESItem(userID, 'Key'),
+    Event: (userID: string) => removeESItem(userID, 'Event'),
+    Progress: (userID: string) => removeESItem(userID, 'BuildProgress'),
+    Size: (userID: string) => removeESItem(userID, 'SizeIDB'),
+    Pause: (userID: string) => removeESItem(userID, 'Pause'),
+    Enabled: (userID: string) => removeESItem(userID, 'ESEnabled'),
+};
+
+/**
+ * Helpers to work with ES IndexedDB
+ */
+export const openESDB = async (userID: string) => openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+export const deleteESDB = async (userID: string) => deleteDB(`ES:${userID}:DB`);
+export const createESDB = async (userID: string) => {
+    return openDB<EncryptedSearchDB>(`ES:${userID}:DB`, 1, {
+        upgrade(esDB) {
+            esDB.createObjectStore('messages', { keyPath: 'ID' }).createIndex('byTime', ['Time', 'Order'], {
+                unique: true,
+            });
+        },
+    });
+};
+
+/**
+ * Helper to send ES-related sentry reports
+ */
+export const esSentryReport = (errorMessage: string, extra?: any) => {
+    captureMessage(`[EncryptedSearch] ${errorMessage}`, { extra });
+};
 
 /**
  * Check whether the index key exists
  */
-export const indexKeyExists = (userID: string) => !!getItem(`ES:${userID}:Key`);
+export const indexKeyExists = (userID: string) => !!getES.Key(userID);
 
 /**
  * Check whether indexing is paused
  */
-export const isPaused = (userID: string) => !!getItem(`ES:${userID}:Pause`);
+export const isPaused = (userID: string) => !!getES.Pause(userID);
 
 /**
  * Check whether a recovery point exists
  */
-export const isRecoveryNeeded = (userID: string) => !!getItem(`ES:${userID}:Recover`);
+export const isRecoveryNeeded = (userID: string) => !!getES.Progress(userID);
 
 /**
  * Check whether a previously started indexing process has terminated successfully
  */
-export const isDBReadyAfterBuilding = (userID: string) =>
-    !getItem(`ES:${userID}:BuildProgress`) && !getItem(`ES:${userID}:Recover`);
+export const isDBReadyAfterBuilding = (userID: string) => !isRecoveryNeeded(userID);
 
 /**
  * Check whether a key exists and the corresponding indexing process has terminated successfully
@@ -38,24 +102,23 @@ export const wasIndexingDone = (userID: string) => indexKeyExists(userID) && isD
 /**
  * Check whether the user has enabled encrypted search
  */
-export const isESEnabled = (userID: string) => !!getItem(`ES:${userID}:ESEnabled`);
+export const isESEnabled = (userID: string) => !!getES.Enabled(userID);
 
 /**
  * Fetch the oldest message from IDB
  */
 export const getOldestMessage = async (esDB: IDBPDatabase<EncryptedSearchDB>) => {
-    const oldestMessage: StoredCiphertext = (await esDB.getAllFromIndex('messages', 'byTime', undefined, 1))[0];
-    return oldestMessage;
+    return esDB.getFromIndex('messages', 'byTime', IDBKeyRange.lowerBound([0, 0]));
 };
 
 /**
  * Fetch Time and Order of the oldest message from IDB
  */
 export const getOldestTimePoint = async (userID: string) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const oldestMessage = await getOldestMessage(esDB);
     esDB.close();
-    return [oldestMessage.Time, oldestMessage.Order] as [number, number];
+    return [oldestMessage?.Time || 0, oldestMessage?.Order || 0] as [number, number];
 };
 
 /**
@@ -70,7 +133,7 @@ export const getOldestTime = async (userID: string, correctionFactor?: number) =
  * Fetch the number of messages in IDB
  */
 export const getNumMessagesDB = async (userID: string) => {
-    const esDB = await openDB(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const count = await esDB.count('messages');
     esDB.close();
     return count;
@@ -81,7 +144,7 @@ export const getNumMessagesDB = async (userID: string) => {
  * excluding those that have changed since then
  */
 export const getTotalFromBuildProgress = (userID: string) => {
-    const buildBlob = getItem(`ES:${userID}:BuildProgress`);
+    const buildBlob = getES.Progress(userID);
     if (!buildBlob) {
         return 0;
     }
@@ -93,7 +156,7 @@ export const getTotalFromBuildProgress = (userID: string) => {
  * Fetch the indexing progress from BuildProgress
  */
 export const getProgressFromBuildProgress = (userID: string) => {
-    const buildBlob = getItem(`ES:${userID}:BuildProgress`);
+    const buildBlob = getES.Progress(userID);
     if (!buildBlob) {
         return 0;
     }
@@ -106,20 +169,28 @@ export const getProgressFromBuildProgress = (userID: string) => {
 /**
  * Set the number of messages already indexed in BuildProgress and save it to localStorage
  */
-export const setCurrentFromBuildProgress = (userID: string, currentMessages: number) => {
-    const buildBlob = getItem(`ES:${userID}:BuildProgress`);
+export const setCurrentToBuildProgress = (userID: string, currentMessages: number) => {
+    const buildBlob = getES.Progress(userID);
     if (!buildBlob) {
         return;
     }
     const { totalMessages }: { totalMessages: number } = JSON.parse(buildBlob);
-    setItem(`ES:${userID}:BuildProgress`, JSON.stringify({ totalMessages, currentMessages }));
+    // Since messages are stored to IDB in batches, we only store up the current
+    // number modulo the batch size
+    setES.Progress(
+        userID,
+        JSON.stringify({
+            totalMessages,
+            currentMessages: Math.floor(currentMessages / ES_MAX_PARALLEL_MESSAGES) * ES_MAX_PARALLEL_MESSAGES,
+        })
+    );
 };
 
 /**
  * Read the rolling estimated size of IDB
  */
 export const getSizeIDB = (userID: string) => {
-    const sizeBlob = getItem(`ES:${userID}:SizeIDB`);
+    const sizeBlob = getES.Size(userID);
     if (!sizeBlob) {
         return 0;
     }
@@ -136,28 +207,7 @@ export const getSizeIDB = (userID: string) => {
 export const updateSizeIDB = (userID: string, addend: number) => {
     const sizeIDB = getSizeIDB(userID);
     const newSize = sizeIDB + addend;
-    setItem(`ES:${userID}:SizeIDB`, `${newSize}`);
-};
-
-/**
- * Remove a single message's size from the rolling estimated size of IDB
- */
-export const removeMessageSize = async (
-    userID: string,
-    esDB: IDBPDatabase<EncryptedSearchDB>,
-    ID: string,
-    indexKey: CryptoKey
-) => {
-    const message = await getMessageFromDB(ID, indexKey, esDB);
-    if (!message) {
-        // If the message is not in IndexedDB, it means the latter is only partial for
-        // space constraints and the message was too old to fit. In this case, any update
-        // is ignored
-        return -1;
-    }
-    const size = sizeOfCachedMessage(message);
-    updateSizeIDB(userID, -size);
-    return size;
+    setES.Size(userID, `${newSize}`);
 };
 
 /**
@@ -180,7 +230,7 @@ export const canUseES = async (userID: string) => {
     if (!indexKeyExists) {
         return false;
     }
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const isIntact = esDB.objectStoreNames.contains('messages');
     esDB.close();
     return isIntact;

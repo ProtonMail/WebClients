@@ -39,20 +39,18 @@ export type ESBaseMessage = Pick<
     | 'LabelIDs'
 >;
 
-export interface CachedMessage extends ESBaseMessage {
+export interface ESMessage extends ESBaseMessage {
     decryptedBody?: string;
     decryptedSubject?: string;
     decryptionError: boolean;
 }
-
-export type MessageForSearch = Omit<CachedMessage, 'decryptionError' | 'decryptedSubject'>;
 
 export interface AesGcmCiphertext {
     iv: Uint8Array;
     ciphertext: ArrayBuffer;
 }
 
-export interface StoredCiphertext extends Pick<MessageForSearch, 'ID' | 'LabelIDs' | 'Time' | 'Order'> {
+export interface StoredCiphertext extends Pick<ESMessage, 'ID' | 'LabelIDs' | 'Time' | 'Order'> {
     aesGcmCiphertext: AesGcmCiphertext;
 }
 
@@ -79,15 +77,14 @@ export interface NormalisedSearchParams extends Omit<ElementsCacheParams, 'wildc
     decryptionError?: boolean;
 }
 
-export type ESSetsElementsCache = (Elements: Element[], page?: number) => void;
+export type ESSetsElementsCache = (Elements: Element[], page: number) => void;
 
 export interface ESStatus {
-    permanentResults: MessageForSearch[];
+    permanentResults: ESMessage[];
     setElementsCache: ESSetsElementsCache;
     labelID: string;
     lastEmail: LastEmail | undefined;
     previousNormSearchParams: NormalisedSearchParams | undefined;
-    page: number;
     cachedIndexKey: CryptoKey | undefined;
     dbExists: boolean;
     isBuilding: boolean;
@@ -100,7 +97,7 @@ export interface ESStatus {
 }
 
 export interface ESCache {
-    esCache: CachedMessage[];
+    esCache: ESMessage[];
     cacheSize: number;
     isCacheLimited: boolean;
     isCacheReady: boolean;
@@ -134,7 +131,7 @@ export interface ESIndexingState {
 export interface UncachedSearchOptions {
     incrementMessagesSearched?: () => void;
     messageLimit?: number;
-    setCache?: (newResults: MessageForSearch[]) => void;
+    setCache?: (newResults: ESMessage[]) => void;
     beginOrder?: number;
     lastEmailTime?: number;
     abortSearchingRef?: React.MutableRefObject<AbortController>;
@@ -148,7 +145,7 @@ export type IncrementSearch = (
     page: number,
     setElementsCache: ESSetsElementsCache,
     shouldLoadMore: boolean
-) => Promise<boolean>;
+) => Promise<void>;
 
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 
