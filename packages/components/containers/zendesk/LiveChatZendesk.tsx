@@ -91,7 +91,7 @@ export const useCanEnableChat = (user: UserModel) => {
 
 export interface ZendeskRef {
     run: (data: object) => void;
-    show: () => void;
+    toggle: () => void;
 }
 
 interface Props {
@@ -100,10 +100,11 @@ interface Props {
     name?: string;
     email?: string;
     onLoaded: () => void;
+    onUnavailable: () => void;
     locale: string;
 }
 
-const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale }: Props) => {
+const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnavailable, locale }: Props) => {
     const { API_URL } = useConfig();
     const [style, setStyle] = useState({
         position: 'absolute',
@@ -114,8 +115,9 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
         ...CLOSED_SIZE,
     });
     const [state, setState] = useState({ loaded: false, connected: false });
+    const stateRef = useRef({ loaded: false, connected: false });
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const pendingLoadingRef = useRef<{ show?: boolean; locale?: string }>({});
+    const pendingLoadingRef = useRef<{ toggle?: boolean; locale?: string }>({});
 
     const iframeUrl = getIframeUrl(API_URL, zendeskKey);
 
@@ -124,20 +126,25 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
 
     const handleRun = (args: any) => {
         const contentWindow = iframeRef.current?.contentWindow;
-        if (!contentWindow || !state.loaded) {
+        if (!contentWindow || !stateRef.current.loaded) {
             return;
         }
         contentWindow.postMessage({ args }, targetOrigin);
     };
 
-    const handleShow = () => {
-        pendingLoadingRef.current.show = true;
+    const handleToggle = () => {
+        // Using the ref instead of state to not have to wait for re-render
+        if (!stateRef.current.connected) {
+            onUnavailable();
+            return;
+        }
+        pendingLoadingRef.current.toggle = true;
         handleRun(['webWidget', 'toggle']);
     };
 
     useImperativeHandle(zendeskRef, () => ({
         run: handleRun,
-        show: handleShow,
+        toggle: handleToggle,
     }));
 
     useEffect(() => {
@@ -167,8 +174,8 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
         }
         const oldPending = pendingLoadingRef.current;
         pendingLoadingRef.current = {};
-        if (oldPending.show) {
-            handleShow();
+        if (oldPending.toggle) {
+            handleToggle();
         }
     }, [state.loaded]);
 
@@ -228,10 +235,12 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
                     sendMessageWithReply<any>(contentWindow, ['webWidget:get', 'chat:department', departmentName])
                         .then((result) => {
                             const connected = result?.status === 'online';
+                            stateRef.current = { loaded: true, connected };
                             setState({ loaded: true, connected });
                             onLoaded();
                         })
                         .catch(() => {
+                            stateRef.current = { loaded: true, connected: false };
                             setState({ loaded: true, connected: false });
                             onLoaded();
                         });
@@ -243,6 +252,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
                         return;
                     }
                     const connected = chatDepartment?.status === 'online';
+                    stateRef.current = { loaded: true, connected };
                     setState({ loaded: true, connected });
                 }
             }
@@ -281,13 +291,15 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, locale
     }, []);
 
     return (
-        <iframe
-            title="Zendesk"
-            src={src}
-            style={style}
-            ref={iframeRef}
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-        />
+        <div className={!state.connected ? 'hidden' : ''}>
+            <iframe
+                title="Zendesk"
+                src={src}
+                style={style}
+                ref={iframeRef}
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+            />
+        </div>
     );
 };
 
@@ -313,7 +325,7 @@ const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
 
     useImperativeHandle(zendeskRef, () => ({
         run: (...args) => actualZendeskRef.current?.run(...args),
-        show: (...args) => {
+        toggle: (...args) => {
             if (getIsActiveInAnotherWindow()) {
                 createNotification({
                     text: c('Info')
@@ -322,7 +334,7 @@ const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
                 });
                 return;
             }
-            actualZendeskRef.current?.show(...args);
+            actualZendeskRef.current?.toggle(...args);
         },
     }));
 

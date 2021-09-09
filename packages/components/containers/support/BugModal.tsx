@@ -31,7 +31,7 @@ export interface Props {
     username?: string;
     email?: string;
     onClose?: () => void;
-    mode?: 'chat-unavailable';
+    mode?: 'chat-unavailable' | 'chat-no-agents';
 }
 
 const BugModal = ({ onClose = noop, username: Username = '', email, mode, ...rest }: Props) => {
@@ -188,6 +188,9 @@ const BugModal = ({ onClose = noop, username: Username = '', email, mode, ...res
             {mode === 'chat-unavailable' ? (
                 <Alert className="mb1" type="warning">{c('Warning')
                     .t`Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.`}</Alert>
+            ) : mode === 'chat-no-agents' ? (
+                <Alert className="mb1" type="warning">{c('Warning')
+                    .t`Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.`}</Alert>
             ) : (
                 <>
                     <Alert className="mb1">{c('Info')
