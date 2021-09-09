@@ -1,26 +1,26 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { IDBPDatabase, openDB } from 'idb';
-import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
+import { IDBPDatabase } from 'idb';
+import { endOfDay, endOfToday, startOfDay, sub } from 'date-fns';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Element } from '../../models/element';
 import {
-    CachedMessage,
+    ESMessage,
     EncryptedSearchDB,
     ESCache,
     GetUserKeys,
     LastEmail,
-    MessageForSearch,
     NormalisedSearchParams,
     StoredCiphertext,
     UncachedSearchOptions,
 } from '../../models/encryptedSearch';
 import { ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
-import { getOldestTime } from './esUtils';
+import { getOldestTime, openESDB } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
+
 /**
  * Normalise keyword
  */
@@ -99,7 +99,7 @@ export const normaliseSearchParams = (
 /**
  * Check if keywords are in subject, Sender, body, ToList, CCList or BCCList
  */
-const testKeywords = (normalisedKeywords: string[], messageToSearch: CachedMessage, addresses: string[]) => {
+const testKeywords = (normalisedKeywords: string[], messageToSearch: ESMessage, addresses: string[]) => {
     const { Subject, decryptedBody, decryptedSubject } = messageToSearch;
     const subject = decryptedSubject || Subject;
 
@@ -121,7 +121,7 @@ const testKeywords = (normalisedKeywords: string[], messageToSearch: CachedMessa
  */
 export const testMetadata = (
     normalisedSearchParams: NormalisedSearchParams,
-    messageToSearch: CachedMessage,
+    messageToSearch: ESMessage,
     recipients: string[],
     sender: string[]
 ) => {
@@ -151,7 +151,7 @@ export const testMetadata = (
  */
 export const applySearch = (
     normalisedSearchParams: NormalisedSearchParams,
-    messageToSearch: CachedMessage,
+    messageToSearch: ESMessage,
     incrementMessagesSearched?: () => void
 ) => {
     const { Sender } = messageToSearch;
@@ -186,10 +186,7 @@ export const applySearch = (
  */
 export const getTimeLimits = (prevStart: number, begin: number | undefined, end: number | undefined) => {
     const endTime = prevStart ? prevStart - 1 : end || roundMilliseconds(endOfToday().getTime());
-    const startTime = Math.max(
-        begin || 0,
-        roundMilliseconds(startOfMonth(sub(endTime * 1000, { months: 1 })).getTime())
-    );
+    const startTime = Math.max(begin || 0, roundMilliseconds(startOfDay(sub(endTime * 1000, { days: 1 })).getTime()));
 
     const lower: [number, number] = [startTime, 0];
     const upper: [number, number] = [endTime, Number.MAX_SAFE_INTEGER];
@@ -198,15 +195,6 @@ export const getTimeLimits = (prevStart: number, begin: number | undefined, end:
         lower,
         upper,
     };
-};
-
-/**
- * Split a CachedMessage into a MessageForSearch and other fields
- */
-export const splitCachedMessage = (cachedMessage: CachedMessage) => {
-    const { decryptedSubject, decryptionError, ...otherFields } = cachedMessage;
-    const messageForSearch: MessageForSearch = { ...otherFields };
-    return messageForSearch;
 };
 
 /**
@@ -258,9 +246,9 @@ export const uncachedSearchAsc = async (
     normalisedSearchParams: NormalisedSearchParams,
     options: UncachedSearchOptions
 ) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const { incrementMessagesSearched, messageLimit, setCache, beginOrder, abortSearchingRef } = options;
-    const resultsArray: MessageForSearch[] = [];
+    const resultsArray: ESMessage[] = [];
 
     let lastEmail: LastEmail | undefined;
     let lowerBound = [normalisedSearchParams.begin || (await getOldestTime(userID)), beginOrder || 0];
@@ -289,12 +277,8 @@ export const uncachedSearchAsc = async (
                     return;
                 }
                 const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
-                if (!messageToSearch) {
-                    return;
-                }
                 if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-                    const messageForSearch = splitCachedMessage(messageToSearch);
-                    resultsArray.push(messageForSearch);
+                    resultsArray.push(messageToSearch);
                 }
             })
         );
@@ -327,9 +311,9 @@ export const uncachedSearchDesc = async (
     normalisedSearchParams: NormalisedSearchParams,
     options: UncachedSearchOptions
 ) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     const { incrementMessagesSearched, messageLimit, beginOrder, setCache, abortSearchingRef } = options;
-    const resultsArray: MessageForSearch[] = [];
+    const resultsArray: ESMessage[] = [];
 
     const queryStart = await initialiseQuery(
         userID,
@@ -355,12 +339,8 @@ export const uncachedSearchDesc = async (
                     return;
                 }
                 const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
-                if (!messageToSearch) {
-                    return;
-                }
                 if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-                    const messageForSearch = splitCachedMessage(messageToSearch);
-                    resultsArray.push(messageForSearch);
+                    resultsArray.push(messageToSearch);
                 }
             })
         );
@@ -388,20 +368,19 @@ export const uncachedSearchDesc = async (
  * Perfom an cached search, i.e. over the given messages only
  */
 export const cachedSearch = (
-    esCache: CachedMessage[],
+    esCache: ESMessage[],
     normalisedSearchParams: NormalisedSearchParams,
     incrementMessagesSearched: () => void,
     abortSearchingRef: React.MutableRefObject<AbortController>
 ) => {
-    const searchResults: MessageForSearch[] = [];
+    const searchResults: ESMessage[] = [];
 
-    esCache.forEach((messageToSearch: CachedMessage) => {
+    esCache.forEach((messageToSearch: ESMessage) => {
         if (abortSearchingRef.current.signal.aborted) {
             return;
         }
         if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-            const messageForSearch = splitCachedMessage(messageToSearch);
-            searchResults.push(messageForSearch);
+            searchResults.push(messageToSearch);
         }
     });
 
@@ -449,7 +428,7 @@ export const hybridSearch = async (
     setCache: (Elements: Element[]) => void,
     abortSearchingRef: React.MutableRefObject<AbortController>
 ) => {
-    let searchResults: MessageForSearch[] = [];
+    let searchResults: ESMessage[] = [];
     let isSearchPartial = false;
     let lastEmail: LastEmail | undefined;
     const isDescending = normalisedSearchParams.sort.desc;
@@ -459,7 +438,12 @@ export const hybridSearch = async (
     if (isDescending || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
         // searchResults is initialised with the first portion of cached results
         let lastLength = esCacheRef.current.esCache.length;
-        searchResults = cachedSearch(esCacheRef.current.esCache, normalisedSearchParams, incrementMessagesSearched, abortSearchingRef);
+        searchResults = cachedSearch(
+            esCacheRef.current.esCache,
+            normalisedSearchParams,
+            incrementMessagesSearched,
+            abortSearchingRef
+        );
         let resultsCounter = searchResults.length;
 
         // The first batch of results (if any) are shown only if the cache is still being built, or if it has finished
@@ -470,7 +454,7 @@ export const hybridSearch = async (
 
         // If the cache is still being built, incremental portions of cache are searched
         while (!esCacheRef.current.isCacheReady) {
-            if(abortSearchingRef.current.signal.aborted){
+            if (abortSearchingRef.current.signal.aborted) {
                 return {
                     searchResults,
                     isSearchPartial,
@@ -558,7 +542,7 @@ export const hybridSearch = async (
     if (shouldKeepSearching) {
         const remainingMessages = 2 * PAGE_SIZE - searchResults.length;
 
-        const setCacheIncremental = (newResults: MessageForSearch[]) => {
+        const setCacheIncremental = (newResults: ESMessage[]) => {
             setCache(searchResults.concat(newResults));
         };
 

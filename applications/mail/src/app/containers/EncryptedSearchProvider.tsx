@@ -10,14 +10,13 @@ import {
     useSubscribeEventManager,
     useUser,
 } from '@proton/components';
-import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EVENT_ACTIONS, SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { deleteDB } from 'idb';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';
+import { Element } from '../models/element';
 import {
     EncryptedSearch,
     EncryptedSearchFunctions,
@@ -27,13 +26,12 @@ import {
     HighlightMetadata,
     HighlightString,
     LastEmail,
-    MessageForSearch,
+    ESMessage,
     IsSearchResult,
     ESCache,
-    ESSetsElementsCache,
 } from '../models/encryptedSearch';
 import { defaultESCache, defaultESStatus, PAGE_SIZE } from '../constants';
-import { extractSearchParameters, filterFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
+import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../helpers/elements';
 import {
     indexKeyExists,
@@ -43,8 +41,14 @@ import {
     isESEnabled,
     wasIndexingDone,
     getTotalFromBuildProgress,
-    setCurrentFromBuildProgress,
+    setCurrentToBuildProgress,
     canUseES,
+    deleteESDB,
+    removeESFlags,
+    removeES,
+    setES,
+    getES,
+    esSentryReport,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -92,15 +96,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const abortSearchingRef = useRef<AbortController>(new AbortController());
     // Allow to track progress during indexing or refreshing
     const progressRecorderRef = useRef<[number, number]>([0, 0]);
-    // Allow to track progress during indexing or refreshing
+    // Allow to track progress during syncing
     const syncingEventsRef = useRef<Promise<void>>(Promise.resolve());
+    // Allow to track changes in page to set the elements list accordingly
+    const pageRef = useRef<number>(0);
 
     /**
      * Chain several synchronisations to account for events being fired when
      * previous ones are still being processed
      */
-    const addSyncing = (newPromise: Promise<void>) => {
-        syncingEventsRef.current = syncingEventsRef.current.then(() => newPromise);
+    const addSyncing = async (callback: () => Promise<void>) => {
+        syncingEventsRef.current = syncingEventsRef.current.then(() => callback());
     };
 
     /**
@@ -109,14 +115,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const esDelete = async () => {
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
-        removeItem(`ES:${userID}:Key`);
-        removeItem(`ES:${userID}:Event`);
-        removeItem(`ES:${userID}:BuildProgress`);
-        removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:Pause`);
-        removeItem(`ES:${userID}:ESEnabled`);
-        removeItem(`ES:${userID}:SizeIDB`);
-        return deleteDB(`ES:${userID}:DB`).catch(() => undefined);
+        removeESFlags(userID);
+        setESStatus(() => defaultESStatus);
+        return deleteESDB(userID);
     };
 
     /**
@@ -133,7 +134,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const dbCorruptError = async () => {
         await esDelete();
-        setESStatus(() => defaultESStatus);
         createNotification({
             text: c('Error').t`Please activate your content search again`,
             type: 'error',
@@ -190,14 +190,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         if (currentOption) {
             abortSearchingRef.current.abort();
-            removeItem(`ES:${userID}:ESEnabled`);
+            removeES.Enabled(userID);
         } else {
             // Every time ES is enabled, we reset sorting to avoid carrying on with SIZE sorting in
             // case it was previously used. SIZE sorting is not supported by ES
             if (testIsSearch(extractSearchParameters(location))) {
                 history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
             }
-            setItem(`ES:${userID}:ESEnabled`, 'true');
+            setES.Enabled(userID);
         }
 
         // If IDB was evicted by the browser in the meantime, we erase everything else too
@@ -314,7 +314,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         );
 
         if (searchChanged) {
-            setElementsCache(permanentResults);
+            setElementsCache(permanentResults, pageRef.current);
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -354,8 +354,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 indexKey,
                 getMessageKeys,
                 recordProgress,
-                messageCounts,
-                esCacheRef
+                messageCounts
             );
 
             if (!wasAlreadyRefreshing) {
@@ -378,7 +377,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // In case everything goes through, save the last event ID from which to
         // catch up the next time
         if (event.EventID) {
-            setItem(`ES:${userID}:Event`, event.EventID);
+            setES.Event(userID, event.EventID);
         }
 
         // In case many messages were removed from cache, fill the remaining space
@@ -403,6 +402,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         try {
             refreshEvent = await checkResfresh(indexKey, currentEvent, false);
         } catch (error) {
+            esSentryReport('catchUpFromEvent: checkResfresh', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -417,6 +417,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         try {
             await syncIndexedDB(eventToCheck, indexKey);
         } catch (error) {
+            esSentryReport('catchUpFromEvent: syncIndexedDB', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -436,7 +437,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const catchUpFromLS = async (indexKey: CryptoKey): Promise<void> => {
         const isIDBIntact = await canUseES(userID);
-        const storedEventID = getItem(`ES:${userID}:Event`);
+        const storedEventID = getES.Event(userID);
         if (!isIDBIntact || !storedEventID) {
             await dbCorruptError();
             return;
@@ -473,12 +474,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // refresh would be triggered
             if (refreshEvent) {
                 if (refreshEvent.EventID) {
-                    setItem(`ES:${userID}:Event`, refreshEvent.EventID);
+                    setES.Event(userID, refreshEvent.EventID);
                 } else {
                     throw new Error('Refresh event has no ID');
                 }
             }
         } catch (error) {
+            esSentryReport('catchUpFromLS: checkResfresh', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -512,6 +514,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     newEventsToCheck.push(newEventToCheck);
                 }
             } catch (error) {
+                esSentryReport('catchUpFromLS: queryEvents', { error });
                 setESStatus((esStatus) => {
                     return {
                         ...esStatus,
@@ -541,6 +544,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
             }
         } catch (error) {
+            esSentryReport('catchUpFromLS: syncIndexedDB', { error });
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -564,7 +568,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 isBuilding: false,
             };
         });
-        setItem(`ES:${userID}:Pause`, 'true');
+        setES.Pause(userID);
         const isIDBIntact = await canUseES(userID);
         if (!isIDBIntact) {
             await dbCorruptError();
@@ -583,7 +587,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 esEnabled: true,
             };
         });
-        setItem(`ES:${userID}:ESEnabled`, 'true');
+        setES.Enabled(userID);
 
         const showError = (notSupported?: boolean) => {
             createNotification({
@@ -596,7 +600,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             setESStatus(() => defaultESStatus);
         };
 
-        removeItem(`ES:${userID}:Pause`);
+        removeES.Pause(userID);
         abortIndexingRef.current = new AbortController();
 
         let indexKey: CryptoKey;
@@ -633,7 +637,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             recordProgress(currentMessages, totalMessages);
             const recordProgressLocal = (progress: number) => {
                 const newProgress = currentMessages + progress;
-                setCurrentFromBuildProgress(userID, newProgress);
+                setCurrentToBuildProgress(userID, newProgress);
                 recordProgress(newProgress, totalMessages);
             };
 
@@ -666,12 +670,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // indexing even it this step fails, because it will be retried at every new
         // event and refresh
         const catchUpPromise = catchUpFromLS(indexKey);
-        addSyncing(catchUpPromise);
+        addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
         // Note that it's safe to remove the BuildProgress blob because the event to catch
         // up from is stored in the Event blob
-        removeItem(`ES:${userID}:BuildProgress`);
+        removeES.Progress(userID);
 
         setESStatus((esStatus) => {
             return {
@@ -697,6 +701,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             permanentResults,
             isSearchPartial: wasSearchPartial,
             cachedIndexKey,
+            isCaching,
         } = esStatus;
 
         if (!dbExists || !esEnabled) {
@@ -712,6 +717,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Prevent old searches from interfering with newer ones
         abortSearchingRef.current.abort();
 
+        // Caching needs to be triggered here for when a refresh happens on a search URL
+        if (!isCaching && !esCacheRef.current.isCacheReady) {
+            void cacheIndexedDB();
+        }
+
         const searchParameters = extractSearchParameters(location);
         const filterParameter = filterFromUrl(location);
         const sortParameter = sortFromUrl(location);
@@ -721,7 +731,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (!wasSearchPartial && previousNormSearchParams) {
             const shouldSortOnly = shouldOnlySortResults(normalisedSearchParams, previousNormSearchParams);
             if (shouldSortOnly) {
-                setCache(permanentResults);
+                setCache(permanentResults, pageRef.current);
                 return true;
             }
         }
@@ -741,13 +751,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         };
 
         abortSearchingRef.current = new AbortController();
-        const controlledSetCache: ESSetsElementsCache = (Elements, page) => {
+        const controlledSetCache = (Elements: Element[]) => {
             if (!abortSearchingRef.current.signal.aborted) {
-                setCache(Elements, page);
+                setCache(Elements, pageRef.current);
             }
         };
 
-        let searchResults: MessageForSearch[] = [];
+        let searchResults: ESMessage[] = [];
         let isSearchPartial = false;
         let lastEmail: LastEmail | undefined;
         try {
@@ -761,7 +771,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 controlledSetCache,
                 abortSearchingRef
             ));
-        } catch (error) {
+        } catch (error: any) {
+            esSentryReport('encryptedSearch: hybridSearch', { error });
             // If the key is the problem, then we want to wipe the DB and fall back to
             // server-side search, otherwise we want to show a generic error and still
             // fall back to server-side search
@@ -786,7 +797,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     isSearching: false,
                 };
             });
-            setCache(searchResults);
+            setCache(searchResults, pageRef.current);
 
             const t2 = performance.now();
             void sendESMetrics(
@@ -815,24 +826,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             labelID,
             permanentResults,
             lastEmail,
-            page: lastPage,
             isSearchPartial,
             cachedIndexKey,
+            isSearching,
         } = esStatus;
-        if (!dbExists || !esEnabled || !isCacheLimited || abortSearchingRef.current.signal.aborted) {
-            return false;
+        if (!dbExists || !esEnabled || !isCacheLimited || abortSearchingRef.current.signal.aborted || isSearching) {
+            return;
         }
 
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                page,
-            };
-        });
-
-        const lastFilledPage = Math.floor(permanentResults.length / PAGE_SIZE) - 1;
-        if (page <= lastPage || page < lastFilledPage) {
-            return false;
+        const lastFilledPage = Math.ceil(permanentResults.length / PAGE_SIZE) - 1;
+        if (page <= pageRef.current || page < lastFilledPage - 1) {
+            return;
         }
 
         const searchParameters = extractSearchParameters(location);
@@ -840,7 +844,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const sortParameter = sortFromUrl(location);
         const isSearch = testIsSearch(searchParameters);
         if (!isSearch || !isSearchPartial) {
-            return false;
+            return;
         }
 
         const neededResults = PAGE_SIZE * (lastFilledPage + 2);
@@ -848,20 +852,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (permanentResults.length < neededResults) {
             messageLimit = neededResults - permanentResults.length;
         } else {
-            return false;
+            return;
         }
         // If the user wants to load more, then one page is added such that
         // the page+1 wrt the one the user is visualising is already cached
         if (shouldLoadMore) {
             messageLimit += PAGE_SIZE;
-        }
-
-        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
-        const isIDBIntact = await canUseES(userID);
-        if (!indexKey || !isIDBIntact) {
-            await dbCorruptError();
-            return false;
         }
 
         setESStatus((esStatus) => {
@@ -870,6 +866,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 isSearching: true,
             };
         });
+
+        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        if (!indexKey) {
+            await dbCorruptError();
+            return;
+        }
 
         const searchOutput = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
             messageLimit,
@@ -893,8 +896,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             });
             setElementsCache(permanentResults, page);
         }
-
-        return true;
     };
 
     /**
@@ -975,8 +976,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Every time a new event happens, we simply catch up everything since the last
         // processed event. In case any failure occurs, the event ID stored will not be
         // overwritten
-        addSyncing(catchUpFromEvent(indexKey, event));
+        addSyncing(() => catchUpFromEvent(indexKey, event));
     });
+
+    useEffect(() => {
+        pageRef.current = pageFromUrl(location);
+    }, [pageFromUrl(location)]);
 
     // Remove previous search data from the status when no longer in search mode
     useEffect(() => {
@@ -990,7 +995,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     labelID: defaultESStatus.labelID,
                     lastEmail: defaultESStatus.lastEmail,
                     previousNormSearchParams: defaultESStatus.previousNormSearchParams,
-                    page: defaultESStatus.page,
                     isSearchPartial: defaultESStatus.isSearchPartial,
                     isSearching: defaultESStatus.isSearching,
                 };
@@ -1031,7 +1035,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // Compare the last event "seen" by the DB (saved in localStorage) and
             // the present one to check whether any event has happened while offline,
             // but only if indexing was successful
-            addSyncing(catchUpFromLS(indexKey));
+            addSyncing(() => catchUpFromLS(indexKey));
         };
 
         void run();

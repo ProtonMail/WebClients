@@ -1,14 +1,14 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { localisedForwardFlags } from '../../constants';
-import { CachedMessage, ESBaseMessage, MessageForSearch, NormalisedSearchParams } from '../../models/encryptedSearch';
+import { ESMessage, ESBaseMessage, NormalisedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
 import { isMessageForwarded, prepareMessageMetadata } from './esBuild';
-import { applySearch, getTimeLimits, normaliseSearchParams, splitCachedMessage } from './esSearch';
+import { applySearch, getTimeLimits, normaliseSearchParams } from './esSearch';
 import { compareESBaseMessages } from './esSync';
 
 describe('encryptedSearch', () => {
-    const messageForSearch: MessageForSearch = {
+    const esMessage: ESMessage = {
         ID: 'ID',
         Order: 0,
         ConversationID: 'ConversationID',
@@ -29,16 +29,13 @@ describe('encryptedSearch', () => {
         AddressID: 'AddressID',
         LabelIDs: ['0'],
         decryptedBody: '',
-    };
-    const cachedMessage: CachedMessage = {
-        ...messageForSearch,
-        decryptedSubject: '',
         decryptionError: false,
+        decryptedSubject: '',
     };
     const timeOffset = new Date().getTimezoneOffset() * 60;
 
     describe('prepareMessageMetadata', () => {
-        it('should select the correct fields of MessageForSearch', () => {
+        it('should select the correct fields of ESMessage', () => {
             const baseMessage: ESBaseMessage = {
                 ID: 'ID',
                 Order: 0,
@@ -89,8 +86,8 @@ describe('encryptedSearch', () => {
     });
 
     describe('compareESBaseMessages', () => {
-        it('should check equality between MessageForSearch', () => {
-            const esBaseMessage1 = prepareMessageMetadata(messageForSearch);
+        it('should check equality between ESMessage', () => {
+            const esBaseMessage1 = prepareMessageMetadata(esMessage);
             const esBaseMessage2 = { ...esBaseMessage1 };
             expect(compareESBaseMessages(esBaseMessage1, esBaseMessage2)).toStrictEqual(true);
             esBaseMessage2.Order = 1;
@@ -139,10 +136,7 @@ describe('encryptedSearch', () => {
     describe('applySearch', () => {
         it('should fail search due to labelID', () => {
             expect(
-                applySearch(
-                    { labelID: '0' } as NormalisedSearchParams,
-                    { ...cachedMessage, LabelIDs: ['1'] } as CachedMessage
-                )
+                applySearch({ labelID: '0' } as NormalisedSearchParams, { ...esMessage, LabelIDs: ['1'] } as ESMessage)
             ).toEqual(false);
         });
 
@@ -150,7 +144,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', address: 'address' } as NormalisedSearchParams,
-                    { ...cachedMessage, AddressID: 'AddressID' } as CachedMessage
+                    { ...esMessage, AddressID: 'AddressID' } as ESMessage
                 )
             ).toEqual(false);
         });
@@ -159,7 +153,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', begin: 1619679525 } as NormalisedSearchParams,
-                    { ...cachedMessage, Time: 1619679524 } as CachedMessage
+                    { ...esMessage, Time: 1619679524 } as ESMessage
                 )
             ).toEqual(false);
         });
@@ -168,7 +162,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', end: 1619733599 } as NormalisedSearchParams,
-                    { ...cachedMessage, Time: 1619733600 } as CachedMessage
+                    { ...esMessage, Time: 1619733600 } as ESMessage
                 )
             ).toEqual(false);
         });
@@ -177,29 +171,26 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', attachments: 0 } as NormalisedSearchParams,
-                    { ...cachedMessage, NumAttachments: 1 } as CachedMessage
+                    { ...esMessage, NumAttachments: 1 } as ESMessage
                 )
             ).toEqual(false);
         });
 
         it('should fail search due to decryptionError', () => {
-            expect(
-                applySearch(
-                    { labelID: '0', decryptionError: true } as NormalisedSearchParams,
-                    { ...cachedMessage, decryptionError: false } as CachedMessage
-                )
-            ).toEqual(false);
+            expect(applySearch({ labelID: '0', decryptionError: true } as NormalisedSearchParams, esMessage)).toEqual(
+                false
+            );
         });
 
         it('should succeed search without keywords', () => {
-            expect(applySearch({ labelID: '0' } as NormalisedSearchParams, cachedMessage)).toEqual(true);
+            expect(applySearch({ labelID: '0' } as NormalisedSearchParams, esMessage)).toEqual(true);
         });
 
         it('should succeed search with single keyword', () => {
             expect(
                 applySearch(
                     { labelID: '0', normalisedKeywords: ['test'] } as NormalisedSearchParams,
-                    { ...cachedMessage, Subject: 'test' } as CachedMessage
+                    { ...esMessage, Subject: 'test' } as ESMessage
                 )
             ).toEqual(true);
         });
@@ -208,7 +199,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', normalisedKeywords: ['test', 'test2'] } as NormalisedSearchParams,
-                    { ...cachedMessage, Subject: 'testtest2' } as CachedMessage
+                    { ...esMessage, Subject: 'testtest2' } as ESMessage
                 )
             ).toEqual(true);
         });
@@ -217,7 +208,7 @@ describe('encryptedSearch', () => {
             expect(
                 applySearch(
                     { labelID: '0', normalisedKeywords: ['test', 'test2'] } as NormalisedSearchParams,
-                    { ...cachedMessage, Subject: 'test', Sender: { Address: 'test2', Name: '' } } as CachedMessage
+                    { ...esMessage, Subject: 'test', Sender: { Address: 'test2', Name: '' } } as ESMessage
                 )
             ).toEqual(true);
         });
@@ -233,7 +224,7 @@ describe('encryptedSearch', () => {
 
         it('should derive the correct time boundaries without end', () => {
             const { lower, upper } = getTimeLimits(1619679525, 1619279525, undefined);
-            expect(lower[0]).toEqual(1619279525);
+            expect(lower[0] - timeOffset).toEqual(1619568000);
             expect(upper[0]).toEqual(1619679524);
         });
 
@@ -251,13 +242,6 @@ describe('encryptedSearch', () => {
         it('should derive the correct time boundaries with both begin and end (more than 6 months)', () => {
             const { upper } = getTimeLimits(0, 1519679525, 1619679525);
             expect(upper[0]).toEqual(1619679525);
-        });
-    });
-
-    describe('splitCachedMessage', () => {
-        it('should split a CachedMessage into a MessageForSearch', () => {
-            const splitMessage = splitCachedMessage(cachedMessage);
-            expect(splitMessage).toStrictEqual(messageForSearch);
         });
     });
 });

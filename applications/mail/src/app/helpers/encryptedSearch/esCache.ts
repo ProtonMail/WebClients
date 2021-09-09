@@ -1,15 +1,14 @@
-import { openDB } from 'idb';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ES_MAX_CACHE } from '../../constants';
-import { CachedMessage, EncryptedSearchDB, ESCache, StoredCiphertext } from '../../models/encryptedSearch';
+import { ESMessage, ESCache, StoredCiphertext } from '../../models/encryptedSearch';
 import { initialiseQuery, queryNewData } from './esSearch';
 import { decryptFromDB } from './esSync';
-import { getNumMessagesDB } from './esUtils';
+import { getNumMessagesDB, openESDB } from './esUtils';
 
 /**
- * Estimate the size of a CachedMessage object
+ * Estimate the size of a ESMessage object
  */
-export const sizeOfCachedMessage = (cachedMessage: CachedMessage) => {
+export const sizeOfCachedMessage = (cachedMessage: ESMessage) => {
     const sizeOfRecipient = (recipient: Recipient) => {
         let innerBytes = 0;
         let innerKey: keyof typeof recipient;
@@ -70,10 +69,26 @@ export const checkIsCacheLimited = async (userID: string, esCacheRef: React.Muta
 };
 
 /**
- * Callback to sort cached messages by Time and Order
+ * Callback to sort cached messages by Time and Order, such that the last element is the oldest
  */
-export const sortCachedMessages = (firstEl: CachedMessage, secondEl: CachedMessage) => {
+export const sortCachedMessages = (firstEl: ESMessage, secondEl: ESMessage) => {
     return secondEl.Time - firstEl.Time || secondEl.Order - firstEl.Order;
+};
+
+/**
+ * Remove extra messages from cache
+ */
+export const trimCache = (esCacheRef: React.MutableRefObject<ESCache>) => {
+    let rollingSize = 0;
+    for (let index = 0; index < esCacheRef.current.esCache.length; index++) {
+        if (rollingSize >= ES_MAX_CACHE) {
+            esCacheRef.current.esCache = esCacheRef.current.esCache.slice(0, index);
+            esCacheRef.current.cacheSize = rollingSize;
+            return;
+        }
+
+        rollingSize += sizeOfCachedMessage(esCacheRef.current.esCache[index]);
+    }
 };
 
 /**
@@ -86,17 +101,11 @@ export const cacheDB = async (
     endTime?: number,
     beginOrder?: number
 ) => {
-    // If IDB is empty, there is nothing to cache
-    if ((await getNumMessagesDB(userID)) === 0) {
-        esCacheRef.current.isCacheLimited = false;
-        return;
-    }
-
     const queryStart = await initialiseQuery(userID, beginOrder, undefined, endTime);
     const { getTimes, initialTime } = queryStart;
     let { lower, upper, startingOrder } = queryStart;
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     let keepCaching = true;
     while (keepCaching) {
         let storedData: StoredCiphertext[];
@@ -105,9 +114,6 @@ export const cacheDB = async (
         await Promise.all(
             storedData.map(async (storedCiphertext) => {
                 const messageToCache = await decryptFromDB(storedCiphertext, indexKey);
-                if (!messageToCache) {
-                    return;
-                }
                 esCacheRef.current.cacheSize += sizeOfCachedMessage(messageToCache);
                 esCacheRef.current.esCache.push(messageToCache);
             })
@@ -122,6 +128,9 @@ export const cacheDB = async (
 
     // Sort the cached messages by time, such that the last element is the oldest
     esCacheRef.current.esCache.sort(sortCachedMessages);
+    // Since batches are processed as a whole, trimming is necessery to make sure the cache
+    // size limit is not exceeded by too much
+    trimCache(esCacheRef);
     esCacheRef.current.isCacheLimited = await checkIsCacheLimited(userID, esCacheRef);
 };
 
@@ -129,7 +138,7 @@ export const cacheDB = async (
  * Add a single message to cache, depending on whether the size limit has been reached or not
  */
 export const addToESCache = (
-    messageToCache: CachedMessage,
+    messageToCache: ESMessage,
     esCacheRef: React.MutableRefObject<ESCache>,
     messageSize?: number
 ) => {
@@ -164,8 +173,10 @@ export const addToESCache = (
 export const removeFromESCache = (ID: string, esCacheRef: React.MutableRefObject<ESCache>, messageSize?: number) => {
     const index = esCacheRef.current.esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
     if (index !== -1) {
-        esCacheRef.current.cacheSize -= messageSize || sizeOfCachedMessage(esCacheRef.current.esCache[index]);
+        const size = messageSize || sizeOfCachedMessage(esCacheRef.current.esCache[index]);
+        esCacheRef.current.cacheSize -= size;
         esCacheRef.current.esCache.splice(index, 1);
+        return size;
     }
 };
 
@@ -174,7 +185,7 @@ export const removeFromESCache = (ID: string, esCacheRef: React.MutableRefObject
  * new messages are supposed to have the same ID
  */
 export const replaceInESCache = (
-    messageToCache: CachedMessage,
+    messageToCache: ESMessage,
     esCacheRef: React.MutableRefObject<ESCache>,
     isDraftUpdate: boolean,
     sizeDelta?: number

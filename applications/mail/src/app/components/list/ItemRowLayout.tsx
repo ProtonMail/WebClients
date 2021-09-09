@@ -14,7 +14,7 @@ import NumMessages from '../conversation/NumMessages';
 import { Element } from '../../models/element';
 import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
-import { MessageForSearch } from '../../models/encryptedSearch';
+import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
@@ -42,8 +42,11 @@ const ItemRowLayout = ({
     displayRecipients,
     loading,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
-    const body = (element as MessageForSearch).decryptedBody;
+    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const useES = dbExists && esEnabled && shouldHighlight();
+
+    const body = (element as ESMessage).decryptedBody;
     const { Subject, Size } = element;
     const size = humanSize(Size);
 
@@ -103,7 +106,7 @@ const ItemRowLayout = ({
                     >
                         {subjectContent}
                     </span>
-                    {bodyContent && (
+                    {useES && (
                         <>
                             <span
                                 className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}

@@ -13,7 +13,7 @@ import { Element } from '../../models/element';
 import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 import { Breakpoints } from '../../models/utils';
-import { MessageForSearch } from '../../models/encryptedSearch';
+import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
@@ -43,8 +43,11 @@ const ItemColumnLayout = ({
     breakpoints,
     unread,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
-    const body = (element as MessageForSearch).decryptedBody;
+    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const useES = dbExists && esEnabled && shouldHighlight();
+
+    const body = (element as ESMessage).decryptedBody;
     const { Subject } = element;
 
     const sendersContent =
@@ -136,7 +139,7 @@ const ItemColumnLayout = ({
                 </div>
             </div>
 
-            {bodyContent && (
+            {useES && (
                 <>
                     <div
                         className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll"

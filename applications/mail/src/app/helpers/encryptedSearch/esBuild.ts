@@ -1,20 +1,18 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api } from '@proton/shared/lib/interfaces';
-import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { openDB, IDBPDatabase, deleteDB } from 'idb';
+import { IDBPDatabase } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
 import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';
 import {
-    CachedMessage,
+    ESMessage,
     EncryptedSearchDB,
     ESBaseMessage,
     ESIndexingState,
     GetUserKeys,
-    MessageForSearch,
     RecoveryPoint,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
@@ -25,7 +23,18 @@ import {
     localisedForwardFlags,
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
-import { refreshOpenpgp, updateSizeIDB } from './esUtils';
+import {
+    createESDB,
+    deleteESDB,
+    esSentryReport,
+    getES,
+    getOldestMessage,
+    openESDB,
+    refreshOpenpgp,
+    removeES,
+    setES,
+    updateSizeIDB,
+} from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { toText } from '../parserHtml';
 import { sizeOfCachedMessage } from './esCache';
@@ -34,7 +43,7 @@ import { sizeOfCachedMessage } from './esCache';
  * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
  */
 export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
-    const encryptedKey = getItem(`ES:${userID}:Key`);
+    const encryptedKey = getES.Key(userID);
 
     if (!encryptedKey) {
         return;
@@ -46,7 +55,7 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
         message: await pmcryptoGetMessage(encryptedKey),
         publicKeys: [primaryUserKey.publicKey],
         privateKeys: [primaryUserKey.privateKey],
-    }).catch(() => undefined);
+    }).catch((error: any) => esSentryReport('getIndexKey: decryption', { error }));
 
     if (!decryptionResult) {
         return;
@@ -56,7 +65,7 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 
     const importedKey = await crypto.subtle
         .importKey('jwk', JSON.parse(decryptedKey), { name: AesKeyGenParams.name }, false, KeyUsages)
-        .catch(() => undefined);
+        .catch((error: any) => esSentryReport('getIndexKey: parsing', { error }));
 
     if ((importedKey as CryptoKey).algorithm) {
         return importedKey;
@@ -75,7 +84,7 @@ export const cleanText = (text: string, removeQuote: boolean) => {
         const styleElements = body.getElementsByTagName('style');
         const styleElement = styleElements.item(0);
         if (styleElement) {
-            styleElement.outerHTML = '';
+            styleElement.remove();
         }
         removeStyle = styleElements.length !== 0;
     }
@@ -92,7 +101,7 @@ export const cleanText = (text: string, removeQuote: boolean) => {
 /**
  * Turns a Message into a ESBaseMessage
  */
-export const prepareMessageMetadata = (message: Message | MessageForSearch) => {
+export const prepareMessageMetadata = (message: Message | ESMessage) => {
     const messageForSearch: ESBaseMessage = {
         ID: message.ID,
         ConversationID: message.ConversationID,
@@ -120,7 +129,7 @@ export const prepareMessageMetadata = (message: Message | MessageForSearch) => {
 /**
  * Create encrypted object to store in IndexedDB
  */
-export const encryptToDB = async (messageToCache: CachedMessage, indexKey: CryptoKey): Promise<StoredCiphertext> => {
+export const encryptToDB = async (messageToCache: ESMessage, indexKey: CryptoKey): Promise<StoredCiphertext> => {
     const messageToEncrypt = JSON.stringify(messageToCache);
     const textEncoder = new TextEncoder();
 
@@ -150,12 +159,15 @@ export const encryptToDB = async (messageToCache: CachedMessage, indexKey: Crypt
  * Compare the subject to a set of known translations of the Fw: flag and decide
  * if the message is a forwarded one
  */
-export const isMessageForwarded = (subject: string) => {
+export const isMessageForwarded = (subject: string | undefined) => {
+    if (!subject) {
+        return false;
+    }
     return localisedForwardFlags.some((fwFlag) => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag);
 };
 
 /**
- * Fetches a message and return a CachedMessage
+ * Fetches a message and return a ESMessage
  */
 export const fetchMessage = async (
     messageID: string,
@@ -163,11 +175,11 @@ export const fetchMessage = async (
     getMessageKeys: GetMessageKeys,
     signal?: AbortSignal,
     messageMetadata?: Message
-): Promise<CachedMessage | undefined> => {
+): Promise<ESMessage | undefined> => {
     const message = await queryMessage(api, messageID, signal);
     if (!message) {
         // If a permanent error happened and metadata was given, the returned
-        // CachedMessage is as if decryption failed
+        // ESMessage is as if decryption failed
         if (messageMetadata) {
             return {
                 ...prepareMessageMetadata(messageMetadata),
@@ -188,14 +200,14 @@ export const fetchMessage = async (
             ({ decryptedSubject, decryptedBody } = decryptionResult);
             decryptionError = false;
         }
-    } catch (error) {
-        // leave them undefined
+    } catch (error: any) {
+        esSentryReport('fetchMessage: decryption', { error });
     }
 
     // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
     const removeQuote = message.LabelIDs.includes('2') || !isMessageForwarded(message.Subject);
 
-    const cachedMessage: CachedMessage = {
+    const cachedMessage: ESMessage = {
         ...prepareMessageMetadata(message),
         decryptedBody: typeof decryptedBody === 'string' ? cleanText(decryptedBody, removeQuote) : undefined,
         decryptedSubject,
@@ -218,7 +230,7 @@ const storeMessages = async (
     recordLocalProgress: (localProgress: number) => void
 ) => {
     let batchSize = 0;
-    let counter = 1;
+    let counter = 0;
 
     const esIteratee = async (message: Message) => {
         if (abortIndexingRef.current.signal.aborted) {
@@ -235,7 +247,7 @@ const storeMessages = async (
             message
         ))!;
 
-        recordLocalProgress(counter++);
+        recordLocalProgress(++counter);
         batchSize += sizeOfCachedMessage(messageToCache);
         return encryptToDB(messageToCache, indexKey);
     };
@@ -286,15 +298,11 @@ const storeMessagesBatches = async (
         abortIndexingRef.current.signal
     );
 
-    let Messages: Message[];
-    if (resultMetadata) {
-        ({ Messages } = resultMetadata);
-    } else {
-        if (inputLastMessage) {
-            setItem(`ES:${userID}:Recover`, JSON.stringify(inputLastMessage));
-        }
+    if (!resultMetadata) {
         return false;
     }
+
+    let { Messages } = resultMetadata;
 
     let batchCount = 0;
     let progress = 0;
@@ -312,9 +320,11 @@ const storeMessagesBatches = async (
             getMessageKeys,
             abortIndexingRef,
             recordLocalProgress
-        ).catch((error) => {
+        ).catch((error: any) => {
+            esSentryReport('storeMessagesBatches: storeMessages', { error });
+
             if (error.name === 'QuotaExceededError') {
-                const quotaRecoveryPoint: RecoveryPoint = { ID: '', Time: -1 };
+                const quotaRecoveryPoint: RecoveryPoint = { ID: 'QuotaExceededError', Time: -1 };
                 return {
                     recoveryPoint: quotaRecoveryPoint,
                     batchSize: 0,
@@ -327,14 +337,13 @@ const storeMessagesBatches = async (
         }
         const { recoveryPoint, batchSize } = storeOutput;
 
-        if (recoveryPoint.ID === '' && recoveryPoint.Time === -1) {
+        if (recoveryPoint.ID === 'QuotaExceededError' && recoveryPoint.Time === -1) {
             // If the quota has been reached, indexing is considered to be successful. Since
             // messages are fetched in chronological order, IndexedDB is guaranteed to contain
             // the most recent messages only
             return true;
         }
 
-        setItem(`ES:${userID}:Recover`, JSON.stringify(recoveryPoint));
         updateSizeIDB(userID, batchSize);
         progress += Messages.length;
 
@@ -373,16 +382,17 @@ export const buildDB = async (
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void
 ) => {
-    const recoverBlob = getItem(`ES:${userID}:Recover`);
+    const esDB = await openESDB(userID);
 
+    // Use the oldest message stored as recovery point
     let recoveryPoint: RecoveryPoint | undefined;
-    if (recoverBlob) {
-        recoveryPoint = JSON.parse(recoverBlob);
+    const oldestMessage = await getOldestMessage(esDB);
+    if (oldestMessage) {
+        const { ID, Time } = oldestMessage;
+        recoveryPoint = { ID, Time };
     }
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
-
-    // Start fetching messages from the recovery point saved in local storage
+    // Start fetching messages from the last stored message
     // or from scratch if a recovery point was not found
     const success = await storeMessagesBatches(
         userID,
@@ -394,10 +404,6 @@ export const buildDB = async (
         recoveryPoint,
         recordProgress
     );
-
-    if (success) {
-        removeItem(`ES:${userID}:Recover`);
-    }
 
     esDB.close();
 
@@ -415,8 +421,9 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
 
     // Remove IndexedDB in case there is a corrupt leftover
     try {
-        await deleteDB(`ES:${userID}:DB`).catch(() => undefined);
-    } catch (error) {
+        await deleteESDB(userID);
+    } catch (error: any) {
+        esSentryReport('initialiseDB: deleteESDB', { error });
         return result;
     }
 
@@ -428,39 +435,24 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         return result;
     }
 
-    if (initialiser.Total !== 0) {
-        // +1 is added so that firstMessage will be included in the very first batch of messages
-        const firstRecoveryPoint: RecoveryPoint = {
-            ID: initialiser.firstMessage.ID,
-            Time: initialiser.firstMessage.Time + 1,
-        };
-        setItem(`ES:${userID}:Recover`, JSON.stringify(firstRecoveryPoint));
-    }
-
     // Save the event before starting building IndexedDB
     const previousEvent = await queryEvents(api);
     if (previousEvent && previousEvent.EventID) {
-        setItem(`ES:${userID}:BuildProgress`, JSON.stringify({ totalMessages: initialiser.Total }));
-        setItem(`ES:${userID}:Event`, previousEvent.EventID);
+        setES.Progress(userID, JSON.stringify({ totalMessages: initialiser.Total }));
+        setES.Event(userID, previousEvent.EventID);
     } else {
-        removeItem(`ES:${userID}:Recover`);
         return result;
     }
 
     // Set up DB
     let esDB;
     try {
-        esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`, 1, {
-            upgrade(esDB) {
-                esDB.createObjectStore('messages', { keyPath: 'ID' }).createIndex('byTime', ['Time', 'Order'], {
-                    unique: true,
-                });
-            },
-        });
-    } catch (error) {
-        removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:Event`);
-        removeItem(`ES:${userID}:BuildProgress`);
+        esDB = await createESDB(userID);
+    } catch (error: any) {
+        esSentryReport('initialiseDB: createESDB', { error });
+
+        removeES.Event(userID);
+        removeES.Progress(userID);
         return {
             ...result,
             notSupported: true,
@@ -480,15 +472,16 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
             publicKeys: [primaryUserKey.publicKey],
             privateKeys: [primaryUserKey.privateKey],
         });
-        setItem(`ES:${userID}:Key`, encryptedKey);
-    } catch (error) {
-        removeItem(`ES:${userID}:Recover`);
-        removeItem(`ES:${userID}:Event`);
-        removeItem(`ES:${userID}:BuildProgress`);
+        setES.Key(userID, encryptedKey);
+    } catch (error: any) {
+        esSentryReport('initialiseDB: key generation', { error });
+
+        removeES.Event(userID);
+        removeES.Progress(userID);
         return result;
     }
 
-    setItem(`ES:${userID}:SizeIDB`, '0');
+    setES.Size(userID, '0');
 
     return {
         ...result,

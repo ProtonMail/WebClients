@@ -3,28 +3,35 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { openDB, IDBPDatabase } from 'idb';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { IDBPDatabase } from 'idb';
 import { MessageEvent } from '../../models/event';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import {
-    CachedMessage,
+    ESMessage,
     EncryptedSearchDB,
     ESBaseMessage,
     ESCache,
-    MessageForSearch,
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { AesKeyGenParams, ES_MAX_PAGES_PER_BATCH, ES_MAX_PARALLEL_MESSAGES, PAGE_SIZE } from '../../constants';
+import {
+    AesKeyGenParams,
+    ES_MAX_CONCURRENT,
+    ES_MAX_PAGES_PER_BATCH,
+    ES_MAX_PARALLEL_MESSAGES,
+    PAGE_SIZE,
+} from '../../constants';
 import {
     getNumMessagesDB,
     getOldestMessage,
     updateSizeIDB,
-    removeMessageSize,
     getTotalMessages,
     refreshOpenpgp,
+    openESDB,
+    esSentryReport,
 } from './esUtils';
-import { applySearch, normaliseSearchParams, splitCachedMessage, uncachedSearch } from './esSearch';
+import { applySearch, normaliseSearchParams, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesMetadata } from './esAPI';
 import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
 import { sizeOfCachedMessage, removeFromESCache, addToESCache, replaceInESCache } from './esCache';
@@ -42,22 +49,17 @@ export const checkIsDBLimited = async (userID: string, messageCounts: any, api: 
 /**
  * Decrypt encrypted object from IndexedDB
  */
-export const decryptFromDB = async (storedCiphertext: StoredCiphertext, indexKey: CryptoKey) => {
+export const decryptFromDB = async (storedCiphertext: StoredCiphertext, indexKey: CryptoKey): Promise<ESMessage> => {
     const textDecoder = new TextDecoder();
 
-    try {
-        const { aesGcmCiphertext } = storedCiphertext;
-        const decryptedMessage = await crypto.subtle.decrypt(
-            { iv: aesGcmCiphertext.iv, name: AesKeyGenParams.name },
-            indexKey,
-            aesGcmCiphertext.ciphertext
-        );
-        const cachedMessage: CachedMessage = JSON.parse(textDecoder.decode(new Uint8Array(decryptedMessage)));
+    const { aesGcmCiphertext } = storedCiphertext;
+    const decryptedMessage = await crypto.subtle.decrypt(
+        { iv: aesGcmCiphertext.iv, name: AesKeyGenParams.name },
+        indexKey,
+        aesGcmCiphertext.ciphertext
+    );
 
-        return cachedMessage;
-    } catch (error) {
-        // return undefined
-    }
+    return JSON.parse(textDecoder.decode(new Uint8Array(decryptedMessage)));
 };
 
 /**
@@ -82,12 +84,18 @@ export const storeToDB = async (newCiphertextToStore: StoredCiphertext, esDB: ID
         try {
             await esDB.put('messages', newCiphertextToStore);
             return true;
-        } catch (error) {
+        } catch (error: any) {
+            esSentryReport('storeToDB: put failed', { error });
+
             if (error.name === 'QuotaExceededError') {
                 // If there is no space left an error is thrown. If the message we are trying to
                 // save is older than the oldest message present, then it should be discarded. Otherwise,
                 // the oldest message is deleted in favour of the newer one
                 const oldestMessage = await getOldestMessage(esDB);
+                if (!oldestMessage) {
+                    return false;
+                }
+
                 const oldestTime = [oldestMessage.Time, oldestMessage.Order];
                 const currentTime = [newCiphertextToStore.Time, newCiphertextToStore.Order];
 
@@ -129,13 +137,56 @@ export const compareESBaseMessages = (message1: ESBaseMessage, message2: ESBaseM
 };
 
 /**
+ * Remove messages from and add messages to IDB
+ */
+export const executeIDBOperations = async (
+    esDB: IDBPDatabase<EncryptedSearchDB>,
+    messagesToRemove: string[],
+    messagesToAdd: StoredCiphertext[]
+) => {
+    const tx = esDB.transaction('messages', 'readwrite');
+
+    // Firstly, all messages that were deleted are removed from IDB
+    if (messagesToRemove.length) {
+        for (const ID of messagesToRemove) {
+            void tx.store.delete(ID);
+        }
+    }
+
+    // Then all messages to add are inserted, if a message fails
+    // it is saved for retry
+    try {
+        if (messagesToAdd.length) {
+            for (const ciphertext of messagesToAdd) {
+                void tx.store.put(ciphertext);
+            }
+        }
+        await tx.done;
+    } catch (error: any) {
+        // The most likely cause for failure is the quota being exceeded,
+        // therefore we use the storeToDB routine which inserts newer messages by
+        // removing older ones, or discards the message if it's too old
+        if (error.name === 'QuotaExceededError') {
+            for (const ciphertext of messagesToAdd) {
+                if (!(await storeToDB(ciphertext, esDB))) {
+                    throw new Error('Sync of some messages failed');
+                }
+            }
+        } else {
+            // Otherwise the same error is thrown
+            throw error;
+        }
+    }
+};
+
+/**
  * Synchronise IDB (and optionally cache and search results) with new message events
  */
 export const syncMessageEvents = async (
     Messages: MessageEvent[],
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache>,
-    permanentResults: MessageForSearch[],
+    permanentResults: ESMessage[],
     isSearch: boolean,
     api: Api,
     getMessageKeys: GetMessageKeys,
@@ -143,7 +194,7 @@ export const syncMessageEvents = async (
     normalisedSearchParams: NormalisedSearchParams,
     recordProgressLocal?: () => void
 ) => {
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
     let searchChanged = false;
 
     // In case something happens while displaying search results, this function keeps
@@ -153,21 +204,23 @@ export const syncMessageEvents = async (
         messageToCache,
     }: {
         resultIndex?: number;
-        messageToCache?: CachedMessage;
+        messageToCache?: ESMessage;
     }) => {
         if (messageToCache) {
-            const messageForSearch = splitCachedMessage(messageToCache);
-
             if (resultIndex) {
-                permanentResults.splice(resultIndex, 1, messageForSearch);
+                permanentResults.splice(resultIndex, 1, messageToCache);
             } else {
-                permanentResults.push(messageForSearch);
+                permanentResults.push(messageToCache);
             }
         } else {
             permanentResults.splice(resultIndex as number, 1);
         }
         searchChanged = true;
     };
+
+    // Any interaction with IDB is postponed
+    const messagesToRemove: string[] = [];
+    const messagesToAdd: StoredCiphertext[] = [];
 
     // We speed up message syncing by first fetching in parallel all messages that are
     // required (i.e. for new messages or draft update) and then syncing them all
@@ -188,17 +241,12 @@ export const syncMessageEvents = async (
             const { ID, Action, Message } = messageEvent;
 
             // If a message is deleted:
-            //   - delete it from DB
             //   - if a cache exists and has it, delete it from there
             //   - if results are being shown, delete it from there too
             if (Action === EVENT_ACTIONS.DELETE) {
-                const size = await removeMessageSize(userID, esDB, ID, indexKey);
-                if (size === -1) {
-                    continue;
-                }
-                await esDB.delete('messages', ID);
-
-                removeFromESCache(ID, esCacheRef, size);
+                messagesToRemove.push(ID);
+                const size = removeFromESCache(ID, esCacheRef) || 0;
+                updateSizeIDB(userID, -size);
 
                 const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
                 if (isSearch && resultIndex !== -1) {
@@ -207,7 +255,6 @@ export const syncMessageEvents = async (
             }
 
             // If a message is created:
-            //   - add it to DB
             //   - if a cache exists, add it to there
             //   - if results are being shown and the new message fulfills, add it there too
             if (Action === EVENT_ACTIONS.CREATE) {
@@ -224,13 +271,10 @@ export const syncMessageEvents = async (
 
                 const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
 
-                if (!(await storeToDB(newCiphertextToStore, esDB))) {
-                    throw new Error('Failed to store recovered message');
-                }
+                messagesToAdd.push(newCiphertextToStore);
 
                 const size = sizeOfCachedMessage(messageToCache);
                 updateSizeIDB(userID, size);
-
                 addToESCache(messageToCache, esCacheRef, size);
 
                 if (isSearch && applySearch(normalisedSearchParams, messageToCache)) {
@@ -247,18 +291,12 @@ export const syncMessageEvents = async (
                 // If the message is not in IndexedDB, it means the latter is only partial for
                 // space constraints and the message was too old to fit. In this case, the update
                 // is ignored
-                const storedMessage = await esDB.get('messages', ID);
-                if (!storedMessage) {
+                const oldMessage = await getMessageFromDB(ID, indexKey, esDB);
+                if (!oldMessage) {
                     continue;
                 }
 
-                // Get the old version of the message from DB
-                const oldMessage = await getMessageFromDB(ID, indexKey, esDB);
-                if (!oldMessage) {
-                    throw new Error('Old message is undefined');
-                }
-
-                let newMessageToCache: CachedMessage | undefined;
+                let newMessageToCache: ESMessage | undefined;
                 // If the modification is a draft update, fetch the draft from server so to have the new body...
                 if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
                     const fetchedMessageToCache = prefetchedMessages.find(
@@ -294,10 +332,7 @@ export const syncMessageEvents = async (
 
                 const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
 
-                // Store the new message to DB
-                if (!(await storeToDB(newCiphertextToStore, esDB))) {
-                    throw new Error('Failed to store recovered message');
-                }
+                messagesToAdd.push(newCiphertextToStore);
 
                 const sizeDelta = sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage);
                 updateSizeIDB(userID, sizeDelta);
@@ -330,6 +365,8 @@ export const syncMessageEvents = async (
         }
     }
 
+    await executeIDBOperations(esDB, messagesToRemove, messagesToAdd);
+
     esDB.close();
 
     return searchChanged;
@@ -344,7 +381,7 @@ export const correctDecryptionErrors = async (
     api: Api,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    esCacheRef: React.MutableRefObject<ESCache>
+    esCacheRef?: React.MutableRefObject<ESCache>
 ) => {
     const { resultsArray: searchResults } = await uncachedSearch(
         userID,
@@ -360,33 +397,76 @@ export const correctDecryptionErrors = async (
 
     recordProgress(0, searchResults.length);
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    let counter = 0;
+    const messagesToAdd = (
+        await Promise.all(
+            searchResults.map(async (message) => {
+                const newMessage = await fetchMessage(message.ID, api, getMessageKeys);
+                if (!newMessage || newMessage.decryptionError) {
+                    // Message still fails decryption
+                    return;
+                }
 
-    let newMessagesFound = false;
-    for (let index = 0; index < searchResults.length; index++) {
-        const message = searchResults[index];
-        const newMessage = await fetchMessage(message.ID, api, getMessageKeys);
-        if (!newMessage || newMessage.decryptionError) {
-            // Message still fails decryption
-            continue;
-        }
+                const newCiphertextToStore = await encryptToDB(newMessage, indexKey);
 
-        const newCiphertextToStore = await encryptToDB(newMessage, indexKey);
+                const size = sizeOfCachedMessage(newMessage);
+                updateSizeIDB(userID, size);
+                if (esCacheRef) {
+                    addToESCache(newMessage, esCacheRef, size);
+                }
+                recordProgress(++counter, searchResults.length);
 
-        recordProgress(index + 1, searchResults.length);
-        addToESCache(newMessage, esCacheRef);
+                return newCiphertextToStore;
+            })
+        )
+    ).filter(isTruthy);
 
-        if (!(await storeToDB(newCiphertextToStore, esDB))) {
-            throw new Error('Failed to store recovered message');
-        }
+    const newMessagesFound = messagesToAdd.length;
 
-        recordProgress(index + 1, searchResults.length);
-        newMessagesFound = true;
+    if (newMessagesFound) {
+        const esDB = await openESDB(userID);
+        await executeIDBOperations(esDB, [], messagesToAdd);
+        esDB.close();
     }
 
-    esDB.close();
-
     return newMessagesFound;
+};
+
+/**
+ * Fetch, prepare and store the specified messages to IndexedDB
+ */
+const syncMessagesBatch = async (
+    userID: string,
+    messagesMetadata: Message[],
+    esDB: IDBPDatabase<EncryptedSearchDB>,
+    indexKey: CryptoKey,
+    api: Api,
+    getMessageKeys: GetMessageKeys,
+    recordLocalProgress: (localProgress: number) => void
+) => {
+    let counter = 0;
+
+    const esIteratee = async (message: Message) => {
+        // Since we are passing metadata, messageToCache cannot be undefined
+        // even if there was a permanent error while fetching the message
+        const messageToCache = (await fetchMessage(message.ID, api, getMessageKeys, undefined, message))!;
+
+        const size = sizeOfCachedMessage(messageToCache);
+        updateSizeIDB(userID, size);
+
+        recordLocalProgress(++counter);
+        return encryptToDB(messageToCache, indexKey);
+    };
+
+    // ciphertexts is a list of symmetrically encrypted messages in reverse chronological order
+    const ciphertexts = await runInQueue<StoredCiphertext>(
+        messagesMetadata.map((message) => () => esIteratee(message)),
+        ES_MAX_CONCURRENT
+    );
+
+    const tx = esDB.transaction('messages', 'readwrite');
+    await Promise.all(ciphertexts.map(async (ciphertext) => tx.store.put(ciphertext)));
+    await tx.done;
 };
 
 /**
@@ -398,8 +478,7 @@ export const refreshIndex = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    messageCounts: any,
-    esCacheRef: React.MutableRefObject<ESCache>
+    messageCounts: any
 ) => {
     // Get the latest event to catch up after refreshing
     const eventSinceRefresh = await queryEvents(api);
@@ -411,12 +490,12 @@ export const refreshIndex = async (
     // before attempting to refresh the index, we also retry decryption of previously failed
     // messages. This is due to refresh not trying to decrypt all messages, but only drafts
     // and completely new messages
-    await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress, esCacheRef);
+    await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress);
 
     // Progress is wiped before actual refreshing
     recordProgress(0, 0);
 
-    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const esDB = await openESDB(userID);
 
     // Fetching and preparing all metadata
     const Total = await getTotalMessages(messageCounts, api);
@@ -428,24 +507,14 @@ export const refreshIndex = async (
 
     // All drafts from IndexedDB are removed before starting, they will be fetched again in the loop below. This
     // is to avoid checking whether the body was modified or not
-    let searchResults: MessageForSearch[] = [];
+    let drafts: ESMessage[] = [];
     try {
-        ({ resultsArray: searchResults } = await uncachedSearch(userID, indexKey, normaliseSearchParams({}, '8'), {}));
+        ({ resultsArray: drafts } = await uncachedSearch(userID, indexKey, normaliseSearchParams({}, '8'), {}));
     } catch (error) {
         throw new Error('Drafts fetching failed');
     }
 
-    if (searchResults.length) {
-        for (const { ID } of searchResults) {
-            const size = await removeMessageSize(userID, esDB, ID, indexKey);
-            if (size !== -1) {
-                await esDB.delete('messages', ID);
-                removeFromESCache(ID, esCacheRef);
-            }
-        }
-    }
-
-    const indexedIDs = new Map((await esDB.getAllKeys('messages')).map((ID) => [ID, undefined]));
+    const indexedIDs = new Set(await esDB.getAllKeys('messages'));
 
     // In case of big mailboxes, we don't want all pages at once in memory
     for (let startPageBatch = 0; startPageBatch < numBatches; startPageBatch++) {
@@ -472,23 +541,38 @@ export const refreshIndex = async (
             throw new Error('Metadata fetching failed');
         }
 
+        // Any interaction with IDB is postponed
+        const messagesToAdd: StoredCiphertext[] = [];
+        const messagesToFetch: Message[] = [];
+
         for (const message of fetchedMetadata) {
             const { ID } = message;
 
             if (indexedIDs.has(ID)) {
-                // If indexedIDs has ID, update metadata if something changed
+                // First we check if the message is an existing draft. If it is and its Time
+                // is the same, it means it hasn't been modified. Otherwise it is added to the
+                // messages to fetch
+                const draft = drafts.find(({ ID }) => message.ID === ID);
+                if (draft) {
+                    if (draft.Time !== message.Time) {
+                        messagesToFetch.push(message);
+                    }
+                    indexedIDs.delete(ID);
+                    continue;
+                }
+
+                // Update metadata if something changed
                 const oldMessage = await getMessageFromDB(ID, indexKey, esDB);
                 if (!oldMessage) {
                     throw new Error('Old message is undefined');
                 }
 
                 const { decryptionError, decryptedBody, decryptedSubject } = oldMessage;
-                const oldMessageForSearch = splitCachedMessage(oldMessage);
-                const oldBaseMessage = prepareMessageMetadata(oldMessageForSearch);
+                const oldBaseMessage = prepareMessageMetadata(oldMessage);
                 const newBaseMessage = prepareMessageMetadata(message);
 
                 if (!compareESBaseMessages(oldBaseMessage, newBaseMessage)) {
-                    const newMessageToCache: CachedMessage = {
+                    const newMessageToCache: ESMessage = {
                         decryptionError,
                         decryptedBody,
                         decryptedSubject,
@@ -499,41 +583,42 @@ export const refreshIndex = async (
 
                     const sizeDelta = sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage);
                     updateSizeIDB(userID, sizeDelta);
-                    // Note that if DB is limited, storeToDB already takes care of it
-                    await storeToDB(newCiphertextToStore, esDB);
-                    replaceInESCache(newMessageToCache, esCacheRef, false, sizeDelta);
+                    messagesToAdd.push(newCiphertextToStore);
                 }
 
                 indexedIDs.delete(ID);
+                recordProgress(numMessages++, Total);
             } else {
-                const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys);
-                if (!fetchedMessageToCache) {
-                    // If a permanent error occured while fetching, we ignore the update
-                    continue;
-                }
-
-                const newCiphertextToStore = await encryptToDB(fetchedMessageToCache, indexKey);
-
-                const size = sizeOfCachedMessage(fetchedMessageToCache);
-                updateSizeIDB(userID, size);
-                await storeToDB(newCiphertextToStore, esDB);
-                addToESCache(fetchedMessageToCache, esCacheRef, size);
+                // New messages are retrieved later in parallel
+                messagesToFetch.push(message);
             }
-            recordProgress(numMessages++, Total);
         }
 
-        await refreshOpenpgp();
+        // Messages for which only the metadata changed are updated
+        if (messagesToAdd.length) {
+            await executeIDBOperations(esDB, [], messagesToAdd);
+        }
+
+        // Then new messages are fetched and stored
+        if (messagesToFetch.length) {
+            const recordLocalProgress = (numMessages: number) => (progressLocal: number) =>
+                recordProgress(numMessages + progressLocal, Total);
+            await syncMessagesBatch(
+                userID,
+                messagesToFetch,
+                esDB,
+                indexKey,
+                api,
+                getMessageKeys,
+                recordLocalProgress(numMessages)
+            );
+            await refreshOpenpgp();
+        }
     }
 
-    if (indexedIDs.size) {
-        // If there are leftovers in indexedIDs, they have to be removed
-        const tx = esDB.transaction('messages', 'readwrite');
-        indexedIDs.forEach(async (_, key) => {
-            await tx.store.delete(key);
-            removeFromESCache(key, esCacheRef);
-        });
-        await tx.done;
-    }
+    // All messages that haven't been removed from indexedIDs no longer exist
+    const messagesToRemove = [...indexedIDs];
+    await executeIDBOperations(esDB, messagesToRemove, []);
 
     esDB.close();
 
