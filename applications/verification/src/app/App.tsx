@@ -1,4 +1,4 @@
-import { ProtonApp } from '@proton/components';
+import { ModalsChildren, ProtonApp } from '@proton/components';
 
 import * as config from './config';
 import './app.scss';
@@ -13,6 +13,7 @@ const App = () => {
     return (
         <ProtonApp config={enhancedConfig}>
             <Verification />
+            <ModalsChildren />
         </ProtonApp>
     );
 };
