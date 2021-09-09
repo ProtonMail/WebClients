@@ -120,7 +120,7 @@ const MailboxContainer = ({
     const [isMessageOpening, setIsMessageOpening] = useState(false);
 
     const onMessageLoad = () => setIsMessageOpening(true);
-    const onMessageReady = () => setIsMessageOpening(false);
+    const onMessageReady = useCallback(() => setIsMessageOpening(false), [setIsMessageOpening]);
 
     const { labelID, elements, loading, placeholderCount, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
