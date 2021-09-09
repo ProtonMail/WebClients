@@ -1,4 +1,4 @@
 import { createContext } from 'react';
-import createNotificationManager from './manager';
+import { NotificationsManager } from './manager';
 
-export default createContext<ReturnType<typeof createNotificationManager> | null>(null);
+export default createContext<NotificationsManager>(null as unknown as NotificationsManager);
