@@ -85,7 +85,13 @@ const SidebarItem = ({
     const canDisplayTotalMessagesCounter = labelID === SCHEDULED && totalMessagesCount > 0;
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-        if (history.location.pathname.endsWith(link) && !refreshing) {
+        if (
+            history.location.pathname.endsWith(link) &&
+            // No search, no paging, nothing
+            history.location.hash === '' &&
+            // Not already refreshing
+            !refreshing
+        ) {
             event.preventDefault();
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
