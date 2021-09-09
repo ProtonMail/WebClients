@@ -11,6 +11,8 @@ import { CONTACT_WIDGET_TABS, CustomAction } from './types';
 import { CacheProvider } from '../../cache';
 
 jest.mock('../../../hooks/useUser', () => ({
+    __esModule: true,
+    default: () => [{}, false],
     useUser: () => [{}, false],
     useGetUser: () => Promise.resolve([{}, false]),
 }));
