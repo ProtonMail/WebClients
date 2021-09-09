@@ -1,8 +1,12 @@
-import { Alert, classnames, FormModal } from '@proton/components';
+import { Alert, Button, classnames, FormModal } from '@proton/components';
 import { c, msgid } from 'ttag';
+import {
+    ENCRYPTION_PREFERENCES_ERROR_TYPES,
+    EncryptionPreferencesError,
+} from '@proton/shared/lib/mail/encryptionPreferences';
 
 interface Props {
-    mapErrors: { [key: string]: Error };
+    mapErrors: { [key: string]: EncryptionPreferencesError };
     cannotSend?: boolean;
     onSubmit: () => void;
     onClose: () => void;
@@ -14,12 +18,24 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
         onSubmit();
         onClose();
     };
+
+    // We want to display the error message and not change it elsewhere because they are used at other places in the app,
+    // but some of them might need a bit more context to give more information to the user in this modal
+    const getErrorMessage = (error: EncryptionPreferencesError, email: string) => {
+        if (error.type === ENCRYPTION_PREFERENCES_ERROR_TYPES.EXTERNAL_USER_NO_VALID_PINNED_KEY) {
+            // translator: This message is displayed when the recipient has an invalid key. The first variable is the error message to display ("The sending key is not valid"), already translated and the second one is the email causing the error.
+            return c('Error')
+                .t`${error.message} for <${email}>. You can add another key or disable encryption for this contact to resolve the issue.`;
+        }
+        return `${error.message} <${email}>`;
+    };
+
     if (cannotSend) {
         return (
             <FormModal
-                title={c('Title').t`Errors detected`}
+                title={c('Title').t`Sending error`}
                 hasSubmit={false}
-                close={c('Action').t`Go back`}
+                close={<Button color="norm" onClick={onClose}>{c('Action').t`Close`}</Button>}
                 onClose={onClose}
                 {...rest}
             >
@@ -36,23 +52,16 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                             key={index} // eslint-disable-line react/no-array-index-key
                             className={classnames([index !== emails.length && 'mb0-5'])}
                         >
-                            <span className="block max-w100">{`${mapErrors[email].message} <${email}>`}</span>
+                            <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
                         </li>
                     ))}
                 </ul>
-                <Alert className="mb1">
-                    {c('Send email with errors').ngettext(
-                        msgid`Please go back to edit the email address you entered.`,
-                        `Please go back to edit the email addresses you entered.`,
-                        emails.length
-                    )}
-                </Alert>
             </FormModal>
         );
     }
     return (
         <FormModal
-            title={c('Title').t`Errors detected`}
+            title={c('Title').t`Sending error`}
             submit={c('Action').t`Send`}
             onSubmit={handleSubmit}
             onClose={onClose}
@@ -68,7 +77,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                         key={index} // eslint-disable-line react/no-array-index-key
                         className={classnames([index !== emails.length && 'mb0-5'])}
                     >
-                        <span className="block max-w100">{`${mapErrors[email].message} <${email}>`}</span>
+                        <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
                     </li>
                 ))}
             </ul>
