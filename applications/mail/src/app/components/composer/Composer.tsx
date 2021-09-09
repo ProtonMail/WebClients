@@ -21,7 +21,6 @@ import {
     ConfirmModal,
     ErrorButton,
     Alert,
-    useLoading,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
@@ -39,7 +38,6 @@ import ComposerExpirationModal from './ComposerExpirationModal';
 import ComposerScheduleSendModal from './ComposerScheduleSendModal';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
-import { useSaveDraft, useDeleteDraft } from '../../hooks/message/useSaveDraft';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/composer/useAttachments';
 import { getDate } from '../../helpers/elements';
@@ -47,7 +45,6 @@ import { Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
-import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
@@ -59,6 +56,7 @@ import { Event } from '../../models/event';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHandleMessageAlreadySent } from '../../hooks/composer/useHandleMessageAlreadySent';
+import { useAutoSave } from '../../hooks/composer/useAutoSave';
 
 enum ComposerInnerModal {
     None,
@@ -111,7 +109,6 @@ const Composer = (
     const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
     const isMounted = useIsMounted();
-    const [syncInProgress, withSyncInProgress] = useLoading();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -151,8 +148,6 @@ const Composer = (
 
     // All message actions
     const initialize = useInitializeMessage(syncedMessage.localID);
-    const saveDraft = useSaveDraft({ onMessageAlreadySent });
-    const deleteDraft = useDeleteDraft();
 
     // Computed composer status
     const hasRecipients = getRecipients(modelMessage.data).length > 0;
@@ -172,10 +167,20 @@ const Composer = (
         }
     };
 
+    const {
+        autoSave,
+        saveNow,
+        deleteDraft,
+        pendingSave,
+        pendingAutoSave,
+        pause: pauseAutoSave,
+        restart: restartAutoSave,
+    } = useAutoSave({ onMessageAlreadySent });
+
     // Manage existing draft initialization
     useEffect(() => {
         if (
-            !syncInProgress &&
+            !pendingSave.isPending &&
             (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
             syncedMessage.initialized === undefined &&
             modelMessage.initialized === undefined
@@ -183,7 +188,7 @@ const Composer = (
             void initialize();
         }
     }, [
-        syncInProgress,
+        pendingSave.isPending,
         syncedMessage.localID,
         syncedMessage.data?.ID,
         syncedMessage.initialized,
@@ -219,7 +224,7 @@ const Composer = (
                 });
             }
         }
-    }, [syncInProgress, syncedMessage.data?.ID]);
+    }, [pendingSave.isPending, syncedMessage.data?.ID]);
 
     // Manage initializing the message from an existing draft
     useEffect(() => {
@@ -251,7 +256,7 @@ const Composer = (
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
         }
-    }, [syncInProgress, syncedMessage.document, syncedMessage.plainText, syncedMessage.initialized]);
+    }, [pendingSave.isPending, syncedMessage.document, syncedMessage.plainText, syncedMessage.initialized]);
 
     const timeoutRef = useRef(0);
 
@@ -307,21 +312,6 @@ const Composer = (
             void reloadSendInfo(messageSendInfo, modelMessage);
         }
     });
-
-    const actualSave = async (message: MessageExtended) => {
-        try {
-            await withSyncInProgress(saveDraft(message as MessageExtendedWithData));
-        } catch {
-            // Nothing, notifications are managed in saveDraft
-        }
-    };
-
-    const {
-        pending: pendingSave,
-        pause: pauseAutoSave,
-        restart: restartAutoSave,
-        handler: autoSave,
-    } = useDebouncedHandler(actualSave, 2000);
 
     const handleChange: MessageChange = useHandler((update, shouldReloadSendInfo) => {
         if (!isMounted()) {
@@ -398,8 +388,7 @@ const Composer = (
      */
     const handleSaveNow = async () => {
         if (!modelMessage.data?.ID) {
-            autoSave.abort?.();
-            return actualSave(modelMessage);
+            return saveNow(modelMessage);
         }
     };
 
@@ -430,7 +419,7 @@ const Composer = (
             const uploadInitialAttachments = async () => {
                 const files = syncedMessage.initialAttachments;
                 updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
-                await actualSave(syncedMessage);
+                await saveNow(syncedMessage);
                 await handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
             };
             void uploadInitialAttachments();
@@ -462,7 +451,7 @@ const Composer = (
     const handleDiscard = async () => {
         const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
         if (messageFromCache.data?.ID) {
-            await withSyncInProgress(deleteDraft(messageFromCache));
+            await deleteDraft(messageFromCache);
         }
         createNotification({ text: c('Info').t`Draft discarded` });
     };
@@ -493,11 +482,11 @@ const Composer = (
         modelMessage,
         lock,
         ensureMessageContent,
-        actualSave,
         autoSave,
+        saveNow,
         onClose,
         onDicard: handleDiscard,
-        pendingSave,
+        pendingAutoSave,
         promiseUpload,
         uploadInProgress,
         onMessageAlreadySent,
@@ -509,6 +498,7 @@ const Composer = (
         mapSendInfo: messageSendInfo.mapSendInfo,
         promiseUpload,
         pendingSave,
+        pendingAutoSave,
         autoSave,
         onClose,
         onMessageAlreadySent,
@@ -620,7 +610,7 @@ const Composer = (
                     date={getDate(syncedMessage.data, '')}
                     lock={lock}
                     opening={opening}
-                    syncInProgress={syncInProgress}
+                    syncInProgress={pendingSave.isPending}
                     onAddAttachments={handleAddAttachmentsStart}
                     onExpiration={handleExpiration}
                     onPassword={handlePassword}
