@@ -196,9 +196,6 @@ export const WELCOME_PANE_OPTIONS_URLS = {
     vpn: 'https://account.protonmail.com/u/6/vpn/vpn-apps',
 };
 
-export const WELCOME_PANE_OPTIONS_CTA_TEXTS = () => ({
-    upgrade: c('Action').t`Upgrade`,
-    learnMore: c('Action').t`Learn more`,
-    openShop: c('Action').t`Open shop`,
-    openCalendar: c('Action').t`Open calendar`,
-});
+export const restoringEncryptedMessagesURL =
+    'https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/';
+export const reActivateKeySettingsURL = '/encryption-keys';

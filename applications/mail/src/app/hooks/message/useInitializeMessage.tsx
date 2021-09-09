@@ -21,6 +21,7 @@ import { useBase64Cache } from '../useBase64Cache';
 import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { useKeyVerification } from './useKeyVerification';
 
 interface Preparation {
     plainText?: string;
@@ -41,6 +42,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const attachmentsCache = useAttachmentCache();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
+    const { verifyKeys } = useKeyVerification();
 
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
@@ -85,6 +87,9 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
             if (decryption.errors) {
                 Object.assign(errors, decryption.errors);
+
+                // Get message decryption key to display a notification to the user that its password may have been reset recently
+                await verifyKeys(message);
             }
 
             if (isUnreadMessage(getData())) {

@@ -8,7 +8,7 @@ import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { WELCOME_PANE_OPTIONS_CTA_TEXTS, WELCOME_PANE_OPTIONS_URLS } from '../../constants';
+import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
 interface MessageOption {
     id: number;
@@ -35,6 +35,13 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
 
     const encounteredMessagesIDs = getItem('WelcomePaneEncounteredMessages');
 
+    const callToActionTexts = {
+        upgrade: c('Action').t`Upgrade`,
+        learnMore: c('Action').t`Learn more`,
+        openShop: c('Action').t`Open shop`,
+        openCalendar: c('Action').t`Open calendar`,
+    };
+
     const messagesOptions: MessageOption[] = [
         {
             id: 0,
@@ -44,7 +51,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -65,7 +72,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -77,7 +84,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -89,7 +96,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -101,7 +108,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -113,7 +120,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -125,7 +132,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -137,7 +144,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -149,7 +156,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     url={WELCOME_PANE_OPTIONS_URLS.protonShop}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().openShop}
+                    {callToActionTexts.openShop}
                 </Href>
             ),
         },
@@ -170,7 +177,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -183,7 +190,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                         url={WELCOME_PANE_OPTIONS_URLS.proton2FA}
                         className="text-bold link align-baseline color-inherit"
                     >
-                        {WELCOME_PANE_OPTIONS_CTA_TEXTS().learnMore}
+                        {callToActionTexts.learnMore}
                     </Href>
                 ),
             },
@@ -195,7 +202,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     onClick={() => createModal(<MailShortcutsModal />, 'shortcuts-modal')}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().learnMore}
+                    {callToActionTexts.learnMore}
                 </span>
             ),
         },
@@ -207,7 +214,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     onClick={() => createModal(<ThemesModal />)}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().learnMore}
+                    {callToActionTexts.learnMore}
                 </span>
             ),
         },
@@ -219,7 +226,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -231,7 +238,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     url={WELCOME_PANE_OPTIONS_URLS.protonBusiness}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().learnMore}
+                    {callToActionTexts.learnMore}
                 </Href>
             ),
         },
@@ -243,7 +250,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -255,7 +262,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -267,7 +274,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -279,7 +286,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -291,7 +298,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
+                    {callToActionTexts.upgrade}
                 </SettingsLink>
             ),
         },
@@ -300,7 +307,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
             text: c('Info').t`You can use ProtonVPN for free today.`,
             cta: (
                 <Href url={WELCOME_PANE_OPTIONS_URLS.vpn} className="text-bold link align-baseline color-inherit">
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().learnMore}
+                    {callToActionTexts.learnMore}
                 </Href>
             ),
         },
@@ -309,7 +316,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
             text: c('Info').t`Use Proton Calendar to keep your agenda private.`,
             cta: (
                 <Href url={WELCOME_PANE_OPTIONS_URLS.calendar} className="text-bold link align-baseline color-inherit">
-                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().openCalendar}
+                    {callToActionTexts.openCalendar}
                 </Href>
             ),
         },
