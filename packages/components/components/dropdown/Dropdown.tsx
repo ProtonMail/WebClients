@@ -3,8 +3,7 @@ import * as React from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
-
-import { useIsClosing , useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
+import { useIsClosing, useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
 import { classnames } from '../../helpers';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { usePopper } from '../popper';

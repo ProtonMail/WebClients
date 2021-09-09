@@ -1,19 +1,10 @@
-import {
-    MutableRefObject,
-    useEffect,
-    useState,
-    ReactNode,
-    useMemo,
-    useCallback,
-    memo,
-} from 'react';
+import { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { classnames } from '../../../helpers';
 import { useHandler, useIsMounted, useModals } from '../../../hooks';
 import Icon from '../../icon/Icon';
 import InsertImageModal from '../modals/InsertImageModal';
 import InsertLinkModal from '../modals/InsertLinkModal';
-import { SquireType, LinkData } from '../squireConfig';
 import {
     toggleBold,
     toggleItalic,
@@ -34,7 +25,8 @@ import SquireToolbarFontSizeDropdown from './SquireToolbarFontSizeDropdown';
 import SquireToolbarFontColorsDropdown from './SquireToolbarFontColorsDropdown';
 import SquireToolbarAlignmentDropdown from './SquireToolbarAlignmentDropdown';
 import SquireToolbarMoreDropdown from './SquireToolbarMoreDropdown';
-import { ALIGNMENT, SquireEditorMetadata } from '../interface';
+import { ALIGNMENT, FontData, LinkData, SquireEditorMetadata, SquireType } from '../interface';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../squireConfig';
 
 interface Props {
     metadata: SquireEditorMetadata;
@@ -43,6 +35,7 @@ interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
     onAddImages: (files: File[]) => void;
+    defaultFont?: FontData;
     moreDropdownExtension: ReactNode;
 }
 
@@ -53,6 +46,7 @@ const SquireToolbar = ({
     squireRef,
     editorReady,
     onAddImages,
+    defaultFont,
     moreDropdownExtension,
 }: Props) => {
     const isMounted = useIsMounted();
@@ -165,9 +159,17 @@ const SquireToolbar = ({
                 <div className="flex-item-fluid" />
             ) : (
                 <>
-                    <SquireToolbarFontFaceDropdown squireRef={squireRef} editorReady={editorReady} />
+                    <SquireToolbarFontFaceDropdown
+                        squireRef={squireRef}
+                        editorReady={editorReady}
+                        defaultFontFace={defaultFont ? defaultFont.FontFace || DEFAULT_FONT_FACE : undefined}
+                    />
                     <SquireToolbarSeparator />
-                    <SquireToolbarFontSizeDropdown squireRef={squireRef} editorReady={editorReady} />
+                    <SquireToolbarFontSizeDropdown
+                        squireRef={squireRef}
+                        editorReady={editorReady}
+                        defaultFontSize={defaultFont ? defaultFont.FontSize || DEFAULT_FONT_SIZE : undefined}
+                    />
                     <SquireToolbarSeparator />
                     <SquireToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
                     <SquireToolbarSeparator />

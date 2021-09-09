@@ -2,7 +2,6 @@ import { useState, ChangeEvent, useRef } from 'react';
 import { c } from 'ttag';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { linkToType, addLinkPrefix } from '@proton/shared/lib/helpers/url';
-
 import FormModal from '../../modal/FormModal';
 import { PrimaryButton } from '../../button';
 import Alert from '../../alert/Alert';
@@ -12,9 +11,8 @@ import Field from '../../container/Field';
 import Input from '../../input/Input';
 import Href from '../../link/Href';
 import { Select } from '../../select';
-
-import { LinkData } from '../squireConfig';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
+import { LinkData } from '../interface';
 
 interface Props {
     inputLink: LinkData;
