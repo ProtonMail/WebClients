@@ -5,13 +5,14 @@ import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { Alert, Href, LearnMore, Tabs } from '../../../components';
-import Captcha from './Captcha';
-import EmailMethodForm from './EmailMethodForm';
 import useApi from '../../../hooks/useApi';
-import PhoneMethodForm from './PhoneMethodForm';
-import { useModals, useNotifications } from '../../../hooks';
+import useModals from '../../../hooks/useModals';
+import useNotifications from '../../../hooks/useNotifications';
 import { VerificationModel } from './interface';
 import { getRoute } from './helper';
+import Captcha from './Captcha';
+import EmailMethodForm from './EmailMethodForm';
+import PhoneMethodForm from './PhoneMethodForm';
 import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';
 import VerifyCodeForm from './VerifyCodeForm';
 import RequestNewCodeModal from './RequestNewCodeModal';
