@@ -1,0 +1,50 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { Alert } from '@proton/components';
+
+<Meta title="Design System / Theming / Usage" />
+
+# How to use theming mechanism
+
+First, to understand how this mechanism works, [read the explanations](?path=/docs/css-theming-explanations--page).
+
+<Alert type="warning">
+    Each time you have to set a color, a radius, or any other themable value present in the <a href="?path=/docs/design-system-theming-taxonomy--page">taxonomy</a>, <strong>never choose a variable by its look, but always by the usage it was created for</strong>.
+</Alert>
+
+Ask yourself if…
+
+## Themable value
+
+***…that value should change according to the theme.***
+
+In this case, choose wisely a variable from the [taxonomy](?path=/docs/design-system-theming-taxonomy--page#mandatory-variables) that is meant to be used in your context. This should be the most common use case.
+
+After choosing a variable, make sure that when the theme changes, your context makes sense to change too, according to that variable. If so, that should be the right variable to use, otherwhise, try with another one.
+
+## Themable value, with optional
+
+***…that value should change according to the theme, but may have some adaptions for some of them.***
+
+You may have come to that conclusion by encoutering an uncommon case where your value should be adapted on theme switching. For example, we had to create some variables for read and unread email items to adapt their background and text colors, because the visual difference between them wasn't obvious enough specifically on dark themes.
+
+In that kind of cases, you'll probably have to create a new optional variable.
+
+The usage and context of this variable must be understood at once, so you have to think about a name that describes very closely its context of use, and the impacted property at the end, using train-case naming convention.
+
+Then, choose a mandatory variable from the [taxonomy](?path=/docs/design-system-theming-taxonomy--page#mandatory-variables) as a fallback. Remember that if an optional variable is used for more than one context, its name must be abstractive.
+
+Finally, add that optional variable into the dedicated mapping file and in this documentation, and refer it to the core team.
+
+## Static value
+
+***…that value should never change with any theme.***
+
+This case should be as rare as finding Mewtwo.
+
+For example, the star button to favorize an email item has always the same yellow color, regardless to any theme.
+
+If you have tested by switching between several themes and you are sure of yourself that this value should never change, set the value directly.
+
+---
+
+**[Next step, taxonomy &rarr;](?path=/docs/design-system-theming-taxonomy--page)**

@@ -1,0 +1,108 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import themeDefaultSvg from '@proton/styles/assets/img/themes/theme-default.svg';
+import { Alert } from '@proton/components';
+
+<Meta title="Design System / Theming / Explanations" />
+
+# Applications theming
+
+## Context
+
+Adding theming mechanism on a design system can be done in multiple ways, but achieving that without any duplication means that we need to **move all references of what we want to be themable**, colors for instance, into a file outside of that design system. By doing so, the theming is achieved by swithing between several theming files, stored or generated, embeding a bunch of references equaling values.
+
+Each themable value is replaced by a reference/variable placed in theming files, at [*packages/styles/scss/themes/*](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes). Themable values are colors, for sure, but can be radius values, shadow spreading values, font faces, etc. everything that could change with the theme.
+
+## Standard and Prominent layout parts
+
+Our applications interface could be seperated in two areas: header/navigation area and main area.
+
+Since our default theme was seperating those areas with different text and background colors, it made sense to seperate them in a way or another in theming files to achieve that separation.
+
+<figure className="text-center">
+    <img className="shadow-lifted w25" src={themeDefaultSvg} alt="Proton default theme" />
+    <figcaption className="text-sm mt0-5 mb0 text-italic">Proton default theme</figcaption>
+</figure>
+
+So introduce `ui-standard` and `ui-prominent` sections. Standard for the main section styles, Prominent for the header/navigation section styles.
+
+Obviously, it would be a performence and maintainability fail if we had to redefine each variable for each ui part. To avoid that, `ui-prominent` is defined as an override of `ui-standard`, meaning every variables defined in `ui-standard` are already known inside `ui-prominent`, so they don't have to (and must not be) redefined inside of it, but only overrided if needed.
+
+```css
+:root,
+.ui-standard {
+    --css-variable: value;
+}
+.ui-prominent {
+    --css-variable: overrided-value;
+}
+```
+
+Technicaly, it implies that the `:root` is defined at the same time as `.ui-standard`, and `.ui-prominent` after that, giving us the oportunity to define a section as prominent, and one of its children as standard back again.
+
+It is useful for some kind of cases. For example, if we want a section to share the prominent part styling, sush as the title bar of the mail composer, we just have to add `ui-prominent` class on it.
+
+## An abstraction layer
+
+Each variable can be **used everywhere in the design system**, in many contexts of use, so **their name must not refer to the color itself, but to an abstraction** of that color. Same thing for any other themable property.
+
+**This abstraction layer is the basis of theming management**, and must be carefully gate kept.
+
+```css
+:root,
+.ui-standard {
+    --text-norm: #262a33;
+    --background-norm: white;
+}
+.ui-prominent {
+    --text-norm: white;
+    --background-norm: #1c223d;
+}
+```
+
+<Alert type="info">
+    Those variables should not be defined by anyone else than the design team members in relation with the core team members. If you think a variable is missing, please refer it to them.
+</Alert>
+
+
+To the attention of the design team and the core team: if you think you need to add a new variable or variable group, **challenge it strongly first**. The idea is to avoid any usage duplication, or adding to much variables making theming file hardly maintainable.
+
+## Optionals
+
+We use CSS custom properties, as well known as CSS variables, to achieve that theming mechanism. Since CSS `var()` gives the oportunity to add **one or several fallback values**, we are able to tell that if the value we are refering to doesn't exist, it takes another one instead.
+
+That means the first one can be handled as **an optional contextual themable value**.
+
+```css
+selector {
+    property: var(--optional-var, var(--fallback-var));
+}
+```
+
+Optional variables are created for **two purposes**:
+
+- making skilled users able to modify a theme as they want pretty easily,
+- or making us able to adapt any property in a specific case that needs to be changed on switching to specific themes.
+
+For example, we had to add some optional variables for read and unread email items to adapt their background and text colors, because the visual difference between them wasn't obvious enough specifically on dark themes.
+
+Optional variables are usually used for one and only situation, so it makes sense that an optional variable name refers to a specific context. That variable name must be **the most descriptive as possible to understand the context of use**, and the impacted property at the end, using train-case naming convention.
+
+```css
+&.unread {
+    color: var(--email-item-unread-text-color);
+}
+```
+
+**All optional variables are defined in a dedicated mapping file**, at [*packages/styles/scss/base/custom-properties/_optionals.scss*](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss), for maintanability purpose. This way, we can see all optional variables in one and only place, and **it creates a layer to have `--optional` prefixed names for theme files**, which makes those variables quickly understandable as optionals for the design team.
+
+```css
+:root,
+.ui-standard,
+.ui-prominent {
+    --email-item-unread-text-color: var(--optional-email-item-unread-text-color, var(--text-norm));
+}
+```
+
+---
+
+**[Next step, usage &rarr;](?path=/docs/design-system-theming-usage--page)**
