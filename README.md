@@ -20,8 +20,8 @@ You'll need to have the following environment to work with this project
 
 ```shell
 # Clone the project
-git clone https://github.com/ProtonMail/web-clients.git
-git clone git@github.com:ProtonMail/web-clients.git
+git clone https://github.com/ProtonMail/WebClients.git
+git clone git@github.com:ProtonMail/WebClients.git
 
 # Install all dependencies for the entire monorepo & symlink
 # local dependents to one another
