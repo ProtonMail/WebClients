@@ -108,7 +108,7 @@ const getNotificationTextMoved = (
             return joinSentences(
                 c('Success').ngettext(
                     msgid`${elementsCount} message moved to spam and sender added to Block List.`,
-                    `${elementsCount} messages moved to spam and sender added to Block List.`,
+                    `${elementsCount} messages moved to spam and senders added to Block List.`,
                     elementsCount
                 ),
                 notAuthorized
@@ -119,7 +119,7 @@ const getNotificationTextMoved = (
         }
         return c('Success').ngettext(
             msgid`${elementsCount} conversation moved to spam and sender added to Block List.`,
-            `${elementsCount} conversations moved to spam and sender added to Block List.`,
+            `${elementsCount} conversations moved to spam and senders added to Block List.`,
             elementsCount
         );
     }
@@ -134,7 +134,7 @@ const getNotificationTextMoved = (
                 c('Success').ngettext(
                     // translator: The first variable is the number of message moved, written in digits, and the second one is the name of the destination folder
                     msgid`${elementsCount} message moved to ${folderName} and sender added to Allow List.`,
-                    `${elementsCount} messages moved to ${folderName} and sender added to Allow List.`,
+                    `${elementsCount} messages moved to ${folderName} and senders added to Allow List.`,
                     elementsCount
                 ),
                 notAuthorized
@@ -145,7 +145,7 @@ const getNotificationTextMoved = (
         }
         return c('Success').ngettext(
             msgid`${elementsCount} conversation moved to ${folderName} and sender added to Allow List.`,
-            `${elementsCount} conversations moved to ${folderName} and sender added to Allow List.`,
+            `${elementsCount} conversations moved to ${folderName} and senders added to Allow List.`,
             elementsCount
         );
     }
