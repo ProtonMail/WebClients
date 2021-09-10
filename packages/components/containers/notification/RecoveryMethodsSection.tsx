@@ -219,7 +219,7 @@ const RecoveryMethodsSection = () => {
                                             id="passwordMnemonicResetToggle"
                                             onChange={({ target: { checked } }) => {
                                                 const handleMnemonicToggle = async (willBeChecked: boolean) => {
-                                                    await new Promise<any>((resolve, reject) => {
+                                                    await new Promise<void>((resolve, reject) => {
                                                         if (willBeChecked) {
                                                             createModal(
                                                                 <GenerateMnemonicModal
@@ -256,7 +256,7 @@ const RecoveryMethodsSection = () => {
                                         <Button
                                             shape="outline"
                                             onClick={async () => {
-                                                await new Promise((resolve, reject) => {
+                                                await new Promise<void>((resolve, reject) => {
                                                     createModal(
                                                         <GenerateMnemonicModal
                                                             onClose={reject}
