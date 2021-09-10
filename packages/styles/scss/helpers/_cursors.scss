@@ -1,4 +1,4 @@
-@each $cursor in (default, help, wait, grab, row-resize, pointer) {
+@each $cursor in (default, help, wait, grab, row-resize, col-resize, pointer) {
 	.cursor-#{$cursor} {
 		cursor: #{$cursor};
 	}
