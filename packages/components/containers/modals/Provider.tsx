@@ -1,10 +1,9 @@
-import { useState, ReactNode } from 'react';
+import { useState, useMemo, ReactNode } from 'react';
 
 import ModalsContext from './modalsContext';
 import ModalsChildrenContext from './childrenContext';
 import createManager from './manager';
 import { Modal } from './interface';
-import { useInstance } from '../../hooks';
 
 interface Props {
     children: ReactNode;
@@ -13,9 +12,9 @@ interface Props {
 const ModalsProvider = ({ children }: Props) => {
     const [modals, setModals] = useState<Modal[]>([]);
 
-    const manager = useInstance(() => {
+    const manager = useMemo(() => {
         return createManager(modals, setModals);
-    });
+    }, [modals, setModals]);
 
     return (
         <ModalsContext.Provider value={manager}>
