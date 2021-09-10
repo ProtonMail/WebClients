@@ -28,7 +28,7 @@ import {
 } from '../../../hooks';
 import { FormModal, PrimaryButton } from '../../../components';
 import { generateUID } from '../../../helpers';
-import ContactModalRow from '../../../components/contacts/ContactModalRow';
+import ContactModalRow from '../ContactModalRow';
 import useApplyGroups from '../useApplyGroups';
 
 const DEFAULT_MODEL = [

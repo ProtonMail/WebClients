@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { Alert } from '../alert';
-import { InlineLinkButton } from '../button';
-import { BugModal } from '../../containers';
+
+import { Alert } from '../../components/alert';
+import { InlineLinkButton } from '../../components/button';
+import { BugModal } from '../support';
 import { useModals } from '../../hooks';
 
 const ChallengeError = () => {

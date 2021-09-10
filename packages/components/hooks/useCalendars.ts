@@ -19,3 +19,5 @@ export const useCalendars = (): [Calendar[] | undefined, boolean, any] => {
     const miss = useGetCalendars();
     return useCachedModelResult(cache, CalendarsModel.key, miss);
 };
+
+export default useCalendars;

@@ -22,7 +22,7 @@ import { VCARD_KEY_FIELDS, CATEGORIES } from '@proton/shared/lib/contacts/consta
 import { API_CODES, CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 
-import ContactMIMETypeSelect from '../../../components/contacts/ContactMIMETypeSelect';
+import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';
 import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
 import {

@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { parseISO, isValid, format } from 'date-fns';
 import { c } from 'ttag';
-
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { clearType, getType, formatAdr } from '@proton/shared/lib/contacts/property';
 import { getTypeLabels } from '@proton/shared/lib/helpers/contacts';
@@ -13,20 +12,15 @@ import {
     ContactGroup,
 } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import EncryptedIcon from './EncryptedIcon';
-
-import ContactGroupDropdown from '../../containers/contacts/ContactGroupDropdown';
-import ContactLabelProperty from './ContactLabelProperty';
-import ContactEmailSettingsModal from '../../containers/contacts/modals/ContactEmailSettingsModal';
+import { Copy, Button, Icon, Tooltip, RemoteImage } from '../../components';
 import { useModals, useUser, useNotifications } from '../../hooks';
-import RemoteImage from '../image/RemoteImage';
-import Tooltip from '../tooltip/Tooltip';
-import { Copy, Button } from '../button';
 import { classnames } from '../../helpers';
-import Icon from '../icon/Icon';
-
+import ContactEmailSettingsModal from './modals/ContactEmailSettingsModal';
+import ContactLabelProperty from './ContactLabelProperty';
 import ContactUpgradeModal from './ContactUpgradeModal';
-import ContactGroupLabels from '../../containers/contacts/ContactGroupLabels';
+import ContactGroupDropdown from './ContactGroupDropdown';
+import ContactGroupLabels from './ContactGroupLabels';
+import EncryptedIcon from './EncryptedIcon';
 
 interface Props {
     property: ContactProperty;

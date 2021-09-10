@@ -1,17 +1,16 @@
 import { useEffect, useRef } from 'react';
 import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
-import ErrorBoundary from '../../containers/app/ErrorBoundary';
-import SettingsPageTitle from '../../containers/account/SettingsPageTitle';
+
+import ErrorBoundary from '../app/ErrorBoundary';
+import { SettingsPageTitle, SettingsParagraph } from '../account';
 import useAppTitle from '../../hooks/useAppTitle';
 import SubSettingsSection from './SubSettingsSection';
-import PrivateMainArea from './PrivateMainArea';
-import { SubSectionConfig, SettingsPropsShared } from './interface';
-import useActiveSection from './useActiveSection';
-
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import { classnames } from '../../helpers';
-import { SettingsParagraph } from '../../containers';
+import { SubSectionConfig, SettingsPropsShared } from './interface';
+import useActiveSection from './useActiveSection';
+import PrivateMainArea from './PrivateMainArea';
 
 interface Props extends SettingsPropsShared {
     title: string;

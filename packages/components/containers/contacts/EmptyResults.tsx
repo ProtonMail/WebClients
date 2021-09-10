@@ -1,7 +1,7 @@
 import { c } from 'ttag';
-
 import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';
-import { LinkButton } from '../button';
+
+import { LinkButton } from '../../components';
 
 interface Props {
     query?: string;

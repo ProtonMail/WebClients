@@ -5,8 +5,8 @@ import {
     SubSidebarListItem,
     SidebarListItem,
     SidebarListItemContentIcon,
-} from '../sidebar';
-import SidebarListItemLink, { SubSidebarListItemLink } from '../sidebar/SidebarListItemLink';
+} from '../../components/sidebar';
+import SidebarListItemLink, { SubSidebarListItemLink } from '../../components/sidebar/SidebarListItemLink';
 
 interface Props {
     list: SectionConfig[];
