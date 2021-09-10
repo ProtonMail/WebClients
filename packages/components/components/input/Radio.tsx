@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { InputHTMLAttributes } from 'react';
 import { classnames } from '../../helpers';
 
-export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     id: string;
     className?: string;
     name: string;

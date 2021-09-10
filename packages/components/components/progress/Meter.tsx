@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import isBetween from '@proton/shared/lib/helpers/isBetween';
 
 import { classnames } from '../../helpers';
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     /** whether or not the meter should be thin */
     thin?: boolean;
     /** whether or not the meter should be squared */

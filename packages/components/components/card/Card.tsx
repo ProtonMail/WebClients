@@ -1,8 +1,7 @@
-import * as React from 'react';
-
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 
-export interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface CardProps extends ComponentPropsWithoutRef<'div'> {
     bordered?: boolean;
     rounded?: boolean;
 }

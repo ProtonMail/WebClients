@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useConfig, useActiveBreakpoint } from '../../hooks';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 const MobileNavServices = ({ children }: Props) => {
     const { isNarrow } = useActiveBreakpoint();

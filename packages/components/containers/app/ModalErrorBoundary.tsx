@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { FormModal } from '../../components';
 import ErrorBoundary from './ErrorBoundary';
 import { GenericError } from '../error';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
     onClose?: () => void;
 }
 

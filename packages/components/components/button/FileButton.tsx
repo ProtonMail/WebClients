@@ -1,22 +1,27 @@
-import { ChangeEvent, KeyboardEvent, useRef, ReactNode } from 'react';
-import * as React from 'react';
+import {
+    ChangeEvent,
+    KeyboardEvent,
+    useRef,
+    ReactNode,
+    DetailedHTMLProps,
+    InputHTMLAttributes,
+    Ref,
+    forwardRef,
+} from 'react';
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
 
 import ButtonLike from './ButtonLike';
 import './FileButton.scss';
 
-interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     className?: string;
     disabled?: boolean;
     onAddFiles: (files: File[]) => void;
     children?: ReactNode;
 }
 
-const FileButton = (
-    { onAddFiles, disabled, className, children, ...rest }: Props,
-    ref: React.Ref<HTMLInputElement>
-) => {
+const FileButton = ({ onAddFiles, disabled, className, children, ...rest }: Props, ref: Ref<HTMLInputElement>) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const combinedRef = useCombinedRefs(inputRef, ref);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -49,4 +54,4 @@ const FileButton = (
     );
 };
 
-export default React.forwardRef<HTMLInputElement, Props>(FileButton);
+export default forwardRef<HTMLInputElement, Props>(FileButton);

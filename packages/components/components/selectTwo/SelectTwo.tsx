@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
-import * as React from 'react';
+import { useState, useRef, useEffect, useMemo, KeyboardEvent, ReactElement, ComponentPropsWithoutRef } from 'react';
 
 import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';
@@ -9,10 +8,7 @@ import SelectButton from './SelectButton';
 import { SelectChangeEvent } from './select';
 
 export interface Props<V>
-    extends Omit<
-        React.ComponentPropsWithoutRef<'button'>,
-        'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'
-    > {
+    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
     value?: V;
     /**
      * Optionally allows controlling the Select's open state
@@ -22,7 +18,7 @@ export interface Props<V>
      * Children Options of the Select, have to be of type Option
      * (or something that implements the same interface)
      */
-    children: React.ReactElement<OptionProps<V>>[];
+    children: ReactElement<OptionProps<V>>[];
     /**
      * Milliseconds after which to clear the current user input
      * (the input is used for highlighting match based on keyboard input)
@@ -137,7 +133,7 @@ const SelectTwo = <V extends any>({
         }
     };
 
-    const handleMenuKeydown = (e: React.KeyboardEvent<HTMLUListElement>) => {
+    const handleMenuKeydown = (e: KeyboardEvent<HTMLUListElement>) => {
         if (e.key === 'Escape') {
             close();
             anchorRef.current?.focus();

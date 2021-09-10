@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 import LearnMore from '../link/LearnMore';
 
@@ -11,7 +11,7 @@ const CLASSES = {
 
 interface Props {
     type?: 'info' | 'error' | 'warning' | 'success';
-    children?: React.ReactNode;
+    children?: ReactNode;
     learnMore?: string;
     className?: string;
 }

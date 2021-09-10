@@ -1,6 +1,5 @@
+import { useState, useRef, Ref, memo, MouseEvent } from 'react';
 import { isBefore, isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
-import { useState, useRef, Ref } from 'react';
-import * as React from 'react';
 
 import { classnames } from '../../helpers';
 import { DateTuple } from './index.d';
@@ -52,7 +51,7 @@ const MonthDays = ({
         '--rows': numberOfWeeks,
     };
 
-    const handleMouseDown = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+    const handleMouseDown = ({ target }: MouseEvent<HTMLUListElement>) => {
         const targetDate = getTargetDate(target, days);
         if (rangeStartRef.current || !targetDate || !onSelectDateRange) {
             return;
@@ -80,7 +79,7 @@ const MonthDays = ({
         document.addEventListener('mouseup', handleMouseUp);
     };
 
-    const handleMouseOver = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+    const handleMouseOver = ({ target }: MouseEvent<HTMLUListElement>) => {
         const overDate = getTargetDate(target, days);
         if (!rangeStartRef.current || !overDate || !onSelectDateRange) {
             return;
@@ -96,7 +95,7 @@ const MonthDays = ({
 
     const handleFocus = () => {};
 
-    const handleClick = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+    const handleClick = ({ target }: MouseEvent<HTMLUListElement>) => {
         const value = getTargetDate(target, days);
         if (value) {
             onSelectDate?.(value);
@@ -163,4 +162,4 @@ const MonthDays = ({
     );
 };
 
-export default React.memo(MonthDays);
+export default memo(MonthDays);

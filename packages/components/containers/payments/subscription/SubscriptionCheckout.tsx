@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { orderBy } from '@proton/shared/lib/helpers/array';
@@ -20,7 +20,7 @@ import Checkout from '../Checkout';
 import PaymentGiftCode from '../PaymentGiftCode';
 
 interface Props {
-    submit?: React.ReactNode;
+    submit?: ReactNode;
     loading?: boolean;
     plans?: Plan[];
     checkResult?: Partial<SubscriptionCheckResponse>;
@@ -150,7 +150,7 @@ const SubscriptionCheckout = ({
                 const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
 
                 return (
-                    <React.Fragment key={ID}>
+                    <Fragment key={ID}>
                         {diff ? (
                             <CheckoutRow
                                 className={Type === PLAN_TYPES.PLAN ? 'text-bold' : ''}
@@ -186,7 +186,7 @@ const SubscriptionCheckout = ({
                                 currency={currency}
                             />
                         ) : null}
-                    </React.Fragment>
+                    </Fragment>
                 );
             });
     };

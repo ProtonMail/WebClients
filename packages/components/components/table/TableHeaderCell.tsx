@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ReactNode, ThHTMLAttributes } from 'react';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { Icon } from '../icon';
 
-interface Props extends React.ThHTMLAttributes<HTMLTableCellElement> {
-    children: React.ReactNode;
+interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
+    children: ReactNode;
     direction?: SORT_DIRECTION;
     onSort?: () => void;
 }

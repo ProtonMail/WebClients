@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, forwardRef, Ref } from 'react';
 import { classnames } from '../../helpers';
 
-type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+type Props = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-const InlineLinkButton = ({ children, className = '', ...rest }: Props, ref: React.Ref<HTMLButtonElement>) => {
+const InlineLinkButton = ({ children, className = '', ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     return (
         <button type="button" className={classnames(['link align-baseline text-left', className])} ref={ref} {...rest}>
             {children}
@@ -11,4 +11,4 @@ const InlineLinkButton = ({ children, className = '', ...rest }: Props, ref: Rea
     );
 };
 
-export default React.forwardRef<HTMLButtonElement, Props>(InlineLinkButton);
+export default forwardRef<HTMLButtonElement, Props>(InlineLinkButton);

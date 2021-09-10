@@ -1,7 +1,7 @@
+import { ReactNode } from 'react';
 import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces/index';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/index';
 
-import * as React from 'react';
 import useContactList from '../useContactList';
 
 export enum CONTACT_WIDGET_TABS {
@@ -26,6 +26,6 @@ export interface CustomAction {
         contactList,
         groupsEmailsMap,
         recipients,
-    }: CustomActionRenderProps) => React.ReactNode;
+    }: CustomActionRenderProps) => ReactNode;
     tabs: CONTACT_WIDGET_TABS[];
 }

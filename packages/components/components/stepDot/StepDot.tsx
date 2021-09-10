@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps } from 'react';
 import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
@@ -7,7 +7,7 @@ import { classnames } from '../../helpers';
  * 'type' is string in HTMLButtonElement but the button React elements wants a union between
  * the possible values for types, omitting for now due to incompatibility
  */
-export interface Props extends Omit<React.HTMLProps<HTMLButtonElement>, 'onChange' | 'type'> {
+export interface Props extends Omit<HTMLProps<HTMLButtonElement>, 'onChange' | 'type'> {
     onChange?: (index: number) => void;
     index?: number;
     active?: boolean;

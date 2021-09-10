@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { ElementType, useState } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import tinycolor from 'tinycolor2';
 import { Icon } from '../icon';
@@ -14,14 +13,9 @@ interface OwnProps {
     onChange: (color: string) => void;
 }
 
-export type Props<T extends React.ElementType> = OwnProps & DropdownButtonProps<T>;
+export type Props<T extends ElementType> = OwnProps & DropdownButtonProps<T>;
 
-const ColorPicker = <T extends React.ElementType>({
-    color = 'blue',
-    onChange = noop,
-    className,
-    ...rest
-}: Props<T>) => {
+const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, className, ...rest }: Props<T>) => {
     const colorModel = tinycolor(color) as any;
     const iconColor = colorModel.isValid() ? colorModel.toHexString() : '';
 

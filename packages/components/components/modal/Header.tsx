@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { c } from 'ttag';
 import { classnames } from '../../helpers';
 import Title from './Title';
 import { Button } from '../button';
 import Icon from '../icon/Icon';
 
-interface Props extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
+interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
     modalTitleID: string;
-    children: React.ReactNode;
+    children: ReactNode;
     onClose?: () => void;
     displayTitle?: boolean;
     hasClose?: boolean;

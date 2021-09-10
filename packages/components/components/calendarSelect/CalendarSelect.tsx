@@ -1,5 +1,5 @@
+import { ComponentPropsWithoutRef } from 'react';
 import { CalendarSelectOptions } from '@proton/shared/lib/interfaces/calendar';
-import * as React from 'react';
 import { Option } from '../option';
 import { SelectTwo } from '../selectTwo';
 import { SelectChangeEvent } from '../selectTwo/select';
@@ -7,10 +7,7 @@ import { SelectChangeEvent } from '../selectTwo/select';
 import './CalendarSelect.scss';
 
 interface Props
-    extends Omit<
-        React.ComponentPropsWithoutRef<'button'>,
-        'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'
-    > {
+    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
     calendarID: string;
     options: CalendarSelectOptions[];
     onChange: (e: SelectChangeEvent<string>) => void;

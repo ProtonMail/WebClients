@@ -1,7 +1,6 @@
-import { ReactNode } from 'react';
-import * as React from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-interface Props extends React.HTMLAttributes<HTMLSpanElement> {
+interface Props extends HTMLAttributes<HTMLSpanElement> {
     icon?: string;
     iconColor?: string;
     children?: ReactNode;

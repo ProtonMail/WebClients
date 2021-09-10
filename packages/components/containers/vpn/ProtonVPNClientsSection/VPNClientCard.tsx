@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import {
     Bordered,
@@ -16,7 +16,7 @@ interface Props {
     title: string;
     link: string;
     icon: string;
-    items?: React.ReactNode[];
+    items?: ReactNode[];
 }
 
 const VPNClientCard = ({ title, link, items, icon }: Props) => {

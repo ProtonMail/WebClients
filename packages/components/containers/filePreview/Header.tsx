@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Icon, FileIcon, FileNameDisplay, Button } from '../../components';
 
@@ -18,7 +18,7 @@ interface Props {
     onSave?: () => void;
     onDetail?: () => void;
     onShare?: () => void;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 const Header = ({ mimeType, name, sharedStatus, onClose, onSave, onDetail, onShare, children }: Props) => {

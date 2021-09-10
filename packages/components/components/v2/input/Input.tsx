@@ -1,13 +1,12 @@
-import { forwardRef, Ref } from 'react';
-import * as React from 'react';
+import { ComponentPropsWithRef, forwardRef, ReactNode, Ref } from 'react';
 
 import { classnames } from '../../../helpers';
 
-export interface InputTwoProps extends Omit<React.ComponentPropsWithRef<'input'>, 'prefix'> {
-    error?: React.ReactNode | boolean;
-    suffix?: React.ReactNode;
-    prefix?: React.ReactNode;
-    icon?: React.ReactNode;
+export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix'> {
+    error?: ReactNode | boolean;
+    suffix?: ReactNode;
+    prefix?: ReactNode;
+    icon?: ReactNode;
     disableChange?: boolean;
     onValue?: (value: string) => void;
 }

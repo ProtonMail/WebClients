@@ -1,6 +1,5 @@
+import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
-import { useState } from 'react';
-import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Api } from '@proton/shared/lib/interfaces';
 import { validateEmail } from '@proton/shared/lib/api/core/validate';
@@ -53,7 +52,7 @@ const EmailMethodForm = ({ api, onSubmit, defaultEmail = '' }: Props) => {
                     setEmailError('');
                     setEmail(value);
                 }}
-                onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
+                onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
                         withLoading(handleSubmit()).catch(noop);

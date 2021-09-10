@@ -1,5 +1,4 @@
-import { useMemo, useState } from 'react';
-import * as React from 'react';
+import { createContext, ReactNode, useMemo, useState } from 'react';
 
 import useControlled from '../../hooks/useControlled';
 import { SelectChangeEvent } from './select';
@@ -99,10 +98,10 @@ export default useSelect;
  * That being said, since it's really part of useSelect, less the api inconvenience,
  * I've chosen to define it inside this hook's definition file.
  */
-export const SelectContext = React.createContext({} as UseSelectOutput<any>);
+export const SelectContext = createContext({} as UseSelectOutput<any>);
 
 interface SelectProviderProps<V> extends UseSelectOutput<V> {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 export const SelectProvider = <V,>({ children, ...rest }: SelectProviderProps<V>) => {

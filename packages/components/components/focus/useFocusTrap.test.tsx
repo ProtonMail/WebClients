@@ -1,5 +1,4 @@
-import { useRef, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useRef, useState } from 'react';
 import { waitFor, render, fireEvent } from '@testing-library/react';
 import useFocusTrap from './useFocusTrap';
 
@@ -124,7 +123,7 @@ describe('FocusTrap', () => {
 
     it('should not restore focus if closed by click', async () => {
         const Component = () => {
-            const [open, setOpen] = React.useState(false);
+            const [open, setOpen] = useState(false);
             const rootRef = useRef<HTMLDivElement>(null);
             const props = useFocusTrap({ rootRef, active: open });
             return (
@@ -155,7 +154,7 @@ describe('FocusTrap', () => {
 
     it('should restore focus if closed by keyboard', async () => {
         const Component = () => {
-            const [open, setOpen] = React.useState(false);
+            const [open, setOpen] = useState(false);
             const rootRef = useRef<HTMLDivElement>(null);
             const props = useFocusTrap({ rootRef, active: open });
             return (
@@ -183,7 +182,7 @@ describe('FocusTrap', () => {
 
     // TODO: Broken with latest jsdom
     it.skip('should not restore focus when another trap overrides it', async () => {
-        const Dropdown = ({ open, children }: { open: boolean; children: React.ReactNode }) => {
+        const Dropdown = ({ open, children }: { open: boolean; children: ReactNode }) => {
             const rootRef = useRef<HTMLDivElement>(null);
             const props = useFocusTrap({ rootRef, active: open });
             return (
@@ -197,8 +196,8 @@ describe('FocusTrap', () => {
             );
         };
         const Component = () => {
-            const [open, setOpen] = React.useState(false);
-            const [open2nd, setOpen2nd] = React.useState(false);
+            const [open, setOpen] = useState(false);
+            const [open2nd, setOpen2nd] = useState(false);
             return (
                 <div>
                     <button data-testid="button1" onClick={() => setOpen(!open)} />

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
@@ -47,7 +46,7 @@ const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scalePr
         onClose?.();
     };
 
-    const handleChange = (field: string) => (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChange = (field: string) => (e: ChangeEvent<HTMLTextAreaElement>) => {
         setModel({
             ...model,
             [field]: e.target.value,

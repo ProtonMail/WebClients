@@ -1,5 +1,4 @@
-import { useMemo } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Select } from '../../../../components';
@@ -15,7 +14,7 @@ interface Props {
 }
 
 const DayOfWeekField = ({ id, label, value, onChange }: Props) => {
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
 
     const options = useMemo(() => {
         return getFormattedWeekdays('iiii', { locale: dateLocale }).map((day, index) => ({ text: day, value: index }));

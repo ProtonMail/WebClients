@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { c, msgid } from 'ttag';
 import { Cycle, Currency, Plan, Organization, PlanIDs } from '@proton/shared/lib/interfaces';
 import {
@@ -32,7 +32,7 @@ const AddonKey = {
     [ADDON_NAMES.SPACE]: 'MaxSpace',
 } as const;
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
     currency: Currency;
     currentPlan: Plan;

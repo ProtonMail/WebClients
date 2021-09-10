@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode } from 'react';
 
-export interface Props extends React.HTMLProps<HTMLDivElement> {
-    description?: React.ReactNode;
-    children?: React.ReactNode;
-    img?: React.ReactNode;
+export interface Props extends HTMLProps<HTMLDivElement> {
+    description?: ReactNode;
+    children?: ReactNode;
+    img?: ReactNode;
 }
 
 const OnboardingContent = ({ description, img, children, title, ...rest }: Props) => {

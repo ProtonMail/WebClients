@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -60,7 +60,7 @@ const AppearanceOtherSection = () => {
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const handleButtonOrderChange = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleButtonOrderChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         const newState = parseInt(target.value, 10);
         await request(newState);
         await call();

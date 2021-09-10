@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { ReactNode } from 'react';
 import Icon from '../icon/Icon';
 import { TableRow } from '../table';
 import { OrderableElement, OrderableHandle } from '../orderable';
@@ -7,7 +6,7 @@ import { OrderableElement, OrderableHandle } from '../orderable';
 interface Props {
     index: number;
     className?: string;
-    cells?: React.ReactNode[];
+    cells?: ReactNode[];
 }
 
 const OrderableTableRow = ({ index, cells = [], className, ...rest }: Props) => (

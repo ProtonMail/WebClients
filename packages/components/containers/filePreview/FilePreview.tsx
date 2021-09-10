@@ -1,6 +1,5 @@
+import { forwardRef, ReactNode, Ref, useRef } from 'react';
 import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from '@proton/shared/lib/helpers/filePreview';
-import { forwardRef, Ref, useRef } from 'react';
-import * as React from 'react';
 import { c } from 'ttag';
 import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
@@ -15,7 +14,7 @@ interface Props {
     loading: boolean;
     fileName?: string;
     mimeType?: string;
-    navigationControls?: React.ReactNode;
+    navigationControls?: ReactNode;
     contents?: Uint8Array[];
     sharedStatus?: SharedStatus;
     onClose?: () => void;

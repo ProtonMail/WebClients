@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { KeyboardEvent } from 'react';
 import { c } from 'ttag';
 import { PrimaryButton, Input } from '../../../components';
 
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }: Props) => {
-    const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             event.preventDefault();
             onSubmit();

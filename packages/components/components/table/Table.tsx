@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { DetailedHTMLProps, ReactNode, TableHTMLAttributes } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.DetailedHTMLProps<React.TableHTMLAttributes<HTMLTableElement>, HTMLTableElement> {
-    children: React.ReactNode;
+interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>, HTMLTableElement> {
+    children: ReactNode;
     className?: string;
     caption?: string;
 }

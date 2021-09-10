@@ -1,9 +1,8 @@
-import * as React from 'react';
-
+import { ComponentPropsWithoutRef } from 'react';
 import { LearnMore, LearnMoreProps } from '../../components';
 import { classnames } from '../../helpers';
 
-interface SettingsParagraphProps extends React.ComponentPropsWithoutRef<'p'> {
+interface SettingsParagraphProps extends ComponentPropsWithoutRef<'p'> {
     learnMoreUrl?: string;
     learnMoreProps?: Omit<LearnMoreProps, 'url'>;
 }

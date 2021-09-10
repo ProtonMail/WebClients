@@ -1,17 +1,16 @@
-import { ChangeEvent } from 'react';
-import * as React from 'react';
+import { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, Ref } from 'react';
 
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import { CircleLoader } from '../loader';
 
-export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     loading?: boolean;
 }
 
 const Toggle = (
     { id = 'toggle', className = '', checked = false, loading = false, onChange, disabled, title, ...rest }: Props,
-    ref: React.Ref<HTMLInputElement>
+    ref: Ref<HTMLInputElement>
 ) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (!disabled && onChange) {
@@ -59,4 +58,4 @@ const Toggle = (
     );
 };
 
-export default React.forwardRef<HTMLInputElement, Props>(Toggle);
+export default forwardRef<HTMLInputElement, Props>(Toggle);

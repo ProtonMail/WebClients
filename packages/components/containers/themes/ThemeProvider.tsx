@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from 'react';
-import * as React from 'react';
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
 import { HistoricThemeTypes, PROTON_THEMES_MAP, ThemeMigrationMap, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { APPS } from '@proton/shared/lib/constants';
@@ -8,13 +7,13 @@ import { useConfig } from '../../hooks';
 
 export const THEME_ID = 'theme-root';
 
-export const ThemeContext = createContext<[ThemeTypes, React.Dispatch<React.SetStateAction<ThemeTypes>>]>([
+export const ThemeContext = createContext<[ThemeTypes, Dispatch<SetStateAction<ThemeTypes>>]>([
     ThemeTypes.Default,
     noop,
 ]);
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 export const getThemeStyle = (themeType: ThemeTypes = ThemeTypes.Default) => {

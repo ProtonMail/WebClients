@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-import * as React from 'react';
+import { KeyboardEvent, RefObject, useEffect, useMemo, useState } from 'react';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { escapeRegex, getMatches, MatchChunk } from '@proton/shared/lib/helpers/regex';
 import { useHotkeys } from '../../hooks';
@@ -52,7 +51,7 @@ interface UseAutocompleteProps<V> {
     onSelect: (value: V) => void;
     options: DataWithMatches<V>[];
     input: string;
-    inputRef: React.RefObject<HTMLInputElement>;
+    inputRef: RefObject<HTMLInputElement>;
 }
 
 export const useAutocomplete = <T>({ id, options, onSelect, input, inputRef }: UseAutocompleteProps<T>) => {
@@ -107,7 +106,7 @@ export const useAutocomplete = <T>({ id, options, onSelect, input, inputRef }: U
         ],
     ]);
 
-    const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         switch (e.key) {
             case 'ArrowUp': {
                 e.preventDefault();

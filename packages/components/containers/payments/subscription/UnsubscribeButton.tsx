@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
@@ -25,7 +25,7 @@ import SubscriptionCancelModal, { SubscriptionCancelModel } from './Subscription
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const UnsubscribeButton = ({ className, children, ...rest }: Props) => {

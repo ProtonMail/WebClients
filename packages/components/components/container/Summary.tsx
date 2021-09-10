@@ -1,9 +1,8 @@
-import * as React from 'react';
-
+import { HTMLProps, ReactNode } from 'react';
 import Icon from '../icon/Icon';
 
-interface Props extends React.HTMLProps<HTMLElement> {
-    children: React.ReactNode;
+interface Props extends HTMLProps<HTMLElement> {
+    children: ReactNode;
 }
 
 const Summary = ({ children, ...rest }: Props) => (

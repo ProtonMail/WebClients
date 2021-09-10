@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { DragEvent, MouseEvent, ReactNode } from 'react';
 
 export interface Props {
     disabled?: boolean;
     loading?: boolean;
-    content?: React.ReactNode;
+    content?: ReactNode;
     toggled?: boolean;
     focussed?: boolean;
-    children?: React.ReactNode;
+    children?: ReactNode;
     onDragEnd?: () => void;
     onToggle?: () => void;
     onFocus?: () => void;
     onDragStart?: () => void;
-    onDragOver?: (event: React.DragEvent) => void;
+    onDragOver?: (event: DragEvent) => void;
     onDrop?: () => void;
     onDrag?: () => void;
     draggable?: boolean;
@@ -34,7 +34,7 @@ const TreeView = ({
     onFocus,
     title,
 }: Props) => {
-    const handleClick = (event: React.MouseEvent) => {
+    const handleClick = (event: MouseEvent) => {
         event.stopPropagation();
 
         if (disabled) {

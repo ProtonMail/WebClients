@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 
@@ -7,8 +7,8 @@ import { FormModal } from '../modal';
 import './ShortcutsModal.scss';
 
 interface Props {
-    title?: React.ReactNode;
-    children: React.ReactNode;
+    title?: ReactNode;
+    children: ReactNode;
     onClose?: () => void;
 }
 

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 export interface OnboardingStepProps {
-    submit: React.ReactNode;
-    close: React.ReactNode;
-    children: React.ReactNode;
+    submit: ReactNode;
+    close: ReactNode;
+    children: ReactNode;
     loading?: boolean;
     onSubmit?: () => void;
     onClose?: () => void;

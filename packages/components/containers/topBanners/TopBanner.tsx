@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
@@ -6,7 +6,7 @@ import Icon from '../../components/icon/Icon';
 import { Button } from '../../components';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
     onClose?: () => void;
 }

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 
-const SettingsSection = ({ className, ...rest }: React.ComponentPropsWithoutRef<'div'>) => {
+const SettingsSection = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
     return <div className={classnames(['max-w46e', className])} {...rest} />;
 };
 

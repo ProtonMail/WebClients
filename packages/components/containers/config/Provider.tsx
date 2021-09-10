@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import ConfigContext from './configContext';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
     config: ProtonConfig;
 }
 

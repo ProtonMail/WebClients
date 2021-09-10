@@ -1,6 +1,5 @@
+import { useState, useEffect, useMemo, ComponentProps, Dispatch, SetStateAction } from 'react';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import { useState, useEffect, useMemo, ComponentProps } from 'react';
-import * as React from 'react';
 import { c } from 'ttag';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContact } from '@proton/shared/lib/api/contacts';
@@ -21,7 +20,7 @@ interface Props extends ComponentProps<typeof FormModal> {
     userKeysList: DecryptedKey[];
     beMergedModel: { [ID: string]: string[] };
     beDeletedModel: { [ID: string]: string };
-    updateModel: React.Dispatch<React.SetStateAction<ContactMergeModel>>;
+    updateModel: Dispatch<SetStateAction<ContactMergeModel>>;
 }
 
 const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, updateModel, ...rest }: Props) => {
