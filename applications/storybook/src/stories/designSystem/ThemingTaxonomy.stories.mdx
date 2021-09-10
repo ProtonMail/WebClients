@@ -1,0 +1,302 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { Alert, Details } from '@proton/components';
+
+<Meta title="Design System / Theming / Taxonomy" />
+
+# Taxonomy
+
+<Alert type="warning">
+    Remember that each time you have to use one of these variables, <strong>never choose it by its look, but always by the usage it was created for</strong>.
+</Alert>
+
+This taxonomy of theming variables works together with [Standard and Prominent layout parts](?path=/docs/design-system-theming-explanations--page#standard-and-prominent-layout-parts).
+
+This taxonomy is composed by two kinds of variables: **[mandatories](#mandatory-variables) and [optionals](#optional-variables)**. Their naming convention differs but always use the train-case writing.
+
+Each color of this taxonomy has been tested for [contrast and visual accessibility](https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333) in their context of typical use, meaning for example that Text, Signal and Primary groups have been tested onto Background group.
+
+## Mandatory variables
+
+Mandatory variables expose an abstraction layer by their names to make them usable in many use cases.
+
+Their naming convention is `--context[-variant][-state]`.
+
+<Alert type="info">
+    Those variables should not be defined by anyone else than the design team members in relation with the core team members. If you think a variable is missing, please refer it to them.
+</Alert>
+
+The `hover` and `active` keywords are for colors that meant to be used on the same css pseudo classes `:hover` (as well as `:focus`) and `:active` (key down state). From an accessibility standpoint, used onto a light background, `hover` color should be darker than the default one of its group, and `active` should be darker than `hover`. Opposite on dark background, meaning `hover` color should be lighter than the default one of its group, and `active` should be lighter than `hover`.
+
+The `contrast` keyword is for colors that are meant to be used onto the other ones of the same group. For example, if `--primary` is a dark color, used as background, `--primary-contrast` will be a light color that can be used for text. Note that those variables should be removed when [`color-contrast()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-contrast()) will be compatible enough.
+
+<Details className="border-none mt1 mb2">
+    <summary className="inline-block p0 link">View all mandatory variables without explanation</summary>
+    <Source format copy={false} code={`
+--primary
+--primary-contrast
+.
+--signal-danger
+--signal-danger-hover
+--signal-danger-active
+--signal-danger-contrast
+.
+--signal-warning
+--signal-warning-hover
+--signal-warning-active
+--signal-warning-contrast
+.
+--signal-success
+--signal-success-hover
+--signal-success-active
+--signal-success-contrast
+.
+--signal-info
+--signal-info-hover
+--signal-info-active
+--signal-info-contrast
+.
+--text-norm
+--text-weak
+--text-hint
+--text-disabled
+--text-invert
+.
+--field-norm
+--field-hover
+--field-disabled
+.
+--border-norm
+--border-weak
+.
+--background-norm
+--background-weak
+--background-strong
+.
+--interaction-norm
+--interaction-norm-hover
+--interaction-norm-active
+--interaction-norm-contrast
+.
+--interaction-weak
+--interaction-weak-hover
+--interaction-weak-active
+.
+--interaction-default
+--interaction-default-hover
+--interaction-default-active
+.
+--shadow-norm-opacity
+--shadow-lifted-opacity
+.
+--backdrop-norm
+    `}/>
+</Details>
+
+### Primary
+
+This group can be used for content that you need to give visual focus on. Only content without interaction.
+
+```
+--primary
+--primary-contrast
+```
+
+### Signal
+
+Signal variables are meant to be used for content that needs user's attention. For example, a visual feedback after an interaction. They could be used for interaction content too.
+
+- **Info** signal group for simple attention request
+- **Danger** signal group for something wrong, sush as error or risky interaction
+- **Warning** signal group for warnings
+- **Success** signal group for something good, sush as validation
+
+```
+--signal-info
+--signal-info-hover
+--signal-info-active
+--signal-info-contrast
+
+--signal-danger
+--signal-danger-hover
+--signal-danger-active
+--signal-danger-contrast
+
+--signal-warning
+--signal-warning-hover
+--signal-warning-active
+--signal-warning-contrast
+
+--signal-success
+--signal-success-hover
+--signal-success-active
+--signal-success-contrast
+```
+
+### Text
+
+Text group defines all text colors possibilities in addition of signals and primary. Only for text without interaction.
+
+```
+--text-norm
+--text-weak
+--text-hint
+--text-disabled
+--text-invert
+```
+
+### Border
+
+This group is to define border colors for everywhere in applications. For non interactive content only.
+
+```
+--border-norm
+--border-weak
+```
+
+### Background
+
+Defines all background possibilities. `weak` should be a bit more visible than `norm`, and `strong` more visible than `weak`.
+
+```
+--background-norm
+--background-weak
+--background-strong
+```
+
+### Field
+
+Field group define border colors for input field states.
+
+```
+--field-norm
+--field-hover
+--field-disabled
+```
+
+### Interaction
+
+Interaction groups are meant to be used as backgrounds or borders for interaction only, buttons or navigation for example.
+
+- **Interaction norm** for the most visible
+- **Interaction weak** for secondary actions
+- **Interaction default** for usual interaction needs
+
+```
+--interaction-norm
+--interaction-norm-hover
+--interaction-norm-active
+--interaction-norm-contrast
+
+--interaction-weak
+--interaction-weak-hover
+--interaction-weak-active
+
+--interaction-default
+--interaction-default-hover
+--interaction-default-active
+```
+
+### Shadow opacity
+
+Shadow offsets, blur and spread radiuses are always the same, and we chose to always have a black color, but we can change the opacity of that black color regarding to the theme.
+
+```
+--shadow-norm-opacity
+--shadow-lifted-opacity
+```
+
+### Backdrop
+
+The backdrop is a box the size of the viewport which is rendered immediately beneath any element over everything on screen, a modal for instance.
+
+```
+--backdrop-norm
+```
+
+
+## Optional variables
+
+Optional variables describe very closely their context of use to understand the impact quickly.
+
+Their naming convention is `--usage-location[-state]-impacted-property`.
+
+Optional variables are created for two purposes: making skilled users able to modify a theme as they want pretty easily, or making us able to adapt any property in a specific case that needs to be changed on switching to specific themes.
+
+**All optional variables are defined in a dedicated mapping file**, at *packages/styles/scss/base/custom-properties/_optionals.scss*, for maintanability purpose. This way, we can see all optional variables in one and only place, and **it creates a layer to have `--optional` prefixed names for theme files**, which makes those variables quickly understandable as optionals for the design team.
+
+### Current optional variable list
+
+Since they should describe very closely their context of use, no further explanation should be needed.
+
+```css
+--selection-background-color
+--selection-text-color
+
+--header-background-color
+--sidebar-background-color
+
+--navigation-item-count-background-color
+--navigation-item-count-text-color
+--navigation-current-item-marker-color
+--navigation-current-item-background-color
+--navigation-current-item-text-color
+
+--main-box-shadow
+--main-border-color
+
+--toolbar-background-color
+--toolbar-border-bottom-color
+--toolbar-text-color
+--toolbar-separator-color
+
+--scrollbar-thumb-color
+--scrollbar-thumb-hover-color
+
+--tooltip-background-color
+--tooltip-text-color
+
+--email-item-unread-background-color
+--email-item-unread-text-color
+--email-item-unread-icon-background-color
+--email-item-unread-icon-text-color
+--email-item-read-background-color
+--email-item-read-text-color
+--email-item-read-icon-background-color
+--email-item-read-icon-text-color
+--email-item-selected-background-color
+--email-item-selected-text-color
+--email-item-selected-icon-background-color
+--email-item-selected-icon-text-color
+--email-item-focus-marker-color
+--email-item-selected-focus-marker-color
+
+--email-message-view-background-color
+
+--field-background-color
+--field-text-color
+--field-placeholder-color
+--field-hover-background-color
+--field-hover-text-color
+--field-focus-background-color
+--field-focus-text-color
+--field-disabled-background-color
+--field-disabled-text-color
+
+--select-background-color
+
+--favorite-icon-color
+
+--mark-background-color
+--mark-text-color
+--mark-font-weight
+
+--modal-background-color
+--modal-text-color
+
+--file-preview-text-color
+--file-preview-background-color
+
+--border-radius
+
+--font-family
+```
