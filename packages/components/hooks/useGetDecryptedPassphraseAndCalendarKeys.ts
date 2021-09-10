@@ -98,3 +98,5 @@ export const useGetCalendarKeys = () => {
         [getDecryptedPassphraseAndCalendarKeys]
     );
 };
+
+export default useGetDecryptedPassphraseAndCalendarKeys;

@@ -2,13 +2,13 @@ import { c } from 'ttag';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { getPreferredValue } from '@proton/shared/lib/contacts/properties';
 import { ContactProperties } from '@proton/shared/lib/interfaces/contacts';
-import ContactImageSummary from './ContactImageSummary';
-import './ContactSummary.scss';
-import Tooltip from '../tooltip/Tooltip';
-import { Button } from '../button';
-import Icon from '../icon/Icon';
+
+import { Button, Icon, Tooltip } from '../../components';
 import { classnames } from '../../helpers';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import ContactImageSummary from './ContactImageSummary';
+
+import './ContactSummary.scss';
 
 interface Props {
     properties: ContactProperties;

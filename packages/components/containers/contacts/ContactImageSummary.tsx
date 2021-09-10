@@ -6,9 +6,9 @@ import { isBase64Image } from '@proton/shared/lib/helpers/validators';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
+
+import { Icon, Loader } from '../../components';
 import { useLoading, useMailSettings } from '../../hooks';
-import Loader from '../loader/Loader';
-import { Icon } from '../icon';
 
 interface Props {
     photo: string;

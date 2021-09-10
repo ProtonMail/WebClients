@@ -1,17 +1,11 @@
 import { ChangeEvent, forwardRef, Ref } from 'react';
 import { parseISO, formatISO, isValid } from 'date-fns';
-
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { ContactPropertyChange } from '@proton/shared/lib/interfaces/contacts/Contact';
 
+import { EmailInput, TelInput, TextArea, DateInput, Input } from '../../components';
 import { useModals } from '../../hooks';
-import ContactImageModal from '../../containers/contacts/modals/ContactImageModal';
-import EmailInput from '../input/EmailInput';
-import TelInput from '../input/TelInput';
-import TextArea from '../input/TextArea';
-import DateInput from '../input/DateInput';
-import Input from '../input/Input';
-
+import ContactImageModal from './modals/ContactImageModal';
 import ContactImageField from './ContactImageField';
 import ContactAdrField from './ContactAdrField';
 

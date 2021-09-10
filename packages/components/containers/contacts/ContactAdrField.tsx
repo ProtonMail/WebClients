@@ -1,8 +1,9 @@
 import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { ADDRESS_COMPONENTS } from '@proton/shared/lib/contacts/constants';
+
+import { Input } from '../../components';
 import { classnames, generateUID } from '../../helpers';
-import Input from '../input/Input';
 
 const { POST_BOX, EXTENDED, STREET, LOCALITY, REGION, POSTAL_CODE, COUNTRY } = ADDRESS_COMPONENTS;
 

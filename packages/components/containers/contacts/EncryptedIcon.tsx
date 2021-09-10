@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import Tooltip from '../tooltip/Tooltip';
-import Icon from '../icon/Icon';
+import { Icon, Tooltip } from '../../components';
 
 const EncryptedIcon = ({ ...rest }) => {
     return (

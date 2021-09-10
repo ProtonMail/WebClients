@@ -2,8 +2,8 @@ import { Icon } from '../../components';
 import { usePermissions } from '../../hooks';
 import { classnames } from '../../helpers';
 
+import { SectionConfig } from '../layout';
 import Sections from './Sections';
-import { SectionConfig } from '../../components/layout';
 
 const IndexSection = ({ pages, limit = 4 }: { pages: SectionConfig[]; limit?: number }) => {
     const permissions = usePermissions();

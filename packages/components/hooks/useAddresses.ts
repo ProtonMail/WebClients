@@ -19,3 +19,5 @@ export const useAddresses = (): [Address[], boolean, any] => {
     const miss = useGetAddresses();
     return useCachedModelResult(cache, AddressesModel.key, miss);
 };
+
+export default useAddresses;

@@ -40,3 +40,5 @@ export const useGetCalendarInfo = (): GetCalendarInfo => {
         [getCalendarBootstrap, getAddresses, getDecryptedPassphraseAndCalendarKeys, getAddressKeys]
     );
 };
+
+export default useGetCalendarInfo;

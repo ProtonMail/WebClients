@@ -18,3 +18,5 @@ export const useUserScopes = () => {
 
     return useCachedModelResult(cache, KEY, miss);
 };
+
+export default useUserScopes;

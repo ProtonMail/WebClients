@@ -18,3 +18,5 @@ export const useUser = (): [tsUserModel, boolean, any] => {
     const miss = useGetUser();
     return useCachedModelResult(cache, UserModel.key, miss);
 };
+
+export default useUser;

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 
-import { Button } from '../button';
+import { Button } from '../../components';
 
 interface Props {
     value: string;

@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
-import { FeatureCode } from '../../containers';
-import { useFeature } from '../../hooks';
+
+import { FeatureCode } from '../containers/features/FeaturesContext';
+import useFeature from './useFeature';
 
 const useSpotlightOnFeature = (code: FeatureCode, initialShow = true) => {
     const [manualClose, setManualClose] = useState(false);

@@ -13,12 +13,12 @@ import {
     OrderableTableHeader,
     OrderableTableBody,
     OrderableTableRow,
-    ContactGroupIcon,
     ErrorButton,
 } from '../../components';
 import { useContactGroups, useContactEmails, useNotifications, useModals, useApi, useEventManager } from '../../hooks';
 
 import ContactGroupModal from './modals/ContactGroupModal';
+import ContactGroupIcon from './ContactGroupIcon';
 
 interface Props {
     hasPaidMail: boolean;

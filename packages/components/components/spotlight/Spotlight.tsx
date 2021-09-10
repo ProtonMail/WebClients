@@ -1,7 +1,8 @@
 import { Children, cloneElement, ReactElement, ReactNode, RefObject, useEffect, useState } from 'react';
 import { c } from 'ttag';
+
+import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import Portal from '../portal/Portal';
-import { useRightToLeft } from '../../containers';
 import { classnames, generateUID } from '../../helpers';
 import { useCombinedRefs, useIsClosing } from '../../hooks';
 import { Button } from '../button';

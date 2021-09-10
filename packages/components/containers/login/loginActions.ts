@@ -31,9 +31,9 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { migrateMembersAddressKeysRoute } from '@proton/shared/lib/api/memberKeys';
 import { getHasKeyMigrationRunner, getHasMigratedAddressKeys, migrateAddressKeys } from '@proton/shared/lib/keys';
 
+import { ChallengeResult } from '../challenge';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
-import { ChallengeResult } from '../../components';
 
 /**
  * Finalize login can be called without a key password in these cases:

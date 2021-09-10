@@ -6,18 +6,9 @@ import { LABEL_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import {
-    FormModal,
-    Input,
-    Row,
-    Field,
-    Label,
-    ColorPicker,
-    ContactGroupTable,
-    Autocomplete,
-    Button,
-} from '../../../components';
+import { FormModal, Input, Row, Field, Label, ColorPicker, Autocomplete, Button } from '../../../components';
 import { useContactEmails, useContactGroups } from '../../../hooks';
+import ContactGroupTable from '../ContactGroupTable';
 import useUpdateGroup from '../useUpdateGroup';
 
 interface Props {

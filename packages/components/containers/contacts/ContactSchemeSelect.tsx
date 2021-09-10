@@ -1,11 +1,10 @@
 import { ChangeEvent } from 'react';
 import { c } from 'ttag';
-
 import { PACKAGE_TYPE, PGP_SCHEMES, PGP_SCHEMES_MORE, CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { PGP_SCHEME_TEXT } from '@proton/shared/lib/contacts/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import Select from '../select/Select';
+import { Select } from '../../components';
 
 const { INLINE, MIME } = PGP_SCHEME_TEXT;
 

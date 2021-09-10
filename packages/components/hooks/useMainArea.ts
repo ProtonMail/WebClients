@@ -1,6 +1,7 @@
 import { useContext, createContext } from 'react';
 
 export const MainAreaContext = createContext<React.RefObject<HTMLElement> | null>(null);
+
 export const useMainArea = () => {
     const mainArea = useContext(MainAreaContext);
 
@@ -10,3 +11,5 @@ export const useMainArea = () => {
 
     return mainArea;
 };
+
+export default useMainArea;

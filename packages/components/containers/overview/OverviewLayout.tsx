@@ -3,8 +3,9 @@ import * as React from 'react';
 import { c } from 'ttag';
 import { hasMailPlus } from '@proton/shared/lib/helpers/subscription';
 
-import { SectionConfig, ButtonLike, SettingsLink } from '../../components';
+import { ButtonLike, SettingsLink } from '../../components';
 import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';
+import { SectionConfig } from '../layout';
 
 import SummarySection from './SummarySection';
 import IndexSection from './IndexSection';

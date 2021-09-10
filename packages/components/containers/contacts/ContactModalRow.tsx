@@ -7,17 +7,14 @@ import {
     ContactProperty,
     ContactPropertyChange,
 } from '@proton/shared/lib/interfaces/contacts';
+
+import { Button, DropdownActions, Icon, Tooltip, OrderableHandle } from '../../components';
 import { classnames } from '../../helpers';
-import ContactFieldProperty from './ContactFieldProperty';
-import ContactModalLabel from './ContactModalLabel';
-import Icon from '../icon/Icon';
-import { OrderableHandle } from '../orderable';
-import DropdownActions from '../dropdown/DropdownActions';
-import ContactGroupDropdown from '../../containers/contacts/ContactGroupDropdown';
-import Tooltip from '../tooltip/Tooltip';
-import { Button } from '../button';
-import ContactUpgradeModal from './ContactUpgradeModal';
 import { useModals, useUser } from '../../hooks';
+import ContactModalLabel from './ContactModalLabel';
+import ContactFieldProperty from './ContactFieldProperty';
+import ContactGroupDropdown from './ContactGroupDropdown';
+import ContactUpgradeModal from './ContactUpgradeModal';
 
 interface Props {
     property: ContactProperty;
