@@ -1,14 +1,13 @@
-import { Ref } from 'react';
-import * as React from 'react';
+import { ReactNode, Ref } from 'react';
 import TopBanners from '../topBanners/TopBanners';
 import { classnames } from '../../helpers';
 
 interface Props {
     containerRef?: Ref<HTMLDivElement>;
-    header: React.ReactNode;
-    sidebar: React.ReactNode;
-    children: React.ReactNode;
-    topBanners?: React.ReactNode;
+    header: ReactNode;
+    sidebar: ReactNode;
+    children: ReactNode;
+    topBanners?: ReactNode;
     isBlurred?: boolean;
     hasTopBanners?: boolean;
 }

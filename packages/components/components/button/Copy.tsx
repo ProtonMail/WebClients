@@ -1,5 +1,4 @@
-import { MouseEvent } from 'react';
-import * as React from 'react';
+import { forwardRef, MouseEvent, Ref } from 'react';
 import { c } from 'ttag';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
@@ -14,7 +13,7 @@ interface Props extends ButtonProps {
     tooltipText?: string;
 }
 
-const Copy = ({ value, onCopy, tooltipText, ...rest }: Props, ref: React.Ref<HTMLButtonElement>) => {
+const Copy = ({ value, onCopy, tooltipText, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         textToClipboard(value, e.currentTarget);
@@ -30,4 +29,4 @@ const Copy = ({ value, onCopy, tooltipText, ...rest }: Props, ref: React.Ref<HTM
     );
 };
 
-export default React.forwardRef<HTMLButtonElement, Props>(Copy);
+export default forwardRef<HTMLButtonElement, Props>(Copy);

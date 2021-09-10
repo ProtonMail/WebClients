@@ -1,11 +1,10 @@
-import { useRef } from 'react';
-import * as React from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef, useRef } from 'react';
 import { range } from '@proton/shared/lib/helpers/array';
 
 import InputButton, { InputButtonProps } from './InputButton';
 import { concatStringProp, generateUID } from '../../helpers';
 
-export interface ScaleProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
+export interface ScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {
     from: number;
     to: number;
     fromLabel: string;
@@ -16,7 +15,7 @@ export interface ScaleProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 
 }
 
 const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange, ...rest }: ScaleProps) => {
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         onChange(Number(e.target.value));
     };
 

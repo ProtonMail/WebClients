@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { getDurationOptions } from '../../utils';
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const DurationField = ({ value, onChange }: Props) => {
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
 
     return (
         <SettingsLayout>

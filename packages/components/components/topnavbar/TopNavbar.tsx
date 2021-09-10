@@ -1,8 +1,7 @@
-import * as React from 'react';
-
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {}
+interface Props extends ComponentPropsWithoutRef<'div'> {}
 
 const TopNavbar = ({ children, className, ...rest }: Props) => {
     return (

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { hasMailPlus, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
@@ -11,7 +11,7 @@ import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 import UpsellItem from './UpsellItem';
 
-const UpsellMailTemplate = ({ children }: { children: React.ReactNode }) => (
+const UpsellMailTemplate = ({ children }: { children: ReactNode }) => (
     <Card rounded bordered={false} className="mt1-5">
         <UpsellItem icon="people">{c('Mail upsell feature').t`Get Multi-user support`}</UpsellItem>
         <UpsellItem icon="buildings">{c('Mail upsell feature').t`Host emails for your organization`}</UpsellItem>

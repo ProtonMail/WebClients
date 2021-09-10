@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import { AutoResponder } from '@proton/shared/lib/interfaces/AutoResponder';
@@ -17,7 +16,7 @@ const AutoReplyToggle = ({ autoresponder, ...rest }: Props) => {
     const { request } = useApiWithoutResult(updateAutoresponder);
     const [loading, setLoading] = useState(false);
 
-    const handleToggle = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleToggle = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         try {
             setLoading(true);
             await request({ ...autoresponder, IsEnabled: target.checked });

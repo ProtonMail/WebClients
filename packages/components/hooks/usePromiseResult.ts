@@ -1,5 +1,4 @@
-import { useEffect, useReducer, useRef, Reducer } from 'react';
-import * as React from 'react';
+import { useEffect, useReducer, useRef, Reducer, DependencyList } from 'react';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 type ResolvedRecord<T> = {
@@ -39,7 +38,7 @@ const reducer = <T>(oldValue: State<T>, record: Record<T> = { status: STATUS.PEN
  * The difference with this hook vs `useCachedModelResult` is that this hook does not cache the result in the cache.
  * This hook stores it per component, which means the promise will always be re-run on initial mount.
  */
-const usePromiseResult = <T>(miss: () => Promise<T>, dependencies: React.DependencyList) => {
+const usePromiseResult = <T>(miss: () => Promise<T>, dependencies: DependencyList) => {
     const ref = useRef<Record<T>>();
     const unmountedRef = useRef(false);
     const [state, dispatch] = useReducer<Reducer<State<T>, Record<T>>, undefined>(reducer, undefined, getState);

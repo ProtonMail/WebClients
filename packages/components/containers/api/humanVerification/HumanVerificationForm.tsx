@@ -1,5 +1,4 @@
-import { useRef, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useRef, useState } from 'react';
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
@@ -24,7 +23,7 @@ export enum Steps {
     VERIFY_CODE,
 }
 
-const Text = ({ children }: { children: React.ReactNode }) => {
+const Text = ({ children }: { children: ReactNode }) => {
     return <div className="mb2 mt0-5">{children}</div>;
 };
 

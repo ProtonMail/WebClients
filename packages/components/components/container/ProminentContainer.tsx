@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
     className?: string;
 }
 

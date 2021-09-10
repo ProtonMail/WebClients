@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
@@ -10,7 +10,7 @@ import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 import EarlyAccessDesynchronizedBanner from './EarlyAccessDesynchronizedBanner';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 const TopBanners = ({ children }: Props) => {

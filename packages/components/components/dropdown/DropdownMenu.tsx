@@ -1,16 +1,15 @@
-import { Ref } from 'react';
-import * as React from 'react';
+import { Children, ComponentPropsWithoutRef, isValidElement, Ref } from 'react';
 import { classnames } from '../../helpers';
 
-interface DropdownMenuProps extends React.ComponentPropsWithoutRef<'ul'> {
+interface DropdownMenuProps extends ComponentPropsWithoutRef<'ul'> {
     listRef?: Ref<HTMLUListElement>;
 }
 
 const DropdownMenu = ({ children, className = '', listRef, ...rest }: DropdownMenuProps) => {
     return (
         <ul className={classnames(['unstyled mt0 mb0', className])} ref={listRef} {...rest}>
-            {React.Children.toArray(children).map((child, i) => {
-                return React.isValidElement(child) ? (
+            {Children.toArray(children).map((child, i) => {
+                return isValidElement(child) ? (
                     <li
                         className={classnames([
                             'dropdown-item',

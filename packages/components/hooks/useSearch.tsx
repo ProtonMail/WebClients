@@ -7,9 +7,9 @@ import {
     KeyboardEvent,
     useEffect,
     useRef,
+    MouseEvent,
 } from 'react';
 
-import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { sanitizeString } from '@proton/shared/lib/sanitize';
 
@@ -96,7 +96,7 @@ function useSearch<T, K = keyof SearchableObject<T>>({
             .map((item, key) => ({
                 ...item,
                 key,
-                onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
+                onClick: (e: MouseEvent<HTMLButtonElement>) => {
                     e.preventDefault();
                     e.stopPropagation();
                     resetField();

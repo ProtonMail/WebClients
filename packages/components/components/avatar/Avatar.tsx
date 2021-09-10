@@ -1,8 +1,7 @@
-import * as React from 'react';
-
+import { ComponentPropsWithoutRef } from 'react';
 import { classnames } from '../../helpers';
 
-interface AvatarProps extends React.ComponentPropsWithoutRef<'span'> {}
+interface AvatarProps extends ComponentPropsWithoutRef<'span'> {}
 
 const Avatar = ({ className: classNameProp, children, ...rest }: AvatarProps) => {
     const className = classnames([

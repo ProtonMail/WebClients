@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { CYCLE } from '@proton/shared/lib/constants';
@@ -7,10 +7,10 @@ import { classnames } from '../../../helpers';
 import { Icon, Price, PrimaryButton } from '../../../components';
 
 export interface PlanCardFeature {
-    icon?: React.ReactNode;
-    content: React.ReactNode;
+    icon?: ReactNode;
+    content: ReactNode;
     className?: string;
-    info?: React.ReactNode;
+    info?: ReactNode;
     notIncluded?: boolean;
 }
 

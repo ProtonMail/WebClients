@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import { ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { Radio, Row } from '../../../components';
@@ -7,7 +7,7 @@ const { RSA4096, X25519 } = ENCRYPTION_TYPES;
 
 interface Props {
     encryptionType: string;
-    setEncryptionType: React.Dispatch<React.SetStateAction<ENCRYPTION_TYPES>>;
+    setEncryptionType: Dispatch<SetStateAction<ENCRYPTION_TYPES>>;
 }
 const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
     const stateOfTheArt = <strong key="X25519">{c('encryption').t`State of the art`}</strong>;

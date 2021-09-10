@@ -1,5 +1,4 @@
-import { /* useEffect, */ useRef } from 'react';
-import * as React from 'react';
+import { DependencyList, RefObject, useRef } from 'react';
 import { KeyboardKey, KeyboardKeyType } from '@proton/shared/lib/interfaces';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -44,7 +43,7 @@ type KeyEventType = 'keyup' | 'keydown' | 'keypress';
 type HotKeysOptions = {
     keyEventType?: KeyEventType;
     sequenceResetTime?: number;
-    dependencies?: React.DependencyList;
+    dependencies?: DependencyList;
 };
 
 const MODIFIER_KEYS = {
@@ -81,7 +80,7 @@ const normalizeMetaControl = (initalTuple: HotkeyTuple) => {
 };
 
 export const useHotkeys = (
-    ref: React.RefObject<HTMLElement | Document | undefined>,
+    ref: RefObject<HTMLElement | Document | undefined>,
     hotkeyTupleArray: HotkeyTuple[],
     options?: HotKeysOptions
 ) => {

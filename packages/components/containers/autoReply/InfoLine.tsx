@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
 interface Props {
     plain: boolean;
-    label: React.ReactNode;
-    children: React.ReactNode;
+    label: ReactNode;
+    children: ReactNode;
 }
 
 const InfoLine = ({ label, children, plain = false }: Props) => (

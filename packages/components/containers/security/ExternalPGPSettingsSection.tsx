@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
@@ -24,7 +24,7 @@ const ExternalPGPSettingsSection = () => {
     const [loadingAttach, withLoadingAttach] = useLoading();
     const [loadingScheme, withLoadingScheme] = useLoading();
 
-    const handleChangeSign = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChangeSign = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(updateSign(+target.checked));
         await call();
         createNotification({ text: c('Info').t`Encryption setting updated` });
@@ -49,7 +49,7 @@ const ExternalPGPSettingsSection = () => {
         });
     };
 
-    const handleChangeAttach = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChangeAttach = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         const newValue = +target.checked;
         if (newValue && !Sign && (await askSign())) {
             await api(updateSign(1));
@@ -59,7 +59,7 @@ const ExternalPGPSettingsSection = () => {
         createNotification({ text: c('Info').t`Encryption setting updated` });
     };
 
-    const handleChangeScheme = async ({ target }: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleChangeScheme = async ({ target }: ChangeEvent<HTMLSelectElement>) => {
         await api(updatePGPScheme(+target.value));
         await call();
         createNotification({ text: c('Info').t`Encryption setting updated` });

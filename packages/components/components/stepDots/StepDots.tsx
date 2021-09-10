@@ -1,17 +1,16 @@
-import * as React from 'react';
-
+import { Children, cloneElement, HTMLProps, ReactElement } from 'react';
 import { classnames } from '../../helpers';
 import { Props as StepDotProps } from '../stepDot/StepDot';
 
-export interface Props extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface Props extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
     value: number;
     onChange?: (index: number) => void;
-    children: React.ReactElement<StepDotProps>[];
+    children: ReactElement<StepDotProps>[];
 }
 
 const StepDots = ({ value, onChange, children, className, ...rest }: Props) => {
-    const clonedChildren = React.Children.map(children, (child, index) =>
-        React.cloneElement(child, {
+    const clonedChildren = Children.map(children, (child, index) =>
+        cloneElement(child, {
             active: index === value,
             index,
             onChange,

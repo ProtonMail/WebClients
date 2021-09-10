@@ -1,10 +1,9 @@
-import * as React from 'react';
-
+import { ReactNode } from 'react';
 import { Icon } from '../../../components';
 
 interface UpsellItemProps {
     icon: string;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const UpsellItem = ({ icon, children }: UpsellItemProps) => {

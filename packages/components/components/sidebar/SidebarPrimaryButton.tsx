@@ -1,12 +1,8 @@
-import * as React from 'react';
-
+import { forwardRef, Ref } from 'react';
 import Button, { ButtonProps } from '../button/Button';
 import { classnames } from '../../helpers';
 
-const SidebarPrimaryButton = (
-    { children, className = '', ...rest }: ButtonProps,
-    ref: React.Ref<HTMLButtonElement>
-) => {
+const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps, ref: Ref<HTMLButtonElement>) => {
     return (
         <Button
             color="norm"
@@ -20,4 +16,4 @@ const SidebarPrimaryButton = (
     );
 };
 
-export default React.forwardRef<HTMLButtonElement, ButtonProps>(SidebarPrimaryButton);
+export default forwardRef<HTMLButtonElement, ButtonProps>(SidebarPrimaryButton);

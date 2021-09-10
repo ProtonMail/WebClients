@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import * as React from 'react';
+import { ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 import {
     PAYMENT_METHOD_TYPE,
@@ -25,7 +24,7 @@ import { PaymentMethodFlows } from '../paymentMethods/interface';
 import { CardModel } from './interface';
 
 interface Props {
-    children?: React.ReactNode;
+    children?: ReactNode;
     type: PaymentMethodFlows;
     amount?: number;
     currency?: Currency;

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { ReactNode, ThHTMLAttributes } from 'react';
 
-interface Props extends React.ThHTMLAttributes<HTMLTableCellElement> {
-    children: React.ReactNode;
+interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
+    children: ReactNode;
     type?: 'body' | 'header' | 'footer';
 }
 

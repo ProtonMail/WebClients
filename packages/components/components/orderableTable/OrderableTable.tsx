@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { SortableContainerProps } from 'react-sortable-hoc';
 
 import { Table } from '../table';
@@ -8,7 +8,7 @@ import { classnames } from '../../helpers';
 
 interface Props extends SortableContainerProps {
     className?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
     caption?: string;
 }
 

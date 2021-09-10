@@ -1,5 +1,4 @@
-import { createContext, useContext, useEffect, useRef } from 'react';
-import * as React from 'react';
+import { createContext, ReactNode, useContext, useEffect, useRef } from 'react';
 import { queryLatestModelEventID, queryModelEvents } from '@proton/shared/lib/api/calendars';
 import createEventManager, { EVENT_ID_KEYS, EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -62,7 +61,7 @@ type EventManagerCacheRecord =
       };
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const ModelEventManagerProvider = ({ children }: Props) => {

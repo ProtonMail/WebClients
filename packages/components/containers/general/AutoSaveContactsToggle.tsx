@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { updateAutoSaveContacts } from '@proton/shared/lib/api/mailSettings';
 
@@ -17,7 +17,7 @@ const AutoSaveContactsToggle = ({ autoSaveContacts, id, className }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
-    const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
         await api(updateAutoSaveContacts(+event.target.checked));
         await call();
         createNotification({ text: c('Success').t`Preference saved` });

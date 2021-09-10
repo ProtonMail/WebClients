@@ -1,6 +1,5 @@
+import { forwardRef, KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState } from 'react';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { useCallback, useMemo, useRef, useState } from 'react';
-import * as React from 'react';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
@@ -24,10 +23,10 @@ import { useCombinedRefs } from '../../hooks';
 
 interface Props extends Omit<InputProps, 'value'> {
     id: string;
-    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
     onAddRecipients: (recipients: Recipient[]) => void;
     recipients: Recipient[];
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement>;
     contactEmails?: ContactEmail[];
     contactGroups?: ContactGroup[];
     contactEmailsMap?: SimpleMap<ContactEmail>;
@@ -39,7 +38,7 @@ interface Props extends Omit<InputProps, 'value'> {
     validate?: (email: string) => string | void;
 }
 
-const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
+const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
     (
         {
             contactEmails,

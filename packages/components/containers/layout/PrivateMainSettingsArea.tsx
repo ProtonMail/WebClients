@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import * as React from 'react';
+import { Children, isValidElement, ReactNode, useEffect, useRef } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import ErrorBoundary from '../app/ErrorBoundary';
@@ -14,7 +13,7 @@ import PrivateMainArea from './PrivateMainArea';
 
 interface Props extends SettingsPropsShared {
     title: string;
-    children: React.ReactNode;
+    children: ReactNode;
     subsections: SubSectionConfig[];
     description?: string;
 }
@@ -91,8 +90,8 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
     // In those cases it can be overridden by clicking on a specific section
     const observer = useActiveSection(useIntersectionSection.current && setActiveSection ? setActiveSection : noop);
 
-    const wrappedSections = React.Children.toArray(children)
-        .filter(React.isValidElement)
+    const wrappedSections = Children.toArray(children)
+        .filter(isValidElement)
         .map((child, index) => {
             const subsectionConfig = subsections[index];
             if (!subsectionConfig) {

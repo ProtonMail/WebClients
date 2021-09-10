@@ -1,5 +1,4 @@
 import { ReactNode, useRef, useMemo } from 'react';
-import * as React from 'react';
 import { c } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';
@@ -16,7 +15,7 @@ import { useFocusTrap } from '../focus';
 import { classnames } from '../../helpers';
 
 interface Props {
-    logo?: React.ReactNode;
+    logo?: ReactNode;
     expanded?: boolean;
     onToggleExpand?: () => void;
     primary?: ReactNode;

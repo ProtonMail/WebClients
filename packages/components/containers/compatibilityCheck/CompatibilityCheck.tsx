@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { decryptData, encryptData, getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { useConfig } from '../../hooks';
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { getCompatibilityList } from './compatibilityCheckHelper';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const CompatibilityCheck = ({ children }: Props) => {

@@ -1,12 +1,11 @@
-import { ErrorInfo } from 'react';
-import * as React from 'react';
+import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import GenericError from '../error/GenericError';
 
 interface Props {
     resetKey?: string;
-    component?: React.ReactNode;
+    component?: ReactNode;
     onError?: (error: Error, info: ErrorInfo) => void;
 }
 
@@ -20,7 +19,7 @@ const initialState = {
 };
 
 // https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries
-class ErrorBoundary extends React.Component<React.PropsWithRef<React.PropsWithChildren<Props>>, State> {
+class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
     constructor(props: Props) {
         super(props);
         this.state = initialState;

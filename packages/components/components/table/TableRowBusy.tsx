@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { CircleLoader } from '../loader';
 
-interface Props extends React.ComponentPropsWithoutRef<'tr'> {
+interface Props extends ComponentPropsWithoutRef<'tr'> {
     colSpan?: number;
 }
 

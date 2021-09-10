@@ -1,3 +1,4 @@
+import { ComponentPropsWithoutRef } from 'react';
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
 
@@ -10,7 +11,7 @@ const ANIMATIONS = {
     OVERLAY_OUT: 'anime-modal-overlay-out',
 };
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     isClosing?: boolean;
     className?: string;
     onExit?: () => void;

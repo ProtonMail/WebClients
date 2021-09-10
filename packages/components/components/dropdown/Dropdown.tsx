@@ -1,5 +1,15 @@
-import { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'react';
-import * as React from 'react';
+import {
+    useEffect,
+    useState,
+    useRef,
+    CSSProperties,
+    useLayoutEffect,
+    AnimationEvent,
+    HTMLAttributes,
+    RefObject,
+    ReactNode,
+    MouseEvent as ReactMouseEvent,
+} from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
@@ -12,18 +22,18 @@ import Portal from '../portal/Portal';
 
 import { useFocusTrap } from '../focus';
 
-interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
-    ref?: React.RefObject<HTMLDivElement>;
+interface ContentProps extends HTMLAttributes<HTMLDivElement> {
+    ref?: RefObject<HTMLDivElement>;
 }
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    anchorRef: React.RefObject<HTMLElement>;
-    children: React.ReactNode;
+interface Props extends HTMLAttributes<HTMLDivElement> {
+    anchorRef: RefObject<HTMLElement>;
+    children: ReactNode;
     className?: string;
     style?: CSSProperties;
-    onClose?: (event?: React.MouseEvent<HTMLDivElement> | Event) => void;
+    onClose?: (event?: ReactMouseEvent<HTMLDivElement> | Event) => void;
     onClosed?: () => void;
-    onContextMenu?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onContextMenu?: (event: ReactMouseEvent<HTMLDivElement, MouseEvent>) => void;
     originalPlacement?: string;
     disableFocusTrap?: boolean;
     isOpen?: boolean;
@@ -86,7 +96,7 @@ const Dropdown = ({
         offset,
     });
 
-    const handleClickContent = (event: React.MouseEvent<HTMLDivElement>) => {
+    const handleClickContent = (event: ReactMouseEvent<HTMLDivElement>) => {
         if (autoClose) {
             onClose(event);
         }
@@ -188,7 +198,7 @@ const Dropdown = ({
               }
             : {};
 
-    const handleAnimationEnd = ({ animationName }: React.AnimationEvent) => {
+    const handleAnimationEnd = ({ animationName }: AnimationEvent) => {
         if (animationName.includes('anime-dropdown-out') && isClosing) {
             setIsClosed();
             setContentRect(undefined);

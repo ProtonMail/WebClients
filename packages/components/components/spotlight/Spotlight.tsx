@@ -1,4 +1,4 @@
-import { Children, cloneElement, ReactElement, ReactNode, RefObject, useEffect, useState } from 'react';
+import { AnimationEvent, Children, cloneElement, ReactElement, ReactNode, RefObject, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
@@ -66,7 +66,7 @@ const Spotlight = ({
         return cloneElement(child, { ref: mergedRef });
     }
 
-    const handleAnimationEnd = ({ animationName }: React.AnimationEvent) => {
+    const handleAnimationEnd = ({ animationName }: AnimationEvent) => {
         if (animationName.includes('anime-spotlight-out') && isClosing) {
             setIsClosed();
         }

@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { cloneElement, ElementType, forwardRef, ReactElement } from 'react';
 import { classnames } from '../../helpers';
 import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { ButtonLike, Color, Shape } from '../button';
@@ -7,19 +6,19 @@ import { ButtonLike, Color, Shape } from '../button';
 interface OwnProps {
     color?: Color;
     shape?: Shape;
-    icon: React.ReactElement;
+    icon: ReactElement;
     text: string;
     hasRedDot?: boolean;
 }
 
-export type TopNavbarListItemButtonProps<E extends React.ElementType> = PolymorphicComponentProps<E, OwnProps>;
+export type TopNavbarListItemButtonProps<E extends ElementType> = PolymorphicComponentProps<E, OwnProps>;
 
 const defaultElement = 'button';
 
-const TopNavbarListItemButton: <E extends React.ElementType = typeof defaultElement>(
+const TopNavbarListItemButton: <E extends ElementType = typeof defaultElement>(
     props: TopNavbarListItemButtonProps<E>
-) => React.ReactElement | null = React.forwardRef(
-    <E extends React.ElementType = typeof defaultElement>(
+) => ReactElement | null = forwardRef(
+    <E extends ElementType = typeof defaultElement>(
         {
             color = 'weak',
             shape = 'ghost',
@@ -51,7 +50,7 @@ const TopNavbarListItemButton: <E extends React.ElementType = typeof defaultElem
                 ref={ref}
                 {...rest}
             >
-                {React.cloneElement(icon, {
+                {cloneElement(icon, {
                     className: classnames([icon.props.className, 'topnav-icon mr0-5']),
                 })}
                 <span className="navigation-title">{text}</span>

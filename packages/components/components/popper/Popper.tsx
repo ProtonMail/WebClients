@@ -1,12 +1,11 @@
-import { CSSProperties } from 'react';
-import * as React from 'react';
+import { CSSProperties, HTMLAttributes, ReactNode, Ref } from 'react';
 import Portal from '../portal/Portal';
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    divRef: React.Ref<HTMLDivElement>;
+interface Props extends HTMLAttributes<HTMLDivElement> {
+    divRef: Ref<HTMLDivElement>;
     role?: string;
     isOpen?: boolean;
-    children: React.ReactNode;
+    children: ReactNode;
     style?: CSSProperties;
 }
 

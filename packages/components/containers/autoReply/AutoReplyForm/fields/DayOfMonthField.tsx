@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { ChangeEvent } from 'react';
 import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
@@ -14,7 +13,7 @@ interface Props {
 }
 
 const DayOfMonthField = ({ id, label, value, onChange }: Props) => {
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
 
     return (
         <SettingsLayout>

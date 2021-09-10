@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { LabelHTMLAttributes } from 'react';
 import { classnames } from '../../helpers';
 
-type Props = React.LabelHTMLAttributes<HTMLLabelElement>;
+type Props = LabelHTMLAttributes<HTMLLabelElement>;
 
 const Label = ({ htmlFor, className, children, ...rest }: Props) => {
     return (

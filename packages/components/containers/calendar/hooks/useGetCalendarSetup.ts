@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
@@ -10,7 +10,7 @@ import { FeatureCode } from '../../features';
 
 interface Props {
     calendar?: Calendar | SubscribedCalendar;
-    setModel: React.Dispatch<React.SetStateAction<CalendarViewModelFull>>;
+    setModel: Dispatch<SetStateAction<CalendarViewModelFull>>;
 }
 
 const useGetCalendarSetup = ({ calendar: initialCalendar, setModel }: Props) => {

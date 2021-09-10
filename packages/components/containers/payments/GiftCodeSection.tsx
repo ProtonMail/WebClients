@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { validateCredit, buyCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -21,7 +20,7 @@ const GiftCodeSection = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
-    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setValue(target.value.replace(/\s|\t/g, '').toUpperCase());
     };
 

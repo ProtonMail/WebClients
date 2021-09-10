@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, Ref } from 'react';
 import Icon from '../icon/Icon';
 import AppLink, { Props as LinkProps } from '../link/AppLink';
 
@@ -6,7 +6,7 @@ interface Props extends LinkProps {
     icon: string;
     info: string;
 }
-export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, ref: React.Ref<HTMLAnchorElement>) => {
+export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
     return (
         <AppLink
             className="flex navigation-link-header-group-control flex-item-noshrink mr-0-5"
@@ -20,4 +20,4 @@ export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, 
     );
 };
 
-export default React.forwardRef<HTMLAnchorElement, Props>(SidebarListItemHeaderLinkButton);
+export default forwardRef<HTMLAnchorElement, Props>(SidebarListItemHeaderLinkButton);

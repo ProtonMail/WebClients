@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
@@ -10,7 +10,7 @@ interface Props extends SidebarListItemProps {
     icon?: string;
     iconSize?: IconSize;
     iconColor?: string;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const SimpleSidebarListItemLink = ({ to, children, icon, iconSize, iconColor, ...rest }: Props) => {

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    children: React.ReactNode;
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+    children: ReactNode;
     onFocus: () => void;
 }
 

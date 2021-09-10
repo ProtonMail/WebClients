@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { fromUnixTime } from 'date-fns';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
@@ -84,11 +83,11 @@ const LogsSection = () => {
         }
     };
 
-    const handleLogsChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleLogsChange = ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
         handleLogAuth(checked ? BASIC : DISABLE);
     };
 
-    const handleAdvancedLogsChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => {
+    const handleAdvancedLogsChange = ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
         handleLogAuth(checked ? ADVANCED : BASIC);
     };
 

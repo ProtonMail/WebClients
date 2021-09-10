@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, Ref } from 'react';
 import Button, { ButtonProps } from './Button';
 import { classnames } from '../../helpers';
 
@@ -7,7 +7,7 @@ interface Props extends ButtonProps {
     className?: string;
 }
 
-const FloatingButton = ({ children, title, className, ...rest }: Props, ref: React.Ref<HTMLButtonElement>) => {
+const FloatingButton = ({ children, title, className, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     return (
         <Button color="norm" className={classnames(['fab flex', className])} ref={ref} {...rest}>
             {children}
@@ -15,4 +15,4 @@ const FloatingButton = ({ children, title, className, ...rest }: Props, ref: Rea
     );
 };
 
-export default React.forwardRef<HTMLButtonElement, Props>(FloatingButton);
+export default forwardRef<HTMLButtonElement, Props>(FloatingButton);

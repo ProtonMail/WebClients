@@ -1,8 +1,7 @@
-import { useEffect, useContext, useCallback, useState, useRef } from 'react';
-import * as React from 'react';
+import { useEffect, useContext, useCallback, useState, useRef, createContext, ReactNode } from 'react';
 import useBeforeUnload from './useBeforeUnload';
 
-const PreventLeaveContext = React.createContext<{
+const PreventLeaveContext = createContext<{
     clearPendingTasks: () => void;
     preventLeave: <T>(task: Promise<T>) => Promise<T>;
 } | null>(null);
@@ -17,7 +16,7 @@ export default function usePreventLeave() {
     return preventLeaveState;
 }
 
-export const PreventLeaveProvider = ({ children }: { children: React.ReactNode }) => {
+export const PreventLeaveProvider = ({ children }: { children: ReactNode }) => {
     const pendingTasks = useRef(new Set<Promise<any>>());
     const [hasPendingTasks, setHasPendingTasks] = useState(false);
 

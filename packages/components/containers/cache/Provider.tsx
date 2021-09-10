@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import * as React from 'react';
+import { ReactNode, useEffect } from 'react';
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import CacheContext from './cacheContext';
 
 interface Props<K, V> {
     cache: Cache<K, V>;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 const Provider = <K, V>({ cache, children }: Props<K, V>) => {
     useEffect(() => {

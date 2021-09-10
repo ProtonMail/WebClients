@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
@@ -15,7 +15,7 @@ interface Props {
     hideCycle?: boolean;
     hideCurrency?: boolean;
     loading?: boolean;
-    children: React.ReactNode;
+    children: ReactNode;
     service: PLAN_SERVICES;
 }
 

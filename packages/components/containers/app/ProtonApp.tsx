@@ -1,5 +1,4 @@
-import { useState, useCallback, useRef, useMemo, useEffect } from 'react';
-import * as React from 'react';
+import { useState, useCallback, useRef, useMemo, useEffect, Fragment, ReactNode } from 'react';
 import { Router } from 'react-router';
 import { History, createBrowserHistory as createHistory } from 'history';
 import createAuthentication from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -100,7 +99,7 @@ interface AuthState {
 
 interface Props {
     config: ProtonConfig;
-    children: React.ReactNode;
+    children: ReactNode;
     hasInitialAuth?: boolean;
 }
 
@@ -267,7 +266,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             <CompatibilityCheck>
                 <Icons />
                 <RightToLeftProvider>
-                    <React.Fragment key={UID}>
+                    <Fragment key={UID}>
                         <ThemeProvider>
                             <Router history={history}>
                                 <PreventLeaveProvider>
@@ -302,7 +301,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                                 </PreventLeaveProvider>
                             </Router>
                         </ThemeProvider>
-                    </React.Fragment>
+                    </Fragment>
                 </RightToLeftProvider>
             </CompatibilityCheck>
         </ConfigProvider>

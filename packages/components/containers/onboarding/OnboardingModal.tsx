@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import * as React from 'react';
+import { isValidElement, ReactNode, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { useHistory, useLocation } from 'react-router';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
@@ -33,7 +32,7 @@ interface Props {
     title?: string;
     isLoading?: boolean;
     hasClose?: boolean;
-    close?: React.ReactNode;
+    close?: ReactNode;
     submit?: string;
     onSubmit?: () => void;
     onClose?: () => void;
@@ -204,7 +203,7 @@ const OnboardingModal = ({
         rest?.onClose?.();
     }
 
-    if (!React.isValidElement<OnboardingStepProps>(childStep)) {
+    if (!isValidElement<OnboardingStepProps>(childStep)) {
         throw new Error('Missing step');
     }
 

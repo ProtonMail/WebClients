@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 export interface Props {
     role?: string;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const TreeViewContainer = ({ role = 'tree', children }: Props) => {

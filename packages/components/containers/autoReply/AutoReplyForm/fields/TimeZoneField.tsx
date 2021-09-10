@@ -1,5 +1,4 @@
-import { useMemo } from 'react';
-import * as React from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
@@ -15,7 +14,7 @@ interface Props {
 }
 
 const TimeZoneField = ({ value, onChange }: Props) => {
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => onChange(target.value);
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(target.value);
 
     const options = useMemo(() => {
         return getTimeZoneOptions();

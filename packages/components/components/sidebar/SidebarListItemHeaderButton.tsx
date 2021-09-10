@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import Icon from '../icon/Icon';
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon: string;
     info: string;
 }

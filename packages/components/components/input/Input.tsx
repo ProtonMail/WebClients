@@ -1,5 +1,14 @@
-import { KeyboardEventHandler, Ref, useState } from 'react';
-import * as React from 'react';
+import {
+    cloneElement,
+    DetailedHTMLProps,
+    forwardRef,
+    InputHTMLAttributes,
+    KeyboardEventHandler,
+    ReactElement,
+    ReactNode,
+    Ref,
+    useState,
+} from 'react';
 import { c } from 'ttag';
 
 import { generateUID, classnames } from '../../helpers';
@@ -8,10 +17,10 @@ import ErrorZone from '../text/ErrorZone';
 
 import Icon from '../icon/Icon';
 
-export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used
     containerRef?: Ref<HTMLDivElement>;
-    icon?: React.ReactElement;
+    icon?: ReactElement;
     iconSearchDisplayed?: boolean;
     error?: string;
     errorZoneClassName?: string;
@@ -22,7 +31,7 @@ export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes
     loading?: boolean;
 }
 
-const Input = React.forwardRef<HTMLInputElement, Props>(
+const Input = forwardRef<HTMLInputElement, Props>(
     (
         {
             containerRef,
@@ -50,7 +59,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
 
         const hasError = !!(errorZone && (status.isDirty || isSubmitted));
 
-        const addIconWrapper = (child: React.ReactNode) => {
+        const addIconWrapper = (child: ReactNode) => {
             if (type === 'search' && iconSearchDisplayed) {
                 return (
                     <div
@@ -76,7 +85,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
                     ])}
                 >
                     {child}
-                    {React.cloneElement(icon, {
+                    {cloneElement(icon, {
                         className: classnames([icon.props.className, 'right-icon absolute flex']),
                     })}
                 </div>

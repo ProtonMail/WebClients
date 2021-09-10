@@ -1,6 +1,5 @@
+import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
-import { useState } from 'react';
-import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -60,7 +59,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification }: Props) => {
                 }}
                 maxLength={6}
                 placeholder="123456"
-                onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
+                onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
                         withLoading(handleSubmit()).catch(noop);

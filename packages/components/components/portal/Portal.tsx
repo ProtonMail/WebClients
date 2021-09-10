@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const Portal = ({ children }: Props) => {

@@ -1,19 +1,19 @@
-import * as React from 'react';
+import { AnchorHTMLAttributes, forwardRef, ReactNode, Ref } from 'react';
 
-export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     url?: string;
     target?: string;
     rel?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 const Href = (
     { url = '#', target = '_blank', rel = 'noopener noreferrer nofollow', children, ...rest }: Props,
-    ref: React.Ref<HTMLAnchorElement>
+    ref: Ref<HTMLAnchorElement>
 ) => (
     <a href={url} target={target} rel={rel} ref={ref} {...rest}>
         {children}
     </a>
 );
 
-export default React.forwardRef<HTMLAnchorElement, Props>(Href);
+export default forwardRef<HTMLAnchorElement, Props>(Href);

@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import * as React from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -14,7 +13,7 @@ import StandardLoadErrorPage from './StandardLoadErrorPage';
 interface Props {
     locales?: TtagLocaleMap;
     openpgpConfig?: any;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => {

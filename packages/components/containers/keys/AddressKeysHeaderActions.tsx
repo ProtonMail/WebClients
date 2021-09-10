@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -10,7 +10,7 @@ interface Props {
     addressIndex: number;
     onAddKey?: () => void;
     onImportKey?: () => void;
-    onChangeAddress: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onChangeAddress: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
 const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportKey, onChangeAddress }: Props) => {

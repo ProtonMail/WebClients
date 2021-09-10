@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
-import * as React from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, RefObject, useEffect, useState } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props<T> extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement> {
-    scrollAreaRef: React.RefObject<T>;
-    children: React.ReactNode;
+interface Props<T> extends DetailedHTMLProps<HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement> {
+    scrollAreaRef: RefObject<T>;
+    children: ReactNode;
 }
 
 function TableRowSticky<T extends HTMLElement>({ children, scrollAreaRef, className, ...rest }: Props<T>) {
