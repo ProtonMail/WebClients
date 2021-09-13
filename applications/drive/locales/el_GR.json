@@ -1,340 +1,10 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "el"
+    "language": "el_GR"
   },
   "contexts": {
     "": {},
-    "Error": {
-      "This field is required": [
-        "Αυτό το πεδίο είναι υποχρεωτικό"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
-      ],
-      "Email is not valid": [
-        "Η διεύθυνση email δεν είναι έγκυρη"
-      ],
-      "Not a valid number": [
-        "Μη έγκυρος αριθμός"
-      ],
-      "Passwords do not match": [
-        "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
-      ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
-      ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
-      ],
-      "Missing signature": [
-        "Λείπει η υπογραφή"
-      ],
-      "Contact signature not verified": [
-        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
-      ],
-      "Signature not verified": [
-        "Υπογραφή δεν πιστοποιήθηκε"
-      ],
-      "Invalid name": [
-        "Μη έγκυρο όνομα"
-      ],
-      "Unknown error": [
-        "Άγνωστο σφάλμα"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
-      ],
-      "Authentication canceled.": [
-        "Ο έλεγχος ταυτότητας ακυρώθηκε."
-      ],
-      "Your import will not be processed.": [
-        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
-      ],
-      "Authentication error.": [
-        "Σφάλμα ελέγχου ταυτότητας."
-      ],
-      "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
-      ],
-      "Can't validate email, try again later": [
-        "Δεν είναι δυνατή η επικύρωση του email, προσπαθήστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Enter 6 digits": [
-        "Εισαγάγετε 6 ψηφία"
-      ],
-      "Invalid verification code": [
-        "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Process aborted": [
-        "Η διαδικασία ακυρώθηκε"
-      ],
-      "Payment process cancelled": [
-        "Η διαδικασία πληρωμής ακυρώθηκε"
-      ],
-      "Payment process failed": [
-        "Η διαδικασία πληρωμής απέτυχε"
-      ],
-      "Payment process consumed": [
-        "Η διαδικασία πληρωμής έχει εξαντληθεί"
-      ],
-      "Payment process not supported": [
-        "Η διαδικασία πληρωμής δεν υποστηρίζεται"
-      ],
-      "Unknown payment token status": [
-        "Άγνωστη κατάσταση πληρωμής"
-      ],
-      "Tab closed": [
-        "Κλειστή καρτέλα"
-      ],
-      "Name on card required": [
-        "Απαιτείται το όνομα κατόχου της κάρτας"
-      ],
-      "Invalid expiration date": [
-        "Μη έγκυρη ημερομηνία λήξης"
-      ],
-      "Invalid card number": [
-        "Μη έγκυρος αριθμός κάρτας"
-      ],
-      "Invalid ${ name } code": [
-        "Μη έγκυρο ${ name } κωδικός"
-      ],
-      "Invalid postal code": [
-        "Μη έγκυρος ταχυδρομικός κώδικας"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Πρόβλημα σύνδεσης με το Bitcoin API."
-      ],
-      "Amount below minimum.": [
-        "Ποσό χαμηλότερο από το κατώτερο επιτρεπόμενο."
-      ],
-      "Amount above the maximum.": [
-        "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Το ελάχιστο ποσό που μπορεί να δοθεί για δωρεά είναι ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Το ελάχιστο ποσό χρημάτων που μπορεί να προστεθεί είναι ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Η ελάχιστη πληρωμή που γίνεται αποδεκτή είναι ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Η σελίδα έχει λήξει, παρακαλώ προσπαθήστε ξανά."
-      ],
-      "Invalid code": [
-        "Μη έγκυρος κωδικός"
-      ],
-      "Preferences could not be saved": [
-        "Δεν ήταν δυνατή η αποθήκευση των προτιμήσεων"
-      ],
-      "Some groups could not be deleted": [
-        ""
-      ],
-      "Image upload failed": [
-        "Η μεταφόρτωση της εικόνας απέτυχε"
-      ],
-      "Contact could not be saved": [
-        "Η αποθήκευση της επαφής απέτυχε"
-      ],
-      "Some contacts could not be deleted": [
-        "Ορισμένες επαφές δεν μπόρεσαν να διαγραφούν"
-      ],
-      "Invalid public key file": [
-        "Μη έγκυρο δημόσιο κλειδί (public key)"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
-        ""
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        ""
-      ],
-      "There was an error when exporting the contacts vCards": [
-        ""
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "",
-        ""
-      ],
-      "You must set a name": [
-        "Πρέπει να ορίσετε ένα όνομα"
-      ],
-      "A group with this name already exists": [
-        "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
-      ],
-      "No valid address found": [
-        "Δεν βρέθηκε έγκυρη διεύθυνση"
-      ],
-      "Incorrect password. Please try again.": [
-        "Λάθος κωδικός. Παρακαλώ προσπαθήστε ξανά."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Όνομα"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Τηλέφωνο"
-      ],
-      "Address": [
-        "Διεύθυνση"
-      ],
-      "Photo": [
-        "Φωτογραφία"
-      ],
-      "Organization": [
-        "Οργανισμός"
-      ],
-      "Birthday": [
-        "Γενέθλια"
-      ],
-      "Anniversary": [
-        "Επέτειος"
-      ],
-      "Title": [
-        "Τίτλος"
-      ],
-      "Role": [
-        "Ρόλος"
-      ],
-      "Note": [
-        "Σημείωση"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Φύλο"
-      ],
-      "Language": [
-        "Γλώσσα"
-      ],
-      "Timezone": [
-        "Ζώνη ώρας"
-      ],
-      "Geo": [
-        "Γεωγραφικό"
-      ],
-      "Logo": [
-        "Λογότυπο"
-      ],
-      "Member": [
-        "Μέλος"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Εργασία"
-      ],
-      "Personal": [
-        "Προσωπική"
-      ],
-      "Mobile": [
-        "Κινητό"
-      ],
-      "Main": [
-        "Κύριο"
-      ],
-      "Yomi": [
-        "Ανάγνωση"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "Fax": [
-        "Φαξ"
-      ],
-      "Pager": [
-        "Βομβητής"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
-      ],
-      "Home": [
-        "Οικία"
-      ],
-      "Work": [
-        "Εργασία"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "Phone": [
-        "Τηλέφωνο"
-      ],
-      "Mobile": [
-        "Κινητό"
-      ],
-      "Main": [
-        "Κύριο"
-      ],
-      "Fax": [
-        "Φαξ"
-      ],
-      "Pager": [
-        "Βομβητής"
-      ],
-      "Address": [
-        "Διεύθυνση"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
@@ -378,15 +48,6 @@
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
       ],
-      "here": [
-        "εδώ"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
       ],
@@ -426,6 +87,21 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
       ],
+      "Screenshot(s) attached": [
+        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "here": [
+        "εδώ"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ],
@@ -455,12 +131,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
@@ -907,6 +577,30 @@
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
       ],
+      "There are no files yet": [
+        "Δεν υπάρχουν ακόμη αρχεία"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
+      ],
+      "Share files with links": [
+        "Κοινή χρήση αρχείων με συνδέσμους"
+      ],
+      "Create links and share your files with others.": [
+        "Δημιουργήστε συνδέσμους και κοινοποιήστε τα αρχεία σας με άλλους."
+      ],
+      "My Links": [
+        "Οι Σύνδεσμοι Μου"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
+      ],
+      "No files or folders in trash": [
+        "Δεν υπάρχουν αρχεία ή φάκελοι στον κάδο απορριμμάτων"
+      ],
+      "Trash": [
+        "Κάδος Απορριμμάτων"
+      ],
       "${ doneCount } Finished": [
         "${ doneCount } Τελείωσε",
         "${ doneCount } Τελείωσε"
@@ -983,30 +677,6 @@
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Κλείνωντας το διαχειριστή μεταφορών, θα ακυρώσει όλες τις ενεργές μεταφορές, είστε σίγουροι;"
-      ],
-      "There are no files yet": [
-        "Δεν υπάρχουν ακόμη αρχεία"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
-      ],
-      "Share files with links": [
-        "Κοινή χρήση αρχείων με συνδέσμους"
-      ],
-      "Create links and share your files with others.": [
-        "Δημιουργήστε συνδέσμους και κοινοποιήστε τα αρχεία σας με άλλους."
-      ],
-      "My Links": [
-        "Οι Σύνδεσμοι Μου"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
-      ],
-      "No files or folders in trash": [
-        "Δεν υπάρχουν αρχεία ή φάκελοι στον κάδο απορριμμάτων"
-      ],
-      "Trash": [
-        "Κάδος Απορριμμάτων"
       ],
       "Link expires: ": [
         "Ο σύνδεσμος λήγει: "
@@ -1090,9 +760,334 @@
         "Επιλέξτε ένα αρχείο που ανεβάσατε και δημιουργήστε ένα σύνδεσμο προς αυτό."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
+    "Error": {
+      "Request timed out.": [
+        "Λήξη χρονικού ορίου αιτήματος."
+      ],
+      "This field is required": [
+        "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
+      ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+      ],
+      "Missing signature": [
+        "Λείπει η υπογραφή"
+      ],
+      "Contact signature not verified": [
+        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
+      ],
+      "Signature not verified": [
+        "Υπογραφή δεν πιστοποιήθηκε"
+      ],
+      "Invalid name": [
+        "Μη έγκυρο όνομα"
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
+      ],
+      "Unknown error": [
+        "Άγνωστο σφάλμα"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
+      ],
+      "Authentication canceled.": [
+        "Ο έλεγχος ταυτότητας ακυρώθηκε."
+      ],
+      "Your import will not be processed.": [
+        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Authentication error.": [
+        "Σφάλμα ελέγχου ταυτότητας."
+      ],
+      "Email address invalid": [
+        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
+      ],
+      "Can't validate email, try again later": [
+        "Δεν είναι δυνατή η επικύρωση του email, προσπαθήστε ξανά αργότερα"
+      ],
+      "Can't validate phone, try again later": [
+        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
+      ],
+      "Enter 6 digits": [
+        "Εισαγάγετε 6 ψηφία"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Process aborted": [
+        "Η διαδικασία ακυρώθηκε"
+      ],
+      "Payment process cancelled": [
+        "Η διαδικασία πληρωμής ακυρώθηκε"
+      ],
+      "Payment process failed": [
+        "Η διαδικασία πληρωμής απέτυχε"
+      ],
+      "Payment process consumed": [
+        "Η διαδικασία πληρωμής έχει εξαντληθεί"
+      ],
+      "Payment process not supported": [
+        "Η διαδικασία πληρωμής δεν υποστηρίζεται"
+      ],
+      "Unknown payment token status": [
+        "Άγνωστη κατάσταση πληρωμής"
+      ],
+      "Tab closed": [
+        "Κλειστή καρτέλα"
+      ],
+      "Name on card required": [
+        "Απαιτείται το όνομα κατόχου της κάρτας"
+      ],
+      "Invalid expiration date": [
+        "Μη έγκυρη ημερομηνία λήξης"
+      ],
+      "Invalid card number": [
+        "Μη έγκυρος αριθμός κάρτας"
+      ],
+      "Invalid ${ name } code": [
+        "Μη έγκυρο ${ name } κωδικός"
+      ],
+      "Invalid postal code": [
+        "Μη έγκυρος ταχυδρομικός κώδικας"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Πρόβλημα σύνδεσης με το Bitcoin API."
+      ],
+      "Amount below minimum.": [
+        "Ποσό χαμηλότερο από το κατώτερο επιτρεπόμενο."
+      ],
+      "Amount above the maximum.": [
+        "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Το ελάχιστο ποσό που μπορεί να δοθεί για δωρεά είναι ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Το ελάχιστο ποσό χρημάτων που μπορεί να προστεθεί είναι ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Η ελάχιστη πληρωμή που γίνεται αποδεκτή είναι ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Η σελίδα έχει λήξει, παρακαλώ προσπαθήστε ξανά."
+      ],
+      "Invalid code": [
+        "Μη έγκυρος κωδικός"
+      ],
+      "Preferences could not be saved": [
+        "Δεν ήταν δυνατή η αποθήκευση των προτιμήσεων"
+      ],
+      "Some groups could not be deleted": [
+        ""
+      ],
+      "Image upload failed": [
+        "Η μεταφόρτωση της εικόνας απέτυχε"
+      ],
+      "Contact could not be saved": [
+        "Η αποθήκευση της επαφής απέτυχε"
+      ],
+      "Some contacts could not be deleted": [
+        "Ορισμένες επαφές δεν μπόρεσαν να διαγραφούν"
+      ],
+      "Invalid public key file": [
+        "Μη έγκυρο δημόσιο κλειδί (public key)"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
+        ""
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        ""
+      ],
+      "There was an error when exporting the contacts vCards": [
+        ""
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "",
+        ""
+      ],
+      "You must set a name": [
+        "Πρέπει να ορίσετε ένα όνομα"
+      ],
+      "A group with this name already exists": [
+        "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "File has no contents to preview": [
+        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
+      ],
+      "No valid address found": [
+        "Δεν βρέθηκε έγκυρη διεύθυνση"
+      ],
+      "Incorrect password. Please try again.": [
+        "Λάθος κωδικός. Παρακαλώ προσπαθήστε ξανά."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Όνομα"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Phone": [
+        "Τηλέφωνο"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "Photo": [
+        "Φωτογραφία"
+      ],
+      "Organization": [
+        "Οργανισμός"
+      ],
+      "Birthday": [
+        "Γενέθλια"
+      ],
+      "Anniversary": [
+        "Επέτειος"
+      ],
+      "Title": [
+        "Τίτλος"
+      ],
+      "Role": [
+        "Ρόλος"
+      ],
+      "Note": [
+        "Σημείωση"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Φύλο"
+      ],
+      "Language": [
+        "Γλώσσα"
+      ],
+      "Timezone": [
+        "Ζώνη ώρας"
+      ],
+      "Geo": [
+        "Γεωγραφικό"
+      ],
+      "Logo": [
+        "Λογότυπο"
+      ],
+      "Member": [
+        "Μέλος"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Εργασία"
+      ],
+      "Personal": [
+        "Προσωπική"
+      ],
+      "Mobile": [
+        "Κινητό"
+      ],
+      "Main": [
+        "Κύριο"
+      ],
+      "Yomi": [
+        "Ανάγνωση"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Fax": [
+        "Φαξ"
+      ],
+      "Pager": [
+        "Βομβητής"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
+      ],
+      "Home": [
+        "Οικία"
+      ],
+      "Work": [
+        "Εργασία"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Phone": [
+        "Τηλέφωνο"
+      ],
+      "Mobile": [
+        "Κινητό"
+      ],
+      "Main": [
+        "Κύριο"
+      ],
+      "Fax": [
+        "Φαξ"
+      ],
+      "Pager": [
+        "Βομβητής"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Calendar status": {
@@ -1170,6 +1165,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1378,11 +1378,11 @@
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Load image": [
         "Φόρτωση εικόνας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Export": [
         "Εξαγωγή"
@@ -1435,9 +1435,6 @@
       "Signing out": [
         "Αποσύνδεση"
       ],
-      "Log in": [
-        "Είσοδος"
-      ],
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
       ],
@@ -1449,30 +1446,6 @@
       ],
       "here": [
         "εδώ"
-      ],
-      "View invoice": [
-        "Προβολή τιμολογίου"
-      ],
-      "Get verification code": [
-        "Απόκτηση κωδικού επαλήθευσης"
-      ],
-      "Try another method": [
-        "Δοκιμάστε μια άλλη μέθοδο"
-      ],
-      "Request new code": [
-        "Ζητήστε νέο κωδικό"
-      ],
-      "Verify": [
-        "Επαλήθευση"
-      ],
-      "Did not receive the code?": [
-        "Δεν λάβατε τον κωδικό;"
-      ],
-      "Edit email address": [
-        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
-      ],
-      "Edit phone number": [
-        "Επεξεργασία αριθμού τηλεφώνου"
       ],
       "Copy email to clipboard": [
         ""
@@ -1557,6 +1530,33 @@
       ],
       "Show info": [
         "Εμφάνιση πληροφοριών"
+      ],
+      "Log in": [
+        "Είσοδος"
+      ],
+      "View invoice": [
+        "Προβολή τιμολογίου"
+      ],
+      "Get verification code": [
+        "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Try another method": [
+        "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Verify": [
+        "Επαλήθευση"
+      ],
+      "Did not receive the code?": [
+        "Δεν λάβατε τον κωδικό;"
+      ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
+      ],
+      "Edit phone number": [
+        "Επεξεργασία αριθμού τηλεφώνου"
       ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
@@ -1755,60 +1755,6 @@
       "Cancel all uploads": [
         ""
       ],
-      "Share": [
-        "Κοινοποίηση"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Maximize transfers": [
-        "Μεγιστοποίηση μεταφορών"
-      ],
-      "Minimize transfers": [
-        "Ελαχιστοποίηση μεταφορών"
-      ],
-      "Close transfers": [
-        "Κείσιμο μεταφορών"
-      ],
-      "Pause download": [
-        "Παύση λήψης"
-      ],
-      "Pause upload": [
-        "Παύση μεταφόρτωσης"
-      ],
-      "Resume download": [
-        "Συνέχιση λήψης"
-      ],
-      "Resume upload": [
-        "Συνέχιση μεταφόρτωσης"
-      ],
-      "Cancel download": [
-        "Ακύρωση λήψης"
-      ],
-      "Cancel upload": [
-        "Ακύρωση μεταφόρτωσης"
-      ],
-      "Restart download": [
-        "Επανεκκίνηση λήψης"
-      ],
-      "Restart upload": [
-        "Επανεκκίνηση μεταφόρτωσης"
-      ],
-      "Remove from this list": [
-        "Κατάργηση από αυτή τη λίστα"
-      ],
-      "Resume transfers": [
-        ""
-      ],
-      "Pause transfers": [
-        ""
-      ],
-      "Cancel transfers": [
-        ""
-      ],
-      "Restart transfers": [
-        ""
-      ],
       "New upload": [
         "Νέο ανέβασμα"
       ],
@@ -1823,6 +1769,9 @@
       ],
       "Share options": [
         ""
+      ],
+      "Share": [
+        "Κοινοποίηση"
       ],
       "Create new folder": [
         "Δημιουργία νέου φακέλου"
@@ -1878,6 +1827,57 @@
       "Restore from trash": [
         "Επαναφορά από διεγραμμένα"
       ],
+      "Maximize transfers": [
+        "Μεγιστοποίηση μεταφορών"
+      ],
+      "Minimize transfers": [
+        "Ελαχιστοποίηση μεταφορών"
+      ],
+      "Close transfers": [
+        "Κείσιμο μεταφορών"
+      ],
+      "Pause download": [
+        "Παύση λήψης"
+      ],
+      "Pause upload": [
+        "Παύση μεταφόρτωσης"
+      ],
+      "Resume download": [
+        "Συνέχιση λήψης"
+      ],
+      "Resume upload": [
+        "Συνέχιση μεταφόρτωσης"
+      ],
+      "Cancel download": [
+        "Ακύρωση λήψης"
+      ],
+      "Cancel upload": [
+        "Ακύρωση μεταφόρτωσης"
+      ],
+      "Restart download": [
+        "Επανεκκίνηση λήψης"
+      ],
+      "Restart upload": [
+        "Επανεκκίνηση μεταφόρτωσης"
+      ],
+      "Remove from this list": [
+        "Κατάργηση από αυτή τη λίστα"
+      ],
+      "Resume transfers": [
+        ""
+      ],
+      "Pause transfers": [
+        ""
+      ],
+      "Cancel transfers": [
+        ""
+      ],
+      "Restart transfers": [
+        ""
+      ],
+      "Show shared link details": [
+        ""
+      ],
       "Start recovering": [
         "Έναρξη ανάκτησης"
       ],
@@ -1919,6 +1919,21 @@
       "What's new": [
         "Τι νέο υπάρχει"
       ],
+      "Open help menu": [
+        "Έγινε άνοιγμα μενού βοήθειας"
+      ],
+      "Back": [
+        "Πίσω"
+      ],
+      "Open settings menu": [
+        ""
+      ],
+      "Select a theme": [
+        ""
+      ],
+      "Report a problem": [
+        "Αναφορά προβλήματος"
+      ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
       ],
@@ -1939,21 +1954,6 @@
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
-      ],
-      "Open help menu": [
-        "Έγινε άνοιγμα μενού βοήθειας"
-      ],
-      "Back": [
-        "Πίσω"
-      ],
-      "Open settings menu": [
-        ""
-      ],
-      "Select a theme": [
-        ""
-      ],
-      "Report a problem": [
-        "Αναφορά προβλήματος"
       ],
       "Confirm loss of Proton bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
@@ -2193,20 +2193,14 @@
       "Drop to upload": [
         "Αφήστε εδώ για να ανεβεί"
       ],
-      "My files": [
-        "Τα αρχεία μου"
-      ],
-      "Additional settings": [
-        "Επιπλέον ρυθμίσεις"
-      ],
-      "Cancel all active transfers": [
-        "Ακυρώστε όλες τις ενεργές μεταφορές"
-      ],
       "Show actions": [
         "Εμφάνιση ενεργειών"
       ],
       "Sort files/folders": [
         "Ταξινόμηση αρχείων/φάκελων"
+      ],
+      "My files": [
+        "Τα αρχεία μου"
       ],
       "Change layout": [
         "Αλλαγή διάταξης"
@@ -2219,6 +2213,12 @@
       ],
       "Trash": [
         "Κάδος Απορριμμάτων"
+      ],
+      "Additional settings": [
+        "Επιπλέον ρυθμίσεις"
+      ],
+      "Cancel all active transfers": [
+        "Ακυρώστε όλες τις ενεργές μεταφορές"
       ],
       "Your file is ready to be downloaded": [
         "Το φάκελος σας είναι έτοιμος για λήψη"
@@ -2369,6 +2369,36 @@
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "Operating system": [
+        "Λειτουργικό σύστημα"
+      ],
+      "Operating system version": [
+        "Έκδοση λειτουργικού συστήματος (Os Version)"
+      ],
+      "Proton username": [
+        "Όνομα χρήστη Proton"
+      ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
+      "Category": [
+        "Κατηγορία"
+      ],
+      "What happened?": [
+        "Τι συνέβη;"
+      ],
+      "System information": [
+        "Πληροφορίες Συστήματος"
+      ],
+      "Browser": [
+        "Πρόγραμμα περιήγησης"
+      ],
+      "Browser version": [
+        "Έκδοση προγράμματος περιήγησης"
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -2387,9 +2417,6 @@
       "Username or ProtonMail address": [
         "Όνομα χρήστη ή διεύθυνση ProtonMail"
       ],
-      "Email address": [
-        "Διεύθυνση email"
-      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -2398,33 +2425,6 @@
       ],
       "Enter the 6-digit code": [
         "Εισαγάγετε τον 6-ψήφιο κωδικό"
-      ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
-      "Operating system": [
-        "Λειτουργικό σύστημα"
-      ],
-      "Operating system version": [
-        "Έκδοση λειτουργικού συστήματος (Os Version)"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
-      "Category": [
-        "Κατηγορία"
-      ],
-      "What happened?": [
-        "Τι συνέβη;"
-      ],
-      "System information": [
-        "Πληροφορίες Συστήματος"
-      ],
-      "Browser": [
-        "Πρόγραμμα περιήγησης"
-      ],
-      "Browser version": [
-        "Έκδοση προγράμματος περιήγησης"
       ],
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
@@ -2555,33 +2555,6 @@
       "Apply to all duplicated files": [
         ""
       ],
-      "Folder": [
-        "Φάκελος"
-      ],
-      "(Expired)": [
-        "(Expired)"
-      ],
-      "Expired": [
-        "Έχει λήξει"
-      ],
-      "Never": [
-        "Ποτέ"
-      ],
-      "File": [
-        "Αρχείο"
-      ],
-      "All": [
-        "Όλα"
-      ],
-      "Active": [
-        "Ενεργό"
-      ],
-      "Failed": [
-        "Απέτυχε"
-      ],
-      "Apply to selected transfers": [
-        ""
-      ],
       "Audio file": [
         "Αρχείο ήχου"
       ],
@@ -2596,6 +2569,33 @@
       ],
       "Unknown file": [
         "Άγνωστο αρχείο"
+      ],
+      "All": [
+        "Όλα"
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "Failed": [
+        "Απέτυχε"
+      ],
+      "Apply to selected transfers": [
+        ""
+      ],
+      "Folder": [
+        "Φάκελος"
+      ],
+      "(Expired)": [
+        "(Expired)"
+      ],
+      "Expired": [
+        "Έχει λήξει"
+      ],
+      "Never": [
+        "Ποτέ"
+      ],
+      "File": [
+        "Αρχείο"
       ],
       "Get your own ${ appName }": [
         "Αποκτήστε το δικό σας ${ appName }"
@@ -2620,9 +2620,6 @@
       "E.g., ": [
         "Π.χ., "
       ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
       "e.g. Julia Smith": [
         "π.χ. Julia Smith"
       ],
@@ -2646,6 +2643,9 @@
       ],
       "Browser version": [
         "Έκδοση Browser"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
       ],
       "ZIP": [
         "T.K"
@@ -2717,9 +2717,6 @@
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
       ],
-      "Request an invite": [
-        "Ζητήστε μια πρόσκληση"
-      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
@@ -2728,6 +2725,9 @@
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του Browser"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
       ],
       "click here": [
         "κάντε κλικ εδώ"
@@ -2897,6 +2897,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
@@ -2952,14 +2955,14 @@
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
+      "Bug reported": [
+        "Το σφάλμα αναφέρθηκε"
+      ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
-      ],
-      "Bug reported": [
-        "Το σφάλμα αναφέρθηκε"
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
@@ -3015,6 +3018,17 @@
         "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Εφαρμογές Proton"
+      ],
+      "Go to ${ title }": [
+        "Πάντε στο ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Πηγαίνετε στο ${ vpnName }"
+      ]
+    },
     "Error message": {
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
@@ -3047,42 +3061,9 @@
         "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
-      ],
-      "Go to ${ title }": [
-        "Πάντε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Πηγαίνετε στο ${ vpnName }"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Καθυστερημένο τιμολόγιο"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Χειροκίνητα"
-      ],
-      "No verification method available": [
-        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
       ]
     },
     "Header": {
@@ -3268,6 +3249,28 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Καθυστερημένο τιμολόγιο"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Χειροκίνητα"
+      ],
+      "No verification method available": [
+        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
       ]
     },
     "Info for cash payment method": {
@@ -3717,30 +3720,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Κανονικό"
-      ],
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ]
-    },
     "Notification": {
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
@@ -3843,6 +3822,9 @@
         "${ failedCount } σύνδεσμος στο αρχείο σας απέτυχε να διαγραφεί.",
         "${ failedCount } σύνδεσμοι στα αρχεία σας απέτυχαν να διαγραφούν."
       ],
+      "All items will soon be permanently deleted from trash": [
+        "Όλα τα στοιχεία σύντομα θα διαγραφούν οριστικά από τον κάδο ανακύκλωσης"
+      ],
       "Move ${ movingCount } file": [
         "Μετακίνηση ${ movingCount } αρχείου",
         "Μετακίνηση ${ movingCount } αρχείων"
@@ -3854,9 +3836,6 @@
       "Move ${ movingCount } item": [
         "Μετακίνηση ${ movingCount } στοιχείου",
         "Μετακίνηση ${ movingCount } στοιχείων"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Όλα τα στοιχεία σύντομα θα διαγραφούν οριστικά από τον κάδο ανακύκλωσης"
       ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλώ προσπαθήστε ξανά"
@@ -4098,6 +4077,30 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Άνετη"
+      ],
+      "Compact": [
+        "Συμπαγής"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Στήλη"
+      ],
+      "Row": [
+        "Σειρά"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Κανονικό"
+      ],
+      "Maximized": [
+        "Μεγιστοποιημένο"
       ]
     },
     "Select files": {

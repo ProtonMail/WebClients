@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Tuccḍa deg usesteb."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
-      ],
       "Email address invalid": [
         "Tansa imayl mači d tameɣtut"
       ],
       "This field is required": [
         "Urti-agi ilaq"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Yir isem"
       ],
-      "Primary address key is not decrypted": [
-        "Tasarut n tansa tagejdant ur tettwawgelhen ara"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Mdel popover"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Askar n umsuddes"
       ],
-      "Beta Access": [
-        "Anekcum Biṭa"
-      ],
       "Edit contact group": [
         "Ẓreg agraw n urmas"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Kter inermisen"
+      ],
+      "Beta Access": [
+        "Anekcum Biṭa"
       ],
       "Start import process": [
         ""
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Ẓreg aneḍru"
-      ],
-      "Event details": [
-        "Tlaqayt n tedyant"
-      ],
-      "More options": [
-        "Ugar n textiriyin"
-      ],
-      "CANCELLED": [
-        "YETTUSEFSAX"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "Ur yettwasagan ara"
       ],
-      "Expired": [
-        "Yemmut"
-      ],
       "here": [
         "dagi"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
+      ],
+      "Expired": [
+        "Yemmut"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Asiḍen aktassaɣan"
       ],
-      "Cash": [
-        "Ṣṣerf"
-      ],
-      "Card holder": [
-        "Bab n tkarḍa"
-      ],
-      "Expires": [
-        "Ad yemmet"
-      ],
-      "Payer": [
-        "Amxellaṣ"
-      ],
       "Cancel": [
         "Sefsex"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "Sekcem tangalt n 6 n yizwilen"
       ],
+      "Cash": [
+        "Ṣṣerf"
+      ],
+      "Card holder": [
+        "Bab n tkarḍa"
+      ],
+      "Expires": [
+        "Ad yemmet"
+      ],
+      "Payer": [
+        "Amxellaṣ"
+      ],
       "Keyboard shortcuts": [
         "Inegzumen n unasiw"
       ],
@@ -2087,9 +2081,6 @@
       ],
       "Select how your composer opens by default.": [
         "Fren amek ara yettban umsuddes-inek•inem s lexṣas."
-      ],
-      "Enable Beta Access": [
-        "Sermed anekcum Biṭa"
       ],
       "Add email address": [
         "Rnu tansa n yimayl"
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Kter inermisen"
+      ],
+      "Enable Beta Access": [
+        "Sermed anekcum Biṭa"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "Iwitayen-inek·inem"
+      ],
+      "Participant": [
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2248,6 +2246,11 @@
       ],
       "Subscribed calendars": [
         "Jerred s iwitayen"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Tasarut ulamek ara tettwaseqdec i uwgelhen"
       ]
     },
     "Placeholder": {
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } tasdat",
         "${ minutes } tisdating"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Tasarut ulamek ara tettwaseqdec i uwgelhen"
       ]
     },
     "Tooltip": {
@@ -2484,6 +2482,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ProtonVPN n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n uneqqis ur tettuwgelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
@@ -2686,6 +2687,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Nadi timnaḍin tisraganin"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3353,17 +3362,6 @@
         "Baṭel"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Takarḍa n usmad tamaynut/n uxelleṣ"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tafaturt ur nettwaxelleṣ ara"
@@ -3386,17 +3384,15 @@
         "Ulac tarrayt n usenqed"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ProtonMail, Proton Calendar, akked Proton Drive send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Takarḍa n usmad tamaynut/n uxelleṣ"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Sali"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ProtonMail, Proton Calendar, akked Proton Drive send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Sali"
       ]
     },
     "Message display when a new app version is available": {
@@ -4466,6 +4475,11 @@
         "Tansa"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Tansa n yimayl ulac-itt gar yinekcam n yiseqdac i yettusbadun deg tsarut n tuzna (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Tunigin tazadurt"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "Sken izen anaṣli"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Tansa n yimayl ulac-itt gar yinekcam n yiseqdac i yettusbadun deg tsarut n tuzna (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "akuden"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Tqebleḍ tinnubga"
@@ -4876,11 +4890,6 @@
         "s yimayl"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Yettwasuddes sɣur:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Assensi"
@@ -4889,6 +4898,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Tadyant-a n uwitay yettusensen."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }

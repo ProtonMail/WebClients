@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "zh-CN"
+    "language": "zh_CN"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "验证错误"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
       "Email address invalid": [
         "电子邮箱地址无效"
       ],
       "This field is required": [
         "此项必须填写"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
@@ -153,14 +153,14 @@
       "Invalid name": [
         "无效的名称"
       ],
-      "Primary address key is not decrypted": [
-        "主密钥尚未解密。"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "主密钥尚未解密。"
       ],
       "No valid address found": [
         "未找到有效地址"
@@ -769,6 +769,9 @@
       ],
       "Close popover": [
         "关闭对话框"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -940,9 +943,6 @@
       "Composer mode": [
         "编辑窗模式"
       ],
-      "Beta Access": [
-        "测试版功能"
-      ],
       "Edit contact group": [
         "更改联系人群组"
       ],
@@ -1050,6 +1050,9 @@
       ],
       "Import contacts": [
         "导入联系人"
+      ],
+      "Beta Access": [
+        "测试版功能"
       ],
       "Start import process": [
         ""
@@ -1191,15 +1194,6 @@
       ],
       "Edit event": [
         "编辑日程"
-      ],
-      "Event details": [
-        "事项详情"
-      ],
-      "More options": [
-        "更多选项"
-      ],
-      "CANCELLED": [
-        "已取消"
       ]
     },
     "Info": {
@@ -1479,9 +1473,6 @@
       "Not customizable": [
         "无法自定义"
       ],
-      "Expired": [
-        "已过期"
-      ],
       "here": [
         "这里"
       ],
@@ -1520,6 +1511,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "Expired": [
+        "已过期"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
@@ -2017,18 +2011,6 @@
       "Proration": [
         "按比例分配"
       ],
-      "Cash": [
-        "现金"
-      ],
-      "Card holder": [
-        "持卡人"
-      ],
-      "Expires": [
-        "有效期至"
-      ],
-      "Payer": [
-        "付款人"
-      ],
       "Cancel": [
         "取消"
       ],
@@ -2056,6 +2038,18 @@
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
       ],
+      "Cash": [
+        "现金"
+      ],
+      "Card holder": [
+        "持卡人"
+      ],
+      "Expires": [
+        "有效期至"
+      ],
+      "Payer": [
+        "付款人"
+      ],
       "Keyboard shortcuts": [
         "键盘快捷键"
       ],
@@ -2067,9 +2061,6 @@
       ],
       "Select how your composer opens by default.": [
         "请选择编辑窗的默认外观"
-      ],
-      "Enable Beta Access": [
-        "启用测试版功能"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -2106,6 +2097,9 @@
       ],
       "Export contacts": [
         "导出联系人"
+      ],
+      "Enable Beta Access": [
+        "启用测试版功能"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2190,6 +2184,9 @@
       ],
       "Your calendars": [
         "您的日历"
+      ],
+      "Participant": [
+        ""
       ]
     },
     "Link": {
@@ -2228,6 +2225,11 @@
       ],
       "Subscribed calendars": [
         "已订阅日历"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
       ]
     },
     "Placeholder": {
@@ -2316,11 +2318,6 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分钟"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
       ]
     },
     "Tooltip": {
@@ -2461,6 +2458,9 @@
         "此功能仅限付费用户使用"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -2659,6 +2659,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "搜索时区"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3315,17 +3323,6 @@
         "免费版"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "添加信用卡/借记卡"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "比特币"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期账单"
@@ -3348,17 +3345,15 @@
         "没有可用的验证方法"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
+    "Payment method option": {
+      "New credit/debit card": [
+        "添加信用卡/借记卡"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "比特币"
       ]
     },
     "Label to change density": {
@@ -3627,9 +3622,17 @@
         "${ totalImported }/${ totalToImport } 联系人已加密并添至您的联系人列表"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "上传"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
       ]
     },
     "Loading info": {
@@ -3651,6 +3654,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上传"
       ]
     },
     "Message display when a new app version is available": {
@@ -4375,6 +4383,11 @@
         "地址"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "基本导航"
@@ -4548,11 +4561,6 @@
       ],
       "Show original message": [
         "显示原始邮件"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4733,6 +4741,11 @@
         "次"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "您接受了邀请"
@@ -4767,11 +4780,6 @@
         "按电子邮件"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "组织人："
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "停用"
@@ -4780,6 +4788,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "此为已停用日历中的事件"
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }

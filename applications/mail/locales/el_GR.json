@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "el"
+    "language": "el_GR"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
-      ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
-      ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
       ],
+      "Request timed out.": [
+        "Λήξη χρονικού ορίου αιτήματος."
+      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Δεν ήταν δυνατή η εξαγωγή των ιδιοτήτων κλειδιού για ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Σφάλμα ελέγχου ταυτότητας."
       ],
+      "Email address invalid": [
+        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
-      ],
-      "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
       ],
       "The composer failed to load.": [
         "Ο συνθέτης απέτυχε να φορτώσει."
@@ -314,6 +328,9 @@
         "",
         ""
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "Οι κωδικοί πρόσβασης του μηνύματος δεν ταιριάζουν."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Άγνωστο σφάλμα."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Πάρα πολλά ενεργά φίλτρα. Παρακαλώ αναβαθμίστε σε ένα πληρωμένο πρόγραμμα για να ενεργοποιήσετε περισσότερα φίλτρα"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "",
         ""
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Διεύθυνση"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Απ:"
+      ],
+      "Fw:": [
+        "Προώθ:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "Στις ${ date }, ${ name } ${ address } έγραψε:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
@@ -526,17 +549,14 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "support team": [
-        "ομάδα υποστήριξης"
-      ],
-      "Loading": [
-        "Φόρτωση"
-      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
       "You can either update your search query or ${ button }": [
         "Μπορείτε είτε να ενημερώσετε τα κριτήρια αναζήτησης είτε ${ button }"
+      ],
+      "support team": [
+        "ομάδα υποστήριξης"
       ],
       "Week": [
         "Εβδομάδα"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
+      ],
+      "Loading": [
+        "Φόρτωση"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από προγράμματα περιήγησης Internet Explorer και Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Δοκ. σύνδεσμος"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Χρώμα κειμένου"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
@@ -1520,6 +1552,12 @@
         "",
         ""
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } μη αναγνωσμένη συνομιλία",
         "${ unreadCount } μη αναγνωσμένες συνομιλίες"
@@ -1698,22 +1736,6 @@
         ""
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Απ:"
-      ],
-      "Fw:": [
-        "Προώθ:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Στις ${ date }, ${ name } ${ address } έγραψε:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Άγνωστο"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Κλείσιμο"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
-      "Use “${ label }” setting": [
-        ""
-      ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Επιβεβαίωση"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Κλείσιμο παραθύρου"
       ],
-      "Confirm": [
-        "Επιβεβαίωση"
+      "Use “${ label }” setting": [
+        ""
       ],
       "Remove": [
         "Αφαίρεση"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "Ρυθμίσεις Email"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Next month": [
         "Επόμενος μήνας"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
       ],
-      "Use ${ label } theme": [
-        "Χρήση ${ label } θέματος"
-      ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "Επόμενο"
+      ],
+      "Use ${ label } theme": [
+        "Χρήση ${ label } θέματος"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Προσθέστε στο ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Μάθετε περισσότερα"
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Αποστολή ούτως ή άλλως"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "Επιστροφή"
       ],
       "Send": [
         "Αποστολή"
@@ -3323,6 +3338,9 @@
       "Show": [
         "Εμφάνιση"
       ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
       "Undo": [
         "Αναίρεση"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Σύνθετη αναζήτηση"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Επισήμανση ως αναγνωσμένο"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         ""
       ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
+      ],
       "Import messages": [
         "Εισαγωγή μηνυμάτων"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
-      ],
-      "Select a theme": [
-        ""
       ],
       "Delete ${ Name }": [
         "Διαγραφή ${ Name }"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Εισαγωγή Επαφών"
+      ],
+      "Select a theme": [
+        ""
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "Κρυφή κοινοποίηση"
       ],
-      "Errors detected": [
-        "Εντοπίστηκαν σφάλματα"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Επιβεβαίωση διεύθυνσης παραλήπτη;"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
+      ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
+      ],
+      "Pay invoice": [
+        "Πληρωμή υπολοίπου"
+      ],
+      "Upgrade account": [
+        "Αναβάθμιση λογαριασμού"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Go to subscription plans": [
+        ""
+      ],
+      "click here": [
+        "κάντε κλικ εδώ"
+      ],
+      "Add a gift code": [
+        "Προσθήκη κωδικού δώρου"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        ""
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να διαχειριστείτε αυτήν την πρόσκληση"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να απαντήσετε σε αυτή την πρόσκληση"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να δείτε την ενημερωμένη εκδήλωση"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        ""
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να διαχειριστείτε αυτήν την πρόσκληση"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη εκδήλωση"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "Create a new calendar to add this event": [
+        ""
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Δημιουργήστε ένα νέο ημερολόγιο για να απαντήσετε σε αυτήν την πρόσκληση"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Δημιουργήστε ένα νέο ημερολόγιο για να διαχειριστείτε τις προσκλήσεις σας"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Άνοιγμα ενημερωμένης εκδήλωσης σε ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Άνοιγμα σε ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Drafts": [
+        "Πρόχειρα"
+      ],
+      "Sent": [
+        "Απεσταλμένα"
+      ],
+      "Trash": [
+        "Κάδος Απορριμμάτων"
+      ],
+      "Spam": [
+        "Ανεπιθύμητα"
+      ],
+      "All mail": [
+        "Όλα τα Μηνύματα"
+      ],
+      "Archive": [
+        "Αρχειοθέτηση"
+      ],
+      "Starred": [
+        "Με αστέρι"
+      ],
+      "Outbox": [
+        "Εξερχόμενα"
+      ],
+      "Scheduled": [
+        "Προγραμματισμένο"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για τη διαχείριση της πρόσκλησής σας."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για να ενημερώσετε την πρόσκλησή σας."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Ενεργοποιείστε τη διεύθυνση σας, για να απαντήσετε σε αυτή την πρόσκληση."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Δημιουργήστε ένα ημερολόγιο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Ενεργοποιήστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με ένα από τα ημερολόγιά σας."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Ή μπορείτε να διαγράψετε ένα από τα ημερολόγιά σας και να δημιουργήσετε ένα νέο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Ενεργοποιήστε ξανά τη διεύθυνσή σας για να τροποποιήσετε την απάντησή σας."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Ενεργοποιήστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με το απενεργοποιημένο ημερολόγιο για να ακυρώσετε το γεγονός."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Ενεργοποιήστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με το απενεργοποιημένο ημερολόγιο για να τροποποιήσετε την απάντησή σας."
+      ],
+      "Add folder": [
+        "Προσθήκη φακέλου"
+      ],
+      "Add label": [
+        "Προσθήκη ετικέτας"
+      ],
+      "Folders": [
+        "Φάκελοι"
+      ],
+      "Manage your folders": [
+        "Διαχείριση των φακέλων σας"
+      ],
+      "Labels": [
+        "Ετικέτες"
+      ],
+      "Manage your labels": [
+        "Διαχείρηση των ετικετών σας"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } δευτερόλεπτα"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Μάθετε περισσότερα"
-      ],
-      "Request an invite": [
-        "Ζητήστε μια πρόσκληση"
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "Pay invoice": [
-        "Πληρωμή υπολοίπου"
-      ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Go to subscription plans": [
-        ""
-      ],
-      "click here": [
-        "κάντε κλικ εδώ"
-      ],
-      "Add a gift code": [
-        "Προσθήκη κωδικού δώρου"
-      ],
-      "Inbox": [
-        "Εισερχόμενα"
-      ],
-      "Drafts": [
-        "Πρόχειρα"
-      ],
-      "Sent": [
-        "Απεσταλμένα"
-      ],
-      "Trash": [
-        "Κάδος Απορριμμάτων"
-      ],
-      "Spam": [
-        "Ανεπιθύμητα"
-      ],
-      "All mail": [
-        "Όλα τα Μηνύματα"
-      ],
-      "Archive": [
-        "Αρχειοθέτηση"
-      ],
-      "Starred": [
-        "Με αστέρι"
-      ],
-      "Outbox": [
-        "Εξερχόμενα"
-      ],
-      "Scheduled": [
-        "Προγραμματισμένο"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        ""
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να διαχειριστείτε αυτήν την πρόσκληση"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να απαντήσετε σε αυτή την πρόσκληση"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να δείτε την ενημερωμένη εκδήλωση"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να δείτε την ενημερωμένη πρόσκληση"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να διαχειριστείτε αυτήν την πρόσκληση"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη εκδήλωση"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
-      ],
-      "Create a new calendar to add this event": [
-        ""
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Δημιουργήστε ένα νέο ημερολόγιο για να απαντήσετε σε αυτήν την πρόσκληση"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Δημιουργήστε ένα νέο ημερολόγιο για να διαχειριστείτε τις προσκλήσεις σας"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Άνοιγμα ενημερωμένης εκδήλωσης σε ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Άνοιγμα σε ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για τη διαχείριση της πρόσκλησής σας."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για να ενημερώσετε την πρόσκλησή σας."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Ενεργοποιείστε τη διεύθυνση σας, για να απαντήσετε σε αυτή την πρόσκληση."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Δημιουργήστε ένα ημερολόγιο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Ενεργοποιήστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με ένα από τα ημερολόγιά σας."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Ή μπορείτε να διαγράψετε ένα από τα ημερολόγιά σας και να δημιουργήσετε ένα νέο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Ενεργοποιήστε ξανά τη διεύθυνσή σας για να τροποποιήσετε την απάντησή σας."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Ενεργοποιήστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με το απενεργοποιημένο ημερολόγιο για να ακυρώσετε το γεγονός."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Ενεργοποιήστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με το απενεργοποιημένο ημερολόγιο για να τροποποιήσετε την απάντησή σας."
-      ],
-      "Add folder": [
-        "Προσθήκη φακέλου"
-      ],
-      "Add label": [
-        "Προσθήκη ετικέτας"
-      ],
-      "Folders": [
-        "Φάκελοι"
-      ],
-      "Manage your folders": [
-        "Διαχείριση των φακέλων σας"
-      ],
-      "Labels": [
-        "Ετικέτες"
-      ],
-      "Manage your labels": [
-        "Διαχείρηση των ετικετών σας"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Αυτή η λειτουργία, απαιτεί έναν επί πληρωμή λογαριασμό Proton"
@@ -4707,6 +4734,9 @@
         "Είστε βέβαιοι ότι θέλετε να απορρίψετε την εισαγωγή σας;"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5150,30 +5180,6 @@
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Κανονικό"
-      ],
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Όνομα"
@@ -5390,6 +5396,35 @@
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Άνετη"
+      ],
+      "Compact": [
+        "Συμπαγής"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Στήλη"
+      ],
+      "Row": [
+        "Σειρά"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Κανονικό"
+      ],
+      "Maximized": [
+        "Μεγιστοποιημένο"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Μεταφόρτωση"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Μεταφόρτωση"
       ]
     },
     "Onboarding Proton": {
@@ -6683,10 +6713,6 @@
         "Έχουμε εντοπίσει σφάλματα. Το email σας δεν μπορεί να σταλεί στη διεύθυνση ηλεκτρονικού ταχυδρομείου που εισάγεται για τον ακόλουθο λόγο:",
         "Έχουμε εντοπίσει σφάλματα. Το email σας δεν μπορεί να σταλεί σε καμία από τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που έχουν εισαχθεί για τους ακόλουθους λόγους:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Παρακαλώ επιστρέψτε για να επεξεργαστείτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που έχετε εισάγει.",
-        "Παρακαλώ επιστρέψτε για να επεξεργαστείτε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που εισάγατε."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Εντοπίσαμε κάποια σφάλματα. Το email σας δεν μπορεί να σταλεί σε μία ή περισσότερες από τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που εισάγατε για τους ακόλουθους λόγους:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Επόμενο"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

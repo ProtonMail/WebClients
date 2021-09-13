@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
-    "language": "ru"
+    "language": "ru_RU"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Ошибка аутентификации."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Ваш браузер не позволяет завершить платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
-      ],
       "Email address invalid": [
         "Неверный адрес электронной почты"
       ],
       "This field is required": [
         "Это обязательное поле"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Ваш браузер не позволяет завершить платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
@@ -159,14 +159,14 @@
       "Invalid name": [
         "Недопустимое имя"
       ],
-      "Primary address key is not decrypted": [
-        "Не расшифрован ключ основного адреса"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Не расшифрован ключ основного адреса"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -793,6 +793,9 @@
       ],
       "Close popover": [
         "Закрыть окно"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -964,9 +967,6 @@
       "Composer mode": [
         "Режим редактора"
       ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
       "Edit contact group": [
         "Изменение группы контактов"
       ],
@@ -1086,6 +1086,9 @@
       ],
       "Import contacts": [
         "Импорт контактов"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
       ],
       "Start import process": [
         ""
@@ -1227,15 +1230,6 @@
       ],
       "Edit event": [
         "Изменить событие"
-      ],
-      "Event details": [
-        "Детали события"
-      ],
-      "More options": [
-        "Дополнительные параметры"
-      ],
-      "CANCELLED": [
-        "ОТМЕНЕНО"
       ]
     },
     "Info": {
@@ -1524,9 +1518,6 @@
       "Not customizable": [
         "Не настраивается"
       ],
-      "Expired": [
-        "Устаревший"
-      ],
       "here": [
         "здесь"
       ],
@@ -1565,6 +1556,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "Expired": [
+        "Устаревший"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
@@ -2077,18 +2071,6 @@
       "Proration": [
         "Распределение"
       ],
-      "Cash": [
-        "Наличные"
-      ],
-      "Card holder": [
-        "Владелец карты"
-      ],
-      "Expires": [
-        "Срок действия истекает"
-      ],
-      "Payer": [
-        "Плательщик"
-      ],
       "Cancel": [
         "Отменить"
       ],
@@ -2116,6 +2098,18 @@
       "Enter the 6-digit code": [
         "Введите код из шести цифр"
       ],
+      "Cash": [
+        "Наличные"
+      ],
+      "Card holder": [
+        "Владелец карты"
+      ],
+      "Expires": [
+        "Срок действия истекает"
+      ],
+      "Payer": [
+        "Плательщик"
+      ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
       ],
@@ -2127,9 +2121,6 @@
       ],
       "Select how your composer opens by default.": [
         "Выберите вид по умолчанию для окна редактора."
-      ],
-      "Enable Beta Access": [
-        "Включить доступ к Beta"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -2166,6 +2157,9 @@
       ],
       "Export contacts": [
         "Экспортировать контакты"
+      ],
+      "Enable Beta Access": [
+        "Включить доступ к Beta"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2250,6 +2244,12 @@
       ],
       "Your calendars": [
         "Ваши календари"
+      ],
+      "Participant": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2288,6 +2288,11 @@
       ],
       "Subscribed calendars": [
         "Подписанные на календари"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не может быть использован для шифрования"
       ]
     },
     "Placeholder": {
@@ -2382,11 +2387,6 @@
         "${ minutes } минуты",
         "${ minutes } минут",
         "${ minutes } минут"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не может быть использован для шифрования"
       ]
     },
     "Tooltip": {
@@ -2527,6 +2527,9 @@
         "Для этой функции требуется платный аккаунт Proton"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -2740,6 +2743,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Поиск часовых поясов"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3429,17 +3440,6 @@
         "Free"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Новая кредитная или дебетовая карта"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
@@ -3462,17 +3462,15 @@
         "Нет доступных способов проверки"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Доступ к Beta позволяет использовать бета-версию ProtonMail, Proton Calendar, и Proton Drive до того, как они будут опубликованы публике. Это означает, что вы можете первыми попробовать новые продукты, получать новые обновления и использовать новые функции."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Новая кредитная или дебетовая карта"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Если вы столкнетесь с проблемами, вы всегда можете отключить доступ к Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примечание: сервис будет перезагружен, когда вы нажмете кнопку Применить."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3774,9 +3772,17 @@
         "${ totalImported } контакта из ${ totalToImport } зашифровано и добавлено в ваш список контактов"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Загрузить"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Доступ к Beta позволяет использовать бета-версию ProtonMail, Proton Calendar, и Proton Drive до того, как они будут опубликованы публике. Это означает, что вы можете первыми попробовать новые продукты, получать новые обновления и использовать новые функции."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Если вы столкнетесь с проблемами, вы всегда можете отключить доступ к Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Примечание: сервис будет перезагружен, когда вы нажмете кнопку Применить."
       ]
     },
     "Loading info": {
@@ -3798,6 +3804,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Загрузить"
       ]
     },
     "Message display when a new app version is available": {
@@ -4648,6 +4659,11 @@
         "Адрес"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользоватеей, определенных в ключе отправки (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Основная навигация"
@@ -4821,11 +4837,6 @@
       ],
       "Show original message": [
         "Показать исходное сообщение"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользоватеей, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5060,6 +5071,11 @@
         "раз"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Вы приняли приглашение"
@@ -5094,11 +5110,6 @@
         "по электронной почте"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Организатор:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Отключен"
@@ -5106,6 +5117,48 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
+        ""
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
         ""
       ]
     }

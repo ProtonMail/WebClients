@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "ja"
+    "language": "ja_JP"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "バイト"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "この項目の入力は必須です"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
-      ],
-      "Request timed out.": [
-        "リクエストはタイムアウトしました。"
-      ],
-      "Signature verification failed": [
-        "署名の検証に失敗しました"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Email address disabled": [
         "メールアドレスが無効です"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "送信鍵が有効ではありません"
       ],
+      "Request timed out.": [
+        "リクエストはタイムアウトしました。"
+      ],
       "Missing signature": [
         "署名がありません"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "${ emailAddress } のキープロパティは抽出できませんでした"
+      ],
+      "Signature verification failed": [
+        "署名の検証に失敗しました"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "認証エラー"
       ],
+      "Email address invalid": [
+        "メールアドレスが不正です。"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "お使いのブラウザでは、支払いを完全に承認できません。 別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
-      "Email address invalid": [
-        "メールアドレスが不正です。"
       ],
       "The composer failed to load.": [
         "Composerが読み込みに失敗しました。"
@@ -154,7 +168,7 @@
         "連絡先のvCardのエクスポート中にエラーが発生しました"
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
-        ""
+        "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -309,6 +323,9 @@
       "Removed duplicate recipient: ${ recipents }": [
         ""
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "メッセージパスワードが一致しません。"
       ],
@@ -345,6 +362,15 @@
       "Unknown error.": [
         "不明なエラーが発生しました"
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         ""
       ]
@@ -352,20 +378,6 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "パスワードは ${ length } 文字以上必要です"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "バイト"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -482,6 +494,17 @@
         "住所"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        ""
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "セッションがタイムアウトしました。"
@@ -519,23 +542,23 @@
       "No results found": [
         "該当する項目がありません"
       ],
-      "support team": [
-        "サポートチーム"
-      ],
-      "Loading": [
-        "読み込み中"
-      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません。"
       ],
       "You can either update your search query or ${ button }": [
         ""
       ],
+      "support team": [
+        "サポートチーム"
+      ],
       "Week": [
         "週"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
+      ],
+      "Loading": [
+        "読み込み中"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -590,6 +613,12 @@
       ],
       "Test link": [
         "リンクをテスト"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "文字色"
@@ -1149,6 +1178,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(以下のいずれかの条件が満たされた場合に動作します)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "変更内容は全て失われます。"
       ],
@@ -1491,6 +1523,12 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         ""
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } 件の会話が未読"
       ],
@@ -1615,10 +1653,10 @@
         ""
       ],
       "${ unread } unread conversation": [
-        "${ unread } 件の会話が未読"
+        "${ unread } 件の未読の会話"
       ],
       "${ unread } unread message": [
-        "${ unread } 件のメッセージが未読"
+        "${ unread } 件の未読のメッセージ"
       ],
       "${ total } conversation": [
         "${ total } 件の会話"
@@ -1627,13 +1665,13 @@
         "${ total } 件のメッセージ"
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        ""
+        "受信箱に ${ unreadsLabel } があります。"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        ""
+        "受信箱に ${ totalLabel } があります。"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        ""
+        "お好みのアプリストアからモバイルアプリをダウンロードして、外出先でも安全に会話しましょう。"
       ],
       "${ count } conversation": [
         "${ count } 件の会話"
@@ -1654,22 +1692,6 @@
         ""
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        ""
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
         ""
       ]
     },
@@ -1717,6 +1739,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Keyboard shortcut section name": {
@@ -2500,14 +2527,11 @@
       "Close": [
         "閉じる"
       ],
-      "refresh the page": [
-        "ページを更新"
-      ],
-      "Use “${ label }” setting": [
-        "「{ label }」設定を使用する"
-      ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "確認"
       ],
       "Cancel": [
         "キャンセル"
@@ -2518,8 +2542,8 @@
       "Close modal": [
         "画面を閉じる"
       ],
-      "Confirm": [
-        "確認"
+      "Use “${ label }” setting": [
+        "「{ label }」設定を使用する"
       ],
       "Remove": [
         "削除"
@@ -2565,6 +2589,9 @@
       ],
       "Email settings": [
         "メールの設定"
+      ],
+      "refresh the page": [
+        "ページを更新"
       ],
       "Next month": [
         "翌月"
@@ -2692,12 +2719,6 @@
       "Edit phone number": [
         "電話番号を編集"
       ],
-      "Use ${ label } theme": [
-        "${ label } テーマを使用"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "追加"
       ],
@@ -2814,6 +2835,12 @@
       ],
       "Next": [
         "次へ"
+      ],
+      "Use ${ label } theme": [
+        "${ label } テーマを使用"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "インポートを続行"
@@ -2933,7 +2960,7 @@
         "キーボードショートカット"
       ],
       "Mailbox layout": [
-        ""
+        "受信箱のレイアウト"
       ],
       "Mailbox density": [
         ""
@@ -3037,15 +3064,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } に追加"
       ],
-      "Learn more": [
-        "より詳しく"
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "このまま送信"
       ],
@@ -3090,9 +3108,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "戻る"
       ],
       "Send": [
         "送信"
@@ -3241,6 +3256,9 @@
       "Show": [
         "表示"
       ],
+      "Learn more": [
+        "より詳しく"
+      ],
       "Undo": [
         "取り消し"
       ],
@@ -3276,6 +3294,9 @@
       ],
       "Advanced search": [
         "詳細検索"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "既読にする"
@@ -3355,6 +3376,12 @@
       "Create new message": [
         ""
       ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
+      ],
       "Import messages": [
         "メッセージをインポート"
       ],
@@ -3410,9 +3437,6 @@
       ],
       "Human verification": [
         "人間であることの検証"
-      ],
-      "Select a theme": [
-        "テーマを選択"
       ],
       "Delete ${ Name }": [
         "${ Name } を削除"
@@ -3525,6 +3549,9 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
+      "Select a theme": [
+        "テーマを選択"
+      ],
       "Start import process": [
         ""
       ],
@@ -3541,10 +3568,10 @@
         ""
       ],
       "Mailbox layout": [
-        ""
+        "受信箱のレイアウト"
       ],
       "Composer mode": [
-        "新規作成時の書式"
+        "新規作成時のモード"
       ],
       "Open help menu": [
         "ヘルプメニューを開く"
@@ -3732,7 +3759,7 @@
       "Blind Carbon Copy": [
         ""
       ],
-      "Errors detected": [
+      "Sending error": [
         ""
       ],
       "Confirm recipient address?": [
@@ -3871,6 +3898,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "より詳しく"
+      ],
+      "Request an invite": [
+        "登録を申請"
+      ],
+      "clearing your browser cache": [
+        "ブラウザのキャッシュを消去"
+      ],
+      "Pay invoice": [
+        "請求の支払い"
+      ],
+      "Upgrade account": [
+        "アカウントをアップグレード"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Go to subscription plans": [
+        "サブスクリプション プランへ移動"
+      ],
+      "click here": [
+        "ここをクリック"
+      ],
+      "Add a gift code": [
+        "ギフトコードを追加"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        ""
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "この招待を管理するにはカレンダーの鍵を有効にする必要があります"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        ""
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "更新されたイベントを表示するには、カレンダーの鍵を有効にする必要があります"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        ""
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        ""
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "この招待を管理するには鍵を再度有効にする必要があります"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "更新されたイベントを表示するには、鍵を再度有効にする必要があります"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Create a new calendar to add this event": [
+        ""
+      ],
+      "Create a new calendar to answer this invitation": [
+        ""
+      ],
+      "Create a new calendar to manage your invitations": [
+        ""
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        ""
+      ],
+      "Open in ${ calendarAppName }": [
+        "${ calendarAppName } で開く"
+      ],
+      "Inbox": [
+        "受信箱"
+      ],
+      "Drafts": [
+        "下書き"
+      ],
+      "Sent": [
+        "送信済み"
+      ],
+      "Trash": [
+        "ごみ箱"
+      ],
+      "Spam": [
+        "迷惑メール"
+      ],
+      "All mail": [
+        "全てのメール"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
+      "Starred": [
+        "星印付き"
+      ],
+      "Outbox": [
+        "送信箱"
+      ],
+      "Scheduled": [
+        "計画休止の利用"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        ""
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        ""
+      ],
+      "Enable your address to answer this invitation.": [
+        ""
+      ],
+      "Create a calendar linked to an active email address.": [
+        ""
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        ""
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        ""
+      ],
+      "Enable your address again to modify your answer.": [
+        ""
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        ""
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        ""
+      ],
+      "Add folder": [
+        "フォルダーを追加"
+      ],
+      "Add label": [
+        "ラベルを追加"
+      ],
+      "Folders": [
+        "フォルダ"
+      ],
+      "Manage your folders": [
+        "フォルダを管理"
+      ],
+      "Labels": [
+        "ラベル"
+      ],
+      "Manage your labels": [
+        "ラベルを管理"
       ]
     },
     "Label": {
@@ -4025,7 +4198,7 @@
         ""
       ],
       "Select how your composer opens by default.": [
-        ""
+        "新規メッセージ作成時の既定のモードを選択してください。"
       ],
       "Recovery phrase": [
         "リカバリーフレーズ"
@@ -4422,152 +4595,6 @@
         "${ secondsCountLeft } 秒"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "より詳しく"
-      ],
-      "Request an invite": [
-        "登録を申請"
-      ],
-      "clearing your browser cache": [
-        "ブラウザのキャッシュを消去"
-      ],
-      "Pay invoice": [
-        "請求の支払い"
-      ],
-      "Upgrade account": [
-        "アカウントをアップグレード"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Go to subscription plans": [
-        "サブスクリプション プランへ移動"
-      ],
-      "click here": [
-        "ここをクリック"
-      ],
-      "Add a gift code": [
-        "ギフトコードを追加"
-      ],
-      "Inbox": [
-        "受信箱"
-      ],
-      "Drafts": [
-        "下書き"
-      ],
-      "Sent": [
-        "送信済み"
-      ],
-      "Trash": [
-        "ごみ箱"
-      ],
-      "Spam": [
-        "迷惑メール"
-      ],
-      "All mail": [
-        "全てのメール"
-      ],
-      "Archive": [
-        "アーカイブ"
-      ],
-      "Starred": [
-        "星印付き"
-      ],
-      "Outbox": [
-        "送信箱"
-      ],
-      "Scheduled": [
-        "計画休止の利用"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        ""
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "この招待を管理するにはカレンダーの鍵を有効にする必要があります"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        ""
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "更新されたイベントを表示するには、カレンダーの鍵を有効にする必要があります"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        ""
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "この招待を管理するには鍵を再度有効にする必要があります"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "更新されたイベントを表示するには、鍵を再度有効にする必要があります"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "更新された招待を表示するには、鍵を再度有効にする必要があります"
-      ],
-      "Create a new calendar to add this event": [
-        ""
-      ],
-      "Create a new calendar to answer this invitation": [
-        ""
-      ],
-      "Create a new calendar to manage your invitations": [
-        ""
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        ""
-      ],
-      "Open in ${ calendarAppName }": [
-        "${ calendarAppName } で開く"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        ""
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        ""
-      ],
-      "Enable your address to answer this invitation.": [
-        ""
-      ],
-      "Create a calendar linked to an active email address.": [
-        ""
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        ""
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        ""
-      ],
-      "Enable your address again to modify your answer.": [
-        ""
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        ""
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        ""
-      ],
-      "Add folder": [
-        "フォルダーを追加"
-      ],
-      "Add label": [
-        "ラベルを追加"
-      ],
-      "Folders": [
-        "フォルダ"
-      ],
-      "Manage your folders": [
-        "フォルダを管理"
-      ],
-      "Labels": [
-        "ラベル"
-      ],
-      "Manage your labels": [
-        "ラベルを管理"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "この機能は有料のProtonアカウントが必要です。"
@@ -4609,6 +4636,9 @@
         ""
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5031,30 +5061,6 @@
         "検証方法がありません"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "標準"
-      ],
-      "Maximized": [
-        "最大化"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "名前"
@@ -5264,6 +5270,35 @@
         ""
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "通常"
+      ],
+      "Compact": [
+        "コンパクト"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "標準"
+      ],
+      "Maximized": [
+        "最大化"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "アップロード"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -5401,11 +5436,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "アップロード"
       ]
     },
     "Onboarding Proton": {
@@ -6267,7 +6297,7 @@
     },
     "Time": {
       "Yesterday": [
-        ""
+        "昨日"
       ]
     },
     "Date label": {
@@ -6538,9 +6568,6 @@
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         ""
       ],
-      "Please go back to edit the email address you entered.": [
-        ""
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         ""
       ],
@@ -6710,6 +6737,11 @@
       ],
       "Next": [
         "次へ"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
-    "language": "uk"
+    "language": "uk_UA"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
-      ],
       "Email address invalid": [
         "Недійсна адреса електронної пошти"
       ],
       "This field is required": [
         "Це поле обов'язкове"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
@@ -159,14 +159,14 @@
       "Invalid name": [
         "Неприпустима назва"
       ],
-      "Primary address key is not decrypted": [
-        "Основний ключ адреси не розшифрований"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Основний ключ адреси не розшифрований"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -793,6 +793,9 @@
       ],
       "Close popover": [
         "Закрити спливне вікно"
+      ],
+      "Close event popover": [
+        "Закрити нагадування про подію"
       ]
     },
     "Title": {
@@ -964,9 +967,6 @@
       "Composer mode": [
         "Режим редактора"
       ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
       "Edit contact group": [
         "Редагувати групу контактів"
       ],
@@ -1086,6 +1086,9 @@
       ],
       "Import contacts": [
         "Імпортувати контакти"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
       ],
       "Start import process": [
         ""
@@ -1227,15 +1230,6 @@
       ],
       "Edit event": [
         "Змінити подію"
-      ],
-      "Event details": [
-        "Подробиці подіі"
-      ],
-      "More options": [
-        "Додаткові параметри"
-      ],
-      "CANCELLED": [
-        "СКАСОВАНО"
       ]
     },
     "Info": {
@@ -1524,9 +1518,6 @@
       "Not customizable": [
         "Не налаштовується"
       ],
-      "Expired": [
-        "Термін дії минув"
-      ],
       "here": [
         "тут"
       ],
@@ -1565,6 +1556,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "Expired": [
+        "Термін дії минув"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
@@ -1747,7 +1741,7 @@
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } потребує вашого дозволу на ${ enableDesktopNotifications }."
+        "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
       "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
         "Ви увімкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати найновішу версію ${ appName }. Програму буде перезавантажено."
@@ -2077,18 +2071,6 @@
       "Proration": [
         "Розподілення"
       ],
-      "Cash": [
-        "Готівка"
-      ],
-      "Card holder": [
-        "Власник картки"
-      ],
-      "Expires": [
-        "Термін дії"
-      ],
-      "Payer": [
-        "Платник"
-      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -2116,6 +2098,18 @@
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
       ],
+      "Cash": [
+        "Готівка"
+      ],
+      "Card holder": [
+        "Власник картки"
+      ],
+      "Expires": [
+        "Термін дії"
+      ],
+      "Payer": [
+        "Платник"
+      ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
       ],
@@ -2127,9 +2121,6 @@
       ],
       "Select how your composer opens by default.": [
         "Оберіть типовий вигляд редактора."
-      ],
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
       ],
       "Add email address": [
         "Додати адресу електронної пошти"
@@ -2166,6 +2157,9 @@
       ],
       "Export contacts": [
         "Експортувати контакти"
+      ],
+      "Enable Beta Access": [
+        "Увімкнути бета-доступ"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2250,6 +2244,12 @@
       ],
       "Your calendars": [
         "Ваші календарі"
+      ],
+      "Participant": [
+        "Учасник",
+        "Учасники",
+        "Учасників",
+        "Учасника"
       ]
     },
     "Link": {
@@ -2288,6 +2288,11 @@
       ],
       "Subscribed calendars": [
         "Підписки на календарі"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не можна застосовувати для шифрування"
       ]
     },
     "Placeholder": {
@@ -2382,11 +2387,6 @@
         "${ minutes } хвилини",
         "${ minutes } хвилин",
         "${ minutes } хвилин"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не можна застосовувати для шифрування"
       ]
     },
     "Tooltip": {
@@ -2528,6 +2528,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ProtonVPN. Будь ласка, створіть запит натомість."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "На жаль, наразі ми не онлайн. Будь ласка, заповніть форму внизу, щоб описати вашу проблему, і ми розглянемо її та зв'яжемось, коли знову будемо онлайн."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
@@ -2740,6 +2743,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Вибрати часовий пояс"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        "Відкрити"
+      ],
+      "Close": [
+        "Закрити"
       ]
     },
     "Error message": {
@@ -3429,17 +3440,6 @@
         "Безплатний"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Нова кредитна/дебетова картка"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Протермінований рахунок"
@@ -3462,17 +3462,15 @@
         "Немає доступних способів перевірки"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дозволяє вам користуватися тестовою версією ProtonMail, Proton Calendar та Proton Drive до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Нова кредитна/дебетова картка"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примітка: Після натискання кнопки Застосувати сервіс перезавантажиться."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3774,9 +3772,17 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Вивантажити"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Бета-доступ дозволяє вам користуватися тестовою версією ProtonMail, Proton Calendar та Proton Drive до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Примітка: Після натискання кнопки Застосувати сервіс перезавантажиться."
       ]
     },
     "Loading info": {
@@ -3798,6 +3804,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Вивантажити"
       ]
     },
     "Message display when a new app version is available": {
@@ -4364,13 +4375,13 @@
         "Кожні ${ interval } тижнів у суботу, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Щотижня ${ multipleDaysString }, ${ timesString }"
+        "Щотижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
         "Щотижня кожен день, ${ untilString }"
@@ -4648,6 +4659,11 @@
         "Адреса"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Основна навігація"
@@ -4821,11 +4837,6 @@
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5060,6 +5071,11 @@
         "разів"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        "Закрити спливне вікно"
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Ви прийняли запрошення"
@@ -5094,11 +5110,6 @@
         "електронною поштою"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Організовано:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Вимкнено"
@@ -5107,6 +5118,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Подія з вимкненого календаря."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        "так"
+      ],
+      "maybe": [
+        "можливо"
+      ],
+      "no": [
+        "ні"
+      ],
+      "unanswered": [
+        "без відповіді"
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        "Розгорнути список учасників"
+      ],
+      "Collapse participants list": [
+        "Згорнути список учасників"
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        "Змінити подію"
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        "Видалити подію"
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        "скасовано"
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        "Будете присутні?"
       ]
     }
   }

@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "ca"
+    "language": "ca_ES"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
-      ],
       "Email address invalid": [
         "L'adreça de correu electrònic no és vàlida"
       ],
       "This field is required": [
         "Aquest camp és obligatori"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d’error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Nom no vàlid"
       ],
-      "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
-      ],
       "We were unable to connect to your service provider.": [
         "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
+      ],
+      "Primary address key is not decrypted": [
+        "La clau de la adreça primària no està desxifrada"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Tancar popover"
+      ],
+      "Close event popover": [
+        "Tancar el missatge emergent de l'esdeveniment"
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Mode d'editor"
       ],
-      "Beta Access": [
-        "Accés Beta"
-      ],
       "Edit contact group": [
         "Editar grup de contactes"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Importar contactes"
+      ],
+      "Beta Access": [
+        "Accés Beta"
       ],
       "Start import process": [
         "Inicia el procés d'importació"
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Edita l'esdeveniment"
-      ],
-      "Event details": [
-        "Detalls de l'esdeveniment"
-      ],
-      "More options": [
-        "Més opcions"
-      ],
-      "CANCELLED": [
-        "CANCEL·LAT"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "No personalitzable"
       ],
-      "Expired": [
-        "Caducada"
-      ],
       "here": [
         "aquí"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
+      "Expired": [
+        "Caducada"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Prorrateig"
       ],
-      "Cash": [
-        "Efectiu"
-      ],
-      "Card holder": [
-        "Titular de la targeta"
-      ],
-      "Expires": [
-        "Venç"
-      ],
-      "Payer": [
-        "Pagador"
-      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "Introduïu el codi de 6 dígits"
       ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Card holder": [
+        "Titular de la targeta"
+      ],
+      "Expires": [
+        "Venç"
+      ],
+      "Payer": [
+        "Pagador"
+      ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
       ],
@@ -2087,9 +2081,6 @@
       ],
       "Select how your composer opens by default.": [
         "Seleccioneu com el vostre editor s'obre per defecte."
-      ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
       ],
       "Add email address": [
         "Afegir adreça de correu electrònic"
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Exportar contactes"
+      ],
+      "Enable Beta Access": [
+        "Activar Accés Beta"
       ],
       "From: ${ fromEmailAddress }": [
         "Des de: ${ fromEmailAddress }"
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "El vostre calendari"
+      ],
+      "Participant": [
+        "Participant",
+        "Participants"
       ]
     },
     "Link": {
@@ -2248,6 +2246,11 @@
       ],
       "Subscribed calendars": [
         "Calendaris subscrits"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clau no es pot utilitzar per al xifratge"
       ]
     },
     "Placeholder": {
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minuts"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clau no es pot utilitzar per al xifratge"
       ]
     },
     "Tooltip": {
@@ -2484,6 +2482,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
@@ -2686,6 +2687,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Cercar fus horari"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        "Obrir"
+      ],
+      "Close": [
+        "Tancar"
       ]
     },
     "Error message": {
@@ -3353,17 +3362,6 @@
         "Gratuït"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Nova targeta de crèdit/dèbit"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -3386,17 +3384,15 @@
         "Cap mètode de verificació disponible"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'Accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nova targeta de crèdit/dèbit"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Carregar"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'Accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         "Sortir de la importació?"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carregar"
       ]
     },
     "Message display when a new app version is available": {
@@ -4466,6 +4475,11 @@
         "Adreça"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Navegació bàsica"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "Mostrar missatge original"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "vegades"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        "Tancar missatge emergent"
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Heu acceptat la invitació"
@@ -4876,11 +4890,6 @@
         "per correu electrònic"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Organitzat per:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Desactivat"
@@ -4889,6 +4898,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "L'esdeveniment pertany a un calendari deshabilitat."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        "sí"
+      ],
+      "maybe": [
+        "potser"
+      ],
+      "no": [
+        "no"
+      ],
+      "unanswered": [
+        "sense resposta"
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        "Expandir la llista de participants"
+      ],
+      "Collapse participants list": [
+        "Contraure la llista de participants"
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        "Editar l'esdeveniment"
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        "Suprimir l'esdeveniment"
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        "cancel·lat"
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        "Hi assistireu?"
       ]
     }
   }

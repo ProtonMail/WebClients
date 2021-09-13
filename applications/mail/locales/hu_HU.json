@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "hu"
+    "language": "hu_HU"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bájt"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "A mező kitöltése kötelező"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
-      ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
-      ],
-      "Signature verification failed": [
-        "Aláírás ellenőrzése sikertelen"
-      ],
-      "Could not find address ${ email }.": [
-        "Nem található a cím: ${ email }."
       ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "A küldő kulcs érvénytelen"
       ],
+      "Request timed out.": [
+        "A kérés túllépte az időkorlátot."
+      ],
       "Missing signature": [
         "Hiányzó aláírás"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "A ${ emailAddress } cím kulcsadatait nem sikerült kibontani"
+      ],
+      "Signature verification failed": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "Could not find address ${ email }.": [
+        "Nem található a cím: ${ email }."
       ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Hitelesítési hiba."
       ],
+      "Email address invalid": [
+        "Érvénytelen e-mail cím"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-      ],
-      "Email address invalid": [
-        "Érvénytelen e-mail cím"
       ],
       "The composer failed to load.": [
         "A szerkesztőt nem sikerült betölteni."
@@ -314,6 +328,9 @@
         "",
         ""
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "Az üzenetjelszavak nem egyeznek."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Ismeretlen hiba."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Túl sok bekapcsolt szűrő. Váltson nagyobb csomagra további szűrők bekapcsolásához"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
         "A jelszónak legalább ${ length } karakterből kell állnia"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bájt"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Cím"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fwd:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date } keltezéssel, ${ name } ${ address } írta:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "A munkamenet lejárt."
@@ -526,17 +549,14 @@
       "No results found": [
         "Nincs találat"
       ],
-      "support team": [
-        "ügyfélszolgálat"
-      ],
-      "Loading": [
-        "Betöltés"
-      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
+      ],
+      "support team": [
+        "ügyfélszolgálat"
       ],
       "Week": [
         "Hét"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
+      ],
+      "Loading": [
+        "Betöltés"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Link kipróbálása"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Szöveg színe"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Szűrés ha az alábbi feltételek közül BÁRMELYIK teljesül)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
@@ -1520,6 +1552,12 @@
         "",
         ""
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } olvasatlan beszélgetés",
         "${ unreadCount } olvasatlan beszélgetés"
@@ -1698,22 +1736,6 @@
         "A mobil eszközével olvassa be a QR kódot vagy nyissa meg a címet: ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fwd:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date } keltezéssel, ${ name } ${ address } írta:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Ismeretlen"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Bezárás"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" beállítás használata"
-      ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Jóváhagyás"
       ],
       "Cancel": [
         "Mégsem"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Ablak bezárása"
       ],
-      "Confirm": [
-        "Jóváhagyás"
+      "Use “${ label }” setting": [
+        "\"${ label }\" beállítás használata"
       ],
       "Remove": [
         "Eltávolítás"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "E-mail beállítások"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Next month": [
         "Következő hónap"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Telefonszám módosítása"
       ],
-      "Use ${ label } theme": [
-        "${ label } téma használata"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Hozzáadás"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "Következő"
+      ],
+      "Use ${ label } theme": [
+        "${ label } téma használata"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Importálás folytatása"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Hozzáadás a csoporthoz: ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "További információk"
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Küldés mindenképpen"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "Másolat, Titkos másolat"
-      ],
-      "Go back": [
-        "Vissza"
       ],
       "Send": [
         "Küldés"
@@ -3323,6 +3338,9 @@
       "Show": [
         "Megjelenítés"
       ],
+      "Learn more": [
+        "További információk"
+      ],
       "Undo": [
         "Visszavonás"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Részletes keresés"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Megjelölés olvasottként"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         ""
       ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
+      ],
       "Import messages": [
         "Üzenetek importálása"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "Robot ellenőrzés"
-      ],
-      "Select a theme": [
-        "Téma kiválasztása"
       ],
       "Delete ${ Name }": [
         "${ Name } törlése"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Névjegyek importálása"
+      ],
+      "Select a theme": [
+        "Téma kiválasztása"
       ],
       "Start import process": [
         "Importálási folyamat indítása"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "Titkos másolat"
       ],
-      "Errors detected": [
-        "Hiba történt"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "További információk"
+      ],
+      "Request an invite": [
+        "Meghívó kérése"
+      ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
+      "Pay invoice": [
+        "Számla kifizetése"
+      ],
+      "Upgrade account": [
+        "Csomag váltása"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Go to subscription plans": [
+        "Előfizetési csomagok megnyitása"
+      ],
+      "click here": [
+        "kattintson ide"
+      ],
+      "Add a gift code": [
+        "Ajándék kód hozzáadása"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        ""
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "A meghívó kezeléséhez előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "A meghívó megválaszolásához előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "A frissített esemény megtekintéséhez előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "A frissített meghívó megtekintéséhez előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        ""
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "A meghívó kezeléséhez előbb újra kell aktiválnia a kulcsait"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "A frissített esemény megtekintéséhez előbb újra kell aktiválnia a kulcsait"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "A frissített meghívó megtekintéséhez előbb újra kell aktiválnia a kulcsait"
+      ],
+      "Create a new calendar to add this event": [
+        ""
+      ],
+      "Create a new calendar to answer this invitation": [
+        "A meghívó megválaszolásához, hozzon létre egy új naptárat"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Hozzon létre egy új naptárat a meghívói kezeléséhez"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "A frissített esemény megnyitása: ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Megnyitás: ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Beérkezett üzenetek"
+      ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "All mail": [
+        "Összes levél"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
+      "Starred": [
+        "Csillagozott"
+      ],
+      "Outbox": [
+        "Kimenő"
+      ],
+      "Scheduled": [
+        "Ütemezés"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "A meghívó kezeléséhez, engedélyezze újra a naptárhoz tartozó címét."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "A meghívó frissítéséhez, engedélyezze újra a naptárhoz tartozó címét."
+      ],
+      "Enable your address to answer this invitation.": [
+        "A meghívó megválaszolásához engedélyezze az e-mail címét."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Naptár létrehozása egy aktív e-mail címhez."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Engedélyezzen egy a naptárakhoz kapcsolt e-mail címet."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Vagy törölhet egy naptárat és létrehozhat egy újat az egyik aktív e-mail címéhez."
+      ],
+      "Enable your address again to modify your answer.": [
+        "A válasz megváltoztatásához engedélyeznie kell az e-mail címét."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Az esemény lemondásához engedélyeznie kell a letiltott naptárhoz tartozó e-mail címét."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "A válasz megváltoztatásához engedélyeznie kell a letiltott naptárhoz tartozó e-mail címét."
+      ],
+      "Add folder": [
+        "Új mappa"
+      ],
+      "Add label": [
+        "Új címke"
+      ],
+      "Folders": [
+        "Mappák"
+      ],
+      "Manage your folders": [
+        "Mappák kezelése"
+      ],
+      "Labels": [
+        "Címkék"
+      ],
+      "Manage your labels": [
+        "Címkék kezelése"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } másodperc"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "További információk"
-      ],
-      "Request an invite": [
-        "Meghívó kérése"
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
-      ],
-      "Pay invoice": [
-        "Számla kifizetése"
-      ],
-      "Upgrade account": [
-        "Csomag váltása"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Go to subscription plans": [
-        "Előfizetési csomagok megnyitása"
-      ],
-      "click here": [
-        "kattintson ide"
-      ],
-      "Add a gift code": [
-        "Ajándék kód hozzáadása"
-      ],
-      "Inbox": [
-        "Beérkezett üzenetek"
-      ],
-      "Drafts": [
-        "Piszkozatok"
-      ],
-      "Sent": [
-        "Elküldött"
-      ],
-      "Trash": [
-        "Lomtár"
-      ],
-      "Spam": [
-        "Levélszemét"
-      ],
-      "All mail": [
-        "Összes levél"
-      ],
-      "Archive": [
-        "Archívum"
-      ],
-      "Starred": [
-        "Csillagozott"
-      ],
-      "Outbox": [
-        "Kimenő"
-      ],
-      "Scheduled": [
-        "Ütemezés"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        ""
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "A meghívó kezeléséhez előbb aktiválnia kell a naptár kulcsait"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "A meghívó megválaszolásához előbb aktiválnia kell a naptár kulcsait"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "A frissített esemény megtekintéséhez előbb aktiválnia kell a naptár kulcsait"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "A frissített meghívó megtekintéséhez előbb aktiválnia kell a naptár kulcsait"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "A meghívó kezeléséhez előbb újra kell aktiválnia a kulcsait"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "A frissített esemény megtekintéséhez előbb újra kell aktiválnia a kulcsait"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "A frissített meghívó megtekintéséhez előbb újra kell aktiválnia a kulcsait"
-      ],
-      "Create a new calendar to add this event": [
-        ""
-      ],
-      "Create a new calendar to answer this invitation": [
-        "A meghívó megválaszolásához, hozzon létre egy új naptárat"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Hozzon létre egy új naptárat a meghívói kezeléséhez"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "A frissített esemény megnyitása: ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Megnyitás: ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "A meghívó kezeléséhez, engedélyezze újra a naptárhoz tartozó címét."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "A meghívó frissítéséhez, engedélyezze újra a naptárhoz tartozó címét."
-      ],
-      "Enable your address to answer this invitation.": [
-        "A meghívó megválaszolásához engedélyezze az e-mail címét."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Naptár létrehozása egy aktív e-mail címhez."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Engedélyezzen egy a naptárakhoz kapcsolt e-mail címet."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Vagy törölhet egy naptárat és létrehozhat egy újat az egyik aktív e-mail címéhez."
-      ],
-      "Enable your address again to modify your answer.": [
-        "A válasz megváltoztatásához engedélyeznie kell az e-mail címét."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Az esemény lemondásához engedélyeznie kell a letiltott naptárhoz tartozó e-mail címét."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "A válasz megváltoztatásához engedélyeznie kell a letiltott naptárhoz tartozó e-mail címét."
-      ],
-      "Add folder": [
-        "Új mappa"
-      ],
-      "Add label": [
-        "Új címke"
-      ],
-      "Folders": [
-        "Mappák"
-      ],
-      "Manage your folders": [
-        "Mappák kezelése"
-      ],
-      "Labels": [
-        "Címkék"
-      ],
-      "Manage your labels": [
-        "Címkék kezelése"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Ehhez a lehetőséghez előfizetéses csomag szükséges"
@@ -4707,6 +4734,9 @@
         "Biztos, hogy elveti az importálást?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5150,30 +5180,6 @@
         "Nincs elérhető ellenőrzési módszer"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normál"
-      ],
-      "Maximized": [
-        "Teljes méretű"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Név"
@@ -5390,6 +5396,35 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Kényelmes"
+      ],
+      "Compact": [
+        "Tömör"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Oszlop"
+      ],
+      "Row": [
+        "Sor"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normál"
+      ],
+      "Maximized": [
+        "Teljes méretű"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Feltöltés"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Képernyőkép csatolása"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Feltöltés"
       ]
     },
     "Onboarding Proton": {
@@ -6683,10 +6713,6 @@
         "Hiba történt. Az üzenet nem küldhető el a megadott e-mail címre, a következő hiba miatt:",
         "Hiba történt. Az üzenet nem küldhető el a megadott e-mail címekre, a következő hibák miatt:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Szerkessze át a megadott e-mail címet.",
-        "Szerkessze át a megadott e-mail címeket."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Hiba történt. Az üzenet nem küldhető el a megadott e-mail címek mindegyikére, a következő hibák miatt:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Következő"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

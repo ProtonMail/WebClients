@@ -1,340 +1,10 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "da"
+    "language": "da_DK"
   },
   "contexts": {
     "": {},
-    "Error": {
-      "This field is required": [
-        "Dette felt skal udfyldes"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette felt kræver minimum ${ minimumLength } tegn."
-      ],
-      "Email is not valid": [
-        "E-mail er ikke gyldig"
-      ],
-      "Not a valid number": [
-        "Ikke et gyldigt nummer"
-      ],
-      "Passwords do not match": [
-        "Adgangskoder matcher ikke"
-      ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
-      ],
-      "Signature verification failed": [
-        "Signaturbekræftelse mislykkedes"
-      ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
-      ],
-      "Missing signature": [
-        "Manglende signatur"
-      ],
-      "Contact signature not verified": [
-        "Kontaktsignatur ikke bekræftet"
-      ],
-      "Signature not verified": [
-        "Signatur ikke bekræftet"
-      ],
-      "Invalid name": [
-        "Ugyldigt navn"
-      ],
-      "Unknown error": [
-        "Ukendt fejl"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
-      ],
-      "Authentication canceled.": [
-        "Godkendelse annulleret."
-      ],
-      "Your import will not be processed.": [
-        "Din import vil ikke blive behandlet."
-      ],
-      "Authentication error.": [
-        "Godkendelsesfejl."
-      ],
-      "Email address invalid": [
-        "E-mailadresse ugyldig"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Forkerte login-oplysninger. Prøv venligst igen"
-      ],
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefon, prøv igen senere"
-      ],
-      "Enter 6 digits": [
-        "Indtast 6 cifre"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
-      "Process aborted": [
-        "Proces afbrudt"
-      ],
-      "Payment process cancelled": [
-        "Betalingproces annulleret"
-      ],
-      "Payment process failed": [
-        "Betalingproces mislykkedes"
-      ],
-      "Payment process consumed": [
-        "Betalingssession udløbet"
-      ],
-      "Payment process not supported": [
-        "Betalingsproces understøttes ikke"
-      ],
-      "Unknown payment token status": [
-        "Ukendt betalings-token status"
-      ],
-      "Tab closed": [
-        "Fane lukket"
-      ],
-      "Name on card required": [
-        "Navn på kort er obligatorisk"
-      ],
-      "Invalid expiration date": [
-        "Ugyldig udløbsdato"
-      ],
-      "Invalid card number": [
-        "Ugyldigt kortnummer"
-      ],
-      "Invalid ${ name } code": [
-        "Ugyldig ${ name }-kode"
-      ],
-      "Invalid postal code": [
-        "Ugyldigt postnummer"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Fejl under oprettelse af forbindelse til Bitcoin-API."
-      ],
-      "Amount below minimum.": [
-        "Beløb under minimum."
-      ],
-      "Amount above the maximum.": [
-        "Beløb overstiger maksimum."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Det mindste beløb, der kan doneres, er ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Den mindste betaling vi accepterer er ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Checkout udløbet, prøv venligst igen."
-      ],
-      "Invalid code": [
-        "Ugyldig kode"
-      ],
-      "Preferences could not be saved": [
-        "Præferencer kunne ikke gemmes"
-      ],
-      "Some groups could not be deleted": [
-        "Nogle grupper kunne ikke slettes"
-      ],
-      "Image upload failed": [
-        "Billed-upload mislykkedes"
-      ],
-      "Contact could not be saved": [
-        "Kontakt kunne ikke gemmes"
-      ],
-      "Some contacts could not be deleted": [
-        "Nogle kontakter kunne ikke slettes"
-      ],
-      "Invalid public key file": [
-        "Ugyldig offentlig nøglefil"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Du kan ikke sende en mail til mere end 100 modtagere"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
-        "Nogle kontakter har ingen e-mailadresse: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Du kan ikke sende vCards med mere end 10 kontakter"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Der opstod en fejl under eksport af kontakternes vCards"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "En af grupperne har ingen kontakter: ${ noContactGroupList }",
-        "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Du skal angive et navn"
-      ],
-      "A group with this name already exists": [
-        "En gruppe med dette navn findes allerede"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Fil har intet indhold at forhåndsvise"
-      ],
-      "No valid address found": [
-        "Ingen gyldig adresse fundet"
-      ],
-      "Incorrect password. Please try again.": [
-        "Forkert adgangskode, prøv venligst igen."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Adgangskode skal indeholde mindst ${ length } tegn",
-        "Adgangskode skal indeholde mindst ${ length } tegn"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Navn"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organisation"
-      ],
-      "Birthday": [
-        "Fødselsdag"
-      ],
-      "Anniversary": [
-        "Årsdag"
-      ],
-      "Title": [
-        "Titel"
-      ],
-      "Role": [
-        "Rolle"
-      ],
-      "Note": [
-        "Notat"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Køn"
-      ],
-      "Language": [
-        "Sprog"
-      ],
-      "Timezone": [
-        "Tidszone"
-      ],
-      "Geo": [
-        "Geo"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Medlem"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Arbejde"
-      ],
-      "Personal": [
-        "Personlig"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Personsøger"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
-      ],
-      "Home": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbejde"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Personsøger"
-      ],
-      "Address": [
-        "Adresse"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Session er udløbet."
@@ -378,15 +48,6 @@
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
       ],
-      "here": [
-        "her"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
       ],
@@ -426,6 +87,21 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
       ],
+      "Screenshot(s) attached": [
+        "Screenshot(s) vedhæftet"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "here": [
+        "her"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
       ],
@@ -455,12 +131,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot(s) vedhæftet"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
@@ -907,6 +577,30 @@
       "Your files will be encrypted and then saved.": [
         "Dine filer vil blive krypteret og derefter gemt."
       ],
+      "There are no files yet": [
+        "Der er ingen filer endnu"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Træk og slip en fil her eller vælg at uploade."
+      ],
+      "Share files with links": [
+        "Del filer med links"
+      ],
+      "Create links and share your files with others.": [
+        "Opret links og del dine filer med andre."
+      ],
+      "My Links": [
+        "Mine Links"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
+      ],
+      "No files or folders in trash": [
+        "Ingen filer eller mapper i papirkurven"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
       "${ doneCount } Finished": [
         "${ doneCount } Færdige",
         "${ doneCount } Færdige"
@@ -983,30 +677,6 @@
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Lukning af overførselsmanager vil annullere alle aktive overførsler, er du sikker?"
-      ],
-      "There are no files yet": [
-        "Der er ingen filer endnu"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Træk og slip en fil her eller vælg at uploade."
-      ],
-      "Share files with links": [
-        "Del filer med links"
-      ],
-      "Create links and share your files with others.": [
-        "Opret links og del dine filer med andre."
-      ],
-      "My Links": [
-        "Mine Links"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
-      ],
-      "No files or folders in trash": [
-        "Ingen filer eller mapper i papirkurven"
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Link expires: ": [
         "Link udløber: "
@@ -1090,9 +760,334 @@
         "Vælg en uploadet fil og opret et link til den."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
+    "Error": {
+      "Request timed out.": [
+        "Forespørgsel fik timeout."
+      ],
+      "This field is required": [
+        "Dette felt skal udfyldes"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
+      ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
+      "Passwords do not match": [
+        "Adgangskoder matcher ikke"
+      ],
+      "Missing signature": [
+        "Manglende signatur"
+      ],
+      "Contact signature not verified": [
+        "Kontaktsignatur ikke bekræftet"
+      ],
+      "Signature not verified": [
+        "Signatur ikke bekræftet"
+      ],
+      "Invalid name": [
+        "Ugyldigt navn"
+      ],
+      "Signature verification failed": [
+        "Signaturbekræftelse mislykkedes"
+      ],
+      "Could not find address ${ email }.": [
+        "Kunne ikke finde adresse ${ email }."
+      ],
+      "Unknown error": [
+        "Ukendt fejl"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
+      ],
+      "Authentication canceled.": [
+        "Godkendelse annulleret."
+      ],
+      "Your import will not be processed.": [
+        "Din import vil ikke blive behandlet."
+      ],
+      "Authentication error.": [
+        "Godkendelsesfejl."
+      ],
+      "Email address invalid": [
+        "E-mailadresse ugyldig"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Forkert adgangskode til postkasse. Prøv venligst igen"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Forkerte login-oplysninger. Prøv venligst igen"
+      ],
+      "Can't validate email, try again later": [
+        "Kan ikke bekræfte e-mail, prøv igen senere"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan ikke bekræfte telefon, prøv igen senere"
+      ],
+      "Enter 6 digits": [
+        "Indtast 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Process aborted": [
+        "Proces afbrudt"
+      ],
+      "Payment process cancelled": [
+        "Betalingproces annulleret"
+      ],
+      "Payment process failed": [
+        "Betalingproces mislykkedes"
+      ],
+      "Payment process consumed": [
+        "Betalingssession udløbet"
+      ],
+      "Payment process not supported": [
+        "Betalingsproces understøttes ikke"
+      ],
+      "Unknown payment token status": [
+        "Ukendt betalings-token status"
+      ],
+      "Tab closed": [
+        "Fane lukket"
+      ],
+      "Name on card required": [
+        "Navn på kort er obligatorisk"
+      ],
+      "Invalid expiration date": [
+        "Ugyldig udløbsdato"
+      ],
+      "Invalid card number": [
+        "Ugyldigt kortnummer"
+      ],
+      "Invalid ${ name } code": [
+        "Ugyldig ${ name }-kode"
+      ],
+      "Invalid postal code": [
+        "Ugyldigt postnummer"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fejl under oprettelse af forbindelse til Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Beløb under minimum."
+      ],
+      "Amount above the maximum.": [
+        "Beløb overstiger maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Det mindste beløb, der kan doneres, er ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Den mindste betaling vi accepterer er ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Checkout udløbet, prøv venligst igen."
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "Preferences could not be saved": [
+        "Præferencer kunne ikke gemmes"
+      ],
+      "Some groups could not be deleted": [
+        "Nogle grupper kunne ikke slettes"
+      ],
+      "Image upload failed": [
+        "Billed-upload mislykkedes"
+      ],
+      "Contact could not be saved": [
+        "Kontakt kunne ikke gemmes"
+      ],
+      "Some contacts could not be deleted": [
+        "Nogle kontakter kunne ikke slettes"
+      ],
+      "Invalid public key file": [
+        "Ugyldig offentlig nøglefil"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Du kan ikke sende en mail til mere end 100 modtagere"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
+        "Nogle kontakter har ingen e-mailadresse: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Du kan ikke sende vCards med mere end 10 kontakter"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Der opstod en fejl under eksport af kontakternes vCards"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "En af grupperne har ingen kontakter: ${ noContactGroupList }",
+        "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Du skal angive et navn"
+      ],
+      "A group with this name already exists": [
+        "En gruppe med dette navn findes allerede"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "File has no contents to preview": [
+        "Fil har intet indhold at forhåndsvise"
+      ],
+      "No valid address found": [
+        "Ingen gyldig adresse fundet"
+      ],
+      "Incorrect password. Please try again.": [
+        "Forkert adgangskode, prøv venligst igen."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Navn"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisation"
+      ],
+      "Birthday": [
+        "Fødselsdag"
+      ],
+      "Anniversary": [
+        "Årsdag"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Role": [
+        "Rolle"
+      ],
+      "Note": [
+        "Notat"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Køn"
+      ],
+      "Language": [
+        "Sprog"
+      ],
+      "Timezone": [
+        "Tidszone"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Medlem"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Arbejde"
+      ],
+      "Personal": [
+        "Personlig"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Primær"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Personsøger"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
+      ],
+      "Home": [
+        "Privat"
+      ],
+      "Work": [
+        "Arbejde"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Primær"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Personsøger"
+      ],
+      "Address": [
+        "Adresse"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Calendar status": {
@@ -1170,6 +1165,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1378,11 +1378,11 @@
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Load image": [
         "Indlæs billede"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Export": [
         "Exportér"
@@ -1435,9 +1435,6 @@
       "Signing out": [
         "Logger ud"
       ],
-      "Log in": [
-        "Log ind"
-      ],
       "Close this banner": [
         "Luk denne banner"
       ],
@@ -1449,30 +1446,6 @@
       ],
       "here": [
         "her"
-      ],
-      "View invoice": [
-        "Vis faktura"
-      ],
-      "Get verification code": [
-        "Få bekræftelseskode"
-      ],
-      "Try another method": [
-        "Prøv en anden metode"
-      ],
-      "Request new code": [
-        "Anmod om ny kode"
-      ],
-      "Verify": [
-        "Verificer"
-      ],
-      "Did not receive the code?": [
-        "Ikke modtaget koden?"
-      ],
-      "Edit email address": [
-        "Rediger e-mailadresse"
-      ],
-      "Edit phone number": [
-        "Rediger telefonnummer"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -1557,6 +1530,33 @@
       ],
       "Show info": [
         "Vis info"
+      ],
+      "Log in": [
+        "Log ind"
+      ],
+      "View invoice": [
+        "Vis faktura"
+      ],
+      "Get verification code": [
+        "Få bekræftelseskode"
+      ],
+      "Try another method": [
+        "Prøv en anden metode"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
+      ],
+      "Verify": [
+        "Verificer"
+      ],
+      "Did not receive the code?": [
+        "Ikke modtaget koden?"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -1755,60 +1755,6 @@
       "Cancel all uploads": [
         "Annullér alle uploads"
       ],
-      "Share": [
-        "Del"
-      ],
-      "Show shared link details": [
-        "Vis detaljer om delt link"
-      ],
-      "Maximize transfers": [
-        "Maksimér overførsler"
-      ],
-      "Minimize transfers": [
-        "Minimer overførsler"
-      ],
-      "Close transfers": [
-        "Luk overførsel"
-      ],
-      "Pause download": [
-        "Sæt download på pause"
-      ],
-      "Pause upload": [
-        "Sæt upload på pause"
-      ],
-      "Resume download": [
-        "Genoptag download"
-      ],
-      "Resume upload": [
-        "Genoptag overførsel"
-      ],
-      "Cancel download": [
-        "Annullér download"
-      ],
-      "Cancel upload": [
-        "Annullér overførsel"
-      ],
-      "Restart download": [
-        "Genstart download"
-      ],
-      "Restart upload": [
-        "Genstart overførsel"
-      ],
-      "Remove from this list": [
-        "Fjern fra denne liste"
-      ],
-      "Resume transfers": [
-        "Genoptag overførsler"
-      ],
-      "Pause transfers": [
-        "Sæt overførsler på pause"
-      ],
-      "Cancel transfers": [
-        "Annuller overførsler"
-      ],
-      "Restart transfers": [
-        "Genstart overførsler"
-      ],
       "New upload": [
         "Nyt upload"
       ],
@@ -1823,6 +1769,9 @@
       ],
       "Share options": [
         "Delemuligheder"
+      ],
+      "Share": [
+        "Del"
       ],
       "Create new folder": [
         "Opret ny mappe"
@@ -1878,6 +1827,57 @@
       "Restore from trash": [
         "Gendan fra papirkurven"
       ],
+      "Maximize transfers": [
+        "Maksimér overførsler"
+      ],
+      "Minimize transfers": [
+        "Minimer overførsler"
+      ],
+      "Close transfers": [
+        "Luk overførsel"
+      ],
+      "Pause download": [
+        "Sæt download på pause"
+      ],
+      "Pause upload": [
+        "Sæt upload på pause"
+      ],
+      "Resume download": [
+        "Genoptag download"
+      ],
+      "Resume upload": [
+        "Genoptag overførsel"
+      ],
+      "Cancel download": [
+        "Annullér download"
+      ],
+      "Cancel upload": [
+        "Annullér overførsel"
+      ],
+      "Restart download": [
+        "Genstart download"
+      ],
+      "Restart upload": [
+        "Genstart overførsel"
+      ],
+      "Remove from this list": [
+        "Fjern fra denne liste"
+      ],
+      "Resume transfers": [
+        "Genoptag overførsler"
+      ],
+      "Pause transfers": [
+        "Sæt overførsler på pause"
+      ],
+      "Cancel transfers": [
+        "Annuller overførsler"
+      ],
+      "Restart transfers": [
+        "Genstart overførsler"
+      ],
+      "Show shared link details": [
+        "Vis detaljer om delt link"
+      ],
       "Start recovering": [
         "Start gendannelse"
       ],
@@ -1919,6 +1919,21 @@
       "What's new": [
         "Nyheder"
       ],
+      "Open help menu": [
+        "Åbn hjælpemenu"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Open settings menu": [
+        "Åbn indstillingsmenu"
+      ],
+      "Select a theme": [
+        "Vælg et tema"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
       ],
@@ -1939,21 +1954,6 @@
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
-      ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Open settings menu": [
-        "Åbn indstillingsmenu"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
       ],
       "Confirm loss of Proton bonuses": [
         "Bekræft tab af Proton-bonusser"
@@ -2193,20 +2193,14 @@
       "Drop to upload": [
         "Slip for at uploade"
       ],
-      "My files": [
-        "Mine filer"
-      ],
-      "Additional settings": [
-        "Yderligere indstillinger"
-      ],
-      "Cancel all active transfers": [
-        "Annuller alle aktive overførsler"
-      ],
       "Show actions": [
         "Vis handlinger"
       ],
       "Sort files/folders": [
         "Sorter filer/mapper"
+      ],
+      "My files": [
+        "Mine filer"
       ],
       "Change layout": [
         "Skift layout"
@@ -2219,6 +2213,12 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Additional settings": [
+        "Yderligere indstillinger"
+      ],
+      "Cancel all active transfers": [
+        "Annuller alle aktive overførsler"
       ],
       "Your file is ready to be downloaded": [
         "Din fil er klar til download"
@@ -2369,6 +2369,36 @@
       "Do not ask again": [
         "Spørg ikke igen"
       ],
+      "Display name": [
+        "Vist navn"
+      ],
+      "Operating system": [
+        "Operativsystem"
+      ],
+      "Operating system version": [
+        "Operativsystemversion"
+      ],
+      "Proton username": [
+        "Proton-brugernavn"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Hvad skete der?"
+      ],
+      "System information": [
+        "Systemoplysninger"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browser-version"
+      ],
       "Cancel": [
         "Annullér"
       ],
@@ -2387,9 +2417,6 @@
       "Username or ProtonMail address": [
         "Brugernavn eller ProtonMail-adresse"
       ],
-      "Email address": [
-        "E-mailadresse"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -2398,33 +2425,6 @@
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
-      ],
-      "Display name": [
-        "Vist navn"
-      ],
-      "Operating system": [
-        "Operativsystem"
-      ],
-      "Operating system version": [
-        "Operativsystemversion"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Hvad skete der?"
-      ],
-      "System information": [
-        "Systemoplysninger"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browser-version"
       ],
       "Name on card": [
         "Navn på kort"
@@ -2555,33 +2555,6 @@
       "Apply to all duplicated files": [
         "Anvend på alle fildubletter"
       ],
-      "Folder": [
-        "Mappe"
-      ],
-      "(Expired)": [
-        "(Udløbet)"
-      ],
-      "Expired": [
-        "Udløbet"
-      ],
-      "Never": [
-        "Aldrig"
-      ],
-      "File": [
-        "Fil"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Active": [
-        "Aktiv"
-      ],
-      "Failed": [
-        "Mislykkedes"
-      ],
-      "Apply to selected transfers": [
-        "Anvend på valgte overførsler"
-      ],
       "Audio file": [
         "Lydfil"
       ],
@@ -2596,6 +2569,33 @@
       ],
       "Unknown file": [
         "Ukendt fil"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Failed": [
+        "Mislykkedes"
+      ],
+      "Apply to selected transfers": [
+        "Anvend på valgte overførsler"
+      ],
+      "Folder": [
+        "Mappe"
+      ],
+      "(Expired)": [
+        "(Udløbet)"
+      ],
+      "Expired": [
+        "Udløbet"
+      ],
+      "Never": [
+        "Aldrig"
+      ],
+      "File": [
+        "Fil"
       ],
       "Get your own ${ appName }": [
         "Få din egen ${ appName }"
@@ -2620,9 +2620,6 @@
       "E.g., ": [
         "F.eks., "
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
       "e.g. Julia Smith": [
         "f.eks. Anne Jensen"
       ],
@@ -2646,6 +2643,9 @@
       ],
       "Browser version": [
         "Browserversion"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
       ],
       "ZIP": [
         "Postnummer"
@@ -2717,9 +2717,6 @@
       "Upgrade account": [
         "Opgradér konto"
       ],
-      "Request an invite": [
-        "Anmod om en invitation"
-      ],
       "Upgrade": [
         "Opgradér"
       ],
@@ -2728,6 +2725,9 @@
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
+      ],
+      "Request an invite": [
+        "Anmod om en invitation"
       ],
       "click here": [
         "klik hér"
@@ -2897,6 +2897,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
@@ -2952,14 +2955,14 @@
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
+      "Bug reported": [
+        "Fejl anmeldt"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
       "Verification successful": [
         "Bekræftelse gennemført"
-      ],
-      "Bug reported": [
-        "Fejl anmeldt"
       ],
       "You have successfully unsubscribed": [
         "Du har nu afmeldt dig"
@@ -3015,6 +3018,17 @@
         "Fandt ${ items.length } forslag, brug tastatur til navigation."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applikationer"
+      ],
+      "Go to ${ title }": [
+        "Gå til ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Gå til ${ vpnName }"
+      ]
+    },
     "Error message": {
       "Oops, something went wrong": [
         "Ups, noget gik galt"
@@ -3047,42 +3061,9 @@
         "Du kan også ${ refresh }, eller forsøge igen senere."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
-      ],
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Forfalden faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuel"
-      ],
-      "No verification method available": [
-        "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
     "Header": {
@@ -3268,6 +3249,28 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Vedhæft screenshot(s)"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Forfalden faktura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuel"
+      ],
+      "No verification method available": [
+        "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
     "Info for cash payment method": {
@@ -3717,30 +3720,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maksimeret"
-      ]
-    },
     "Notification": {
       "Contact group updated": [
         "Kontaktgruppe opdateret"
@@ -3843,6 +3822,9 @@
         "${ failedCount } link til din fil kunne ikke slettes.",
         "${ failedCount } links til dine filer kunne ikke slettes."
       ],
+      "All items will soon be permanently deleted from trash": [
+        "Alle elementer slettes snart permanent fra papirkurven"
+      ],
       "Move ${ movingCount } file": [
         "Flyt ${ movingCount } fil",
         "Flyt ${ movingCount } filer"
@@ -3854,9 +3836,6 @@
       "Move ${ movingCount } item": [
         "Flyt ${ movingCount } element",
         "Flyt ${ movingCount } elementer"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Alle elementer slettes snart permanent fra papirkurven"
       ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg venligst igen"
@@ -4098,6 +4077,30 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt krypteret og føjet til din kontaktliste",
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maksimeret"
       ]
     },
     "Select files": {

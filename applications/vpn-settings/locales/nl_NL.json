@@ -1,55 +1,11 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "nl"
+    "language": "nl_NL"
   },
   "contexts": {
     "": {},
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
     "Error": {
-      "This field is required": [
-        "Dit veld is verplicht"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
-      ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
-      ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Request timed out.": [
-        "Het verzoek timed out."
-      ],
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
       "Unknown error": [
         "Onbekende fout"
       ],
@@ -113,15 +69,6 @@
       "Invalid postal code": [
         "Ongeldige postcode"
       ],
-      "Please generate keys before you try to change your password.": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
-      ],
-      "Please set a recovery/notification email first": [
-        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
-      ],
-      "Please set a recovery phone number first": [
-        "Stel eerst een hersteltelefoonnummer in"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
       ],
@@ -140,6 +87,21 @@
       "Invalid verification code": [
         "Ongeldige verificatiecode"
       ],
+      "Please generate keys before you try to change your password.": [
+        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
+      ],
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Vul alstublieft '${ dangerWord }' in"
+      ],
+      "Please set a recovery/notification email first": [
+        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
+      ],
+      "Please set a recovery phone number first": [
+        "Stel eerst een hersteltelefoonnummer in"
+      ],
       "Payments are currently not available, please try again later": [
         "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
       ],
@@ -152,78 +114,52 @@
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te tonen"
       ],
-      "Please enter '${ dangerWord }'": [
-        "Vul alstublieft '${ dangerWord }' in"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
-      "Code wrong or not valid anymore": [
-        "Code verkeerd of niet meer geldig"
+      "This field is required": [
+        "Dit veld is verplicht"
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "Request timed out.": [
+        "Het verzoek timed out."
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
       ],
       "Invalid invitation link": [
         "Ongeldige uitnodigingskoppeling"
       ],
       "Can't check username, try again later": [
         "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
+      ],
+      "Code wrong or not valid anymore": [
+        "Code verkeerd of niet meer geldig"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
-      "Syncing": [
-        "Synchroniseren"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Calendar link is wrong": [
-        ""
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        ""
-      ],
-      "Calendar link is temporarily unaccessible": [
-        ""
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Geen afbeelding geselecteerd"
       ]
     },
     "Info": {
-      "Session timed out.": [
-        "Sessie verlopen."
-      ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
-      ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
-      ],
-      "No results found": [
-        "Geen resultaten gevonden"
-      ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
-      "Loading": [
-        "Laden"
-      ],
       "Screenshot(s) attached": [
         "Schermafdruk(ken) bijgevoegd"
       ],
@@ -511,6 +447,48 @@
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode of bel uw bank voor hulp."
       ],
+      "here": [
+        "hier"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
+        "Voer uw herstel e-mailadres in, en we sturen u uw gebruikersnaam(namen). (Dit is meestal het e-mailadres dat u hebt opgegeven tijdens aanmelding.)"
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang is beperkt. ${ payInvoiceLink }"
       ],
@@ -549,6 +527,9 @@
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
@@ -636,6 +617,39 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U kunt deze account niet reactiveren."
+      ],
+      "We will send a reset code to your recovery email to reset your password.": [
+        "We sturen een reset code naar uw herstel e-mailadres om uw wachtwoord te resetten."
+      ],
+      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
+        "We hebben een herstelcode naar uw herstel-e-mailadres gestuurd, die een uur geldig is tot u een nieuwe code aanvraagt. Voer de code hieronder in om door te gaan."
+      ],
+      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
+        "BELANGRIJK: Sluit de pagina niet en navigeer niet naar een andere pagina. U moet de resetcode invoeren in het onderstaande veld zodra u het ontvangen hebt."
+      ],
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ProtonMail inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
+      ],
+      "ALL YOUR DATA WILL BE LOST!": [
+        "U VERLIEST AL UW GEGEVENS!"
+      ],
+      "If you remember your old password later, you can recover your existing messages.": [
+        "Als u uw oude wachtwoord later nog herinnert, kunt u uw bestaande berichten herstellen."
+      ],
+      "Keep this password safe, it cannot be recovered.": [
+        "Houd dit wachtwoord veilig, het kan niet worden hersteld."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
+        "Vergeet dit wachtwoord NIET. Als u het vergeet kunt u niet meer inloggen of uw berichten ontsleutelen."
+      ],
+      "Done! We sent a code to ${ destination }": [
+        "Klaar! We hebben een code verzonden naar ${ destination }"
+      ],
+      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
+        "Het resetten van uw wachtwoord betekent dat uw oude wachtwoord en de plaatsten waar deze opgeslagen is, niet meer zal werken. Weet u zeker dat u uw wachtwoord wilt resetten?"
+      ],
+      "This can take a few seconds or a few minutes depending on your device": [
+        "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ProtonVPN-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
@@ -759,45 +773,6 @@
       "Recovery phrase has been disabled": [
         ""
       ],
-      "here": [
-        "hier"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
@@ -825,41 +800,23 @@
       "of": [
         "van"
       ],
-      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Voer uw herstel e-mailadres in, en we sturen u uw gebruikersnaam(namen). (Dit is meestal het e-mailadres dat u hebt opgegeven tijdens aanmelding.)"
+      "No results found": [
+        "Geen resultaten gevonden"
       ],
-      "We will send a reset code to your recovery email to reset your password.": [
-        "We sturen een reset code naar uw herstel e-mailadres om uw wachtwoord te resetten."
+      "support team": [
+        "ondersteuningsteam"
       ],
-      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "We hebben een herstelcode naar uw herstel-e-mailadres gestuurd, die een uur geldig is tot u een nieuwe code aanvraagt. Voer de code hieronder in om door te gaan."
+      "Loading": [
+        "Laden"
       ],
-      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "BELANGRIJK: Sluit de pagina niet en navigeer niet naar een andere pagina. U moet de resetcode invoeren in het onderstaande veld zodra u het ontvangen hebt."
+      "Session timed out.": [
+        "Sessie verlopen."
       ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ProtonMail inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
+      "Internet connection lost.": [
+        "Internetverbinding verbroken."
       ],
-      "ALL YOUR DATA WILL BE LOST!": [
-        "U VERLIEST AL UW GEGEVENS!"
-      ],
-      "If you remember your old password later, you can recover your existing messages.": [
-        "Als u uw oude wachtwoord later nog herinnert, kunt u uw bestaande berichten herstellen."
-      ],
-      "Keep this password safe, it cannot be recovered.": [
-        "Houd dit wachtwoord veilig, het kan niet worden hersteld."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Vergeet dit wachtwoord NIET. Als u het vergeet kunt u niet meer inloggen of uw berichten ontsleutelen."
-      ],
-      "Done! We sent a code to ${ destination }": [
-        "Klaar! We hebben een code verzonden naar ${ destination }"
-      ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Het resetten van uw wachtwoord betekent dat uw oude wachtwoord en de plaatsten waar deze opgeslagen is, niet meer zal werken. Weet u zeker dat u uw wachtwoord wilt resetten?"
-      ],
-      "This can take a few seconds or a few minutes depending on your device": [
-        "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
+      "Servers are unreachable.": [
+        "Servers zijn onbereikbaar."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
@@ -922,16 +879,628 @@
         "Account aan het aanmaken"
       ]
     },
-    "Label": {
-      "Reveal password": [
-        "Wachtwoord tonen"
+    "Action": {
+      "Clear": [
+        "Wissen"
       ],
-      "Hide password": [
-        "Wachtwoord verbergen"
+      "Add screenshot(s)": [
+        "Schermafdruk(ken) toevoegen"
+      ],
+      "Submit": [
+        "Verstuur"
+      ],
+      "Hide info": [
+        "Verberg informatie"
+      ],
+      "Show info": [
+        "Toon informatie"
+      ],
+      "Copy email to clipboard": [
+        "E-mailadres kopiëren naar klembord"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } inleiding"
+      ],
+      "Chat with us": [
+        ""
+      ],
+      "I have a question": [
+        "Ik heb een vraag"
+      ],
+      "Request a feature": [
+        "Vraag een nieuwe functie aan"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } winkel"
+      ],
+      "Switch account": [
+        "Account wijzigen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Get started": [
+        "Aan de slag"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "Start setup": [
+        "Installatie starten"
+      ],
+      "Skip": [
+        "Overslaan"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Back": [
+        "Vorige"
+      ],
+      "Use ${ label } theme": [
+        "Gebruik ${ label } thema"
+      ],
+      "Signing out": [
+        "Uitloggen"
+      ],
+      "Close": [
+        "Sluit"
+      ],
+      "refresh the page": [
+        "Ververs de pagina"
+      ],
+      "Remove bonuses": [
+        "Verwijder bonussen"
+      ],
+      "Select plan": [
+        "Selecteer abonnement"
+      ],
+      "Compare all features": [
+        "Alle functies vergelijken"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } door over te schakelen naar jaarlijkse betaling"
+      ],
+      "Continue": [
+        "Doorgaan"
+      ],
+      "Confirm": [
+        "Bevestig"
+      ],
+      "Pay": [
+        "Betaal"
+      ],
+      "Apply": [
+        "Pas toe"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Open ${ CALENDAR_APP_NAME } instellingen"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade to Plus": [
+        "Upgraden naar Plus"
+      ],
+      "Upgrade to Professional": [
+        "Upgrade naar Professional"
+      ],
+      "Activate": [
+        "Activeer"
+      ],
+      "Customize subscription": [
+        "Abonnement aanpassen"
+      ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Remove gift code": [
+        "Verwijder cadeaucode"
+      ],
+      "annual billing": [
+        "jaarlijkse betaling"
+      ],
+      "Compare plans": [
+        "Vergelijk abonnementen"
+      ],
+      "Decrease": [
+        "Verlaag"
+      ],
+      "Increase": [
+        "Verhoog"
+      ],
+      "Downgrade": [
+        "Downgraden"
+      ],
+      "Top up": [
+        "Saldo verhogen"
+      ],
+      "Add credits": [
+        "Voeg credits toe"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Cancel": [
+        "Annuleer"
+      ],
+      "Add PayPal payment method": [
+        "Voeg PayPal als betalingsmethode toe"
+      ],
+      "Retry": [
+        "Opnieuw proberen"
+      ],
+      "Loading verification": [
+        "Laden van verificatie"
+      ],
+      "Try again": [
+        "Opnieuw proberen"
+      ],
+      "Verify": [
+        "Verifiëren"
+      ],
+      "Use a different card": [
+        "Gebruik een andere kaart"
+      ],
+      "Use a different payment method": [
+        "Gebruik een andere betaalmethode"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "View invoice": [
+        "Factuur bekijken"
+      ],
+      "Get verification code": [
+        "Krijg verificatie code"
+      ],
+      "Try another method": [
+        "Andere methode proberen"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Did not receive the code?": [
+        "Code niet ontvangen?"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Edit phone number": [
+        "Wijzig telefoonnummer"
+      ],
+      "Email me my username(s)": [
+        "E-mail me mijn gebruikersnaam(namen)"
+      ],
+      "enable desktop notifications": [
+        "schakel desktopmeldingen in"
+      ],
+      "here": [
+        "hier"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
+      ],
+      "Close this banner": [
+        "Sluit deze banner"
+      ],
+      "Change password": [
+        "Wijzig wachtwoord"
+      ],
+      "Ok": [
+        "Oké"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Yes": [
+        "Ja"
+      ],
+      "Change mailbox password": [
+        "Mailboxwachtwoord wijzigen"
+      ],
+      "Delete": [
+        "Verwijder"
+      ],
+      "Delete your account": [
+        "Verwijder uw account"
+      ],
+      "Get a new password": [
+        "Krijg een nieuw wachtwoord"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ],
+      "Reset my password": [
+        "Mijn wachtwoord resetten"
+      ],
+      "Hide": [
+        "Verberg"
+      ],
+      "Show": [
+        "Toon"
+      ],
+      "Reset credentials": [
+        "Inloggegevens resetten"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Copy": [
         "Kopieer"
       ],
+      "Download all configurations": [
+        "Download alle configuraties"
+      ],
+      "Get ProtonVPN Plus": [
+        "Krijg ProtonVPN Plus"
+      ],
+      "Update": [
+        "Update"
+      ],
+      "Create new recovery phrase": [
+        ""
+      ],
+      "Copy to clipboard": [
+        ""
+      ],
+      "Create new recovery phrase?": [
+        ""
+      ],
+      "Enter password to continue": [
+        ""
+      ],
+      "Disable recovery phrase?": [
+        ""
+      ],
+      "Disable recovery phrase": [
+        ""
+      ],
+      "Edit": [
+        "Bewerk"
+      ],
+      "Mark as default": [
+        "Markeren als standaard"
+      ],
+      "Add credit / debit card": [
+        "Creditcard / bankpas toevoegen"
+      ],
+      "Add PayPal": [
+        "PayPal toevoegen"
+      ],
+      "View": [
+        "Bekijk"
+      ],
+      "User": [
+        "Gebruiker"
+      ],
+      "Organization": [
+        "Organisatie"
+      ],
+      "Customize": [
+        "Personaliseer"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Share via link": [
+        "Deel via link"
+      ],
+      "Sharing options": [
+        "Opties voor delen"
+      ],
+      "Zoom out": [
+        "Zoom uit"
+      ],
+      "Reset zoom": [
+        "Reset zoom"
+      ],
+      "Zoom in": [
+        "Inzoomen"
+      ],
+      "Previous": [
+        "Vorige"
+      ],
+      "Close navigation": [
+        "Sluit navigatie"
+      ],
+      "Open navigation": [
+        "Open navigatie"
+      ],
+      "More info: ${ safeTitle }": [
+        "Meer informatie: ${ safeTitle }"
+      ],
+      "Go to panel ${ index }": [
+        "Ga naar paneel ${ index }"
+      ],
+      "Close modal": [
+        "Sluit het venster"
+      ],
+      "Report bug": [
+        "Bug melden"
+      ],
+      "Activate my coupon": [
+        "Activeer mijn coupon"
+      ],
+      "Hide additional features": [
+        "Aanvullende functies verbergen"
+      ],
+      "Select": [
+        "Selecteer"
+      ],
+      "Create account": [
+        "Account aanmaken"
+      ],
+      "Go to login": [
+        "Ga naar login"
+      ],
+      "View full plan comparison": [
+        "Bekijk de volledige abonnementsvergelijking"
+      ],
+      "Send": [
+        "Verzenden"
+      ],
+      "Resend": [
+        "Opnieuw versturen"
+      ],
+      "Use another verification method": [
+        "Gebruik een andere verificatiemethode"
+      ],
+      "Confirm payment": [
+        "Betaling bevestigen"
+      ],
+      "Pay annually and save 20%": [
+        "Betaal jaarlijks en bespaar 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Probeer ${ upsellPlan.title } voor maar ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Startpagina"
+      ],
+      "Verify code again": [
+        "Verifieer code opnieuw"
+      ],
+      "Verify code": [
+        "Bevestig de code"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Inlogprobleem"
+      ],
+      "Sign up problem": [
+        "Probleem met het aanmaken van een nieuw account"
+      ],
+      "Payments problem": [
+        "Probleem met betalingen"
+      ],
+      "Custom domain problem": [
+        "Probleem met eigen domeinnaam"
+      ],
+      "Bridge problem": [
+        "Bridge probleem"
+      ],
+      "Import / export problem": [
+        "Importeer / exporteer probleem"
+      ],
+      "Connection problem": [
+        "Verbindingsprobleem"
+      ],
+      "Slow speed problem": [
+        "Snelheidsprobleem (traag)"
+      ],
+      "Calendar problem": [
+        "Probleem met agenda"
+      ],
+      "Contacts problem": [
+        "Probleem met contacten"
+      ],
+      "Drive problem": [
+        "Probleem met Drive"
+      ],
+      "Mail problem": [
+        "E-mailproblemen"
+      ],
+      "VPN problem": [
+        "VPN probleem"
+      ],
+      "Feature request": [
+        "Functie-aanvraag"
+      ],
+      "Other": [
+        "Overig"
+      ],
+      "Signup problem": [
+        "Aanmeldprobleem"
+      ],
+      "Installation problem": [
+        "Installatieprobleem"
+      ],
+      "Update problem": [
+        "Updateprobleem"
+      ],
+      "Application problem": [
+        "Applicatieprobleem"
+      ],
+      "Speed problem": [
+        "Snelheidsprobleem"
+      ],
+      "Manual setup problem": [
+        "Probleem tijdens handmatige set-up"
+      ],
+      "Website access problem": [
+        "Probleem met toegang tot website"
+      ],
+      "Streaming problem": [
+        "Probleem met mediastreaming"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Account"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netwerk"
+      ],
+      "Services": [
+        "Diensten"
+      ],
+      "Other category": [
+        "Andere categorie"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Selecteer"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "uw browser cache wissen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Go to subscription plans": [
+        "Ga naar abonnementsplannen"
+      ],
+      "Add a gift code": [
+        "Voeg een cadeaucode toe"
+      ],
+      "click here": [
+        "klik hier"
+      ],
+      "Request an invite": [
+        "Uitnodiging aanvragen"
+      ],
+      "Back to login": [
+        "Terug naar inloggen"
+      ],
+      "Pay invoice": [
+        "Factuur betalen"
+      ],
+      "Upgrade account": [
+        "Account upgraden"
+      ],
+      "Not activated": [
+        "Niet actief"
+      ],
+      "here": [
+        "hier"
+      ],
+      "View guide": [
+        "Bekijk gids"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Wat is het verschil tussen UDP en TCP-protocollen?"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Sign up for free": [
+        "Meld gratis aan"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Nog geen account? Registreer nu gratis!"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ],
+      "Forgot username?": [
+        "Gebruikersnaam vergeten?"
+      ],
+      "Common login problems": [
+        "Bekende aanmeldproblemen"
+      ],
+      "Contact support": [
+        "Neem contact op met ondersteuning"
+      ],
+      "Terms of Service": [
+        "Algemene Voorwaarden"
+      ],
+      "Privacy Policy": [
+        "Privacybeleid"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "Close": [
+        "Sluit"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Bug gemeld"
+      ],
+      "Email address copied to clipboard": [
+        "E-mailadres naar klembord gekopieerd"
+      ],
+      "You have successfully unsubscribed": [
+        "U bent succesvol afgemeld"
+      ],
+      "Credits added": [
+        "Credits toegevoegd"
+      ],
+      "Gift code applied": [
+        "Geschenkcode toegepast"
+      ],
+      "Payment method updated": [
+        "Betalingsmethode geüpdatet"
+      ],
+      "Payment method added": [
+        "Betalingsmethode toegevoegd"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Code verzonden naar ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificatie gelukt"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Als u een geldige e-mail hebt ingevoerd, sturen we u een e-mail met uw gebruikersnamen in de volgende minuut."
+      ],
+      "Password updated": [
+        "Wachtwoord bijgewerkt"
+      ],
+      "Account deleted. Logging out...": [
+        "Account verwijderd. Uitloggen..."
+      ],
+      "Locale updated": [
+        "Landinstelling bijgewerkt"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } gekopieerd naar uw klembord"
+      ],
+      "Email updated": [
+        "E-mailadres geüpdatet"
+      ],
+      "Phone number updated": [
+        "Telefoonnummer bijgewerkt"
+      ],
+      "Payment method deleted": [
+        "Betalingsmethode verwijderd"
+      ],
+      "Invoice paid": [
+        "Factuur betaald"
+      ],
+      "Invoice customized": [
+        "Factuur aangepast"
+      ]
+    },
+    "Label": {
       "Operating system": [
         "Besturingssysteem"
       ],
@@ -1059,6 +1628,33 @@
       "Select a method": [
         "Een methode selecteren"
       ],
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "Two-factor authentication code": [
+        "Tweestapsverificatiecode"
+      ],
+      "Username or ProtonMail address": [
+        "Gebruikersnaam of ProtonMail e-mailadres"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Verification code": [
+        "Verificatiecode"
+      ],
+      "Enter the 6-digit code": [
+        "Voer de 6-cijferige code in"
+      ],
       "Name": [
         "Naam"
       ],
@@ -1098,9 +1694,6 @@
       "Confirm mailbox password": [
         "Bevestig mailbox-wachtwoord"
       ],
-      "Two-factor authentication code": [
-        "Tweestapsverificatiecode"
-      ],
       "Key": [
         "Sleutel"
       ],
@@ -1116,9 +1709,6 @@
       "Two-password mode": [
         "Twee-wachtwoord modus"
       ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
       ],
@@ -1131,17 +1721,20 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
+      "Username": [
+        "Gebruikersnaam"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Token": [
+        "Token"
+      ],
+      "Danger": [
+        "Gevaar"
+      ],
       "Default language": [
         "Standaardtaal"
-      ],
-      "Password": [
-        "Wachtwoord"
-      ],
-      "Cancel": [
-        "Annuleren"
-      ],
-      "Submit": [
-        "Versturen"
       ],
       "OpenVPN / IKEv2 username": [
         "OpenVPN / IKEv2 gebruikersnaam"
@@ -1167,18 +1760,6 @@
       "Your recovery phrase": [
         ""
       ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
-      ],
-      "Phone number": [
-        "Telefoonnummer"
-      ],
-      "Verification code": [
-        "Verificatiecode"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
-      ],
       "Cash": [
         "Cash"
       ],
@@ -1200,23 +1781,17 @@
       "Customize invoices": [
         "Facturen aanpassen"
       ],
-      "Username": [
-        "Gebruikersnaam"
+      "Reveal password": [
+        "Wachtwoord tonen"
       ],
-      "Email": [
-        "E-mail"
+      "Hide password": [
+        "Wachtwoord verbergen"
       ],
-      "Token": [
-        "Token"
-      ],
-      "Danger": [
-        "Gevaar"
+      "Copy": [
+        "Kopieer"
       ],
       "Back to:": [
         "Terug nar:"
-      ],
-      "Enter the code displayed on your TV": [
-        "Voer de op uw TV weergegeven code in"
       ],
       "Verification method": [
         "Verificatiemethode"
@@ -1247,504 +1822,95 @@
       ],
       "Total price (two-year)": [
         "Totaalprijs (twee jaar)"
+      ],
+      "Enter the code displayed on your TV": [
+        "Voer de op uw TV weergegeven code in"
       ]
     },
-    "Action": {
-      "Close navigation": [
-        "Sluit navigatie"
+    "Placeholder": {
+      "OS name": [
+        "Besturingssysteem"
       ],
-      "Open navigation": [
-        "Open navigatie"
+      "OS version": [
+        "Versie besturingssysteem"
       ],
-      "More info: ${ safeTitle }": [
-        "Meer informatie: ${ safeTitle }"
+      "Proton username": [
+        "Proton gebruikersnaam"
       ],
-      "Go to panel ${ index }": [
-        "Ga naar paneel ${ index }"
+      "A way to contact you": [
+        "Een manier om contact met u op te nemen"
       ],
-      "Close": [
-        "Sluit"
+      "Please describe the problem and include any error messages": [
+        "Beschrijf het probleem en voeg alle foutmeldingen toe"
+      ],
+      "Browser name": [
+        "Browsernaam"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
+      "e.g. Julia Smith": [
+        "bijv. Julia Smith"
+      ],
+      "Gift code": [
+        "Geschenkcode"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Add gift code": [
+        "Voeg cadeaucode toe"
+      ],
+      "ZIP": [
+        "Postcode"
+      ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "Email": [
+        "E-mailadress"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Two-factor authentication code": [
+        "Tweestapsverificatiecode"
       ],
       "Confirm": [
         "Bevestig"
       ],
-      "Cancel": [
-        "Annuleer"
+      "Email address": [
+        "E-mailadres"
       ],
-      "Submit": [
-        "Verstuur"
+      "Username": [
+        "Gebruikersnaam"
       ],
-      "Close modal": [
-        "Sluit het venster"
+      "Recovery email": [
+        "Herstel e-mailadres"
       ],
-      "refresh the page": [
-        "Ververs de pagina"
+      "Reset code": [
+        "Code resetten"
       ],
-      "Clear": [
-        "Wissen"
+      "Enter the word '${ dangerWord }' here": [
+        "Vul hier het woord '${ dangerWord }' in"
       ],
-      "Add screenshot(s)": [
-        "Schermafdruk(ken) toevoegen"
+      "Choose a new password": [
+        "Kies een nieuw wachtwoord"
       ],
-      "Hide info": [
-        "Verberg informatie"
+      "Enter coupon code": [
+        "Voer couponcode in"
       ],
-      "Show info": [
-        "Toon informatie"
-      ],
-      "Copy email to clipboard": [
-        "E-mailadres kopiëren naar klembord"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
-      "Chat with us": [
-        ""
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
-      ],
-      "Request a feature": [
-        "Vraag een nieuwe functie aan"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } winkel"
-      ],
-      "Switch account": [
-        "Account wijzigen"
-      ],
-      "Sign out": [
-        "Uitloggen"
-      ],
-      "Get started": [
-        "Aan de slag"
-      ],
-      "Next": [
-        "Volgende"
-      ],
-      "Start setup": [
-        "Installatie starten"
-      ],
-      "Skip": [
-        "Overslaan"
-      ],
-      "Done": [
-        "Klaar"
-      ],
-      "Back": [
-        "Vorige"
-      ],
-      "Use ${ label } theme": [
-        "Gebruik ${ label } thema"
-      ],
-      "Signing out": [
-        "Uitloggen"
-      ],
-      "Remove bonuses": [
-        "Verwijder bonussen"
-      ],
-      "Select plan": [
-        "Selecteer abonnement"
-      ],
-      "Compare all features": [
-        "Alle functies vergelijken"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } door over te schakelen naar jaarlijkse betaling"
-      ],
-      "Continue": [
-        "Doorgaan"
-      ],
-      "Pay": [
-        "Betaal"
-      ],
-      "Apply": [
-        "Pas toe"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Open ${ CALENDAR_APP_NAME } instellingen"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Upgrade to Plus": [
-        "Upgraden naar Plus"
-      ],
-      "Upgrade to Professional": [
-        "Upgrade naar Professional"
-      ],
-      "Activate": [
-        "Activeer"
-      ],
-      "Customize subscription": [
-        "Abonnement aanpassen"
-      ],
-      "Cancel subscription": [
-        "Abonnement opzeggen"
-      ],
-      "Remove gift code": [
-        "Verwijder cadeaucode"
-      ],
-      "annual billing": [
-        "jaarlijkse betaling"
-      ],
-      "Compare plans": [
-        "Vergelijk abonnementen"
-      ],
-      "Decrease": [
-        "Verlaag"
-      ],
-      "Increase": [
-        "Verhoog"
-      ],
-      "Downgrade": [
-        "Downgraden"
-      ],
-      "Top up": [
-        "Saldo verhogen"
-      ],
-      "Add credits": [
-        "Voeg credits toe"
-      ],
-      "Save": [
-        "Opslaan"
-      ],
-      "Add PayPal payment method": [
-        "Voeg PayPal als betalingsmethode toe"
-      ],
-      "Retry": [
-        "Opnieuw proberen"
-      ],
-      "Loading verification": [
-        "Laden van verificatie"
-      ],
-      "Try again": [
-        "Opnieuw proberen"
-      ],
-      "Verify": [
-        "Verifiëren"
-      ],
-      "Use a different card": [
-        "Gebruik een andere kaart"
-      ],
-      "Use a different payment method": [
-        "Gebruik een andere betaalmethode"
-      ],
-      "enable desktop notifications": [
-        "schakel desktopmeldingen in"
-      ],
-      "here": [
-        "hier"
-      ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
-      "Close this banner": [
-        "Sluit deze banner"
-      ],
-      "Change password": [
-        "Wijzig wachtwoord"
-      ],
-      "Ok": [
-        "Oké"
-      ],
-      "Download": [
-        "Download"
-      ],
-      "Yes": [
-        "Ja"
-      ],
-      "Change mailbox password": [
-        "Mailboxwachtwoord wijzigen"
-      ],
-      "Delete": [
-        "Verwijder"
-      ],
-      "Delete your account": [
-        "Verwijder uw account"
-      ],
-      "Hide": [
-        "Verberg"
-      ],
-      "Show": [
-        "Toon"
-      ],
-      "Reset credentials": [
-        "Inloggegevens resetten"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Copy": [
-        "Kopieer"
-      ],
-      "Download all configurations": [
-        "Download alle configuraties"
-      ],
-      "Get ProtonVPN Plus": [
-        "Krijg ProtonVPN Plus"
-      ],
-      "Update": [
-        "Update"
-      ],
-      "Create new recovery phrase": [
-        ""
-      ],
-      "Copy to clipboard": [
-        ""
-      ],
-      "Create new recovery phrase?": [
-        ""
-      ],
-      "Enter password to continue": [
-        ""
-      ],
-      "Disable recovery phrase?": [
-        ""
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "View invoice": [
-        "Factuur bekijken"
-      ],
-      "Get verification code": [
-        "Krijg verificatie code"
-      ],
-      "Try another method": [
-        "Andere methode proberen"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Did not receive the code?": [
-        "Code niet ontvangen?"
-      ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
-      "Edit phone number": [
-        "Wijzig telefoonnummer"
-      ],
-      "Edit": [
-        "Bewerk"
-      ],
-      "Mark as default": [
-        "Markeren als standaard"
-      ],
-      "Add credit / debit card": [
-        "Creditcard / bankpas toevoegen"
-      ],
-      "Add PayPal": [
-        "PayPal toevoegen"
-      ],
-      "View": [
-        "Bekijk"
-      ],
-      "User": [
-        "Gebruiker"
-      ],
-      "Organization": [
-        "Organisatie"
-      ],
-      "Customize": [
-        "Personaliseer"
-      ],
-      "Details": [
-        "Details"
-      ],
-      "Share via link": [
-        "Deel via link"
-      ],
-      "Sharing options": [
-        "Opties voor delen"
-      ],
-      "Zoom out": [
-        "Zoom uit"
-      ],
-      "Reset zoom": [
-        "Reset zoom"
-      ],
-      "Zoom in": [
-        "Inzoomen"
-      ],
-      "Previous": [
-        "Vorige"
-      ],
-      "Email me my username(s)": [
-        "E-mail me mijn gebruikersnaam(namen)"
-      ],
-      "Get a new password": [
-        "Krijg een nieuw wachtwoord"
-      ],
-      "Reset password": [
-        "Wachtwoord resetten"
-      ],
-      "Reset my password": [
-        "Mijn wachtwoord resetten"
-      ],
-      "Report bug": [
-        "Bug melden"
-      ],
-      "Activate my coupon": [
-        "Activeer mijn coupon"
-      ],
-      "Hide additional features": [
-        "Aanvullende functies verbergen"
-      ],
-      "Select": [
-        "Selecteer"
-      ],
-      "Verify code again": [
-        "Verifieer code opnieuw"
-      ],
-      "Verify code": [
-        "Bevestig de code"
-      ],
-      "Create account": [
-        "Account aanmaken"
-      ],
-      "Go to login": [
-        "Ga naar login"
-      ],
-      "View full plan comparison": [
-        "Bekijk de volledige abonnementsvergelijking"
-      ],
-      "Send": [
-        "Verzenden"
-      ],
-      "Resend": [
-        "Opnieuw versturen"
-      ],
-      "Use another verification method": [
-        "Gebruik een andere verificatiemethode"
-      ],
-      "Confirm payment": [
-        "Betaling bevestigen"
-      ],
-      "Pay annually and save 20%": [
-        "Betaal jaarlijks en bespaar 20%"
-      ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Probeer ${ upsellPlan.title } voor maar ${ totalMonthlyText }"
-      ],
-      "Homepage": [
-        "Startpagina"
-      ]
-    },
-    "Storage": {
-      "Your current storage:": [
-        "Uw huidige opslag:"
-      ],
-      "Upgrade storage": [
-        "Opslag upgraden"
-      ],
-      "Release notes": [
-        "Release notes"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "clearing your browser cache": [
-        "uw browser cache wissen"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Go to subscription plans": [
-        "Ga naar abonnementsplannen"
-      ],
-      "Add a gift code": [
-        "Voeg een cadeaucode toe"
-      ],
-      "click here": [
-        "klik hier"
-      ],
-      "Pay invoice": [
-        "Factuur betalen"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
-      ],
-      "Not activated": [
-        "Niet actief"
-      ],
-      "View guide": [
-        "Bekijk gids"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Wat is het verschil tussen UDP en TCP-protocollen?"
-      ],
-      "Request an invite": [
-        "Uitnodiging aanvragen"
-      ],
-      "Back to login": [
-        "Terug naar inloggen"
-      ],
-      "here": [
-        "hier"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Sign up for free": [
-        "Meld gratis aan"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "Nog geen account? Registreer nu gratis!"
-      ],
-      "Reset password": [
-        "Wachtwoord resetten"
-      ],
-      "Forgot username?": [
-        "Gebruikersnaam vergeten?"
-      ],
-      "Common login problems": [
-        "Bekende aanmeldproblemen"
-      ],
-      "Contact support": [
-        "Neem contact op met ondersteuning"
-      ],
-      "Terms of Service": [
-        "Algemene Voorwaarden"
-      ],
-      "Privacy Policy": [
-        "Privacybeleid"
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "Close": [
-        "Sluit"
+      "Confirm password": [
+        "Bevestig wachtwoord"
       ]
     },
     "Title": {
-      "Open actions dropdown": [
-        "Open acties dropdownmenu"
-      ],
-      "Previous": [
-        "Vorige"
-      ],
-      "Open pagination": [
-        "Open paginering"
-      ],
-      "Next": [
-        "Volgende"
-      ],
-      "What's new": [
-        "Wat is er nieuw"
-      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -1859,6 +2025,27 @@
       "Error": [
         "Fout"
       ],
+      "Sign in again to continue": [
+        "Log opnieuw in om door te gaan"
+      ],
+      "Account suspended": [
+        "Account opgeschort"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "Invalid verification code": [
+        "Ongeldige verificatiecode"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Human verification": [
+        "Persoonsverificatie"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "Wachtwoord wijzigen voor ${ Name } (${ Email })"
       ],
@@ -1892,8 +2079,11 @@
       "Delete account": [
         "Account verwijderen"
       ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
+      "Confirm reset password": [
+        "Herstelwachtwoord bevestigen"
+      ],
+      "Open actions dropdown": [
+        "Open acties dropdownmenu"
       ],
       "1. Select platform": [
         "Selecteer platform"
@@ -1912,24 +2102,6 @@
       ],
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
-      ],
-      "Account suspended": [
-        "Account opgeschort"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
-      "Invalid verification code": [
-        "Ongeldige verificatiecode"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Human verification": [
-        "Persoonsverificatie"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -1952,14 +2124,35 @@
       "Action": [
         "Actie"
       ],
-      "Confirm reset password": [
-        "Herstelwachtwoord bevestigen"
+      "Previous": [
+        "Vorige"
+      ],
+      "Open pagination": [
+        "Open paginering"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "What's new": [
+        "Wat is er nieuw"
       ],
       "Upgrade": [
         "Upgraden"
       ],
       "My subscription": [
         "Mijn abonnement"
+      ],
+      "Forgot username": [
+        "Gebruikersnaam vergeten"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "User log in": [
+        "Gebruikerslogin"
       ],
       "Dashboard": [
         "Dashboard"
@@ -1984,66 +2177,6 @@
       ],
       "Language": [
         "Taal"
-      ],
-      "Account": [
-        "Account"
-      ],
-      "Username": [
-        "Gebruikersnaam"
-      ],
-      "Passwords": [
-        "Wachtwoorden"
-      ],
-      "Two-factor authentication": [
-        "Tweestapsverificatie"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 gebruikersnaam"
-      ],
-      "Recovery & notification": [
-        "Herstel & notificaties"
-      ],
-      "Email subscriptions": [
-        "Nieuwsbrieven"
-      ],
-      "Delete": [
-        "Verwijder"
-      ],
-      "Downloads": [
-        "Downloads"
-      ],
-      "ProtonVPN clients": [
-        "ProtonVPN-clients"
-      ],
-      "OpenVPN configuration files": [
-        "OpenVPN-configuratiebestanden"
-      ],
-      "Payments": [
-        "Betalingen"
-      ],
-      "Payment methods": [
-        "Betaalmethoden"
-      ],
-      "Invoices": [
-        "Facturen"
-      ],
-      "Device connected!": [
-        "Appparaat verbonden!"
-      ],
-      "TV log in": [
-        "TV inloggen"
-      ],
-      "Forgot username": [
-        "Gebruikersnaam vergeten"
-      ],
-      "Reset password": [
-        "Wachtwoord resetten"
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "User log in": [
-        "Gebruikerslogin"
       ],
       "Redeem coupon": [
         "Coupon inwisselen"
@@ -2114,253 +2247,64 @@
       "Sign up": [
         "Registreren"
       ],
-      "Settings": [
-        "Instellingen"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Geen afbeelding geselecteerd"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Inlogprobleem"
-      ],
-      "Sign up problem": [
-        "Probleem met het aanmaken van een nieuw account"
-      ],
-      "Payments problem": [
-        "Probleem met betalingen"
-      ],
-      "Custom domain problem": [
-        "Probleem met eigen domeinnaam"
-      ],
-      "Bridge problem": [
-        "Bridge probleem"
-      ],
-      "Import / export problem": [
-        "Importeer / exporteer probleem"
-      ],
-      "Connection problem": [
-        "Verbindingsprobleem"
-      ],
-      "Slow speed problem": [
-        "Snelheidsprobleem (traag)"
-      ],
-      "Calendar problem": [
-        "Probleem met agenda"
-      ],
-      "Contacts problem": [
-        "Probleem met contacten"
-      ],
-      "Drive problem": [
-        "Probleem met Drive"
-      ],
-      "Mail problem": [
-        "E-mailproblemen"
-      ],
-      "VPN problem": [
-        "VPN probleem"
-      ],
-      "Feature request": [
-        "Functie-aanvraag"
-      ],
-      "Other": [
-        "Overig"
-      ],
-      "Signup problem": [
-        "Aanmeldprobleem"
-      ],
-      "Installation problem": [
-        "Installatieprobleem"
-      ],
-      "Update problem": [
-        "Updateprobleem"
-      ],
-      "Application problem": [
-        "Applicatieprobleem"
-      ],
-      "Speed problem": [
-        "Snelheidsprobleem"
-      ],
-      "Manual setup problem": [
-        "Probleem tijdens handmatige set-up"
-      ],
-      "Website access problem": [
-        "Probleem met toegang tot website"
-      ],
-      "Streaming problem": [
-        "Probleem met mediastreaming"
-      ]
-    },
-    "Group": {
       "Account": [
         "Account"
-      ],
-      "Apps": [
-        "Apps"
-      ],
-      "Network": [
-        "Netwerk"
-      ],
-      "Services": [
-        "Diensten"
-      ],
-      "Other category": [
-        "Andere categorie"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecteer"
-      ]
-    },
-    "Success": {
-      "Bug reported": [
-        "Bug gemeld"
-      ],
-      "Email address copied to clipboard": [
-        "E-mailadres naar klembord gekopieerd"
-      ],
-      "You have successfully unsubscribed": [
-        "U bent succesvol afgemeld"
-      ],
-      "Credits added": [
-        "Credits toegevoegd"
-      ],
-      "Gift code applied": [
-        "Geschenkcode toegepast"
-      ],
-      "Payment method updated": [
-        "Betalingsmethode geüpdatet"
-      ],
-      "Payment method added": [
-        "Betalingsmethode toegevoegd"
-      ],
-      "Password updated": [
-        "Wachtwoord bijgewerkt"
-      ],
-      "Account deleted. Logging out...": [
-        "Account verwijderd. Uitloggen..."
-      ],
-      "Locale updated": [
-        "Landinstelling bijgewerkt"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } gekopieerd naar uw klembord"
-      ],
-      "Email updated": [
-        "E-mailadres geüpdatet"
-      ],
-      "Phone number updated": [
-        "Telefoonnummer bijgewerkt"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Code verzonden naar ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificatie gelukt"
-      ],
-      "Payment method deleted": [
-        "Betalingsmethode verwijderd"
-      ],
-      "Invoice paid": [
-        "Factuur betaald"
-      ],
-      "Invoice customized": [
-        "Factuur aangepast"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Als u een geldige e-mail hebt ingevoerd, sturen we u een e-mail met uw gebruikersnamen in de volgende minuut."
-      ]
-    },
-    "Placeholder": {
-      "OS name": [
-        "Besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton gebruikersnaam"
-      ],
-      "A way to contact you": [
-        "Een manier om contact met u op te nemen"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Beschrijf het probleem en voeg alle foutmeldingen toe"
-      ],
-      "Browser name": [
-        "Browsernaam"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
-      ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "Other": [
-        "Overige"
-      ],
-      "Add gift code": [
-        "Voeg cadeaucode toe"
-      ],
-      "ZIP": [
-        "Postcode"
-      ],
-      "Postal code": [
-        "Postcode"
-      ],
-      "Password": [
-        "Wachtwoord"
-      ],
-      "Two-factor authentication code": [
-        "Tweestapsverificatiecode"
-      ],
-      "Confirm": [
-        "Bevestig"
-      ],
-      "Email address": [
-        "E-mailadres"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
-      "Email": [
-        "E-mailadress"
       ],
       "Username": [
         "Gebruikersnaam"
       ],
-      "Recovery email": [
-        "Herstel e-mailadres"
+      "Passwords": [
+        "Wachtwoorden"
       ],
-      "Reset code": [
-        "Code resetten"
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
       ],
-      "Enter the word '${ dangerWord }' here": [
-        "Vul hier het woord '${ dangerWord }' in"
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN / IKEv2 gebruikersnaam"
       ],
-      "Choose a new password": [
-        "Kies een nieuw wachtwoord"
+      "Recovery & notification": [
+        "Herstel & notificaties"
       ],
-      "Enter coupon code": [
-        "Voer couponcode in"
+      "Email subscriptions": [
+        "Nieuwsbrieven"
       ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
+      "Delete": [
+        "Verwijder"
+      ],
+      "Downloads": [
+        "Downloads"
+      ],
+      "ProtonVPN clients": [
+        "ProtonVPN-clients"
+      ],
+      "OpenVPN configuration files": [
+        "OpenVPN-configuratiebestanden"
+      ],
+      "Payments": [
+        "Betalingen"
+      ],
+      "Payment methods": [
+        "Betaalmethoden"
+      ],
+      "Invoices": [
+        "Facturen"
+      ],
+      "Device connected!": [
+        "Appparaat verbonden!"
+      ],
+      "TV log in": [
+        "TV inloggen"
+      ],
+      "Settings": [
+        "Instellingen"
       ]
     },
     "Warning": {
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Helaas zijn wij op dit moment niet on-line. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer on-line zijn."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -3273,6 +3217,33 @@
         "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
       ]
     },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "Gebaseerd in Zwitserland, wereldwijd beschikbaar."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Onbetaalde factuur"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Handmatig"
+      ],
+      "No verification method available": [
+        "Geen verificatiemethode beschikbaar"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
@@ -3309,6 +3280,11 @@
       ],
       "(1 email per month)": [
         "(1 email per month)"
+      ]
+    },
+    "Password": {
+      "Confirm new password": [
+        "Bevestig nieuw wachtwoord"
       ]
     },
     "Notification": {
@@ -3402,33 +3378,6 @@
       ],
       "Recovery phrase": [
         ""
-      ]
-    },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Gebaseerd in Zwitserland, wereldwijd beschikbaar."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Onbetaalde factuur"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Handmatig"
-      ],
-      "No verification method available": [
-        "Geen verificatiemethode beschikbaar"
       ]
     },
     "Confirmation title": {
@@ -3545,9 +3494,66 @@
         "ProtonMail factuur"
       ]
     },
-    "Password": {
-      "Confirm new password": [
-        "Bevestig nieuw wachtwoord"
+    "Storage": {
+      "Your current storage:": [
+        "Uw huidige opslag:"
+      ],
+      "Upgrade storage": [
+        "Opslag upgraden"
+      ],
+      "Release notes": [
+        "Release notes"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Niet gesynchroniseerd"
+      ],
+      "Syncing": [
+        "Synchroniseren"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "De agenda wordt gesynchroniseerd"
+      ],
+      "More than 12 hours passed since last update": [
+        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        "De agenda is te groot"
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Calendar link is temporarily unaccessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        "Synchronisatie van de agenda is mislukt"
       ]
     },
     "Plan details": {

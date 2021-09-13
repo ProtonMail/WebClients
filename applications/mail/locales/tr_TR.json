@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "tr"
+    "language": "tr_TR"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bayt"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Bu alan gereklidir"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Parolalar eşleşmiyor"
-      ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
-      ],
-      "Signature verification failed": [
-        "İmza doğrulaması başarısız oldu"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
       ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Gönderilen anahtar geçersiz"
       ],
+      "Request timed out.": [
+        "İstek zaman aşımına uğradı."
+      ],
       "Missing signature": [
         "İmza eksik"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "${ emailAddress } için olan anahtar özellikleri oluşturulamadı"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulaması başarısız oldu"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
       ],
       "Address primary private key not found": [
         "Adres birincil özel anahtarı bulunamadı"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Kimlik doğrulama hatası."
       ],
+      "Email address invalid": [
+        "E-posta adresi geçersiz"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Kullanmakta olduğunuz tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
-      ],
-      "Email address invalid": [
-        "E-posta adresi geçersiz"
       ],
       "The composer failed to load.": [
         "Oluşturucu yüklenemedi."
@@ -314,6 +328,9 @@
         "Kaldırılan birden çok girilmiş alıcı: ${ recipents }",
         "Kaldırılan birden çok girilmiş alıcılar: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "İleti şifreleri eşleşmiyor."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Bilinmeyen hata."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Çok fazla aktif filtre mevcut. Daha fazla aktif filtre kullanabilmek için ücretli plana geçin"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "Şifre en az ${ length } karakter içermelidir",
         "Şifre en az ${ length } karakter içermelidir"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bayt"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Adres"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Cevap:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ name } ${ address } ${ date } tarihinde yazdı:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -526,17 +549,14 @@
       "No results found": [
         "Sonuç bulunamadı"
       ],
-      "support team": [
-        "destek ekibi"
-      ],
-      "Loading": [
-        "Yükleniyor"
-      ],
       "No contacts added yet": [
         "Henüz kişi eklenmedi"
       ],
       "You can either update your search query or ${ button }": [
         "Arama sorgunuzu güncelleyebilir ya da ${ button }"
+      ],
+      "support team": [
+        "destek ekibi"
       ],
       "Week": [
         "Hafta"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
+      ],
+      "Loading": [
+        "Yükleniyor"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı bir homograf saldırısı olabilir ve Internet Explorer veya Edge tarayıcısı tarafından açılamaz."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Deneme bağlantısı"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Metin rengi"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Aşağıdaki koşullardan HERHANGİ BİRİ yerine getirildiğinde filtrele)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "Tüm değişiklikleriniz kaybolacak."
       ],
@@ -1520,6 +1552,12 @@
         "Tahmini kalan süre: ${ estimatedMinutes } dakika",
         "Tahmini kalan süre: ${ estimatedMinutes } dakika"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Tarayıcı verilerinin temizlenmesi, bu cihazda ileti içeriği aramasını da devre dışı bırakır. İçlerinde arama yapmak için tüm iletilerin yeniden indirilmesi gerekir."
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } okunmamış sohbet",
         "${ unreadCount } okunmamış sohbet"
@@ -1698,22 +1736,6 @@
         "Mobil cihazınızı kullanarak, bu karekodunu tarayın veya ${ link } adresini ziyaret edin."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Cevap:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ name } ${ address } ${ date } tarihinde yazdı:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Bilinmeyen"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "${ formattedFilename } dosyanız okunurken bir hata oluştu. Dosya doğru biçime sahip değil."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Kapat"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
-      "Use “${ label }” setting": [
-        "“${ label }” ayarını kullan"
-      ],
       "More info: ${ safeTitle }": [
         "Daha fazla bilgi: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Onayla"
       ],
       "Cancel": [
         "İptal"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Pencereyi kapat"
       ],
-      "Confirm": [
-        "Onayla"
+      "Use “${ label }” setting": [
+        "“${ label }” ayarını kullan"
       ],
       "Remove": [
         "Sil"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "E-posta ayarları"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Next month": [
         "Gelecek ay"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Telefon numarasını düzenle"
       ],
-      "Use ${ label } theme": [
-        "${ label } temasını kullan"
-      ],
-      "OK": [
-        "Tamam"
-      ],
       "Add": [
         "Ekle"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "İleri"
+      ],
+      "Use ${ label } theme": [
+        "${ label } temasını kullan"
+      ],
+      "OK": [
+        "Tamam"
       ],
       "Continue import": [
         "İçe aktarmaya devam et"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } grubuna ekle"
       ],
-      "Learn more": [
-        "Daha fazla öğrenin"
-      ],
-      "Open shop": [
-        "Mağazayı aç"
-      ],
-      "Open calendar": [
-        "Takvimi aç"
-      ],
       "Send anyway": [
         "Yine de gönder"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "Geri dön"
       ],
       "Send": [
         "Gönder"
@@ -3306,7 +3321,7 @@
         "${ attachmentName } indir"
       ],
       "Preview ${ attachmentName }": [
-        "${ attachmentName } ön izle"
+        "${ attachmentName } önizle"
       ],
       "Remove ${ attachmentName }": [
         "${ attachmentName } kaldır"
@@ -3322,6 +3337,9 @@
       ],
       "Show": [
         "Göster"
+      ],
+      "Learn more": [
+        "Daha fazla öğrenin"
       ],
       "Undo": [
         "Geri Al"
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Gelişmiş arama"
+      ],
+      "Clear browser data": [
+        "Tarayıcı verilerini temizle"
       ],
       "Mark as read": [
         "Okundu olarak işaretle"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         "Yeni ileti oluştur"
       ],
+      "Open shop": [
+        "Mağazayı aç"
+      ],
+      "Open calendar": [
+        "Takvimi aç"
+      ],
       "Import messages": [
         "İletileri içe aktar"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "İnsan doğrulaması"
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
       ],
       "Delete ${ Name }": [
         "${ Name } kişisini sil"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Kişileri içe aktar"
+      ],
+      "Select a theme": [
+        "Bir tema seçin"
       ],
       "Start import process": [
         "İçe aktarma işlemini başlat"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "Gizli Karbon Kopya"
       ],
-      "Errors detected": [
-        "Hata algılandı"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Alıcı adresi onaylansın mı?"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Daha çok bilgi edinin"
+      ],
+      "Request an invite": [
+        "Davet iste"
+      ],
+      "clearing your browser cache": [
+        "tarayıcınızın önbelleğini temizlemek"
+      ],
+      "Pay invoice": [
+        "Fatura ödeme"
+      ],
+      "Upgrade account": [
+        "Hesabı yükselt"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Go to subscription plans": [
+        "Abonelik tarifelerine git"
+      ],
+      "click here": [
+        "buraya tıklayın"
+      ],
+      "Add a gift code": [
+        "Hediye kodu ekle"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmeniz gerekir"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Bu daveti yönetmek için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Bu daveti cevaplamak için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Güncellenen etkinliği görmek için takvim anahtarlarınızı etkinleştirmeniz gerekir"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Bu ICS dosyası birden fazla etkinlik içeriyor. Lütfen dosyayı indirin ve ${ calendarAppName } içine aktarın"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
+      ],
+      "Create a new calendar to add this event": [
+        "Bu etkinliği eklemek için yeni bir takvim oluşturun"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Bu daveti yanıtlamak için yeni bir takvim oluşturun"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Davetlerinizi yönetmek için yeni bir takvim oluşturun"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Güncellenen etkinliği ${ calendarAppName } içinde aç"
+      ],
+      "Open in ${ calendarAppName }": [
+        "${ calendarAppName } uygulamasında aç"
+      ],
+      "Inbox": [
+        "Gelen Kutusu"
+      ],
+      "Drafts": [
+        "Taslaklar"
+      ],
+      "Sent": [
+        "Gönderilen"
+      ],
+      "Trash": [
+        "Çöp Kutusu"
+      ],
+      "Spam": [
+        "İstenmeyen Posta"
+      ],
+      "All mail": [
+        "Tüm postalar"
+      ],
+      "Archive": [
+        "Arşiv"
+      ],
+      "Starred": [
+        "Yıldızlı"
+      ],
+      "Outbox": [
+        "Giden Kutusu"
+      ],
+      "Scheduled": [
+        "Planlama"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Davetinizi yönetmek için bu takvime bağlı adresi yeniden etkinleştirin."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Davetinizi güncellemek için bu takvime bağlı adresi yeniden etkinleştirin."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Bu daveti yanıtlamak için adresinizi etkinleştirin."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Etkin bir e-posta adresine bağlı bir takvim oluşturun."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Takvimlerinizden birine bağlı bir e-posta adresini etkinleştirin."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Veya takvimlerinizden birini silebilir ve aktif bir e-posta adresine bağlı yeni bir tane oluşturabilirsiniz."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Cevabınızı değiştirmek için adresinizi tekrar etkinleştirin."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Etkinliği iptal etmek için devre dışı bırakılan takvime bağlı e-posta adresini etkinleştirin."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Cevabınızı değiştirmek için devre dışı bırakılan takvime bağlı e-posta adresini etkinleştirin."
+      ],
+      "Add folder": [
+        "Klasör ekle"
+      ],
+      "Add label": [
+        "Etiket ekle"
+      ],
+      "Folders": [
+        "Klasörler"
+      ],
+      "Manage your folders": [
+        "Klasörlerini yönet"
+      ],
+      "Labels": [
+        "Etiketler"
+      ],
+      "Manage your labels": [
+        "Etiketlerini yönet"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } saniye"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Daha çok bilgi edinin"
-      ],
-      "Request an invite": [
-        "Davet iste"
-      ],
-      "clearing your browser cache": [
-        "tarayıcınızın önbelleğini temizlemek"
-      ],
-      "Pay invoice": [
-        "Fatura ödeme"
-      ],
-      "Upgrade account": [
-        "Hesabı yükselt"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Go to subscription plans": [
-        "Abonelik tarifelerine git"
-      ],
-      "click here": [
-        "buraya tıklayın"
-      ],
-      "Add a gift code": [
-        "Hediye kodu ekle"
-      ],
-      "Inbox": [
-        "Gelen Kutusu"
-      ],
-      "Drafts": [
-        "Taslaklar"
-      ],
-      "Sent": [
-        "Gönderilen"
-      ],
-      "Trash": [
-        "Çöp Kutusu"
-      ],
-      "Spam": [
-        "İstenmeyen Posta"
-      ],
-      "All mail": [
-        "Tüm postalar"
-      ],
-      "Archive": [
-        "Arşiv"
-      ],
-      "Starred": [
-        "Yıldızlı"
-      ],
-      "Outbox": [
-        "Giden Kutusu"
-      ],
-      "Scheduled": [
-        "Planlama"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmeniz gerekir"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Bu daveti yönetmek için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Bu daveti cevaplamak için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Güncellenen etkinliği görmek için takvim anahtarlarınızı etkinleştirmeniz gerekir"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmeniz gerekiyor"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Bu ICS dosyası birden fazla etkinlik içeriyor. Lütfen dosyayı indirin ve ${ calendarAppName } içine aktarın"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
-      ],
-      "Create a new calendar to add this event": [
-        "Bu etkinliği eklemek için yeni bir takvim oluşturun"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Bu daveti yanıtlamak için yeni bir takvim oluşturun"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Davetlerinizi yönetmek için yeni bir takvim oluşturun"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Güncellenen etkinliği ${ calendarAppName } içinde aç"
-      ],
-      "Open in ${ calendarAppName }": [
-        "${ calendarAppName } uygulamasında aç"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Davetinizi yönetmek için bu takvime bağlı adresi yeniden etkinleştirin."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Davetinizi güncellemek için bu takvime bağlı adresi yeniden etkinleştirin."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Bu daveti yanıtlamak için adresinizi etkinleştirin."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Etkin bir e-posta adresine bağlı bir takvim oluşturun."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Takvimlerinizden birine bağlı bir e-posta adresini etkinleştirin."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Veya takvimlerinizden birini silebilir ve aktif bir e-posta adresine bağlı yeni bir tane oluşturabilirsiniz."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Cevabınızı değiştirmek için adresinizi tekrar etkinleştirin."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Etkinliği iptal etmek için devre dışı bırakılan takvime bağlı e-posta adresini etkinleştirin."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Cevabınızı değiştirmek için devre dışı bırakılan takvime bağlı e-posta adresini etkinleştirin."
-      ],
-      "Add folder": [
-        "Klasör ekle"
-      ],
-      "Add label": [
-        "Etiket ekle"
-      ],
-      "Folders": [
-        "Klasörler"
-      ],
-      "Manage your folders": [
-        "Klasörlerini yönet"
-      ],
-      "Labels": [
-        "Etiketler"
-      ],
-      "Manage your labels": [
-        "Etiketlerini yönet"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Bu özellik ücretli bir Proton hesabı gerektirir"
@@ -4707,6 +4734,9 @@
         "İçe aktarılanları silmek istediğinizden emin misiniz?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5150,30 +5180,6 @@
         "Kullanılabilir doğrulama yöntemi yok"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Genişletilmiş"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Ad"
@@ -5390,6 +5396,35 @@
         "${ totalToImport } kişiden ${ totalImported } kişi şifrelendi ve kişi listenize eklendi"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Liste"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Genişletilmiş"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Yükle"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Kişi sağlayıcınıza bağlanılıyor"
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekleyin"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Yükle"
       ]
     },
     "Onboarding Proton": {
@@ -6227,7 +6257,7 @@
         "İşlemler"
       ],
       "Preview": [
-        "Ön izleme"
+        "Önizleme"
       ]
     },
     "Filter preview": {
@@ -6683,10 +6713,6 @@
         "Hatalar tespit ettik. E-postanız aşağıdaki nedenden dolayı girilen e-posta adresine gönderilemez:",
         "Hatalar tespit ettik. E-postanız aşağıdaki nedenlerden dolayı girilen e-posta adreslerinden herhangi birine gönderilemez:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Girdiğiniz e-posta adresini düzenlemek için lütfen geri dönün.",
-        "Girdiğiniz e-posta adreslerini düzenlemek için lütfen geri dönün."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Bazı hatalar tespit ettik. E-postanız aşağıdaki nedenlerden dolayı girilen e-posta adreslerinden bir veya daha fazlasına gönderilemez:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Sonraki"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

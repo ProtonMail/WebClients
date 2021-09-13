@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "ca"
+    "language": "ca_ES"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Aquest camp és obligatori"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
-      ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
-      ],
-      "Signature verification failed": [
-        "Verificació de la signatura fallida"
-      ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar el correu ${ email }."
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
       ],
+      "Request timed out.": [
+        "S'ha esgotat el temps d'espera."
+      ],
       "Missing signature": [
         "Signatura no trobada"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "No s'han pogut extreure les propietats clau de ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "Verificació de la signatura fallida"
+      ],
+      "Could not find address ${ email }.": [
+        "No s'ha pogut trobar el correu ${ email }."
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "Email address invalid": [
+        "Correu electrònic invàlid"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
-      ],
-      "Email address invalid": [
-        "Correu electrònic invàlid"
       ],
       "The composer failed to load.": [
         "El compositor no s'ha pogut carregar."
@@ -314,6 +328,9 @@
         "Destinatari duplicat eliminat: ${ recipents }",
         "Destinataris duplicats eliminats: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } per <${ email }>. Podeu afegir una altra clau o desactivar el xifratge per aquest contacte per resoldre aquest problema."
+      ],
       "Message passwords do not match.": [
         "Les contrasenyes del missatge no coincideixen."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Error desconegut."
       ],
+      "re-activate the previous key": [
+        "tornar a activar la clau anterior"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Els vostres correus electrònics no es poden desxifrar a causa d'un restabliment de contrasenya recent. Si recordeu la contrasenya anterior, podeu ${ reActivateKeyLink } per accedir als vostres missatges. ${ learnMoreLink }"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        "Els vostres correus electrònics no es poden desxifrar a causa d'un restabliment de contrasenya recent. ${ learnMoreLink }"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Adreça"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "El ${ date }, ${ name } ${ address } va escriure:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Temps de sessió esgotat."
@@ -526,17 +549,14 @@
       "No results found": [
         "No s'han trobat resultats"
       ],
-      "support team": [
-        "equip de suport"
-      ],
-      "Loading": [
-        "Carregant"
-      ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
       ],
       "You can either update your search query or ${ button }": [
         "Podeu actualitzar la cerca de consulta o ${ button }"
+      ],
+      "support team": [
+        "equip de suport"
       ],
       "Week": [
         "Setmana"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
+      ],
+      "Loading": [
+        "Carregant"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç pot ser un atac de homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs que l’enllaç és legítim, utilitzeu un navegador diferent per obrir-lo."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Enllaç de prova"
+      ],
+      "Change your default in settings": [
+        "Canvieu el vostre predeterminat a la configuració"
+      ],
+      "Default": [
+        "Predeterminat"
       ],
       "Text color": [
         "Color del text"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtre si es compleixen ALGUNES de les condicions següents)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques."
+      ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
@@ -1520,6 +1552,12 @@
         "Temps restant estimat: ${ estimatedMinutes } minut",
         "Temps restant estimat: ${ estimatedMinutes } minuts"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Netejar les dades del navegador també desactiva la cerca de continguts del missatge en aquest dispositiu. Tots els missatges s'hauran de descarregar altra vegada per cercar-hi a dins."
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        "Neteja les dades del navegador relacionades a la cerca de contingut dels missatges incloent els missatges descarregats"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversa sense llegir",
         "${ unreadCount } converses sense llegir"
@@ -1698,22 +1736,6 @@
         "Utilitzant el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "El ${ date }, ${ name } ${ address } va escriure:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Desconegut"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Tancar"
       ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
-      "Use “${ label }” setting": [
-        "Utilitzar la configuració \"${ label }\""
-      ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Confirmar"
       ],
       "Cancel": [
         "Cancel·lar"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Tancar el modal"
       ],
-      "Confirm": [
-        "Confirmar"
+      "Use “${ label }” setting": [
+        "Utilitzar la configuració \"${ label }\""
       ],
       "Remove": [
         "Suprimeix"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "Configuració del correu"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Next month": [
         "Mes següent"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Editar el número de telèfon"
       ],
-      "Use ${ label } theme": [
-        "Utilitzar el tema ${ label }"
-      ],
-      "OK": [
-        "Accepta"
-      ],
       "Add": [
         "Afegir"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "Següent"
+      ],
+      "Use ${ label } theme": [
+        "Utilitzar el tema ${ label }"
+      ],
+      "OK": [
+        "Accepta"
       ],
       "Continue import": [
         "Continuar importació"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Afegir a ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Saber-ne més"
-      ],
-      "Open shop": [
-        "Obrir la botiga"
-      ],
-      "Open calendar": [
-        "Obrir el calendari"
-      ],
       "Send anyway": [
         "Enviar de totes maneres"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "CC, CCO"
-      ],
-      "Go back": [
-        "Tornar"
       ],
       "Send": [
         "Enviar"
@@ -3323,6 +3338,9 @@
       "Show": [
         "Mostrar"
       ],
+      "Learn more": [
+        "Saber-ne més"
+      ],
       "Undo": [
         "Desfer"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Cerca avançada"
+      ],
+      "Clear browser data": [
+        "Netejar les dades del navegador"
       ],
       "Mark as read": [
         "Marcar com a llegit"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         "Crear un missatge nou"
       ],
+      "Open shop": [
+        "Obrir la botiga"
+      ],
+      "Open calendar": [
+        "Obrir el calendari"
+      ],
       "Import messages": [
         "Importar missatges"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "Verificació humana"
-      ],
-      "Select a theme": [
-        "Seleccionar un tema"
       ],
       "Delete ${ Name }": [
         "Esborrar ${ Name }"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Importar contactes"
+      ],
+      "Select a theme": [
+        "Seleccionar un tema"
       ],
       "Start import process": [
         "Iniciar el procés d'importació"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"
       ],
-      "Errors detected": [
-        "Errors detectats"
+      "Sending error": [
+        "Error enviant"
       ],
       "Confirm recipient address?": [
         "Confirma adreça de destinatari?"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Més informació"
+      ],
+      "Request an invite": [
+        "Demana una invitació"
+      ],
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
+      "Pay invoice": [
+        "Pagar la factura"
+      ],
+      "Upgrade account": [
+        "Millorar el compte"
+      ],
+      "Upgrade": [
+        "Actualitzar"
+      ],
+      "Go to subscription plans": [
+        "Anar als plans de subscripció"
+      ],
+      "click here": [
+        "feu clic aquí"
+      ],
+      "Add a gift code": [
+        "Afegiu un codi regal"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Heu d'activar les claus del calendari per gestionar aquesta invitació"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Cal que activeu les claus del calendari per respondre aquesta invitació"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Heu d'activar les claus del calendari per veure l'esdeveniment actualitzat"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Heu d'activar les claus del calendari per veure la invitació actualitzada"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Heu de reactivar les vostres claus per gestionar aquesta invitació"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Heu de reactivar les vostres claus per veure l'esdeveniment actualitzat"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Heu de reactivar les vostres claus per veure la invitació actualitzada"
+      ],
+      "Create a new calendar to add this event": [
+        "Crear un calendari nou per afegir aquest esdeveniment"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Crear un calendari nou per respondre aquesta invitació"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Crear un calendari nou per gestionar les vostres invitacions"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Obrir l'esdeveniment actualitzat a ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Obrir a ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Safata d'entrada"
+      ],
+      "Drafts": [
+        "Esborranys"
+      ],
+      "Sent": [
+        "Enviats"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "All mail": [
+        "Tot el correu"
+      ],
+      "Archive": [
+        "Arxiu"
+      ],
+      "Starred": [
+        "Destacats"
+      ],
+      "Outbox": [
+        "Safata de sortida"
+      ],
+      "Scheduled": [
+        "Programats"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Reactivar l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Reactivar l'adreça enllaçada a aquest calendari per actualitzar la vostra invitació."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Activeu la vostra adreça per respondre aquesta invitació."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Crear un calendari enllaçat a una adreça de correu electrònic activa."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Habilitar una adreça de correu electrònic vinculada a un dels vostres calendaris."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "O podeu suprimir un dels vostres calendaris i crear-ne un de nou enllaçat a una adreça de correu electrònic activa."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Activeu la vostra adreça de nou per modificar la vostra resposta."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a cancel·lar l'esdeveniment."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a modificar la vostra resposta."
+      ],
+      "Add folder": [
+        "Afegir carpeta"
+      ],
+      "Add label": [
+        "Afegir etiqueta"
+      ],
+      "Folders": [
+        "Carpetes"
+      ],
+      "Manage your folders": [
+        "Gestioneu les vostres carpetes"
+      ],
+      "Labels": [
+        "Etiquetes"
+      ],
+      "Manage your labels": [
+        "Gestioneu les vostres etiquetes"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } segons"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Més informació"
-      ],
-      "Request an invite": [
-        "Demana una invitació"
-      ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
-      ],
-      "Pay invoice": [
-        "Pagar la factura"
-      ],
-      "Upgrade account": [
-        "Millorar el compte"
-      ],
-      "Upgrade": [
-        "Actualitzar"
-      ],
-      "Go to subscription plans": [
-        "Anar als plans de subscripció"
-      ],
-      "click here": [
-        "feu clic aquí"
-      ],
-      "Add a gift code": [
-        "Afegiu un codi regal"
-      ],
-      "Inbox": [
-        "Safata d'entrada"
-      ],
-      "Drafts": [
-        "Esborranys"
-      ],
-      "Sent": [
-        "Enviats"
-      ],
-      "Trash": [
-        "Paperera"
-      ],
-      "Spam": [
-        "Correu brossa"
-      ],
-      "All mail": [
-        "Tot el correu"
-      ],
-      "Archive": [
-        "Arxiu"
-      ],
-      "Starred": [
-        "Destacats"
-      ],
-      "Outbox": [
-        "Safata de sortida"
-      ],
-      "Scheduled": [
-        "Programats"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Heu d'activar les claus del calendari per gestionar aquesta invitació"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Cal que activeu les claus del calendari per respondre aquesta invitació"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Heu d'activar les claus del calendari per veure l'esdeveniment actualitzat"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Heu d'activar les claus del calendari per veure la invitació actualitzada"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Heu de reactivar les vostres claus per gestionar aquesta invitació"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Heu de reactivar les vostres claus per veure l'esdeveniment actualitzat"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Heu de reactivar les vostres claus per veure la invitació actualitzada"
-      ],
-      "Create a new calendar to add this event": [
-        "Crear un calendari nou per afegir aquest esdeveniment"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Crear un calendari nou per respondre aquesta invitació"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Crear un calendari nou per gestionar les vostres invitacions"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Obrir l'esdeveniment actualitzat a ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Obrir a ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Reactivar l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Reactivar l'adreça enllaçada a aquest calendari per actualitzar la vostra invitació."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Activeu la vostra adreça per respondre aquesta invitació."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Crear un calendari enllaçat a una adreça de correu electrònic activa."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Habilitar una adreça de correu electrònic vinculada a un dels vostres calendaris."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "O podeu suprimir un dels vostres calendaris i crear-ne un de nou enllaçat a una adreça de correu electrònic activa."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Activeu la vostra adreça de nou per modificar la vostra resposta."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a cancel·lar l'esdeveniment."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a modificar la vostra resposta."
-      ],
-      "Add folder": [
-        "Afegir carpeta"
-      ],
-      "Add label": [
-        "Afegir etiqueta"
-      ],
-      "Folders": [
-        "Carpetes"
-      ],
-      "Manage your folders": [
-        "Gestioneu les vostres carpetes"
-      ],
-      "Labels": [
-        "Etiquetes"
-      ],
-      "Manage your labels": [
-        "Gestioneu les vostres etiquetes"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Aquesta característica requereix un compte de pagament de Proton"
@@ -4708,6 +4735,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
@@ -5150,30 +5180,6 @@
         "Cap mètode de verificació disponible"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximitzat"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Nom"
@@ -5390,6 +5396,35 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Còmode"
+      ],
+      "Compact": [
+        "Compacte"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximitzat"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carregar"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Connectant al vostre proveïdor de contactes"
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Carregar"
       ]
     },
     "Onboarding Proton": {
@@ -6683,10 +6713,6 @@
         "Hem detectat errors. No es pot enviar el teu correu electrònic a l’adreça de correu electrònic introduïda a causa del següent motiu:",
         "Hem detectat errors. No es pot enviar el teu correu electrònic a les adreces de correu electrònic introduïdes a causa del següent motiu:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Si us plau, torna enrera per editar la adreça de correu electrònic introduït.",
-        "Si us plau, torna enrera per editar les adreces de correu electrònic introduïdes."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Hem detectat alguns errors. El teu correu electrònic no es pot enviar a una o més de les adreces de correu electrònic introduïdes a causa dels següents motius:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Següent"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Té un esdeveniment de calendari"
       ]
     },
     "Search - no results": {

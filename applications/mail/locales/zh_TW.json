@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "zh-TW"
+    "language": "zh_TW"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "位元組"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "此欄位必填"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "密碼不符合"
-      ],
-      "Request timed out.": [
-        "請求已逾時。"
-      ],
-      "Signature verification failed": [
-        "簽章驗證失敗"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到電子郵件地址 ${ email }。"
       ],
       "Email address disabled": [
         "電子郵件地址已停用"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "寄送金鑰無效"
       ],
+      "Request timed out.": [
+        "請求已逾時。"
+      ],
       "Missing signature": [
         "簽章遺失"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "${ emailAddress } 的金鑰屬性無法擷取"
+      ],
+      "Signature verification failed": [
+        "簽章驗證失敗"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到電子郵件地址 ${ email }。"
       ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "認證錯誤。"
       ],
+      "Email address invalid": [
+        "電子郵件地址無效"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
-      ],
-      "Email address invalid": [
-        "電子郵件地址無效"
       ],
       "The composer failed to load.": [
         "撰寫器載入失敗。"
@@ -309,6 +323,9 @@
       "Removed duplicate recipient: ${ recipents }": [
         "已移除重複的收件者：${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "有關<${ email }>的${ error.message }。您可以針對此聯絡人新增另一組金鑰或是停用加密以解決問題。"
+      ],
       "Message passwords do not match.": [
         "郵件密碼不相符。"
       ],
@@ -345,6 +362,15 @@
       "Unknown error.": [
         "未知的錯誤。"
       ],
+      "re-activate the previous key": [
+        "重新啟用上一組金鑰"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "由於您近期重新設定密碼，致使您的電郵無法解密。如果您記得先前的密碼，可透過 ${ reActivateKeyLink } 存取您的信件。相關資訊參考 ${ learnMoreLink }"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        "由於您近期重新設定密碼，致使您的電郵無法解密。相關資訊參考 ${ learnMoreLink }"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "使用中篩選器太多。請升級至付費方案以啟用更多篩選器"
       ]
@@ -352,20 +378,6 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密碼至少必須包含 ${ length } 個字元"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "位元組"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -482,6 +494,17 @@
         "地址"
       ]
     },
+    "Message": {
+      "Re:": [
+        "回覆:"
+      ],
+      "Fw:": [
+        "轉寄:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "在 ${ date }，${ name } ${ address } 寫道："
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "工作階段已逾時。"
@@ -519,23 +542,23 @@
       "No results found": [
         "查無結果"
       ],
-      "support team": [
-        "支援團隊"
-      ],
-      "Loading": [
-        "正在載入"
-      ],
       "No contacts added yet": [
         "未新增任何聯絡人"
       ],
       "You can either update your search query or ${ button }": [
         "您可以更新您的搜尋查詢，又或者${ button }。"
       ],
+      "support team": [
+        "支援團隊"
+      ],
       "Week": [
         "週"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 個成員)"
+      ],
+      "Loading": [
+        "正在載入"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -590,6 +613,12 @@
       ],
       "Test link": [
         "測試連結"
+      ],
+      "Change your default in settings": [
+        "在設定中變更您的預設值"
+      ],
+      "Default": [
+        "預設值"
       ],
       "Text color": [
         "文字色彩"
@@ -1149,6 +1178,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(篩選須符合下列「任一」條件)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "圖片已被移除，因為不允許在自動回覆中使用它們。"
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -1491,6 +1523,12 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "清除瀏覽器資料也會停用此裝置上的訊息內容搜尋。所有訊息都將必須再次下載才能搜尋。"
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        "清除關於訊息內容搜尋的瀏覽器資料，其中包含已下載的訊息"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } 個未讀會話"
       ],
@@ -1657,22 +1695,6 @@
         "請以您的行動裝置，掃描此二維碼，或瀏覽 ${ link }。"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "回覆:"
-      ],
-      "Fw:": [
-        "轉寄:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "在 ${ date }，${ name } ${ address } 寫道："
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -1717,6 +1739,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2500,14 +2527,11 @@
       "Close": [
         "關閉"
       ],
-      "refresh the page": [
-        "更新頁面"
-      ],
-      "Use “${ label }” setting": [
-        "使用「${ label }」設定"
-      ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
+      ],
+      "Confirm": [
+        "確認"
       ],
       "Cancel": [
         "取消"
@@ -2518,8 +2542,8 @@
       "Close modal": [
         "關閉對話視窗"
       ],
-      "Confirm": [
-        "確認"
+      "Use “${ label }” setting": [
+        "使用「${ label }」設定"
       ],
       "Remove": [
         "移除"
@@ -2565,6 +2589,9 @@
       ],
       "Email settings": [
         "電子郵件設定"
+      ],
+      "refresh the page": [
+        "更新頁面"
       ],
       "Next month": [
         "下一個月"
@@ -2692,12 +2719,6 @@
       "Edit phone number": [
         "編輯電話號碼"
       ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 佈景主題"
-      ],
-      "OK": [
-        "確定"
-      ],
       "Add": [
         "新增"
       ],
@@ -2814,6 +2835,12 @@
       ],
       "Next": [
         "下一步"
+      ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 佈景主題"
+      ],
+      "OK": [
+        "確定"
       ],
       "Continue import": [
         "繼續匯入"
@@ -3037,15 +3064,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "新增至 ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "瞭解更多"
-      ],
-      "Open shop": [
-        "開啟商店"
-      ],
-      "Open calendar": [
-        "開啟行事曆"
-      ],
       "Send anyway": [
         "仍要傳送"
       ],
@@ -3090,9 +3108,6 @@
       ],
       "CC, BCC": [
         "抄送"
-      ],
-      "Go back": [
-        "返回"
       ],
       "Send": [
         "送出"
@@ -3241,6 +3256,9 @@
       "Show": [
         "顯示"
       ],
+      "Learn more": [
+        "瞭解更多"
+      ],
       "Undo": [
         "復原"
       ],
@@ -3276,6 +3294,9 @@
       ],
       "Advanced search": [
         "進階搜尋"
+      ],
+      "Clear browser data": [
+        "清除瀏覽器資料"
       ],
       "Mark as read": [
         "標示為已讀取"
@@ -3355,6 +3376,12 @@
       "Create new message": [
         "建立新訊息"
       ],
+      "Open shop": [
+        "開啟商店"
+      ],
+      "Open calendar": [
+        "開啟行事曆"
+      ],
       "Import messages": [
         "匯入郵件"
       ],
@@ -3410,9 +3437,6 @@
       ],
       "Human verification": [
         "真人驗證"
-      ],
-      "Select a theme": [
-        "選擇佈景主題"
       ],
       "Delete ${ Name }": [
         "刪除 ${ Name }"
@@ -3524,6 +3548,9 @@
       ],
       "Import contacts": [
         "匯入聯絡人"
+      ],
+      "Select a theme": [
+        "選擇佈景主題"
       ],
       "Start import process": [
         "開始匯入流程"
@@ -3732,8 +3759,8 @@
       "Blind Carbon Copy": [
         "密件副本"
       ],
-      "Errors detected": [
-        "偵測到錯誤"
+      "Sending error": [
+        "回報錯誤"
       ],
       "Confirm recipient address?": [
         "確認收件人電子郵件地址？"
@@ -3871,6 +3898,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此金鑰不適用於加密"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "瞭解更多"
+      ],
+      "Request an invite": [
+        "請求一個邀請"
+      ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
+      ],
+      "Pay invoice": [
+        "支付帳單"
+      ],
+      "Upgrade account": [
+        "升級帳號"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Go to subscription plans": [
+        "前往訂閱方案"
+      ],
+      "click here": [
+        "點擊此處"
+      ],
+      "Add a gift code": [
+        "新增禮品代碼"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "您需要先啟用您的行事曆金鑰，才可以新增此事件"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "您需要先啟用您的行事曆金鑰，才可管理此邀請"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "您需要先啟用您的行事曆金鑰，才可回答此邀請"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "您需要先啟用您的行事曆金鑰，才可查看已更新的事件"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "您需要先啟用您的行事曆金鑰，才可查看已更新的邀請"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "此 ICS 檔案包含超過一個以上的事件。請下載後並在 ${ calendarAppName } 中匯入事件"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "您需要先重新啟用您的金鑰，才可管理此邀請"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "您需要先重新啟用您的金鑰，才可查看已更新的事件"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "Create a new calendar to add this event": [
+        "創建一個新的行事曆以新增此事件"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "建立一個新的行事曆，以回答此邀請"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "建立一個新的行事曆，以管理您的邀請"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "在 ${ calendarAppName } 中開啟已更新的事件"
+      ],
+      "Open in ${ calendarAppName }": [
+        "開啟在${ calendarAppName }"
+      ],
+      "Inbox": [
+        "收件匣"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Sent": [
+        "已傳送"
+      ],
+      "Trash": [
+        "垃圾桶"
+      ],
+      "Spam": [
+        "垃圾郵件"
+      ],
+      "All mail": [
+        "所有郵件"
+      ],
+      "Archive": [
+        "封存"
+      ],
+      "Starred": [
+        "已加星號"
+      ],
+      "Outbox": [
+        "寄件匣"
+      ],
+      "Scheduled": [
+        "已排程"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "重新啟用連結至此行事曆的電子郵件地址，以便管理您的邀請。"
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "重新啟用連結至此行事曆的電子郵件地址，以便更新您的邀請。"
+      ],
+      "Enable your address to answer this invitation.": [
+        "請啟用您的電子郵件地址，以回答此邀請。"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "建立一個連結到一個使用中電子郵件地址的行事曆。"
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "啟用一個連結到您其中一個行事曆的電子郵件地址。"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "又或者，您可以刪除您的其中一個行事曆，並建立一個連結到使用中電子郵件地址的新行事曆。"
+      ],
+      "Enable your address again to modify your answer.": [
+        "重新啟用您的電子郵件地址以修改您的回答。"
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "啟用連結到此已停用行事曆的電子郵件地址以取消此事件。"
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "啟用連結到此已停用行事曆的電子郵件地址以修改您的回答。"
+      ],
+      "Add folder": [
+        "新增資料夾"
+      ],
+      "Add label": [
+        "新增標籤"
+      ],
+      "Folders": [
+        "資料夾"
+      ],
+      "Manage your folders": [
+        "管理您的資料夾"
+      ],
+      "Labels": [
+        "標籤"
+      ],
+      "Manage your labels": [
+        "管理您的標籤"
       ]
     },
     "Label": {
@@ -4422,152 +4595,6 @@
         "${ secondsCountLeft } 秒"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "瞭解更多"
-      ],
-      "Request an invite": [
-        "請求一個邀請"
-      ],
-      "clearing your browser cache": [
-        "清除瀏覽器快取"
-      ],
-      "Pay invoice": [
-        "支付帳單"
-      ],
-      "Upgrade account": [
-        "升級帳號"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Go to subscription plans": [
-        "前往訂閱方案"
-      ],
-      "click here": [
-        "點擊此處"
-      ],
-      "Add a gift code": [
-        "新增禮品代碼"
-      ],
-      "Inbox": [
-        "收件匣"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Sent": [
-        "已傳送"
-      ],
-      "Trash": [
-        "垃圾桶"
-      ],
-      "Spam": [
-        "垃圾郵件"
-      ],
-      "All mail": [
-        "所有郵件"
-      ],
-      "Archive": [
-        "封存"
-      ],
-      "Starred": [
-        "已加星號"
-      ],
-      "Outbox": [
-        "寄件匣"
-      ],
-      "Scheduled": [
-        "已排程"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "您需要先啟用您的行事曆金鑰，才可以新增此事件"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "您需要先啟用您的行事曆金鑰，才可管理此邀請"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "您需要先啟用您的行事曆金鑰，才可回答此邀請"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "您需要先啟用您的行事曆金鑰，才可查看已更新的事件"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "您需要先啟用您的行事曆金鑰，才可查看已更新的邀請"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "此 ICS 檔案包含超過一個以上的事件。請下載後並在 ${ calendarAppName } 中匯入事件"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "您需要先重新啟用您的金鑰，才可管理此邀請"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "您需要先重新啟用您的金鑰，才可查看已更新的事件"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
-      ],
-      "Create a new calendar to add this event": [
-        "創建一個新的行事曆以新增此事件"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "建立一個新的行事曆，以回答此邀請"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "建立一個新的行事曆，以管理您的邀請"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "在 ${ calendarAppName } 中開啟已更新的事件"
-      ],
-      "Open in ${ calendarAppName }": [
-        "開啟在${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "重新啟用連結至此行事曆的電子郵件地址，以便管理您的邀請。"
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "重新啟用連結至此行事曆的電子郵件地址，以便更新您的邀請。"
-      ],
-      "Enable your address to answer this invitation.": [
-        "請啟用您的電子郵件地址，以回答此邀請。"
-      ],
-      "Create a calendar linked to an active email address.": [
-        "建立一個連結到一個使用中電子郵件地址的行事曆。"
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "啟用一個連結到您其中一個行事曆的電子郵件地址。"
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "又或者，您可以刪除您的其中一個行事曆，並建立一個連結到使用中電子郵件地址的新行事曆。"
-      ],
-      "Enable your address again to modify your answer.": [
-        "重新啟用您的電子郵件地址以修改您的回答。"
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "啟用連結到此已停用行事曆的電子郵件地址以取消此事件。"
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "啟用連結到此已停用行事曆的電子郵件地址以修改您的回答。"
-      ],
-      "Add folder": [
-        "新增資料夾"
-      ],
-      "Add label": [
-        "新增標籤"
-      ],
-      "Folders": [
-        "資料夾"
-      ],
-      "Manage your folders": [
-        "管理您的資料夾"
-      ],
-      "Labels": [
-        "標籤"
-      ],
-      "Manage your labels": [
-        "管理您的標籤"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "付費的 Proton 帳號才能使用此功能"
@@ -4610,6 +4637,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "錯誤提報表並未使用端到端加密，請勿傳送任何敏感資訊。"
@@ -5031,30 +5061,6 @@
         "無可用的驗證方法"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "一般"
-      ],
-      "Maximized": [
-        "最大化"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "名稱"
@@ -5264,6 +5270,35 @@
         "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增到您的聯絡人清單"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "舒適"
+      ],
+      "Compact": [
+        "精簡"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "欄"
+      ],
+      "Row": [
+        "列"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "一般"
+      ],
+      "Maximized": [
+        "最大化"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上載"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "連結到您的聯絡人提供者"
@@ -5401,11 +5436,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "附加螢幕截圖"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "上載"
       ]
     },
     "Onboarding Proton": {
@@ -6538,9 +6568,6 @@
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "偵測到一些錯誤。您的電子郵件無法傳送到全部所輸入的電子郵件地址，原因如下："
       ],
-      "Please go back to edit the email address you entered.": [
-        "請返回並編輯您所輸入的電子郵件地址。"
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "偵測到一些錯誤。您的電子郵件無法傳送到一或多個所輸入的電子郵件地址，原因如下："
       ],
@@ -6710,6 +6737,11 @@
       ],
       "Next": [
         "下一個"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "有行事曆事件"
       ]
     },
     "Search - no results": {
