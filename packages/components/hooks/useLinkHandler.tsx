@@ -124,9 +124,22 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
         /*
          * If the modal is already active --- do nothing
          * ex: click on a link, open the modal, inside the contnue button is an anchor with the same link.
-         * Don't change anchors behavior
          */
-        if (confirmationModalID !== undefined || src.raw.startsWith('#')) {
+        if (confirmationModalID !== undefined) {
+            return;
+        }
+
+        /*
+         * If dealing with anchors, we need to treat them separately because we use URLs with # for searching elements
+         */
+        if (src.raw.startsWith('#')) {
+            const id = src.raw.replace('#', '');
+            const elementInMail = document.querySelector(`a[name="${id}"]`);
+            if (elementInMail) {
+                elementInMail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            event.preventDefault();
+            event.stopPropagation();
             return;
         }
 
