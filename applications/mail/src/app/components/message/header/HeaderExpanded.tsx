@@ -16,7 +16,7 @@ import {
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { getHasOnlyIcsAttachments, isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
+import { isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 
@@ -102,7 +102,6 @@ const HeaderExpanded = ({
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const isSendingMessage = message.sending;
     const isOutboxMessage = isOutbox(message.data);
-    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data);
 
     const isScheduledMessage = isScheduled(message.data);
 
@@ -317,11 +316,7 @@ const HeaderExpanded = ({
                                 maxNumber={5}
                                 className="on-mobile-pt0-25"
                             />
-                            <ItemAttachmentIcon
-                                icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
-                                element={message.data}
-                                className="ml0-5"
-                            />
+                            <ItemAttachmentIcon element={message.data} className="ml0-5" />
                         </div>
                     </>
                 )}
@@ -343,11 +338,7 @@ const HeaderExpanded = ({
                                     showUnlabel
                                     maxNumber={1}
                                 />
-                                <ItemAttachmentIcon
-                                    icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
-                                    element={message.data}
-                                    className="ml0-5"
-                                />
+                                <ItemAttachmentIcon element={message.data} className="ml0-5" />
                             </div>
                         </>
                     ) : (

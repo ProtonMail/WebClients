@@ -1,5 +1,4 @@
-import { getBrowser, hasPDFSupport } from '@proton/shared/lib/helpers/browser';
-import { MIME_TYPES } from '../constants';
+import { hasPDFSupport, getBrowser } from '@proton/shared/lib/helpers/browser';
 
 const isWebpSupported = () => {
     const { name, version } = getBrowser();
@@ -36,9 +35,8 @@ export const isSVG = (mimeType: string) => mimeType === 'image/svg+xml';
 export const isSupportedText = (mimeType: string) =>
     mimeType.startsWith('text/') || ['application/javascript', 'application/typescript'].includes(mimeType);
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
+export const isICS = (mimeType: string) => mimeType.startsWith('text/calendar');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
-export const isICS = (mimeType: string) =>
-    mimeType.startsWith(MIME_TYPES.ICS) || mimeType.includes(MIME_TYPES.APPLICATION_ICS);
 
 // Will include more rules in the future
 export const isPreviewAvailable = (mimeType: string) =>

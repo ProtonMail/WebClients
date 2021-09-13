@@ -1,7 +1,6 @@
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/filePreview';
 import { useEffect } from 'react';
 
-import { ContextMenu } from '@proton/components';
+import { ContextMenu, isPreviewAvailable } from '@proton/components';
 
 import { LinkType } from '../../../interfaces/link';
 import { ItemContextMenuProps } from '../../FileBrowser';
