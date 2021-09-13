@@ -32,6 +32,8 @@ export const normalize = (value = '', removeDiacritics = false) => {
 
 export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
 
+export const toCRLF = (str: string) => str.replace(/\n/g, '\r\n');
+
 export const toPrice = (amount = 0, currency: keyof typeof CURRENCIES = 'EUR', divisor = 100) => {
     const symbol = CURRENCIES[currency] || currency;
     const value = Number(amount / divisor).toFixed(2);
@@ -131,16 +133,16 @@ export const truncateMore = ({
 };
 
 export const truncatePossiblyQuotedString = (string: string, charsToDisplay: number) => {
-  const match = string.match(/^"(.+)"$/);
+    const match = string.match(/^"(.+)"$/);
 
-  if (!match) {
-      return truncateMore({ string, charsToDisplay });
-  }
+    if (!match) {
+        return truncateMore({ string, charsToDisplay });
+    }
 
-  const [, quotedString] = match;
+    const [, quotedString] = match;
 
-  return `"${truncateMore({ string: quotedString, charsToDisplay: charsToDisplay - 2 })}"`;
-}
+    return `"${truncateMore({ string: quotedString, charsToDisplay: charsToDisplay - 2 })}"`;
+};
 
 export const getInitials = (fullName = '') => {
     const [first, ...rest] = fullName

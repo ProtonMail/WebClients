@@ -177,7 +177,6 @@ export const readVcf = async (file: File): Promise<string> => {
  * Extract array of vcards from a string containing several vcards
  */
 export const extractVcards = (vcf = ''): string[] => {
-    const vcards = vcf.split('END:VCARD');
-    vcards.pop();
-    return vcards.map((vcard) => `${vcard.trim()}\r\nEND:VCARD`);
+    const strippedEndVcards = vcf.split('END:VCARD');
+    return strippedEndVcards.filter((line) => isTruthy(line.trim())).map((vcard) => `${vcard}END:VCARD`.trim());
 };
