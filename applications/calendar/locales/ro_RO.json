@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);",
-    "language": "ro"
+    "language": "ro_RO"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Eroare autentificare."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
-      ],
       "Email address invalid": [
         "Adresă de e-mail nevalidă"
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -157,14 +157,14 @@
       "Invalid name": [
         "Nume nevalid."
       ],
-      "Primary address key is not decrypted": [
-        "Cheia primară a adresei nu este decriptată."
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Cheia primară a adresei nu este decriptată."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă"
@@ -785,6 +785,9 @@
       ],
       "Close popover": [
         "Închidere"
+      ],
+      "Close event popover": [
+        "Închidere fereastră eveniment"
       ]
     },
     "Title": {
@@ -956,9 +959,6 @@
       "Composer mode": [
         "Mod editor mesaje"
       ],
-      "Beta Access": [
-        "Acces la Beta"
-      ],
       "Edit contact group": [
         "Editare grup de contacte"
       ],
@@ -1074,6 +1074,9 @@
       ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Beta Access": [
+        "Acces la Beta"
       ],
       "Start import process": [
         ""
@@ -1215,15 +1218,6 @@
       ],
       "Edit event": [
         "Editare eveniment"
-      ],
-      "Event details": [
-        "Detalii eveniment"
-      ],
-      "More options": [
-        "Mai multe opțiuni"
-      ],
-      "CANCELLED": [
-        "ANULAT"
       ]
     },
     "Info": {
@@ -1509,9 +1503,6 @@
       "Not customizable": [
         "Nu poate fi personalizat"
       ],
-      "Expired": [
-        "Expirat"
-      ],
       "here": [
         "aici"
       ],
@@ -1550,6 +1541,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vă vom răspunde în termen de o zi lucrătoare."
+      ],
+      "Expired": [
+        "Expirat"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
@@ -2057,18 +2051,6 @@
       "Proration": [
         "Credit rămas"
       ],
-      "Cash": [
-        "Numerar"
-      ],
-      "Card holder": [
-        "Titular card"
-      ],
-      "Expires": [
-        "Expirare"
-      ],
-      "Payer": [
-        "Plătitor"
-      ],
       "Cancel": [
         "Anulare"
       ],
@@ -2096,6 +2078,18 @@
       "Enter the 6-digit code": [
         "Introduceți codul din 6 cifre"
       ],
+      "Cash": [
+        "Numerar"
+      ],
+      "Card holder": [
+        "Titular card"
+      ],
+      "Expires": [
+        "Expirare"
+      ],
+      "Payer": [
+        "Plătitor"
+      ],
       "Keyboard shortcuts": [
         "Combinații de taste"
       ],
@@ -2107,9 +2101,6 @@
       ],
       "Select how your composer opens by default.": [
         "Selectați modul în care se deschide implicit editorul de mesaje."
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
       ],
       "Add email address": [
         "Adăugare adresă de e-mail"
@@ -2146,6 +2137,9 @@
       ],
       "Export contacts": [
         "Exportare contacte"
+      ],
+      "Enable Beta Access": [
+        "Activare acces la Beta"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2230,6 +2224,11 @@
       ],
       "Your calendars": [
         "Calendare"
+      ],
+      "Participant": [
+        "Participant",
+        "Participanți",
+        "Participanți"
       ]
     },
     "Link": {
@@ -2268,6 +2267,11 @@
       ],
       "Subscribed calendars": [
         "Calendare abonate"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
       ]
     },
     "Placeholder": {
@@ -2360,11 +2364,6 @@
         "Un minut",
         "${ minutes } minute",
         "${ minutes } de minute"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Cheia nu poate fi folosită pentru criptare."
       ]
     },
     "Tooltip": {
@@ -2506,6 +2505,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -2713,6 +2715,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Căutare fusuri orare"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        "Deschidere"
+      ],
+      "Close": [
+        "Închidere"
       ]
     },
     "Error message": {
@@ -3391,17 +3401,6 @@
         "Gratuit"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Card nou de credit / debit"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
@@ -3424,17 +3423,15 @@
         "Nici o metodă de verificare disponibilă"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Card nou de credit / debit"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3725,9 +3722,17 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Încărcare"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
       ]
     },
     "Loading info": {
@@ -3749,6 +3754,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Încărcare"
       ]
     },
     "Message display when a new app version is available": {
@@ -4557,6 +4567,11 @@
         "Adresa"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Navigare de bază"
@@ -4730,11 +4745,6 @@
       ],
       "Show original message": [
         "Afișare mesaj original"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4951,6 +4961,11 @@
         "de ori"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        "Închidere fereastră"
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Ați acceptat invitația."
@@ -4985,11 +5000,6 @@
         "prin e-mail"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Organizat de:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Dezactivat"
@@ -4998,6 +5008,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Evenimentul aparține unui calendar dezactivat."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        "da"
+      ],
+      "maybe": [
+        "probabil"
+      ],
+      "no": [
+        "nu"
+      ],
+      "unanswered": [
+        "fără răspuns"
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        "Extindere listă participanți"
+      ],
+      "Collapse participants list": [
+        "Restrângere listă participanți"
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        "Editare eveniment"
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        "Ștergere eveniment"
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        "anulat"
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        "Participați?"
       ]
     }
   }

@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "tr"
+    "language": "tr_TR"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Doğrulama hatası."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermemektedir. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
-      ],
       "Email address invalid": [
         "E-posta adresi geçersiz"
       ],
       "This field is required": [
         "Bu alan gereklidir"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermemektedir. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Geçersiz ad"
       ],
-      "Primary address key is not decrypted": [
-        "Birincil adres anahtarının şifresi çözülemedi"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Birincil adres anahtarının şifresi çözülemedi"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Açılan pencereyi kapat"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Besteci modu"
       ],
-      "Beta Access": [
-        "Beta Erişimi"
-      ],
       "Edit contact group": [
         "Kişi grubunu düzenle"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Kişileri içe aktar"
+      ],
+      "Beta Access": [
+        "Beta Erişimi"
       ],
       "Start import process": [
         ""
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Etkinlik ekle"
-      ],
-      "Event details": [
-        "Etkinlik detayları"
-      ],
-      "More options": [
-        "Diğer seçenekler"
-      ],
-      "CANCELLED": [
-        "İPTAL EDİLDİ"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "Özelleştirilemez"
       ],
-      "Expired": [
-        "Süresi dolmuş"
-      ],
       "here": [
         "burada"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "Expired": [
+        "Süresi dolmuş"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Paylaştır"
       ],
-      "Cash": [
-        "Nakit"
-      ],
-      "Card holder": [
-        "Kart Sahibi"
-      ],
-      "Expires": [
-        "Sona erme"
-      ],
-      "Payer": [
-        "Ödeyen"
-      ],
       "Cancel": [
         "İptal et"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "6 haneli kodu girin"
       ],
+      "Cash": [
+        "Nakit"
+      ],
+      "Card holder": [
+        "Kart Sahibi"
+      ],
+      "Expires": [
+        "Sona erme"
+      ],
+      "Payer": [
+        "Ödeyen"
+      ],
       "Keyboard shortcuts": [
         "Klavye kısayolları"
       ],
@@ -2087,9 +2081,6 @@
       ],
       "Select how your composer opens by default.": [
         "Oluşturucunuzun varsayılan olarak nasıl açılacağını seçin."
-      ],
-      "Enable Beta Access": [
-        "Beta Erişimini Etkinleştir"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Kişileri dışa aktar"
+      ],
+      "Enable Beta Access": [
+        "Beta Erişimini Etkinleştir"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "Takvimin"
+      ],
+      "Participant": [
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2248,6 +2246,11 @@
       ],
       "Subscribed calendars": [
         "Abone olunan takvimler"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Anahtar şifreleme için kullanılamaz"
       ]
     },
     "Placeholder": {
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } dakika",
         "${ minutes } dakika"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Anahtar şifreleme için kullanılamaz"
       ]
     },
     "Tooltip": {
@@ -2485,6 +2483,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ProtonVPN tarife sahiplerinin kullanabildiği ayrıcalıklı özelliktir. Lütfen bunun yerine destek bileti alın."
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
       ],
@@ -2597,7 +2598,7 @@
         ""
       ],
       "Invitation sent and event created": [
-        ""
+        "Davet gönderildi ve etkinlik oluşturuldu"
       ],
       "Event created": [
         "Etkinlik oluşturuldu"
@@ -2606,16 +2607,16 @@
         "Katılım durumu güncellendi"
       ],
       "Participants notified and changes saved": [
-        ""
+        "Katılımcılar bilgilendirildi ve değişiklikler kaydedildi"
       ],
       "Invitation sent and participants added": [
-        ""
+        "Davet gönderildi ve katılımcılar eklendi"
       ],
       "Cancellation sent and participants removed": [
         ""
       ],
       "Participants notified and event updated": [
-        ""
+        "Katılımcılar bilgilendirildi ve etkinlik güncellendi"
       ],
       "Event updated": [
         "Etkinlik güncellendi"
@@ -2630,7 +2631,7 @@
         "Etkinlik silindi"
       ],
       "Invitation sent and events created": [
-        ""
+        "Davet gönderildi ve etkinlikler oluşturuldu"
       ],
       "Events created": [
         "Etkinlik yaratın"
@@ -2642,16 +2643,16 @@
         "Katılım durumu tüm olaylar için güncellendi"
       ],
       "Participants notified and all events updated": [
-        ""
+        "Katılımcılar bilgilendirildi ve tüm etkinlikler güncellendi"
       ],
       "Invitation sent and participants added to all events": [
-        ""
+        "Davet gönderildi ve tüm etkinliklere katılımcılar eklendi"
       ],
       "Cancellation sent and participants removed from all events": [
         ""
       ],
       "Invitation sent and all events updated": [
-        ""
+        "Davet gönderildi ve tüm etkinlikler güncellendi"
       ],
       "All events updated": [
         "Tüm etkinlikler güncellendi"
@@ -2686,6 +2687,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Zaman dilimlerini ara"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3353,17 +3362,6 @@
         "Ücretsiz"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Yeni kredi/banka kartı"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Gecikmiş fatura"
@@ -3386,17 +3384,15 @@
         "Kullanılabilir doğrulama yöntemi yok"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Erişimi, herkese sunulmadan önce ProtonMail, Proton Calendar ve Proton Drive'ın beta sürümünü kullanmanıza olanak tanır. Bu, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişi olabileceğiniz anlamına gelir."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Yeni kredi/banka kartı"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Sorunlarla karşılaşırsanız, Beta Erişimini her zaman devre dışı bırakabilirsiniz."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenecektir."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Karşıya Yükle"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Erişimi, herkese sunulmadan önce ProtonMail, Proton Calendar ve Proton Drive'ın beta sürümünü kullanmanıza olanak tanır. Bu, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişi olabileceğiniz anlamına gelir."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Sorunlarla karşılaşırsanız, Beta Erişimini her zaman devre dışı bırakabilirsiniz."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenecektir."
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Karşıya Yükle"
       ]
     },
     "Message display when a new app version is available": {
@@ -3765,33 +3774,33 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Senkronize edilmedi"
       ],
       "Syncing": [
-        ""
+        "Senkronize ediliyor"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        ""
+        "Takvim senkronize ediliyor"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
       ],
       "Calendar link is wrong": [
-        ""
+        "Takvim bağlantısı yanlış"
       ],
       "Calendar is too big": [
-        ""
+        "Takvim çok büyük"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Takvim bağlantısına erişilemiyor"
       ],
       "Calendar link is temporarily unaccessible": [
-        ""
+        "Takvim bağlantısına geçici olarak erişilemiyor"
       ],
       "Failed to sync calendar": [
-        ""
+        "Takvim senkronize edilemedi"
       ]
     },
     "Alarm notification": {
@@ -4466,6 +4475,11 @@
         "Adres"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Temel gezinme"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "İletinin aslını görüntüle"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "zaman"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Daveti kabul ettiniz"
@@ -4876,11 +4890,6 @@
         "eposta ile"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Düzenleyen:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Devre Dışı"
@@ -4889,6 +4898,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Etkinlik, devre dışı bırakılmış bir takvime ait."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }

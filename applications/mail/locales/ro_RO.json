@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);",
-    "language": "ro"
+    "language": "ro_RO"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "octeți"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Acest câmp este obligatoriu"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
-      ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
-      ],
-      "Signature verification failed": [
-        "Eșuare verificare semnătură"
-      ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
       ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Cheia de trimitere nu este validă"
       ],
+      "Request timed out.": [
+        "Solicitarea a expirat."
+      ],
       "Missing signature": [
         "Semnătură lipsă"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Proprietățile cheii pentru ${ emailAddress } nu au putut fi extrase"
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "Could not find address ${ email }.": [
+        "Nu s-a putut găsi adresa ${ email }."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Eroare autentificare."
       ],
+      "Email address invalid": [
+        "Adresă de e-mail nevalidă"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
-      ],
-      "Email address invalid": [
-        "Adresă de e-mail nevalidă"
       ],
       "The composer failed to load.": [
         "Editorul de mesaje nu a putut fi încărcat."
@@ -319,6 +333,9 @@
         "Destinatari duplicați eliminați: ${ recipents }",
         "Destinatari duplicați eliminați: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
+      ],
       "Message passwords do not match.": [
         "Parolele mesajului nu se potrivesc."
       ],
@@ -357,6 +374,15 @@
       "Unknown error.": [
         "Eroare necunoscută."
       ],
+      "re-activate the previous key": [
+        "reactivați cheia anterioară"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Mesajele dvs. de e-mail nu pot fi decriptate din cauza unei resetări recente a parolei. Dacă vă amintiți parola anterioară, puteți să ${ reActivateKeyLink } pentru a vă accesa mesajele. ${ learnMoreLink }"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        "Mesajele dvs. de e-mail nu pot fi decriptate din cauza unei resetări recente a parolei. ${ learnMoreLink }"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Prea multe filtre active. Trebuie să treceți la un plan cu plată pentru a putea activa mai multe filtre."
       ]
@@ -366,20 +392,6 @@
         "Parola trebuie să conțină cel puțin un caracter",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "octeți"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -496,6 +508,17 @@
         "Adresa"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ name } ${ address } - ${ date } a scris:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Sesiune expirată."
@@ -533,17 +556,14 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "support team": [
-        "echipa de suport"
-      ],
-      "Loading": [
-        "Se încarcă"
-      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
       "You can either update your search query or ${ button }": [
         "Puteți să actualizați căutarea sau să ${ { button }}"
+      ],
+      "support team": [
+        "echipa de suport"
       ],
       "Week": [
         "Săptămâna"
@@ -552,6 +572,9 @@
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
+      ],
+      "Loading": [
+        "Se încarcă"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă sunteți sigur că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
@@ -606,6 +629,12 @@
       ],
       "Test link": [
         "Testare legătură"
+      ],
+      "Change your default in settings": [
+        "Puteţi modifica setările implicite în setări."
+      ],
+      "Default": [
+        "Implicit"
       ],
       "Text color": [
         "Culoare text"
@@ -1179,6 +1208,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrare dacă ORICARE din condițiile următoare sunt îndeplinite)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -1549,6 +1581,12 @@
         "Timp estimat rămas: ${ estimatedMinutes } minute",
         "Timp estimat rămas: ${ estimatedMinutes } de minute"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Ștergerea datelor din navigator dezactivează şi căutarea conținutului din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        "Se şterg datele din navigator legate de căutarea conținutului mesajelor, inclusiv mesajele descărcate."
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversație necitită",
         "${ unreadCount } conversații necitite",
@@ -1739,22 +1777,6 @@
         "Folosind dispozitivul mobil, scanați acest cod QR sau vizitați ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ name } ${ address } - ${ date } a scris:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Necunoscut"
@@ -1799,6 +1821,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2656,14 +2683,11 @@
       "Close": [
         "Închidere"
       ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
-      "Use “${ label }” setting": [
-        "Folosire setarea „${ label }”"
-      ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Confirmare"
       ],
       "Cancel": [
         "Anulare"
@@ -2674,8 +2698,8 @@
       "Close modal": [
         "Închidere"
       ],
-      "Confirm": [
-        "Confirmare"
+      "Use “${ label }” setting": [
+        "Folosire setarea „${ label }”"
       ],
       "Remove": [
         "Eliminare"
@@ -2721,6 +2745,9 @@
       ],
       "Email settings": [
         "Setări e-mail"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
       ],
       "Next month": [
         "Luna viitoare"
@@ -2848,12 +2875,6 @@
       "Edit phone number": [
         "Editare număr de telefon"
       ],
-      "Use ${ label } theme": [
-        "Folosire tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Adăugare"
       ],
@@ -2976,6 +2997,12 @@
       ],
       "Next": [
         "Înainte"
+      ],
+      "Use ${ label } theme": [
+        "Folosire tema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Continuare importare"
@@ -3199,15 +3226,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adăugare la ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Detalii"
-      ],
-      "Open shop": [
-        "Accesare magazin"
-      ],
-      "Open calendar": [
-        "Deschidere calendar"
-      ],
       "Send anyway": [
         "Trimitere așa"
       ],
@@ -3254,9 +3272,6 @@
       ],
       "CC, BCC": [
         "C, CA"
-      ],
-      "Go back": [
-        "Revenire"
       ],
       "Send": [
         "Trimitere"
@@ -3405,6 +3420,9 @@
       "Show": [
         "Afișare"
       ],
+      "Learn more": [
+        "Detalii"
+      ],
       "Undo": [
         "Anulare"
       ],
@@ -3440,6 +3458,9 @@
       ],
       "Advanced search": [
         "Căutare avansată"
+      ],
+      "Clear browser data": [
+        "Ștergere date din navigator"
       ],
       "Mark as read": [
         "Marcare ca citit"
@@ -3519,6 +3540,12 @@
       "Create new message": [
         "Creare mesaj"
       ],
+      "Open shop": [
+        "Accesare magazin"
+      ],
+      "Open calendar": [
+        "Deschidere calendar"
+      ],
       "Import messages": [
         "Importare mesaje"
       ],
@@ -3574,9 +3601,6 @@
       ],
       "Human verification": [
         "Verificare persoană"
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
       ],
       "Delete ${ Name }": [
         "Ștergere ${ Name }"
@@ -3696,6 +3720,9 @@
       ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Select a theme": [
+        "Selectaţi o temă"
       ],
       "Start import process": [
         "Începere proces de importare"
@@ -3912,8 +3939,8 @@
       "Blind Carbon Copy": [
         "Copie ascunsă"
       ],
-      "Errors detected": [
-        "Erori detectate"
+      "Sending error": [
+        "Eroare trimitere"
       ],
       "Confirm recipient address?": [
         "Confirmați adresa destinatarului?"
@@ -4051,6 +4078,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "Request an invite": [
+        "Solicitați o invitație"
+      ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
+      "Upgrade account": [
+        "Migrare cont"
+      ],
+      "Upgrade": [
+        "Migrare"
+      ],
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "click here": [
+        "apăsați aici"
+      ],
+      "Add a gift code": [
+        "Adăugare cod cadou"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Trebuie să activați cheile calendarului pentru a adăuga acest eveniment"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Trebuie să activați cheile calendarului pentru a gestiona această invitație"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Trebuie să activați cheile calendarului pentru a răspunde la această invitație"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Trebuie să activați cheile calendarului pentru a vedea evenimentul actualizat"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Trebuie să activați cheile calendarului pentru a vedea invitația actualizată"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Trebuie să reactivați cheile pentru a gestiona această invitație"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Trebuie să activați cheile pentru a vedea evenimentul actualizat"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Create a new calendar to add this event": [
+        "Creați un calendar nou pentru a adăuga acest eveniment"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Creați un calendar nou pentru a răspunde la această invitație"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Creați un calendar nou pentru a vă gestiona invitațiile"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Deschidere eveniment actualizat în ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Deschidere în ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Primite"
+      ],
+      "Drafts": [
+        "Ciorne"
+      ],
+      "Sent": [
+        "Trimise"
+      ],
+      "Trash": [
+        "Gunoi"
+      ],
+      "Spam": [
+        "Nedorite"
+      ],
+      "All mail": [
+        "Toate mesajele"
+      ],
+      "Archive": [
+        "Arhivă"
+      ],
+      "Starred": [
+        "Cu stea"
+      ],
+      "Outbox": [
+        "De trimis"
+      ],
+      "Scheduled": [
+        "Programate"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Reactivați adresa asociată acestui calendar pentru a vă gestiona invitația."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Reactivați adresa asociată acestui calendar pentru a vă actualiza invitația."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Activați-vă adresa pentru a răspunde la această invitație."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Creaţi un calendar atașat de o adresă de e-mail activă."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Activați o adresă de e-mail asociată la unul dintre calendare."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Sau puteți șterge unul dintre calendare și crea unul nou asociat la o adresă de e-mail activă."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Activați adresa din nou pentru a modifica răspunsul."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Activați adresa de e-mail asociată calendarului dezactivat pentru a anula evenimentul."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Activați adresa de e-mail asociată calendarului dezactivat pentru a modifica răspunsul."
+      ],
+      "Add folder": [
+        "Adăugare folder"
+      ],
+      "Add label": [
+        "Adăugare etichetă"
+      ],
+      "Folders": [
+        "Foldere"
+      ],
+      "Manage your folders": [
+        "Gestionare foldere"
+      ],
+      "Labels": [
+        "Etichete"
+      ],
+      "Manage your labels": [
+        "Gestionare etichete"
       ]
     },
     "Label": {
@@ -4614,152 +4787,6 @@
         "${ secondsCountLeft } de secunde"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Detalii"
-      ],
-      "Request an invite": [
-        "Solicitați o invitație"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
-      ],
-      "Pay invoice": [
-        "Plată factură"
-      ],
-      "Upgrade account": [
-        "Migrare cont"
-      ],
-      "Upgrade": [
-        "Migrare"
-      ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
-      "click here": [
-        "apăsați aici"
-      ],
-      "Add a gift code": [
-        "Adăugare cod cadou"
-      ],
-      "Inbox": [
-        "Primite"
-      ],
-      "Drafts": [
-        "Ciorne"
-      ],
-      "Sent": [
-        "Trimise"
-      ],
-      "Trash": [
-        "Gunoi"
-      ],
-      "Spam": [
-        "Nedorite"
-      ],
-      "All mail": [
-        "Toate mesajele"
-      ],
-      "Archive": [
-        "Arhivă"
-      ],
-      "Starred": [
-        "Cu stea"
-      ],
-      "Outbox": [
-        "De trimis"
-      ],
-      "Scheduled": [
-        "Programate"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Trebuie să activați cheile calendarului pentru a adăuga acest eveniment"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Trebuie să activați cheile calendarului pentru a gestiona această invitație"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Trebuie să activați cheile calendarului pentru a răspunde la această invitație"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Trebuie să activați cheile calendarului pentru a vedea evenimentul actualizat"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Trebuie să activați cheile calendarului pentru a vedea invitația actualizată"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Trebuie să reactivați cheile pentru a gestiona această invitație"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Trebuie să activați cheile pentru a vedea evenimentul actualizat"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Trebuie să activați cheile pentru a vedea invitația actualizată"
-      ],
-      "Create a new calendar to add this event": [
-        "Creați un calendar nou pentru a adăuga acest eveniment"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Creați un calendar nou pentru a răspunde la această invitație"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Creați un calendar nou pentru a vă gestiona invitațiile"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Deschidere eveniment actualizat în ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Deschidere în ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Reactivați adresa asociată acestui calendar pentru a vă gestiona invitația."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Reactivați adresa asociată acestui calendar pentru a vă actualiza invitația."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Activați-vă adresa pentru a răspunde la această invitație."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Creaţi un calendar atașat de o adresă de e-mail activă."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Activați o adresă de e-mail asociată la unul dintre calendare."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Sau puteți șterge unul dintre calendare și crea unul nou asociat la o adresă de e-mail activă."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Activați adresa din nou pentru a modifica răspunsul."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Activați adresa de e-mail asociată calendarului dezactivat pentru a anula evenimentul."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Activați adresa de e-mail asociată calendarului dezactivat pentru a modifica răspunsul."
-      ],
-      "Add folder": [
-        "Adăugare folder"
-      ],
-      "Add label": [
-        "Adăugare etichetă"
-      ],
-      "Folders": [
-        "Foldere"
-      ],
-      "Manage your folders": [
-        "Gestionare foldere"
-      ],
-      "Labels": [
-        "Etichete"
-      ],
-      "Manage your labels": [
-        "Gestionare etichete"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Această funcționalitate necesită un cont Proton cu plată"
@@ -4806,6 +4833,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Chat-ul live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN plătite. În schimb, vă rugăm să deschideți un tichet."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -5269,30 +5299,6 @@
         "Nicio metodă de verificare disponibilă"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizat"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Nume"
@@ -5516,6 +5522,35 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizat"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Încărcare"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Conectare la furnizorul de contacte"
@@ -5653,11 +5688,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Atașare captură ecran"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Încărcare"
       ]
     },
     "Onboarding Proton": {
@@ -6828,11 +6858,6 @@
         "S-au detectat erori. Mesajul nu poate fi trimis la oricare din adresele de e-mail introduse din motivul următor:",
         "S-au detectat erori. Mesajul nu poate fi trimis la oricare din adresele de e-mail introduse din motivul următor:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Reeditați adresa de e-mail pe care ați introdus-o.",
-        "Reeditați adresele de e-mail pe care le-ați introdus.",
-        "Reeditați adresele de e-mail pe care le-ați introdus."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "S-au detectat unele erori. Mesajul nu poate fi trimis la una sau mai multe din adresele de e-mail introduse din motivul următor:"
       ],
@@ -7002,6 +7027,11 @@
       ],
       "Next": [
         "Înainte"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Are un eveniment în calendar"
       ]
     },
     "Search - no results": {

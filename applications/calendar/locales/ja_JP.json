@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "ja"
+    "language": "ja_JP"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "認証エラー"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
       "Email address invalid": [
         "無効なメールアドレスです。"
       ],
       "This field is required": [
         "この項目の入力は必須です"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -153,14 +153,14 @@
       "Invalid name": [
         "無効な名前です。"
       ],
-      "Primary address key is not decrypted": [
-        "プライマリーアドレス鍵が復号されていません"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "プライマリーアドレス鍵が復号されていません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -769,6 +769,9 @@
       ],
       "Close popover": [
         "ポップオーバーを閉じる"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -940,9 +943,6 @@
       "Composer mode": [
         "作成時の書式"
       ],
-      "Beta Access": [
-        "ベータ版アクセス"
-      ],
       "Edit contact group": [
         "連絡先グループを編集"
       ],
@@ -1050,6 +1050,9 @@
       ],
       "Import contacts": [
         "連絡先のインポート"
+      ],
+      "Beta Access": [
+        "ベータ版アクセス"
       ],
       "Start import process": [
         ""
@@ -1191,15 +1194,6 @@
       ],
       "Edit event": [
         "イベントを編集"
-      ],
-      "Event details": [
-        "予定の詳細"
-      ],
-      "More options": [
-        "詳細設定を表示"
-      ],
-      "CANCELLED": [
-        ""
       ]
     },
     "Info": {
@@ -1479,9 +1473,6 @@
       "Not customizable": [
         "カスタマイズ不可"
       ],
-      "Expired": [
-        "有効期限切れ"
-      ],
       "here": [
         "こちら"
       ],
@@ -1520,6 +1511,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
+      ],
+      "Expired": [
+        "有効期限切れ"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
@@ -2017,18 +2011,6 @@
       "Proration": [
         "日割り計算"
       ],
-      "Cash": [
-        "現金"
-      ],
-      "Card holder": [
-        "カード名義人"
-      ],
-      "Expires": [
-        "有効期限"
-      ],
-      "Payer": [
-        "支払人"
-      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -2056,6 +2038,18 @@
       "Enter the 6-digit code": [
         "6 桁のコードを入力"
       ],
+      "Cash": [
+        "現金"
+      ],
+      "Card holder": [
+        "カード名義人"
+      ],
+      "Expires": [
+        "有効期限"
+      ],
+      "Payer": [
+        "支払人"
+      ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
       ],
@@ -2067,9 +2061,6 @@
       ],
       "Select how your composer opens by default.": [
         ""
-      ],
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -2106,6 +2097,9 @@
       ],
       "Export contacts": [
         "連絡先をエクスポート"
+      ],
+      "Enable Beta Access": [
+        "ベータ版アクセスを有効にする"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2190,6 +2184,9 @@
       ],
       "Your calendars": [
         "あなたのカレンダー"
+      ],
+      "Participant": [
+        ""
       ]
     },
     "Link": {
@@ -2228,6 +2225,11 @@
       ],
       "Subscribed calendars": [
         "登録済みカレンダー"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
       ]
     },
     "Placeholder": {
@@ -2316,11 +2318,6 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Tooltip": {
@@ -2462,6 +2459,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "ライブチャットは、ProtonVPNの有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
@@ -2659,6 +2659,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "タイムゾーンの検索"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3315,17 +3323,6 @@
         "FREE"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "新しいクレジットカード/デビットカード"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
@@ -3348,17 +3345,15 @@
         "検証方法がありません"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
+    "Payment method option": {
+      "New credit/debit card": [
+        "新しいクレジットカード/デビットカード"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3627,9 +3622,17 @@
         ""
       ]
     },
-    "Select files": {
-      "Upload": [
-        "アップロード"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
       ]
     },
     "Loading info": {
@@ -3651,6 +3654,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "アップロード"
       ]
     },
     "Message display when a new app version is available": {
@@ -4375,6 +4383,11 @@
         "メールアドレス"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         ""
@@ -4547,11 +4560,6 @@
         "埋め込み画像を読み込む"
       ],
       "Show original message": [
-        ""
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         ""
       ]
     },
@@ -4733,6 +4741,11 @@
         "回"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "あなたが招待を承認しました"
@@ -4767,11 +4780,6 @@
         ""
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        ""
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "無効"
@@ -4780,6 +4788,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "無効なカレンダーに関連付けられたイベントです。"
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }

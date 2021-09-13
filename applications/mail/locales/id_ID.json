@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "id"
+    "language": "id_ID"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Bagian ini wajib isi"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
-      ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Email address disabled": [
         "Alamat surel nonaktif"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Kunci untuk mengirim tidak valid"
       ],
+      "Request timed out.": [
+        "Terlalu lama memuat."
+      ],
       "Missing signature": [
         "Tanda tangan hilang"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Properti kunci untuk ${ emailAddress } tidak dapat diekstrak"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Kesalahan otentikasi."
       ],
+      "Email address invalid": [
+        "Alamat surel tidak valid"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
-      "Email address invalid": [
-        "Alamat surel tidak valid"
       ],
       "The composer failed to load.": [
         "Komposer gagal memuat."
@@ -309,6 +323,9 @@
       "Removed duplicate recipient: ${ recipents }": [
         "Penerima duplikat dihapus: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "Sandi pesan tidak cocok."
       ],
@@ -345,6 +362,15 @@
       "Unknown error.": [
         "Galat tidak diketahui."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Terlalu banyak filter aktif. Mohon tingkatkan ke paket berbayar untuk mengaktifkan lebih banyak filter"
       ]
@@ -352,20 +378,6 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Kata sandi minimal ${ length } karakter"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "byte"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -482,6 +494,17 @@
         "Alamat"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Bls:"
+      ],
+      "Fw:": [
+        "Trs:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "Pada ${ date }, ${ name } ${ address } menulis:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Sesi habis."
@@ -519,23 +542,23 @@
       "No results found": [
         "Tidak ada hasil ditemukan"
       ],
-      "support team": [
-        "tim dukungan"
-      ],
-      "Loading": [
-        "Memuat"
-      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
       "You can either update your search query or ${ button }": [
         "Anda dapat memperbarui kueri pencarian atau ${ button }"
       ],
+      "support team": [
+        "tim dukungan"
+      ],
       "Week": [
         "Pekan"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
+      ],
+      "Loading": [
+        "Memuat"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tautan ini mungkin serangan homograf dan tidak dapat dibuka dengan Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, mohon buka dengan peramban lain."
@@ -590,6 +613,12 @@
       ],
       "Test link": [
         "Tes tautan"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Warna teks"
@@ -1149,6 +1178,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Saring jika ADA kondisi terpenuhi)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "Perubahan akan hilang."
       ],
@@ -1491,6 +1523,12 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Waktu yang diperkirakan tersisa: ${ estimatedMinutes } menit"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } percakapan belum dibaca"
       ],
@@ -1657,22 +1695,6 @@
         "Gunakan perangkat bergerak Anda, pindai kode QR ini atau kunjungi ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Bls:"
-      ],
-      "Fw:": [
-        "Trs:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Pada ${ date }, ${ name } ${ address } menulis:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Tidak dikenal"
@@ -1717,6 +1739,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2500,14 +2527,11 @@
       "Close": [
         "Tutup"
       ],
-      "refresh the page": [
-        "segarkan halaman"
-      ],
-      "Use “${ label }” setting": [
-        "Gunakan pengaturan \"${ label }\""
-      ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Konfirmasi"
       ],
       "Cancel": [
         "Batal"
@@ -2518,8 +2542,8 @@
       "Close modal": [
         "Tutup jendela"
       ],
-      "Confirm": [
-        "Konfirmasi"
+      "Use “${ label }” setting": [
+        "Gunakan pengaturan \"${ label }\""
       ],
       "Remove": [
         "Hapus"
@@ -2565,6 +2589,9 @@
       ],
       "Email settings": [
         "Pengaturan surel"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Next month": [
         "Bulan selanjutnya"
@@ -2692,12 +2719,6 @@
       "Edit phone number": [
         "Ubah nomor telepon"
       ],
-      "Use ${ label } theme": [
-        "Gunakan tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Tambah"
       ],
@@ -2814,6 +2835,12 @@
       ],
       "Next": [
         "Selanjutnya"
+      ],
+      "Use ${ label } theme": [
+        "Gunakan tema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Lanjutkan impor"
@@ -3037,15 +3064,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Tambah ke ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Pelajari lebih lanjut"
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        ""
-      ],
       "Send anyway": [
         "Tetap kirim"
       ],
@@ -3090,9 +3108,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "Kembali"
       ],
       "Send": [
         "Kirim"
@@ -3241,6 +3256,9 @@
       "Show": [
         "Tampilkan"
       ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
       "Undo": [
         "Urungkan"
       ],
@@ -3276,6 +3294,9 @@
       ],
       "Advanced search": [
         "Pencarian lanjutan"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Tandai sudah dibaca"
@@ -3355,6 +3376,12 @@
       "Create new message": [
         ""
       ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
+      ],
       "Import messages": [
         "Impor pesan"
       ],
@@ -3410,9 +3437,6 @@
       ],
       "Human verification": [
         "Verifikasi manusia"
-      ],
-      "Select a theme": [
-        "Pilih tema"
       ],
       "Delete ${ Name }": [
         "Hapus ${ Name }"
@@ -3524,6 +3548,9 @@
       ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Select a theme": [
+        "Pilih tema"
       ],
       "Start import process": [
         "Mulai proses impor"
@@ -3732,8 +3759,8 @@
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
       ],
-      "Errors detected": [
-        "Kesalahan terdeteksi"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
@@ -3871,6 +3898,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Lebih lanjut"
+      ],
+      "Request an invite": [
+        "Minta undangan"
+      ],
+      "clearing your browser cache": [
+        "membersihkan cache peramban Anda"
+      ],
+      "Pay invoice": [
+        "Bayar tagihan"
+      ],
+      "Upgrade account": [
+        "Tingkatkan akun"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Go to subscription plans": [
+        "Ke paket langganan"
+      ],
+      "click here": [
+        "klik di sini"
+      ],
+      "Add a gift code": [
+        "Tambah kode hadiah"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Anda perlu mengaktifkan kunci kalender Anda untuk menambahkan acara ini"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Anda perlu mengaktifkan kunci kalender Anda untuk mengelola undangan ini"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Anda perlu mengaktifkan kunci kalender Anda untuk menjawab undangan ini"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Anda perlu mengaktifkan kunci kalender Anda untuk melihat acara yang diperbarui"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Anda perlu mengaktifkan kunci kalender Anda untuk melihat undangan yang diperbarui"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Berkas ICS ini berisi lebih dari satu acara. Silakan unduh dan impor acara di ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Anda perlu mengaktifkan ulang kunci Anda untuk mengelola undangan ini"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Anda perlu mengaktifkan ulang kunci Anda untuk melihat acara yang diperbarui"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
+      ],
+      "Create a new calendar to add this event": [
+        "Buat kalender baru untuk menambahkan acara ini"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Buat kalender baru untuk menjawab undangan ini"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Buat kalender baru untuk mengelola undangan Anda"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Buka acara yang diperbarui di ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Buka di ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Kotak masuk"
+      ],
+      "Drafts": [
+        "Konsep"
+      ],
+      "Sent": [
+        "Dikirim"
+      ],
+      "Trash": [
+        "Sampah"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Semua surat"
+      ],
+      "Archive": [
+        "Arsip"
+      ],
+      "Starred": [
+        "Dibintangi"
+      ],
+      "Outbox": [
+        "Kotak keluar"
+      ],
+      "Scheduled": [
+        "Dijadwalkan"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Aktifkan ulang alamat yang tertaut ke kalender ini untuk mengelola undangan Anda."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Aktifkan ulang alamat yang tertaut ke kalender ini untuk memperbarui undangan Anda."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Aktifkan alamat Anda untuk menjawab undangan ini."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Buat kalender yang ditautkan ke alamat surel aktif."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Aktifkan alamat surel yang ditautkan ke salah satu kalender Anda."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Atau Anda dapat menghapus salah satu kalender Anda dan buat baru yang ditautkan ke alamat surel aktif."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Aktifkan lagi alamat Anda untuk memodifikasi jawaban Anda."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk membatalkan acara."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk memodifikasi jawaban Anda."
+      ],
+      "Add folder": [
+        "Tambah folder"
+      ],
+      "Add label": [
+        "Tambah label"
+      ],
+      "Folders": [
+        "Folder"
+      ],
+      "Manage your folders": [
+        "Kelola folder Anda"
+      ],
+      "Labels": [
+        "Label"
+      ],
+      "Manage your labels": [
+        "Kelola label Anda"
       ]
     },
     "Label": {
@@ -4422,152 +4595,6 @@
         "${ secondsCountLeft } detik"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Lebih lanjut"
-      ],
-      "Request an invite": [
-        "Minta undangan"
-      ],
-      "clearing your browser cache": [
-        "membersihkan cache peramban Anda"
-      ],
-      "Pay invoice": [
-        "Bayar tagihan"
-      ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Go to subscription plans": [
-        "Ke paket langganan"
-      ],
-      "click here": [
-        "klik di sini"
-      ],
-      "Add a gift code": [
-        "Tambah kode hadiah"
-      ],
-      "Inbox": [
-        "Kotak masuk"
-      ],
-      "Drafts": [
-        "Konsep"
-      ],
-      "Sent": [
-        "Dikirim"
-      ],
-      "Trash": [
-        "Sampah"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Semua surat"
-      ],
-      "Archive": [
-        "Arsip"
-      ],
-      "Starred": [
-        "Dibintangi"
-      ],
-      "Outbox": [
-        "Kotak keluar"
-      ],
-      "Scheduled": [
-        "Dijadwalkan"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Anda perlu mengaktifkan kunci kalender Anda untuk menambahkan acara ini"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Anda perlu mengaktifkan kunci kalender Anda untuk mengelola undangan ini"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Anda perlu mengaktifkan kunci kalender Anda untuk menjawab undangan ini"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Anda perlu mengaktifkan kunci kalender Anda untuk melihat acara yang diperbarui"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Anda perlu mengaktifkan kunci kalender Anda untuk melihat undangan yang diperbarui"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Berkas ICS ini berisi lebih dari satu acara. Silakan unduh dan impor acara di ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Anda perlu mengaktifkan ulang kunci Anda untuk mengelola undangan ini"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Anda perlu mengaktifkan ulang kunci Anda untuk melihat acara yang diperbarui"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
-      ],
-      "Create a new calendar to add this event": [
-        "Buat kalender baru untuk menambahkan acara ini"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Buat kalender baru untuk menjawab undangan ini"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Buat kalender baru untuk mengelola undangan Anda"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Buka acara yang diperbarui di ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Buka di ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Aktifkan ulang alamat yang tertaut ke kalender ini untuk mengelola undangan Anda."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Aktifkan ulang alamat yang tertaut ke kalender ini untuk memperbarui undangan Anda."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Aktifkan alamat Anda untuk menjawab undangan ini."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Buat kalender yang ditautkan ke alamat surel aktif."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Aktifkan alamat surel yang ditautkan ke salah satu kalender Anda."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Atau Anda dapat menghapus salah satu kalender Anda dan buat baru yang ditautkan ke alamat surel aktif."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Aktifkan lagi alamat Anda untuk memodifikasi jawaban Anda."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk membatalkan acara."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk memodifikasi jawaban Anda."
-      ],
-      "Add folder": [
-        "Tambah folder"
-      ],
-      "Add label": [
-        "Tambah label"
-      ],
-      "Folders": [
-        "Folder"
-      ],
-      "Manage your folders": [
-        "Kelola folder Anda"
-      ],
-      "Labels": [
-        "Label"
-      ],
-      "Manage your labels": [
-        "Kelola label Anda"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Fitur ini tersedia untuk akun Proton berbayar"
@@ -4609,6 +4636,9 @@
         "Yakin ingin membuang impor Anda?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5031,30 +5061,6 @@
         "Metode verifikasi tidak tersedia"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Dimaksimalkan"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Nama"
@@ -5264,6 +5270,35 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Dimaksimalkan"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Unggah"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Menghubungkan ke penyedia kontak Anda"
@@ -5401,11 +5436,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Unggah"
       ]
     },
     "Onboarding Proton": {
@@ -6538,9 +6568,6 @@
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Kami telah mendeteksi kesalahan. Surel Anda tidak dapat dikirim ke alamat surel manapun kerena alasan berikut:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Mohon kembali untuk mengedit alamat surel yang Anda masukkan."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Kami telah mendeteksi beberapa kesalahan. Surel Anda tidak dapat dikirim ke satu atau lebih alamat surel kerena alasan berikut:"
       ],
@@ -6710,6 +6737,11 @@
       ],
       "Next": [
         "Selanjutnya"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

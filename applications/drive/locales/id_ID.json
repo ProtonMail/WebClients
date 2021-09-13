@@ -1,337 +1,10 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "id"
+    "language": "id_ID"
   },
   "contexts": {
     "": {},
-    "Error": {
-      "This field is required": [
-        "Bagian ini wajib isi"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Isi minimal ${ minimumLength } karakter."
-      ],
-      "Email is not valid": [
-        "Email tidak valid"
-      ],
-      "Not a valid number": [
-        "Nomor tidak valid"
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak cocok"
-      ],
-      "Request timed out.": [
-        "Waktu permintaan habis."
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
-      "Missing signature": [
-        "Tanda tangan hilang"
-      ],
-      "Contact signature not verified": [
-        "Tanda tangan kontak tidak terverifikasi"
-      ],
-      "Signature not verified": [
-        "Tanda tangan tidak terverifikasi"
-      ],
-      "Invalid name": [
-        "Nama tidak valid"
-      ],
-      "Unknown error": [
-        "Galat tak diketahui"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
-      ],
-      "Authentication canceled.": [
-        "Otentikasi dibatalkan."
-      ],
-      "Your import will not be processed.": [
-        "Impor Anda tidak akan diproses."
-      ],
-      "Authentication error.": [
-        "Kesalahan otentikasi."
-      ],
-      "Email address invalid": [
-        "Alamat surel tidak valid"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak masuk salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi email, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
-      "Enter 6 digits": [
-        "Masukan 6 digit"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Process aborted": [
-        "Proses dibatalkan"
-      ],
-      "Payment process cancelled": [
-        "Proses pembayaran dibatalkan"
-      ],
-      "Payment process failed": [
-        "Proses pembayaran gagal"
-      ],
-      "Payment process consumed": [
-        "Proses pembayaran selesai"
-      ],
-      "Payment process not supported": [
-        "Proses pembayaran tidak didukung"
-      ],
-      "Unknown payment token status": [
-        "Status token pembayaran tidak dikenal"
-      ],
-      "Tab closed": [
-        "Tab ditutup"
-      ],
-      "Name on card required": [
-        "Wajib isi nama di kartu"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid postal code": [
-        "Kode pos tidak valid"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Jumlah di bawah minimum."
-      ],
-      "Amount above the maximum.": [
-        "Jumlah di atas maksimum."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Sumbangan minimal ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Tambahan kredit minimal ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Pembayaran minimal ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kedaluwarsa, silakan coba lagi."
-      ],
-      "Invalid code": [
-        "Kode tidak valid"
-      ],
-      "Preferences could not be saved": [
-        "Preferensi tidak bisa disimpan"
-      ],
-      "Some groups could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
-      ],
-      "Image upload failed": [
-        "Gagal unggah gambar"
-      ],
-      "Contact could not be saved": [
-        "Kontak tidak dapat disimpan"
-      ],
-      "Some contacts could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
-      ],
-      "Invalid public key file": [
-        "Berkas kunci publik tidak valid"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Ada kesalahan saat mengekspor kontak vCard"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Grup tidak memiliki kontak: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Anda harus membuat nama"
-      ],
-      "A group with this name already exists": [
-        "Grup dengan nama ini sudah ada"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
-      "No valid address found": [
-        "Tidak ditemukan alamat valid"
-      ],
-      "Incorrect password. Please try again.": [
-        "Sandi salah. Silakan coba lagi."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nama"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organisasi"
-      ],
-      "Birthday": [
-        "Tanggal lahir"
-      ],
-      "Anniversary": [
-        "Ulang tahun"
-      ],
-      "Title": [
-        "Gelar"
-      ],
-      "Role": [
-        "Peran"
-      ],
-      "Note": [
-        "Catatan"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Jenis kelamin"
-      ],
-      "Language": [
-        "Bahasa"
-      ],
-      "Timezone": [
-        "Zona waktu"
-      ],
-      "Geo": [
-        "Geo"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Anggota"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Kerja"
-      ],
-      "Personal": [
-        "Pribadi"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Surel"
-      ],
-      "Home": [
-        "Rumah"
-      ],
-      "Work": [
-        "Kerja"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ],
-      "Address": [
-        "Alamat"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bita"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Sesi habis."
@@ -375,15 +48,6 @@
       "Loading ${ appName }": [
         "Memuat ${ appName }"
       ],
-      "here": [
-        "di sini"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
       ],
@@ -423,6 +87,21 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
       ],
+      "Screenshot(s) attached": [
+        "Tangkapan layar terlampir"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
+      ],
+      "here": [
+        "di sini"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
       ],
@@ -452,12 +131,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
@@ -897,6 +570,30 @@
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
       ],
+      "There are no files yet": [
+        "Tidak ada berkas"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Seret berkas ke sini atau pilih berkas yang ingin diunggah."
+      ],
+      "Share files with links": [
+        "Berbagi berkas dengan tautan"
+      ],
+      "Create links and share your files with others.": [
+        "Buat tautan dan bagikan berkas Anda dengan yang lain."
+      ],
+      "My Links": [
+        "Tautan Saya"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Anda yakin ingin mengosongkan kotak sampah dan menghapus semua berkas secara permanen?"
+      ],
+      "No files or folders in trash": [
+        "Kotak sampah kosong"
+      ],
+      "Trash": [
+        "Sampah"
+      ],
       "${ doneCount } Finished": [
         "${ doneCount } Selesai"
       ],
@@ -965,30 +662,6 @@
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Menutup jendela transfer akan membatalkan semua transfer yang sedang aktif. Anda yakin?"
-      ],
-      "There are no files yet": [
-        "Tidak ada berkas"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Seret berkas ke sini atau pilih berkas yang ingin diunggah."
-      ],
-      "Share files with links": [
-        "Berbagi berkas dengan tautan"
-      ],
-      "Create links and share your files with others.": [
-        "Buat tautan dan bagikan berkas Anda dengan yang lain."
-      ],
-      "My Links": [
-        "Tautan Saya"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Anda yakin ingin mengosongkan kotak sampah dan menghapus semua berkas secara permanen?"
-      ],
-      "No files or folders in trash": [
-        "Kotak sampah kosong"
-      ],
-      "Trash": [
-        "Sampah"
       ],
       "Link expires: ": [
         "Tautan kedaluwarsa: "
@@ -1072,9 +745,331 @@
         "Pilih sebuah berkas yang diunggah dan buat sebuah tautan untuk berkas itu."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+    "Error": {
+      "Request timed out.": [
+        "Waktu permintaan habis."
+      ],
+      "This field is required": [
+        "Bagian ini wajib isi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Isi minimal ${ minimumLength } karakter."
+      ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
+      "Not a valid number": [
+        "Nomor tidak valid"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak cocok"
+      ],
+      "Missing signature": [
+        "Tanda tangan hilang"
+      ],
+      "Contact signature not verified": [
+        "Tanda tangan kontak tidak terverifikasi"
+      ],
+      "Signature not verified": [
+        "Tanda tangan tidak terverifikasi"
+      ],
+      "Invalid name": [
+        "Nama tidak valid"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
+      ],
+      "Unknown error": [
+        "Galat tak diketahui"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
+      ],
+      "Authentication canceled.": [
+        "Otentikasi dibatalkan."
+      ],
+      "Your import will not be processed.": [
+        "Impor Anda tidak akan diproses."
+      ],
+      "Authentication error.": [
+        "Kesalahan otentikasi."
+      ],
+      "Email address invalid": [
+        "Alamat surel tidak valid"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak masuk salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi email, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Enter 6 digits": [
+        "Masukan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Process aborted": [
+        "Proses dibatalkan"
+      ],
+      "Payment process cancelled": [
+        "Proses pembayaran dibatalkan"
+      ],
+      "Payment process failed": [
+        "Proses pembayaran gagal"
+      ],
+      "Payment process consumed": [
+        "Proses pembayaran selesai"
+      ],
+      "Payment process not supported": [
+        "Proses pembayaran tidak didukung"
+      ],
+      "Unknown payment token status": [
+        "Status token pembayaran tidak dikenal"
+      ],
+      "Tab closed": [
+        "Tab ditutup"
+      ],
+      "Name on card required": [
+        "Wajib isi nama di kartu"
+      ],
+      "Invalid expiration date": [
+        "Tanggal kedaluwarsa tidak valid"
+      ],
+      "Invalid card number": [
+        "Nomor kartu tidak valid"
+      ],
+      "Invalid ${ name } code": [
+        "Kode ${ name } tidak valid"
+      ],
+      "Invalid postal code": [
+        "Kode pos tidak valid"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Gagal sambung ke API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Jumlah di bawah minimum."
+      ],
+      "Amount above the maximum.": [
+        "Jumlah di atas maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Sumbangan minimal ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Tambahan kredit minimal ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Pembayaran minimal ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Pembayaran kedaluwarsa, silakan coba lagi."
+      ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
+      "Preferences could not be saved": [
+        "Preferensi tidak bisa disimpan"
+      ],
+      "Some groups could not be deleted": [
+        "Beberapa kontak tidak dapat dihapus"
+      ],
+      "Image upload failed": [
+        "Gagal unggah gambar"
+      ],
+      "Contact could not be saved": [
+        "Kontak tidak dapat disimpan"
+      ],
+      "Some contacts could not be deleted": [
+        "Beberapa kontak tidak dapat dihapus"
+      ],
+      "Invalid public key file": [
+        "Berkas kunci publik tidak valid"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Ada kesalahan saat mengekspor kontak vCard"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Grup tidak memiliki kontak: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Anda harus membuat nama"
+      ],
+      "A group with this name already exists": [
+        "Grup dengan nama ini sudah ada"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "File has no contents to preview": [
+        "Berkas ini kosong"
+      ],
+      "No valid address found": [
+        "Tidak ditemukan alamat valid"
+      ],
+      "Incorrect password. Please try again.": [
+        "Sandi salah. Silakan coba lagi."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nama"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisasi"
+      ],
+      "Birthday": [
+        "Tanggal lahir"
+      ],
+      "Anniversary": [
+        "Ulang tahun"
+      ],
+      "Title": [
+        "Gelar"
+      ],
+      "Role": [
+        "Peran"
+      ],
+      "Note": [
+        "Catatan"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Jenis kelamin"
+      ],
+      "Language": [
+        "Bahasa"
+      ],
+      "Timezone": [
+        "Zona waktu"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Anggota"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Kerja"
+      ],
+      "Personal": [
+        "Pribadi"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Surel"
+      ],
+      "Home": [
+        "Rumah"
+      ],
+      "Work": [
+        "Kerja"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ],
+      "Address": [
+        "Alamat"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bita"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Calendar status": {
@@ -1152,6 +1147,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Terjadi kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1360,11 +1360,11 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
-      "refresh the page": [
-        "segarkan halaman"
-      ],
       "Load image": [
         "Muat gambar"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Export": [
         "Ekspor"
@@ -1417,9 +1417,6 @@
       "Signing out": [
         "Keluar"
       ],
-      "Log in": [
-        "Masuk"
-      ],
       "Close this banner": [
         "Tutup spanduk ini"
       ],
@@ -1431,30 +1428,6 @@
       ],
       "here": [
         "di sini"
-      ],
-      "View invoice": [
-        "Lihat tagihan"
-      ],
-      "Get verification code": [
-        "Minta kode verifikasi"
-      ],
-      "Try another method": [
-        "Coba metode lain"
-      ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
-      "Verify": [
-        "Verifikasi"
-      ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
-      ],
-      "Edit email address": [
-        "Edit alamat email"
-      ],
-      "Edit phone number": [
-        "Edit nomor telepon"
       ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
@@ -1539,6 +1512,33 @@
       ],
       "Show info": [
         "Tampilkan info"
+      ],
+      "Log in": [
+        "Masuk"
+      ],
+      "View invoice": [
+        "Lihat tagihan"
+      ],
+      "Get verification code": [
+        "Minta kode verifikasi"
+      ],
+      "Try another method": [
+        "Coba metode lain"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Verify": [
+        "Verifikasi"
+      ],
+      "Did not receive the code?": [
+        "Tidak menerima kode?"
+      ],
+      "Edit email address": [
+        "Edit alamat email"
+      ],
+      "Edit phone number": [
+        "Edit nomor telepon"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -1735,60 +1735,6 @@
       "Cancel all uploads": [
         "Batalkan semua unggahan"
       ],
-      "Share": [
-        "Bagikan"
-      ],
-      "Show shared link details": [
-        ""
-      ],
-      "Maximize transfers": [
-        "Perbesar jendela transfer"
-      ],
-      "Minimize transfers": [
-        "Sembunyikan jendela transfer"
-      ],
-      "Close transfers": [
-        "Tutup transfer"
-      ],
-      "Pause download": [
-        "Hentikan sementara pengunduhan"
-      ],
-      "Pause upload": [
-        "Hentikan sementara pengunggahan"
-      ],
-      "Resume download": [
-        "Lanjutkan pengunduhan"
-      ],
-      "Resume upload": [
-        "Lanjutkan pengunggahan"
-      ],
-      "Cancel download": [
-        "Batalkan pengunduhan"
-      ],
-      "Cancel upload": [
-        "Batalkan pengunggahan"
-      ],
-      "Restart download": [
-        "Mulai ulang unduhan"
-      ],
-      "Restart upload": [
-        "Mulai ulang unggahan"
-      ],
-      "Remove from this list": [
-        "Hapus dari daftar ini"
-      ],
-      "Resume transfers": [
-        ""
-      ],
-      "Pause transfers": [
-        ""
-      ],
-      "Cancel transfers": [
-        ""
-      ],
-      "Restart transfers": [
-        ""
-      ],
       "New upload": [
         "Unggah baru"
       ],
@@ -1803,6 +1749,9 @@
       ],
       "Share options": [
         ""
+      ],
+      "Share": [
+        "Bagikan"
       ],
       "Create new folder": [
         "Buat folder baru"
@@ -1858,6 +1807,57 @@
       "Restore from trash": [
         "Kembalikan dari kotak sampah"
       ],
+      "Maximize transfers": [
+        "Perbesar jendela transfer"
+      ],
+      "Minimize transfers": [
+        "Sembunyikan jendela transfer"
+      ],
+      "Close transfers": [
+        "Tutup transfer"
+      ],
+      "Pause download": [
+        "Hentikan sementara pengunduhan"
+      ],
+      "Pause upload": [
+        "Hentikan sementara pengunggahan"
+      ],
+      "Resume download": [
+        "Lanjutkan pengunduhan"
+      ],
+      "Resume upload": [
+        "Lanjutkan pengunggahan"
+      ],
+      "Cancel download": [
+        "Batalkan pengunduhan"
+      ],
+      "Cancel upload": [
+        "Batalkan pengunggahan"
+      ],
+      "Restart download": [
+        "Mulai ulang unduhan"
+      ],
+      "Restart upload": [
+        "Mulai ulang unggahan"
+      ],
+      "Remove from this list": [
+        "Hapus dari daftar ini"
+      ],
+      "Resume transfers": [
+        ""
+      ],
+      "Pause transfers": [
+        ""
+      ],
+      "Cancel transfers": [
+        ""
+      ],
+      "Restart transfers": [
+        ""
+      ],
+      "Show shared link details": [
+        ""
+      ],
       "Start recovering": [
         "Mulai memulihkan"
       ],
@@ -1899,6 +1899,21 @@
       "What's new": [
         "Apa yang baru"
       ],
+      "Open help menu": [
+        "Buka menu bantuan"
+      ],
+      "Back": [
+        "Kembali"
+      ],
+      "Open settings menu": [
+        "Buka menu pengaturan"
+      ],
+      "Select a theme": [
+        "Pilih tema"
+      ],
+      "Report a problem": [
+        "Laporkan sebuah masalah"
+      ],
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
       ],
@@ -1919,21 +1934,6 @@
       ],
       "Human verification": [
         "Verifikasi manusia"
-      ],
-      "Open help menu": [
-        "Buka menu bantuan"
-      ],
-      "Back": [
-        "Kembali"
-      ],
-      "Open settings menu": [
-        "Buka menu pengaturan"
-      ],
-      "Select a theme": [
-        "Pilih tema"
-      ],
-      "Report a problem": [
-        "Laporkan sebuah masalah"
       ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi kehilangan bonus Proton"
@@ -2169,20 +2169,14 @@
       "Drop to upload": [
         "Taruh untuk mengunggah"
       ],
-      "My files": [
-        "Berkas saya"
-      ],
-      "Additional settings": [
-        "Pengaturan tambahan"
-      ],
-      "Cancel all active transfers": [
-        "Batalkan semua transfer aktif"
-      ],
       "Show actions": [
         "Tampilkan tindakan"
       ],
       "Sort files/folders": [
         "Urutkan berkas/folder"
+      ],
+      "My files": [
+        "Berkas saya"
       ],
       "Change layout": [
         "Ubah tata letak"
@@ -2195,6 +2189,12 @@
       ],
       "Trash": [
         "Sampah"
+      ],
+      "Additional settings": [
+        "Pengaturan tambahan"
+      ],
+      "Cancel all active transfers": [
+        "Batalkan semua transfer aktif"
       ],
       "Your file is ready to be downloaded": [
         "Berkas Anda siap diunduh"
@@ -2345,6 +2345,36 @@
       "Do not ask again": [
         "Jangan tanyakan lagi"
       ],
+      "Display name": [
+        "Nama tampilan"
+      ],
+      "Operating system": [
+        "Sistem operasi"
+      ],
+      "Operating system version": [
+        "Versi sistem operasi"
+      ],
+      "Proton username": [
+        "Nama pengguna Proton"
+      ],
+      "Email address": [
+        "Alamat surel"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Apa yang terjadi?"
+      ],
+      "System information": [
+        "Informasi sistem"
+      ],
+      "Browser": [
+        "Peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
       "Cancel": [
         "Batal"
       ],
@@ -2363,9 +2393,6 @@
       "Username or ProtonMail address": [
         "Nama pengguna atau alamat ProtonMail"
       ],
-      "Email address": [
-        "Alamat surel"
-      ],
       "Phone number": [
         "Nomor telepon"
       ],
@@ -2374,33 +2401,6 @@
       ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
-      ],
-      "Display name": [
-        "Nama tampilan"
-      ],
-      "Operating system": [
-        "Sistem operasi"
-      ],
-      "Operating system version": [
-        "Versi sistem operasi"
-      ],
-      "Proton username": [
-        "Nama pengguna Proton"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Apa yang terjadi?"
-      ],
-      "System information": [
-        "Informasi sistem"
-      ],
-      "Browser": [
-        "Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
       ],
       "Name on card": [
         "Nama di kartu"
@@ -2531,33 +2531,6 @@
       "Apply to all duplicated files": [
         "Terapkan ke semua berkas duplikat"
       ],
-      "Folder": [
-        "Folder"
-      ],
-      "(Expired)": [
-        "(Kedaluwarsa)"
-      ],
-      "Expired": [
-        "Kedaluwarsa"
-      ],
-      "Never": [
-        "Tidak pernah"
-      ],
-      "File": [
-        "Berkas"
-      ],
-      "All": [
-        "Semua"
-      ],
-      "Active": [
-        "Aktif"
-      ],
-      "Failed": [
-        "Gagal"
-      ],
-      "Apply to selected transfers": [
-        ""
-      ],
       "Audio file": [
         "Berkas audio"
       ],
@@ -2572,6 +2545,33 @@
       ],
       "Unknown file": [
         "Berkas tidak diketahui"
+      ],
+      "All": [
+        "Semua"
+      ],
+      "Active": [
+        "Aktif"
+      ],
+      "Failed": [
+        "Gagal"
+      ],
+      "Apply to selected transfers": [
+        ""
+      ],
+      "Folder": [
+        "Folder"
+      ],
+      "(Expired)": [
+        "(Kedaluwarsa)"
+      ],
+      "Expired": [
+        "Kedaluwarsa"
+      ],
+      "Never": [
+        "Tidak pernah"
+      ],
+      "File": [
+        "Berkas"
       ],
       "Get your own ${ appName }": [
         "Dapatkan ${ appName } Anda sendiri"
@@ -2596,9 +2596,6 @@
       "E.g., ": [
         "Mis., "
       ],
-      "Mailbox password": [
-        "Kata sandi kotak pesan"
-      ],
       "e.g. Julia Smith": [
         "cth. Dewi Sartika"
       ],
@@ -2622,6 +2619,9 @@
       ],
       "Browser version": [
         "Versi peramban"
+      ],
+      "Mailbox password": [
+        "Kata sandi kotak pesan"
       ],
       "ZIP": [
         "Kode pos"
@@ -2691,9 +2691,6 @@
       "Upgrade account": [
         "Tingkatkan akun"
       ],
-      "Request an invite": [
-        "Minta undangan"
-      ],
       "Upgrade": [
         "Tingkatkan"
       ],
@@ -2702,6 +2699,9 @@
       ],
       "clearing your browser cache": [
         "membersihkan singgahan peramban Anda"
+      ],
+      "Request an invite": [
+        "Minta undangan"
       ],
       "click here": [
         "klik di sini"
@@ -2871,6 +2871,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
       ],
@@ -2924,14 +2927,14 @@
       "Address copied to clipboard": [
         "Alamat disalin ke papan klip"
       ],
+      "Bug reported": [
+        "Bug dilaporkan"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
       "Verification successful": [
         "Verifikasi berhasil"
-      ],
-      "Bug reported": [
-        "Bug dilaporkan"
       ],
       "You have successfully unsubscribed": [
         "Anda telah berhenti berlangganan"
@@ -2984,6 +2987,17 @@
         "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplikasi Proton"
+      ],
+      "Go to ${ title }": [
+        "Kunjungi ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ke ${ vpnName }"
+      ]
+    },
     "Error message": {
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
@@ -3016,42 +3030,9 @@
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplikasi Proton"
-      ],
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Tagihan jatuh tempo"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "Metode verifikasi tidak tersedia"
       ]
     },
     "Header": {
@@ -3237,6 +3218,28 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tagihan jatuh tempo"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Metode verifikasi tidak tersedia"
       ]
     },
     "Info for cash payment method": {
@@ -3675,30 +3678,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Dimaksimalkan"
-      ]
-    },
     "Notification": {
       "Contact group updated": [
         "Grup kontak telah diperbarui"
@@ -3784,6 +3763,9 @@
       "${ failedCount } link to your file failed to be deleted.": [
         "${ failedCount } tautan ke berkas Anda gagal dihapus."
       ],
+      "All items will soon be permanently deleted from trash": [
+        "Semua item akan dihapus permanen dari kotak sampah"
+      ],
       "Move ${ movingCount } file": [
         "Pindah ${ movingCount } berkas"
       ],
@@ -3792,9 +3774,6 @@
       ],
       "Move ${ movingCount } item": [
         "Pindah ${ movingCount } item"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Semua item akan dihapus permanen dari kotak sampah"
       ],
       "Failed to move, please try again": [
         "Pemindahan gagal, silakan coba lagi"
@@ -4026,6 +4005,30 @@
       ],
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak Anda"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Dimaksimalkan"
       ]
     },
     "Select files": {

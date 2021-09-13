@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "el"
+    "language": "el_GR"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Σφάλμα ελέγχου ταυτότητας."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
-      ],
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
       ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Μη έγκυρο όνομα"
       ],
-      "Primary address key is not decrypted": [
-        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Κλείστε το αναδυόμενο παράθυρο"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Λειτουργία σύνθεσης"
       ],
-      "Beta Access": [
-        ""
-      ],
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Εισαγωγή επαφών"
+      ],
+      "Beta Access": [
+        ""
       ],
       "Start import process": [
         ""
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Επεξεργασία γεγονότος"
-      ],
-      "Event details": [
-        "Λεπτομέριες γεγονότος"
-      ],
-      "More options": [
-        "Περισσότερες επιλογές"
-      ],
-      "CANCELLED": [
-        "ΑΚΥΡΩΣΗ"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "Μη παραμετροποιήσιμο"
       ],
-      "Expired": [
-        "Έχει λήξει"
-      ],
       "here": [
         "εδώ"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      ],
+      "Expired": [
+        "Έχει λήξει"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Προμήθεια"
       ],
-      "Cash": [
-        "Μετρητά"
-      ],
-      "Card holder": [
-        "Κάτοχος κάρτας"
-      ],
-      "Expires": [
-        "Λήγει"
-      ],
-      "Payer": [
-        "Πληρωτής"
-      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "Εισάγετε τον 6-ψήφιο κωδικό"
       ],
+      "Cash": [
+        "Μετρητά"
+      ],
+      "Card holder": [
+        "Κάτοχος κάρτας"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Payer": [
+        "Πληρωτής"
+      ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
       ],
@@ -2086,9 +2080,6 @@
         ""
       ],
       "Select how your composer opens by default.": [
-        ""
-      ],
-      "Enable Beta Access": [
         ""
       ],
       "Add email address": [
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
+      ],
+      "Enable Beta Access": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "Τα ημερολόγια σας"
+      ],
+      "Participant": [
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2247,6 +2245,11 @@
         ""
       ],
       "Subscribed calendars": [
+        ""
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
         ""
       ]
     },
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Tooltip": {
@@ -2483,6 +2481,9 @@
         "Αυτή η λειτουργία απαιτεί πληρωμένο λογαριασμό Proton"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -2685,6 +2686,14 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
         ""
       ]
     },
@@ -3353,17 +3362,6 @@
         "Δωρεάν"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Νέα πιστωτική/χρεωστική κάρτα"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Εκπρόθεσμο τιμολόγιο"
@@ -3386,17 +3384,15 @@
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+    "Payment method option": {
+      "New credit/debit card": [
+        "Νέα πιστωτική/χρεωστική κάρτα"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        ""
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        ""
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Μεταφόρτωση"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        ""
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        ""
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Μεταφόρτωση"
       ]
     },
     "Message display when a new app version is available": {
@@ -4466,6 +4475,11 @@
         "Διεύθυνση"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Βασική πλοήγηση"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "Προβολή αρχικού μηνύματος"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "φορές"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Αποδεχθήκατε την πρόσκληση"
@@ -4876,11 +4890,6 @@
         "μέσω ηλεκτρονικού ταχυδρομείου"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Διοργανώθηκε από:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Απενεργοποιημένο"
@@ -4888,6 +4897,48 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
+        ""
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
         ""
       ]
     }

@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "it"
+    "language": "it_IT"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Errore di autenticazione."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Il browser che stai utilizzando non consente di autorizzare completamente il pagamento. Per favore usa un altro browser o effettua il login tramite un computer."
-      ],
       "Email address invalid": [
         "Indirizzo email non valido"
       ],
       "This field is required": [
         "Questo campo è obbligatorio"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Il browser che stai utilizzando non consente di autorizzare completamente il pagamento. Per favore usa un altro browser o effettua il login tramite un computer."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Nome non valido"
       ],
-      "Primary address key is not decrypted": [
-        "Chiave dell'indirizzo principale non decriptata"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Chiave dell'indirizzo principale non decriptata"
       ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Chiudi popover"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Modalità compositore"
       ],
-      "Beta Access": [
-        "Accesso Beta"
-      ],
       "Edit contact group": [
         "Modifica gruppo di contatto"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Importa i contatti"
+      ],
+      "Beta Access": [
+        "Accesso Beta"
       ],
       "Start import process": [
         ""
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Modifica evento"
-      ],
-      "Event details": [
-        "Dettagli evento"
-      ],
-      "More options": [
-        "Più opzioni"
-      ],
-      "CANCELLED": [
-        "ANNULLATO"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "Non personalizzabile"
       ],
-      "Expired": [
-        "Scaduto"
-      ],
       "here": [
         "qui"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
+      ],
+      "Expired": [
+        "Scaduto"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigazione di base e le azioni rimangono disponibili indipendentemente dal fatto che le scorciatoie da tastiera siano attive o meno nelle impostazioni."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Calcolo proporzionale"
       ],
-      "Cash": [
-        "Contanti"
-      ],
-      "Card holder": [
-        "Titolare carta"
-      ],
-      "Expires": [
-        "Scadenza"
-      ],
-      "Payer": [
-        "Pagante"
-      ],
       "Cancel": [
         "Annulla"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Cash": [
+        "Contanti"
+      ],
+      "Card holder": [
+        "Titolare carta"
+      ],
+      "Expires": [
+        "Scadenza"
+      ],
+      "Payer": [
+        "Pagante"
+      ],
       "Keyboard shortcuts": [
         "Scorciatoie da tastiera"
       ],
@@ -2087,9 +2081,6 @@
       ],
       "Select how your composer opens by default.": [
         "Seleziona come aprire il compositore per impostazione predefinita."
-      ],
-      "Enable Beta Access": [
-        "Abilita Accesso Beta"
       ],
       "Add email address": [
         "Aggiungi indirizzo email"
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Esporta contatti"
+      ],
+      "Enable Beta Access": [
+        "Abilita Accesso Beta"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "I tuoi calendari"
+      ],
+      "Participant": [
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2248,6 +2246,11 @@
       ],
       "Subscribed calendars": [
         "Calendari registrati"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Impossibile usare la chiave per la crittografia"
       ]
     },
     "Placeholder": {
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minuti"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Impossibile usare la chiave per la crittografia"
       ]
     },
     "Tooltip": {
@@ -2484,6 +2482,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ProtonVPN a pagamento. Si prega di aprire un ticket."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
@@ -2686,6 +2687,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Cerca fusi orari"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3353,17 +3362,6 @@
         "Gratis"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Nuova carta di credito/debito"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fattura in ritardo"
@@ -3386,17 +3384,15 @@
         "Nessun metodo di verifica disponibile"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'Accesso Beta ti consente di usare la versione beta di ProtonMail, Proton Calendar e Proton Drive prima che siano rilasciati al pubblico. Questo significa che puoi essere il primo a provare nuovi prodotti, ottenere nuovi aggiornamenti e usare nuove funzionalità."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nuova carta di credito/debito"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Nota: il servizio si ricaricherà dopo aver cliccato il pulsante Applica."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "${ totalImported }/${ totalToImport } contatti cifrati e aggiunti alla tua lista contatti"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Carica"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'Accesso Beta ti consente di usare la versione beta di ProtonMail, Proton Calendar e Proton Drive prima che siano rilasciati al pubblico. Questo significa che puoi essere il primo a provare nuovi prodotti, ottenere nuovi aggiornamenti e usare nuove funzionalità."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Nota: il servizio si ricaricherà dopo aver cliccato il pulsante Applica."
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carica"
       ]
     },
     "Message display when a new app version is available": {
@@ -4466,6 +4475,11 @@
         "Indirizzo"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Navigazione di base"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "Mostra il messaggio originale"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "volte"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Hai accettato l'invito"
@@ -4876,11 +4890,6 @@
         "via email"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Organizzato da:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Disabilitato"
@@ -4889,6 +4898,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "L'evento appartiene ad un calendario disabilitato."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }
