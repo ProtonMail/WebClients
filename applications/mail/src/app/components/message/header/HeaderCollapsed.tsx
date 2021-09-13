@@ -1,10 +1,4 @@
-import {
-    hasAttachments,
-    isDraft,
-    isOutbox,
-    isScheduled,
-    getHasOnlyIcsAttachments,
-} from '@proton/shared/lib/mail/messages';
+import { hasAttachments, isDraft, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
 import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
@@ -55,7 +49,6 @@ const HeaderCollapsed = ({
     const isDraftMessage = isDraft(message.data) && !message.sending;
     const isOutboxMessage = isOutbox(message.data) || message.sending;
     const isScheduledMessage = isScheduled(message.data);
-    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data);
 
     return (
         <div
@@ -105,11 +98,7 @@ const HeaderCollapsed = ({
 
                         {!!hasAttachments(message.data) && (
                             <span className="ml0-5 flex">
-                                <ItemAttachmentIcon
-                                    icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
-                                    element={message.data}
-                                    className="mauto"
-                                />
+                                <ItemAttachmentIcon element={message.data} className="mauto" />
                             </span>
                         )}
 

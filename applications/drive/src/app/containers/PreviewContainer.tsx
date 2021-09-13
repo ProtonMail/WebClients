@@ -1,8 +1,14 @@
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/filePreview';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
-import { useLoading, usePreventLeave, FilePreview, NavigationControl, useModals } from '@proton/components';
+import {
+    useLoading,
+    usePreventLeave,
+    isPreviewAvailable,
+    FilePreview,
+    NavigationControl,
+    useModals,
+} from '@proton/components';
 
 import { LinkMeta, LinkType } from '../interfaces/link';
 import useActiveShare from '../hooks/drive/useActiveShare';
