@@ -1,3 +1,23 @@
+## Release 4.0.7 - Sep 29, 2021
+
+### Improvements
+
+-   Added the option to set a default font for composing new messages.
+-   Added a reminder after a password reset, that decryption keys need to be re-activated to read old email messages.
+-   Saving drafts now also saves message expiration settings which were added to the draft.
+-   Added more information in the mail settings UI: for encryption keys which have subkey(s) of a different key type(s) than the primary key, the subkey type(s) will also be displayed.
+-   Improved keyboard shortcuts when navigating interfaces to pick a date and when editing contacts.
+-   Improved the error messages and instructions when sending a message to a recipient, whose encryption key is invalid.
+-   Improved the error message when trying to include an image to the auto reply option, while configuring an automated filter.
+
+### Bug fixes
+
+-   Fixed a rare bug which prevented replying to messages with attachments, when the encryption settings (i.e PGP-inline & sign messages) changed since receiving the message.
+-   Fixed a rare bug which can cause the read/unread filter to automatically be applied to search results
+-   Fixed an issue where imported contacts with unexpected characters (\n) would not be usable or exportable
+-   Fixed an issue where the location of Sent/Draft messages would not be shown in the Sent/Draft folder, the "Keep messages in Sent/Draft" setting is enabled.
+-   Fixed an issue where navigating to a folder/label after an advanced searching in said location would not behave as expected
+
 ## Release 4.0.6 - Sep 15, 2021
 
 ### Improvements
