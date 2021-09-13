@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
 import isTruthy from '../../helpers/isTruthy';
-import { normalize } from '../../helpers/string';
+import { normalize, truncate } from '../../helpers/string';
 import {
     ContactGroup,
     ContactMetadata,
@@ -18,6 +18,7 @@ import {
     ImportContactsModel,
 } from '../../interfaces/contacts/Import';
 import { SimpleMap } from '../../interfaces/utils';
+import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';
 
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
 
@@ -38,6 +39,8 @@ export const getHasPreVcardsContacts = (
  * Try to get a string that identifies a contact. This will be used in case of errors
  */
 export const getContactId = (vcardOrContactProperties: string | ContactProperties) => {
+    // translator: When having an error importing a contact for which we can't find a name, we display an error message `Contact ${contactId}: error description` with contactId = 'unknown'
+    const unknownString = c('Import contact. Contact identifier').t`unknown`;
     if (Array.isArray(vcardOrContactProperties)) {
         const fn = vcardOrContactProperties.filter(({ field }) => field === 'fn')[0]?.value;
         if (fn) {
@@ -47,14 +50,33 @@ export const getContactId = (vcardOrContactProperties: string | ContactPropertie
         if (email) {
             return email as string;
         }
-        return c('Import contact. Contact identifier').t`unknown`;
+        return unknownString;
     }
     // try to get the name of the contact from FN, which is a required field in a vcard
-    const [, fn] = vcardOrContactProperties.match(/FN(?:;[^\r\n]*)*:([^\r\n]*)\s/) || [];
-    if (fn) {
-        return fn;
+    const contentLineSeparator = vcardOrContactProperties.includes('\r\n') ? '\r\n' : '\n';
+    const contentLineSeparatorLength = contentLineSeparator.length;
+    const indexOfFNValue = vcardOrContactProperties.indexOf(
+        ':',
+        vcardOrContactProperties.toLowerCase().indexOf(`${contentLineSeparator}fn`)
+    );
+    if (indexOfFNValue === -1) {
+        return unknownString;
     }
-    return c('Import contact. Contact identifier').t`unknown`;
+    let indexOfNextField = vcardOrContactProperties.indexOf(contentLineSeparator, indexOfFNValue);
+    let FNvalue = vcardOrContactProperties.substring(indexOfFNValue + 1, indexOfNextField);
+    while (
+        vcardOrContactProperties[indexOfNextField + contentLineSeparatorLength] === ' ' &&
+        FNvalue.length < MAX_CONTACT_ID_CHARS_DISPLAY
+    ) {
+        const oldIndex = indexOfNextField;
+        indexOfNextField = vcardOrContactProperties.indexOf(
+            contentLineSeparator,
+            oldIndex + contentLineSeparatorLength
+        );
+        FNvalue += vcardOrContactProperties.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
+    }
+
+    return truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY);
 };
 
 export const getSupportedContact = (vcard: string) => {

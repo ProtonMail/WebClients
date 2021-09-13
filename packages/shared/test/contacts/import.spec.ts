@@ -1,7 +1,48 @@
 import { extractContactImportCategories, getContactId, getImportCategories } from '../../lib/contacts/helpers/import';
+import { extractVcards } from '../../lib/contacts/vcard';
+import { toCRLF } from '../../lib/helpers/string';
 import { ContactMetadata, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
 
 describe('import', () => {
+    describe('extract vcards', () => {
+        it('should keep the line separator used in the vcard', () => {
+            const vcardsPlain = `BEGIN:VCARD
+VERSION:4.0
+FN:One
+END:VCARD
+BEGIN:VCARD
+VERSION:4.0
+FN:Two
+END:VCARD`;
+            const vcardsCRLF = toCRLF(vcardsPlain);
+            expect(extractVcards(vcardsPlain)).toEqual([
+                'BEGIN:VCARD\nVERSION:4.0\nFN:One\nEND:VCARD',
+                'BEGIN:VCARD\nVERSION:4.0\nFN:Two\nEND:VCARD',
+            ]);
+            expect(extractVcards(vcardsCRLF)).toEqual([
+                'BEGIN:VCARD\r\nVERSION:4.0\r\nFN:One\r\nEND:VCARD',
+                'BEGIN:VCARD\r\nVERSION:4.0\r\nFN:Two\r\nEND:VCARD',
+            ]);
+        });
+
+        it('extracts vcards separated by empty lines', () => {
+            const vcardsPlain = `BEGIN:VCARD
+VERSION:4.0
+FN:One
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
+FN:Two
+END:VCARD
+`;
+            expect(extractVcards(vcardsPlain)).toEqual([
+                'BEGIN:VCARD\nVERSION:4.0\nFN:One\nEND:VCARD',
+                'BEGIN:VCARD\nVERSION:4.0\nFN:Two\nEND:VCARD',
+            ]);
+        });
+    });
+
     describe('getContactId', () => {
         it('should retrieve FN value whenever present', () => {
             expect(
@@ -37,6 +78,41 @@ TZ:-0500
 URL;TYPE=home:http://nomis80.org
 END:VCARD`)
             ).toEqual('Simon Perreault');
+        });
+
+        it('should retrieve FN when multiple lines are present', () => {
+            expect(
+                getContactId(`BEGIN:VCARD
+VERSION:4.0
+UID:urn:uuid:4fbe8971-0bc3
+ -424c-9c26-36
+ c3e1eff6b1
+FN;PID=1.1:Joh
+ nnie
+  Do
+ e
+N:Doe;J.;;;
+EMAIL;PID=1.1:jdoe@example.com
+CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556
+END:VCARD`)
+            ).toEqual('Johnnie Doe');
+        });
+
+        it('should crop FN when too long', () => {
+            expect(
+                getContactId(`BEGIN:VCARD
+VERSION:4.0
+UID:urn:uuid:4fbe8971-0bc3
+ -424c-9c26-36
+ c3e1eff6b1
+FN;PID=1.1:This contact has a very loo
+ ong name, but that's a pity since no
+ one will remember such a long one
+N:Doe;J.;;;
+EMAIL;PID=1.1:jdoe@example.com
+CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556
+END:VCARD`)
+            ).toEqual('This contact has a very looong name, bu…');
         });
     });
 
@@ -101,14 +177,14 @@ END:VCARD`)
                 },
             ],
         } as ContactMetadata;
-        const encryptedContact = ({
+        const encryptedContact = {
             contactEmails: [
                 { email: 'one@email.test', group: 'item1' },
                 { email: 'two@email.test', group: 'item2' },
                 { email: 'three@email.test', group: 'item3' },
             ],
             categories: [],
-        } as unknown) as EncryptedContact;
+        } as unknown as EncryptedContact;
         expect(extractContactImportCategories(contact, encryptedContact)).toEqual([]);
     });
 

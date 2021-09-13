@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import { addGroup, addPref, getContactCategories, getContactEmails } from '../../lib/contacts/properties';
 import { parse, toICAL } from '../../lib/contacts/vcard';
 import { prepare, readCsv } from '../../lib/contacts/helpers/csv';
-import { toCRLF } from '../calendar/veventHelper.spec';
+import { toCRLF } from '../../lib/helpers/string';
 
 describe('getContactEmails', () => {
     it('should retrieve contact emails from a vcard contact', () => {
