@@ -168,7 +168,7 @@ export const CustomElements = () => {
                 <InputFieldTwo as={TextAreaTwo} rows={3} label="Text area" placeholder="Placeholder" />
             </div>
             <div className="mb1">
-                <InputFieldTwo as={SelectTwo} label="Select" placeholder="Placeholder" assistiveText="Test text" bigger>
+                <InputFieldTwo as={SelectTwo} placeholder="Placeholder" assistiveText="Choose wisely." label="With new select">
                     <Option title="one" value="one" />
                     <Option title="two" value="two" />
                     <Option title="three" value="three" />
