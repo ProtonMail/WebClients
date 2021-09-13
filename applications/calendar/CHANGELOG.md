@@ -1,3 +1,16 @@
+## Release: 4.0.4 — September 22, 2021
+
+### Improvements
+
+-   Add participants from reduced event creation form
+-   Redesign of event popover
+
+### Fixes
+
+-   Ask for confirmation when opening a link in an event if setting is on for emails
+-   Answer invitation from alias email address when invited
+
+
 ## Release: 4.0.3 — August 25, 2021
 
 ### New features
