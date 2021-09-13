@@ -1,9 +1,7 @@
 import { c } from 'ttag';
-
-import { MAILBOX_LABEL_IDS, MIME_TYPES } from '../constants';
+import { MIME_TYPES, MAILBOX_LABEL_IDS } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
 import { identity } from '../helpers/function';
-import { isICS } from '../helpers/filePreview';
 import { Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
 
@@ -118,17 +116,6 @@ export const getAttachments = (message?: Message) => message?.Attachments || [];
 export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
 export const attachmentsSize = (message?: Message) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
-export const getHasOnlyIcsAttachments = (message?: Message) => {
-    const attachements = getAttachments(message);
-
-    if (attachements.length === 0) {
-        return false;
-    }
-
-    return attachements.every(({ MIMEType = '' }) => {
-        return isICS(MIMEType);
-    });
-};
 
 export const isAutoReply = (message?: Message) => {
     const ParsedHeaders = message?.ParsedHeaders || {};
