@@ -188,12 +188,13 @@ export const initDownload = ({
             activeIndex = blockQueue[0].Index;
 
             const retryDownload = async (activeIndex: number) => {
-                const newBlocks = await getBlocks(abortController.signal);
+                const newBlocks = await getBlocks(abortController.signal, { FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE });
                 if (areUint8Arrays(newBlocks)) {
                     throw new Error('Unexpected Uint8Array block data');
                 }
                 revertProgress();
                 abortController = new AbortController();
+                blocksOrBuffer = newBlocks;
                 blocks = newBlocks;
 
                 let retryCount = 1;
