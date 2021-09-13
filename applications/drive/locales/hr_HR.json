@@ -1,343 +1,10 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
-    "language": "hr"
+    "language": "hr_HR"
   },
   "contexts": {
     "": {},
-    "Error": {
-      "This field is required": [
-        "Ovo polje je obavezno"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
-      ],
-      "Email is not valid": [
-        "Adresa e-pošte nije važeća"
-      ],
-      "Not a valid number": [
-        "Broj telefona nije važeći"
-      ],
-      "Passwords do not match": [
-        "Lozinke se ne poklapaju"
-      ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
-      ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
-      "Missing signature": [
-        "Nedostaje potpis"
-      ],
-      "Contact signature not verified": [
-        "Potpis kontakta nije potvrđen"
-      ],
-      "Signature not verified": [
-        "Potpis nije ovjeren"
-      ],
-      "Invalid name": [
-        "Nevažeći naziv"
-      ],
-      "Unknown error": [
-        "Nepoznata pogreška"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
-      ],
-      "Authentication canceled.": [
-        "Otkazana autentikacija."
-      ],
-      "Your import will not be processed.": [
-        "Vaš uvoz nije moguće obraditi."
-      ],
-      "Authentication error.": [
-        "Pogreška autentikacije."
-      ],
-      "Email address invalid": [
-        "Adresa e-pošte nije valjana"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
-      ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
-      "Enter 6 digits": [
-        "Unesite 6 znamenki"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
-      "Process aborted": [
-        "Proces je prekinut"
-      ],
-      "Payment process cancelled": [
-        "Proces plaćanja je otkazan"
-      ],
-      "Payment process failed": [
-        "Proces plaćanja nije uspio"
-      ],
-      "Payment process consumed": [
-        "Proces plaćanja je konzumiran"
-      ],
-      "Payment process not supported": [
-        "Proces plaćanja nije podržan"
-      ],
-      "Unknown payment token status": [
-        "Nepoznati status tokena za plaćanje"
-      ],
-      "Tab closed": [
-        "Kartica zatvorena"
-      ],
-      "Name on card required": [
-        "Ime s kartice je nužno"
-      ],
-      "Invalid expiration date": [
-        "Nevažeći datum isteka"
-      ],
-      "Invalid card number": [
-        "Netočan broj kartice"
-      ],
-      "Invalid ${ name } code": [
-        "Nevažeći ${ name } kôd"
-      ],
-      "Invalid postal code": [
-        "Netočan poštanski broj"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Pogreška prilikom spajanja na Bitcoin API."
-      ],
-      "Amount below minimum.": [
-        "Iznos ispod minimuma."
-      ],
-      "Amount above the maximum.": [
-        "Iznos veći od maksimuma."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimalni iznos koji se može donirati je ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Minimalni iznos kredita koji se može dodati je ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Minimalni iznos koji prihvaćamo je ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Naplata je istekla, pokušajte ponovo."
-      ],
-      "Invalid code": [
-        "Nevažeći kôd"
-      ],
-      "Preferences could not be saved": [
-        "Postavke nije moguće spremiti"
-      ],
-      "Some groups could not be deleted": [
-        "Nije moguće brisanje nekih grupa"
-      ],
-      "Image upload failed": [
-        "Neuspješno učitavanje slike"
-      ],
-      "Contact could not be saved": [
-        "Nije moguće spremanje kontakata"
-      ],
-      "Some contacts could not be deleted": [
-        "Nije bilo moguće brisanje nekih kontakata"
-      ],
-      "Invalid public key file": [
-        "Nevažeća datoteka javnog ključa"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Ne možete poslati e-poštu za više od 100 primatelja"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Jedan od kontakata nema adresu e-pošte: ${ noEmailsContactNamesList }",
-        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } ",
-        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Ne možete slati vCards za više od 10 kontakata"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Došlo je do pogreške prilikom izvoza vCards-a kontakata"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Jedna od grupa nema kontakata: ${ noContactGroupList }",
-        "Neke od grupa nemaju kontakata: ${ noContactGroupList } ",
-        "Neke od grupa nemaju kontakata: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Morate postaviti naziv"
-      ],
-      "A group with this name already exists": [
-        "Grupa s ovim nazivom već postoji"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Neuspješno povezivanje s vašim davateljem usluga."
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
-      ],
-      "File has no contents to preview": [
-        "Datoteka nema sadržaja za pregled"
-      ],
-      "No valid address found": [
-        "Nije pronađena važeća adresa"
-      ],
-      "Incorrect password. Please try again.": [
-        "Netočna lozinka. Pokušajte ponovo."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lozinka mora sadržavati najmanje ${ length } znak",
-        "Lozinka mora sadržavati najmanje ${ length } znaka",
-        "Lozinka mora sadržavati najmanje ${ length } znakova"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Naziv"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Photo": [
-        "Fotografija"
-      ],
-      "Organization": [
-        "Organizacija"
-      ],
-      "Birthday": [
-        "Rođendan"
-      ],
-      "Anniversary": [
-        "Godišnjica"
-      ],
-      "Title": [
-        "Naslov"
-      ],
-      "Role": [
-        "Uloga"
-      ],
-      "Note": [
-        "Bilješka"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Spol"
-      ],
-      "Language": [
-        "Jezik"
-      ],
-      "Timezone": [
-        "Vremenska zona"
-      ],
-      "Geo": [
-        "Geolokacija"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Član"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Posao"
-      ],
-      "Personal": [
-        "Privatno"
-      ],
-      "Mobile": [
-        "Mobitel"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Dojavljivač"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-pošta"
-      ],
-      "Home": [
-        "Kuća"
-      ],
-      "Work": [
-        "Posao"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobitel"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Dojavljivač"
-      ],
-      "Address": [
-        "Adresa"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bajtova"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Sesija je istekla."
@@ -381,15 +48,6 @@
       "Loading ${ appName }": [
         "Učitavanje ${ appName }"
       ],
-      "here": [
-        "ovdje"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
       ],
@@ -429,6 +87,21 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
+      "Screenshot(s) attached": [
+        "Snimka(e) zaslona su pridodane"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+      ],
+      "here": [
+        "ovdje"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ],
@@ -458,12 +131,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
@@ -917,6 +584,30 @@
       "Your files will be encrypted and then saved.": [
         "Vaše datoteke će biti šifrirane i spremljene."
       ],
+      "There are no files yet": [
+        "Nema datoteka"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Ovdje povucite i ispustite datoteku ili odaberite za učitavanje."
+      ],
+      "Share files with links": [
+        "Dijeli datoteke s poveznicama"
+      ],
+      "Create links and share your files with others.": [
+        "Stvorite poveznice i dijelite svoje datoteke s drugima."
+      ],
+      "My Links": [
+        "Moje poveznice"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
+      ],
+      "No files or folders in trash": [
+        "Nema datoteka i mapa u Otpadu"
+      ],
+      "Trash": [
+        "Otpad"
+      ],
       "${ doneCount } Finished": [
         "${ doneCount } Dovršeno",
         "${ doneCount } Dovršeno",
@@ -1002,30 +693,6 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Zatvaranjem upravitelja prijenosa otkazat će se svi aktivni prijenosi, jeste li sigurni?"
       ],
-      "There are no files yet": [
-        "Nema datoteka"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ovdje povucite i ispustite datoteku ili odaberite za učitavanje."
-      ],
-      "Share files with links": [
-        "Dijeli datoteke s poveznicama"
-      ],
-      "Create links and share your files with others.": [
-        "Stvorite poveznice i dijelite svoje datoteke s drugima."
-      ],
-      "My Links": [
-        "Moje poveznice"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
-      ],
-      "No files or folders in trash": [
-        "Nema datoteka i mapa u Otpadu"
-      ],
-      "Trash": [
-        "Otpad"
-      ],
       "Link expires: ": [
         "Poveznica istječe: "
       ],
@@ -1108,9 +775,337 @@
         "Odaberite prenesenu datoteku i stvorite poveznicu za nju."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
+    "Error": {
+      "Request timed out.": [
+        "Zahtjev je istekao."
+      ],
+      "This field is required": [
+        "Ovo polje je obavezno"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Email is not valid": [
+        "Adresa e-pošte nije važeća"
+      ],
+      "Not a valid number": [
+        "Broj telefona nije važeći"
+      ],
+      "Passwords do not match": [
+        "Lozinke se ne poklapaju"
+      ],
+      "Missing signature": [
+        "Nedostaje potpis"
+      ],
+      "Contact signature not verified": [
+        "Potpis kontakta nije potvrđen"
+      ],
+      "Signature not verified": [
+        "Potpis nije ovjeren"
+      ],
+      "Invalid name": [
+        "Nevažeći naziv"
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Could not find address ${ email }.": [
+        "Ne mogu pronaći adresu ${ email }."
+      ],
+      "Unknown error": [
+        "Nepoznata pogreška"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
+      ],
+      "Authentication canceled.": [
+        "Otkazana autentikacija."
+      ],
+      "Your import will not be processed.": [
+        "Vaš uvoz nije moguće obraditi."
+      ],
+      "Authentication error.": [
+        "Pogreška autentikacije."
+      ],
+      "Email address invalid": [
+        "Adresa e-pošte nije valjana"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
+      ],
+      "Can't validate email, try again later": [
+        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
+      ],
+      "Can't validate phone, try again later": [
+        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
+      ],
+      "Enter 6 digits": [
+        "Unesite 6 znamenki"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
+      ],
+      "Process aborted": [
+        "Proces je prekinut"
+      ],
+      "Payment process cancelled": [
+        "Proces plaćanja je otkazan"
+      ],
+      "Payment process failed": [
+        "Proces plaćanja nije uspio"
+      ],
+      "Payment process consumed": [
+        "Proces plaćanja je konzumiran"
+      ],
+      "Payment process not supported": [
+        "Proces plaćanja nije podržan"
+      ],
+      "Unknown payment token status": [
+        "Nepoznati status tokena za plaćanje"
+      ],
+      "Tab closed": [
+        "Kartica zatvorena"
+      ],
+      "Name on card required": [
+        "Ime s kartice je nužno"
+      ],
+      "Invalid expiration date": [
+        "Nevažeći datum isteka"
+      ],
+      "Invalid card number": [
+        "Netočan broj kartice"
+      ],
+      "Invalid ${ name } code": [
+        "Nevažeći ${ name } kôd"
+      ],
+      "Invalid postal code": [
+        "Netočan poštanski broj"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Pogreška prilikom spajanja na Bitcoin API."
+      ],
+      "Amount below minimum.": [
+        "Iznos ispod minimuma."
+      ],
+      "Amount above the maximum.": [
+        "Iznos veći od maksimuma."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Minimalni iznos koji se može donirati je ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Minimalni iznos kredita koji se može dodati je ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Minimalni iznos koji prihvaćamo je ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Naplata je istekla, pokušajte ponovo."
+      ],
+      "Invalid code": [
+        "Nevažeći kôd"
+      ],
+      "Preferences could not be saved": [
+        "Postavke nije moguće spremiti"
+      ],
+      "Some groups could not be deleted": [
+        "Nije moguće brisanje nekih grupa"
+      ],
+      "Image upload failed": [
+        "Neuspješno učitavanje slike"
+      ],
+      "Contact could not be saved": [
+        "Nije moguće spremanje kontakata"
+      ],
+      "Some contacts could not be deleted": [
+        "Nije bilo moguće brisanje nekih kontakata"
+      ],
+      "Invalid public key file": [
+        "Nevažeća datoteka javnog ključa"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Ne možete poslati e-poštu za više od 100 primatelja"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Jedan od kontakata nema adresu e-pošte: ${ noEmailsContactNamesList }",
+        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } ",
+        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Ne možete slati vCards za više od 10 kontakata"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Došlo je do pogreške prilikom izvoza vCards-a kontakata"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Jedna od grupa nema kontakata: ${ noContactGroupList }",
+        "Neke od grupa nemaju kontakata: ${ noContactGroupList } ",
+        "Neke od grupa nemaju kontakata: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Morate postaviti naziv"
+      ],
+      "A group with this name already exists": [
+        "Grupa s ovim nazivom već postoji"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Neuspješno povezivanje s vašim davateljem usluga."
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
+      ],
+      "File has no contents to preview": [
+        "Datoteka nema sadržaja za pregled"
+      ],
+      "No valid address found": [
+        "Nije pronađena važeća adresa"
+      ],
+      "Incorrect password. Please try again.": [
+        "Netočna lozinka. Pokušajte ponovo."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Naziv"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Photo": [
+        "Fotografija"
+      ],
+      "Organization": [
+        "Organizacija"
+      ],
+      "Birthday": [
+        "Rođendan"
+      ],
+      "Anniversary": [
+        "Godišnjica"
+      ],
+      "Title": [
+        "Naslov"
+      ],
+      "Role": [
+        "Uloga"
+      ],
+      "Note": [
+        "Bilješka"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Spol"
+      ],
+      "Language": [
+        "Jezik"
+      ],
+      "Timezone": [
+        "Vremenska zona"
+      ],
+      "Geo": [
+        "Geolokacija"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Član"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Posao"
+      ],
+      "Personal": [
+        "Privatno"
+      ],
+      "Mobile": [
+        "Mobitel"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Dojavljivač"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-pošta"
+      ],
+      "Home": [
+        "Kuća"
+      ],
+      "Work": [
+        "Posao"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobitel"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Dojavljivač"
+      ],
+      "Address": [
+        "Adresa"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bajtova"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Calendar status": {
@@ -1188,6 +1183,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1396,11 +1396,11 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Load image": [
         "Učitaj sliku"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Export": [
         "Izvoz"
@@ -1453,9 +1453,6 @@
       "Signing out": [
         "Odjavljivanje"
       ],
-      "Log in": [
-        "Prijavite se"
-      ],
       "Close this banner": [
         "Zatvori natpis"
       ],
@@ -1467,30 +1464,6 @@
       ],
       "here": [
         "ovdje"
-      ],
-      "View invoice": [
-        "Prikaži fakturu"
-      ],
-      "Get verification code": [
-        "Nabavi kôd za provjeru"
-      ],
-      "Try another method": [
-        "Isprobajte drugu metodu"
-      ],
-      "Request new code": [
-        "Zatraži novi kôd"
-      ],
-      "Verify": [
-        "Potvrdi"
-      ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
-      ],
-      "Edit email address": [
-        "Uredi adresu e-pošte"
-      ],
-      "Edit phone number": [
-        "Uredi broj telefona"
       ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
@@ -1575,6 +1548,33 @@
       ],
       "Show info": [
         "Prikaži informacije"
+      ],
+      "Log in": [
+        "Prijavite se"
+      ],
+      "View invoice": [
+        "Prikaži fakturu"
+      ],
+      "Get verification code": [
+        "Nabavi kôd za provjeru"
+      ],
+      "Try another method": [
+        "Isprobajte drugu metodu"
+      ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
+      "Verify": [
+        "Potvrdi"
+      ],
+      "Did not receive the code?": [
+        "Niste primili kôd?"
+      ],
+      "Edit email address": [
+        "Uredi adresu e-pošte"
+      ],
+      "Edit phone number": [
+        "Uredi broj telefona"
       ],
       "Remove bonuses": [
         "Ukloni bonuse"
@@ -1775,60 +1775,6 @@
       "Cancel all uploads": [
         "Poništi sva učitavanja"
       ],
-      "Share": [
-        "Podijeli"
-      ],
-      "Show shared link details": [
-        "Prikaži detalje poveznice za dijeljenje"
-      ],
-      "Maximize transfers": [
-        "Proširi prijenose"
-      ],
-      "Minimize transfers": [
-        "Smanji transfere"
-      ],
-      "Close transfers": [
-        "Zatvori prijenose"
-      ],
-      "Pause download": [
-        "Pauziraj preuzimanje"
-      ],
-      "Pause upload": [
-        "Pauziraj učitavanje"
-      ],
-      "Resume download": [
-        "Nastavi s preuzimanjem"
-      ],
-      "Resume upload": [
-        "Nastavi učitavanje"
-      ],
-      "Cancel download": [
-        "Zaustavi preuzimanje"
-      ],
-      "Cancel upload": [
-        "Odustani od učitavanja"
-      ],
-      "Restart download": [
-        "Ponovno pokreni preuzimanje"
-      ],
-      "Restart upload": [
-        "Ponovno pokreni učitavanje"
-      ],
-      "Remove from this list": [
-        "Ukloni s popisa"
-      ],
-      "Resume transfers": [
-        ""
-      ],
-      "Pause transfers": [
-        ""
-      ],
-      "Cancel transfers": [
-        ""
-      ],
-      "Restart transfers": [
-        ""
-      ],
       "New upload": [
         "Novo učitavanje"
       ],
@@ -1843,6 +1789,9 @@
       ],
       "Share options": [
         ""
+      ],
+      "Share": [
+        "Podijeli"
       ],
       "Create new folder": [
         "Stvori novu mapu"
@@ -1898,6 +1847,57 @@
       "Restore from trash": [
         "Vrati iz otpada"
       ],
+      "Maximize transfers": [
+        "Proširi prijenose"
+      ],
+      "Minimize transfers": [
+        "Smanji transfere"
+      ],
+      "Close transfers": [
+        "Zatvori prijenose"
+      ],
+      "Pause download": [
+        "Pauziraj preuzimanje"
+      ],
+      "Pause upload": [
+        "Pauziraj učitavanje"
+      ],
+      "Resume download": [
+        "Nastavi s preuzimanjem"
+      ],
+      "Resume upload": [
+        "Nastavi učitavanje"
+      ],
+      "Cancel download": [
+        "Zaustavi preuzimanje"
+      ],
+      "Cancel upload": [
+        "Odustani od učitavanja"
+      ],
+      "Restart download": [
+        "Ponovno pokreni preuzimanje"
+      ],
+      "Restart upload": [
+        "Ponovno pokreni učitavanje"
+      ],
+      "Remove from this list": [
+        "Ukloni s popisa"
+      ],
+      "Resume transfers": [
+        ""
+      ],
+      "Pause transfers": [
+        ""
+      ],
+      "Cancel transfers": [
+        ""
+      ],
+      "Restart transfers": [
+        ""
+      ],
+      "Show shared link details": [
+        "Prikaži detalje poveznice za dijeljenje"
+      ],
       "Start recovering": [
         "Započni oporavak"
       ],
@@ -1939,6 +1939,21 @@
       "What's new": [
         "Što je novo"
       ],
+      "Open help menu": [
+        "Otvori izbornik pomoći"
+      ],
+      "Back": [
+        "Natrag"
+      ],
+      "Open settings menu": [
+        "Otvori izbornik postavki"
+      ],
+      "Select a theme": [
+        "Odaberi temu"
+      ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
@@ -1959,21 +1974,6 @@
       ],
       "Human verification": [
         "Ljudska provjera"
-      ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
-      "Back": [
-        "Natrag"
-      ],
-      "Open settings menu": [
-        "Otvori izbornik postavki"
-      ],
-      "Select a theme": [
-        "Odaberi temu"
-      ],
-      "Report a problem": [
-        "Prijavi problem"
       ],
       "Confirm loss of Proton bonuses": [
         "Potvrdite gubitak Proton bonusa"
@@ -2217,20 +2217,14 @@
       "Drop to upload": [
         "Ispustite za učitati"
       ],
-      "My files": [
-        "Moje datoteke"
-      ],
-      "Additional settings": [
-        "Dodatne postavke"
-      ],
-      "Cancel all active transfers": [
-        "Otkaži sve aktivne prijenose"
-      ],
       "Show actions": [
         "Prikaži radnje"
       ],
       "Sort files/folders": [
         "Sortiraj datoteke/mape"
+      ],
+      "My files": [
+        "Moje datoteke"
       ],
       "Change layout": [
         "Promijeni izgled"
@@ -2243,6 +2237,12 @@
       ],
       "Trash": [
         "Otpad"
+      ],
+      "Additional settings": [
+        "Dodatne postavke"
+      ],
+      "Cancel all active transfers": [
+        "Otkaži sve aktivne prijenose"
       ],
       "Your file is ready to be downloaded": [
         "Vaša datoteka je spremna za preuzimanje"
@@ -2393,6 +2393,36 @@
       "Do not ask again": [
         "Ne pitaj ponovno"
       ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
+      "Operating system": [
+        "Operativni sustav"
+      ],
+      "Operating system version": [
+        "Verzija operativnog sustava"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
+      "Category": [
+        "Kategorija"
+      ],
+      "What happened?": [
+        "Što se dogodilo?"
+      ],
+      "System information": [
+        "Informacije o sustavu"
+      ],
+      "Browser": [
+        "Preglednik"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
       "Cancel": [
         "Poništi"
       ],
@@ -2411,9 +2441,6 @@
       "Username or ProtonMail address": [
         "Korisničko ime ili ProtonMail adresa"
       ],
-      "Email address": [
-        "Adresa e-pošte"
-      ],
       "Phone number": [
         "Broj telefona"
       ],
@@ -2422,33 +2449,6 @@
       ],
       "Enter the 6-digit code": [
         "Unesite 6-znamenkasti kôd"
-      ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
-      "Operating system": [
-        "Operativni sustav"
-      ],
-      "Operating system version": [
-        "Verzija operativnog sustava"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "Category": [
-        "Kategorija"
-      ],
-      "What happened?": [
-        "Što se dogodilo?"
-      ],
-      "System information": [
-        "Informacije o sustavu"
-      ],
-      "Browser": [
-        "Preglednik"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
       ],
       "Name on card": [
         "Ime na kartici"
@@ -2579,33 +2579,6 @@
       "Apply to all duplicated files": [
         "Primjeni na sve duplikate datoteka"
       ],
-      "Folder": [
-        "Mapa"
-      ],
-      "(Expired)": [
-        "(Isteklo)"
-      ],
-      "Expired": [
-        "Isteklo"
-      ],
-      "Never": [
-        "Nikad"
-      ],
-      "File": [
-        "Datoteka"
-      ],
-      "All": [
-        "Sve"
-      ],
-      "Active": [
-        "Aktivno"
-      ],
-      "Failed": [
-        "Neuspješno"
-      ],
-      "Apply to selected transfers": [
-        ""
-      ],
       "Audio file": [
         "Zvučne datoteke"
       ],
@@ -2620,6 +2593,33 @@
       ],
       "Unknown file": [
         "Nepoznata datoteka"
+      ],
+      "All": [
+        "Sve"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "Failed": [
+        "Neuspješno"
+      ],
+      "Apply to selected transfers": [
+        ""
+      ],
+      "Folder": [
+        "Mapa"
+      ],
+      "(Expired)": [
+        "(Isteklo)"
+      ],
+      "Expired": [
+        "Isteklo"
+      ],
+      "Never": [
+        "Nikad"
+      ],
+      "File": [
+        "Datoteka"
       ],
       "Get your own ${ appName }": [
         "Nabavite vlastiti ${ appName }"
@@ -2644,9 +2644,6 @@
       "E.g., ": [
         "Npr. "
       ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
       ],
@@ -2670,6 +2667,9 @@
       ],
       "Browser version": [
         "Verzija preglednika"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
       ],
       "ZIP": [
         "Poštanski broj"
@@ -2743,9 +2743,6 @@
       "Upgrade account": [
         "Nadogradi račun"
       ],
-      "Request an invite": [
-        "Zatraži pozivnicu"
-      ],
       "Upgrade": [
         "Nadogradnja"
       ],
@@ -2754,6 +2751,9 @@
       ],
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
+      ],
+      "Request an invite": [
+        "Zatraži pozivnicu"
       ],
       "click here": [
         "kliknite ovdje"
@@ -2923,6 +2923,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
@@ -2980,14 +2983,14 @@
       "Address copied to clipboard": [
         "Adresa je kopirana u međuspremnik"
       ],
+      "Bug reported": [
+        "Problem je prijavljen"
+      ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
       ],
       "Verification successful": [
         "Uspješna provjera"
-      ],
-      "Bug reported": [
-        "Problem je prijavljen"
       ],
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
@@ -3046,6 +3049,17 @@
         "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikacije"
+      ],
+      "Go to ${ title }": [
+        "Idi na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Idi na ${ vpnName }"
+      ]
+    },
     "Error message": {
       "Oops, something went wrong": [
         "Ups, nešto je pošlo po zlu"
@@ -3078,42 +3092,9 @@
         "Možete ${ refresh } ili pokušati ponovo kasnije."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
-      ],
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Neplaćena faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Ručno"
-      ],
-      "No verification method available": [
-        "Nema dostupne metode za provjeru"
       ]
     },
     "Header": {
@@ -3299,6 +3280,28 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dodajte snimku(e) zaslona"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Neplaćena faktura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Ručno"
+      ],
+      "No verification method available": [
+        "Nema dostupne metode za provjeru"
       ]
     },
     "Info for cash payment method": {
@@ -3759,30 +3762,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normalno"
-      ],
-      "Maximized": [
-        "Maksimizirano"
-      ]
-    },
     "Notification": {
       "Contact group updated": [
         "Kontaktna grupa je ažurirana"
@@ -3902,6 +3881,9 @@
         "Neuspješno brisanje ${ failedCount } poveznice do vaše datoteke.",
         "Neuspješno brisanje ${ failedCount } poveznica do vaše datoteke."
       ],
+      "All items will soon be permanently deleted from trash": [
+        "Sve stavke će uskoro biti trajno izbrisane iz otpada"
+      ],
       "Move ${ movingCount } file": [
         "Premjesti ${ movingCount } datoteku",
         "Premjesti ${ movingCount } datoteke",
@@ -3916,9 +3898,6 @@
         "Premjesti ${ movingCount } stavku",
         "Premjesti ${ movingCount } stavke",
         "Premjesti ${ movingCount } stavki"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Sve stavke će uskoro biti trajno izbrisane iz otpada"
       ],
       "Failed to move, please try again": [
         "Neuspješno premještanje, pokušajte ponovo"
@@ -4170,6 +4149,30 @@
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Udobno"
+      ],
+      "Compact": [
+        "Kompaktno"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Stupac"
+      ],
+      "Row": [
+        "Redak"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normalno"
+      ],
+      "Maximized": [
+        "Maksimizirano"
       ]
     },
     "Select files": {

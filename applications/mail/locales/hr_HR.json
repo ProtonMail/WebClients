@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
-    "language": "hr"
+    "language": "hr_HR"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bajtova"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Ovo polje je obavezno"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
-      ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
-      ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
       ],
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
       ],
+      "Request timed out.": [
+        "Zahtjev je istekao."
+      ],
       "Missing signature": [
         "Nedostaje potpis"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Svojstva ključa za ${ emailAddress } nemogu se izdvojiti"
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Could not find address ${ email }.": [
+        "Ne mogu pronaći adresu ${ email }."
       ],
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
+      "Email address invalid": [
+        "Adresa e-pošte nije valjana"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "Email address invalid": [
-        "Adresa e-pošte nije valjana"
       ],
       "The composer failed to load.": [
         "Neuspješno učitavanje prozora za novu poruku."
@@ -319,6 +333,9 @@
         "",
         ""
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "Lozinke poruke se ne podudaraju."
       ],
@@ -357,6 +374,15 @@
       "Unknown error.": [
         "Nepoznata pogreška."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Previše aktivnih filtara. Nadogradite na plaćeni plan da aktivirate više filtara"
       ]
@@ -366,20 +392,6 @@
         "Lozinka mora sadržavati najmanje ${ length } znak",
         "Lozinka mora sadržavati najmanje ${ length } znaka",
         "Lozinka mora sadržavati najmanje ${ length } znakova"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bajtova"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -496,6 +508,17 @@
         "Adresa"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "Dana ${ date }, ${ name } ${ address } je napisao/la:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Sesija je istekla."
@@ -533,17 +556,14 @@
       "No results found": [
         "Nema rezultata"
       ],
-      "support team": [
-        "tim za podršku"
-      ],
-      "Loading": [
-        "Učitavanje"
-      ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
       ],
       "You can either update your search query or ${ button }": [
         "Možete ažurirati svoj upit za pretraživanje ili ${ button }"
+      ],
+      "support team": [
+        "tim za podršku"
       ],
       "Week": [
         "Tjedan"
@@ -552,6 +572,9 @@
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
+      ],
+      "Loading": [
+        "Učitavanje"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
@@ -606,6 +629,12 @@
       ],
       "Test link": [
         "Testiraj poveznicu"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Boja slova"
@@ -1179,6 +1208,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "Sve vaše promjene će biti izgubljene."
       ],
@@ -1549,6 +1581,12 @@
         "Procijenjeno preostalo vrijeme: { estimatedMinutes } minute",
         "Procijenjeno preostalo vrijeme: { estimatedMinutes } minuta"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } nepročitan razgovor",
         "${ unreadCount } nepročitana razgovora",
@@ -1739,22 +1777,6 @@
         "Pomoću mobilnog uređaja skenirajte ovaj QR kôd ili posjetite ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Dana ${ date }, ${ name } ${ address } je napisao/la:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Nepoznato"
@@ -1799,6 +1821,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2656,14 +2683,11 @@
       "Close": [
         "Zatvori"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
-      "Use “${ label }” setting": [
-        "Koristi “${ label }” postavku"
-      ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Potvrdi"
       ],
       "Cancel": [
         "Poništi"
@@ -2674,8 +2698,8 @@
       "Close modal": [
         "Zatvori skočni prozor"
       ],
-      "Confirm": [
-        "Potvrdi"
+      "Use “${ label }” setting": [
+        "Koristi “${ label }” postavku"
       ],
       "Remove": [
         "Ukloni"
@@ -2721,6 +2745,9 @@
       ],
       "Email settings": [
         "Postavke e-pošte"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Next month": [
         "Sljedeći mjesec"
@@ -2848,12 +2875,6 @@
       "Edit phone number": [
         "Uredi broj telefona"
       ],
-      "Use ${ label } theme": [
-        "Koristi ${ label } temu"
-      ],
-      "OK": [
-        "U redu"
-      ],
       "Add": [
         "Dodaj"
       ],
@@ -2976,6 +2997,12 @@
       ],
       "Next": [
         "Sljedeće"
+      ],
+      "Use ${ label } theme": [
+        "Koristi ${ label } temu"
+      ],
+      "OK": [
+        "U redu"
       ],
       "Continue import": [
         "Nastavi uvoz"
@@ -3199,15 +3226,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Dodaj u ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Open shop": [
-        "Otvori trgovinu"
-      ],
-      "Open calendar": [
-        "Otvori kalendar"
-      ],
       "Send anyway": [
         "Svejedno pošalji"
       ],
@@ -3254,9 +3272,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "Idi natrag"
       ],
       "Send": [
         "Pošalji"
@@ -3405,6 +3420,9 @@
       "Show": [
         "Prikaži"
       ],
+      "Learn more": [
+        "Saznajte više"
+      ],
       "Undo": [
         "Poništi"
       ],
@@ -3440,6 +3458,9 @@
       ],
       "Advanced search": [
         "Napredno pretraživanje"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Označi kao pročitano"
@@ -3519,6 +3540,12 @@
       "Create new message": [
         "Stvori novu poruku"
       ],
+      "Open shop": [
+        "Otvori trgovinu"
+      ],
+      "Open calendar": [
+        "Otvori kalendar"
+      ],
       "Import messages": [
         "Uvoz e-pošte"
       ],
@@ -3574,9 +3601,6 @@
       ],
       "Human verification": [
         "Ljudska provjera"
-      ],
-      "Select a theme": [
-        "Odaberi temu"
       ],
       "Delete ${ Name }": [
         "Izbriši ${ Name }"
@@ -3696,6 +3720,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Select a theme": [
+        "Odaberi temu"
       ],
       "Start import process": [
         "Započni uvoz"
@@ -3912,8 +3939,8 @@
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
       ],
-      "Errors detected": [
-        "Pogreške su otkrivene"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Potvrdite adresu primatelja?"
@@ -4051,6 +4078,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ključ se ne može koristiti za šifriranje"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saznajte više"
+      ],
+      "Request an invite": [
+        "Zatraži pozivnicu"
+      ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
+      "Pay invoice": [
+        "Plati račun"
+      ],
+      "Upgrade account": [
+        "Nadogradi račun"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Go to subscription plans": [
+        "Idi na planove pretplate"
+      ],
+      "click here": [
+        "kliknite ovdje"
+      ],
+      "Add a gift code": [
+        "Dodaj darovni kôd"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        ""
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Da biste upravljali ovom pozivnicom, morate aktivirati ključeve kalendara"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Da biste odgovorili na ovu pozivnicu, morate aktivirati ključeve kalendara"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Morate aktivirati ključeve kalendara da biste vidjeli ažurirani događaj"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Morate aktivirati ključeve kalendara da biste vidjeli ažuriranu pozivnicu"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        ""
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Morate ponovno aktivirati vaše ključeve da biste upravljali ovom pozivnicom"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažurirani događaj"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
+      ],
+      "Create a new calendar to add this event": [
+        ""
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Stvorite novi kalendar da biste odgovorili na ovu pozivnicu"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Stvorite novi kalendar za upravljanje vašim pozivnicama"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Otvori ažurirani događaj u ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Otvori u ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Pristigla pošta"
+      ],
+      "Drafts": [
+        "Skice"
+      ],
+      "Sent": [
+        "Poslano"
+      ],
+      "Trash": [
+        "Otpad"
+      ],
+      "Spam": [
+        "Neželjena pošta"
+      ],
+      "All mail": [
+        "Sva pošta"
+      ],
+      "Archive": [
+        "Arhiva"
+      ],
+      "Starred": [
+        "Sa zvjezdicom"
+      ],
+      "Outbox": [
+        "Odlazni spremnik"
+      ],
+      "Scheduled": [
+        "Zakazano"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Ponovno omogućite adresu povezanu s ovim kalendarom za upravljanje vašom pozivnicom."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Ponovno omogućite adresu povezanu s ovim kalendarom za ažuriranje vaše pozivnice."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Omogućite vašu adresu da odgovorite na ovu pozivnicu."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Stvorite kalendar povezan s aktivnom adresom e-pošte."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Omogućite adresu e-pošte povezanu s jednim od vaših kalendara."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Ili možete izbrisati jedan od svojih kalendara i stvoriti novi povezan s aktivnom adresom e-pošte."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Ponovno omogućite vašu adresu da biste izmijenili vaš odgovor."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Omogućite adresu e-pošte povezanu s onemogućenim kalendarom da biste otkazali događaj."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Omogućite adresu e-pošte povezanu s onemogućenim kalendarom da biste izmijenili svoj odgovor."
+      ],
+      "Add folder": [
+        "Dodaj mapu"
+      ],
+      "Add label": [
+        "Dodaj oznaku"
+      ],
+      "Folders": [
+        "Mape"
+      ],
+      "Manage your folders": [
+        "Upravljanje vašim oznakama"
+      ],
+      "Labels": [
+        "Oznake"
+      ],
+      "Manage your labels": [
+        "Upravljanje oznakama"
       ]
     },
     "Label": {
@@ -4614,152 +4787,6 @@
         "${ secondsCountLeft } sekundi"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Request an invite": [
-        "Zatraži pozivnicu"
-      ],
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
-      ],
-      "Pay invoice": [
-        "Plati račun"
-      ],
-      "Upgrade account": [
-        "Nadogradi račun"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Go to subscription plans": [
-        "Idi na planove pretplate"
-      ],
-      "click here": [
-        "kliknite ovdje"
-      ],
-      "Add a gift code": [
-        "Dodaj darovni kôd"
-      ],
-      "Inbox": [
-        "Pristigla pošta"
-      ],
-      "Drafts": [
-        "Skice"
-      ],
-      "Sent": [
-        "Poslano"
-      ],
-      "Trash": [
-        "Otpad"
-      ],
-      "Spam": [
-        "Neželjena pošta"
-      ],
-      "All mail": [
-        "Sva pošta"
-      ],
-      "Archive": [
-        "Arhiva"
-      ],
-      "Starred": [
-        "Sa zvjezdicom"
-      ],
-      "Outbox": [
-        "Odlazni spremnik"
-      ],
-      "Scheduled": [
-        "Zakazano"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        ""
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Da biste upravljali ovom pozivnicom, morate aktivirati ključeve kalendara"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Da biste odgovorili na ovu pozivnicu, morate aktivirati ključeve kalendara"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Morate aktivirati ključeve kalendara da biste vidjeli ažurirani događaj"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Morate aktivirati ključeve kalendara da biste vidjeli ažuriranu pozivnicu"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Morate ponovno aktivirati vaše ključeve da biste upravljali ovom pozivnicom"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažurirani događaj"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
-      ],
-      "Create a new calendar to add this event": [
-        ""
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Stvorite novi kalendar da biste odgovorili na ovu pozivnicu"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Stvorite novi kalendar za upravljanje vašim pozivnicama"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Otvori ažurirani događaj u ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Otvori u ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Ponovno omogućite adresu povezanu s ovim kalendarom za upravljanje vašom pozivnicom."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Ponovno omogućite adresu povezanu s ovim kalendarom za ažuriranje vaše pozivnice."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Omogućite vašu adresu da odgovorite na ovu pozivnicu."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Stvorite kalendar povezan s aktivnom adresom e-pošte."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Omogućite adresu e-pošte povezanu s jednim od vaših kalendara."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Ili možete izbrisati jedan od svojih kalendara i stvoriti novi povezan s aktivnom adresom e-pošte."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Ponovno omogućite vašu adresu da biste izmijenili vaš odgovor."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Omogućite adresu e-pošte povezanu s onemogućenim kalendarom da biste otkazali događaj."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Omogućite adresu e-pošte povezanu s onemogućenim kalendarom da biste izmijenili svoj odgovor."
-      ],
-      "Add folder": [
-        "Dodaj mapu"
-      ],
-      "Add label": [
-        "Dodaj oznaku"
-      ],
-      "Folders": [
-        "Mape"
-      ],
-      "Manage your folders": [
-        "Upravljanje vašim oznakama"
-      ],
-      "Labels": [
-        "Oznake"
-      ],
-      "Manage your labels": [
-        "Upravljanje oznakama"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Ova značajka zahtijeva plaćeni Proton račun"
@@ -4805,6 +4832,9 @@
         "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5269,30 +5299,6 @@
         "Nema dostupne metode za provjeru"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normalno"
-      ],
-      "Maximized": [
-        "Maksimizirano"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Naziv"
@@ -5516,6 +5522,35 @@
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Udobno"
+      ],
+      "Compact": [
+        "Kompaktno"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Stupac"
+      ],
+      "Row": [
+        "Redak"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normalno"
+      ],
+      "Maximized": [
+        "Maksimizirano"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Učitaj"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Spajanje s vašim pružateljem kontakata"
@@ -5653,11 +5688,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dodajte snimku(e) zaslona"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Učitaj"
       ]
     },
     "Onboarding Proton": {
@@ -6828,11 +6858,6 @@
         "Otkrili smo pogreške. Vaša e-pošta ne može se poslati na bilo koju adresu e-pošte koja je unesena zbog sljedećih razloga:",
         "Otkrili smo pogreške. Vaša e-pošta ne može se poslati na bilo koju adresu e-pošte koja je unesena zbog sljedećih razloga:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Vratite se da biste uredili adresu e-pošte koju ste unijeli.",
-        "Vratite se da biste uredili adrese e-pošte koju ste unijeli.",
-        "Vratite se da biste uredili adrese e-pošte koju ste unijeli."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Otkrili smo neke pogreške. Vaša e-pošta ne može se poslati na jedno ili više adresa e-pošte koja su unesene, zbog sljedećih razloga:"
       ],
@@ -7002,6 +7027,11 @@
       ],
       "Next": [
         "Sljedeće"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

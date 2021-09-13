@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "id"
+    "language": "id_ID"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Kesalahan autentikasi."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
       "Email address invalid": [
         "Alamat surel tidak valid"
       ],
       "This field is required": [
         "Bagian ini wajib isi"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi kesalahan, mohon ${ refresh } ntuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini, silakan hubungi ${ supportTeam } kami."
@@ -153,14 +153,14 @@
       "Invalid name": [
         "Nama tidak valid"
       ],
-      "Primary address key is not decrypted": [
-        "Kunci alamat utama tidak didekripsi"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Kunci alamat utama tidak didekripsi"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
@@ -769,6 +769,9 @@
       ],
       "Close popover": [
         "Tutup jendela"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -940,9 +943,6 @@
       "Composer mode": [
         "Mode menulis"
       ],
-      "Beta Access": [
-        "Akses Beta"
-      ],
       "Edit contact group": [
         "Edit grup kontak"
       ],
@@ -1050,6 +1050,9 @@
       ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Beta Access": [
+        "Akses Beta"
       ],
       "Start import process": [
         ""
@@ -1191,15 +1194,6 @@
       ],
       "Edit event": [
         "Edit acara"
-      ],
-      "Event details": [
-        "Rincian acara"
-      ],
-      "More options": [
-        "Opsi lainnya"
-      ],
-      "CANCELLED": [
-        "DIBATALKAN"
       ]
     },
     "Info": {
@@ -1479,9 +1473,6 @@
       "Not customizable": [
         "Tidak dapat diubah"
       ],
-      "Expired": [
-        "Kedaluwarsa"
-      ],
       "here": [
         "di sini"
       ],
@@ -1520,6 +1511,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+      ],
+      "Expired": [
+        "Kedaluwarsa"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
@@ -2017,18 +2011,6 @@
       "Proration": [
         "Prorasi"
       ],
-      "Cash": [
-        "Tunai"
-      ],
-      "Card holder": [
-        "Pemegang kartu"
-      ],
-      "Expires": [
-        "Kedaluwarsa"
-      ],
-      "Payer": [
-        "Pembayar"
-      ],
       "Cancel": [
         "Batal"
       ],
@@ -2056,6 +2038,18 @@
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
       ],
+      "Cash": [
+        "Tunai"
+      ],
+      "Card holder": [
+        "Pemegang kartu"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
+      "Payer": [
+        "Pembayar"
+      ],
       "Keyboard shortcuts": [
         "Pintasan papan ketik"
       ],
@@ -2067,9 +2061,6 @@
       ],
       "Select how your composer opens by default.": [
         "Pilih bagaimana komposer Anda terbuka secara bawaan."
-      ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
       ],
       "Add email address": [
         "Tambah alamat surel"
@@ -2106,6 +2097,9 @@
       ],
       "Export contacts": [
         "Ekspor kontak"
+      ],
+      "Enable Beta Access": [
+        "Aktifkan Akses Beta"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2190,6 +2184,9 @@
       ],
       "Your calendars": [
         "Kalender Anda"
+      ],
+      "Participant": [
+        ""
       ]
     },
     "Link": {
@@ -2228,6 +2225,11 @@
       ],
       "Subscribed calendars": [
         ""
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
     "Placeholder": {
@@ -2316,11 +2318,6 @@
       ],
       "${ minutes } minute": [
         "${ minutes } menit"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
     "Tooltip": {
@@ -2461,6 +2458,9 @@
         "Fitur ini perlu akun Proton berbayar"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -2659,6 +2659,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Cari zona waktu"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3315,17 +3323,6 @@
         "Bebas"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Kartu kredit/debit baru"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tagihan jatuh tempo"
@@ -3348,17 +3345,15 @@
         "Metode verifikasi tidak tersedia"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memperbolehkan Anda menggunakan versi beta dari ProtonMail, Proton Calendar, dan Proton Drive sebelum mereka dirilis ke publik. Ini berarti Anda dapat menjadi yang pertama untuk mencoba produk baru, mendapatkan pembaruan terbaru, dan menggunakan fitur-fitur terbaru."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Kartu kredit/debit baru"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jika Anda menemui masalah/isu, Anda dapat selalu menonaktifkan Akses Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3627,9 +3622,17 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak Anda"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Unggah"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Akses Beta memperbolehkan Anda menggunakan versi beta dari ProtonMail, Proton Calendar, dan Proton Drive sebelum mereka dirilis ke publik. Ini berarti Anda dapat menjadi yang pertama untuk mencoba produk baru, mendapatkan pembaruan terbaru, dan menggunakan fitur-fitur terbaru."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Jika Anda menemui masalah/isu, Anda dapat selalu menonaktifkan Akses Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
       ]
     },
     "Loading info": {
@@ -3651,6 +3654,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Unggah"
       ]
     },
     "Message display when a new app version is available": {
@@ -4375,6 +4383,11 @@
         "Alamat"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Navigasi dasar"
@@ -4548,11 +4561,6 @@
       ],
       "Show original message": [
         "Tampilkan pesan orisinal"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4733,6 +4741,11 @@
         "kali"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Anda menerima undangan"
@@ -4767,11 +4780,6 @@
         "melalui surel"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Diselenggarakan oleh:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Dinonaktifkan"
@@ -4779,6 +4787,48 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
+        ""
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
         ""
       ]
     }

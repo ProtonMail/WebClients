@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "it"
+    "language": "it_IT"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Questo campo è obbligatorio"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
-      ],
-      "Request timed out.": [
-        "Timeout della richiesta."
-      ],
-      "Signature verification failed": [
-        "Verifica della firma fallita"
-      ],
-      "Could not find address ${ email }.": [
-        "Impossibile trovare l'indirizzo ${ email }."
       ],
       "Email address disabled": [
         "Indirizzo email disabilitato"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "La chiave di invio non è valida"
       ],
+      "Request timed out.": [
+        "Timeout della richiesta."
+      ],
       "Missing signature": [
         "Firma mancante"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Le proprietà della chiave per ${ emailAddress } non possono essere estratte"
+      ],
+      "Signature verification failed": [
+        "Verifica della firma fallita"
+      ],
+      "Could not find address ${ email }.": [
+        "Impossibile trovare l'indirizzo ${ email }."
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Errore di autenticazione."
       ],
+      "Email address invalid": [
+        "Indirizzo email non valido"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Il browser che stai usando non consente l'autorizzazione completa del pagamento. Sei pregato di usarne uno differente o di accedere tramite un computer."
-      ],
-      "Email address invalid": [
-        "Indirizzo email non valido"
       ],
       "The composer failed to load.": [
         "Il compositore non è riuscito a caricare."
@@ -314,6 +328,9 @@
         "Destinatario del duplicato rimosso: ${ recipents }",
         "Destinatari del duplicato rimossi: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } per <${ email }>. Puoi aggiungere un'altra chiave o disabilitare la crittografia per questo contatto per risolvere il problema."
+      ],
       "Message passwords do not match.": [
         "Le password del messaggio non corrispondono."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Errore sconosciuto."
       ],
+      "re-activate the previous key": [
+        "riattiva la chiave precedente"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Le tue email non sono decrittografabili a causa di un recente ripristino della password. Se ricordi la tua password precedente, puoi ${ reActivateKeyLink } per poter accedere ai tuoi messaggi. ${ learnMoreLink }"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        "Le tue email non sono decrittografabili a causa di un recente ripristino della password. ${ learnMoreLink }"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Troppi filtri attivi. Effettua l'upgrade ad un piano a pagamento per attivare più filtri"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "La password deve contenere almeno ${ length } carattere",
         "La password deve contenere almeno ${ length } caratteri"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "byte"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Indirizzo"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "I:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "Il ${ date }, ${ name } ${ address } ha scritto:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Sessione scaduta."
@@ -526,17 +549,14 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
-      "support team": [
-        "team di supporto"
-      ],
-      "Loading": [
-        "Caricamento"
-      ],
       "No contacts added yet": [
         "Nessun contatto ancora aggiunto"
       ],
       "You can either update your search query or ${ button }": [
         "Puoi aggiornare la tua ricerca o ${ button }"
+      ],
+      "support team": [
+        "team di supporto"
       ],
       "Week": [
         "Settimana"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
+      ],
+      "Loading": [
+        "Caricamento"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografo e non può essere aperto dai browser Internet Explorer ed Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Test link"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Colore del testo"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrare se QUALUNQUE delle condizioni seguenti sono soddisfatte)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
       ],
@@ -1520,6 +1552,12 @@
         "Tempo stimato rimanente: ${ estimatedMinutes } minuto",
         "Tempo stimato rimanente: ${ estimatedMinutes } minuti"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversazione non letta",
         "${ unreadCount } conversazioni non lette"
@@ -1698,22 +1736,6 @@
         "Usando il tuo dispositivo mobile, scansiona questo Codice QR o visita ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "I:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Il ${ date }, ${ name } ${ address } ha scritto:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Sconosciuto"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Chiudi"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
-      "Use “${ label }” setting": [
-        "Usa l’impostazione “${ label }”"
-      ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Conferma"
       ],
       "Cancel": [
         "Annulla"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Chiudi finestra"
       ],
-      "Confirm": [
-        "Conferma"
+      "Use “${ label }” setting": [
+        "Usa l’impostazione “${ label }”"
       ],
       "Remove": [
         "Rimuovi"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "Impostazioni email"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Next month": [
         "Mese successivo"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Modifica il numero di telefono"
       ],
-      "Use ${ label } theme": [
-        "Usa il tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Aggiungi"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "Successiva"
+      ],
+      "Use ${ label } theme": [
+        "Usa il tema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Continua l'importazione"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Aggiungi a ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Scopri di più"
-      ],
-      "Open shop": [
-        "Apri negozio"
-      ],
-      "Open calendar": [
-        "Apri il calendario"
-      ],
       "Send anyway": [
         "Invia comunque"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "CC, CCN"
-      ],
-      "Go back": [
-        "Torna indietro"
       ],
       "Send": [
         "Invia"
@@ -3323,6 +3338,9 @@
       "Show": [
         "Mostra"
       ],
+      "Learn more": [
+        "Scopri di più"
+      ],
       "Undo": [
         "Annulla"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Ricerca avanzata"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Segna come letto"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         "Crea un nuovo messaggio"
       ],
+      "Open shop": [
+        "Apri negozio"
+      ],
+      "Open calendar": [
+        "Apri il calendario"
+      ],
       "Import messages": [
         "Importa i messaggi"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "Verifica umana"
-      ],
-      "Select a theme": [
-        "Seleziona un tema"
       ],
       "Delete ${ Name }": [
         "Elimina ${ Name }"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Importa i contatti"
+      ],
+      "Select a theme": [
+        "Seleziona un tema"
       ],
       "Start import process": [
         "Avvia il processo d'importazione"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "Copia carbone nascosta"
       ],
-      "Errors detected": [
-        "Errori rilevati"
+      "Sending error": [
+        "Errore d'invio"
       ],
       "Confirm recipient address?": [
         "Confermare l'indirizzo del destinatario?"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Impossibile usare la chiave per la crittografia"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Per saperne di più"
+      ],
+      "Request an invite": [
+        "Richiedi un invito"
+      ],
+      "clearing your browser cache": [
+        "pulendo la cache del browser"
+      ],
+      "Pay invoice": [
+        "Pagamento della fattura"
+      ],
+      "Upgrade account": [
+        "Effettua l'upgrade dell'account"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Go to subscription plans": [
+        "Vai ai piani di abbonamento"
+      ],
+      "click here": [
+        "clicca qui"
+      ],
+      "Add a gift code": [
+        "Aggiungi un codice regalo"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Devi attivare le chiavi del tuo calendario per aggiungere questo evento"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Devi attivare le chiavi del tuo calendario per gestire questo evento"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Devi attivare le chiavi del tuo calendario per rispondere a questo invito"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Devi attivare le chiavi del tuo calendario per visualizzare l'evento aggiornato"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Devi attivare le chiavi del tuo calendario per visualizzare l'invito aggiornato"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Questo file ICS contiene più di un evento. Sei pregato di scaricarlo e importare gli eventi in ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Devi riattivare le tue chiavi per gestire questo invito"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Devi riattivare le tue chiavi per visualizzare l'evento aggiornato"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "Create a new calendar to add this event": [
+        "Crea un nuovo calendario per aggiungere questo evento"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Crea un nuovo calendario per rispondere a quest'invito"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Crea un nuovo calendario per gestire i tuoi inviti"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Apri l'evento aggiornato in ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Apri in ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Posta in arrivo"
+      ],
+      "Drafts": [
+        "Bozze"
+      ],
+      "Sent": [
+        "Inviata"
+      ],
+      "Trash": [
+        "Cestino"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Tutte le mail"
+      ],
+      "Archive": [
+        "Archivio"
+      ],
+      "Starred": [
+        "Preferiti"
+      ],
+      "Outbox": [
+        "In Uscita"
+      ],
+      "Scheduled": [
+        "Pianificata"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Riabilita l'indirizzo collegato a questo calendario per gestire il tuo invito."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Riabilita l'indirizzo collegato a questo calendario per aggiornare il tuo invito."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Abilita il tuo indirizzo per rispondere a questo invito."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Crea un calendario collegato a un indirizzo email attivo."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Abilita un indirizzo email collegato a uno dei tuoi calendari."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "O puoi eliminare uno dei tuoi calendari e crearne uno nuovo collegato a un indirizzo email attivo."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Riabilita il tuo indirizzo per modificare la tua risposta."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Abilita l'indirizzo email collegato al calendario disabilitato per annullare l'evento."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Abilita l'indirizzo email collegato al calendario disabilitato per modificare l'evento."
+      ],
+      "Add folder": [
+        "Aggiungi cartella"
+      ],
+      "Add label": [
+        "Aggiungi etichetta"
+      ],
+      "Folders": [
+        "Cartelle"
+      ],
+      "Manage your folders": [
+        "Gestisci le tue cartelle"
+      ],
+      "Labels": [
+        "Etichette"
+      ],
+      "Manage your labels": [
+        "Gestisci le tue etichette"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } secondi"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Per saperne di più"
-      ],
-      "Request an invite": [
-        "Richiedi un invito"
-      ],
-      "clearing your browser cache": [
-        "pulendo la cache del browser"
-      ],
-      "Pay invoice": [
-        "Pagamento della fattura"
-      ],
-      "Upgrade account": [
-        "Effettua l'upgrade dell'account"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Go to subscription plans": [
-        "Vai ai piani di abbonamento"
-      ],
-      "click here": [
-        "clicca qui"
-      ],
-      "Add a gift code": [
-        "Aggiungi un codice regalo"
-      ],
-      "Inbox": [
-        "Posta in arrivo"
-      ],
-      "Drafts": [
-        "Bozze"
-      ],
-      "Sent": [
-        "Inviata"
-      ],
-      "Trash": [
-        "Cestino"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Tutte le mail"
-      ],
-      "Archive": [
-        "Archivio"
-      ],
-      "Starred": [
-        "Preferiti"
-      ],
-      "Outbox": [
-        "In Uscita"
-      ],
-      "Scheduled": [
-        "Pianificata"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Devi attivare le chiavi del tuo calendario per aggiungere questo evento"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Devi attivare le chiavi del tuo calendario per gestire questo evento"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Devi attivare le chiavi del tuo calendario per rispondere a questo invito"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Devi attivare le chiavi del tuo calendario per visualizzare l'evento aggiornato"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Devi attivare le chiavi del tuo calendario per visualizzare l'invito aggiornato"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Questo file ICS contiene più di un evento. Sei pregato di scaricarlo e importare gli eventi in ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Devi riattivare le tue chiavi per gestire questo invito"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Devi riattivare le tue chiavi per visualizzare l'evento aggiornato"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
-      ],
-      "Create a new calendar to add this event": [
-        "Crea un nuovo calendario per aggiungere questo evento"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Crea un nuovo calendario per rispondere a quest'invito"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Crea un nuovo calendario per gestire i tuoi inviti"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Apri l'evento aggiornato in ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Apri in ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Riabilita l'indirizzo collegato a questo calendario per gestire il tuo invito."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Riabilita l'indirizzo collegato a questo calendario per aggiornare il tuo invito."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Abilita il tuo indirizzo per rispondere a questo invito."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Crea un calendario collegato a un indirizzo email attivo."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Abilita un indirizzo email collegato a uno dei tuoi calendari."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "O puoi eliminare uno dei tuoi calendari e crearne uno nuovo collegato a un indirizzo email attivo."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Riabilita il tuo indirizzo per modificare la tua risposta."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Abilita l'indirizzo email collegato al calendario disabilitato per annullare l'evento."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Abilita l'indirizzo email collegato al calendario disabilitato per modificare l'evento."
-      ],
-      "Add folder": [
-        "Aggiungi cartella"
-      ],
-      "Add label": [
-        "Aggiungi etichetta"
-      ],
-      "Folders": [
-        "Cartelle"
-      ],
-      "Manage your folders": [
-        "Gestisci le tue cartelle"
-      ],
-      "Labels": [
-        "Etichette"
-      ],
-      "Manage your labels": [
-        "Gestisci le tue etichette"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Questa funzione richiede un account Proton a pagamento"
@@ -4708,6 +4735,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ProtonVPN a pagamento. Si prega di aprire un ticket."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
@@ -5150,30 +5180,6 @@
         "Nessun metodo di verifica disponibile"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortevole"
-      ],
-      "Compact": [
-        "Compatta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Colonna"
-      ],
-      "Row": [
-        "Riga"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normale"
-      ],
-      "Maximized": [
-        "Massimizzato"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Nome"
@@ -5390,6 +5396,35 @@
         "${ totalImported }/${ totalToImport } contatti cifrati e aggiunti alla tua lista contatti"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortevole"
+      ],
+      "Compact": [
+        "Compatta"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Colonna"
+      ],
+      "Row": [
+        "Riga"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normale"
+      ],
+      "Maximized": [
+        "Massimizzato"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carica"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Connessione al provider di contatti"
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Allega screenshot"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Carica"
       ]
     },
     "Onboarding Proton": {
@@ -6683,10 +6713,6 @@
         "Abbiamo rilevato degli errori. La tua email non può essere inviata all'indirizzo email inserito per il seguente motivo:",
         "Abbiamo rilevato degli errori. La tua email non può essere inviata a nessuno degli indirizzi email inseriti per i seguenti motivi:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Torna indietro per modificare l'indirizzo email che hai inserito.",
-        "Torna indietro per modificare gli indirizzi email inseriti."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Abbiamo rilevato alcuni errori. La tua email non può essere inviata ad uno o più indirizzi email inseriti a causa dei seguenti motivi:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Successiva"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {
