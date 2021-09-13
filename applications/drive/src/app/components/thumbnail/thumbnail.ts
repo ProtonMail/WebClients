@@ -1,4 +1,5 @@
-import { isSupportedImage, isSVG } from '@proton/shared/lib/helpers/filePreview';
+import { isSupportedImage, isSVG } from '@proton/components/containers/filePreview/helpers';
+
 import { scaleImageFile } from './image';
 import { scaleSvgFile } from './svg';
 

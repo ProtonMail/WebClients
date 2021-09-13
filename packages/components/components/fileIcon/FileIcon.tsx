@@ -1,5 +1,4 @@
-import { isSupportedImage, isSupportedText, isPDF, isVideo, isICS } from '@proton/shared/lib/helpers/filePreview';
-
+import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo } from '../../containers/filePreview/helpers';
 import { IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
