@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "nl"
+    "language": "nl_NL"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
       "Email address invalid": [
         "E-mailadres ongeldig"
       ],
       "This field is required": [
         "Dit veld is verplicht"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Ongeldige naam"
       ],
-      "Primary address key is not decrypted": [
-        "Primaire adressleutel is niet gedecodeerd"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Primaire adressleutel is niet gedecodeerd"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Popover sluiten"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Opstelmodus"
       ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
       "Edit contact group": [
         "Contactgroep bewerken"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Contactpersonen importeren"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
       ],
       "Start import process": [
         ""
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Afspraak wijzigen"
-      ],
-      "Event details": [
-        "Afspraakdetails"
-      ],
-      "More options": [
-        "Meer opties"
-      ],
-      "CANCELLED": [
-        "GEANNULEERD"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "Niet aanpasbaar"
       ],
-      "Expired": [
-        "Verlopen"
-      ],
       "here": [
         "hier"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "Expired": [
+        "Verlopen"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief of inactief zijn in de instellingen."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Aftrek"
       ],
-      "Cash": [
-        "Cash"
-      ],
-      "Card holder": [
-        "Kaarthouder"
-      ],
-      "Expires": [
-        "Verloopt"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
       "Cancel": [
         "Annuleer"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "Voer de 6-cijferige code in"
       ],
+      "Cash": [
+        "Cash"
+      ],
+      "Card holder": [
+        "Kaarthouder"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
       "Keyboard shortcuts": [
         "Sneltoetsen"
       ],
@@ -2087,9 +2081,6 @@
       ],
       "Select how your composer opens by default.": [
         "Selecteer hoe uw opstelvenster standaard opent."
-      ],
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Contactpersonen exporteren"
+      ],
+      "Enable Beta Access": [
+        "Bèta-toegang inschakelen"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "Uw kalenders"
+      ],
+      "Participant": [
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2248,6 +2246,11 @@
       ],
       "Subscribed calendars": [
         ""
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Sleutel kan niet worden gebruikt voor versleuteling"
       ]
     },
     "Placeholder": {
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } minuut",
         "${ minutes } minuten"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Sleutel kan niet worden gebruikt voor versleuteling"
       ]
     },
     "Tooltip": {
@@ -2484,6 +2482,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Helaas zijn wij op dit moment niet on-line. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer on-line zijn."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -2686,6 +2687,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Zoek tijdzones"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3353,17 +3362,6 @@
         "Gratis"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Nieuwe creditcard"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
@@ -3386,17 +3384,15 @@
         "Geen verificatiemethode beschikbaar"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nieuwe creditcard"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Uploaden"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Uploaden"
       ]
     },
     "Message display when a new app version is available": {
@@ -4466,6 +4475,11 @@
         "Adres"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Algemene navigatie"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "Toon het originele bericht"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "keer"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "U heeft de uitnodiging geaccepteerd"
@@ -4876,11 +4890,6 @@
         "via e-mail"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Georganiseerd door:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Uitgeschakeld"
@@ -4889,6 +4898,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "De afspraak hoort bij een uitgeschakelde agenda."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }

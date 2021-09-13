@@ -1,340 +1,10 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n >= 2);",
-    "language": "fr"
+    "language": "fr_FR"
   },
   "contexts": {
     "": {},
-    "Error": {
-      "This field is required": [
-        "Ce champ est requis"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
-      ],
-      "Email is not valid": [
-        "L’adresse électronique n’est pas valide"
-      ],
-      "Not a valid number": [
-        "Numéro non valide"
-      ],
-      "Passwords do not match": [
-        "Les mots de passe ne correspondent pas"
-      ],
-      "Request timed out.": [
-        "La requête a expiré."
-      ],
-      "Signature verification failed": [
-        "Échec de la vérification de la signature"
-      ],
-      "Could not find address ${ email }.": [
-        "Impossible de trouver l'adresse ${ email }."
-      ],
-      "Missing signature": [
-        "Signature manquante"
-      ],
-      "Contact signature not verified": [
-        "Signature du contact non vérifiée"
-      ],
-      "Signature not verified": [
-        "Signature non vérifiée"
-      ],
-      "Invalid name": [
-        "Nom invalide"
-      ],
-      "Unknown error": [
-        "Erreur inconnue"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
-      ],
-      "Authentication canceled.": [
-        "Authentification annulée."
-      ],
-      "Your import will not be processed.": [
-        "Votre importation ne sera pas traitée."
-      ],
-      "Authentication error.": [
-        "Erreur d'authentification."
-      ],
-      "Email address invalid": [
-        "Adresse électronique invalide"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Le navigateur que vous utilisez ne permet pas de finaliser l’autorisation de paiement. Veuillez utiliser un autre navigateur ou vous connecter via un ordinateur."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Mot de passe de la messagerie incorrect. Veuillez réessayer"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Identifiants de connexion incorrects. Veuillez réessayer"
-      ],
-      "Can't validate email, try again later": [
-        "Impossible de valider l'adresse électronique, veuillez réessayer plus tard"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
-      ],
-      "Enter 6 digits": [
-        "Saisissez 6 chiffres"
-      ],
-      "Invalid verification code": [
-        "Code de vérification invalide"
-      ],
-      "Process aborted": [
-        "Processus interrompu"
-      ],
-      "Payment process cancelled": [
-        "Processus de paiement annulé"
-      ],
-      "Payment process failed": [
-        "Échec du processus de paiement"
-      ],
-      "Payment process consumed": [
-        "Processus de paiement achevé"
-      ],
-      "Payment process not supported": [
-        "Processus de paiement non pris en charge"
-      ],
-      "Unknown payment token status": [
-        "Statut du jeton de paiement inconnu"
-      ],
-      "Tab closed": [
-        "Onglet fermé"
-      ],
-      "Name on card required": [
-        "Nom du titulaire de la carte requis"
-      ],
-      "Invalid expiration date": [
-        "Date d’expiration invalide"
-      ],
-      "Invalid card number": [
-        "Numéro de carte non valide"
-      ],
-      "Invalid ${ name } code": [
-        "Code ${ name } non valide"
-      ],
-      "Invalid postal code": [
-        "Code postal invalide"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Erreur de connexion à l’API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Montant inférieur au minimum autorisé."
-      ],
-      "Amount above the maximum.": [
-        "Montant supérieur au maximum autorisé."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Le montant minimal qui peut être donné est ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Le montant minimal de crédit qui peut être ajouté est ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Le paiement minimal que nous acceptons est ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "La commande a expiré, veuillez réessayer."
-      ],
-      "Invalid code": [
-        "Code non valide"
-      ],
-      "Preferences could not be saved": [
-        "Les préférences n'ont pas pu être enregistrées"
-      ],
-      "Some groups could not be deleted": [
-        "Certains groupes n'ont pas pu être supprimés"
-      ],
-      "Image upload failed": [
-        "Échec du téléchargement de l'image"
-      ],
-      "Contact could not be saved": [
-        "Le contact n'a pas pu être enregistré"
-      ],
-      "Some contacts could not be deleted": [
-        "Certains contacts n'ont pas pu être supprimés"
-      ],
-      "Invalid public key file": [
-        "Fichier de clé publique non valide"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Vous ne pouvez pas envoyer de courriel à plus de 100 destinataires"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Un des contacts n'a pas d'adresse électronique : ${ noEmailsContactNamesList }",
-        "Certains contacts n'ont pas d'adresse électronique : ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Une erreur s'est produite lors de l'exportation des vCards des contacts"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Un des groupes n'a pas de contacts : ${ noContactGroupList }",
-        "Certains groupes n'ont pas de contacts : ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Vous devez définir un nom"
-      ],
-      "A group with this name already exists": [
-        "Un groupe portant ce nom existe déjà"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Ce fichier n'a pas de contenu à prévisualiser"
-      ],
-      "No valid address found": [
-        "Aucune adresse valide trouvée"
-      ],
-      "Incorrect password. Please try again.": [
-        "Mot de passe incorrect. Veuillez réessayer."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère",
-        "Le mot de passe doit comporter au moins ${ length } caractères"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nom"
-      ],
-      "Email": [
-        "Adresse électronique"
-      ],
-      "Phone": [
-        "Téléphone"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Photo": [
-        "Photo"
-      ],
-      "Organization": [
-        "Organisation"
-      ],
-      "Birthday": [
-        "Date de naissance"
-      ],
-      "Anniversary": [
-        "Anniversaire"
-      ],
-      "Title": [
-        "Titre"
-      ],
-      "Role": [
-        "Rôle"
-      ],
-      "Note": [
-        "Note"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Genre"
-      ],
-      "Language": [
-        "Langue"
-      ],
-      "Timezone": [
-        "Fuseau horaire"
-      ],
-      "Geo": [
-        "Coordonnées géographiques"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Membre"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Travail"
-      ],
-      "Personal": [
-        "Personnel"
-      ],
-      "Mobile": [
-        "Portable"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Autre"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Pager"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Adresse électronique"
-      ],
-      "Home": [
-        "Domicile"
-      ],
-      "Work": [
-        "Travail"
-      ],
-      "Other": [
-        "Autre"
-      ],
-      "Phone": [
-        "Téléphone"
-      ],
-      "Mobile": [
-        "Portable"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Address": [
-        "Adresse"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "octets"
-      ],
-      "KB": [
-        "ko"
-      ],
-      "MB": [
-        "Mo"
-      ],
-      "GB": [
-        "Go"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Session expirée."
@@ -378,15 +48,6 @@
       "Loading ${ appName }": [
         "Chargement de ${ appName }"
       ],
-      "here": [
-        "ici"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Votre compte possède au moins une facture impayée. Votre accès a été restreint. ${ payInvoiceLink }"
       ],
@@ -426,6 +87,21 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
       ],
+      "Screenshot(s) attached": [
+        "Capture(s) d’écran jointe(s)"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
+      ],
+      "here": [
+        "ici"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
       ],
@@ -455,12 +131,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvré."
-      ],
-      "Screenshot(s) attached": [
-        "Capture(s) d’écran jointe(s)"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Puisque vous êtes un utilisateur fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
@@ -907,6 +577,30 @@
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
+      "There are no files yet": [
+        "Il n'y a pas encore de fichiers"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Glissez et déposez un fichier ici ou choisissez de l'importer."
+      ],
+      "Share files with links": [
+        "Partager des fichiers avec des liens"
+      ],
+      "Create links and share your files with others.": [
+        "Créez des liens et partagez vos fichiers avec d'autres personnes."
+      ],
+      "My Links": [
+        "Mes liens"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Êtes-vous sûr de vouloir vider la corbeille et supprimer définitivement tous les éléments ?"
+      ],
+      "No files or folders in trash": [
+        "Aucun fichier ou dossier dans la corbeille"
+      ],
+      "Trash": [
+        "Corbeille"
+      ],
       "${ doneCount } Finished": [
         "${ doneCount } terminé",
         "${ doneCount } terminés"
@@ -983,30 +677,6 @@
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Fermer le gestionnaire de transferts annulera tous les transferts actifs, êtes-vous sûr ?"
-      ],
-      "There are no files yet": [
-        "Il n'y a pas encore de fichiers"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Glissez et déposez un fichier ici ou choisissez de l'importer."
-      ],
-      "Share files with links": [
-        "Partager des fichiers avec des liens"
-      ],
-      "Create links and share your files with others.": [
-        "Créez des liens et partagez vos fichiers avec d'autres personnes."
-      ],
-      "My Links": [
-        "Mes liens"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Êtes-vous sûr de vouloir vider la corbeille et supprimer définitivement tous les éléments ?"
-      ],
-      "No files or folders in trash": [
-        "Aucun fichier ou dossier dans la corbeille"
-      ],
-      "Trash": [
-        "Corbeille"
       ],
       "Link expires: ": [
         "Le lien expire le : "
@@ -1090,9 +760,334 @@
         "Sélectionnez un fichier téléchargé et créez un lien vers celui-ci."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresse électronique non trouvée parmi les identifiants utilisateurs définis dans la clé d'envoi (${ keyUserIds })"
+    "Error": {
+      "Request timed out.": [
+        "La requête a expiré."
+      ],
+      "This field is required": [
+        "Ce champ est requis"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "Email is not valid": [
+        "L’adresse électronique n’est pas valide"
+      ],
+      "Not a valid number": [
+        "Numéro non valide"
+      ],
+      "Passwords do not match": [
+        "Les mots de passe ne correspondent pas"
+      ],
+      "Missing signature": [
+        "Signature manquante"
+      ],
+      "Contact signature not verified": [
+        "Signature du contact non vérifiée"
+      ],
+      "Signature not verified": [
+        "Signature non vérifiée"
+      ],
+      "Invalid name": [
+        "Nom invalide"
+      ],
+      "Signature verification failed": [
+        "Échec de la vérification de la signature"
+      ],
+      "Could not find address ${ email }.": [
+        "Impossible de trouver l'adresse ${ email }."
+      ],
+      "Unknown error": [
+        "Erreur inconnue"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
+      ],
+      "Authentication canceled.": [
+        "Authentification annulée."
+      ],
+      "Your import will not be processed.": [
+        "Votre importation ne sera pas traitée."
+      ],
+      "Authentication error.": [
+        "Erreur d'authentification."
+      ],
+      "Email address invalid": [
+        "Adresse électronique invalide"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Le navigateur que vous utilisez ne permet pas de finaliser l’autorisation de paiement. Veuillez utiliser un autre navigateur ou vous connecter via un ordinateur."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Mot de passe de la messagerie incorrect. Veuillez réessayer"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Identifiants de connexion incorrects. Veuillez réessayer"
+      ],
+      "Can't validate email, try again later": [
+        "Impossible de valider l'adresse électronique, veuillez réessayer plus tard"
+      ],
+      "Can't validate phone, try again later": [
+        "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
+      ],
+      "Enter 6 digits": [
+        "Saisissez 6 chiffres"
+      ],
+      "Invalid verification code": [
+        "Code de vérification invalide"
+      ],
+      "Process aborted": [
+        "Processus interrompu"
+      ],
+      "Payment process cancelled": [
+        "Processus de paiement annulé"
+      ],
+      "Payment process failed": [
+        "Échec du processus de paiement"
+      ],
+      "Payment process consumed": [
+        "Processus de paiement achevé"
+      ],
+      "Payment process not supported": [
+        "Processus de paiement non pris en charge"
+      ],
+      "Unknown payment token status": [
+        "Statut du jeton de paiement inconnu"
+      ],
+      "Tab closed": [
+        "Onglet fermé"
+      ],
+      "Name on card required": [
+        "Nom du titulaire de la carte requis"
+      ],
+      "Invalid expiration date": [
+        "Date d’expiration invalide"
+      ],
+      "Invalid card number": [
+        "Numéro de carte non valide"
+      ],
+      "Invalid ${ name } code": [
+        "Code ${ name } non valide"
+      ],
+      "Invalid postal code": [
+        "Code postal invalide"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Erreur de connexion à l’API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Montant inférieur au minimum autorisé."
+      ],
+      "Amount above the maximum.": [
+        "Montant supérieur au maximum autorisé."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Le montant minimal qui peut être donné est ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Le montant minimal de crédit qui peut être ajouté est ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Le paiement minimal que nous acceptons est ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "La commande a expiré, veuillez réessayer."
+      ],
+      "Invalid code": [
+        "Code non valide"
+      ],
+      "Preferences could not be saved": [
+        "Les préférences n'ont pas pu être enregistrées"
+      ],
+      "Some groups could not be deleted": [
+        "Certains groupes n'ont pas pu être supprimés"
+      ],
+      "Image upload failed": [
+        "Échec du téléchargement de l'image"
+      ],
+      "Contact could not be saved": [
+        "Le contact n'a pas pu être enregistré"
+      ],
+      "Some contacts could not be deleted": [
+        "Certains contacts n'ont pas pu être supprimés"
+      ],
+      "Invalid public key file": [
+        "Fichier de clé publique non valide"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Vous ne pouvez pas envoyer de courriel à plus de 100 destinataires"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Un des contacts n'a pas d'adresse électronique : ${ noEmailsContactNamesList }",
+        "Certains contacts n'ont pas d'adresse électronique : ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Une erreur s'est produite lors de l'exportation des vCards des contacts"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Un des groupes n'a pas de contacts : ${ noContactGroupList }",
+        "Certains groupes n'ont pas de contacts : ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Vous devez définir un nom"
+      ],
+      "A group with this name already exists": [
+        "Un groupe portant ce nom existe déjà"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "File has no contents to preview": [
+        "Ce fichier n'a pas de contenu à prévisualiser"
+      ],
+      "No valid address found": [
+        "Aucune adresse valide trouvée"
+      ],
+      "Incorrect password. Please try again.": [
+        "Mot de passe incorrect. Veuillez réessayer."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Le mot de passe doit comporter au moins ${ length } caractère",
+        "Le mot de passe doit comporter au moins ${ length } caractères"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nom"
+      ],
+      "Email": [
+        "Adresse électronique"
+      ],
+      "Phone": [
+        "Téléphone"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Photo": [
+        "Photo"
+      ],
+      "Organization": [
+        "Organisation"
+      ],
+      "Birthday": [
+        "Date de naissance"
+      ],
+      "Anniversary": [
+        "Anniversaire"
+      ],
+      "Title": [
+        "Titre"
+      ],
+      "Role": [
+        "Rôle"
+      ],
+      "Note": [
+        "Note"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Genre"
+      ],
+      "Language": [
+        "Langue"
+      ],
+      "Timezone": [
+        "Fuseau horaire"
+      ],
+      "Geo": [
+        "Coordonnées géographiques"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Membre"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Travail"
+      ],
+      "Personal": [
+        "Personnel"
+      ],
+      "Mobile": [
+        "Portable"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Adresse électronique"
+      ],
+      "Home": [
+        "Domicile"
+      ],
+      "Work": [
+        "Travail"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Phone": [
+        "Téléphone"
+      ],
+      "Mobile": [
+        "Portable"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Address": [
+        "Adresse"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "octets"
+      ],
+      "KB": [
+        "ko"
+      ],
+      "MB": [
+        "Mo"
+      ],
+      "GB": [
+        "Go"
       ]
     },
     "Calendar status": {
@@ -1170,6 +1165,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresse électronique non trouvée parmi les identifiants utilisateurs définis dans la clé d'envoi (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1378,11 +1378,11 @@
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Load image": [
         "Charger l'image"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Export": [
         "Exporter"
@@ -1435,9 +1435,6 @@
       "Signing out": [
         "Déconnexion"
       ],
-      "Log in": [
-        "Se connecter"
-      ],
       "Close this banner": [
         "Fermer cette bannière"
       ],
@@ -1449,30 +1446,6 @@
       ],
       "here": [
         "ici"
-      ],
-      "View invoice": [
-        "Voir la facture"
-      ],
-      "Get verification code": [
-        "Demander un code de vérification"
-      ],
-      "Try another method": [
-        "Essayer une autre méthode"
-      ],
-      "Request new code": [
-        "Demander un nouveau code"
-      ],
-      "Verify": [
-        "Vérifier"
-      ],
-      "Did not receive the code?": [
-        "Vous n’avez pas reçu le code ?"
-      ],
-      "Edit email address": [
-        "Modifier l'adresse électronique"
-      ],
-      "Edit phone number": [
-        "Modifier le numéro de téléphone"
       ],
       "Copy email to clipboard": [
         "Copier l’adresse électronique dans le presse-papiers"
@@ -1557,6 +1530,33 @@
       ],
       "Show info": [
         "Afficher les infos"
+      ],
+      "Log in": [
+        "Se connecter"
+      ],
+      "View invoice": [
+        "Voir la facture"
+      ],
+      "Get verification code": [
+        "Demander un code de vérification"
+      ],
+      "Try another method": [
+        "Essayer une autre méthode"
+      ],
+      "Request new code": [
+        "Demander un nouveau code"
+      ],
+      "Verify": [
+        "Vérifier"
+      ],
+      "Did not receive the code?": [
+        "Vous n’avez pas reçu le code ?"
+      ],
+      "Edit email address": [
+        "Modifier l'adresse électronique"
+      ],
+      "Edit phone number": [
+        "Modifier le numéro de téléphone"
       ],
       "Remove bonuses": [
         "Retirer les bonus"
@@ -1755,60 +1755,6 @@
       "Cancel all uploads": [
         "Annuler tous les téléchargements"
       ],
-      "Share": [
-        "Partager"
-      ],
-      "Show shared link details": [
-        "Afficher les détails du lien partagé"
-      ],
-      "Maximize transfers": [
-        "Maximiser les transferts"
-      ],
-      "Minimize transfers": [
-        "Minimiser les transferts"
-      ],
-      "Close transfers": [
-        "Fermer les transferts"
-      ],
-      "Pause download": [
-        "Suspendre le téléchargement"
-      ],
-      "Pause upload": [
-        "Suspendre l’importation"
-      ],
-      "Resume download": [
-        "Reprendre le téléchargement"
-      ],
-      "Resume upload": [
-        "Reprendre l’importation"
-      ],
-      "Cancel download": [
-        "Annuler le téléchargement"
-      ],
-      "Cancel upload": [
-        "Annuler l’importation"
-      ],
-      "Restart download": [
-        "Relancer le téléchargement"
-      ],
-      "Restart upload": [
-        "Relancer l’envoi"
-      ],
-      "Remove from this list": [
-        "Retirer de cette liste"
-      ],
-      "Resume transfers": [
-        "Reprendre les transferts"
-      ],
-      "Pause transfers": [
-        "Suspendre les transferts"
-      ],
-      "Cancel transfers": [
-        "Annuler les transferts"
-      ],
-      "Restart transfers": [
-        "Redémarrez les transferts"
-      ],
       "New upload": [
         "Nouveau téléchargement"
       ],
@@ -1823,6 +1769,9 @@
       ],
       "Share options": [
         "Options de partage"
+      ],
+      "Share": [
+        "Partager"
       ],
       "Create new folder": [
         "Créer un nouveau dossier"
@@ -1878,6 +1827,57 @@
       "Restore from trash": [
         "Restaurer depuis la corbeille"
       ],
+      "Maximize transfers": [
+        "Maximiser les transferts"
+      ],
+      "Minimize transfers": [
+        "Minimiser les transferts"
+      ],
+      "Close transfers": [
+        "Fermer les transferts"
+      ],
+      "Pause download": [
+        "Suspendre le téléchargement"
+      ],
+      "Pause upload": [
+        "Suspendre l’importation"
+      ],
+      "Resume download": [
+        "Reprendre le téléchargement"
+      ],
+      "Resume upload": [
+        "Reprendre l’importation"
+      ],
+      "Cancel download": [
+        "Annuler le téléchargement"
+      ],
+      "Cancel upload": [
+        "Annuler l’importation"
+      ],
+      "Restart download": [
+        "Relancer le téléchargement"
+      ],
+      "Restart upload": [
+        "Relancer l’envoi"
+      ],
+      "Remove from this list": [
+        "Retirer de cette liste"
+      ],
+      "Resume transfers": [
+        "Reprendre les transferts"
+      ],
+      "Pause transfers": [
+        "Suspendre les transferts"
+      ],
+      "Cancel transfers": [
+        "Annuler les transferts"
+      ],
+      "Restart transfers": [
+        "Redémarrez les transferts"
+      ],
+      "Show shared link details": [
+        "Afficher les détails du lien partagé"
+      ],
       "Start recovering": [
         "Commencer la récupération"
       ],
@@ -1919,6 +1919,21 @@
       "What's new": [
         "Nouveautés"
       ],
+      "Open help menu": [
+        "Ouvrir le menu d'aide"
+      ],
+      "Back": [
+        "Retour"
+      ],
+      "Open settings menu": [
+        "Ouvrir le menu des paramètres"
+      ],
+      "Select a theme": [
+        "Choisissez un thème"
+      ],
+      "Report a problem": [
+        "Signaler un problème"
+      ],
       "Sign in again to continue": [
         "Connectez-vous à nouveau"
       ],
@@ -1939,21 +1954,6 @@
       ],
       "Human verification": [
         "Vérification de l'existence de l'utilisateur"
-      ],
-      "Open help menu": [
-        "Ouvrir le menu d'aide"
-      ],
-      "Back": [
-        "Retour"
-      ],
-      "Open settings menu": [
-        "Ouvrir le menu des paramètres"
-      ],
-      "Select a theme": [
-        "Choisissez un thème"
-      ],
-      "Report a problem": [
-        "Signaler un problème"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmer la perte des bonus Proton"
@@ -2193,20 +2193,14 @@
       "Drop to upload": [
         "Déposer pour télécharger"
       ],
-      "My files": [
-        "Mes fichiers"
-      ],
-      "Additional settings": [
-        "Paramètres supplémentaires"
-      ],
-      "Cancel all active transfers": [
-        "Annuler tous les transferts en cours"
-      ],
       "Show actions": [
         "Afficher les actions"
       ],
       "Sort files/folders": [
         "Trier les fichiers/dossiers"
+      ],
+      "My files": [
+        "Mes fichiers"
       ],
       "Change layout": [
         "Modifier la mise en page"
@@ -2219,6 +2213,12 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Additional settings": [
+        "Paramètres supplémentaires"
+      ],
+      "Cancel all active transfers": [
+        "Annuler tous les transferts en cours"
       ],
       "Your file is ready to be downloaded": [
         "Votre fichier est prêt à être téléchargé"
@@ -2369,6 +2369,36 @@
       "Do not ask again": [
         "Ne plus demander"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
+      "Operating system": [
+        "Système d'exploitation"
+      ],
+      "Operating system version": [
+        "Version du système d'exploitation"
+      ],
+      "Proton username": [
+        "Nom d'utilisateur Proton"
+      ],
+      "Email address": [
+        "Adresse électronique"
+      ],
+      "Category": [
+        "Catégorie"
+      ],
+      "What happened?": [
+        "Que s'est-il passé ?"
+      ],
+      "System information": [
+        "Informations système"
+      ],
+      "Browser": [
+        "Navigateur"
+      ],
+      "Browser version": [
+        "Version du navigateur"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -2387,9 +2417,6 @@
       "Username or ProtonMail address": [
         "Nom d'utilisateur ou adresse ProtonMail"
       ],
-      "Email address": [
-        "Adresse électronique"
-      ],
       "Phone number": [
         "Numéro de téléphone"
       ],
@@ -2398,33 +2425,6 @@
       ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
-      ],
-      "Display name": [
-        "Nom d'affichage"
-      ],
-      "Operating system": [
-        "Système d'exploitation"
-      ],
-      "Operating system version": [
-        "Version du système d'exploitation"
-      ],
-      "Proton username": [
-        "Nom d'utilisateur Proton"
-      ],
-      "Category": [
-        "Catégorie"
-      ],
-      "What happened?": [
-        "Que s'est-il passé ?"
-      ],
-      "System information": [
-        "Informations système"
-      ],
-      "Browser": [
-        "Navigateur"
-      ],
-      "Browser version": [
-        "Version du navigateur"
       ],
       "Name on card": [
         "Nom sur la carte"
@@ -2555,33 +2555,6 @@
       "Apply to all duplicated files": [
         "Appliquer à tous les fichiers dupliqués"
       ],
-      "Folder": [
-        "Dossier"
-      ],
-      "(Expired)": [
-        "(expiré)"
-      ],
-      "Expired": [
-        "Expiré"
-      ],
-      "Never": [
-        "Jamais"
-      ],
-      "File": [
-        "Fichier"
-      ],
-      "All": [
-        "Tout"
-      ],
-      "Active": [
-        "Actifs"
-      ],
-      "Failed": [
-        "Échecs"
-      ],
-      "Apply to selected transfers": [
-        "Appliquer aux transferts sélectionnés"
-      ],
       "Audio file": [
         "Fichier audio"
       ],
@@ -2596,6 +2569,33 @@
       ],
       "Unknown file": [
         "Fichier inconnu"
+      ],
+      "All": [
+        "Tout"
+      ],
+      "Active": [
+        "Actifs"
+      ],
+      "Failed": [
+        "Échecs"
+      ],
+      "Apply to selected transfers": [
+        "Appliquer aux transferts sélectionnés"
+      ],
+      "Folder": [
+        "Dossier"
+      ],
+      "(Expired)": [
+        "(expiré)"
+      ],
+      "Expired": [
+        "Expiré"
+      ],
+      "Never": [
+        "Jamais"
+      ],
+      "File": [
+        "Fichier"
       ],
       "Get your own ${ appName }": [
         "Obtenez votre propre ${ appName }"
@@ -2620,9 +2620,6 @@
       "E.g., ": [
         "P. ex., "
       ],
-      "Mailbox password": [
-        "Mot de passe de messagerie"
-      ],
       "e.g. Julia Smith": [
         "p. ex. Julia Smith"
       ],
@@ -2646,6 +2643,9 @@
       ],
       "Browser version": [
         "Version du navigateur"
+      ],
+      "Mailbox password": [
+        "Mot de passe de messagerie"
       ],
       "ZIP": [
         "Code postal"
@@ -2717,9 +2717,6 @@
       "Upgrade account": [
         "Changer d'offre"
       ],
-      "Request an invite": [
-        "Demander une invitation"
-      ],
       "Upgrade": [
         "Changer d'offre"
       ],
@@ -2728,6 +2725,9 @@
       ],
       "clearing your browser cache": [
         "vider le cache de votre navigateur"
+      ],
+      "Request an invite": [
+        "Demander une invitation"
       ],
       "click here": [
         "cliquez ici"
@@ -2897,6 +2897,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Le dialogue en ligne en temps réel est une fonctionnalité premium disponible uniquement pour les personnes disposant d’une offre ProtonVPN payante. Veuillez ouvrir un ticket à la place."
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
       ],
@@ -2952,14 +2955,14 @@
       "Address copied to clipboard": [
         "Adresse copiée dans le presse-papiers"
       ],
+      "Bug reported": [
+        "Bug signalé"
+      ],
       "Code sent to ${ methodTo }": [
         "Code envoyé à ${ methodTo }"
       ],
       "Verification successful": [
         "Vérification réussie"
-      ],
-      "Bug reported": [
-        "Bug signalé"
       ],
       "You have successfully unsubscribed": [
         "Vous vous êtes correctement désabonné"
@@ -3015,6 +3018,17 @@
         "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Applications Proton"
+      ],
+      "Go to ${ title }": [
+        "Aller à ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Aller vers ${ vpnName }"
+      ]
+    },
     "Error message": {
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé"
@@ -3047,42 +3061,9 @@
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Applications Proton"
-      ],
-      "Go to ${ title }": [
-        "Aller à ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Aller vers ${ vpnName }"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Facture impayée"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Adresse électronique"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuel"
-      ],
-      "No verification method available": [
-        "Aucune méthode de vérification disponible"
       ]
     },
     "Header": {
@@ -3268,6 +3249,28 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Joindre une ou des capture(s) d'écran"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Facture impayée"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Adresse électronique"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuel"
+      ],
+      "No verification method available": [
+        "Aucune méthode de vérification disponible"
       ]
     },
     "Info for cash payment method": {
@@ -3717,30 +3720,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortable"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Colonne"
-      ],
-      "Row": [
-        "Ligne"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximisé"
-      ]
-    },
     "Notification": {
       "Contact group updated": [
         "Groupe de contacts mis à jour"
@@ -3843,6 +3822,9 @@
         "${ failedCount } lien vers votre fichier n’a pas pu être supprimé.",
         "${ failedCount } liens vers vos fichiers n'ont pas pu être supprimés."
       ],
+      "All items will soon be permanently deleted from trash": [
+        "Tous les éléments seront bientôt supprimés définitivement de la corbeille"
+      ],
       "Move ${ movingCount } file": [
         "Déplacer ${ movingCount } fichier",
         "Déplacer ${ movingCount } fichiers"
@@ -3854,9 +3836,6 @@
       "Move ${ movingCount } item": [
         "Déplacer ${ movingCount } élément",
         "Déplacer ${ movingCount } éléments"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Tous les éléments seront bientôt supprimés définitivement de la corbeille"
       ],
       "Failed to move, please try again": [
         "Échec du déplacement, veuillez réessayer"
@@ -4098,6 +4077,30 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortable"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Colonne"
+      ],
+      "Row": [
+        "Ligne"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximisé"
       ]
     },
     "Select files": {

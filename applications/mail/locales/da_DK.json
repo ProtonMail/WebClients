@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "da"
+    "language": "da_DK"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Feltet er påkrævet"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
-      ],
-      "Signature verification failed": [
-        "Bekræftelse af signatur mislykkedes"
-      ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
       ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
       ],
+      "Request timed out.": [
+        "Forespørgsel fik timeout."
+      ],
       "Missing signature": [
         "Manglende signatur"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Nøgleegenskaberne for ${ emailAddress } kunne ikke udtrækkes"
+      ],
+      "Signature verification failed": [
+        "Bekræftelse af signatur mislykkedes"
+      ],
+      "Could not find address ${ email }.": [
+        "Kunne ikke finde adresse ${ email }."
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
+      "Email address invalid": [
+        "Ugyldig e-mailadresse"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
-      ],
-      "Email address invalid": [
-        "Ugyldig e-mailadresse"
       ],
       "The composer failed to load.": [
         "Skriveværktøjet blev ikke indlæst."
@@ -314,6 +328,9 @@
         "Duplikeret modtager fjernet: ${ recipents }",
         "Duplikerede modtagere fjernet: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "Beskedadgangskoder matcher ikke."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Ukendt fejl."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "For mange aktive filtre. Opgrader venligst til et betalt abonnement for at aktivere flere filtre"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
         "Adgangskode skal indeholde mindst ${ length } tegn"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Adresse"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Sv:"
+      ],
+      "Fw:": [
+        "Vs:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "D. ${ date }, ${ name } skrev ${ address }:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Din session er udløbet."
@@ -526,17 +549,14 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "support team": [
-        "supportteam"
-      ],
-      "Loading": [
-        "Indlæser"
-      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
       "You can either update your search query or ${ button }": [
         "Du kan enten opdatere din søgeforespørgsel eller ${ button }"
+      ],
+      "support team": [
+        "supportteam"
       ],
       "Week": [
         "Uge"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
+      ],
+      "Loading": [
+        "Indlæser"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Benyt en anden browser til at åbne linket, hvis du er sikker på, at det er legitimt."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Test link"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Tekstfarve"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar."
+      ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
@@ -1520,6 +1552,12 @@
         "Anslået resterende tid: ${ estimatedMinutes } minut",
         "Anslået resterende tid: ${ estimatedMinutes } minutter"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } ulæst samtale",
         "${ unreadCount } ulæste samtaler"
@@ -1698,22 +1736,6 @@
         "Skan QR-koden eller besøg ${ link } ved hjælp af din mobilenhed."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Sv:"
-      ],
-      "Fw:": [
-        "Vs:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "D. ${ date }, ${ name } skrev ${ address }:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Ukendt"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Luk"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
-      "Use “${ label }” setting": [
-        "Brug “${ label }” indstilling"
-      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Bekræft"
       ],
       "Cancel": [
         "Annullér"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Luk vindue"
       ],
-      "Confirm": [
-        "Bekræft"
+      "Use “${ label }” setting": [
+        "Brug “${ label }” indstilling"
       ],
       "Remove": [
         "Fjern"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "E-mailindstillinger"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Next month": [
         "Næste måned"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Rediger telefonnummer"
       ],
-      "Use ${ label } theme": [
-        "Brug ${ label } tema"
-      ],
-      "OK": [
-        "Ok"
-      ],
       "Add": [
         "Tilføj"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "Næste"
+      ],
+      "Use ${ label } theme": [
+        "Brug ${ label } tema"
+      ],
+      "OK": [
+        "Ok"
       ],
       "Continue import": [
         "Fortsæt import"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Føj til ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Få mere at vide"
-      ],
-      "Open shop": [
-        "Åbn butik"
-      ],
-      "Open calendar": [
-        "Åbn kalender"
-      ],
       "Send anyway": [
         "Send alligevel"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "Gå tilbage"
       ],
       "Send": [
         "Send"
@@ -3323,6 +3338,9 @@
       "Show": [
         "Vis"
       ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
       "Undo": [
         "Fortryd"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Avanceret søgning"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Markér som læst"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         "Opret ny besked"
       ],
+      "Open shop": [
+        "Åbn butik"
+      ],
+      "Open calendar": [
+        "Åbn kalender"
+      ],
       "Import messages": [
         "Importer beskeder"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
       ],
       "Delete ${ Name }": [
         "Slet ${ Name }"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Importér kontakter"
+      ],
+      "Select a theme": [
+        "Vælg et tema"
       ],
       "Start import process": [
         "Start importeringsprocessen"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "Blind karbonkopi"
       ],
-      "Errors detected": [
-        "Fejl registreret"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Bekræft modtageradresse?"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Få yderligere information"
+      ],
+      "Request an invite": [
+        "Anmod om invitation"
+      ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
+      ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
+      "Upgrade account": [
+        "Opgradér konto"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Go to subscription plans": [
+        "Gå til abonnementer"
+      ],
+      "click here": [
+        "klik hér"
+      ],
+      "Add a gift code": [
+        "Tilføj en gavekode"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Du skal aktivere dine kalendernøgler for at tilføje denne begivenhed"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Du skal aktivere dine kalendernøgler for at administrere denne invitation"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Du skal aktivere dine kalendernøgler for at besvare denne invitation"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Du skal aktivere dine kalendernøgler for at se den opdateret begivenhed"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Du skal aktivere dine kalendernøgler for at se den opdateret invitation"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Denne ICS-fil indeholder mere end én begivenhed. Download den og importer begivenhederne i ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Du skal genaktivere dine nøgler for at administrere denne invitation"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Du skal genaktivere dine nøgler for at se den opdateret begivenhed"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Du skal genaktivere dine nøgler for at se den opdateret invitation"
+      ],
+      "Create a new calendar to add this event": [
+        "Opret en ny kalender for at tilføje denne begivenhed"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Opret en ny kalender for at besvare denne invitation"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Opret en ny kalender for at administrere dine invitationer"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Åbn opdateret begivenhed i ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Åbn i ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Indbakke"
+      ],
+      "Drafts": [
+        "Kladder"
+      ],
+      "Sent": [
+        "Sendt"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Alle e-mails"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Starred": [
+        "Stjernemarkeret"
+      ],
+      "Outbox": [
+        "Udbakke"
+      ],
+      "Scheduled": [
+        "Planlagt"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Genaktivér adressen knyttet til denne kalender for at håndtere din invitation."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Genaktivér adressen knyttet til denne kalender for at opdatere din invitation."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Aktivér din adresse for at besvare denne invitation."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Opret en kalender knyttet til en aktiv e-mailadresse."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Aktiver en e-mailadresse knyttet til en af dine kalendere."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Eller du kan slette en af dine kalendere og oprette en ny, som er knyttet til en aktiv e-mailadresse."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Aktivér din adresse igen for at ændre dit svar."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Aktiver den e-mailadresse, der er knyttet til den deaktiverede kalender, for at annullere begivenheden."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Aktiver den e-mailadresse, der er knyttet til den deaktiverede kalender, for at rette dit svar."
+      ],
+      "Add folder": [
+        "Tilføj mappe"
+      ],
+      "Add label": [
+        "Tilføj etiket"
+      ],
+      "Folders": [
+        "Mapper"
+      ],
+      "Manage your folders": [
+        "Administrer dine mapper"
+      ],
+      "Labels": [
+        "Etiketter"
+      ],
+      "Manage your labels": [
+        "Administrer dine etiketter"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } sekunder"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Få yderligere information"
-      ],
-      "Request an invite": [
-        "Anmod om invitation"
-      ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
-      ],
-      "Pay invoice": [
-        "Betal faktura"
-      ],
-      "Upgrade account": [
-        "Opgradér konto"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Go to subscription plans": [
-        "Gå til abonnementer"
-      ],
-      "click here": [
-        "klik hér"
-      ],
-      "Add a gift code": [
-        "Tilføj en gavekode"
-      ],
-      "Inbox": [
-        "Indbakke"
-      ],
-      "Drafts": [
-        "Kladder"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
-      "Trash": [
-        "Papirkurv"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Alle e-mails"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
-      "Starred": [
-        "Stjernemarkeret"
-      ],
-      "Outbox": [
-        "Udbakke"
-      ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Du skal aktivere dine kalendernøgler for at tilføje denne begivenhed"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Du skal aktivere dine kalendernøgler for at administrere denne invitation"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Du skal aktivere dine kalendernøgler for at besvare denne invitation"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Du skal aktivere dine kalendernøgler for at se den opdateret begivenhed"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Du skal aktivere dine kalendernøgler for at se den opdateret invitation"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Denne ICS-fil indeholder mere end én begivenhed. Download den og importer begivenhederne i ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Du skal genaktivere dine nøgler for at administrere denne invitation"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Du skal genaktivere dine nøgler for at se den opdateret begivenhed"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Du skal genaktivere dine nøgler for at se den opdateret invitation"
-      ],
-      "Create a new calendar to add this event": [
-        "Opret en ny kalender for at tilføje denne begivenhed"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Opret en ny kalender for at besvare denne invitation"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Opret en ny kalender for at administrere dine invitationer"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Åbn opdateret begivenhed i ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Åbn i ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Genaktivér adressen knyttet til denne kalender for at håndtere din invitation."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Genaktivér adressen knyttet til denne kalender for at opdatere din invitation."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Aktivér din adresse for at besvare denne invitation."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Opret en kalender knyttet til en aktiv e-mailadresse."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Aktiver en e-mailadresse knyttet til en af dine kalendere."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Eller du kan slette en af dine kalendere og oprette en ny, som er knyttet til en aktiv e-mailadresse."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Aktivér din adresse igen for at ændre dit svar."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Aktiver den e-mailadresse, der er knyttet til den deaktiverede kalender, for at annullere begivenheden."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Aktiver den e-mailadresse, der er knyttet til den deaktiverede kalender, for at rette dit svar."
-      ],
-      "Add folder": [
-        "Tilføj mappe"
-      ],
-      "Add label": [
-        "Tilføj etiket"
-      ],
-      "Folders": [
-        "Mapper"
-      ],
-      "Manage your folders": [
-        "Administrer dine mapper"
-      ],
-      "Labels": [
-        "Etiketter"
-      ],
-      "Manage your labels": [
-        "Administrer dine etiketter"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Denne funktion kræver en betalt Proton-konto"
@@ -4707,6 +4734,9 @@
         "Er du sikker på, at du vil kassere din import?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5150,30 +5180,6 @@
         "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maksimeret"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Navn"
@@ -5390,6 +5396,35 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maksimeret"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Overfør"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Forbinder til dine kontakters udbyder"
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Overfør"
       ]
     },
     "Onboarding Proton": {
@@ -6683,10 +6713,6 @@
         "Vi har opdaget fejl. Din e-mail kan ikke sendes til den indtastede e-mailadresse af følgende årsag:",
         "Vi har opdaget fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsag:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Gå tilbage for at redigere den e-mailadresse, du indtastede.",
-        "Gå tilbage for at redigere de e-mailadresser, du indtastede."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har opdaget nogle fejl. Din e-mail kan ikke sendes til en eller flere af de indtastede e-mailadresser af de følgende årsager:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Næste"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

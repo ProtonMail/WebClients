@@ -1,340 +1,10 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "tr"
+    "language": "tr_TR"
   },
   "contexts": {
     "": {},
-    "Error": {
-      "This field is required": [
-        "Bu alan gereklidir"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alan en az ${ minimumLength } karakter gerektirir."
-      ],
-      "Email is not valid": [
-        "E-posta geçerli değil"
-      ],
-      "Not a valid number": [
-        "Geçerli bir sayı değil"
-      ],
-      "Passwords do not match": [
-        "Şifreler uyuşmuyor"
-      ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
-      ],
-      "Signature verification failed": [
-        "İmza doğrulama başarısız"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
-      ],
-      "Missing signature": [
-        "İmza eksik"
-      ],
-      "Contact signature not verified": [
-        "Kişi imzası doğrulanamadı"
-      ],
-      "Signature not verified": [
-        "İmza doğrulanmadı"
-      ],
-      "Invalid name": [
-        "Geçersiz ad"
-      ],
-      "Unknown error": [
-        "Bilinmeyen hata"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Bu ileti, mevcut tarayıcınız tarafından düzgün görüntülenemeyen bazı URL bağlantıları içerebilir"
-      ],
-      "Authentication canceled.": [
-        "Kimlik doğrulama iptal edildi."
-      ],
-      "Your import will not be processed.": [
-        "İçe aktarımınız işlenmeyecektir."
-      ],
-      "Authentication error.": [
-        "Kimlik doğrulama hatası."
-      ],
-      "Email address invalid": [
-        "E-posta adresi geçersiz"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Yanlış posta kutusu şifresi. Lütfen tekrar deneyin"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Yanlış giriş bilgileri. Lütfen tekrar deneyin"
-      ],
-      "Can't validate email, try again later": [
-        "E-postayı doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon numarası doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Enter 6 digits": [
-        "6 hane girin"
-      ],
-      "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
-      ],
-      "Process aborted": [
-        "İşlem iptal edildi"
-      ],
-      "Payment process cancelled": [
-        "Ödeme süreci iptal edildi"
-      ],
-      "Payment process failed": [
-        "Ödeme süreci başarısız oldu"
-      ],
-      "Payment process consumed": [
-        "Ödeme süreci tüketildi"
-      ],
-      "Payment process not supported": [
-        "Ödeme süreci desteklenmiyor"
-      ],
-      "Unknown payment token status": [
-        "Bilinmeyen ödeme belirteci durumu"
-      ],
-      "Tab closed": [
-        "Sekme kapatıldı"
-      ],
-      "Name on card required": [
-        "Kart üzerindeki ad gerekli"
-      ],
-      "Invalid expiration date": [
-        "Geçersiz son kullanım tarihi"
-      ],
-      "Invalid card number": [
-        "Geçersiz kart numarası"
-      ],
-      "Invalid ${ name } code": [
-        "Geçersiz ${ name } kodu"
-      ],
-      "Invalid postal code": [
-        "Geçersiz posta kodu"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Bitcoin API'sine bağlanırken hata meydana geldi."
-      ],
-      "Amount below minimum.": [
-        "Tutar, en düşük değerin altında."
-      ],
-      "Amount above the maximum.": [
-        "Tutar, en yüksek değerin üstünde."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Bağışlanabilecek en düşük tutar ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Eklenebilecek en düşük kredi tutarı ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Kabul ettiğimiz en düşük ödeme ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Ödeme zaman aşımına uğradı, lütfen tekrar deneyin."
-      ],
-      "Invalid code": [
-        "Geçersiz kod"
-      ],
-      "Preferences could not be saved": [
-        "Tercihler kaydedilemedi"
-      ],
-      "Some groups could not be deleted": [
-        "Bazı gruplar silinemedi"
-      ],
-      "Image upload failed": [
-        "Resim yükleme başarısız"
-      ],
-      "Contact could not be saved": [
-        "Kişi kaydedilemedi"
-      ],
-      "Some contacts could not be deleted": [
-        "Bazı kişiler silinemedi"
-      ],
-      "Invalid public key file": [
-        "Geçersiz genel anahtar dosyası"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "100'den fazla alıcıya ileti gönderemezsiniz"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
-        "Kişilerden bazılarının e-posta adresi yok: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "10'dan daha fazla kişinin vCard'larını gönderemezsiniz"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Kişilerin vCard'larını dışa aktarırken bir hata oluştu"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Gruplardan birinde kişi yok: ${ noContactGroupList }",
-        "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
-      ],
-      "You must set a name": [
-        "Bir isim belirlemelisiniz"
-      ],
-      "A group with this name already exists": [
-        "Bu ada sahip bir grup zaten var"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "File has no contents to preview": [
-        "Dosyanın önizlenecek içeriği yok"
-      ],
-      "No valid address found": [
-        "Geçerli bir adres bulunamadı"
-      ],
-      "Incorrect password. Please try again.": [
-        "Yanlış şifre, lütfen tekrar deneyin."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Ad"
-      ],
-      "Email": [
-        "E-posta"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adres"
-      ],
-      "Photo": [
-        "Fotoğraf"
-      ],
-      "Organization": [
-        "Kuruluş"
-      ],
-      "Birthday": [
-        "Doğum günü"
-      ],
-      "Anniversary": [
-        "Yıldönümü"
-      ],
-      "Title": [
-        "Başlık"
-      ],
-      "Role": [
-        "Rol"
-      ],
-      "Note": [
-        "Not"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Cinsiyet"
-      ],
-      "Language": [
-        "Dil"
-      ],
-      "Timezone": [
-        "Zaman dilimi"
-      ],
-      "Geo": [
-        "Coğrafi"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Üye"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "İş"
-      ],
-      "Personal": [
-        "Kişisel"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Ana"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Çağrı"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-posta"
-      ],
-      "Home": [
-        "Ev"
-      ],
-      "Work": [
-        "İş"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Main": [
-        "Ana"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Çağrı"
-      ],
-      "Address": [
-        "Adres"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bayt"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -370,22 +40,13 @@
         "Daha çok bilgi edinin"
       ],
       "Drop the file here to upload": [
-        "Yüklemek için bir dosyayı buraya bırakın"
+        "Yüklemek için dosyayı buraya bırakın"
       ],
       "Loading": [
         "Yükleniyor"
       ],
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
-      ],
-      "here": [
-        "Buradan"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Hesabınızda en az bir gecikmiş fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
@@ -426,6 +87,21 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Beta Erişimini devre dışı bıraktınız. ${ appName } uygulamasının stabil sürümünü kullanmak için ${ refreshButton }. Uygulama yenilenecektir."
       ],
+      "Screenshot(s) attached": [
+        "Ekran görüntüsü(leri) eklendi"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
+      ],
+      "here": [
+        "Buradan"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Bunun bir hata olduğunu düşünüyorsanız, lütfen bizimle ${ contactLink } üzerinden iletişime geçin."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
       ],
@@ -455,12 +131,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
-      ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüsü(leri) eklendi"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirilmiştir."
@@ -848,7 +518,7 @@
         "Önizleme mevcut değil"
       ],
       "Preview": [
-        "Ön izle"
+        "Önizle"
       ],
       "Loading preview": [
         "Önizleme yükleniyor"
@@ -906,6 +576,30 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelenecek ve ardından kaydedilecektir."
+      ],
+      "There are no files yet": [
+        "Henüz dosya yok"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Buraya bir dosya sürükleyip bırakın veya yüklemeyi seçin."
+      ],
+      "Share files with links": [
+        "Bağlantılarla dosya paylaşın"
+      ],
+      "Create links and share your files with others.": [
+        "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
+      ],
+      "My Links": [
+        "Bağlantılarım"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "No files or folders in trash": [
+        "Çöp Kutusunda dosya veya klasör yok"
+      ],
+      "Trash": [
+        "Çöp Kutusu"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Tamamlandı",
@@ -979,34 +673,10 @@
         "İndiriliyor"
       ],
       "Uploading": [
-        "Yükleme"
+        "Yükleniyor"
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Transfer yöneticisinin kapatılması tüm aktif transferleri iptal edecek, emin misiniz?"
-      ],
-      "There are no files yet": [
-        "Henüz dosya yok"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Buraya bir dosya sürükleyip bırakın veya yüklemeyi seçin."
-      ],
-      "Share files with links": [
-        "Bağlantılarla dosya paylaşın"
-      ],
-      "Create links and share your files with others.": [
-        "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
-      ],
-      "My Links": [
-        "Bağlantılarım"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
-      ],
-      "No files or folders in trash": [
-        "Çöp Kutusunda dosya veya klasör yok"
-      ],
-      "Trash": [
-        "Çöp Kutusu"
       ],
       "Link expires: ": [
         ""
@@ -1054,7 +724,7 @@
         ""
       ],
       "Anyone with this link can access your file.": [
-        ""
+        "Bu bağlantıya sahip olan herkes dosyanıza erişebilir."
       ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve şifreye sahip kişiler erişebilir."
@@ -1063,7 +733,7 @@
         ""
       ],
       "Your secure, shareable link for ${ boldNameText }:": [
-        ""
+        "${ boldNameText } için güvenli, paylaşılabilir bağlantınız:"
       ],
       "Failed to generate a secure link. Try again later.": [
         "Güvenli bir bağlantı oluşturulamadı. Daha sonra tekrar deneyin."
@@ -1072,7 +742,7 @@
         "Güvenli bağlantıyı açmada hata oluştu. Bunun sebebi: ${ error }"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        ""
+        "Bu bağlantı kalıcı olarak devre dışı bırakılacak. Bu bağlantıya sahip hiç kimse dosyanıza erişemez. Dosyayı yeniden paylaşmak için yeni bir bağlantıya ihtiyacınız olacak."
       ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
@@ -1090,9 +760,334 @@
         "Yüklenmiş bir dosyayı seçin ve bağlantı oluşturun."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
+    "Error": {
+      "Request timed out.": [
+        "İstek zaman aşımına uğradı."
+      ],
+      "This field is required": [
+        "Bu alan gereklidir"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alan en az ${ minimumLength } karakter gerektirir."
+      ],
+      "Email is not valid": [
+        "E-posta geçerli değil"
+      ],
+      "Not a valid number": [
+        "Geçerli bir sayı değil"
+      ],
+      "Passwords do not match": [
+        "Şifreler uyuşmuyor"
+      ],
+      "Missing signature": [
+        "İmza eksik"
+      ],
+      "Contact signature not verified": [
+        "Kişi imzası doğrulanamadı"
+      ],
+      "Signature not verified": [
+        "İmza doğrulanmadı"
+      ],
+      "Invalid name": [
+        "Geçersiz ad"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulama başarısız"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
+      ],
+      "Unknown error": [
+        "Bilinmeyen hata"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Bu ileti, mevcut tarayıcınız tarafından düzgün görüntülenemeyen bazı URL bağlantıları içerebilir"
+      ],
+      "Authentication canceled.": [
+        "Kimlik doğrulama iptal edildi."
+      ],
+      "Your import will not be processed.": [
+        "İçe aktarımınız işlenmeyecektir."
+      ],
+      "Authentication error.": [
+        "Kimlik doğrulama hatası."
+      ],
+      "Email address invalid": [
+        "E-posta adresi geçersiz"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Kullanmakta olduğunuz tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Yanlış posta kutusu şifresi. Lütfen tekrar deneyin"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Yanlış giriş bilgileri. Lütfen tekrar deneyin"
+      ],
+      "Can't validate email, try again later": [
+        "E-postayı doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefon numarası doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Enter 6 digits": [
+        "6 hane girin"
+      ],
+      "Invalid verification code": [
+        "Geçersiz doğrulama kodu"
+      ],
+      "Process aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Payment process cancelled": [
+        "Ödeme süreci iptal edildi"
+      ],
+      "Payment process failed": [
+        "Ödeme süreci başarısız oldu"
+      ],
+      "Payment process consumed": [
+        "Ödeme süreci tüketildi"
+      ],
+      "Payment process not supported": [
+        "Ödeme süreci desteklenmiyor"
+      ],
+      "Unknown payment token status": [
+        "Bilinmeyen ödeme belirteci durumu"
+      ],
+      "Tab closed": [
+        "Sekme kapatıldı"
+      ],
+      "Name on card required": [
+        "Kart üzerindeki ad gerekli"
+      ],
+      "Invalid expiration date": [
+        "Geçersiz son kullanım tarihi"
+      ],
+      "Invalid card number": [
+        "Geçersiz kart numarası"
+      ],
+      "Invalid ${ name } code": [
+        "Geçersiz ${ name } kodu"
+      ],
+      "Invalid postal code": [
+        "Geçersiz posta kodu"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Bitcoin API'sine bağlanırken hata meydana geldi."
+      ],
+      "Amount below minimum.": [
+        "Tutar, en düşük değerin altında."
+      ],
+      "Amount above the maximum.": [
+        "Tutar, en yüksek değerin üstünde."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Bağışlanabilecek en düşük tutar ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Eklenebilecek en düşük kredi tutarı ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Kabul ettiğimiz en düşük ödeme ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Ödeme zaman aşımına uğradı, lütfen tekrar deneyin."
+      ],
+      "Invalid code": [
+        "Geçersiz kod"
+      ],
+      "Preferences could not be saved": [
+        "Tercihler kaydedilemedi"
+      ],
+      "Some groups could not be deleted": [
+        "Bazı gruplar silinemedi"
+      ],
+      "Image upload failed": [
+        "Resim yükleme başarısız"
+      ],
+      "Contact could not be saved": [
+        "Kişi kaydedilemedi"
+      ],
+      "Some contacts could not be deleted": [
+        "Bazı kişiler silinemedi"
+      ],
+      "Invalid public key file": [
+        "Geçersiz genel anahtar dosyası"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "100'den fazla alıcıya ileti gönderemezsiniz"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
+        "Kişilerden bazılarının e-posta adresi yok: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "10'dan daha fazla kişinin vCard'larını gönderemezsiniz"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Kişilerin vCard'larını dışa aktarırken bir hata oluştu"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Gruplardan birinde kişi yok: ${ noContactGroupList }",
+        "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
+      ],
+      "You must set a name": [
+        "Bir isim belirlemelisiniz"
+      ],
+      "A group with this name already exists": [
+        "Bu ada sahip bir grup zaten var"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "File has no contents to preview": [
+        "Dosyanın önizlenecek içeriği yok"
+      ],
+      "No valid address found": [
+        "Geçerli bir adres bulunamadı"
+      ],
+      "Incorrect password. Please try again.": [
+        "Yanlış şifre, lütfen tekrar deneyin."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Şifre en az ${ length } karakter içermelidir",
+        "Şifre en az ${ length } karakter içermelidir"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Ad"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Photo": [
+        "Fotoğraf"
+      ],
+      "Organization": [
+        "Kuruluş"
+      ],
+      "Birthday": [
+        "Doğum günü"
+      ],
+      "Anniversary": [
+        "Yıldönümü"
+      ],
+      "Title": [
+        "Başlık"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Not"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Cinsiyet"
+      ],
+      "Language": [
+        "Dil"
+      ],
+      "Timezone": [
+        "Zaman dilimi"
+      ],
+      "Geo": [
+        "Coğrafi"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Üye"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "İş"
+      ],
+      "Personal": [
+        "Kişisel"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Ana"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Çağrı"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-posta"
+      ],
+      "Home": [
+        "Ev"
+      ],
+      "Work": [
+        "İş"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Ana"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Çağrı"
+      ],
+      "Address": [
+        "Adres"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bayt"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
       ]
     },
     "Calendar status": {
@@ -1170,6 +1165,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "${ formattedFilename } dosyanız okunurken bir hata oluştu. Dosya doğru biçime sahip değil."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1378,11 +1378,11 @@
       "Go to panel ${ index }": [
         "${ index } paneline git"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Load image": [
         "Resim yükle"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Export": [
         "Dışa aktar"
@@ -1435,9 +1435,6 @@
       "Signing out": [
         "Çıkış yapılıyor"
       ],
-      "Log in": [
-        "Oturum aç"
-      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -1449,30 +1446,6 @@
       ],
       "here": [
         "buraya"
-      ],
-      "View invoice": [
-        "Faturayı görüntüle"
-      ],
-      "Get verification code": [
-        "Doğrulama kodu al"
-      ],
-      "Try another method": [
-        "Başka bir yöntem dene"
-      ],
-      "Request new code": [
-        "Yeni kod iste"
-      ],
-      "Verify": [
-        "Doğrula"
-      ],
-      "Did not receive the code?": [
-        "Kodu almadınız mı?"
-      ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
-      "Edit phone number": [
-        "Telefon numarasını düzenle"
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
@@ -1557,6 +1530,33 @@
       ],
       "Show info": [
         "Bilgileri göster"
+      ],
+      "Log in": [
+        "Oturum aç"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu al"
+      ],
+      "Try another method": [
+        "Başka bir yöntem dene"
+      ],
+      "Request new code": [
+        "Yeni kod iste"
+      ],
+      "Verify": [
+        "Doğrula"
+      ],
+      "Did not receive the code?": [
+        "Kodu almadınız mı?"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
       ],
       "Remove bonuses": [
         "Bonusları kaldır"
@@ -1755,11 +1755,77 @@
       "Cancel all uploads": [
         ""
       ],
+      "New upload": [
+        "Yeni yükleme"
+      ],
+      "Rename": [
+        "Yeniden adlandır"
+      ],
+      "Move to folder": [
+        "Klasöre Taşı"
+      ],
+      "Move to trash": [
+        "Çöp kutusuna taşı"
+      ],
+      "Share options": [
+        ""
+      ],
       "Share": [
         "Paylaş"
       ],
-      "Show shared link details": [
-        "Paylaşılan bağlantının detaylarını göster"
+      "Create new folder": [
+        "Yeni klasör oluştur"
+      ],
+      "Name: A to Z": [
+        "İsim: A'dan Z'ye"
+      ],
+      "Name: Z to A": [
+        "İsim: Z'den A'ya"
+      ],
+      "Modified date: new to old": [
+        "Değiştirilme tarihi: yeniden eskiye"
+      ],
+      "Modified date: old to new": [
+        "Değiştirilme tarihi: eskiden yeniye"
+      ],
+      "Type: A to Z": [
+        "Tür: A'dan Z'ye"
+      ],
+      "Type: Z to A": [
+        "Tür: Z'den A'ya"
+      ],
+      "Size: small to large": [
+        "Boyut: küçükten büyüğe"
+      ],
+      "Size: large to small": [
+        "Boyut: büyükten küçüğe"
+      ],
+      "Upload file": [
+        "Dosya yükle"
+      ],
+      "Upload folder": [
+        "Klasörü yükle"
+      ],
+      "List layout": [
+        "Liste düzeni"
+      ],
+      "Grid layout": [
+        "Izgara düzeni"
+      ],
+      "Preview": [
+        "Önizle"
+      ],
+      "Share file": [
+        "Dosya paylaş"
+      ],
+      "Stop sharing": [
+        "Paylaşımı durdur"
+      ],
+      "Empty trash": [
+        "Çöp kutusunu boşalt"
+      ],
+      "Restore from trash": [
+        "Çöp kutusundan geri yükle"
       ],
       "Maximize transfers": [
         ""
@@ -1809,74 +1875,8 @@
       "Restart transfers": [
         ""
       ],
-      "New upload": [
-        "Yeni yükleme"
-      ],
-      "Rename": [
-        "Yeniden adlandır"
-      ],
-      "Move to folder": [
-        "Klasöre Taşı"
-      ],
-      "Move to trash": [
-        "Çöp kutusuna taşı"
-      ],
-      "Share options": [
-        ""
-      ],
-      "Create new folder": [
-        "Yeni klasör oluştur"
-      ],
-      "Name: A to Z": [
-        "İsim: A'dan Z'ye"
-      ],
-      "Name: Z to A": [
-        "İsim: Z'den A'ya"
-      ],
-      "Modified date: new to old": [
-        "Değiştirilme tarihi: yeniden eskiye"
-      ],
-      "Modified date: old to new": [
-        "Değiştirilme tarihi: eskiden yeniye"
-      ],
-      "Type: A to Z": [
-        "Tür: A'dan Z'ye"
-      ],
-      "Type: Z to A": [
-        "Tür: Z'den A'ya"
-      ],
-      "Size: small to large": [
-        "Boyut: küçükten büyüğe"
-      ],
-      "Size: large to small": [
-        "Boyut: büyükten küçüğe"
-      ],
-      "Upload file": [
-        "Dosya yükle"
-      ],
-      "Upload folder": [
-        "Klasörü yükle"
-      ],
-      "List layout": [
-        "Liste düzeni"
-      ],
-      "Grid layout": [
-        "Izgara düzeni"
-      ],
-      "Preview": [
-        "Ön izleme"
-      ],
-      "Share file": [
-        "Dosya paylaş"
-      ],
-      "Stop sharing": [
-        ""
-      ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
-      "Restore from trash": [
-        "Çöp kutusundan geri yükle"
+      "Show shared link details": [
+        "Paylaşılan bağlantının ayrıntılarını göster"
       ],
       "Start recovering": [
         ""
@@ -1919,6 +1919,21 @@
       "What's new": [
         "Yenilikler"
       ],
+      "Open help menu": [
+        "Yardım menüsünü aç"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Open settings menu": [
+        "Ayarlar menüsünü aç"
+      ],
+      "Select a theme": [
+        "Bir tema seçin"
+      ],
+      "Report a problem": [
+        "Sorun bildir"
+      ],
       "Sign in again to continue": [
         "Devam etmek için tekrar giriş yapın"
       ],
@@ -1939,21 +1954,6 @@
       ],
       "Human verification": [
         "İnsan doğrulaması"
-      ],
-      "Open help menu": [
-        "Yardım menüsünü aç"
-      ],
-      "Back": [
-        "Geri"
-      ],
-      "Open settings menu": [
-        "Ayarlar menüsünü aç"
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
-      ],
-      "Report a problem": [
-        "Sorun bildir"
       ],
       "Confirm loss of Proton bonuses": [
         "Proton bonuslarının kaybını onaylayın"
@@ -2182,7 +2182,7 @@
         "Kalıcı olarak sil"
       ],
       "Stop sharing": [
-        ""
+        "Paylaşımı durdur"
       ],
       "Duplicate folder found": [
         "Yinelenen klasör bulundu"
@@ -2193,32 +2193,32 @@
       "Drop to upload": [
         "Yüklemek için bırak"
       ],
-      "My files": [
-        "Dosyalarım"
-      ],
-      "Additional settings": [
-        "Ek ayarlar"
-      ],
-      "Cancel all active transfers": [
-        "Tüm aktif transferleri iptal et"
-      ],
       "Show actions": [
         "İşlemleri göster"
       ],
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
       ],
+      "My files": [
+        "Dosyalarım"
+      ],
       "Change layout": [
         "Yerleşimi değiştir"
       ],
       "Shared": [
-        "Paylaşılan"
+        "Paylaşıldı"
       ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
       "Trash": [
         "Çöp Kutusu"
+      ],
+      "Additional settings": [
+        "Ek ayarlar"
+      ],
+      "Cancel all active transfers": [
+        "Tüm aktif transferleri iptal et"
       ],
       "Your file is ready to be downloaded": [
         ""
@@ -2275,10 +2275,10 @@
         "Konum"
       ],
       "Modified": [
-        "Değiştirilmiş"
+        "Değiştirildi"
       ],
       "Type": [
-        "Tip"
+        "Tür"
       ],
       "MIME type": [
         "MIME türü"
@@ -2287,7 +2287,7 @@
         "Boyut"
       ],
       "# of accesses": [
-        ""
+        "# erişim"
       ],
       "You have no folders yet": [
         "Henüz klasörünüz yok"
@@ -2314,7 +2314,7 @@
         "Güvenli bağlantıyı yönet"
       ],
       "Stop sharing with everyone?": [
-        ""
+        "Herkes ile paylaşım durdurulsun mu?"
       ],
       "Discard changes?": [
         "Değişiklikler yoksayılsın mı?"
@@ -2369,6 +2369,36 @@
       "Do not ask again": [
         "Tekrar sorma"
       ],
+      "Display name": [
+        "Görünen ad"
+      ],
+      "Operating system": [
+        "İşletim sistemi"
+      ],
+      "Operating system version": [
+        "İşletim sistemi sürümü"
+      ],
+      "Proton username": [
+        "Proton kullanıcı adı"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Ne oldu?"
+      ],
+      "System information": [
+        "Sistem bilgisi"
+      ],
+      "Browser": [
+        "Tarayıcı"
+      ],
+      "Browser version": [
+        "Tarayıcı sürümü"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -2387,9 +2417,6 @@
       "Username or ProtonMail address": [
         "Kullanıcı adı veya ProtonMail adresi"
       ],
-      "Email address": [
-        "E-posta adresi"
-      ],
       "Phone number": [
         "Telefon numarası"
       ],
@@ -2398,33 +2425,6 @@
       ],
       "Enter the 6-digit code": [
         "6 haneli kodu girin"
-      ],
-      "Display name": [
-        "Görünen ad"
-      ],
-      "Operating system": [
-        "İşletim sistemi"
-      ],
-      "Operating system version": [
-        "İşletim sistemi sürümü"
-      ],
-      "Proton username": [
-        "Proton kullanıcı adı"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Ne oldu?"
-      ],
-      "System information": [
-        "Sistem bilgisi"
-      ],
-      "Browser": [
-        "Tarayıcı"
-      ],
-      "Browser version": [
-        "Tarayıcı sürümü"
       ],
       "Name on card": [
         "Karttaki isim"
@@ -2555,33 +2555,6 @@
       "Apply to all duplicated files": [
         ""
       ],
-      "Folder": [
-        "Klasör"
-      ],
-      "(Expired)": [
-        ""
-      ],
-      "Expired": [
-        "Süresi dolmuş"
-      ],
-      "Never": [
-        "Asla"
-      ],
-      "File": [
-        "Dosya"
-      ],
-      "All": [
-        "Tümü"
-      ],
-      "Active": [
-        "Etkin"
-      ],
-      "Failed": [
-        "Başarısız oldu"
-      ],
-      "Apply to selected transfers": [
-        ""
-      ],
       "Audio file": [
         "Ses dosyası"
       ],
@@ -2597,6 +2570,33 @@
       "Unknown file": [
         "Bilinmeyen dosya"
       ],
+      "All": [
+        "Tümü"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "Failed": [
+        "Başarısız oldu"
+      ],
+      "Apply to selected transfers": [
+        ""
+      ],
+      "Folder": [
+        "Klasör"
+      ],
+      "(Expired)": [
+        ""
+      ],
+      "Expired": [
+        "Süresi dolmuş"
+      ],
+      "Never": [
+        "Asla"
+      ],
+      "File": [
+        "Dosya"
+      ],
       "Get your own ${ appName }": [
         ""
       ],
@@ -2610,18 +2610,15 @@
         "Dosya adı"
       ],
       "Protect with password": [
-        ""
+        "Parola ile koru"
       ],
       "Set expiration date": [
-        ""
+        "Son kullanma tarihi ayarla"
       ]
     },
     "Placeholder": {
       "E.g., ": [
         "Örneğin, "
-      ],
-      "Mailbox password": [
-        "Posta kutusu parolası"
       ],
       "e.g. Julia Smith": [
         "örn. Ayşe Yılmaz"
@@ -2646,6 +2643,9 @@
       ],
       "Browser version": [
         "Tarayıcı sürümü"
+      ],
+      "Mailbox password": [
+        "Posta kutusu parolası"
       ],
       "ZIP": [
         "ZIP"
@@ -2717,9 +2717,6 @@
       "Upgrade account": [
         "Hesabınızı yükseltin"
       ],
-      "Request an invite": [
-        "Davet iste"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -2728,6 +2725,9 @@
       ],
       "clearing your browser cache": [
         "tarayıcınızın önbelleğini temizlemek"
+      ],
+      "Request an invite": [
+        "Davet iste"
       ],
       "click here": [
         "buraya tıkla"
@@ -2739,7 +2739,7 @@
         "Dosyalarım"
       ],
       "Shared": [
-        "Paylaşılan"
+        "Paylaşıldı"
       ],
       "Trash": [
         "Çöp Kutusu"
@@ -2897,6 +2897,9 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
       ],
@@ -2952,14 +2955,14 @@
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
+      "Bug reported": [
+        "Hata bildirildi"
+      ],
       "Code sent to ${ methodTo }": [
         "${ methodTo }'e kod gönder"
       ],
       "Verification successful": [
         "Doğrulama başarılı"
-      ],
-      "Bug reported": [
-        "Hata bildirildi"
       ],
       "You have successfully unsubscribed": [
         "Aboneliğinizi başarıyla iptal ettiniz"
@@ -3015,6 +3018,17 @@
         "${ items.length } önerisi bulundu, gezinmek için klavye kullanın."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton uygulamaları"
+      ],
+      "Go to ${ title }": [
+        "${ title } gidin"
+      ],
+      "Go to ${ vpnName }": [
+        "{ vpnName } gidin"
+      ]
+    },
     "Error message": {
       "Oops, something went wrong": [
         "Hoop, bir şeyler ters gitti"
@@ -3047,42 +3061,9 @@
         "Ayrıca sayfayı ${ refresh } veya daha sonra tekrar deneyin."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
-      ],
-      "Go to ${ title }": [
-        "${ title } gidin"
-      ],
-      "Go to ${ vpnName }": [
-        "{ vpnName } gidin"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } uygulamasının yeni bir sürümü mevcut. ${ reloadButton }."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Gecikmiş fatura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-posta"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "El ile"
-      ],
-      "No verification method available": [
-        "Kullanılabilir doğrulama yöntemi yok"
       ]
     },
     "Header": {
@@ -3155,10 +3136,10 @@
         "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
       ],
       "Welcome to Proton": [
-        "Proton'a Hoş Geldin"
+        "Proton'a Hoş Geldiniz"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Görevimiz, verilerinizin ve gizliliğinizin kontrolünün sizde olduğu bir internet oluşturmaktır. Yakın zamanda Proton'u güncelledik, güvenli internete hoş geldiniz."
+        "Misyonumuz, verilerinizi ve gizliliğinizi kontrol ettiğiniz bir internet oluşturmaktır.\nProton'u yakın zamanda güncelledik, güvenli internete hoş geldiniz."
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
@@ -3268,6 +3249,28 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Ekran görüntüsü(leri) ekleyin"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Gecikmiş fatura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "El ile"
+      ],
+      "No verification method available": [
+        "Kullanılabilir doğrulama yöntemi yok"
       ]
     },
     "Info for cash payment method": {
@@ -3717,30 +3720,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Genişletilmiş"
-      ]
-    },
     "Notification": {
       "Contact group updated": [
         "Kişi grubu güncellendi"
@@ -3767,7 +3746,7 @@
         ""
       ],
       "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" çöp Kutusuna taşındı"
+        "\"${ firstItemName }\" çöp kutusuna taşındı"
       ],
       "${ trashedLinksCount } file moved to trash": [
         "",
@@ -3782,19 +3761,19 @@
         ""
       ],
       "\"${ firstItemName }\" restored from trash": [
-        ""
+        "\"${ firstItemName }\" çöp kutusundan yeniden yüklendi"
       ],
       "${ restoredItemsCount } file restored from trash": [
-        "",
-        ""
+        "${ restoredItemsCount } dosya çöp kutusundan yeniden yüklendi",
+        "${ restoredItemsCount } dosya çöp kutusundan yeniden yüklendi"
       ],
       "${ restoredItemsCount } folder restored from trash": [
-        "",
-        ""
+        "${ restoredItemsCount } klasör çöp kutusundan yeniden yüklendi",
+        "${ restoredItemsCount } klasör çöp kutusundan yeniden yüklendi"
       ],
       "${ restoredItemsCount } item restored from trash": [
-        "",
-        ""
+        "${ restoredItemsCount } öge çöp kutusundan yeniden yüklendi",
+        "${ restoredItemsCount } öge çöp kutusundan yeniden yüklendi"
       ],
       "An item with the name \"${ name }\" already exists in the current folder": [
         ""
@@ -3843,6 +3822,9 @@
         "",
         ""
       ],
+      "All items will soon be permanently deleted from trash": [
+        "Tüm öğeler yakında çöp kutusundan kalıcı olarak silinecek"
+      ],
       "Move ${ movingCount } file": [
         "${ movingCount } dosyasını taşı",
         "${ movingCount } dosyalarını taşı"
@@ -3854,9 +3836,6 @@
       "Move ${ movingCount } item": [
         "${ movingCount } öğeyi taşıyın",
         "${ movingCount } öğeyi taşıyın"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Tüm öğeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
       "Failed to move, please try again": [
         "Taşınamadı, lütfen tekrar deneyin"
@@ -3967,10 +3946,10 @@
         "Konum"
       ],
       "Type": [
-        "Tip"
+        "Tür"
       ],
       "Modified": [
-        "Değiştirilmiş"
+        "Değiştirildi"
       ],
       "Deleted": [
         "Silindi"
@@ -3982,7 +3961,7 @@
         "Oluşturuldu"
       ],
       "# of accesses": [
-        ""
+        "# erişim"
       ],
       "Expires": [
         "Sona erme"
@@ -4100,6 +4079,30 @@
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Liste"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Genişletilmiş"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Yükle"
@@ -4175,7 +4178,7 @@
         ""
       ],
       "${ appName } is in Beta": [
-        ""
+        "${ appName } Beta sürümüdür"
       ],
       "Meet your new secure file storage": [
         "Yeni güvenli dosya depolama alanınızla tanışın"
@@ -4186,7 +4189,7 @@
         "${ appName } şu anda erken erişimde ve yalnızca ücretli planı olan kullanıcılar tarafından kullanılabilir."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
-        ""
+        "${ appName } şu anda yalnızca Beta Erişimini etkinleştirirseniz kullanılabilir."
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
         "Tüm dosyalarınızı uçtan uca şifreleme ile koruyun. Dosyalarınızı güvenli bir şekilde depolamak ve paylaşmak için ${ appName }'ı kullanın."

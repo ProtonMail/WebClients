@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
-    "language": "ru"
+    "language": "ru_RU"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "байт"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Это обязательное поле"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
-      ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
-      "Signature verification failed": [
-        "Проверка подписи не удалась"
-      ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
       ],
       "Email address disabled": [
         "Адрес электронной почты неактивен"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Недействительный ключ отправки"
       ],
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
+      ],
       "Missing signature": [
         "Подпись отсутствует"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Не удалось извлечь свойства ключа для ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "Could not find address ${ email }.": [
+        "Не могу найти адрес ${ email }."
       ],
       "Address primary private key not found": [
         "Основной секретный ключ для адреса не найден"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Ошибка аутентификации."
       ],
+      "Email address invalid": [
+        "Неверный адрес электронной почты"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
-      ],
-      "Email address invalid": [
-        "Неверный адрес электронной почты"
       ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
@@ -324,6 +338,9 @@
         "Удалено дубликатов получателей: ${ recipents }",
         "Удалено дубликатов получателей: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } for <${ email }>. Вы можете добавить другой ключ или отключить шифрование для этого контакта, чтобы решить проблему."
+      ],
       "Message passwords do not match.": [
         "Пароль и его подтверждение для этого сообщения не совпадают."
       ],
@@ -363,6 +380,15 @@
       "Unknown error.": [
         "Неизвестная ошибка."
       ],
+      "re-activate the previous key": [
+        "реактивировать предыдущий ключ"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Ваши электронные письма не могут быть расшифрованы из-за недавнего сброса пароля. Если вы помните свой предыдущий пароль, вы можете ${ reActivateKeyLink } чтобы получить доступ к своим сообщениям. ${ learnMoreLink }"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        "Ваши письма не могут быть расшифрованы из-за недавнего сброса пароля. ${ learnMoreLink }"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Слишком много активных фильтров. Пожалуйста, перейдите на платный план для активации дополнительных фильтров"
       ]
@@ -373,20 +399,6 @@
         "Пароль должен включать по меньшей мере ${ length } символа",
         "Пароль должен включать по меньшей мере ${ length } символов",
         "Пароль должен включать по меньшей мере ${ length } символа"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "байт"
-      ],
-      "KB": [
-        "КБ"
-      ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
       ]
     },
     "Contact field label": {
@@ -503,6 +515,17 @@
         "Адрес"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date }, ${ name } ${ address } написал(а):"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Время сессии истекло."
@@ -540,17 +563,14 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "support team": [
-        "служба поддержки"
-      ],
-      "Loading": [
-        "Загрузка"
-      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
       "You can either update your search query or ${ button }": [
         "Вы можете изменить ваш поисковый запрос или ${ button }"
+      ],
+      "support team": [
+        "служба поддержки"
       ],
       "Week": [
         "Неделя"
@@ -560,6 +580,9 @@
         "(${ memberCount } участника)",
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
+      ],
+      "Loading": [
+        "Загрузка"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
@@ -614,6 +637,12 @@
       ],
       "Test link": [
         "Тестовая ссылка"
+      ],
+      "Change your default in settings": [
+        "Измените ваши настройки по умолчанию"
+      ],
+      "Default": [
+        "По умолчанию"
       ],
       "Text color": [
         "Цвет текста"
@@ -1194,6 +1223,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Фильтровать, если ЛЮБОЕ из следующих условий выполнено)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Изображения были удалены, поскольку они не допускаются в автоответчике."
+      ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
@@ -1578,6 +1610,12 @@
         "Оставшееся время: ${ estimatedMinutes } минут",
         "Оставшееся время:{ estimatedMinutes } минут"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Очистка данных браузера также отключает поиск содержимого сообщений на этом устройстве. Для поиска в сообщениях необходимо будет снова загрузить все сообщения."
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        "Очищает данные браузера, связанные с поиском содержимого сообщений, включая загруженные сообщения"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } непрочитанная цепочка писем",
         "${ unreadCount } непрочитанные цепочки писем",
@@ -1780,22 +1818,6 @@
         "Используя мобильное устройство, отсканируйте этот QR-код или перейдите по ссылке ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }, ${ name } ${ address } написал(а):"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Неизвестный"
@@ -1840,6 +1862,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2734,14 +2761,11 @@
       "Close": [
         "Закрыть"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
-      "Use “${ label }” setting": [
-        "Использовать настройку «${ label }»"
-      ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Подтвердить"
       ],
       "Cancel": [
         "Отменить"
@@ -2752,8 +2776,8 @@
       "Close modal": [
         "Закрыть окно"
       ],
-      "Confirm": [
-        "Подтвердить"
+      "Use “${ label }” setting": [
+        "Использовать настройку «${ label }»"
       ],
       "Remove": [
         "Удалить"
@@ -2799,6 +2823,9 @@
       ],
       "Email settings": [
         "Настройки эл. почты"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Next month": [
         "След. месяц"
@@ -2926,12 +2953,6 @@
       "Edit phone number": [
         "Изменить номер телефона"
       ],
-      "Use ${ label } theme": [
-        "Использовать тему ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Добавить"
       ],
@@ -3057,6 +3078,12 @@
       ],
       "Next": [
         "Далее"
+      ],
+      "Use ${ label } theme": [
+        "Использовать тему ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Продолжить импорт"
@@ -3280,15 +3307,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Добавить в ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Open shop": [
-        "Открыть магазин"
-      ],
-      "Open calendar": [
-        "Открыть календарь"
-      ],
       "Send anyway": [
         "Все равно отправить"
       ],
@@ -3336,9 +3354,6 @@
       ],
       "CC, BCC": [
         "Копия, Скрытая копия"
-      ],
-      "Go back": [
-        "Вернуться"
       ],
       "Send": [
         "Отправить"
@@ -3487,6 +3502,9 @@
       "Show": [
         "Показать"
       ],
+      "Learn more": [
+        "Подробнее"
+      ],
       "Undo": [
         "Отменить"
       ],
@@ -3522,6 +3540,9 @@
       ],
       "Advanced search": [
         "Расширенный поиск"
+      ],
+      "Clear browser data": [
+        "Очистить данные браузера"
       ],
       "Mark as read": [
         "Отметить как прочитанное"
@@ -3601,6 +3622,12 @@
       "Create new message": [
         "Создать новое сообщение"
       ],
+      "Open shop": [
+        "Открыть магазин"
+      ],
+      "Open calendar": [
+        "Открыть календарь"
+      ],
       "Import messages": [
         "Импортировать сообщения"
       ],
@@ -3656,9 +3683,6 @@
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
-      ],
-      "Select a theme": [
-        "Выбор темы"
       ],
       "Delete ${ Name }": [
         "Удалить ${ Name }"
@@ -3782,6 +3806,9 @@
       ],
       "Import contacts": [
         "Импорт контактов"
+      ],
+      "Select a theme": [
+        "Выбор темы"
       ],
       "Start import process": [
         "Начать процесс импорта"
@@ -4002,8 +4029,8 @@
       "Blind Carbon Copy": [
         "Скрытая копия"
       ],
-      "Errors detected": [
-        "Произошли ошибки"
+      "Sending error": [
+        "Ошибка отправки"
       ],
       "Confirm recipient address?": [
         "Подтвердить адрес получателя?"
@@ -4141,6 +4168,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не может быть использован для шифрования"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "clearing your browser cache": [
+        "очистка кэша браузера"
+      ],
+      "Pay invoice": [
+        "Оплатить счёт"
+      ],
+      "Upgrade account": [
+        "Повысить учётную запись"
+      ],
+      "Upgrade": [
+        "Повысить"
+      ],
+      "Go to subscription plans": [
+        "Перейти на страницу подписки"
+      ],
+      "click here": [
+        "нажмите здесь"
+      ],
+      "Add a gift code": [
+        "Добавить подарочный код"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Вам нужно активировать ключи календаря для управления этим приглашением"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Вам нужно активировать ключи календаря для ответа на это приглашение"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Вам нужно активировать ключи календаря, чтобы увидеть обновленное событие"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Вам нужно активировать ключи календаря, чтобы увидеть обновленные приглашения"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, загрузите его и импортируйте события в ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Вам нужно повторно активировать ключи для управления этим приглашением"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное событие"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
+      ],
+      "Create a new calendar to add this event": [
+        "Создайте новый календарь чтобы добавить это событие"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Создайте новый календарь, чтобы ответить на это приглашение"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Создайте новый календарь для управления вашими приглашениями"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Открыть обновленное событие в ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Открыть в ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Входящие"
+      ],
+      "Drafts": [
+        "Черновики"
+      ],
+      "Sent": [
+        "Отправленные"
+      ],
+      "Trash": [
+        "Корзина"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "All mail": [
+        "Вся почта"
+      ],
+      "Archive": [
+        "Архив"
+      ],
+      "Starred": [
+        "Со звёздами"
+      ],
+      "Outbox": [
+        "Исходящие"
+      ],
+      "Scheduled": [
+        "Расписание"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Повторно включите адрес, связанный с этим календарем, для управления вашим приглашением."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Повторно включите адрес, связанный с этим календарем, для обновления вашего приглашения."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Включите свой адрес, чтобы ответить на это приглашение."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Создать календарь, связанный с активным адресом электронной почты."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Включить адрес электронной почты, связанный с одним из ваших календарей."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Или вы можете удалить один из календарей и создать новый, связанный с активным адресом электронной почты."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Включите свой адрес еще раз, чтобы изменить свой ответ."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Включите адрес электронной почты, связанный с отключенным календарем, для отмены события."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Включите адрес электронной почты, связанный с отключенным календарем, для изменения ответа."
+      ],
+      "Add folder": [
+        "Добавить папку"
+      ],
+      "Add label": [
+        "Добавить ярлык"
+      ],
+      "Folders": [
+        "Папки"
+      ],
+      "Manage your folders": [
+        "Управлять вашими папками"
+      ],
+      "Labels": [
+        "Ярлыки"
+      ],
+      "Manage your labels": [
+        "Управлять вашими ярлыками"
       ]
     },
     "Label": {
@@ -4710,152 +4883,6 @@
         "${ secondsCountLeft } секунд"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Request an invite": [
-        "Запросить приглашение"
-      ],
-      "clearing your browser cache": [
-        "очистка кэша браузера"
-      ],
-      "Pay invoice": [
-        "Оплатить счёт"
-      ],
-      "Upgrade account": [
-        "Повысить учётную запись"
-      ],
-      "Upgrade": [
-        "Повысить"
-      ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
-      "click here": [
-        "нажмите здесь"
-      ],
-      "Add a gift code": [
-        "Добавить подарочный код"
-      ],
-      "Inbox": [
-        "Входящие"
-      ],
-      "Drafts": [
-        "Черновики"
-      ],
-      "Sent": [
-        "Отправленные"
-      ],
-      "Trash": [
-        "Корзина"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Вся почта"
-      ],
-      "Archive": [
-        "Архив"
-      ],
-      "Starred": [
-        "Со звёздами"
-      ],
-      "Outbox": [
-        "Исходящие"
-      ],
-      "Scheduled": [
-        "Расписание"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Вам нужно активировать ключи календаря для управления этим приглашением"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Вам нужно активировать ключи календаря для ответа на это приглашение"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Вам нужно активировать ключи календаря, чтобы увидеть обновленное событие"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Вам нужно активировать ключи календаря, чтобы увидеть обновленные приглашения"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, загрузите его и импортируйте события в ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Вам нужно повторно активировать ключи для управления этим приглашением"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное событие"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
-      ],
-      "Create a new calendar to add this event": [
-        "Создайте новый календарь чтобы добавить это событие"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Создайте новый календарь, чтобы ответить на это приглашение"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Создайте новый календарь для управления вашими приглашениями"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Открыть обновленное событие в ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Открыть в ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Повторно включите адрес, связанный с этим календарем, для управления вашим приглашением."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Повторно включите адрес, связанный с этим календарем, для обновления вашего приглашения."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Включите свой адрес, чтобы ответить на это приглашение."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Создать календарь, связанный с активным адресом электронной почты."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Включить адрес электронной почты, связанный с одним из ваших календарей."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Или вы можете удалить один из календарей и создать новый, связанный с активным адресом электронной почты."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Включите свой адрес еще раз, чтобы изменить свой ответ."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Включите адрес электронной почты, связанный с отключенным календарем, для отмены события."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Включите адрес электронной почты, связанный с отключенным календарем, для изменения ответа."
-      ],
-      "Add folder": [
-        "Добавить папку"
-      ],
-      "Add label": [
-        "Добавить ярлык"
-      ],
-      "Folders": [
-        "Папки"
-      ],
-      "Manage your folders": [
-        "Управлять вашими папками"
-      ],
-      "Labels": [
-        "Ярлыки"
-      ],
-      "Manage your labels": [
-        "Управлять вашими ярлыками"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Для этой функции требуется платная учётная запись Proton"
@@ -4904,6 +4931,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -5388,30 +5418,6 @@
         "Нет доступных способов проверки"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Ряд"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Обычный"
-      ],
-      "Maximized": [
-        "Максимизированный"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Название"
@@ -5642,6 +5648,35 @@
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Обычный"
+      ],
+      "Maximized": [
+        "Максимизированный"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Загрузить"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Подключение к провайдеру календаря"
@@ -5779,11 +5814,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Загрузить"
       ]
     },
     "Onboarding Proton": {
@@ -6973,12 +7003,6 @@
         "Мы обнаружили ошибки. Ваше сообщение не может быть отправлено ни одному из получателей по следующей причине:",
         "Мы обнаружили ошибки. Ваше сообщение не может быть отправлено ни одному из получателей по следующей причине:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Пожалуйста, вернитесь, чтобы изменить адрес электронной почты, который вы ввели.",
-        "Пожалуйста, вернитесь, чтобы изменить адреса электронной почты, которые вы ввели.",
-        "Пожалуйста, вернитесь, чтобы изменить адреса электронной почты, которые вы ввели.",
-        "Пожалуйста, вернитесь, чтобы изменить адреса электронной почты, которые вы ввели."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Мы обнаружили ошибки. Ваше сообщение не может быть отправлено одному или нескольким получателям по следующей причине:"
       ],
@@ -7148,6 +7172,11 @@
       ],
       "Next": [
         "Далее"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Имеет событие в календаре"
       ]
     },
     "Search - no results": {

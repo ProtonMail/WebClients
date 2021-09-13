@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "nl"
+    "language": "nl_NL"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Dit veld is vereist"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
-      ],
-      "Request timed out.": [
-        "Het verzoek timed out."
-      ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
       ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
       ],
+      "Request timed out.": [
+        "Het verzoek timed out."
+      ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "De kerneigenschappen van ${ emailAddress } kunnen niet verkregen worden"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Could not find address ${ email }.": [
+        "Kon adres ${ email } niet vinden."
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
       ],
       "The composer failed to load.": [
         "Kon het opstelvenster niet laden."
@@ -314,6 +328,9 @@
         "",
         ""
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "Wachtwoorden van het bericht komen niet overeen."
       ],
@@ -351,6 +368,15 @@
       "Unknown error.": [
         "Onbekende fout."
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren"
       ]
@@ -359,20 +385,6 @@
       "Password must contain at least ${ length } character": [
         "Wachtwoord moet ten minste ${ length } teken bevatten",
         "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -489,6 +501,17 @@
         "Adres"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "Op ${ date } schreef ${ name } ${ address }:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Sessie time-out."
@@ -526,17 +549,14 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
-      "Loading": [
-        "Laden"
-      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
       "You can either update your search query or ${ button }": [
         "U kunt uw zoekopdracht bewerken of ${ button }"
+      ],
+      "support team": [
+        "ondersteuningsteam"
       ],
       "Week": [
         "Week"
@@ -544,6 +564,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
+      ],
+      "Loading": [
+        "Laden"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -598,6 +621,12 @@
       ],
       "Test link": [
         "Link testen"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "Tekstkleur"
@@ -1164,6 +1193,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filter als aan een van de volgende voorwaarden is voldaan)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
@@ -1520,6 +1552,12 @@
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
         "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } ongelezen gesprek",
         "${ unreadCount } ongelezen gesprekken"
@@ -1698,22 +1736,6 @@
         "Met uw mobiele apparaat, scan deze QR-Code of bezoek ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Op ${ date } schreef ${ name } ${ address }:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Onbekend"
@@ -1758,6 +1780,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2578,14 +2605,11 @@
       "Close": [
         "Sluiten"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
-      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Bevestigen"
       ],
       "Cancel": [
         "Annuleren"
@@ -2596,8 +2620,8 @@
       "Close modal": [
         "Sluit het venster"
       ],
-      "Confirm": [
-        "Bevestigen"
+      "Use “${ label }” setting": [
+        "Gebruik “${ label }”-instelling"
       ],
       "Remove": [
         "Verwijderen"
@@ -2643,6 +2667,9 @@
       ],
       "Email settings": [
         "E-mailinstellingen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Next month": [
         "Volgende maand"
@@ -2770,12 +2797,6 @@
       "Edit phone number": [
         "Wijzig telefoonnummer"
       ],
-      "Use ${ label } theme": [
-        "Gebruik ${ label } thema"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Voeg toe"
       ],
@@ -2895,6 +2916,12 @@
       ],
       "Next": [
         "Volgende"
+      ],
+      "Use ${ label } theme": [
+        "Gebruik ${ label } thema"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Doorgaan met importeren"
@@ -3118,15 +3145,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Toevoegen aan ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        "Agenda openen"
-      ],
       "Send anyway": [
         "Toch verzenden"
       ],
@@ -3172,9 +3190,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "Teruggaan"
       ],
       "Send": [
         "Verstuur"
@@ -3323,6 +3338,9 @@
       "Show": [
         "Tonen"
       ],
+      "Learn more": [
+        "Meer informatie"
+      ],
       "Undo": [
         "Ongedaan maken"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Advanced search": [
         "Uitgebreid zoeken"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "Markeer als gelezen"
@@ -3437,6 +3458,12 @@
       "Create new message": [
         ""
       ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        "Agenda openen"
+      ],
       "Import messages": [
         "Berichten importeren"
       ],
@@ -3492,9 +3519,6 @@
       ],
       "Human verification": [
         "Persoonsverificatie"
-      ],
-      "Select a theme": [
-        "Selecteer een thema"
       ],
       "Delete ${ Name }": [
         "Verwijder ${ Name }"
@@ -3610,6 +3634,9 @@
       ],
       "Import contacts": [
         "Contactpersonen importeren"
+      ],
+      "Select a theme": [
+        "Selecteer een thema"
       ],
       "Start import process": [
         "Importproces starten"
@@ -3822,8 +3849,8 @@
       "Blind Carbon Copy": [
         "BCC"
       ],
-      "Errors detected": [
-        "Fouten ontdekt"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "Adres van ontvanger bevestigen?"
@@ -3961,6 +3988,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Request an invite": [
+        "Uitnodiging aanvragen"
+      ],
+      "clearing your browser cache": [
+        "browsercache legen"
+      ],
+      "Pay invoice": [
+        "Factuur betalen"
+      ],
+      "Upgrade account": [
+        "Account upgraden"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Go to subscription plans": [
+        "Ga naar abonnementsplannen"
+      ],
+      "click here": [
+        "klik hier"
+      ],
+      "Add a gift code": [
+        "Voeg een geschenkcode toe"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        ""
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "U moet uw agendasleutels activeren om deze uitnodiging te beheren"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "U moet uw agendasleutels activeren om deze uitnodiging te beantwoorden"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "U moet uw agendasleutels activeren om de bijgewerkte afspraak te zien"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "U moet uw agendasleutels activeren om de bijgewerkte uitnodiging te zien"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        ""
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "U moet uw sleutels opnieuw activeren om deze uitnodiging te beheren"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "U moet uw sleutels opnieuw activeren om de bijgewerkte gebeurtenis te zien"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
+      ],
+      "Create a new calendar to add this event": [
+        ""
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Maak een nieuwe agenda om deze uitnodiging te beantwoorden"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Maak een nieuwe kalender om uw uitnodigingen te beheren"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Open de bijgewerkte afspraak in ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Open in ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Drafts": [
+        "Concepten"
+      ],
+      "Sent": [
+        "Verzonden"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Alle e-mail"
+      ],
+      "Archive": [
+        "Archiveren"
+      ],
+      "Starred": [
+        "Met ster"
+      ],
+      "Outbox": [
+        "Postvak UIT"
+      ],
+      "Scheduled": [
+        "Gepland"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging bij te werken."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Schakel uw adres in om deze uitnodiging te beantwoorden."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Maak en koppel een agenda aan een actief e-mailadres."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Schakel een e-mailadres gekoppeld aan een van uw agenda's in."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Of u kunt een van uw agenda's verwijderen en een nieuwe aanmaken die gekoppeld is aan een actief e-mailadres."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Schakel uw adres opnieuw in om uw antwoord te wijzigen."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om de afspraak te annuleren."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om uw antwoord aan te passen."
+      ],
+      "Add folder": [
+        "Map toevoegen"
+      ],
+      "Add label": [
+        "Label toevoegen"
+      ],
+      "Folders": [
+        "Mappen"
+      ],
+      "Manage your folders": [
+        "Mappen beheren"
+      ],
+      "Labels": [
+        "Labels"
+      ],
+      "Manage your labels": [
+        "Labels beheren"
       ]
     },
     "Label": {
@@ -4518,152 +4691,6 @@
         "${ secondsCountLeft } seconden"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "Request an invite": [
-        "Uitnodiging aanvragen"
-      ],
-      "clearing your browser cache": [
-        "browsercache legen"
-      ],
-      "Pay invoice": [
-        "Factuur betalen"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Go to subscription plans": [
-        "Ga naar abonnementsplannen"
-      ],
-      "click here": [
-        "klik hier"
-      ],
-      "Add a gift code": [
-        "Voeg een geschenkcode toe"
-      ],
-      "Inbox": [
-        "Inbox"
-      ],
-      "Drafts": [
-        "Concepten"
-      ],
-      "Sent": [
-        "Verzonden"
-      ],
-      "Trash": [
-        "Prullenbak"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Alle e-mail"
-      ],
-      "Archive": [
-        "Archiveren"
-      ],
-      "Starred": [
-        "Met ster"
-      ],
-      "Outbox": [
-        "Postvak UIT"
-      ],
-      "Scheduled": [
-        "Gepland"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        ""
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "U moet uw agendasleutels activeren om deze uitnodiging te beheren"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "U moet uw agendasleutels activeren om deze uitnodiging te beantwoorden"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "U moet uw agendasleutels activeren om de bijgewerkte afspraak te zien"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "U moet uw agendasleutels activeren om de bijgewerkte uitnodiging te zien"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "U moet uw sleutels opnieuw activeren om deze uitnodiging te beheren"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "U moet uw sleutels opnieuw activeren om de bijgewerkte gebeurtenis te zien"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
-      ],
-      "Create a new calendar to add this event": [
-        ""
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Maak een nieuwe agenda om deze uitnodiging te beantwoorden"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Maak een nieuwe kalender om uw uitnodigingen te beheren"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Open de bijgewerkte afspraak in ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Open in ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging bij te werken."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Schakel uw adres in om deze uitnodiging te beantwoorden."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Maak en koppel een agenda aan een actief e-mailadres."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Schakel een e-mailadres gekoppeld aan een van uw agenda's in."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Of u kunt een van uw agenda's verwijderen en een nieuwe aanmaken die gekoppeld is aan een actief e-mailadres."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Schakel uw adres opnieuw in om uw antwoord te wijzigen."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om de afspraak te annuleren."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om uw antwoord aan te passen."
-      ],
-      "Add folder": [
-        "Map toevoegen"
-      ],
-      "Add label": [
-        "Label toevoegen"
-      ],
-      "Folders": [
-        "Mappen"
-      ],
-      "Manage your folders": [
-        "Mappen beheren"
-      ],
-      "Labels": [
-        "Labels"
-      ],
-      "Manage your labels": [
-        "Labels beheren"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Deze functie vereist een betaald Proton-account"
@@ -4707,6 +4734,9 @@
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5150,30 +5180,6 @@
         "Geen verificatiemethode beschikbaar"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normaal"
-      ],
-      "Maximized": [
-        "Gemaximaliseerd"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Naam"
@@ -5390,6 +5396,35 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normaal"
+      ],
+      "Maximized": [
+        "Gemaximaliseerd"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Uploaden"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Verbinding maken met uw contactpersonen provider"
@@ -5527,11 +5562,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Uploaden"
       ]
     },
     "Onboarding Proton": {
@@ -6683,10 +6713,6 @@
         "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar het e-mailadres dat is ingevoerd vanwege de volgende redenen:",
         "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar de e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Ga terug en bewerk het e-mailadres dat u invoerde.",
-        "Ga terug en bewerk de e-mailadressen die u invoerde."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar één of meerdere e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
       ],
@@ -6856,6 +6882,11 @@
       ],
       "Next": [
         "Volgende"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

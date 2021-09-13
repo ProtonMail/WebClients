@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "zh-CN"
+    "language": "zh_CN"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "字节"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Error": {
       "This field is required": [
         "此项必须填写"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
-      ],
-      "Request timed out.": [
-        "请求超时。"
-      ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
       ],
       "Email address disabled": [
         "邮件地址已禁用"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "发送密钥无效"
       ],
+      "Request timed out.": [
+        "请求超时。"
+      ],
       "Missing signature": [
         "缺少签名"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "无法提取${ emailAddress } 的密钥属性"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "验证出错。"
       ],
+      "Email address invalid": [
+        "邮箱格式不正确"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
-      "Email address invalid": [
-        "邮箱格式不正确"
       ],
       "The composer failed to load.": [
         "编辑器加载失败。"
@@ -309,6 +323,9 @@
       "Removed duplicate recipient: ${ recipents }": [
         "删除的重复收件人：${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        ""
+      ],
       "Message passwords do not match.": [
         "邮件解密密码不匹配。"
       ],
@@ -345,6 +362,15 @@
       "Unknown error.": [
         "未知错误。"
       ],
+      "re-activate the previous key": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        ""
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        ""
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "规则数量已达上限，须开通付费账户方可启用更多筛选规则"
       ]
@@ -352,20 +378,6 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密码必须至少包含 ${ length } 个字符"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "字节"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
       ]
     },
     "Contact field label": {
@@ -482,6 +494,17 @@
         "地址"
       ]
     },
+    "Message": {
+      "Re:": [
+        "回复："
+      ],
+      "Fw:": [
+        "转发："
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date }，${ name } ${ address } 来信："
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "会话已超时。"
@@ -519,23 +542,23 @@
       "No results found": [
         "未找到结果"
       ],
-      "support team": [
-        "客服团队"
-      ],
-      "Loading": [
-        "加载中"
-      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
       "You can either update your search query or ${ button }": [
         "您可以更改搜索条件或${ button }。"
       ],
+      "support team": [
+        "客服团队"
+      ],
       "Week": [
         "周"
       ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
+      ],
+      "Loading": [
+        "加载中"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，Internet Explorer 和 Edge 浏览器无法打开。若您确认链接可靠，可使用其他浏览器打开。"
@@ -590,6 +613,12 @@
       ],
       "Test link": [
         "测试链接"
+      ],
+      "Change your default in settings": [
+        ""
+      ],
+      "Default": [
+        ""
       ],
       "Text color": [
         "文本颜色"
@@ -1149,6 +1178,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "（满足下列任一条件）"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
       ],
@@ -1491,6 +1523,12 @@
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        ""
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        ""
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } 条未读会话"
       ],
@@ -1657,22 +1695,6 @@
         "使用移动设备扫描此二维码或打开 ${ link }。"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "回复："
-      ],
-      "Fw:": [
-        "转发："
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }，${ name } ${ address } 来信："
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -1717,6 +1739,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "读取文件 ${ formattedFilename } 失败，文件格式不对。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2500,14 +2527,11 @@
       "Close": [
         "关闭"
       ],
-      "refresh the page": [
-        "刷新页面"
-      ],
-      "Use “${ label }” setting": [
-        "使用 \"${ label }\" 设置"
-      ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
+      ],
+      "Confirm": [
+        "确定"
       ],
       "Cancel": [
         "取消"
@@ -2518,8 +2542,8 @@
       "Close modal": [
         "关闭"
       ],
-      "Confirm": [
-        "确定"
+      "Use “${ label }” setting": [
+        "使用 \"${ label }\" 设置"
       ],
       "Remove": [
         "移除"
@@ -2565,6 +2589,9 @@
       ],
       "Email settings": [
         "邮件设置"
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Next month": [
         "下个月"
@@ -2692,12 +2719,6 @@
       "Edit phone number": [
         "编辑手机号码"
       ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 主题"
-      ],
-      "OK": [
-        "确定"
-      ],
       "Add": [
         "添加"
       ],
@@ -2814,6 +2835,12 @@
       ],
       "Next": [
         "继续"
+      ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 主题"
+      ],
+      "OK": [
+        "确定"
       ],
       "Continue import": [
         "继续导入"
@@ -3037,15 +3064,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "添加到 ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "了解详情"
-      ],
-      "Open shop": [
-        "打开商店"
-      ],
-      "Open calendar": [
-        "打开日历"
-      ],
       "Send anyway": [
         "仍然发送"
       ],
@@ -3090,9 +3108,6 @@
       ],
       "CC, BCC": [
         "CC, BCC"
-      ],
-      "Go back": [
-        "返回"
       ],
       "Send": [
         "发送​​"
@@ -3241,6 +3256,9 @@
       "Show": [
         "显示"
       ],
+      "Learn more": [
+        "了解详情"
+      ],
       "Undo": [
         "撤销"
       ],
@@ -3276,6 +3294,9 @@
       ],
       "Advanced search": [
         "高级搜索"
+      ],
+      "Clear browser data": [
+        ""
       ],
       "Mark as read": [
         "标为已读"
@@ -3355,6 +3376,12 @@
       "Create new message": [
         "创建新邮件"
       ],
+      "Open shop": [
+        "打开商店"
+      ],
+      "Open calendar": [
+        "打开日历"
+      ],
       "Import messages": [
         "导入邮件"
       ],
@@ -3410,9 +3437,6 @@
       ],
       "Human verification": [
         "身份验证"
-      ],
-      "Select a theme": [
-        "选择主题"
       ],
       "Delete ${ Name }": [
         "删除 ${ Name }"
@@ -3524,6 +3548,9 @@
       ],
       "Import contacts": [
         "导入联系人"
+      ],
+      "Select a theme": [
+        "选择主题"
       ],
       "Start import process": [
         "开始导入过程"
@@ -3732,8 +3759,8 @@
       "Blind Carbon Copy": [
         "盲抄本"
       ],
-      "Errors detected": [
-        "发现错误"
+      "Sending error": [
+        ""
       ],
       "Confirm recipient address?": [
         "确认收件人地址？"
@@ -3871,6 +3898,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "了解详情"
+      ],
+      "Request an invite": [
+        "请求邀请"
+      ],
+      "clearing your browser cache": [
+        "清除浏览器缓存"
+      ],
+      "Pay invoice": [
+        "前去支付"
+      ],
+      "Upgrade account": [
+        "升级账户"
+      ],
+      "Upgrade": [
+        "升级"
+      ],
+      "Go to subscription plans": [
+        "转至订阅计划"
+      ],
+      "click here": [
+        "请单击此处"
+      ],
+      "Add a gift code": [
+        "使用礼品码"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "您需要激活您的日历密钥才能添加此日程"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "您需要激活您的日历密钥才能管理此邀请"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "您需要激活您的日历密钥才能回复此邀请"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "您需要激活您的日历密钥才能看到更新的日程"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "您需要激活日历密钥才能看到更新的邀请"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "此 ICS 文件包含多个日程，请下载并导入 ${ calendarAppName } 中的日程"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "您需要重新激活您的密钥才能管理此邀请"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "您需要重新激活您的密钥才能看到更新的日程"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "您需要重新激活您的密钥才能看到更新的邀请"
+      ],
+      "Create a new calendar to add this event": [
+        "创建新日历来添加此日程"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "创建新日历来回复此邀请"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "创建新日历来管理您的邀请"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "在 ${ calendarAppName } 中打开更新的日程"
+      ],
+      "Open in ${ calendarAppName }": [
+        "在 ${ calendarAppName } 中打开"
+      ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Sent": [
+        "已发送"
+      ],
+      "Trash": [
+        "回收站"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "All mail": [
+        "所有邮件"
+      ],
+      "Archive": [
+        "归档"
+      ],
+      "Starred": [
+        "已加星标"
+      ],
+      "Outbox": [
+        "发件箱"
+      ],
+      "Scheduled": [
+        "定时发送"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "重新启用与本日历关联的地址以管理您的邀请。"
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "重新启用与本日历关联的地址以更新您的邀请。"
+      ],
+      "Enable your address to answer this invitation.": [
+        "启用您的邮箱地址来回复此邀请。"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "创建一个与在用邮箱地址关联的日历。"
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "启用与您日历之一关联的邮箱地址。"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "或者您可以删除一个日历后创建一个新的，将其关联到一个在用的邮箱地址。"
+      ],
+      "Enable your address again to modify your answer.": [
+        "再次启用您的邮箱地址来修改您的答案。"
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "启用与禁用日历关联的邮箱地址来取消活动。"
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "启用与禁用日历关联的邮箱地址来修改您的回复。"
+      ],
+      "Add folder": [
+        "添加文件夹"
+      ],
+      "Add label": [
+        "添加标签"
+      ],
+      "Folders": [
+        "文件夹"
+      ],
+      "Manage your folders": [
+        "管理文件夹"
+      ],
+      "Labels": [
+        "标签"
+      ],
+      "Manage your labels": [
+        "管理标签"
       ]
     },
     "Label": {
@@ -4422,152 +4595,6 @@
         "${ secondsCountLeft } 秒"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "了解详情"
-      ],
-      "Request an invite": [
-        "请求邀请"
-      ],
-      "clearing your browser cache": [
-        "清除浏览器缓存"
-      ],
-      "Pay invoice": [
-        "前去支付"
-      ],
-      "Upgrade account": [
-        "升级账户"
-      ],
-      "Upgrade": [
-        "升级"
-      ],
-      "Go to subscription plans": [
-        "转至订阅计划"
-      ],
-      "click here": [
-        "请单击此处"
-      ],
-      "Add a gift code": [
-        "使用礼品码"
-      ],
-      "Inbox": [
-        "收件箱"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Sent": [
-        "已发送"
-      ],
-      "Trash": [
-        "回收站"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "All mail": [
-        "所有邮件"
-      ],
-      "Archive": [
-        "归档"
-      ],
-      "Starred": [
-        "已加星标"
-      ],
-      "Outbox": [
-        "发件箱"
-      ],
-      "Scheduled": [
-        "定时发送"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "您需要激活您的日历密钥才能添加此日程"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "您需要激活您的日历密钥才能管理此邀请"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "您需要激活您的日历密钥才能回复此邀请"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "您需要激活您的日历密钥才能看到更新的日程"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "您需要激活日历密钥才能看到更新的邀请"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "此 ICS 文件包含多个日程，请下载并导入 ${ calendarAppName } 中的日程"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "您需要重新激活您的密钥才能管理此邀请"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "您需要重新激活您的密钥才能看到更新的日程"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "您需要重新激活您的密钥才能看到更新的邀请"
-      ],
-      "Create a new calendar to add this event": [
-        "创建新日历来添加此日程"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "创建新日历来回复此邀请"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "创建新日历来管理您的邀请"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "在 ${ calendarAppName } 中打开更新的日程"
-      ],
-      "Open in ${ calendarAppName }": [
-        "在 ${ calendarAppName } 中打开"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "重新启用与本日历关联的地址以管理您的邀请。"
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "重新启用与本日历关联的地址以更新您的邀请。"
-      ],
-      "Enable your address to answer this invitation.": [
-        "启用您的邮箱地址来回复此邀请。"
-      ],
-      "Create a calendar linked to an active email address.": [
-        "创建一个与在用邮箱地址关联的日历。"
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "启用与您日历之一关联的邮箱地址。"
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "或者您可以删除一个日历后创建一个新的，将其关联到一个在用的邮箱地址。"
-      ],
-      "Enable your address again to modify your answer.": [
-        "再次启用您的邮箱地址来修改您的答案。"
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "启用与禁用日历关联的邮箱地址来取消活动。"
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "启用与禁用日历关联的邮箱地址来修改您的回复。"
-      ],
-      "Add folder": [
-        "添加文件夹"
-      ],
-      "Add label": [
-        "添加标签"
-      ],
-      "Folders": [
-        "文件夹"
-      ],
-      "Manage your folders": [
-        "管理文件夹"
-      ],
-      "Labels": [
-        "标签"
-      ],
-      "Manage your labels": [
-        "管理标签"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "此功能仅限付费用户使用"
@@ -4609,6 +4636,9 @@
         "您确定要放弃导入吗？"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -5031,30 +5061,6 @@
         "没有可用的验证方法"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "舒适"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "常规"
-      ],
-      "Maximized": [
-        "满屏"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "姓名"
@@ -5264,6 +5270,35 @@
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "舒适"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "常规"
+      ],
+      "Maximized": [
+        "满屏"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上传"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "正在连接到您的联系人提供商"
@@ -5401,11 +5436,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "添加截图"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "上传"
       ]
     },
     "Onboarding Proton": {
@@ -5765,7 +5795,7 @@
         "${ n } VPN 连接"
       ],
       "${ n } server": [
-        "${ n } 个服务器"
+        "${ n } 台服务器"
       ]
     },
     "Netflix": {
@@ -5802,7 +5832,7 @@
         "冲破网络封锁"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } 个国家的 ${ freeServers } 台服务器"
+        "${ freeCountries } 个国家的 ${ freeServers }"
       ],
       "Medium speed": [
         "速度一般"
@@ -5814,10 +5844,10 @@
         "速度较快"
       ],
       "1200+ servers in ${ plusCountries } country": [
-        "1200+ 服务器在 ${ plusCountries } 国家"
+        "${ plusCountries } 个国家的 1200+ 台服务器"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "速度最快（10 Gbps）"
+        "速度最快（最高可达 10 Gbps）"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
         "所有 ${ PLAN_NAMES[PLANS.VPNPLUS] } 套餐功能"
@@ -6538,9 +6568,6 @@
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "发生错误，您的邮件未能发送给任何人，原因如下："
       ],
-      "Please go back to edit the email address you entered.": [
-        "请返回修改邮箱地址。"
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "发生错误，您的邮件无法发送给部分收件人，原因如下："
       ],
@@ -6710,6 +6737,11 @@
       ],
       "Next": [
         "下一步"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Search - no results": {

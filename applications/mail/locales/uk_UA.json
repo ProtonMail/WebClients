@@ -1,10 +1,24 @@
 {
   "headers": {
     "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
-    "language": "uk"
+    "language": "uk_UA"
   },
   "contexts": {
     "": {},
+    "file size format": {
+      "bytes": [
+        "байтів"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
     "Error": {
       "This field is required": [
         "Це поле є обов'язковим"
@@ -20,15 +34,6 @@
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
-      ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
-      ],
-      "Signature verification failed": [
-        "Неможливо перевірити підпис"
-      ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
       ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
@@ -54,6 +59,9 @@
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
       ],
+      "Request timed out.": [
+        "Час очікування запиту завершився."
+      ],
       "Missing signature": [
         "Відсутній підпис"
       ],
@@ -68,6 +76,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Не вдається видобути властивості ключа для ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
+      ],
+      "Could not find address ${ email }.": [
+        "Неможливо знайти адресу ${ email }."
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -90,14 +104,14 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
+      "Email address invalid": [
+        "Недійсна адреса електронної пошти"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
-      ],
-      "Email address invalid": [
-        "Недійсна адреса електронної пошти"
       ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
@@ -324,6 +338,9 @@
         "Вилучено дублікати отримувачів: ${ recipents }",
         "Вилучено дублікати отримувачів: ${ recipents }"
       ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } для <${ email }>. Щоб розв'язувати проблему можете додати інший ключ або вимкнути шифрування для цього контакту."
+      ],
       "Message passwords do not match.": [
         "Паролі повідомлення відрізняються."
       ],
@@ -363,6 +380,15 @@
       "Unknown error.": [
         "Невідома помилка."
       ],
+      "re-activate the previous key": [
+        "повторно активувати попередній ключ"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. Якщо ви пам'ятаєте свій попередній пароль, ви можете ${ reActivateKeyLink }, щоб отримати доступ до своїх повідомлень. ${ learnMoreLink }"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+        "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. ${ learnMoreLink }"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів"
       ]
@@ -373,20 +399,6 @@
         "Пароль повинен містити принаймні ${ length } символи",
         "Пароль повинен містити принаймні ${ length } символів",
         "Пароль повинен містити принаймні ${ length } символів"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "байтів"
-      ],
-      "KB": [
-        "КБ"
-      ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
       ]
     },
     "Contact field label": {
@@ -503,6 +515,17 @@
         "Адреса"
       ]
     },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date }, ${ name } ${ address } пише:"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Сеанс завершився."
@@ -540,17 +563,14 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "support team": [
-        "командою підтримки"
-      ],
-      "Loading": [
-        "Завантаження"
-      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
       "You can either update your search query or ${ button }": [
         "Ви можете оновити свій пошуковий запит, або ${ button }"
+      ],
+      "support team": [
+        "командою підтримки"
       ],
       "Week": [
         "Тиждень"
@@ -560,6 +580,9 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
+      ],
+      "Loading": [
+        "Завантаження"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
@@ -614,6 +637,12 @@
       ],
       "Test link": [
         "Тестове посилання"
+      ],
+      "Change your default in settings": [
+        "Змінити типовий у налаштуваннях"
+      ],
+      "Default": [
+        "Типовий"
       ],
       "Text color": [
         "Колір тексту"
@@ -1194,6 +1223,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Фільтрувати, якщо виконується БУДЬ-ЯКА із зазначених умов)"
       ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Зображення були вилучені, оскільки вони не дозволені в автовідповіді."
+      ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
       ],
@@ -1578,6 +1610,12 @@
         "Приблизний час до завершення: ${ estimatedMinutes } хвилин",
         "Приблизний час до завершення: ${ estimatedMinutes } хвилин"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Очищення даних браузера також деактивує пошук вмісту повідомлень на цьому пристрої. Для пошуку серед них, усі повідомлення потрібно буде завантажити знову."
+      ],
+      "Clears browser data related to message content search including downloaded messages": [
+        "Очистьте дані браузера, пов'язані з пошуком вмісту повідомлень, включно з завантаженими повідомленнями"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } непрочитана розмова",
         "${ unreadCount } непрочитані розмови",
@@ -1780,22 +1818,6 @@
         "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу е-пошти не знайдено серед ідентифікаторів користувача, визначених в надісланому ключі (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }, ${ name } ${ address } пише:"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
@@ -1811,7 +1833,7 @@
         "vCard версій < 3.0 не підтримуються"
       ],
       "Encryption failed": [
-        "Шифрування не вдалося"
+        "Не вдалося зашифрувати"
       ]
     },
     "Error importing calendar": {
@@ -1840,6 +1862,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2734,14 +2761,11 @@
       "Close": [
         "Закрити"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
-      "Use “${ label }” setting": [
-        "Використовувати налаштування“${ label }”"
-      ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Підтвердити"
       ],
       "Cancel": [
         "Скасувати"
@@ -2752,8 +2776,8 @@
       "Close modal": [
         "Закрити вікно"
       ],
-      "Confirm": [
-        "Підтвердити"
+      "Use “${ label }” setting": [
+        "Використовувати налаштування“${ label }”"
       ],
       "Remove": [
         "Вилучити"
@@ -2799,6 +2823,9 @@
       ],
       "Email settings": [
         "Налаштування е-пошти"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Next month": [
         "Наступний місяць"
@@ -2926,12 +2953,6 @@
       "Edit phone number": [
         "Змінити номер телефону"
       ],
-      "Use ${ label } theme": [
-        "Використовувати тему ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Add": [
         "Додати"
       ],
@@ -3057,6 +3078,12 @@
       ],
       "Next": [
         "Далі"
+      ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Continue import": [
         "Продовжити імпорт"
@@ -3280,15 +3307,6 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Додати до ${ CALENDAR_APP_NAME }"
       ],
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Open shop": [
-        "Відкрити магазин"
-      ],
-      "Open calendar": [
-        "Відкрити календар"
-      ],
       "Send anyway": [
         "Все одно надіслати"
       ],
@@ -3336,9 +3354,6 @@
       ],
       "CC, BCC": [
         "Копія, Прихована копія"
-      ],
-      "Go back": [
-        "Назад"
       ],
       "Send": [
         "Надіслати"
@@ -3487,6 +3502,9 @@
       "Show": [
         "Показати"
       ],
+      "Learn more": [
+        "Докладніше"
+      ],
       "Undo": [
         "Скасувати"
       ],
@@ -3522,6 +3540,9 @@
       ],
       "Advanced search": [
         "Розширений пошук"
+      ],
+      "Clear browser data": [
+        "Очистити дані браузера"
       ],
       "Mark as read": [
         "Позначити прочитаним"
@@ -3601,6 +3622,12 @@
       "Create new message": [
         "Створити повідомлення"
       ],
+      "Open shop": [
+        "Відкрити магазин"
+      ],
+      "Open calendar": [
+        "Відкрити календар"
+      ],
       "Import messages": [
         "Імпортувати повідомлення"
       ],
@@ -3656,9 +3683,6 @@
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
-      ],
-      "Select a theme": [
-        "Вибрати тему"
       ],
       "Delete ${ Name }": [
         "Видалити ${ Name }"
@@ -3782,6 +3806,9 @@
       ],
       "Import contacts": [
         "Імпортувати контакти"
+      ],
+      "Select a theme": [
+        "Вибрати тему"
       ],
       "Start import process": [
         "Розпочати процес імпортування"
@@ -4002,8 +4029,8 @@
       "Blind Carbon Copy": [
         "Прихована копія"
       ],
-      "Errors detected": [
-        "Виявлено помилки"
+      "Sending error": [
+        "Надсилання помилки"
       ],
       "Confirm recipient address?": [
         "Підтвердити адресу отримувача?"
@@ -4141,6 +4168,152 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна використовувати для шифрування"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Request an invite": [
+        "Запитати запрошення"
+      ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
+      ],
+      "Pay invoice": [
+        "Сплатити рахунок"
+      ],
+      "Upgrade account": [
+        "Покращити обліковий запис"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Go to subscription plans": [
+        "Перейти до тарифних планів"
+      ],
+      "click here": [
+        "натисніть тут"
+      ],
+      "Add a gift code": [
+        "Додати подарунковий код"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Щоб керувати цим запрошенням, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Щоб відповісти на це запрошення, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Щоб переглянути оновлену подію, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Щоб переглянути оновлене запрошення, вам необхідно активувати свої ключі календаря"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Цей ICS-файл містить більше однієї події. Будь ласка, завантажте його та імпортуйте події в ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Щоб керувати цим запрошенням, вам необхідно повторно активувати свої ключі"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Щоб переглянути оновлену подію, вам необхідно повторно активувати свої ключі"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
+      ],
+      "Create a new calendar to add this event": [
+        "Створити новий календар для додавання цієї події"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Створити новий календар для відповіді на це запрошення"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Створити новий календар для керування запрошеннями"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Відкрити оновлену подію в ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Відкрити в ${ calendarAppName }"
+      ],
+      "Inbox": [
+        "Вхідні"
+      ],
+      "Drafts": [
+        "Чернетки"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
+      "Trash": [
+        "Смітник"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архів"
+      ],
+      "Starred": [
+        "Із зірочкою"
+      ],
+      "Outbox": [
+        "Вихідні"
+      ],
+      "Scheduled": [
+        "Заплановані"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Повторно активуйте адресу, пов'язану з цим календарем, щоб керувати вашим запрошенням."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Повторно активуйте адресу, пов'язану з цим календарем, щоб оновити ваше запрошення."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Активуйте вашу адресу, щоб відповісти на це запрошення."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Створіть календар, пов'язаний з активною адресою електронної пошти."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Активуйте адресу електронної пошти, пов'язану з одним з ваших календарів."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Або ви можете видалити один з ваших календарів і створити новий, що пов'язаний з активною адресою електронної пошти."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Активуйте вашу адресу знову, щоб змінити свою відповідь."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб скасувати цю подію."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб змінити цю подію."
+      ],
+      "Add folder": [
+        "Додати теку"
+      ],
+      "Add label": [
+        "Додати мітку"
+      ],
+      "Folders": [
+        "Теки"
+      ],
+      "Manage your folders": [
+        "Керуйте своїми теками"
+      ],
+      "Labels": [
+        "Мітки"
+      ],
+      "Manage your labels": [
+        "Керувати мітками"
       ]
     },
     "Label": {
@@ -4710,152 +4883,6 @@
         "${ secondsCountLeft } секунд"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Request an invite": [
-        "Запитати запрошення"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
-      ],
-      "Pay invoice": [
-        "Сплатити рахунок"
-      ],
-      "Upgrade account": [
-        "Покращити обліковий запис"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Go to subscription plans": [
-        "Перейти до тарифних планів"
-      ],
-      "click here": [
-        "натисніть тут"
-      ],
-      "Add a gift code": [
-        "Додати подарунковий код"
-      ],
-      "Inbox": [
-        "Вхідні"
-      ],
-      "Drafts": [
-        "Чернетки"
-      ],
-      "Sent": [
-        "Надіслані"
-      ],
-      "Trash": [
-        "Смітник"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Уся пошта"
-      ],
-      "Archive": [
-        "Архів"
-      ],
-      "Starred": [
-        "Із зірочкою"
-      ],
-      "Outbox": [
-        "Вихідні"
-      ],
-      "Scheduled": [
-        "Заплановані"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Щоб керувати цим запрошенням, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Щоб відповісти на це запрошення, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Щоб переглянути оновлену подію, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Щоб переглянути оновлене запрошення, вам необхідно активувати свої ключі календаря"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Цей ICS-файл містить більше однієї події. Будь ласка, завантажте його та імпортуйте події в ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Щоб керувати цим запрошенням, вам необхідно повторно активувати свої ключі"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Щоб переглянути оновлену подію, вам необхідно повторно активувати свої ключі"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
-      ],
-      "Create a new calendar to add this event": [
-        "Створити новий календар для додавання цієї події"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Створити новий календар для відповіді на це запрошення"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Створити новий календар для керування запрошеннями"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Відкрити оновлену подію в ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Відкрити в ${ calendarAppName }"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Повторно активуйте адресу, пов'язану з цим календарем, щоб керувати вашим запрошенням."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Повторно активуйте адресу, пов'язану з цим календарем, щоб оновити ваше запрошення."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Активуйте вашу адресу, щоб відповісти на це запрошення."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Створіть календар, пов'язаний з активною адресою електронної пошти."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Активуйте адресу електронної пошти, пов'язану з одним з ваших календарів."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Або ви можете видалити один з ваших календарів і створити новий, що пов'язаний з активною адресою електронної пошти."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Активуйте вашу адресу знову, щоб змінити свою відповідь."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб скасувати цю подію."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб змінити цю подію."
-      ],
-      "Add folder": [
-        "Додати теку"
-      ],
-      "Add label": [
-        "Додати мітку"
-      ],
-      "Folders": [
-        "Теки"
-      ],
-      "Manage your folders": [
-        "Керуйте своїми теками"
-      ],
-      "Labels": [
-        "Мітки"
-      ],
-      "Manage your labels": [
-        "Керувати мітками"
-      ]
-    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Ця функція вимагає платного тарифного плану Proton"
@@ -4904,6 +4931,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Живий чат - це преміум функція, доступна лише користувачам платних тарифних планів. Будь ласка, створіть запит натомість."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "На жаль, наразі ми не онлайн. Будь ласка, заповніть форму внизу, щоб описати вашу проблему, і ми розглянемо її та зв'яжемось, коли знову будемо онлайн."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
@@ -5388,30 +5418,6 @@
         "Немає доступних способів перевірки"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
-      ],
-      "Maximized": [
-        "Розгорнутий"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Назва"
@@ -5642,6 +5648,35 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Вивантажити"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Підключення до вашого постачальника контактів"
@@ -5779,11 +5814,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Додати знімки екрану"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Вивантажити"
       ]
     },
     "Onboarding Proton": {
@@ -6973,12 +7003,6 @@
         "Ми виявили помилки. Ваш лист неможливо надіслати на будь-яку з введених адрес з таких причин:",
         "Ми виявили помилки. Ваш лист неможливо надіслати на будь-яку з введених адрес з таких причин:"
       ],
-      "Please go back to edit the email address you entered.": [
-        "Будь ласка, поверніться та змініть введену адресу.",
-        "Будь ласка, поверніться та змініть введені адреси.",
-        "Будь ласка, поверніться та змініть введені адреси.",
-        "Будь ласка, поверніться та змініть введені адреси."
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Ми виявили помилки. Ваш лист неможливо надіслати на одну чи декілька введених адрес з таких причин:"
       ],
@@ -7148,6 +7172,11 @@
       ],
       "Next": [
         "Далі"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Містить подію календаря"
       ]
     },
     "Search - no results": {

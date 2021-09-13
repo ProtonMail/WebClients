@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "da"
+    "language": "da_DK"
   },
   "contexts": {
     "": {},
@@ -21,14 +21,14 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
-      ],
       "Email address invalid": [
         "E-mailadresse ugyldig"
       ],
       "This field is required": [
         "Dette felt skal udfyldes"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -155,14 +155,14 @@
       "Invalid name": [
         "Ugyldigt navn"
       ],
-      "Primary address key is not decrypted": [
-        "Primære adressenøgle er ikke dekrypteret"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Primære adressenøgle er ikke dekrypteret"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -777,6 +777,9 @@
       ],
       "Close popover": [
         "Luk popover"
+      ],
+      "Close event popover": [
+        ""
       ]
     },
     "Title": {
@@ -948,9 +951,6 @@
       "Composer mode": [
         "Skrivetilstand"
       ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
       "Edit contact group": [
         "Redigér kontaktgruppe"
       ],
@@ -1062,6 +1062,9 @@
       ],
       "Import contacts": [
         "Importér kontakter"
+      ],
+      "Beta Access": [
+        "Beta-adgang"
       ],
       "Start import process": [
         ""
@@ -1203,15 +1206,6 @@
       ],
       "Edit event": [
         "Redigér begivenhed"
-      ],
-      "Event details": [
-        "Begivenhedsdetaljer"
-      ],
-      "More options": [
-        "Flere muligheder"
-      ],
-      "CANCELLED": [
-        "ANNULLERET"
       ]
     },
     "Info": {
@@ -1494,9 +1488,6 @@
       "Not customizable": [
         "Kan ikke tilpasses"
       ],
-      "Expired": [
-        "Udløbet"
-      ],
       "here": [
         "hér"
       ],
@@ -1535,6 +1526,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "Expired": [
+        "Udløbet"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
@@ -2037,18 +2031,6 @@
       "Proration": [
         "Proration"
       ],
-      "Cash": [
-        "Kontant"
-      ],
-      "Card holder": [
-        "Kortindehaver"
-      ],
-      "Expires": [
-        "Udløber"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
       "Cancel": [
         "Afbryd"
       ],
@@ -2076,6 +2058,18 @@
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
       ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Card holder": [
+        "Kortindehaver"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
       ],
@@ -2087,9 +2081,6 @@
       ],
       "Select how your composer opens by default.": [
         "Vælg hvordan dit skrivevindue åbner som standard."
-      ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -2126,6 +2117,9 @@
       ],
       "Export contacts": [
         "Eksportér kontakter"
+      ],
+      "Enable Beta Access": [
+        "Aktivér beta-adgang"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2210,6 +2204,10 @@
       ],
       "Your calendars": [
         "Din kalendere"
+      ],
+      "Participant": [
+        "",
+        ""
       ]
     },
     "Link": {
@@ -2248,6 +2246,11 @@
       ],
       "Subscribed calendars": [
         "Tilmeldte kalendere"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
     "Placeholder": {
@@ -2338,11 +2341,6 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minutter"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
     "Tooltip": {
@@ -2483,6 +2481,9 @@
         "Denne funktion kræver en betalt Proton-konto"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
@@ -2686,6 +2687,14 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Søg tidszoner"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Open": [
+        ""
+      ],
+      "Close": [
+        ""
       ]
     },
     "Error message": {
@@ -3353,17 +3362,6 @@
         "Gratis"
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Nyt kredit / betalingskort"
-      ],
-      "PayPal": [
-        "PayPal"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalden faktura"
@@ -3386,17 +3384,15 @@
         "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nyt kredit / betalingskort"
       ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Label to change density": {
@@ -3676,9 +3672,17 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Upload"
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
       ]
     },
     "Loading info": {
@@ -3700,6 +3704,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Upload"
       ]
     },
     "Message display when a new app version is available": {
@@ -4466,6 +4475,11 @@
         "Adresse"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Grundlæggende navigation"
@@ -4639,11 +4653,6 @@
       ],
       "Show original message": [
         "Vis oprindelig besked"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4842,6 +4851,11 @@
         "gange"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        ""
+      ]
+    },
     "Calendar invite info": {
       "You accepted the invitation": [
         "Du accepterede invitationen"
@@ -4876,11 +4890,6 @@
         "med e-mail"
       ]
     },
-    "Event info": {
-      "Organized by:": [
-        "Organiseret af:"
-      ]
-    },
     "Disabled calendar": {
       "Disabled": [
         "Deaktiveret"
@@ -4889,6 +4898,48 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Begivenheden hører til en deaktiveret kalender."
+      ]
+    },
+    "Event reply": {
+      "yes": [
+        ""
+      ],
+      "maybe": [
+        ""
+      ],
+      "no": [
+        ""
+      ],
+      "unanswered": [
+        ""
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        ""
+      ],
+      "Collapse participants list": [
+        ""
+      ]
+    },
+    "Event edit button tooltip": {
+      "Edit event": [
+        ""
+      ]
+    },
+    "Event delete button tooltip": {
+      "Delete event": [
+        ""
+      ]
+    },
+    "Event cancelled status badge": {
+      "cancelled": [
+        ""
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
       ]
     }
   }
