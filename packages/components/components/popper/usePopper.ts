@@ -109,9 +109,14 @@ const usePopper = ({
 
         updatePosition();
 
+        const observer = new MutationObserver(updatePosition);
+        if (popperEl) {
+            observer.observe(popperEl, { childList: true, subtree: true });
+        }
         contentArea.addEventListener('scroll', updatePosition);
         window.addEventListener('resize', updatePosition);
         return () => {
+            observer.disconnect();
             contentArea.removeEventListener('scroll', updatePosition);
             window.removeEventListener('resize', updatePosition);
         };
