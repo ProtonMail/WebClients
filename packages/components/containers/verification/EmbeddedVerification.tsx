@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getAppUrlFromApiUrl, getAppUrlRelativeToOrigin, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -22,6 +22,7 @@ const EmbeddedVerification = ({
     defaultEmail,
     defaultPhone,
 }: EmbeddedVerificationProps) => {
+    const iframeRef = useRef<HTMLIFrameElement>(null);
     const [iframeHeight, setIframeHeight] = useState<number | undefined>();
     const { API_URL } = useConfig();
 
@@ -35,11 +36,11 @@ const EmbeddedVerification = ({
 
     useEffect(() => {
         const handleMessage = (e: MessageEvent) => {
-            if (e.origin !== embedUrl.origin) {
-                /*
-                 * Post message from unexpected origin, exit to make sure
-                 * this handler doesn't do anything with it
-                 */
+            const { origin, data, source } = e;
+
+            const contentWindow = iframeRef.current?.contentWindow;
+
+            if (!contentWindow || origin !== embedUrl.origin || !data || source !== contentWindow) {
                 return;
             }
 
@@ -79,6 +80,7 @@ const EmbeddedVerification = ({
         <iframe
             style={{ height: `${iframeHeight}px`, width: '100%' }}
             src={src}
+            ref={iframeRef}
             title="verification-iframe"
             sandbox="allow-scripts allow-same-origin allow-popups"
         />
