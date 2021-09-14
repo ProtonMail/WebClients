@@ -1,5 +1,4 @@
 import { useCache, useApi } from '@proton/components';
-import { Api } from '@proton/shared/lib/interfaces';
 
 const useDebouncedRequest = () => {
     const api = useApi();
@@ -8,7 +7,7 @@ const useDebouncedRequest = () => {
     /**
      * If promise is pending, returns it, otherwise executes query function
      */
-    const debouncedRequest: Api = <T>(args: object) => {
+    const debouncedRequest = <T>(args: object, signal?: AbortSignal) => {
         const key = `request_${JSON.stringify(args)}`;
         const existingPromise: Promise<T> | undefined = cache.get(key);
 
@@ -16,7 +15,7 @@ const useDebouncedRequest = () => {
             return existingPromise;
         }
 
-        const promise = api<T>(args);
+        const promise = api<T>({ signal, ...args });
         cache.set(key, promise);
 
         const cleanup = () => {

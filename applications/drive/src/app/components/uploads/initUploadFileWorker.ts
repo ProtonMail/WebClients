@@ -4,14 +4,20 @@ import { TransferCancel } from '../../interfaces/transfer';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import { makeThumbnail } from '../thumbnail/thumbnail';
 import { UploadWorkerController } from './workerController';
-import { UploadCallbacks, UploadControls, FileRequestBlock, ThumbnailRequestBlock, BlockToken } from './interface';
+import {
+    UploadCallbacks,
+    UploadFileControls,
+    UploadFileProgressCallbacks,
+    FileRequestBlock,
+    ThumbnailRequestBlock,
+    BlockToken,
+} from './interface';
 
-export function initUpload(
+export function initUploadFileWorker(
     file: File,
-    { initialize, createBlockLinks, onProgress, finalize, onError }: UploadCallbacks
-): UploadControls {
+    { initialize, createBlockLinks, finalize, onError }: UploadCallbacks
+): UploadFileControls {
     const abortController = new AbortController();
-    let isCancelled = false;
     let workerApi: UploadWorkerController;
 
     // Start detecting mime type right away to have this information once the
@@ -19,12 +25,15 @@ export function initUpload(
     // need to wait for creation of revision on API.
     const mimeTypePromise = mimeTypeFromFile(file);
 
-    const start = async () => {
+    const start = async ({ onInit, onProgress, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Lets start creating
         // revision on API and making thumbnail a bit sooner.
         const setupPromise = mimeTypePromise.then(async (mimeType) => {
             return Promise.all([
-                initialize(abortController.signal, mimeType),
+                initialize(abortController.signal, mimeType).then((fileRevision) => {
+                    onInit?.(mimeType, fileRevision.fileName);
+                    return fileRevision;
+                }),
                 makeThumbnail(mimeType, file).catch((err) => {
                     traceError(err);
                     return undefined;
@@ -36,7 +45,7 @@ export function initUpload(
             const worker = new Worker(new URL('./worker/worker.ts', import.meta.url));
             workerApi = new UploadWorkerController(worker, {
                 createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => {
-                    createBlockLinks(fileBlocks, thumbnailBlock)
+                    createBlockLinks(abortController.signal, fileBlocks, thumbnailBlock)
                         .then(({ fileLinks, thumbnailLink }) => workerApi.postCreatedBlocks(fileLinks, thumbnailLink))
                         .catch(reject);
                 },
@@ -44,6 +53,7 @@ export function initUpload(
                     onProgress?.(increment);
                 },
                 finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string) => {
+                    onFinalize?.();
                     finalize(blockTokens, signature, signatureAddress).then(resolve).catch(reject);
                 },
                 onError: (error: string) => {
@@ -78,20 +88,17 @@ export function initUpload(
     };
 
     const cancel = async () => {
-        isCancelled = true;
         abortController.abort();
         workerApi?.cancel();
     };
 
     return {
-        start: () =>
-            start()
+        start: (progressCallbacks?: UploadFileProgressCallbacks) =>
+            start(progressCallbacks)
                 .catch((err) => {
                     abortController.abort();
                     onError?.(err);
-                    if (!isCancelled) {
-                        throw err;
-                    }
+                    throw err;
                 })
                 .finally(() => {
                     workerApi?.terminate();

@@ -91,7 +91,10 @@ export const calculateProgress = (latestStats: TransfersStats, transfers: Transf
             acc.size += emptyFileCompensationInBytes;
         } else {
             acc.size += transfer.meta.size || 0;
-            acc.progress += latestStats.stats[transfer.id]?.progress || 0;
+            acc.progress +=
+                (transfer.state === TransferState.Done
+                    ? transfer.meta.size
+                    : latestStats.stats[transfer.id]?.progress) || 0;
         }
 
         return acc;

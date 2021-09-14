@@ -2,7 +2,7 @@ import { MAX_RETRIES_BEFORE_FAIL } from '../constants';
 import { UploadingBlock } from './interface';
 import { createUploadingBlock } from './testHelpers';
 import startUploadJobs from './upload';
-import { Pauser } from './utils';
+import { Pauser } from './pauser';
 
 describe('upload jobs', () => {
     const mockProgressCallback = jest.fn();

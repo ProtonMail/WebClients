@@ -1,13 +1,13 @@
 import { useRef, useEffect, ChangeEvent } from 'react';
-import useActiveShare from './useActiveShare';
+
+import useActiveShare from '../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../utils/transfer';
-import useFiles from './useFiles';
+import { UploadFileList } from './interface';
+import { useUploadProvider } from './UploadProvider';
 
-const useFileUploadInput = (forFolders?: boolean) => {
-    const DS_STORE = '.DS_Store';
-
-    const { uploadDriveFiles } = useFiles();
+const useUploadInput = (forFolders?: boolean) => {
     const { activeFolder } = useActiveShare();
+    const { uploadFiles } = useUploadProvider();
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -18,17 +18,12 @@ const useFileUploadInput = (forFolders?: boolean) => {
         }
     }, [forFolders]);
 
-    const getFolderItemsToUpload = (files: FileList) => {
+    const getFolderItemsToUpload = (files: FileList): UploadFileList => {
         const foldersCreated = new Set<string>();
-        const filesToUpload: { path: string[]; file?: File }[] = [];
+        const filesToUpload: UploadFileList = [];
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
-
-            // Skip 'Desktop Services Store' files.
-            if (file.name === DS_STORE) {
-                continue;
-            }
 
             if ('webkitRelativePath' in file) {
                 const path = ((file as any).webkitRelativePath as string).split('/');
@@ -64,8 +59,13 @@ const useFileUploadInput = (forFolders?: boolean) => {
             return;
         }
 
-        const filesToUpload = forFolders ? getFolderItemsToUpload(files) : files;
-        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, !forFolders).catch((err) => {
+        let filesToUpload = getFolderItemsToUpload(files);
+        if (!forFolders) {
+            // MacOS has bug, where you can select folders when uploading files in some cases.
+            filesToUpload = filesToUpload.filter(({ file }) => !!file);
+        }
+
+        uploadFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload).catch((err) => {
             if (!isTransferCancelError(err)) {
                 console.error(err);
             }
@@ -75,4 +75,4 @@ const useFileUploadInput = (forFolders?: boolean) => {
     return { inputRef, handleClick, handleChange };
 };
 
-export default useFileUploadInput;
+export default useUploadInput;

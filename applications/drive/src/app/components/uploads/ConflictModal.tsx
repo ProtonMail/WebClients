@@ -41,7 +41,11 @@ export default function ConflictModal({
     );
     const [applyAll, setApplyAll] = useState(false);
 
-    const uploadName = <strong className="text-break" key="filename">{name}</strong>;
+    const uploadName = (
+        <strong className="text-break" key="filename">
+            {name}
+        </strong>
+    );
 
     return (
         <FormModal

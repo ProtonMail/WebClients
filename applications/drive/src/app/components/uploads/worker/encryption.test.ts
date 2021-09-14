@@ -4,7 +4,7 @@ import generateBlocks from './encryption';
 
 export async function asyncGeneratorToArray<T>(generator: AsyncGenerator<T>): Promise<T[]> {
     const result = [];
-    for await(const item of generator) {
+    for await (const item of generator) {
         result.push(item);
     }
     return result;
@@ -20,11 +20,11 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
         };
-    }
+    };
 
     it('should generate all file blocks', async () => {
         const lastBlockSize = 123;
-        const file = new File(['x'.repeat(2*FILE_CHUNK_SIZE+lastBlockSize)], 'foo.txt');
+        const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
         const thumbnailData = undefined;
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
@@ -32,11 +32,15 @@ describe('block generator', () => {
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
         expect(blocks.map((block) => block.index)).toMatchObject([1, 2, 3]);
-        expect(blocks.map((block) => block.originalSize)).toMatchObject([FILE_CHUNK_SIZE, FILE_CHUNK_SIZE, lastBlockSize]);
+        expect(blocks.map((block) => block.originalSize)).toMatchObject([
+            FILE_CHUNK_SIZE,
+            FILE_CHUNK_SIZE,
+            lastBlockSize,
+        ]);
     });
 
     it('should generate thumbnail as first block', async () => {
-        const file = new File(['x'.repeat(2*FILE_CHUNK_SIZE)], 'foo.txt');
+        const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE)], 'foo.txt');
         const thumbnailData = new Uint8Array([1, 2, 3, 3, 2, 1]);
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
