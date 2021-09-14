@@ -31,6 +31,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
         }
 
         try {
+            lastCall.current = undefined;
             pendingSave.renew();
             await saveDraft(message as MessageExtendedWithData);
         } finally {
@@ -53,7 +54,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
 
     restart = useHandler(() => {
         pauseDebouncer.current = false;
-        if (pendingAutoSave.isPending) {
+        if (lastCall.current !== undefined) {
             void debouncedHandler(lastCall.current as MessageExtended);
         }
     });
@@ -77,13 +78,12 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     pausableHandler.abort = abort;
 
     const saveNow = (message: MessageExtended) => {
-        pausableHandler.abort?.();
+        abort();
         return actualSave(message);
     };
 
     const deleteDraft = useHandler(async (message: MessageExtended) => {
-        pausableHandler.abort?.();
-        pause();
+        abort();
 
         try {
             await pendingSave.promise;
