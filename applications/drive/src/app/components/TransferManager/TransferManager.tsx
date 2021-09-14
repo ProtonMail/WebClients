@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useMemo, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { c } from 'ttag';
-import { useToggle, classnames, useElementRect, useActiveBreakpoint } from '@proton/components';
+import { useToggle, classnames, useElementRect, useActiveBreakpoint, useWindowSize } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
@@ -71,7 +71,10 @@ const TransferManager = ({
     allTransfersFinished: boolean;
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null);
+
     const [transferGroupFilter, setTransferGroupFilter] = useState<TransferGroup | undefined>(undefined);
+    const windowHeight = useWindowSize()[1];
     /*
         FixedSizedList (used for virtual scrolling) requires `width` prop to work
         correcty. This is why we use 'useElementRect' hook here.
@@ -87,7 +90,9 @@ const TransferManager = ({
         For more details see TransferManagerContainer component
     */
     const rect = useElementRect(containerRef, buffer);
+    const rectHeader = useElementRect(headerRef, buffer);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
+    const { state: isToolbarExpanded, toggle: setToolbarExpanded } = useToggle();
     const { openConfirmModal } = useConfirm();
     const { isNarrow } = useActiveBreakpoint();
 
@@ -156,11 +161,24 @@ const TransferManager = ({
 
     const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
 
-    const calcultateItemHeight = useCallback(
+    const calcultateItemsHeight = useCallback(
         (itemCount: number) => {
             return ROW_HEIGHT_PX * Math.min(maxVisibleTransfers, itemCount);
         },
         [entries]
+    );
+
+    const calculateListHeight = useCallback(
+        (itemCount: number) => {
+            const itemsHeight = calcultateItemsHeight(itemCount);
+
+            if (itemsHeight + (rectHeader?.height || 0) > windowHeight) {
+                return windowHeight - (rectHeader?.height || 0);
+            }
+
+            return itemsHeight;
+        },
+        [windowHeight, isToolbarExpanded]
     );
 
     const shouldDisplayToolbar = !isNarrow && !minimized;
@@ -170,25 +188,29 @@ const TransferManager = ({
             id="transfer-manager"
             className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}
         >
-            <Header
-                downloads={downloads}
-                uploads={uploads}
-                latestStats={latestStats}
-                minimized={minimized}
-                onToggleMinimize={toggleMinimized}
-                onClose={handleCloseClick}
-            />
-            {shouldDisplayToolbar && (
-                <Toolbar
-                    onTransferGroupFilterChange={setTransferGroupFilter}
-                    currentTransferGroup={transferGroupFilter}
-                    entries={entries}
+            <div ref={headerRef}>
+                <Header
+                    downloads={downloads}
+                    uploads={uploads}
+                    latestStats={latestStats}
+                    minimized={minimized}
+                    onToggleMinimize={toggleMinimized}
+                    onClose={handleCloseClick}
                 />
-            )}
+                {shouldDisplayToolbar && (
+                    <Toolbar
+                        onTransferGroupFilterChange={setTransferGroupFilter}
+                        currentTransferGroup={transferGroupFilter}
+                        entries={entries}
+                        isExpanded={isToolbarExpanded}
+                        onExpand={setToolbarExpanded}
+                    />
+                )}
+            </div>
             {entries.length === 0 && (
                 <div
                     className="transfers-manager-list-placeholder flex flex-justify-center flex-align-items-center"
-                    style={{ height: calcultateItemHeight(1) }}
+                    style={{ height: calcultateItemsHeight(1) }}
                 >
                     <span>{c('Info').t`No results found`} </span>
                 </div>
@@ -204,7 +226,7 @@ const TransferManager = ({
                         }}
                         itemCount={entries.length}
                         itemSize={ROW_HEIGHT_PX}
-                        height={calcultateItemHeight(entries.length)}
+                        height={calculateListHeight(entries.length)}
                         width={rect.width}
                         itemKey={(index, { entries }: ListItemData) => entries[index].transfer?.id ?? index}
                     >
