@@ -13,6 +13,8 @@ import {
     useMailSettings,
     InlineLinkButton,
     Button,
+    useFeature,
+    FeatureCode,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -46,6 +48,7 @@ import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
+import ItemSpyTrackerIcon from '../../list/ItemSpyTrackerIcon';
 
 interface Props {
     labelID: string;
@@ -103,6 +106,7 @@ const HeaderExpanded = ({
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const isSendingMessage = message.sending;
     const isOutboxMessage = isOutbox(message.data);
+    const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
 
     const isScheduledMessage = isScheduled(message.data);
 
@@ -313,13 +317,14 @@ const HeaderExpanded = ({
                 {messageLoaded && !showDetails && !isNarrow && (
                     <>
                         <div className="flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
+                            {feature?.Value && <ItemSpyTrackerIcon message={message} />}
                             <ItemLabels
                                 element={message.data}
                                 labelID={labelID}
                                 labels={labels}
                                 showUnlabel
                                 maxNumber={5}
-                                className="on-mobile-pt0-25"
+                                className="on-mobile-pt0-25 ml0-5"
                             />
                             <ItemAttachmentIcon
                                 onClick={handleAttachmentIconClick}
