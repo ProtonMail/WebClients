@@ -24,6 +24,7 @@ import ShareButton, { shouldRenderShareButton } from '../ShareButton';
 import SharedURLIcon from '../SharedURLIcon';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
+import { formatAccessCount } from '../../../utils/formatters';
 
 const ItemRow = ({
     item,
@@ -184,7 +185,7 @@ const ItemRow = ({
                 )}
 
                 {columns.includes('share_num_access') && (
-                    <TableCell className="m0 w15">{shareURL?.NumAccesses || 0}</TableCell>
+                    <TableCell className="m0 w15">{formatAccessCount(shareURL?.NumAccesses)}</TableCell>
                 )}
 
                 {columns.includes('share_expires') && <TableCell className="m0 w20">{generateExpiresCell()}</TableCell>}
