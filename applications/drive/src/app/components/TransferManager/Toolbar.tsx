@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { c } from 'ttag';
 
 import { classnames, Details, Radio, Summary } from '@proton/components';
@@ -40,6 +39,8 @@ interface ToolbarProps {
     currentTransferGroup?: TransferGroup;
     onTransferGroupFilterChange: (transferGroup: TransferGroup | undefined) => void;
     entries: TransferManagerEntry[];
+    isExpanded: boolean;
+    onExpand: (isExpanded: boolean) => void;
 }
 
 const extractTransferFromEntry = ({ transfer }: TransferManagerEntry) => transfer;
@@ -50,8 +51,13 @@ const isInvalidForCancellation = (transfer: Upload | Download) =>
     isTransferFinalizing(transfer) ||
     isTransferDone(transfer);
 
-const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }: ToolbarProps) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+const Toolbar = ({
+    onTransferGroupFilterChange,
+    currentTransferGroup,
+    entries,
+    isExpanded,
+    onExpand,
+}: ToolbarProps) => {
     const transferManagerControls = useTransferControls();
 
     const areAllActiveTransfersPaused = entries
@@ -123,7 +129,7 @@ const Toolbar = ({ onTransferGroupFilterChange, currentTransferGroup, entries }:
             <Details
                 open={isExpanded}
                 onToggle={() => {
-                    setIsExpanded(!isExpanded);
+                    onExpand(!isExpanded);
                 }}
                 className="no-border"
             >
