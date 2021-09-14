@@ -57,6 +57,7 @@ export const transformEmbedded = async (
                         id,
                         cid,
                         cloc,
+                        tracker: attachment.Headers?.['x-pm-tracker-provider'],
                         attachment,
                         status: 'not-loaded' as 'not-loaded',
                     };
