@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon, InputFieldTwo, PasswordInputTwo, TextAreaTwo } from '@proton/components';
+import { Icon, InputFieldTwo, Option, PasswordInputTwo, SelectTwo, TextAreaTwo } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
 import mdx from './InputFieldTwo.mdx';
@@ -166,6 +166,13 @@ export const CustomElements = () => {
             </div>
             <div className="mb1">
                 <InputFieldTwo as={TextAreaTwo} rows={3} label="Text area" placeholder="Placeholder" />
+            </div>
+            <div className="mb1">
+                <InputFieldTwo as={SelectTwo} placeholder="Placeholder" assistiveText="Choose wisely." label="With new select">
+                    <Option title="one" value="one" />
+                    <Option title="two" value="two" />
+                    <Option title="three" value="three" />
+                </InputFieldTwo>
             </div>
         </div>
     );

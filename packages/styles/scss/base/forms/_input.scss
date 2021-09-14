@@ -121,6 +121,9 @@ select {
 				border-color: var(--signal-danger);
 			}
 		}
+		.select {
+			border-color: var(--signal-danger);
+		}
 	}
 
 	// global warning state on container
@@ -177,6 +180,7 @@ select {
 	&-container--bigger {
 		.right-icon,
 		input.inputform-field,
+		.select,
 		.inputform-icon-container {
 			height: rem($bigger-height-fields-inputforms);
 		}
