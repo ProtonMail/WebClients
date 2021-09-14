@@ -15,7 +15,7 @@ function mockGenerator(start: number, end: number) {
     }
     const waitForPosition = (expectedPosition: number) => {
         return waitFor(() => position === expectedPosition);
-    }
+    };
     return {
         generator,
         waitForPosition,
@@ -40,7 +40,7 @@ describe('upload worker buffer', () => {
         buffer.encryptedBlocks.clear();
         // To stop wait in generateUploadingBlocks.
         buffer.uploadingBlocks = [createUploadingBlock(1)];
-    })
+    });
 
     it('keeps encrypted buffer filled', async () => {
         const expectedKeys = [];
@@ -67,7 +67,7 @@ describe('upload worker buffer', () => {
 
     it('reads next encrypted block if both encrypted and upload buffer is not full', async () => {
         const expectedKeys = [];
-        for (let idx = 0; idx < (MAX_ENCRYPTED_BLOCKS-2); idx++) {
+        for (let idx = 0; idx < MAX_ENCRYPTED_BLOCKS - 2; idx++) {
             buffer.encryptedBlocks.set(idx, createBlock(idx));
             expectedKeys.push(idx);
         }
@@ -77,7 +77,7 @@ describe('upload worker buffer', () => {
 
         const { generator, waitForPosition } = mockGenerator(1000, 1005);
 
-        buffer.feedEncryptedBlocks(generator()).finally(noop);;
+        buffer.feedEncryptedBlocks(generator()).finally(noop);
         await waitForPosition(1000);
         buffer.uploadingBlocks.shift();
         await waitForPosition(1002);
@@ -137,10 +137,7 @@ describe('upload worker buffer', () => {
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.encryptedBlocks.set(2, createBlock(2));
 
-        buffer.setBlockLinks([
-            createLink(0),
-            createLink(1),
-        ])
+        buffer.setBlockLinks([createLink(0), createLink(1)]);
 
         expect(Array.from(buffer.encryptedBlocks.keys())).toMatchObject([2]);
         expect(buffer.uploadingBlocks).toMatchObject([createUploadingBlock(0), createUploadingBlock(1)]);
@@ -159,7 +156,9 @@ describe('upload worker buffer', () => {
 
         const promise = new Promise((resolve, reject) => {
             setTimeout(() => resolve('OK'), 100);
-            buffer.generateUploadingBlocks().next()
+            buffer
+                .generateUploadingBlocks()
+                .next()
                 .then(() => reject(new Error('Generator continued/finished')))
                 .catch((err) => reject(err));
         });

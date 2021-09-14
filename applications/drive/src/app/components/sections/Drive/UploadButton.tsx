@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
-import useFileUploadInput from '../../../hooks/drive/useFileUploadInput';
+import useFileUploadInput from '../../uploads/useUploadInput';
 import { useDownloadProvider } from '../../downloads/DownloadProvider';
 import { useUploadProvider } from '../../uploads/UploadProvider';
 
@@ -22,8 +22,8 @@ const UploadMobileButton = () => {
     const { inputRef: fileInput, handleClick, handleChange: handleFileChange } = useFileUploadInput();
 
     const { downloads } = useDownloadProvider();
-    const { uploads } = useUploadProvider();
-    const isTransferring = uploads.length > 0 || downloads.length > 0;
+    const { hasUploads } = useUploadProvider();
+    const isTransferring = hasUploads || downloads.length > 0;
 
     return (
         <>
