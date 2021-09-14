@@ -102,6 +102,7 @@ export const useAttachments = ({
             const filename = pendingUpload.file.name;
             attachmentCache.set(upload.attachment.ID || '', { data, verified: 1, filename, signatures: [] });
 
+            // Warning, that change function can be called multiple times, don't do any side effect in it
             onChange((message: MessageExtended) => {
                 // New attachment list
                 const Attachments = [...getAttachments(message.data), upload.attachment];
@@ -109,16 +110,17 @@ export const useAttachments = ({
 
                 if (action === ATTACHMENT_ACTION.INLINE) {
                     embeddedImages.push(createEmbeddedImageFromUpload(upload));
-
-                    setTimeout(() => {
-                        editorActionsRef.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
-                    });
                 }
 
                 const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
 
                 return { data: { Attachments }, messageImages };
             });
+
+            if (action === ATTACHMENT_ACTION.INLINE) {
+                editorActionsRef.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+            }
+
             removePendingUpload(pendingUpload);
         } catch (error) {
             if (error.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
