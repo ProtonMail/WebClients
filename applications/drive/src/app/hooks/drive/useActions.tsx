@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { usePreventLeave, useModals } from '@proton/components';
 
@@ -90,7 +90,11 @@ function useActions() {
 
         const title = c('Title').t`Delete permanently`;
         const confirm = c('Action').t`Delete permanently`;
-        const message = c('Info').t`Are you sure you want to permanently delete selected item(s) from trash?`;
+        const message = c('Info').ngettext(
+            msgid`Are you sure you want to permanently delete selected item from trash?`,
+            `Are you sure you want to permanently delete selected items from trash?`,
+            itemsToDelete.length
+        );
 
         openConfirmModal({
             title,
@@ -210,8 +214,11 @@ function useActions() {
         openConfirmModal({
             title: c('Title').t`Stop sharing`,
             confirm: c('Title').t`Stop sharing`,
-            message: c('Info')
-                .t`This will delete the link(s) and remove access to your file(s) for anyone with the link(s).`,
+            message: c('Info').ngettext(
+                msgid`This will delete the link and remove access to your file for anyone with the link.`,
+                `This will delete the links and remove access to your files for anyone with the links.`,
+                itemsToStopSharing.length
+            ),
             onConfirm: async () => {
                 const deletedCount = await deleteLinks(itemsToStopSharing);
                 const failedCount = itemsToStopSharing.length - deletedCount;
