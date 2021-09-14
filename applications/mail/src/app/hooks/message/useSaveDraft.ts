@@ -75,6 +75,7 @@ const useUpdateDraft = () => {
                 },
                 document: message.document,
                 plainText: message.plainText,
+                messageImages: message.messageImages,
             });
             await call();
         } catch (error: any) {
