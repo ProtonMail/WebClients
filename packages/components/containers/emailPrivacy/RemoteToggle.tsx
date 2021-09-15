@@ -15,7 +15,7 @@ interface Props {
     onChange: (value: number) => void;
 }
 
-const RemoteToggle = ({ id, showImages, onChange }: Props) => {
+const RemoteToggle = ({ id, showImages, onChange, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -37,6 +37,7 @@ const RemoteToggle = ({ id, showImages, onChange }: Props) => {
             checked={!state} // Use !state because we want to display ON toggle if auto load is disabled and vice versa
             onChange={({ target }) => withLoading(handleChange(target.checked))}
             loading={loading}
+            {...rest}
         />
     );
 };
