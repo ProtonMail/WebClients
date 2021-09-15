@@ -1,8 +1,5 @@
-import { ChangeEvent } from 'react';
 import { c } from 'ttag';
-
 import {
-    updateMessageButtons,
     updateViewMode,
     updateStickyLabels,
     updateDraftType,
@@ -10,17 +7,10 @@ import {
     updateFontFace,
     updateFontSize,
 } from '@proton/shared/lib/api/mailSettings';
-import { MESSAGE_BUTTONS, VIEW_MODE, MIME_TYPES, RIGHT_TO_LEFT, STICKY_LABELS } from '@proton/shared/lib/constants';
+import { VIEW_MODE, MIME_TYPES, RIGHT_TO_LEFT, STICKY_LABELS } from '@proton/shared/lib/constants';
 
-import { ButtonGroup, Label, Radio, Info, Icon, Button } from '../../components';
-import {
-    useEventManager,
-    useMailSettings,
-    useNotifications,
-    useApi,
-    useApiWithoutResult,
-    useLoading,
-} from '../../hooks';
+import { Label, Info } from '../../components';
+import { useEventManager, useMailSettings, useNotifications, useApi, useLoading } from '../../hooks';
 import DraftTypeSelect from './DraftTypeSelect';
 import TextDirectionSelect from './TextDirectionSelect';
 import ViewModeToggle from './ViewModeToggle';
@@ -32,14 +22,10 @@ import FontFaceSelect from './FontFaceSelect';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/squireConfig';
 import FontSizeSelect from './FontSizeSelect';
 
-const { READ_UNREAD, UNREAD_READ } = MESSAGE_BUTTONS;
-
 const AppearanceOtherSection = () => {
     const api = useApi();
-    const { request, loading } = useApiWithoutResult(updateMessageButtons);
     const [
         {
-            MessageButtons = 0,
             ViewMode = 0,
             StickyLabels = 0,
             DraftMIMEType = MIME_TYPES.DEFAULT,
@@ -59,15 +45,6 @@ const AppearanceOtherSection = () => {
     const [loadingFontSize, withLoadingFontSize] = useLoading();
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const handleButtonOrderChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-        const newState = parseInt(target.value, 10);
-        await request(newState);
-        await call();
-        createNotification({
-            text: c('Success').t`Buttons position saved`,
-        });
-    };
 
     const handleToggleStickyLabels = async (value: number) => {
         await api(updateStickyLabels(value));
@@ -209,54 +186,6 @@ const AppearanceOtherSection = () => {
                             onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
                             loading={loadingFontSize}
                         />
-                    </div>
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label className="text-semibold">{c('Label').t`Read/unread toolbar order`}</label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <div className="mb1">
-                        <Radio
-                            id="read-unread"
-                            name="read-unread"
-                            checked={MessageButtons === READ_UNREAD}
-                            disabled={loading}
-                            onChange={handleButtonOrderChange}
-                            value={READ_UNREAD}
-                            data-testid="appearance:read-unread-radio"
-                        >
-                            <ButtonGroup className="ml1 no-pointer-events">
-                                <Button icon title={c('Action').t`Read`}>
-                                    <Icon name="eye" />
-                                </Button>
-                                <Button icon title={c('Action').t`Unread`}>
-                                    <Icon name="eye-slash" />
-                                </Button>
-                            </ButtonGroup>
-                        </Radio>
-                    </div>
-                    <div>
-                        <Radio
-                            id="unread-read"
-                            name="unread-read"
-                            checked={MessageButtons === UNREAD_READ}
-                            disabled={loading}
-                            onChange={handleButtonOrderChange}
-                            value={UNREAD_READ}
-                            data-testid="appearance:unread-read-radio"
-                        >
-                            <ButtonGroup className="ml1 no-pointer-events">
-                                <Button icon title={c('Action').t`Unread`}>
-                                    <Icon name="eye-slash" />
-                                </Button>
-                                <Button icon title={c('Action').t`Read`}>
-                                    <Icon name="eye" />
-                                </Button>
-                            </ButtonGroup>
-                        </Radio>
                     </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
