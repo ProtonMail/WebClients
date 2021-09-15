@@ -37,7 +37,6 @@ import {
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
-import { addDays, format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -56,8 +55,6 @@ import {
     VcalStringProperty,
 } from '@proton/shared/lib/interfaces/calendar';
 import {
-    VcalDateOrDateTimeProperty,
-    VcalDateTimeProperty,
     VcalVcalendar,
     VcalVeventComponent,
     VcalVtimezoneComponent,
@@ -67,7 +64,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
-import { format, getUnixTime } from 'date-fns';
+import { getUnixTime } from 'date-fns';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -357,34 +354,6 @@ export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => 
         return EVENT_TIME_STATUS.HAPPENING;
     }
     return EVENT_TIME_STATUS.FUTURE;
-};
-
-export const formatStartDateTime = (
-    property: VcalDateOrDateTimeProperty,
-    locale: Locale,
-    isAllDay: boolean,
-    isSingleAllDay?: boolean
-) => {
-    if (isAllDay) {
-        const utcDate = propertyToUTCDate(property);
-        const formattedDate = formatUTC(utcDate, 'cccc PPP', { locale });
-        if (isSingleAllDay) {
-            return c('Invitation details (all-day event)').t`${formattedDate} (all day)`;
-        }
-        return formattedDate;
-    }
-    const dateTimeProperty = property as VcalDateTimeProperty;
-    return format(propertyToUTCDate(dateTimeProperty), 'cccc PPPp', { locale });
-};
-
-export const formatEndDateTime = (property: VcalDateOrDateTimeProperty, locale: Locale, isAllDay: boolean) => {
-    if (isAllDay) {
-        const utcDate = propertyToUTCDate(property);
-        const formattedDate = formatUTC(addDays(utcDate, -1), 'cccc PPP', { locale });
-        return formattedDate;
-    }
-    const dateTimeProperty = property as VcalDateTimeProperty;
-    return format(propertyToUTCDate(dateTimeProperty), 'cccc PPPp', { locale });
 };
 
 const getIsEventInvitationValid = (event: VcalVeventComponent | undefined): event is VcalVeventComponent => {

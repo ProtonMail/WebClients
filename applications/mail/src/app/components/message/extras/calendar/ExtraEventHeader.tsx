@@ -1,3 +1,4 @@
+import { unary } from '@proton/shared/lib/helpers/function';
 import { c } from 'ttag';
 import { ICAL_ATTENDEE_ROLE, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
@@ -39,12 +40,10 @@ const ExtraEventHeader = ({ model }: Props) => {
     const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
 
     const dateHeader = useMemo(() => {
-        const [[dateStart, timeStart], [dateEnd, timeEnd]] = [dtstart, dtend].map((property) => {
-            const utcDate = propertyToUTCDate(property);
-            return [
-                format(utcDate, 'ccc PP', { locale: dateLocale }),
-                format(addDays(utcDate, -1), 'p', { locale: dateLocale }),
-            ];
+        const [utcStartDate, utcEndDate] = [dtstart, dtend].map(unary(propertyToUTCDate));
+        const modifiedUtcEndDate = isAllDay ? addDays(utcEndDate, -1) : utcEndDate;
+        const [[dateStart, timeStart], [dateEnd, timeEnd]] = [utcStartDate, modifiedUtcEndDate].map((date) => {
+            return [format(date, 'ccc PP', { locale: dateLocale }), format(date, 'p', { locale: dateLocale })];
         });
 
         if (isAllDay) {
