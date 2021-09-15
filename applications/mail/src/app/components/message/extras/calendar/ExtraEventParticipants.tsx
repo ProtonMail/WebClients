@@ -10,15 +10,11 @@ interface Props {
 const ExtraEventParticipants = ({ list }: Props) => {
     const [isShowingMore, setIsShowingMore] = useState(false);
 
-    if (!list.length) {
-        return null;
-    }
-
     const [organizer, ...attendees] = list;
     const totalAttendees = attendees.length;
     const toggleShowMore = () => setIsShowingMore((prevState) => !prevState);
 
-    if (totalAttendees === 1) {
+    if (totalAttendees <= 1) {
         return (
             <>
                 {list.map((participant, i) => {

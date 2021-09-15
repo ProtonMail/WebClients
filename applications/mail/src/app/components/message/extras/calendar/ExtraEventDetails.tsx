@@ -69,7 +69,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 value: sanitizedAndUrlifiedLocation,
                 key: 'location',
             },
-            {
+            participantsList.length && {
                 icon: 'user-group',
                 label: c('ICS widget label for event details').t`Participants`,
                 value: <ExtraEventParticipants list={participantsList} />,
@@ -82,7 +82,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     }
 
     return (
-        <>
+        <div className="border-top pt0-5">
             {properties.map(({ value, icon, label, key, title }, index) => {
                 return (
                     <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
@@ -105,7 +105,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                     </div>
                 );
             })}
-        </>
+        </div>
     );
 };
 
