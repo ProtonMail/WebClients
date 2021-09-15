@@ -19,6 +19,7 @@ import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from
 import { useMessageCache } from '../containers/MessageProvider';
 import { findSender } from '../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../constants';
+import { useAttachmentCache } from '../containers/AttachmentProvider';
 
 const CACHE_KEY = 'Draft';
 
@@ -65,13 +66,14 @@ export const useDraft = () => {
     const draftVerifications = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
+    const attachmentCache = useAttachmentCache();
 
     useEffect(() => {
         const run = async () => {
             if (!mailSettings || !addresses) {
                 return;
             }
-            const message = createNewDraft(MESSAGE_ACTIONS.NEW, undefined, mailSettings, addresses);
+            const message = createNewDraft(MESSAGE_ACTIONS.NEW, undefined, mailSettings, addresses, attachmentCache);
             cache.set(CACHE_KEY, message);
         };
         void run();
@@ -88,7 +90,13 @@ export const useDraft = () => {
                 message = cloneDraft(cache.get(CACHE_KEY) as MessageExtendedWithData);
             } else {
                 // This cast is quite dangerous but hard to remove
-                message = createNewDraft(action, referenceMessage, mailSettings, addresses) as MessageExtended;
+                message = createNewDraft(
+                    action,
+                    referenceMessage,
+                    mailSettings,
+                    addresses,
+                    attachmentCache
+                ) as MessageExtended;
             }
 
             message.localID = generateUID('draft');
