@@ -31,7 +31,7 @@ const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T
 
             onSuccess({ password, totp, result });
             onClose?.();
-        } catch (error) {
+        } catch (error: any) {
             const { code, message } = getApiErrorMessage(error);
             if (code === PASSWORD_WRONG_ERROR) {
                 setError(message);

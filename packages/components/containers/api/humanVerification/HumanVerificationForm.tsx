@@ -76,7 +76,7 @@ const HumanVerificationForm = ({
     const verifyToken = async (token: string, tokenType: 'sms' | 'email') => {
         try {
             await onSubmit(token, tokenType);
-        } catch (error) {
+        } catch (error: any) {
             const { data: { Code } = { Code: 0 } } = error;
 
             if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {

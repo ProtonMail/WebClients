@@ -32,7 +32,7 @@ const upsertCalendarApiEvent = (Event: CalendarEvent, calendarEventsCache: Calen
         const eventData = pick(Event, FIELDS_TO_KEEP);
         const newCalendarEventStoreRecord = getCalendarEventStoreRecord(eventComponent, eventData);
         return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventsCache);
-    } catch (error) {
+    } catch (error: any) {
         removeCalendarEventStoreRecord(eventID, calendarEventsCache);
         return false;
     }

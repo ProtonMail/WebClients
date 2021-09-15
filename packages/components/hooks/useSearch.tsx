@@ -144,9 +144,9 @@ function useSearch<T, K = keyof SearchableObject<T>>({
                     onSubmit(inputValue);
                     resetField();
                 }
-            } catch ({ message }) {
-                if (message) {
-                    setError(message);
+            } catch (e: any) {
+                if (e.message) {
+                    setError(e.message);
                 }
             }
         },

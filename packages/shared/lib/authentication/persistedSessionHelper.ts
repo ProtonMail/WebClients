@@ -47,7 +47,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
                 throw InactiveSessionError();
             }
             return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser };
-        } catch (e) {
+        } catch (e: any) {
             if (getIs401Error(e)) {
                 removePersistedSession(localID, persistedUID);
                 throw new InvalidPersistentSessionError('Session invalid');
@@ -67,7 +67,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
             throw InactiveSessionError();
         }
         return { UID: persistedUID, LocalID: localID, User };
-    } catch (e) {
+    } catch (e: any) {
         if (getIs401Error(e)) {
             removePersistedSession(localID, persistedUID);
             throw new InvalidPersistentSessionError('Session invalid');
@@ -160,7 +160,7 @@ export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResu
                 session: validatedSession,
                 sessions: maybeActiveSessions,
             };
-        } catch (e) {
+        } catch (e: any) {
             if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                 // Session expired, try another session
                 continue;
@@ -186,7 +186,7 @@ export const maybeResumeSessionByUser = async (
     }
     try {
         return await resumeSession(api, maybePersistedSession.localID, User);
-    } catch (e) {
+    } catch (e: any) {
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;
         }

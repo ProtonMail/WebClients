@@ -57,7 +57,7 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
             await humanApi.api(queryCheckVerificationCode(token, tokenType, clientType));
             humanApi.setToken(token, tokenType);
             onSubmit();
-        } catch (error) {
+        } catch (error: any) {
             const { data: { Code } = { Code: 0 } } = error;
 
             if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {

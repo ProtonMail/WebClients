@@ -83,7 +83,7 @@ const MailboxContainer = ({
                 if (pair[0] === MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM) {
                     try {
                         onMailTo(decodeURIComponent(pair[1]));
-                    } catch (e) {
+                    } catch (e: any) {
                         console.error(e);
                     }
                 }

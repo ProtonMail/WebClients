@@ -62,7 +62,7 @@ const ContactGroupsTable = ({ hasPaidMail, showUpgradeModal }: Props) => {
                 setContactGroups(newList);
                 await api(orderContactGroup({ LabelIDs: newList.map(({ ID }) => ID) }));
                 void call();
-            } catch (error) {
+            } catch (error: any) {
                 setContactGroups(contactGroups);
             }
         },

@@ -593,7 +593,7 @@ function useFiles() {
                             );
                         }
                     }
-                } catch (err) {
+                } catch (err: any) {
                     if (!isTransferCancelError(err)) {
                         console.error(err);
                     }

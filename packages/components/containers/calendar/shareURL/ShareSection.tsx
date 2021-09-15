@@ -89,7 +89,7 @@ const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
         try {
             toggleLinkLoading(urlID, true);
             await fn();
-        } catch (error) {
+        } catch (error: any) {
             createNotification({ type: 'error', text: error.message });
         } finally {
             toggleLinkLoading(urlID, false);

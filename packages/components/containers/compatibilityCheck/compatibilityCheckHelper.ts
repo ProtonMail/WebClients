@@ -10,7 +10,7 @@ const isGoodPrngAvailable = () => {
 const hasCookies = () => {
     try {
         return navigator.cookieEnabled;
-    } catch (e) {
+    } catch (e: any) {
         // Safari throws SecurityError if storage is disabled
         return false;
     }
@@ -19,7 +19,7 @@ const hasCookies = () => {
 const hasSessionStorage = () => {
     try {
         return !!window.sessionStorage;
-    } catch (e) {
+    } catch (e: any) {
         // Safari throws SecurityError if storage is disabled
         return false;
     }
@@ -28,7 +28,7 @@ const hasSessionStorage = () => {
 const hasLocalStorage = () => {
     try {
         return !!window.localStorage;
-    } catch (e) {
+    } catch (e: any) {
         // Safari throws SecurityError if storage is disabled
         return false;
     }

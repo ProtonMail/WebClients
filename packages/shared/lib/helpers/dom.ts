@@ -91,5 +91,5 @@ export const scrollIntoView = (element: HTMLElement | undefined | null, extra?: 
     try {
         element.scrollIntoView(extra);
         // eslint-disable-next-line no-empty
-    } catch (e) {}
+    } catch (e: any) {}
 };

@@ -260,7 +260,7 @@ const wrapInsertHTML = (squire: any, supportImage: boolean) => {
                 if (first && first === last && first.tagName === 'IMG') {
                     return;
                 }
-            } catch (e) {
+            } catch (e: any) {
                 console.error(e); // eslint-disable-line no-console
             }
         }

@@ -292,7 +292,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         force: true,
                     });
                     await Promise.all(partialsPromises);
-                } catch (err) {
+                } catch (err: any) {
                     abortPartialDownloads();
                     throw err;
                 }

@@ -138,7 +138,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             await call();
             onClose?.();
             createNotification({ text: c('Success').t`User created` });
-        } catch (e) {
+        } catch (e: any) {
             setLoading(false);
         }
     };

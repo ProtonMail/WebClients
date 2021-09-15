@@ -31,7 +31,7 @@ const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
                 const result = await resumeSession(silentApi, localID);
                 onLogin(result);
                 return;
-            } catch (e) {
+            } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     return onInactiveSession(localID);
                 }

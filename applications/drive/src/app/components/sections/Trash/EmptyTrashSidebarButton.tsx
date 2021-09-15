@@ -36,7 +36,7 @@ const EmptyTrashSidebarButton = ({ mobileVersion = false }: Props) => {
                     const notificationText = c('Notification').t`All items will soon be permanently deleted from trash`;
                     createNotification({ text: notificationText });
                     await events.callAll(activeShareId);
-                } catch (e) {
+                } catch (e: any) {
                     console.error(e);
                 }
             },

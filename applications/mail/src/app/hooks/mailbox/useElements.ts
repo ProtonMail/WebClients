@@ -386,7 +386,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     retry: newRetry(queryParameters, undefined),
                 };
             });
-        } catch (error) {
+        } catch (error: any) {
             // Wait a couple of seconds before retrying
             setTimeout(() => {
                 setCache((cache) => ({
@@ -422,7 +422,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     await load();
                 }
             }
-        } catch (error) {
+        } catch (error: any) {
             createNotification({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead`,
                 type: 'error',

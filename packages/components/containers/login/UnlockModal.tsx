@@ -25,7 +25,7 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             });
             onSuccess?.();
             onClose?.();
-        } catch (e) {
+        } catch (e: any) {
             setPassword('');
             setLoading(false);
         }

@@ -52,7 +52,7 @@ const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: P
                 })
             );
             setModel(result);
-        } catch (error) {
+        } catch (error: any) {
             clear();
             throw error;
         }

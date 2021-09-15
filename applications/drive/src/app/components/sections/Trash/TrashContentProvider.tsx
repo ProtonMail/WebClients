@@ -75,7 +75,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
                 setLoading(false);
                 setInitialized(true);
             }
-        } catch (e) {
+        } catch (e: any) {
             const children = cache.get.trashMetas(shareId);
 
             if (signal?.aborted) {

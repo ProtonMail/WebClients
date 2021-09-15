@@ -2,7 +2,7 @@ export const getItem = (key: string, defaultValue?: string) => {
     try {
         const value = window.localStorage.getItem(key);
         return value === undefined ? defaultValue : value;
-    } catch (e) {
+    } catch (e: any) {
         return defaultValue;
     }
 };
@@ -10,7 +10,7 @@ export const getItem = (key: string, defaultValue?: string) => {
 export const setItem = (key: string, value: string) => {
     try {
         window.localStorage.setItem(key, value);
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };
@@ -18,7 +18,7 @@ export const setItem = (key: string, value: string) => {
 export const removeItem = (key: string) => {
     try {
         window.localStorage.removeItem(key);
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };
@@ -28,7 +28,7 @@ export const hasStorage = (key = 'test') => {
         window.localStorage.setItem(key, key);
         window.localStorage.removeItem(key);
         return true;
-    } catch (e) {
+    } catch (e: any) {
         return false;
     }
 };

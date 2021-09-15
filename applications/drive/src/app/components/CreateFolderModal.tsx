@@ -45,7 +45,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
             const { Folder } = await createNewFolder(shareId, linkId, formattedName);
             await events.call(shareId);
             onCreateDone?.(Folder.ID);
-        } catch (e) {
+        } catch (e: any) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
             }

@@ -90,7 +90,7 @@ const DateInput = ({
             }
             return newDate;
             // eslint-disable-next-line no-empty
-        } catch (e) {}
+        } catch (e: any) {}
     }, [temporaryInput]);
 
     const actualDefaultDate = useMemo(() => defaultDate || new Date(), [defaultDate]);

@@ -96,7 +96,7 @@ export const initDownload = ({
         const getBlocksPaged = async (pagination: { FromBlockIndex: number; PageSize: number }) => {
             try {
                 blocksOrBuffer = await getBlocks(abortController.signal, pagination);
-            } catch (err) {
+            } catch (err: any) {
                 // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
                 if (paused && isTransferCancelError(err)) {
                     await waitUntil(() => paused === false);
@@ -188,7 +188,10 @@ export const initDownload = ({
             activeIndex = blockQueue[0].Index;
 
             const retryDownload = async (activeIndex: number) => {
-                const newBlocks = await getBlocks(abortController.signal, { FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE });
+                const newBlocks = await getBlocks(abortController.signal, {
+                    FromBlockIndex: fromBlockIndex,
+                    PageSize: BATCH_REQUEST_SIZE,
+                });
                 if (areUint8Arrays(newBlocks)) {
                     throw new Error('Unexpected Uint8Array block data');
                 }
@@ -285,7 +288,7 @@ export const initDownload = ({
 
             try {
                 await runInQueue(downloadQueue, MAX_THREADS_PER_DOWNLOAD);
-            } catch (e) {
+            } catch (e: any) {
                 if (!paused) {
                     abortController.abort();
                     /*

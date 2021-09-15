@@ -44,7 +44,7 @@ export const decrypt = async (
     let message;
     try {
         message = await getMessage(Data);
-    } catch (error) {
+    } catch (error: any) {
         return { type: FAIL_TO_READ, error };
     }
 
@@ -55,7 +55,7 @@ export const decrypt = async (
             throw new Error('Unknown data');
         }
         return { type: SUCCESS, data };
-    } catch (error) {
+    } catch (error: any) {
         return { type: FAIL_TO_DECRYPT, error };
     }
 };
@@ -84,7 +84,7 @@ export const readSigned = async (
             };
         }
         return { type: SUCCESS, data: Data, signatureTimestamp: signatureTimestamp! };
-    } catch (error) {
+    } catch (error: any) {
         return {
             type: SIGNATURE_NOT_VERIFIED,
             data: Data,
@@ -106,7 +106,7 @@ export const decryptSigned = async (
             return { type: FAIL_TO_LOAD, error: new Error(c('Error').t`Missing signature`) };
         }
         [message, signature] = await Promise.all([getMessage(Data), getSignature(Signature)]);
-    } catch (error) {
+    } catch (error: any) {
         return { type: FAIL_TO_READ, error };
     }
 
@@ -127,7 +127,7 @@ export const decryptSigned = async (
         }
 
         return { type: SUCCESS, data };
-    } catch (error) {
+    } catch (error: any) {
         return { type: FAIL_TO_DECRYPT, error };
     }
 };

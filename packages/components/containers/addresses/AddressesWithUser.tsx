@@ -54,7 +54,7 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                 setAddresses(newList);
                 await api(orderAddress(newList.map(({ ID }) => ID)));
                 await call();
-            } catch (e) {
+            } catch (e: any) {
                 setAddresses(formatAddresses(addresses));
             }
         },

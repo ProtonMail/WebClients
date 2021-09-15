@@ -112,7 +112,7 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
                             calendarPassphrase: decryptedPassphrase,
                             onError: handleError,
                         });
-                    } catch (e) {
+                    } catch (e: any) {
                         handleError(e);
                     }
                 })

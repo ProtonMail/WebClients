@@ -46,7 +46,7 @@ class FileSaver {
         try {
             const saveStream = await openDownloadStream(meta, { onCancel: () => stream.cancel('user canceled') });
             await stream.pipeTo(saveStream, { preventCancel: true });
-        } catch (err) {
+        } catch (err: any) {
             if (!isTransferCancelError(err)) {
                 console.error('Failed to save file via download, falling back to in-memory download:', err);
                 await this.saveViaBuffer(stream, meta);
@@ -60,7 +60,7 @@ class FileSaver {
         try {
             const chunks = await streamToBuffer(stream);
             downloadFile(new Blob(chunks, { type: meta.mimeType }), meta.filename);
-        } catch (err) {
+        } catch (err: any) {
             if (!isTransferCancelError(err)) {
                 throw new Error(`File download for ${meta.filename} failed: ${err}`);
             }
@@ -147,7 +147,7 @@ class FileSaver {
 
                 // ZipWriter creates it's own streams that are not aborted, using abort signal to force cancel manually
                 readable.pipeTo(saveStream).catch(console.error);
-            } catch (err) {
+            } catch (err: any) {
                 console.error('Failed to save zip via download, falling back to in-memory download:', err);
                 this.saveViaBuffer(readable, zipMeta).catch(console.error);
             }

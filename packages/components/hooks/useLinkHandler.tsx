@@ -30,7 +30,7 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
         const extract = () => {
             try {
                 return { encoded: target.toString() || '', raw: target.getAttribute('href') || '' };
-            } catch (e) {
+            } catch (e: any) {
                 /*
                     Because for Edge/IE11
                     <a href="http://xn--rotonmail-4sg.com" rel="noreferrer nofollow noopener">Protonmail.com</a>
@@ -46,7 +46,7 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
         // Because even the fallback canq crash on IE11/Edge. (Now it's a matter of random env issue...)
         try {
             return extract();
-        } catch (e) {
+        } catch (e: any) {
             createNotification({
                 text: c('Error')
                     .t`This message may contain some link's URL that cannot be properly opened by your current browser`,

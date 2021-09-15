@@ -35,7 +35,7 @@ export const decrypt = async (
             publicKeys,
             format: 'binary',
         });
-    } catch (err) {
+    } catch (err: any) {
         console.error(err);
         throw err;
     }
@@ -57,7 +57,7 @@ export const getDecryptedAttachment = async (
         // verify attachment signature only when sender is verified
         const publicKeys = verification?.senderVerified ? verification.senderPinnedKeys : undefined;
         return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
-    } catch (error) {
+    } catch (error: any) {
         const blob = concatArrays([
             binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
             new Uint8Array(encryptedBinary),

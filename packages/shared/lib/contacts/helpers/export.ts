@@ -95,7 +95,7 @@ export const exportContactsFromLabel = async (
                 }
 
                 results.success.push(vcard);
-            } catch (error) {
+            } catch (error: any) {
                 // need to check again for signal.aborted because the abort
                 // may have taken place during await prepareContact
                 if (!signal.aborted) {

@@ -29,7 +29,7 @@ const EmailMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry }: P
 
         try {
             await api(validatePhone(phone));
-        } catch (error) {
+        } catch (error: any) {
             setPhoneError(getApiErrorMessage(error) || c('Error').t`Can't validate phone, try again later`);
             throw error;
         }

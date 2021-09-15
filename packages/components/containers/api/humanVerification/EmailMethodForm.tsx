@@ -29,7 +29,7 @@ const EmailMethodForm = ({ api, onSubmit, defaultEmail = '' }: Props) => {
 
         try {
             await api(validateEmail(email));
-        } catch (error) {
+        } catch (error: any) {
             setEmailError(getApiErrorMessage(error) || c('Error').t`Can't validate email, try again later`);
             throw error;
         }

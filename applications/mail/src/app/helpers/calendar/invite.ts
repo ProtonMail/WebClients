@@ -404,7 +404,7 @@ export const parseVcalendar = (data: string): VcalVcalendar | undefined => {
             return;
         }
         return parsedVcalendar;
-    } catch (e) {
+    } catch (e: any) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR);
     }
 };
@@ -648,7 +648,7 @@ export const getSupportedEventInvitation = async ({
             hasMultipleVevents,
             fileName: icsFileName,
         };
-    } catch (error) {
+    } catch (error: any) {
         if (error instanceof EventInvitationError) {
             throw error;
         }

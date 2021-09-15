@@ -165,7 +165,7 @@ const SubscriptionModal = ({
             );
             await call();
             setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
-        } catch (error) {
+        } catch (error: any) {
             const { Code = 0 } = error.data || {};
 
             if (Code === API_CUSTOM_ERROR_CODES.PAYMENTS_SUBSCRIPTION_AMOUNT_MISMATCH) {
@@ -219,7 +219,7 @@ const SubscriptionModal = ({
 
             setModel(copyNewModel);
             setCheckResult(result);
-        } catch (error) {
+        } catch (error: any) {
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
             }

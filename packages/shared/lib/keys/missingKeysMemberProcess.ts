@@ -65,7 +65,7 @@ export const missingKeysMemberProcess = async ({
                 }
 
                 onUpdate(memberAddress.ID, { status: 'ok' });
-            } catch (e) {
+            } catch (e: any) {
                 onUpdate(memberAddress.ID, { status: 'error', result: e.message });
             }
         })

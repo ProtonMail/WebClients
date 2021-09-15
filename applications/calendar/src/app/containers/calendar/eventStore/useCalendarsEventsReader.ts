@@ -59,7 +59,7 @@ const useCalendarsEventsReader = (
                     signal,
                 });
                 upsertCalendarApiEvent(Event, calendarEventsCache);
-            } catch (error) {
+            } catch (error: any) {
                 throw new Error('Failed to get event');
             }
         };

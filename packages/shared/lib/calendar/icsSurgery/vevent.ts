@@ -398,7 +398,7 @@ export const getSupportedEvent = ({
         }
 
         return validated;
-    } catch (e) {
+    } catch (e: any) {
         if (e instanceof ImportEventError || e instanceof EventInvitationError) {
             throw e;
         }

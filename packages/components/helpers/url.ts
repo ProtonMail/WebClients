@@ -21,7 +21,7 @@ export const getHostname = (url: string) => {
 export const isExternal = (url: string) => {
     try {
         return window.location.hostname !== getHostname(url);
-    } catch (e) {
+    } catch (e: any) {
         /*
          * IE11/Edge are the worst, they crash when they try to parse
          * ex: http://xn--rotonmail-4sg.com

@@ -50,7 +50,7 @@ export const getSharedEventIDAndSessionKey = async ({
             sharedEventID: SharedEventID,
             sharedSessionKey: sessionKey ? uint8ArrayToBase64String(sessionKey.data) : undefined,
         };
-    } catch (e) {
+    } catch (e: any) {
         return {};
     }
 };

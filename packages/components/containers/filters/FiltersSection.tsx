@@ -32,7 +32,7 @@ function FiltersSection() {
             setFilters(newList);
             await orderRequest.request(newList.map(({ ID }) => ID));
             await call();
-        } catch (e) {
+        } catch (e: any) {
             setFilters(filters);
         }
     };

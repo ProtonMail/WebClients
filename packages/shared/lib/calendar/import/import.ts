@@ -69,7 +69,7 @@ export const parseIcs = async (ics: File) => {
             throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_EVENTS, filename);
         }
         return { components, calscale: calscale?.value, xWrTimezone: xWrTimezone?.value };
-    } catch (e) {
+    } catch (e: any) {
         if (e instanceof ImportFileError) {
             throw e;
         }
@@ -198,7 +198,7 @@ export const getSupportedEvents = async ({
                     enabledEmailNotifications,
                 });
                 return supportedEvent;
-            } catch (e) {
+            } catch (e: any) {
                 if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
                     return;
                 }
@@ -317,7 +317,7 @@ export const getSupportedEventsWithRecurrenceId = async ({
                 componentId: uid,
             });
             return { ...event, 'recurrence-id': supportedRecurrenceId };
-        } catch (e) {
+        } catch (e: any) {
             if (e instanceof ImportEventError) {
                 return e;
             }

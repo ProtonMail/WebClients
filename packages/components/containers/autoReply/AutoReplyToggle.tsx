@@ -23,7 +23,7 @@ const AutoReplyToggle = ({ autoresponder, ...rest }: Props) => {
             await call();
             setLoading(false);
             toggle();
-        } catch (error) {
+        } catch (error: any) {
             setLoading(false);
             throw error;
         }

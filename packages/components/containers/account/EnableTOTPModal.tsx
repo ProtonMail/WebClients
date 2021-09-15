@@ -182,7 +182,7 @@ const EnableTOTPModal = (props: any) => {
                     createNotification({ text: c('Info').t`Two-factor authentication enabled` });
                     setRecoveryCodes(result.TwoFactorRecoveryCodes);
                     setStep(STEPS.RECOVERY_CODES);
-                } catch (error) {
+                } catch (error: any) {
                     const { code, message } = getApiError(error);
 
                     setPasswordError('');

@@ -68,11 +68,12 @@ export const getActiveXObject = (name: string) => {
     try {
         // @ts-ignore
         return new ActiveXObject(name);
-    } catch (error) {
+    } catch (error: any) {
         return undefined;
     }
 };
 
+// @ts-expect-error window.MSStream cf. https://racase.com.np/javascript-how-to-detect-if-device-is-ios/
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
 export const hasPDFSupport = () => {

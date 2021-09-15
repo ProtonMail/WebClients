@@ -35,7 +35,7 @@ const TVContainer = () => {
                 })
             );
             setStep(STEP.DEVICE_CONNECTED);
-        } catch (error) {
+        } catch (error: any) {
             const { data: { Error = '' } = {} } = error;
             setError(Error);
             throw error;

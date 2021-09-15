@@ -62,7 +62,7 @@ export const useMarkAs = () => {
                         labelID
                     )
                 );
-            } catch (error) {
+            } catch (error: any) {
                 rollback();
                 throw error;
             }

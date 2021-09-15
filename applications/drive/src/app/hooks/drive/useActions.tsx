@@ -72,7 +72,7 @@ function useActions() {
                         })
                     );
                     await zipSaver.close();
-                } catch (e) {
+                } catch (e: any) {
                     await zipSaver.abort(e);
                 }
             }

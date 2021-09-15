@@ -111,7 +111,7 @@ const ContactGroupModal = ({
             });
 
             onClose();
-        } catch (error) {
+        } catch (error: any) {
             setLoading(false);
             throw error;
         }

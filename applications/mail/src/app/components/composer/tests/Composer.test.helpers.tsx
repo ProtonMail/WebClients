@@ -102,7 +102,7 @@ export const send = async (message: MessageExtended, useMinimalCache = true) => 
         const renderResult = await renderComposer(message.localID, useMinimalCache);
 
         return clickSend(renderResult);
-    } catch (error) {
+    } catch (error: any) {
         console.log('Error in sending helper', error);
         throw error;
     }

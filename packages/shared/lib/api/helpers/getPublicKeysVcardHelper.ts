@@ -75,7 +75,7 @@ const getPublicKeysVcardHelper = async (
             isContactSignatureVerified,
             contactSignatureTimestamp,
         };
-    } catch (error) {
+    } catch (error: any) {
         return { pinnedKeys: [], isContact, isContactSignatureVerified, contactSignatureTimestamp, error };
     }
 };

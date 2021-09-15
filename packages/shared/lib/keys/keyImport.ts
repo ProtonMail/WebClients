@@ -21,7 +21,7 @@ export const parseKeys = (filesAsStrings: string[] = []) => {
             try {
                 const [key] = await getKeys(armoredPrivateKey);
                 return key;
-            } catch (e) {
+            } catch (e: any) {
                 // ignore errors
             }
         })

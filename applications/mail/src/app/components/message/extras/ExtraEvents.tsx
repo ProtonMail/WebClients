@@ -152,7 +152,7 @@ const ExtraEvents = ({ message }: Props) => {
                                     icsFileName: attachment.Name || '',
                                 });
                                 return supportedEventInvitation;
-                            } catch (error) {
+                            } catch (error: any) {
                                 if (error instanceof EventInvitationError) {
                                     return error;
                                 }
@@ -189,7 +189,7 @@ const ExtraEvents = ({ message }: Props) => {
 
             void withLoadingWidget(run());
             void setLoadedWidget(message.data.ID);
-        } catch (error) {
+        } catch (error: any) {
             const errors: MessageErrors = {};
             if (isNetworkError(error)) {
                 errors.network = [error];
