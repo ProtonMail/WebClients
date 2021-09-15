@@ -324,10 +324,20 @@ describe('generateEmailSubject', () => {
     });
 
     it('should return the expected subject for a reply', () => {
-        const expected = `${RE_PREFIX} Invitation: (no title)`;
+        const expected = `${RE_PREFIX} Invitation for an event starting on Sunday March 22nd, 2020`;
         expect(
             generateEmailSubject({
-                vevent: exampleVevent,
+                vevent: {
+                    ...exampleVevent,
+                    dtstart: {
+                        value: { year: 2020, month: 3, day: 22 },
+                        parameters: { type: 'date' },
+                    },
+                    dtend: {
+                        value: { year: 2020, month: 3, day: 24 },
+                        parameters: { type: 'date' },
+                    },
+                },
                 method: ICAL_METHOD.REPLY,
                 isCreateEvent: false,
                 options: { locale: enUS },
