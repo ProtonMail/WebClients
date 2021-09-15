@@ -134,9 +134,11 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
          */
         if (src.raw.startsWith('#')) {
             const id = src.raw.replace('#', '');
-            const elementInMail = document.querySelector(`a[name="${id}"]`);
-            if (elementInMail) {
-                elementInMail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (wrapperRef.current) {
+                const elementInMail = wrapperRef.current.querySelector(`a[name="${id}"], a[id="${id}"]`);
+                if (elementInMail) {
+                    elementInMail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             }
             event.preventDefault();
             event.stopPropagation();
