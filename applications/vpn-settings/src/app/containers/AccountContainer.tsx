@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
     UsernameSection,
     PasswordsSection,
-    TwoFactorSection,
     EmailSubscriptionSection,
     DeleteSection,
     RecoveryMethodsSection,
@@ -26,10 +25,6 @@ export const getAccountPage = () => {
             {
                 text: c('Title').t`Passwords`,
                 id: 'passwords',
-            },
-            {
-                text: c('Title').t`Two-factor authentication`,
-                id: 'two-fa',
             },
             {
                 text: c('Title').t`OpenVPN / IKEv2 username`,
@@ -64,7 +59,6 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
         >
             <UsernameSection />
             <PasswordsSection open={action === 'change-password'} />
-            <TwoFactorSection />
             <OpenVPNCredentialsSection />
             <RecoveryMethodsSection />
             <EmailSubscriptionSection />
