@@ -1,4 +1,3 @@
-import { enUS } from 'date-fns/locale';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     EVENT_INVITATION_ERROR_TYPE,
@@ -6,10 +5,10 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getIsRruleSupported } from '@proton/shared/lib/calendar/rrule';
 import { parse } from '@proton/shared/lib/calendar/vcal';
-import { VcalDateProperty, VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { formatEndDateTime, formatStartDateTime, getSupportedEventInvitation, parseVcalendar } from './invite';
+import { getSupportedEventInvitation, parseVcalendar } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {
     test('should accept events with daily recurring rules valid for invitations', () => {
@@ -119,33 +118,5 @@ END:VCALENDAR`;
         ).rejects.toMatchObject(
             new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
         );
-    });
-});
-
-describe('formatStartDateTime', () => {
-    test('should format all-day times as expected for single-day events', () => {
-        const dtstart: VcalDateProperty = {
-            parameters: { type: 'date' },
-            value: { year: 2020, month: 10, day: 13 },
-        };
-        expect(formatStartDateTime(dtstart, enUS, true, true)).toEqual('Tuesday October 13th, 2020 (all day)');
-    });
-
-    test('should format all-day times as expected for multiple-day events', () => {
-        const dtstart: VcalDateProperty = {
-            parameters: { type: 'date' },
-            value: { year: 2020, month: 10, day: 13 },
-        };
-        expect(formatStartDateTime(dtstart, enUS, true, false)).toEqual('Tuesday October 13th, 2020');
-    });
-});
-
-describe('formatEndDateTime', () => {
-    test('should format all-day times as expected for multiple-day events', () => {
-        const dtend: VcalDateProperty = {
-            parameters: { type: 'date' },
-            value: { year: 2020, month: 10, day: 13 },
-        };
-        expect(formatEndDateTime(dtend, enUS, true)).toEqual('Monday October 12th, 2020');
     });
 });
