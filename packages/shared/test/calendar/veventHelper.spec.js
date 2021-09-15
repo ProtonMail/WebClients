@@ -1,10 +1,9 @@
 import { parse } from '../../lib/calendar/vcal';
 import { getVeventParts } from '../../lib/calendar/veventHelper';
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
+import { toCRLF } from '../../lib/helpers/string';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
-
-export const toCRLF = (str) => str.replace(/\n/g, '\r\n');
 
 describe('veventHelper', () => {
     it('should split shared parts', () => {

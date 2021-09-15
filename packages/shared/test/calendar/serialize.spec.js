@@ -3,9 +3,9 @@ import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 import { unwrap, wrap } from '../../lib/calendar/helper';
-import { toCRLF } from './veventHelper.spec';
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import { initRandomMock, disableRandomMock } from '../mockRandomValues';
+import { toCRLF } from '../../lib/helpers/string';
 
 const veventComponent = {
     component: 'vevent',
@@ -176,10 +176,8 @@ describe('calendar encryption', () => {
             calendarEvent: data,
             privateKeys: primaryCalendarKey,
         });
-        const {
-            veventComponent: otherVeventComponent,
-            verificationStatus: verificationStatusOther,
-        } = await readCalendarEvent(transformToExternal(data, publicAddressKey, sharedSessionKey, calendarSessionKey));
+        const { veventComponent: otherVeventComponent, verificationStatus: verificationStatusOther } =
+            await readCalendarEvent(transformToExternal(data, publicAddressKey, sharedSessionKey, calendarSessionKey));
         const {
             veventComponent: { components },
             verificationStatus: verificationStatusPersonal,
