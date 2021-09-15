@@ -16,6 +16,7 @@ interface Props {
 }
 
 const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props) => {
+    // INFO MessageButtons cannot be changed in setting anymore but we keep the logic for people using it
     const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
     const [loading, withLoading] = useLoading();
     const markAs = useMarkAs();
