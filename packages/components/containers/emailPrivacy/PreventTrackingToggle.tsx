@@ -10,7 +10,7 @@ interface Props {
     preventTracking: number;
 }
 
-const PreventTrackingToggle = ({ id, preventTracking }: Props) => {
+const PreventTrackingToggle = ({ id, preventTracking, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -33,6 +33,7 @@ const PreventTrackingToggle = ({ id, preventTracking }: Props) => {
             checked={state}
             onChange={({ target }) => withLoading(handleChange(target.checked))}
             loading={loading}
+            {...rest}
         />
     );
 };

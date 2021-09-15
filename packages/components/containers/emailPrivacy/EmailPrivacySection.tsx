@@ -39,7 +39,12 @@ const EmailPrivacySection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">
-                    <RemoteToggle id="remoteToggle" showImages={showImages} onChange={handleChangeShowImage} />
+                    <RemoteToggle
+                        id="remoteToggle"
+                        showImages={showImages}
+                        onChange={handleChangeShowImage}
+                        data-testid="privacy:remote-content-toggle"
+                    />
                 </SettingsLayoutRight>
             </SettingsLayout>
             {feature?.Value && (
@@ -56,7 +61,11 @@ const EmailPrivacySection = () => {
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="pt0-5">
-                            <PreventTrackingToggle id="preventTrackingToggle" preventTracking={ImageProxy} />
+                            <PreventTrackingToggle
+                                id="preventTrackingToggle"
+                                preventTracking={ImageProxy}
+                                data-testid="privacy:prevent-tracking-toggle"
+                            />
                         </SettingsLayoutRight>
                     </SettingsLayout>
                     {ImageProxy !== IMAGE_PROXY_FLAGS.NONE && (
@@ -73,7 +82,11 @@ const EmailPrivacySection = () => {
                                 </label>
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight className="pt0-5">
-                                <ProtectionModeSelect id="remoteToggle" defaultProtectionMode={ImageProxy} />
+                                <ProtectionModeSelect
+                                    id="remoteToggle"
+                                    defaultProtectionMode={ImageProxy}
+                                    data-testid="privacy:protect-mode-select"
+                                />
                             </SettingsLayoutRight>
                         </SettingsLayout>
                     )}

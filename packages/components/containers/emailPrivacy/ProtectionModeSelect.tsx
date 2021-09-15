@@ -10,7 +10,7 @@ interface Props {
     defaultProtectionMode: number;
 }
 
-const ProtectionModeSelect = ({ id, defaultProtectionMode }: Props) => {
+const ProtectionModeSelect = ({ id, defaultProtectionMode, ...rest }: Props) => {
     const [protectionMode, setProtectionMode] = useState(defaultProtectionMode);
 
     const { createNotification } = useNotifications();
@@ -44,6 +44,7 @@ const ProtectionModeSelect = ({ id, defaultProtectionMode }: Props) => {
             options={options}
             onChange={({ target }) => withLoading(handleChange(+target.value))}
             loading={loading}
+            {...rest}
         />
     );
 };
