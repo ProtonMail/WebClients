@@ -456,8 +456,9 @@ export const generateEmailSubject = ({
     isCreateEvent?: boolean;
     options?: Options;
 }) => {
+    const { formattedStart, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, options);
+
     if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
-        const { formattedStart, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, options);
         if (isAllDay) {
             if (isSingleAllDay) {
                 if (method === ICAL_METHOD.CANCEL) {
@@ -482,8 +483,7 @@ export const generateEmailSubject = ({
             : c('Email subject').t`Update for an event starting on ${formattedStart}`;
     }
     if (method === ICAL_METHOD.REPLY) {
-        const eventTitle = getDisplayTitle(vevent.summary?.value);
-        return formatSubject(c('Email subject').t`Invitation: ${eventTitle}`, RE_PREFIX);
+        return formatSubject(c('Email subject').t`Invitation for an event starting on ${formattedStart}`, RE_PREFIX);
     }
     throw new Error('Unexpected method');
 };
