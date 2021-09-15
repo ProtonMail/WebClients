@@ -28,7 +28,7 @@ const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }: Props)
 
             onSuccess(decryptedPrivateKey);
             onClose?.();
-        } catch (e) {
+        } catch (e: any) {
             setError(e.message);
             setDecrypting(false);
         }

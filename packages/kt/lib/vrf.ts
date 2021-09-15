@@ -16,7 +16,7 @@ const CO_FACTOR = 8;
 function OS2ECP(os: Uint8Array) {
     try {
         return EDDSA.decodePoint(elliptic.utils.toArray(os, 16)) as Point;
-    } catch (e) {
+    } catch (e: any) {
         return null;
     }
 }

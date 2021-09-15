@@ -42,7 +42,7 @@ const handleCreateUser = async ({
                 ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
             },
         });
-    } catch (error) {
+    } catch (error: any) {
         const { data: { Code, Details } = { Code: 0, Details: {} } } = error;
 
         if (Code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {

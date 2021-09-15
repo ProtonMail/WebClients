@@ -167,7 +167,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                     return acc;
                 }, {})
             );
-        } catch (error) {
+        } catch (error: any) {
             rest.onClose?.();
             throw error;
         }

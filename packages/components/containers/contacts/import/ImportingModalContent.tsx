@@ -76,7 +76,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     return;
                 }
                 void onFinish(importedContacts);
-            } catch (error) {
+            } catch (error: any) {
                 setModelWithAbort(() => ({
                     step: IMPORT_STEPS.ATTACHING,
                     parsedVcardContacts: [],

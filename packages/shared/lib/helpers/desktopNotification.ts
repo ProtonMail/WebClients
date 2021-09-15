@@ -27,7 +27,7 @@ export const clear = () => Push.clear();
 export const request = (onGranted: () => void = noop, onDenied: () => void = noop) => {
     try {
         Push.Permission.request(onGranted, onDenied);
-    } catch (err) {
+    } catch (err: any) {
         onDenied();
         /**
          * Hotfix to fix requesting the permission on non-promisified requests.

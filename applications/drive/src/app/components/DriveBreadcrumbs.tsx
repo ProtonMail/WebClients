@@ -64,7 +64,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                     setDropTarget(undefined);
                     try {
                         await handleDrop(e);
-                    } catch (e) {
+                    } catch (e: any) {
                         createNotification({
                             text: c('Notification').t`Failed to move, please try again`,
                             type: 'error',

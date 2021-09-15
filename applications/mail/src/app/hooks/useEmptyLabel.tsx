@@ -56,7 +56,7 @@ export const useEmptyLabel = () => {
             const rollback = optimisticEmptyLabel(labelID);
             try {
                 await api(emptyLabelRequest({ LabelID: labelID, AddressID: undefined }));
-            } catch (error) {
+            } catch (error: any) {
                 rollback();
                 throw error;
             }

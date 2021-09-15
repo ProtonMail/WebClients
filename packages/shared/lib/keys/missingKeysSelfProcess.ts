@@ -54,7 +54,7 @@ export const missingKeysSelfProcess = ({
                 }
 
                 onUpdate(address.ID, { status: 'ok' });
-            } catch (e) {
+            } catch (e: any) {
                 onUpdate(address.ID, { status: 'error', result: e.message });
             }
         })

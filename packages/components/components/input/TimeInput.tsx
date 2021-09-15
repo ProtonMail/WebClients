@@ -108,7 +108,7 @@ const TimeInput = ({
                 handleSelectDate(newDate);
             }
             // eslint-disable-next-line no-empty
-        } catch (e) {}
+        } catch (e: any) {}
 
         setTemporaryInput(toFormatted(value, dateLocale));
     };

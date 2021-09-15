@@ -47,7 +47,7 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
                 });
                 onSubmit(base64str);
                 onClose?.();
-            } catch (error) {
+            } catch (error: any) {
                 createNotification({ text: c('Error').t`Image upload failed`, type: 'error' });
                 throw error;
             }

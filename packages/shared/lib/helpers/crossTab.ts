@@ -37,7 +37,7 @@ export const getMessage = (event: StorageEvent) => {
             type: parsedData.type,
             data: parsedData.data,
         };
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };

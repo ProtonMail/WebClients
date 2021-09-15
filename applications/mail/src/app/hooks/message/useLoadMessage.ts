@@ -22,7 +22,7 @@ export const useLoadMessage = (inputMessage: Message) => {
                 const { Message: message } = await api(getMessage(messageFromCache.data?.ID));
                 const loadRetry = (messageCache.get(localID)?.loadRetry || 0) + 1;
                 updateMessageCache(messageCache, localID, { data: message as Message, loadRetry });
-            } catch (error) {
+            } catch (error: any) {
                 const loadRetry = (messageCache.get(localID)?.loadRetry || 0) + 1;
                 updateMessageCache(messageCache, localID, { loadRetry });
                 await wait(LOAD_RETRY_DELAY);

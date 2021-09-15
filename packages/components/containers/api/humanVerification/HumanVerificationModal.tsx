@@ -31,7 +31,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
             createNotification({ text: c('Success').t`Verification successful` });
             onSuccess(result);
             rest.onClose();
-        } catch (error) {
+        } catch (error: any) {
             const { data: { Code } = { Code: 0 } } = error;
 
             if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {

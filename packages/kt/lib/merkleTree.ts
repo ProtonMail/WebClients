@@ -28,7 +28,7 @@ export async function verifyProof(proof: Proof, TreeHash: string, sklData: strin
             hexStringToArray(proof.Proof),
             hexStringToArray(proof.Name)
         );
-    } catch (err) {
+    } catch (err: any) {
         throw new Error(`VRF verification failed with error "${err.message}"`);
     }
 

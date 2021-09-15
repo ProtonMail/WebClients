@@ -123,7 +123,7 @@ const useOAuthPopup = ({ authorizationUrl }: OAuthHookContext) => {
 
                         void callback({ code, provider, redirectURI });
                     }
-                } catch (err) {
+                } catch (err: any) {
                     // silent error
                 }
             }, POLLING_INTERVAL);

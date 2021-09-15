@@ -66,7 +66,7 @@ export const useVerifyMessage = (localID: string) => {
                     signed && verification.signature
                         ? await getMatchingKey(verification.signature, allSenderPublicKeys)
                         : undefined;
-            } catch (error) {
+            } catch (error: any) {
                 if (isNetworkError(error)) {
                     errors.network = [error];
                 } else {

@@ -270,7 +270,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                                 username: payload.username,
                             });
                             await generateInternalAddress.onDone();
-                        } catch (e) {
+                        } catch (e: any) {
                             handleError(e);
                             handleCancel();
                         }

@@ -176,7 +176,7 @@ const extractStringItems = (str: string) => {
 const decodeURISafe = (str: string) => {
     try {
         return decodeURI(str);
-    } catch (e) {
+    } catch (e: any) {
         return str;
     }
 };
@@ -210,7 +210,7 @@ export const getEmailTo = (str: string, decode?: boolean): string => {
             to: [emailTo],
         } = parseMailtoURL(str, decode);
         return emailTo;
-    } catch (e) {
+    } catch (e: any) {
         return str;
     }
 };

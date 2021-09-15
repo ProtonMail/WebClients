@@ -921,7 +921,7 @@ const InteractiveCalendarView = ({
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
             return processApiRequestsSafe(requests, 25000, 900 * SECOND);
-        } catch (e) {
+        } catch (e: any) {
             return [];
         }
     };
@@ -952,7 +952,7 @@ const InteractiveCalendarView = ({
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
             return processApiRequestsSafe(requests, 25000, 900 * SECOND);
-        } catch (e) {
+        } catch (e: any) {
             return [];
         }
     };
@@ -1010,7 +1010,7 @@ const InteractiveCalendarView = ({
             await handleUpdateVisibility(uniqueCalendarIDs);
             calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
-        } catch (e) {
+        } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
         } finally {
             isSavingEvent.current = false;
@@ -1053,7 +1053,7 @@ const InteractiveCalendarView = ({
             }
             calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
-        } catch (e) {
+        } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
         }
     };

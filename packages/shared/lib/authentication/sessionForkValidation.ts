@@ -21,7 +21,7 @@ export const getValidatedLocalID = (localID = '') => {
 export const getValidatedRawKey = (str: string) => {
     try {
         return stringToUint8Array(decodeBase64URL(str));
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };

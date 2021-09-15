@@ -88,7 +88,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     return;
                 }
                 onFinish([...importedEvents, ...recurrenceImportedEvents]);
-            } catch (error) {
+            } catch (error: any) {
                 setModelWithAbort((model) => ({
                     step: IMPORT_STEPS.ATTACHING,
                     calendar: model.calendar,

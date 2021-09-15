@@ -82,7 +82,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     }
 
                     handleFiles(files);
-                } catch (e) {
+                } catch (e: any) {
                     setModel({ ...model, failure: e });
                 }
             };
@@ -100,7 +100,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     }
 
                     handleFiles([...target.files]);
-                } catch (e) {
+                } catch (e: any) {
                     setModel({ ...model, failure: e });
                 }
             };
@@ -132,7 +132,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         failure: undefined,
                         loading: false,
                     });
-                } catch (e) {
+                } catch (e: any) {
                     const failure = e instanceof ImportFileError ? e : new ImportFatalError(e);
                     setModel({
                         ...getInitialState(model.calendar),

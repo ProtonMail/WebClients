@@ -50,7 +50,7 @@ export function parseCertChain(certChain: string) {
     for (let i = 0; i < certArr.length; i++) {
         try {
             result.push(parseCertificate(certArr[i]));
-        } catch (err) {
+        } catch (err: any) {
             throw new Error(`Certificate[${i}] parsing failed with error: ${err.message}`);
         }
     }
@@ -90,7 +90,7 @@ async function verifyTopCert(topCert: Certificate) {
             return false;
         }
         parentCAcert = parseCertificate(rootCertificates[parentCN]);
-    } catch (err) {
+    } catch (err: any) {
         return false;
     }
     return topCert.verify(parentCAcert);
@@ -117,7 +117,7 @@ export async function verifySCT(certificate: Certificate, issuerCert: Certificat
     let verificationResult: boolean[];
     try {
         verificationResult = await verifySCTsForCertificate(certificate, issuerCert, ctLogs);
-    } catch (err) {
+    } catch (err: any) {
         throw new Error(`SCT verification halted with error "${err.message}"`);
     }
     const verified = verificationResult.reduce((previous, current) => {

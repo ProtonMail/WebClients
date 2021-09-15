@@ -161,7 +161,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                             ID,
                             privateKey: decryptedPrivateKey,
                         };
-                    } catch (e) {
+                    } catch (e: any) {
                         return undefined;
                     }
                 })

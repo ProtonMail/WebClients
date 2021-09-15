@@ -75,7 +75,7 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
                     state,
                     app,
                 });
-            } catch (e) {
+            } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     const activeSessionsResult = await getActiveSessions(silentApi);
                     await handleActiveSessions(activeSessionsResult);

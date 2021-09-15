@@ -20,7 +20,7 @@ export const getInitialStates = async (initial: KeyReactivationRequest[]): Promi
                             fingerprint: key.getFingerprint(),
                             result: undefined,
                         };
-                    } catch (e) {
+                    } catch (e: any) {
                         return {
                             id: getRandomString(12),
                             Key,

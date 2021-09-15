@@ -85,7 +85,7 @@ const reactivateCalendarKeys = async ({
                 const privateKey = await decryptPrivateKey(PrivateKey, decryptedPassphrase);
                 const armoredEncryptedKey = await encryptPrivateKey(privateKey, decryptedPrimaryPassphrase);
                 await api(reactivateCalendarKey(CalendarID, KeyID, { PrivateKey: armoredEncryptedKey }));
-            } catch (e) {
+            } catch (e: any) {
                 console.log(e);
             }
         })

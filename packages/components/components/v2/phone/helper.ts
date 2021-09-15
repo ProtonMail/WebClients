@@ -26,7 +26,7 @@ export const getTrimmedString = (string: string) => {
 export const getSafeCountryCallingCode = (country: string) => {
     try {
         return getCountryCallingCode(country as CountryCode) as string;
-    } catch (e) {
+    } catch (e: any) {
         return '';
     }
 };

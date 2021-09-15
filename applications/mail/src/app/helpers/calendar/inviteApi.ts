@@ -186,7 +186,7 @@ const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId
                       supportedRecurrenceId,
                   }
                 : { event: parentEvent, otherEvents: otherParentEvents, supportedRecurrenceId };
-        } catch (e) {
+        } catch (e: any) {
             noop();
         }
     }
@@ -281,7 +281,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
             result.parentInvitation = parentInvitation;
         }
         return result;
-    } catch (e) {
+    } catch (e: any) {
         // We need to detect if the error is due to a failed decryption of the event.
         // We don't have a great way of doing this as the error comes from openpgp
         return { calendarData, hasDecryptionError: e.message.includes('decrypt') };
@@ -508,7 +508,7 @@ export const updateEventInvitation = async ({
                     action: UPDATE_PARTSTAT,
                     invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent },
                 };
-            } catch (error) {
+            } catch (error: any) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
         }
@@ -587,7 +587,7 @@ export const updateEventInvitation = async ({
                     throw new Error('Missing attendee after update');
                 }
                 return { action, invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent } };
-            } catch (error) {
+            } catch (error: any) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
         }
@@ -652,7 +652,7 @@ export const updateEventInvitation = async ({
                     throw new Error('Missing attendee after update');
                 }
                 return { action: CANCEL, invitation: { ...updatedInvitation, calendarEvent } };
-            } catch (error) {
+            } catch (error: any) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR);
             }
         }
@@ -870,7 +870,7 @@ export const updatePartstatFromInvitation = async ({
             const resetPartstatPromise = processApiRequestsSafe(resetPartstatRequests, 1000, 100 * 1000);
             const dropAlarmsPromise = processApiRequestsSafe(dropAlarmsRequests, 1000, 100 * 1000);
             await Promise.all([resetPartstatPromise, dropAlarmsPromise]);
-        } catch (e) {
+        } catch (e: any) {
             noop();
         }
     }
@@ -900,7 +900,7 @@ export const updatePartstatFromInvitation = async ({
         };
         const { Event } = await api<UpdateEventPartApiResponse>(updatePersonalEventPart(calendar.ID, eventID, payload));
         savedEvent = Event;
-    } catch (e) {
+    } catch (e: any) {
         noop();
     }
 

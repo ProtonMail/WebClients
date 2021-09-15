@@ -44,7 +44,7 @@ const PayPalButton = ({ amount, flow, children, paypal, ...rest }: PayPalButtonP
     const handleClick = async () => {
         try {
             await paypal.onVerification();
-        } catch (error) {
+        } catch (error: any) {
             // if not coming from API error
             if (error && error.message && !error.config) {
                 createNotification({ text: error.message, type: 'error' });
