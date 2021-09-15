@@ -82,3 +82,25 @@ export const convert = (
 ): Attachment[] => {
     return attachments.map((attachment, number) => convertSingle(message, attachment, number, verified, cache));
 };
+
+/**
+ * Considering a Attachment[], will return as is the common attachments
+ * But remove from the list and convert the pgp ones by files to upload
+ */
+export const convertToFile = (attachments: Attachment[], cache: AttachmentsCache) => {
+    return attachments.reduce<[Attachment[], File[]]>(
+        (acc, attachment) => {
+            if (attachment.ID?.startsWith(ID_PREFIX)) {
+                acc[1].push(
+                    new File([cache.get(attachment.ID as string)?.data], attachment.Name || '', {
+                        type: attachment.MIMEType,
+                    })
+                );
+            } else {
+                acc[0].push(attachment);
+            }
+            return acc;
+        },
+        [[], []]
+    );
+};
