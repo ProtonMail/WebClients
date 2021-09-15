@@ -87,8 +87,12 @@ const ExtraEventHeader = ({ model }: Props) => {
             <div className="text-2xl text-ellipsis text-strong" title={title}>
                 {title}
             </div>
-            <div className="text-lg mb0-25">{dateHeader}</div>
-            {optionalHeader && <div className="text-sm color-weak">{optionalHeader}</div>}
+            {!hasMultipleVevents && (
+                <>
+                    <div className="text-lg mb0-25">{dateHeader}</div>
+                    {optionalHeader && <div className="text-sm color-weak">{optionalHeader}</div>}
+                </>
+            )}
         </div>
     );
 };

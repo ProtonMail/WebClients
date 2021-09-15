@@ -26,7 +26,7 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const { to, toApp, text } = getCalendarEventLink(model);
 
     return (
-        <div className="mb0-5 border-bottom">
+        <div className="mb0-5">
             <ExtraEventAlert model={model} />
             <ExtraEventLink to={to} text={text} toApp={toApp} />
             {displayButtons}
