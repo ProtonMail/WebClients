@@ -2253,6 +2253,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jest/types@npm:^27.1.1":
+  version: 27.1.1
+  resolution: "@jest/types@npm:27.1.1"
+  dependencies:
+    "@types/istanbul-lib-coverage": ^2.0.0
+    "@types/istanbul-reports": ^3.0.0
+    "@types/node": "*"
+    "@types/yargs": ^16.0.0
+    chalk: ^4.0.0
+  checksum: 917acbf05d96415cae05067f1f0c79a58112b086baf941b92f4fc989d75f632cf7c2a87eb679254609c96d24ed7e442ea5b387312651996ed95310f7003a43e2
+  languageName: node
+  linkType: hard
+
 "@jimp/bmp@npm:^0.16.1":
   version: 0.16.1
   resolution: "@jimp/bmp@npm:0.16.1"
@@ -23797,6 +23810,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"pretty-format@npm:^27.2.0":
+  version: 27.2.0
+  resolution: "pretty-format@npm:27.2.0"
+  dependencies:
+    "@jest/types": ^27.1.1
+    ansi-regex: ^5.0.0
+    ansi-styles: ^5.0.0
+    react-is: ^17.0.1
+  checksum: 182041979718b7843f4679b5b79a6bb5299b5fa96034e53d6c5e5f7b0156806bcf86648db57e3f8dfdb35539380765b2487ec4d26517b8722fd193698d12f579
+  languageName: node
+  linkType: hard
+
 "pretty-hrtime@npm:^1.0.3":
   version: 1.0.3
   resolution: "pretty-hrtime@npm:1.0.3"
@@ -24115,6 +24140,7 @@ fsevents@^1.2.7:
     openpgp: ^4.10.7
     path-browserify: ^1.0.1
     prettier: ^2.0.5
+    pretty-format: ^27.2.0
     react: ^17.0.0
     react-dom: ^17.0.0
     react-test-renderer: ^17.0.0

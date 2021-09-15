@@ -20,10 +20,7 @@ import {
     BATCH_REQUEST_SIZE,
 } from '../../constants';
 import { isTransferCancelError } from '../../utils/transfer';
-
-const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
-const MAX_RETRIES_BEFORE_FAIL = 3;
-const TIME_TO_RESET_RETRIES = 2 * 60 * 1000;
+import { MAX_RETRIES_BEFORE_FAIL, MAX_TOTAL_BUFFER_SIZE, TIME_TO_RESET_RETRIES } from './constants';
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
@@ -296,7 +293,7 @@ export const initDownload = ({
                      * from the active index
                      */
                     if (e.status === STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
-                        // console.error(`Blocks for download ${id}, might have expired. Retry num: ${numRetries}`);
+                        console.error(`Blocks for download ${id}, might have expired. Retry num: ${numRetries}`);
                         return retryDownload(activeIndex);
                     }
 
