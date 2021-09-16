@@ -132,14 +132,19 @@ const DownloadSharedContainer = () => {
     }, [getSharedLinkInfo, token, password, handshakeInfo]);
 
     const downloadLinkThumbnail = useMemo(async () => {
-        if (!linkInfo?.SessionKey || !linkInfo?.NodeKey || !linkInfo?.ThumbnailURL) {
+        if (
+            !linkInfo?.SessionKey ||
+            !linkInfo?.NodeKey ||
+            !linkInfo?.ThumbnailURLInfo.BareURL ||
+            !linkInfo.ThumbnailURLInfo.Token
+        ) {
             return null;
         }
 
         const { contents: contentsPromise } = downloadThumbnail(
             linkInfo.SessionKey,
             linkInfo.NodeKey,
-            linkInfo.ThumbnailURL
+            linkInfo.ThumbnailURLInfo
         );
         const data = await contentsPromise;
         return URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));

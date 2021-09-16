@@ -49,7 +49,7 @@ export interface CreateFileRevisionResult {
 
 export interface UploadLink {
     Token: string;
-    URL: string;
+    BareURL: string;
 }
 
 export interface RequestUploadResult {
@@ -59,8 +59,9 @@ export interface RequestUploadResult {
 
 export interface DriveFileBlock {
     Index: number;
-    URL: string;
     EncSignature?: string;
+    BareURL: string;
+    Token: string;
 }
 
 export interface DriveFileRevision {
@@ -80,7 +81,8 @@ export interface DriveFileRevisionResult {
 }
 
 export interface DriveFileRevisionThumbnailResult {
-    ThumbnailLink: string;
+    ThumbnailBareURL: string;
+    ThumbnailToken: string;
 }
 
 export interface NestedFileStream {

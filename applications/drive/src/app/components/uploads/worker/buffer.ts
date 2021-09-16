@@ -85,6 +85,7 @@ export default class UploadWorkerBuffer {
                 index: link.index,
                 encryptedData: block.encryptedData,
                 uploadLink: link.url,
+                uploadToken: link.token,
                 originalSize: block.originalSize,
             });
             this.blockHashes.push(block.hash);

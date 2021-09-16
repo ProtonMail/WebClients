@@ -38,6 +38,7 @@ export function createUploadingBlock(index: number): UploadingBlock {
         originalSize: block.originalSize,
         encryptedData: block.encryptedData,
         uploadLink: `link${index}`,
+        uploadToken: `token${index}`,
     };
 }
 

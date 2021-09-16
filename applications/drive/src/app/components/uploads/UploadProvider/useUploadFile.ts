@@ -304,13 +304,13 @@ export default function useUploadFile() {
                     fileLinks: UploadLinks.map((link, index) => ({
                         index: fileBlocks[index].index,
                         token: link.Token,
-                        url: link.URL,
+                        url: link.BareURL,
                     })),
                     thumbnailLink: ThumbnailLink
                         ? {
                               index: 0,
                               token: ThumbnailLink.Token,
-                              url: ThumbnailLink.URL,
+                              url: ThumbnailLink.BareURL,
                           }
                         : undefined,
                 };
