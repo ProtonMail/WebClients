@@ -14,7 +14,7 @@ Each [_theme file_](https://gitlab.protontech.ch/web/clients/-/tree/main/package
 
 ## Standard and Prominent layout
 
-The applications interface is separated into 2 sections: the **main** section and the **header/navigation** section.
+The applications interface is separated into two sections: the **main** section and the **header/navigation** section.
 
 Since the default theme uses different text and background colors in these sections, it makes sense to separate them in the theming files too.
 
@@ -68,11 +68,11 @@ Each variable can be **used anywhere in the design system** in many contexts of 
 
 To the attention of the design team and the core team: if you think you need to add a new variable or variable group, **challenge it strongly first**. The idea is to avoid any usage duplication and the addition of too many variables resulting in the theming files being hard to maintain.
 
-## Optionals
+## Optional variables
 
-We use CSS custom properties, as well known as CSS variables, to achieve that theming mechanism. Since CSS `var()` gives the oportunity to add **one or several fallback values**, we are able to tell that if the value we are refering to doesn't exist, it takes another one instead.
+We use CSS custom properties (known as CSS variables) to achieve the theming mechanism. Since CSS `var()` allows the addition of **one or several fallback values**, we are able to default a referred value if it doesn't exist.
 
-That means the first one can be handled as **an optional contextual themable value**.
+This means the first value can be handled as an **optional contextual themeable value**.
 
 ```css
 selector {
@@ -82,12 +82,13 @@ selector {
 
 Optional variables are created for **two purposes**:
 
--   making skilled users able to modify a theme as they want pretty easily,
--   or making us able to adapt any property in a specific case that needs to be changed on switching to specific themes.
+-   Allowing users to easily modify themes, for example customizing themes by injecting css
+-   Enabling adaptation of properties for a specific theme in certain cases
 
-For example, we had to add some optional variables for read and unread email items to adapt their background and text colors, because the visual difference between them wasn't obvious enough specifically on dark themes.
 
-Optional variables are usually used for one and only situation, so it makes sense that an optional variable name refers to a specific context. That variable name must be **the most descriptive as possible to understand the context of use**, and the impacted property at the end, using train-case naming convention.
+For example, we used optional variables to adapt the text and background colors for read and unread email items because the visual difference between them wasn't significant enough on dark themes.
+
+Optional variables are usually only used for one situation, so it makes sense that an optional variable name refers to a specific context. The variable name must use train-case naming convention and be **as descriptive as possible to understand the context of use and impacted property**.
 
 ```css
 &.unread {
@@ -95,7 +96,7 @@ Optional variables are usually used for one and only situation, so it makes sens
 }
 ```
 
-**All optional variables are defined in a dedicated mapping file**, at [_packages/styles/scss/base/custom-properties/\_optionals.scss_](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss), for maintanability purpose. This way, we can see all optional variables in one and only place, and **it creates a layer to have `--optional` prefixed names for theme files**, which makes those variables quickly understandable as optionals for the design team.
+**All optional variables are defined in a dedicated [mapping file](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss)** helping maintainability, as all optional variables are in one place. It also **creates a layer to have `--optional` prefixed names for theme files**, making optional variables obvious to the design team.
 
 ```css
 :root,
