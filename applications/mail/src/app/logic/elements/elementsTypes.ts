@@ -1,4 +1,5 @@
 import { Api } from '@proton/shared/lib/interfaces';
+import { Element } from '../../models/element';
 
 export interface Filter {
     [key: string]: number;
@@ -100,7 +101,7 @@ export interface QueryParams {
 
 export interface NewStateParams {
     page?: number;
-    params?: ElementsStateParams;
+    params?: Partial<ElementsStateParams>;
     retry?: RetryData;
     beforeFirstLoad?: boolean;
 }
@@ -108,4 +109,9 @@ export interface NewStateParams {
 export type ResetAction = {
     type: string;
     payload: NewStateParams;
+};
+
+export type RemoveExpiredAction = {
+    type: string;
+    payload: Element;
 };
