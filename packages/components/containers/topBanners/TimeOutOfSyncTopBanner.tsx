@@ -16,7 +16,7 @@ const isOutOfSync = (serverTime: Date) => {
 
 const TimeOutOfSyncTopBanner = () => {
     const [ignore, setIgnore] = useState(false);
-    const serverTime = useApiServerTime() as Date | undefined;
+    const serverTime = useApiServerTime();
 
     // We warn the user if the server time is too far off from local time.
     // We do not want the server to set arbitrary times (either past or future), to avoid signature replay issues and more.
