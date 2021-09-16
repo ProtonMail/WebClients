@@ -11,7 +11,7 @@ import { getTitle } from '../../../helpers/title';
 
 It can be difficult to add a theming mechanism to a design system without duplication. With this in mind, we have taken an approach which aims to minimize duplication by **moving all references of what can be themeable into theming files outside of the design system**.
 
-Each [_theme file_](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes) defines the values that can be themeable (colors, radius, shadow spread, font faces, etc.) which can be predetermined or customized by the user. Hence, theming is achieved by switching between these theme files.
+Each [_theme file_](https://github.com/ProtonMail/WebClients/tree/main/packages/styles/scss/themes) defines the values that can be themeable (colors, radius, shadow spread, font faces, etc.) which can be predetermined or customized by the user. Hence, theming is achieved by switching between these theme files.
 
 ## Standard and Prominent layout
 
@@ -94,7 +94,7 @@ Optional variables are usually only used for one situation, so it makes sense th
 }
 ```
 
-**All optional variables are defined in a dedicated [mapping file](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss)** helping maintainability, as all optional variables are in one place. It also **creates a layer to have `--optional` prefixed names for theme files**, making optional variables obvious to the design team.
+**All optional variables are defined in a dedicated [mapping file](https://github.com/ProtonMail/WebClients/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss)** helping maintainability, as all optional variables are in one place. It also **creates a layer to have `--optional` prefixed names for theme files**, making optional variables obvious to the design team.
 
 ```css
 :root,
