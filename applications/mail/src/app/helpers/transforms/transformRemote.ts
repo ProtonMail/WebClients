@@ -47,6 +47,7 @@ export const transformRemote = (
     const remoteImages = getRemoteImages(message);
 
     matches.forEach((match) => {
+        console.log(match);
         const id = generateUID('remote');
         if (!draft && match.tagName === 'IMG') {
             insertImageAnchor(id, 'remote', match);
@@ -56,6 +57,7 @@ export const transformRemote = (
             url: match.getAttribute('proton-src') || '',
             original: match,
             id,
+            tracker: undefined,
             status: 'not-loaded',
         });
     });

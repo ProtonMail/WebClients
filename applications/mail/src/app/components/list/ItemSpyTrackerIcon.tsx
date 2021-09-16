@@ -61,7 +61,6 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
                         `${numberOfTrackers} email trackers blocked`,
                         numberOfTrackers
                     )}
-
                 >
                     {numberOfTrackers}
                 </span>
@@ -73,11 +72,11 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
         <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
             <div className={classnames(['flex', className])}>
                 {!hasProtection && !hasShowImage ? (
-                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} className="relative inline-flex mr0-1">
+                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} className="relative inline-flex mr0-1 item-spy-tracker-link">
                         {icon}
                     </SettingsLink>
                 ) : (
-                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA} className="relative inline-flex mr0-1">
+                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA} className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center">
                         {icon}
                     </Href>
                 )}
