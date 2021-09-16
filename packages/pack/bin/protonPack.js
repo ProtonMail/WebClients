@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 const fs = require('fs').promises;
-const chalk = require('chalk');
-const dedent = require('dedent');
 const execa = require('execa');
 const path = require('path');
 const { Command } = require('commander');
@@ -35,22 +33,12 @@ const addGlobalOptions = (program) => {
                 return publicPath || '/';
             },
             '/'
-        )
-        .option('--no-sri', 'disable sri')
-        .option('--proxy <apiUrl>', 'Use /api local URL for API but proxy it to the given URL', '')
-        .option(
-            '--api <api>',
-            '',
-            (api) => {
-                return getApi(api);
-            },
-            getApi('')
         );
 };
 
-const getWebpackArgs = (options, env, { buildData }) => {
+const getWebpackArgs = (options, env, { appData, buildData }) => {
     const envArgs = {
-        proxyApiUrl: options.proxy,
+        api: appData.api === '/api' ? undefined : appData.api,
         appMode: options.appMode,
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
@@ -72,8 +60,9 @@ const commandWithLog = (...args) => {
     return execa.command(...args);
 };
 
-addGlobalOptions(program.command('build').description('create an optimized production build')).action(
-    async (options, env) => {
+addGlobalOptions(program.command('build').description('create an optimized production build'))
+    .option('--no-sri', 'disable sri')
+    .action(async (options, env) => {
         const configData = getConfigData(options);
         await writeConfig(getConfigFile(configData));
 
@@ -89,21 +78,23 @@ addGlobalOptions(program.command('build').description('create an optimized produ
         await commandWithLog(`${path.resolve(__dirname, `../scripts/validate.sh`)} ${outputPath}`, {
             stdio: 'inherit',
         });
-    }
-);
+    });
 
 addGlobalOptions(program.command('dev-server').description('run locally'))
     .option('--port <port>', '')
+    .option(
+        '--api <api>',
+        '',
+        (api) => {
+            return getApi(api);
+        },
+        getApi('')
+    )
     .action(async (options, env) => {
         const configData = getConfigData(options);
         await writeConfig(getConfigFile(configData));
 
         const port = await getPort(options.port || 8080);
-        console.log(dedent`
-            \n
-            API: ${chalk.yellow(options.api)}
-            \n
-        `);
 
         const webpackArgs = getWebpackArgs(options, env, configData);
         await commandWithLog(

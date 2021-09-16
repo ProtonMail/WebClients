@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef, MutableRefObject, useImperativeHandle } from 'react';
 import { c } from 'ttag';
-import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
+import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import { addHours } from 'date-fns';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 // The sizes for these are hardcoded since the widget calculates it based on the viewport, and since it's in
 // an iframe it needs to have something reasonable.
@@ -24,10 +24,8 @@ const CLOSED_SIZE = {
 const SINGLE_CHAT_KEY = 'zk_state';
 const SINGLE_CHAT_TIMEOUT = 10000;
 
-const getIframeUrl = (apiUrl: string, zendeskKey: string) => {
-    const url = new URL(apiUrl, window.location.origin);
-    url.hostname = getRelativeApiHostname(url.hostname);
-    url.pathname = '/core/v4/resources/zendesk';
+const getIframeUrl = (zendeskKey: string) => {
+    const url = getApiSubdomainUrl('/core/v4/resources/zendesk');
     url.searchParams.set('Key', zendeskKey);
     return url;
 };
@@ -105,7 +103,6 @@ interface Props {
 }
 
 const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnavailable, locale }: Props) => {
-    const { API_URL } = useConfig();
     const [style, setStyle] = useState({
         position: 'absolute',
         bottom: 0,
@@ -119,7 +116,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const pendingLoadingRef = useRef<{ toggle?: boolean; locale?: string }>({});
 
-    const iframeUrl = getIframeUrl(API_URL, zendeskKey);
+    const iframeUrl = getIframeUrl(zendeskKey);
 
     const src = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;

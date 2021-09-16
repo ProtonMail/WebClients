@@ -11,8 +11,8 @@ const getConfig = (env) => {
 
     const options = {
         isProduction,
-        proxy: env.proxyApiUrl,
         publicPath: env.publicPath || '/',
+        api: env.api,
         appMode: env.appMode || 'standalone',
         featureFlags: env.featureFlags || '',
         writeSRI: env.writeSri !== 'false',
@@ -89,11 +89,16 @@ const getConfig = (env) => {
                 webSocketURL: 'auto://0.0.0.0:0/ws',
             },
             webSocketServer: 'ws',
-            ...(options.proxy && {
+            ...(options.api && {
                 proxy: {
                     '/api': {
-                        target: options.proxy,
+                        target: options.api,
                         secure: false,
+                        changeOrigin: true,
+                        onProxyRes: (proxyRes) => {
+                            delete proxyRes.headers['content-security-policy'];
+                            delete proxyRes.headers['x-frame-options'];
+                        },
                     },
                 },
             }),

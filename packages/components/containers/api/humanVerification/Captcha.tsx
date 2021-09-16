@@ -1,11 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
-import { useConfig } from '../../../hooks';
+import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
-const getIframeUrl = (apiUrl: string, token: string) => {
-    const url = new URL(apiUrl, window.location.origin);
-    url.hostname = getRelativeApiHostname(url.hostname);
-    url.pathname = '/core/v4/captcha';
+const getIframeUrl = (token: string) => {
+    const url = getApiSubdomainUrl('/core/v4/captcha');
     url.searchParams.set('Token', token);
     return url;
 };
@@ -18,9 +15,8 @@ interface Props {
 const Captcha = ({ token, onSubmit }: Props) => {
     const [style, setStyle] = useState<any>();
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const { API_URL } = useConfig();
 
-    const iframeUrl = getIframeUrl(API_URL, token);
+    const iframeUrl = getIframeUrl(token);
 
     const src = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
