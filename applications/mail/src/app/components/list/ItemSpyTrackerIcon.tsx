@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { classnames, Href, Icon, SettingsLink, Tooltip, useMailSettings } from '@proton/components';
 
 import { APPS, IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
@@ -6,6 +6,8 @@ import * as React from 'react';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 import { MessageExtended } from '../../models/message';
+
+import './ItemSpyTrackerIcon.scss';
 
 interface Props {
     message?: MessageExtended;
@@ -52,19 +54,14 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
             <Icon name="shield" size={14} alt={getTitle()} data-testid="privacy:tracker-icon" />
             {numberOfTrackers > 0 ? (
                 <span
+                    className="item-spy-tracker-icon-bubble bg-primary rounded50 absolute text-center text-sm m0 lh130"
                     data-testid="privacy:icon-number-of-trackers"
-                    style={{
-                        backgroundColor: 'green',
-                        left: '6px',
-                        top: '-4px',
-                        height: '1rem',
-                        width: '1rem',
-                        fontSize: '11px',
-                        position: 'absolute',
-                        textAlign: 'center',
-                        borderRadius: '50%',
-                        color: 'white',
-                    }}
+                    aria-label={c('Info').ngettext(
+                        msgid`${numberOfTrackers} email tracker blocked`,
+                        `${numberOfTrackers} email trackers blocked`,
+                        numberOfTrackers
+                    )}
+
                 >
                     {numberOfTrackers}
                 </span>
@@ -76,11 +73,11 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
         <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
             <div className={classnames(['flex', className])}>
                 {!hasProtection && !hasShowImage ? (
-                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} className="relative block">
+                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} className="relative inline-flex mr0-1">
                         {icon}
                     </SettingsLink>
                 ) : (
-                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA} className="relative block">
+                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA} className="relative inline-flex mr0-1">
                         {icon}
                     </Href>
                 )}
