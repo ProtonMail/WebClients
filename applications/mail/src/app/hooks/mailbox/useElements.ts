@@ -19,6 +19,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { useDispatch } from 'react-redux';
 import {
     sort as sortElements,
     hasLabel,
@@ -47,6 +48,8 @@ import {
 } from '../../constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ESSetsElementsCache } from '../../models/encryptedSearch';
+import { resetState } from '../../logic/elements/elementsSlice';
+import { load as loadThunk } from '../../logic/elements/elementsActions';
 
 interface Options {
     conversationMode: boolean;
@@ -109,6 +112,8 @@ const emptyCache = (
 };
 
 export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter, onPage }) => {
+    const dispatch = useDispatch();
+
     const api = useApi();
     const abortControllerRef = useRef<AbortController>();
 
@@ -359,8 +364,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return { payload, count, error };
     };
 
-    const resetCache = (retry?: RetryData, beforeFirstLoad?: boolean) =>
+    const resetCache = (retry?: RetryData, beforeFirstLoad?: boolean) => {
+        dispatch(resetState({ page, params: { labelID, sort, filter, esEnabled, search }, retry, beforeFirstLoad }));
         setCache(emptyCache(page, { labelID, sort, filter, esEnabled, ...search }, retry, beforeFirstLoad));
+    };
 
     const load = async () => {
         setCache((cache) => ({ ...cache, pendingRequest: true, page }));
@@ -440,6 +447,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             if (isSearch(search)) {
                 void executeSearch();
             } else {
+                void dispatch(
+                    loadThunk({ api, conversationMode, page, params: { labelID, filter, search, sort, esEnabled } })
+                );
                 void load();
             }
         }
