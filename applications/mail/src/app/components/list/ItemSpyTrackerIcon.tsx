@@ -49,20 +49,40 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
 
     const icon = (
         <>
-            <Icon name="shield" size={14} />
-            {numberOfTrackers > 0 ? <span>{numberOfTrackers}</span> : null}
+            <Icon name="shield" size={14} alt={getTitle()} data-testid="privacy:tracker-icon" />
+            {numberOfTrackers > 0 ? (
+                <span
+                    data-testid="privacy:icon-number-of-trackers"
+                    style={{
+                        backgroundColor: 'green',
+                        left: '6px',
+                        top: '-4px',
+                        height: '1rem',
+                        width: '1rem',
+                        fontSize: '11px',
+                        position: 'absolute',
+                        textAlign: 'center',
+                        borderRadius: '50%',
+                        color: 'white',
+                    }}
+                >
+                    {numberOfTrackers}
+                </span>
+            ) : null}
         </>
     );
 
     return (
-        <Tooltip title={getTitle()}>
-            <div className={classnames(['flex', className])} data-testid="item-spy-tracker-icon">
+        <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
+            <div className={classnames(['flex', className])}>
                 {!hasProtection && !hasShowImage ? (
-                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL}>
+                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} className="relative block">
                         {icon}
                     </SettingsLink>
                 ) : (
-                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA}>{icon}</Href>
+                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA} className="relative block">
+                        {icon}
+                    </Href>
                 )}
             </div>
         </Tooltip>
