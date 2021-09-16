@@ -192,18 +192,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         </DropdownMenuButton>
                     )}
 
-                    {onOpenChat && (
-                        <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                            onClick={() => {
-                                close();
-                                onOpenChat();
-                            }}
-                        >
-                            {c('Action').t`Chat with us`}
-                        </DropdownMenuButton>
-                    )}
-
                     <SimpleDropdown
                         as={DropdownMenuButton}
                         originalPlacement="left-top"
@@ -218,6 +206,17 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         }
                     >
                         <DropdownMenu>
+                            {onOpenChat && (
+                                <DropdownMenuButton
+                                    className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                    onClick={() => {
+                                        close();
+                                        onOpenChat();
+                                    }}
+                                >
+                                    {c('Action').t`Chat with us`}
+                                </DropdownMenuButton>
+                            )}
                             <DropdownMenuLink
                                 className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
                                 href={
