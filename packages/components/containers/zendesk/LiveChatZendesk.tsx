@@ -109,6 +109,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
         right: 0,
         maxHeight: '100%',
         maxWidth: '100%',
+        zIndex: '999999',
         ...CLOSED_SIZE,
     });
     const [state, setState] = useState({ loaded: false, connected: false });
