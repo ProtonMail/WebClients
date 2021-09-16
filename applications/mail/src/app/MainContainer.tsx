@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Provider as ReduxProvider } from 'react-redux';
 import {
     useActiveBreakpoint,
     ModalsChildren,
@@ -17,6 +18,7 @@ import { MAIN_ROUTE_PATH } from './constants';
 import ContactProvider from './containers/ContactProvider';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
+import { store } from './logic/store';
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
@@ -37,35 +39,37 @@ const MainContainer = () => {
     ]);
 
     return (
-        <MessageProvider>
-            <ConversationProvider>
-                <AttachmentProvider>
-                    <ContactProvider>
-                        <EncryptedSearchProvider>
-                            <ModalsChildren />
-                            <MailContentRefProvider mailContentRef={mailContentRef}>
-                                <ComposerContainer breakpoints={breakpoints}>
-                                    {({ isComposerOpened }) => (
-                                        <Switch>
-                                            <Route
-                                                path={MAIN_ROUTE_PATH}
-                                                render={() => (
-                                                    <PageContainer
-                                                        ref={mailContentRef}
-                                                        breakpoints={breakpoints}
-                                                        isComposerOpened={isComposerOpened}
-                                                    />
-                                                )}
-                                            />
-                                        </Switch>
-                                    )}
-                                </ComposerContainer>
-                            </MailContentRefProvider>
-                        </EncryptedSearchProvider>
-                    </ContactProvider>
-                </AttachmentProvider>
-            </ConversationProvider>
-        </MessageProvider>
+        <ReduxProvider store={store}>
+            <MessageProvider>
+                <ConversationProvider>
+                    <AttachmentProvider>
+                        <ContactProvider>
+                            <EncryptedSearchProvider>
+                                <ModalsChildren />
+                                <MailContentRefProvider mailContentRef={mailContentRef}>
+                                    <ComposerContainer breakpoints={breakpoints}>
+                                        {({ isComposerOpened }) => (
+                                            <Switch>
+                                                <Route
+                                                    path={MAIN_ROUTE_PATH}
+                                                    render={() => (
+                                                        <PageContainer
+                                                            ref={mailContentRef}
+                                                            breakpoints={breakpoints}
+                                                            isComposerOpened={isComposerOpened}
+                                                        />
+                                                    )}
+                                                />
+                                            </Switch>
+                                        )}
+                                    </ComposerContainer>
+                                </MailContentRefProvider>
+                            </EncryptedSearchProvider>
+                        </ContactProvider>
+                    </AttachmentProvider>
+                </ConversationProvider>
+            </MessageProvider>
+        </ReduxProvider>
     );
 };
 
