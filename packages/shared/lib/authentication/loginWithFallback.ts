@@ -49,7 +49,7 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }:
                 authVersion: version,
                 result,
             };
-        } catch (e) {
+        } catch (e: any) {
             if (e.data && e.data.Code === PASSWORD_WRONG_ERROR && !done) {
                 state = {
                     lastAuthVersion: version,

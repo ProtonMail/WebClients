@@ -62,7 +62,7 @@ export const reactivateKeysProcess = async ({
             mutableActiveKeys = updatedActiveKeys;
 
             onReactivation(id, 'ok');
-        } catch (e) {
+        } catch (e: any) {
             onReactivation(id, e);
         }
     }
@@ -94,7 +94,7 @@ const reactivateKeysProcessLegacy = async ({
                 keys,
                 Keys,
             });
-        } catch (e) {
+        } catch (e: any) {
             keysToReactivate.forEach(({ id }) => onReactivation(id, e));
         }
     }

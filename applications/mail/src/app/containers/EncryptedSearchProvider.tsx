@@ -401,7 +401,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         let refreshEvent: Event | undefined;
         try {
             refreshEvent = await checkResfresh(indexKey, currentEvent, false);
-        } catch (error) {
+        } catch (error: any) {
             esSentryReport('catchUpFromEvent: checkResfresh', { error });
             setESStatus((esStatus) => {
                 return {
@@ -416,7 +416,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         try {
             await syncIndexedDB(eventToCheck, indexKey);
-        } catch (error) {
+        } catch (error: any) {
             esSentryReport('catchUpFromEvent: syncIndexedDB', { error });
             setESStatus((esStatus) => {
                 return {
@@ -479,7 +479,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     throw new Error('Refresh event has no ID');
                 }
             }
-        } catch (error) {
+        } catch (error: any) {
             esSentryReport('catchUpFromLS: checkResfresh', { error });
             setESStatus((esStatus) => {
                 return {
@@ -513,7 +513,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 if (keepSyncing) {
                     newEventsToCheck.push(newEventToCheck);
                 }
-            } catch (error) {
+            } catch (error: any) {
                 esSentryReport('catchUpFromLS: queryEvents', { error });
                 setESStatus((esStatus) => {
                     return {
@@ -543,7 +543,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             for (const eventToCheck of newEventsToCheck) {
                 await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
             }
-        } catch (error) {
+        } catch (error: any) {
             esSentryReport('catchUpFromLS: syncIndexedDB', { error });
             setESStatus((esStatus) => {
                 return {

@@ -14,7 +14,7 @@ const parseMainEventData = ({ SharedEvents = [] }: CalendarEvent): VcalVeventCom
             return undefined;
         }
         return component;
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };

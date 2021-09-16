@@ -146,7 +146,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 LocalID: localID,
             });
             sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
-        } catch (e) {
+        } catch (e: any) {
             sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: false });
             // If persisting the password fails for some reason.
             setPartialError({ fatalError: true, persistError: true });
@@ -215,7 +215,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
                         notifySuccess();
                         onClose?.();
-                    } catch (e) {
+                    } catch (e: any) {
                         setLoading(false);
                         checkLoginError(e);
                     }
@@ -256,7 +256,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             oldPassword: '',
                         });
                         setLoading(false);
-                    } catch (e) {
+                    } catch (e: any) {
                         setLoading(false);
                         checkLoginError(e);
                     }
@@ -318,7 +318,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
                         notifySuccess();
                         onClose?.();
-                    } catch (e) {
+                    } catch (e: any) {
                         setLoading(false);
                         checkFatalError(e);
                     } finally {
@@ -394,7 +394,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
                 notifySuccess();
                 onClose?.();
-            } catch (e) {
+            } catch (e: any) {
                 setLoading(false);
                 checkFatalError(e);
                 checkLoginError(e);

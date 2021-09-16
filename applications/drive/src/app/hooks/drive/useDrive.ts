@@ -310,7 +310,7 @@ function useDrive() {
             const data = await downloadCallback(downloadUrl);
             const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
             cache.set.linkMeta({ ...linkMeta, ThumbnailIsLoading: false, CachedThumbnailURL: url }, shareId);
-        } catch (e) {
+        } catch (e: any) {
             cache.set.linkMeta({ ...linkMeta, ThumbnailIsLoading: false }, shareId, { rerender: false });
             throw e;
         }

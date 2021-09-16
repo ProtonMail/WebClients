@@ -38,7 +38,7 @@ const encryptEvent = async (
             throw new Error('Missing shared data');
         }
         return { data, component: eventComponent };
-    } catch (error) {
+    } catch (error: any) {
         return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
     }
 };
@@ -66,7 +66,7 @@ const submitEvents = async (
             silence: true,
         });
         responses = Responses;
-    } catch (error) {
+    } catch (error: any) {
         responses = events.map((event, index) => ({
             Index: index,
             Response: { Code: 0, Error: `${error}` },

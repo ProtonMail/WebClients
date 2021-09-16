@@ -294,7 +294,7 @@ export const fromIcalComponentWithErrors = (component: any): VcalCalendarCompone
     const components = component.getAllSubcomponents().map((subcomponent: any) => {
         try {
             return fromIcalComponentWithErrors(subcomponent);
-        } catch (error) {
+        } catch (error: any) {
             return { error, icalComponent: subcomponent };
         }
     });
@@ -362,7 +362,7 @@ export const parseWithErrors = (
             return {} as VcalCalendarComponent;
         }
         return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
-    } catch (e) {
+    } catch (e: any) {
         // try to recover from line break errors
         if (e.message.toLowerCase().includes('invalid line (no token ";" or ":")') && retryLineBreaks) {
             const reformattedVcal = reformatLineBreaks(vcal);

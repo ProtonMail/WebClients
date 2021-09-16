@@ -75,7 +75,7 @@ const SquireIframe = (
                 setSquireRef(ref, squire);
                 setSquireReady(true);
                 onReady();
-            } catch (error) {
+            } catch (error: any) {
                 createNotification({
                     type: 'error',
                     text: (

@@ -214,7 +214,7 @@ export const transformLinkFromAPI = async ({
                 encryptedPurpose,
                 privateKeys,
             });
-        } catch (e) {
+        } catch (e: any) {
             onError(e);
             purpose = encryptedPurpose;
         }
@@ -230,7 +230,7 @@ export const transformLinkFromAPI = async ({
             passphraseKey,
             cacheKey,
         });
-    } catch (e) {
+    } catch (e: any) {
         onError(e);
         link = `Error building link: ${e.message}`;
     }

@@ -86,7 +86,7 @@ export const getSupportedContact = (vcard: string) => {
     }
     try {
         return parseVcard(vcard);
-    } catch (error) {
+    } catch (error: any) {
         const contactId = getContactId(vcard);
         return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
     }
@@ -97,7 +97,7 @@ export const getSupportedContacts = (vcards: string[]) => {
         .map((vcard) => {
             try {
                 return getSupportedContact(vcard);
-            } catch (error) {
+            } catch (error: any) {
                 if (error instanceof ImportContactError) {
                     return error;
                 }

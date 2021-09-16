@@ -40,7 +40,7 @@ import { hasStorage as hasSessionStorage } from './sessionStorage';
 const deserialize = (string: string) => {
     try {
         return JSON.parse(string);
-    } catch (e) {
+    } catch (e: any) {
         return {};
     }
 };
@@ -53,7 +53,7 @@ const deserializeItem = (value: string | undefined) => {
     }
     try {
         return stringToUint8Array(atob(value));
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };

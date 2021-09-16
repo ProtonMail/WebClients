@@ -28,7 +28,7 @@ export const getParsedAutocryptHeader = (header = '', sender = ''): AutocryptHea
                         const keydataStringValue = trimmedKeyValue.slice('keydata='.length);
                         const keydataValue = binaryStringToArray(decodeBase64(keydataStringValue));
                         return ['keydata', keydataValue];
-                    } catch (e) {
+                    } catch (e: any) {
                         return ['', ''];
                     }
                 }

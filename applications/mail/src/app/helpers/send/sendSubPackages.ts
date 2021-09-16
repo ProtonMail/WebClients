@@ -45,7 +45,7 @@ const sendPMEncryptedOutside = async (message: Message, api: Api) => {
             EncToken,
             Signature: +message.Attachments.every(({ Signature }) => Signature),
         };
-    } catch (err) {
+    } catch (err: any) {
         // TODO: mark encryption failed
         console.error(err);
         throw err;

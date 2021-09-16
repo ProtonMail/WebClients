@@ -35,7 +35,7 @@ export const formatDownload = async (
             // Only care about signature verification for verified senders with pinned keys
             verified: reverify ? verified : VERIFICATION_STATUS.NOT_VERIFIED,
         };
-    } catch (error) {
+    } catch (error: any) {
         // If the decryption fails we download the encrypted version
         if (error.data) {
             return {
@@ -60,7 +60,7 @@ export const generateDownload = async (download: Download /* , message: MessageE
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, [attachment]);
-    // } catch (e) {
+    // } catch (e: any) {
     //     // swallow as the user is informed already by a confirmation and actually caused this error
     //     return;
     // }
@@ -108,7 +108,7 @@ export const generateDownloadAll = async (message: Message, list: Download[]) =>
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, list);
-    // } catch (e) {
+    // } catch (e: any) {
     //     // swallow as the user is informed already by a confirmation and actually caused this error
     //     return;
     // }

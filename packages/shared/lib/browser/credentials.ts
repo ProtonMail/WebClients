@@ -10,7 +10,7 @@ export async function storeCredentials(id: string, password: string) {
             password,
         });
         await navigator.credentials.store(cred);
-    } catch (e) {
+    } catch (e: any) {
         // Firefox will crash because it thinks publicKey is mandatory inside cred.
         // Even if the spec says otherwise
         // Current API inside Firefox

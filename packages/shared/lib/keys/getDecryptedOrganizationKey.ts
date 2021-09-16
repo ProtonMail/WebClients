@@ -28,7 +28,7 @@ export const getCachedOrganizationKey = async ({
             privateKey,
             publicKey,
         };
-    } catch (e) {
+    } catch (e: any) {
         return {
             Key,
             error: e,

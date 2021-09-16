@@ -37,7 +37,7 @@ export const cleanMultipleValue = (value: string = '') => {
 const getRawValues = (property: any): string[] => {
     try {
         return property.getValues();
-    } catch (error) {
+    } catch (error: any) {
         const [, , , value = ''] = property.jCal || [];
         return [value];
     }

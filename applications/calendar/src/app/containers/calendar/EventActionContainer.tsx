@@ -190,7 +190,7 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
                         return handleGotoOccurrence(result.Event, parsedEvent, firstOccurrence);
                     }
                     return handleGotoOccurrence(result.Event, parsedEvent, targetOccurrence);
-                } catch (e) {
+                } catch (e: any) {
                     if (e.status >= 400 && e.status <= 499) {
                         return handleLinkError();
                     }

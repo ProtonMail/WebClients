@@ -135,7 +135,7 @@ export const getDecryptedCalendarKeys = async (
                 privateKey,
                 publicKey: privateKey.toPublic(),
             };
-        } catch (e) {
+        } catch (e: any) {
             return undefined;
         }
     };

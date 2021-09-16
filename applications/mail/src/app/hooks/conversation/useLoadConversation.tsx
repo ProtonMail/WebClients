@@ -19,7 +19,7 @@ export const useLoadConversation = (): LoadConversation => {
                 loadRetry: loadRetry + 1,
                 errors: { network: [], unknown: [] },
             }));
-        } catch (error) {
+        } catch (error: any) {
             const errors: ConversationErrors = {};
             if (isNetworkError(error)) {
                 errors.network = [error];

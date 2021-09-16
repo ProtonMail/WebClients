@@ -73,7 +73,7 @@ function useTransferControls() {
                         )
                     );
                     await zipSaver.close();
-                } catch (e) {
+                } catch (e: any) {
                     await zipSaver.abort(e);
                 }
             }
@@ -94,7 +94,7 @@ function useTransferControls() {
             } else {
                 await restartUpload(transfer as Upload);
             }
-        } catch (e) {
+        } catch (e: any) {
             console.error(e);
         }
     };

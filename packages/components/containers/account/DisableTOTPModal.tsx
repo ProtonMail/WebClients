@@ -68,7 +68,7 @@ const DisableTOTPModal = (props: any) => {
                             await call();
                             createNotification({ text: c('Info').t`Two-factor authentication disabled` });
                             props.onClose();
-                        } catch (error) {
+                        } catch (error: any) {
                             const { code, message } = getApiError(error);
                             if (code === PASSWORD_WRONG_ERROR) {
                                 setError(message);

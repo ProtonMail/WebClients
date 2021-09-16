@@ -95,7 +95,7 @@ export const useCloseHandler = ({
 
         try {
             await promiseUpload;
-        } catch (error) {
+        } catch (error: any) {
             hideNotification(notificationID);
             setSaving(false);
             throw error;

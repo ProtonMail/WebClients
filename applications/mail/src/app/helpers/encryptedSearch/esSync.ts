@@ -510,7 +510,7 @@ export const refreshIndex = async (
     let drafts: ESMessage[] = [];
     try {
         ({ resultsArray: drafts } = await uncachedSearch(userID, indexKey, normaliseSearchParams({}, '8'), {}));
-    } catch (error) {
+    } catch (error: any) {
         throw new Error('Drafts fetching failed');
     }
 

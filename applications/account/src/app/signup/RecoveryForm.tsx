@@ -77,7 +77,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
             try {
                 await api(validateEmail(model.recoveryEmail));
                 return onSubmit(payload);
-            } catch (error) {
+            } catch (error: any) {
                 setEmailError(getApiErrorMessage(error) || c('Error').t`Can't validate email, try again later`);
                 throw error;
             }
@@ -87,7 +87,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
             try {
                 await api(validatePhone(model.recoveryPhone));
                 return onSubmit(payload);
-            } catch (error) {
+            } catch (error: any) {
                 setPhoneError(getApiErrorMessage(error) || c('Error').t`Can't validate phone, try again later`);
                 throw error;
             }

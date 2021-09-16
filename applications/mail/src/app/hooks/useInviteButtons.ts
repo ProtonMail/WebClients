@@ -133,7 +133,7 @@ const useInviteButtons = ({
                 });
                 onEmailSuccess();
                 return true;
-            } catch (error) {
+            } catch (error: any) {
                 onEmailError(error);
                 return false;
             }
@@ -151,7 +151,7 @@ const useInviteButtons = ({
             try {
                 deleteCalendarEventFromInvitation({ calendarEventID: reinviteEventID, calendarData, api });
                 return true;
-            } catch (error) {
+            } catch (error: any) {
                 onUnexpectedError();
                 return false;
             }
@@ -179,7 +179,7 @@ const useInviteButtons = ({
                 });
                 onCreateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
-            } catch (error) {
+            } catch (error: any) {
                 onCreateEventError(partstat, error);
             }
         },
@@ -209,7 +209,7 @@ const useInviteButtons = ({
                 });
                 onUpdateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
-            } catch (error) {
+            } catch (error: any) {
                 onUpdateEventError(partstat, error);
             }
         },

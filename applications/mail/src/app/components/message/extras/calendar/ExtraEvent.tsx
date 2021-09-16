@@ -199,7 +199,7 @@ const ExtraEvent = ({
                         isPartyCrasher,
                     });
                 }
-            } catch (error) {
+            } catch (error: any) {
                 // if fetching fails, proceed as if there was no event in the database
                 return;
             }
@@ -261,7 +261,7 @@ const ExtraEvent = ({
                         isPartyCrasher,
                     });
                 }
-            } catch (e) {
+            } catch (e: any) {
                 if (!unmounted) {
                     setModel({
                         ...model,

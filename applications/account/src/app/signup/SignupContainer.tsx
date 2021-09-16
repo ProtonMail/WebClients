@@ -309,7 +309,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             } else {
                 await handleCreateExternalUser({ ...sharedCreationProps, email });
             }
-        } catch (error) {
+        } catch (error: any) {
             if (error instanceof HumanVerificationError) {
                 return setModelDiff({
                     step: HUMAN_VERIFICATION,
@@ -361,7 +361,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             await authApi.api(updateLocale(localeCode)).catch(noop);
             await persistSession({ ...authResponse, User, keyPassword, api });
             await onLogin({ ...authResponse, User, keyPassword, flow: 'signup' });
-        } catch (error) {
+        } catch (error: any) {
             // TODO: If any of these requests fail we should probably handle it differently
             return setModelDiff({ step: oldStep, stepHistory: model.stepHistory });
         }
@@ -374,7 +374,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     api<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 ]);
                 setModelDiff({ domains });
-            } catch (error) {
+            } catch (error: any) {
                 return setModelDiff({ step: NO_SIGNUP });
             }
         };

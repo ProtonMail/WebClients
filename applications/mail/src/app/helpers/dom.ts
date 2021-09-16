@@ -33,7 +33,7 @@ export const inlineCss = (document: Element) => {
         // Extra security not to leak any global styling
         cheerioDoc('style').remove();
         document.innerHTML = cheerioDoc('body').html();
-    } catch (err) {
+    } catch (err: any) {
         console.error(err);
     }
 };

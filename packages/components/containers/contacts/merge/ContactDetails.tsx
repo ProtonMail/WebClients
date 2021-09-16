@@ -43,7 +43,7 @@ const ContactDetails = ({ contactID, userKeysList, ...rest }: Props) => {
 
         try {
             void withLoading(request());
-        } catch (error) {
+        } catch (error: any) {
             setModel({ ...model, errors: [{ type: CRYPTO_PROCESSING_TYPES.FAIL_TO_LOAD, error }] });
         }
     }, []);

@@ -55,7 +55,7 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
             try {
                 const result = await resumeSession(silentApi, localID);
                 return onLogin(result);
-            } catch (e) {
+            } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     return runGetSessions();
                 }

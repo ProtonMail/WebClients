@@ -74,7 +74,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
 
             createNotification({ text: success });
             onClose?.();
-        } catch (e) {
+        } catch (e: any) {
             setError(e.message);
         }
     };

@@ -3,7 +3,7 @@ import isTruthy from './isTruthy';
 export const getCookies = (): string[] => {
     try {
         return document.cookie.split(';').map((item) => item.trim());
-    } catch (e) {
+    } catch (e: any) {
         return [];
     }
 };

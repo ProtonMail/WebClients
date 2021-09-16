@@ -74,7 +74,7 @@ export async function getVerifiedEpoch(
         const { Code: c, ...vE } = await api(getLatestVerifiedEpoch({ AddressID: addressID }));
         code = c;
         verifiedEpoch = vE;
-    } catch (err) {
+    } catch (err: any) {
         return;
     }
 

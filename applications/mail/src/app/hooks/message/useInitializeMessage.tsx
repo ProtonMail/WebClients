@@ -120,7 +120,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                     images: [...(preparation.remoteImages || []), ...(preparation.embeddedImages || [])],
                 };
             }
-        } catch (error) {
+        } catch (error: any) {
             if (isNetworkError(error)) {
                 errors.network = [error];
                 if (loadRetry < LOAD_RETRY_COUNT) {

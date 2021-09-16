@@ -38,7 +38,7 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
                 const result = await consumeFork({ selector, api: silentApi, state, key, type });
                 onLogin(result);
                 return;
-            } catch (e) {
+            } catch (e: any) {
                 if (e instanceof InvalidForkConsumeError) {
                     return onInvalidFork();
                 }

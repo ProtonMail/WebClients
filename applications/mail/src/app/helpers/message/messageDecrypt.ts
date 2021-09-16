@@ -74,7 +74,7 @@ const decryptMimeMessage = async (
             },
             decryption.data
         );
-    } catch (error) {
+    } catch (error: any) {
         return {
             decryptedBody: '',
             decryptedRawContent: '',
@@ -106,7 +106,7 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
             privateKeys,
             publicKeys: [],
         });
-    } catch (error) {
+    } catch (error: any) {
         return {
             decryptedBody: '',
             decryptedRawContent: '',
@@ -192,7 +192,7 @@ export const verifyMessage = async (
 
         // mimeSignature can't be undefined at this point
         return { verified: mimeVerified as VERIFICATION_STATUS, signature: mimeSignature };
-    } catch (error) {
+    } catch (error: any) {
         return {
             verified: NOT_VERIFIED,
             verificationErrors: [error],
