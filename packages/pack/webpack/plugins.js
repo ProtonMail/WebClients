@@ -26,7 +26,6 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
         ...(isProduction
             ? []
             : [
-                  new webpack.HotModuleReplacementPlugin(),
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
                   }),
