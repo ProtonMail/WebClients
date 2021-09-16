@@ -12,20 +12,22 @@ It can be difficult to add a theming mechanism to a design system without duplic
 
 Each [*theme file*](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes) defines the values that can be themeable (colors, radius, shadow spread, font faces, etc.) which can be predetermined or customized by the user. Hence, theming is achieved by switching between these theme files.
 
-## Standard and Prominent layout parts
+## Standard and Prominent layout
 
-Our applications interface could be seperated in two areas: header/navigation area and main area.
+The applications interface is separated into 2 sections: the **main** section and the **header/navigation** section.
 
-Since our default theme was seperating those areas with different text and background colors, it made sense to seperate them in a way or another in theming files to achieve that separation.
+Since the default theme uses different text and background colors in these sections, it makes sense to separate them in the theming files too.
 
 <figure className="text-center">
     <img className="shadow-lifted w25" src={themeDefaultSvg} alt="Proton default theme" />
     <figcaption className="text-sm mt0-5 mb0 text-italic">Proton default theme</figcaption>
 </figure>
 
-So introduce `ui-standard` and `ui-prominent` sections. Standard for the main section styles, Prominent for the header/navigation section styles.
+To do this we use `.ui-standard` for the main section styles and `.ui-prominent` for the header/navigation section styles.
 
-Obviously, it would be a performence and maintainability fail if we had to redefine each variable for each ui part. To avoid that, `ui-prominent` is defined as an override of `ui-standard`, meaning every variables defined in `ui-standard` are already known inside `ui-prominent`, so they don't have to (and must not be) redefined inside of it, but only overrided if needed.
+To avoid the performance and maintainability nightmare of having to redefine each variable for each ui section, `.ui-prominent` is defined as an override of `.ui-standard`. This means each variable defined in `.ui-standard` is already defined in `.ui-prominent`.
+
+*Variables should not be **redefined** inside of `.ui-prominent`, but **overridden** instead.*
 
 ```css
 :root,
@@ -37,9 +39,9 @@ Obviously, it would be a performence and maintainability fail if we had to redef
 }
 ```
 
-Technicaly, it implies that the `:root` is defined at the same time as `.ui-standard`, and `.ui-prominent` after that, giving us the oportunity to define a section as prominent, and one of its children as standard back again.
+`:root` is defined with `.ui-standard` then `.ui-prominent` is defined, giving us a mechanism to define a section as prominent and one of its children as standard.
 
-It is useful for some kind of cases. For example, if we want a section to share the prominent part styling, sush as the title bar of the mail composer, we just have to add `ui-prominent` class on it.
+This is useful in some cases. For example, if we want a section to share the prominent styling, such as the title bar of the mail composer, we simply add the `ui-prominent` class to it.
 
 ## An abstraction layer
 
