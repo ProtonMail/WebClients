@@ -8,9 +8,9 @@ import { Alert } from '@proton/components';
 
 ## Context
 
-It can be difficult to add a theming mechanism to a design system without duplication. With this in mind, we have taken an approach which aims to minimize duplication by **moving all references of what can be themeable into theming files outside of the design system**. 
+It can be difficult to add a theming mechanism to a design system without duplication. With this in mind, we have taken an approach which aims to minimize duplication by **moving all references of what can be themeable into theming files outside of the design system**.
 
-Each [*theme file*](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes) defines the values that can be themeable (colors, radius, shadow spread, font faces, etc.) which can be predetermined or customized by the user. Hence, theming is achieved by switching between these theme files.
+Each [_theme file_](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes) defines the values that can be themeable (colors, radius, shadow spread, font faces, etc.) which can be predetermined or customized by the user. Hence, theming is achieved by switching between these theme files.
 
 ## Standard and Prominent layout
 
@@ -27,7 +27,7 @@ To do this we use `.ui-standard` for the main section styles and `.ui-prominent`
 
 To avoid the performance and maintainability nightmare of having to redefine each variable for each ui section, `.ui-prominent` is defined as an override of `.ui-standard`. This means each variable defined in `.ui-standard` is already defined in `.ui-prominent`.
 
-*Variables should not be **redefined** inside of `.ui-prominent`, but **overridden** instead.*
+_Variables should not be **redefined** inside of `.ui-prominent`, but **overridden** instead._
 
 ```css
 :root,
@@ -43,11 +43,11 @@ To avoid the performance and maintainability nightmare of having to redefine eac
 
 This is useful in some cases. For example, if we want a section to share the prominent styling, such as the title bar of the mail composer, we simply add the `ui-prominent` class to it.
 
-## An abstraction layer
+## Variable abstraction layer
 
-Each variable can be **used everywhere in the design system**, in many contexts of use, so **their name must not refer to the color itself, but to an abstraction** of that color. Same thing for any other themable property.
+Each variable can be **used anywhere in the design system** in many contexts of use, meaning the naming of variables is abstracted. For example, the variable name referring to a color **must not refer to the color itself**, but to an **abstraction of the color**. This applies to any other themeable property.
 
-**This abstraction layer is the basis of theming management**, and must be carefully gate kept.
+**This abstraction layer is the basis of theming management** and must be carefully gatekept.
 
 ```css
 :root,
@@ -62,11 +62,11 @@ Each variable can be **used everywhere in the design system**, in many contexts 
 ```
 
 <Alert type="info">
-    Those variables should not be defined by anyone else than the design team members in relation with the core team members. If you think a variable is missing, please refer it to them.
+    These variables should not be defined by anyone other than the design team in collaboration with the core team. If
+    you think a variable is missing, please refer it to them.
 </Alert>
 
-
-To the attention of the design team and the core team: if you think you need to add a new variable or variable group, **challenge it strongly first**. The idea is to avoid any usage duplication, or adding to much variables making theming file hardly maintainable.
+To the attention of the design team and the core team: if you think you need to add a new variable or variable group, **challenge it strongly first**. The idea is to avoid any usage duplication and the addition of too many variables resulting in the theming files being hard to maintain.
 
 ## Optionals
 
@@ -82,8 +82,8 @@ selector {
 
 Optional variables are created for **two purposes**:
 
-- making skilled users able to modify a theme as they want pretty easily,
-- or making us able to adapt any property in a specific case that needs to be changed on switching to specific themes.
+-   making skilled users able to modify a theme as they want pretty easily,
+-   or making us able to adapt any property in a specific case that needs to be changed on switching to specific themes.
 
 For example, we had to add some optional variables for read and unread email items to adapt their background and text colors, because the visual difference between them wasn't obvious enough specifically on dark themes.
 
@@ -95,7 +95,7 @@ Optional variables are usually used for one and only situation, so it makes sens
 }
 ```
 
-**All optional variables are defined in a dedicated mapping file**, at [*packages/styles/scss/base/custom-properties/_optionals.scss*](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss), for maintanability purpose. This way, we can see all optional variables in one and only place, and **it creates a layer to have `--optional` prefixed names for theme files**, which makes those variables quickly understandable as optionals for the design team.
+**All optional variables are defined in a dedicated mapping file**, at [_packages/styles/scss/base/custom-properties/\_optionals.scss_](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss), for maintanability purpose. This way, we can see all optional variables in one and only place, and **it creates a layer to have `--optional` prefixed names for theme files**, which makes those variables quickly understandable as optionals for the design team.
 
 ```css
 :root,
@@ -108,5 +108,3 @@ Optional variables are usually used for one and only situation, so it makes sens
 ---
 
 **[Next step, usage &rarr;](?path=/docs/design-system-theming-usage--page)**
-
-
