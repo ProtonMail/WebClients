@@ -5,45 +5,47 @@ import { Alert } from '@proton/components';
 
 # How to use theming mechanism
 
-First, to understand how this mechanism works, [read the explanations](?path=/docs/css-theming-explanations--page).
+First, to understand how this mechanism works, [read the explanations](?path=/docs/design-system-theming-explanations--page).
 
 <Alert type="warning">
-    Each time you have to set a color, a radius, or any other themable value present in the <a href="?path=/docs/design-system-theming-taxonomy--page">taxonomy</a>, <strong>never choose a variable by its look, but always by the usage it was created for</strong>.
+    Each time you have to set a color, radius, or any other themeable value present in the{' '}
+    <a href="?path=/docs/design-system-theming-taxonomy--page">taxonomy</a>,{' '}
+    <strong>never choose a variable by its look but by the usage it was created for</strong>.
 </Alert>
 
-Ask yourself if…
+When choosing a variable, ask yourself if…
 
-## Themable value
+## Themeable value (most common use case)
 
-***…that value should change according to the theme.***
+**_…the value should change according to the theme._**
 
-In this case, choose wisely a variable from the [taxonomy](?path=/docs/design-system-theming-taxonomy--page#mandatory-variables) that is meant to be used in your context. This should be the most common use case.
+In this case, choose a variable from the [taxonomy](?path=/docs/design-system-theming-taxonomy--page#mandatory-variables) that is meant to be used in your context. This should be the .
 
-After choosing a variable, make sure that when the theme changes, your context makes sense to change too, according to that variable. If so, that should be the right variable to use, otherwhise, try with another one.
+When choosing a variable, make sure that **when the theme changes it makes sense for the variable value to change in your context too**. If not try another variable.
 
-## Themable value, with optional
+## Themeable value, with optional
 
-***…that value should change according to the theme, but may have some adaptions for some of them.***
+**_…the value should change according to the theme, but there may be some adaptations for some of them._**
 
-You may have come to that conclusion by encoutering an uncommon case where your value should be adapted on theme switching. For example, we had to create some variables for read and unread email items to adapt their background and text colors, because the visual difference between them wasn't obvious enough specifically on dark themes.
+You may have encountered an uncommon case where your value should be adapted on theme switching. For example, we used optional variables to adapt the text and background colors for read and unread email items because the visual difference between them wasn't significant enough on dark themes.
 
-In that kind of cases, you'll probably have to create a new optional variable.
+In this kind of case, you'll probably have to create a new optional variable.
 
-The usage and context of this variable must be understood at once, so you have to think about a name that describes very closely its context of use, and the impacted property at the end, using train-case naming convention.
+When naming the variable, use train-case naming convention and consider that the usage and context of must be understood at once, so use a name that closely describes its context of use and the impacted property.
 
-Then, choose a mandatory variable from the [taxonomy](?path=/docs/design-system-theming-taxonomy--page#mandatory-variables) as a fallback. Remember that if an optional variable is used for more than one context, its name must be abstractive.
+Then, choose a mandatory variable from the [taxonomy](?path=/docs/design-system-theming-taxonomy--page#mandatory-variables) as a fallback. Remember that if an optional variable is used for more than one context, its name must be abstract.
 
-Finally, add that optional variable into the dedicated mapping file and in this documentation, and refer it to the core team.
+Finally, add the new optional variable to the [dedicated mapping file](https://gitlab.protontech.ch/web/clients/-/blob/main/packages/styles/scss/base/custom-properties/_optionals.scss) and [taxonomy docs](?path=/docs/design-system-theming-taxonomy--page), and refer it to the core team.
 
 ## Static value
 
-***…that value should never change with any theme.***
+**_…the value should never change with any theme._**
 
 This case should be as rare as finding Mewtwo.
 
-For example, the star button to favorize an email item has always the same yellow color, regardless to any theme.
+For example, the star button to favorite an email item has always the same yellow color, regardless of theme.
 
-If you have tested by switching between several themes and you are sure of yourself that this value should never change, set the value directly.
+If you have tested by switching between several themes and you are sure the value should never change, then you can set the value directly.
 
 ---
 
