@@ -54,7 +54,10 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
             <Icon name="shield" size={14} alt={getTitle()} data-testid="privacy:tracker-icon" />
             {numberOfTrackers > 0 ? (
                 <span
-                    className="item-spy-tracker-icon-bubble bg-primary rounded50 absolute text-center text-sm m0 lh130"
+                    className={classnames([
+                        'item-spy-tracker-icon-bubble bg-primary rounded50 absolute text-center text-sm m0 lh130',
+                        numberOfTrackers > 9 && 'item-spy-tracker-icon-bubble--9plus',
+                    ])}
                     data-testid="privacy:icon-number-of-trackers"
                     aria-label={c('Info').ngettext(
                         msgid`${numberOfTrackers} email tracker blocked`,
@@ -62,7 +65,7 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
                         numberOfTrackers
                     )}
                 >
-                    {numberOfTrackers}
+                    {numberOfTrackers > 9 ? '9+' : numberOfTrackers}
                 </span>
             ) : null}
         </>
@@ -72,11 +75,18 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
         <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
             <div className={classnames(['flex', className])}>
                 {!hasProtection && !hasShowImage ? (
-                    <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} className="relative inline-flex mr0-1 item-spy-tracker-link">
+                    <SettingsLink
+                        path="/email-privacy"
+                        app={APPS.PROTONMAIL}
+                        className="relative inline-flex mr0-1 item-spy-tracker-link"
+                    >
                         {icon}
                     </SettingsLink>
                 ) : (
-                    <Href url={WELCOME_PANE_OPTIONS_URLS.proton2FA} className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center">
+                    <Href
+                        url={WELCOME_PANE_OPTIONS_URLS.proton2FA}
+                        className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                    >
                         {icon}
                     </Href>
                 )}

@@ -344,7 +344,8 @@ const HeaderExpanded = ({
                                 <Icon name="calendar-days" className="ml0-5 mr0-5" />
                                 <ItemDate element={message.data} labelID={labelID} />
                             </div>
-                            <div className="mlauto flex flex-nowrap">
+                            <div className="mlauto flex flex-nowrap flex-align-items-center">
+                                {feature?.Value && <ItemSpyTrackerIcon message={message} />}
                                 <ItemLabels
                                     element={message.data}
                                     labelID={labelID}
