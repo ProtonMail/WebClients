@@ -254,7 +254,7 @@ const ImportMailModal = ({
                     silence: true,
                 });
                 moveToPrepareStep(Importer, Folders);
-            } catch (error) {
+            } catch (error: any) {
                 handleSubmitStartError(error);
             }
             return;
@@ -281,7 +281,7 @@ const ImportMailModal = ({
 
                 const { Folders = [] } = await api(getMailImportFolders(Importer.ID, { Code: modalModel.password }));
                 moveToPrepareStep(Importer, Folders);
-            } catch (error) {
+            } catch (error: any) {
                 handleSubmitStartError(error);
             }
             return;
@@ -331,7 +331,7 @@ const ImportMailModal = ({
 
             setOauthLoading(false);
             moveToPrepareStep(Importer, Folders);
-        } catch (error) {
+        } catch (error: any) {
             setOauthError(true);
             setOauthLoading(false);
 

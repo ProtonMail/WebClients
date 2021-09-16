@@ -96,7 +96,7 @@ const GenerateMnemonicModal = (props: Props) => {
 
                     onSuccess();
                     setStep(STEPS.MNEMONIC_PHRASE);
-                } catch (error) {
+                } catch (error: any) {
                     const { code, message } = getApiErrorMessage(error);
                     setSubmittingAuth(false);
                     if (code === PASSWORD_WRONG_ERROR) {

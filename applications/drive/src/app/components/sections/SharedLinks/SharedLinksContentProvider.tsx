@@ -64,7 +64,7 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
                 setLoading(false);
                 setInitialized(true);
             }
-        } catch (e) {
+        } catch (e: any) {
             const children = cache.get.sharedLinkMetas(shareId);
 
             if (signal?.aborted) {

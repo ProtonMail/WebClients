@@ -158,7 +158,7 @@ const SetupInternalAccountContainer = () => {
                                 username: payload.username,
                             });
                             await generateInternalAddress.onDone();
-                        } catch (e) {
+                        } catch (e: any) {
                             errorHandler(e);
                             handleBack();
                         }

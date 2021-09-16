@@ -79,7 +79,7 @@ const importKeysProcessV2 = async ({
             mutableActiveKeys = updatedActiveKeys;
 
             onImport(keyImportRecord.id, 'ok');
-        } catch (e) {
+        } catch (e: any) {
             onImport(keyImportRecord.id, e);
         }
     }

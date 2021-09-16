@@ -55,7 +55,7 @@ const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeCli
             version: jsonResponse.stable.Version,
             downloads: jsonResponse.stable.Installers,
         };
-    } catch (e) {
+    } catch (e: any) {
         if (bridgeClient.id === 'linux') {
             return {
                 ...bridgeClient,

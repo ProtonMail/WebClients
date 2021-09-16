@@ -16,7 +16,7 @@ const isOutOfSync = (serverTime: Date) => {
 
 const TimeOutOfSyncTopBanner = () => {
     const [ignore, setIgnore] = useState(false);
-    const serverTime: Date | undefined = useApiServerTime();
+    const serverTime = useApiServerTime();
 
     // We warn the user if the server time is too far off from local time.
     // We do not want the server to set arbitrary times (either past or future), to avoid signature replay issues and more.
@@ -28,11 +28,12 @@ const TimeOutOfSyncTopBanner = () => {
         if (!showWarning || onceRef.current) {
             return;
         }
+
         onceRef.current = true;
         captureMessage('Client time difference larger than 24 hours', {
             level: Severity.Info,
             extra: {
-                serverTime: serverTime!.toString(),
+                serverTime: serverTime?.toString(),
                 localTime: new Date().toString(),
             },
         });

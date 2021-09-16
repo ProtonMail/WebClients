@@ -98,7 +98,7 @@ const FeaturesProvider = ({ children }: Props) => {
             const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
             updateFeature(code, Feature);
             return Feature;
-        } catch (e) {
+        } catch (e: any) {
             // Rollback optimistic change if it fails
             if (oldCopiedFeature) {
                 updateFeature(code, oldCopiedFeature);

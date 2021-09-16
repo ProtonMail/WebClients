@@ -291,7 +291,7 @@ export function initUpload(
                         abortSignal
                     );
                     uploadingBlocks.delete(index);
-                } catch (err) {
+                } catch (err: any) {
                     if (err?.data?.Code === RESPONSE_CODE.ALREADY_EXISTS) {
                         console.warn(
                             `Redundant upload for block #${index}. Proceeding, but this might indicate an issue.`
@@ -336,7 +336,7 @@ export function initUpload(
 
         try {
             await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD);
-        } catch (e) {
+        } catch (e: any) {
             if (e.status === STATUS_CODE.NOT_FOUND && numRetry < MAX_RETRIES_BEFORE_FAIL) {
                 console.error(`Blocks for upload ${id}, might have expired. Retry num: ${numRetry}`);
 
@@ -394,7 +394,7 @@ export function initUpload(
                     await uploadBlocks(uploadingBlocks, blockTokens, abortController.signal);
                 }
                 await finalize(blockTokens, { id });
-            } catch (e) {
+            } catch (e: any) {
                 if (paused) {
                     resetUploadProgress(uploadingBlocks);
                     await waitUntil(() => paused === false);

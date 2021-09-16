@@ -103,7 +103,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
                 organizationKey: organizationKey.privateKey,
             });
             await call();
-        } catch (e) {
+        } catch (e: any) {
             createNotification({ text: e.message });
         }
     };

@@ -50,7 +50,7 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
     try {
         const timezone = findTimeZone(tzid).name;
         return unsupportedTimezoneLinks[timezone] || timezone;
-    } catch (e) {
+    } catch (e: any) {
         // try manual conversions
         const offsetRegex = /^\((?:UTC|GMT).*\) (.*)$|^(.*) \((?:UTC|GMT).*\)/i;
         const match = offsetRegex.exec(tzid);
@@ -66,7 +66,7 @@ const guessTimezone = (timezones: string[]) => {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         // Ensure it exists.
         return findTimeZone(timezone).name;
-    } catch (error) {
+    } catch (error: any) {
         const date = new Date();
         const timezoneOffset = date.getTimezoneOffset();
         return timezones.find((tz) => {

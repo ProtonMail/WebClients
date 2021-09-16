@@ -77,7 +77,7 @@ export const newVersionUpdater = (config: ProtonConfig) => {
             const { commit } = await getVersion();
 
             return isDifferent(commit, COMMIT);
-        } catch (error) {
+        } catch (error: any) {
             traceError(error);
         }
     };

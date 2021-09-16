@@ -311,7 +311,7 @@ export const getSendIcsAction =
                     await Promise.all(promises);
                 }
                 return;
-            } catch (e) {
+            } catch (e: any) {
                 onRequestError(e);
             }
         }
@@ -411,7 +411,7 @@ export const getSendIcsAction =
                 }
                 await Promise.all(promises);
                 return;
-            } catch (e) {
+            } catch (e: any) {
                 onRequestError(e);
             }
         }
@@ -450,7 +450,7 @@ export const getSendIcsAction =
                     sendPreferencesMap,
                     contactEmailsMap,
                 });
-            } catch (e) {
+            } catch (e: any) {
                 onCancelError(e);
             }
         }
@@ -465,7 +465,10 @@ export const getSendIcsAction =
                     throw new Error('Missing invitation data');
                 }
                 const selfAttendee = vevent.attendee[selfAttendeeIndex];
-                const supportedPlusAliasEmail = getSupportedPlusAlias({ selfAttendeeEmail: getAttendeeEmail(selfAttendee), selfAddressEmail: selfAddress.Email });
+                const supportedPlusAliasEmail = getSupportedPlusAlias({
+                    selfAttendeeEmail: getAttendeeEmail(selfAttendee),
+                    selfAddressEmail: selfAddress.Email,
+                });
 
                 const organizerEmail = getAttendeeEmail(organizer);
                 const selfAttendeeWithPartstat = {
@@ -512,7 +515,7 @@ export const getSendIcsAction =
                     contactEmailsMap,
                 });
                 return;
-            } catch (e) {
+            } catch (e: any) {
                 onReplyError(e);
             }
         }

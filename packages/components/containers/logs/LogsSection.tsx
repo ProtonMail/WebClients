@@ -114,7 +114,7 @@ const LogsSection = () => {
                 return;
             }
             setState({ logs: Logs, total: Total });
-        } catch (e) {
+        } catch (e: any) {
             if (latestRef.current !== latest) {
                 return;
             }

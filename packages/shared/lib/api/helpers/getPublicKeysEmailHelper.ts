@@ -27,7 +27,7 @@ const getPublicKeysEmailHelper = async (api: Api, Email: string, silence = false
             Keys,
             publicKeys,
         };
-    } catch (error) {
+    } catch (error: any) {
         const { data = {} } = error;
         if (EMAIL_ERRORS.includes(data.Code)) {
             return { Keys: [], publicKeys: [], Errors: [data.Error] };

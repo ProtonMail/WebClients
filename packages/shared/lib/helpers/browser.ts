@@ -53,10 +53,6 @@ export const metaKey = isMac() ? '⌘' : 'Ctrl';
 export const altKey = isMac() ? 'Option' : 'Alt';
 export const shiftKey = 'Shift';
 
-export const doNotTrack = () => {
-    return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' || window.doNotTrack === '1';
-};
-
 /**
  * Do not support window.open event after user interaction
  */
@@ -68,11 +64,12 @@ export const getActiveXObject = (name: string) => {
     try {
         // @ts-ignore
         return new ActiveXObject(name);
-    } catch (error) {
+    } catch (error: any) {
         return undefined;
     }
 };
 
+// @ts-expect-error window.MSStream cf. https://racase.com.np/javascript-how-to-detect-if-device-is-ios/
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
 export const hasPDFSupport = () => {

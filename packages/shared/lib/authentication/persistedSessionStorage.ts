@@ -22,7 +22,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             blob: parsedValue.blob || '',
             isSubUser: parsedValue.isSubUser || false,
         };
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };
@@ -65,7 +65,7 @@ export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | un
         return {
             keyPassword: parsedValue.keyPassword || '',
         };
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };

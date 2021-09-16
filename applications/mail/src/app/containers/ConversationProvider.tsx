@@ -135,7 +135,7 @@ const conversationListener = (cache: ConversationCache, load: LoadConversation, 
                     } else {
                         update(ID, () => ({ Conversation: updatedConversation }));
                     }
-                } catch (error) {
+                } catch (error: any) {
                     console.warn('Something went wrong on updating a conversation from an event.', error);
                     void load(ID, undefined);
                 }

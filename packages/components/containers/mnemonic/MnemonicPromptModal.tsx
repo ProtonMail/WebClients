@@ -54,7 +54,7 @@ const MnemonicPromptModal = (props: Props) => {
                     await api(reactivateMnemonicPhrase(payload));
 
                     setStep(STEPS.MNEMONIC_PHRASE);
-                } catch (error) {
+                } catch (error: any) {
                     setReactivatingMnemonic(false);
                 }
             };

@@ -100,7 +100,7 @@ const AttachmentList = ({
         setShowLoader(true);
         try {
             await downloadAll(message);
-        } catch (error) {
+        } catch (error: any) {
             // Notification is handled by the hook
             console.log('error', error);
         } finally {

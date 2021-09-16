@@ -108,7 +108,7 @@ const ImportModal = ({ ...rest }: Props) => {
                     }
 
                     handleFiles(files);
-                } catch (e) {
+                } catch (e: any) {
                     setModel({ ...model, failure: e });
                 }
             };
@@ -125,7 +125,7 @@ const ImportModal = ({ ...rest }: Props) => {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
                     }
                     handleFiles([...target.files]);
-                } catch (e) {
+                } catch (e: any) {
                     setModel({ ...model, failure: e });
                 }
             };
@@ -177,7 +177,7 @@ const ImportModal = ({ ...rest }: Props) => {
                     if (featureUsedContactsImport?.Value === false) {
                         void updateUsedContactsImport(true);
                     }
-                } catch (e) {
+                } catch (e: any) {
                     const failure = e instanceof ImportFileError ? e : new ImportFatalError(e);
                     setModel({
                         ...getInitialState(),

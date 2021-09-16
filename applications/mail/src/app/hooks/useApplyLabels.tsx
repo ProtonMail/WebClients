@@ -206,7 +206,7 @@ export const useApplyLabels = () => {
                                     return await api(labelAction({ LabelID, IDs: elementIDs }));
                                 }
                                 return await api(unlabelAction({ LabelID, IDs: elementIDs }));
-                            } catch (error) {
+                            } catch (error: any) {
                                 rollbacks[LabelID]();
                                 throw error;
                             }
@@ -289,7 +289,7 @@ export const useMoveToFolder = () => {
                     // Stop the event manager to prevent race conditions
                     stop();
                     await api(action({ LabelID: folderID, IDs: elementIDs }));
-                } catch (error) {
+                } catch (error: any) {
                     rollback();
                 } finally {
                     start();
@@ -360,7 +360,7 @@ export const useStar = () => {
             // Stop the event manager to prevent race conditions
             stop();
             await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
-        } catch (error) {
+        } catch (error: any) {
             rollback();
             throw error;
         } finally {

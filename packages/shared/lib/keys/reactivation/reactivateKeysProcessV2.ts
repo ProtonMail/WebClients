@@ -107,7 +107,7 @@ export const reactivateUserKeys = async ({
                     }
                 });
             });
-        } catch (e) {
+        } catch (e: any) {
             onReactivation(id, e);
         }
     }
@@ -181,7 +181,7 @@ export const reactivateAddressKeysV2 = async ({
             mutableActiveKeys = updatedActiveKeys;
 
             onReactivation(id, 'ok');
-        } catch (e) {
+        } catch (e: any) {
             onReactivation(id, e);
         }
     }
@@ -266,7 +266,7 @@ const reactivateKeysProcessV2 = async ({
             });
             userKeys = userKeysReactivationResult.userKeys;
             addresses = userKeysReactivationResult.addresses;
-        } catch (e) {
+        } catch (e: any) {
             userRecord.keysToReactivate.forEach(({ id }) => onReactivation(id, e));
             addressRecordsInV2Format.forEach(({ keysToReactivate }) => {
                 keysToReactivate.forEach(({ id }) => onReactivation(id, e));
@@ -294,7 +294,7 @@ const reactivateKeysProcessV2 = async ({
                 onReactivation,
                 keysToReactivate,
             });
-        } catch (e) {
+        } catch (e: any) {
             keysToReactivate.forEach(({ id }) => onReactivation(id, e));
         }
     }

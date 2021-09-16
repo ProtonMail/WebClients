@@ -354,7 +354,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                                 });
                             }
                             return result;
-                        } catch (err) {
+                        } catch (err: any) {
                             if (err.name !== 'TransferConflict') {
                                 throw err;
                             }

@@ -110,7 +110,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 }
 
                 onFinish(exportedEvents, exportErrors);
-            } catch (error) {
+            } catch (error: any) {
                 setModelWithAbort((currentModel) => ({
                     ...currentModel,
                     step: EXPORT_STEPS.FINISHED,

@@ -111,7 +111,7 @@ const ContactResignModal = ({
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);
             onResign();
-        } catch (error) {
+        } catch (error: any) {
             createNotification({ text: error.message, type: 'error' });
             onError?.();
         } finally {

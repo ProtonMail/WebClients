@@ -76,7 +76,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
                     downloadControls.current = undefined;
                     setContents(undefined);
                 }
-            } catch (err) {
+            } catch (err: any) {
                 if (!isTransferCancelError(err)) {
                     setError(() => {
                         throw err;

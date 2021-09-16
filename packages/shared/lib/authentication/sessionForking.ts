@@ -110,7 +110,7 @@ const getForkStateData = (data?: string | null): ForkState | undefined => {
         return {
             url,
         };
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };
@@ -165,7 +165,7 @@ export const consumeFork = async ({ selector, api, state, key, type }: ConsumeFo
             path,
             flow,
         } as const;
-    } catch (e) {
+    } catch (e: any) {
         // If existing session is invalid. Fall through to continue using the new fork.
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;
@@ -178,7 +178,7 @@ export const consumeFork = async ({ selector, api, state, key, type }: ConsumeFo
         try {
             const data = await getForkDecryptedBlob(await getKey(key), Payload);
             keyPassword = data?.keyPassword;
-        } catch (e) {
+        } catch (e: any) {
             throw new InvalidForkConsumeError('Failed to decrypt payload');
         }
     }

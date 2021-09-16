@@ -105,7 +105,7 @@ const ImportCalendarModal = ({ onClose = noop, oauthProps: initialOAuthProps, ad
 
             setOauthLoading(false);
             moveToPrepareStep(Importer);
-        } catch (error) {
+        } catch (error: any) {
             setOauthError(true);
             setOauthLoading(false);
 

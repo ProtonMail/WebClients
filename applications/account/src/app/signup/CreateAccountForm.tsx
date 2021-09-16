@@ -72,7 +72,7 @@ const CreateAccountForm = ({
                     API_CUSTOM_ERROR_CODES.USER_EXISTS_USERNAME_ALREADY_USED,
                 ],
             });
-        } catch (error) {
+        } catch (error: any) {
             const errorText = getApiErrorMessage(error) || c('Error').t`Can't check username, try again later`;
             setUsernameError(errorText);
             throw error;

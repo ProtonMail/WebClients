@@ -74,7 +74,7 @@ const DisableMnemonicModal = (props: Props) => {
                     onSuccess();
                     onClose?.();
                     createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
-                } catch (error) {
+                } catch (error: any) {
                     const { code, message } = getApiErrorMessage(error);
                     setSubmittingAuth(false);
                     if (code === PASSWORD_WRONG_ERROR) {

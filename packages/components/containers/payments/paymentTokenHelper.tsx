@@ -103,7 +103,7 @@ export const process = ({
                         return resolve();
                     }
                     throw new Error(c('Error').t`Tab closed`);
-                } catch (error) {
+                } catch (error: any) {
                     // eslint-disable-next-line prefer-promise-reject-errors
                     return reject({ ...error, tryAgain: true });
                 }

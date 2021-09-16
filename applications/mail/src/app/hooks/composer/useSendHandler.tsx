@@ -133,7 +133,7 @@ export const useSendHandler = ({
 
         try {
             await promiseUpload;
-        } catch (error) {
+        } catch (error: any) {
             hideNotification(notifManager.ID);
             createNotification({
                 text: c('Error').t`Error while uploading attachments. Message is not sent`,

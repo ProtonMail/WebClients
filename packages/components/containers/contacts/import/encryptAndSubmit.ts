@@ -36,7 +36,7 @@ const encryptContact = async (contact: ContactProperties, { privateKey, publicKe
             contactEmails: getContactEmails(contact),
             categories: getContactCategories(contact),
         };
-    } catch (error) {
+    } catch (error: any) {
         const contactId = getContactId(contact);
         return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.ENCRYPTION_ERROR, contactId);
     }
@@ -56,7 +56,7 @@ const submitContacts = async (contacts: EncryptedContact[], labels: CATEGORIES, 
             silence: true,
         });
         responses = Responses;
-    } catch (error) {
+    } catch (error: any) {
         const { Code = 0, Error = error.message } = error.data || {};
         responses = contacts.map((contact, index) => ({
             Index: index,
@@ -156,7 +156,7 @@ export const submitCategories = async (categories: ImportCategories[], api: Api)
                     })
                 );
                 newLabelIDsMap[targetName] = ID;
-            } catch (e) {
+            } catch (e: any) {
                 // let the process continue, but an error growler will be displayed
                 noop();
             }

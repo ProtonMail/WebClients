@@ -35,7 +35,7 @@ const getKey = async (
             Key,
             privateKey,
         };
-    } catch (e) {
+    } catch (e: any) {
         return {
             id,
             Key,

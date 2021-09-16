@@ -28,7 +28,7 @@ export const extractKeysFromAttachments = async (
                     const { data } = await get(attachment, undefined, messageKeys, attachmentsCache, api);
                     const [key] = await getKeys(arrayToBinaryString(data));
                     return key;
-                } catch (e) {
+                } catch (e: any) {
                     // Nothing
                     return null;
                 }
@@ -62,7 +62,7 @@ export const extractKeysFromAutocrypt = async (
                     }
                     const [key] = await getKeys(result.keydata);
                     return key;
-                } catch (e) {
+                } catch (e: any) {
                     // not encoded correctly
                     return null;
                 }

@@ -54,7 +54,7 @@ const getSafePath = (url: string) => {
             return '';
         }
         return `${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(pathname))}${search}${hash}`;
-    } catch (e) {
+    } catch (e: any) {
         return '';
     }
 };

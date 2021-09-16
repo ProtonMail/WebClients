@@ -158,7 +158,7 @@ const eventManager = ({
                         signal: abortController.signal,
                         silence: true,
                     });
-                } catch (error) {
+                } catch (error: any) {
                     if (error.name === 'AbortError') {
                         return;
                     }
@@ -177,7 +177,7 @@ const eventManager = ({
             }
             delete STATE.abortController;
             start();
-        } catch (error) {
+        } catch (error: any) {
             listeners.notify({ error } as any);
             delete STATE.abortController;
             increaseRetryIndex();

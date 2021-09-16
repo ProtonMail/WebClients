@@ -294,7 +294,7 @@ export const handleRequestRecoveryMethods = async ({
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };
-    } catch (error) {
+    } catch (error: any) {
         const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
         if ([API_CUSTOM_ERROR_CODES.NO_RESET_METHODS].includes(Code)) {
             return {

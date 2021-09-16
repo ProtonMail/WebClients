@@ -137,7 +137,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
 
             onClose?.();
             authentication.logout();
-        } catch (error) {
+        } catch (error: any) {
             eventManager.start();
             throw error;
         }

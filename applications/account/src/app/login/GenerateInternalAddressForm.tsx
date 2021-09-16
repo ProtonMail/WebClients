@@ -26,7 +26,7 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
     const handleSubmit = async () => {
         try {
             await api(queryCheckUsernameAvailability(username));
-        } catch (e) {
+        } catch (e: any) {
             const errorText = getApiErrorMessage(e) || c('Error').t`Can't check username, try again later`;
             setUsernameError(errorText);
             throw e;

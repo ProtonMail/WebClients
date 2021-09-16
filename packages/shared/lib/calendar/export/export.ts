@@ -152,7 +152,7 @@ const decryptEvent = async ({
         };
 
         return veventWithAlarmsAndSummary;
-    } catch (error) {
+    } catch (error: any) {
         const inactiveKeys = addresses.flatMap(({ Keys }) => Keys.filter(({ Active }) => !Active));
         return getError({
             ...defaultParams,

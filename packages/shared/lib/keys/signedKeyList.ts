@@ -48,7 +48,7 @@ export const getParsedSignedKeyList = (data?: string | null): SignedKeyListItem[
             return;
         }
         return parsedData;
-    } catch (e) {
+    } catch (e: any) {
         return undefined;
     }
 };

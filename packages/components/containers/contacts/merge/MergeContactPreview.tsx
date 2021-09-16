@@ -72,7 +72,7 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
                 });
                 const beMergedContacts = await processApiRequestsSafe(requests);
                 setModel({ ...model, mergedContact: merge(beMergedContacts) });
-            } catch (e) {
+            } catch (e: any) {
                 setModel({ ...model, errorOnMerge: true });
             }
         };

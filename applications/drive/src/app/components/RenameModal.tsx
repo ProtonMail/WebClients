@@ -56,7 +56,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
             );
             createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
             onClose?.();
-        } catch (e) {
+        } catch (e: any) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
             }

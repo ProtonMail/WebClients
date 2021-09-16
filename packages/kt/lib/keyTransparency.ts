@@ -49,7 +49,7 @@ export async function verifyPublicKeys(
     let canonicalEmail: string | undefined;
     try {
         canonicalEmail = (await getCanonicalEmailMap([email], api))[email];
-    } catch (err) {
+    } catch (err: any) {
         return { code: KT_STATUS.KT_FAILED, error: err.message };
     }
     if (!canonicalEmail) {
@@ -69,14 +69,14 @@ export async function verifyPublicKeys(
             signedKeyList.Signature,
             'SKL during PK verification'
         );
-    } catch (err) {
+    } catch (err: any) {
         return { code: KT_STATUS.KT_FAILED, error: err.message };
     }
 
     // Check key list and signed key list
     try {
         await verifyKeyLists(parsedKeyList, signedKeyListData);
-    } catch (error) {
+    } catch (error: any) {
         return {
             code: KT_STATUS.KT_FAILED,
             error: `Mismatch found between key list and signed key list. ${error.message}`,
@@ -95,7 +95,7 @@ export async function verifyPublicKeys(
     let maxEpoch: Epoch;
     try {
         maxEpoch = await fetchEpoch(signedKeyList.MaxEpochID, api);
-    } catch (err) {
+    } catch (err: any) {
         let status = KT_STATUS.KT_FAILED;
         if (err.message === 'Leaf node does not exist') {
             status = KT_STATUS.KTERROR_ADDRESS_NOT_IN_KT;
@@ -106,7 +106,7 @@ export async function verifyPublicKeys(
     let returnedDate: number;
     try {
         returnedDate = await verifyEpoch(maxEpoch, canonicalEmail, signedKeyList.Data, api);
-    } catch (err) {
+    } catch (err: any) {
         return { code: KT_STATUS.KT_FAILED, error: err.message };
     }
 
@@ -145,7 +145,7 @@ export async function ktSelfAudit(
             addresses.map((address) => address.Email),
             api
         );
-    } catch (err) {
+    } catch (err: any) {
         canonicalEmailMap = undefined;
     }
 
@@ -214,7 +214,7 @@ export async function ktSelfAudit(
                             })
                         ).data
                     );
-                } catch (error) {
+                } catch (error: any) {
                     addressesToVerifiedEpochs.set(address.ID, {
                         code: KT_STATUS.KT_FAILED,
                         error: `Decrytption of ktBlob in localStorage failed with error "${error.message}"`,
@@ -267,7 +267,7 @@ export async function ktSelfAudit(
                         includedSKL.Signature,
                         'Included SKL localStorage self-audit (NOTE: the correct key might have been deleted)'
                     );
-                } catch (err) {
+                } catch (err: any) {
                     addressesToVerifiedEpochs.set(address.ID, {
                         code: KT_STATUS.KT_FAILED,
                         error: err.message,
@@ -294,7 +294,7 @@ export async function ktSelfAudit(
 
                     try {
                         removeFromLS(i, address.ID);
-                    } catch (err) {
+                    } catch (err: any) {
                         addressesToVerifiedEpochs.set(address.ID, {
                             code: KT_STATUS.KT_FAILED,
                             error: `Removing object from localStorag failed with error "${err.message}"`,
@@ -319,7 +319,7 @@ export async function ktSelfAudit(
         // Check key list and signed key list
         try {
             await verifyKeyLists(parsedKeyList, signedKeyListData);
-        } catch (error) {
+        } catch (error: any) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
                 error: `Mismatch found between key list and signed key list. ${error.message}`,
@@ -335,7 +335,7 @@ export async function ktSelfAudit(
                 address.SignedKeyList.Signature,
                 'Fetched SKL elf-audit'
             );
-        } catch (err) {
+        } catch (err: any) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
                 error: err.message,
@@ -374,7 +374,7 @@ export async function ktSelfAudit(
             let returnedDate;
             try {
                 returnedDate = await verifyEpoch(minEpoch, email, address.SignedKeyList.Data, api);
-            } catch (err) {
+            } catch (err: any) {
                 addressesToVerifiedEpochs.set(address.ID, {
                     code: KT_STATUS.KT_FAILED,
                     error: err.message,
@@ -418,7 +418,7 @@ export async function ktSelfAudit(
                 verifiedEpoch.Signature,
                 'Verified epoch self-audit'
             );
-        } catch (err) {
+        } catch (err: any) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
                 error: err.message,
@@ -491,7 +491,7 @@ export async function ktSelfAudit(
             let verifiedCurrent;
             try {
                 verifiedCurrent = await verifyCurrentEpoch(oldSKL, email, api);
-            } catch (err) {
+            } catch (err: any) {
                 addressesToVerifiedEpochs.set(address.ID, {
                     code: KT_STATUS.KT_FAILED,
                     error: err.message,

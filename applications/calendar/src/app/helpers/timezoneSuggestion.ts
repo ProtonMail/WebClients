@@ -16,7 +16,7 @@ export const getLastTimezoneSuggestion = (key: string) => {
             return defaultDate;
         }
         return date;
-    } catch (e) {
+    } catch (e: any) {
         return defaultDate;
     }
 };
@@ -26,7 +26,7 @@ export const saveLastTimezoneSuggestion = (key: string) => {
         const timestamp = +new Date();
         window.localStorage.setItem(key, `${timestamp}`);
         // eslint-disable-next-line no-empty
-    } catch (e) {}
+    } catch (e: any) {}
 };
 
 export const canAskTimezoneSuggestion = (key: string) => {
