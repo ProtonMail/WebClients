@@ -1,0 +1,12 @@
+@use "sass:math";
+@import '~@proton/styles/scss/config';
+
+$size-tracker: 1rem !default;
+.item-spy-tracker {
+	&-icon-bubble {
+		width: $size-tracker;
+		height: $size-tracker;
+		top: -#{math.div($size-tracker, 2)};
+		right: -#{math.div($size-tracker, 2)};
+	}
+}
