@@ -8,9 +8,9 @@ import { Alert } from '@proton/components';
 
 ## Context
 
-Adding theming mechanism on a design system can be done in multiple ways, but achieving that without any duplication means that we need to **move all references of what we want to be themable**, colors for instance, into a file outside of that design system. By doing so, the theming is achieved by swithing between several theming files, stored or generated, embeding a bunch of references equaling values.
+It can be difficult to add a theming mechanism to a design system without duplication. With this in mind, we have taken an approach which aims to minimize duplication by **moving all references of what can be themeable into theming files outside of the design system**. 
 
-Each themable value is replaced by a reference/variable placed in theming files, at [*packages/styles/scss/themes/*](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes). Themable values are colors, for sure, but can be radius values, shadow spreading values, font faces, etc. everything that could change with the theme.
+Each [*theme file*](https://gitlab.protontech.ch/web/clients/-/tree/main/packages/styles/scss/themes) defines the values that can be themeable (colors, radius, shadow spread, font faces, etc.) which can be predetermined or customized by the user. Hence, theming is achieved by switching between these theme files.
 
 ## Standard and Prominent layout parts
 
@@ -106,3 +106,5 @@ Optional variables are usually used for one and only situation, so it makes sens
 ---
 
 **[Next step, usage &rarr;](?path=/docs/design-system-theming-usage--page)**
+
+
