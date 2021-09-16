@@ -5,7 +5,7 @@ import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { ElementsState, QueryParams, ResetAction } from './elementsTypes';
+import { ElementsState, QueryParams, RemoveExpiredAction, ResetAction } from './elementsTypes';
 import { newState } from './elementsSlice';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../constants';
 import { RetryData } from '../../hooks/mailbox/useElementsCache';
@@ -105,4 +105,8 @@ export const loadSuccess = (state: Draft<ElementsState>, action: { type: string;
     });
     state.pages.push(page);
     Object.assign(state.elements, toMap(Elements, 'ID'));
+};
+
+export const removeExpired = (state: Draft<ElementsState>, action: RemoveExpiredAction) => {
+    delete state.elements[action.payload.ID || ''];
 };

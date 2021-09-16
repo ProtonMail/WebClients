@@ -1,25 +1,32 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createSlice } from '@reduxjs/toolkit';
-import { ElementsState, NewStateParams } from './elementsTypes';
-import { resetState as resetStateAction, load, loadStarted, loadSuccess } from './elementsActions';
+import { ElementsState, ElementsStateParams, NewStateParams } from './elementsTypes';
+import {
+    resetState as resetStateReducer,
+    load,
+    loadStarted,
+    loadSuccess,
+    removeExpired as removeExpiredReducer,
+} from './elementsActions';
 
 export const newState = ({
     page = 0,
-    params = {
-        labelID: MAILBOX_LABEL_IDS.INBOX,
-        filter: {},
-        sort: { sort: 'Time', desc: false },
-        search: {},
-        esEnabled: false,
-    },
+    params = {},
     retry = { payload: null, count: 0, error: undefined },
     beforeFirstLoad = true,
 }: NewStateParams = {}): ElementsState => {
+    const defaultParams: ElementsStateParams = {
+        labelID: MAILBOX_LABEL_IDS.INBOX,
+        filter: {},
+        sort: { sort: 'Time', desc: true },
+        search: {},
+        esEnabled: false,
+    };
     return {
         beforeFirstLoad,
         invalidated: false,
         pendingRequest: false,
-        params,
+        params: { ...defaultParams, ...params },
         page,
         total: undefined,
         elements: {},
@@ -33,7 +40,8 @@ const elementsSlice = createSlice({
     name: 'elements',
     initialState: newState(),
     reducers: {
-        resetState: resetStateAction,
+        resetState: resetStateReducer,
+        removeExpired: removeExpiredReducer,
     },
     extraReducers: (builder) => {
         builder.addCase(load.pending, loadStarted);
@@ -45,7 +53,7 @@ const elementsSlice = createSlice({
 const { actions, reducer } = elementsSlice;
 
 // Extract and export each action creator by name
-export const { resetState } = actions;
+export const { resetState, removeExpired } = actions;
 
 // Export the reducer, either as a default or named export
 export default reducer;

@@ -48,7 +48,7 @@ import {
 } from '../../constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ESSetsElementsCache } from '../../models/encryptedSearch';
-import { resetState } from '../../logic/elements/elementsSlice';
+import { resetState, removeExpired } from '../../logic/elements/elementsSlice';
 import { load as loadThunk } from '../../logic/elements/elementsActions';
 
 interface Options {
@@ -148,6 +148,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }, {});
 
         setCache((cache) => ({ ...cache, elements }));
+        dispatch(removeExpired(element));
 
         globalCache.delete(ConversationCountsModel.key);
         globalCache.delete(MessageCountsModel.key);
