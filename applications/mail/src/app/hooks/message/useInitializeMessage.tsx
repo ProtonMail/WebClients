@@ -102,7 +102,11 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             preparation = isPlainText({ MIMEType })
                 ? await preparePlainText(decryption.decryptedBody, isDraft(message.data))
                 : await prepareHtml(
-                      { ...message, decryptedBody: decryption.decryptedBody },
+                      {
+                          ...message,
+                          decryptedBody: decryption.decryptedBody,
+                          data: { ...message.data, Attachments: allAttachments },
+                      },
                       messageKeys,
                       messageCache,
                       base64Cache,
