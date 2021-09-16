@@ -82,6 +82,7 @@ export const createEmbeddedImageFromUpload = (upload: UploadResult): MessageEmbe
         id: generateUID('embedded'),
         cid,
         cloc,
+        tracker: undefined,
         attachment: upload.attachment,
         status: 'loaded',
     };

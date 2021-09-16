@@ -3,10 +3,14 @@
 
 $size-tracker: 1rem !default;
 .item-spy-tracker {
+	&-link {
+		height: 1.3rem; // just a trick to avoid tooltip positionned on the bubble
+	}
 	&-icon-bubble {
 		width: $size-tracker;
 		height: $size-tracker;
-		top: -#{math.div($size-tracker, 2)};
-		right: -#{math.div($size-tracker, 2)};
+		// container is a bit higher than the usual icon size, this is why positionned from bottom
+		bottom: #{math.div($size-tracker, 2) + rem(1)}; // visual trick for better display
+		left: 50%;
 	}
 }
