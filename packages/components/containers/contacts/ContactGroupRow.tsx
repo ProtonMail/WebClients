@@ -1,4 +1,4 @@
-import { CSSProperties, ChangeEvent } from 'react';
+import { CSSProperties, ChangeEvent, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -12,12 +12,24 @@ interface Props {
     style: CSSProperties;
     groupsEmailsMap: SimpleMap<ContactEmail[]>;
     group: ContactGroup;
+    index: number;
+    onFocus: (index: number) => void;
 }
 
-const ContactGroupRow = ({ checked, style, groupsEmailsMap, group, onClick, onCheck }: Props) => {
+const ContactGroupRow = ({ checked, style, groupsEmailsMap, group, onClick, onCheck, index, onFocus }: Props) => {
     const { ID, Name, Color } = group;
+    const [hasFocus, setHasFocus] = useState(false);
 
     const addressCount = groupsEmailsMap[ID]?.length || 0;
+
+    const handleFocus = () => {
+        setHasFocus(true);
+        onFocus(index);
+    };
+
+    const handleBlur = () => {
+        setHasFocus(false);
+    };
 
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
@@ -25,7 +37,15 @@ const ContactGroupRow = ({ checked, style, groupsEmailsMap, group, onClick, onCh
             key={ID}
             style={style}
             onClick={() => onClick(ID)}
-            className={classnames(['item-container item-contact flex cursor-pointer bg-global-white'])}
+            className={classnames([
+                'item-container item-contact flex cursor-pointer bg-global-white',
+                hasFocus && 'item-is-focused',
+            ])}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            tabIndex={-1}
+            data-element-id={group.ID}
+            data-shortcut-target="contact-container"
         >
             <div className="flex flex-nowrap w100 h100 mtauto mbauto flex-align-items-center">
                 <ItemCheckbox

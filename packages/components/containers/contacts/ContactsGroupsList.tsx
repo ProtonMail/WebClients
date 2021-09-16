@@ -1,10 +1,12 @@
-import { useRef, ChangeEvent } from 'react';
+import { useRef, ChangeEvent, useMemo } from 'react';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { List, AutoSizer } from 'react-virtualized';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import { useContactFocus } from 'proton-mail/src/app/hooks/contact/useContactFocus';
+import { useContactHotkeys } from 'proton-mail/src/app/hooks/contact/useContactHotkeys';
 import { classnames } from '../../helpers';
 import ContactGroupRow from './ContactGroupRow';
 
@@ -28,21 +30,44 @@ const ContactsGroupsList = ({
     onClick,
 }: Props) => {
     const listRef = useRef<List>(null);
-    const containerRef = useRef(null);
+    const listContainerRef = useRef<HTMLDivElement>(null);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const contactRowHeightComfort = 4 * rootFontSize; // 4 * 16 = we want 64px by default
     const contactRowHeightCompact = 3 * rootFontSize; // 3 * 16 = we want 48px by default
 
+    const contactGroupIDs: string[] = useMemo(() => {
+        return groups.map((group) => group.ID);
+    }, [groups]);
+
+    const handleElement = (id: string) => onClick(id);
+
+    const { focusIndex, getFocusedId, setFocusIndex, handleFocus } = useContactFocus({
+        elementIDs: contactGroupIDs,
+        listRef: listContainerRef,
+    });
+
+    const elementRef = useContactHotkeys(
+        {
+            elementIDs: contactGroupIDs,
+            focusIndex,
+        },
+        {
+            getFocusedId,
+            setFocusIndex,
+            handleElement,
+        }
+    );
+
     return (
         <div
-            ref={containerRef}
+            ref={elementRef}
             className={classnames([
                 isDesktop ? 'items-column-list' : 'items-column-list--mobile',
                 isCompactView && 'list-compact',
             ])}
         >
-            <div className="items-column-list-inner items-column-list-inner--no-border">
+            <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--no-border">
                 <AutoSizer>
                     {({ height, width }) => (
                         <List
@@ -57,12 +82,15 @@ const ContactsGroupsList = ({
                                     group={groups[index]}
                                     onClick={onClick}
                                     onCheck={(event) => onCheckOne(event, groups[index].ID)}
+                                    index={index}
+                                    onFocus={handleFocus}
                                 />
                             )}
                             rowCount={groups.length}
                             height={height}
                             width={width - 1}
                             rowHeight={isCompactView ? contactRowHeightCompact : contactRowHeightComfort}
+                            tabIndex={-1}
                         />
                     )}
                 </AutoSizer>
