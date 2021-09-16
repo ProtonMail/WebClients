@@ -65,25 +65,30 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
     }, []);
 
     const handleThumbnailDownload = (shareId: string, linkId: string, downloadId: string) => {
-        return loadLinkCachedThumbnailURL(shareId, linkId, async (downloadUrl: string): Promise<Uint8Array[]> => {
-            const { contents, controls: downloadControls } = await downloadDriveFile(shareId, linkId, [
-                {
-                    Index: 1,
-                    URL: downloadUrl,
-                },
-            ]);
-            controls.current[downloadId] = downloadControls;
+        return loadLinkCachedThumbnailURL(
+            shareId,
+            linkId,
+            async (params: { downloadURL: string; downloadToken: string }): Promise<Uint8Array[]> => {
+                const { contents, controls: downloadControls } = await downloadDriveFile(shareId, linkId, [
+                    {
+                        Index: 1,
+                        BareURL: params.downloadURL,
+                        Token: params.downloadToken,
+                    },
+                ]);
+                controls.current[downloadId] = downloadControls;
 
-            contents
-                .catch((e: Error) => {
-                    console.warn(e);
-                })
-                .finally(() => {
-                    delete controls.current[downloadId];
-                });
+                contents
+                    .catch((e: Error) => {
+                        console.warn(e);
+                    })
+                    .finally(() => {
+                        delete controls.current[downloadId];
+                    });
 
-            return contents;
-        });
+                return contents;
+            }
+        );
     };
 
     const addToDownloadQueue = (meta: ThumbnailMeta, downloadInfo: DownloadInfo) => {

@@ -23,7 +23,11 @@ interface FileProperties {
         SignatureAddress: string;
         State: FileRevisionState;
         Thumbnail: number;
-        ThumbnailDownloadUrl: string;
+        ThumbnailURLInfo: {
+            BareURL: string;
+            Token: string;
+            URL: string;
+        };
     } | null;
 }
 
