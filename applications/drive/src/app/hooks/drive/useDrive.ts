@@ -289,7 +289,7 @@ function useDrive() {
     const loadLinkCachedThumbnailURL = async (
         shareId: string,
         linkId: string,
-        downloadCallback: (downloadUrl: string) => Promise<Uint8Array[]>
+        downloadCallback: (params: { downloadURL: string; downloadToken: string }) => Promise<Uint8Array[]>
     ) => {
         const linkMeta = await getLinkMeta(shareId, linkId);
         if (
@@ -305,15 +305,17 @@ function useDrive() {
         try {
             // Download URL is not part of all requests, because that would be
             // too heavy for API. For example, events do not include it.
-            let downloadUrl = linkMeta.FileProperties?.ActiveRevision?.ThumbnailDownloadUrl;
-            if (!downloadUrl) {
+            let downloadToken = linkMeta.FileProperties?.ActiveRevision?.ThumbnailURLInfo?.Token;
+            let downloadURL = linkMeta.FileProperties?.ActiveRevision?.ThumbnailURLInfo?.BareURL;
+            if (!downloadToken || !downloadURL) {
                 const res = (await api(
                     queryFileRevisionThumbnail(shareId, linkId, linkMeta.FileProperties.ActiveRevision.ID)
                 )) as DriveFileRevisionThumbnailResult;
-                downloadUrl = res.ThumbnailLink;
+                downloadURL = res.ThumbnailBareURL;
+                downloadToken = res.ThumbnailToken;
             }
 
-            const data = await downloadCallback(downloadUrl);
+            const data = await downloadCallback({ downloadURL, downloadToken });
             const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
             cache.set.linkMeta({ ...linkMeta, ThumbnailIsLoading: false, CachedThumbnailURL: url }, shareId);
         } catch (e: any) {
