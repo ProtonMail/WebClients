@@ -74,10 +74,8 @@ const ENV_CONFIG = Object.keys(APP_CONFIG_JSON).reduce(
 );
 
 const API_TARGETS = {
-    prod: 'https://mail.protonmail.com/api',
-    local: 'https://protonmail.dev/api',
-    localhost: 'https://localhost/api',
-    build: '/api',
+    prod: 'https://mail.protonmail.com',
+    localhost: 'https://localhost',
     proxy: '/api',
     ...ENV_CONFIG.api,
 };
@@ -130,7 +128,7 @@ const getConfigFile = ({ buildData, appData }) => {
     export const BRANCH = '${buildData.branch}';
     export const DATE_VERSION = '${buildData.date}';
     export const APP_NAME = '${appData.appName}';
-    export const API_URL = '${appData.api}';
+    export const API_URL = '/api';
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const API_VERSION = '3';
     export const VERSION_PATH = '${appData.publicPath}assets/version.json';
