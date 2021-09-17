@@ -48,6 +48,7 @@ export interface Upload {
     meta: TransferMeta;
     state: TransferState;
     startDate: Date;
+    error?: Error;
 }
 
 export interface DownloadInfo {
