@@ -41,9 +41,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
             if (newMessageIDs.length) {
                 setFocusedMessageID(newMessageIDs[0]);
-            } else if (returnFocusToElement.current) {
-                returnFocusToElement.current.focus();
-                returnFocusToElement.current = null;
             }
 
             return newMessageIDs;
@@ -56,6 +53,14 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             handleClose(changedMessageID)();
         }
     });
+
+    // After closing all composers, focus goes back to previously focused element
+    useEffect(() => {
+        if (messageIDs.length === 0 && returnFocusToElement.current) {
+            returnFocusToElement.current.focus();
+            returnFocusToElement.current = null;
+        }
+    }, [messageIDs]);
 
     useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
