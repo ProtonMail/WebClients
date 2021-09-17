@@ -51,14 +51,22 @@ export const useOptimisticApplyLabels = () => {
      * @param elements
      * @param inputChanges
      * @param isMove Is the label change is a move to folder
-     * @param currentLabelID The current label ID on the UI, only used for moves, moving from sent or draft folders have speficic meaning
+     * @param unreadStatuses unread statuses of all elements to be able to use them when using optimistic rollback. Is [] by default when moving, but can be filled when rollback
+     * @param currentLabelID The current label ID on the UI, only used for moves, moving from sent or draft folders have specific meaning
      * @returns a rollback function to undo all changes
      */
     const optimisticApplyLabels = useHandler(
-        (elements: Element[], inputChanges: LabelChanges, isMove = false, currentLabelID?: string) => {
+        (
+            elements: Element[],
+            inputChanges: LabelChanges,
+            isMove = false,
+            unreadStatuses?: { id: string; unread: number }[],
+            currentLabelID?: string
+        ) => {
             const elementsCache = getElementsCache();
             const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
             const updatedElements = {} as { [elementID: string]: Element };
+            const elementsUnreadStatuses = [] as { id: string; unread: number }[];
             const isMessage = testIsMessage(elements[0]);
             let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
             let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<
@@ -79,6 +87,23 @@ export const useOptimisticApplyLabels = () => {
                         return;
                     }
 
+                    /*
+                     * When moving elements to trash, we store the unread status of all elements so that
+                     * we can use the previous unread status for the optimistic rollback
+                     */
+                    if (Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH)) {
+                        if (isMessage) {
+                            const message = element as Message;
+                            elementsUnreadStatuses.push({ id: message.ID, unread: message.Unread });
+                        } else {
+                            const conversation = element as Conversation;
+                            elementsUnreadStatuses.push({
+                                id: conversation.ID ? conversation.ID : '',
+                                unread: conversation.NumUnread ? conversation.NumUnread : 0,
+                            });
+                        }
+                    }
+
                     changes[currentFolderID] = false;
                 }
 
@@ -93,7 +118,7 @@ export const useOptimisticApplyLabels = () => {
                     if (messageFromCache && messageFromCache.data) {
                         messageCache.set(localID, {
                             ...messageFromCache,
-                            data: applyLabelChangesOnMessage(messageFromCache.data, changes),
+                            data: applyLabelChangesOnMessage(messageFromCache.data, changes, unreadStatuses),
                         });
                     }
 
@@ -107,7 +132,7 @@ export const useOptimisticApplyLabels = () => {
                             Conversation: updatedConversation,
                             Messages: conversationResult.Messages?.map((messageFromConversation) => {
                                 if (messageFromConversation.ID === message.ID) {
-                                    return applyLabelChangesOnMessage(messageFromConversation, changes);
+                                    return applyLabelChangesOnMessage(messageFromConversation, changes, unreadStatuses);
                                 }
                                 return messageFromConversation;
                             }),
@@ -119,7 +144,11 @@ export const useOptimisticApplyLabels = () => {
                     // Updates in elements cache if message mode
                     const messageElement = elementsCache.elements[message.ID] as Message | undefined;
                     if (messageElement) {
-                        updatedElements[messageElement.ID] = applyLabelChangesOnMessage(messageElement, changes);
+                        updatedElements[messageElement.ID] = applyLabelChangesOnMessage(
+                            messageElement,
+                            changes,
+                            unreadStatuses
+                        );
                     }
 
                     // Update in elements cache if conversation mode
@@ -145,7 +174,11 @@ export const useOptimisticApplyLabels = () => {
                     if (conversationCacheEntry && conversationCacheEntry.Conversation) {
                         const conversationFromCache = conversationCacheEntry.Conversation;
                         updateConversationCache(conversation.ID, () => ({
-                            Conversation: applyLabelChangesOnConversation(conversationFromCache, changes),
+                            Conversation: applyLabelChangesOnConversation(
+                                conversationFromCache,
+                                changes,
+                                unreadStatuses
+                            ),
                         }));
                     }
 
@@ -154,7 +187,8 @@ export const useOptimisticApplyLabels = () => {
                     if (conversationElement && conversationElement.ID) {
                         updatedElements[conversationElement.ID] = applyLabelChangesOnConversation(
                             conversationElement,
-                            changes
+                            changes,
+                            unreadStatuses
                         );
                     }
 
@@ -168,7 +202,7 @@ export const useOptimisticApplyLabels = () => {
                         if (messageFromCache && messageFromCache.data) {
                             messageCache.set(localID, {
                                 ...messageFromCache,
-                                data: applyLabelChangesOnMessage(messageFromCache.data, changes),
+                                data: applyLabelChangesOnMessage(messageFromCache.data, changes, unreadStatuses),
                             });
                         }
                     });
@@ -193,7 +227,12 @@ export const useOptimisticApplyLabels = () => {
 
             return () => {
                 rollbackChanges.forEach((rollbackChange) => {
-                    optimisticApplyLabels([rollbackChange.element], rollbackChange.changes);
+                    optimisticApplyLabels(
+                        [rollbackChange.element],
+                        rollbackChange.changes,
+                        false,
+                        elementsUnreadStatuses
+                    );
                 });
             };
         }
