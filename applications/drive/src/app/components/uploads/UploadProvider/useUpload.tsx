@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useGetUser, useEventManager, useNotifications } from '@proton/components';
@@ -10,9 +10,10 @@ import { TransferCancel, TransferState } from '../../../interfaces/transfer';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileList } from '../interface';
+import { UpdateFilter } from './interface';
 import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
-import useUploadQueue from './useUploadQueue';
+import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
 
@@ -45,11 +46,10 @@ export default function useUpload() {
         pauseUploads,
         resumeUploads,
         cancelUploads,
-        restartUploads,
         removeUploads,
         clearUploads,
         getProgresses,
-    } = useUploadControl(fileUploads, updateState, updateWithCallback, removeFromQueue, clearQueue);
+    } = useUploadControl(fileUploads, updateWithCallback, removeFromQueue, clearQueue);
     const { getFolderConflictHandler, getFileConflictHandler } = useUploadConflict(
         fileUploads,
         folderUploads,
@@ -69,6 +69,14 @@ export default function useUpload() {
         return { hasEnoughSpace, total: totalFileListSize };
     };
 
+    const showNotEnoughSpaceNotification = (total: number) => {
+        const formattedTotal = humanSize(total);
+        createNotification({
+            text: c('Notification').t`Not enough space to upload ${formattedTotal}`,
+            type: 'error',
+        });
+    };
+
     /**
      * uploadFiles should be considered as main entry point for uploading files
      * in Drive app. It does all necessary checks, such as the space, the
@@ -78,11 +86,7 @@ export default function useUpload() {
     const uploadFiles = async (shareId: string, parentId: string, list: UploadFileList) => {
         const { hasEnoughSpace, total } = await checkHasEnoughSpace(list);
         if (!hasEnoughSpace) {
-            const formattedTotal = humanSize(total);
-            createNotification({
-                text: c('Notification').t`Not enough space to upload ${formattedTotal}`,
-                type: 'error',
-            });
+            showNotEnoughSpaceNotification(total);
             return;
         }
 
@@ -125,6 +129,23 @@ export default function useUpload() {
     const uploadFile = async (shareId: string, parentId: string, file: File) => {
         return uploadFiles(shareId, parentId, [{ path: [], file }]);
     };
+
+    const restartUploads = useCallback(
+        async (idOrFilter: UpdateFilter) => {
+            const uploadFileList = fileUploads
+                .filter(convertFilterToFunction(idOrFilter))
+                .map(({ file }) => ({ path: [], file }));
+            const { hasEnoughSpace, total } = await checkHasEnoughSpace(uploadFileList);
+            if (!hasEnoughSpace) {
+                showNotEnoughSpaceNotification(total);
+                return;
+            }
+            updateState(idOrFilter, ({ parentId }) => {
+                return parentId ? TransferState.Pending : TransferState.Initializing;
+            });
+        },
+        [fileUploads, updateState]
+    );
 
     // Effect to start next folder upload if there is enough capacity to do so.
     useEffect(() => {

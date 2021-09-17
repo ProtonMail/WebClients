@@ -9,7 +9,6 @@ import { FileUpload, UpdateFilter, UpdateState, UpdateCallback } from './interfa
 
 export default function useUploadControl(
     fileUploads: FileUpload[],
-    updateState: (idOrFilter: UpdateFilter, newState: UpdateState) => void,
     updateWithCallback: (idOrFilter: UpdateFilter, newState: UpdateState, callback: UpdateCallback) => void,
     removeFromQueue: (idOrFilter: UpdateFilter, callback: UpdateCallback) => void,
     clearQueue: () => void
@@ -102,15 +101,6 @@ export default function useUploadControl(
         [updateWithCallback]
     );
 
-    const restartUploads = useCallback(
-        (idOrFilter: UpdateFilter) => {
-            updateState(idOrFilter, ({ parentId }) => {
-                return parentId ? TransferState.Pending : TransferState.Initializing;
-            });
-        },
-        [updateState]
-    );
-
     const removeUploads = useCallback(
         (idOrFilter: UpdateFilter) => {
             // We should never simply remove uploads, but cancel it first, so
@@ -138,7 +128,6 @@ export default function useUploadControl(
         pauseUploads,
         resumeUploads,
         cancelUploads,
-        restartUploads,
         removeUploads,
         clearUploads,
     };
