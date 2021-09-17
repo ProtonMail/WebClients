@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
-import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
+import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import { classnames } from '../../helpers';
-import { useConfig } from '../../hooks';
 import { Loader } from '../../components/loader';
 
 import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
@@ -28,17 +27,13 @@ const Challenge = ({
     type,
     ...rest
 }: Props) => {
-    const config = useConfig();
-
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
     const [errorRetry, setErrorRetry] = useState(0);
     const challengeLogRef = useRef<ChallengeLog[]>([]);
 
     const challengeSrc = (() => {
-        const url = new URL(config.API_URL, window.location.origin);
-        url.hostname = getRelativeApiHostname(url.hostname);
-        url.pathname = '/challenge/v4/html';
+        const url = getApiSubdomainUrl('/challenge/v4/html');
         url.searchParams.set('Type', `${type}`);
         url.searchParams.set('Name', name);
         if (errorRetry) {
