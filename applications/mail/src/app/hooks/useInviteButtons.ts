@@ -88,8 +88,7 @@ const useInviteButtons = ({
     // Returns true if the operation is succesful
     const sendReplyEmail = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
-            const vevent = veventApi || veventIcs;
-            if (!vevent || !attendee || !getParticipantHasAddressID(attendee) || !organizer || !config) {
+            if (!attendee || !getParticipantHasAddressID(attendee) || !organizer || !config) {
                 onUnexpectedError();
                 return false;
             }
@@ -102,16 +101,16 @@ const useInviteButtons = ({
                         partstat,
                     },
                 };
-                const inviteVevent = withDtstamp(omit(vevent, ['dtstamp']), timestamp);
+                const vevent = withDtstamp(omit(veventIcs, ['dtstamp']), timestamp);
                 if (pmData?.sharedEventID && pmData?.sharedSessionKey) {
-                    inviteVevent['x-pm-shared-event-id'] = { value: pmData.sharedEventID };
-                    inviteVevent['x-pm-session-key'] = { value: pmData.sharedSessionKey };
-                    inviteVevent['x-pm-proton-reply'] = { value: 'true', parameters: { type: 'boolean' } };
+                    vevent['x-pm-shared-event-id'] = { value: pmData.sharedEventID };
+                    vevent['x-pm-session-key'] = { value: pmData.sharedSessionKey };
+                    vevent['x-pm-proton-reply'] = { value: 'true', parameters: { type: 'boolean' } };
                 }
                 const ics = createInviteIcs({
                     method: ICAL_METHOD.REPLY,
                     prodId,
-                    vevent: withDtstamp(omit(inviteVevent, ['dtstamp']), timestamp),
+                    vevent: withDtstamp(omit(vevent, ['dtstamp']), timestamp),
                     attendeesTo: [attendeeWithPartstat],
                     keepDtstamp: true,
                 });
@@ -125,7 +124,7 @@ const useInviteButtons = ({
                     subject,
                     plainTextBody: generateEmailBody({
                         method: ICAL_METHOD.REPLY,
-                        vevent: inviteVevent,
+                        vevent,
                         emailAddress: attendee.emailAddress,
                         partstat,
                     }),
