@@ -14,7 +14,8 @@
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
         "build": "cross-env NODE_ENV=production proton-pack build --appMode=sso",
         "check-types": "tsc",
-        "test": "jest --runInBand --ci",
+        "test": "jest --runInBand --ci --coverage=false --detectOpenHandles",
+        "test:dev": "jest --watch --coverage=false",
         "postinstall": "proton-pack config"
     },
     "dependencies": {

@@ -1,4 +1,4 @@
-class ChunkFileReader {
+export default class ChunkFileReader {
     private blob: Blob;
 
     private chunkSize: number;
@@ -33,5 +33,3 @@ class ChunkFileReader {
         });
     }
 }
-
-export default ChunkFileReader;

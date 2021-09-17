@@ -1,5 +1,5 @@
 import { ReadableStream } from 'web-streams-polyfill';
-import { OpenPGPKey, SessionKey, decryptMessage, encryptMessage, getMessage, getSignature } from 'pmcrypto';
+import { OpenPGPKey, SessionKey, decryptMessage, getMessage, getSignature } from 'pmcrypto';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from '@proton/components';
@@ -10,7 +10,7 @@ import {
     encryptName,
     getStreamMessage,
 } from '@proton/shared/lib/keys/driveKeys';
-import { range, mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
+import { range } from '@proton/shared/lib/helpers/array';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -32,7 +32,7 @@ import {
     queryRequestUpload,
 } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import { TransferConflictStrategy } from '../../components/uploads/upload';
+import { TransferConflictStrategy, FileRequestBlock, ThumbnailRequestBlock, BlockToken } from '../../components/uploads/interface';
 import {
     TransferMeta,
     TransferState,
@@ -86,7 +86,7 @@ function useFiles() {
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
-    const { getPrimaryAddressKey, getPrimaryAddressKeys, sign } = useDriveCrypto();
+    const { getPrimaryAddressKey, getPrimaryAddressKeys } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const {
@@ -445,72 +445,43 @@ function useFiles() {
         let createdFileRevision: FileRevision | undefined;
 
         return addToUploadQueue(preUploadData, setupPromise, {
-            initialize: async (abortSignal, conflictStrategy) => {
-                const result = await createFileRevision(abortSignal, conflictStrategy);
+            initialize: async (abortSignal: AbortSignal, mimeType: string, conflictStrategy?: TransferConflictStrategy) => {
+                const [{ addressKeyInfo }, result] = await Promise.all([
+                    setupPromise,
+                    createFileRevision(abortSignal, conflictStrategy),
+                ]);
                 createdFileRevision = result;
-                return result;
+                return {
+                    fileName: result.filename,
+                    privateKey: result.privateKey,
+                    sessionKey: result.sessionKey,
+                    address: {
+                        privateKey: addressKeyInfo.privateKey,
+                        email: addressKeyInfo.address.Email,
+                    },
+                };
             },
-            transform: async (data, attachedSignature = false) => {
+            createBlockLinks: async (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => {
                 if (!createdFileRevision) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
-                const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
-
-                // Thumbnail has signature attached, regular file detached.
-                if (attachedSignature) {
-                    const { message } = await encryptMessage({
-                        data,
-                        sessionKey: createdFileRevision.sessionKey,
-                        privateKeys: addressPrivateKey,
-                        armor: false,
-                        detached: false,
-                    });
-                    return {
-                        encryptedData: message.packets.write(),
-                    };
-                }
-
-                const { message, signature } = await encryptMessage({
-                    data,
-                    sessionKey: createdFileRevision.sessionKey,
-                    privateKeys: addressPrivateKey,
-                    armor: false,
-                    detached: true,
-                });
-
-                const { data: encryptedSignature } = await encryptMessage({
-                    data: signature.packets.write(),
-                    sessionKey: createdFileRevision.sessionKey,
-                    publicKeys: createdFileRevision.privateKey.toPublic(),
-                    armor: true,
-                });
-
-                return {
-                    encryptedData: message.packets.write(),
-                    signature: encryptedSignature,
-                };
-            },
-            requestUpload: async (blocks, thumbnailBlock) => {
                 const { addressKeyInfo } = await setupPromise;
 
-                const BlockList = await Promise.all(
-                    blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
-                );
                 const thumbnailParams = thumbnailBlock
                     ? {
                           Thumbnail: 1,
-                          ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.Hash),
-                          ThumbnailSize: thumbnailBlock.Size,
+                          ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.hash),
+                          ThumbnailSize: thumbnailBlock.size,
                       }
                     : {};
-
-                if (!createdFileRevision) {
-                    throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
-                }
-
                 const { UploadLinks, ThumbnailLink } = await debouncedRequest<RequestUploadResult>(
                     queryRequestUpload({
-                        BlockList,
+                        BlockList: fileBlocks.map((block) => ({
+                            Index: block.index,
+                            Hash: uint8ArrayToBase64String(block.hash),
+                            EncSignature: block.signature,
+                            Size: block.size,
+                        })),
                         AddressID: addressKeyInfo.address.ID,
                         LinkID: createdFileRevision.fileID,
                         RevisionID: createdFileRevision.revisionID,
@@ -518,35 +489,23 @@ function useFiles() {
                         ...thumbnailParams,
                     })
                 );
-                return { UploadLinks, ThumbnailLink };
+
+                return { 
+                    fileLinks: UploadLinks.map((link, index) => ({
+                        index: fileBlocks[index].index,
+                        token: link.Token,
+                        url: link.URL,
+                    })),
+                    thumbnailLink: ThumbnailLink ? {
+                        index: 0,
+                        token: ThumbnailLink.Token,
+                        url: ThumbnailLink.URL,
+                    } : undefined,
+                };
             },
             finalize: queuedFunction(
                 'upload_finalize',
-                async (blockTokens, config) => {
-                    const hashes: Uint8Array[] = [];
-                    const BlockList: { Index: number; Token: string }[] = [];
-
-                    // Thumbnail has index 0, which is optional. If file has
-                    // no thumbnail, index starts from 1.
-                    const indexStart = blockTokens.get(0) ? 0 : 1;
-                    for (let Index = indexStart; Index < indexStart + blockTokens.size; Index++) {
-                        const info = blockTokens.get(Index);
-                        if (!info) {
-                            throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
-                        }
-                        hashes.push(info.Hash);
-                        BlockList.push({
-                            Index,
-                            Token: info.Token,
-                        });
-                    }
-
-                    const contentHashes = mergeUint8Arrays(hashes);
-                    const {
-                        signature,
-                        address: { Email: SignatureAddress },
-                    } = await sign(contentHashes);
-
+                async (blockTokens: BlockToken[], signature: string, signatureAddress: string) => {
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                     }
@@ -554,9 +513,12 @@ function useFiles() {
                     await debouncedRequest(
                         queryUpdateFileRevision(shareId, createdFileRevision.fileID, createdFileRevision.revisionID, {
                             State: FileRevisionState.Active,
-                            BlockList,
+                            BlockList: blockTokens.map((blockToken) => ({
+                                Index: blockToken.index,
+                                Token: blockToken.token,
+                            })),
                             ManifestSignature: signature,
-                            SignatureAddress,
+                            SignatureAddress: signatureAddress,
                         })
                     );
 

@@ -11,6 +11,7 @@ module.exports = (...env) => {
         ...config,
         resolve: {
             ...config.resolve,
+            extensions: ['.js', '.tsx', '.ts', '...'], // ... is there to include default extensions for proper building of type script web workers.
             fallback: {
                 ...config.resolve.fallback,
                 buffer: require.resolve('buffer'),
