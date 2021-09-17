@@ -43,7 +43,7 @@ async function uploadBlock(
 ): Promise<void> {
     let progress = 0;
     const onProgress = (relativeIncrement: number) => {
-        const increment = Math.ceil(block.originalSize * relativeIncrement);
+        const increment = block.originalSize * relativeIncrement;
         if (increment !== 0) {
             progress += increment;
             progressCallback(increment);
