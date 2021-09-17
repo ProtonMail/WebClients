@@ -4,7 +4,12 @@
 graph TD
     UploadButton
 
+    subgraph "TransferManager folder"
+        TransferManager
+    end
+
     UploadButton --> useUploadInput --> UploadProvider
+    TransferManager --> UploadProvider
 
     subgraph "upload folder"
         ConflictModal
