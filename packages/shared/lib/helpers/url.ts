@@ -157,3 +157,14 @@ export const getRelativeApiHostname = (hostname: string) => {
     const second = hostname.substr(idx + 1);
     return `${first}-api.${second}`;
 };
+
+export const getApiSubdomainUrl = (pathname: string) => {
+    const url = new URL('/', window.location.origin);
+    if (url.hostname === 'localhost') {
+        url.pathname = `/api${pathname}`;
+        return url;
+    }
+    url.hostname = getRelativeApiHostname(url.hostname);
+    url.pathname = pathname;
+    return url;
+};
