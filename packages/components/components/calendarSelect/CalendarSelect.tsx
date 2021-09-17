@@ -4,7 +4,7 @@ import { Option } from '../option';
 import { SelectTwo } from '../selectTwo';
 import { SelectChangeEvent } from '../selectTwo/select';
 
-import './CalendarSelect.scss';
+import CalendarSelectIcon from './CalendarSelectIcon';
 
 interface Props
     extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
@@ -19,10 +19,7 @@ const CalendarSelect = ({ calendarID, options, onChange, ...rest }: Props) => {
             {options.map(({ id, name, color }) => (
                 <Option value={id} title={name} key={id}>
                     <div className="flex flex-nowrap flex-align-items-center">
-                        <div
-                            className="calendar-select-color flex-item-noshrink mr0-75"
-                            style={{ backgroundColor: color }}
-                        />
+                        <CalendarSelectIcon color={color} className="flex-item-noshrink mr0-75" />
                         <div className="text-ellipsis">{name}</div>
                     </div>
                 </Option>
