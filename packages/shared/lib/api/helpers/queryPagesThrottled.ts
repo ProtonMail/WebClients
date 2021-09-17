@@ -14,7 +14,11 @@ const queryPagesThrottled = async <T extends { Total: number }>({
     delayPerChunk,
 }: Arguments<T>) => {
     const firstPage = await requestPage(0);
-    const n = Math.ceil(firstPage.Total / pageSize) - 1; // First page already loaded
+    const n = Math.ceil((firstPage?.Total || 0) / pageSize) - 1; // First page already loaded
+
+    if (n <= 0) {
+        return [firstPage];
+    }
 
     const pages = Array.from({ length: n }, (a, i) => i + 1);
     const chunks = chunk(pages, pagesPerChunk);
