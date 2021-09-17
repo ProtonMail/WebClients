@@ -25,7 +25,7 @@ const BackButton = ({ shareId, parentLinkId, disabled }: Props) => {
             title={c('Action').t`Back`}
             onClick={handleBackClick}
             data-testid="toolbar-back"
-            icon={<Icon name="arrow-left" />}
+            icon={<Icon name="arrow-side-up" />}
         />
     );
 };
