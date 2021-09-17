@@ -212,7 +212,7 @@ export default function useUploadQueue() {
     };
 }
 
-function convertFilterToFunction(filterOrId: UpdateFilter) {
+export function convertFilterToFunction(filterOrId: UpdateFilter) {
     return typeof filterOrId === 'function' ? filterOrId : ({ id }: UpdateCallbackParams) => id === filterOrId;
 }
 
