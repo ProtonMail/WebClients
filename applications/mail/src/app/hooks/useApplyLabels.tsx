@@ -293,7 +293,7 @@ export const useMoveToFolder = () => {
                 return;
             }
 
-            const rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, fromLabelID);
+            const rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
 
             const handleDo = async () => {
                 let token;
