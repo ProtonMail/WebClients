@@ -5,7 +5,6 @@ import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/sh
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -222,15 +221,6 @@ const SubscriptionModal = ({
         } catch (error: any) {
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
-            }
-            if (model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
-                if (newModel.gift && newModel.gift !== model.gift) {
-                    return check({ ...model });
-                }
-                return check({
-                    ...model,
-                    planIDs: getPlanIDs(subscription),
-                });
             }
         }
     };
