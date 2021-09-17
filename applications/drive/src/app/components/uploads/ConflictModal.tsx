@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { FormModal, Radio, Checkbox, Row } from '@proton/components';
 
-import { TransferConflictStrategy } from './upload';
+import { TransferConflictStrategy } from './interface';
 
 export interface ConflictModalProps {
     name: string;
@@ -41,7 +41,7 @@ export default function ConflictModal({
     );
     const [applyAll, setApplyAll] = useState(false);
 
-    const uploadName = <strong className="text-break">{name}</strong>;
+    const uploadName = <strong className="text-break" key="filename">{name}</strong>;
 
     return (
         <FormModal

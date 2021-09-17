@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
 import * as React from 'react';
 
-import { useModals } from '@proton/components';
+import { generateUID, useModals } from '@proton/components';
 
+import { FILE_CHUNK_SIZE } from '../../constants';
 import { waitUntil } from '../../utils/async';
 import { TransferState, TransferProgresses, Upload, PreUploadData, TransferCancel } from '../../interfaces/transfer';
 import {
@@ -15,8 +16,10 @@ import {
     isTransferPaused,
     isTransferFinished,
 } from '../../utils/transfer';
-import { initUpload, UploadControls, UploadCallbacks, TransferConflictStrategy } from './upload';
+import { initUpload } from './upload';
+import { InitializedFileMeta, UploadControls, UploadCallbacks, TransferConflictStrategy } from './interface';
 import ConflictModal from './ConflictModal';
+import { MAX_BLOCKS_PER_UPLOAD, MAX_UPLOAD_BLOCKS_LOAD } from './constants';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
 const CONFLICT_STRATEGY_ALL_ID = '';
@@ -40,8 +43,6 @@ interface UploadProviderState {
         originalIsFolder: boolean
     ) => Promise<TransferConflictStrategy>;
 }
-
-const MAX_ACTIVE_UPLOADS = 3;
 
 const UploadContext = createContext<UploadProviderState | null>(null);
 
@@ -288,9 +289,17 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 conflictingFolders.length
         );
 
+        const uploadLoad = uploadingOrReady.reduce((load, upload) => {
+            // Even if the file is empty, keep the minimum of blocks to 1,
+            // otherwise it would start too many threads.
+            const chunks = Math.max(Math.ceil((upload.meta.size ?? 0) / FILE_CHUNK_SIZE), 1);
+            const loadIncrease = Math.min(MAX_BLOCKS_PER_UPLOAD, chunks);
+            return load + loadIncrease;
+        }, 0);
+
         // No upload should be started if conflict strategy modal is open.
         // It needs to wait for user action due to "cancel all" option.
-        if (uploadingOrReady.length < MAX_ACTIVE_UPLOADS && nextQueued && !conflictingUpload) {
+        if (uploadLoad < MAX_UPLOAD_BLOCKS_LOAD && nextQueued && !conflictingUpload) {
             const { id } = nextQueued;
 
             updateUploadState(id, TransferState.Pending, {
@@ -335,21 +344,22 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const addToUploadQueue = async (
         preUploadData: PreUploadData,
         setupPromise: Promise<any>,
-        callbacks: UploadCallbacks
+        callbacks: UploadCallbacks,
     ) =>
         new Promise<void>((resolve, reject) => {
-            const { id, uploadControls } = initUpload(preUploadData.file, {
+            const id = generateUID('drive-upload');
+            const uploadControls = initUpload(preUploadData.file, {
                 ...callbacks,
-                initialize: async (abortSignal) => {
-                    const init = async (): Promise<{ filename: string; MIMEType: string }> => {
+                initialize: async (abortSignal, mimeType) => {
+                    const init = async (): Promise<InitializedFileMeta> => {
                         try {
-                            const result = await callbacks.initialize(abortSignal, getFileConflictStrategy(id));
+                            const result = await callbacks.initialize(abortSignal, mimeType, getFileConflictStrategy(id));
                             if (!abortSignal.aborted) {
                                 updateUploadState(id, TransferState.Progress, {
                                     meta: {
                                         size: preUploadData.file.size,
-                                        mimeType: result.MIMEType,
-                                        filename: result.filename,
+                                        mimeType,
+                                        filename: result.fileName,
                                     },
                                 });
                             }
@@ -368,9 +378,9 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     };
                     return init();
                 },
-                finalize: async (blocklist, config) => {
+                finalize: async (blockTokens, signature, signatureAddress) => {
                     updateUploadState(id, TransferState.Finalizing);
-                    await callbacks.finalize(blocklist, config);
+                    await callbacks.finalize(blockTokens, signature, signatureAddress);
                     resolve();
                 },
                 onProgress: (bytes) => {
