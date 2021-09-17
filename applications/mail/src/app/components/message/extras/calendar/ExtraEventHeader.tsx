@@ -26,18 +26,13 @@ const ExtraEventHeader = ({ model }: Props) => {
         hasMultipleVevents,
     } = model;
 
-    const displayApiDetails = [REFRESH, REPLY].includes(method);
-    const displayVevent =
-        method && [DECLINECOUNTER, REPLY].includes(method) && invitationApi?.vevent
-            ? invitationApi?.vevent
-            : invitationIcs?.vevent;
-    const title =
-        isImport && hasMultipleVevents ? invitationIcs?.fileName || '' : getDisplayTitle(displayVevent?.summary?.value);
+    const displayApiDetails = [REFRESH, DECLINECOUNTER, REPLY].includes(method);
 
     const { vevent } = invitationApi && displayApiDetails ? invitationApi : invitationIcs;
-    const { dtstart } = vevent;
+    const { dtstart, summary } = vevent;
     const dtend = getDtendProperty(vevent);
     const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
+    const title = isImport && hasMultipleVevents ? invitationIcs?.fileName || '' : getDisplayTitle(summary?.value);
 
     const dateHeader = useMemo(() => {
         const [utcStartDate, utcEndDate] = [dtstart, dtend].map(unary(propertyToUTCDate));
