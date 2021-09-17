@@ -1,6 +1,7 @@
-export const queryDomains = () => ({
+export const queryDomains = (params) => ({
     url: 'domains',
     method: 'get',
+    params,
 });
 
 export const getDomain = (domainID) => ({
