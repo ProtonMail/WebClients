@@ -78,16 +78,22 @@ const loadImagesThroughProxy = async (
     const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
     const promises = Promise.all(
-        imagesToLoad.map(async (image): Promise<[MessageRemoteImage, Blob | undefined, unknown]> => {
+        imagesToLoad.map(async (image) => {
             try {
                 const response: Response = await api({
                     ...getImage(image.url as string),
                     output: 'raw',
                 });
-                await wait(2000);
-                return [image, await response.blob(), undefined];
+
+                return {
+                    image,
+                    blob: await response.blob(),
+                    // Warning: in local dev it will not work due to CORS limitations
+                    // https://stackoverflow.com/questions/43344819/reading-response-headers-with-fetch-api#44816592
+                    tracker: response.headers.get('x-pm-tracker-provider') || undefined,
+                };
             } catch (error) {
-                return [image, undefined, error];
+                return { image, error };
             }
         })
     );
@@ -98,10 +104,11 @@ const loadImagesThroughProxy = async (
 
     const results = await promises;
 
-    const imagesLoaded = results.map(([image, blob, error]) => ({
+    const imagesLoaded = results.map(({ image, blob, tracker, error }) => ({
         ...image,
         url: blob ? urlCreator().createObjectURL(blob) : undefined,
         error,
+        tracker,
         status: 'loaded' as 'loaded',
     }));
 
