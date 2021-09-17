@@ -25,9 +25,8 @@ Mandatory variables use a naming abstraction to make them usable in many cases. 
     Mandatory variables should not be defined by anyone other than the design team in collaboration with the core team.
     If you think a variable is missing, please refer it to them.
 </Alert>
-<br />
 
-<Details className="border-none mt1 mb2">
+<Details className="border-none mt2 mb2">
     <summary className="inline-block p0 link">View all mandatory variables without explanation</summary>
     <Source
         language='css'
@@ -36,60 +35,60 @@ Mandatory variables use a naming abstraction to make them usable in many cases. 
         code={`
 --primary
 --primary-contrast
- 
+ 
 --signal-danger
 --signal-danger-hover
 --signal-danger-active
 --signal-danger-contrast
- 
+ 
 --signal-warning
 --signal-warning-hover
 --signal-warning-active
 --signal-warning-contrast
- 
+ 
 --signal-success
 --signal-success-hover
 --signal-success-active
 --signal-success-contrast
- 
+ 
 --signal-info
 --signal-info-hover
 --signal-info-active
 --signal-info-contrast
- 
+ 
 --text-norm
 --text-weak
 --text-hint
 --text-disabled
 --text-invert
- 
+ 
 --field-norm
 --field-hover
 --field-disabled
- 
+ 
 --border-norm
 --border-weak
- 
+ 
 --background-norm
 --background-weak
 --background-strong
- 
+ 
 --interaction-norm
 --interaction-norm-hover
 --interaction-norm-active
 --interaction-norm-contrast
- 
+ 
 --interaction-weak
 --interaction-weak-hover
 --interaction-weak-active
- 
+ 
 --interaction-default
 --interaction-default-hover
 --interaction-default-active
- 
+ 
 --shadow-norm-opacity
 --shadow-lifted-opacity
- 
+ 
 --backdrop-norm
     `}
     />
@@ -103,7 +102,7 @@ The `contrast` keyword is for colors that are meant to be used to contrast the o
 
 ### Primary
 
-The primary group is used for content that you need to give visual focus on. This should only be for content without interaction.
+The primary group is used for content that you need to give visual focus on. This must only be for content without interaction.
 
 ```css
 --primary
