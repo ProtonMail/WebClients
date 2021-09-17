@@ -269,7 +269,7 @@ const SubscriptionModal = ({
             method={method}
             checkResult={checkResult}
             className="w100"
-            disabled={isFreeUserWithFreePlanSelected}
+            disabled={isFreeUserWithFreePlanSelected || !checkResult}
         />
     );
 
