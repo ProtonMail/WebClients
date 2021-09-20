@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { mockGlobalFile, testFile } from '../../../helpers/test/file';
+import { TransferState } from '../../../interfaces/transfer';
 import { UploadFileList } from '../interface';
 import { FileUpload, FolderUpload, UploadQueue } from './interface';
 import useUploadQueue, { addItemToQueue } from './useUploadQueue';
@@ -108,5 +109,19 @@ describe('useUploadQueue::add', () => {
         expect(() => {
             addItemToQueue('shareId', queue, { path: ['folder'], folder: 'subfolder' });
         }).toThrow('File or folder "subfolder" is already uploading');
+    });
+
+    it('throws error when adding the same folder again with unfinished childs', () => {
+        const queue = createEmptyQueue();
+        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('a.txt') });
+
+        queue.folders[0].state = TransferState.Done;
+        expect(() => {
+            addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        }).toThrow('File or folder "folder" is already uploading');
+
+        queue.folders[0].files[0].state = TransferState.Done;
+        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
     });
 });
