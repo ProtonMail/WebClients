@@ -44,9 +44,8 @@ function useTransferControls() {
         return pauseUploads(transfer.id);
     };
 
-    const restartDownload = async (transfer: Download) => {
-        const download = transfer;
-        removeDownload(download.id);
+    const restartDownload = async (id: string, download: Download) => {
+        removeDownload(id);
 
         if (download.type === LinkType.FILE) {
             await preventLeave(
@@ -83,7 +82,7 @@ function useTransferControls() {
     const restart = async (transfer: Download | Upload, type: TransferType) => {
         try {
             if (type === TransferType.Download) {
-                await restartDownload(transfer as Download);
+                await restartDownload(transfer.id, transfer as Download);
             } else {
                 restartUploads(transfer.id);
             }
@@ -113,9 +112,13 @@ function useTransferControls() {
     };
 
     const restartTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            restart(entry.transfer, entry.type).catch(console.error);
-        });
+        applyToTransfers(
+            entries,
+            (id, transfer) => {
+                restartDownload(id, transfer).catch(console.error);
+            },
+            restartUploads
+        );
     };
 
     return {
@@ -133,12 +136,12 @@ export default useTransferControls;
 
 function applyToTransfers(
     entries: { transfer: Download | Upload; type: TransferType }[],
-    downloadCallback: (id: string) => void,
+    downloadCallback: (id: string, transfer: Download) => void,
     uploadCallback: (filter: (data: { id: string }) => boolean) => void
 ) {
     entries
         .filter(({ type }) => type === TransferType.Download)
-        .forEach(({ transfer: { id } }) => downloadCallback(id));
+        .forEach(({ transfer }) => downloadCallback(transfer.id, transfer as Download));
 
     const uploadIds = entries.filter(({ type }) => type === TransferType.Upload).map(({ transfer: { id } }) => id);
     uploadCallback(({ id }) => uploadIds.includes(id));
