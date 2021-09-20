@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
 import { addMonths, endOfMonth, startOfMonth, format, isSameMonth } from 'date-fns';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { c } from 'ttag';
 
 import { useElementRect } from '../../hooks';
 import { getDaysInMonth, getDateTupleFromWeekNumber } from './helper';
@@ -36,6 +36,7 @@ export interface Props {
     numberOfDays?: number;
     fixedSize?: boolean;
     preventLeaveFocus?: boolean;
+    disableToday?: boolean;
 }
 
 const MiniCalendar = ({
@@ -73,6 +74,7 @@ const MiniCalendar = ({
     displayWeekNumbers = false,
     fixedSize = false,
     preventLeaveFocus = false,
+    disableToday = false,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const cellRef = useRef<HTMLLIElement>(null);
@@ -89,9 +91,7 @@ const MiniCalendar = ({
         return `${months[activeDate.getMonth()]} ${activeDate.getFullYear()}`;
     }, [activeDate, months]);
 
-    const todayTitle = useMemo(() => {
-        return format(now, 'PP', { locale: dateLocale });
-    }, [now, dateLocale]);
+    const todayTitle = c('Today icon tooltip in mini calendar').t`Today`;
 
     const handleSwitchMonth = (direction: -1 | 1) => {
         const newDate = addMonths(activeDate, direction);
@@ -133,7 +133,14 @@ const MiniCalendar = ({
 
                 {hasToday ? (
                     <Tooltip title={todayTitle}>
-                        <Button icon shape="ghost" color="weak" size="small" onClick={() => onSelectDate?.(now)}>
+                        <Button
+                            icon
+                            shape="ghost"
+                            color="weak"
+                            size="small"
+                            onClick={() => onSelectDate?.(now)}
+                            disabled={disableToday}
+                        >
                             <Icon name="calendar-day" className="minicalendar-icon" alt={todayTitle} />
                         </Button>
                     </Tooltip>
