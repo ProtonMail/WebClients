@@ -456,35 +456,33 @@ export const generateEmailSubject = ({
     isCreateEvent?: boolean;
     options?: Options;
 }) => {
-    const { formattedStart, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, options);
+    const { formattedStart, isSingleAllDay } = getFormattedDateInfo(vevent, options);
+    const { REQUEST, CANCEL, REPLY } = ICAL_METHOD;
 
-    if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
-        if (isAllDay) {
-            if (isSingleAllDay) {
-                if (method === ICAL_METHOD.CANCEL) {
-                    return c('Email subject').t`Cancellation of an event on ${formattedStart}`;
-                }
-                return isCreateEvent
-                    ? c('Email subject').t`Invitation for an event on ${formattedStart}`
-                    : c('Email subject').t`Update for an event on ${formattedStart}`;
-            }
-            if (method === ICAL_METHOD.CANCEL) {
-                return c('Email subject').t`Cancellation of an event starting on ${formattedStart}`;
-            }
+    if (method === REQUEST) {
+        if (isSingleAllDay) {
             return isCreateEvent
-                ? c('Email subject').t`Invitation for an event starting on ${formattedStart}`
-                : c('Email subject').t`Update for an event starting on ${formattedStart}`;
+                ? c('Email subject').t`Invitation for an event on ${formattedStart}`
+                : c('Email subject').t`Update for an event on ${formattedStart}`;
         }
-        if (method === ICAL_METHOD.CANCEL) {
-            return c('Email subject').t`Cancellation of an event starting on ${formattedStart}`;
-        }
+
         return isCreateEvent
             ? c('Email subject').t`Invitation for an event starting on ${formattedStart}`
             : c('Email subject').t`Update for an event starting on ${formattedStart}`;
     }
-    if (method === ICAL_METHOD.REPLY) {
-        return formatSubject(c('Email subject').t`Invitation for an event starting on ${formattedStart}`, RE_PREFIX);
+
+    if (method === CANCEL) {
+        return isSingleAllDay
+            ? c('Email subject').t`Cancellation of an event on ${formattedStart}`
+            : c('Email subject').t`Cancellation of an event starting on ${formattedStart}`;
     }
+
+    if (method === REPLY) {
+        return isSingleAllDay
+            ? formatSubject(c('Email subject').t`Invitation for an event on ${formattedStart}`, RE_PREFIX)
+            : formatSubject(c('Email subject').t`Invitation for an event starting on ${formattedStart}`, RE_PREFIX);
+    }
+
     throw new Error('Unexpected method');
 };
 
