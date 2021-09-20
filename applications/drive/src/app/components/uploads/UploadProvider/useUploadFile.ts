@@ -192,10 +192,10 @@ export default function useUploadFile() {
         };
 
         /**
-         * Replace file loads all children in the target folder and finds the link
-         * which is about to be replaced. In case of the replacing link is folder,
-         * the whole folder is moved to trash and new file is created. In case of
-         * replacing file, new revision is created.
+         * Replace file loads all children in the target folder and finds
+         * the link which is about to be replaced. If the original link is
+         * a folder, the the whole folder is moved to trash and new file is
+         * created. If the original link is file, new revision is created.
          */
         const replaceFile = async (abortSignal: AbortSignal, mimeType: string): Promise<FileRevision> => {
             const link = await getLinkByName(abortSignal, shareId, parentId, file.name);

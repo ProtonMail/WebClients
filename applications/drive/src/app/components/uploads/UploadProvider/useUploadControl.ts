@@ -45,7 +45,7 @@ export default function useUploadControl(
                 return sum;
             }
             const uploadedChunksSize =
-                progresses.current[upload.id] - (progresses.current[upload.id] % FILE_CHUNK_SIZE);
+                progresses.current[upload.id] - (progresses.current[upload.id] % FILE_CHUNK_SIZE) || 0;
             return sum + upload.file.size - uploadedChunksSize;
         }, 0);
     };

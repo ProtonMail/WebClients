@@ -89,7 +89,23 @@ describe("useUploadQueue's update functions", () => {
     });
 
     it('updates file and folder by callback', () => {
-        // todo
+        act(() => {
+            hook.current.updateState(
+                () => true,
+                ({ state }) => (state === TransferState.Pending ? TransferState.Error : TransferState.Canceled)
+            );
+        });
+        expect(hook.current.fileUploads.map(({ state }) => state)).toMatchObject([
+            TransferState.Error,
+            TransferState.Canceled,
+            TransferState.Canceled,
+            TransferState.Canceled,
+        ]);
+        expect(hook.current.folderUploads.map(({ state }) => state)).toMatchObject([
+            TransferState.Error,
+            TransferState.Error,
+            TransferState.Error,
+        ]);
     });
 
     it('updates file state with data', () => {

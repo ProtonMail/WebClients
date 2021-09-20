@@ -3,18 +3,18 @@ import * as React from 'react';
 
 import { TransferProgresses } from '../../../interfaces/transfer';
 import { UploadFileList } from '../interface';
-import { FileUpload } from './interface';
+import { FileUpload, UpdateFilter } from './interface';
 import useUpload from './useUpload';
 
 interface UploadProviderState {
     uploads: FileUpload[];
     hasUploads: boolean;
     uploadFiles: (shareId: string, parentId: string, list: UploadFileList) => Promise<void>;
-    pauseUploads: (id: string) => void;
-    resumeUploads: (id: string) => void;
-    cancelUploads: (id: string) => void;
-    restartUploads: (id: string) => void;
-    removeUploads: (id: string) => void;
+    pauseUploads: (idOrFilter: UpdateFilter) => void;
+    resumeUploads: (idOrFilter: UpdateFilter) => void;
+    cancelUploads: (idOrFilter: UpdateFilter) => void;
+    restartUploads: (idOrFilter: UpdateFilter) => void;
+    removeUploads: (idOrFilter: UpdateFilter) => void;
     clearUploads: () => void;
     getUploadsProgresses: () => TransferProgresses;
 }

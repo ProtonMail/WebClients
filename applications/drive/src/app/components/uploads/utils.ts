@@ -9,7 +9,7 @@ export function getErrorString(error?: any, fallback?: string): string {
  * callWithAbortSignal runs the callback but rejects with AbortError when
  * the signal is aborted. The original call is not interrupted, though.
  * Use only on places where the original call is not possible to abort
- * and/or when it is fine to continue with original call.
+ * and/or when it is fine to continue with the original call.
  */
 export function callWithAbortSignal<T>(abortSignal: AbortSignal, callback: () => Promise<T>): Promise<T> {
     return new Promise((resolve, reject) => {
