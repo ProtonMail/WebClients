@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { useGetUser, useEventManager, useNotifications } from '@proton/components';
+import { useGetUser, useEventManager, useNotifications, usePreventLeave } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_SAFE_UPLOADING_FILE_COUNT } from '../../../constants';
@@ -22,6 +22,7 @@ export default function useUpload() {
     const { call } = useEventManager();
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();
+    const { preventLeave } = usePreventLeave();
 
     const queue = useUploadQueue();
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
@@ -135,21 +136,23 @@ export default function useUpload() {
             getFolderConflictHandler(nextFolderUpload.id)
         );
         control.add(nextFolderUpload.id, controls);
-        controls
-            .start()
-            .then(({ folderId }) => {
-                queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId });
-            })
-            .catch((error) => {
-                if (isTransferCancelError(error)) {
-                    queue.updateState(nextFolderUpload.id, TransferState.Canceled);
-                } else {
-                    queue.updateWithData(nextFolderUpload.id, TransferState.Error, { error });
-                }
-            })
-            .finally(() => {
-                control.remove(nextFolderUpload.id);
-            });
+        preventLeave(
+            controls
+                .start()
+                .then(({ folderId }) => {
+                    queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId });
+                })
+                .catch((error) => {
+                    if (isTransferCancelError(error)) {
+                        queue.updateState(nextFolderUpload.id, TransferState.Canceled);
+                    } else {
+                        queue.updateWithData(nextFolderUpload.id, TransferState.Error, { error });
+                    }
+                })
+                .finally(() => {
+                    control.remove(nextFolderUpload.id);
+                })
+        );
     }, [queue.nextFolderUpload, queue.folderUploads]);
 
     // Effect to start next file upload if there is enough capacity to do so.
@@ -174,31 +177,33 @@ export default function useUpload() {
             getFileConflictHandler(nextFileUpload.id)
         );
         control.add(nextFileUpload.id, controls);
-        controls
-            .start({
-                onInit: (mimeType: string, fileName: string) => {
-                    queue.updateWithData(nextFileUpload.id, TransferState.Progress, { mimeType, name: fileName });
-                },
-                onProgress: (increment: number) => {
-                    control.updateProgress(nextFileUpload.id, increment);
-                },
-                onFinalize: () => {
-                    queue.updateState(nextFileUpload.id, TransferState.Finalizing);
-                },
-            })
-            .then(() => {
-                queue.updateState(nextFileUpload.id, TransferState.Done);
-            })
-            .catch((error) => {
-                if (isTransferCancelError(error)) {
-                    queue.updateState(nextFileUpload.id, TransferState.Canceled);
-                } else {
-                    queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
-                }
-            })
-            .finally(() => {
-                control.remove(nextFileUpload.id);
-            });
+        preventLeave(
+            controls
+                .start({
+                    onInit: (mimeType: string, fileName: string) => {
+                        queue.updateWithData(nextFileUpload.id, TransferState.Progress, { mimeType, name: fileName });
+                    },
+                    onProgress: (increment: number) => {
+                        control.updateProgress(nextFileUpload.id, increment);
+                    },
+                    onFinalize: () => {
+                        queue.updateState(nextFileUpload.id, TransferState.Finalizing);
+                    },
+                })
+                .then(() => {
+                    queue.updateState(nextFileUpload.id, TransferState.Done);
+                })
+                .catch((error) => {
+                    if (isTransferCancelError(error)) {
+                        queue.updateState(nextFileUpload.id, TransferState.Canceled);
+                    } else {
+                        queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
+                    }
+                })
+                .finally(() => {
+                    control.remove(nextFileUpload.id);
+                })
+        );
     }, [
         queue.nextFileUpload,
         // calculateFileUploadLoad gives different result every time, but we
