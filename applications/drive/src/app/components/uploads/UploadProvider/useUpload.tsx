@@ -9,7 +9,7 @@ import useConfirm from '../../../hooks/util/useConfirm';
 import { TransferCancel, TransferState } from '../../../interfaces/transfer';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import { UploadFileList } from '../interface';
+import { UploadFileList, UploadFileItem } from '../interface';
 import { UpdateFilter } from './interface';
 import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
@@ -23,46 +23,21 @@ export default function useUpload() {
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();
 
-    const {
-        fileUploads,
-        folderUploads,
-        allUploads,
-        hasUploads,
-        nextFileUpload,
-        nextFolderUpload,
-        add: addToTheQueue,
-        updateState,
-        updateWithData,
-        updateWithCallback,
-        remove: removeFromQueue,
-        clear: clearQueue,
-    } = useUploadQueue();
-    const {
-        add: addControl,
-        remove: deleteControl,
-        updateProgress,
-        calculateRemainingUploadBytes,
-        calculateFileUploadLoad,
-        pauseUploads,
-        resumeUploads,
-        cancelUploads,
-        removeUploads,
-        clearUploads,
-        getProgresses,
-    } = useUploadControl(fileUploads, updateWithCallback, removeFromQueue, clearQueue);
+    const queue = useUploadQueue();
+    const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
     const { getFolderConflictHandler, getFileConflictHandler } = useUploadConflict(
-        fileUploads,
-        folderUploads,
-        updateState,
-        updateWithData,
-        cancelUploads
+        queue.fileUploads,
+        queue.folderUploads,
+        queue.updateState,
+        queue.updateWithData,
+        control.cancelUploads
     );
     const { initFileUpload } = useUploadFile();
     const { initFolderUpload } = useUploadFolder();
 
     const checkHasEnoughSpace = async (files: UploadFileList) => {
-        const totalFileListSize = files.reduce((sum, { file }) => sum + (file?.size || 0), 0);
-        const remaining = calculateRemainingUploadBytes();
+        const totalFileListSize = files.reduce((sum, item) => sum + ((item as UploadFileItem).file?.size || 0), 0);
+        const remaining = control.calculateRemainingUploadBytes();
         await call(); // Process events to get updated UsedSpace.
         const { MaxSpace, UsedSpace } = await getUser();
         const hasEnoughSpace = MaxSpace > UsedSpace + remaining + totalFileListSize;
@@ -105,9 +80,7 @@ export default function useUpload() {
             });
         }
 
-        try {
-            addToTheQueue(shareId, parentId, list);
-        } catch (err: any) {
+        await queue.add(shareId, parentId, list).catch((err: any) => {
             if ((err as Error).name === 'UploadUserError') {
                 createNotification({
                     text: err.message,
@@ -120,19 +93,12 @@ export default function useUpload() {
                 });
                 throw err;
             }
-        }
-    };
-
-    /**
-     * uploadFile is helper to upload only one file directly.
-     */
-    const uploadFile = async (shareId: string, parentId: string, file: File) => {
-        return uploadFiles(shareId, parentId, [{ path: [], file }]);
+        });
     };
 
     const restartUploads = useCallback(
         async (idOrFilter: UpdateFilter) => {
-            const uploadFileList = fileUploads
+            const uploadFileList = queue.fileUploads
                 .filter(convertFilterToFunction(idOrFilter))
                 .map(({ file }) => ({ path: [], file }));
             const { hasEnoughSpace, total } = await checkHasEnoughSpace(uploadFileList);
@@ -140,26 +106,27 @@ export default function useUpload() {
                 showNotEnoughSpaceNotification(total);
                 return;
             }
-            updateState(idOrFilter, ({ parentId }) => {
+            queue.updateState(idOrFilter, ({ parentId }) => {
                 return parentId ? TransferState.Pending : TransferState.Initializing;
             });
         },
-        [fileUploads, updateState]
+        [queue.fileUploads, queue.updateState]
     );
 
     // Effect to start next folder upload if there is enough capacity to do so.
     useEffect(() => {
+        const { nextFolderUpload } = queue;
         if (!nextFolderUpload) {
             return;
         }
 
-        const folderLoad = folderUploads.filter(isTransferProgress).length;
+        const folderLoad = queue.folderUploads.filter(isTransferProgress).length;
         if (folderLoad > MAX_UPLOAD_FOLDER_LOAD) {
             return;
         }
 
         // Set progress right away to not start the folder more than once.
-        updateState(nextFolderUpload.id, TransferState.Progress);
+        queue.updateState(nextFolderUpload.id, TransferState.Progress);
 
         const controls = initFolderUpload(
             nextFolderUpload.shareId,
@@ -167,37 +134,38 @@ export default function useUpload() {
             nextFolderUpload.name,
             getFolderConflictHandler(nextFolderUpload.id)
         );
-        addControl(nextFolderUpload.id, controls);
+        control.add(nextFolderUpload.id, controls);
         controls
             .start()
             .then(({ folderId }) => {
-                updateWithData(nextFolderUpload.id, TransferState.Done, { folderId });
+                queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId });
             })
             .catch((error) => {
                 if (isTransferCancelError(error)) {
-                    updateState(nextFolderUpload.id, TransferState.Canceled);
+                    queue.updateState(nextFolderUpload.id, TransferState.Canceled);
                 } else {
-                    updateWithData(nextFolderUpload.id, TransferState.Error, { error });
+                    queue.updateWithData(nextFolderUpload.id, TransferState.Error, { error });
                 }
             })
             .finally(() => {
-                deleteControl(nextFolderUpload.id);
+                control.remove(nextFolderUpload.id);
             });
-    }, [nextFolderUpload, folderUploads]);
+    }, [queue.nextFolderUpload, queue.folderUploads]);
 
     // Effect to start next file upload if there is enough capacity to do so.
     useEffect(() => {
+        const { nextFileUpload } = queue;
         if (!nextFileUpload) {
             return;
         }
 
-        const fileLoad = calculateFileUploadLoad();
+        const fileLoad = control.calculateFileUploadLoad();
         if (fileLoad > MAX_UPLOAD_BLOCKS_LOAD) {
             return;
         }
 
         // Set progress right away to not start the file more than once.
-        updateState(nextFileUpload.id, TransferState.Progress);
+        queue.updateState(nextFileUpload.id, TransferState.Progress);
 
         const controls = initFileUpload(
             nextFileUpload.shareId,
@@ -205,51 +173,50 @@ export default function useUpload() {
             nextFileUpload.file,
             getFileConflictHandler(nextFileUpload.id)
         );
-        addControl(nextFileUpload.id, controls);
+        control.add(nextFileUpload.id, controls);
         controls
             .start({
                 onInit: (mimeType: string, fileName: string) => {
-                    updateWithData(nextFileUpload.id, TransferState.Progress, { mimeType, name: fileName });
+                    queue.updateWithData(nextFileUpload.id, TransferState.Progress, { mimeType, name: fileName });
                 },
                 onProgress: (increment: number) => {
-                    updateProgress(nextFileUpload.id, increment);
+                    control.updateProgress(nextFileUpload.id, increment);
                 },
                 onFinalize: () => {
-                    updateState(nextFileUpload.id, TransferState.Finalizing);
+                    queue.updateState(nextFileUpload.id, TransferState.Finalizing);
                 },
             })
             .then(() => {
-                updateState(nextFileUpload.id, TransferState.Done);
+                queue.updateState(nextFileUpload.id, TransferState.Done);
             })
             .catch((error) => {
                 if (isTransferCancelError(error)) {
-                    updateState(nextFileUpload.id, TransferState.Canceled);
+                    queue.updateState(nextFileUpload.id, TransferState.Canceled);
                 } else {
-                    updateWithData(nextFileUpload.id, TransferState.Error, { error });
+                    queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                 }
             })
             .finally(() => {
-                deleteControl(nextFileUpload.id);
+                control.remove(nextFileUpload.id);
             });
     }, [
-        nextFileUpload,
-        // calculateFileUploadLoad can give different result every time,
-        // therefore we want to run this effect more often, but not every
-        // single time. I think dependency to allUploads is good compromise.
-        allUploads,
+        queue.nextFileUpload,
+        // calculateFileUploadLoad gives different result every time, but we
+        // don't want to use it as a dependency to not run this effect too
+        // often (every time). Dependency to allUploads is a good compromise.
+        queue.allUploads,
     ]);
 
     return {
-        fileUploads,
-        hasUploads,
-        uploadFile,
+        fileUploads: queue.fileUploads,
+        hasUploads: queue.hasUploads,
         uploadFiles,
-        getProgresses,
-        pauseUploads,
-        resumeUploads,
-        cancelUploads,
+        getProgresses: control.getProgresses,
+        pauseUploads: control.pauseUploads,
+        resumeUploads: control.resumeUploads,
+        cancelUploads: control.cancelUploads,
         restartUploads,
-        removeUploads,
-        clearUploads,
+        removeUploads: control.removeUploads,
+        clearUploads: control.clearUploads,
     };
 }

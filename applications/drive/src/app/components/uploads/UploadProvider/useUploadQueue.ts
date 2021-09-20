@@ -5,7 +5,7 @@ import { generateUID } from '@proton/components';
 
 import { TransferState } from '../../../interfaces/transfer';
 import { isTransferPending, isTransferConflict, isTransferPaused, isTransferFinished } from '../../../utils/transfer';
-import { UploadFileList } from '../interface';
+import { UploadFileList, UploadFileItem, UploadFolderItem } from '../interface';
 import {
     UploadQueue,
     FileUpload,
@@ -51,7 +51,7 @@ export default function useUploadQueue() {
         let nextFileUpload: FileUploadReady | undefined;
         let nextFolderUpload: FolderUploadReady | undefined;
 
-        const conflictingUpload = Boolean(allUploads.find(isTransferConflict));
+        const conflictingUpload = allUploads.some(isTransferConflict);
         if (conflictingUpload) {
             return { nextFileUpload, nextFolderUpload };
         }
@@ -63,25 +63,32 @@ export default function useUploadQueue() {
         return { nextFileUpload, nextFolderUpload };
     }, [allUploads, fileUploads, folderUploads]);
 
-    const add = useCallback((shareId: string, parentId: string, list: UploadFileList) => {
-        setQueue((queue) => {
-            const queueItem = queue.find((item) => item.shareId === shareId && item.parentId === parentId) || {
-                shareId,
-                parentId,
-                files: [],
-                folders: [],
-            };
-            for (const item of list) {
-                if (item.file?.name === DS_STORE) {
-                    continue;
+    const add = useCallback(async (shareId: string, parentId: string, list: UploadFileList): Promise<void> => {
+        return new Promise((resolve, reject) => {
+            setQueue((queue) => {
+                const queueItem = queue.find((item) => item.shareId === shareId && item.parentId === parentId) || {
+                    shareId,
+                    parentId,
+                    files: [],
+                    folders: [],
+                };
+                for (const item of list) {
+                    if ((item as UploadFileItem).file?.name === DS_STORE) {
+                        continue;
+                    }
+                    try {
+                        addItemToQueue(shareId, queueItem, item);
+                    } catch (err: any) {
+                        reject(err);
+                    }
                 }
-                addItemToQueue(shareId, queueItem, item);
-            }
-            const newQueue = [
-                ...queue.filter((item) => item.shareId !== shareId || item.parentId !== parentId),
-                queueItem,
-            ];
-            return newQueue;
+                const newQueue = [
+                    ...queue.filter((item) => item.shareId !== shareId || item.parentId !== parentId),
+                    queueItem,
+                ];
+                resolve();
+                return newQueue;
+            });
         });
     }, []);
 
@@ -175,21 +182,28 @@ export default function useUploadQueue() {
         const filter = convertFilterToFunction(idOrFilter);
         const invertFilter: UpdateFilter = (item) => !filter(item);
 
-        if (callback) {
-            const doCallback = (item: UploadQueue | FolderUpload) => {
-                item.files.filter(filter).forEach(callback);
-                item.folders.filter(filter).forEach(callback);
-                item.folders.forEach(doCallback);
-            };
-            queue.forEach(doCallback);
-        }
+        setQueue((queue) => {
+            if (callback) {
+                const recursiveCallback = (item: FolderUpload) => {
+                    callback(item);
+                    item.files.forEach((value) => callback(value));
+                    item.folders.forEach(recursiveCallback);
+                };
+                const doCallback = (item: UploadQueue | FolderUpload) => {
+                    item.files.filter(filter).forEach((value) => callback(value));
+                    item.folders.filter(filter).forEach(recursiveCallback);
+                    item.folders.forEach(doCallback);
+                };
+                queue.forEach(doCallback);
+            }
 
-        const doFilter = <T extends UploadQueue | FolderUpload>(item: T): T => {
-            item.files = item.files.filter(invertFilter);
-            item.folders = item.folders.filter(invertFilter).map(doFilter);
-            return item;
-        };
-        setQueue([...queue.map(doFilter)]);
+            const doFilter = <T extends UploadQueue | FolderUpload>(item: T): T => {
+                item.files = item.files.filter(invertFilter);
+                item.folders = item.folders.filter(invertFilter).map(doFilter);
+                return item;
+            };
+            return [...queue.map(doFilter)];
+        });
     }, []);
 
     const clear = useCallback(() => {
@@ -220,43 +234,44 @@ function convertNewStateToFunction(newStateOrCallback: UpdateState) {
     return typeof newStateOrCallback === 'function' ? newStateOrCallback : () => newStateOrCallback;
 }
 
-function addItemToQueue(shareId: string, newQueue: UploadQueue, item: { path: string[]; file?: File }) {
-    const name = item.file ? item.file.name : item.path.slice(-1)[0];
+export function addItemToQueue(shareId: string, newQueue: UploadQueue, item: UploadFileItem | UploadFolderItem) {
+    const name = (item as UploadFileItem).file ? (item as UploadFileItem).file.name : (item as UploadFolderItem).folder;
     if (!name) {
         throw new UploadUserError(c('Notification').t`File or folder is missing a name`);
     }
 
     const part = findUploadQueueFolder(newQueue, item.path);
     if (isNameAlreadyUploading(part, name)) {
-        throw new UploadUserError(c('Notification').t`File "${name}" is already uploading`);
+        throw new UploadUserError(c('Notification').t`File or folder "${name}" is already uploading`);
     }
 
     const generalAttributes = {
         id: generateUID(),
         shareId,
-        state: part.parentId ? TransferState.Pending : TransferState.Initializing,
+        parentId: item.path.length === 0 ? part.parentId : undefined,
+        state: item.path.length === 0 ? TransferState.Pending : TransferState.Initializing,
         startDate: new Date(),
     };
-    if (item.file) {
+    if ((item as UploadFileItem).file) {
+        const fileItem = item as UploadFileItem;
         part.files.push({
             ...generalAttributes,
-            parentId: item.path.length === 0 ? part.parentId : undefined,
-            file: item.file,
+            file: fileItem.file,
             meta: {
                 filename: name,
-                size: item.file.size,
-                mimeType: item.file.type,
+                size: fileItem.file.size,
+                mimeType: fileItem.file.type,
             },
         });
     } else {
+        const folderItem = item as UploadFolderItem;
         part.folders.push({
             ...generalAttributes,
-            parentId: item.path.length === 1 ? part.parentId : undefined,
-            name,
+            name: folderItem.folder,
             files: [],
             folders: [],
             meta: {
-                filename: name,
+                filename: folderItem.folder,
                 size: 0,
                 mimeType: 'Folder',
             },
@@ -275,15 +290,12 @@ function findUploadQueueFolder(part: UploadQueue | FolderUpload, path: string[])
             return findUploadQueueFolder(folder, path.slice(1));
         }
     }
-    if (path.length === 1) {
-        return part;
-    }
     throw new Error('Wrong file or folder structure');
 }
 
 function isNameAlreadyUploading(part: UploadQueue | FolderUpload, name: string): boolean {
-    return Boolean(
-        part.files.filter((upload) => !isTransferFinished(upload)).find(({ file }) => file.name === name) ||
-            part.folders.filter((upload) => !isTransferFinished(upload)).find((folder) => folder.name === name)
+    return (
+        part.files.filter((upload) => !isTransferFinished(upload)).some(({ file }) => file.name === name) ||
+        part.folders.filter((upload) => !isTransferFinished(upload)).some((folder) => folder.name === name)
     );
 }

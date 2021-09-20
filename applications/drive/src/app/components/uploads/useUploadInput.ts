@@ -2,7 +2,7 @@ import { useRef, useEffect, ChangeEvent } from 'react';
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../utils/transfer';
-import { UploadFileList } from './interface';
+import { UploadFileList, UploadFileItem } from './interface';
 import { useUploadProvider } from './UploadProvider';
 
 const useUploadInput = (forFolders?: boolean) => {
@@ -32,7 +32,7 @@ const useUploadInput = (forFolders?: boolean) => {
                     const folderPathStr = folderPath.join('/');
                     if (!foldersCreated.has(folderPathStr)) {
                         foldersCreated.add(folderPathStr);
-                        filesToUpload.push({ path: folderPath });
+                        filesToUpload.push({ path: folderPath.slice(0, -1), folder: folderPath.slice(-1)[0] });
                     }
                 }
                 filesToUpload.push({ path: path.slice(0, -1), file });
@@ -62,7 +62,7 @@ const useUploadInput = (forFolders?: boolean) => {
         let filesToUpload = getFolderItemsToUpload(files);
         if (!forFolders) {
             // MacOS has bug, where you can select folders when uploading files in some cases.
-            filesToUpload = filesToUpload.filter(({ file }) => !!file);
+            filesToUpload = filesToUpload.filter((item) => !!(item as UploadFileItem).file);
         }
 
         uploadFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload).catch((err) => {
