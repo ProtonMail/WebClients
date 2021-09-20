@@ -1,607 +1,609 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "de_DE"
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "hr_HR"
   },
   "contexts": {
     "": {},
     "Error": {
       "Unknown error": [
-        "Unbekannter Fehler"
+        "Nepoznata pogreška"
       ],
       "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+        "Naplata je istekla, pokušajte ponovo."
       ],
       "Invalid code": [
-        "Ungültiger Schlüssel"
+        "Nevažeći kôd"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Fehler beim Verbinden mit der Bitcoin-API."
+        "Pogreška prilikom spajanja na Bitcoin API."
       ],
       "Amount below minimum.": [
-        "Mindestbetrag unterschritten"
+        "Iznos ispod minimuma."
       ],
       "Amount above the maximum.": [
-        "Höchstbetrag überschritten"
+        "Iznos veći od maksimuma."
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
+        "Minimalni iznos koji se može donirati je ${ price }"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
+        "Minimalni iznos kredita koji se može dodati je ${ _price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
-        "Die akzeptierte Mindestzahlung beträgt ${ _price2 }"
+        "Minimalni iznos koji prihvaćamo je ${ _price2 }"
       ],
       "Process aborted": [
-        "Prozess abgebrochen"
+        "Proces je prekinut"
       ],
       "Payment process cancelled": [
-        "Zahlungsvorgang abgebrochen"
+        "Proces plaćanja je otkazan"
       ],
       "Payment process failed": [
-        "Bezahlvorgang fehlgeschlagen"
+        "Proces plaćanja nije uspio"
       ],
       "Payment process consumed": [
-        "Zahlungsvorgang abgebrochen"
+        "Proces plaćanja je konzumiran"
       ],
       "Payment process not supported": [
-        "Zahlungsvorgang nicht unterstützt"
+        "Proces plaćanja nije podržan"
       ],
       "Unknown payment token status": [
-        "Unbekannter Zahlungstoken-Status"
+        "Nepoznati status tokena za plaćanje"
       ],
       "Tab closed": [
-        "Tab geschlossen"
+        "Kartica zatvorena"
       ],
       "Name on card required": [
-        "Karteninhaber erforderlich"
+        "Ime s kartice je nužno"
       ],
       "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
+        "Nevažeći datum isteka"
       ],
       "Invalid card number": [
-        "Kartennummer ungültig"
+        "Netočan broj kartice"
       ],
       "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
+        "Nevažeći ${ name } kôd"
       ],
       "Invalid postal code": [
-        "Ungültige Postleitzahl"
+        "Netočan poštanski broj"
       ],
       "Please generate keys before you try to change your password.": [
-        "Bitte erzeugen Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern."
+        "Prije pokušaja promjene lozinke generirajte ključeve."
       ],
       "Please set a recovery/notification email first": [
-        "Bitte zuerst eine E-Mail-Adresse für Wiederherstellung/Benachrichtigungen festlegen"
+        "Prvo postavite adresu e-pošte za oporavak/obavijesti"
       ],
       "Please set a recovery phone number first": [
-        "Bitte zuerst eine Wiederherstellungsrufnummer festlegen"
+        "Prvo postavite broj telefona za oporavak"
       ],
       "Payments are currently not available, please try again later": [
-        "Zahlungen sind derzeit nicht verfügbar, bitte versuchen Sie es später erneut"
+        "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
       ],
       "You have no invoices.": [
-        "Sie haben keine Rechnungen."
+        "Nemate faktura."
       ],
       "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ihr Konto oder Ihre Organisation enthält derzeit eine überfällige Rechnung. Bitte begleichen Sie alle unbezahlten Rechnungen."
+        "Vaš račun ili organizacija trenutačno ima neplaćenu fakturu. Molimo platite sve neplaćene fakture."
       ],
       "File has no contents to preview": [
-        "Vorschau nicht möglich, da die Datei keine Daten enthält"
+        "Datoteka nema sadržaja za pregled"
       ],
       "Incorrect mailbox password. Please try again": [
-        "Ungültiges Postfachpasswort. Bitte versuchen Sie es erneut."
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
       ],
       "Incorrect login credentials. Please try again": [
-        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
       ],
       "Can't validate email, try again later": [
-        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
+        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
       ],
       "Can't validate phone, try again later": [
-        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
+        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
       ],
       "Enter 6 digits": [
-        "6 Ziffern eingeben"
+        "Unesite 6 znamenki"
       ],
       "Invalid verification code": [
-        "Ungültiger Bestätigungsschlüssel"
+        "Nevažeći kôd za provjeru"
       ],
       "Email address invalid": [
-        "Ungültige E‐Mail‐Adresse"
+        "Adresa e-pošte nije valjana"
       ],
       "Please enter '${ dangerWord }'": [
-        "Bitte „${ dangerWord }“ eingeben"
+        "Molimo unesite '${ dangerWord }'"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Um fortzufahren ${ refresh }. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
+        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
       "This field is required": [
-        "Dieses Feld muss ausgefüllt werden"
+        "Ovo polje je obavezno"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
+        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
       ],
       "Email is not valid": [
-        "E-Mail-Adresse ungültig"
+        "Adresa e-pošte nije važeća"
       ],
       "Not a valid number": [
-        "Keine gültige Zahl"
+        "Broj telefona nije važeći"
       ],
       "Passwords do not match": [
-        "Passwörter stimmen nicht überein"
+        "Lozinke se ne poklapaju"
       ],
       "Signature verification failed": [
-        "Signaturprüfung fehlgeschlagen"
+        "Potvrda potpisa je neuspješna"
       ],
       "Request timed out.": [
-        "Zeitüberschreitung bei Anfrage."
+        "Zahtjev je istekao."
       ],
       "Code wrong or not valid anymore": [
-        "Code falsch oder inzwischen verfallen"
+        "Kôd je pogrešan ili više ne vrijedi"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Kam es auf Ihrem Fernseher zu einer Zeitüberschreitung, klicken Sie auf „Aktualisieren” auf Ihrem Fernseher und geben Sie Ihren Code erneut ein."
+        "Ako je vrijeme na vašem TV-u isteklo, kliknite Osvježi na televizoru i ponovno unesite kôd."
       ],
       "Invalid invitation link": [
-        "Ungültiger Einladungslink"
+        "Neispravna poveznica pozivnice"
       ],
       "Can't check username, try again later": [
-        "Benutzername konnte nicht überprüft werden, bitte versuchen Sie es später erneut"
+        "Ne uspješna provjera korisničkog imena, pokušajte ponovo kasnije"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Keine Grafik ausgewählt"
+        "Nije odabrana nijedna slika"
       ]
     },
     "Info": {
       "Screenshot(s) attached": [
-        "Bildschirmfoto(s) hinzugefügt"
+        "Snimke zaslona su pridodane"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
       "Loading ${ appName }": [
-        "${ appName } wird geladen"
+        "Učitavanje ${ appName }"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
+        "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Durch das Herabstufen auf das Free-Paket verlieren Sie diese Vorteile dauerhaft, auch wenn Sie in Zukunft erneut zu einem kostenpflichtigen Paket umsteigen sollten."
+        "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
       ],
       "+${ bonusSpace } bonus storage": [
-        "${ bonusSpace } zusätzlicher Speicherplatz"
+        "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)",
-        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit dem VPN zu verbinden)"
+        "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
+        "+${ organization.BonusVPN } veze za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
+        "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Abgerechnet mit ${ billedPrice } pro Jahr"
+        "Naplaćeno ${ billedPrice } godišnje"
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        "Abgerechnet mit ${ billedPrice } aller 2 Jahre"
+        "Naplaćeno ${ billedPrice }} svako 2 godine"
       ],
       "Included": [
-        "Enthalten"
+        "Uključeno"
       ],
       "* Customizable features": [
-        "* Anpassbare Funktionen"
+        "* Prilagodljive značajke"
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Greifen Sie auf Ihre Streaming-Dienste zu, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo Sie sich aufhalten."
+        "Pristupite vašim streaming uslugama, poput ${ netflix }, ${ disney }, ${ primeVideo } ${ many }, bez obzira gdje se nalazite."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Greifen Sie auf gesperrte Inhalte wie soziale Medien, Nachrichten, Wikipedia, YouTube und viele andere zu, egal wo Sie sich aufhalten."
+        "Pristup ograničenom sadržaju, poput društvenih mreža, Wikipedije, Youtubea i mnogo drugih, bez obzira gdje se nalazite."
       ],
       "For getting started with private and secure emailing.": [
-        "Für den Einstieg in den privaten und sicheren E-Mail-Versand."
+        "Za početak korištenja privatne i sigurne e-pošte."
       ],
       "A free and uncensored Internet should be available to all.": [
-        "Ein freies und unzensiertes Internet sollte für alle möglich sein."
+        "Besplatan i necenzurirani Internet trebao bi biti dostupan svima."
       ],
       "Starter VPN service with P2P support.": [
-        "Einsteiger-VPN-Dienst mit P2P-Unterstützung."
+        "Početna VPN usluga s P2P podrškom."
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
-        "Voll funktionales VPN mit einer Geschwindigkeit von bis zu 10 Gbit/s."
+        "VPN s puno značajki i brzinom do 10 Gbps."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Für Einzelpersonen, die ein voll ausgestattetes Postfach mit erweitertem Schutz benötigen."
+        "Za pojedince kojima je potreban potpuno opremljen poštanski sandučić s naprednom zaštitom."
       ],
       "For professionals that need secure business communications.": [
-        "Für alle, die eine sichere Geschäftskommunikation benötigen."
+        "Za profesionalce kojima je potrebna sigurna poslovna komunikacija."
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Das Paket aus VPN + ${ mailAppName } für Familien und kleine Unternehmen."
+        "VPN + ${ mailAppName } paket za obitelji i male tvrtke."
       ],
       "For families and small teams; includes both Mail and VPN.": [
-        "Für Familien und kleine Teams. Beinhaltet sowohl Mail als auch VPN."
+        "Za obitelji i manje timove; uključuje E-poštu i VPN."
       ],
       "Save 20%": [
-        "Sparen Sie 20%"
+        "Uštedite 20%"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ihr Konto wird upgegradet, was bis zu 30 Sekunden dauern kann."
+        "Vaš se račun nadograđuje, što može potrajati do 30 sekundi."
       ],
       "Thank you for supporting our mission.": [
-        "Vielen Dank für Ihre Unterstützung zu diesem Projekt."
+        "Hvala vam što podupirete našu misiju."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Ihr Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
+        "Vaš račun će se ažurirati nakon uspješnog plaćanja."
       ],
       "Account successfully updated": [
-        "Konto erfolgreich aktualisiert"
+        "Račun je uspješno ažuriran"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
+        "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
       ],
       "(Mail + VPN)": [
-        "(E-Mail + VPN)"
+        "(E-pošta + VPN)"
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } kostenlos"
+        "${ mailAppName } Free"
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } kostenlos"
+        "${ vpnAppName } Free"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Wird am Ende des aktuellen Abrechnungszyklus abgerechnet (wird erneuert am ${ renewalDate })"
+        "Naplaćuje se na kraju vašeg trenutnog ciklusa naplate (obnova ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Sie müssen alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern entfernen, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
+        ""
       ],
       "No payment is required at this time.": [
-        "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
+        "Trenutno nije potrebno plaćanje."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben."
+        "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
       ],
       "No subscription yet": [
-        "Noch kein Abonnement"
+        "Bez pretplate"
       ],
       "You already have a free account": [
-        "Sie verfügen bereits über ein kostenloses Konto"
+        "Već imate besplatan račun"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Dadurch wird Ihr aktuelles kostenpflichtiges Abonnement aufgehoben und Sie verlieren alle angesammelten Treuevorteile. Der verbleibende Restbetrag Ihres Abonnements wird als Kontoguthaben zurückerstattet."
+        "Ovo će otkazati vašu trenutnu pretplatu i izgubit ćete sve privilegije vjernosti koje ste nakupili. Preostali iznos vaše pretplate vratit će se kao kredit na vašem računu."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
-        "20% Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
+        "Popust od 20% je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 für Ihr Abonnement beantragt"
+        "Crni petak 2018 je primijenjen na vašu pretplatu"
       ],
       "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 für Ihr Abonnement eingelöst"
+        "Crni petak 2019 je primijenjen na vašu pretplatu"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
-        "Black Friday 2020 Rabatt für Neukunden wurde eingelöst"
+        "Primijenjen je popust za pridošlice za Crni petak 2020"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
+        "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
+        "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
       "30 days money-back guarantee.": [
-        "30 Tage Geld-zurück-Garantie."
+        "Povrat novca do 30 dana."
       ],
       "Save extra 20%": [
-        "Sparen Sie weitere 20%"
+        "Uštedite dodatnih 20%"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
+        "${ save20 } na vašu pretplatu prebacivanjem na ${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } sowohl bei Mail und VPN, indem Sie ein Mail-Abonnement hinzufügen."
+        "${ saveExtra20 } na E-poštu i VPN dodavanjem pretplate na E-poštu."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } sowohl bei VPN und Mail, indem Sie ein VPN-Abonnement hinzufügen."
+        "${ saveExtra20 } na VPN i E-poštu dodavanjem VPN pretplate."
       ],
       "Storage GB": [
-        "Speicherplatz (GB)"
+        "Prostor za pohranu GB"
       ],
       "Users": [
-        "Nutzer"
+        "Korisnici"
       ],
       "Domains": [
-        "Domains"
+        "Domene"
       ],
       "Addresses": [
-        "E-MailAdressen"
+        "Adrese"
       ],
       "Connections": [
-        "Verbindungen"
+        "Veze"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Ermöglicht es Ihnen, E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName } zu hosten, z. B. max.musterman@beispiel.de"
+        "Omogućuje vam da pružate usluge e-pošte za vaše domene na ${ mailAppName }, npr. ivan.horvat@primjer.hr"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "Fügen Sie zusätzliche E-Mail-Adressen wie nutzer2@protonmail.com zu Ihrem Konto hinzu."
+        "Dodajte dodatne adrese na svoj račun kao što je korisnik2@protonmail.com"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Anzahl der VPN-Verbindungen, die den Benutzern zugewiesen werden können. Jedes angeschlossene Gerät belegt eine VPN-Verbindung."
+        "Broj VPN veza koje se mogu dodijeliti korisnicima. Svaki povezani uređaj koristi jednu VPN vezu."
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus ist auf einen Benutzer beschränkt und beginnt bei 5 GB Speicherplatz."
+        "ProtonMail Plus je ograničen na jednog korisnika i započinje s 5 GB prostora za pohranu."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Benutzer hinzufügen zu können."
+        "Prebacite se na ${ professionalPlan } za dodavanje još korisnika."
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } ermöglicht bis zu ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-Verbindung.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } ermöglicht bis zu ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-Verbindungen."
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } sadrži ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN vezu.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } sadrži ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN veze.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } sadrži ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN veza."
       ],
       "Each additional connection can be assigned to users in your organization.": [
-        "Jede zusätzliche Verbindung kann Benutzern in Ihrer Organisation zugewiesen werden."
+        "Svaka dodatna veza može se dodijeliti korisnicima u vašoj organizaciji."
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Verbindungen hinzufügen zu können."
+        "Prebacite se na ${ professionalPlan } za dodavanje još veza."
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional beginnt mit einem Benutzer, und jeder Benutzer fügt dem Speicher der Organisation weitere 5 GB und 5 E-Mail-Adressen hinzu."
+        "${ mailAppName } Professional započinje s jednim korisnikom, a svaki korisnik dodaje 5 GB i 5 adresa e-pošte u skup organizacije."
       ],
       "Not customizable": [
-        "Nicht änderbar"
+        "Nije prilagodljivo"
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
-        "Sobald Sie auf „Zurückstufen” klicken, kann es einige Minuten dauern, bis Ihr Konto auf ein kostenfreies Paket herabgestuft wird. "
+        "Kada pritisnete \"Snizi status\", potrebno je par minuta da se snizi status vašeg računa na Free plan. "
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail und ProtonVPN."
+        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ProtonMail i ProtonVPN značajkama."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail, einschließlich zusätzlichem Speicherplatz und Filtern."
+        "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ProtonMail-a, uključujući dodatni prostor za pohranu i filtre."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu kostenpflichtigen ProtonVPN-Funktionen."
+        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ProtonVPN značajkama."
       ],
       "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Sie müssen alle zusätzlichen ProtonMail-Benutzer, E-Mail-Adressen und benutzerdefinierten Domains deaktivieren oder entfernen, bevor Sie Ihr Paket zurückstufen können."
+        "Morate onemogućiti ili ukloniti sve dodatne korisnike ProtonMail-a, adrese i prilagođene domene prije nego što možete sniziti status."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Das Zurückstufen beendet alle Verbindungen zu kostenpflichtigen ProtonVPN-Servern."
+        "Snižavanje statusa prekida sve veze s plaćenim ProtonVPN poslužiteljima."
       ],
       "There are no billing details available for your current subscription.": [
-        "Für Ihr aktuelles Abonnement sind keine Zahlungsinformationen verfügbar."
+        "Nema dostupnih pojedinosti o naplati za vašu trenutačnu pretplatu."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Ihre Zahlungsinformationen sind durch TLS‐Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
+        "Vaši podaci o plaćanju zaštićeni su TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie einen neues Paket abonnieren oder Ihr aktuelles Paket verlängern können. Sie erhalten ein Guthaben für jeden ausgegebenen ${ i18nCurrency }."
+        "Dopunite svoj račun sa kreditima koje možete upotrijebiti za pretplatu na novi plan ili za obnovu trenutnog plana. Dobivate jedan kredit za svaku potrošenu ${ i18nCurrency }."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Wenn Ihr Abonnement verlängert wird, werden wir alle verfügbaren Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
+        "Kada se vaša pretplata obnovi, primijenit ćemo sve dostupne kredite prije nego što naplatimo gore navedeni način plaćanja."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Wenn Sie einen Geschenkgutschein haben, geben Sie den Code unten ein, um Ihren Rabatt einzulösen."
+        "Ako imate darovni kôd, unesite ga ispod za primjenu popusta."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
+        "Potvrdite naplatu u novootvorenoj kartici vašeg preglednika."
       ],
       "Verification can take a few minutes.": [
-        "Die Überprüfung kann einige Minuten dauern."
+        "Potvrda može potrajati nekoliko minuta."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
+        "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše Proton pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
+        "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom kako biste ga mogli dodati kao način plaćanja."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Bei Visa und MasterCard — die 3-stellige Ziffer auf der Rückseite Ihrer Karte. Bei American Express — die 4-stellige Ziffer auf der Vorderseite Ihrer Karte."
+        ""
       ],
       "Amount below minimum (${ amount }).": [
-        "Mindestbetrag unterschritten. (${ amount })."
+        "Iznos ispod minimuma (${ amount })."
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir Ihrem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion können Sie Ihre Rechnung mit dem Guthaben begleichen."
+        "Potvrda Bitcoin transakcije može potrajati neko vrijeme (do 24 sata). Kada potvrdimo, dodijelit ćemo vam kredit na vaš račun. Nakon potvrde transakcije, možete platiti fakturu s kreditom."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Nachdem Sie Ihre Bitcoin-Zahlung abgeschlossen haben, befolgen Sie bitte die folgenden Anweisungen, um die Aufrüstung durchzuführen."
+        "Nakon što ste izvršili Bitcoin uplatu, molimo slijedite ove upute ispod za nadogradnju."
       ],
       "Please verify the payment in the new tab.": [
-        "Bitte bestätigen Sie die Zahlung im neuen Tab."
+        "Molimo potvrdite plaćanje u novoj kartici."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten, um diese Zahlung abzuschließen. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, um fortzufahren."
+        "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Es muss eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft sein. Um dies nachzuholen klicken Sie bitte auf die nachfolgende Schaltfläche."
+        "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom. Ukoliko nemate navedeno na vašem PayPal računu, molimo vas kliknite na dugme ispod."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "Wir verwenden 3-D Secure zum Schutz Ihrer Zahlungen."
+        "Za zaštitu vaših plaćanja koristimo 3-D Secure."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "Ihre Bank benötigt aus Sicherheitsgründen eine 3-D-Secure-Überprüfung."
+        "Vaša banka zahtijeva 3-D Secure potvrdu iz sigurnosnih razloga."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Die Überprüfung öffnet einen neuen Tab – bitte deaktivieren Sie daher alle Popup-Blocker. Ihr Konto wird nichts berechnet. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
+        "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Die Bestätigung öffnet einen neuen Tab. Bitte deaktivieren Sie alle Popup‐Blocker."
+        "Proces potvrde otvoriti će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Sie werden in Kürze zu PayPal weitergeleitet, um Ihre Zahlung zu bestätigen."
+        "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu überprüfen."
+        "Uskoro ćete biti preusmjereni na vašu banku radi potvrde plaćanja."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
+        "Potvrdite karticu u novootvorenoj kartici vašeg preglednika."
       ],
       "Payment can take a few minutes to fully verify.": [
-        "Die vollständige Überprüfung der Zahlung kann einige Minuten dauern."
+        "Naplata može potrajati nekoliko minuta dok se potpuno potvrdi."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an PayPal, um Hilfe zu erhalten."
+        "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
+        "Pokušajte ponovo, koristite drugi način plaćanja ili nazovite banku za pomoć."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
+        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wenden Sie sich an Ihren Administrator."
+        "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
       ],
       "Free up some space or add more storage space.": [
-        "Geben Sie etwas Platz frei oder fügen Sie zusätzlichen Speicherplatz hinzu."
+        "Oslobodite malo prostora ili dodajte više prostora za pohranu."
       ],
       "Free up some space or contact your administrator.": [
-        "Geben Sie etwas Platz frei oder wenden Sie sich an Ihren Administrator."
+        "Oslobodite malo prostora ili se obratite administratoru."
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Sie haben 100% Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosegli ste 100% svog prostora za pohranu. Ne možete slati ni primati nove e-poruke. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Sie haben ${ spaceDisplayed }% Ihrer Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosegli ste ${ spaceDisplayed }% svog prostora za pohranu. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Sie sind derzeit als „${ user.Name }” (${ user.Email }) angemeldet und haben nur eingeschränkten Zugang."
+        "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } benötigt Ihre Erlaubnis, um ${ enableDesktopNotifications }."
+        "${ appName } zahtjeva vaše dopuštenje za ${ enableDesktopNotifications }."
       ],
       "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang aktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
+        "Omogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje najnovije verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang deaktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
+        "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
       "Internet connection restored.": [
-        "Internetverbindung wiederhergestellt."
+        "Uspostavljena je internetska veza."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung unterbrochen. Bitte überprüfen Sie die Konnektivität Ihres Geräts."
+        "Nema internetske veze. Molimo provjerite povezanost uređaja."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Sie können jeweils nur eine Chat-Instanz geöffnet halten. Bitte schließen Sie vorherige Unterhaltungen, bevor Sie eine neue beginnen.\nSie können jeweils nur eine Chat-Instanz geöffnet halten. Bitte schließen Sie vorherige Chats, bevor Sie eine neue beginnen."
+        ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Ihr Abonnement wird von Mozilla verwaltet. Bitte kontaktieren Sie den Mozilla‐Kundendienst."
+        "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."
       ],
       "Log in to ProtonMail to activate your address": [
-        "Bei ProtonMail anmelden, um Ihre Adresse zu aktivieren"
+        "Prijavite se u ProtonMail da biste aktivirali vašu adresu"
       ],
       "By leaving now, changes may not be saved": [
-        "Durch das Verlassen werden Änderungen möglicherweise nicht gespeichert."
+        "Ako sada napustite, promjene se možda neće spremiti"
       ],
       "Enter your own password (as organization admin) and this user's new password.": [
-        "Geben Sie Ihr eigenes Passwort (das des Organisationsadmins) und das neue Passwort dieses Benutzers ein."
+        "Unesite vašu lozinku (kao administrator organizacije) i novu lozinku za ovog korisnika."
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legen Sie zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
+        "Način rada s dvije lozinke koristi zasebne lozinke za prijavu i dešifriranje sandučića e-pošte. To pruža manju sigurnosnu prednost u nekim situacijama, no za većinu korisnika preporučujemo način rada s jednom lozinkom. Da biste se prebacili na način rada s dvije lozinke, prvo postavite lozinku za prijavu te zatim postavite lozinku za sandučić e-pošte."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Postfachpasswort ersetzt. Um in den Einzelpasswort-Modus zu wechseln, geben Sie das gewünschte Einzelpasswort ein und klicken Sie auf „Speichern”."
+        "ProtonMail se također može koristiti s jednom lozinkom koja zamjenjuje lozinku za prijavu i za sandučić e-pošte. Da biste se prebacili na način rada s jednom lozinkom, unesite jednu lozinku koju želite koristiti i pritisnite Spremi."
       ],
       "Proton can't help you recover any lost passwords": [
-        "Proton kann Ihnen nicht helfen, verlorene Passwörter wiederherzustellen"
+        "Proton vam ne može pomoći da vratite izgubljene lozinke"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Achten Sie darauf, dass Sie sich das Passwort zum Anmelden und Entschlüsseln von E-Mails merken. ${ boldAlert }. Wir empfehlen, zuerst eine Wiederherstellungs-E-Mail-Adresse hinzuzufügen."
+        "Obavezno zapamtite lozinku za prijavu i dešifriranje e-pošte. ${ boldAlert }. Preporučujemo da prvo dodate e-adresu za oporavak."
       ],
       "read our two-factor authentication Guide first": [
-        "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf Ihrem Proton-Konto. Zwei-Faktor-Authentifizierung wird Ihr Proton-Konto sicherer machen, daher empfehlen wir Ihnen, diese zu aktivieren."
+        "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na Proton računu. Dvofaktorska autentikacija će vaš Proton račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Wenn Sie Zwei-Faktor-Authentifizierung noch nie zuvor verwendet haben, empfehlen wir Ihnen dringend ${ guideButton }."
+        "Ukoliko prije niste upotrebljavali dvofaktorsku autentikaciju, preporučujemo da ${ guideButton }."
       ],
       "Enter key manually instead": [
-        "Schlüssel stattdessen manuell eingeben"
+        "Ručno unesite ključ"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scannen Sie diesen Code mit Ihrem Zwei‐Faktor‐Authentifizierungsgerät, um Ihr Konto einzurichten. ${ switchButton }."
+        "Za postavljanje računa, skenirajte ovaj kôd pomoću uređaja za dvofaktorsku autentikaciju. ${ switchButton }."
       ],
       "Scan QR code instead": [
-        "QR‐Code stattdessen scannen"
+        "Skenirajte QR kôd"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Geben Sie diese Informationen manuell in Ihr Zwei‐Faktor‐Authentifizierungsgerät ein, um Ihr Konto einzurichten. ${ _switchButton }."
+        "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
       ],
       "Two-factor authentication enabled": [
-        "Zwei‐Faktor‐Authentifizierung aktiviert"
+        "Omogućena je dvofaktorska autentikacija"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Wichtig: Bitte stellen Sie sicher, dass Sie Ihre Wiederherstellungsschlüssel speichern. Andernfalls können Sie den Zugriff auf Ihr Konto dauerhaft verlieren, wenn Sie Ihr Gerät zur Zwei-Faktor-Authentifizierung verlieren."
+        "Važno: Molimo spremite kodove za oporavak. U suprotnom možete trajno izgubiti pristup računu ako izgubite svoj uređaj za dvofaktorsku autentikaciju."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Wenn Sie Ihr bestätigtes 2-Faktor-Gerät verlieren, können diese Schlüssel anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Schlüssels verwendet werden, um sich am Konto anzumelden. Jeder Schlüssel kann nur einmal verwendet werden."
+        "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
       ],
       "Two-factor authentication disabled": [
-        "Zwei‐Faktor‐Authentifizierung deaktiviert"
+        "Onemogućena je dvofaktorska autentikacija"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Die Zwei-Faktor-Authentifizierung fügt Ihrem Konto eine zusätzliche Sicherheitsebene hinzu, falls Ihr Passwort kompromittiert wird."
+        "Dvofaktorska autentikacija dodaje dodatnu razinu sigurnosti vašem računu u slučaju da je lozinka ugrožena."
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Der Modus mit zwei Passwörtern erfordert zwei Passwörter: eines zum Anmelden bei Ihrem Konto und eines zum Entschlüsseln Ihrers Postfachs. (Erweitert)"
+        "Način rada s dvije lozinke zahtjeva dvije lozinke: jednu za prijavu na račun i jednu za dešifriranje poštanskog sandučića. (Napredno)"
       ],
       "Emailing preference saved": [
-        "E-Mail-Einstellungen gespeichert"
+        "Spremljena je postavka e-pošte"
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, können Sie unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
+        "Da biste bili u tijeku s najnovijim razvojima u Proton proizvodima, možete se pretplatiti na naše različite e-poruke i povremeno posjetiti naš blog."
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Warnhinweis: Löschvorgang kann nicht widerrufen werden ist. Dadurch wird auch der Zugriff auf alle verbundenen Dienste entfernt und alle Ihre Kontakte werden gelöscht."
+        ""
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Wenn Sie dieses Konto mit einem anderen kombinieren möchten, dürfen Sie es NICHT löschen."
+        ""
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Bitte geben Sie eine E‐Mail‐Adresse an, falls wir Sie kontaktieren müssen."
+        "Navedite adresu e-pošte u slučaju da vas moramo kontaktirati."
       ],
       "Enter your login password to confirm your identity.": [
-        "Geben Sie zur Bestätigung Ihrer Identität Ihr Anmeldepasswort ein."
+        "Unesite vašu lozinku za potvrdu identiteta."
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ihre ProtonVPN‐ und ProtonMail‐Konten sind miteinander verknüpft. Um beide zu löschen, melden Sie sich bitte unter ${ loginLink } an und löschen Sie dort Ihr Konto."
+        "Vaši ProtonVPN i ProtonMail računi su povezani. Da biste ih izbrisali, prijavite se u $ { loginLink } i tamo Izbrišite svoj račun."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Dadurch wird Ihr Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
+        "Ovim će te trajno izbrisati vaš račun i sve podatke povezane s njim. Nećete moći ponovno aktivirati ovaj račun."
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Sie können die folgenden Anmeldedaten verwenden, um sich mit einer Open-Source-VPN-App eines Drittanbieters, wie „Tunnelblick” für macOS oder „OpenVPN” für GNU/Linux, mit einem ProtonVPN-Server zu verbinden."
+        "Možete koristiti sljedeće vjerodajnice za povezivanje s ProtonVPN poslužiteljem pomoću nezavisnih VPN aplikacija otvorenog kôda, poput Tunnelblick za macOS ili OpenVPN za GNU/Linux."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Lassen Sie sich zeigen, wie Sie sich mit VPN-Anwendungen von Drittanbietern bei ProtonVPN anmelden können."
+        "Saznajte više kako se prijaviti na ProtonVPN s ostalim VPN aplikacijama trećih strana."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
-        "Wir empfehlen Ihnen, wenn möglich, die offiziellen ProtonVPN-Anwendungen zu verwenden."
+        "Savjetujemo vas da koristite službene ProtonVPN aplikacije kada je god moguće."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Sie können keine OpenVPN/IKEv2-Zugangsdaten verwenden, um sich an ProtonVPN-Anwendungen oder der ProtonVPN-Übersicht anzumelden. ${ learnMore }"
+        "Ne možete koristiti OpenVPN / IKEv2 vjerodajnice za prijavu u ProtonVPN aplikacijama ili na nadzornoj ploči ProtonVPN. ${ learnMore }"
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Verwenden Sie die folgenden Anmeldedaten, wenn Sie sich ohne Anwendung mit ProtonVPN-Servern verbinden möchten. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
+        "Koristite sljedeće vjerodajnice za spajanje na ProtonVPN poslužitelje bez aplikacije. Na primjer: Tunnelblick na MacOS-u, OpenVPN na GNU/Linuxu."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Verwenden Sie die OpenVPN-/IKEv2-Zugangsdaten NICHT in ProtonVPN-Anwendungen oder auf dem ProtonVPN-Dashboard. ${ learnMore }"
+        "Ne koristite OpenVPN / IKEv2 vjerodajnice u ProtonVPN aplikacijama ili na nadzornoj ploči ProtonVPN. ${ learnMore }"
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Um Ihre Internetverbindung zu schützen, laden Sie die App ProtonVPN für Ihr Gerät herunter, installieren Sie diese und verbinden Sie sich mit einem ProtonVPN-Server."
+        "Da biste osigurali internetsku vezu, preuzmite i instalirajte ProtonVPN aplikaciju za vaš uređaj i povežite se s ProtonVPN poslužiteljem."
       ],
       "Server load": [
-        "Serverauslastung"
+        "Opterećenje poslužitelja"
       ],
       "Server is currently down": [
-        "Der Server ist derzeit nicht erreichbar"
+        "Poslužitelj je trenutno nedostupan"
       ],
       "P2P": [
         "P2P"
@@ -610,1489 +612,1495 @@
         "Tor"
       ],
       "Plus or Visionary subscription required": [
-        "Plus‐ oder Visionary‐Abonnement benötigt"
+        "Plus ili Visionary pretplata je potrebna"
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
+        "Basic, Plus ili Visionary pretplata je potrebna"
       ],
       "${ number } server": [
-        "${ number } Server",
-        "${ number } Server"
+        "${ number } poslužitelj",
+        "${ number } poslužitelja",
+        "${ number } poslužitelja"
       ],
       "${ number } city": [
-        "{ number } $ Stadt",
-        "${ number } Städte"
+        "${ number } grad",
+        "${ number } grada",
+        "${ number } gradova"
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Mit diesen Konfigurationsdateien können Sie festlegen, mit welchem ProtonVPN-Server Sie sich verbinden möchten, wenn Sie eine VPN-App eines Drittanbieters verwenden oder eine VPN-Verbindung auf einem Router einrichten."
+        "Ove konfiguracijske datoteke omogućuju vam odabir s kojim će te se ProtonVPN poslužiteljem povezati kada upotrebljavate VPN aplikacije trećih strana ili postavljate VPN vezu na routeru."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Installieren Sie eine Secure-Core-Konfigurationsdatei, um einen zusätzlichen Schutz vor VPN-Endpunkt-Kompromittierungen zu erhalten."
+        "Instalirajte Secure Core konfiguracijsku datoteku da biste imali korist od dodatne zaštite protiv kompromitacije krajnje točke VPN."
       ],
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN Plus oder Visionary für die Secure-Core-Funktion erforderlich."
+        "ProtonVPN Plus ili Visionary potrebni su za Secure Core značajku."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Installieren Sie eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land Ihrer Wahl herzustellen."
+        "Instalirajte konfiguracijsku datoteku za državu da biste se povezali sa nasumičnim poslužiteljem u državi vašeg izbora."
       ],
       "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "ProtonVPN Basic, Plus oder Visionary für die Verbindung auf Länderebene erforderlich."
+        "Za povezivanje na razini zemlje potreban je ProtonVPN Basic, Plus ili Visionary."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Installieren Sie eine Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server im Land Ihrer Wahl herzustellen."
+        "Instalirajte konfiguracijsku datoteku za poslužitelja da biste se povezali sa određenim poslužiteljem u državi vašeg izbora."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Installieren Sie eine freie Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server an einem der drei freien Orte herzustellen."
+        "Instalirajte konfiguracijsku datoteku za besplatnog poslužitelja da biste se povezali sa određenim poslužiteljem u jednoj od tri besplatne lokacije."
       ],
       "Plan upgrade required": [
-        "Paketaufrüstung erforderlich"
+        "Potrebna je nadogradnja plana"
       ],
       "Not set": [
-        "Nicht festgelegt"
+        "Nije postavljeno"
       ],
       "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Wir empfehlen, eine verknüpfte E-Mail-Adresse oder Telefonnummer hinzuzufügen, damit Sie Ihr Konto wiederherstellen können, wenn Sie Ihr Passwort verlieren."
+        "Preporučujemo dodavanje povezane adrese e-pošte ili broja telefona kako biste mogli oporaviti vaš račun ako izgubite lozinku."
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Wir empfehlen, eine verknüpfte E-Mail-Adresse hinzuzufügen, damit Sie Ihr Konto wiederherstellen können, wenn Sie Ihr Passwort verlieren."
+        "Preporučujemo dodavanje povezane adrese e-pošte kako biste mogli oporaviti vaš račun ako izgubite lozinku."
       ],
       "Disabling this will prevent this email from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese E-Mail-Adresse nicht mehr für die Kontowiederherstellung verwendet werden."
+        "Ako onemogućite, ova e-pošta se neće koristiti za oporavak računa."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Wenn Benachrichtigungen aktiviert sind, senden wir eine Meldung an Ihre Wiederherstellungs‐/Benachrichtigungsadresse, wenn neue Nachrichten in Ihrem ProtonMail‐Konto vorhanden sind."
+        "Ako su obavijesti omogućene, poslat ćemo vam upozorenje na adresu e-pošte za oporavak/obavijesti ako imate nove poruke na ProtonMail računu."
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese Telefonnummer nicht mehr für die Kontowiederherstellung verwendet werden."
+        "Ako onemogućite, ovaj broj telefona se neće koristiti za oporavak računa."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Mit einer Wiederherstellungsphrase können Sie auf Ihr Konto zugreifen und Ihre verschlüsselten Nachrichten wiederherstellen, sollten Sie Ihr Passwort vergessen haben."
+        ""
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese Wiederherstellungsphrase nicht mehr für die Kontowiederherstellung verwendet werden."
+        ""
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ihre Wiederherstellungsphrase besteht aus einer Reihe von 12 Wörtern in einer bestimmten Reihenfolge."
+        ""
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Bitte notieren Sie Ihre Wiederherstellungsphrase in der Reihenfolge, in der sie angezeigt wird, und bewahren Sie sie an einem sicheren Ort auf. Ihre Wiederherstellungsphrase kann verwendet werden, um den Zugang zu Ihrem Konto und Ihren verschlüsselten Nachrichten vollständig wiederherzustellen."
+        ""
       ],
       "Recovery phrase copied to clipboard": [
-        "Wiederherstellungsphrase in Zwischenablage kopiert"
+        ""
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
-        "Durch das Erstellen einer neuen Wiederherstellungsphrase wird Ihre alte Phrase deaktiviert."
+        ""
       ],
       "Are you sure you want to continue?": [
-        "Möchten Sie wirklich fortfahren?"
+        ""
       ],
       "Your recovery phrase": [
-        "Ihre Wiederherstellungsphrase"
+        ""
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Wenn Sie fortfahren, müssen Sie Ihr Passwort zurücksetzen und werden von allen anderen aktiven Sitzungen abgemeldet."
+        ""
       ],
       "This will also disable two-factor authentication.": [
-        "Dadurch wird außerdem die Zwei-Faktor-Authentifizierung deaktiviert."
+        ""
       ],
       "Recovery phrase has been disabled": [
-        "Die Wiederherstellungsphrase wurde deaktiviert"
+        ""
       ],
       "You have no saved payment methods.": [
-        "Sie haben keine gespeicherten Zahlungsmethoden."
+        "Nemate spremljenih načina plaćanja."
       ],
       "Expired": [
-        "Abgelaufen"
+        "Isteklo"
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Sie können Ihre Rechnungen für Abrechnungszwecke anpassen und herunterladen."
+        "Račune možete prilagoditi i preuzeti za računovodstvene svrhe."
       ],
       "Unsupported file": [
-        "Nicht unterstützte Datei"
+        "Nepodržana datoteka"
       ],
       "No preview available": [
-        "Keine Vorschau verfügbar"
+        "Pregled nije dostupan"
       ],
       "Preview": [
-        "Vorschau"
+        "Pregled"
       ],
       "Loading preview": [
-        "Vorschau wird geladen"
+        "Učitavanje pregleda"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
+        "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
       ],
       "of": [
-        "von"
+        "od"
       ],
       "here": [
-        "hier"
+        "ovdje"
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Richtlinien gesperrt."
+        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
+        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Bestätigungsschlüssel anfordern oder eine alternative Bestätigungsmethode verwenden?"
+        "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Bestätigungscode eingeben, der an ${ destinationText } gesendet wurde."
+        "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
+        "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
+        "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+        "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
+        "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Geben Sie Ihre E-Mail-Adresse für die Wiederherstellung ein und wir senden Ihnen Ihre(n) Benutzernamen zu. (Dies ist in der Regel die E-Mail-Adresse, die Sie bei der Anmeldung angegeben haben.)"
+        "Unesite svoju adresu e-pošte za oporavak i poslat ćemo vam vaše korisničko ime(na). (To je obično adresa e-pošte koju ste naveli tijekom registracije.)"
       ],
       "We will send a reset code to your recovery email to reset your password.": [
-        "Wir senden Ihnen einen Zurücksetzungsschlüssel an Ihre Wiederherstellungs-E-Mail-Adresse, um Ihr Passwort zurückzusetzen."
+        "Poslat ćemo vam kôd za ponovno postavljanje na vašu e-poštu za oporavak da biste ponovno postavili vašu lozinku."
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "Wir haben einen Schlüssel zum Zurücksetzen an Ihre Wiederherstellungs‐E‐Mail‐Adresse gesendet, der ohne das Anfordern eines weiteren eine Stunde lang gültig ist. Bitte unten eingeben, um fortzufahren."
+        "Poslali smo kôd za poništavanje na e-poštu za oporavak, koji vrijedi jedan sat ili dok ne zatražite novi kôd. Da biste nastavili, unesite u nastavku."
       ],
       "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "WICHTIG: Verlassen oder schließen Sie diese Seite nicht. Sie müssen den Zurückstellungscode nach dem Erhalt in das untenstehende Feld eingeben."
+        "VAŽNO: Nemojte zatvoriti niti odlaziti s ove stranice. Morat će te unijeti kôd za resetiranje nakon što ga primite, u polje ispod."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Das Zurücksetzen Ihres Passworts setzt Ihre Verschlüsselungscodes für alle Proton-bezogenen Dienste (Mail und VPN) zurück. Sie werden Ihre bestehenden Nachrichten nicht mehr lesen können. Wenn Sie Ihre ProtonMail-Anmeldeinformationen kennen, setzen Sie diese NICHT zurück. Sie können sich hiermit ${ hereLink } anmelden."
+        "Poništavanje lozinke resetirati će vaše šifrirane ključeve za sve usluge povezane s Protonom (Mail i VPN). Nećete moći čitati postojeće poruke. Ako znate svoje ProtonMail vjerodajnice, NE resetirajte. Ovdje se možete prijaviti s njima ${ hereLink }."
       ],
       "ALL YOUR DATA WILL BE LOST!": [
-        "Alle Ihre Daten gehen unwiderruflich verloren!"
+        "SVI VAŠI PODACI ĆE BITI IZBRISANI!"
       ],
       "If you remember your old password later, you can recover your existing messages.": [
-        "Sollten Sie sich später an Ihr altes Passwort erinnern, können Sie Ihre vorhandenen Nachrichten wiederherstellen."
+        "Ako se kasnije sjetite stare lozinke, možete oporaviti postojeće poruke."
       ],
       "Keep this password safe, it cannot be recovered.": [
-        "Bewahren Sie dieses Passwort sicher auf, es kann nicht wiederhergestellt werden."
+        "Čuvajte ovu lozinku, nije je moguće oporaviti."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Vergessen Sie dieses Passwort NICHT. Sollten Sie es vergessen, können Sie sich weder anmelden noch Ihre Nachrichten entschlüsseln."
+        "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći prijaviti ni dešifrirati vaše poruke."
       ],
       "Done! We sent a code to ${ destination }": [
-        "Geschafft! Ihnen wurde ein Code an ${ destination } gesendet."
+        "Gotovo! Poslali smo kôd na ${ destination }"
       ],
       "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Das Zurücksetzen Ihres Passworts bedeutet, dass Ihr altes Passwort nicht mehr funktionieren wird. Möchten Sie Ihr Passwort wirklich zurücksetzen?"
+        "Poništavanje lozinke znači da stara lozinka i svi uređaji koji je koriste više neće raditi. Sigurno želite resetirati lozinku?"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern"
+        "Ovo može potrajati nekoliko sekundi ili nekoliko minuta, ovisno o uređaju"
       ],
       "support team": [
-        "Support-Team"
+        "tim za podršku"
       ],
       "No results found": [
-        "Keine Ergebnisse gefunden"
+        "Nema rezultata"
       ],
       "Loading": [
-        "Lädt"
+        "Učitavanje"
       ],
       "Session timed out.": [
-        "Zeitüberschreitung der Sitzung."
+        "Sesija je istekla."
       ],
       "Internet connection lost.": [
-        "Internetverbindung unterbrochen."
+        "Prekinuta je internetska veza."
       ],
       "Servers are unreachable.": [
-        "Server sind nicht erreichbar."
+        "Poslužitelji nisu dostupni."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Wechseln Sie zu einem kostenpflichtigen Paket, um Premium-Funktionen freizuschalten und Ihren Speicherplatz zu erweitern."
+        "Nadogradite na plaćeni plan kako biste pristupili premium značajkama i povećali vaš prostor za pohranu."
       ],
       "billed as ${ billedPrice }": [
-        "abgerechnet als ${ billedPrice }"
+        "naplaćeno ${ billedPrice }"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "Unterstützung für File-Sharing-Protokolle wie BitTorrent."
+        "Podrška za protokole za dijeljenje datoteka poput BitTorrent."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+        "Preusmjerite sav svoj internetski promet kroz Tor mrežu jednim klikom."
       ],
       "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
-        "Durch das Klicken auf „Konto erstellen” erklären Sie sich mit unseren ${ termsOfServiceLink } und ${ privacyPolicyLink } einverstanden."
+        "Pritiskom na Stvori račun pristajete se pridržavati naših ${ termsOfServiceLink } i ${ privacyPolicyLink }."
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
-        "Ihr bestehendes Proton‐Konto kann für die Anmeldung an allen Proton‐Diensten genutzt werden. Bitte melden Sie sich mit ${ email } an."
+        "Vaš postojeći Proton račun se može koristiti za pristup svim Proton uslugama. Prijavite se pomoću ${ email }"
       ],
       "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
-        "Wenn Sie bereits Nutzer von ProtonMail sind, können Sie Ihr Proton-Konto nutzen, um sich auch bei ProtonVPN anzumelden."
+        "Ako ste ProtonMail korisnik, možete koristiti svoj Proton račun za prijavu na ProtonVPN."
       ],
       "This plan is temporarily disabled": [
-        "Dieses Paket ist derzeit deaktiviert"
+        "Ovaj plan je trenutno onemogućen"
       ],
       "You are saving 20% with an annual plan": [
-        "Sie sparen 20 % mit einem jährlichen Abonnement"
+        "Uštedite 20% s godišnjim planom naplate"
       ],
       "You are saving 33% with an two-year plan": [
-        "Sie sparen 33 % mit einem zweijährigen Abonnement"
+        "Uštedite 33% s dvogodišnjim planom naplate"
       ],
       "All plans support: ${ supportedOS }": [
-        "Alle Pakete unterstützen: ${ supportedOS }"
+        "Svi planovi podržavaju: ${ supportedOS }"
       ],
       "30-days money back guarantee": [
-        "30 Tage Geld‐zurück‐Garantie"
+        "Povrat novca do 30 dana"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
+        "NetShield štiti vaš uređaj i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Schützt vor Bedrohungen der VPN-Privatsphäre, indem Ihr Internet-Verkehr über mehrere Server geleitet wird."
+        "Štiti se od opasnosti koje prijete privatnosti VPN-a, preusmjeravanjem vašeg internetskog prometa kroz više poslužitelja."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugang zu allen kostenpflichtigen Funktionen sowohl für ProtonVPN als auch für ProtonMail (der verschlüsselte E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+        "Pristup svim plaćenim značajkama za ProtonVPN i ProtonMail (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
       ],
       "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
-        "Klicken Sie unten, um den Code erneut an ${ destinationText } zu senden. Sollte ${ destinationType } fehlerhaft sein, klicken Sie bitte auf „${ editI18n }”."
+        "Pritisnite ispod da biste ponovo poslali kôd za ${ destinationText }. Ako je ${ destinationType } netočan, pritisnite \"${ editI18n }\"."
       ],
       "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
-        "Um Missbrauch zu vermeiden, bestätigen Sie bitte, dass Sie ein Mensch sind. Bitte schließen Sie diesen Tab nicht, bis Ihr Konto verifiziert wurde."
+        "Da biste spriječili zlouporabu, potvrdite da ste čovjek. Nemojte zatvoriti ovu karticu dok ne potvrdite račun."
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
-        "Ihre Zahlungsinformationen sind durch TLS‐Verschlüsselung und Schweizer Gesetzen geschützt"
+        "Vaši podaci o plaćanju zaštićeni su TLS enkripcijom i švicarskim zakonima"
       ],
       "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
-        "Ihr Konto wurde erfolgreich erstellt. Klicken Sie auf „Schließen“, um zurück zur App zu wechseln."
+        "Vaš je račun uspješno stvoren. Pritisnite dugme \"Zatvori\" da biste se vratili natrag u aplikaciju."
       ],
       "Creating your account": [
-        "Konto wird erstellt"
+        "Izrada vašeg računa"
       ]
     },
     "Action": {
       "Clear": [
-        "Leeren"
+        "Očisti"
       ],
       "Add screenshot(s)": [
-        "Bildschirmfoto(s) hinzufügen"
+        "Dodaj snimku(e) zaslona"
       ],
       "Submit": [
-        "Absenden"
+        "Pošalji"
       ],
       "Hide info": [
-        "Info ausblenden"
+        "Sakrij informacije"
       ],
       "Show info": [
-        "Info anzeigen"
+        "Prikaži informacije"
       ],
       "Copy email to clipboard": [
-        "E-Mail-Adresse in Zwischenablage kopieren"
+        "Kopiraj adresu e-pošte u međuspremnik"
       ],
       "${ BRAND_NAME } introduction": [
-        "Einführung in ${ BRAND_NAME }"
+        "${ BRAND_NAME } predstavljanje"
       ],
       "Chat with us": [
-        "Chatten Sie mit uns"
+        ""
       ],
       "I have a question": [
-        "Ich habe eine Frage"
+        "Imam pitanje"
       ],
       "Request a feature": [
-        "Eine Funktion vorschlagen"
+        "Zatraži značajku"
       ],
       "Report a problem": [
-        "Ein Problem melden"
+        "Prijavi problem"
       ],
       "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } - Shop"
+        "${ BRAND_NAME } dućan"
       ],
       "Switch account": [
-        "Konto wechseln"
+        "Promijeni račun"
       ],
       "Sign out": [
-        "Abmelden"
+        "Odjava"
       ],
       "Get started": [
-        "Erste Schritte"
+        "Započnite"
       ],
       "Next": [
-        "Weiter"
+        "Sljedeće"
       ],
       "Start setup": [
-        "Einrichtung starten"
+        "Započni postavljanje"
       ],
       "Skip": [
-        "Überspringen"
+        "Preskoči"
       ],
       "Done": [
-        "Fertig"
+        "Gotovo"
       ],
       "Back": [
-        "Zurück"
+        "Natrag"
       ],
       "Use ${ label } theme": [
-        "Farbschema „${ label }” verwenden"
+        "Koristi ${ label } temu"
       ],
       "Signing out": [
-        "Abmelden …"
+        "Odjavljivanje"
       ],
       "Close": [
-        "Schließen"
+        "Zatvori"
       ],
       "refresh the page": [
-        "aktualisieren Sie die Seite"
+        "osvježi stranicu"
       ],
       "Remove bonuses": [
-        "Prämien entfernen"
+        "Ukloni bonuse"
       ],
       "Select plan": [
-        "Paket auswählen"
+        "Odaberi plan"
       ],
       "Compare all features": [
-        "Alle Funktionen im Vergleich"
+        "Usporedi sve značajke"
       ],
       "${ boldSave } by switching to annual billing": [
-        "${ boldSave } durch den Wechsel zur jährlichen Zahlweise"
+        "${ boldSave } prebacivanjem na godišnju naplatu"
       ],
       "Continue": [
-        "Weiter"
+        "Nastavi"
       ],
       "Confirm": [
-        "Bestätigen"
+        "Potvrdi"
       ],
       "Pay": [
-        "Zahlen"
+        "Plati"
       ],
       "Apply": [
-        "Übernehmen"
+        "Primijeni"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
+        "Otvori ${ CALENDAR_APP_NAME } postavke"
       ],
       "OK": [
-        "OK"
+        "U redu"
       ],
       "Upgrade to Plus": [
-        "Zu Plus wechseln"
+        "Nadogradite na Plus plan"
       ],
       "Upgrade to Professional": [
-        "Zu Professional wechseln"
+        "Nadogradite na Professional plan"
       ],
       "Activate": [
-        "Aktivieren"
+        "Aktiviraj"
       ],
       "Customize subscription": [
-        "Abonnement anpassen"
+        "Prilagodite pretplatu"
       ],
       "Cancel subscription": [
-        "Abonnement kündigen"
+        "Otkaži pretplatu"
       ],
       "Remove gift code": [
-        "Geschenkgutschein entfernen"
+        "Ukloni darovni kôd"
       ],
       "annual billing": [
-        "jährlicher Zahlweise"
+        "godišnja naplata"
       ],
       "Compare plans": [
-        "Pakete vergleichen"
+        "Usporedi planove"
       ],
       "Decrease": [
-        "Verkleinern"
+        "Smanji"
       ],
       "Increase": [
-        "Vergrößern"
+        "Povećaj"
       ],
       "Downgrade": [
-        "Zurückstufen"
+        "Snizi status"
       ],
       "Top up": [
-        "Aufladen"
+        "Nadopuni"
       ],
       "Add credits": [
-        "Guthaben hinzufügen"
+        "Dodaj kredit"
       ],
       "Save": [
-        "Speichern"
+        "Spremi"
       ],
       "Cancel": [
-        "Abbrechen"
+        "Poništi"
       ],
       "Add PayPal payment method": [
-        "PayPal als Zahlungsmethode hinzufügen"
+        "Dodaj PayPal način plaćanja"
       ],
       "Retry": [
-        "Wiederholen"
+        "Pokušaj ponovno"
       ],
       "Loading verification": [
-        "Überprüfung wird geladen"
+        "Učitavanje potvrde"
       ],
       "Try again": [
-        "Erneut versuchen"
+        "Pokušaj ponovno"
       ],
       "Verify": [
-        "Verifizieren"
+        "Potvrdi"
       ],
       "Use a different card": [
-        "Verwenden Sie eine andere Karte"
+        "Upotrijebite neku drugu karticu"
       ],
       "Use a different payment method": [
-        "Eine andere Zahlungsmethode verwenden"
+        "Koristite drugi način plaćanja"
       ],
       "enable desktop notifications": [
-        "Desktop-Benachrichtigungen zu aktivieren"
+        "omogući obavijesti radne površine"
       ],
       "here": [
-        "hier"
+        "ovdje"
       ],
       "Refresh the page": [
-        "Seite aktualisieren"
+        "Osvježi stranicu"
       ],
       "Close this banner": [
-        "Diesen Hinweis schließen"
+        "Zatvori natpis"
       ],
       "Change password": [
-        "Passwort ändern"
+        "Promijeni lozinku"
       ],
       "Ok": [
-        "Okay"
+        "U redu"
       ],
       "Download": [
-        "Herunterladen"
+        "Preuzmi"
       ],
       "Yes": [
-        "Ja"
+        "Da"
       ],
       "Change mailbox password": [
-        "Postfach-Passwort ändern"
+        "Promijeni lozinku sandučića e-pošte"
       ],
       "Delete": [
-        "Löschen"
+        "Izbriši"
       ],
       "Delete your account": [
-        "Konto löschen"
+        "Izbrišite svoj račun"
       ],
       "Hide": [
-        "Ausblenden"
+        "Sakrij"
       ],
       "Show": [
-        "Anzeigen"
+        "Prikaži"
       ],
       "Reset credentials": [
-        "Anmeldedaten zurücksetzen"
+        "Poništi vjerodajnice"
       ],
       "Upgrade": [
-        "Umsteigen"
+        "Nadogradnja"
       ],
       "Copy": [
-        "Kopieren"
+        "Kopiraj"
       ],
       "Download all configurations": [
-        "Alle Konfigurationen herunterladen"
+        "Preuzmite sve konfiguracije"
       ],
       "Get ProtonVPN Plus": [
-        "Holen Sie sich ProtonVPN Plus"
+        "Nabavite ProtonVPN Plus"
       ],
       "Update": [
-        "Aktualisieren"
+        "Ažuriraj"
       ],
       "Create new recovery phrase": [
-        "Neue Wiederherstellungsphrase erstellen"
+        ""
       ],
       "Copy to clipboard": [
-        "In Zwischenablage kopieren"
+        ""
       ],
       "Create new recovery phrase?": [
-        "Neue Wiederherstellungsphrase erstellen?"
+        ""
       ],
       "Enter password to continue": [
-        "Passwort eingeben, um fortzufahren"
+        ""
       ],
       "Disable recovery phrase?": [
-        "Wiederherstellungsphrase deaktivieren?"
+        ""
       ],
       "Disable recovery phrase": [
-        "Wiederherstellungsphrase deaktivieren"
+        ""
       ],
       "Edit": [
-        "Bearbeiten"
+        "Uredi"
       ],
       "Mark as default": [
-        "Als Standard festlegen"
+        "Postavi kao zadano"
       ],
       "Add credit / debit card": [
-        "Kredit‐/Debitkarte hinzufügen"
+        "Dodaj kreditnu/debitnu karticu"
       ],
       "Add PayPal": [
-        "PayPal hinzufügen"
+        "Dodaj PayPal"
       ],
       "View": [
-        "Ansicht"
+        "Pregled"
       ],
       "User": [
-        "Benutzer"
+        "Korisnik"
       ],
       "Organization": [
-        "Organisation"
+        "Organizacija"
       ],
       "Customize": [
-        "Anpassen"
+        "Prilagodi"
       ],
       "Details": [
-        "Details"
+        "Pojedinosti"
       ],
       "Share via link": [
-        "Als Link teilen"
+        "Podijeli putem poveznice"
       ],
       "Sharing options": [
-        "Freigabeoptionen"
+        "Opcije dijeljenja"
       ],
       "Zoom out": [
-        "Verkleinern"
+        "Smanji"
       ],
       "Reset zoom": [
-        "Vergrößerung zurücksetzen"
+        "Poništi zumiranje"
       ],
       "Zoom in": [
-        "Vergrößern"
+        "Povećaj"
       ],
       "Previous": [
-        "Zurück"
+        "Prethodno"
       ],
       "Log in": [
-        "Anmelden"
+        "Prijavite se"
       ],
       "View invoice": [
-        "Rechnung anzeigen"
+        "Prikaži fakturu"
       ],
       "Get verification code": [
-        "Bestätigungscode abrufen"
+        "Nabavi kôd za provjeru"
       ],
       "Try another method": [
-        "Eine weitere Methode verwenden"
+        "Isprobajte drugu metodu"
       ],
       "Request new code": [
-        "Neuen Code anfordern"
+        "Zatraži novi kôd"
       ],
       "Did not receive the code?": [
-        "Code nicht erhalten?"
+        "Niste primili kôd?"
       ],
       "Edit email address": [
-        "E-Mail-Adresse bearbeiten"
+        "Uredi adresu e-pošte"
       ],
       "Edit phone number": [
-        "Rufnummer bearbeiten"
+        "Uredi broj telefona"
       ],
       "Email me my username(s)": [
-        "Meine(n) Benutzernamen per E-Mail zusenden"
+        "Pošalji mi e-poruku s mojim korisničkim imenom(ima)"
       ],
       "Get a new password": [
-        "Neues Passwort abrufen"
+        "Generirajte novu lozinku"
       ],
       "Reset password": [
-        "Passwort zurücksetzen"
+        "Ponovno postavljanje lozinke"
       ],
       "Reset my password": [
-        "Mein Passwort zurücksetzen"
+        "Resetiraj moju lozinku"
       ],
       "Close navigation": [
-        "Menü schließen"
+        "Zatvori navigaciju"
       ],
       "Open navigation": [
-        "Menü öffnen"
+        "Otvori navigaciju"
       ],
       "More info: ${ safeTitle }": [
-        "Weitere Informationen: ${ safeTitle }"
+        "Više informacija: ${ safeTitle }"
       ],
       "Go to panel ${ index }": [
-        "Seitenleiste ${ index } öffnen"
+        "Idi na ${ index } panel"
       ],
       "Close modal": [
-        "Dialog schließen"
+        "Zatvori skočni prozor"
       ],
       "Report bug": [
-        "Fehler melden"
+        "Prijavi problem"
       ],
       "Activate my coupon": [
-        "Gutschein aktivieren"
+        "Aktiviraj moj kupon"
       ],
       "Hide additional features": [
-        "Zusätzliche Funktionen ausblenden"
+        "Sakrij dodatne značajke"
       ],
       "Select": [
-        "Auswählen"
+        "Odaberi"
       ],
       "Verify code again": [
-        "Code erneut bestätigen"
+        "Ponovno potvrdite kôd"
       ],
       "Verify code": [
-        "Code bestätigen"
+        "Potvrdi kôd"
       ],
       "Create account": [
-        "Konto erstellen"
+        "Stvori račun"
       ],
       "Go to login": [
-        "Weiter zur Anmeldung"
+        "Idi na prijavu"
       ],
       "View full plan comparison": [
-        "Vollständigen Vergleich der Pakete anzeigen"
+        "Pogledajte cjelovitu usporedbu planova"
       ],
       "Send": [
-        "Senden"
+        "Pošalji"
       ],
       "Resend": [
-        "Erneut senden"
+        "Ponovno pošalji"
       ],
       "Use another verification method": [
-        "Eine andere Verifizierungsmethode verwenden"
+        "Koristi drugi način potvrde"
       ],
       "Confirm payment": [
-        "Zahlung bestätigen"
+        "Potvrdite plaćanje"
       ],
       "Pay annually and save 20%": [
-        "Jährliche Zahlweise und 20 % sparen"
+        "Plaćajte godišnje i uštedite 20%"
       ],
       "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "${ upsellPlan.title } für nur ${ totalMonthlyText } ausprobieren"
+        "Isprobajte ${ upsellPlan.title } za samo ${ totalMonthlyText }"
       ],
       "Homepage": [
-        "Homepage"
+        "Početna stranica"
       ]
     },
     "Bug category": {
       "Sign in problem": [
-        "Registrierungsproblem"
+        "Problem s prijavom"
       ],
       "Sign up problem": [
-        "Registrierungsproblem"
+        "Problem s registracijom"
       ],
       "Payments problem": [
-        "Zahlungsproblem"
+        "Problem s naplatom"
       ],
       "Custom domain problem": [
-        "Problem mit eigener Domain"
+        "Problem s prilagođenim domenama"
       ],
       "Bridge problem": [
-        "Problem mit „ProtonMail Bridge”"
+        "Problem s Bridgeom"
       ],
       "Import / export problem": [
-        "Im-/Exportproblem"
+        "Problem s uvozom/izvozom"
       ],
       "Connection problem": [
-        "Verbindungsfehler"
+        "Problem s vezom"
       ],
       "Slow speed problem": [
-        "Problem mit langsamer Geschwindigkeit"
+        "Problem s sporom brzinom"
       ],
       "Calendar problem": [
-        "Kalenderproblem"
+        "Problem s Calendarom"
       ],
       "Contacts problem": [
-        "Probleme mit Kontakten"
+        "Problem s Contactsima"
       ],
       "Drive problem": [
-        "Laufwerksproblem"
+        "Problem s Driveom"
       ],
       "Mail problem": [
-        "E-Mail-Problem"
+        "Problem s e-poštom"
       ],
       "VPN problem": [
-        "VPN‐Problem"
+        "Problem s VPN-om"
       ],
       "Feature request": [
-        "Funktionswünsche"
+        "Predložite novu značajku"
       ],
       "Other": [
-        "Weitere"
+        "Ostalo"
       ],
       "Signup problem": [
-        "Registrierungsproblem"
+        "Problem s registracijom"
       ],
       "Installation problem": [
-        "Installationsproblem"
+        "Problem s instalacijom"
       ],
       "Update problem": [
-        "Aktualisierungsproblem"
+        "Problem s nadogradnjom"
       ],
       "Application problem": [
-        "Anwendungsproblem"
+        "Problem s aplikacijom"
       ],
       "Speed problem": [
-        "Geschwindigkeitsproblem"
+        "Problem s brzinom"
       ],
       "Manual setup problem": [
-        "Problem mit der manuellen Einrichtung"
+        "Problem s ručnim postavljanjem"
       ],
       "Website access problem": [
-        "Zugriffsproblem auf eine Website"
+        "Problem s pristupom web stanici"
       ],
       "Streaming problem": [
-        "Streaming‐Problem"
+        "Problem s streamingom"
       ]
     },
     "Group": {
       "Account": [
-        "Konto"
+        "Korisnički račun"
       ],
       "Apps": [
-        "Apps"
+        "Aplikacije"
       ],
       "Network": [
-        "Netzwerk"
+        "Mreža"
       ],
       "Services": [
-        "Dienste"
+        "Usluge"
       ],
       "Other category": [
-        "Andere Kategorie"
+        "Ostale kategorije"
       ]
     },
     "Action to select a title for the bug report modal": {
       "Select": [
-        "Auswählen"
+        "Odaberi"
       ]
     },
     "Link": {
       "clearing your browser cache": [
-        "Browser-Cache leeren"
+        "čišćenje predmemorije preglednika"
       ],
       "Upgrade": [
-        "Umsteigen"
+        "Nadogradnja"
       ],
       "Go to subscription plans": [
-        "Zu den Abonnement-Angeboten"
+        "Idi na planove pretplate"
       ],
       "Add a gift code": [
-        "Geschenkgutschein hinzufügen"
+        "Dodaj darovni kôd"
       ],
       "click here": [
-        "klicken Sie hier"
+        "kliknite ovdje"
       ],
       "Pay invoice": [
-        "Rechnung bezahlen"
+        "Plati račun"
       ],
       "Upgrade account": [
-        "Konto erweitern"
+        "Nadogradi račun"
       ],
       "Not activated": [
-        "Nicht aktiviert"
+        "Nije aktivirano"
       ],
       "View guide": [
-        "Anleitung anzeigen"
+        "Pregledaj upute"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        "Was ist der Unterschied zwischen den Protokollen UDP und TCP?"
+        "Koja je razlika između UDP i TCP protokola?"
       ],
       "Learn more": [
-        "Mehr erfahren"
+        "Saznajte više"
       ],
       "Request an invite": [
-        "Einladung anfordern"
+        "Zatraži pozivnicu"
       ],
       "Back to login": [
-        "Zurück zur Anmeldung"
+        "Povratak na prijavu"
       ],
       "here": [
-        "hier"
+        "ovdje"
       ],
       "Upgrade now": [
-        "Jetzt umsteigen"
+        "Nadogradi sada"
       ],
       "Sign up for free": [
-        "Kostenlos registrieren"
+        "Prijavite se besplatno"
       ],
       "protonvpn.com": [
         "protonvpn.com"
       ],
       "Don't have an account yet? Sign up for free!": [
-        "Sie haben noch kein Konto? Melden Sie sich kostenlos an!"
+        "Još nemate račun? Prijavite se besplatno!"
       ],
       "Reset password": [
-        "Passwort zurücksetzen"
+        "Ponovno postavljanje lozinke"
       ],
       "Forgot username?": [
-        "Benutzername vergessen?"
+        "Zaboravili ste korisničko ime?"
       ],
       "Common login problems": [
-        "Häufige Anmeldeprobleme"
+        "Najčešći problemi s prijavom"
       ],
       "Contact support": [
-        "Support kontaktieren"
+        "Kontaktiraj podršku"
       ],
       "Terms of Service": [
-        "Nutzungsbedingungen"
+        "Uvjeti korištenja"
       ],
       "Privacy Policy": [
-        "Datenschutzerklärung"
+        "Pravila o privatnosti"
       ],
       "Log in": [
-        "Anmelden"
+        "Prijavite se"
       ],
       "Close": [
-        "Schließen"
+        "Zatvori"
       ]
     },
     "Success": {
       "Bug reported": [
-        "Fehler gemeldet"
+        "Problem je prijavljen"
       ],
       "Email address copied to clipboard": [
-        "E-Mail-Adresse in Zwischenablage kopiert"
+        "Adresa e-pošte je kopirana u međuspremnik"
       ],
       "You have successfully unsubscribed": [
-        "Sie haben erfolgreich das Abonnement gekündigt"
+        "Uspješno ste poništili pretplatu"
       ],
       "Credits added": [
-        "Guthaben hinzugefügt"
+        "Nadodan je kredit"
       ],
       "Gift code applied": [
-        "Gutscheincode eingelöst"
+        "Kôd darovnog kupona je primjenjen"
       ],
       "Payment method updated": [
-        "Zahlungsmethode aktualisiert"
+        "Način plaćanja je ažuriran"
       ],
       "Payment method added": [
-        "Zahlungsmethode hinzugefügt"
+        "Način plaćanja dodan"
       ],
       "Password updated": [
-        "Passwort aktualisiert"
+        "Lozinka je ažurirana"
       ],
       "Account deleted. Logging out...": [
-        "Konto gelöscht. Sie werden abgemeldet …"
+        "Račun je izbrisan. Odjava..."
       ],
       "Locale updated": [
-        "Sprachdatei aktualisiert"
+        "Lokalizacija je ažurirana"
       ],
       "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } in die Zwischenablage kopiert"
+        "${ server.Domain } kopirano u vaš međuspremnik"
       ],
       "Email updated": [
-        "E‐Mail‐Adresse aktualisiert"
+        "Ažurirana je adresa"
       ],
       "Phone number updated": [
-        "Rufnummer aktualisiert"
+        "Broj telefona je ažuriran"
       ],
       "Payment method deleted": [
-        "Zahlungsmethode gelöscht"
+        "Način plaćanja je izbrisan"
       ],
       "Invoice paid": [
-        "Rechnung bezahlt"
+        "Plaćen račun"
       ],
       "Invoice customized": [
-        "Rechnung angepasst"
+        "Prilagođena je faktura"
       ],
       "Code sent to ${ methodTo }": [
-        "Schlüssel gesendet an ${ methodTo }"
+        "Kôd je poslan na ${ methodTo }"
       ],
       "Verification successful": [
-        "Erfolgreich bestätigt"
+        "Uspješna provjera"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Benachrichtigungs-E-Mail-Adresse eingegeben haben, senden wir Ihnen in Kürze eine Nachricht mit Ihren Benutzernamen."
+        "Ako ste unijeli važeću adresu e-pošte za obavijesti, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
       ]
     },
     "Label": {
       "Operating system": [
-        "Betriebssystem"
+        "Operativni sustav"
       ],
       "Operating system version": [
-        "Version des Betriebssystems"
+        "Verzija operativnog sustava"
       ],
       "Proton username": [
-        "Proton‐Benutzername"
+        "Proton korisničko ime"
       ],
       "Email address": [
-        "E‐Mail‐Adresse"
+        "Adresa e-pošte"
       ],
       "Category": [
-        "Kategorie"
+        "Kategorija"
       ],
       "What happened?": [
-        "Problembeschreibung"
+        "Što se dogodilo?"
       ],
       "System information": [
-        "Systeminformationen"
+        "Informacije o sustavu"
       ],
       "Browser": [
-        "Browser"
+        "Preglednik"
       ],
       "Browser version": [
-        "Version des Browsers"
+        "Verzija preglednika"
       ],
       "Display name": [
-        "Name anzeigen"
+        "Zaslonski naziv"
       ],
       "Total (${ countdown })": [
-        "Gesamt (${ countdown })"
+        "Ukupno (${ countdown })"
       ],
       "Total": [
-        "Summe"
+        "Ukupno"
       ],
       "Proration": [
-        "Anteilige Anrechnung"
+        "Proration"
       ],
       "${ n } VPN connection available": [
-        "${ n } VPN-Verbindung verfügbar",
-        "${ n } VPN-Verbindungen verfügbar"
+        "${ n } VPN veza dostupna",
+        "${ n } VPN veze dostupne",
+        "${ n } VPN veza dostupno"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers }/${ MaxMembers } Nutzer",
-        "${ UsedMembers }/${ MaxMembers } Nutzern"
+        "",
+        "",
+        ""
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adresse",
-        "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adressen"
+        "",
+        "",
+        ""
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains }/${ MaxDomains } eigenen Domain",
-        "${ UsedDomains }/${ MaxDomains } eigene Domains"
+        "",
+        "",
+        ""
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "${ humanUsedSpace }/${ humanMaxSpace } wird verwendet"
+        ""
       ],
       "What is the main reason you are cancelling?": [
-        "Was ist der Hauptgrund für Ihre Kündigung?"
+        "Koji je glavni razlog zbog kojeg otkazujete?"
       ],
       "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Wie wahrscheinlich ist es, dass Sie ${ BRAND_NAME } weiterempfehlen?"
+        "Kolika je vjerojatnost da će te preporučiti ${ BRAND_NAME } drugima?"
       ],
       "0 - Not at all likely": [
-        "0 - Unwahrscheinlich"
+        "0 - Nimalo vjerojatno"
       ],
       "10 - Extremely likely": [
-        "10 - Sehr wahrscheinlich"
+        "10 - Vrlo vjerojatno"
       ],
       "How do you think we could improve our products or service in the future?": [
-        "Wie können wir Ihrer Meinung nach unsere Produkte oder unsere Dienste in Zukunft verbessern?"
+        "Što mislite kako bismo mogli poboljšati svoje proizvode ili usluge u budućnosti?"
       ],
       "extra storage": [
-        "Zusätzlicher Speicherplatz"
+        "dodatni prostor za pohranu"
       ],
       "bonus storage": [
-        "Zusätzlicher Speicherplatz"
+        "bonus prostor za pohranu"
       ],
       "Subtotal": [
-        "Zwischensumme"
+        "Suma stavki"
       ],
       "Discount": [
-        "Rabatt"
+        "Popust"
       ],
       "Other amount": [
-        "Anderer Betrag"
+        "Ostali iznos"
       ],
       "Amount": [
-        "Betrag"
+        "Iznos"
       ],
       "Gift code": [
-        "Gutscheincode"
+        "Darovni kôd"
       ],
       "Name on card": [
-        "Karteninhaber"
+        "Ime na kartici"
       ],
       "Card number": [
-        "Kartennummer"
+        "Broj kreditne kartice"
       ],
       "Expiry date": [
-        "Gültig bis"
+        "Datum isteka"
       ],
       "CVV code": [
-        "CVV-Code"
+        "CVV kôd"
       ],
       "Country": [
-        "Land"
+        "Država"
       ],
       "Select your country": [
-        "Ihr Land auswählen"
+        "Odaberite vašu državu"
       ],
       "ZIP": [
-        "PLZ"
+        "Poštanski broj"
       ],
       "Postal code": [
-        "Postleitzahl"
+        "Poštanski broj"
       ],
       "BTC amount:": [
-        "Betrag in Bitcoin:"
+        "BTC iznos:"
       ],
       "BTC address:": [
-        "Bitcoin‐Adresse:"
+        "BTC adresa:"
       ],
       "Select a method": [
-        "Methode wählen"
+        "Odaberite način plaćanja"
       ],
       "Name": [
-        "Name"
+        "Naziv"
       ],
       "ProtonMail address": [
-        "ProtonMail‐Adresse"
+        "ProtonMail adresa"
       ],
       "Your password (admin)": [
-        "Ihr Passwort (Admin)"
+        "Vaša lozinka (administrator)"
       ],
       "User's new password": [
-        "Neues Passwort des Benutzers"
+        "Nova lozinka za korisnika"
       ],
       "Confirm new password": [
-        "Neues Passwort bestätigen"
+        "Potvrdi novu lozinku"
       ],
       "Old password": [
-        "Altes Passwort"
+        "Stara lozinka"
       ],
       "New password": [
-        "Neues Passwort"
+        "Nova lozinka"
       ],
       "Confirm password": [
-        "Passwort bestätigen"
+        "Potvrdi lozinku"
       ],
       "Old login password": [
-        "Altes Anmeldepasswort"
+        "Stara lozinka za prijavu"
       ],
       "New login password": [
-        "Neues Anmeldepasswort"
+        "Nova lozinka za prijavu"
       ],
       "Confirm login password": [
-        "Anmeldepasswort bestätigen"
+        "Potvrdi lozinku za prijavu"
       ],
       "New mailbox password": [
-        "Neues Postfach-Passwort"
+        "Nova lozinka sandučića e-pošte"
       ],
       "Confirm mailbox password": [
-        "Postfach-Passwort bestätigen"
+        "Potvrdi lozinku za sandučić e-pošte"
       ],
       "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungsschlüssel"
+        "Kôd dvofaktorske autentikacije"
       ],
       "Key": [
-        "Schlüssel"
+        "Ključ"
       ],
       "Interval": [
-        "Zeitraum"
+        "Interval"
       ],
       "Digits": [
-        "Ziffern"
+        "Znamenke"
       ],
       "Two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung"
+        "Dvofaktorska autentikacija"
       ],
       "Two-password mode": [
-        "Zwei-Passwort-Modus"
+        "Način rada s dvije lozinke"
       ],
       "Mailbox password": [
-        "Mailbox‐Passwort"
+        "Lozinka sandučića e-pošte"
       ],
       "What is the main reason you are deleting your account?": [
-        "Welches sind die Hauptgründe für die Löschung Ihres Kontos?"
+        "Koji je glavni razlog brisanja računa?"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Wir bedauern es sehr, dass Sie ProtonMail nicht mehr nutzen möchten. Bitte teilen Sie uns Ihre Gründe mit, damit wir uns verbessern können."
+        "Žao nam je što odlazite. Molimo vas da objasnite zašto odlazite kako bi nam pomogli da se poboljšamo."
       ],
       "Login password": [
-        "Anmeldepasswort"
+        "Lozinka za prijavu"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
-        "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
+        "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
       ],
       "Default language": [
-        "Standardsprache"
+        "Zadani jezik"
       ],
       "Password": [
-        "Passwort"
+        "Lozinka"
       ],
       "Cancel": [
-        "Abbrechen"
+        "Poništi"
       ],
       "Submit": [
-        "Absenden"
+        "Pošalji"
       ],
       "OpenVPN / IKEv2 username": [
-        "OpenVPN‐/IKEv2‐Benutzername"
+        "OpenVPN / IKEv2 korisničko ime"
       ],
       "OpenVPN / IKEv2 password": [
-        "OpenVPN‐/IKEv2‐Passwort"
+        "OpenVPN / IKEv2 lozinka"
       ],
       "Allow recovery by email": [
-        "Wiederherstellung per E-Mail zulassen"
+        "Omogući oporavak putem adrese e-pošte"
       ],
       "Daily email notifications": [
-        "Tägliche E‐Mail‐Benachrichtigungen"
+        "Dnevne obavijesti e-pošte"
       ],
       "Allow recovery by phone": [
-        "Wiederherstellung per Telefon zulassen"
+        "Omogući oporavak putem broja telefona"
       ],
       "Allow recovery by recovery phrase": [
-        "Wiederherstellung durch Wiederherstellungsphrase zulassen"
+        ""
       ],
       "Recovery phrase": [
-        "Wiederherstellungsphrase"
+        ""
       ],
       "Your recovery phrase": [
-        "Ihre Wiederherstellungsphrase"
+        ""
       ],
       "Cash": [
-        "Barzahlung"
+        "Gotovina"
       ],
       "Card holder": [
-        "Karteninhaber"
+        "Vlasnik kartice"
       ],
       "Expires": [
-        "Gültig bis"
+        "Ističe"
       ],
       "Payer": [
-        "Zahlungspflichtiger"
+        "Platitelj"
       ],
       "Credits used": [
-        "Guthaben verwendet"
+        "Iskorišteni kredit"
       ],
       "Amount due": [
-        "Fälliger Betrag"
+        "Dospjeli iznos"
       ],
       "Customize invoices": [
-        "Rechnungen anpassen"
+        "Prilagodite fakture"
       ],
       "Username or ProtonMail address": [
-        "Benutzername oder ProtonMail-E-Mail-Adresse"
+        "Korisničko ime ili ProtonMail adresa"
       ],
       "Phone number": [
-        "Rufnummer"
+        "Broj telefona"
       ],
       "Verification code": [
-        "Verifizierungscode"
+        "Kôd za provjeru"
       ],
       "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
+        "Unesite 6-znamenkasti kôd"
       ],
       "Username": [
-        "Benutzername"
+        "Korisničko ime"
       ],
       "Email": [
-        "E‐Mail"
+        "E-pošta"
       ],
       "Token": [
         "Token"
       ],
       "Danger": [
-        "Achtung"
+        "Opasnost"
       ],
       "Copy": [
-        "Kopieren"
+        "Kopiraj"
       ],
       "Reveal password": [
-        "Passwort anzeigen"
+        "Prikaži lozinku"
       ],
       "Hide password": [
-        "Passwort ausblenden"
+        "Sakrij lozinku"
       ],
       "Back to:": [
-        "Zurück zu:"
+        "Natrag na:"
       ],
       "Enter the code displayed on your TV": [
-        "Geben Sie den auf Ihrem Fernseher angezeigten Code ein"
+        "Unesite kôd prikazan na vašem televizoru"
       ],
       "Verification method": [
-        "Verifizierungsmethode"
+        "Metoda provjere valjanosti"
       ],
       "6-digit code": [
-        "6‐stelliger Code"
+        "6-znamenkasti kôd"
       ],
       "1 month": [
-        "1 Monat"
+        "1 mjesec"
       ],
       "Total price": [
-        "Gesamtbetrag"
+        "Ukupna cijena"
       ],
       "12 months": [
-        "12 Monate"
+        "12 mjeseci"
       ],
       "Annual discount (${ discountPercentage }%)": [
-        "Jahresrabatt (${ discountPercentage } %)"
+        "Godišnji popust (${ discountPercentage }%)"
       ],
       "Total price (annually)": [
-        "Gesamtpreis (jährlich)"
+        "Ukupna cijena (godišnje)"
       ],
       "24 months": [
-        "24 Monate"
+        "24 mjeseca"
       ],
       "Two-year discount (${ discountPercentage }%)": [
-        "Zweijahresrabatt (${ discountPercentage } %)"
+        "Dvogodišnji popust (${ discountPercentage }%)"
       ],
       "Total price (two-year)": [
-        "Gesamtpreis (zweijählich)"
+        "Ukupna cijena (dvogodišnje)"
       ]
     },
     "Placeholder": {
       "OS name": [
-        "Betriebssystem"
+        "Naziv OS-a"
       ],
       "OS version": [
-        "Version des Betriebssystem"
+        "Verzija OS-a"
       ],
       "Proton username": [
-        "Proton‐Benutzername"
+        "Proton korisničko ime"
       ],
       "A way to contact you": [
-        "Eine Möglichkeit, wie wir Sie kontaktieren können"
+        "Način kako da vas kontaktiramo"
       ],
       "Please describe the problem and include any error messages": [
-        "Bitte beschreiben Sie das Problem und fügen Sie alle Fehlermeldungen hinzu"
+        "Molimo opišite problem i pridružite sve poruke o pogreškama"
       ],
       "Browser name": [
-        "Browser"
+        "Naziv preglednika"
       ],
       "Browser version": [
-        "Version des Browsers"
+        "Verzija preglednika"
       ],
       "e.g. Julia Smith": [
-        "z.B. Hans Mustermann"
+        "npr. Ana Horvat"
       ],
       "Gift code": [
-        "Gutscheincode"
+        "Darovni kôd"
       ],
       "Feedback": [
-        "Feedback"
+        "Povratne informacije"
       ],
       "Other": [
-        "Andere"
+        "Ostalo"
       ],
       "Add gift code": [
-        "Geschenkgutschein hinzufügen"
+        "Dodaj darovni kôd"
       ],
       "ZIP": [
-        "PLZ"
+        "Poštanski broj"
       ],
       "Postal code": [
-        "Postleitzahl"
+        "Poštanski broj"
       ],
       "Password": [
-        "Passwort"
+        "Lozinka"
       ],
       "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungsschlüssel"
+        "Kôd dvofaktorske autentikacije"
       ],
       "Confirm": [
-        "Bestätigen"
+        "Potvrdi"
       ],
       "Email address": [
-        "E‐Mail‐Adresse"
+        "Adresa e-pošte"
       ],
       "Mailbox password": [
-        "Mailbox‐Passwort"
+        "Lozinka sandučića e-pošte"
       ],
       "Email": [
-        "E‐Mail‐Adresse"
+        "E-pošta"
       ],
       "Username": [
-        "Benutzername"
+        "Korisničko ime"
       ],
       "Recovery email": [
-        "Wiederherstellungs‐E‐Mail‐Adresse"
+        "Adresa e-pošte za oporavak"
       ],
       "Reset code": [
-        "Zurücksetzungscode"
+        "Ponovo postavljanje kôda"
       ],
       "Enter the word '${ dangerWord }' here": [
-        "Geben Sie hier das Wort „${ dangerWord }” ein"
+        "Unesite riječ '${ dangerWord }' ovdje"
       ],
       "Choose a new password": [
-        "Neues Passwort wählen"
+        "Odaberite novu lozinku"
       ],
       "Enter coupon code": [
-        "Gutscheincode eingeben"
+        "Unesite kôd kupona"
       ],
       "Confirm password": [
-        "Passwort bestätigen"
+        "Potvrdi lozinku"
       ]
     },
     "Title": {
       "Report a problem": [
-        "Ein Problem melden"
+        "Prijavi problem"
       ],
       "Open help menu": [
-        "Menü Hilfe öffnen"
+        "Otvori izbornik pomoći"
       ],
       "Back": [
-        "Zurück"
+        "Natrag"
       ],
       "Confirm loss of Proton bonuses": [
-        "Bestätigen Sie den Verzicht auf Proton-Prämien"
+        "Potvrdite gubitak Proton bonusa"
       ],
       "Current plan": [
-        "Aktuelles Paket"
+        "Trenutni plan"
       ],
       "Processing": [
-        "Wird verarbeitet"
+        "Obrada"
       ],
       "Apply gift code": [
-        "Geschenkgutschein anwenden"
+        "Primijeni darovni kôd"
       ],
       "Subtotal": [
-        "Zwischensumme"
+        "Suma stavki"
       ],
       "Coupon discount": [
-        "Gutscheinrabatt"
+        "Kupon s popustom"
       ],
       "Total (monthly)": [
-        "Gesamt (monatlich)"
+        "Ukupno (mjesečno)"
       ],
       "Credits": [
-        "Guthaben"
+        "Krediti"
       ],
       "Gift code": [
-        "Gutscheincode"
+        "Darovni kôd"
       ],
       "Amount due": [
-        "Fälliger Betrag"
+        "Dospjeli iznos"
       ],
       "Cancel subscription": [
-        "Abonnement kündigen"
+        "Otkaži pretplatu"
       ],
       "Network error": [
-        "Netzwerkfehler"
+        "Pogreška mreže"
       ],
       "Select a plan": [
-        "Abonnement auswählen"
+        "Odaberite plan"
       ],
       "Customize your plan": [
-        "Paket anpassen"
+        "Prilagodite vaš plan"
       ],
       "Checkout": [
-        "Zur Kasse"
+        "Na naplatu"
       ],
       "Plan summary": [
-        "Tarifzusammenfassung"
+        "Sažetak plana"
       ],
       "${ appName } customization": [
-        "${ appName } anpassen"
+        "${ appName } prilagođavanje"
       ],
       "Confirm downgrade": [
-        "Zurückstufen bestätigen"
+        "Potvrdi snižavanje statusa"
       ],
       "Add credits": [
-        "Guthaben hinzufügen"
+        "Dodaj kredit"
       ],
       "Edit credit/debit card": [
-        "Kredit-/Debitkarte bearbeiten"
+        "Uredi kreditnu/debitnu karticu"
       ],
       "Add credit/debit card": [
-        "Kredit-/Debitkarte hinzufügen"
+        "Dodaj kreditnu/debitnu karticu"
       ],
       "Add PayPal payment method": [
-        "PayPal als Zahlungsmethode hinzufügen"
+        "Dodaj PayPal način plaćanja"
       ],
       "ZIP / postal code": [
-        "Postleitzahl"
+        "Poštanski broj"
       ],
       "Currency": [
-        "Währung"
+        "Valuta"
       ],
       "Billing cycle": [
-        "Abrechnungszeitraum"
+        "Ciklus naplate"
       ],
       "Payment details": [
-        "Zahlungsdetails"
+        "Detalji o plaćanju"
       ],
       "Unsupported browser": [
-        "Nicht unterstützter Browser"
+        "Preglednik nije podržan"
       ],
       "Card verification": [
-        "Kartenprüfung"
+        "Potvrda kartice"
       ],
       "Payment verification": [
-        "Zahlungsbestätigung"
+        "Potvrda plaćanja"
       ],
       "Processing...": [
-        "Wird verarbeitet …"
+        "Obrada..."
       ],
       "Card verification in progress": [
-        "Kartenprüfung wird ausgeführt"
+        "Potvrda kartice u tijeku"
       ],
       "Payment verification in progress": [
-        "Zahlungsbestätigung wird ausgeführt"
+        "U tijeku je provjera plaćanja"
       ],
       "PayPal verification failed": [
-        "PayPal-Verifizierung fehlgeschlagen"
+        "Neuspjela PayPal potvrda"
       ],
       "3-D Secure verification failed": [
-        "3-D-Secure-Überprüfung fehlgeschlagen"
+        "3-D Secure potvrda nije uspjela"
       ],
       "Error": [
-        "Fehler"
+        "Pogreška"
       ],
       "Change password for ${ Name } (${ Email })": [
-        "Passwort für ${ Name } (${ Email }) ändern"
+        "Promijeni lozinku za ${ Name } (${ Email })"
       ],
       "Change password": [
-        "Passwort ändern"
+        "Promjena lozinke"
       ],
       "Change login password": [
-        "Anmeldepasswort ändern"
+        "Promijeni lozinku za prijavu"
       ],
       "Switch to two-password mode": [
-        "Wechseln zum Zwei-Passwörter-Modus"
+        "Prijeđite na način rada s dvije lozinke"
       ],
       "Switch to one-password mode": [
-        "Wechseln zum Ein-Passwort-Modus"
+        "Prijeđite na način rada s jednom lozinkom"
       ],
       "Change mailbox password": [
-        "Postfach-Passwort ändern"
+        "Promijeni lozinku sandučića e-pošte"
       ],
       "Set up two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung einrichten"
+        "Postavite dvofaktorsku autentikaciju"
       ],
       "Disable two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung deaktivieren"
+        "Onemogući dvofaktorsku autentikaciju"
       ],
       "Password": [
-        "Passwort"
+        "Lozinka"
       ],
       "Login password": [
-        "Anmeldepasswort"
+        "Lozinka za prijavu"
       ],
       "Delete account": [
-        "Konto löschen"
+        "Brisanje računa"
       ],
       "Sign in again to continue": [
-        "Melden Sie sich erneut an, um fortzufahren"
+        "Ponovno se prijavite da biste nastavili"
       ],
       "Open actions dropdown": [
-        "Auswahlliste „Aktionen” öffnen"
+        "Otvorite padajući izbornik radnji"
       ],
       "1. Select platform": [
-        "1.) Plattform auswählen"
+        "1. Odaberite platformu"
       ],
       "2. Select protocol": [
-        "2.) Protokoll auswählen"
+        "2. Odaberite protokol"
       ],
       "3. Select config file and download": [
-        "3.) Konfigurationsdatei auswählen und herunterladen"
+        "3. Odaberite konfiguracijsku datoteku i preuzmite"
       ],
       "Get ProtonVPN Plus to access all servers": [
-        "Holen Sie sich ProtonVPN Plus, um Zugriff auf alle Server zu erhalten"
+        "Nabavite ProtonVPN Plus za pristup svim poslužiteljima"
       ],
       "Confirm address": [
-        "Adresse bestätigen"
+        "Potvrdite adresu e-pošte"
       ],
       "Confirm phone number": [
-        "Rufnummer bestätigen"
+        "Potvrdite broj telefona"
       ],
       "Pay invoice": [
-        "Rechnung zahlen"
+        "Plati račun"
       ],
       "Add invoice details": [
-        "Rechnungsdetails hinzufügen"
+        "Dodajte detalje o fakturi"
       ],
       "Amount": [
-        "Betrag"
+        "Iznos"
       ],
       "Type": [
-        "Typ"
+        "Vrsta"
       ],
       "Status": [
         "Status"
@@ -2101,357 +2109,357 @@
         "Datum"
       ],
       "Action": [
-        "Aktion"
+        "Radnja"
       ],
       "Account suspended": [
-        "Konto gesperrt"
+        "Račun je suspendiran"
       ],
       "Enter your username or ProtonMail email address": [
-        "Benutzernamen oder Ihre ProtonMail-E-Mail-Adresse eingeben"
+        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
       ],
       "Enter your password": [
-        "Passwort eingeben"
+        "Unesite vašu lozinku"
       ],
       "Invalid verification code": [
-        "Ungültiger Bestätigungsschlüssel"
+        "Nevažeći kôd za provjeru"
       ],
       "Request new code": [
-        "Neuen Code anfordern"
+        "Zatraži novi kôd"
       ],
       "Human verification": [
-        "Menschliche Überprüfung"
+        "Ljudska provjera"
       ],
       "Confirm reset password": [
-        "Passwortzurücksetzung bestätigen"
+        "Potvrdi lozinku za ponovno postavljanje"
       ],
       "Previous": [
-        "Zurück"
+        "Prethodno"
       ],
       "Open pagination": [
-        "Seitennummerierung öffnen"
+        "Otvori paginaciju"
       ],
       "Next": [
-        "Weiter"
+        "Sljedeće"
       ],
       "What's new": [
-        "Neue Funktionen"
+        "Što je novo"
       ],
       "Upgrade": [
-        "Upgrade benötigt"
+        "Nadogradnja"
       ],
       "My subscription": [
-        "Mein Abonnement"
+        "Moja pretplata"
       ],
       "Dashboard": [
-        "Übersicht"
+        "Upravljačka ploča"
       ],
       "Plans": [
-        "Abonnements"
+        "Planovi"
       ],
       "Your current plan": [
-        "Ihr aktuelles Abonnement"
+        "Vaš trenutni plan"
       ],
       "Your plan": [
-        "Ihr Abonnement"
+        "Vaš plan"
       ],
       "Billing": [
-        "Abrechnung"
+        "Naplata"
       ],
       "Gift Code": [
-        "Geschenkgutschein"
+        "Darovni kȏd"
       ],
       "General": [
-        "Allgemein"
+        "Općenito"
       ],
       "Language": [
-        "Sprache"
+        "Jezik"
       ],
       "Account": [
-        "Konto"
+        "Korisnički račun"
       ],
       "Username": [
-        "Benutzername"
+        "Korisničko ime"
       ],
       "Passwords": [
-        "Passwörter"
+        "Lozinke"
       ],
       "OpenVPN / IKEv2 username": [
-        "OpenVPN‐/IKEv2‐Benutzername"
+        "OpenVPN / IKEv2 korisničko ime"
       ],
       "Recovery & notification": [
-        "Wiederherstellung und Benachrichtigungen"
+        "Oporavak i obavijesti"
       ],
       "Email subscriptions": [
-        "E‐Mail‐Abonnements"
+        "Pretplate e-pošte"
       ],
       "Delete": [
-        "Löschen"
+        "Izbriši"
       ],
       "Downloads": [
-        "Downloads"
+        "Preuzimanja"
       ],
       "ProtonVPN clients": [
-        "ProtonVPN-Clients"
+        "ProtonVPN klijenti"
       ],
       "OpenVPN configuration files": [
-        "OpenVPN-Konfigurationsdateien"
+        "OpenVPN konfiguracijske datoteke"
       ],
       "Payments": [
-        "Zahlungen"
+        "Plaćanja"
       ],
       "Payment methods": [
-        "Zahlungsmethoden"
+        "Načini plaćanja"
       ],
       "Invoices": [
-        "Rechnungen"
+        "Fakture"
       ],
       "Device connected!": [
-        "Gerät verbunden!"
+        "Uređaj je povezan!"
       ],
       "TV log in": [
-        "TV-Anmeldung"
+        "Prijava putem televizije"
       ],
       "Forgot username": [
-        "Benutzername vergessen"
+        "Zaboravili ste korisničko ime"
       ],
       "Reset password": [
-        "Passwort zurücksetzen"
+        "Ponovno postavljanje lozinke"
       ],
       "Log in": [
-        "Anmelden"
+        "Prijavite se"
       ],
       "User log in": [
-        "Benutzeranmeldung"
+        "Prijava korisnika"
       ],
       "Redeem coupon": [
-        "Gutschein einlösen"
+        "Iskoristite kupon"
       ],
       "Redeem your coupon and start protecting your online privacy": [
-        "Lösen Sie Ihren Gutschein ein und schützen Sie Ihre Online-Privatsphäre"
+        "Iskoristite svoj kupon i počnite štiti internetsku privatnost"
       ],
       "Swiss Based": [
-        "Aus der Schweiz"
+        "Bazirano u Švicarskoj"
       ],
       "Secure Core Servers": [
-        "„Secure Core”‐Server"
+        "Secure Core poslužitelji"
       ],
       "No Logs": [
-        "Keine Protokollierung"
+        "Bez zapisa"
       ],
       "Kill Switch": [
-        "Kill Switch (Risiko-Trennung)"
+        "Kill Switch"
       ],
       "DNS leak prevention": [
-        "DNS‐Weitergabeschutz"
+        "Zaštita od curenja DNS-a"
       ],
       "Strong encryption": [
-        "Starke Verschlüsselung"
+        "Jako šifriranje"
       ],
       "Checking invitation parameters": [
-        "Einladungsparameter werden überprüft"
+        "Provjeravane parametara pozivnice"
       ],
       "You already have a Proton account": [
-        "Sie verfügen bereits über ein Proton-Konto"
+        "Već imate Proton račun"
       ],
       "Create an account": [
-        "Konto erstellen"
+        "Stvori račun"
       ],
       "Already have a Proton account?": [
-        "Sie besitzen bereits ein Proton-Konto?"
+        "Već imate Proton račun?"
       ],
       "ProtonVPN plan comparison": [
-        "ProtonVPN - Pakete vergleichen"
+        "Usporedba ProtonVPN planova"
       ],
       "Select an account verification method": [
-        "Kontenüberprüfungsmethode auswählen"
+        "Odaberite način potvrde računa"
       ],
       "Resend code": [
-        "Code erneut senden"
+        "Ponovno pošalji kôd"
       ],
       "Enter verification code": [
-        "Bestätigungscode eingeben"
+        "Unesite kôd za provjeru"
       ],
       "Are you human?": [
-        "Sind Sie ein Mensch?"
+        "Da li ste čovjek?"
       ],
       "Provide payment details": [
-        "Zahlungsinformationen eingeben"
+        "Navedite podatke o plaćanju"
       ],
       "${ title } plan details": [
-        "Details zum Paket „${ title }”"
+        "Detalji ${ title } plana"
       ],
       "Upgrade and get more": [
-        "Umsteigen und weitere Vorteile erhalten"
+        "Nadogradite i dobijte više"
       ],
       "Summary": [
-        "Zusammenfassung"
+        "Sažetak"
       ],
       "Account created": [
-        "Konto erstellt"
+        "Račun je stvoren"
       ],
       "Sign up": [
-        "Registrieren"
+        "Registriraj se"
       ],
       "Settings": [
-        "Einstellungen"
+        "Postavke"
       ]
     },
     "Warning": {
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Der Live-Chat ist eine Premium-Funktion, die nur Kunden mit kostenpflichtigen ProtonVPN-Tarifen zur Verfügung steht. Bitte öffnen Sie stattdessen ein Support-Ticket."
+        ""
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         ""
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
+        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachten Sie, dass durch die Wahl dieser Zahlungsmethode Ihr Konto nicht sofort erweitert werden kann. Wir werden Ihr Konto aktualisieren, sobald die Zahlung bei uns eingegangen ist."
+        "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
       ],
       "Your local date & time settings seem to be out of sync.": [
-        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht synchronisiert zu sein."
+        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
+        "Brisanjem ove adrese više nećete moći vratiti svoj račun."
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Wenn Sie diese Adresse löschen, werden Sie keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
+        "Brisanjem ove adrese više nećete moći primati svakodnevne obavijesti putem e-pošte."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen oder tägliche E-Mail-Benachrichtigungen erhalten."
+        "Brisanjem ove adrese više nećete moći oporaviti račun niti primati svakodnevne obavijesti putem e-pošte."
       ],
       "Are you sure you want to delete the address?": [
-        "Möchten Sie die Adresse wirklich löschen?"
+        "Jeste li sigurni da želite ukloniti ovu adresu?"
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Wenn Sie diese Rufnummer löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
+        "Brisanjem ovog broj telefona više nećete moći vratiti svoj račun."
       ],
       "Are you sure you want to delete the phone number?": [
-        "Möchten Sie die Rufnummer wirklich löschen?"
+        "Jeste li sigurni da želite izbrisati broj telefona?"
       ]
     },
     "Label, make it short please": {
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Dodajte snimku(e) zaslona"
       ]
     },
     "Header": {
       "Get help": [
-        "Hilfe erhalten"
+        "Pomoć"
       ],
       "Help": [
-        "Hilfe"
+        "Pomoć"
       ],
       "Simultaneous connections": [
-        "Gleichzeitige Verbindungen"
+        "Istovremene veze"
       ],
       "Countries": [
-        "Länder"
+        "Države"
       ],
       "Speed": [
-        "Geschwindigkeit"
+        "Brzina"
       ],
       "P2P filesharing/BitTorrent support": [
-        "P2P-Dateifreigabe/BitTorrent-Unterstützung"
+        "P2P dijeljenje datoteka/BitTorrent podrška"
       ],
       "Tor over VPN": [
-        "Tor über VPN"
+        "Tor preko VPN-a"
       ],
       "Secure Core VPN": [
-        "„Secure Core”-VPN"
+        "Secure Core VPN"
       ],
       "Apps for Android / Linux / iOS / Windows": [
-        "Apps für Android, Linux, iOS und Windows"
+        "Aplikacije za Android / Linux / iOS / Windows"
       ],
       "Advanced encryption": [
-        "Fortgeschrittene Verschlüsselung"
+        "Napredno šifriranje"
       ],
       "Kill Switch / Always-on": [
-        "Kill-Switch (Risiko-Trennung)/Dauerhaft aktives VPN"
+        "Kill Switch / Always-On VPN"
       ],
       "No logs policy": [
-        "Richtlininie, dass keine Protokollierung stattfindet"
+        "Politika ne spremanja zapisa"
       ],
       "No data limits": [
-        "Keine Datenbeschränkungen"
+        "Nema ograničenja podataka"
       ],
       "Access blocked content": [
-        "Zugriff auf gesperrte Inhalte"
+        "Pristup blokiranom sadržaju"
       ],
       "30-day money-back guarantee": [
-        "30 Tage Geld‐zurück‐Garantie"
+        "Povrat novca do 30 dana"
       ],
       "Streaming service support": [
-        "Unterstützung von Streaming-Diensten"
+        "Podrška za streaming usluge"
       ]
     },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dies ist das, was andere sehen werden, wenn Sie diesen eine E-Mail senden, sie zu einer Veranstaltung einladen oder eine Datei mit ihnen teilen."
+        "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
       ],
       "Choose a display name": [
-        "Anzeigenamen wählen"
+        "Odaberite zaslonski naziv"
       ],
       "Select a theme": [
-        "Farbschema auswählen"
+        "Odaberi temu"
       ],
       "You can change this anytime in your settings.": [
-        "Dies kann jederzeit in Ihren Einstellungen geändert werden."
+        "Možete promijeniti bilo kada u vašim postavkama."
       ],
       "Discover all Proton services": [
-        "Alle Proton Dienste kennenlernen"
+        "Otkrijte sve Proton usluge"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Verwenden Sie die App-Auswahl oben links, um auf andere Proton-Dienste zuzugreifen, einschließlich VPN, Kalender und Drive."
+        "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
       ],
       "Welcome to Proton": [
-        "Willkommen bei Proton"
+        "Dobro došli u Proton"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem Sie die Kontrolle über Ihre Daten und Ihre Privatsphäre haben. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
+        "Naša je misija izgraditi internet na kojem ćete kontrolirati svoje podatke i svoju privatnost. Nedavno smo ažurirali Proton - dobrodošli na sigurni internet."
       ],
       "Set up your organization": [
-        "Organisation einrichten"
+        "Postavite vašu organizaciju"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurieren Sie Ihre Organisation, verknüpfen Sie Ihren Domainnamen und erstellen Sie Konten, um sicherzustellen, dass alle Mitglieder Ihrer Organisation geschützt sind."
+        "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ]
     },
     "Apps dropdown": {
       "Proton applications": [
-        "Proton-Anwendungen"
+        "Proton aplikacije"
       ],
       "Go to ${ title }": [
-        "Wechseln zu ${ title }"
+        "Idi na ${ title }"
       ],
       "Go to ${ vpnName }": [
-        "Wechseln zu ${ vpnName }"
+        "Idi na ${ vpnName }"
       ]
     },
     "Error message": {
       "Oops, something went wrong": [
-        "Leider ist ein Problem aufgetreten"
+        "Ups, nešto je pošlo po zlu"
       ],
       "There was a problem connecting to Proton.": [
-        "Es gab ein Problem mit der Verbindung zu Proton."
+        "Došlo je do problema pri povezivanju s Protonom."
       ],
       "Please ${ refresh } or check your connection.": [
-        "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
+        "Molimo ${ refresh } ili provjerite vezu."
       ],
       "Error: ${ errorMessage }": [
-        "Fehler: ${ errorMessage }"
+        "Pogreška: ${ errorMessage }"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Bitte gedulden Sie sich, bis der Fehler behoben wurde."
+        "Molimo pričekajte dok ne popravimo pogrešku."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Sie können auch ${ refresh } oder es später noch einmal versuchen."
+        "Možete ${ refresh } ili pokušati ponovo kasnije."
       ]
     },
     "Suffix for price": {
       "/ month": [
-        "/Monat"
+        "/ mjesečno"
       ]
     },
     "info": {
@@ -2461,64 +2469,64 @@
     },
     "Mail feature": {
       "Users": [
-        "Nutzer"
+        "Korisnici"
       ],
       "Storage": [
-        "Speicher"
+        "Prostor za pohranu"
       ],
       "0.5 GB": [
-        "500 MB"
+        "0.5 GB"
       ],
       "20 GB": [
         "20 GB"
       ],
       "Addresses": [
-        "E-Mail-Adressen"
+        "Adrese"
       ],
       "Custom email addresses": [
-        "Benutzerdefinierte E-Mail-Adressen"
+        "Prilagođene adrese e-pošte"
       ],
       "Messages per day": [
-        "Nachrichten pro Tag"
+        "Poruka dnevno"
       ],
       "Folders / labels": [
-        "Ordner/Kategorien"
+        "Mape / Oznake"
       ],
       "Support": [
-        "Support"
+        "Podrška"
       ],
       "Limited": [
-        "Beschränkt"
+        "Ograničeno"
       ],
       "Priority": [
-        "Vorrang"
+        "Prioritet"
       ],
       "Encrypted contacts": [
-        "Verschlüsselte Kontakte"
+        "Šifrirani kontakti"
       ],
       "Contact groups": [
-        "Kontaktgruppen"
+        "Grupe kontakata"
       ],
       "Address verification": [
-        "Adressbestätigung"
+        "Provjera valjanosti adrese"
       ],
       "Custom filters": [
-        "Benutzerdefinierte Filter"
+        "Prilagođeni filtri"
       ],
       "IMAP / SMTP": [
-        "IMAP/SMTP"
+        "IMAP / SMTP"
       ],
       "Autoresponder": [
-        "Abwesenheitsnotiz"
+        "Automatski odgovori"
       ],
       "Use @pm.me address": [
-        "@pm.me-E-Mail-Adresse verwenden"
+        "Koristi @pm.me adresu"
       ],
       "Catch-All email": [
-        "Catch-all-Weiterleitungs-E-Mail-Adresse"
+        "Dohvati svu e-poštu"
       ],
       "Multi-user support": [
-        "Mehrbenutzerunterstützung"
+        "Višekorisnička podrška"
       ]
     },
     "Mail feature option": {
@@ -2526,298 +2534,305 @@
         "5 GB *"
       ],
       "5 GB / user *": [
-        "5 GB / Nutzer *"
+        "5 GB / korisnik *"
       ],
       "Unlimited **": [
-        "Unbegrenzt **"
+        "Neograničeno **"
       ],
       "Unlimited": [
-        "Unbegrenzt"
+        "Neograničeno"
       ]
     },
     "Tooltip": {
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Verwenden Sie mehrere E-Mail-Adressen / Aliasnamen, die mit Ihrem Konto verknüpft sind, z. B. nutzername2@protonmail.com"
+        "Koristite više adresa / aliasa povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) bei ProtonMail, z.B. max.musterman@beispiel.de"
+        "Pružajte usluge e-pošte za vaše domene na ProtonMailu, npr. ivan.horvat@primjer.hr"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "Verwenden Sie eine persönliche Adresse benutzername@pm.me um E-Mails zu senden"
+        "Koristite osobnu adresu e-pošte korisnickoime@pm.me za slanje e-pošte"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
+        "Višekorisnička podrška je primjenjiva na planove s 2 ili više korisnika"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
+        "NetShield štiti vaš uređaj i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "Unterstützung für File-Sharing-Protokolle wie BitTorrent."
+        "Podrška za protokole za dijeljenje datoteka poput BitTorrent."
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
+        "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk."
+        "Preusmjerite sav svoj internetski promet kroz Tor mrežu jednim klikom."
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Schützt vor Bedrohungen der VPN-Sicherheit, indem es Ihren Internetverkehr über mehrere Server leitet."
+        "Štiti se od opasnosti koje prijete privatnosti VPN-a, preusmjeravanjem vašeg internetskog prometa kroz više poslužitelja."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugang zu allen kostenpflichtigen Funktionen sowohl für ProtonVPN als auch für ProtonMail (der verschlüsselte E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+        "Pristup svim plaćenim značajkama za ProtonVPN i ProtonMail (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+        "Pristup svim plaćenim značajkama za ${ vpnAppName } i ${ mailAppName } (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName }, z. B. max.mustermann@beispiel.de"
+        "Pružajte usluge e-pošte za vaše domene na ${ mailAppName }, npr. ivan.horvat@primjer.hr"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Erstellen Sie mehrere mit Ihrem Konto verknüpfte E-Mail-Adressen, z. B. Benutzername2@protonmail.com"
+        "Stvorite više adresa e-pošte povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
       ],
       "Discount applied for annual billing cycle": [
-        "Rabatt für jährlichen Abrechnungszeitraum"
+        "Popust se primjenjuje za godišnji ciklus naplate"
       ],
       "Discount applied for two-year billing cycle": [
-        "Rabatt für zweijährigen Abrechnungszeitraum"
+        "Popust se primjenjuje za dvogodišnji ciklus naplate"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
+        "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
       ],
       "Save 20% when billed annually": [
-        "20 % Rabatt bei jährlichem Abrechnungszeitraum"
+        "Uštedite 20% prilikom godišnje naplate"
       ],
       "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
-        "Bietet zusätzlichen Schutz gegen VPN-Server-Kompromittierung, indem Verbindungen über unser Secure-Core-Netzwerk geleitet werden"
+        "Pruža dodatnu zaštitu od kompromitiranja VPN poslužitelja, usmjeravanjem veza kroz našu Secure Core mrežu"
       ],
       "Includes ProtonMail encrypted email with all features": [
-        "Enthält ProtonMail-verschlüsselte E-Mails mit allen Funktionen"
+        "Uključuje i ProtonMail šifriranu e-poštu sa svim značajkama"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "Benutzername, der für alle Proton-Dienste verwendet wird. Dieser kann auch später genutzt werden, um ein sicheres ProtonMail-Konto zu erstellen."
+        "Korisničko ime koje se koristi za sve Proton usluge. Ono se kasnije može koristiti i za stvaranje sigurnog ProtonMail računa."
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
-        "Wenn Sie Ihr Passwort vergessen haben, haben Sie keinen Zugriff mehr auf Ihr Konto oder Ihre Daten. Bitte bewahren Sie es an einem sicheren Ort auf."
+        "Ako zaboravite lozinku, više nećete imati pristup svom računu ili svojim podacima. Spremite je negdje na sigurno."
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
-        "Ihre E-Mail-Adresse wird nicht an Dritte weitergegeben und dient nur der Wiederherstellung und kontobezogenen Fragen oder der Kommunikation."
+        "Vaša adresa e-pošte se ne dijeli s trećim stranama i koristi se samo za pitanja o oporavku računu ili komunikaciju."
       ]
     },
     "Mail feature option: 5 email addresses / user": {
       "5 / user *": [
-        "5 / Nutzer *"
+        "5 / korisnik *"
       ]
     },
     "information": {
       "Included": [
-        "Enthalten"
+        "Uključeno"
       ]
     },
     "VPN feature": {
       "VPN Connections": [
-        "VPN-Verbindungen"
+        "VPN veze"
       ],
       "Speed": [
-        "Geschwindigkeit"
+        "Brzina"
       ],
       "VPN servers": [
-        "VPN-Server"
+        "VPN poslužitelji"
       ],
       "Locations/Countries": [
-        "Standorte/Länder"
+        "Lokacije/Države"
       ],
       "Adblocker (NetShield)": [
-        "Werbeblocker (NetShield)"
+        "Bloker oglasa (NetShield)"
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
       ],
       "Streaming service support": [
-        "Unterstützung von Streaming-Diensten"
+        "Podrška za streaming usluge"
       ],
       "Tor over VPN": [
-        "TOR über VPN"
+        "Tor preko VPN-a"
       ],
       "Secure Core servers": [
-        "„Secure Core”‐Server"
+        "Secure Core poslužitelji"
       ],
       "${ mailAppName } Visionary": [
         "${ mailAppName } Visionary"
       ],
       "Jurisdiction": [
-        "Gerichtsbarkeiten"
+        "Nadležnost"
       ],
       "Open Source & audited apps": [
-        "Open Source & geprüfte Apps"
+        "Revizirane aplikacije otvorenog kôda"
       ],
       "Access blocked content": [
-        "Zugriff auf gesperrte Inhalte"
+        "Pristup blokiranom sadržaju"
       ],
       "Strict no-logs policy": [
-        "Strenge Richtlinie, dass keine Protokollierung stattfindet"
+        "Stroga politika ne spremanja zapisa"
       ],
       "Volume/bandwidth cap": [
-        "Volumen-/Bandbreitenbegrenzung"
+        "Ograničenje propusnosti/volumena"
       ],
       "User data monetization": [
-        "Monetarisierung von Benutzerdaten"
+        "Monetizacija korisničkih podataka"
       ],
       "Platforms supported": [
-        "Unterstützte Plattformen"
+        "Podržane platforme"
       ],
       "Languages supported": [
-        "Unterstützte Sprachen"
+        "Podržani jezici"
       ],
       "DNS leak prevention": [
-        "DNS‐Weitergabeschutz"
+        "Zaštita od curenja DNS-a"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill-Switch (Risiko-Trennung) und dauerhaft aktiviertes (Always-On) VPN"
+        "Kill Switch / Always-on VPN"
       ],
       "Perfect Forward Secrecy (PFS)": [
-        "Perfekte vorwärts gerichtete Geheimhaltung (PFS)"
+        "Perfect Forward Secrecy (PFS)"
       ],
       "Full Disk Encryption on Servers": [
-        "Vollständige Festplattenverschlüsselung auf Servern"
+        "Potpuno šifriranje diskova na poslužiteljima"
       ],
       "Split tunneling": [
-        "Split‐Tunneling"
+        "Podijeljeno tuneliranje"
       ],
       "Custom connection profiles": [
-        "Benutzerdefinierte Verbindungsprofile"
+        "Prilagođeni profili veza"
       ],
       "Router support": [
-        "Router-Unterstützung"
+        "Podrška za routere"
       ],
       "30-days money-back guarantee": [
-        "30 Tage Geld‐zurück‐Garantie"
+        "Povrat novca do 30 dana"
       ]
     },
     "VPN feature option": {
       "Medium": [
-        "Mittel"
+        "Srednja"
       ],
       "High": [
-        "Hoch"
+        "Visoko"
       ],
       "Highest (up to 10 Gbps)": [
-        "Höchste (bis zu 10 GBit/s)"
+        "Najviše (do 10 Gbps)"
       ],
       "Switzerland": [
-        "Schweiz"
+        "Švicarska"
       ],
       "None": [
-        "Keine"
+        "Ništa"
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ],
       "(Android & Windows only)": [
-        "(nur Android und Windows)"
+        "(samo Android i Windows)"
       ]
     },
     "Calendar feature": {
       "Multiple calendars": [
-        "Mehrere Kalender"
+        "Više kalendara"
       ],
       "Calendar import": [
-        "Kalenderimport"
+        "Uvoz kalendara"
       ],
       "Recurring events": [
-        "Wiederkehrende Ereignisse"
+        "Ponavljajući događaji"
       ],
       "Invitations": [
-        "Einladungen"
+        "Pozivnice"
       ],
       "Share Calendar via link": [
-        "Kalender als Link teilen"
+        "Dijeli kalendar putem poveznice"
       ]
     },
     "Calendar feature option": {
       "20 / user *": [
-        "20 / Benutzer *"
+        "20 / korisnik *"
       ],
       "20 / user": [
-        "20 / Benutzer"
+        "20 / korisnik"
       ]
     },
     "Drive feature": {
       "Access via Web": [
-        "Webzugriff"
+        "Pristup putem weba"
       ],
       "Upload / download files": [
-        "Dateien hoch-/herunterladen"
+        "Učitaj / preuzmi datoteke"
       ],
       "Share files via link": [
-        "Dateien als Link teilen"
+        "Dijeli datoteke putem poveznice"
       ]
     },
     "Info concerning plan features": {
       "Customizable features": [
-        "Anpassbare Funktionen"
+        "Prilagodljive značajke"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail kann nicht für das Senden von Massen- oder Spam-E-Mails verwendet werden. Legitime/Reguläre E-Mails können jedoch unbegrenzt gesendet werden."
+        "ProtonMail se ne može koristiti za masovno slanje e-pošte ili slanje neželjene pošte. Legitimne poruke e-pošte su neograničene."
       ]
     },
     "Plan Feature": {
       "${ n } VPN connection": [
-        "${ n } VPN-Verbindung",
-        "${ n } VPN-Verbindungen"
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
       ],
       "${ n } server": [
-        "${ n } Server",
-        "${ n } Server"
+        "${ n } poslužitelj",
+        "${ n } poslužitelja",
+        "${ n } poslužitelja"
       ],
       "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } Server",
-        "${ freeServersCount.free_vpn } Server"
+        "${ freeServersCount.free_vpn } poslužitelj",
+        "${ freeServersCount.free_vpn } poslužitelja",
+        "${ freeServersCount.free_vpn } poslužitelja"
       ],
       "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "Mehr als 350 Server in ${ countries[PLANS.VPNBASIC].count } Land",
-        "Mehr als 350 Server in ${ countries[PLANS.VPNBASIC].count } Ländern"
+        "350+ poslužitelja u ${ countries[PLANS.VPNBASIC].count } državi",
+        "350+ poslužitelja u ${ countries[PLANS.VPNBASIC].count } države",
+        "350+ poslužitelja u ${ countries[PLANS.VPNBASIC].count } država"
       ],
       "High speed": [
-        "Hohe Geschwindigkeit"
+        "Visoka brzina"
       ],
       "Filesharing/P2P support": [
-        "Filesharing/P2P-Unterstützung"
+        "Dijeljenje datoteka / P2P podrška"
       ],
       "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "${ nFreeServers } in ${ countries.free_vpn.count } Land",
-        "${ nFreeServers } in ${ countries.free_vpn.count } Ländern"
+        "",
+        "",
+        ""
       ],
       "${ maxConnections } VPN connection": [
-        "${ maxConnections } VPN-Verbindung",
-        "${ maxConnections } VPN-Verbindungen"
+        "${ maxConnections } VPN veza",
+        "${ maxConnections } VPN veze",
+        "${ maxConnections } VPN veza"
       ],
       "Medium speed": [
-        "Mittlere Geschwindigkeit"
+        "Srednja brzina"
       ],
       "Strict no-logs policy": [
-        "Strenge Richtlinie, dass keine Protokollierung stattfindet"
+        "Stroga politika ne spremanja zapisa"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "Höchste Geschwindigkeit (bis zu 10 GBit/s)"
+        "Najviša brzina (do 10 Gbps)"
       ],
       "Streaming service support": [
-        "Unterstützung von Streaming-Diensten"
+        "Podrška za streaming usluge"
       ],
       "All advanced security features": [
-        "Alle erweiterten Sicherheitsfunktionen"
+        "Sve napredne značajke sigurnosti"
       ],
       "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "Mehr als 1.200 Server in ${ countries[PLANS.VPNPLUS].count } Land",
-        "Mehr als 1.200 Server in ${ countries[PLANS.VPNPLUS].count } Ländern"
+        "1200+ poslužitelja u ${ countries[PLANS.VPNPLUS].count } državi",
+        "1200+ poslužitelja u ${ countries[PLANS.VPNPLUS].count } države",
+        "1200+ poslužitelja u ${ countries[PLANS.VPNPLUS].count } država"
       ],
       "ProtonMail Visionary account": [
-        "ProtonMail Visionär-Konto"
+        "ProtonMail Visionary račun"
       ],
       "Highest speed (10 Gbps)": [
-        "Höchstgeschwindigkeitsserver (10 GBit/s)"
+        "Najviša brzina (10 Gbps)"
       ],
       "ProtonMail Plus account": [
-        "ProtonMail Plus Konto"
+        "ProtonMail Plus račun"
       ]
     },
     "Netflix": {
@@ -2837,198 +2852,207 @@
     },
     "Many Others": {
       "and many others": [
-        "und viele andere"
+        "i mnogo drugih"
       ]
     },
     "Plan feature": {
       "Built-in Adblocker (NetShield)": [
-        "Integrierter Werbeblocker (NetShield)"
+        "Ugrađeni bloker oglasa (NetShield)"
       ],
       "Secure Core servers": [
-        "„Secure Core”‐Server"
+        "Secure Core poslužitelji"
       ],
       "Streaming service support": [
-        "Unterstützung von Streaming-Diensten"
+        "Podrška za streaming usluge"
       ],
       "Access blocked content": [
-        "Zugriff auf gesperrte Inhalte"
+        "Pristup blokiranom sadržaju"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } in ${ freeCountries } Land",
-        "${ freeServers } in ${ freeCountries } Ländern"
+        "",
+        "",
+        ""
       ],
       "Medium speed": [
-        "Mittlere Geschwindigkeit"
+        "Srednja brzina"
       ],
       "350+ servers in ${ basicCountries } country": [
-        "Mehr als 350 Server in ${ basicCountries } Land",
-        "Mehr als 350 Server in ${ basicCountries } Ländern"
+        "350+ poslužitelja u ${ basicCountries } državi",
+        "350+ poslužitelja u ${ basicCountries } države",
+        "350+ poslužitelja u ${ basicCountries } država"
       ],
       "High speed": [
-        "Hohe Geschwindigkeit"
+        "Visoka brzina"
       ],
       "1200+ servers in ${ plusCountries } country": [
-        "Mehr als 1.200 Server in ${ plusCountries } Land",
-        "Mehr als 1.200 Server in ${ plusCountries } Ländern"
+        "1200+ poslužitelja u ${ plusCountries } državi",
+        "1200+ poslužitelja u ${ plusCountries } države",
+        "1200+ poslužitelja u ${ plusCountries } država"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "Höchste Geschwindigkeit (bis zu 10 GBit/s)"
+        "Najviša brzina (do 10 Gbps)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Alle Funktionen des ${ PLAN_NAMES[PLANS.VPNPLUS] }-Pakets"
+        "Sve značajke ${ PLAN_NAMES[PLANS.VPNPLUS] } plana"
       ],
       "Includes 6 user accounts": [
-        "Beinhaltet 6 Benutzerkonten"
+        "Uključuje 6 korisničkih računa"
       ],
       "Includes Proton Visionary": [
-        "Enthält Proton Visionär"
+        "Uključuje Proton Visionary"
       ],
       "Early access to new products": [
-        "Frühzeitiger Zugang zu neuen Produkten"
+        "Rani pristup novim proizvodima"
       ],
       "Custom email addresses": [
-        "Benutzerdefinierte E-Mail-Adressen"
+        "Prilagođene adrese e-pošte"
       ],
       "Access to ${ driveAppName } (beta)": [
-        "Zugriff auf ${ driveAppName } (Beta)"
+        "Pristup na ${ driveAppName } (beta)"
       ],
       "1 user": [
-        "1 Benutzer"
+        "1 korisnik"
       ],
       "0.5 GB storage": [
-        "500 MB Speicherplatz"
+        "0.5 GB prostora za pohranu"
       ],
       "1 address": [
-        "1 E-Mail-Adresse"
+        "1 adresa"
       ],
       "3 folders / labels": [
-        "3 Ordner/Kategorien"
+        "3 mape / oznake"
       ],
       "5 GB storage *": [
-        "5 GB Speicherplatz *"
+        "5 GB prostora za pohranu *"
       ],
       "5 addresses": [
-        "5 E-Mail-Adressen"
+        "5 adresa"
       ],
       "200 folders / labels": [
-        "200 Ordner/Kategorien"
+        "200 mapa / oznaka"
       ],
       "1 - 5000 users *": [
-        "1 - 5.000 Nutzer *"
+        "1 - 5000 korisnika *"
       ],
       "5 GB storage / user": [
-        "5 GB Speicherplatz je Nutzer"
+        "5 GB prostora za pohranu / korisnik"
       ],
       "5 addresses / user": [
-        "5 E-Mail-Adressen je Nutzer"
+        "5 adresa / korisnik"
       ],
       "Unlimited folders / labels": [
-        "Unbegrenzte Anzahl von Ordnern/Kategorien"
+        "Neograničeni broj mapa / oznaka"
       ],
       "6 users": [
-        "6 Nutzer"
+        "6 korisnika"
       ],
       "20 GB storage": [
-        "20 GB Speicherplatz"
+        "20 GB prostora za pohranu"
       ],
       "50 addresses": [
-        "50 E-Mail-Adressen"
+        "50 adresa"
       ],
       "P2P/BitTorrent support": [
-        "P2P/BitTorrent-Unterstützung"
+        "P2P/BitTorrent podrška"
       ],
       "Adblocker (NetShield)": [
-        "Werbeblocker (NetShield)"
+        "Bloker oglasa (NetShield)"
       ],
       "Secure Core VPN": [
-        "„Secure Core”-VPN"
+        "Secure Core VPN"
       ],
       "Tor over VPN": [
-        "Tor über VPN"
+        "Tor preko VPN-a"
       ],
       "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
-        "Alle Funktionen des ${ PLAN_NAMES[PLAN.PLUS] }-Pakets"
+        "Sve značajke ${ PLAN_NAMES[PLAN.PLUS] } plana"
       ],
       "P2P filesharing/BitTorrent support": [
-        "P2P-Dateifreigabe/BitTorrent-Unterstützung"
+        "P2P dijeljenje datoteka/BitTorrent podrška"
       ]
     },
     "Billing cycle option": {
       "Monthly": [
-        "Monatlich"
+        "Mjesečno"
       ],
       "Annually SAVE 20%": [
-        "Jährlich 20 % SPAREN"
+        "Godišnje UŠTEDITE 20%"
       ],
       "Two years SAVE 33%": [
-        "Zwei Jahre und 33% sparen"
+        "Za dvije godine UŠTEDITE 33%"
       ],
       "Annually": [
-        "Jährlich"
+        "Godišnje"
       ],
       "Two-year": [
-        "Zwei Jahre"
+        "2 godine"
       ]
     },
     "Price": {
       "Free": [
-        "Kostenlos"
+        "Free"
       ],
       "FREE": [
-        "KOSTENLOS"
+        "BESPLATAN"
       ]
     },
     "Countdown unit": {
       "${ monthsWithYears } month": [
-        "${ monthsWithYears } Monat",
-        "${ monthsWithYears } Monate"
+        "${ monthsWithYears } mjesec",
+        "${ monthsWithYears } mjeseca",
+        "${ monthsWithYears } mjeseci"
       ],
       "${ days } day": [
-        "${ days } Tag",
-        "${ days } Tage"
+        "${ days } dan",
+        "${ days } dana",
+        "${ days } dana"
       ]
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "${ addresses } zusätzliche E-Mail-Adresse",
-        "${ addresses } zusätzliche E-Mail-Adressen"
+        "+ ${ addresses } adresa e-pošte",
+        "+ ${ addresses } adrese e-pošte",
+        "+ ${ addresses } adresa e-pošte"
       ],
       "+ ${ storage } storage": [
-        "+{ storage } Speicher"
+        "+ ${ storage } prostora za pohranu"
       ],
       "+ ${ domains } custom domain": [
-        "+ ${ domains } eigene Domain",
-        "${ domains } eigene Domains"
+        "+ ${ domains } prilagođena domena",
+        "+ ${ domains } prilagođene domene",
+        "+ ${ domains } prilagođenih domena"
       ],
       "+ ${ members } user": [
-        "+ ${ members } Nutzer",
-        "+ ${ members } Nutzer"
+        "+ ${ members } korisnik",
+        "+ ${ members } korisnika",
+        "+ ${ members } korisnika"
       ],
       "+ ${ vpn } connection": [
-        "+ ${ vpn } Verbindung",
-        "+ ${ vpn } Verbindungen"
+        "+ ${ vpn } veza",
+        "+ ${ vpn } veze",
+        "+ ${ vpn } veza"
       ]
     },
     "Mail upsell feature": {
       "Get Multi-user support": [
-        "Holen Sie sich Mehrbenutzerunterstützung"
+        "Nabavite višekorisničku podršku"
       ],
       "Host emails for your organization": [
-        "E-Mails für Ihr Unternehmen zur Verfügung stellen"
+        "Poslužujte e-poštu za vašu organizaciju"
       ],
       "Create separate logins for each user": [
-        "Erstellen Sie getrennte Zugänge für die einzelnen Benutzer"
+        "Stvorite zasebne podatke za prijavu za svakog korisnika"
       ]
     },
     "VPN upsell feature": {
       "Higher speed servers (up to 10Gbps)": [
-        "Hochgeschwindigkeitsserver (bis zu 10 GBit/s)"
+        "Poslužitelji najviše brzine (do 10 Gbps)"
       ],
       "Access geo-blocked content (Netflix, YouTube, etc.)": [
-        "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, YouTube, usw.)"
+        "Pristupite geo-blokiranom sadržaju (Netflix, YouTube itd.)"
       ],
       "Unlock advanced VPN features": [
-        "Erweiterte VPN-Funktionen freischalten"
+        "Otključajte napredne VPN značajke"
       ]
     },
     "Plan": {
@@ -3041,60 +3065,60 @@
     },
     "Suffix": {
       "/ month": [
-        "/Monat"
+        "/ mjesečno"
       ],
       "/monthly": [
-        "/Monat"
+        "/mjesečno"
       ],
       "/2-year": [
-        "/2 Jahre"
+        "/2 godine"
       ],
       "/year": [
-        "/Jahr"
+        "/godišnje"
       ]
     },
     "Option": {
       "Select a reason": [
-        "Wählen Sie einen Grund"
+        "Odaberite razlog"
       ],
       "It’s temporary, I’ll be back": [
-        "Es ist nur vorübergehend, ich komme zurück"
+        "Privremeno je, vratit ću se"
       ],
       "I didn’t understand what I was signing up for": [
-        "Ich habe nicht verstanden, wozu ich mich verpflichtet habe"
+        "Nisam razumio za što se prijavljujem"
       ],
       "It’s too expensive": [
-        "Es ist mir zu teuer"
+        "Preskupo je"
       ],
       "I’m unhappy with customer service": [
-        "Ich bin mit dem Kundenservice unzufrieden"
+        "Nezadovoljan sam korisničkom službom"
       ],
       "Using Proton is too complicated": [
-        "Die Verwendung von Proton ist mir zu kompliziert"
+        "Proton je previše kompliciran za korištenje"
       ],
       "I'm switching to a different service": [
-        "Ich wechsle zu einem anderen Produkt"
+        "Prelazim na drugu uslugu"
       ],
       "The quality didn't live up to my expectations": [
-        "Die Qualität entsprach nicht meinen Erwartungen"
+        "Kvaliteta nije opravdala moja očekivanja"
       ],
       "Other": [
-        "Andere"
+        "Ostalo"
       ],
       "I use a different Proton account": [
-        "Ich verwende ein anderes Proton-Konto"
+        "Koristim drugi Proton račun"
       ],
       "It's too expensive": [
-        "Es ist mir zu teuer"
+        "Preskupo je"
       ],
       "It's missing a key feature that I need": [
-        "Es fehlt eine Schlüsselfunktion, die ich benötige"
+        "Nedostaje ključna značajka koja mi treba"
       ],
       "I found another service that I like better": [
-        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+        "Pronašao/la sam drugu uslugu koja mi se više sviđa"
       ],
       "My reason isn't listed": [
-        "Mein Grund ist nicht aufgeführt"
+        "Moj razlog nije naveden"
       ],
       "Android": [
         "Android"
@@ -3112,7 +3136,7 @@
         "GNU/Linux"
       ],
       "Router": [
-        "Router"
+        "Usmjerivač (Router)"
       ],
       "UDP": [
         "UDP"
@@ -3121,19 +3145,19 @@
         "TCP"
       ],
       "Secure Core configs": [
-        "„Secure Core”-Konfigurationen"
+        "Secure core postavke"
       ],
       "Country configs": [
-        "Länderkonfigurationen"
+        "Postavke države"
       ],
       "Standard server configs": [
-        "Standard-Server-Konfigurationen"
+        "Postavke standardnog poslužitelja"
       ],
       "Free server configs": [
-        "Freie Server-Konfigurationen"
+        "Postavke besplatnog poslužitelja"
       ],
       "Email address": [
-        "E‐Mail‐Adresse"
+        "Adresa e-pošte"
       ],
       "SMS": [
         "SMS"
@@ -3141,56 +3165,61 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Ihr Konto wird zurückgestuft, bitte warten …"
+        "Snižavanje statusa vašeg računa, molimo pričekajte"
       ]
     },
     "Plan info": {
       "(current plan)": [
-        "(Aktuelles Paket)"
+        "(trenutni plan)"
       ],
       "Most popular": [
-        "Am beliebtesten"
+        "Najpopularnije"
       ]
     },
     "Free price": {
       "Free": [
-        "Kostenlos"
+        "Besplatno"
       ]
     },
     "Billing cycle": {
       "Monthly billing (Renewal on ${ formattedEndTime })": [
-        "Monatliche Abrechnung (Wird am ${ formattedEndTime } erneuert)"
+        "Mjesečna naplata (Obnova dana ${ formattedEndTime })"
       ],
       "Yearly billing (Renewal on ${ formattedEndTime })": [
-        "Jährliche Abrechnung (Wird am ${ formattedEndTime } erneuert)"
+        "Godišnja naplata (Obnova dana ${ formattedEndTime })"
       ],
       "2-year billing (Renewal on ${ formattedEndTime })": [
-        "2-jährliche Abrechnung (Wird am ${ formattedEndTime } erneuert)"
+        "Dvogodišnja naplata (Obnova dana ${ formattedEndTime })"
       ],
       "Billing (Renewal on ${ formattedEndTime })": [
-        "Abrechnung (Wird am ${ formattedEndTime } erneuert)"
+        "Naplata (Obnova dana ${ formattedEndTime })"
       ]
     },
     "Addon unit for subscription": {
       "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } Benutzer",
-        "${ memberAddon.MaxMembers } Benutzer"
+        "${ memberAddon.MaxMembers } korisnik",
+        "${ memberAddon.MaxMembers } korisnika",
+        "${ memberAddon.MaxMembers } korisnika"
       ],
       "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } Adresse",
-        "${ addressAddon.MaxAddresses } Adressen"
+        "${ addressAddon.MaxAddresses } adresa",
+        "${ addressAddon.MaxAddresses } adrese",
+        "${ addressAddon.MaxAddresses } adresa"
       ],
       "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } Domain",
-        "${ domainAddon.MaxDomains } Domains"
+        "${ domainAddon.MaxDomains } domena",
+        "${ domainAddon.MaxDomains } domene",
+        "${ domainAddon.MaxDomains } domena"
       ],
       "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } Verbindung",
-        "${ vpnAddon.MaxVPN } Verbindungen"
+        "${ vpnAddon.MaxVPN } veza",
+        "${ vpnAddon.MaxVPN } veze",
+        "${ vpnAddon.MaxVPN } veza"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } Verbindung",
-        "${ vpnBonus } Verbindungen"
+        "${ vpnBonus } veza",
+        "${ vpnBonus } veze",
+        "${ vpnBonus } veza"
       ]
     },
     "Monetary unit": {
@@ -3198,72 +3227,72 @@
         "Euro"
       ],
       "Swiss franc": [
-        "Schweizer Franken"
+        "Švicarski franak"
       ],
       "Dollar": [
-        "Dollar"
+        "Dolar"
       ]
     },
     "Credits": {
       "Unused credits": [
-        "Zur Verfügung stehendes Guthaben"
+        "Neiskorišteni kredit"
       ]
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Bitte kontaktieren Sie uns unter ${ email } für Anweisungen, wie Sie unsere Rechnung mit Bargeld begleichen können."
+        "Obratite nam se na ${ email } kako biste dobili upute za plaćanje gotovinom."
       ]
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
+        "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
       ]
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
+        "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
       ]
     },
     "Label for news": {
       "Proton company announcements": [
-        "Proton • Firmenankündigungen"
+        "Proton najave tvrtke"
       ],
       "Proton product announcements": [
-        "Proton • Produktankündigungen"
+        "Proton najave proizvoda"
       ],
       "Proton for Business newsletter": [
-        "ProtonMail für Unternehmen • Newsletter"
+        "ProtonMail za tvrtke bilten"
       ],
       "Proton newsletter": [
-        "Proton Newsletter"
+        "Proton bilten"
       ],
       "Proton beta announcements": [
-        "Proton • Beta-Ankündigungen"
+        "Proton beta najave"
       ]
     },
     "Frequency of news": {
       "(1 email per quarter)": [
-        "(1 E-Mail pro Quartal)"
+        "(1 e-poruka u tromjesečju)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 E-Mails pro Monat)"
+        "(1-2 e-poruke mjesečno)"
       ],
       "(1 email per month)": [
-        "(1 E-Mail pro Monat)"
+        "(1 e-poruka mjesečno)"
       ]
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+        "OpenVPN / IKEv2 vjerodajnice su ponovno stvorene"
       ],
       "Coupons are temporarily disabled": [
-        "Gutscheine sind vorübergehend deaktiviert"
+        "Kuponi su privremeno onemogućeni"
       ],
       "Invites are temporarily disabled": [
-        "Einladungen sind vorübergehend deaktiviert"
+        "Pozivnice su privremeno onemogućene"
       ],
       "Verification code successfully sent to ${ destination }": [
-        "Bestätigungscode erfolgreich an ${ destination } gesendet"
+        "Verifikacijski kôd uspješno poslan na ${ destination }"
       ]
     },
     "VPNClient": {
@@ -3291,102 +3320,103 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        "(über ${ entryCountryName })"
+        "(putem ${ entryCountryName })"
       ]
     },
     "TableHeader": {
       "Name": [
-        "Name"
+        "Naziv"
       ],
       "Country": [
-        "Land"
+        "Država"
       ],
       "City": [
-        "Stadt"
+        "Grad"
       ],
       "Status": [
         "Status"
       ],
       "Action": [
-        "Aktion"
+        "Radnja"
       ]
     },
     "Feature": {
       "Access to all countries": [
-        "Zugriff auf alle Länder"
+        "Pristup svim državama"
       ],
       "Secure Core servers": [
-        "„Secure Core”‐Server"
+        "Secure Core poslužitelji"
       ],
       "Fastest VPN servers": [
-        "Schnellste VPN-Server"
+        "Najbrži VPN poslužitelji"
       ],
       "Torrenting support (P2P)": [
-        "Torrent-Unterstützung (P2P)"
+        "Torrent podrška (P2P)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Verbindung für ${ plusVpnConnections } Gerät",
-        "Verbindung für bis zu ${ plusVpnConnections } Geräte"
+        "Veza za ${ plusVpnConnections } uređaj",
+        "Veza za do ${ plusVpnConnections } uređaja",
+        "Veza za do ${ plusVpnConnections } uređaja"
       ],
       "Secure streaming support": [
-        "Unterstützung für verschlüsseltes Streaming"
+        "Sigurna streaming podrška"
       ]
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now und weitere."
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
       ]
     },
     "label": {
       "Phone number": [
-        "Rufnummer"
+        "Broj telefona"
       ],
       "Recovery phrase": [
-        "Wiederherstellungsphrase"
+        ""
       ]
     },
     "Confirmation title": {
       "Delete payment method": [
-        "Zahlungsmethode löschen"
+        "Brisanje načina plaćanja"
       ]
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Um eine Unterbrechung des Dienstes aufgrund unbezahlter Rechnungen zu vermeiden, stellen Sie bitte sicher, dass Sie zu jedem Zeitpunkt mindestens eine gültige Zahlungsmethode hinterlegt haben."
+        "Da biste izbjegli bilo kakve prekide u usluzi zbog neplaćenih faktura, molimo vas da u bilo kojem trenutku imate barem 1 valjani način plaćanja."
       ]
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Möchten Sie diese Zahlungsmethode wirklich entfernen?"
+        "Jeste li sigurni da želite ukloniti ovaj način plaćanja?"
       ]
     },
     "Label on payment method": {
       "Expired": [
-        "Abgelaufen"
+        "Isteklo"
       ],
       "Default": [
-        "Standard"
+        "Zadano"
       ]
     },
     "Title for payment methods table": {
       "Method": [
-        "Methode"
+        "Metoda"
       ],
       "Status": [
         "Status"
       ],
       "Actions": [
-        "Aktionen"
+        "Radnje"
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Sie können eine Zahlungsmethode hinzufügen, um Ihr Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
+        "Možete dodati način plaćanja kako bi se pretplata automatski obnavljala. Dostupni su i drugi načini plaćanja."
       ]
     },
     "Payment method option": {
       "New credit/debit card": [
-        "Neue Kredit-/Debitkarte"
+        "Nova kreditna/debitna kartica"
       ],
       "PayPal": [
         "PayPal"
@@ -3397,76 +3427,76 @@
     },
     "Invoice type display as badge": {
       "Other": [
-        "Weitere"
+        "Ostalo"
       ],
       "Subscription": [
-        "Abonnement"
+        "Pretplata"
       ],
       "Cancellation": [
-        "Stornierung"
+        "Otkazivanje"
       ],
       "Credit": [
-        "Guthaben"
+        "Kredit"
       ],
       "Donation": [
-        "Spende"
+        "Donacija"
       ],
       "Chargeback": [
-        "Rückbuchung"
+        "Povrat"
       ],
       "Renewal": [
-        "Verlängerung"
+        "Obnova"
       ],
       "Refund": [
-        "Erstattung"
+        "Povrat"
       ],
       "Modification": [
-        "Änderung"
+        "Izmjena"
       ],
       "Addition": [
-        "Zusatz"
+        "Dodatak"
       ]
     },
     "Invoice state display as badge": {
       "Unpaid": [
-        "Offen"
+        "Neplaćeno"
       ],
       "Paid": [
-        "Bezahlt"
+        "Plaćeno"
       ],
       "Void": [
-        "Ungültig"
+        "Nevažeće"
       ],
       "Billed": [
-        "Abgerechnet"
+        "Naplaćeno"
       ],
       "Writeoff": [
-        "Ausbuchung"
+        "Otpisano"
       ]
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "Fügen Sie Ihren Namen (oder Firmennamen) und Ihre Adresse zu Ihren Rechnungen hinzu."
+        "Dodajte svoje ime (ili naziv tvrtke) i adresu na svoje fakture."
       ]
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "Fügen Sie Ihren Namen (oder Firmennamen) und Ihre Adresse zu Ihren Rechnungen hinzu"
+        "Dodajte svoje ime (ili naziv tvrtke) i adresu na svoje fakture"
       ]
     },
     "Title for PDF file": {
       "ProtonMail invoice": [
-        "ProtonMail‐Rechnung"
+        "ProtonMail faktura"
       ]
     },
     "Footer": {
       "Based in Switzerland, available globally.": [
-        "In der Schweiz ansässig und weltweit verfügbar."
+        "Bazirano u Švicarskoj, dostupno globalno."
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Überfällige Rechnung"
+        "Neplaćena faktura"
       ]
     },
     "Human verification method": {
@@ -3474,37 +3504,37 @@
         "CAPTCHA"
       ],
       "Email": [
-        "E-Mail-Adresse"
+        "E-pošta"
       ],
       "SMS": [
         "SMS"
       ],
       "Manual": [
-        "Manuell"
+        "Ručno"
       ],
       "No verification method available": [
-        "Keine Bestätigungsmethode verfügbar"
+        "Nema dostupne metode za provjeru"
       ]
     },
     "Password": {
       "Confirm new password": [
-        "Neues Passwort bestätigen"
+        "Potvrdi novu lozinku"
       ]
     },
     "Storage": {
       "Your current storage:": [
-        "Ihr aktueller Speicherplatz:"
+        "Vaš trenutni prostor za pohranu:"
       ],
       "Upgrade storage": [
-        "Speicher erweitern"
+        "Nadogradi prostor za pohranu"
       ],
       "Release notes": [
-        "Versionshinweise"
+        "Bilješke o izdanoj verziji"
       ]
     },
     "file size format": {
       "bytes": [
-        "Bytes"
+        "bajtova"
       ],
       "KB": [
         "KB"
@@ -3518,235 +3548,236 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Passwort muss mindestens ${ length } Zeichen enthalten",
-        "Das Passwort muss mindestens ${ length } Zeichen enthalten"
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
       ]
     },
     "Calendar status": {
       "Not synced": [
-        "Nicht synchronisiert"
+        ""
       ],
       "Syncing": [
-        "Wird synchronisiert"
+        "Sinkronizacija"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        "Kalender wird synchronisiert"
+        ""
       ],
       "More than 12 hours passed since last update": [
-        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+        ""
       ],
       "Calendar link is wrong": [
-        "Ungültiger Kalender-Link"
+        ""
       ],
       "Calendar is too big": [
-        "Kalender ist zu groß"
+        ""
       ],
       "Calendar link is not accessible": [
-        "Kalender-Link ist nicht erreichbar"
+        ""
       ],
       "Calendar link is temporarily unaccessible": [
-        "Kalender-Link ist vorübergehend nicht erreichbar"
+        ""
       ],
       "Failed to sync calendar": [
-        "Kalender konnte nicht synchronisiert werden"
+        ""
       ]
     },
     "Plan details": {
       "Medium": [
-        "Mittel"
+        "Srednja"
       ],
       "High": [
-        "Hoch"
+        "Visoko"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "Höchste Geschwindigkeit (bis zu 10 GBit/s)"
+        "Najviša brzina (do 10 Gbps)"
       ],
       "Highest speed (10 Gbps)": [
-        "Höchstgeschwindigkeitsserver (10 GBit/s)"
+        "Najviša brzina (10 Gbps)"
       ]
     },
     "Dropdown button": {
       "Need help?": [
-        "Benötigen Sie Hilfe?"
+        "Trebate pomoć?"
       ]
     },
     "Image alt": {
       "Laptop & smartphone shown connected to ProtonVPN network.": [
-        "Zeigt Laptop und Smartphone, die mit dem ProtonVPN-Netzwerk verbunden sind."
+        "Prikazani su laptopi i mobiteli spojeni na ProtonVPN mrežu."
       ],
       "Swiss based": [
-        "Aus der Schweiz"
+        "Bazirano u Švicarskoj"
       ],
       "Secure core servers": [
-        "„Secure Core”‐Server"
+        "Secure Core poslužitelji"
       ],
       "No logs": [
-        "Keine Protokollierung"
+        "Bez zapisa"
       ],
       "Kill switch to prevent IP exposure": [
-        "Kill Switch (Risiko‐Trennung), um die Offenlegung der IP‐Adresse zu verhindern"
+        "Kill Switch koji sprječava otkrivanje IP adrese"
       ],
       "DNS leak prevention": [
-        "DNS‐Weitergabeschutz"
+        "Zaštita od curenja DNS-a"
       ],
       "Strong encryption": [
-        "Starke Verschlüsselung"
+        "Jako šifriranje"
       ]
     },
     "About": {
       "Protect your data with Swiss privacy laws, some of the strongest in the world": [
-        "Schützt Ihre Daten mit den Schweizer Datenschutzgesetzen, die zu den strengsten der Welt gehören"
+        "Štitite svoje podatke švicarskim zakonima o privatnosti, koji su među najjačima na svijetu"
       ],
       "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
-        "Abwehr von hochentwickelten netzwerkbasierten Angriffen, indem Ihr Datenverkehr über gehärtete Server geleitet wird"
+        "Obranite se od naprednih mrežnih napada preusmjeravanjem vašeg prometa preko očvršćenih poslužitelja"
       ],
       "Keep your browsing history private - we do not keep any records of our users' online activity": [
-        "Hält Ihren Browserverlauf privat - wir führen keine Aufzeichnungen über die Online-Aktivitäten unserer Nutzer"
+        "Zadržite vašu povijest pregledavanja privatnom - ne čuvamo nikakve zapise o mrežnim aktivnostima naših korisnika"
       ],
       "Keep your data secure even if you are disconnected from your VPN server": [
-        "Hält Ihre Daten sicher, auch wenn Sie nicht mit Ihrem VPN-Server verbunden sind"
+        "Čuvajte svoje podatke čak i ako niste povezani s VPN poslužiteljem"
       ],
       "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
-        "Verhindert, dass Ihre DNS-Anfragen Ihren Browserverlauf offenlegen, indem alle Ihre DNS-Anfragen verschlüsselt werden"
+        "Spriječite da vaši DNS zahtjevi otkrivaju vašu povijest pregledavanja tako da se šifriraju svi vaši DNS upiti"
       ],
       "Defend your Internet connection with AES-256, the highest strength encryption.": [
-        "Schützt Ihre Internetverbindung mit AES-256, der stärksten Verschlüsselung."
+        "Obranite internetsku vezu s AES-256, najjačim šifriranjem."
       ]
     },
     "PlanPrice": {
       "${ totalMonthlyPriceText } / mo": [
-        "${ totalMonthlyPriceText }/Monat"
+        "${ totalMonthlyPriceText } / mj"
       ],
       "Billed as ${ totalBilledText }": [
-        "Abgerechnet als ${ totalBilledText }"
+        "Naplaćeno ${ totalBilledText }"
       ],
       "SAVE ${ discountText }": [
-        "${ discountText } sparen"
+        "UŠTEDITE ${ discountText }"
       ]
     },
     "Plan Action": {
       "Get ${ plan.title }": [
-        "Holen Sie sich ${ plan.title }"
+        "Nabavite ${ plan.title }"
       ]
     },
     "Plan Description": {
       "Privacy and security for everyone": [
-        "Datenschutz und Sicherheit für alle"
+        "Privatnost i sigurnost za svakoga"
       ],
       "Basic privacy features": [
-        "Grundlegende Datenschutzfunktionen"
+        "Osnovne značajke privatnosti"
       ],
       "Advanced security features": [
-        "Erweiterte Sicherheitsfunktionen"
+        "Napredne značajke sigurnosti"
       ],
       "The complete privacy suite": [
-        "Vollständiges Datenschutzpaket"
+        "Potpuno sučelje za privatnost"
       ],
       "Bundle plan": [
-        "Paketangebote"
+        "Skupni plan"
       ]
     },
     "VerificationType": {
       "email": [
-        "E‐Mail"
+        "e-pošta"
       ],
       "phone": [
-        "Telefon"
+        "telefon"
       ]
     },
     "Plan upsell": {
       "Monthly plan": [
-        "Monatliche Zahlweise"
+        "Mjesečni plan"
       ],
       "Yearly plan": [
-        "Jährliche Zahlweise"
+        "Godišnji plan"
       ]
     },
     "blackfriday Info": {
       "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Nutzen Sie frühzeitig und KOSTENLOS unseren neuen verschlüsselten Cloud-Speicher, indem Sie jetzt auf ein Plus-Paket wechseln."
+        "Ostvarite BESPLATNI rani pristup našem novom šifriranom prostoru za pohranu u oblaku ako sada obavite nadogradnju na kombinirani paket Plus."
       ],
       "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
+        "Ovaj se pretplatnički odnos automatski obnavlja nakon dvije godine po istoj cijeni dok se ne otkaže."
       ],
       "Discounts are based on monthly pricing.": [
-        "Die Rabatte basieren auf dem Monatspreis."
+        "Popusti se zasnivaju na cijeni mjesečne pretplate."
       ],
       "Offer valid only for first-time paid subscriptions.": [
-        "Das Angebot gilt nur, wenn zum ersten Mal ein kostenpflichtiges Abonnement abgeschlossen wird."
+        "Ponuda vrijedi samo za pretplatnike koji prvi puta zasnivaju pretplatnički odnos."
       ],
       "Save ${ percentage }%": [
         "${ percentage }%"
       ],
       "Includes": [
-        "Umfasst"
+        "Uključuje"
       ],
       "early access to": [
-        "frühzeitigen Zugriff auf"
+        "rani pristup usluzi"
       ],
       "ProtonDrive": [
         "ProtonDrive"
       ],
       "Free": [
-        "Kostenlos"
+        "Besplatno"
       ],
       "Standard price: ${ regularPrice }": [
-        "Regulärer Preis: ${ regularPrice }"
+        "Standardna cijena: ${ regularPrice }"
       ]
     },
     "blackfriday Title": {
       "ProtonDrive early access offer": [
-        "Frühzeitiger Zugang zu ProtonDrive"
+        "Ponuda za rani pristup usluzi ProtonDrive"
       ],
       "Cyber Monday Sale": [
-        "Cyber-Monday-Angebot"
+        "Rasprodaja povodom Kibernetičkog ponedjeljka"
       ],
       "Black Friday Sale": [
-        "Black-Friday-Angebot"
+        "Rasprodaja povodom Crnog petka"
       ],
       "for 1 month": [
-        "für einen Monat"
+        "za jedan mjesec"
       ],
       "for 1 year": [
-        "für ein Jahr"
+        "za jednu godinu"
       ],
       "for 2 years": [
-        "für zwei Jahre"
+        "za dvije godine"
       ],
       "Billed as ${ amount } ${ supNotice }": [
         ""
       ],
       "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Verlängert sich nach einem Jahr zu einem reduzierten Preis von ${ amount } pro Jahr (20 % Rabatt)."
+        "(${ notice }) Obnavlja se nakon jedne godine po sniženoj cijeni godišnje pretplate od ${ amount } svake godine (20 % popusta)."
       ],
       "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Verlängert sich nach zwei Jahren zu einem reduzierten Preis von ${ amount } für zwei Jahre (47 % Rabatt)."
+        "(${ notice }) Obnavlja se nakon dvije godine po sniženoj cijeni dvogodišnje pretplate od ${ amount } svake dvije godine (47 % popusta)."
       ],
       "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Verlängert sich nach einem Jahr zu einem reduzierten Paketpreis von ${ amount } pro Jahr (36 % Rabatt)."
+        "(${ notice }) Obnavlja se nakon jedne godine po sniženoj cijeni godišnje pretplate i cijeni kombiniranog paketa od ${ amount } svake godine (36 % popusta)."
       ],
       "Most popular": [
-        "Am beliebtesten"
+        "Najpopularniji odabir"
       ]
     },
     "blackfriday Action": {
       "Upgrade": [
-        "Wechseln"
+        "Nadogradi"
       ],
       "Get limited-time deal": [
-        "Befristetes Angebot nutzen"
+        "Iskoristi vremenski ograničenu ponudu"
       ]
     },
     "blackfriday info": {
       "per month": [
-        "pro Monat"
+        "mjesečno"
       ]
     },
     "blackfriday Promo title, need to be short": {
       "Special offer": [
-        "Sonderangebot"
+        "Posebna ponuda"
       ]
     }
   }
