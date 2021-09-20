@@ -69,32 +69,8 @@
       "Invalid postal code": [
         "Недействительный почтовый индекс"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Неверные учетные данные. Пожалуйста, попробуйте снова"
-      ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
-      "Enter 6 digits": [
-        "Введите 6 цифр"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
       "Please generate keys before you try to change your password.": [
         "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
-      ],
-      "Email address invalid": [
-        "Недействительный адрес эл. почты"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Пожалуйста, введите '${ dangerWord }'"
       ],
       "Please set a recovery/notification email first": [
         "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
@@ -113,6 +89,30 @@
       ],
       "File has no contents to preview": [
         "В файле нет содержимого для предпросмотра"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Неверные учетные данные. Пожалуйста, попробуйте снова"
+      ],
+      "Can't validate email, try again later": [
+        "Не удается проверить адрес электронной почты, повторите попытку позже"
+      ],
+      "Can't validate phone, try again later": [
+        "Не удается проверить телефон, повторите попытку позже"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Email address invalid": [
+        "Недействительный адрес эл. почты"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Пожалуйста, введите '${ dangerWord }'"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
@@ -135,23 +135,23 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
       "Signature verification failed": [
         "Ошибка проверки подписи"
       ],
-      "Invalid invitation link": [
-        "Пригласительная ссылка недействительная"
-      ],
-      "Can't check username, try again later": [
-        "Не могу проверить имя пользователя, повторите попытку позже"
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
       ],
       "Code wrong or not valid anymore": [
         "Неверный или недействительный код"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
+      ],
+      "Invalid invitation link": [
+        "Пригласительная ссылка недействительная"
+      ],
+      "Can't check username, try again later": [
+        "Не могу проверить имя пользователя, повторите попытку позже"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -451,48 +451,6 @@
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Пожалуйста, попробуйте ещё раз, используйте другой способ оплаты или обратитесь в ваш банк за помощью."
       ],
-      "here": [
-        "здесь"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Этот аккаунт был приостановлен из-за возможного нарушения политики пользования сервисом."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Ваш адрес электронной почты будет использован для этой разовой проверки."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
-      ],
-      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Введите свой резервный адрес электронной почты, и мы отправим вам имя вашего пользователя. (Обычно это тот адрес, который вы давали при регистрации.)"
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Для вашей учетной записи есть по крайней мере один просроченный счет. Ваш доступ был ограничен. ${ payInvoiceLink }"
       ],
@@ -621,39 +579,6 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это навсегда удалит ваш аккаунт и все его данные. Вы не сможете восстановить эту учетную запись."
-      ],
-      "We will send a reset code to your recovery email to reset your password.": [
-        "Мы отправим код для сброса пароля на указанный вами резервный адрес эл. почты."
-      ],
-      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "Мы отправили на вашу резервную эл. почту код сброса, действующий в течение часа или до запроса вами нового кода. Введите его ниже для продолжения."
-      ],
-      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "ВАЖНО: Не закрывайте эту страницу и не уходите с неё. Вам потребуется ввести код сброса в поле ниже, как только вы его получите."
-      ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "При сбросе вашего пароля также будут сброшены ваши ключи шифрования для всех связанных сервисов Proton (Mail и VPN). Вы больше не сможете прочитать хранящиеся там сообщения. Если знаете свои учётные данные ProtonMail, то НЕ делайте сброс. Используя их, вы можете войти ${ hereLink }."
-      ],
-      "ALL YOUR DATA WILL BE LOST!": [
-        "ВСЕ ВАШИ ДАННЫЕ БУДУТ УТЕРЯНЫ!"
-      ],
-      "If you remember your old password later, you can recover your existing messages.": [
-        "Если позже вы вспомните свой старый пароль, то сможете восстановить свои существующие сообщения."
-      ],
-      "Keep this password safe, it cannot be recovered.": [
-        "Храните этот пароль в надёжном месте. Он не может быть восстановлен."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "НЕ забывайте данный пароль. Если вы его забудете, то не сможете входить в почту или расшифровывать свои сообщения."
-      ],
-      "Done! We sent a code to ${ destination }": [
-        "Готово! Мы отправили код на ${ destination }"
-      ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Сброс вашего пароля означает, что ваш старый пароль перестанет работать на всех устройствах, где он используется. Вы действительно уверены, что хотите сбросить свой пароль?"
-      ],
-      "This can take a few seconds or a few minutes depending on your device": [
-        "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можете подключаться к серверу ProtonVPN с помощью сторонних VPN-приложений с открытым кодом, таких как Tunnelblick для macOS или OpenVPN для GNU/Linux. Для этого используйте следующие учетные данные:"
@@ -808,11 +733,86 @@
       "of": [
         "из"
       ],
-      "No results found": [
-        "Результаты не найдены"
+      "here": [
+        "здесь"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Этот аккаунт был приостановлен из-за возможного нарушения политики пользования сервисом."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваш адрес электронной почты будет использован для этой разовой проверки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
+        "Введите свой резервный адрес электронной почты, и мы отправим вам имя вашего пользователя. (Обычно это тот адрес, который вы давали при регистрации.)"
+      ],
+      "We will send a reset code to your recovery email to reset your password.": [
+        "Мы отправим код для сброса пароля на указанный вами резервный адрес эл. почты."
+      ],
+      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
+        "Мы отправили на вашу резервную эл. почту код сброса, действующий в течение часа или до запроса вами нового кода. Введите его ниже для продолжения."
+      ],
+      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
+        "ВАЖНО: Не закрывайте эту страницу и не уходите с неё. Вам потребуется ввести код сброса в поле ниже, как только вы его получите."
+      ],
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "При сбросе вашего пароля также будут сброшены ваши ключи шифрования для всех связанных сервисов Proton (Mail и VPN). Вы больше не сможете прочитать хранящиеся там сообщения. Если знаете свои учётные данные ProtonMail, то НЕ делайте сброс. Используя их, вы можете войти ${ hereLink }."
+      ],
+      "ALL YOUR DATA WILL BE LOST!": [
+        "ВСЕ ВАШИ ДАННЫЕ БУДУТ УТЕРЯНЫ!"
+      ],
+      "If you remember your old password later, you can recover your existing messages.": [
+        "Если позже вы вспомните свой старый пароль, то сможете восстановить свои существующие сообщения."
+      ],
+      "Keep this password safe, it cannot be recovered.": [
+        "Храните этот пароль в надёжном месте. Он не может быть восстановлен."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
+        "НЕ забывайте данный пароль. Если вы его забудете, то не сможете входить в почту или расшифровывать свои сообщения."
+      ],
+      "Done! We sent a code to ${ destination }": [
+        "Готово! Мы отправили код на ${ destination }"
+      ],
+      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
+        "Сброс вашего пароля означает, что ваш старый пароль перестанет работать на всех устройствах, где он используется. Вы действительно уверены, что хотите сбросить свой пароль?"
+      ],
+      "This can take a few seconds or a few minutes depending on your device": [
+        "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
       ],
       "support team": [
         "команда поддержки"
+      ],
+      "No results found": [
+        "Результаты не найдены"
       ],
       "Loading": [
         "Загрузка"
@@ -1056,33 +1056,6 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
-      "Log in": [
-        "Войти"
-      ],
-      "View invoice": [
-        "Просмотр счета"
-      ],
-      "Get verification code": [
-        "Получить проверочный код"
-      ],
-      "Try another method": [
-        "Попробуйте другой способ"
-      ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Did not receive the code?": [
-        "Не получили код?"
-      ],
-      "Edit email address": [
-        "Изменить адрес эл. почты"
-      ],
-      "Edit phone number": [
-        "Изменить номер телефона"
-      ],
-      "Email me my username(s)": [
-        "Отправить мне имя моего пользователя"
-      ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
@@ -1115,15 +1088,6 @@
       ],
       "Delete your account": [
         "Удалить аккаунт"
-      ],
-      "Get a new password": [
-        "Получить новый пароль"
-      ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
-      "Reset my password": [
-        "Сбросить мой пароль"
       ],
       "Hide": [
         "Скрыть"
@@ -1212,6 +1176,42 @@
       "Previous": [
         "Пред."
       ],
+      "Log in": [
+        "Войти"
+      ],
+      "View invoice": [
+        "Просмотр счета"
+      ],
+      "Get verification code": [
+        "Получить проверочный код"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Did not receive the code?": [
+        "Не получили код?"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
+      "Email me my username(s)": [
+        "Отправить мне имя моего пользователя"
+      ],
+      "Get a new password": [
+        "Получить новый пароль"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
+      ],
+      "Reset my password": [
+        "Сбросить мой пароль"
+      ],
       "Close navigation": [
         "Cкрыть панель навигации"
       ],
@@ -1238,6 +1238,12 @@
       ],
       "Select": [
         "Выбрать"
+      ],
+      "Verify code again": [
+        "Подтвердить код еще раз"
+      ],
+      "Verify code": [
+        "Подтвердите код"
       ],
       "Create account": [
         "Создать учетную запись"
@@ -1268,12 +1274,6 @@
       ],
       "Homepage": [
         "Домашняя страница"
-      ],
-      "Verify code again": [
-        "Подтвердить код еще раз"
-      ],
-      "Verify code": [
-        "Подтвердите код"
       ]
     },
     "Bug category": {
@@ -1385,12 +1385,6 @@
       "click here": [
         "нажмите здесь"
       ],
-      "Request an invite": [
-        "Запросить приглашение"
-      ],
-      "Back to login": [
-        "Назад к форме входа"
-      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
@@ -1399,9 +1393,6 @@
       ],
       "Not activated": [
         "Не активировано"
-      ],
-      "here": [
-        "здесь"
       ],
       "View guide": [
         "Посмотреть руководство"
@@ -1412,14 +1403,23 @@
       "Learn more": [
         "Узнать больше"
       ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "Back to login": [
+        "Назад к форме входа"
+      ],
+      "here": [
+        "здесь"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
       "Sign up for free": [
         "Зарегистрируйтесь бесплатно"
       ],
       "protonvpn.com": [
         "protonvpn.com"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ],
       "Don't have an account yet? Sign up for free!": [
         "У вас еще нет аккаунта? Зарегистрируйтесь бесплатно!"
@@ -1471,15 +1471,6 @@
       "Payment method added": [
         "Способ оплаты добавлен"
       ],
-      "Code sent to ${ methodTo }": [
-        "Код отправлен на ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Проверка прошла успешно"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Если вы ввели действительный адрес эл. почты для уведомлений, мы отправим вам письмо с вашими именами пользователей в течение следующей минуты."
-      ],
       "Password updated": [
         "Пароль обновлён"
       ],
@@ -1506,6 +1497,15 @@
       ],
       "Invoice customized": [
         "Счёт настроен"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Код отправлен на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Если вы ввели действительный адрес эл. почты для уведомлений, мы отправим вам письмо с вашими именами пользователей в течение следующей минуты."
       ]
     },
     "Label": {
@@ -1644,33 +1644,6 @@
       "Select a method": [
         "Выберите метод"
       ],
-      "Cancel": [
-        "Отмена"
-      ],
-      "Submit": [
-        "Отправить"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
-      ],
-      "Username or ProtonMail address": [
-        "Имя пользователя или адрес ProtonMail"
-      ],
-      "Phone number": [
-        "Номер телефона"
-      ],
-      "Verification code": [
-        "Проверочный код"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из 6 цифр"
-      ],
       "Name": [
         "Имя"
       ],
@@ -1710,6 +1683,9 @@
       "Confirm mailbox password": [
         "Подтвердите пароль почтового ящика"
       ],
+      "Two-factor authentication code": [
+        "Код двухфакторной аутентификации"
+      ],
       "Key": [
         "Ключ"
       ],
@@ -1725,6 +1701,9 @@
       "Two-password mode": [
         "Режим двух паролей"
       ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
       "What is the main reason you are deleting your account?": [
         "Какова основная причина, по которой вы удаляете свою учетную запись?"
       ],
@@ -1737,20 +1716,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить эту учетную запись и все её данные."
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
-      "Email": [
-        "Эл. почта"
-      ],
-      "Token": [
-        "Токен"
-      ],
-      "Danger": [
-        "Ненадежный"
-      ],
       "Default language": [
         "Язык по умолчанию"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Submit": [
+        "Отправить"
       ],
       "OpenVPN / IKEv2 username": [
         "Имя пользователя OpenVPN / IKEv2"
@@ -1797,17 +1773,44 @@
       "Customize invoices": [
         "Настройка счетов"
       ],
+      "Username or ProtonMail address": [
+        "Имя пользователя или адрес ProtonMail"
+      ],
+      "Phone number": [
+        "Номер телефона"
+      ],
+      "Verification code": [
+        "Проверочный код"
+      ],
+      "Enter the 6-digit code": [
+        "Введите код из 6 цифр"
+      ],
+      "Username": [
+        "Имя пользователя"
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "Token": [
+        "Токен"
+      ],
+      "Danger": [
+        "Ненадежный"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
       "Reveal password": [
         "Показать пароль"
       ],
       "Hide password": [
         "Скрыть пароль"
       ],
-      "Copy": [
-        "Копировать"
-      ],
       "Back to:": [
         "Назад к:"
+      ],
+      "Enter the code displayed on your TV": [
+        "Введите код, отображаемый на вашем ТВ"
       ],
       "Verification method": [
         "Способ подтверждения"
@@ -1838,9 +1841,6 @@
       ],
       "Total price (two-year)": [
         "Общая цена (два года)"
-      ],
-      "Enter the code displayed on your TV": [
-        "Введите код, отображаемый на вашем ТВ"
       ]
     },
     "Placeholder": {
@@ -1886,12 +1886,6 @@
       "Postal code": [
         "Почтовый индекс"
       ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "Email": [
-        "Эл. почта"
-      ],
       "Password": [
         "Пароль"
       ],
@@ -1903,6 +1897,12 @@
       ],
       "Email address": [
         "Адрес эл. почты"
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "Email": [
+        "Эл. почта"
       ],
       "Username": [
         "Имя пользователя"
@@ -2041,27 +2041,6 @@
       "Error": [
         "Ошибка"
       ],
-      "Sign in again to continue": [
-        "Войдите снова, чтобы продолжить"
-      ],
-      "Account suspended": [
-        "Аккаунт заблокирован"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Пожалуйста, введите ваше имя пользователя или эл. адрес ProtonMail"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Human verification": [
-        "Проверка \"Я не робот\""
-      ],
       "Change password for ${ Name } (${ Email })": [
         "Изменить пароль для ${ Name } (${ Email })"
       ],
@@ -2095,8 +2074,8 @@
       "Delete account": [
         "Удаление аккаунта"
       ],
-      "Confirm reset password": [
-        "Подтвердите пароль сброса"
+      "Sign in again to continue": [
+        "Войдите снова, чтобы продолжить"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -2140,6 +2119,27 @@
       "Action": [
         "Действия"
       ],
+      "Account suspended": [
+        "Аккаунт заблокирован"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Пожалуйста, введите ваше имя пользователя или эл. адрес ProtonMail"
+      ],
+      "Enter your password": [
+        "Введите свой пароль"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Human verification": [
+        "Проверка \"Я не робот\""
+      ],
+      "Confirm reset password": [
+        "Подтвердите пароль сброса"
+      ],
       "Previous": [
         "Предыдущий"
       ],
@@ -2157,18 +2157,6 @@
       ],
       "My subscription": [
         "Моя подписка"
-      ],
-      "Forgot username": [
-        "Забыли имя пользователя"
-      ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
-      "Log in": [
-        "Войти"
-      ],
-      "User log in": [
-        "Вход пользователя"
       ],
       "Dashboard": [
         "Панель управления"
@@ -2193,6 +2181,63 @@
       ],
       "Language": [
         "Язык"
+      ],
+      "Account": [
+        "Аккаунт"
+      ],
+      "Username": [
+        "Имя пользователя"
+      ],
+      "Passwords": [
+        "Пароли"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "Имя пользователя OpenVPN / IKEv2"
+      ],
+      "Recovery & notification": [
+        "Восстановление и уведомление"
+      ],
+      "Email subscriptions": [
+        "Подписки на рассылки"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Downloads": [
+        "Загрузки"
+      ],
+      "ProtonVPN clients": [
+        "Клиенты ProtonVPN"
+      ],
+      "OpenVPN configuration files": [
+        "Конфигурационные файлы OpenVPN"
+      ],
+      "Payments": [
+        "Платежи"
+      ],
+      "Payment methods": [
+        "Способы оплаты"
+      ],
+      "Invoices": [
+        "Счета"
+      ],
+      "Device connected!": [
+        "Устройство подключено!"
+      ],
+      "TV log in": [
+        "Вход на ТВ"
+      ],
+      "Forgot username": [
+        "Забыли имя пользователя"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "User log in": [
+        "Вход пользователя"
       ],
       "Redeem coupon": [
         "Активировать купон"
@@ -2262,54 +2307,6 @@
       ],
       "Sign up": [
         "Зарегистрироваться"
-      ],
-      "Account": [
-        "Аккаунт"
-      ],
-      "Username": [
-        "Имя пользователя"
-      ],
-      "Passwords": [
-        "Пароли"
-      ],
-      "Two-factor authentication": [
-        "Двухфакторная аутентификация"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Имя пользователя OpenVPN / IKEv2"
-      ],
-      "Recovery & notification": [
-        "Восстановление и уведомление"
-      ],
-      "Email subscriptions": [
-        "Подписки на рассылки"
-      ],
-      "Delete": [
-        "Удалить"
-      ],
-      "Downloads": [
-        "Загрузки"
-      ],
-      "ProtonVPN clients": [
-        "Клиенты ProtonVPN"
-      ],
-      "OpenVPN configuration files": [
-        "Конфигурационные файлы OpenVPN"
-      ],
-      "Payments": [
-        "Платежи"
-      ],
-      "Payment methods": [
-        "Способы оплаты"
-      ],
-      "Invoices": [
-        "Счета"
-      ],
-      "Device connected!": [
-        "Устройство подключено!"
-      ],
-      "TV log in": [
-        "Вход на ТВ"
       ],
       "Settings": [
         "Настройки"
@@ -3275,33 +3272,6 @@
         "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Находится в Швейцарии, доступно по всему миру."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Просроченный счёт"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Эл. почта"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Вручную"
-      ],
-      "No verification method available": [
-        "Нет доступных способов проверки"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна новая версия ${ appName } . ${ reloadButton }."
@@ -3338,11 +3308,6 @@
       ],
       "(1 email per month)": [
         "(1 письмо в месяц)"
-      ]
-    },
-    "Password": {
-      "Confirm new password": [
-        "Подтвердите новый пароль"
       ]
     },
     "Notification": {
@@ -3554,6 +3519,38 @@
         "Счёт ProtonMail"
       ]
     },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "Находится в Швейцарии, доступно по всему миру."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Просроченный счёт"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Вручную"
+      ],
+      "No verification method available": [
+        "Нет доступных способов проверки"
+      ]
+    },
+    "Password": {
+      "Confirm new password": [
+        "Подтвердите новый пароль"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Текущее хранилище:"
@@ -3589,7 +3586,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Не синхронизировано"
       ],
       "Syncing": [
         "Синхронизация"
@@ -3597,25 +3594,25 @@
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        ""
+        "Календарь синхронизируется"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Более 12 часов прошло с момента последнего обновления"
       ],
       "Calendar link is wrong": [
-        ""
+        "Неверная ссылка календаря"
       ],
       "Calendar is too big": [
-        ""
+        "Календарь слишком большой"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Ссылка на календарь недоступна"
       ],
       "Calendar link is temporarily unaccessible": [
-        ""
+        "Ссылка на календарь временно недоступна"
       ],
       "Failed to sync calendar": [
-        ""
+        "Сбой синхронизации календаря"
       ]
     },
     "Plan details": {

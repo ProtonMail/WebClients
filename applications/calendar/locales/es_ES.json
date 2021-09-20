@@ -43,7 +43,7 @@
         "El proceso de pago ha fallado"
       ],
       "Payment process consumed": [
-        "El proceso de pago se realizó con exito"
+        "El tiempo del proceso de pago se ha agotado"
       ],
       "Payment process not supported": [
         "No se ofrece soporte para este metodo de pago"
@@ -820,7 +820,7 @@
         "Feedback"
       ],
       "Give feedback": [
-        "Deja un comentario"
+        ""
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -1172,7 +1172,7 @@
         "Selecciona la hora de finalización del evento"
       ],
       "Select the time zone for the event end time": [
-        "Selecciona la zona horaria para la hora final del evento"
+        "Selecciona la zona horaria para la hora de finalización del evento"
       ],
       "Event is happening on defined time slot": [
         "El evento ocurre en un intervalo de tiempo definido"
@@ -1196,10 +1196,10 @@
         "Añade la ubicación del evento"
       ],
       "Add more information related to this event": [
-        "Agrega más información relacionada con este evento"
+        "Añade más información relacionada con este evento"
       ],
       "Select which calendar to add this event to": [
-        "Selecciona a cuál calendario agregar este evento"
+        "Selecciona a que calendario quieres añadir este evento"
       ],
       "Create event": [
         "Crear evento"
@@ -1326,7 +1326,7 @@
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con su cuenta de PayPal para añadirla como método de pago."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "Utilizamos 3-D Secure para proteger sus pagos."
+        "Utilizamos 3-D Secure para proteger tus pagos."
       ],
       "Billed as ${ billedPrice } per year": [
         "Facturado como ${ billedPrice } al año"
@@ -2167,13 +2167,13 @@
         "Todo el día"
       ],
       "Repeat on": [
-        "Repetir en"
+        ""
       ],
       "Repeat every": [
         "Repetir cada"
       ],
       "Ends": [
-        "Termina"
+        ""
       ],
       "Organizer": [
         "Organizador"
@@ -2194,7 +2194,7 @@
         "Frecuencia del evento"
       ],
       "Event location": [
-        "Lugar del evento"
+        "Ubicación del evento"
       ],
       "Event notifications": [
         "Notificaciones del evento"
@@ -3100,7 +3100,7 @@
         "Idiomas admitidos"
       ],
       "DNS leak prevention": [
-        "Protección contra filtraciones del DNS"
+        ""
       ],
       "Kill Switch / Always-on VPN": [
         "Kill Switch / VPN siempre activa"
@@ -3318,7 +3318,7 @@
     },
     "Price": {
       "Free": [
-        "Gratuita"
+        "Gratuito"
       ]
     },
     "Countdown unit": {
@@ -3359,7 +3359,7 @@
     },
     "Free price": {
       "Free": [
-        "Gratuita"
+        "Gratuito"
       ]
     },
     "Delinquent modal title": {
@@ -3458,7 +3458,7 @@
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "",
-        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados con éxito."
+        ""
       ],
       "No contacts merged.": [
         "Ningún contacto combinado."
@@ -3777,12 +3777,12 @@
         ""
       ],
       "Syncing": [
-        ""
+        "Sincronizando"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        ""
+        "El calendario se está sincronizando"
       ],
       "More than 12 hours passed since last update": [
         ""
@@ -4902,13 +4902,13 @@
     },
     "Event reply": {
       "yes": [
-        ""
+        "sí"
       ],
       "maybe": [
-        ""
+        "quizás"
       ],
       "no": [
-        ""
+        "no"
       ],
       "unanswered": [
         ""
@@ -4924,21 +4924,106 @@
     },
     "Event edit button tooltip": {
       "Edit event": [
-        ""
+        "Editar evento"
       ]
     },
     "Event delete button tooltip": {
       "Delete event": [
-        ""
+        "Eliminar evento"
       ]
     },
     "Event cancelled status badge": {
       "cancelled": [
-        ""
+        "cancelado"
       ]
     },
     "Calendar invite buttons label": {
       "Attending?": [
+        "¿Asistirás?"
+      ]
+    },
+    "blackfriday Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday Info": {
+      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
+        ""
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        ""
+      ],
+      "Discounts are based on monthly pricing.": [
+        ""
+      ],
+      "Offer valid only for first-time paid subscriptions.": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Includes": [
+        ""
+      ],
+      "early access to": [
+        ""
+      ],
+      "ProtonDrive": [
+        ""
+      ],
+      "Free": [
+        ""
+      ],
+      "Standard price: ${ regularPrice }": [
+        ""
+      ]
+    },
+    "blackfriday Title": {
+      "ProtonDrive early access offer": [
+        ""
+      ],
+      "Cyber Monday Sale": [
+        ""
+      ],
+      "Black Friday Sale": [
+        ""
+      ],
+      "for 1 month": [
+        ""
+      ],
+      "for 1 year": [
+        ""
+      ],
+      "for 2 years": [
+        ""
+      ],
+      "Billed as ${ amount } ${ supNotice }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+        ""
+      ],
+      "Most popular": [
+        ""
+      ]
+    },
+    "blackfriday Action": {
+      "Upgrade": [
+        ""
+      ],
+      "Get limited-time deal": [
+        ""
+      ]
+    },
+    "blackfriday info": {
+      "per month": [
         ""
       ]
     }
