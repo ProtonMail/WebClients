@@ -63,12 +63,14 @@ const domIsBusy = () => {
     return false;
 };
 
-const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
+const THIRTY_MINUTES = 30 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
 export const newVersionUpdater = (config: ProtonConfig) => {
     const { VERSION_PATH, COMMIT } = config;
+
+    let reloadTimeoutId: number | null = null;
 
     const getVersion = () => fetch(VERSION_PATH).then((response) => response.json());
 
@@ -82,11 +84,29 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         }
     };
 
-    const handleVisibilityChange = () => {
-        const documentIsVisible = !document.hidden && document.visibilityState === 'visible';
+    const clearReload = () => {
+        if (reloadTimeoutId) {
+            reloadTimeoutId = null;
+        }
+    };
 
-        if (!documentIsVisible && !domIsBusy() && !getIsBusy()) {
+    const scheduleReload = () => {
+        clearReload();
+        reloadTimeoutId = window.setTimeout(() => {
             window.location.reload();
+        }, THIRTY_MINUTES);
+    };
+
+    const handleVisibilityChange = () => {
+        const documentIsVisible = document.visibilityState === 'visible';
+
+        if (documentIsVisible) {
+            clearReload();
+            return;
+        }
+
+        if (!domIsBusy() && !getIsBusy()) {
+            scheduleReload();
         }
     };
 
@@ -108,6 +128,6 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         () => {
             checkForNewVersion();
         },
-        EVERY_THIRTY_MINUTES
+        THIRTY_MINUTES
     );
 };
