@@ -66,9 +66,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 }
                 if (item.isDirectory) {
                     const reader = item.createReader();
-                    const newPath = [...path, item.name];
-
-                    filesToUpload.push({ path: newPath });
+                    filesToUpload.push({ path, folder: item.name });
 
                     // Iterates over folders recursively and puts them into filesToUpload list
                     const getEntries = async () => {
@@ -79,7 +77,9 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                             reader.readEntries(
                                 (entries: any[]) => {
                                     if (entries.length) {
-                                        entries.forEach((entry) => promises.push(traverseDirectories(entry, newPath)));
+                                        entries.forEach((entry) =>
+                                            promises.push(traverseDirectories(entry, [...path, item.name]))
+                                        );
                                         resolve(getEntries());
                                     } else {
                                         resolve();

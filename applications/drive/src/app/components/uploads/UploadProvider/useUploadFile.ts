@@ -219,40 +219,29 @@ export default function useUploadFile() {
             return createRevision(abortSignal, link);
         };
 
-        // Double queue: one deduplicated by file name to not upload file
-        // with the same name in parallel, and one more queue around it
-        // to not timeout (so the creation do not wait too long).
         const createFileRevision = queuedFunction(
             'create_file_revision',
-            queuedFunction(
-                `upload_setup:${file.name}`,
-                async (abortSignal: AbortSignal, mimeType: string): Promise<FileRevision> => {
-                    const { filename: newName, hash } = await findAvailableName(
-                        abortSignal,
-                        shareId,
-                        parentId,
-                        file.name
-                    );
-                    checkSignal(abortSignal, file.name);
-                    if (file.name === newName) {
-                        return createFile(abortSignal, file.name, mimeType, hash);
-                    }
-                    const conflictStrategy = await getFileConflictStrategy(abortSignal);
-                    if (conflictStrategy === TransferConflictStrategy.Rename) {
-                        return createFile(abortSignal, newName, mimeType, hash);
-                    }
-                    if (
-                        conflictStrategy === TransferConflictStrategy.Replace ||
-                        conflictStrategy === TransferConflictStrategy.Merge
-                    ) {
-                        return replaceFile(abortSignal, mimeType);
-                    }
-                    if (conflictStrategy === TransferConflictStrategy.Skip) {
-                        throw new TransferCancel({ message: c('Info').t`Transfer skipped for file "${file.name}"` });
-                    }
-                    throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
+            async (abortSignal: AbortSignal, mimeType: string): Promise<FileRevision> => {
+                const { filename: newName, hash } = await findAvailableName(abortSignal, shareId, parentId, file.name);
+                checkSignal(abortSignal, file.name);
+                if (file.name === newName) {
+                    return createFile(abortSignal, file.name, mimeType, hash);
                 }
-            ),
+                const conflictStrategy = await getFileConflictStrategy(abortSignal);
+                if (conflictStrategy === TransferConflictStrategy.Rename) {
+                    return createFile(abortSignal, newName, mimeType, hash);
+                }
+                if (
+                    conflictStrategy === TransferConflictStrategy.Replace ||
+                    conflictStrategy === TransferConflictStrategy.Merge
+                ) {
+                    return replaceFile(abortSignal, mimeType);
+                }
+                if (conflictStrategy === TransferConflictStrategy.Skip) {
+                    throw new TransferCancel({ message: c('Info').t`Transfer skipped for file "${file.name}"` });
+                }
+                throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
+            },
             MAX_UPLOAD_BLOCKS_LOAD
         );
 

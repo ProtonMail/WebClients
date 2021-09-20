@@ -33,8 +33,9 @@ export interface UploadCallbacks {
     onError?: (error: Error) => void;
 }
 
-export type UploadFileList = UploadFileItem[];
-export type UploadFileItem = { path: string[]; file?: File };
+export type UploadFileList = (UploadFileItem | UploadFolderItem)[];
+export type UploadFileItem = { path: string[]; file: File };
+export type UploadFolderItem = { path: string[]; folder: string };
 
 export type InitializedFileMeta = {
     fileName: string;
