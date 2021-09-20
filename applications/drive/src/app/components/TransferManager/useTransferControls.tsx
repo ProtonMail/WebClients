@@ -93,38 +93,23 @@ function useTransferControls() {
     };
 
     const pauseTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            if (!isTransferPaused(entry.transfer)) {
-                const transferId = entry.transfer.id;
-                if (entry.type === TransferType.Download) {
-                    pauseDownload(transferId).catch(console.warn);
-                    return;
-                }
-
-                pauseUploads(transferId); // todo call with callback once
-            }
-        });
+        const notPausedEntries = entries.filter(({ transfer }) => !isTransferPaused(transfer));
+        applyToTransfers(
+            notPausedEntries,
+            (id) => {
+                pauseDownload(id).catch(console.warn);
+            },
+            pauseUploads
+        );
     };
 
     const resumeTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            if (isTransferPaused(entry.transfer)) {
-                const transferId = entry.transfer.id;
-                if (entry.type === TransferType.Download) {
-                    return resumeDownload(transferId);
-                }
-
-                resumeUploads(transferId); // todo call with callback once
-            }
-        });
+        const pausedEntries = entries.filter(({ transfer }) => isTransferPaused(transfer));
+        applyToTransfers(pausedEntries, resumeDownload, resumeUploads);
     };
 
     const cancelTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            return entry.type === TransferType.Download
-                ? cancelDownload(entry.transfer.id)
-                : cancelUploads(entry.transfer.id); // todo call with callback once
-        });
+        applyToTransfers(entries, cancelDownload, cancelUploads);
     };
 
     const restartTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
@@ -145,3 +130,16 @@ function useTransferControls() {
 }
 
 export default useTransferControls;
+
+function applyToTransfers(
+    entries: { transfer: Download | Upload; type: TransferType }[],
+    downloadCallback: (id: string) => void,
+    uploadCallback: (filter: (data: { id: string }) => boolean) => void
+) {
+    entries
+        .filter(({ type }) => type === TransferType.Download)
+        .forEach(({ transfer: { id } }) => downloadCallback(id));
+
+    const uploadIds = entries.filter(({ type }) => type === TransferType.Upload).map(({ transfer: { id } }) => id);
+    uploadCallback(({ id }) => uploadIds.includes(id));
+}

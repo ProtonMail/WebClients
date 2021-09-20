@@ -67,7 +67,7 @@ export default function useUploadHelper() {
     };
 
     const getLinkByName = async (abortSignal: AbortSignal, shareId: string, parentLinkID: string, name: string) => {
-        // Its fine to abort but keep the original function to finish.
+        // Its fine to abort sooner and leave the original function to finish.
         // It just fills the cache with the children of the folder.
         await callWithAbortSignal(abortSignal, () => fetchAllFolderPages(shareId, parentLinkID));
         const children = cache.get.childLinkMetas(shareId, parentLinkID);
