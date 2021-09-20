@@ -1,7 +1,7 @@
-import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from "@proton/components";
-import ApiProvider from "@proton/components/containers/api/ApiProvider";
-import ConfigProvider from "@proton/components/containers/config/Provider";
-import createCache from "@proton/shared/lib/helpers/cache";
+import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import createCache from '@proton/shared/lib/helpers/cache';
 
 import * as config from '../src/app/config';
 import theme from './theme';
@@ -33,9 +33,18 @@ export const decorators = [
     ),
 ];
 
-const order = ['introduction-', 'changelog-', 'components-', 'css-', 'design-system-', 'proton-ui-'];
+const order = [
+    'introduction-',
+    'changelog-',
+    'components-',
+    'css-',
+    'theming-explanations-',
+    'theming-usage-',
+    'theming-taxonomy-',
+    'proton-ui-',
+];
 
-const priority = ['introduction-', 'changelog-'];
+const priority = ['introduction-', 'changelog-', 'theming-'];
 
 export const parameters = {
     viewMode: 'docs',
