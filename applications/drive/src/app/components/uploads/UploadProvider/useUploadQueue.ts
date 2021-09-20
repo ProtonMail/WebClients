@@ -294,8 +294,15 @@ function findUploadQueueFolder(part: UploadQueue | FolderUpload, path: string[])
 }
 
 function isNameAlreadyUploading(part: UploadQueue | FolderUpload, name: string): boolean {
+    const recursiveIsNotFinished = (upload: FolderUpload): boolean => {
+        return (
+            !isTransferFinished(upload) ||
+            upload.files.some((upload) => !isTransferFinished(upload)) ||
+            upload.folders.some(recursiveIsNotFinished)
+        );
+    };
     return (
         part.files.filter((upload) => !isTransferFinished(upload)).some(({ file }) => file.name === name) ||
-        part.folders.filter((upload) => !isTransferFinished(upload)).some((folder) => folder.name === name)
+        part.folders.filter(recursiveIsNotFinished).some((folder) => folder.name === name)
     );
 }
