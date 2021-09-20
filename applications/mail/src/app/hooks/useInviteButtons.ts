@@ -105,7 +105,7 @@ const useInviteButtons = ({
                     },
                 };
                 const vevent = withDtstamp(omit(veventIcs, ['dtstamp']), timestamp);
-                const vtimezones = await generateVtimezonesComponents(inviteVevent, getVTimezonesMap);
+                const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
                 if (pmData?.sharedEventID && pmData?.sharedSessionKey) {
                     vevent['x-pm-shared-event-id'] = { value: pmData.sharedEventID };
                     vevent['x-pm-session-key'] = { value: pmData.sharedSessionKey };
