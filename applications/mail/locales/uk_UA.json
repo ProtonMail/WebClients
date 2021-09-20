@@ -5,36 +5,18 @@
   },
   "contexts": {
     "": {},
-    "file size format": {
-      "bytes": [
-        "байтів"
+    "Message": {
+      "Re:": [
+        "Re:"
       ],
-      "KB": [
-        "КБ"
+      "Fw:": [
+        "Fw:"
       ],
-      "MB": [
-        "МБ"
-      ],
-      "GB": [
-        "ГБ"
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date }, ${ name } ${ address } пише:"
       ]
     },
     "Error": {
-      "This field is required": [
-        "Це поле є обов'язковим"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "В цьому полі повинно бути не менше ${ minimumLength } символів."
-      ],
-      "Email is not valid": [
-        "Е-пошта недійсна"
-      ],
-      "Not a valid number": [
-        "Номер недійсний"
-      ],
-      "Passwords do not match": [
-        "Паролі відрізняються"
-      ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
       ],
@@ -58,6 +40,21 @@
       ],
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
+      ],
+      "This field is required": [
+        "Це поле є обов'язковим"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
+      ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "Request timed out.": [
         "Час очікування запиту завершився."
@@ -89,11 +86,11 @@
       "Calendar primary private key is not decrypted": [
         "Основний приватний ключ календаря не зашифрований"
       ],
-      "Unknown error": [
-        "Невідома помилка"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити в цьому браузері"
+      ],
+      "Unknown error": [
+        "Невідома помилка"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -107,35 +104,14 @@
       "Email address invalid": [
         "Недійсна адреса електронної пошти"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
-      ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Неправильний пароль поштової скриньки. Спробуйте знову"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Неправильні дані для входу. Будь ласка спробуйте ще раз"
-      ],
-      "Can't validate email, try again later": [
-        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
-      ],
-      "Can't validate phone, try again later": [
-        "Не вдається підтвердити телефон. Спробуйте знову пізніше"
-      ],
-      "Enter 6 digits": [
-        "Введіть 6 цифр"
-      ],
-      "Invalid verification code": [
-        "Недійсний код підтвердження"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
       ],
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
@@ -146,11 +122,11 @@
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
-      "Preferences could not be saved": [
-        "Не вдалося зберегти налаштування"
-      ],
       "Some contacts could not be deleted": [
         "Не вдалося видалити деякі контакти"
+      ],
+      "Preferences could not be saved": [
+        "Не вдалося зберегти налаштування"
       ],
       "Invalid public key file": [
         "Недійсний файл відкритого ключа"
@@ -182,14 +158,29 @@
       "A group with this name already exists": [
         "Група з таким ім'ям вже існує"
       ],
-      "We were unable to connect to your service provider.": [
-        "Не вдається з'єднатися з вашим постачальником послуг."
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
-      ],
       "File has no contents to preview": [
         "Файл не має вмісту для перегляду"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Неправильний пароль поштової скриньки. Спробуйте знову"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Неправильні дані для входу. Будь ласка спробуйте ще раз"
+      ],
+      "Can't validate email, try again later": [
+        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
+      ],
+      "Can't validate phone, try again later": [
+        "Не вдається підтвердити телефон. Спробуйте знову пізніше"
+      ],
+      "Enter 6 digits": [
+        "Введіть 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Недійсний код підтвердження"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "Process aborted": [
         "Процес перервано"
@@ -250,6 +241,12 @@
       ],
       "Invalid code": [
         "Недійсний код"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Не вдається з'єднатися з вашим постачальником послуг."
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
       ],
       "Empty condition": [
         "Порожня умова"
@@ -339,7 +336,7 @@
         "Вилучено дублікати отримувачів: ${ recipents }"
       ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } для <${ email }>. Щоб розв'язувати проблему можете додати інший ключ або вимкнути шифрування для цього контакту."
+        "${ error.message } для <${ email }>. Щоб розв'язати проблему можете додати інший ключ або вимкнути шифрування для цього контакту."
       ],
       "Message passwords do not match.": [
         "Паролі повідомлення відрізняються."
@@ -384,7 +381,7 @@
         "повторно активувати попередній ключ"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. Якщо ви пам'ятаєте свій попередній пароль, ви можете ${ reActivateKeyLink }, щоб отримати доступ до своїх повідомлень. ${ learnMoreLink }"
+        "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. Якщо ви пам'ятаєте свій попередній пароль, можете ${ reActivateKeyLink }, щоб отримати доступ до своїх повідомлень. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
         "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. ${ learnMoreLink }"
@@ -393,12 +390,18 @@
         "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
+    "file size format": {
+      "bytes": [
+        "байтів"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
       ]
     },
     "Contact field label": {
@@ -515,15 +518,12 @@
         "Адреса"
       ]
     },
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }, ${ name } ${ address } пише:"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
       ]
     },
     "Info": {
@@ -563,15 +563,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "No contacts added yet": [
-        "Контактів ще не додано"
-      ],
-      "You can either update your search query or ${ button }": [
-        "Ви можете оновити свій пошуковий запит, або ${ button }"
-      ],
-      "support team": [
-        "командою підтримки"
-      ],
       "Week": [
         "Тиждень"
       ],
@@ -580,9 +571,6 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
-      ],
-      "Loading": [
-        "Завантаження"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
@@ -639,7 +627,7 @@
         "Тестове посилання"
       ],
       "Change your default in settings": [
-        "Змінити типовий у налаштуваннях"
+        "Змінити типовий шрифт у налаштуваннях"
       ],
       "Default": [
         "Типовий"
@@ -674,50 +662,17 @@
       "Plain text": [
         "Звичайний текст"
       ],
+      "Loading": [
+        "Завантаження"
+      ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
       ],
       "Loading ${ appName }": [
         "Завантажується ${ appName }"
       ],
-      "here": [
-        "тут"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Цей обліковий запис було призупинено через потенційне порушення правил."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Введіть код перевірки, який був надісланий на ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ваш номер телефону використається лише для цієї одноразової перевірки."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      "No contacts added yet": [
+        "Контактів ще не додано"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
@@ -742,15 +697,6 @@
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "${ contactsEnumeration } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення"
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Будь ласка, зачекайте поки ми перевіряємо контакти, що містять дані, зашифровані неактивним ключем."
@@ -782,6 +728,15 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
       ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення"
+      ],
       "Group assignment applied": [
         "Призначення групи застосовано"
       ],
@@ -793,6 +748,9 @@
       ],
       "Primary": [
         "Основний"
+      ],
+      "You can either update your search query or ${ button }": [
+        "Ви можете оновити свій пошуковий запит, або ${ button }"
       ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
@@ -842,36 +800,6 @@
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
       ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Your contacts are being imported from": [
-        "Ваші контакти імпортуються з"
-      ],
-      "to": [
-        "до"
-      ],
-      "Your import has started!": [
-        "Імпортування розпочалося!"
-      ],
-      "We will notify you once your import is finished.": [
-        "Ми сповістимо вас одразу після завершення імпортування."
-      ],
-      "Large imports can take several days to complete.": [
-        "Великий обсяг імпортування може тривати декілька днів."
-      ],
-      "You can continue using Proton services as usual.": [
-        "Ви можете продовжувати користуватися Proton у звичайному режимі."
-      ],
-      "Your import will not be processed.": [
-        "Ваш імпорт не буде оброблений."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки додано"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
-      ],
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
@@ -889,6 +817,45 @@
       ],
       "of": [
         "з"
+      ],
+      "here": [
+        "тут"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Цей обліковий запис було призупинено через потенційне порушення правил."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваша електронна пошта використається лише для цієї одноразової перевірки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефону використається лише для цієї одноразової перевірки."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
@@ -949,6 +916,15 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Ви вимкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати стабільну версію ${ appName }. Програму буде перезавантажено."
+      ],
+      "support team": [
+        "командою підтримки"
+      ],
+      "Screenshot(s) attached": [
+        "Знімки додано"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
@@ -1192,6 +1168,30 @@
       ],
       "Expired": [
         "Протерміновано"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Your contacts are being imported from": [
+        "Ваші контакти імпортуються з"
+      ],
+      "to": [
+        "до"
+      ],
+      "Your import has started!": [
+        "Імпортування розпочалося!"
+      ],
+      "We will notify you once your import is finished.": [
+        "Ми сповістимо вас одразу після завершення імпортування."
+      ],
+      "Large imports can take several days to complete.": [
+        "Великий обсяг імпортування може тривати декілька днів."
+      ],
+      "You can continue using Proton services as usual.": [
+        "Ви можете продовжувати користуватися Proton у звичайному режимі."
+      ],
+      "Your import will not be processed.": [
+        "Ваш імпорт не буде оброблений."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -2782,62 +2782,23 @@
       "Remove": [
         "Вилучити"
       ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upload picture": [
-        "Вивантажити зображення"
-      ],
-      "Delete": [
-        "Видалити"
-      ],
-      "Contact group": [
-        "Група контактів"
-      ],
-      "Create new contact": [
-        "Створити новий контакт"
-      ],
-      "clear it": [
-        "очистити це"
-      ],
-      "Load image": [
-        "Завантажити зображення"
-      ],
-      "Export": [
-        "Експорт"
-      ],
-      "Edit": [
-        "Змінити"
-      ],
-      "Download": [
-        "Завантажити"
-      ],
-      "Use for sending": [
-        "Використовувати для надсилання"
-      ],
-      "Trust": [
-        "Довіряти"
-      ],
-      "Untrust": [
-        "Не довіряти"
-      ],
-      "Email settings": [
-        "Налаштування е-пошти"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Next month": [
         "Наступний місяць"
       ],
       "Previous month": [
         "Минулий місяць"
       ],
+      "Load image": [
+        "Завантажити зображення"
+      ],
       "Confirm opening of link ${ link }": [
         "Підтвердити відкриття посилання ${ link }"
       ],
       "Save": [
         "Зберегти"
+      ],
+      "Upload picture": [
+        "Вивантажити зображення"
       ],
       "Insert": [
         "Вставити"
@@ -2908,6 +2869,9 @@
       "Continue with Google": [
         "Продовжити з Google"
       ],
+      "Delete": [
+        "Видалити"
+      ],
       "Go to page ${ page }": [
         "Перейти до сторінки ${ page }"
       ],
@@ -2926,35 +2890,17 @@
       "Signing out": [
         "Вихід"
       ],
-      "Log in": [
-        "Увійти"
+      "refresh the page": [
+        "оновити сторінку"
       ],
-      "View invoice": [
-        "Переглянути рахунок"
-      ],
-      "Get verification code": [
-        "Отримати код підтвердження"
-      ],
-      "Try another method": [
-        "Спробувати інший спосіб"
-      ],
-      "Request new code": [
-        "Запитати новий код"
-      ],
-      "Verify": [
-        "Перевірити"
-      ],
-      "Did not receive the code?": [
-        "Не отримали код?"
-      ],
-      "Edit email address": [
-        "Змінити адресу е-пошти"
-      ],
-      "Edit phone number": [
-        "Змінити номер телефону"
+      "Upgrade": [
+        "Покращити"
       ],
       "Add": [
         "Додати"
+      ],
+      "Edit": [
+        "Змінити"
       ],
       "Apply": [
         "Застосувати"
@@ -2967,12 +2913,6 @@
         "Вставити ${ totalChecked } контакти",
         "Вставити ${ totalChecked } контактів",
         "Вставити ${ totalChecked } контактів"
-      ],
-      "Hide advanced PGP settings": [
-        "Приховати розширені налаштування PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Показати розширені налаштування PGP"
       ],
       "Done": [
         "Готово"
@@ -2989,8 +2929,41 @@
       "Re-sign": [
         "Перепідписати"
       ],
+      "Hide advanced PGP settings": [
+        "Приховати розширені налаштування PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Показати розширені налаштування PGP"
+      ],
       "Add to group": [
         "Додати до групи"
+      ],
+      "Contact group": [
+        "Група контактів"
+      ],
+      "Create new contact": [
+        "Створити новий контакт"
+      ],
+      "clear it": [
+        "очистити це"
+      ],
+      "Export": [
+        "Експорт"
+      ],
+      "Download": [
+        "Завантажити"
+      ],
+      "Use for sending": [
+        "Використовувати для надсилання"
+      ],
+      "Trust": [
+        "Довіряти"
+      ],
+      "Untrust": [
+        "Не довіряти"
+      ],
+      "Email settings": [
+        "Налаштування е-пошти"
       ],
       "Merge": [
         "Об'єднати"
@@ -3079,36 +3052,6 @@
       "Next": [
         "Далі"
       ],
-      "Use ${ label } theme": [
-        "Використовувати тему ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Continue import": [
-        "Продовжити імпорт"
-      ],
-      "Discard": [
-        "Відхилити"
-      ],
-      "Reconnect": [
-        "Повторно з'єднатися"
-      ],
-      "Start import": [
-        "Запустити імпорт"
-      ],
-      "Clear": [
-        "Очистити"
-      ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
-      "Hide info": [
-        "Приховати інформацію"
-      ],
-      "Show info": [
-        "Показати інформацію"
-      ],
       "Details": [
         "Подробиці"
       ],
@@ -3130,6 +3073,33 @@
       "Previous": [
         "Попередній"
       ],
+      "Log in": [
+        "Увійти"
+      ],
+      "View invoice": [
+        "Переглянути рахунок"
+      ],
+      "Get verification code": [
+        "Отримати код підтвердження"
+      ],
+      "Try another method": [
+        "Спробувати інший спосіб"
+      ],
+      "Request new code": [
+        "Запитати новий код"
+      ],
+      "Verify": [
+        "Перевірити"
+      ],
+      "Did not receive the code?": [
+        "Не отримали код?"
+      ],
+      "Edit email address": [
+        "Змінити адресу е-пошти"
+      ],
+      "Edit phone number": [
+        "Змінити номер телефону"
+      ],
       "Get started": [
         "Розпочнімо"
       ],
@@ -3141,6 +3111,12 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Copy to clipboard": [
         "Копіювати до буфера обміну"
@@ -3165,6 +3141,9 @@
       ],
       "Search": [
         "Пошук"
+      ],
+      "Clear": [
+        "Очистити"
       ],
       "${ BRAND_NAME } introduction": [
         "Знайомство з ${ BRAND_NAME }"
@@ -3210,6 +3189,15 @@
       ],
       "Composer size": [
         "Розмір редактора"
+      ],
+      "Add screenshot(s)": [
+        "Додати знімки екрана"
+      ],
+      "Hide info": [
+        "Приховати інформацію"
+      ],
+      "Show info": [
+        "Показати інформацію"
       ],
       "Remove bonuses": [
         "Вилучити бонуси"
@@ -3258,6 +3246,18 @@
       ],
       "Increase": [
         "Збільшити"
+      ],
+      "Continue import": [
+        "Продовжити імпорт"
+      ],
+      "Discard": [
+        "Відхилити"
+      ],
+      "Reconnect": [
+        "Повторно з'єднатися"
+      ],
+      "Start import": [
+        "Запустити імпорт"
       ],
       "Preview": [
         "Перегляд"
@@ -3642,15 +3642,6 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
-      "Upgrade required": [
-        "Необхідний платний тарифний план"
-      ],
-      "Contact group": [
-        "Група контактів"
-      ],
-      "Email settings": [
-        "Налаштування е-пошти"
-      ],
       "Link confirmation": [
         "Підтвердження посилання"
       ],
@@ -3663,26 +3654,8 @@
       "What's new": [
         "Що нового"
       ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
-      ],
-      "Account suspended": [
-        "Обліковий запис призупинено"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
-      ],
-      "Enter your password": [
-        "Введіть свій пароль"
-      ],
-      "Invalid verification code": [
-        "Недійсний код підтвердження"
-      ],
-      "Request new code": [
-        "Запитати новий код"
-      ],
-      "Human verification": [
-        "Перевірка \"Я не робот\""
+      "Upgrade required": [
+        "Необхідний платний тарифний план"
       ],
       "Delete ${ Name }": [
         "Видалити ${ Name }"
@@ -3726,9 +3699,6 @@
       "Insert contacts": [
         "Вставити контакти"
       ],
-      "Email settings (${ emailAddress })": [
-        "Налаштування е-пошти (${ emailAddress })"
-      ],
       "Delete ${ count } contact": [
         "Видалити ${ count } контакт",
         "Видалити ${ count } контакти",
@@ -3750,8 +3720,14 @@
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
       ],
+      "Email settings (${ emailAddress })": [
+        "Налаштування е-пошти (${ emailAddress })"
+      ],
       "Exporting contacts": [
         "Експортування контактів"
+      ],
+      "Contact group": [
+        "Група контактів"
       ],
       "Other names": [
         "Інші імена"
@@ -3767,6 +3743,9 @@
       ],
       "Other information": [
         "Інша інформація"
+      ],
+      "Email settings": [
+        "Налаштування е-пошти"
       ],
       "Contact Details": [
         "Подробиці контакту"
@@ -3807,17 +3786,29 @@
       "Import contacts": [
         "Імпортувати контакти"
       ],
+      "Sign in again to continue": [
+        "Увійдіть знову для продовження"
+      ],
+      "Account suspended": [
+        "Обліковий запис призупинено"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
+      ],
+      "Enter your password": [
+        "Введіть свій пароль"
+      ],
+      "Invalid verification code": [
+        "Недійсний код підтвердження"
+      ],
+      "Request new code": [
+        "Запитати новий код"
+      ],
+      "Human verification": [
+        "Перевірка \"Я не робот\""
+      ],
       "Select a theme": [
         "Вибрати тему"
-      ],
-      "Start import process": [
-        "Розпочати процес імпортування"
-      ],
-      "Import in progress": [
-        "Виконується імпортування"
-      ],
-      "Report a problem": [
-        "Повідомити про проблему"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Комбінації клавіш ${ appName }"
@@ -3839,6 +3830,9 @@
       ],
       "Open settings menu": [
         "Відкрити меню налаштувань"
+      ],
+      "Report a problem": [
+        "Повідомити про проблему"
       ],
       "Confirm loss of Proton bonuses": [
         "Підтвердити втрату бонусів Proton"
@@ -3929,6 +3923,12 @@
       ],
       "${ appName } customization": [
         "Налаштування ${ appName }"
+      ],
+      "Start import process": [
+        "Розпочати процес імпортування"
+      ],
+      "Import in progress": [
+        "Виконується імпортування"
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -4165,20 +4165,12 @@
         "Вітаємо"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не можна використовувати для шифрування"
-      ]
-    },
     "Link": {
       "Learn more": [
         "Докладніше"
       ],
       "Request an invite": [
         "Запитати запрошення"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -4191,6 +4183,9 @@
       ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
+      ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
       ],
       "click here": [
         "натисніть тут"
@@ -4240,36 +4235,6 @@
       "Open in ${ calendarAppName }": [
         "Відкрити в ${ calendarAppName }"
       ],
-      "Inbox": [
-        "Вхідні"
-      ],
-      "Drafts": [
-        "Чернетки"
-      ],
-      "Sent": [
-        "Надіслані"
-      ],
-      "Trash": [
-        "Смітник"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Уся пошта"
-      ],
-      "Archive": [
-        "Архів"
-      ],
-      "Starred": [
-        "Із зірочкою"
-      ],
-      "Outbox": [
-        "Вихідні"
-      ],
-      "Scheduled": [
-        "Заплановані"
-      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Повторно активуйте адресу, пов'язану з цим календарем, щоб керувати вашим запрошенням."
       ],
@@ -4303,6 +4268,33 @@
       "Add label": [
         "Додати мітку"
       ],
+      "Inbox": [
+        "Вхідні"
+      ],
+      "Drafts": [
+        "Чернетки"
+      ],
+      "Scheduled": [
+        "Заплановані"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
+      "Starred": [
+        "Із зірочкою"
+      ],
+      "Archive": [
+        "Архів"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Trash": [
+        "Смітник"
+      ],
+      "All mail": [
+        "Уся пошта"
+      ],
       "Folders": [
         "Теки"
       ],
@@ -4314,6 +4306,9 @@
       ],
       "Manage your labels": [
         "Керувати мітками"
+      ],
+      "Outbox": [
+        "Вихідні"
       ]
     },
     "Label": {
@@ -4325,6 +4320,30 @@
       ],
       "Hide password": [
         "Приховати пароль"
+      ],
+      "Do not ask again": [
+        "Не питати знову"
+      ],
+      "Add email address": [
+        "Додати адресу е-пошти"
+      ],
+      "Add image URL": [
+        "Введіть URL-адресу зображення"
+      ],
+      "Upload picture": [
+        "Завантажити зображення"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Email": [
+        "Е-пошта"
+      ],
+      "Group": [
+        "Група"
+      ],
+      "Email format": [
+        "Формат повідомлень"
       ],
       "Street address": [
         "Вулиця"
@@ -4347,8 +4366,29 @@
       "Extended address": [
         "Розширена адреса"
       ],
-      "Do not ask again": [
-        "Не питати знову"
+      "Add to group": [
+        "Додати до групи"
+      ],
+      "Encrypt emails": [
+        "Шифрувати листи"
+      ],
+      "Sign emails": [
+        "Підписувати листи"
+      ],
+      "Cryptographic scheme": [
+        "Криптографічна схема"
+      ],
+      "Public keys": [
+        "Відкриті ключі"
+      ],
+      "Automatically save contacts": [
+        "Автоматично зберігати контакти"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Export contacts": [
+        "Експортувати контакти"
       ],
       "Cancel": [
         "Скасувати"
@@ -4380,56 +4420,26 @@
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
       ],
-      "Add email address": [
-        "Додати адресу е-пошти"
+      "Display name": [
+        "Ім'я для показу"
       ],
-      "Add image URL": [
-        "Введіть URL-адресу зображення"
+      "Keyboard shortcuts": [
+        "Комбінації клавіш"
       ],
-      "Upload picture": [
-        "Завантажити зображення"
+      "Select how your list of messages looks like by default.": [
+        "Оберіть типовий вигляд списку повідомлень."
       ],
-      "Name": [
-        "Назва"
+      "Select how your mailbox looks like by default.": [
+        "Оберіть типовий вигляд поштової скриньки."
       ],
-      "Email": [
-        "Е-пошта"
+      "Select how your composer opens by default.": [
+        "Оберіть типовий вигляд редактора."
       ],
-      "Group": [
-        "Група"
+      "Recovery phrase": [
+        "Фраза відновлення"
       ],
-      "Email format": [
-        "Формат повідомлень"
-      ],
-      "Add to group": [
-        "Додати до групи"
-      ],
-      "Encrypt emails": [
-        "Шифрувати листи"
-      ],
-      "Sign emails": [
-        "Підписувати листи"
-      ],
-      "Cryptographic scheme": [
-        "Криптографічна схема"
-      ],
-      "Public keys": [
-        "Відкриті ключі"
-      ],
-      "Automatically save contacts": [
-        "Автоматично зберігати контакти"
-      ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Export contacts": [
-        "Експортувати контакти"
-      ],
-      "From: ${ fromEmailAddress }": [
-        "Від: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Кому: ${ toEmailAddress }"
+      "Your recovery phrase": [
+        "Ваша фраза відновлення"
       ],
       "Operating system": [
         "Операційна система"
@@ -4454,27 +4464,6 @@
       ],
       "Browser version": [
         "Версія браузера"
-      ],
-      "Display name": [
-        "Ім'я для показу"
-      ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Оберіть типовий вигляд списку повідомлень."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Оберіть типовий вигляд поштової скриньки."
-      ],
-      "Select how your composer opens by default.": [
-        "Оберіть типовий вигляд редактора."
-      ],
-      "Recovery phrase": [
-        "Фраза відновлення"
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза відновлення"
       ],
       "Name on card": [
         "Ім'я на картці"
@@ -4523,6 +4512,12 @@
       ],
       "Payer": [
         "Платник"
+      ],
+      "From: ${ fromEmailAddress }": [
+        "Від: ${ fromEmailAddress }"
+      ],
+      "To: ${ toEmailAddress }": [
+        "Кому: ${ toEmailAddress }"
       ],
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
@@ -4751,9 +4746,6 @@
       "Text": [
         "Текст"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
       ],
@@ -4775,6 +4767,12 @@
       "Name": [
         "Назва"
       ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "e.g. Julia Smith": [
+        "наприклад, Джулія Сміт"
+      ],
       "OS name": [
         "Назва ОС"
       ],
@@ -4795,9 +4793,6 @@
       ],
       "Browser version": [
         "Версія браузера"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
       ],
       "ZIP": [
         "Поштовий індекс"
@@ -4883,6 +4878,116 @@
         "${ secondsCountLeft } секунд"
       ]
     },
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Знайдено ${ items.length } пропозицію. Використовуйте клавіатуру для вибору.",
+        "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
+        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
+        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не можна використовувати для шифрування"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Ваше поточне сховище:"
+      ],
+      "Upgrade storage": [
+        "Збільшити сховище"
+      ],
+      "Release notes": [
+        "Примітки до випуску"
+      ]
+    },
+    "Header": {
+      "Search": [
+        "Пошук"
+      ],
+      "Contacts": [
+        "Контакти"
+      ],
+      "Contacts, groups and settings": [
+        "Контакти, групи та налаштування"
+      ],
+      "Get help": [
+        "Отримати допомогу"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ой, щось пішло не так"
+      ],
+      "There was a problem connecting to Proton.": [
+        "Виникла проблема при з'єднанні з Proton."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } або перевірте своє з'єднання."
+      ],
+      "Error: ${ errorMessage }": [
+        "Помилка: ${ errorMessage }"
+      ],
+      "No results found": [
+        "Результатів не знайдено"
+      ],
+      "You do not have any contact yet. Start by creating a new contact": [
+        "У вас поки що немає жодного контакту. Почніть зі створення нового"
+      ],
+      "No results found for \"${ query }\"": [
+        "Не знайдено результатів для \"${ query }\""
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Дочекайтеся, доки ми виправимо помилку."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Ви можете також ${ refresh }, або спробувати знову пізніше."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Додатки Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти до ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти до ${ vpnName }"
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Назва"
+      ],
+      "Address": [
+        "Адреса"
+      ],
+      "Action": [
+        "Дія"
+      ],
+      "Fingerprint": [
+        "Відбиток"
+      ],
+      "Created": [
+        "Створено"
+      ],
+      "Expires": [
+        "Завершується"
+      ],
+      "Type": [
+        "Тип"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Actions": [
+        "Дії"
+      ]
+    },
     "Warning": {
       "This feature requires a paid Proton account": [
         "Ця функція вимагає платного тарифного плану Proton"
@@ -4926,23 +5031,23 @@
       "Contacts could not be merged": [
         "Не вдається об'єднати контакти"
       ],
-      "Are you sure you want to discard your import?": [
-        "Ви дійсно хочете відхилити імпортування?"
+      "Your local date & time settings seem to be out of sync.": [
+        "Здається, ваші локальні налаштування дати та часу не синхронізовані."
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Живий чат - це преміум функція, доступна лише користувачам платних тарифних планів. Будь ласка, створіть запит натомість."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "На жаль, наразі ми не онлайн. Будь ласка, заповніть форму внизу, щоб описати вашу проблему, і ми розглянемо її та зв'яжемось, коли знову будемо онлайн."
+        "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Здається, ваші локальні налаштування дати та часу не синхронізовані."
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не може бути оновлено негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
+      ],
+      "Are you sure you want to discard your import?": [
+        "Ви дійсно хочете відхилити імпортування?"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не вдалося перевірити підпис вкладення.\nВи все одно можете завантажити це вкладення, але воно може бути підробленим.",
@@ -4951,175 +5056,31 @@
         "Не вдалося перевірити підписи вкладень.\nВи все одно можете завантажити ці вкладення, але вони можуть бути підробленими."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Назва"
-      ],
-      "Address": [
-        "Адреса"
-      ],
-      "Action": [
-        "Дія"
-      ],
-      "Fingerprint": [
-        "Відбиток"
-      ],
-      "Created": [
-        "Створено"
-      ],
-      "Expires": [
-        "Завершується"
-      ],
-      "Type": [
-        "Тип"
-      ],
-      "Status": [
-        "Статус"
-      ],
-      "Actions": [
-        "Дії"
-      ]
-    },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Зашифровані дані з перевіреним цифровим підписом"
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Автоматично означає, що для надсилання цьому користувачу використовується формат редактора. Звичайний текст означає, що повідомлення завжди перетворюватиметься у звичайний текст під час надсилання."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Цифровий підпис листів допомагає засвідчити справжність надісланих вами повідомлень"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"
-      ],
-      "You do not have any contacts to export": [
-        "У вас немає контактів для експорту"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Використовуйте декілька адрес / псевдонімів, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Розмістіть електронну пошту для власних доменів на ProtonMail, наприклад, john.smith@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Використовуйте особисту адресу username@pm.me для надсилання листів"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Підтримка декількох користувачів доступна лише для тарифів з 2 чи більше користувачами"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield захищає ваш пристрій та пришвидшує перегляд в Інтернеті, блокуючи рекламу, стеження та зловмисні програми."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Підтримка протоколів обміну файлами, наприклад, BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Спрямовуйте свій Інтернет-трафік через мережу Tor одним натисканням."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Захищає від загроз приватності VPN, спрямовуючи ваш Інтернет-трафік через різні сервери."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Отримайте доступ до всіх платних функцій для ProtonVPN та ProtonMail (зашифрований сервіс електронної пошти, яким користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Отримайте доступ до всіх платних можливостей для ${ vpnAppName } та ${ mailAppName } (зашифрована служба електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Розмістіть електронну пошту для власних доменів на ${ mailAppName }, наприклад, john.smith@example.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Створіть декілька адрес електронної пошти, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Знижка застосовується до річного циклу платежів"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Знижка застосовується до дворічного циклу платежів"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
-      ],
-      "This feature is only available for paid users": [
-        "Ця функція доступна лише користувачам, які мають передплату"
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
-      ]
-    },
-    "Error message": {
-      "No results found": [
-        "Результатів не знайдено"
-      ],
-      "You do not have any contact yet. Start by creating a new contact": [
-        "У вас поки що немає жодного контакту. Почніть зі створення нового"
-      ],
-      "No results found for \"${ query }\"": [
-        "Не знайдено результатів для \"${ query }\""
-      ],
-      "Oops, something went wrong": [
-        "Ой, щось пішло не так"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Виникла проблема при з'єднанні з Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } або перевірте своє з'єднання."
-      ],
-      "Error: ${ errorMessage }": [
-        "Помилка: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Дочекайтеся, доки ми виправимо помилку."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Ви можете також ${ refresh }, або спробувати знову пізніше."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Автоматично"
-      ],
-      "Plain text": [
-        "Звичайний текст"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Глобальне типове значення (${ defaultValueText })"
-      ]
-    },
-    "Key badge": {
-      "Primary": [
-        "Основний"
-      ],
-      "Verification only": [
-        "Лише перевірка"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Надійний"
-      ],
-      "Revoked": [
-        "Відкликаний"
-      ],
-      "Expired": [
-        "Протермінований"
-      ]
-    },
     "Success": {
+      "Contact group deleted": [
+        "Групу контактів видалено",
+        "Групи контактів видалено",
+        "Групи контактів видалено",
+        "Групи контактів видалено"
+      ],
+      "Contact saved": [
+        "Контакт збережено"
+      ],
+      "Contacts deleted": [
+        "Контакти видалено"
+      ],
+      "Contact deleted": [
+        "Контакт видалено",
+        "Контакти видалено",
+        "Контакти видалено",
+        "Контакти видалено"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Цифровий відбиток скопійовано до буфера обміну"
+      ],
+      "Preferences saved": [
+        "Налаштування збережено"
+      ],
       "Email address copied to clipboard": [
         "Адресу е-пошти скопійовано до буфера обміну"
       ],
@@ -5135,38 +5096,14 @@
       "Verification successful": [
         "Перевірка пройшла успішно"
       ],
-      "Contact group deleted": [
-        "Групу контактів видалено",
-        "Групи контактів видалено",
-        "Групи контактів видалено",
-        "Групи контактів видалено"
-      ],
-      "Contact saved": [
-        "Контакт збережено"
-      ],
-      "Preferences saved": [
-        "Налаштування збережено"
-      ],
-      "Contacts deleted": [
-        "Контакти видалено"
-      ],
-      "Contact deleted": [
-        "Контакт видалено",
-        "Контакти видалено",
-        "Контакти видалено",
-        "Контакти видалено"
-      ],
-      "Fingerprint copied to clipboard": [
-        "Цифровий відбиток скопійовано до буфера обміну"
-      ],
-      "Bug reported": [
-        "Звіт про помилку надіслано"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Налаштування комбінацій клавіш оновлено"
       ],
       "Preference saved": [
         "Налаштування збережено"
+      ],
+      "Bug reported": [
+        "Звіт про помилку надіслано"
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
@@ -5349,75 +5286,6 @@
         "Перемістити ${ selectionCount } розмов"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Знайдено ${ items.length } пропозицію. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
-      ]
-    },
-    "Storage": {
-      "Your current storage:": [
-        "Ваше поточне сховище:"
-      ],
-      "Upgrade storage": [
-        "Збільшити сховище"
-      ],
-      "Release notes": [
-        "Примітки до випуску"
-      ]
-    },
-    "Header": {
-      "Search": [
-        "Пошук"
-      ],
-      "Contacts": [
-        "Контакти"
-      ],
-      "Contacts, groups and settings": [
-        "Контакти, групи та налаштування"
-      ],
-      "Get help": [
-        "Отримати допомогу"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Додатки Proton"
-      ],
-      "Go to ${ title }": [
-        "Перейти до ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти до ${ vpnName }"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Протермінований рахунок"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Е-пошта"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Вручну"
-      ],
-      "No verification method available": [
-        "Немає доступних способів перевірки"
-      ]
-    },
     "Label for contact group name": {
       "Name": [
         "Назва"
@@ -5431,6 +5299,83 @@
     "Label for contact group color": {
       "Color": [
         "Колір"
+      ]
+    },
+    "Tooltip": {
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Автоматично означає, що для надсилання цьому користувачу використовується формат редактора. Звичайний текст означає, що повідомлення завжди перетворюватиметься у звичайний текст під час надсилання."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Зашифровані дані з перевіреним цифровим підписом"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Цифровий підпис листів допомагає засвідчити справжність надісланих вами повідомлень"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"
+      ],
+      "You do not have any contacts to export": [
+        "У вас немає контактів для експорту"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Використовуйте декілька адрес / псевдонімів, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Розмістіть електронну пошту для власних доменів на ProtonMail, наприклад, john.smith@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Використовуйте особисту адресу username@pm.me для надсилання листів"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Підтримка декількох користувачів доступна лише для тарифів з 2 чи більше користувачами"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield захищає ваш пристрій та пришвидшує перегляд в Інтернеті, блокуючи рекламу, стеження та зловмисні програми."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Підтримка протоколів обміну файлами, наприклад, BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Спрямовуйте свій Інтернет-трафік через мережу Tor одним натисканням."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Захищає від загроз приватності VPN, спрямовуючи ваш Інтернет-трафік через різні сервери."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Отримайте доступ до всіх платних функцій для ProtonVPN та ProtonMail (зашифрований сервіс електронної пошти, яким користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Отримайте доступ до всіх платних можливостей для ${ vpnAppName } та ${ mailAppName } (зашифрована служба електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Розмістіть електронну пошту для власних доменів на ${ mailAppName }, наприклад, john.smith@example.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Створіть декілька адрес електронної пошти, пов'язаних з вашим обліковим записом, наприклад, username2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Знижка застосовується до річного циклу платежів"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Знижка застосовується до дворічного циклу платежів"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
+      ],
+      "This feature is only available for paid users": [
+        "Ця функція доступна лише користувачам, які мають передплату"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ]
     },
     "Progress bar description": {
@@ -5497,6 +5442,39 @@
       ],
       "${ _Filter.Name } created": [
         "${ _Filter.Name } створено"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Автоматично"
+      ],
+      "Plain text": [
+        "Звичайний текст"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Глобальне типове значення (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Основний"
+      ],
+      "Verification only": [
+        "Лише перевірка"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Надійний"
+      ],
+      "Revoked": [
+        "Відкликаний"
+      ],
+      "Expired": [
+        "Протермінований"
       ]
     },
     "TableHeader": {
@@ -5648,15 +5626,97 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
+    "Select files": {
+      "Upload": [
+        "Вивантажити"
       ]
     },
-    "Label to change view layout": {
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Протермінований рахунок"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Е-пошта"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Вручну"
+      ],
+      "No verification method available": [
+        "Немає доступних способів перевірки"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Ось, що побачать люди, коли ви надішлете їм лист, запросите на подію, чи поділитесь доступом до файлу."
+      ],
+      "Choose a display name": [
+        "Виберіть ім'я для показу"
+      ],
+      "Select a theme": [
+        "Виберіть тему"
+      ],
+      "You can change this anytime in your settings.": [
+        "Ви можете змінити це будь-коли в налаштуваннях."
+      ],
+      "Discover all Proton services": [
+        "Ознайомтеся з усіма можливостями Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Користуйтеся вибором програм зліва вгорі для доступу до програм Proton, включаючи VPN, календар та Drive."
+      ],
+      "Welcome to Proton": [
+        "Вітаємо в Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Наша місія - створити Інтернет, в якому ви контролюєте свої дані та приватність. Ми нещодавно оновили Proton, тож ласкаво просимо до безпечного Інтернету."
+      ],
+      "Set up your organization": [
+        "Налаштуйте свою організацію"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
+      ]
+    },
+    "Onboarding Beta": {
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Beta enabled": [
+        "Beta увімкнено"
+      ],
+      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
+        "Щоб вимкнути бета-версію, відкрийте меню налаштувань і натисніть на параметр \"Бета-доступ\"."
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Доступна нова версія ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Налаштування"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Увімкнено"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Вимкнено"
+      ]
+    },
+    "Layout mode": {
       "Column": [
         "Стовпчик"
       ],
@@ -5664,44 +5724,20 @@
         "Рядок"
       ]
     },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
+    "Density mode": {
+      "Comfortable": [
+        "Комфортний"
       ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Composer size": {
       "Maximized": [
         "Розгорнутий"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Вивантажити"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        "Підключення до вашого постачальника контактів"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Автентифікація"
       ],
-      "Configure Import": [
-        "Налаштувати імпорт"
-      ],
-      "Import": [
-        "Імпорт"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "Вийти з імпорту?"
-      ],
-      "Message saved to Drafts": [
-        "Повідомлення збережено до чернеток"
-      ],
-      "Edit and reschedule": [
-        "Редагувати й запланувати повторно"
+      "Normal": [
+        "Звичайний"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5814,93 +5850,6 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Додати знімки екрану"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ось, що побачать люди, коли ви надішлете їм лист, запросите на подію, чи поділитесь доступом до файлу."
-      ],
-      "Choose a display name": [
-        "Виберіть ім'я для показу"
-      ],
-      "Select a theme": [
-        "Виберіть тему"
-      ],
-      "You can change this anytime in your settings.": [
-        "Ви можете змінити це будь-коли в налаштуваннях."
-      ],
-      "Discover all Proton services": [
-        "Ознайомтеся з усіма можливостями Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Користуйтеся вибором програм зліва вгорі для доступу до програм Proton, включаючи VPN, календар та Drive."
-      ],
-      "Welcome to Proton": [
-        "Вітаємо в Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Наша місія - створити Інтернет, в якому ви контролюєте свої дані та приватність. Ми нещодавно оновили Proton, тож ласкаво просимо до безпечного Інтернету."
-      ],
-      "Set up your organization": [
-        "Налаштуйте свою організацію"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
-      ]
-    },
-    "Onboarding Beta": {
-      "Got it": [
-        "Зрозуміло"
-      ],
-      "Beta enabled": [
-        "Beta увімкнено"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Щоб вимкнути бета-версію, відкрийте меню налаштувань і натисніть на параметр \"Бета-доступ\"."
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Доступна нова версія ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Налаштування"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Увімкнено"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Composer size": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
       ]
     },
     "Info for cash payment method": {
@@ -6370,6 +6319,57 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        "Підключення до вашого постачальника контактів"
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "Автентифікація"
+      ],
+      "Configure Import": [
+        "Налаштувати імпорт"
+      ],
+      "Import": [
+        "Імпорт"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Вийти з імпорту?"
+      ],
+      "Message saved to Drafts": [
+        "Повідомлення збережено до чернеток"
+      ],
+      "Edit and reschedule": [
+        "Редагувати й запланувати повторно"
       ]
     },
     "Beta access description": {
@@ -7172,11 +7172,6 @@
       ],
       "Next": [
         "Далі"
-      ]
-    },
-    "Calendar attachment tooltip": {
-      "Has a calendar event": [
-        "Містить подію календаря"
       ]
     },
     "Search - no results": {
