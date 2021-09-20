@@ -64,15 +64,15 @@ const YourPlanSection = ({ permission }: Props) => {
      * the organization if the user has a paid plan)
      */
     const {
-        UsedDomains,
-        MaxDomains,
+        UsedDomains = 0,
+        MaxDomains = 1,
         UsedSpace = user.UsedSpace,
         MaxSpace = user.MaxSpace,
         UsedAddresses: OrganizationUsedAddresses,
         MaxAddresses: OrganizationMaxAddresses,
         UsedMembers = 1,
         MaxMembers = 1,
-        MaxVPN,
+        MaxVPN = 1,
     } = organization || {};
 
     /*
