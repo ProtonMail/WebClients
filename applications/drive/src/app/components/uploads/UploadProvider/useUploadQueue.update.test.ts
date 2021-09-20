@@ -146,6 +146,24 @@ describe("useUploadQueue's update functions", () => {
         ]);
     });
 
+    it('updates folder but keeps sub files and folders cancelled', () => {
+        act(() => {
+            hook.current.updateState(() => true, TransferState.Canceled);
+            hook.current.updateWithData(firstFolderId, TransferState.Progress, {
+                folderId: 'folderId',
+            });
+        });
+
+        expect(
+            hook.current.fileUploads.map(({ parentId, state, meta }) => [meta.filename, state, parentId])
+        ).toMatchObject([
+            ['file1.txt', TransferState.Canceled, 'parentId'],
+            ['file2.txt', TransferState.Canceled, 'folderId'],
+            ['file3.txt', TransferState.Canceled, 'folderId'],
+            ['file4.txt', TransferState.Canceled, undefined],
+        ]);
+    });
+
     it('updates states with error', () => {
         const error = new Error('some failuer');
         act(() => {

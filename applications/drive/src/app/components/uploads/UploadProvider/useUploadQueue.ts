@@ -130,12 +130,12 @@ export default function useUploadQueue() {
                         folder.files = folder.files.map((file) => ({
                             ...file,
                             parentId: folderId,
-                            state: TransferState.Pending,
+                            state: file.state === TransferState.Initializing ? TransferState.Pending : file.state,
                         }));
                         folder.folders = folder.folders.map((folder) => ({
                             ...folder,
                             parentId: folderId,
-                            state: TransferState.Pending,
+                            state: folder.state === TransferState.Initializing ? TransferState.Pending : folder.state,
                         }));
                     }
                     if (originalIsFolder) {
