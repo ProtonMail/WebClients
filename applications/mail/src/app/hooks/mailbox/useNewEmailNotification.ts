@@ -37,11 +37,14 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                 body: c('Desktop notification body').t`From: ${sender} - ${Subject}`,
                 icon: notificationIcon,
                 onClick() {
+                    // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
+                    const cleanHistoryLocation = { ...history.location, hash: '' };
+
                     window.focus();
                     history.push(
-                        setParamsInLocation(history.location, {
+                        setParamsInLocation(cleanHistoryLocation, {
                             labelID,
-                            elementID: isConversationMode(labelID, mailSettings, history.location)
+                            elementID: isConversationMode(labelID, mailSettings, cleanHistoryLocation)
                                 ? ConversationID
                                 : ID,
                         })
