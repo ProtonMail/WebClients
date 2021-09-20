@@ -30,6 +30,11 @@ export default function useUploadControl(
 
     const updateProgress = (id: string, increment: number) => {
         progresses.current[id] += increment;
+        // Because increment can be float, some aritmetic operation can result
+        // in -0.0000000001 which would be then displayed as -0 after rounding.
+        if (progresses.current[id] < 0) {
+            progresses.current[id] = 0;
+        }
     };
 
     const getProgresses = () => ({ ...progresses.current });
