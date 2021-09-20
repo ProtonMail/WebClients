@@ -13,6 +13,7 @@ import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
 
 import useSharing from '../hooks/drive/useSharing';
+import { formatAccessCount } from '../utils/formatters';
 
 interface Props {
     shareId: string;
@@ -43,7 +44,7 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
 
     const { getSharedURLs } = useSharing();
-    const [numberOfAccesses, setNumberOfAccesses] = useState<number | null>(null);
+    const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
     const [loadingNumberOfAccesses, setLoadingNumberOfAccesses] = useState(false);
 
     useEffect(() => {
@@ -92,9 +93,9 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
                                 <SizeCell size={item.Size} />
                             </DetailsRow>
                             <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
-                            {(numberOfAccesses !== null || loadingNumberOfAccesses) && (
+                            {(numberOfAccesses !== undefined || loadingNumberOfAccesses) && (
                                 <DetailsRow label={c('Title').t`# of accesses`}>
-                                    {loadingNumberOfAccesses ? c('Info').t`Loading` : numberOfAccesses}
+                                    {formatAccessCount(numberOfAccesses)}
                                 </DetailsRow>
                             )}
                         </>
