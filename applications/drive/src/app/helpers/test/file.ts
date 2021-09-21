@@ -18,13 +18,13 @@ export function mockGlobalFile() {
         ) {
             this.parts = parts;
             this.name = name;
-            this.size = 42;
+            this.size = parts.join('').length;
             this.type = 'txt';
             this.properties = properties;
         }
     };
 }
 
-export function testFile(filename: string) {
-    return new File([''], filename);
+export function testFile(filename: string, size: number = 42) {
+    return new File(['x'.repeat(size)], filename, undefined);
 }

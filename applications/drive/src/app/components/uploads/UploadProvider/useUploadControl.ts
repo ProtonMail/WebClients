@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react';
 
 import { FILE_CHUNK_SIZE } from '../../../constants';
 import { TransferState, TransferProgresses } from '../../../interfaces/transfer';
-import { isTransferProgress, isTransferPending, isTransferOngoing } from '../../../utils/transfer';
+import { isTransferProgress, isTransferPending, isTransferActive } from '../../../utils/transfer';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
 import { UploadFileControls, UploadFolderControls } from '../interface';
 import { FileUpload, UpdateFilter, UpdateState, UpdateCallback } from './interface';
@@ -44,11 +44,17 @@ export default function useUploadControl(
      * uploads how many data is planned to be uploaded to properly count the
      * available space for next batch of files to be uploaded.
      */
-    const calculateRemainingUploadBytes = () => {
+    const calculateRemainingUploadBytes = (): number => {
         return fileUploads.reduce((sum, upload) => {
-            if (!isTransferOngoing(upload) || !upload.file.size) {
+            if (!isTransferActive(upload) || !upload.file.size) {
                 return sum;
             }
+            // uploadedChunksSize counts only fully uploaded blocks. Fully
+            // uploaded blocks are counted into used space returned by API.
+            // The algorithm is not precise as file is uploaded in parallel,
+            // but this is what we can do without introducing complex
+            // computation. If better precision is needed, we need to keep
+            // track of each block, not the whole file.
             const uploadedChunksSize =
                 progresses.current[upload.id] - (progresses.current[upload.id] % FILE_CHUNK_SIZE) || 0;
             return sum + upload.file.size - uploadedChunksSize;
@@ -60,7 +66,7 @@ export default function useUploadControl(
      * uploaded by all ongoing uploads, considering into account the real
      * state using the progresses.
      */
-    const calculateFileUploadLoad = () => {
+    const calculateFileUploadLoad = (): number => {
         return fileUploads.filter(isTransferProgress).reduce((load, upload) => {
             const remainingSize = (upload.file.size || 0) - (progresses.current[upload.id] || 0);
             // Even if the file is empty, keep the minimum of blocks to 1,
