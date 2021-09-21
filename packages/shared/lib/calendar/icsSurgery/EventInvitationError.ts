@@ -5,6 +5,8 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     INVITATION_INVALID,
     INVITATION_UNSUPPORTED,
     INVALID_METHOD,
+    NO_COMPONENT,
+    NO_VEVENT,
     PARSING_ERROR,
     DECRYPTION_ERROR,
     FETCHING_ERROR,
@@ -16,11 +18,28 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     EXTERNAL_ERROR,
 }
 
+const {
+    INVITATION_INVALID,
+    INVITATION_UNSUPPORTED,
+    INVALID_METHOD,
+    NO_COMPONENT,
+    NO_VEVENT,
+    PARSING_ERROR,
+    DECRYPTION_ERROR,
+    FETCHING_ERROR,
+    UPDATING_ERROR,
+    EVENT_CREATION_ERROR,
+    EVENT_UPDATE_ERROR,
+    CANCELLATION_ERROR,
+    UNEXPECTED_ERROR,
+    EXTERNAL_ERROR,
+} = EVENT_INVITATION_ERROR_TYPE;
+
 export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) => {
     const isUnknown = !config?.method;
     const isImport = config?.method === ICAL_METHOD.PUBLISH;
     const isResponse = config?.method && ICAL_METHODS_ATTENDEE.includes(config?.method);
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID) {
+    if (errorType === INVITATION_INVALID) {
         if (isUnknown) {
             return c('Attached ics file error').t`Invalid ICS file`;
         }
@@ -31,7 +50,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
             ? c('Event invitation error').t`Invalid response`
             : c('Event invitation error').t`Invalid invitation`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED) {
+    if (errorType === INVITATION_UNSUPPORTED) {
         if (isImport) {
             return c('Attached ics file error').t`Unsupported event`;
         }
@@ -39,7 +58,13 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
             ? c('Event invitation error').t`Unsupported response`
             : c('Event invitation error').t`Unsupported invitation`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD) {
+    if (errorType === NO_COMPONENT) {
+        return c('Attached ics file error').t`Empty ICS file`;
+    }
+    if (errorType === NO_VEVENT) {
+        return c('Attached ics file error').t`Unsupported calendar component`;
+    }
+    if (errorType === INVALID_METHOD) {
         if (isUnknown) {
             return c('Attached ics file error').t`Invalid method`;
         }
@@ -48,31 +73,31 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
             ? c('Event invitation error').t`Invalid invitation`
             : c('Event invitation error').t`Invalid response`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR) {
+    if (errorType === PARSING_ERROR) {
         return c('Event invitation error').t`Attached ICS file could not be parsed`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR) {
+    if (errorType === DECRYPTION_ERROR) {
         return c('Event invitation error').t`Attached ICS file could not be decrypted`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.FETCHING_ERROR) {
+    if (errorType === FETCHING_ERROR) {
         return c('Event invitation error').t`We could not retrieve the event from your calendar`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR) {
+    if (errorType === UPDATING_ERROR) {
         return c('Event invitation error').t`We could not update the event in your calendar`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR) {
+    if (errorType === EVENT_CREATION_ERROR) {
         return c('Event invitation error').t`Your answer was sent, but the event could not be added to your calendar`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR) {
+    if (errorType === EVENT_UPDATE_ERROR) {
         return c('Event invitation error').t`Your answer was sent, but the event could not be updated in your calendar`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR) {
+    if (errorType === CANCELLATION_ERROR) {
         return c('Event invitation error').t`We could not cancel the event in your calendar`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
+    if (errorType === UNEXPECTED_ERROR) {
         return c('Event invitation error').t`Unexpected error`;
     }
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.EXTERNAL_ERROR) {
+    if (errorType === EXTERNAL_ERROR) {
         return config?.externalError?.message || '';
     }
     return '';
