@@ -18,6 +18,7 @@ import {
     UpdateCallback,
     UpdateCallbackParams,
     UploadUserError,
+    UploadConflictError,
 } from './interface';
 
 const DS_STORE = '.DS_Store';
@@ -66,6 +67,9 @@ export default function useUploadQueue() {
     const add = useCallback(async (shareId: string, parentId: string, list: UploadFileList): Promise<void> => {
         return new Promise((resolve, reject) => {
             setQueue((queue) => {
+                const errors: Error[] = [];
+                const conflictErrors: UploadConflictError[] = [];
+
                 const queueItem = queue.find((item) => item.shareId === shareId && item.parentId === parentId) || {
                     shareId,
                     parentId,
@@ -79,14 +83,26 @@ export default function useUploadQueue() {
                     try {
                         addItemToQueue(shareId, queueItem, item);
                     } catch (err: any) {
-                        reject(err);
+                        if ((err as Error).name === 'UploadConflictError') {
+                            conflictErrors.push(err);
+                        } else {
+                            errors.push(err);
+                        }
                     }
                 }
                 const newQueue = [
                     ...queue.filter((item) => item.shareId !== shareId || item.parentId !== parentId),
                     queueItem,
                 ];
-                resolve();
+
+                if (conflictErrors.length > 0) {
+                    errors.push(new UploadConflictError(conflictErrors[0].filename, conflictErrors.length - 1));
+                }
+                if (errors.length > 0) {
+                    reject(errors);
+                } else {
+                    resolve();
+                }
                 return newQueue;
             });
         });
@@ -242,7 +258,7 @@ export function addItemToQueue(shareId: string, newQueue: UploadQueue, item: Upl
 
     const part = findUploadQueueFolder(newQueue, item.path);
     if (isNameAlreadyUploading(part, name)) {
-        throw new UploadUserError(c('Notification').t`File or folder "${name}" is already uploading`);
+        throw new UploadConflictError(name);
     }
 
     const generalAttributes = {

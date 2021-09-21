@@ -1,3 +1,5 @@
+import { c, msgid } from 'ttag';
+
 import { TransferState, TransferMeta } from '../../../interfaces/transfer';
 import { TransferConflictStrategy } from '../interface';
 
@@ -74,5 +76,22 @@ export class UploadUserError extends Error {
     constructor(message: string) {
         super(message);
         this.name = 'UploadUserError';
+    }
+}
+export class UploadConflictError extends Error {
+    filename: string;
+
+    constructor(filename: string, count: number = 0) {
+        let message = c('Notification').t`File or folder "${filename}" is already uploading`;
+        if (count) {
+            message = c('Notification').ngettext(
+                msgid`File or folder "${filename}" and ${count} other are already uploading`,
+                `File or folder "${filename}" and ${count} others are already uploading`,
+                count
+            );
+        }
+        super(message);
+        this.filename = filename;
+        this.name = 'UploadConflictError';
     }
 }
