@@ -124,4 +124,16 @@ describe('useUploadQueue::add', () => {
         queue.folders[0].files[0].state = TransferState.Done;
         addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
     });
+
+    it('adds files to the latest folder', () => {
+        const queue = createEmptyQueue();
+        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        queue.folders[0].state = TransferState.Done;
+
+        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('b.txt') });
+        expect(queue.folders[0].files.length).toBe(0);
+        expect(queue.folders[1].files.length).toBe(1);
+        expect(queue.folders[1].files[0].meta.filename).toBe('b.txt');
+    });
 });

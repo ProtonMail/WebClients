@@ -285,11 +285,22 @@ function findUploadQueueFolder(part: UploadQueue | FolderUpload, path: string[])
     }
 
     const nextStep = path[0];
-    for (const folder of part.folders) {
-        if (folder.name === nextStep) {
-            return findUploadQueueFolder(folder, path.slice(1));
-        }
+    const sortedMatchingFolders = part.folders
+        // Find all folders with the same name. This can happen in situation
+        // when user uploads folder and after its done, user uploads it again.
+        .filter(({ name }) => name === nextStep)
+        // Sort it by date, the latest one is at the beginning of the array.
+        // We want to add new uploads to the latest folder, not the one which
+        // was already finished before.
+        .sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
+    // Folders can have the same startDate (mostly in unit test, probably not
+    // in real world), but lets explicitely always prefer non finished folder
+    // to be super sure.
+    const folder = sortedMatchingFolders.find((folder) => !isTransferFinished(folder)) || sortedMatchingFolders[0];
+    if (folder) {
+        return findUploadQueueFolder(folder, path.slice(1));
     }
+
     throw new Error('Wrong file or folder structure');
 }
 
