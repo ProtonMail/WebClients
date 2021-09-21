@@ -40,12 +40,12 @@ const PaginationRow = ({
     return (
         <ButtonGroup className={className}>
             <Tooltip title={c('Action').t`Go to first page`}>
-                <Button icon disabled={disabled || disablePrevious} onClick={() => onStart()}>
+                <Button className="on-rtl-mirror" icon disabled={disabled || disablePrevious} onClick={() => onStart()}>
                     <Icon name="angles-left" className="block" alt={c('Action').t`Go to first page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to previous page`}>
-                <Button disabled={disabled || disablePrevious} onClick={() => onPrevious()}>
+                <Button className="on-rtl-mirror" disabled={disabled || disablePrevious} onClick={() => onPrevious()}>
                     <Icon name="angle-down" className="block rotateZ-90" alt={c('Action').t`Go to previous page`} />
                 </Button>
             </Tooltip>
@@ -66,7 +66,7 @@ const PaginationRow = ({
                 );
             })}
             <Tooltip title={c('Action').t`Go to next page`}>
-                <Button icon disabled={disabled || disableNext} onClick={() => onNext()}>
+                <Button className="on-rtl-mirror" icon disabled={disabled || disableNext} onClick={() => onNext()}>
                     <Icon name="angle-down" className="block rotateZ-270" alt={c('Action').t`Go to next page`} />
                 </Button>
             </Tooltip>

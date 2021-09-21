@@ -16,7 +16,7 @@
 	}
 
 	&-item {
-		max-width: var(--item-wide);
+		max-inline-size: var(--item-wide);
 		margin: 0.125em;
 		background-color: var(--color, currentColor);
 
@@ -28,12 +28,13 @@
 		&-button {
 			// values are "magic ones" for optically
 			// centering best as we could to Fit ALL cases (emoji/lowercase/etc.)
-			padding: em(1) 0.5em em(2.4) 0.5em;
-			text-align: left;
+			padding-block: em(1) em(2.4);
+			padding-inline: 0.5em;
+			text-align: start;
 		}
 
 		&-delete {
-			margin-right: 0.5em;
+			margin-inline-end: 0.5em;
 
 			& &-icon {
 				display: block;
@@ -43,12 +44,13 @@
 
 	&-overflow-count {
 		background-color: rgb(0 0 0 / 0.5);
-		margin-left: 0.125em;
+		margin-inline-start: 0.125em;
 		cursor: pointer;
 
 		& > * {
 			display: block;
-			padding: 0.125em 0.375em 0.125em 0.25em;
+			padding-block: 0.125em;
+			padding-inline: 0.25em 0.375em;
 			color: white;
 		}
 	}
@@ -82,7 +84,7 @@
 
 			&:not(:first-child) {
 				--button-opacity: 0;
-				max-width: var(--item-narrow);
+				max-inline-size: var(--item-narrow);
 				transform: scale(var(--item-scale));
 			}
 
@@ -117,7 +119,7 @@
 					// Avoid gitch effect on first-child
 					&:first-child:not(:hover):not(:focus-within) {
 						--button-opacity: 0;
-						max-width: var(--item-narrow);
+						max-inline-size: var(--item-narrow);
 						transform: scale(var(--item-scale));
 						transition-delay: 0.2s, 0s;
 					}
@@ -125,7 +127,7 @@
 					&:not(:first-child):hover,
 					&:not(:first-child):focus-within {
 						--button-opacity: 1;
-						max-width: var(--item-wide);
+						max-inline-size: var(--item-wide);
 						transform: scale(1);
 					}
 				}

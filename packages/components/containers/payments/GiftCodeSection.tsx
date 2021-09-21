@@ -9,8 +9,6 @@ import { Button, InputFieldTwo, useFormErrors } from '../../components';
 import SettingsParagraph from '../account/SettingsParagraph';
 import { SettingsSection } from '../account';
 
-import './GiftCodeSection.scss';
-
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');
     const { validator, reset, onFormSubmit } = useFormErrors();
@@ -44,7 +42,7 @@ const GiftCodeSection = () => {
             </label>
 
             <form
-                className="gift-code_container"
+                className="gift-code_container flex flex-nowrap flex-align-items-start on-mobile-flex-column-no-stretch"
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (onFormSubmit()) {
@@ -54,13 +52,13 @@ const GiftCodeSection = () => {
             >
                 <InputFieldTwo
                     id="gift-code-input"
-                    rootClassName="gift-code_input"
+                    rootClassName="mr1 on-mobile-mr0 on-mobile-mb0-5"
                     value={value}
                     error={validator([requiredValidator(value)])}
                     placeholder={c('Placeholder').t`Add gift code`}
                     onChange={handleChange}
                 />
-                <Button color="norm" type="submit" loading={loading}>
+                <Button className="on-mobile-flex-align-self-start" color="norm" type="submit" loading={loading}>
                     {c('Action').t`Submit`}
                 </Button>
             </form>

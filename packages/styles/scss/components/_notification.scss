@@ -1,9 +1,15 @@
 .notifications-container {
 	position: fixed;
-	top: 1em;
-	left: 50%;
+	inset-block-start: 1em;
+	inset-inline-start: 50%;
 	z-index: 777;
 	transform: translateX(-50%);
+
+	@at-root {
+		[dir='rtl'] & {
+			transform: translateX(50%);
+		}
+	}
 
 	@include respond-to($breakpoint-small) {
 		text-align: center;
@@ -12,9 +18,8 @@
 	@include respond-to($breakpoint-tiny) {
 		[class*='notification-'] {
 			transform: none;
-			left: 1em;
-			right: 1em;
-			width: calc(100% - 2em);
+			inset-inline: 1em;
+			inline-size: calc(100% - 2em);
 		}
 	}
 }
@@ -77,8 +82,8 @@
 	100% {
 		opacity: 0;
 		transform: scale(0);
-		max-height: 0;
+		max-block-size: 0;
 		padding: 0;
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }

@@ -1,52 +1,51 @@
 @import '~@proton/styles/scss/config';
 
-
 .container-plans-signup {
-    max-width: rem(1000);
-    width: 100%;
+	max-inline-size: rem(1000);
+	inline-size: 100%;
 
-    @include respond-to($breakpoint-medium) {
-        --label-width: 45%;
-    }
+	@include respond-to($breakpoint-medium) {
+		--label-width: 45%;
+	}
 
-    span[aria-describedby] {
-        position: relative;
-        z-index: 5;
-    }
+	span[aria-describedby] {
+		position: relative;
+		z-index: 5;
+	}
 }
 
 .signup-title {
-    display: flex;
-    width: 100%;
-    font-weight: bold;
-    font-size: rem(22);
+	display: flex;
+	inline-size: 100%;
+	font-weight: bold;
+	font-size: rem(22);
 
-    &::before,
-    &::after {
-        content: "";
-        flex: 1;
-        align-self: center;
-        border-bottom: 1px solid var(--border-norm);
-        margin-top: .25em;
-    }
+	&::before,
+	&::after {
+		content: '';
+		flex: 1;
+		align-self: center;
+		border-block-end: 1px solid var(--border-norm);
+		margin-block-start: 0.25em;
+	}
 
-    &::before {
-        margin-right: 1em;
-    }
+	&::before {
+		margin-inline-end: 1em;
+	}
 
-    &::after {
-        margin-left: 1em;
-    }
+	&::after {
+		margin-inline-start: 1em;
+	}
 }
 
 .selected-plan {
-    min-width: 285px !important;
+	min-inline-size: 285px !important;
 }
 
 .plan-back-button,
 .plan-help-button {
-    @include respond-to($breakpoint-small) {
-        order: -1;
-        flex-basis: auto;
-    }
+	@include respond-to($breakpoint-small) {
+		order: -1;
+		flex-basis: auto;
+	}
 }

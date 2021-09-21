@@ -17,20 +17,20 @@
 	}
 
 	.protonmail_quote {
-		padding: 0.2em 0 0.2em 1.2em;
+		padding-block: 0.2em;
+		padding-inline: 1.2em 0;
 		border-color: #657ee4;
-		border-left-width: 3px;
-		border-left-style: solid;
+		border-inline-start-width: 3px;
+		border-inline-start-style: solid;
 	}
 	.protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
-		padding-left: 0;
-		padding-right: 0;
-		border-left-width: 0;
+		padding-inline: 0;
+		border-inline-start-width: 0;
 	}
 
 	// fix for some embedded images bugs
 	img {
-		max-width: none;
+		max-inline-size: none;
 	}
 
 	* {
@@ -59,9 +59,9 @@
         3. set at least a min width or it's possible it won't be shown
         4. remove min-width when image loaded - for tiny images
     */
-	max-width: 100%;
-	min-width: 38px;
+	max-inline-size: 100%;
+	min-inline-size: 38px;
 	&[src] {
-		min-width: 0;
+		min-inline-size: 0;
 	}
 }

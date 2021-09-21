@@ -7,14 +7,15 @@ interface Props {
     children: React.ReactNode;
     icon?: string;
     iconColor?: string;
+    iconClassName?: string;
     title?: string;
     id?: string;
 }
-const IconRow = ({ children, icon, iconColor, className, title, id }: Props) => (
+const IconRow = ({ children, icon, iconColor, className, title, iconClassName, id }: Props) => (
     <div className="flex flex-nowrap flex-align-items-start mb1 form--icon-labels">
         <Label className="pb0-5" htmlFor={id} title={title}>
             {icon ? (
-                <Icon name={icon} alt={title} color={iconColor} />
+                <Icon name={icon} className={iconClassName} alt={title} color={iconColor} />
             ) : (
                 <>&nbsp;{title && <span className="sr-only">{title}</span>}</>
             )}

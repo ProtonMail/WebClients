@@ -50,7 +50,7 @@ body {
 		}
 
 		line-height: $base-line-height;
-		min-height: 100%;
+		min-block-size: 100%;
 	}
 }
 
@@ -88,12 +88,12 @@ a {
 
 /* it depends, it exceeds (french joke) */
 %reset-responsive-height-max-width {
-	height: auto;
-	max-width: 100%;
+	block-size: auto;
+	max-inline-size: 100%;
 }
 
 %reset-responsive-max-width-only {
-	max-width: 100%;
+	max-inline-size: 100%;
 }
 
 blockquote,
@@ -136,7 +136,7 @@ svg {
 }
 
 textarea {
-	min-height: #{rem($default-height-fields)}; // Equals field inputs height
+	min-block-size: #{rem($default-height-fields)}; // Equals field inputs height
 }
 
 /*
@@ -148,7 +148,7 @@ input[type='checkbox'],
 input[type='image'] {
 	background-color: transparent;
 	border: 0;
-	width: auto;
+	inline-size: auto;
 }
 
 // for components that rely on checkboxes
@@ -159,8 +159,8 @@ input[type='checkbox'] {
 
 /* removes X in input when typing in IE/EDGE */
 input::-ms-clear {
-	width: 0;
-	height: 0;
+	inline-size: 0;
+	block-size: 0;
 }
 
 /* removes native password revealer for IE/EDGE */
@@ -176,11 +176,11 @@ sub {
 }
 
 sup {
-	bottom: 1ex;
+	inset-block-end: 1ex;
 }
 
 sub {
-	top: 0.5ex;
+	inset-block-start: 0.5ex;
 }
 
 mark {
@@ -200,13 +200,13 @@ mark {
 li {
 	p,
 	ul {
-		margin-bottom: 0;
-		margin-top: 0;
+		margin-block: 0;
 	}
 }
 
 kbd {
-	padding: 0 0.25em;
+	padding-block: 0;
+	padding-inline: 0.25em;
 	background-color: var(--background-strong);
 	border: 1px solid var(--border-norm);
 	border-radius: var(--border-radius-medium);
@@ -215,25 +215,26 @@ kbd {
 hr {
 	background-color: var(--border-norm);
 	border: 0;
-	height: 1px;
-	margin: 0 0 1em;
+	block-size: 1px;
+	margin-inline: 0;
+	margin-block: 0 1em;
 	padding: 0;
 }
 
 table {
-	margin-bottom: 1.5em;
+	margin-block-end: 1.5em;
 	table-layout: fixed;
 }
 
 details {
-	border-bottom: 1px solid var(--border-norm);
+	border-block-end: 1px solid var(--border-norm);
 
 	& > summary::-webkit-details-marker {
 		display: none;
 	}
 
 	&:first-child {
-		border-top: 1px solid var(--border-norm);
+		border-block-start: 1px solid var(--border-norm);
 	}
 
 	&[open] > summary {
@@ -244,7 +245,8 @@ details {
 }
 
 summary {
-	padding: 0.5em 0;
+	padding-block: 0.5em;
+	padding-inline: 0;
 	list-style: none;
 	border: 0;
 	cursor: pointer;

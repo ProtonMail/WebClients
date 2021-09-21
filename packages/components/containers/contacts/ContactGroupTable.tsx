@@ -12,7 +12,7 @@ interface Props {
 const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
     return (
         <>
-            <div className="flex flex-column" style={{ minHeight: 180 }}>
+            <div className="flex flex-column min-h-custom" style={{ '--min-height-custom': '180px' }}>
                 <Table className="no-border">
                     <TableHeader>
                         <tr>
@@ -54,7 +54,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                 </Table>
 
                 {!contactEmails.length ? (
-                    <div className="flex flex-align-items-center flex-justify-center" style={{ minHeight: 150 }}>
+                    <div className="flex flex-align-items-center flex-justify-center min-h-custom" style={{ '--min-height-custom': '150px' }}>
                         {c('Info').t`No contacts added yet`}
                     </div>
                 ) : null}

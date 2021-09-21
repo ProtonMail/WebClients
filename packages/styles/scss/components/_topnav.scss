@@ -4,26 +4,26 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 	&--blackfriday::before {
 		content: '';
 		position: absolute;
-		width: rem(7);
-		height: rem(7);
+		inline-size: rem(7);
+		block-size: rem(7);
 		background: var(--signal-danger);
 		border-radius: 50%;
-		left: calc(#{rem(17.5)} + #{rem(15)});
-		top: calc(50% - #{rem(14)});
+		inset-inline-start: calc(#{rem(17.5)} + #{rem(15)});
+		inset-block-start: calc(50% - #{rem(14)});
 	}
 }
 
 .topnav-list > li:not(:last-child) {
-	margin-right: 0.25em;
+	margin-inline-end: 0.25em;
 
 	/* Decrease margins (was 1em) */
 	@include respond-to(1500) {
-		margin-right: 1px;
+		margin-inline-end: 1px;
 	}
 }
 
 .topnav-icon {
-	margin-right: 0.5em;
+	margin-inline-end: 0.5em;
 }
 
 .topnav-vr {
@@ -40,19 +40,19 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 				// equivalent of .sr-only, but impossible to extend in a breakpoint
 				border: 0;
 				clip: rect(0 0 0 0);
-				height: 1px;
+				block-size: 1px;
 				margin: -1px;
 				overflow: hidden;
 				padding: 0;
 				position: absolute;
-				width: 1px;
+				inline-size: 1px;
 			}
 
 			.topnav-icon {
-				margin-right: 0;
+				margin-inline-end: 0;
 
 				&.expand-caret {
-					margin-left: 0.25em;
+					margin-inline-start: 0.25em;
 				}
 			}
 		}
@@ -62,27 +62,26 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 @include respond-to(870) {
 	.topnav-list--four-elements {
 		.topnav-link {
-			padding-left: rem(5);
-			padding-right: rem(5);
+			padding-inline: rem(5);
 		}
 		.navigation-title {
 			// collapse for ALL without any exception
 			// equivalent of .sr-only, but impossible to extend in a breakpoint
 			border: 0;
 			clip: rect(0 0 0 0);
-			height: 1px;
+			block-size: 1px;
 			margin: -1px;
 			overflow: hidden;
 			padding: 0;
 			position: absolute;
-			width: 1px;
+			inline-size: 1px;
 		}
 		.topnav-icon {
-			margin-right: 0;
+			margin-inline-end: 0;
 		}
 
 		.topnav-link--blackfriday::before {
-			left: calc(#{rem(5)} + #{rem(15)});
+			inset-inline-start: calc(#{rem(5)} + #{rem(15)});
 		}
 	}
 }
@@ -91,32 +90,30 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 	.topnav-icon {
 		// Specificity -_-v
 		&#{&} {
-			width: rem(24);
-			height: rem(24);
+			inline-size: rem(24);
+			block-size: rem(24);
 		}
 	}
 
 	.topnav-list--four-elements .topnav-link {
-		padding-left: rem(10);
-		padding-right: rem(10);
+		padding-inline: rem(10);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(#{rem(10)} + #{rem(22)});
-		top: calc(50% - #{rem(18)});
+		inset-inline-start: calc(#{rem(10)} + #{rem(22)});
+		inset-block-start: calc(50% - #{rem(18)});
 	}
 }
 
 @include respond-to($breakpoint-tiny) {
 	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
-		padding-left: rem(2);
-		padding-right: rem(2);
+		padding-inline: rem(2);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(#{rem(5)} + #{rem(22)});
+		inset-inline-start: calc(#{rem(5)} + #{rem(22)});
 	}
 }

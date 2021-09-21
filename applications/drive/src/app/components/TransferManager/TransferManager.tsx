@@ -1,7 +1,14 @@
 import { useCallback, useEffect, useRef, useMemo, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { c } from 'ttag';
-import { useToggle, classnames, useElementRect, useActiveBreakpoint, useWindowSize } from '@proton/components';
+import {
+    useToggle,
+    classnames,
+    useElementRect,
+    useActiveBreakpoint,
+    useWindowSize,
+    useRightToLeft,
+} from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
@@ -95,6 +102,7 @@ const TransferManager = ({
     const { state: isToolbarExpanded, toggle: setToolbarExpanded } = useToggle();
     const { openConfirmModal } = useConfirm();
     const { isNarrow } = useActiveBreakpoint();
+    const [isRTL] = useRightToLeft();
 
     useEffect(() => {
         window.addEventListener('unload', onClear);
@@ -218,6 +226,7 @@ const TransferManager = ({
             <div className="transfers-manager-list" ref={containerRef}>
                 {rect && (
                     <FixedSizeList
+                        direction={isRTL ? 'rtl' : 'ltr'}
                         className="no-outline"
                         itemData={{
                             entries,

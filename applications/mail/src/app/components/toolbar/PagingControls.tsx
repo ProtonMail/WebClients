@@ -43,7 +43,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
                 onClick={onPrevious}
-                className="no-tablet no-mobile"
+                className="no-tablet no-mobile on-rtl-mirror"
                 icon={<Icon className="rotateZ-90" name="angle-down" alt={c('Action').t`Previous page`} />}
                 data-testid="toolbar:previous-page"
             />
@@ -79,7 +79,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 disabled={loading || page >= total}
                 title={c('Action').t`Next page`}
                 onClick={onNext}
-                className="no-tablet no-mobile"
+                className="no-tablet no-mobile on-rtl-mirror"
                 icon={<Icon className="rotateZ-270" name="angle-down" alt={c('Action').t`Next page`} />}
                 data-testid="toolbar:next-page"
             />

@@ -81,7 +81,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                 method="post"
             >
                 <Challenge
-                    style={{ height: 0 }}
+                    className="h0"
                     tabIndex={-1}
                     challengeRef={challengeRefLogin}
                     type={0}

@@ -14,13 +14,13 @@
 			$property: margin;
 
 			@if $temp_t==t {
-				$property: margin-top;
+				$property: margin-block-start;
 			} @else if $temp_t==r {
-				$property: margin-right;
+				$property: margin-inline-end;
 			} @else if $temp_t==b {
-				$property: margin-bottom;
+				$property: margin-block-end;
 			} @else if $temp_t==l {
-				$property: margin-left;
+				$property: margin-inline-start;
 			}
 
 			$value: $margin + 0em;
@@ -35,7 +35,7 @@
 			// from 1.5 to 1-5
 			$property-class: str-replace($text-margin, '.', '-');
 
-			// .mr1-5 { margin-right: 1.5em; }
+			// .mr1-5 { margin-inline-end: 1.5em; }
 			.#{$prefix}#{$margin-type}#{$property-class} {
 				#{$property}: #{$value};
 			}

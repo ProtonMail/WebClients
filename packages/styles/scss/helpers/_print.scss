@@ -12,16 +12,16 @@
 		box-shadow: none;
 		color: black;
 		float: none;
-		height: auto;
+		block-size: auto;
 		margin: 0;
-		max-width: 100%;
-		min-height: 0;
+		max-inline-size: 100%;
+		min-block-size: 0;
 		padding: 0;
 		position: static;
-		width: auto;
+		inline-size: auto;
 		opacity: 1;
 		visibility: visible;
-		max-height: none;
+		max-block-size: none;
 		display: block;
 	}
 

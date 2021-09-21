@@ -35,7 +35,7 @@ const Captcha = ({ token, onSubmit }: Props) => {
 
             if (data.type === 'pm_height') {
                 const height = event.data.height + 40 + 100;
-                setStyle({ height: `${height / 16}rem` });
+                setStyle({ '--height-custom': `${height / 16}rem` });
             }
         };
 
@@ -49,7 +49,7 @@ const Captcha = ({ token, onSubmit }: Props) => {
         <iframe
             title="Captcha"
             ref={iframeRef}
-            className="w100"
+            className="w100 h-custom"
             src={src}
             style={style}
             sandbox="allow-scripts allow-same-origin allow-popups"

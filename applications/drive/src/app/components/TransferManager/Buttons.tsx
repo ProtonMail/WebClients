@@ -13,7 +13,7 @@ const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
                     type="button"
                     disabled={disabled}
                     onClick={onClick}
-                    className="transfers-manager-list-item-controls-button"
+                    className="transfers-manager-list-item-controls-button on-rtl-mirror"
                     title={title}
                     key={title}
                     data-testid={actionType ? `drive-transfers-manager:toolbar-button-${actionType}` : undefined}

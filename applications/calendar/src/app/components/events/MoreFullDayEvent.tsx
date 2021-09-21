@@ -14,6 +14,10 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
             style={style}
             className="
             calendar-dayeventcell
+            h-custom
+            w-custom
+            top-custom
+            left-custom
             absolute
         "
         >

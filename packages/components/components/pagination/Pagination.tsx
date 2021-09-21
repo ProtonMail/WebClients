@@ -58,7 +58,7 @@ const Pagination = ({
             {hasPrevious ? (
                 <Button
                     icon
-                    className="previous-button"
+                    className="previous-button on-rtl-mirror"
                     disabled={disablePrevious}
                     onClick={onPrevious}
                     title={c('Title').t`Previous`}
@@ -70,7 +70,13 @@ const Pagination = ({
                 <DropdownMenu>{actions}</DropdownMenu>
             </SimpleDropdown>
             {hasNext ? (
-                <Button icon className="next-button" disabled={disableNext} onClick={onNext} title={c('Title').t`Next`}>
+                <Button
+                    icon
+                    className="next-button on-rtl-mirror"
+                    disabled={disableNext}
+                    onClick={onNext}
+                    title={c('Title').t`Next`}
+                >
                     <Icon name="arrow-right" />
                 </Button>
             ) : null}

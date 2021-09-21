@@ -1,10 +1,10 @@
 @import '~@proton/styles/scss/config';
 
 .email-unsubscribe-layout--logo {
-    width: rem(90);
+	inline-size: rem(90);
 }
 
 .email-unsubscribe-layout--main {
-    width: rem(320);
-    max-width: 80%;
+	inline-size: rem(320);
+	max-inline-size: 80%;
 }

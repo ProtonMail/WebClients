@@ -28,7 +28,7 @@ const Info = ({
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
-    const { isRTL } = useRightToLeft();
+    const [isRTL] = useRightToLeft();
     const rtlAdjustedPlacement = originalPlacement.includes('right')
         ? originalPlacement.replace('right', 'left')
         : originalPlacement.replace('left', 'right');

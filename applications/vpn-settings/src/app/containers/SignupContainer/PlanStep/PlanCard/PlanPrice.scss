@@ -1,30 +1,30 @@
 @import '~@proton/styles/scss/config';
 
 .plan-price {
-    min-height: 8em;
+	min-block-size: 8em;
 
-    @include respond-to($breakpoint-small) {
-        min-height: 0;
-    }
+	@include respond-to($breakpoint-small) {
+		min-block-size: 0;
+	}
 
-    /* use nesting to restrict styles only for VPN signup page */
-    &-area {
-        vertical-align: bottom;
-        display: inline-block;
+	/* use nesting to restrict styles only for VPN signup page */
+	&-area {
+		vertical-align: bottom;
+		display: inline-block;
 
-        .amount {
-            font-size: rem(50);
-            line-height: 1;
-        }
+		.amount {
+			font-size: rem(50);
+			line-height: 1;
+		}
 
-        .currency {
-            order: -1;
-            font-size: rem(20);
-            line-height: 1;
-            position: relative;
-            top: rem(5); // magic value
-            color: rgb(70 74 78 / .7);
-            margin-right: rem(5);
-        }
-    }
+		.currency {
+			order: -1;
+			font-size: rem(20);
+			line-height: 1;
+			position: relative;
+			inset-block-start: rem(5); // magic value
+			color: rgb(70 74 78 / 0.7);
+			margin-inline-end: rem(5);
+		}
+	}
 }

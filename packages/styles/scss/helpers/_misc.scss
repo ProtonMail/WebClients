@@ -11,14 +11,8 @@
 }
 
 .unstyled {
-	padding-left: 0;
+	padding-inline-start: 0;
 	list-style-type: none;
-
-	@if $rtl-option==true {
-		[dir='rtl'] & {
-			padding-right: 0;
-		}
-	}
 }
 
 /* hardware-acceleration activation */
@@ -31,13 +25,13 @@
 .sr-only {
 	border: 0;
 	clip: rect(0 0 0 0);
-	height: 1px;
+	block-size: 1px;
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
 	position: absolute;
-	width: 1px;
-	top: 0; // needed for Safari dumb and 💩 behaviour
+	inline-size: 1px;
+	inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
 }
 
 .visibility-hidden {
@@ -75,7 +69,7 @@
 /* RTL/others */
 .mirror,
 [dir='rtl'] .on-rtl-mirror {
-	transform: rotateZ(180deg);
+	transform: rotateY(180deg);
 }
 
 .rotateX-180 {
@@ -94,10 +88,7 @@
 .increase-click-surface::before {
 	content: '';
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 }
 
 .no-pointer-events,

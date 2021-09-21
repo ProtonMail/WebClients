@@ -2,8 +2,8 @@
 	// Size of each cell width and height when `fixedSize`property is set.
 	--fixed-cell-size: #{em(34)};
 
-	min-width: rem(150);
-	max-width: rem(400);
+	min-inline-size: rem(150);
+	max-inline-size: rem(400);
 	font-size: rem(12);
 
 	&-grid,
@@ -23,14 +23,14 @@
 			display: flex;
 			justify-content: center;
 			align-items: stretch;
-			width: var(--cell-width, auto);
+			inline-size: var(--cell-width, auto);
 
 			@supports (aspect-ratio: 1 / 1) {
 				aspect-ratio: 1 / 1;
 			}
 
 			@supports not (aspect-ratio: 1 / 1) {
-				height: var(--cell-height, initial);
+				block-size: var(--cell-height, initial);
 			}
 		}
 	}
@@ -106,7 +106,7 @@
 	&-day {
 		@extend .interactive;
 
-		width: 100%;
+		inline-size: 100%;
 		border-radius: var(--border-radius-medium);
 
 		&[aria-pressed='true'] {
@@ -122,10 +122,7 @@
 		&::before {
 			content: '';
 			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 			z-index: 0;
 			background: var(--primary);
 			border-radius: var(--border-radius-medium);
@@ -165,13 +162,13 @@
 		}
 
 		&--range:not(#{&}--range-bound-start) {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
+			border-start-start-radius: 0;
+			border-end-start-radius: 0;
 		}
 
 		&--range:not(#{&}--range-bound-end) {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
+			border-start-end-radius: 0;
+			border-end-end-radius: 0;
 		}
 	}
 }

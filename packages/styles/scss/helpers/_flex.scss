@@ -17,9 +17,7 @@
 	}
 }
 
-@each $justify
-	in (start, center, end, space-between, space-around, space-evenly)
-{
+@each $justify in (start, center, end, space-between, space-around, space-evenly) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: '';
 	@if $justify == start or $justify == end {
@@ -54,8 +52,8 @@
 /* fix aspect ratio */
 .flex > *,
 .no-min-dimensions {
-	min-height: 0;
-	min-width: 0;
+	min-block-size: 0;
+	min-inline-size: 0;
 }
 
 .flex-flex-children > * {
@@ -67,8 +65,7 @@
 
 .inline-flex-vcenter > *,
 .flex-item-centered-vert {
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-block: auto;
 	align-self: center;
 }
 
@@ -106,14 +103,16 @@
 .flex-autogrid {
 	@extend .flex;
 	@extend .flex-justify-space-between;
-	margin: 0 -0.5em;
+	margin-block: 0;
+	margin-inline: -0.5em;
 }
 
 .flex-autogrid-item {
 	@extend .flex-item-fluid;
-	padding: 0 0.5em 1em;
+	padding-block: 0 1em;
+	padding-inline: 0.5em;
 
 	&.pb0 {
-		padding-bottom: 0;
+		padding-block-end: 0;
 	}
 }

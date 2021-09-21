@@ -1,10 +1,10 @@
 .calendar-fullday-row {
-	border-bottom: $calendar-grid-border;
-	padding-bottom: $calendar-gridcell-gutter;
+	border-block-end: $calendar-grid-border;
+	padding-block-end: $calendar-gridcell-gutter;
 }
 
 .calendar-first-row-heading {
-	border-bottom: $calendar-grid-border;
+	border-block-end: $calendar-grid-border;
 }
 
 .address-item {
@@ -16,19 +16,18 @@
 }
 
 @include respond-to($breakpoint-small) {
-
 	// we show abbreviated version only on week/month view
 	.is-week-view,
 	.is-month-view {
 		.calendar-grid-heading-day-fullname {
 			border: 0;
 			clip: rect(0 0 0 0);
-			height: 1px;
+			block-size: 1px;
 			margin: -1px;
 			overflow: hidden;
 			padding: 0;
 			position: absolute;
-			width: 1px;
+			inline-size: 1px;
 		}
 	}
 

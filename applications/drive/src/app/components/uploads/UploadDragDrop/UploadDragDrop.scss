@@ -2,10 +2,7 @@
 
 .upload-drag-drop {
 	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+	inset: 0;
 	background: var(--backdrop-norm);
 	z-index: 30;
 	display: flex;
@@ -13,8 +10,8 @@
 	justify-content: center;
 
 	&-infobox {
-		width: rem(490);
-		min-width: rem(380);
+		inline-size: rem(490);
+		min-inline-size: rem(380);
 		background: var(--background-norm);
 		color: var(--text-norm);
 		border-radius: var(--border-radius-medium);
@@ -24,6 +21,6 @@
 	}
 
 	&-image {
-		max-width: rem(380);
+		max-inline-size: rem(380);
 	}
 }

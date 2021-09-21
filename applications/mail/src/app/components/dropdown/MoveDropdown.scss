@@ -1,26 +1,26 @@
 @import '~@proton/styles/scss/config';
 
 .move-dropdown {
-    .dropdown-content {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: stretch;
-    }
+	.dropdown-content {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+	}
 
-    &-list-container {
-        flex: 1 1 auto;
+	&-list-container {
+		flex: 1 1 auto;
 
-        @include respond-to($breakpoint-small, 'min') {
-            max-width: 20em;
-            max-height: 15em;
-        }
+		@include respond-to($breakpoint-small, 'min') {
+			max-inline-size: 20em;
+			max-block-size: 15em;
+		}
 
-        [data-level='1'] {
-            padding-left: 2em;
-        }
-        [data-level='2'] {
-            padding-left: 3em;
-        }
-    }
+		[data-level='1'] {
+			padding-inline-start: 2em;
+		}
+		[data-level='2'] {
+			padding-inline-start: 3em;
+		}
+	}
 }

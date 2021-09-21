@@ -7,7 +7,8 @@
 	color: var(--text-norm);
 	background: var(--background-norm);
 	border: solid var(--border-norm);
-	border-width: 1px 0;
+	border-block-width: 1px;
+	border-inline-width: 0;
 
 	/**
      * We replace td with custom class here because we don't have direct access to it.
@@ -16,7 +17,7 @@
 	td {
 		flex: 1;
 		border: none;
-		height: 100%;
+		block-size: 100%;
 		&:first-child {
 			flex-grow: 0;
 			flex-basis: rem(35);

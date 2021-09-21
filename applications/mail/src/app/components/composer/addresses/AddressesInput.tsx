@@ -158,8 +158,8 @@ const AddressesInput = ({
 
     const dragPlaceholder = (
         <div
-            className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 max-w100 no-pointer-events"
-            style={{ width: `${placeholderSize?.width}px`, height: `${placeholderSize?.height}px` }}
+            className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 max-w100 no-pointer-events h-custom w-custom"
+            style={{ '--width-custom': `${placeholderSize?.width}px`, '--height-custom': `${placeholderSize?.height}px` }}
         />
     );
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Tab } from './index.d';
+import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
 const getWidth = (el: HTMLLIElement | HTMLUListElement) => {
     return el.getClientRects()?.[0]?.width ?? 0;
@@ -20,6 +21,7 @@ const INITIAL_STATE = {
 
 export const useIndicator = (tabs: Tab[], currentTabIndex: number) => {
     const tabsRef = useRef<HTMLUListElement>(null);
+    const [isRTL] = useRightToLeft();
 
     const [{ scale, translate }, setIndicatorParams] = useState(INITIAL_STATE);
 
@@ -59,7 +61,7 @@ export const useIndicator = (tabs: Tab[], currentTabIndex: number) => {
         // indicator scale is proportion to whole container width
         setIndicatorParams({
             scale: width / getWidth(tabsEl),
-            translate: `${offset}px`,
+            translate: isRTL ? `-${offset}px` : `${offset}px`,
         });
     }, [tabs, currentTabIndex]);
 

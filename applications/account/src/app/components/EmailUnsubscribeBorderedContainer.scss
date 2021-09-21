@@ -1,6 +1,6 @@
 @import '~@proton/styles/scss/config';
 
 .email-unsubscribe-container {
-    width: rem(480);
-    max-width: 80%;
+	inline-size: rem(480);
+	max-inline-size: 80%;
 }

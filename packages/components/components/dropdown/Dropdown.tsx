@@ -14,7 +14,7 @@ import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import { useIsClosing, useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
-import { classnames } from '../../helpers';
+import { classnames, getCustomSizingClasses } from '../../helpers';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { usePopper } from '../popper';
 import { ALL_PLACEMENTS, Position } from '../popper/utils';
@@ -80,7 +80,7 @@ const Dropdown = ({
     UNSTABLE_AUTO_HEIGHT,
     ...rest
 }: Props) => {
-    const { isRTL } = useRightToLeft();
+    const [isRTL] = useRightToLeft();
     const rtlAdjustedPlacement = originalPlacement.includes('right')
         ? originalPlacement.replace('right', 'left')
         : originalPlacement.replace('left', 'right');
@@ -218,7 +218,7 @@ const Dropdown = ({
         ...varSize,
     };
 
-    const contentStyle = UNSTABLE_AUTO_HEIGHT ? { height: 'auto' } : undefined;
+    const contentStyle = UNSTABLE_AUTO_HEIGHT ? { '--height-custom': 'auto' } : undefined;
 
     return (
         <Portal>
@@ -249,7 +249,11 @@ const Dropdown = ({
                     ref={contentRef}
                     style={contentStyle}
                     {...contentProps}
-                    className={classnames(['dropdown-content', contentProps?.className])}
+                    className={classnames([
+                        'dropdown-content',
+                        getCustomSizingClasses(contentStyle),
+                        contentProps?.className,
+                    ])}
                 >
                     {children}
                 </div>
