@@ -15,7 +15,7 @@ select {
 	}
 
 	&-label {
-		padding-bottom: $inputform-default-spacing-text;
+		padding-block-end: $inputform-default-spacing-text;
 	}
 
 	&-label-hint,
@@ -25,12 +25,12 @@ select {
 	}
 
 	&-label-hint {
-		padding-bottom: rem(1); // just to compensate the difference of text size
+		padding-block-end: rem(1); // just to compensate the difference of text size
 	}
 
 	&-assist {
-		min-height: 1.9em;
-		padding-top: $inputform-default-spacing-text;
+		min-block-size: 1.9em;
+		padding-block-start: $inputform-default-spacing-text;
 	}
 
 	&-label-text {
@@ -46,7 +46,8 @@ select {
 		height: rem($default-height-fields-inputforms);
 	}
 	&-field {
-		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+		padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
+		padding-inline: em(16);
 		border-radius: var(--border-radius-medium);
 		border: 1px solid var(--field-norm);
 		background-color: var(--field-background-color);
@@ -80,7 +81,7 @@ select {
 		}
 
 		&[type='search'] {
-			padding-left: 2em;
+			padding-inline-start: 2em;
 
 			&::-webkit-search-cancel-button {
 				display: none;
@@ -89,7 +90,7 @@ select {
 
 		select#{&} {
 			background-size: rem(15);
-			padding-right: rem(20);
+			padding-inline-end: rem(20);
 			text-overflow: ellipsis;
 			overflow: hidden;
 			cursor: pointer;
@@ -105,7 +106,7 @@ select {
 	}
 
 	& &-prefix-phone {
-		height: $inputform-height-phone-prefix; // no variation for bigger - select of content needs to be "fixed"
+		block-size: $inputform-height-phone-prefix; // no variation for bigger - select of content needs to be "fixed"
 	}
 
 	// global error state on container
@@ -144,26 +145,26 @@ select {
 		height: rem($default-height-fields-inputforms);
 
 		input.inputform-field {
-			height: 100%;
+			block-size: 100%;
 		}
 
 		.inputform-field {
 			&,
 			&:focus {
 				border: 0;
-				width: calc(100% - 1.5em);
+				inline-size: calc(100% - 1.5em);
 				outline: 0;
 			}
 
 			&[type='tel'] {
-				width: 100%;
-				padding-left: 0.5em;
+				inline-size: 100%;
+				padding-inline-start: 0.5em;
 			}
 		}
 
 		&-empty {
 			// for drive, to keep the same height
-			min-height: calc(#{rem($default-height-fields-inputforms)} + 2px);
+			min-block-size: calc(#{rem($default-height-fields-inputforms)} + 2px);
 		}
 
 		&:focus-within {
@@ -182,24 +183,24 @@ select {
 		input.inputform-field,
 		.select,
 		.inputform-icon-container {
-			height: rem($bigger-height-fields-inputforms);
+			block-size: rem($bigger-height-fields-inputforms);
 		}
 
 		input.inputform-field {
 			&[type='search'] {
 				background-size: rem(20);
-				padding-left: 2.2em;
+				padding-inline-start: 2.2em;
 			}
 		}
 
 		.inputform-icon-container {
 			&-empty {
 				// for drive, to keep the same height
-				min-height: calc(#{rem($bigger-height-fields-inputforms)} + 2px);
+				min-block-size: calc(#{rem($bigger-height-fields-inputforms)} + 2px);
 			}
 
 			.inputform-field {
-				height: 100%;
+				block-size: 100%;
 			}
 		}
 	}

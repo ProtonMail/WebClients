@@ -8,26 +8,26 @@
 }
 
 .tabs-list-item {
-	margin-right: rem(10);
+	margin-inline-end: rem(10);
 	color: var(--text-weak);
-	min-width: auto;
+	min-inline-size: auto;
 }
 
 .tabs-list-link {
 	@extend .flex;
 	color: inherit;
-	border-bottom: 2px solid transparent;
+	border-block-end: 2px solid transparent;
 	padding: 0.5em;
 	@extend .text-no-decoration;
 	@extend .relative;
-	top: 1px;
-	transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
+	inset-block-start: 1px;
+	transition: color 0.15s ease-out, border-block-end 0.15s ease-out;
 
 	&:focus,
 	&:hover {
 		@extend .text-no-decoration;
 		color: var(--text-norm);
-		border-bottom: 2px solid var(--border-norm);
+		border-block-end: 2px solid var(--border-norm);
 	}
 
 	&[disabled] {
@@ -38,12 +38,12 @@
 }
 
 [aria-selected='true'].tabs-list-link {
-	border-bottom: 2px solid var(--interaction-norm);
+	border-block-end: 2px solid var(--interaction-norm);
 	color: var(--text-norm);
 }
 
 .tabs-container {
-	border-bottom: 1px solid var(--border-weak);
+	border-block-end: 1px solid var(--border-weak);
 
 	&[class*='sticky'] {
 		background: var(--background-norm);
@@ -52,13 +52,17 @@
 
 .tabs-indicator {
 	position: absolute;
-	border-bottom: 2px solid var(--interaction-norm);
+	border-block-end: 2px solid var(--interaction-norm);
 	content: '';
-	height: 0;
-	bottom: -1px;
-	left: 0;
-	right: 0;
+	block-size: 0;
+	inset-block-end: -1px;
+	inset-inline: 0;
 	transform-origin: left center;
+	@at-root {
+		[dir='rtl'] & {
+			transform-origin: right center;
+		}
+	}
 	transition: transform 0.15s ease-out;
 	transform: translateX(var(--translate)) scaleX(var(--scale));
 }

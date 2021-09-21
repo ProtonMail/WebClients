@@ -5,7 +5,10 @@
 	@extend .p1;
 	// rules coming from Angular
 	box-sizing: content-box; // to avoid problems in some emails
-	border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+	border-start-start-radius: 0;
+	border-start-end-radius: 0;
+	border-end-start-radius: var(--border-radius-medium);
+	border-end-end-radius: var(--border-radius-medium);
 
 	// remove reset margins
 	blockquote,
@@ -16,23 +19,22 @@
 	td,
 	th,
 	ul {
-		margin-top: 0;
-		margin-bottom: 0;
+		margin-block: 0;
 	}
 
 	p {
-		margin-top: 1em;
-		margin-bottom: 1em;
+		margin-block: 1em;
 	}
 
 	table {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 
 	blockquote {
-		padding: 0 0 0 rem(16);
+		padding-block: 0;
+		padding-inline: rem(16) 0;
 		margin: 0;
-		border-left: 4px solid #e5e5e5;
+		border-inline-start: 4px solid #e5e5e5;
 
 		&::after,
 		&::before {

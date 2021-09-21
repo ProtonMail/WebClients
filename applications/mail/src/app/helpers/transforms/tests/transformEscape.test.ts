@@ -41,7 +41,7 @@ describe('transformEscape', () => {
     `;
 
     const CODE_HTML_HIGHLIGHT = `
-        <div style="white-space: normal;" class="pre"><div style="color: #fff;max-width: 100%;font-size: 16px;line-height: 1.3;" class="code"><span style="color: #DDDDDF;" class="nt">&lt;script</span> <span style="color: #84868B;" class="na">src="</span><span style="color: #68BEA2;" class="s"><span class="s">https<span>://</span>use.fontawesome<span>.</span>com/f0d8991ea9.js</span><span style="color: #84868B;" class="na">"</span><span style="color: #DDDDDF;" class="nt">&gt;</span><span style="color: #DDDDDF;" class="nt">&lt;/script&gt;</span></span></div></div><div class="pre"></div>
+        <div style="white-space: normal;" class="pre"><div style="color: #fff;max-inline-size: 100%;font-size: 16px;line-height: 1.3;" class="code"><span style="color: #DDDDDF;" class="nt">&lt;script</span> <span style="color: #84868B;" class="na">src="</span><span style="color: #68BEA2;" class="s"><span class="s">https<span>://</span>use.fontawesome<span>.</span>com/f0d8991ea9.js</span><span style="color: #84868B;" class="na">"</span><span style="color: #DDDDDF;" class="nt">&gt;</span><span style="color: #DDDDDF;" class="nt">&lt;/script&gt;</span></span></div></div><div class="pre"></div>
     `;
     const HTML_LINKS = `
         <div>
@@ -76,26 +76,26 @@ describe('transformEscape', () => {
         <div style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
     const BACKGROUND_URL_ESCAPED_WTF =
-        '<div style="width: 500px; height: 500px; background:u\\rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>';
+        '<div style="inline-size: 500px; block-size: 500px; background:u\\rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>';
 
     // DON'T REMOVE THEM
     const BACKGROUND_URL_ESCAPED_WTF2 = `
-        <div style="width: 500px; height: 500px; background:url(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
-        <div style="width: 500px; height: 500px; background:u&#114;l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
-        <div style="width: 500px; height: 500px; background:ur&#108;(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; background:url(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; background:u&#114;l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; background:ur&#108;(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
     `;
     const BACKGROUND_URL_ESCAPED = `
-        <div style="width: 500px; height: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
-        <div style="width: 500px; height: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
-        <div style="width: 500px; height: 500px; background:&#117;rl(&apos;https://i.imgur.com/WScAnHr.jpg&apos;)">ddewdwed</div>
-        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background:&#117;&#114;&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background:&#117;r&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background: u&#114l(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url&#x00028;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url&lpar;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
-        <div style="width: 500px; height: 456px; content: &quot; ass &quot;; background:url&#40;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; background:&#117;rl(&apos;https://i.imgur.com/WScAnHr.jpg&apos;)">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 120px; content: &quot; ass &quot;; background:&#117;&#114;&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 120px; content: &quot; ass &quot;; background:&#117;r&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 120px; content: &quot; ass &quot;; background: u&#114l(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; content: &quot; ass &quot;; background:url&#x00028;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 500px; content: &quot; ass &quot;; background:url&lpar;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="inline-size: 500px; block-size: 456px; content: &quot; ass &quot;; background:url&#40;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
     `;
 
     const BACKGROUND_URL_OCTAL_HEX_ENCODING = `
@@ -125,8 +125,8 @@ describe('transformEscape', () => {
     `;
 
     // TODO: Fix those 2
-    // <div style="width: 500px; height: 500px; content: &quot; background:url(test)&quot;">ddewdwed</div>
-    // <div style="width: 500px; height: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>
+    // <div style="inline-size: 500px; block-size: 500px; content: &quot; background:url(test)&quot;">ddewdwed</div>
+    // <div style="inline-size: 500px; block-size: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>
 
     const setup = (content = DOM) => {
         const doc = transformEscape(content, base64Cache);

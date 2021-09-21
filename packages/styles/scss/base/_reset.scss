@@ -158,28 +158,11 @@ dialog {
 ul,
 ol,
 menu {
-	padding-left: 2em;
+	padding-inline-start: 2em;
 }
 
 dd {
-	margin-left: 2em;
-}
-
-// Right to left resets
-@if $rtl-option==true {
-	/* RTL */
-	[dir='rtl'] {
-		ul,
-		ol {
-			padding-left: 0;
-			padding-right: 2em;
-		}
-
-		dd {
-			margin-left: 0;
-			margin-right: 2em;
-		}
-	}
+	margin-inline-start: 2em;
 }
 
 b,
@@ -223,13 +206,13 @@ img {
 /* tiny control */
 audio:not([controls]) {
 	display: none;
-	height: 0;
+	block-size: 0;
 }
 
 /* important, abbr are good */
 /* only those with a title are shown */
 abbr[title] {
-	border-bottom: dotted 1px;
+	border-block-end: dotted 1px;
 	cursor: help;
 	text-decoration: none;
 	/* color inherited from text */
@@ -261,11 +244,7 @@ html {
 
 @each $quotes
 	in (
-		(
-			'lang': 'fr',
-			'quotes':
-				'"\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"'
-		),
+		('lang': 'fr', 'quotes': '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"'),
 		('lang': 'en', 'quotes': '"\201C" "\201D" "\2018" "\2019"'),
 		('lang': 'es', 'quotes': '"\00AB" "\00BB" "\201C" "\201D"'),
 		('lang': 'it', 'quotes': '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D"'),

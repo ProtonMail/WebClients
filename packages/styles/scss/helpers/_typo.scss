@@ -68,26 +68,19 @@
 	@include vendor-prefix(hyphens, auto, webkit);
 }
 
-@each $align in (left, center, right) {
-	.text-#{$align} {
-		text-align: $align;
-	}
+.text-left {
+	text-align: start;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: end;
 }
 
 @each $align in (baseline, sub, super, text-top, text-bottom, middle, top, bottom) {
 	.align-#{$align} {
 		vertical-align: $align;
-	}
-}
-
-@if $rtl-option==true {
-	/* RTL */
-	[dir='rtl'] .text-right {
-		text-align: left;
-	}
-
-	[dir='rtl'] .text-left {
-		text-align: right;
 	}
 }
 

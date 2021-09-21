@@ -90,11 +90,11 @@ iframe {
 ul,
 ol,
 menu {
-	padding-left: 2em;
+	padding-inline-start: 2em;
 }
 
 dd {
-	margin-left: 2em;
+	margin-inline-start: 2em;
 }
 
 b,
@@ -108,8 +108,7 @@ code,
 kbd,
 samp {
 	/* stylelint-disable font-family-no-duplicate-names */
-	font-family: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo', monospace,
-		monospace;
+	font-family: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo', monospace, monospace;
 	/* stylelint-enable font-family-no-duplicate-names */
 	font-size: 1em;
 }
@@ -139,13 +138,13 @@ img {
 /* tiny control */
 audio:not([controls]) {
 	display: none;
-	height: 0;
+	block-size: 0;
 }
 
 /* important, abbr are good */
 /* only those with a title are shown */
 abbr[title] {
-	border-bottom: dotted 1px;
+	border-block-end: dotted 1px;
 	cursor: help;
 	text-decoration: none;
 	/* color inherited from text */
@@ -199,7 +198,7 @@ $title-sizes: (
  */
 body {
 	font-size: 100%;
-	width: 100%;
+	inline-size: 100%;
 	font-family: $font-family;
 	padding: 1rem;
 	line-height: $base-line-height;
@@ -230,16 +229,17 @@ a {
 
 img {
 	border: 0;
-	max-width: 100%;
+	max-inline-size: 100%;
 }
 
 table img {
-	max-width: none;
+	max-inline-size: none;
 }
 
 /* styling quotes for messages */
 blockquote {
-	padding: 0.2em 1.2em !important;
+	padding-block: 0.2em !important;
+	padding-inline: 1.2em !important;
 	/*margin: 1em 0 2em 0 !important;*/
 	margin: 0 !important; // actually on web
 	border: 3px solid var(--primary) !important;

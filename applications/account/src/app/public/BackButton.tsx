@@ -9,7 +9,7 @@ interface Props {
 const BackButton = ({ onClick }: Props) => {
     return (
         <Button icon shape="ghost" onClick={onClick} title={c('Action').t`Back`}>
-            <Icon name="arrow-left" alt={c('Action').t`Back`} />
+            <Icon name="arrow-left" className="on-rtl-mirror" alt={c('Action').t`Back`} />
         </Button>
     );
 };

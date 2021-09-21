@@ -24,7 +24,7 @@ interface Props {
 const FullDayEvent = ({
     style,
     formatTime,
-    className = 'calendar-dayeventcell absolute text-left',
+    className = 'calendar-dayeventcell h-custom w-custom top-custom left-custom absolute text-left',
     event,
     isSelected,
     isBeforeNow,

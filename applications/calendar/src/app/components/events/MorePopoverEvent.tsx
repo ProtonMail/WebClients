@@ -60,7 +60,7 @@ const MorePopoverEvent = ({
                 formatTime={formatTime}
                 event={event}
                 key={event.id}
-                className="calendar-dayeventcell w100 text-left"
+                className="calendar-dayeventcell w100 text-left h-custom"
                 isSelected={isSelected}
                 tzid={tzid}
                 isBeforeNow={isBeforeNow}
@@ -68,7 +68,7 @@ const MorePopoverEvent = ({
                 isOutsideEnd={false}
                 onClick={() => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })}
                 style={{
-                    '--height': `${DAY_EVENT_HEIGHT}px`,
+                    '--height-custom': `${DAY_EVENT_HEIGHT}px`,
                 }}
                 eventRef={isThisSelected ? targetEventRef : undefined}
             />

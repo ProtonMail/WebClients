@@ -12,17 +12,17 @@
 	}
 
 	&-label.label {
-		width: 11em;
+		inline-size: 11em;
 	}
 
 	.composer-addresses-container.composer-addresses-container-closed {
-		padding-right: 0;
+		padding-inline-end: 0;
 	}
 
 	&-progress-status {
-		top: 0.5em;
+		inset-block-start: 0.5em;
 	}
 	&-time-remaining {
-		top: -0.5em;
+		inset-block-start: -0.5em;
 	}
 }

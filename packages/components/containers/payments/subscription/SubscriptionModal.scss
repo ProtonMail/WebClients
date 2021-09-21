@@ -27,32 +27,32 @@
 
 // Adjust header height
 .subscription-modal .subscriptionTable-header {
-	min-height: rem(110);
+	min-block-size: rem(110);
 }
 
 .subscription-modal .subscriptionTable-description,
 .subscription-modal .subscriptionTable-footer {
-	min-height: auto;
+	min-block-size: auto;
 }
 
 .subscription-modal .label.payment-left {
-	width: 30%;
-	min-width: var(--label-width, 18em);
+	inline-size: 30%;
+	min-inline-size: var(--label-width, 18em);
 }
 
 .subscription-modal .field-container.payment-right {
-	width: 70%;
+	inline-size: 70%;
 }
 
 @include respond-to(1500) {
 	.subscriptionTable-plan .suffix {
-		width: 100%;
+		inline-size: 100%;
 	}
 }
 
 @include respond-to($breakpoint-small) {
 	.subscription-modal .label.payment-left,
 	.subscription-modal .field-container.payment-right {
-		width: 100%;
+		inline-size: 100%;
 	}
 }

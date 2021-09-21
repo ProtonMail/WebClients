@@ -294,8 +294,8 @@ const TimeGrid = ({
                         <div className="flex-item-fluid relative">
                             <DayLines days={daysRows[0]} />
                             <div
-                                className="calendar-time-fullday"
-                                style={{ height: `${(actualRows * dayEventHeight) / 16}rem` }}
+                                className="calendar-time-fullday h-custom"
+                                style={{ '--height-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
                                 data-row="0"
                                 ref={dayGridRef}
                             >
@@ -354,9 +354,9 @@ const TimeGrid = ({
                                     />
                                     {isSameDay(day, now) ? (
                                         <div
-                                            className="calendar-grid-nowHourLine absolute"
+                                            className="calendar-grid-nowHourLine absolute top-custom"
                                             ref={nowRef}
-                                            style={{ top: nowTopPercentage }}
+                                            style={{ '--top-custom': nowTopPercentage }}
                                         />
                                     ) : null}
                                 </div>

@@ -158,7 +158,7 @@ const LoginForm = ({
             >
                 {hasChallenge && (
                     <Challenge
-                        style={{ height: 0 }}
+                        className="h0"
                         tabIndex={-1}
                         challengeRef={challengeRefLogin}
                         name="login"

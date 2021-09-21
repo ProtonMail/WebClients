@@ -8,6 +8,6 @@
 	&::before {
 		@extend %item-loading-pseudo;
 		@extend %placeholder-loading;
-		width: 70%;
+		inline-size: 70%;
 	}
 }

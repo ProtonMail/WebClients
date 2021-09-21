@@ -1,11 +1,10 @@
 .autocomplete-suggestions {
 	position: absolute;
 	z-index: -1;
-	top: calc(100% - 2px);
-	left: 0.35em;
-	right: 0.35em;
-	min-height: 80%;
-	max-height: calc(5 * 2.3em);
+	inset-block-start: calc(100% - 2px);
+	inset-inline: 0.35em;
+	min-block-size: 80%;
+	max-block-size: calc(5 * 2.3em);
 	overflow: scroll;
 	background-color: var(--background-norm);
 	box-shadow: var(--shadow-lifted);
@@ -17,8 +16,8 @@
 
 	&,
 	div:last-child {
-		border-bottom-left-radius: var(--border-radius-medium);
-		border-bottom-right-radius: var(--border-radius-medium);
+		border-end-start-radius: var(--border-radius-medium);
+		border-end-end-radius: var(--border-radius-medium);
 	}
 
 	div {

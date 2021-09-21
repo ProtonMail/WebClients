@@ -101,8 +101,8 @@ const ContactImageSummary = ({ photo, name }: Props) => {
             <div className="ratio-container-square mb0 rounded bordered">
                 <span className="inner-ratio-container flex">
                     <div
-                        className="mbauto mtauto flex center"
-                        style={{ width: `${Math.min(image.width || 0, image.height || 0)}px` }}
+                        className="mbauto mtauto flex center w-custom"
+                        style={{ '--width-custom': `${Math.min(image.width || 0, image.height || 0)}px` }}
                     >
                         <div className="ratio-container-square" style={style}>
                             <span className="inner-ratio-container" />

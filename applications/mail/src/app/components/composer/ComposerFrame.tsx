@@ -1,5 +1,12 @@
 import { useEffect, DragEvent, useState, useRef } from 'react';
-import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary } from '@proton/components';
+import {
+    classnames,
+    useToggle,
+    useMailSettings,
+    useHandler,
+    ErrorBoundary,
+    getCustomSizingClasses,
+} from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import ComposerTitleBar from './ComposerTitleBar';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
@@ -75,12 +82,13 @@ const ComposerFrame = ({
     };
 
     const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
+    const customClassnames = getCustomSizingClasses(style);
 
     return (
         <div
             ref={composerFrameRef}
             className={classnames([
-                'composer flex flex-column no-outline',
+                `composer flex flex-column no-outline ${customClassnames}`,
                 !focus && 'composer--is-blur',
                 minimized && 'composer--is-minimized',
                 maximized && 'composer--is-maximized',

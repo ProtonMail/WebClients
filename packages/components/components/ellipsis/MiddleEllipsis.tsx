@@ -12,9 +12,21 @@ interface Props extends HTMLProps<HTMLSpanElement> {
      * when you embed it into something with title/tooltip, you might not want to display it
      */
     displayTitle?: Boolean;
+    /**
+     * Unless you REALLY know what you are doing (if you're using this component on RTL content ONLY for example)
+     * leave this value to ltr, otherwise you can update it
+     */
+    direction?: string;
 }
 
-const MiddleEllipsis = ({ text, className = '', displayTitle = true, charsToDisplayEnd = 6, ...rest }: Props) => {
+const MiddleEllipsis = ({
+    text,
+    className = '',
+    displayTitle = true,
+    charsToDisplayEnd = 6,
+    direction = 'ltr',
+    ...rest
+}: Props) => {
     const [start, end] = useMemo(() => {
         return [text.slice(0, -charsToDisplayEnd), text.slice(-charsToDisplayEnd)];
     }, [text]);
@@ -24,6 +36,7 @@ const MiddleEllipsis = ({ text, className = '', displayTitle = true, charsToDisp
             aria-label={text}
             title={displayTitle ? text : undefined}
             className={classnames(['inline-flex flex-nowrap mw100', className])}
+            dir={direction}
             {...rest}
         >
             <span className="text-ellipsis text-pre" aria-hidden="true">

@@ -17,22 +17,11 @@
 }
 
 .float-left {
-	float: left;
+	float: inline-start;
 }
 
 .float-right {
-	float: right;
-}
-
-@if $rtl-option==true {
-	/* RTL */
-	[dir='rtl'] .float-left {
-		float: right;
-	}
-
-	[dir='rtl'] .float-right {
-		float: left;
-	}
+	float: inline-end;
 }
 
 /* clear floats */
@@ -42,22 +31,11 @@
 
 @if $use-clearleft_right==true {
 	.clear-left {
-		clear: left;
+		clear: inline-start;
 	}
 
 	.clear-right {
-		clear: right;
-	}
-
-	@if $rtl-option==true {
-		/* RTL */
-		[dir='rtl'] .clear-left {
-			clear: right;
-		}
-
-		[dir='rtl'] .clear-right {
-			clear: left;
-		}
+		clear: inline-end;
 	}
 }
 
@@ -74,7 +52,7 @@
 	.clear-fix::after {
 		content: '.';
 		display: block;
-		height: 0;
+		block-size: 0;
 		clear: both;
 		visibility: hidden;
 	}
@@ -82,7 +60,7 @@
 
 /* gut: "spacing" empty div */
 .gut {
-	height: 1px;
+	block-size: 1px;
 }
 
 /* table-design in CSS */
@@ -133,8 +111,7 @@
 
 /* centered block */
 .center {
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline: auto;
 }
 
 .hidden,
@@ -164,27 +141,24 @@
  * ratio container (for responsive iframes/videos/etc.)
  */
 [class*='ratio-container-'] {
-	width: 100%;
-	height: 0;
+	inline-size: 100%;
+	block-size: 0;
 	@extend .relative;
 }
 
 .ratio-container-square {
-	padding-top: 100%;
+	padding-block-start: 100%;
 }
 
 .ratio-container-16-9 {
-	padding-top: 56.25%;
+	padding-block-start: 56.25%;
 }
 
 .ratio-container-5-1 {
-	padding-top: 20%;
+	padding-block-start: 20%;
 }
 
 .inner-ratio-container {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 }

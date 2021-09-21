@@ -43,34 +43,34 @@ export const computeComposerStyle = (
     if (isNarrow) {
         return {
             position: 'fixed',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            height: 'auto',
-            width: 'auto',
+            '--top-custom': 0,
+            '--bottom-custom': 0,
+            '--left-custom': 0,
+            '--right-custom': 0,
+            '--height-custom': 'auto',
+            '--width-custom': 'auto',
         };
     }
 
     const style = {
-        right: computeRightPosition(index, count, windowSize.width),
+        '--right-custom': `${computeRightPosition(index, count, windowSize.width)}px`,
         zIndex: focus ? COMPOSER_ZINDEX + 1 : COMPOSER_ZINDEX,
-        computeHeight: computeHeight(windowSize.height),
+        computeHeight: `${computeHeight(windowSize.height)}px`,
     };
 
     if (minimized) {
         return {
             ...style,
-            height: 35,
+            '--height-custom': `35px`,
         };
     }
 
     if (maximized) {
         return {
             ...style,
-            right: COMPOSER_GUTTER,
-            width: windowSize.width - COMPOSER_GUTTER - APP_BAR_WIDTH,
-            height: windowSize.height - COMPOSER_VERTICAL_GUTTER * 2,
+            '--right-custom': `${COMPOSER_GUTTER}px`,
+            '--width-custom': `${windowSize.width - COMPOSER_GUTTER - APP_BAR_WIDTH}px`,
+            '--height-custom': `${windowSize.height - COMPOSER_VERTICAL_GUTTER * 2}px`,
         };
     }
 

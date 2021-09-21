@@ -201,7 +201,9 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         content={
                             <span className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                                 {c('Header').t`Get help`}
-                                <Icon className="ml1 rotateZ-270" name="angle-down" />
+                                <span className="on-rtl-mirror ml1">
+                                    <Icon className="rotateZ-270" name="angle-down" />
+                                </span>
                             </span>
                         }
                     >
@@ -228,7 +230,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 target="_blank"
                             >
                                 {c('Action').t`I have a question`}
-                                <Icon className="ml1" name="arrow-up-right-from-square" />
+                                <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
                             <DropdownMenuLink
@@ -237,7 +239,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 target="_blank"
                             >
                                 {c('Action').t`Request a feature`}
-                                <Icon className="ml1" name="arrow-up-right-from-square" />
+                                <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
                             <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
@@ -252,7 +254,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         target="_blank"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
-                        <Icon className="ml1" name="arrow-up-right-from-square" />
+                        <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                     </DropdownMenuLink>
 
                     <hr className="mt0-5 mb0-5" />
@@ -263,7 +265,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             onClick={handleSwitchAccount}
                         >
                             {c('Action').t`Switch account`}
-                            <Icon className="ml1" name="switch" />
+                            <Icon className="ml1 on-rtl-mirror" name="switch" />
                         </DropdownMenuButton>
                     ) : null}
 
@@ -276,7 +278,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             data-cy-header-user-dropdown="logout"
                         >
                             <span className="mr0-5">{c('Action').t`Sign out`}</span>
-                            <Icon name="arrow-right-from-rectangle" />
+                            <Icon name="arrow-right-from-rectangle" className="on-rtl-mirror" />
                         </Button>
                     </div>
                 </DropdownMenu>

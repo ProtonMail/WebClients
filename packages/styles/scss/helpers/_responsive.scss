@@ -25,7 +25,7 @@
 @include respond-to($breakpoint-medium, 'min') {
 	.on-desktop {
 		&-h100 {
-			height: 100%;
+			block-size: 100%;
 		}
 	}
 }
@@ -48,7 +48,7 @@
 	.auto-tablet {
 		float: none;
 		display: block;
-		width: auto;
+		inline-size: auto;
 	}
 
 	@include margin-generator(
@@ -71,7 +71,7 @@
 
 	.on-tablet {
 		&-text-left {
-			text-align: left;
+			text-align: start;
 		}
 
 		&-text-center {
@@ -79,32 +79,32 @@
 		}
 
 		&-text-right {
-			text-align: right;
+			text-align: end;
 		}
 
 		&-flex-column {
 			flex-direction: column;
 
 			& > * {
-				width: 100%;
+				inline-size: 100%;
 				flex-basis: auto;
 			}
 		}
 
 		&-w25 {
-			width: 25%;
+			inline-size: 25%;
 		}
 
 		&-w100 {
-			width: 100%;
+			inline-size: 100%;
 		}
 
 		&-max-w100 {
-			max-width: 100%;
+			max-inline-size: 100%;
 		}
 
 		&-wauto {
-			width: auto;
+			inline-size: auto;
 		}
 
 		@for $i from 2 through 3 {
@@ -139,7 +139,7 @@
 	.auto-mobile {
 		float: none;
 		display: block;
-		width: auto;
+		inline-size: auto;
 	}
 
 	@include margin-generator(
@@ -162,7 +162,7 @@
 
 	.on-mobile {
 		&-text-left {
-			text-align: left;
+			text-align: start;
 		}
 
 		&-text-center {
@@ -170,19 +170,18 @@
 		}
 
 		&-text-right {
-			text-align: right;
+			text-align: end;
 		}
 
 		&-center {
-			margin-left: auto;
-			margin-right: auto;
+			margin-inline: auto;
 		}
 
 		&-flex-column {
 			flex-direction: column;
 
 			& > * {
-				width: 100%;
+				inline-size: 100%;
 				flex-basis: auto;
 			}
 
@@ -190,13 +189,13 @@
 				margin: 0;
 
 				&.mb1 {
-					margin-bottom: 1em;
+					margin-block-end: 1em;
 				}
 			}
 
 			& > .flex-autogrid-item {
 				padding: 0;
-				min-height: auto;
+				min-block-size: auto;
 			}
 		}
 
@@ -233,35 +232,35 @@
 		}
 
 		&-max-w33 {
-			max-width: 33%;
+			max-inline-size: 33%;
 		}
 
 		&-max-w100 {
-			max-width: 100%;
+			max-inline-size: 100%;
 		}
 
 		&-min-w100 {
-			min-width: 100%;
+			min-inline-size: 100%;
 		}
 
 		&-min-h0 {
-			min-height: 0;
+			min-block-size: 0;
 		}
 
 		&-wauto {
-			width: auto;
+			inline-size: auto;
 		}
 
 		&-w25 {
-			width: 25%;
+			inline-size: 25%;
 		}
 
 		&-w33 {
-			width: 33%;
+			inline-size: 33%;
 		}
 
 		&-w100 {
-			width: 100%;
+			inline-size: 100%;
 		}
 
 		&-no-border {
@@ -299,18 +298,18 @@
 	.auto-tiny-mobile {
 		float: none;
 		display: block;
-		width: auto;
+		inline-size: auto;
 	}
 
 	.on-tiny-mobile {
 		&-wauto {
-			width: auto;
+			inline-size: auto;
 		}
 		&-w100 {
-			width: 100%;
+			inline-size: 100%;
 		}
 		&-text-left {
-			text-align: left;
+			text-align: start;
 		}
 
 		&-flex-align-self-start {
@@ -321,7 +320,7 @@
 			flex-direction: column;
 
 			& > * {
-				width: 100%;
+				inline-size: 100%;
 				flex-basis: auto;
 			}
 		}

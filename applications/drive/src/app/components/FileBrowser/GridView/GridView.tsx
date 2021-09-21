@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
-
-import { classnames, Loader, useElementRect } from '@proton/components';
+import { classnames, Loader, useElementRect, useRightToLeft } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
@@ -139,6 +138,8 @@ function GridView({
         }),
     };
 
+    const [isRTL] = useRightToLeft();
+
     return (
         <div
             ref={containerRef}
@@ -149,10 +150,12 @@ function GridView({
         >
             {rect && (
                 <FixedSizeGrid
-                    style={{ overflowX: 'hidden', paddingBottom: '1.5em' }}
+                    style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}
+                    direction={isRTL ? 'rtl' : 'ltr'}
                     itemData={itemData}
                     columnWidth={cellWidth}
                     rowHeight={cellHeight}
+                    className="pb-custom"
                     height={rect.height}
                     width={rect.width}
                     columnCount={itemsPerRow}

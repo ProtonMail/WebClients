@@ -43,7 +43,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
     );
 
     return (
-        <ul className="collapsing-breadcrumbs">
+        <ul className="collapsing-breadcrumbs unstyled">
             {groupedBreadcrumbs.map((group, i, arr) => {
                 const { key, text, highlighted, ...breadcrumbProps } = group instanceof Array ? group[0] : group;
                 const isLast = i === arr.length - 1;
@@ -58,7 +58,11 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
                                 {text}
                             </Breadcrumb>
                         )}
-                        {!isLast && <Icon size={12} className="flex-item-noshrink" name="angle-down" rotate={270} />}
+                        {!isLast && (
+                            <li className="on-rtl-mirror" aria-hidden="true">
+                                <Icon size={12} className="flex-item-noshrink" name="angle-down" rotate={270} />
+                            </li>
+                        )}
                     </Fragment>
                 );
             })}

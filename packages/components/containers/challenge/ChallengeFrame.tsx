@@ -137,7 +137,8 @@ const ChallengeFrame = ({
                 clearTimeout(errorTimeoutHandle);
                 setStage('initialized');
                 addLog('Initialized', undefined, 'step');
-                iframe.style.height = `0px`;
+                iframe.classList.add('h-custom');
+                iframe.style.setProperty('--height-custom', `0px`);
 
                 stylesPromise
                     .then((styles) => {
@@ -193,7 +194,8 @@ const ChallengeFrame = ({
             }
 
             if (eventDataType === 'rect' && stage === 'loaded' && eventDataPayload?.height !== undefined) {
-                iframe.style.height = `${eventDataPayload.height}px`;
+                iframe.classList.add('h-custom');
+                iframe.style.setProperty('--height-custom', `${eventDataPayload.height}px`);
             }
 
             if (eventDataType === 'child.message.data' && stage === 'loaded') {
@@ -269,7 +271,8 @@ const ChallengeFrame = ({
             return;
         }
         if (iframeRef.current && !hasSizeObserver) {
-            iframeRef.current.style.height = `${renderDivEl.getBoundingClientRect().height}px`;
+            iframeRef.current.classList.add('h-custom');
+            iframeRef.current.style.setProperty('--height-custom', `${renderDivEl.getBoundingClientRect().height}px`);
         }
         contentWindow.postMessage(
             {
@@ -284,9 +287,9 @@ const ChallengeFrame = ({
         <>
             <div
                 ref={renderDivRef}
-                style={{ position: 'absolute', left: '-1000px', top: '-1000px' }}
+                style={{ position: 'absolute', '--left-custom': '-1000px', '--top-custom': '-1000px' }}
                 aria-hidden="true"
-                className="visibility-hidden"
+                className="visibility-hidden top-custom left-custom"
             >
                 {children}
             </div>

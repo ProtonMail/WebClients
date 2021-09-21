@@ -9,32 +9,32 @@
 
 .settings-loading-page-title {
 	&::before {
-		width: 30%;
+		inline-size: 30%;
 	}
 }
 
 .settings-loading-section-title {
 	&::before {
-		width: 50%;
+		inline-size: 50%;
 	}
 }
 
 .settings-loading-paragraph-line {
 	&:nth-child(1) {
 		&::before {
-			width: 90%;
+			inline-size: 90%;
 		}
 	}
 
 	&:nth-child(2) {
 		&::before {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 
 	&:nth-child(3) {
 		&::before {
-			width: 40%;
+			inline-size: 40%;
 		}
 	}
 }

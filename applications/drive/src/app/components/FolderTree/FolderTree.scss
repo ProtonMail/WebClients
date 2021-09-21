@@ -3,18 +3,17 @@
 	@extend .scroll-if-needed;
 
 	border-radius: var(--border-radius-medium);
-	height: 28em;
+	block-size: 28em;
 
 	&-table {
-		width: auto;
-		min-width: 100%;
-		max-width: initial;
+		inline-size: auto;
+		min-inline-size: 100%;
+		max-inline-size: initial;
 	}
 
 	&-list-item {
 		td {
-			padding-top: 0;
-			padding-bottom: 0;
+			padding-block: 0;
 		}
 
 		&-expand {
@@ -31,12 +30,12 @@
 	}
 
 	&-list-item-name {
-		min-width: 10em;
+		min-inline-size: 10em;
 	}
 
 	&-list-item-selected {
 		justify-content: center;
-		min-width: 3em;
+		min-inline-size: 3em;
 
 		&-check {
 			padding: 0.15em;

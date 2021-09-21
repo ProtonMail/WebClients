@@ -43,7 +43,8 @@ const mergeCallbacks = (a: any, b: any) => {
 const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ...rest }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
-    const { isRTL } = useRightToLeft();
+    const [isRTL] = useRightToLeft();
+
     const rtlAdjustedPlacement = originalPlacement.includes('right')
         ? originalPlacement.replace('right', 'left')
         : originalPlacement.replace('left', 'right');

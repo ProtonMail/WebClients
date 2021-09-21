@@ -33,7 +33,7 @@ const Spotlight = ({
 }: Props) => {
     const [uid] = useState(generateUID('spotlight'));
 
-    const { isRTL } = useRightToLeft();
+    const [isRTL] = useRightToLeft();
     const rtlAdjustedPlacement = originalPlacement.includes('right')
         ? originalPlacement.replace('right', 'left')
         : originalPlacement.replace('left', 'right');
