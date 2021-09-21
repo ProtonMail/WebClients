@@ -94,7 +94,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                     >
                         <span className="flex-item-fluid text-left">{c('Action').t`Beta Access`}</span>
                         <span className="color-primary ml0-5">
-                            {earlyAccess.value ? c('Enabled').t`On` : c('Disabled').t`Off`}
+                            {earlyAccess.value ? c('Early Access Enabled').t`On` : c('Early Access Disabled').t`Off`}
                         </span>
                     </DropdownMenuButton>
                 )}
@@ -115,7 +115,9 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                         >
                             <span className="flex-item-fluid text-left">{c('Action').t`Keyboard shortcuts`}</span>
                             <span className="color-primary ml0-5">
-                                {Shortcuts ? c('Enabled').t`On` : c('Disabled').t`Off`}
+                                {Shortcuts
+                                    ? c('Keyboard Shortcuts Enabled').t`On`
+                                    : c('Keyboard Shortcuts Disabled').t`Off`}
                             </span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
