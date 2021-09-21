@@ -240,10 +240,6 @@ const MailboxContainer = ({
         }
     );
 
-    const handleResize = () => {
-        enableResize();
-    };
-
     return (
         <div ref={elementRef} tabIndex={-1} className="flex-item-fluid flex flex-column flex-nowrap no-outline">
             {showToolbar && (
@@ -301,7 +297,7 @@ const MailboxContainer = ({
                 {showContentPanel && (
                     <>
                         <div className="relative w10p resize-area-container" ref={resizeAreaRef}>
-                            <button type="button" className="cursor-col-resize w100 h100" onMouseDown={handleResize}>
+                            <button type="button" className="cursor-col-resize w100 h100" onMouseDown={enableResize}>
                                 <span className="sr-only">{c('Action')
                                     .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
                             </button>
