@@ -67,7 +67,7 @@ const SquireToolbarFontFaceDropdown = ({ squireRef, editorReady, defaultFontFace
                                             className="color-info"
                                             tooltip={c('Info').t`Change your default in settings`}
                                         >
-                                            {c('Info').t`Default`}
+                                            {c('Font Face Default').t`Default`}
                                         </Badge>
                                     </SettingsLink>
                                 </div>
