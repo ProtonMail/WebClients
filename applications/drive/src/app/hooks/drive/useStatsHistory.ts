@@ -48,6 +48,10 @@ function useStatsHistory(transfers: Transfer[], getTransferProgresses: () => Tra
         const int = setInterval(updateStats, PROGRESS_UPDATE_INTERVAL);
 
         return () => {
+            // When transfer is paused, progress is updated a bit later.
+            // Therefore we need to update stats even few ms after nothing
+            // is in progress.
+            setTimeout(updateStats, PROGRESS_UPDATE_INTERVAL);
             clearInterval(int);
         };
     }, [transfers]);
