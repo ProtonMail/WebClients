@@ -62,7 +62,7 @@ const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, defaultFontSize
                                             className="color-info"
                                             tooltip={c('Info').t`Change your default in settings`}
                                         >
-                                            {c('Info').t`Default`}
+                                            {c('Font Size Default').t`Default`}
                                         </Badge>
                                     </SettingsLink>
                                 </div>
