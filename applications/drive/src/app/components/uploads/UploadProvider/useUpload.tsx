@@ -82,18 +82,21 @@ export default function useUpload() {
         }
 
         await queue.add(shareId, parentId, list).catch((err: any) => {
-            if ((err as Error).name === 'UploadUserError') {
-                createNotification({
-                    text: err.message,
-                    type: 'error',
-                });
-            } else {
-                createNotification({
-                    text: c('Notification').t`Failed to upload files: ${err}`,
-                    type: 'error',
-                });
-                throw err;
-            }
+            const errors = Array.isArray(err) ? err : [err];
+            errors.forEach((err) => {
+                if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
+                    createNotification({
+                        text: err.message,
+                        type: 'error',
+                    });
+                } else {
+                    createNotification({
+                        text: c('Notification').t`Failed to upload files: ${err}`,
+                        type: 'error',
+                    });
+                    console.error(err);
+                }
+            });
         });
     };
 
