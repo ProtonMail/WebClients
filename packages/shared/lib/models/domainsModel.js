@@ -1,8 +1,27 @@
 import { queryDomains } from '../api/domains';
 import updateCollection from '../helpers/updateCollection';
+import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
 
 export const getDomainsModel = (api) => {
-    return api(queryDomains()).then(({ Domains }) => Domains);
+    const pageSize = 100;
+
+    const requestPage = (page) => {
+        return api(
+            queryDomains({
+                Page: page,
+                PageSize: pageSize,
+            })
+        );
+    };
+
+    return queryPagesThrottled({
+        requestPage,
+        pageSize,
+        pagesPerChunk: 10,
+        delayPerChunk: 100,
+    }).then((pages) => {
+        return pages.map(({ Domains }) => Domains).flat();
+    });
 };
 
 export const DomainsModel = {
