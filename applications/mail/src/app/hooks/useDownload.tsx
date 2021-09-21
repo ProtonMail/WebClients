@@ -18,6 +18,7 @@ import { updateAttachment } from '../logic/attachments/attachmentsActions';
 import { useGetAttachment } from './useAttachment';
 import { MessageStateWithData } from '../logic/messages/messagesTypes';
 import { useGetMessage } from './message/useMessage';
+import { getAttachmentCounts } from '../helpers/message/messages';
 
 const useShowConfirmModal = () => {
     const { createModal } = useModals();
@@ -140,8 +141,9 @@ export const useDownloadAll = () => {
         async (message: MessageStateWithData) => {
             const messageKeys = await getMessageKeys(message.localID);
             const attachments = getAttachments(message.data);
+            const { pureAttachments } = getAttachmentCounts(attachments, message.messageImages);
             const list = await formatDownloadAll(
-                attachments,
+                pureAttachments,
                 message.verification,
                 messageKeys,
                 getAttachment,

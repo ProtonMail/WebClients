@@ -59,6 +59,11 @@ const AttachmentList = ({
 
     const previewRef = useRef<AttachmentPreviewControls>();
 
+    const { size, sizeLabel, pureAttachments, pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
+        attachments,
+        message.messageImages
+    );
+
     useEffect(() => {
         const dontCloseAfterUploadsWhenExpandedManually = manuallyExpanded && pendingUploads.length === 0;
 
@@ -66,16 +71,21 @@ const AttachmentList = ({
             return;
         }
 
-        setExpanded(pendingUploads.length > 0);
-    }, [pendingUploads]);
+        if (pureAttachmentsCount <= 0) {
+            // If attachment length is changing, and we don't have pure attachments anymore, close the attachment list
+            setExpanded(false);
+            return;
+        }
 
-    const { size, sizeLabel, pureAttachmentsCount, embeddedAttachmentsCount, attachmentsCount } = getAttachmentCounts(
-        attachments,
-        message.messageImages
-    );
+        setExpanded(pendingUploads.length > 0);
+    }, [pendingUploads, attachments]);
+
+    // We want to show the collapse button while uploading files. When all files are uploaded, we don't want to see it if attachments are embedded images only
+    const showCollapseButton =
+        collapsable && (pureAttachmentsCount > 0 || (pendingUploads?.length ? pendingUploads.length : 0) > 0);
 
     const handleToggleExpand = () => {
-        if (collapsable) {
+        if (collapsable && pureAttachmentsCount > 0) {
             setExpanded(!expanded);
             setManuallyExpanded(!expanded);
         }
@@ -137,7 +147,7 @@ const AttachmentList = ({
         >
             <AttachmentPreview
                 ref={previewRef}
-                attachments={attachments}
+                attachments={pureAttachments}
                 message={message}
                 onDownload={handlePreviewDownload}
             />
@@ -174,7 +184,7 @@ const AttachmentList = ({
                         </span>
                     )}
                 </TagButton>
-                {showDownloadAll && attachmentsCount > 0 && (
+                {showDownloadAll && pureAttachmentsCount > 0 && (
                     <div>
                         <button
                             type="button"
@@ -191,7 +201,7 @@ const AttachmentList = ({
             </div>
             {expanded && ( // composer-attachments-expand pt1 pb0-5
                 <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList pl0-5 pr0-5 pb0-5">
-                    {attachments.map((attachment) => (
+                    {pureAttachments.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}
                             attachment={attachment}
