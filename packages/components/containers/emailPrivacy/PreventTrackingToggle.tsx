@@ -21,6 +21,7 @@ const PreventTrackingToggle = ({ id, preventTracking, ...rest }: Props) => {
         if (!checked) {
             await api(updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'remove'));
         }
+
         await api(updateImageProxy(IMAGE_PROXY_FLAGS.PROXY, checked ? 'add' : 'remove'));
         await call();
         toggle();
