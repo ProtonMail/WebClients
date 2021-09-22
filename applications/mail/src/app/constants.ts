@@ -198,3 +198,5 @@ export const WELCOME_PANE_OPTIONS_URLS = {
 export const restoringEncryptedMessagesURL =
     'https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/';
 export const reActivateKeySettingsURL = '/encryption-keys';
+
+export const emailTrackerProtectionURL = 'https://protonmail.com/support/email-tracker-protection';

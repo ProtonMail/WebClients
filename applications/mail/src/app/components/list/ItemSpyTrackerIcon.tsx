@@ -4,7 +4,7 @@ import { classnames, Href, Icon, SettingsLink, Tooltip, useMailSettings } from '
 import { APPS, IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import * as React from 'react';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
+import { emailTrackerProtectionURL } from '../../constants';
 import { MessageExtended } from '../../models/message';
 
 import './ItemSpyTrackerIcon.scss';
@@ -30,6 +30,12 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     const numberOfTrackers = getNumberOfTrackers();
 
     /*
+     * If email protection is OFF and we do not load the image automatically, the user is aware about the need of protection.
+     * From our side, we want to inform him that he can also turn on protection mode in the settings.
+     */
+    const needsMoreProtection = !hasProtection && !hasShowImage;
+
+    /*
      * Don't display the tracker icon when :
      * Loading remote images is automatic and email protection is OFF : We consider that the user don't want any protection at all.
      * But the user might have set recently the protection to OFF, so if we find trackers in previous emails, we still display the icon.
@@ -39,7 +45,7 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     }
 
     const getTitle = () => {
-        if (!hasProtection && !hasShowImage) {
+        if (needsMoreProtection) {
             return c('Info').t`Protect yourself from trackers by turning on Proton email tracker protection.`;
         }
         if (hasProtection && numberOfTrackers === 0) {
@@ -51,7 +57,13 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
 
     const icon = (
         <>
-            <Icon name="shield" size={14} alt={getTitle()} data-testid="privacy:tracker-icon" />
+            <Icon
+                name="shield"
+                size={14}
+                alt={getTitle()}
+                data-testid="privacy:tracker-icon"
+                className={classnames([needsMoreProtection && numberOfTrackers === 0 && 'color-weak'])}
+            />
             {numberOfTrackers > 0 ? (
                 <span
                     className={classnames([
@@ -74,17 +86,17 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     return (
         <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
             <div className={classnames(['flex', className])}>
-                {!hasProtection && !hasShowImage ? (
+                {needsMoreProtection ? (
                     <SettingsLink
                         path="/email-privacy"
                         app={APPS.PROTONMAIL}
-                        className="relative inline-flex mr0-1 item-spy-tracker-link"
+                        className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
                     >
                         {icon}
                     </SettingsLink>
                 ) : (
                     <Href
-                        url={WELCOME_PANE_OPTIONS_URLS.proton2FA}
+                        url={emailTrackerProtectionURL}
                         className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
                     >
                         {icon}
