@@ -28,6 +28,8 @@ import { getDate } from '../elements';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { getEmbeddedImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
+import { convertToFile } from '../attachment/attachmentConverter';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -178,7 +180,8 @@ export const createNewDraft = (
     action: MESSAGE_ACTIONS,
     referenceMessage: PartialMessageExtended | undefined,
     mailSettings: MailSettings,
-    addresses: Address[]
+    addresses: Address[],
+    attachmentsCache: AttachmentsCache
 ): PartialMessageExtended => {
     const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
     const { RightToLeft } = mailSettings;
@@ -191,12 +194,17 @@ export const createNewDraft = (
         Flags = setBit(Flags, MESSAGE_FLAGS.FLAG_SIGN);
     }
 
-    const { data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments = [] } = {}, messageImages } =
-        handleActions(action, referenceMessage, addresses);
+    const {
+        data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments: reusedAttachments = [] } = {},
+        messageImages,
+    } = handleActions(action, referenceMessage, addresses);
+
+    // If there were some pgp attachments, need to upload them as "initialAttachments"
+    const [Attachments, pgpAttachments] = convertToFile(reusedAttachments, attachmentsCache);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
     const originalAddressID = referenceMessage?.data?.AddressID;
-    const initialAttachments = referenceMessage?.initialAttachments;
+    const initialAttachments = [...(referenceMessage?.initialAttachments || []), ...pgpAttachments];
 
     const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 

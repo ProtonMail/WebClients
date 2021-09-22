@@ -5,6 +5,7 @@ import { formatSubject, FW_PREFIX, RE_PREFIX } from '@proton/shared/lib/mail/mes
 import { handleActions, createNewDraft } from './messageDraft';
 import { MessageExtendedWithData } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { attachmentsCache } from '../test/cache';
 
 const ID = 'ID';
 const Time = 0;
@@ -182,7 +183,8 @@ describe('messageDraft', () => {
                 action,
                 { data: message } as MessageExtendedWithData,
                 mailSettings,
-                addresses
+                addresses,
+                attachmentsCache
             );
             expect(result.document?.innerHTML).toContain(address.Signature);
         });
@@ -202,7 +204,8 @@ describe('messageDraft', () => {
                 action,
                 { data: message } as MessageExtendedWithData,
                 mailSettings,
-                addresses
+                addresses,
+                attachmentsCache
             );
             expect(result.data?.AddressID).toBe(address.ID);
         });
@@ -213,7 +216,8 @@ describe('messageDraft', () => {
                     action,
                     { data: message } as MessageExtendedWithData,
                     mailSettings,
-                    addresses
+                    addresses,
+                    attachmentsCache
                 );
                 expect(result.ParentID).toBe(ID);
             });
@@ -225,7 +229,8 @@ describe('messageDraft', () => {
                     action,
                     { data: message } as MessageExtendedWithData,
                     mailSettings,
-                    addresses
+                    addresses,
+                    attachmentsCache
                 );
                 expect(result.data?.ToList?.length).toBeDefined();
                 expect(result.data?.CCList?.length).toBeDefined();
@@ -243,7 +248,8 @@ describe('messageDraft', () => {
                 MESSAGE_ACTIONS.REPLY_ALL,
                 { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } } as MessageExtendedWithData,
                 mailSettings,
-                addresses
+                addresses,
+                attachmentsCache
             );
             expect(result.data?.Subject).toBe(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
@@ -256,7 +262,8 @@ describe('messageDraft', () => {
                 action,
                 { data: message } as MessageExtendedWithData,
                 mailSettings,
-                addresses
+                addresses,
+                attachmentsCache
             );
             expect(result.data?.AddressID).toBe(address.ID);
             expect(result.data?.Sender?.Address).toBe(address.Email);
