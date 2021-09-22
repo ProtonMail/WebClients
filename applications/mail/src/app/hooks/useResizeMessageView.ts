@@ -1,6 +1,6 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
 import { useHotkeys, useWindowSize } from '@proton/components';
-import { throttle } from '@proton/shared/lib/helpers/function';
+import { debounce, throttle } from '@proton/shared/lib/helpers/function';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 export const useResizeMessageView = (
@@ -10,9 +10,8 @@ export const useResizeMessageView = (
 ) => {
     const [isResizing, setIsResizing] = useState(false);
     const [windowWidth] = useWindowSize();
-    const [defaultWidth, setDefaultWidth] = useState<number>(+(getItem('messageListWidth') || windowWidth * 0.35));
+    const [defaultWidth] = useState<number>(+(getItem('messageListWidth') || windowWidth * 0.35));
     const [defaultWindowWidth, setDefaultWindowWidth] = useState(windowWidth);
-    const [windowRatio, setWindowRatio] = useState(defaultWidth / windowWidth);
 
     // Get left of container to have the size of the sidebar
     const sidebarWidth = containerRef.current ? containerRef.current.getBoundingClientRect().left : 0;
@@ -21,9 +20,9 @@ export const useResizeMessageView = (
     const minWidth = 320; // Smallest mobile breakpoint supported
     const maxWidth = windowWidth - sidebarWidth - 400; // Smallest mobile breakpoint supported for message view
 
-    const saveWidth = () => {
-        setItem('messageListWidth', defaultWidth.toString());
-    };
+    const saveWidth = debounce((newWidth: number) => {
+        setItem('messageListWidth', newWidth.toString());
+    }, 2000);
 
     const resize = (newWidth: number) => {
         if (newWidth > maxWidth) {
@@ -31,7 +30,8 @@ export const useResizeMessageView = (
         } else if (newWidth < minWidth) {
             newWidth = minWidth;
         }
-        setDefaultWidth(newWidth);
+        document.documentElement.style.setProperty('--width-conversation-column', `${newWidth}px`);
+        saveWidth(newWidth);
     };
 
     const resizeWithAmount = (amount: number) => {
@@ -74,20 +74,19 @@ export const useResizeMessageView = (
         ],
     ]);
 
-    // If the window is resized, resize the width using the ratio
+    // If the window is resized, resize the width too
     useEffect(() => {
         if (windowWidth !== defaultWindowWidth) {
-            resize(windowWidth * windowRatio);
-            setDefaultWindowWidth(defaultWindowWidth);
+            const currentWidth = listRef.current ? listRef.current.getBoundingClientRect().width : 0;
+            resize(windowWidth * (currentWidth / defaultWindowWidth));
+            setDefaultWindowWidth(windowWidth);
         }
     }, [windowWidth]);
 
-    // When defaultWidth is changing, set the size on the UI, recalculate the ratio and save the width in the localStorage
+    // When launching the app, set the message view size to the default width (localStorage value if found, else the "real" default value)
     useEffect(() => {
         if (defaultWidth) {
-            setWindowRatio(defaultWidth / windowWidth);
             document.documentElement.style.setProperty('--width-conversation-column', `${defaultWidth}px`);
-            saveWidth();
         }
     }, [defaultWidth]);
 
