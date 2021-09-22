@@ -18,7 +18,6 @@ import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { encryptPackages } from '../../helpers/send/sendEncrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
-import { useSaveDraft } from '../message/useSaveDraft';
 import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { OnCompose } from './useCompose';
 import useDelaySendSeconds from '../useDelaySendSeconds';
@@ -46,7 +45,6 @@ export const useSendMessage = () => {
     const attachmentCache = useAttachmentCache();
     const { call } = useEventManager();
     const messageCache = useMessageCache();
-    const saveDraft = useSaveDraft();
     const history = useHistory<any>();
     const delaySendSeconds = useDelaySendSeconds();
     const { createNotification, hideNotification } = useNotifications();
@@ -57,7 +55,6 @@ export const useSendMessage = () => {
             inputMessage,
             mapSendPrefs,
             onCompose,
-            alreadySaved = false,
             sendingMessageNotificationManager,
             useSilentApi = false,
         }: UseSendMessageParameters) => {
@@ -83,11 +80,6 @@ export const useSendMessage = () => {
             };
 
             const prepareMessageToSend = async () => {
-                if (!alreadySaved) {
-                    await saveDraft(inputMessage);
-                    await call();
-                }
-
                 const messageKeys = await getMessageKeys(inputMessage.data);
 
                 // Last minute modifications on the message before sending
@@ -216,6 +208,6 @@ export const useSendMessage = () => {
                 void call();
             }
         },
-        [delaySendSeconds, messageCache, attachmentCache, saveDraft]
+        [delaySendSeconds, messageCache, attachmentCache]
     );
 };

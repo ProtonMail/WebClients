@@ -487,6 +487,7 @@ const Composer = (
         pendingSave,
         pendingAutoSave,
         autoSave,
+        saveNow,
         onClose,
         onMessageAlreadySent,
     });
