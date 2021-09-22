@@ -8,7 +8,7 @@
         "utilities/*"
     ],
     "scripts": {
-        "config-app": "packages/config/install",
+        "config-app": "(packages/config/install 2>/dev/null) || true",
         "version": "yarn workspace scripts run version:applications",
         "start-all": "cd utilities/local-sso && ./run.sh",
         "postinstall": "is-ci || (husky install; yarn run config-app)"
