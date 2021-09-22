@@ -3,7 +3,7 @@ import {
     OpenPGPKey,
     OpenPGPSignature,
     verifyMessage as pmcryptoVerifyMessage,
-    createCleartextMessage,
+    createMessage,
     DecryptResultPmcrypto,
     getKeys,
     getMessage,
@@ -16,6 +16,7 @@ import { c } from 'ttag';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyId } from '@proton/shared/lib/contacts/keyVerifications';
 import { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import { utf8ArrayToString } from 'pmcrypto/lib/utils';
 import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
@@ -23,6 +24,9 @@ import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 
+interface DecryptBinaryResult extends DecryptResultPmcrypto {
+    data: Uint8Array;
+}
 interface MimeProcessOptions {
     headerFilename?: string;
     sender?: string;
@@ -38,9 +42,11 @@ interface MimeProcessResult {
 }
 const processMIME = processMIMESource as (options: MimeProcessOptions, data: string) => Promise<MimeProcessResult>;
 
+const binaryToString = (data: Uint8Array) => utf8ArrayToString(data).replace(/\r\n/g, '\n');
+
 export interface DecryptMessageResult {
     decryptedBody: string;
-    decryptedRawContent: string;
+    decryptedRawContent: Uint8Array;
     attachments?: Attachment[];
     decryptedSubject?: string;
     signature?: OpenPGPSignature;
@@ -56,7 +62,7 @@ const decryptMimeMessage = async (
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    let decryption: DecryptResultPmcrypto;
+    let decryption: DecryptBinaryResult;
     let processing: MimeProcessResult;
 
     try {
@@ -65,6 +71,7 @@ const decryptMimeMessage = async (
             messageDate: getDate(message),
             privateKeys,
             publicKeys: [],
+            format: 'binary',
         });
 
         processing = await processMIME(
@@ -72,12 +79,12 @@ const decryptMimeMessage = async (
                 headerFilename,
                 sender,
             },
-            decryption.data
+            binaryToString(decryption.data)
         );
     } catch (error: any) {
         return {
             decryptedBody: '',
-            decryptedRawContent: '',
+            decryptedRawContent: new Uint8Array(),
             attachments: [],
             errors: {
                 decryption: [error],
@@ -97,7 +104,7 @@ const decryptMimeMessage = async (
 };
 
 const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[]): Promise<DecryptMessageResult> => {
-    let result: DecryptResultPmcrypto;
+    let result: DecryptBinaryResult;
 
     try {
         result = await decryptMessageLegacy({
@@ -105,11 +112,12 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
             messageDate: getDate(message),
             privateKeys,
             publicKeys: [],
+            format: 'binary',
         });
     } catch (error: any) {
         return {
             decryptedBody: '',
-            decryptedRawContent: '',
+            decryptedRawContent: new Uint8Array(),
             errors: {
                 decryption: [error],
             },
@@ -121,7 +129,7 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
         signatures: [signature],
     } = result;
 
-    return { decryptedBody: data, decryptedRawContent: data, signature };
+    return { decryptedBody: binaryToString(data), decryptedRawContent: data, signature };
 };
 
 /**
@@ -147,7 +155,7 @@ export const decryptMessage = async (
  * The `message` is only used to detect mime format
  */
 export const verifyMessage = async (
-    decryptedRawContent: string,
+    decryptedRawContent: Uint8Array,
     cryptoSignature: OpenPGPSignature | undefined,
     message: Message,
     publicKeys: OpenPGPKey[]
@@ -165,7 +173,7 @@ export const verifyMessage = async (
 
         if (publicKeys.length && cryptoSignature) {
             const cryptoVerify = await pmcryptoVerifyMessage({
-                message: createCleartextMessage(decryptedRawContent),
+                message: createMessage(decryptedRawContent),
                 signature: cryptoSignature,
                 publicKeys,
             });
@@ -173,7 +181,7 @@ export const verifyMessage = async (
         }
 
         if (contentType === MIME_TYPES.MIME) {
-            const mimeVerify = await processMIME({ publicKeys }, decryptedRawContent);
+            const mimeVerify = await processMIME({ publicKeys }, binaryToString(decryptedRawContent));
             [mimeSignature] = mimeVerify.signatures;
             mimeVerified = mimeVerify.verified;
         }

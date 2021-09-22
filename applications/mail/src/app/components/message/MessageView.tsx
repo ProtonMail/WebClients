@@ -240,7 +240,7 @@ const MessageView = (
     // Manage recomputing signature verification (happens when invalidated after initial load)
     useEffect(() => {
         if (!loading && expanded && message.initialized && message.data && message.verification === undefined) {
-            void verify(message.decryptedRawContent as string, message.signature);
+            void verify(message.decryptedRawContent, message.signature);
         }
     }, [loading, expanded, message.initialized, message.verification]);
 
