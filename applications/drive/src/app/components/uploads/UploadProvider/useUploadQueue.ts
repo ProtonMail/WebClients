@@ -70,9 +70,9 @@ export default function useUploadQueue() {
                 const errors: Error[] = [];
                 const conflictErrors: UploadConflictError[] = [];
 
-                const queueItem = queue.find((item) => item.shareId === shareId && item.parentId === parentId) || {
+                const queueItem = queue.find((item) => item.shareId === shareId && item.linkId === parentId) || {
                     shareId,
-                    parentId,
+                    linkId: parentId,
                     files: [],
                     folders: [],
                 };
@@ -91,7 +91,7 @@ export default function useUploadQueue() {
                     }
                 }
                 const newQueue = [
-                    ...queue.filter((item) => item.shareId !== shareId || item.parentId !== parentId),
+                    ...queue.filter((item) => item.shareId !== shareId || item.linkId !== parentId),
                     queueItem,
                 ];
 
@@ -264,8 +264,8 @@ export function addItemToQueue(shareId: string, newQueue: UploadQueue, item: Upl
     const generalAttributes = {
         id: generateUID(),
         shareId,
-        parentId: item.path.length === 0 ? part.parentId : undefined,
-        state: item.path.length === 0 ? TransferState.Pending : TransferState.Initializing,
+        parentId: part.linkId,
+        state: part.linkId ? TransferState.Pending : TransferState.Initializing,
         startDate: new Date(),
     };
     if ((item as UploadFileItem).file) {

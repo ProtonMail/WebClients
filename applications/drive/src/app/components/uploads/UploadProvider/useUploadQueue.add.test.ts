@@ -9,7 +9,7 @@ import useUploadQueue, { addItemToQueue } from './useUploadQueue';
 function createEmptyQueue(): UploadQueue {
     return {
         shareId: 'shareId',
-        parentId: 'parentId',
+        linkId: 'parentId',
         files: [],
         folders: [],
     };
@@ -135,5 +135,26 @@ describe('useUploadQueue::add', () => {
         expect(queue.folders[0].files.length).toBe(0);
         expect(queue.folders[1].files.length).toBe(1);
         expect(queue.folders[1].files[0].meta.filename).toBe('b.txt');
+    });
+
+    it('adds files to already prepared filter with pending state', () => {
+        const queue = createEmptyQueue();
+        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+
+        // The first file, before folder is done, is set to init state.
+        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('a.txt') });
+        expect(queue.folders[0].files[0]).toMatchObject({
+            meta: { filename: 'a.txt' },
+            state: TransferState.Initializing,
+        });
+
+        // The second file, after folder is done, is set to pending state.
+        queue.folders[0].state = TransferState.Done;
+        queue.folders[0].linkId = 'folderId';
+        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('b.txt') });
+        expect(queue.folders[0].files[1]).toMatchObject({
+            meta: { filename: 'b.txt' },
+            state: TransferState.Pending,
+        });
     });
 });
