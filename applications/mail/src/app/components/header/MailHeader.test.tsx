@@ -1,6 +1,7 @@
 import loudRejection from 'loud-rejection';
 import { fireEvent, getByTestId, getByText } from '@testing-library/dom';
-import { act } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import {
     addApiMock,
     clearAll,
@@ -196,13 +197,15 @@ describe('MailHeader', () => {
 
             const keywordInput = document.getElementById('search-keyword') as HTMLInputElement;
             fireEvent.change(keywordInput, { target: { value: searchTerm } });
-            const labelSelect = document.getElementById('labelID') as HTMLSelectElement;
-            fireEvent.change(labelSelect, { target: { value: '10' } });
+
+            const draftButton = screen.getByTestId(`location-${MAILBOX_LABEL_IDS.DRAFTS}`);
+            fireEvent.click(draftButton);
+
             submit();
 
             const history = getHistory();
             expect(history.length).toBe(2);
-            expect(history.location.pathname).toBe('/starred');
+            expect(history.location.pathname).toBe('/drafts');
             expect(history.location.hash).toBe(`#keyword=${searchTerm}`);
         });
     });
