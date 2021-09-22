@@ -184,7 +184,8 @@ export default function useUpload() {
             controls
                 .start({
                     onInit: (mimeType: string, fileName: string) => {
-                        queue.updateWithData(nextFileUpload.id, TransferState.Progress, { mimeType, name: fileName });
+                        // Keep the previous state for cases when the upload is paused.
+                        queue.updateWithData(nextFileUpload.id, ({ state }) => state, { mimeType, name: fileName });
                     },
                     onProgress: (increment: number) => {
                         control.updateProgress(nextFileUpload.id, increment);
