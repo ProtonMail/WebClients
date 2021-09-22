@@ -464,6 +464,7 @@ export const getSendIcsAction =
                 if (selfAttendeeIndex === undefined || !vevent.attendee || !selfAddress || !organizer) {
                     throw new Error('Missing invitation data');
                 }
+                const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
                 const selfAttendee = vevent.attendee[selfAttendeeIndex];
                 const supportedPlusAliasEmail = getSupportedPlusAlias({
                     selfAttendeeEmail: getAttendeeEmail(selfAttendee),
@@ -490,6 +491,7 @@ export const getSendIcsAction =
                     method: ICAL_METHOD.REPLY,
                     prodId,
                     vevent: pmVevent,
+                    vtimezones,
                     attendeesTo: [selfAttendeeWithPartstat],
                     keepDtstamp: true,
                 });

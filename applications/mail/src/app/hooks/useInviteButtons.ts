@@ -1,7 +1,9 @@
+import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
     generateEmailBody,
+    generateVtimezonesComponents,
     getParticipantHasAddressID,
 } from '@proton/shared/lib/calendar/integration/invite';
 import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
@@ -83,6 +85,7 @@ const useInviteButtons = ({
     const config = useConfig();
     const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
+    const getVTimezonesMap = useGetVtimezonesMap();
     const { contactsMap: contactEmailsMap } = useContactCache();
 
     // Returns true if the operation is succesful
@@ -102,6 +105,7 @@ const useInviteButtons = ({
                     },
                 };
                 const vevent = withDtstamp(omit(veventIcs, ['dtstamp']), timestamp);
+                const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
                 if (pmData?.sharedEventID && pmData?.sharedSessionKey) {
                     vevent['x-pm-shared-event-id'] = { value: pmData.sharedEventID };
                     vevent['x-pm-session-key'] = { value: pmData.sharedSessionKey };
@@ -111,6 +115,7 @@ const useInviteButtons = ({
                     method: ICAL_METHOD.REPLY,
                     prodId,
                     vevent: withDtstamp(omit(vevent, ['dtstamp']), timestamp),
+                    vtimezones,
                     attendeesTo: [attendeeWithPartstat],
                     keepDtstamp: true,
                 });

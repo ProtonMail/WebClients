@@ -404,12 +404,15 @@ export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Ad
 };
 
 export const generateVtimezonesComponents = async (
-    { dtstart, dtend }: VcalVeventComponent,
+    { dtstart, dtend, 'recurrence-id': recurrenceId, exdate = [] }: VcalVeventComponent,
     getVTimezones: GetVTimezonesMap
 ): Promise<VcalVtimezoneComponent[]> => {
-    const startTimezone = getPropertyTzid(dtstart);
-    const endTimezone = dtend ? getPropertyTzid(dtend) : undefined;
-    const vtimezonesObject = await getVTimezones([startTimezone, endTimezone].filter(isTruthy));
+    const timezones = [dtstart, dtend, recurrenceId, ...exdate]
+        .filter(isTruthy)
+        .map(unary(getPropertyTzid))
+        .filter(isTruthy);
+
+    const vtimezonesObject = await getVTimezones(timezones);
     return Object.values(vtimezonesObject)
         .filter(isTruthy)
         .map(({ vtimezone }) => vtimezone);
