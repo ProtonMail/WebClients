@@ -10,7 +10,11 @@ export const useResizeMessageView = (
 ) => {
     const [isResizing, setIsResizing] = useState(false);
     const [windowWidth] = useWindowSize();
-    const [defaultWidth] = useState<number>(+(getItem('messageListWidth') || windowWidth * 0.35));
+
+    // Original width of the messageList
+    const realDefaultWidth = windowWidth * 0.35;
+
+    const [defaultWidth] = useState<number>(+(getItem('messageListWidth') || realDefaultWidth));
     const [defaultWindowWidth, setDefaultWindowWidth] = useState(windowWidth);
 
     // Get left of container to have the size of the sidebar
@@ -56,6 +60,10 @@ export const useResizeMessageView = (
     const disableResize = useCallback(() => {
         setIsResizing(false);
     }, [setIsResizing]);
+
+    const resetWidth = () => {
+        resize(realDefaultWidth);
+    };
 
     useHotkeys(resizeAreaRef, [
         [
@@ -103,5 +111,5 @@ export const useResizeMessageView = (
         };
     }, [disableResize, resize]);
 
-    return { enableResize };
+    return { enableResize, resetWidth };
 };

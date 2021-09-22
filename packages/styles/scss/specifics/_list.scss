@@ -11,7 +11,7 @@ $container-to-width: 3em !default;
 		--width-conversation-column,
 		calc((100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div($conversations-column-width, 100%)})
 	);
-	transition: width 100ms;
+	transition: inline-size 100ms;
 }
 
 // trick to have proper direction on react virtual lists

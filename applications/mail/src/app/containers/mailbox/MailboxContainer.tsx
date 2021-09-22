@@ -78,7 +78,7 @@ const MailboxContainer = ({
 
     const onMailTo = useOnMailTo();
 
-    const { enableResize } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
+    const { enableResize, resetWidth } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
 
     // Open a composer when the url contains a mailto query
     useEffect(() => {
@@ -297,7 +297,12 @@ const MailboxContainer = ({
                 {showContentPanel && (
                     <>
                         <div className="relative w10p resize-area-container" ref={resizeAreaRef}>
-                            <button type="button" className="cursor-col-resize w100 h100" onMouseDown={enableResize}>
+                            <button
+                                type="button"
+                                className="cursor-col-resize w100 h100"
+                                onMouseDown={enableResize}
+                                onDoubleClick={resetWidth}
+                            >
                                 <span className="sr-only">{c('Action')
                                     .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
                             </button>
