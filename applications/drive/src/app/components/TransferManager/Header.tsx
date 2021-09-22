@@ -151,6 +151,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                 className="flex-item-fluid p0-5"
                 aria-atomic="true"
                 aria-live="polite"
+                data-testid="drive-transfers-manager:header"
                 onClick={minimized ? onToggleMinimize : undefined}
             >
                 {getHeadingText()}
