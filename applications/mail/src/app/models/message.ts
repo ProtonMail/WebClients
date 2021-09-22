@@ -104,7 +104,7 @@ export interface MessageExtended {
      * Decrypted raw content
      * Often the same as decryptedBody except for pgp-mime format, used for signature verification
      */
-    decryptedRawContent?: string;
+    decryptedRawContent?: Uint8Array;
 
     /**
      * Message signature obtained after decryption, if any
