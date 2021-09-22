@@ -245,11 +245,13 @@ export default function useUploadFile() {
             MAX_UPLOAD_BLOCKS_LOAD
         );
 
-        let createdFileRevision: FileRevision | undefined;
+        // Keep promise
+        let createdFileRevisionPromise: Promise<FileRevision>;
 
         return initUploadFileWorker(file, {
             initialize: async (abortSignal: AbortSignal, mimeType: string) => {
-                createdFileRevision = await createFileRevision(abortSignal, mimeType);
+                createdFileRevisionPromise = createFileRevision(abortSignal, mimeType);
+                const createdFileRevision = await createdFileRevisionPromise;
                 const addressKeyInfo = await addressKeyInfoPromise;
                 checkSignal(abortSignal, createdFileRevision.filename);
                 return {
@@ -267,6 +269,7 @@ export default function useUploadFile() {
                 fileBlocks: FileRequestBlock[],
                 thumbnailBlock?: ThumbnailRequestBlock
             ) => {
+                const createdFileRevision = await createdFileRevisionPromise;
                 if (!createdFileRevision) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
@@ -313,6 +316,7 @@ export default function useUploadFile() {
             finalize: queuedFunction(
                 'upload_finalize',
                 async (blockTokens: BlockToken[], signature: string, signatureAddress: string) => {
+                    const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                     }
@@ -348,6 +352,7 @@ export default function useUploadFile() {
                 5
             ),
             onError: async () => {
+                const createdFileRevision = await createdFileRevisionPromise;
                 try {
                     if (createdFileRevision) {
                         if (createdFileRevision.isNewFile) {
