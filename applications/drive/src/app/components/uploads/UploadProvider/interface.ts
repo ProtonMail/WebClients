@@ -44,7 +44,7 @@ export interface FolderUploadReady extends FolderUpload {
 
 export interface UploadQueue {
     shareId: string;
-    parentId: string;
+    linkId: string;
     files: FileUpload[];
     folders: FolderUpload[];
 }
