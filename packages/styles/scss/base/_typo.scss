@@ -2,7 +2,7 @@
 	#{$tag},
 	.#{$tag} {
 		display: block;
-		@include rhythm($size);
+		@include rhythm($size, 'single_bottom');
 		font-weight: normal;
 	}
 }
