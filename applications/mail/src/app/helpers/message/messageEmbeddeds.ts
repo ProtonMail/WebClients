@@ -112,15 +112,13 @@ export const findCIDsInContent = (content: string) =>
 /**
  * Insert actual src="cid:..." into embedded image elements
  */
-export const insertActualEmbeddedImages = (document: Element, embeddedImages: MessageEmbeddedImage[]) => {
-    embeddedImages.forEach((image) => {
-        const match = document.querySelector(`[data-embedded-img="${image.cid}"]`);
-        if (match) {
-            match.removeAttribute('data-embedded-img');
-            match.removeAttribute('proton-src');
-            match.removeAttribute('src');
-            match.setAttribute('src', `cid:${image.cid}`);
-        }
+export const insertActualEmbeddedImages = (document: Element) => {
+    querySelectorAll({ document }, '[data-embedded-img]').forEach((element) => {
+        const cid = element.getAttribute('data-embedded-img');
+        element.removeAttribute('data-embedded-img');
+        element.removeAttribute('proton-src');
+        element.removeAttribute('src');
+        element.setAttribute('src', `cid:${cid}`);
     });
 };
 
