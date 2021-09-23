@@ -173,9 +173,9 @@ export const isSearch = (searchParams: SearchParameters) =>
 export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;
 
 /**
- * Get the ID of the folder where the element is currently located
+ * Get the IDs of the folder where the element is currently located
  */
-export const getCurrentFolderID = (element: Element | undefined, customFoldersList: Folder[]): string => {
+export const getCurrentFolderIDs = (element: Element | undefined, customFoldersList: Folder[]): string[] => {
     const labelIDs = getLabelIDs(element, undefined);
     const standardFolders: { [labelID: string]: boolean } = {
         [INBOX]: true,
@@ -185,5 +185,5 @@ export const getCurrentFolderID = (element: Element | undefined, customFoldersLi
         [SCHEDULED]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
-    return Object.keys(labelIDs).find((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
+    return Object.keys(labelIDs).filter((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
 };
