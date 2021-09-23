@@ -131,11 +131,6 @@ export const useSendMessage = () => {
             sendingMessageNotificationManager?.setProperties(promise, handleUndo);
 
             try {
-                const currentMessage = messageCache.get(localID) as MessageExtendedWithData;
-                updateMessageCache(messageCache, localID, {
-                    ...currentMessage,
-                    sending: true,
-                });
                 const { Sent, undoTimeout } = await promise;
 
                 const endSending = async () => {
@@ -199,13 +194,6 @@ export const useSendMessage = () => {
                 }
 
                 throw error;
-            } finally {
-                const currentMessage = messageCache.get(localID) as MessageExtendedWithData;
-                updateMessageCache(messageCache, localID, {
-                    ...currentMessage,
-                    sending: false,
-                });
-                void call();
             }
         },
         [delaySendSeconds, messageCache, attachmentCache]

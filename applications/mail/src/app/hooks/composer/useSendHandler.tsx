@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { useHandler, useMailSettings, useNotifications, useEventManager } from '@proton/components';
+import { useEventManager, useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
@@ -10,7 +10,7 @@ import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
-import { useMessageCache } from '../../containers/MessageProvider';
+import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { PromiseHandlers } from '../usePromise';
 
@@ -114,7 +114,7 @@ export const useSendHandler = ({
     });
 
     const handleSend = useHandler(async () => {
-        const { scheduledAt } = modelMessage;
+        const { localID, scheduledAt } = modelMessage;
         const notifManager = createSendingMessageNotificationManager();
 
         // If scheduledAt is set we already performed the preliminary verifications
@@ -135,7 +135,7 @@ export const useSendHandler = ({
                 <SendingMessageNotification
                     scheduledAt={scheduledAt}
                     manager={notifManager}
-                    localID={modelMessage.localID}
+                    localID={localID}
                     messageCache={messageCache}
                     viewMode={mailSettings?.ViewMode || 0}
                 />
@@ -146,24 +146,36 @@ export const useSendHandler = ({
 
         ensureMessageContent();
 
-        // Closing the composer instantly, all the send process will be in background
-        onClose();
-
         try {
-            await promiseUpload;
-        } catch (error: any) {
-            hideNotification(notifManager.ID);
-            createNotification({
-                text: c('Error').t`Error while uploading attachments. Message is not sent`,
-                type: 'error',
-            });
-            console.error('Error while uploading attachments.', error);
-            onCompose({ existingDraft: modelMessage, fromUndo: true });
-            return;
-        }
+            updateMessageCache(messageCache, localID, { sending: true });
 
-        // Split handlers to have the updated version of the message
-        await handleSendAfterUploads(notifManager);
+            // Closing the composer instantly, all the send process will be in background
+            onClose();
+
+            try {
+                await promiseUpload;
+            } catch (error: any) {
+                hideNotification(notifManager.ID);
+                createNotification({
+                    text: c('Error').t`Error while uploading attachments. Message is not sent`,
+                    type: 'error',
+                });
+                console.error('Error while uploading attachments.', error);
+                onCompose({ existingDraft: modelMessage, fromUndo: true });
+                return;
+            }
+
+            // Split handlers to have the updated version of the message
+            await handleSendAfterUploads(notifManager);
+        } finally {
+            const asyncFinally = async () => {
+                // Receive all updates about the current message before "releasing" it to prevent any flickering
+                await call();
+                // Whatever happens once the composer is closed, the sending flag is reset when finished
+                updateMessageCache(messageCache, localID, { sending: false });
+            };
+            void asyncFinally();
+        }
     });
 
     return handleSend;
