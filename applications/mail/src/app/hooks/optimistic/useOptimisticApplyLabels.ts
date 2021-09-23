@@ -10,7 +10,7 @@ import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElements
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
-import { isMessage as testIsMessage, getCurrentFolderID, hasLabel } from '../../helpers/elements';
+import { isMessage as testIsMessage, hasLabel, getCurrentFolderIDs } from '../../helpers/elements';
 import { updateCounters } from '../../helpers/counter';
 import {
     LabelChanges,
@@ -78,11 +78,13 @@ export const useOptimisticApplyLabels = () => {
                 const changes = { ...inputChanges };
 
                 if (isMove) {
-                    const currentFolderID = ([SENT, DRAFTS] as string[]).includes(currentLabelID || '')
-                        ? (currentLabelID as string)
-                        : getCurrentFolderID(element, folders);
+                    const currentFolderIDs = ([SENT, DRAFTS] as string[]).includes(currentLabelID || '')
+                        ? [currentLabelID as string]
+                        : getCurrentFolderIDs(element, folders);
 
-                    if (changes[currentFolderID]) {
+                    const isMoveToCurrentFolder = currentFolderIDs.some((folderID) => changes[folderID]);
+
+                    if (isMoveToCurrentFolder) {
                         // It's a move to the folder where the elements is already, so nothing to do or undo
                         return;
                     }
@@ -104,7 +106,9 @@ export const useOptimisticApplyLabels = () => {
                         }
                     }
 
-                    changes[currentFolderID] = false;
+                    currentFolderIDs.forEach((folderID) => {
+                        changes[folderID] = false;
+                    });
                 }
 
                 rollbackChanges.push({ element, changes: computeRollbackLabelChanges(element, changes) });

@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useFolders } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { MessageExtended } from '../models/message';
-import { hasLabel, getCurrentFolderID } from '../helpers/elements';
+import { hasLabel, getCurrentFolderIDs } from '../helpers/elements';
 import { getLocalID, useMessageCache } from '../containers/MessageProvider';
 import { useConversationCache } from '../containers/ConversationProvider';
 import { ConversationCacheEntry } from '../models/conversation';
@@ -64,10 +65,10 @@ export const useShouldMoveOut = (
             const previousElement = cacheEntryToElement(previousVersionRef.current);
             const currentElement = cacheEntryToElement(cacheEntry);
             const hadLabels = hasLabel(previousElement, ALL_MAIL);
-            const previousFolderID = getCurrentFolderID(previousElement, folders);
-            const currentFolderID = getCurrentFolderID(currentElement, folders);
+            const previousFolderID = getCurrentFolderIDs(previousElement, folders);
+            const currentFolderID = getCurrentFolderIDs(currentElement, folders);
 
-            if (hadLabels && previousFolderID !== '' && previousFolderID !== currentFolderID) {
+            if (hadLabels && previousFolderID.length > 0 && !isDeepEqual(previousFolderID, currentFolderID)) {
                 onBack();
                 return;
             }
