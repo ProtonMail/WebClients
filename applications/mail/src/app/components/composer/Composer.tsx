@@ -24,7 +24,6 @@ import {
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
-import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
@@ -57,6 +56,7 @@ import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbedde
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHandleMessageAlreadySent } from '../../hooks/composer/useHandleMessageAlreadySent';
 import { useAutoSave } from '../../hooks/composer/useAutoSave';
+import { useLongLivingState } from '../../hooks/useLongLivingState';
 
 enum ComposerInnerModal {
     None,
@@ -108,7 +108,6 @@ const Composer = (
     const { createModal } = useModals();
     const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
-    const isMounted = useIsMounted();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -125,7 +124,7 @@ const Composer = (
     const [innerModal, setInnerModal] = useState(ComposerInnerModal.None);
 
     // Model value of the edited message in the composer
-    const [modelMessage, setModelMessage] = useState<MessageExtended>({
+    const [modelMessage, setModelMessage] = useLongLivingState<MessageExtended>({
         localID: messageID,
     });
 
@@ -314,13 +313,6 @@ const Composer = (
     });
 
     const handleChange: MessageChange = useHandler((update, shouldReloadSendInfo) => {
-        if (!isMounted()) {
-            // Can happen when we finish an upload with the composer closed
-            const messageChanges = update instanceof Function ? update(modelMessage) : update;
-            const newModelMessage = mergeMessages(modelMessage, messageChanges);
-            void autoSave(newModelMessage);
-            return;
-        }
         setModelMessage((modelMessage) => {
             const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
@@ -334,11 +326,6 @@ const Composer = (
 
     const handleChangeContent = useHandler(
         (content: string, refreshEditor: boolean = false, silent: boolean = false) => {
-            // On rare occasion, composer can trigger events after sending
-            // We should absolutely avoid calling auto save and can forget about these events
-            if (!isMounted()) {
-                return;
-            }
             setModelMessage((modelMessage) => {
                 setContent(modelMessage, content);
                 const newModelMessage = { ...modelMessage };
