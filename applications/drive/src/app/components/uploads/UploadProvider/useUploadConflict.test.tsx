@@ -3,54 +3,126 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { ModalsProvider } from '@proton/components';
 
-// import { TransferConflictStrategy } from '../interface';
-import { ConflictStrategyHandler, FileUpload, FolderUpload } from './interface';
+import { mockGlobalFile, testFile } from '../../../helpers/test/file';
+import { TransferConflictStrategy } from '../interface';
+import { FileUpload, FolderUpload } from './interface';
 import useUploadConflict from './useUploadConflict';
+import { TransferState } from '../../../interfaces/transfer';
+
+const mockCreateModal = jest.fn();
+jest.mock('@proton/components/hooks/useModals.ts', () => {
+    const useModals = () => {
+        return {
+            createModal: mockCreateModal,
+        };
+    };
+    return useModals;
+});
 
 describe('useUploadConflict', () => {
     const mockUpdateState = jest.fn();
     const mockUpdateWithData = jest.fn();
-    const cancelUploads = jest.fn();
+    const mockCancelUploads = jest.fn();
 
-    let hook: {
-        current: {
-            getFileConflictHandler: (id: string) => ConflictStrategyHandler;
-        };
+    let abortController: AbortController;
+
+    const renderConflict = () => {
+        const fileUploads: FileUpload[] = ['file1', 'file2'].map((id) => ({
+            id,
+            shareId: 'shareId',
+            startDate: new Date(),
+            state: TransferState.Conflict,
+            file: testFile(`${id  }.txt`),
+            meta: {
+                filename: `${id  }.txt`,
+                mimeType: 'txt',
+            },
+        }));
+        const folderUploads: FolderUpload[] = [];
+        const wrapper = ({ children }: { children: ReactNode }) => <ModalsProvider>{children}</ModalsProvider>;
+        const { result } = renderHook(
+            () => useUploadConflict(fileUploads, folderUploads, mockUpdateState, mockUpdateWithData, mockCancelUploads),
+            { wrapper }
+        );
+        return result;
     };
 
     beforeEach(() => {
+        mockGlobalFile();
+
+        mockCreateModal.mockClear();
         mockUpdateState.mockClear();
         mockUpdateWithData.mockClear();
-        cancelUploads.mockClear();
+        mockCancelUploads.mockClear();
 
-        const fileUploads: FileUpload[] = [];
-        const folderUploads: FolderUpload[] = [];
-
-        const wrapper = ({ children }: { children: ReactNode }) => <ModalsProvider>{children}</ModalsProvider>;
-        const { result } = renderHook(
-            () => useUploadConflict(fileUploads, folderUploads, mockUpdateState, mockUpdateWithData, cancelUploads),
-            { wrapper }
-        );
-        hook = result;
+        abortController = new AbortController();
     });
 
     it('aborts promise returned by file conflict handler', async () => {
-        const abortController = new AbortController();
+        const hook = renderConflict();
         await act(async () => {
-            const conflictHandler = hook.current.getFileConflictHandler('id');
+            const conflictHandler = hook.current.getFileConflictHandler('file1');
             const promise = conflictHandler(abortController.signal);
+            expect(mockUpdateWithData.mock.calls).toMatchObject([
+                ['file1', 'conflict', { originalIsFolder: undefined }],
+            ]);
             abortController.abort();
             await expect(promise).rejects.toThrowError('Upload was canceled');
         });
     });
 
-    /* it('waits and resolves in conflict strategy', async () => {
-        const abortController = new AbortController();
-        await act(async () => {
-            const conflictHandler = hook.current.getFileConflictHandler('id');
-            const promise = conflictHandler(abortController.signal);
-            // TODO how to control modal?
-            await expect(promise).resolves.toBe(TransferConflictStrategy.Rename);
+    it('waits and resolves in conflict strategy for one', async () => {
+        mockCreateModal.mockImplementation(({ props }) => {
+            props.apply(TransferConflictStrategy.Rename, false);
         });
-    }); */
+        const hook = renderConflict();
+        await act(async () => {
+            const conflictHandler = hook.current.getFileConflictHandler('file1');
+            const promise = conflictHandler(abortController.signal);
+            await expect(promise).resolves.toBe(TransferConflictStrategy.Rename);
+
+            expect(mockUpdateState.mock.calls.length).toBe(1);
+            expect(mockUpdateState.mock.calls[0][0]).toBe('file1');
+            expect(mockCancelUploads.mock.calls.length).toBe(0);
+        });
+    });
+
+    it('waits and resolves in conflict strategy for all', async () => {
+        mockCreateModal.mockImplementation(({ props }) => {
+            props.apply(TransferConflictStrategy.Rename, true);
+        });
+        const hook = renderConflict();
+        await act(async () => {
+            const conflictHandler1 = hook.current.getFileConflictHandler('file1');
+            const promise1 = conflictHandler1(abortController.signal);
+            await expect(promise1).resolves.toBe(TransferConflictStrategy.Rename);
+
+            expect(mockUpdateState.mock.calls.length).toBe(1);
+            expect(mockUpdateState.mock.calls[0][0]).not.toBe('file1'); // It is dynamic function.
+            expect(mockCancelUploads.mock.calls.length).toBe(0);
+
+            const conflictHandler2 = hook.current.getFileConflictHandler('file2');
+            const promise2 = conflictHandler2(abortController.signal);
+            await expect(promise2).resolves.toBe(TransferConflictStrategy.Rename);
+        });
+    });
+
+    it('waits and cancels all uploads', async () => {
+        mockCreateModal.mockImplementation(({ props }) => {
+            props.cancelAll();
+        });
+        const hook = renderConflict();
+        await act(async () => {
+            const conflictHandler1 = hook.current.getFileConflictHandler('file1');
+            const promise1 = conflictHandler1(abortController.signal);
+            await expect(promise1).resolves.toBe(TransferConflictStrategy.Skip);
+
+            const conflictHandler2 = hook.current.getFileConflictHandler('file2');
+            const promise2 = conflictHandler2(abortController.signal);
+            await expect(promise2).resolves.toBe(TransferConflictStrategy.Skip);
+
+            expect(mockUpdateState.mock.calls.length).toBe(0);
+            expect(mockCancelUploads.mock.calls.length).toBe(1);
+        });
+    });
 });

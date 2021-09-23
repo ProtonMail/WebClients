@@ -245,7 +245,9 @@ export default function useUploadFile() {
             MAX_UPLOAD_BLOCKS_LOAD
         );
 
-        // Keep promise
+        // Keep promise reference so when upload is canceled but init is not
+        // finished yet, onError handler can wait for the creation to get ID
+        // with created file or revision to do proper clean-up.
         let createdFileRevisionPromise: Promise<FileRevision>;
 
         return initUploadFileWorker(file, {
