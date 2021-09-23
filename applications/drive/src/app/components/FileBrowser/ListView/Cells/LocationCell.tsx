@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { c } from 'ttag';
-import useDrive from '../../../../hooks/drive/useDrive';
+import useWorkingDirectory from '../../../../hooks/drive/useWorkingDirectory';
 
 interface Props {
     shareId: string;
@@ -9,22 +8,13 @@ interface Props {
 
 const LocationCell = ({ shareId, parentLinkId }: Props) => {
     const [location, setLocation] = useState<string>();
-    const { getLinkMeta } = useDrive();
+    const path = useWorkingDirectory();
 
     useEffect(() => {
-        const getLocationItems = async (shareId: string, linkId: string): Promise<string[]> => {
-            const { ParentLinkID, Name } = await getLinkMeta(shareId, linkId);
-            if (!ParentLinkID) {
-                return [c('Title').t`My files`];
-            }
-
-            const previous = await getLocationItems(shareId, ParentLinkID);
-            return [...previous, Name];
-        };
-
-        getLocationItems(shareId, parentLinkId)
-            .then((items: string[]) => `/${items.join('/')}`)
-            .then(setLocation)
+        path.traverseLinksToRoot(shareId, parentLinkId)
+            .then((workingDirectory) => {
+                setLocation(`/${workingDirectory.map(path.getLinkName).join('/')}`);
+            })
             .catch(console.error);
     }, [shareId, parentLinkId]);
 

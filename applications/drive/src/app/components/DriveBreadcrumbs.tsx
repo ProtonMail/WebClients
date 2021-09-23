@@ -6,9 +6,9 @@ import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcru
 
 import { DriveFolder } from '../hooks/drive/useActiveShare';
 import { LinkType } from '../interfaces/link';
-import useDrive from '../hooks/drive/useDrive';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
+import useWorkingDirectory from '../hooks/drive/useWorkingDirectory';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -16,9 +16,9 @@ interface Props {
 
 const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const { navigateToLink } = useNavigate();
-    const { getLinkMeta } = useDrive();
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
+    const path = useWorkingDirectory();
     const [dropTarget, setDropTarget] = useState<string>();
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([
         {
@@ -29,67 +29,59 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     ]);
 
     useEffect(() => {
-        const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
-            const meta = await getLinkMeta(activeFolder.shareId, linkId);
-            const isRoot = !meta.ParentLinkID;
-            const text = isRoot ? c('Title').t`My files` : meta.Name;
-
-            const handleDrop = getHandleItemDrop(meta);
-
-            const breadcrumb: BreadcrumbInfo = {
-                key: linkId,
-                text,
-                noShrink: isRoot,
-                highlighted: dropTarget === meta.LinkID,
-                collapsedText: (
-                    <>
-                        <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-warning" />
-                        <span title={text} className="text-ellipsis">
-                            {text}
-                        </span>
-                    </>
-                ),
-                onClick: () => navigateToLink(activeFolder.shareId, linkId, LinkType.FOLDER),
-                onDragLeave: () => {
-                    setDropTarget(undefined);
-                },
-                onDragOver: (e) => {
-                    e.stopPropagation();
-                    e.preventDefault();
-                    if (dropTarget !== linkId) {
-                        setDropTarget(linkId);
-                    }
-                },
-                onDrop: async (e) => {
-                    setDropTarget(undefined);
-                    try {
-                        await handleDrop(e);
-                    } catch (e: any) {
-                        createNotification({
-                            text: c('Notification').t`Failed to move, please try again`,
-                            type: 'error',
-                        });
-                        console.error(e);
-                    }
-                },
-            };
-
-            if (isRoot) {
-                return [breadcrumb];
-            }
-
-            const previous = await getBreadcrumbs(meta.ParentLinkID);
-
-            return [...previous, breadcrumb];
-        };
-
         let canceled = false;
 
-        getBreadcrumbs(activeFolder.linkId)
-            .then((result) => {
-                if (!canceled) {
-                    setBreadcrumbs(result);
+        path.traverseLinksToRoot(activeFolder.shareId, activeFolder.linkId)
+            .then((workingDirectory) => {
+                if (canceled) {
+                    return;
                 }
+
+                const breadcrumbs = workingDirectory.map((linkMeta) => {
+                    const isRoot = !linkMeta.ParentLinkID;
+                    const text = path.getLinkName(linkMeta);
+                    const handleDrop = getHandleItemDrop(linkMeta);
+
+                    const breadcrumb: BreadcrumbInfo = {
+                        key: linkMeta.LinkID,
+                        text,
+                        noShrink: isRoot,
+                        highlighted: dropTarget === linkMeta.LinkID,
+                        collapsedText: (
+                            <>
+                                <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-warning" />
+                                <span title={text} className="text-ellipsis">
+                                    {text}
+                                </span>
+                            </>
+                        ),
+                        onClick: () => navigateToLink(activeFolder.shareId, linkMeta.LinkID, LinkType.FOLDER),
+                        onDragLeave: () => {
+                            setDropTarget(undefined);
+                        },
+                        onDragOver: (e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            if (dropTarget !== linkMeta.LinkID) {
+                                setDropTarget(linkMeta.LinkID);
+                            }
+                        },
+                        onDrop: async (e) => {
+                            setDropTarget(undefined);
+                            try {
+                                await handleDrop(e);
+                            } catch (e: any) {
+                                createNotification({
+                                    text: c('Notification').t`Failed to move, please try again`,
+                                    type: 'error',
+                                });
+                                console.error(e);
+                            }
+                        },
+                    };
+                    return breadcrumb;
+                });
+                setBreadcrumbs(breadcrumbs);
             })
             .catch(console.error);
 
