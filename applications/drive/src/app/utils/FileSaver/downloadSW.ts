@@ -8,6 +8,18 @@ interface DownloadConfig {
     size?: number;
 }
 
+const SECURITY_HEADERS = {
+    'Content-Security-Policy': "default-src 'none'",
+    'X-Content-Security-Policy': "default-src 'none'",
+    'X-WebKit-CSP': "default-src 'none'",
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'Strict-Transport-Security': 'max-age=31536000',
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'deny',
+    'X-XSS-Protection': '1; mode=block',
+    'X-Permitted-Cross-Domain-Policies': 'none',
+};
+
 /**
  * Open a stream of data passed over MessageChannel.
  * Every download has it's own stream from app to SW.
@@ -66,7 +78,7 @@ class DownloadServiceWorker {
         const { url } = event.request;
 
         if (url.endsWith('/sw/ping')) {
-            return event.respondWith(new Response('pong'));
+            return event.respondWith(new Response('pong', { headers: new Headers(SECURITY_HEADERS) }));
         }
 
         const pendingDownload = this.pendingDownloads.get(url);
@@ -82,10 +94,7 @@ class DownloadServiceWorker {
             ...(size ? { 'Content-Length': `${size}` } : {}),
             'Content-Type': mimeType,
             'Content-Disposition': `attachment; filename="${encodeURI(filename)}"`,
-            'Content-Security-Policy': "default-src 'none'",
-            'X-Content-Security-Policy': "default-src 'none'",
-            'X-WebKit-CSP': "default-src 'none'",
-            'X-XSS-Protection': '1; mode=block',
+            ...SECURITY_HEADERS,
         });
 
         event.respondWith(new Response(stream, { headers }));
