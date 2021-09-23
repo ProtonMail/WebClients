@@ -23,6 +23,7 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { oneClickUnsubscribe, markAsUnsubscribed } from '@proton/shared/lib/api/messages';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
+import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
 import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { findSender } from '../../../helpers/addresses';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
@@ -39,6 +40,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const { createModal } = useModals();
     const [addresses] = useAddresses();
     const { extendedVerifications: sendVerification } = useSendVerifications();
+    const saveDraft = useSaveDraft();
     const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
@@ -161,6 +163,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             };
 
             const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData, {});
+            await saveDraft(cleanMessage);
             await sendMessage({ inputMessage: cleanMessage, mapSendPrefs, onCompose });
         } else if (unsubscribeMethods.HttpClient) {
             await new Promise<void>((resolve, reject) => {

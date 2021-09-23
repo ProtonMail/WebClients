@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { useHandler, useMailSettings, useNotifications } from '@proton/components';
+import { useHandler, useMailSettings, useNotifications, useEventManager } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
@@ -22,6 +22,7 @@ export interface UseSendHandlerParameters {
     pendingSave: PromiseHandlers<void>;
     pendingAutoSave: PromiseHandlers<void>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
+    saveNow: (message: MessageExtended) => Promise<void>;
     onClose: () => void;
     onMessageAlreadySent: () => void;
 }
@@ -34,10 +35,12 @@ export const useSendHandler = ({
     pendingSave,
     pendingAutoSave,
     autoSave,
+    saveNow,
     onClose,
     onMessageAlreadySent,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
+    const { call } = useEventManager();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications();
     const sendMessage = useSendMessage();
@@ -64,6 +67,13 @@ export const useSendHandler = ({
         const alreadySaved = !!messageFromCache?.data?.ID && !pendingAutoSave.isPending && !hasChanged;
         autoSave.abort?.(); // Save will take place in the send process
         const inputMessage = alreadySaved ? (messageFromCache as MessageExtendedWithData) : cleanMessage;
+
+        // sendMessage expect a saved and up to date message
+        // If there is anything new or pending, we have to make a last save
+        if (!alreadySaved) {
+            await saveNow(inputMessage);
+            await call();
+        }
 
         try {
             await sendMessage({
