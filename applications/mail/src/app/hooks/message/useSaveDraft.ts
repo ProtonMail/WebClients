@@ -1,6 +1,6 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
-import { useApi, useEventManager, useMailSettings, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useFolders, useMailSettings, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
@@ -14,8 +14,9 @@ import { createMessage, updateMessage } from '../../helpers/message/messageExpor
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
+import { getCurrentFolderID } from '../../helpers/labels';
 
-const { ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
+const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 /**
  * Only takes technical stuff from the updated message
@@ -129,17 +130,28 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
 export const useDeleteDraft = () => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
+    const [folders = []] = useFolders();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
+    const { createNotification } = useNotifications();
 
     return useCallback(
         async (message: MessageExtended) => {
-            await api(
-                deleteMessages(
-                    [message.data?.ID],
-                    hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS
-                )
-            );
+            const showMoved = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
+            const currentLabelID = showMoved ? ALL_DRAFTS : getCurrentFolderID(message.data?.LabelIDs, folders);
+            const response: any = await api(deleteMessages([message.data?.ID], currentLabelID));
+
+            // For the "Please refresh your page, the message has moved."
+            // Backend is not replying with an HTTP error but with an error inside the Response
+            // (it's to deal about potentially different statuses in several deletions)
+            if (response?.Responses?.[0]?.Response?.Error) {
+                const { Response } = response.Responses[0];
+                createNotification({ text: Response.Error, type: 'error' });
+                const error = new Error(Response.Error);
+                (error as any).code = Response.Code;
+                throw error;
+            }
+
             messageCache.delete(message.localID || '');
             await call();
         },
