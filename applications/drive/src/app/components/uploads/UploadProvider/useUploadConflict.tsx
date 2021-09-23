@@ -116,6 +116,7 @@ export default function useUploadConflict(
         };
         const cancelAll = () => {
             isConflictStrategyModalOpen.current = false;
+            conflictStrategyRef.current[CONFLICT_STRATEGY_ALL_ID] = TransferConflictStrategy.Skip;
             cancelUploads(isTransferActive);
         };
         createModal(<ConflictModal apply={apply} cancelAll={cancelAll} {...params} />);
