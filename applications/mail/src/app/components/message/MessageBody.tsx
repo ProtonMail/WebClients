@@ -39,7 +39,9 @@ const MessageBody = ({
     highlightKeywords = false,
 }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
-    const { highlightString } = useEncryptedSearchContext();
+    const { highlightString, getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const highlightBody = highlightKeywords && dbExists && esEnabled;
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -57,9 +59,9 @@ const MessageBody = ({
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode;
-    const htmlContent = !!content && highlightKeywords ? highlightString(content, true) : content;
+    const htmlContent = !!content && highlightBody ? highlightString(content, true) : content;
     const htmlBlockquote =
-        !!blockquote && highlightKeywords
+        !!blockquote && highlightBody
             ? highlightString(blockquote, !htmlContent.includes('data-auto-scroll'))
             : blockquote;
 
@@ -76,7 +78,7 @@ const MessageBody = ({
     }, [showBlockquote]);
 
     useEffect(() => {
-        if (!!content && highlightKeywords) {
+        if (!!content && highlightBody) {
             const el = bodyRef.current?.querySelector('[data-auto-scroll]') as HTMLElement;
             scrollIntoView(el, { block: 'center', behavior: 'smooth' });
         }
