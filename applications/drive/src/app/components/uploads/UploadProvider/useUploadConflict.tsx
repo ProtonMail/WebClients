@@ -109,7 +109,15 @@ export default function useUploadConflict(
             isConflictStrategyModalOpen.current = false;
             conflictStrategyRef.current[all ? CONFLICT_STRATEGY_ALL_ID : uploadId] = strategy;
             if (all) {
-                updateState(isTransferConflict, TransferState.Progress);
+                updateState(({ state, file }) => {
+                    // Update only folders for folder conflict strategy.
+                    // And only files for file conflict strategy.
+                    const isFolder = file === undefined;
+                    if (isFolder !== (params.isFolder || false)) {
+                        return false;
+                    }
+                    return isTransferConflict({ state });
+                }, TransferState.Progress);
             } else {
                 updateState(uploadId, TransferState.Progress);
             }

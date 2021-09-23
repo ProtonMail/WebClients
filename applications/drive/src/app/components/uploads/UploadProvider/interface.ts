@@ -65,6 +65,7 @@ export type UpdateCallbackParams = {
     state: TransferState;
     resumeState?: TransferState;
     parentId?: string;
+    file?: File;
 };
 
 export type ConflictStrategyHandler = (
