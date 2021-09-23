@@ -27,6 +27,11 @@ const TRANSFER_GROUPS = [
         label: c('Label').t`Active`,
     },
     {
+        value: TransferGroup.DONE,
+        // translator: the label is for a button showing only completed transfers"
+        label: c('Label').t`Completed`,
+    },
+    {
         value: TransferGroup.FAILURE,
         // translator: the label is for a button showing only failed transfers"
         label: c('Label').t`Failed`,
@@ -153,7 +158,7 @@ const Toolbar = ({
                         ))}
                     </div>
                     <div className="flex flex-nowrap flex-justify-end no-scroll flex-item-noshrink">
-                        <span className="mr1 text-ellipsis">{c('Label').t`Apply to selected transfers`}</span>
+                        <span className="mr1 text-ellipsis">{c('Label').t`Apply to selection`}</span>
                         <Buttons buttons={buttons} className="flex-item-noshrink" />
                     </div>
                 </div>
