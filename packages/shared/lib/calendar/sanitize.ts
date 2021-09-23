@@ -7,7 +7,7 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
     }
 });
 
-export const sanitizeDescription = (source: string) => {
+export const restrictedCalendarSanitize = (source: string) => {
     return DOMPurify.sanitize(source, {
         ALLOWED_TAGS: ['a', 'b', 'em', 'br', 'i', 'u', 'ul', 'ol', 'li', 'span', 'p'],
         ALLOWED_ATTR: ['href'],
@@ -15,7 +15,7 @@ export const sanitizeDescription = (source: string) => {
 };
 
 export const stripAllTags = (source: string) => {
-    const html = sanitizeDescription(source);
+    const html = restrictedCalendarSanitize(source);
     const div = document.createElement('DIV');
     div.style.whiteSpace = 'pre-wrap';
     div.innerHTML = html;

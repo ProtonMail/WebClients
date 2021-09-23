@@ -1,6 +1,5 @@
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { Dispatch, SetStateAction } from 'react';
-import { classnames } from '@proton/components';
 import { getCalendarEventLink, getDoNotDisplayButtons, InvitationModel } from '../../../../helpers/calendar/invite';
 import { MessageExtended } from '../../../../models/message';
 import ExtraEventAlert from './ExtraEventAlert';
@@ -15,7 +14,7 @@ interface Props {
     message: MessageExtended;
 }
 const ExtraEventButtons = ({ model, setModel, message }: Props) => {
-    const { isImport, hasMultipleVevents, isOrganizerMode } = model;
+    const { isImport, isOrganizerMode } = model;
     const inviteButtons = isOrganizerMode ? (
         <ExtraEventOrganizerButtons model={model} />
     ) : (
@@ -25,14 +24,12 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const buttons = isImport ? importButton : inviteButtons;
     const displayButtons = getDoNotDisplayButtons(model) ? null : buttons;
     const { to, toApp, text } = getCalendarEventLink(model);
-    // Event details are not displayed for import mode with multiple events
-    const displayBorderBottom = isImport && hasMultipleVevents ? false : !!text || !!displayButtons;
 
     return (
-        <div className={classnames(['pt0-5 mt0-5 mb0-5 border-top', displayBorderBottom && 'border-bottom'])}>
-            {displayButtons}
+        <div className="mb0-5">
             <ExtraEventAlert model={model} />
             <ExtraEventLink to={to} text={text} toApp={toApp} />
+            {displayButtons}
         </div>
     );
 };

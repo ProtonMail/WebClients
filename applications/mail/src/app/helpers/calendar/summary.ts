@@ -1,9 +1,4 @@
-import {
-    ICAL_ATTENDEE_ROLE,
-    ICAL_ATTENDEE_STATUS,
-    ICAL_EVENT_STATUS,
-    ICAL_METHOD,
-} from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { c } from 'ttag';
@@ -13,7 +8,6 @@ import { InvitationModel, UPDATE_ACTION } from './invite';
 const { REPLY, COUNTER, REFRESH, REQUEST, CANCEL, ADD } = ICAL_METHOD;
 const { NEEDS_ACTION, ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
 const { CANCELLED } = ICAL_EVENT_STATUS;
-const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 const { KEEP_PARTSTAT, RESET_PARTSTAT } = UPDATE_ACTION;
 
 export const getHasBeenUpdatedText = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
@@ -57,13 +51,13 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             if (hasDecryptionError) {
                 // the event exists in the calendar but we couldn't decrypt it
                 if (partstat === ACCEPTED) {
-                    return c('Calendar invite info').jt`${participantName} accepted your invitation.`;
+                    return c('Calendar invite info').t`${participantName} accepted your invitation.`;
                 }
                 if (partstat === DECLINED) {
-                    return c('Calendar invite info').jt`${participantName} declined your invitation.`;
+                    return c('Calendar invite info').t`${participantName} declined your invitation.`;
                 }
                 if (partstat === TENTATIVE) {
-                    return c('Calendar invite info').jt`${participantName} tentatively accepted your invitation.`;
+                    return c('Calendar invite info').t`${participantName} tentatively accepted your invitation.`;
                 }
             }
 
@@ -80,47 +74,46 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             if (partstat === ACCEPTED) {
                 if (isSingleEdit) {
                     return c('Calendar invite info')
-                        .jt`${participantName} accepted your invitation to one occurrence of the event.`;
+                        .t`${participantName} accepted your invitation to one occurrence of the event.`;
                 }
-                return c('Calendar invite info').jt`${participantName} accepted your invitation.`;
+                return c('Calendar invite info').t`${participantName} accepted your invitation.`;
             }
             if (partstat === DECLINED) {
                 if (isSingleEdit) {
                     return c('Calendar invite info')
-                        .jt`${participantName} declined your invitation to one occurrence of the event.`;
+                        .t`${participantName} declined your invitation to one occurrence of the event.`;
                 }
-                return c('Calendar invite info').jt`${participantName} declined your invitation.`;
+                return c('Calendar invite info').t`${participantName} declined your invitation.`;
             }
             if (partstat === TENTATIVE) {
                 if (isSingleEdit) {
                     return c('Calendar invite info')
-                        .jt`${participantName} tentatively accepted your invitation to one occurrence of the event.`;
+                        .t`${participantName} tentatively accepted your invitation to one occurrence of the event.`;
                 }
-                return c('Calendar invite info').jt`${participantName} tentatively accepted your invitation.`;
+                return c('Calendar invite info').t`${participantName} tentatively accepted your invitation.`;
             }
         }
 
         if (partstat === ACCEPTED) {
             if (isSingleEdit) {
                 return c('Calendar invite info')
-                    .jt`${participantName} had previously accepted your invitation to one occurrence of the event.`;
+                    .t`${participantName} had previously accepted your invitation to one occurrence of the event.`;
             }
-            return c('Calendar invite info').jt`${participantName} had previously accepted your invitation.`;
+            return c('Calendar invite info').t`${participantName} had previously accepted your invitation.`;
         }
         if (partstat === DECLINED) {
             if (isSingleEdit) {
                 return c('Calendar invite info')
-                    .jt`${participantName} had previously declined your invitation to one occurrence of the event.`;
+                    .t`${participantName} had previously declined your invitation to one occurrence of the event.`;
             }
-            return c('Calendar invite info').jt`${participantName} had previously declined your invitation.`;
+            return c('Calendar invite info').t`${participantName} had previously declined your invitation.`;
         }
         if (partstat === TENTATIVE) {
             if (isSingleEdit) {
                 return c('Calendar invite info')
-                    .jt`${participantName} had previously tentatively accepted your invitation to one occurrence of the event.`;
+                    .t`${participantName} had previously tentatively accepted your invitation to one occurrence of the event.`;
             }
-            return c('Calendar invite info')
-                .jt`${participantName} had previously tentatively accepted your invitation.`;
+            return c('Calendar invite info').t`${participantName} had previously tentatively accepted your invitation.`;
         }
     }
 
@@ -134,10 +127,10 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                 if (hasNoCalendars) {
                     if (isSingleEdit) {
                         return c('Calendar invite info')
-                            .jt`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.`;
+                            .t`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.`;
                     }
                     return c('Calendar invite info')
-                        .jt`${participantName} had proposed a new time for this event. This proposal is out of date. You have no calendars.`;
+                        .t`${participantName} had proposed a new time for this event. This proposal is out of date. You have no calendars.`;
                 }
                 if (hasDecryptionError) {
                     // the event exists in the calendar but we couldn't decrypt it
@@ -145,41 +138,41 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                         if (partstat === ACCEPTED) {
                             if (isSingleEdit) {
                                 return c('Calendar invite info')
-                                    .jt`${participantName} accepted your invitation and proposed a new time for one occurrence of this event.`;
+                                    .t`${participantName} accepted your invitation and proposed a new time for one occurrence of this event.`;
                             }
                             return c('Calendar invite info')
-                                .jt`${participantName} accepted your invitation and proposed a new time for this event.`;
+                                .t`${participantName} accepted your invitation and proposed a new time for this event.`;
                         }
                         if (partstat === DECLINED) {
                             if (isSingleEdit) {
                                 return c('Calendar invite info')
-                                    .jt`${participantName} declined your invitation and proposed a new time for one occurrence of this event.`;
+                                    .t`${participantName} declined your invitation and proposed a new time for one occurrence of this event.`;
                             }
                             return c('Calendar invite info')
-                                .jt`${participantName} declined your invitation and proposed a new time for this event.`;
+                                .t`${participantName} declined your invitation and proposed a new time for this event.`;
                         }
                         if (partstat === TENTATIVE) {
                             if (isSingleEdit) {
                                 return c('Calendar invite info')
-                                    .jt`${participantName} tentatively accepted your invitation and proposed a new time for one occurrence of this event.`;
+                                    .t`${participantName} tentatively accepted your invitation and proposed a new time for one occurrence of this event.`;
                             }
                             return c('Calendar invite info')
-                                .jt`${participantName} tentatively accepted your invitation and proposed a new time for this event.`;
+                                .t`${participantName} tentatively accepted your invitation and proposed a new time for this event.`;
                         }
                     }
                     if (isSingleEdit) {
                         return c('Calendar invite info')
-                            .jt`${participantName} proposed a new time for one occurrence of this event.`;
+                            .t`${participantName} proposed a new time for one occurrence of this event.`;
                     }
-                    return c('Calendar invite info').jt`${participantName} proposed a new time for this event.`;
+                    return c('Calendar invite info').t`${participantName} proposed a new time for this event.`;
                 }
 
                 if (isSingleEdit) {
                     return c('Calendar invite info')
-                        .jt`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.`;
+                        .t`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.`;
                 }
                 return c('Calendar invite info')
-                    .jt`${participantName} had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.`;
+                    .t`${participantName} had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.`;
             }
             if (isFromFuture) {
                 return c('Calendar invite info')
@@ -190,66 +183,66 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     if (partstat === ACCEPTED) {
                         if (isSingleEdit) {
                             return c('Calendar invite info')
-                                .jt`${participantName} had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.`;
+                                .t`${participantName} had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.`;
                         }
                         return c('Calendar invite info')
-                            .jt`${participantName} had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
+                            .t`${participantName} had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
                     }
                     if (partstat === DECLINED) {
                         if (isSingleEdit) {
                             return c('Calendar invite info')
-                                .jt`${participantName} had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.`;
+                                .t`${participantName} had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.`;
                         }
                         return c('Calendar invite info')
-                            .jt`${participantName} had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
+                            .t`${participantName} had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
                     }
                     if (partstat === TENTATIVE) {
                         if (isSingleEdit) {
                             return c('Calendar invite info')
-                                .jt`${participantName} had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.`;
+                                .t`${participantName} had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.`;
                         }
                         return c('Calendar invite info')
-                            .jt`${participantName} had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
+                            .t`${participantName} had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
                     }
                 }
                 if (isSingleEdit) {
                     return c('Calendar invite info')
-                        .jt`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date.`;
+                        .t`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date.`;
                 }
                 return c('Calendar invite info')
-                    .jt`${participantName} had proposed a new time for this event. This proposal is out of date.`;
+                    .t`${participantName} had proposed a new time for this event. This proposal is out of date.`;
             }
             if (hasAlsoReplied) {
                 if (partstat === ACCEPTED) {
                     if (isSingleEdit) {
                         return c('Calendar invite info')
-                            .jt`${participantName} accepted your invitation and proposed a new time for one occurrence of this event.`;
+                            .t`${participantName} accepted your invitation and proposed a new time for one occurrence of this event.`;
                     }
                     return c('Calendar invite info')
-                        .jt`${participantName} accepted your invitation and proposed a new time for this event.`;
+                        .t`${participantName} accepted your invitation and proposed a new time for this event.`;
                 }
                 if (partstat === DECLINED) {
                     if (isSingleEdit) {
                         return c('Calendar invite info')
-                            .jt`${participantName} declined your invitation and proposed a new time for one occurrence of this event.`;
+                            .t`${participantName} declined your invitation and proposed a new time for one occurrence of this event.`;
                     }
                     return c('Calendar invite info')
-                        .jt`${participantName} declined your invitation and proposed a new time for this event.`;
+                        .t`${participantName} declined your invitation and proposed a new time for this event.`;
                 }
                 if (partstat === TENTATIVE) {
                     if (isSingleEdit) {
                         return c('Calendar invite info')
-                            .jt`${participantName} tentatively accepted your invitation and proposed a new time for one occurrence of this event.`;
+                            .t`${participantName} tentatively accepted your invitation and proposed a new time for one occurrence of this event.`;
                     }
                     return c('Calendar invite info')
-                        .jt`${participantName} tentatively accepted your invitation and proposed a new time for this event.`;
+                        .t`${participantName} tentatively accepted your invitation and proposed a new time for this event.`;
                 }
             }
             if (isSingleEdit) {
                 return c('Calendar invite info')
-                    .jt`${participantName} proposed a new time for one occurrence of this event.`;
+                    .t`${participantName} proposed a new time for one occurrence of this event.`;
             }
-            return c('Calendar invite info').jt`${participantName} proposed a new time for this event.`;
+            return c('Calendar invite info').t`${participantName} proposed a new time for this event.`;
         })();
     }
 
@@ -261,16 +254,16 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             if (!invitationApi) {
                 if (hasNoCalendars) {
                     return c('Calendar invite info')
-                        .jt`${participantName} asked for the latest updates to an event which does not exist anymore. You have no calendars.`;
+                        .t`${participantName} asked for the latest updates to an event which does not exist anymore. You have no calendars.`;
                 }
                 if (hasDecryptionError) {
                     // the event exists in the calendar but we couldn't decrypt it
-                    return c('Calendar invite info').jt`${participantName} asked for the latest event updates.`;
+                    return c('Calendar invite info').t`${participantName} asked for the latest event updates.`;
                 }
                 return c('Calendar invite info')
-                    .jt`${participantName} asked for the latest updates to an event which does not exist in your calendar anymore.`;
+                    .t`${participantName} asked for the latest updates to an event which does not exist in your calendar anymore.`;
             }
-            return c('Calendar invite info').jt`${participantName} asked for the latest event updates.`;
+            return c('Calendar invite info').t`${participantName} asked for the latest event updates.`;
         })();
     }
 };
@@ -292,45 +285,15 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
         const attendee = attendeeApi || attendeeIcs;
         // force unanswered partstat if the event is not in the db
         const partstat = !veventApi ? NEEDS_ACTION : attendee?.partstat || NEEDS_ACTION;
-        const role = attendee?.role || REQUIRED;
 
-        if (partstat === NEEDS_ACTION) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info').t`Your attendance at this event is required.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info').t`Your attendance at this event is optional.`;
-            }
-        }
         if (partstat === ACCEPTED) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info')
-                    .t`Your attendance at this event is required. You already accepted this invitation.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info')
-                    .t`Your attendance at this event is optional. You already accepted this invitation.`;
-            }
+            return c('Calendar invite info').t`You already accepted this invitation.`;
         }
         if (partstat === TENTATIVE) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info')
-                    .t`Your attendance at this event is required. You already tentatively accepted this invitation.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info')
-                    .t`Your attendance at this event is optional. You already tentatively accepted this invitation.`;
-            }
+            return c('Calendar invite info').t`You already tentatively accepted this invitation.`;
         }
         if (partstat === DECLINED) {
-            if (role === REQUIRED) {
-                return c('Calendar invite info')
-                    .t`Your attendance at this event is required. You already declined this invitation.`;
-            }
-            if (role === OPTIONAL) {
-                return c('Calendar invite info')
-                    .t`Your attendance at this event is optional. You already declined this invitation.`;
-            }
+            return c('Calendar invite info').t`You already declined this invitation.`;
         }
     }
 

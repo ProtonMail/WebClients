@@ -34,8 +34,8 @@ import { getDeviceNotifications } from '@proton/shared/lib/calendar/notification
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
-import { stripAllTags } from '../../../helpers/sanitize';
 
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import getFrequencyModelChange from './getFrequencyModelChange';
@@ -44,15 +44,22 @@ import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 
 import { getDateTimeState } from './time';
 
-export const getNotificationModels = ({
-    DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-    DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-}, emailNotificationsEnabled?: boolean) => {
+export const getNotificationModels = (
+    {
+        DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
+        DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
+    },
+    emailNotificationsEnabled?: boolean
+) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: emailNotificationsEnabled ? notificationsToModel(DefaultPartDayNotifications, false) : getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
-        fullDayNotifications: emailNotificationsEnabled ? notificationsToModel(DefaultFullDayNotifications, true) : getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
+        partDayNotifications: emailNotificationsEnabled
+            ? notificationsToModel(DefaultPartDayNotifications, false)
+            : getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
+        fullDayNotifications: emailNotificationsEnabled
+            ? notificationsToModel(DefaultFullDayNotifications, true)
+            : getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
     };
 };
 

@@ -1,5 +1,3 @@
-import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -41,6 +39,7 @@ import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers
 import { MessageExtendedWithData } from '../../../../models/message';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
+import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
 import ExtraEventWarning from './ExtraEventWarning';
 
@@ -52,8 +51,6 @@ const {
     EVENT_CREATION_ERROR,
     EVENT_UPDATE_ERROR,
 } = EVENT_INVITATION_ERROR_TYPE;
-
-const { DECLINECOUNTER, REPLY } = ICAL_METHOD;
 
 interface Props {
     message: MessageExtendedWithData;
@@ -119,15 +116,6 @@ const ExtraEvent = ({
     };
 
     const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs, pmData } = model;
-    const method = model.invitationIcs?.method;
-    const displayVevent =
-        method && [DECLINECOUNTER, REPLY].includes(method) && model.invitationApi?.vevent
-            ? model.invitationApi?.vevent
-            : model.invitationIcs?.vevent;
-    const title =
-        model.isImport && model.hasMultipleVevents
-            ? model.invitationIcs?.fileName || ''
-            : getDisplayTitle(displayVevent?.summary?.value);
 
     useEffect(() => {
         let unmounted = false;
@@ -282,7 +270,7 @@ const ExtraEvent = ({
 
     if (loading) {
         return (
-            <div className="rounded bordered bg-norm mb1 pl1 pr1 pt0-5 pb0-5">
+            <div className="rounded bordered bg-norm mb0-5 pl1 pr1 pt0-5 pb0-5">
                 <Loader />
             </div>
         );
@@ -314,14 +302,9 @@ const ExtraEvent = ({
     }
 
     return (
-        <div className="rounded bordered bg-norm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
-            <header className="flex flex-nowrap flex-align-items-center">
-                <Icon name="calendar-days" className="mr0-5 flex-item-noshrink" />
-                <strong className="text-ellipsis flex-item-fluid" title={title}>
-                    {title}
-                </strong>
-            </header>
+        <div className="rounded bordered bg-norm mb0-5 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
             <ExtraEventSummary model={model} />
+            <ExtraEventHeader model={model} />
             <ExtraEventWarning model={model} />
             <ExtraEventButtons model={model} setModel={setModel} message={message} />
             <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
