@@ -8,7 +8,7 @@
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
 	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
-	background-color: var(--background-norm);;
+	background-color: var(--background-norm);
 
 	@include respond-to($breakpoint-tiny, 'height') {
 		max-height: 100%;
@@ -54,7 +54,8 @@
 		transition: inherit;
 	}
 
-	&--minimized &-list {
+	&--minimized &-list,
+	&--minimized &-list-placeholder {
 		max-block-size: 0;
 		visibility: hidden;
 	}
