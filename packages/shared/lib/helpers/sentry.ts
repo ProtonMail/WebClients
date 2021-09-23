@@ -52,6 +52,7 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
             'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
             /chrome-extension/,
             /moz-extension/,
+            'TransferCancel', // User action to interrupt upload or download in Drive.
         ],
     });
 

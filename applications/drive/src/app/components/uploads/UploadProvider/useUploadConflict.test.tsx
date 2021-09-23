@@ -32,9 +32,9 @@ describe('useUploadConflict', () => {
             shareId: 'shareId',
             startDate: new Date(),
             state: TransferState.Conflict,
-            file: testFile(`${id  }.txt`),
+            file: testFile(`${id}.txt`),
             meta: {
-                filename: `${id  }.txt`,
+                filename: `${id}.txt`,
                 mimeType: 'txt',
             },
         }));
@@ -98,12 +98,23 @@ describe('useUploadConflict', () => {
             await expect(promise1).resolves.toBe(TransferConflictStrategy.Rename);
 
             expect(mockUpdateState.mock.calls.length).toBe(1);
-            expect(mockUpdateState.mock.calls[0][0]).not.toBe('file1'); // It is dynamic function.
+            expect(mockUpdateState.mock.calls[0][0]).not.toBe('file1'); // It is dynamic function check later.
             expect(mockCancelUploads.mock.calls.length).toBe(0);
 
             const conflictHandler2 = hook.current.getFileConflictHandler('file2');
             const promise2 = conflictHandler2(abortController.signal);
             await expect(promise2).resolves.toBe(TransferConflictStrategy.Rename);
+
+            // Only conflicting files are updated for file resolver.
+            const updateState = mockUpdateState.mock.calls[0][0];
+            [
+                [TransferState.Conflict, testFile('a.txt'), true],
+                [TransferState.Conflict, undefined, false],
+                [TransferState.Progress, testFile('a.txt'), false],
+                [TransferState.Progress, undefined, false],
+            ].forEach(([state, file, expectedResult]) => {
+                expect(updateState({ state, file })).toBe(expectedResult);
+            });
         });
     });
 
