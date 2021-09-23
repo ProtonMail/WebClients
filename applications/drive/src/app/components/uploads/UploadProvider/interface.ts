@@ -15,7 +15,7 @@ interface LinkUpload {
 
     startDate: Date;
     state: TransferState;
-    resumeState?: TransferState;
+    resumeState?: TransferState; // resumeState is set only when state is paused.
     error?: Error;
 }
 
