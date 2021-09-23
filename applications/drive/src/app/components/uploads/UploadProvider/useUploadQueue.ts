@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { generateUID } from '@proton/components';
 
 import { TransferState } from '../../../interfaces/transfer';
-import { isTransferPending, isTransferConflict, isTransferPaused, isTransferFinished } from '../../../utils/transfer';
+import { isTransferPending, isTransferConflict, isTransferFinished } from '../../../utils/transfer';
 import { UploadFileList, UploadFileItem, UploadFolderItem } from '../interface';
 import {
     UploadQueue,
@@ -120,7 +120,8 @@ export default function useUploadQueue() {
             const updateFileOrFolder = <T extends FileUpload | FolderUpload>(item: T) => {
                 callback?.(item);
                 const newState = newStateCallback(item);
-                item.resumeState = isTransferPaused(item) ? newState : item.state;
+                // If pause is set twice, prefer resumeState set already before.
+                item.resumeState = newState === TransferState.Paused ? item.resumeState || item.state : undefined;
                 item.state = newState;
                 if (mimeType) {
                     item.meta.mimeType = mimeType;
