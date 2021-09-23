@@ -321,7 +321,9 @@ const storeMessagesBatches = async (
             abortIndexingRef,
             recordLocalProgress
         ).catch((error: any) => {
-            esSentryReport('storeMessagesBatches: storeMessages', { error });
+            if (error.message !== 'Operation aborted') {
+                esSentryReport('storeMessagesBatches: storeMessages', { error });
+            }
 
             if (error.name === 'QuotaExceededError') {
                 const quotaRecoveryPoint: RecoveryPoint = { ID: 'QuotaExceededError', Time: -1 };
