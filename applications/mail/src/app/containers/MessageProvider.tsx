@@ -82,7 +82,9 @@ const messageEventListener =
                     // Draft updates can contains body updates but will not contains it in the event
                     // By removing the current body value in the cache, we will reload it next time we need it
                     if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                        removeBody = { initialized: undefined, data: { Body: undefined } };
+                        if (!currentValue.sending) {
+                            removeBody = { initialized: undefined, data: { Body: undefined } };
+                        }
 
                         if (isSentDraft && !isScheduled) {
                             flags.isSentDraft = true;
