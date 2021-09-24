@@ -3,7 +3,7 @@ import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
 import { STATUS_CODE, RESPONSE_CODE } from '../../../constants';
 import { MAX_UPLOAD_JOBS, MAX_RETRIES_BEFORE_FAIL } from '../constants';
 import { UploadingBlock } from './interface';
-import { Pauser } from './utils';
+import { Pauser } from './pauser';
 
 /**
  * startUploadJobs starts MAX_UPLOAD_JOBS jobs to read uploading blocks
@@ -13,11 +13,11 @@ export default async function startUploadJobs(
     pauser: Pauser,
     generator: AsyncGenerator<UploadingBlock>,
     progressCallback: (progress: number) => void,
-    uploadBlockDataCallbcak = uploadBlockData
+    uploadBlockDataCallback = uploadBlockData
 ) {
     const promises: Promise<void>[] = [];
     for (let idx = 0; idx < MAX_UPLOAD_JOBS; idx++) {
-        promises.push(startUploadJob(pauser, generator, progressCallback, uploadBlockDataCallbcak));
+        promises.push(startUploadJob(pauser, generator, progressCallback, uploadBlockDataCallback));
     }
     return Promise.all(promises);
 }
@@ -26,11 +26,11 @@ async function startUploadJob(
     pauser: Pauser,
     generator: AsyncGenerator<UploadingBlock>,
     progressCallback: (progress: number) => void,
-    uploadBlockDataCallbcak = uploadBlockData
+    uploadBlockDataCallback = uploadBlockData
 ) {
     for await (const block of generator) {
         await pauser.waitIfPaused();
-        await uploadBlock(block, pauser, progressCallback, uploadBlockDataCallbcak);
+        await uploadBlock(block, pauser, progressCallback, uploadBlockDataCallback);
     }
 }
 
@@ -38,12 +38,12 @@ async function uploadBlock(
     block: UploadingBlock,
     pauser: Pauser,
     progressCallback: (progress: number) => void,
-    uploadBlockDataCallbcak = uploadBlockData,
+    uploadBlockDataCallback = uploadBlockData,
     numRetries = 0
 ): Promise<void> {
     let progress = 0;
     const onProgress = (relativeIncrement: number) => {
-        const increment = Math.ceil(block.originalSize * relativeIncrement);
+        const increment = block.originalSize * relativeIncrement;
         if (increment !== 0) {
             progress += increment;
             progressCallback(increment);
@@ -57,13 +57,13 @@ async function uploadBlock(
     };
 
     try {
-        await uploadBlockDataCallbcak(block.uploadLink, block.encryptedData, onProgress, pauser.abortController.signal);
+        await uploadBlockDataCallback(block.uploadLink, block.encryptedData, onProgress, pauser.abortController.signal);
     } catch (err: any | XHRError) {
         resetProgress();
 
         if (pauser.isPaused) {
             await pauser.waitIfPaused();
-            return uploadBlock(block, pauser, progressCallback, uploadBlockDataCallbcak, 0);
+            return uploadBlock(block, pauser, progressCallback, uploadBlockDataCallback, 0);
         }
 
         // Upload can be cancelled at the moment when the block is already
@@ -76,7 +76,7 @@ async function uploadBlock(
 
         if (err.statusCode !== STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
             console.warn(`Failed block #${block.index} upload. Retry num: ${numRetries}`);
-            return uploadBlock(block, pauser, progressCallback, uploadBlockDataCallbcak, numRetries + 1);
+            return uploadBlock(block, pauser, progressCallback, uploadBlockDataCallback, numRetries + 1);
         }
 
         throw err;

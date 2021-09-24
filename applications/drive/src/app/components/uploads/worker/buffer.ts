@@ -3,7 +3,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link, BlockToken } from '../interface';
 import { MAX_ENCRYPTED_BLOCKS, MAX_UPLOADING_BLOCKS, MAX_UPLOAD_JOBS, WAIT_TIME } from '../constants';
 import { UploadingBlock } from './interface';
-import { waitForCondition } from './utils';
+import { waitForCondition } from './pauser';
 
 /**
  * UploadWorkerBuffer holds buffers of encrypted and uploaded blocks.

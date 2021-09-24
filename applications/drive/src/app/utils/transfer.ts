@@ -41,13 +41,7 @@ export const isTransferPending = ({ state }: { state: TransferState }) => state 
 export const isTransferFinalizing = ({ state }: { state: TransferState }) => state === TransferState.Finalizing;
 
 export const isTransferOngoing = ({ state }: { state: TransferState }) => {
-    return ![
-        TransferState.Initializing,
-        TransferState.Error,
-        TransferState.Canceled,
-        TransferState.Done,
-        TransferState.Finalizing,
-    ].includes(state);
+    return ![TransferState.Error, TransferState.Canceled, TransferState.Done, TransferState.Finalizing].includes(state);
 };
 
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
@@ -91,7 +85,10 @@ export const calculateProgress = (latestStats: TransfersStats, transfers: Transf
             acc.size += emptyFileCompensationInBytes;
         } else {
             acc.size += transfer.meta.size || 0;
-            acc.progress += latestStats.stats[transfer.id]?.progress || 0;
+            acc.progress +=
+                (transfer.state === TransferState.Done
+                    ? transfer.meta.size
+                    : latestStats.stats[transfer.id]?.progress) || 0;
         }
 
         return acc;

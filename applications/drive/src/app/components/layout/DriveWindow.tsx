@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { PrivateAppContainer, useToggle, MainLogo } from '@proton/components';
 
-import AppErrorBoundary from "../AppErrorBoundary";
-import DriveHeader from "./DriveHeader";
-import DriveSidebar from "./DriveSidebar/DriveSidebar";
+import AppErrorBoundary from '../AppErrorBoundary';
+import DriveHeader from './DriveHeader';
+import DriveSidebar from './DriveSidebar/DriveSidebar';
 
 interface Props {
     topBanners?: JSX.Element;
