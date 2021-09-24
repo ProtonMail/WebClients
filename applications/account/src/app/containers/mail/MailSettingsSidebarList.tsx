@@ -31,7 +31,7 @@ const MailSettingsSidebarList = () => {
                 {c('Settings section title').t`General`}
             </SettingsListItem>
             {spyTrackerFeature?.Value && (
-                <SettingsListItem to={`${path}/email-privacy`} icon="image">
+                <SettingsListItem to={`${path}/email-privacy`} icon="shield">
                     {c('Settings section title').t`Email privacy` /* TODO: Replace icon */}
                 </SettingsListItem>
             )}
