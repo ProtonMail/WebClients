@@ -314,7 +314,7 @@ SUMMARY:Our Blissful Anniversary
 Wonderful!
 LOCATION:A
 
-secret
+ secret
 
 
 ...
@@ -349,10 +349,10 @@ END:VEVENT`);
                         },
                     ],
                     summary: {
-                        value: 'Our Blissful Anniversary\n\n---\n\nWonderful!',
+                        value: 'Our Blissful Anniversary---Wonderful!',
                     },
                     location: {
-                        value: 'A\n\nsecret\n\n\n...\nplace',
+                        value: 'A secret...place',
                     },
                 },
             ],
