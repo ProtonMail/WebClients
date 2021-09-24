@@ -19,6 +19,7 @@ import {
 } from '@proton/shared/lib/mail/messages';
 import { generateUID } from '@proton/components';
 import { c } from 'ttag';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/squireConfig';
 import { MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
@@ -184,7 +185,7 @@ export const createNewDraft = (
     attachmentsCache: AttachmentsCache
 ): PartialMessageExtended => {
     const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
-    const { RightToLeft } = mailSettings;
+    const { FontFace, FontSize, RightToLeft } = mailSettings;
 
     let Flags = 0;
     if (mailSettings.AttachPublicKey) {
@@ -225,6 +226,13 @@ export const createNewDraft = (
         action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryptedBody
             ? insertSignature(content, senderAddress?.Signature, action, mailSettings, true)
             : insertSignature(content, senderAddress?.Signature, action, mailSettings);
+
+    content =
+        FontFace || FontSize
+            ? `<div style="font-family: ${FontFace || DEFAULT_FONT_FACE}; font-size: ${
+                  FontSize ? `${FontSize}px` : `${DEFAULT_FONT_SIZE}px`
+              };">${content}</div>`
+            : content;
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);
