@@ -16,7 +16,7 @@ export default async function* generateEncryptedBlocks(
     thumbnailData: Uint8Array | undefined,
     addressPrivateKey: OpenPGPKey,
     privateKey: OpenPGPKey,
-    sessionKey: SessionKey,
+    sessionKey: SessionKey
 ): AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock> {
     if (thumbnailData) {
         yield await encryptThumbnail(addressPrivateKey, sessionKey, thumbnailData);
@@ -29,7 +29,11 @@ export default async function* generateEncryptedBlocks(
     }
 }
 
-async function encryptThumbnail(addressPrivateKey: OpenPGPKey, sessionKey: SessionKey, thumbnail: Uint8Array): Promise<EncryptedThumbnailBlock> {
+async function encryptThumbnail(
+    addressPrivateKey: OpenPGPKey,
+    sessionKey: SessionKey,
+    thumbnail: Uint8Array
+): Promise<EncryptedThumbnailBlock> {
     const { message } = await encryptMessage({
         data: thumbnail,
         sessionKey,
@@ -49,7 +53,13 @@ async function encryptThumbnail(addressPrivateKey: OpenPGPKey, sessionKey: Sessi
     };
 }
 
-async function encryptBlock(index: number, chunk: Uint8Array, addressPrivateKey: OpenPGPKey, privateKey: OpenPGPKey, sessionKey: SessionKey) {
+async function encryptBlock(
+    index: number,
+    chunk: Uint8Array,
+    addressPrivateKey: OpenPGPKey,
+    privateKey: OpenPGPKey,
+    sessionKey: SessionKey
+) {
     const { message, signature } = await encryptMessage({
         data: chunk,
         sessionKey,

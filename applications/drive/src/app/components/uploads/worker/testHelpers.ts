@@ -14,21 +14,21 @@ export function waitFor(callback: () => boolean, timeout = 100): Promise<string>
             }
             time += WAIT_TIME;
             setTimeout(waitForCondition, WAIT_TIME);
-        }
+        };
         waitForCondition();
     });
 }
 
 export function createBlock(index: number): EncryptedBlock {
-    const data = Uint8Array.from(Array.from(`data${index}`).map(letter => letter.charCodeAt(0)));
-    const hash = Uint8Array.from(Array.from(`hash${index}`).map(letter => letter.charCodeAt(0)));
+    const data = Uint8Array.from(Array.from(`data${index}`).map((letter) => letter.charCodeAt(0)));
+    const hash = Uint8Array.from(Array.from(`hash${index}`).map((letter) => letter.charCodeAt(0)));
     return {
         index,
-        originalSize: 100+index,
+        originalSize: 100 + index,
         encryptedData: data,
         hash,
         signature: `sig${index}`,
-    }
+    };
 }
 
 export function createUploadingBlock(index: number): UploadingBlock {
@@ -38,7 +38,7 @@ export function createUploadingBlock(index: number): UploadingBlock {
         originalSize: block.originalSize,
         encryptedData: block.encryptedData,
         uploadLink: `link${index}`,
-    }
+    };
 }
 
 export function createLink(index: number): Link {
@@ -46,5 +46,5 @@ export function createLink(index: number): Link {
         index,
         token: `token${index}`,
         url: `link${index}`,
-    }
+    };
 }

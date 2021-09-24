@@ -36,8 +36,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
     const progressLimit = fileSize || 1;
     const percentageDone = Math.floor(100 * (stats.progress / progressLimit));
 
-    // If file size is 0 when finished, progress is 1/1, so that the bar is complete
-    const progress = !fileSize && isDone ? 1 : stats.progress;
+    const progress = isDone ? progressLimit : stats.progress;
     const speed = humanSize(stats.speed);
 
     return (

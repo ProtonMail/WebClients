@@ -9,7 +9,7 @@ import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
 import { UploadWorker } from '../workerController';
 import { getErrorString } from '../utils';
 
-import { Pauser } from './utils';
+import { Pauser } from './pauser';
 import UploadWorkerBuffer from './buffer';
 import generateEncryptedBlocks from './encryption';
 import startUploadJobs from './upload';
@@ -17,7 +17,7 @@ import startUploadJobs from './upload';
 initPmcrypto(openpgp);
 
 // eslint-disable-next-line no-restricted-globals
-const uploadWorker = new UploadWorker(self as any, {start, createdBlocks, pause, resume});
+const uploadWorker = new UploadWorker(self as any, { start, createdBlocks, pause, resume });
 
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
@@ -32,14 +32,17 @@ const buffer = new UploadWorkerBuffer();
  * Once the upload jobs finishes, the final result is commited on API.
  * See UploadWorkerBuffer for more details.
  */
-async function start(file: File, thumbnailData: Uint8Array | undefined, addressPrivateKey: OpenPGPKey, addressEmail: string, privateKey: OpenPGPKey, sessionKey: SessionKey) {
-    buffer.feedEncryptedBlocks(generateEncryptedBlocks(
-        file,
-        thumbnailData,
-        addressPrivateKey,
-        privateKey,
-        sessionKey,
-    )).catch((err) => uploadWorker.postError(getErrorString(err)));
+async function start(
+    file: File,
+    thumbnailData: Uint8Array | undefined,
+    addressPrivateKey: OpenPGPKey,
+    addressEmail: string,
+    privateKey: OpenPGPKey,
+    sessionKey: SessionKey
+) {
+    buffer
+        .feedEncryptedBlocks(generateEncryptedBlocks(file, thumbnailData, addressPrivateKey, privateKey, sessionKey))
+        .catch((err) => uploadWorker.postError(getErrorString(err)));
 
     buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlock?: EncryptedThumbnailBlock) => {
         uploadWorker.postCreateBlocks(blocks, thumbnailBlock);
@@ -50,7 +53,7 @@ async function start(file: File, thumbnailData: Uint8Array | undefined, addressP
         const fileHash = mergeUint8Arrays(buffer.blockHashes);
         const signature = await signMessage(fileHash, [addressPrivateKey]);
         uploadWorker.postDone(buffer.blockTokens, signature, addressEmail);
-    }
+    };
     startUploadJobs(pauser, uploadingBlocksGenerator, (progress: number) => uploadWorker.postProgress(progress))
         .then(finish)
         .catch((err) => uploadWorker.postError(getErrorString(err)));

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ContextMenu, DropdownMenuButton, Icon } from '@proton/components';
 
 import useToolbarActions from '../../../hooks/drive/useActions';
-import useFileUploadInput from '../../../hooks/drive/useFileUploadInput';
+import useFileUploadInput from '../../uploads/useUploadInput';
 
 interface Props {
     anchorRef: React.RefObject<HTMLElement>;

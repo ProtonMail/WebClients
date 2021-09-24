@@ -2,8 +2,8 @@ import { FileBrowserItem } from '../components/FileBrowser/interfaces';
 import { LinkType } from './link';
 
 export enum TransferState {
-    Pending = 'pending',
     Initializing = 'initializing',
+    Pending = 'pending',
     Conflict = 'conflict',
     Progress = 'progress',
     Finalizing = 'finalizing',
@@ -43,21 +43,12 @@ export class TransferConflict extends Error {
     }
 }
 
-export interface PreUploadData {
-    file: File;
-    ShareID: string;
-    ParentLinkID: string | Promise<string>;
-}
-
 export interface Upload {
     id: string;
     meta: TransferMeta;
-    preUploadData: PreUploadData;
     state: TransferState;
     startDate: Date;
-    resumeState?: TransferState;
     error?: Error;
-    ready?: boolean;
 }
 
 export interface DownloadInfo {

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
-import useFileUploadInput from '../../../../hooks/drive/useFileUploadInput';
+import useFileUploadInput from '../../../uploads/useUploadInput';
 
 const UploadFileButton = () => {
     const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput();

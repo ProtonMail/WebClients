@@ -10,8 +10,8 @@ import { Download, TransferType, Upload } from '../../interfaces/transfer';
 
 function useTransferControls() {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
-    const { startFolderTransfer, startFileTransfer, uploadDriveFile } = useFiles();
-    const { removeUpload, cancelUpload, pauseUpload, resumeUpload } = useUploadProvider();
+    const { startFolderTransfer, startFileTransfer } = useFiles();
+    const { pauseUploads, resumeUploads, restartUploads, removeUploads, cancelUploads } = useUploadProvider();
     const { preventLeave } = usePreventLeave();
 
     const cancel = (transfer: Download | Upload, type: TransferType) => {
@@ -23,9 +23,9 @@ function useTransferControls() {
         }
         if (type === TransferType.Upload) {
             if (isTransferFinished(transfer)) {
-                return removeUpload(transfer.id);
+                return removeUploads(transfer.id);
             }
-            return cancelUpload(transfer.id);
+            return cancelUploads(transfer.id);
         }
     };
 
@@ -34,19 +34,18 @@ function useTransferControls() {
             if (type === TransferType.Download) {
                 return resumeDownload(transfer.id);
             }
-            return resumeUpload(transfer.id);
+            return resumeUploads(transfer.id);
         }
 
         if (type === TransferType.Download) {
             return pauseDownload(transfer.id);
         }
 
-        return pauseUpload(transfer.id);
+        return pauseUploads(transfer.id);
     };
 
-    const restartDownload = async (transfer: Download) => {
-        const download = transfer;
-        removeDownload(download.id);
+    const restartDownload = async (id: string, download: Download) => {
+        removeDownload(id);
 
         if (download.type === LinkType.FILE) {
             await preventLeave(
@@ -80,19 +79,12 @@ function useTransferControls() {
         }
     };
 
-    const restartUpload = async (transfer: Upload) => {
-        const upload = transfer;
-        removeUpload(upload.id);
-        const { file, ParentLinkID, ShareID } = upload.preUploadData;
-        return preventLeave(uploadDriveFile(ShareID, ParentLinkID, file));
-    };
-
     const restart = async (transfer: Download | Upload, type: TransferType) => {
         try {
             if (type === TransferType.Download) {
-                await restartDownload(transfer as Download);
+                await restartDownload(transfer.id, transfer as Download);
             } else {
-                await restartUpload(transfer as Upload);
+                restartUploads(transfer.id);
             }
         } catch (e: any) {
             console.error(e);
@@ -100,44 +92,33 @@ function useTransferControls() {
     };
 
     const pauseTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            if (!isTransferPaused(entry.transfer)) {
-                const transferId = entry.transfer.id;
-                if (entry.type === TransferType.Download) {
-                    pauseDownload(transferId).catch(console.warn);
-                    return;
-                }
-
-                pauseUpload(transferId);
-            }
-        });
+        const notPausedEntries = entries.filter(({ transfer }) => !isTransferPaused(transfer));
+        applyToTransfers(
+            notPausedEntries,
+            (id) => {
+                pauseDownload(id).catch(console.warn);
+            },
+            pauseUploads
+        );
     };
 
     const resumeTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            if (isTransferPaused(entry.transfer)) {
-                const transferId = entry.transfer.id;
-                if (entry.type === TransferType.Download) {
-                    return resumeDownload(transferId);
-                }
-
-                resumeUpload(transferId);
-            }
-        });
+        const pausedEntries = entries.filter(({ transfer }) => isTransferPaused(transfer));
+        applyToTransfers(pausedEntries, resumeDownload, resumeUploads);
     };
 
     const cancelTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            return entry.type === TransferType.Download
-                ? cancelDownload(entry.transfer.id)
-                : cancelUpload(entry.transfer.id);
-        });
+        applyToTransfers(entries, cancelDownload, cancelUploads);
     };
 
     const restartTransfers = (entries: { transfer: Download | Upload; type: TransferType }[]) => {
-        entries.forEach((entry) => {
-            restart(entry.transfer, entry.type).catch(console.error);
-        });
+        applyToTransfers(
+            entries,
+            (id, transfer) => {
+                restartDownload(id, transfer).catch(console.error);
+            },
+            restartUploads
+        );
     };
 
     return {
@@ -152,3 +133,16 @@ function useTransferControls() {
 }
 
 export default useTransferControls;
+
+function applyToTransfers(
+    entries: { transfer: Download | Upload; type: TransferType }[],
+    downloadCallback: (id: string, transfer: Download) => void,
+    uploadCallback: (filter: (data: { id: string }) => boolean) => void
+) {
+    entries
+        .filter(({ type }) => type === TransferType.Download)
+        .forEach(({ transfer }) => downloadCallback(transfer.id, transfer as Download));
+
+    const uploadIds = entries.filter(({ type }) => type === TransferType.Upload).map(({ transfer: { id } }) => id);
+    uploadCallback(({ id }) => uploadIds.includes(id));
+}

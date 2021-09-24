@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
 
-import useFiles from '../../../hooks/drive/useFiles';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../../utils/transfer';
+import { useUploadProvider } from '../UploadProvider';
+import { UploadFileList } from '../interface';
 
 interface UploadDragDropProps {
     children: ReactNode;
@@ -16,7 +17,8 @@ interface UploadDragDropProps {
 
 const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) => {
     const { activeFolder } = useActiveShare();
-    const { uploadDriveFiles } = useFiles();
+    const { uploadFiles } = useUploadProvider();
+
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
     const overlayEnabled = !disabled;
@@ -48,7 +50,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 return;
             }
 
-            const filesToUpload: { path: string[]; file?: File }[] = [];
+            const filesToUpload: UploadFileList = [];
 
             const traverseDirectories = async (item: any, path: string[] = []) => {
                 if (item.isFile) {
@@ -64,9 +66,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 }
                 if (item.isDirectory) {
                     const reader = item.createReader();
-                    const newPath = [...path, item.name];
-
-                    filesToUpload.push({ path: newPath });
+                    filesToUpload.push({ path, folder: item.name });
 
                     // Iterates over folders recursively and puts them into filesToUpload list
                     const getEntries = async () => {
@@ -77,7 +77,9 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                             reader.readEntries(
                                 (entries: any[]) => {
                                     if (entries.length) {
-                                        entries.forEach((entry) => promises.push(traverseDirectories(entry, newPath)));
+                                        entries.forEach((entry) =>
+                                            promises.push(traverseDirectories(entry, [...path, item.name]))
+                                        );
                                         resolve(getEntries());
                                     } else {
                                         resolve();
@@ -117,7 +119,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 console.error(errors);
             }
 
-            uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload).catch((err) => {
+            uploadFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload).catch((err) => {
                 if (!isTransferCancelError(err)) {
                     console.error(err);
                 }
