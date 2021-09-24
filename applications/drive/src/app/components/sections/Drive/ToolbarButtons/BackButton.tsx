@@ -41,7 +41,7 @@ const BackButton = ({ shareId, parentLinkId, disabled }: Props) => {
 
     const getTitleText = () => {
         if (!parentLinkName) {
-            return c('Label').t`Up to the parent folder}`;
+            return c('Label').t`Up to the parent folder`;
         }
 
         return c('Label').t`Up to ${parentLinkName}`;
