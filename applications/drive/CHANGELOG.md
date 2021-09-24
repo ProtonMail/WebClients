@@ -1,3 +1,25 @@
+# [4.0.0 - Beta 20] - 2021-10-06
+
+This release is focused on improvements of existing features.
+
+## Improved
+
+-   Upload performance
+-   General thumbnail performance
+-   Thumbnails are now visible in trash and shared sections
+-   Transfer Manager sorting
+-   UI tweaks
+
+## Fixed
+
+-   Issue with uploads of multiple large files
+-   All uploads are now properly handled in bulk actions
+-   Upload % done showed wrong information
+-   Token expiration error when download was taking more than 30 min
+-   Transfer manager would not behave properly in some situations
+-   Undue 404 errors
+-   Missing security headers on /sw/ping
+
 # [4.0.0-beta.19] - 2021-09-01
 
 Just in time for the new season, this latest release improves how you secure and interact with your data. We give you more control when uploading and downloading multiple files and also made a number of fixes and UX improvements to enhance the everyday convenience of using Proton Drive.
