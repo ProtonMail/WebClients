@@ -54,7 +54,7 @@ const EmailPrivacySection = () => {
                             <label htmlFor="remoteToggle" className="text-semibold">
                                 <span className="mr0-5">{c('Label').t`Protect against email tracking`}</span>
                                 <Info
-                                    url="https://protonmail.com/support/knowledge-base/images-by-default/"
+                                    url="https://protonmail.com/support/email-tracker-protection"
                                     title={c('Info')
                                         .t`Prevents senders from knowing whether and when you have opened a message.`}
                                 />
@@ -73,12 +73,6 @@ const EmailPrivacySection = () => {
                             <SettingsLayoutLeft>
                                 <label htmlFor="remoteToggle" className="text-semibold">
                                     <span className="mr0-5">{c('Label').t`Protection mode`}</span>
-                                    <Info
-                                        url="https://protonmail.com/support/knowledge-base/images-by-default/"
-                                        title={c('Info')
-                                            .t`Prevents senders from knowing whether and when you have opened a message.`}
-                                    />
-                                    {/* TODO: Replace URL */}
                                 </label>
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight className="pt0-5">
