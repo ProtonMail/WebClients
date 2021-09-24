@@ -192,7 +192,7 @@ export default function useUploadFile() {
         };
 
         /**
-         * Replace file loads all children in the target folder and finds
+         * replaceFile loads all children in the target folder and finds
          * the link which is about to be replaced. If the original link is
          * a folder, the the whole folder is moved to trash and new file is
          * created. If the original link is file, new revision is created.
