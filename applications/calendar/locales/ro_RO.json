@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Eroare autentificare."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
+      ],
       "Email address invalid": [
         "Adresă de e-mail nevalidă"
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Process aborted": [
         "Proces abandonat."
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Cod nevalid."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Parolă mesaje incorectă. Reîncercați."
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Date de conectare incorecte. Reîncercați."
-      ],
-      "Can't validate email, try again later": [
-        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
-      ],
-      "Can't validate phone, try again later": [
-        "Nu se poate valida telefonul, reîncercați mai târziu."
-      ],
-      "Enter 6 digits": [
-        "Introduceți 6 cifre"
-      ],
-      "Invalid verification code": [
-        "Cod de verificare nevalid"
-      ],
-      "Preferences could not be saved": [
-        "Preferințele nu au putut fi salvate."
-      ],
-      "Some groups could not be deleted": [
-        "Unele grupuri nu s-au putut șterge."
-      ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Unele contacte nu s-au putut șterge"
+      ],
+      "Preferences could not be saved": [
+        "Preferințele nu au putut fi salvate."
+      ],
+      "Some groups could not be deleted": [
+        "Unele grupuri nu s-au putut șterge."
       ],
       "Invalid public key file": [
         "Cheie publică nevalidă."
@@ -157,14 +136,35 @@
       "Invalid name": [
         "Nume nevalid."
       ],
+      "Primary address key is not decrypted": [
+        "Cheia primară a adresei nu este decriptată."
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Parolă mesaje incorectă. Reîncercați."
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Date de conectare incorecte. Reîncercați."
+      ],
+      "Can't validate email, try again later": [
+        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
+      ],
+      "Can't validate phone, try again later": [
+        "Nu se poate valida telefonul, reîncercați mai târziu."
+      ],
+      "Enter 6 digits": [
+        "Introduceți 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Cheia primară a adresei nu este decriptată."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă"
@@ -196,12 +196,6 @@
       "Request timed out.": [
         "Solicitarea a expirat."
       ],
-      "Signature verification failed": [
-        "Eșuare verificare semnătură"
-      ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
       "Missing signature": [
         "Semnătură lipsă."
       ],
@@ -210,6 +204,12 @@
       ],
       "Signature not verified": [
         "Semnătură neverificată"
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "Could not find address ${ email }.": [
+        "Nu s-a putut găsi adresa ${ email }."
       ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
@@ -347,56 +347,23 @@
       "Load image": [
         "Încărcare imagine"
       ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
-      "Export": [
-        "Exportare"
-      ],
-      "Delete": [
-        "Ștergere"
-      ],
-      "Edit": [
-        "Editare"
-      ],
-      "Remove": [
-        "Eliminare"
-      ],
-      "Download": [
-        "Descărcare"
-      ],
-      "Use for sending": [
-        "Folosire pentru trimitere"
-      ],
-      "Trust": [
-        "Aprobare"
-      ],
-      "Untrust": [
-        "Dezaprobare"
-      ],
-      "Upgrade": [
-        "Migrare"
-      ],
-      "Email settings": [
-        "Setări e-mail"
-      ],
-      "Contact group": [
-        "Grup contacte"
-      ],
-      "Upload picture": [
-        "Încărcare imagine"
-      ],
       "Next month": [
         "Luna viitoare"
       ],
       "Previous month": [
         "Luna trecută"
       ],
+      "Remove": [
+        "Eliminare"
+      ],
       "Confirm opening of link ${ link }": [
         "Confirmați deschiderea legăturii ${ link }"
       ],
       "Continue with Google": [
         "Continuare cu Google"
+      ],
+      "Delete": [
+        "Ștergere"
       ],
       "Select timezone": [
         "Selectare fus orar"
@@ -409,6 +376,9 @@
       ],
       "Signing out": [
         "Deconectare"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -551,41 +521,14 @@
       "Increase": [
         "Mărire"
       ],
-      "Log in": [
-        "Conectare"
-      ],
-      "View invoice": [
-        "Afișare factură"
-      ],
-      "Get verification code": [
-        "Obținere cod de verificare"
-      ],
-      "Try another method": [
-        "Încercaţi o altă metodă"
-      ],
-      "Request new code": [
-        "Solicitare cod nou"
-      ],
-      "Did not receive the code?": [
-        "Nu ați primit codul?"
-      ],
-      "Edit email address": [
-        "Editare adresă de e-mail"
-      ],
-      "Edit phone number": [
-        "Editare număr de telefon"
-      ],
       "Save": [
         "Salvare"
       ],
+      "Upload picture": [
+        "Încărcare imagine"
+      ],
       "Add": [
         "Adăugare"
-      ],
-      "Hide advanced PGP settings": [
-        "Ascundere setări PGP avansate"
-      ],
-      "Show advanced PGP settings": [
-        "Afișare setări PGP avansate"
       ],
       "Clear data": [
         "Ștergere date"
@@ -599,8 +542,41 @@
       "Re-sign": [
         "Reînregistrare"
       ],
+      "Hide advanced PGP settings": [
+        "Ascundere setări PGP avansate"
+      ],
+      "Show advanced PGP settings": [
+        "Afișare setări PGP avansate"
+      ],
+      "Edit": [
+        "Editare"
+      ],
       "Add to group": [
         "Adăugare la grup"
+      ],
+      "Upgrade": [
+        "Migrare"
+      ],
+      "Contact group": [
+        "Grup contacte"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Download": [
+        "Descărcare"
+      ],
+      "Use for sending": [
+        "Folosire pentru trimitere"
+      ],
+      "Trust": [
+        "Aprobare"
+      ],
+      "Untrust": [
+        "Dezaprobare"
+      ],
+      "Email settings": [
+        "Setări e-mail"
       ],
       "Merge": [
         "Îmbinare"
@@ -677,6 +653,30 @@
       ],
       "Import": [
         "Importare"
+      ],
+      "Log in": [
+        "Conectare"
+      ],
+      "View invoice": [
+        "Afișare factură"
+      ],
+      "Get verification code": [
+        "Obținere cod de verificare"
+      ],
+      "Try another method": [
+        "Încercaţi o altă metodă"
+      ],
+      "Request new code": [
+        "Solicitare cod nou"
+      ],
+      "Did not receive the code?": [
+        "Nu ați primit codul?"
+      ],
+      "Edit email address": [
+        "Editare adresă de e-mail"
+      ],
+      "Edit phone number": [
+        "Editare număr de telefon"
       ],
       "Continue import": [
         ""
@@ -796,15 +796,6 @@
       ],
       "Keyboard Shortcuts": [
         "Combinații de taste"
-      ],
-      "Upgrade required": [
-        "Migrare necesară"
-      ],
-      "Email settings": [
-        "Setări e-mail"
-      ],
-      "Contact group": [
-        "Grup contacte"
       ],
       "Link confirmation": [
         "Legătură de confirmare"
@@ -926,27 +917,6 @@
       "${ appName } customization": [
         "Personalizare ${ appName }"
       ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
-      ],
-      "Invalid verification code": [
-        "Cod de verificare nevalid"
-      ],
-      "Request new code": [
-        "Solicitare cod nou"
-      ],
-      "Human verification": [
-        "Verificare persoană"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "Combinații de taste ${ appName }"
       ],
@@ -958,6 +928,12 @@
       ],
       "Composer mode": [
         "Mod editor mesaje"
+      ],
+      "Beta Access": [
+        "Acces la Beta"
+      ],
+      "Edit image": [
+        "Editare imagine"
       ],
       "Edit contact group": [
         "Editare grup de contacte"
@@ -973,30 +949,14 @@
         "Adăugare la ${ groupCount } grupuri",
         "Adăugare la ${ groupCount } de grupuri"
       ],
-      "Email settings (${ emailAddress })": [
-        "Setări e-mail (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Ștergere ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ count } grupuri de contacte",
-        "Ștergere ${ count } de grupuri de contacte"
-      ],
-      "${ emailsCount } member": [
-        "Un membru",
-        "${ emailsCount } membri",
-        "${ emailsCount } de membri"
-      ],
-      "Edit image": [
-        "Editare imagine"
-      ],
       "Edit contact": [
         "Editare contact"
       ],
       "Create contact": [
         "Creare contact"
+      ],
+      "Delete ${ Name }": [
+        "Ștergere ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Ștergere un contact",
@@ -1018,8 +978,27 @@
       "Re-sign all contacts": [
         "Resemnare toate contactele"
       ],
+      "Email settings (${ emailAddress })": [
+        "Setări e-mail (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Ștergere grup de contacte",
+        "Ștergere ${ count } grupuri de contacte",
+        "Ștergere ${ count } de grupuri de contacte"
+      ],
+      "${ emailsCount } member": [
+        "Un membru",
+        "${ emailsCount } membri",
+        "${ emailsCount } de membri"
+      ],
       "Exporting contacts": [
         "Exportare contacte"
+      ],
+      "Upgrade required": [
+        "Migrare necesară"
+      ],
+      "Contact group": [
+        "Grup contacte"
       ],
       "Other names": [
         "Alte nume"
@@ -1035,6 +1014,9 @@
       ],
       "Other information": [
         "Alte informații"
+      ],
+      "Email settings": [
+        "Setări e-mail"
       ],
       "Contact Details": [
         "Detalii contact"
@@ -1075,8 +1057,26 @@
       "Import contacts": [
         "Importare contacte"
       ],
-      "Beta Access": [
-        "Acces la Beta"
+      "Sign in again to continue": [
+        "Reconectați-vă pentru a continua"
+      ],
+      "Account suspended": [
+        "Cont suspendat"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
+      ],
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
+      ],
+      "Request new code": [
+        "Solicitare cod nou"
+      ],
+      "Human verification": [
+        "Verificare persoană"
       ],
       "Start import process": [
         ""
@@ -1224,15 +1224,6 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "support team": [
-        "echipa de suport"
-      ],
-      "No contacts added yet": [
-        "Încă nu s-au adăugat contacte"
-      ],
-      "Loading": [
-        "Se încarcă"
-      ],
       "Week": [
         "Săptămâna"
       ],
@@ -1250,6 +1241,9 @@
       ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
+      ],
+      "Loading": [
+        "Se încarcă"
       ],
       "(${ memberCount } member)": [
         "(Un membru)",
@@ -1503,6 +1497,133 @@
       "Not customizable": [
         "Nu poate fi personalizat"
       ],
+      "Expired": [
+        "Expirat"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
+      ],
+      "${ contactEmailsLength } Member": [
+        "Un membru",
+        "${ contactEmailsLength } membri",
+        "${ contactEmailsLength } de membri"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } și ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } conține adrese de e-mail multiple. Selectați adresa de e-mail sau adresele de adăugat în acest grup."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } conține adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Se verifică contactul ${ progress } din ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "S-a actualizat un contact.",
+        "S-au actualizat ${ updated } contacte.",
+        "S-au actualizat ${ updated } de contacte."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Pentru a vă recupera datele, trebuie să reactivați cheia de criptare a contactelor folosită în momentul creării datelor. Va trebui să vă amintiți parola utilizată atunci când a fost generată cheia."
+      ],
+      "Key fingerprint": [
+        "Amprentă cheie"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
+      ],
+      "No contacts added yet": [
+        "Încă nu s-au adăugat contacte"
+      ],
+      "Group assignment applied": [
+        "Atribuire grup aplicată"
+      ],
+      "Create a new contact group": [
+        "Creare grup contacte"
+      ],
+      "No group found": [
+        "Nu există grupuri"
+      ],
+      "Primary": [
+        "Primară"
+      ],
+      "Duplicate key updated": [
+        "Cheie duplicat actualizată"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
+      ],
+      "No email address": [
+        "Lipsă adresă de e-mail"
+      ],
+      "${ contactsCount } contact found": [
+        "S-a găsit un contact",
+        "S-au găsit ${ contactsCount } contacte",
+        "S-au găsit ${ contactsCount } de contacte"
+      ],
+      "${ groupCounts } group found": [
+        "S-a găsit un grup",
+        "S-au găsit ${ groupCounts } grupuri",
+        "S-au găsit ${ groupCounts } de grupuri"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
+      ],
+      "${ addressCount } email address": [
+        "O adresă de e-mail",
+        "${ addressCount } adrese de e-mail",
+        "${ addressCount } de adrese de e-mail"
+      ],
       "here": [
         "aici"
       ],
@@ -1542,129 +1663,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vă vom răspunde în termen de o zi lucrătoare."
       ],
-      "Expired": [
-        "Expirat"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
-      ],
-      "${ contactEmailsLength } Member": [
-        "Un membru",
-        "${ contactEmailsLength } membri",
-        "${ contactEmailsLength } de membri"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } și ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa de e-mail sau adresele de adăugat în acest grup."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Se verifică contactul ${ progress } din ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "S-a actualizat un contact.",
-        "S-au actualizat ${ updated } contacte.",
-        "S-au actualizat ${ updated } de contacte."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Pentru a vă recupera datele, trebuie să reactivați cheia de criptare a contactelor folosită în momentul creării datelor. Va trebui să vă amintiți parola utilizată atunci când a fost generată cheia."
-      ],
-      "Key fingerprint": [
-        "Amprentă cheie"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
-      ],
-      "Group assignment applied": [
-        "Atribuire grup aplicată"
-      ],
-      "Create a new contact group": [
-        "Creare grup contacte"
-      ],
-      "No group found": [
-        "Nu există grupuri"
-      ],
-      "Duplicate key updated": [
-        "Cheie duplicat actualizată"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
-      ],
-      "Primary": [
-        "Primară"
-      ],
-      "No email address": [
-        "Lipsă adresă de e-mail"
-      ],
-      "${ contactsCount } contact found": [
-        "S-a găsit un contact",
-        "S-au găsit ${ contactsCount } contacte",
-        "S-au găsit ${ contactsCount } de contacte"
-      ],
-      "${ groupCounts } group found": [
-        "S-a găsit un grup",
-        "S-au găsit ${ groupCounts } grupuri",
-        "S-au găsit ${ groupCounts } de grupuri"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
-      ],
-      "${ addressCount } email address": [
-        "O adresă de e-mail",
-        "${ addressCount } adrese de e-mail",
-        "${ addressCount } de adrese de e-mail"
+      "support team": [
+        "echipa de suport"
       ],
       "Import contacts": [
         ""
@@ -1958,27 +1958,6 @@
       "Hide password": [
         "Ascundere parolă"
       ],
-      "Street address": [
-        "Strada"
-      ],
-      "City": [
-        "Oraș"
-      ],
-      "Region": [
-        "Județ"
-      ],
-      "Postal code": [
-        "Cod poștal"
-      ],
-      "Country": [
-        "Țara"
-      ],
-      "Post office box": [
-        "Cutie poștală"
-      ],
-      "Extended address": [
-        "Adresa extinsă"
-      ],
       "Do not ask again": [
         "Nu mă mai întreba"
       ],
@@ -2027,11 +2006,17 @@
       "CVV code": [
         "Cod CVV"
       ],
+      "Country": [
+        "Țara"
+      ],
       "Select your country": [
         "Selectați țara"
       ],
       "ZIP": [
         "ZIP"
+      ],
+      "Postal code": [
+        "Cod poștal"
       ],
       "BTC amount:": [
         "Suma BTC:"
@@ -2050,6 +2035,84 @@
       ],
       "Proration": [
         "Credit rămas"
+      ],
+      "Cash": [
+        "Numerar"
+      ],
+      "Card holder": [
+        "Titular card"
+      ],
+      "Expires": [
+        "Expirare"
+      ],
+      "Payer": [
+        "Plătitor"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Selectați cum să arate lista de mesaje în mod implicit."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Selectați cum să arate căsuța poștală în mod implicit."
+      ],
+      "Select how your composer opens by default.": [
+        "Selectați modul în care se deschide implicit editorul de mesaje."
+      ],
+      "Enable Beta Access": [
+        "Activare acces la Beta"
+      ],
+      "Add image URL": [
+        "Adăugare URL imagine"
+      ],
+      "Upload picture": [
+        "Încărcare imagine"
+      ],
+      "Add email address": [
+        "Adăugare adresă de e-mail"
+      ],
+      "Email format": [
+        "Format e-mail"
+      ],
+      "Street address": [
+        "Strada"
+      ],
+      "City": [
+        "Oraș"
+      ],
+      "Region": [
+        "Județ"
+      ],
+      "Post office box": [
+        "Cutie poștală"
+      ],
+      "Extended address": [
+        "Adresa extinsă"
+      ],
+      "Add to group": [
+        "Adăugare la grup"
+      ],
+      "Encrypt emails": [
+        "Criptare mesaje"
+      ],
+      "Sign emails": [
+        "Semnare mesaje"
+      ],
+      "Cryptographic scheme": [
+        "Schemă criptografică"
+      ],
+      "Public keys": [
+        "Chei publice"
+      ],
+      "Automatically save contacts": [
+        "Salvare automată contacte"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
       ],
       "Cancel": [
         "Anulare"
@@ -2077,69 +2140,6 @@
       ],
       "Enter the 6-digit code": [
         "Introduceți codul din 6 cifre"
-      ],
-      "Cash": [
-        "Numerar"
-      ],
-      "Card holder": [
-        "Titular card"
-      ],
-      "Expires": [
-        "Expirare"
-      ],
-      "Payer": [
-        "Plătitor"
-      ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selectați cum să arate lista de mesaje în mod implicit."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selectați cum să arate căsuța poștală în mod implicit."
-      ],
-      "Select how your composer opens by default.": [
-        "Selectați modul în care se deschide implicit editorul de mesaje."
-      ],
-      "Add email address": [
-        "Adăugare adresă de e-mail"
-      ],
-      "Email format": [
-        "Format e-mail"
-      ],
-      "Add image URL": [
-        "Adăugare URL imagine"
-      ],
-      "Upload picture": [
-        "Încărcare imagine"
-      ],
-      "Add to group": [
-        "Adăugare la grup"
-      ],
-      "Encrypt emails": [
-        "Criptare mesaje"
-      ],
-      "Sign emails": [
-        "Semnare mesaje"
-      ],
-      "Cryptographic scheme": [
-        "Schemă criptografică"
-      ],
-      "Public keys": [
-        "Chei publice"
-      ],
-      "Automatically save contacts": [
-        "Salvare automată contacte"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2269,11 +2269,6 @@
         "Calendare abonate"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Cheia nu poate fi folosită pentru criptare."
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Ex.: "
@@ -2314,14 +2309,11 @@
       "Gift code": [
         "Cod cadou"
       ],
-      "Mailbox password": [
-        "Parolă mesaje"
+      "Image URL": [
+        "URL imagine"
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
-      ],
-      "Image URL": [
-        "URL imagine"
       ],
       "Filter groups": [
         "Filtrare grupuri"
@@ -2334,6 +2326,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
       ],
       "Add a calendar name": [
         "Adăugare nume calendar"
@@ -2366,208 +2361,73 @@
         "${ minutes } de minute"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Date criptate cu semnătură digitală verificată"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Folosiți mai multe adrese / aliasuri legate la cont, ex.: numeutilizator2@protonmail.com."
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ProtonmMail, ex.: ion.vasile@exemplu.com."
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Utilizați adresa personală utilizator@pm.me pentru a trimite mesaje."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Suportul pentru utilizatori multipli se aplică doar planurilor cu doi sau mai mulți utilizatori."
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield vă protejează dispozitivul și accelerează navigarea prin blocarea reclamelor, urmăritorilor și a programelor malițioase."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Redirecționați traficul de internet prin rețeaua Tor cu un singur clic."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Vă apără împotriva pierderii confidențialității VPN prin transmiterea traficului pe internet prin mai multe servere."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com."
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Creați mai multe adrese de e-mail legate la cont, ex. utilzator2@protonmail.com."
-      ],
-      "Discount applied for annual billing cycle": [
-        "S-a aplicat reducerea pentru plata anuală."
-      ],
-      "Discount applied for two-year billing cycle": [
-        "S-a aplicat reducerea pentru plata la doi ani."
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "„Automat” înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. „Text simplu” înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Semnarea digitală a mesajelor ajută la confirmarea că mesajele sunt trimise de către dvs."
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate la ambele capete la această adresă"
-      ],
-      "You do not have any contacts to export": [
-        "Nu aveți persoane de contact pentru exportare"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
+        "S-au găsit ${ items.length } sugestii, folosiți tastatura pentru a naviga.",
+        "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Nume"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Action": [
-        "Acțiune"
-      ],
-      "Fingerprint": [
-        "Amprenta"
-      ],
-      "Created": [
-        "Creat"
-      ],
-      "Expires": [
-        "Expirare"
-      ],
-      "Type": [
-        "Tip"
-      ],
-      "Status": [
-        "Stare"
-      ],
-      "Actions": [
-        "Acțiuni"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Automat"
-      ],
-      "Plain text": [
-        "Text simplu"
+    "Select search results": {
+      "No results found": [
+        "Nu s-au găsit rezultate"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Folosire valoare implicită globală (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Căutare fusuri orare"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Primară"
+    "Collapsible tooltip": {
+      "Open": [
+        "Deschidere"
       ],
-      "Verification only": [
-        "Doar verificare"
-      ],
-      "WKD": [
-        "Web Key Directory (WKD)"
-      ],
-      "Trusted": [
-        "Aprobată"
-      ],
-      "Revoked": [
-        "Revocată"
-      ],
-      "Expired": [
-        "Expirată"
+      "Close": [
+        "Închidere"
       ]
     },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Această funcționalitate necesită un cont Proton cu plată"
+    "Error message": {
+      "Oops, something went wrong": [
+        "Hopa, ceva nu a mers bine!"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "There was a problem connecting to Proton.": [
+        "A apărut o problemă la conectarea la Proton."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      "Please ${ refresh } or check your connection.": [
+        "Verificați conexiunea sau ${ refresh }."
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+      "Error: ${ errorMessage }": [
+        "Eroare: ${ errorMessage }"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
+      "Brace yourself till we get the error fixed.": [
+        "Așteptați până când vom rezolva eroarea."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Sigur doriți să ștergeți definitiv acest grup de contacte?"
+      "You may also ${ refresh } or try again later.": [
+        "Puteți ${ refresh } sau reîncerca mai târziu."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicații Proton"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sigur doriți să ștergeți definitiv un grup de contacte?",
-        "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
-        "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
+      "Go to ${ title }": [
+        "Salt la ${ title }"
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Sigur doriți să ștergeți definitiv acest contact?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Sigur doriți să ștergeți definitiv un contact?",
-        "Sigur doriți să ștergeți definitiv ${ count } contacte?",
-        "Sigur doriți să ștergeți definitiv ${ count } de contacte?"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Această acțiune este ireversibilă. Introduceți cuvântul ${ boldDanger } pentru a continua."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Decriptarea conținutului criptat a eșuat."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Verificarea semnăturii detaliilor acestui contact a eșuat."
-      ],
-      "The contact failed to load.": [
-        "Nu s-a putut încărca contactul."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
-      ],
-      "Contacts could not be merged": [
-        "Contactele nu au putut fi îmbinate"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Setările locale de dată și oră par să nu fie sincronizate."
+      "Go to ${ vpnName }": [
+        "Accesare ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "Adresa de e-mail a fost copiată în memorie"
-      ],
-      "Phone number copied to clipboard": [
-        "Numărul de telefon a fost copiat în memorie"
-      ],
-      "Address copied to clipboard": [
-        "Adresa a fost copiată în memorie"
       ],
       "Bug reported": [
         "Eroare raportată"
@@ -2575,25 +2435,11 @@
       "You have successfully unsubscribed": [
         "Operația de dezabonare a fost finalizată."
       ],
-      "Code sent to ${ methodTo }": [
-        "Cod trimis la ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificare reușită"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Preferințele combinațiilor de taste au fost actualizate"
       ],
       "Preference saved": [
         "Preferințe salvate"
-      ],
-      "Preferences saved": [
-        "Preferințe salvate"
-      ],
-      "Contact group deleted": [
-        "Grupul de contacte a fost șters",
-        "Grupurile de contacte au fost șterse",
-        "Grupurile de contacte au fost șterse"
       ],
       "Contact saved": [
         "Contact salvat"
@@ -2608,6 +2454,26 @@
       ],
       "Fingerprint copied to clipboard": [
         "Amprenta a fost copiată în memorie"
+      ],
+      "Preferences saved": [
+        "Preferințe salvate"
+      ],
+      "Contact group deleted": [
+        "Grupul de contacte a fost șters",
+        "Grupurile de contacte au fost șterse",
+        "Grupurile de contacte au fost șterse"
+      ],
+      "Phone number copied to clipboard": [
+        "Numărul de telefon a fost copiat în memorie"
+      ],
+      "Address copied to clipboard": [
+        "Adresa a fost copiată în memorie"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Cod trimis la ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificare reușită"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
@@ -2697,65 +2563,6 @@
         "Toate evenimentele s-au șters."
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
-        "S-au găsit ${ items.length } sugestii, folosiți tastatura pentru a naviga.",
-        "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Nu s-au găsit rezultate"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Căutare fusuri orare"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        "Deschidere"
-      ],
-      "Close": [
-        "Închidere"
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Hopa, ceva nu a mers bine!"
-      ],
-      "There was a problem connecting to Proton.": [
-        "A apărut o problemă la conectarea la Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Verificați conexiunea sau ${ refresh }."
-      ],
-      "Error: ${ errorMessage }": [
-        "Eroare: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Așteptați până când vom rezolva eroarea."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicații Proton"
-      ],
-      "Go to ${ title }": [
-        "Salt la ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Accesare ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         "Obțineți ajutor"
@@ -2775,14 +2582,24 @@
         "Setări"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
         "Activat"
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
         "Dezactivat"
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        "Activate"
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        "Dezactivate"
       ]
     },
     "Layout mode": {
@@ -2949,6 +2766,66 @@
         "Selectare"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Sigur doriți să ștergeți definitiv acest contact?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Sigur doriți să ștergeți definitiv un contact?",
+        "Sigur doriți să ștergeți definitiv ${ count } contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } de contacte?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Această acțiune este ireversibilă. Introduceți cuvântul ${ boldDanger } pentru a continua."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Sigur doriți să ștergeți definitiv acest grup de contacte?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Sigur doriți să ștergeți definitiv un grup de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Această funcționalitate necesită un cont Proton cu plată"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Decriptarea conținutului criptat a eșuat."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Verificarea semnăturii detaliilor acestui contact a eșuat."
+      ],
+      "The contact failed to load.": [
+        "Nu s-a putut încărca contactul."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
+      ],
+      "Contacts could not be merged": [
+        "Contactele nu au putut fi îmbinate"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Setările locale de dată și oră par să nu fie sincronizate."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -3060,6 +2937,77 @@
       ],
       "Unlimited": [
         "Nelimitat"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Folosiți mai multe adrese / aliasuri legate la cont, ex.: numeutilizator2@protonmail.com."
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ProtonmMail, ex.: ion.vasile@exemplu.com."
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Utilizați adresa personală utilizator@pm.me pentru a trimite mesaje."
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Suportul pentru utilizatori multipli se aplică doar planurilor cu doi sau mai mulți utilizatori."
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield vă protejează dispozitivul și accelerează navigarea prin blocarea reclamelor, urmăritorilor și a programelor malițioase."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Redirecționați traficul de internet prin rețeaua Tor cu un singur clic."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Vă apără împotriva pierderii confidențialității VPN prin transmiterea traficului pe internet prin mai multe servere."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com."
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Creați mai multe adrese de e-mail legate la cont, ex. utilzator2@protonmail.com."
+      ],
+      "Discount applied for annual billing cycle": [
+        "S-a aplicat reducerea pentru plata anuală."
+      ],
+      "Discount applied for two-year billing cycle": [
+        "S-a aplicat reducerea pentru plata la doi ani."
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "„Automat” înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. „Text simplu” înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Date criptate cu semnătură digitală verificată"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Semnarea digitală a mesajelor ajută la confirmarea că mesajele sunt trimise de către dvs."
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate la ambele capete la această adresă"
+      ],
+      "You do not have any contacts to export": [
+        "Nu aveți persoane de contact pentru exportare"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3401,28 +3349,6 @@
         "Gratuit"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Factură restantă"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuală"
-      ],
-      "No verification method available": [
-        "Nici o metodă de verificare disponibilă"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Card nou de credit / debit"
@@ -3432,6 +3358,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
       ]
     },
     "Label to change density": {
@@ -3456,14 +3395,6 @@
       ],
       "Maximized": [
         "Maximizat"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Grup de contacte actualizat"
-      ],
-      "Contact group created": [
-        "Grup de contacte creat"
       ]
     },
     "Label for contact group name": {
@@ -3531,6 +3462,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Nume"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Action": [
+        "Acțiune"
+      ],
+      "Fingerprint": [
+        "Amprenta"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Expirare"
+      ],
+      "Type": [
+        "Tip"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Actions": [
+        "Acțiuni"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Grup de contacte actualizat"
+      ],
+      "Contact group created": [
+        "Grup de contacte creat"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automat"
+      ],
+      "Plain text": [
+        "Text simplu"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Folosire valoare implicită globală (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Primară"
+      ],
+      "Verification only": [
+        "Doar verificare"
+      ],
+      "WKD": [
+        "Web Key Directory (WKD)"
+      ],
+      "Trusted": [
+        "Aprobată"
+      ],
+      "Revoked": [
+        "Revocată"
+      ],
+      "Expired": [
+        "Expirată"
       ]
     },
     "TableHeader": {
@@ -3722,17 +3723,31 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+    "Select files": {
+      "Upload": [
+        "Încărcare"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factură restantă"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuală"
+      ],
+      "No verification method available": [
+        "Nici o metodă de verificare disponibilă"
       ]
     },
     "Loading info": {
@@ -3754,11 +3769,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Încărcare"
       ]
     },
     "Message display when a new app version is available": {
@@ -3930,17 +3940,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Anulare eveniment ce are loc ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Invitație la un eveniment ce are loc ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Actualizarea unui eveniment ce are loc ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Anulare eveniment care începe ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Invitație la un eveniment care începe ${ formattedStart }"
@@ -3948,8 +3952,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Actualizarea unui eveniment care începe ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Invitație: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Anulare eveniment ce are loc ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Anulare eveniment care începe ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4446,13 +4453,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter.",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nume"
@@ -4567,9 +4567,11 @@
         "Adresa"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter.",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
       ]
     },
     "Keyboard shortcut section name": {
@@ -4791,6 +4793,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
       ]
     },
     "Message": {

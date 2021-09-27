@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Σφάλμα ελέγχου ταυτότητας."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
+      ],
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
       ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
       "Process aborted": [
         "Η διαδικασία ακυρώθηκε"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
-      ],
-      "Can't validate email, try again later": [
-        "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Enter 6 digits": [
-        "Εισάγετε 6 ψηφία"
-      ],
-      "Invalid verification code": [
-        "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Preferences could not be saved": [
-        "Δεν ήταν δυνατή η αποθήκευση των προτιμήσεων"
-      ],
-      "Some groups could not be deleted": [
-        ""
-      ],
       "Image upload failed": [
         "Η μεταφόρτωση της εικόνας απέτυχε"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Ορισμένες επαφές δεν μπόρεσαν να διαγραφούν"
+      ],
+      "Preferences could not be saved": [
+        "Δεν ήταν δυνατή η αποθήκευση των προτιμήσεων"
+      ],
+      "Some groups could not be deleted": [
+        ""
       ],
       "Invalid public key file": [
         "Μη έγκυρο δημόσιο κλειδί (public key)"
@@ -155,14 +134,35 @@
       "Invalid name": [
         "Μη έγκυρο όνομα"
       ],
+      "Primary address key is not decrypted": [
+        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
+      ],
+      "Can't validate email, try again later": [
+        "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
+      ],
+      "Can't validate phone, try again later": [
+        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
+      ],
+      "Enter 6 digits": [
+        "Εισάγετε 6 ψηφία"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -194,12 +194,6 @@
       "Request timed out.": [
         "Λήξη χρονικού ορίου αιτήματος."
       ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
-      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -208,6 +202,12 @@
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
@@ -341,56 +341,23 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
-      "Export": [
-        "Εξαγωγή"
-      ],
-      "Delete": [
-        "Διαγραφή"
-      ],
-      "Edit": [
-        "Επεξεργασία"
-      ],
-      "Remove": [
-        "Αφαίρεση"
-      ],
-      "Download": [
-        "Λήψη"
-      ],
-      "Use for sending": [
-        "Χρησιμοποιήστε την για αποστολή"
-      ],
-      "Trust": [
-        "Αξιόπιστο"
-      ],
-      "Untrust": [
-        "Μη αξιόπιστο"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Email settings": [
-        "Ρυθμίσεις Email"
-      ],
-      "Contact group": [
-        "Ομάδα Επαφών"
-      ],
-      "Upload picture": [
-        "Μεταφόρτωση Εικόνας"
-      ],
       "Next month": [
         "Επόμενος μήνας"
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
       ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
       "Confirm opening of link ${ link }": [
         ""
       ],
       "Continue with Google": [
         "Συνεχίστε με Google"
+      ],
+      "Delete": [
+        "Διαγραφή"
       ],
       "Select timezone": [
         "Επιλογή ζώνης ώρας"
@@ -403,6 +370,9 @@
       ],
       "Signing out": [
         "Αποσύνδεση"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Copy email to clipboard": [
         ""
@@ -545,41 +515,14 @@
       "Increase": [
         "Αύξηση"
       ],
-      "Log in": [
-        "Είσοδος"
-      ],
-      "View invoice": [
-        "Προβολή τιμολογίου"
-      ],
-      "Get verification code": [
-        "Απόκτηση κωδικού επαλήθευσης"
-      ],
-      "Try another method": [
-        "Δοκιμάστε μια άλλη μέθοδο"
-      ],
-      "Request new code": [
-        "Ζητήστε νέο κωδικό"
-      ],
-      "Did not receive the code?": [
-        "Δεν λάβατε τον κωδικό;"
-      ],
-      "Edit email address": [
-        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Edit phone number": [
-        "Επεξεργασία αριθμού τηλεφώνου"
-      ],
       "Save": [
         "Αποθήκευση"
       ],
+      "Upload picture": [
+        "Μεταφόρτωση Εικόνας"
+      ],
       "Add": [
         "Προσθήκη"
-      ],
-      "Hide advanced PGP settings": [
-        "Απόκρυψη προηγμένων ρυθμίσεων PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Εμφάνιση προηγμένων ρυθμίσεων PGP"
       ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
@@ -593,8 +536,41 @@
       "Re-sign": [
         "Επανασυνδεθείτε"
       ],
+      "Hide advanced PGP settings": [
+        "Απόκρυψη προηγμένων ρυθμίσεων PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Εμφάνιση προηγμένων ρυθμίσεων PGP"
+      ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Contact group": [
+        "Ομάδα Επαφών"
+      ],
+      "Export": [
+        "Εξαγωγή"
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Use for sending": [
+        "Χρησιμοποιήστε την για αποστολή"
+      ],
+      "Trust": [
+        "Αξιόπιστο"
+      ],
+      "Untrust": [
+        "Μη αξιόπιστο"
+      ],
+      "Email settings": [
+        "Ρυθμίσεις Email"
       ],
       "Merge": [
         "Συγχώνευση"
@@ -669,6 +645,30 @@
       ],
       "Import": [
         "Εισαγωγή"
+      ],
+      "Log in": [
+        "Είσοδος"
+      ],
+      "View invoice": [
+        "Προβολή τιμολογίου"
+      ],
+      "Get verification code": [
+        "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Try another method": [
+        "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Did not receive the code?": [
+        "Δεν λάβατε τον κωδικό;"
+      ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Edit phone number": [
+        "Επεξεργασία αριθμού τηλεφώνου"
       ],
       "Continue import": [
         ""
@@ -788,15 +788,6 @@
       ],
       "Keyboard Shortcuts": [
         "Συντομεύσεις Πληκτρολογίου"
-      ],
-      "Upgrade required": [
-        "Απαιτείται Ενημέρωση"
-      ],
-      "Email settings": [
-        "Ρυθμίσεις Email"
-      ],
-      "Contact group": [
-        "Ομάδα Επαφών"
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
@@ -918,27 +909,6 @@
       "${ appName } customization": [
         "Προσαρμογή ${ appName }"
       ],
-      "Sign in again to continue": [
-        "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
-      ],
-      "Invalid verification code": [
-        "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Request new code": [
-        "Ζητήστε νέο κωδικό"
-      ],
-      "Human verification": [
-        "Ανθρώπινη Επαλήθευση"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Συντομεύσεις πληκτρολογίου"
       ],
@@ -950,6 +920,12 @@
       ],
       "Composer mode": [
         "Λειτουργία σύνθεσης"
+      ],
+      "Beta Access": [
+        ""
+      ],
+      "Edit image": [
+        "Επεξεργασία εικόνας"
       ],
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
@@ -964,28 +940,14 @@
         "Προσθέστε στη ${ groupCount } ομάδα επαφών",
         "Προσθέστε στις ${ groupCount } ομάδες επαφών"
       ],
-      "Email settings (${ emailAddress })": [
-        "Ρυθμίσεις Email (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Διαγραφή ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Διαγραφή ${ count } ομάδα επαφών",
-        "Διαγραφή ${ count } ομάδες επαφών"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } μέλος",
-        "${ emailsCount } μέλη"
-      ],
-      "Edit image": [
-        "Επεξεργασία εικόνας"
-      ],
       "Edit contact": [
         "Επεξεργασία επαφής"
       ],
       "Create contact": [
         "Δημιουργία επαφής"
+      ],
+      "Delete ${ Name }": [
+        "Διαγραφή ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
@@ -1006,8 +968,25 @@
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
       ],
+      "Email settings (${ emailAddress })": [
+        "Ρυθμίσεις Email (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Διαγραφή ${ count } ομάδα επαφών",
+        "Διαγραφή ${ count } ομάδες επαφών"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } μέλος",
+        "${ emailsCount } μέλη"
+      ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
+      ],
+      "Upgrade required": [
+        "Απαιτείται Ενημέρωση"
+      ],
+      "Contact group": [
+        "Ομάδα Επαφών"
       ],
       "Other names": [
         "Άλλα ονόματα"
@@ -1023,6 +1002,9 @@
       ],
       "Other information": [
         "Άλλες πληροφορίες"
+      ],
+      "Email settings": [
+        "Ρυθμίσεις Email"
       ],
       "Contact Details": [
         "Λεπτομέρειες Επαφής"
@@ -1063,8 +1045,26 @@
       "Import contacts": [
         "Εισαγωγή επαφών"
       ],
-      "Beta Access": [
-        ""
+      "Sign in again to continue": [
+        "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Account suspended": [
+        "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό σας"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Human verification": [
+        "Ανθρώπινη Επαλήθευση"
       ],
       "Start import process": [
         ""
@@ -1212,15 +1212,6 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "support team": [
-        "ομάδα υποστήριξης"
-      ],
-      "No contacts added yet": [
-        "Δεν έχουν προστεθεί επαφές ακόμα"
-      ],
-      "Loading": [
-        "Φόρτωση"
-      ],
       "Week": [
         "Εβδομάδα"
       ],
@@ -1238,6 +1229,9 @@
       ],
       "Drop the file here to upload": [
         "Αφήστε το αρχείο εδώ για μεταφόρτωση"
+      ],
+      "Loading": [
+        "Φόρτωση"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
@@ -1488,6 +1482,128 @@
       "Not customizable": [
         "Μη παραμετροποιήσιμο"
       ],
+      "Expired": [
+        "Έχει λήξει"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Μέλος",
+        "${ contactEmailsLength } Μέλη"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } και ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Έλεγχος επαφής ${ progress } από ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } επαφή ενημερώθηκε επιτυχώς.",
+        "${ updated } επαφές ενημερώθηκαν επιτυχώς."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί κρυπτογράφησης επαφής που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιείται όταν δημιουργήθηκε το κλειδί."
+      ],
+      "Key fingerprint": [
+        "Κλειδί αποτυπώματος"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Δεν μπορείτε να θυμηθείτε τον κωδικό σας? Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "Το PGP / MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία σύνθεσης. Σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
+      ],
+      "No contacts added yet": [
+        "Δεν έχουν προστεθεί επαφές ακόμα"
+      ],
+      "Group assignment applied": [
+        "Εφαρμογή ομαδικής εκχώρησης"
+      ],
+      "Create a new contact group": [
+        "Δημιουργία νέας ομάδας επαφών"
+      ],
+      "No group found": [
+        "Καμία ομάδα δεν βρέθηκε"
+      ],
+      "Primary": [
+        "Κύριο"
+      ],
+      "Duplicate key updated": [
+        "Το διπλότυπο κλειδί ενημερώθηκε"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "No email address": [
+        "Δεν υπάρχει διεύθυνση E-mail"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } επαφή βρέθηκε",
+        "${ contactsCount } επαφές βρέθηκαν"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } ομάδα βρέθηκε",
+        "${ groupCounts } ομάδες βρέθηκαν"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Υποστηρίζουμε την εισαγωγή αρχείων CSV από το Outlook, το Outlook Express, το Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές. Υποστηρίζουμε επίσης την εισαγωγή του vCard 4.0. (Κωδικοποίηση UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "here": [
         "εδώ"
       ],
@@ -1527,124 +1643,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
-      "Expired": [
-        "Έχει λήξει"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Μέλος",
-        "${ contactEmailsLength } Μέλη"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } και ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "Το PGP / MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία σύνθεσης. Σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Έλεγχος επαφής ${ progress } από ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } επαφή ενημερώθηκε επιτυχώς.",
-        "${ updated } επαφές ενημερώθηκαν επιτυχώς."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί κρυπτογράφησης επαφής που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιείται όταν δημιουργήθηκε το κλειδί."
-      ],
-      "Key fingerprint": [
-        "Κλειδί αποτυπώματος"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Δεν μπορείτε να θυμηθείτε τον κωδικό σας? Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
-      ],
-      "Group assignment applied": [
-        "Εφαρμογή ομαδικής εκχώρησης"
-      ],
-      "Create a new contact group": [
-        "Δημιουργία νέας ομάδας επαφών"
-      ],
-      "No group found": [
-        "Καμία ομάδα δεν βρέθηκε"
-      ],
-      "Duplicate key updated": [
-        "Το διπλότυπο κλειδί ενημερώθηκε"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "Κύριο"
-      ],
-      "No email address": [
-        "Δεν υπάρχει διεύθυνση E-mail"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } επαφή βρέθηκε",
-        "${ contactsCount } επαφές βρέθηκαν"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } ομάδα βρέθηκε",
-        "${ groupCounts } ομάδες βρέθηκαν"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Υποστηρίζουμε την εισαγωγή αρχείων CSV από το Outlook, το Outlook Express, το Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές. Υποστηρίζουμε επίσης την εισαγωγή του vCard 4.0. (Κωδικοποίηση UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
-        "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      "support team": [
+        "ομάδα υποστήριξης"
       ],
       "Import contacts": [
         ""
@@ -1938,27 +1938,6 @@
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
-      "Street address": [
-        "Οδός"
-      ],
-      "City": [
-        "Πόλη"
-      ],
-      "Region": [
-        "Περιοχή"
-      ],
-      "Postal code": [
-        "Ταχυδρομικός κώδικας"
-      ],
-      "Country": [
-        "Χώρα"
-      ],
-      "Post office box": [
-        "Ταχυδρομική θυρίδα"
-      ],
-      "Extended address": [
-        "Εκτεταμένη διεύθυνση"
-      ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
       ],
@@ -2007,11 +1986,17 @@
       "CVV code": [
         "Κωδικός CVV"
       ],
+      "Country": [
+        "Χώρα"
+      ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
       ],
       "ZIP": [
         "T.K"
+      ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
       ],
       "BTC amount:": [
         "Ποσό BTC:"
@@ -2030,6 +2015,84 @@
       ],
       "Proration": [
         "Προμήθεια"
+      ],
+      "Cash": [
+        "Μετρητά"
+      ],
+      "Card holder": [
+        "Κάτοχος κάρτας"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Payer": [
+        "Πληρωτής"
+      ],
+      "Keyboard shortcuts": [
+        "Συντομεύσεις πληκτρολογίου"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
+      ],
+      "Add image URL": [
+        "Προσθήκη εικόνας με URL"
+      ],
+      "Upload picture": [
+        "Μεταφόρτωση Εικόνας"
+      ],
+      "Add email address": [
+        "Προσθήκη διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email format": [
+        "Μορφή ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Street address": [
+        "Οδός"
+      ],
+      "City": [
+        "Πόλη"
+      ],
+      "Region": [
+        "Περιοχή"
+      ],
+      "Post office box": [
+        "Ταχυδρομική θυρίδα"
+      ],
+      "Extended address": [
+        "Εκτεταμένη διεύθυνση"
+      ],
+      "Add to group": [
+        "Προσθήκη στην ομάδα"
+      ],
+      "Encrypt emails": [
+        "Κρυπτογραφημένα E-mails"
+      ],
+      "Sign emails": [
+        "Υπογραφή ηλεκτρονικών ταχυδρομείων"
+      ],
+      "Cryptographic scheme": [
+        "Σχέδιο Κρυπτογράφησης"
+      ],
+      "Public keys": [
+        "Δημόσια κλειδιά"
+      ],
+      "Automatically save contacts": [
+        "Αυτόματη αποθήκευση επαφών"
+      ],
+      "Import contacts": [
+        "Εισαγωγή επαφών"
+      ],
+      "Export contacts": [
+        "Εξαγωγή Επαφών"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -2057,69 +2120,6 @@
       ],
       "Enter the 6-digit code": [
         "Εισάγετε τον 6-ψήφιο κωδικό"
-      ],
-      "Cash": [
-        "Μετρητά"
-      ],
-      "Card holder": [
-        "Κάτοχος κάρτας"
-      ],
-      "Expires": [
-        "Λήγει"
-      ],
-      "Payer": [
-        "Πληρωτής"
-      ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Add email address": [
-        "Προσθήκη διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Email format": [
-        "Μορφή ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Add image URL": [
-        "Προσθήκη εικόνας με URL"
-      ],
-      "Upload picture": [
-        "Μεταφόρτωση Εικόνας"
-      ],
-      "Add to group": [
-        "Προσθήκη στην ομάδα"
-      ],
-      "Encrypt emails": [
-        "Κρυπτογραφημένα E-mails"
-      ],
-      "Sign emails": [
-        "Υπογραφή ηλεκτρονικών ταχυδρομείων"
-      ],
-      "Cryptographic scheme": [
-        "Σχέδιο Κρυπτογράφησης"
-      ],
-      "Public keys": [
-        "Δημόσια κλειδιά"
-      ],
-      "Automatically save contacts": [
-        "Αυτόματη αποθήκευση επαφών"
-      ],
-      "Import contacts": [
-        "Εισαγωγή επαφών"
-      ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
-      "Enable Beta Access": [
-        ""
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2248,11 +2248,6 @@
         ""
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Π.χ., "
@@ -2293,14 +2288,11 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
+      "Image URL": [
+        "Διεύθυνση εικόνας URL"
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Image URL": [
-        "Διεύθυνση εικόνας URL"
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
@@ -2313,6 +2305,9 @@
       ],
       "Name": [
         "Όνομα"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
       ],
       "Add a calendar name": [
         "Προσθέστε ένα όνομα ημερολογίου"
@@ -2343,206 +2338,72 @@
         "${ minutes } λεπτά"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Χρήση πολλαπλών διευθύνσεων / ψευδωνύμων που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ProtonMail, π.χ. john.smith@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        ""
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πλάνο με 2 ή περισσότερους χρήστες"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Το NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου Tor με ένα μόνο κλικ."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Υπερασπίζεται τις απειλές για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο Διαδίκτυο μέσω πολλών servers."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ProtonVPN όσο και για το ProtonMail (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ${ mailAppName }, π.χ. john.smith@example.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        ""
-      ],
-      "Discount applied for annual billing cycle": [
-        "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Η ψηφιακή υπογραφή μηνυμάτων e-mail βοηθά στην εξακρίβωση ταυτότητας, ότι τα μηνύματα αποστέλλονται από εσάς"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Μεταφορτώστε ένα δημόσιο κλειδί (public key), για να ενεργοποιήσετε την αποστολή από άκρο σε άκρο κρυπτογραφημένων ηλεκτρονικών μηνυμάτων, από το ένα email σε άλλο email, στο παρόν μήνυμα ηλεκτρονικού ταχυδρομείου"
-      ],
-      "You do not have any contacts to export": [
-        "Δεν έχετε επαφές προς εξαγωγή"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Όνομα"
-      ],
-      "Address": [
-        "Διεύθυνση"
-      ],
-      "Action": [
-        "Ενέργεια"
-      ],
-      "Fingerprint": [
-        "Δακτυλικό αποτύπωμα"
-      ],
-      "Created": [
-        "Δημιουργήθηκε"
-      ],
-      "Expires": [
-        "Λήγει"
-      ],
-      "Type": [
-        "Τύπος"
-      ],
-      "Status": [
-        "Κατάσταση"
-      ],
-      "Actions": [
-        "Ενέργειες"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Αυτόματο"
-      ],
-      "Plain text": [
-        "Απλό κείμενο"
+    "Select search results": {
+      "No results found": [
+        "Δεν βρέθηκαν αποτελέσματα"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Χρησιμοποιήστε την παγκόσμια προεπιλογή (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        ""
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Κύριο"
+    "Collapsible tooltip": {
+      "Open": [
+        ""
       ],
-      "Verification only": [
-        "Μόνο επαλήθευση"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Αξιόπιστο"
-      ],
-      "Revoked": [
-        "Έχει ανακληθεί"
-      ],
-      "Expired": [
-        "Έχει λήξει"
+      "Close": [
+        ""
       ]
     },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Αυτή η λειτουργία απαιτεί πληρωμένο λογαριασμό Proton"
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ωχ, κάτι πήγε στραβά"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "There was a problem connecting to Proton.": [
+        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+      "Please ${ refresh } or check your connection.": [
+        "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        ""
+      "Error: ${ errorMessage }": [
+        "Σφάλμα: ${ errorMessage }"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
+      "Brace yourself till we get the error fixed.": [
+        "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"
+      "You may also ${ refresh } or try again later.": [
+        "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Εφαρμογές Proton"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "",
-        ""
+      "Go to ${ title }": [
+        "Πηγαίνετε στο ${ title }"
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου απέτυχε."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Η επαλήθευση της υπογραφής των στοιχείων επαφής απέτυχε."
-      ],
-      "The contact failed to load.": [
-        "Η επαφή απέτυχε να φορτωθεί."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
-      ],
-      "Contacts could not be merged": [
-        "Δεν ήταν δυνατή η συγχώνευση των επαφών"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        ""
+      "Go to ${ vpnName }": [
+        "Πηγαίνετε στο ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
-      ],
-      "Phone number copied to clipboard": [
-        "Το τηλέφωνο αντιγράφηκε στο πρόχειρο"
-      ],
-      "Address copied to clipboard": [
-        "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
@@ -2550,24 +2411,11 @@
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
       ],
-      "Code sent to ${ methodTo }": [
-        "Ο κωδικός στάλθηκε στο ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Επιτυχία επαλήθευσης"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
-      ],
-      "Preferences saved": [
-        "Οι προτιμήσεις αποθηκεύτηκαν"
-      ],
-      "Contact group deleted": [
-        "",
-        ""
       ],
       "Contact saved": [
         "Η επαφή αποθηκεύτηκε"
@@ -2581,6 +2429,25 @@
       ],
       "Fingerprint copied to clipboard": [
         "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
+      ],
+      "Preferences saved": [
+        "Οι προτιμήσεις αποθηκεύτηκαν"
+      ],
+      "Contact group deleted": [
+        "",
+        ""
+      ],
+      "Phone number copied to clipboard": [
+        "Το τηλέφωνο αντιγράφηκε στο πρόχειρο"
+      ],
+      "Address copied to clipboard": [
+        "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Επιτυχία επαλήθευσης"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2670,64 +2537,6 @@
         "Όλες οι εκδηλώσεις διαγράφηκαν"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Δεν βρέθηκαν αποτελέσματα"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        ""
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ωχ, κάτι πήγε στραβά"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
-      ],
-      "Error: ${ errorMessage }": [
-        "Σφάλμα: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
-      ],
-      "Go to ${ title }": [
-        "Πηγαίνετε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Πηγαίνετε στο ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         ""
@@ -2747,14 +2556,24 @@
         "Ρυθμίσεις"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Ενεργό"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Ανενεργό"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2921,6 +2740,64 @@
         "Επιλέξτε"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "",
+        ""
+      ],
+      "This feature requires a paid Proton account": [
+        "Αυτή η λειτουργία απαιτεί πληρωμένο λογαριασμό Proton"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου απέτυχε."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Η επαλήθευση της υπογραφής των στοιχείων επαφής απέτυχε."
+      ],
+      "The contact failed to load.": [
+        "Η επαφή απέτυχε να φορτωθεί."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
+      ],
+      "Contacts could not be merged": [
+        "Δεν ήταν δυνατή η συγχώνευση των επαφών"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        ""
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
@@ -3032,6 +2909,77 @@
       ],
       "Unlimited": [
         "Απεριόριστο"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Χρήση πολλαπλών διευθύνσεων / ψευδωνύμων που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ProtonMail, π.χ. john.smith@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πλάνο με 2 ή περισσότερους χρήστες"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Το NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου Tor με ένα μόνο κλικ."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Υπερασπίζεται τις απειλές για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο Διαδίκτυο μέσω πολλών servers."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ProtonVPN όσο και για το ProtonMail (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ${ mailAppName }, π.χ. john.smith@example.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Η ψηφιακή υπογραφή μηνυμάτων e-mail βοηθά στην εξακρίβωση ταυτότητας, ότι τα μηνύματα αποστέλλονται από εσάς"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Μεταφορτώστε ένα δημόσιο κλειδί (public key), για να ενεργοποιήσετε την αποστολή από άκρο σε άκρο κρυπτογραφημένων ηλεκτρονικών μηνυμάτων, από το ένα email σε άλλο email, στο παρόν μήνυμα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "You do not have any contacts to export": [
+        "Δεν έχετε επαφές προς εξαγωγή"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3362,28 +3310,6 @@
         "Δωρεάν"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Εκπρόθεσμο τιμολόγιο"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Χειροκίνητα"
-      ],
-      "No verification method available": [
-        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
@@ -3393,6 +3319,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        ""
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        ""
       ]
     },
     "Label to change density": {
@@ -3417,14 +3356,6 @@
       ],
       "Maximized": [
         "Μεγιστοποιημένος"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Η ομάδα επαφών ενημερώθηκε"
-      ],
-      "Contact group created": [
-        "Η ομάδα επαφών δημιουργήθηκε"
       ]
     },
     "Label for contact group name": {
@@ -3489,6 +3420,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Κρυπτογράφηση και εισαγωγή επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Όνομα"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "Action": [
+        "Ενέργεια"
+      ],
+      "Fingerprint": [
+        "Δακτυλικό αποτύπωμα"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Type": [
+        "Τύπος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Actions": [
+        "Ενέργειες"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Η ομάδα επαφών ενημερώθηκε"
+      ],
+      "Contact group created": [
+        "Η ομάδα επαφών δημιουργήθηκε"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Αυτόματο"
+      ],
+      "Plain text": [
+        "Απλό κείμενο"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Χρησιμοποιήστε την παγκόσμια προεπιλογή (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Κύριο"
+      ],
+      "Verification only": [
+        "Μόνο επαλήθευση"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Αξιόπιστο"
+      ],
+      "Revoked": [
+        "Έχει ανακληθεί"
+      ],
+      "Expired": [
+        "Έχει λήξει"
       ]
     },
     "TableHeader": {
@@ -3672,17 +3673,31 @@
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        ""
+    "Select files": {
+      "Upload": [
+        "Μεταφόρτωση"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        ""
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Εκπρόθεσμο τιμολόγιο"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Χειροκίνητα"
+      ],
+      "No verification method available": [
+        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
       ]
     },
     "Loading info": {
@@ -3704,11 +3719,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Μεταφόρτωση"
       ]
     },
     "Message display when a new app version is available": {
@@ -3876,17 +3886,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Πρόσκληση για μια εκδήλωση στις ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Ενημέρωση για μια εκδήλωση στις ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Πρόσκληση για μια εκδήλωση που αρχίζει στις ${ formattedStart }"
@@ -3894,8 +3898,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Πρόσκληση: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4355,12 +4362,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Όνομα"
@@ -4475,9 +4476,10 @@
         "Διεύθυνση"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
       ]
     },
     "Keyboard shortcut section name": {
@@ -4699,6 +4701,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Message": {

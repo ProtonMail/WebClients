@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
+      ],
       "Email address invalid": [
         "E-mailadresse ugyldig"
       ],
       "This field is required": [
         "Dette felt skal udfyldes"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "Process aborted": [
         "Proces afbrudt"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Forkerte login-oplysninger. Prøv venligst igen"
-      ],
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefon, prøv igen senere"
-      ],
-      "Enter 6 digits": [
-        "Indtast 6 cifre"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
-      "Preferences could not be saved": [
-        "Præferencer kunne ikke gemmes"
-      ],
-      "Some groups could not be deleted": [
-        "Nogle grupper kunne ikke slettes"
-      ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Nogle kontakter kunne ikke slettes"
+      ],
+      "Preferences could not be saved": [
+        "Præferencer kunne ikke gemmes"
+      ],
+      "Some groups could not be deleted": [
+        "Nogle grupper kunne ikke slettes"
       ],
       "Invalid public key file": [
         "Ugyldig offentlig nøglefil"
@@ -155,14 +134,35 @@
       "Invalid name": [
         "Ugyldigt navn"
       ],
+      "Primary address key is not decrypted": [
+        "Primære adressenøgle er ikke dekrypteret"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Forkert adgangskode til postkasse. Prøv venligst igen"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Forkerte login-oplysninger. Prøv venligst igen"
+      ],
+      "Can't validate email, try again later": [
+        "Kan ikke bekræfte e-mail, prøv igen senere"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan ikke bekræfte telefon, prøv igen senere"
+      ],
+      "Enter 6 digits": [
+        "Indtast 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Primære adressenøgle er ikke dekrypteret"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -194,12 +194,6 @@
       "Request timed out.": [
         "Forespørgsel fik timeout."
       ],
-      "Signature verification failed": [
-        "Bekræftelse af signatur mislykkedes"
-      ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
-      ],
       "Missing signature": [
         "Manglende signatur"
       ],
@@ -208,6 +202,12 @@
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
+      ],
+      "Signature verification failed": [
+        "Bekræftelse af signatur mislykkedes"
+      ],
+      "Could not find address ${ email }.": [
+        "Kunne ikke finde adresse ${ email }."
       ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
@@ -341,56 +341,23 @@
       "Load image": [
         "Indlæs billede"
       ],
-      "refresh the page": [
-        "genopfrisk siden"
-      ],
-      "Export": [
-        "Exportér"
-      ],
-      "Delete": [
-        "Slet"
-      ],
-      "Edit": [
-        "Redigér"
-      ],
-      "Remove": [
-        "Fjern"
-      ],
-      "Download": [
-        "Download"
-      ],
-      "Use for sending": [
-        "Brug til afsendelse"
-      ],
-      "Trust": [
-        "Gør betroet"
-      ],
-      "Untrust": [
-        "Ikke længere betroet"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Email settings": [
-        "E-mailindstillinger"
-      ],
-      "Contact group": [
-        "Kontaktgruppe"
-      ],
-      "Upload picture": [
-        "Overfør billede"
-      ],
       "Next month": [
         "Næste måned"
       ],
       "Previous month": [
         "Forrige måned"
       ],
+      "Remove": [
+        "Fjern"
+      ],
       "Confirm opening of link ${ link }": [
         "Bekræft åbning af link ${ link }"
       ],
       "Continue with Google": [
         "Fortsæt med Google"
+      ],
+      "Delete": [
+        "Slet"
       ],
       "Select timezone": [
         "Vælg tidszone"
@@ -403,6 +370,9 @@
       ],
       "Signing out": [
         "Logger ud"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -545,41 +515,14 @@
       "Increase": [
         "Forøg"
       ],
-      "Log in": [
-        "Log ind"
-      ],
-      "View invoice": [
-        "Vis faktura"
-      ],
-      "Get verification code": [
-        "Få bekræftelseskode"
-      ],
-      "Try another method": [
-        "Prøv en anden metode"
-      ],
-      "Request new code": [
-        "Anmod om ny kode"
-      ],
-      "Did not receive the code?": [
-        "Ikke modtaget koden?"
-      ],
-      "Edit email address": [
-        "Rediger e-mailadresse"
-      ],
-      "Edit phone number": [
-        "Rediger telefonnummer"
-      ],
       "Save": [
         "Gem"
       ],
+      "Upload picture": [
+        "Overfør billede"
+      ],
       "Add": [
         "Tilføj"
-      ],
-      "Hide advanced PGP settings": [
-        "Skjul avancerede PGP-indstillinger"
-      ],
-      "Show advanced PGP settings": [
-        "Vis avancerede PGP-indstillinger"
       ],
       "Clear data": [
         "Ryd data"
@@ -593,8 +536,41 @@
       "Re-sign": [
         "Gensignér"
       ],
+      "Hide advanced PGP settings": [
+        "Skjul avancerede PGP-indstillinger"
+      ],
+      "Show advanced PGP settings": [
+        "Vis avancerede PGP-indstillinger"
+      ],
+      "Edit": [
+        "Redigér"
+      ],
       "Add to group": [
         "Føj til gruppe"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Contact group": [
+        "Kontaktgruppe"
+      ],
+      "Export": [
+        "Exportér"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Use for sending": [
+        "Brug til afsendelse"
+      ],
+      "Trust": [
+        "Gør betroet"
+      ],
+      "Untrust": [
+        "Ikke længere betroet"
+      ],
+      "Email settings": [
+        "E-mailindstillinger"
       ],
       "Merge": [
         "Flet"
@@ -669,6 +645,30 @@
       ],
       "Import": [
         "Importér"
+      ],
+      "Log in": [
+        "Log ind"
+      ],
+      "View invoice": [
+        "Vis faktura"
+      ],
+      "Get verification code": [
+        "Få bekræftelseskode"
+      ],
+      "Try another method": [
+        "Prøv en anden metode"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
+      ],
+      "Did not receive the code?": [
+        "Ikke modtaget koden?"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
       ],
       "Continue import": [
         ""
@@ -788,15 +788,6 @@
       ],
       "Keyboard Shortcuts": [
         "Tastaturgenveje"
-      ],
-      "Upgrade required": [
-        "Opgradering påkrævet"
-      ],
-      "Email settings": [
-        "E-mailindstillinger"
-      ],
-      "Contact group": [
-        "Kontaktgruppe"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -918,27 +909,6 @@
       "${ appName } customization": [
         "${ appName } tilpasning"
       ],
-      "Sign in again to continue": [
-        "Log ind igen for at fortsætte"
-      ],
-      "Account suspended": [
-        "Konto suspenderet"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
-      ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
-      "Request new code": [
-        "Anmod om ny kode"
-      ],
-      "Human verification": [
-        "Menneskelig bekræftelse"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Tastaturgenveje"
       ],
@@ -950,6 +920,12 @@
       ],
       "Composer mode": [
         "Skrivetilstand"
+      ],
+      "Beta Access": [
+        "Beta-adgang"
+      ],
+      "Edit image": [
+        "Redigér billede"
       ],
       "Edit contact group": [
         "Redigér kontaktgruppe"
@@ -964,28 +940,14 @@
         "Føj til ${ groupCount } gruppe",
         "Føj til ${ groupCount } grupper"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-mailindstillinger (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Slet ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Slet ${ count } kontaktgruppe",
-        "Slet ${ count } kontaktgrupper"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } medlem",
-        "${ emailsCount } medlemmer"
-      ],
-      "Edit image": [
-        "Redigér billede"
-      ],
       "Edit contact": [
         "Rediger kontakt"
       ],
       "Create contact": [
         "Opret kontakt"
+      ],
+      "Delete ${ Name }": [
+        "Slet ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Slet ${ count } kontakt",
@@ -1006,8 +968,25 @@
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
       ],
+      "Email settings (${ emailAddress })": [
+        "E-mailindstillinger (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Slet ${ count } kontaktgruppe",
+        "Slet ${ count } kontaktgrupper"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } medlem",
+        "${ emailsCount } medlemmer"
+      ],
       "Exporting contacts": [
         "Eksporterer kontakter"
+      ],
+      "Upgrade required": [
+        "Opgradering påkrævet"
+      ],
+      "Contact group": [
+        "Kontaktgruppe"
       ],
       "Other names": [
         "Andre navne"
@@ -1023,6 +1002,9 @@
       ],
       "Other information": [
         "Anden information"
+      ],
+      "Email settings": [
+        "E-mailindstillinger"
       ],
       "Contact Details": [
         "Kontaktoplysninger"
@@ -1063,8 +1045,26 @@
       "Import contacts": [
         "Importér kontakter"
       ],
-      "Beta Access": [
-        "Beta-adgang"
+      "Sign in again to continue": [
+        "Log ind igen for at fortsætte"
+      ],
+      "Account suspended": [
+        "Konto suspenderet"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
+      ],
+      "Human verification": [
+        "Menneskelig bekræftelse"
       ],
       "Start import process": [
         ""
@@ -1212,15 +1212,6 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "support team": [
-        "supportteam"
-      ],
-      "No contacts added yet": [
-        "Ingen kontakter tilføjet endnu"
-      ],
-      "Loading": [
-        "Indlæser"
-      ],
       "Week": [
         "Uge"
       ],
@@ -1238,6 +1229,9 @@
       ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
+      ],
+      "Loading": [
+        "Indlæser"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
@@ -1488,6 +1482,128 @@
       "Not customizable": [
         "Kan ikke tilpasses"
       ],
+      "Expired": [
+        "Udløbet"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } medlem",
+        "${ contactEmailsLength } medlemmer"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } og ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til denne gruppe."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til denne gruppe."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Tjekker kontakt ${ progress } af ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt blev opdateret.",
+        "${ updated } kontakter blev opdateret."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "For at gendanne dine data skal du genaktivere den kontakt-krypteringsnøgle, der anvendtes på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
+      ],
+      "Key fingerprint": [
+        "Nøglefingeraftryk"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og samtidig afmelde advarslen."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ProtonMail altid signerer krypterede beskeder."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ProtonMail altid signerer krypterede beskeder"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
+      ],
+      "No contacts added yet": [
+        "Ingen kontakter tilføjet endnu"
+      ],
+      "Group assignment applied": [
+        "Gruppetildeling anvendt"
+      ],
+      "Create a new contact group": [
+        "Opret ny kontaktgruppe"
+      ],
+      "No group found": [
+        "Ingen gruppe fundet"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Duplicate key updated": [
+        "Duplikeret nøgle opdateret"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail bruger, der benytter en PGP-kompatibel tjeneste."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Denne adresse er deaktiveret. Vil du kunne sende til denne adresse, skal ejeren først aktivere den."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
+      ],
+      "No email address": [
+        "Ingen e-mailaddresse"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt fundet",
+        "${ contactsCount } kontakter fundet"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } gruppe fundet",
+        "${ groupCounts } grupper fundet"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade den."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mailadresse",
+        "${ addressCount } e-mailadresser"
+      ],
       "here": [
         "hér"
       ],
@@ -1527,124 +1643,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
-      "Expired": [
-        "Udløbet"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } medlem",
-        "${ contactEmailsLength } medlemmer"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } og ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til denne gruppe."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til denne gruppe."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ProtonMail altid signerer krypterede beskeder."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ProtonMail altid signerer krypterede beskeder"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Tjekker kontakt ${ progress } af ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt blev opdateret.",
-        "${ updated } kontakter blev opdateret."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "For at gendanne dine data skal du genaktivere den kontakt-krypteringsnøgle, der anvendtes på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
-      ],
-      "Key fingerprint": [
-        "Nøglefingeraftryk"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og samtidig afmelde advarslen."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
-      ],
-      "Group assignment applied": [
-        "Gruppetildeling anvendt"
-      ],
-      "Create a new contact group": [
-        "Opret ny kontaktgruppe"
-      ],
-      "No group found": [
-        "Ingen gruppe fundet"
-      ],
-      "Duplicate key updated": [
-        "Duplikeret nøgle opdateret"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail bruger, der benytter en PGP-kompatibel tjeneste."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Denne adresse er deaktiveret. Vil du kunne sende til denne adresse, skal ejeren først aktivere den."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
-      ],
-      "Primary": [
-        "Primær"
-      ],
-      "No email address": [
-        "Ingen e-mailaddresse"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt fundet",
-        "${ contactsCount } kontakter fundet"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } gruppe fundet",
-        "${ groupCounts } grupper fundet"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade den."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-mailadresse",
-        "${ addressCount } e-mailadresser"
+      "support team": [
+        "supportteam"
       ],
       "Import contacts": [
         ""
@@ -1938,27 +1938,6 @@
       "Hide password": [
         "Skjul adgangskode"
       ],
-      "Street address": [
-        "Adresse"
-      ],
-      "City": [
-        "By"
-      ],
-      "Region": [
-        "Region"
-      ],
-      "Postal code": [
-        "Postnummer"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Post office box": [
-        "Postboks"
-      ],
-      "Extended address": [
-        "Udvidet adresse"
-      ],
       "Do not ask again": [
         "Spørg ikke igen"
       ],
@@ -2007,10 +1986,16 @@
       "CVV code": [
         "CVV-kode"
       ],
+      "Country": [
+        "Land"
+      ],
       "Select your country": [
         "Vælg dit land"
       ],
       "ZIP": [
+        "Postnummer"
+      ],
+      "Postal code": [
         "Postnummer"
       ],
       "BTC amount:": [
@@ -2030,6 +2015,84 @@
       ],
       "Proration": [
         "Proration"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Card holder": [
+        "Kortindehaver"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Vælg hvordan din liste over beskeder ser ud som standard."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Vælg hvordan din postkasse ser ud som standard."
+      ],
+      "Select how your composer opens by default.": [
+        "Vælg hvordan dit skrivevindue åbner som standard."
+      ],
+      "Enable Beta Access": [
+        "Aktivér beta-adgang"
+      ],
+      "Add image URL": [
+        "Tilføj billed-URL"
+      ],
+      "Upload picture": [
+        "Upload billede"
+      ],
+      "Add email address": [
+        "Tilføj e-mailadresse"
+      ],
+      "Email format": [
+        "E-mailformattering"
+      ],
+      "Street address": [
+        "Adresse"
+      ],
+      "City": [
+        "By"
+      ],
+      "Region": [
+        "Region"
+      ],
+      "Post office box": [
+        "Postboks"
+      ],
+      "Extended address": [
+        "Udvidet adresse"
+      ],
+      "Add to group": [
+        "Føj til gruppe"
+      ],
+      "Encrypt emails": [
+        "Kryptér e-mails"
+      ],
+      "Sign emails": [
+        "Signér e-mails"
+      ],
+      "Cryptographic scheme": [
+        "Krypteringsmetode"
+      ],
+      "Public keys": [
+        "Offentlige nøgler"
+      ],
+      "Automatically save contacts": [
+        "Gem automatisk kontakter"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Export contacts": [
+        "Eksportér kontakter"
       ],
       "Cancel": [
         "Afbryd"
@@ -2057,69 +2120,6 @@
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
-      ],
-      "Cash": [
-        "Kontant"
-      ],
-      "Card holder": [
-        "Kortindehaver"
-      ],
-      "Expires": [
-        "Udløber"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vælg hvordan din liste over beskeder ser ud som standard."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vælg hvordan din postkasse ser ud som standard."
-      ],
-      "Select how your composer opens by default.": [
-        "Vælg hvordan dit skrivevindue åbner som standard."
-      ],
-      "Add email address": [
-        "Tilføj e-mailadresse"
-      ],
-      "Email format": [
-        "E-mailformattering"
-      ],
-      "Add image URL": [
-        "Tilføj billed-URL"
-      ],
-      "Upload picture": [
-        "Upload billede"
-      ],
-      "Add to group": [
-        "Føj til gruppe"
-      ],
-      "Encrypt emails": [
-        "Kryptér e-mails"
-      ],
-      "Sign emails": [
-        "Signér e-mails"
-      ],
-      "Cryptographic scheme": [
-        "Krypteringsmetode"
-      ],
-      "Public keys": [
-        "Offentlige nøgler"
-      ],
-      "Automatically save contacts": [
-        "Gem automatisk kontakter"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Export contacts": [
-        "Eksportér kontakter"
-      ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2248,11 +2248,6 @@
         "Tilmeldte kalendere"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nøgle kan ikke benyttes til kryptering"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "F.eks., "
@@ -2293,14 +2288,11 @@
       "Gift code": [
         "Gavekode"
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
+      "Image URL": [
+        "Billed-URL"
       ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
-      ],
-      "Image URL": [
-        "Billed-URL"
       ],
       "Filter groups": [
         "Filtrér grupper"
@@ -2313,6 +2305,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
       ],
       "Add a calendar name": [
         "Tilføj et kalendernavn"
@@ -2343,206 +2338,72 @@
         "${ minutes } minutter"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Krypterede data med bekræftet digital underskrift"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Brug flere adresser / aliasser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Host e-mails til dine egne domæner på ProtonMail, f.eks. jens.hansen@eksempel.dk"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Flerbruger-support gælder kun for abonnementer med 2 eller flere brugere"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield beskytter din enhed og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Understøttelse af fildelingsprotokoller såsom BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Afværger trusler mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Få adgang til alle de betalte funktioner i både ProtonVPN og ProtonMail (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Få adgang til alle de betalte funktioner i ${ vpnAppName } og ${ mailAppName } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Host e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Opret flere adresser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Rabat er fratrukket årlig faktureringsperiode"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Rabat er fratrukket den toårige faktureringsperiode"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Har du købt en gavekode eller modtaget en fra vores supportteam, kan du angive den hér."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatisk betyder, at formatet i skrivevinduet benyttes ved afsendelse til denne bruger. Simpel tekst betyder, at beskeden altid konverteres til simpel tekst ved afsendelsen."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
-      ],
-      "You do not have any contacts to export": [
-        "Du har ingen kontakter at eksportere"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Fundet ${ items.length } forslag, brug tastatur til navigation.",
+        "Fundet ${ items.length } forslag, brug tastatur til navigation."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Navn"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Action": [
-        "Handling"
-      ],
-      "Fingerprint": [
-        "Fingeraftryk"
-      ],
-      "Created": [
-        "Oprettet"
-      ],
-      "Expires": [
-        "Udløber"
-      ],
-      "Type": [
-        "Type"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Handlinger"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Automatisk"
-      ],
-      "Plain text": [
-        "Almindelig tekst"
+    "Select search results": {
+      "No results found": [
+        "Ingen resultater fundet"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Benyt global standard (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Søg tidszoner"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Primær"
-      ],
-      "Verification only": [
-        "Kun bekræftelse"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Betroet"
-      ],
-      "Revoked": [
-        "Tilbagekaldt"
-      ],
-      "Expired": [
-        "Udløbet"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Denne funktion kræver en betalt Proton-konto"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ups, noget gik galt"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Fejlrapporter er ikke end-to-end krypterede. Send derfor venligst ikke følsomme oplysninger."
+      "There was a problem connecting to Proton.": [
+        "Der opstod et problem med at oprette forbindelse til Proton."
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } eller tjek din forbindelse."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Er du sikker på, at du vil slette denne kontaktgruppe permanent?"
+      "Error: ${ errorMessage }": [
+        "Fejl: ${ errorMessage }"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Er du sikker på, at du vil slette ${ count } kontaktgruppe permanent?",
-        "Er du sikker på, at du vil slette ${ count } kontaktgrupper permanent?"
+      "Brace yourself till we get the error fixed.": [
+        "Fejlen rettes hurtigst muligt. Tak for din tålmodighed."
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Er du sikker på, at du vil slette denne kontakt permanent?"
+      "You may also ${ refresh } or try again later.": [
+        "Du kan også ${ refresh }, eller forsøge igen senere."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applikationer"
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
-        "Er du sikker på, at du vil slette ${ count } kontakter permanent?"
+      "Go to ${ title }": [
+        "Gå til ${ title }"
       ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Dekrypteringen af det krypterede indhold mislykkedes."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Verifikationen af kontaktdetaljernes signatur mislykkedes."
-      ],
-      "The contact failed to load.": [
-        "Kontakten kunne ikke indlæses."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
-      ],
-      "Contacts could not be merged": [
-        "Kontakter kunne ikke flettes"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
+      "Go to ${ vpnName }": [
+        "Gå til ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "E-mailadresse kopieret til udklipsholder"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefonnummer kopieret til udklipsholder"
-      ],
-      "Address copied to clipboard": [
-        "Adresse kopieret til udklipsholder"
       ],
       "Bug reported": [
         "Fejl anmeldt"
@@ -2550,24 +2411,11 @@
       "You have successfully unsubscribed": [
         "Du har nu afmeldt dig"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kode sendt til ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Bekræftelse gennemført"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
       ],
       "Preference saved": [
         "Præferencer gemt"
-      ],
-      "Preferences saved": [
-        "Præferencer gemt"
-      ],
-      "Contact group deleted": [
-        "Kontaktgruppe slettet",
-        "Kontaktgrupper slettet"
       ],
       "Contact saved": [
         "Kontakt er gemt"
@@ -2581,6 +2429,25 @@
       ],
       "Fingerprint copied to clipboard": [
         "Fingeraftryk kopieret til udklipsholder"
+      ],
+      "Preferences saved": [
+        "Præferencer gemt"
+      ],
+      "Contact group deleted": [
+        "Kontaktgruppe slettet",
+        "Kontaktgrupper slettet"
+      ],
+      "Phone number copied to clipboard": [
+        "Telefonnummer kopieret til udklipsholder"
+      ],
+      "Address copied to clipboard": [
+        "Adresse kopieret til udklipsholder"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kode sendt til ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Bekræftelse gennemført"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender oprettet. Det kan tage et par minutter at synkronisere."
@@ -2670,64 +2537,6 @@
         "Alle begivenheder slettet"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Fundet ${ items.length } forslag, brug tastatur til navigation.",
-        "Fundet ${ items.length } forslag, brug tastatur til navigation."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Ingen resultater fundet"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Søg tidszoner"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ups, noget gik galt"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Der opstod et problem med at oprette forbindelse til Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } eller tjek din forbindelse."
-      ],
-      "Error: ${ errorMessage }": [
-        "Fejl: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Fejlen rettes hurtigst muligt. Tak for din tålmodighed."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Du kan også ${ refresh }, eller forsøge igen senere."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
-      ],
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         "Få hjælp"
@@ -2747,14 +2556,24 @@
         "Indstillinger"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Til"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Fra"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2921,6 +2740,64 @@
         "Vælg"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Fejlrapporter er ikke end-to-end krypterede. Send derfor venligst ikke følsomme oplysninger."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Er du sikker på, at du vil slette denne kontakt permanent?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
+        "Er du sikker på, at du vil slette ${ count } kontakter permanent?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Er du sikker på, at du vil slette denne kontaktgruppe permanent?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Er du sikker på, at du vil slette ${ count } kontaktgruppe permanent?",
+        "Er du sikker på, at du vil slette ${ count } kontaktgrupper permanent?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Denne funktion kræver en betalt Proton-konto"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Dekrypteringen af det krypterede indhold mislykkedes."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Verifikationen af kontaktdetaljernes signatur mislykkedes."
+      ],
+      "The contact failed to load.": [
+        "Kontakten kunne ikke indlæses."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
+      ],
+      "Contacts could not be merged": [
+        "Kontakter kunne ikke flettes"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Vedhæft screenshot(s)"
@@ -3032,6 +2909,77 @@
       ],
       "Unlimited": [
         "Ubegrænset"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Brug flere adresser / aliasser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Host e-mails til dine egne domæner på ProtonMail, f.eks. jens.hansen@eksempel.dk"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Flerbruger-support gælder kun for abonnementer med 2 eller flere brugere"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield beskytter din enhed og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Understøttelse af fildelingsprotokoller såsom BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Afværger trusler mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Få adgang til alle de betalte funktioner i både ProtonVPN og ProtonMail (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Få adgang til alle de betalte funktioner i ${ vpnAppName } og ${ mailAppName } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Host e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Opret flere adresser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Rabat er fratrukket årlig faktureringsperiode"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Rabat er fratrukket den toårige faktureringsperiode"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Har du købt en gavekode eller modtaget en fra vores supportteam, kan du angive den hér."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Automatisk betyder, at formatet i skrivevinduet benyttes ved afsendelse til denne bruger. Simpel tekst betyder, at beskeden altid konverteres til simpel tekst ved afsendelsen."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Krypterede data med bekræftet digital underskrift"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "You do not have any contacts to export": [
+        "Du har ingen kontakter at eksportere"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3362,28 +3310,6 @@
         "Gratis"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Forfalden faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuel"
-      ],
-      "No verification method available": [
-        "Ingen bekræftelsesmetode tilgængelig"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Nyt kredit / betalingskort"
@@ -3393,6 +3319,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
       ]
     },
     "Label to change density": {
@@ -3417,14 +3356,6 @@
       ],
       "Maximized": [
         "Maksimeret"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Kontaktgruppe opdateret"
-      ],
-      "Contact group created": [
-        "Kontaktgruppe oprettet"
       ]
     },
     "Label for contact group name": {
@@ -3489,6 +3420,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Navn"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Action": [
+        "Handling"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Handlinger"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Kontaktgruppe opdateret"
+      ],
+      "Contact group created": [
+        "Kontaktgruppe oprettet"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automatisk"
+      ],
+      "Plain text": [
+        "Almindelig tekst"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Benyt global standard (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Primær"
+      ],
+      "Verification only": [
+        "Kun bekræftelse"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Betroet"
+      ],
+      "Revoked": [
+        "Tilbagekaldt"
+      ],
+      "Expired": [
+        "Udløbet"
       ]
     },
     "TableHeader": {
@@ -3672,17 +3673,31 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+    "Select files": {
+      "Upload": [
+        "Upload"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Forfalden faktura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuel"
+      ],
+      "No verification method available": [
+        "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
     "Loading info": {
@@ -3704,11 +3719,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Upload"
       ]
     },
     "Message display when a new app version is available": {
@@ -3876,17 +3886,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Annullering af en begivenhed den ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Invitation til en begivenhed den ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Opdatering til en begivenhed den ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Annullering af en begivenhed med start den ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Invitation til en begivenhed med start den ${ formattedStart }"
@@ -3894,8 +3898,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Opdatering til en begivenhed med start den ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Invitation: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Annullering af en begivenhed den ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Annullering af en begivenhed med start den ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4355,12 +4362,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Adgangskode skal indeholde mindst ${ length } tegn",
-        "Adgangskode skal indeholde mindst ${ length } tegn"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Navn"
@@ -4475,9 +4476,10 @@
         "Adresse"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4699,6 +4701,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
       ]
     },
     "Message": {
