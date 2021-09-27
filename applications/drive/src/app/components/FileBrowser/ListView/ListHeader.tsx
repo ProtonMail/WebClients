@@ -1,22 +1,24 @@
 import * as React from 'react';
+
 import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { SortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+import { AllSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem, FileBrowserLayouts } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 
-interface Props {
+interface Props<T extends AllSortKeys> {
     type: FileBrowserLayouts;
-    sortParams?: SortParams;
-    setSorting?: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
+    sortParams?: SortParams<T>;
+    setSorting?: (sortParams: SortParams<T>) => void;
     selectedItems: FileBrowserItem[];
     onToggleAllSelected: () => void;
     contents: FileBrowserItem[];
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 }
 
-const ListHeader = ({
+const ListHeader = <T extends AllSortKeys>({
     type,
     setSorting,
     sortParams,
@@ -24,13 +26,13 @@ const ListHeader = ({
     selectedItems,
     onToggleAllSelected,
     scrollAreaRef,
-}: Props) => {
+}: Props<T>) => {
     const { isDesktop } = useActiveBreakpoint();
     const columns = useFileBrowserColumns(type);
 
     const canSort = (fn?: () => void) => (setSorting ? fn : undefined);
 
-    const handleSort = (key: SortKeys) => {
+    const handleSort = (key: AllSortKeys) => {
         if (!sortParams || !setSorting) {
             return;
         }
@@ -40,10 +42,10 @@ const ListHeader = ({
                 ? SORT_DIRECTION.DESC
                 : SORT_DIRECTION.ASC;
 
-        setSorting(key, direction);
+        setSorting({ sortField: key as T, sortOrder: direction });
     };
 
-    const getSortDirectionForKey = (key: SortKeys) =>
+    const getSortDirectionForKey = (key: AllSortKeys) =>
         sortParams?.sortField === key ? sortParams.sortOrder : undefined;
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;

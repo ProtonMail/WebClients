@@ -1,24 +1,15 @@
-import { useState, useCallback } from 'react';
 import { c } from 'ttag';
 
-import {
-    generateUID,
-    usePopperAnchor,
-    Dropdown,
-    DropdownMenu,
-    Icon,
-    DropdownMenuButton,
-    ToolbarButton,
-    DropdownCaret,
-} from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { DriveSortParams, useDriveContent } from '../DriveContentProvider';
+import { useDriveContent } from '../DriveContentProvider';
+import SortDropdown from '../../ToolbarButtons/SortDropdown';
+import { DriveSectionSortKeys, SortParams } from '../../../../interfaces/link';
 
 const menuItems: {
     name: string;
     icon: string;
-    sortParams: DriveSortParams;
+    sortParams: SortParams<DriveSectionSortKeys>;
 }[] = [
     {
         name: c('Action').t`Name: A to Z`,
@@ -86,57 +77,10 @@ const menuItems: {
     },
 ];
 
-const SortDropdown = () => {
-    const [uid] = useState(generateUID('dropdown'));
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+const SortDropdownDrive = () => {
     const { sortParams, setSorting } = useDriveContent();
 
-    const assertSorting = useCallback(
-        (itemSortParams: DriveSortParams) =>
-            sortParams.sortField === itemSortParams.sortField && sortParams.sortOrder === itemSortParams.sortOrder,
-        [sortParams]
-    );
-
-    const toolbarButtonIcon = (
-        <Icon name={menuItems.find((item) => assertSorting(item.sortParams))?.icon || 'sort-old-new'} />
-    );
-    const dropdownMenuButtons = menuItems.map((item) => (
-        <DropdownMenuButton
-            key={item.name}
-            className="flex flex-nowrap text-left"
-            onClick={() => setSorting(item.sortParams.sortField, item.sortParams.sortOrder)}
-            aria-current={assertSorting(item.sortParams)}
-        >
-            <Icon className="mt0-25 mr0-5" name={item.icon} />
-            {item.name}
-        </DropdownMenuButton>
-    ));
-
-    return (
-        <>
-            <ToolbarButton
-                aria-describedby={uid}
-                ref={anchorRef}
-                aria-expanded={isOpen}
-                onClick={toggle}
-                icon={toolbarButtonIcon}
-                data-testid="toolbar-sort"
-                title={c('Title').t`Sort files/folders`}
-            >
-                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
-            </ToolbarButton>
-            <Dropdown
-                id={uid}
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={close}
-                originalPlacement="bottom"
-                className="dropdown--no-max-size"
-            >
-                <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
-            </Dropdown>
-        </>
-    );
+    return <SortDropdown menuItems={menuItems} sortParams={sortParams} setSorting={setSorting} />;
 };
 
-export default SortDropdown;
+export default SortDropdownDrive;

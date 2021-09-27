@@ -1,6 +1,5 @@
 import React from 'react';
-import { SORT_DIRECTION } from '../../constants';
-import { LinkType, SortParams, SortKeys, SharedUrlInfo } from './link';
+import { LinkType, SortParams, SharedUrlInfo, AllSortKeys } from './link';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
@@ -62,7 +61,7 @@ export interface ItemProps {
     FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
 }
 
-export interface FileBrowserProps {
+export interface FileBrowserProps<T extends AllSortKeys = AllSortKeys> {
     loading?: boolean;
     shareId: string;
     caption?: string;
@@ -70,7 +69,7 @@ export interface FileBrowserProps {
     selectedItems: FileBrowserItem[];
     type: FileBrowserLayouts;
     isPreview?: boolean;
-    sortParams?: SortParams;
+    sortParams?: SortParams<T>;
     onScrollEnd: () => void;
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
@@ -78,7 +77,7 @@ export interface FileBrowserProps {
     selectItem: (item: string) => void;
     clearSelections: () => void;
     onToggleAllSelected: () => void;
-    setSorting?: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
+    setSorting?: (sortParams: SortParams<T>) => void;
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
     ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
     FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
