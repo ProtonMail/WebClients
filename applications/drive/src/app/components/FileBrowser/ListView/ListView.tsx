@@ -25,6 +25,7 @@ import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
 import ItemRow from './ItemRow';
+import { AllSortKeys } from '../../../interfaces/link';
 
 type ListItemData = {
     itemCount: number;
@@ -116,11 +117,11 @@ const TableBodyRenderer = ({
     );
 };
 
-type Props = Omit<FileBrowserProps, 'onScrollEnd'> & {
+type Props<T extends AllSortKeys> = Omit<FileBrowserProps<T>, 'onScrollEnd'> & {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 };
 
-const ListView = ({
+const ListView = <T extends AllSortKeys>({
     loading,
     caption,
     contents,
@@ -140,7 +141,7 @@ const ListView = ({
     getDragMoveControls,
     ItemContextMenu,
     FolderContextMenu,
-}: Props) => {
+}: Props<T>) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
 
