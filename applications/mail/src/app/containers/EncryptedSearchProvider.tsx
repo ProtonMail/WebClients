@@ -607,15 +607,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (!indexKeyExists(userID) && !isResumed) {
             const { notSupported, indexKey: newIndexKey } = await initialiseDB(userID, getUserKeys, api);
             if (!newIndexKey) {
-                showError(notSupported);
-                return;
+                return showError(notSupported);
             }
             indexKey = newIndexKey;
         } else {
             const existingIndexKey = await getIndexKey(getUserKeys, userID);
             if (!existingIndexKey) {
-                await dbCorruptError();
-                return;
+                return dbCorruptError();
             }
             indexKey = existingIndexKey;
         }
