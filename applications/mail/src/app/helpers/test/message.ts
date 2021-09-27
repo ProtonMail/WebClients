@@ -25,9 +25,23 @@ export const readSessionKey = (key: any) => {
     };
 };
 
+// Blob type in Jest doesn't have the new arrayBuffer function, maybe not yet implemented in JSDom
+const readBlob = async (blob: Blob) =>
+    new Promise<Uint8Array>((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.onload = (event) => {
+            if (event.target?.result instanceof ArrayBuffer) {
+                resolve(new Uint8Array(event.target.result));
+            } else {
+                reject(event);
+            }
+        };
+        fileReader.readAsArrayBuffer(blob);
+    });
+
 export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
     const decryptResult = await realDecryptMessageLegacy({
-        message: base64ToArray(pack.Body) as any,
+        message: (await readBlob(pack.Body)) as any,
         messageDate: new Date(),
         privateKeys,
         sessionKeys: [sessionKey],
@@ -38,7 +52,7 @@ export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[],
 
 export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
     const decryptResult = await decryptMIMEMessage({
-        message: base64ToArray(pack.Body) as any,
+        message: (await readBlob(pack.Body)) as any,
         messageDate: new Date(),
         privateKeys,
         sessionKeys: [sessionKey],
