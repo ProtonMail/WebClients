@@ -333,13 +333,14 @@ const InteractiveCalendarView = ({
         }
 
         const initialDate = getInitialDate();
-
         const { Members = [], CalendarSettings } = defaultCalendarBootstrap;
         const [Member] = Members;
         const Address = activeAddresses.find(({ Email }) => Member?.Email === Email);
+
         if (!Member || !Address) {
             return;
         }
+
         return getInitialModel({
             initialDate,
             CalendarSettings,
@@ -810,7 +811,7 @@ const InteractiveCalendarView = ({
         closeAllPopovers();
     };
 
-    const handleConfirmDeleteTemporary = ({ ask = false } = {}) => {
+    const handleConfirmDeleteTemporary = async ({ ask = false } = {}) => {
         if (isSavingEvent.current) {
             return Promise.reject(new Error('Keep event'));
         }
@@ -818,7 +819,11 @@ const InteractiveCalendarView = ({
             if (!ask) {
                 return Promise.reject(new Error('Keep event'));
             }
-            return handleCloseConfirmation().catch(() => Promise.reject(new Error('Keep event')));
+            try {
+                return handleCloseConfirmation();
+            } catch (e) {
+                return Promise.reject(new Error('Keep event'));
+            }
         }
         return Promise.resolve();
     };
@@ -1186,13 +1191,17 @@ const InteractiveCalendarView = ({
                                 displayWeekNumbers={displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
                                 setModel={handleSetTemporaryEventModel}
-                                onSave={(inviteActions: InviteActions) => {
+                                onSave={async (inviteActions: InviteActions) => {
                                     if (!temporaryEvent) {
                                         return Promise.reject(new Error('Undefined behavior'));
                                     }
-                                    return handleSaveEvent(temporaryEvent, inviteActions)
-                                        .then(closeAllPopovers)
-                                        .catch(noop);
+                                    try {
+                                        await handleSaveEvent(temporaryEvent, inviteActions);
+
+                                        return closeAllPopovers();
+                                    } catch (error) {
+                                        return noop();
+                                    }
                                 }}
                                 onEdit={() => {
                                     if (!temporaryEvent) {
@@ -1201,10 +1210,14 @@ const InteractiveCalendarView = ({
                                     handleEditEvent(temporaryEvent);
                                 }}
                                 textareaMaxHeight={textareaMaxHeight}
-                                onClose={() => {
-                                    return handleConfirmDeleteTemporary({ ask: true })
-                                        .then(closeAllPopovers)
-                                        .catch(noop);
+                                onClose={async () => {
+                                    try {
+                                        await handleConfirmDeleteTemporary({ ask: true });
+
+                                        return closeAllPopovers();
+                                    } catch (error) {
+                                        return noop();
+                                    }
                                 }}
                             />
                         );
@@ -1311,26 +1324,40 @@ const InteractiveCalendarView = ({
                     tzid={tzid}
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
-                    onSave={(inviteActions: InviteActions) => {
+                    onSave={async (inviteActions: InviteActions) => {
                         if (!temporaryEvent) {
                             return Promise.reject(new Error('Undefined behavior'));
                         }
-                        return handleSaveEvent(temporaryEvent, inviteActions)
-                            .then(() => hideModal(eventModalID))
-                            .catch(noop);
+
+                        try {
+                            await handleSaveEvent(temporaryEvent, inviteActions);
+
+                            return hideModal(eventModalID);
+                        } catch (error) {
+                            return noop();
+                        }
                     }}
-                    onDelete={(inviteActions) => {
+                    onDelete={async (inviteActions) => {
                         if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
                             return Promise.reject(new Error('Undefined behavior'));
                         }
-                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions)
-                            .then(() => hideModal(eventModalID))
-                            .catch(noop);
+
+                        try {
+                            await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions);
+
+                            return hideModal(eventModalID);
+                        } catch (error) {
+                            return noop();
+                        }
                     }}
-                    onClose={() => {
-                        return handleConfirmDeleteTemporary({ ask: true })
-                            .then(() => hideModal(eventModalID))
-                            .catch(noop);
+                    onClose={async () => {
+                        try {
+                            await handleConfirmDeleteTemporary({ ask: true });
+
+                            return hideModal(eventModalID);
+                        } catch (error) {
+                            return noop();
+                        }
                     }}
                     onExit={() => {
                         removeModal(eventModalID);
