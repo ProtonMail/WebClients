@@ -1,20 +1,18 @@
-import { CSSProperties } from 'react';
-
 import { WindowSize } from '../models/utils';
 
 export const MAX_ACTIVE_COMPOSER_DESKTOP = 3;
 export const MAX_ACTIVE_COMPOSER_MOBILE = 1;
 
-const COMPOSER_WIDTH = 600;
+export const COMPOSER_WIDTH = 600;
+export const COMPOSER_GUTTER = 20;
 const COMPOSER_HEIGHT = 520;
-const COMPOSER_GUTTER = 20;
 const COMPOSER_VERTICAL_GUTTER = 10;
 const COMPOSER_ZINDEX = 300;
 const COMPOSER_SWITCH_MODE = 20;
 const HEADER_HEIGHT = 80;
 const APP_BAR_WIDTH = 45;
 
-const computeRightPosition = (index: number, count: number, windowWidth: number) => {
+export const computeRightPosition = (index: number, count: number, windowWidth: number) => {
     const neededWidth = COMPOSER_WIDTH * count + COMPOSER_GUTTER * (count + 1);
 
     if (neededWidth < windowWidth) {
@@ -39,7 +37,7 @@ export const computeComposerStyle = (
     maximized: boolean,
     isNarrow: boolean,
     windowSize: WindowSize
-): CSSProperties => {
+) => {
     if (isNarrow) {
         return {
             position: 'fixed',

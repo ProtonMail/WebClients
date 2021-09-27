@@ -13,6 +13,7 @@ import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerP
 import { WindowSize, Breakpoints } from '../../models/utils';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import Composer, { ComposerAction } from './Composer';
+import useComposerDrag from '../../hooks/composer/useComposerDrag';
 
 interface Props {
     messageID: string;
@@ -36,7 +37,6 @@ const ComposerFrame = ({
     onClose: inputOnClose,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
 
@@ -47,6 +47,21 @@ const ComposerFrame = ({
     const { state: maximized, toggle: toggleMaximized } = useToggle(
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
+
+    const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
+    const customClassnames = getCustomSizingClasses(style);
+    const {
+        start: handleStartDragging,
+        offset: dragOffset,
+        isDragging,
+    } = useComposerDrag({
+        composerIndex: index,
+        isNarrow: breakpoints.isNarrow,
+        maximized,
+        minimized,
+        windowWidth: windowSize.width,
+        totalComposers: count,
+    });
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
@@ -75,14 +90,11 @@ const ComposerFrame = ({
     };
 
     const handleClick = async () => {
-        if (minimized) {
+        if (minimized && !isDragging) {
             toggleMinimized();
         }
         onFocus();
     };
-
-    const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
-    const customClassnames = getCustomSizingClasses(style);
 
     return (
         <div
@@ -93,7 +105,7 @@ const ComposerFrame = ({
                 minimized && 'composer--is-minimized',
                 maximized && 'composer--is-maximized',
             ])}
-            style={style}
+            style={{ ...style, '--composer-drag-offset': `${dragOffset}px` }}
             onFocus={onFocus}
             onClick={handleClick}
             onDragEnter={handleDragEnter}
@@ -106,6 +118,7 @@ const ComposerFrame = ({
                 toggleMinimized={toggleMinimized}
                 toggleMaximized={toggleMaximized}
                 onClose={handleClose}
+                handleStartDragging={handleStartDragging}
             />
             <ErrorBoundary>
                 <Composer
