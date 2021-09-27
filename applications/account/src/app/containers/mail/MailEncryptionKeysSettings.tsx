@@ -14,7 +14,7 @@ export const getEncryptionKeysPage = () => {
     return {
         text: c('Title').t`Encryption & keys`,
         to: '/mail/encryption-keys',
-        icon: 'shield',
+        icon: 'lock-filled',
         subsections: [
             {
                 text: c('Title').t`Address verification`,
