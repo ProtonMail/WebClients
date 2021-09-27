@@ -95,3 +95,26 @@ export const registerFeatureFlagsApiMock = () => {
         'get'
     );
 };
+
+export const parseFormData = (data: any) => {
+    const result: any = {};
+
+    const createStructure = (resultContext: any, name: string, left: string, value: any) => {
+        if (!resultContext[name]) {
+            resultContext[name] = {};
+        }
+        if (left === '') {
+            resultContext[name] = value;
+        } else {
+            const [, newName, newLeft] = /^\[([^[]+)\](.*)/.exec(left) || [];
+            createStructure(resultContext[name], newName, newLeft, value);
+        }
+    };
+
+    Object.entries(data).forEach(([key, value]) => {
+        const [, name, left] = /^([^[]+)(.*)/.exec(key) || [];
+        createStructure(result, name, left, value);
+    });
+
+    return result;
+};

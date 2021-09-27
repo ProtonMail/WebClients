@@ -31,7 +31,7 @@ export interface Package {
     Flags?: number;
     Addresses?: { [email: string]: Package };
     MIMEType?: MIME_TYPES;
-    Body?: string;
+    Body?: string | Uint8Array;
     BodyKey?: any;
     BodyKeyPacket?: string;
     Type?: PACKAGE_TYPE;
