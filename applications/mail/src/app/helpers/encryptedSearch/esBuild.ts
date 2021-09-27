@@ -424,7 +424,11 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         await deleteESDB(userID);
     } catch (error: any) {
         esSentryReport('initialiseDB: deleteESDB', { error });
-        return result;
+
+        return {
+            ...result,
+            notSupported: true,
+        };
     }
 
     // The number of messages before indexing is the one to aim to for showing progress, as
@@ -445,7 +449,7 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     }
 
     // Set up DB
-    let esDB;
+    let esDB: IDBPDatabase<EncryptedSearchDB>;
     try {
         esDB = await createESDB(userID);
     } catch (error: any) {
