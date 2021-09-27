@@ -9,7 +9,7 @@ import {
     NavigationControl,
     useModals,
 } from '@proton/components';
-import { LinkMeta, LinkType } from '@proton/shared/lib/interfaces/drive//link';
+import { DriveSectionSortKeys, LinkMeta, LinkType, SortParams } from '@proton/shared/lib/interfaces/drive//link';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useFiles from '../hooks/drive/useFiles';
@@ -23,6 +23,19 @@ import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { mapLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
+import useUserSettings from '../hooks/drive/useUserSettings';
+
+const getSharedStatus = (meta?: LinkMeta) => {
+    if (!meta?.Shared) {
+        return '';
+    }
+
+    if (meta?.UrlsExpired || meta?.Trashed) {
+        return 'inactive';
+    }
+
+    return 'shared';
+};
 
 const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
@@ -44,9 +57,14 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const rootRef = useRef<HTMLDivElement>(null);
 
     const meta = cache.get.linkMeta(shareId, linkId);
+    const { sort } = useUserSettings();
+
     const { sortedList } = useDriveSorting(
-        (sortParams) =>
-            (meta && useNavigation && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || []
+        (sortParams: SortParams<DriveSectionSortKeys>) => {
+            return (meta && useNavigation && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || [];
+        },
+        sort,
+        async () => {}
     );
 
     const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
@@ -159,7 +177,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
             contents={contents}
             fileName={meta?.Name}
             mimeType={meta?.MIMEType}
-            sharedStatus={!meta?.Shared ? '' : meta?.UrlsExpired || meta?.Trashed ? 'inactive' : 'shared'}
+            sharedStatus={getSharedStatus(meta)}
             onClose={navigateToParent}
             onSave={saveFile}
             onDetail={openDetails}

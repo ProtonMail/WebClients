@@ -8,13 +8,13 @@ import {
     FileLinkMeta,
     LinkMeta,
     isFolderLinkMeta,
-    SortKeys,
     LinkType,
+    DriveSectionSortKeys,
 } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
-import { DEFAULT_SORT_PARAMS } from '@proton/shared/lib/drive/constants';
 import { isPrimaryShare } from '@proton/shared/lib/drive/utils/share';
+import { DEFAULT_SORT_PARAMS_DRIVE } from '@proton/shared/lib/drive/constants';
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
@@ -42,7 +42,7 @@ interface SortedChildrenList {
 }
 
 type SortedChildren = {
-    [sortKey in SortKeys]: {
+    [sortKey in DriveSectionSortKeys]: {
         [direction in SORT_DIRECTION]: SortedChildrenList;
     };
 };
@@ -137,7 +137,7 @@ const useDriveCacheState = () => {
                           meta,
                           children: {
                               sorted: ['MIMEType', 'ModifyTime', 'Size', 'Name'].reduce((sorted, sortKey) => {
-                                  sorted[sortKey as SortKeys] = {
+                                  sorted[sortKey as DriveSectionSortKeys] = {
                                       ASC: { list: [], complete: isNew, initialized: isNew },
                                       DESC: { list: [], complete: isNew, initialized: isNew },
                                   };
@@ -177,7 +177,7 @@ const useDriveCacheState = () => {
         }
     };
 
-    const getChildLinks = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
+    const getChildLinks = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS_DRIVE) => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
@@ -204,7 +204,11 @@ const useDriveCacheState = () => {
         return [...shared.list, ...shared.unlisted];
     };
 
-    const getListedChildLinks = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
+    const getListedChildLinks = (
+        shareId: string,
+        linkId: string,
+        { sortField, sortOrder } = DEFAULT_SORT_PARAMS_DRIVE
+    ) => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
@@ -427,7 +431,11 @@ const useDriveCacheState = () => {
         }
         return shared.complete;
     };
-    const getChildrenComplete = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
+    const getChildrenComplete = (
+        shareId: string,
+        linkId: string,
+        { sortField, sortOrder } = DEFAULT_SORT_PARAMS_DRIVE
+    ) => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
@@ -447,7 +455,7 @@ const useDriveCacheState = () => {
         return undefined;
     };
 
-    const getChildLinkMetas = (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
+    const getChildLinkMetas = (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS_DRIVE) => {
         const links = getChildLinks(shareId, linkId, sortParams);
         return links?.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
@@ -482,7 +490,7 @@ const useDriveCacheState = () => {
     const getChildrenInitialized = (
         shareId: string,
         linkId: string,
-        { sortField, sortOrder } = DEFAULT_SORT_PARAMS
+        { sortField, sortOrder } = DEFAULT_SORT_PARAMS_DRIVE
     ) => {
         const link = cacheRef.current[shareId].links[linkId];
 
@@ -553,7 +561,7 @@ const useDriveCacheState = () => {
         }
 
         Object.keys(parent.children.sorted).forEach((key) => {
-            const sortedLists = parent.children.sorted[key as SortKeys];
+            const sortedLists = parent.children.sorted[key as DriveSectionSortKeys];
             const directions = Object.keys(sortedLists) as SORT_DIRECTION[];
 
             directions.forEach((direction) => {
@@ -585,7 +593,7 @@ const useDriveCacheState = () => {
         shareId: string,
         linkId: string,
         method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
-        sortParams = DEFAULT_SORT_PARAMS
+        sortParams = DEFAULT_SORT_PARAMS_DRIVE
     ) => {
         const { links } = cacheRef.current[shareId];
         const parent = links[linkId];
@@ -617,7 +625,7 @@ const useDriveCacheState = () => {
                 }
 
                 // Name doesn't have it's own BE sorting, so we reuse default
-                if (sortParams === DEFAULT_SORT_PARAMS) {
+                if (sortParams === DEFAULT_SORT_PARAMS_DRIVE) {
                     const nameSort = parent.children.sorted.Name;
                     const defaultSortContents = parent.children.sorted[sortField][sortOrder];
                     // If default sort contents are incomplete, contents for Name sort will need to be fetched
@@ -651,9 +659,8 @@ const useDriveCacheState = () => {
                 if (parent && isCachedFolderLink(parent)) {
                     Object.entries(parent.children.sorted).forEach(([sortKey, listsByDirection]) => {
                         Object.entries(listsByDirection).forEach(([direction, { list }]) => {
-                            parent.children.sorted[sortKey as SortKeys][direction as SORT_DIRECTION].list = list.filter(
-                                (id) => meta.LinkID !== id
-                            );
+                            parent.children.sorted[sortKey as DriveSectionSortKeys][direction as SORT_DIRECTION].list =
+                                list.filter((id) => meta.LinkID !== id);
                         });
                     });
                     parent.children.unlisted = parent.children.unlisted.filter((id) => meta.LinkID !== id);

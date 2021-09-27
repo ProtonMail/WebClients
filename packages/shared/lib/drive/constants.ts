@@ -1,6 +1,6 @@
 import { isMobile } from '../helpers/browser';
 import { SORT_DIRECTION } from '../constants';
-import { SortParams } from '../interfaces/drive/link';
+import { DriveSectionSortKeys, SortParams } from '../interfaces/drive/link';
 import { LayoutSetting, SortSetting, UserSettings } from '../interfaces/drive/userSettings';
 
 export const MB = 1024 * 1024;
@@ -26,7 +26,7 @@ export const MAX_THREADS_PER_DOWNLOAD = (typeof window !== 'undefined' && window
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER = SORT_DIRECTION.DESC;
-export const DEFAULT_SORT_PARAMS: SortParams = {
+export const DEFAULT_SORT_PARAMS_DRIVE: SortParams<DriveSectionSortKeys> = {
     sortField: DEFAULT_SORT_FIELD,
     sortOrder: DEFAULT_SORT_ORDER,
 };
