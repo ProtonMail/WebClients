@@ -3,11 +3,13 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
-import { EncryptedSearchDB } from '../../models/encryptedSearch';
+import { EncryptedSearchDB, GetUserKeys } from '../../models/encryptedSearch';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
+import { decryptIndexKey } from './esBuild';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -251,4 +253,29 @@ export const refreshOpenpgp = async () => {
     }
     await destroyOpenPGP();
     await loadOpenPGP();
+};
+
+/**
+ * Return index keys from legacy blobs and associated user IDs
+ */
+export const checkNewUserID = async (getUserKeys: GetUserKeys) => {
+    return (
+        await Promise.all(
+            Object.keys(window.localStorage).map(async (key) => {
+                const chunks = key.split(':');
+                if (chunks[0] === 'ES' && chunks[2] === 'Key') {
+                    const userID = chunks[1];
+                    try {
+                        const indexKey = await decryptIndexKey(getUserKeys, getItem(key));
+                        if (indexKey) {
+                            return { userID, indexKey };
+                        }
+                    } catch (error: any) {
+                        // Ignore errors in this instance as there could be indexes not
+                        // belonging to the current user
+                    }
+                }
+            })
+        )
+    ).filter(isTruthy);
 };
