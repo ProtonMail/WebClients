@@ -21,6 +21,8 @@
 	.composer-content {
 		min-block-size: 10em;
 	}
+
+	transform: translateX(var(--composer-drag-offset));
 }
 
 .composer--is-blur {
