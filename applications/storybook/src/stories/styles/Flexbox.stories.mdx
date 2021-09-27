@@ -373,6 +373,32 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
   </div>
 </div>
 
+<p>Gap between elements (with `flex-gap-1` or `flex-gap-0-5`):</p>
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <div class="flex flex-gap-1 flex-align-items-center bordered color-global-light">
+      <div class="bg-primary p2">div</div>
+      <span class="bg-primary p1">span</span>
+      <em class="bg-primary p2">em</em>
+    </div>
+  </div>
+  <div class="w49 flex-align-self-center">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-align-items-center flex-gap-1">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
+  </div>
+</div>
+
 
 ## Items size and behaviour
 
@@ -514,6 +540,30 @@ This can be avoided using <code>on-mobile-flex-column-nostretch</code>.
   <div className="w30">div</div>
   <span className="w30">span</span>
   <em className="w30">em</em>
+</div>
+`}
+/>
+  </div>
+</div>
+
+`flex-gap` has a helper on mobile: `on-mobile-flex-gap-0`
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <div class="flex flex-gap-1 on-mobile-flex-gap-0 on-mobile-flex-column bordered color-global-light">
+      <div class="bg-primary p1 flex-item-fluid">.flex-item-fluid</div>
+      <em class="bg-primary p1 flex-item-fluid">.flex-item-fluid</em>
+    </div>
+  </div>
+  <div class="w49 flex-align-self-center">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-gap-1 on-mobile-flex-gap-0 on-mobile-flex-column">
+  <div className="flex-item-fluid">.flex-item-fluid</div>
+  <em className="flex-item-fluid">.flex-item-fluid</em>
 </div>
 `}
 />
