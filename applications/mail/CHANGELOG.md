@@ -1,3 +1,20 @@
+## Release 4.0.8 - Oct 13, 2021
+
+### Improvements
+
+-   Updated the UX of the advanced search widget
+-   Added the ability to navigate the contact widget using the keyboard
+-   Added the ability to jump to the attachment list by clicking on the attachment icon in the header of an email
+-   Added support for internal links inside messages
+
+### Bug fixes
+
+-   Fixed a rare issue where under certain circumstances attachments would not be displayed in PGP-encrypted messages that are forwarded
+-   Fixed an issue where an additional draft would be visible for a short amount of time for messages already sent
+-   Fixed an issue where embedded images would sometimes not be displayed correctly in a sent email if the email has been sent before their upload has finished
+-   Fixed an issue where sometimes a "Conversation does not exist" error message would be displayed if clicking on a browser notification informing about new messages
+-   Fixed various minor localization and translation issues
+
 ## Release 4.0.7 - Sep 29, 2021
 
 ### Improvements
