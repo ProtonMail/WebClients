@@ -2,7 +2,7 @@ import { Ref, RefObject, MutableRefObject } from 'react';
 import { content } from '@proton/shared/lib/sanitize';
 import { c } from 'ttag';
 import { contentWithoutImage } from '@proton/shared/lib/sanitize/purify';
-import { FontData, SquireType } from './interface';
+import { SquireType } from './interface';
 
 export enum FONT_FACE {
     Georgia = 'georgia',
@@ -92,7 +92,7 @@ export const SQUIRE_CONFIG = (supportImage: boolean) => ({
 /**
  * Custom CSS inside the IFRAME
  */
-export const insertCustomStyle = (document: Document, defaultFont: FontData | undefined) => {
+export const insertCustomStyle = (document: Document) => {
     const head = document.head || document.getElementsByTagName('head')[0];
     const style = document.createElement('style');
 
@@ -158,8 +158,6 @@ export const insertCustomStyle = (document: Document, defaultFont: FontData | un
         [id="squire"] {
             outline: none;
             padding: 0.5rem;
-            font-family: ${defaultFont?.FontFace ? defaultFont?.FontFace : DEFAULT_FONT_FACE};
-            font-size: ${defaultFont?.FontSize ? defaultFont?.FontSize : `${DEFAULT_FONT_SIZE}px`};
         }
 
         [id="ellipsis"] {
@@ -271,10 +269,9 @@ const wrapInsertHTML = (squire: any, supportImage: boolean) => {
 export const initSquire = async (
     document: Document,
     supportImage: boolean,
-    defaultFont: FontData | undefined,
     onEllipseClick: () => void
 ): Promise<any> => {
-    insertCustomStyle(document, defaultFont);
+    insertCustomStyle(document);
 
     const { default: Squire } = await import('squire-rte');
 
