@@ -6,7 +6,7 @@ import { getRecipientsAddresses, setFlag } from '@proton/shared/lib/mail/message
 import { useHistory } from 'react-router';
 import { c } from 'ttag';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { sendMessage, cancelSend } from '@proton/shared/lib/api/messages';
+import { cancelSend } from '@proton/shared/lib/api/messages';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
@@ -15,6 +15,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MessageExtendedWithData } from '../../models/message';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
+import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { encryptPackages } from '../../helpers/send/sendEncrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
@@ -105,16 +106,17 @@ export const useSendMessage = () => {
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
                 const { expiresIn, autoSaveContacts, scheduledAt } = inputMessage;
 
-                const payload: any = {
-                    Packages: packages,
-                    ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
-                    DelaySeconds: delaySendSeconds, // Once the API receive this request, it calculates how much time the notification needs to be display
-                    AutoSaveContacts: autoSaveContacts,
-                    DeliveryTime: scheduledAt || undefined,
-                };
+                const payload = sendFormatter({
+                    ID: message.data?.ID,
+                    packages,
+                    expiresIn,
+                    delaySendSeconds,
+                    autoSaveContacts,
+                    scheduledAt,
+                });
 
                 return api<{ Sent: Message }>({
-                    ...sendMessage(message.data?.ID, payload),
+                    ...payload,
                     silence: useSilentApi,
                     timeout: 60000,
                 });
