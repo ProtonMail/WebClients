@@ -31,7 +31,7 @@ import ParticipantsInput from './inputs/ParticipantsInput';
 import DateTimeRow from './rows/DateTimeRow';
 import MiniDateTimeRows from './rows/MiniDateTimeRows';
 
-interface Props {
+export interface EventFormProps {
     isSubmitted: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
@@ -62,7 +62,7 @@ const EventForm = ({
     textareaMaxHeight,
     isSubscribedCalendar,
     ...props
-}: Props & HTMLAttributes<HTMLDivElement>) => {
+}: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const {
         uid,
         frequencyModel,
