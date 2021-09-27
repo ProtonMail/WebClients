@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
+      ],
       "Email address invalid": [
         "Adresa e-pošte nije valjana"
       ],
       "This field is required": [
         "Ovo polje je obavezno"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
       "Process aborted": [
         "Proces je prekinut"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Nevažeći kȏd"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
-      ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
-      "Enter 6 digits": [
-        "Unesite 6 znamenki"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
-      "Preferences could not be saved": [
-        "Postavke nije moguće spremiti"
-      ],
-      "Some groups could not be deleted": [
-        "Nije moguće brisanje nekih grupa"
-      ],
       "Image upload failed": [
         "Neuspješno učitavanje slike"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Nije bilo moguće brisanje nekih kontakata"
+      ],
+      "Preferences could not be saved": [
+        "Postavke nije moguće spremiti"
+      ],
+      "Some groups could not be deleted": [
+        "Nije moguće brisanje nekih grupa"
       ],
       "Invalid public key file": [
         "Nevažeća datoteka javnog ključa"
@@ -157,14 +136,35 @@
       "Invalid name": [
         "Nevažeći naziv"
       ],
+      "Primary address key is not decrypted": [
+        "Primarni ključ adrese e-pošte nije dešifriran"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
+      ],
+      "Can't validate email, try again later": [
+        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
+      ],
+      "Can't validate phone, try again later": [
+        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
+      ],
+      "Enter 6 digits": [
+        "Unesite 6 znamenki"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Primarni ključ adrese e-pošte nije dešifriran"
       ],
       "No valid address found": [
         "Nije pronađena važeća adresa"
@@ -196,12 +196,6 @@
       "Request timed out.": [
         "Zahtjev je istekao."
       ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
       "Missing signature": [
         "Nedostaje potpis"
       ],
@@ -210,6 +204,12 @@
       ],
       "Signature not verified": [
         "Potpis nije ovjeren"
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Could not find address ${ email }.": [
+        "Ne mogu pronaći adresu ${ email }."
       ],
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
@@ -347,56 +347,23 @@
       "Load image": [
         "Učitaj sliku"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
-      "Export": [
-        "Izvoz"
-      ],
-      "Delete": [
-        "Izbriši"
-      ],
-      "Edit": [
-        "Uredi"
-      ],
-      "Remove": [
-        "Ukloni"
-      ],
-      "Download": [
-        "Preuzmi"
-      ],
-      "Use for sending": [
-        "Koristi za slanje"
-      ],
-      "Trust": [
-        "Vjeruj"
-      ],
-      "Untrust": [
-        "Označi kao nepouzdano"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Email settings": [
-        "Postavke e-pošte"
-      ],
-      "Contact group": [
-        "Grupa kontakta"
-      ],
-      "Upload picture": [
-        "Učitaj sliku"
-      ],
       "Next month": [
         "Sljedeći mjesec"
       ],
       "Previous month": [
         "Prethodni mjesec"
       ],
+      "Remove": [
+        "Ukloni"
+      ],
       "Confirm opening of link ${ link }": [
         "Potvrdite otvaranje poveznice ${ link }"
       ],
       "Continue with Google": [
         "Nastavi s Googleom"
+      ],
+      "Delete": [
+        "Izbriši"
       ],
       "Select timezone": [
         "Odaberite vremensku zonu"
@@ -409,6 +376,9 @@
       ],
       "Signing out": [
         "Odjavljivanje"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
@@ -551,41 +521,14 @@
       "Increase": [
         "Povećaj"
       ],
-      "Log in": [
-        "Prijavite se"
-      ],
-      "View invoice": [
-        "Prikaži fakturu"
-      ],
-      "Get verification code": [
-        "Nabavi kôd za provjeru"
-      ],
-      "Try another method": [
-        "Isprobajte drugu metodu"
-      ],
-      "Request new code": [
-        "Zatraži novi kôd"
-      ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
-      ],
-      "Edit email address": [
-        "Uredi adresu e-pošte"
-      ],
-      "Edit phone number": [
-        "Uredi broj telefona"
-      ],
       "Save": [
         "Spremi"
       ],
+      "Upload picture": [
+        "Učitaj sliku"
+      ],
       "Add": [
         "Dodaj"
-      ],
-      "Hide advanced PGP settings": [
-        "Sakrij napredne PGP postavke"
-      ],
-      "Show advanced PGP settings": [
-        "Pokaži napredne PGP postavke"
       ],
       "Clear data": [
         "Izbriši podatke"
@@ -599,8 +542,41 @@
       "Re-sign": [
         "Ponovna prijava"
       ],
+      "Hide advanced PGP settings": [
+        "Sakrij napredne PGP postavke"
+      ],
+      "Show advanced PGP settings": [
+        "Pokaži napredne PGP postavke"
+      ],
+      "Edit": [
+        "Uredi"
+      ],
       "Add to group": [
         "Dodaj u grupu"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Contact group": [
+        "Grupa kontakta"
+      ],
+      "Export": [
+        "Izvoz"
+      ],
+      "Download": [
+        "Preuzmi"
+      ],
+      "Use for sending": [
+        "Koristi za slanje"
+      ],
+      "Trust": [
+        "Vjeruj"
+      ],
+      "Untrust": [
+        "Označi kao nepouzdano"
+      ],
+      "Email settings": [
+        "Postavke e-pošte"
       ],
       "Merge": [
         "Spoji"
@@ -677,6 +653,30 @@
       ],
       "Import": [
         "Uvoz"
+      ],
+      "Log in": [
+        "Prijavite se"
+      ],
+      "View invoice": [
+        "Prikaži fakturu"
+      ],
+      "Get verification code": [
+        "Nabavi kôd za provjeru"
+      ],
+      "Try another method": [
+        "Isprobajte drugu metodu"
+      ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
+      "Did not receive the code?": [
+        "Niste primili kôd?"
+      ],
+      "Edit email address": [
+        "Uredi adresu e-pošte"
+      ],
+      "Edit phone number": [
+        "Uredi broj telefona"
       ],
       "Continue import": [
         ""
@@ -796,15 +796,6 @@
       ],
       "Keyboard Shortcuts": [
         "Tipkovni prečaci"
-      ],
-      "Upgrade required": [
-        "Potrebno je ažuriranje"
-      ],
-      "Email settings": [
-        "Postavke e-pošte"
-      ],
-      "Contact group": [
-        "Grupa kontakta"
       ],
       "Link confirmation": [
         "Potvrda poveznice"
@@ -926,27 +917,6 @@
       "${ appName } customization": [
         "${ appName } prilagođavanje"
       ],
-      "Sign in again to continue": [
-        "Ponovno se prijavite da biste nastavili"
-      ],
-      "Account suspended": [
-        "Račun je suspendiran"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
-      ],
-      "Enter your password": [
-        "Unesite vašu lozinku"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
-      "Request new code": [
-        "Zatraži novi kôd"
-      ],
-      "Human verification": [
-        "Ljudska provjera"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } tipkovni prečaci"
       ],
@@ -958,6 +928,12 @@
       ],
       "Composer mode": [
         "Način rada prozora za novu poruku"
+      ],
+      "Beta Access": [
+        "Beta pristup"
+      ],
+      "Edit image": [
+        "Uredi sliku"
       ],
       "Edit contact group": [
         "Uredi grupu kontakata"
@@ -973,30 +949,14 @@
         "Dodaj u ${ groupCount } grupe",
         "Dodaj u ${ groupCount } grupa"
       ],
-      "Email settings (${ emailAddress })": [
-        "Postavke e-pošte (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Izbriši ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Izbriši ${ count } grupu kontakata",
-        "Izbriši ${ count } grupe kontakata",
-        "Izbriši ${ count } grupa kontakata"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } član",
-        "${ emailsCount } člana",
-        "${ emailsCount } članova"
-      ],
-      "Edit image": [
-        "Uredi sliku"
-      ],
       "Edit contact": [
         "Uredi kontakt"
       ],
       "Create contact": [
         "Stvori kontakt"
+      ],
+      "Delete ${ Name }": [
+        "Izbriši ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } kontakt",
@@ -1018,8 +978,27 @@
       "Re-sign all contacts": [
         "Ponovno potpiši sve kontakte"
       ],
+      "Email settings (${ emailAddress })": [
+        "Postavke e-pošte (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Izbriši ${ count } grupu kontakata",
+        "Izbriši ${ count } grupe kontakata",
+        "Izbriši ${ count } grupa kontakata"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } član",
+        "${ emailsCount } člana",
+        "${ emailsCount } članova"
+      ],
       "Exporting contacts": [
         "Izvoz kontakata"
+      ],
+      "Upgrade required": [
+        "Potrebno je ažuriranje"
+      ],
+      "Contact group": [
+        "Grupa kontakta"
       ],
       "Other names": [
         "Ostali nazivi"
@@ -1035,6 +1014,9 @@
       ],
       "Other information": [
         "Ostale informacije"
+      ],
+      "Email settings": [
+        "Postavke e-pošte"
       ],
       "Contact Details": [
         "Detalji o kontaktu"
@@ -1075,8 +1057,26 @@
       "Import contacts": [
         "Uvezi kontakte"
       ],
-      "Beta Access": [
-        "Beta pristup"
+      "Sign in again to continue": [
+        "Ponovno se prijavite da biste nastavili"
+      ],
+      "Account suspended": [
+        "Račun je suspendiran"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
+      ],
+      "Enter your password": [
+        "Unesite vašu lozinku"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
+      ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
+      "Human verification": [
+        "Ljudska provjera"
       ],
       "Start import process": [
         ""
@@ -1224,15 +1224,6 @@
       "No results found": [
         "Nema rezultata"
       ],
-      "support team": [
-        "tim za podršku"
-      ],
-      "No contacts added yet": [
-        "Nema dodanih kontakata"
-      ],
-      "Loading": [
-        "Učitavanje"
-      ],
       "Week": [
         "Tjedan"
       ],
@@ -1250,6 +1241,9 @@
       ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
+      ],
+      "Loading": [
+        "Učitavanje"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } član)",
@@ -1503,6 +1497,133 @@
       "Not customizable": [
         "Nije prilagodljivo"
       ],
+      "Expired": [
+        "Isteklo"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } član",
+        "${ contactEmailsLength } člana",
+        "${ contactEmailsLength } članova"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } i ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Pričekajte dok potražimo kontakte koji sadrže podatke šifrirane neaktivnim ključem."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Provjera kontakta ${ progress } od ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt je uspješno ažuriran.",
+        "${ updated } kontakta su uspješno ažurirana.",
+        "${ updated } kontakata je uspješno ažurirano."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Da biste oporavili vaše podatke, trebate ponovno aktivirati ključ za šifriranje kontakta koji se koristio u vrijeme kada su podaci stvoreni. To će zahtijevati da zapamtite lozinku koja se koristila prilikom generiranja ključa."
+      ],
+      "Key fingerprint": [
+        "Otisak prsta ključa"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Pričekajte dok potražimo kontakte koji se mogu ponovno potpisati primarnim ključem šifriranja."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatski šalje poruku koristeći trenutni način rada prozora za novu poruku. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
+      ],
+      "No contacts added yet": [
+        "Nema dodanih kontakata"
+      ],
+      "Group assignment applied": [
+        "Primijenjena grupna dodjela"
+      ],
+      "Create a new contact group": [
+        "Stvori novu grupu kontakata"
+      ],
+      "No group found": [
+        "Nije pronađena nijedna grupa"
+      ],
+      "Primary": [
+        "Glavno"
+      ],
+      "Duplicate key updated": [
+        "Ažuriran je duplicirani ključ"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "No email address": [
+        "Nema adresa e-pošte"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt pronađen",
+        "${ contactsCount } kontakta pronađena",
+        "${ contactsCount } kontakata pronađeno"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grupa pronađena",
+        "${ groupCounts } grupe pronađene",
+        "${ groupCounts } grupa pronađeno"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } adresa e-pošte",
+        "${ addressCount } adrese e-pošte",
+        "${ addressCount } adresa e-pošte"
+      ],
       "here": [
         "ovdje"
       ],
@@ -1542,129 +1663,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
-      "Expired": [
-        "Isteklo"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } član",
-        "${ contactEmailsLength } člana",
-        "${ contactEmailsLength } članova"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatski šalje poruku koristeći trenutni način rada prozora za novu poruku. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Pričekajte dok potražimo kontakte koji sadrže podatke šifrirane neaktivnim ključem."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Provjera kontakta ${ progress } od ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt je uspješno ažuriran.",
-        "${ updated } kontakta su uspješno ažurirana.",
-        "${ updated } kontakata je uspješno ažurirano."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Da biste oporavili vaše podatke, trebate ponovno aktivirati ključ za šifriranje kontakta koji se koristio u vrijeme kada su podaci stvoreni. To će zahtijevati da zapamtite lozinku koja se koristila prilikom generiranja ključa."
-      ],
-      "Key fingerprint": [
-        "Otisak prsta ključa"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Pričekajte dok potražimo kontakte koji se mogu ponovno potpisati primarnim ključem šifriranja."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
-      ],
-      "Group assignment applied": [
-        "Primijenjena grupna dodjela"
-      ],
-      "Create a new contact group": [
-        "Stvori novu grupu kontakata"
-      ],
-      "No group found": [
-        "Nije pronađena nijedna grupa"
-      ],
-      "Duplicate key updated": [
-        "Ažuriran je duplicirani ključ"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "Glavno"
-      ],
-      "No email address": [
-        "Nema adresa e-pošte"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt pronađen",
-        "${ contactsCount } kontakta pronađena",
-        "${ contactsCount } kontakata pronađeno"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grupa pronađena",
-        "${ groupCounts } grupe pronađene",
-        "${ groupCounts } grupa pronađeno"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } adresa e-pošte",
-        "${ addressCount } adrese e-pošte",
-        "${ addressCount } adresa e-pošte"
+      "support team": [
+        "tim za podršku"
       ],
       "Import contacts": [
         ""
@@ -1958,27 +1958,6 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
-      "Street address": [
-        "Adresa"
-      ],
-      "City": [
-        "Grad"
-      ],
-      "Region": [
-        "Regija"
-      ],
-      "Postal code": [
-        "Poštanski broj"
-      ],
-      "Country": [
-        "Država"
-      ],
-      "Post office box": [
-        "Poštanski sandučić"
-      ],
-      "Extended address": [
-        "Produžena adresa"
-      ],
       "Do not ask again": [
         "Ne pitaj ponovno"
       ],
@@ -2027,10 +2006,16 @@
       "CVV code": [
         "CVV kôd"
       ],
+      "Country": [
+        "Država"
+      ],
       "Select your country": [
         "Odaberite vašu državu"
       ],
       "ZIP": [
+        "Poštanski broj"
+      ],
+      "Postal code": [
         "Poštanski broj"
       ],
       "BTC amount:": [
@@ -2050,6 +2035,84 @@
       ],
       "Proration": [
         "Proration"
+      ],
+      "Cash": [
+        "Gotovina"
+      ],
+      "Card holder": [
+        "Vlasnik kartice"
+      ],
+      "Expires": [
+        "Ističe"
+      ],
+      "Payer": [
+        "Platitelj"
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Odaberite kako će vaš popis poruka izgledati po zadanom."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
+      ],
+      "Select how your composer opens by default.": [
+        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
+      ],
+      "Enable Beta Access": [
+        "Omogući Beta pristup"
+      ],
+      "Add image URL": [
+        "Dodajte URL slike"
+      ],
+      "Upload picture": [
+        "Učitaj sliku"
+      ],
+      "Add email address": [
+        "Dodaj adresu e-pošte"
+      ],
+      "Email format": [
+        "Format e-pošte"
+      ],
+      "Street address": [
+        "Adresa"
+      ],
+      "City": [
+        "Grad"
+      ],
+      "Region": [
+        "Regija"
+      ],
+      "Post office box": [
+        "Poštanski sandučić"
+      ],
+      "Extended address": [
+        "Produžena adresa"
+      ],
+      "Add to group": [
+        "Dodaj u grupu"
+      ],
+      "Encrypt emails": [
+        "Šifriraj e-poštu"
+      ],
+      "Sign emails": [
+        "Potpisivanje e-pošte"
+      ],
+      "Cryptographic scheme": [
+        "Kriptografska shema"
+      ],
+      "Public keys": [
+        "Javni ključevi"
+      ],
+      "Automatically save contacts": [
+        "Automatsko spremanje kontakata"
+      ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
+      "Export contacts": [
+        "Izvezi kontakte"
       ],
       "Cancel": [
         "Poništi"
@@ -2077,69 +2140,6 @@
       ],
       "Enter the 6-digit code": [
         "Unesite 6-znamenkasti kôd"
-      ],
-      "Cash": [
-        "Gotovina"
-      ],
-      "Card holder": [
-        "Vlasnik kartice"
-      ],
-      "Expires": [
-        "Ističe"
-      ],
-      "Payer": [
-        "Platitelj"
-      ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Odaberite kako će vaš popis poruka izgledati po zadanom."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
-      ],
-      "Select how your composer opens by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
-      ],
-      "Add email address": [
-        "Dodaj adresu e-pošte"
-      ],
-      "Email format": [
-        "Format e-pošte"
-      ],
-      "Add image URL": [
-        "Dodajte URL slike"
-      ],
-      "Upload picture": [
-        "Učitaj sliku"
-      ],
-      "Add to group": [
-        "Dodaj u grupu"
-      ],
-      "Encrypt emails": [
-        "Šifriraj e-poštu"
-      ],
-      "Sign emails": [
-        "Potpisivanje e-pošte"
-      ],
-      "Cryptographic scheme": [
-        "Kriptografska shema"
-      ],
-      "Public keys": [
-        "Javni ključevi"
-      ],
-      "Automatically save contacts": [
-        "Automatsko spremanje kontakata"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Export contacts": [
-        "Izvezi kontakte"
-      ],
-      "Enable Beta Access": [
-        "Omogući Beta pristup"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2269,11 +2269,6 @@
         "Pretplaćeni kalendari"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ključ se ne može koristiti za šifriranje"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Npr. "
@@ -2314,14 +2309,11 @@
       "Gift code": [
         "Darovni kȏd"
       ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
+      "Image URL": [
+        "URL slike"
       ],
       "Start typing an email address": [
         "Započnite pisati adresu e-pošte"
-      ],
-      "Image URL": [
-        "URL slike"
       ],
       "Filter groups": [
         "Filtrirajte grupe"
@@ -2334,6 +2326,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
       ],
       "Add a calendar name": [
         "Dodaj naziv kalendara"
@@ -2366,208 +2361,73 @@
         "${ minutes } minuta"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Šifrirani podaci sa potvrđenim digitalnim potpisom"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Koristite više adresa / aliasa povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Pružajte usluge e-pošte za vaše domene na ProtonMailu, npr. ivan.horvat@primjer.hr"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Koristite osobnu adresu e-pošte korisnickoime@pm.me za slanje e-pošte"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Višekorisnička podrška je primjenjiva na planove s 2 ili više korisnika"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield štiti vaš uređaj i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Podrška za protokole za dijeljenje datoteka poput BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Preusmjerite sav svoj internetski promet kroz Tor mrežu jednim klikom."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Štiti se od opasnosti koje prijete privatnosti VPN-a, preusmjeravanjem vašeg internetskog prometa kroz više poslužitelja."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Pristup svim plaćenim značajkama za ProtonVPN i ProtonMail (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Pristup svim plaćenim značajkama za ${ vpnAppName } i ${ mailAppName } (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Pružajte usluge e-pošte za vaše domene na ${ mailAppName }, npr. ivan.horvat@primjer.hr"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Stvorite više adresa e-pošte povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Popust se primjenjuje za godišnji ciklus naplate"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Popust se primjenjuje za dvogodišnji ciklus naplate"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Ako ste kupili darovni kȏd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Šifriranje e-pošte automatski primjenjuje potpis e-pošte kako bi pomogao pri autentikaciji vaših poslanih poruka"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digitalno potpisivanje e-poruka pomaže u potvrđivanju da su poslane poruke zapravo vaše"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Prenesite javni ključ za omogućavanje slanja end-to-end šifriranih e-poruka na ovu adresu e-pošte"
-      ],
-      "You do not have any contacts to export": [
-        "Nemate kontakata za izvoz"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Naziv"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Action": [
-        "Radnja"
-      ],
-      "Fingerprint": [
-        "Otisak prsta"
-      ],
-      "Created": [
-        "Stvoreno"
-      ],
-      "Expires": [
-        "Ističe"
-      ],
-      "Type": [
-        "Vrsta"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Radnje"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ključ se ne može koristiti za šifriranje"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Automatski"
-      ],
-      "Plain text": [
-        "Običan tekst"
+    "Select search results": {
+      "No results found": [
+        "Nema rezultata"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Koristite globalnu zadanu postavku (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Pretražite vremensku zonu"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Glavno"
-      ],
-      "Verification only": [
-        "Samo za provjeru"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Pouzdan"
-      ],
-      "Revoked": [
-        "Opozvano"
-      ],
-      "Expired": [
-        "Isteklo"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Ova značajka zahtijeva plaćeni Proton račun"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ups, nešto je pošlo po zlu"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
+      "There was a problem connecting to Proton.": [
+        "Došlo je do problema pri povezivanju s Protonom."
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
+      "Please ${ refresh } or check your connection.": [
+        "Molimo ${ refresh } ili provjerite vezu."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Jeste li sigurni da želite trajno izbrisati ovu kontakt grupu?"
+      "Error: ${ errorMessage }": [
+        "Pogreška: ${ errorMessage }"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Jeste li sigurni da želite trajno izbrisati ${ count } grupu kontakata?",
-        "Jeste li sigurni da želite trajno izbrisati ${ count } grupe kontakata?",
-        "Jeste li sigurni da želite trajno izbrisati ${ count } grupa kontakata?"
+      "Brace yourself till we get the error fixed.": [
+        "Molimo pričekajte dok ne popravimo pogrešku."
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Jeste li sigurni da želite trajno izbrisati ovaj kontakt?"
+      "You may also ${ refresh } or try again later.": [
+        "Možete ${ refresh } ili pokušati ponovo kasnije."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikacije"
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakt?",
-        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakta?",
-        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakata?"
+      "Go to ${ title }": [
+        "Idi na ${ title }"
       ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Dešifriranje šifriranog sadržaja nije uspjelo."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Provjera potpisa za detalje kontakta nije uspjela."
-      ],
-      "The contact failed to load.": [
-        "Neuspješno učitavanje kontakta."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Postoje greške kod nekih kontakata koje treba spojiti. Pregledajte ih pojedinačno"
-      ],
-      "Contacts could not be merged": [
-        "Nije bilo moguće spajanje kontakata"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
+      "Go to ${ vpnName }": [
+        "Idi na ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "Adresa e-pošte je kopirana u međuspremnik"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefonski broj je kopiran u međuspremnik"
-      ],
-      "Address copied to clipboard": [
-        "Adresa je kopirana u međuspremnik"
       ],
       "Bug reported": [
         "Pogreška je prijavljena"
@@ -2575,25 +2435,11 @@
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kôd je poslan na ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Uspješna provjera"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Postavke tipkovnih prečaca su ažurirane"
       ],
       "Preference saved": [
         "Postavke su spremljene"
-      ],
-      "Preferences saved": [
-        "Postavke su spremljene"
-      ],
-      "Contact group deleted": [
-        "Kontaktna grupa je izbrisana",
-        "Kontaktne grupe su izbrisane",
-        "Kontaktne grupe su izbrisane"
       ],
       "Contact saved": [
         "Kontakt je spremljen"
@@ -2608,6 +2454,26 @@
       ],
       "Fingerprint copied to clipboard": [
         "Otisak prsta je kopiran u međuspremnik"
+      ],
+      "Preferences saved": [
+        "Postavke su spremljene"
+      ],
+      "Contact group deleted": [
+        "Kontaktna grupa je izbrisana",
+        "Kontaktne grupe su izbrisane",
+        "Kontaktne grupe su izbrisane"
+      ],
+      "Phone number copied to clipboard": [
+        "Telefonski broj je kopiran u međuspremnik"
+      ],
+      "Address copied to clipboard": [
+        "Adresa je kopirana u međuspremnik"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kôd je poslan na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Uspješna provjera"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2697,65 +2563,6 @@
         "Svi događaji su izbrisani"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
-        "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
-        "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Nema rezultata"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Pretražite vremensku zonu"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Ups, nešto je pošlo po zlu"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Došlo je do problema pri povezivanju s Protonom."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Molimo ${ refresh } ili provjerite vezu."
-      ],
-      "Error: ${ errorMessage }": [
-        "Pogreška: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Molimo pričekajte dok ne popravimo pogrešku."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Možete ${ refresh } ili pokušati ponovo kasnije."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
-      ],
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         "Pomoć"
@@ -2775,14 +2582,24 @@
         "Postavke"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Uključeno"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Isključeno"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2949,6 +2766,66 @@
         "Odaberi"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Jeste li sigurni da želite trajno izbrisati ovaj kontakt?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakt?",
+        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakta?",
+        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakata?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Jeste li sigurni da želite trajno izbrisati ovu kontakt grupu?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Jeste li sigurni da želite trajno izbrisati ${ count } grupu kontakata?",
+        "Jeste li sigurni da želite trajno izbrisati ${ count } grupe kontakata?",
+        "Jeste li sigurni da želite trajno izbrisati ${ count } grupa kontakata?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Ova značajka zahtijeva plaćeni Proton račun"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Dešifriranje šifriranog sadržaja nije uspjelo."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Provjera potpisa za detalje kontakta nije uspjela."
+      ],
+      "The contact failed to load.": [
+        "Neuspješno učitavanje kontakta."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Postoje greške kod nekih kontakata koje treba spojiti. Pregledajte ih pojedinačno"
+      ],
+      "Contacts could not be merged": [
+        "Nije bilo moguće spajanje kontakata"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dodajte snimku(e) zaslona"
@@ -3060,6 +2937,77 @@
       ],
       "Unlimited": [
         "Neograničeno"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Koristite više adresa / aliasa povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Pružajte usluge e-pošte za vaše domene na ProtonMailu, npr. ivan.horvat@primjer.hr"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Koristite osobnu adresu e-pošte korisnickoime@pm.me za slanje e-pošte"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Višekorisnička podrška je primjenjiva na planove s 2 ili više korisnika"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield štiti vaš uređaj i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Podrška za protokole za dijeljenje datoteka poput BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Preusmjerite sav svoj internetski promet kroz Tor mrežu jednim klikom."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Štiti se od opasnosti koje prijete privatnosti VPN-a, preusmjeravanjem vašeg internetskog prometa kroz više poslužitelja."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Pristup svim plaćenim značajkama za ProtonVPN i ProtonMail (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Pristup svim plaćenim značajkama za ${ vpnAppName } i ${ mailAppName } (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Pružajte usluge e-pošte za vaše domene na ${ mailAppName }, npr. ivan.horvat@primjer.hr"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Stvorite više adresa e-pošte povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Popust se primjenjuje za godišnji ciklus naplate"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Popust se primjenjuje za dvogodišnji ciklus naplate"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Ako ste kupili darovni kȏd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Šifrirani podaci sa potvrđenim digitalnim potpisom"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Šifriranje e-pošte automatski primjenjuje potpis e-pošte kako bi pomogao pri autentikaciji vaših poslanih poruka"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Digitalno potpisivanje e-poruka pomaže u potvrđivanju da su poslane poruke zapravo vaše"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Prenesite javni ključ za omogućavanje slanja end-to-end šifriranih e-poruka na ovu adresu e-pošte"
+      ],
+      "You do not have any contacts to export": [
+        "Nemate kontakata za izvoz"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3401,28 +3349,6 @@
         "Free"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Neplaćena faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Ručno"
-      ],
-      "No verification method available": [
-        "Nema dostupne metode za provjeru"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
@@ -3432,6 +3358,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta pristup vam omogućava upotrebu beta verzije ProtonMail, Proton Calendar i Proton Drive aplikacija prije nego što budu dostupne za javnost. To znači da možete prvi isprobati nove proizvode, dobiti nova ažuriranja i koristiti nove značajke."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Napomena: usluga će se ponovo učitati nakon što kliknete dugme Primijeni."
       ]
     },
     "Label to change density": {
@@ -3456,14 +3395,6 @@
       ],
       "Maximized": [
         "Maksimizirano"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Kontaktna grupa je ažurirana"
-      ],
-      "Contact group created": [
-        "Kontaktna grupa je stvorena"
       ]
     },
     "Label for contact group name": {
@@ -3531,6 +3462,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Naziv"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Action": [
+        "Radnja"
+      ],
+      "Fingerprint": [
+        "Otisak prsta"
+      ],
+      "Created": [
+        "Stvoreno"
+      ],
+      "Expires": [
+        "Ističe"
+      ],
+      "Type": [
+        "Vrsta"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Radnje"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Kontaktna grupa je ažurirana"
+      ],
+      "Contact group created": [
+        "Kontaktna grupa je stvorena"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automatski"
+      ],
+      "Plain text": [
+        "Običan tekst"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Koristite globalnu zadanu postavku (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Glavno"
+      ],
+      "Verification only": [
+        "Samo za provjeru"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Pouzdan"
+      ],
+      "Revoked": [
+        "Opozvano"
+      ],
+      "Expired": [
+        "Isteklo"
       ]
     },
     "TableHeader": {
@@ -3722,17 +3723,31 @@
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta pristup vam omogućava upotrebu beta verzije ProtonMail, Proton Calendar i Proton Drive aplikacija prije nego što budu dostupne za javnost. To znači da možete prvi isprobati nove proizvode, dobiti nova ažuriranja i koristiti nove značajke."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
+    "Select files": {
+      "Upload": [
+        "Učitaj"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Napomena: usluga će se ponovo učitati nakon što kliknete dugme Primijeni."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Neplaćena faktura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Ručno"
+      ],
+      "No verification method available": [
+        "Nema dostupne metode za provjeru"
       ]
     },
     "Loading info": {
@@ -3754,11 +3769,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Učitaj"
       ]
     },
     "Message display when a new app version is available": {
@@ -3930,17 +3940,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Otkazani događaj ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Pozivnica za događaj ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Ažuriranje događaja ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Otkazani događaj s početkom ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Pozivnica za događaj s početkom ${ formattedStart }"
@@ -3948,8 +3952,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Ažuriranje događaja s početkom ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Pozivnica: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Otkazani događaj ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Otkazani događaj s početkom ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4446,13 +4453,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lozinka mora sadržavati najmanje ${ length } znak",
-        "Lozinka mora sadržavati najmanje ${ length } znaka",
-        "Lozinka mora sadržavati najmanje ${ length } znakova"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Naziv"
@@ -4567,9 +4567,11 @@
         "Adresa"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4791,6 +4793,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
       ]
     },
     "Message": {

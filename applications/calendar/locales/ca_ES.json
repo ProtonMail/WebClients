@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
+      ],
       "Email address invalid": [
         "L'adreça de correu electrònic no és vàlida"
       ],
       "This field is required": [
         "Aquest camp és obligatori"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d’error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Codi no vàlid"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Credencials de connexió incorrectes. Si us plau, torni-ho a intentar"
-      ],
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
-      ],
-      "Enter 6 digits": [
-        "Introduïu 6 dígits"
-      ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
-      "Preferences could not be saved": [
-        "No s'han pogut desar les preferències"
-      ],
-      "Some groups could not be deleted": [
-        "Alguns grups no poden ser esborrats"
-      ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Alguns contactes no s'han pogut esborrar"
+      ],
+      "Preferences could not be saved": [
+        "No s'han pogut desar les preferències"
+      ],
+      "Some groups could not be deleted": [
+        "Alguns grups no poden ser esborrats"
       ],
       "Invalid public key file": [
         "Arxiu de clau pública invàlid"
@@ -155,14 +134,35 @@
       "Invalid name": [
         "Nom no vàlid"
       ],
+      "Primary address key is not decrypted": [
+        "La clau de la adreça primària no està desxifrada"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Credencials de connexió incorrectes. Si us plau, torni-ho a intentar"
+      ],
+      "Can't validate email, try again later": [
+        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
+      ],
+      "Can't validate phone, try again later": [
+        "No es pot validar el telèfon, torneu-ho a provar més tard"
+      ],
+      "Enter 6 digits": [
+        "Introduïu 6 dígits"
+      ],
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d’error, poseu-vos en contacte amb el nostre ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
-      ],
-      "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -194,12 +194,6 @@
       "Request timed out.": [
         "S'ha esgotat el temps d'espera."
       ],
-      "Signature verification failed": [
-        "Ha fallat la verificació de la signatura"
-      ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar l'adreça de correu electrònic ${ email }."
-      ],
       "Missing signature": [
         "Signatura no trobada"
       ],
@@ -208,6 +202,12 @@
       ],
       "Signature not verified": [
         "Signatura no verificada"
+      ],
+      "Signature verification failed": [
+        "Ha fallat la verificació de la signatura"
+      ],
+      "Could not find address ${ email }.": [
+        "No s'ha pogut trobar l'adreça de correu electrònic ${ email }."
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitat"
@@ -341,56 +341,23 @@
       "Load image": [
         "Carregar imatge"
       ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
-      "Export": [
-        "Exportar"
-      ],
-      "Delete": [
-        "Eliminar"
-      ],
-      "Edit": [
-        "Editar"
-      ],
-      "Remove": [
-        "Suprimir"
-      ],
-      "Download": [
-        "Descarregar"
-      ],
-      "Use for sending": [
-        "Utilitzar per enviar"
-      ],
-      "Trust": [
-        "Confiar"
-      ],
-      "Untrust": [
-        "No confiar"
-      ],
-      "Upgrade": [
-        "Millorar"
-      ],
-      "Email settings": [
-        "Configuració del correu"
-      ],
-      "Contact group": [
-        "Grup de contactes"
-      ],
-      "Upload picture": [
-        "Carregar imatge"
-      ],
       "Next month": [
         "Mes següent"
       ],
       "Previous month": [
         "Mes anterior"
       ],
+      "Remove": [
+        "Suprimir"
+      ],
       "Confirm opening of link ${ link }": [
         "Confirmeu obrir l'enllaç ${ link }"
       ],
       "Continue with Google": [
         "Continuar amb Google"
+      ],
+      "Delete": [
+        "Eliminar"
       ],
       "Select timezone": [
         "Seleccionar fus horari"
@@ -403,6 +370,9 @@
       ],
       "Signing out": [
         "Tancant la sessió"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -545,41 +515,14 @@
       "Increase": [
         "Incrementar"
       ],
-      "Log in": [
-        "Inicia la sessió"
-      ],
-      "View invoice": [
-        "Veure factura"
-      ],
-      "Get verification code": [
-        "Obtenir codi de verificació"
-      ],
-      "Try another method": [
-        "Proveu amb un altre mètode"
-      ],
-      "Request new code": [
-        "Demana un nou codi"
-      ],
-      "Did not receive the code?": [
-        "No has regut el codi?"
-      ],
-      "Edit email address": [
-        "Editar l'adreça de correu electrònic"
-      ],
-      "Edit phone number": [
-        "Editar el número de telèfon"
-      ],
       "Save": [
         "Desa"
       ],
+      "Upload picture": [
+        "Carregar imatge"
+      ],
       "Add": [
         "Afegir"
-      ],
-      "Hide advanced PGP settings": [
-        "Amagar configuració PGP avançada"
-      ],
-      "Show advanced PGP settings": [
-        "Mostrar configuració PGP avançada"
       ],
       "Clear data": [
         "Netejar dades"
@@ -593,8 +536,41 @@
       "Re-sign": [
         "Tornar a signar"
       ],
+      "Hide advanced PGP settings": [
+        "Amagar configuració PGP avançada"
+      ],
+      "Show advanced PGP settings": [
+        "Mostrar configuració PGP avançada"
+      ],
+      "Edit": [
+        "Editar"
+      ],
       "Add to group": [
         "Afegir al grup"
+      ],
+      "Upgrade": [
+        "Millorar"
+      ],
+      "Contact group": [
+        "Grup de contactes"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Download": [
+        "Descarregar"
+      ],
+      "Use for sending": [
+        "Utilitzar per enviar"
+      ],
+      "Trust": [
+        "Confiar"
+      ],
+      "Untrust": [
+        "No confiar"
+      ],
+      "Email settings": [
+        "Configuració del correu"
       ],
       "Merge": [
         "Combinar"
@@ -669,6 +645,30 @@
       ],
       "Import": [
         "Importar"
+      ],
+      "Log in": [
+        "Inicia la sessió"
+      ],
+      "View invoice": [
+        "Veure factura"
+      ],
+      "Get verification code": [
+        "Obtenir codi de verificació"
+      ],
+      "Try another method": [
+        "Proveu amb un altre mètode"
+      ],
+      "Request new code": [
+        "Demana un nou codi"
+      ],
+      "Did not receive the code?": [
+        "No has regut el codi?"
+      ],
+      "Edit email address": [
+        "Editar l'adreça de correu electrònic"
+      ],
+      "Edit phone number": [
+        "Editar el número de telèfon"
       ],
       "Continue import": [
         "Continuar importació"
@@ -788,15 +788,6 @@
       ],
       "Keyboard Shortcuts": [
         "Dreceres de teclat"
-      ],
-      "Upgrade required": [
-        "Actualització necessària"
-      ],
-      "Email settings": [
-        "Configuració del correu electrònic"
-      ],
-      "Contact group": [
-        "Grup de contactes"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
@@ -918,27 +909,6 @@
       "${ appName } customization": [
         "Personalització de ${ appName }"
       ],
-      "Sign in again to continue": [
-        "Torneu a iniciar per continuar"
-      ],
-      "Account suspended": [
-        "Compte suspès"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
-      ],
-      "Enter your password": [
-        "Introdueix la teva contrasenya"
-      ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
-      "Request new code": [
-        "Demana un nou codi"
-      ],
-      "Human verification": [
-        "Verificació humana"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ appName }"
       ],
@@ -950,6 +920,12 @@
       ],
       "Composer mode": [
         "Mode d'editor"
+      ],
+      "Beta Access": [
+        "Accés Beta"
+      ],
+      "Edit image": [
+        "Editar imatge"
       ],
       "Edit contact group": [
         "Editar grup de contactes"
@@ -964,28 +940,14 @@
         "Afegir a ${ groupCount } grup",
         "Afegir a ${ groupCount } grups"
       ],
-      "Email settings (${ emailAddress })": [
-        "Preferències de correu electrònic (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Suprimir ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Eliminar ${ count } grup de contactes",
-        "Eliminar ${ count } grups de contactes"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } membre",
-        "${ emailsCount } membres"
-      ],
-      "Edit image": [
-        "Editar imatge"
-      ],
       "Edit contact": [
         "Editar contacte"
       ],
       "Create contact": [
         "Crear contacte"
+      ],
+      "Delete ${ Name }": [
+        "Suprimir ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Suprimir ${ count } contacte",
@@ -1006,8 +968,25 @@
       "Re-sign all contacts": [
         "Tornar a signar tots els contactes"
       ],
+      "Email settings (${ emailAddress })": [
+        "Preferències de correu electrònic (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Eliminar ${ count } grup de contactes",
+        "Eliminar ${ count } grups de contactes"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } membre",
+        "${ emailsCount } membres"
+      ],
       "Exporting contacts": [
         "Exportant contactes"
+      ],
+      "Upgrade required": [
+        "Actualització necessària"
+      ],
+      "Contact group": [
+        "Grup de contactes"
       ],
       "Other names": [
         "Altres noms"
@@ -1023,6 +1002,9 @@
       ],
       "Other information": [
         "Altres dades"
+      ],
+      "Email settings": [
+        "Configuració del correu electrònic"
       ],
       "Contact Details": [
         "Dades de contacte"
@@ -1063,8 +1045,26 @@
       "Import contacts": [
         "Importar contactes"
       ],
-      "Beta Access": [
-        "Accés Beta"
+      "Sign in again to continue": [
+        "Torneu a iniciar per continuar"
+      ],
+      "Account suspended": [
+        "Compte suspès"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
+      ],
+      "Enter your password": [
+        "Introdueix la teva contrasenya"
+      ],
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
+      ],
+      "Request new code": [
+        "Demana un nou codi"
+      ],
+      "Human verification": [
+        "Verificació humana"
       ],
       "Start import process": [
         "Inicia el procés d'importació"
@@ -1212,15 +1212,6 @@
       "No results found": [
         "No s'han trobat resultats"
       ],
-      "support team": [
-        "equip de suport"
-      ],
-      "No contacts added yet": [
-        "Encara no s'han afegit contactes"
-      ],
-      "Loading": [
-        "Carregant"
-      ],
       "Week": [
         "Setmana"
       ],
@@ -1238,6 +1229,9 @@
       ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
+      ],
+      "Loading": [
+        "Carregant"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -1488,6 +1482,128 @@
       "Not customizable": [
         "No personalitzable"
       ],
+      "Expired": [
+        "Caducada"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Membre",
+        "${ contactEmailsLength } Membres"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } i ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu l'adreça o adreces de correu electrònic que vulgueu afegir a aquest grup."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu quina adreça de correu electrònic o adreces voleu afegir a ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quines adreces de correu electrònic voleu afegir a aquest grup."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quina adreça o adreces de correu electrònic voleu afegir a ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Comprovant contacte ${ progress } de ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contacte actualitzat satisfactòriament.",
+        "${ updated } contactes actualitzats satisfactòriament."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Per recuperar les vostres dades, heu de tornar a activar la clau de xifratge de contacte utilitzada quan es van crear les dades. Es requerirà que recordeu la contrasenya utilitzada quan es va generar la clau."
+      ],
+      "Key fingerprint": [
+        "Empremta digital de la clau"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ProtonMail sempre signa els missatges xifrats."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME envia automàticament el missatge utilitzant el mode actual de l'editor. Tingueu en compte que ProtonMail sempre signa els missatges xifrats"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
+      ],
+      "No contacts added yet": [
+        "Encara no s'han afegit contactes"
+      ],
+      "Group assignment applied": [
+        "Assignació de grup aplicada"
+      ],
+      "Create a new contact group": [
+        "Crear un nou grup de contactes"
+      ],
+      "No group found": [
+        "No s'ha trobat cap grup"
+      ],
+      "Primary": [
+        "Primari"
+      ],
+      "Duplicate key updated": [
+        "Clau duplicada actualitzada"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "La verificació de adreça amb claus de confiança està habilitada per a aquesta adreça. Per poder enviar a aquesta adreça, confieu primer en les claus públiques que poden ser utilitzades per enviar."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Aquesta adreça està deshabilitada. Per poder enviar a aquesta adreça, el propietari l'ha d'habilitar prèviament."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Per utilitzar la verificació d'adreça, heu de confiar en una o diverses claus públiques disponibles, incloent la que voleu fer servir per enviar. D'aquesta manera s'evita la falsificació de claus de xifratge."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
+      ],
+      "No email address": [
+        "Cap adreça de correu electrònic"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contacte trobat",
+        "${ contactsCount } contactes trobats"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup trobat",
+        "${ groupCounts } grups trobats"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Admetem la importació de fitxers CSV des d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions. També admetem la importació de vCard 4.0. (Codificació UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } adreça de correu electrònic",
+        "${ addressCount } adreces de correu electrònic"
+      ],
       "here": [
         "aquí"
       ],
@@ -1527,124 +1643,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
-      "Expired": [
-        "Caducada"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Membre",
-        "${ contactEmailsLength } Membres"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu l'adreça o adreces de correu electrònic que vulgueu afegir a aquest grup."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu quina adreça de correu electrònic o adreces voleu afegir a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quines adreces de correu electrònic voleu afegir a aquest grup."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quina adreça o adreces de correu electrònic voleu afegir a ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ProtonMail sempre signa els missatges xifrats."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode actual de l'editor. Tingueu en compte que ProtonMail sempre signa els missatges xifrats"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Comprovant contacte ${ progress } de ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contacte actualitzat satisfactòriament.",
-        "${ updated } contactes actualitzats satisfactòriament."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperar les vostres dades, heu de tornar a activar la clau de xifratge de contacte utilitzada quan es van crear les dades. Es requerirà que recordeu la contrasenya utilitzada quan es va generar la clau."
-      ],
-      "Key fingerprint": [
-        "Empremta digital de la clau"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
-      ],
-      "Group assignment applied": [
-        "Assignació de grup aplicada"
-      ],
-      "Create a new contact group": [
-        "Crear un nou grup de contactes"
-      ],
-      "No group found": [
-        "No s'ha trobat cap grup"
-      ],
-      "Duplicate key updated": [
-        "Clau duplicada actualitzada"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificació de adreça amb claus de confiança està habilitada per a aquesta adreça. Per poder enviar a aquesta adreça, confieu primer en les claus públiques que poden ser utilitzades per enviar."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està deshabilitada. Per poder enviar a aquesta adreça, el propietari l'ha d'habilitar prèviament."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilitzar la verificació d'adreça, heu de confiar en una o diverses claus públiques disponibles, incloent la que voleu fer servir per enviar. D'aquesta manera s'evita la falsificació de claus de xifratge."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
-      ],
-      "Primary": [
-        "Primari"
-      ],
-      "No email address": [
-        "Cap adreça de correu electrònic"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contacte trobat",
-        "${ contactsCount } contactes trobats"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grup trobat",
-        "${ groupCounts } grups trobats"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Admetem la importació de fitxers CSV des d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions. També admetem la importació de vCard 4.0. (Codificació UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } adreça de correu electrònic",
-        "${ addressCount } adreces de correu electrònic"
+      "support team": [
+        "equip de suport"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -1938,27 +1938,6 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
-      "Street address": [
-        "Adreça"
-      ],
-      "City": [
-        "Ciutat"
-      ],
-      "Region": [
-        "Regió"
-      ],
-      "Postal code": [
-        "Codi postal"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Post office box": [
-        "Apartat de correus"
-      ],
-      "Extended address": [
-        "Adreça ampliada"
-      ],
       "Do not ask again": [
         "No m'ho torneu a preguntar"
       ],
@@ -2007,11 +1986,17 @@
       "CVV code": [
         "Codi CVV"
       ],
+      "Country": [
+        "País"
+      ],
       "Select your country": [
         "Seleccioneu el vostre país"
       ],
       "ZIP": [
         "ZIP"
+      ],
+      "Postal code": [
+        "Codi postal"
       ],
       "BTC amount:": [
         "Import de BTC:"
@@ -2030,6 +2015,84 @@
       ],
       "Proration": [
         "Prorrateig"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Card holder": [
+        "Titular de la targeta"
+      ],
+      "Expires": [
+        "Venç"
+      ],
+      "Payer": [
+        "Pagador"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Seleccioneu com es veu per defecte la vostra llista de missatges."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Seleccioneu com es veu per defecte la vostra bústia de correu."
+      ],
+      "Select how your composer opens by default.": [
+        "Seleccioneu com el vostre editor s'obre per defecte."
+      ],
+      "Enable Beta Access": [
+        "Activar Accés Beta"
+      ],
+      "Add image URL": [
+        "Afegir URL de la imatge"
+      ],
+      "Upload picture": [
+        "Carregar imatge"
+      ],
+      "Add email address": [
+        "Afegir adreça de correu electrònic"
+      ],
+      "Email format": [
+        "Format de correu electrònic"
+      ],
+      "Street address": [
+        "Adreça"
+      ],
+      "City": [
+        "Ciutat"
+      ],
+      "Region": [
+        "Regió"
+      ],
+      "Post office box": [
+        "Apartat de correus"
+      ],
+      "Extended address": [
+        "Adreça ampliada"
+      ],
+      "Add to group": [
+        "Afegir a grup"
+      ],
+      "Encrypt emails": [
+        "Xifrar correus electrònics"
+      ],
+      "Sign emails": [
+        "Signar correus electrònics"
+      ],
+      "Cryptographic scheme": [
+        "Esquema criptogràfic"
+      ],
+      "Public keys": [
+        "Claus públiques"
+      ],
+      "Automatically save contacts": [
+        "Desar contactes automàticament"
+      ],
+      "Import contacts": [
+        "Importar contactes"
+      ],
+      "Export contacts": [
+        "Exportar contactes"
       ],
       "Cancel": [
         "Cancel·la"
@@ -2057,69 +2120,6 @@
       ],
       "Enter the 6-digit code": [
         "Introduïu el codi de 6 dígits"
-      ],
-      "Cash": [
-        "Efectiu"
-      ],
-      "Card holder": [
-        "Titular de la targeta"
-      ],
-      "Expires": [
-        "Venç"
-      ],
-      "Payer": [
-        "Pagador"
-      ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra llista de missatges."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra bústia de correu."
-      ],
-      "Select how your composer opens by default.": [
-        "Seleccioneu com el vostre editor s'obre per defecte."
-      ],
-      "Add email address": [
-        "Afegir adreça de correu electrònic"
-      ],
-      "Email format": [
-        "Format de correu electrònic"
-      ],
-      "Add image URL": [
-        "Afegir URL de la imatge"
-      ],
-      "Upload picture": [
-        "Carregar imatge"
-      ],
-      "Add to group": [
-        "Afegir a grup"
-      ],
-      "Encrypt emails": [
-        "Xifrar correus electrònics"
-      ],
-      "Sign emails": [
-        "Signar correus electrònics"
-      ],
-      "Cryptographic scheme": [
-        "Esquema criptogràfic"
-      ],
-      "Public keys": [
-        "Claus públiques"
-      ],
-      "Automatically save contacts": [
-        "Desar contactes automàticament"
-      ],
-      "Import contacts": [
-        "Importar contactes"
-      ],
-      "Export contacts": [
-        "Exportar contactes"
-      ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
       ],
       "From: ${ fromEmailAddress }": [
         "Des de: ${ fromEmailAddress }"
@@ -2248,11 +2248,6 @@
         "Calendaris subscrits"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clau no es pot utilitzar per al xifratge"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Ex., "
@@ -2293,14 +2288,11 @@
       "Gift code": [
         "Codi de regal"
       ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
+      "Image URL": [
+        "URL de la imatge"
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
-      ],
-      "Image URL": [
-        "URL de la imatge"
       ],
       "Filter groups": [
         "Filtrar grups"
@@ -2313,6 +2305,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
       ],
       "Add a calendar name": [
         "Afegir un nom de calendari"
@@ -2343,206 +2338,72 @@
         "${ minutes } minuts"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Dades xifrades amb signatura digital verificada"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Utilitzeu múltiples adreces / àlies vinculats al vostre compte, p. ex. usuari2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Allotgeu correus electrònics pel(s) vostre(s) propi(s) domini(s) a ProtonMail, p. ex. jordi.catala@exemple.cat"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Utilitzeu l'adreça personal usuari@pm.me per enviar correus electrònics"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "El suport multiusuari només s'aplica a plans amb 2 o més usuaris"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield protegeix el vostre dispositiu i accelera la vostra navegació bloquejant anuncis, rastrejadors i programari maliciós."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Suport per a protocols d'intercanvi de fitxers com ara BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Accediu al contingut bloquejat geogràficament (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Dirigiu el vostre trànsit d'Internet a través de la xarxa Tor amb un sol clic."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'Internet a través de múltiples servidors."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obteniu accés a totes les funcions de pagament de ProtonVPN i ProtonMail (el servei de correu electrònic xifrat que utilitzen milions de persones per protegir les seves dades) amb un pla."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obteniu accés a totes les funcions de pagament de ${ vpnAppName } i ${ mailAppName } (el servei de correu electrònic xifrat que utilitzen milions de persones per protegir les seves dades) amb un pla."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Allotgeu correus electrònics pel(s) vostre(s) propi(s) domini(s) a ${ mailAppName }, p. ex. jordi.catala@exemple.cat"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Creeu múltiples adreces de correu electrònic enllaçades al vostre compte, p. ex. usuari2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Descompte aplicat per al cicle de facturació anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Descompte aplicat per al cicle de facturació bianual"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "\"Automàtic\" indica que s'està utilitzant el format de l'editor per enviar a aquest usuari. \"Text net\" indica que el missatge es convertirà sempre a text net a l'enviar."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "El xifratge de correu electrònic força la signatura del correu a ajudar a autenticar els vostres missatges enviats"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Signar correus electrònics digitalment ajuda a autenticar que vós heu enviat els missatges"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/Inline força missatges de text net"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Carregueu una clau pública per habilitar l'enviament de correus electrònics xifrats d'extrem a extrem a aquest correu"
-      ],
-      "You do not have any contacts to export": [
-        "No teniu cap contacte per exportar"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
+        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Nom"
-      ],
-      "Address": [
-        "Adreça"
-      ],
-      "Action": [
-        "Acció"
-      ],
-      "Fingerprint": [
-        "Empremta digital"
-      ],
-      "Created": [
-        "Creat"
-      ],
-      "Expires": [
-        "Caduca"
-      ],
-      "Type": [
-        "Tipus"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Actions": [
-        "Accions"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clau no es pot utilitzar per al xifratge"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Automàtic"
-      ],
-      "Plain text": [
-        "Text net"
+    "Select search results": {
+      "No results found": [
+        "No s'han trobat resultats"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Utilitzar la configuració predeterminada global (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Cercar fus horari"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Primari"
+    "Collapsible tooltip": {
+      "Open": [
+        "Obrir"
       ],
-      "Verification only": [
-        "Només verificació"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Fiable"
-      ],
-      "Revoked": [
-        "Revocat"
-      ],
-      "Expired": [
-        "Expirat"
+      "Close": [
+        "Tancar"
       ]
     },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Aquesta característica requereix d'un compte de pagament de Proton"
+    "Error message": {
+      "Oops, something went wrong": [
+        "Vaja, alguna cosa ha anat malament"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
+      "There was a problem connecting to Proton.": [
+        "S'ha produït un problema en connectar amb Proton."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      "Please ${ refresh } or check your connection.": [
+        "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
+      "Error: ${ errorMessage }": [
+        "Error: ${ errorMessage }"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop efectuat el pagament."
+      "Brace yourself till we get the error fixed.": [
+        "Prepareu-vos fins que no es resolgui l’error."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "N'esteu segur, de voler eliminar permanentment aquest grup de contactes?"
+      "You may also ${ refresh } or try again later.": [
+        "També podeu ${ refresh } o tornar-ho a intentar més tard."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicacions de Proton"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",
-        "N'esteu segur, de voler eliminar permanentment ${ count } grups de contactes?"
+      "Go to ${ title }": [
+        "Ves a ${ title }"
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "N'esteu segur, de voler eliminar permanentment aquest contacte?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "N'esteu segur, de voler eliminar permanentment ${ count } contacte?",
-        "N'esteu segur, de voler eliminar permanentment ${ count } contactes?"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Aquesta acció és irreversible. Si us plau, introduïu la paraula ${ boldDanger } al camp per continuar."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "El desxifratge del contingut xifrat ha fallat."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "La verificació de la signatura dels detalls del contacte ha fallat."
-      ],
-      "The contact failed to load.": [
-        "No s'ha pogut carregar el contacte."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
-      ],
-      "Contacts could not be merged": [
-        "Els contactes no s’han pogut combinar"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Esteu segur que voleu descartar la seva importació?"
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La vostra configuració de data i hora local no sembla estar sincronitzada."
+      "Go to ${ vpnName }": [
+        "Anar a ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "Adreça de correu electrònic copiada al porta-retalls"
-      ],
-      "Phone number copied to clipboard": [
-        "Número de telèfon copiat al porta-retalls"
-      ],
-      "Address copied to clipboard": [
-        "Adreça copiada al porta-retalls"
       ],
       "Bug reported": [
         "Error notificat"
@@ -2550,24 +2411,11 @@
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
       ],
-      "Code sent to ${ methodTo }": [
-        "Codi enviat a ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Èxit de verificació"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Preferències de les dreceres de teclat actualitzades"
       ],
       "Preference saved": [
         "Preferència guardada"
-      ],
-      "Preferences saved": [
-        "Preferències desades"
-      ],
-      "Contact group deleted": [
-        "Grup de contactes eliminat",
-        "Grups de contactes eliminats"
       ],
       "Contact saved": [
         "Contacte desat"
@@ -2581,6 +2429,25 @@
       ],
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
+      ],
+      "Preferences saved": [
+        "Preferències desades"
+      ],
+      "Contact group deleted": [
+        "Grup de contactes eliminat",
+        "Grups de contactes eliminats"
+      ],
+      "Phone number copied to clipboard": [
+        "Número de telèfon copiat al porta-retalls"
+      ],
+      "Address copied to clipboard": [
+        "Adreça copiada al porta-retalls"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Codi enviat a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Èxit de verificació"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
@@ -2670,64 +2537,6 @@
         "Tots els esdeveniments borrats"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
-        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "No s'han trobat resultats"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Cercar fus horari"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        "Obrir"
-      ],
-      "Close": [
-        "Tancar"
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Vaja, alguna cosa ha anat malament"
-      ],
-      "There was a problem connecting to Proton.": [
-        "S'ha produït un problema en connectar amb Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Si us play, ${ refresh } o comproveu la vostra connexió."
-      ],
-      "Error: ${ errorMessage }": [
-        "Error: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Prepareu-vos fins que no es resolgui l’error."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "També podeu ${ refresh } o tornar-ho a intentar més tard."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicacions de Proton"
-      ],
-      "Go to ${ title }": [
-        "Ves a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Anar a ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         "Obtenir ajuda"
@@ -2747,14 +2556,24 @@
         "Preferències"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
         "Activat"
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
         "Desactivat"
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        "Activades"
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        "Desactivades"
       ]
     },
     "Layout mode": {
@@ -2921,6 +2740,64 @@
         "Seleccionar"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop efectuat el pagament."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "N'esteu segur, de voler eliminar permanentment aquest contacte?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "N'esteu segur, de voler eliminar permanentment ${ count } contacte?",
+        "N'esteu segur, de voler eliminar permanentment ${ count } contactes?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Aquesta acció és irreversible. Si us plau, introduïu la paraula ${ boldDanger } al camp per continuar."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "N'esteu segur, de voler eliminar permanentment aquest grup de contactes?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",
+        "N'esteu segur, de voler eliminar permanentment ${ count } grups de contactes?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Aquesta característica requereix d'un compte de pagament de Proton"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "El desxifratge del contingut xifrat ha fallat."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "La verificació de la signatura dels detalls del contacte ha fallat."
+      ],
+      "The contact failed to load.": [
+        "No s'ha pogut carregar el contacte."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
+      ],
+      "Contacts could not be merged": [
+        "Els contactes no s’han pogut combinar"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Esteu segur que voleu descartar la seva importació?"
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "La vostra configuració de data i hora local no sembla estar sincronitzada."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
@@ -3032,6 +2909,77 @@
       ],
       "Unlimited": [
         "Il·limitat"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Utilitzeu múltiples adreces / àlies vinculats al vostre compte, p. ex. usuari2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Allotgeu correus electrònics pel(s) vostre(s) propi(s) domini(s) a ProtonMail, p. ex. jordi.catala@exemple.cat"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Utilitzeu l'adreça personal usuari@pm.me per enviar correus electrònics"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "El suport multiusuari només s'aplica a plans amb 2 o més usuaris"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield protegeix el vostre dispositiu i accelera la vostra navegació bloquejant anuncis, rastrejadors i programari maliciós."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Suport per a protocols d'intercanvi de fitxers com ara BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Accediu al contingut bloquejat geogràficament (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Dirigiu el vostre trànsit d'Internet a través de la xarxa Tor amb un sol clic."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'Internet a través de múltiples servidors."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obteniu accés a totes les funcions de pagament de ProtonVPN i ProtonMail (el servei de correu electrònic xifrat que utilitzen milions de persones per protegir les seves dades) amb un pla."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obteniu accés a totes les funcions de pagament de ${ vpnAppName } i ${ mailAppName } (el servei de correu electrònic xifrat que utilitzen milions de persones per protegir les seves dades) amb un pla."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Allotgeu correus electrònics pel(s) vostre(s) propi(s) domini(s) a ${ mailAppName }, p. ex. jordi.catala@exemple.cat"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Creeu múltiples adreces de correu electrònic enllaçades al vostre compte, p. ex. usuari2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Descompte aplicat per al cicle de facturació anual"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Descompte aplicat per al cicle de facturació bianual"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "\"Automàtic\" indica que s'està utilitzant el format de l'editor per enviar a aquest usuari. \"Text net\" indica que el missatge es convertirà sempre a text net a l'enviar."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Dades xifrades amb signatura digital verificada"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "El xifratge de correu electrònic força la signatura del correu a ajudar a autenticar els vostres missatges enviats"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Signar correus electrònics digitalment ajuda a autenticar que vós heu enviat els missatges"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/Inline força missatges de text net"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Carregueu una clau pública per habilitar l'enviament de correus electrònics xifrats d'extrem a extrem a aquest correu"
+      ],
+      "You do not have any contacts to export": [
+        "No teniu cap contacte per exportar"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3362,28 +3310,6 @@
         "Gratuït"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Factura vençuda"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Correu electrònic"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "Cap mètode de verificació disponible"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
@@ -3393,6 +3319,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'Accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
       ]
     },
     "Label to change density": {
@@ -3417,14 +3356,6 @@
       ],
       "Maximized": [
         "Maximitzat"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Grup de contactes actualitzat"
-      ],
-      "Contact group created": [
-        "Grup de contactes creat"
       ]
     },
     "Label for contact group name": {
@@ -3489,6 +3420,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrant i important contactes... això pot tardar una estona. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Nom"
+      ],
+      "Address": [
+        "Adreça"
+      ],
+      "Action": [
+        "Acció"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Type": [
+        "Tipus"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Actions": [
+        "Accions"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Grup de contactes actualitzat"
+      ],
+      "Contact group created": [
+        "Grup de contactes creat"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automàtic"
+      ],
+      "Plain text": [
+        "Text net"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Utilitzar la configuració predeterminada global (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Primari"
+      ],
+      "Verification only": [
+        "Només verificació"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Fiable"
+      ],
+      "Revoked": [
+        "Revocat"
+      ],
+      "Expired": [
+        "Expirat"
       ]
     },
     "TableHeader": {
@@ -3672,17 +3673,31 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'Accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
+    "Select files": {
+      "Upload": [
+        "Carregar"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factura vençuda"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Cap mètode de verificació disponible"
       ]
     },
     "Loading info": {
@@ -3704,11 +3719,6 @@
     "Confirm modal title": {
       "Quit import?": [
         "Sortir de la importació?"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Carregar"
       ]
     },
     "Message display when a new app version is available": {
@@ -3876,17 +3886,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Cancel·lació d'un esdeveniment el ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Invitació a un esdeveniment el ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Actualització d'un esdeveniment el ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Cancel·lació d'un esdeveniment que comença el ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Invitació a un esdeveniment que comença el ${ formattedStart }"
@@ -3894,8 +3898,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Actualització d'un esdeveniment que comença el ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Invitació: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Cancel·lació d'un esdeveniment el ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Cancel·lació d'un esdeveniment que comença el ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4355,12 +4362,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nom"
@@ -4475,9 +4476,10 @@
         "Adreça"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4699,6 +4701,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
       ]
     },
     "Message": {

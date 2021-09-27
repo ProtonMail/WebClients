@@ -21,17 +21,14 @@
       "Authentication error.": [
         "验证错误"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
+      ],
       "Email address invalid": [
         "电子邮箱地址无效"
       ],
       "This field is required": [
         "此项必须填写"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
       ],
       "Process aborted": [
         "操作已中止"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "无效的代码"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "邮箱密码不正确。请重试"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "登录凭据不正确。请重试"
-      ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再试"
-      ],
-      "Enter 6 digits": [
-        "请输入 6 位验证码"
-      ],
-      "Invalid verification code": [
-        "无效的验证代码"
-      ],
-      "Preferences could not be saved": [
-        "无法保存偏好设置"
-      ],
-      "Some groups could not be deleted": [
-        "部分群组无法删除"
-      ],
       "Image upload failed": [
         "图片上传失败"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "部分联系人无法删除"
+      ],
+      "Preferences could not be saved": [
+        "无法保存偏好设置"
+      ],
+      "Some groups could not be deleted": [
+        "部分群组无法删除"
       ],
       "Invalid public key file": [
         "公钥文件无效"
@@ -153,14 +132,35 @@
       "Invalid name": [
         "无效的名称"
       ],
+      "Primary address key is not decrypted": [
+        "主密钥尚未解密。"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "邮箱密码不正确。请重试"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "登录凭据不正确。请重试"
+      ],
+      "Can't validate email, try again later": [
+        "无法验证电子邮件，请稍后再试"
+      ],
+      "Can't validate phone, try again later": [
+        "无法验证手机，请稍候再试"
+      ],
+      "Enter 6 digits": [
+        "请输入 6 位验证码"
+      ],
+      "Invalid verification code": [
+        "无效的验证代码"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "主密钥尚未解密。"
       ],
       "No valid address found": [
         "未找到有效地址"
@@ -192,12 +192,6 @@
       "Request timed out.": [
         "请求超时。"
       ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
       "Missing signature": [
         "缺少签名"
       ],
@@ -206,6 +200,12 @@
       ],
       "Signature not verified": [
         "签名未验证"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
       ],
       "Email address disabled": [
         "Email 地址已禁用"
@@ -335,56 +335,23 @@
       "Load image": [
         "加载图片"
       ],
-      "refresh the page": [
-        "刷新页面"
-      ],
-      "Export": [
-        "导出"
-      ],
-      "Delete": [
-        "删除"
-      ],
-      "Edit": [
-        "编辑"
-      ],
-      "Remove": [
-        "移除"
-      ],
-      "Download": [
-        "下载"
-      ],
-      "Use for sending": [
-        "用于发送邮件"
-      ],
-      "Trust": [
-        "信任"
-      ],
-      "Untrust": [
-        "取消信任"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Email settings": [
-        "邮件设置"
-      ],
-      "Contact group": [
-        "联系人群组"
-      ],
-      "Upload picture": [
-        "上传图片"
-      ],
       "Next month": [
         "下个月"
       ],
       "Previous month": [
         "上个月"
       ],
+      "Remove": [
+        "移除"
+      ],
       "Confirm opening of link ${ link }": [
         "确认打开链接 ${ link }"
       ],
       "Continue with Google": [
         "使用 Google 帐号登录"
+      ],
+      "Delete": [
+        "删除"
       ],
       "Select timezone": [
         "选择时区"
@@ -397,6 +364,9 @@
       ],
       "Signing out": [
         "退出"
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -539,41 +509,14 @@
       "Increase": [
         "增加"
       ],
-      "Log in": [
-        "登录"
-      ],
-      "View invoice": [
-        "查看账单"
-      ],
-      "Get verification code": [
-        "获取验证码"
-      ],
-      "Try another method": [
-        "更换验证方式"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Did not receive the code?": [
-        "没收到验证码？"
-      ],
-      "Edit email address": [
-        "编辑邮箱地址"
-      ],
-      "Edit phone number": [
-        "编辑电话号码"
-      ],
       "Save": [
         "保存"
       ],
+      "Upload picture": [
+        "上传图片"
+      ],
       "Add": [
         "添加"
-      ],
-      "Hide advanced PGP settings": [
-        "隐藏高级 PGP 设置"
-      ],
-      "Show advanced PGP settings": [
-        "显示高级 PGP 设置"
       ],
       "Clear data": [
         "清除数据"
@@ -587,8 +530,41 @@
       "Re-sign": [
         "重新签名"
       ],
+      "Hide advanced PGP settings": [
+        "隐藏高级 PGP 设置"
+      ],
+      "Show advanced PGP settings": [
+        "显示高级 PGP 设置"
+      ],
+      "Edit": [
+        "编辑"
+      ],
       "Add to group": [
         "添加至群组"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Contact group": [
+        "联系人群组"
+      ],
+      "Export": [
+        "导出"
+      ],
+      "Download": [
+        "下载"
+      ],
+      "Use for sending": [
+        "用于发送邮件"
+      ],
+      "Trust": [
+        "信任"
+      ],
+      "Untrust": [
+        "取消信任"
+      ],
+      "Email settings": [
+        "邮件设置"
       ],
       "Merge": [
         "合并"
@@ -661,6 +637,30 @@
       ],
       "Import": [
         "导入"
+      ],
+      "Log in": [
+        "登录"
+      ],
+      "View invoice": [
+        "查看账单"
+      ],
+      "Get verification code": [
+        "获取验证码"
+      ],
+      "Try another method": [
+        "更换验证方式"
+      ],
+      "Request new code": [
+        "请求新验证码"
+      ],
+      "Did not receive the code?": [
+        "没收到验证码？"
+      ],
+      "Edit email address": [
+        "编辑邮箱地址"
+      ],
+      "Edit phone number": [
+        "编辑电话号码"
       ],
       "Continue import": [
         ""
@@ -780,15 +780,6 @@
       ],
       "Keyboard Shortcuts": [
         "键盘快捷键"
-      ],
-      "Upgrade required": [
-        "需要升级"
-      ],
-      "Email settings": [
-        "邮件设置"
-      ],
-      "Contact group": [
-        "联系人群组"
       ],
       "Link confirmation": [
         "确认打开链接"
@@ -910,27 +901,6 @@
       "${ appName } customization": [
         "自定义 ${ appName }"
       ],
-      "Sign in again to continue": [
-        "此操作需要重新登录"
-      ],
-      "Account suspended": [
-        "帐号已被停用"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "输入用户名或 ProtonMail 邮箱"
-      ],
-      "Enter your password": [
-        "输入密码"
-      ],
-      "Invalid verification code": [
-        "无效的验证代码"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Human verification": [
-        "身份验证"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
       ],
@@ -942,6 +912,12 @@
       ],
       "Composer mode": [
         "编辑窗模式"
+      ],
+      "Beta Access": [
+        "测试版功能"
+      ],
+      "Edit image": [
+        "编辑图片"
       ],
       "Edit contact group": [
         "更改联系人群组"
@@ -955,26 +931,14 @@
       "Add to ${ groupCount } group": [
         "添加到 ${ groupCount } 个群组"
       ],
-      "Email settings (${ emailAddress })": [
-        "邮件设置 (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "删除 ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "删除 ${ count } 个联系人群组"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } 位成员"
-      ],
-      "Edit image": [
-        "编辑图片"
-      ],
       "Edit contact": [
         "编辑联系人"
       ],
       "Create contact": [
         "创建联系人"
+      ],
+      "Delete ${ Name }": [
+        "删除 ${ Name }"
       ],
       "Delete ${ count } contact": [
         "删除 ${ count } 个联系人"
@@ -994,8 +958,23 @@
       "Re-sign all contacts": [
         "重新签署所有联系人"
       ],
+      "Email settings (${ emailAddress })": [
+        "邮件设置 (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "删除 ${ count } 个联系人群组"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } 位成员"
+      ],
       "Exporting contacts": [
         "正在导出联系人"
+      ],
+      "Upgrade required": [
+        "需要升级"
+      ],
+      "Contact group": [
+        "联系人群组"
       ],
       "Other names": [
         "其他名称"
@@ -1011,6 +990,9 @@
       ],
       "Other information": [
         "其他信息"
+      ],
+      "Email settings": [
+        "邮件设置"
       ],
       "Contact Details": [
         "联系人详情"
@@ -1051,8 +1033,26 @@
       "Import contacts": [
         "导入联系人"
       ],
-      "Beta Access": [
-        "测试版功能"
+      "Sign in again to continue": [
+        "此操作需要重新登录"
+      ],
+      "Account suspended": [
+        "帐号已被停用"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "输入用户名或 ProtonMail 邮箱"
+      ],
+      "Enter your password": [
+        "输入密码"
+      ],
+      "Invalid verification code": [
+        "无效的验证代码"
+      ],
+      "Request new code": [
+        "请求新验证码"
+      ],
+      "Human verification": [
+        "身份验证"
       ],
       "Start import process": [
         ""
@@ -1200,15 +1200,6 @@
       "No results found": [
         "未找到结果"
       ],
-      "support team": [
-        "客服团队"
-      ],
-      "No contacts added yet": [
-        "尚未添加联系人"
-      ],
-      "Loading": [
-        "加载中"
-      ],
       "Week": [
         "周"
       ],
@@ -1226,6 +1217,9 @@
       ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
+      ],
+      "Loading": [
+        "加载中"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成员)"
@@ -1473,6 +1467,123 @@
       "Not customizable": [
         "无法自定义"
       ],
+      "Expired": [
+        "已过期"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } 成员"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } 和 ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }"
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组"
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }"
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人"
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "正在检查联系人 ${ progress } / ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } 位联系人更新成功"
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "要想恢复数据，您需要重新激活创建数据时使用的联系人密钥。该过程需提供生成密钥时使用的密码"
+      ],
+      "Key fingerprint": [
+        "指纹码"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告"
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "请稍候，我们正在寻找可用主密钥重新签名的联系人"
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名"
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "请注意，该过程可能需要一些时间，具体取决于您地址簿的大小"
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "选择向该地址发送邮件的首选格式"
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline 只适用于纯文本格式邮件，请注意 ProtonMail 总会对加密邮件进行数字签名"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件，请注意 ProtonMail 总会对加密邮件进行数字签名"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "请注意，分配给此组的地址将不会被删除"
+      ],
+      "No contacts added yet": [
+        "尚未添加联系人"
+      ],
+      "Group assignment applied": [
+        "已应用群组分配"
+      ],
+      "Create a new contact group": [
+        "创建联系人群组"
+      ],
+      "No group found": [
+        "未找到群组"
+      ],
+      "Primary": [
+        "主密钥"
+      ],
+      "Duplicate key updated": [
+        "重复的密钥已更新"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了"
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "已对此地址开启密钥验证，向其发送邮件前需要先信任其公钥"
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "此地址已被停用，必须待其所有者启用此地址后才能向其发送邮件"
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造"
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项"
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "所有上传的密钥都不适用于加密，加密将自动禁用"
+      ],
+      "No email address": [
+        "没有电子邮件地址"
+      ],
+      "${ contactsCount } contact found": [
+        "找到 ${ contactsCount } 位联系人"
+      ],
+      "${ groupCounts } group found": [
+        "找到 ${ groupCounts } 个群组"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "我们支持从 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 等应用中导入 CSV 文件或导入 UTF-8 编码的 vCard 4.0 文件"
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "导出联系人之前应用程序需在本地将其解密。在该过程结束时，将生成一个可供下载的 VCF 文件"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } 个电子邮件地址"
+      ],
       "here": [
         "这里"
       ],
@@ -1512,119 +1623,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
-      "Expired": [
-        "已过期"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } 成员"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }"
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "选择向该地址发送邮件的首选格式"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline 只适用于纯文本格式邮件，请注意 ProtonMail 总会对加密邮件进行数字签名"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME 可使用编辑器中指定的格式发送邮件，请注意 ProtonMail 总会对加密邮件进行数字签名"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "请注意，分配给此组的地址将不会被删除"
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "正在检查联系人 ${ progress } / ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } 位联系人更新成功"
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "要想恢复数据，您需要重新激活创建数据时使用的联系人密钥。该过程需提供生成密钥时使用的密码"
-      ],
-      "Key fingerprint": [
-        "指纹码"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告"
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "请稍候，我们正在寻找可用主密钥重新签名的联系人"
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名"
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "请注意，该过程可能需要一些时间，具体取决于您地址簿的大小"
-      ],
-      "Group assignment applied": [
-        "已应用群组分配"
-      ],
-      "Create a new contact group": [
-        "创建联系人群组"
-      ],
-      "No group found": [
-        "未找到群组"
-      ],
-      "Duplicate key updated": [
-        "重复的密钥已更新"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "已对此地址开启密钥验证，向其发送邮件前需要先信任其公钥"
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此地址已被停用，必须待其所有者启用此地址后才能向其发送邮件"
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造"
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项"
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "所有上传的密钥都不适用于加密，加密将自动禁用"
-      ],
-      "Primary": [
-        "主密钥"
-      ],
-      "No email address": [
-        "没有电子邮件地址"
-      ],
-      "${ contactsCount } contact found": [
-        "找到 ${ contactsCount } 位联系人"
-      ],
-      "${ groupCounts } group found": [
-        "找到 ${ groupCounts } 个群组"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我们支持从 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 等应用中导入 CSV 文件或导入 UTF-8 编码的 vCard 4.0 文件"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "导出联系人之前应用程序需在本地将其解密。在该过程结束时，将生成一个可供下载的 VCF 文件"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } 个电子邮件地址"
+      "support team": [
+        "客服团队"
       ],
       "Import contacts": [
         ""
@@ -1918,27 +1918,6 @@
       "Hide password": [
         "隐藏密码"
       ],
-      "Street address": [
-        "街道地址"
-      ],
-      "City": [
-        "城市"
-      ],
-      "Region": [
-        "地区"
-      ],
-      "Postal code": [
-        "邮编"
-      ],
-      "Country": [
-        "国家"
-      ],
-      "Post office box": [
-        "邮局信箱"
-      ],
-      "Extended address": [
-        "详细地址"
-      ],
       "Do not ask again": [
         "不再询问"
       ],
@@ -1987,10 +1966,16 @@
       "CVV code": [
         "CVV 码"
       ],
+      "Country": [
+        "国家"
+      ],
       "Select your country": [
         "选择国家"
       ],
       "ZIP": [
+        "邮编"
+      ],
+      "Postal code": [
         "邮编"
       ],
       "BTC amount:": [
@@ -2010,6 +1995,84 @@
       ],
       "Proration": [
         "按比例分配"
+      ],
+      "Cash": [
+        "现金"
+      ],
+      "Card holder": [
+        "持卡人"
+      ],
+      "Expires": [
+        "有效期至"
+      ],
+      "Payer": [
+        "付款人"
+      ],
+      "Keyboard shortcuts": [
+        "键盘快捷键"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "请选择收件箱列表的默认外观"
+      ],
+      "Select how your mailbox looks like by default.": [
+        "请选择邮箱的默认外观"
+      ],
+      "Select how your composer opens by default.": [
+        "请选择编辑窗的默认外观"
+      ],
+      "Enable Beta Access": [
+        "启用测试版功能"
+      ],
+      "Add image URL": [
+        "添加图片链接"
+      ],
+      "Upload picture": [
+        "上传图片"
+      ],
+      "Add email address": [
+        "添加邮箱地址"
+      ],
+      "Email format": [
+        "邮件格式"
+      ],
+      "Street address": [
+        "街道地址"
+      ],
+      "City": [
+        "城市"
+      ],
+      "Region": [
+        "地区"
+      ],
+      "Post office box": [
+        "邮局信箱"
+      ],
+      "Extended address": [
+        "详细地址"
+      ],
+      "Add to group": [
+        "添加至群组"
+      ],
+      "Encrypt emails": [
+        "发送加密邮件"
+      ],
+      "Sign emails": [
+        "附签名发送"
+      ],
+      "Cryptographic scheme": [
+        "加密方案"
+      ],
+      "Public keys": [
+        "公钥"
+      ],
+      "Automatically save contacts": [
+        "自动保存联系人"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Export contacts": [
+        "导出联系人"
       ],
       "Cancel": [
         "取消"
@@ -2037,69 +2100,6 @@
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
-      ],
-      "Cash": [
-        "现金"
-      ],
-      "Card holder": [
-        "持卡人"
-      ],
-      "Expires": [
-        "有效期至"
-      ],
-      "Payer": [
-        "付款人"
-      ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
-      ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Add email address": [
-        "添加邮箱地址"
-      ],
-      "Email format": [
-        "邮件格式"
-      ],
-      "Add image URL": [
-        "添加图片链接"
-      ],
-      "Upload picture": [
-        "上传图片"
-      ],
-      "Add to group": [
-        "添加至群组"
-      ],
-      "Encrypt emails": [
-        "发送加密邮件"
-      ],
-      "Sign emails": [
-        "附签名发送"
-      ],
-      "Cryptographic scheme": [
-        "加密方案"
-      ],
-      "Public keys": [
-        "公钥"
-      ],
-      "Automatically save contacts": [
-        "自动保存联系人"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Export contacts": [
-        "导出联系人"
-      ],
-      "Enable Beta Access": [
-        "启用测试版功能"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2227,11 +2227,6 @@
         "已订阅日历"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "例如： "
@@ -2272,14 +2267,11 @@
       "Gift code": [
         "礼品码"
       ],
-      "Mailbox password": [
-        "邮箱密码"
+      "Image URL": [
+        "图片链接"
       ],
       "Start typing an email address": [
         "开始输入电子邮件地址"
-      ],
-      "Image URL": [
-        "图片链接"
       ],
       "Filter groups": [
         "筛选群组"
@@ -2292,6 +2284,9 @@
       ],
       "Name": [
         "名称"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
       ],
       "Add a calendar name": [
         "填写分类名称"
@@ -2320,204 +2315,71 @@
         "${ minutes } 分钟"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "已通过数字签名验证的加密数据"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框"
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "使用多个电子邮箱地址 / 别名连接到您的帐户，例如 username2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "使用 ProtonMail 托管您自己的域名，如 zhangsan@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "使用个人邮箱地址 username@pm.me 发送邮件"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "多用户支持仅适用于 2 名及以上用户方案"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield通过屏蔽广告、跟踪和恶意软件来保护您的设备并加快您的浏览速度。"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "支持诸如 BitTorrent 的文件共享协议。"
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "可一键通过 Tor 网络通信。"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "由多台服务器中转流量，增强 VPN 安全性。"
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "同时享用 ProtonVPN 和 ProtonMail（拥有数百万用户的加密邮箱服务）的所有收费功能。"
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "创建多个电子邮件地址连接到您的账户，例如 username2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "年费折扣已计入"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "两年折扣已计入"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "\"自动\" 表示使用编辑区中指定的格式，\"纯文本\" 则表示向此人发送的邮件将一律转换为纯文本"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "邮件加密实现强制数字签名以佐证您发送的邮件的真实性"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "数字签名有助于佐证您的邮件的真实性"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "选择加密和数字签名的 PGP 格式，请注意 PGP/Inline 只能用于纯文本邮件"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上传公钥后方可向其发送端到端加密的邮件"
-      ],
-      "You do not have any contacts to export": [
-        "没有任何联系人可供导出"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "找到 ${ items.length } 个建议，请使用键盘导航"
       ]
     },
-    "Table header": {
-      "Name": [
-        "名称"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Action": [
-        "操作"
-      ],
-      "Fingerprint": [
-        "指纹"
-      ],
-      "Created": [
-        "创建时间"
-      ],
-      "Expires": [
-        "有效期至"
-      ],
-      "Type": [
-        "类型"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "Actions": [
-        "操作"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "自动"
-      ],
-      "Plain text": [
-        "纯文本"
+    "Select search results": {
+      "No results found": [
+        "未找到结果"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "遵循系统设置 (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "搜索时区"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "主密钥"
-      ],
-      "Verification only": [
-        "仅用于验证"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "受信"
-      ],
-      "Revoked": [
-        "已吊销"
-      ],
-      "Expired": [
-        "已过期"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "此功能仅限付费用户使用"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "糟糕，出错了"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "反馈内容不会经过端对端加密，请勿发送敏感信息"
+      "There was a problem connecting to Proton.": [
+        "无法联系 Proton"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
+      "Please ${ refresh } or check your connection.": [
+        "请 ${ refresh } 或检查您的连接。"
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "您确定要永久删除此联系人群组吗？"
+      "Error: ${ errorMessage }": [
+        "错误：${ errorMessage }"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "您确定要永久删除 ${ count } 联系人群组吗？"
+      "Brace yourself till we get the error fixed.": [
+        "别担心，我们会解决的。"
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "您确认要永久删除此联系人吗？"
+      "You may also ${ refresh } or try again later.": [
+        "您也可以${ refresh }页面或稍后再试"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton 应用"
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "您确定要永久删除 ${ count } 联系人吗？"
+      "Go to ${ title }": [
+        "前往 ${ title }"
       ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "解密失败"
-      ],
-      "The verification of the contact details' signature failed.": [
-        "联系方式签名验证失败"
-      ],
-      "The contact failed to load.": [
-        "联系人加载失败"
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "部分需合并的联系人无法显示，请单独查看"
-      ],
-      "Contacts could not be merged": [
-        "无法合并联系人"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "您的本地日期和时间设置似乎不同步"
+      "Go to ${ vpnName }": [
+        "转至 ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "邮箱地址已复制到剪贴板"
-      ],
-      "Phone number copied to clipboard": [
-        "电话号码已复制到剪贴板"
-      ],
-      "Address copied to clipboard": [
-        "地址已复制到剪贴板"
       ],
       "Bug reported": [
         "问题已反馈"
@@ -2525,23 +2387,11 @@
       "You have successfully unsubscribed": [
         "您已成功降级"
       ],
-      "Code sent to ${ methodTo }": [
-        "代码已发送到 ${ methodTo }"
-      ],
-      "Verification successful": [
-        "验证成功"
-      ],
       "Keyboard shortcuts preferences updated": [
         "键盘快捷键设置已更新"
       ],
       "Preference saved": [
         "设置已保存"
-      ],
-      "Preferences saved": [
-        "设置已保存"
-      ],
-      "Contact group deleted": [
-        "联系人群组已删除"
       ],
       "Contact saved": [
         "联系人已保存"
@@ -2554,6 +2404,24 @@
       ],
       "Fingerprint copied to clipboard": [
         "指纹已复制到剪贴板"
+      ],
+      "Preferences saved": [
+        "设置已保存"
+      ],
+      "Contact group deleted": [
+        "联系人群组已删除"
+      ],
+      "Phone number copied to clipboard": [
+        "电话号码已复制到剪贴板"
+      ],
+      "Address copied to clipboard": [
+        "地址已复制到剪贴板"
+      ],
+      "Code sent to ${ methodTo }": [
+        "代码已发送到 ${ methodTo }"
+      ],
+      "Verification successful": [
+        "验证成功"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "已新增日历，可能需要几分钟才能同步"
@@ -2643,63 +2511,6 @@
         "已删除所有事件"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 个建议，请使用键盘导航"
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "未找到结果"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "搜索时区"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "糟糕，出错了"
-      ],
-      "There was a problem connecting to Proton.": [
-        "无法联系 Proton"
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "请 ${ refresh } 或检查您的连接。"
-      ],
-      "Error: ${ errorMessage }": [
-        "错误：${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "别担心，我们会解决的。"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "您也可以${ refresh }页面或稍后再试"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton 应用"
-      ],
-      "Go to ${ title }": [
-        "前往 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "转至 ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         "获取帮助"
@@ -2719,14 +2530,24 @@
         "设置"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "开"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "关"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2893,6 +2714,62 @@
         "选择"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "反馈内容不会经过端对端加密，请勿发送敏感信息"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "您确认要永久删除此联系人吗？"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "您确定要永久删除 ${ count } 联系人吗？"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "您确定要永久删除此联系人群组吗？"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "您确定要永久删除 ${ count } 联系人群组吗？"
+      ],
+      "This feature requires a paid Proton account": [
+        "此功能仅限付费用户使用"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "解密失败"
+      ],
+      "The verification of the contact details' signature failed.": [
+        "联系方式签名验证失败"
+      ],
+      "The contact failed to load.": [
+        "联系人加载失败"
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "部分需合并的联系人无法显示，请单独查看"
+      ],
+      "Contacts could not be merged": [
+        "无法合并联系人"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "您的本地日期和时间设置似乎不同步"
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "添加截图"
@@ -3004,6 +2881,77 @@
       ],
       "Unlimited": [
         "无限制"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "使用多个电子邮箱地址 / 别名连接到您的帐户，例如 username2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "使用 ProtonMail 托管您自己的域名，如 zhangsan@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "使用个人邮箱地址 username@pm.me 发送邮件"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "多用户支持仅适用于 2 名及以上用户方案"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield通过屏蔽广告、跟踪和恶意软件来保护您的设备并加快您的浏览速度。"
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "支持诸如 BitTorrent 的文件共享协议。"
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "可一键通过 Tor 网络通信。"
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "由多台服务器中转流量，增强 VPN 安全性。"
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "同时享用 ProtonVPN 和 ProtonMail（拥有数百万用户的加密邮箱服务）的所有收费功能。"
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "创建多个电子邮件地址连接到您的账户，例如 username2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "年费折扣已计入"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "两年折扣已计入"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "\"自动\" 表示使用编辑区中指定的格式，\"纯文本\" 则表示向此人发送的邮件将一律转换为纯文本"
+      ],
+      "Encrypted data with verified digital signature": [
+        "已通过数字签名验证的加密数据"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "邮件加密实现强制数字签名以佐证您发送的邮件的真实性"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "数字签名有助于佐证您的邮件的真实性"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "选择加密和数字签名的 PGP 格式，请注意 PGP/Inline 只能用于纯文本邮件"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "上传公钥后方可向其发送端到端加密的邮件"
+      ],
+      "You do not have any contacts to export": [
+        "没有任何联系人可供导出"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3323,28 +3271,6 @@
         "免费版"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "逾期账单"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "验证码"
-      ],
-      "Email": [
-        "邮件"
-      ],
-      "SMS": [
-        "短信"
-      ],
-      "Manual": [
-        "手动"
-      ],
-      "No verification method available": [
-        "没有可用的验证方法"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "添加信用卡/借记卡"
@@ -3354,6 +3280,19 @@
       ],
       "Bitcoin": [
         "比特币"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
       ]
     },
     "Label to change density": {
@@ -3378,14 +3317,6 @@
       ],
       "Maximized": [
         "最大化"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "群组已更改"
-      ],
-      "Contact group created": [
-        "群组已创建"
       ]
     },
     "Label for contact group name": {
@@ -3447,6 +3378,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "名称"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Action": [
+        "操作"
+      ],
+      "Fingerprint": [
+        "指纹"
+      ],
+      "Created": [
+        "创建时间"
+      ],
+      "Expires": [
+        "有效期至"
+      ],
+      "Type": [
+        "类型"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Actions": [
+        "操作"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "群组已更改"
+      ],
+      "Contact group created": [
+        "群组已创建"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "自动"
+      ],
+      "Plain text": [
+        "纯文本"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "遵循系统设置 (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "主密钥"
+      ],
+      "Verification only": [
+        "仅用于验证"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "受信"
+      ],
+      "Revoked": [
+        "已吊销"
+      ],
+      "Expired": [
+        "已过期"
       ]
     },
     "TableHeader": {
@@ -3622,17 +3623,31 @@
         "${ totalImported }/${ totalToImport } 联系人已加密并添至您的联系人列表"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
+    "Select files": {
+      "Upload": [
+        "上传"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期账单"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "验证码"
+      ],
+      "Email": [
+        "邮件"
+      ],
+      "SMS": [
+        "短信"
+      ],
+      "Manual": [
+        "手动"
+      ],
+      "No verification method available": [
+        "没有可用的验证方法"
       ]
     },
     "Loading info": {
@@ -3654,11 +3669,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "上传"
       ]
     },
     "Message display when a new app version is available": {
@@ -3822,17 +3832,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "取消 ${ formattedStart } 的活动"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "${ formattedStart } 的活动邀请函"
       ],
       "Update for an event on ${ formattedStart }": [
         "更新 ${ formattedStart } 的活动"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "取消开始于 ${ formattedStart } 的活动"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "开始于 { formattedStart } 的活动邀请函"
@@ -3840,8 +3844,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "更新开始于 ${ formattedStart } 的活动"
       ],
-      "Invitation: ${ eventTitle }": [
-        "邀请︰ ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "取消 ${ formattedStart } 的活动"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "取消开始于 ${ formattedStart } 的活动"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4264,11 +4271,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密码必须至少包含 ${ length } 个字符"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "姓名"
@@ -4383,9 +4385,9 @@
         "地址"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4607,6 +4609,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "读取文件 ${ formattedFilename } 出错，文件格式不对"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Message": {

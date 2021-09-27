@@ -5,6 +5,365 @@
   },
   "contexts": {
     "": {},
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+      ]
+    },
+    "Error": {
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
+      ],
+      "This field is required": [
+        "Bagian ini wajib isi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Isi minimal ${ minimumLength } karakter."
+      ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
+      "Not a valid number": [
+        "Nomor tidak valid"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak cocok"
+      ],
+      "Request timed out.": [
+        "Waktu permintaan habis."
+      ],
+      "Missing signature": [
+        "Tanda tangan hilang"
+      ],
+      "Contact signature not verified": [
+        "Tanda tangan kontak tidak terverifikasi"
+      ],
+      "Signature not verified": [
+        "Tanda tangan tidak terverifikasi"
+      ],
+      "Invalid name": [
+        "Nama tidak valid"
+      ],
+      "Unknown error": [
+        "Galat tak diketahui"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
+      ],
+      "Authentication canceled.": [
+        "Otentikasi dibatalkan."
+      ],
+      "Your import will not be processed.": [
+        "Impor Anda tidak akan diproses."
+      ],
+      "Authentication error.": [
+        "Kesalahan otentikasi."
+      ],
+      "Email address invalid": [
+        "Alamat surel tidak valid"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
+      ],
+      "Process aborted": [
+        "Proses dibatalkan"
+      ],
+      "Payment process cancelled": [
+        "Proses pembayaran dibatalkan"
+      ],
+      "Payment process failed": [
+        "Proses pembayaran gagal"
+      ],
+      "Payment process consumed": [
+        "Proses pembayaran selesai"
+      ],
+      "Payment process not supported": [
+        "Proses pembayaran tidak didukung"
+      ],
+      "Unknown payment token status": [
+        "Status token pembayaran tidak dikenal"
+      ],
+      "Tab closed": [
+        "Tab ditutup"
+      ],
+      "Name on card required": [
+        "Wajib isi nama di kartu"
+      ],
+      "Invalid expiration date": [
+        "Tanggal kedaluwarsa tidak valid"
+      ],
+      "Invalid card number": [
+        "Nomor kartu tidak valid"
+      ],
+      "Invalid ${ name } code": [
+        "Kode ${ name } tidak valid"
+      ],
+      "Invalid postal code": [
+        "Kode pos tidak valid"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Gagal sambung ke API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Jumlah di bawah minimum."
+      ],
+      "Amount above the maximum.": [
+        "Jumlah di atas maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Sumbangan minimal ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Tambahan kredit minimal ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Pembayaran minimal ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Pembayaran kedaluwarsa, silakan coba lagi."
+      ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak masuk salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi email, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Enter 6 digits": [
+        "Masukan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
+      ],
+      "Image upload failed": [
+        "Gagal unggah gambar"
+      ],
+      "Contact could not be saved": [
+        "Kontak tidak dapat disimpan"
+      ],
+      "Some contacts could not be deleted": [
+        "Beberapa kontak tidak dapat dihapus"
+      ],
+      "Preferences could not be saved": [
+        "Preferensi tidak bisa disimpan"
+      ],
+      "Some groups could not be deleted": [
+        "Beberapa kontak tidak dapat dihapus"
+      ],
+      "Invalid public key file": [
+        "Berkas kunci publik tidak valid"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Ada kesalahan saat mengekspor kontak vCard"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Grup tidak memiliki kontak: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Anda harus membuat nama"
+      ],
+      "A group with this name already exists": [
+        "Grup dengan nama ini sudah ada"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "File has no contents to preview": [
+        "Berkas ini kosong"
+      ],
+      "Could not generate file keys": [
+        ""
+      ],
+      "The original file has missing active revision": [
+        ""
+      ],
+      "The original file has missing session key": [
+        ""
+      ],
+      "The new revision of original file is not uploaded yet, please try again later": [
+        ""
+      ],
+      "The original file is not uploaded yet, please try again later": [
+        ""
+      ],
+      "The original file has missing hash key": [
+        ""
+      ],
+      "The original folder not found": [
+        "Folder asli tidak ditemukan"
+      ],
+      "File cannot be merged with folder": [
+        "Berkas tidak dapat digabungkan dengan folder"
+      ],
+      "The original folder or file not found": [
+        "Folder atau berkas asli tidak ditemukan"
+      ],
+      "Incorrect password. Please try again.": [
+        "Sandi salah. Silakan coba lagi."
+      ],
+      "No valid address found": [
+        "Tidak ditemukan alamat valid"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nama"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisasi"
+      ],
+      "Birthday": [
+        "Tanggal lahir"
+      ],
+      "Anniversary": [
+        "Ulang tahun"
+      ],
+      "Title": [
+        "Gelar"
+      ],
+      "Role": [
+        "Peran"
+      ],
+      "Note": [
+        "Catatan"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Jenis kelamin"
+      ],
+      "Language": [
+        "Bahasa"
+      ],
+      "Timezone": [
+        "Zona waktu"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Anggota"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Kerja"
+      ],
+      "Personal": [
+        "Pribadi"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Surel"
+      ],
+      "Home": [
+        "Rumah"
+      ],
+      "Work": [
+        "Kerja"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Phone": [
+        "Telepon"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Main": [
+        "Utama"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Pager": [
+        "Penyeranta"
+      ],
+      "Address": [
+        "Alamat"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bita"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
     "Info": {
       "Session timed out.": [
         "Sesi habis."
@@ -13,16 +372,10 @@
         "Koneksi internet terputus."
       ],
       "Servers are unreachable.": [
-        "Server tidak terjangkau."
+        "Server tidak dapat dijangkau."
       ],
       "No results found": [
         "Tidak ada hasil"
-      ],
-      "support team": [
-        "tim dukungan"
-      ],
-      "No contacts added yet": [
-        "Belum ada kontak yang ditambahkan"
       ],
       "Week": [
         "Pekan"
@@ -70,10 +423,10 @@
         "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "Internet connection restored.": [
-        "Koneksi Internet dipulihkan."
+        "Koneksi internet telah pulih."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi Internet putus. Mohon periksa koneksi pada perangkat Anda."
+        "Koneksi internet terputus. Mohon periksa koneksi pada perangkat Anda."
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
@@ -92,45 +445,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
-      ],
-      "here": [
-        "di sini"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirimkan ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaikinya."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
@@ -369,6 +683,48 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "here": [
+        "di sini"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirimkan ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaikinya."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Email Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Nomor telepon Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+      ],
+      "support team": [
+        "tim dukungan"
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Anggota"
       ],
@@ -386,18 +742,6 @@
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME mengirim pesan dengan mode tulis ini secara otomatis. Mohon dicatat, ProtonMail selalu menandatangi pesan terenkripsi"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Mohon tunggu saat kami sedang memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
@@ -426,6 +770,21 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat proses ini memerlukan waktu, tergantung pada ukuran buku alamat Anda."
       ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME mengirim pesan dengan mode tulis ini secara otomatis. Mohon dicatat, ProtonMail selalu menandatangi pesan terenkripsi"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
+      ],
+      "No contacts added yet": [
+        "Belum ada kontak yang ditambahkan"
+      ],
       "Group assignment applied": [
         "Penugasan grup diterapkan"
       ],
@@ -434,6 +793,9 @@
       ],
       "No group found": [
         "Grup tidak ditemukan"
+      ],
+      "Primary": [
+        "Utama"
       ],
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
@@ -455,9 +817,6 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
-      ],
-      "Primary": [
-        "Utama"
       ],
       "No email address": [
         "Tidak ada alamat email"
@@ -522,23 +881,20 @@
       "of": [
         "dari"
       ],
-      "Loading folder contents": [
-        "Memuat isi folder"
+      "Transfer skipped for file \"${ file.name }\"": [
+        ""
+      ],
+      "Transfer canceled for file \"${ name }\"": [
+        ""
+      ],
+      "Transfer skipped for folder \"${ folderName }\"": [
+        ""
+      ],
+      "Transfer canceled for folder \"${ name }\"": [
+        ""
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
-      ],
-      "Moving files": [
-        "Memindahkan berkas"
-      ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Apakah Anda yakin mau menghapus secara permanen item terpilih dari tempat sampah?"
-      ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Ini akan menghapus tautan dan menghapus akses ke berkas Anda untuk siapapun yang memiliki tautan ke sana."
-      ],
-      "You cannot undo this action.": [
-        "Anda tidak bisa membatalkannya."
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } sudah ada di lokasi ini."
@@ -743,364 +1099,52 @@
       ],
       "Select an uploaded file and create a link to it.": [
         "Pilih sebuah berkas yang diunggah dan buat sebuah tautan untuk berkas itu."
-      ]
-    },
-    "Error": {
-      "Request timed out.": [
-        "Waktu permintaan habis."
       ],
-      "This field is required": [
-        "Bagian ini wajib isi"
+      "Loading folder contents": [
+        "Memuat isi folder"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Isi minimal ${ minimumLength } karakter."
+      "Moving files": [
+        "Memindahkan berkas"
       ],
-      "Email is not valid": [
-        "Email tidak valid"
-      ],
-      "Not a valid number": [
-        "Nomor tidak valid"
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak cocok"
-      ],
-      "Missing signature": [
-        "Tanda tangan hilang"
-      ],
-      "Contact signature not verified": [
-        "Tanda tangan kontak tidak terverifikasi"
-      ],
-      "Signature not verified": [
-        "Tanda tangan tidak terverifikasi"
-      ],
-      "Invalid name": [
-        "Nama tidak valid"
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
-      "Unknown error": [
-        "Galat tak diketahui"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
-      ],
-      "Authentication canceled.": [
-        "Otentikasi dibatalkan."
-      ],
-      "Your import will not be processed.": [
-        "Impor Anda tidak akan diproses."
-      ],
-      "Authentication error.": [
-        "Kesalahan otentikasi."
-      ],
-      "Email address invalid": [
-        "Alamat surel tidak valid"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak masuk salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi email, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
-      "Enter 6 digits": [
-        "Masukan 6 digit"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Process aborted": [
-        "Proses dibatalkan"
-      ],
-      "Payment process cancelled": [
-        "Proses pembayaran dibatalkan"
-      ],
-      "Payment process failed": [
-        "Proses pembayaran gagal"
-      ],
-      "Payment process consumed": [
-        "Proses pembayaran selesai"
-      ],
-      "Payment process not supported": [
-        "Proses pembayaran tidak didukung"
-      ],
-      "Unknown payment token status": [
-        "Status token pembayaran tidak dikenal"
-      ],
-      "Tab closed": [
-        "Tab ditutup"
-      ],
-      "Name on card required": [
-        "Wajib isi nama di kartu"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid postal code": [
-        "Kode pos tidak valid"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Jumlah di bawah minimum."
-      ],
-      "Amount above the maximum.": [
-        "Jumlah di atas maksimum."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Sumbangan minimal ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Tambahan kredit minimal ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Pembayaran minimal ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kedaluwarsa, silakan coba lagi."
-      ],
-      "Invalid code": [
-        "Kode tidak valid"
-      ],
-      "Preferences could not be saved": [
-        "Preferensi tidak bisa disimpan"
-      ],
-      "Some groups could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
-      ],
-      "Image upload failed": [
-        "Gagal unggah gambar"
-      ],
-      "Contact could not be saved": [
-        "Kontak tidak dapat disimpan"
-      ],
-      "Some contacts could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
-      ],
-      "Invalid public key file": [
-        "Berkas kunci publik tidak valid"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Ada kesalahan saat mengekspor kontak vCard"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Grup tidak memiliki kontak: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Anda harus membuat nama"
-      ],
-      "A group with this name already exists": [
-        "Grup dengan nama ini sudah ada"
-      ],
-      "We were unable to connect to your service provider.": [
+      "Are you sure you want to permanently delete selected item from trash?": [
         ""
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+      "This will delete the link and remove access to your file for anyone with the link.": [
         ""
       ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
-      "No valid address found": [
-        "Tidak ditemukan alamat valid"
-      ],
-      "Incorrect password. Please try again.": [
-        "Sandi salah. Silakan coba lagi."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nama"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organisasi"
-      ],
-      "Birthday": [
-        "Tanggal lahir"
-      ],
-      "Anniversary": [
-        "Ulang tahun"
-      ],
-      "Title": [
-        "Gelar"
-      ],
-      "Role": [
-        "Peran"
-      ],
-      "Note": [
-        "Catatan"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Jenis kelamin"
-      ],
-      "Language": [
-        "Bahasa"
-      ],
-      "Timezone": [
-        "Zona waktu"
-      ],
-      "Geo": [
-        "Geo"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Anggota"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Kerja"
-      ],
-      "Personal": [
-        "Pribadi"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Surel"
-      ],
-      "Home": [
-        "Rumah"
-      ],
-      "Work": [
-        "Kerja"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Phone": [
-        "Telepon"
-      ],
-      "Mobile": [
-        "Seluler"
-      ],
-      "Main": [
-        "Utama"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Pager": [
-        "Penyeranta"
-      ],
-      "Address": [
-        "Alamat"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bita"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
+      "You cannot undo this action.": [
+        "Anda tidak bisa membatalkannya."
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
-        ""
+        "Menyinkronkan"
+      ],
+      "Not synced": [
+        "Tidak disinkronkan"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        ""
+        "Kalender sedang menyinkronkan data"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
       ],
       "Calendar link is wrong": [
-        ""
+        "Tautan kalender tidak tepat"
       ],
       "Calendar is too big": [
-        ""
+        "Ukuran kalender terlalu besar"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Tautan kalender tidak dapat diakses"
       ],
       "Calendar link is temporarily unaccessible": [
-        ""
+        "Tautan kalender untuk sementara tidak dapat diakses"
       ],
       "Failed to sync calendar": [
-        ""
+        "Gagal menyinkronkan kalender"
       ]
     },
     "Import contact. Contact identifier": {
@@ -1147,11 +1191,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Terjadi kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1333,9 +1372,6 @@
       "Close": [
         "Tutup"
       ],
-      "Use “${ label }” setting": [
-        "Gunakan pengaturan \"${ label }\""
-      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -1347,6 +1383,9 @@
       ],
       "Close modal": [
         "Tutup jendela"
+      ],
+      "Use “${ label }” setting": [
+        "Gunakan pengaturan \"${ label }\""
       ],
       "Close navigation": [
         "Tutup navigasi"
@@ -1363,50 +1402,14 @@
       "Load image": [
         "Muat gambar"
       ],
-      "refresh the page": [
-        "segarkan halaman"
-      ],
-      "Export": [
-        "Ekspor"
-      ],
-      "Delete": [
-        "Hapus"
-      ],
-      "Edit": [
-        "Edit"
-      ],
-      "Remove": [
-        "Hapus"
-      ],
-      "Download": [
-        "Unduh"
-      ],
-      "Use for sending": [
-        "Gunakan untuk pengiriman"
-      ],
-      "Trust": [
-        "Percayai"
-      ],
-      "Untrust": [
-        "Jangan percayai"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Email settings": [
-        "Pengaturan surel"
-      ],
-      "Contact group": [
-        "Grup kontak"
-      ],
-      "Upload picture": [
-        "Unggah gambar"
-      ],
       "Next month": [
         "Bulan depan"
       ],
       "Previous month": [
         "Bulan lalu"
+      ],
+      "Remove": [
+        "Hapus"
       ],
       "Confirm opening of link ${ link }": [
         "Konfirmasi membuka tautan ${ link }"
@@ -1414,8 +1417,14 @@
       "Continue with Google": [
         "Lanjutkan dengan Google"
       ],
+      "Delete": [
+        "Hapus"
+      ],
       "Signing out": [
         "Keluar"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Close this banner": [
         "Tutup spanduk ini"
@@ -1513,35 +1522,11 @@
       "Show info": [
         "Tampilkan info"
       ],
-      "Log in": [
-        "Masuk"
-      ],
-      "View invoice": [
-        "Lihat tagihan"
-      ],
-      "Get verification code": [
-        "Minta kode verifikasi"
-      ],
-      "Try another method": [
-        "Coba metode lain"
-      ],
-      "Request new code": [
-        "Minta kode baru"
+      "Remove bonuses": [
+        "Hapus bonus"
       ],
       "Verify": [
         "Verifikasi"
-      ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
-      ],
-      "Edit email address": [
-        "Edit alamat email"
-      ],
-      "Edit phone number": [
-        "Edit nomor telepon"
-      ],
-      "Remove bonuses": [
-        "Hapus bonus"
       ],
       "Try again": [
         "Coba lagi"
@@ -1594,17 +1579,38 @@
       "Increase": [
         "Tingkatkan"
       ],
+      "Log in": [
+        "Masuk"
+      ],
+      "View invoice": [
+        "Lihat tagihan"
+      ],
+      "Get verification code": [
+        "Minta kode verifikasi"
+      ],
+      "Try another method": [
+        "Coba metode lain"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Did not receive the code?": [
+        "Tidak menerima kode?"
+      ],
+      "Edit email address": [
+        "Edit alamat email"
+      ],
+      "Edit phone number": [
+        "Edit nomor telepon"
+      ],
       "Save": [
         "Simpan"
       ],
+      "Upload picture": [
+        "Unggah gambar"
+      ],
       "Add": [
         "Tambah"
-      ],
-      "Hide advanced PGP settings": [
-        "Sembunyikan pengaturan PGP lanjutan"
-      ],
-      "Show advanced PGP settings": [
-        "Tampilkan pengaturan PGP lanjutan"
       ],
       "Clear data": [
         "Bersihkan data"
@@ -1618,8 +1624,41 @@
       "Re-sign": [
         "Tanda tangani ulang"
       ],
+      "Hide advanced PGP settings": [
+        "Sembunyikan pengaturan PGP lanjutan"
+      ],
+      "Show advanced PGP settings": [
+        "Tampilkan pengaturan PGP lanjutan"
+      ],
+      "Edit": [
+        "Edit"
+      ],
       "Add to group": [
         "Tambah ke grup"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Contact group": [
+        "Grup kontak"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Download": [
+        "Unduh"
+      ],
+      "Use for sending": [
+        "Gunakan untuk pengiriman"
+      ],
+      "Trust": [
+        "Percayai"
+      ],
+      "Untrust": [
+        "Jangan percayai"
+      ],
+      "Email settings": [
+        "Pengaturan surel"
       ],
       "Merge": [
         "Gabung"
@@ -1726,12 +1765,6 @@
       "Previous": [
         "Sebelumnya"
       ],
-      "Delete permanently": [
-        "Hapus permanen"
-      ],
-      "Undo": [
-        "Urungkan"
-      ],
       "Cancel all uploads": [
         "Batalkan semua unggahan"
       ],
@@ -1804,6 +1837,9 @@
       "Empty trash": [
         "Sampah kosong"
       ],
+      "Delete permanently": [
+        "Hapus permanen"
+      ],
       "Restore from trash": [
         "Kembalikan dari kotak sampah"
       ],
@@ -1875,20 +1911,14 @@
       ],
       "Create link": [
         "Buat tautan"
+      ],
+      "Undo": [
+        "Urungkan"
       ]
     },
     "Title": {
       "Open actions dropdown": [
         "Buka menu tindakan"
-      ],
-      "Upgrade required": [
-        "Butuh peningkatan"
-      ],
-      "Email settings": [
-        "Pengaturan surel"
-      ],
-      "Contact group": [
-        "Grup kontak"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
@@ -1913,27 +1943,6 @@
       ],
       "Report a problem": [
         "Laporkan sebuah masalah"
-      ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
-      ],
-      "Enter your password": [
-        "Masukkan sandi Anda"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
-      "Human verification": [
-        "Verifikasi manusia"
       ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi kehilangan bonus Proton"
@@ -2025,6 +2034,30 @@
       "${ appName } customization": [
         "Penyesuaian { appName }"
       ],
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ],
+      "Account suspended": [
+        "Akun ditangguhkan"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Masukkan nama pengguna atau alamat surel ProtonMail"
+      ],
+      "Enter your password": [
+        "Masukkan sandi Anda"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Human verification": [
+        "Verifikasi manusia"
+      ],
+      "Edit image": [
+        "Edit gambar"
+      ],
       "Edit contact group": [
         "Edit grup kontak"
       ],
@@ -2037,26 +2070,14 @@
       "Add to ${ groupCount } group": [
         "Tambahkan ke ${ groupCount } grup"
       ],
-      "Email settings (${ emailAddress })": [
-        "Pengaturan surel (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Hapus ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Hapus ${ count } grup kontak"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } anggota"
-      ],
-      "Edit image": [
-        "Edit gambar"
-      ],
       "Edit contact": [
         "Edit kontak"
       ],
       "Create contact": [
         "Buat kontak"
+      ],
+      "Delete ${ Name }": [
+        "Hapus ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Hapus ${ count } kontak"
@@ -2076,8 +2097,23 @@
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
       ],
+      "Email settings (${ emailAddress })": [
+        "Pengaturan surel (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Hapus ${ count } grup kontak"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } anggota"
+      ],
       "Exporting contacts": [
         "Mengekspor kontak"
+      ],
+      "Upgrade required": [
+        "Butuh peningkatan"
+      ],
+      "Contact group": [
+        "Grup kontak"
       ],
       "Other names": [
         "Nama lain"
@@ -2093,6 +2129,9 @@
       ],
       "Other information": [
         "Informasi lainnya"
+      ],
+      "Email settings": [
+        "Pengaturan surel"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -2153,12 +2192,6 @@
       ],
       "Beta Access": [
         "Akses Beta"
-      ],
-      "Delete permanently": [
-        "Hapus permanen"
-      ],
-      "Stop sharing": [
-        "Berhenti berbagi"
       ],
       "Duplicate folder found": [
         "Ditemukan folder duplikat"
@@ -2309,38 +2342,23 @@
       ],
       "Total size": [
         "Ukuran total"
+      ],
+      "Delete permanently": [
+        "Hapus permanen"
+      ],
+      "Stop sharing": [
+        "Berhenti berbagi"
       ]
     },
     "Label": {
+      "Copy": [
+        "Salin"
+      ],
       "Reveal password": [
         "Tampilkan kata sandi"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
-      ],
-      "Copy": [
-        "Salin"
-      ],
-      "Street address": [
-        "Alamat rumah"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Region": [
-        "Provinsi"
-      ],
-      "Postal code": [
-        "Kode pos"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "Post office box": [
-        "Kotak pos"
-      ],
-      "Extended address": [
-        "Alamat lengkap"
       ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
@@ -2375,33 +2393,6 @@
       "Browser version": [
         "Versi peramban"
       ],
-      "Cancel": [
-        "Batal"
-      ],
-      "Submit": [
-        "Kirim"
-      ],
-      "Password": [
-        "Kata sandi"
-      ],
-      "Mailbox password": [
-        "Kata sandi kotak pesan"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
-      ],
-      "Username or ProtonMail address": [
-        "Nama pengguna atau alamat ProtonMail"
-      ],
-      "Phone number": [
-        "Nomor telepon"
-      ],
-      "Verification code": [
-        "Kode verifikasi"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
-      ],
       "Name on card": [
         "Nama di kartu"
       ],
@@ -2414,10 +2405,16 @@
       "CVV code": [
         "Kode CVV"
       ],
+      "Country": [
+        "Negara"
+      ],
       "Select your country": [
         "Pilih negara anda"
       ],
       "ZIP": [
+        "Kode pos"
+      ],
+      "Postal code": [
         "Kode pos"
       ],
       "BTC amount:": [
@@ -2450,17 +2447,59 @@
       "Payer": [
         "Pembayar"
       ],
-      "Add email address": [
-        "Tambah alamat surel"
+      "Cancel": [
+        "Batal"
       ],
-      "Email format": [
-        "Format surel"
+      "Submit": [
+        "Kirim"
+      ],
+      "Password": [
+        "Kata sandi"
+      ],
+      "Mailbox password": [
+        "Kata sandi kotak pesan"
+      ],
+      "Two-factor authentication code": [
+        "Kode otentikasi dua faktor"
+      ],
+      "Username or ProtonMail address": [
+        "Nama pengguna atau alamat ProtonMail"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
+      "Verification code": [
+        "Kode verifikasi"
+      ],
+      "Enter the 6-digit code": [
+        "Masukkan kode 6 digit"
       ],
       "Add image URL": [
         "Tambah URL gambar"
       ],
       "Upload picture": [
         "Unggah gambar"
+      ],
+      "Add email address": [
+        "Tambah alamat surel"
+      ],
+      "Email format": [
+        "Format surel"
+      ],
+      "Street address": [
+        "Alamat rumah"
+      ],
+      "City": [
+        "Kota"
+      ],
+      "Region": [
+        "Provinsi"
+      ],
+      "Post office box": [
+        "Kotak pos"
+      ],
+      "Extended address": [
+        "Alamat lengkap"
       ],
       "Add to group": [
         "Tambah ke grup"
@@ -2546,17 +2585,26 @@
       "Unknown file": [
         "Berkas tidak diketahui"
       ],
+      "Up to the parent folder": [
+        "Hingga folder yang berada satu tingkat di atas"
+      ],
+      "Up to ${ parentLinkName }": [
+        "Hingga ${ parentLinkName }"
+      ],
       "All": [
         "Semua"
       ],
       "Active": [
         "Aktif"
       ],
+      "Completed": [
+        "Selesai"
+      ],
       "Failed": [
         "Gagal"
       ],
-      "Apply to selected transfers": [
-        ""
+      "Apply to selection": [
+        "Aplikasikan"
       ],
       "Folder": [
         "Folder"
@@ -2620,9 +2668,6 @@
       "Browser version": [
         "Versi peramban"
       ],
-      "Mailbox password": [
-        "Kata sandi kotak pesan"
-      ],
       "ZIP": [
         "Kode pos"
       ],
@@ -2632,11 +2677,14 @@
       "Gift code": [
         "Kode hadiah"
       ],
-      "Start typing an email address": [
-        "Mulai ketik alamat surel"
+      "Mailbox password": [
+        "Kata sandi kotak pesan"
       ],
       "Image URL": [
         "URL gambar"
+      ],
+      "Start typing an email address": [
+        "Mulai ketik alamat surel"
       ],
       "Filter groups": [
         "Filter grup"
@@ -2663,11 +2711,6 @@
       ],
       "${ minutes } minute": [
         "${ minutes } menit"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
     "Storage": {
@@ -2700,14 +2743,14 @@
       "clearing your browser cache": [
         "membersihkan singgahan peramban Anda"
       ],
-      "Request an invite": [
-        "Minta undangan"
-      ],
       "click here": [
         "klik di sini"
       ],
       "Add a gift code": [
         "Tambah kode hadiah"
+      ],
+      "Request an invite": [
+        "Minta undangan"
       ],
       "My files": [
         "Berkas saya"
@@ -2719,264 +2762,9 @@
         "Trash"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Data terenkripsi dengan tanda tangan digital terverifikasi"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Gunakan banyak alamat / alias yang ditautkan ke akun Anda, mis. username2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hosting email untuk domain Anda sendiri di ProtonMail, mis. john.smith@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Gunakan alamat pribadi namapengguna@pm.me untuk mengirim surel"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 pengguna atau lebih"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan malware."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Mendukung untuk protokol berbagi fnerkas seperti BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Akses konten yang diblokir per negara (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, dll) di mana saja."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Terlindung dari ancaman privasi VPN dengan mengalihkan koneksi Internet Anda ke beberapa server."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Dapatkan semua fitur berbayar ProtonVPN dan ProtonMail (layanan surel terenkripsi yang dipakai jutaan orang untuk melindungi data) dalam satu paket."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan surel terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) hanya dengan satu paket."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Pakai email dengan domain Anda sendiri di ${ mailAppName }, mis. john.smith@contoh.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Buat banyak alamat surel yang tertaut ke akun Anda, misal namapengguna2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Diskon diaktifkan untuk penagihan tahunan"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Diskon diaktifkan untuk penagihan dua tahunan"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Enkripsi surel mewajibkan tanda tangan surel untuk memastikan pesan yang Anda kirim"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Tanda tangan digital memastikan identitas Anda sebagai pengirim surel"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
-      ],
-      "You do not have any contacts to export": [
-        "Anda tidak memiliki kontak untuk diekspor"
-      ],
-      "Expired sharing link": [
-        "Tautan berbagi usang"
-      ],
-      "Inactive sharing link": [
-        ""
-      ],
-      "Active sharing link": [
-        "Tautan berbagi aktif"
-      ]
-    },
-    "Table header": {
-      "Name": [
-        "Nama"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Action": [
-        "Tindakan"
-      ],
-      "Fingerprint": [
-        "Sidik jari"
-      ],
-      "Created": [
-        "Dibuat"
-      ],
-      "Expires": [
-        "Kadaluarsa"
-      ],
-      "Type": [
-        "Tipe"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Tindakan"
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Otomatis"
-      ],
-      "Plain text": [
-        "Teks biasa"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Gunakan bawaan global (${ defaultValueText })"
-      ]
-    },
-    "Key badge": {
-      "Primary": [
-        "Utama"
-      ],
-      "Verification only": [
-        "Verifikasi saja"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Terpercaya"
-      ],
-      "Revoked": [
-        "Dicabut"
-      ],
-      "Expired": [
-        "Kedaluwarsa"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Fitur ini perlu akun Proton berbayar"
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Dengan memilih metode pembayaran ini, akun Anda tidak bisa langsung ditingkatkan. Kami akan memperbarui akun Anda setelah menerima pembayaran."
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Apakah Anda yakin mau menghapus grup kontak ini secara permanen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Apakah Anda yakin mau menghapus secara permanen ${ count } kontak?"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di bidang tersebut untuk melanjutkan."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Proses dekripsi konten terenkripsi gagal."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Verifikasi tanda tangan rincian kontak gagal."
-      ],
-      "The contact failed to load.": [
-        "Kontak gagal dimuat."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
-      ],
-      "Contacts could not be merged": [
-        "Kontak tidak dapat digabung"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ]
-    },
-    "Success": {
-      "Email address copied to clipboard": [
-        "Alamat surel disalin ke papan klip"
-      ],
-      "Phone number copied to clipboard": [
-        "Nomor telepon disalin ke papan klip"
-      ],
-      "Address copied to clipboard": [
-        "Alamat disalin ke papan klip"
-      ],
-      "Bug reported": [
-        "Bug dilaporkan"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kode dikirim ke ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verifikasi berhasil"
-      ],
-      "You have successfully unsubscribed": [
-        "Anda telah berhenti berlangganan"
-      ],
-      "Preferences saved": [
-        "Preferensi disimpan"
-      ],
-      "Contact group deleted": [
-        "Grup kontak dihapus"
-      ],
-      "Contact saved": [
-        "Kontak disimpan"
-      ],
-      "Contacts deleted": [
-        "Kontak dihapus"
-      ],
-      "Contact deleted": [
-        "Kontak telah dihapus"
-      ],
-      "Fingerprint copied to clipboard": [
-        "Sidik jari disalin ke clipboard"
-      ],
-      "Preference saved": [
-        "Preferensi disimpan"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferensi pintasan papan ketik diperbarui"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Berkas Anda telah dipulihkan ke \"Berkas saya\"."
-      ],
-      "Recovery has started.": [
-        "Pemulihan dimulai."
-      ],
-      "${ nameElement } renamed successfully": [
-        "${ nameElement } telah berganti nama"
-      ],
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" berhasil dibuat"
-      ],
-      "The link to your file was successfully copied.": [
-        "Tautan ke berkas Anda berhasil disalin."
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
     "Hint": {
@@ -3035,6 +2823,124 @@
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
       ]
     },
+    "Warning": {
+      "Your local date & time settings seem to be out of sync.": [
+        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Dengan memilih metode pembayaran ini, akun Anda tidak bisa langsung ditingkatkan. Kami akan memperbarui akun Anda setelah menerima pembayaran."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Apakah Anda yakin mau menghapus grup kontak ini secara permanen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Apakah Anda yakin mau menghapus secara permanen ${ count } kontak?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di bidang tersebut untuk melanjutkan."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Fitur ini perlu akun Proton berbayar"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Proses dekripsi konten terenkripsi gagal."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Verifikasi tanda tangan rincian kontak gagal."
+      ],
+      "The contact failed to load.": [
+        "Kontak gagal dimuat."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
+      ],
+      "Contacts could not be merged": [
+        "Kontak tidak dapat digabung"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ]
+    },
+    "Success": {
+      "Email address copied to clipboard": [
+        "Alamat surel disalin ke papan klip"
+      ],
+      "Bug reported": [
+        "Bug dilaporkan"
+      ],
+      "You have successfully unsubscribed": [
+        "Anda telah berhenti berlangganan"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
+      ],
+      "Contact saved": [
+        "Kontak disimpan"
+      ],
+      "Contacts deleted": [
+        "Kontak dihapus"
+      ],
+      "Contact deleted": [
+        "Kontak telah dihapus"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Sidik jari disalin ke clipboard"
+      ],
+      "Preferences saved": [
+        "Preferensi disimpan"
+      ],
+      "Contact group deleted": [
+        "Grup kontak dihapus"
+      ],
+      "Phone number copied to clipboard": [
+        "Nomor telepon disalin ke papan klip"
+      ],
+      "Address copied to clipboard": [
+        "Alamat disalin ke papan klip"
+      ],
+      "Preference saved": [
+        "Preferensi disimpan"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferensi pintasan papan ketik diperbarui"
+      ],
+      "Recovery has started.": [
+        "Pemulihan dimulai."
+      ],
+      "${ nameElement } renamed successfully": [
+        "${ nameElement } telah berganti nama"
+      ],
+      "\"${ formattedName }\" created successfully": [
+        "\"${ formattedName }\" berhasil dibuat"
+      ],
+      "The link to your file was successfully copied.": [
+        "Tautan ke berkas Anda berhasil disalin."
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        "Berkas Anda telah dipulihkan ke \"Berkas saya\"."
+      ]
+    },
     "Header": {
       "Get help": [
         "Dapatkan bantuan"
@@ -3051,14 +2957,24 @@
         "Pengaturan"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Aktif"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Nonaktif"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -3220,28 +3136,6 @@
         "Lampirkan tangkapan layar"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Tagihan jatuh tempo"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "Metode verifikasi tidak tersedia"
-      ]
-    },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Silakan hubungi kami di ${ email } untuk mendapatkan instruksi cara membayar secara tunai."
@@ -3348,6 +3242,86 @@
       ],
       "Unlimited": [
         "Tanpa Batas"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Gunakan banyak alamat / alias yang ditautkan ke akun Anda, mis. username2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Hosting email untuk domain Anda sendiri di ProtonMail, mis. john.smith@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Gunakan alamat pribadi namapengguna@pm.me untuk mengirim surel"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 pengguna atau lebih"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan malware."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Mendukung untuk protokol berbagi fnerkas seperti BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Akses konten yang diblokir per negara (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, dll) di mana saja."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Terlindung dari ancaman privasi VPN dengan mengalihkan koneksi Internet Anda ke beberapa server."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Dapatkan semua fitur berbayar ProtonVPN dan ProtonMail (layanan surel terenkripsi yang dipakai jutaan orang untuk melindungi data) dalam satu paket."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan surel terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) hanya dengan satu paket."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Pakai email dengan domain Anda sendiri di ${ mailAppName }, mis. john.smith@contoh.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Buat banyak alamat surel yang tertaut ke akun Anda, misal namapengguna2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Diskon diaktifkan untuk penagihan tahunan"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Diskon diaktifkan untuk penagihan dua tahunan"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Data terenkripsi dengan tanda tangan digital terverifikasi"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Enkripsi surel mewajibkan tanda tangan surel untuk memastikan pesan yang Anda kirim"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Tanda tangan digital memastikan identitas Anda sebagai pengirim surel"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
+      ],
+      "You do not have any contacts to export": [
+        "Anda tidak memiliki kontak untuk diekspor"
+      ],
+      "Expired sharing link": [
+        "Tautan berbagi usang"
+      ],
+      "Inactive sharing link": [
+        ""
+      ],
+      "Active sharing link": [
+        "Tautan berbagi aktif"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3678,6 +3652,118 @@
         "Bitcoin"
       ]
     },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tagihan jatuh tempo"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Metode verifikasi tidak tersedia"
+      ]
+    },
+    "Label for contact group name": {
+      "Name": [
+        "Nama"
+      ]
+    },
+    "Placeholder for contact group name": {
+      "Name": [
+        "Nama"
+      ]
+    },
+    "Label for contact group color": {
+      "Color": [
+        "Warna"
+      ]
+    },
+    "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
+      ],
+      "No contacts exported.": [
+        "Tidak ada kontak yang diekspor."
+      ],
+      "Progress: ${ combinedProgress }%": [
+        "Kemajuan: ${ combinedProgress }%"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } dari ${ totalBeMerged } kontak berhasil digabung."
+      ],
+      "No contacts merged.": [
+        "Tidak ada kontak yang digabung."
+      ]
+    },
+    "Description": {
+      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Mendekripsi kontak... Ini perlu beberapa menit. Saat proses selesai, Anda akan dapat mengunduh semua kontak yang diekspor."
+      ],
+      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Menggabungkan kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
+      ],
+      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Menghapus kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
+      ],
+      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
+        "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Batalkan tanda pada kontak yang tidak ingin digabung."
+      ],
+      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
+        "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Berkas harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan pisahkan jadi berkas yang lebih kecil."
+      ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
+      ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Nama"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Action": [
+        "Tindakan"
+      ],
+      "Fingerprint": [
+        "Sidik jari"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kadaluarsa"
+      ],
+      "Type": [
+        "Tipe"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Tindakan"
+      ]
+    },
     "Notification": {
       "Contact group updated": [
         "Grup kontak telah diperbarui"
@@ -3685,8 +3771,50 @@
       "Contact group created": [
         "Grup kontak telah dibuat"
       ],
-      "Not enough space to upload ${ formattedRemaining }": [
-        "Kapasitas tidak cukup untuk menampung ${ formattedRemaining }"
+      "File or folder \"${ filename }\" is already uploading": [
+        "Berkas atau folder \"${ filename }\" sedang dalam proses pengunggahan"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Berkas atau folder \"${ filename }\" dan ${ count } lainnya sedang dalam proses pengunggahan"
+      ],
+      "File or folder is missing a name": [
+        "Berkas atau folder belum dinamai"
+      ],
+      "Not enough space to upload ${ formattedTotal }": [
+        "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
+      ],
+      "Failed to upload files: ${ err }": [
+        "Gagal mengunggah berkas: ${ err }"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Semua item akan dihapus permanen dari kotak sampah"
+      ],
+      "Move ${ movingCount } file": [
+        "Pindah ${ movingCount } berkas"
+      ],
+      "Move ${ movingCount } folder": [
+        "Pindah ${ movingCount } folder"
+      ],
+      "Move ${ movingCount } item": [
+        "Pindah ${ movingCount } item"
+      ],
+      "Failed to move, please try again": [
+        "Pemindahan gagal, silakan coba lagi"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Pindahkan ${ itemsToMoveCount } berkas"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Pindahkan ${ itemsToMoveCount } folder"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Pindahkan ${ itemsToMoveCount } item"
+      ],
+      "Your settings have been changed successfully.": [
+        "Pengaturan telah disimpan."
+      ],
+      "The link to your file was deleted.": [
+        "Tautan ke berkas Anda dihapus."
       ],
       "\"${ firstItemName }\" deleted permanently from trash": [
         "\"${ firstItemName }\" dihapus permanen dari kotak sampah"
@@ -3751,9 +3879,6 @@
       "${ failedMovesCount } item failed to be moved": [
         "${ failedMovesCount } item gagal dipindahkan"
       ],
-      "The link to your file was deleted.": [
-        "Tautan ke berkas Anda dihapus."
-      ],
       "${ deletedCount } link to your file was deleted.": [
         "${ deletedCount } tautan ke berkas Anda dihapus."
       ],
@@ -3762,94 +3887,39 @@
       ],
       "${ failedCount } link to your file failed to be deleted.": [
         "${ failedCount } tautan ke berkas Anda gagal dihapus."
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Semua item akan dihapus permanen dari kotak sampah"
-      ],
-      "Move ${ movingCount } file": [
-        "Pindah ${ movingCount } berkas"
-      ],
-      "Move ${ movingCount } folder": [
-        "Pindah ${ movingCount } folder"
-      ],
-      "Move ${ movingCount } item": [
-        "Pindah ${ movingCount } item"
-      ],
-      "Failed to move, please try again": [
-        "Pemindahan gagal, silakan coba lagi"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Pindahkan ${ itemsToMoveCount } berkas"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Pindahkan ${ itemsToMoveCount } folder"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Pindahkan ${ itemsToMoveCount } item"
-      ],
-      "Your settings have been changed successfully.": [
-        "Pengaturan telah disimpan."
       ]
     },
-    "Label for contact group name": {
-      "Name": [
-        "Nama"
+    "MIME type": {
+      "Automatic": [
+        "Otomatis"
+      ],
+      "Plain text": [
+        "Teks biasa"
       ]
     },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Nama"
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Gunakan bawaan global (${ defaultValueText })"
       ]
     },
-    "Label for contact group color": {
-      "Color": [
-        "Warna"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
+    "Key badge": {
+      "Primary": [
+        "Utama"
       ],
-      "No contacts exported.": [
-        "Tidak ada kontak yang diekspor."
+      "Verification only": [
+        "Verifikasi saja"
       ],
-      "Progress: ${ combinedProgress }%": [
-        "Kemajuan: ${ combinedProgress }%"
+      "WKD": [
+        "WKD"
       ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
+      "Trusted": [
+        "Terpercaya"
       ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } dari ${ totalBeMerged } kontak berhasil digabung."
+      "Revoked": [
+        "Dicabut"
       ],
-      "No contacts merged.": [
-        "Tidak ada kontak yang digabung."
-      ]
-    },
-    "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Mendekripsi kontak... Ini perlu beberapa menit. Saat proses selesai, Anda akan dapat mengunduh semua kontak yang diekspor."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Menggabungkan kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Menghapus kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Batalkan tanda pada kontak yang tidak ingin digabung."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Berkas harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan pisahkan jadi berkas yang lebih kecil."
-      ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
+      "Expired": [
+        "Kedaluwarsa"
       ]
     },
     "TableHeader": {
