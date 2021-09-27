@@ -40,11 +40,9 @@ import { toText } from '../parserHtml';
 import { sizeOfCachedMessage } from './esCache';
 
 /**
- * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
+ * Decrypt the given armored index key. Return undefined if something goes wrong.
  */
-export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
-    const encryptedKey = getES.Key(userID);
-
+export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: string | null | undefined) => {
     if (!encryptedKey) {
         return;
     }
@@ -55,7 +53,7 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
         message: await pmcryptoGetMessage(encryptedKey),
         publicKeys: [primaryUserKey.publicKey],
         privateKeys: [primaryUserKey.privateKey],
-    }).catch((error: any) => esSentryReport('getIndexKey: decryption', { error }));
+    });
 
     if (!decryptionResult) {
         return;
@@ -63,12 +61,27 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 
     const { data: decryptedKey } = decryptionResult;
 
-    const importedKey = await crypto.subtle
-        .importKey('jwk', JSON.parse(decryptedKey), { name: AesKeyGenParams.name }, false, KeyUsages)
-        .catch((error: any) => esSentryReport('getIndexKey: parsing', { error }));
+    const importedKey = await crypto.subtle.importKey(
+        'jwk',
+        JSON.parse(decryptedKey),
+        { name: AesKeyGenParams.name },
+        true,
+        KeyUsages
+    );
 
     if ((importedKey as CryptoKey).algorithm) {
         return importedKey;
+    }
+};
+
+/**
+ * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
+ */
+export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
+    try {
+        return decryptIndexKey(getUserKeys, getES.Key(userID));
+    } catch (error: any) {
+        esSentryReport('getIndexKey', { error });
     }
 };
 
@@ -413,6 +426,21 @@ export const buildDB = async (
 };
 
 /**
+ * Store an existing index key to local storage
+ */
+export const storeIndexKey = async (indexKey: CryptoKey, userID: string, getUserKeys: GetUserKeys) => {
+    const userKeysList = await getUserKeys();
+    const primaryUserKey = userKeysList[0];
+    const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
+    const { data: encryptedKey } = await encryptMessage({
+        data: JSON.stringify(keyToEncrypt),
+        publicKeys: [primaryUserKey.publicKey],
+        privateKeys: [primaryUserKey.privateKey],
+    });
+    setES.Key(userID, encryptedKey);
+};
+
+/**
  * Execute the initial steps of a new indexing, i.e. generating an index key and the DB itself
  */
 export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api: Api) => {
@@ -470,20 +498,13 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     let indexKey: CryptoKey;
     try {
         indexKey = await crypto.subtle.generateKey(AesKeyGenParams, true, KeyUsages);
-        const userKeysList = await getUserKeys();
-        const primaryUserKey = userKeysList[0];
-        const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
-        const { data: encryptedKey } = await encryptMessage({
-            data: JSON.stringify(keyToEncrypt),
-            publicKeys: [primaryUserKey.publicKey],
-            privateKeys: [primaryUserKey.privateKey],
-        });
-        setES.Key(userID, encryptedKey);
+        await storeIndexKey(indexKey, userID, getUserKeys);
     } catch (error: any) {
         esSentryReport('initialiseDB: key generation', { error });
 
         removeES.Event(userID);
         removeES.Progress(userID);
+        await deleteESDB(userID);
         return result;
     }
 

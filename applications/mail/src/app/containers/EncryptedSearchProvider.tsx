@@ -47,8 +47,8 @@ import {
     removeESFlags,
     removeES,
     setES,
-    getES,
     esSentryReport,
+    checkNewUserID,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -61,7 +61,9 @@ import { cacheDB, refreshESCache } from '../helpers/encryptedSearch/esCache';
 import {
     checkIsDBLimited,
     correctDecryptionErrors,
-    refreshIndex,
+    getEventFromLS,
+    migrateLS,
+    refreshLegacyIndex,
     syncMessageEvents,
 } from '../helpers/encryptedSearch/esSync';
 import { queryEvents, sendESMetrics } from '../helpers/encryptedSearch/esAPI';
@@ -112,12 +114,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Delete localStorage blobs and IDB
      */
-    const esDelete = async () => {
+    const esDelete = async (inputUserID?: string) => {
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
-        removeESFlags(userID);
+        const uID = inputUserID || userID;
+        removeESFlags(uID);
         setESStatus(() => defaultESStatus);
-        return deleteESDB(userID);
+        return deleteESDB(uID);
     };
 
     /**
@@ -132,8 +135,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Notify the user the DB is deleted. Typically this is needed if the key is no
      * longer usable to decrypt it
      */
-    const dbCorruptError = async () => {
-        await esDelete();
+    const dbCorruptError = async (inputUserID?: string) => {
+        await esDelete(inputUserID);
         createNotification({
             text: c('Error').t`Please activate your content search again`,
             type: 'error',
@@ -218,8 +221,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
             const isIDBIntact = await canUseES(userID);
             if (!indexKey || !isIDBIntact) {
-                await dbCorruptError();
-                return;
+                return dbCorruptError();
             }
 
             const { isCacheReady } = esCacheRef.current;
@@ -325,17 +327,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     /**
-     * Check whether a refresh is needed
+     * Check whether a refresh is needed. Temporarily disabled to assess impact
      */
-    const checkResfresh = async (
+    /* const checkResfresh = async (
         indexKey: CryptoKey,
         eventToCheck: Event,
         wasAlreadyRefreshing: boolean
     ): Promise<Event | undefined> => {
-        // Resetting is necessery to show appropriate UI when refreshing immediately after indexing
-        recordProgress(0, 0);
 
         if (hasBit(eventToCheck.Refresh, EVENT_ERRORS.MAIL)) {
+            // Resetting is necessery to show appropriate UI when refreshing immediately after indexing
+            recordProgress(0, 0);
+
             // In case we weren't already showing the refreshing UI, we do now
             if (!wasAlreadyRefreshing) {
                 setESStatus((esStatus) => {
@@ -368,7 +371,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
             return newEventToCheck;
         }
-    };
+    }; */
 
     /**
      * Conclude any type of syncing routine
@@ -398,7 +401,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Catch up with all changes contained in the given event
      */
     const catchUpFromEvent = async (indexKey: CryptoKey, currentEvent: Event): Promise<void> => {
-        let refreshEvent: Event | undefined;
+        // Temporarily disabled to assess impact. The Refresh flag is checked before calling this function
+        /* let refreshEvent: Event | undefined;
         try {
             refreshEvent = await checkResfresh(indexKey, currentEvent, false);
         } catch (error: any) {
@@ -412,10 +416,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return catchUpFromEvent(indexKey, currentEvent);
         }
 
-        const eventToCheck = refreshEvent || currentEvent;
+        const eventToCheck = refreshEvent || currentEvent; */
 
         try {
-            await syncIndexedDB(eventToCheck, indexKey);
+            await syncIndexedDB(currentEvent, indexKey);
         } catch (error: any) {
             esSentryReport('catchUpFromEvent: syncIndexedDB', { error });
             setESStatus((esStatus) => {
@@ -424,23 +428,19 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     isRefreshing: false,
                 };
             });
-            // In case syncing fails, we retry but from the event after refreshing, otherwise
-            // a new refresh will be triggered
-            return catchUpFromEvent(indexKey, eventToCheck);
+            return catchUpFromEvent(indexKey, currentEvent);
         }
 
-        return finaliseSyncing(eventToCheck, indexKey);
+        return finaliseSyncing(currentEvent, indexKey);
     };
 
     /**
      * Fetch all events since a previously stored one
      */
-    const catchUpFromLS = async (indexKey: CryptoKey): Promise<void> => {
+    const catchUpFromLS = async (indexKey: CryptoKey, initialEvent: Event): Promise<void> => {
         const isIDBIntact = await canUseES(userID);
-        const storedEventID = getES.Event(userID);
-        if (!isIDBIntact || !storedEventID) {
-            await dbCorruptError();
-            return;
+        if (!isIDBIntact) {
+            return dbCorruptError();
         }
 
         setESStatus((esStatus) => {
@@ -453,19 +453,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Resetting is necessery to show appropriate UI when refreshing immediately after indexing
         recordProgress(0, 0);
 
-        // If there is no event to check, syncing is considered failed and will be retried
-        const currentEvent = await queryEvents(api, storedEventID);
-        if (!currentEvent || !currentEvent.EventID) {
-            setESStatus((esStatus) => {
-                return {
-                    ...esStatus,
-                    isRefreshing: false,
-                };
-            });
-            return catchUpFromLS(indexKey);
-        }
-
-        let refreshEvent: Event | undefined;
+        // Temporarily disabled to assess impact. The Refresh flag is checked before calling this function
+        /* let refreshEvent: Event | undefined;
         try {
             refreshEvent = await checkResfresh(indexKey, currentEvent, true);
 
@@ -488,7 +477,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 };
             });
             return catchUpFromLS(indexKey);
-        }
+        } */
 
         // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
         recordProgress(0, 0);
@@ -499,7 +488,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // successful
         let keepSyncing = true;
         let index = 0;
-        const newEventsToCheck: Event[] = [refreshEvent || currentEvent];
+        const newEventsToCheck: Event[] = [initialEvent];
         while (keepSyncing) {
             try {
                 const nextEventToCheck = newEventsToCheck[index++];
@@ -521,7 +510,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                         isRefreshing: false,
                     };
                 });
-                return catchUpFromLS(indexKey);
+                return catchUpFromLS(indexKey, initialEvent);
             }
         }
 
@@ -551,7 +540,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     isRefreshing: false,
                 };
             });
-            return catchUpFromLS(indexKey);
+            return catchUpFromLS(indexKey, initialEvent);
         }
 
         return finaliseSyncing(newEventsToCheck[newEventsToCheck.length - 1], indexKey);
@@ -571,7 +560,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         setES.Pause(userID);
         const isIDBIntact = await canUseES(userID);
         if (!isIDBIntact) {
-            await dbCorruptError();
+            return dbCorruptError();
         }
     };
 
@@ -648,8 +637,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
             const isIDBIntact = await canUseES(userID);
             if (!isIDBIntact) {
-                await dbCorruptError();
-                return;
+                return dbCorruptError();
             }
 
             await wait(2 * SECOND);
@@ -667,7 +655,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // the Event blob in localStorage during initialisation. Note that we finalise
         // indexing even it this step fails, because it will be retried at every new
         // event and refresh
-        const catchUpPromise = catchUpFromLS(indexKey);
+        const currentEvent = await getEventFromLS(userID, api);
+
+        if (!currentEvent || hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
+            return dbCorruptError();
+        }
+
+        const catchUpPromise = catchUpFromLS(indexKey, currentEvent);
         addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
@@ -708,8 +702,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const isIDBIntact = await canUseES(userID);
         if (!isIDBIntact) {
-            await dbCorruptError();
-            return false;
+            return dbCorruptError().then(() => false);
         }
 
         // Prevent old searches from interfering with newer ones
@@ -775,8 +768,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // server-side search, otherwise we want to show a generic error and still
             // fall back to server-side search
             if (error.message === 'Key not found') {
-                await dbCorruptError();
-                return false;
+                return dbCorruptError().then(() => false);
             }
             throw error;
         }
@@ -868,8 +860,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         if (!indexKey) {
-            await dbCorruptError();
-            return;
+            return dbCorruptError();
         }
 
         const searchOutput = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
@@ -958,6 +949,67 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return permanentResults.findIndex((result) => result.ID === ID) !== -1;
     };
 
+    /**
+     * Remove the index and restart ES by creating a new one from scratch
+     */
+    const restartIndexing = async () => {
+        await esDelete();
+        return resumeIndexing();
+    };
+
+    /**
+     * Recover an index built under a legacy userID
+     */
+    const recoverLegacyIndex = async (legacyUserID: string, indexKey: CryptoKey) => {
+        // If the DB is corrupt, there is no point in recovering it
+        const isIDBIntact = await canUseES(legacyUserID);
+        if (!isIDBIntact) {
+            throw new Error('DB is not intact');
+        }
+
+        // In case building was in process, it's safer to remove it and start over
+        if (!wasIndexingDone(legacyUserID)) {
+            throw new Error('Indexing was not done');
+        }
+
+        // Blobs in localStorage are initialised
+        await migrateLS(legacyUserID, userID, indexKey, getUserKeys);
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isRefreshing: true,
+                esEnabled: true,
+            };
+        });
+
+        // Otherwise we try to refresh the index and resort to removing it only if
+        // something fails
+        await refreshLegacyIndex(legacyUserID, userID, api, indexKey, getMessageKeys, recordProgress, messageCounts);
+
+        // If the process is successful, the old DB and LS blobs are removed
+        await esDelete(legacyUserID);
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isRefreshing: false,
+                dbExists: true,
+                esEnabled: isESEnabled(userID),
+            };
+        });
+
+        // If the process is successful, catch up with any event happened during refreshing, which
+        // was stored in localStorage by refreshLegacyIndex
+        const currentEvent = await getEventFromLS(userID, api);
+
+        if (!currentEvent || hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
+            throw new Error('Refresh flag set');
+        }
+
+        addSyncing(() => catchUpFromLS(indexKey, currentEvent));
+    };
+
     useSubscribeEventManager(async (event: Event) => {
         const { dbExists, cachedIndexKey } = esStatus;
         if (!dbExists) {
@@ -967,13 +1019,16 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         const isIDBIntact = await canUseES(userID);
         if (!indexKey || !isIDBIntact) {
-            await dbCorruptError();
-            return;
+            return dbCorruptError();
         }
 
         // Every time a new event happens, we simply catch up everything since the last
         // processed event. In case any failure occurs, the event ID stored will not be
         // overwritten
+        if (hasBit(event.Refresh, EVENT_ERRORS.MAIL)) {
+            return restartIndexing();
+        }
+
         addSyncing(() => catchUpFromEvent(indexKey, event));
     });
 
@@ -1001,16 +1056,42 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     }, [isSearch]);
 
     useEffect(() => {
-        if (!indexKeyExists(userID)) {
-            return;
-        }
-
         const run = async () => {
-            const indexKey = await getIndexKey(getUserKeys, userID);
+            // Check all keys that decrypt under the current user's key
+            const indexKeys = await checkNewUserID(getUserKeys);
+
+            // If there is none, the user has never activated ES
+            if (indexKeys.length === 0) {
+                return;
+            }
+
+            // If there is more than one something is off, e.g. a migration was
+            // already attempted, and it's best to remove them all
+            if (indexKeys.length > 1) {
+                await Promise.all(
+                    indexKeys.map(async ({ userID }) => {
+                        await esDelete(userID);
+                    })
+                );
+                return restartIndexing();
+            }
+
+            // At this point there is only one key blob. If the stored user ID does not coincide with the
+            // current one, a migration is attempted; otherwise a migration already happened or is
+            // not needed at all
+            const { userID: storedUserID, indexKey } = indexKeys[0];
+            if (storedUserID !== userID) {
+                try {
+                    return recoverLegacyIndex(storedUserID, indexKey);
+                } catch (error: any) {
+                    await esDelete(storedUserID);
+                    return restartIndexing();
+                }
+            }
+
             const isIDBIntact = await canUseES(userID);
             if (!indexKey || !isIDBIntact) {
-                await dbCorruptError();
-                return;
+                return dbCorruptError();
             }
 
             setESStatus((esStatus) => {
@@ -1033,7 +1114,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // Compare the last event "seen" by the DB (saved in localStorage) and
             // the present one to check whether any event has happened while offline,
             // but only if indexing was successful
-            addSyncing(() => catchUpFromLS(indexKey));
+            const currentEvent = await getEventFromLS(userID, api);
+
+            if (!currentEvent) {
+                return dbCorruptError();
+            }
+
+            if (hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
+                return restartIndexing();
+            }
+
+            addSyncing(() => catchUpFromLS(indexKey, currentEvent));
         };
 
         void run();

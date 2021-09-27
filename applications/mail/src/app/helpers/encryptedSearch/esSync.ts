@@ -12,6 +12,7 @@ import {
     EncryptedSearchDB,
     ESBaseMessage,
     ESCache,
+    GetUserKeys,
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
@@ -30,10 +31,14 @@ import {
     refreshOpenpgp,
     openESDB,
     esSentryReport,
+    getES,
+    setES,
+    removeES,
+    createESDB,
 } from './esUtils';
 import { applySearch, normaliseSearchParams, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesMetadata } from './esAPI';
-import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
+import { encryptToDB, fetchMessage, prepareMessageMetadata, storeIndexKey } from './esBuild';
 import { sizeOfCachedMessage, removeFromESCache, addToESCache, replaceInESCache } from './esCache';
 
 /**
@@ -629,4 +634,166 @@ export const refreshIndex = async (
     }
 
     return newMessageEvent;
+};
+
+/**
+ * Migrate blobs in localStorage under the new ID
+ */
+export const migrateLS = async (
+    legacyUserID: string,
+    newUserID: string,
+    indexKey: CryptoKey,
+    getUserKeys: GetUserKeys
+) => {
+    // The key is stored under the new user ID. The old one is removed only at the end
+    // of the process as a safeguard that the whole migration has completed successfully
+    await storeIndexKey(indexKey, newUserID, getUserKeys);
+
+    // Event is simply removed, because this is a refresh so all previous changes are
+    // accounted for. The new eventID in local storage will be eventSinceRefresh if all goes through
+    removeES.Event(legacyUserID);
+
+    // ESEnabled
+    const enabledString = getES.Enabled(legacyUserID);
+    if (enabledString === 'true') {
+        setES.Enabled(newUserID);
+    }
+    removeES.Enabled(legacyUserID);
+
+    // Size will just be recomputed
+    setES.Size(newUserID, '0');
+    removeES.Size(legacyUserID);
+};
+
+/**
+ * Refresh index using legacy IDs
+ */
+export const refreshLegacyIndex = async (
+    legacyUserID: string,
+    newUserID: string,
+    api: Api,
+    indexKey: CryptoKey,
+    getMessageKeys: GetMessageKeys,
+    recordProgress: (progress: number, total: number) => void,
+    messageCounts: any
+) => {
+    // Get the latest event to catch up after refreshing
+    const eventSinceRefresh = await queryEvents(api);
+    if (!eventSinceRefresh || !eventSinceRefresh.EventID) {
+        throw new Error('Event fetching failed');
+    }
+
+    // The above event is considered the first to catch up from under
+    // the new user ID
+    setES.Event(newUserID, eventSinceRefresh.EventID);
+
+    // Progress is wiped before actual refreshing
+    recordProgress(0, 0);
+
+    const newESDB = await createESDB(newUserID);
+    const legacyESDB = await openESDB(legacyUserID);
+
+    // Fetching and preparing all metadata
+    const Total = await getTotalMessages(messageCounts, api);
+    const numPages = Math.ceil(Total / PAGE_SIZE);
+    const numBatches = Math.ceil(numPages / ES_MAX_PAGES_PER_BATCH);
+    let numMessages = 0;
+
+    recordProgress(0, Total);
+
+    // In case of big mailboxes, we don't want all pages at once in memory
+    for (let startPageBatch = 0; startPageBatch < numBatches; startPageBatch++) {
+        const startPage = startPageBatch * ES_MAX_PAGES_PER_BATCH;
+        const endPage = Math.min((startPageBatch + 1) * ES_MAX_PAGES_PER_BATCH, numPages);
+
+        const fetchedMetadata: Message[] = [];
+        const pagesRange = range(startPage, endPage);
+
+        const error = await Promise.all(
+            pagesRange.map(async (Page) => {
+                const resultMetadata = await queryMessagesMetadata(api, { Page, Limit: PAGE_SIZE });
+                if (!resultMetadata) {
+                    throw new Error();
+                }
+
+                fetchedMetadata.push(...resultMetadata.Messages);
+            })
+        )
+            .then(() => false)
+            .catch(() => true);
+
+        if (error) {
+            throw new Error('Metadata fetching failed');
+        }
+
+        const messagesToAdd: StoredCiphertext[] = [];
+        const messagesToFetch: Message[] = [];
+        const legacyMessagesToRemove: string[] = [];
+
+        for (const message of fetchedMetadata) {
+            const oldCiphertext = await legacyESDB.getFromIndex('messages', 'byTime', [message.Time, message.Order]);
+
+            if (oldCiphertext) {
+                // If the legacy IDB has the message identified by [Time, Order], add it to the new IDB
+                const oldMessage = await decryptFromDB(oldCiphertext, indexKey);
+
+                const { decryptionError, decryptedBody, decryptedSubject } = oldMessage;
+                const newMessageToCache: ESMessage = {
+                    decryptionError,
+                    decryptedBody,
+                    decryptedSubject,
+                    ...prepareMessageMetadata(message),
+                };
+
+                const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
+
+                messagesToAdd.push(newCiphertextToStore);
+                legacyMessagesToRemove.push(oldCiphertext.ID);
+                updateSizeIDB(newUserID, sizeOfCachedMessage(newMessageToCache));
+                recordProgress(numMessages++, Total);
+            } else {
+                // New messages are retrieved later in parallel
+                messagesToFetch.push(message);
+            }
+        }
+
+        // Messages for which only the metadata changed are updated
+        if (messagesToAdd.length) {
+            await executeIDBOperations(newESDB, [], messagesToAdd);
+        }
+
+        // Then new messages are fetched and stored
+        if (messagesToFetch.length) {
+            const recordLocalProgress = (numMessages: number) => (progressLocal: number) =>
+                recordProgress(numMessages + progressLocal, Total);
+            await syncMessagesBatch(
+                newUserID,
+                messagesToFetch,
+                newESDB,
+                indexKey,
+                api,
+                getMessageKeys,
+                recordLocalProgress(numMessages)
+            );
+            await refreshOpenpgp();
+        }
+
+        // Messages are removed already from the old IDB to avoid having two IDBs equal in size.
+        // Note that the IDs need to be the legacy ones here
+        await executeIDBOperations(legacyESDB, legacyMessagesToRemove, []);
+    }
+
+    legacyESDB.close();
+    newESDB.close();
+};
+
+/**
+ * Return the (possibly partial) list of events since the one stored in localStorage
+ */
+export const getEventFromLS = async (userID: string, api: Api) => {
+    const storedEventID = getES.Event(userID);
+    if (!storedEventID) {
+        return;
+    }
+    return queryEvents(api, storedEventID);
 };
