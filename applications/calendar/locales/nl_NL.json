@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+      ],
       "Email address invalid": [
         "E-mailadres ongeldig"
       ],
       "This field is required": [
         "Dit veld is verplicht"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Ongeldige code"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Onjuiste logingegevens. Gelieve opnieuw te proberen"
-      ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
-      "Enter 6 digits": [
-        "Voer 6 cijfers in"
-      ],
-      "Invalid verification code": [
-        "Ongeldige verificatiecode"
-      ],
-      "Preferences could not be saved": [
-        "Voorkeuren konnen niet opgeslagen worden"
-      ],
-      "Some groups could not be deleted": [
-        "Sommige groepen konden niet worden verwijderd"
-      ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Sommige contacten konden niet gewist worden"
+      ],
+      "Preferences could not be saved": [
+        "Voorkeuren konnen niet opgeslagen worden"
+      ],
+      "Some groups could not be deleted": [
+        "Sommige groepen konden niet worden verwijderd"
       ],
       "Invalid public key file": [
         "Ongeldig publieke-sleutelbestand"
@@ -155,14 +134,35 @@
       "Invalid name": [
         "Ongeldige naam"
       ],
+      "Primary address key is not decrypted": [
+        "Primaire adressleutel is niet gedecodeerd"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Onjuiste logingegevens. Gelieve opnieuw te proberen"
+      ],
+      "Can't validate email, try again later": [
+        "Kan e-mail niet valideren, probeer het later opnieuw"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan telefoon niet valideren, probeer het later opnieuw"
+      ],
+      "Enter 6 digits": [
+        "Voer 6 cijfers in"
+      ],
+      "Invalid verification code": [
+        "Ongeldige verificatiecode"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Primaire adressleutel is niet gedecodeerd"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -194,12 +194,6 @@
       "Request timed out.": [
         "Reactietijd verzoek overschreden."
       ],
-      "Signature verification failed": [
-        "Verificatie van handtekening is mislukt"
-      ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
@@ -208,6 +202,12 @@
       ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
+      ],
+      "Signature verification failed": [
+        "Verificatie van handtekening is mislukt"
+      ],
+      "Could not find address ${ email }.": [
+        "Kon adres ${ email } niet vinden."
       ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
@@ -341,56 +341,23 @@
       "Load image": [
         "Afbeelding laden"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
-      "Export": [
-        "Exporteren"
-      ],
-      "Delete": [
-        "Verwijderen"
-      ],
-      "Edit": [
-        "Bewerken"
-      ],
-      "Remove": [
-        "Verwijderen"
-      ],
-      "Download": [
-        "Downloaden"
-      ],
-      "Use for sending": [
-        "Gebruik voor verzenden"
-      ],
-      "Trust": [
-        "Vertrouwen"
-      ],
-      "Untrust": [
-        "Niet meer vertrouwen"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Email settings": [
-        "E-mail instellingen"
-      ],
-      "Contact group": [
-        "Contactgroep"
-      ],
-      "Upload picture": [
-        "Afbeelding uploaden"
-      ],
       "Next month": [
         "Volgende maand"
       ],
       "Previous month": [
         "Vorige maand"
       ],
+      "Remove": [
+        "Verwijderen"
+      ],
       "Confirm opening of link ${ link }": [
         "Bevestig het openen van link ${ link }"
       ],
       "Continue with Google": [
         "Ga verder met Google"
+      ],
+      "Delete": [
+        "Verwijderen"
       ],
       "Select timezone": [
         "Kies tijdzone"
@@ -403,6 +370,9 @@
       ],
       "Signing out": [
         "Uitloggen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
@@ -545,41 +515,14 @@
       "Increase": [
         "Verhoog"
       ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "View invoice": [
-        "Factuur bekijken"
-      ],
-      "Get verification code": [
-        "Krijg verificatiecode"
-      ],
-      "Try another method": [
-        "Andere methode proberen"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Did not receive the code?": [
-        "Code niet ontvangen?"
-      ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
-      "Edit phone number": [
-        "Wijzig telefoonnummer"
-      ],
       "Save": [
         "Opslaan"
       ],
+      "Upload picture": [
+        "Afbeelding uploaden"
+      ],
       "Add": [
         "Toevoegen"
-      ],
-      "Hide advanced PGP settings": [
-        "Verberg geavanceerde PGP-instellingen"
-      ],
-      "Show advanced PGP settings": [
-        "Toon geavanceerde PGP-instellingen"
       ],
       "Clear data": [
         "Gegevens wissen"
@@ -593,8 +536,41 @@
       "Re-sign": [
         "Opnieuw tekenen"
       ],
+      "Hide advanced PGP settings": [
+        "Verberg geavanceerde PGP-instellingen"
+      ],
+      "Show advanced PGP settings": [
+        "Toon geavanceerde PGP-instellingen"
+      ],
+      "Edit": [
+        "Bewerken"
+      ],
       "Add to group": [
         "Toevoegen aan groep"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Contact group": [
+        "Contactgroep"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Use for sending": [
+        "Gebruik voor verzenden"
+      ],
+      "Trust": [
+        "Vertrouwen"
+      ],
+      "Untrust": [
+        "Niet meer vertrouwen"
+      ],
+      "Email settings": [
+        "E-mail instellingen"
       ],
       "Merge": [
         "Samenvoegen"
@@ -669,6 +645,30 @@
       ],
       "Import": [
         "Importeren"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "View invoice": [
+        "Factuur bekijken"
+      ],
+      "Get verification code": [
+        "Krijg verificatiecode"
+      ],
+      "Try another method": [
+        "Andere methode proberen"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Did not receive the code?": [
+        "Code niet ontvangen?"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Edit phone number": [
+        "Wijzig telefoonnummer"
       ],
       "Continue import": [
         ""
@@ -788,15 +788,6 @@
       ],
       "Keyboard Shortcuts": [
         "Sneltoetsen"
-      ],
-      "Upgrade required": [
-        "Upgrade vereist"
-      ],
-      "Email settings": [
-        "E-mail instellingen"
-      ],
-      "Contact group": [
-        "Contactgroep"
       ],
       "Link confirmation": [
         "Bevestiging link"
@@ -918,27 +909,6 @@
       "${ appName } customization": [
         "${ appName } aanpassingen"
       ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
-      ],
-      "Account suspended": [
-        "Account opgeschort"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
-      "Invalid verification code": [
-        "De ingevoerde code is ongeldig"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Human verification": [
-        "Persoonsverificatie"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Sneltoetsen"
       ],
@@ -950,6 +920,12 @@
       ],
       "Composer mode": [
         "Opstelmodus"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
+      "Edit image": [
+        "Afbeelding bewerken"
       ],
       "Edit contact group": [
         "Contactgroep bewerken"
@@ -964,28 +940,14 @@
         "Toevoegen aan ${ groupCount } groep",
         "Toevoegen aan ${ groupCount } groepen"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-mailinstellingen (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Verwijder ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } contactgroep verwijderen",
-        "${ count } contactgroepen verwijderen"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } lid",
-        "${ emailsCount } leden"
-      ],
-      "Edit image": [
-        "Afbeelding bewerken"
-      ],
       "Edit contact": [
         "Contactpersoon bewerken"
       ],
       "Create contact": [
         "Contactpersoon aanmaken"
+      ],
+      "Delete ${ Name }": [
+        "Verwijder ${ Name }"
       ],
       "Delete ${ count } contact": [
         "${ count } contactpersoon verwijderen",
@@ -1006,8 +968,25 @@
       "Re-sign all contacts": [
         "Alle contactpersonen opnieuw ondertekenen"
       ],
+      "Email settings (${ emailAddress })": [
+        "E-mailinstellingen (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } contactgroep verwijderen",
+        "${ count } contactgroepen verwijderen"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } lid",
+        "${ emailsCount } leden"
+      ],
       "Exporting contacts": [
         "Contactpersonen exporteren"
+      ],
+      "Upgrade required": [
+        "Upgrade vereist"
+      ],
+      "Contact group": [
+        "Contactgroep"
       ],
       "Other names": [
         "Andere namen"
@@ -1023,6 +1002,9 @@
       ],
       "Other information": [
         "Overige informatie"
+      ],
+      "Email settings": [
+        "E-mail instellingen"
       ],
       "Contact Details": [
         "Contactgegevens"
@@ -1063,8 +1045,26 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
-      "Beta Access": [
-        "Bèta toegang"
+      "Sign in again to continue": [
+        "Log opnieuw in om door te gaan"
+      ],
+      "Account suspended": [
+        "Account opgeschort"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "Invalid verification code": [
+        "De ingevoerde code is ongeldig"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Human verification": [
+        "Persoonsverificatie"
       ],
       "Start import process": [
         ""
@@ -1094,7 +1094,7 @@
         "Mijn antwoord wijzigen"
       ],
       "Calendar": [
-        "Kalender"
+        "Agenda"
       ],
       "Organizer cannot be notified": [
         "Organisator kan niet worden geïnformeerd"
@@ -1130,13 +1130,13 @@
         "U heeft deelnemers met gelijkwaardige e-mails uitgenodigd"
       ],
       "Reset calendar keys": [
-        "Kalendersleutels resetten"
+        "Agendasleutels resetten"
       ],
       "Reactivate calendar keys": [
-        "Kalendersleutels heractiveren"
+        "Agendasleutels heractiveren"
       ],
       "Calendar alarm": [
-        "Kalendermelding"
+        "Agendamelding"
       ],
       "Choose how often this event repeats": [
         "Kies hoe vaak deze gebeurtenis herhaalt"
@@ -1212,15 +1212,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
-      "No contacts added yet": [
-        "Nog geen contacten toegevoegd"
-      ],
-      "Loading": [
-        "Laden"
-      ],
       "Week": [
         "Week"
       ],
@@ -1238,6 +1229,9 @@
       ],
       "Drop the file here to upload": [
         "Sleep het bestand om te uploaden"
+      ],
+      "Loading": [
+        "Laden"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
@@ -1398,7 +1392,7 @@
         "${ vpnAppName } Gratis"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Gefactureerd aan het einde van je huidige factureringscyclus (vernieuwing op ${ renewalDate })"
+        "Gefactureerd aan het einde van uw huidige factureringscyclus (vernieuwing op ${ renewalDate })"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         ""
@@ -1422,7 +1416,7 @@
         "Black Friday 2020 nieuwkomer korting is toegepast"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Korting toegepast op je abonnement met coupon ${ code }"
+        "Korting toegepast op uw abonnement met coupon ${ code }"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-versleuteling en Zwitserse privacywetten."
@@ -1488,6 +1482,128 @@
       "Not customizable": [
         "Niet aanpasbaar"
       ],
+      "Expired": [
+        "Verlopen"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief of inactief zijn in de instellingen."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Lid",
+        "${ contactEmailsLength } Leden"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } en ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of -adressen u wilt toevoegen aan deze groep."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of -adressen u wilt toevoegen aan ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } bevatten meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan deze groep."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } bevatten meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Contactpersoon ${ progress } van ${ max } controleren..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contactpersoon bijgewerkt.",
+        "${ updated } contactpersonen bijgewerkt."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Om uw gegevens terug te krijgen, moet u de contactsleutel die wordt gebruikt op het moment dat de gegevens werden aangemaakt opnieuw activeren. Dit vereist dat u het wachtwoord weet die u gebruikte toen de sleutel werd gegenereerd."
+      ],
+      "Key fingerprint": [
+        "Vingerafdruk van sleutel"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Een moment geduld, we zijn op zoek naar contacten die opnieuw ondertekend kunnen worden met de primaire versleutelingssleutel."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleutels die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ProtonMail altijd versleutelde berichten tekent."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
+      ],
+      "No contacts added yet": [
+        "Nog geen contacten toegevoegd"
+      ],
+      "Group assignment applied": [
+        "Groepstoewijzing toegepast"
+      ],
+      "Create a new contact group": [
+        "Nieuwe contactgroep maken"
+      ],
+      "No group found": [
+        "Geen groep gevonden"
+      ],
+      "Primary": [
+        "Primair"
+      ],
+      "Duplicate key updated": [
+        "Dubbele sleutel bijgewerkt"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels om berichten te kunnen versturen naar deze ontvanger."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Dit adres is uitgeschakeld. Om naar dit adres te kunnen verzenden, moet de eigenaar het adres eerst inschakelen."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Om adresverificatie te gebruiken, moet u één of meer beschikbare openbare sleutels vertrouwen, inclusief de openbare sleutel die u wilt gebruiken voor het verzenden. Dit voorkomt dat de versleutelingssleutels worden vervalst."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail-ontvangers gebruikt."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
+      ],
+      "No email address": [
+        "Geen e-mailadres"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contactpersoon gevonden",
+        "${ contactsCount } contactpersonen gevonden"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } groep gevonden",
+        "${ groupCounts } groepen gevonden"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "We ondersteunen het importeren van CSV-bestanden uit Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps. We ondersteunen ook de import van vCard 4.0. (UTF-8 codering)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mailadres",
+        "${ addressCount } e-mailadressen"
+      ],
       "here": [
         "hier"
       ],
@@ -1527,124 +1643,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
-      "Expired": [
-        "Verlopen"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief of inactief zijn in de instellingen."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Lid",
-        "${ contactEmailsLength } Leden"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } en ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of -adressen u wilt toevoegen aan deze groep."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of -adressen u wilt toevoegen aan ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } bevatten meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan deze groep."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } bevatten meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ProtonMail altijd versleutelde berichten tekent."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Contactpersoon ${ progress } van ${ max } controleren..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contactpersoon bijgewerkt.",
-        "${ updated } contactpersonen bijgewerkt."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Om uw gegevens terug te krijgen, moet u de contactsleutel die wordt gebruikt op het moment dat de gegevens werden aangemaakt opnieuw activeren. Dit vereist dat u het wachtwoord weet die u gebruikte toen de sleutel werd gegenereerd."
-      ],
-      "Key fingerprint": [
-        "Vingerafdruk van sleutel"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Een moment geduld, we zijn op zoek naar contacten die opnieuw ondertekend kunnen worden met de primaire versleutelingssleutel."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleutels die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
-      ],
-      "Group assignment applied": [
-        "Groepstoewijzing toegepast"
-      ],
-      "Create a new contact group": [
-        "Nieuwe contactgroep maken"
-      ],
-      "No group found": [
-        "Geen groep gevonden"
-      ],
-      "Duplicate key updated": [
-        "Dubbele sleutel bijgewerkt"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels om berichten te kunnen versturen naar deze ontvanger."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Dit adres is uitgeschakeld. Om naar dit adres te kunnen verzenden, moet de eigenaar het adres eerst inschakelen."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Om adresverificatie te gebruiken, moet u één of meer beschikbare openbare sleutels vertrouwen, inclusief de openbare sleutel die u wilt gebruiken voor het verzenden. Dit voorkomt dat de versleutelingssleutels worden vervalst."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail-ontvangers gebruikt."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
-      ],
-      "Primary": [
-        "Primair"
-      ],
-      "No email address": [
-        "Geen e-mailadres"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contactpersoon gevonden",
-        "${ contactsCount } contactpersonen gevonden"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } groep gevonden",
-        "${ groupCounts } groepen gevonden"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "We ondersteunen het importeren van CSV-bestanden uit Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps. We ondersteunen ook de import van vCard 4.0. (UTF-8 codering)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-mailadres",
-        "${ addressCount } e-mailadressen"
+      "support team": [
+        "ondersteuningsteam"
       ],
       "Import contacts": [
         ""
@@ -1938,27 +1938,6 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
-      "Street address": [
-        "Straatnaam"
-      ],
-      "City": [
-        "Plaats"
-      ],
-      "Region": [
-        "Regio"
-      ],
-      "Postal code": [
-        "Postcode"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Post office box": [
-        "Postbus"
-      ],
-      "Extended address": [
-        "Uitgebreid adres"
-      ],
       "Do not ask again": [
         "Vraag niet opnieuw"
       ],
@@ -2007,10 +1986,16 @@
       "CVV code": [
         "CVV code"
       ],
+      "Country": [
+        "Land"
+      ],
       "Select your country": [
         "Selecteer uw land"
       ],
       "ZIP": [
+        "Postcode"
+      ],
+      "Postal code": [
         "Postcode"
       ],
       "BTC amount:": [
@@ -2030,6 +2015,84 @@
       ],
       "Proration": [
         "Aftrek"
+      ],
+      "Cash": [
+        "Cash"
+      ],
+      "Card holder": [
+        "Kaarthouder"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
+      "Keyboard shortcuts": [
+        "Sneltoetsen"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Selecteer hoe uw lijst met berichten er standaard uitziet."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Selecteer hoe uw mailbox er standaard uitziet."
+      ],
+      "Select how your composer opens by default.": [
+        "Selecteer hoe uw opstelvenster standaard opent."
+      ],
+      "Enable Beta Access": [
+        "Bèta-toegang inschakelen"
+      ],
+      "Add image URL": [
+        "Voeg URL van afbeelding toe"
+      ],
+      "Upload picture": [
+        "Afbeelding uploaden"
+      ],
+      "Add email address": [
+        "E-mailadres toevoegen"
+      ],
+      "Email format": [
+        "E-mailindeling"
+      ],
+      "Street address": [
+        "Straatnaam"
+      ],
+      "City": [
+        "Plaats"
+      ],
+      "Region": [
+        "Regio"
+      ],
+      "Post office box": [
+        "Postbus"
+      ],
+      "Extended address": [
+        "Uitgebreid adres"
+      ],
+      "Add to group": [
+        "Toevoegen aan groep"
+      ],
+      "Encrypt emails": [
+        "E-mails versleutelen"
+      ],
+      "Sign emails": [
+        "E-mails ondertekenen"
+      ],
+      "Cryptographic scheme": [
+        "Cryptografisch schema"
+      ],
+      "Public keys": [
+        "Publieke sleutels"
+      ],
+      "Automatically save contacts": [
+        "Contacten automatisch opslaan"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Export contacts": [
+        "Contactpersonen exporteren"
       ],
       "Cancel": [
         "Annuleer"
@@ -2057,69 +2120,6 @@
       ],
       "Enter the 6-digit code": [
         "Voer de 6-cijferige code in"
-      ],
-      "Cash": [
-        "Cash"
-      ],
-      "Card holder": [
-        "Kaarthouder"
-      ],
-      "Expires": [
-        "Verloopt"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selecteer hoe uw lijst met berichten er standaard uitziet."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecteer hoe uw mailbox er standaard uitziet."
-      ],
-      "Select how your composer opens by default.": [
-        "Selecteer hoe uw opstelvenster standaard opent."
-      ],
-      "Add email address": [
-        "E-mailadres toevoegen"
-      ],
-      "Email format": [
-        "E-mailindeling"
-      ],
-      "Add image URL": [
-        "Voeg URL van afbeelding toe"
-      ],
-      "Upload picture": [
-        "Afbeelding uploaden"
-      ],
-      "Add to group": [
-        "Toevoegen aan groep"
-      ],
-      "Encrypt emails": [
-        "E-mails versleutelen"
-      ],
-      "Sign emails": [
-        "E-mails ondertekenen"
-      ],
-      "Cryptographic scheme": [
-        "Cryptografisch schema"
-      ],
-      "Public keys": [
-        "Publieke sleutels"
-      ],
-      "Automatically save contacts": [
-        "Contacten automatisch opslaan"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Export contacts": [
-        "Contactpersonen exporteren"
-      ],
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2203,7 +2203,7 @@
         "Deelnemers"
       ],
       "Your calendars": [
-        "Uw kalenders"
+        "Uw agenda's"
       ],
       "Participant": [
         "",
@@ -2248,11 +2248,6 @@
         ""
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Sleutel kan niet worden gebruikt voor versleuteling"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Bijv., "
@@ -2293,14 +2288,11 @@
       "Gift code": [
         "Geschenkcode"
       ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
+      "Image URL": [
+        "Afbeeldings-URL"
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
-      ],
-      "Image URL": [
-        "Afbeeldings-URL"
       ],
       "Filter groups": [
         "Groepen filteren"
@@ -2313,6 +2305,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
       ],
       "Add a calendar name": [
         "Voeg een agendanaam toe"
@@ -2343,206 +2338,72 @@
         "${ minutes } minuten"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Versleutelde gegevens met geverifieerde digitale ondertekening"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Gebruik omhoog- en omlaagtoetsen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Gebruik meerdere adressen / aliassen gekoppeld aan uw account, bijvoorbeeld gebruikersnaam2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Host e-mails voor uw eigen domein(en) op ProtonMail, bijvoorbeeld john.smith@voorbeeld.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Gebruik het persoonlijke adres username@pm.me om e-mails te verzenden"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Ondersteuning voor filesharing protocollen zoals BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Toegang tot geografisch beperkte inhoud (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) waar u ook bent."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te passeren."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Krijg toegang tot alle betaalde functies voor zowel ProtonVPN als ProtonMail (de versleutelde e-maildienst die miljoenen gebruiken om hun gegevens te beschermen) met één abonnement."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Krijg toegang tot alle betaalde functies voor zowel ${ vpnAppName } als ${ mailAppName } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Host e-mails voor uw eigen domein(en) op ${ mailAppName }, bijvoorbeeld john.smith@voorbeeld.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Maak meerdere e-mailadressen gekoppeld aan uw account, bijvoorbeeld username2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Korting toegepast op jaarlijkse factureringscyclus"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Korting toegepast voor tweejaarlijkse factureringscyclus"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-mailversleuteling vereist dat u de e-mails ook ondertekent, zodat anderen uw berichten kunnen verifiëren"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u worden verzonden"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Upload een publieke sleutel om het verzenden van versleutelde end-to-end e-mails naar dit e-mailadres mogelijk te maken"
-      ],
-      "You do not have any contacts to export": [
-        "U heeft geen contactpersonen om te exporteren"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Naam"
-      ],
-      "Address": [
-        "Adres"
-      ],
-      "Action": [
-        "Actie"
-      ],
-      "Fingerprint": [
-        "Vingerafdruk"
-      ],
-      "Created": [
-        "Aangemaakt"
-      ],
-      "Expires": [
-        "Verloopt"
-      ],
-      "Type": [
-        "Type"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Acties"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Sleutel kan niet worden gebruikt voor versleuteling"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Automatisch"
-      ],
-      "Plain text": [
-        "Platte tekst"
+    "Select search results": {
+      "No results found": [
+        "Geen resultaten gevonden"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Gebruik globale standaardwaarde (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Zoek tijdzones"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Primair"
-      ],
-      "Verification only": [
-        "Alleen verificatie"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Vertrouwd"
-      ],
-      "Revoked": [
-        "Ingetrokken"
-      ],
-      "Expired": [
-        "Verlopen"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Deze functie vereist een betaald Proton-account"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Helaas zijn wij op dit moment niet on-line. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer on-line zijn."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen je account niet onmiddellijk kan worden bijgewerkt. We zullen je account bijwerken zodra de betaling is gewist."
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Weet u zeker dat u deze contactgroep permanent wilt verwijderen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",
-        "Weet u zeker dat u ${ count } contactgroepen permanent wilt verwijderen?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Weet u zeker dat u dit contact permanent wilt verwijderen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Weet u zeker dat u ${ count } contactpersoon permanent wilt verwijderen?",
-        "Weet u zeker dat u ${ count } contactpersonen permanent wilt verwijderen?"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Deze actie is onomkeerbaar. Voer het woord ${ boldDanger } in het veld in om door te gaan."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Decoderen van de versleutelde inhoud is mislukt."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "De verificatie van de handtekening van de contactgegevens is mislukt."
-      ],
-      "The contact failed to load.": [
-        "Het laden van het contactpersoon is mislukt."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
-      ],
-      "Contacts could not be merged": [
-        "Contacten konden niet samengevoegd worden"
-      ],
-      "Are you sure you want to discard your import?": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Oeps, er is iets misgegaan"
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Uw lokale datum- en tijdinstellingen lijken niet gesynchroniseerd te zijn."
+      "There was a problem connecting to Proton.": [
+        "Fout bij het verbinden met Proton."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } alstublieft of controleer uw verbinding."
+      ],
+      "Error: ${ errorMessage }": [
+        "Fout: ${ errorMessage }"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Hou u vast tot we de fout hebben opgelost."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "U kunt ook ${ refresh } of probeer het later opnieuw."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applicaties"
+      ],
+      "Go to ${ title }": [
+        "Ga naar ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ga naar ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "E-mailadres naar klembord gekopieerd"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefoonnummer naar klembord gekopieerd"
-      ],
-      "Address copied to clipboard": [
-        "Adres naar klembord gekopieerd"
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -2550,24 +2411,11 @@
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
       ],
-      "Code sent to ${ methodTo }": [
-        "Code verzonden naar ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificatie gelukt"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Sneltoetsvoorkeuren bijgewerkt"
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
-      ],
-      "Preferences saved": [
-        "Voorkeuren opgeslagen"
-      ],
-      "Contact group deleted": [
-        "Contactgroep verwijderd",
-        "Contactgroepen verwijderd"
       ],
       "Contact saved": [
         "Contactpersoon opgeslagen"
@@ -2581,6 +2429,25 @@
       ],
       "Fingerprint copied to clipboard": [
         "Vingerafdruk gekopieerd naar klembord"
+      ],
+      "Preferences saved": [
+        "Voorkeuren opgeslagen"
+      ],
+      "Contact group deleted": [
+        "Contactgroep verwijderd",
+        "Contactgroepen verwijderd"
+      ],
+      "Phone number copied to clipboard": [
+        "Telefoonnummer naar klembord gekopieerd"
+      ],
+      "Address copied to clipboard": [
+        "Adres naar klembord gekopieerd"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Code verzonden naar ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificatie gelukt"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2670,64 +2537,6 @@
         "Alle afspraken verwijderd"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Gebruik omhoog- en omlaagtoetsen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
-        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Geen resultaten gevonden"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Zoek tijdzones"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Oeps, er is iets misgegaan"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Fout bij het verbinden met Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } alstublieft of controleer uw verbinding."
-      ],
-      "Error: ${ errorMessage }": [
-        "Fout: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Hou u vast tot we de fout hebben opgelost."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "U kunt ook ${ refresh } of probeer het later opnieuw."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applicaties"
-      ],
-      "Go to ${ title }": [
-        "Ga naar ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ga naar ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         ""
@@ -2747,14 +2556,24 @@
         "Instellingen"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Aan"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Uit"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2921,6 +2740,64 @@
         "Selecteren"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Houd er rekening mee dat door deze betaalmethode te kiezen je account niet onmiddellijk kan worden bijgewerkt. We zullen je account bijwerken zodra de betaling is gewist."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Weet u zeker dat u dit contact permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Weet u zeker dat u ${ count } contactpersoon permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ count } contactpersonen permanent wilt verwijderen?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Deze actie is onomkeerbaar. Voer het woord ${ boldDanger } in het veld in om door te gaan."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Weet u zeker dat u deze contactgroep permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ count } contactgroepen permanent wilt verwijderen?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Deze functie vereist een betaald Proton-account"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Decoderen van de versleutelde inhoud is mislukt."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "De verificatie van de handtekening van de contactgegevens is mislukt."
+      ],
+      "The contact failed to load.": [
+        "Het laden van het contactpersoon is mislukt."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
+      ],
+      "Contacts could not be merged": [
+        "Contacten konden niet samengevoegd worden"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Uw lokale datum- en tijdinstellingen lijken niet gesynchroniseerd te zijn."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -3032,6 +2909,77 @@
       ],
       "Unlimited": [
         "Onbeperkt"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Gebruik meerdere adressen / aliassen gekoppeld aan uw account, bijvoorbeeld gebruikersnaam2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Host e-mails voor uw eigen domein(en) op ProtonMail, bijvoorbeeld john.smith@voorbeeld.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Gebruik het persoonlijke adres username@pm.me om e-mails te verzenden"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Ondersteuning voor filesharing protocollen zoals BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Toegang tot geografisch beperkte inhoud (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) waar u ook bent."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te passeren."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Krijg toegang tot alle betaalde functies voor zowel ProtonVPN als ProtonMail (de versleutelde e-maildienst die miljoenen gebruiken om hun gegevens te beschermen) met één abonnement."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Krijg toegang tot alle betaalde functies voor zowel ${ vpnAppName } als ${ mailAppName } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Host e-mails voor uw eigen domein(en) op ${ mailAppName }, bijvoorbeeld john.smith@voorbeeld.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Maak meerdere e-mailadressen gekoppeld aan uw account, bijvoorbeeld username2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Korting toegepast op jaarlijkse factureringscyclus"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Korting toegepast voor tweejaarlijkse factureringscyclus"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Versleutelde gegevens met geverifieerde digitale ondertekening"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "E-mailversleuteling vereist dat u de e-mails ook ondertekent, zodat anderen uw berichten kunnen verifiëren"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u worden verzonden"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Upload een publieke sleutel om het verzenden van versleutelde end-to-end e-mails naar dit e-mailadres mogelijk te maken"
+      ],
+      "You do not have any contacts to export": [
+        "U heeft geen contactpersonen om te exporteren"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3152,7 +3100,7 @@
         "Meerdere agenda's"
       ],
       "Calendar import": [
-        "Kalender importeren"
+        "Agenda importeren"
       ],
       "Recurring events": [
         "Terugkerende gebeurtenissen"
@@ -3362,28 +3310,6 @@
         "Gratis"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Onbetaalde factuur"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Handmatig"
-      ],
-      "No verification method available": [
-        "Geen verificatiemethode beschikbaar"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Nieuwe creditcard"
@@ -3393,6 +3319,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
       ]
     },
     "Label to change density": {
@@ -3417,14 +3356,6 @@
       ],
       "Maximized": [
         "Gemaximaliseerd"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Contactgroep bijgewerkt"
-      ],
-      "Contact group created": [
-        "Contactgroep aangemaakt"
       ]
     },
     "Label for contact group name": {
@@ -3489,6 +3420,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Naam"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Action": [
+        "Actie"
+      ],
+      "Fingerprint": [
+        "Vingerafdruk"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Acties"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Contactgroep bijgewerkt"
+      ],
+      "Contact group created": [
+        "Contactgroep aangemaakt"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automatisch"
+      ],
+      "Plain text": [
+        "Platte tekst"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Gebruik globale standaardwaarde (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Primair"
+      ],
+      "Verification only": [
+        "Alleen verificatie"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Vertrouwd"
+      ],
+      "Revoked": [
+        "Ingetrokken"
+      ],
+      "Expired": [
+        "Verlopen"
       ]
     },
     "TableHeader": {
@@ -3672,17 +3673,31 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
+    "Select files": {
+      "Upload": [
+        "Uploaden"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Onbetaalde factuur"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Handmatig"
+      ],
+      "No verification method available": [
+        "Geen verificatiemethode beschikbaar"
       ]
     },
     "Loading info": {
@@ -3704,11 +3719,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Uploaden"
       ]
     },
     "Message display when a new app version is available": {
@@ -3876,17 +3886,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Annulering van een afspraak op ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Uitnodiging voor een afspraak op ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Update voor een afspraak op ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Annulering van een gebeurtenis die begint op ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Uitnodiging voor een gebeurtenis die begint op ${ formattedStart }"
@@ -3894,8 +3898,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Update voor een gebeurtenis die begint op ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Uitnodiging: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Annulering van een afspraak op ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Annulering van een gebeurtenis die begint op ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4355,12 +4362,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Naam"
@@ -4475,9 +4476,10 @@
         "Adres"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4699,6 +4701,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Message": {

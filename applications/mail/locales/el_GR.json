@@ -59,6 +59,12 @@
       "Request timed out.": [
         "Λήξη χρονικού ορίου αιτήματος."
       ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Could not find address ${ email }.": [
+        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
+      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -74,23 +80,17 @@
       "The key properties for ${ emailAddress } could not be extracted": [
         "Δεν ήταν δυνατή η εξαγωγή των ιδιοτήτων κλειδιού για ${ emailAddress }"
       ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
-      ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
-      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
       "Calendar primary private key is not decrypted": [
         "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
-      ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -104,14 +104,32 @@
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
+      ],
       "The composer failed to load.": [
         "Ο συνθέτης απέτυχε να φορτώσει."
       ],
       "Please refresh the page.": [
         "Παρακαλούμε ανανεώστε τη σελίδα."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
+      "Incorrect mailbox password. Please try again": [
+        "Εσφαλμένος κωδικός θυρίδας. Παρακαλούμε ξαναπροσπαθήστε"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
+      ],
+      "Can't validate email, try again later": [
+        "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
+      ],
+      "Can't validate phone, try again later": [
+        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
+      ],
+      "Enter 6 digits": [
+        "Εισάγετε 6 ψηφία"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Some groups could not be deleted": [
         ""
@@ -154,29 +172,17 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      ],
       "File has no contents to preview": [
         "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Εσφαλμένος κωδικός θυρίδας. Παρακαλούμε ξαναπροσπαθήστε"
+      "We were unable to connect to your service provider.": [
+        "Δεν ήταν δυνατή η σύνδεση με τον πάροχο υπηρεσιών σας."
       ],
-      "Incorrect login credentials. Please try again": [
-        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
-      ],
-      "Can't validate email, try again later": [
-        "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Enter 6 digits": [
-        "Εισάγετε 6 ψηφία"
-      ],
-      "Invalid verification code": [
-        "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Προσπαθήστε να πραγματοποιήσετε εκ νέου έλεγχο ταυτότητας και βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά."
       ],
       "Process aborted": [
         "Η διαδικασία ακυρώθηκε"
@@ -237,12 +243,6 @@
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Δεν ήταν δυνατή η σύνδεση με τον πάροχο υπηρεσιών σας."
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Προσπαθήστε να πραγματοποιήσετε εκ νέου έλεγχο ταυτότητας και βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά."
       ],
       "Empty condition": [
         "Κενή συνθήκη"
@@ -392,6 +392,12 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
     "Contact field label": {
       "Name": [
         "Όνομα"
@@ -506,12 +512,6 @@
         "Διεύθυνση"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
-        ""
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
@@ -568,6 +568,9 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Loading": [
+        "Φόρτωση"
+      ],
       "Insert image": [
         "Εισαγωγή εικόνας"
       ],
@@ -613,9 +616,6 @@
       "Change your default in settings": [
         ""
       ],
-      "Default": [
-        ""
-      ],
       "Text color": [
         "Χρώμα κειμένου"
       ],
@@ -646,14 +646,50 @@
       "Plain text": [
         "Απλό κείμενο"
       ],
-      "Loading": [
-        "Φόρτωση"
-      ],
       "Drop the file here to upload": [
         "Αφήστε το αρχείο εδώ για μεταφόρτωση"
       ],
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
+      ],
+      "here": [
+        "εδώ"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης σε ${ strong }. Εάν αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι λανθασμένη, κάντε κλικ στο \"Επεξεργασία\" για να τη διορθώσετε."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
@@ -774,6 +810,9 @@
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "support team": [
+        "ομάδα υποστήριξης"
+      ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
@@ -792,44 +831,35 @@
       "of": [
         "από"
       ],
-      "here": [
-        "εδώ"
+      "Import contacts": [
+        "Εισαγωγή επαφών"
       ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
+      "Your contacts are being imported from": [
+        ""
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
+      "to": [
+        "σε"
       ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
+      "Your import has started!": [
+        "Η εισαγωγή σας ξεκίνησε!"
       ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      "We will notify you once your import is finished.": [
+        "Θα σας ειδοποιήσουμε μόλις ολοκληρωθεί η εισαγωγή σας."
       ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
+      "Large imports can take several days to complete.": [
+        "Οι μεγάλες εισαγωγές μπορεί να χρειαστούν αρκετές ημέρες για να ολοκληρωθούν."
       ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
+      "You can continue using Proton services as usual.": [
+        "Μπορείτε να συνεχίσετε να χρησιμοποιείτε τις υπηρεσίες Proton ως συνήθως."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης σε ${ strong }. Εάν αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι λανθασμένη, κάντε κλικ στο \"Επεξεργασία\" για να τη διορθώσετε."
+      "Your import will not be processed.": [
+        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      "Screenshot(s) attached": [
+        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
@@ -890,15 +920,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "support team": [
-        "ομάδα υποστήριξης"
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
@@ -1138,30 +1159,6 @@
       ],
       "Expired": [
         "Έχει λήξει"
-      ],
-      "Import contacts": [
-        "Εισαγωγή επαφών"
-      ],
-      "Your contacts are being imported from": [
-        ""
-      ],
-      "to": [
-        "σε"
-      ],
-      "Your import has started!": [
-        "Η εισαγωγή σας ξεκίνησε!"
-      ],
-      "We will notify you once your import is finished.": [
-        "Θα σας ειδοποιήσουμε μόλις ολοκληρωθεί η εισαγωγή σας."
-      ],
-      "Large imports can take several days to complete.": [
-        "Οι μεγάλες εισαγωγές μπορεί να χρειαστούν αρκετές ημέρες για να ολοκληρωθούν."
-      ],
-      "You can continue using Proton services as usual.": [
-        "Μπορείτε να συνεχίσετε να χρησιμοποιείτε τις υπηρεσίες Proton ως συνήθως."
-      ],
-      "Your import will not be processed.": [
-        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -1712,28 +1709,45 @@
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Κατεβάστε την εφαρμογή μας για κινητά από το αγαπημένο σας app store για να επικοινωνείτε με ασφάλεια εν κινήσει."
       ],
-      "${ count } conversation": [
-        "${ count } συνομιλία",
-        "${ count } συνομιλίες"
+      "You selected **${ count } conversation** from this folder": [
+        "",
+        ""
       ],
-      "${ count } message": [
-        "${ count } μήνυμα",
-        "${ count } μηνύματα"
+      "You selected **${ count } message** from this folder": [
+        "",
+        ""
       ],
-      "You selected ${ countOfConversationOrMessage } from this folder": [
-        "Επιλέξατε ${ countOfConversationOrMessage } από αυτόν το φάκελο"
+      "You have **${ count } conversation** stored in this folder": [
+        "",
+        ""
       ],
-      "You have ${ countOfConversationOrMessage } stored in this folder": [
-        "Έχετε ${ countOfConversationOrMessage } αποθηκευμένο σε αυτόν το φάκελο"
+      "You have **${ count } message** stored in this folder": [
+        "",
+        ""
       ],
-      "You selected ${ countOfConversationOrMessage } with this label": [
-        "Επιλέξατε ${ countOfConversationOrMessage } με αυτήν την ετικέτα"
+      "You selected **${ count } conversation** with this label": [
+        "",
+        ""
       ],
-      "You have ${ countOfConversationOrMessage } tagged with this label": [
-        "Έχετε ${ countOfConversationOrMessage } με ετικέτα με αυτή την ετικέτα"
+      "You selected **${ count } message** with this label": [
+        "",
+        ""
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "",
+        ""
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "",
+        ""
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         ""
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -1780,11 +1794,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2136,17 +2145,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Πρόσκληση για μια εκδήλωση στις ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Ενημέρωση για μια εκδήλωση στις ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Πρόσκληση για μια εκδήλωση που αρχίζει στις ${ formattedStart }"
@@ -2154,8 +2157,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Πρόσκληση: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2737,6 +2743,33 @@
       "refresh the page": [
         "ανανέωσε τη σελίδα"
       ],
+      "Log in": [
+        "Είσοδος"
+      ],
+      "View invoice": [
+        "Προβολή τιμολογίου"
+      ],
+      "Get verification code": [
+        "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Try another method": [
+        "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Verify": [
+        "Επαλήθευση"
+      ],
+      "Did not receive the code?": [
+        "Δεν λάβατε τον κωδικό;"
+      ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
+      ],
+      "Edit phone number": [
+        "Επεξεργασία αριθμού τηλεφώνου"
+      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
@@ -2890,6 +2923,12 @@
       "Next": [
         "Επόμενο"
       ],
+      "Use ${ label } theme": [
+        "Χρήση ${ label } θέματος"
+      ],
+      "OK": [
+        "ΟΚ"
+      ],
       "Details": [
         "Λεπτομέρειες"
       ],
@@ -2911,32 +2950,29 @@
       "Previous": [
         "Προηγούμενο"
       ],
-      "Log in": [
-        "Είσοδος"
+      "Continue import": [
+        "Συνεχίστε την εισαγωγή"
       ],
-      "View invoice": [
-        "Προβολή τιμολογίου"
+      "Discard": [
+        "Απόρριψη"
       ],
-      "Get verification code": [
-        "Απόκτηση κωδικού επαλήθευσης"
+      "Reconnect": [
+        "Επανασύνδεση"
       ],
-      "Try another method": [
-        "Δοκιμάστε μια άλλη μέθοδο"
+      "Start import": [
+        "Έναρξη εισαγωγής"
       ],
-      "Request new code": [
-        "Ζητήστε νέο κωδικό"
+      "Clear": [
+        "Καθαρισμός"
       ],
-      "Verify": [
-        "Επαλήθευση"
+      "Add screenshot(s)": [
+        "Προσθήκη στιγμιοτύπου/ων οθόνης"
       ],
-      "Did not receive the code?": [
-        "Δεν λάβατε τον κωδικό;"
+      "Hide info": [
+        "Απόκρυψη πληροφοριών"
       ],
-      "Edit email address": [
-        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
-      ],
-      "Edit phone number": [
-        "Επεξεργασία αριθμού τηλεφώνου"
+      "Show info": [
+        "Εμφάνιση πληροφοριών"
       ],
       "Get started": [
         "Ξεκινήστε"
@@ -2949,12 +2985,6 @@
       ],
       "Back": [
         "Πίσω"
-      ],
-      "Use ${ label } theme": [
-        "Χρήση ${ label } θέματος"
-      ],
-      "OK": [
-        "ΟΚ"
       ],
       "Copy to clipboard": [
         ""
@@ -2979,9 +3009,6 @@
       ],
       "Search": [
         "Αναζήτηση"
-      ],
-      "Clear": [
-        "Καθαρισμός"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
@@ -3027,15 +3054,6 @@
       ],
       "Composer size": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
-      ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
       ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
@@ -3084,18 +3102,6 @@
       ],
       "Increase": [
         "Αύξηση"
-      ],
-      "Continue import": [
-        "Συνεχίστε την εισαγωγή"
-      ],
-      "Discard": [
-        "Απόρριψη"
-      ],
-      "Reconnect": [
-        "Επανασύνδεση"
-      ],
-      "Start import": [
-        "Έναρξη εισαγωγής"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -3308,6 +3314,12 @@
       "Accept": [
         "Αποδοχή"
       ],
+      "Show": [
+        "Εμφάνιση"
+      ],
+      "Show less": [
+        ""
+      ],
       "Never show": [
         "Να μην εμφανίζεται ποτέ"
       ],
@@ -3334,9 +3346,6 @@
       ],
       "Hide": [
         "Απόκρυψη"
-      ],
-      "Show": [
-        "Εμφάνιση"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3490,6 +3499,27 @@
       "What's new": [
         "Τι νέο υπάρχει"
       ],
+      "Sign in again to continue": [
+        "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Account suspended": [
+        "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό σας"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Human verification": [
+        "Ανθρώπινη Επαλήθευση"
+      ],
       "Upgrade required": [
         "Απαιτείται Αναβάθμιση"
       ],
@@ -3614,29 +3644,17 @@
       "Import contacts": [
         "Εισαγωγή Επαφών"
       ],
-      "Sign in again to continue": [
-        "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
-      ],
-      "Invalid verification code": [
-        "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Request new code": [
-        "Ζητήστε νέο κωδικό"
-      ],
-      "Human verification": [
-        "Ανθρώπινη Επαλήθευση"
-      ],
       "Select a theme": [
         ""
+      ],
+      "Start import process": [
+        "Έναρξη διαδικασίας εισαγωγής"
+      ],
+      "Import in progress": [
+        "Εισαγωγή σε εξέλιξη"
+      ],
+      "Report a problem": [
+        "Αναφορά προβλήματος"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Συντομεύσεις πληκτρολογίου"
@@ -3658,9 +3676,6 @@
       ],
       "Open settings menu": [
         ""
-      ],
-      "Report a problem": [
-        "Αναφορά προβλήματος"
       ],
       "Confirm loss of Proton bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
@@ -3751,12 +3766,6 @@
       ],
       "${ appName } customization": [
         "Προσαρμογή ${ appName }"
-      ],
-      "Start import process": [
-        "Έναρξη διαδικασίας εισαγωγής"
-      ],
-      "Import in progress": [
-        "Εισαγωγή σε εξέλιξη"
       ],
       "Beta Access": [
         ""
@@ -3985,12 +3994,20 @@
         "Καλώς ήρθατε"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Link": {
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
+      ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
       ],
       "Pay invoice": [
         "Πληρωμή υπολοίπου"
@@ -4003,9 +4020,6 @@
       ],
       "Go to subscription plans": [
         ""
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
       ],
       "click here": [
         "κάντε κλικ εδώ"
@@ -4055,6 +4069,36 @@
       "Open in ${ calendarAppName }": [
         "Άνοιγμα σε ${ calendarAppName }"
       ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Drafts": [
+        "Πρόχειρα"
+      ],
+      "Sent": [
+        "Απεσταλμένα"
+      ],
+      "Trash": [
+        "Κάδος Απορριμμάτων"
+      ],
+      "Spam": [
+        "Ανεπιθύμητα"
+      ],
+      "All mail": [
+        "Όλα τα Μηνύματα"
+      ],
+      "Archive": [
+        "Αρχειοθέτηση"
+      ],
+      "Starred": [
+        "Με αστέρι"
+      ],
+      "Outbox": [
+        "Εξερχόμενα"
+      ],
+      "Scheduled": [
+        "Προγραμματισμένο"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για τη διαχείριση της πρόσκλησής σας."
       ],
@@ -4088,33 +4132,6 @@
       "Add label": [
         "Προσθήκη ετικέτας"
       ],
-      "Inbox": [
-        "Εισερχόμενα"
-      ],
-      "Drafts": [
-        "Πρόχειρα"
-      ],
-      "Scheduled": [
-        "Προγραμματισμένο"
-      ],
-      "Sent": [
-        "Απεσταλμένα"
-      ],
-      "Starred": [
-        "Με αστέρι"
-      ],
-      "Archive": [
-        "Αρχειοθέτηση"
-      ],
-      "Spam": [
-        "Ανεπιθύμητα"
-      ],
-      "Trash": [
-        "Κάδος Απορριμμάτων"
-      ],
-      "All mail": [
-        "Όλα τα Μηνύματα"
-      ],
       "Folders": [
         "Φάκελοι"
       ],
@@ -4126,9 +4143,6 @@
       ],
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
-      ],
-      "Outbox": [
-        "Εξερχόμενα"
       ]
     },
     "Label": {
@@ -4143,6 +4157,36 @@
       ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "Password": [
+        "Κωδικός πρόσβασης"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
+      "Two-factor authentication code": [
+        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
+      ],
+      "Username or ProtonMail address": [
+        "Όνομα χρήστη ή διεύθυνση ProtonMail"
+      ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
+      "Phone number": [
+        "Αριθμός τηλεφώνου"
+      ],
+      "Verification code": [
+        "Κωδικός επαλήθευσης"
+      ],
+      "Enter the 6-digit code": [
+        "Εισάγετε τον 6-ψήφιο κωδικό"
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -4210,56 +4254,11 @@
       "Export contacts": [
         "Εξαγωγή Επαφών"
       ],
-      "Cancel": [
-        "Ακύρωση"
+      "From: ${ fromEmailAddress }": [
+        "Από: ${ fromEmailAddress }"
       ],
-      "Submit": [
-        "Υποβολή"
-      ],
-      "Password": [
-        "Κωδικός πρόσβασης"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "Two-factor authentication code": [
-        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
-      ],
-      "Username or ProtonMail address": [
-        "Όνομα χρήστη ή διεύθυνση ProtonMail"
-      ],
-      "Email address": [
-        "Διεύθυνση email"
-      ],
-      "Phone number": [
-        "Αριθμός τηλεφώνου"
-      ],
-      "Verification code": [
-        "Κωδικός επαλήθευσης"
-      ],
-      "Enter the 6-digit code": [
-        "Εισάγετε τον 6-ψήφιο κωδικό"
-      ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Recovery phrase": [
-        ""
-      ],
-      "Your recovery phrase": [
-        ""
+      "To: ${ toEmailAddress }": [
+        "Σε: ${ toEmailAddress }"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -4284,6 +4283,27 @@
       ],
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
+      ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "Keyboard shortcuts": [
+        "Συντομεύσεις πληκτρολογίου"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Recovery phrase": [
+        ""
+      ],
+      "Your recovery phrase": [
+        ""
       ],
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
@@ -4332,12 +4352,6 @@
       ],
       "Payer": [
         "Πληρωτής"
-      ],
-      "From: ${ fromEmailAddress }": [
-        "Από: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Σε: ${ toEmailAddress }"
       ],
       "Enable Beta Access": [
         ""
@@ -4486,56 +4500,26 @@
       "Labels:": [
         "Ετικέτες:"
       ],
-      "Start time": [
-        "Ώρα έναρξης"
-      ],
-      "End time": [
-        "Ώρα λήξης"
-      ],
-      "Repeats": [
-        "Επαναλήψεις"
-      ],
-      "Calendar": [
-        "Ημερολόγιο"
+      "Keyword": [
+        "Λέξη-κλειδί"
       ],
       "Location": [
         "Τοποθεσία"
       ],
-      "Organizer": [
-        "Διοργανωτής"
-      ],
-      "Participant": [
-        "Συμμετέχων"
-      ],
-      "Participants (${ totalParticipants })": [
-        "Συμμετέχοντες (${ totalParticipants })"
-      ],
-      "Keyword": [
-        "Λέξη-κλειδί"
-      ],
-      "Address": [
-        "Διεύθυνση"
-      ],
-      "Sender": [
-        "Αποστολέας"
-      ],
       "From": [
         "Από"
-      ],
-      "Recipient": [
-        "Παραλήπτης"
       ],
       "To": [
         "Προς"
       ],
-      "Between": [
-        "Ανάμεσα"
+      "Sender": [
+        "Αποστολέας"
+      ],
+      "Recipient": [
+        "Παραλήπτης"
       ],
       "Attachments": [
         "Συνημμένα"
-      ],
-      "Filter": [
-        "Φίλτρο"
       ],
       "Also archive": [
         "Επίσης αρχειοθετείστε"
@@ -4566,6 +4550,9 @@
       "Text": [
         "Κείμενο"
       ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
@@ -4587,12 +4574,6 @@
       "Name": [
         "Όνομα"
       ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
-      ],
       "OS name": [
         "Όνομα Λειτουργικού Συστήματος (OS)"
       ],
@@ -4613,6 +4594,9 @@
       ],
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
+      ],
+      "e.g. Julia Smith": [
+        "π.χ. Julia Smith"
       ],
       "ZIP": [
         "T.K"
@@ -4641,14 +4625,17 @@
       "Hint": [
         "Υπόδειξη"
       ],
-      "Name or email address": [
-        "Όνομα ή διεύθυνση email"
+      "Search Messages": [
+        ""
       ],
       "Start date": [
         "Ήμερομηνία Έναρξης"
       ],
       "End date": [
         "Ημερομηνία λήξης"
+      ],
+      "Name or email address": [
+        "Όνομα ή διεύθυνση email"
       ],
       "Search messages": [
         "Αναζήτηση μηνυμάτων"
@@ -4695,8 +4682,13 @@
         "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
         ""
       ]
     },
@@ -4765,98 +4757,18 @@
         "Πηγαίνετε στο ${ vpnName }"
       ]
     },
-    "Table header": {
-      "Name": [
-        "Όνομα"
-      ],
-      "Address": [
-        "Διεύθυνση"
-      ],
-      "Action": [
-        "Ενέργεια"
-      ],
-      "Fingerprint": [
-        "Δακτυλικό αποτύπωμα"
-      ],
-      "Created": [
-        "Δημιουργήθηκε"
-      ],
-      "Expires": [
-        "Λήγει"
-      ],
-      "Type": [
-        "Τύπος"
-      ],
-      "Status": [
-        "Κατάσταση"
-      ],
-      "Actions": [
-        "Ενέργειες"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Αυτή η λειτουργία, απαιτεί έναν επί πληρωμή λογαριασμό Proton"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "",
-        ""
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου απέτυχε."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Η επαλήθευση της υπογραφής των στοιχείων επαφής απέτυχε."
-      ],
-      "The contact failed to load.": [
-        "Η επαφή απέτυχε να φορτωθεί."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
-      ],
-      "Contacts could not be merged": [
-        "Δεν ήταν δυνατή η συγχώνευση των επαφών"
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        ""
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        ""
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Είστε βέβαιοι ότι θέλετε να απορρίψετε την εισαγωγή σας;"
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Η επαλήθευση της υπογραφής του συνημμένου απέτυχε.\nΜπορείτε ακόμα να κατεβάσετε αυτό το συνημμένο αλλά μπορεί να έχει παραβιαστεί.",
-        "Μερικές από τις υπογραφές των συνημμένων απέτυχαν στην επαλήθευση.\nΜπορείτε ακόμα να κατεβάσετε αυτά τα συνημμένα, αλλά μπορεί να έχουν παραποιηθεί."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Καθυστερημένο τιμολόγιο"
       ]
     },
     "Success": {
+      "Code sent to ${ methodTo }": [
+        "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Επιτυχία επαλήθευσης"
+      ],
       "Contact group deleted": [
         "",
         ""
@@ -4886,20 +4798,14 @@
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
-      "Code sent to ${ methodTo }": [
-        "Ο κωδικός στάλθηκε στο ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Επιτυχία επαλήθευσης"
+      "Bug reported": [
+        "Το σφάλμα αναφέρθηκε"
       ],
       "Keyboard shortcuts preferences updated": [
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
-      ],
-      "Bug reported": [
-        "Το σφάλμα αναφέρθηκε"
       ],
       "You have successfully unsubscribed": [
         "Έχετε απεγγραφεί με επιτυχία"
@@ -5046,6 +4952,114 @@
       "Move ${ selectionCount } conversation": [
         "Μετακίνηση συνομιλίας ${ selectionCount }",
         "Μετακίνηση ${ selectionCount } συνομιλιών"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Χειροκίνητα"
+      ],
+      "No verification method available": [
+        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Όνομα"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "Action": [
+        "Ενέργεια"
+      ],
+      "Fingerprint": [
+        "Δακτυλικό αποτύπωμα"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Type": [
+        "Τύπος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Actions": [
+        "Ενέργειες"
+      ]
+    },
+    "Warning": {
+      "This feature requires a paid Proton account": [
+        "Αυτή η λειτουργία, απαιτεί έναν επί πληρωμή λογαριασμό Proton"
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "",
+        ""
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου απέτυχε."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Η επαλήθευση της υπογραφής των στοιχείων επαφής απέτυχε."
+      ],
+      "The contact failed to load.": [
+        "Η επαφή απέτυχε να φορτωθεί."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
+      ],
+      "Contacts could not be merged": [
+        "Δεν ήταν δυνατή η συγχώνευση των επαφών"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Είστε βέβαιοι ότι θέλετε να απορρίψετε την εισαγωγή σας;"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Η επαλήθευση της υπογραφής του συνημμένου απέτυχε.\nΜπορείτε ακόμα να κατεβάσετε αυτό το συνημμένο αλλά μπορεί να έχει παραβιαστεί.",
+        "Μερικές από τις υπογραφές των συνημμένων απέτυχαν στην επαλήθευση.\nΜπορείτε ακόμα να κατεβάσετε αυτά τα συνημμένα, αλλά μπορεί να έχουν παραποιηθεί."
       ]
     },
     "Label for contact group name": {
@@ -5303,9 +5317,6 @@
       ],
       "No parent folder": [
         "Δεν υπάρχει γονικός φάκελος"
-      ],
-      "All": [
-        "Όλα"
       ]
     },
     "Import contact groups info": {
@@ -5374,105 +5385,7 @@
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Μεταφόρτωση"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Καθυστερημένο τιμολόγιο"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Χειροκίνητα"
-      ],
-      "No verification method available": [
-        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
-      "Choose a display name": [
-        ""
-      ],
-      "Select a theme": [
-        ""
-      ],
-      "You can change this anytime in your settings.": [
-        ""
-      ],
-      "Discover all Proton services": [
-        ""
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
-        "Καλώς ήρθατε στο Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        ""
-      ],
-      "Set up your organization": [
-        ""
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        ""
-      ]
-    },
-    "Onboarding Beta": {
-      "Got it": [
-        "Το κατάλαβα"
-      ],
-      "Beta enabled": [
-        ""
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        ""
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Ρυθμίσεις"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Ενεργό"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Ανενεργό"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
-    "Density mode": {
+    "Label to change density": {
       "Comfortable": [
         "Άνετη"
       ],
@@ -5480,12 +5393,52 @@
         "Συμπαγής"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Μεγιστοποιημένο"
+    "Label to change view layout": {
+      "Column": [
+        "Στήλη"
       ],
+      "Row": [
+        "Σειρά"
+      ]
+    },
+    "Label to change composer mode": {
       "Normal": [
         "Κανονικό"
+      ],
+      "Maximized": [
+        "Μεγιστοποιημένο"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Μεταφόρτωση"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Configure Import": [
+        "Ρύθμιση Εισαγωγής"
+      ],
+      "Import": [
+        "Εισαγωγή"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Ακύρωση εισαγωγής;"
+      ],
+      "Message saved to Drafts": [
+        ""
+      ],
+      "Edit and reschedule": [
+        ""
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5598,6 +5551,103 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        ""
+      ],
+      "Choose a display name": [
+        ""
+      ],
+      "Select a theme": [
+        ""
+      ],
+      "You can change this anytime in your settings.": [
+        ""
+      ],
+      "Discover all Proton services": [
+        ""
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        ""
+      ],
+      "Welcome to Proton": [
+        "Καλώς ήρθατε στο Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        ""
+      ],
+      "Set up your organization": [
+        ""
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        ""
+      ]
+    },
+    "Onboarding Beta": {
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Beta enabled": [
+        ""
+      ],
+      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
+        ""
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Ρυθμίσεις"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Early Access Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Στήλη"
+      ],
+      "Row": [
+        "Σειρά"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Άνετη"
+      ],
+      "Compact": [
+        "Συμπαγής"
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "Μεγιστοποιημένο"
+      ],
+      "Normal": [
+        "Κανονικό"
       ]
     },
     "Info for cash payment method": {
@@ -6047,57 +6097,6 @@
         "Bitcoin"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Κανονικό"
-      ],
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Ταυτοποίηση"
-      ],
-      "Configure Import": [
-        "Ρύθμιση Εισαγωγής"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "Ακύρωση εισαγωγής;"
-      ],
-      "Message saved to Drafts": [
-        ""
-      ],
-      "Edit and reschedule": [
-        ""
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
@@ -6456,11 +6455,6 @@
         ""
       ]
     },
-    "Invitation details (all-day event)": {
-      "${ formattedDate } (all day)": [
-        "${ formattedDate } (όλη την ημέρα)"
-      ]
-    },
     "Calendar invite info": {
       "This response is out of date. This event has been updated.": [
         "Αυτή η απάντηση είναι ξεπερασμένη. Αυτό το γεγονός έχει ενημερωθεί."
@@ -6591,29 +6585,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Αυτή η πρόσκληση είναι ξεπερασμένη. Η εκδήλωση έχει ενημερωθεί."
       ],
-      "Your attendance at this event is required.": [
-        "Απαιτείται η παρουσία σας σε αυτή την εκδήλωση."
+      "You already accepted this invitation.": [
+        ""
       ],
-      "Your attendance at this event is optional.": [
-        "Η συμμετοχή σας σε αυτή την εκδήλωση είναι προαιρετική."
+      "You already tentatively accepted this invitation.": [
+        ""
       ],
-      "Your attendance at this event is required. You already accepted this invitation.": [
-        "Απαιτείται η παρουσία σας σε αυτή την εκδήλωση. Έχετε ήδη αποδεχθεί αυτή την πρόσκληση."
-      ],
-      "Your attendance at this event is optional. You already accepted this invitation.": [
-        "Η συμμετοχή σας σε αυτή την εκδήλωση είναι προαιρετική. Έχετε ήδη αποδεχθεί αυτή την πρόσκληση."
-      ],
-      "Your attendance at this event is required. You already tentatively accepted this invitation.": [
-        "Η παρουσία σας σε αυτή την εκδήλωση απαιτείται. Έχετε ήδη αποδεχτεί διστακτικά αυτή την πρόσκληση."
-      ],
-      "Your attendance at this event is optional. You already tentatively accepted this invitation.": [
-        "Η συμμετοχή σας σε αυτή την εκδήλωση είναι προαιρετική. Έχετε ήδη αποδεχθεί διστακτικά αυτή την πρόσκληση."
-      ],
-      "Your attendance at this event is required. You already declined this invitation.": [
-        "Η συμμετοχή σας σε αυτή την εκδήλωση απαιτείται. Έχετε ήδη απορρίψει αυτή την πρόσκληση."
-      ],
-      "Your attendance at this event is optional. You already declined this invitation.": [
-        "Η συμμετοχή σας σε αυτή την εκδήλωση είναι προαιρετική. Έχετε ήδη απορρίψει αυτή την πρόσκληση."
+      "You already declined this invitation.": [
+        ""
       ],
       "This event has been cancelled.": [
         "Αυτή η εκδήλωση έχει ακυρωθεί."
@@ -6623,6 +6602,9 @@
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Μια εμφάνιση έχει προστεθεί στο γεγονός ${ veventIcsTitle }"
+      ],
+      "(Attendance optional)": [
+        ""
       ],
       "The sender of this email has not been invited to this event and cannot be added as a participant.": [
         "Ο αποστολέας αυτού του email δεν έχει προσκληθεί σε αυτή την εκδήλωση και δεν μπορεί να προστεθεί ως συμμετέχων."
@@ -6795,12 +6777,38 @@
         "Η απάντηση πρόσκλησης απέτυχε"
       ]
     },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Δημιουργήθηκε γεγονός ημερολογίου"
       ],
       "Creating calendar event failed": [
         "Αποτυχία δημιουργίας γεγονότους ημερολογίου"
+      ]
+    },
+    "ICS widget label for event details": {
+      "Organizer:": [
+        ""
+      ],
+      "${ totalAttendees } Participant": [
+        "",
+        ""
+      ],
+      "Repeats": [
+        ""
+      ],
+      "Calendar": [
+        ""
+      ],
+      "Location": [
+        ""
+      ],
+      "Participants": [
+        ""
       ]
     },
     "Attachment signature verification": {
@@ -6820,17 +6828,11 @@
       "All": [
         "Όλα"
       ],
-      "Yes": [
-        "Ναι"
+      "With": [
+        ""
       ],
-      "No": [
-        "Όχι"
-      ],
-      "Read": [
-        "Διαβάστηκε"
-      ],
-      "Unread": [
-        "Μη αναγνωσμένα"
+      "Without": [
+        ""
       ]
     },
     "Filter option": {

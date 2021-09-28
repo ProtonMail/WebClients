@@ -21,17 +21,14 @@
       "Authentication error.": [
         "認証エラー"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
+      ],
       "Email address invalid": [
         "無効なメールアドレスです。"
       ],
       "This field is required": [
         "この項目の入力は必須です"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "Process aborted": [
         "処理が中断されました"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "無効なコードです"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "メールボックスのパスワードが正しくありません。再度入力してください。"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "間違ったログイン情報です。もう一度やり直してください。"
-      ],
-      "Can't validate email, try again later": [
-        "メールアドレスを検証できませんした。再度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
-      ],
-      "Enter 6 digits": [
-        "6 桁の数字を入力"
-      ],
-      "Invalid verification code": [
-        "無効な検証コード"
-      ],
-      "Preferences could not be saved": [
-        "設定が保存できませんでした。"
-      ],
-      "Some groups could not be deleted": [
-        "一部のグループは削除できませんでした"
-      ],
       "Image upload failed": [
         "画像のアップロードに失敗しました。"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "一部の連絡先を削除できませんでした。"
+      ],
+      "Preferences could not be saved": [
+        "設定が保存できませんでした。"
+      ],
+      "Some groups could not be deleted": [
+        "一部のグループは削除できませんでした"
       ],
       "Invalid public key file": [
         "無効な公開鍵ファイル"
@@ -153,14 +132,35 @@
       "Invalid name": [
         "無効な名前です。"
       ],
+      "Primary address key is not decrypted": [
+        "プライマリーアドレス鍵が復号されていません"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "メールボックスのパスワードが正しくありません。再度入力してください。"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "間違ったログイン情報です。もう一度やり直してください。"
+      ],
+      "Can't validate email, try again later": [
+        "メールアドレスを検証できませんした。再度お試しください"
+      ],
+      "Can't validate phone, try again later": [
+        "電話番号の検証ができませんでした。再度お試しください"
+      ],
+      "Enter 6 digits": [
+        "6 桁の数字を入力"
+      ],
+      "Invalid verification code": [
+        "無効な検証コード"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "プライマリーアドレス鍵が復号されていません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -192,12 +192,6 @@
       "Request timed out.": [
         "リクエストがタイムアウトしました。"
       ],
-      "Signature verification failed": [
-        "署名の検証に失敗しました"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
-      ],
       "Missing signature": [
         "署名がありません"
       ],
@@ -206,6 +200,12 @@
       ],
       "Signature not verified": [
         "署名が確認されていません"
+      ],
+      "Signature verification failed": [
+        "署名の検証に失敗しました"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Email address disabled": [
         "メールアドレスが無効です"
@@ -335,56 +335,23 @@
       "Load image": [
         "画像を読み込む"
       ],
-      "refresh the page": [
-        "ページを更新"
-      ],
-      "Export": [
-        "エクスポート"
-      ],
-      "Delete": [
-        "削除"
-      ],
-      "Edit": [
-        "編集"
-      ],
-      "Remove": [
-        "削除"
-      ],
-      "Download": [
-        "ダウンロード"
-      ],
-      "Use for sending": [
-        "送信に使用"
-      ],
-      "Trust": [
-        "信頼する"
-      ],
-      "Untrust": [
-        "信頼しない"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Email settings": [
-        "メールの設定"
-      ],
-      "Contact group": [
-        "連絡先グループ"
-      ],
-      "Upload picture": [
-        "写真をアップロード"
-      ],
       "Next month": [
         "次の月"
       ],
       "Previous month": [
         "前の月"
       ],
+      "Remove": [
+        "削除"
+      ],
       "Confirm opening of link ${ link }": [
         "リンク ${ link } を確認"
       ],
       "Continue with Google": [
         "Googleで続行"
+      ],
+      "Delete": [
+        "削除"
       ],
       "Select timezone": [
         "タイムゾーンの選択"
@@ -397,6 +364,9 @@
       ],
       "Signing out": [
         "サインアウトしています"
+      ],
+      "refresh the page": [
+        "ページを更新"
       ],
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
@@ -539,41 +509,14 @@
       "Increase": [
         "増加"
       ],
-      "Log in": [
-        "ログイン"
-      ],
-      "View invoice": [
-        "請求書を参照"
-      ],
-      "Get verification code": [
-        "認証コードを取得"
-      ],
-      "Try another method": [
-        "別の方法を試してください"
-      ],
-      "Request new code": [
-        "新しいコードの発行"
-      ],
-      "Did not receive the code?": [
-        "コードを受け取っていませんか?"
-      ],
-      "Edit email address": [
-        "メールアドレスを編集"
-      ],
-      "Edit phone number": [
-        "電話番号を編集"
-      ],
       "Save": [
         "保存"
       ],
+      "Upload picture": [
+        "写真をアップロード"
+      ],
       "Add": [
         "追加"
-      ],
-      "Hide advanced PGP settings": [
-        "拡張 PGP 設定を非表示"
-      ],
-      "Show advanced PGP settings": [
-        "拡張 PGP 設定を表示"
       ],
       "Clear data": [
         "データを消去"
@@ -587,8 +530,41 @@
       "Re-sign": [
         "再署名"
       ],
+      "Hide advanced PGP settings": [
+        "拡張 PGP 設定を非表示"
+      ],
+      "Show advanced PGP settings": [
+        "拡張 PGP 設定を表示"
+      ],
+      "Edit": [
+        "編集"
+      ],
       "Add to group": [
         "グループに追加"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Contact group": [
+        "連絡先グループ"
+      ],
+      "Export": [
+        "エクスポート"
+      ],
+      "Download": [
+        "ダウンロード"
+      ],
+      "Use for sending": [
+        "送信に使用"
+      ],
+      "Trust": [
+        "信頼する"
+      ],
+      "Untrust": [
+        "信頼しない"
+      ],
+      "Email settings": [
+        "メールの設定"
       ],
       "Merge": [
         "統合"
@@ -661,6 +637,30 @@
       ],
       "Import": [
         "インポート"
+      ],
+      "Log in": [
+        "ログイン"
+      ],
+      "View invoice": [
+        "請求書を参照"
+      ],
+      "Get verification code": [
+        "認証コードを取得"
+      ],
+      "Try another method": [
+        "別の方法を試してください"
+      ],
+      "Request new code": [
+        "新しいコードの発行"
+      ],
+      "Did not receive the code?": [
+        "コードを受け取っていませんか?"
+      ],
+      "Edit email address": [
+        "メールアドレスを編集"
+      ],
+      "Edit phone number": [
+        "電話番号を編集"
       ],
       "Continue import": [
         ""
@@ -780,15 +780,6 @@
       ],
       "Keyboard Shortcuts": [
         "キーボードショートカット"
-      ],
-      "Upgrade required": [
-        "アップグレードが必要です"
-      ],
-      "Email settings": [
-        "メールの設定"
-      ],
-      "Contact group": [
-        "連絡先グループ"
       ],
       "Link confirmation": [
         "リンクの確認"
@@ -910,27 +901,6 @@
       "${ appName } customization": [
         "${ appName } のカスタマイズ"
       ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
-      "Account suspended": [
-        "アカウントが停止されました"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "ユーザー名または ProtonMail アドレスを入力してください"
-      ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
-      "Invalid verification code": [
-        "無効な検証コード"
-      ],
-      "Request new code": [
-        "新しいコードの発行"
-      ],
-      "Human verification": [
-        "人間であることの検証"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } のキーボードショートカット"
       ],
@@ -942,6 +912,12 @@
       ],
       "Composer mode": [
         "作成時の書式"
+      ],
+      "Beta Access": [
+        "ベータ版アクセス"
+      ],
+      "Edit image": [
+        "画像の編集"
       ],
       "Edit contact group": [
         "連絡先グループを編集"
@@ -955,26 +931,14 @@
       "Add to ${ groupCount } group": [
         "${ groupCount } グループに追加"
       ],
-      "Email settings (${ emailAddress })": [
-        "メールの設定 (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } を削除する"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } 件の連絡先を削除"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } メンバー"
-      ],
-      "Edit image": [
-        "画像の編集"
-      ],
       "Edit contact": [
         "連絡先を編集"
       ],
       "Create contact": [
         "連絡先を作成"
+      ],
+      "Delete ${ Name }": [
+        "${ Name } を削除する"
       ],
       "Delete ${ count } contact": [
         "${ count } 件の連絡先を削除"
@@ -994,8 +958,23 @@
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
       ],
+      "Email settings (${ emailAddress })": [
+        "メールの設定 (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } 件の連絡先を削除"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } メンバー"
+      ],
       "Exporting contacts": [
         "連絡先のエクスポート中"
+      ],
+      "Upgrade required": [
+        "アップグレードが必要です"
+      ],
+      "Contact group": [
+        "連絡先グループ"
       ],
       "Other names": [
         "別名"
@@ -1011,6 +990,9 @@
       ],
       "Other information": [
         "その他の情報"
+      ],
+      "Email settings": [
+        "メールの設定"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -1051,8 +1033,26 @@
       "Import contacts": [
         "連絡先のインポート"
       ],
-      "Beta Access": [
-        "ベータ版アクセス"
+      "Sign in again to continue": [
+        "続行するには再度ログインしてください"
+      ],
+      "Account suspended": [
+        "アカウントが停止されました"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "ユーザー名または ProtonMail アドレスを入力してください"
+      ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
+      "Invalid verification code": [
+        "無効な検証コード"
+      ],
+      "Request new code": [
+        "新しいコードの発行"
+      ],
+      "Human verification": [
+        "人間であることの検証"
       ],
       "Start import process": [
         ""
@@ -1200,15 +1200,6 @@
       "No results found": [
         "結果が見つかりませんでした"
       ],
-      "support team": [
-        "サポートチーム"
-      ],
-      "No contacts added yet": [
-        "まだ連絡先が追加されていません。"
-      ],
-      "Loading": [
-        "読み込み中"
-      ],
       "Week": [
         "週"
       ],
@@ -1226,6 +1217,9 @@
       ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
+      ],
+      "Loading": [
+        "読み込み中"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
@@ -1473,6 +1467,123 @@
       "Not customizable": [
         "カスタマイズ不可"
       ],
+      "Expired": [
+        "有効期限切れ"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        ""
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } メンバー"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } と ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "非アクティブなキーで暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "${ max } のうち ${ progress } の連絡先を確認しています..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } 連絡先が正常に更新されました。"
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "データを復元するには、データが作成されたときに使用された連絡先暗号化キーを再度有効にする必要があります。 したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
+      ],
+      "Key fingerprint": [
+        "鍵のフィンガープリント"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "パスワードを覚えていませんか？ この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。ProtonMailは暗号化されたメッセージに常に署名することに注意してください。"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        ""
+      ],
+      "No contacts added yet": [
+        "まだ連絡先が追加されていません。"
+      ],
+      "Group assignment applied": [
+        ""
+      ],
+      "Create a new contact group": [
+        "新しい連絡先グループを作成"
+      ],
+      "No group found": [
+        "グループがありません。"
+      ],
+      "Primary": [
+        "プライマリー"
+      ],
+      "Duplicate key updated": [
+        ""
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に送信に使用する公開鍵を信頼する必要があります。"
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        ""
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "PGPを利用しているProtonMail以外の受信者がいる場合にのみ、これらの設定を変更してください。"
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "No email address": [
+        "メールアドレスがありません。"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } の連絡先が見つかりました"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } 件のグループが見つかりました"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "私たちは、Outlook 、Outlook Express 、Yahoo! メール、Hotmail 、Eudora とその他いくつかのアプリから CSV ファイルをインポートすることに対応しています。また、 UTF-8 でエンコードされた vCard 4.0 のインポートにも対応しています。"
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } 件のメールアドレス"
+      ],
       "here": [
         "こちら"
       ],
@@ -1512,119 +1623,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
       ],
-      "Expired": [
-        "有効期限切れ"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        ""
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } メンバー"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } と ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。ProtonMailは暗号化されたメッセージに常に署名することに注意してください。"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        ""
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "非アクティブなキーで暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "${ max } のうち ${ progress } の連絡先を確認しています..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } 連絡先が正常に更新されました。"
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先暗号化キーを再度有効にする必要があります。 したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
-      ],
-      "Key fingerprint": [
-        "鍵のフィンガープリント"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "パスワードを覚えていませんか？ この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
-      ],
-      "Group assignment applied": [
-        ""
-      ],
-      "Create a new contact group": [
-        "新しい連絡先グループを作成"
-      ],
-      "No group found": [
-        "グループがありません。"
-      ],
-      "Duplicate key updated": [
-        ""
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に送信に使用する公開鍵を信頼する必要があります。"
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        ""
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "PGPを利用しているProtonMail以外の受信者がいる場合にのみ、これらの設定を変更してください。"
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "プライマリー"
-      ],
-      "No email address": [
-        "メールアドレスがありません。"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } の連絡先が見つかりました"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } 件のグループが見つかりました"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "私たちは、Outlook 、Outlook Express 、Yahoo! メール、Hotmail 、Eudora とその他いくつかのアプリから CSV ファイルをインポートすることに対応しています。また、 UTF-8 でエンコードされた vCard 4.0 のインポートにも対応しています。"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } 件のメールアドレス"
+      "support team": [
+        "サポートチーム"
       ],
       "Import contacts": [
         ""
@@ -1918,27 +1918,6 @@
       "Hide password": [
         "パスワードを非表示"
       ],
-      "Street address": [
-        "番地"
-      ],
-      "City": [
-        "市町村"
-      ],
-      "Region": [
-        "都道府県"
-      ],
-      "Postal code": [
-        "郵便番号"
-      ],
-      "Country": [
-        "国名"
-      ],
-      "Post office box": [
-        "私書箱"
-      ],
-      "Extended address": [
-        "拡張アドレス"
-      ],
       "Do not ask again": [
         "今後表示しない"
       ],
@@ -1987,10 +1966,16 @@
       "CVV code": [
         "CVV コード"
       ],
+      "Country": [
+        "国名"
+      ],
       "Select your country": [
         "国を選択してください"
       ],
       "ZIP": [
+        "郵便番号"
+      ],
+      "Postal code": [
         "郵便番号"
       ],
       "BTC amount:": [
@@ -2010,6 +1995,84 @@
       ],
       "Proration": [
         "日割り計算"
+      ],
+      "Cash": [
+        "現金"
+      ],
+      "Card holder": [
+        "カード名義人"
+      ],
+      "Expires": [
+        "有効期限"
+      ],
+      "Payer": [
+        "支払人"
+      ],
+      "Keyboard shortcuts": [
+        "キーボードショートカット"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "ベータ版アクセスを有効にする"
+      ],
+      "Add image URL": [
+        "追加する画像の URL"
+      ],
+      "Upload picture": [
+        "写真をアップロード"
+      ],
+      "Add email address": [
+        "メールアドレスの追加"
+      ],
+      "Email format": [
+        "メールの形式"
+      ],
+      "Street address": [
+        "番地"
+      ],
+      "City": [
+        "市町村"
+      ],
+      "Region": [
+        "都道府県"
+      ],
+      "Post office box": [
+        "私書箱"
+      ],
+      "Extended address": [
+        "拡張アドレス"
+      ],
+      "Add to group": [
+        "グループに追加"
+      ],
+      "Encrypt emails": [
+        "メールを暗号化"
+      ],
+      "Sign emails": [
+        "メールに署名"
+      ],
+      "Cryptographic scheme": [
+        "暗号化方式"
+      ],
+      "Public keys": [
+        "公開鍵"
+      ],
+      "Automatically save contacts": [
+        "連絡先への宛先の自動追加"
+      ],
+      "Import contacts": [
+        "連絡先のインポート"
+      ],
+      "Export contacts": [
+        "連絡先をエクスポート"
       ],
       "Cancel": [
         "キャンセル"
@@ -2037,69 +2100,6 @@
       ],
       "Enter the 6-digit code": [
         "6 桁のコードを入力"
-      ],
-      "Cash": [
-        "現金"
-      ],
-      "Card holder": [
-        "カード名義人"
-      ],
-      "Expires": [
-        "有効期限"
-      ],
-      "Payer": [
-        "支払人"
-      ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Add email address": [
-        "メールアドレスの追加"
-      ],
-      "Email format": [
-        "メールの形式"
-      ],
-      "Add image URL": [
-        "追加する画像の URL"
-      ],
-      "Upload picture": [
-        "写真をアップロード"
-      ],
-      "Add to group": [
-        "グループに追加"
-      ],
-      "Encrypt emails": [
-        "メールを暗号化"
-      ],
-      "Sign emails": [
-        "メールに署名"
-      ],
-      "Cryptographic scheme": [
-        "暗号化方式"
-      ],
-      "Public keys": [
-        "公開鍵"
-      ],
-      "Automatically save contacts": [
-        "連絡先への宛先の自動追加"
-      ],
-      "Import contacts": [
-        "連絡先のインポート"
-      ],
-      "Export contacts": [
-        "連絡先をエクスポート"
-      ],
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2227,11 +2227,6 @@
         "登録済みカレンダー"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "例: "
@@ -2272,14 +2267,11 @@
       "Gift code": [
         "ギフトコード"
       ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
+      "Image URL": [
+        "画像の URL"
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
-      ],
-      "Image URL": [
-        "画像の URL"
       ],
       "Filter groups": [
         "グループの検索"
@@ -2292,6 +2284,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
       ],
       "Add a calendar name": [
         "カレンダー名を入力..."
@@ -2320,204 +2315,71 @@
         "${ minutes } 分"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "検証済みデジタル署名付きの暗号化データ"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "username2@protonmail.com のようなアカウントにリンクされたアドレス / エイリアスを利用してください。"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "john.smith@example.com のような自分のドメインを ProtonMail でホストします"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "メールを送信するために個人のアドレス username@pm.meを使用してください"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "マルチユーザーサポートは2人以上のユーザーがいる場合のみ適用されます"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent 等のファイル共有プロトコルに対応。"
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "あなたの現在いる地域でブロックされているコンテンツ (Netflix 、Amazon Prime Video 、BBC iPlayer 、Wikipedia 、Facebook 、YouTube など) にアクセスできます。"
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "あなたのインターネットトラフィックを簡単に Tor ネットワーク経由でルーティングします。"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します。"
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "1つのプランで ProtonVPN と ProtonMail (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "1つのプランで ${ vpnAppName } と ${ mailAppName } (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "john.smith@example.com のような自分のドメインを ${ mailAppName } でホストします"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "username2@protonmail.com のようなアカウントにリンクされたメールアドレスを作成してください。"
-      ],
-      "Discount applied for annual billing cycle": [
-        "年間契約に適用される割引"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "2年プランに適用される割引"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         ""
       ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
         ""
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        ""
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
-      ],
-      "You do not have any contacts to export": [
-        "エクスポートする連絡先がありません"
       ]
     },
-    "Table header": {
-      "Name": [
-        "名前"
-      ],
-      "Address": [
-        "メールアドレス"
-      ],
-      "Action": [
-        "操作"
-      ],
-      "Fingerprint": [
-        "フィンガープリント"
-      ],
-      "Created": [
-        "作成日時"
-      ],
-      "Expires": [
-        "有効期限"
-      ],
-      "Type": [
-        "種類"
-      ],
-      "Status": [
-        "状態"
-      ],
-      "Actions": [
-        "動作"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "自動"
-      ],
-      "Plain text": [
-        "プレーンテキスト"
+    "Select search results": {
+      "No results found": [
+        "結果が見つかりませんでした"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "全体の既定値を使用 (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "タイムゾーンの検索"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "プライマリー"
+    "Collapsible tooltip": {
+      "Open": [
+        ""
       ],
-      "Verification only": [
-        "検証専用"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "信頼済み"
-      ],
-      "Revoked": [
-        "取り消し済み"
-      ],
-      "Expired": [
-        "有効期限切れ"
+      "Close": [
+        ""
       ]
     },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "この機能は有料のProtonアカウントが必要です。"
+    "Error message": {
+      "Oops, something went wrong": [
+        "エラーが発生しました"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "ライブチャットは、ProtonVPNの有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
+      "There was a problem connecting to Proton.": [
+        "Proton への接続に問題がありました。"
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } または接続を確認してください。"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
+      "Error: ${ errorMessage }": [
+        "エラー: ${ errorMessage }"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
+      "Brace yourself till we get the error fixed.": [
+        "エラーが解消されるまでお待ちください。"
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "この連絡先グループを完全に削除してよろしいですか?"
+      "You may also ${ refresh } or try again later.": [
+        "${ refresh } するか後ほどお試しください。"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton アプリケーション"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        ""
+      "Go to ${ title }": [
+        "${ title } へ移動"
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "この連絡先を完全に削除してよろしいですか？"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "${ count } 件の連絡先を完全に削除してよろしいですか？"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "暗号化されたコンテンツの復号に失敗しました。"
-      ],
-      "The verification of the contact details' signature failed.": [
-        "連絡先詳細の署名の検証に失敗しました。"
-      ],
-      "The contact failed to load.": [
-        "連絡先の読み込みに失敗しました。"
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        ""
-      ],
-      "Contacts could not be merged": [
-        ""
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        ""
+      "Go to ${ vpnName }": [
+        "${ vpnName } へ移動"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "メールアドレスがクリップボードにコピーされました。"
-      ],
-      "Phone number copied to clipboard": [
-        "電話番号がクリップボードにコピーされました。"
-      ],
-      "Address copied to clipboard": [
-        "住所がクリップボードにコピーされました。"
       ],
       "Bug reported": [
         "バグの報告が送信されました。"
@@ -2525,23 +2387,11 @@
       "You have successfully unsubscribed": [
         "退会手続きが正常に行なわれました。"
       ],
-      "Code sent to ${ methodTo }": [
-        "${ methodTo } にコードを送信しました"
-      ],
-      "Verification successful": [
-        "検証に成功しました"
-      ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
       ],
       "Preference saved": [
         "設定が保存されました。"
-      ],
-      "Preferences saved": [
-        "設定が保存されました。"
-      ],
-      "Contact group deleted": [
-        "連絡先グループが削除されました"
       ],
       "Contact saved": [
         "連絡先が保存されました。"
@@ -2554,6 +2404,24 @@
       ],
       "Fingerprint copied to clipboard": [
         "フィンガープリントをクリップボードにコピーしました"
+      ],
+      "Preferences saved": [
+        "設定が保存されました。"
+      ],
+      "Contact group deleted": [
+        "連絡先グループが削除されました"
+      ],
+      "Phone number copied to clipboard": [
+        "電話番号がクリップボードにコピーされました。"
+      ],
+      "Address copied to clipboard": [
+        "住所がクリップボードにコピーされました。"
+      ],
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } にコードを送信しました"
+      ],
+      "Verification successful": [
+        "検証に成功しました"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2643,63 +2511,6 @@
         "全ての予定が削除されました。"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        ""
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "結果が見つかりませんでした"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "タイムゾーンの検索"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "エラーが発生しました"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Proton への接続に問題がありました。"
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } または接続を確認してください。"
-      ],
-      "Error: ${ errorMessage }": [
-        "エラー: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "エラーが解消されるまでお待ちください。"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } するか後ほどお試しください。"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton アプリケーション"
-      ],
-      "Go to ${ title }": [
-        "${ title } へ移動"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } へ移動"
-      ]
-    },
     "Header": {
       "Get help": [
         "ヘルプを参照する"
@@ -2719,14 +2530,24 @@
         "設定"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "日付"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "オフ"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2893,6 +2714,62 @@
         "選択してください"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "ライブチャットは、ProtonVPNの有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "この連絡先を完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "${ count } 件の連絡先を完全に削除してよろしいですか？"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "この連絡先グループを完全に削除してよろしいですか?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        ""
+      ],
+      "This feature requires a paid Proton account": [
+        "この機能は有料のProtonアカウントが必要です。"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "暗号化されたコンテンツの復号に失敗しました。"
+      ],
+      "The verification of the contact details' signature failed.": [
+        "連絡先詳細の署名の検証に失敗しました。"
+      ],
+      "The contact failed to load.": [
+        "連絡先の読み込みに失敗しました。"
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        ""
+      ],
+      "Contacts could not be merged": [
+        ""
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        ""
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "スクリーンショットの添付"
@@ -3004,6 +2881,77 @@
       ],
       "Unlimited": [
         "無制限"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "username2@protonmail.com のようなアカウントにリンクされたアドレス / エイリアスを利用してください。"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "john.smith@example.com のような自分のドメインを ProtonMail でホストします"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "メールを送信するために個人のアドレス username@pm.meを使用してください"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "マルチユーザーサポートは2人以上のユーザーがいる場合のみ適用されます"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "BitTorrent 等のファイル共有プロトコルに対応。"
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "あなたの現在いる地域でブロックされているコンテンツ (Netflix 、Amazon Prime Video 、BBC iPlayer 、Wikipedia 、Facebook 、YouTube など) にアクセスできます。"
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "あなたのインターネットトラフィックを簡単に Tor ネットワーク経由でルーティングします。"
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します。"
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "1つのプランで ProtonVPN と ProtonMail (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "1つのプランで ${ vpnAppName } と ${ mailAppName } (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "john.smith@example.com のような自分のドメインを ${ mailAppName } でホストします"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "username2@protonmail.com のようなアカウントにリンクされたメールアドレスを作成してください。"
+      ],
+      "Discount applied for annual billing cycle": [
+        "年間契約に適用される割引"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "2年プランに適用される割引"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        ""
+      ],
+      "Encrypted data with verified digital signature": [
+        "検証済みデジタル署名付きの暗号化データ"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        ""
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        ""
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
+      ],
+      "You do not have any contacts to export": [
+        "エクスポートする連絡先がありません"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3323,28 +3271,6 @@
         "FREE"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "未払いの請求"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "メールアドレス"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "手動"
-      ],
-      "No verification method available": [
-        "検証方法がありません"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
@@ -3354,6 +3280,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
       ]
     },
     "Label to change density": {
@@ -3378,14 +3317,6 @@
       ],
       "Maximized": [
         "最大化"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "連絡先グループが更新されました。"
-      ],
-      "Contact group created": [
-        "連絡先グループが作成されました。"
       ]
     },
     "Label for contact group name": {
@@ -3447,6 +3378,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "名前"
+      ],
+      "Address": [
+        "メールアドレス"
+      ],
+      "Action": [
+        "操作"
+      ],
+      "Fingerprint": [
+        "フィンガープリント"
+      ],
+      "Created": [
+        "作成日時"
+      ],
+      "Expires": [
+        "有効期限"
+      ],
+      "Type": [
+        "種類"
+      ],
+      "Status": [
+        "状態"
+      ],
+      "Actions": [
+        "動作"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "連絡先グループが更新されました。"
+      ],
+      "Contact group created": [
+        "連絡先グループが作成されました。"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "自動"
+      ],
+      "Plain text": [
+        "プレーンテキスト"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "全体の既定値を使用 (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "プライマリー"
+      ],
+      "Verification only": [
+        "検証専用"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "信頼済み"
+      ],
+      "Revoked": [
+        "取り消し済み"
+      ],
+      "Expired": [
+        "有効期限切れ"
       ]
     },
     "TableHeader": {
@@ -3622,17 +3623,31 @@
         ""
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+    "Select files": {
+      "Upload": [
+        "アップロード"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "未払いの請求"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "メールアドレス"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "手動"
+      ],
+      "No verification method available": [
+        "検証方法がありません"
       ]
     },
     "Loading info": {
@@ -3654,11 +3669,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "アップロード"
       ]
     },
     "Message display when a new app version is available": {
@@ -3822,17 +3832,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "${ formattedStart } のイベントのキャンセル"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "${ formattedStart } のイベントへの招待"
       ],
       "Update for an event on ${ formattedStart }": [
         "{ formattedStart } のイベントの更新"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "{ formattedStart } から始まるイベントのキャンセル"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "${ formattedStart } から始まるイベントの招待"
@@ -3840,8 +3844,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "${ formattedStart } から始まるイベントの更新"
       ],
-      "Invitation: ${ eventTitle }": [
-        "招待: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "${ formattedStart } のイベントのキャンセル"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "{ formattedStart } から始まるイベントのキャンセル"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4264,11 +4271,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "パスワードは ${ length } 文字以上必要です"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "名前"
@@ -4383,9 +4385,9 @@
         "メールアドレス"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "パスワードは ${ length } 文字以上必要です"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4607,6 +4609,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Message": {

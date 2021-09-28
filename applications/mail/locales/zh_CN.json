@@ -59,6 +59,12 @@
       "Request timed out.": [
         "请求超时。"
       ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
+      ],
       "Missing signature": [
         "缺少签名"
       ],
@@ -74,23 +80,17 @@
       "The key properties for ${ emailAddress } could not be extracted": [
         "无法提取${ emailAddress } 的密钥属性"
       ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
       "Calendar primary private key is not decrypted": [
         "日历主密钥未解密。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此邮件含有浏览器不能打开的链接"
-      ],
       "Unknown error": [
         "未知错误"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "此邮件含有浏览器不能打开的链接"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -104,14 +104,32 @@
       "Email address invalid": [
         "邮箱格式不正确"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
+      ],
       "The composer failed to load.": [
         "编辑器加载失败。"
       ],
       "Please refresh the page.": [
         "请刷新页面。"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
+      "Incorrect mailbox password. Please try again": [
+        "邮箱密码错误，请重试"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "登录账号或密码错误，请重试"
+      ],
+      "Can't validate email, try again later": [
+        "无法验证邮箱，请重试"
+      ],
+      "Can't validate phone, try again later": [
+        "无法验证手机，请稍候再试"
+      ],
+      "Enter 6 digits": [
+        "请输入 6 位验证码"
+      ],
+      "Invalid verification code": [
+        "验证码无效"
       ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
@@ -152,29 +170,17 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      ],
       "File has no contents to preview": [
         "文件没有内容可预览"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "邮箱密码错误，请重试"
+      "We were unable to connect to your service provider.": [
+        "我们无法连接到您的服务提供商。"
       ],
-      "Incorrect login credentials. Please try again": [
-        "登录账号或密码错误，请重试"
-      ],
-      "Can't validate email, try again later": [
-        "无法验证邮箱，请重试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再试"
-      ],
-      "Enter 6 digits": [
-        "请输入 6 位验证码"
-      ],
-      "Invalid verification code": [
-        "验证码无效"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "请尝试重新验证并确保权限正确。"
       ],
       "Process aborted": [
         "操作已中止"
@@ -235,12 +241,6 @@
       ],
       "Invalid code": [
         "无效代码"
-      ],
-      "We were unable to connect to your service provider.": [
-        "我们无法连接到您的服务提供商。"
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "请尝试重新验证并确保权限正确。"
       ],
       "Empty condition": [
         "条件为空"
@@ -386,6 +386,11 @@
         "GB"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
     "Contact field label": {
       "Name": [
         "姓名"
@@ -500,11 +505,6 @@
         "地址"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密码必须至少包含 ${ length } 个字符"
-      ]
-    },
     "Info": {
       "Session timed out.": [
         "会话已超时。"
@@ -560,6 +560,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "Loading": [
+        "加载中"
+      ],
       "Insert image": [
         "插入图片"
       ],
@@ -605,9 +608,6 @@
       "Change your default in settings": [
         ""
       ],
-      "Default": [
-        ""
-      ],
       "Text color": [
         "文本颜色"
       ],
@@ -638,14 +638,50 @@
       "Plain text": [
         "纯文本"
       ],
-      "Loading": [
-        "加载中"
-      ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
       ],
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
+      ],
+      "here": [
+        "此处"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "此账户因可能违反用户协议而被封禁。"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "如有异议，请点击${ contactLink }联系我们。"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "点击“请求新验证码”将发送到 ${ strong }。如果此邮箱地址不正确，请点击“编辑”。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "为防止滥发邮件，请验证您是真人操作。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的邮箱将只会用于此一次性验证。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的电话号码将只会用于此一次性验证。"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -761,6 +797,9 @@
       "${ addressCount } email address": [
         "${ addressCount } 个邮箱地址"
       ],
+      "support team": [
+        "客服团队"
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -779,44 +818,35 @@
       "of": [
         "，共"
       ],
-      "here": [
-        "此处"
+      "Import contacts": [
+        "导入联系人"
       ],
-      "This account has been suspended due to a potential policy violation.": [
-        "此账户因可能违反用户协议而被封禁。"
+      "Your contacts are being imported from": [
+        "您的联系人将从"
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如有异议，请点击${ contactLink }联系我们。"
+      "to": [
+        "导入至"
       ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
+      "Your import has started!": [
+        "导入已开始！"
       ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "您想重新获取验证码还是更换验证方式？"
+      "We will notify you once your import is finished.": [
+        "导入完成后将会通知您。"
       ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "验证码已发至 ${ destinationText }，请在下方输入。"
+      "Large imports can take several days to complete.": [
+        "大批量的导入可能需要几天才能完成。"
       ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      "You can continue using Proton services as usual.": [
+        "期间您可以继续正常使用 Proton 服务。"
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "点击“请求新验证码”将发送到 ${ strong }。如果此邮箱地址不正确，请点击“编辑”。"
+      "Your import will not be processed.": [
+        "此次导入将不会进行。"
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
+      "Screenshot(s) attached": [
+        "已添加截图"
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "为防止滥发邮件，请验证您是真人操作。"
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "您的邮箱将只会用于此一次性验证。"
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "您的电话号码将只会用于此一次性验证。"
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "无论您是否开启快捷键，一些基本的导航和操作始终可用。"
@@ -877,15 +907,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "您已经关闭了 \"测试版功能\"。请点击 ${ refreshButton } 以使用稳定版的 ${ appName }，应用将重新启动"
-      ],
-      "support team": [
-        "客服团队"
-      ],
-      "Screenshot(s) attached": [
-        "已添加截图"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
@@ -984,7 +1005,7 @@
         "适合初次体验安全隐私邮件服务的新手。"
       ],
       "A free and uncensored Internet should be available to all.": [
-        "任何人都理应享有一个自由及未经审查的互联网。"
+        "每个人都应当享有自由的互联网，免受网络审查。"
       ],
       "Starter VPN service with P2P support.": [
         "支持 P2P 的入门级 VPN 服务。"
@@ -1032,7 +1053,7 @@
         "${ vpnAppName } 免费"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "在您当前的账单周期结束时计费(更新于{ renewalDate })"
+        "当前订购期结束后收费（续费日为 ${ renewalDate }）"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         "退订前您必须先删除所有个人的附加日历以及所有共享日历链接。${ linkButton }"
@@ -1062,7 +1083,7 @@
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "30 days money-back guarantee.": [
-        "30 天退款保证。"
+        "30 天内可退款。"
       ],
       "Save extra 20%": [
         "额外节省20%"
@@ -1123,30 +1144,6 @@
       ],
       "Expired": [
         "已过期"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Your contacts are being imported from": [
-        "您的联系人将从"
-      ],
-      "to": [
-        "导入至"
-      ],
-      "Your import has started!": [
-        "导入已开始！"
-      ],
-      "We will notify you once your import is finished.": [
-        "导入完成后将会通知您。"
-      ],
-      "Large imports can take several days to complete.": [
-        "大批量的导入可能需要几天才能完成。"
-      ],
-      "You can continue using Proton services as usual.": [
-        "期间您可以继续正常使用 Proton 服务。"
-      ],
-      "Your import will not be processed.": [
-        "此次导入将不会进行。"
       ],
       "Inherited from parent folder": [
         "继承自母文件夹"
@@ -1673,26 +1670,37 @@
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
       ],
-      "${ count } conversation": [
-        "${ count } 条会话"
+      "You selected **${ count } conversation** from this folder": [
+        ""
       ],
-      "${ count } message": [
-        "${ count } 封邮件"
+      "You selected **${ count } message** from this folder": [
+        ""
       ],
-      "You selected ${ countOfConversationOrMessage } from this folder": [
-        "您在此文件夹中选择了 ${ countOfConversationOrMessage }"
+      "You have **${ count } conversation** stored in this folder": [
+        ""
       ],
-      "You have ${ countOfConversationOrMessage } stored in this folder": [
-        "此文件夹中有 ${ countOfConversationOrMessage }"
+      "You have **${ count } message** stored in this folder": [
+        ""
       ],
-      "You selected ${ countOfConversationOrMessage } with this label": [
-        "已选择带此标签的 ${ countOfConversationOrMessage }"
+      "You selected **${ count } conversation** with this label": [
+        ""
       ],
-      "You have ${ countOfConversationOrMessage } tagged with this label": [
-        "共 ${ countOfConversationOrMessage }带有此标签"
+      "You selected **${ count } message** with this label": [
+        ""
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        ""
+      ],
+      "You have **${ count } message** tagged with this label": [
+        ""
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "使用移动设备扫描此二维码或打开 ${ link }。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -1739,11 +1747,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "读取文件 ${ formattedFilename } 失败，文件格式不对。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2095,17 +2098,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "取消 ${ formattedStart } 的活动"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "${ formattedStart } 的活动邀请函"
       ],
       "Update for an event on ${ formattedStart }": [
         "更新 ${ formattedStart } 的活动"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "取消开始于 ${ formattedStart } 的活动"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "开始于 { formattedStart } 的活动邀请函"
@@ -2113,8 +2110,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "更新开始于 ${ formattedStart } 的活动"
       ],
-      "Invitation: ${ eventTitle }": [
-        "邀请︰ ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "取消 ${ formattedStart } 的活动"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "取消开始于 ${ formattedStart } 的活动"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2659,6 +2659,33 @@
       "refresh the page": [
         "刷新页面"
       ],
+      "Log in": [
+        "登录"
+      ],
+      "View invoice": [
+        "查看账单"
+      ],
+      "Get verification code": [
+        "获取验证码"
+      ],
+      "Try another method": [
+        "更换验证方式"
+      ],
+      "Request new code": [
+        "重发验证码"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "Did not receive the code?": [
+        "没收到验证码？"
+      ],
+      "Edit email address": [
+        "编辑电子邮件地址"
+      ],
+      "Edit phone number": [
+        "编辑手机号码"
+      ],
       "Upgrade": [
         "升级"
       ],
@@ -2809,6 +2836,12 @@
       "Next": [
         "继续"
       ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 主题"
+      ],
+      "OK": [
+        "确定"
+      ],
       "Details": [
         "详细信息"
       ],
@@ -2830,32 +2863,29 @@
       "Previous": [
         "前一页"
       ],
-      "Log in": [
-        "登录"
+      "Continue import": [
+        "继续导入"
       ],
-      "View invoice": [
-        "查看账单"
+      "Discard": [
+        "放弃"
       ],
-      "Get verification code": [
-        "获取验证码"
+      "Reconnect": [
+        "重新连接"
       ],
-      "Try another method": [
-        "更换验证方式"
+      "Start import": [
+        "开始导入"
       ],
-      "Request new code": [
-        "重发验证码"
+      "Clear": [
+        "清除"
       ],
-      "Verify": [
-        "验证"
+      "Add screenshot(s)": [
+        "添加屏幕截图"
       ],
-      "Did not receive the code?": [
-        "没收到验证码？"
+      "Hide info": [
+        "隐藏信息"
       ],
-      "Edit email address": [
-        "编辑电子邮件地址"
-      ],
-      "Edit phone number": [
-        "编辑手机号码"
+      "Show info": [
+        "显示信息"
       ],
       "Get started": [
         "入门"
@@ -2868,12 +2898,6 @@
       ],
       "Back": [
         "上一步"
-      ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 主题"
-      ],
-      "OK": [
-        "确定"
       ],
       "Copy to clipboard": [
         "复制到剪贴板"
@@ -2898,9 +2922,6 @@
       ],
       "Search": [
         "搜索"
-      ],
-      "Clear": [
-        "清除"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
@@ -2946,15 +2967,6 @@
       ],
       "Composer size": [
         "编辑窗大小"
-      ],
-      "Add screenshot(s)": [
-        "添加屏幕截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
       ],
       "Remove bonuses": [
         "放弃特权"
@@ -3003,18 +3015,6 @@
       ],
       "Increase": [
         "增加"
-      ],
-      "Continue import": [
-        "继续导入"
-      ],
-      "Discard": [
-        "放弃"
-      ],
-      "Reconnect": [
-        "重新连接"
-      ],
-      "Start import": [
-        "开始导入"
       ],
       "Preview": [
         "预览"
@@ -3226,6 +3226,12 @@
       "Accept": [
         "接受"
       ],
+      "Show": [
+        "显示"
+      ],
+      "Show less": [
+        ""
+      ],
       "Never show": [
         "不再显示"
       ],
@@ -3252,9 +3258,6 @@
       ],
       "Hide": [
         "隐藏"
-      ],
-      "Show": [
-        "显示"
       ],
       "Learn more": [
         "了解详情"
@@ -3408,6 +3411,27 @@
       "What's new": [
         "更新内容"
       ],
+      "Sign in again to continue": [
+        "此操作需要重新登录"
+      ],
+      "Account suspended": [
+        "账号已被停用"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "输入用户名或 ProtonMail 邮箱"
+      ],
+      "Enter your password": [
+        "输入密码"
+      ],
+      "Invalid verification code": [
+        "验证码无效"
+      ],
+      "Request new code": [
+        "请求新验证码"
+      ],
+      "Human verification": [
+        "身份验证"
+      ],
       "Upgrade required": [
         "需要升级"
       ],
@@ -3528,29 +3552,17 @@
       "Import contacts": [
         "导入联系人"
       ],
-      "Sign in again to continue": [
-        "此操作需要重新登录"
-      ],
-      "Account suspended": [
-        "账号已被停用"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "输入用户名或 ProtonMail 邮箱"
-      ],
-      "Enter your password": [
-        "输入密码"
-      ],
-      "Invalid verification code": [
-        "验证码无效"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Human verification": [
-        "身份验证"
-      ],
       "Select a theme": [
         "选择主题"
+      ],
+      "Start import process": [
+        "开始导入过程"
+      ],
+      "Import in progress": [
+        "导入进行中"
+      ],
+      "Report a problem": [
+        "反馈问题"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
@@ -3572,9 +3584,6 @@
       ],
       "Open settings menu": [
         "打开设置菜单"
-      ],
-      "Report a problem": [
-        "反馈问题"
       ],
       "Confirm loss of Proton bonuses": [
         "确定放弃 Proton 特权"
@@ -3665,12 +3674,6 @@
       ],
       "${ appName } customization": [
         "自定义 ${ appName }"
-      ],
-      "Start import process": [
-        "开始导入过程"
-      ],
-      "Import in progress": [
-        "导入进行中"
       ],
       "Beta Access": [
         "测试版功能"
@@ -3895,12 +3898,20 @@
         "欢迎"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
+      ]
+    },
     "Link": {
       "Learn more": [
         "了解详情"
       ],
       "Request an invite": [
         "请求邀请"
+      ],
+      "clearing your browser cache": [
+        "清除浏览器缓存"
       ],
       "Pay invoice": [
         "前去支付"
@@ -3913,9 +3924,6 @@
       ],
       "Go to subscription plans": [
         "转至订阅计划"
-      ],
-      "clearing your browser cache": [
-        "清除浏览器缓存"
       ],
       "click here": [
         "请单击此处"
@@ -3965,6 +3973,36 @@
       "Open in ${ calendarAppName }": [
         "在 ${ calendarAppName } 中打开"
       ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Sent": [
+        "已发送"
+      ],
+      "Trash": [
+        "回收站"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "All mail": [
+        "所有邮件"
+      ],
+      "Archive": [
+        "归档"
+      ],
+      "Starred": [
+        "已加星标"
+      ],
+      "Outbox": [
+        "发件箱"
+      ],
+      "Scheduled": [
+        "定时发送"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "重新启用与本日历关联的地址以管理您的邀请。"
       ],
@@ -3998,33 +4036,6 @@
       "Add label": [
         "添加标签"
       ],
-      "Inbox": [
-        "收件箱"
-      ],
-      "Drafts": [
-        "草稿"
-      ],
-      "Scheduled": [
-        "定时发送"
-      ],
-      "Sent": [
-        "已发送"
-      ],
-      "Starred": [
-        "已加星标"
-      ],
-      "Archive": [
-        "归档"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "Trash": [
-        "回收站"
-      ],
-      "All mail": [
-        "所有邮件"
-      ],
       "Folders": [
         "文件夹"
       ],
@@ -4036,9 +4047,6 @@
       ],
       "Manage your labels": [
         "管理标签"
-      ],
-      "Outbox": [
-        "发件箱"
       ]
     },
     "Label": {
@@ -4053,6 +4061,36 @@
       ],
       "Do not ask again": [
         "不再询问"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Two-factor authentication code": [
+        "双重认证验证码"
+      ],
+      "Username or ProtonMail address": [
+        "用户名或 ProtonMail 地址"
+      ],
+      "Email address": [
+        "邮箱地址"
+      ],
+      "Phone number": [
+        "电话号码"
+      ],
+      "Verification code": [
+        "验证码"
+      ],
+      "Enter the 6-digit code": [
+        "请输入 6 位验证码"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -4120,56 +4158,11 @@
       "Export contacts": [
         "导出联系人"
       ],
-      "Cancel": [
-        "取消"
+      "From: ${ fromEmailAddress }": [
+        "来自: ${ fromEmailAddress }"
       ],
-      "Submit": [
-        "提交"
-      ],
-      "Password": [
-        "密码"
-      ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "Two-factor authentication code": [
-        "双重认证验证码"
-      ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
-      ],
-      "Email address": [
-        "邮箱地址"
-      ],
-      "Phone number": [
-        "电话号码"
-      ],
-      "Verification code": [
-        "验证码"
-      ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
-      ],
-      "Display name": [
-        "对外名称"
-      ],
-      "Keyboard shortcuts": [
-        "快捷键"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
-      ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Recovery phrase": [
-        "恢复密语"
-      ],
-      "Your recovery phrase": [
-        "您的恢复密语"
+      "To: ${ toEmailAddress }": [
+        "导入到：${ toEmailAddress }"
       ],
       "Operating system": [
         "操作系统"
@@ -4194,6 +4187,27 @@
       ],
       "Browser version": [
         "浏览器版本"
+      ],
+      "Display name": [
+        "对外名称"
+      ],
+      "Keyboard shortcuts": [
+        "快捷键"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "请选择收件箱列表的默认外观"
+      ],
+      "Select how your mailbox looks like by default.": [
+        "请选择邮箱的默认外观"
+      ],
+      "Select how your composer opens by default.": [
+        "请选择编辑窗的默认外观"
+      ],
+      "Recovery phrase": [
+        "恢复密语"
+      ],
+      "Your recovery phrase": [
+        "您的恢复密语"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -4242,12 +4256,6 @@
       ],
       "Payer": [
         "付款人"
-      ],
-      "From: ${ fromEmailAddress }": [
-        "来自: ${ fromEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "导入到：${ toEmailAddress }"
       ],
       "Enable Beta Access": [
         "启用测试版功能"
@@ -4396,56 +4404,26 @@
       "Labels:": [
         "标记："
       ],
-      "Start time": [
-        "开始时间"
-      ],
-      "End time": [
-        "结束时间"
-      ],
-      "Repeats": [
-        "重复"
-      ],
-      "Calendar": [
-        "日历"
+      "Keyword": [
+        "关键词"
       ],
       "Location": [
         "位置"
       ],
-      "Organizer": [
-        "组织者"
-      ],
-      "Participant": [
-        "参与者"
-      ],
-      "Participants (${ totalParticipants })": [
-        "参与者 (${ totalParticipants })"
-      ],
-      "Keyword": [
-        "关键词"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Sender": [
+      "From": [
         "发件人"
       ],
-      "From": [
+      "To": [
+        "收件人"
+      ],
+      "Sender": [
         "发件人"
       ],
       "Recipient": [
         "收件人"
       ],
-      "To": [
-        "收件人"
-      ],
-      "Between": [
-        "之间"
-      ],
       "Attachments": [
         "附件"
-      ],
-      "Filter": [
-        "状态"
       ],
       "Also archive": [
         "同时存档"
@@ -4476,6 +4454,9 @@
       "Text": [
         "文本"
       ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
       "Start typing an email address": [
         "开始输入电子邮件地址"
       ],
@@ -4497,12 +4478,6 @@
       "Name": [
         "名称"
       ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
-      ],
       "OS name": [
         "操作系统名称"
       ],
@@ -4523,6 +4498,9 @@
       ],
       "Browser version": [
         "浏览器版本"
+      ],
+      "e.g. Julia Smith": [
+        "例如：Julia Smith"
       ],
       "ZIP": [
         "邮编"
@@ -4551,14 +4529,17 @@
       "Hint": [
         "提示"
       ],
-      "Name or email address": [
-        "用户名或邮箱地址"
+      "Search Messages": [
+        ""
       ],
       "Start date": [
         "开始日期"
       ],
       "End date": [
         "结束日期"
+      ],
+      "Name or email address": [
+        "用户名或邮箱地址"
       ],
       "Search messages": [
         "搜索邮件"
@@ -4598,9 +4579,14 @@
         "找到 ${ items.length } 建议，使用键盘导航。"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "Storage": {
@@ -4668,95 +4654,18 @@
         "跳转到 ${ vpnName }"
       ]
     },
-    "Table header": {
-      "Name": [
-        "名称"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Action": [
-        "操作"
-      ],
-      "Fingerprint": [
-        "指纹"
-      ],
-      "Created": [
-        "创建时间"
-      ],
-      "Expires": [
-        "有效期至"
-      ],
-      "Type": [
-        "类型"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "Actions": [
-        "操作"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "此功能仅限付费用户使用"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "您确定要永久删除此联系人群组吗？"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "您确定要永久删除 ${ count } 联系人群组吗？"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "您确认要永久删除此邮件吗？"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "您确定要永久删除 ${ count } 联系人吗？"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "解密失败"
-      ],
-      "The verification of the contact details' signature failed.": [
-        "联系方式签名验证失败"
-      ],
-      "The contact failed to load.": [
-        "联系人加载失败"
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "部分需合并的联系人无法显示，请单独查看。"
-      ],
-      "Contacts could not be merged": [
-        "无法合并联系人"
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "您的本地日期和时间设置似乎不同步。"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "您确定要放弃导入吗？"
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期账单"
       ]
     },
     "Success": {
+      "Code sent to ${ methodTo }": [
+        "验证码已发至 ${ methodTo }"
+      ],
+      "Verification successful": [
+        "验证成功"
+      ],
       "Contact group deleted": [
         "联系人群组已删除"
       ],
@@ -4784,20 +4693,14 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
-      "Code sent to ${ methodTo }": [
-        "验证码已发至 ${ methodTo }"
-      ],
-      "Verification successful": [
-        "验证成功"
+      "Bug reported": [
+        "问题已反馈"
       ],
       "Keyboard shortcuts preferences updated": [
         "键盘快捷键设置已更新"
       ],
       "Preference saved": [
         "设置已生效"
-      ],
-      "Bug reported": [
-        "问题已反馈"
       ],
       "You have successfully unsubscribed": [
         "退订成功"
@@ -4927,6 +4830,111 @@
       ],
       "Move ${ selectionCount } conversation": [
         "移动 ${ selectionCount } 条会话"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "验证码"
+      ],
+      "Email": [
+        "邮件"
+      ],
+      "SMS": [
+        "短信"
+      ],
+      "Manual": [
+        "手动"
+      ],
+      "No verification method available": [
+        "没有可用的验证方法"
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "名称"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Action": [
+        "操作"
+      ],
+      "Fingerprint": [
+        "指纹"
+      ],
+      "Created": [
+        "创建时间"
+      ],
+      "Expires": [
+        "有效期至"
+      ],
+      "Type": [
+        "类型"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Actions": [
+        "操作"
+      ]
+    },
+    "Warning": {
+      "This feature requires a paid Proton account": [
+        "此功能仅限付费用户使用"
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "您确定要永久删除此联系人群组吗？"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "您确定要永久删除 ${ count } 联系人群组吗？"
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "您确认要永久删除此邮件吗？"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "您确定要永久删除 ${ count } 联系人吗？"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "解密失败"
+      ],
+      "The verification of the contact details' signature failed.": [
+        "联系方式签名验证失败"
+      ],
+      "The contact failed to load.": [
+        "联系人加载失败"
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "部分需合并的联系人无法显示，请单独查看。"
+      ],
+      "Contacts could not be merged": [
+        "无法合并联系人"
+      ],
+      "Are you sure you want to discard your import?": [
+        "您确定要放弃导入吗？"
+      ],
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "您的本地日期和时间设置似乎不同步。"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
       ]
     },
     "Label for contact group name": {
@@ -5181,9 +5189,6 @@
       ],
       "No parent folder": [
         "无上层文件夹"
-      ],
-      "All": [
-        "全部"
       ]
     },
     "Import contact groups info": {
@@ -5248,105 +5253,7 @@
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "上传"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "逾期账单"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "验证码"
-      ],
-      "Email": [
-        "邮件"
-      ],
-      "SMS": [
-        "短信"
-      ],
-      "Manual": [
-        "手动"
-      ],
-      "No verification method available": [
-        "没有可用的验证方法"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "这是当您向他人发送电子邮件、邀请他人参加活动或与之共享文件时对方会看到的内容。"
-      ],
-      "Choose a display name": [
-        "选择显示名称"
-      ],
-      "Select a theme": [
-        "选择主题"
-      ],
-      "You can change this anytime in your settings.": [
-        "您可以随时在设置中更改。"
-      ],
-      "Discover all Proton services": [
-        "探索所有 Proton 系列服务"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "使用左上角的应用选择器访问其他 Proton 服务，包括 VPN, 日历和云盘。"
-      ],
-      "Welcome to Proton": [
-        "欢迎使用 Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "我们的宗旨是建立一个由您来管控您自己的数据和隐私的网络。我们最近更新了 Proton ―― 畅享安全的互联网吧！"
-      ],
-      "Set up your organization": [
-        "填写机构信息"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
-      ]
-    },
-    "Onboarding Beta": {
-      "Got it": [
-        "知道了"
-      ],
-      "Beta enabled": [
-        "已启用测试版"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "要禁用测试功能，请打开设置下拉菜单并单击“测试版功能”选项。"
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } 有新版本，请${ reloadButton }。"
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "设置"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "在"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
-    "Density mode": {
+    "Label to change density": {
       "Comfortable": [
         "舒适"
       ],
@@ -5354,12 +5261,52 @@
         "紧凑"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "满屏"
+    "Label to change view layout": {
+      "Column": [
+        "列"
       ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Label to change composer mode": {
       "Normal": [
         "常规"
+      ],
+      "Maximized": [
+        "满屏"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上传"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        "正在连接到您的联系人提供商"
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "验证账户"
+      ],
+      "Configure Import": [
+        "导入配置"
+      ],
+      "Import": [
+        "导入"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "退出导入？"
+      ],
+      "Message saved to Drafts": [
+        "邮件已保存到草稿箱"
+      ],
+      "Edit and reschedule": [
+        "编辑并重新定时发送"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5472,6 +5419,103 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "添加截图"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "这是当您向他人发送电子邮件、邀请他人参加活动或与之共享文件时对方会看到的内容。"
+      ],
+      "Choose a display name": [
+        "选择显示名称"
+      ],
+      "Select a theme": [
+        "选择主题"
+      ],
+      "You can change this anytime in your settings.": [
+        "您可以随时在设置中更改。"
+      ],
+      "Discover all Proton services": [
+        "探索所有 Proton 系列服务"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "使用左上角的应用选择器访问其他 Proton 服务，包括 VPN, 日历和云盘。"
+      ],
+      "Welcome to Proton": [
+        "欢迎使用 Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "我们的宗旨是建立一个由您来管控您自己的数据和隐私的网络。我们最近更新了 Proton ―― 畅享安全的互联网吧！"
+      ],
+      "Set up your organization": [
+        "填写机构信息"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
+      ]
+    },
+    "Onboarding Beta": {
+      "Got it": [
+        "知道了"
+      ],
+      "Beta enabled": [
+        "已启用测试版"
+      ],
+      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
+        "要禁用测试功能，请打开设置下拉菜单并单击“测试版功能”选项。"
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "${ appName } 有新版本，请${ reloadButton }。"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "设置"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Early Access Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "舒适"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "满屏"
+      ],
+      "Normal": [
+        "常规"
       ]
     },
     "Info for cash payment method": {
@@ -5910,57 +5954,6 @@
         "比特币"
       ]
     },
-    "Label to change density": {
-      "Comfortable": [
-        "舒适"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "常规"
-      ],
-      "Maximized": [
-        "满屏"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        "正在连接到您的联系人提供商"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "验证账户"
-      ],
-      "Configure Import": [
-        "导入配置"
-      ],
-      "Import": [
-        "导入"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "退出导入？"
-      ],
-      "Message saved to Drafts": [
-        "邮件已保存到草稿箱"
-      ],
-      "Edit and reschedule": [
-        "编辑并重新定时发送"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
@@ -6317,11 +6310,6 @@
         "明天"
       ]
     },
-    "Invitation details (all-day event)": {
-      "${ formattedDate } (all day)": [
-        "${ formattedDate } (全天)"
-      ]
-    },
     "Calendar invite info": {
       "This response is out of date. This event has been updated.": [
         "此回复已过期，本活动已更新。"
@@ -6452,29 +6440,14 @@
       "This invitation is out of date. The event has been updated.": [
         "此邀请已过期。活动已更新。"
       ],
-      "Your attendance at this event is required.": [
-        "您必须参加本次活动。"
+      "You already accepted this invitation.": [
+        ""
       ],
-      "Your attendance at this event is optional.": [
-        "您可自由参加本次活动。"
+      "You already tentatively accepted this invitation.": [
+        ""
       ],
-      "Your attendance at this event is required. You already accepted this invitation.": [
-        "您必须参加本次活动，您已接受邀请。"
-      ],
-      "Your attendance at this event is optional. You already accepted this invitation.": [
-        "您可自由参加本次活动，您已接受邀请。"
-      ],
-      "Your attendance at this event is required. You already tentatively accepted this invitation.": [
-        "您必须参加本次活动，您已暂时接受邀请。"
-      ],
-      "Your attendance at this event is optional. You already tentatively accepted this invitation.": [
-        "您可自由参加本次活动，您已暂时接受邀请。"
-      ],
-      "Your attendance at this event is required. You already declined this invitation.": [
-        "您必须参加本次活动，您已拒绝邀请。"
-      ],
-      "Your attendance at this event is optional. You already declined this invitation.": [
-        "您可自由参加本次活动，您已拒绝邀请。"
+      "You already declined this invitation.": [
+        ""
       ],
       "This event has been cancelled.": [
         "此事项已被取消。"
@@ -6484,6 +6457,9 @@
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "一次活动已添加到活动 ${ veventIcsTitle }"
+      ],
+      "(Attendance optional)": [
+        ""
       ],
       "The sender of this email has not been invited to this event and cannot be added as a participant.": [
         "此邮件的发件人尚未受邀参加此活动，因此无法添加为参与者。"
@@ -6650,12 +6626,37 @@
         "回复邀请失败"
       ]
     },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        ""
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "日历事项已创建"
       ],
       "Creating calendar event failed": [
         "创建日历事项失败"
+      ]
+    },
+    "ICS widget label for event details": {
+      "Organizer:": [
+        ""
+      ],
+      "${ totalAttendees } Participant": [
+        ""
+      ],
+      "Repeats": [
+        ""
+      ],
+      "Calendar": [
+        ""
+      ],
+      "Location": [
+        ""
+      ],
+      "Participants": [
+        ""
       ]
     },
     "Attachment signature verification": {
@@ -6675,17 +6676,11 @@
       "All": [
         "全部"
       ],
-      "Yes": [
-        "是"
+      "With": [
+        ""
       ],
-      "No": [
-        "否"
-      ],
-      "Read": [
-        "已读"
-      ],
-      "Unread": [
-        "未读邮件"
+      "Without": [
+        ""
       ]
     },
     "Filter option": {

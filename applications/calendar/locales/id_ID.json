@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Kesalahan autentikasi."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
+      ],
       "Email address invalid": [
         "Alamat surel tidak valid"
       ],
       "This field is required": [
         "Bagian ini wajib isi"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, mohon ${ refresh } ntuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini, silakan hubungi ${ supportTeam } kami."
       ],
       "Process aborted": [
         "Proses dibatalkan"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Kode tidak valid"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak surat salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi surel, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
-      "Enter 6 digits": [
-        "Masukkan 6 digit"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Preferences could not be saved": [
-        "Preferensi tidak bisa disimpan"
-      ],
-      "Some groups could not be deleted": [
-        "Beberapa grup tidak dapat dihapus"
-      ],
       "Image upload failed": [
         "Gagal unggah gambar"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Beberapa kontak tidak dapat dihapus"
+      ],
+      "Preferences could not be saved": [
+        "Preferensi tidak bisa disimpan"
+      ],
+      "Some groups could not be deleted": [
+        "Beberapa grup tidak dapat dihapus"
       ],
       "Invalid public key file": [
         "Berkas kunci publik tidak valid"
@@ -153,14 +132,35 @@
       "Invalid name": [
         "Nama tidak valid"
       ],
+      "Primary address key is not decrypted": [
+        "Kunci alamat utama tidak didekripsi"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak surat salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi surel, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Enter 6 digits": [
+        "Masukkan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, mohon ${ refresh } ntuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini, silakan hubungi ${ supportTeam } kami."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Kunci alamat utama tidak didekripsi"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
@@ -192,12 +192,6 @@
       "Request timed out.": [
         "Waktu permintaan habis."
       ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
       "Missing signature": [
         "Tanda tangan hilang"
       ],
@@ -206,6 +200,12 @@
       ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Email address disabled": [
         "Alamat surel nonaktif"
@@ -335,56 +335,23 @@
       "Load image": [
         "Muat gambar"
       ],
-      "refresh the page": [
-        "segarkan halaman"
-      ],
-      "Export": [
-        "Ekspor"
-      ],
-      "Delete": [
-        "Hapus"
-      ],
-      "Edit": [
-        "Edit"
-      ],
-      "Remove": [
-        "Hapus"
-      ],
-      "Download": [
-        "Unduh"
-      ],
-      "Use for sending": [
-        "Gunakan untuk pengiriman"
-      ],
-      "Trust": [
-        "Percayai"
-      ],
-      "Untrust": [
-        "Jangan percayai"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Email settings": [
-        "Pengaturan surel"
-      ],
-      "Contact group": [
-        "Grup kontak"
-      ],
-      "Upload picture": [
-        "Unggah gambar"
-      ],
       "Next month": [
         "Bulan selanjutnya"
       ],
       "Previous month": [
         "Bulan sebelumnya"
       ],
+      "Remove": [
+        "Hapus"
+      ],
       "Confirm opening of link ${ link }": [
         "Konfirmasi membuka tautan ${ link }"
       ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
+      ],
+      "Delete": [
+        "Hapus"
       ],
       "Select timezone": [
         "Pilih zona waktu"
@@ -397,6 +364,9 @@
       ],
       "Signing out": [
         "Keluar"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
@@ -539,41 +509,14 @@
       "Increase": [
         "Tingkatkan"
       ],
-      "Log in": [
-        "Masuk"
-      ],
-      "View invoice": [
-        "Lihat tagihan"
-      ],
-      "Get verification code": [
-        "Dapatkan kode verifikasi"
-      ],
-      "Try another method": [
-        "Coba metode lain"
-      ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
-      ],
-      "Edit email address": [
-        "Edit alamat surel"
-      ],
-      "Edit phone number": [
-        "Edit nomor telepon"
-      ],
       "Save": [
         "Simpan"
       ],
+      "Upload picture": [
+        "Unggah gambar"
+      ],
       "Add": [
         "Tambah"
-      ],
-      "Hide advanced PGP settings": [
-        "Sembunyikan pengaturan PGP lanjutan"
-      ],
-      "Show advanced PGP settings": [
-        "Tampilkan pengaturan PGP lanjutan"
       ],
       "Clear data": [
         "Bersihkan data"
@@ -587,8 +530,41 @@
       "Re-sign": [
         "Tanda tangani ulang"
       ],
+      "Hide advanced PGP settings": [
+        "Sembunyikan pengaturan PGP lanjutan"
+      ],
+      "Show advanced PGP settings": [
+        "Tampilkan pengaturan PGP lanjutan"
+      ],
+      "Edit": [
+        "Edit"
+      ],
       "Add to group": [
         "Tambah ke grup"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Contact group": [
+        "Grup kontak"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Download": [
+        "Unduh"
+      ],
+      "Use for sending": [
+        "Gunakan untuk pengiriman"
+      ],
+      "Trust": [
+        "Percayai"
+      ],
+      "Untrust": [
+        "Jangan percayai"
+      ],
+      "Email settings": [
+        "Pengaturan surel"
       ],
       "Merge": [
         "Gabung"
@@ -661,6 +637,30 @@
       ],
       "Import": [
         "Impor"
+      ],
+      "Log in": [
+        "Masuk"
+      ],
+      "View invoice": [
+        "Lihat tagihan"
+      ],
+      "Get verification code": [
+        "Dapatkan kode verifikasi"
+      ],
+      "Try another method": [
+        "Coba metode lain"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Did not receive the code?": [
+        "Tidak menerima kode?"
+      ],
+      "Edit email address": [
+        "Edit alamat surel"
+      ],
+      "Edit phone number": [
+        "Edit nomor telepon"
       ],
       "Continue import": [
         ""
@@ -780,15 +780,6 @@
       ],
       "Keyboard Shortcuts": [
         "Pintasan Papan Ketik"
-      ],
-      "Upgrade required": [
-        "Butuh peningkatan"
-      ],
-      "Email settings": [
-        "Pengaturan surel"
-      ],
-      "Contact group": [
-        "Grup kontak"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
@@ -910,27 +901,6 @@
       "${ appName } customization": [
         "Penyesuaian { appName }"
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
-      ],
-      "Enter your password": [
-        "Masukkan sandi Anda"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
-      "Human verification": [
-        "Verifikasi manusia"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"
       ],
@@ -942,6 +912,12 @@
       ],
       "Composer mode": [
         "Mode menulis"
+      ],
+      "Beta Access": [
+        "Akses Beta"
+      ],
+      "Edit image": [
+        "Edit gambar"
       ],
       "Edit contact group": [
         "Edit grup kontak"
@@ -955,26 +931,14 @@
       "Add to ${ groupCount } group": [
         "Tambahkan ke ${ groupCount } grup"
       ],
-      "Email settings (${ emailAddress })": [
-        "Pengaturan surel (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "Hapus ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Hapus ${ count } grup kontak"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } anggota"
-      ],
-      "Edit image": [
-        "Edit gambar"
-      ],
       "Edit contact": [
         "Edit kontak"
       ],
       "Create contact": [
         "Buat kontak"
+      ],
+      "Delete ${ Name }": [
+        "Hapus ${ Name }"
       ],
       "Delete ${ count } contact": [
         "Hapus ${ count } kontak"
@@ -994,8 +958,23 @@
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
       ],
+      "Email settings (${ emailAddress })": [
+        "Pengaturan surel (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "Hapus ${ count } grup kontak"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } anggota"
+      ],
       "Exporting contacts": [
         "Mengekspor kontak"
+      ],
+      "Upgrade required": [
+        "Butuh peningkatan"
+      ],
+      "Contact group": [
+        "Grup kontak"
       ],
       "Other names": [
         "Nama lain"
@@ -1011,6 +990,9 @@
       ],
       "Other information": [
         "Informasi lainnya"
+      ],
+      "Email settings": [
+        "Pengaturan surel"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -1051,8 +1033,26 @@
       "Import contacts": [
         "Impor kontak"
       ],
-      "Beta Access": [
-        "Akses Beta"
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ],
+      "Account suspended": [
+        "Akun ditangguhkan"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Masukkan nama pengguna atau alamat surel ProtonMail"
+      ],
+      "Enter your password": [
+        "Masukkan sandi Anda"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Human verification": [
+        "Verifikasi manusia"
       ],
       "Start import process": [
         ""
@@ -1200,15 +1200,6 @@
       "No results found": [
         "Hasil tidak ada"
       ],
-      "support team": [
-        "tim dukungan"
-      ],
-      "No contacts added yet": [
-        "Belum ada kontak yang ditambahkan"
-      ],
-      "Loading": [
-        "Memuat"
-      ],
       "Week": [
         "Pekan"
       ],
@@ -1226,6 +1217,9 @@
       ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
+      ],
+      "Loading": [
+        "Memuat"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
@@ -1473,6 +1467,123 @@
       "Not customizable": [
         "Tidak dapat diubah"
       ],
+      "Expired": [
+        "Kedaluwarsa"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Anggota"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } dan ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Mohon tunggu saat kami memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Memeriksa kontak ${ progress } dari ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontak berhasil diperbarui."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Untuk memulihkan data Anda, Anda perlu mengaktivasi ulang kunci enkripsi kontak yang dipakai saat data dibuat. Ini memerlukan Anda untuk mengingat kata sandi yang dipakai saat kunci dibuat dulu."
+      ],
+      "Key fingerprint": [
+        "Sidik jari kunci"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Tidak ingat sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Mohon tunggu, sementara kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Untuk menandatangani ulang kontak Anda, kami perlu memeriksa setiap kontak dengan daftar kunci enkripsi yang tersedia di akun Anda. Jika tidak ada yang cocok, kontak Anda akan ditandatangani ulang dengan kunci enkripsi utama."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Mohon dicatat proses ini perlu waktu tergantung ukuran buku alamat Anda."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME otomatis mengirim pesan dengan mode tulis saat ini. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Mohon dicatat, alamat yang ditempatkan di grup ini TIDAK akan dihapus."
+      ],
+      "No contacts added yet": [
+        "Belum ada kontak yang ditambahkan"
+      ],
+      "Group assignment applied": [
+        "Penempatan grup diterapkan"
+      ],
+      "Create a new contact group": [
+        "Buat grup kontak baru"
+      ],
+      "No group found": [
+        "Grup tidak ditemukan"
+      ],
+      "Primary": [
+        "Utama"
+      ],
+      "Duplicate key updated": [
+        "Kunci ganda diperbarui"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Verifikasi Alamat dengan Kunci Terpercaya telah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Hanya ubah pengaturan ini jika Anda menggunakan PGP dengan penerima bukan ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
+      ],
+      "No email address": [
+        "Tidak ada alamat surel"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontak ditemukan"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup ditemukan"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa aplikasi lain. Kami juga menerima impor vCard 4.0. (encoding UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } alamat surel"
+      ],
       "here": [
         "di sini"
       ],
@@ -1512,119 +1623,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
       ],
-      "Expired": [
-        "Kedaluwarsa"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Anggota"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } dan ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME otomatis mengirim pesan dengan mode tulis saat ini. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Mohon dicatat, alamat yang ditempatkan di grup ini TIDAK akan dihapus."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Mohon tunggu saat kami memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Memeriksa kontak ${ progress } dari ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontak berhasil diperbarui."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Untuk memulihkan data Anda, Anda perlu mengaktivasi ulang kunci enkripsi kontak yang dipakai saat data dibuat. Ini memerlukan Anda untuk mengingat kata sandi yang dipakai saat kunci dibuat dulu."
-      ],
-      "Key fingerprint": [
-        "Sidik jari kunci"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak ingat sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Mohon tunggu, sementara kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Untuk menandatangani ulang kontak Anda, kami perlu memeriksa setiap kontak dengan daftar kunci enkripsi yang tersedia di akun Anda. Jika tidak ada yang cocok, kontak Anda akan ditandatangani ulang dengan kunci enkripsi utama."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Mohon dicatat proses ini perlu waktu tergantung ukuran buku alamat Anda."
-      ],
-      "Group assignment applied": [
-        "Penempatan grup diterapkan"
-      ],
-      "Create a new contact group": [
-        "Buat grup kontak baru"
-      ],
-      "No group found": [
-        "Grup tidak ditemukan"
-      ],
-      "Duplicate key updated": [
-        "Kunci ganda diperbarui"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Verifikasi Alamat dengan Kunci Terpercaya telah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Hanya ubah pengaturan ini jika Anda menggunakan PGP dengan penerima bukan ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
-      ],
-      "Primary": [
-        "Utama"
-      ],
-      "No email address": [
-        "Tidak ada alamat surel"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontak ditemukan"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grup ditemukan"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa aplikasi lain. Kami juga menerima impor vCard 4.0. (encoding UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } alamat surel"
+      "support team": [
+        "tim dukungan"
       ],
       "Import contacts": [
         ""
@@ -1918,27 +1918,6 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
-      "Street address": [
-        "Alamat jalan"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Region": [
-        "Wilayah"
-      ],
-      "Postal code": [
-        "Kode pos"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "Post office box": [
-        "Kotak pos"
-      ],
-      "Extended address": [
-        "Alamat lengkap"
-      ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
       ],
@@ -1987,10 +1966,16 @@
       "CVV code": [
         "Kode CVV"
       ],
+      "Country": [
+        "Negara"
+      ],
       "Select your country": [
         "Pilih negara anda"
       ],
       "ZIP": [
+        "Kode pos"
+      ],
+      "Postal code": [
         "Kode pos"
       ],
       "BTC amount:": [
@@ -2010,6 +1995,84 @@
       ],
       "Proration": [
         "Prorasi"
+      ],
+      "Cash": [
+        "Tunai"
+      ],
+      "Card holder": [
+        "Pemegang kartu"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
+      "Payer": [
+        "Pembayar"
+      ],
+      "Keyboard shortcuts": [
+        "Pintasan papan ketik"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
+      ],
+      "Select how your composer opens by default.": [
+        "Pilih bagaimana komposer Anda terbuka secara bawaan."
+      ],
+      "Enable Beta Access": [
+        "Aktifkan Akses Beta"
+      ],
+      "Add image URL": [
+        "Tambah URL gambar"
+      ],
+      "Upload picture": [
+        "Unggah gambar"
+      ],
+      "Add email address": [
+        "Tambah alamat surel"
+      ],
+      "Email format": [
+        "Format surel"
+      ],
+      "Street address": [
+        "Alamat jalan"
+      ],
+      "City": [
+        "Kota"
+      ],
+      "Region": [
+        "Wilayah"
+      ],
+      "Post office box": [
+        "Kotak pos"
+      ],
+      "Extended address": [
+        "Alamat lengkap"
+      ],
+      "Add to group": [
+        "Tambah ke grup"
+      ],
+      "Encrypt emails": [
+        "Enkripsi surel"
+      ],
+      "Sign emails": [
+        "Tanda tangani surel"
+      ],
+      "Cryptographic scheme": [
+        "Skema kriptografi"
+      ],
+      "Public keys": [
+        "Kunci publik"
+      ],
+      "Automatically save contacts": [
+        "Simpan kontak secara otomatis"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
       ],
       "Cancel": [
         "Batal"
@@ -2037,69 +2100,6 @@
       ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
-      ],
-      "Cash": [
-        "Tunai"
-      ],
-      "Card holder": [
-        "Pemegang kartu"
-      ],
-      "Expires": [
-        "Kedaluwarsa"
-      ],
-      "Payer": [
-        "Pembayar"
-      ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
-      ],
-      "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda terbuka secara bawaan."
-      ],
-      "Add email address": [
-        "Tambah alamat surel"
-      ],
-      "Email format": [
-        "Format surel"
-      ],
-      "Add image URL": [
-        "Tambah URL gambar"
-      ],
-      "Upload picture": [
-        "Unggah gambar"
-      ],
-      "Add to group": [
-        "Tambah ke grup"
-      ],
-      "Encrypt emails": [
-        "Enkripsi surel"
-      ],
-      "Sign emails": [
-        "Tanda tangani surel"
-      ],
-      "Cryptographic scheme": [
-        "Skema kriptografi"
-      ],
-      "Public keys": [
-        "Kunci publik"
-      ],
-      "Automatically save contacts": [
-        "Simpan kontak secara otomatis"
-      ],
-      "Import contacts": [
-        "Impor kontak"
-      ],
-      "Export contacts": [
-        "Ekspor kontak"
-      ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2227,11 +2227,6 @@
         ""
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Kunci tidak dapat digunakan untuk enkripsi"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Misalnya "
@@ -2272,14 +2267,11 @@
       "Gift code": [
         "Kode hadiah"
       ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
+      "Image URL": [
+        "URL gambar"
       ],
       "Start typing an email address": [
         "Mulai ketik alamat surel"
-      ],
-      "Image URL": [
-        "URL gambar"
       ],
       "Filter groups": [
         "Filter grup"
@@ -2292,6 +2284,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
       ],
       "Add a calendar name": [
         "Masukkan nama kalender"
@@ -2320,204 +2315,71 @@
         "${ minutes } menit"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Data terenkripsi dengan tanda tangan digital terverifikasi"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Gunakan banyak alamat / alias yang tertaut ke akun Anda, mis. username2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hosting email untuk domain Anda sendiri di ProtonMail, misal. john.smith@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Gunakan alamat pribadi namapengguna@pm.me untuk mengirim surel"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 atau lebih pengguna"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan malware."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Mendukung protokol berbagi berkas seperti BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Akses konten yang diblokir berdasarkan wilayah geografis (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, dll) tanpa peduli keberadaan Anda."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Bertahan terhadap serangan ke privasi VPN dengan melewatkan lalu lintas Internet Anda melalui beberapa server."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Dapatkan akses ke semua fitur berbayar ProtonVPN dan ProtonMail (layanan surel terenkripsi yang dipakai jutaan orang untuk melindungi data) dengan satu paket."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan surel terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) hanya dengan satu paket."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Pakai email dengan domain Anda sendiri di ${ mailAppName }, mis. john.smith@contoh.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Buat banyak alamat surel yang tertaut ke akun Anda, misal namapengguna2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Diskon diaktifkan untuk penagihan tahunan"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Diskon diaktifkan untuk penagihan dua tahunan"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Tanda tangan digital memastikan identitas Anda sebagai pengirim surel"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
-      ],
-      "You do not have any contacts to export": [
-        "Anda tidak memiliki kontak untuk diekspor"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Nama"
-      ],
-      "Address": [
-        "Alamat"
-      ],
-      "Action": [
-        "Tindakan"
-      ],
-      "Fingerprint": [
-        "Sidik jari"
-      ],
-      "Created": [
-        "Dibuat"
-      ],
-      "Expires": [
-        "Kedaluwarsa"
-      ],
-      "Type": [
-        "Tipe"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Tindakan"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Otomatis"
-      ],
-      "Plain text": [
-        "Teks biasa"
+    "Select search results": {
+      "No results found": [
+        "Hasil tidak ditemukan"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Gunakan bawaan global (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Cari zona waktu"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Utama"
-      ],
-      "Verification only": [
-        "Verifikasi saja"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Terpercaya"
-      ],
-      "Revoked": [
-        "Dicabut"
-      ],
-      "Expired": [
-        "Kedaluwarsa"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Fitur ini perlu akun Proton berbayar"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Aduh, ada yang tidak beres"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+      "There was a problem connecting to Proton.": [
+        "Ada masalah saat menyambung ke Proton."
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Dengan memilih metode pembayaran ini, akun Anda tidak bisa langsung ditingkatkan. Kami akan memperbarui akun Anda setelah menerima pembayaran."
+      "Please ${ refresh } or check your connection.": [
+        "Mohon ${ refresh } atau cek koneksi Anda."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
+      "Error: ${ errorMessage }": [
+        "Kesalahan: ${ errorMessage }"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
+      "Brace yourself till we get the error fixed.": [
+        "Kami sedang perbaiki. Mohon bersabar."
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Apakah Anda yakin mau menghapus kontak ini secara permanen?"
+      "You may also ${ refresh } or try again later.": [
+        "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplikasi Proton"
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Apakah Anda yakin mau menghapus ${ count } kontak secara permanen?"
+      "Go to ${ title }": [
+        "Kunjungi ${ title }"
       ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Tindakan ini tidak bisa diurungkan. Silakan masukkan kata ${ boldDanger } di bidang tersebut untuk melanjutkan."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Dekripsi konten terenkripsi gagal."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Verifikasi tanda tangan rincian kontak gagal."
-      ],
-      "The contact failed to load.": [
-        "Kontak gagal dimuat."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
-      ],
-      "Contacts could not be merged": [
-        "Kontak tidak dapat digabung"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak selaras."
+      "Go to ${ vpnName }": [
+        "Ke ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "Alamat surel disalin ke papan klip"
-      ],
-      "Phone number copied to clipboard": [
-        "Nomor telepon disalin ke papan klip"
-      ],
-      "Address copied to clipboard": [
-        "Alamat disalin ke papan klip"
       ],
       "Bug reported": [
         "Bug berhasil dilaporkan"
@@ -2525,23 +2387,11 @@
       "You have successfully unsubscribed": [
         "Anda telah berhenti berlangganan"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kode dikirim ke ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verifikasi berhasil"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Preferensi pintasan papan ketik diperbarui"
       ],
       "Preference saved": [
         "Preferensi berhasil disimpan"
-      ],
-      "Preferences saved": [
-        "Preferensi disimpan"
-      ],
-      "Contact group deleted": [
-        "Grup kontak dihapus"
       ],
       "Contact saved": [
         "Kontak disimpan"
@@ -2554,6 +2404,24 @@
       ],
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke papan klip"
+      ],
+      "Preferences saved": [
+        "Preferensi disimpan"
+      ],
+      "Contact group deleted": [
+        "Grup kontak dihapus"
+      ],
+      "Phone number copied to clipboard": [
+        "Nomor telepon disalin ke papan klip"
+      ],
+      "Address copied to clipboard": [
+        "Alamat disalin ke papan klip"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2643,63 +2511,6 @@
         "Semua acara berhasil dihapus"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Hasil tidak ditemukan"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Cari zona waktu"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Aduh, ada yang tidak beres"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Ada masalah saat menyambung ke Proton."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Mohon ${ refresh } atau cek koneksi Anda."
-      ],
-      "Error: ${ errorMessage }": [
-        "Kesalahan: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Kami sedang perbaiki. Mohon bersabar."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplikasi Proton"
-      ],
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         "Dapatkan bantuan"
@@ -2719,14 +2530,24 @@
         "Pengaturan"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Aktif"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Nonaktif"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2893,6 +2714,62 @@
         "Pilih"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Dengan memilih metode pembayaran ini, akun Anda tidak bisa langsung ditingkatkan. Kami akan memperbarui akun Anda setelah menerima pembayaran."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Apakah Anda yakin mau menghapus kontak ini secara permanen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Apakah Anda yakin mau menghapus ${ count } kontak secara permanen?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Tindakan ini tidak bisa diurungkan. Silakan masukkan kata ${ boldDanger } di bidang tersebut untuk melanjutkan."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Fitur ini perlu akun Proton berbayar"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Dekripsi konten terenkripsi gagal."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Verifikasi tanda tangan rincian kontak gagal."
+      ],
+      "The contact failed to load.": [
+        "Kontak gagal dimuat."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
+      ],
+      "Contacts could not be merged": [
+        "Kontak tidak dapat digabung"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak selaras."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -3004,6 +2881,77 @@
       ],
       "Unlimited": [
         "Tanpa Batas"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Gunakan banyak alamat / alias yang tertaut ke akun Anda, mis. username2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Hosting email untuk domain Anda sendiri di ProtonMail, misal. john.smith@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Gunakan alamat pribadi namapengguna@pm.me untuk mengirim surel"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 atau lebih pengguna"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan malware."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Mendukung protokol berbagi berkas seperti BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Akses konten yang diblokir berdasarkan wilayah geografis (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, dll) tanpa peduli keberadaan Anda."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Bertahan terhadap serangan ke privasi VPN dengan melewatkan lalu lintas Internet Anda melalui beberapa server."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Dapatkan akses ke semua fitur berbayar ProtonVPN dan ProtonMail (layanan surel terenkripsi yang dipakai jutaan orang untuk melindungi data) dengan satu paket."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan surel terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) hanya dengan satu paket."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Pakai email dengan domain Anda sendiri di ${ mailAppName }, mis. john.smith@contoh.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Buat banyak alamat surel yang tertaut ke akun Anda, misal namapengguna2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Diskon diaktifkan untuk penagihan tahunan"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Diskon diaktifkan untuk penagihan dua tahunan"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Data terenkripsi dengan tanda tangan digital terverifikasi"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Tanda tangan digital memastikan identitas Anda sebagai pengirim surel"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
+      ],
+      "You do not have any contacts to export": [
+        "Anda tidak memiliki kontak untuk diekspor"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3323,28 +3271,6 @@
         "Bebas"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Tagihan jatuh tempo"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "Metode verifikasi tidak tersedia"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Kartu kredit/debit baru"
@@ -3354,6 +3280,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Akses Beta memperbolehkan Anda menggunakan versi beta dari ProtonMail, Proton Calendar, dan Proton Drive sebelum mereka dirilis ke publik. Ini berarti Anda dapat menjadi yang pertama untuk mencoba produk baru, mendapatkan pembaruan terbaru, dan menggunakan fitur-fitur terbaru."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Jika Anda menemui masalah/isu, Anda dapat selalu menonaktifkan Akses Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
       ]
     },
     "Label to change density": {
@@ -3378,14 +3317,6 @@
       ],
       "Maximized": [
         "Dimaksimalkan"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Grup kontak telah diperbarui"
-      ],
-      "Contact group created": [
-        "Grup kontak telah dibuat"
       ]
     },
     "Label for contact group name": {
@@ -3447,6 +3378,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Nama"
+      ],
+      "Address": [
+        "Alamat"
+      ],
+      "Action": [
+        "Tindakan"
+      ],
+      "Fingerprint": [
+        "Sidik jari"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
+      "Type": [
+        "Tipe"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Tindakan"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Grup kontak telah diperbarui"
+      ],
+      "Contact group created": [
+        "Grup kontak telah dibuat"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Otomatis"
+      ],
+      "Plain text": [
+        "Teks biasa"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Gunakan bawaan global (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Utama"
+      ],
+      "Verification only": [
+        "Verifikasi saja"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Terpercaya"
+      ],
+      "Revoked": [
+        "Dicabut"
+      ],
+      "Expired": [
+        "Kedaluwarsa"
       ]
     },
     "TableHeader": {
@@ -3622,17 +3623,31 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak Anda"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memperbolehkan Anda menggunakan versi beta dari ProtonMail, Proton Calendar, dan Proton Drive sebelum mereka dirilis ke publik. Ini berarti Anda dapat menjadi yang pertama untuk mencoba produk baru, mendapatkan pembaruan terbaru, dan menggunakan fitur-fitur terbaru."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jika Anda menemui masalah/isu, Anda dapat selalu menonaktifkan Akses Beta."
+    "Select files": {
+      "Upload": [
+        "Unggah"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tagihan jatuh tempo"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Metode verifikasi tidak tersedia"
       ]
     },
     "Loading info": {
@@ -3654,11 +3669,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Unggah"
       ]
     },
     "Message display when a new app version is available": {
@@ -3822,17 +3832,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Pembatalan acara pada ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Undangan acara pada ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Pembaruan acara pada ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Pembatalan acara mulai pada ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Undangan acara mulai pada ${ formattedStart }"
@@ -3840,8 +3844,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Pembaruan acara mulai pada ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Undangan: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Pembatalan acara pada ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Pembatalan acara mulai pada ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4264,11 +4271,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Nama"
@@ -4383,9 +4385,9 @@
         "Alamat"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4607,6 +4609,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Message": {

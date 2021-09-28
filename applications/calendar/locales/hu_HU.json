@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Hitelesítési hiba."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
+      ],
       "Email address invalid": [
         "Érvénytelen e-mail cím"
       ],
       "This field is required": [
         "A mező kitöltése kötelező"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "Process aborted": [
         "Folyamat megszakítva"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Érvénytelen kód"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Helytelen bejelentkezési adatok. Próbálja meg újra"
-      ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Enter 6 digits": [
-        "6 számjegyet írjon be"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
-      ],
-      "Preferences could not be saved": [
-        "Beállítások mentése nem sikerült"
-      ],
-      "Some groups could not be deleted": [
-        ""
-      ],
       "Image upload failed": [
         "Képfeltöltés sikertelen"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Néhány névjegy törlése nem sikerült"
+      ],
+      "Preferences could not be saved": [
+        "Beállítások mentése nem sikerült"
+      ],
+      "Some groups could not be deleted": [
+        ""
       ],
       "Invalid public key file": [
         "Érvénytelen nyilvános kulcs fájl"
@@ -155,14 +134,35 @@
       "Invalid name": [
         "Érvénytelen név"
       ],
+      "Primary address key is not decrypted": [
+        "Az elsődleges cím kulcsa nincs visszafejtve"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Helytelen bejelentkezési adatok. Próbálja meg újra"
+      ],
+      "Can't validate email, try again later": [
+        "E-mail ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Enter 6 digits": [
+        "6 számjegyet írjon be"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Az elsődleges cím kulcsa nincs visszafejtve"
       ],
       "No valid address found": [
         "Nem található érvényes e-mail cím"
@@ -194,12 +194,6 @@
       "Request timed out.": [
         "A kérés túllépte az időkorlátot."
       ],
-      "Signature verification failed": [
-        "Az aláírás ellenőrzése sikertelen volt"
-      ],
-      "Could not find address ${ email }.": [
-        "A(z) ${ email }. e-mail cím nem található."
-      ],
       "Missing signature": [
         "Hiányzó aláírás"
       ],
@@ -208,6 +202,12 @@
       ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
+      ],
+      "Signature verification failed": [
+        "Az aláírás ellenőrzése sikertelen volt"
+      ],
+      "Could not find address ${ email }.": [
+        "A(z) ${ email }. e-mail cím nem található."
       ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
@@ -341,56 +341,23 @@
       "Load image": [
         "Kép betöltése"
       ],
-      "refresh the page": [
-        "az oldal frissítése"
-      ],
-      "Export": [
-        "Exportálás"
-      ],
-      "Delete": [
-        "Törlés"
-      ],
-      "Edit": [
-        "Szerkesztés"
-      ],
-      "Remove": [
-        "Eltávolítás"
-      ],
-      "Download": [
-        "Letöltés"
-      ],
-      "Use for sending": [
-        "Küldéshez használható"
-      ],
-      "Trust": [
-        "Megbízható"
-      ],
-      "Untrust": [
-        "Nem megbízható"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Email settings": [
-        "E-mail beállítások"
-      ],
-      "Contact group": [
-        "Névjegy csoport"
-      ],
-      "Upload picture": [
-        "Kép feltöltése"
-      ],
       "Next month": [
         "Következő hónap"
       ],
       "Previous month": [
         "Előző hónap"
       ],
+      "Remove": [
+        "Eltávolítás"
+      ],
       "Confirm opening of link ${ link }": [
         "Link megnyitásának jóváhagyása: ${ link }"
       ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
+      ],
+      "Delete": [
+        "Törlés"
       ],
       "Select timezone": [
         "Időzóna kiválasztása"
@@ -403,6 +370,9 @@
       ],
       "Signing out": [
         "Kijelentkezés"
+      ],
+      "refresh the page": [
+        "az oldal frissítése"
       ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
@@ -545,41 +515,14 @@
       "Increase": [
         "Növel"
       ],
-      "Log in": [
-        "Belépés"
-      ],
-      "View invoice": [
-        "Számla megtekintése"
-      ],
-      "Get verification code": [
-        "Ellenőrző kód küldése"
-      ],
-      "Try another method": [
-        "Másik módszer"
-      ],
-      "Request new code": [
-        "Új kód kérése"
-      ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
-      ],
-      "Edit email address": [
-        "E-mail cím módosítása"
-      ],
-      "Edit phone number": [
-        "Telefonszám módosítása"
-      ],
       "Save": [
         "Mentés"
       ],
+      "Upload picture": [
+        "Kép feltöltése"
+      ],
       "Add": [
         "Hozzáadás"
-      ],
-      "Hide advanced PGP settings": [
-        "Haladó PGP beállítások elrejtése"
-      ],
-      "Show advanced PGP settings": [
-        "Haladó PGP beállítások megjelenítése"
       ],
       "Clear data": [
         "Adatok törlése"
@@ -593,8 +536,41 @@
       "Re-sign": [
         "Újra aláírás"
       ],
+      "Hide advanced PGP settings": [
+        "Haladó PGP beállítások elrejtése"
+      ],
+      "Show advanced PGP settings": [
+        "Haladó PGP beállítások megjelenítése"
+      ],
+      "Edit": [
+        "Szerkesztés"
+      ],
       "Add to group": [
         "Hozzáadás csoporthoz"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Contact group": [
+        "Névjegy csoport"
+      ],
+      "Export": [
+        "Exportálás"
+      ],
+      "Download": [
+        "Letöltés"
+      ],
+      "Use for sending": [
+        "Küldéshez használható"
+      ],
+      "Trust": [
+        "Megbízható"
+      ],
+      "Untrust": [
+        "Nem megbízható"
+      ],
+      "Email settings": [
+        "E-mail beállítások"
       ],
       "Merge": [
         "Egyesítés"
@@ -669,6 +645,30 @@
       ],
       "Import": [
         "Importálás"
+      ],
+      "Log in": [
+        "Belépés"
+      ],
+      "View invoice": [
+        "Számla megtekintése"
+      ],
+      "Get verification code": [
+        "Ellenőrző kód küldése"
+      ],
+      "Try another method": [
+        "Másik módszer"
+      ],
+      "Request new code": [
+        "Új kód kérése"
+      ],
+      "Did not receive the code?": [
+        "Nem kapta meg a kódot?"
+      ],
+      "Edit email address": [
+        "E-mail cím módosítása"
+      ],
+      "Edit phone number": [
+        "Telefonszám módosítása"
       ],
       "Continue import": [
         ""
@@ -788,15 +788,6 @@
       ],
       "Keyboard Shortcuts": [
         "Gyorsbillentyűk"
-      ],
-      "Upgrade required": [
-        "Nagyobb csomag szükséges"
-      ],
-      "Email settings": [
-        "E-mail beállítások"
-      ],
-      "Contact group": [
-        "Névjegy csoport"
       ],
       "Link confirmation": [
         "Link jóváhagyása"
@@ -918,27 +909,6 @@
       "${ appName } customization": [
         "${ appName } testreszabása"
       ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
-      "Account suspended": [
-        "Fiók felfüggesztve"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
-      ],
-      "Request new code": [
-        "Új kód kérése"
-      ],
-      "Human verification": [
-        "Robot ellenőrzés"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
       ],
@@ -950,6 +920,12 @@
       ],
       "Composer mode": [
         "Szerkesztő módja"
+      ],
+      "Beta Access": [
+        "Béta hozzáférés"
+      ],
+      "Edit image": [
+        "Kép szerkesztése"
       ],
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
@@ -964,28 +940,14 @@
         "Hozzáadás ${ groupCount } csoporthoz",
         "Hozzáadás ${ groupCount } csoporthoz"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-mail beállítások (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } törlése"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } névjegy csoport törlése",
-        "${ count } névjegy csoport törlése"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } tag",
-        "${ emailsCount } tag"
-      ],
-      "Edit image": [
-        "Kép szerkesztése"
-      ],
       "Edit contact": [
         "Névjegy szerkesztése"
       ],
       "Create contact": [
         "Névjegy létrehozása"
+      ],
+      "Delete ${ Name }": [
+        "${ Name } törlése"
       ],
       "Delete ${ count } contact": [
         "${ count } névjegy törlése",
@@ -1006,8 +968,25 @@
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
       ],
+      "Email settings (${ emailAddress })": [
+        "E-mail beállítások (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } névjegy csoport törlése",
+        "${ count } névjegy csoport törlése"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } tag",
+        "${ emailsCount } tag"
+      ],
       "Exporting contacts": [
         "Névjegyek exportálása"
+      ],
+      "Upgrade required": [
+        "Nagyobb csomag szükséges"
+      ],
+      "Contact group": [
+        "Névjegy csoport"
       ],
       "Other names": [
         "További nevek"
@@ -1023,6 +1002,9 @@
       ],
       "Other information": [
         "További információk"
+      ],
+      "Email settings": [
+        "E-mail beállítások"
       ],
       "Contact Details": [
         "Névjegy részletei"
@@ -1063,8 +1045,26 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
-      "Beta Access": [
-        "Béta hozzáférés"
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ],
+      "Account suspended": [
+        "Fiók felfüggesztve"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Request new code": [
+        "Új kód kérése"
+      ],
+      "Human verification": [
+        "Robot ellenőrzés"
       ],
       "Start import process": [
         ""
@@ -1212,15 +1212,6 @@
       "No results found": [
         "Nincs találat"
       ],
-      "support team": [
-        "ügyfélszolgálati csoport"
-      ],
-      "No contacts added yet": [
-        "Még nincsenek névjegyek"
-      ],
-      "Loading": [
-        "Betöltés"
-      ],
       "Week": [
         "Hét"
       ],
@@ -1238,6 +1229,9 @@
       ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
+      ],
+      "Loading": [
+        "Betöltés"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
@@ -1488,6 +1482,128 @@
       "Not customizable": [
         "Nem módosítható"
       ],
+      "Expired": [
+        "Lejárt"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } tag",
+        "${ contactEmailsLength } tagok"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } és ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Névjegy ellenőrzése ${ progress }/${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } névjegy sikeresen frissítve.",
+        "${ updated } névjegyek sikeresen frissítve."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
+      ],
+      "Key fingerprint": [
+        "Kulcs ujjlenyomat"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ProtonMail mindig aláírja a titkosított üzeneteket"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "A csoporthoz rendelt címek NEM kerülnek törlésre."
+      ],
+      "No contacts added yet": [
+        "Még nincsenek névjegyek"
+      ],
+      "Group assignment applied": [
+        "Csoport hozzárendelés alkalmazva"
+      ],
+      "Create a new contact group": [
+        "Új névjegy csoport létrehozása"
+      ],
+      "No group found": [
+        "Nem található csoport"
+      ],
+      "Primary": [
+        "Elsődleges"
+      ],
+      "Duplicate key updated": [
+        "Duplikált kulcs frissítve"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Ez a cím tiltva van. A tulajdonos engedélyére van szüksége ahhoz, hogy üzenetet küldhessen erre a címre."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "No email address": [
+        "Nincs e-mail cím"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } névjegy található",
+        "${ contactsCount } névjegy található"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } csoport található",
+        "${ groupCounts } csoport található"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "CSV fájlok importálása támogatott a következőkből: Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és néhány egyéb. vCard 4.0 importálása szintén támogatott (UTF-8 kódolással)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mail cím",
+        "${ addressCount } e-mail cím"
+      ],
       "here": [
         "itt"
       ],
@@ -1527,124 +1643,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
-      "Expired": [
-        "Lejárt"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } tag",
-        "${ contactEmailsLength } tagok"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } és ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ProtonMail mindig aláírja a titkosított üzeneteket"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "A csoporthoz rendelt címek NEM kerülnek törlésre."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Névjegy ellenőrzése ${ progress }/${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } névjegy sikeresen frissítve.",
-        "${ updated } névjegyek sikeresen frissítve."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
-      ],
-      "Key fingerprint": [
-        "Kulcs ujjlenyomat"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
-      ],
-      "Group assignment applied": [
-        "Csoport hozzárendelés alkalmazva"
-      ],
-      "Create a new contact group": [
-        "Új névjegy csoport létrehozása"
-      ],
-      "No group found": [
-        "Nem található csoport"
-      ],
-      "Duplicate key updated": [
-        "Duplikált kulcs frissítve"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Ez a cím tiltva van. A tulajdonos engedélyére van szüksége ahhoz, hogy üzenetet küldhessen erre a címre."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
-      "Primary": [
-        "Elsődleges"
-      ],
-      "No email address": [
-        "Nincs e-mail cím"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } névjegy található",
-        "${ contactsCount } névjegy található"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } csoport található",
-        "${ groupCounts } csoport található"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV fájlok importálása támogatott a következőkből: Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és néhány egyéb. vCard 4.0 importálása szintén támogatott (UTF-8 kódolással)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-mail cím",
-        "${ addressCount } e-mail cím"
+      "support team": [
+        "ügyfélszolgálati csoport"
       ],
       "Import contacts": [
         ""
@@ -1938,27 +1938,6 @@
       "Hide password": [
         "A jelszó elrejtése"
       ],
-      "Street address": [
-        "Utca, házszám"
-      ],
-      "City": [
-        "Település"
-      ],
-      "Region": [
-        "Régió"
-      ],
-      "Postal code": [
-        "Irányítószám"
-      ],
-      "Country": [
-        "Ország"
-      ],
-      "Post office box": [
-        "Postafiók"
-      ],
-      "Extended address": [
-        "Bővebb cím"
-      ],
       "Do not ask again": [
         "Ne kérdezze újra"
       ],
@@ -2007,10 +1986,16 @@
       "CVV code": [
         "CVV kód"
       ],
+      "Country": [
+        "Ország"
+      ],
       "Select your country": [
         "Válassza ki az országot"
       ],
       "ZIP": [
+        "Irányítószám"
+      ],
+      "Postal code": [
         "Irányítószám"
       ],
       "BTC amount:": [
@@ -2030,6 +2015,84 @@
       ],
       "Proration": [
         "Arányosítás"
+      ],
+      "Cash": [
+        "Készpénz"
+      ],
+      "Card holder": [
+        "Kártyabirtokos"
+      ],
+      "Expires": [
+        "Lejárat"
+      ],
+      "Payer": [
+        "Teherviselő"
+      ],
+      "Keyboard shortcuts": [
+        "Gyorsbillentyűk"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "Béta hozzáférés engedélyezése"
+      ],
+      "Add image URL": [
+        "Kép URL megadása"
+      ],
+      "Upload picture": [
+        "Kép feltöltése"
+      ],
+      "Add email address": [
+        "E-mail cím hozzáadása"
+      ],
+      "Email format": [
+        "E-mail formátum"
+      ],
+      "Street address": [
+        "Utca, házszám"
+      ],
+      "City": [
+        "Település"
+      ],
+      "Region": [
+        "Régió"
+      ],
+      "Post office box": [
+        "Postafiók"
+      ],
+      "Extended address": [
+        "Bővebb cím"
+      ],
+      "Add to group": [
+        "Hozzáadás csoporthoz"
+      ],
+      "Encrypt emails": [
+        "Üzenetek titkosítása"
+      ],
+      "Sign emails": [
+        "Üzenetek aláírása"
+      ],
+      "Cryptographic scheme": [
+        "Titkosítási séma"
+      ],
+      "Public keys": [
+        "Nyilvános kulcsok"
+      ],
+      "Automatically save contacts": [
+        "Névjegyek automatikus létrehozása"
+      ],
+      "Import contacts": [
+        "Névjegyek importálása"
+      ],
+      "Export contacts": [
+        "Névjegyek exportálása"
       ],
       "Cancel": [
         "Mégsem"
@@ -2057,69 +2120,6 @@
       ],
       "Enter the 6-digit code": [
         "Írja be a hatjegyű kódot"
-      ],
-      "Cash": [
-        "Készpénz"
-      ],
-      "Card holder": [
-        "Kártyabirtokos"
-      ],
-      "Expires": [
-        "Lejárat"
-      ],
-      "Payer": [
-        "Teherviselő"
-      ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Add email address": [
-        "E-mail cím hozzáadása"
-      ],
-      "Email format": [
-        "E-mail formátum"
-      ],
-      "Add image URL": [
-        "Kép URL megadása"
-      ],
-      "Upload picture": [
-        "Kép feltöltése"
-      ],
-      "Add to group": [
-        "Hozzáadás csoporthoz"
-      ],
-      "Encrypt emails": [
-        "Üzenetek titkosítása"
-      ],
-      "Sign emails": [
-        "Üzenetek aláírása"
-      ],
-      "Cryptographic scheme": [
-        "Titkosítási séma"
-      ],
-      "Public keys": [
-        "Nyilvános kulcsok"
-      ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus létrehozása"
-      ],
-      "Import contacts": [
-        "Névjegyek importálása"
-      ],
-      "Export contacts": [
-        "Névjegyek exportálása"
-      ],
-      "Enable Beta Access": [
-        "Béta hozzáférés engedélyezése"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2248,11 +2248,6 @@
         ""
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Pl., "
@@ -2293,14 +2288,11 @@
       "Gift code": [
         "Ajándék kód"
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
+      "Image URL": [
+        "Kép URL"
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
-      ],
-      "Image URL": [
-        "Kép URL"
       ],
       "Filter groups": [
         "Csoportok szűrése"
@@ -2313,6 +2305,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
       ],
       "Add a calendar name": [
         "Adja meg a naptár nevét"
@@ -2343,206 +2338,72 @@
         "${ minutes } perc"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Titkosított adat, ellenőrzött digitális aláírással"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Használjon több címet / nevet a fiókjához pl. masiknev@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Levelezzen a saját domain nevén a ProtonMaillel pl. kovacs.janos@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Használja a személyes felhasználónév@pm.me címét levelek küldésére"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "A több-felhasználós lehetőség csak a legalább 2 felhasználót tartalmazó csomagokban érhető el"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "A NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Támogatás a fájlmegosztási protokollokhoz, például a BitTorrenthez."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "A VPN elleni támadásokkal szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ProtonVPN, mind a ProtonMail (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Levelezzen a saját domain nevén a ${ mailAppName } segítségével pl. kovacs.janos@example.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hozzon létre több címet a fiókjához pl. masiknev@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Éves fizetés kedvezménye jóváírásra került"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Kétéves fizetés kedvezménye jóváírásra került"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatikus beállítás esetén, a szerkesztőben használt módban kerülnek elküldésre a levelek. Egyszerű szöveg esetén, ennek a partnernek, az összes üzenet egyszerű szöveggé alakul az elküldéskor."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Az e-mail titkosítása aláírást is von magával, az elküldött üzenetek pontosabb ellenőrizhetősége érdekében"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Az üzenetek digitális aláírása teszi ellenőrizhetővé, hogy az üzenetet valóban ön küldte"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
-      ],
-      "You do not have any contacts to export": [
-        "Önnek nincs exportálható névjegye"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
+        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
       ]
     },
-    "Table header": {
-      "Name": [
-        "Név"
-      ],
-      "Address": [
-        "Cím"
-      ],
-      "Action": [
-        "Művelet"
-      ],
-      "Fingerprint": [
-        "Ujjlenyomat"
-      ],
-      "Created": [
-        "Létrehozva"
-      ],
-      "Expires": [
-        "Lejárat"
-      ],
-      "Type": [
-        "Típus"
-      ],
-      "Status": [
-        "Állapot"
-      ],
-      "Actions": [
-        "Műveletek"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Automatikus"
-      ],
-      "Plain text": [
-        "Egyszerű szöveg"
+    "Select search results": {
+      "No results found": [
+        "Nincs találat"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Globális beállítások használata (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Időzóna keresése"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Elsődleges"
-      ],
-      "Verification only": [
-        "Csak ellenőrzés"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Megbízható"
-      ],
-      "Revoked": [
-        "Visszavont"
-      ],
-      "Expired": [
-        "Lejárt"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Ehhez a lehetőséghez előfizetéses csomag szükséges"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Hoppá, valami hiba történt"
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "A hibajelentések nem végpontok közt titkosítottak, kérünk ne küldjön semmilyen érzékeny információt."
+      "There was a problem connecting to Proton.": [
+        "Hiba lépett fel a Protonhoz történő csatlakozás során."
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ha ezt a fizetési módot választja, akkor az összeget nem tudjuk automatikusan jóváírni. Számláját frissítjük, amint a befizetés megérkezett."
+      "Please ${ refresh } or check your connection.": [
+        "Kattintson erre a hivatkozásra ${ refresh }, vagy ellenőrizze a kapcsolatot."
       ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Biztos, hogy véglegesen törli ezt a névjegy csoportot?"
+      "Error: ${ errorMessage }": [
+        "Hiba: ${ errorMessage }"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",
-        "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?"
+      "Brace yourself till we get the error fixed.": [
+        "Kérjük vigyázzon magára, amíg a hibát elhárítjuk."
       ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Biztos, hogy véglegesen törli ezt a névjegyet?"
+      "You may also ${ refresh } or try again later.": [
+        "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton alkalmazások"
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
-        "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
+      "Go to ${ title }": [
+        "${ title } megnyitása"
       ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adatai elérésének lehetőségét."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "A titkosított tartalom visszafejtése nem sikerült."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "A névjegy részletek aláírásának ellenőrzése nem sikerült."
-      ],
-      "The contact failed to load.": [
-        "A névjegy betöltése nem sikerült."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
-      ],
-      "Contacts could not be merged": [
-        "A névjegyek egyesítése nem sikerült"
-      ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "A helyi dátum és idő beállítása valószínűleg hibás."
+      "Go to ${ vpnName }": [
+        "Menjen ${ vpnName }"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "E-mail cím a vágólapra másolva"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefonszám a vágólapra másolva"
-      ],
-      "Address copied to clipboard": [
-        "Cím a vágólapra másolva"
       ],
       "Bug reported": [
         "Hiba bejelentve"
@@ -2550,24 +2411,11 @@
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kód elküldve: ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Sikeres ellenőrzés"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Gyorsbillentyű beállítások frissítve"
       ],
       "Preference saved": [
         "Beállítások elmentve"
-      ],
-      "Preferences saved": [
-        "Beállítások mentve"
-      ],
-      "Contact group deleted": [
-        "Névjegy csoport törölve",
-        "Névjegy csoportok törölve"
       ],
       "Contact saved": [
         "Névjegy elmentve"
@@ -2581,6 +2429,25 @@
       ],
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
+      ],
+      "Preferences saved": [
+        "Beállítások mentve"
+      ],
+      "Contact group deleted": [
+        "Névjegy csoport törölve",
+        "Névjegy csoportok törölve"
+      ],
+      "Phone number copied to clipboard": [
+        "Telefonszám a vágólapra másolva"
+      ],
+      "Address copied to clipboard": [
+        "Cím a vágólapra másolva"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kód elküldve: ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sikeres ellenőrzés"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         ""
@@ -2670,64 +2537,6 @@
         "Valamennyi esemény törölve"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
-        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Nincs találat"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Időzóna keresése"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Hoppá, valami hiba történt"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Hiba lépett fel a Protonhoz történő csatlakozás során."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Kattintson erre a hivatkozásra ${ refresh }, vagy ellenőrizze a kapcsolatot."
-      ],
-      "Error: ${ errorMessage }": [
-        "Hiba: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Kérjük vigyázzon magára, amíg a hibát elhárítjuk."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton alkalmazások"
-      ],
-      "Go to ${ title }": [
-        "${ title } megnyitása"
-      ],
-      "Go to ${ vpnName }": [
-        "Menjen ${ vpnName }"
-      ]
-    },
     "Header": {
       "Get help": [
         ""
@@ -2747,14 +2556,24 @@
         "Beállítások"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Be"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Ki"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2921,6 +2740,64 @@
         "Kiválasztás"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        ""
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "A hibajelentések nem végpontok közt titkosítottak, kérünk ne küldjön semmilyen érzékeny információt."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Ha ezt a fizetési módot választja, akkor az összeget nem tudjuk automatikusan jóváírni. Számláját frissítjük, amint a befizetés megérkezett."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Biztos, hogy véglegesen törli ezt a névjegyet?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
+        "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adatai elérésének lehetőségét."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Biztos, hogy véglegesen törli ezt a névjegy csoportot?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",
+        "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Ehhez a lehetőséghez előfizetéses csomag szükséges"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "A titkosított tartalom visszafejtése nem sikerült."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "A névjegy részletek aláírásának ellenőrzése nem sikerült."
+      ],
+      "The contact failed to load.": [
+        "A névjegy betöltése nem sikerült."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
+      ],
+      "Contacts could not be merged": [
+        "A névjegyek egyesítése nem sikerült"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "A helyi dátum és idő beállítása valószínűleg hibás."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Képernyőkép csatolása"
@@ -3032,6 +2909,77 @@
       ],
       "Unlimited": [
         "Korlátlan"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Használjon több címet / nevet a fiókjához pl. masiknev@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Levelezzen a saját domain nevén a ProtonMaillel pl. kovacs.janos@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Használja a személyes felhasználónév@pm.me címét levelek küldésére"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "A több-felhasználós lehetőség csak a legalább 2 felhasználót tartalmazó csomagokban érhető el"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "A NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Támogatás a fájlmegosztási protokollokhoz, például a BitTorrenthez."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "A VPN elleni támadásokkal szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Szerezzen elérést mind a ProtonVPN, mind a ProtonMail (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Levelezzen a saját domain nevén a ${ mailAppName } segítségével pl. kovacs.janos@example.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Hozzon létre több címet a fiókjához pl. masiknev@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Éves fizetés kedvezménye jóváírásra került"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Kétéves fizetés kedvezménye jóváírásra került"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Automatikus beállítás esetén, a szerkesztőben használt módban kerülnek elküldésre a levelek. Egyszerű szöveg esetén, ennek a partnernek, az összes üzenet egyszerű szöveggé alakul az elküldéskor."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Titkosított adat, ellenőrzött digitális aláírással"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Az e-mail titkosítása aláírást is von magával, az elküldött üzenetek pontosabb ellenőrizhetősége érdekében"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Az üzenetek digitális aláírása teszi ellenőrizhetővé, hogy az üzenetet valóban ön küldte"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
+      ],
+      "You do not have any contacts to export": [
+        "Önnek nincs exportálható névjegye"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3362,28 +3310,6 @@
         "Ingyenes"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Lejárt számla"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Kézi"
-      ],
-      "No verification method available": [
-        "Nincs elérhető ellenőrzési módszer"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Új bankkártya"
@@ -3393,6 +3319,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
       ]
     },
     "Label to change density": {
@@ -3417,14 +3356,6 @@
       ],
       "Maximized": [
         "Teljes méretű"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Névjegy csoport frissítve"
-      ],
-      "Contact group created": [
-        "Névjegy csoport létrehozva"
       ]
     },
     "Label for contact group name": {
@@ -3489,6 +3420,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Név"
+      ],
+      "Address": [
+        "Cím"
+      ],
+      "Action": [
+        "Művelet"
+      ],
+      "Fingerprint": [
+        "Ujjlenyomat"
+      ],
+      "Created": [
+        "Létrehozva"
+      ],
+      "Expires": [
+        "Lejárat"
+      ],
+      "Type": [
+        "Típus"
+      ],
+      "Status": [
+        "Állapot"
+      ],
+      "Actions": [
+        "Műveletek"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Névjegy csoport frissítve"
+      ],
+      "Contact group created": [
+        "Névjegy csoport létrehozva"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automatikus"
+      ],
+      "Plain text": [
+        "Egyszerű szöveg"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Globális beállítások használata (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Elsődleges"
+      ],
+      "Verification only": [
+        "Csak ellenőrzés"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Megbízható"
+      ],
+      "Revoked": [
+        "Visszavont"
+      ],
+      "Expired": [
+        "Lejárt"
       ]
     },
     "TableHeader": {
@@ -3672,17 +3673,31 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
+    "Select files": {
+      "Upload": [
+        "Feltöltés"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Lejárt számla"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Kézi"
+      ],
+      "No verification method available": [
+        "Nincs elérhető ellenőrzési módszer"
       ]
     },
     "Loading info": {
@@ -3704,11 +3719,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Feltöltés"
       ]
     },
     "Message display when a new app version is available": {
@@ -3876,17 +3886,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Esemény törlése ekkor: ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "Meghívó egy eseményre ekkor: ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Frissítés egy eseményhez: ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Ekkor kezdődő esemény törlése: ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Meghívó ekkor kezdődő eseményre: ${ formattedStart }"
@@ -3894,8 +3898,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "Frissítés egy ekkor kezdődő eseményhez: ${ formattedStart }"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Meghívó: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Esemény törlése ekkor: ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Ekkor kezdődő esemény törlése: ${ formattedStart }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4355,12 +4362,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A jelszónak legalább ${ length } karakterből kell állnia",
-        "A jelszónak legalább ${ length } karakterből kell állnia"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Név"
@@ -4475,9 +4476,10 @@
         "Cím"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4699,6 +4701,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Message": {
