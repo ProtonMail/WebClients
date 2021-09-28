@@ -21,17 +21,14 @@
       "Authentication error.": [
         "Doğrulama hatası."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermemektedir. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
+      ],
       "Email address invalid": [
         "E-posta adresi geçersiz"
       ],
       "This field is required": [
         "Bu alan gereklidir"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermemektedir. Lütfen farklı bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -93,30 +90,6 @@
       "Invalid code": [
         "Geçersiz kod"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Giriş bilgileri yanlış, lütfen tekrar deneyin"
-      ],
-      "Can't validate email, try again later": [
-        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Enter 6 digits": [
-        "6 hane girin"
-      ],
-      "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
-      ],
-      "Preferences could not be saved": [
-        "Tercihler kaydedilemedi"
-      ],
-      "Some groups could not be deleted": [
-        "Bazı gruplar silinemedi"
-      ],
       "Image upload failed": [
         "Resim yükleme başarısız"
       ],
@@ -125,6 +98,12 @@
       ],
       "Some contacts could not be deleted": [
         "Bazı kişiler silinemedi"
+      ],
+      "Preferences could not be saved": [
+        "Tercihler kaydedilemedi"
+      ],
+      "Some groups could not be deleted": [
+        "Bazı gruplar silinemedi"
       ],
       "Invalid public key file": [
         "Geçersiz genel anahtar dosyası"
@@ -155,14 +134,35 @@
       "Invalid name": [
         "Geçersiz ad"
       ],
+      "Primary address key is not decrypted": [
+        "Birincil adres anahtarının şifresi çözülemedi"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Giriş bilgileri yanlış, lütfen tekrar deneyin"
+      ],
+      "Can't validate email, try again later": [
+        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Enter 6 digits": [
+        "6 hane girin"
+      ],
+      "Invalid verification code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti, devam etmek için ${ refresh }. Hala bu hata iletisini görüyorsanız lütfen ${ supportTeam } ile iletişime geçin."
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "Primary address key is not decrypted": [
-        "Birincil adres anahtarının şifresi çözülemedi"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -194,12 +194,6 @@
       "Request timed out.": [
         "İstek zaman aşımına uğradı."
       ],
-      "Signature verification failed": [
-        "İmza doğrulaması başarısız oldu"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
-      ],
       "Missing signature": [
         "İmza eksik"
       ],
@@ -208,6 +202,12 @@
       ],
       "Signature not verified": [
         "İmza doğrulanamadı"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulaması başarısız oldu"
+      ],
+      "Could not find address ${ email }.": [
+        "${ email } adresi bulunamadı."
       ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
@@ -341,56 +341,23 @@
       "Load image": [
         "Resim yükle"
       ],
-      "refresh the page": [
-        "sayfayı yenileyin"
-      ],
-      "Export": [
-        "Dışa aktar"
-      ],
-      "Delete": [
-        "Sil"
-      ],
-      "Edit": [
-        "Düzenle"
-      ],
-      "Remove": [
-        "Sil"
-      ],
-      "Download": [
-        "İndir"
-      ],
-      "Use for sending": [
-        "Göndermek için kullan"
-      ],
-      "Trust": [
-        "Güven"
-      ],
-      "Untrust": [
-        "Güvenme"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Email settings": [
-        "E-posta ayarları"
-      ],
-      "Contact group": [
-        "Kişi grubu"
-      ],
-      "Upload picture": [
-        "Resim yükle"
-      ],
       "Next month": [
         "Gelecek ay"
       ],
       "Previous month": [
         "Geçen ay"
       ],
+      "Remove": [
+        "Sil"
+      ],
       "Confirm opening of link ${ link }": [
         "${ link } bağlantısını açmayı onaylayın"
       ],
       "Continue with Google": [
         "Google ile devam et"
+      ],
+      "Delete": [
+        "Sil"
       ],
       "Select timezone": [
         "Zaman dilimini seçin"
@@ -403,6 +370,9 @@
       ],
       "Signing out": [
         "Oturumu kapatılıyor"
+      ],
+      "refresh the page": [
+        "sayfayı yenileyin"
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
@@ -545,41 +515,14 @@
       "Increase": [
         "Arttır"
       ],
-      "Log in": [
-        "Giriş yap"
-      ],
-      "View invoice": [
-        "Faturayı görüntüle"
-      ],
-      "Get verification code": [
-        "Doğrulama kodu al"
-      ],
-      "Try another method": [
-        "Başka bir yöntem deneyin"
-      ],
-      "Request new code": [
-        "Yeni kod isteyin"
-      ],
-      "Did not receive the code?": [
-        "Kodu alamadınız mı?"
-      ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
-      "Edit phone number": [
-        "Telefon numarasını düzenle"
-      ],
       "Save": [
         "Kaydet"
       ],
+      "Upload picture": [
+        "Resim yükle"
+      ],
       "Add": [
         "Ekle"
-      ],
-      "Hide advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını gizle"
-      ],
-      "Show advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını göster"
       ],
       "Clear data": [
         "Veriyi temizle"
@@ -593,8 +536,41 @@
       "Re-sign": [
         "Tekrar imzala"
       ],
+      "Hide advanced PGP settings": [
+        "Gelişmiş PGP ayarlarını gizle"
+      ],
+      "Show advanced PGP settings": [
+        "Gelişmiş PGP ayarlarını göster"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
       "Add to group": [
         "Gruba ekle"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Contact group": [
+        "Kişi grubu"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Download": [
+        "İndir"
+      ],
+      "Use for sending": [
+        "Göndermek için kullan"
+      ],
+      "Trust": [
+        "Güven"
+      ],
+      "Untrust": [
+        "Güvenme"
+      ],
+      "Email settings": [
+        "E-posta ayarları"
       ],
       "Merge": [
         "Birleştir"
@@ -669,6 +645,30 @@
       ],
       "Import": [
         "İçe aktar"
+      ],
+      "Log in": [
+        "Giriş yap"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu al"
+      ],
+      "Try another method": [
+        "Başka bir yöntem deneyin"
+      ],
+      "Request new code": [
+        "Yeni kod isteyin"
+      ],
+      "Did not receive the code?": [
+        "Kodu alamadınız mı?"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
       ],
       "Continue import": [
         ""
@@ -788,15 +788,6 @@
       ],
       "Keyboard Shortcuts": [
         "Klavye Kısayolları"
-      ],
-      "Upgrade required": [
-        "Yükseltme gerekli"
-      ],
-      "Email settings": [
-        "E-posta ayarları"
-      ],
-      "Contact group": [
-        "Kişi grubu"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -918,27 +909,6 @@
       "${ appName } customization": [
         "${ appName } özelleştirme"
       ],
-      "Sign in again to continue": [
-        "Devam etmek için tekrar giriş yapın"
-      ],
-      "Account suspended": [
-        "Hesap askıya alındı"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi giriniz"
-      ],
-      "Enter your password": [
-        "Şifrenizi giriniz"
-      ],
-      "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
-      ],
-      "Request new code": [
-        "Yeni kod isteyin"
-      ],
-      "Human verification": [
-        "İnsan doğrulaması"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Klavye Kısayolları"
       ],
@@ -950,6 +920,12 @@
       ],
       "Composer mode": [
         "Besteci modu"
+      ],
+      "Beta Access": [
+        "Beta Erişimi"
+      ],
+      "Edit image": [
+        "Görseli düzenle"
       ],
       "Edit contact group": [
         "Kişi grubunu düzenle"
@@ -964,28 +940,14 @@
         "${ groupCount } grubuna ekle",
         "${ groupCount } gruplarına ekle"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-posta ayarları (${ emailAddress })"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } silin"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } kişi grubunu sil",
-        "${ count } kişi gruplarını sil"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } üye",
-        "${ emailsCount } üye"
-      ],
-      "Edit image": [
-        "Görseli düzenle"
-      ],
       "Edit contact": [
         "Kişiyi düzenle"
       ],
       "Create contact": [
         "Kişi oluştur"
+      ],
+      "Delete ${ Name }": [
+        "${ Name } silin"
       ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",
@@ -1006,8 +968,25 @@
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
       ],
+      "Email settings (${ emailAddress })": [
+        "E-posta ayarları (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } kişi grubunu sil",
+        "${ count } kişi gruplarını sil"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } üye",
+        "${ emailsCount } üye"
+      ],
       "Exporting contacts": [
         "Kişiler dışa aktarılıyor"
+      ],
+      "Upgrade required": [
+        "Yükseltme gerekli"
+      ],
+      "Contact group": [
+        "Kişi grubu"
       ],
       "Other names": [
         "Diğer adlar"
@@ -1023,6 +1002,9 @@
       ],
       "Other information": [
         "Diğer bilgiler"
+      ],
+      "Email settings": [
+        "E-posta ayarları"
       ],
       "Contact Details": [
         "Kişi Ayrıntıları"
@@ -1063,8 +1045,26 @@
       "Import contacts": [
         "Kişileri içe aktar"
       ],
-      "Beta Access": [
-        "Beta Erişimi"
+      "Sign in again to continue": [
+        "Devam etmek için tekrar giriş yapın"
+      ],
+      "Account suspended": [
+        "Hesap askıya alındı"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi giriniz"
+      ],
+      "Enter your password": [
+        "Şifrenizi giriniz"
+      ],
+      "Invalid verification code": [
+        "Geçersiz doğrulama kodu"
+      ],
+      "Request new code": [
+        "Yeni kod isteyin"
+      ],
+      "Human verification": [
+        "İnsan doğrulaması"
       ],
       "Start import process": [
         ""
@@ -1212,15 +1212,6 @@
       "No results found": [
         "Sonuç bulunamadı"
       ],
-      "support team": [
-        "destek ekibi"
-      ],
-      "No contacts added yet": [
-        "Henüz kişi eklenmedi"
-      ],
-      "Loading": [
-        "Yükleniyor"
-      ],
       "Week": [
         "Hafta"
       ],
@@ -1238,6 +1229,9 @@
       ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
+      ],
+      "Loading": [
+        "Yükleniyor"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
@@ -1488,6 +1482,128 @@
       "Not customizable": [
         "Özelleştirilemez"
       ],
+      "Expired": [
+        "Süresi dolmuş"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Üye",
+        "${ contactEmailsLength } Üye"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } ve ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } birden fazla e-posta adresi içeriyor. Lütfen bu gruba ekleyeceğiniz e-posta adreslerini seçin."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } kişisi birden fazla e-posta adresine sahip. ${ groupsEnumeration } grubuna hangi adres veya adreslerin ekleneceğini seçin."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } birden fazla e-posta adresi içeriyor. Bu gruba hangi adres veya adreslerin ekleneceğini seçin."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } kişileri birden fazla e-posta adresi içeriyor. ${ groupsEnumeration } grubuna hangi adres veya adreslerin ekleneceğini seçin."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Etkin olmayan anahtarla şifrelenmiş verileri içeren kişileri ararken lütfen bekleyin."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Kişi kontrol ediliyor ${ progress }/${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kişi başarıyla güncellendi.",
+        "${ updated } kişi başarıyla güncellendi."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan kişi şifreleme anahtarını yeniden etkinleştirmeniz gerekir. Bu, anahtar oluşturulurken kullanılan parolayı hatırlamanızı gerektirir."
+      ],
+      "Key fingerprint": [
+        "Anahtar parmak izi"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Şifrenizi hatırlayamıyor musunuz? Bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini ve uyarıyı silmenize yardımcı olabiliriz."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Birincil şifreleme anahtarıyla yeniden imzalanabilecek kişileri ararken lütfen bekleyin."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesine karşı kontrol etmemiz gerekir. Eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Bu işlemin kişi listenizin boyutuna bağlı olarak zaman alabileceğini unutmayın."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz bir e-posta seçin."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Satır içi yalnızca Düz Metin formatıyla uyumludur. ProtonMail'in her zaman şifrelenmiş mesajları imzaladığını lütfen unutmayın."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME, gerçerli besteci modunu kullanarak mesajı otomatik olarak gönderir. ProtonMail'in her zaman şifrelenmiş mesajları imzaladığını lütfen unutmayın"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Lütfen bu gruba atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
+      ],
+      "No contacts added yet": [
+        "Henüz kişi eklenmedi"
+      ],
+      "Group assignment applied": [
+        "Grup ataması uygulandı"
+      ],
+      "Create a new contact group": [
+        "Yeni kişi grubu oluştur"
+      ],
+      "No group found": [
+        "Grup bulunamadı"
+      ],
+      "Primary": [
+        "Birincil"
+      ],
+      "Duplicate key updated": [
+        "Yinelenen anahtar güncellendi"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "PGP'yi ayarlamak, PGP uyumlu bir hizmet kullanan ve ProtonMail kullanmayan bir kullanıcıyla uçtan uca şifreli e-postalar göndermenizi sağlar."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Bu adres için Güvenilir Anahtarlar ile Adres Doğrulama etkinleştirildi. Bu adrese gönderebilmek için, öncelikle göndermek için kullanılabilecek genel güvenlik anahtarlarını kullanın."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Bu adres devre dışı. Bu adrese gönderebilmek için öncelikle adresin sahibi etkinleştirilmelidir."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Adres doğrulamayı kullanmak için, gönderirken kullanmak istediğiniz dahil bir veya daha fazla kullanılabilir ortak anahtara güvenmeniz gerekir. Bu, şifreleme anahtarlarının sahte olmasını önler."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Yalnızca ProtonMail olmayan alıcılarla PGP kullanıyorsanız bu ayarları değiştirin."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Yüklenmiş anahtarlardan hiçbirisi şifrelemek için geçerli değil. Şifreleme otomatik olarak durduruldu."
+      ],
+      "No email address": [
+        "E-posta adresi yok"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kişi bulundu",
+        "${ contactsCount } kişi bulundu"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup bulundu",
+        "${ groupCounts } grup bulundu"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "CSV dosyalarının Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamalardan içe aktarımını destekliyoruz. Ayrıca vCard 4.0'ın içe aktarılmasını da destekliyoruz. (UTF-8 kodlaması)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Kışilerini dışa aktarmadan önce bu uygulamanın yerel şifreye ihtiyacı var. İlerlemenin sonunda, VCF dosyası genelleştirilecek ve indirmeye elvirişli olacaktır."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-posta adresi",
+        "${ addressCount } e-posta adresi"
+      ],
       "here": [
         "burada"
       ],
@@ -1527,124 +1643,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde size yanıt vereceğiz."
       ],
-      "Expired": [
-        "Süresi dolmuş"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Üye",
-        "${ contactEmailsLength } Üye"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } ve ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } birden fazla e-posta adresi içeriyor. Lütfen bu gruba ekleyeceğiniz e-posta adreslerini seçin."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } kişisi birden fazla e-posta adresine sahip. ${ groupsEnumeration } grubuna hangi adres veya adreslerin ekleneceğini seçin."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } birden fazla e-posta adresi içeriyor. Bu gruba hangi adres veya adreslerin ekleneceğini seçin."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } kişileri birden fazla e-posta adresi içeriyor. ${ groupsEnumeration } grubuna hangi adres veya adreslerin ekleneceğini seçin."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz bir e-posta seçin."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Satır içi yalnızca Düz Metin formatıyla uyumludur. ProtonMail'in her zaman şifrelenmiş mesajları imzaladığını lütfen unutmayın."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME, gerçerli besteci modunu kullanarak mesajı otomatik olarak gönderir. ProtonMail'in her zaman şifrelenmiş mesajları imzaladığını lütfen unutmayın"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Lütfen bu gruba atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Etkin olmayan anahtarla şifrelenmiş verileri içeren kişileri ararken lütfen bekleyin."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Kişi kontrol ediliyor ${ progress }/${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kişi başarıyla güncellendi.",
-        "${ updated } kişi başarıyla güncellendi."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan kişi şifreleme anahtarını yeniden etkinleştirmeniz gerekir. Bu, anahtar oluşturulurken kullanılan parolayı hatırlamanızı gerektirir."
-      ],
-      "Key fingerprint": [
-        "Anahtar parmak izi"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Şifrenizi hatırlayamıyor musunuz? Bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini ve uyarıyı silmenize yardımcı olabiliriz."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Birincil şifreleme anahtarıyla yeniden imzalanabilecek kişileri ararken lütfen bekleyin."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesine karşı kontrol etmemiz gerekir. Eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Bu işlemin kişi listenizin boyutuna bağlı olarak zaman alabileceğini unutmayın."
-      ],
-      "Group assignment applied": [
-        "Grup ataması uygulandı"
-      ],
-      "Create a new contact group": [
-        "Yeni kişi grubu oluştur"
-      ],
-      "No group found": [
-        "Grup bulunamadı"
-      ],
-      "Duplicate key updated": [
-        "Yinelenen anahtar güncellendi"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP'yi ayarlamak, PGP uyumlu bir hizmet kullanan ve ProtonMail kullanmayan bir kullanıcıyla uçtan uca şifreli e-postalar göndermenizi sağlar."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Bu adres için Güvenilir Anahtarlar ile Adres Doğrulama etkinleştirildi. Bu adrese gönderebilmek için, öncelikle göndermek için kullanılabilecek genel güvenlik anahtarlarını kullanın."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres devre dışı. Bu adrese gönderebilmek için öncelikle adresin sahibi etkinleştirilmelidir."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Adres doğrulamayı kullanmak için, gönderirken kullanmak istediğiniz dahil bir veya daha fazla kullanılabilir ortak anahtara güvenmeniz gerekir. Bu, şifreleme anahtarlarının sahte olmasını önler."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Yalnızca ProtonMail olmayan alıcılarla PGP kullanıyorsanız bu ayarları değiştirin."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Yüklenmiş anahtarlardan hiçbirisi şifrelemek için geçerli değil. Şifreleme otomatik olarak durduruldu."
-      ],
-      "Primary": [
-        "Birincil"
-      ],
-      "No email address": [
-        "E-posta adresi yok"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kişi bulundu",
-        "${ contactsCount } kişi bulundu"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grup bulundu",
-        "${ groupCounts } grup bulundu"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV dosyalarının Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamalardan içe aktarımını destekliyoruz. Ayrıca vCard 4.0'ın içe aktarılmasını da destekliyoruz. (UTF-8 kodlaması)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Kışilerini dışa aktarmadan önce bu uygulamanın yerel şifreye ihtiyacı var. İlerlemenin sonunda, VCF dosyası genelleştirilecek ve indirmeye elvirişli olacaktır."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-posta adresi",
-        "${ addressCount } e-posta adresi"
+      "support team": [
+        "destek ekibi"
       ],
       "Import contacts": [
         ""
@@ -1938,27 +1938,6 @@
       "Hide password": [
         "Şifreyi gizle"
       ],
-      "Street address": [
-        "Sokak adresi"
-      ],
-      "City": [
-        "Şehir"
-      ],
-      "Region": [
-        "Bölge"
-      ],
-      "Postal code": [
-        "Posta kodu"
-      ],
-      "Country": [
-        "Ülke"
-      ],
-      "Post office box": [
-        "Posta kutusu"
-      ],
-      "Extended address": [
-        "Açık adres"
-      ],
       "Do not ask again": [
         "Tekrar sorma"
       ],
@@ -2007,11 +1986,17 @@
       "CVV code": [
         "CVV kodu"
       ],
+      "Country": [
+        "Ülke"
+      ],
       "Select your country": [
         "Ülkenizi seçin"
       ],
       "ZIP": [
         "ZIP"
+      ],
+      "Postal code": [
+        "Posta kodu"
       ],
       "BTC amount:": [
         "BTC tutarı:"
@@ -2030,6 +2015,84 @@
       ],
       "Proration": [
         "Paylaştır"
+      ],
+      "Cash": [
+        "Nakit"
+      ],
+      "Card holder": [
+        "Kart Sahibi"
+      ],
+      "Expires": [
+        "Sona erme"
+      ],
+      "Payer": [
+        "Ödeyen"
+      ],
+      "Keyboard shortcuts": [
+        "Klavye kısayolları"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
+      ],
+      "Select how your composer opens by default.": [
+        "Oluşturucunuzun varsayılan olarak nasıl açılacağını seçin."
+      ],
+      "Enable Beta Access": [
+        "Beta Erişimini Etkinleştir"
+      ],
+      "Add image URL": [
+        "Resim URL’si ekle"
+      ],
+      "Upload picture": [
+        "Resim yükle"
+      ],
+      "Add email address": [
+        "E-posta adresi ekle"
+      ],
+      "Email format": [
+        "Eposta biçimi"
+      ],
+      "Street address": [
+        "Sokak adresi"
+      ],
+      "City": [
+        "Şehir"
+      ],
+      "Region": [
+        "Bölge"
+      ],
+      "Post office box": [
+        "Posta kutusu"
+      ],
+      "Extended address": [
+        "Açık adres"
+      ],
+      "Add to group": [
+        "Gruba ekle"
+      ],
+      "Encrypt emails": [
+        "Epostaları şifreler"
+      ],
+      "Sign emails": [
+        "Epostaları imzala"
+      ],
+      "Cryptographic scheme": [
+        "Şifreleme düzeni"
+      ],
+      "Public keys": [
+        "Genel anahtarlar"
+      ],
+      "Automatically save contacts": [
+        "Kişileri otomatik olarak kaydet"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
+      "Export contacts": [
+        "Kişileri dışa aktar"
       ],
       "Cancel": [
         "İptal et"
@@ -2057,69 +2120,6 @@
       ],
       "Enter the 6-digit code": [
         "6 haneli kodu girin"
-      ],
-      "Cash": [
-        "Nakit"
-      ],
-      "Card holder": [
-        "Kart Sahibi"
-      ],
-      "Expires": [
-        "Sona erme"
-      ],
-      "Payer": [
-        "Ödeyen"
-      ],
-      "Keyboard shortcuts": [
-        "Klavye kısayolları"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
-      ],
-      "Select how your composer opens by default.": [
-        "Oluşturucunuzun varsayılan olarak nasıl açılacağını seçin."
-      ],
-      "Add email address": [
-        "E-posta adresi ekle"
-      ],
-      "Email format": [
-        "Eposta biçimi"
-      ],
-      "Add image URL": [
-        "Resim URL’si ekle"
-      ],
-      "Upload picture": [
-        "Resim yükle"
-      ],
-      "Add to group": [
-        "Gruba ekle"
-      ],
-      "Encrypt emails": [
-        "Epostaları şifreler"
-      ],
-      "Sign emails": [
-        "Epostaları imzala"
-      ],
-      "Cryptographic scheme": [
-        "Şifreleme düzeni"
-      ],
-      "Public keys": [
-        "Genel anahtarlar"
-      ],
-      "Automatically save contacts": [
-        "Kişileri otomatik olarak kaydet"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
-      ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
-      "Enable Beta Access": [
-        "Beta Erişimini Etkinleştir"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2248,11 +2248,6 @@
         "Abone olunan takvimler"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Anahtar şifreleme için kullanılamaz"
-      ]
-    },
     "Placeholder": {
       "E.g., ": [
         "Örneğin, "
@@ -2293,14 +2288,11 @@
       "Gift code": [
         "Hediye kodu"
       ],
-      "Mailbox password": [
-        "Posta kutusu şifresi"
+      "Image URL": [
+        "Resim URL'si"
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
-      ],
-      "Image URL": [
-        "Resim URL'si"
       ],
       "Filter groups": [
         "Grupları filtrele"
@@ -2313,6 +2305,9 @@
       ],
       "Name": [
         "İsim"
+      ],
+      "Mailbox password": [
+        "Posta kutusu şifresi"
       ],
       "Add a calendar name": [
         "Takvim adı ekleyin"
@@ -2343,206 +2338,72 @@
         "${ minutes } dakika"
       ]
     },
-    "Tooltip": {
-      "Encrypted data with verified digital signature": [
-        "Doğrulanmış dijital imza ile şifrelenmiş veri"
+    "Hint": {
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna veya öneriler kutusunu kapatmak için Esc tuşuna basın."
       ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla adres / takma ad kullanın, örn. kullaniciadi2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "ProtonMail'de kendi alan adlarınız için e-postaları barındırın, örn. ali.yilmaz@ornek.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "E-posta göndermek için kullanıcıadı@pm.me kişisel asresinizi kullanın"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield cihazınızı korur ve reklamları, izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinmenizi hızlandırır."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım protokolleri için destek."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Nerede olursanız olun coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "İnternet trafiğinizi tek bir tıklama ile Tor ağı üzerinden yönlendirin."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek bir planla hem ProtonVPN hem de ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere erişin."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Hem ${ vpnAppName } hem de ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir tarifeyle erişin."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Kendi alan adlarınız için e-postaları ${ mailAppName } adresinde barındırın, ör. john.smith@ornek.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun, örn. kullaniciadi2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Yıllık faturalandırma döngüsü için uygulanan indirim"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "İki yıllık faturalandırma döngüsü için uygulanan indirim"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Bir hediye kodu satın aldıysanız veya destek ekibimizden bir tane aldıysanız, buraya girebilirsiniz."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Otomatik, mesaj oluşturucudaki formatın bu kullanıcıya göndermek için kullanıldığını gösterir. Düz metin, mesajın her zaman gönderim sırasında düz metne dönüştürüleceğini belirtir."
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-posta şifreleme, gönderilen iletilerinizin kimliğini doğrulamaya yardımcı olmak için e-posta imzasını zorunlu kılar"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasına yardımcı olur"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Bir kullanıcıyı imzalarken veya şifrelerken kullanılacak PGP şemasını seçin. PGP/Satır-içi'nin düz metin mesajlarını zorunlu tuttuğunu unutmayın"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Bu e-posta adresine uçtan uca şifreli e-postalar göndermeyi etkinleştirmek için bir genel anahtar yükleyin"
-      ],
-      "You do not have any contacts to export": [
-        "Dışa aktarılacak kişiniz yok"
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } önerisi bulundu, gezinmek için klavye kullanın.",
+        "${ items.length } önerisi bulundu, gezinmek için klavye kullanın."
       ]
     },
-    "Table header": {
-      "Name": [
-        "İsim"
-      ],
-      "Address": [
-        "Adres"
-      ],
-      "Action": [
-        "Eylem"
-      ],
-      "Fingerprint": [
-        "Parmak izi"
-      ],
-      "Created": [
-        "Oluşturuldu"
-      ],
-      "Expires": [
-        "Sona erme"
-      ],
-      "Type": [
-        "Tür"
-      ],
-      "Status": [
-        "Durum"
-      ],
-      "Actions": [
-        "İşlemler"
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Anahtar şifreleme için kullanılamaz"
       ]
     },
-    "MIME type": {
-      "Automatic": [
-        "Otomatik"
-      ],
-      "Plain text": [
-        "Düz metin"
+    "Select search results": {
+      "No results found": [
+        "Sonuç bulunamadı"
       ]
     },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Genel varsayılanı kullan (${ defaultValueText })"
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Zaman dilimlerini ara"
       ]
     },
-    "Key badge": {
-      "Primary": [
-        "Birincil"
-      ],
-      "Verification only": [
-        "Sadece doğrulama"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Güvenilir"
-      ],
-      "Revoked": [
-        "İptal edildi"
-      ],
-      "Expired": [
-        "Süresi geçmiş"
-      ]
-    },
-    "Warning": {
-      "This feature requires a paid Proton account": [
-        "Bu özellik ücretli bir Proton hesabı gerektirir"
-      ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Canlı sohbet yalnızca ücretli ProtonVPN tarife sahiplerinin kullanabildiği ayrıcalıklı özelliktir. Lütfen bunun yerine destek bileti alın."
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+    "Collapsible tooltip": {
+      "Open": [
         ""
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bu ödeme yöntemini seçerek hesabınızın hemen güncellenemeyeceğini lütfen unutmayın. Ödeme temizlendikten sonra hesabınızı güncelleyeceğiz."
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Bu kişi grubunu kalıcı olarak silmek istediğinizden emin misiniz?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
-        "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Bu kişiyi kalıcı olarak silmek istediğinizden emin misiniz?"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "${ count } kişiyi kalıcı olarak silmek istediğinizden emin misiniz?",
-        "${ count } kişiyi kalıcı olarak silmek istediğinizden emin misiniz?"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Şifrenizi hatırlamıyorsanız, anahtarınızı yeniden etkinleştirmek mümkün değildir. Bu uyarıyı kapatmanıza yardımcı olabiliriz, ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedersiniz."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Bu eylem geri döndürülemez. Devam etmek için lütfen boşluğa ${ boldDanger } kelimesini girin."
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Şifrelenmiş içeriğin şifresi çözülemedi."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Kişi ayrıntıları imzasının doğrulanması başarısız oldu."
-      ],
-      "The contact failed to load.": [
-        "Kişi yüklenemedi."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Birleştirilecek kişilerden bazılarında hatalar görüntüleniyor. Lütfen bunları ayrı ayrı inceleyin"
-      ],
-      "Contacts could not be merged": [
-        "Kişiler birleştirilemedi"
-      ],
-      "Are you sure you want to discard your import?": [
+      "Close": [
         ""
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Hoop, bir şeyler ters gitti"
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Yerel tarih ve saat ayarlarınız eşitlenmemiş gibi görünüyor."
+      "There was a problem connecting to Proton.": [
+        "Proton'a bağlanırken bir sorun oluştu."
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Lütfen bağlantınızı kontrol edin ya da ${ refresh }."
+      ],
+      "Error: ${ errorMessage }": [
+        "Hata: ${ errorMessage }"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Hatayı düzeltene kadar kendinizi hazırlayın."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Ayrıca sayfayı ${ refresh } veya daha sonra tekrar deneyin."
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton uygulamaları"
+      ],
+      "Go to ${ title }": [
+        "${ title } gidin"
+      ],
+      "Go to ${ vpnName }": [
+        "${ vpnName } uygulamasına git"
       ]
     },
     "Success": {
       "Email address copied to clipboard": [
         "E-posta adresi panoya kopyalandı"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefon numarası panoya kopyalandı"
-      ],
-      "Address copied to clipboard": [
-        "Adres panoya kopyalandı"
       ],
       "Bug reported": [
         "Hata bildirildi"
@@ -2550,24 +2411,11 @@
       "You have successfully unsubscribed": [
         "Aboneliğinizi başarıyla iptal ettiniz"
       ],
-      "Code sent to ${ methodTo }": [
-        "${ methodTo } kod gönder"
-      ],
-      "Verification successful": [
-        "Doğrulama başarılı"
-      ],
       "Keyboard shortcuts preferences updated": [
         "Klavye kısayol tercihleri güncellendi"
       ],
       "Preference saved": [
         "Tercih kaydedildi"
-      ],
-      "Preferences saved": [
-        "Tercihler kaydedildi"
-      ],
-      "Contact group deleted": [
-        "Kişi grubu silindi",
-        "Kişi grubu silindi"
       ],
       "Contact saved": [
         "Kişi kaydedildi"
@@ -2581,6 +2429,25 @@
       ],
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
+      ],
+      "Preferences saved": [
+        "Tercihler kaydedildi"
+      ],
+      "Contact group deleted": [
+        "Kişi grubu silindi",
+        "Kişi grubu silindi"
+      ],
+      "Phone number copied to clipboard": [
+        "Telefon numarası panoya kopyalandı"
+      ],
+      "Address copied to clipboard": [
+        "Adres panoya kopyalandı"
+      ],
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } kod gönder"
+      ],
+      "Verification successful": [
+        "Doğrulama başarılı"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Takvim eklendi. Eşlenmesi birkaç dakika sürebilir."
@@ -2670,64 +2537,6 @@
         "Tüm etkinlikler silindi"
       ]
     },
-    "Hint": {
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna veya öneriler kutusunu kapatmak için Esc tuşuna basın."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } önerisi bulundu, gezinmek için klavye kullanın.",
-        "${ items.length } önerisi bulundu, gezinmek için klavye kullanın."
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Sonuç bulunamadı"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Zaman dilimlerini ara"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Open": [
-        ""
-      ],
-      "Close": [
-        ""
-      ]
-    },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Hoop, bir şeyler ters gitti"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Proton'a bağlanırken bir sorun oluştu."
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "Lütfen bağlantınızı kontrol edin ya da ${ refresh }."
-      ],
-      "Error: ${ errorMessage }": [
-        "Hata: ${ errorMessage }"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Hatayı düzeltene kadar kendinizi hazırlayın."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Ayrıca sayfayı ${ refresh } veya daha sonra tekrar deneyin."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
-      ],
-      "Go to ${ title }": [
-        "${ title } gidin"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } uygulamasına git"
-      ]
-    },
     "Header": {
       "Get help": [
         "Yardım alın"
@@ -2747,14 +2556,24 @@
         "Ayarlar"
       ]
     },
-    "Enabled": {
+    "Early Access Enabled": {
       "On": [
-        "Aç"
+        ""
       ]
     },
-    "Disabled": {
+    "Early Access Disabled": {
       "Off": [
-        "Kapat"
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        ""
       ]
     },
     "Layout mode": {
@@ -2921,6 +2740,64 @@
         "Seç"
       ]
     },
+    "Warning": {
+      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+        "Canlı sohbet yalnızca ücretli ProtonVPN tarife sahiplerinin kullanabildiği ayrıcalıklı özelliktir. Lütfen bunun yerine destek bileti alın."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bu ödeme yöntemini seçerek hesabınızın hemen güncellenemeyeceğini lütfen unutmayın. Ödeme temizlendikten sonra hesabınızı güncelleyeceğiz."
+      ],
+      "Are you sure you want to permanently delete this contact?": [
+        "Bu kişiyi kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "${ count } kişiyi kalıcı olarak silmek istediğinizden emin misiniz?",
+        "${ count } kişiyi kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
+        "Şifrenizi hatırlamıyorsanız, anahtarınızı yeniden etkinleştirmek mümkün değildir. Bu uyarıyı kapatmanıza yardımcı olabiliriz, ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedersiniz."
+      ],
+      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
+        "Bu eylem geri döndürülemez. Devam etmek için lütfen boşluğa ${ boldDanger } kelimesini girin."
+      ],
+      "Are you sure you want to permanently delete this contact group?": [
+        "Bu kişi grubunu kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact group?": [
+        "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
+        "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "This feature requires a paid Proton account": [
+        "Bu özellik ücretli bir Proton hesabı gerektirir"
+      ],
+      "The decryption of the encrypted content failed.": [
+        "Şifrelenmiş içeriğin şifresi çözülemedi."
+      ],
+      "The verification of the contact details' signature failed.": [
+        "Kişi ayrıntıları imzasının doğrulanması başarısız oldu."
+      ],
+      "The contact failed to load.": [
+        "Kişi yüklenemedi."
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "Birleştirilecek kişilerden bazılarında hatalar görüntüleniyor. Lütfen bunları ayrı ayrı inceleyin"
+      ],
+      "Contacts could not be merged": [
+        "Kişiler birleştirilemedi"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Yerel tarih ve saat ayarlarınız eşitlenmemiş gibi görünüyor."
+      ]
+    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Ekran görüntüsü(leri) ekle"
@@ -3032,6 +2909,77 @@
       ],
       "Unlimited": [
         "Sınırsız"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Hesabınıza bağlı birden fazla adres / takma ad kullanın, örn. kullaniciadi2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "ProtonMail'de kendi alan adlarınız için e-postaları barındırın, örn. ali.yilmaz@ornek.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "E-posta göndermek için kullanıcıadı@pm.me kişisel asresinizi kullanın"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield cihazınızı korur ve reklamları, izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinmenizi hızlandırır."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "BitTorrent gibi dosya paylaşım protokolleri için destek."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Nerede olursanız olun coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "İnternet trafiğinizi tek bir tıklama ile Tor ağı üzerinden yönlendirin."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Tek bir planla hem ProtonVPN hem de ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere erişin."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Hem ${ vpnAppName } hem de ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir tarifeyle erişin."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Kendi alan adlarınız için e-postaları ${ mailAppName } adresinde barındırın, ör. john.smith@ornek.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun, örn. kullaniciadi2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Yıllık faturalandırma döngüsü için uygulanan indirim"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "İki yıllık faturalandırma döngüsü için uygulanan indirim"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Bir hediye kodu satın aldıysanız veya destek ekibimizden bir tane aldıysanız, buraya girebilirsiniz."
+      ],
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Otomatik, mesaj oluşturucudaki formatın bu kullanıcıya göndermek için kullanıldığını gösterir. Düz metin, mesajın her zaman gönderim sırasında düz metne dönüştürüleceğini belirtir."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Doğrulanmış dijital imza ile şifrelenmiş veri"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "E-posta şifreleme, gönderilen iletilerinizin kimliğini doğrulamaya yardımcı olmak için e-posta imzasını zorunlu kılar"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasına yardımcı olur"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Bir kullanıcıyı imzalarken veya şifrelerken kullanılacak PGP şemasını seçin. PGP/Satır-içi'nin düz metin mesajlarını zorunlu tuttuğunu unutmayın"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Bu e-posta adresine uçtan uca şifreli e-postalar göndermeyi etkinleştirmek için bir genel anahtar yükleyin"
+      ],
+      "You do not have any contacts to export": [
+        "Dışa aktarılacak kişiniz yok"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3362,28 +3310,6 @@
         "Ücretsiz"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Gecikmiş fatura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-posta"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "El ile"
-      ],
-      "No verification method available": [
-        "Kullanılabilir doğrulama yöntemi yok"
-      ]
-    },
     "Payment method option": {
       "New credit/debit card": [
         "Yeni kredi/banka kartı"
@@ -3393,6 +3319,19 @@
       ],
       "Bitcoin": [
         "Bitcoin"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Erişimi, herkese sunulmadan önce ProtonMail, Proton Calendar ve Proton Drive'ın beta sürümünü kullanmanıza olanak tanır. Bu, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişi olabileceğiniz anlamına gelir."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Sorunlarla karşılaşırsanız, Beta Erişimini her zaman devre dışı bırakabilirsiniz."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenecektir."
       ]
     },
     "Label to change density": {
@@ -3417,14 +3356,6 @@
       ],
       "Maximized": [
         "Genişletilmiş"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Kişi grubu güncellendi"
-      ],
-      "Contact group created": [
-        "Kişi grubu oluşturuldu"
       ]
     },
     "Label for contact group name": {
@@ -3489,6 +3420,76 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişileri şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu yöntemi kapatabilirsiniz."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "İsim"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Action": [
+        "Eylem"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Created": [
+        "Oluşturuldu"
+      ],
+      "Expires": [
+        "Sona erme"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Actions": [
+        "İşlemler"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Kişi grubu güncellendi"
+      ],
+      "Contact group created": [
+        "Kişi grubu oluşturuldu"
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Otomatik"
+      ],
+      "Plain text": [
+        "Düz metin"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Genel varsayılanı kullan (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Birincil"
+      ],
+      "Verification only": [
+        "Sadece doğrulama"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Güvenilir"
+      ],
+      "Revoked": [
+        "İptal edildi"
+      ],
+      "Expired": [
+        "Süresi geçmiş"
       ]
     },
     "TableHeader": {
@@ -3672,17 +3673,31 @@
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Erişimi, herkese sunulmadan önce ProtonMail, Proton Calendar ve Proton Drive'ın beta sürümünü kullanmanıza olanak tanır. Bu, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişi olabileceğiniz anlamına gelir."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Sorunlarla karşılaşırsanız, Beta Erişimini her zaman devre dışı bırakabilirsiniz."
+    "Select files": {
+      "Upload": [
+        "Karşıya Yükle"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenecektir."
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Gecikmiş fatura"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "El ile"
+      ],
+      "No verification method available": [
+        "Kullanılabilir doğrulama yöntemi yok"
       ]
     },
     "Loading info": {
@@ -3704,11 +3719,6 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Karşıya Yükle"
       ]
     },
     "Message display when a new app version is available": {
@@ -3876,17 +3886,11 @@
       ]
     },
     "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Bir etkinlik iptal edildi ${ formattedStart }"
-      ],
       "Invitation for an event on ${ formattedStart }": [
         "${ formattedStart } tarihinde bir etkinlik için davetiye"
       ],
       "Update for an event on ${ formattedStart }": [
         "${ formattedStart } tarihindeki bir etkinlik güncellendi"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik iptali"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "${ formattedStart } tarihinde başlayan bir etkinlik için davetiye"
@@ -3894,8 +3898,11 @@
       "Update for an event starting on ${ formattedStart }": [
         "${ formattedStart } tarihinde başlayan bir etkinlik güncellendi"
       ],
-      "Invitation: ${ eventTitle }": [
-        "Davetiye: ${ eventTitle }"
+      "Cancellation of an event on ${ formattedStart }": [
+        "Bir etkinlik iptal edildi ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "${ formattedStart } tarihinde başlayan bir etkinlik iptali"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4355,12 +4362,6 @@
         "GB"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
-      ]
-    },
     "Contact field label": {
       "Name": [
         "Ad"
@@ -4475,9 +4476,10 @@
         "Adres"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Şifre en az ${ length } karakter içermelidir",
+        "Şifre en az ${ length } karakter içermelidir"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4699,6 +4701,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "${ formattedFilename } dosyanız okunurken bir hata oluştu. Dosya doğru biçime sahip değil."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-posta adresi, gönderme anahtarında tanımlanan kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Message": {
