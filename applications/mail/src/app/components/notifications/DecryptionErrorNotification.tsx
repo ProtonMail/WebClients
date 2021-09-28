@@ -42,7 +42,7 @@ const DecryptionErrorNotification = ({ onDiscard, keyFound = false }: Props) => 
                 .jt`Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${reActivateKeyLink} in order to access your messages. ${learnMoreLink}`;
         }
 
-        return c('Error').jt`Your emails cannot be decrypted due to a recent password reset. ${learnMoreLink}`;
+        return c('Error').jt`Your emails cannot be decrypted. This may be due to a password reset. ${learnMoreLink}`;
     };
 
     return (
