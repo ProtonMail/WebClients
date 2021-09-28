@@ -5,8 +5,7 @@ import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Alert, ConfirmModal, ErrorButton, Href } from '../../../components';
-import { useApi, useEventManager, useFeature, useModals, useNotifications } from '../../../hooks';
-import { FeatureCode } from '../../features';
+import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import useSubscribedCalendars from '../../../hooks/useSubscribedCalendars';
 import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
@@ -17,15 +16,15 @@ interface Props {
     activeAddresses: Address[];
     calendars: Calendar[];
     user: UserModel;
+    unavailable?: boolean;
 }
-const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: Props) => {
+const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user, unavailable }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [loadingMap, setLoadingMap] = useState({});
     const { subscribedCalendars, loading } = useSubscribedCalendars(calendars);
-    const featureEnabled = !!useFeature(FeatureCode.CalendarSubscriptionBeta)?.feature?.Value;
 
     const handleCreate = () => {
         createModal(<SubscribeCalendarModal />);
@@ -79,7 +78,7 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
             loading={loading}
             loadingMap={loadingMap}
             canAdd={canAddCalendar}
-            isFeatureUnavailable={!featureEnabled}
+            isFeatureUnavailable={unavailable}
             add={c('Action').t`Subscribe to calendar`}
             calendarLimitReachedText={c('Calendar limit warning').ngettext(
                 msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
