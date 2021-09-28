@@ -48,7 +48,7 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const [isBlurred] = useState(false);
 
-    const features = useFeatures([FeatureCode.CalendarEmailNotification, FeatureCode.CalendarSubscriptionBeta]);
+    const features = useFeatures([FeatureCode.CalendarEmailNotification, FeatureCode.CalendarSubscription]);
     const loadingFeatures = features.some(({ loading }) => loading);
 
     useEffect(() => {

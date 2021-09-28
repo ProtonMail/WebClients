@@ -14,6 +14,7 @@ export { default as useBlackFridayPeriod } from './useBlackFridayPeriod';
 export { default as useCache } from './useCache';
 export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as useCalendars, useGetCalendars } from './useCalendars';
+export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFeature';
 export * from './useCalendarUserSettings';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
