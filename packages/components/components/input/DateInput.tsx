@@ -38,7 +38,6 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     preventValueReset?: boolean;
     fromFormatter?: (value: string, locale: Locale) => Date;
     toFormatter?: (value: Date, locale: Locale) => string;
-    disableToday?: boolean;
 }
 const DateInput = ({
     value,
@@ -55,7 +54,6 @@ const DateInput = ({
     preventValueReset = false,
     fromFormatter = fromFormatted,
     toFormatter = toFormatted,
-    disableToday,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -222,7 +220,6 @@ const DateInput = ({
                     weekStartsOn={weekStartsOn}
                     fixedSize
                     hasToday
-                    disableToday={disableToday}
                     preventLeaveFocus
                 />
             </Dropdown>
