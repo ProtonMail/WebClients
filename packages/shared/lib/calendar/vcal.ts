@@ -333,19 +333,24 @@ export const reformatVcalEnclosing = (vcal = '') => {
  * Naively try to reformat badly formatted line breaks in a vcalendar string
  */
 const reformatLineBreaks = (vcal = '') => {
-    const crlf = '\r\n';
-    const lines = vcal.includes(crlf) ? vcal.split(crlf) : vcal.split('\n');
+    // try to guess the line separator of the ics (some providers use '\n' instead of the RFC-compliant '\r\n')
+    const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
+    const lines = vcal.split(separator);
     return lines.reduce((acc, line) => {
         // extract the vcal field in this line through a regex
-        const fieldMatch = line.match(/(\w+-?\w*)(?::|;)/);
+        const fieldMatch = line.match(/^(\w+-?\w*)(?::|;)/);
         if (!fieldMatch) {
-            return `${acc}\\n${line}`;
+            // if not a field line, it should be folded
+            return `${acc}${separator} ${line}`;
         }
+        // make sure we did not get a false positive for the field line
         const field = fieldMatch[1].toLowerCase();
         if (PROPERTIES.has(field) || field.startsWith('x-') || ['begin', 'end'].includes(field)) {
-            return acc ? `${acc}\r\n${line}` : line;
+            // field lines should not be folded
+            return acc ? `${acc}${separator}${line}` : line;
         }
-        return `${acc}\\n${line}`;
+        // fall back to folding
+        return `${acc}${separator} ${line}`;
     }, '');
 };
 
