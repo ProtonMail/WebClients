@@ -1,9 +1,7 @@
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_FLAGS,
-    ICAL_ATTENDEE_STATUS,
     ICAL_EXTENSIONS,
     ICAL_METHOD,
     ICAL_METHODS_ATTENDEE,
@@ -36,7 +34,7 @@ import {
     getSequence,
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
-import { APPS, SECOND } from '@proton/shared/lib/constants';
+import { SECOND } from '@proton/shared/lib/constants';
 import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -69,11 +67,8 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { c } from 'ttag';
 import { MessageExtendedWithData } from '../../models/message';
 import { FetchAllEventsByUID } from './inviteApi';
-
-const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 export enum EVENT_TIME_STATUS {
     PAST,
@@ -626,151 +621,6 @@ export const getSupportedEventInvitation = async ({
             method: supportedMethod,
         });
     }
-};
-
-export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
-    const {
-        isOrganizerMode,
-        isImport,
-        hasMultipleVevents,
-        hideLink,
-        isPartyCrasher,
-        isOutdated,
-        isAddressActive,
-        calendarData,
-        invitationIcs: { method, attendee: attendeeIcs },
-        invitationApi,
-        hasNoCalendars,
-        canCreateCalendar,
-        mustReactivateCalendars,
-        hasDecryptionError,
-    } = model;
-
-    if (hideLink) {
-        return {};
-    }
-
-    const hasAlsoReplied =
-        attendeeIcs?.partstat &&
-        [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE, ICAL_ATTENDEE_STATUS.DECLINED].includes(
-            attendeeIcs?.partstat
-        );
-    const canBeAdded = isImport;
-    const canBeAnswered =
-        !isOrganizerMode && method === ICAL_METHOD.REQUEST && !isOutdated && isAddressActive && !isImport;
-    const canBeManaged =
-        isOrganizerMode &&
-        (method === ICAL_METHOD.REPLY || (method === ICAL_METHOD.COUNTER && hasAlsoReplied)) &&
-        !isImport;
-    const canBeSeenUpdated =
-        [ICAL_METHOD.CANCEL, ICAL_METHOD.COUNTER, ICAL_METHOD.REFRESH].includes(method) ||
-        (!isOrganizerMode && method === ICAL_METHOD.REQUEST && isOutdated);
-
-    const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !isPartyCrasher;
-    // the calendar needs a user action to be active
-    if (safeCalendarNeedsUserAction || mustReactivateCalendars) {
-        if (isImport) {
-            return {
-                to: '',
-                text: c('Link').t`You need to activate your calendar keys to add this event`,
-            };
-        }
-        if (canBeManaged) {
-            return {
-                to: '',
-                text: c('Link').t`You need to activate your calendar keys to manage this invitation`,
-            };
-        }
-        if (canBeAnswered) {
-            return {
-                to: '',
-                text: c('Link').t`You need to activate your calendar keys to answer this invitation`,
-            };
-        }
-        if (canBeSeenUpdated && invitationApi) {
-            const text = isOrganizerMode
-                ? c('Link').t`You need to activate your calendar keys to see the updated event`
-                : c('Link').t`You need to activate your calendar keys to see the updated invitation`;
-            return { to: '', text };
-        }
-        return {};
-    }
-
-    if (isImport && hasMultipleVevents) {
-        return {
-            to: 'calendar/calendars#import',
-            toApp: APPS.PROTONACCOUNT,
-            text: c('Link')
-                .t`This ICS file contains more than one event. Please download it and import the events in ${calendarAppName}`,
-        };
-    }
-
-    // the invitation is unanswered
-    if (!invitationApi) {
-        if (hasDecryptionError) {
-            // the event exists in the db but couldn't be decrypted
-            const to = `/mail/encryption-keys#addresses`;
-            const toApp = APPS.PROTONACCOUNT;
-
-            if (canBeManaged) {
-                return {
-                    to,
-                    toApp,
-                    text: c('Link').t`You need to reactivate your keys to manage this invitation`,
-                };
-            }
-            if (canBeSeenUpdated) {
-                const text = isOrganizerMode
-                    ? c('Link').t`You need to reactivate your keys to see the updated event`
-                    : c('Link').t`You need to reactivate your keys to see the updated invitation`;
-                return { to, toApp, text };
-            }
-        }
-        if (hasNoCalendars && canCreateCalendar && !isPartyCrasher) {
-            if (canBeAdded) {
-                return {
-                    to: '',
-                    text: c('Link').t`Create a new calendar to add this event`,
-                };
-            }
-            if (canBeAnswered) {
-                return {
-                    to: '',
-                    text: c('Link').t`Create a new calendar to answer this invitation`,
-                };
-            }
-            if (canBeManaged) {
-                return {
-                    to: '',
-                    text: c('Link').t`Create a new calendar to manage your invitations`,
-                };
-            }
-        }
-        return {};
-    }
-
-    // the invitation has been answered
-    const calendarID = calendarData?.calendar.ID || '';
-    const eventID = invitationApi?.calendarEvent.ID;
-    const recurrenceIDProperty = invitationApi?.vevent['recurrence-id'];
-    const recurrenceID = recurrenceIDProperty ? getUnixTime(propertyToUTCDate(recurrenceIDProperty)) : undefined;
-    const params = new URLSearchParams();
-    params.set('Action', 'VIEW');
-    params.set('EventID', eventID);
-    params.set('CalendarID', calendarID);
-    if (recurrenceID) {
-        params.set('RecurrenceID', `${recurrenceID}`);
-    }
-    const linkTo = calendarID && eventID ? `/event?${params.toString()}` : undefined;
-    if (!linkTo) {
-        return {};
-    }
-    return {
-        to: linkTo,
-        text: isOutdated
-            ? c('Link').t`Open updated event in ${calendarAppName}`
-            : c('Link').t`Open in ${calendarAppName}`,
-    };
 };
 
 export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {

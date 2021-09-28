@@ -1,11 +1,11 @@
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { Dispatch, SetStateAction } from 'react';
-import { getCalendarEventLink, getDoNotDisplayButtons, InvitationModel } from '../../../../helpers/calendar/invite';
+import { getDoNotDisplayButtons, InvitationModel } from '../../../../helpers/calendar/invite';
+import { getCalendarEventLink } from '../../../../helpers/calendar/inviteLink';
 import { MessageExtended } from '../../../../models/message';
 import ExtraEventAlert from './ExtraEventAlert';
 import ExtraEventAttendeeButtons from './ExtraEventAttendeeButtons';
 import ExtraEventImportButton from './ExtraEventImportButton';
-import ExtraEventLink from './ExtraEventLink';
 import ExtraEventOrganizerButtons from './ExtraEventOrganizerButtons';
 
 interface Props {
@@ -13,6 +13,7 @@ interface Props {
     setModel: Dispatch<SetStateAction<InvitationModel>>;
     message: MessageExtended;
 }
+
 const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const { isImport, isOrganizerMode } = model;
     const inviteButtons = isOrganizerMode ? (
@@ -23,12 +24,12 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const importButton = <ExtraEventImportButton model={model} setModel={setModel} />;
     const buttons = isImport ? importButton : inviteButtons;
     const displayButtons = getDoNotDisplayButtons(model) ? null : buttons;
-    const { to, toApp, text } = getCalendarEventLink(model);
+    const link = getCalendarEventLink(model);
 
     return (
         <div className="mb0-5">
             <ExtraEventAlert model={model} />
-            <ExtraEventLink to={to} text={text} toApp={toApp} />
+            {link && <div className="mb0-5">{link}</div>}
             {displayButtons}
         </div>
     );
