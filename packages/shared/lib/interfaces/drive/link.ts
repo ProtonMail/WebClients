@@ -101,11 +101,11 @@ export interface MoveLink {
 }
 
 export type DriveSectionSortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
-export type SharedURLsSectionSortKeys =
+export type SharedLinksSectionSortKeys =
     | keyof Pick<DriveLink, 'Name'>
     | keyof Pick<SharedUrlInfo, 'CreateTime' | 'ExpireTime'>;
 
-export type AllSortKeys = DriveSectionSortKeys | SharedURLsSectionSortKeys;
+export type AllSortKeys = DriveSectionSortKeys | SharedLinksSectionSortKeys;
 
 export type SortParams<T extends AllSortKeys = AllSortKeys> = {
     sortField: T;

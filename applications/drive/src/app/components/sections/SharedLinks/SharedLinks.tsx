@@ -11,7 +11,8 @@ type Props = {
 };
 
 const SharedLinks = ({ shareId }: Props) => {
-    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useSharedLinksContent();
+    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls, sortParams, setSorting } =
+        useSharedLinksContent();
 
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
         fileBrowserControls;
@@ -33,6 +34,8 @@ const SharedLinks = ({ shareId }: Props) => {
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
+            sortParams={sortParams}
+            setSorting={setSorting}
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
