@@ -1,7 +1,7 @@
 import { isMobile } from '../helpers/browser';
 import { SORT_DIRECTION } from '../constants';
-import { DriveSectionSortKeys, SortParams } from '../interfaces/drive/link';
 import { LayoutSetting, SortSetting, UserSettings } from '../interfaces/drive/userSettings';
+import { DriveSectionSortKeys, SharedLinksSectionSortKeys, SortParams } from '../interfaces/drive/link';
 
 export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
@@ -28,6 +28,10 @@ export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER = SORT_DIRECTION.DESC;
 export const DEFAULT_SORT_PARAMS_DRIVE: SortParams<DriveSectionSortKeys> = {
     sortField: DEFAULT_SORT_FIELD,
+    sortOrder: DEFAULT_SORT_ORDER,
+};
+export const DEFAULT_SORT_PARAMS_SHARED_LINKS: SortParams<SharedLinksSectionSortKeys> = {
+    sortField: 'CreateTime',
     sortOrder: DEFAULT_SORT_ORDER,
 };
 export const DEFAULT_USER_SETTINGS: UserSettings = {

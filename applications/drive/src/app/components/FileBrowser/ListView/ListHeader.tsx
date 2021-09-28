@@ -107,13 +107,25 @@ const ListHeader = <T extends AllSortKeys>({
                     </TableHeaderCell>
                 )}
                 {columns.includes('share_created') && (
-                    <TableHeaderCell className="w15">{c('TableHeader').t`Created`}</TableHeaderCell>
+                    <TableHeaderCell
+                        className="w15"
+                        direction={getSortDirectionForKey('CreateTime')}
+                        onSort={canSort(() => handleSort('CreateTime'))}
+                    >
+                        {c('TableHeader').t`Created`}
+                    </TableHeaderCell>
                 )}
                 {columns.includes('share_num_access') && (
                     <TableHeaderCell className="w15">{c('TableHeader').t`# of accesses`}</TableHeaderCell>
                 )}
                 {columns.includes('share_expires') && (
-                    <TableHeaderCell className="w20">{c('TableHeader').t`Expires`}</TableHeaderCell>
+                    <TableHeaderCell
+                        className="w20"
+                        direction={getSortDirectionForKey('ExpireTime')}
+                        onSort={canSort(() => handleSort('ExpireTime'))}
+                    >
+                        {c('TableHeader').t`Expires`}
+                    </TableHeaderCell>
                 )}
             </TableRowSticky>
         </thead>
