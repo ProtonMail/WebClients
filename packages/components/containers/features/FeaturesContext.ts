@@ -50,6 +50,7 @@ export enum FeatureCode {
     CalendarEmailNotification = 'CalendarEmailNotification',
     Mnemonic = 'Mnemonic',
     SpyTrackerProtection = 'SpyTrackerProtection',
+    SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
 }
 
 export interface FeaturesContextValue {

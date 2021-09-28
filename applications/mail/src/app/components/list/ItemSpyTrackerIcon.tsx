@@ -1,5 +1,16 @@
+import { useRef } from 'react';
 import { c, msgid } from 'ttag';
-import { classnames, Href, Icon, SettingsLink, Tooltip, useMailSettings } from '@proton/components';
+import {
+    classnames,
+    FeatureCode,
+    Href,
+    Icon,
+    SettingsLink,
+    Spotlight,
+    Tooltip,
+    useMailSettings,
+    useSpotlightOnFeature,
+} from '@proton/components';
 
 import { APPS, IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import * as React from 'react';
@@ -16,6 +27,7 @@ interface Props {
 
 const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     const [mailSettings] = useMailSettings();
+    const anchorRef = useRef(null);
 
     const getNumberOfTrackers = () => {
         return (
@@ -28,6 +40,12 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     const hasProtection = (mailSettings?.ImageProxy ? mailSettings.ImageProxy : 0) > IMAGE_PROXY_FLAGS.NONE;
     const hasShowImage = hasBit(mailSettings?.ShowImages ? mailSettings.ShowImages : 0, SHOW_IMAGES.REMOTE);
     const numberOfTrackers = getNumberOfTrackers();
+
+    // Display the spotlight only once, if trackers have been found inside the email
+    const { show: showSpotlight, onDisplayed } = useSpotlightOnFeature(
+        FeatureCode.SpotlightSpyTrackerProtection,
+        numberOfTrackers > 0
+    );
 
     /*
      * If email protection is OFF and we do not load the image automatically, the user is aware about the need of protection.
@@ -84,26 +102,43 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     );
 
     return (
-        <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
-            <div className={classnames(['flex', className])}>
-                {needsMoreProtection ? (
-                    <SettingsLink
-                        path="/email-privacy"
-                        app={APPS.PROTONMAIL}
-                        className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                    >
-                        {icon}
-                    </SettingsLink>
-                ) : (
-                    <Href
-                        url={emailTrackerProtectionURL}
-                        className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                    >
-                        {icon}
+        <Spotlight
+            originalPlacement="top-right"
+            show={showSpotlight}
+            onDisplayed={onDisplayed}
+            anchorRef={anchorRef}
+            content={
+                <>
+                    <div className="text-bold text-lg mauto">{c('Spotlight').t`Tracker protection`}</div>
+                    {c('Spotlight').t`Proton blocked email trackers in this message in order to protect your privacy`}
+                    <br />
+                    <Href url="https://protonmail.com/support/email-tracker-protection" title="Tracker protection">
+                        {c('Info').t`Learn more`}
                     </Href>
-                )}
-            </div>
-        </Tooltip>
+                </>
+            }
+        >
+            <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
+                <div className={classnames(['flex', className])} ref={anchorRef}>
+                    {needsMoreProtection ? (
+                        <SettingsLink
+                            path="/email-privacy"
+                            app={APPS.PROTONMAIL}
+                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                        >
+                            {icon}
+                        </SettingsLink>
+                    ) : (
+                        <Href
+                            url={emailTrackerProtectionURL}
+                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                        >
+                            {icon}
+                        </Href>
+                    )}
+                </div>
+            </Tooltip>
+        </Spotlight>
     );
 };
 
