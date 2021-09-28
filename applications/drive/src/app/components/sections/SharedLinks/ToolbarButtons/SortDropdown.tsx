@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useDriveContent } from '../DriveContentProvider';
 import SortDropdown from '../../ToolbarButtons/SortDropdown';
-import { DriveSectionSortKeys, SortParams } from '../../../../interfaces/link';
+import { useSharedLinksContent } from '../SharedLinksContentProvider';
+import { SharedLinksSectionSortKeys, SortParams } from '../../../../interfaces/link';
 
 const menuItems = (): {
     name: string;
     icon: string;
-    sortParams: SortParams<DriveSectionSortKeys>;
+    sortParams: SortParams<SharedLinksSectionSortKeys>;
 }[] => [
     {
         name: c('Action').t`Name: A to Z`,
@@ -28,59 +28,43 @@ const menuItems = (): {
         },
     },
     {
-        name: c('Action').t`Modified date: new to old`,
+        name: c('Action').t`Created date: new to old`,
         icon: 'clock-rotate-right',
         sortParams: {
-            sortField: 'ModifyTime',
+            sortField: 'CreateTime',
             sortOrder: SORT_DIRECTION.DESC,
         },
     },
     {
-        name: c('Action').t`Modified date: old to new`,
+        name: c('Action').t`Created date: old to new`,
         icon: 'clock-rotate-left',
         sortParams: {
-            sortField: 'ModifyTime',
+            sortField: 'CreateTime',
             sortOrder: SORT_DIRECTION.ASC,
         },
     },
     {
-        name: c('Action').t`Type: A to Z`,
-        icon: 'arrow-up',
+        name: c('Action').t`Expires: new to old`,
+        icon: 'clock-rotate-right',
         sortParams: {
-            sortField: 'MIMEType',
-            sortOrder: SORT_DIRECTION.ASC,
-        },
-    },
-    {
-        name: c('Action').t`Type: Z to A`,
-        icon: 'arrow-down',
-        sortParams: {
-            sortField: 'MIMEType',
+            sortField: 'ExpireTime',
             sortOrder: SORT_DIRECTION.DESC,
         },
     },
     {
-        name: c('Action').t`Size: small to large`,
-        icon: 'arrow-down-short-wide',
+        name: c('Action').t`Expires: old to new`,
+        icon: 'clock-rotate-left',
         sortParams: {
-            sortField: 'Size',
+            sortField: 'ExpireTime',
             sortOrder: SORT_DIRECTION.ASC,
-        },
-    },
-    {
-        name: c('Action').t`Size: large to small`,
-        icon: 'arrow-down-wide-short',
-        sortParams: {
-            sortField: 'Size',
-            sortOrder: SORT_DIRECTION.DESC,
         },
     },
 ];
 
-const SortDropdownDrive = () => {
-    const { sortParams, setSorting } = useDriveContent();
+const SortDropdownLinks = () => {
+    const { sortParams, setSorting } = useSharedLinksContent();
 
     return <SortDropdown menuItems={menuItems()} sortParams={sortParams} setSorting={setSorting} />;
 };
 
-export default SortDropdownDrive;
+export default SortDropdownLinks;

@@ -9,6 +9,22 @@ const getNameSortConfig = (direction = SORT_DIRECTION.ASC) => ({
     compare: (a: LinkMeta['Name'], b: LinkMeta['Name']) => a.localeCompare(b),
 });
 
+const getShareLinkCreatedSortConfig = (direction = SORT_DIRECTION.ASC) => ({
+    key: 'ShareUrls' as DriveSectionSortKeys,
+    direction,
+    compare: (a: LinkMeta['ShareUrls'], b: LinkMeta['ShareUrls']) => {
+        return a[0].CreateTime - b[0].CreateTime;
+    },
+});
+
+const getShareLinkExpiresSortConfig = (direction = SORT_DIRECTION.ASC) => ({
+    key: 'ShareUrls' as DriveSectionSortKeys,
+    direction,
+    compare: (a: LinkMeta['ShareUrls'], b: LinkMeta['ShareUrls']) => {
+        return (a[0].ExpireTime || Infinity) - (b[0].ExpireTime || Infinity);
+    },
+});
+
 const getConfig = (sortField: AllSortKeys, direction: SORT_DIRECTION) => {
     const configs: {
         [key in AllSortKeys]: SortConfig<LinkMeta>[];
@@ -17,8 +33,8 @@ const getConfig = (sortField: AllSortKeys, direction: SORT_DIRECTION) => {
         MIMEType: [{ key: 'MIMEType', direction }, { key: 'Type', direction }, getNameSortConfig()],
         ModifyTime: [{ key: 'ModifyTime', direction }, getNameSortConfig()],
         Size: [{ key: 'Type', direction }, { key: 'Size', direction }, getNameSortConfig()],
-        CreateTime: [{ key: 'Type', direction }, { key: 'Size', direction }, getNameSortConfig()],
-        ExpireTime: [{ key: 'Type', direction }, { key: 'Size', direction }, getNameSortConfig()],
+        CreateTime: [getShareLinkCreatedSortConfig(direction), { key: 'Type', direction }, getNameSortConfig()],
+        ExpireTime: [getShareLinkExpiresSortConfig(direction), { key: 'Type', direction }, getNameSortConfig()],
     };
     return configs[sortField];
 };

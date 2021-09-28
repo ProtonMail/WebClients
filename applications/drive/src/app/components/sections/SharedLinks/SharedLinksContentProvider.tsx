@@ -1,14 +1,19 @@
 import { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 import * as React from 'react';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { SharedLinksSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+import { DEFAULT_SORT_PARAMS_SHARED_LINKS } from '@proton/shared/lib/drive/constants';
 
 import useSelection from '../../../hooks/util/useSelection';
 import useSharing from '../../../hooks/drive/useSharing';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { mapLinksToChildren } from '../helpers';
+import useDriveSorting from '../../../hooks/drive/useDriveSorting';
 
 interface SharedLinksContentProviderState {
     contents: FileBrowserItem[];
+    sortParams: SortParams<SharedLinksSectionSortKeys>;
+    setSorting: (sortParams: SortParams<SharedLinksSectionSortKeys>) => void;
     loadNextPage: () => void;
     fileBrowserControls: Omit<ReturnType<typeof useSelection>, 'selectedItems'> & {
         selectedItems: FileBrowserItem[];
@@ -26,12 +31,24 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
+    const [sorting, setSorting] = useState(DEFAULT_SORT_PARAMS_SHARED_LINKS);
 
-    const sharedLinks = cache.get
-        .sharedLinkMetas(shareId)
-        .filter((meta) => !cache.get.areAncestorsTrashed(shareId, meta));
+    const {
+        sortParams,
+        sortedList,
+        setSorting: handleSortingChange,
+    } = useDriveSorting(
+        () => {
+            return cache.get.sharedLinkMetas(shareId).filter((meta) => !cache.get.areAncestorsTrashed(shareId, meta));
+        },
+        sorting,
+        async (sortParams: SortParams<SharedLinksSectionSortKeys>) => {
+            setSorting(sortParams);
+        }
+    );
+
+    const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.sharedLinksComplete(shareId);
-    const contents = mapLinksToChildren(sharedLinks, (linkId) => cache.get.isLinkLocked(shareId, linkId));
 
     const selectionControls = useSelection(
         contents.map((data) => ({
@@ -92,7 +109,7 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
             setLoading(false);
         }
 
-        if (!initialized || !sharedLinks.length) {
+        if (!initialized || !sortedList.length) {
             loadNextPage().catch(console.error);
         }
 
@@ -108,6 +125,8 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
                 loading,
                 fileBrowserControls,
                 loadNextPage,
+                setSorting: handleSortingChange,
+                sortParams,
                 contents,
                 complete,
                 initialized,
