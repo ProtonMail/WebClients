@@ -3751,7 +3751,7 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     pkijs: ^2.1.90
-    pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.4.3"
+    pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.5.0"
     ts-loader: ^9.2.5
     typescript: ^4.4.3
     webpack: ^5.51.2
@@ -3858,7 +3858,7 @@ __metadata:
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.0.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.4.3"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.5.0"
     prettier: ^2.0.5
     puppeteer: ^10.1.0
     push.js: ^1.0.12
@@ -3889,7 +3889,7 @@ __metadata:
     eslint-plugin-import: ^2.16.0
     esm: ^3.2.4
     mocha: ^5.2.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.4.3"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.5.0"
     prettier: ^2.3.2
     require-inject: ^1.4.4
   peerDependencies:
@@ -6208,7 +6208,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/openpgp@npm:^4.4.12":
+"@types/openpgp@npm:^4.4.18":
   version: 4.4.18
   resolution: "@types/openpgp@npm:4.4.18"
   dependencies:
@@ -22965,14 +22965,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.4.3, pmcrypto@github:ProtonMail/pmcrypto.git#semver:~6.4.3":
-  version: 6.4.3
-  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=ecc5ef7c59ff7a008067a3d45eb59e36f820c220"
+"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.5.0, pmcrypto@github:ProtonMail/pmcrypto.git#semver:~6.5.0":
+  version: 6.5.0
+  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=37bb55e5f67ef0756c15f7740139b777a02da3cb"
   dependencies:
-    "@types/openpgp": ^4.4.12
+    "@types/openpgp": ^4.4.18
     esm: ^3.0.84
     openpgp: ^4.10.8
-  checksum: f82472f50477d80d0063b07bc0587f0db863bfcfab8428d11d5ad9910d40361ad921279692b679f3600faa48e138d5e565bef78ace2dc857e3d4804027ca4b76
+  checksum: ea1c8cb8866bcd262ea26bc34420ff9336f6124ea47013cbca785551946092ce6099742dafd2fe474a9e7bf5e59d95edf8b75a5b691d61d339b2a08067458867
   languageName: node
   linkType: hard
 
