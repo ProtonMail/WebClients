@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
-import { addMonths, endOfMonth, startOfMonth, format, isSameMonth } from 'date-fns';
+import { addMonths, endOfMonth, startOfMonth, isSameMonth } from 'date-fns';
 import { c } from 'ttag';
 
 import { useElementRect } from '../../hooks';
@@ -36,7 +36,6 @@ export interface Props {
     numberOfDays?: number;
     fixedSize?: boolean;
     preventLeaveFocus?: boolean;
-    disableToday?: boolean;
 }
 
 const MiniCalendar = ({
@@ -74,7 +73,6 @@ const MiniCalendar = ({
     displayWeekNumbers = false,
     fixedSize = false,
     preventLeaveFocus = false,
-    disableToday = false,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const cellRef = useRef<HTMLLIElement>(null);
@@ -139,7 +137,8 @@ const MiniCalendar = ({
                             color="weak"
                             size="small"
                             onClick={() => onSelectDate?.(now)}
-                            disabled={disableToday}
+                            disabled={(min && +now < +min) || (max && +now > +max)}
+                            data-testid="minicalendar:today"
                         >
                             <Icon name="calendar-day" className="minicalendar-icon" alt={todayTitle} />
                         </Button>
@@ -149,12 +148,26 @@ const MiniCalendar = ({
                 {hasCursors ? (
                     <>
                         <Tooltip title={prevMonth}>
-                            <Button icon shape="ghost" className="on-rtl-mirror" color="weak" size="small" onClick={() => handleSwitchMonth(-1)}>
+                            <Button
+                                icon
+                                shape="ghost"
+                                className="on-rtl-mirror"
+                                color="weak"
+                                size="small"
+                                onClick={() => handleSwitchMonth(-1)}
+                            >
                                 <Icon name="angle-down" className="rotateZ-90 minicalendar-icon" alt={prevMonth} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={nextMonth}>
-                            <Button icon shape="ghost" className="on-rtl-mirror" color="weak" size="small" onClick={() => handleSwitchMonth(1)}>
+                            <Button
+                                icon
+                                shape="ghost"
+                                className="on-rtl-mirror"
+                                color="weak"
+                                size="small"
+                                onClick={() => handleSwitchMonth(1)}
+                            >
                                 <Icon name="angle-down" className="rotateZ-270 minicalendar-icon" alt={nextMonth} />
                             </Button>
                         </Tooltip>

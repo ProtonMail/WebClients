@@ -59,7 +59,6 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
     const startDateTime = useMemo(() => getDateTime(start), [start]);
     const endDateTime = useMemo(() => getDateTime(end), [end]);
-    const isTodayBeforeStart = useMemo(() => startDateTime.getDate() > new Date().getDate(), [startDateTime]);
 
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Time of the event`}>
@@ -120,7 +119,6 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                 min={minEndDate}
                                 max={MAXIMUM_DATE}
                                 title={c('Title').t`Select event end date`}
-                                disableToday={isTodayBeforeStart}
                             />
                         </div>
 

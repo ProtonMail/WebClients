@@ -7,7 +7,6 @@ import { getAllDayCheck } from '../eventForm/stateActions';
 import useDateTimeFormHandlers from '../hooks/useDateTimeFormHandlers';
 import IconRow from '../IconRow';
 import AllDayCheckbox from '../inputs/AllDayCheckbox';
-import { getDateTime } from '../eventForm/time';
 
 interface Props {
     model: EventModel;
@@ -70,7 +69,6 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                             min={minEndDate}
                             max={MAXIMUM_DATE}
                             title={c('Title').t`Select event end date`}
-                            disableToday={isTodayBeforeStart}
                         />
                     </div>
                     {!model.isAllDay && (
