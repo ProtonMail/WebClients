@@ -19,7 +19,6 @@ import {
     useLabels,
     useFolders,
     useMailSettings,
-    Input,
     useToggle,
     useUser,
     useModals,
@@ -64,6 +63,7 @@ import { estimateIndexingTime } from '../../helpers/encryptedSearch/esBuild';
 
 import './AdvancedSearchDropdown.scss';
 import { useClickMailContent } from '../../hooks/useClickMailContent';
+import SearchField from './SearchField';
 
 interface SearchModel {
     keyword: string;
@@ -508,31 +508,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     onSubmit={handleSubmit}
                     onReset={handleReset}
                 >
-                    <div className="mb1-5 relative">
-                        <Label
-                            className="advanced-search-label p0"
-                            htmlFor="search-keyword"
-                            title={c('Label').t`Keyword`}
-                        >
-                            <Button
-                                className="searchbox-search-button"
-                                onClick={handleSubmit}
-                                shape="ghost"
-                                color="weak"
-                                icon
-                            >
-                                <Icon name="magnifying-glass" />
-                            </Button>
-                            <Input
-                                id="search-keyword"
-                                className="pl3"
-                                placeholder={c('Placeholder').t`Search Messages`}
-                                value={model.keyword}
-                                autoFocus
-                                onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
-                            />
-                        </Label>
-                    </div>
+                    {!showEncryptedSearch && (
+                        <SearchField
+                            value={model.keyword}
+                            onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
+                            onSubmit={handleSubmit}
+                            showEncryptedSearch={showEncryptedSearch}
+                        />
+                    )}
                     {showEncryptedSearch && (
                         <div className="pt1-5">
                             <div className="flex flex-column">
@@ -574,6 +557,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     )}
                     {showAdvancedSearch && (
                         <>
+                            {showEncryptedSearch && (
+                                <SearchField
+                                    value={model.keyword}
+                                    onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
+                                    onSubmit={handleSubmit}
+                                    showEncryptedSearch={showEncryptedSearch}
+                                />
+                            )}
                             <div className="mb0-5">
                                 <Label className="advanced-search-label text-semibold" htmlFor="labelID">{c('Label')
                                     .t`Location`}</Label>
