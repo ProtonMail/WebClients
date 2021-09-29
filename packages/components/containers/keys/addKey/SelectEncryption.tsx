@@ -3,20 +3,20 @@ import { c } from 'ttag';
 import { ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { Radio, Row } from '../../../components';
 
-const { RSA4096, X25519 } = ENCRYPTION_TYPES;
+const { RSA4096, CURVE25519 } = ENCRYPTION_TYPES;
 
 interface Props {
     encryptionType: string;
     setEncryptionType: Dispatch<SetStateAction<ENCRYPTION_TYPES>>;
 }
 const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
-    const stateOfTheArt = <strong key="X25519">{c('encryption').t`State of the art`}</strong>;
+    const stateOfTheArt = <strong key="CURVE25519">{c('encryption').t`State of the art`}</strong>;
     const highestSecurity = <strong key="RSA4096">{c('encryption').t`Compatibility`}</strong>;
 
     const radios = [
         {
-            label: c('Option').jt`${stateOfTheArt} X25519 (Fastest, most modern)`,
-            value: X25519,
+            label: c('Option').jt`${stateOfTheArt} ECC Curve25519 (Fastest, most modern)`,
+            value: CURVE25519,
         },
         {
             label: c('Option')

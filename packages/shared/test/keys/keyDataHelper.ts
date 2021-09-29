@@ -3,7 +3,7 @@ import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '.
 import { Key } from '../../lib/interfaces';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
 
-const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519];
+const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
 
 export const getUserKey = async (ID: string, keyPassword: string) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({

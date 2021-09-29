@@ -8,7 +8,7 @@ describe('reset keys v1', () => {
         const result = await getResetAddressesKeys({
             addresses: [],
             passphrase: '',
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
             hasAddressKeyMigrationGeneration: false,
         });
         expect(result).toEqual({
@@ -26,7 +26,7 @@ describe('reset keys v1', () => {
                 } as unknown as Address,
             ],
             passphrase: '123',
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
             hasAddressKeyMigrationGeneration: false,
         });
         if (!addressKeysPayload?.length) {
@@ -61,7 +61,7 @@ describe('reset keys v2', () => {
         const result = await getResetAddressesKeys({
             addresses: [],
             passphrase: '',
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
             hasAddressKeyMigrationGeneration: true,
         });
         expect(result).toEqual({
@@ -79,7 +79,7 @@ describe('reset keys v2', () => {
                 } as unknown as Address,
             ],
             passphrase: '123',
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
         });
         if (!addressKeysPayload?.length) {
             throw new Error('Missing address keys');

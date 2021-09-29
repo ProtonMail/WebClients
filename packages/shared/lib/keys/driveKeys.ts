@@ -76,7 +76,7 @@ export const decryptUnsigned = async ({ armoredMessage, privateKey }: UnsignedDe
 };
 
 export const generateDriveKey = async (rawPassphrase: string) => {
-    const encryptionConfigs = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519];
+    const encryptionConfigs = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
     const { key: privateKey, privateKeyArmored } = await generateKey({
         userIds: [{ name: 'Drive key' }],
         passphrase: rawPassphrase,
