@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { c, msgid } from 'ttag';
-import { getUnixTime, fromUnixTime, isBefore, isAfter, add } from 'date-fns';
+import { getUnixTime, fromUnixTime, isBefore, isAfter, add, sub } from 'date-fns';
 import {
     classnames,
     generateUID,
@@ -157,7 +157,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 from: from.length ? formatRecipients(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
                 begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
-                end: end ? String(getUnixTime(end)) : UNDEFINED,
+                end: end ? String(getUnixTime(add(end, { days: 1 }))) : UNDEFINED,
                 attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
                 wildcard: wildcard ? String(wildcard) : UNDEFINED,
                 filter,
@@ -260,7 +260,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     from: getRecipients(from),
                     to: getRecipients(to),
                     begin: begin ? fromUnixTime(begin) : UNDEFINED,
-                    end: end ? fromUnixTime(end) : UNDEFINED,
+                    end: end ? sub(fromUnixTime(end), { days: 1 }) : UNDEFINED,
                     filter,
                 };
             });
