@@ -168,7 +168,7 @@ export const generateCalendarKeyPayload = async ({
     memberPublicKeys: { [key: string]: OpenPGPKey };
 }) => {
     const passphrase = generatePassphrase();
-    const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519];
+    const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
     const [
         { privateKeyArmored: PrivateKey },
         { dataPacket: DataPacket, keyPackets: KeyPackets, signature: Signature },
