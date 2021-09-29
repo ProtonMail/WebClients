@@ -102,7 +102,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
                 setConversation(cache.get(inputConversationID));
             }
         });
-    }, [inputConversationID, messageID, cache, pendingRequest, conversation?.loadRetry]);
+    }, [inputConversationID, messageID, cache, pendingRequest]);
 
     const handleRetry = useCallback(() => {
         updateConversation(conversationID, () => ({ loadRetry: 0, errors: {} }));
