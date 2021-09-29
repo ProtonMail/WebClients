@@ -3,7 +3,6 @@ import { arrayToBinaryString } from 'pmcrypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { MessageEmbeddedImage, MessageExtended, MessageImages, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { getPlainText } from '../message/messageContent';
@@ -39,7 +38,7 @@ const getNormalAttachments = (attachments: Download[], messageImages: MessageIma
 
 const buildAttachments = (attachments: Download[]) =>
     attachments.map(({ attachment, data }) => {
-        const attachmentName = removeDiacritics(JSON.stringify(attachment.Name));
+        const attachmentName = JSON.stringify(attachment.Name);
         const headers = attachment.Headers || {};
         const contentTypeValue =
             extractContentValue(headers['content-type']) || attachment.MIMEType || 'application/octet-stream';
