@@ -32,6 +32,12 @@ export const dialogRootClassName = 'modal-container';
 
 export const dropdownRootClassName = 'dropdown';
 
+const textInputSelectors = ['email', 'number', 'password', 'search', 'tel', 'text', 'url'].map(
+    (type) => `input[type=${type}]`
+);
+
+const allTextInputsSelector = `input:not([type]), textarea, ${textInputSelectors.join(',')}`;
+
 const domIsBusy = () => {
     /*
      * These verifications perform some dom querying operations so in
@@ -43,6 +49,14 @@ const domIsBusy = () => {
     }
 
     if (document.querySelector(`.${dropdownRootClassName}`) !== null) {
+        return true;
+    }
+
+    const allInputs = document.querySelectorAll<HTMLInputElement>(allTextInputsSelector);
+
+    const allTextInputsAreEmpty = Array.from(allInputs).every((element) => !element.value);
+
+    if (!allTextInputsAreEmpty) {
         return true;
     }
 
