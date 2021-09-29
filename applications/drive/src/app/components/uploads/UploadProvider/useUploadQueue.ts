@@ -141,6 +141,9 @@ export default function useUploadQueue() {
             };
             const updateFolder = (folder: FolderUpload): FolderUpload => {
                 if (filter(folder)) {
+                    if (newStateCallback(folder) === TransferState.Canceled) {
+                        folder = recursiveCancel(folder);
+                    }
                     updateFileOrFolder(folder);
                     if (folderId) {
                         folder.linkId = folderId;
@@ -333,4 +336,20 @@ function isNameAlreadyUploading(part: UploadQueue | FolderUpload, name: string):
         part.files.filter((upload) => !isTransferFinished(upload)).some(({ file }) => file.name === name) ||
         part.folders.filter(recursiveIsNotFinished).some((folder) => folder.name === name)
     );
+}
+
+function recursiveCancel(folder: FolderUpload): FolderUpload {
+    return {
+        ...folder,
+        files: folder.files.map((file) => ({
+            ...file,
+            state: TransferState.Canceled,
+        })),
+        folders: folder.folders
+            .map((folder) => ({
+                ...folder,
+                state: TransferState.Canceled,
+            }))
+            .map(recursiveCancel),
+    };
 }
