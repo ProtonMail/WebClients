@@ -68,6 +68,7 @@ const ComposerContent = ({
 
     const handleDrop = onlyFiles((event: DragEvent) => {
         event.preventDefault();
+        event.stopPropagation();
         setFileHover(false);
         onAddAttachments([...event.dataTransfer.files]);
     });
@@ -76,11 +77,17 @@ const ComposerContent = ({
      * Listening for entering on the whole section
      * But for leaving only on the overlay to prevent any interception by the editor
      */
-    const handleHover = (hover: boolean) =>
-        onlyFiles((event) => {
-            setFileHover(hover);
-            event.stopPropagation();
-        });
+    const handleDragLeave = onlyFiles((event) => {
+        event.stopPropagation();
+        setFileHover(false);
+    });
+
+    const handleDragOver = onlyFiles((event) => {
+        // In order to allow drop we need to preventDefault
+        event.preventDefault();
+        event.stopPropagation();
+        setFileHover(true);
+    });
 
     return (
         <section
@@ -88,9 +95,7 @@ const ComposerContent = ({
                 'flex-item-fluid mb0-5 ml1 mr1 flex flex-column flex-nowrap relative composer-content',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
-            onDrop={handleDrop}
-            onDragEnter={handleHover(true)}
-            onDragOver={(event) => event.preventDefault()}
+            onDragOver={handleDragOver}
         >
             {disabled && (
                 <>
@@ -126,7 +131,8 @@ const ComposerContent = ({
                 )}
                 {fileHover && (
                     <div
-                        onDragLeave={handleHover(false)}
+                        onDragLeave={handleDragLeave}
+                        onDropCapture={handleDrop}
                         className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center"
                     >
                         <span className="composer-editor-dropzone-text no-pointer-events">
