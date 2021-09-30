@@ -1,13 +1,11 @@
 import { queryContactEmails } from '../api/contacts';
-import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
+import queryPages from '../api/helpers/queryPages';
 import updateCollection from '../helpers/updateCollection';
 import { CONTACT_EMAILS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '../constants';
 
 export const getContactEmailsModel = (api) => {
-    const pageSize = CONTACT_EMAILS_LIMIT;
-
-    return queryPagesThrottled({
-        requestPage: (page) => {
+    return queryPages(
+        (page, pageSize) => {
             return api(
                 queryContactEmails({
                     Page: page,
@@ -15,11 +13,13 @@ export const getContactEmailsModel = (api) => {
                 })
             );
         },
-        pageSize,
-        pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
-        delayPerChunk: 1000,
-    }).then((pages) => {
-        return pages.map(({ ContactEmails }) => ContactEmails).flat();
+        {
+            pageSize: CONTACT_EMAILS_LIMIT,
+            pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
+            delayPerChunk: 1000,
+        }
+    ).then((pages) => {
+        return pages.flatMap(({ ContactEmails }) => ContactEmails);
     });
 };
 

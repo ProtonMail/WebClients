@@ -1,27 +1,20 @@
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
-import queryPagesThrottled from '@proton/shared/lib/api/helpers/queryPagesThrottled';
+import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { cachedPromise } from './helpers/cachedPromise';
 import usePromiseResult from './usePromiseResult';
 import useCache from './useCache';
 import useApi from './useApi';
 
 export const getAllDomainAddresses = (api, domainID) => {
-    const pageSize = 50;
-
-    return queryPagesThrottled({
-        requestPage: (page) => {
-            return api(
-                queryDomainAddresses(domainID, {
-                    Page: page,
-                    PageSize: pageSize,
-                })
-            );
-        },
-        pageSize,
-        pagesPerChunk: 10,
-        delayPerChunk: 100,
+    return queryPages((page, pageSize) => {
+        return api(
+            queryDomainAddresses(domainID, {
+                Page: page,
+                PageSize: pageSize,
+            })
+        );
     }).then((pages) => {
-        return pages.map(({ Addresses = [] }) => Addresses).flat();
+        return pages.flatMap(({ Addresses = [] }) => Addresses);
     });
 };
 
