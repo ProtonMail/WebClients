@@ -15,6 +15,7 @@ export interface FileBrowserItem {
     Name: string;
     LinkID: string;
     Type: LinkType;
+    UploadTime: number;
     ModifyTime: number;
     Trashed: number | null;
     MIMEType: string;
@@ -35,6 +36,7 @@ export interface FileBrowserItem {
 
 export type ItemRowColumns =
     | 'location'
+    | 'uploaded'
     | 'modified'
     | 'share_created'
     | 'share_expires'
