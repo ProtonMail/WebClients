@@ -89,7 +89,7 @@ const ComposerFrame = ({
         composerRef?.current?.close();
     };
 
-    const handleClick = async () => {
+    const handleClick = () => {
         if (minimized && !isDragging) {
             toggleMinimized();
         }
