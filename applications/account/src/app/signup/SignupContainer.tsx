@@ -36,6 +36,7 @@ import {
     ChallengeResult,
     FeatureCode,
     HumanVerificationForm,
+    HumanVerificationSteps,
     OnLoginCallback,
     Payment as PaymentComponent,
     PlanSelection,
@@ -52,7 +53,6 @@ import {
 } from '@proton/components';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
-import { Steps } from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
 import { getHasPlanType, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -440,7 +440,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
-    const [humanVerificationStep, setHumanVerificationStep] = useState(Steps.ENTER_DESTINATION);
+    const [humanVerificationStep, setHumanVerificationStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
 
     const getHasCustomisationStep = (planIDs: PlanIDs) => {
         return hasPlanIDs(planIDs) && getHasPlanType(planIDs, plans, PLANS.PROFESSIONAL);
@@ -759,15 +759,16 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             <BackButton
                                 onClick={() => {
                                     humanApi.clearToken();
-                                    if (humanVerificationStep === Steps.ENTER_DESTINATION) {
+                                    if (humanVerificationStep === HumanVerificationSteps.ENTER_DESTINATION) {
                                         handleBack();
                                     } else {
-                                        setHumanVerificationStep(Steps.ENTER_DESTINATION);
+                                        setHumanVerificationStep(HumanVerificationSteps.ENTER_DESTINATION);
                                     }
                                 }}
                             />
                         }
                     />
+
                     <Content>
                         <HumanVerificationForm
                             defaultCountry={defaultCountry}
@@ -785,6 +786,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     </Content>
                 </>
             )}
+
             {step === CREATING_ACCOUNT && (
                 <>
                     <Header title={c('Title').t`Creating account`} />
@@ -793,6 +795,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     </Content>
                 </>
             )}
+
             {[PLANS_STEP, CUSTOMISATION, PAYMENT, CREATING_ACCOUNT].includes(step) ? null : (
                 <Footer>
                     <SignupSupportDropdown />
@@ -801,4 +804,5 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         </Main>
     );
 };
+
 export default SignupContainer;
