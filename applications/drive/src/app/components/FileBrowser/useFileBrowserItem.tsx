@@ -2,10 +2,10 @@ import { useRef, useCallback, useState } from 'react';
 import { usePopperAnchor, useDragMove } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { msgid, c } from 'ttag';
-import { LinkType } from '../../interfaces/link';
-import { FileBrowserItem, DragMoveControls } from './interfaces';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
+import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { selectMessageForItemList } from '../sections/helpers';
-import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 interface Options {
     item: FileBrowserItem;

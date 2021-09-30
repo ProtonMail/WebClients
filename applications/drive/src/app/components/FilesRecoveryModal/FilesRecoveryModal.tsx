@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { DialogModal, useLoading, useNotifications } from '@proton/components';
+import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 import FilesRecoveryState from './FilesRecoveryState';
 import useDrive from '../../hooks/drive/useDrive';
-import { ShareMeta } from '../../interfaces/share';
 
 interface Props {
     lockedShareList: {

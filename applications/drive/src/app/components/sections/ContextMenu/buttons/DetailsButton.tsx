@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useToolbarActions from '../../../../hooks/drive/useActions';
-import { LinkType } from '../../../../interfaces/link';
-import { FileBrowserItem } from '../../../FileBrowser';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {

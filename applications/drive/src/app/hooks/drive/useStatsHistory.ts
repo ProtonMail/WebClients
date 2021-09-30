@@ -1,6 +1,12 @@
 import { useState, useCallback, useEffect } from 'react';
 
-import { Transfer, TransferProgresses, TransfersStats, TransferState, TransferStats } from '../../interfaces/transfer';
+import {
+    Transfer,
+    TransferProgresses,
+    TransfersStats,
+    TransferState,
+    TransferStats,
+} from '@proton/shared/lib/interfaces/drive/transfer';
 import { isTransferProgress } from '../../utils/transfer';
 
 const PROGRESS_UPDATE_INTERVAL = 500;

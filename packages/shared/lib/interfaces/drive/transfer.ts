@@ -1,4 +1,5 @@
-import { FileBrowserItem } from '../components/FileBrowser/interfaces';
+/* eslint-disable max-classes-per-file */
+import { FileBrowserItem } from './fileBrowser';
 import { LinkType } from './link';
 
 export enum TransferState {

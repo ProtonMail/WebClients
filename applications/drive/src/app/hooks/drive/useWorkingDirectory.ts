@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { LinkMeta } from '../../interfaces/link';
+import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
 import useDrive from './useDrive';
 
 const useWorkingDirectory = () => {

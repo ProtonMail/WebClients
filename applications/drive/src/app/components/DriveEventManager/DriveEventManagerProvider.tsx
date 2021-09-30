@@ -1,10 +1,9 @@
 import { useEffect, useRef, createContext, ReactNode, useContext } from 'react';
 import { useApi } from '@proton/components';
 import eventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-
-import { queryEvents, queryLatestEvents } from '../../api/share';
-import { LinkMeta } from '../../interfaces/link';
-import { EVENT_TYPES } from '../../constants';
+import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
+import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 export interface ShareEvent {
     EventType: EVENT_TYPES;

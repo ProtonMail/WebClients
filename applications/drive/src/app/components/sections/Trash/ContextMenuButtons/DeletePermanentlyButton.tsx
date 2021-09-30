@@ -1,7 +1,7 @@
 import { c } from 'ttag';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive//fileBrowser';
 
 import useToolbarActions from '../../../../hooks/drive/useActions';
-import { FileBrowserItem } from '../../../FileBrowser';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {

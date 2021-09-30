@@ -1,12 +1,22 @@
 import { usePreventLeave } from '@proton/components';
 import { chunk } from '@proton/shared/lib/helpers/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteTrashedLinks } from '../../api/link';
-import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
+import {
+    queryTrashLinks,
+    queryRestoreLinks,
+    queryEmptyTrashOfShare,
+    queryDeleteTrashedLinks,
+} from '@proton/shared/lib/api/drive/link';
+import { LinkMeta, FolderLinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import {
+    FOLDER_PAGE_SIZE,
+    BATCH_REQUEST_SIZE,
+    RESPONSE_CODE,
+    MAX_THREADS_PER_REQUEST,
+} from '@proton/shared/lib/drive/constants';
+import { RestoreFromTrashResult, RestoreResponse } from '@proton/shared/lib/interfaces/drive/restore';
+import { queryTrashList } from '@proton/shared/lib/api/drive/share';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, RESPONSE_CODE, MAX_THREADS_PER_REQUEST } from '../../constants';
-import { RestoreFromTrashResult, RestoreResponse } from '../../interfaces/restore';
-import { queryTrashList } from '../../api/share';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 

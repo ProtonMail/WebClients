@@ -1,6 +1,12 @@
-import { TransferState, TransferMeta, Transfer, TransferSummary, TransfersStats } from '../interfaces/transfer';
-import { LinkMeta } from '../interfaces/link';
-import { FileBrowserItem } from '../components/FileBrowser/interfaces';
+import {
+    TransferState,
+    TransferMeta,
+    Transfer,
+    TransferSummary,
+    TransfersStats,
+} from '@proton/shared/lib/interfaces/drive/transfer';
+import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
 
 export const isTransferFinished = ({ state }: { state: TransferState }) =>

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { LinkType, LinkMeta } from '../../interfaces/link';
-import { LinkURLType, fileDescriptions } from '../../constants';
-import { FileBrowserItem } from '../FileBrowser/interfaces';
+import { LinkType, LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { LinkURLType, fileDescriptions } from '@proton/shared/lib/drive/constants';
 
 export const selectMessageForItemList = (
     types: LinkType[],

@@ -2,9 +2,9 @@ import { useMultiSortedList } from '@proton/components';
 import { useMemo } from 'react';
 import { SortConfig } from '@proton/components/hooks/useSortedList';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { LinkMeta, SortKeys, SortParams } from '../../interfaces/link';
+import { LinkMeta, SortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+import { SortSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import useUserSettings from './useUserSettings';
-import { SortSetting } from '../../interfaces/userSettings';
 
 const getNameSortConfig = (direction = SORT_DIRECTION.ASC) => ({
     key: 'Name' as SortKeys,

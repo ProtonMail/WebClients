@@ -1,4 +1,4 @@
-import { CreateSharedURL, UpdateSharedURL } from '../interfaces/sharing';
+import { CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
 export const queryInitSRPHandshake = (token: string) => {
     return {

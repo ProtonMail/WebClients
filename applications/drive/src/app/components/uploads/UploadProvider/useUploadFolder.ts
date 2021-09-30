@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { isFolderLinkMeta } from '../../../interfaces/link';
-import { TransferCancel } from '../../../interfaces/transfer';
+import { isFolderLinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import useDrive from '../../../hooks/drive/useDrive';
 import useTrash from '../../../hooks/drive/useTrash';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';

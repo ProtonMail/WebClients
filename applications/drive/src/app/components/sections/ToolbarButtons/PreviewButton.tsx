@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton, isPreviewAvailable } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useToolbarActions from '../../../hooks/drive/useActions';
-import { FileBrowserItem } from '../../FileBrowser/interfaces';
 import { isMultiSelect, hasFoldersSelected } from './utils';
 
 interface Props {

@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useRef } from 'react';
 
-import { DownloadInfo, ThumbnailMeta } from '../../interfaces/transfer';
+import { DownloadInfo, ThumbnailMeta } from '@proton/shared/lib/interfaces/drive/transfer';
+import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 import useDrive from '../../hooks/drive/useDrive';
 import useFiles from '../../hooks/drive/useFiles';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useAsyncQueue from '../../hooks/util/useAsyncQueue';
-import { MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { DownloadControls } from './download';
 import useNavigate from '../../hooks/drive/useNavigate';
 

@@ -1,12 +1,12 @@
 import { usePreventLeave } from '@proton/components';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { useUploadProvider } from '../uploads/UploadProvider';
 import { isTransferPaused, isTransferFinished } from '../../utils/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { LinkType } from '../../interfaces/link';
 import useFiles from '../../hooks/drive/useFiles';
-import { Download, TransferType, Upload } from '../../interfaces/transfer';
 
 function useTransferControls() {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();

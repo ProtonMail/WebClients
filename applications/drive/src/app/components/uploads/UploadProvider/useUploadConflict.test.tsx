@@ -2,12 +2,12 @@ import { ReactNode } from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { ModalsProvider } from '@proton/components';
+import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { mockGlobalFile, testFile } from '../../../helpers/test/file';
 import { TransferConflictStrategy } from '../interface';
 import { FileUpload, FolderUpload } from './interface';
 import useUploadConflict from './useUploadConflict';
-import { TransferState } from '../../../interfaces/transfer';
 
 const mockCreateModal = jest.fn();
 jest.mock('@proton/components/hooks/useModals.ts', () => {

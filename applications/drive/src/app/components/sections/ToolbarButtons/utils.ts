@@ -1,5 +1,5 @@
-import { LinkType } from '../../../interfaces/link';
-import { FileBrowserItem } from '../../FileBrowser/interfaces';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 export function noSelection(selectedItems: FileBrowserItem[]): boolean {
     return selectedItems.length === 0;
