@@ -157,7 +157,7 @@ export const insertCustomStyle = (document: Document) => {
 
         [id="squire"] {
             outline: none;
-            padding: 0.5rem;
+            padding: .5rem .5rem .5rem 0; // TODO: check other integrations
         }
 
         [id="ellipsis"] {
@@ -225,6 +225,10 @@ export const insertCustomStyle = (document: Document) => {
 
         .protonmail_quote {
             position: relative;
+        }
+
+        ul, ol {
+            padding-left: 1.4286em;
         }
 
         li {

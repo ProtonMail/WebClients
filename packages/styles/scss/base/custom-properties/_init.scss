@@ -9,6 +9,7 @@
 	--border-radius-small: calc(0.5 * var(--border-radius) * var(--px));
 	--border-radius-medium: calc(var(--border-radius) * var(--px));
 	--border-radius-large: calc(1.5 * var(--border-radius) * var(--px));
+	--border-radius-xl: calc(2 * var(--border-radius) * var(--px));
 
 	--border-radius-pill: 9999em;
 }

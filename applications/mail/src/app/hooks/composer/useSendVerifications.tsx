@@ -5,7 +5,7 @@ import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/m
 import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert, useNotifications } from '@proton/components';
+import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -44,7 +44,11 @@ const NL_REGEX =
 const PL_REGEX =
     /patrz w za\u0142\u0105czeniu|patrz za\u0142\u0105cznik|patrz do\u0142\u0105czony|jest do\u0142\u0105czony|w za\u0142\u0105czeniu|s\u0105 za\u0142\u0105czone|za\u0142\u0105czone s\u0105|za\u0142\u0105czone do tego e-maila|do\u0142\u0105czone do tej wiadomo\u015bci|do\u0142\u0105czam|za\u0142\u0105czam|za\u0142\u0105czy\u0142em|za\u0142\u0105czy\u0142am|dodaj\u0119|wysy\u0142am|do\u0142\u0105czy\u0142em|do\u0142\u0105czy\u0142am|patrz za\u0142\u0105czniki|w za\u0142\u0105czniku|patrz za\u0142\u0105czony|patrz za\u0142\u0105czone|masz w za\u0142\u0105czeniu|za\u0142\u0105czony plik|zobacz za\u0142\u0105cznik|zobacz za\u0142\u0105czniki|za\u0142\u0105czone pliki/gi;
 
-export const useSendVerifications = () => {
+export const useSendVerifications = (
+    handleNoRecipients?: () => void,
+    handleNoSubjects?: () => void,
+    handleNoAttachments?: (keyword: string) => void
+) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -61,37 +65,16 @@ export const useSendVerifications = () => {
 
         // No recipients
         if (!getRecipients(message.data).length) {
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <ConfirmModal
-                        onConfirm={reject}
-                        onClose={reject}
-                        title={c('Title').t`No recipient`}
-                        confirm={c('Action').t`OK`}
-                        cancel={null}
-                    >
-                        <Alert className="mb1" type="warning">{c('Info')
-                            .t`Please add at least one recipient before sending.`}</Alert>
-                    </ConfirmModal>
-                );
-            });
+            if (handleNoRecipients) {
+                await handleNoRecipients();
+            }
         }
 
         // Empty subject
         if (!message.data.Subject) {
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <ConfirmModal
-                        onConfirm={() => resolve(undefined)}
-                        onClose={reject}
-                        title={c('Title').t`Message without subject?`}
-                        confirm={c('Action').t`Send anyway`}
-                    >
-                        <Alert className="mb1">{c('Info')
-                            .t`You have not given your email any subject. Do you want to send the message anyway?`}</Alert>
-                    </ConfirmModal>
-                );
-            });
+            if (handleNoSubjects) {
+                await handleNoSubjects();
+            }
         }
 
         const [contentBeforeBlockquote] = locateBlockquote(message.document);
@@ -112,24 +95,9 @@ export const useSendVerifications = () => {
 
         // Attachment word without attachments
         if (keyword && !message.data.Attachments.length) {
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <ConfirmModal
-                        onConfirm={() => resolve(undefined)}
-                        onClose={reject}
-                        title={c('Title').t`No attachment found`}
-                        confirm={c('Action').t`Send anyway`}
-                    >
-                        <Alert
-                            className="mb1"
-                            learnMore="https://protonmail.com/support/knowledge-base/attachment-reminders/"
-                        >
-                            {c('Info')
-                                .t`You wrote "${keyword}", but no attachment has been added. Do you want to send your message anyway?`}
-                        </Alert>
-                    </ConfirmModal>
-                );
-            });
+            if (handleNoAttachments) {
+                await handleNoAttachments(keyword);
+            }
         }
     }, []);
 

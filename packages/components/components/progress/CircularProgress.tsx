@@ -1,7 +1,15 @@
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-const CircularProgress = ({ children, className, progress, rootRef, size = 32, ...rest }) => {
+interface Props {
+    children?: ReactNode;
+    className?: string;
+    rootRef?: any;
+    size?: number;
+    progress: number;
+}
+
+const CircularProgress = ({ children, className, progress, rootRef, size = 32, ...rest }: Props) => {
     return (
         <svg
             ref={rootRef}
@@ -30,14 +38,6 @@ const CircularProgress = ({ children, className, progress, rootRef, size = 32, .
             {children}
         </svg>
     );
-};
-
-CircularProgress.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    rootRef: PropTypes.object,
-    size: PropTypes.number,
-    progress: PropTypes.number.isRequired,
 };
 
 export default CircularProgress;

@@ -1,12 +1,4 @@
-import {
-    useEffect,
-    useRef,
-    DragEvent,
-    KeyboardEvent,
-    RefObject,
-    useState,
-    MouseEvent,
-} from 'react';
+import { useEffect, useRef, DragEvent, KeyboardEvent, RefObject, useState, MouseEvent } from 'react';
 import {
     classnames,
     Icon,
@@ -171,7 +163,7 @@ const AddressesRecipientItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item bordered mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation',
+                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation rounded',
                     !valid && 'invalid',
                     cannotSend && 'color-danger invalid',
                     dragged && 'composer-addresses-item-dragged',
@@ -186,30 +178,32 @@ const AddressesRecipientItem = ({
                 {...dragHandlers}
                 {...rest}
             >
-                {(icon || loading) && (
-                    <span className="flex pl0-25 flex-item-noshrink">
-                        <EncryptionStatusIcon loading={loading} {...icon} />
-                    </span>
-                )}
-                <Tooltip title={title}>
-                    <span
-                        className={classnames([
-                            'composer-addresses-item-label mtauto mbauto text-ellipsis pr0-5',
-                            icon || loading || !valid ? 'pl0-25' : 'pl0-5',
-                        ])}
-                        contentEditable={editableMode}
-                        onDoubleClick={handleDoubleClick}
-                        onBlur={handleBlur}
-                        onKeyDown={handleInputKey}
-                        onContextMenu={handleContextMenu}
-                        ref={editableRef}
-                        data-testid="composer-addresses-item-label"
-                    />
-                </Tooltip>
+                <span className="interactive flex flex-row flex-nowrap">
+                    {(icon || loading) && (
+                        <span className="flex pl0-5 flex-item-noshrink">
+                            <EncryptionStatusIcon loading={loading} {...icon} />
+                        </span>
+                    )}
+                    <Tooltip title={title}>
+                        <span
+                            className={classnames([
+                                'composer-addresses-item-label mtauto mbauto text-ellipsis pr0-5',
+                                icon || loading || !valid ? 'pl0-25' : 'pl0-5',
+                            ])}
+                            contentEditable={editableMode}
+                            onDoubleClick={handleDoubleClick}
+                            onBlur={handleBlur}
+                            onKeyDown={handleInputKey}
+                            onContextMenu={handleContextMenu}
+                            ref={editableRef}
+                            data-testid="composer-addresses-item-label"
+                        />
+                    </Tooltip>
+                </span>
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove border-left flex flex-item-noshrink pl0-25 pr0-25"
+                        className="composer-addresses-item-remove flex flex-item-noshrink p0-5 interactive"
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >
@@ -225,27 +219,39 @@ const AddressesRecipientItem = ({
                 anchorRef={itemRef}
             >
                 <DropdownMenu>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap flex-align-items-center"
+                        onClick={handleCopy}
+                    >
                         <Icon name="copy" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleDoubleClick}>
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap flex-align-items-center"
+                        onClick={handleDoubleClick}
+                    >
                         <Icon name="pen" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>
                     {ContactID ? (
-                        <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-align-items-center"
+                            onClick={handleClickContact}
+                        >
                             <Icon name="user" className="mr0-5 mt0-25" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
                         </DropdownMenuButton>
                     ) : (
-                        <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-align-items-center"
+                            onClick={handleClickContact}
+                        >
                             <Icon name="user-plus" className="mr0-5 mt0-25" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                         </DropdownMenuButton>
                     )}
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap"
+                        className="text-left flex flex-nowrap flex-align-items-center border-top"
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >

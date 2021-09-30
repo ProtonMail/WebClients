@@ -1,6 +1,6 @@
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getAttachments, hasFlag } from '@proton/shared/lib/mail/messages';
-import { MutableRefObject, useRef } from 'react';
+import { MutableRefObject, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
 import {
@@ -23,6 +23,9 @@ import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import AttachmentsButton from '../attachment/AttachmentsButton';
 import SendActions from './SendActions';
+import EditorToolbarExtension from './editor/EditorToolbarExtension';
+import { MessageChangeFlag } from './Composer';
+import ComposerMoreOptionsDropdown from './editor/ComposerMoreOptionsDropdown';
 
 interface Props {
     className?: string;
@@ -36,10 +39,11 @@ interface Props {
     onExpiration: () => void;
     onScheduleSendModal: () => void;
     onSend: () => Promise<void>;
-    onDelete: () => Promise<void>;
+    onDelete: () => void;
     addressesBlurRef: MutableRefObject<() => void>;
     attachmentTriggerRef: MutableRefObject<() => void>;
     loadingScheduleCount: boolean;
+    onChangeFlag: MessageChangeFlag;
 }
 
 const ComposerActions = ({
@@ -58,9 +62,10 @@ const ComposerActions = ({
     addressesBlurRef,
     attachmentTriggerRef,
     loadingScheduleCount,
+    onChangeFlag,
 }: Props) => {
     const isAttachments = getAttachments(message.data).length > 0;
-    const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
+    const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && !!message.data?.Password;
     const isExpiration = !!message.expiresIn;
     const sendDisabled = lock;
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
@@ -96,6 +101,7 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Attachments`
     );
+    /* TODO: Do we want to display the expiration shortcut to the user ?
     const titleExpiration = Shortcuts ? (
         <>
             {c('Title').t`Expiration time`}
@@ -105,7 +111,7 @@ const ComposerActions = ({
         </>
     ) : (
         c('Title').t`Expiration time`
-    );
+    ); */
     const titleEncryption = Shortcuts ? (
         <>
             {c('Title').t`Encryption`}
@@ -116,6 +122,7 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Encryption`
     );
+    const titleMoreOptions = c('Title').t`More options`;
     const titleDeleteDraft = Shortcuts ? (
         <>
             {c('Title').t`Delete draft`}
@@ -149,121 +156,141 @@ const ComposerActions = ({
         onScheduleSendModal();
     };
 
+    const toolbarExtension = useMemo(
+        () => <EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />,
+        [message.data, onChangeFlag]
+    );
+
     return (
         <footer
             data-testid="composer:footer"
-            className={classnames([
-                'composer-actions flex-item-noshrink flex flex-row-reverse flex-align-self-center w100 pl1 pr1 mb0-5',
-                className,
-            ])}
+            className={classnames(['composer-actions flex-item-noshrink flex max-w100', className])}
             onClick={addressesBlurRef.current}
         >
-            <Spotlight
-                originalPlacement="top-right"
-                show={showSpotlight}
-                onDisplayed={onDisplayed}
-                anchorRef={dropdownRef}
-                content={
-                    <>
-                        {c('Spotlight').t`You can now schedule your messages to be sent later`}
-                        <br />
-                        <Href
-                            url="https://protonmail.com/support/knowledge-base/scheduled-send/"
-                            title="Scheduled send"
-                        >
-                            {c('Info').t`Learn more`}
-                        </Href>
-                    </>
-                }
-            >
-                <SendActions
-                    disabled={loadingFeature || loadingScheduleCount}
-                    loading={loadingFeature || loadingScheduleCount}
-                    shape="solid"
-                    color="norm"
-                    mainAction={
-                        <Tooltip title={titleSendButton}>
-                            <Button
-                                loading={loadingFeature}
-                                onClick={onSend}
-                                disabled={sendDisabled}
-                                className="composer-send-button"
-                                data-testid="composer:send-button"
+            <div className="flex flex-row-reverse flex-align-self-center w100 ml0-5 mr1-5 pl1-25 pr0-25 mb1">
+                <Spotlight
+                    originalPlacement="top-right"
+                    show={showSpotlight}
+                    onDisplayed={onDisplayed}
+                    anchorRef={dropdownRef}
+                    content={
+                        <>
+                            {c('Spotlight').t`You can now schedule your messages to be sent later`}
+                            <br />
+                            <Href
+                                url="https://protonmail.com/support/knowledge-base/scheduled-send/"
+                                title="Scheduled send"
                             >
-                                <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
-                                <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
+                                {c('Info').t`Learn more`}
+                            </Href>
+                        </>
+                    }
+                >
+                    <SendActions
+                        disabled={loadingFeature || loadingScheduleCount}
+                        loading={loadingFeature || loadingScheduleCount}
+                        shape="solid"
+                        color="norm"
+                        mainAction={
+                            <Tooltip title={titleSendButton}>
+                                <Button
+                                    loading={loadingFeature}
+                                    onClick={onSend}
+                                    disabled={sendDisabled}
+                                    className="composer-send-button"
+                                    data-testid="composer:send-button"
+                                >
+                                    <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
+                                    <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
+                                </Button>
+                            </Tooltip>
+                        }
+                        secondAction={
+                            hasScheduleSendAccess ? (
+                                <Tooltip>
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-align-items-center"
+                                        onClick={handleScheduleSend}
+                                        data-testid="composer:schedule-send-button"
+                                    >
+                                        <Icon name="clock" className="flex-item-noshrink" />
+                                        <span className="pl0-5 pr0-5 flex-item-fluid">{c('Action')
+                                            .t`Schedule send`}</span>
+                                    </DropdownMenuButton>
+                                </Tooltip>
+                            ) : undefined
+                        }
+                        dropdownRef={dropdownRef}
+                    />
+                </Spotlight>
+
+                <div className="flex flex-item-fluid">
+                    <div className="flex">
+                        <Tooltip title={titleDeleteDraft}>
+                            <Button
+                                icon
+                                disabled={lock}
+                                onClick={onDelete}
+                                shape="ghost"
+                                className="mr0-5"
+                                data-testid="composer:delete-draft-button"
+                            >
+                                <Icon name="trash" alt={c('Action').t`Delete draft`} />
                             </Button>
                         </Tooltip>
-                    }
-                    secondAction={
-                        hasScheduleSendAccess ? (
-                            <Tooltip>
-                                <DropdownMenuButton
-                                    className="text-left"
-                                    onClick={handleScheduleSend}
-                                    data-testid="composer:schedule-send-button"
-                                >
-                                    <Icon name="clock" />
-                                    <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
-                                </DropdownMenuButton>
-                            </Tooltip>
-                        ) : undefined
-                    }
-                    dropdownRef={dropdownRef}
-                />
-            </Spotlight>
-            <div className="flex flex-item-fluid">
-                <div className="flex">
-                    <Tooltip title={titleAttachment}>
-                        <AttachmentsButton
-                            isAttachments={isAttachments}
-                            disabled={lock}
-                            onAddAttachments={onAddAttachments}
-                            attachmentTriggerRef={attachmentTriggerRef}
-                            data-testid="composer:attachment-button"
-                        />
-                    </Tooltip>
-                    <Tooltip title={titleExpiration}>
-                        <Button
-                            icon
-                            color={isExpiration ? 'norm' : undefined}
-                            shape="outline"
-                            onClick={onExpiration}
-                            disabled={lock}
-                            className="ml0-5"
-                            data-testid="composer:expiration-button"
+                        <Tooltip title={titleEncryption}>
+                            <Button
+                                icon
+                                color={isPassword ? 'norm' : undefined}
+                                shape="ghost"
+                                data-testid="composer:password-button"
+                                onClick={onPassword}
+                                disabled={lock}
+                                className="mr0-5"
+                                aria-pressed={isPassword}
+                            >
+                                <Icon name="lock" alt={c('Action').t`Encryption`} />
+                            </Button>
+                        </Tooltip>
+                        <ComposerMoreOptionsDropdown
+                            title={titleMoreOptions}
+                            titleTooltip={titleMoreOptions}
+                            className="button button-for-icon composer-more-dropdown"
+                            content={
+                                <Icon
+                                    name="ellipsis"
+                                    alt={titleMoreOptions}
+                                    className={classnames([isExpiration && 'color-primary'])}
+                                />
+                            }
                         >
-                            <Icon name="hourglass-empty" alt={c('Action').t`Expiration time`} />
-                        </Button>
-                    </Tooltip>
-                    <Tooltip title={titleEncryption}>
-                        <Button
-                            icon
-                            color={isPassword ? 'norm' : undefined}
-                            shape="outline"
-                            data-testid="composer:password-button"
-                            onClick={onPassword}
-                            disabled={lock}
-                            className="ml0-5"
-                        >
-                            <Icon name="lock" alt={c('Action').t`Encryption`} />
-                        </Button>
-                    </Tooltip>
-                </div>
-                <div className="flex mlauto">
-                    <span className="mr0-5 mtauto mbauto no-mobile">{dateMessage}</span>
-                    <Tooltip title={titleDeleteDraft}>
-                        <Button
-                            icon
-                            disabled={lock}
-                            onClick={onDelete}
-                            shape="outline"
-                            className="mr0-5"
-                            data-testid="composer:delete-draft-button"
-                        >
-                            <Icon name="trash" alt={c('Action').t`Delete draft`} />
-                        </Button>
-                    </Tooltip>
+                            {toolbarExtension}
+                            <div className="dropdown-item-hr" key="hr-more-options" />
+                            <DropdownMenuButton
+                                className={classnames(['text-left flex flex-nowrap', isExpiration && 'color-primary'])}
+                                onClick={onExpiration}
+                                aria-pressed={isExpiration}
+                                disabled={lock}
+                                data-testid="composer:expiration-button"
+                            >
+                                <Icon name="hourglass-empty" className="mt0-25" />
+                                <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action')
+                                    .t`Set expiration time`}</span>
+                            </DropdownMenuButton>
+                        </ComposerMoreOptionsDropdown>
+                    </div>
+                    <div className="flex-item-fluid flex pr1">
+                        <span className="mr0-5 mauto no-mobile color-weak">{dateMessage}</span>
+                        <Tooltip title={titleAttachment}>
+                            <AttachmentsButton
+                                isAttachments={isAttachments}
+                                disabled={lock}
+                                onAddAttachments={onAddAttachments}
+                                attachmentTriggerRef={attachmentTriggerRef}
+                                data-testid="composer:attachment-button"
+                            />
+                        </Tooltip>
+                    </div>
                 </div>
             </div>
         </footer>

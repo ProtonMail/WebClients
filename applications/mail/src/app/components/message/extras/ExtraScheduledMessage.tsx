@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
-import { formatScheduledDate } from '../../../helpers/date';
+import { formatDateToHuman } from '../../../helpers/date';
 import { MessageExtended } from '../../../models/message';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 
@@ -71,7 +71,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
             return c('Info').t`This message will be sent shortly`;
         }
 
-        const { dateString, formattedTime } = formatScheduledDate(scheduleDate);
+        const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
 
         /*
          * translator: The variables here are the following.

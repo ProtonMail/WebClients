@@ -65,7 +65,7 @@ describe('Message recipients rendering', () => {
 
         const { getByText, details } = await setup();
 
-        const expectation = `${ContactGroup.Name} (${ToList.length}/${contacts.length} Members)`;
+        const expectation = `${ContactGroup.Name} (${ToList.length}/${contacts.length} members)`;
 
         getByText(expectation);
 

@@ -67,7 +67,7 @@ export const getRecipientLabel = (recipient: Recipient, contactsMap: ContactsMap
 
 export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contactsInGroup = 0) => {
     const count = recipientGroup?.recipients.length;
-    const members = c('Info').t`Members`;
+    const members = c('Info').t`members`;
     return `${recipientGroup?.group?.Name} (${count}/${contactsInGroup} ${members})`;
 };
 
