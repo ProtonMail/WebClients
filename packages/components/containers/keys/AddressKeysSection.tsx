@@ -292,9 +292,10 @@ const AddressKeysSection = () => {
     const numberOfKeysToReactivate = getKeysToReactivateCount(allKeysToReactivate);
 
     const { isSubUser, isPrivate } = User;
-    const canReactivate = !isSubUser && numberOfKeysToReactivate >= 1;
+    const hasDecryptedUserKeys = userKeys.length > 0;
+    const canReactivate = !isSubUser && numberOfKeysToReactivate > 0 && hasDecryptedUserKeys;
 
-    const canAdd = !isSubUser && isPrivate;
+    const canAdd = !isSubUser && isPrivate && hasDecryptedUserKeys;
     const canImport = canAdd;
 
     return (
