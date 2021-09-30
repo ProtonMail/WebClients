@@ -1,8 +1,22 @@
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
+import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { cachedPromise } from './helpers/cachedPromise';
 import usePromiseResult from './usePromiseResult';
 import useCache from './useCache';
 import useApi from './useApi';
+
+export const getAllDomainAddresses = (api, domainID) => {
+    return queryPages((page, pageSize) => {
+        return api(
+            queryDomainAddresses(domainID, {
+                Page: page,
+                PageSize: pageSize,
+            })
+        );
+    }).then((pages) => {
+        return pages.flatMap(({ Addresses = [] }) => Addresses);
+    });
+};
 
 const useDomainsAddresses = (domains) => {
     const cache = useCache();
@@ -19,7 +33,7 @@ const useDomainsAddresses = (domains) => {
                     cache,
                     `${domain.ID}`,
                     () => {
-                        return api(queryDomainAddresses(domain.ID)).then(({ Addresses = [] }) => Addresses);
+                        return getAllDomainAddresses(api, domain.ID);
                     },
                     domain
                 );

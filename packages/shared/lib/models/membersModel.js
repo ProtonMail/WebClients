@@ -1,26 +1,17 @@
 import { queryMembers } from '../api/members';
 import updateCollection from '../helpers/updateCollection';
-import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
+import queryPages from '../api/helpers/queryPages';
 
 export const getMembersModel = (api) => {
-    const pageSize = 100;
-
-    const requestPage = (page) => {
+    return queryPages((Page, PageSize) => {
         return api(
             queryMembers({
-                Page: page,
-                PageSize: pageSize,
+                Page,
+                PageSize,
             })
         );
-    };
-
-    return queryPagesThrottled({
-        requestPage,
-        pageSize,
-        pagesPerChunk: 10,
-        delayPerChunk: 100,
     }).then((pages) => {
-        return pages.map(({ Members }) => Members).flat();
+        return pages.flatMap(({ Members }) => Members);
     });
 };
 
