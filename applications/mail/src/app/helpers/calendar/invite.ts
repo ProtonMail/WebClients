@@ -351,13 +351,6 @@ export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => 
     return EVENT_TIME_STATUS.FUTURE;
 };
 
-const getIsEventInvitationValid = (event: VcalVeventComponent | undefined): event is VcalVeventComponent => {
-    if (!event || !getHasDtStart(event)) {
-        return false;
-    }
-    return true;
-};
-
 export const parseVcalendar = (data: string): VcalVcalendar | undefined => {
     try {
         if (!data) {
@@ -564,9 +557,15 @@ export const getSupportedEventInvitation = async ({
     if ((calscale && calscale.value.toLowerCase() !== 'gregorian') || version?.value !== '2.0') {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method: supportedMethod });
     }
+    if (!vcalComponent.components?.length) {
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.NO_COMPONENT, { method: supportedMethod });
+    }
     const vevent = extractVevent(vcalComponent);
     const vtimezone = extractVTimezone(vcalComponent);
-    if (!getIsEventInvitationValid(vevent)) {
+    if (!vevent) {
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.NO_VEVENT, { method: supportedMethod });
+    }
+    if (!getHasDtStart(vevent)) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
     const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
