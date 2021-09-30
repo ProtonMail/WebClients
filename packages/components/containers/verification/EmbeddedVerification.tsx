@@ -3,7 +3,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getAppUrlFromApiUrl, getAppUrlRelativeToOrigin, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 
-import { useConfig } from '../../hooks';
+import { useConfig, useNotifications } from '../../hooks';
 
 interface EmbeddedVerificationProps {
     token: string;
@@ -25,6 +25,7 @@ const EmbeddedVerification = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [iframeHeight, setIframeHeight] = useState<number | undefined>();
     const { API_URL } = useConfig();
+    const { createNotification } = useNotifications();
 
     const embedUrl = useMemo(() => {
         if (window.location.origin.includes('localhost')) {
@@ -44,14 +45,23 @@ const EmbeddedVerification = ({
                 return;
             }
 
-            switch (e.data.type) {
-                case 'verification-height': {
-                    setIframeHeight(e.data.height);
+            const { type, payload } = JSON.parse(e.data);
+
+            switch (type) {
+                case 'RESIZE': {
+                    const { height } = payload;
+                    setIframeHeight(height);
                     break;
                 }
 
-                case 'verification-success': {
-                    onSuccess(e.data.payload.token, e.data.payload.tokenType);
+                case 'NOTIFICATION': {
+                    createNotification(payload);
+                    break;
+                }
+
+                case 'HUMAN_VERIFICATION_SUCCESS': {
+                    const { token, type } = payload;
+                    onSuccess(token, type);
                     break;
                 }
 
