@@ -10,7 +10,7 @@ import { CalendarModal } from '../calendarModal/CalendarModal';
 import { ExportModal } from '../exportModal/ExportModal';
 import CalendarsSection from './CalendarsSection';
 
-interface Props {
+export interface PersonalCalendarsSectionProps {
     activeAddresses: Address[];
     calendars: Calendar[];
     activeCalendars: Calendar[];
@@ -23,7 +23,7 @@ const PersonalCalendarsSection = ({
     defaultCalendar,
     activeCalendars = [],
     user,
-}: Props) => {
+}: PersonalCalendarsSectionProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
