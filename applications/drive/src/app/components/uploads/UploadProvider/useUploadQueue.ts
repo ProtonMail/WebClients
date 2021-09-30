@@ -4,7 +4,12 @@ import { c } from 'ttag';
 import { generateUID } from '@proton/components';
 
 import { TransferState } from '../../../interfaces/transfer';
-import { isTransferPending, isTransferConflict, isTransferFinished } from '../../../utils/transfer';
+import {
+    isTransferInitializing,
+    isTransferPending,
+    isTransferConflict,
+    isTransferFinished,
+} from '../../../utils/transfer';
 import { UploadFileList, UploadFileItem, UploadFolderItem } from '../interface';
 import {
     UploadQueue,
@@ -141,6 +146,9 @@ export default function useUploadQueue() {
             };
             const updateFolder = (folder: FolderUpload): FolderUpload => {
                 if (filter(folder)) {
+                    // When parent folder is canceled, all childs would hang up
+                    // in initializing state - therefore we need to cancel
+                    // recursively all children.
                     if (newStateCallback(folder) === TransferState.Canceled) {
                         folder = recursiveCancel(folder);
                     }
@@ -164,6 +172,12 @@ export default function useUploadQueue() {
                 }
                 folder.files = folder.files.map(updateFile);
                 folder.folders = folder.folders.map(updateFolder);
+                // When any child is restarted after parent folder is canceled,
+                // the child would hang up in initializing state - therefore we
+                // need to restart also all canceled parents of that child.
+                if (folder.state === TransferState.Canceled && hasInitializingUpload(folder)) {
+                    folder.state = folder.parentId ? TransferState.Pending : TransferState.Initializing;
+                }
                 return folder;
             };
             setQueue((queue) => [
@@ -352,4 +366,12 @@ function recursiveCancel(folder: FolderUpload): FolderUpload {
             }))
             .map(recursiveCancel),
     };
+}
+
+function hasInitializingUpload(folder: FolderUpload): boolean {
+    return (
+        folder.files.some(isTransferInitializing) ||
+        folder.folders.some(isTransferInitializing) ||
+        folder.folders.some(hasInitializingUpload)
+    );
 }
