@@ -1,5 +1,5 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import urlify from '@proton/shared/lib/calendar/urlify';
@@ -26,6 +26,7 @@ type AttendeeViewModel = {
     partstat: ICAL_ATTENDEE_STATUS;
     initials: string;
     tooltip: string;
+    extraText?: string;
 };
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
@@ -110,6 +111,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
             const title = name === attendee.email || isYou ? attendeeEmail : `${name} <${attendeeEmail}>`;
             const initials = getInitials(displayName);
             const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou });
+            const extraText = attendee.role === ICAL_ATTENDEE_ROLE.OPTIONAL ? c('Attendee role').t`Optional` : '';
 
             return {
                 title,
@@ -118,6 +120,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                 partstat: attendee.partstat,
                 initials,
                 tooltip,
+                extraText,
             };
         })
         .reduce<GroupedAttendees>(
@@ -147,7 +150,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                     ...groupedAttendees[DECLINED],
                     ...groupedAttendees[NEEDS_ACTION],
                     ...groupedAttendees.other,
-                ].map(({ icon, text, title, initials, tooltip }) => (
+                ].map(({ icon, text, title, initials, tooltip, extraText }) => (
                     <Participant
                         key={title}
                         title={title}
@@ -155,6 +158,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                         icon={icon}
                         text={text}
                         tooltip={tooltip}
+                        extraText={extraText}
                     />
                 ))}
             </>
@@ -204,7 +208,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                         <Collapsible
                             openText={c('Participants expand button label').t`Expand participants list`}
                             closeText={c('Participants expand button label').t`Collapse participants list`}
-                            showButton={numberOfParticipants > 5}
+                            defaultIsExpanded={false}
                             headerContent={
                                 <div className="attendee-count">
                                     {numberOfParticipants}{' '}

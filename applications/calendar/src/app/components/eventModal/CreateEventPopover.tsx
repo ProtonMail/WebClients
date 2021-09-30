@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
-import { Button, classnames, PrimaryButton } from '@proton/components';
+import { Button, classnames, PrimaryButton, useHotkeys } from '@proton/components';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
@@ -62,6 +62,16 @@ const CreateEventPopover = ({
         type: model.isOrganizer ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
         selfAddress: model.selfAddress,
     };
+
+    useHotkeys(formRef, [
+        [
+            'Escape',
+            async (e) => {
+                e.stopPropagation();
+                onClose();
+            },
+        ],
+    ]);
 
     return (
         <PopoverContainer
