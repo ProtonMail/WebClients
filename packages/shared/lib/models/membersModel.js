@@ -3,7 +3,7 @@ import updateCollection from '../helpers/updateCollection';
 import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
 
 export const getMembersModel = (api) => {
-    const pageSize = 100;
+    const pageSize = 50;
 
     const requestPage = (page) => {
         return api(

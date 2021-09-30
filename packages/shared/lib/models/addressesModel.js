@@ -3,7 +3,7 @@ import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
 import updateCollection from '../helpers/updateCollection';
 
 export const getAddressesModel = (api) => {
-    const pageSize = 100;
+    const pageSize = 50;
 
     const requestPage = (page) => {
         return api(
