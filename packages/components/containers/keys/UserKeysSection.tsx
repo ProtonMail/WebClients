@@ -27,7 +27,7 @@ const UserKeysSections = () => {
     }
 
     // E.g. vpn user
-    if (!userKeys.length) {
+    if (!userKeysDisplay.length) {
         return <SettingsParagraph>{c('Info').t`No contact encryption keys exist`}</SettingsParagraph>;
     }
 
