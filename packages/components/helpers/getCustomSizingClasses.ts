@@ -5,11 +5,11 @@ export const getCustomSizingClasses = (style?: any) => {
         return '';
     }
     return classnames([
-        style['--height-custom'] && 'h-custom',
-        style['--width-custom'] && 'w-custom',
-        style['--top-custom'] && 'top-custom',
-        style['--right-custom'] && 'right-custom',
-        style['--left-custom'] && 'left-custom',
-        style['--bottom-custom'] && 'bottom-custom',
+        style['--height-custom'] !== undefined && 'h-custom',
+        style['--width-custom'] !== undefined && 'w-custom',
+        style['--top-custom'] !== undefined && 'top-custom',
+        style['--right-custom'] !== undefined && 'right-custom',
+        style['--left-custom'] !== undefined && 'left-custom',
+        style['--bottom-custom'] !== undefined && 'bottom-custom',
     ]);
 };
