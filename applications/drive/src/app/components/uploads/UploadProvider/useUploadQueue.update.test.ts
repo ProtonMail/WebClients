@@ -24,6 +24,7 @@ describe("useUploadQueue's update functions", () => {
 
     let firstFileId: string;
     let firstFolderId: string;
+    let secondFileId: string;
     let secondIds: string[];
 
     beforeEach(() => {
@@ -45,7 +46,8 @@ describe("useUploadQueue's update functions", () => {
 
         firstFileId = hook.current.fileUploads[0].id;
         firstFolderId = hook.current.folderUploads[0].id;
-        secondIds = [hook.current.fileUploads[1].id, hook.current.folderUploads[1].id];
+        secondFileId = hook.current.fileUploads[1].id;
+        secondIds = [secondFileId, hook.current.folderUploads[1].id];
     });
 
     it('updates file state using id', () => {
@@ -79,7 +81,7 @@ describe("useUploadQueue's update functions", () => {
             TransferState.Pending,
             TransferState.Canceled,
             TransferState.Initializing,
-            TransferState.Initializing,
+            TransferState.Canceled,
         ]);
         expect(hook.current.folderUploads.map(({ state }) => state)).toMatchObject([
             TransferState.Pending,
@@ -200,6 +202,41 @@ describe("useUploadQueue's update functions", () => {
             [{ parentId: 'parentId', meta: { filename: 'folder1' } }],
             [{ parentId: 'parentId', meta: { filename: 'folder2' } }],
             [{ parentId: 'parentId', meta: { filename: 'folder3' } }],
+        ]);
+    });
+
+    it('updates state to cancel for folder recursively to not hang children forever', () => {
+        act(() => {
+            hook.current.updateState(firstFolderId, TransferState.Canceled);
+        });
+        expect(hook.current.folderUploads.map(({ state, meta }) => [meta.filename, state])).toMatchObject([
+            ['folder1', TransferState.Canceled],
+            ['folder2', TransferState.Pending],
+            ['folder3', TransferState.Pending],
+        ]);
+        expect(hook.current.fileUploads.map(({ state, meta }) => [meta.filename, state])).toMatchObject([
+            ['file1.txt', TransferState.Pending],
+            ['file2.txt', TransferState.Canceled],
+            ['file3.txt', TransferState.Canceled],
+            ['file4.txt', TransferState.Initializing],
+        ]);
+    });
+
+    it('restarts child also restarts parent folder recursively to not hang forever', () => {
+        act(() => {
+            hook.current.updateState(firstFolderId, TransferState.Canceled);
+            hook.current.updateState(secondFileId, TransferState.Initializing);
+        });
+        expect(hook.current.folderUploads.map(({ state, meta }) => [meta.filename, state])).toMatchObject([
+            ['folder1', TransferState.Pending],
+            ['folder2', TransferState.Pending],
+            ['folder3', TransferState.Pending],
+        ]);
+        expect(hook.current.fileUploads.map(({ state, meta }) => [meta.filename, state])).toMatchObject([
+            ['file1.txt', TransferState.Pending],
+            ['file2.txt', TransferState.Initializing],
+            ['file3.txt', TransferState.Canceled],
+            ['file4.txt', TransferState.Initializing],
         ]);
     });
 });
