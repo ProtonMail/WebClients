@@ -4,7 +4,12 @@ import { c } from 'ttag';
 import { generateUID } from '@proton/components';
 
 import { TransferState } from '../../../interfaces/transfer';
-import { isTransferPending, isTransferConflict, isTransferFinished } from '../../../utils/transfer';
+import {
+    isTransferInitializing,
+    isTransferPending,
+    isTransferConflict,
+    isTransferFinished,
+} from '../../../utils/transfer';
 import { UploadFileList, UploadFileItem, UploadFolderItem } from '../interface';
 import {
     UploadQueue,
@@ -141,6 +146,12 @@ export default function useUploadQueue() {
             };
             const updateFolder = (folder: FolderUpload): FolderUpload => {
                 if (filter(folder)) {
+                    // When parent folder is canceled, all childs would hang up
+                    // in initializing state - therefore we need to cancel
+                    // recursively all children.
+                    if (newStateCallback(folder) === TransferState.Canceled) {
+                        folder = recursiveCancel(folder);
+                    }
                     updateFileOrFolder(folder);
                     if (folderId) {
                         folder.linkId = folderId;
@@ -161,6 +172,12 @@ export default function useUploadQueue() {
                 }
                 folder.files = folder.files.map(updateFile);
                 folder.folders = folder.folders.map(updateFolder);
+                // When any child is restarted after parent folder is canceled,
+                // the child would hang up in initializing state - therefore we
+                // need to restart also all canceled parents of that child.
+                if (folder.state === TransferState.Canceled && hasInitializingUpload(folder)) {
+                    folder.state = folder.parentId ? TransferState.Pending : TransferState.Initializing;
+                }
                 return folder;
             };
             setQueue((queue) => [
@@ -332,5 +349,29 @@ function isNameAlreadyUploading(part: UploadQueue | FolderUpload, name: string):
     return (
         part.files.filter((upload) => !isTransferFinished(upload)).some(({ file }) => file.name === name) ||
         part.folders.filter(recursiveIsNotFinished).some((folder) => folder.name === name)
+    );
+}
+
+function recursiveCancel(folder: FolderUpload): FolderUpload {
+    return {
+        ...folder,
+        files: folder.files.map((file) => ({
+            ...file,
+            state: TransferState.Canceled,
+        })),
+        folders: folder.folders
+            .map((folder) => ({
+                ...folder,
+                state: TransferState.Canceled,
+            }))
+            .map(recursiveCancel),
+    };
+}
+
+function hasInitializingUpload(folder: FolderUpload): boolean {
+    return (
+        folder.files.some(isTransferInitializing) ||
+        folder.folders.some(isTransferInitializing) ||
+        folder.folders.some(hasInitializingUpload)
     );
 }
