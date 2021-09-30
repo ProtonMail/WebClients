@@ -32,6 +32,12 @@ export const dialogRootClassName = 'modal-container';
 
 export const dropdownRootClassName = 'dropdown';
 
+const textInputSelectors = ['email', 'number', 'password', 'search', 'tel', 'text', 'url'].map(
+    (type) => `input[type=${type}]`
+);
+
+const allTextInputsSelector = `input:not([type]), textarea, ${textInputSelectors.join(',')}`;
+
 const domIsBusy = () => {
     /*
      * These verifications perform some dom querying operations so in
@@ -43,6 +49,14 @@ const domIsBusy = () => {
     }
 
     if (document.querySelector(`.${dropdownRootClassName}`) !== null) {
+        return true;
+    }
+
+    const allInputs = document.querySelectorAll<HTMLInputElement>(allTextInputsSelector);
+
+    const allTextInputsAreEmpty = Array.from(allInputs).every((element) => !element.value);
+
+    if (!allTextInputsAreEmpty) {
         return true;
     }
 
@@ -63,12 +77,14 @@ const domIsBusy = () => {
     return false;
 };
 
-const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
+const THIRTY_MINUTES = 30 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
 export const newVersionUpdater = (config: ProtonConfig) => {
     const { VERSION_PATH, COMMIT } = config;
+
+    let reloadTimeoutId: number | null = null;
 
     const getVersion = () => fetch(VERSION_PATH).then((response) => response.json());
 
@@ -82,11 +98,35 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         }
     };
 
-    const handleVisibilityChange = () => {
-        const documentIsVisible = !document.hidden && document.visibilityState === 'visible';
+    const clearReload = () => {
+        if (reloadTimeoutId) {
+            reloadTimeoutId = null;
+        }
+    };
 
-        if (!documentIsVisible && !domIsBusy() && !getIsBusy()) {
+    /*
+     * Instead of immediately reloading as soon as we detect the user to
+     * not be busy and also having left the tab / browser / window, we
+     * schedule a reload in case the user only left for a little while
+     * and is about to come back soon.
+     */
+    const scheduleReload = () => {
+        clearReload();
+        reloadTimeoutId = window.setTimeout(() => {
             window.location.reload();
+        }, THIRTY_MINUTES);
+    };
+
+    const handleVisibilityChange = () => {
+        const documentIsVisible = document.visibilityState === 'visible';
+
+        if (documentIsVisible) {
+            clearReload();
+            return;
+        }
+
+        if (!domIsBusy() && !getIsBusy()) {
+            scheduleReload();
         }
     };
 
@@ -108,6 +148,6 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         () => {
             checkForNewVersion();
         },
-        EVERY_THIRTY_MINUTES
+        THIRTY_MINUTES
     );
 };
