@@ -139,7 +139,7 @@ export default function useUpload() {
             getFolderConflictHandler(nextFolderUpload.id)
         );
         control.add(nextFolderUpload.id, controls);
-        preventLeave(
+        void preventLeave(
             controls
                 .start()
                 .then(({ folderId }) => {
@@ -180,7 +180,7 @@ export default function useUpload() {
             getFileConflictHandler(nextFileUpload.id)
         );
         control.add(nextFileUpload.id, controls);
-        preventLeave(
+        void preventLeave(
             controls
                 .start({
                     onInit: (mimeType: string, fileName: string) => {

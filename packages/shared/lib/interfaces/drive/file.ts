@@ -32,6 +32,7 @@ export interface UpdateFileRevision {
     BlockList: { Index: number; Token: string }[];
     ManifestSignature: string;
     SignatureAddress: string;
+    XAttr?: string;
 }
 
 export interface CreateFileResult {
