@@ -16,16 +16,14 @@ const compareName = (a, b) => a.Name.localeCompare(b.Name);
 export const getContactsModel = (api) => {
     const pageSize = CONTACTS_LIMIT;
 
-    const requestPage = (Page) =>
-        api(
-            queryContacts({
-                Page,
-                PageSize: pageSize,
-            })
-        );
-
     return queryPagesThrottled({
-        requestPage,
+        requestPage: (Page) =>
+            api(
+                queryContacts({
+                    Page,
+                    PageSize: pageSize,
+                })
+            ),
         pageSize,
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
         delayPerChunk: 100,

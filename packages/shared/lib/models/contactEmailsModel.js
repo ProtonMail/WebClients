@@ -6,17 +6,15 @@ import { CONTACT_EMAILS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '../constants
 export const getContactEmailsModel = (api) => {
     const pageSize = CONTACT_EMAILS_LIMIT;
 
-    const requestPage = (page) => {
-        return api(
-            queryContactEmails({
-                Page: page,
-                PageSize: pageSize,
-            })
-        );
-    };
-
     return queryPagesThrottled({
-        requestPage,
+        requestPage: (page) => {
+            return api(
+                queryContactEmails({
+                    Page: page,
+                    PageSize: pageSize,
+                })
+            );
+        },
         pageSize,
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
         delayPerChunk: 1000,

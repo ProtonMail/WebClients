@@ -5,17 +5,15 @@ import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
 export const getMembersModel = (api) => {
     const pageSize = 50;
 
-    const requestPage = (page) => {
-        return api(
-            queryMembers({
-                Page: page,
-                PageSize: pageSize,
-            })
-        );
-    };
-
     return queryPagesThrottled({
-        requestPage,
+        requestPage: (page) => {
+            return api(
+                queryMembers({
+                    Page: page,
+                    PageSize: pageSize,
+                })
+            );
+        },
         pageSize,
         pagesPerChunk: 10,
         delayPerChunk: 100,

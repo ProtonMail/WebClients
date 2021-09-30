@@ -6,16 +6,14 @@ import { AuthLog } from '@proton/shared/lib/authlog';
 export const getAllAuthenticationLogs = (api: Api) => {
     const pageSize = 150;
 
-    const requestPage = (Page: number) =>
-        api<{ Logs: AuthLog[]; Total: number }>(
-            queryLogs({
-                Page,
-                PageSize: pageSize,
-            })
-        );
-
     return queryPagesThrottled({
-        requestPage,
+        requestPage: (Page: number) =>
+            api<{ Logs: AuthLog[]; Total: number }>(
+                queryLogs({
+                    Page,
+                    PageSize: pageSize,
+                })
+            ),
         pageSize,
         pagesPerChunk: 10,
         delayPerChunk: 100,
