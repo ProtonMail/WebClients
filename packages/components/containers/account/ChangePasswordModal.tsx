@@ -474,6 +474,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             placeholder={c('Placeholder').t`Password`}
                             autoComplete="current-password"
                             required
+                            autoFocus
                         />
                     </Field>
                 </Row>
