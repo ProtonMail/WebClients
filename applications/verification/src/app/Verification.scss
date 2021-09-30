@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/config';
+
+.hv {
+	background: url(./mountains.svg) 0 0 no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hv-container {
+	padding: em(24) em(48) em(48);
+	border-radius: var(--border-radius-large);
+}
