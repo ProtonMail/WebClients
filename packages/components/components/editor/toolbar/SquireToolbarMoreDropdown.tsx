@@ -68,7 +68,7 @@ const SquireToolbarMoreDropdown = ({
     // We use array of node instead
     return (
         <SquireToolbarDropdown
-            className="flex-item-noshrink mlauto"
+            className="flex-item-noshrink mlauto editor-toolbar-more-dropdown"
             title={c('Action').t`More`}
             data-testid="squire-more"
         >
@@ -214,7 +214,6 @@ const SquireToolbarMoreDropdown = ({
                         <Icon name="check" className={classnames(['mt0-25', getClassname(isPlainText)])} />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
                     </DropdownMenuButton>,
-                    <div className="dropdown-item-hr" key="hr-6" />,
                 ]}
                 {children}
             </DropdownMenu>

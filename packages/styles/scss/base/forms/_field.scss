@@ -208,6 +208,44 @@ textarea.field {
 	}
 }
 
+/*
+ * Composer new inputs
+ * Only for composer for the moment
+ */
+.field-lighter {
+	border-radius: 0;
+	border-block-start-width: 0;
+	border-inline-width: 0;
+	//padding-block: em(5) em(7);
+
+	&#{&} {
+		min-block-size: em(44);
+	}
+	// normal select
+	& + svg.right-icon {
+		inset-block-start: 0.5em;
+	}
+
+	// new select
+	&.select {
+		border-block-start: 0;
+		border-inline: 0;
+		border-radius: 0;
+		&[aria-expanded='true'] {
+			border-color: var(--interaction-norm);
+			background-color: var(--field-focus-background-color);
+			color: var(--field-focus-text-color);
+		}
+	}
+	// new selectTwo without caret
+	&.select--inline-caret > svg {
+		display: none;
+	}
+}
+.dropdown-content .select--inline-caret-option {
+	display: none;
+}
+
 .field-icon-container--invalid:not(:focus-within) {
 	border-color: var(--signal-danger);
 

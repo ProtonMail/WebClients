@@ -30,9 +30,9 @@
 	}
 }
 
-.editor-toolbar {
-	border-block-end: 1px solid var(--border-norm);
-}
+// .editor-toolbar {
+// 	border-block-end: 1px solid var(--border-norm);
+// }
 .editor-toolbar-separator {
 	border-inline-start: 1px solid var(--border-norm);
 }
@@ -43,7 +43,7 @@
 		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 		font-size: rem(14);
 		line-height: 1.65;
-		margin-inline-start: rem(8);
+		// margin-inline-start: rem(8);
 		margin-block-start: rem(8);
 		color: grey;
 	}
@@ -100,5 +100,12 @@
 
 	.editor-toolbar-icon {
 		color: var(--text-norm);
+	}
+}
+
+.editor-toolbar-more-dropdown {
+	.editor-toolbar-icon {
+		width: em(16);
+		height: em(16);
 	}
 }

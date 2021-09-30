@@ -20,7 +20,6 @@ import {
     setDocumentContent,
 } from '../../../helpers/message/messageContent';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import EditorToolbarExtension from './EditorToolbarExtension';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import {
     createBlob,
@@ -45,7 +44,6 @@ interface Props {
     onReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
-    onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
@@ -61,7 +59,6 @@ const SquireEditorWrapper = ({
     onReady,
     onChange,
     onChangeContent,
-    onChangeFlag,
     onAddAttachments,
     onRemoveAttachment,
     onFocus,
@@ -282,11 +279,6 @@ const SquireEditorWrapper = ({
     });
     const handleSquireReady = useCallback(() => setEditorReady(true), []);
 
-    const toolbarExtension = useMemo(
-        () => <EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />,
-        [message.data, onChangeFlag]
-    );
-
     return (
         <SquireEditor
             ref={squireEditorRef}
@@ -301,7 +293,6 @@ const SquireEditorWrapper = ({
             onEllipseClick={handleEllipseClick}
             onReady={handleSquireReady}
             onAddImages={onAddAttachments}
-            toolbarMoreDropdownExtension={toolbarExtension}
             keydownHandler={keydownHandler}
             defaultFont={defaultFont}
         />

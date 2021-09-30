@@ -39,9 +39,6 @@ describe('Composer switch plaintext <-> html', () => {
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
-        const moreDropdown = await findByTestId('squire-more');
-        fireEvent.click(moreDropdown);
-
         const toHtmlButton = await findByTestId('squire-to-html');
         fireEvent.click(toHtmlButton);
 

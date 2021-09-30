@@ -1,12 +1,14 @@
 import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
-import { useToggle } from '@proton/components';
+import { ContactListModal, useModals, useToggle } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { MessageExtended } from '../../../models/message';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 import { MessageChange } from '../Composer';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { RecipientType } from '../../../models/address';
 
 interface Props {
     message: MessageExtended;
@@ -25,6 +27,8 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         to: toFocusRef,
         cc: ccFocusRef,
     };
+
+    const { createModal } = useModals();
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);
@@ -61,12 +65,30 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
                 return false;
             }
 
-            setEditor(true);
-            setExpanded(true);
-            setTimeout(() => inputFocusRefs.cc.current(), 100);
+            // If click on the CC, BCC button and is already opened, we close the "expanded"
+            if (editor && expanded) {
+                setExpanded(false);
+                setTimeout(() => inputFocusRefs.to.current(), 100);
+            } else {
+                setEditor(true);
+                setExpanded(true);
+                setTimeout(() => inputFocusRefs.cc.current(), 100);
+            }
         },
-        [disabled]
+        [disabled, expanded, editor]
     );
+
+    const handleContactModal = (type: RecipientType) => async () => {
+        const recipients: Recipient[] = await new Promise((resolve, reject) => {
+            createModal(<ContactListModal onSubmit={resolve} onClose={reject} inputValue={message.data?.[type]} />);
+        });
+
+        const currentRecipients = message.data && message.data[type] ? message.data[type] : [];
+        // the contacts being handled in the modal
+        const currentNonContacts = currentRecipients.filter((r) => !r.ContactID);
+
+        onChange({ data: { [type]: [...currentNonContacts, ...recipients] } });
+    };
 
     return editor ? (
         <AddressesEditor
@@ -76,6 +98,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             expanded={expanded}
             toggleExpanded={handleToggleExpanded}
             inputFocusRefs={inputFocusRefs}
+            handleContactModal={handleContactModal}
         />
     ) : (
         <AddressesSummary
@@ -84,6 +107,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             mapSendInfo={messageSendInfo.mapSendInfo}
             onFocus={handleFocus}
             toggleExpanded={handleToggleExpanded}
+            handleContactModal={handleContactModal}
         />
     );
 };

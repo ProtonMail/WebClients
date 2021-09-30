@@ -49,7 +49,9 @@ export const waitForEventManagerCall = async () => {
 };
 
 export const getModal = () => {
-    const modal = document.querySelector('dialog[aria-modal="true"]') as HTMLDialogElement | null;
+    const modal =
+        (document.querySelector('dialog[aria-modal="true"]') as HTMLDialogElement | null) ||
+        (document.querySelector('div[class="modal"]') as HTMLDialogElement | null);
 
     if (!modal) {
         throw new Error('No modal was on screen');
