@@ -45,6 +45,11 @@ interface DriveLink {
     MIMEType: string;
     Hash: string;
     CreateTime: number;
+    // API returns only ModifyTime which represnet modification on API, i.e.,
+    // the time when the last revision was uploaded. The real modification time
+    // (set by file system) is available in XAttr and these times are properly
+    // set during decryption of the link.
+    UploadTime: number;
     ModifyTime: number;
     Trashed: number | null;
     State: number;
@@ -60,6 +65,14 @@ interface DriveLink {
     UrlsExpired: boolean;
     ShareIDs: string[];
     ShareUrls: SharedUrlInfo[];
+    // XAttr has following JSON structure encrypted by node key:
+    // {
+    //    Common: {
+    //        ModificationTime: "2021-09-16T07:40:54+0000",
+    //        Size: 13283,
+    //    },
+    // }
+    XAttr: string;
     // CachedThumbnailURL is computed URL to cached image. This is not part
     // of any request and not filled automatically. To get this value, use
     // `loadLinkThumbnail` from `useDrive`.

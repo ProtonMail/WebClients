@@ -6,13 +6,11 @@ interface Props {
     time: number;
 }
 
-const TimeCell = ({ time: modifyTime }: Props) => {
+const TimeCell = ({ time }: Props) => {
     return (
-        <div className="text-ellipsis" title={readableTime(modifyTime, 'PP', { locale: dateLocale })}>
+        <div className="text-ellipsis" title={readableTime(time, 'PP', { locale: dateLocale })}>
             <span className="text-pre">
-                <Time key="dateModified" format="PPp">
-                    {modifyTime}
-                </Time>
+                <Time format="PPp">{time}</Time>
             </span>
         </div>
     );

@@ -42,6 +42,7 @@ import {
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import useUploadHelper from './useUploadHelper';
+import { ecryptExtendedAttributes } from '../../../utils/drive/extendedAttributes';
 
 interface FileRevision {
     isNewFile: boolean;
@@ -323,6 +324,13 @@ export default function useUploadFile() {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                     }
 
+                    const addressKeyInfo = await addressKeyInfoPromise;
+                    const xattr = await ecryptExtendedAttributes(
+                        file,
+                        createdFileRevision.privateKey,
+                        addressKeyInfo.privateKey
+                    );
+
                     await debouncedRequest(
                         queryUpdateFileRevision(shareId, createdFileRevision.fileID, createdFileRevision.revisionID, {
                             State: FileRevisionState.Active,
@@ -332,6 +340,7 @@ export default function useUploadFile() {
                             })),
                             ManifestSignature: signature,
                             SignatureAddress: signatureAddress,
+                            XAttr: xattr,
                         })
                     );
 

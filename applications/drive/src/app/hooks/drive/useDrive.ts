@@ -71,6 +71,7 @@ import useDriveCrypto from './useDriveCrypto';
 import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { useDriveEventManager, ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../utils/link';
+import { decryptExtendedAttributes } from '../../utils/drive/extendedAttributes';
 
 const { CREATE, DELETE, UPDATE, UPDATE_METADATA } = EVENT_TYPES;
 
@@ -205,11 +206,22 @@ function useDrive() {
         return keys;
     };
 
-    const decryptLink = async (meta: LinkMeta, privateKey: OpenPGPKey): Promise<LinkMeta> => {
+    const decryptLink = async (meta: LinkMeta, parentPrivateKey: OpenPGPKey): Promise<LinkMeta> => {
+        let modifyTime = meta.ModifyTime;
+        if (meta.XAttr) {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            const { decryptedPassphrase } = await decryptLinkPassphraseWithParentKey(meta, parentPrivateKey);
+            const nodePrivateKey = await decryptPrivateKey(meta.NodeKey, decryptedPassphrase);
+            const xattr = await decryptExtendedAttributes(meta.XAttr, nodePrivateKey);
+            modifyTime = xattr.Common.ModificationTime || meta.ModifyTime;
+        }
+
         return {
             ...meta,
             EncryptedName: meta.Name,
-            Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey }),
+            Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey: parentPrivateKey }),
+            UploadTime: meta.ModifyTime,
+            ModifyTime: modifyTime,
         };
     };
 
@@ -274,11 +286,11 @@ function useDrive() {
                   })
               ).Link;
 
-        const { privateKey } = Link.ParentLinkID
+        const { privateKey: parentPrivateKey } = Link.ParentLinkID
             ? await getLinkKeys(shareId, Link.ParentLinkID, config)
             : await getShareKeys(shareId);
 
-        const meta = await decryptLink(Link, privateKey);
+        const meta = await decryptLink(Link, parentPrivateKey);
         cache.set.linkMeta(meta, shareId, { rerender: !config.preventRerenders });
 
         return meta;
@@ -333,6 +345,16 @@ function useDrive() {
             getVerificationKey(linkMeta.SignatureAddress),
         ]);
 
+        return decryptPassphrase({
+            armoredPassphrase: linkMeta.NodePassphrase,
+            armoredSignature: linkMeta.NodePassphraseSignature,
+            privateKeys: [parentKey],
+            publicKeys,
+        });
+    };
+
+    const decryptLinkPassphraseWithParentKey = async (linkMeta: LinkMeta, parentKey: OpenPGPKey) => {
+        const publicKeys = await getVerificationKey(linkMeta.SignatureAddress);
         return decryptPassphrase({
             armoredPassphrase: linkMeta.NodePassphrase,
             armoredSignature: linkMeta.NodePassphraseSignature,
@@ -853,7 +875,7 @@ function useDrive() {
                                 ];
 
                                 // Updates locked shares
-                                debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
+                                void debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
                                     const lockedShares = Shares.filter(
                                         (share) => share.Locked && isPrimaryShare(share)
                                     );
