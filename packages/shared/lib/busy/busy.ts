@@ -104,6 +104,12 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         }
     };
 
+    /*
+     * Instead of immediately reloading as soon as we detect the user to
+     * not be busy and also having left the tab / browser / window, we
+     * schedule a reload in case the user only left for a little while
+     * and is about to come back soon.
+     */
     const scheduleReload = () => {
         clearReload();
         reloadTimeoutId = window.setTimeout(() => {
