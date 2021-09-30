@@ -10,7 +10,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import {
     Alert,
     Badge,
@@ -119,7 +119,7 @@ const EventPopover = ({
     };
 
     const dateHeader = useMemo(() => {
-        const [dateStart, dateEnd] = [start, end].map((date) => formatUTC(date, 'cccc PPP', { locale: dateLocale }));
+        const [dateStart, dateEnd] = [start, end].map((date) => formatUTC(date, 'ccc, PP', { locale: dateLocale }));
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
 
@@ -159,7 +159,7 @@ const EventPopover = ({
                 data-test-id="event-popover:edit"
                 shape="ghost"
                 onClick={handleEdit}
-                loading={loadingAction}
+                disabled={loadingAction}
                 icon
                 size="small"
                 title={c('Action').t`Edit`}
@@ -208,6 +208,20 @@ const EventPopover = ({
             locale: dateLocale,
         });
     }, [eventReadResult, tzid]);
+
+    useEffect(() => {
+        const onEscPress = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        document.addEventListener('keydown', onEscPress, false);
+
+        return () => {
+            document.removeEventListener('keydown', onEscPress, false);
+        };
+    }, []);
 
     if (eventReadError) {
         return (
