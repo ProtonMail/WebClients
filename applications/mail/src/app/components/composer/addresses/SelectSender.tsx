@@ -1,5 +1,6 @@
-import { useState, ChangeEvent, MutableRefObject } from 'react';
-import { Select, generateUID, useAddresses, useMailSettings } from '@proton/components';
+import { useState, MutableRefObject } from 'react';
+import { generateUID, useAddresses, useMailSettings, SelectTwo, Option, Icon } from '@proton/components';
+import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { MessageExtended } from '../../../models/message';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { MessageChange } from '../Composer';
@@ -19,14 +20,17 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     const [uid] = useState(generateUID('select-sender'));
 
-    const addressesOptions = getFromAddresses(addresses, message.originalTo).map((address) => ({
-        text: address.Email,
-        value: address.Email, // Because of + addresses, the ID can not be unique while the email is
-    }));
+    const addressesOptions = getFromAddresses(addresses, message.originalTo).map((address) => (
+        <Option value={address.Email} title={address.Email} key={address.Email}>
+            <span className="inline-flex flex-nowrap flex-row flex-align-items-center max-w100">
+                <span className="text-ellipsis">{address.Email}</span>
+                <Icon name="angle-down" className="select--inline-caret-option flex-item-noshrink ml0-5" />
+            </span>
+        </Option>
+    ));
 
-    const handleFromChange = (event: ChangeEvent) => {
-        const select = event.target as HTMLSelectElement;
-        const email = select.value;
+    const handleFromChange = (event: SelectChangeEvent<string>) => {
+        const email = event.value;
 
         const currentAddress = getAddressFromEmail(addresses, message.data?.Sender.Address);
         const newAddress = getAddressFromEmail(addresses, email);
@@ -40,15 +44,21 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
     };
 
     return (
-        <Select
-            id={`sender-${uid}`}
-            options={addressesOptions}
-            value={message.data?.Sender?.Address}
-            disabled={disabled}
-            onChange={handleFromChange}
-            onFocus={addressesBlurRef.current}
-            data-testid="composer:from"
-        />
+        <>
+            <SelectTwo
+                disabled={disabled}
+                className="field-lighter select--inline-caret composer-meta-select-sender"
+                id={`sender-${uid}`}
+                value={message.data?.Sender?.Address}
+                onChange={handleFromChange}
+                onFocus={addressesBlurRef.current}
+                noMaxWidth={false}
+                originalPlacement="bottom-left"
+                data-testid="composer:from"
+            >
+                {addressesOptions}
+            </SelectTwo>
+        </>
     );
 };
 

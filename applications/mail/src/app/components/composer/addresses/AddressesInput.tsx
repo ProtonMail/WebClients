@@ -7,6 +7,8 @@ import {
     useContactEmails,
     useContactGroups,
     useNotifications,
+    Button,
+    Icon,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -30,6 +32,10 @@ interface Props {
     placeholder?: string;
     expanded?: boolean;
     dataTestId?: string;
+    addContactButton?: string;
+    addContactAction?: () => void;
+    classname?: string;
+    hasLighterFieldDesign?: boolean;
 }
 
 const AddressesInput = ({
@@ -41,6 +47,10 @@ const AddressesInput = ({
     placeholder,
     expanded = false,
     dataTestId,
+    addContactButton,
+    addContactAction,
+    classname,
+    hasLighterFieldDesign = false,
 }: Props) => {
     const { contactsMap: contactEmailsMap, groupsWithContactsMap } = useContactCache();
     const { getRecipientsOrGroups } = useRecipientLabel();
@@ -159,63 +169,87 @@ const AddressesInput = ({
     const dragPlaceholder = (
         <div
             className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 max-w100 no-pointer-events h-custom w-custom"
-            style={{ '--width-custom': `${placeholderSize?.width}px`, '--height-custom': `${placeholderSize?.height}px` }}
+            style={{
+                '--width-custom': `${placeholderSize?.width}px`,
+                '--height-custom': `${placeholderSize?.height}px`,
+            }}
         />
     );
 
     return (
-        <div className="composer-addresses-autocomplete w100 flex-item-fluid relative" ref={anchorRef}>
+        <div
+            className={classnames(['composer-addresses-autocomplete w100 flex-item-fluid relative', classname])}
+            ref={anchorRef}
+        >
             <div
                 className={classnames([
-                    'composer-addresses-container flex-item-fluid',
+                    'composer-addresses-container flex-no-min-children flex-item-fluid',
                     !expanded && 'composer-addresses-container-closed field',
+                    hasLighterFieldDesign && 'field-lighter',
                 ])}
                 onClick={handleClick}
                 {...containerDragHandlers}
             >
-                {recipientsOrGroups.map((recipientOrGroup, index) => (
-                    <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
-                        {index === placeholderPosition && dragPlaceholder}
-                        {recipientOrGroup.recipient ? (
-                            <AddressesRecipientItem
-                                recipient={recipientOrGroup.recipient}
-                                messageSendInfo={messageSendInfo}
-                                onChange={handleRecipientChange(recipientOrGroup.recipient)}
-                                onRemove={handleRecipientRemove(recipientOrGroup.recipient)}
-                                dragged={draggedRecipient === recipientOrGroup}
-                                {...itemDragHandlers(recipientOrGroup)}
-                            />
-                        ) : (
-                            <AddressesGroupItem
-                                recipientGroup={recipientOrGroup.group as RecipientGroup}
-                                messageSendInfo={messageSendInfo}
-                                onChange={handleGroupChange(recipientOrGroup.group)}
-                                onRemove={handleGroupRemove(recipientOrGroup.group)}
-                                dragged={draggedRecipient === recipientOrGroup}
-                                {...itemDragHandlers(recipientOrGroup)}
-                            />
-                        )}
-                    </Fragment>
-                ))}
-                {placeholderPosition === recipientsOrGroups.length && dragPlaceholder}
-                <div className="flex-item-fluid flex flex-align-items-center composer-addresses-input-container">
-                    <AddressesAutocomplete
-                        id={id}
-                        anchorRef={anchorRef}
-                        ref={inputRef}
-                        contactEmails={contactEmails}
-                        contactGroups={contactGroups}
-                        contactEmailsMap={contactEmailsMap}
-                        groupsWithContactsMap={groupsWithContactsMap}
-                        recipients={recipients}
-                        onAddRecipients={handleAddRecipient}
-                        onKeyDown={handleInputKey}
-                        placeholder={recipients.length > 0 ? '' : placeholder}
-                        hasEmailPasting
-                        hasAddOnBlur
-                        data-testid={dataTestId}
-                    />
+                <div className="flex-item-fluid flex max-w100 max-h100">
+                    {recipientsOrGroups.map((recipientOrGroup, index) => (
+                        <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
+                            {index === placeholderPosition && dragPlaceholder}
+                            {recipientOrGroup.recipient ? (
+                                <AddressesRecipientItem
+                                    recipient={recipientOrGroup.recipient}
+                                    messageSendInfo={messageSendInfo}
+                                    onChange={handleRecipientChange(recipientOrGroup.recipient)}
+                                    onRemove={handleRecipientRemove(recipientOrGroup.recipient)}
+                                    dragged={draggedRecipient === recipientOrGroup}
+                                    {...itemDragHandlers(recipientOrGroup)}
+                                />
+                            ) : (
+                                <AddressesGroupItem
+                                    recipientGroup={recipientOrGroup.group as RecipientGroup}
+                                    messageSendInfo={messageSendInfo}
+                                    onChange={handleGroupChange(recipientOrGroup.group)}
+                                    onRemove={handleGroupRemove(recipientOrGroup.group)}
+                                    dragged={draggedRecipient === recipientOrGroup}
+                                    {...itemDragHandlers(recipientOrGroup)}
+                                />
+                            )}
+                        </Fragment>
+                    ))}
+                    {placeholderPosition === recipientsOrGroups.length && dragPlaceholder}
+                    <div className="flex-item-fluid flex flex-align-items-center composer-addresses-input-container">
+                        <AddressesAutocomplete
+                            id={id}
+                            anchorRef={anchorRef}
+                            ref={inputRef}
+                            contactEmails={contactEmails}
+                            contactGroups={contactGroups}
+                            contactEmailsMap={contactEmailsMap}
+                            groupsWithContactsMap={groupsWithContactsMap}
+                            recipients={recipients}
+                            onAddRecipients={handleAddRecipient}
+                            onKeyDown={handleInputKey}
+                            placeholder={recipients.length > 0 ? '' : placeholder}
+                            hasEmailPasting
+                            hasAddOnBlur
+                            data-testid={dataTestId}
+                            hasLighterFieldDesign={hasLighterFieldDesign}
+                        />
+                    </div>
                 </div>
+                {addContactButton ? (
+                    <span className="flex-item-noshrink flex-align-self-start sticky-top">
+                        <Button
+                            type="button"
+                            onClick={addContactAction}
+                            color="weak"
+                            shape="ghost"
+                            icon
+                            data-testid="composer:to-button"
+                        >
+                            <Icon name="user-plus" size={16} alt={addContactButton} />
+                        </Button>
+                    </span>
+                ) : null}
             </div>
         </div>
     );

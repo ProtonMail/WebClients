@@ -12,16 +12,7 @@ import {
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import {
-    classnames,
-    useNotifications,
-    useHandler,
-    useSubscribeEventManager,
-    useModals,
-    ConfirmModal,
-    ErrorButton,
-    Alert,
-} from '@proton/components';
+import { classnames, useNotifications, useHandler, useSubscribeEventManager } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -32,9 +23,6 @@ import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
 import { mergeMessages } from '../../helpers/message/messages';
 import { getContent, setContent } from '../../helpers/message/messageContent';
-import ComposerPasswordModal from './ComposerPasswordModal';
-import ComposerExpirationModal from './ComposerExpirationModal';
-import ComposerScheduleSendModal from './ComposerScheduleSendModal';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
@@ -57,13 +45,8 @@ import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHandleMessageAlreadySent } from '../../hooks/composer/useHandleMessageAlreadySent';
 import { useAutoSave } from '../../hooks/composer/useAutoSave';
 import { useLongLivingState } from '../../hooks/useLongLivingState';
-
-enum ComposerInnerModal {
-    None,
-    Password,
-    Expiration,
-    ScheduleSend,
-}
+import ComposerInnerModals from './modals/ComposerInnerModals';
+import { ComposerInnerModalStates, useComposerInnerModals } from '../../hooks/composer/useComposerInnerModals';
 
 export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
 
@@ -105,7 +88,6 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
-    const { createModal } = useModals();
     const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
 
@@ -119,9 +101,6 @@ const Composer = (
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
-
-    // Flag representing the presence of an inner modal on the composer
-    const [innerModal, setInnerModal] = useState(ComposerInnerModal.None);
 
     // Model value of the edited message in the composer
     const [modelMessage, setModelMessage] = useLongLivingState<MessageExtended>({
@@ -425,16 +404,6 @@ const Composer = (
         }
     }, [uploadInProgress]);
 
-    const handlePassword = () => {
-        setInnerModal(ComposerInnerModal.Password);
-    };
-    const handleExpiration = () => {
-        setInnerModal(ComposerInnerModal.Expiration);
-    };
-    const handleCloseInnerModal = () => {
-        setInnerModal(ComposerInnerModal.None);
-    };
-
     const handleDiscard = async () => {
         const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
         if (messageFromCache.data?.ID) {
@@ -444,19 +413,6 @@ const Composer = (
     };
 
     const handleDelete = async () => {
-        await new Promise<void>((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    onConfirm={resolve}
-                    onClose={reject}
-                    title={c('Title').t`Delete draft`}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                >
-                    <Alert className="mb1" type="error">{c('Info')
-                        .t`Are you sure you want to permanently delete this draft?`}</Alert>
-                </ConfirmModal>
-            );
-        });
         autoSave.abort?.();
         try {
             await handleDiscard();
@@ -479,6 +435,25 @@ const Composer = (
         onMessageAlreadySent,
     });
 
+    const {
+        innerModal,
+        setInnerModal,
+        attachmentsFoundKeyword,
+        handlePassword,
+        handleExpiration,
+        handleCloseInnerModal,
+        handleDeleteDraft,
+        handleNoRecipients,
+        handleNoSubjects,
+        handleNoAttachments,
+        handleCloseInsertImageModal,
+        handleSendAnyway,
+        handleCancelSend,
+    } = useComposerInnerModals({
+        pendingFiles,
+        handleCancelAddAttachment,
+    });
+
     const handleSend = useSendHandler({
         modelMessage,
         ensureMessageContent,
@@ -490,14 +465,20 @@ const Composer = (
         saveNow,
         onClose,
         onMessageAlreadySent,
+        handleNoRecipients,
+        handleNoSubjects,
+        handleNoAttachments,
     });
 
     const { loadingScheduleCount, handleScheduleSendModal, handleScheduleSend } = useScheduleSend({
         modelMessage: modelMessage as MessageExtendedWithData,
         setInnerModal,
-        ComposerInnerModal,
+        ComposerInnerModal: ComposerInnerModalStates,
         setModelMessage,
         handleSend,
+        handleNoRecipients,
+        handleNoSubjects,
+        handleNoAttachments,
     });
 
     useImperativeHandle(ref, () => ({
@@ -530,32 +511,25 @@ const Composer = (
             className="composer-container flex flex-column flex-item-fluid relative w100"
             onDragEnter={handleDragEnter}
         >
-            {innerModal === ComposerInnerModal.Password && (
-                <ComposerPasswordModal
-                    message={modelMessage.data}
-                    onClose={handleCloseInnerModal}
-                    onChange={handleChange}
-                />
-            )}
-            {innerModal === ComposerInnerModal.Expiration && (
-                <ComposerExpirationModal
-                    message={modelMessage}
-                    onClose={handleCloseInnerModal}
-                    onChange={handleChange}
-                />
-            )}
-            {innerModal === ComposerInnerModal.ScheduleSend && (
-                <ComposerScheduleSendModal
-                    onClose={handleCloseInnerModal}
-                    onSubmit={handleScheduleSend}
-                    messageLocalID={modelMessage.localID}
-                />
-            )}
+            <ComposerInnerModals
+                innerModal={innerModal}
+                message={modelMessage}
+                attachmentsFoundKeyword={attachmentsFoundKeyword}
+                handleChange={handleChange}
+                pendingFiles={pendingFiles}
+                handleCloseInnerModal={handleCloseInnerModal}
+                handleScheduleSend={handleScheduleSend}
+                handleCloseInsertImageModal={handleCloseInsertImageModal}
+                handleAddAttachmentsUpload={handleAddAttachmentsUpload}
+                handleDelete={handleDelete}
+                handleSendAnyway={handleSendAnyway}
+                handleCancelSend={handleCancelSend}
+            />
             <div
                 className={classnames([
                     'composer-blur-container flex flex-column flex-item-fluid max-w100',
                     // Only hide the editor not to unload it each time a modal is on top
-                    innerModal === ComposerInnerModal.None ? 'flex' : 'hidden',
+                    innerModal === ComposerInnerModalStates.None ? 'flex' : 'hidden',
                 ])}
             >
                 <div
@@ -578,15 +552,11 @@ const Composer = (
                         onEditorReady={handleEditorReady}
                         onChange={handleChange}
                         onChangeContent={handleChangeContent}
-                        onChangeFlag={handleChangeFlag}
                         onFocus={handleContentFocus}
                         onAddAttachments={handleAddAttachmentsStart}
-                        onCancelAddAttachment={handleCancelAddAttachment}
                         onRemoveAttachment={handleRemoveAttachment}
                         onRemoveUpload={handleRemoveUpload}
-                        pendingFiles={pendingFiles}
                         pendingUploads={pendingUploads}
-                        onSelectEmbedded={handleAddAttachmentsUpload}
                         contentFocusRef={contentFocusRef}
                         editorActionsRef={editorActionsRef}
                         squireKeydownHandler={squireKeydownHandler}
@@ -604,10 +574,11 @@ const Composer = (
                     onPassword={handlePassword}
                     onScheduleSendModal={handleScheduleSendModal}
                     onSend={handleSend}
-                    onDelete={handleDelete}
+                    onDelete={handleDeleteDraft}
                     addressesBlurRef={addressesBlurRef}
                     attachmentTriggerRef={attachmentTriggerRef}
                     loadingScheduleCount={loadingScheduleCount}
+                    onChangeFlag={handleChangeFlag}
                 />
             </div>
         </div>

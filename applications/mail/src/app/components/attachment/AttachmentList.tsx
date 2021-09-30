@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Icon, classnames, CircleLoader } from '@proton/components';
+import { Icon, classnames, CircleLoader, InlineLinkButton } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -132,14 +132,20 @@ const AttachmentList = ({
     const TagButton = collapsable ? 'button' : 'div';
 
     return (
-        <div className={classnames(['flex flex-column relative w100 flex-nowrap', className])}>
+        <div
+            className={classnames([
+                'flex flex-column pl1-25 pr1-5 relative w100 flex-nowrap',
+                className,
+                expanded && 'border-top',
+            ])}
+        >
             <AttachmentPreview
                 ref={previewRef}
                 attachments={attachments}
                 message={message}
                 onDownload={handlePreviewDownload}
             />
-            <div className="flex flex-row flex-justify-space-between w100 p0-5" data-testid="attachments-header">
+            <div className="flex flex-row w100 p0-5" data-testid="attachments-header">
                 <TagButton
                     type="button"
                     title={titleButton}
@@ -168,15 +174,9 @@ const AttachmentList = ({
                     )}
                 </TagButton>
                 {collapsable && (
-                    <button
-                        type="button"
-                        title={titleButton}
-                        aria-label={titleButton}
-                        className="color-primary no-outline"
-                        onClick={handleToggleExpand}
-                    >
+                    <InlineLinkButton title={titleButton} aria-label={titleButton} onClick={handleToggleExpand}>
                         {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
-                    </button>
+                    </InlineLinkButton>
                 )}
                 {showDownloadAll && attachmentsCount > 0 && (
                     <div>

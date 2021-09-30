@@ -50,20 +50,20 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(false);
 
-        const { queryByTestId, getByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId, queryAllByTestId } = await render(<Composer {...props} />, false);
 
         getByTestId('composer:send-button');
-        const dropdownButton = queryByTestId('dropdown-button');
-        expect(dropdownButton).toBeNull();
+        const dropdownButton = queryAllByTestId('dropdown-button');
+        expect(dropdownButton.length).toBeLessThan(2);
     });
 
     it('should show a modal when the user reached scheduled messages limit', async () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true, 100);
 
-        const { getByTestId } = await render(<Composer {...props} />, false);
+        const { queryAllByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = getByTestId('dropdown-button');
+        const dropdownButton = queryAllByTestId('dropdown-button')[0];
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -81,9 +81,9 @@ describe('Composer scheduled messages', () => {
         setupMessage();
         setupTest(true);
 
-        const { getByTestId } = await render(<Composer {...props} />, false);
+        const { queryAllByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = getByTestId('dropdown-button');
+        const dropdownButton = queryAllByTestId('dropdown-button')[0];
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -91,16 +91,16 @@ describe('Composer scheduled messages', () => {
         fireEvent.click(scheduledSendButton);
 
         const { modal } = await getModal();
-        getByTextDefault(modal, 'No recipient');
+        getByTextDefault(modal, 'Recipient missing');
     });
 
     it('should show a modal when trying to schedule a message with a recipient and without subject', async () => {
         setupMessage('', [user as Recipient]);
         setupTest(true);
 
-        const { getByTestId } = await render(<Composer {...props} />, false);
+        const { queryAllByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = getByTestId('dropdown-button');
+        const dropdownButton = queryAllByTestId('dropdown-button')[0];
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -108,16 +108,16 @@ describe('Composer scheduled messages', () => {
         fireEvent.click(scheduledSendButton);
 
         const { modal } = await getModal();
-        getByTextDefault(modal, 'Message without subject?');
+        getByTextDefault(modal, 'Subject missing');
     });
 
     it('should open schedule send modal and change date', async () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true);
 
-        const { getByTestId, getByText } = await render(<Composer {...props} />, false);
+        const { queryAllByTestId, getByTestId, getByText } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = getByTestId('dropdown-button');
+        const dropdownButton = queryAllByTestId('dropdown-button')[0];
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -158,9 +158,9 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true);
 
-        const { getByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId, queryAllByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = getByTestId('dropdown-button');
+        const dropdownButton = queryAllByTestId('dropdown-button')[0];
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();

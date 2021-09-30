@@ -20,6 +20,9 @@ interface Props {
     ComposerInnerModal: any;
     setModelMessage: Dispatch<SetStateAction<MessageExtended>>;
     handleSend: () => void;
+    handleNoRecipients?: () => void;
+    handleNoSubjects?: () => void;
+    handleNoAttachments?: (keyword: string) => void;
 }
 
 export const useScheduleSend = ({
@@ -28,6 +31,9 @@ export const useScheduleSend = ({
     ComposerInnerModal,
     setModelMessage,
     handleSend,
+    handleNoRecipients,
+    handleNoSubjects,
+    handleNoAttachments,
 }: Props) => {
     const location = useLocation();
     const { createModal } = useModals();
@@ -35,7 +41,11 @@ export const useScheduleSend = ({
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
-    const { preliminaryVerifications } = useSendVerifications();
+    const { preliminaryVerifications } = useSendVerifications(
+        handleNoRecipients,
+        handleNoSubjects,
+        handleNoAttachments
+    );
 
     const referenceCount = toMap(
         isConversationMode(MAILBOX_LABEL_IDS.SCHEDULED, mailSettings, location) ? conversationCounts : messageCounts,

@@ -32,6 +32,8 @@ export interface Props<V>
      * that instance of the Select.
      */
     getSearchableValue?: (value: V) => string;
+    noMaxWidth?: boolean;
+    originalPlacement?: string;
     loading?: boolean;
     onChange?: (e: SelectChangeEvent<V>) => void;
     onValue?: (value: V) => void;
@@ -50,6 +52,8 @@ const SelectTwo = <V extends any>({
     onValue,
     clearSearchAfter = 500,
     getSearchableValue,
+    noMaxWidth = true,
+    originalPlacement,
     loading,
     ...rest
 }: Props<V>) => {
@@ -181,7 +185,8 @@ const SelectTwo = <V extends any>({
                 onClose={close}
                 offset={4}
                 noCaret
-                noMaxWidth
+                noMaxWidth={noMaxWidth}
+                originalPlacement={originalPlacement}
                 sameAnchorWidth
                 disableDefaultArrowNavigation
             >
