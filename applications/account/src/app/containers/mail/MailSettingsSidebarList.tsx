@@ -41,7 +41,7 @@ const MailSettingsSidebarList = () => {
                     {c('Settings section title').t`Domain Names`}
                 </SettingsListItem>
             ) : null}
-            <SettingsListItem to={`${path}/encryption-keys`} icon="shield">
+            <SettingsListItem to={`${path}/encryption-keys`} icon="lock-filled">
                 {c('Settings section title').t`Encryption & keys`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/import-export`} icon="arrow-up-from-screen">
