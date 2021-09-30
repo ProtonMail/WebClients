@@ -4,10 +4,11 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { Alert, Href, LearnMore, Tabs } from '../../../components';
+import { Alert, Button, Href, LearnMore, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
 import useModals from '../../../hooks/useModals';
 import useNotifications from '../../../hooks/useNotifications';
+import useLoading from '../../../hooks/useLoading';
 import { VerificationModel } from './interface';
 import { getRoute } from './helper';
 import Captcha from './Captcha';
@@ -15,13 +16,13 @@ import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
 import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';
 import VerifyCodeForm from './VerifyCodeForm';
-import RequestNewCodeModal from './RequestNewCodeModal';
 
 import './HumanVerificationModal.scss';
 
 export enum HumanVerificationSteps {
     ENTER_DESTINATION,
     VERIFY_CODE,
+    REQUEST_NEW_CODE,
 }
 
 const Text = ({ children }: { children: ReactNode }) => {
@@ -52,6 +53,7 @@ const HumanVerificationForm = ({
     const api = useApi();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const [loadingResend, withLoadingResend] = useLoading();
 
     const verificationRef = useRef<VerificationModel | undefined>(undefined);
     const verificationModel = verificationRef.current;
@@ -179,16 +181,61 @@ const HumanVerificationForm = ({
             <VerifyCodeForm
                 verification={verificationModel}
                 onSubmit={verifyToken}
-                onNoReceive={() => {
-                    createModal(
-                        <RequestNewCodeModal
-                            onEdit={handleEditDestination}
-                            onResend={handleResend}
-                            verificationModel={verificationModel}
-                        />
-                    );
-                }}
+                onNoReceive={() => onChangeStep(HumanVerificationSteps.REQUEST_NEW_CODE)}
             />
+        );
+    }
+
+    if (step === HumanVerificationSteps.REQUEST_NEW_CODE && verificationModel) {
+        const strong = <strong key="email">{verificationModel.value}</strong>;
+
+        return (
+            <>
+                <p>
+                    {verificationModel.method === 'email'
+                        ? c('Info')
+                              .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`
+                        : c('Info')
+                              .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`}
+                </p>
+                <Button
+                    size="large"
+                    color="norm"
+                    type="button"
+                    fullWidth
+                    loading={loadingResend}
+                    onClick={async () => {
+                        await withLoadingResend(handleResend());
+                        onChangeStep(HumanVerificationSteps.VERIFY_CODE);
+                    }}
+                >
+                    {c('Action').t`Request new code`}
+                </Button>
+                <Button
+                    className="mt0-5"
+                    size="large"
+                    color="weak"
+                    type="button"
+                    onClick={handleEditDestination}
+                    disabled={loadingResend}
+                    fullWidth
+                >
+                    {verificationModel.method === 'email'
+                        ? c('Action').t`Edit email address`
+                        : c('Action').t`Edit phone number`}
+                </Button>
+                <Button
+                    className="mt0-5"
+                    size="large"
+                    color="weak"
+                    type="button"
+                    onClick={() => onChangeStep(HumanVerificationSteps.VERIFY_CODE)}
+                    disabled={loadingResend}
+                    fullWidth
+                >
+                    {c('Action').t`Cancel`}
+                </Button>
+            </>
         );
     }
 
