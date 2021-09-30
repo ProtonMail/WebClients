@@ -9,9 +9,10 @@ export const getDomain = (domainID) => ({
     method: 'get',
 });
 
-export const queryDomainAddresses = (domainID) => ({
+export const queryDomainAddresses = (domainID, params) => ({
     url: `domains/${domainID}/addresses`,
     method: 'get',
+    params,
 });
 
 export const queryAvailableDomains = (Type) => ({

@@ -1,26 +1,17 @@
 import { queryAddresses } from '../api/addresses';
-import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
+import queryPages from '../api/helpers/queryPages';
 import updateCollection from '../helpers/updateCollection';
 
 export const getAddressesModel = (api) => {
-    const pageSize = 100;
-
-    const requestPage = (page) => {
+    return queryPages((page, pageSize) => {
         return api(
             queryAddresses({
                 Page: page,
                 PageSize: pageSize,
             })
         );
-    };
-
-    return queryPagesThrottled({
-        requestPage,
-        pageSize,
-        pagesPerChunk: 10,
-        delayPerChunk: 100,
     }).then((pages) => {
-        return pages.map(({ Addresses }) => Addresses).flat();
+        return pages.flatMap(({ Addresses }) => Addresses);
     });
 };
 

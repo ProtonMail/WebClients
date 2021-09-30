@@ -1,6 +1,6 @@
 import { queryContacts } from '../api/contacts';
 import updateCollection from '../helpers/updateCollection';
-import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
+import queryPages from '../api/helpers/queryPages';
 import { CONTACTS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '../constants';
 
 /**
@@ -14,26 +14,20 @@ const pick = ({ ID, Name, LabelIDs }) => ({ ID, Name, LabelIDs });
 const compareName = (a, b) => a.Name.localeCompare(b.Name);
 
 export const getContactsModel = (api) => {
-    const pageSize = CONTACTS_LIMIT;
-
-    const requestPage = (Page) =>
-        api(
-            queryContacts({
-                Page,
-                PageSize: pageSize,
-            })
-        );
-
-    return queryPagesThrottled({
-        requestPage,
-        pageSize,
-        pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
-        delayPerChunk: 100,
-    }).then((pages) => {
-        return pages
-            .map(({ Contacts }) => Contacts.map(pick))
-            .flat()
-            .sort(compareName);
+    return queryPages(
+        (Page, PageSize) =>
+            api(
+                queryContacts({
+                    Page,
+                    PageSize,
+                })
+            ),
+        {
+            pageSize: CONTACTS_LIMIT,
+            pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
+        }
+    ).then((pages) => {
+        return pages.flatMap(({ Contacts }) => Contacts.map(pick)).sort(compareName);
     });
 };
 

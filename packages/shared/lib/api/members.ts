@@ -11,9 +11,10 @@ export const getMember = (memberID: string) => ({
     url: `members/${memberID}`,
 });
 
-export const queryAddresses = (memberID: string) => ({
+export const queryAddresses = (memberID: string, params?: PaginationParams) => ({
     method: 'get',
     url: `members/${memberID}/addresses`,
+    params,
 });
 
 export const createMember = (data: { Name: string; Private: number; MaxSpace: number; MaxVPN: number }) => ({
