@@ -1,4 +1,4 @@
-import { THUMBNAIL_MAX_SIZE } from '../../constants';
+import { THUMBNAIL_MAX_SIZE } from '@proton/shared/lib/drive/constants';
 import { scaleImageFile, calculateThumbnailSize } from './image';
 
 describe('scaleImageFile', () => {

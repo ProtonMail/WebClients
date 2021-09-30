@@ -2,8 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
+import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { TransferState } from '../../../interfaces/transfer';
 import {
     isTransferInitializing,
     isTransferPending,

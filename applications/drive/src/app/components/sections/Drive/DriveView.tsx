@@ -3,8 +3,8 @@ import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 
 import { Toolbar, PrivateMainArea, useAppTitle } from '@proton/components';
+import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
-import { LinkURLType } from '../../../constants';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';

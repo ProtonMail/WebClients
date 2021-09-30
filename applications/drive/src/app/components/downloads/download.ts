@@ -6,19 +6,19 @@ import { Api } from '@proton/shared/lib/interfaces';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsUnreachableError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { noop } from '@proton/shared/lib/helpers/function';
-
-import { DriveFileBlock } from '../../interfaces/file';
-import { queryFileBlock } from '../../api/files';
-import { ObserverStream, streamToBuffer, untilStreamEnd } from '../../utils/stream';
-import { API, TransferCancel } from '../../interfaces/transfer';
-import { waitUntil } from '../../utils/async';
+import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import { queryFileBlock } from '@proton/shared/lib/api/drive/files';
+import { API, TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import {
     MAX_THREADS_PER_DOWNLOAD,
     DOWNLOAD_TIMEOUT,
     STATUS_CODE,
     DOWNLOAD_RETRIES_ON_TIMEOUT,
     BATCH_REQUEST_SIZE,
-} from '../../constants';
+} from '@proton/shared/lib/drive/constants';
+
+import { ObserverStream, streamToBuffer, untilStreamEnd } from '../../utils/stream';
+import { waitUntil } from '../../utils/async';
 import { isTransferCancelError } from '../../utils/transfer';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_TOTAL_BUFFER_SIZE, TIME_TO_RESET_RETRIES } from './constants';
 

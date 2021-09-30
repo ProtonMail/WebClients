@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { MEMBER_SHARING_ENABLED } from '../../../../constants';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
+
 import useToolbarActions from '../../../../hooks/drive/useActions';
-import { FileBrowserItem } from '../../../FileBrowser/interfaces';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {

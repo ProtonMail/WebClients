@@ -3,11 +3,11 @@ import * as React from 'react';
 
 import { useSortedList } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useSelection from '../../../hooks/util/useSelection';
 import useTrash from '../../../hooks/drive/useTrash';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { FileBrowserItem } from '../../FileBrowser';
 import { mapLinksToChildren } from '../helpers';
 
 interface TrashContentProviderState {

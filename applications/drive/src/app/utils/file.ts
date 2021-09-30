@@ -1,4 +1,4 @@
-import { MB } from '../constants';
+import { MB } from '@proton/shared/lib/drive/constants';
 
 export const isFile = async (item: File) => {
     if (item.type !== '' || item.size > MB) {

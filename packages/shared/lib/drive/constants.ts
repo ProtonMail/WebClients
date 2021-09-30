@@ -1,8 +1,7 @@
-import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SortParams } from './interfaces/link';
-import { SupportedMimeTypes } from './utils/MimeTypeParser/constants';
-import { LayoutSetting, SortSetting, UserSettings } from './interfaces/userSettings';
+import { isMobile } from '../helpers/browser';
+import { SORT_DIRECTION } from '../constants';
+import { SortParams } from '../interfaces/drive/link';
+import { LayoutSetting, SortSetting, UserSettings } from '../interfaces/drive/userSettings';
 
 export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
@@ -88,6 +87,74 @@ export enum RESPONSE_CODE {
     NOT_ALLOWED = 2011,
     ALREADY_EXISTS = 2500,
 }
+
+export enum SupportedMimeTypes {
+    flac = 'audio/x-flac',
+    mp2t = 'video/mp2t',
+    gzip = 'application/gzip',
+    bmp = 'image/bmp',
+    tar = 'application/x-tar',
+    rar = 'application/vnd.rar',
+    swf = 'application/x-shockwave-flash',
+    rtf = 'application/rtf',
+    bzip2 = 'application/x-bzip2',
+    eot = 'application/vnd.ms-fontobject',
+    png = 'image/png',
+    pdf = 'application/pdf',
+    apng = 'image/apng',
+    gif = 'image/gif',
+    jpg = 'image/jpeg',
+    ico = 'image/x-icon',
+    tiff = 'image/tiff',
+    mpg = 'video/mpeg',
+    arc = 'application/x-freearc',
+    otf = 'font/otf',
+    ogg = 'application/ogg',
+    ogv = 'video/ogg',
+    oga = 'audio/ogg',
+    opus = 'audio/opus',
+    midi = 'audio/midi',
+    ttf = 'font/ttf',
+    wav = 'audio/wav',
+    avi = 'video/x-msvideo',
+    qcp = 'audio/qcelp',
+    webp = 'image/webp',
+    woff = 'font/woff',
+    woff2 = 'font/woff2',
+    xml = 'text/xml',
+    x7zip = 'application/x-7z-compressed',
+    aac = 'audio/aac',
+    mpeg = 'audio/mpeg',
+    zip = 'application/zip',
+    docx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    pptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    xlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    epub = 'application/epub+zip',
+    odt = 'application/vnd.oasis.opendocument.text',
+    ods = 'application/vnd.oasis.opendocument.spreadsheet',
+    odp = 'application/vnd.oasis.opendocument.presentation',
+    flv = 'video/x-flv',
+    avif = 'image/avif',
+    heif = 'image/heif',
+    heifs = 'image/heif-sequence',
+    heic = 'image/heic',
+    heics = 'image/heic-sequence',
+    cr3 = 'image/x-canon-cr3',
+    qt = 'video/quicktime',
+    m4v = 'video/x-m4v',
+    mp4v = 'video/mp4',
+    m4a = 'audio/x-m4a',
+    mp4a = 'audio/mp4',
+    v3g2 = 'video/3gpp2',
+    v3gp = 'video/3gpp',
+    mp1s = 'video/MP1S',
+    mp2p = 'video/MP2P',
+}
+
+export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
+    py: 'text/x-python',
+    ts: 'application/typescript',
+};
 
 export const fileDescriptions: { [type: string]: string } = {
     [SupportedMimeTypes.aac]: 'AAC audio',

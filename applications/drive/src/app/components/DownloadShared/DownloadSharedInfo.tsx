@@ -4,11 +4,11 @@ import { c } from 'ttag';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { Icon, FileNameDisplay, Button, FileIcon } from '@proton/components';
+import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import DownloadProgressBar from './DownloadProgressBar';
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { TransferState } from '../../interfaces/transfer';
 import useStatsHistory from '../../hooks/drive/useStatsHistory';
 
 interface Props {

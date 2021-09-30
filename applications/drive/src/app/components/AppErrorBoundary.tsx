@@ -12,9 +12,9 @@ import {
     PrivateMainArea,
 } from '@proton/components';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
+import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
-import { STATUS_CODE } from '../constants';
 
 interface Props {
     children: React.ReactNode;

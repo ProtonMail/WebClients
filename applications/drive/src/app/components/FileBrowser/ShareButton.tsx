@@ -1,10 +1,10 @@
 import React from 'react';
 import { PrimaryButton, useModals, classnames } from '@proton/components';
 import { c } from 'ttag';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
-import { FileBrowserItem } from './interfaces';
-import { LinkType } from '../../interfaces/link';
 
 interface Props {
     shareId: string;

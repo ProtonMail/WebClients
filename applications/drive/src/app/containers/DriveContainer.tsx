@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
 import { TopBanners } from '@proton/components';
+import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
-import { LinkURLType } from '../constants';
 import DriveWindow from '../components/layout/DriveWindow';
 import FileRecoveryBanner from '../components/FilesRecoveryModal/FileRecoveryBanner';
 import UploadSidebarButton from '../components/sections/Drive/UploadButton';

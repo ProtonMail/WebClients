@@ -3,11 +3,18 @@ import * as React from 'react';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys, LinkType } from '../../interfaces/link';
-import { ShareMeta, ShareMetaShort } from '../../interfaces/share';
-import { ShareURL } from '../../interfaces/sharing';
-import { DEFAULT_SORT_PARAMS } from '../../constants';
-import { isPrimaryShare } from '../../utils/share';
+import {
+    FolderLinkMeta,
+    FileLinkMeta,
+    LinkMeta,
+    isFolderLinkMeta,
+    SortKeys,
+    LinkType,
+} from '@proton/shared/lib/interfaces/drive/link';
+import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
+import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
+import { DEFAULT_SORT_PARAMS } from '@proton/shared/lib/drive/constants';
+import { isPrimaryShare } from '@proton/shared/lib/drive/utils/share';
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;

@@ -3,10 +3,10 @@ import { c } from 'ttag';
 
 import { useGetUser, useEventManager, useNotifications, usePreventLeave } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { MAX_SAFE_UPLOADING_FILE_COUNT } from '@proton/shared/lib/drive/constants';
+import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { MAX_SAFE_UPLOADING_FILE_COUNT } from '../../../constants';
 import useConfirm from '../../../hooks/util/useConfirm';
-import { TransferCancel, TransferState } from '../../../interfaces/transfer';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileList, UploadFileItem } from '../interface';

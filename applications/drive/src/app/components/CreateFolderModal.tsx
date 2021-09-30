@@ -1,11 +1,11 @@
 import { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
+import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
 import useActiveShare from '../hooks/drive/useActiveShare';
-import { MAX_NAME_LENGTH } from '../constants';
 
 interface Props {
     onClose?: () => void;

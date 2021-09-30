@@ -1,4 +1,4 @@
-import { EXTRA_EXTENSION_TYPES } from './constants';
+import { EXTRA_EXTENSION_TYPES } from '@proton/shared/lib/drive/constants';
 
 interface Options {
     /**

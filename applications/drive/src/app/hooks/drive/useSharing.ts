@@ -13,10 +13,7 @@ import {
     queryUpdateSharedLink,
     queryDeleteSharedLink,
     queryDeleteMultipleSharedLinks,
-} from '../../api/sharing';
-import useDrive from './useDrive';
-import useDriveCrypto from './useDriveCrypto';
-import useDebouncedRequest from '../util/useDebouncedRequest';
+} from '@proton/shared/lib/api/drive/sharing';
 import {
     BATCH_REQUEST_SIZE,
     DEFAULT_SHARE_MAX_ACCESSES,
@@ -24,9 +21,17 @@ import {
     MAX_THREADS_PER_REQUEST,
     RESPONSE_CODE,
     SHARE_GENERATED_PASSWORD_LENGTH,
-} from '../../constants';
-import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
-import { LinkMeta } from '../../interfaces/link';
+} from '@proton/shared/lib/drive/constants';
+import {
+    SharedURLFlags,
+    SharedURLSessionKeyPayload,
+    ShareURL,
+    UpdateSharedURL,
+} from '@proton/shared/lib/interfaces/drive/sharing';
+import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import useDrive from './useDrive';
+import useDriveCrypto from './useDriveCrypto';
+import useDebouncedRequest from '../util/useDebouncedRequest';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 
 function useSharing() {

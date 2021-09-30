@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { usePreventLeave, useModals } from '@proton/components';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useQueuedFunction from '../util/useQueuedFunction';
 import useListNotifications from '../util/useListNotifications';
@@ -12,8 +14,6 @@ import useSharing from './useSharing';
 import useDrive from './useDrive';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
-import { LinkType } from '../../interfaces/link';
-import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 import { DriveFolder } from './useActiveShare';
 import RenameModal from '../../components/RenameModal';
 import DetailsModal from '../../components/DetailsModal';

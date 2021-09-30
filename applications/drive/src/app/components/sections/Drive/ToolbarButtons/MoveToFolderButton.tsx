@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useToolbarActions from '../../../../hooks/drive/useActions';
 import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
-import { FileBrowserItem } from '../../../FileBrowser/interfaces';
 
 interface Props {
     sourceFolder: DriveFolder;

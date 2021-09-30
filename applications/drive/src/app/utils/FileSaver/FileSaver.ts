@@ -2,14 +2,13 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
+import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
+import { NestedFileStream } from '@proton/shared/lib/interfaces/drive/file';
+import { MEMORY_DOWNLOAD_LIMIT, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { openDownloadStream, initDownloadSW } from './download';
-import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
-import { NestedFileStream } from '../../interfaces/file';
-import { MEMORY_DOWNLOAD_LIMIT } from '../../constants';
 import { isTransferCancelError } from '../transfer';
 import { adjustName, adjustWindowsLinkName, splitLinkName } from '../link';
-import { SupportedMimeTypes } from '../MimeTypeParser/constants';
 
 // FileSaver provides functionality to start download to file. This class does
 // not deal with API or anything else. Files which fit the memory (see

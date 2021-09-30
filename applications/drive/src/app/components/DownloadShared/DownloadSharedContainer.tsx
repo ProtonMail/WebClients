@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { useLoading, LoaderPage, Icon, usePreventLeave, useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { InitHandshake, SharedLinkInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import { STATUS_CODE, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,9 +14,7 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
-import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { STATUS_CODE, BATCH_REQUEST_SIZE } from '../../constants';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../utils/link';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';

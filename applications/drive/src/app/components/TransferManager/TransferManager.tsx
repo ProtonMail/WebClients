@@ -12,11 +12,6 @@ import {
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
-
-import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { useUploadProvider } from '../uploads/UploadProvider';
-import Header from './Header';
-import Transfer from './Transfer';
 import {
     Download,
     STATE_TO_GROUP_MAP,
@@ -24,7 +19,12 @@ import {
     TransfersStats,
     TransferType,
     Upload,
-} from '../../interfaces/transfer';
+} from '@proton/shared/lib/interfaces/drive/transfer';
+
+import { useDownloadProvider } from '../downloads/DownloadProvider';
+import { useUploadProvider } from '../uploads/UploadProvider';
+import Header from './Header';
+import Transfer from './Transfer';
 import { isTransferFinished } from '../../utils/transfer';
 import useConfirm from '../../hooks/util/useConfirm';
 import useStatsHistory from '../../hooks/drive/useStatsHistory';
