@@ -1,8 +1,29 @@
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
+import queryPagesThrottled from '@proton/shared/lib/api/helpers/queryPagesThrottled';
 import { cachedPromise } from './helpers/cachedPromise';
 import usePromiseResult from './usePromiseResult';
 import useCache from './useCache';
 import useApi from './useApi';
+
+export const getAllDomainAddresses = (api, domainID) => {
+    const pageSize = 50;
+
+    return queryPagesThrottled({
+        requestPage: (page) => {
+            return api(
+                queryDomainAddresses(domainID, {
+                    Page: page,
+                    PageSize: pageSize,
+                })
+            );
+        },
+        pageSize,
+        pagesPerChunk: 10,
+        delayPerChunk: 100,
+    }).then((pages) => {
+        return pages.map(({ Addresses = [] }) => Addresses).flat();
+    });
+};
 
 const useDomainsAddresses = (domains) => {
     const cache = useCache();
@@ -19,7 +40,7 @@ const useDomainsAddresses = (domains) => {
                     cache,
                     `${domain.ID}`,
                     () => {
-                        return api(queryDomainAddresses(domain.ID)).then(({ Addresses = [] }) => Addresses);
+                        return getAllDomainAddresses(api, domain.ID);
                     },
                     domain
                 );
