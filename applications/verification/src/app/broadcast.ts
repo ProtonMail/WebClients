@@ -1,0 +1,82 @@
+const getClient = () => {
+    const {
+        navigator: { standalone, userAgent },
+    } = window as any;
+    const lowercaseUserAgent = userAgent.toLowerCase();
+    const safari = /safari/.test(lowercaseUserAgent);
+    const ios = /iphone|ipod|ipad/.test(lowercaseUserAgent);
+
+    if (ios) {
+        if (!standalone && safari) {
+            // browser
+        } else if (standalone && !safari) {
+            // standalone
+        } else if (!standalone && !safari) {
+            // uiwebview
+            return 'ios';
+        }
+    }
+
+    if (typeof (window as any).AndroidInterface !== 'undefined') {
+        return 'android';
+    }
+
+    if ((window as any).chrome && (window as any).chrome.webview) {
+        return 'webview';
+    }
+
+    return 'web';
+};
+
+export enum MessageType {
+    NOTIFICATION = 'NOTIFICATION',
+    RESIZE = 'RESIZE',
+    HUMAN_VERIFICATION_SUCCESS = 'HUMAN_VERIFICATION_SUCCESS',
+}
+
+type Message =
+    | {
+          type: MessageType.NOTIFICATION;
+          payload: { type: string; text: string };
+      }
+    | {
+          type: MessageType.RESIZE;
+          payload: { height: number };
+      }
+    | {
+          type: MessageType.HUMAN_VERIFICATION_SUCCESS;
+          payload: { token: string; type: string };
+      };
+
+const broadcast = (message: Message) => {
+    const client = getClient();
+
+    const serialized = JSON.stringify(message);
+
+    switch (client) {
+        case 'ios': {
+            // window.location.href = 'recaptcha_response://' + response;
+            break;
+        }
+
+        case 'android': {
+            // (window as any).AndroidInterface.receiveResponse(response);
+            break;
+        }
+
+        case 'webview': {
+            // This is an embedded chrome browser. It uses different message passing mechanism.
+            // (window as any).chrome.webview.postMessage(message);
+            break;
+        }
+
+        case 'web': {
+            window.parent.postMessage(serialized, '*');
+            break;
+        }
+
+        default:
+    }
+};
+
+export default broadcast;

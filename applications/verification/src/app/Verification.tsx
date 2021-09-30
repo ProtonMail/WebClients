@@ -4,6 +4,8 @@ import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { HumanVerificationForm, HumanVerificationSteps, useInstance, useTheme } from '@proton/components';
 
+import broadcast, { MessageType } from './broadcast';
+
 import './Verification.scss';
 
 interface VerificationSearchParameters {
@@ -16,72 +18,7 @@ interface VerificationSearchParameters {
     defaultPhone?: string;
 }
 
-const getClient = () => {
-    const {
-        navigator: { standalone, userAgent },
-    } = window as any;
-    const lowercaseUserAgent = userAgent.toLowerCase();
-    const safari = /safari/.test(lowercaseUserAgent);
-    const ios = /iphone|ipod|ipad/.test(lowercaseUserAgent);
-
-    if (ios) {
-        if (!standalone && safari) {
-            // browser
-        } else if (standalone && !safari) {
-            // standalone
-        } else if (!standalone && !safari) {
-            // uiwebview
-            return 'ios';
-        }
-    }
-
-    if (typeof (window as any).AndroidInterface !== 'undefined') {
-        return 'android';
-    }
-
-    if ((window as any).chrome && (window as any).chrome.webview) {
-        return 'webview';
-    }
-
-    return 'web';
-};
-
 const windowIsEmbedded = window.location !== window.parent.location;
-
-const replyToOrigin = (token: string, tokenType: HumanVerificationMethodType) => {
-    const client = getClient();
-
-    switch (client) {
-        case 'ios': {
-            // window.location.href = 'recaptcha_response://' + response;
-            break;
-        }
-
-        case 'android': {
-            // (window as any).AndroidInterface.receiveResponse(response);
-            break;
-        }
-
-        case 'webview': {
-            // This is an embedded chrome browser. It uses different message passing mechanism.
-            // (window as any).chrome.webview.postMessage(message);
-            break;
-        }
-
-        case 'web': {
-            window.parent.postMessage(
-                {
-                    type: 'verification-success',
-                    payload: { token, tokenType },
-                },
-                '*'
-            );
-            break;
-        }
-
-        default:
-    }
-};
 
 const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(search).entries());
 
@@ -113,13 +50,10 @@ const Verification = () => {
 
         const [entry] = resizes;
 
-        window.parent.postMessage(
-            {
-                type: 'verification-height',
-                height: entry.target.clientHeight,
-            },
-            '*'
-        );
+        broadcast({
+            type: MessageType.RESIZE,
+            payload: { height: entry.target.clientHeight },
+        });
     };
 
     const resizeObserver = useInstance(() => new ResizeObserver(sendHeight));
@@ -137,12 +71,15 @@ const Verification = () => {
         []
     );
 
-    const handleSubmit = (token: string, tokenType: HumanVerificationMethodType) => {
+    const handleSubmit = (token: string, type: HumanVerificationMethodType) => {
         if (!origin) {
             throw getOriginError();
         }
 
-        replyToOrigin(token, tokenType);
+        broadcast({
+            type: MessageType.HUMAN_VERIFICATION_SUCCESS,
+            payload: { token, type },
+        });
 
         if (!windowIsEmbedded) {
             /*
