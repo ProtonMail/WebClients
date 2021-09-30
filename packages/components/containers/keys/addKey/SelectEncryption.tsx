@@ -10,17 +10,21 @@ interface Props {
     setEncryptionType: Dispatch<SetStateAction<ENCRYPTION_TYPES>>;
 }
 const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
-    const stateOfTheArt = <strong key="CURVE25519">{c('encryption').t`State of the art`}</strong>;
-    const highestSecurity = <strong key="RSA4096">{c('encryption').t`Compatibility`}</strong>;
+    // translator: this bold text is used to make a remark about one of the encryption key options offered to the user.
+    // The full text will be '<bold>State of the art</bold> <Key type>'
+    const stateOfTheArt = <strong key="CURVE25519">{c('Remark about a key type option').t`State of the art`}</strong>;
+    // translator: this bold text is used to make a remark about one of the encryption key options offered to the user.
+    // The full text will be '<bold>Compatibility</bold> <Key type>'
+    const compatibility = <strong key="RSA4096">{c('Remark about a key type option').t`Compatibility`}</strong>;
 
     const radios = [
         {
-            label: c('Option').jt`${stateOfTheArt} ECC Curve25519 (Fastest, most modern)`,
+            label: c('Key type option').jt`${stateOfTheArt} ECC Curve25519 (Fastest, most modern)`,
             value: CURVE25519,
         },
         {
-            label: c('Option')
-                .jt`${highestSecurity} RSA 4096-bit (Slower, but increased compatibility with legacy software)`,
+            label: c('Key type option')
+                .jt`${compatibility} RSA 4096-bit (Slower, but increased compatibility with legacy software)`,
             value: RSA4096,
         },
     ];
