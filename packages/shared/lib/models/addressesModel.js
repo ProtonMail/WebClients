@@ -5,17 +5,15 @@ import updateCollection from '../helpers/updateCollection';
 export const getAddressesModel = (api) => {
     const pageSize = 50;
 
-    const requestPage = (page) => {
-        return api(
-            queryAddresses({
-                Page: page,
-                PageSize: pageSize,
-            })
-        );
-    };
-
     return queryPagesThrottled({
-        requestPage,
+        requestPage: (page) => {
+            return api(
+                queryAddresses({
+                    Page: page,
+                    PageSize: pageSize,
+                })
+            );
+        },
         pageSize,
         pagesPerChunk: 10,
         delayPerChunk: 100,
