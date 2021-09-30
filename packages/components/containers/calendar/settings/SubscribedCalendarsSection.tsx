@@ -12,13 +12,18 @@ import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarM
 import CalendarsSection from './CalendarsSection';
 import { SettingsParagraph } from '../../account';
 
-interface Props {
+export interface SubscribedCalendarsSectionProps {
     activeAddresses: Address[];
     calendars: Calendar[];
     user: UserModel;
     unavailable?: boolean;
 }
-const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user, unavailable }: Props) => {
+const SubscribedCalendarsSection = ({
+    activeAddresses,
+    calendars = [],
+    user,
+    unavailable,
+}: SubscribedCalendarsSectionProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
