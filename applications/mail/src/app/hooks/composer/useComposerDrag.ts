@@ -1,4 +1,4 @@
-import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer } from 'react';
+import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer, useRef } from 'react';
 import { debounce, throttle } from '@proton/shared/lib/helpers/function';
 import { COMPOSER_GUTTER, COMPOSER_WIDTH, computeRightPosition } from '../../helpers/composerPositioning';
 
@@ -20,24 +20,30 @@ interface State {
 
 type Action =
     | { type: 'start'; payload: Pick<State, 'isDragging' | 'initialCursorPosition'> }
-    | { type: 'stop'; payload: Pick<State, 'isDragging' | 'initialCursorPosition' | 'lastOffset'> }
+    | { type: 'stop'; payload: Pick<State, 'isDragging' | 'initialCursorPosition'> }
     | { type: 'move'; payload: Pick<State, 'offset'> }
     | { type: 'reset-offset'; payload: Pick<State, 'offset'> };
 
 const moveReducer = (state: State, action: Action) => {
     switch (action.type) {
         case 'start':
-        case 'stop':
         case 'move':
         case 'reset-offset':
             return { ...state, ...action.payload };
+        case 'stop':
+            // Add lastOffset based on reducer state because stop callback is executed
+            // in event listener and value is not up to date when passed through the action
+            return { ...state, lastOffset: state.offset, ...action.payload };
         default:
             throw new Error('This action does not exist');
     }
 };
 
-const useComposerDrag = ({ windowWidth, maximized, totalComposers, composerIndex }: Props) => {
+const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, composerIndex }: Props) => {
+    const prevMinimized = useRef(minimized);
+    const prevMaximized = useRef(maximized);
     const composerRightStyle = computeRightPosition(composerIndex, totalComposers, windowWidth);
+
     const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer<Reducer<State, Action>>(
         moveReducer,
         {
@@ -52,13 +58,13 @@ const useComposerDrag = ({ windowWidth, maximized, totalComposers, composerIndex
         dispatch({ type: 'start', payload: { isDragging: true, initialCursorPosition: e.clientX } });
     };
 
-    const handleStopDragging = debounce(() => {
-        dispatch({ type: 'stop', payload: { isDragging: false, initialCursorPosition: null, lastOffset: offset } });
-    }, 50);
+    const handleStopDragging = () => {
+        dispatch({ type: 'stop', payload: { isDragging: false, initialCursorPosition: null } });
+    };
 
     const handleMouseMove = useCallback(
         (e: MouseEvent) => {
-            if (!initialCursorPosition || !isDragging || maximized) {
+            if (!initialCursorPosition || !isDragging || (maximized && !minimized)) {
                 return;
             }
 
@@ -85,24 +91,52 @@ const useComposerDrag = ({ windowWidth, maximized, totalComposers, composerIndex
     );
 
     useEffect(() => {
-        dispatch({ type: 'reset-offset', payload: { offset: 0 } });
-    }, [maximized, composerRightStyle, totalComposers]);
-
-    useEffect(() => {
         const throttledMouseMove = throttle(handleMouseMove, 20);
+        const debouncedStopDragging = debounce(handleStopDragging, 50);
 
         if (isDragging) {
             document.addEventListener('mousemove', throttledMouseMove);
-            document.addEventListener('mouseup', handleStopDragging);
-            document.addEventListener('mouseleave', handleStopDragging);
+            document.addEventListener('mouseup', debouncedStopDragging);
+            document.addEventListener('mouseleave', debouncedStopDragging);
         }
 
         return () => {
             document.removeEventListener('mousemove', throttledMouseMove);
-            document.removeEventListener('mouseup', handleStopDragging);
-            document.removeEventListener('mouseleave', handleStopDragging);
+            document.removeEventListener('mouseup', debouncedStopDragging);
+            document.removeEventListener('mouseleave', debouncedStopDragging);
         };
     }, [isDragging]);
+
+    useEffect(() => {
+        dispatch({ type: 'reset-offset', payload: { offset: 0 } });
+    }, [composerRightStyle, totalComposers]);
+
+    useEffect(() => {
+        if (
+            minimized === false &&
+            maximized === true &&
+            prevMaximized.current === true &&
+            prevMinimized.current === true
+        ) {
+            dispatch({ type: 'reset-offset', payload: { offset: 0 } });
+        }
+
+        prevMinimized.current = minimized;
+    }, [minimized]);
+
+    useEffect(() => {
+        if (
+            minimized === false &&
+            maximized === false &&
+            prevMaximized.current === true &&
+            prevMinimized.current === true
+        ) {
+            prevMaximized.current = maximized;
+            return;
+        }
+        dispatch({ type: 'reset-offset', payload: { offset: 0 } });
+        prevMaximized.current = maximized;
+    }, [maximized]);
 
     return {
         start: handleStartDragging,

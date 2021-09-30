@@ -104,7 +104,7 @@ const ComposerTitleBar = ({
             <span
                 className={classnames([
                     'flex-item-fluid p0-5 pr1 text-ellipsis user-select-none',
-                    !maximized && 'cursor-move',
+                    (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}
             >
