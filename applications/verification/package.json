@@ -9,7 +9,7 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "check-types": "tsc",
-        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone --api=proxy",
+        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone",
         "postinstall": "proton-pack config"
     },
     "dependencies": {
