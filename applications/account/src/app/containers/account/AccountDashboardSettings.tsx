@@ -51,7 +51,7 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
             },
             isPaid &&
                 canPay && {
-                    text: c('Title').t`Cancel subscription`,
+                    text: c('Title').t`Downgrade account`,
                     id: 'cancel-subscription',
                 },
         ].filter(isTruthy),
