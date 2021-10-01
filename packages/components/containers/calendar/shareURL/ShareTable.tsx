@@ -91,23 +91,12 @@ const ShareTable = ({
                     <TableRow
                         cells={[
                             <div key="id" className="flex flex-nowrap flex-align-items-center">
-                                {calendars.length === 1 ? (
-                                    <div className="flex flex-align-items-center">
-                                        <Icon
-                                            name="calendar-days"
-                                            className="mr0-75"
-                                            style={{ color: calendars[0].Color }}
-                                        />
-                                        <span className="text-ellipsis">{calendars[0].Name}</span>
-                                    </div>
-                                ) : (
-                                    <CalendarSelect
-                                        calendarID={selectedCalendarID}
-                                        options={options}
-                                        onChange={({ value }) => setSelectedCalendarID(value)}
-                                        disabled={disabled}
-                                    />
-                                )}
+                                <CalendarSelect
+                                    calendarID={selectedCalendarID}
+                                    options={options}
+                                    onChange={({ value }) => setSelectedCalendarID(value)}
+                                    disabled={disabled}
+                                />
                             </div>,
                             <div key="what-others-see">
                                 <SelectTwo
