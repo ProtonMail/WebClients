@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
-import { HeaderModal, Button } from '@proton/components';
+import { HeaderModal, Button, useHotkeys } from '@proton/components';
+import { useRef } from 'react';
 import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
 
 interface Props {
@@ -9,8 +10,24 @@ interface Props {
 }
 
 const EditorEmbeddedModal = ({ files, onClose, onSelect }: Props) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useHotkeys(containerRef, [
+        [
+            'Escape',
+            (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onClose();
+            },
+        ],
+    ]);
+
     return (
-        <div className="composer-editor-embedded absolute w100 h100 flex flex-justify-center flex-align-items-center">
+        <div
+            className="composer-editor-embedded absolute w100 h100 flex flex-justify-center flex-align-items-center"
+            ref={containerRef}
+        >
             <div className="modal modal--smaller">
                 <HeaderModal modalTitleID="" hasClose={false} onClose={onClose}>
                     {c('Info').ngettext(msgid`Insert image as`, `Insert images as`, files.length)}
@@ -23,6 +40,7 @@ const EditorEmbeddedModal = ({ files, onClose, onSelect }: Props) => {
                                 fullWidth
                                 onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}
                                 data-testid="composer:insert-image-attachment"
+                                autoFocus
                             >
                                 {c('Action').t`Attachment`}
                             </Button>
