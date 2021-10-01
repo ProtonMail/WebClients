@@ -20,7 +20,10 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
     const title = c('Title').t`Edit image`;
     const isBase64Str = url.startsWith('data:image');
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => setUrl(e.target.value);
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        // Remove parameters from URL otherwise the image is broken
+        setUrl(e.target.value.split('?')[0]);
+    };
 
     const handleSubmit = () => {
         onSubmit(url);
