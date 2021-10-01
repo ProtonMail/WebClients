@@ -8,7 +8,9 @@ import {
     sub,
     isAfter,
     getDaysInMonth,
+    differenceInMilliseconds,
 } from 'date-fns';
+import { DAY } from '../constants';
 
 interface FormatOptions {
     locale?: Locale;
@@ -106,4 +108,9 @@ export const getTimeRemaining = (earlierDate: Date, laterDate: Date) => {
     }
 
     return result;
+};
+
+export const getDifferenceInDays = (earlierDate: Date, laterDate: Date) => {
+    const diff = differenceInMilliseconds(laterDate, earlierDate);
+    return Math.floor(diff / DAY);
 };

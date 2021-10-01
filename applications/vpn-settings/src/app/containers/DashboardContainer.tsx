@@ -57,7 +57,7 @@ export const getDashboardPage = (user: UserModel) => {
                 id: 'gift-code',
             },
             user.hasPaidVpn && {
-                text: c('Title').t`Cancel subscription`,
+                text: c('Title').t`Downgrade account`,
                 id: 'cancel-subscription',
             },
         ].filter(isTruthy),

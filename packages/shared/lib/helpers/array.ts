@@ -1,7 +1,6 @@
 /**
  * Build an array with a numeric range, specified by a start, an end, and a step
  */
-
 export const range = (start = 0, end = 1, step = 1) => {
     const result = [];
     for (let index = start; index < end; index += step) {
@@ -200,3 +199,16 @@ export const partition = <T, K = T>(arr: (T | K)[], predicate: (item: T | K) => 
         },
         [[], []]
     );
+
+/**
+ * Fisher–Yates shuffle implementation - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+ */
+export const shuffle = <T>(array: T[]): T[] => {
+    const arrayCopy = [...array];
+    for (let i = arrayCopy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]];
+    }
+
+    return arrayCopy;
+};
