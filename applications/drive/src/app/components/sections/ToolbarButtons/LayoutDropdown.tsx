@@ -8,8 +8,8 @@ import {
     ToolbarButton,
     DropdownCaret,
 } from '@proton/components';
+import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import useUserSettings from '../../../hooks/drive/useUserSettings';
-import { LayoutSetting } from '../../../interfaces/userSettings';
 
 const LayoutDropdown = () => {
     const { layout, changeLayout } = useUserSettings();

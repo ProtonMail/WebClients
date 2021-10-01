@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
 
-import { MEMBER_SHARING_ENABLED } from '../../../constants';
 import useToolbarActions from '../../../hooks/drive/useActions';
-import { FileBrowserItem } from '../../FileBrowser/interfaces';
 import { noSelection, isMultiSelect } from './utils';
 
 interface Props {

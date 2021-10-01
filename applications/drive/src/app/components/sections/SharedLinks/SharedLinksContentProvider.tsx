@@ -1,10 +1,10 @@
 import { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 import * as React from 'react';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useSelection from '../../../hooks/util/useSelection';
 import useSharing from '../../../hooks/drive/useSharing';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { FileBrowserItem } from '../../FileBrowser';
 import { mapLinksToChildren } from '../helpers';
 
 interface SharedLinksContentProviderState {

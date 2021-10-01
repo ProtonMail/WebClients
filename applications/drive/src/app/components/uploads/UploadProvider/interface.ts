@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { TransferState, TransferMeta } from '../../../interfaces/transfer';
+import { TransferState, TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { TransferConflictStrategy } from '../interface';
 
 interface LinkUpload {

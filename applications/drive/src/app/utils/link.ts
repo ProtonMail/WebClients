@@ -1,9 +1,8 @@
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-
-import { SharedURLFlags } from '../interfaces/sharing';
-import { SHARE_GENERATED_PASSWORD_LENGTH } from '../constants';
+import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
+import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 
 export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"|?*]/;
 // eslint-disable-next-line no-control-regex

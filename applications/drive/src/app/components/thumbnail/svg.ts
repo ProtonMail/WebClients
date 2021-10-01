@@ -1,5 +1,5 @@
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import { THUMBNAIL_MAX_SIDE } from '../../constants';
+import { THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/drive/constants';
 import { scaleImageFile } from './image';
 
 function parseSvg(string: string) {

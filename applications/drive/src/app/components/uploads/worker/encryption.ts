@@ -1,7 +1,7 @@
 import { OpenPGPKey, SessionKey, encryptMessage } from 'pmcrypto';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
-import { FILE_CHUNK_SIZE } from '../../../constants';
 import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
 import ChunkFileReader from './ChunkFileReader';
 

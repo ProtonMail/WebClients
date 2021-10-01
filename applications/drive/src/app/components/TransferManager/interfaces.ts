@@ -1,4 +1,4 @@
-import { Download, TransferType, Upload } from '../../interfaces/transfer';
+import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 
 export interface DownloadProps {
     transfer: Download;

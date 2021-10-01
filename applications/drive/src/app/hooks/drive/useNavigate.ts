@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { generateUID } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { LinkType } from '../../interfaces/link';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { toLinkURLType } from '../../components/sections/helpers';
 
 interface NavigationEvenListener {

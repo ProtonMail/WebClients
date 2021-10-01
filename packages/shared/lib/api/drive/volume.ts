@@ -1,4 +1,4 @@
-import { CreateDriveVolume, RestoreDriveVolume } from '../interfaces/volume';
+import { CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
 
 export const queryCreateDriveVolume = (data: CreateDriveVolume) => ({
     method: 'post',

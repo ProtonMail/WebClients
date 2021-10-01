@@ -6,11 +6,11 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { decryptUnsigned, getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
 
-import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '../../api/sharing';
+import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '@proton/shared/lib/api/drive/sharing';
+import { InitHandshake, SharedLinkPayload, SharedLinkInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
-import { InitHandshake, SharedLinkPayload, SharedLinkInfo } from '../../interfaces/sharing';
-import { DriveFileBlock } from '../../interfaces/file';
-import { TransferMeta } from '../../interfaces/transfer';
 import { startDownload, StreamTransformer } from '../../components/downloads/download';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 

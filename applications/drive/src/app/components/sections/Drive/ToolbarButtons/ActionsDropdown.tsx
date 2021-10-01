@@ -10,12 +10,12 @@ import {
     DropdownMenuButton,
     ToolbarButton,
 } from '@proton/components';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
 
-import { MEMBER_SHARING_ENABLED } from '../../../../constants';
 import { useDriveContent } from '../DriveContentProvider';
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import useToolbarActions from '../../../../hooks/drive/useActions';
-import { LinkType } from '../../../../interfaces/link';
 
 interface Props {
     shareId: string;

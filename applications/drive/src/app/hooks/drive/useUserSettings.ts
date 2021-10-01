@@ -1,9 +1,9 @@
 import { useContext, useCallback } from 'react';
 import { useApi } from '@proton/components';
-import { queryUpdateUserSettings, queryUserSettings } from '../../api/userSettings';
+import { LayoutSetting, SortSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
+import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
+import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import { UserSettingsContext } from '../../components/sections/UserSettingsProvider';
-import { DEFAULT_USER_SETTINGS } from '../../constants';
-import { LayoutSetting, SortSetting, UserSettings } from '../../interfaces/userSettings';
 
 type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
 

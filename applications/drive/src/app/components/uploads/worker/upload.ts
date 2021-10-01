@@ -1,6 +1,6 @@
 import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
+import { STATUS_CODE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import { STATUS_CODE, RESPONSE_CODE } from '../../../constants';
 import { MAX_UPLOAD_JOBS, MAX_RETRIES_BEFORE_FAIL } from '../constants';
 import { UploadingBlock } from './interface';
 import { Pauser } from './pauser';

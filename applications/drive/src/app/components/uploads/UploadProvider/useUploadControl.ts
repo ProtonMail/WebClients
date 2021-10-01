@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 
-import { FILE_CHUNK_SIZE } from '../../../constants';
-import { TransferState, TransferProgresses } from '../../../interfaces/transfer';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+import { TransferState, TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 import { isTransferProgress, isTransferPending, isTransferActive } from '../../../utils/transfer';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
 import { UploadFileControls, UploadFolderControls } from '../interface';

@@ -2,8 +2,8 @@ import { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Row, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from '@proton/components';
-import { LinkType } from '../interfaces/link';
-import { FileBrowserItem } from './FileBrowser/interfaces';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
 import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';

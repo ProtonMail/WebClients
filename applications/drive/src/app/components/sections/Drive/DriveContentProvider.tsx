@@ -2,16 +2,16 @@ import { useState, createContext, useEffect, useContext, useRef, useCallback } f
 import * as React from 'react';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { SortKeys } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 
-import { STATUS_CODE } from '../../../constants';
-import { SortKeys } from '../../../interfaces/link';
 import { DriveFolder, useActiveShare } from '../../../hooks/drive/useActiveShare';
 import useDrive from '../../../hooks/drive/useDrive';
 import useDriveSorting from '../../../hooks/drive/useDriveSorting';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import useSelection from '../../../hooks/util/useSelection';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { FileBrowserItem } from '../../FileBrowser/interfaces';
 import { mapLinksToChildren } from '../helpers';
 
 export interface DriveSortParams {

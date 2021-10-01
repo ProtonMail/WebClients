@@ -1,5 +1,6 @@
 import * as React from 'react';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { TransferType } from '@proton/shared/lib/interfaces/drive/transfer';
 import { classnames, Loader, FileIcon, FileNameDisplay } from '@proton/components';
 import ProgressBar from './ProgressBar';
 import TransferStateIndicator from './TransferStateIndicator';
@@ -14,7 +15,6 @@ import {
     isTransferPending,
 } from '../../utils/transfer';
 import { TransferProps } from './interfaces';
-import { TransferType } from '../../interfaces/transfer';
 
 type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
     TransferProps<T> & {

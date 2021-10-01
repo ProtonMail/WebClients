@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { LinkType } from '../../../../interfaces/link';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { getMimeTypeDescription } from '../../../sections/helpers';
 
 interface Props {

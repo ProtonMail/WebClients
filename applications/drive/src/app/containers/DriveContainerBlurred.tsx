@@ -15,8 +15,8 @@ import {
 import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { LinkType } from '../interfaces/link';
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import DriveHeader from '../components/layout/DriveHeader';
 import ListView from '../components/FileBrowser/ListView/ListView';

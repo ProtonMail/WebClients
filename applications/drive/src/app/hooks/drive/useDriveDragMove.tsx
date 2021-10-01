@@ -3,12 +3,12 @@ import * as React from 'react';
 import { useGlobalLoader } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { c } from 'ttag';
-import { LinkType, LinkMeta } from '../../interfaces/link';
+import { LinkType, LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
-import { FileBrowserItem, DragMoveControls } from '../../components/FileBrowser/interfaces';
 import useActiveShare from './useActiveShare';
-import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 export default function useDriveDragMove(
     shareId: string,

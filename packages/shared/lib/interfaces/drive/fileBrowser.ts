@@ -1,5 +1,6 @@
-import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { LinkType, SortParams, SortKeys, SharedUrlInfo } from '../../interfaces/link';
+import React from 'react';
+import { SORT_DIRECTION } from '../../constants';
+import { LinkType, SortParams, SortKeys, SharedUrlInfo } from './link';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;

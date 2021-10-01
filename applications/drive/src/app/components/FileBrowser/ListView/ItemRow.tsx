@@ -12,8 +12,8 @@ import {
 import { isEquivalent, pick } from '@proton/shared/lib/helpers/object';
 import { shallowEqual } from '@proton/shared/lib/helpers/array';
 import { c } from 'ttag';
-import { ItemProps } from '../interfaces';
-import { LinkType } from '../../../interfaces/link';
+import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import useFileBrowserItem from '../useFileBrowserItem';
 import LocationCell from './Cells/LocationCell';
 import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';

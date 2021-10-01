@@ -1,4 +1,4 @@
-import { SharedURLFlags } from '../interfaces/sharing';
+import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 import {
     splitGeneratedAndCustomPassword,
     adjustName,

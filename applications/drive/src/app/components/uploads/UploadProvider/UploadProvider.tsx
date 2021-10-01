@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import * as React from 'react';
 
-import { TransferProgresses } from '../../../interfaces/transfer';
+import { TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 import { UploadFileList } from '../interface';
 import { FileUpload, UpdateFilter } from './interface';
 import useUpload from './useUpload';

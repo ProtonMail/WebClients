@@ -38,11 +38,17 @@ import {
     EVENT_TYPES,
     FOLDER_PAGE_SIZE,
     MAX_THREADS_PER_REQUEST,
-} from '../../constants';
-import { ShareFlags, ShareMeta, UserShareResult } from '../../interfaces/share';
-import { CreatedDriveVolumeResult } from '../../interfaces/volume';
-import { isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkMetaResult, LinkType } from '../../interfaces/link';
-import { DriveFileRevisionThumbnailResult } from '../../interfaces/file';
+} from '@proton/shared/lib/drive/constants';
+import { ShareFlags, ShareMeta, UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
+import { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
+import {
+    isFolderLinkMeta,
+    LinkChildrenResult,
+    LinkMeta,
+    LinkMetaResult,
+    LinkType,
+} from '@proton/shared/lib/interfaces/drive/link';
+import { DriveFileRevisionThumbnailResult } from '@proton/shared/lib/interfaces/drive/file';
 import {
     queryCreateShare,
     queryDeleteShare,
@@ -50,12 +56,12 @@ import {
     queryRenameLink,
     queryShareMeta,
     queryUserShares,
-} from '../../api/share';
-import { queryDeleteChildrenLinks, queryGetLink } from '../../api/link';
-import { queryFileRevisionThumbnail } from '../../api/files';
-import { queryCreateFolder, queryFolderChildren } from '../../api/folder';
-import { queryCreateDriveVolume, queryRestoreDriveVolume } from '../../api/volume';
-import { isPrimaryShare } from '../../utils/share';
+} from '@proton/shared/lib/api/drive/share';
+import { queryDeleteChildrenLinks, queryGetLink } from '@proton/shared/lib/api/drive/link';
+import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
+import { queryCreateFolder, queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
+import { queryCreateDriveVolume, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
+import { isPrimaryShare } from '@proton/shared/lib/drive/utils/share';
 import { decryptPassphrase, getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
 import { validateLinkName, ValidationError } from '../../utils/validation';
 import useDebouncedRequest from '../util/useDebouncedRequest';

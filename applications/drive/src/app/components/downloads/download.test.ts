@@ -2,9 +2,9 @@ import { ReadableStream } from 'web-streams-polyfill';
 
 import { mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { streamToBuffer } from '../../utils/stream';
-import { TransferCancel } from '../../interfaces/transfer';
 import { initDownload } from './download';
 
 const createNotFoundError = () => createApiError('Error', { status: 404, statusText: 'Not found.' } as Response, {});

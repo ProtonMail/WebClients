@@ -10,8 +10,8 @@ import {
     useEarlyAccess,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import { RESPONSE_CODE } from '../constants';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import useDrive from '../hooks/drive/useDrive';
 import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';

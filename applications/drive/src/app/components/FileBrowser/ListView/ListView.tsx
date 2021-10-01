@@ -2,7 +2,15 @@ import { useRef } from 'react';
 import * as React from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
-import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy, useRightToLeft } from '@proton/components';
+import {
+    TableBody,
+    useActiveBreakpoint,
+    Table,
+    classnames,
+    useElementRect,
+    TableCellBusy,
+    useRightToLeft,
+} from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
@@ -12,7 +20,7 @@ import {
     DragMoveControls,
     FileBrowserLayouts,
     ItemContextMenuProps,
-} from '../interfaces';
+} from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';

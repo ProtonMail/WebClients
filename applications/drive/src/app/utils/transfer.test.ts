@@ -1,6 +1,6 @@
-import { FileBrowserItem } from '../components/FileBrowser/interfaces';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { Transfer, TransferMeta, TransfersStats, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
-import { Transfer, TransferMeta, TransfersStats, TransferState } from '../interfaces/transfer';
 import {
     calculateProgress,
     getMetaForTransfer,
