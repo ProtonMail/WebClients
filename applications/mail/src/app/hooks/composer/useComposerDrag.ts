@@ -1,5 +1,7 @@
 import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer, useRef } from 'react';
 import { debounce, throttle } from '@proton/shared/lib/helpers/function';
+import { useMailSettings } from '@proton/components';
+import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { COMPOSER_GUTTER, COMPOSER_WIDTH, computeRightPosition } from '../../helpers/composerPositioning';
 
 interface Props {
@@ -22,24 +24,26 @@ type Action =
     | { type: 'start'; payload: Pick<State, 'isDragging' | 'initialCursorPosition'> }
     | { type: 'stop'; payload: Pick<State, 'isDragging' | 'initialCursorPosition'> }
     | { type: 'move'; payload: Pick<State, 'offset'> }
-    | { type: 'reset-offset'; payload: Pick<State, 'offset'> };
+    | { type: 'reset-offset' };
 
 const moveReducer = (state: State, action: Action) => {
     switch (action.type) {
         case 'start':
         case 'move':
-        case 'reset-offset':
             return { ...state, ...action.payload };
         case 'stop':
             // Add lastOffset based on reducer state because stop callback is executed
             // in event listener and value is not up to date when passed through the action
             return { ...state, lastOffset: state.offset, ...action.payload };
+        case 'reset-offset':
+            return { ...state, offset: 0 };
         default:
             throw new Error('This action does not exist');
     }
 };
 
 const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, composerIndex }: Props) => {
+    const [mailSettings] = useMailSettings();
     const prevMinimized = useRef(minimized);
     const prevMaximized = useRef(maximized);
     const composerRightStyle = computeRightPosition(composerIndex, totalComposers, windowWidth);
@@ -108,8 +112,14 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
     }, [isDragging]);
 
     useEffect(() => {
-        dispatch({ type: 'reset-offset', payload: { offset: 0 } });
+        dispatch({ type: 'reset-offset' });
     }, [composerRightStyle, totalComposers]);
+
+    useEffect(() => {
+        if (mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED) {
+            dispatch({ type: 'reset-offset' });
+        }
+    }, [mailSettings?.ComposerMode]);
 
     useEffect(() => {
         if (
@@ -118,7 +128,7 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
             prevMaximized.current === true &&
             prevMinimized.current === true
         ) {
-            dispatch({ type: 'reset-offset', payload: { offset: 0 } });
+            dispatch({ type: 'reset-offset' });
         }
 
         prevMinimized.current = minimized;
@@ -134,7 +144,7 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
             prevMaximized.current = maximized;
             return;
         }
-        dispatch({ type: 'reset-offset', payload: { offset: 0 } });
+        dispatch({ type: 'reset-offset' });
         prevMaximized.current = maximized;
     }, [maximized]);
 
