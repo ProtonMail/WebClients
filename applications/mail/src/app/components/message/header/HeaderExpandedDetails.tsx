@@ -13,6 +13,8 @@ import { getSize } from '../../../helpers/elements';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLocation from '../../list/ItemLocation';
+import SpyTrackerIcon from '../SpyTrackerIcon';
+import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 
 interface Props {
     labelID: string;
@@ -30,6 +32,11 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
     const locationText = folders.map((folder) => folder.name).join(', ');
 
     const sizeText = humanSize(getSize(message.data || {}));
+
+    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, getTitle } = useMessageTrackers({
+        message,
+    });
+    const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0);
 
     const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
         getAttachments(message.data),
@@ -112,6 +119,22 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                     </span>
                     <span className="flex-align-self-center mr0-5 text-ellipsis" title={attachmentsText}>
                         {attachmentsText}
+                    </span>
+                </div>
+            )}
+            {displayTrackerIcon && (
+                <div className="mb0-5 flex flex-nowrap">
+                    <span className="container-to relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center">
+                        <SpyTrackerIcon
+                            numberOfTrackers={numberOfTrackers}
+                            needsMoreProtection={needsMoreProtection}
+                            title={getTitle()}
+                            className="mauto"
+                            isDetails
+                        />
+                    </span>
+                    <span className="flex-align-self-center mr0-5 text-ellipsis" title={getTitle()}>
+                        {getTitle()}
                     </span>
                 </div>
             )}
