@@ -1,10 +1,13 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
-import { classnames, Href, SettingsLink, Tooltip } from '@proton/components';
 import {
     FeatureCode,
     Spotlight,
     useSpotlightOnFeature,
+    classnames,
+    Href,
+    SettingsLink,
+    Tooltip,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import * as React from 'react';
@@ -23,7 +26,7 @@ interface Props {
 const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     const anchorRef = useRef(null);
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, getTitle } = useMessageTrackers({
+    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
     });
 
@@ -43,11 +46,7 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     }
 
     const icon = (
-        <SpyTrackerIcon
-            numberOfTrackers={numberOfTrackers}
-            needsMoreProtection={needsMoreProtection}
-            title={getTitle()}
-        />
+        <SpyTrackerIcon numberOfTrackers={numberOfTrackers} needsMoreProtection={needsMoreProtection} title={title} />
     );
 
     return (
@@ -69,26 +68,26 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
         >
             <div>
                 {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
-                <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
-                    <div className={classnames(['flex', className])} ref={anchorRef}>
-                        {needsMoreProtection ? (
-                            <SettingsLink
-                                path="/email-privacy"
-                                app={APPS.PROTONMAIL}
-                                className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                            >
-                                {icon}
-                            </SettingsLink>
-                        ) : (
-                            <Href
-                                url={emailTrackerProtectionURL}
-                                className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                            >
-                                {icon}
-                            </Href>
-                        )}
-                    </div>
-                </Tooltip>
+                <Tooltip title={title} data-testid="privacy:icon-tooltip">
+                <div className={classnames(['flex', className])} ref={anchorRef}>
+                    {needsMoreProtection ? (
+                        <SettingsLink
+                            path="/email-privacy"
+                            app={APPS.PROTONMAIL}
+                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                        >
+                            {icon}
+                        </SettingsLink>
+                    ) : (
+                        <Href
+                            url={emailTrackerProtectionURL}
+                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                        >
+                            {icon}
+                        </Href>
+                    )}
+                </div>
+            </Tooltip>
             </div>
         </Spotlight>
     );
