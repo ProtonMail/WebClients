@@ -9,21 +9,13 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import {
-    Badge,
-    DropdownActions,
-    Icon,
-    Info,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-    Tooltip,
-} from '../../../components';
+import React from 'react';
+import { Badge, DropdownActions, Info, Table, TableBody, TableHeader, TableRow, Tooltip } from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
 import { classnames } from '../../../helpers';
+import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 
 interface Props {
     calendars: (Calendar | SubscribedCalendar)[];
@@ -105,7 +97,10 @@ const CalendarsTable = ({
                             cells={[
                                 <div key="id">
                                     <div className="grid-align-icon">
-                                        <Icon name="calendar-days" color={Color} className="mr0-5 flex-item-noshrink" />
+                                        <CalendarSelectIcon
+                                            color={Color}
+                                            className="mr0-75 flex-item-noshrink keep-left"
+                                        />
                                         <div className="text-ellipsis" title={Name}>
                                             {Name}
                                         </div>
