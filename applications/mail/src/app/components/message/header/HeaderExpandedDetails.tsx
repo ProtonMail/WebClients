@@ -33,8 +33,9 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
 
     const sizeText = humanSize(getSize(message.data || {}));
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, getTitle } = useMessageTrackers({
+    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
+        isDetails: true,
     });
     const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0);
 
@@ -128,13 +129,13 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                         <SpyTrackerIcon
                             numberOfTrackers={numberOfTrackers}
                             needsMoreProtection={needsMoreProtection}
-                            title={getTitle()}
+                            title={title}
                             className="mauto"
                             isDetails
                         />
                     </span>
-                    <span className="flex-align-self-center mr0-5 text-ellipsis" title={getTitle()}>
-                        {getTitle()}
+                    <span className="flex-align-self-center mr0-5 text-ellipsis" title={title}>
+                        {title}
                     </span>
                 </div>
             )}
