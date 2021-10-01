@@ -1,3 +1,6 @@
+import React, { useMemo, useRef } from 'react';
+import { c, msgid } from 'ttag';
+
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
@@ -7,10 +10,9 @@ import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import React, { useMemo, useRef } from 'react';
 import { Collapsible, Icon, Info } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { c, msgid } from 'ttag';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 
 import { getOrganizerDisplayData } from '../../helpers/attendees';
 import { DisplayNameEmail } from '../../containers/calendar/interface';
@@ -238,7 +240,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
             )}
             {calendarString ? (
                 <div className={wrapClassName}>
-                    <Icon name="circle-filled" color={Color} className={iconClassName} />
+                    <CalendarSelectIcon color={Color} className={iconClassName} />
                     {calendarString}
                 </div>
             ) : null}
