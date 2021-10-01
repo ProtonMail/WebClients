@@ -1,6 +1,6 @@
-import { FOLDER_PAGE_SIZE, EXPENSIVE_REQUEST_TIMEOUT } from '../constants';
-import { MoveLink } from '../interfaces/link';
-import { CreateDriveShare } from '../interfaces/share';
+import { FOLDER_PAGE_SIZE, EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
+import { MoveLink } from '../../interfaces/drive/link';
+import { CreateDriveShare } from '../../interfaces/drive/share';
 
 export const queryCreateShare = (volumeID: string, data: CreateDriveShare) => ({
     method: 'post',

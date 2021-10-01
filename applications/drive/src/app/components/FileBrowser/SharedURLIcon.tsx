@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Tooltip, useModals } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
-import { FileBrowserItem } from './interfaces';
 
 interface Props {
     shareId: string;

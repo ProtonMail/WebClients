@@ -1,6 +1,6 @@
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { TransferCancel } from '@proton/shared/lib/interfaces/drive//transfer';
 
-import { TransferCancel } from '../../interfaces/transfer';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import { makeThumbnail } from '../thumbnail/thumbnail';
 import { UploadWorkerController } from './workerController';

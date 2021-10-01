@@ -1,4 +1,4 @@
-import { THUMBNAIL_MAX_SIDE, THUMBNAIL_MAX_SIZE, THUMBNAIL_QUALITIES } from '../../constants';
+import { THUMBNAIL_MAX_SIDE, THUMBNAIL_MAX_SIZE, THUMBNAIL_QUALITIES } from '@proton/shared/lib/drive/constants';
 
 export function scaleImageFile(file: Blob): Promise<Uint8Array> {
     return new Promise((resolve, reject) => {

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useToolbarActions from '../../../../hooks/drive/useActions';
-import { FileBrowserItem } from '../../../FileBrowser';
 
 interface Props {
     shareId: string;

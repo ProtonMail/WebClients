@@ -1,4 +1,4 @@
-import { FILE_CHUNK_SIZE } from '../../../constants';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { generatePrivateKey, generateSessionKey } from '../../../helpers/test/crypto';
 import generateBlocks from './encryption';
 

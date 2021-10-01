@@ -15,6 +15,7 @@ import {
     Button,
     Icon,
 } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import FolderTree, { FolderTreeItem } from '../FolderTree/FolderTree';
 import { DriveFolder } from '../../hooks/drive/useActiveShare';
@@ -24,7 +25,6 @@ import CreateFolderModal from '../CreateFolderModal';
 import useDrive from '../../hooks/drive/useDrive';
 import useListNotifications from '../../hooks/util/useListNotifications';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import { FileBrowserItem } from '../FileBrowser/interfaces';
 import ModalContentLoader from '../ModalContentLoader';
 
 interface Props {

@@ -2,12 +2,12 @@ import { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { LinkType } from '../interfaces/link';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName, splitLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
-import { MAX_NAME_LENGTH } from '../constants';
-import { FileBrowserItem } from './FileBrowser/interfaces';
 
 interface Props {
     shareId: string;

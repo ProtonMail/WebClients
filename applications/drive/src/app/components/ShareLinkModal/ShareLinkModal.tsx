@@ -4,12 +4,13 @@ import { c } from 'ttag';
 import { SessionKey } from 'pmcrypto';
 import { getRandomString } from '@proton/shared/lib/helpers/string';
 import { DialogModal, useLoading, useNotifications } from '@proton/components';
+import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import useDrive from '../../hooks/drive/useDrive';
 import useSharing from '../../hooks/drive/useSharing';
 import useConfirm from '../../hooks/util/useConfirm';
-import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
-import { FileBrowserItem } from '../FileBrowser/interfaces';
 import GeneratedLinkState from './GeneratedLinkState';
 import ErrorState from './ErrorState';
 import {
@@ -18,7 +19,6 @@ import {
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
 } from '../../utils/link';
-import { SHARE_GENERATED_PASSWORD_LENGTH } from '../../constants';
 import ModalContentLoader from '../ModalContentLoader';
 
 interface Props {

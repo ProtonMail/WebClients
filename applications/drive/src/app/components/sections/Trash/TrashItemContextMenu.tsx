@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { ContextMenu, isPreviewAvailable } from '@proton/components';
 
-import { LinkType } from '../../../interfaces/link';
-import { ItemContextMenuProps } from '../../FileBrowser';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { PreviewButton, DownloadButton, DetailsButton } from '../ContextMenu';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
 

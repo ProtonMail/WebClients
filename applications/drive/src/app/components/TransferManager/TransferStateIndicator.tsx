@@ -1,6 +1,6 @@
 import { Icon, classnames, Tooltip } from '@proton/components';
 import { c } from 'ttag';
-import { TransferState, Upload, Download, TransferType } from '../../interfaces/transfer';
+import { TransferState, Upload, Download, TransferType } from '@proton/shared/lib/interfaces/drive/transfer';
 import {
     isTransferManuallyPaused,
     isTransferProgress,

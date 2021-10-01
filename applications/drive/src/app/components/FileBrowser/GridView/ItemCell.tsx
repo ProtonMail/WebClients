@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import * as React from 'react';
 
 import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { LinkType } from '../../../interfaces/link';
-import { ItemProps } from '../interfaces';
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
 import ShareButton, { shouldRenderShareButton } from '../ShareButton';

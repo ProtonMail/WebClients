@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 import { Icon, ToolbarButton, FileNameDisplay } from '@proton/components';
 import { useEffect, useState } from 'react';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import useNavigate from '../../../../hooks/drive/useNavigate';
 import useWorkingDirectory from '../../../../hooks/drive/useWorkingDirectory';
-import { LinkType } from '../../../../interfaces/link';
 import useDrive from '../../../../hooks/drive/useDrive';
 
 interface Props {

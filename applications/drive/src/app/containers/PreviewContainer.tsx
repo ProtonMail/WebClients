@@ -9,8 +9,8 @@ import {
     NavigationControl,
     useModals,
 } from '@proton/components';
+import { LinkMeta, LinkType } from '@proton/shared/lib/interfaces/drive//link';
 
-import { LinkMeta, LinkType } from '../interfaces/link';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';

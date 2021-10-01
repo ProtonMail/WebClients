@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { DialogModal, HeaderModal, InnerModal } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useDrive from '../../hooks/drive/useDrive';
-import { FileBrowserItem } from '../FileBrowser/interfaces';
 import ModalContentLoader from '../ModalContentLoader';
 
 interface Props {

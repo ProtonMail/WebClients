@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 import { useModals } from '@proton/components';
+import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { TransferCancel, TransferState } from '../../../interfaces/transfer';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferConflict } from '../../../utils/transfer';
 import ConflictModal from '../ConflictModal';

@@ -13,14 +13,14 @@ import {
     Alert,
     useModals,
 } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import FolderTree, { FolderTreeItem } from '../FolderTree/FolderTree';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import { FileBrowserItem } from '../FileBrowser/interfaces';
 import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
 import { mapLinksToChildren } from '../sections/helpers';
-import { LinkType } from '../../interfaces/link';
 import HasNoFilesToShare from './HasNoFilesToShare';
 import ModalContentLoader from '../ModalContentLoader';
 

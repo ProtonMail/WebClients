@@ -10,10 +10,10 @@ import {
     Download,
     PartialDownload,
     DownloadInfo,
-} from '../../interfaces/transfer';
+} from '@proton/shared/lib/interfaces/drive/transfer';
+import { SupportedMimeTypes, FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
-import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
-import { LinkType } from '../../interfaces/link';
 import {
     isTransferFailed,
     isTransferPaused,
@@ -21,7 +21,6 @@ import {
     isTransferPending,
     isTransferCancelError,
 } from '../../utils/transfer';
-import { SupportedMimeTypes } from '../../utils/MimeTypeParser/constants';
 
 // MAX_DOWNLOAD_LOAD limits the maximum of blocks downloaded at the one time.
 // This limits all downloads combined, whereas MAX_THREADS_PER_DOWNLOAD limits

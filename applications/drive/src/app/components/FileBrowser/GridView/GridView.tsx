@@ -3,8 +3,8 @@ import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import { classnames, Loader, useElementRect, useRightToLeft } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import { FileBrowserItem, FileBrowserProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import useFileBrowserView from '../useFileBrowserView';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 

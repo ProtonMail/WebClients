@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
+import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 import { mockGlobalFile, testFile } from '../../../helpers/test/file';
-import { TransferState } from '../../../interfaces/transfer';
 import { UploadFileList } from '../interface';
 import { FileUpload, FolderUpload, UploadQueue } from './interface';
 import useUploadQueue, { addItemToQueue } from './useUploadQueue';

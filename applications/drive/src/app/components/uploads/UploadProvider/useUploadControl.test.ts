@@ -1,8 +1,8 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { FILE_CHUNK_SIZE } from '../../../constants';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 import { mockGlobalFile, testFile } from '../../../helpers/test/file';
-import { TransferState } from '../../../interfaces/transfer';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
 import { UploadFileControls, UploadFolderControls } from '../interface';
 import { UpdateFilter, FileUpload } from './interface';

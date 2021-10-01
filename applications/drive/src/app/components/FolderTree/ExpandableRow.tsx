@@ -1,7 +1,7 @@
 import { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from '@proton/components';
-import { LinkType } from '../../interfaces/link';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 interface Props {
     linkId: string;

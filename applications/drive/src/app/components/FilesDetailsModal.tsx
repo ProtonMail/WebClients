@@ -10,8 +10,8 @@ import {
     FooterModal,
     PrimaryButton,
 } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { FileBrowserItem } from './FileBrowser/interfaces';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 
 interface Props {

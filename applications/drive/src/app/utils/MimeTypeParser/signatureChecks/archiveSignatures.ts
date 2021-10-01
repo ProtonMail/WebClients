@@ -1,4 +1,4 @@
-import { SupportedMimeTypes } from '../constants';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isTarHeaderChecksumValid, SignatureChecker } from '../helpers';
 
 export default function archiveSignatures({ check, sourceBuffer }: ReturnType<typeof SignatureChecker>) {

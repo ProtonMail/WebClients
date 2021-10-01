@@ -13,7 +13,7 @@ import { Address } from '@proton/shared/lib/interfaces/Address';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
-import { ShareMeta } from '../../interfaces/share';
+import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 export interface PrimaryAddressKey {
     privateKey: OpenPGPKey;

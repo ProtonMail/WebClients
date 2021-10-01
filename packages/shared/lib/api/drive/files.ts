@@ -1,5 +1,5 @@
-import { CreateDriveFile, UpdateFileRevision } from '../interfaces/file';
-import { UPLOAD_TIMEOUT } from '../constants';
+import { CreateDriveFile, UpdateFileRevision } from '../../interfaces/drive/file';
+import { UPLOAD_TIMEOUT } from '../../drive/constants';
 
 export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {

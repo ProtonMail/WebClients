@@ -15,15 +15,15 @@ import {
     queryUpdateFileRevision,
     queryDeleteFileRevision,
     queryRequestUpload,
-} from '../../../api/files';
+} from '@proton/shared/lib/api/drive/files';
 import {
     CreateFileResult,
     CreateFileRevisionResult,
     FileRevisionState,
     RequestUploadResult,
-} from '../../../interfaces/file';
-import { FileLinkMeta, isFolderLinkMeta } from '../../../interfaces/link';
-import { TransferCancel } from '../../../interfaces/transfer';
+} from '@proton/shared/lib/interfaces/drive/file';
+import { FileLinkMeta, isFolderLinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import useDebouncedRequest from '../../../hooks/util/useDebouncedRequest';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import useDrive from '../../../hooks/drive/useDrive';

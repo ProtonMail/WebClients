@@ -1,4 +1,4 @@
-import { EXPENSIVE_REQUEST_TIMEOUT } from '../constants';
+import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 
 export const queryCheckAvailableHashes = (
     shareId: string,
