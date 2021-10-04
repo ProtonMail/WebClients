@@ -3642,6 +3642,7 @@ __metadata:
     card-validator: ^6.1.0
     codemirror: ^5.46.0
     date-fns: ^2.0.0
+    dompurify: ^2.3.3
     eslint: ^7.9.0
     execa: ^1.0.0
     intersection-observer: ^0.5.1
@@ -12992,6 +12993,13 @@ __metadata:
   version: 2.2.9
   resolution: "dompurify@npm:2.2.9"
   checksum: a7a8332ac7984c772176523fb239364873e70c3df62c9c16427851caaece04ee888d165cf89c8f25a94f59a9cf812e0a3f6dee5f4127d3ca593381d1bc74e53a
+  languageName: node
+  linkType: hard
+
+"dompurify@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "dompurify@npm:2.3.3"
+  checksum: 947e3661681bd183aae1cd08f991b14c6aa41fd188f6c801c5e916c2dc4575bbefbaa121ed06dbe0cb0f595545527d588a44b53bfc35d1cbb898c214dc0d7930
   languageName: node
   linkType: hard
 
