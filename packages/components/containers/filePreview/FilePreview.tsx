@@ -4,9 +4,10 @@ import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
 import PreviewLoader from './PreviewLoader';
 import TextPreview from './TextPreview';
+import VideoPreview from './VideoPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import PDFPreview from './PDFPreview';
-import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
+import { isPreviewAvailable, isSupportedImage, isSupportedVideo, isSupportedText, isPDF } from './helpers';
 import { useCombinedRefs, useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../../components';
 
@@ -14,6 +15,7 @@ interface Props {
     loading: boolean;
     fileName?: string;
     mimeType?: string;
+    fileSize?: number;
     navigationControls?: ReactNode;
     contents?: Uint8Array[];
     sharedStatus?: SharedStatus;
@@ -28,6 +30,7 @@ const FilePreview = (
         contents,
         fileName,
         mimeType,
+        fileSize,
         loading,
         navigationControls,
         sharedStatus,
@@ -55,7 +58,7 @@ const FilePreview = (
     ]);
 
     const renderPreview = () => {
-        if (!mimeType || !isPreviewAvailable(mimeType)) {
+        if (!mimeType || !isPreviewAvailable(mimeType, fileSize)) {
             return (
                 <div className="file-preview-container">
                     <UnsupportedPreview onSave={onSave} />
@@ -69,6 +72,9 @@ const FilePreview = (
 
         if (isSupportedImage(mimeType)) {
             return <ImagePreview contents={contents} mimeType={mimeType} onSave={onSave} />;
+        }
+        if (isSupportedVideo(mimeType, fileSize)) {
+            return <VideoPreview contents={contents} mimeType={mimeType} onSave={onSave} />;
         }
         if (isSupportedText(mimeType)) {
             return <TextPreview contents={contents} />;
