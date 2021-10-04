@@ -5,7 +5,7 @@ import { TopBanners } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
 import DriveWindow from '../components/layout/DriveWindow';
-import FileRecoveryBanner from '../components/FilesRecoveryModal/FileRecoveryBanner';
+import FileRecoveryBanner from '../components/ResolveLockedVolumes/LockedVolumesBanner';
 import UploadSidebarButton from '../components/sections/Drive/UploadButton';
 import UploadDragDrop from '../components/uploads/UploadDragDrop/UploadDragDrop';
 import DriveView from '../components/sections/Drive/DriveView';

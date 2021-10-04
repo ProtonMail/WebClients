@@ -10,22 +10,26 @@ import {
     InnerModal,
     useLoading,
 } from '@proton/components';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 interface Props {
     onClose?: () => void;
+    onBack?: () => void;
     onSubmit: () => Promise<unknown>;
+    volumeCount: number;
 }
 
-const DeleteOldFilesConfirmModal = ({ onClose = noop, onSubmit, ...rest }: Props) => {
+const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, volumeCount, ...rest }: Props) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isLoading, withLoading] = useLoading();
 
-    const WARNING_TITLE = c('Label').t`WARNING: DELETION IS PERMANENT`;
-    const WARNING_INFO = c('Info').t`Are you sure you want to delete your old files
+    const modalTitle = c('Label').ngettext(msgid`Delete Drive`, `Delete Drives`, volumeCount);
+
+    const warningTitle = c('Label').t`WARNING: DELETION IS PERMANENT`;
+    const warningInfo = c('Info').t`Are you sure you want to delete your old files
         permanently? Your old files will be deleted in 72 hours.`;
-    const WARNING_CONFIRMATION_TEXT = c('Label').t`Yes, I want to permanently delete
+    const confirmationText = c('Label').t`Yes, I want to permanently delete
         my old files`;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,21 +41,21 @@ const DeleteOldFilesConfirmModal = ({ onClose = noop, onSubmit, ...rest }: Props
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} small disableCloseOnOnEscape={isLoading} {...rest}>
             <HeaderModal hasClose displayTitle noEllipsis modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Action').t`Delete old files`}
+                {modalTitle}
             </HeaderModal>
             <ContentModal onReset={onClose} onSubmit={() => withLoading(onSubmit())}>
                 <InnerModal className="mb1">
                     <Alert type="warning" className="mb2">
                         <span>
-                            <strong>{WARNING_TITLE}</strong>
+                            <strong className="text-uppercase">{warningTitle}</strong>
                         </span>
-                        <p className="m0">{WARNING_INFO}</p>
+                        <p className="m0">{warningInfo}</p>
                     </Alert>
-                    <Checkbox onChange={handleChange}>{WARNING_CONFIRMATION_TEXT}</Checkbox>
+                    <Checkbox onChange={handleChange}>{confirmationText}</Checkbox>
                 </InnerModal>
                 <FooterModal>
-                    <Button color="weak" type="button" onClick={onClose}>
-                        {c('Action').t`Cancel`}
+                    <Button color="weak" type="button" onClick={onBack}>
+                        {c('Action').t`Back`}
                     </Button>
                     <Button color="danger" type="submit" disabled={!isChecked || isLoading}>
                         {c('Action').t`Delete`}
@@ -62,4 +66,4 @@ const DeleteOldFilesConfirmModal = ({ onClose = noop, onSubmit, ...rest }: Props
     );
 };
 
-export default DeleteOldFilesConfirmModal;
+export default DeleteLockedVolumesConfirmModal;
