@@ -453,7 +453,9 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     try {
         await deleteESDB(userID);
     } catch (error: any) {
-        esSentryReport('initialiseDB: deleteESDB', { error });
+        if (error.name !== 'InvalidStateError') {
+            esSentryReport('initialiseDB: deleteESDB', { error });
+        }
 
         return {
             ...result,
@@ -483,7 +485,9 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     try {
         esDB = await createESDB(userID);
     } catch (error: any) {
-        esSentryReport('initialiseDB: createESDB', { error });
+        if (error.name !== 'InvalidStateError') {
+            esSentryReport('initialiseDB: createESDB', { error });
+        }
 
         removeES.Event(userID);
         removeES.Progress(userID);
