@@ -1,4 +1,4 @@
-import { memo, Fragment, MouseEvent } from 'react';
+import { memo, Fragment, MouseEvent, FocusEvent } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
@@ -20,6 +20,13 @@ interface Props {
 const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFocus }: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
+
+    // Fakefield onFocus takes precedence on the CcBcc button onClick which is not really logic
+    // By catching and stoping the focus event propagation on that button, we restore the click handler
+    const handleFocusCcBcc = (event: FocusEvent) => {
+        event.stopPropagation();
+    };
+
     return (
         <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5 relative">
             <Label className={classnames(['composer-meta-label pr0-5 pt0 text-bold', disabled && 'placeholder'])}>
@@ -92,6 +99,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                     className="composer-addresses-ccbcc on-mobile-max-w33 text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative"
                     title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                     onClick={toggleExpanded}
+                    onFocus={handleFocusCcBcc}
                     disabled={disabled}
                 >
                     {c('Action').t`CC, BCC`}
