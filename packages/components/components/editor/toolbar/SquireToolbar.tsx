@@ -1,5 +1,6 @@
 import { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { classnames } from '../../../helpers';
 import { useHandler, useIsMounted, useModals } from '../../../hooks';
 import Icon from '../../icon/Icon';
@@ -56,7 +57,10 @@ const SquireToolbar = ({
 
     const handleCursor = useHandler(() => {
         if (isMounted()) {
-            setSquireInfos(getPathInfo(squireRef.current));
+            const pathInfos = getPathInfo(squireRef.current);
+            if (!isDeepEqual(squireInfos, pathInfos)) {
+                setSquireInfos(pathInfos);
+            }
         }
     });
     const handleCursorDebounced = useHandler(handleCursor, { debounce: 500 });
@@ -219,7 +223,11 @@ const SquireToolbar = ({
                                 title={c('Action').t`Ordered list`}
                                 tabIndex={-1}
                             >
-                                <Icon name="list-numbers" className="mauto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
+                                <Icon
+                                    name="list-numbers"
+                                    className="mauto on-rtl-mirror"
+                                    alt={c('Action').t`Ordered list`}
+                                />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
                             <SquireToolbarAlignmentDropdown
