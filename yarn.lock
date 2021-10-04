@@ -3842,7 +3842,7 @@ __metadata:
     "@types/webpack-env": ^1.16.2
     bip39: "github:ProtonMail/bip39#semver:^1.0.2"
     date-fns: ^2.2.1
-    dompurify: ^2.0.7
+    dompurify: ^2.3.3
     eslint: ^7.3.1
     file-saver: ^2.0.2
     hi-base32: ^0.5.0
@@ -12986,13 +12986,6 @@ __metadata:
   dependencies:
     domelementtype: ^2.2.0
   checksum: 7921ac317d6899525a4e6a6038137307271522175a73db58233e13c7860987e15e86654583b2c0fd02fc46a602f9bd86fd2671af13b9068b72e8b229f07b3d03
-  languageName: node
-  linkType: hard
-
-"dompurify@npm:^2.0.7":
-  version: 2.2.9
-  resolution: "dompurify@npm:2.2.9"
-  checksum: a7a8332ac7984c772176523fb239364873e70c3df62c9c16427851caaece04ee888d165cf89c8f25a94f59a9cf812e0a3f6dee5f4127d3ca593381d1bc74e53a
   languageName: node
   linkType: hard
 
@@ -24113,7 +24106,7 @@ fsevents@^1.2.7:
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
     date-fns: ^2.5.0
-    dompurify: ^2.0.7
+    dompurify: ^2.3.3
     eslint: ^7.3.1
     interval-tree: "github:ProtonMail/interval-tree#semver:^1.0.0"
     jest: ^27.0.0
@@ -24202,7 +24195,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     date-fns: ^2.4.1
     declassify: ^2.1.0
-    dompurify: ^2.0.7
+    dompurify: ^2.3.3
     eslint: ^7.3.1
     eslint-config-airbnb-typescript: ^7.2.1
     eslint-config-prettier: ^6.11.0
