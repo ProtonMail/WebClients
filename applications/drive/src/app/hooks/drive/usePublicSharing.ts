@@ -10,7 +10,8 @@ import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '@proton/shared
 import { InitHandshake, SharedLinkPayload, SharedLinkInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
-import { getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
+import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+
 import { startDownload, StreamTransformer } from '../../components/downloads/download';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 
