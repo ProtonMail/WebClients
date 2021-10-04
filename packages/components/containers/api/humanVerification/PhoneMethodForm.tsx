@@ -12,10 +12,11 @@ interface Props {
     onSubmit: (phone: string) => Promise<void>;
     defaultPhone?: string;
     defaultCountry?: string;
+    isEmbedded?: boolean;
     api: Api;
 }
 
-const EmailMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry }: Props) => {
+const PhoneMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry, isEmbedded }: Props) => {
     const [phone, setPhone] = useState(defaultPhone);
     const [loading, withLoading] = useLoading();
     const [phoneError, setPhoneError] = useState('');
@@ -42,6 +43,7 @@ const EmailMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry }: P
             <InputFieldTwo
                 as={PhoneInput}
                 id="phone"
+                compact={isEmbedded}
                 bigger
                 label={c('Label').t`Phone number`}
                 error={validator([requiredValidator(phone), phoneError])}
@@ -75,4 +77,4 @@ const EmailMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry }: P
     );
 };
 
-export default EmailMethodForm;
+export default PhoneMethodForm;

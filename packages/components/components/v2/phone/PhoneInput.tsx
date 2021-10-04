@@ -15,7 +15,7 @@ import {
     getTrimmedString,
 } from './helper';
 import { classnames } from '../../../helpers';
-import useRightToLeft from "../../../containers/rightToLeft/useRightToLeft";
+import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
 import CountrySelect from './CountrySelect';
 
 const usePreviousValue = <T,>(value: T) => {
@@ -29,14 +29,15 @@ const usePreviousValue = <T,>(value: T) => {
 export interface Props extends Omit<InputTwoProps, 'type' | 'value' | 'onChange'> {
     value: string;
     defaultCountry?: string;
+    compact?: boolean;
     onChange: (value: string) => void;
 }
 
-const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', onChange, onValue, ...rest }: Props) => {
+const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', compact, onChange, onValue, ...rest }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const selectionRef = useRef<number | null>(null);
     const oldSpecificCountryLengthRef = useRef<number>(0);
-    const [isCountryCallingCodeMode, setIsCountryCallingCodeMode] = useState(false);
+    const [isCountryCallingCodeMode, setIsCountryCallingCodeMode] = useState(Boolean(compact));
     const [oldCountry, setOldCountry] = useState(defaultCountry);
 
     const trimmedValue = getTrimmedString(actualValue);
@@ -126,6 +127,7 @@ const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', onChange, 
             className={classnames([isRTL ? 'text-right' : null])}
             prefix={
                 <CountrySelect
+                    compact={compact}
                     value={selectedValue}
                     options={countries}
                     onChange={(newSelectedValue) => {
