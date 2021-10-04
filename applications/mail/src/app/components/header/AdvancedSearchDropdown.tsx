@@ -15,7 +15,6 @@ import {
     Button,
     PrimaryButton,
     Label,
-    Select,
     useLabels,
     useFolders,
     useMailSettings,
@@ -31,17 +30,13 @@ import {
     Tooltip,
     LinkButton,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS, SECOND, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
-import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
@@ -64,6 +59,7 @@ import { estimateIndexingTime } from '../../helpers/encryptedSearch/esBuild';
 import './AdvancedSearchDropdown.scss';
 import { useClickMailContent } from '../../hooks/useClickMailContent';
 import SearchField from './SearchField';
+import LocationField from './AdvancedSearchFields/LocationField';
 
 interface SearchModel {
     keyword: string;
@@ -77,18 +73,11 @@ interface SearchModel {
     filter?: string;
 }
 
-interface LabelInfo {
-    text: string;
-    value: string;
-    group: string;
-}
-
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const NO_ATTACHMENTS = 0;
 const WITH_ATTACHMENTS = 1;
-const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS, SCHEDULED } =
-    MAILBOX_LABEL_IDS;
+const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 const DEFAULT_MODEL: SearchModel = {
     keyword: '',
     labelID: ALL_MAIL,
@@ -106,20 +95,6 @@ const getRecipients = (value = '') =>
         .map((Address) => ({ Address, Name: '' }));
 const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Address }) => Address).join(',');
 
-const folderReducer = (acc: LabelInfo[], folder: FolderWithSubFolders, level = 0) => {
-    acc.push({
-        text: formatFolderName(level, folder.Name, ' ∙ '),
-        value: folder.ID,
-        group: c('Group').t`Custom folders`,
-    });
-
-    if (Array.isArray(folder.subfolders)) {
-        folder.subfolders.forEach((folder) => folderReducer(acc, folder, level + 1));
-    }
-
-    return acc;
-};
-
 interface Props {
     keyword?: string;
     isNarrow: boolean;
@@ -128,7 +103,7 @@ interface Props {
 const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) => {
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-dropdown'));
-    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [, loadingMailSettings] = useMailSettings();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     useClickMailContent((event) => {
         if (anchorRef.current?.contains(event.target as Node)) {
@@ -137,8 +112,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         }
         close();
     });
-    const [labels = [], loadingLabels] = useLabels();
-    const [folders, loadingFolders] = useFolders();
+    const [, loadingLabels] = useLabels();
+    const [, loadingFolders] = useFolders();
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
@@ -156,7 +131,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const { esProgress, oldestTime, totalIndexingMessages, estimatedMinutes, currentProgressValue } = esState;
     const abortProgressRef = useRef<AbortController>(new AbortController());
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
-    const { feature: scheduledFeature, loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     // Get right keyword value depending on the current situation
     const getKeyword = (keyword: string, reset?: boolean) => {
@@ -304,37 +279,6 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
 
     const loading =
         loadingLabels || loadingFolders || loadingMailSettings || loadingESFeature || loadingScheduledFeature;
-
-    const treeview: FolderWithSubFolders[] = buildTreeview(folders);
-
-    const labelIDOptions: LabelInfo[] = (
-        [
-            { value: ALL_MAIL, text: c('Mailbox').t`All`, group: c('Group').t`Default folders` },
-            { value: INBOX, text: c('Mailbox').t`Inbox`, group: c('Group').t`Default folders` },
-            {
-                value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS,
-                text: c('Mailbox').t`Drafts`,
-                group: c('Group').t`Default folders`,
-            },
-            scheduledFeature?.Value && {
-                value: SCHEDULED,
-                text: c('Mailbox').t`Scheduled`,
-                group: c('Group').t`Default folders`,
-            },
-            {
-                value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
-                text: c('Mailbox').t`Sent`,
-                group: c('Group').t`Default folders`,
-            },
-            { value: STARRED, text: c('Mailbox').t`Starred`, group: c('Group').t`Default folders` },
-            { value: ARCHIVE, text: c('Mailbox').t`Archive`, group: c('Group').t`Default folders` },
-            { value: SPAM, text: c('Mailbox').t`Spam`, group: c('Group').t`Default folders` },
-            { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` },
-        ] as LabelInfo[]
-    )
-        .filter(isTruthy)
-        .concat(treeview.reduce<LabelInfo[]>((acc, folder) => folderReducer(acc, folder), []))
-        .concat(labels.map(({ ID: value, Name: text }) => ({ value, text, group: c('Group').t`Labels` })));
 
     // Switches
     const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
@@ -566,13 +510,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 />
                             )}
                             <div className="mb0-5">
-                                <Label className="advanced-search-label text-semibold" htmlFor="labelID">{c('Label')
-                                    .t`Location`}</Label>
-                                <Select
-                                    id="labelID"
+                                <LocationField
                                     value={model.labelID}
-                                    options={labelIDOptions}
-                                    onChange={({ target }) => updateModel({ ...model, labelID: target.value })}
+                                    onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
                                 />
                             </div>
                             <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
