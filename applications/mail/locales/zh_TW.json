@@ -59,12 +59,6 @@
       "Request timed out.": [
         "請求已逾時。"
       ],
-      "Signature verification failed": [
-        "簽章驗證失敗"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到電子郵件地址 ${ email }。"
-      ],
       "Missing signature": [
         "簽章遺失"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "${ emailAddress } 的金鑰屬性無法擷取"
+      ],
+      "Signature verification failed": [
+        "簽章驗證失敗"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到電子郵件地址 ${ email }。"
       ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "認證錯誤。"
       ],
-      "Email address invalid": [
-        "電子郵件地址無效"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
-      ],
       "The composer failed to load.": [
         "撰寫器載入失敗。"
       ],
       "Please refresh the page.": [
         "請重新整理此頁面。"
+      ],
+      "Email address invalid": [
+        "電子郵件地址無效"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
       ],
       "Incorrect mailbox password. Please try again": [
         "郵箱密碼不正確，請再試一次"
@@ -365,8 +365,8 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "由於您近期重新設定密碼，致使您的電郵無法解密。如果您記得先前的密碼，可透過 ${ reActivateKeyLink } 存取您的信件。相關資訊參考 ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
-        "由於您近期重新設定密碼，致使您的電郵無法解密。相關資訊參考 ${ learnMoreLink }"
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
+        "無法解密您的電子郵件。這可能是因為密碼重設。${ learnMoreLink }"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "使用中篩選器太多。請升級至付費方案以啟用更多篩選器"
@@ -542,27 +542,6 @@
       "No results found": [
         "查無結果"
       ],
-      "Week": [
-        "週"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } 個成員)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
-      ],
-      "You are about to open another browser tab and visit:": [
-        "您即將開啟另一瀏覽器索引標籤並造訪："
-      ],
-      "Learn more": [
-        "瞭解更多"
-      ],
-      "Loading": [
-        "正在載入"
-      ],
       "Insert image": [
         "插入圖片"
       ],
@@ -638,6 +617,27 @@
       "Plain text": [
         "純文字"
       ],
+      "Week": [
+        "週"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 個成員)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
+      ],
+      "You are about to open another browser tab and visit:": [
+        "您即將開啟另一瀏覽器索引標籤並造訪："
+      ],
+      "Learn more": [
+        "瞭解更多"
+      ],
+      "Loading": [
+        "正在載入"
+      ],
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
       ],
@@ -665,12 +665,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用，請驗證您是真人。"
       ],
@@ -682,6 +676,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
       ],
       "No contacts added yet": [
         "未新增任何聯絡人"
@@ -1698,11 +1698,6 @@
         "請以您的行動裝置，掃描此二維碼，或瀏覽 ${ link }。"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -1747,6 +1742,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1925,11 +1925,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
       "Syncing": [
         "正在同步"
+      ],
+      "Not synced": [
+        "未同步"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1964,6 +1964,12 @@
       ],
       "Unsupported event": [
         "不支援的事件"
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
       ],
       "Invalid method": [
         "無效的方式"
@@ -2527,38 +2533,8 @@
       "Close": [
         "關閉"
       ],
-      "More info: ${ safeTitle }": [
-        "更多資訊：${ safeTitle }"
-      ],
-      "Confirm": [
-        "確認"
-      ],
       "Cancel": [
         "取消"
-      ],
-      "Submit": [
-        "提交"
-      ],
-      "Close modal": [
-        "關閉對話視窗"
-      ],
-      "Use “${ label }” setting": [
-        "使用「${ label }」設定"
-      ],
-      "Remove": [
-        "移除"
-      ],
-      "Next month": [
-        "下一個月"
-      ],
-      "Previous month": [
-        "上個月"
-      ],
-      "Load image": [
-        "載入影像"
-      ],
-      "Confirm opening of link ${ link }": [
-        "確認開啟連結 ${ link }"
       ],
       "Save": [
         "儲存"
@@ -2622,6 +2598,36 @@
       ],
       "Underline": [
         "底線"
+      ],
+      "More info: ${ safeTitle }": [
+        "更多資訊：${ safeTitle }"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Close modal": [
+        "關閉對話視窗"
+      ],
+      "Use “${ label }” setting": [
+        "使用「${ label }」設定"
+      ],
+      "Remove": [
+        "移除"
+      ],
+      "Next month": [
+        "下一個月"
+      ],
+      "Previous month": [
+        "上個月"
+      ],
+      "Load image": [
+        "載入影像"
+      ],
+      "Confirm opening of link ${ link }": [
+        "確認開啟連結 ${ link }"
       ],
       "Go to panel ${ index }": [
         "到面板 ${ index }"
@@ -3230,7 +3236,7 @@
         "顯示"
       ],
       "Show less": [
-        ""
+        "顯示更少"
       ],
       "Never show": [
         "永不顯示"
@@ -3399,11 +3405,11 @@
       "Open actions dropdown": [
         "開啟動作下拉選單"
       ],
-      "Link confirmation": [
-        "連結確認"
-      ],
       "Expand content": [
         "展開內容"
+      ],
+      "Link confirmation": [
+        "連結確認"
       ],
       "Keyboard Shortcuts": [
         "鍵盤快捷鍵"
@@ -3425,9 +3431,6 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
-      ],
-      "Request new code": [
-        "重發驗證碼"
       ],
       "Human verification": [
         "真人驗證"
@@ -3896,6 +3899,138 @@
       ],
       "Welcome": [
         "歡迎"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "連結"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "填寫 URL 連結及文字以測試您的連結"
+      ],
+      "Email address": [
+        "電子郵件地址"
+      ],
+      "Fill in the email address and text to test your link": [
+        "填寫電子郵件地址及文字以測試您的連結"
+      ],
+      "Phone number": [
+        "電話號碼"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "填寫電話號碼及文字以測試您的連結"
+      ],
+      "Text": [
+        "文字"
+      ],
+      "E.g., ": [
+        "範例："
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "Start typing an email address": [
+        "在此輸入一個電子郵件地址"
+      ],
+      "Image URL": [
+        "影像網址"
+      ],
+      "Search name, email or group": [
+        "搜尋名稱、電子郵件或群組"
+      ],
+      "Filter groups": [
+        "篩選群組"
+      ],
+      "Search for name or email": [
+        "按名稱或電子郵件搜索"
+      ],
+      "Search for group name": [
+        "搜尋群組名稱"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "OS name": [
+        "作業系統名稱"
+      ],
+      "OS version": [
+        "作業系統版本"
+      ],
+      "Proton username": [
+        "Proton 使用者名稱"
+      ],
+      "A way to contact you": [
+        "有甚麼途徑可以聯絡您"
+      ],
+      "Please describe the problem and include any error messages": [
+        "請描述問題並附上相關的錯誤訊息 (如有的話)"
+      ],
+      "Browser name": [
+        "瀏覽器名稱"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
+      "e.g. Julia Smith": [
+        "範例：衛梓祐"
+      ],
+      "ZIP": [
+        "美國郵區編號"
+      ],
+      "Postal code": [
+        "郵遞區號"
+      ],
+      "Gift code": [
+        "禮品代碼"
+      ],
+      "Type text or keyword": [
+        "鍵入文字或關鍵詞"
+      ],
+      "Subject": [
+        "主旨"
+      ],
+      "Write your message": [
+        "撰寫您的訊息"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Confirm Password": [
+        "確認密碼"
+      ],
+      "Hint": [
+        "提示"
+      ],
+      "Search Messages": [
+        "搜尋郵件"
+      ],
+      "Start date": [
+        "開始日期"
+      ],
+      "End date": [
+        "結束日期"
+      ],
+      "Name or email address": [
+        "名稱或電子郵件地址"
+      ],
+      "Search messages": [
+        "搜尋訊息"
+      ],
+      "Filter folders": [
+        "篩選資料夾"
+      ],
+      "Filter labels": [
+        "篩選標籤"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "預設"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "預設"
       ]
     },
     "PGP key encryption warning": {
@@ -4429,128 +4564,6 @@
         "同時封存"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "範例："
-      ],
-      "Link": [
-        "連結"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "填寫 URL 連結及文字以測試您的連結"
-      ],
-      "Email address": [
-        "電子郵件地址"
-      ],
-      "Fill in the email address and text to test your link": [
-        "填寫電子郵件地址及文字以測試您的連結"
-      ],
-      "Phone number": [
-        "電話號碼"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "填寫電話號碼及文字以測試您的連結"
-      ],
-      "Text": [
-        "文字"
-      ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "Start typing an email address": [
-        "在此輸入一個電子郵件地址"
-      ],
-      "Image URL": [
-        "影像網址"
-      ],
-      "Search name, email or group": [
-        "搜尋名稱、電子郵件或群組"
-      ],
-      "Filter groups": [
-        "篩選群組"
-      ],
-      "Search for name or email": [
-        "按名稱或電子郵件搜索"
-      ],
-      "Search for group name": [
-        "搜尋群組名稱"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "OS name": [
-        "作業系統名稱"
-      ],
-      "OS version": [
-        "作業系統版本"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
-      "A way to contact you": [
-        "有甚麼途徑可以聯絡您"
-      ],
-      "Please describe the problem and include any error messages": [
-        "請描述問題並附上相關的錯誤訊息 (如有的話)"
-      ],
-      "Browser name": [
-        "瀏覽器名稱"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
-      "e.g. Julia Smith": [
-        "範例：衛梓祐"
-      ],
-      "ZIP": [
-        "美國郵區編號"
-      ],
-      "Postal code": [
-        "郵遞區號"
-      ],
-      "Gift code": [
-        "禮品代碼"
-      ],
-      "Type text or keyword": [
-        "鍵入文字或關鍵詞"
-      ],
-      "Subject": [
-        "主旨"
-      ],
-      "Write your message": [
-        "撰寫您的訊息"
-      ],
-      "Password": [
-        "密碼"
-      ],
-      "Confirm Password": [
-        "確認密碼"
-      ],
-      "Hint": [
-        "提示"
-      ],
-      "Search Messages": [
-        "搜尋郵件"
-      ],
-      "Start date": [
-        "開始日期"
-      ],
-      "End date": [
-        "結束日期"
-      ],
-      "Name or email address": [
-        "名稱或電子郵件地址"
-      ],
-      "Search messages": [
-        "搜尋訊息"
-      ],
-      "Filter folders": [
-        "篩選資料夾"
-      ],
-      "Filter labels": [
-        "篩選標籤"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } 小時"
@@ -4577,16 +4590,6 @@
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "找到 ${ items.length } 建議，使用鍵盤來選取。"
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "預設"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "預設"
       ]
     },
     "Storage": {
@@ -5253,6 +5256,11 @@
         "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增到您的聯絡人清單"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "上載"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "舒適"
@@ -5275,11 +5283,6 @@
       ],
       "Maximized": [
         "最大化"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "上載"
       ]
     },
     "Loading info": {
@@ -6441,13 +6444,13 @@
         "此邀請已過時。此事件已更新。"
       ],
       "You already accepted this invitation.": [
-        ""
+        "您已接受此邀請。"
       ],
       "You already tentatively accepted this invitation.": [
-        ""
+        "您已暫時接受此邀請。"
       ],
       "You already declined this invitation.": [
-        ""
+        "您已回絕此邀請。"
       ],
       "This event has been cancelled.": [
         "此事件已取消。"
@@ -6459,7 +6462,7 @@
         "事件 ${ veventIcsTitle } 已新增一次"
       ],
       "(Attendance optional)": [
-        ""
+        "（出席可選）"
       ],
       "The sender of this email has not been invited to this event and cannot be added as a participant.": [
         "此電子郵件的寄件人未獲邀出席此事件，因此無法新增為參與者。"
@@ -6628,7 +6631,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "會否出席？"
       ]
     },
     "Import ICS file from Mail": {
@@ -6641,22 +6644,22 @@
     },
     "ICS widget label for event details": {
       "Organizer:": [
-        ""
+        "召集人："
       ],
       "${ totalAttendees } Participant": [
-        ""
+        "${ totalAttendees } 個參與者"
       ],
       "Repeats": [
-        ""
+        "重複"
       ],
       "Calendar": [
-        ""
+        "行事曆"
       ],
       "Location": [
-        ""
+        "位置"
       ],
       "Participants": [
-        ""
+        "參與者"
       ]
     },
     "Attachment signature verification": {

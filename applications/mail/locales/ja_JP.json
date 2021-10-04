@@ -21,31 +21,31 @@
         "メールアドレスが無効です"
       ],
       "No keys retrieved for internal user": [
-        "内部ユーザーのために取得された鍵はありません"
+        "内部ユーザーの鍵が取得できません"
       ],
       "No valid keys retrieved for internal user": [
-        "内部ユーザーのために取得された有効な鍵がありません"
+        "内部ユーザーの有効な鍵が取得できません"
       ],
       "Contact signature could not be verified": [
         "連絡先の署名を確認できませんでした"
       ],
       "No key retrieved for internal user is valid for sending": [
-        "内部ユーザーのために取得された鍵は送信には有効ではありません"
+        "送信に使用できる内部ユーザーの鍵がありません"
       ],
       "Trusted keys are not valid for sending": [
-        "信頼された鍵は送信に有効ではありません"
+        "信頼された鍵が送信に使用できません"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "ユーザーのために取得された WKD 鍵は送信には有効ではありません"
+        "ユーザーのWKD 鍵が送信に使用できません"
       ],
       "The sending key is not valid": [
-        "送信鍵が有効ではありません"
+        "送信用の鍵が有効ではありません"
       ],
       "This field is required": [
         "この項目の入力は必須です"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "このフィールドには最低${ minimumLength } 文字が必要です。"
+        "このフィールドには${ minimumLength } 文字以上の入力が必要です。"
       ],
       "Email is not valid": [
         "メールアドレスが無効です"
@@ -59,26 +59,26 @@
       "Request timed out.": [
         "リクエストはタイムアウトしました。"
       ],
-      "Signature verification failed": [
-        "署名の検証に失敗しました"
-      ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
-      ],
       "Missing signature": [
         "署名がありません"
       ],
       "Contact signature not verified": [
-        "連絡先の署名が確認されていません"
+        "連絡先の署名が検証されていません"
       ],
       "Signature not verified": [
-        "署名が確認されていません"
+        "署名が検証されていません"
       ],
       "Invalid name": [
         "無効な名前です"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        "${ emailAddress } のキープロパティは抽出できませんでした"
+        "${ emailAddress } の鍵情報が抽出できませんでした"
+      ],
+      "Signature verification failed": [
+        "署名の検証に失敗しました"
+      ],
+      "Could not find address ${ email }.": [
+        "メールアドレス ${ email } が見つかりませんでした。"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -87,7 +87,7 @@
         "カレンダーのプライマリー秘密鍵が復号されていません"
       ],
       "Unknown error": [
-        "不明なエラー"
+        "原因不明なエラーが発生しました"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "認証エラー。"
       ],
-      "Email address invalid": [
-        "メールアドレスが不正です"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "お使いのブラウザでは、支払いを完全に承認できません。 別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
       "The composer failed to load.": [
         "Composerが読み込みに失敗しました。"
       ],
       "Please refresh the page.": [
         "ページを更新してください。"
+      ],
+      "Email address invalid": [
+        "メールアドレスが不正です"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "お使いのブラウザでは、支払いを完全に承認できません。 別のブラウザを使用するか、コンピューターからログインしてください。"
       ],
       "Incorrect mailbox password. Please try again": [
         "メールボックスのパスワードが正しくありません。再度入力してください"
@@ -126,7 +126,7 @@
         "電話番号の検証ができませんでした。再度お試しください"
       ],
       "Enter 6 digits": [
-        "6 桁の数字を入力"
+        "6 桁の数字を入力してください"
       ],
       "Invalid verification code": [
         "無効な検証コード"
@@ -192,7 +192,7 @@
         "支払い処理が失敗しました"
       ],
       "Payment process consumed": [
-        "支払い処理は消費されました"
+        "支払い処理は手続き済みです"
       ],
       "Payment process not supported": [
         "支払い処理はサポートされていません"
@@ -339,7 +339,7 @@
         ""
       ],
       "Public key could not be trusted": [
-        "公開鍵は信頼されていません"
+        "公開鍵を信頼できません"
       ],
       "Network error: Please check your connection and try again.": [
         "ネットワークエラー：インターネット接続を確認し、もう一度やり直してください。"
@@ -365,7 +365,7 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         ""
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         ""
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
@@ -542,27 +542,6 @@
       "No results found": [
         "該当する項目がありません"
       ],
-      "Week": [
-        "週"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } メンバー)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
-      ],
-      "You are about to open another browser tab and visit:": [
-        "別のタブで下記リンクを開こうとしています："
-      ],
-      "Learn more": [
-        "より詳しく"
-      ],
-      "Loading": [
-        "読み込み中"
-      ],
       "Insert image": [
         "画像の挿入"
       ],
@@ -588,16 +567,16 @@
         "電話番号"
       ],
       "URL link": [
-        "URLリンク"
+        "リンクの URL"
       ],
       "Insert link": [
         "リンクを挿入"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "挿入するリンクの種類を選択し、すべてのフィールドに入力してください。"
+        "挿入するリンクの種類を選択し、全ての項目に入力してください。"
       ],
       "Link type": [
-        "リンクタイプ"
+        "リンクの種類"
       ],
       "Text to display": [
         "表示用のテキスト"
@@ -606,7 +585,7 @@
         "リンクをテスト"
       ],
       "Change your default in settings": [
-        "デフォルトの設定を変更"
+        "既定の設定を変更"
       ],
       "Text color": [
         "文字色"
@@ -638,6 +617,27 @@
       "Plain text": [
         "プレーンテキスト"
       ],
+      "Week": [
+        "週"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } メンバー)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
+      ],
+      "You are about to open another browser tab and visit:": [
+        "別のタブで下記リンクを開こうとしています："
+      ],
+      "Learn more": [
+        "より詳しく"
+      ],
+      "Loading": [
+        "読み込み中"
+      ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
       ],
@@ -665,12 +665,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
@@ -682,6 +676,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
@@ -813,7 +813,7 @@
         "プレビューを読み込み中"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "このブラウザーは PDF ドキュメントのプレビューをサポートしていません。ファイルをダウンロードしてください。"
+        "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
       "of": [
         " / "
@@ -1176,7 +1176,7 @@
         "(以下のいずれかの条件が満たされた場合に動作します)"
       ],
       "Images have been removed because they are not allowed in auto-reply.": [
-        "自動リプライでは許可されていないため画像は削除されました。"
+        "自動返信では許可されていないため画像は削除されました。"
       ],
       "All your changes will be lost.": [
         "変更内容は全て失われます。"
@@ -1263,7 +1263,7 @@
         "クリップボードにコピーされました。"
       ],
       "Right-click for options": [
-        "右クリックしてオプションを表示します"
+        "右クリックしてオプションを表示"
       ],
       "Click to view group details": [
         "クリックしてグループの詳細を表示"
@@ -1284,16 +1284,16 @@
         "開封確認の要求"
       ],
       "Insert image as": [
-        "画像として挿入"
+        "画像を次の形式で挿入"
       ],
       "or": [
         "または"
       ],
       "Loading message": [
-        "メッセージを読み込み中"
+        "メッセージを読み込み中です"
       ],
       "Drop a file here to upload": [
-        "アップロードするファイルをここにドロップしてください。"
+        "アップロードするファイルをここにドロップしてください"
       ],
       "Saved at ${ dateString }": [
         "${ dateString } に保存しました"
@@ -1320,10 +1320,10 @@
         "パスワードのヒント (任意)"
       ],
       "Expiration Time": [
-        "無効な時間"
+        "有効期限"
       ],
       "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "ProtonMailユーザー以外にメッセージを送信する場合、パスワードの設定を確認してください。"
+        "ProtonMailユーザー以外にメッセージを送信する場合、パスワードを設定してください。"
       ],
       "This message will expire in": [
         "このメッセージの有効期限："
@@ -1698,11 +1698,6 @@
         ""
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "不明"
@@ -1747,6 +1742,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Keyboard shortcut section name": {
@@ -1925,11 +1925,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "未同期"
-      ],
       "Syncing": [
         "同期中"
+      ],
+      "Not synced": [
+        "未同期"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1964,6 +1964,12 @@
       ],
       "Unsupported event": [
         "サポートされていないイベントです"
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
       ],
       "Invalid method": [
         "無効なメソッドです"
@@ -2527,38 +2533,8 @@
       "Close": [
         "閉じる"
       ],
-      "More info: ${ safeTitle }": [
-        "詳細: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "確認"
-      ],
       "Cancel": [
         "キャンセル"
-      ],
-      "Submit": [
-        "送信"
-      ],
-      "Close modal": [
-        "画面を閉じる"
-      ],
-      "Use “${ label }” setting": [
-        "「{ label }」設定を使用する"
-      ],
-      "Remove": [
-        "削除"
-      ],
-      "Next month": [
-        "翌月"
-      ],
-      "Previous month": [
-        "先月"
-      ],
-      "Load image": [
-        "画像を読み込む"
-      ],
-      "Confirm opening of link ${ link }": [
-        "リンク ${ link } を確認"
       ],
       "Save": [
         "保存"
@@ -2623,6 +2599,36 @@
       "Underline": [
         "下線"
       ],
+      "More info: ${ safeTitle }": [
+        "詳細: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Close modal": [
+        "画面を閉じる"
+      ],
+      "Use “${ label }” setting": [
+        "「{ label }」設定を使用する"
+      ],
+      "Remove": [
+        "削除"
+      ],
+      "Next month": [
+        "翌月"
+      ],
+      "Previous month": [
+        "前月"
+      ],
+      "Load image": [
+        "画像を読み込む"
+      ],
+      "Confirm opening of link ${ link }": [
+        "リンク ${ link } を確認"
+      ],
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
       ],
@@ -2678,7 +2684,7 @@
         "検証"
       ],
       "Did not receive the code?": [
-        "コードを受け取っていませんか?"
+        "認証コードを受け取っていませんか?"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -2846,7 +2852,7 @@
         "詳細"
       ],
       "Share via link": [
-        "リンクで共有"
+        "リンクを共有"
       ],
       "Sharing options": [
         "共有オプション"
@@ -3119,7 +3125,7 @@
         "インライン"
       ],
       "Cancel action": [
-        "アクションをキャンセル"
+        "キャンセル"
       ],
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
@@ -3397,13 +3403,13 @@
     },
     "Title": {
       "Open actions dropdown": [
-        "アクションドロップダウンを開く"
-      ],
-      "Link confirmation": [
-        "リンクの確認"
+        "アクションのドロップダウンを開く"
       ],
       "Expand content": [
         "コンテンツを展開"
+      ],
+      "Link confirmation": [
+        "リンクの確認"
       ],
       "Keyboard Shortcuts": [
         "キーボードショートカット"
@@ -3425,9 +3431,6 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
-      ],
-      "Request new code": [
-        "新しいコードの発行"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -3544,7 +3547,7 @@
         ""
       ],
       "Select contact group": [
-        "連絡先グループを選択"
+        "連絡先グループの選択"
       ],
       "Import groups": [
         "グループをインポート"
@@ -3682,7 +3685,7 @@
         "フィルターの編集"
       ],
       "Add filter": [
-        "フィルターを追加"
+        "フィルターの追加"
       ],
       "Are you sure you want to close?": [
         "本当に画面を閉じてよろしいですか？"
@@ -3757,10 +3760,10 @@
         "Bcc"
       ],
       "Carbon Copy": [
-        "写し"
+        "Carbon Copy"
       ],
       "Blind Carbon Copy": [
-        ""
+        "Blind Carbon Copy"
       ],
       "Sending error": [
         "送信エラー"
@@ -3784,7 +3787,7 @@
         "暗号化"
       ],
       "Send email": [
-        "メールを送信"
+        "メールの送信"
       ],
       "Schedule send": [
         "スケジュールを送信"
@@ -3896,6 +3899,138 @@
       ],
       "Welcome": [
         "ようこそ"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "リンク"
+      ],
+      "Fill in the URL link and text to test your link": [
+        ""
+      ],
+      "Email address": [
+        "メールアドレス"
+      ],
+      "Fill in the email address and text to test your link": [
+        ""
+      ],
+      "Phone number": [
+        "電話番号"
+      ],
+      "Fill in the phone number and text to test your link": [
+        ""
+      ],
+      "Text": [
+        "テキスト"
+      ],
+      "E.g., ": [
+        "例: "
+      ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
+      ],
+      "Start typing an email address": [
+        "電子メールアドレスを入力"
+      ],
+      "Image URL": [
+        "画像の URL"
+      ],
+      "Search name, email or group": [
+        ""
+      ],
+      "Filter groups": [
+        "グループをフィルター"
+      ],
+      "Search for name or email": [
+        "名前またはメールアドレスで検索"
+      ],
+      "Search for group name": [
+        "グループ名で検索"
+      ],
+      "Name": [
+        "名前"
+      ],
+      "OS name": [
+        "OS の名前"
+      ],
+      "OS version": [
+        "OS のバージョン"
+      ],
+      "Proton username": [
+        "Proton ユーザー名"
+      ],
+      "A way to contact you": [
+        "連絡手段"
+      ],
+      "Please describe the problem and include any error messages": [
+        "問題について、エラーメッセージ等も含めてご記入下さい。（英語）"
+      ],
+      "Browser name": [
+        "ブラウザの名前"
+      ],
+      "Browser version": [
+        "ブラウザのバージョン"
+      ],
+      "e.g. Julia Smith": [
+        "例: Julia Smith"
+      ],
+      "ZIP": [
+        "郵便番号"
+      ],
+      "Postal code": [
+        "郵便番号"
+      ],
+      "Gift code": [
+        "ギフトコード"
+      ],
+      "Type text or keyword": [
+        "テキストまたはキーワードを入力してください"
+      ],
+      "Subject": [
+        "件名"
+      ],
+      "Write your message": [
+        "メッセージを入力してください"
+      ],
+      "Password": [
+        "パスワード"
+      ],
+      "Confirm Password": [
+        "パスワードの確認"
+      ],
+      "Hint": [
+        "ヒント"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "開始日"
+      ],
+      "End date": [
+        "終了日"
+      ],
+      "Name or email address": [
+        "名前またはメールアドレス"
+      ],
+      "Search messages": [
+        "メッセージの検索"
+      ],
+      "Filter folders": [
+        "絞り込むフォルダー名"
+      ],
+      "Filter labels": [
+        "絞り込むラベル名"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4087,10 +4222,10 @@
         "電話番号"
       ],
       "Verification code": [
-        "検証用コード"
+        "認証コード"
       ],
       "Enter the 6-digit code": [
-        "6 桁のコードを入力"
+        "6 桁のコードを入力してください"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -4375,7 +4510,7 @@
         "日付"
       ],
       "Time": [
-        "日時"
+        "時刻"
       ],
       "From:": [
         "差出人："
@@ -4429,128 +4564,6 @@
         "アーカイブも実施する"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "例: "
-      ],
-      "Link": [
-        "リンク"
-      ],
-      "Fill in the URL link and text to test your link": [
-        ""
-      ],
-      "Email address": [
-        "メールアドレス"
-      ],
-      "Fill in the email address and text to test your link": [
-        ""
-      ],
-      "Phone number": [
-        "電話番号"
-      ],
-      "Fill in the phone number and text to test your link": [
-        ""
-      ],
-      "Text": [
-        "テキスト"
-      ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
-      "Start typing an email address": [
-        "電子メールアドレスを入力"
-      ],
-      "Image URL": [
-        "画像の URL"
-      ],
-      "Search name, email or group": [
-        ""
-      ],
-      "Filter groups": [
-        "グループをフィルター"
-      ],
-      "Search for name or email": [
-        "名前またはメールアドレスで検索"
-      ],
-      "Search for group name": [
-        "グループ名で検索"
-      ],
-      "Name": [
-        "名前"
-      ],
-      "OS name": [
-        "OS の名前"
-      ],
-      "OS version": [
-        "OS のバージョン"
-      ],
-      "Proton username": [
-        "Proton ユーザー名"
-      ],
-      "A way to contact you": [
-        "連絡手段"
-      ],
-      "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入下さい。（英語）"
-      ],
-      "Browser name": [
-        "ブラウザの名前"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
-      ],
-      "e.g. Julia Smith": [
-        "例: Julia Smith"
-      ],
-      "ZIP": [
-        "郵便番号"
-      ],
-      "Postal code": [
-        "郵便番号"
-      ],
-      "Gift code": [
-        "ギフトコード"
-      ],
-      "Type text or keyword": [
-        "テキストまたはキーワードを入力"
-      ],
-      "Subject": [
-        "件名"
-      ],
-      "Write your message": [
-        "メッセージを書く"
-      ],
-      "Password": [
-        "パスワード"
-      ],
-      "Confirm Password": [
-        "パスワードの確認"
-      ],
-      "Hint": [
-        "ヒント"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "開始日"
-      ],
-      "End date": [
-        "終了日"
-      ],
-      "Name or email address": [
-        "名前またはメールアドレス"
-      ],
-      "Search messages": [
-        "メッセージの検索"
-      ],
-      "Filter folders": [
-        "絞り込むフォルダー名"
-      ],
-      "Filter labels": [
-        "絞り込むラベル名"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } 時間"
@@ -4576,16 +4589,6 @@
         ""
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
         ""
       ]
     },
@@ -4808,7 +4811,7 @@
         ""
       ],
       "Public key trusted": [
-        ""
+        "公開鍵が信頼されました。"
       ],
       "Phishing reported": [
         "フィッシングが報告されました"
@@ -5253,6 +5256,11 @@
         ""
       ]
     },
+    "Select files": {
+      "Upload": [
+        "アップロード"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "通常"
@@ -5275,11 +5283,6 @@
       ],
       "Maximized": [
         "最大化"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "アップロード"
       ]
     },
     "Loading info": {

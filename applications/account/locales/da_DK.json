@@ -84,6 +84,24 @@
       "Confirm": [
         "Bekræft"
       ],
+      "Delete": [
+        "Slet"
+      ],
+      "Close": [
+        "Luk"
+      ],
+      "Next month": [
+        "Næste måned"
+      ],
+      "Previous month": [
+        "Forrige måned"
+      ],
+      "Show less": [
+        "Vis mindre"
+      ],
+      "Show more": [
+        "Vis mere"
+      ],
       "Close navigation": [
         "Luk navigation"
       ],
@@ -93,47 +111,20 @@
       "More info: ${ safeTitle }": [
         "Mere information: ${ safeTitle }"
       ],
-      "Close": [
-        "Luk"
-      ],
-      "Delete": [
-        "Slet"
-      ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
-      "Show less": [
-        "Vis mindre"
-      ],
-      "Show more": [
-        "Vis mere"
-      ],
-      "Next month": [
-        "Næste måned"
-      ],
-      "Previous month": [
-        "Forrige måned"
-      ],
       "Remove": [
         "Fjern"
+      ],
+      "Select timezone": [
+        "Vælg tidszone"
       ],
       "Submit": [
         "Indsend"
       ],
       "Close modal": [
         "Luk dialog"
-      ],
-      "Select timezone": [
-        "Vælg tidszone"
-      ],
-      "Activate ${ Name }@pm.me": [
-        "Aktiver ${ Name }@pm.me"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Show shortcuts": [
-        "Vis genveje"
       ],
       "Continue import": [
         "Fortsæt import"
@@ -213,6 +204,15 @@
       "Use ${ label } theme": [
         "Brug temaet “${ label }”"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktiver ${ Name }@pm.me"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Show shortcuts": [
+        "Vis genveje"
+      ],
       "Import contacts": [
         "Importér kontakter"
       ],
@@ -249,53 +249,11 @@
       "Get ProtonVPN Plus": [
         "Få ProtonVPN Plus"
       ],
-      "Add user": [
-        "Tilføj bruger"
+      "Yes": [
+        "Ja"
       ],
-      "Add address": [
-        "Tilføj adresse"
-      ],
-      "Done": [
-        "Udført"
-      ],
-      "Review": [
-        "Gennemse"
-      ],
-      "Set catch-all": [
-        "Indstil fang-alle"
-      ],
-      "Add domain": [
-        "Tilføj domæne"
-      ],
-      "Refresh status": [
-        "Opdater status"
-      ],
-      "Copy email to clipboard": [
-        "Kopiér e-mail til upklipsholder"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
-      "Chat with us": [
-        "Chat med os"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
-      ],
-      "Request a feature": [
-        "Anmod om en funktion"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } butik"
-      ],
-      "Switch account": [
-        "Skift konto"
-      ],
-      "Sign out": [
-        "Log ud"
+      "No": [
+        "Nej"
       ],
       "Update": [
         "Opdatér"
@@ -348,33 +306,6 @@
       "Delete link": [
         "Slet link"
       ],
-      "Get started": [
-        "Kom godt i gang"
-      ],
-      "Start setup": [
-        "Start opsætning"
-      ],
-      "Skip": [
-        "Spring over"
-      ],
-      "Clear": [
-        "Ryd"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
-      "Hide info": [
-        "Skjul info"
-      ],
-      "Show info": [
-        "Vis info"
-      ],
-      "Signing out": [
-        "Logger ud"
-      ],
-      "refresh the page": [
-        "genopfrisk siden"
-      ],
       "Reactivate keys": [
         "Genaktivér nøgler"
       ],
@@ -393,9 +324,6 @@
       "Export key": [
         "Eksportér nøgle"
       ],
-      "No": [
-        "Nej"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -404,6 +332,135 @@
       ],
       "Export private key": [
         "Eksportér privat nøgle"
+      ],
+      "Add user": [
+        "Tilføj bruger"
+      ],
+      "Add address": [
+        "Tilføj adresse"
+      ],
+      "Done": [
+        "Udført"
+      ],
+      "Review": [
+        "Gennemse"
+      ],
+      "Set catch-all": [
+        "Indstil fang-alle"
+      ],
+      "Add domain": [
+        "Tilføj domæne"
+      ],
+      "Refresh status": [
+        "Opdater status"
+      ],
+      "Copy email to clipboard": [
+        "Kopiér e-mail til upklipsholder"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } introduktion"
+      ],
+      "Chat with us": [
+        "Chat med os"
+      ],
+      "I have a question": [
+        "Jeg har et spørgsmål"
+      ],
+      "Request a feature": [
+        "Anmod om en funktion"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } butik"
+      ],
+      "Switch account": [
+        "Skift konto"
+      ],
+      "Sign out": [
+        "Log ud"
+      ],
+      "Get started": [
+        "Kom godt i gang"
+      ],
+      "Start setup": [
+        "Start opsætning"
+      ],
+      "Skip": [
+        "Spring over"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Create folder": [
+        "Opret mappe"
+      ],
+      "Remove this label": [
+        "Fjern denne etiket"
+      ],
+      "Add condition": [
+        "Tilføj betingelse"
+      ],
+      "label emails as": [
+        "giv e-mails etiketten"
+      ],
+      "move emails to": [
+        "flyt e-mails til"
+      ],
+      "mark emails as": [
+        "markér e-mails som"
+      ],
+      "send auto-reply email": [
+        "send e-mail med auto-svar"
+      ],
+      "Edit sieve": [
+        "Redigér Sieve"
+      ],
+      "Add filter": [
+        "Tilføj filter"
+      ],
+      "Add sieve filter": [
+        "Tilføj Sieve-filter"
+      ],
+      "Add": [
+        "Tilføj"
+      ],
+      "Move to Block List": [
+        "Flyt til blokeringsliste"
+      ],
+      "Move to Allow List": [
+        "Flyt til godkendt-liste"
+      ],
+      "Clear": [
+        "Ryd"
+      ],
+      "Add screenshot(s)": [
+        "Tilføj screenshot(s)"
+      ],
+      "Hide info": [
+        "Skjul info"
+      ],
+      "Show info": [
+        "Vis info"
+      ],
+      "Add folder": [
+        "Tilføj mappe"
+      ],
+      "Sort": [
+        "Sortér"
+      ],
+      "Add label": [
+        "Tilføj etiket"
+      ],
+      "Signing out": [
+        "Logger ud"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -504,9 +561,6 @@
       "Ok": [
         "Ok"
       ],
-      "Yes": [
-        "Ja"
-      ],
       "Change mailbox password": [
         "Skift postkasseadgangskode"
       ],
@@ -530,6 +584,12 @@
       ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsesfrase"
+      ],
+      "Save address": [
+        "Gem adresse"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
@@ -582,50 +642,23 @@
       "Previous": [
         "Forrige"
       ],
-      "Preview": [
-        "Forhåndsvisning"
+      "Enable multi-user support": [
+        "Aktivere understøttelse af flere brugere"
       ],
-      "Create label": [
-        "Opret etiket"
+      "Reset keys": [
+        "Nulstil nøgler"
       ],
-      "Create folder": [
-        "Opret mappe"
+      "Change organization keys": [
+        "Skift organisationsnøgler"
       ],
-      "Remove this label": [
-        "Fjern denne etiket"
+      "Reset organization keys": [
+        "Nulstil organisationsnøgler"
       ],
-      "Add condition": [
-        "Tilføj betingelse"
+      "Restore administrator privileges": [
+        "Gendan administratorprivilegier"
       ],
-      "label emails as": [
-        "giv e-mails etiketten"
-      ],
-      "move emails to": [
-        "flyt e-mails til"
-      ],
-      "mark emails as": [
-        "markér e-mails som"
-      ],
-      "send auto-reply email": [
-        "send e-mail med auto-svar"
-      ],
-      "Edit sieve": [
-        "Redigér Sieve"
-      ],
-      "Add filter": [
-        "Tilføj filter"
-      ],
-      "Add sieve filter": [
-        "Tilføj Sieve-filter"
-      ],
-      "Add": [
-        "Tilføj"
-      ],
-      "Move to Block List": [
-        "Flyt til blokeringsliste"
-      ],
-      "Move to Allow List": [
-        "Flyt til godkendt-liste"
+      "Activate organization key": [
+        "Aktivér organisationsnøgle"
       ],
       "View invoice": [
         "Vis faktura"
@@ -647,39 +680,6 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
-      ],
-      "Add folder": [
-        "Tilføj mappe"
-      ],
-      "Sort": [
-        "Sortér"
-      ],
-      "Add label": [
-        "Tilføj etiket"
-      ],
-      "Enable multi-user support": [
-        "Aktivere understøttelse af flere brugere"
-      ],
-      "Reset keys": [
-        "Nulstil nøgler"
-      ],
-      "Change organization keys": [
-        "Skift organisationsnøgler"
-      ],
-      "Reset organization keys": [
-        "Nulstil organisationsnøgler"
-      ],
-      "Restore administrator privileges": [
-        "Gendan administratorprivilegier"
-      ],
-      "Activate organization key": [
-        "Aktivér organisationsnøgle"
-      ],
-      "Save address": [
-        "Gem adresse"
-      ],
-      "activate": [
-        "aktivér"
       ],
       "Upgrade now": [
         "Opgradér nu"
@@ -801,17 +801,23 @@
       "Name": [
         "Navn"
       ],
-      "yourdomain.com": [
-        "ditdomæne.com"
-      ],
       "Add a calendar name": [
         "Tilføj et kalendernavn"
       ],
       "Add a calendar description": [
         "Tilføj en kalenderbeskrivelse"
       ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "yourdomain.com": [
+        "ditdomæne.com"
+      ],
       "e.g. Julia Smith": [
         "f.eks. Anne Jensen"
+      ],
+      "Type text or keyword": [
+        "Indtast tekst eller nøgleord"
       ],
       "OS name": [
         "OS-navn"
@@ -833,9 +839,6 @@
       ],
       "Browser version": [
         "Browser-version"
-      ],
-      "Password": [
-        "Adgangskode"
       ],
       "Feedback": [
         "Feedback"
@@ -861,8 +864,11 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Type text or keyword": [
-        "Indtast tekst eller nøgleord"
+      "Choose display name": [
+        "Vælg visningsnavn"
+      ],
+      "Choose address": [
+        "Vælg adresse"
       ],
       "Choose a name": [
         "Vælg et navn"
@@ -878,12 +884,6 @@
       ],
       "Search users": [
         "Søg brugere"
-      ],
-      "Choose address": [
-        "Vælg adresse"
-      ],
-      "Choose display name": [
-        "Vælg visningsnavn"
       ]
     },
     "Error": {
@@ -950,14 +950,8 @@
       "Invalid name": [
         "Ugyldigt navn"
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "Bekræftelse mislykkedes, forsøg igen om en time."
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Forkert bekræftelseskode. Sørg for, at du har kopieret bekræftelseskoden korrekt og forsøg igen. Det kan tage op til 24 timer, før ændringerne effektueres."
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Automatiske svar er en betalingsfunktion. Opgradér venligst til en betalt konto for at bruge denne funktion."
       ],
       "Name required": [
         "Navn påkrævet"
@@ -968,17 +962,11 @@
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatiske svar er en betalingsfunktion. Opgradér venligst til en betalt konto for at bruge denne funktion."
-      ],
-      "Primary address key is not decrypted": [
-        "Primære adressenøgle er ikke dekrypteret"
-      ],
       "Incorrect password": [
         "Forkert adgangskode"
       ],
       "Zero keys reactivated": [
-        ""
+        "Nul nøgler genaktiveret"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Uploadet fil er ikke en gyldig privat nøgle. Kontrollér og prøv igen."
@@ -986,8 +974,47 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
       ],
+      "Primary address key is not decrypted": [
+        "Primære adressenøgle er ikke dekrypteret"
+      ],
       "Invalid private key file": [
         "Ugyldig privatnøglefil"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Bekræftelse mislykkedes, forsøg igen om en time."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Forkert bekræftelseskode. Sørg for, at du har kopieret bekræftelseskoden korrekt og forsøg igen. Det kan tage op til 24 timer, før ændringerne effektueres."
+      ],
+      "Empty condition": [
+        "Betingelse er tom"
+      ],
+      "Condition incomplete": [
+        "Betingelse mangelfuld"
+      ],
+      "Filter with this name already exists": [
+        "Et filter med dette navn findes allerede"
+      ],
+      "Error in one of the conditions": [
+        "Fejl i en af betingelserne"
+      ],
+      "Require at least one condition": [
+        "Kræver mindst en betingelse"
+      ],
+      "Require at least one action": [
+        "Kræver mindst en handling"
+      ],
+      "Filter with this name already exist": [
+        "Et filter med dette navn findes allerede"
+      ],
+      "Invalid Sieve code": [
+        "Ugyldig Sieve-kode"
+      ],
+      "Invalid domain": [
+        "Ugyldigt domæne"
       ],
       "Checkout expired, please try again.": [
         "Checkout udløbet, prøv venligst igen."
@@ -1061,6 +1088,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Forkert gendannelsesfrase. Prøv igen eller brug en anden gendannelsesmetode."
       ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } er dit brugernavn. For at oprette ${ Local }@${ Domain }, gå til Indstillinger > Adresser > Kort domæne (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnøglen skal først aktiveres."
+      ],
+      "Error": [
+        "Fejl"
+      ],
+      "Organization key is not decrypted.": [
+        "Organisationsnøgle er ikke dekrypteret."
+      ],
       "Payments are currently not available, please try again later": [
         "Betaling er pt. ikke mulig, forsøg igen senere"
       ],
@@ -1073,45 +1112,6 @@
       "File has no contents to preview": [
         "Filen har intet indhold at forhåndsvise"
       ],
-      "Empty condition": [
-        "Betingelse er tom"
-      ],
-      "Condition incomplete": [
-        "Betingelse mangelfuld"
-      ],
-      "Filter with this name already exists": [
-        "Et filter med dette navn findes allerede"
-      ],
-      "Error in one of the conditions": [
-        "Fejl i en af betingelserne"
-      ],
-      "Require at least one condition": [
-        "Kræver mindst en betingelse"
-      ],
-      "Require at least one action": [
-        "Kræver mindst en handling"
-      ],
-      "Filter with this name already exist": [
-        "Et filter med dette navn findes allerede"
-      ],
-      "Invalid Sieve code": [
-        "Ugyldig Sieve-kode"
-      ],
-      "Invalid domain": [
-        "Ugyldigt domæne"
-      ],
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefonen, prøv igen senere"
-      ],
-      "Enter 6 digits": [
-        "Indtast 6 cifre"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
       "Passwords do not match": [
         "Adgangskoderne er ikke ens"
       ],
@@ -1121,17 +1121,11 @@
       "You must privatize all users before generating new organization keys": [
         "Før generering af nye organisationsnøgler, skal alle brugere gøres private"
       ],
-      "Organization key is not decrypted.": [
-        "Organisationsnøgle er ikke dekrypteret."
-      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du har mistet adgangen til dine organisationsnøgler. Uden genoprettelse kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du skal aktivere dine organisationsnøgler. Uden aktivering kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
-      ],
-      "The organization key must be activated first.": [
-        "Organisationsnøglen skal først aktiveres."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
@@ -1163,11 +1157,17 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } er dit brugernavn. For at oprette ${ Local }@${ Domain }, gå til Indstillinger > Adresser > Kort domæne (pm.me)"
+      "Can't validate email, try again later": [
+        "Kan ikke bekræfte e-mail, prøv igen senere"
       ],
-      "Error": [
-        "Fejl"
+      "Can't validate phone, try again later": [
+        "Kan ikke bekræfte telefonen, prøv igen senere"
+      ],
+      "Enter 6 digits": [
+        "Indtast 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -1193,6 +1193,15 @@
       "Unknown error": [
         "Ukendt fejl"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
+      ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
       "Missing signature": [
         "Mangler signatur"
       ],
@@ -1202,14 +1211,8 @@
       "Signature not verified": [
         "Signatur ikke bekræftet"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette felt kræver minimum ${ minimumLength } tegn."
-      ],
-      "Email is not valid": [
-        "E-mail er ikke gyldig"
-      ],
-      "Not a valid number": [
-        "Ikke et gyldigt nummer"
+      "Request timed out.": [
+        "Forespørgsel fik timeout."
       ],
       "Signature verification failed": [
         "Signaturbekræftelse mislykkedes"
@@ -1225,9 +1228,6 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Kalenders primære private nøgle er ikke dekrypteret"
-      ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
       ],
       "The session has expired. Please sign in again.": [
         "Din session er udløbet. Log venligst ind igen."
@@ -1254,18 +1254,6 @@
       ],
       "Do not ask again": [
         "Spørg ikke igen"
-      ],
-      "Date format": [
-        "Datoformat"
-      ],
-      "Default language": [
-        "Standardsporg"
-      ],
-      "Time format": [
-        "Tidsformat"
-      ],
-      "Week start": [
-        "Ugestart"
       ],
       "From: ${ fromEmailAddress }": [
         "Fra: ${ fromEmailAddress }"
@@ -1321,6 +1309,18 @@
       "Manage folders": [
         "Administrer mapper"
       ],
+      "Date format": [
+        "Datoformat"
+      ],
+      "Default language": [
+        "Standardsporg"
+      ],
+      "Time format": [
+        "Tidsformat"
+      ],
+      "Week start": [
+        "Ugestart"
+      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
@@ -1354,20 +1354,56 @@
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-adgangskode"
       ],
-      "Domain name": [
-        "Domænenavn"
+      "Timezone": [
+        "Tidszone"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Tilføj følgende TXT-post. Bemærk at DNS-poster kan tage flere timer at opdatere."
+      "Days of the week": [
+        "Ugedage"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Tilføj følgende 3 CNAME-poster. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
+      "Duration": [
+        "Varighed"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Tilføj følgende MX-post. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
+      "Start day of month": [
+        "Første dag i måneden"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Her er en grundlæggende DMARC-post, der ikke gør andet end at e-maile dig rapporter."
+      "Start time": [
+        "Starttidspunkt"
+      ],
+      "End day of month": [
+        "Sidste dag i måneden"
+      ],
+      "End time": [
+        "Sluttidspunkt"
+      ],
+      "Start weekday": [
+        "Startdag"
+      ],
+      "End weekday": [
+        "Slutdag"
+      ],
+      "Start date": [
+        "Startdato"
+      ],
+      "End date": [
+        "Slutdato"
+      ],
+      "Message": [
+        "Besked"
+      ],
+      "Auto reply": [
+        "Autosvar"
+      ],
+      "Prompt to trust keys": [
+        "Spørg om at stole på nøgler"
+      ],
+      "Sign external messages": [
+        "Signér eksterne beskeder"
+      ],
+      "Attach public key": [
+        "Vedhæft offentlig nøgle"
+      ],
+      "Default PGP settings": [
+        "Standard PGP-indstillinger"
       ],
       "Name": [
         "Navn"
@@ -1417,75 +1453,6 @@
       "Your calendar URL label": [
         "Din kalender URL etiket"
       ],
-      "Display name": [
-        "Visningsnavn"
-      ],
-      "Timezone": [
-        "Tidszone"
-      ],
-      "Days of the week": [
-        "Ugedage"
-      ],
-      "Duration": [
-        "Varighed"
-      ],
-      "Start day of month": [
-        "Første dag i måneden"
-      ],
-      "Start time": [
-        "Starttidspunkt"
-      ],
-      "End day of month": [
-        "Sidste dag i måneden"
-      ],
-      "End time": [
-        "Sluttidspunkt"
-      ],
-      "Start weekday": [
-        "Startdag"
-      ],
-      "End weekday": [
-        "Slutdag"
-      ],
-      "Start date": [
-        "Startdato"
-      ],
-      "End date": [
-        "Slutdato"
-      ],
-      "Message": [
-        "Besked"
-      ],
-      "Auto reply": [
-        "Autosvar"
-      ],
-      "Operating system": [
-        "Operativsystem"
-      ],
-      "Operating system version": [
-        "Operativsystemversion"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
-      ],
-      "Email address": [
-        "E-mailadresse"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Hvad skete der?"
-      ],
-      "System information": [
-        "Systemoplysninger"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browser-version"
-      ],
       "Delete": [
         "Slet"
       ],
@@ -1513,222 +1480,23 @@
       "Please select files to upload": [
         "Vælg filer til upload"
       ],
-      "${ n } VPN connection available": [
-        "${ n } VPN-forbindelse tilgængelig",
-        "${ n } VPN-forbindelser tilgængelige"
+      "Domain name": [
+        "Domænenavn"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } af ${ MaxMembers } bruger",
-        "${ UsedMembers } af ${ MaxMembers } brugere"
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Tilføj følgende TXT-post. Bemærk at DNS-poster kan tage flere timer at opdatere."
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
-        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser"
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Tilføj følgende 3 CNAME-poster. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } af ${ MaxDomains } brugerdomæne",
-        "${ UsedDomains } af ${ MaxDomains } brugerdomæner"
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Tilføj følgende MX-post. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
       ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "Bruger ${ humanUsedSpace } af ${ humanMaxSpace }"
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Her er en grundlæggende DMARC-post, der ikke gør andet end at e-maile dig rapporter."
       ],
-      "What is the main reason you are cancelling?": [
-        "Hvad er hovedårsagen til, at du annullerer?"
-      ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Hvor sandsynligt er det, at du vil anbefale ${ BRAND_NAME } til andre?"
-      ],
-      "0 - Not at all likely": [
-        "0 - Slet ikke sandsynligt"
-      ],
-      "10 - Extremely likely": [
-        "10 - Ekstremt sandsynligt"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Hvordan synes du, at vi kan forbedre vores produkter eller service i fremtiden?"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
-      "Total": [
-        "I alt"
-      ],
-      "Proration": [
-        "Proration"
-      ],
-      "extra storage": [
-        "ekstra lagerplads"
-      ],
-      "bonus storage": [
-        "bonuslagerplads"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Discount": [
-        "Rabat"
-      ],
-      "Other amount": [
-        "Andet beløb"
-      ],
-      "Amount": [
-        "Beløb"
-      ],
-      "Gift code": [
-        "Gavekode"
-      ],
-      "Name on card": [
-        "Navn på kort"
-      ],
-      "Card number": [
-        "Kortnummer"
-      ],
-      "Expiry date": [
-        "Udløbsdato"
-      ],
-      "CVV code": [
-        "CVV-kode"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Select your country": [
-        "Vælg dit land"
-      ],
-      "ZIP": [
-        "Postnummer"
-      ],
-      "Postal code": [
-        "Postnummer"
-      ],
-      "BTC amount:": [
-        "BTC-beløb:"
-      ],
-      "BTC address:": [
-        "BTC-adresse:"
-      ],
-      "Select a method": [
-        "Vælg en metode"
-      ],
-      "Your password (admin)": [
-        "Din adgangskode (admin)"
-      ],
-      "User's new password": [
-        "Brugers nye adgangskode"
-      ],
-      "Confirm new password": [
-        "Bekræft ny adgangskode"
-      ],
-      "Old password": [
-        "Gammel adgangskode"
-      ],
-      "New password": [
-        "Ny adgangskode"
-      ],
-      "Confirm password": [
-        "Bekræft adgangskode"
-      ],
-      "Old login password": [
-        "Gammel loginadgangskode"
-      ],
-      "New login password": [
-        "Ny login-adgangskode"
-      ],
-      "Confirm login password": [
-        "Bekræft adgangskode til login"
-      ],
-      "New mailbox password": [
-        "Ny postkasseadgangskode"
-      ],
-      "Confirm mailbox password": [
-        "Bekræft postkasseadgangskode"
-      ],
-      "Two-factor authentication code": [
-        "Tofaktorgodkendelseskode"
-      ],
-      "Key": [
-        "Nøgle"
-      ],
-      "Interval": [
-        "Interval"
-      ],
-      "Digits": [
-        "Cifre"
-      ],
-      "Two-factor authentication": [
-        "Tofaktorgodkendelse"
-      ],
-      "Two-password mode": [
-        "To-adgangskodetilstand"
-      ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
-      "What is the main reason you are deleting your account?": [
-        "Hvad er hovedårsagen til, at du sletter din konto?"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Vi er kede af at du forlader os. Forklar venligst hvorfor, så vi kan forbedre os."
-      ],
-      "Login password": [
-        "Login-adgangskode"
-      ],
-      "Yes, I want to permanently delete this account and all its data.": [
-        "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
-      ],
-      "Allow recovery by email": [
-        "Tillad gendannelse via e-mail"
-      ],
-      "Daily email notifications": [
-        "Daglige e-mailnotifikationer"
-      ],
-      "Allow recovery by phone": [
-        "Tillad gendannelse via telefon"
-      ],
-      "Allow recovery by recovery phrase": [
-        "Tillad gendannelse med gendannelsesfrase"
-      ],
-      "Recovery phrase": [
-        "Gendannelsesfrase"
-      ],
-      "Your recovery phrase": [
-        "Din gendannelsesfrase"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Gendannelsesfrase indeholder 12 ord"
-      ],
-      "Cash": [
-        "Kontant"
-      ],
-      "Card holder": [
-        "Kortindehaver"
-      ],
-      "Expires": [
-        "Udløber"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
-      "Prompt to trust keys": [
-        "Spørg om at stole på nøgler"
-      ],
-      "Sign external messages": [
-        "Signér eksterne beskeder"
-      ],
-      "Attach public key": [
-        "Vedhæft offentlig nøgle"
-      ],
-      "Default PGP settings": [
-        "Standard PGP-indstillinger"
-      ],
-      "Credits used": [
-        "Kredit forbrugt"
-      ],
-      "Amount due": [
-        "Forfaldent beløb"
-      ],
-      "Customize invoices": [
-        "Tilpas fakturaer"
+      "Display name": [
+        "Visningsnavn"
       ],
       "Filter Name": [
         "Filternavn"
@@ -1835,14 +1603,32 @@
       "Want to add": [
         "Ønsker at tilføje"
       ],
-      "Phone number": [
-        "Telefonnummer"
+      "Operating system": [
+        "Operativsystem"
       ],
-      "Verification code": [
-        "Bekræftelseskode"
+      "Operating system version": [
+        "Operativsystemversion"
       ],
-      "Enter the 6-digit code": [
-        "Indtast den sekscifrede kode"
+      "Proton username": [
+        "Proton-brugernavn"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Hvad skete der?"
+      ],
+      "System information": [
+        "Systemoplysninger"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browser-version"
       ],
       "Folder location": [
         "Mappeplacering"
@@ -1855,6 +1641,241 @@
       ],
       "Inherit color from parent folder": [
         "Nedarv farve fra overordnet mappe"
+      ],
+      "${ n } VPN connection available": [
+        "${ n } VPN-forbindelse tilgængelig",
+        "${ n } VPN-forbindelser tilgængelige"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } af ${ MaxMembers } bruger",
+        "${ UsedMembers } af ${ MaxMembers } brugere"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
+        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } af ${ MaxDomains } brugerdomæne",
+        "${ UsedDomains } af ${ MaxDomains } brugerdomæner"
+      ],
+      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "Bruger ${ humanUsedSpace } af ${ humanMaxSpace }"
+      ],
+      "What is the main reason you are cancelling?": [
+        "Hvad er hovedårsagen til, at du annullerer?"
+      ],
+      "How likely are you to recommend ${ BRAND_NAME } to others?": [
+        "Hvor sandsynligt er det, at du vil anbefale ${ BRAND_NAME } til andre?"
+      ],
+      "0 - Not at all likely": [
+        "0 - Slet ikke sandsynligt"
+      ],
+      "10 - Extremely likely": [
+        "10 - Ekstremt sandsynligt"
+      ],
+      "How do you think we could improve our products or service in the future?": [
+        "Hvordan synes du, at vi kan forbedre vores produkter eller service i fremtiden?"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "I alt"
+      ],
+      "Proration": [
+        "Proration"
+      ],
+      "extra storage": [
+        "ekstra lagerplads"
+      ],
+      "bonus storage": [
+        "bonuslagerplads"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Discount": [
+        "Rabat"
+      ],
+      "Other amount": [
+        "Andet beløb"
+      ],
+      "Amount": [
+        "Beløb"
+      ],
+      "Gift code": [
+        "Gavekode"
+      ],
+      "Name on card": [
+        "Navn på kort"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "Expiry date": [
+        "Udløbsdato"
+      ],
+      "CVV code": [
+        "CVV-kode"
+      ],
+      "Country": [
+        "Land"
+      ],
+      "Select your country": [
+        "Vælg dit land"
+      ],
+      "ZIP": [
+        "Postnummer"
+      ],
+      "Postal code": [
+        "Postnummer"
+      ],
+      "BTC amount:": [
+        "BTC-beløb:"
+      ],
+      "BTC address:": [
+        "BTC-adresse:"
+      ],
+      "Select a method": [
+        "Vælg en metode"
+      ],
+      "Auto-load remote content": [
+        "Auto-indlæs fjernindhold"
+      ],
+      "Auto-load embedded images": [
+        "Auto-indlæs indlejrede billeder"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Behold beskeder i Sendt/Kladder"
+      ],
+      "Link confirmation": [
+        "Linkbekræftelse"
+      ],
+      "Undo send": [
+        "Fortryd send"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
+      ],
+      "User's new password": [
+        "Brugers nye adgangskode"
+      ],
+      "Confirm new password": [
+        "Bekræft ny adgangskode"
+      ],
+      "Old password": [
+        "Gammel adgangskode"
+      ],
+      "New password": [
+        "Ny adgangskode"
+      ],
+      "Confirm password": [
+        "Bekræft adgangskode"
+      ],
+      "Old login password": [
+        "Gammel loginadgangskode"
+      ],
+      "New login password": [
+        "Ny login-adgangskode"
+      ],
+      "Confirm login password": [
+        "Bekræft adgangskode til login"
+      ],
+      "New mailbox password": [
+        "Ny postkasseadgangskode"
+      ],
+      "Confirm mailbox password": [
+        "Bekræft postkasseadgangskode"
+      ],
+      "Two-factor authentication code": [
+        "Tofaktorgodkendelseskode"
+      ],
+      "Key": [
+        "Nøgle"
+      ],
+      "Interval": [
+        "Interval"
+      ],
+      "Digits": [
+        "Cifre"
+      ],
+      "Two-factor authentication": [
+        "Tofaktorgodkendelse"
+      ],
+      "Two-password mode": [
+        "To-adgangskodetilstand"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "Hvad er hovedårsagen til, at du sletter din konto?"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
+        "Vi er kede af at du forlader os. Forklar venligst hvorfor, så vi kan forbedre os."
+      ],
+      "Login password": [
+        "Login-adgangskode"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
+      ],
+      "Allow recovery by email": [
+        "Tillad gendannelse via e-mail"
+      ],
+      "Daily email notifications": [
+        "Daglige e-mailnotifikationer"
+      ],
+      "Allow recovery by phone": [
+        "Tillad gendannelse via telefon"
+      ],
+      "Allow recovery by recovery phrase": [
+        "Tillad gendannelse med gendannelsesfrase"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "Recovery phrase": [
+        "Gendannelsesfrase"
+      ],
+      "Your recovery phrase": [
+        "Din gendannelsesfrase"
+      ],
+      "Recovery phrase contains 12 words": [
+        "Gendannelsesfrase indeholder 12 ord"
+      ],
+      "Signature": [
+        "Signatur"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail sidefod"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Card holder": [
+        "Kortindehaver"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
+      "Credits used": [
+        "Kredit forbrugt"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Customize invoices": [
+        "Tilpas fakturaer"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -1886,44 +1907,23 @@
       "Addresses": [
         "Adresser"
       ],
-      "Address": [
-        "Adresse"
-      ],
       "Key strength": [
         "Nøglestyrke"
-      ],
-      "User": [
-        "Bruger"
-      ],
-      "Signature": [
-        "Signatur"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail sidefod"
-      ],
-      "Auto-load remote content": [
-        "Auto-indlæs fjernindhold"
-      ],
-      "Auto-load embedded images": [
-        "Auto-indlæs indlejrede billeder"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Behold beskeder i Sendt/Kladder"
-      ],
-      "Link confirmation": [
-        "Linkbekræftelse"
-      ],
-      "Undo send": [
-        "Fortryd send"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
       ],
       "Cancel": [
         "Annullér"
       ],
       "Submit": [
         "Indsend"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Verification code": [
+        "Bekræftelseskode"
+      ],
+      "Enter the 6-digit code": [
+        "Indtast den sekscifrede kode"
       ],
       "Recovery email": [
         "E-mail til gendanelse"
@@ -1960,6 +1960,9 @@
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
       ],
+      "Keyboard Shortcuts": [
+        "Tastaturgenveje"
+      ],
       "Previous": [
         "Forrige"
       ],
@@ -1971,12 +1974,6 @@
       ],
       "What's new": [
         "Nyheder"
-      ],
-      "Keyboard Shortcuts": [
-        "Tastaturgenveje"
-      ],
-      "Enable keyboard shortcuts": [
-        "Aktiver tastaturgenveje"
       ],
       "Start import process": [
         "Start importeringsprocessen"
@@ -2001,6 +1998,9 @@
       ],
       "Start a new import": [
         "Start en ny import"
+      ],
+      "Enable keyboard shortcuts": [
+        "Aktiver tastaturgenveje"
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
@@ -2035,23 +2035,8 @@
       "Get ProtonVPN Plus to access all servers": [
         "Få ProtonVPN Plus for at få adgang til alle servere"
       ],
-      "Edit domain": [
-        "Redigér domæne"
-      ],
-      "Add domain": [
-        "Tilføj domæne"
-      ],
-      "Catch-All address": [
-        "Fang-alt adresse"
-      ],
-      "Delete ${ domain.DomainName }": [
-        "Slet ${ domain.DomainName }"
-      ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Back": [
-        "Tilbage"
+      "Automatically sign outgoing messages?": [
+        "Auto-signér udgående beskeder?"
       ],
       "Error": [
         "Fejl"
@@ -2089,9 +2074,6 @@
       "Your calendar link": [
         "Dit kalender link"
       ],
-      "Report a problem": [
-        "Anmeld et problem"
-      ],
       "Reactivate keys": [
         "Genaktivér nøgler"
       ],
@@ -2115,6 +2097,75 @@
       ],
       "Import key": [
         "Importer nøgle"
+      ],
+      "Edit domain": [
+        "Redigér domæne"
+      ],
+      "Add domain": [
+        "Tilføj domæne"
+      ],
+      "Catch-All address": [
+        "Fang-alt adresse"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Slet ${ domain.DomainName }"
+      ],
+      "Open help menu": [
+        "Åbn hjælpemenu"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Edit filter": [
+        "Rediger filter"
+      ],
+      "Add filter": [
+        "Tilføj filter"
+      ],
+      "Are you sure you want to close?": [
+        "Er du sikker på, at du vil lukke?"
+      ],
+      "Edit Sieve filter": [
+        "Rediger Sieve-filter"
+      ],
+      "Add Sieve filter": [
+        "Tilføj Sieve-filter"
+      ],
+      "Delete ${ filter.Name }": [
+        "Slet ${ filter.Name }"
+      ],
+      "Allow List": [
+        "Godkendt-liste"
+      ],
+      "Block List": [
+        "Blokeringsliste"
+      ],
+      "Add to Block List": [
+        "Føj til blokeringsliste"
+      ],
+      "Add to Allow List": [
+        "Føj til godkendt-liste"
+      ],
+      "Edit Block List": [
+        "Rediger blokeringsliste"
+      ],
+      "Edit Allow List": [
+        "Rediger godkendt-liste"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
+      "Delete ${ Name } folder": [
+        "Slet ${ Name } mappe"
+      ],
+      "Delete ${ Name } label": [
+        "Slet ${ Name } etikette"
+      ],
+      "Sort folders alphabetically": [
+        "Sortér mapper alfabetisk"
+      ],
+      "Sort labels alphabetically": [
+        "Sortér etiketter alfabetisk"
       ],
       "Confirm loss of Proton bonuses": [
         "Bekræft tab af Proton-bonusser"
@@ -2257,6 +2308,21 @@
       "Confirm phone number": [
         "Bekræft telefonnummer"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Tastaturgenveje"
+      ],
+      "Add address": [
+        "Tilføj adresse"
+      ],
+      "Delete ${ address.Email }": [
+        "Slet ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Generér manglende nøgler"
+      ],
+      "Bridge for ${ platform }": [
+        "Bro til ${ platform }"
+      ],
       "App": [
         "App"
       ],
@@ -2272,9 +2338,6 @@
       "Clear": [
         "Ryd"
       ],
-      "Automatically sign outgoing messages?": [
-        "Auto-signér udgående beskeder?"
-      ],
       "Pay invoice": [
         "Betal faktura"
       ],
@@ -2289,63 +2352,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Edit filter": [
-        "Rediger filter"
-      ],
-      "Add filter": [
-        "Tilføj filter"
-      ],
-      "Are you sure you want to close?": [
-        "Er du sikker på, at du vil lukke?"
-      ],
-      "Edit Sieve filter": [
-        "Rediger Sieve-filter"
-      ],
-      "Add Sieve filter": [
-        "Tilføj Sieve-filter"
-      ],
-      "Delete ${ filter.Name }": [
-        "Slet ${ filter.Name }"
-      ],
-      "Allow List": [
-        "Godkendt-liste"
-      ],
-      "Block List": [
-        "Blokeringsliste"
-      ],
-      "Add to Block List": [
-        "Føj til blokeringsliste"
-      ],
-      "Add to Allow List": [
-        "Føj til godkendt-liste"
-      ],
-      "Edit Block List": [
-        "Rediger blokeringsliste"
-      ],
-      "Edit Allow List": [
-        "Rediger godkendt-liste"
-      ],
-      "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
-      ],
-      "Request new code": [
-        "Anmod om ny kode"
-      ],
-      "Human verification": [
-        "Menneskelig bekræftelse"
-      ],
-      "Delete ${ Name } folder": [
-        "Slet ${ Name } mappe"
-      ],
-      "Delete ${ Name } label": [
-        "Slet ${ Name } etikette"
-      ],
-      "Sort folders alphabetically": [
-        "Sortér mapper alfabetisk"
-      ],
-      "Sort labels alphabetically": [
-        "Sortér etiketter alfabetisk"
       ],
       "Change organization name": [
         "Skift organisationsnavn"
@@ -2392,23 +2398,17 @@
       "Add user": [
         "Tilføj bruger"
       ],
-      "Add address": [
-        "Tilføj adresse"
-      ],
-      "Delete ${ address.Email }": [
-        "Slet ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Generér manglende nøgler"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tastaturgenveje"
-      ],
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
       ],
-      "Bridge for ${ platform }": [
-        "Bro til ${ platform }"
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Human verification": [
+        "Menneskelig bekræftelse"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
       ],
       "Account suspended": [
         "Konto suspenderet"
@@ -2440,14 +2440,14 @@
       "Other": [
         "Andet"
       ],
+      "Auto reply": [
+        "Autosvar"
+      ],
       "Domain names": [
         "Domænenavne"
       ],
       "Catch-all address": [
         "Fang-alt adresse"
-      ],
-      "Auto reply": [
-        "Autosvar"
       ],
       "Encryption & keys": [
         "Kryptering & nøgler"
@@ -2463,9 +2463,6 @@
       ],
       "Contact encryption keys": [
         "Kontakt-krypteringsnøgler"
-      ],
-      "Import Assistant": [
-        "Importassistent"
       ],
       "Filters": [
         "Filtre"
@@ -2509,6 +2506,9 @@
       "ProtonMail Bridge": [
         "ProtonMail-bridge"
       ],
+      "Import Assistant": [
+        "Importassistent"
+      ],
       "Current & past imports": [
         "Nuværende og tidligere importer"
       ],
@@ -2529,6 +2529,18 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-opsætningsfiler"
+      ],
+      "My calendars": [
+        "Mine kalendere"
+      ],
+      "Subscribed calendars": [
+        "Tilmeldte kalendere"
+      ],
+      "Share outside Proton": [
+        "Del udenfor Proton"
+      ],
+      "Time zone": [
+        "Tidszone"
       ],
       "Password & recovery": [
         "Kodeord & gendannelse"
@@ -2596,29 +2608,17 @@
       "Password & keys": [
         "Adgangskode & nøgler"
       ],
-      "My calendars": [
-        "Mine kalendere"
-      ],
-      "Subscribed calendars": [
-        "Tilmeldte kalendere"
-      ],
-      "Share outside Proton": [
-        "Del udenfor Proton"
-      ],
-      "Time zone": [
-        "Tidszone"
-      ],
       "Sorry, you can't access this page": [
         "Desværre, du kan ikke tilgå denne side"
       ],
       "Upgrade": [
         "Opgradér"
       ],
-      "Proton Logo": [
-        "Proton Logo"
-      ],
       "Settings": [
         "Indstillonger"
+      ],
+      "Proton Logo": [
+        "Proton Logo"
       ],
       "Choose an account": [
         "Vælg en konto"
@@ -2787,12 +2787,6 @@
       "Loading": [
         "Indlæser"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Tilføj en @pm.me-adresse til din konto. Dette enkle, kortere domæne står for \"ProtonMail me\" eller \"Privat Message me.\""
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Du kan nu modtage beskeder til din @pm.me-adresse. Opgrader til et betalt abonnement for også at kunne sende e-mails ved hjælp af din @pm.me-adresse og oprette yderligere @pm.me-adresser."
-      ],
       "Import calendars": [
         "Importér kalendere"
       ],
@@ -2915,6 +2909,12 @@
       "Choose the look and feel of the application.": [
         "Vælg applikationens udseende."
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "Tilføj en @pm.me-adresse til din konto. Dette enkle, kortere domæne står for \"ProtonMail me\" eller \"Privat Message me.\""
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        "Du kan nu modtage beskeder til din @pm.me-adresse. Opgrader til et betalt abonnement for også at kunne sende e-mails ved hjælp af din @pm.me-adresse og oprette yderligere @pm.me-adresser."
+      ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
         "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
       ],
@@ -2992,52 +2992,41 @@
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF benyttes til at specificere, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ProtonMail i din SPF-record. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i kontrolpanelet hos din domæneleverandør."
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Autosvar er aktivt hver måned i det valgte tidsrum."
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Hvis du ønsker at beholde en existerende SPF optegnelse, så tilføj ${ spf } efter ${ spfValue }. Skab ikke mere end en SPF optegnelse."
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Autosvar er altid aktivt på de valgte ugedage i det valgte tidsrum."
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail understøtter DKIM signatur for egne domæner. For at anvende DKIM autentificering, tilføj følgende CNAME optegnelse i dine DNS indstillinger for eget domæne. Det gøres normalt via kontrolpanelet hos din domæne udbyder."
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Autosvar er aktivt hver uge i det valgte tidsrum."
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "VIGTIGT: Nogle registratorer accepterer ikke CNAME værdier med et punktum i slutningen (mens andre kræver\n det). Hvis din registrator ikke accepterer dine CNAME-registreringer, slet venligst punktummet i slutningen af\n hver CNAME-værdi og prøv igen."
+      "Auto-reply is active until you turn it off.": [
+        "Autosvar er aktivt indtil det slås fra."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Behold disse poster i din DNS, så længe du ønsker at bruge DKIM."
+      "Auto-reply is active from the start time to the end time.": [
+        "Autosvar er aktivt i det valgte tidsrum."
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Inden du kan modtage e-mails til dine tilpassede domæneadresser i ProtonMail, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar."
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Slet eventuelle andre MX-poster eller sørg for, at ProtonMails prioritet har det laveste tal."
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Brug automatiske svar til at informere kontakter om, at du er ude af kontoret eller på anden måde ikke kan svare."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Hvis dette domæne i øjeblikket modtager e-mails, vælg fanen ${ boldAddresses } og tilføj alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en jævn overgang."
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at aktivere automatiske svar, når du er væk fra kontoret."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Har du indstillet både SPF og DKIM, giver DMARC dig mulighed for at specificere, hvordan andre e-mail-tjenester skal levere e-mail til dit domæne, hvis både SPF- og DKIM-tjeks er fejlet. Dette kan gøre det sværere for spammere at foregive at være dig, men kan også forårsage leveringsproblemer, hvis det ikke er korrekt udført."
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Adressebekræftelse er en avanceret sikkerhedsfunktion. Aktivér den kun, hvis du ved, hvad den gør."
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } har ingen effekt på levering af e-mail, men vi anbefaler ${ quarantine } for bedre sikkerhed."
+      "Encryption setting updated": [
+        "Krypteringsindstilling opdateret"
       ],
-      "${ n } address": [
-        "${ n } adresse",
-        "${ n } adresser"
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "PGP-klienter er mere tilbøjelige til automatisk at registrere dine PGP-nøgler, hvis udgående beskeder er signerede."
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Bemærk at hvis du sletter dette domæne vil alle de adresser, der er knyttet til det, blive deaktiveret."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Er du sikker på, at du vil slette dette domæne?"
-      ],
-      "domain used": [
-        "anvendt domæne",
-        "anvendte domæner"
-      ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Hvis du har et brugerdefineret domæne med ProtonMail, kan du angive en catch-all (fang-alle) e- mailadresse, der vil modtage beskeder sendt til dit domæne men til en ugyldig e-mailadresse (f.eks. stavefejl)."
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-ProtonMail modtagere."
       ],
       "Are you sure you want to delete this calendar?": [
         "Er du sikker på, at du vil slette denne kalender?"
@@ -3102,42 +3091,6 @@
       "You need to have a personal calendar to create a link.": [
         "Du skal have en personlig kalender for at oprette et link."
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Autosvar er aktivt hver måned i det valgte tidsrum."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Autosvar er altid aktivt på de valgte ugedage i det valgte tidsrum."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Autosvar er aktivt hver uge i det valgte tidsrum."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Autosvar er aktivt indtil det slås fra."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Autosvar er aktivt i det valgte tidsrum."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar."
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Brug automatiske svar til at informere kontakter om, at du er ude af kontoret eller på anden måde ikke kan svare."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at aktivere automatiske svar, når du er væk fra kontoret."
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot(s) vedhæftet"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
-      ],
-      "More Info": [
-        "Yderligere oplysninger"
-      ],
-      "Loading ${ appName }": [
-        "Indlæser ${ appName }"
-      ],
       "All keys successfully reactivated": [
         "Alle nøgler er genaktiveret med succes"
       ],
@@ -3192,6 +3145,128 @@
       ],
       "No contact encryption keys exist": [
         "Ingen kontaktkrypteringsnøgler findes"
+      ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF benyttes til at specificere, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ProtonMail i din SPF-record. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i kontrolpanelet hos din domæneleverandør."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "Hvis du ønsker at beholde en existerende SPF optegnelse, så tilføj ${ spf } efter ${ spfValue }. Skab ikke mere end en SPF optegnelse."
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail understøtter DKIM signatur for egne domæner. For at anvende DKIM autentificering, tilføj følgende CNAME optegnelse i dine DNS indstillinger for eget domæne. Det gøres normalt via kontrolpanelet hos din domæne udbyder."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "VIGTIGT: Nogle registratorer accepterer ikke CNAME værdier med et punktum i slutningen (mens andre kræver\n det). Hvis din registrator ikke accepterer dine CNAME-registreringer, slet venligst punktummet i slutningen af\n hver CNAME-værdi og prøv igen."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Behold disse poster i din DNS, så længe du ønsker at bruge DKIM."
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Inden du kan modtage e-mails til dine tilpassede domæneadresser i ProtonMail, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "Slet eventuelle andre MX-poster eller sørg for, at ProtonMails prioritet har det laveste tal."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Hvis dette domæne i øjeblikket modtager e-mails, vælg fanen ${ boldAddresses } og tilføj alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en jævn overgang."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "Har du indstillet både SPF og DKIM, giver DMARC dig mulighed for at specificere, hvordan andre e-mail-tjenester skal levere e-mail til dit domæne, hvis både SPF- og DKIM-tjeks er fejlet. Dette kan gøre det sværere for spammere at foregive at være dig, men kan også forårsage leveringsproblemer, hvis det ikke er korrekt udført."
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } har ingen effekt på levering af e-mail, men vi anbefaler ${ quarantine } for bedre sikkerhed."
+      ],
+      "${ n } address": [
+        "${ n } adresse",
+        "${ n } adresser"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Bemærk at hvis du sletter dette domæne vil alle de adresser, der er knyttet til det, blive deaktiveret."
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Er du sikker på, at du vil slette dette domæne?"
+      ],
+      "domain used": [
+        "anvendt domæne",
+        "anvendte domæner"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Hvis du har et brugerdefineret domæne med ProtonMail, kan du angive en catch-all (fang-alle) e- mailadresse, der vil modtage beskeder sendt til dit domæne men til en ugyldig e-mailadresse (f.eks. stavefejl)."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
+        "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn og et gyldigt Sieve-script."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
+      ],
+      "No label selected": [
+        "Ingen etiket valgt"
+      ],
+      "No folder selected": [
+        "Ingen mappe valgt"
+      ],
+      "No action selected": [
+        "Ingen handling valgt"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtrer hvis ALLE af følgende betingelser er opfyldt)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
+      ],
+      "All your changes will be lost.": [
+        "Alle dine ændringer vil gå tabt."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Er du sikker på at du vil kassere dine ændringer?"
+      ],
+      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
+        "Brugerdefinerede filtre fungerer på alle nye e-mails, herunder indgående e-mails samt sendte e-mails. Filtre kan redigeres og oprettes direkte via Sieve-programmeringssprog."
+      ],
+      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
+        "Bemærk, at hvis du sletter dette filter, vil vi stoppe med at udføre alle de automatiserede handlinger, det udløser."
+      ],
+      "Are you sure you want to delete this filter?": [
+        "Sikker på, at du vil slette dette filter?"
+      ],
+      "Your Allow List is empty.": [
+        "Din tilladelsesliste er tom."
+      ],
+      "Your Block List is empty.": [
+        "Din blokeringsliste er tom."
+      ],
+      "Screenshot(s) attached": [
+        "Screenshot(s) vedhæftet"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "Inherited from parent folder": [
+        "Nedarvet fra overordnet mappe"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveau-mappe."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "E-mails med denne etikette vil ikke blive slettet og kan stadig findes i den respektive mappe."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Er du sikker på du vil slette etiketten?"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "E-mails gemt i denne mappe vil ikke blive slettet og kan stadig findes i Alle mails-mappen."
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Er du sikker på du vil slette denne mappe?"
+      ],
+      "More Info": [
+        "Yderligere oplysninger"
+      ],
+      "Loading ${ appName }": [
+        "Indlæser ${ appName }"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
@@ -3510,6 +3585,12 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
       ],
+      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
+        "Når deaktiveret, forhindrer dette alle filer i at indlæse på din enhed uden din viden.\t"
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Når deaktiveret, forhindrer dette billedfiler i at indlæse på din enhed uden din viden.\t"
+      ],
       "By leaving now, changes may not be saved": [
         "Ved at forlade nu gemmes ændringer ikke"
       ],
@@ -3618,6 +3699,9 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         "Deaktivering af dette vil forhindre din gendannelsesfrase i at blive brugt til kontogendannelse."
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
+      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Din gendannelsesfrase er en serie af 12 ord i en specifik rækkefølge."
       ],
@@ -3644,6 +3728,33 @@
       ],
       "Recovery phrase has been disabled": [
         "Gendannelsesfrase er blevet deaktiveret"
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Lad dine kontakter vide, at du bekymrer dig om deres privatliv."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Bemærk, at hvis du sletter denne adresse, vil du ikke længere kunne sende eller modtage e-mails via denne adresse."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Er du sikker på, at du vil slette denne adresse?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Den e-mailadresse, du placerer øverst på listen, er din standard e-mailadresse. Træk og slip for at omarrangere dine adresser."
+      ],
+      "Queued": [
+        "Sat i kø"
+      ],
+      "Done": [
+        "Udført"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Du kan bruge ProtonMail med enhver desktop e-mail-klient, der understøtter IMAP/SMTP, herunder Outlook, Apple Mail, og Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Opgrader til et betalt abonnement for at låse op for IMAP/SMTP-understøttelse via ProtonMail Bridge."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
@@ -3672,18 +3783,6 @@
       "Expired": [
         "Udløbet"
       ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Adressebekræftelse er en avanceret sikkerhedsfunktion. Aktivér den kun, hvis du ved, hvad den gør."
-      ],
-      "Encryption setting updated": [
-        "Krypteringsindstilling opdateret"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "PGP-klienter er mere tilbøjelige til automatisk at registrere dine PGP-nøgler, hvis udgående beskeder er signerede."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-ProtonMail modtagere."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan tilpasse og downloade dine fakturaer til bogholderiformål."
       ],
@@ -3704,99 +3803,6 @@
       ],
       "of": [
         "af"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn og et gyldigt Sieve-script."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
-      ],
-      "No label selected": [
-        "Ingen etiket valgt"
-      ],
-      "No folder selected": [
-        "Ingen mappe valgt"
-      ],
-      "No action selected": [
-        "Ingen handling valgt"
-      ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtrer hvis ALLE af følgende betingelser er opfyldt)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
-      ],
-      "All your changes will be lost.": [
-        "Alle dine ændringer vil gå tabt."
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Er du sikker på at du vil kassere dine ændringer?"
-      ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Brugerdefinerede filtre fungerer på alle nye e-mails, herunder indgående e-mails samt sendte e-mails. Filtre kan redigeres og oprettes direkte via Sieve-programmeringssprog."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Bemærk, at hvis du sletter dette filter, vil vi stoppe med at udføre alle de automatiserede handlinger, det udløser."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Sikker på, at du vil slette dette filter?"
-      ],
-      "Your Allow List is empty.": [
-        "Din tilladelsesliste er tom."
-      ],
-      "Your Block List is empty.": [
-        "Din blokeringsliste er tom."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "Inherited from parent folder": [
-        "Nedarvet fra overordnet mappe"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveau-mappe."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-mails med denne etikette vil ikke blive slettet og kan stadig findes i den respektive mappe."
-      ],
-      "Are you sure you want to delete this label?": [
-        "Er du sikker på du vil slette etiketten?"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-mails gemt i denne mappe vil ikke blive slettet og kan stadig findes i Alle mails-mappen."
-      ],
-      "Are you sure you want to delete this folder?": [
-        "Er du sikker på du vil slette denne mappe?"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Dette vil oprette en krypteringsnøgle til din organisation. 4.096-bit nøgler fungerer kun på højtydende computere. Til de fleste brugere anbefales brugen af 2.048-bit nøgler."
@@ -3883,44 +3889,38 @@
       "more": [
         "mere"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Bemærk, at hvis du sletter denne adresse, vil du ikke længere kunne sende eller modtage e-mails via denne adresse."
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
       ],
-      "Are you sure you want to delete this address?": [
-        "Er du sikker på, at du vil slette denne adresse?"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Den e-mailadresse, du placerer øverst på listen, er din standard e-mailadresse. Træk og slip for at omarrangere dine adresser."
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
-      "Queued": [
-        "Sat i kø"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
-      "Done": [
-        "Udført"
+      "To fight spam and abuse, please verify you are human.": [
+        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
+      "Your email will only be used for this one-time verification.": [
+        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
-      "Let your contacts know you care about their privacy.": [
-        "Lad dine kontakter vide, at du bekymrer dig om deres privatliv."
+      "Your phone number will only be used for this one-time verification.": [
+        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Når deaktiveret, forhindrer dette alle filer i at indlæse på din enhed uden din viden.\t"
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Når deaktiveret, forhindrer dette billedfiler i at indlæse på din enhed uden din viden.\t"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
       "support team": [
         "supportteam"
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Du kan bruge ProtonMail med enhver desktop e-mail-klient, der understøtter IMAP/SMTP, herunder Outlook, Apple Mail, og Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Opgrader til et betalt abonnement for at låse op for IMAP/SMTP-understøttelse via ProtonMail Bridge."
       ],
       "here": [
         "her"
@@ -3930,6 +3930,15 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
+      ],
+      "Session timed out.": [
+        "Session er udløbet."
+      ],
+      "Internet connection lost.": [
+        "Internetforbindelse afbrudt."
+      ],
+      "Servers are unreachable.": [
+        "Serverne er utilgængelige."
       ],
       "Custom daily": [
         "Tilpasset daglig"
@@ -3954,15 +3963,6 @@
       ],
       "Yearly": [
         "Årlig"
-      ],
-      "Session timed out.": [
-        "Session er udløbet."
-      ],
-      "Internet connection lost.": [
-        "Internetforbindelse afbrudt."
-      ],
-      "Servers are unreachable.": [
-        "Serverne er utilgængelige."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Brugere kan ikke foretage ændringer i organisationsindstillinger. Hvis du har brug for administratorrettigheder, så tag kontakt til din systemadministrator."
@@ -4090,12 +4090,12 @@
     },
     "Font Face Default": {
       "Default": [
-        ""
+        "Standard"
       ]
     },
     "Font Size Default": {
       "Default": [
-        ""
+        "Standard"
       ]
     },
     "Storage": {
@@ -4185,399 +4185,6 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Søg tidszoner"
-      ]
-    },
-    "Success": {
-      "Preference saved": [
-        "Præferencer gemt"
-      ],
-      "Locale updated": [
-        "Lokalisering opdateret"
-      ],
-      "Premium address created": [
-        "Premium-adresse oprettet"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Indstillinger for tastaturgenveje opdateret"
-      ],
-      "Import resumed": [
-        "Import genoptaget"
-      ],
-      "Import canceled": [
-        "Import annulleret"
-      ],
-      "Import record deleted": [
-        "Importpost slettet"
-      ],
-      "Deleting original messages": [
-        "Slet oprindelige beskeder"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } kopieret i din udklipsholder"
-      ],
-      "Verification code copied to clipboard!": [
-        ""
-      ],
-      "SPF value copied to clipboard!": [
-        "SPF-værdi kopieret til udklipsholder!"
-      ],
-      "Value copied to clipboard!": [
-        "Værdi kopieret til udklipsholder!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "DMARC-værdi kopieret til udklipsholder!"
-      ],
-      "Domain verified": [
-        "Domæne bekræftet"
-      ],
-      "Catch-all address updated": [
-        "Fang-alt-adresse opdateret"
-      ],
-      "Email address copied to clipboard": [
-        "E-mailadresse kopieret til udklipsholder"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Kalender oprettet. Det kan tage et par minutter at synkronisere."
-      ],
-      "Calendar created": [
-        "Kalender oprettet"
-      ],
-      "Calendar updated": [
-        "Kalender opdateret"
-      ],
-      "Default calendar updated": [
-        "Standardkalender opdateret"
-      ],
-      "Calendar removed": [
-        "Kalender fjernet"
-      ],
-      "Auto-reply disabled": [
-        "Autosvar deaktiveret"
-      ],
-      "Auto-reply updated": [
-        "Autosvar opdateret"
-      ],
-      "Bug reported": [
-        "Fejl anmeldt"
-      ],
-      "You have successfully unsubscribed": [
-        "Du har afmeldt dig"
-      ],
-      "Payment method updated": [
-        "Betalingsmetode opdateret"
-      ],
-      "Payment method added": [
-        "Betalingsmetode tilføjet"
-      ],
-      "Credits added": [
-        "Kreditter tilføjet"
-      ],
-      "Gift code applied": [
-        "Gavekode anvendt"
-      ],
-      "Password updated": [
-        "Adgangskode opdateret"
-      ],
-      "Account deleted. Logging out...": [
-        "Konto slettet, logger ud..."
-      ],
-      "Email updated": [
-        "E-mail opdateret"
-      ],
-      "Phone number updated": [
-        "Telefonnummer opdateret"
-      ],
-      "Session revoked": [
-        "Session tilbagekaldt"
-      ],
-      "Sessions revoked": [
-        "Sessioner tilbagekaldt"
-      ],
-      "Payment method deleted": [
-        "Betalingsmetode slettet"
-      ],
-      "Invoice paid": [
-        "Faktura betalt"
-      ],
-      "Invoice customized": [
-        "Faktura tilrettet"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kode sendt til ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Bekræftelse gennemført"
-      ],
-      "Organization activated": [
-        "Organisation aktiveret"
-      ],
-      "Keys updated": [
-        "Nøgler opdateret"
-      ],
-      "User updated": [
-        "Bruger opdateret"
-      ],
-      "User created": [
-        "Bruger oprettet"
-      ],
-      "Address added": [
-        "Adresse tilføjet"
-      ],
-      "Address updated": [
-        "Adresse opdateret"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Har du angivet en gyldig e-mail, vil du få tilsendt dine brugernavne inden for det næste minut."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Har du angivet en gyldig gendannelses-telefon, vil vi sende dig en sms med dine brugernavne inden for det næste minut."
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automatisk (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisk (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Føj til eksisterende gruppe"
-      ],
-      "Create new group": [
-        "Opret ny gruppe"
-      ],
-      "Ignore group": [
-        "Ignorér gruppe"
-      ],
-      "Normal": [
-        "Normal"
-      ],
-      "Plain text": [
-        "Simpel tekst"
-      ],
-      "Left to Right": [
-        "Venstre mod højre"
-      ],
-      "Right to Left": [
-        "Højre mod venstre"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Router"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Secure Core opsætninger"
-      ],
-      "Country configs": [
-        "Landeopsætninger"
-      ],
-      "Standard server configs": [
-        "Standard serverkonfigurer"
-      ],
-      "Free server configs": [
-        "Gratis serverkonfigurationer"
-      ],
-      "Fixed duration": [
-        "Fast varighed"
-      ],
-      "Repeat daily": [
-        "Gentag dagligt"
-      ],
-      "Repeat weekly": [
-        "Gentag ugentligt"
-      ],
-      "Repeat monthly": [
-        "Gentag månedligt"
-      ],
-      "Permanent": [
-        "Permanent"
-      ],
-      "1st of the month": [
-        "Månedligt d. 1."
-      ],
-      "2nd of the month": [
-        "Månedligt d. 2."
-      ],
-      "3rd of the month": [
-        "Månedligt d. 3."
-      ],
-      "4th of the month": [
-        "Månedligt d. 4."
-      ],
-      "5th of the month": [
-        "Månedligt d. 5."
-      ],
-      "6th of the month": [
-        "Månedligt d. 6."
-      ],
-      "7th of the month": [
-        "Månedligt d. 7."
-      ],
-      "8th of the month": [
-        "Månedligt d. 8."
-      ],
-      "9th of the month": [
-        "Månedligt d. 9."
-      ],
-      "10th of the month": [
-        "Månedligt d. 10."
-      ],
-      "11th of the month": [
-        "Månedligt d. 11."
-      ],
-      "12th of the month": [
-        "Månedligt d. 12."
-      ],
-      "13th of the month": [
-        "Månedligt d. 13."
-      ],
-      "14th of the month": [
-        "Månedligt d. 14."
-      ],
-      "15th of the month": [
-        "Månedligt d. 15."
-      ],
-      "16th of the month": [
-        "Månedligt d. 16."
-      ],
-      "17th of the month": [
-        "Månedligt d. 17."
-      ],
-      "18th of the month": [
-        "Månedligt d. 18."
-      ],
-      "19th of the month": [
-        "Månedligt d. 19."
-      ],
-      "20th of the month": [
-        "Månedligt d. 20."
-      ],
-      "21st of the month": [
-        "Månedligt d. 21."
-      ],
-      "22nd of the month": [
-        "Månedligt d. 22."
-      ],
-      "23rd of the month": [
-        "Månedligt d. 23."
-      ],
-      "24th of the month": [
-        "Månedligt d. 24."
-      ],
-      "25th of the month": [
-        "Månedligt d. 25."
-      ],
-      "26th of the month": [
-        "Månedligt d. 26."
-      ],
-      "27th of the month": [
-        "Månedligt d. 27."
-      ],
-      "28th of the month": [
-        "Månedligt d. 28."
-      ],
-      "29th of the month": [
-        "Månedligt d. 29."
-      ],
-      "30th of the month": [
-        "Månedligt d. 30."
-      ],
-      "31st of the month": [
-        "Månedligt d. 31."
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (Hurtigst, mest moderne)"
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ highestSecurity } RSA 4096-bit (Langsommere, men øget kompatibilitet med ældre software)"
-      ],
-      "Select a reason": [
-        "Vælg en årsag"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Det er midlertidigt, jeg vender tilbage"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Jeg forstod ikke, hvad jeg tilmeldte mig"
-      ],
-      "It’s too expensive": [
-        "Det er for dyrt"
-      ],
-      "I’m unhappy with customer service": [
-        "Jeg er utilfreds med kundeservice"
-      ],
-      "Using Proton is too complicated": [
-        "Det er for kompliceret at bruge Proton"
-      ],
-      "I'm switching to a different service": [
-        "Jeg skifter til en anden tjeneste"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Kvaliteten levede ikke op til mine forventninger"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "I use a different Proton account": [
-        "Jeg bruger en anden Proton-konto"
-      ],
-      "It's too expensive": [
-        "Det er for dyrt"
-      ],
-      "It's missing a key feature that I need": [
-        "Der mangler en vigtig funktion, som jeg har brug for"
-      ],
-      "I found another service that I like better": [
-        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
-      ],
-      "My reason isn't listed": [
-        "Min grund er ikke angivet"
-      ],
-      "No parent folder": [
-        "Ingen overordnet mappe"
-      ]
-    },
-    "Day": {
-      "Sunday": [
-        "Søndag"
-      ],
-      "Monday": [
-        "Mandag"
-      ],
-      "Tuesday": [
-        "Tirsdag"
-      ],
-      "Wednesday": [
-        "Onsdag"
-      ],
-      "Thursday": [
-        "Torsdag"
-      ],
-      "Friday": [
-        "Fredag"
-      ],
-      "Saturday": [
-        "Lørdag"
       ]
     },
     "Loading info": {
@@ -4683,14 +4290,14 @@
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"
       ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Ved at deaktivere logfilerne vil du også rydde hele din logfilshistorik. Er du sikker på, at du vil deaktivere loggerne?"
-      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Ved at deaktivere denne adresse vil du ikke længere kunne benytte denne adresse til at sende eller modtage e-mails, og alle tilknyttede Proton-produkter vil også deaktiveres. Er du sikker på, at du vil deaktivere denne adresse?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Du skal ${ activateLink } organisationsnøgler før du tilføjer en e-mailadresse til et ikke-privat medlem."
+      ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Ved at deaktivere logfilerne vil du også rydde hele din logfilshistorik. Er du sikker på, at du vil deaktivere loggerne?"
       ]
     },
     "Import instructions emphasis": {
@@ -4941,15 +4548,6 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale sammen i din indbakke, eller vis dem separat."
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
-      ],
-      "Your DKIM signing is working.": [
-        "Din DKIM-signering fungerer."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
-      ],
       "This feature is unavailable for the moment": [
         "Denne funktion er ikke tilgængelig i øjeblikket"
       ],
@@ -4970,6 +4568,21 @@
       ],
       "This address has been disabled": [
         "Denne adresse er deaktiveret"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
+      ],
+      "Your DKIM signing is working.": [
+        "Din DKIM-signering fungerer."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
+      ],
+      "This feature is only available for paid users": [
+        "Denne funktion er kun tilgængelig for betalende brugere"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Aktivér/deaktivér desktop- og mobilnotifikationer"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Brug flere adresser / aliasser knyttet til din konto, f.eks. brugernavn2@protonmail.com"
@@ -5019,15 +4632,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
-      ],
-      "This feature is only available for paid users": [
-        "Denne funktion er kun tilgængelig for betalende brugere"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Aktivér/deaktivér desktop- og mobilnotifikationer"
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Beskeder i Sendt eller Kladder vil fortsætte med at blive vist i de mapper, selvom du flytter dem til en anden mappe."
       ],
@@ -5036,6 +4640,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Denne funktion forsinker afsendelse af dine e-mails. Du kan fortryde afsendelse inden for den valgte tidsramme."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
       ]
     },
     "Security phrase": {
@@ -5077,6 +4684,152 @@
         "Forsinket"
       ]
     },
+    "Success": {
+      "Import resumed": [
+        "Import genoptaget"
+      ],
+      "Import canceled": [
+        "Import annulleret"
+      ],
+      "Import record deleted": [
+        "Importpost slettet"
+      ],
+      "Deleting original messages": [
+        "Slet oprindelige beskeder"
+      ],
+      "Preference saved": [
+        "Præferencer gemt"
+      ],
+      "Premium address created": [
+        "Premium-adresse oprettet"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Indstillinger for tastaturgenveje opdateret"
+      ],
+      "Locale updated": [
+        "Lokalisering opdateret"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } kopieret i din udklipsholder"
+      ],
+      "Auto-reply disabled": [
+        "Autosvar deaktiveret"
+      ],
+      "Auto-reply updated": [
+        "Autosvar opdateret"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Kalender oprettet. Det kan tage et par minutter at synkronisere."
+      ],
+      "Calendar created": [
+        "Kalender oprettet"
+      ],
+      "Calendar updated": [
+        "Kalender opdateret"
+      ],
+      "Default calendar updated": [
+        "Standardkalender opdateret"
+      ],
+      "Calendar removed": [
+        "Kalender fjernet"
+      ],
+      "Verification code copied to clipboard!": [
+        "Bekræftelseskode kopieret til udklipsholder!"
+      ],
+      "SPF value copied to clipboard!": [
+        "SPF-værdi kopieret til udklipsholder!"
+      ],
+      "Value copied to clipboard!": [
+        "Værdi kopieret til udklipsholder!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "DMARC-værdi kopieret til udklipsholder!"
+      ],
+      "Domain verified": [
+        "Domæne bekræftet"
+      ],
+      "Catch-all address updated": [
+        "Fang-alt-adresse opdateret"
+      ],
+      "Email address copied to clipboard": [
+        "E-mailadresse kopieret til udklipsholder"
+      ],
+      "Bug reported": [
+        "Fejl anmeldt"
+      ],
+      "You have successfully unsubscribed": [
+        "Du har afmeldt dig"
+      ],
+      "Payment method updated": [
+        "Betalingsmetode opdateret"
+      ],
+      "Payment method added": [
+        "Betalingsmetode tilføjet"
+      ],
+      "Credits added": [
+        "Kreditter tilføjet"
+      ],
+      "Gift code applied": [
+        "Gavekode anvendt"
+      ],
+      "Password updated": [
+        "Adgangskode opdateret"
+      ],
+      "Account deleted. Logging out...": [
+        "Konto slettet, logger ud..."
+      ],
+      "Email updated": [
+        "E-mail opdateret"
+      ],
+      "Phone number updated": [
+        "Telefonnummer opdateret"
+      ],
+      "Address updated": [
+        "Adresse opdateret"
+      ],
+      "Address added": [
+        "Adresse tilføjet"
+      ],
+      "Session revoked": [
+        "Session tilbagekaldt"
+      ],
+      "Sessions revoked": [
+        "Sessioner tilbagekaldt"
+      ],
+      "Payment method deleted": [
+        "Betalingsmetode slettet"
+      ],
+      "Invoice paid": [
+        "Faktura betalt"
+      ],
+      "Invoice customized": [
+        "Faktura tilrettet"
+      ],
+      "Organization activated": [
+        "Organisation aktiveret"
+      ],
+      "Keys updated": [
+        "Nøgler opdateret"
+      ],
+      "User updated": [
+        "Bruger opdateret"
+      ],
+      "User created": [
+        "Bruger oprettet"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kode sendt til ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Bekræftelse gennemført"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Har du angivet en gyldig e-mail, vil du få tilsendt dine brugernavne inden for det næste minut."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Har du angivet en gyldig gendannelses-telefon, vil vi sende dig en sms med dine brugernavne inden for det næste minut."
+      ]
+    },
     "Title header": {
       "Import": [
         "Import"
@@ -5097,6 +4850,253 @@
     "Import error link": {
       "bandwidth limit": [
         "båndbreddegrænse"
+      ]
+    },
+    "Option": {
+      "Automatic (${ defaultFormat })": [
+        "Automatisk (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatisk (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Føj til eksisterende gruppe"
+      ],
+      "Create new group": [
+        "Opret ny gruppe"
+      ],
+      "Ignore group": [
+        "Ignorér gruppe"
+      ],
+      "Normal": [
+        "Normal"
+      ],
+      "Plain text": [
+        "Simpel tekst"
+      ],
+      "Left to Right": [
+        "Venstre mod højre"
+      ],
+      "Right to Left": [
+        "Højre mod venstre"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Secure Core opsætninger"
+      ],
+      "Country configs": [
+        "Landeopsætninger"
+      ],
+      "Standard server configs": [
+        "Standard serverkonfigurer"
+      ],
+      "Free server configs": [
+        "Gratis serverkonfigurationer"
+      ],
+      "Fixed duration": [
+        "Fast varighed"
+      ],
+      "Repeat daily": [
+        "Gentag dagligt"
+      ],
+      "Repeat weekly": [
+        "Gentag ugentligt"
+      ],
+      "Repeat monthly": [
+        "Gentag månedligt"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "1st of the month": [
+        "Månedligt d. 1."
+      ],
+      "2nd of the month": [
+        "Månedligt d. 2."
+      ],
+      "3rd of the month": [
+        "Månedligt d. 3."
+      ],
+      "4th of the month": [
+        "Månedligt d. 4."
+      ],
+      "5th of the month": [
+        "Månedligt d. 5."
+      ],
+      "6th of the month": [
+        "Månedligt d. 6."
+      ],
+      "7th of the month": [
+        "Månedligt d. 7."
+      ],
+      "8th of the month": [
+        "Månedligt d. 8."
+      ],
+      "9th of the month": [
+        "Månedligt d. 9."
+      ],
+      "10th of the month": [
+        "Månedligt d. 10."
+      ],
+      "11th of the month": [
+        "Månedligt d. 11."
+      ],
+      "12th of the month": [
+        "Månedligt d. 12."
+      ],
+      "13th of the month": [
+        "Månedligt d. 13."
+      ],
+      "14th of the month": [
+        "Månedligt d. 14."
+      ],
+      "15th of the month": [
+        "Månedligt d. 15."
+      ],
+      "16th of the month": [
+        "Månedligt d. 16."
+      ],
+      "17th of the month": [
+        "Månedligt d. 17."
+      ],
+      "18th of the month": [
+        "Månedligt d. 18."
+      ],
+      "19th of the month": [
+        "Månedligt d. 19."
+      ],
+      "20th of the month": [
+        "Månedligt d. 20."
+      ],
+      "21st of the month": [
+        "Månedligt d. 21."
+      ],
+      "22nd of the month": [
+        "Månedligt d. 22."
+      ],
+      "23rd of the month": [
+        "Månedligt d. 23."
+      ],
+      "24th of the month": [
+        "Månedligt d. 24."
+      ],
+      "25th of the month": [
+        "Månedligt d. 25."
+      ],
+      "26th of the month": [
+        "Månedligt d. 26."
+      ],
+      "27th of the month": [
+        "Månedligt d. 27."
+      ],
+      "28th of the month": [
+        "Månedligt d. 28."
+      ],
+      "29th of the month": [
+        "Månedligt d. 29."
+      ],
+      "30th of the month": [
+        "Månedligt d. 30."
+      ],
+      "31st of the month": [
+        "Månedligt d. 31."
+      ],
+      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } X25519 (Hurtigst, mest moderne)"
+      ],
+      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ highestSecurity } RSA 4096-bit (Langsommere, men øget kompatibilitet med ældre software)"
+      ],
+      "No parent folder": [
+        "Ingen overordnet mappe"
+      ],
+      "Select a reason": [
+        "Vælg en årsag"
+      ],
+      "It’s temporary, I’ll be back": [
+        "Det er midlertidigt, jeg vender tilbage"
+      ],
+      "I didn’t understand what I was signing up for": [
+        "Jeg forstod ikke, hvad jeg tilmeldte mig"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "I’m unhappy with customer service": [
+        "Jeg er utilfreds med kundeservice"
+      ],
+      "Using Proton is too complicated": [
+        "Det er for kompliceret at bruge Proton"
+      ],
+      "I'm switching to a different service": [
+        "Jeg skifter til en anden tjeneste"
+      ],
+      "The quality didn't live up to my expectations": [
+        "Kvaliteten levede ikke op til mine forventninger"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "I use a different Proton account": [
+        "Jeg bruger en anden Proton-konto"
+      ],
+      "It's too expensive": [
+        "Det er for dyrt"
+      ],
+      "It's missing a key feature that I need": [
+        "Der mangler en vigtig funktion, som jeg har brug for"
+      ],
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "My reason isn't listed": [
+        "Min grund er ikke angivet"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "Søndag"
+      ],
+      "Monday": [
+        "Mandag"
+      ],
+      "Tuesday": [
+        "Tirsdag"
+      ],
+      "Wednesday": [
+        "Onsdag"
+      ],
+      "Thursday": [
+        "Torsdag"
+      ],
+      "Friday": [
+        "Fredag"
+      ],
+      "Saturday": [
+        "Lørdag"
       ]
     },
     "Progress bar description": {
@@ -5397,181 +5397,29 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now og meget mere."
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Tilføj et domæne, du ejer, til din ProtonMail-konto."
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "'www' -underdomæner benyttes typisk ikke til e-mail. Er du sikker på, at du vil benytte denne domæneværdi?"
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Når du modtager en e-mail fra en anden ProtonMail-bruger, som ikke har betroede nøgler i dine kontakter, vil et banner vil spørge, om du vil aktivere betroede nøgler."
       ]
     },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Af sikkerhedsmæssige årsager skal vi verificere, at du er ejer af ${ domainName }. Tilføj følgende DNS TXT-post til dit domæne. Det kan du typisk gøre via kontrolpanelet hos din domænenavnsregistrator."
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "Tilføj en ny bruger til din organisation og opret en adresse til den."
-      ],
-      "Add a new address for any user of your organization.": [
-        "Tilføj en ny adresse for enhver bruger af din organisation."
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
       ]
     },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS-ændringer kan tage op til én dag at effektuere."
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Dette føjer automatisk din offentlige nøgle til hver besked, du afsender. Modtagere kan benytte denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Tilføj følgende TXT-post:"
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "Type"
-      ],
-      "Host name": [
-        "Værtsnavn"
-      ],
-      "Value / Data / Points to": [
-        "Værdi / Data / Point til"
-      ],
-      "Value / Data": [
-        "Værdi / Data"
-      ],
-      "Priority": [
-        "Prioritet"
-      ]
-    },
-    "Tab in domain modal": {
-      "Addresses": [
-        "Adresser"
-      ]
-    },
-    "Label in domain modal": {
-      "Domain": [
-        "Domæne"
-      ],
-      "Verify": [
-        "Bekræft"
-      ],
-      "Addresses": [
-        "Adresser"
-      ]
-    },
-    "Domain label": {
-      "Verified": [
-        "Bekræftet"
-      ]
-    },
-    "Badge for domain": {
-      "Missing keys": [
-        "Manglende nøgler"
-      ],
-      "Enabled": [
-        "Aktiveret"
-      ],
-      "Disabled": [
-        "Deaktiveret"
-      ]
-    },
-    "Title header for addresses domain table": {
-      "Address": [
-        "Adresse"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Catch-All": [
-        "Fang-alle"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "Domæne slettet"
-      ],
-      "Sessions revoked": [
-        "Sessioner tilbagekaldt"
-      ],
-      "User deleted": [
-        "Bruger slettet"
-      ]
-    },
-    "Header for addresses table": {
-      "Domain": [
-        "Domæne"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Handlinger"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Username": [
-        "Brugernavn"
-      ]
-    },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Opsæt en brugerdefineret domænemailadresse (f.eks. dig@ditfirma.com). Det tager kun et par minutter, og vores guide vil føre dig gennem processen."
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        "Opgrader til et af de betalte abonnementer for at kunne bruge brugerdefinerede domæner og låse op for premium-funktioner"
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at bruge en fang-alle-adresse og låse op for premium-funktioner"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Sikker på, at du vil deaktivere tofaktorgodkendelse?"
-      ]
-    },
-    "Header": {
-      "Get help": [
-        "Få hjælp"
-      ],
-      "Name": [
-        "Navn"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Handlinger"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Label": [
-        "Etiket"
-      ],
-      "What others see": [
-        "Hvad andre ser"
-      ],
-      "Event": [
-        "Begivenhed"
-      ],
-      "Time": [
-        "Tid"
-      ],
-      "Folders": [
-        "Mapper"
-      ],
-      "Notifications": [
-        "Notifikationer"
-      ],
-      "Organization key fingerprint": [
-        "Organisationsnøgle-fingeraftryk"
-      ],
-      "Key type": [
-        "Nøgletype"
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med ikke-ProtonMail PGP-brugere. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder. Læs mere"
       ]
     },
     "Duration": {
@@ -5683,6 +5531,47 @@
         "Detaljer om begivenheder, der ikke kunne eksporteres"
       ]
     },
+    "Header": {
+      "Name": [
+        "Navn"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Handlinger"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Label": [
+        "Etiket"
+      ],
+      "What others see": [
+        "Hvad andre ser"
+      ],
+      "Get help": [
+        "Få hjælp"
+      ],
+      "Folders": [
+        "Mapper"
+      ],
+      "Notifications": [
+        "Notifikationer"
+      ],
+      "Event": [
+        "Begivenhed"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "Organization key fingerprint": [
+        "Organisationsnøgle-fingeraftryk"
+      ],
+      "Key type": [
+        "Nøgletype"
+      ]
+    },
     "Calendar status": {
       "Default": [
         "Standard"
@@ -5693,11 +5582,11 @@
       "Disabled": [
         "Deaktiveret"
       ],
-      "Not synced": [
-        "Ikke synkroniseret"
-      ],
       "Syncing": [
         "Synkroniserer"
+      ],
+      "Not synced": [
+        "Ikke synkroniseret"
       ]
     },
     "Upgrade notice": {
@@ -5923,157 +5812,6 @@
         "Fuld visning"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dette er, hvad folk vil se, når du sender dem en e-mail, invitere dem til en begivenhed, eller dele en fil med dem."
-      ],
-      "Choose a display name": [
-        "Vælg et visningsnavn"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
-      ],
-      "You can change this anytime in your settings.": [
-        "Du kan altid ændre dette i dine indstillingerne."
-      ],
-      "Discover all Proton services": [
-        "Udforsk alle Proton-tjenester"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Brug app-vælgeren øverst til venstre for at få adgang til andre Proton-tjenester, herunder VPN, kalender og drev."
-      ],
-      "Welcome to Proton": [
-        "Velkommen til Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Vores mission er at opbygge et internet, hvor du har kontrol over dine data og dit privatliv. Vi har for nylig opdateret Proton - velkommen til det sikre internet."
-      ],
-      "Set up your organization": [
-        "Konfigurer din organisation"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Intet billede valgt"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Log ind-problem"
-      ],
-      "Sign up problem": [
-        "Tilmeldingsproblem"
-      ],
-      "Payments problem": [
-        "Betalingsproblem"
-      ],
-      "Custom domain problem": [
-        "Brugerdomæne-problem"
-      ],
-      "Bridge problem": [
-        "Bridge-problem"
-      ],
-      "Import / export problem": [
-        "Problem med import / eksport"
-      ],
-      "Connection problem": [
-        "Forbindelsesproblem"
-      ],
-      "Slow speed problem": [
-        "Problem med lav hastighed"
-      ],
-      "Calendar problem": [
-        "Kalender-problem"
-      ],
-      "Contacts problem": [
-        "Kontakt-problem"
-      ],
-      "Drive problem": [
-        "Drive-problem"
-      ],
-      "Mail problem": [
-        "Mail-problem"
-      ],
-      "VPN problem": [
-        "VPN-problem"
-      ],
-      "Feature request": [
-        "Funktionsanmodning"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "Signup problem": [
-        "Tilmeldingsproblem"
-      ],
-      "Installation problem": [
-        "Installationsproblem"
-      ],
-      "Update problem": [
-        "Opdateringsproblem"
-      ],
-      "Application problem": [
-        "Applikationsproblem"
-      ],
-      "Speed problem": [
-        "Hastighedsproblem"
-      ],
-      "Manual setup problem": [
-        "Problem ifm. manual opsætning"
-      ],
-      "Website access problem": [
-        "Problemer med adgang til hjemmesiden"
-      ],
-      "Streaming problem": [
-        "Streaming-problem"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Konto"
-      ],
-      "Apps": [
-        "Apps"
-      ],
-      "Network": [
-        "Netværk"
-      ],
-      "Services": [
-        "Tjenester"
-      ],
-      "Other category": [
-        "Anden kategori"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vælg"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Vedhæft screenshot(s)"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
-      ],
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ]
-    },
     "Select files": {
       "Upload additional private keys": [
         "Upload yderligere private nøgler"
@@ -6193,6 +5931,558 @@
       ],
       "Compatibility": [
         "Kompatibilitet"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "Tilføj et domæne, du ejer, til din ProtonMail-konto."
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' -underdomæner benyttes typisk ikke til e-mail. Er du sikker på, at du vil benytte denne domæneværdi?"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Af sikkerhedsmæssige årsager skal vi verificere, at du er ejer af ${ domainName }. Tilføj følgende DNS TXT-post til dit domæne. Det kan du typisk gøre via kontrolpanelet hos din domænenavnsregistrator."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Tilføj en ny bruger til din organisation og opret en adresse til den."
+      ],
+      "Add a new address for any user of your organization.": [
+        "Tilføj en ny adresse for enhver bruger af din organisation."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "DNS-ændringer kan tage op til én dag at effektuere."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Tilføj følgende TXT-post:"
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "Type"
+      ],
+      "Host name": [
+        "Værtsnavn"
+      ],
+      "Value / Data / Points to": [
+        "Værdi / Data / Point til"
+      ],
+      "Value / Data": [
+        "Værdi / Data"
+      ],
+      "Priority": [
+        "Prioritet"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adresser"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "Domæne"
+      ],
+      "Verify": [
+        "Bekræft"
+      ],
+      "Addresses": [
+        "Adresser"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Bekræftet"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "Manglende nøgler"
+      ],
+      "Enabled": [
+        "Aktiveret"
+      ],
+      "Disabled": [
+        "Deaktiveret"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Catch-All": [
+        "Fang-alle"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "Domæne slettet"
+      ],
+      "Sessions revoked": [
+        "Sessioner tilbagekaldt"
+      ],
+      "User deleted": [
+        "Bruger slettet"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "Domæne"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Handlinger"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Username": [
+        "Brugernavn"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "Opsæt en brugerdefineret domænemailadresse (f.eks. dig@ditfirma.com). Det tager kun et par minutter, og vores guide vil føre dig gennem processen."
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        "Opgrader til et af de betalte abonnementer for at kunne bruge brugerdefinerede domæner og låse op for premium-funktioner"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at bruge en fang-alle-adresse og låse op for premium-funktioner"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Sikker på, at du vil deaktivere tofaktorgodkendelse?"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Dette er, hvad folk vil se, når du sender dem en e-mail, invitere dem til en begivenhed, eller dele en fil med dem."
+      ],
+      "Choose a display name": [
+        "Vælg et visningsnavn"
+      ],
+      "Select a theme": [
+        "Vælg et tema"
+      ],
+      "You can change this anytime in your settings.": [
+        "Du kan altid ændre dette i dine indstillingerne."
+      ],
+      "Discover all Proton services": [
+        "Udforsk alle Proton-tjenester"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Brug app-vælgeren øverst til venstre for at få adgang til andre Proton-tjenester, herunder VPN, kalender og drev."
+      ],
+      "Welcome to Proton": [
+        "Velkommen til Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Vores mission er at opbygge et internet, hvor du har kontrol over dine data og dit privatliv. Vi har for nylig opdateret Proton - velkommen til det sikre internet."
+      ],
+      "Set up your organization": [
+        "Konfigurer din organisation"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
+      ]
+    },
+    "Step in filter modal": {
+      "Name": [
+        "Navn"
+      ],
+      "Conditions": [
+        "Betingelser"
+      ],
+      "Actions": [
+        "Handlinger"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
+      "Sieve editor": [
+        "Sieve-editor"
+      ]
+    },
+    "Option group": {
+      "Custom folders": [
+        "Brugerdefinerede mapper"
+      ],
+      "Move to...": [
+        "Flyt til..."
+      ],
+      "Default folders": [
+        "Standard-mapper"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "læst"
+      ],
+      "starred": [
+        "stjernemarkeret"
+      ]
+    },
+    "Filter notification": {
+      "Filter ${ Filter.Name } updated": [
+        "Filter ${ Filter.Name } opdateret"
+      ],
+      "${ Label.Name } updated": [
+        "${ Label.Name } opdateret"
+      ]
+    },
+    "Filter modal type": {
+      "Select…": [
+        "Vælg…"
+      ],
+      "The subject": [
+        "Emne"
+      ],
+      "The sender": [
+        "Afsender"
+      ],
+      "The recipient": [
+        "Modtager"
+      ],
+      "The attachment": [
+        "Vedhæftning"
+      ]
+    },
+    "Condition for custom filter": {
+      "contains": [
+        "indeholder"
+      ],
+      "is exactly": [
+        "er nøjagtigt"
+      ],
+      "begins with": [
+        "begynder med"
+      ],
+      "ends with": [
+        "ender med"
+      ],
+      "matches": [
+        "matchninger"
+      ],
+      "does not contain": [
+        "indeholder ikke"
+      ],
+      "is not": [
+        "er ikke"
+      ],
+      "does not begin with": [
+        "starter ikke med"
+      ],
+      "does not end with": [
+        "ender ikke med"
+      ],
+      "does not match": [
+        "matcher ikke"
+      ]
+    },
+    "Filter modal operators": {
+      "All conditions must be fulfilled (AND)": [
+        "Alle betingelser skal ophæves (AND)"
+      ],
+      "One condition must be fulfilled (OR)": [
+        "Én betingelse skal ophæves (OR)"
+      ]
+    },
+    "Filter Actions": {
+      "Select a folder": [
+        "Vælg en mappe"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
+      "Inbox": [
+        "Indbakke"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ]
+    },
+    "Success notification": {
+      "Status updated": [
+        "Status opdateret"
+      ],
+      "Filter removed": [
+        "Filter fjernet"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } fjernet"
+      ],
+      "Address deleted": [
+        "Adresse slettet"
+      ],
+      "Address enabled": [
+        "Adresse aktiveret"
+      ],
+      "Address disabled": [
+        "Adresse deaktiveret"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtre"
+      ]
+    },
+    "Settings/filters - table": {
+      "Order": [
+        "Sortering"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Action": [
+        "Handling"
+      ]
+    },
+    "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Tilføj et brugerdefineret filter til automatisk at udføre visse handlinger, såsom mærkning eller arkivering af beskeder."
+      ],
+      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
+        "Anvend afsenderspecifikke spamregler. Beskeder fra adresser eller domæner på Godkendt-listen fortsætter altid til din indbakke, mens blokerede adresser altid ryger i spam. Markering af en besked som spam føjer adressen til blokeringslisten. Markering af en besked som ikke-spam føjer den til listen over godkendte afsendere."
+      ],
+      "Search in Allow List and Block List": [
+        "Søg i godkendt-liste og blokeringsliste"
+      ]
+    },
+    "Spam notification": {
+      "${ domain } updated": [
+        "${ domain } opdateret"
+      ],
+      "${ domain } added": [
+        "${ domain } tilføjet"
+      ],
+      "${ email } updated": [
+        "${ email } opdateret"
+      ],
+      "${ email } added": [
+        "${ email } tilføjet"
+      ]
+    },
+    "Spam filter moved to blacklist": {
+      "${ Domain } moved to Block List": [
+        "${ Domain } flyttet til blokeringsliste"
+      ],
+      "${ Email } moved to Block List": [
+        "${ Email } flyttet til blokeringsliste"
+      ]
+    },
+    "Spam filter moved to whitelist": {
+      "${ Domain } moved to Allow List": [
+        "${ Domain } flyttet til godkendt-liste"
+      ],
+      "${ Email } moved to Allow List": [
+        "${ Email } flyttet til godkendt-liste"
+      ]
+    },
+    "Moved to black/whitelist": {
+      "${ Domain } removed": [
+        "${ Domain } fjernet"
+      ],
+      "${ Email } removed": [
+        "${ Email } fjernet"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Intet billede valgt"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Log ind-problem"
+      ],
+      "Sign up problem": [
+        "Tilmeldingsproblem"
+      ],
+      "Payments problem": [
+        "Betalingsproblem"
+      ],
+      "Custom domain problem": [
+        "Brugerdomæne-problem"
+      ],
+      "Bridge problem": [
+        "Bridge-problem"
+      ],
+      "Import / export problem": [
+        "Problem med import / eksport"
+      ],
+      "Connection problem": [
+        "Forbindelsesproblem"
+      ],
+      "Slow speed problem": [
+        "Problem med lav hastighed"
+      ],
+      "Calendar problem": [
+        "Kalender-problem"
+      ],
+      "Contacts problem": [
+        "Kontakt-problem"
+      ],
+      "Drive problem": [
+        "Drive-problem"
+      ],
+      "Mail problem": [
+        "Mail-problem"
+      ],
+      "VPN problem": [
+        "VPN-problem"
+      ],
+      "Feature request": [
+        "Funktionsanmodning"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Signup problem": [
+        "Tilmeldingsproblem"
+      ],
+      "Installation problem": [
+        "Installationsproblem"
+      ],
+      "Update problem": [
+        "Opdateringsproblem"
+      ],
+      "Application problem": [
+        "Applikationsproblem"
+      ],
+      "Speed problem": [
+        "Hastighedsproblem"
+      ],
+      "Manual setup problem": [
+        "Problem ifm. manual opsætning"
+      ],
+      "Website access problem": [
+        "Problemer med adgang til hjemmesiden"
+      ],
+      "Streaming problem": [
+        "Streaming-problem"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netværk"
+      ],
+      "Services": [
+        "Tjenester"
+      ],
+      "Other category": [
+        "Anden kategori"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Vælg"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Vedhæft screenshot(s)"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Farve"
+      ],
+      "Folder name": [
+        "Mappenavn"
+      ],
+      "Label name": [
+        "Etiketnavn"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } oprettet"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } opdateret"
+      ],
+      "Preference saved": [
+        "Præferencer gemt"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Opret mappe"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Edit folder": [
+        "Redigér mappe"
+      ],
+      "Edit label": [
+        "Redigér etiket"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mapper sorteret"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Når aktiveret, arver undermapper farven på den overordnede mappe."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Etiketter/Mapper"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Etiketter"
+      ],
+      "Actions": [
+        "Handlinger"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Etiketter sorteret"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-applikationer"
+      ],
+      "Go to ${ title }": [
+        "Gå til ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Gå til ${ vpnName }"
       ]
     },
     "Suffix": {
@@ -6723,6 +7013,20 @@
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 sekunder"
+      ],
+      "5 seconds": [
+        "5 sekunder"
+      ],
+      "10 seconds": [
+        "10 sekunder"
+      ],
+      "20 seconds": [
+        "20 sekunder"
+      ]
+    },
     "Label for news": {
       "Proton company announcements": [
         "Proton-virksomhedsmeddelelser"
@@ -6769,6 +7073,59 @@
       ],
       "Recovery phrase": [
         "Gendannelsesfrase"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Standard"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Disabled": [
+        "Deaktiveret"
+      ],
+      "Orphan": [
+        "Forældreløs"
+      ],
+      "Missing keys": [
+        "Nøgler mangler"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Aktivér"
+      ],
+      "Disable": [
+        "Deaktivér"
+      ],
+      "Generate missing keys": [
+        "Generér manglende nøgler"
+      ],
+      "Delete": [
+        "Slet"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Kunne ikke finde seneste version"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10,12 eller senere)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (til Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (til Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (til andre distributioner)"
       ]
     },
     "Badge for user sessions table": {
@@ -6931,26 +7288,6 @@
         "Bitcoin"
       ]
     },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Når du modtager en e-mail fra en anden ProtonMail-bruger, som ikke har betroede nøgler i dine kontakter, vil et banner vil spørge, om du vil aktivere betroede nøgler."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Dette føjer automatisk din offentlige nøgle til hver besked, du afsender. Modtagere kan benytte denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med ikke-ProtonMail PGP-brugere. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder. Læs mere"
-      ]
-    },
     "Invoice type display as badge": {
       "Other": [
         "Andre"
@@ -7013,298 +7350,6 @@
     "Title for PDF file": {
       "ProtonMail invoice": [
         "ProtonMail-faktura"
-      ]
-    },
-    "Step in filter modal": {
-      "Name": [
-        "Navn"
-      ],
-      "Conditions": [
-        "Betingelser"
-      ],
-      "Actions": [
-        "Handlinger"
-      ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
-      "Sieve editor": [
-        "Sieve-editor"
-      ]
-    },
-    "Option group": {
-      "Custom folders": [
-        "Brugerdefinerede mapper"
-      ],
-      "Move to...": [
-        "Flyt til..."
-      ],
-      "Default folders": [
-        "Standard-mapper"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "læst"
-      ],
-      "starred": [
-        "stjernemarkeret"
-      ]
-    },
-    "Filter notification": {
-      "Filter ${ Filter.Name } updated": [
-        "Filter ${ Filter.Name } opdateret"
-      ],
-      "${ Label.Name } updated": [
-        "${ Label.Name } opdateret"
-      ]
-    },
-    "Filter modal type": {
-      "Select…": [
-        "Vælg…"
-      ],
-      "The subject": [
-        "Emne"
-      ],
-      "The sender": [
-        "Afsender"
-      ],
-      "The recipient": [
-        "Modtager"
-      ],
-      "The attachment": [
-        "Vedhæftning"
-      ]
-    },
-    "Condition for custom filter": {
-      "contains": [
-        "indeholder"
-      ],
-      "is exactly": [
-        "er nøjagtigt"
-      ],
-      "begins with": [
-        "begynder med"
-      ],
-      "ends with": [
-        "ender med"
-      ],
-      "matches": [
-        "matchninger"
-      ],
-      "does not contain": [
-        "indeholder ikke"
-      ],
-      "is not": [
-        "er ikke"
-      ],
-      "does not begin with": [
-        "starter ikke med"
-      ],
-      "does not end with": [
-        "ender ikke med"
-      ],
-      "does not match": [
-        "matcher ikke"
-      ]
-    },
-    "Filter modal operators": {
-      "All conditions must be fulfilled (AND)": [
-        "Alle betingelser skal ophæves (AND)"
-      ],
-      "One condition must be fulfilled (OR)": [
-        "Én betingelse skal ophæves (OR)"
-      ]
-    },
-    "Filter Actions": {
-      "Select a folder": [
-        "Vælg en mappe"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
-      "Inbox": [
-        "Indbakke"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Papirkurv"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "Status opdateret"
-      ],
-      "Filter removed": [
-        "Filter fjernet"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } fjernet"
-      ],
-      "Address deleted": [
-        "Adresse slettet"
-      ],
-      "Address enabled": [
-        "Adresse aktiveret"
-      ],
-      "Address disabled": [
-        "Adresse deaktiveret"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Filtre"
-      ]
-    },
-    "Settings/filters - table": {
-      "Order": [
-        "Sortering"
-      ],
-      "Name": [
-        "Navn"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Action": [
-        "Handling"
-      ]
-    },
-    "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Tilføj et brugerdefineret filter til automatisk at udføre visse handlinger, såsom mærkning eller arkivering af beskeder."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Anvend afsenderspecifikke spamregler. Beskeder fra adresser eller domæner på Godkendt-listen fortsætter altid til din indbakke, mens blokerede adresser altid ryger i spam. Markering af en besked som spam føjer adressen til blokeringslisten. Markering af en besked som ikke-spam føjer den til listen over godkendte afsendere."
-      ],
-      "Search in Allow List and Block List": [
-        "Søg i godkendt-liste og blokeringsliste"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } updated": [
-        "${ domain } opdateret"
-      ],
-      "${ domain } added": [
-        "${ domain } tilføjet"
-      ],
-      "${ email } updated": [
-        "${ email } opdateret"
-      ],
-      "${ email } added": [
-        "${ email } tilføjet"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } flyttet til blokeringsliste"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } flyttet til blokeringsliste"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } flyttet til godkendt-liste"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } flyttet til godkendt-liste"
-      ]
-    },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } fjernet"
-      ],
-      "${ Email } removed": [
-        "${ Email } fjernet"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Forfalden faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuel"
-      ],
-      "No verification method available": [
-        "Ingen bekræftelsesmetode tilgængelig"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Farve"
-      ],
-      "Folder name": [
-        "Mappenavn"
-      ],
-      "Label name": [
-        "Etiketnavn"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } oprettet"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } opdateret"
-      ],
-      "Preference saved": [
-        "Præferencer gemt"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Opret mappe"
-      ],
-      "Create label": [
-        "Opret etiket"
-      ],
-      "Edit folder": [
-        "Redigér mappe"
-      ],
-      "Edit label": [
-        "Redigér etiket"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Mapper sorteret"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Når aktiveret, arver undermapper farven på den overordnede mappe."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Etiketter/Mapper"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Etiketter"
-      ],
-      "Actions": [
-        "Handlinger"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Etiketter sorteret"
       ]
     },
     "Restore administrator panel": {
@@ -7387,147 +7432,26 @@
         "privat"
       ]
     },
-    "Address status": {
-      "Default": [
-        "Standard"
-      ],
-      "Active": [
-        "Aktiv"
-      ],
-      "Disabled": [
-        "Deaktiveret"
-      ],
-      "Orphan": [
-        "Forældreløs"
-      ],
-      "Missing keys": [
-        "Nøgler mangler"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Forfalden faktura"
       ]
     },
-    "Address action": {
-      "Enable": [
-        "Aktivér"
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Disable": [
-        "Deaktivér"
+      "Email": [
+        "E-mail"
       ],
-      "Generate missing keys": [
-        "Generér manglende nøgler"
+      "SMS": [
+        "SMS"
       ],
-      "Delete": [
-        "Slet"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 sekunder"
+      "Manual": [
+        "Manuel"
       ],
-      "5 seconds": [
-        "5 sekunder"
-      ],
-      "10 seconds": [
-        "10 sekunder"
-      ],
-      "20 seconds": [
-        "20 sekunder"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Kunne ikke finde seneste version"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10,12 eller senere)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (til Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (til Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (til andre distributioner)"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "ukendt"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard-versioner < 3. 0 understøttes ikke"
-      ],
-      "Encryption failed": [
-        "Kryptering mislykkedes"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "En uventet fejl opstod. Import skal genstartes."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Kun ICS-filformater er tilladt."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Din fil ${ formattedFilename } er tom."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Din fil ${ formattedFilename } er ikke en kalender."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } understøtter kun import af kalendere med iCal version 2.0."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Din fil ${ formattedFilename } er en invitation og kan ikke importeres."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Din fil ${ formattedFilename } har ingen begivenheder til import."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Ingen .csv eller .vcf-fil er valgt"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Din fil ${ formattedFilename } er tom."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Din fil ${ formattedFilename } har ingen kontakter til import."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Ukendt"
+      "No verification method available": [
+        "Ingen bekræftelsesmetode tilgængelig"
       ]
     },
     "Contact field label": {
@@ -7662,6 +7586,82 @@
       ],
       "GB": [
         "GB"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "ukendt"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard-versioner < 3. 0 understøttes ikke"
+      ],
+      "Encryption failed": [
+        "Kryptering mislykkedes"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "En uventet fejl opstod. Import skal genstartes."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Kun ICS-filformater er tilladt."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Din fil ${ formattedFilename } er tom."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Din fil ${ formattedFilename } er ikke en kalender."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } understøtter kun import af kalendere med iCal version 2.0."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "Din fil ${ formattedFilename } er en invitation og kan ikke importeres."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Din fil ${ formattedFilename } har ingen begivenheder til import."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Ingen .csv eller .vcf-fil er valgt"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Din fil ${ formattedFilename } er tom."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Din fil ${ formattedFilename } har ingen kontakter til import."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Ukendt"
       ]
     },
     "Participant name": {
@@ -8155,6 +8155,12 @@
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
       ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
+      ],
       "Invalid method": [
         "Ugyldig metode"
       ]
@@ -8429,6 +8435,9 @@
       "VPN apps": [
         "VPN-apps"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Users & addresses": [
         "Brugere & adresser"
       ],
@@ -8440,9 +8449,6 @@
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
-      ],
-      "Calendars": [
-        "Kalendere"
       ],
       "Account": [
         "Konto"
@@ -8462,6 +8468,20 @@
         "Opgrader til ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } for at forbinde op til ${ plusVpnConnections } enheder til VPN på én gang"
       ]
     },
+    "Navigation": {
+      "Back to Mail": [
+        "Tilbage til Mail"
+      ],
+      "Back to Calendar": [
+        "Tilbage til kalender"
+      ],
+      "Back to Contacts": [
+        "Tilbage til kontakter"
+      ],
+      "Back to Drive": [
+        "Tilbage til drev"
+      ]
+    },
     "Email Unsubscribe Categories": {
       "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
         "${ allCategoriesExceptTheLastOne } og ${ lastCategory }"
@@ -8476,20 +8496,6 @@
       ],
       "Which emails do you want to receive from Proton?": [
         "Hvilke e-mails vil du modtage fra Proton?"
-      ]
-    },
-    "Navigation": {
-      "Back to Mail": [
-        "Tilbage til Mail"
-      ],
-      "Back to Calendar": [
-        "Tilbage til kalender"
-      ],
-      "Back to Contacts": [
-        "Tilbage til kontakter"
-      ],
-      "Back to Drive": [
-        "Tilbage til drev"
       ]
     },
     "Signup label": {

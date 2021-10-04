@@ -68,66 +68,6 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
       ],
-      "Process aborted": [
-        "Prozess abgebrochen"
-      ],
-      "Payment process cancelled": [
-        "Bezahlvorgang abgebrochen"
-      ],
-      "Payment process failed": [
-        "Bezahlvorgang fehlgeschlagen"
-      ],
-      "Payment process consumed": [
-        "Bezahlvorgang abgebrochen"
-      ],
-      "Payment process not supported": [
-        "Bezahlvorgang nicht unterstützt"
-      ],
-      "Unknown payment token status": [
-        "Unbekannter Status des Zahlungstoken"
-      ],
-      "Tab closed": [
-        "Tab geschlossen"
-      ],
-      "Name on card required": [
-        "Karteninhaber erforderlich"
-      ],
-      "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
-      ],
-      "Invalid card number": [
-        "Ungültige Kartennummer"
-      ],
-      "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
-      ],
-      "Invalid postal code": [
-        "Ungültige Postleitzahl"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Fehler beim Verbinden mit der Bitcoin-API."
-      ],
-      "Amount below minimum.": [
-        "Mindestbetrag unterschritten."
-      ],
-      "Amount above the maximum.": [
-        "Höchstbetrag überschritten."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Der akzeptierte Mindestzahlbetrag beträgt ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
-      ],
-      "Invalid code": [
-        "Ungültiger Code"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Ungültiges Mailbox-Passwort. Bitte versuchen Sie es erneut."
       ],
@@ -190,14 +130,74 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
+      "Process aborted": [
+        "Prozess abgebrochen"
+      ],
+      "Payment process cancelled": [
+        "Bezahlvorgang abgebrochen"
+      ],
+      "Payment process failed": [
+        "Bezahlvorgang fehlgeschlagen"
+      ],
+      "Payment process consumed": [
+        "Bezahlvorgang abgebrochen"
+      ],
+      "Payment process not supported": [
+        "Bezahlvorgang nicht unterstützt"
+      ],
+      "Unknown payment token status": [
+        "Unbekannter Status des Zahlungstoken"
+      ],
+      "Tab closed": [
+        "Tab geschlossen"
+      ],
+      "Name on card required": [
+        "Karteninhaber erforderlich"
+      ],
+      "Invalid expiration date": [
+        "Ungültiges Ablaufdatum"
+      ],
+      "Invalid card number": [
+        "Ungültige Kartennummer"
+      ],
+      "Invalid ${ name } code": [
+        "Ungültiger ${ name }-Code"
+      ],
+      "Invalid postal code": [
+        "Ungültige Postleitzahl"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fehler beim Verbinden mit der Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Mindestbetrag unterschritten."
+      ],
+      "Amount above the maximum.": [
+        "Höchstbetrag überschritten."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Der akzeptierte Mindestzahlbetrag beträgt ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      ],
+      "Invalid code": [
+        "Ungültiger Code"
+      ],
+      "File has no contents to preview": [
+        "Datei hat keinen Inhalt für den Vorschau"
+      ],
       "We were unable to connect to your service provider.": [
         "Es konnte keine Verbindung zu Ihrem Dienstanbieter aufgebaut werden."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Bitte versuchen Sie sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt sind."
-      ],
-      "File has no contents to preview": [
-        "Datei hat keinen Inhalt für den Vorschau"
       ],
       "Could not generate file keys": [
         "Dateischlüssel konnten nicht erstellt werden"
@@ -383,6 +383,9 @@
       "Week": [
         "Woche"
       ],
+      "Loading": [
+        "Wird geladen"
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität) und kann von den Browsern Internet Explorer und Edge nicht geöffnet werden. Wenn Sie sicher sind, dass der Link seriös ist, verwenden Sie einen anderen Browser, um ihn zu öffnen."
       ],
@@ -398,11 +401,47 @@
       "Drop the file here to upload": [
         "Datei zum Hochladen hier ziehen"
       ],
-      "Loading": [
-        "Wird geladen"
-      ],
       "Loading ${ appName }": [
         "${ appName } wird geladen"
+      ],
+      "here": [
+        "hier"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Dieses Konto wurde wegen einer möglichen Verletzung der Richtlinien gesperrt."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Wenn Sie glauben, dass dies ein Fehler ist, kontaktieren Sie uns bitte ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Möchten Sie einen neuen Verifizierungscode erhalten oder eine alternative Verifizierungsmethode verwenden?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Bitte den an ${ destinationText } gesendeten Verifizierungscode eingeben."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden, überprüfen Sie bitte Ihren Spam-Ordner."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Um Spam und Missbrauch zu bekämpfen, bestätigen Sie bitte, dass Sie ein Mensch sind."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ihre E-Mail-Adresse wird nur für diese einmalige Verifizierung verwendet."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ihre Telefonnummer wird nur für diese einmalige Verfizierung verwendet."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Arbeitstages antworten."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese E-Mail-Adresse falsch ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die Telefonnummer falsch ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ihr Konto hat mindestens eine überfällige Rechnung. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
@@ -443,11 +482,130 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Du hast den Beta-Zugang deaktiviert. Klicke ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu geladen."
       ],
+      "support team": [
+        "Support-Team"
+      ],
       "Screenshot(s) attached": [
         "Bildschirmfoto(s) hinzugefügt"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Das Aktualisieren der Seite oder ${ link } wird die meisten Probleme automatisch lösen."
+      ],
+      "${ contactEmailsLength } Member": [
+        "{ contactEmailsLength } Mitglied",
+        "{ contactEmailsLength } Mitglieder"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } und ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu dieser Gruppe hinzufügen möchten."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu „${ groupsEnumeration }” hinzufügen möchten."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu dieser Gruppe hinzufügen möchten."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wählen Sie die E-Mail-Adresse(n) aus, die zu „${ groupsEnumeration }” hinzugefügt werden sollen."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Bitte warten Sie, während wir nach Kontakten mit Daten suchen, die mit dem inaktiven Schlüssel verschlüsselt sind."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "${ progress } von ${ max } Kontakten wurden geprüft …"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } Kontakt erfolgreich aktualisiert.",
+        "${ updated } Kontakte erfolgreich aktualisiert."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Um Ihre Daten wiederherzustellen, müssen Sie den Kontakt-Verschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu müssen Sie sich an das Passwort erinnern, das bei der Erzeugung des Schlüssels verwendet wurde."
+      ],
+      "Key fingerprint": [
+        "Schlüssel-Fingerabdruck"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Sie können sich nicht mehr an Ihr Passwort erinnern? Wir können Ihnen helfen, die verschlüsselten Daten aller mit diesem Schlüssel verschlüsselten Kontakte zu löschen und dabei den Alarm zu deaktivieren."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Bitte warten Sie, während wir nach Kontakten suchen, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Um Ihre Kontakte erneut zu unterzeichnen, müssen wir jeden Kontakt mit der Liste der in Ihrem Konto verfügbaren Verschlüsselungsschlüssel überprüfen. Wenn keine Übereinstimmung gefunden wird, wird Ihr Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Bitte beachten Sie, dass dieser Prozess (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Wählen Sie das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn Sie eine E-Mail an diese E-Mail-Adresse senden."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline ist nur bei Nachrichten mit Klartextformat möglich. Bitte beachten Sie, dass ProtonMail verschlüsselte Nachrichten immer signiert."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachten Sie, dass ProtonMail verschlüsselte Nachrichten immer signiert."
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Bitte beachten Sie, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
+      ],
+      "No contacts added yet": [
+        "Noch keine Kontakte hinzugefügt"
+      ],
+      "Group assignment applied": [
+        "Gruppenzuordnung übernommen"
+      ],
+      "Create a new contact group": [
+        "Neue Kontaktgruppe erstellen"
+      ],
+      "No group found": [
+        "Keine Gruppe gefunden"
+      ],
+      "Primary": [
+        "Primär"
+      ],
+      "Duplicate key updated": [
+        "Zweitschlüssel aktualisiert"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Das Einrichten von PGP ermöglicht es Ihnen, Ende-zu-Ende-verschlüsselte E-Mails mit einem Nicht-ProtonMail-Benutzer zu senden, der einen PGP-kompatiblen Dienst verwendet."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, müssen Sie zunächst den öffentlichen Schlüsseln vertrauen, die für das Senden verwendet werden können."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "Um die Adressprüfung verwenden zu können, müssen Sie einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den Sie zum Senden verwenden möchten. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Ändern Sie diese Einstellungen nur, wenn Sie PGP mit Nicht-ProtonMail-Empfängern verwenden."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wurde automatisch deaktiviert."
+      ],
+      "No email address": [
+        "Keine E-Mail-Adresse"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } Kontakt gefunden",
+        "${ contactsCount } Kontakte gefunden"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } Gruppe gefunden",
+        "{ groupCounts } Gruppen gefunden"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Wir unterstützen den Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen. Außerdem unterstützen wir den Import von vCard 4.0 (UTF-8-Kodierung)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Die Anwendung muss Ihre Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die Sie anschließend herunterladen können."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } E-Mail-Adresse",
+        "${ addressCount } E-Mail-Adressen"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie zu den Stammkunden gehören, wurden für Ihr Konto zusätzliche Funktionen aktiviert."
@@ -688,163 +846,23 @@
       "Expired": [
         "Ausgelaufen"
       ],
-      "here": [
-        "hier"
+      "Unsupported file": [
+        "Nicht unterstützte Datei"
       ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dieses Konto wurde wegen einer möglichen Verletzung der Richtlinien gesperrt."
+      "No preview available": [
+        "Keine Vorschau verfügbar"
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn Sie glauben, dass dies ein Fehler ist, kontaktieren Sie uns bitte ${ contactLink }."
+      "Preview": [
+        "Vorschau"
       ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+      "Loading preview": [
+        "Vorschau wird geladen"
       ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Verifizierungscode erhalten oder eine alternative Verifizierungsmethode verwenden?"
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte laden Sie die Datei herunter."
       ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Bitte den an ${ destinationText } gesendeten Verifizierungscode eingeben."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden, überprüfen Sie bitte Ihren Spam-Ordner."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese E-Mail-Adresse falsch ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die Telefonnummer falsch ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, bestätigen Sie bitte, dass Sie ein Mensch sind."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Ihre E-Mail-Adresse wird nur für diese einmalige Verifizierung verwendet."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ihre Telefonnummer wird nur für diese einmalige Verfizierung verwendet."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Arbeitstages antworten."
-      ],
-      "support team": [
-        "Support-Team"
-      ],
-      "${ contactEmailsLength } Member": [
-        "{ contactEmailsLength } Mitglied",
-        "{ contactEmailsLength } Mitglieder"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } und ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu dieser Gruppe hinzufügen möchten."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu „${ groupsEnumeration }” hinzufügen möchten."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu dieser Gruppe hinzufügen möchten."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wählen Sie die E-Mail-Adresse(n) aus, die zu „${ groupsEnumeration }” hinzugefügt werden sollen."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Bitte warten Sie, während wir nach Kontakten mit Daten suchen, die mit dem inaktiven Schlüssel verschlüsselt sind."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "${ progress } von ${ max } Kontakten wurden geprüft …"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } Kontakt erfolgreich aktualisiert.",
-        "${ updated } Kontakte erfolgreich aktualisiert."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Um Ihre Daten wiederherzustellen, müssen Sie den Kontakt-Verschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu müssen Sie sich an das Passwort erinnern, das bei der Erzeugung des Schlüssels verwendet wurde."
-      ],
-      "Key fingerprint": [
-        "Schlüssel-Fingerabdruck"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Sie können sich nicht mehr an Ihr Passwort erinnern? Wir können Ihnen helfen, die verschlüsselten Daten aller mit diesem Schlüssel verschlüsselten Kontakte zu löschen und dabei den Alarm zu deaktivieren."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Bitte warten Sie, während wir nach Kontakten suchen, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Um Ihre Kontakte erneut zu unterzeichnen, müssen wir jeden Kontakt mit der Liste der in Ihrem Konto verfügbaren Verschlüsselungsschlüssel überprüfen. Wenn keine Übereinstimmung gefunden wird, wird Ihr Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Bitte beachten Sie, dass dieser Prozess (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Wählen Sie das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn Sie eine E-Mail an diese E-Mail-Adresse senden."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline ist nur bei Nachrichten mit Klartextformat möglich. Bitte beachten Sie, dass ProtonMail verschlüsselte Nachrichten immer signiert."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachten Sie, dass ProtonMail verschlüsselte Nachrichten immer signiert."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Bitte beachten Sie, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
-      ],
-      "No contacts added yet": [
-        "Noch keine Kontakte hinzugefügt"
-      ],
-      "Group assignment applied": [
-        "Gruppenzuordnung übernommen"
-      ],
-      "Create a new contact group": [
-        "Neue Kontaktgruppe erstellen"
-      ],
-      "No group found": [
-        "Keine Gruppe gefunden"
-      ],
-      "Primary": [
-        "Primär"
-      ],
-      "Duplicate key updated": [
-        "Zweitschlüssel aktualisiert"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Das Einrichten von PGP ermöglicht es Ihnen, Ende-zu-Ende-verschlüsselte E-Mails mit einem Nicht-ProtonMail-Benutzer zu senden, der einen PGP-kompatiblen Dienst verwendet."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, müssen Sie zunächst den öffentlichen Schlüsseln vertrauen, die für das Senden verwendet werden können."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Um die Adressprüfung verwenden zu können, müssen Sie einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den Sie zum Senden verwenden möchten. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ändern Sie diese Einstellungen nur, wenn Sie PGP mit Nicht-ProtonMail-Empfängern verwenden."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wurde automatisch deaktiviert."
-      ],
-      "No email address": [
-        "Keine E-Mail-Adresse"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } Kontakt gefunden",
-        "${ contactsCount } Kontakte gefunden"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } Gruppe gefunden",
-        "{ groupCounts } Gruppen gefunden"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Wir unterstützen den Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen. Außerdem unterstützen wir den Import von vCard 4.0 (UTF-8-Kodierung)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Die Anwendung muss Ihre Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die Sie anschließend herunterladen können."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } E-Mail-Adresse",
-        "${ addressCount } E-Mail-Adressen"
+      "of": [
+        "von"
       ],
       "Import contacts": [
         "Kontakte importieren"
@@ -872,24 +890,6 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Die grundlegende Navigation und Aktionen bleiben verfügbar, unabhängig davon, ob in den Einstellungen Tastaturkürzel aktiviert sind oder nicht."
-      ],
-      "Unsupported file": [
-        "Nicht unterstützte Datei"
-      ],
-      "No preview available": [
-        "Keine Vorschau verfügbar"
-      ],
-      "Preview": [
-        "Vorschau"
-      ],
-      "Loading preview": [
-        "Vorschau wird geladen"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte laden Sie die Datei herunter."
-      ],
-      "of": [
-        "von"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Übertragung für Datei „${ file.name }” übersprungen"
@@ -935,30 +935,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ihre Dateien werden verschlüsselt und anschließend gespeichert."
-      ],
-      "There are no files yet": [
-        "Es sind noch keine Dateien vorhanden"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ziehen Sie eine Datei hierhin oder wählen Sie „Jetzt hochladen”."
-      ],
-      "Share files with links": [
-        "Dateien mit Links teilen"
-      ],
-      "Create links and share your files with others.": [
-        "Links erstellen und Ihre Dateien mit anderen teilen."
-      ],
-      "My Links": [
-        "Meine Links"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Möchten Sie den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
-      ],
-      "No files or folders in trash": [
-        "Keine Dateien oder Ordner im Papierkorb"
-      ],
-      "Trash": [
-        "Papierkorb"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } beendet",
@@ -1036,6 +1012,30 @@
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Das Schließen des Übertragungsfensters wird alle aktiven Übertragungen beenden. Dennoch fortfahren?"
+      ],
+      "There are no files yet": [
+        "Es sind noch keine Dateien vorhanden"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Ziehen Sie eine Datei hierhin oder wählen Sie „Jetzt hochladen”."
+      ],
+      "Share files with links": [
+        "Dateien mit Links teilen"
+      ],
+      "Create links and share your files with others.": [
+        "Links erstellen und Ihre Dateien mit anderen teilen."
+      ],
+      "My Links": [
+        "Meine Links"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Möchten Sie den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
+      ],
+      "No files or folders in trash": [
+        "Keine Dateien oder Ordner im Papierkorb"
+      ],
+      "Trash": [
+        "Papierkorb"
       ],
       "Link expires: ": [
         "Link gültig bis: "
@@ -1446,6 +1446,33 @@
       "refresh the page": [
         "Seite aktualisieren"
       ],
+      "Log in": [
+        "Anmelden"
+      ],
+      "View invoice": [
+        "Rechnung anzeigen"
+      ],
+      "Get verification code": [
+        "Verifizierungscode anfordern"
+      ],
+      "Try another method": [
+        "Eine weitere Methode verwenden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Verify": [
+        "Bestätigen"
+      ],
+      "Did not receive the code?": [
+        "Code nicht erhalten?"
+      ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
+      "Edit phone number": [
+        "Telefonnummer bearbeiten"
+      ],
       "Close this banner": [
         "Diesen Banner schließen"
       ],
@@ -1542,87 +1569,6 @@
       "Show info": [
         "Info anzeigen"
       ],
-      "Remove bonuses": [
-        "Prämien entfernen"
-      ],
-      "Verify": [
-        "Bestätigen"
-      ],
-      "Try again": [
-        "Erneut versuchen"
-      ],
-      "Use a different card": [
-        "Verwenden Sie eine andere Karte"
-      ],
-      "Use a different payment method": [
-        "Eine andere Zahlungsmethode verwenden"
-      ],
-      "Retry": [
-        "Wiederholen"
-      ],
-      "Loading verification": [
-        "Bestätigung wird geladen"
-      ],
-      "Select plan": [
-        "Abonnement auswählen"
-      ],
-      "Compare all features": [
-        "Alle Funktionen im Vergleich"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } durch den Wechsel zur jährlichen Zahlweise"
-      ],
-      "Continue": [
-        "Weiter"
-      ],
-      "Pay": [
-        "Bezahlen"
-      ],
-      "Apply": [
-        "Anwenden"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
-      ],
-      "Remove gift code": [
-        "Geschenkgutschein entfernen"
-      ],
-      "annual billing": [
-        "Jährliche Zahlweise"
-      ],
-      "Compare plans": [
-        "Pakete vergleichen"
-      ],
-      "Decrease": [
-        "Verkleinern"
-      ],
-      "Increase": [
-        "Vergrößern"
-      ],
-      "Log in": [
-        "Anmelden"
-      ],
-      "View invoice": [
-        "Rechnung anzeigen"
-      ],
-      "Get verification code": [
-        "Verifizierungscode anfordern"
-      ],
-      "Try another method": [
-        "Eine weitere Methode verwenden"
-      ],
-      "Request new code": [
-        "Neuen Code anfordern"
-      ],
-      "Did not receive the code?": [
-        "Code nicht erhalten?"
-      ],
-      "Edit email address": [
-        "E-Mail-Adresse bearbeiten"
-      ],
-      "Edit phone number": [
-        "Telefonnummer bearbeiten"
-      ],
       "Save": [
         "Speichern"
       ],
@@ -1631,6 +1577,9 @@
       ],
       "Add": [
         "Hinzufügen"
+      ],
+      "Apply": [
+        "Anwenden"
       ],
       "Clear data": [
         "Daten löschen"
@@ -1695,6 +1644,9 @@
       "Preview contact": [
         "Kontaktvorschau"
       ],
+      "Continue": [
+        "Weiter"
+      ],
       "Delete contact": [
         "Kontakt löschen"
       ],
@@ -1754,17 +1706,53 @@
       "Import": [
         "Importieren"
       ],
-      "Continue import": [
-        "Importvorgang fortsetzen"
+      "Remove bonuses": [
+        "Prämien entfernen"
       ],
-      "Discard": [
-        "Verwerfen"
+      "Try again": [
+        "Erneut versuchen"
       ],
-      "Reconnect": [
-        "Erneut verbinden"
+      "Use a different card": [
+        "Verwenden Sie eine andere Karte"
       ],
-      "Start import": [
-        "Importvorgang starten"
+      "Use a different payment method": [
+        "Eine andere Zahlungsmethode verwenden"
+      ],
+      "Retry": [
+        "Wiederholen"
+      ],
+      "Loading verification": [
+        "Bestätigung wird geladen"
+      ],
+      "Select plan": [
+        "Abonnement auswählen"
+      ],
+      "Compare all features": [
+        "Alle Funktionen im Vergleich"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } durch den Wechsel zur jährlichen Zahlweise"
+      ],
+      "Pay": [
+        "Bezahlen"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
+      ],
+      "Remove gift code": [
+        "Geschenkgutschein entfernen"
+      ],
+      "annual billing": [
+        "Jährliche Zahlweise"
+      ],
+      "Compare plans": [
+        "Pakete vergleichen"
+      ],
+      "Decrease": [
+        "Verkleinern"
+      ],
+      "Increase": [
+        "Vergrößern"
       ],
       "Details": [
         "Details"
@@ -1787,8 +1775,74 @@
       "Previous": [
         "Zurück"
       ],
+      "Continue import": [
+        "Importvorgang fortsetzen"
+      ],
+      "Discard": [
+        "Verwerfen"
+      ],
+      "Reconnect": [
+        "Erneut verbinden"
+      ],
+      "Start import": [
+        "Importvorgang starten"
+      ],
       "Cancel all uploads": [
         "Hochladen abbrechen"
+      ],
+      "Share": [
+        "Teilen"
+      ],
+      "Show shared link details": [
+        "Details zum freigegebenen Link anzeigen"
+      ],
+      "Maximize transfers": [
+        "Übertragungsfenster maximieren"
+      ],
+      "Minimize transfers": [
+        "Übertragungsfenster minimieren"
+      ],
+      "Close transfers": [
+        "Übertragungsfenster schließen"
+      ],
+      "Pause download": [
+        "Herunterladen anhalten"
+      ],
+      "Pause upload": [
+        "Hochladen anhalten"
+      ],
+      "Resume download": [
+        "Herunterladen fortsetzen"
+      ],
+      "Resume upload": [
+        "Hochladen fortsetzen"
+      ],
+      "Cancel download": [
+        "Herunterladen abbrechen"
+      ],
+      "Cancel upload": [
+        "Hochladen abbrechen"
+      ],
+      "Restart download": [
+        "Herunterladen neu starten"
+      ],
+      "Restart upload": [
+        "Hochladen neu starten"
+      ],
+      "Remove from this list": [
+        "Aus dieser Liste entfernen"
+      ],
+      "Resume transfers": [
+        "Übertragung fortsetzen"
+      ],
+      "Pause transfers": [
+        "Übertragung anhalten"
+      ],
+      "Cancel transfers": [
+        "Übertragung abbrechen"
+      ],
+      "Restart transfers": [
+        "Übertragung neu starten"
       ],
       "New upload": [
         "Neu hochgeladen"
@@ -1804,9 +1858,6 @@
       ],
       "Share options": [
         "Freigabeoptionen"
-      ],
-      "Share": [
-        "Teilen"
       ],
       "Create new folder": [
         "Neuen Ordner erstellen"
@@ -1865,57 +1916,6 @@
       "Restore from trash": [
         "Aus dem Papierkorb wiederherstellen"
       ],
-      "Maximize transfers": [
-        "Übertragungsfenster maximieren"
-      ],
-      "Minimize transfers": [
-        "Übertragungsfenster minimieren"
-      ],
-      "Close transfers": [
-        "Übertragungsfenster schließen"
-      ],
-      "Pause download": [
-        "Herunterladen anhalten"
-      ],
-      "Pause upload": [
-        "Hochladen anhalten"
-      ],
-      "Resume download": [
-        "Herunterladen fortsetzen"
-      ],
-      "Resume upload": [
-        "Hochladen fortsetzen"
-      ],
-      "Cancel download": [
-        "Herunterladen abbrechen"
-      ],
-      "Cancel upload": [
-        "Hochladen abbrechen"
-      ],
-      "Restart download": [
-        "Herunterladen neu starten"
-      ],
-      "Restart upload": [
-        "Hochladen neu starten"
-      ],
-      "Remove from this list": [
-        "Aus dieser Liste entfernen"
-      ],
-      "Resume transfers": [
-        "Übertragung fortsetzen"
-      ],
-      "Pause transfers": [
-        "Übertragung anhalten"
-      ],
-      "Cancel transfers": [
-        "Übertragung abbrechen"
-      ],
-      "Restart transfers": [
-        "Übertragung neu starten"
-      ],
-      "Show shared link details": [
-        "Details zum freigegebenen Link anzeigen"
-      ],
       "Start recovering": [
         "Wiederherstellung wird gestartet"
       ],
@@ -1951,111 +1951,6 @@
       "What's new": [
         "Neuigkeiten"
       ],
-      "Open help menu": [
-        "Menü „Hilfe” öffnen"
-      ],
-      "Back": [
-        "Zurück"
-      ],
-      "Open settings menu": [
-        "Menü „Einstellungen” öffnen"
-      ],
-      "Select a theme": [
-        "Farbschema auswählen"
-      ],
-      "Report a problem": [
-        "Ein Problem melden"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Bestätigen Sie den Verzicht auf Proton-Prämien"
-      ],
-      "Unsupported browser": [
-        "Nicht unterstützter Browser"
-      ],
-      "Card verification": [
-        "Kartenprüfung"
-      ],
-      "Payment verification": [
-        "Zahlungsbestätigung"
-      ],
-      "Processing...": [
-        "Wird verarbeitet ..."
-      ],
-      "Card verification in progress": [
-        "Kartenprüfung wird ausgeführt"
-      ],
-      "Payment verification in progress": [
-        "Zahlungsbestätigung wird ausgeführt"
-      ],
-      "PayPal verification failed": [
-        "PayPal-Verifizierung fehlgeschlagen"
-      ],
-      "3-D Secure verification failed": [
-        "3D-Sicherheitsprüfung fehlgeschlagen"
-      ],
-      "Error": [
-        "Fehler"
-      ],
-      "ZIP / postal code": [
-        "PLZ/Postleitzahl"
-      ],
-      "Payment details": [
-        "Zahlungsdetails"
-      ],
-      "Currency": [
-        "Währung"
-      ],
-      "Billing cycle": [
-        "Abrechnungszeitraum"
-      ],
-      "Current plan": [
-        "Aktueller Tarif"
-      ],
-      "Processing": [
-        "Wird verarbeitet"
-      ],
-      "Apply gift code": [
-        "Geschenkgutschein einlösen"
-      ],
-      "Subtotal": [
-        "Zwischensumme"
-      ],
-      "Coupon discount": [
-        "Gutscheinrabatt"
-      ],
-      "Total (monthly)": [
-        "Gesamt (monatlich)"
-      ],
-      "Credits": [
-        "Guthaben"
-      ],
-      "Gift code": [
-        "Geschenkgutschein"
-      ],
-      "Amount due": [
-        "Fälliger Betrag"
-      ],
-      "Cancel subscription": [
-        "Abonnement kündigen"
-      ],
-      "Network error": [
-        "Netzwerkfehler"
-      ],
-      "Select a plan": [
-        "Abonnement auswählen"
-      ],
-      "Customize your plan": [
-        "Paket anpassen"
-      ],
-      "Checkout": [
-        "Zur Kasse"
-      ],
-      "Plan summary": [
-        "Tarifzusammenfassung"
-      ],
-      "${ appName } customization": [
-        "${ appName } anpassen"
-      ],
       "Sign in again to continue": [
         "Erneut anmelden, um fortzufahren"
       ],
@@ -2071,11 +1966,23 @@
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
-      "Request new code": [
-        "Neuen Code anfordern"
-      ],
       "Human verification": [
         "Captcha"
+      ],
+      "Open help menu": [
+        "Menü „Hilfe” öffnen"
+      ],
+      "Back": [
+        "Zurück"
+      ],
+      "Open settings menu": [
+        "Menü „Einstellungen” öffnen"
+      ],
+      "Select a theme": [
+        "Farbschema auswählen"
+      ],
+      "Report a problem": [
+        "Ein Problem melden"
       ],
       "Edit image": [
         "Bild bearbeiten"
@@ -2198,6 +2105,96 @@
       "Import contacts": [
         "Kontakte importieren"
       ],
+      "Confirm loss of Proton bonuses": [
+        "Bestätigen Sie den Verzicht auf Proton-Prämien"
+      ],
+      "Unsupported browser": [
+        "Nicht unterstützter Browser"
+      ],
+      "Card verification": [
+        "Kartenprüfung"
+      ],
+      "Payment verification": [
+        "Zahlungsbestätigung"
+      ],
+      "Processing...": [
+        "Wird verarbeitet ..."
+      ],
+      "Card verification in progress": [
+        "Kartenprüfung wird ausgeführt"
+      ],
+      "Payment verification in progress": [
+        "Zahlungsbestätigung wird ausgeführt"
+      ],
+      "PayPal verification failed": [
+        "PayPal-Verifizierung fehlgeschlagen"
+      ],
+      "3-D Secure verification failed": [
+        "3D-Sicherheitsprüfung fehlgeschlagen"
+      ],
+      "Error": [
+        "Fehler"
+      ],
+      "ZIP / postal code": [
+        "PLZ/Postleitzahl"
+      ],
+      "Payment details": [
+        "Zahlungsdetails"
+      ],
+      "Currency": [
+        "Währung"
+      ],
+      "Billing cycle": [
+        "Abrechnungszeitraum"
+      ],
+      "Current plan": [
+        "Aktueller Tarif"
+      ],
+      "Processing": [
+        "Wird verarbeitet"
+      ],
+      "Apply gift code": [
+        "Geschenkgutschein einlösen"
+      ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Coupon discount": [
+        "Gutscheinrabatt"
+      ],
+      "Total (monthly)": [
+        "Gesamt (monatlich)"
+      ],
+      "Credits": [
+        "Guthaben"
+      ],
+      "Gift code": [
+        "Geschenkgutschein"
+      ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
+      "Network error": [
+        "Netzwerkfehler"
+      ],
+      "Select a plan": [
+        "Abonnement auswählen"
+      ],
+      "Customize your plan": [
+        "Paket anpassen"
+      ],
+      "Checkout": [
+        "Zur Kasse"
+      ],
+      "Plan summary": [
+        "Tarifzusammenfassung"
+      ],
+      "${ appName } customization": [
+        "${ appName } anpassen"
+      ],
       "Start import process": [
         "Importvorgang starten"
       ],
@@ -2228,6 +2225,12 @@
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"
       ],
+      "Additional settings": [
+        "Zusätzliche Einstellungen"
+      ],
+      "Cancel all active transfers": [
+        "Alle aktiven Übertragungen abbrechen"
+      ],
       "Show actions": [
         "Aktionen anzeigen"
       ],
@@ -2248,12 +2251,6 @@
       ],
       "Trash": [
         "Papierkorb"
-      ],
-      "Additional settings": [
-        "Zusätzliche Einstellungen"
-      ],
-      "Cancel all active transfers": [
-        "Alle aktiven Übertragungen abbrechen"
       ],
       "Your file is ready to be downloaded": [
         "Die angeforderte Datei kann jetzt heruntergeladen werden"
@@ -2389,90 +2386,6 @@
       "Do not ask again": [
         "Nicht erneut nachfragen"
       ],
-      "Display name": [
-        "Anzeigename"
-      ],
-      "Operating system": [
-        "Betriebssystem"
-      ],
-      "Operating system version": [
-        "Version des Betriebssystems"
-      ],
-      "Proton username": [
-        "Proton‐Benutzername"
-      ],
-      "Email address": [
-        "E-Mail-Adresse"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Was ist passiert?"
-      ],
-      "System information": [
-        "Systeminformationen"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Version des Browsers"
-      ],
-      "Name on card": [
-        "Karteninhaber"
-      ],
-      "Card number": [
-        "Kartennummer"
-      ],
-      "Expiry date": [
-        "Gültig bis"
-      ],
-      "CVV code": [
-        "CVV-Code (Sicherheitsnummer)"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Select your country": [
-        "Ihr Land auswählen"
-      ],
-      "ZIP": [
-        "PLZ"
-      ],
-      "Postal code": [
-        "Postleitzahl"
-      ],
-      "BTC amount:": [
-        "Betrag in Bitcoin:"
-      ],
-      "BTC address:": [
-        "Bitcoin‐Adresse:"
-      ],
-      "Select a method": [
-        "Methode wählen"
-      ],
-      "Total (${ countdown })": [
-        "Gesamt (${ countdown })"
-      ],
-      "Total": [
-        "Gesamt"
-      ],
-      "Proration": [
-        "Aufteilung"
-      ],
-      "Cash": [
-        "Barzahlung"
-      ],
-      "Card holder": [
-        "Karteninhaber"
-      ],
-      "Expires": [
-        "Gültig bis"
-      ],
-      "Payer": [
-        "Zahlungsleistender"
-      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -2491,6 +2404,9 @@
       "Username or ProtonMail address": [
         "Benutzername oder ProtonMail-E-Mail-Adresse"
       ],
+      "Email address": [
+        "E-Mail-Adresse"
+      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -2499,6 +2415,33 @@
       ],
       "Enter the 6-digit code": [
         "6-stelligen Code eingeben"
+      ],
+      "Display name": [
+        "Anzeigename"
+      ],
+      "Operating system": [
+        "Betriebssystem"
+      ],
+      "Operating system version": [
+        "Version des Betriebssystems"
+      ],
+      "Proton username": [
+        "Proton‐Benutzername"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "What happened?": [
+        "Was ist passiert?"
+      ],
+      "System information": [
+        "Systeminformationen"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Version des Browsers"
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
@@ -2520,6 +2463,12 @@
       ],
       "Region": [
         "Bundesland/Region"
+      ],
+      "Postal code": [
+        "Postleitzahl"
+      ],
+      "Country": [
+        "Land"
       ],
       "Post office box": [
         "Postfach"
@@ -2550,6 +2499,54 @@
       ],
       "Export contacts": [
         "Kontakte exportieren"
+      ],
+      "Name on card": [
+        "Karteninhaber"
+      ],
+      "Card number": [
+        "Kartennummer"
+      ],
+      "Expiry date": [
+        "Gültig bis"
+      ],
+      "CVV code": [
+        "CVV-Code (Sicherheitsnummer)"
+      ],
+      "Select your country": [
+        "Ihr Land auswählen"
+      ],
+      "ZIP": [
+        "PLZ"
+      ],
+      "BTC amount:": [
+        "Betrag in Bitcoin:"
+      ],
+      "BTC address:": [
+        "Bitcoin‐Adresse:"
+      ],
+      "Select a method": [
+        "Methode wählen"
+      ],
+      "Total (${ countdown })": [
+        "Gesamt (${ countdown })"
+      ],
+      "Total": [
+        "Gesamt"
+      ],
+      "Proration": [
+        "Aufteilung"
+      ],
+      "Cash": [
+        "Barzahlung"
+      ],
+      "Card holder": [
+        "Karteninhaber"
+      ],
+      "Expires": [
+        "Gültig bis"
+      ],
+      "Payer": [
+        "Zahlungsleistender"
       ],
       "From: ${ fromEmailAddress }": [
         "Von: ${ fromEmailAddress }"
@@ -2596,6 +2593,36 @@
       "Apply to all duplicated files": [
         "Auf alle doppelt vorhandenen Dateien anwenden"
       ],
+      "Folder": [
+        "Ordner"
+      ],
+      "(Expired)": [
+        "(Abgelaufen)"
+      ],
+      "Expired": [
+        "Abgelaufen"
+      ],
+      "Never": [
+        "Niemals"
+      ],
+      "File": [
+        "Datei"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Active": [
+        "Aktive"
+      ],
+      "Completed": [
+        "Abgeschlossen"
+      ],
+      "Failed": [
+        "Fehlgeschlagene"
+      ],
+      "Apply to selection": [
+        "Für Auswahl übernehmen"
+      ],
       "Audio file": [
         "Audiodatei"
       ],
@@ -2617,36 +2644,6 @@
       "Up to ${ parentLinkName }": [
         "is zu ${ parentLinkName }"
       ],
-      "All": [
-        "Alle"
-      ],
-      "Active": [
-        "Aktive"
-      ],
-      "Completed": [
-        "Abgeschlossen"
-      ],
-      "Failed": [
-        "Fehlgeschlagene"
-      ],
-      "Apply to selection": [
-        "Für Auswahl übernehmen"
-      ],
-      "Folder": [
-        "Ordner"
-      ],
-      "(Expired)": [
-        "(Abgelaufen)"
-      ],
-      "Expired": [
-        "Abgelaufen"
-      ],
-      "Never": [
-        "Niemals"
-      ],
-      "File": [
-        "Datei"
-      ],
       "Get your own ${ appName }": [
         "Holen Sie sich Ihr eigenes ${ appName }"
       ],
@@ -2666,9 +2663,17 @@
         "Ablaufdatum festlegen"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
+      ]
+    },
     "Placeholder": {
       "E.g., ": [
         "z.B."
+      ],
+      "Mailbox password": [
+        "Mailbox-Passwort"
       ],
       "e.g. Julia Smith": [
         "z.B. Hans Mustermann"
@@ -2694,18 +2699,6 @@
       "Browser version": [
         "Version des Browsers"
       ],
-      "ZIP": [
-        "PLZ"
-      ],
-      "Postal code": [
-        "Postleitzahl"
-      ],
-      "Gift code": [
-        "Geschenkgutschein"
-      ],
-      "Mailbox password": [
-        "Mailbox-Passwort"
-      ],
       "Image URL": [
         "Bild-URL"
       ],
@@ -2723,6 +2716,15 @@
       ],
       "Name": [
         "Name"
+      ],
+      "ZIP": [
+        "PLZ"
+      ],
+      "Postal code": [
+        "Postleitzahl"
+      ],
+      "Gift code": [
+        "Geschenkgutschein"
       ],
       "New name": [
         "Neuer Name"
@@ -2756,6 +2758,9 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Request an invite": [
+        "Einladung anfordern"
+      ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
@@ -2777,9 +2782,6 @@
       "Add a gift code": [
         "Geschenkgutschein hinzufügen"
       ],
-      "Request an invite": [
-        "Einladung anfordern"
-      ],
       "My files": [
         "Meine Dateien"
       ],
@@ -2790,11 +2792,6 @@
         "Papierkorb"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
-      ]
-    },
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwenden Sie die Pfeiltasten aufwärts/abwärts, um nach der Eingabe auf die Vorschläge zuzugreifen und diese zu durchsuchen. Drücken Sie die „Eingabetaste”, um Ihre Auswahl zu bestätigen, oder die „ESC”-Taste, um das Vorschlagsfeld zu schließen."
@@ -2802,17 +2799,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } Vorschlag gefunden. Verwenden Sie die Tastatur zum Navigieren.",
         "${ items.length } Vorschläge gefunden. Verwenden Sie die Tastatur zum Navigieren."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-Anwendungen"
-      ],
-      "Go to ${ title }": [
-        "Zu ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gehe zu ${ vpnName }"
       ]
     },
     "Error message": {
@@ -2847,6 +2833,103 @@
         "Sie können auch ${ refresh } oder später erneut versuchen."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-Anwendungen"
+      ],
+      "Go to ${ title }": [
+        "Zu ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Gehe zu ${ vpnName }"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Überfällige Rechnung"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Schlüssel an ${ methodTo } gesendet"
+      ],
+      "Verification successful": [
+        "Verifizierung erfolgreich"
+      ],
+      "Email address copied to clipboard": [
+        "E-Mail-Adresse in Zwischenablage kopiert"
+      ],
+      "Bug reported": [
+        "Fehler gemeldet"
+      ],
+      "Contact saved": [
+        "Kontakt gespeichert"
+      ],
+      "Contacts deleted": [
+        "Kontakte gelöscht"
+      ],
+      "Contact deleted": [
+        "Kontakt gelöscht",
+        "Kontakte gelöscht"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Fingerabdruck in Zwischenablage kopiert"
+      ],
+      "Preferences saved": [
+        "Einstellungen gespeichert"
+      ],
+      "Contact group deleted": [
+        "Kontaktgruppe gelöscht",
+        "Kontaktgruppen gelöscht"
+      ],
+      "Phone number copied to clipboard": [
+        "Telefonnummer in Zwischenablage kopiert"
+      ],
+      "Address copied to clipboard": [
+        "Adresse in Zwischenablage kopiert"
+      ],
+      "You have successfully unsubscribed": [
+        "Sie haben Sich erfolgreich abgemeldet"
+      ],
+      "Preference saved": [
+        "Einstellung gespeichert"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Tastaturkürzel-Einstellungen aktualisiert"
+      ],
+      "Recovery has started.": [
+        "Wiederherstellung wurde gestartet."
+      ],
+      "${ nameElement } renamed successfully": [
+        "${ nameElement } erfolgreich umbenannt"
+      ],
+      "\"${ formattedName }\" created successfully": [
+        "„${ formattedName }” erfolgreich erstellt"
+      ],
+      "The link to your file was successfully copied.": [
+        "Der Link zu Ihrer Datei wurde erfolgreich kopiert."
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        "Ihre Dateien wurden erfolgreich in „Meine Dateien” wiederhergestellt."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-Mail"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Keine Verifizierungsmethode verfügbar"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
@@ -2864,9 +2947,6 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachten Sie, dass Ihr Konto durch die Wahl dieser Zahlungsmethode nicht sofort umgestellt werden kann. Wir werden Ihr Konto aktualisieren, sobald die Zahlung eingegangen ist."
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Sind Sie sicher, dass Sie diesen Kontakt dauerhaft löschen möchten?"
@@ -2906,72 +2986,11 @@
       "Contacts could not be merged": [
         "Kontakte konnten nicht zusammengeführt werden"
       ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bitte beachten Sie, dass Ihr Konto durch die Wahl dieser Zahlungsmethode nicht sofort umgestellt werden kann. Wir werden Ihr Konto aktualisieren, sobald die Zahlung eingegangen ist."
+      ],
       "Are you sure you want to discard your import?": [
         "Möchten Sie diesen Importauftrag wirklich verwerfen?"
-      ]
-    },
-    "Success": {
-      "Email address copied to clipboard": [
-        "E-Mail-Adresse in Zwischenablage kopiert"
-      ],
-      "Bug reported": [
-        "Fehler gemeldet"
-      ],
-      "You have successfully unsubscribed": [
-        "Sie haben Sich erfolgreich abgemeldet"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Schlüssel an ${ methodTo } gesendet"
-      ],
-      "Verification successful": [
-        "Verifizierung erfolgreich"
-      ],
-      "Contact saved": [
-        "Kontakt gespeichert"
-      ],
-      "Contacts deleted": [
-        "Kontakte gelöscht"
-      ],
-      "Contact deleted": [
-        "Kontakt gelöscht",
-        "Kontakte gelöscht"
-      ],
-      "Fingerprint copied to clipboard": [
-        "Fingerabdruck in Zwischenablage kopiert"
-      ],
-      "Preferences saved": [
-        "Einstellungen gespeichert"
-      ],
-      "Contact group deleted": [
-        "Kontaktgruppe gelöscht",
-        "Kontaktgruppen gelöscht"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefonnummer in Zwischenablage kopiert"
-      ],
-      "Address copied to clipboard": [
-        "Adresse in Zwischenablage kopiert"
-      ],
-      "Preference saved": [
-        "Einstellung gespeichert"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Tastaturkürzel-Einstellungen aktualisiert"
-      ],
-      "Recovery has started.": [
-        "Wiederherstellung wurde gestartet."
-      ],
-      "${ nameElement } renamed successfully": [
-        "${ nameElement } erfolgreich umbenannt"
-      ],
-      "\"${ formattedName }\" created successfully": [
-        "„${ formattedName }” erfolgreich erstellt"
-      ],
-      "The link to your file was successfully copied.": [
-        "Der Link zu Ihrer Datei wurde erfolgreich kopiert."
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Ihre Dateien wurden erfolgreich in „Meine Dateien” wiederhergestellt."
       ]
     },
     "Header": {
@@ -3169,6 +3188,544 @@
         "Bildschirmfoto(s) anhängen"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Gut lesbar"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Spalte"
+      ],
+      "Row": [
+        "Zeile"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximiert"
+      ]
+    },
+    "Label for contact group name": {
+      "Name": [
+        "Name"
+      ]
+    },
+    "Placeholder for contact group name": {
+      "Name": [
+        "Name"
+      ]
+    },
+    "Label for contact group color": {
+      "Color": [
+        "Farbe"
+      ]
+    },
+    "Tooltip": {
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. „Klartext” bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Verschlüsselte Daten mit bestätigter digitaler Signatur"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "E-Mail-Verschlüsselung erzwingt eine E-Mail-Signatur zur Authentifizierung Ihrer gesendeten Nachrichten"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Das digitale Signieren von E-Mails ermöglicht die Authentifizierung der von Ihnen gesendeten Nachrichten"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Wählen Sie das PGP-Schema, das beim Signieren oder Verschlüsseln für einen Benutzer verwendet werden soll. Beachten Sie, dass PGP/Inline das Senden von Klartextnachrichten erzwingt."
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Das Hochladen eines öffentlichen Schlüssels ermöglicht das Senden von Ende-zu-Ende verschlüsselten E-Mails an diese E-Mail-Adresse"
+      ],
+      "You do not have any contacts to export": [
+        "Sie haben keine Kontakte zum exportieren"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Verwenden Sie mehrere E-Mail-Adressen / Aliasnamen, die mit Ihrem Konto verknüpft sind, z. B. nutzername2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) bei ProtonMail, z.B. max.musterman@beispiel.de"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Verwenden Sie eine persönliche Adresse benutzername@pm.me um E-Mails zu senden"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Unterstützung für Dateiübertragungsprotokolle wie BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Schützt vor Bedrohungen der VPN-Privatsphäre, indem Ihr Internet-Verkehr über mehrere Server geleitet wird."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Sie erhalten Zugang zu allen kostenpflichtigen Funktionen sowohl für ProtonVPN als auch für ProtonMail (der verschlüsselte E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName }, z. B. max.mustermann@beispiel.de"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Erstellen Sie mehrere mit Ihrem Konto verknüpfte E-Mail-Adressen, z. B. username2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Rabatt für jährliche Zahlungsweise eingelöst"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Rabatt für zweijährigen Abrechnungszeitraum"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
+      ],
+      "Expired sharing link": [
+        "Abgelaufener Freigabelink"
+      ],
+      "Inactive sharing link": [
+        "Inaktiver Freigabelink"
+      ],
+      "Active sharing link": [
+        "Aktiver Freigabelink"
+      ]
+    },
+    "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
+      ],
+      "No contacts exported.": [
+        "Keine Kontakte exportiert."
+      ],
+      "Progress: ${ combinedProgress }%": [
+        "Fortschritt: ${ combinedProgress }%"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht.",
+        "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt.",
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
+      ],
+      "No contacts merged.": [
+        "Keine Kontakte zusammengeführt."
+      ]
+    },
+    "Description": {
+      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie die Datei mit allen Ihren exportierten Kontakten herunterladen."
+      ],
+      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie diesen Dialog schließen."
+      ],
+      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Kontakte werden gelöscht… Dies kann ein paar Minuten dauern. Wenn der Vorgang abgeschlossen ist, können Sie dieses Dialogfenster schließen."
+      ],
+      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
+        "Verwenden Sie Ziehen und Ablegen, um die Priorität der Zusammenführung zwischen den Kontakten zu bewerten. Wählen Sie jene Kontakte ab, die Sie nicht zusammenführen möchten."
+      ],
+      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
+        "Sie können die Kontakte, die Sie weder zusammenführen noch behalten möchten, zum Löschen vormerken. Das Löschen erfolgt erst nach dem Klicken auf die Schaltfläche „Zusammenführen”"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf.",
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
+      ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Es scheint, dass die von Ihnen importierte Kontaktliste einige Gruppen enthält. Bitte überprüfen Sie, wie diese Gruppen importiert werden sollen."
+      ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie diesen Dialog schließen."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Name"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Action": [
+        "Aktion"
+      ],
+      "Fingerprint": [
+        "Fingerabdruck"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
+      "Expires": [
+        "Gültig bis"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Aktionen"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Kontaktgruppe aktualisiert"
+      ],
+      "Contact group created": [
+        "Kontaktgruppe erstellt"
+      ],
+      "File or folder \"${ filename }\" is already uploading": [
+        "Die Datei oder der Ordner „${ filename }” wird bereits hochgeladen"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen",
+        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen"
+      ],
+      "File or folder is missing a name": [
+        "Der Datei oder dem Ordner fehlt ein Name"
+      ],
+      "Not enough space to upload ${ formattedTotal }": [
+        "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
+      ],
+      "Failed to upload files: ${ err }": [
+        "Hochladen von Dateien fehlgeschlagen: ${ err }"
+      ],
+      "Move ${ movingCount } file": [
+        "${ movingCount } Datei verschieben",
+        "${ movingCount } Dateien verschieben"
+      ],
+      "Move ${ movingCount } folder": [
+        "${ movingCount } Ordner verschieben",
+        "${ movingCount } Ordner verschieben"
+      ],
+      "Move ${ movingCount } item": [
+        "${ movingCount } Element verschieben",
+        "${ movingCount } Elemente verschieben"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "Failed to move, please try again": [
+        "Verschieben fehlgeschlagen, bitte versuchen Sie es erneut"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "${ itemsToMoveCount } Datei verschieben",
+        "${ itemsToMoveCount } Dateien verschieben"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "${ itemsToMoveCount } Ordner verschieben",
+        "${ itemsToMoveCount } Ordner verschieben"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "${ itemsToMoveCount } Element verschieben",
+        "${ itemsToMoveCount } Elemente verschieben"
+      ],
+      "Your settings have been changed successfully.": [
+        "Ihre Einstellungen wurden erfolgreich geändert."
+      ],
+      "The link to your file was deleted.": [
+        "Der Link zu Ihrer Datei wurde gelöscht."
+      ],
+      "\"${ firstItemName }\" deleted permanently from trash": [
+        "„${ firstItemName }” dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "${ deletedItemsCount } file deleted permanently from trash": [
+        "${ deletedItemsCount } Datei dauerhaft aus dem Papierkorb gelöscht",
+        "${ deletedItemsCount } Dateien dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "${ deletedItemsCount } folder deleted permanently from trash": [
+        "${ deletedItemsCount } Ordner dauerhaft aus dem Papierkorb gelöscht",
+        "${ deletedItemsCount } Ordner dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "${ deletedItemsCount } item deleted permanently from trash": [
+        "${ deletedItemsCount } Element dauerhaft aus dem Papierkorb gelöscht",
+        "${ deletedItemsCount } Elemente dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "\"${ firstItemName }\" moved to trash": [
+        "„${ firstItemName }” in den Papierkorb verschoben"
+      ],
+      "${ trashedLinksCount } file moved to trash": [
+        "${ trashedLinksCount } Datei in den Papierkorb verschoben",
+        "${ trashedLinksCount } Dateien in den Papierkorb verschoben"
+      ],
+      "${ trashedLinksCount } folder moved to trash": [
+        "${ trashedLinksCount } Ordner in den Papierkorb verschoben",
+        "${ trashedLinksCount } Dateien in den Papierkorb verschoben"
+      ],
+      "${ trashedLinksCount } item moved to trash": [
+        "${ trashedLinksCount } Element in den Papierkorb verschoben",
+        "${ trashedLinksCount } Elemente in den Papierkorb verschoben"
+      ],
+      "\"${ firstItemName }\" restored from trash": [
+        "„${ firstItemName }” aus Papierkorb wiederhergestellt"
+      ],
+      "${ restoredItemsCount } file restored from trash": [
+        "${ restoredItemsCount } Datei aus dem Papierkorb wiederhergestellt",
+        "${ restoredItemsCount } Dateien aus dem Papierkorb wiederhergestellt"
+      ],
+      "${ restoredItemsCount } folder restored from trash": [
+        "${ restoredItemsCount } Ordner aus Papierkorb wiederhergestellt",
+        "${ restoredItemsCount } Ordner aus dem Papierkorb wiederhergestellt"
+      ],
+      "${ restoredItemsCount } item restored from trash": [
+        "${ restoredItemsCount } Element aus Papierkorb wiederhergestellt",
+        "${ restoredItemsCount } Elemente aus dem Papierkorb wiederhergestellt"
+      ],
+      "An item with the name \"${ name }\" already exists in the current folder": [
+        "Ein Element mit dem Namen „${ name }” existiert bereits im aktuellen Ordner"
+      ],
+      "\"${ _firstItemName }\" successfully moved": [
+        "„${ _firstItemName }” erfolgreich verschoben"
+      ],
+      "${ movedLinksCount } file successfully moved": [
+        "${ movedLinksCount } Datei erfolgreich verschoben",
+        "${ movedLinksCount } Dateien erfolgreich verschoben"
+      ],
+      "${ movedLinksCount } folder successfully moved": [
+        "${ movedLinksCount } Ordner erfolgreich verschoben",
+        "${ movedLinksCount } Ordner erfolgreich verschoben"
+      ],
+      "${ movedLinksCount } item successfully moved": [
+        "${ movedLinksCount } Element erfolgreich verschoben",
+        "${ movedLinksCount } Elemente erfolgreich verschoben"
+      ],
+      "\"${ firstItemName }\" failed to be moved": [
+        "„${ firstItemName }” konnte nicht verschoben werden"
+      ],
+      "${ failedMovesCount } file failed to be moved": [
+        "${ failedMovesCount } Datei konnte nicht verschoben werden",
+        "${ failedMovesCount } Dateien konnten nicht verschoben werden"
+      ],
+      "${ failedMovesCount } folder failed to be moved": [
+        "${ failedMovesCount } Ordner konnte nicht verschoben werden",
+        "${ failedMovesCount } Ordner konnten nicht verschoben werden"
+      ],
+      "${ failedMovesCount } item failed to be moved": [
+        "${ failedMovesCount } Element konnte nicht verschoben werden",
+        "${ failedMovesCount } Elemente konnten nicht verschoben werden"
+      ],
+      "${ deletedCount } link to your file was deleted.": [
+        "${ deletedCount } Link zu Ihrer Datei wurde gelöscht.",
+        "${ deletedCount } Links zu Ihren Dateien wurden gelöscht."
+      ],
+      "The link to your file failed to be deleted.": [
+        "Der Link zu Ihrer Datei konnte nicht gelöscht werden."
+      ],
+      "${ failedCount } link to your file failed to be deleted.": [
+        "${ failedCount } Link zu Ihrer Datei konnte nicht gelöscht werden.",
+        "${ failedCount } Links zu Ihren Dateien konnten nicht gelöscht werden."
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Automatisch"
+      ],
+      "Plain text": [
+        "Klartext"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Standardvorgabe verwenden (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Primär"
+      ],
+      "Verification only": [
+        "Nur zur Verifizierung"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Vertrauenswürdig"
+      ],
+      "Revoked": [
+        "Widerrufen"
+      ],
+      "Expired": [
+        "Abgelaufen"
+      ]
+    },
+    "TableHeader": {
+      "Name": [
+        "Name"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Actions": [
+        "Aktionen"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "CSV field": [
+        "CSV-Feld"
+      ],
+      "vCard field": [
+        "vCard-Feld"
+      ],
+      "Values": [
+        "Werte"
+      ],
+      "Location": [
+        "Ort"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Modified": [
+        "Geändert"
+      ],
+      "Deleted": [
+        "Gelöscht"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
+      "# of accesses": [
+        "Anzahl der Zugriffe"
+      ],
+      "Expires": [
+        "Ablaufdatum"
+      ]
+    },
+    "Actions message": {
+      "You don't have any groups.": [
+        "Sie haben keine Gruppen."
+      ],
+      "No results found.": [
+        "Keine Suchergebnisse gefunden."
+      ],
+      "Please try another search term.": [
+        "Bitte versuchen Sie einen anderen Suchbegriff."
+      ],
+      "You don't have any contacts.": [
+        "Sie haben keine Kontakte."
+      ],
+      "${ addContact } or ${ importContact }.": [
+        "${ addContact } oder ${ importContact }."
+      ]
+    },
+    "Info, no need for singular": {
+      "Multiple contacts look identical. ${ mergeAction }": [
+        "Mehrere Kontakte sehen identisch aus. ${ mergeAction }"
+      ]
+    },
+    "Error notification": {
+      "First name and last name cannot be unchecked at the same time": [
+        "Vor- und Nachname können nicht gleichzeitig abgewählt werden"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "In der hochgeladenen CSV-Datei haben wir den folgenden Felder erkannt. Wählen Sie diejenigen aus, die Sie importieren möchten."
+      ],
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Außerdem haben wir automatisch CSV-Felder mit vCard-Feldern abgeglichen. Sie können diese Übereinstimmung manuell überprüfen und ändern."
+      ]
+    },
+    "Option": {
+      "Add to existing group": [
+        "Zu existierender Gruppe hinzufügen"
+      ],
+      "Create new group": [
+        "Neue Gruppe erstellen"
+      ],
+      "Ignore group": [
+        "Gruppe ignorieren"
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } Kontakt",
+        "${ totalContacts } Kontakte"
+      ]
+    },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Wenn Sie jetzt verlassen, können einige Kontakte nicht importiert werden."
+      ]
+    },
+    "Import calendar": {
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Kontakte werden verschlüsselt und hinzugefügt: ${ totalImported }/${ totalToImport }"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Kontakt ${ contactId }: "
+      ]
+    },
+    "Info on errors": {
+      "Click for details": [
+        "Klicken, um Details anzuzeigen"
+      ]
+    },
+    "Import contacts warning": {
+      "for now": [
+        "derzeit"
+      ],
+      "ProtonContacts does not support ${ forNow }:": [
+        "ProtonContacts unterstützt ${ forNow } nicht:"
+      ]
+    },
+    "Import warning": {
+      "No contact can be imported. Click for details": [
+        "Kein Kontakt kann importiert werden. Klicken, um Details anzuzeigen"
+      ],
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Klicken, um Details anzuzeigen"
+      ]
+    },
+    "Import calendar warning": {
+      "vCard versions < 3.0": [
+        "vCard • Versionen < 3.0"
+      ]
+    },
+    "Import contacts": {
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in Ihrer Kontaktliste angezeigt.",
+        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in Ihrer Kontaktliste angezeigt."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Beim Verschlüsseln und Hinzufügen Ihrer Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakten erfolgreich importiert."
+      ]
+    },
+    "Import contact": {
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Beim Verschlüsseln und Hinzufügen Ihres Kontakts ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden.",
+        "Beim Verschlüsseln und Hinzufügen Ihrer Kontakte ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu Ihrer Kontaktliste hinzugefügt",
+        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu Ihrer Kontaktliste hinzugefügt"
+      ]
+    },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Bitte kontaktieren Sie uns unter ${ email } für Anweisungen, wie Sie uns mit Bargeld bezahlen können."
@@ -3275,86 +3832,6 @@
       ],
       "Unlimited": [
         "Unbegrenzt"
-      ]
-    },
-    "Tooltip": {
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Verwenden Sie mehrere E-Mail-Adressen / Aliasnamen, die mit Ihrem Konto verknüpft sind, z. B. nutzername2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) bei ProtonMail, z.B. max.musterman@beispiel.de"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Verwenden Sie eine persönliche Adresse benutzername@pm.me um E-Mails zu senden"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Unterstützung für Dateiübertragungsprotokolle wie BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Schützt vor Bedrohungen der VPN-Privatsphäre, indem Ihr Internet-Verkehr über mehrere Server geleitet wird."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugang zu allen kostenpflichtigen Funktionen sowohl für ProtonVPN als auch für ProtonMail (der verschlüsselte E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName }, z. B. max.mustermann@beispiel.de"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Erstellen Sie mehrere mit Ihrem Konto verknüpfte E-Mail-Adressen, z. B. username2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Rabatt für jährliche Zahlungsweise eingelöst"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Rabatt für zweijährigen Abrechnungszeitraum"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. „Klartext” bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
-      ],
-      "Encrypted data with verified digital signature": [
-        "Verschlüsselte Daten mit bestätigter digitaler Signatur"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-Mail-Verschlüsselung erzwingt eine E-Mail-Signatur zur Authentifizierung Ihrer gesendeten Nachrichten"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Das digitale Signieren von E-Mails ermöglicht die Authentifizierung der von Ihnen gesendeten Nachrichten"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Wählen Sie das PGP-Schema, das beim Signieren oder Verschlüsseln für einen Benutzer verwendet werden soll. Beachten Sie, dass PGP/Inline das Senden von Klartextnachrichten erzwingt."
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Das Hochladen eines öffentlichen Schlüssels ermöglicht das Senden von Ende-zu-Ende verschlüsselten E-Mails an diese E-Mail-Adresse"
-      ],
-      "You do not have any contacts to export": [
-        "Sie haben keine Kontakte zum exportieren"
-      ],
-      "Expired sharing link": [
-        "Abgelaufener Freigabelink"
-      ],
-      "Inactive sharing link": [
-        "Inaktiver Freigabelink"
-      ],
-      "Active sharing link": [
-        "Aktiver Freigabelink"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3696,486 +4173,6 @@
         "Bitcoin"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Überfällige Rechnung"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-Mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuell"
-      ],
-      "No verification method available": [
-        "Keine Verifizierungsmethode verfügbar"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Name"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Name"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Farbe"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
-      ],
-      "No contacts exported.": [
-        "Keine Kontakte exportiert."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Fortschritt: ${ combinedProgress }%"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht.",
-        "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt.",
-        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
-      ],
-      "No contacts merged.": [
-        "Keine Kontakte zusammengeführt."
-      ]
-    },
-    "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie die Datei mit allen Ihren exportierten Kontakten herunterladen."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie diesen Dialog schließen."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Kontakte werden gelöscht… Dies kann ein paar Minuten dauern. Wenn der Vorgang abgeschlossen ist, können Sie dieses Dialogfenster schließen."
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Verwenden Sie Ziehen und Ablegen, um die Priorität der Zusammenführung zwischen den Kontakten zu bewerten. Wählen Sie jene Kontakte ab, die Sie nicht zusammenführen möchten."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Sie können die Kontakte, die Sie weder zusammenführen noch behalten möchten, zum Löschen vormerken. Das Löschen erfolgt erst nach dem Klicken auf die Schaltfläche „Zusammenführen”"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
-      ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Es scheint, dass die von Ihnen importierte Kontaktliste einige Gruppen enthält. Bitte überprüfen Sie, wie diese Gruppen importiert werden sollen."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie diesen Dialog schließen."
-      ]
-    },
-    "Table header": {
-      "Name": [
-        "Name"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Action": [
-        "Aktion"
-      ],
-      "Fingerprint": [
-        "Fingerabdruck"
-      ],
-      "Created": [
-        "Erstellt"
-      ],
-      "Expires": [
-        "Gültig bis"
-      ],
-      "Type": [
-        "Typ"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Aktionen"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Kontaktgruppe aktualisiert"
-      ],
-      "Contact group created": [
-        "Kontaktgruppe erstellt"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Die Datei oder der Ordner „${ filename }” wird bereits hochgeladen"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen",
-        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen"
-      ],
-      "File or folder is missing a name": [
-        "Der Datei oder dem Ordner fehlt ein Name"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
-      ],
-      "Failed to upload files: ${ err }": [
-        "Hochladen von Dateien fehlgeschlagen: ${ err }"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } Datei verschieben",
-        "${ movingCount } Dateien verschieben"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } Ordner verschieben",
-        "${ movingCount } Ordner verschieben"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } Element verschieben",
-        "${ movingCount } Elemente verschieben"
-      ],
-      "Failed to move, please try again": [
-        "Verschieben fehlgeschlagen, bitte versuchen Sie es erneut"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } Datei verschieben",
-        "${ itemsToMoveCount } Dateien verschieben"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } Ordner verschieben",
-        "${ itemsToMoveCount } Ordner verschieben"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } Element verschieben",
-        "${ itemsToMoveCount } Elemente verschieben"
-      ],
-      "Your settings have been changed successfully.": [
-        "Ihre Einstellungen wurden erfolgreich geändert."
-      ],
-      "The link to your file was deleted.": [
-        "Der Link zu Ihrer Datei wurde gelöscht."
-      ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "„${ firstItemName }” dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "${ deletedItemsCount } file deleted permanently from trash": [
-        "${ deletedItemsCount } Datei dauerhaft aus dem Papierkorb gelöscht",
-        "${ deletedItemsCount } Dateien dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "${ deletedItemsCount } folder deleted permanently from trash": [
-        "${ deletedItemsCount } Ordner dauerhaft aus dem Papierkorb gelöscht",
-        "${ deletedItemsCount } Ordner dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } Element dauerhaft aus dem Papierkorb gelöscht",
-        "${ deletedItemsCount } Elemente dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "\"${ firstItemName }\" moved to trash": [
-        "„${ firstItemName }” in den Papierkorb verschoben"
-      ],
-      "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } Datei in den Papierkorb verschoben",
-        "${ trashedLinksCount } Dateien in den Papierkorb verschoben"
-      ],
-      "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } Ordner in den Papierkorb verschoben",
-        "${ trashedLinksCount } Dateien in den Papierkorb verschoben"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } Element in den Papierkorb verschoben",
-        "${ trashedLinksCount } Elemente in den Papierkorb verschoben"
-      ],
-      "\"${ firstItemName }\" restored from trash": [
-        "„${ firstItemName }” aus Papierkorb wiederhergestellt"
-      ],
-      "${ restoredItemsCount } file restored from trash": [
-        "${ restoredItemsCount } Datei aus dem Papierkorb wiederhergestellt",
-        "${ restoredItemsCount } Dateien aus dem Papierkorb wiederhergestellt"
-      ],
-      "${ restoredItemsCount } folder restored from trash": [
-        "${ restoredItemsCount } Ordner aus Papierkorb wiederhergestellt",
-        "${ restoredItemsCount } Ordner aus dem Papierkorb wiederhergestellt"
-      ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } Element aus Papierkorb wiederhergestellt",
-        "${ restoredItemsCount } Elemente aus dem Papierkorb wiederhergestellt"
-      ],
-      "An item with the name \"${ name }\" already exists in the current folder": [
-        "Ein Element mit dem Namen „${ name }” existiert bereits im aktuellen Ordner"
-      ],
-      "\"${ _firstItemName }\" successfully moved": [
-        "„${ _firstItemName }” erfolgreich verschoben"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } Datei erfolgreich verschoben",
-        "${ movedLinksCount } Dateien erfolgreich verschoben"
-      ],
-      "${ movedLinksCount } folder successfully moved": [
-        "${ movedLinksCount } Ordner erfolgreich verschoben",
-        "${ movedLinksCount } Ordner erfolgreich verschoben"
-      ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } Element erfolgreich verschoben",
-        "${ movedLinksCount } Elemente erfolgreich verschoben"
-      ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "„${ firstItemName }” konnte nicht verschoben werden"
-      ],
-      "${ failedMovesCount } file failed to be moved": [
-        "${ failedMovesCount } Datei konnte nicht verschoben werden",
-        "${ failedMovesCount } Dateien konnten nicht verschoben werden"
-      ],
-      "${ failedMovesCount } folder failed to be moved": [
-        "${ failedMovesCount } Ordner konnte nicht verschoben werden",
-        "${ failedMovesCount } Ordner konnten nicht verschoben werden"
-      ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } Element konnte nicht verschoben werden",
-        "${ failedMovesCount } Elemente konnten nicht verschoben werden"
-      ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } Link zu Ihrer Datei wurde gelöscht.",
-        "${ deletedCount } Links zu Ihren Dateien wurden gelöscht."
-      ],
-      "The link to your file failed to be deleted.": [
-        "Der Link zu Ihrer Datei konnte nicht gelöscht werden."
-      ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } Link zu Ihrer Datei konnte nicht gelöscht werden.",
-        "${ failedCount } Links zu Ihren Dateien konnten nicht gelöscht werden."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Automatisch"
-      ],
-      "Plain text": [
-        "Klartext"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Standardvorgabe verwenden (${ defaultValueText })"
-      ]
-    },
-    "Key badge": {
-      "Primary": [
-        "Primär"
-      ],
-      "Verification only": [
-        "Nur zur Verifizierung"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Vertrauenswürdig"
-      ],
-      "Revoked": [
-        "Widerrufen"
-      ],
-      "Expired": [
-        "Abgelaufen"
-      ]
-    },
-    "TableHeader": {
-      "Name": [
-        "Name"
-      ],
-      "Address": [
-        "Adresse"
-      ],
-      "Actions": [
-        "Aktionen"
-      ],
-      "Import": [
-        "Importieren"
-      ],
-      "CSV field": [
-        "CSV-Feld"
-      ],
-      "vCard field": [
-        "vCard-Feld"
-      ],
-      "Values": [
-        "Werte"
-      ],
-      "Location": [
-        "Ort"
-      ],
-      "Type": [
-        "Typ"
-      ],
-      "Modified": [
-        "Geändert"
-      ],
-      "Deleted": [
-        "Gelöscht"
-      ],
-      "Size": [
-        "Größe"
-      ],
-      "Created": [
-        "Erstellt"
-      ],
-      "# of accesses": [
-        "Anzahl der Zugriffe"
-      ],
-      "Expires": [
-        "Ablaufdatum"
-      ]
-    },
-    "Actions message": {
-      "You don't have any groups.": [
-        "Sie haben keine Gruppen."
-      ],
-      "No results found.": [
-        "Keine Suchergebnisse gefunden."
-      ],
-      "Please try another search term.": [
-        "Bitte versuchen Sie einen anderen Suchbegriff."
-      ],
-      "You don't have any contacts.": [
-        "Sie haben keine Kontakte."
-      ],
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } oder ${ importContact }."
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Mehrere Kontakte sehen identisch aus. ${ mergeAction }"
-      ]
-    },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Vor- und Nachname können nicht gleichzeitig abgewählt werden"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "In der hochgeladenen CSV-Datei haben wir den folgenden Felder erkannt. Wählen Sie diejenigen aus, die Sie importieren möchten."
-      ],
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Außerdem haben wir automatisch CSV-Felder mit vCard-Feldern abgeglichen. Sie können diese Übereinstimmung manuell überprüfen und ändern."
-      ]
-    },
-    "Option": {
-      "Add to existing group": [
-        "Zu existierender Gruppe hinzufügen"
-      ],
-      "Create new group": [
-        "Neue Gruppe erstellen"
-      ],
-      "Ignore group": [
-        "Gruppe ignorieren"
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } Kontakt",
-        "${ totalContacts } Kontakte"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Wenn Sie jetzt verlassen, können einige Kontakte nicht importiert werden."
-      ]
-    },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Kontakte werden verschlüsselt und hinzugefügt: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Kontakt ${ contactId }: "
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Klicken, um Details anzuzeigen"
-      ]
-    },
-    "Import contacts warning": {
-      "for now": [
-        "derzeit"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts unterstützt ${ forNow } nicht:"
-      ]
-    },
-    "Import warning": {
-      "No contact can be imported. Click for details": [
-        "Kein Kontakt kann importiert werden. Klicken, um Details anzuzeigen"
-      ],
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Klicken, um Details anzuzeigen"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "vCard • Versionen < 3.0"
-      ]
-    },
-    "Import contacts": {
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in Ihrer Kontaktliste angezeigt.",
-        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in Ihrer Kontaktliste angezeigt."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Beim Verschlüsseln und Hinzufügen Ihrer Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakten erfolgreich importiert."
-      ]
-    },
-    "Import contact": {
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Beim Verschlüsseln und Hinzufügen Ihres Kontakts ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden.",
-        "Beim Verschlüsseln und Hinzufügen Ihrer Kontakte ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu Ihrer Kontaktliste hinzugefügt",
-        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu Ihrer Kontaktliste hinzugefügt"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Gut lesbar"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Spalte"
-      ],
-      "Row": [
-        "Zeile"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximiert"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Hochladen"
@@ -4215,26 +4212,6 @@
         "Hinweis: Der Dienst wird neu geladen, nachdem Sie auf die Schaltfläche „Übernehmen“ klicken."
       ]
     },
-    "Validation Error": {
-      "Name must not end with a space": [
-        "Name darf nicht mit einem Leerzeichen beginnen"
-      ],
-      "Name must not begin with a space": [
-        "Name darf nicht mit einem Leerzeichen enden"
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein"
-      ],
-      "\"${ str }\" is not a valid name": [
-        "„${ str }” ist kein gültiger Name"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Der Name darf weder unsichtbaren Zeichen noch / oder \\ enthalten."
-      ],
-      "Name must not be empty": [
-        "Bitte Name eingeben"
-      ]
-    },
     "Onboarding Proton Drive Action": {
       "Upgrade account": [
         "Konto erweitern"
@@ -4266,6 +4243,26 @@
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
         "Schützen Sie alle Ihre Dateien mit Ende-zu-Ende-Verschlüsselung. Verwenden Sie ${ appName }, um Ihre Dateien sicher zu speichern und zu teilen."
+      ]
+    },
+    "Validation Error": {
+      "Name must not end with a space": [
+        "Name darf nicht mit einem Leerzeichen beginnen"
+      ],
+      "Name must not begin with a space": [
+        "Name darf nicht mit einem Leerzeichen enden"
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+        "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "\"${ str }\" is not a valid name": [
+        "„${ str }” ist kein gültiger Name"
+      ],
+      "Name cannot include invisible characters, / or \\.": [
+        "Der Name darf weder unsichtbaren Zeichen noch / oder \\ enthalten."
+      ],
+      "Name must not be empty": [
+        "Bitte Name eingeben"
       ]
     },
     "blackfriday Promo title, need to be short": {

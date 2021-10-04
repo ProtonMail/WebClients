@@ -59,12 +59,6 @@
       "Request timed out.": [
         "A kérés túllépte az időkorlátot."
       ],
-      "Signature verification failed": [
-        "Aláírás ellenőrzése sikertelen"
-      ],
-      "Could not find address ${ email }.": [
-        "Nem található a cím: ${ email }."
-      ],
       "Missing signature": [
         "Hiányzó aláírás"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "A ${ emailAddress } cím kulcsadatait nem sikerült kibontani"
+      ],
+      "Signature verification failed": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "Could not find address ${ email }.": [
+        "Nem található a cím: ${ email }."
       ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Hitelesítési hiba."
       ],
-      "Email address invalid": [
-        "Érvénytelen e-mail cím"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-      ],
       "The composer failed to load.": [
         "A szerkesztőt nem sikerült betölteni."
       ],
       "Please refresh the page.": [
         "Kérjük frissítse az oldalt."
+      ],
+      "Email address invalid": [
+        "Érvénytelen e-mail cím"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
       ],
       "Incorrect mailbox password. Please try again": [
         "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
@@ -371,7 +371,7 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         ""
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         ""
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
@@ -549,28 +549,6 @@
       "No results found": [
         "Nincs találat"
       ],
-      "Week": [
-        "Hét"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } tag)",
-        "(${ memberCount } tagok)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Egy új böngésző fülön a következő címet fogja megnyitni:"
-      ],
-      "Learn more": [
-        "További információk"
-      ],
-      "Loading": [
-        "Betöltés"
-      ],
       "Insert image": [
         "Kép beillesztése"
       ],
@@ -646,6 +624,28 @@
       "Plain text": [
         "Egyszerű szöveg"
       ],
+      "Week": [
+        "Hét"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tagok)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Egy új böngésző fülön a következő címet fogja megnyitni:"
+      ],
+      "Learn more": [
+        "További információk"
+      ],
+      "Loading": [
+        "Betöltés"
+      ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
       ],
@@ -673,12 +673,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
@@ -690,6 +684,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
@@ -1745,11 +1745,6 @@
         "A mobil eszközével olvassa be a QR kódot vagy nyissa meg a címet: ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Ismeretlen"
@@ -1794,6 +1789,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1972,10 +1972,10 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
+      "Syncing": [
         ""
       ],
-      "Syncing": [
+      "Not synced": [
         ""
       ]
     },
@@ -2010,6 +2010,12 @@
         ""
       ],
       "Unsupported event": [
+        ""
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
         ""
       ],
       "Invalid method": [
@@ -2611,38 +2617,8 @@
       "Close": [
         "Bezárás"
       ],
-      "More info: ${ safeTitle }": [
-        "További információk: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Jóváhagyás"
-      ],
       "Cancel": [
         "Mégsem"
-      ],
-      "Submit": [
-        "Küldés"
-      ],
-      "Close modal": [
-        "Ablak bezárása"
-      ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" beállítás használata"
-      ],
-      "Remove": [
-        "Eltávolítás"
-      ],
-      "Next month": [
-        "Következő hónap"
-      ],
-      "Previous month": [
-        "Előző hónap"
-      ],
-      "Load image": [
-        "Kép betöltése"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Link megnyitásának jóváhagyása: ${ link }"
       ],
       "Save": [
         "Mentés"
@@ -2706,6 +2682,36 @@
       ],
       "Underline": [
         "Aláhúzott"
+      ],
+      "More info: ${ safeTitle }": [
+        "További információk: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Jóváhagyás"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Close modal": [
+        "Ablak bezárása"
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" beállítás használata"
+      ],
+      "Remove": [
+        "Eltávolítás"
+      ],
+      "Next month": [
+        "Következő hónap"
+      ],
+      "Previous month": [
+        "Előző hónap"
+      ],
+      "Load image": [
+        "Kép betöltése"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Link megnyitásának jóváhagyása: ${ link }"
       ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
@@ -3487,11 +3493,11 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
-      "Link confirmation": [
-        "Link jóváhagyása"
-      ],
       "Expand content": [
         "Tartalom kibontása"
+      ],
+      "Link confirmation": [
+        "Link jóváhagyása"
       ],
       "Keyboard Shortcuts": [
         "Gyorsbillentyűk"
@@ -3513,9 +3519,6 @@
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
-      ],
-      "Request new code": [
-        "Új kód kérése"
       ],
       "Human verification": [
         "Robot ellenőrzés"
@@ -3992,6 +3995,138 @@
       ],
       "Welcome": [
         "Üdvözöljük"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Link"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Adja meg az link címét és szövegét a kipróbáláshoz"
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Adja meg az e-mail címet és link szövegét a kipróbáláshoz"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Adja meg az telefonszámot és link szövegét a kipróbáláshoz"
+      ],
+      "Text": [
+        "Szöveg"
+      ],
+      "E.g., ": [
+        "Pl., "
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Start typing an email address": [
+        "Kezdjen el írni egy e-mail címet"
+      ],
+      "Image URL": [
+        "Kép URL"
+      ],
+      "Search name, email or group": [
+        "Név, e-mail vagy csoport keresése"
+      ],
+      "Filter groups": [
+        "Csoportok szűrése"
+      ],
+      "Search for name or email": [
+        "Név vagy e-mail cím keresése"
+      ],
+      "Search for group name": [
+        "Csoport név keresése"
+      ],
+      "Name": [
+        "Név"
+      ],
+      "OS name": [
+        "Operációs rendszer neve"
+      ],
+      "OS version": [
+        "Operációs rendszer verziója"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "A way to contact you": [
+        "Kapcsolatfelvételi lehetőség"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Browser name": [
+        "Böngésző neve"
+      ],
+      "Browser version": [
+        "Böngésző verziója"
+      ],
+      "e.g. Julia Smith": [
+        "pl. Kovács János"
+      ],
+      "ZIP": [
+        "Irányítószám"
+      ],
+      "Postal code": [
+        "Irányítószám"
+      ],
+      "Gift code": [
+        "Ajándék kód"
+      ],
+      "Type text or keyword": [
+        "Írjon be szöveget"
+      ],
+      "Subject": [
+        "Tárgy"
+      ],
+      "Write your message": [
+        "Üzenet írása"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Confirm Password": [
+        "Jelszó megerősítése"
+      ],
+      "Hint": [
+        "Emlékeztető"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "Kezdő dátum"
+      ],
+      "End date": [
+        "Befejező dátum"
+      ],
+      "Name or email address": [
+        "Név vagy e-mail cím"
+      ],
+      "Search messages": [
+        "Üzenetek keresése"
+      ],
+      "Filter folders": [
+        "Mappák szűrése"
+      ],
+      "Filter labels": [
+        "Címkék szűrése"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4525,128 +4660,6 @@
         "Archiválás is"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Pl., "
-      ],
-      "Link": [
-        "Link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Adja meg az link címét és szövegét a kipróbáláshoz"
-      ],
-      "Email address": [
-        "E-mail cím"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Adja meg az e-mail címet és link szövegét a kipróbáláshoz"
-      ],
-      "Phone number": [
-        "Telefonszám"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Adja meg az telefonszámot és link szövegét a kipróbáláshoz"
-      ],
-      "Text": [
-        "Szöveg"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Start typing an email address": [
-        "Kezdjen el írni egy e-mail címet"
-      ],
-      "Image URL": [
-        "Kép URL"
-      ],
-      "Search name, email or group": [
-        "Név, e-mail vagy csoport keresése"
-      ],
-      "Filter groups": [
-        "Csoportok szűrése"
-      ],
-      "Search for name or email": [
-        "Név vagy e-mail cím keresése"
-      ],
-      "Search for group name": [
-        "Csoport név keresése"
-      ],
-      "Name": [
-        "Név"
-      ],
-      "OS name": [
-        "Operációs rendszer neve"
-      ],
-      "OS version": [
-        "Operációs rendszer verziója"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "A way to contact you": [
-        "Kapcsolatfelvételi lehetőség"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
-      ],
-      "Browser name": [
-        "Böngésző neve"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
-      ],
-      "ZIP": [
-        "Irányítószám"
-      ],
-      "Postal code": [
-        "Irányítószám"
-      ],
-      "Gift code": [
-        "Ajándék kód"
-      ],
-      "Type text or keyword": [
-        "Írjon be szöveget"
-      ],
-      "Subject": [
-        "Tárgy"
-      ],
-      "Write your message": [
-        "Üzenet írása"
-      ],
-      "Password": [
-        "Jelszó"
-      ],
-      "Confirm Password": [
-        "Jelszó megerősítése"
-      ],
-      "Hint": [
-        "Emlékeztető"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "Kezdő dátum"
-      ],
-      "End date": [
-        "Befejező dátum"
-      ],
-      "Name or email address": [
-        "Név vagy e-mail cím"
-      ],
-      "Search messages": [
-        "Üzenetek keresése"
-      ],
-      "Filter folders": [
-        "Mappák szűrése"
-      ],
-      "Filter labels": [
-        "Címkék szűrése"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } óra",
@@ -4680,16 +4693,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
         "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        ""
       ]
     },
     "Storage": {
@@ -5385,6 +5388,11 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Feltöltés"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Kényelmes"
@@ -5407,11 +5415,6 @@
       ],
       "Maximized": [
         "Teljes méretű"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Feltöltés"
       ]
     },
     "Loading info": {

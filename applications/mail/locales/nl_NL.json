@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Het verzoek timed out."
       ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "De kerneigenschappen van ${ emailAddress } kunnen niet verkregen worden"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Could not find address ${ email }.": [
+        "Kon adres ${ email } niet vinden."
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
       "The composer failed to load.": [
         "Kon het opstelvenster niet laden."
       ],
       "Please refresh the page.": [
         "Vernieuw de pagina."
+      ],
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
       "Incorrect mailbox password. Please try again": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
@@ -272,7 +272,7 @@
         "Activeer alstublieft het zoeken naar inhoud opnieuw"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        ""
+        "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken"
       ],
       "A problem occurred, please try again": [
         "Er is een probleem opgetreden, probeer het opnieuw"
@@ -284,8 +284,8 @@
         "Neem contact op met de beheerder van uw bedrijf om dit probleem op te lossen."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "",
-        ""
+        "U kunt niet meer danéén componistenvenster tegelijk openen.",
+        "U kunt niet meer dan ${ maxActiveComposer } componistenvensters tegelijk openen."
       ],
       "Message needs to be sent first": [
         "Bericht moet eerst verzonden worden"
@@ -294,10 +294,10 @@
         "Het limiet voor de grootte van bijlagen is 25 MB."
       ],
       "This message has already been sent. A new draft has been saved.": [
-        ""
+        "Dit bericht is al verzonden. Er is een nieuw ontwerp opgeslagen."
       ],
       "This message has already been sent.": [
-        ""
+        "Dit bericht is al verstuurd."
       ],
       "Draft could not be saved. Try again.": [
         "Concept kon niet worden opgeslagen. Probeer het opnieuw."
@@ -371,8 +371,8 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         ""
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
-        ""
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
+        "Uw e-mails kunnen niet worden gedecodeerd, mogelijk als gevolg van een wachtwoord-reset. ${ learnMoreLink }"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren"
@@ -549,28 +549,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "Week": [
-        "Week"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } lid)",
-        "(${ memberCount } leden)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
-      ],
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "Loading": [
-        "Laden"
-      ],
       "Insert image": [
         "Afbeelding invoegen"
       ],
@@ -646,6 +624,28 @@
       "Plain text": [
         "Platte tekst"
       ],
+      "Week": [
+        "Week"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Loading": [
+        "Laden"
+      ],
       "Drop the file here to upload": [
         "Sleep het bestand hierheen om te uploaden"
       ],
@@ -673,12 +673,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
@@ -690,6 +684,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
@@ -1745,11 +1745,6 @@
         "Met uw mobiele apparaat, scan deze QR-Code of bezoek ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Onbekend"
@@ -1794,6 +1789,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1972,11 +1972,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
       "Syncing": [
         "Synchroniseren"
+      ],
+      "Not synced": [
+        "Niet gesynchroniseerd"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2011,6 +2011,12 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde gebeurtenis"
+      ],
+      "Empty ICS file": [
+        "Leeg ICS-bestand"
+      ],
+      "Unsupported calendar component": [
+        "Niet-ondersteunde agendacomponent"
       ],
       "Invalid method": [
         "Ongeldige methode"
@@ -2611,38 +2617,8 @@
       "Close": [
         "Sluiten"
       ],
-      "More info: ${ safeTitle }": [
-        "Meer informatie: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Bevestigen"
-      ],
       "Cancel": [
         "Annuleren"
-      ],
-      "Submit": [
-        "Versturen"
-      ],
-      "Close modal": [
-        "Sluit het venster"
-      ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
-      ],
-      "Remove": [
-        "Verwijderen"
-      ],
-      "Next month": [
-        "Volgende maand"
-      ],
-      "Previous month": [
-        "Vorige maand"
-      ],
-      "Load image": [
-        "Afbeelding laden"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
       ],
       "Save": [
         "Opslaan"
@@ -2706,6 +2682,36 @@
       ],
       "Underline": [
         "Onderstreept"
+      ],
+      "More info: ${ safeTitle }": [
+        "Meer informatie: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Close modal": [
+        "Sluit het venster"
+      ],
+      "Use “${ label }” setting": [
+        "Gebruik “${ label }”-instelling"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Previous month": [
+        "Vorige maand"
+      ],
+      "Load image": [
+        "Afbeelding laden"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Bevestig het openen van link ${ link }"
       ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
@@ -3487,11 +3493,11 @@
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
-      "Link confirmation": [
-        "Link bevestigen"
-      ],
       "Expand content": [
         "Inhoud uitvouwen"
+      ],
+      "Link confirmation": [
+        "Link bevestigen"
       ],
       "Keyboard Shortcuts": [
         "Sneltoetsen"
@@ -3513,9 +3519,6 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
       ],
       "Human verification": [
         "Persoonsverificatie"
@@ -3992,6 +3995,138 @@
       ],
       "Welcome": [
         "Welkom"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Link"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Vul de URL en weergegeven tekst in om uw link te testen"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Vul het e-mailadres en de tekst in om uw link te testen"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Vul het telefoonnummer en weergegeven tekst in om uw link te testen"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "E.g., ": [
+        "Bijv., "
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "Start typing an email address": [
+        "Voer een e-mailadres in"
+      ],
+      "Image URL": [
+        "Afbeeldings-URL"
+      ],
+      "Search name, email or group": [
+        "Zoek op naam, e-mailadres of groep"
+      ],
+      "Filter groups": [
+        "Filter groepen"
+      ],
+      "Search for name or email": [
+        "Naam of e-mailadres zoeken"
+      ],
+      "Search for group name": [
+        "Zoeken naar groepsnaam"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "OS name": [
+        "Naam besturingssysteem"
+      ],
+      "OS version": [
+        "Versie besturingssysteem"
+      ],
+      "Proton username": [
+        "Proton gebruikersnaam"
+      ],
+      "A way to contact you": [
+        "Een manier om u te contacteren"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ],
+      "Browser name": [
+        "Naam browser"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
+      "e.g. Julia Smith": [
+        "bijv. Julia Smith"
+      ],
+      "ZIP": [
+        "Postcode"
+      ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "Gift code": [
+        "Geschenkcode"
+      ],
+      "Type text or keyword": [
+        "Voer tekst of trefwoord in"
+      ],
+      "Subject": [
+        "Onderwerp"
+      ],
+      "Write your message": [
+        "Schrijf uw bericht"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Confirm Password": [
+        "Wachtwoord bevestigen"
+      ],
+      "Hint": [
+        "Hint"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "Name or email address": [
+        "Naam of e-mailadres"
+      ],
+      "Search messages": [
+        "Zoek berichten"
+      ],
+      "Filter folders": [
+        "Filter mappen"
+      ],
+      "Filter labels": [
+        "Filter op labels"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4525,128 +4660,6 @@
         "Ook archiveren"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Bijv., "
-      ],
-      "Link": [
-        "Link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Vul de URL en weergegeven tekst in om uw link te testen"
-      ],
-      "Email address": [
-        "E-mailadres"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Vul het e-mailadres en de tekst in om uw link te testen"
-      ],
-      "Phone number": [
-        "Telefoonnummer"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Vul het telefoonnummer en weergegeven tekst in om uw link te testen"
-      ],
-      "Text": [
-        "Tekst"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
-      "Start typing an email address": [
-        "Voer een e-mailadres in"
-      ],
-      "Image URL": [
-        "Afbeeldings-URL"
-      ],
-      "Search name, email or group": [
-        "Zoek op naam, e-mailadres of groep"
-      ],
-      "Filter groups": [
-        "Filter groepen"
-      ],
-      "Search for name or email": [
-        "Naam of e-mailadres zoeken"
-      ],
-      "Search for group name": [
-        "Zoeken naar groepsnaam"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "OS name": [
-        "Naam besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton gebruikersnaam"
-      ],
-      "A way to contact you": [
-        "Een manier om u te contacteren"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
-      ],
-      "Browser name": [
-        "Naam browser"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
-      ],
-      "ZIP": [
-        "Postcode"
-      ],
-      "Postal code": [
-        "Postcode"
-      ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
-      "Type text or keyword": [
-        "Voer tekst of trefwoord in"
-      ],
-      "Subject": [
-        "Onderwerp"
-      ],
-      "Write your message": [
-        "Schrijf uw bericht"
-      ],
-      "Password": [
-        "Wachtwoord"
-      ],
-      "Confirm Password": [
-        "Wachtwoord bevestigen"
-      ],
-      "Hint": [
-        "Hint"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "Begindatum"
-      ],
-      "End date": [
-        "Einddatum"
-      ],
-      "Name or email address": [
-        "Naam of e-mailadres"
-      ],
-      "Search messages": [
-        "Zoek berichten"
-      ],
-      "Filter folders": [
-        "Filter mappen"
-      ],
-      "Filter labels": [
-        "Filter op labels"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } uur",
@@ -4680,16 +4693,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
         "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        ""
       ]
     },
     "Storage": {
@@ -5385,6 +5388,11 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Uploaden"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Comfortabel"
@@ -5407,11 +5415,6 @@
       ],
       "Maximized": [
         "Gemaximaliseerd"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Uploaden"
       ]
     },
     "Loading info": {

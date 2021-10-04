@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Tiempo de espera agotado."
       ],
-      "Signature verification failed": [
-        "La verificación de la firma ha fallado"
-      ],
-      "Could not find address ${ email }.": [
-        "No se ha podido encontrar la dirección ${ email }."
-      ],
       "Missing signature": [
         "No se ha encontrado la firma"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "No se han podido extraer las propiedades de la clave para ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "La verificación de la firma ha fallado"
+      ],
+      "Could not find address ${ email }.": [
+        "No se ha podido encontrar la dirección ${ email }."
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Error de autenticación."
       ],
-      "Email address invalid": [
-        "La dirección de correo electrónico no es válida"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que está utilizando no permite que el pago sea autorizado. Por favor utilice un navegador diferente o inicie sesión a través de un ordenador."
-      ],
       "The composer failed to load.": [
         "No se pudo cargar el editor."
       ],
       "Please refresh the page.": [
         "Por favor, actualiza la página."
+      ],
+      "Email address invalid": [
+        "La dirección de correo electrónico no es válida"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "El navegador que está utilizando no permite que el pago sea autorizado. Por favor utilice un navegador diferente o inicie sesión a través de un ordenador."
       ],
       "Incorrect mailbox password. Please try again": [
         "Contraseña del buzón incorrecta. Por favor, inténtalo de nuevo"
@@ -284,8 +284,8 @@
         "Contacte con el administrador de su organización para resolver esto."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "",
-        ""
+        "No puedes abrir más de ${ maxActiveComposer } ventana de edición a la vez.",
+        "No puedes abrir más de ${ maxActiveComposer } ventanas de edición a la vez."
       ],
       "Message needs to be sent first": [
         "El mensaje debe ser enviado primero"
@@ -371,7 +371,7 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         ""
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         ""
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
@@ -549,28 +549,6 @@
       "No results found": [
         "No se han encontrado resultados"
       ],
-      "Week": [
-        "Semana"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } miembro)",
-        "(${ memberCount } miembros)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Estás a punto de abrir otra pestaña del navegador y visitar:"
-      ],
-      "Learn more": [
-        "Más información"
-      ],
-      "Loading": [
-        "Cargando"
-      ],
       "Insert image": [
         "Insertar imagen"
       ],
@@ -646,6 +624,28 @@
       "Plain text": [
         "Texto plano"
       ],
+      "Week": [
+        "Semana"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Estás a punto de abrir otra pestaña del navegador y visitar:"
+      ],
+      "Learn more": [
+        "Más información"
+      ],
+      "Loading": [
+        "Cargando"
+      ],
       "Drop the file here to upload": [
         "Arrastra el archivo aquí para cargarlo"
       ],
@@ -673,12 +673,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
       ],
@@ -690,6 +684,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos"
@@ -1152,7 +1152,7 @@
         "Cambia a ${ professionalPlan } para agregar más conexiones."
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional comienza con un usuario, y cada usuario agrega 5 GB y 5 direcciones de correo electrónico al grupo de la organización."
+        "${ mailAppName } Professional comienza con un usuario, y cada usuario añade 5 GB y 5 direcciones de correo electrónico al grupo de la organización."
       ],
       "Not customizable": [
         "No personalizable"
@@ -1649,7 +1649,7 @@
         ""
       ],
       "For increased security, activate 2FA.": [
-        ""
+        "Para una mayor seguridad, habilita 2FA."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         ""
@@ -1661,7 +1661,7 @@
         ""
       ],
       "ProtonMail can protect your business as well.": [
-        ""
+        "ProtonMail también puede proteger tu negocio."
       ],
       "Upgrade to add more addresses to your account.": [
         ""
@@ -1710,44 +1710,39 @@
         "Descarga nuestra aplicación móvil desde tu tienda de aplicaciones favorita para comunicarte de forma segura en cualquier momento."
       ],
       "You selected **${ count } conversation** from this folder": [
-        "",
-        ""
+        "Has seleccionado **${ count } conversación** de esta carpeta",
+        "Has seleccionado **${ count } conversaciones** de esta carpeta"
       ],
       "You selected **${ count } message** from this folder": [
-        "",
-        ""
+        "Has seleccionado **${ count } mensaje** de esta carpeta",
+        "Has seleccionado **${ count } mensajes** de esta carpeta"
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "",
-        ""
+        "Tienes **${ count } conversación** almacenada en esta carpeta",
+        "Tienes **${ count } conversaciones** almacenadas en esta carpeta"
       ],
       "You have **${ count } message** stored in this folder": [
-        "",
-        ""
+        "Tienes **${ count } mensaje** almacenado en esta carpeta",
+        "Tienes **${ count } mensajes** almacenados en esta carpeta"
       ],
       "You selected **${ count } conversation** with this label": [
-        "",
-        ""
+        "Has seleccionado **${ count } conversación** con esta etiqueta",
+        "Has seleccionado **${ count } conversaciones** con esta etiqueta"
       ],
       "You selected **${ count } message** with this label": [
-        "",
-        ""
+        "Has seleccionado **${ count } mensaje** con esta etiqueta",
+        "Has seleccionado **${ count } mensajes** con esta etiqueta"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "",
-        ""
+        "Tienes **${ count } conversación** marcada con esta etiqueta",
+        "Tienes **${ count } conversaciones** marcadas con esta etiqueta"
       ],
       "You have **${ count } message** tagged with this label": [
-        "",
-        ""
+        "Tienes **${ count } mensaje** marcado con esta etiqueta",
+        "Tienes **${ count } mensajes** marcados con esta etiqueta"
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Utilizando tu dispositivo móvil, escanea este código QR o visita ${ link }."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
       ]
     },
     "Default display name vcard": {
@@ -1794,6 +1789,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Ha ocurrido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1972,11 +1972,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "No sincronizado"
-      ],
       "Syncing": [
         "Sincronizando"
+      ],
+      "Not synced": [
+        "No sincronizado"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1984,19 +1984,19 @@
         "El calendario se está sincronizando"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Han pasado más de 12 horas desde la última actualización"
       ],
       "Calendar link is wrong": [
-        ""
+        "El enlace del calendario es erróneo"
       ],
       "Calendar is too big": [
         "El calendario es demasiado grande"
       ],
       "Calendar link is not accessible": [
-        ""
+        "El enlace del calendario no es accesible"
       ],
       "Calendar link is temporarily unaccessible": [
-        ""
+        "El enlace del calendario está temporalmente inaccesible"
       ],
       "Failed to sync calendar": [
         ""
@@ -2011,6 +2011,12 @@
       ],
       "Unsupported event": [
         "Evento no soportado"
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
       ],
       "Invalid method": [
         "Método no válido"
@@ -2611,38 +2617,8 @@
       "Close": [
         "Cerrar"
       ],
-      "More info: ${ safeTitle }": [
-        "Más información: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
       "Cancel": [
         "Cancelar"
-      ],
-      "Submit": [
-        "Enviar"
-      ],
-      "Close modal": [
-        "Cerrar ventana"
-      ],
-      "Use “${ label }” setting": [
-        "Utilizar la configuración de \"${ label }\""
-      ],
-      "Remove": [
-        "Eliminar"
-      ],
-      "Next month": [
-        "Mes siguiente"
-      ],
-      "Previous month": [
-        "Mes anterior"
-      ],
-      "Load image": [
-        "Cargar imagen"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Confirmar apertura del enlace ${ link }"
       ],
       "Save": [
         "Guardar"
@@ -2706,6 +2682,36 @@
       ],
       "Underline": [
         "Subrayado"
+      ],
+      "More info: ${ safeTitle }": [
+        "Más información: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "Close modal": [
+        "Cerrar ventana"
+      ],
+      "Use “${ label }” setting": [
+        "Utilizar la configuración de \"${ label }\""
+      ],
+      "Remove": [
+        "Eliminar"
+      ],
+      "Next month": [
+        "Mes siguiente"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Load image": [
+        "Cargar imagen"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Confirmar apertura del enlace ${ link }"
       ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
@@ -3053,7 +3059,7 @@
         "Densidad de la bandeja de entrada"
       ],
       "Composer size": [
-        ""
+        "Tamaño del editor"
       ],
       "Remove bonuses": [
         "Eliminar beneficios"
@@ -3077,7 +3083,7 @@
         "Seleccionar plan"
       ],
       "Compare all features": [
-        "Comparar todas las funciones"
+        "Comparar todas las funcionalidades"
       ],
       "${ boldSave } by switching to annual billing": [
         "${ boldSave } al cambiar a facturación anual"
@@ -3234,7 +3240,7 @@
         "Establecer"
       ],
       "Schedule message": [
-        ""
+        "Programar mensaje"
       ],
       "Print": [
         "Imprimir"
@@ -3318,7 +3324,7 @@
         "Mostrar"
       ],
       "Show less": [
-        ""
+        "Mostrar menos"
       ],
       "Never show": [
         "No mostrar nunca"
@@ -3396,7 +3402,7 @@
         "Eliminar permanentemente"
       ],
       "Move to inbox": [
-        "Mover al buzón"
+        "Mover a la bandeja de entrada"
       ],
       "Move to archive": [
         "Mover al archivo"
@@ -3453,7 +3459,7 @@
         "Mensaje anterior"
       ],
       "Next conversation": [
-        ""
+        "Conversación siguiente"
       ],
       "Next message": [
         "Siguiente mensaje"
@@ -3465,7 +3471,7 @@
         "Ocultar mensajes"
       ],
       "Create new message": [
-        ""
+        "Crear un mensaje nuevo"
       ],
       "Open shop": [
         ""
@@ -3487,11 +3493,11 @@
       "Open actions dropdown": [
         "Abrir acciones desplegables"
       ],
-      "Link confirmation": [
-        "Confirmación de enlace"
-      ],
       "Expand content": [
         "Expandir contenido"
+      ],
+      "Link confirmation": [
+        "Confirmación de enlace"
       ],
       "Keyboard Shortcuts": [
         "Atajos de teclado"
@@ -3513,9 +3519,6 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
-      ],
-      "Request new code": [
-        "Solicitar un nuevo código"
       ],
       "Human verification": [
         "Verificación humana"
@@ -3871,7 +3874,7 @@
         "¿Enviar con preferencias cambiadas?"
       ],
       "Attachments": [
-        "Adjuntos"
+        "Archivos adjuntos"
       ],
       "Expiration time": [
         "Tiempo de caducidad"
@@ -3913,7 +3916,7 @@
         "Más opciones"
       ],
       "Reply": [
-        "Reenviar"
+        "Responder"
       ],
       "Reply all": [
         "Responder a todos"
@@ -3988,10 +3991,142 @@
         "Lista de mensajes"
       ],
       "Welcome ${ userName }": [
-        "Bienvenido ${ userName }"
+        "Bienvenido/a { userName }"
       ],
       "Welcome": [
         "Bienvenido/a"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Enlace"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Completa el enlace URL y el texto para probar tu enlace"
+      ],
+      "Email address": [
+        "Dirección de correo electrónico"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Completa la dirección de correo electrónico y el texto para probar tu enlace"
+      ],
+      "Phone number": [
+        "Número de teléfono"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Completa el número de teléfono y el texto para probar tu enlace"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "E.g., ": [
+        "Ej., "
+      ],
+      "Mailbox password": [
+        "Contraseña del buzón"
+      ],
+      "Start typing an email address": [
+        "Comienza a escribir una dirección de correo electrónico"
+      ],
+      "Image URL": [
+        "URL de la imagen"
+      ],
+      "Search name, email or group": [
+        "Buscar nombre, correo o grupo"
+      ],
+      "Filter groups": [
+        "Filtrar grupos"
+      ],
+      "Search for name or email": [
+        "Buscar por nombre o correo electrónico"
+      ],
+      "Search for group name": [
+        "Buscar por nombre de grupo"
+      ],
+      "Name": [
+        "Nombre"
+      ],
+      "OS name": [
+        "Sistema operativo"
+      ],
+      "OS version": [
+        "Versión del SO"
+      ],
+      "Proton username": [
+        "Nombre de usuario de Proton"
+      ],
+      "A way to contact you": [
+        "Una forma de contactar contigo"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Por favor, describe el problema e incluye cualquier mensaje de error"
+      ],
+      "Browser name": [
+        "Nombre del navegador"
+      ],
+      "Browser version": [
+        "Versión del navegador"
+      ],
+      "e.g. Julia Smith": [
+        "p.ej. Julia Smith"
+      ],
+      "ZIP": [
+        "CP"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "Gift code": [
+        "Código promocional"
+      ],
+      "Type text or keyword": [
+        "Escribe texto o palabra clave"
+      ],
+      "Subject": [
+        "Asunto"
+      ],
+      "Write your message": [
+        "Escribe tu mensaje"
+      ],
+      "Password": [
+        "Contraseña"
+      ],
+      "Confirm Password": [
+        "Confirmar contraseña"
+      ],
+      "Hint": [
+        "Pista"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "Fecha de inicio"
+      ],
+      "End date": [
+        "Fecha de finalización"
+      ],
+      "Name or email address": [
+        "Nombre o dirección de correo electrónico"
+      ],
+      "Search messages": [
+        "Buscar mensajes"
+      ],
+      "Filter folders": [
+        "Filtrar carpetas"
+      ],
+      "Filter labels": [
+        "Filtrar etiquetas"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4070,7 +4205,7 @@
         "Abrir en ${ calendarAppName }"
       ],
       "Inbox": [
-        "Buzón"
+        "Bandeja de entrada"
       ],
       "Drafts": [
         "Borradores"
@@ -4519,132 +4654,10 @@
         "Destinatario"
       ],
       "Attachments": [
-        "Adjuntos"
+        "Archivos adjuntos"
       ],
       "Also archive": [
         "Además archivar"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ej., "
-      ],
-      "Link": [
-        "Enlace"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Completa el enlace URL y el texto para probar tu enlace"
-      ],
-      "Email address": [
-        "Dirección de correo electrónico"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Completa la dirección de correo electrónico y el texto para probar tu enlace"
-      ],
-      "Phone number": [
-        "Número de teléfono"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Completa el número de teléfono y el texto para probar tu enlace"
-      ],
-      "Text": [
-        "Texto"
-      ],
-      "Mailbox password": [
-        "Contraseña del buzón"
-      ],
-      "Start typing an email address": [
-        "Comienza a escribir una dirección de correo electrónico"
-      ],
-      "Image URL": [
-        "URL de la imagen"
-      ],
-      "Search name, email or group": [
-        "Buscar nombre, correo o grupo"
-      ],
-      "Filter groups": [
-        "Filtrar grupos"
-      ],
-      "Search for name or email": [
-        "Buscar por nombre o correo electrónico"
-      ],
-      "Search for group name": [
-        "Buscar por nombre de grupo"
-      ],
-      "Name": [
-        "Nombre"
-      ],
-      "OS name": [
-        "Sistema operativo"
-      ],
-      "OS version": [
-        "Versión del SO"
-      ],
-      "Proton username": [
-        "Nombre de usuario de Proton"
-      ],
-      "A way to contact you": [
-        "Una forma de contactar contigo"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Por favor, describe el problema e incluye cualquier mensaje de error"
-      ],
-      "Browser name": [
-        "Nombre del navegador"
-      ],
-      "Browser version": [
-        "Versión del navegador"
-      ],
-      "e.g. Julia Smith": [
-        "p.ej. Julia Smith"
-      ],
-      "ZIP": [
-        "CP"
-      ],
-      "Postal code": [
-        "Código postal"
-      ],
-      "Gift code": [
-        "Código promocional"
-      ],
-      "Type text or keyword": [
-        "Escribe texto o palabra clave"
-      ],
-      "Subject": [
-        "Asunto"
-      ],
-      "Write your message": [
-        "Escribe tu mensaje"
-      ],
-      "Password": [
-        "Contraseña"
-      ],
-      "Confirm Password": [
-        "Confirmar contraseña"
-      ],
-      "Hint": [
-        "Consejo"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "Fecha de inicio"
-      ],
-      "End date": [
-        "Fecha de finalización"
-      ],
-      "Name or email address": [
-        "Nombre o dirección de correo electrónico"
-      ],
-      "Search messages": [
-        "Buscar mensajes"
-      ],
-      "Filter folders": [
-        "Filtrar carpetas"
-      ],
-      "Filter labels": [
-        "Filtrar etiquetas"
       ]
     },
     "Time unit": {
@@ -4680,16 +4693,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Se ha encontrado ${ items.length } sugerencia, utiliza el teclado para navegar.",
         "Se han encontrado ${ items.length } sugerencias, utiliza el teclado para navegar."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        ""
       ]
     },
     "Storage": {
@@ -4859,7 +4862,7 @@
         "Mensaje movido a spam y remitente añadido a la Lista Negra."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } mensaje movido a spam y el remitente añadido a la Lista Negra.",
+        "${ elementsCount } mensaje movido a spam y remitente añadido a la Lista Negra.",
         "${ elementsCount } mensajes movidos a spam y remitente añadido a la Lista Negra."
       ],
       "Conversation moved to spam and sender added to Block List.": [
@@ -4873,15 +4876,15 @@
         "Mensaje movido a ${ folderName } y remitente agregado a la lista deseada."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } mensaje movido a ${ folderName } y remitente agregado a la lista deseada.",
-        "${ elementsCount } mensajes movidos a ${ folderName } y remitente agregado a la lista deseada."
+        "${ elementsCount } mensaje movido a ${ folderName } y remitente añadido a la Lista Blanca.",
+        "${ elementsCount } mensajes movidos a ${ folderName } y remitente añadido a la Lista Blanca."
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
         "Conversación movida a ${ folderName } y remitente agregado a la lista deseada."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } conversación movida a ${ folderName } y remitente agregado a la lista deseada.",
-        "${ elementsCount } conversaciones movidas a ${ folderName } y remitente agregado a la lista deseada."
+        "${ elementsCount } conversación movida a ${ folderName } y remitente añadido a la Lista Blanca.",
+        "${ elementsCount } conversaciones movidas a ${ folderName } y remitente añadido a la Lista Blanca."
       ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
@@ -5136,7 +5139,7 @@
         "Aloja correos electrónicos para tus propios dominios en ${ mailAppName }, p. ej. usuario@sudominio.com"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Crea múltiples direcciones vinculadas a tu cuenta, p. ej., usuario2@protonmail.com"
+        "Crea múltiples direcciones de correo electrónico vinculadas a tu cuenta, p. ej., usuario2@protonmail.com"
       ],
       "Discount applied for annual billing cycle": [
         "Descuento aplicado para el ciclo de facturación anual"
@@ -5169,7 +5172,7 @@
         ""
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
+        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
         "${ model.submitted.length } de ${ totalBeMerged } contactos combinados con éxito."
       ],
       "No contacts merged.": [
@@ -5385,6 +5388,11 @@
         "${ totalImported }/${ totalToImport } contactos cifrados y agregados a tu lista de contactos"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Subir"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Cómoda"
@@ -5407,11 +5415,6 @@
       ],
       "Maximized": [
         "Maximizado"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Subir"
       ]
     },
     "Loading info": {
@@ -5608,22 +5611,22 @@
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Activado"
       ]
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Desactivado"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Activados"
       ]
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Desactivados"
       ]
     },
     "Layout mode": {
@@ -6401,7 +6404,7 @@
         "Mensaje cifrado y firmado de extremo a extremo"
       ],
       "End-to-end encrypted message from verified sender": [
-        "Mensaje cifrado de extremo a extremo de remitente verificado"
+        "Mensaje cifrado de extremo a extremo de un remitente verificado"
       ],
       "Sent by ProtonMail with zero-access encryption": [
         "Enviado por ProtonMail con cifrado de acceso cero"
@@ -6446,7 +6449,7 @@
         "mañana"
       ],
       "on ${ formattedDate }": [
-        ""
+        "el ${ formattedDate }"
       ],
       "Today": [
         "Hoy"
@@ -6472,7 +6475,7 @@
         "${ participantName } ha rechazado tu invitación."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } has aceptado provisionalmente tu invitación."
+        "${ participantName } ha aceptado provisionalmente tu invitación."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Esta respuesta no está actualizada. El evento ya no existe en tu calendario."
@@ -6547,13 +6550,13 @@
         " Esta nueva propuesta horaria no coincide con los detalles de tu invitación. Por favor, verifica los detalles de la invitación en tu calendario."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ha aceptado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento. La respuesta y la propuesta están desactualizadas."
+        "${ participantName } ya ha aceptado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento. La respuesta y la propuesta están desactualizadas."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ha aceptado tu invitación y ha propuesto una hora nueva para este evento. La respuesta y la propuesta están desactualizadas."
+        "${ participantName } ya ha aceptado tu invitación y ha propuesto una hora nueva para este evento. La respuesta y la propuesta están desactualizadas."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ha rechazado tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
+        "${ participantName } ya ha rechazado tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } ha rechazado tu invitación y ha propuesto una nueva hora para este evento. La respuesta y la propuesta no están actualizadas."
@@ -6586,13 +6589,13 @@
         "La invitación está desactualizada. El evento se ha actualizado."
       ],
       "You already accepted this invitation.": [
-        ""
+        "Has aceptado la invitación."
       ],
       "You already tentatively accepted this invitation.": [
-        ""
+        "Has aceptado provisionalmente la invitación."
       ],
       "You already declined this invitation.": [
-        ""
+        "Ya rechazó esta invitación."
       ],
       "This event has been cancelled.": [
         "Este evento ha sido cancelado."
@@ -6604,7 +6607,7 @@
         "Se ha agregado una ocurrencia al evento ${ veventIcsTitle }"
       ],
       "(Attendance optional)": [
-        ""
+        "(Asistencia opcional)"
       ],
       "The sender of this email has not been invited to this event and cannot be added as a participant.": [
         "El remitente de este correo no ha sido invitado a este evento y no puede ser agregado como participante."
@@ -6709,7 +6712,7 @@
     },
     "Spotlight": {
       "You can now schedule your messages to be sent later": [
-        ""
+        "Ahora puedes programar tus mensajes para que sean enviados más tarde"
       ]
     },
     "Message image": {
@@ -6717,7 +6720,7 @@
         ""
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        ""
+        "La imagen no ha sido cargada para proteger tu privacidad."
       ]
     },
     "Alt": {
@@ -6728,7 +6731,7 @@
         "No destacar"
       ],
       "Star message": [
-        "Destacar"
+        "Destacar mensaje"
       ],
       "Unstar conversation": [
         "No destacar la conversación"
@@ -6748,10 +6751,10 @@
     },
     "Status": {
       "Unsubscribed": [
-        "Desuscrito"
+        "Suscripción cancelada"
       ],
       "Unsubscribing...": [
-        "Desuscribiendo..."
+        "Cancelando suscripción..."
       ]
     },
     "Reply to calendar invitation": {
@@ -6779,7 +6782,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "¿Asistir?"
       ]
     },
     "Import ICS file from Mail": {
@@ -6792,23 +6795,23 @@
     },
     "ICS widget label for event details": {
       "Organizer:": [
-        ""
+        "Organizador:"
       ],
       "${ totalAttendees } Participant": [
-        "",
-        ""
+        "${ totalAttendees } Participante",
+        "${ totalAttendees } Participantes"
       ],
       "Repeats": [
-        ""
+        "Repite"
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Location": [
-        ""
+        "Ubicación"
       ],
       "Participants": [
-        ""
+        "Participantes"
       ]
     },
     "Attachment signature verification": {
@@ -6829,10 +6832,10 @@
         "Todos"
       ],
       "With": [
-        ""
+        "Con"
       ],
       "Without": [
-        ""
+        "Sin"
       ]
     },
     "Filter option": {
@@ -6894,7 +6897,7 @@
         "No se ha encontrado ningún mensaje"
       ],
       "No messages scheduled": [
-        ""
+        "No hay mensajes programados"
       ]
     },
     "Alternative text for welcome image": {

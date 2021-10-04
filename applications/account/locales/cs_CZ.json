@@ -84,6 +84,24 @@
       "Confirm": [
         "Potvrdit"
       ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "Next month": [
+        "Další měsíc"
+      ],
+      "Previous month": [
+        "Předchozí měsíc"
+      ],
+      "Show less": [
+        "Zobrazit méně"
+      ],
+      "Show more": [
+        "Zobrazit více"
+      ],
       "Close navigation": [
         "Zavřít menu"
       ],
@@ -93,47 +111,20 @@
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
-      "Close": [
-        "Zavřít"
-      ],
-      "Delete": [
-        "Smazat"
-      ],
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
-      "Show less": [
-        "Zobrazit méně"
-      ],
-      "Show more": [
-        "Zobrazit více"
-      ],
-      "Next month": [
-        "Další měsíc"
-      ],
-      "Previous month": [
-        "Předchozí měsíc"
-      ],
       "Remove": [
         "Odstranit"
+      ],
+      "Select timezone": [
+        "Vybrat časové pásmo"
       ],
       "Submit": [
         "Odeslat"
       ],
       "Close modal": [
         "Zavřít okno"
-      ],
-      "Select timezone": [
-        "Vybrat časové pásmo"
-      ],
-      "Activate ${ Name }@pm.me": [
-        "Aktivovat ${ Name }@pm.me"
-      ],
-      "Upgrade": [
-        "Vylepšit"
-      ],
-      "Show shortcuts": [
-        "Zobrazit zkratky"
       ],
       "Continue import": [
         "Pokračovat v importu"
@@ -213,6 +204,15 @@
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktivovat ${ Name }@pm.me"
+      ],
+      "Upgrade": [
+        "Vylepšit"
+      ],
+      "Show shortcuts": [
+        "Zobrazit zkratky"
+      ],
       "Import contacts": [
         "Importovat kontakty"
       ],
@@ -249,53 +249,11 @@
       "Get ProtonVPN Plus": [
         "Získat ProtonVPN Plus"
       ],
-      "Add user": [
-        "Přidat uživatele"
+      "Yes": [
+        "Ano"
       ],
-      "Add address": [
-        "Přidat adresu"
-      ],
-      "Done": [
-        "Hotovo"
-      ],
-      "Review": [
-        "Zkontrolovat"
-      ],
-      "Set catch-all": [
-        "Nastavení doménového koše"
-      ],
-      "Add domain": [
-        "Přidat doménu"
-      ],
-      "Refresh status": [
-        "Obnovit stav"
-      ],
-      "Copy email to clipboard": [
-        "Zkopírovat e-mail do schránky"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Úvod ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Komunikace s námi"
-      ],
-      "I have a question": [
-        "Mám dotaz"
-      ],
-      "Request a feature": [
-        "Požadavek na funkci"
-      ],
-      "Report a problem": [
-        "Nahlásit problém"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Obchod ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Přepnout účet"
-      ],
-      "Sign out": [
-        "Odhlásit se"
+      "No": [
+        "Ne"
       ],
       "Update": [
         "Aktualizovat"
@@ -348,33 +306,6 @@
       "Delete link": [
         "Odstranit odkaz"
       ],
-      "Get started": [
-        "Začínáme"
-      ],
-      "Start setup": [
-        "Spustit nastavení"
-      ],
-      "Skip": [
-        "Přeskočit"
-      ],
-      "Clear": [
-        "Vyčistit"
-      ],
-      "Add screenshot(s)": [
-        "Přidat snímek/snímky obrazovky"
-      ],
-      "Hide info": [
-        "Skrýt informace"
-      ],
-      "Show info": [
-        "Zobrazit informace"
-      ],
-      "Signing out": [
-        "Odhlašování"
-      ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Reactivate keys": [
         "Opětovná aktivace klíčů"
       ],
@@ -393,9 +324,6 @@
       "Export key": [
         "Exportovat klíč"
       ],
-      "No": [
-        "Ne"
-      ],
       "Warning": [
         "Upozornění"
       ],
@@ -404,6 +332,135 @@
       ],
       "Export private key": [
         "Exportovat soukromý klíč"
+      ],
+      "Add user": [
+        "Přidat uživatele"
+      ],
+      "Add address": [
+        "Přidat adresu"
+      ],
+      "Done": [
+        "Hotovo"
+      ],
+      "Review": [
+        "Zkontrolovat"
+      ],
+      "Set catch-all": [
+        "Nastavení doménového koše"
+      ],
+      "Add domain": [
+        "Přidat doménu"
+      ],
+      "Refresh status": [
+        "Obnovit stav"
+      ],
+      "Copy email to clipboard": [
+        "Zkopírovat e-mail do schránky"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Úvod ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Komunikace s námi"
+      ],
+      "I have a question": [
+        "Mám dotaz"
+      ],
+      "Request a feature": [
+        "Požadavek na funkci"
+      ],
+      "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Obchod ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Přepnout účet"
+      ],
+      "Sign out": [
+        "Odhlásit se"
+      ],
+      "Get started": [
+        "Začínáme"
+      ],
+      "Start setup": [
+        "Spustit nastavení"
+      ],
+      "Skip": [
+        "Přeskočit"
+      ],
+      "Preview": [
+        "Náhled"
+      ],
+      "Create label": [
+        "Vytvořit štítek"
+      ],
+      "Create folder": [
+        "Vytvořit složku"
+      ],
+      "Remove this label": [
+        "Odebrat štítek"
+      ],
+      "Add condition": [
+        "Přidat podmínku"
+      ],
+      "label emails as": [
+        "označit e-maily jako"
+      ],
+      "move emails to": [
+        "přesunout e-maily do"
+      ],
+      "mark emails as": [
+        "označit e-maily jako"
+      ],
+      "send auto-reply email": [
+        "odeslat automatickou odpověď"
+      ],
+      "Edit sieve": [
+        "Upravit filtr"
+      ],
+      "Add filter": [
+        "Přidat filtr"
+      ],
+      "Add sieve filter": [
+        "Přidat filtr Sieve"
+      ],
+      "Add": [
+        "Přidat"
+      ],
+      "Move to Block List": [
+        "Přidat na černou listinu"
+      ],
+      "Move to Allow List": [
+        "Přesunout na seznam povolených"
+      ],
+      "Clear": [
+        "Vyčistit"
+      ],
+      "Add screenshot(s)": [
+        "Přidat snímek/snímky obrazovky"
+      ],
+      "Hide info": [
+        "Skrýt informace"
+      ],
+      "Show info": [
+        "Zobrazit informace"
+      ],
+      "Add folder": [
+        "Přidat složku"
+      ],
+      "Sort": [
+        "Třídit"
+      ],
+      "Add label": [
+        "Přidat štítek"
+      ],
+      "Signing out": [
+        "Odhlašování"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove bonuses": [
         "Odebrat bonusy"
@@ -504,9 +561,6 @@
       "Ok": [
         "Ok"
       ],
-      "Yes": [
-        "Ano"
-      ],
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
       ],
@@ -530,6 +584,12 @@
       ],
       "Disable recovery phrase": [
         "Deaktivace obnovovací fráze"
+      ],
+      "Save address": [
+        "Uložit adresu"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Revoke all other sessions": [
         "Odhlásit ze všech ostatních relací"
@@ -582,50 +642,23 @@
       "Previous": [
         "Předchozí"
       ],
-      "Preview": [
-        "Náhled"
+      "Enable multi-user support": [
+        "Zapnout podporu pro více uživatelů"
       ],
-      "Create label": [
-        "Vytvořit štítek"
+      "Reset keys": [
+        "Klíče pro obnovení"
       ],
-      "Create folder": [
-        "Vytvořit složku"
+      "Change organization keys": [
+        "Změnit klíče organizace"
       ],
-      "Remove this label": [
-        "Odebrat štítek"
+      "Reset organization keys": [
+        "Obnovit klíče organizace"
       ],
-      "Add condition": [
-        "Přidat podmínku"
+      "Restore administrator privileges": [
+        "Obnovit oprávnění správce"
       ],
-      "label emails as": [
-        "označit e-maily jako"
-      ],
-      "move emails to": [
-        "přesunout e-maily do"
-      ],
-      "mark emails as": [
-        "označit e-maily jako"
-      ],
-      "send auto-reply email": [
-        "odeslat automatickou odpověď"
-      ],
-      "Edit sieve": [
-        "Upravit filtr"
-      ],
-      "Add filter": [
-        "Přidat filtr"
-      ],
-      "Add sieve filter": [
-        "Přidat filtr Sieve"
-      ],
-      "Add": [
-        "Přidat"
-      ],
-      "Move to Block List": [
-        "Přidat na černou listinu"
-      ],
-      "Move to Allow List": [
-        "Přesunout na seznam povolených"
+      "Activate organization key": [
+        "Aktivovat klíč organizace"
       ],
       "View invoice": [
         "Zobrazit fakturu"
@@ -647,39 +680,6 @@
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
-      ],
-      "Add folder": [
-        "Přidat složku"
-      ],
-      "Sort": [
-        "Třídit"
-      ],
-      "Add label": [
-        "Přidat štítek"
-      ],
-      "Enable multi-user support": [
-        "Zapnout podporu pro více uživatelů"
-      ],
-      "Reset keys": [
-        "Klíče pro obnovení"
-      ],
-      "Change organization keys": [
-        "Změnit klíče organizace"
-      ],
-      "Reset organization keys": [
-        "Obnovit klíče organizace"
-      ],
-      "Restore administrator privileges": [
-        "Obnovit oprávnění správce"
-      ],
-      "Activate organization key": [
-        "Aktivovat klíč organizace"
-      ],
-      "Save address": [
-        "Uložit adresu"
-      ],
-      "activate": [
-        "aktivovat"
       ],
       "Upgrade now": [
         "Upgradovat nyní"
@@ -805,17 +805,23 @@
       "Name": [
         "Jméno"
       ],
-      "yourdomain.com": [
-        "vasedomena.cz"
-      ],
       "Add a calendar name": [
         "Přidat název kalendáře"
       ],
       "Add a calendar description": [
         "Přidat popis kalendáře"
       ],
+      "Password": [
+        "Heslo"
+      ],
+      "yourdomain.com": [
+        "vasedomena.cz"
+      ],
       "e.g. Julia Smith": [
         "např. Julia Smith"
+      ],
+      "Type text or keyword": [
+        "Zadejte text nebo klíčové slovo"
       ],
       "OS name": [
         "Název OS"
@@ -837,9 +843,6 @@
       ],
       "Browser version": [
         "Verze prohlížeče"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Feedback": [
         "Zpětná vazba"
@@ -865,8 +868,11 @@
       "Confirm": [
         "Potvrdit"
       ],
-      "Type text or keyword": [
-        "Zadejte text nebo klíčové slovo"
+      "Choose display name": [
+        "Vyberte jméno, které chcete zobrazovat"
+      ],
+      "Choose address": [
+        "Vybrat adresu"
       ],
       "Choose a name": [
         "Zvolte název"
@@ -882,12 +888,6 @@
       ],
       "Search users": [
         "Vyhledat uživatele"
-      ],
-      "Choose address": [
-        "Vybrat adresu"
-      ],
-      "Choose display name": [
-        "Vyberte jméno, které chcete zobrazovat"
       ]
     },
     "Error": {
@@ -954,14 +954,8 @@
       "Invalid name": [
         "Neplatné jméno"
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Zastavili jsme podepisování DKIM kvůli problémům s vaší konfigurací DNS. Chcete-li pokračovat v podepisování, postupujte podle pokynů níže."
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "Ověření se nezdařilo, zkuste to prosím za hodinu znovu."
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Nesprávný ověřovací kód. Ujistěte se prosím, že jste zkopírovali ověřovací kód správně a akci opakujte. Než se změny projeví, může to trvat až 24 hodin."
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Automatické odpovědi jsou placenou funkcí. Chcete-li tuto funkci používat, přejděte na placený účet."
       ],
       "Name required": [
         "Název je povinný"
@@ -971,12 +965,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Klíč hlavní adresy není dešifrován."
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatické odpovědi jsou placenou funkcí. Chcete-li tuto funkci používat, přejděte na placený účet."
-      ],
-      "Primary address key is not decrypted": [
-        "Klíč hlavní adresy není dešifrován"
       ],
       "Incorrect password": [
         "Nesprávné heslo"
@@ -990,8 +978,47 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "Klíč hlavní adresy není dešifrován"
+      ],
       "Invalid private key file": [
         "Neplatný soubor soukromého klíče"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Zastavili jsme podepisování DKIM kvůli problémům s vaší konfigurací DNS. Chcete-li pokračovat v podepisování, postupujte podle pokynů níže."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Ověření se nezdařilo, zkuste to prosím za hodinu znovu."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Nesprávný ověřovací kód. Ujistěte se prosím, že jste zkopírovali ověřovací kód správně a akci opakujte. Než se změny projeví, může to trvat až 24 hodin."
+      ],
+      "Empty condition": [
+        "Prázdná podmínka"
+      ],
+      "Condition incomplete": [
+        "Neúplná podmínka"
+      ],
+      "Filter with this name already exists": [
+        "Filtr s tímto názvem již existuje"
+      ],
+      "Error in one of the conditions": [
+        "Chyba v jedné z podmínek"
+      ],
+      "Require at least one condition": [
+        "Vyžaduje alespoň jednu podmínku"
+      ],
+      "Require at least one action": [
+        "Vyžaduje alespoň jednu akci"
+      ],
+      "Filter with this name already exist": [
+        "Filtr s tímto názvem již existuje"
+      ],
+      "Invalid Sieve code": [
+        "Neplatný Sieve kód"
+      ],
+      "Invalid domain": [
+        "Neplatná doména"
       ],
       "Checkout expired, please try again.": [
         "Objednávka vypršela, zkuste to prosím znovu."
@@ -1065,6 +1092,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Špatná obnovovací fráze. Zkuste znovu použít další obnovovací metodu."
       ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } je Vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Adresy > Krátká doména (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "Nejprve musí být aktivován klíč organizace."
+      ],
+      "Error": [
+        "Chyba"
+      ],
+      "Organization key is not decrypted.": [
+        "Klíč organizace není dešifrován."
+      ],
       "Payments are currently not available, please try again later": [
         "Provádět platby není momentálně dostupné, zkuste to prosím později"
       ],
@@ -1077,45 +1116,6 @@
       "File has no contents to preview": [
         "Soubor nemá žádný obsah k náhledu"
       ],
-      "Empty condition": [
-        "Prázdná podmínka"
-      ],
-      "Condition incomplete": [
-        "Neúplná podmínka"
-      ],
-      "Filter with this name already exists": [
-        "Filtr s tímto názvem již existuje"
-      ],
-      "Error in one of the conditions": [
-        "Chyba v jedné z podmínek"
-      ],
-      "Require at least one condition": [
-        "Vyžaduje alespoň jednu podmínku"
-      ],
-      "Require at least one action": [
-        "Vyžaduje alespoň jednu akci"
-      ],
-      "Filter with this name already exist": [
-        "Filtr s tímto názvem již existuje"
-      ],
-      "Invalid Sieve code": [
-        "Neplatný Sieve kód"
-      ],
-      "Invalid domain": [
-        "Neplatná doména"
-      ],
-      "Can't validate email, try again later": [
-        "Nelze ověřit e-mail, opakujte akci později"
-      ],
-      "Can't validate phone, try again later": [
-        "Nelze ověřit telefon, opakujte akci později"
-      ],
-      "Enter 6 digits": [
-        "Zadejte 6 číslic"
-      ],
-      "Invalid verification code": [
-        "Neplatný ověřovací kód"
-      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -1125,17 +1125,11 @@
       "You must privatize all users before generating new organization keys": [
         "Než vytvoříte nové klíče pro organizaci, musíte privatizovat všechny uživatele"
       ],
-      "Organization key is not decrypted.": [
-        "Klíč organizace není dešifrován."
-      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Přišli jste o přístup ke klíčům organizace. Bez jejich obnovení nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
-      ],
-      "The organization key must be activated first.": [
-        "Nejprve musí být aktivován klíč organizace."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Přístup odepřen, oprávnění správce byla omezena."
@@ -1167,11 +1161,17 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } je Vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Adresy > Krátká doména (pm.me)"
+      "Can't validate email, try again later": [
+        "Nelze ověřit e-mail, opakujte akci později"
       ],
-      "Error": [
-        "Chyba"
+      "Can't validate phone, try again later": [
+        "Nelze ověřit telefon, opakujte akci později"
+      ],
+      "Enter 6 digits": [
+        "Zadejte 6 číslic"
+      ],
+      "Invalid verification code": [
+        "Neplatný ověřovací kód"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
@@ -1197,6 +1197,15 @@
       "Unknown error": [
         "Neznámá chyba"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
+      ],
+      "Email is not valid": [
+        "Emailová adresa není platná"
+      ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Missing signature": [
         "Podpis není nastaven"
       ],
@@ -1206,14 +1215,8 @@
       "Signature not verified": [
         "Podpis nebyl ověřen"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
-      ],
-      "Email is not valid": [
-        "Emailová adresa není platná"
-      ],
-      "Not a valid number": [
-        "Neplatné číslo"
+      "Request timed out.": [
+        "Vypršel časový limit žádosti."
       ],
       "Signature verification failed": [
         "Ověření podpisu selhalo"
@@ -1229,9 +1232,6 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Primární soukromý klíč kalendáře není dešifrován"
-      ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
       ],
       "The session has expired. Please sign in again.": [
         "Platnost relace vypršela. Znovu se přihlaste."
@@ -1258,18 +1258,6 @@
       ],
       "Do not ask again": [
         "Příště se neptat"
-      ],
-      "Date format": [
-        "Formát data"
-      ],
-      "Default language": [
-        "Výchozí jazyk"
-      ],
-      "Time format": [
-        "Formát času"
-      ],
-      "Week start": [
-        "Týden začíná"
       ],
       "From: ${ fromEmailAddress }": [
         "Od: ${ fromEmailAddress }"
@@ -1325,6 +1313,18 @@
       "Manage folders": [
         "Spravovat složky"
       ],
+      "Date format": [
+        "Formát data"
+      ],
+      "Default language": [
+        "Výchozí jazyk"
+      ],
+      "Time format": [
+        "Formát času"
+      ],
+      "Week start": [
+        "Týden začíná"
+      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
@@ -1358,20 +1358,56 @@
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
       ],
-      "Domain name": [
-        "Název domény"
+      "Timezone": [
+        "Časové pásmo"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Přidejte prosím následující TXT záznam. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
+      "Days of the week": [
+        "Dny v týdnu"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Přidejte prosím všechny 3 následující CNAME záznamy. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
+      "Duration": [
+        "Doba trvání"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Přidejte prosím následující MX záznam. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
+      "Start day of month": [
+        "Počáteční den v měsíci"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Zde je základní DMARC záznam, který pouze odesílá reporty."
+      "Start time": [
+        "Čas zahájení"
+      ],
+      "End day of month": [
+        "Poslední den v měsíci"
+      ],
+      "End time": [
+        "Čas ukončení"
+      ],
+      "Start weekday": [
+        "Začátek pracovního týdne"
+      ],
+      "End weekday": [
+        "Konec pracovního týdne"
+      ],
+      "Start date": [
+        "Datum zahájení"
+      ],
+      "End date": [
+        "Datum ukončení"
+      ],
+      "Message": [
+        "Zpráva"
+      ],
+      "Auto reply": [
+        "Automatická odpověď"
+      ],
+      "Prompt to trust keys": [
+        "Dotaz na důvěru klíčům"
+      ],
+      "Sign external messages": [
+        "Podepisovat externí zprávy"
+      ],
+      "Attach public key": [
+        "Připojit veřejný klíč"
+      ],
+      "Default PGP settings": [
+        "Výchozí nastavení PGP"
       ],
       "Name": [
         "Jméno"
@@ -1421,75 +1457,6 @@
       "Your calendar URL label": [
         "Štítek URL adresy vašeho kalendáře"
       ],
-      "Display name": [
-        "Zobrazované jméno"
-      ],
-      "Timezone": [
-        "Časové pásmo"
-      ],
-      "Days of the week": [
-        "Dny v týdnu"
-      ],
-      "Duration": [
-        "Doba trvání"
-      ],
-      "Start day of month": [
-        "Počáteční den v měsíci"
-      ],
-      "Start time": [
-        "Čas zahájení"
-      ],
-      "End day of month": [
-        "Poslední den v měsíci"
-      ],
-      "End time": [
-        "Čas ukončení"
-      ],
-      "Start weekday": [
-        "Začátek pracovního týdne"
-      ],
-      "End weekday": [
-        "Konec pracovního týdne"
-      ],
-      "Start date": [
-        "Datum zahájení"
-      ],
-      "End date": [
-        "Datum ukončení"
-      ],
-      "Message": [
-        "Zpráva"
-      ],
-      "Auto reply": [
-        "Automatická odpověď"
-      ],
-      "Operating system": [
-        "Operační systém"
-      ],
-      "Operating system version": [
-        "Verze operačního systému"
-      ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Co se stalo?"
-      ],
-      "System information": [
-        "Systémové informace"
-      ],
-      "Browser": [
-        "Prohlížeč"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
       "Delete": [
         "Odstranit"
       ],
@@ -1517,230 +1484,23 @@
       "Please select files to upload": [
         "Prosím vyberte soubory k nahrání"
       ],
-      "${ n } VPN connection available": [
-        "${ n } VPN připojení dostupné",
-        "${ n } VPN připojení dostupná",
-        "${ n } VPN připojení dostupných",
-        "${ n } VPN připojení dostupných"
+      "Domain name": [
+        "Název domény"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        "",
-        "",
-        ""
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Přidejte prosím následující TXT záznam. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        "${ UsedAddresses } o ${ MaxAddresses } adres emailů",
-        "${ UsedAddresses } o ${ MaxAddresses } adres emailů",
-        "${ UsedAddresses } o ${ MaxAddresses } adres emailů"
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Přidejte prosím všechny 3 následující CNAME záznamy. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        "",
-        "",
-        ""
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Přidejte prosím následující MX záznam. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
       ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "Používáte ${ humanUsedSpace } z ${ humanMaxSpace }"
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Zde je základní DMARC záznam, který pouze odesílá reporty."
       ],
-      "What is the main reason you are cancelling?": [
-        "Jaký je hlavní důvod vašeho zrušení?"
-      ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "S jakou pravděpodobností doporučíte ${ BRAND_NAME } ostatním?"
-      ],
-      "0 - Not at all likely": [
-        "0 - Nepravděpodobné"
-      ],
-      "10 - Extremely likely": [
-        "10 - Velmi pravděpodobné"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Jak si myslíte, že bychom mohli v budoucnu vylepšit naše produkty nebo služby?"
-      ],
-      "Total (${ countdown })": [
-        "Celkem (${ countdown })"
-      ],
-      "Total": [
-        "Celkem"
-      ],
-      "Proration": [
-        "Prorace"
-      ],
-      "extra storage": [
-        "extra úložiště"
-      ],
-      "bonus storage": [
-        "bonusové úložiště"
-      ],
-      "Subtotal": [
-        "Mezisoučet"
-      ],
-      "Discount": [
-        "Sleva"
-      ],
-      "Other amount": [
-        "Jiná částka"
-      ],
-      "Amount": [
-        "Částka"
-      ],
-      "Gift code": [
-        "Dárkový kód"
-      ],
-      "Name on card": [
-        "Jméno na kartě"
-      ],
-      "Card number": [
-        "Číslo karty"
-      ],
-      "Expiry date": [
-        "Datum expirace"
-      ],
-      "CVV code": [
-        "Kód CVV"
-      ],
-      "Country": [
-        "Země"
-      ],
-      "Select your country": [
-        "Vyberte svou zemi"
-      ],
-      "ZIP": [
-        "PSČ"
-      ],
-      "Postal code": [
-        "Poštovní směrovací číslo"
-      ],
-      "BTC amount:": [
-        "Částka BTC:"
-      ],
-      "BTC address:": [
-        "Adresa BTC:"
-      ],
-      "Select a method": [
-        "Vyberte metodu"
-      ],
-      "Your password (admin)": [
-        "Vaše heslo (admin)"
-      ],
-      "User's new password": [
-        "Nové heslo uživatele"
-      ],
-      "Confirm new password": [
-        "Potvrdit nové heslo"
-      ],
-      "Old password": [
-        "Staré heslo"
-      ],
-      "New password": [
-        "Nové heslo"
-      ],
-      "Confirm password": [
-        "Potvrdit heslo"
-      ],
-      "Old login password": [
-        "Staré přihlašovací heslo"
-      ],
-      "New login password": [
-        "Nové přihlašovací heslo"
-      ],
-      "Confirm login password": [
-        "Potvrdit nové přihlašovací heslo"
-      ],
-      "New mailbox password": [
-        "Nové heslo k poštovní schránce"
-      ],
-      "Confirm mailbox password": [
-        "Potvrdit heslo k poštovní schránce"
-      ],
-      "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
-      ],
-      "Key": [
-        "Klíč"
-      ],
-      "Interval": [
-        "Interval"
-      ],
-      "Digits": [
-        "Číslice"
-      ],
-      "Two-factor authentication": [
-        "Dvoufaktorové ověření"
-      ],
-      "Two-password mode": [
-        "Režim se dvěma hesly"
-      ],
-      "Mailbox password": [
-        "Heslo k poštovní schránce"
-      ],
-      "What is the main reason you are deleting your account?": [
-        "Jaký je hlavní důvod, proč mažete svůj účet?"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
-      ],
-      "Login password": [
-        "Přihlašovací heslo"
-      ],
-      "Yes, I want to permanently delete this account and all its data.": [
-        "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
-      ],
-      "Allow recovery by email": [
-        "Povolit obnovení e-mailem"
-      ],
-      "Daily email notifications": [
-        "Denní e-mailová upozornění"
-      ],
-      "Allow recovery by phone": [
-        "Povolit obnovení telefonem"
-      ],
-      "Allow recovery by recovery phrase": [
-        "Povolte obnovu podle obnovovací fráze"
-      ],
-      "Recovery phrase": [
-        "Obnovovací fráze"
-      ],
-      "Your recovery phrase": [
-        "Vaše obnovovací fráze"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Obnovovací fráze zahrnuje 12 slov"
-      ],
-      "Cash": [
-        "Hotovost"
-      ],
-      "Card holder": [
-        "Držitel karty"
-      ],
-      "Expires": [
-        "Expiruje"
-      ],
-      "Payer": [
-        "Plátce"
-      ],
-      "Prompt to trust keys": [
-        "Dotaz na důvěru klíčům"
-      ],
-      "Sign external messages": [
-        "Podepisovat externí zprávy"
-      ],
-      "Attach public key": [
-        "Připojit veřejný klíč"
-      ],
-      "Default PGP settings": [
-        "Výchozí nastavení PGP"
-      ],
-      "Credits used": [
-        "Použité kredity"
-      ],
-      "Amount due": [
-        "Částka k zaplacení"
-      ],
-      "Customize invoices": [
-        "Přizpůsobení faktur"
+      "Display name": [
+        "Zobrazované jméno"
       ],
       "Filter Name": [
         "Název filtru"
@@ -1847,14 +1607,32 @@
       "Want to add": [
         "Chci přidat"
       ],
-      "Phone number": [
-        "Telefonní číslo"
+      "Operating system": [
+        "Operační systém"
       ],
-      "Verification code": [
-        "Ověřovací kód"
+      "Operating system version": [
+        "Verze operačního systému"
       ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "What happened?": [
+        "Co se stalo?"
+      ],
+      "System information": [
+        "Systémové informace"
+      ],
+      "Browser": [
+        "Prohlížeč"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
       ],
       "Folder location": [
         "Umístění složky"
@@ -1867,6 +1645,249 @@
       ],
       "Inherit color from parent folder": [
         "Zdědit barvu z nadřazené složky"
+      ],
+      "${ n } VPN connection available": [
+        "${ n } VPN připojení dostupné",
+        "${ n } VPN připojení dostupná",
+        "${ n } VPN připojení dostupných",
+        "${ n } VPN připojení dostupných"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "",
+        "${ UsedAddresses } o ${ MaxAddresses } adres emailů",
+        "${ UsedAddresses } o ${ MaxAddresses } adres emailů",
+        "${ UsedAddresses } o ${ MaxAddresses } adres emailů"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "Používáte ${ humanUsedSpace } z ${ humanMaxSpace }"
+      ],
+      "What is the main reason you are cancelling?": [
+        "Jaký je hlavní důvod vašeho zrušení?"
+      ],
+      "How likely are you to recommend ${ BRAND_NAME } to others?": [
+        "S jakou pravděpodobností doporučíte ${ BRAND_NAME } ostatním?"
+      ],
+      "0 - Not at all likely": [
+        "0 - Nepravděpodobné"
+      ],
+      "10 - Extremely likely": [
+        "10 - Velmi pravděpodobné"
+      ],
+      "How do you think we could improve our products or service in the future?": [
+        "Jak si myslíte, že bychom mohli v budoucnu vylepšit naše produkty nebo služby?"
+      ],
+      "Total (${ countdown })": [
+        "Celkem (${ countdown })"
+      ],
+      "Total": [
+        "Celkem"
+      ],
+      "Proration": [
+        "Prorace"
+      ],
+      "extra storage": [
+        "extra úložiště"
+      ],
+      "bonus storage": [
+        "bonusové úložiště"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Discount": [
+        "Sleva"
+      ],
+      "Other amount": [
+        "Jiná částka"
+      ],
+      "Amount": [
+        "Částka"
+      ],
+      "Gift code": [
+        "Dárkový kód"
+      ],
+      "Name on card": [
+        "Jméno na kartě"
+      ],
+      "Card number": [
+        "Číslo karty"
+      ],
+      "Expiry date": [
+        "Datum expirace"
+      ],
+      "CVV code": [
+        "Kód CVV"
+      ],
+      "Country": [
+        "Země"
+      ],
+      "Select your country": [
+        "Vyberte svou zemi"
+      ],
+      "ZIP": [
+        "PSČ"
+      ],
+      "Postal code": [
+        "Poštovní směrovací číslo"
+      ],
+      "BTC amount:": [
+        "Částka BTC:"
+      ],
+      "BTC address:": [
+        "Adresa BTC:"
+      ],
+      "Select a method": [
+        "Vyberte metodu"
+      ],
+      "Auto-load remote content": [
+        "Automaticky načíst vzdálený obsah"
+      ],
+      "Auto-load embedded images": [
+        "Automaticky načíst vložené obrázky"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Ponechat zprávy v Odeslaných/Konceptech"
+      ],
+      "Link confirmation": [
+        "Potvrzení před otevřením odkazu"
+      ],
+      "Undo send": [
+        "Zrušit odeslání"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
+      ],
+      "User's new password": [
+        "Nové heslo uživatele"
+      ],
+      "Confirm new password": [
+        "Potvrdit nové heslo"
+      ],
+      "Old password": [
+        "Staré heslo"
+      ],
+      "New password": [
+        "Nové heslo"
+      ],
+      "Confirm password": [
+        "Potvrdit heslo"
+      ],
+      "Old login password": [
+        "Staré přihlašovací heslo"
+      ],
+      "New login password": [
+        "Nové přihlašovací heslo"
+      ],
+      "Confirm login password": [
+        "Potvrdit nové přihlašovací heslo"
+      ],
+      "New mailbox password": [
+        "Nové heslo k poštovní schránce"
+      ],
+      "Confirm mailbox password": [
+        "Potvrdit heslo k poštovní schránce"
+      ],
+      "Two-factor authentication code": [
+        "Kód dvoufaktorového ověření"
+      ],
+      "Key": [
+        "Klíč"
+      ],
+      "Interval": [
+        "Interval"
+      ],
+      "Digits": [
+        "Číslice"
+      ],
+      "Two-factor authentication": [
+        "Dvoufaktorové ověření"
+      ],
+      "Two-password mode": [
+        "Režim se dvěma hesly"
+      ],
+      "Mailbox password": [
+        "Heslo k poštovní schránce"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "Jaký je hlavní důvod, proč mažete svůj účet?"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
+        "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
+      ],
+      "Login password": [
+        "Přihlašovací heslo"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
+      ],
+      "Allow recovery by email": [
+        "Povolit obnovení e-mailem"
+      ],
+      "Daily email notifications": [
+        "Denní e-mailová upozornění"
+      ],
+      "Allow recovery by phone": [
+        "Povolit obnovení telefonem"
+      ],
+      "Allow recovery by recovery phrase": [
+        "Povolte obnovu podle obnovovací fráze"
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové zkratky"
+      ],
+      "Recovery phrase": [
+        "Obnovovací fráze"
+      ],
+      "Your recovery phrase": [
+        "Vaše obnovovací fráze"
+      ],
+      "Recovery phrase contains 12 words": [
+        "Obnovovací fráze zahrnuje 12 slov"
+      ],
+      "Signature": [
+        "Podpis"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail patička"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Cash": [
+        "Hotovost"
+      ],
+      "Card holder": [
+        "Držitel karty"
+      ],
+      "Expires": [
+        "Expiruje"
+      ],
+      "Payer": [
+        "Plátce"
+      ],
+      "Credits used": [
+        "Použité kredity"
+      ],
+      "Amount due": [
+        "Částka k zaplacení"
+      ],
+      "Customize invoices": [
+        "Přizpůsobení faktur"
       ],
       "Organization name": [
         "Název organizace"
@@ -1898,44 +1919,23 @@
       "Addresses": [
         "Adresy"
       ],
-      "Address": [
-        "Adresa"
-      ],
       "Key strength": [
         "Síla klíče"
-      ],
-      "User": [
-        "Uživatel"
-      ],
-      "Signature": [
-        "Podpis"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail patička"
-      ],
-      "Auto-load remote content": [
-        "Automaticky načíst vzdálený obsah"
-      ],
-      "Auto-load embedded images": [
-        "Automaticky načíst vložené obrázky"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Ponechat zprávy v Odeslaných/Konceptech"
-      ],
-      "Link confirmation": [
-        "Potvrzení před otevřením odkazu"
-      ],
-      "Undo send": [
-        "Zrušit odeslání"
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
       ],
       "Cancel": [
         "Zrušit"
       ],
       "Submit": [
         "Odeslat"
+      ],
+      "Phone number": [
+        "Telefonní číslo"
+      ],
+      "Verification code": [
+        "Ověřovací kód"
+      ],
+      "Enter the 6-digit code": [
+        "Zadejte 6-místný kód"
       ],
       "Recovery email": [
         "Sekundární e-mail"
@@ -1972,6 +1972,9 @@
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
+      "Keyboard Shortcuts": [
+        "Klávesové zkratky"
+      ],
       "Previous": [
         "Předchozí"
       ],
@@ -1983,12 +1986,6 @@
       ],
       "What's new": [
         "Co je nového"
-      ],
-      "Keyboard Shortcuts": [
-        "Klávesové zkratky"
-      ],
-      "Enable keyboard shortcuts": [
-        "Povolit klávesové zkratky"
       ],
       "Start import process": [
         "Zahájit proces importu"
@@ -2013,6 +2010,9 @@
       ],
       "Start a new import": [
         "Zahájit nový import"
+      ],
+      "Enable keyboard shortcuts": [
+        "Povolit klávesové zkratky"
       ],
       "Exporting contacts": [
         "Exportování kontaktů"
@@ -2047,23 +2047,8 @@
       "Get ProtonVPN Plus to access all servers": [
         "Získejte ProtonVPN Plus pro přístup ke všem serverům"
       ],
-      "Edit domain": [
-        "Upravit doménu"
-      ],
-      "Add domain": [
-        "Přidat doménu"
-      ],
-      "Catch-All address": [
-        "Adresa doménového koše"
-      ],
-      "Delete ${ domain.DomainName }": [
-        "Odstranit ${ domain.DomainName }"
-      ],
-      "Open help menu": [
-        "Otevřít menu nápovědy"
-      ],
-      "Back": [
-        "Zpět"
+      "Automatically sign outgoing messages?": [
+        "Automaticky podepisovat odchozí zprávy?"
       ],
       "Error": [
         "Chyba"
@@ -2101,9 +2086,6 @@
       "Your calendar link": [
         "Odkaz na Váš kalendář"
       ],
-      "Report a problem": [
-        "Nahlásit problém"
-      ],
       "Reactivate keys": [
         ""
       ],
@@ -2127,6 +2109,75 @@
       ],
       "Import key": [
         "Importovat klíč"
+      ],
+      "Edit domain": [
+        "Upravit doménu"
+      ],
+      "Add domain": [
+        "Přidat doménu"
+      ],
+      "Catch-All address": [
+        "Adresa doménového koše"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Odstranit ${ domain.DomainName }"
+      ],
+      "Open help menu": [
+        "Otevřít menu nápovědy"
+      ],
+      "Back": [
+        "Zpět"
+      ],
+      "Edit filter": [
+        "Upravit filtr"
+      ],
+      "Add filter": [
+        "Přidat filtr"
+      ],
+      "Are you sure you want to close?": [
+        "Opravdu chcete zavřít editor filtrů?"
+      ],
+      "Edit Sieve filter": [
+        "Upravit filtr Sieve"
+      ],
+      "Add Sieve filter": [
+        "Přidat filtr Sieve"
+      ],
+      "Delete ${ filter.Name }": [
+        "Smazat ${ filter.Name }"
+      ],
+      "Allow List": [
+        "Seznam povolených"
+      ],
+      "Block List": [
+        "Seznam blokovaných"
+      ],
+      "Add to Block List": [
+        "Přidat na černou listinu"
+      ],
+      "Add to Allow List": [
+        "Přidat na seznam povolených"
+      ],
+      "Edit Block List": [
+        ""
+      ],
+      "Edit Allow List": [
+        "Upravit seznam povolených"
+      ],
+      "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "Delete ${ Name } folder": [
+        "Smazat ${ Name } složku"
+      ],
+      "Delete ${ Name } label": [
+        "Smazat ${ Name } štítek"
+      ],
+      "Sort folders alphabetically": [
+        "Řadit složky abecedně"
+      ],
+      "Sort labels alphabetically": [
+        "Řadit štítky abecedně"
       ],
       "Confirm loss of Proton bonuses": [
         "Potvrdit odebrání Proton bonusů"
@@ -2269,6 +2320,21 @@
       "Confirm phone number": [
         "Potvrzení telefonního čísla"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Klávesové zkratky"
+      ],
+      "Add address": [
+        "Přidat adresu"
+      ],
+      "Delete ${ address.Email }": [
+        "Smazat ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Generovat chybějící klíče"
+      ],
+      "Bridge for ${ platform }": [
+        "Most pro ${ platform }"
+      ],
       "App": [
         "Aplikace"
       ],
@@ -2284,9 +2350,6 @@
       "Clear": [
         "Vyčistit"
       ],
-      "Automatically sign outgoing messages?": [
-        "Automaticky podepisovat odchozí zprávy?"
-      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -2301,63 +2364,6 @@
       ],
       "Status": [
         "Stav"
-      ],
-      "Edit filter": [
-        "Upravit filtr"
-      ],
-      "Add filter": [
-        "Přidat filtr"
-      ],
-      "Are you sure you want to close?": [
-        "Opravdu chcete zavřít editor filtrů?"
-      ],
-      "Edit Sieve filter": [
-        "Upravit filtr Sieve"
-      ],
-      "Add Sieve filter": [
-        "Přidat filtr Sieve"
-      ],
-      "Delete ${ filter.Name }": [
-        "Smazat ${ filter.Name }"
-      ],
-      "Allow List": [
-        "Seznam povolených"
-      ],
-      "Block List": [
-        "Seznam blokovaných"
-      ],
-      "Add to Block List": [
-        "Přidat na černou listinu"
-      ],
-      "Add to Allow List": [
-        "Přidat na seznam povolených"
-      ],
-      "Edit Block List": [
-        ""
-      ],
-      "Edit Allow List": [
-        "Upravit seznam povolených"
-      ],
-      "Invalid verification code": [
-        "Neplatný ověřovací kód"
-      ],
-      "Request new code": [
-        "Poslat nový kód"
-      ],
-      "Human verification": [
-        "CAPTCHA"
-      ],
-      "Delete ${ Name } folder": [
-        "Smazat ${ Name } složku"
-      ],
-      "Delete ${ Name } label": [
-        "Smazat ${ Name } štítek"
-      ],
-      "Sort folders alphabetically": [
-        "Řadit složky abecedně"
-      ],
-      "Sort labels alphabetically": [
-        "Řadit štítky abecedně"
       ],
       "Change organization name": [
         "Změnit název organizace"
@@ -2404,23 +2410,17 @@
       "Add user": [
         "Přidat uživatele"
       ],
-      "Add address": [
-        "Přidat adresu"
-      ],
-      "Delete ${ address.Email }": [
-        "Smazat ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Generovat chybějící klíče"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klávesové zkratky"
-      ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
-      "Bridge for ${ platform }": [
-        "Most pro ${ platform }"
+      "Invalid verification code": [
+        "Neplatný ověřovací kód"
+      ],
+      "Human verification": [
+        "CAPTCHA"
+      ],
+      "Request new code": [
+        "Poslat nový kód"
       ],
       "Account suspended": [
         "Účet pozastaven"
@@ -2452,14 +2452,14 @@
       "Other": [
         "Ostatní"
       ],
+      "Auto reply": [
+        "Automatická odpověď"
+      ],
       "Domain names": [
         "Názvy domén"
       ],
       "Catch-all address": [
         "Adresa doménového koše"
-      ],
-      "Auto reply": [
-        "Automatická odpověď"
       ],
       "Encryption & keys": [
         "Šifrování & klíče"
@@ -2475,9 +2475,6 @@
       ],
       "Contact encryption keys": [
         "Šifrovací klíče kontaktu"
-      ],
-      "Import Assistant": [
-        "Import Assistant"
       ],
       "Filters": [
         "Filtry"
@@ -2521,6 +2518,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "Import Assistant": [
+        "Import Assistant"
+      ],
       "Current & past imports": [
         "Aktuální & minulé importy"
       ],
@@ -2541,6 +2541,18 @@
       ],
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
+      ],
+      "My calendars": [
+        "Můj kalendář"
+      ],
+      "Subscribed calendars": [
+        "Odběr kalendářů"
+      ],
+      "Share outside Proton": [
+        "Sdílet mimo Proton"
+      ],
+      "Time zone": [
+        "Časové pásmo"
       ],
       "Password & recovery": [
         "Heslo & obnova"
@@ -2608,29 +2620,17 @@
       "Password & keys": [
         "Heslo & klíče"
       ],
-      "My calendars": [
-        "Můj kalendář"
-      ],
-      "Subscribed calendars": [
-        "Odběr kalendářů"
-      ],
-      "Share outside Proton": [
-        "Sdílet mimo Proton"
-      ],
-      "Time zone": [
-        "Časové pásmo"
-      ],
       "Sorry, you can't access this page": [
         "Omlouváme se, k této stránce nemáte přístup"
       ],
       "Upgrade": [
         "Rozšířit"
       ],
-      "Proton Logo": [
-        "Logo Protonu"
-      ],
       "Settings": [
         "Nastavení"
+      ],
+      "Proton Logo": [
+        "Logo Protonu"
       ],
       "Choose an account": [
         "Vybrat účet"
@@ -2799,12 +2799,6 @@
       "Loading": [
         "Načítání"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"ProtonMail me\" nebo \"Private Message me.\""
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        ""
-      ],
       "Import calendars": [
         "Importovat kalendáře"
       ],
@@ -2943,6 +2937,12 @@
       "Choose the look and feel of the application.": [
         "Vyberte si vzhled a chování aplikace."
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"ProtonMail me\" nebo \"Private Message me.\""
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        ""
+      ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
         "Podporujeme import souborů CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací. Podporujeme také import vCard 4.0. (kódování UTF-8)."
       ],
@@ -3024,56 +3024,41 @@
       "Plan upgrade required": [
         "Požadováno předplatné"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF záznamy se používají k určení, kdo může odesílat e-maily z Vaší domény. Proto důrazně doporučujeme zahrnout ProtonMail mezi SPF záznamy. Přidejte prosím následující TXT záznam k DNS domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Automatická odpověď je aktivní každý měsíc ve vybraném časovém rozsahu."
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Chcete-li zachovat existující SPF záznam, jednoduše k němu přidejte ${ spf } a potom ${ spfValue }. Nevytvářejte více SPF záznamů."
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Automatická odpověď je aktivní vždy v časovém rozsahu ve dnech v týdnu a hodinách, které byly vybrány."
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail podporuje podepisování DKIM pro vlastní domény. Chcete-li použít ověřování DKIM, přidejte prosím následující CNAME záznam do nastavení DNS u této domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Automatická odpověď je aktivní každý týden ve vybraném časovém rozsahu."
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "DŮLEŽITÉ: Někteří registrátoři nepřijímají hodnoty CNAME s tečkou na konci (zatímco jiní to vyžadují). Pokud váš registrátor nepřijímá vaše CNAME záznamy, smažte tečku na konci každého CNAME záznamu a zkuste to znovu."
+      "Auto-reply is active until you turn it off.": [
+        "Automatická odpověď je aktivní, dokud ji nevypnete."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Uchovávejte tyto záznamy ve Vaší DNS tak dlouho, jak dlouho chcete používat DKIM."
+      "Auto-reply is active from the start time to the end time.": [
+        "Automatická odpověď je aktivní ve vybraném časovém rozsahu."
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ProtonMail, je potřeba přidat následující záznamy MX a DNS. To lze obvykle provést v ovládacích panelech u registrátora názvu domény."
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ProtonMail záznam má nejnižší prioritu."
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Použijte automatické odpovědi k informovanosti kontaktů, že jste mimo kancelář a jinak nemůžete odpovědět."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Pokud tato doména aktuálně přijímá e-maily, vyberte kartu ${ boldAddresses } a přidejte všechny aktivní e-mailové adresy před změnou MX záznamu, aby byl zajištěn hladký přechod."
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "Předplaťte si ${ PLAN_NAMES[PLANS.VISIONARY] } nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL] } předplatné planu pro povolené automatických odpovědí, kdy jste mimo kancelář."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Pokud jste nastavili SPF i DKIM, DMARC Vám umožní určit, jak by ostatní e-mailoví poskytovatelé měli doručovat e-maily pro Vaši doménu v případě, že se nepodaří provést kontrolu SPF ani DKIM. Pro spammery je pak těžší předstírat Vaši totožnost, ale špatné nastavení může způsobit problémy s doručováním."
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Ověření adresy je pokročilá bezpečnostní funkce. Zapněte ji jen v případě že víte, co dělá."
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } nemá žádný vliv na doručení e-mailu, ale doporučujeme ${ quarantine } pro lepší bezpečnost."
+      "Encryption setting updated": [
+        "Nastavení šifrování bylo aktualizováno"
       ],
-      "${ n } address": [
-        "${ n } adresa",
-        "${ n } adresy",
-        "${ n } adres",
-        "${ n } adres"
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Klienti PGP s větší pravděpodobností automaticky rozpoznají vaše PGP klíče, pokud jsou odchozí zprávy podepsány."
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Vezměte prosím na vědomí, že pokud odstraníte tuto doménu, všechny přidružené adresy budou zakázány."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Opravdu chcete smazat tuto doménu?"
-      ],
-      "domain used": [
-        "použitá doména",
-        "použité domény",
-        "použitých domén",
-        "použitých domén"
-      ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Pokud máte vlastní doménu s ProtonMailem, můžete nastavit \"spádovou\" e-mailovou adresu, která bude dostávat zprávy odeslané do Vaší domény, ale na neplatnou e-mailovou adresu (např. díky překlepům)."
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
       ],
       "Are you sure you want to delete this calendar?": [
         "Opravdu chcete odstranit tento kalendář?"
@@ -3138,42 +3123,6 @@
       "You need to have a personal calendar to create a link.": [
         "Musíte mít osobní kalendář pro vytvoření odkazu."
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Automatická odpověď je aktivní každý měsíc ve vybraném časovém rozsahu."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Automatická odpověď je aktivní vždy v časovém rozsahu ve dnech v týdnu a hodinách, které byly vybrány."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Automatická odpověď je aktivní každý týden ve vybraném časovém rozsahu."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Automatická odpověď je aktivní, dokud ji nevypnete."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Automatická odpověď je aktivní ve vybraném časovém rozsahu."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        ""
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Použijte automatické odpovědi k informovanosti kontaktů, že jste mimo kancelář a jinak nemůžete odpovědět."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Předplaťte si ${ PLAN_NAMES[PLANS.VISIONARY] } nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL] } předplatné planu pro povolené automatických odpovědí, kdy jste mimo kancelář."
-      ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
-      ],
-      "More Info": [
-        "Více informací"
-      ],
-      "Loading ${ appName }": [
-        "Načítám ${ appName }"
-      ],
       "All keys successfully reactivated": [
         ""
       ],
@@ -3230,6 +3179,132 @@
       ],
       "No contact encryption keys exist": [
         "Neexistuje žádný klíč pro šifrování kontaktů"
+      ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF záznamy se používají k určení, kdo může odesílat e-maily z Vaší domény. Proto důrazně doporučujeme zahrnout ProtonMail mezi SPF záznamy. Přidejte prosím následující TXT záznam k DNS domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "Chcete-li zachovat existující SPF záznam, jednoduše k němu přidejte ${ spf } a potom ${ spfValue }. Nevytvářejte více SPF záznamů."
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail podporuje podepisování DKIM pro vlastní domény. Chcete-li použít ověřování DKIM, přidejte prosím následující CNAME záznam do nastavení DNS u této domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "DŮLEŽITÉ: Někteří registrátoři nepřijímají hodnoty CNAME s tečkou na konci (zatímco jiní to vyžadují). Pokud váš registrátor nepřijímá vaše CNAME záznamy, smažte tečku na konci každého CNAME záznamu a zkuste to znovu."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Uchovávejte tyto záznamy ve Vaší DNS tak dlouho, jak dlouho chcete používat DKIM."
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ProtonMail, je potřeba přidat následující záznamy MX a DNS. To lze obvykle provést v ovládacích panelech u registrátora názvu domény."
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ProtonMail záznam má nejnižší prioritu."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Pokud tato doména aktuálně přijímá e-maily, vyberte kartu ${ boldAddresses } a přidejte všechny aktivní e-mailové adresy před změnou MX záznamu, aby byl zajištěn hladký přechod."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "Pokud jste nastavili SPF i DKIM, DMARC Vám umožní určit, jak by ostatní e-mailoví poskytovatelé měli doručovat e-maily pro Vaši doménu v případě, že se nepodaří provést kontrolu SPF ani DKIM. Pro spammery je pak těžší předstírat Vaši totožnost, ale špatné nastavení může způsobit problémy s doručováním."
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } nemá žádný vliv na doručení e-mailu, ale doporučujeme ${ quarantine } pro lepší bezpečnost."
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adresy",
+        "${ n } adres",
+        "${ n } adres"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Vezměte prosím na vědomí, že pokud odstraníte tuto doménu, všechny přidružené adresy budou zakázány."
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Opravdu chcete smazat tuto doménu?"
+      ],
+      "domain used": [
+        "použitá doména",
+        "použité domény",
+        "použitých domén",
+        "použitých domén"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Pokud máte vlastní doménu s ProtonMailem, můžete nastavit \"spádovou\" e-mailovou adresu, která bude dostávat zprávy odeslané do Vaší domény, ale na neplatnou e-mailovou adresu (např. díky překlepům)."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
+        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno a platný filtrovací skript."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
+      ],
+      "No label selected": [
+        "Není vybrán žádný štítek"
+      ],
+      "No folder selected": [
+        "Není vybrána žádná složka"
+      ],
+      "No action selected": [
+        "Není vybrána žádná akce"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtrování pokud jsou splněny všechny následující podmínky)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtrování pokud je splněna jakákoliv z následujících podmínek)"
+      ],
+      "All your changes will be lost.": [
+        "Veškeré vaše změny budou ztraceny."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Určitě chcete zahodit všechny provedené změny?"
+      ],
+      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
+        "Vlastní filtry fungují na všech nových e-mailech, včetně příchozích i odchozích e-mailů. Filtry mohou být editovány a vytvořeny přímo prostřednictvím programovacího jazyka Sieve."
+      ],
+      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
+        "Vezměte prosím na vědomí, že pokud odstraníte tento filtr, přestaneme zpracovávat všechny automatické akce, které spouští."
+      ],
+      "Are you sure you want to delete this filter?": [
+        "Opravdu chcete odstranit tento filtr?"
+      ],
+      "Your Allow List is empty.": [
+        ""
+      ],
+      "Your Block List is empty.": [
+        ""
+      ],
+      "Screenshot(s) attached": [
+        "Snímek/snímky byly připojeny"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Inherited from parent folder": [
+        "Zděděno z nadřazené složky"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový email."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Označený email s touto složkou nebude vymazán a je možné jej nalézt v příslušném souboru."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Jste si jisti, že chcete odstranit tento štítek?"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Emaily uložené v tomto souboru nebudou vymazány a je možné je stále nalézt v souboru Všechna Pošta."
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Opravdu chcete smazat tuto složku?"
+      ],
+      "More Info": [
+        "Více informací"
+      ],
+      "Loading ${ appName }": [
+        "Načítám ${ appName }"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -3552,6 +3627,12 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "Připojení k internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
       ],
+      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
+        "Pokud je zakázáno, zabraňuje načítání všech souborů na Vašem zařízení bez Vašeho vědomí.\t"
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Pokud je zakázáno, zabraňuje načítání obrázkových souborů na Vašem zařízení bez Vašeho vědomí."
+      ],
       "By leaving now, changes may not be saved": [
         "Pokud nyní opustíte stránku, změny nemusí být uloženy"
       ],
@@ -3660,6 +3741,9 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní, nebo neaktivní klávesové zkratky v nastavení."
+      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Obnovovací fráze je série 12 slov v určitém pořadí."
       ],
@@ -3686,6 +3770,33 @@
       ],
       "Recovery phrase has been disabled": [
         "Obnovovací fráze bude deaktivována"
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Dejte svým kontaktům vědět, že Vám záleží na jejich soukromí."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Vezměte prosím na vědomí, že pokud odstraníte tuto adresu, již nebudete moci odesílat ani přijímat e-maily pomocí této adresy."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Opravdu chcete smazat tuto adresu?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "E-mailová adresa, kterou umístíte v horní části seznamu, je vaše výchozí e-mailová adresa. Přetažením změňte pořadí Vašich adres."
+      ],
+      "Queued": [
+        "Ve frontě"
+      ],
+      "Done": [
+        "Hotovo"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "ProtonMail můžete použít s jakýmkoliv desktopovým e-mailovým klientem, který podporuje IMAP/SMTP, včetně Outlook, Apple Mail a Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Přejděte na placené předplatné a odemkněte podporu IMAP/SMTP prostřednictvím ProtonMail Bridge."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušit všechny ostatní relace než tu stávající?"
@@ -3714,18 +3825,6 @@
       "Expired": [
         "Platnost vypršela"
       ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Ověření adresy je pokročilá bezpečnostní funkce. Zapněte ji jen v případě že víte, co dělá."
-      ],
-      "Encryption setting updated": [
-        "Nastavení šifrování bylo aktualizováno"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Klienti PGP s větší pravděpodobností automaticky rozpoznají vaše PGP klíče, pokud jsou odchozí zprávy podepsány."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
       ],
@@ -3746,99 +3845,6 @@
       ],
       "of": [
         "z"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno a platný filtrovací skript."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
-      ],
-      "No label selected": [
-        "Není vybrán žádný štítek"
-      ],
-      "No folder selected": [
-        "Není vybrána žádná složka"
-      ],
-      "No action selected": [
-        "Není vybrána žádná akce"
-      ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtrování pokud jsou splněny všechny následující podmínky)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtrování pokud je splněna jakákoliv z následujících podmínek)"
-      ],
-      "All your changes will be lost.": [
-        "Veškeré vaše změny budou ztraceny."
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Určitě chcete zahodit všechny provedené změny?"
-      ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Vlastní filtry fungují na všech nových e-mailech, včetně příchozích i odchozích e-mailů. Filtry mohou být editovány a vytvořeny přímo prostřednictvím programovacího jazyka Sieve."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Vezměte prosím na vědomí, že pokud odstraníte tento filtr, přestaneme zpracovávat všechny automatické akce, které spouští."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Opravdu chcete odstranit tento filtr?"
-      ],
-      "Your Allow List is empty.": [
-        ""
-      ],
-      "Your Block List is empty.": [
-        ""
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
-      ],
-      "Inherited from parent folder": [
-        "Zděděno z nadřazené složky"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový email."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Označený email s touto složkou nebude vymazán a je možné jej nalézt v příslušném souboru."
-      ],
-      "Are you sure you want to delete this label?": [
-        "Jste si jisti, že chcete odstranit tento štítek?"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Emaily uložené v tomto souboru nebudou vymazány a je možné je stále nalézt v souboru Všechna Pošta."
-      ],
-      "Are you sure you want to delete this folder?": [
-        "Opravdu chcete smazat tuto složku?"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Tento proces vytvoří pro vaši organizaci nový šifrovací klíč. 4096-bitové klíče fungují pouze na vysoce výkonných počítačích, pro většinu uživatelů doporučujeme používat 2048-bitové klíče."
@@ -3927,44 +3933,38 @@
       "more": [
         "více"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Vezměte prosím na vědomí, že pokud odstraníte tuto adresu, již nebudete moci odesílat ani přijímat e-maily pomocí této adresy."
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
       ],
-      "Are you sure you want to delete this address?": [
-        "Opravdu chcete smazat tuto adresu?"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "E-mailová adresa, kterou umístíte v horní části seznamu, je vaše výchozí e-mailová adresa. Přetažením změňte pořadí Vašich adres."
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
-      "Queued": [
-        "Ve frontě"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
-      "Done": [
-        "Hotovo"
+      "To fight spam and abuse, please verify you are human.": [
+        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
       ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      "Your email will only be used for this one-time verification.": [
+        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
-      "Let your contacts know you care about their privacy.": [
-        "Dejte svým kontaktům vědět, že Vám záleží na jejich soukromí."
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Pokud je zakázáno, zabraňuje načítání všech souborů na Vašem zařízení bez Vašeho vědomí.\t"
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Pokud je zakázáno, zabraňuje načítání obrázkových souborů na Vašem zařízení bez Vašeho vědomí."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní, nebo neaktivní klávesové zkratky v nastavení."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
       "support team": [
         "tým podpory"
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "ProtonMail můžete použít s jakýmkoliv desktopovým e-mailovým klientem, který podporuje IMAP/SMTP, včetně Outlook, Apple Mail a Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Přejděte na placené předplatné a odemkněte podporu IMAP/SMTP prostřednictvím ProtonMail Bridge."
       ],
       "here": [
         "zde"
@@ -3974,6 +3974,15 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud se domníváte, že jde o chybu, kontaktujte nás prosím na ${ contactLink }."
+      ],
+      "Session timed out.": [
+        "Relace vypršela."
+      ],
+      "Internet connection lost.": [
+        "Připojení k Internetu bylo ztraceno."
+      ],
+      "Servers are unreachable.": [
+        "Servery jsou nedostupné."
       ],
       "Custom daily": [
         "Vlastní denně"
@@ -3998,15 +4007,6 @@
       ],
       "Yearly": [
         "Ročně"
-      ],
-      "Session timed out.": [
-        "Relace vypršela."
-      ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
-      ],
-      "Servers are unreachable.": [
-        "Servery jsou nedostupné."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Uživatelé nemohou provádět změny v nastavení organizace. Pokud potřebujete práva správce, kontaktujte správce systému."
@@ -4231,399 +4231,6 @@
         "Hledat časová pásma"
       ]
     },
-    "Success": {
-      "Preference saved": [
-        "Nastavení bylo uloženo"
-      ],
-      "Locale updated": [
-        "Místní aktualizace"
-      ],
-      "Premium address created": [
-        "Prémiová adresa byla vytvořena"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Nastavení klávesových zkratek upraveno"
-      ],
-      "Import resumed": [
-        "Import obnoven"
-      ],
-      "Import canceled": [
-        "Import byl zrušen"
-      ],
-      "Import record deleted": [
-        "Záznam o importu byl smazán"
-      ],
-      "Deleting original messages": [
-        "Mazání původních zpráv"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } zkopírováno do Vaší schránky"
-      ],
-      "Verification code copied to clipboard!": [
-        ""
-      ],
-      "SPF value copied to clipboard!": [
-        "Hodnota SPF záznamu zkopírována do schránky!"
-      ],
-      "Value copied to clipboard!": [
-        "Hodnota byla zkopírována do schránky!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "Hodnota DMARC byla zkopírována do schránky!"
-      ],
-      "Domain verified": [
-        "Doména ověřena"
-      ],
-      "Catch-all address updated": [
-        "Záchytná adresa aktualizována"
-      ],
-      "Email address copied to clipboard": [
-        "E-mailová adresa zkopírována do schránky"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Kalendář je přidán. Synchronizace zabere pár minut."
-      ],
-      "Calendar created": [
-        "Kalendář byl vytvořen"
-      ],
-      "Calendar updated": [
-        "Kalendář aktualizován"
-      ],
-      "Default calendar updated": [
-        "Výchozí kalendář byl aktualizován"
-      ],
-      "Calendar removed": [
-        "Kalendář byl odstraněn"
-      ],
-      "Auto-reply disabled": [
-        "Automatická odpověď vypnuta"
-      ],
-      "Auto-reply updated": [
-        "Automatická odpověď aktualizována"
-      ],
-      "Bug reported": [
-        "Chyba nahlášena"
-      ],
-      "You have successfully unsubscribed": [
-        "Předplatné bylo úspěšně zrušeno"
-      ],
-      "Payment method updated": [
-        "Způsob platby byl aktualizován"
-      ],
-      "Payment method added": [
-        "Způsob platby byl přidán"
-      ],
-      "Credits added": [
-        "Kredity byly přidány"
-      ],
-      "Gift code applied": [
-        "Kód kupónu byl použit"
-      ],
-      "Password updated": [
-        "Heslo bylo změněno"
-      ],
-      "Account deleted. Logging out...": [
-        "Účet byl smazán. Odhlašování..."
-      ],
-      "Email updated": [
-        "E-mail byl aktualizován"
-      ],
-      "Phone number updated": [
-        "Telefonní číslo bylo aktualizováno"
-      ],
-      "Session revoked": [
-        "Relace byla zrušena"
-      ],
-      "Sessions revoked": [
-        "Relace byla zrušena"
-      ],
-      "Payment method deleted": [
-        "Platební metoda smazána"
-      ],
-      "Invoice paid": [
-        "Faktura zaplacena"
-      ],
-      "Invoice customized": [
-        "Faktura přizpůsobena"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kód odeslán na ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Ověření proběhlo úspěšně"
-      ],
-      "Organization activated": [
-        "Organizace byla aktivována"
-      ],
-      "Keys updated": [
-        "Klíče aktualizovány"
-      ],
-      "User updated": [
-        "Uživatel aktualizován"
-      ],
-      "User created": [
-        "Uživatel vytvořen"
-      ],
-      "Address added": [
-        "Adresa přidána"
-      ],
-      "Address updated": [
-        "Adresa aktualizována"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Pokud jste zadali platný obnovovací email, email s Vaším uživatelským jménem zašleme v dalším okamžiku."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Pokud jste zadali pro obnovení platný telefonní číslo, zašleme Vám sms s Vaším uživatelským jménem v dalším momentě."
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automatické (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatické (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Přidat do existující skupiny"
-      ],
-      "Create new group": [
-        "Vytvořit novou skupinu"
-      ],
-      "Ignore group": [
-        "Ignorovat skupinu"
-      ],
-      "Normal": [
-        "Normální"
-      ],
-      "Plain text": [
-        "Prostý text"
-      ],
-      "Left to Right": [
-        "Zleva doprava"
-      ],
-      "Right to Left": [
-        "Zprava doleva"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Router"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Konfigurace Secure Core"
-      ],
-      "Country configs": [
-        "Konfigurace země"
-      ],
-      "Standard server configs": [
-        "Konfigurace standardního serveru"
-      ],
-      "Free server configs": [
-        "Konfigurace bezplatného serveru"
-      ],
-      "Fixed duration": [
-        "Pevná doba trvání"
-      ],
-      "Repeat daily": [
-        "Opakovat denně"
-      ],
-      "Repeat weekly": [
-        "Opakovat týdně"
-      ],
-      "Repeat monthly": [
-        "Opakovat měsíčně"
-      ],
-      "Permanent": [
-        "Trvalý"
-      ],
-      "1st of the month": [
-        "1. den v měsíci"
-      ],
-      "2nd of the month": [
-        "2. den v měsíci"
-      ],
-      "3rd of the month": [
-        "3. den v měsíci"
-      ],
-      "4th of the month": [
-        "4. den v měsíci"
-      ],
-      "5th of the month": [
-        "5. den v měsíci"
-      ],
-      "6th of the month": [
-        "6. den v měsíci"
-      ],
-      "7th of the month": [
-        "7. den v měsíci"
-      ],
-      "8th of the month": [
-        "8. den v měsíci"
-      ],
-      "9th of the month": [
-        "9. den v měsíci"
-      ],
-      "10th of the month": [
-        "10. den v měsíci"
-      ],
-      "11th of the month": [
-        "11. den v měsíci"
-      ],
-      "12th of the month": [
-        "12. den v měsíci"
-      ],
-      "13th of the month": [
-        "13. den v měsíci"
-      ],
-      "14th of the month": [
-        "14. den v měsíci"
-      ],
-      "15th of the month": [
-        "15. den v měsíci"
-      ],
-      "16th of the month": [
-        "16. den v měsíci"
-      ],
-      "17th of the month": [
-        "17. den v měsíci"
-      ],
-      "18th of the month": [
-        "18. den v měsíci"
-      ],
-      "19th of the month": [
-        "19. den v měsíci"
-      ],
-      "20th of the month": [
-        "20. den v měsíci"
-      ],
-      "21st of the month": [
-        "21. den v měsíci"
-      ],
-      "22nd of the month": [
-        "22. den v měsíci"
-      ],
-      "23rd of the month": [
-        "23. den v měsíci"
-      ],
-      "24th of the month": [
-        "24. den v měsíci"
-      ],
-      "25th of the month": [
-        "25. den v měsíci"
-      ],
-      "26th of the month": [
-        "26. den v měsíci"
-      ],
-      "27th of the month": [
-        "27. den v měsíci"
-      ],
-      "28th of the month": [
-        "28. den v měsíci"
-      ],
-      "29th of the month": [
-        "29. den v měsíci"
-      ],
-      "30th of the month": [
-        "30. den v měsíci"
-      ],
-      "31st of the month": [
-        "31. den v měsíci"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (nejrychlejší, nejmodernější)"
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ highestSecurity } RSA 4096-bit (pomalejší, ale zvyšuje kompatibilitu se starším softwarem)"
-      ],
-      "Select a reason": [
-        "Vyberte důvod"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Je to dočasné, brzy se vrátím"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Nechápal jsem, k čemu jsem se přihlásil"
-      ],
-      "It’s too expensive": [
-        "Je to příliš drahé"
-      ],
-      "I’m unhappy with customer service": [
-        "Jsem nespokojen se zákaznickou podporou"
-      ],
-      "Using Proton is too complicated": [
-        "Používání Protonu je příliš složité"
-      ],
-      "I'm switching to a different service": [
-        "Přecházím na jinou službu"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Kvalita neodpovídá mému očekávání"
-      ],
-      "Other": [
-        "Jiné"
-      ],
-      "I use a different Proton account": [
-        "Používám jiný Proton účet"
-      ],
-      "It's too expensive": [
-        "Cena je příliš vysoká"
-      ],
-      "It's missing a key feature that I need": [
-        "Chybí klíčová funkce, kterou potřebuji"
-      ],
-      "I found another service that I like better": [
-        "Našel jsem jinou službu, která se mi líbí více"
-      ],
-      "My reason isn't listed": [
-        "Můj důvod není na seznamu"
-      ],
-      "No parent folder": [
-        "Žádná nadřazená složka"
-      ]
-    },
-    "Day": {
-      "Sunday": [
-        "Neděle"
-      ],
-      "Monday": [
-        "Pondělí"
-      ],
-      "Tuesday": [
-        "Úterý"
-      ],
-      "Wednesday": [
-        "Středa"
-      ],
-      "Thursday": [
-        "Čtvrtek"
-      ],
-      "Friday": [
-        "Pátek"
-      ],
-      "Saturday": [
-        "Sobota"
-      ]
-    },
     "Loading info": {
       "Connecting to your calendar provider": [
         "Připojování k Vašemu poskytovateli kalendáře"
@@ -4727,14 +4334,14 @@
       "Are you sure you want to delete the phone number?": [
         "Jste si jistí, že chcete vymazat telefonní číslo?"
       ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Deaktivací protokolů také vyčistíte celou historii protokolů. Jste si jistí, že chcete deaktivovat protokoly?"
-      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Deaktivováním této adresy již nebudete moci odesílat ani přijímat e-maily pomocí této adresy a všechny propojené produkty Proton budou také zrušeny. Opravdu chcete deaktivovat tuto adresu?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Musíte ${ activateLink } klíče organize předtím, než přidáte emailovou adresu veřejnému členovi."
+      ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Deaktivací protokolů také vyčistíte celou historii protokolů. Jste si jistí, že chcete deaktivovat protokoly?"
       ]
     },
     "Import instructions emphasis": {
@@ -4985,15 +4592,6 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Seskupte e-maily ve stejné konverzaci ve Vaší Doručené poště nebo je zobrazte samostatně."
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Zastavili jsme podepisování DKIM kvůli problémům s vaší konfigurací DNS. Chcete-li pokračovat v podepisování, postupujte podle pokynů níže."
-      ],
-      "Your DKIM signing is working.": [
-        "Váš DKIM podpis funguje."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
-      ],
       "This feature is unavailable for the moment": [
         "Tato funkce není momentálně k dispozici"
       ],
@@ -5014,6 +4612,21 @@
       ],
       "This address has been disabled": [
         "Tato adresa byla zakázána"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Zastavili jsme podepisování DKIM kvůli problémům s vaší konfigurací DNS. Chcete-li pokračovat v podepisování, postupujte podle pokynů níže."
+      ],
+      "Your DKIM signing is working.": [
+        "Váš DKIM podpis funguje."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
+      ],
+      "This feature is only available for paid users": [
+        "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Povolit/Zakázat oznamování na ploše a mobilu"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Použijte více adres / aliasy propojené s vaším účtem, např. uzivatelskejmeno2@protonmail.com"
@@ -5063,15 +4676,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Umožňuje nahrávat pokročilé protokoly IP adres v bezpečnostním protokolu pro každou událost."
-      ],
-      "This feature is only available for paid users": [
-        "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Povolit/Zakázat oznamování na ploše a mobilu"
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Zprávy v odeslaném nebo v draftu souboru se budou dál zobrazovat v tomto souboru, i když je přestěhujet do jiného souboru."
       ],
@@ -5080,6 +4684,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Tato funkce zpožďuje posílání Vašich emailů, dává možnost přerušit zasílání zprávy, která už byla na cestě a vrátit ji zpět."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Umožňuje nahrávat pokročilé protokoly IP adres v bezpečnostním protokolu pro každou událost."
       ]
     },
     "Security phrase": {
@@ -5121,6 +4728,152 @@
         "Zpožděno"
       ]
     },
+    "Success": {
+      "Import resumed": [
+        "Import obnoven"
+      ],
+      "Import canceled": [
+        "Import byl zrušen"
+      ],
+      "Import record deleted": [
+        "Záznam o importu byl smazán"
+      ],
+      "Deleting original messages": [
+        "Mazání původních zpráv"
+      ],
+      "Preference saved": [
+        "Nastavení bylo uloženo"
+      ],
+      "Premium address created": [
+        "Prémiová adresa byla vytvořena"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Nastavení klávesových zkratek upraveno"
+      ],
+      "Locale updated": [
+        "Místní aktualizace"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } zkopírováno do Vaší schránky"
+      ],
+      "Auto-reply disabled": [
+        "Automatická odpověď vypnuta"
+      ],
+      "Auto-reply updated": [
+        "Automatická odpověď aktualizována"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Kalendář je přidán. Synchronizace zabere pár minut."
+      ],
+      "Calendar created": [
+        "Kalendář byl vytvořen"
+      ],
+      "Calendar updated": [
+        "Kalendář aktualizován"
+      ],
+      "Default calendar updated": [
+        "Výchozí kalendář byl aktualizován"
+      ],
+      "Calendar removed": [
+        "Kalendář byl odstraněn"
+      ],
+      "Verification code copied to clipboard!": [
+        ""
+      ],
+      "SPF value copied to clipboard!": [
+        "Hodnota SPF záznamu zkopírována do schránky!"
+      ],
+      "Value copied to clipboard!": [
+        "Hodnota byla zkopírována do schránky!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "Hodnota DMARC byla zkopírována do schránky!"
+      ],
+      "Domain verified": [
+        "Doména ověřena"
+      ],
+      "Catch-all address updated": [
+        "Záchytná adresa aktualizována"
+      ],
+      "Email address copied to clipboard": [
+        "E-mailová adresa zkopírována do schránky"
+      ],
+      "Bug reported": [
+        "Chyba nahlášena"
+      ],
+      "You have successfully unsubscribed": [
+        "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Payment method updated": [
+        "Způsob platby byl aktualizován"
+      ],
+      "Payment method added": [
+        "Způsob platby byl přidán"
+      ],
+      "Credits added": [
+        "Kredity byly přidány"
+      ],
+      "Gift code applied": [
+        "Kód kupónu byl použit"
+      ],
+      "Password updated": [
+        "Heslo bylo změněno"
+      ],
+      "Account deleted. Logging out...": [
+        "Účet byl smazán. Odhlašování..."
+      ],
+      "Email updated": [
+        "E-mail byl aktualizován"
+      ],
+      "Phone number updated": [
+        "Telefonní číslo bylo aktualizováno"
+      ],
+      "Address updated": [
+        "Adresa aktualizována"
+      ],
+      "Address added": [
+        "Adresa přidána"
+      ],
+      "Session revoked": [
+        "Relace byla zrušena"
+      ],
+      "Sessions revoked": [
+        "Relace byla zrušena"
+      ],
+      "Payment method deleted": [
+        "Platební metoda smazána"
+      ],
+      "Invoice paid": [
+        "Faktura zaplacena"
+      ],
+      "Invoice customized": [
+        "Faktura přizpůsobena"
+      ],
+      "Organization activated": [
+        "Organizace byla aktivována"
+      ],
+      "Keys updated": [
+        "Klíče aktualizovány"
+      ],
+      "User updated": [
+        "Uživatel aktualizován"
+      ],
+      "User created": [
+        "Uživatel vytvořen"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kód odeslán na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Ověření proběhlo úspěšně"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Pokud jste zadali platný obnovovací email, email s Vaším uživatelským jménem zašleme v dalším okamžiku."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Pokud jste zadali pro obnovení platný telefonní číslo, zašleme Vám sms s Vaším uživatelským jménem v dalším momentě."
+      ]
+    },
     "Title header": {
       "Import": [
         "Import"
@@ -5141,6 +4894,253 @@
     "Import error link": {
       "bandwidth limit": [
         "limitována šířka pásma"
+      ]
+    },
+    "Option": {
+      "Automatic (${ defaultFormat })": [
+        "Automatické (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatické (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Přidat do existující skupiny"
+      ],
+      "Create new group": [
+        "Vytvořit novou skupinu"
+      ],
+      "Ignore group": [
+        "Ignorovat skupinu"
+      ],
+      "Normal": [
+        "Normální"
+      ],
+      "Plain text": [
+        "Prostý text"
+      ],
+      "Left to Right": [
+        "Zleva doprava"
+      ],
+      "Right to Left": [
+        "Zprava doleva"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Konfigurace Secure Core"
+      ],
+      "Country configs": [
+        "Konfigurace země"
+      ],
+      "Standard server configs": [
+        "Konfigurace standardního serveru"
+      ],
+      "Free server configs": [
+        "Konfigurace bezplatného serveru"
+      ],
+      "Fixed duration": [
+        "Pevná doba trvání"
+      ],
+      "Repeat daily": [
+        "Opakovat denně"
+      ],
+      "Repeat weekly": [
+        "Opakovat týdně"
+      ],
+      "Repeat monthly": [
+        "Opakovat měsíčně"
+      ],
+      "Permanent": [
+        "Trvalý"
+      ],
+      "1st of the month": [
+        "1. den v měsíci"
+      ],
+      "2nd of the month": [
+        "2. den v měsíci"
+      ],
+      "3rd of the month": [
+        "3. den v měsíci"
+      ],
+      "4th of the month": [
+        "4. den v měsíci"
+      ],
+      "5th of the month": [
+        "5. den v měsíci"
+      ],
+      "6th of the month": [
+        "6. den v měsíci"
+      ],
+      "7th of the month": [
+        "7. den v měsíci"
+      ],
+      "8th of the month": [
+        "8. den v měsíci"
+      ],
+      "9th of the month": [
+        "9. den v měsíci"
+      ],
+      "10th of the month": [
+        "10. den v měsíci"
+      ],
+      "11th of the month": [
+        "11. den v měsíci"
+      ],
+      "12th of the month": [
+        "12. den v měsíci"
+      ],
+      "13th of the month": [
+        "13. den v měsíci"
+      ],
+      "14th of the month": [
+        "14. den v měsíci"
+      ],
+      "15th of the month": [
+        "15. den v měsíci"
+      ],
+      "16th of the month": [
+        "16. den v měsíci"
+      ],
+      "17th of the month": [
+        "17. den v měsíci"
+      ],
+      "18th of the month": [
+        "18. den v měsíci"
+      ],
+      "19th of the month": [
+        "19. den v měsíci"
+      ],
+      "20th of the month": [
+        "20. den v měsíci"
+      ],
+      "21st of the month": [
+        "21. den v měsíci"
+      ],
+      "22nd of the month": [
+        "22. den v měsíci"
+      ],
+      "23rd of the month": [
+        "23. den v měsíci"
+      ],
+      "24th of the month": [
+        "24. den v měsíci"
+      ],
+      "25th of the month": [
+        "25. den v měsíci"
+      ],
+      "26th of the month": [
+        "26. den v měsíci"
+      ],
+      "27th of the month": [
+        "27. den v měsíci"
+      ],
+      "28th of the month": [
+        "28. den v měsíci"
+      ],
+      "29th of the month": [
+        "29. den v měsíci"
+      ],
+      "30th of the month": [
+        "30. den v měsíci"
+      ],
+      "31st of the month": [
+        "31. den v měsíci"
+      ],
+      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } X25519 (nejrychlejší, nejmodernější)"
+      ],
+      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ highestSecurity } RSA 4096-bit (pomalejší, ale zvyšuje kompatibilitu se starším softwarem)"
+      ],
+      "No parent folder": [
+        "Žádná nadřazená složka"
+      ],
+      "Select a reason": [
+        "Vyberte důvod"
+      ],
+      "It’s temporary, I’ll be back": [
+        "Je to dočasné, brzy se vrátím"
+      ],
+      "I didn’t understand what I was signing up for": [
+        "Nechápal jsem, k čemu jsem se přihlásil"
+      ],
+      "It’s too expensive": [
+        "Je to příliš drahé"
+      ],
+      "I’m unhappy with customer service": [
+        "Jsem nespokojen se zákaznickou podporou"
+      ],
+      "Using Proton is too complicated": [
+        "Používání Protonu je příliš složité"
+      ],
+      "I'm switching to a different service": [
+        "Přecházím na jinou službu"
+      ],
+      "The quality didn't live up to my expectations": [
+        "Kvalita neodpovídá mému očekávání"
+      ],
+      "Other": [
+        "Jiné"
+      ],
+      "I use a different Proton account": [
+        "Používám jiný Proton účet"
+      ],
+      "It's too expensive": [
+        "Cena je příliš vysoká"
+      ],
+      "It's missing a key feature that I need": [
+        "Chybí klíčová funkce, kterou potřebuji"
+      ],
+      "I found another service that I like better": [
+        "Našel jsem jinou službu, která se mi líbí více"
+      ],
+      "My reason isn't listed": [
+        "Můj důvod není na seznamu"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "Neděle"
+      ],
+      "Monday": [
+        "Pondělí"
+      ],
+      "Tuesday": [
+        "Úterý"
+      ],
+      "Wednesday": [
+        "Středa"
+      ],
+      "Thursday": [
+        "Čtvrtek"
+      ],
+      "Friday": [
+        "Pátek"
+      ],
+      "Saturday": [
+        "Sobota"
       ]
     },
     "Progress bar description": {
@@ -5459,181 +5459,29 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, a další."
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Přidejte doménu, kterou vlastníte k účtu ProtonMail."
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Jsem mimo kancelář s omezeným přístupem ke svému e-mailu."
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "Subdomény 'www' se obvykle nepoužívají pro e-mail. Opravdu chcete použít tuto doménu?"
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "V momentě kdy obdržíte email od dalšího uživatele ProtonMail, který nemá důvěrné klíče ve Vašich kontaktech, oznamovací okno se Vás zeptá, zda chcete povolit důvěrné klíče."
       ]
     },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Z bezpečnostních důvodů musíme ověřit, že jste vlastníkem domény { domainName }. Přidejte k doméně následující DNS TXT záznam. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "Přidejte nového uživatele své organizace a vytvořte adresu."
-      ],
-      "Add a new address for any user of your organization.": [
-        "Přidejte nové adresy pro uživatele své organizace."
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Automatické nastavení podpisu všech odchodzích zpráv tak, že uživatelé mohou ověřit autentičnost Vašich zpráv. Tato metoda je provedena s výchozím nastavením PGP, které může být nakonfigurováno, jak je uvedeno níže."
       ]
     },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Po úspěšném ověření, neodstraňujte TXT záznam, potřebujete to pro potvrzení, že budete dál používat svou doménu."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Můžete to trvat den, než se projeví změna v DNS záznamech."
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Automaticky přidá veřejný klíč ke každé odeslané zprávě. Příjemci tak budou moci ověřit pravost vašich zpráv a odeslat zašifrovanou zprávu i Vám."
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Přidejte prosím následující TXT záznam:"
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "Typ"
-      ],
-      "Host name": [
-        "Název serveru"
-      ],
-      "Value / Data / Points to": [
-        "Hodnota / Data / Body"
-      ],
-      "Value / Data": [
-        "Hodnota / Data"
-      ],
-      "Priority": [
-        "Priorita"
-      ]
-    },
-    "Tab in domain modal": {
-      "Addresses": [
-        "Adresy"
-      ]
-    },
-    "Label in domain modal": {
-      "Domain": [
-        "Doména"
-      ],
-      "Verify": [
-        "Ověřit"
-      ],
-      "Addresses": [
-        "Adresy"
-      ]
-    },
-    "Domain label": {
-      "Verified": [
-        "Ověřeno"
-      ]
-    },
-    "Badge for domain": {
-      "Missing keys": [
-        "Chybějící klíče"
-      ],
-      "Enabled": [
-        "Zapnuto"
-      ],
-      "Disabled": [
-        "Vypnuto"
-      ]
-    },
-    "Title header for addresses domain table": {
-      "Address": [
-        "Adresa"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "Catch-All": [
-        "Doménový koš"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "Doména byla odstraněna"
-      ],
-      "Sessions revoked": [
-        "Relace byla zrušena"
-      ],
-      "User deleted": [
-        "Uživatel odstraněn"
-      ]
-    },
-    "Header for addresses table": {
-      "Domain": [
-        "Doména"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "Actions": [
-        "Akce"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Username": [
-        "Uživatelské jméno"
-      ]
-    },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Nastavení vlastní e-mailové adresy domény (např. ja@mojefirma.com). Trvá to jen pár minut a náš průvodce vás provede postupem."
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        "Předplaťte si na vyšší plán pro použití na vlastni doméně a odemkněte prémie hodnoty"
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "Předplaťte si ${ PLAN_NAMES[PLANS.VISIONARY] } nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL] } na plán k využití zachycení všech adres a odemkněte si i premiérové hodnoty"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Opravdu chcete vypnout dvoufázové ověřování?"
-      ]
-    },
-    "Header": {
-      "Get help": [
-        "Získejte pomoc"
-      ],
-      "Name": [
-        "Jméno"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "Actions": [
-        "Akce"
-      ],
-      "Calendar": [
-        "Kalendář"
-      ],
-      "Label": [
-        "Štítek"
-      ],
-      "What others see": [
-        "Co vidí ostatní"
-      ],
-      "Event": [
-        "Událost"
-      ],
-      "Time": [
-        "Čas"
-      ],
-      "Folders": [
-        "Složky"
-      ],
-      "Notifications": [
-        "Upozornění"
-      ],
-      "Organization key fingerprint": [
-        "Otisk klíče organizace"
-      ],
-      "Key type": [
-        "Typ klíče"
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Vyberte výchozí PGP nastavení pro podpis nebo šifrování zpráv s klienty, kteří nejsou uživateli ProtonMail PGP. Všiměte si, že Inline PGP kódování vynutí prostý text zprávy. Dozvěďte se více"
       ]
     },
     "Duration": {
@@ -5755,6 +5603,47 @@
         "Záznam o událostech, které nemohly být exportovány"
       ]
     },
+    "Header": {
+      "Name": [
+        "Jméno"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Actions": [
+        "Akce"
+      ],
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Label": [
+        "Štítek"
+      ],
+      "What others see": [
+        "Co vidí ostatní"
+      ],
+      "Get help": [
+        "Získejte pomoc"
+      ],
+      "Folders": [
+        "Složky"
+      ],
+      "Notifications": [
+        "Upozornění"
+      ],
+      "Event": [
+        "Událost"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "Organization key fingerprint": [
+        "Otisk klíče organizace"
+      ],
+      "Key type": [
+        "Typ klíče"
+      ]
+    },
     "Calendar status": {
       "Default": [
         "Výchozí"
@@ -5765,11 +5654,11 @@
       "Disabled": [
         "Vypnuto"
       ],
-      "Not synced": [
-        "Nebylo synchronizováno"
-      ],
       "Syncing": [
         "Synchronizace"
+      ],
+      "Not synced": [
+        "Nebylo synchronizováno"
       ]
     },
     "Upgrade notice": {
@@ -6001,157 +5890,6 @@
         "Plné zobrazení"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Tohle uvidí lidé, když jim pošlete e-mail, pozvete je na událost nebo s nimi sdílíte soubor."
-      ],
-      "Choose a display name": [
-        "Vyberte jméno, které chcete zobrazovat"
-      ],
-      "Select a theme": [
-        "Vyberte motiv"
-      ],
-      "You can change this anytime in your settings.": [
-        "Toto můžete později změnit v nastavení."
-      ],
-      "Discover all Proton services": [
-        "Objevte všechny Proton služby"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Použijte vybranou aplikaci vlevo nahoře pro přístup k dalším Proton službám, zahrnující VPN, Kalendář a Disk."
-      ],
-      "Welcome to Proton": [
-        "Vítejte v Protonu"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naše poslání je postavi internet kde Vy máte pod kontrolou svá data a své soukromí. My jsme nedávno aktualizovali Proton - vítejte na bezpečném internetu."
-      ],
-      "Set up your organization": [
-        "Nastavte svou organizaci"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Proveďte konfiguraci své organizace, odkaz na doménové jméno, a vytvořte si účty tak, aby všichni členové Vaší organizace byli zajištěni a chráněni."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Jsem mimo kancelář s omezeným přístupem ke svému e-mailu."
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Není vybrán žádný obrázek"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problém s přihlášením"
-      ],
-      "Sign up problem": [
-        "Problém s registrací"
-      ],
-      "Payments problem": [
-        "Problém s platbami"
-      ],
-      "Custom domain problem": [
-        "Problém s vlastní doménou"
-      ],
-      "Bridge problem": [
-        "Problém s aplikací Bridge"
-      ],
-      "Import / export problem": [
-        "Problém s importem / exportem"
-      ],
-      "Connection problem": [
-        "Problém s připojením"
-      ],
-      "Slow speed problem": [
-        "Problém s pomalou rychlostí"
-      ],
-      "Calendar problem": [
-        "Problém s kalendářem"
-      ],
-      "Contacts problem": [
-        "Problém s kontakty"
-      ],
-      "Drive problem": [
-        "Problém s aplikací Drive"
-      ],
-      "Mail problem": [
-        "Problém e-mailu"
-      ],
-      "VPN problem": [
-        "Problém s VPN"
-      ],
-      "Feature request": [
-        "Žádost o novou funkci"
-      ],
-      "Other": [
-        "Ostatní"
-      ],
-      "Signup problem": [
-        "Problém s přihlášením"
-      ],
-      "Installation problem": [
-        "Problém s instalací"
-      ],
-      "Update problem": [
-        "Problém s aktualizací"
-      ],
-      "Application problem": [
-        "Problém aplikace"
-      ],
-      "Speed problem": [
-        "Problém s rychlostí"
-      ],
-      "Manual setup problem": [
-        "Problém s ručním nastavením"
-      ],
-      "Website access problem": [
-        "Problém s přístupem ke stránce"
-      ],
-      "Streaming problem": [
-        "Problém se streamingem"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Účet"
-      ],
-      "Apps": [
-        "Aplikace"
-      ],
-      "Network": [
-        "Síť"
-      ],
-      "Services": [
-        "Služby"
-      ],
-      "Other category": [
-        "Ostatní kategorie"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vybrat"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikace"
-      ],
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
-      ]
-    },
     "Select files": {
       "Upload additional private keys": [
         ""
@@ -6271,6 +6009,558 @@
       ],
       "Compatibility": [
         "Kompatibilita"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "Přidejte doménu, kterou vlastníte k účtu ProtonMail."
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Subdomény 'www' se obvykle nepoužívají pro e-mail. Opravdu chcete použít tuto doménu?"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Z bezpečnostních důvodů musíme ověřit, že jste vlastníkem domény { domainName }. Přidejte k doméně následující DNS TXT záznam. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Přidejte nového uživatele své organizace a vytvořte adresu."
+      ],
+      "Add a new address for any user of your organization.": [
+        "Přidejte nové adresy pro uživatele své organizace."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Po úspěšném ověření, neodstraňujte TXT záznam, potřebujete to pro potvrzení, že budete dál používat svou doménu."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "Můžete to trvat den, než se projeví změna v DNS záznamech."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Přidejte prosím následující TXT záznam:"
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "Typ"
+      ],
+      "Host name": [
+        "Název serveru"
+      ],
+      "Value / Data / Points to": [
+        "Hodnota / Data / Body"
+      ],
+      "Value / Data": [
+        "Hodnota / Data"
+      ],
+      "Priority": [
+        "Priorita"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adresy"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "Doména"
+      ],
+      "Verify": [
+        "Ověřit"
+      ],
+      "Addresses": [
+        "Adresy"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Ověřeno"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "Chybějící klíče"
+      ],
+      "Enabled": [
+        "Zapnuto"
+      ],
+      "Disabled": [
+        "Vypnuto"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresa"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Catch-All": [
+        "Doménový koš"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "Doména byla odstraněna"
+      ],
+      "Sessions revoked": [
+        "Relace byla zrušena"
+      ],
+      "User deleted": [
+        "Uživatel odstraněn"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "Doména"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Actions": [
+        "Akce"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Username": [
+        "Uživatelské jméno"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "Nastavení vlastní e-mailové adresy domény (např. ja@mojefirma.com). Trvá to jen pár minut a náš průvodce vás provede postupem."
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        "Předplaťte si na vyšší plán pro použití na vlastni doméně a odemkněte prémie hodnoty"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        "Předplaťte si ${ PLAN_NAMES[PLANS.VISIONARY] } nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL] } na plán k využití zachycení všech adres a odemkněte si i premiérové hodnoty"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Opravdu chcete vypnout dvoufázové ověřování?"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Tohle uvidí lidé, když jim pošlete e-mail, pozvete je na událost nebo s nimi sdílíte soubor."
+      ],
+      "Choose a display name": [
+        "Vyberte jméno, které chcete zobrazovat"
+      ],
+      "Select a theme": [
+        "Vyberte motiv"
+      ],
+      "You can change this anytime in your settings.": [
+        "Toto můžete později změnit v nastavení."
+      ],
+      "Discover all Proton services": [
+        "Objevte všechny Proton služby"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Použijte vybranou aplikaci vlevo nahoře pro přístup k dalším Proton službám, zahrnující VPN, Kalendář a Disk."
+      ],
+      "Welcome to Proton": [
+        "Vítejte v Protonu"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Naše poslání je postavi internet kde Vy máte pod kontrolou svá data a své soukromí. My jsme nedávno aktualizovali Proton - vítejte na bezpečném internetu."
+      ],
+      "Set up your organization": [
+        "Nastavte svou organizaci"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Proveďte konfiguraci své organizace, odkaz na doménové jméno, a vytvořte si účty tak, aby všichni členové Vaší organizace byli zajištěni a chráněni."
+      ]
+    },
+    "Step in filter modal": {
+      "Name": [
+        "Jméno"
+      ],
+      "Conditions": [
+        "Podmínky"
+      ],
+      "Actions": [
+        "Akce"
+      ],
+      "Preview": [
+        "Náhled"
+      ],
+      "Sieve editor": [
+        "Editor Sieve"
+      ]
+    },
+    "Option group": {
+      "Custom folders": [
+        "Vlastní složky"
+      ],
+      "Move to...": [
+        "Přesunout do..."
+      ],
+      "Default folders": [
+        "Výchozí složky"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "přečteno"
+      ],
+      "starred": [
+        "s hvězdičkou"
+      ]
+    },
+    "Filter notification": {
+      "Filter ${ Filter.Name } updated": [
+        "Filtr ${ Filter.Name } byl aktualizován"
+      ],
+      "${ Label.Name } updated": [
+        "${ Label.Name } byl aktualizován"
+      ]
+    },
+    "Filter modal type": {
+      "Select…": [
+        "Vyberte…"
+      ],
+      "The subject": [
+        "Předmět"
+      ],
+      "The sender": [
+        "Odesílatel"
+      ],
+      "The recipient": [
+        "Příjemce"
+      ],
+      "The attachment": [
+        "Příloha"
+      ]
+    },
+    "Condition for custom filter": {
+      "contains": [
+        "obsahuje"
+      ],
+      "is exactly": [
+        "je přesně"
+      ],
+      "begins with": [
+        "začíná na"
+      ],
+      "ends with": [
+        "končí na"
+      ],
+      "matches": [
+        "se shoduje"
+      ],
+      "does not contain": [
+        "neobsahuje"
+      ],
+      "is not": [
+        "není"
+      ],
+      "does not begin with": [
+        "nezačíná na"
+      ],
+      "does not end with": [
+        "nekončí na"
+      ],
+      "does not match": [
+        "se neshoduje"
+      ]
+    },
+    "Filter modal operators": {
+      "All conditions must be fulfilled (AND)": [
+        "Všechny podmínky musí být splněny (AND)"
+      ],
+      "One condition must be fulfilled (OR)": [
+        "Musí být splněna alespoň jedna podmínka (OR)"
+      ]
+    },
+    "Filter Actions": {
+      "Select a folder": [
+        "Vyberte složku"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
+      "Inbox": [
+        "Příchozí pošta"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Koš"
+      ]
+    },
+    "Success notification": {
+      "Status updated": [
+        "Stav byl aktualizován"
+      ],
+      "Filter removed": [
+        "Filtr odstraněn"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } byl odstraněn"
+      ],
+      "Address deleted": [
+        "Adresa odstraněna"
+      ],
+      "Address enabled": [
+        "Adresa aktivována"
+      ],
+      "Address disabled": [
+        "Adresa deaktivována"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtry"
+      ]
+    },
+    "Settings/filters - table": {
+      "Order": [
+        "Pořadí"
+      ],
+      "Name": [
+        "Jméno"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Action": [
+        "Akce"
+      ]
+    },
+    "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Přidejte si vlastní filtr, který automaticky provede určité akce, jako je označení nebo archivace zpráv."
+      ],
+      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
+        "Zde můžete nastavit své předvolby pro odesílatele spamu. Zprávy od povolených příjemců se vždy doručují do doručené pošty a zprávy z blokovaných adres se vždy přesunují do spamu. Označení zprávy jako spam přidá adresu na seznam blokovaných adres a označení zprávy jako není spam přidá adresu na seznam povolených adres."
+      ],
+      "Search in Allow List and Block List": [
+        "Prohledat v seznamu povolených a seznamu blokovaných"
+      ]
+    },
+    "Spam notification": {
+      "${ domain } updated": [
+        "${ domain } aktualizována"
+      ],
+      "${ domain } added": [
+        "${ domain } přidána"
+      ],
+      "${ email } updated": [
+        "${ email } aktualizován"
+      ],
+      "${ email } added": [
+        "${ email } přidán"
+      ]
+    },
+    "Spam filter moved to blacklist": {
+      "${ Domain } moved to Block List": [
+        "${ Domain } bylo přesunuto na Blokovaný seznam"
+      ],
+      "${ Email } moved to Block List": [
+        "${ Email } byl přesunutý na Blokovaný seznam"
+      ]
+    },
+    "Spam filter moved to whitelist": {
+      "${ Domain } moved to Allow List": [
+        "${ Domain } bylo přesunutý na Blokovaný seznam"
+      ],
+      "${ Email } moved to Allow List": [
+        "${ Email } bylo přesunutý na Blokovaný seznam"
+      ]
+    },
+    "Moved to black/whitelist": {
+      "${ Domain } removed": [
+        "${ Domain } odstraněno"
+      ],
+      "${ Email } removed": [
+        "${ Email } odstraněn"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Není vybrán žádný obrázek"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problém s přihlášením"
+      ],
+      "Sign up problem": [
+        "Problém s registrací"
+      ],
+      "Payments problem": [
+        "Problém s platbami"
+      ],
+      "Custom domain problem": [
+        "Problém s vlastní doménou"
+      ],
+      "Bridge problem": [
+        "Problém s aplikací Bridge"
+      ],
+      "Import / export problem": [
+        "Problém s importem / exportem"
+      ],
+      "Connection problem": [
+        "Problém s připojením"
+      ],
+      "Slow speed problem": [
+        "Problém s pomalou rychlostí"
+      ],
+      "Calendar problem": [
+        "Problém s kalendářem"
+      ],
+      "Contacts problem": [
+        "Problém s kontakty"
+      ],
+      "Drive problem": [
+        "Problém s aplikací Drive"
+      ],
+      "Mail problem": [
+        "Problém e-mailu"
+      ],
+      "VPN problem": [
+        "Problém s VPN"
+      ],
+      "Feature request": [
+        "Žádost o novou funkci"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Signup problem": [
+        "Problém s přihlášením"
+      ],
+      "Installation problem": [
+        "Problém s instalací"
+      ],
+      "Update problem": [
+        "Problém s aktualizací"
+      ],
+      "Application problem": [
+        "Problém aplikace"
+      ],
+      "Speed problem": [
+        "Problém s rychlostí"
+      ],
+      "Manual setup problem": [
+        "Problém s ručním nastavením"
+      ],
+      "Website access problem": [
+        "Problém s přístupem ke stránce"
+      ],
+      "Streaming problem": [
+        "Problém se streamingem"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Účet"
+      ],
+      "Apps": [
+        "Aplikace"
+      ],
+      "Network": [
+        "Síť"
+      ],
+      "Services": [
+        "Služby"
+      ],
+      "Other category": [
+        "Ostatní kategorie"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Vybrat"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Přiložit snímek/snímky obrazovky"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Barva"
+      ],
+      "Folder name": [
+        "Název složky"
+      ],
+      "Label name": [
+        "Název štítku"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } byl vytvořen"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } byl aktualizován"
+      ],
+      "Preference saved": [
+        "Nastavení uloženo"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Vytvořit složku"
+      ],
+      "Create label": [
+        "Vytvořit štítek"
+      ],
+      "Edit folder": [
+        "Upravit složku"
+      ],
+      "Edit label": [
+        "Upravit štítek"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Soubory roztříděny"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Když povoleno, podsložky budou mít stejnou barvu jako základní složka."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Štítky/Složky"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Štítky"
+      ],
+      "Actions": [
+        "Akce"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Štítky seřazeny"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikace"
+      ],
+      "Go to ${ title }": [
+        "Přejít na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Přejít na ${ vpnName }"
       ]
     },
     "Suffix": {
@@ -6833,6 +7123,20 @@
         "K dispozici je nová verze aplikace ${ appName }. ${ reloadButton }."
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 sekund"
+      ],
+      "5 seconds": [
+        "5 sekund"
+      ],
+      "10 seconds": [
+        "10 sekund"
+      ],
+      "20 seconds": [
+        "20 sekund"
+      ]
+    },
     "Label for news": {
       "Proton company announcements": [
         "Oznámení společnosti Proton"
@@ -6879,6 +7183,59 @@
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Výchozí"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "Disabled": [
+        "Zakázáno"
+      ],
+      "Orphan": [
+        "Sirotek"
+      ],
+      "Missing keys": [
+        "Chybějící klíče"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Zapnout"
+      ],
+      "Disable": [
+        "Vypnout"
+      ],
+      "Generate missing keys": [
+        "Vygenerovat chybějící klíče"
+      ],
+      "Delete": [
+        "Odstranit"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Nepodařilo se najít nejnovější verzi"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 nebo novější)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (pro Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (pro Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (pro ostatní distribuce)"
       ]
     },
     "Badge for user sessions table": {
@@ -7041,26 +7398,6 @@
         "Bitcoin"
       ]
     },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "V momentě kdy obdržíte email od dalšího uživatele ProtonMail, který nemá důvěrné klíče ve Vašich kontaktech, oznamovací okno se Vás zeptá, zda chcete povolit důvěrné klíče."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Automatické nastavení podpisu všech odchodzích zpráv tak, že uživatelé mohou ověřit autentičnost Vašich zpráv. Tato metoda je provedena s výchozím nastavením PGP, které může být nakonfigurováno, jak je uvedeno níže."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Automaticky přidá veřejný klíč ke každé odeslané zprávě. Příjemci tak budou moci ověřit pravost vašich zpráv a odeslat zašifrovanou zprávu i Vám."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Vyberte výchozí PGP nastavení pro podpis nebo šifrování zpráv s klienty, kteří nejsou uživateli ProtonMail PGP. Všiměte si, že Inline PGP kódování vynutí prostý text zprávy. Dozvěďte se více"
-      ]
-    },
     "Invoice type display as badge": {
       "Other": [
         "Ostatní"
@@ -7123,298 +7460,6 @@
     "Title for PDF file": {
       "ProtonMail invoice": [
         "ProtonMail faktura"
-      ]
-    },
-    "Step in filter modal": {
-      "Name": [
-        "Jméno"
-      ],
-      "Conditions": [
-        "Podmínky"
-      ],
-      "Actions": [
-        "Akce"
-      ],
-      "Preview": [
-        "Náhled"
-      ],
-      "Sieve editor": [
-        "Editor Sieve"
-      ]
-    },
-    "Option group": {
-      "Custom folders": [
-        "Vlastní složky"
-      ],
-      "Move to...": [
-        "Přesunout do..."
-      ],
-      "Default folders": [
-        "Výchozí složky"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "přečteno"
-      ],
-      "starred": [
-        "s hvězdičkou"
-      ]
-    },
-    "Filter notification": {
-      "Filter ${ Filter.Name } updated": [
-        "Filtr ${ Filter.Name } byl aktualizován"
-      ],
-      "${ Label.Name } updated": [
-        "${ Label.Name } byl aktualizován"
-      ]
-    },
-    "Filter modal type": {
-      "Select…": [
-        "Vyberte…"
-      ],
-      "The subject": [
-        "Předmět"
-      ],
-      "The sender": [
-        "Odesílatel"
-      ],
-      "The recipient": [
-        "Příjemce"
-      ],
-      "The attachment": [
-        "Příloha"
-      ]
-    },
-    "Condition for custom filter": {
-      "contains": [
-        "obsahuje"
-      ],
-      "is exactly": [
-        "je přesně"
-      ],
-      "begins with": [
-        "začíná na"
-      ],
-      "ends with": [
-        "končí na"
-      ],
-      "matches": [
-        "se shoduje"
-      ],
-      "does not contain": [
-        "neobsahuje"
-      ],
-      "is not": [
-        "není"
-      ],
-      "does not begin with": [
-        "nezačíná na"
-      ],
-      "does not end with": [
-        "nekončí na"
-      ],
-      "does not match": [
-        "se neshoduje"
-      ]
-    },
-    "Filter modal operators": {
-      "All conditions must be fulfilled (AND)": [
-        "Všechny podmínky musí být splněny (AND)"
-      ],
-      "One condition must be fulfilled (OR)": [
-        "Musí být splněna alespoň jedna podmínka (OR)"
-      ]
-    },
-    "Filter Actions": {
-      "Select a folder": [
-        "Vyberte složku"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
-      "Inbox": [
-        "Příchozí pošta"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Koš"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "Stav byl aktualizován"
-      ],
-      "Filter removed": [
-        "Filtr odstraněn"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } byl odstraněn"
-      ],
-      "Address deleted": [
-        "Adresa odstraněna"
-      ],
-      "Address enabled": [
-        "Adresa aktivována"
-      ],
-      "Address disabled": [
-        "Adresa deaktivována"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Filtry"
-      ]
-    },
-    "Settings/filters - table": {
-      "Order": [
-        "Pořadí"
-      ],
-      "Name": [
-        "Jméno"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "Action": [
-        "Akce"
-      ]
-    },
-    "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Přidejte si vlastní filtr, který automaticky provede určité akce, jako je označení nebo archivace zpráv."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Zde můžete nastavit své předvolby pro odesílatele spamu. Zprávy od povolených příjemců se vždy doručují do doručené pošty a zprávy z blokovaných adres se vždy přesunují do spamu. Označení zprávy jako spam přidá adresu na seznam blokovaných adres a označení zprávy jako není spam přidá adresu na seznam povolených adres."
-      ],
-      "Search in Allow List and Block List": [
-        "Prohledat v seznamu povolených a seznamu blokovaných"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } updated": [
-        "${ domain } aktualizována"
-      ],
-      "${ domain } added": [
-        "${ domain } přidána"
-      ],
-      "${ email } updated": [
-        "${ email } aktualizován"
-      ],
-      "${ email } added": [
-        "${ email } přidán"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } bylo přesunuto na Blokovaný seznam"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } byl přesunutý na Blokovaný seznam"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } bylo přesunutý na Blokovaný seznam"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } bylo přesunutý na Blokovaný seznam"
-      ]
-    },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } odstraněno"
-      ],
-      "${ Email } removed": [
-        "${ Email } odstraněn"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Faktura po splatnosti"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Ručně"
-      ],
-      "No verification method available": [
-        "Nejsou k dispozici žádné metody ověřování"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Barva"
-      ],
-      "Folder name": [
-        "Název složky"
-      ],
-      "Label name": [
-        "Název štítku"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } byl vytvořen"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } byl aktualizován"
-      ],
-      "Preference saved": [
-        "Nastavení uloženo"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Vytvořit složku"
-      ],
-      "Create label": [
-        "Vytvořit štítek"
-      ],
-      "Edit folder": [
-        "Upravit složku"
-      ],
-      "Edit label": [
-        "Upravit štítek"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Soubory roztříděny"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Když povoleno, podsložky budou mít stejnou barvu jako základní složka."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Štítky/Složky"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Štítky"
-      ],
-      "Actions": [
-        "Akce"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Štítky seřazeny"
       ]
     },
     "Restore administrator panel": {
@@ -7499,147 +7544,26 @@
         "soukromé"
       ]
     },
-    "Address status": {
-      "Default": [
-        "Výchozí"
-      ],
-      "Active": [
-        "Aktivní"
-      ],
-      "Disabled": [
-        "Zakázáno"
-      ],
-      "Orphan": [
-        "Sirotek"
-      ],
-      "Missing keys": [
-        "Chybějící klíče"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Faktura po splatnosti"
       ]
     },
-    "Address action": {
-      "Enable": [
-        "Zapnout"
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Disable": [
-        "Vypnout"
+      "Email": [
+        "E-mail"
       ],
-      "Generate missing keys": [
-        "Vygenerovat chybějící klíče"
+      "SMS": [
+        "SMS"
       ],
-      "Delete": [
-        "Odstranit"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 sekund"
+      "Manual": [
+        "Ručně"
       ],
-      "5 seconds": [
-        "5 sekund"
-      ],
-      "10 seconds": [
-        "10 sekund"
-      ],
-      "20 seconds": [
-        "20 sekund"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Nepodařilo se najít nejnovější verzi"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 nebo novější)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (pro Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (pro Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (pro ostatní distribuce)"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "neznámé"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard verze < 3.0 není podporována"
-      ],
-      "Encryption failed": [
-        "Šifrování selhalo"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Došlo k neočekávané chybě. Import musí být restartován."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Jsou povoleny pouze formáty souborů .ics ."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Váš soubor ${ formattedFilename } je prázdný."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Váš soubor ${ formattedFilename } není kalendář."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } podporuje pouze import kalendářů s iCal verze 2.0."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Váš soubor ${ formattedFilename } je pozvánka a nemůže být importována."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Váš soubor ${ formattedFilename } nemá žádné události pro import."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Nebyl vybrán žádný .csv nebo .vcf soubor"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Váš soubor ${ formattedFilename } je prázdný."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_CONTACTS_STRING } kontaktů."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Neznámé"
+      "No verification method available": [
+        "Nejsou k dispozici žádné metody ověřování"
       ]
     },
     "Contact field label": {
@@ -7776,6 +7700,82 @@
       ],
       "GB": [
         "GB"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "neznámé"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard verze < 3.0 není podporována"
+      ],
+      "Encryption failed": [
+        "Šifrování selhalo"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Došlo k neočekávané chybě. Import musí být restartován."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Jsou povoleny pouze formáty souborů .ics ."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Váš soubor ${ formattedFilename } je prázdný."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Váš soubor ${ formattedFilename } není kalendář."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } podporuje pouze import kalendářů s iCal verze 2.0."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "Váš soubor ${ formattedFilename } je pozvánka a nemůže být importována."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Váš soubor ${ formattedFilename } nemá žádné události pro import."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Nebyl vybrán žádný .csv nebo .vcf soubor"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Váš soubor ${ formattedFilename } je prázdný."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_CONTACTS_STRING } kontaktů."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Neznámé"
       ]
     },
     "Participant name": {
@@ -8343,6 +8343,12 @@
       "Unsupported event": [
         "Událost není podporována"
       ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
+      ],
       "Invalid method": [
         "Neplatná metoda"
       ]
@@ -8617,6 +8623,9 @@
       "VPN apps": [
         "VPN aplikace"
       ],
+      "Calendars": [
+        "Kalendáře"
+      ],
       "Users & addresses": [
         "Uživatelé & adresy"
       ],
@@ -8628,9 +8637,6 @@
       ],
       "Multi-user support": [
         "Podpora pro více uživatelů"
-      ],
-      "Calendars": [
-        "Kalendáře"
       ],
       "Account": [
         "Účet"
@@ -8652,6 +8658,20 @@
         "Přejděte na ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } pro připojení až ${ plusVpnConnections } zařízení do VPN současně"
       ]
     },
+    "Navigation": {
+      "Back to Mail": [
+        "Zpět na e-mail"
+      ],
+      "Back to Calendar": [
+        "Zpět do Kalendáře"
+      ],
+      "Back to Contacts": [
+        "Zpět do Kontaktů"
+      ],
+      "Back to Drive": [
+        "Zpět na paměťový disk"
+      ]
+    },
     "Email Unsubscribe Categories": {
       "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
         "${ allCategoriesExceptTheLastOne } a ${ lastCategory }"
@@ -8666,20 +8686,6 @@
       ],
       "Which emails do you want to receive from Proton?": [
         "Který emaily chcete dostávat od služeb Proton?"
-      ]
-    },
-    "Navigation": {
-      "Back to Mail": [
-        "Zpět na e-mail"
-      ],
-      "Back to Calendar": [
-        "Zpět do Kalendáře"
-      ],
-      "Back to Contacts": [
-        "Zpět do Kontaktů"
-      ],
-      "Back to Drive": [
-        "Zpět na paměťový disk"
       ]
     },
     "Signup label": {
